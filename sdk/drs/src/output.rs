@@ -178,7 +178,7 @@ impl std::fmt::Debug for UpdateReplicationConfigurationOutput {
 pub mod update_replication_configuration_output {
 
     /// A builder for [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -482,6 +482,43 @@ pub mod update_replication_configuration_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_server_id", &self.source_server_id);
+            formatter.field("name", &self.name);
+            formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
+            formatter.field(
+                "associate_default_security_group",
+                &self.associate_default_security_group,
+            );
+            formatter.field(
+                "replication_servers_security_groups_i_ds",
+                &self.replication_servers_security_groups_i_ds,
+            );
+            formatter.field(
+                "replication_server_instance_type",
+                &self.replication_server_instance_type,
+            );
+            formatter.field(
+                "use_dedicated_replication_server",
+                &self.use_dedicated_replication_server,
+            );
+            formatter.field(
+                "default_large_staging_disk_type",
+                &self.default_large_staging_disk_type,
+            );
+            formatter.field("replicated_disks", &self.replicated_disks);
+            formatter.field("ebs_encryption", &self.ebs_encryption);
+            formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
+            formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
+            formatter.field("data_plane_routing", &self.data_plane_routing);
+            formatter.field("create_public_ip", &self.create_public_ip);
+            formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("pit_policy", &self.pit_policy);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput).
@@ -492,7 +529,7 @@ impl UpdateReplicationConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationOutput {
     /// <p>The ID of the Source Server for this launch configuration.</p>
     #[doc(hidden)]
@@ -554,23 +591,6 @@ impl UpdateLaunchConfigurationOutput {
     /// <p>The licensing configuration to be used for this launch configuration.</p>
     pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
         self.licensing.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateLaunchConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLaunchConfigurationOutput");
-        formatter.field("source_server_id", &self.source_server_id);
-        formatter.field("name", &self.name);
-        formatter.field("ec2_launch_template_id", &self.ec2_launch_template_id);
-        formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field(
-            "target_instance_type_right_sizing_method",
-            &self.target_instance_type_right_sizing_method,
-        );
-        formatter.field("copy_private_ip", &self.copy_private_ip);
-        formatter.field("copy_tags", &self.copy_tags);
-        formatter.field("licensing", &self.licensing);
-        formatter.finish()
     }
 }
 /// See [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput).
@@ -804,7 +824,7 @@ impl std::fmt::Debug for RetryDataReplicationOutput {
 pub mod retry_data_replication_output {
 
     /// A builder for [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -958,6 +978,21 @@ pub mod retry_data_replication_output {
                 source_properties: self.source_properties,
                 staging_area: self.staging_area,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_server_id", &self.source_server_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("recovery_instance_id", &self.recovery_instance_id);
+            formatter.field("last_launch_result", &self.last_launch_result);
+            formatter.field("data_replication_info", &self.data_replication_info);
+            formatter.field("life_cycle", &self.life_cycle);
+            formatter.field("source_properties", &self.source_properties);
+            formatter.field("staging_area", &self.staging_area);
+            formatter.finish()
         }
     }
 }
@@ -1147,7 +1182,7 @@ impl std::fmt::Debug for GetReplicationConfigurationOutput {
 pub mod get_replication_configuration_output {
 
     /// A builder for [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1451,6 +1486,43 @@ pub mod get_replication_configuration_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_server_id", &self.source_server_id);
+            formatter.field("name", &self.name);
+            formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
+            formatter.field(
+                "associate_default_security_group",
+                &self.associate_default_security_group,
+            );
+            formatter.field(
+                "replication_servers_security_groups_i_ds",
+                &self.replication_servers_security_groups_i_ds,
+            );
+            formatter.field(
+                "replication_server_instance_type",
+                &self.replication_server_instance_type,
+            );
+            formatter.field(
+                "use_dedicated_replication_server",
+                &self.use_dedicated_replication_server,
+            );
+            formatter.field(
+                "default_large_staging_disk_type",
+                &self.default_large_staging_disk_type,
+            );
+            formatter.field("replicated_disks", &self.replicated_disks);
+            formatter.field("ebs_encryption", &self.ebs_encryption);
+            formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
+            formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
+            formatter.field("data_plane_routing", &self.data_plane_routing);
+            formatter.field("create_public_ip", &self.create_public_ip);
+            formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("pit_policy", &self.pit_policy);
+            formatter.finish()
+        }
+    }
 }
 impl GetReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput).
@@ -1461,7 +1533,7 @@ impl GetReplicationConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchConfigurationOutput {
     /// <p>The ID of the Source Server for this launch configuration.</p>
     #[doc(hidden)]
@@ -1523,23 +1595,6 @@ impl GetLaunchConfigurationOutput {
     /// <p>The licensing configuration to be used for this launch configuration.</p>
     pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
         self.licensing.as_ref()
-    }
-}
-impl std::fmt::Debug for GetLaunchConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLaunchConfigurationOutput");
-        formatter.field("source_server_id", &self.source_server_id);
-        formatter.field("name", &self.name);
-        formatter.field("ec2_launch_template_id", &self.ec2_launch_template_id);
-        formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field(
-            "target_instance_type_right_sizing_method",
-            &self.target_instance_type_right_sizing_method,
-        );
-        formatter.field("copy_private_ip", &self.copy_private_ip);
-        formatter.field("copy_tags", &self.copy_tags);
-        formatter.field("licensing", &self.licensing);
-        formatter.finish()
     }
 }
 /// See [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput).
@@ -1773,7 +1828,7 @@ impl std::fmt::Debug for DisconnectSourceServerOutput {
 pub mod disconnect_source_server_output {
 
     /// A builder for [`DisconnectSourceServerOutput`](crate::output::DisconnectSourceServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1929,6 +1984,21 @@ pub mod disconnect_source_server_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_server_id", &self.source_server_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("recovery_instance_id", &self.recovery_instance_id);
+            formatter.field("last_launch_result", &self.last_launch_result);
+            formatter.field("data_replication_info", &self.data_replication_info);
+            formatter.field("life_cycle", &self.life_cycle);
+            formatter.field("source_properties", &self.source_properties);
+            formatter.field("staging_area", &self.staging_area);
+            formatter.finish()
+        }
+    }
 }
 impl DisconnectSourceServerOutput {
     /// Creates a new builder-style object to manufacture [`DisconnectSourceServerOutput`](crate::output::DisconnectSourceServerOutput).
@@ -1939,7 +2009,7 @@ impl DisconnectSourceServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsOutput {
     /// <p>An array of Recovery Snapshots.</p>
     #[doc(hidden)]
@@ -1956,14 +2026,6 @@ impl DescribeRecoverySnapshotsOutput {
     /// <p>The token of the next Recovery Snapshot to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeRecoverySnapshotsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecoverySnapshotsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeRecoverySnapshotsOutput`](crate::output::DescribeRecoverySnapshotsOutput).
@@ -2023,7 +2085,7 @@ impl DescribeRecoverySnapshotsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRecoveryOutput {
     /// <p>The Recovery Job.</p>
     #[doc(hidden)]
@@ -2033,13 +2095,6 @@ impl StartRecoveryOutput {
     /// <p>The Recovery Job.</p>
     pub fn job(&self) -> std::option::Option<&crate::model::Job> {
         self.job.as_ref()
-    }
-}
-impl std::fmt::Debug for StartRecoveryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartRecoveryOutput");
-        formatter.field("job", &self.job);
-        formatter.finish()
     }
 }
 /// See [`StartRecoveryOutput`](crate::output::StartRecoveryOutput).
@@ -2076,7 +2131,7 @@ impl StartRecoveryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSourceServersOutput {
     /// <p>An array of Source Servers.</p>
     #[doc(hidden)]
@@ -2093,14 +2148,6 @@ impl DescribeSourceServersOutput {
     /// <p>The token of the next Source Server to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeSourceServersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSourceServersOutput");
-        formatter.field("items", &self.items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeSourceServersOutput`](crate::output::DescribeSourceServersOutput).
@@ -2160,14 +2207,8 @@ impl DescribeSourceServersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSourceServerOutput {}
-impl std::fmt::Debug for DeleteSourceServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSourceServerOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput).
 pub mod delete_source_server_output {
 
@@ -2190,7 +2231,7 @@ impl DeleteSourceServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesOutput {
     /// <p>An array of Replication Configuration Templates.</p>
     #[doc(hidden)]
@@ -2207,14 +2248,6 @@ impl DescribeReplicationConfigurationTemplatesOutput {
     /// <p>The token of the next Replication Configuration Template to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeReplicationConfigurationTemplatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationConfigurationTemplatesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeReplicationConfigurationTemplatesOutput`](crate::output::DescribeReplicationConfigurationTemplatesOutput).
@@ -2459,7 +2492,7 @@ impl std::fmt::Debug for CreateReplicationConfigurationTemplateOutput {
 pub mod create_replication_configuration_template_output {
 
     /// A builder for [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2767,6 +2800,46 @@ pub mod create_replication_configuration_template_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "replication_configuration_template_id",
+                &self.replication_configuration_template_id,
+            );
+            formatter.field("arn", &self.arn);
+            formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
+            formatter.field(
+                "associate_default_security_group",
+                &self.associate_default_security_group,
+            );
+            formatter.field(
+                "replication_servers_security_groups_i_ds",
+                &self.replication_servers_security_groups_i_ds,
+            );
+            formatter.field(
+                "replication_server_instance_type",
+                &self.replication_server_instance_type,
+            );
+            formatter.field(
+                "use_dedicated_replication_server",
+                &self.use_dedicated_replication_server,
+            );
+            formatter.field(
+                "default_large_staging_disk_type",
+                &self.default_large_staging_disk_type,
+            );
+            formatter.field("ebs_encryption", &self.ebs_encryption);
+            formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
+            formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
+            formatter.field("data_plane_routing", &self.data_plane_routing);
+            formatter.field("create_public_ip", &self.create_public_ip);
+            formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("pit_policy", &self.pit_policy);
+            formatter.finish()
+        }
+    }
 }
 impl CreateReplicationConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput).
@@ -2777,14 +2850,8 @@ impl CreateReplicationConfigurationTemplateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationTemplateOutput {}
-impl std::fmt::Debug for DeleteReplicationConfigurationTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReplicationConfigurationTemplateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput).
 pub mod delete_replication_configuration_template_output {
 
@@ -2988,7 +3055,7 @@ impl std::fmt::Debug for UpdateReplicationConfigurationTemplateOutput {
 pub mod update_replication_configuration_template_output {
 
     /// A builder for [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3296,6 +3363,46 @@ pub mod update_replication_configuration_template_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "replication_configuration_template_id",
+                &self.replication_configuration_template_id,
+            );
+            formatter.field("arn", &self.arn);
+            formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
+            formatter.field(
+                "associate_default_security_group",
+                &self.associate_default_security_group,
+            );
+            formatter.field(
+                "replication_servers_security_groups_i_ds",
+                &self.replication_servers_security_groups_i_ds,
+            );
+            formatter.field(
+                "replication_server_instance_type",
+                &self.replication_server_instance_type,
+            );
+            formatter.field(
+                "use_dedicated_replication_server",
+                &self.use_dedicated_replication_server,
+            );
+            formatter.field(
+                "default_large_staging_disk_type",
+                &self.default_large_staging_disk_type,
+            );
+            formatter.field("ebs_encryption", &self.ebs_encryption);
+            formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
+            formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
+            formatter.field("data_plane_routing", &self.data_plane_routing);
+            formatter.field("create_public_ip", &self.create_public_ip);
+            formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("pit_policy", &self.pit_policy);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateReplicationConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput).
@@ -3306,14 +3413,8 @@ impl UpdateReplicationConfigurationTemplateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFailbackReplicationConfigurationOutput {}
-impl std::fmt::Debug for UpdateFailbackReplicationConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFailbackReplicationConfigurationOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateFailbackReplicationConfigurationOutput`](crate::output::UpdateFailbackReplicationConfigurationOutput).
 pub mod update_failback_replication_configuration_output {
 
@@ -3336,14 +3437,8 @@ impl UpdateFailbackReplicationConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopFailbackOutput {}
-impl std::fmt::Debug for StopFailbackOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopFailbackOutput");
-        formatter.finish()
-    }
-}
 /// See [`StopFailbackOutput`](crate::output::StopFailbackOutput).
 pub mod stop_failback_output {
 
@@ -3366,7 +3461,7 @@ impl StopFailbackOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFailbackReplicationConfigurationOutput {
     /// <p>The ID of the Recovery Instance.</p>
     #[doc(hidden)]
@@ -3397,16 +3492,6 @@ impl GetFailbackReplicationConfigurationOutput {
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub fn use_private_ip(&self) -> std::option::Option<bool> {
         self.use_private_ip
-    }
-}
-impl std::fmt::Debug for GetFailbackReplicationConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFailbackReplicationConfigurationOutput");
-        formatter.field("recovery_instance_id", &self.recovery_instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
-        formatter.field("use_private_ip", &self.use_private_ip);
-        formatter.finish()
     }
 }
 /// See [`GetFailbackReplicationConfigurationOutput`](crate::output::GetFailbackReplicationConfigurationOutput).
@@ -3484,14 +3569,8 @@ impl GetFailbackReplicationConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectRecoveryInstanceOutput {}
-impl std::fmt::Debug for DisconnectRecoveryInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisconnectRecoveryInstanceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisconnectRecoveryInstanceOutput`](crate::output::DisconnectRecoveryInstanceOutput).
 pub mod disconnect_recovery_instance_output {
 
@@ -3514,14 +3593,8 @@ impl DisconnectRecoveryInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecoveryInstanceOutput {}
-impl std::fmt::Debug for DeleteRecoveryInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecoveryInstanceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRecoveryInstanceOutput`](crate::output::DeleteRecoveryInstanceOutput).
 pub mod delete_recovery_instance_output {
 
@@ -3544,7 +3617,7 @@ impl DeleteRecoveryInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesOutput {
     /// <p>The Job for terminating the Recovery Instances.</p>
     #[doc(hidden)]
@@ -3554,13 +3627,6 @@ impl TerminateRecoveryInstancesOutput {
     /// <p>The Job for terminating the Recovery Instances.</p>
     pub fn job(&self) -> std::option::Option<&crate::model::Job> {
         self.job.as_ref()
-    }
-}
-impl std::fmt::Debug for TerminateRecoveryInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateRecoveryInstancesOutput");
-        formatter.field("job", &self.job);
-        formatter.finish()
     }
 }
 /// See [`TerminateRecoveryInstancesOutput`](crate::output::TerminateRecoveryInstancesOutput).
@@ -3597,7 +3663,7 @@ impl TerminateRecoveryInstancesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFailbackLaunchOutput {
     /// <p>The failback launch Job.</p>
     #[doc(hidden)]
@@ -3607,13 +3673,6 @@ impl StartFailbackLaunchOutput {
     /// <p>The failback launch Job.</p>
     pub fn job(&self) -> std::option::Option<&crate::model::Job> {
         self.job.as_ref()
-    }
-}
-impl std::fmt::Debug for StartFailbackLaunchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFailbackLaunchOutput");
-        formatter.field("job", &self.job);
-        formatter.finish()
     }
 }
 /// See [`StartFailbackLaunchOutput`](crate::output::StartFailbackLaunchOutput).
@@ -3650,7 +3709,7 @@ impl StartFailbackLaunchOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesOutput {
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     #[doc(hidden)]
@@ -3667,14 +3726,6 @@ impl DescribeRecoveryInstancesOutput {
     /// <p>An array of Recovery Instances.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::RecoveryInstance]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeRecoveryInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecoveryInstancesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`DescribeRecoveryInstancesOutput`](crate::output::DescribeRecoveryInstancesOutput).
@@ -3734,7 +3785,7 @@ impl DescribeRecoveryInstancesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobLogItemsOutput {
     /// <p>An array of Job log items.</p>
     #[doc(hidden)]
@@ -3751,14 +3802,6 @@ impl DescribeJobLogItemsOutput {
     /// <p>The token of the next Job log items to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeJobLogItemsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobLogItemsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeJobLogItemsOutput`](crate::output::DescribeJobLogItemsOutput).
@@ -3818,7 +3861,7 @@ impl DescribeJobLogItemsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobsOutput {
     /// <p>An array of Jobs.</p>
     #[doc(hidden)]
@@ -3835,14 +3878,6 @@ impl DescribeJobsOutput {
     /// <p>The token of the next Job to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeJobsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeJobsOutput`](crate::output::DescribeJobsOutput).
@@ -3902,14 +3937,8 @@ impl DescribeJobsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobOutput {}
-impl std::fmt::Debug for DeleteJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJobOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteJobOutput`](crate::output::DeleteJobOutput).
 pub mod delete_job_output {
 
@@ -3932,14 +3961,8 @@ impl DeleteJobOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -3962,14 +3985,8 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -4019,7 +4036,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4056,6 +4073,13 @@ pub mod list_tags_for_resource_output {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -4066,7 +4090,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStagingAccountsOutput {
     /// <p>An array of staging AWS Accounts.</p>
     #[doc(hidden)]
@@ -4083,14 +4107,6 @@ impl ListStagingAccountsOutput {
     /// <p>The token of the next staging Account to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListStagingAccountsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStagingAccountsOutput");
-        formatter.field("accounts", &self.accounts);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListStagingAccountsOutput`](crate::output::ListStagingAccountsOutput).
@@ -4150,7 +4166,7 @@ impl ListStagingAccountsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExtensibleSourceServersOutput {
     /// <p>A list of source servers on a staging Account that are extensible.</p>
     #[doc(hidden)]
@@ -4167,14 +4183,6 @@ impl ListExtensibleSourceServersOutput {
     /// <p>The token of the next extensible source server to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListExtensibleSourceServersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExtensibleSourceServersOutput");
-        formatter.field("items", &self.items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListExtensibleSourceServersOutput`](crate::output::ListExtensibleSourceServersOutput).
@@ -4234,14 +4242,8 @@ impl ListExtensibleSourceServersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitializeServiceOutput {}
-impl std::fmt::Debug for InitializeServiceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitializeServiceOutput");
-        formatter.finish()
-    }
-}
 /// See [`InitializeServiceOutput`](crate::output::InitializeServiceOutput).
 pub mod initialize_service_output {
 
@@ -4264,7 +4266,7 @@ impl InitializeServiceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExtendedSourceServerOutput {
     /// <p>Created extended source server.</p>
     #[doc(hidden)]
@@ -4274,13 +4276,6 @@ impl CreateExtendedSourceServerOutput {
     /// <p>Created extended source server.</p>
     pub fn source_server(&self) -> std::option::Option<&crate::model::SourceServer> {
         self.source_server.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateExtendedSourceServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExtendedSourceServerOutput");
-        formatter.field("source_server", &self.source_server);
-        formatter.finish()
     }
 }
 /// See [`CreateExtendedSourceServerOutput`](crate::output::CreateExtendedSourceServerOutput).

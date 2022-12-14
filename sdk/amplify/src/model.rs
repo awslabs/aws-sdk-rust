@@ -2,7 +2,7 @@
 
 /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Webhook {
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
     #[doc(hidden)]
@@ -54,19 +54,6 @@ impl Webhook {
     /// <p> Updates the date and time for a webhook. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Webhook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Webhook");
-        formatter.field("webhook_arn", &self.webhook_arn);
-        formatter.field("webhook_id", &self.webhook_id);
-        formatter.field("webhook_url", &self.webhook_url);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("description", &self.description);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`Webhook`](crate::model::Webhook).
@@ -183,7 +170,7 @@ impl Webhook {
 
 /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainAssociation {
     /// <p> The Amazon Resource Name (ARN) for the domain association. </p>
     #[doc(hidden)]
@@ -249,27 +236,6 @@ impl DomainAssociation {
     /// <p> The subdomains for the domain association. </p>
     pub fn sub_domains(&self) -> std::option::Option<&[crate::model::SubDomain]> {
         self.sub_domains.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainAssociation");
-        formatter.field("domain_association_arn", &self.domain_association_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("enable_auto_sub_domain", &self.enable_auto_sub_domain);
-        formatter.field(
-            "auto_sub_domain_creation_patterns",
-            &self.auto_sub_domain_creation_patterns,
-        );
-        formatter.field("auto_sub_domain_iam_role", &self.auto_sub_domain_iam_role);
-        formatter.field("domain_status", &self.domain_status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field(
-            "certificate_verification_dns_record",
-            &self.certificate_verification_dns_record,
-        );
-        formatter.field("sub_domains", &self.sub_domains);
-        formatter.finish()
     }
 }
 /// See [`DomainAssociation`](crate::model::DomainAssociation).
@@ -444,7 +410,7 @@ impl DomainAssociation {
 
 /// <p> The subdomain for the domain association. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubDomain {
     /// <p> Describes the settings for the subdomain. </p>
     #[doc(hidden)]
@@ -468,15 +434,6 @@ impl SubDomain {
     /// <p> The DNS record for the subdomain. </p>
     pub fn dns_record(&self) -> std::option::Option<&str> {
         self.dns_record.as_deref()
-    }
-}
-impl std::fmt::Debug for SubDomain {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubDomain");
-        formatter.field("sub_domain_setting", &self.sub_domain_setting);
-        formatter.field("verified", &self.verified);
-        formatter.field("dns_record", &self.dns_record);
-        formatter.finish()
     }
 }
 /// See [`SubDomain`](crate::model::SubDomain).
@@ -542,7 +499,7 @@ impl SubDomain {
 
 /// <p> Describes the settings for the subdomain. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubDomainSetting {
     /// <p> The prefix setting for the subdomain. </p>
     #[doc(hidden)]
@@ -559,14 +516,6 @@ impl SubDomainSetting {
     /// <p> The branch name setting for the subdomain. </p>
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SubDomainSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubDomainSetting");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.finish()
     }
 }
 /// See [`SubDomainSetting`](crate::model::SubDomainSetting).
@@ -993,7 +942,7 @@ impl std::fmt::Debug for Branch {
 pub mod branch {
 
     /// A builder for [`Branch`](crate::model::Branch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) branch_arn: std::option::Option<std::string::String>,
         pub(crate) branch_name: std::option::Option<std::string::String>,
@@ -1414,6 +1363,45 @@ pub mod branch {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("branch_arn", &self.branch_arn);
+            formatter.field("branch_name", &self.branch_name);
+            formatter.field("description", &self.description);
+            formatter.field("tags", &self.tags);
+            formatter.field("stage", &self.stage);
+            formatter.field("display_name", &self.display_name);
+            formatter.field("enable_notification", &self.enable_notification);
+            formatter.field("create_time", &self.create_time);
+            formatter.field("update_time", &self.update_time);
+            formatter.field("environment_variables", &self.environment_variables);
+            formatter.field("enable_auto_build", &self.enable_auto_build);
+            formatter.field("custom_domains", &self.custom_domains);
+            formatter.field("framework", &self.framework);
+            formatter.field("active_job_id", &self.active_job_id);
+            formatter.field("total_number_of_jobs", &self.total_number_of_jobs);
+            formatter.field("enable_basic_auth", &self.enable_basic_auth);
+            formatter.field("enable_performance_mode", &self.enable_performance_mode);
+            formatter.field("thumbnail_url", &self.thumbnail_url);
+            formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("ttl", &self.ttl);
+            formatter.field("associated_resources", &self.associated_resources);
+            formatter.field(
+                "enable_pull_request_preview",
+                &self.enable_pull_request_preview,
+            );
+            formatter.field(
+                "pull_request_environment_name",
+                &self.pull_request_environment_name,
+            );
+            formatter.field("destination_branch", &self.destination_branch);
+            formatter.field("source_branch", &self.source_branch);
+            formatter.field("backend_environment_arn", &self.backend_environment_arn);
+            formatter.finish()
+        }
+    }
 }
 impl Branch {
     /// Creates a new builder-style object to manufacture [`Branch`](crate::model::Branch).
@@ -1772,7 +1760,7 @@ impl std::fmt::Debug for App {
 pub mod app {
 
     /// A builder for [`App`](crate::model::App).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -2167,6 +2155,48 @@ pub mod app {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_id", &self.app_id);
+            formatter.field("app_arn", &self.app_arn);
+            formatter.field("name", &self.name);
+            formatter.field("tags", &self.tags);
+            formatter.field("description", &self.description);
+            formatter.field("repository", &self.repository);
+            formatter.field("platform", &self.platform);
+            formatter.field("create_time", &self.create_time);
+            formatter.field("update_time", &self.update_time);
+            formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
+            formatter.field("environment_variables", &self.environment_variables);
+            formatter.field("default_domain", &self.default_domain);
+            formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
+            formatter.field(
+                "enable_branch_auto_deletion",
+                &self.enable_branch_auto_deletion,
+            );
+            formatter.field("enable_basic_auth", &self.enable_basic_auth);
+            formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("custom_rules", &self.custom_rules);
+            formatter.field("production_branch", &self.production_branch);
+            formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("custom_headers", &self.custom_headers);
+            formatter.field(
+                "enable_auto_branch_creation",
+                &self.enable_auto_branch_creation,
+            );
+            formatter.field(
+                "auto_branch_creation_patterns",
+                &self.auto_branch_creation_patterns,
+            );
+            formatter.field(
+                "auto_branch_creation_config",
+                &self.auto_branch_creation_config,
+            );
+            formatter.field("repository_clone_method", &self.repository_clone_method);
+            formatter.finish()
+        }
+    }
 }
 impl App {
     /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
@@ -2381,7 +2411,7 @@ impl std::fmt::Debug for AutoBranchCreationConfig {
 pub mod auto_branch_creation_config {
 
     /// A builder for [`AutoBranchCreationConfig`](crate::model::AutoBranchCreationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) stage: std::option::Option<crate::model::Stage>,
         pub(crate) framework: std::option::Option<std::string::String>,
@@ -2539,6 +2569,28 @@ pub mod auto_branch_creation_config {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("stage", &self.stage);
+            formatter.field("framework", &self.framework);
+            formatter.field("enable_auto_build", &self.enable_auto_build);
+            formatter.field("environment_variables", &self.environment_variables);
+            formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("enable_basic_auth", &self.enable_basic_auth);
+            formatter.field("enable_performance_mode", &self.enable_performance_mode);
+            formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "enable_pull_request_preview",
+                &self.enable_pull_request_preview,
+            );
+            formatter.field(
+                "pull_request_environment_name",
+                &self.pull_request_environment_name,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl AutoBranchCreationConfig {
     /// Creates a new builder-style object to manufacture [`AutoBranchCreationConfig`](crate::model::AutoBranchCreationConfig).
@@ -2549,7 +2601,7 @@ impl AutoBranchCreationConfig {
 
 /// <p> Describes the information about a production branch for an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProductionBranch {
     /// <p> The last deploy time of the production branch. </p>
     #[doc(hidden)]
@@ -2580,16 +2632,6 @@ impl ProductionBranch {
     /// <p> The branch name for the production branch. </p>
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ProductionBranch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProductionBranch");
-        formatter.field("last_deploy_time", &self.last_deploy_time);
-        formatter.field("status", &self.status);
-        formatter.field("thumbnail_url", &self.thumbnail_url);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.finish()
     }
 }
 /// See [`ProductionBranch`](crate::model::ProductionBranch).
@@ -2670,7 +2712,7 @@ impl ProductionBranch {
 
 /// <p> Describes a custom rewrite or redirect rule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRule {
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
     #[doc(hidden)]
@@ -2765,16 +2807,6 @@ impl CustomRule {
     /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
     pub fn condition(&self) -> std::option::Option<&str> {
         self.condition.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRule");
-        formatter.field("source", &self.source);
-        formatter.field("target", &self.target);
-        formatter.field("status", &self.status);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`CustomRule`](crate::model::CustomRule).
@@ -3003,7 +3035,7 @@ impl AsRef<str> for Platform {
 
 /// <p> Describes the summary for an execution job for an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobSummary {
     /// <p> The Amazon Resource Name (ARN) for the job. </p>
     #[doc(hidden)]
@@ -3069,21 +3101,6 @@ impl JobSummary {
     /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
-    }
-}
-impl std::fmt::Debug for JobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobSummary");
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("commit_id", &self.commit_id);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("commit_time", &self.commit_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("status", &self.status);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("job_type", &self.job_type);
-        formatter.finish()
     }
 }
 /// See [`JobSummary`](crate::model::JobSummary).
@@ -3453,7 +3470,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p> Describes the backend environment for an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendEnvironment {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     #[doc(hidden)]
@@ -3498,18 +3515,6 @@ impl BackendEnvironment {
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BackendEnvironment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendEnvironment");
-        formatter.field("backend_environment_arn", &self.backend_environment_arn);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("deployment_artifacts", &self.deployment_artifacts);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`BackendEnvironment`](crate::model::BackendEnvironment).
@@ -3623,7 +3628,7 @@ impl BackendEnvironment {
 
 /// <p> Describes an artifact. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Artifact {
     /// <p> The file name for the artifact. </p>
     #[doc(hidden)]
@@ -3640,14 +3645,6 @@ impl Artifact {
     /// <p> The unique ID for the artifact. </p>
     pub fn artifact_id(&self) -> std::option::Option<&str> {
         self.artifact_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Artifact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Artifact");
-        formatter.field("artifact_file_name", &self.artifact_file_name);
-        formatter.field("artifact_id", &self.artifact_id);
-        formatter.finish()
     }
 }
 /// See [`Artifact`](crate::model::Artifact).
@@ -3701,7 +3698,7 @@ impl Artifact {
 
 /// <p> Describes an execution job for an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Job {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     #[doc(hidden)]
@@ -3718,14 +3715,6 @@ impl Job {
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::Step]> {
         self.steps.as_deref()
-    }
-}
-impl std::fmt::Debug for Job {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Job");
-        formatter.field("summary", &self.summary);
-        formatter.field("steps", &self.steps);
-        formatter.finish()
     }
 }
 /// See [`Job`](crate::model::Job).
@@ -3785,7 +3774,7 @@ impl Job {
 
 /// <p> Describes an execution step, for an execution job, for an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Step {
     /// <p> The name of the execution step. </p>
     #[doc(hidden)]
@@ -3869,23 +3858,6 @@ impl Step {
     /// <p> The context for the current step. Includes a build image if the step is build. </p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for Step {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Step");
-        formatter.field("step_name", &self.step_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("status", &self.status);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("log_url", &self.log_url);
-        formatter.field("artifacts_url", &self.artifacts_url);
-        formatter.field("test_artifacts_url", &self.test_artifacts_url);
-        formatter.field("test_config_url", &self.test_config_url);
-        formatter.field("screenshots", &self.screenshots);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 /// See [`Step`](crate::model::Step).

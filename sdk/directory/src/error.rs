@@ -2,7 +2,7 @@
 
 /// <p>The operation is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOperationException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl UnsupportedOperationException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperationException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl UnsupportedOperationException {
@@ -91,7 +83,7 @@ impl UnsupportedOperationException {
 
 /// <p>An exception has occurred in Directory Service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl ServiceException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ServiceException {
@@ -180,7 +164,7 @@ impl ServiceException {
 
 /// <p>One or more parameters are not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -193,14 +177,6 @@ impl InvalidParameterException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InvalidParameterException {
@@ -269,7 +245,7 @@ impl InvalidParameterException {
 
 /// <p>The specified entity could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -282,14 +258,6 @@ impl EntityDoesNotExistException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl EntityDoesNotExistException {
@@ -358,7 +326,7 @@ impl EntityDoesNotExistException {
 
 /// <p>A client exception has occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -371,14 +339,6 @@ impl ClientException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ClientException {
@@ -447,7 +407,7 @@ impl ClientException {
 
 /// <p>The specified directory setting is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedSettingsException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -460,14 +420,6 @@ impl UnsupportedSettingsException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedSettingsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedSettingsException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl UnsupportedSettingsException {
@@ -536,7 +488,7 @@ impl UnsupportedSettingsException {
 
 /// <p>The specified directory setting is not compatible with other settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncompatibleSettingsException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -549,14 +501,6 @@ impl IncompatibleSettingsException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for IncompatibleSettingsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatibleSettingsException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl IncompatibleSettingsException {
@@ -625,7 +569,7 @@ impl IncompatibleSettingsException {
 
 /// <p>The specified directory is unavailable or could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryUnavailableException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -638,14 +582,6 @@ impl DirectoryUnavailableException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl DirectoryUnavailableException {
@@ -714,7 +650,7 @@ impl DirectoryUnavailableException {
 
 /// <p>The specified directory does not exist in the system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -727,14 +663,6 @@ impl DirectoryDoesNotExistException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl DirectoryDoesNotExistException {
@@ -803,7 +731,7 @@ impl DirectoryDoesNotExistException {
 
 /// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainControllerLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -816,14 +744,6 @@ impl DomainControllerLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainControllerLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainControllerLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl DomainControllerLimitExceededException {
@@ -892,7 +812,7 @@ impl DomainControllerLimitExceededException {
 
 /// <p>The specified shared target is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -905,14 +825,6 @@ impl InvalidTargetException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidTargetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InvalidTargetException {
@@ -981,7 +893,7 @@ impl InvalidTargetException {
 
 /// <p>The specified directory has not been shared with this Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryNotSharedException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -994,14 +906,6 @@ impl DirectoryNotSharedException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryNotSharedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryNotSharedException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl DirectoryNotSharedException {
@@ -1070,7 +974,7 @@ impl DirectoryNotSharedException {
 
 /// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1083,14 +987,6 @@ impl SnapshotLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SnapshotLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl SnapshotLimitExceededException {
@@ -1159,7 +1055,7 @@ impl SnapshotLimitExceededException {
 
 /// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShareLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1172,14 +1068,6 @@ impl ShareLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ShareLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShareLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ShareLimitExceededException {
@@ -1248,7 +1136,7 @@ impl ShareLimitExceededException {
 
 /// <p>Exception encountered while trying to access your Amazon Web Services organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationsException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1261,14 +1149,6 @@ impl OrganizationsException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationsException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl OrganizationsException {
@@ -1337,7 +1217,7 @@ impl OrganizationsException {
 
 /// <p>The specified directory has already been shared with this Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryAlreadySharedException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1350,14 +1230,6 @@ impl DirectoryAlreadySharedException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryAlreadySharedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryAlreadySharedException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl DirectoryAlreadySharedException {
@@ -1426,7 +1298,7 @@ impl DirectoryAlreadySharedException {
 
 /// <p>Client authentication is not available in this region at this time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1439,14 +1311,6 @@ impl AccessDeniedException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -1515,7 +1379,7 @@ impl AccessDeniedException {
 
 /// <p>The user provided a username that does not exist in your directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1528,14 +1392,6 @@ impl UserDoesNotExistException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UserDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl UserDoesNotExistException {
@@ -1604,7 +1460,7 @@ impl UserDoesNotExistException {
 
 /// <p>The new password provided by the user does not meet the password complexity requirements defined in your directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPasswordException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1617,14 +1473,6 @@ impl InvalidPasswordException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidPasswordException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPasswordException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InvalidPasswordException {
@@ -1693,7 +1541,7 @@ impl InvalidPasswordException {
 
 /// <p>The certificate PEM that was provided has incorrect encoding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCertificateException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1706,14 +1554,6 @@ impl InvalidCertificateException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidCertificateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCertificateException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InvalidCertificateException {
@@ -1782,7 +1622,7 @@ impl InvalidCertificateException {
 
 /// <p>The certificate could not be added because the certificate limit has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1795,14 +1635,6 @@ impl CertificateLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CertificateLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl CertificateLimitExceededException {
@@ -1871,7 +1703,7 @@ impl CertificateLimitExceededException {
 
 /// <p>The certificate has already been registered into the system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateAlreadyExistsException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1884,14 +1716,6 @@ impl CertificateAlreadyExistsException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CertificateAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl CertificateAlreadyExistsException {
@@ -1960,7 +1784,7 @@ impl CertificateAlreadyExistsException {
 
 /// <p>The <code>NextToken</code> value is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNextTokenException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -1973,14 +1797,6 @@ impl InvalidNextTokenException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidNextTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextTokenException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InvalidNextTokenException {
@@ -2049,7 +1865,7 @@ impl InvalidNextTokenException {
 
 /// <p>The account does not have sufficient permission to perform the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientPermissionsException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2062,14 +1878,6 @@ impl InsufficientPermissionsException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InsufficientPermissionsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientPermissionsException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InsufficientPermissionsException {
@@ -2138,7 +1946,7 @@ impl InsufficientPermissionsException {
 
 /// <p>An authentication error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationFailedException {
     /// <p>The textual message for the exception.</p>
     #[doc(hidden)]
@@ -2151,14 +1959,6 @@ impl AuthenticationFailedException {
     /// <p>The identifier of the request that caused the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthenticationFailedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationFailedException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl AuthenticationFailedException {
@@ -2227,7 +2027,7 @@ impl AuthenticationFailedException {
 
 /// <p>The specified entity already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityAlreadyExistsException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2240,14 +2040,6 @@ impl EntityAlreadyExistsException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl EntityAlreadyExistsException {
@@ -2316,7 +2108,7 @@ impl EntityAlreadyExistsException {
 
 /// <p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoAvailableCertificateException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2329,14 +2121,6 @@ impl NoAvailableCertificateException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NoAvailableCertificateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoAvailableCertificateException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl NoAvailableCertificateException {
@@ -2405,7 +2189,7 @@ impl NoAvailableCertificateException {
 
 /// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLdapsStatusException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2418,14 +2202,6 @@ impl InvalidLdapsStatusException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidLdapsStatusException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLdapsStatusException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InvalidLdapsStatusException {
@@ -2497,7 +2273,7 @@ impl InvalidLdapsStatusException {
 
 /// <p>Client authentication is already enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClientAuthStatusException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2510,14 +2286,6 @@ impl InvalidClientAuthStatusException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidClientAuthStatusException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClientAuthStatusException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InvalidClientAuthStatusException {
@@ -2586,7 +2354,7 @@ impl InvalidClientAuthStatusException {
 
 /// <p>The certificate is not present in the system for describe or deregister activities.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2599,14 +2367,6 @@ impl CertificateDoesNotExistException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CertificateDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl CertificateDoesNotExistException {
@@ -2675,7 +2435,7 @@ impl CertificateDoesNotExistException {
 
 /// <p>The certificate is being used for the LDAP security connection and cannot be removed without disabling LDAP security.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateInUseException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2688,14 +2448,6 @@ impl CertificateInUseException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CertificateInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateInUseException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl CertificateInUseException {
@@ -2764,7 +2516,7 @@ impl CertificateInUseException {
 
 /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2777,14 +2529,6 @@ impl DirectoryLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl DirectoryLimitExceededException {
@@ -2853,7 +2597,7 @@ impl DirectoryLimitExceededException {
 
 /// <p>The maximum allowed number of tags was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2866,14 +2610,6 @@ impl TagLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TagLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl TagLimitExceededException {
@@ -2942,7 +2678,7 @@ impl TagLimitExceededException {
 
 /// <p>You have reached the limit for maximum number of simultaneous Region replications per directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegionLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -2955,14 +2691,6 @@ impl RegionLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegionLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegionLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl RegionLimitExceededException {
@@ -3031,7 +2759,7 @@ impl RegionLimitExceededException {
 
 /// <p>The Region you specified is the same Region where the Managed Microsoft AD directory was created. Specify a different Region and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryAlreadyInRegionException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -3044,14 +2772,6 @@ impl DirectoryAlreadyInRegionException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryAlreadyInRegionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryAlreadyInRegionException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl DirectoryAlreadyInRegionException {
@@ -3120,7 +2840,7 @@ impl DirectoryAlreadyInRegionException {
 
 /// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpRouteLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     #[doc(hidden)]
@@ -3133,14 +2853,6 @@ impl IpRouteLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for IpRouteLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpRouteLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl IpRouteLimitExceededException {

@@ -1451,7 +1451,7 @@ impl ListFragmentsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFragmentsInput {
     /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
     #[doc(hidden)]
@@ -1491,21 +1491,10 @@ impl ListFragmentsInput {
         self.fragment_selector.as_ref()
     }
 }
-impl std::fmt::Debug for ListFragmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFragmentsInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("fragment_selector", &self.fragment_selector);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaForFragmentListInput {
     /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
     #[doc(hidden)]
@@ -1531,19 +1520,10 @@ impl GetMediaForFragmentListInput {
         self.fragments.as_deref()
     }
 }
-impl std::fmt::Debug for GetMediaForFragmentListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaForFragmentListInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("fragments", &self.fragments);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImagesInput {
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     #[doc(hidden)]
@@ -1646,28 +1626,10 @@ impl GetImagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImagesInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("image_selector_type", &self.image_selector_type);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("end_timestamp", &self.end_timestamp);
-        formatter.field("sampling_interval", &self.sampling_interval);
-        formatter.field("format", &self.format);
-        formatter.field("format_config", &self.format_config);
-        formatter.field("width_pixels", &self.width_pixels);
-        formatter.field("height_pixels", &self.height_pixels);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHlsStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -1795,31 +1757,10 @@ impl GetHlsStreamingSessionUrlInput {
         self.max_media_playlist_fragment_results
     }
 }
-impl std::fmt::Debug for GetHlsStreamingSessionUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHlsStreamingSessionUrlInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("playback_mode", &self.playback_mode);
-        formatter.field("hls_fragment_selector", &self.hls_fragment_selector);
-        formatter.field("container_format", &self.container_format);
-        formatter.field("discontinuity_mode", &self.discontinuity_mode);
-        formatter.field(
-            "display_fragment_timestamp",
-            &self.display_fragment_timestamp,
-        );
-        formatter.field("expires", &self.expires);
-        formatter.field(
-            "max_media_playlist_fragment_results",
-            &self.max_media_playlist_fragment_results,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDashStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -1928,30 +1869,10 @@ impl GetDashStreamingSessionUrlInput {
         self.max_manifest_fragment_results
     }
 }
-impl std::fmt::Debug for GetDashStreamingSessionUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDashStreamingSessionUrlInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("playback_mode", &self.playback_mode);
-        formatter.field(
-            "display_fragment_timestamp",
-            &self.display_fragment_timestamp,
-        );
-        formatter.field("display_fragment_number", &self.display_fragment_number);
-        formatter.field("dash_fragment_selector", &self.dash_fragment_selector);
-        formatter.field("expires", &self.expires);
-        formatter.field(
-            "max_manifest_fragment_results",
-            &self.max_manifest_fragment_results,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClipInput {
     /// <p>The name of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
@@ -1981,14 +1902,5 @@ impl GetClipInput {
         &self,
     ) -> std::option::Option<&crate::model::ClipFragmentSelector> {
         self.clip_fragment_selector.as_ref()
-    }
-}
-impl std::fmt::Debug for GetClipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetClipInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("clip_fragment_selector", &self.clip_fragment_selector);
-        formatter.finish()
     }
 }

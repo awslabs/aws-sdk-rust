@@ -176,7 +176,7 @@ impl AsRef<str> for DataChecksumAlgorithm {
 
 /// Object
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupObject {
     /// Object name
     #[doc(hidden)]
@@ -223,18 +223,6 @@ impl BackupObject {
     /// Object token
     pub fn object_token(&self) -> std::option::Option<&str> {
         self.object_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupObject");
-        formatter.field("name", &self.name);
-        formatter.field("chunks_count", &self.chunks_count);
-        formatter.field("metadata_string", &self.metadata_string);
-        formatter.field("object_checksum", &self.object_checksum);
-        formatter.field("object_checksum_algorithm", &self.object_checksum_algorithm);
-        formatter.field("object_token", &self.object_token);
-        formatter.finish()
     }
 }
 /// See [`BackupObject`](crate::model::BackupObject).
@@ -346,7 +334,7 @@ impl BackupObject {
 
 /// Chunk
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Chunk {
     /// Chunk index
     #[doc(hidden)]
@@ -384,17 +372,6 @@ impl Chunk {
     /// Chunk token
     pub fn chunk_token(&self) -> std::option::Option<&str> {
         self.chunk_token.as_deref()
-    }
-}
-impl std::fmt::Debug for Chunk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Chunk");
-        formatter.field("index", &self.index);
-        formatter.field("length", &self.length);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("chunk_token", &self.chunk_token);
-        formatter.finish()
     }
 }
 /// See [`Chunk`](crate::model::Chunk).

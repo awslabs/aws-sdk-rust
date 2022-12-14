@@ -92,7 +92,7 @@ impl AsRef<str> for SelectiveAuth {
 
 /// <p>Contains information about the configurable settings for a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Setting {
     /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
@@ -111,14 +111,6 @@ impl Setting {
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Setting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Setting");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Setting`](crate::model::Setting).
@@ -252,7 +244,7 @@ impl std::fmt::Debug for RadiusSettings {
 pub mod radius_settings {
 
     /// A builder for [`RadiusSettings`](crate::model::RadiusSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) radius_servers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) radius_port: std::option::Option<i32>,
@@ -380,6 +372,20 @@ pub mod radius_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("radius_servers", &self.radius_servers);
+            formatter.field("radius_port", &self.radius_port);
+            formatter.field("radius_timeout", &self.radius_timeout);
+            formatter.field("radius_retries", &self.radius_retries);
+            formatter.field("shared_secret", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_protocol", &self.authentication_protocol);
+            formatter.field("display_label", &self.display_label);
+            formatter.field("use_same_username", &self.use_same_username);
+            formatter.finish()
+        }
+    }
 }
 impl RadiusSettings {
     /// Creates a new builder-style object to manufacture [`RadiusSettings`](crate::model::RadiusSettings).
@@ -492,7 +498,7 @@ impl AsRef<str> for RadiusAuthenticationProtocol {
 
 /// <p>Identifier that contains details about the directory consumer account with whom the directory is being unshared.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnshareTarget {
     /// <p>Identifier of the directory consumer account.</p>
     #[doc(hidden)]
@@ -509,14 +515,6 @@ impl UnshareTarget {
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for UnshareTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnshareTarget");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`UnshareTarget`](crate::model::UnshareTarget).
@@ -742,7 +740,7 @@ impl AsRef<str> for ShareMethod {
 
 /// <p>Identifier that contains details about the directory consumer account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShareTarget {
     /// <p>Identifier of the directory consumer account.</p>
     #[doc(hidden)]
@@ -759,14 +757,6 @@ impl ShareTarget {
     /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ShareTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShareTarget");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ShareTarget`](crate::model::ShareTarget).
@@ -817,7 +807,7 @@ impl ShareTarget {
 
 /// <p>Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
     #[doc(hidden)]
@@ -827,13 +817,6 @@ impl ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
     pub fn ocsp_url(&self) -> std::option::Option<&str> {
         self.ocsp_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ClientCertAuthSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientCertAuthSettings");
-        formatter.field("ocsp_url", &self.ocsp_url);
-        formatter.finish()
     }
 }
 /// See [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
@@ -962,7 +945,7 @@ impl AsRef<str> for CertificateType {
 
 /// <p>Metadata assigned to a directory consisting of a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     #[doc(hidden)]
@@ -979,14 +962,6 @@ impl Tag {
     /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1037,7 +1012,7 @@ impl Tag {
 
 /// <p>Information about a schema extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaExtensionInfo {
     /// <p>The identifier of the directory to which the schema extension is applied.</p>
     #[doc(hidden)]
@@ -1091,22 +1066,6 @@ impl SchemaExtensionInfo {
     /// <p>The date and time that the schema extension was completed.</p>
     pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SchemaExtensionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaExtensionInfo");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("schema_extension_id", &self.schema_extension_id);
-        formatter.field("description", &self.description);
-        formatter.field("schema_extension_status", &self.schema_extension_status);
-        formatter.field(
-            "schema_extension_status_reason",
-            &self.schema_extension_status_reason,
-        );
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
     }
 }
 /// See [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
@@ -1376,7 +1335,7 @@ impl AsRef<str> for SchemaExtensionStatus {
 
 /// <p>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogSubscription {
     /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
     #[doc(hidden)]
@@ -1402,18 +1361,6 @@ impl LogSubscription {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_created_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LogSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogSubscription");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field(
-            "subscription_created_date_time",
-            &self.subscription_created_date_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`LogSubscription`](crate::model::LogSubscription).
@@ -1482,7 +1429,7 @@ impl LogSubscription {
 
 /// <p>Information about one or more IP address blocks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpRouteInfo {
     /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
     #[doc(hidden)]
@@ -1527,18 +1474,6 @@ impl IpRouteInfo {
     /// <p>Description of the <code>IpRouteInfo</code>.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for IpRouteInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpRouteInfo");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("cidr_ip", &self.cidr_ip);
-        formatter.field("ip_route_status_msg", &self.ip_route_status_msg);
-        formatter.field("added_date_time", &self.added_date_time);
-        formatter.field("ip_route_status_reason", &self.ip_route_status_reason);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`IpRouteInfo`](crate::model::IpRouteInfo).
@@ -1763,7 +1698,7 @@ impl AsRef<str> for IpRouteStatusMsg {
 
 /// <p>Contains general information about a certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateInfo {
     /// <p>The identifier of the certificate.</p>
     #[doc(hidden)]
@@ -1801,17 +1736,6 @@ impl CertificateInfo {
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateInfo");
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("common_name", &self.common_name);
-        formatter.field("state", &self.state);
-        formatter.field("expiry_date_time", &self.expiry_date_time);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`CertificateInfo`](crate::model::CertificateInfo).
@@ -2027,7 +1951,7 @@ impl AsRef<str> for CertificateState {
 
 /// <p>Contains manual snapshot limit information for a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotLimits {
     /// <p>The maximum number of manual snapshots allowed.</p>
     #[doc(hidden)]
@@ -2051,21 +1975,6 @@ impl SnapshotLimits {
     /// <p>Indicates if the manual snapshot limit has been reached.</p>
     pub fn manual_snapshots_limit_reached(&self) -> bool {
         self.manual_snapshots_limit_reached
-    }
-}
-impl std::fmt::Debug for SnapshotLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotLimits");
-        formatter.field("manual_snapshots_limit", &self.manual_snapshots_limit);
-        formatter.field(
-            "manual_snapshots_current_count",
-            &self.manual_snapshots_current_count,
-        );
-        formatter.field(
-            "manual_snapshots_limit_reached",
-            &self.manual_snapshots_limit_reached,
-        );
-        formatter.finish()
     }
 }
 /// See [`SnapshotLimits`](crate::model::SnapshotLimits).
@@ -2136,7 +2045,7 @@ impl SnapshotLimits {
 
 /// <p>Contains directory limit information for a Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryLimits {
     /// <p>The maximum number of cloud directories allowed in the Region.</p>
     #[doc(hidden)]
@@ -2202,48 +2111,6 @@ impl DirectoryLimits {
     /// <p>Indicates if the connected directory limit has been reached.</p>
     pub fn connected_directories_limit_reached(&self) -> bool {
         self.connected_directories_limit_reached
-    }
-}
-impl std::fmt::Debug for DirectoryLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryLimits");
-        formatter.field(
-            "cloud_only_directories_limit",
-            &self.cloud_only_directories_limit,
-        );
-        formatter.field(
-            "cloud_only_directories_current_count",
-            &self.cloud_only_directories_current_count,
-        );
-        formatter.field(
-            "cloud_only_directories_limit_reached",
-            &self.cloud_only_directories_limit_reached,
-        );
-        formatter.field(
-            "cloud_only_microsoft_ad_limit",
-            &self.cloud_only_microsoft_ad_limit,
-        );
-        formatter.field(
-            "cloud_only_microsoft_ad_current_count",
-            &self.cloud_only_microsoft_ad_current_count,
-        );
-        formatter.field(
-            "cloud_only_microsoft_ad_limit_reached",
-            &self.cloud_only_microsoft_ad_limit_reached,
-        );
-        formatter.field(
-            "connected_directories_limit",
-            &self.connected_directories_limit,
-        );
-        formatter.field(
-            "connected_directories_current_count",
-            &self.connected_directories_current_count,
-        );
-        formatter.field(
-            "connected_directories_limit_reached",
-            &self.connected_directories_limit_reached,
-        );
-        formatter.finish()
     }
 }
 /// See [`DirectoryLimits`](crate::model::DirectoryLimits).
@@ -2582,7 +2449,7 @@ impl AsRef<str> for ClientAuthenticationType {
 
 /// <p>Describes a trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Trust {
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
     #[doc(hidden)]
@@ -2662,26 +2529,6 @@ impl Trust {
     /// <p>Current state of selective authentication for the trust.</p>
     pub fn selective_auth(&self) -> std::option::Option<&crate::model::SelectiveAuth> {
         self.selective_auth.as_ref()
-    }
-}
-impl std::fmt::Debug for Trust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Trust");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("trust_id", &self.trust_id);
-        formatter.field("remote_domain_name", &self.remote_domain_name);
-        formatter.field("trust_type", &self.trust_type);
-        formatter.field("trust_direction", &self.trust_direction);
-        formatter.field("trust_state", &self.trust_state);
-        formatter.field("created_date_time", &self.created_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field(
-            "state_last_updated_date_time",
-            &self.state_last_updated_date_time,
-        );
-        formatter.field("trust_state_reason", &self.trust_state_reason);
-        formatter.field("selective_auth", &self.selective_auth);
-        formatter.finish()
     }
 }
 /// See [`Trust`](crate::model::Trust).
@@ -3199,7 +3046,7 @@ impl AsRef<str> for TrustType {
 
 /// <p>Describes a directory snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The directory identifier.</p>
     #[doc(hidden)]
@@ -3244,18 +3091,6 @@ impl Snapshot {
     /// <p>The date and time that the snapshot was taken.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Snapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Snapshot");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
@@ -3632,7 +3467,7 @@ impl std::fmt::Debug for SharedDirectory {
 pub mod shared_directory {
 
     /// A builder for [`SharedDirectory`](crate::model::SharedDirectory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
         pub(crate) owner_directory_id: std::option::Option<std::string::String>,
@@ -3772,6 +3607,21 @@ pub mod shared_directory {
                 created_date_time: self.created_date_time,
                 last_updated_date_time: self.last_updated_date_time,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("owner_account_id", &self.owner_account_id);
+            formatter.field("owner_directory_id", &self.owner_directory_id);
+            formatter.field("share_method", &self.share_method);
+            formatter.field("shared_account_id", &self.shared_account_id);
+            formatter.field("shared_directory_id", &self.shared_directory_id);
+            formatter.field("share_status", &self.share_status);
+            formatter.field("share_notes", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_date_time", &self.created_date_time);
+            formatter.field("last_updated_date_time", &self.last_updated_date_time);
+            formatter.finish()
         }
     }
 }
@@ -3919,7 +3769,7 @@ impl AsRef<str> for ShareStatus {
 
 /// <p>Contains information about the specified configurable setting for a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SettingEntry {
     /// <p>The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.</p>
     #[doc(hidden)]
@@ -4002,22 +3852,6 @@ impl SettingEntry {
     /// <p>The date and time when the request to update a directory setting was last submitted.</p>
     pub fn last_requested_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_requested_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SettingEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SettingEntry");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("applied_value", &self.applied_value);
-        formatter.field("requested_value", &self.requested_value);
-        formatter.field("request_status", &self.request_status);
-        formatter.field("request_detailed_status", &self.request_detailed_status);
-        formatter.field("request_status_message", &self.request_status_message);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("last_requested_date_time", &self.last_requested_date_time);
-        formatter.finish()
     }
 }
 /// See [`SettingEntry`](crate::model::SettingEntry).
@@ -4317,7 +4151,7 @@ impl AsRef<str> for DirectoryConfigurationStatus {
 
 /// <p>The replicated Region information for a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegionDescription {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -4385,27 +4219,6 @@ impl RegionDescription {
     /// <p>The date and time that the Region description was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for RegionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegionDescription");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("region_name", &self.region_name);
-        formatter.field("region_type", &self.region_type);
-        formatter.field("status", &self.status);
-        formatter.field("vpc_settings", &self.vpc_settings);
-        formatter.field(
-            "desired_number_of_domain_controllers",
-            &self.desired_number_of_domain_controllers,
-        );
-        formatter.field("launch_time", &self.launch_time);
-        formatter.field(
-            "status_last_updated_date_time",
-            &self.status_last_updated_date_time,
-        );
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`RegionDescription`](crate::model::RegionDescription).
@@ -4563,7 +4376,7 @@ impl RegionDescription {
 
 /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryVpcSettings {
     /// <p>The identifier of the VPC in which to create the directory.</p>
     #[doc(hidden)]
@@ -4580,14 +4393,6 @@ impl DirectoryVpcSettings {
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryVpcSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryVpcSettings");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
     }
 }
 /// See [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
@@ -4884,7 +4689,7 @@ impl AsRef<str> for RegionType {
 
 /// <p>Contains general information about the LDAPS settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LdapsSettingInfo {
     /// <p>The state of the LDAPS settings.</p>
     #[doc(hidden)]
@@ -4908,15 +4713,6 @@ impl LdapsSettingInfo {
     /// <p>The date and time when the LDAPS settings were last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LdapsSettingInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LdapsSettingInfo");
-        formatter.field("ldaps_status", &self.ldaps_status);
-        formatter.field("ldaps_status_reason", &self.ldaps_status_reason);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
@@ -5088,7 +4884,7 @@ impl AsRef<str> for LdapsStatus {
 
 /// <p>Information about Amazon SNS topic and Directory Service directory associations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTopic {
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
     #[doc(hidden)]
@@ -5126,17 +4922,6 @@ impl EventTopic {
     /// <p>The topic registration status.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::TopicStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for EventTopic {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTopic");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("topic_name", &self.topic_name);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("created_date_time", &self.created_date_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`EventTopic`](crate::model::EventTopic).
@@ -5326,7 +5111,7 @@ impl AsRef<str> for TopicStatus {
 
 /// <p>Contains information about the domain controllers for a specified directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainController {
     /// <p>Identifier of the directory where the domain controller resides.</p>
     #[doc(hidden)]
@@ -5401,25 +5186,6 @@ impl DomainController {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainController {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainController");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("domain_controller_id", &self.domain_controller_id);
-        formatter.field("dns_ip_addr", &self.dns_ip_addr);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("launch_time", &self.launch_time);
-        formatter.field(
-            "status_last_updated_date_time",
-            &self.status_last_updated_date_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`DomainController`](crate::model::DomainController).
@@ -5947,7 +5713,7 @@ impl std::fmt::Debug for DirectoryDescription {
 pub mod directory_description {
 
     /// A builder for [`DirectoryDescription`](crate::model::DirectoryDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6326,6 +6092,46 @@ pub mod directory_description {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("name", &self.name);
+            formatter.field("short_name", &self.short_name);
+            formatter.field("size", &self.size);
+            formatter.field("edition", &self.edition);
+            formatter.field("alias", &self.alias);
+            formatter.field("access_url", &self.access_url);
+            formatter.field("description", &self.description);
+            formatter.field("dns_ip_addrs", &self.dns_ip_addrs);
+            formatter.field("stage", &self.stage);
+            formatter.field("share_status", &self.share_status);
+            formatter.field("share_method", &self.share_method);
+            formatter.field("share_notes", &"*** Sensitive Data Redacted ***");
+            formatter.field("launch_time", &self.launch_time);
+            formatter.field(
+                "stage_last_updated_date_time",
+                &self.stage_last_updated_date_time,
+            );
+            formatter.field("r#type", &self.r#type);
+            formatter.field("vpc_settings", &self.vpc_settings);
+            formatter.field("connect_settings", &self.connect_settings);
+            formatter.field("radius_settings", &self.radius_settings);
+            formatter.field("radius_status", &self.radius_status);
+            formatter.field("stage_reason", &self.stage_reason);
+            formatter.field("sso_enabled", &self.sso_enabled);
+            formatter.field(
+                "desired_number_of_domain_controllers",
+                &self.desired_number_of_domain_controllers,
+            );
+            formatter.field(
+                "owner_directory_description",
+                &self.owner_directory_description,
+            );
+            formatter.field("regions_info", &self.regions_info);
+            formatter.finish()
+        }
+    }
 }
 impl DirectoryDescription {
     /// Creates a new builder-style object to manufacture [`DirectoryDescription`](crate::model::DirectoryDescription).
@@ -6336,7 +6142,7 @@ impl DirectoryDescription {
 
 /// <p>Provides information about the Regions that are configured for multi-Region replication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegionsInfo {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
     #[doc(hidden)]
@@ -6353,14 +6159,6 @@ impl RegionsInfo {
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
     pub fn additional_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_regions.as_deref()
-    }
-}
-impl std::fmt::Debug for RegionsInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegionsInfo");
-        formatter.field("primary_region", &self.primary_region);
-        formatter.field("additional_regions", &self.additional_regions);
-        formatter.finish()
     }
 }
 /// See [`RegionsInfo`](crate::model::RegionsInfo).
@@ -6423,7 +6221,7 @@ impl RegionsInfo {
 
 /// <p>Describes the directory owner account details that have been shared to the directory consumer account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OwnerDirectoryDescription {
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
     #[doc(hidden)]
@@ -6470,18 +6268,6 @@ impl OwnerDirectoryDescription {
     /// <p>Information about the status of the RADIUS server.</p>
     pub fn radius_status(&self) -> std::option::Option<&crate::model::RadiusStatus> {
         self.radius_status.as_ref()
-    }
-}
-impl std::fmt::Debug for OwnerDirectoryDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OwnerDirectoryDescription");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("dns_ip_addrs", &self.dns_ip_addrs);
-        formatter.field("vpc_settings", &self.vpc_settings);
-        formatter.field("radius_settings", &self.radius_settings);
-        formatter.field("radius_status", &self.radius_status);
-        formatter.finish()
     }
 }
 /// See [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
@@ -6696,7 +6482,7 @@ impl AsRef<str> for RadiusStatus {
 
 /// <p>Contains information about the directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryVpcSettingsDescription {
     /// <p>The identifier of the VPC that the directory is in.</p>
     #[doc(hidden)]
@@ -6727,16 +6513,6 @@ impl DirectoryVpcSettingsDescription {
     /// <p>The list of Availability Zones that the directory is in.</p>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryVpcSettingsDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryVpcSettingsDescription");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_id", &self.security_group_id);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.finish()
     }
 }
 /// See [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
@@ -6832,7 +6608,7 @@ impl DirectoryVpcSettingsDescription {
 
 /// <p>Contains information about an AD Connector directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryConnectSettingsDescription {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
     #[doc(hidden)]
@@ -6877,18 +6653,6 @@ impl DirectoryConnectSettingsDescription {
     /// <p>The IP addresses of the AD Connector servers.</p>
     pub fn connect_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.connect_ips.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryConnectSettingsDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryConnectSettingsDescription");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("customer_user_name", &self.customer_user_name);
-        formatter.field("security_group_id", &self.security_group_id);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("connect_ips", &self.connect_ips);
-        formatter.finish()
     }
 }
 /// See [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
@@ -7305,7 +7069,7 @@ impl AsRef<str> for DirectorySize {
 
 /// <p>Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionalForwarder {
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
     #[doc(hidden)]
@@ -7329,15 +7093,6 @@ impl ConditionalForwarder {
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub fn replication_scope(&self) -> std::option::Option<&crate::model::ReplicationScope> {
         self.replication_scope.as_ref()
-    }
-}
-impl std::fmt::Debug for ConditionalForwarder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionalForwarder");
-        formatter.field("remote_domain_name", &self.remote_domain_name);
-        formatter.field("dns_ip_addrs", &self.dns_ip_addrs);
-        formatter.field("replication_scope", &self.replication_scope);
-        formatter.finish()
     }
 }
 /// See [`ConditionalForwarder`](crate::model::ConditionalForwarder).
@@ -7500,7 +7255,7 @@ impl AsRef<str> for ReplicationScope {
 
 /// <p>Contains information about a client authentication method for a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientAuthenticationSettingInfo {
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
     #[doc(hidden)]
@@ -7524,15 +7279,6 @@ impl ClientAuthenticationSettingInfo {
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ClientAuthenticationSettingInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientAuthenticationSettingInfo");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
@@ -7696,7 +7442,7 @@ impl AsRef<str> for ClientAuthenticationStatus {
 
 /// <p>Information about the certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The identifier of the certificate.</p>
     #[doc(hidden)]
@@ -7757,20 +7503,6 @@ impl Certificate {
         &self,
     ) -> std::option::Option<&crate::model::ClientCertAuthSettings> {
         self.client_cert_auth_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("common_name", &self.common_name);
-        formatter.field("registered_date_time", &self.registered_date_time);
-        formatter.field("expiry_date_time", &self.expiry_date_time);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("client_cert_auth_settings", &self.client_cert_auth_settings);
-        formatter.finish()
     }
 }
 /// See [`Certificate`](crate::model::Certificate).
@@ -7915,7 +7647,7 @@ impl Certificate {
 
 /// <p>Contains information about a computer account in a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Computer {
     /// <p>The identifier of the computer.</p>
     #[doc(hidden)]
@@ -7939,15 +7671,6 @@ impl Computer {
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
     pub fn computer_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.computer_attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for Computer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Computer");
-        formatter.field("computer_id", &self.computer_id);
-        formatter.field("computer_name", &self.computer_name);
-        formatter.field("computer_attributes", &self.computer_attributes);
-        formatter.finish()
     }
 }
 /// See [`Computer`](crate::model::Computer).
@@ -8022,7 +7745,7 @@ impl Computer {
 
 /// <p>Represents a named directory attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
@@ -8039,14 +7762,6 @@ impl Attribute {
     /// <p>The value of the attribute.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Attribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attribute");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
@@ -8097,7 +7812,7 @@ impl Attribute {
 
 /// <p>Contains information for the <code>ConnectDirectory</code> operation when an AD Connector directory is being created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryConnectSettings {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
     #[doc(hidden)]
@@ -8138,16 +7853,6 @@ impl DirectoryConnectSettings {
     /// </ul>
     pub fn customer_user_name(&self) -> std::option::Option<&str> {
         self.customer_user_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectoryConnectSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryConnectSettings");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("customer_dns_ips", &self.customer_dns_ips);
-        formatter.field("customer_user_name", &self.customer_user_name);
-        formatter.finish()
     }
 }
 /// See [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
@@ -8253,7 +7958,7 @@ impl DirectoryConnectSettings {
 
 /// <p>IP address block. This is often the address block of the DNS server used for your self-managed domain. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpRoute {
     /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
     #[doc(hidden)]
@@ -8270,14 +7975,6 @@ impl IpRoute {
     /// <p>Description of the address block.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for IpRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpRoute");
-        formatter.field("cidr_ip", &self.cidr_ip);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`IpRoute`](crate::model::IpRoute).

@@ -1145,7 +1145,7 @@ impl StartChangeSetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChangeSetInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1178,20 +1178,10 @@ impl StartChangeSetInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChangeSetInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("change_set", &self.change_set);
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1238,22 +1228,10 @@ impl ListEntitiesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitiesInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("entity_type", &self.entity_type);
-        formatter.field("filter_list", &self.filter_list);
-        formatter.field("sort", &self.sort);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChangeSetsInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1293,21 +1271,10 @@ impl ListChangeSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChangeSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChangeSetsInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("filter_list", &self.filter_list);
-        formatter.field("sort", &self.sort);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEntityInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1326,18 +1293,10 @@ impl DescribeEntityInput {
         self.entity_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEntityInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1356,18 +1315,10 @@ impl DescribeChangeSetInput {
         self.change_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChangeSetInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("change_set_id", &self.change_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
     #[doc(hidden)]
@@ -1384,13 +1335,5 @@ impl CancelChangeSetInput {
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelChangeSetInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("change_set_id", &self.change_set_id);
-        formatter.finish()
     }
 }

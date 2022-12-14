@@ -5035,7 +5035,7 @@ impl UpdateQueueInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQueueInput {
     /// The new description for the queue, if you are changing it.
     #[doc(hidden)]
@@ -5070,20 +5070,10 @@ impl UpdateQueueInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQueueInput");
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("reservation_plan_settings", &self.reservation_plan_settings);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePresetInput {
     /// The new category for the preset, if you are changing it.
     #[doc(hidden)]
@@ -5116,20 +5106,10 @@ impl UpdatePresetInput {
         self.settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePresetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePresetInput");
-        formatter.field("category", &self.category);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobTemplateInput {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     #[doc(hidden)]
@@ -5201,25 +5181,10 @@ impl UpdateJobTemplateInput {
         self.status_update_interval.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateJobTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobTemplateInput");
-        formatter.field("acceleration_settings", &self.acceleration_settings);
-        formatter.field("category", &self.category);
-        formatter.field("description", &self.description);
-        formatter.field("hop_destinations", &self.hop_destinations);
-        formatter.field("name", &self.name);
-        formatter.field("priority", &self.priority);
-        formatter.field("queue", &self.queue);
-        formatter.field("settings", &self.settings);
-        formatter.field("status_update_interval", &self.status_update_interval);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
     #[doc(hidden)]
@@ -5238,18 +5203,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name.
     #[doc(hidden)]
@@ -5272,18 +5229,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPolicyInput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
@@ -5295,17 +5244,10 @@ impl PutPolicyInput {
         self.policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPolicyInput");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) of the resource that you want to list tags for. To get the ARN, send a GET request with the resource name.
     #[doc(hidden)]
@@ -5317,17 +5259,10 @@ impl ListTagsForResourceInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueuesInput {
     /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
     #[doc(hidden)]
@@ -5360,20 +5295,10 @@ impl ListQueuesInput {
         self.order.as_ref()
     }
 }
-impl std::fmt::Debug for ListQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueuesInput");
-        formatter.field("list_by", &self.list_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("order", &self.order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPresetsInput {
     /// Optionally, specify a preset category to limit responses to only presets from that category.
     #[doc(hidden)]
@@ -5413,21 +5338,10 @@ impl ListPresetsInput {
         self.order.as_ref()
     }
 }
-impl std::fmt::Debug for ListPresetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPresetsInput");
-        formatter.field("category", &self.category);
-        formatter.field("list_by", &self.list_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("order", &self.order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobTemplatesInput {
     /// Optionally, specify a job template category to limit responses to only job templates from that category.
     #[doc(hidden)]
@@ -5467,21 +5381,10 @@ impl ListJobTemplatesInput {
         self.order.as_ref()
     }
 }
-impl std::fmt::Debug for ListJobTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobTemplatesInput");
-        formatter.field("category", &self.category);
-        formatter.field("list_by", &self.list_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("order", &self.order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// Optional. Number of jobs, up to twenty, that will be returned at one time.
     #[doc(hidden)]
@@ -5521,21 +5424,10 @@ impl ListJobsInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("order", &self.order);
-        formatter.field("queue", &self.queue);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueueInput {
     /// The name of the queue that you want information about.
     #[doc(hidden)]
@@ -5547,17 +5439,10 @@ impl GetQueueInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueueInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPresetInput {
     /// The name of the preset.
     #[doc(hidden)]
@@ -5569,28 +5454,15 @@ impl GetPresetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPresetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPresetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyInput {}
-impl std::fmt::Debug for GetPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobTemplateInput {
     /// The name of the job template.
     #[doc(hidden)]
@@ -5602,17 +5474,10 @@ impl GetJobTemplateInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobTemplateInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobInput {
     /// the job ID of the job.
     #[doc(hidden)]
@@ -5624,17 +5489,10 @@ impl GetJobInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateCertificateInput {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
     #[doc(hidden)]
@@ -5646,17 +5504,10 @@ impl DisassociateCertificateInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateCertificateInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// DescribeEndpointsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointsInput {
     /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
     #[doc(hidden)]
@@ -5682,19 +5533,10 @@ impl DescribeEndpointsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("mode", &self.mode);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueueInput {
     /// The name of the queue that you want to delete.
     #[doc(hidden)]
@@ -5706,17 +5548,10 @@ impl DeleteQueueInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueueInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePresetInput {
     /// The name of the preset to be deleted.
     #[doc(hidden)]
@@ -5728,28 +5563,15 @@ impl DeletePresetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePresetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePresetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePolicyInput {}
-impl std::fmt::Debug for DeletePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePolicyInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobTemplateInput {
     /// The name of the job template to be deleted.
     #[doc(hidden)]
@@ -5761,17 +5583,10 @@ impl DeleteJobTemplateInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteJobTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJobTemplateInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQueueInput {
     /// Optional. A description of the queue that you are creating.
     #[doc(hidden)]
@@ -5824,22 +5639,10 @@ impl CreateQueueInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQueueInput");
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("reservation_plan_settings", &self.reservation_plan_settings);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePresetInput {
     /// Optional. A category for the preset you are creating.
     #[doc(hidden)]
@@ -5883,21 +5686,10 @@ impl CreatePresetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePresetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePresetInput");
-        formatter.field("category", &self.category);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("settings", &self.settings);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobTemplateInput {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     #[doc(hidden)]
@@ -5980,26 +5772,10 @@ impl CreateJobTemplateInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobTemplateInput");
-        formatter.field("acceleration_settings", &self.acceleration_settings);
-        formatter.field("category", &self.category);
-        formatter.field("description", &self.description);
-        formatter.field("hop_destinations", &self.hop_destinations);
-        formatter.field("name", &self.name);
-        formatter.field("priority", &self.priority);
-        formatter.field("queue", &self.queue);
-        formatter.field("settings", &self.settings);
-        formatter.field("status_update_interval", &self.status_update_interval);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobInput {
     /// Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     #[doc(hidden)]
@@ -6109,29 +5885,10 @@ impl CreateJobInput {
         self.user_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobInput");
-        formatter.field("acceleration_settings", &self.acceleration_settings);
-        formatter.field("billing_tags_source", &self.billing_tags_source);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("hop_destinations", &self.hop_destinations);
-        formatter.field("job_template", &self.job_template);
-        formatter.field("priority", &self.priority);
-        formatter.field("queue", &self.queue);
-        formatter.field("role", &self.role);
-        formatter.field("settings", &self.settings);
-        formatter.field("simulate_reserved_queue", &self.simulate_reserved_queue);
-        formatter.field("status_update_interval", &self.status_update_interval);
-        formatter.field("tags", &self.tags);
-        formatter.field("user_metadata", &self.user_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobInput {
     /// The Job ID of the job to be cancelled.
     #[doc(hidden)]
@@ -6143,17 +5900,10 @@ impl CancelJobInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateCertificateInput {
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
     #[doc(hidden)]
@@ -6163,12 +5913,5 @@ impl AssociateCertificateInput {
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateCertificateInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }

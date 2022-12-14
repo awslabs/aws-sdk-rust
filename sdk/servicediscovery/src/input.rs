@@ -4926,7 +4926,7 @@ impl UpdateServiceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceInput {
     /// <p>The ID of the service that you want to update.</p>
     #[doc(hidden)]
@@ -4945,18 +4945,10 @@ impl UpdateServiceInput {
         self.service.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceInput");
-        formatter.field("id", &self.id);
-        formatter.field("service", &self.service);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePublicDnsNamespaceInput {
     /// <p>The ID of the namespace being updated.</p>
     #[doc(hidden)]
@@ -4982,19 +4974,10 @@ impl UpdatePublicDnsNamespaceInput {
         self.namespace.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePublicDnsNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePublicDnsNamespaceInput");
-        formatter.field("id", &self.id);
-        formatter.field("updater_request_id", &self.updater_request_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePrivateDnsNamespaceInput {
     /// <p>The ID of the namespace that you want to update.</p>
     #[doc(hidden)]
@@ -5020,19 +5003,10 @@ impl UpdatePrivateDnsNamespaceInput {
         self.namespace.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePrivateDnsNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePrivateDnsNamespaceInput");
-        formatter.field("id", &self.id);
-        formatter.field("updater_request_id", &self.updater_request_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInstanceCustomHealthStatusInput {
     /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
     #[doc(hidden)]
@@ -5058,19 +5032,10 @@ impl UpdateInstanceCustomHealthStatusInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateInstanceCustomHealthStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInstanceCustomHealthStatusInput");
-        formatter.field("service_id", &self.service_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHttpNamespaceInput {
     /// <p>The ID of the namespace that you want to update.</p>
     #[doc(hidden)]
@@ -5096,19 +5061,10 @@ impl UpdateHttpNamespaceInput {
         self.namespace.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateHttpNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHttpNamespaceInput");
-        formatter.field("id", &self.id);
-        formatter.field("updater_request_id", &self.updater_request_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
     #[doc(hidden)]
@@ -5127,18 +5083,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
     #[doc(hidden)]
@@ -5157,18 +5105,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterInstanceInput {
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
     #[doc(hidden)]
@@ -5357,20 +5297,10 @@ impl RegisterInstanceInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterInstanceInput");
-        formatter.field("service_id", &self.service_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
     #[doc(hidden)]
@@ -5382,17 +5312,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicesInput {
     /// <p>For the first <code>ListServices</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
@@ -5426,19 +5349,10 @@ impl ListServicesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOperationsInput {
     /// <p>For the first <code>ListOperations</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
@@ -5472,19 +5386,10 @@ impl ListOperationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListOperationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOperationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamespacesInput {
     /// <p>For the first <code>ListNamespaces</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
@@ -5518,19 +5423,10 @@ impl ListNamespacesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListNamespacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNamespacesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstancesInput {
     /// <p>The ID of the service that you want to list instances for.</p>
     #[doc(hidden)]
@@ -5558,19 +5454,10 @@ impl ListInstancesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstancesInput");
-        formatter.field("service_id", &self.service_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceInput {
     /// <p>The ID of the service that you want to get settings for.</p>
     #[doc(hidden)]
@@ -5582,17 +5469,10 @@ impl GetServiceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOperationInput {
     /// <p>The ID of the operation that you want to get more information about.</p>
     #[doc(hidden)]
@@ -5604,17 +5484,10 @@ impl GetOperationInput {
         self.operation_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOperationInput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNamespaceInput {
     /// <p>The ID of the namespace that you want to get information about.</p>
     #[doc(hidden)]
@@ -5626,17 +5499,10 @@ impl GetNamespaceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNamespaceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInstancesHealthStatusInput {
     /// <p>The ID of the service that the instance is associated with.</p>
     #[doc(hidden)]
@@ -5677,20 +5543,10 @@ impl GetInstancesHealthStatusInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetInstancesHealthStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInstancesHealthStatusInput");
-        formatter.field("service_id", &self.service_id);
-        formatter.field("instances", &self.instances);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInstanceInput {
     /// <p>The ID of the service that the instance is associated with.</p>
     #[doc(hidden)]
@@ -5709,18 +5565,10 @@ impl GetInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInstanceInput");
-        formatter.field("service_id", &self.service_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiscoverInstancesInput {
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     #[doc(hidden)]
@@ -5827,22 +5675,10 @@ impl DiscoverInstancesInput {
         self.health_status.as_ref()
     }
 }
-impl std::fmt::Debug for DiscoverInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiscoverInstancesInput");
-        formatter.field("namespace_name", &self.namespace_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("query_parameters", &self.query_parameters);
-        formatter.field("optional_parameters", &self.optional_parameters);
-        formatter.field("health_status", &self.health_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterInstanceInput {
     /// <p>The ID of the service that the instance is associated with.</p>
     #[doc(hidden)]
@@ -5861,18 +5697,10 @@ impl DeregisterInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterInstanceInput");
-        formatter.field("service_id", &self.service_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The ID of the service that you want to delete.</p>
     #[doc(hidden)]
@@ -5884,17 +5712,10 @@ impl DeleteServiceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNamespaceInput {
     /// <p>The ID of the namespace that you want to delete.</p>
     #[doc(hidden)]
@@ -5906,17 +5727,10 @@ impl DeleteNamespaceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNamespaceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServiceInput {
     /// <p>The name that you want to assign to the service.</p>
     /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
@@ -6016,28 +5830,10 @@ impl CreateServiceInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServiceInput");
-        formatter.field("name", &self.name);
-        formatter.field("namespace_id", &self.namespace_id);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("description", &self.description);
-        formatter.field("dns_config", &self.dns_config);
-        formatter.field("health_check_config", &self.health_check_config);
-        formatter.field(
-            "health_check_custom_config",
-            &self.health_check_custom_config,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePublicDnsNamespaceInput {
     /// <p>The name that you want to assign to this namespace.</p>
     #[doc(hidden)]
@@ -6077,21 +5873,10 @@ impl CreatePublicDnsNamespaceInput {
         self.properties.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePublicDnsNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePublicDnsNamespaceInput");
-        formatter.field("name", &self.name);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePrivateDnsNamespaceInput {
     /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
     #[doc(hidden)]
@@ -6138,22 +5923,10 @@ impl CreatePrivateDnsNamespaceInput {
         self.properties.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePrivateDnsNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePrivateDnsNamespaceInput");
-        formatter.field("name", &self.name);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("description", &self.description);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("tags", &self.tags);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHttpNamespaceInput {
     /// <p>The name that you want to assign to this namespace.</p>
     #[doc(hidden)]
@@ -6184,15 +5957,5 @@ impl CreateHttpNamespaceInput {
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateHttpNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHttpNamespaceInput");
-        formatter.field("name", &self.name);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

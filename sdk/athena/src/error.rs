@@ -2,7 +2,7 @@
 
 /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl InvalidRequestException {
     /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
     pub fn athena_error_code(&self) -> std::option::Option<&str> {
         self.athena_error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("athena_error_code", &self.athena_error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidRequestException {
@@ -94,18 +86,11 @@ impl InvalidRequestException {
 
 /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalServerException {
     /// Returns the error message.
@@ -161,7 +146,7 @@ impl InternalServerException {
 
 /// <p>A resource, such as a workgroup, was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -174,14 +159,6 @@ impl ResourceNotFoundException {
     /// <p>The name of the Amazon resource.</p>
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -253,7 +230,7 @@ impl ResourceNotFoundException {
 
 /// <p>Indicates that the request was throttled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -266,14 +243,6 @@ impl TooManyRequestsException {
     /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::ThrottleReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 impl TooManyRequestsException {
@@ -345,18 +314,11 @@ impl TooManyRequestsException {
 
 /// <p>An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by user input (<code>InvalidRequestException</code>) or from the Athena platform (<code>InternalServerException</code>). For example, if a user-created Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetadataException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MetadataException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetadataException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MetadataException {
     /// Returns the error message.

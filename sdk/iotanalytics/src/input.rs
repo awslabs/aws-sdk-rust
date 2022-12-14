@@ -6266,7 +6266,7 @@ impl UpdatePipelineInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
     #[doc(hidden)]
@@ -6289,18 +6289,10 @@ impl UpdatePipelineInput {
         self.pipeline_activities.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("pipeline_activities", &self.pipeline_activities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatastoreInput {
     /// <p>The name of the data store to be updated.</p>
     #[doc(hidden)]
@@ -6339,20 +6331,10 @@ impl UpdateDatastoreInput {
         self.file_format_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDatastoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDatastoreInput");
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("datastore_storage", &self.datastore_storage);
-        formatter.field("file_format_configuration", &self.file_format_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatasetInput {
     /// <p>The name of the dataset to update.</p>
     #[doc(hidden)]
@@ -6411,23 +6393,10 @@ impl UpdateDatasetInput {
         self.late_data_rules.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDatasetInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("actions", &self.actions);
-        formatter.field("triggers", &self.triggers);
-        formatter.field("content_delivery_rules", &self.content_delivery_rules);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("versioning_configuration", &self.versioning_configuration);
-        formatter.field("late_data_rules", &self.late_data_rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// <p>The name of the channel to be updated.</p>
     #[doc(hidden)]
@@ -6453,19 +6422,10 @@ impl UpdateChannelInput {
         self.retention_period.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("channel_storage", &self.channel_storage);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource whose tags you want to remove.</p>
     #[doc(hidden)]
@@ -6484,18 +6444,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource whose tags you want to modify.</p>
     #[doc(hidden)]
@@ -6514,18 +6466,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPipelineReprocessingInput {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
     #[doc(hidden)]
@@ -6564,20 +6508,10 @@ impl StartPipelineReprocessingInput {
         self.channel_messages.as_ref()
     }
 }
-impl std::fmt::Debug for StartPipelineReprocessingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPipelineReprocessingInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("channel_messages", &self.channel_messages);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SampleChannelDataInput {
     /// <p>The name of the channel whose message samples are retrieved.</p>
     #[doc(hidden)]
@@ -6610,20 +6544,10 @@ impl SampleChannelDataInput {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for SampleChannelDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SampleChannelDataInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("max_messages", &self.max_messages);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunPipelineActivityInput {
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
     #[doc(hidden)]
@@ -6642,18 +6566,10 @@ impl RunPipelineActivityInput {
         self.payloads.as_deref()
     }
 }
-impl std::fmt::Debug for RunPipelineActivityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunPipelineActivityInput");
-        formatter.field("pipeline_activity", &self.pipeline_activity);
-        formatter.field("payloads", &self.payloads);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingOptionsInput {
     /// <p>The new values of the IoT Analytics logging options.</p>
     #[doc(hidden)]
@@ -6665,17 +6581,10 @@ impl PutLoggingOptionsInput {
         self.logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingOptionsInput");
-        formatter.field("logging_options", &self.logging_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource whose tags you want to list.</p>
     #[doc(hidden)]
@@ -6687,17 +6596,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesInput {
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
@@ -6718,18 +6620,10 @@ impl ListPipelinesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatastoresInput {
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
@@ -6750,18 +6644,10 @@ impl ListDatastoresInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatastoresInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatastoresInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetsInput {
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
@@ -6782,18 +6668,10 @@ impl ListDatasetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatasetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetContentsInput {
     /// <p>The name of the dataset whose contents information you want to list.</p>
     #[doc(hidden)]
@@ -6833,21 +6711,10 @@ impl ListDatasetContentsInput {
         self.scheduled_before.as_ref()
     }
 }
-impl std::fmt::Debug for ListDatasetContentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetContentsInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("scheduled_on_or_after", &self.scheduled_on_or_after);
-        formatter.field("scheduled_before", &self.scheduled_before);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
@@ -6868,18 +6735,10 @@ impl ListChannelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDatasetContentInput {
     /// <p>The name of the dataset whose contents are retrieved.</p>
     #[doc(hidden)]
@@ -6898,18 +6757,10 @@ impl GetDatasetContentInput {
         self.version_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDatasetContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDatasetContentInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePipelineInput {
     /// <p>The name of the pipeline whose information is retrieved.</p>
     #[doc(hidden)]
@@ -6921,28 +6772,15 @@ impl DescribePipelineInput {
         self.pipeline_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePipelineInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingOptionsInput {}
-impl std::fmt::Debug for DescribeLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingOptionsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatastoreInput {
     /// <p>The name of the data store</p>
     #[doc(hidden)]
@@ -6961,18 +6799,10 @@ impl DescribeDatastoreInput {
         self.include_statistics
     }
 }
-impl std::fmt::Debug for DescribeDatastoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatastoreInput");
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.field("include_statistics", &self.include_statistics);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetInput {
     /// <p>The name of the dataset whose information is retrieved.</p>
     #[doc(hidden)]
@@ -6984,17 +6814,10 @@ impl DescribeDatasetInput {
         self.dataset_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// <p>The name of the channel whose information is retrieved.</p>
     #[doc(hidden)]
@@ -7013,18 +6836,10 @@ impl DescribeChannelInput {
         self.include_statistics
     }
 }
-impl std::fmt::Debug for DescribeChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("include_statistics", &self.include_statistics);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineInput {
     /// <p>The name of the pipeline to delete.</p>
     #[doc(hidden)]
@@ -7036,17 +6851,10 @@ impl DeletePipelineInput {
         self.pipeline_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatastoreInput {
     /// <p>The name of the data store to delete.</p>
     #[doc(hidden)]
@@ -7058,17 +6866,10 @@ impl DeleteDatastoreInput {
         self.datastore_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatastoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatastoreInput");
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetContentInput {
     /// <p>The name of the dataset whose content is deleted.</p>
     #[doc(hidden)]
@@ -7087,18 +6888,10 @@ impl DeleteDatasetContentInput {
         self.version_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetContentInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to delete.</p>
     #[doc(hidden)]
@@ -7110,17 +6903,10 @@ impl DeleteDatasetInput {
         self.dataset_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// <p>The name of the channel to delete.</p>
     #[doc(hidden)]
@@ -7132,17 +6918,10 @@ impl DeleteChannelInput {
         self.channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineInput {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
@@ -7172,19 +6951,10 @@ impl CreatePipelineInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("pipeline_activities", &self.pipeline_activities);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatastoreInput {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -7237,22 +7007,10 @@ impl CreateDatastoreInput {
         self.datastore_partitions.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDatastoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatastoreInput");
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.field("datastore_storage", &self.datastore_storage);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_format_configuration", &self.file_format_configuration);
-        formatter.field("datastore_partitions", &self.datastore_partitions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetContentInput {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -7271,18 +7029,10 @@ impl CreateDatasetContentInput {
         self.version_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDatasetContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetContentInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -7348,24 +7098,10 @@ impl CreateDatasetInput {
         self.late_data_rules.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("actions", &self.actions);
-        formatter.field("triggers", &self.triggers);
-        formatter.field("content_delivery_rules", &self.content_delivery_rules);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("versioning_configuration", &self.versioning_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.field("late_data_rules", &self.late_data_rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
@@ -7398,20 +7134,10 @@ impl CreateChannelInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("channel_storage", &self.channel_storage);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelPipelineReprocessingInput {
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
     #[doc(hidden)]
@@ -7430,18 +7156,10 @@ impl CancelPipelineReprocessingInput {
         self.reprocessing_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelPipelineReprocessingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelPipelineReprocessingInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("reprocessing_id", &self.reprocessing_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutMessageInput {
     /// <p>The name of the channel where the messages are sent.</p>
     #[doc(hidden)]
@@ -7478,13 +7196,5 @@ impl BatchPutMessageInput {
     /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
         self.messages.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPutMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutMessageInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("messages", &self.messages);
-        formatter.finish()
     }
 }

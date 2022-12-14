@@ -926,7 +926,7 @@ impl ListSnapshotBlocksInput {
 pub mod put_snapshot_block_input {
 
     /// A builder for [`PutSnapshotBlockInput`](crate::input::PutSnapshotBlockInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) block_index: std::option::Option<i32>,
@@ -1037,6 +1037,19 @@ pub mod put_snapshot_block_input {
                 checksum: self.checksum,
                 checksum_algorithm: self.checksum_algorithm,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("snapshot_id", &self.snapshot_id);
+            formatter.field("block_index", &self.block_index);
+            formatter.field("block_data", &"*** Sensitive Data Redacted ***");
+            formatter.field("data_length", &self.data_length);
+            formatter.field("progress", &self.progress);
+            formatter.field("checksum", &self.checksum);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.finish()
         }
     }
 }
@@ -1202,7 +1215,7 @@ impl PutSnapshotBlockInput {
 pub mod start_snapshot_input {
 
     /// A builder for [`StartSnapshotInput`](crate::input::StartSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) volume_size: std::option::Option<i64>,
         pub(crate) parent_snapshot_id: std::option::Option<std::string::String>,
@@ -1357,6 +1370,20 @@ pub mod start_snapshot_input {
                 kms_key_arn: self.kms_key_arn,
                 timeout: self.timeout,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("volume_size", &self.volume_size);
+            formatter.field("parent_snapshot_id", &self.parent_snapshot_id);
+            formatter.field("tags", &self.tags);
+            formatter.field("description", &self.description);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("encrypted", &self.encrypted);
+            formatter.field("kms_key_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("timeout", &self.timeout);
+            formatter.finish()
         }
     }
 }
@@ -1665,7 +1692,7 @@ impl std::fmt::Debug for PutSnapshotBlockInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSnapshotBlocksInput {
     /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
     #[doc(hidden)]
@@ -1706,20 +1733,10 @@ impl ListSnapshotBlocksInput {
         self.starting_block_index
     }
 }
-impl std::fmt::Debug for ListSnapshotBlocksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSnapshotBlocksInput");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("starting_block_index", &self.starting_block_index);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChangedBlocksInput {
     /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
@@ -1777,21 +1794,10 @@ impl ListChangedBlocksInput {
         self.starting_block_index
     }
 }
-impl std::fmt::Debug for ListChangedBlocksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChangedBlocksInput");
-        formatter.field("first_snapshot_id", &self.first_snapshot_id);
-        formatter.field("second_snapshot_id", &self.second_snapshot_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("starting_block_index", &self.starting_block_index);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSnapshotBlockInput {
     /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -1821,19 +1827,10 @@ impl GetSnapshotBlockInput {
         self.block_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSnapshotBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSnapshotBlockInput");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("block_index", &self.block_index);
-        formatter.field("block_token", &self.block_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteSnapshotInput {
     /// <p>The ID of the snapshot.</p>
     #[doc(hidden)]
@@ -1875,19 +1872,5 @@ impl CompleteSnapshotInput {
         &self,
     ) -> std::option::Option<&crate::model::ChecksumAggregationMethod> {
         self.checksum_aggregation_method.as_ref()
-    }
-}
-impl std::fmt::Debug for CompleteSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteSnapshotInput");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("changed_blocks_count", &self.changed_blocks_count);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "checksum_aggregation_method",
-            &self.checksum_aggregation_method,
-        );
-        formatter.finish()
     }
 }

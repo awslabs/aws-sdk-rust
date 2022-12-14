@@ -1102,7 +1102,7 @@ impl CreateFieldLevelEncryptionProfileInput {
 pub mod create_function_input {
 
     /// A builder for [`CreateFunctionInput`](crate::input::CreateFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) function_config: std::option::Option<crate::model::FunctionConfig>,
@@ -1155,6 +1155,15 @@ pub mod create_function_input {
                 function_config: self.function_config,
                 function_code: self.function_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("function_config", &self.function_config);
+            formatter.field("function_code", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -13553,7 +13562,7 @@ impl TagResourceInput {
 pub mod test_function_input {
 
     /// A builder for [`TestFunctionInput`](crate::input::TestFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
@@ -13618,6 +13627,16 @@ pub mod test_function_input {
                 stage: self.stage,
                 event_object: self.event_object,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("if_match", &self.if_match);
+            formatter.field("stage", &self.stage);
+            formatter.field("event_object", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -14922,7 +14941,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
 pub mod update_function_input {
 
     /// A builder for [`UpdateFunctionInput`](crate::input::UpdateFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
@@ -14987,6 +15006,16 @@ pub mod update_function_input {
                 function_config: self.function_config,
                 function_code: self.function_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("if_match", &self.if_match);
+            formatter.field("function_config", &self.function_config);
+            formatter.field("function_code", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -16512,7 +16541,7 @@ impl UpdateStreamingDistributionInput {
 
 /// <p>The request to update a streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStreamingDistributionInput {
     /// <p>The streaming distribution's configuration information.</p>
     #[doc(hidden)]
@@ -16541,22 +16570,10 @@ impl UpdateStreamingDistributionInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStreamingDistributionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStreamingDistributionInput");
-        formatter.field(
-            "streaming_distribution_config",
-            &self.streaming_distribution_config,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResponseHeadersPolicyInput {
     /// <p>A response headers policy configuration.</p>
     #[doc(hidden)]
@@ -16587,22 +16604,10 @@ impl UpdateResponseHeadersPolicyInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResponseHeadersPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResponseHeadersPolicyInput");
-        formatter.field(
-            "response_headers_policy_config",
-            &self.response_headers_policy_config,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRealtimeLogConfigInput {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     #[doc(hidden)]
@@ -16644,21 +16649,10 @@ impl UpdateRealtimeLogConfigInput {
         self.sampling_rate
     }
 }
-impl std::fmt::Debug for UpdateRealtimeLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRealtimeLogConfigInput");
-        formatter.field("end_points", &self.end_points);
-        formatter.field("fields", &self.fields);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("sampling_rate", &self.sampling_rate);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePublicKeyInput {
     /// <p>A public key configuration.</p>
     #[doc(hidden)]
@@ -16684,19 +16678,10 @@ impl UpdatePublicKeyInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePublicKeyInput");
-        formatter.field("public_key_config", &self.public_key_config);
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
     #[doc(hidden)]
@@ -16724,22 +16709,10 @@ impl UpdateOriginRequestPolicyInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateOriginRequestPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOriginRequestPolicyInput");
-        formatter.field(
-            "origin_request_policy_config",
-            &self.origin_request_policy_config,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOriginAccessControlInput {
     /// <p>An origin access control.</p>
     #[doc(hidden)]
@@ -16767,22 +16740,10 @@ impl UpdateOriginAccessControlInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateOriginAccessControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOriginAccessControlInput");
-        formatter.field(
-            "origin_access_control_config",
-            &self.origin_access_control_config,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateKeyGroupInput {
     /// <p>The key group configuration.</p>
     #[doc(hidden)]
@@ -16806,15 +16767,6 @@ impl UpdateKeyGroupInput {
     /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateKeyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateKeyGroupInput");
-        formatter.field("key_group_config", &self.key_group_config);
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
     }
 }
 
@@ -16866,7 +16818,7 @@ impl std::fmt::Debug for UpdateFunctionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionProfileInput {
     /// <p>Request to update a field-level encryption profile. </p>
     #[doc(hidden)]
@@ -16895,22 +16847,10 @@ impl UpdateFieldLevelEncryptionProfileInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFieldLevelEncryptionProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFieldLevelEncryptionProfileInput");
-        formatter.field(
-            "field_level_encryption_profile_config",
-            &self.field_level_encryption_profile_config,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionConfigInput {
     /// <p>Request to update a field-level encryption configuration. </p>
     #[doc(hidden)]
@@ -16939,22 +16879,10 @@ impl UpdateFieldLevelEncryptionConfigInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFieldLevelEncryptionConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFieldLevelEncryptionConfigInput");
-        formatter.field(
-            "field_level_encryption_config",
-            &self.field_level_encryption_config,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to update a distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDistributionInput {
     /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
@@ -16980,19 +16908,10 @@ impl UpdateDistributionInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDistributionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDistributionInput");
-        formatter.field("distribution_config", &self.distribution_config);
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to update an origin access identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCloudFrontOriginAccessIdentityInput {
     /// <p>The identity's configuration information.</p>
     #[doc(hidden)]
@@ -17021,22 +16940,10 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCloudFrontOriginAccessIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCloudFrontOriginAccessIdentityInput");
-        formatter.field(
-            "cloud_front_origin_access_identity_config",
-            &self.cloud_front_origin_access_identity_config,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
     #[doc(hidden)]
@@ -17062,19 +16969,10 @@ impl UpdateCachePolicyInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCachePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCachePolicyInput");
-        formatter.field("cache_policy_config", &self.cache_policy_config);
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 /// <p> The request to remove tags from a CloudFront resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> An ARN of a CloudFront resource.</p>
     #[doc(hidden)]
@@ -17091,14 +16989,6 @@ impl UntagResourceInput {
     /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
     pub fn tag_keys(&self) -> std::option::Option<&crate::model::TagKeys> {
         self.tag_keys.as_ref()
-    }
-}
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
     }
 }
 
@@ -17150,7 +17040,7 @@ impl std::fmt::Debug for TestFunctionInput {
 
 /// <p> The request to add tags to a CloudFront resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> An ARN of a CloudFront resource.</p>
     #[doc(hidden)]
@@ -17169,18 +17059,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishFunctionInput {
     /// <p>The name of the function that you are publishing.</p>
     #[doc(hidden)]
@@ -17199,18 +17081,10 @@ impl PublishFunctionInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for PublishFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishFunctionInput");
-        formatter.field("name", &self.name);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 /// <p> The request to list tags for a CloudFront resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> An ARN of a CloudFront resource.</p>
     #[doc(hidden)]
@@ -17222,17 +17096,10 @@ impl ListTagsForResourceInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to list your streaming distributions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamingDistributionsInput {
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
     #[doc(hidden)]
@@ -17251,18 +17118,10 @@ impl ListStreamingDistributionsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListStreamingDistributionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamingDistributionsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResponseHeadersPoliciesInput {
     /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
@@ -17296,19 +17155,10 @@ impl ListResponseHeadersPoliciesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListResponseHeadersPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResponseHeadersPoliciesInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRealtimeLogConfigsInput {
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
     #[doc(hidden)]
@@ -17327,18 +17177,10 @@ impl ListRealtimeLogConfigsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListRealtimeLogConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRealtimeLogConfigsInput");
-        formatter.field("max_items", &self.max_items);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPublicKeysInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
     #[doc(hidden)]
@@ -17357,18 +17199,10 @@ impl ListPublicKeysInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListPublicKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPublicKeysInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOriginRequestPoliciesInput {
     /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
     /// <ul>
@@ -17402,19 +17236,10 @@ impl ListOriginRequestPoliciesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListOriginRequestPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOriginRequestPoliciesInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOriginAccessControlsInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
@@ -17433,18 +17258,10 @@ impl ListOriginAccessControlsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListOriginAccessControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOriginAccessControlsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeyGroupsInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     #[doc(hidden)]
@@ -17463,18 +17280,10 @@ impl ListKeyGroupsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListKeyGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeyGroupsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to list invalidations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInvalidationsInput {
     /// <p>The distribution's ID.</p>
     #[doc(hidden)]
@@ -17500,19 +17309,10 @@ impl ListInvalidationsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListInvalidationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInvalidationsInput");
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionsInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     #[doc(hidden)]
@@ -17538,19 +17338,10 @@ impl ListFunctionsInput {
         self.stage.as_ref()
     }
 }
-impl std::fmt::Debug for ListFunctionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionProfilesInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
     #[doc(hidden)]
@@ -17569,18 +17360,10 @@ impl ListFieldLevelEncryptionProfilesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFieldLevelEncryptionProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFieldLevelEncryptionProfilesInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionConfigsInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
     #[doc(hidden)]
@@ -17599,18 +17382,10 @@ impl ListFieldLevelEncryptionConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFieldLevelEncryptionConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFieldLevelEncryptionConfigsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to list distributions that are associated with a specified WAF web ACL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByWebAclIdInput {
     /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
     #[doc(hidden)]
@@ -17636,19 +17411,10 @@ impl ListDistributionsByWebAclIdInput {
         self.web_acl_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListDistributionsByWebAclIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByWebAclIdInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByResponseHeadersPolicyIdInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     #[doc(hidden)]
@@ -17674,22 +17440,10 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
         self.response_headers_policy_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListDistributionsByResponseHeadersPolicyIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByResponseHeadersPolicyIdInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field(
-            "response_headers_policy_id",
-            &self.response_headers_policy_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByRealtimeLogConfigInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     #[doc(hidden)]
@@ -17722,20 +17476,10 @@ impl ListDistributionsByRealtimeLogConfigInput {
         self.realtime_log_config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListDistributionsByRealtimeLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByRealtimeLogConfigInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("realtime_log_config_name", &self.realtime_log_config_name);
-        formatter.field("realtime_log_config_arn", &self.realtime_log_config_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByOriginRequestPolicyIdInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     #[doc(hidden)]
@@ -17761,19 +17505,10 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
         self.origin_request_policy_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListDistributionsByOriginRequestPolicyIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByOriginRequestPolicyIdInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("origin_request_policy_id", &self.origin_request_policy_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByKeyGroupInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     #[doc(hidden)]
@@ -17799,19 +17534,10 @@ impl ListDistributionsByKeyGroupInput {
         self.key_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListDistributionsByKeyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByKeyGroupInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("key_group_id", &self.key_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByCachePolicyIdInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     #[doc(hidden)]
@@ -17837,19 +17563,10 @@ impl ListDistributionsByCachePolicyIdInput {
         self.cache_policy_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListDistributionsByCachePolicyIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByCachePolicyIdInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("cache_policy_id", &self.cache_policy_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to list your distributions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
     #[doc(hidden)]
@@ -17868,18 +17585,10 @@ impl ListDistributionsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListDistributionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConflictingAliasesInput {
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
     #[doc(hidden)]
@@ -17912,20 +17621,10 @@ impl ListConflictingAliasesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListConflictingAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConflictingAliasesInput");
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to list origin access identities. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCloudFrontOriginAccessIdentitiesInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
     #[doc(hidden)]
@@ -17944,18 +17643,10 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListCloudFrontOriginAccessIdentitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCloudFrontOriginAccessIdentitiesInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCachePoliciesInput {
     /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
     /// <ul>
@@ -17989,19 +17680,10 @@ impl ListCachePoliciesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListCachePoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCachePoliciesInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>To request to get a streaming distribution configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamingDistributionConfigInput {
     /// <p>The streaming distribution's ID.</p>
     #[doc(hidden)]
@@ -18013,17 +17695,10 @@ impl GetStreamingDistributionConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStreamingDistributionConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingDistributionConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to get a streaming distribution's information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamingDistributionInput {
     /// <p>The streaming distribution's ID.</p>
     #[doc(hidden)]
@@ -18035,17 +17710,10 @@ impl GetStreamingDistributionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStreamingDistributionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingDistributionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyConfigInput {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
@@ -18059,17 +17727,10 @@ impl GetResponseHeadersPolicyConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResponseHeadersPolicyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResponseHeadersPolicyConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
@@ -18083,17 +17744,10 @@ impl GetResponseHeadersPolicyInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResponseHeadersPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResponseHeadersPolicyInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRealtimeLogConfigInput {
     /// <p>The name of the real-time log configuration to get.</p>
     #[doc(hidden)]
@@ -18112,18 +17766,10 @@ impl GetRealtimeLogConfigInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetRealtimeLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRealtimeLogConfigInput");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicKeyConfigInput {
     /// <p>The identifier of the public key whose configuration you are getting.</p>
     #[doc(hidden)]
@@ -18135,17 +17781,10 @@ impl GetPublicKeyConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPublicKeyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicKeyConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicKeyInput {
     /// <p>The identifier of the public key you are getting.</p>
     #[doc(hidden)]
@@ -18157,17 +17796,10 @@ impl GetPublicKeyInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicKeyInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginRequestPolicyConfigInput {
     /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[doc(hidden)]
@@ -18179,17 +17811,10 @@ impl GetOriginRequestPolicyConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetOriginRequestPolicyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOriginRequestPolicyConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginRequestPolicyInput {
     /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[doc(hidden)]
@@ -18201,17 +17826,10 @@ impl GetOriginRequestPolicyInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetOriginRequestPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOriginRequestPolicyInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginAccessControlConfigInput {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
@@ -18223,17 +17841,10 @@ impl GetOriginAccessControlConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetOriginAccessControlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOriginAccessControlConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginAccessControlInput {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
@@ -18245,17 +17856,10 @@ impl GetOriginAccessControlInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetOriginAccessControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOriginAccessControlInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
     #[doc(hidden)]
@@ -18267,17 +17871,10 @@ impl GetMonitoringSubscriptionInput {
         self.distribution_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMonitoringSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMonitoringSubscriptionInput");
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyGroupConfigInput {
     /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     #[doc(hidden)]
@@ -18289,17 +17886,10 @@ impl GetKeyGroupConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetKeyGroupConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyGroupConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyGroupInput {
     /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     #[doc(hidden)]
@@ -18311,17 +17901,10 @@ impl GetKeyGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetKeyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyGroupInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to get an invalidation's information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInvalidationInput {
     /// <p>The distribution's ID.</p>
     #[doc(hidden)]
@@ -18340,18 +17923,10 @@ impl GetInvalidationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetInvalidationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInvalidationInput");
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionInput {
     /// <p>The name of the function whose code you are getting.</p>
     #[doc(hidden)]
@@ -18370,18 +17945,10 @@ impl GetFunctionInput {
         self.stage.as_ref()
     }
 }
-impl std::fmt::Debug for GetFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionInput");
-        formatter.field("name", &self.name);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionProfileConfigInput {
     /// <p>Get the ID for the field-level encryption profile configuration information.</p>
     #[doc(hidden)]
@@ -18393,17 +17960,10 @@ impl GetFieldLevelEncryptionProfileConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFieldLevelEncryptionProfileConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldLevelEncryptionProfileConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionProfileInput {
     /// <p>Get the ID for the field-level encryption profile information.</p>
     #[doc(hidden)]
@@ -18415,17 +17975,10 @@ impl GetFieldLevelEncryptionProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFieldLevelEncryptionProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldLevelEncryptionProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionConfigInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     #[doc(hidden)]
@@ -18437,17 +17990,10 @@ impl GetFieldLevelEncryptionConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFieldLevelEncryptionConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldLevelEncryptionConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     #[doc(hidden)]
@@ -18459,17 +18005,10 @@ impl GetFieldLevelEncryptionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFieldLevelEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldLevelEncryptionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to get a distribution configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDistributionConfigInput {
     /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
     #[doc(hidden)]
@@ -18481,17 +18020,10 @@ impl GetDistributionConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDistributionConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDistributionConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to get a distribution's information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDistributionInput {
     /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
     #[doc(hidden)]
@@ -18503,17 +18035,10 @@ impl GetDistributionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDistributionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDistributionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The origin access identity's configuration information. For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.html">CloudFrontOriginAccessIdentityConfig</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityConfigInput {
     /// <p>The identity's ID. </p>
     #[doc(hidden)]
@@ -18525,17 +18050,10 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCloudFrontOriginAccessIdentityConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to get an origin access identity's information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityInput {
     /// <p>The identity's ID.</p>
     #[doc(hidden)]
@@ -18547,17 +18065,10 @@ impl GetCloudFrontOriginAccessIdentityInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCloudFrontOriginAccessIdentityInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCachePolicyConfigInput {
     /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     #[doc(hidden)]
@@ -18569,17 +18080,10 @@ impl GetCachePolicyConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCachePolicyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCachePolicyConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCachePolicyInput {
     /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     #[doc(hidden)]
@@ -18591,17 +18095,10 @@ impl GetCachePolicyInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCachePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCachePolicyInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFunctionInput {
     /// <p>The name of the function that you are getting information about.</p>
     #[doc(hidden)]
@@ -18620,18 +18117,10 @@ impl DescribeFunctionInput {
         self.stage.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFunctionInput");
-        formatter.field("name", &self.name);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to delete a streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamingDistributionInput {
     /// <p>The distribution ID. </p>
     #[doc(hidden)]
@@ -18650,18 +18139,10 @@ impl DeleteStreamingDistributionInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStreamingDistributionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamingDistributionInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy that you are deleting.</p>
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
@@ -18684,18 +18165,10 @@ impl DeleteResponseHeadersPolicyInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResponseHeadersPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResponseHeadersPolicyInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRealtimeLogConfigInput {
     /// <p>The name of the real-time log configuration to delete.</p>
     #[doc(hidden)]
@@ -18714,18 +18187,10 @@ impl DeleteRealtimeLogConfigInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRealtimeLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRealtimeLogConfigInput");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePublicKeyInput {
     /// <p>The ID of the public key you want to remove from CloudFront.</p>
     #[doc(hidden)]
@@ -18744,18 +18209,10 @@ impl DeletePublicKeyInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePublicKeyInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOriginRequestPolicyInput {
     /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
     #[doc(hidden)]
@@ -18774,18 +18231,10 @@ impl DeleteOriginRequestPolicyInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOriginRequestPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOriginRequestPolicyInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOriginAccessControlInput {
     /// <p>The unique identifier of the origin access control that you are deleting.</p>
     #[doc(hidden)]
@@ -18804,18 +18253,10 @@ impl DeleteOriginAccessControlInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOriginAccessControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOriginAccessControlInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
     #[doc(hidden)]
@@ -18827,17 +18268,10 @@ impl DeleteMonitoringSubscriptionInput {
         self.distribution_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMonitoringSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMonitoringSubscriptionInput");
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKeyGroupInput {
     /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     #[doc(hidden)]
@@ -18856,18 +18290,10 @@ impl DeleteKeyGroupInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteKeyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteKeyGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionInput {
     /// <p>The name of the function that you are deleting.</p>
     #[doc(hidden)]
@@ -18886,18 +18312,10 @@ impl DeleteFunctionInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionInput");
-        formatter.field("name", &self.name);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFieldLevelEncryptionProfileInput {
     /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
     #[doc(hidden)]
@@ -18916,18 +18334,10 @@ impl DeleteFieldLevelEncryptionProfileInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFieldLevelEncryptionProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFieldLevelEncryptionProfileInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFieldLevelEncryptionConfigInput {
     /// <p>The ID of the configuration you want to delete from CloudFront.</p>
     #[doc(hidden)]
@@ -18946,14 +18356,6 @@ impl DeleteFieldLevelEncryptionConfigInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFieldLevelEncryptionConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFieldLevelEncryptionConfigInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 /// <p>This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the following steps.</p>
 /// <p> <b>To delete a web distribution using the CloudFront API:</b> </p>
@@ -18969,7 +18371,7 @@ impl std::fmt::Debug for DeleteFieldLevelEncryptionConfigInput {
 /// </ol>
 /// <p>For information about deleting a distribution using the CloudFront console, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDistributionInput {
     /// <p>The distribution ID. </p>
     #[doc(hidden)]
@@ -18988,18 +18390,10 @@ impl DeleteDistributionInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDistributionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDistributionInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes a origin access identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCloudFrontOriginAccessIdentityInput {
     /// <p>The origin access identity's ID.</p>
     #[doc(hidden)]
@@ -19018,18 +18412,10 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCloudFrontOriginAccessIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCloudFrontOriginAccessIdentityInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCachePolicyInput {
     /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
     #[doc(hidden)]
@@ -19048,18 +18434,10 @@ impl DeleteCachePolicyInput {
         self.if_match.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCachePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCachePolicyInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to create a new streaming distribution with tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingDistributionWithTagsInput {
     /// <p> The streaming distribution's configuration information. </p>
     #[doc(hidden)]
@@ -19074,20 +18452,10 @@ impl CreateStreamingDistributionWithTagsInput {
         self.streaming_distribution_config_with_tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStreamingDistributionWithTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingDistributionWithTagsInput");
-        formatter.field(
-            "streaming_distribution_config_with_tags",
-            &self.streaming_distribution_config_with_tags,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The request to create a new streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingDistributionInput {
     /// <p>The streaming distribution's configuration information.</p>
     #[doc(hidden)]
@@ -19102,20 +18470,10 @@ impl CreateStreamingDistributionInput {
         self.streaming_distribution_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStreamingDistributionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingDistributionInput");
-        formatter.field(
-            "streaming_distribution_config",
-            &self.streaming_distribution_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResponseHeadersPolicyInput {
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
     #[doc(hidden)]
@@ -19130,20 +18488,10 @@ impl CreateResponseHeadersPolicyInput {
         self.response_headers_policy_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateResponseHeadersPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResponseHeadersPolicyInput");
-        formatter.field(
-            "response_headers_policy_config",
-            &self.response_headers_policy_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRealtimeLogConfigInput {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     #[doc(hidden)]
@@ -19178,20 +18526,10 @@ impl CreateRealtimeLogConfigInput {
         self.sampling_rate
     }
 }
-impl std::fmt::Debug for CreateRealtimeLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRealtimeLogConfigInput");
-        formatter.field("end_points", &self.end_points);
-        formatter.field("fields", &self.fields);
-        formatter.field("name", &self.name);
-        formatter.field("sampling_rate", &self.sampling_rate);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePublicKeyInput {
     /// <p>A CloudFront public key configuration.</p>
     #[doc(hidden)]
@@ -19203,17 +18541,10 @@ impl CreatePublicKeyInput {
         self.public_key_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePublicKeyInput");
-        formatter.field("public_key_config", &self.public_key_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
     #[doc(hidden)]
@@ -19227,20 +18558,10 @@ impl CreateOriginRequestPolicyInput {
         self.origin_request_policy_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateOriginRequestPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOriginRequestPolicyInput");
-        formatter.field(
-            "origin_request_policy_config",
-            &self.origin_request_policy_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOriginAccessControlInput {
     /// <p>Contains the origin access control.</p>
     #[doc(hidden)]
@@ -19254,20 +18575,10 @@ impl CreateOriginAccessControlInput {
         self.origin_access_control_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateOriginAccessControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOriginAccessControlInput");
-        formatter.field(
-            "origin_access_control_config",
-            &self.origin_access_control_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are enabling metrics for.</p>
     #[doc(hidden)]
@@ -19288,18 +18599,10 @@ impl CreateMonitoringSubscriptionInput {
         self.monitoring_subscription.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMonitoringSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMonitoringSubscriptionInput");
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.field("monitoring_subscription", &self.monitoring_subscription);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKeyGroupInput {
     /// <p>A key group configuration.</p>
     #[doc(hidden)]
@@ -19311,17 +18614,10 @@ impl CreateKeyGroupInput {
         self.key_group_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateKeyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKeyGroupInput");
-        formatter.field("key_group_config", &self.key_group_config);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to create an invalidation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInvalidationInput {
     /// <p>The distribution's id.</p>
     #[doc(hidden)]
@@ -19338,14 +18634,6 @@ impl CreateInvalidationInput {
     /// <p>The batch information for the invalidation.</p>
     pub fn invalidation_batch(&self) -> std::option::Option<&crate::model::InvalidationBatch> {
         self.invalidation_batch.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateInvalidationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInvalidationInput");
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.field("invalidation_batch", &self.invalidation_batch);
-        formatter.finish()
     }
 }
 
@@ -19389,7 +18677,7 @@ impl std::fmt::Debug for CreateFunctionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionProfileInput {
     /// <p>The request to create a field-level encryption profile.</p>
     #[doc(hidden)]
@@ -19404,20 +18692,10 @@ impl CreateFieldLevelEncryptionProfileInput {
         self.field_level_encryption_profile_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFieldLevelEncryptionProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFieldLevelEncryptionProfileInput");
-        formatter.field(
-            "field_level_encryption_profile_config",
-            &self.field_level_encryption_profile_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionConfigInput {
     /// <p>The request to create a new field-level encryption configuration.</p>
     #[doc(hidden)]
@@ -19432,20 +18710,10 @@ impl CreateFieldLevelEncryptionConfigInput {
         self.field_level_encryption_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFieldLevelEncryptionConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFieldLevelEncryptionConfigInput");
-        formatter.field(
-            "field_level_encryption_config",
-            &self.field_level_encryption_config,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The request to create a new distribution with tags. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDistributionWithTagsInput {
     /// <p>The distribution's configuration information. </p>
     #[doc(hidden)]
@@ -19460,20 +18728,10 @@ impl CreateDistributionWithTagsInput {
         self.distribution_config_with_tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDistributionWithTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDistributionWithTagsInput");
-        formatter.field(
-            "distribution_config_with_tags",
-            &self.distribution_config_with_tags,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The request to create a new distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDistributionInput {
     /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
@@ -19485,17 +18743,10 @@ impl CreateDistributionInput {
         self.distribution_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDistributionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDistributionInput");
-        formatter.field("distribution_config", &self.distribution_config);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"> Restricting Access to Amazon S3 Content by Using an Origin Access Identity</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCloudFrontOriginAccessIdentityInput {
     /// <p>The current configuration information for the identity.</p>
     #[doc(hidden)]
@@ -19510,20 +18761,10 @@ impl CreateCloudFrontOriginAccessIdentityInput {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateCloudFrontOriginAccessIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCloudFrontOriginAccessIdentityInput");
-        formatter.field(
-            "cloud_front_origin_access_identity_config",
-            &self.cloud_front_origin_access_identity_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
     #[doc(hidden)]
@@ -19535,17 +18776,10 @@ impl CreateCachePolicyInput {
         self.cache_policy_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateCachePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCachePolicyInput");
-        formatter.field("cache_policy_config", &self.cache_policy_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAliasInput {
     /// <p>The ID of the distribution that you’re associating the alias with.</p>
     #[doc(hidden)]
@@ -19562,13 +18796,5 @@ impl AssociateAliasInput {
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAliasInput");
-        formatter.field("target_distribution_id", &self.target_distribution_id);
-        formatter.field("alias", &self.alias);
-        formatter.finish()
     }
 }

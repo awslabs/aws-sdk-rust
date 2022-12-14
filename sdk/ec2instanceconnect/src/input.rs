@@ -370,7 +370,7 @@ impl SendSshPublicKeyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendSshPublicKeyInput {
     /// <p>The ID of the EC2 instance.</p>
     #[doc(hidden)]
@@ -403,20 +403,10 @@ impl SendSshPublicKeyInput {
         self.availability_zone.as_deref()
     }
 }
-impl std::fmt::Debug for SendSshPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendSshPublicKeyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_os_user", &self.instance_os_user);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendSerialConsoleSshPublicKeyInput {
     /// <p>The ID of the EC2 instance.</p>
     #[doc(hidden)]
@@ -442,14 +432,5 @@ impl SendSerialConsoleSshPublicKeyInput {
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
-    }
-}
-impl std::fmt::Debug for SendSerialConsoleSshPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendSerialConsoleSshPublicKeyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("serial_port", &self.serial_port);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.finish()
     }
 }

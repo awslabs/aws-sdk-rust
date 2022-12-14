@@ -192,7 +192,7 @@ impl AsRef<str> for VpcLinkStatus {
 
 /// <p>Represents a collection of route settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteSettings {
     /// <p>Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
@@ -230,17 +230,6 @@ impl RouteSettings {
     /// <p>Specifies the throttling rate limit.</p>
     pub fn throttling_rate_limit(&self) -> f64 {
         self.throttling_rate_limit
-    }
-}
-impl std::fmt::Debug for RouteSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteSettings");
-        formatter.field("data_trace_enabled", &self.data_trace_enabled);
-        formatter.field("detailed_metrics_enabled", &self.detailed_metrics_enabled);
-        formatter.field("logging_level", &self.logging_level);
-        formatter.field("throttling_burst_limit", &self.throttling_burst_limit);
-        formatter.field("throttling_rate_limit", &self.throttling_rate_limit);
-        formatter.finish()
     }
 }
 /// See [`RouteSettings`](crate::model::RouteSettings).
@@ -425,7 +414,7 @@ impl AsRef<str> for LoggingLevel {
 
 /// <p>Settings for logging access in a stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessLogSettings {
     /// <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
     #[doc(hidden)]
@@ -442,14 +431,6 @@ impl AccessLogSettings {
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
     pub fn format(&self) -> std::option::Option<&str> {
         self.format.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessLogSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessLogSettings");
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("format", &self.format);
-        formatter.finish()
     }
 }
 /// See [`AccessLogSettings`](crate::model::AccessLogSettings).
@@ -503,7 +484,7 @@ impl AccessLogSettings {
 
 /// <p>Validation constraints imposed on parameters of a request (path, query string, headers).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterConstraints {
     /// <p>Whether or not the parameter is required.</p>
     #[doc(hidden)]
@@ -513,13 +494,6 @@ impl ParameterConstraints {
     /// <p>Whether or not the parameter is required.</p>
     pub fn required(&self) -> bool {
         self.required
-    }
-}
-impl std::fmt::Debug for ParameterConstraints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterConstraints");
-        formatter.field("required", &self.required);
-        formatter.finish()
     }
 }
 /// See [`ParameterConstraints`](crate::model::ParameterConstraints).
@@ -752,7 +726,7 @@ impl AsRef<str> for ContentHandlingStrategy {
 
 /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsConfig {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
     #[doc(hidden)]
@@ -762,13 +736,6 @@ impl TlsConfig {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
     pub fn server_name_to_verify(&self) -> std::option::Option<&str> {
         self.server_name_to_verify.as_deref()
-    }
-}
-impl std::fmt::Debug for TlsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsConfig");
-        formatter.field("server_name_to_verify", &self.server_name_to_verify);
-        formatter.finish()
     }
 }
 /// See [`TlsConfig`](crate::model::TlsConfig).
@@ -1102,7 +1069,7 @@ impl AsRef<str> for ConnectionType {
 
 /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsConfigInput {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
     #[doc(hidden)]
@@ -1112,13 +1079,6 @@ impl TlsConfigInput {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
     pub fn server_name_to_verify(&self) -> std::option::Option<&str> {
         self.server_name_to_verify.as_deref()
-    }
-}
-impl std::fmt::Debug for TlsConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsConfigInput");
-        formatter.field("server_name_to_verify", &self.server_name_to_verify);
-        formatter.finish()
     }
 }
 /// See [`TlsConfigInput`](crate::model::TlsConfigInput).
@@ -1160,7 +1120,7 @@ impl TlsConfigInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MutualTlsAuthentication {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example, s3://<replaceable>
     /// bucket-name
@@ -1192,15 +1152,6 @@ impl MutualTlsAuthentication {
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
     pub fn truststore_warnings(&self) -> std::option::Option<&[std::string::String]> {
         self.truststore_warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for MutualTlsAuthentication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MutualTlsAuthentication");
-        formatter.field("truststore_uri", &self.truststore_uri);
-        formatter.field("truststore_version", &self.truststore_version);
-        formatter.field("truststore_warnings", &self.truststore_warnings);
-        formatter.finish()
     }
 }
 /// See [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
@@ -1286,7 +1237,7 @@ impl MutualTlsAuthentication {
 
 /// <p>The domain name configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainNameConfiguration {
     /// <p>A domain name for the API.</p>
     #[doc(hidden)]
@@ -1359,28 +1310,6 @@ impl DomainNameConfiguration {
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn</p>
     pub fn ownership_verification_certificate_arn(&self) -> std::option::Option<&str> {
         self.ownership_verification_certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainNameConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainNameConfiguration");
-        formatter.field("api_gateway_domain_name", &self.api_gateway_domain_name);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("certificate_upload_date", &self.certificate_upload_date);
-        formatter.field("domain_name_status", &self.domain_name_status);
-        formatter.field(
-            "domain_name_status_message",
-            &self.domain_name_status_message,
-        );
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("security_policy", &self.security_policy);
-        formatter.field(
-            "ownership_verification_certificate_arn",
-            &self.ownership_verification_certificate_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
@@ -1845,7 +1774,7 @@ impl AsRef<str> for DomainNameStatus {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MutualTlsAuthenticationInput {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example, s3://<replaceable>
     /// bucket-name
@@ -1870,14 +1799,6 @@ impl MutualTlsAuthenticationInput {
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
     pub fn truststore_version(&self) -> std::option::Option<&str> {
         self.truststore_version.as_deref()
-    }
-}
-impl std::fmt::Debug for MutualTlsAuthenticationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MutualTlsAuthenticationInput");
-        formatter.field("truststore_uri", &self.truststore_uri);
-        formatter.field("truststore_version", &self.truststore_version);
-        formatter.finish()
     }
 }
 /// See [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
@@ -2037,7 +1958,7 @@ impl AsRef<str> for DeploymentStatus {
 
 /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JwtConfiguration {
     /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
@@ -2062,14 +1983,6 @@ impl JwtConfiguration {
     /// </replaceable> . Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
     pub fn issuer(&self) -> std::option::Option<&str> {
         self.issuer.as_deref()
-    }
-}
-impl std::fmt::Debug for JwtConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JwtConfiguration");
-        formatter.field("audience", &self.audience);
-        formatter.field("issuer", &self.issuer);
-        formatter.finish()
     }
 }
 /// See [`JwtConfiguration`](crate::model::JwtConfiguration).
@@ -2317,7 +2230,7 @@ impl AsRef<str> for ProtocolType {
 
 /// <p>Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cors {
     /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
@@ -2362,18 +2275,6 @@ impl Cors {
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
     pub fn max_age(&self) -> i32 {
         self.max_age
-    }
-}
-impl std::fmt::Debug for Cors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cors");
-        formatter.field("allow_credentials", &self.allow_credentials);
-        formatter.field("allow_headers", &self.allow_headers);
-        formatter.field("allow_methods", &self.allow_methods);
-        formatter.field("allow_origins", &self.allow_origins);
-        formatter.field("expose_headers", &self.expose_headers);
-        formatter.field("max_age", &self.max_age);
-        formatter.finish()
     }
 }
 /// See [`Cors`](crate::model::Cors).
@@ -2508,7 +2409,7 @@ impl Cors {
 
 /// <p>Represents a VPC link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcLink {
     /// <p>The timestamp when the VPC link was created.</p>
     #[doc(hidden)]
@@ -2578,21 +2479,6 @@ impl VpcLink {
     /// <p>The version of the VPC link.</p>
     pub fn vpc_link_version(&self) -> std::option::Option<&crate::model::VpcLinkVersion> {
         self.vpc_link_version.as_ref()
-    }
-}
-impl std::fmt::Debug for VpcLink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcLink");
-        formatter.field("created_date", &self.created_date);
-        formatter.field("name", &self.name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.field("vpc_link_status", &self.vpc_link_status);
-        formatter.field("vpc_link_status_message", &self.vpc_link_status_message);
-        formatter.field("vpc_link_version", &self.vpc_link_version);
-        formatter.finish()
     }
 }
 /// See [`VpcLink`](crate::model::VpcLink).
@@ -2774,7 +2660,7 @@ impl VpcLink {
 
 /// <p>Represents an API stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stage {
     /// <p>Settings for logging access in this stage.</p>
     #[doc(hidden)]
@@ -2889,29 +2775,6 @@ impl Stage {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Stage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stage");
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("api_gateway_managed", &self.api_gateway_managed);
-        formatter.field("auto_deploy", &self.auto_deploy);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("default_route_settings", &self.default_route_settings);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "last_deployment_status_message",
-            &self.last_deployment_status_message,
-        );
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("route_settings", &self.route_settings);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("stage_variables", &self.stage_variables);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Stage`](crate::model::Stage).
@@ -3181,7 +3044,7 @@ impl Stage {
 
 /// <p>Represents a route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Route {
     /// <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
     #[doc(hidden)]
@@ -3285,31 +3148,6 @@ impl Route {
     /// <p>The target for the route.</p>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
-    }
-}
-impl std::fmt::Debug for Route {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Route");
-        formatter.field("api_gateway_managed", &self.api_gateway_managed);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field(
-            "model_selection_expression",
-            &self.model_selection_expression,
-        );
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("route_id", &self.route_id);
-        formatter.field("route_key", &self.route_key);
-        formatter.field(
-            "route_response_selection_expression",
-            &self.route_response_selection_expression,
-        );
-        formatter.field("target", &self.target);
-        formatter.finish()
     }
 }
 /// See [`Route`](crate::model::Route).
@@ -3553,7 +3391,7 @@ impl Route {
 
 /// <p>Represents a route response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteResponse {
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
@@ -3601,20 +3439,6 @@ impl RouteResponse {
     /// <p>Represents the route response key of a route response.</p>
     pub fn route_response_key(&self) -> std::option::Option<&str> {
         self.route_response_key.as_deref()
-    }
-}
-impl std::fmt::Debug for RouteResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteResponse");
-        formatter.field(
-            "model_selection_expression",
-            &self.model_selection_expression,
-        );
-        formatter.field("response_models", &self.response_models);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("route_response_id", &self.route_response_id);
-        formatter.field("route_response_key", &self.route_response_key);
-        formatter.finish()
     }
 }
 /// See [`RouteResponse`](crate::model::RouteResponse).
@@ -3744,7 +3568,7 @@ impl RouteResponse {
 
 /// <p>Represents a data model for an API. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Create Models and Mapping Templates for Request and Response Mappings</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Model {
     /// <p>The content-type for the model, for example, "application/json".</p>
     #[doc(hidden)]
@@ -3782,17 +3606,6 @@ impl Model {
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
-    }
-}
-impl std::fmt::Debug for Model {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Model");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("description", &self.description);
-        formatter.field("model_id", &self.model_id);
-        formatter.field("name", &self.name);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
     }
 }
 /// See [`Model`](crate::model::Model).
@@ -3879,7 +3692,7 @@ impl Model {
 
 /// <p>Represents an integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Integration {
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     #[doc(hidden)]
@@ -4090,38 +3903,6 @@ impl Integration {
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
         self.tls_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Integration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Integration");
-        formatter.field("api_gateway_managed", &self.api_gateway_managed);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("content_handling_strategy", &self.content_handling_strategy);
-        formatter.field("credentials_arn", &self.credentials_arn);
-        formatter.field("description", &self.description);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.field("integration_method", &self.integration_method);
-        formatter.field(
-            "integration_response_selection_expression",
-            &self.integration_response_selection_expression,
-        );
-        formatter.field("integration_subtype", &self.integration_subtype);
-        formatter.field("integration_type", &self.integration_type);
-        formatter.field("integration_uri", &self.integration_uri);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("payload_format_version", &self.payload_format_version);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field(
-            "template_selection_expression",
-            &self.template_selection_expression,
-        );
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
     }
 }
 /// See [`Integration`](crate::model::Integration).
@@ -4545,7 +4326,7 @@ impl Integration {
 
 /// <p>Represents an integration response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntegrationResponse {
     /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
@@ -4606,21 +4387,6 @@ impl IntegrationResponse {
     /// <p>The template selection expressions for the integration response.</p>
     pub fn template_selection_expression(&self) -> std::option::Option<&str> {
         self.template_selection_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for IntegrationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntegrationResponse");
-        formatter.field("content_handling_strategy", &self.content_handling_strategy);
-        formatter.field("integration_response_id", &self.integration_response_id);
-        formatter.field("integration_response_key", &self.integration_response_key);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field(
-            "template_selection_expression",
-            &self.template_selection_expression,
-        );
-        formatter.finish()
     }
 }
 /// See [`IntegrationResponse`](crate::model::IntegrationResponse).
@@ -4778,7 +4544,7 @@ impl IntegrationResponse {
 
 /// <p>Represents a domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainName {
     /// <p>The API mapping selection expression.</p>
     #[doc(hidden)]
@@ -4825,23 +4591,6 @@ impl DomainName {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainName");
-        formatter.field(
-            "api_mapping_selection_expression",
-            &self.api_mapping_selection_expression,
-        );
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field(
-            "domain_name_configurations",
-            &self.domain_name_configurations,
-        );
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DomainName`](crate::model::DomainName).
@@ -4971,7 +4720,7 @@ impl DomainName {
 
 /// <p>An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Deployment {
     /// <p>Specifies whether a deployment was automatically released.</p>
     #[doc(hidden)]
@@ -5016,18 +4765,6 @@ impl Deployment {
     /// <p>The description for the deployment.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for Deployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Deployment");
-        formatter.field("auto_deployed", &self.auto_deployed);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("deployment_status_message", &self.deployment_status_message);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`Deployment`](crate::model::Deployment).
@@ -5138,7 +4875,7 @@ impl Deployment {
 
 /// <p>Represents an authorizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Authorizer {
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
     #[doc(hidden)]
@@ -5238,35 +4975,6 @@ impl Authorizer {
     /// <p>The name of the authorizer.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Authorizer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Authorizer");
-        formatter.field(
-            "authorizer_credentials_arn",
-            &self.authorizer_credentials_arn,
-        );
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field(
-            "authorizer_payload_format_version",
-            &self.authorizer_payload_format_version,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.field("authorizer_type", &self.authorizer_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("enable_simple_responses", &self.enable_simple_responses);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field("jwt_configuration", &self.jwt_configuration);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Authorizer`](crate::model::Authorizer).
@@ -5486,7 +5194,7 @@ impl Authorizer {
 
 /// <p>Represents an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Api {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     #[doc(hidden)]
@@ -5605,37 +5313,6 @@ impl Api {
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
     pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
         self.warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for Api {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Api");
-        formatter.field("api_endpoint", &self.api_endpoint);
-        formatter.field("api_gateway_managed", &self.api_gateway_managed);
-        formatter.field("api_id", &self.api_id);
-        formatter.field(
-            "api_key_selection_expression",
-            &self.api_key_selection_expression,
-        );
-        formatter.field("cors_configuration", &self.cors_configuration);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("description", &self.description);
-        formatter.field("disable_schema_validation", &self.disable_schema_validation);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.field("import_info", &self.import_info);
-        formatter.field("name", &self.name);
-        formatter.field("protocol_type", &self.protocol_type);
-        formatter.field(
-            "route_selection_expression",
-            &self.route_selection_expression,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
     }
 }
 /// See [`Api`](crate::model::Api).
@@ -5910,7 +5587,7 @@ impl Api {
 
 /// <p>Represents an API mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiMapping {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -5941,16 +5618,6 @@ impl ApiMapping {
     /// <p>The API stage.</p>
     pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
-    }
-}
-impl std::fmt::Debug for ApiMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiMapping");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("api_mapping_id", &self.api_mapping_id);
-        formatter.field("api_mapping_key", &self.api_mapping_key);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
     }
 }
 /// See [`ApiMapping`](crate::model::ApiMapping).

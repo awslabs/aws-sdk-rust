@@ -2,7 +2,7 @@
 
 /// <p>The request throughput limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     /// <p>The number of seconds the caller should wait before retrying.</p>
     #[doc(hidden)]
@@ -29,16 +29,6 @@ impl TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(&self) -> std::option::Option<&crate::model::ThrottleReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 impl TooManyRequestsException {
@@ -137,7 +127,7 @@ impl TooManyRequestsException {
 
 /// <p>The Lambda service encountered an internal error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -150,14 +140,6 @@ impl ServiceException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ServiceException {
@@ -226,7 +208,7 @@ impl ServiceException {
 
 /// <p>The resource specified in the request does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -239,14 +221,6 @@ impl ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -315,7 +289,7 @@ impl ResourceNotFoundException {
 
 /// <p>The resource already exists, or another operation is in progress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceConflictException {
     /// <p>The exception type.</p>
     #[doc(hidden)]
@@ -328,14 +302,6 @@ impl ResourceConflictException {
     /// <p>The exception type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConflictException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceConflictException {
@@ -404,7 +370,7 @@ impl ResourceConflictException {
 
 /// <p>One of the parameters in the request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterValueException {
     /// <p>The exception type.</p>
     #[doc(hidden)]
@@ -417,14 +383,6 @@ impl InvalidParameterValueException {
     /// <p>The exception type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterValueException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidParameterValueException {
@@ -493,7 +451,7 @@ impl InvalidParameterValueException {
 
 /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PreconditionFailedException {
     /// <p>The exception type.</p>
     #[doc(hidden)]
@@ -506,14 +464,6 @@ impl PreconditionFailedException {
     /// <p>The exception type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for PreconditionFailedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreconditionFailedException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl PreconditionFailedException {
@@ -582,7 +532,7 @@ impl PreconditionFailedException {
 
 /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCodeSignatureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -595,14 +545,6 @@ impl InvalidCodeSignatureException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidCodeSignatureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCodeSignatureException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidCodeSignatureException {
@@ -671,7 +613,7 @@ impl InvalidCodeSignatureException {
 
 /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeVerificationFailedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -684,14 +626,6 @@ impl CodeVerificationFailedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeVerificationFailedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeVerificationFailedException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl CodeVerificationFailedException {
@@ -760,7 +694,7 @@ impl CodeVerificationFailedException {
 
 /// <p>The specified code signing configuration does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeSigningConfigNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -773,14 +707,6 @@ impl CodeSigningConfigNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeSigningConfigNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeSigningConfigNotFoundException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl CodeSigningConfigNotFoundException {
@@ -849,7 +775,7 @@ impl CodeSigningConfigNotFoundException {
 
 /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeStorageExceededException {
     /// <p>The exception type.</p>
     #[doc(hidden)]
@@ -862,14 +788,6 @@ impl CodeStorageExceededException {
     /// <p>The exception type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeStorageExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeStorageExceededException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl CodeStorageExceededException {
@@ -938,7 +856,7 @@ impl CodeStorageExceededException {
 
 /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -951,14 +869,6 @@ impl ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceInUseException {
@@ -1027,7 +937,7 @@ impl ResourceInUseException {
 
 /// <p>The runtime or runtime version specified is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRuntimeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1040,14 +950,6 @@ impl InvalidRuntimeException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRuntimeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRuntimeException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidRuntimeException {
@@ -1116,7 +1018,7 @@ impl InvalidRuntimeException {
 
 /// <p>The request body could not be parsed as JSON.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestContentException {
     /// <p>The exception type.</p>
     #[doc(hidden)]
@@ -1129,14 +1031,6 @@ impl InvalidRequestContentException {
     /// <p>The exception type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRequestContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestContentException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidRequestContentException {
@@ -1205,7 +1099,7 @@ impl InvalidRequestContentException {
 
 /// <p>The content type of the <code>Invoke</code> request body is not JSON.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedMediaTypeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1218,14 +1112,6 @@ impl UnsupportedMediaTypeException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedMediaTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedMediaTypeException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl UnsupportedMediaTypeException {
@@ -1294,7 +1180,7 @@ impl UnsupportedMediaTypeException {
 
 /// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetIpAddressLimitReachedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1307,14 +1193,6 @@ impl SubnetIpAddressLimitReachedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for SubnetIpAddressLimitReachedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetIpAddressLimitReachedException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl SubnetIpAddressLimitReachedException {
@@ -1386,7 +1264,7 @@ impl SubnetIpAddressLimitReachedException {
 
 /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotReadyException {
     /// <p>The exception type.</p>
     #[doc(hidden)]
@@ -1399,14 +1277,6 @@ impl ResourceNotReadyException {
     /// <p>The exception type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotReadyException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotReadyException {
@@ -1475,7 +1345,7 @@ impl ResourceNotReadyException {
 
 /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1488,14 +1358,6 @@ impl RequestTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestTooLargeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestTooLargeException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl RequestTooLargeException {
@@ -1564,7 +1426,7 @@ impl RequestTooLargeException {
 
 /// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1577,14 +1439,6 @@ impl KmsNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsNotFoundException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl KmsNotFoundException {
@@ -1653,7 +1507,7 @@ impl KmsNotFoundException {
 
 /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for Decrypt. Check the function's KMS key settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsInvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1666,14 +1520,6 @@ impl KmsInvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsInvalidStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsInvalidStateException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl KmsInvalidStateException {
@@ -1742,7 +1588,7 @@ impl KmsInvalidStateException {
 
 /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsDisabledException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1755,14 +1601,6 @@ impl KmsDisabledException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsDisabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsDisabledException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl KmsDisabledException {
@@ -1831,7 +1669,7 @@ impl KmsDisabledException {
 
 /// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsAccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1844,14 +1682,6 @@ impl KmsAccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsAccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsAccessDeniedException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl KmsAccessDeniedException {
@@ -1920,7 +1750,7 @@ impl KmsAccessDeniedException {
 
 /// <p>Lambda could not unzip the deployment package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidZipFileException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1933,14 +1763,6 @@ impl InvalidZipFileException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidZipFileException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidZipFileException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidZipFileException {
@@ -2009,7 +1831,7 @@ impl InvalidZipFileException {
 
 /// <p>The Subnet ID provided in the Lambda function VPC configuration is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSubnetIdException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2022,14 +1844,6 @@ impl InvalidSubnetIdException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidSubnetIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubnetIdException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidSubnetIdException {
@@ -2098,7 +1912,7 @@ impl InvalidSubnetIdException {
 
 /// <p>The Security Group ID provided in the Lambda function VPC configuration is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSecurityGroupIdException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2111,14 +1925,6 @@ impl InvalidSecurityGroupIdException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidSecurityGroupIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSecurityGroupIdException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidSecurityGroupIdException {
@@ -2190,7 +1996,7 @@ impl InvalidSecurityGroupIdException {
 
 /// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EniLimitReachedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2203,14 +2009,6 @@ impl EniLimitReachedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for EniLimitReachedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EniLimitReachedException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl EniLimitReachedException {
@@ -2279,7 +2077,7 @@ impl EniLimitReachedException {
 
 /// <p>The function was able to make a network connection to the configured file system, but the mount operation timed out.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsMountTimeoutException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2292,14 +2090,6 @@ impl EfsMountTimeoutException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for EfsMountTimeoutException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsMountTimeoutException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl EfsMountTimeoutException {
@@ -2368,7 +2158,7 @@ impl EfsMountTimeoutException {
 
 /// <p>The function couldn't mount the configured file system due to a permission or configuration issue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsMountFailureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2381,14 +2171,6 @@ impl EfsMountFailureException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for EfsMountFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsMountFailureException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl EfsMountFailureException {
@@ -2457,7 +2239,7 @@ impl EfsMountFailureException {
 
 /// <p>The function couldn't make a network connection to the configured file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsMountConnectivityException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2470,14 +2252,6 @@ impl EfsMountConnectivityException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for EfsMountConnectivityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsMountConnectivityException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl EfsMountConnectivityException {
@@ -2549,7 +2323,7 @@ impl EfsMountConnectivityException {
 
 /// <p>An error occurred when reading from or writing to a connected file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsioException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2562,14 +2336,6 @@ impl EfsioException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for EfsioException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsioException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl EfsioException {
@@ -2638,7 +2404,7 @@ impl EfsioException {
 
 /// <p>Lambda received an unexpected EC2 client exception while setting up for the Lambda function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2UnexpectedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2658,15 +2424,6 @@ impl Ec2UnexpectedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn ec2_error_code(&self) -> std::option::Option<&str> {
         self.ec2_error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2UnexpectedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2UnexpectedException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.field("ec2_error_code", &self.ec2_error_code);
-        formatter.finish()
     }
 }
 impl Ec2UnexpectedException {
@@ -2750,7 +2507,7 @@ impl Ec2UnexpectedException {
 
 /// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided for the Lambda function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2ThrottledException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2763,14 +2520,6 @@ impl Ec2ThrottledException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2ThrottledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2ThrottledException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl Ec2ThrottledException {
@@ -2839,7 +2588,7 @@ impl Ec2ThrottledException {
 
 /// <p>Need additional permissions to configure VPC settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2852,14 +2601,6 @@ impl Ec2AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2AccessDeniedException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl Ec2AccessDeniedException {
@@ -2928,7 +2669,7 @@ impl Ec2AccessDeniedException {
 
 /// <p>The specified configuration does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedConcurrencyConfigNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2941,14 +2682,6 @@ impl ProvisionedConcurrencyConfigNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ProvisionedConcurrencyConfigNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedConcurrencyConfigNotFoundException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ProvisionedConcurrencyConfigNotFoundException {
@@ -3017,7 +2750,7 @@ impl ProvisionedConcurrencyConfigNotFoundException {
 
 /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyLengthExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3030,14 +2763,6 @@ impl PolicyLengthExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyLengthExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyLengthExceededException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl PolicyLengthExceededException {

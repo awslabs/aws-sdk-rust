@@ -3345,7 +3345,7 @@ impl UpdatePipelineStatusInput {
 
 /// <p>The <code>UpdatePipelineStatusRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineStatusInput {
     /// <p>The identifier of the pipeline to update.</p>
     #[doc(hidden)]
@@ -3372,18 +3372,10 @@ impl UpdatePipelineStatusInput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePipelineStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineStatusInput");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>UpdatePipelineNotificationsRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsInput {
     /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
     #[doc(hidden)]
@@ -3418,18 +3410,10 @@ impl UpdatePipelineNotificationsInput {
         self.notifications.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePipelineNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineNotificationsInput");
-        formatter.field("id", &self.id);
-        formatter.field("notifications", &self.notifications);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>UpdatePipelineRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineInput {
     /// <p>The ID of the pipeline that you want to update.</p>
     #[doc(hidden)]
@@ -3602,25 +3586,11 @@ impl UpdatePipelineInput {
         self.thumbnail_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("input_bucket", &self.input_bucket);
-        formatter.field("role", &self.role);
-        formatter.field("aws_kms_key_arn", &self.aws_kms_key_arn);
-        formatter.field("notifications", &self.notifications);
-        formatter.field("content_config", &self.content_config);
-        formatter.field("thumbnail_config", &self.thumbnail_config);
-        formatter.finish()
-    }
-}
 
 /// <p> The <code>TestRoleRequest</code> structure. </p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestRoleInput {
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
     #[doc(hidden)]
@@ -3653,20 +3623,10 @@ impl TestRoleInput {
         self.topics.as_deref()
     }
 }
-impl std::fmt::Debug for TestRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestRoleInput");
-        formatter.field("role", &self.role);
-        formatter.field("input_bucket", &self.input_bucket);
-        formatter.field("output_bucket", &self.output_bucket);
-        formatter.field("topics", &self.topics);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>ReadPresetRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadPresetInput {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
     #[doc(hidden)]
@@ -3678,17 +3638,10 @@ impl ReadPresetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for ReadPresetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadPresetInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>ReadPipelineRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadPipelineInput {
     /// <p>The identifier of the pipeline to read.</p>
     #[doc(hidden)]
@@ -3700,17 +3653,10 @@ impl ReadPipelineInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for ReadPipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadPipelineInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>ReadJobRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadJobInput {
     /// <p>The identifier of the job for which you want to get detailed information.</p>
     #[doc(hidden)]
@@ -3722,17 +3668,10 @@ impl ReadJobInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for ReadJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadJobInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>ListPresetsRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPresetsInput {
     /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
     #[doc(hidden)]
@@ -3751,18 +3690,10 @@ impl ListPresetsInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPresetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPresetsInput");
-        formatter.field("ascending", &self.ascending);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>ListPipelineRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesInput {
     /// <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
     #[doc(hidden)]
@@ -3781,18 +3712,10 @@ impl ListPipelinesInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesInput");
-        formatter.field("ascending", &self.ascending);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>ListJobsByStatusRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsByStatusInput {
     /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
     #[doc(hidden)]
@@ -3818,19 +3741,10 @@ impl ListJobsByStatusInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsByStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsByStatusInput");
-        formatter.field("status", &self.status);
-        formatter.field("ascending", &self.ascending);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>ListJobsByPipelineRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsByPipelineInput {
     /// <p>The ID of the pipeline for which you want to get job information.</p>
     #[doc(hidden)]
@@ -3856,19 +3770,10 @@ impl ListJobsByPipelineInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsByPipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsByPipelineInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("ascending", &self.ascending);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>DeletePresetRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePresetInput {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
     #[doc(hidden)]
@@ -3880,17 +3785,10 @@ impl DeletePresetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePresetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePresetInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>DeletePipelineRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineInput {
     /// <p>The identifier of the pipeline that you want to delete.</p>
     #[doc(hidden)]
@@ -3902,17 +3800,10 @@ impl DeletePipelineInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>CreatePresetRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePresetInput {
     /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     #[doc(hidden)]
@@ -3959,22 +3850,10 @@ impl CreatePresetInput {
         self.thumbnails.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePresetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePresetInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("container", &self.container);
-        formatter.field("video", &self.video);
-        formatter.field("audio", &self.audio);
-        formatter.field("thumbnails", &self.thumbnails);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>CreatePipelineRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineInput {
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters.</p>
@@ -4167,24 +4046,10 @@ impl CreatePipelineInput {
         self.thumbnail_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineInput");
-        formatter.field("name", &self.name);
-        formatter.field("input_bucket", &self.input_bucket);
-        formatter.field("output_bucket", &self.output_bucket);
-        formatter.field("role", &self.role);
-        formatter.field("aws_kms_key_arn", &self.aws_kms_key_arn);
-        formatter.field("notifications", &self.notifications);
-        formatter.field("content_config", &self.content_config);
-        formatter.field("thumbnail_config", &self.thumbnail_config);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>CreateJobRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
     #[doc(hidden)]
@@ -4251,24 +4116,10 @@ impl CreateJobInput {
         self.user_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("input", &self.input);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("output", &self.output);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("output_key_prefix", &self.output_key_prefix);
-        formatter.field("playlists", &self.playlists);
-        formatter.field("user_metadata", &self.user_metadata);
-        formatter.finish()
-    }
-}
 
 /// <p>The <code>CancelJobRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The identifier of the job that you want to cancel.</p>
     /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <code>ListJobsByStatus</code> API action.</p>
@@ -4280,12 +4131,5 @@ impl CancelJobInput {
     /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <code>ListJobsByStatus</code> API action.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }

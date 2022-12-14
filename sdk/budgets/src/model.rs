@@ -40,7 +40,7 @@ impl std::fmt::Debug for Subscriber {
 pub mod subscriber {
 
     /// A builder for [`Subscriber`](crate::model::Subscriber).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) subscription_type: std::option::Option<crate::model::SubscriptionType>,
         pub(crate) address: std::option::Option<std::string::String>,
@@ -77,6 +77,14 @@ pub mod subscriber {
                 subscription_type: self.subscription_type,
                 address: self.address,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("subscription_type", &self.subscription_type);
+            formatter.field("address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -187,7 +195,7 @@ impl AsRef<str> for SubscriptionType {
 /// <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Notification {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
     #[doc(hidden)]
@@ -225,17 +233,6 @@ impl Notification {
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
     pub fn notification_state(&self) -> std::option::Option<&crate::model::NotificationState> {
         self.notification_state.as_ref()
-    }
-}
-impl std::fmt::Debug for Notification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Notification");
-        formatter.field("notification_type", &self.notification_type);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("threshold_type", &self.threshold_type);
-        formatter.field("notification_state", &self.notification_state);
-        formatter.finish()
     }
 }
 /// See [`Notification`](crate::model::Notification).
@@ -707,7 +704,7 @@ impl AsRef<str> for NotificationType {
 
 /// <p>A budget action resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>A system-generated universally unique identifier (UUID) for the action. </p>
     #[doc(hidden)]
@@ -780,22 +777,6 @@ impl Action {
     /// <p> A list of subscribers.</p>
     pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
         self.subscribers.as_deref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("notification_type", &self.notification_type);
-        formatter.field("action_type", &self.action_type);
-        formatter.field("action_threshold", &self.action_threshold);
-        formatter.field("definition", &self.definition);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("approval_model", &self.approval_model);
-        formatter.field("status", &self.status);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -1203,7 +1184,7 @@ impl AsRef<str> for ApprovalModel {
 
 /// <p>Specifies all of the type-specific parameters. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Definition {
     /// <p>The Identity and Access Management (IAM) action definition details. </p>
     #[doc(hidden)]
@@ -1227,15 +1208,6 @@ impl Definition {
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
     pub fn ssm_action_definition(&self) -> std::option::Option<&crate::model::SsmActionDefinition> {
         self.ssm_action_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for Definition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Definition");
-        formatter.field("iam_action_definition", &self.iam_action_definition);
-        formatter.field("scp_action_definition", &self.scp_action_definition);
-        formatter.field("ssm_action_definition", &self.ssm_action_definition);
-        formatter.finish()
     }
 }
 /// See [`Definition`](crate::model::Definition).
@@ -1307,7 +1279,7 @@ impl Definition {
 
 /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SsmActionDefinition {
     /// <p>The action subType. </p>
     #[doc(hidden)]
@@ -1331,15 +1303,6 @@ impl SsmActionDefinition {
     /// <p>The EC2 and RDS instance IDs. </p>
     pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for SsmActionDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsmActionDefinition");
-        formatter.field("action_sub_type", &self.action_sub_type);
-        formatter.field("region", &self.region);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.finish()
     }
 }
 /// See [`SsmActionDefinition`](crate::model::SsmActionDefinition).
@@ -1504,7 +1467,7 @@ impl AsRef<str> for ActionSubType {
 
 /// <p>The service control policies (SCP) action definition details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScpActionDefinition {
     /// <p>The policy ID attached. </p>
     #[doc(hidden)]
@@ -1521,14 +1484,6 @@ impl ScpActionDefinition {
     /// <p>A list of target IDs. </p>
     pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.target_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for ScpActionDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScpActionDefinition");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("target_ids", &self.target_ids);
-        formatter.finish()
     }
 }
 /// See [`ScpActionDefinition`](crate::model::ScpActionDefinition).
@@ -1588,7 +1543,7 @@ impl ScpActionDefinition {
 
 /// <p>The Identity and Access Management (IAM) action definition details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamActionDefinition {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
     #[doc(hidden)]
@@ -1619,16 +1574,6 @@ impl IamActionDefinition {
     /// <p>A list of users to be attached. There must be at least one user. </p>
     pub fn users(&self) -> std::option::Option<&[std::string::String]> {
         self.users.as_deref()
-    }
-}
-impl std::fmt::Debug for IamActionDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamActionDefinition");
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("roles", &self.roles);
-        formatter.field("groups", &self.groups);
-        formatter.field("users", &self.users);
-        formatter.finish()
     }
 }
 /// See [`IamActionDefinition`](crate::model::IamActionDefinition).
@@ -1730,7 +1675,7 @@ impl IamActionDefinition {
 
 /// <p>The trigger threshold of the action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionThreshold {
     /// <p> The threshold of a notification.</p>
     #[doc(hidden)]
@@ -1747,14 +1692,6 @@ impl ActionThreshold {
     /// <p> The type of threshold for a notification.</p>
     pub fn action_threshold_type(&self) -> std::option::Option<&crate::model::ThresholdType> {
         self.action_threshold_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ActionThreshold {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionThreshold");
-        formatter.field("action_threshold_value", &self.action_threshold_value);
-        formatter.field("action_threshold_type", &self.action_threshold_type);
-        formatter.finish()
     }
 }
 /// See [`ActionThreshold`](crate::model::ActionThreshold).
@@ -1905,7 +1842,7 @@ impl AsRef<str> for ActionType {
 /// <p>This is the Amazon Resource Name (ARN) pattern for a budget: </p>
 /// <p> <code>arn:aws:budgets::AccountId:budget/budgetName</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Budget {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</p>
     #[doc(hidden)]
@@ -2035,23 +1972,6 @@ impl Budget {
     /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
     pub fn auto_adjust_data(&self) -> std::option::Option<&crate::model::AutoAdjustData> {
         self.auto_adjust_data.as_ref()
-    }
-}
-impl std::fmt::Debug for Budget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Budget");
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("budget_limit", &self.budget_limit);
-        formatter.field("planned_budget_limits", &self.planned_budget_limits);
-        formatter.field("cost_filters", &self.cost_filters);
-        formatter.field("cost_types", &self.cost_types);
-        formatter.field("time_unit", &self.time_unit);
-        formatter.field("time_period", &self.time_period);
-        formatter.field("calculated_spend", &self.calculated_spend);
-        formatter.field("budget_type", &self.budget_type);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("auto_adjust_data", &self.auto_adjust_data);
-        formatter.finish()
     }
 }
 /// See [`Budget`](crate::model::Budget).
@@ -2302,7 +2222,7 @@ impl Budget {
 
 /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoAdjustData {
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
     #[doc(hidden)]
@@ -2326,15 +2246,6 @@ impl AutoAdjustData {
     /// <p>The last time that your budget was auto-adjusted.</p>
     pub fn last_auto_adjust_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_auto_adjust_time.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoAdjustData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoAdjustData");
-        formatter.field("auto_adjust_type", &self.auto_adjust_type);
-        formatter.field("historical_options", &self.historical_options);
-        formatter.field("last_auto_adjust_time", &self.last_auto_adjust_time);
-        formatter.finish()
     }
 }
 /// See [`AutoAdjustData`](crate::model::AutoAdjustData).
@@ -2406,7 +2317,7 @@ impl AutoAdjustData {
 
 /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistoricalOptions {
     /// <p>The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code> granularity of the budget:</p>
     /// <ul>
@@ -2439,17 +2350,6 @@ impl HistoricalOptions {
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
     pub fn look_back_available_periods(&self) -> std::option::Option<i32> {
         self.look_back_available_periods
-    }
-}
-impl std::fmt::Debug for HistoricalOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistoricalOptions");
-        formatter.field("budget_adjustment_period", &self.budget_adjustment_period);
-        formatter.field(
-            "look_back_available_periods",
-            &self.look_back_available_periods,
-        );
-        formatter.finish()
     }
 }
 /// See [`HistoricalOptions`](crate::model::HistoricalOptions).
@@ -2726,7 +2626,7 @@ impl AsRef<str> for BudgetType {
 /// <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, RI units, or Savings Plans units and the <code>forecastedSpend</code> tracks how much that you're predicted to spend based on your historical usage profile.</p>
 /// <p>For example, if it's the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CalculatedSpend {
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you used.</p>
     #[doc(hidden)]
@@ -2743,14 +2643,6 @@ impl CalculatedSpend {
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you're forecasted to use.</p>
     pub fn forecasted_spend(&self) -> std::option::Option<&crate::model::Spend> {
         self.forecasted_spend.as_ref()
-    }
-}
-impl std::fmt::Debug for CalculatedSpend {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CalculatedSpend");
-        formatter.field("actual_spend", &self.actual_spend);
-        formatter.field("forecasted_spend", &self.forecasted_spend);
-        formatter.finish()
     }
 }
 /// See [`CalculatedSpend`](crate::model::CalculatedSpend).
@@ -2809,7 +2701,7 @@ impl CalculatedSpend {
 /// <li> <p>A <code>unit</code> of <code>GB</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Spend {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
     #[doc(hidden)]
@@ -2826,14 +2718,6 @@ impl Spend {
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for Spend {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Spend");
-        formatter.field("amount", &self.amount);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`Spend`](crate::model::Spend).
@@ -2884,7 +2768,7 @@ impl Spend {
 
 /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimePeriod {
     /// <p>The start date for a budget. If you created your budget and didn't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API.</p>
     /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
@@ -2905,14 +2789,6 @@ impl TimePeriod {
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
     pub fn end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end.as_ref()
-    }
-}
-impl std::fmt::Debug for TimePeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimePeriod");
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.finish()
     }
 }
 /// See [`TimePeriod`](crate::model::TimePeriod).
@@ -3068,7 +2944,7 @@ impl AsRef<str> for TimeUnit {
 /// <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p>
 /// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets don't have <code>CostTypes</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostTypes {
     /// <p>Specifies whether a budget includes taxes.</p>
     /// <p>The default value is <code>true</code>.</p>
@@ -3170,26 +3046,6 @@ impl CostTypes {
     /// <p>The default value is <code>false</code>.</p>
     pub fn use_amortized(&self) -> std::option::Option<bool> {
         self.use_amortized
-    }
-}
-impl std::fmt::Debug for CostTypes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostTypes");
-        formatter.field("include_tax", &self.include_tax);
-        formatter.field("include_subscription", &self.include_subscription);
-        formatter.field("use_blended", &self.use_blended);
-        formatter.field("include_refund", &self.include_refund);
-        formatter.field("include_credit", &self.include_credit);
-        formatter.field("include_upfront", &self.include_upfront);
-        formatter.field("include_recurring", &self.include_recurring);
-        formatter.field(
-            "include_other_subscription",
-            &self.include_other_subscription,
-        );
-        formatter.field("include_support", &self.include_support);
-        formatter.field("include_discount", &self.include_discount);
-        formatter.field("use_amortized", &self.use_amortized);
-        formatter.finish()
     }
 }
 /// See [`CostTypes`](crate::model::CostTypes).
@@ -3475,7 +3331,7 @@ impl AsRef<str> for ExecutionType {
 
 /// <p>A history of the state of a budget at the end of the budget's specified time period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BudgetPerformanceHistory {
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     #[doc(hidden)]
@@ -3531,21 +3387,6 @@ impl BudgetPerformanceHistory {
         &self,
     ) -> std::option::Option<&[crate::model::BudgetedAndActualAmounts]> {
         self.budgeted_and_actual_amounts_list.as_deref()
-    }
-}
-impl std::fmt::Debug for BudgetPerformanceHistory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BudgetPerformanceHistory");
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("budget_type", &self.budget_type);
-        formatter.field("cost_filters", &self.cost_filters);
-        formatter.field("cost_types", &self.cost_types);
-        formatter.field("time_unit", &self.time_unit);
-        formatter.field(
-            "budgeted_and_actual_amounts_list",
-            &self.budgeted_and_actual_amounts_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`BudgetPerformanceHistory`](crate::model::BudgetPerformanceHistory).
@@ -3682,7 +3523,7 @@ impl BudgetPerformanceHistory {
 
 /// <p>The amount of cost or usage that you created the budget for, compared to your actual costs or usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BudgetedAndActualAmounts {
     /// <p>The amount of cost or usage that you created the budget for.</p>
     #[doc(hidden)]
@@ -3706,15 +3547,6 @@ impl BudgetedAndActualAmounts {
     /// <p>The time period that's covered by this budget comparison.</p>
     pub fn time_period(&self) -> std::option::Option<&crate::model::TimePeriod> {
         self.time_period.as_ref()
-    }
-}
-impl std::fmt::Debug for BudgetedAndActualAmounts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BudgetedAndActualAmounts");
-        formatter.field("budgeted_amount", &self.budgeted_amount);
-        formatter.field("actual_amount", &self.actual_amount);
-        formatter.field("time_period", &self.time_period);
-        formatter.finish()
     }
 }
 /// See [`BudgetedAndActualAmounts`](crate::model::BudgetedAndActualAmounts).
@@ -3786,7 +3618,7 @@ impl BudgetedAndActualAmounts {
 
 /// <p> The budget name and associated notifications for an account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BudgetNotificationsForAccount {
     /// <p> A list of notifications.</p>
     #[doc(hidden)]
@@ -3803,14 +3635,6 @@ impl BudgetNotificationsForAccount {
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BudgetNotificationsForAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BudgetNotificationsForAccount");
-        formatter.field("notifications", &self.notifications);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.finish()
     }
 }
 /// See [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount).
@@ -3870,7 +3694,7 @@ impl BudgetNotificationsForAccount {
 
 /// <p>The historical records for a budget action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionHistory {
     /// <p> A generic time stamp. In Java, it's transformed to a <code>Date</code> object.</p>
     #[doc(hidden)]
@@ -3903,16 +3727,6 @@ impl ActionHistory {
         &self,
     ) -> std::option::Option<&crate::model::ActionHistoryDetails> {
         self.action_history_details.as_ref()
-    }
-}
-impl std::fmt::Debug for ActionHistory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionHistory");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("action_history_details", &self.action_history_details);
-        formatter.finish()
     }
 }
 /// See [`ActionHistory`](crate::model::ActionHistory).
@@ -3999,7 +3813,7 @@ impl ActionHistory {
 
 /// <p>The description of the details for the event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionHistoryDetails {
     /// <p> A generic string.</p>
     #[doc(hidden)]
@@ -4016,14 +3830,6 @@ impl ActionHistoryDetails {
     /// <p>The budget action resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::Action> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for ActionHistoryDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionHistoryDetails");
-        formatter.field("message", &self.message);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`ActionHistoryDetails`](crate::model::ActionHistoryDetails).
@@ -4185,7 +3991,7 @@ impl AsRef<str> for EventType {
 
 /// <p>A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationWithSubscribers {
     /// <p>The notification that's associated with a budget.</p>
     #[doc(hidden)]
@@ -4202,14 +4008,6 @@ impl NotificationWithSubscribers {
     /// <p>A list of subscribers who are subscribed to this notification.</p>
     pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
         self.subscribers.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationWithSubscribers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationWithSubscribers");
-        formatter.field("notification", &self.notification);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
     }
 }
 /// See [`NotificationWithSubscribers`](crate::model::NotificationWithSubscribers).

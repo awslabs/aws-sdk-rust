@@ -2,7 +2,7 @@
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl TooManyRequestsException {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl TooManyRequestsException {
@@ -91,7 +83,7 @@ impl TooManyRequestsException {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PayloadTooLargeException {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl PayloadTooLargeException {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PayloadTooLargeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PayloadTooLargeException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl PayloadTooLargeException {
@@ -180,7 +164,7 @@ impl PayloadTooLargeException {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -193,14 +177,6 @@ impl NotFoundException {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl NotFoundException {
@@ -269,7 +245,7 @@ impl NotFoundException {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MethodNotAllowedException {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -282,14 +258,6 @@ impl MethodNotAllowedException {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MethodNotAllowedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MethodNotAllowedException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl MethodNotAllowedException {
@@ -358,7 +326,7 @@ impl MethodNotAllowedException {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerErrorException {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -371,14 +339,6 @@ impl InternalServerErrorException {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl InternalServerErrorException {
@@ -447,7 +407,7 @@ impl InternalServerErrorException {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForbiddenException {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -460,14 +420,6 @@ impl ForbiddenException {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ForbiddenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ForbiddenException {
@@ -536,7 +488,7 @@ impl ForbiddenException {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -549,14 +501,6 @@ impl BadRequestException {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl BadRequestException {
@@ -625,7 +569,7 @@ impl BadRequestException {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -638,14 +582,6 @@ impl ConflictException {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ConflictException {

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_application_input {
 
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) environment_identifier: std::option::Option<std::string::String>,
@@ -128,6 +128,19 @@ pub mod create_application_input {
                 tags: self.tags,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("environment_identifier", &self.environment_identifier);
+            formatter.field("vpc_id", &self.vpc_id);
+            formatter.field("proxy_type", &self.proxy_type);
+            formatter.field("api_gateway_proxy", &self.api_gateway_proxy);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -272,7 +285,7 @@ impl CreateApplicationInput {
 pub mod create_environment_input {
 
     /// A builder for [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -365,6 +378,17 @@ pub mod create_environment_input {
                 tags: self.tags,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("network_fabric_type", &self.network_fabric_type);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -485,7 +509,7 @@ impl CreateEnvironmentInput {
 pub mod create_route_input {
 
     /// A builder for [`CreateRouteInput`](crate::input::CreateRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) environment_identifier: std::option::Option<std::string::String>,
         pub(crate) application_identifier: std::option::Option<std::string::String>,
@@ -627,6 +651,20 @@ pub mod create_route_input {
                 tags: self.tags,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("environment_identifier", &self.environment_identifier);
+            formatter.field("application_identifier", &self.application_identifier);
+            formatter.field("service_identifier", &self.service_identifier);
+            formatter.field("route_type", &self.route_type);
+            formatter.field("default_route", &self.default_route);
+            formatter.field("uri_path_route", &self.uri_path_route);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -785,7 +823,7 @@ impl CreateRouteInput {
 pub mod create_service_input {
 
     /// A builder for [`CreateServiceInput`](crate::input::CreateServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -948,6 +986,22 @@ pub mod create_service_input {
                 tags: self.tags,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("environment_identifier", &self.environment_identifier);
+            formatter.field("application_identifier", &self.application_identifier);
+            formatter.field("vpc_id", &self.vpc_id);
+            formatter.field("endpoint_type", &self.endpoint_type);
+            formatter.field("url_endpoint", &self.url_endpoint);
+            formatter.field("lambda_endpoint", &self.lambda_endpoint);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -4279,7 +4333,7 @@ impl PutResourcePolicyInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4331,6 +4385,14 @@ pub mod tag_resource_input {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4468,7 +4530,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4512,6 +4574,14 @@ pub mod untag_resource_input {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("tag_keys", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4896,7 +4966,7 @@ impl UpdateRouteInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRouteInput {
     /// <p> The ID of the environment in which the route is being updated. </p>
     #[doc(hidden)]
@@ -4927,16 +4997,6 @@ impl UpdateRouteInput {
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
     pub fn activation_state(&self) -> std::option::Option<&crate::model::RouteActivationState> {
         self.activation_state.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRouteInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("route_identifier", &self.route_identifier);
-        formatter.field("activation_state", &self.activation_state);
-        formatter.finish()
     }
 }
 
@@ -5006,7 +5066,7 @@ impl std::fmt::Debug for TagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
     #[doc(hidden)]
@@ -5025,18 +5085,10 @@ impl PutResourcePolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. </p>
     #[doc(hidden)]
@@ -5048,17 +5100,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicesInput {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
@@ -5091,20 +5136,10 @@ impl ListServicesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicesInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoutesInput {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
@@ -5137,20 +5172,10 @@ impl ListRoutesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRoutesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoutesInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentVpcsInput {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
@@ -5176,19 +5201,10 @@ impl ListEnvironmentVpcsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEnvironmentVpcsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentVpcsInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentsInput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
@@ -5207,18 +5223,10 @@ impl ListEnvironmentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
@@ -5244,19 +5252,10 @@ impl ListApplicationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceInput {
     /// <p>The ID of the environment.</p>
     #[doc(hidden)]
@@ -5282,19 +5281,10 @@ impl GetServiceInput {
         self.service_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("service_identifier", &self.service_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRouteInput {
     /// <p>The ID of the environment.</p>
     #[doc(hidden)]
@@ -5320,19 +5310,10 @@ impl GetRouteInput {
         self.route_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRouteInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("route_identifier", &self.route_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
     #[doc(hidden)]
@@ -5344,17 +5325,10 @@ impl GetResourcePolicyInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePolicyInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnvironmentInput {
     /// <p>The ID of the environment.</p>
     #[doc(hidden)]
@@ -5366,17 +5340,10 @@ impl GetEnvironmentInput {
         self.environment_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnvironmentInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
@@ -5395,18 +5362,10 @@ impl GetApplicationInput {
         self.application_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The ID of the environment that the service is in.</p>
     #[doc(hidden)]
@@ -5436,19 +5395,10 @@ impl DeleteServiceInput {
         self.service_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("service_identifier", &self.service_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRouteInput {
     /// <p>The ID of the environment to delete the route from.</p>
     #[doc(hidden)]
@@ -5474,19 +5424,10 @@ impl DeleteRouteInput {
         self.route_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRouteInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("route_identifier", &self.route_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
     #[doc(hidden)]
@@ -5498,17 +5439,10 @@ impl DeleteResourcePolicyInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
@@ -5520,17 +5454,10 @@ impl DeleteEnvironmentInput {
         self.environment_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
@@ -5547,14 +5474,6 @@ impl DeleteApplicationInput {
     /// <p>The ID of the application.</p>
     pub fn application_identifier(&self) -> std::option::Option<&str> {
         self.application_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.finish()
     }
 }
 

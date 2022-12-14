@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_group_input {
 
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -55,6 +55,15 @@ pub mod create_group_input {
                 display_name: self.display_name,
                 description: self.description,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("identity_store_id", &self.identity_store_id);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -353,7 +362,7 @@ impl CreateGroupMembershipInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -565,6 +574,26 @@ pub mod create_user_input {
                 locale: self.locale,
                 timezone: self.timezone,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("identity_store_id", &self.identity_store_id);
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("nick_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("profile_url", &"*** Sensitive Data Redacted ***");
+            formatter.field("emails", &self.emails);
+            formatter.field("addresses", &self.addresses);
+            formatter.field("phone_numbers", &self.phone_numbers);
+            formatter.field("user_type", &"*** Sensitive Data Redacted ***");
+            formatter.field("title", &"*** Sensitive Data Redacted ***");
+            formatter.field("preferred_language", &"*** Sensitive Data Redacted ***");
+            formatter.field("locale", &"*** Sensitive Data Redacted ***");
+            formatter.field("timezone", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3473,7 +3502,7 @@ impl UpdateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     #[doc(hidden)]
@@ -3510,16 +3539,6 @@ impl ListUsersInput {
     )]
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 
@@ -3651,7 +3670,7 @@ impl std::fmt::Debug for CreateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3670,18 +3689,10 @@ impl DeleteUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3707,19 +3718,10 @@ impl UpdateUserInput {
         self.operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("operations", &self.operations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     #[doc(hidden)]
@@ -3738,18 +3740,10 @@ impl DescribeUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     #[doc(hidden)]
@@ -3786,16 +3780,6 @@ impl ListGroupsInput {
     )]
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for ListGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 
@@ -3839,7 +3823,7 @@ impl std::fmt::Debug for CreateGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3858,18 +3842,10 @@ impl DeleteGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3895,19 +3871,10 @@ impl UpdateGroupInput {
         self.operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("operations", &self.operations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     #[doc(hidden)]
@@ -3926,18 +3893,10 @@ impl DescribeGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupMembershipsInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3970,20 +3929,10 @@ impl ListGroupMembershipsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupMembershipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupMembershipsInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4009,19 +3958,10 @@ impl CreateGroupMembershipInput {
         self.member_id.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupMembershipInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4040,18 +3980,10 @@ impl DeleteGroupMembershipInput {
         self.membership_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupMembershipInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("membership_id", &self.membership_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4070,18 +4002,10 @@ impl DescribeGroupMembershipInput {
         self.membership_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupMembershipInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("membership_id", &self.membership_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupMembershipsForMemberInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4114,20 +4038,10 @@ impl ListGroupMembershipsForMemberInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupMembershipsForMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupMembershipsForMemberInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IsMemberInGroupsInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4153,19 +4067,10 @@ impl IsMemberInGroupsInput {
         self.group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for IsMemberInGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IsMemberInGroupsInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("group_ids", &self.group_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4184,18 +4089,10 @@ impl GetUserIdInput {
         self.alternate_identifier.as_ref()
     }
 }
-impl std::fmt::Debug for GetUserIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserIdInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("alternate_identifier", &self.alternate_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupMembershipIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4221,19 +4118,10 @@ impl GetGroupMembershipIdInput {
         self.member_id.as_ref()
     }
 }
-impl std::fmt::Debug for GetGroupMembershipIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupMembershipIdInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4250,13 +4138,5 @@ impl GetGroupIdInput {
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>GroupDisplayName</code>.</p>
     pub fn alternate_identifier(&self) -> std::option::Option<&crate::model::AlternateIdentifier> {
         self.alternate_identifier.as_ref()
-    }
-}
-impl std::fmt::Debug for GetGroupIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupIdInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("alternate_identifier", &self.alternate_identifier);
-        formatter.finish()
     }
 }

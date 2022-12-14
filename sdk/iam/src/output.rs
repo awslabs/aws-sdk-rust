@@ -2,7 +2,7 @@
 
 /// <p>Contains the response to a successful <code>UploadSSHPublicKey</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadSshPublicKeyOutput {
     /// <p>Contains information about the SSH public key.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl UploadSshPublicKeyOutput {
     /// <p>Contains information about the SSH public key.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&crate::model::SshPublicKey> {
         self.ssh_public_key.as_ref()
-    }
-}
-impl std::fmt::Debug for UploadSshPublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadSshPublicKeyOutput");
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.finish()
     }
 }
 /// See [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput).
@@ -60,7 +53,7 @@ impl UploadSshPublicKeyOutput {
 
 /// <p>Contains the response to a successful <code>UploadSigningCertificate</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadSigningCertificateOutput {
     /// <p>Information about the certificate.</p>
     #[doc(hidden)]
@@ -70,13 +63,6 @@ impl UploadSigningCertificateOutput {
     /// <p>Information about the certificate.</p>
     pub fn certificate(&self) -> std::option::Option<&crate::model::SigningCertificate> {
         self.certificate.as_ref()
-    }
-}
-impl std::fmt::Debug for UploadSigningCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadSigningCertificateOutput");
-        formatter.field("certificate", &self.certificate);
-        formatter.finish()
     }
 }
 /// See [`UploadSigningCertificateOutput`](crate::output::UploadSigningCertificateOutput).
@@ -118,7 +104,7 @@ impl UploadSigningCertificateOutput {
 
 /// <p>Contains the response to a successful <code>UploadServerCertificate</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadServerCertificateOutput {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
     #[doc(hidden)]
@@ -137,17 +123,6 @@ impl UploadServerCertificateOutput {
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for UploadServerCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadServerCertificateOutput");
-        formatter.field(
-            "server_certificate_metadata",
-            &self.server_certificate_metadata,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`UploadServerCertificateOutput`](crate::output::UploadServerCertificateOutput).
@@ -214,14 +189,8 @@ impl UploadServerCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserOutput {}
-impl std::fmt::Debug for UpdateUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
 
@@ -244,14 +213,8 @@ impl UpdateUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSshPublicKeyOutput {}
-impl std::fmt::Debug for UpdateSshPublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSshPublicKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput).
 pub mod update_ssh_public_key_output {
 
@@ -274,14 +237,8 @@ impl UpdateSshPublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSigningCertificateOutput {}
-impl std::fmt::Debug for UpdateSigningCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSigningCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateSigningCertificateOutput`](crate::output::UpdateSigningCertificateOutput).
 pub mod update_signing_certificate_output {
 
@@ -304,14 +261,8 @@ impl UpdateSigningCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceSpecificCredentialOutput {}
-impl std::fmt::Debug for UpdateServiceSpecificCredentialOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceSpecificCredentialOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateServiceSpecificCredentialOutput`](crate::output::UpdateServiceSpecificCredentialOutput).
 pub mod update_service_specific_credential_output {
 
@@ -334,14 +285,8 @@ impl UpdateServiceSpecificCredentialOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServerCertificateOutput {}
-impl std::fmt::Debug for UpdateServerCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServerCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateServerCertificateOutput`](crate::output::UpdateServerCertificateOutput).
 pub mod update_server_certificate_output {
 
@@ -364,7 +309,7 @@ impl UpdateServerCertificateOutput {
 
 /// <p>Contains the response to a successful <code>UpdateSAMLProvider</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
     #[doc(hidden)]
@@ -374,13 +319,6 @@ impl UpdateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
     pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
         self.saml_provider_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateSamlProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSamlProviderOutput");
-        formatter.field("saml_provider_arn", &self.saml_provider_arn);
-        formatter.finish()
     }
 }
 /// See [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput).
@@ -422,7 +360,7 @@ impl UpdateSamlProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoleDescriptionOutput {
     /// <p>A structure that contains details about the modified role.</p>
     #[doc(hidden)]
@@ -432,13 +370,6 @@ impl UpdateRoleDescriptionOutput {
     /// <p>A structure that contains details about the modified role.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::Role> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateRoleDescriptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoleDescriptionOutput");
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 /// See [`UpdateRoleDescriptionOutput`](crate::output::UpdateRoleDescriptionOutput).
@@ -475,14 +406,8 @@ impl UpdateRoleDescriptionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoleOutput {}
-impl std::fmt::Debug for UpdateRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoleOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateRoleOutput`](crate::output::UpdateRoleOutput).
 pub mod update_role_output {
 
@@ -505,14 +430,8 @@ impl UpdateRoleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOpenIdConnectProviderThumbprintOutput {}
-impl std::fmt::Debug for UpdateOpenIdConnectProviderThumbprintOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOpenIdConnectProviderThumbprintOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput).
 pub mod update_open_id_connect_provider_thumbprint_output {
 
@@ -535,14 +454,8 @@ impl UpdateOpenIdConnectProviderThumbprintOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLoginProfileOutput {}
-impl std::fmt::Debug for UpdateLoginProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLoginProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateLoginProfileOutput`](crate::output::UpdateLoginProfileOutput).
 pub mod update_login_profile_output {
 
@@ -565,14 +478,8 @@ impl UpdateLoginProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupOutput {}
-impl std::fmt::Debug for UpdateGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
 pub mod update_group_output {
 
@@ -595,14 +502,8 @@ impl UpdateGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssumeRolePolicyOutput {}
-impl std::fmt::Debug for UpdateAssumeRolePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssumeRolePolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateAssumeRolePolicyOutput`](crate::output::UpdateAssumeRolePolicyOutput).
 pub mod update_assume_role_policy_output {
 
@@ -625,14 +526,8 @@ impl UpdateAssumeRolePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountPasswordPolicyOutput {}
-impl std::fmt::Debug for UpdateAccountPasswordPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountPasswordPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateAccountPasswordPolicyOutput`](crate::output::UpdateAccountPasswordPolicyOutput).
 pub mod update_account_password_policy_output {
 
@@ -655,14 +550,8 @@ impl UpdateAccountPasswordPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccessKeyOutput {}
-impl std::fmt::Debug for UpdateAccessKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccessKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateAccessKeyOutput`](crate::output::UpdateAccessKeyOutput).
 pub mod update_access_key_output {
 
@@ -685,14 +574,8 @@ impl UpdateAccessKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagUserOutput {}
-impl std::fmt::Debug for UntagUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagUserOutput`](crate::output::UntagUserOutput).
 pub mod untag_user_output {
 
@@ -715,14 +598,8 @@ impl UntagUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagServerCertificateOutput {}
-impl std::fmt::Debug for UntagServerCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagServerCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagServerCertificateOutput`](crate::output::UntagServerCertificateOutput).
 pub mod untag_server_certificate_output {
 
@@ -745,14 +622,8 @@ impl UntagServerCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagSamlProviderOutput {}
-impl std::fmt::Debug for UntagSamlProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagSamlProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput).
 pub mod untag_saml_provider_output {
 
@@ -775,14 +646,8 @@ impl UntagSamlProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagRoleOutput {}
-impl std::fmt::Debug for UntagRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagRoleOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagRoleOutput`](crate::output::UntagRoleOutput).
 pub mod untag_role_output {
 
@@ -805,14 +670,8 @@ impl UntagRoleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagPolicyOutput {}
-impl std::fmt::Debug for UntagPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagPolicyOutput`](crate::output::UntagPolicyOutput).
 pub mod untag_policy_output {
 
@@ -835,14 +694,8 @@ impl UntagPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagOpenIdConnectProviderOutput {}
-impl std::fmt::Debug for UntagOpenIdConnectProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagOpenIdConnectProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput).
 pub mod untag_open_id_connect_provider_output {
 
@@ -865,14 +718,8 @@ impl UntagOpenIdConnectProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagMfaDeviceOutput {}
-impl std::fmt::Debug for UntagMfaDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagMfaDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput).
 pub mod untag_mfa_device_output {
 
@@ -895,14 +742,8 @@ impl UntagMfaDeviceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagInstanceProfileOutput {}
-impl std::fmt::Debug for UntagInstanceProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagInstanceProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagInstanceProfileOutput`](crate::output::UntagInstanceProfileOutput).
 pub mod untag_instance_profile_output {
 
@@ -925,14 +766,8 @@ impl UntagInstanceProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagUserOutput {}
-impl std::fmt::Debug for TagUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagUserOutput`](crate::output::TagUserOutput).
 pub mod tag_user_output {
 
@@ -955,14 +790,8 @@ impl TagUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagServerCertificateOutput {}
-impl std::fmt::Debug for TagServerCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagServerCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagServerCertificateOutput`](crate::output::TagServerCertificateOutput).
 pub mod tag_server_certificate_output {
 
@@ -985,14 +814,8 @@ impl TagServerCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagSamlProviderOutput {}
-impl std::fmt::Debug for TagSamlProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagSamlProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput).
 pub mod tag_saml_provider_output {
 
@@ -1015,14 +838,8 @@ impl TagSamlProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagRoleOutput {}
-impl std::fmt::Debug for TagRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagRoleOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagRoleOutput`](crate::output::TagRoleOutput).
 pub mod tag_role_output {
 
@@ -1045,14 +862,8 @@ impl TagRoleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagPolicyOutput {}
-impl std::fmt::Debug for TagPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagPolicyOutput`](crate::output::TagPolicyOutput).
 pub mod tag_policy_output {
 
@@ -1075,14 +886,8 @@ impl TagPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagOpenIdConnectProviderOutput {}
-impl std::fmt::Debug for TagOpenIdConnectProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagOpenIdConnectProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput).
 pub mod tag_open_id_connect_provider_output {
 
@@ -1105,14 +910,8 @@ impl TagOpenIdConnectProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagMfaDeviceOutput {}
-impl std::fmt::Debug for TagMfaDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagMfaDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput).
 pub mod tag_mfa_device_output {
 
@@ -1135,14 +934,8 @@ impl TagMfaDeviceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagInstanceProfileOutput {}
-impl std::fmt::Debug for TagInstanceProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagInstanceProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagInstanceProfileOutput`](crate::output::TagInstanceProfileOutput).
 pub mod tag_instance_profile_output {
 
@@ -1165,7 +958,7 @@ impl TagInstanceProfileOutput {
 
 /// <p>Contains the response to a successful <code>SimulatePrincipalPolicy</code> or <code>SimulateCustomPolicy</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulatePrincipalPolicyOutput {
     /// <p>The results of the simulation.</p>
     #[doc(hidden)]
@@ -1189,15 +982,6 @@ impl SimulatePrincipalPolicyOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for SimulatePrincipalPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulatePrincipalPolicyOutput");
-        formatter.field("evaluation_results", &self.evaluation_results);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`SimulatePrincipalPolicyOutput`](crate::output::SimulatePrincipalPolicyOutput).
@@ -1270,7 +1054,7 @@ impl SimulatePrincipalPolicyOutput {
 
 /// <p>Contains the response to a successful <code>SimulatePrincipalPolicy</code> or <code>SimulateCustomPolicy</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulateCustomPolicyOutput {
     /// <p>The results of the simulation.</p>
     #[doc(hidden)]
@@ -1294,15 +1078,6 @@ impl SimulateCustomPolicyOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for SimulateCustomPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulateCustomPolicyOutput");
-        formatter.field("evaluation_results", &self.evaluation_results);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`SimulateCustomPolicyOutput`](crate::output::SimulateCustomPolicyOutput).
@@ -1375,14 +1150,8 @@ impl SimulateCustomPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetSecurityTokenServicePreferencesOutput {}
-impl std::fmt::Debug for SetSecurityTokenServicePreferencesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSecurityTokenServicePreferencesOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetSecurityTokenServicePreferencesOutput`](crate::output::SetSecurityTokenServicePreferencesOutput).
 pub mod set_security_token_service_preferences_output {
 
@@ -1405,14 +1174,8 @@ impl SetSecurityTokenServicePreferencesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDefaultPolicyVersionOutput {}
-impl std::fmt::Debug for SetDefaultPolicyVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDefaultPolicyVersionOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput).
 pub mod set_default_policy_version_output {
 
@@ -1435,14 +1198,8 @@ impl SetDefaultPolicyVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResyncMfaDeviceOutput {}
-impl std::fmt::Debug for ResyncMfaDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResyncMfaDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput).
 pub mod resync_mfa_device_output {
 
@@ -1465,7 +1222,7 @@ impl ResyncMfaDeviceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetServiceSpecificCredentialOutput {
     /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
@@ -1481,16 +1238,6 @@ impl ResetServiceSpecificCredentialOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceSpecificCredential> {
         self.service_specific_credential.as_ref()
-    }
-}
-impl std::fmt::Debug for ResetServiceSpecificCredentialOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetServiceSpecificCredentialOutput");
-        formatter.field(
-            "service_specific_credential",
-            &self.service_specific_credential,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResetServiceSpecificCredentialOutput`](crate::output::ResetServiceSpecificCredentialOutput).
@@ -1540,14 +1287,8 @@ impl ResetServiceSpecificCredentialOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveUserFromGroupOutput {}
-impl std::fmt::Debug for RemoveUserFromGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveUserFromGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveUserFromGroupOutput`](crate::output::RemoveUserFromGroupOutput).
 pub mod remove_user_from_group_output {
 
@@ -1570,14 +1311,8 @@ impl RemoveUserFromGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveRoleFromInstanceProfileOutput {}
-impl std::fmt::Debug for RemoveRoleFromInstanceProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveRoleFromInstanceProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveRoleFromInstanceProfileOutput`](crate::output::RemoveRoleFromInstanceProfileOutput).
 pub mod remove_role_from_instance_profile_output {
 
@@ -1600,14 +1335,8 @@ impl RemoveRoleFromInstanceProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveClientIdFromOpenIdConnectProviderOutput {}
-impl std::fmt::Debug for RemoveClientIdFromOpenIdConnectProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveClientIdFromOpenIdConnectProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput).
 pub mod remove_client_id_from_open_id_connect_provider_output {
 
@@ -1631,14 +1360,8 @@ impl RemoveClientIdFromOpenIdConnectProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutUserPolicyOutput {}
-impl std::fmt::Debug for PutUserPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutUserPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutUserPolicyOutput`](crate::output::PutUserPolicyOutput).
 pub mod put_user_policy_output {
 
@@ -1661,14 +1384,8 @@ impl PutUserPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutUserPermissionsBoundaryOutput {}
-impl std::fmt::Debug for PutUserPermissionsBoundaryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutUserPermissionsBoundaryOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutUserPermissionsBoundaryOutput`](crate::output::PutUserPermissionsBoundaryOutput).
 pub mod put_user_permissions_boundary_output {
 
@@ -1691,14 +1408,8 @@ impl PutUserPermissionsBoundaryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRolePolicyOutput {}
-impl std::fmt::Debug for PutRolePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRolePolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutRolePolicyOutput`](crate::output::PutRolePolicyOutput).
 pub mod put_role_policy_output {
 
@@ -1721,14 +1432,8 @@ impl PutRolePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRolePermissionsBoundaryOutput {}
-impl std::fmt::Debug for PutRolePermissionsBoundaryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRolePermissionsBoundaryOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutRolePermissionsBoundaryOutput`](crate::output::PutRolePermissionsBoundaryOutput).
 pub mod put_role_permissions_boundary_output {
 
@@ -1751,14 +1456,8 @@ impl PutRolePermissionsBoundaryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutGroupPolicyOutput {}
-impl std::fmt::Debug for PutGroupPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutGroupPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutGroupPolicyOutput`](crate::output::PutGroupPolicyOutput).
 pub mod put_group_policy_output {
 
@@ -1781,7 +1480,7 @@ impl PutGroupPolicyOutput {
 
 /// <p>Contains the response to a successful <code>ListVirtualMFADevices</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualMfaDevicesOutput {
     /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
     #[doc(hidden)]
@@ -1805,15 +1504,6 @@ impl ListVirtualMfaDevicesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListVirtualMfaDevicesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualMfaDevicesOutput");
-        formatter.field("virtual_mfa_devices", &self.virtual_mfa_devices);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput).
@@ -1886,7 +1576,7 @@ impl ListVirtualMfaDevicesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserTagsOutput {
     /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
@@ -1910,15 +1600,6 @@ impl ListUserTagsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListUserTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListUserTagsOutput`](crate::output::ListUserTagsOutput).
@@ -1990,7 +1671,7 @@ impl ListUserTagsOutput {
 
 /// <p>Contains the response to a successful <code>ListUsers</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersOutput {
     /// <p>A list of users.</p>
     #[doc(hidden)]
@@ -2014,15 +1695,6 @@ impl ListUsersOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListUsersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersOutput");
-        formatter.field("users", &self.users);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
@@ -2094,7 +1766,7 @@ impl ListUsersOutput {
 
 /// <p>Contains the response to a successful <code>ListUserPolicies</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserPoliciesOutput {
     /// <p>A list of policy names.</p>
     #[doc(hidden)]
@@ -2118,15 +1790,6 @@ impl ListUserPoliciesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListUserPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserPoliciesOutput");
-        formatter.field("policy_names", &self.policy_names);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListUserPoliciesOutput`](crate::output::ListUserPoliciesOutput).
@@ -2198,7 +1861,7 @@ impl ListUserPoliciesOutput {
 
 /// <p>Contains the response to a successful <code>ListSSHPublicKeys</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSshPublicKeysOutput {
     /// <p>A list of the SSH public keys assigned to IAM user.</p>
     #[doc(hidden)]
@@ -2222,15 +1885,6 @@ impl ListSshPublicKeysOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListSshPublicKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSshPublicKeysOutput");
-        formatter.field("ssh_public_keys", &self.ssh_public_keys);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput).
@@ -2303,7 +1957,7 @@ impl ListSshPublicKeysOutput {
 
 /// <p>Contains the response to a successful <code>ListSigningCertificates</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSigningCertificatesOutput {
     /// <p>A list of the user's signing certificate information.</p>
     #[doc(hidden)]
@@ -2327,15 +1981,6 @@ impl ListSigningCertificatesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListSigningCertificatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSigningCertificatesOutput");
-        formatter.field("certificates", &self.certificates);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListSigningCertificatesOutput`](crate::output::ListSigningCertificatesOutput).
@@ -2408,7 +2053,7 @@ impl ListSigningCertificatesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceSpecificCredentialsOutput {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
     #[doc(hidden)]
@@ -2421,16 +2066,6 @@ impl ListServiceSpecificCredentialsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::ServiceSpecificCredentialMetadata]> {
         self.service_specific_credentials.as_deref()
-    }
-}
-impl std::fmt::Debug for ListServiceSpecificCredentialsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceSpecificCredentialsOutput");
-        formatter.field(
-            "service_specific_credentials",
-            &self.service_specific_credentials,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListServiceSpecificCredentialsOutput`](crate::output::ListServiceSpecificCredentialsOutput).
@@ -2484,7 +2119,7 @@ impl ListServiceSpecificCredentialsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServerCertificateTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM server certificate. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
@@ -2508,15 +2143,6 @@ impl ListServerCertificateTagsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListServerCertificateTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServerCertificateTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListServerCertificateTagsOutput`](crate::output::ListServerCertificateTagsOutput).
@@ -2588,7 +2214,7 @@ impl ListServerCertificateTagsOutput {
 
 /// <p>Contains the response to a successful <code>ListServerCertificates</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServerCertificatesOutput {
     /// <p>A list of server certificates.</p>
     #[doc(hidden)]
@@ -2615,18 +2241,6 @@ impl ListServerCertificatesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListServerCertificatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServerCertificatesOutput");
-        formatter.field(
-            "server_certificate_metadata_list",
-            &self.server_certificate_metadata_list,
-        );
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListServerCertificatesOutput`](crate::output::ListServerCertificatesOutput).
@@ -2702,7 +2316,7 @@ impl ListServerCertificatesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSamlProviderTagsOutput {
     /// <p>The list of tags that are currently attached to the Security Assertion Markup Language (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
@@ -2726,15 +2340,6 @@ impl ListSamlProviderTagsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListSamlProviderTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSamlProviderTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput).
@@ -2806,7 +2411,7 @@ impl ListSamlProviderTagsOutput {
 
 /// <p>Contains the response to a successful <code>ListSAMLProviders</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSamlProvidersOutput {
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -2818,13 +2423,6 @@ impl ListSamlProvidersOutput {
         &self,
     ) -> std::option::Option<&[crate::model::SamlProviderListEntry]> {
         self.saml_provider_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ListSamlProvidersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSamlProvidersOutput");
-        formatter.field("saml_provider_list", &self.saml_provider_list);
-        formatter.finish()
     }
 }
 /// See [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput).
@@ -2873,7 +2471,7 @@ impl ListSamlProvidersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoleTagsOutput {
     /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
@@ -2897,15 +2495,6 @@ impl ListRoleTagsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListRoleTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoleTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListRoleTagsOutput`](crate::output::ListRoleTagsOutput).
@@ -2977,7 +2566,7 @@ impl ListRoleTagsOutput {
 
 /// <p>Contains the response to a successful <code>ListRoles</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRolesOutput {
     /// <p>A list of roles.</p>
     #[doc(hidden)]
@@ -3001,15 +2590,6 @@ impl ListRolesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListRolesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRolesOutput");
-        formatter.field("roles", &self.roles);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListRolesOutput`](crate::output::ListRolesOutput).
@@ -3081,7 +2661,7 @@ impl ListRolesOutput {
 
 /// <p>Contains the response to a successful <code>ListRolePolicies</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRolePoliciesOutput {
     /// <p>A list of policy names.</p>
     #[doc(hidden)]
@@ -3105,15 +2685,6 @@ impl ListRolePoliciesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListRolePoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRolePoliciesOutput");
-        formatter.field("policy_names", &self.policy_names);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListRolePoliciesOutput`](crate::output::ListRolePoliciesOutput).
@@ -3185,7 +2756,7 @@ impl ListRolePoliciesOutput {
 
 /// <p>Contains the response to a successful <code>ListPolicyVersions</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPolicyVersionsOutput {
     /// <p>A list of policy versions.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
@@ -3211,15 +2782,6 @@ impl ListPolicyVersionsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPolicyVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPolicyVersionsOutput");
-        formatter.field("versions", &self.versions);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput).
@@ -3293,7 +2855,7 @@ impl ListPolicyVersionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPolicyTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
@@ -3317,15 +2879,6 @@ impl ListPolicyTagsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPolicyTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPolicyTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListPolicyTagsOutput`](crate::output::ListPolicyTagsOutput).
@@ -3397,7 +2950,7 @@ impl ListPolicyTagsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPoliciesGrantingServiceAccessOutput {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
     #[doc(hidden)]
@@ -3424,18 +2977,6 @@ impl ListPoliciesGrantingServiceAccessOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPoliciesGrantingServiceAccessOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPoliciesGrantingServiceAccessOutput");
-        formatter.field(
-            "policies_granting_service_access",
-            &self.policies_granting_service_access,
-        );
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListPoliciesGrantingServiceAccessOutput`](crate::output::ListPoliciesGrantingServiceAccessOutput).
@@ -3514,7 +3055,7 @@ impl ListPoliciesGrantingServiceAccessOutput {
 
 /// <p>Contains the response to a successful <code>ListPolicies</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPoliciesOutput {
     /// <p>A list of policies.</p>
     #[doc(hidden)]
@@ -3538,15 +3079,6 @@ impl ListPoliciesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPoliciesOutput");
-        formatter.field("policies", &self.policies);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
@@ -3618,7 +3150,7 @@ impl ListPoliciesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOpenIdConnectProviderTagsOutput {
     /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
@@ -3642,15 +3174,6 @@ impl ListOpenIdConnectProviderTagsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListOpenIdConnectProviderTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpenIdConnectProviderTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput).
@@ -3722,7 +3245,7 @@ impl ListOpenIdConnectProviderTagsOutput {
 
 /// <p>Contains the response to a successful <code>ListOpenIDConnectProviders</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOpenIdConnectProvidersOutput {
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -3735,16 +3258,6 @@ impl ListOpenIdConnectProvidersOutput {
         &self,
     ) -> std::option::Option<&[crate::model::OpenIdConnectProviderListEntry]> {
         self.open_id_connect_provider_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ListOpenIdConnectProvidersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpenIdConnectProvidersOutput");
-        formatter.field(
-            "open_id_connect_provider_list",
-            &self.open_id_connect_provider_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput).
@@ -3796,7 +3309,7 @@ impl ListOpenIdConnectProvidersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMfaDeviceTagsOutput {
     /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
@@ -3820,15 +3333,6 @@ impl ListMfaDeviceTagsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListMfaDeviceTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMfaDeviceTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput).
@@ -3900,7 +3404,7 @@ impl ListMfaDeviceTagsOutput {
 
 /// <p>Contains the response to a successful <code>ListMFADevices</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMfaDevicesOutput {
     /// <p>A list of MFA devices.</p>
     #[doc(hidden)]
@@ -3924,15 +3428,6 @@ impl ListMfaDevicesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListMfaDevicesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMfaDevicesOutput");
-        formatter.field("mfa_devices", &self.mfa_devices);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput).
@@ -4004,7 +3499,7 @@ impl ListMfaDevicesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceProfileTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
@@ -4028,15 +3523,6 @@ impl ListInstanceProfileTagsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInstanceProfileTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceProfileTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListInstanceProfileTagsOutput`](crate::output::ListInstanceProfileTagsOutput).
@@ -4108,7 +3594,7 @@ impl ListInstanceProfileTagsOutput {
 
 /// <p>Contains the response to a successful <code>ListInstanceProfilesForRole</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceProfilesForRoleOutput {
     /// <p>A list of instance profiles.</p>
     #[doc(hidden)]
@@ -4132,15 +3618,6 @@ impl ListInstanceProfilesForRoleOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInstanceProfilesForRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceProfilesForRoleOutput");
-        formatter.field("instance_profiles", &self.instance_profiles);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListInstanceProfilesForRoleOutput`](crate::output::ListInstanceProfilesForRoleOutput).
@@ -4213,7 +3690,7 @@ impl ListInstanceProfilesForRoleOutput {
 
 /// <p>Contains the response to a successful <code>ListInstanceProfiles</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceProfilesOutput {
     /// <p>A list of instance profiles.</p>
     #[doc(hidden)]
@@ -4237,15 +3714,6 @@ impl ListInstanceProfilesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInstanceProfilesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceProfilesOutput");
-        formatter.field("instance_profiles", &self.instance_profiles);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput).
@@ -4318,7 +3786,7 @@ impl ListInstanceProfilesOutput {
 
 /// <p>Contains the response to a successful <code>ListGroupsForUser</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsForUserOutput {
     /// <p>A list of groups.</p>
     #[doc(hidden)]
@@ -4342,15 +3810,6 @@ impl ListGroupsForUserOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListGroupsForUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsForUserOutput");
-        formatter.field("groups", &self.groups);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListGroupsForUserOutput`](crate::output::ListGroupsForUserOutput).
@@ -4422,7 +3881,7 @@ impl ListGroupsForUserOutput {
 
 /// <p>Contains the response to a successful <code>ListGroups</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsOutput {
     /// <p>A list of groups.</p>
     #[doc(hidden)]
@@ -4446,15 +3905,6 @@ impl ListGroupsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsOutput");
-        formatter.field("groups", &self.groups);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
@@ -4526,7 +3976,7 @@ impl ListGroupsOutput {
 
 /// <p>Contains the response to a successful <code>ListGroupPolicies</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupPoliciesOutput {
     /// <p>A list of policy names.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -4552,15 +4002,6 @@ impl ListGroupPoliciesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListGroupPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupPoliciesOutput");
-        formatter.field("policy_names", &self.policy_names);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListGroupPoliciesOutput`](crate::output::ListGroupPoliciesOutput).
@@ -4634,7 +4075,7 @@ impl ListGroupPoliciesOutput {
 
 /// <p>Contains the response to a successful <code>ListEntitiesForPolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitiesForPolicyOutput {
     /// <p>A list of IAM groups that the policy is attached to.</p>
     #[doc(hidden)]
@@ -4672,17 +4113,6 @@ impl ListEntitiesForPolicyOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListEntitiesForPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitiesForPolicyOutput");
-        formatter.field("policy_groups", &self.policy_groups);
-        formatter.field("policy_users", &self.policy_users);
-        formatter.field("policy_roles", &self.policy_roles);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListEntitiesForPolicyOutput`](crate::output::ListEntitiesForPolicyOutput).
@@ -4796,7 +4226,7 @@ impl ListEntitiesForPolicyOutput {
 
 /// <p>Contains the response to a successful <code>ListAttachedUserPolicies</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttachedUserPoliciesOutput {
     /// <p>A list of the attached policies.</p>
     #[doc(hidden)]
@@ -4820,15 +4250,6 @@ impl ListAttachedUserPoliciesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAttachedUserPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttachedUserPoliciesOutput");
-        formatter.field("attached_policies", &self.attached_policies);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListAttachedUserPoliciesOutput`](crate::output::ListAttachedUserPoliciesOutput).
@@ -4901,7 +4322,7 @@ impl ListAttachedUserPoliciesOutput {
 
 /// <p>Contains the response to a successful <code>ListAttachedRolePolicies</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttachedRolePoliciesOutput {
     /// <p>A list of the attached policies.</p>
     #[doc(hidden)]
@@ -4925,15 +4346,6 @@ impl ListAttachedRolePoliciesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAttachedRolePoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttachedRolePoliciesOutput");
-        formatter.field("attached_policies", &self.attached_policies);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListAttachedRolePoliciesOutput`](crate::output::ListAttachedRolePoliciesOutput).
@@ -5006,7 +4418,7 @@ impl ListAttachedRolePoliciesOutput {
 
 /// <p>Contains the response to a successful <code>ListAttachedGroupPolicies</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttachedGroupPoliciesOutput {
     /// <p>A list of the attached policies.</p>
     #[doc(hidden)]
@@ -5030,15 +4442,6 @@ impl ListAttachedGroupPoliciesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAttachedGroupPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttachedGroupPoliciesOutput");
-        formatter.field("attached_policies", &self.attached_policies);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListAttachedGroupPoliciesOutput`](crate::output::ListAttachedGroupPoliciesOutput).
@@ -5111,7 +4514,7 @@ impl ListAttachedGroupPoliciesOutput {
 
 /// <p>Contains the response to a successful <code>ListAccountAliases</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccountAliasesOutput {
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
     #[doc(hidden)]
@@ -5135,15 +4538,6 @@ impl ListAccountAliasesOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAccountAliasesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccountAliasesOutput");
-        formatter.field("account_aliases", &self.account_aliases);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListAccountAliasesOutput`](crate::output::ListAccountAliasesOutput).
@@ -5215,7 +4609,7 @@ impl ListAccountAliasesOutput {
 
 /// <p>Contains the response to a successful <code>ListAccessKeys</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessKeysOutput {
     /// <p>A list of objects containing metadata about the access keys.</p>
     #[doc(hidden)]
@@ -5239,15 +4633,6 @@ impl ListAccessKeysOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAccessKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessKeysOutput");
-        formatter.field("access_key_metadata", &self.access_key_metadata);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`ListAccessKeysOutput`](crate::output::ListAccessKeysOutput).
@@ -5320,7 +4705,7 @@ impl ListAccessKeysOutput {
 
 /// <p>Contains the response to a successful <code>GetUserPolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserPolicyOutput {
     /// <p>The user the policy is associated with.</p>
     #[doc(hidden)]
@@ -5346,15 +4731,6 @@ impl GetUserPolicyOutput {
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUserPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserPolicyOutput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
     }
 }
 /// See [`GetUserPolicyOutput`](crate::output::GetUserPolicyOutput).
@@ -5422,7 +4798,7 @@ impl GetUserPolicyOutput {
 
 /// <p>Contains the response to a successful <code>GetUser</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserOutput {
     /// <p>A structure containing details about the IAM user.</p> <important>
     /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
@@ -5438,13 +4814,6 @@ impl GetUserOutput {
     /// </important>
     pub fn user(&self) -> std::option::Option<&crate::model::User> {
         self.user.as_ref()
-    }
-}
-impl std::fmt::Debug for GetUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserOutput");
-        formatter.field("user", &self.user);
-        formatter.finish()
     }
 }
 /// See [`GetUserOutput`](crate::output::GetUserOutput).
@@ -5487,7 +4856,7 @@ impl GetUserOutput {
 
 /// <p>Contains the response to a successful <code>GetSSHPublicKey</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
     #[doc(hidden)]
@@ -5497,13 +4866,6 @@ impl GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&crate::model::SshPublicKey> {
         self.ssh_public_key.as_ref()
-    }
-}
-impl std::fmt::Debug for GetSshPublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSshPublicKeyOutput");
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.finish()
     }
 }
 /// See [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput).
@@ -5545,7 +4907,7 @@ impl GetSshPublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceLinkedRoleDeletionStatusOutput {
     /// <p>The status of the deletion.</p>
     #[doc(hidden)]
@@ -5562,14 +4924,6 @@ impl GetServiceLinkedRoleDeletionStatusOutput {
     /// <p>An object that contains details about the reason the deletion failed.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::DeletionTaskFailureReasonType> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for GetServiceLinkedRoleDeletionStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceLinkedRoleDeletionStatusOutput");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`GetServiceLinkedRoleDeletionStatusOutput`](crate::output::GetServiceLinkedRoleDeletionStatusOutput).
@@ -5626,7 +4980,7 @@ impl GetServiceLinkedRoleDeletionStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
     /// <p>The status of the job.</p>
     #[doc(hidden)]
@@ -5680,19 +5034,6 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
     /// <p>An object that contains details about the reason the operation failed.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for GetServiceLastAccessedDetailsWithEntitiesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceLastAccessedDetailsWithEntitiesOutput");
-        formatter.field("job_status", &self.job_status);
-        formatter.field("job_creation_date", &self.job_creation_date);
-        formatter.field("job_completion_date", &self.job_completion_date);
-        formatter.field("entity_details_list", &self.entity_details_list);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput).
@@ -5825,7 +5166,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceLastAccessedDetailsOutput {
     /// <p>The status of the job.</p>
     #[doc(hidden)]
@@ -5891,20 +5232,6 @@ impl GetServiceLastAccessedDetailsOutput {
     /// <p>An object that contains details about the reason the operation failed.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for GetServiceLastAccessedDetailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceLastAccessedDetailsOutput");
-        formatter.field("job_status", &self.job_status);
-        formatter.field("job_type", &self.job_type);
-        formatter.field("job_creation_date", &self.job_creation_date);
-        formatter.field("services_last_accessed", &self.services_last_accessed);
-        formatter.field("job_completion_date", &self.job_completion_date);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`GetServiceLastAccessedDetailsOutput`](crate::output::GetServiceLastAccessedDetailsOutput).
@@ -6051,7 +5378,7 @@ impl GetServiceLastAccessedDetailsOutput {
 
 /// <p>Contains the response to a successful <code>GetServerCertificate</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServerCertificateOutput {
     /// <p>A structure containing details about the server certificate.</p>
     #[doc(hidden)]
@@ -6061,13 +5388,6 @@ impl GetServerCertificateOutput {
     /// <p>A structure containing details about the server certificate.</p>
     pub fn server_certificate(&self) -> std::option::Option<&crate::model::ServerCertificate> {
         self.server_certificate.as_ref()
-    }
-}
-impl std::fmt::Debug for GetServerCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServerCertificateOutput");
-        formatter.field("server_certificate", &self.server_certificate);
-        formatter.finish()
     }
 }
 /// See [`GetServerCertificateOutput`](crate::output::GetServerCertificateOutput).
@@ -6109,7 +5429,7 @@ impl GetServerCertificateOutput {
 
 /// <p>Contains the response to a successful <code>GetSAMLProvider</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSamlProviderOutput {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     #[doc(hidden)]
@@ -6140,16 +5460,6 @@ impl GetSamlProviderOutput {
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for GetSamlProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSamlProviderOutput");
-        formatter.field("saml_metadata_document", &self.saml_metadata_document);
-        formatter.field("create_date", &self.create_date);
-        formatter.field("valid_until", &self.valid_until);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput).
@@ -6242,7 +5552,7 @@ impl GetSamlProviderOutput {
 
 /// <p>Contains the response to a successful <code>GetRolePolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRolePolicyOutput {
     /// <p>The role the policy is associated with.</p>
     #[doc(hidden)]
@@ -6268,15 +5578,6 @@ impl GetRolePolicyOutput {
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRolePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRolePolicyOutput");
-        formatter.field("role_name", &self.role_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
     }
 }
 /// See [`GetRolePolicyOutput`](crate::output::GetRolePolicyOutput).
@@ -6344,7 +5645,7 @@ impl GetRolePolicyOutput {
 
 /// <p>Contains the response to a successful <code>GetRole</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRoleOutput {
     /// <p>A structure containing details about the IAM role.</p>
     #[doc(hidden)]
@@ -6354,13 +5655,6 @@ impl GetRoleOutput {
     /// <p>A structure containing details about the IAM role.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::Role> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for GetRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRoleOutput");
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 /// See [`GetRoleOutput`](crate::output::GetRoleOutput).
@@ -6397,7 +5691,7 @@ impl GetRoleOutput {
 
 /// <p>Contains the response to a successful <code>GetPolicyVersion</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyVersionOutput {
     /// <p>A structure containing details about the policy version.</p>
     #[doc(hidden)]
@@ -6407,13 +5701,6 @@ impl GetPolicyVersionOutput {
     /// <p>A structure containing details about the policy version.</p>
     pub fn policy_version(&self) -> std::option::Option<&crate::model::PolicyVersion> {
         self.policy_version.as_ref()
-    }
-}
-impl std::fmt::Debug for GetPolicyVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyVersionOutput");
-        formatter.field("policy_version", &self.policy_version);
-        formatter.finish()
     }
 }
 /// See [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput).
@@ -6455,7 +5742,7 @@ impl GetPolicyVersionOutput {
 
 /// <p>Contains the response to a successful <code>GetPolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyOutput {
     /// <p>A structure containing details about the policy.</p>
     #[doc(hidden)]
@@ -6465,13 +5752,6 @@ impl GetPolicyOutput {
     /// <p>A structure containing details about the policy.</p>
     pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
         self.policy.as_ref()
-    }
-}
-impl std::fmt::Debug for GetPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyOutput");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
     }
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
@@ -6510,7 +5790,7 @@ impl GetPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOrganizationsAccessReportOutput {
     /// <p>The status of the job.</p>
     #[doc(hidden)]
@@ -6580,27 +5860,6 @@ impl GetOrganizationsAccessReportOutput {
     /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
     pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error_details.as_ref()
-    }
-}
-impl std::fmt::Debug for GetOrganizationsAccessReportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOrganizationsAccessReportOutput");
-        formatter.field("job_status", &self.job_status);
-        formatter.field("job_creation_date", &self.job_creation_date);
-        formatter.field("job_completion_date", &self.job_completion_date);
-        formatter.field(
-            "number_of_services_accessible",
-            &self.number_of_services_accessible,
-        );
-        formatter.field(
-            "number_of_services_not_accessed",
-            &self.number_of_services_not_accessed,
-        );
-        formatter.field("access_details", &self.access_details);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.field("error_details", &self.error_details);
-        formatter.finish()
     }
 }
 /// See [`GetOrganizationsAccessReportOutput`](crate::output::GetOrganizationsAccessReportOutput).
@@ -6766,7 +6025,7 @@ impl GetOrganizationsAccessReportOutput {
 
 /// <p>Contains the response to a successful <code>GetOpenIDConnectProvider</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOpenIdConnectProviderOutput {
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
     #[doc(hidden)]
@@ -6804,17 +6063,6 @@ impl GetOpenIdConnectProviderOutput {
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for GetOpenIdConnectProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpenIdConnectProviderOutput");
-        formatter.field("url", &self.url);
-        formatter.field("client_id_list", &self.client_id_list);
-        formatter.field("thumbprint_list", &self.thumbprint_list);
-        formatter.field("create_date", &self.create_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput).
@@ -6931,7 +6179,7 @@ impl GetOpenIdConnectProviderOutput {
 
 /// <p>Contains the response to a successful <code>GetLoginProfile</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLoginProfileOutput {
     /// <p>A structure containing the user name and the profile creation date for the user.</p>
     #[doc(hidden)]
@@ -6941,13 +6189,6 @@ impl GetLoginProfileOutput {
     /// <p>A structure containing the user name and the profile creation date for the user.</p>
     pub fn login_profile(&self) -> std::option::Option<&crate::model::LoginProfile> {
         self.login_profile.as_ref()
-    }
-}
-impl std::fmt::Debug for GetLoginProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLoginProfileOutput");
-        formatter.field("login_profile", &self.login_profile);
-        formatter.finish()
     }
 }
 /// See [`GetLoginProfileOutput`](crate::output::GetLoginProfileOutput).
@@ -6989,7 +6230,7 @@ impl GetLoginProfileOutput {
 
 /// <p>Contains the response to a successful <code>GetInstanceProfile</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInstanceProfileOutput {
     /// <p>A structure containing details about the instance profile.</p>
     #[doc(hidden)]
@@ -6999,13 +6240,6 @@ impl GetInstanceProfileOutput {
     /// <p>A structure containing details about the instance profile.</p>
     pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
         self.instance_profile.as_ref()
-    }
-}
-impl std::fmt::Debug for GetInstanceProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInstanceProfileOutput");
-        formatter.field("instance_profile", &self.instance_profile);
-        formatter.finish()
     }
 }
 /// See [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput).
@@ -7047,7 +6281,7 @@ impl GetInstanceProfileOutput {
 
 /// <p>Contains the response to a successful <code>GetGroupPolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupPolicyOutput {
     /// <p>The group the policy is associated with.</p>
     #[doc(hidden)]
@@ -7073,15 +6307,6 @@ impl GetGroupPolicyOutput {
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
-    }
-}
-impl std::fmt::Debug for GetGroupPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupPolicyOutput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
     }
 }
 /// See [`GetGroupPolicyOutput`](crate::output::GetGroupPolicyOutput).
@@ -7149,7 +6374,7 @@ impl GetGroupPolicyOutput {
 
 /// <p>Contains the response to a successful <code>GetGroup</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupOutput {
     /// <p>A structure that contains details about the group.</p>
     #[doc(hidden)]
@@ -7180,16 +6405,6 @@ impl GetGroupOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for GetGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupOutput");
-        formatter.field("group", &self.group);
-        formatter.field("users", &self.users);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput).
@@ -7273,7 +6488,7 @@ impl GetGroupOutput {
 
 /// <p>Contains the response to a successful <code>GetCredentialReport</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCredentialReportOutput {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
     #[doc(hidden)]
@@ -7297,15 +6512,6 @@ impl GetCredentialReportOutput {
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
     pub fn generated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.generated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for GetCredentialReportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCredentialReportOutput");
-        formatter.field("content", &self.content);
-        formatter.field("report_format", &self.report_format);
-        formatter.field("generated_time", &self.generated_time);
-        formatter.finish()
     }
 }
 /// See [`GetCredentialReportOutput`](crate::output::GetCredentialReportOutput).
@@ -7374,7 +6580,7 @@ impl GetCredentialReportOutput {
 
 /// <p>Contains the response to a successful <code>GetContextKeysForPrincipalPolicy</code> or <code>GetContextKeysForCustomPolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContextKeysForPrincipalPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     #[doc(hidden)]
@@ -7384,13 +6590,6 @@ impl GetContextKeysForPrincipalPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     pub fn context_key_names(&self) -> std::option::Option<&[std::string::String]> {
         self.context_key_names.as_deref()
-    }
-}
-impl std::fmt::Debug for GetContextKeysForPrincipalPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContextKeysForPrincipalPolicyOutput");
-        formatter.field("context_key_names", &self.context_key_names);
-        formatter.finish()
     }
 }
 /// See [`GetContextKeysForPrincipalPolicyOutput`](crate::output::GetContextKeysForPrincipalPolicyOutput).
@@ -7438,7 +6637,7 @@ impl GetContextKeysForPrincipalPolicyOutput {
 
 /// <p>Contains the response to a successful <code>GetContextKeysForPrincipalPolicy</code> or <code>GetContextKeysForCustomPolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContextKeysForCustomPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     #[doc(hidden)]
@@ -7448,13 +6647,6 @@ impl GetContextKeysForCustomPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     pub fn context_key_names(&self) -> std::option::Option<&[std::string::String]> {
         self.context_key_names.as_deref()
-    }
-}
-impl std::fmt::Debug for GetContextKeysForCustomPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContextKeysForCustomPolicyOutput");
-        formatter.field("context_key_names", &self.context_key_names);
-        formatter.finish()
     }
 }
 /// See [`GetContextKeysForCustomPolicyOutput`](crate::output::GetContextKeysForCustomPolicyOutput).
@@ -7502,7 +6694,7 @@ impl GetContextKeysForCustomPolicyOutput {
 
 /// <p>Contains the response to a successful <code>GetAccountSummary</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountSummaryOutput {
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
     #[doc(hidden)]
@@ -7515,13 +6707,6 @@ impl GetAccountSummaryOutput {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::SummaryKeyType, i32>> {
         self.summary_map.as_ref()
-    }
-}
-impl std::fmt::Debug for GetAccountSummaryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountSummaryOutput");
-        formatter.field("summary_map", &self.summary_map);
-        formatter.finish()
     }
 }
 /// See [`GetAccountSummaryOutput`](crate::output::GetAccountSummaryOutput).
@@ -7572,7 +6757,7 @@ impl GetAccountSummaryOutput {
 
 /// <p>Contains the response to a successful <code>GetAccountPasswordPolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountPasswordPolicyOutput {
     /// <p>A structure that contains details about the account's password policy.</p>
     #[doc(hidden)]
@@ -7582,13 +6767,6 @@ impl GetAccountPasswordPolicyOutput {
     /// <p>A structure that contains details about the account's password policy.</p>
     pub fn password_policy(&self) -> std::option::Option<&crate::model::PasswordPolicy> {
         self.password_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for GetAccountPasswordPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountPasswordPolicyOutput");
-        formatter.field("password_policy", &self.password_policy);
-        formatter.finish()
     }
 }
 /// See [`GetAccountPasswordPolicyOutput`](crate::output::GetAccountPasswordPolicyOutput).
@@ -7630,7 +6808,7 @@ impl GetAccountPasswordPolicyOutput {
 
 /// <p>Contains the response to a successful <code>GetAccountAuthorizationDetails</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountAuthorizationDetailsOutput {
     /// <p>A list containing information about IAM users.</p>
     #[doc(hidden)]
@@ -7675,18 +6853,6 @@ impl GetAccountAuthorizationDetailsOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for GetAccountAuthorizationDetailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountAuthorizationDetailsOutput");
-        formatter.field("user_detail_list", &self.user_detail_list);
-        formatter.field("group_detail_list", &self.group_detail_list);
-        formatter.field("role_detail_list", &self.role_detail_list);
-        formatter.field("policies", &self.policies);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`GetAccountAuthorizationDetailsOutput`](crate::output::GetAccountAuthorizationDetailsOutput).
@@ -7821,7 +6987,7 @@ impl GetAccountAuthorizationDetailsOutput {
 
 /// <p>Contains the response to a successful <code>GetAccessKeyLastUsed</code> request. It is also returned as a member of the <code>AccessKeyMetaData</code> structure returned by the <code>ListAccessKeys</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessKeyLastUsedOutput {
     /// <p>The name of the IAM user that owns this access key.</p>
     /// <p></p>
@@ -7840,14 +7006,6 @@ impl GetAccessKeyLastUsedOutput {
     /// <p>Contains information about the last time the access key was used.</p>
     pub fn access_key_last_used(&self) -> std::option::Option<&crate::model::AccessKeyLastUsed> {
         self.access_key_last_used.as_ref()
-    }
-}
-impl std::fmt::Debug for GetAccessKeyLastUsedOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessKeyLastUsedOutput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("access_key_last_used", &self.access_key_last_used);
-        formatter.finish()
     }
 }
 /// See [`GetAccessKeyLastUsedOutput`](crate::output::GetAccessKeyLastUsedOutput).
@@ -7903,7 +7061,7 @@ impl GetAccessKeyLastUsedOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateServiceLastAccessedDetailsOutput {
     /// <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
     #[doc(hidden)]
@@ -7913,13 +7071,6 @@ impl GenerateServiceLastAccessedDetailsOutput {
     /// <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateServiceLastAccessedDetailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateServiceLastAccessedDetailsOutput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }
 /// See [`GenerateServiceLastAccessedDetailsOutput`](crate::output::GenerateServiceLastAccessedDetailsOutput).
@@ -7958,7 +7109,7 @@ impl GenerateServiceLastAccessedDetailsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateOrganizationsAccessReportOutput {
     /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
     #[doc(hidden)]
@@ -7968,13 +7119,6 @@ impl GenerateOrganizationsAccessReportOutput {
     /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateOrganizationsAccessReportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateOrganizationsAccessReportOutput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }
 /// See [`GenerateOrganizationsAccessReportOutput`](crate::output::GenerateOrganizationsAccessReportOutput).
@@ -8013,7 +7157,7 @@ impl GenerateOrganizationsAccessReportOutput {
 
 /// <p>Contains the response to a successful <code>GenerateCredentialReport</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateCredentialReportOutput {
     /// <p>Information about the state of the credential report.</p>
     #[doc(hidden)]
@@ -8030,14 +7174,6 @@ impl GenerateCredentialReportOutput {
     /// <p>Information about the credential report.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateCredentialReportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateCredentialReportOutput");
-        formatter.field("state", &self.state);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`GenerateCredentialReportOutput`](crate::output::GenerateCredentialReportOutput).
@@ -8091,14 +7227,8 @@ impl GenerateCredentialReportOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableMfaDeviceOutput {}
-impl std::fmt::Debug for EnableMfaDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableMfaDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput).
 pub mod enable_mfa_device_output {
 
@@ -8121,14 +7251,8 @@ impl EnableMfaDeviceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachUserPolicyOutput {}
-impl std::fmt::Debug for DetachUserPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachUserPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DetachUserPolicyOutput`](crate::output::DetachUserPolicyOutput).
 pub mod detach_user_policy_output {
 
@@ -8151,14 +7275,8 @@ impl DetachUserPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachRolePolicyOutput {}
-impl std::fmt::Debug for DetachRolePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachRolePolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DetachRolePolicyOutput`](crate::output::DetachRolePolicyOutput).
 pub mod detach_role_policy_output {
 
@@ -8181,14 +7299,8 @@ impl DetachRolePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachGroupPolicyOutput {}
-impl std::fmt::Debug for DetachGroupPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachGroupPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DetachGroupPolicyOutput`](crate::output::DetachGroupPolicyOutput).
 pub mod detach_group_policy_output {
 
@@ -8211,14 +7323,8 @@ impl DetachGroupPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualMfaDeviceOutput {}
-impl std::fmt::Debug for DeleteVirtualMfaDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualMfaDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput).
 pub mod delete_virtual_mfa_device_output {
 
@@ -8241,14 +7347,8 @@ impl DeleteVirtualMfaDeviceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserPolicyOutput {}
-impl std::fmt::Debug for DeleteUserPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserPolicyOutput`](crate::output::DeleteUserPolicyOutput).
 pub mod delete_user_policy_output {
 
@@ -8271,14 +7371,8 @@ impl DeleteUserPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserPermissionsBoundaryOutput {}
-impl std::fmt::Debug for DeleteUserPermissionsBoundaryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserPermissionsBoundaryOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserPermissionsBoundaryOutput`](crate::output::DeleteUserPermissionsBoundaryOutput).
 pub mod delete_user_permissions_boundary_output {
 
@@ -8301,14 +7395,8 @@ impl DeleteUserPermissionsBoundaryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserOutput {}
-impl std::fmt::Debug for DeleteUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
 
@@ -8331,14 +7419,8 @@ impl DeleteUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSshPublicKeyOutput {}
-impl std::fmt::Debug for DeleteSshPublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSshPublicKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
 pub mod delete_ssh_public_key_output {
 
@@ -8361,14 +7443,8 @@ impl DeleteSshPublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSigningCertificateOutput {}
-impl std::fmt::Debug for DeleteSigningCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSigningCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteSigningCertificateOutput`](crate::output::DeleteSigningCertificateOutput).
 pub mod delete_signing_certificate_output {
 
@@ -8391,14 +7467,8 @@ impl DeleteSigningCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceSpecificCredentialOutput {}
-impl std::fmt::Debug for DeleteServiceSpecificCredentialOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceSpecificCredentialOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteServiceSpecificCredentialOutput`](crate::output::DeleteServiceSpecificCredentialOutput).
 pub mod delete_service_specific_credential_output {
 
@@ -8421,7 +7491,7 @@ impl DeleteServiceSpecificCredentialOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceLinkedRoleOutput {
     /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
     /// <service-principal-name>
@@ -8445,13 +7515,6 @@ impl DeleteServiceLinkedRoleOutput {
     /// </service-principal-name></code>.</p>
     pub fn deletion_task_id(&self) -> std::option::Option<&str> {
         self.deletion_task_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteServiceLinkedRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceLinkedRoleOutput");
-        formatter.field("deletion_task_id", &self.deletion_task_id);
-        formatter.finish()
     }
 }
 /// See [`DeleteServiceLinkedRoleOutput`](crate::output::DeleteServiceLinkedRoleOutput).
@@ -8507,14 +7570,8 @@ impl DeleteServiceLinkedRoleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServerCertificateOutput {}
-impl std::fmt::Debug for DeleteServerCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServerCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteServerCertificateOutput`](crate::output::DeleteServerCertificateOutput).
 pub mod delete_server_certificate_output {
 
@@ -8537,14 +7594,8 @@ impl DeleteServerCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSamlProviderOutput {}
-impl std::fmt::Debug for DeleteSamlProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSamlProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput).
 pub mod delete_saml_provider_output {
 
@@ -8567,14 +7618,8 @@ impl DeleteSamlProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRolePolicyOutput {}
-impl std::fmt::Debug for DeleteRolePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRolePolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRolePolicyOutput`](crate::output::DeleteRolePolicyOutput).
 pub mod delete_role_policy_output {
 
@@ -8597,14 +7642,8 @@ impl DeleteRolePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRolePermissionsBoundaryOutput {}
-impl std::fmt::Debug for DeleteRolePermissionsBoundaryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRolePermissionsBoundaryOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRolePermissionsBoundaryOutput`](crate::output::DeleteRolePermissionsBoundaryOutput).
 pub mod delete_role_permissions_boundary_output {
 
@@ -8627,14 +7666,8 @@ impl DeleteRolePermissionsBoundaryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRoleOutput {}
-impl std::fmt::Debug for DeleteRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRoleOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRoleOutput`](crate::output::DeleteRoleOutput).
 pub mod delete_role_output {
 
@@ -8657,14 +7690,8 @@ impl DeleteRoleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePolicyVersionOutput {}
-impl std::fmt::Debug for DeletePolicyVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePolicyVersionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput).
 pub mod delete_policy_version_output {
 
@@ -8687,14 +7714,8 @@ impl DeletePolicyVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePolicyOutput {}
-impl std::fmt::Debug for DeletePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
 pub mod delete_policy_output {
 
@@ -8717,14 +7738,8 @@ impl DeletePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOpenIdConnectProviderOutput {}
-impl std::fmt::Debug for DeleteOpenIdConnectProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOpenIdConnectProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput).
 pub mod delete_open_id_connect_provider_output {
 
@@ -8747,14 +7762,8 @@ impl DeleteOpenIdConnectProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoginProfileOutput {}
-impl std::fmt::Debug for DeleteLoginProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoginProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteLoginProfileOutput`](crate::output::DeleteLoginProfileOutput).
 pub mod delete_login_profile_output {
 
@@ -8777,14 +7786,8 @@ impl DeleteLoginProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInstanceProfileOutput {}
-impl std::fmt::Debug for DeleteInstanceProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInstanceProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput).
 pub mod delete_instance_profile_output {
 
@@ -8807,14 +7810,8 @@ impl DeleteInstanceProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupPolicyOutput {}
-impl std::fmt::Debug for DeleteGroupPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteGroupPolicyOutput`](crate::output::DeleteGroupPolicyOutput).
 pub mod delete_group_policy_output {
 
@@ -8837,14 +7834,8 @@ impl DeleteGroupPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupOutput {}
-impl std::fmt::Debug for DeleteGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
 pub mod delete_group_output {
 
@@ -8867,14 +7858,8 @@ impl DeleteGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccountPasswordPolicyOutput {}
-impl std::fmt::Debug for DeleteAccountPasswordPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccountPasswordPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAccountPasswordPolicyOutput`](crate::output::DeleteAccountPasswordPolicyOutput).
 pub mod delete_account_password_policy_output {
 
@@ -8897,14 +7882,8 @@ impl DeleteAccountPasswordPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccountAliasOutput {}
-impl std::fmt::Debug for DeleteAccountAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccountAliasOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
 pub mod delete_account_alias_output {
 
@@ -8927,14 +7906,8 @@ impl DeleteAccountAliasOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessKeyOutput {}
-impl std::fmt::Debug for DeleteAccessKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAccessKeyOutput`](crate::output::DeleteAccessKeyOutput).
 pub mod delete_access_key_output {
 
@@ -8957,14 +7930,8 @@ impl DeleteAccessKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateMfaDeviceOutput {}
-impl std::fmt::Debug for DeactivateMfaDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateMfaDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput).
 pub mod deactivate_mfa_device_output {
 
@@ -8987,7 +7954,7 @@ impl DeactivateMfaDeviceOutput {
 
 /// <p>Contains the response to a successful <code>CreateVirtualMFADevice</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
     #[doc(hidden)]
@@ -8997,13 +7964,6 @@ impl CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
     pub fn virtual_mfa_device(&self) -> std::option::Option<&crate::model::VirtualMfaDevice> {
         self.virtual_mfa_device.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateVirtualMfaDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVirtualMfaDeviceOutput");
-        formatter.field("virtual_mfa_device", &self.virtual_mfa_device);
-        formatter.finish()
     }
 }
 /// See [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput).
@@ -9045,7 +8005,7 @@ impl CreateVirtualMfaDeviceOutput {
 
 /// <p>Contains the response to a successful <code>CreateUser</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserOutput {
     /// <p>A structure with details about the new IAM user.</p>
     #[doc(hidden)]
@@ -9055,13 +8015,6 @@ impl CreateUserOutput {
     /// <p>A structure with details about the new IAM user.</p>
     pub fn user(&self) -> std::option::Option<&crate::model::User> {
         self.user.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserOutput");
-        formatter.field("user", &self.user);
-        formatter.finish()
     }
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
@@ -9098,7 +8051,7 @@ impl CreateUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServiceSpecificCredentialOutput {
     /// <p>A structure that contains information about the newly created service-specific credential.</p> <important>
     /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
@@ -9114,16 +8067,6 @@ impl CreateServiceSpecificCredentialOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceSpecificCredential> {
         self.service_specific_credential.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateServiceSpecificCredentialOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServiceSpecificCredentialOutput");
-        formatter.field(
-            "service_specific_credential",
-            &self.service_specific_credential,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateServiceSpecificCredentialOutput`](crate::output::CreateServiceSpecificCredentialOutput).
@@ -9173,7 +8116,7 @@ impl CreateServiceSpecificCredentialOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServiceLinkedRoleOutput {
     /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
     #[doc(hidden)]
@@ -9183,13 +8126,6 @@ impl CreateServiceLinkedRoleOutput {
     /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::Role> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateServiceLinkedRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServiceLinkedRoleOutput");
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 /// See [`CreateServiceLinkedRoleOutput`](crate::output::CreateServiceLinkedRoleOutput).
@@ -9226,7 +8162,7 @@ impl CreateServiceLinkedRoleOutput {
 
 /// <p>Contains the response to a successful <code>CreateSAMLProvider</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
     #[doc(hidden)]
@@ -9243,14 +8179,6 @@ impl CreateSamlProviderOutput {
     /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateSamlProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSamlProviderOutput");
-        formatter.field("saml_provider_arn", &self.saml_provider_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput).
@@ -9313,7 +8241,7 @@ impl CreateSamlProviderOutput {
 
 /// <p>Contains the response to a successful <code>CreateRole</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRoleOutput {
     /// <p>A structure containing details about the new role.</p>
     #[doc(hidden)]
@@ -9323,13 +8251,6 @@ impl CreateRoleOutput {
     /// <p>A structure containing details about the new role.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::Role> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRoleOutput");
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 /// See [`CreateRoleOutput`](crate::output::CreateRoleOutput).
@@ -9366,7 +8287,7 @@ impl CreateRoleOutput {
 
 /// <p>Contains the response to a successful <code>CreatePolicyVersion</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePolicyVersionOutput {
     /// <p>A structure containing details about the new policy version.</p>
     #[doc(hidden)]
@@ -9376,13 +8297,6 @@ impl CreatePolicyVersionOutput {
     /// <p>A structure containing details about the new policy version.</p>
     pub fn policy_version(&self) -> std::option::Option<&crate::model::PolicyVersion> {
         self.policy_version.as_ref()
-    }
-}
-impl std::fmt::Debug for CreatePolicyVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePolicyVersionOutput");
-        formatter.field("policy_version", &self.policy_version);
-        formatter.finish()
     }
 }
 /// See [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput).
@@ -9424,7 +8338,7 @@ impl CreatePolicyVersionOutput {
 
 /// <p>Contains the response to a successful <code>CreatePolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePolicyOutput {
     /// <p>A structure containing details about the new policy.</p>
     #[doc(hidden)]
@@ -9434,13 +8348,6 @@ impl CreatePolicyOutput {
     /// <p>A structure containing details about the new policy.</p>
     pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
         self.policy.as_ref()
-    }
-}
-impl std::fmt::Debug for CreatePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePolicyOutput");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
     }
 }
 /// See [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
@@ -9479,7 +8386,7 @@ impl CreatePolicyOutput {
 
 /// <p>Contains the response to a successful <code>CreateOpenIDConnectProvider</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOpenIdConnectProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
     #[doc(hidden)]
@@ -9496,17 +8403,6 @@ impl CreateOpenIdConnectProviderOutput {
     /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateOpenIdConnectProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOpenIdConnectProviderOutput");
-        formatter.field(
-            "open_id_connect_provider_arn",
-            &self.open_id_connect_provider_arn,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput).
@@ -9572,7 +8468,7 @@ impl CreateOpenIdConnectProviderOutput {
 
 /// <p>Contains the response to a successful <code>CreateLoginProfile</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoginProfileOutput {
     /// <p>A structure containing the user name and password create date.</p>
     #[doc(hidden)]
@@ -9582,13 +8478,6 @@ impl CreateLoginProfileOutput {
     /// <p>A structure containing the user name and password create date.</p>
     pub fn login_profile(&self) -> std::option::Option<&crate::model::LoginProfile> {
         self.login_profile.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateLoginProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoginProfileOutput");
-        formatter.field("login_profile", &self.login_profile);
-        formatter.finish()
     }
 }
 /// See [`CreateLoginProfileOutput`](crate::output::CreateLoginProfileOutput).
@@ -9630,7 +8519,7 @@ impl CreateLoginProfileOutput {
 
 /// <p>Contains the response to a successful <code>CreateInstanceProfile</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
     #[doc(hidden)]
@@ -9640,13 +8529,6 @@ impl CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
     pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
         self.instance_profile.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateInstanceProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInstanceProfileOutput");
-        formatter.field("instance_profile", &self.instance_profile);
-        formatter.finish()
     }
 }
 /// See [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput).
@@ -9688,7 +8570,7 @@ impl CreateInstanceProfileOutput {
 
 /// <p>Contains the response to a successful <code>CreateGroup</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupOutput {
     /// <p>A structure containing details about the new group.</p>
     #[doc(hidden)]
@@ -9698,13 +8580,6 @@ impl CreateGroupOutput {
     /// <p>A structure containing details about the new group.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupOutput");
-        formatter.field("group", &self.group);
-        formatter.finish()
     }
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
@@ -9741,14 +8616,8 @@ impl CreateGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccountAliasOutput {}
-impl std::fmt::Debug for CreateAccountAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccountAliasOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateAccountAliasOutput`](crate::output::CreateAccountAliasOutput).
 pub mod create_account_alias_output {
 
@@ -9771,7 +8640,7 @@ impl CreateAccountAliasOutput {
 
 /// <p>Contains the response to a successful <code>CreateAccessKey</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessKeyOutput {
     /// <p>A structure with details about the access key.</p>
     #[doc(hidden)]
@@ -9781,13 +8650,6 @@ impl CreateAccessKeyOutput {
     /// <p>A structure with details about the access key.</p>
     pub fn access_key(&self) -> std::option::Option<&crate::model::AccessKey> {
         self.access_key.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAccessKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessKeyOutput");
-        formatter.field("access_key", &self.access_key);
-        formatter.finish()
     }
 }
 /// See [`CreateAccessKeyOutput`](crate::output::CreateAccessKeyOutput).
@@ -9829,14 +8691,8 @@ impl CreateAccessKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangePasswordOutput {}
-impl std::fmt::Debug for ChangePasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangePasswordOutput");
-        formatter.finish()
-    }
-}
 /// See [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
 pub mod change_password_output {
 
@@ -9859,14 +8715,8 @@ impl ChangePasswordOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachUserPolicyOutput {}
-impl std::fmt::Debug for AttachUserPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachUserPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`AttachUserPolicyOutput`](crate::output::AttachUserPolicyOutput).
 pub mod attach_user_policy_output {
 
@@ -9889,14 +8739,8 @@ impl AttachUserPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachRolePolicyOutput {}
-impl std::fmt::Debug for AttachRolePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachRolePolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`AttachRolePolicyOutput`](crate::output::AttachRolePolicyOutput).
 pub mod attach_role_policy_output {
 
@@ -9919,14 +8763,8 @@ impl AttachRolePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachGroupPolicyOutput {}
-impl std::fmt::Debug for AttachGroupPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachGroupPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`AttachGroupPolicyOutput`](crate::output::AttachGroupPolicyOutput).
 pub mod attach_group_policy_output {
 
@@ -9949,14 +8787,8 @@ impl AttachGroupPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddUserToGroupOutput {}
-impl std::fmt::Debug for AddUserToGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddUserToGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddUserToGroupOutput`](crate::output::AddUserToGroupOutput).
 pub mod add_user_to_group_output {
 
@@ -9979,14 +8811,8 @@ impl AddUserToGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddRoleToInstanceProfileOutput {}
-impl std::fmt::Debug for AddRoleToInstanceProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddRoleToInstanceProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddRoleToInstanceProfileOutput`](crate::output::AddRoleToInstanceProfileOutput).
 pub mod add_role_to_instance_profile_output {
 
@@ -10009,14 +8835,8 @@ impl AddRoleToInstanceProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddClientIdToOpenIdConnectProviderOutput {}
-impl std::fmt::Debug for AddClientIdToOpenIdConnectProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddClientIdToOpenIdConnectProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput).
 pub mod add_client_id_to_open_id_connect_provider_output {
 

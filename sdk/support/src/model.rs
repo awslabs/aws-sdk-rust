@@ -2,7 +2,7 @@
 
 /// <p>The refresh status of a Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedAdvisorCheckRefreshStatus {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
@@ -40,18 +40,6 @@ impl TrustedAdvisorCheckRefreshStatus {
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
     pub fn millis_until_next_refreshable(&self) -> i64 {
         self.millis_until_next_refreshable
-    }
-}
-impl std::fmt::Debug for TrustedAdvisorCheckRefreshStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedAdvisorCheckRefreshStatus");
-        formatter.field("check_id", &self.check_id);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "millis_until_next_refreshable",
-            &self.millis_until_next_refreshable,
-        );
-        formatter.finish()
     }
 }
 /// See [`TrustedAdvisorCheckRefreshStatus`](crate::model::TrustedAdvisorCheckRefreshStatus).
@@ -133,7 +121,7 @@ impl TrustedAdvisorCheckRefreshStatus {
 
 /// <p>A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedAdvisorCheckSummary {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
@@ -183,18 +171,6 @@ impl TrustedAdvisorCheckSummary {
         &self,
     ) -> std::option::Option<&crate::model::TrustedAdvisorCategorySpecificSummary> {
         self.category_specific_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for TrustedAdvisorCheckSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedAdvisorCheckSummary");
-        formatter.field("check_id", &self.check_id);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("has_flagged_resources", &self.has_flagged_resources);
-        formatter.field("resources_summary", &self.resources_summary);
-        formatter.field("category_specific_summary", &self.category_specific_summary);
-        formatter.finish()
     }
 }
 /// See [`TrustedAdvisorCheckSummary`](crate::model::TrustedAdvisorCheckSummary).
@@ -307,7 +283,7 @@ impl TrustedAdvisorCheckSummary {
 
 /// <p>The container for summary information that relates to the category of the Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedAdvisorCategorySpecificSummary {
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     #[doc(hidden)]
@@ -319,13 +295,6 @@ impl TrustedAdvisorCategorySpecificSummary {
         &self,
     ) -> std::option::Option<&crate::model::TrustedAdvisorCostOptimizingSummary> {
         self.cost_optimizing.as_ref()
-    }
-}
-impl std::fmt::Debug for TrustedAdvisorCategorySpecificSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedAdvisorCategorySpecificSummary");
-        formatter.field("cost_optimizing", &self.cost_optimizing);
-        formatter.finish()
     }
 }
 /// See [`TrustedAdvisorCategorySpecificSummary`](crate::model::TrustedAdvisorCategorySpecificSummary).
@@ -371,7 +340,7 @@ impl TrustedAdvisorCategorySpecificSummary {
 
 /// <p>The estimated cost savings that might be realized if the recommended operations are taken.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedAdvisorCostOptimizingSummary {
     /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
     #[doc(hidden)]
@@ -388,17 +357,6 @@ impl TrustedAdvisorCostOptimizingSummary {
     /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
     pub fn estimated_percent_monthly_savings(&self) -> f64 {
         self.estimated_percent_monthly_savings
-    }
-}
-impl std::fmt::Debug for TrustedAdvisorCostOptimizingSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedAdvisorCostOptimizingSummary");
-        formatter.field("estimated_monthly_savings", &self.estimated_monthly_savings);
-        formatter.field(
-            "estimated_percent_monthly_savings",
-            &self.estimated_percent_monthly_savings,
-        );
-        formatter.finish()
     }
 }
 /// See [`TrustedAdvisorCostOptimizingSummary`](crate::model::TrustedAdvisorCostOptimizingSummary).
@@ -454,7 +412,7 @@ impl TrustedAdvisorCostOptimizingSummary {
 
 /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedAdvisorResourcesSummary {
     /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
     #[doc(hidden)]
@@ -485,16 +443,6 @@ impl TrustedAdvisorResourcesSummary {
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
     pub fn resources_suppressed(&self) -> i64 {
         self.resources_suppressed
-    }
-}
-impl std::fmt::Debug for TrustedAdvisorResourcesSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedAdvisorResourcesSummary");
-        formatter.field("resources_processed", &self.resources_processed);
-        formatter.field("resources_flagged", &self.resources_flagged);
-        formatter.field("resources_ignored", &self.resources_ignored);
-        formatter.field("resources_suppressed", &self.resources_suppressed);
-        formatter.finish()
     }
 }
 /// See [`TrustedAdvisorResourcesSummary`](crate::model::TrustedAdvisorResourcesSummary).
@@ -569,7 +517,7 @@ impl TrustedAdvisorResourcesSummary {
 
 /// <p>The description and metadata for a Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
@@ -607,17 +555,6 @@ impl TrustedAdvisorCheckDescription {
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
         self.metadata.as_deref()
-    }
-}
-impl std::fmt::Debug for TrustedAdvisorCheckDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedAdvisorCheckDescription");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("category", &self.category);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
     }
 }
 /// See [`TrustedAdvisorCheckDescription`](crate::model::TrustedAdvisorCheckDescription).
@@ -713,7 +650,7 @@ impl TrustedAdvisorCheckDescription {
 
 /// <p>The results of a Trusted Advisor check returned by <code>DescribeTrustedAdvisorCheckResult</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedAdvisorCheckResult {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
@@ -766,18 +703,6 @@ impl TrustedAdvisorCheckResult {
         &self,
     ) -> std::option::Option<&[crate::model::TrustedAdvisorResourceDetail]> {
         self.flagged_resources.as_deref()
-    }
-}
-impl std::fmt::Debug for TrustedAdvisorCheckResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedAdvisorCheckResult");
-        formatter.field("check_id", &self.check_id);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("resources_summary", &self.resources_summary);
-        formatter.field("category_specific_summary", &self.category_specific_summary);
-        formatter.field("flagged_resources", &self.flagged_resources);
-        formatter.finish()
     }
 }
 /// See [`TrustedAdvisorCheckResult`](crate::model::TrustedAdvisorCheckResult).
@@ -903,7 +828,7 @@ impl TrustedAdvisorCheckResult {
 
 /// <p>Contains information about a resource identified by a Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedAdvisorResourceDetail {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
     #[doc(hidden)]
@@ -941,17 +866,6 @@ impl TrustedAdvisorResourceDetail {
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
     pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
         self.metadata.as_deref()
-    }
-}
-impl std::fmt::Debug for TrustedAdvisorResourceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedAdvisorResourceDetail");
-        formatter.field("status", &self.status);
-        formatter.field("region", &self.region);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("is_suppressed", &self.is_suppressed);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
     }
 }
 /// See [`TrustedAdvisorResourceDetail`](crate::model::TrustedAdvisorResourceDetail).
@@ -1047,7 +961,7 @@ impl TrustedAdvisorResourceDetail {
 
 /// <p>A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SeverityLevel {
     /// <p>The code for case severity level.</p>
     /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code> </p>
@@ -1088,14 +1002,6 @@ impl SeverityLevel {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for SeverityLevel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SeverityLevel");
-        formatter.field("code", &self.code);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`SeverityLevel`](crate::model::SeverityLevel).
@@ -1170,7 +1076,7 @@ impl SeverityLevel {
 
 /// <p>Information about an Amazon Web Services service returned by the <code>DescribeServices</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Service {
     /// <p>The code for an Amazon Web Services service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
     #[doc(hidden)]
@@ -1194,15 +1100,6 @@ impl Service {
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
     pub fn categories(&self) -> std::option::Option<&[crate::model::Category]> {
         self.categories.as_deref()
-    }
-}
-impl std::fmt::Debug for Service {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Service");
-        formatter.field("code", &self.code);
-        formatter.field("name", &self.name);
-        formatter.field("categories", &self.categories);
-        formatter.finish()
     }
 }
 /// See [`Service`](crate::model::Service).
@@ -1274,7 +1171,7 @@ impl Service {
 
 /// <p>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <code>DescribeServices</code> response for each Amazon Web Services service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Category {
     /// <p>The category code for the support case.</p>
     #[doc(hidden)]
@@ -1291,14 +1188,6 @@ impl Category {
     /// <p>The category name for the support case.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Category {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Category");
-        formatter.field("code", &self.code);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Category`](crate::model::Category).
@@ -1349,7 +1238,7 @@ impl Category {
 
 /// <p>A communication associated with a support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Communication {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
@@ -1391,17 +1280,6 @@ impl Communication {
     /// <p>Information about the attachments to the case communication.</p>
     pub fn attachment_set(&self) -> std::option::Option<&[crate::model::AttachmentDetails]> {
         self.attachment_set.as_deref()
-    }
-}
-impl std::fmt::Debug for Communication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Communication");
-        formatter.field("case_id", &self.case_id);
-        formatter.field("body", &self.body);
-        formatter.field("submitted_by", &self.submitted_by);
-        formatter.field("time_created", &self.time_created);
-        formatter.field("attachment_set", &self.attachment_set);
-        formatter.finish()
     }
 }
 /// See [`Communication`](crate::model::Communication).
@@ -1502,7 +1380,7 @@ impl Communication {
 
 /// <p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentDetails {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
@@ -1519,14 +1397,6 @@ impl AttachmentDetails {
     /// <p>The file name of the attachment.</p>
     pub fn file_name(&self) -> std::option::Option<&str> {
         self.file_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachmentDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentDetails");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("file_name", &self.file_name);
-        formatter.finish()
     }
 }
 /// See [`AttachmentDetails`](crate::model::AttachmentDetails).
@@ -1602,7 +1472,7 @@ impl AttachmentDetails {
 /// <li> <p> <b>timeCreated</b> - The time the case was created, in ISO-8601 format.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaseDetails {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
@@ -1709,24 +1579,6 @@ impl CaseDetails {
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
-    }
-}
-impl std::fmt::Debug for CaseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaseDetails");
-        formatter.field("case_id", &self.case_id);
-        formatter.field("display_id", &self.display_id);
-        formatter.field("subject", &self.subject);
-        formatter.field("status", &self.status);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("category_code", &self.category_code);
-        formatter.field("severity_code", &self.severity_code);
-        formatter.field("submitted_by", &self.submitted_by);
-        formatter.field("time_created", &self.time_created);
-        formatter.field("recent_communications", &self.recent_communications);
-        formatter.field("cc_email_addresses", &self.cc_email_addresses);
-        formatter.field("language", &self.language);
-        formatter.finish()
     }
 }
 /// See [`CaseDetails`](crate::model::CaseDetails).
@@ -1937,7 +1789,7 @@ impl CaseDetails {
 
 /// <p>The five most recent communications associated with the case.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecentCaseCommunications {
     /// <p>The five most recent communications associated with the case.</p>
     #[doc(hidden)]
@@ -1954,14 +1806,6 @@ impl RecentCaseCommunications {
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for RecentCaseCommunications {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecentCaseCommunications");
-        formatter.field("communications", &self.communications);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`RecentCaseCommunications`](crate::model::RecentCaseCommunications).
@@ -2021,7 +1865,7 @@ impl RecentCaseCommunications {
 
 /// <p>An attachment to a case communication. The attachment consists of the file name and the content of the file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attachment {
     /// <p>The name of the attachment file.</p>
     #[doc(hidden)]
@@ -2038,14 +1882,6 @@ impl Attachment {
     /// <p>The content of the attachment file.</p>
     pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.data.as_ref()
-    }
-}
-impl std::fmt::Debug for Attachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attachment");
-        formatter.field("file_name", &self.file_name);
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`Attachment`](crate::model::Attachment).

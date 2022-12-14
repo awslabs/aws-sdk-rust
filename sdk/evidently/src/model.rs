@@ -2,7 +2,7 @@
 
 /// <p>A structure containing an error name and message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The error name.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>A structure that contains information about one experiment or launch that uses the specified segment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefResource {
     /// <p>The name of the experiment or launch.</p>
     #[doc(hidden)]
@@ -236,19 +228,6 @@ impl RefResource {
     /// <p>The day and time that this experiment or launch was most recently updated.</p>
     pub fn last_updated_on(&self) -> std::option::Option<&str> {
         self.last_updated_on.as_deref()
-    }
-}
-impl std::fmt::Debug for RefResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefResource");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("last_updated_on", &self.last_updated_on);
-        formatter.finish()
     }
 }
 /// See [`RefResource`](crate::model::RefResource).
@@ -454,7 +433,7 @@ impl AsRef<str> for SegmentReferenceResourceType {
 
 /// <p>This structure contains information about one audience <i>segment</i>. You can use segments in your experiments and launches to narrow the user sessions used for experiment or launch to only the user sessions that match one or more criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Segment {
     /// <p>The ARN of the segment.</p>
     #[doc(hidden)]
@@ -524,21 +503,6 @@ impl Segment {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Segment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Segment");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("pattern", &self.pattern);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("description", &self.description);
-        formatter.field("experiment_count", &self.experiment_count);
-        formatter.field("launch_count", &self.launch_count);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Segment`](crate::model::Segment).
@@ -696,7 +660,7 @@ impl Segment {
 
 /// <p>This structure defines a project, which is the logical object in Evidently that can contain features, launches, and experiments. Use projects to group similar features together.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Project {
     /// <p>The name or ARN of the project.</p>
     #[doc(hidden)]
@@ -803,26 +767,6 @@ impl Project {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Project {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Project");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("feature_count", &self.feature_count);
-        formatter.field("launch_count", &self.launch_count);
-        formatter.field("active_launch_count", &self.active_launch_count);
-        formatter.field("experiment_count", &self.experiment_count);
-        formatter.field("active_experiment_count", &self.active_experiment_count);
-        formatter.field("data_delivery", &self.data_delivery);
-        formatter.field("app_config_resource", &self.app_config_resource);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Project`](crate::model::Project).
@@ -1052,7 +996,7 @@ impl Project {
 
 /// <p>This is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectAppConfigResource {
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
     #[doc(hidden)]
@@ -1076,15 +1020,6 @@ impl ProjectAppConfigResource {
     /// <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
     pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectAppConfigResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectAppConfigResource");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.finish()
     }
 }
 /// See [`ProjectAppConfigResource`](crate::model::ProjectAppConfigResource).
@@ -1156,7 +1091,7 @@ impl ProjectAppConfigResource {
 
 /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectDataDelivery {
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     #[doc(hidden)]
@@ -1175,14 +1110,6 @@ impl ProjectDataDelivery {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
         self.cloud_watch_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectDataDelivery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectDataDelivery");
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.field("cloud_watch_logs", &self.cloud_watch_logs);
-        formatter.finish()
     }
 }
 /// See [`ProjectDataDelivery`](crate::model::ProjectDataDelivery).
@@ -1239,7 +1166,7 @@ impl ProjectDataDelivery {
 
 /// <p>A structure containing the CloudWatch Logs log group where the project stores evaluation events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsDestination {
     /// <p>The name of the log group where the project stores evaluation events.</p>
     #[doc(hidden)]
@@ -1249,13 +1176,6 @@ impl CloudWatchLogsDestination {
     /// <p>The name of the log group where the project stores evaluation events.</p>
     pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLogsDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsDestination");
-        formatter.field("log_group", &self.log_group);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
@@ -1294,7 +1214,7 @@ impl CloudWatchLogsDestination {
 
 /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Destination {
     /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
     #[doc(hidden)]
@@ -1311,14 +1231,6 @@ impl S3Destination {
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Destination");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Destination`](crate::model::S3Destination).
@@ -1459,7 +1371,7 @@ impl AsRef<str> for ProjectStatus {
 
 /// <p>A structure containing the CloudWatch Logs log group where the project stores evaluation events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsDestinationConfig {
     /// <p>The name of the log group where the project stores evaluation events.</p>
     #[doc(hidden)]
@@ -1469,13 +1381,6 @@ impl CloudWatchLogsDestinationConfig {
     /// <p>The name of the log group where the project stores evaluation events.</p>
     pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLogsDestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsDestinationConfig");
-        formatter.field("log_group", &self.log_group);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogsDestinationConfig`](crate::model::CloudWatchLogsDestinationConfig).
@@ -1514,7 +1419,7 @@ impl CloudWatchLogsDestinationConfig {
 
 /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationConfig {
     /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
     #[doc(hidden)]
@@ -1531,14 +1436,6 @@ impl S3DestinationConfig {
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationConfig");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3DestinationConfig`](crate::model::S3DestinationConfig).
@@ -1590,7 +1487,7 @@ impl S3DestinationConfig {
 /// <p>Use this parameter to configure client-side evaluation for your project. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation to assign the variations. This mitigates the latency and availability risks that come with an API call.</p>
 /// <p> <code>ProjectAppConfigResource</code> is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectAppConfigResourceConfig {
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
     #[doc(hidden)]
@@ -1607,14 +1504,6 @@ impl ProjectAppConfigResourceConfig {
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectAppConfigResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectAppConfigResourceConfig");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.finish()
     }
 }
 /// See [`ProjectAppConfigResourceConfig`](crate::model::ProjectAppConfigResourceConfig).
@@ -1671,7 +1560,7 @@ impl ProjectAppConfigResourceConfig {
 
 /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutProjectEventsResultEntry {
     /// <p>A unique ID assigned to this <code>PutProjectEvents</code> operation. </p>
     #[doc(hidden)]
@@ -1695,15 +1584,6 @@ impl PutProjectEventsResultEntry {
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for PutProjectEventsResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutProjectEventsResultEntry");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`PutProjectEventsResultEntry`](crate::model::PutProjectEventsResultEntry).
@@ -1769,7 +1649,7 @@ impl PutProjectEventsResultEntry {
 
 /// <p>A structure that contains the information about one evaluation event or custom event sent to Evidently. This is a JSON payload. If this event specifies a pre-defined event type, the payload must follow the defined event schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The timestamp of the event.</p>
     #[doc(hidden)]
@@ -1793,15 +1673,6 @@ impl Event {
     /// <p>The event data.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -2038,7 +1909,7 @@ impl VariableValue {
 
 /// <p>This structure displays the results of one feature evaluation assignment to one user session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
     #[doc(hidden)]
@@ -2090,19 +1961,6 @@ impl EvaluationResult {
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for EvaluationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationResult");
-        formatter.field("project", &self.project);
-        formatter.field("feature", &self.feature);
-        formatter.field("variation", &self.variation);
-        formatter.field("value", &self.value);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
@@ -2216,7 +2074,7 @@ impl EvaluationResult {
 
 /// <p>This structure assigns a feature variation to one user session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationRequest {
     /// <p>The name of the feature being evaluated.</p>
     #[doc(hidden)]
@@ -2240,15 +2098,6 @@ impl EvaluationRequest {
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
     pub fn evaluation_context(&self) -> std::option::Option<&str> {
         self.evaluation_context.as_deref()
-    }
-}
-impl std::fmt::Debug for EvaluationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationRequest");
-        formatter.field("feature", &self.feature);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("evaluation_context", &self.evaluation_context);
-        formatter.finish()
     }
 }
 /// See [`EvaluationRequest`](crate::model::EvaluationRequest).
@@ -2314,7 +2163,7 @@ impl EvaluationRequest {
 
 /// <p>A structure that contains configuration information about an Evidently project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The name or ARN of the project.</p>
     #[doc(hidden)]
@@ -2405,24 +2254,6 @@ impl ProjectSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("feature_count", &self.feature_count);
-        formatter.field("launch_count", &self.launch_count);
-        formatter.field("active_launch_count", &self.active_launch_count);
-        formatter.field("experiment_count", &self.experiment_count);
-        formatter.field("active_experiment_count", &self.active_experiment_count);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
@@ -2619,7 +2450,7 @@ impl ProjectSummary {
 
 /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectDataDeliveryConfig {
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     #[doc(hidden)]
@@ -2638,14 +2469,6 @@ impl ProjectDataDeliveryConfig {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogsDestinationConfig> {
         self.cloud_watch_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectDataDeliveryConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectDataDeliveryConfig");
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.field("cloud_watch_logs", &self.cloud_watch_logs);
-        formatter.finish()
     }
 }
 /// See [`ProjectDataDeliveryConfig`](crate::model::ProjectDataDeliveryConfig).
@@ -2798,7 +2621,7 @@ impl AsRef<str> for LaunchStopDesiredState {
 
 /// <p>This structure contains the configuration details of one Evidently launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Launch {
     /// <p>The ARN of the launch.</p>
     #[doc(hidden)]
@@ -2913,30 +2736,6 @@ impl Launch {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Launch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Launch");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("project", &self.project);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("description", &self.description);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("execution", &self.execution);
-        formatter.field("groups", &self.groups);
-        formatter.field("metric_monitors", &self.metric_monitors);
-        formatter.field("randomization_salt", &self.randomization_salt);
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "scheduled_splits_definition",
-            &self.scheduled_splits_definition,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Launch`](crate::model::Launch).
@@ -3203,7 +3002,7 @@ impl Launch {
 
 /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of a launch. This also defines the start time of each step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledSplitsLaunchDefinition {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     #[doc(hidden)]
@@ -3213,13 +3012,6 @@ impl ScheduledSplitsLaunchDefinition {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::ScheduledSplit]> {
         self.steps.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduledSplitsLaunchDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledSplitsLaunchDefinition");
-        formatter.field("steps", &self.steps);
-        formatter.finish()
     }
 }
 /// See [`ScheduledSplitsLaunchDefinition`](crate::model::ScheduledSplitsLaunchDefinition).
@@ -3265,7 +3057,7 @@ impl ScheduledSplitsLaunchDefinition {
 
 /// <p>This structure defines the traffic allocation percentages among the feature variations during one step of a launch, and the start time of that step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledSplit {
     /// <p>The date and time that this step of the launch starts.</p>
     #[doc(hidden)]
@@ -3297,15 +3089,6 @@ impl ScheduledSplit {
     /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
     pub fn segment_overrides(&self) -> std::option::Option<&[crate::model::SegmentOverride]> {
         self.segment_overrides.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduledSplit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledSplit");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("group_weights", &self.group_weights);
-        formatter.field("segment_overrides", &self.segment_overrides);
-        formatter.finish()
     }
 }
 /// See [`ScheduledSplit`](crate::model::ScheduledSplit).
@@ -3397,7 +3180,7 @@ impl ScheduledSplit {
 
 /// <p>This structure specifies a segment that you have already created, and defines the traffic split for that segment to be used in a launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentOverride {
     /// <p>The ARN of the segment to use.</p>
     #[doc(hidden)]
@@ -3423,15 +3206,6 @@ impl SegmentOverride {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
         self.weights.as_ref()
-    }
-}
-impl std::fmt::Debug for SegmentOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentOverride");
-        formatter.field("segment", &self.segment);
-        formatter.field("evaluation_order", &self.evaluation_order);
-        formatter.field("weights", &self.weights);
-        formatter.finish()
     }
 }
 /// See [`SegmentOverride`](crate::model::SegmentOverride).
@@ -3589,7 +3363,7 @@ impl AsRef<str> for LaunchType {
 
 /// <p>A structure that defines a metric to be used to monitor performance of the variations during a launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricMonitor {
     /// <p>A structure that defines the metric.</p>
     #[doc(hidden)]
@@ -3599,13 +3373,6 @@ impl MetricMonitor {
     /// <p>A structure that defines the metric.</p>
     pub fn metric_definition(&self) -> std::option::Option<&crate::model::MetricDefinition> {
         self.metric_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricMonitor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricMonitor");
-        formatter.field("metric_definition", &self.metric_definition);
-        formatter.finish()
     }
 }
 /// See [`MetricMonitor`](crate::model::MetricMonitor).
@@ -3647,7 +3414,7 @@ impl MetricMonitor {
 
 /// <p>This structure defines a metric that is being used to evaluate the variations during a launch or experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDefinition {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -3687,17 +3454,6 @@ impl MetricDefinition {
     /// <p>The label for the units that the metric is measuring.</p>
     pub fn unit_label(&self) -> std::option::Option<&str> {
         self.unit_label.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("entity_id_key", &self.entity_id_key);
-        formatter.field("value_key", &self.value_key);
-        formatter.field("event_pattern", &self.event_pattern);
-        formatter.field("unit_label", &self.unit_label);
-        formatter.finish()
     }
 }
 /// See [`MetricDefinition`](crate::model::MetricDefinition).
@@ -3792,7 +3548,7 @@ impl MetricDefinition {
 
 /// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchGroup {
     /// <p>The name of the launch group.</p>
     #[doc(hidden)]
@@ -3820,15 +3576,6 @@ impl LaunchGroup {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.feature_variations.as_ref()
-    }
-}
-impl std::fmt::Debug for LaunchGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchGroup");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("feature_variations", &self.feature_variations);
-        formatter.finish()
     }
 }
 /// See [`LaunchGroup`](crate::model::LaunchGroup).
@@ -3908,7 +3655,7 @@ impl LaunchGroup {
 
 /// <p>This structure contains information about the start and end times of the launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchExecution {
     /// <p>The date and time that the launch started.</p>
     #[doc(hidden)]
@@ -3925,14 +3672,6 @@ impl LaunchExecution {
     /// <p>The date and time that the launch ended.</p>
     pub fn ended_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LaunchExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchExecution");
-        formatter.field("started_time", &self.started_time);
-        formatter.field("ended_time", &self.ended_time);
-        formatter.finish()
     }
 }
 /// See [`LaunchExecution`](crate::model::LaunchExecution).
@@ -4094,7 +3833,7 @@ impl AsRef<str> for LaunchStatus {
 
 /// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchGroupConfig {
     /// <p>A name for this launch group.</p>
     #[doc(hidden)]
@@ -4125,16 +3864,6 @@ impl LaunchGroupConfig {
     /// <p>The feature variation to use for this launch group.</p>
     pub fn variation(&self) -> std::option::Option<&str> {
         self.variation.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchGroupConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchGroupConfig");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("feature", &self.feature);
-        formatter.field("variation", &self.variation);
-        formatter.finish()
     }
 }
 /// See [`LaunchGroupConfig`](crate::model::LaunchGroupConfig).
@@ -4209,7 +3938,7 @@ impl LaunchGroupConfig {
 
 /// <p>A structure that defines a metric to be used to monitor performance of the variations during a launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricMonitorConfig {
     /// <p>A structure that defines the metric.</p>
     #[doc(hidden)]
@@ -4219,13 +3948,6 @@ impl MetricMonitorConfig {
     /// <p>A structure that defines the metric.</p>
     pub fn metric_definition(&self) -> std::option::Option<&crate::model::MetricDefinitionConfig> {
         self.metric_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricMonitorConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricMonitorConfig");
-        formatter.field("metric_definition", &self.metric_definition);
-        formatter.finish()
     }
 }
 /// See [`MetricMonitorConfig`](crate::model::MetricMonitorConfig).
@@ -4267,7 +3989,7 @@ impl MetricMonitorConfig {
 
 /// <p>This structure defines a metric that you want to use to evaluate the variations during a launch or experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDefinitionConfig {
     /// <p>A name for the metric.</p>
     #[doc(hidden)]
@@ -4307,17 +4029,6 @@ impl MetricDefinitionConfig {
     /// <p>A label for the units that the metric is measuring.</p>
     pub fn unit_label(&self) -> std::option::Option<&str> {
         self.unit_label.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDefinitionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDefinitionConfig");
-        formatter.field("name", &self.name);
-        formatter.field("entity_id_key", &self.entity_id_key);
-        formatter.field("value_key", &self.value_key);
-        formatter.field("event_pattern", &self.event_pattern);
-        formatter.field("unit_label", &self.unit_label);
-        formatter.finish()
     }
 }
 /// See [`MetricDefinitionConfig`](crate::model::MetricDefinitionConfig).
@@ -4412,7 +4123,7 @@ impl MetricDefinitionConfig {
 
 /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of a launch. This also defines the start time of each step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledSplitsLaunchConfig {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     #[doc(hidden)]
@@ -4422,13 +4133,6 @@ impl ScheduledSplitsLaunchConfig {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::ScheduledSplitConfig]> {
         self.steps.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduledSplitsLaunchConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledSplitsLaunchConfig");
-        formatter.field("steps", &self.steps);
-        formatter.finish()
     }
 }
 /// See [`ScheduledSplitsLaunchConfig`](crate::model::ScheduledSplitsLaunchConfig).
@@ -4474,7 +4178,7 @@ impl ScheduledSplitsLaunchConfig {
 
 /// <p>This structure defines the traffic allocation percentages among the feature variations during one step of a launch, and the start time of that step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledSplitConfig {
     /// <p>The date and time that this step of the launch starts.</p>
     #[doc(hidden)]
@@ -4506,15 +4210,6 @@ impl ScheduledSplitConfig {
     /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
     pub fn segment_overrides(&self) -> std::option::Option<&[crate::model::SegmentOverride]> {
         self.segment_overrides.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduledSplitConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledSplitConfig");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("group_weights", &self.group_weights);
-        formatter.field("segment_overrides", &self.segment_overrides);
-        formatter.finish()
     }
 }
 /// See [`ScheduledSplitConfig`](crate::model::ScheduledSplitConfig).
@@ -4606,7 +4301,7 @@ impl ScheduledSplitConfig {
 
 /// <p>This structure contains information about one Evidently feature in your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeatureSummary {
     /// <p>The ARN of the feature.</p>
     #[doc(hidden)]
@@ -4685,22 +4380,6 @@ impl FeatureSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for FeatureSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("project", &self.project);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("evaluation_strategy", &self.evaluation_strategy);
-        formatter.field("evaluation_rules", &self.evaluation_rules);
-        formatter.field("default_variation", &self.default_variation);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`FeatureSummary`](crate::model::FeatureSummary).
@@ -4893,7 +4572,7 @@ impl FeatureSummary {
 
 /// <p>A structure that contains the information about an evaluation rule for this feature, if it is used in a launch or experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationRule {
     /// <p>The name of the experiment or launch.</p>
     #[doc(hidden)]
@@ -4910,14 +4589,6 @@ impl EvaluationRule {
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for EvaluationRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationRule");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`EvaluationRule`](crate::model::EvaluationRule).
@@ -5150,7 +4821,7 @@ impl AsRef<str> for FeatureStatus {
 
 /// <p>This structure contains information about one Evidently feature in your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Feature {
     /// <p>The ARN of the feature.</p>
     #[doc(hidden)]
@@ -5267,26 +4938,6 @@ impl Feature {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.entity_overrides.as_ref()
-    }
-}
-impl std::fmt::Debug for Feature {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Feature");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("project", &self.project);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("description", &self.description);
-        formatter.field("evaluation_strategy", &self.evaluation_strategy);
-        formatter.field("value_type", &self.value_type);
-        formatter.field("variations", &self.variations);
-        formatter.field("default_variation", &self.default_variation);
-        formatter.field("evaluation_rules", &self.evaluation_rules);
-        formatter.field("tags", &self.tags);
-        formatter.field("entity_overrides", &self.entity_overrides);
-        formatter.finish()
     }
 }
 /// See [`Feature`](crate::model::Feature).
@@ -5562,7 +5213,7 @@ impl Feature {
 
 /// <p>This structure contains the name and variation value of one variation of a feature.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Variation {
     /// <p>The name of the variation.</p>
     #[doc(hidden)]
@@ -5579,14 +5230,6 @@ impl Variation {
     /// <p>The value assigned to this variation.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::VariableValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for Variation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Variation");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Variation`](crate::model::Variation).
@@ -5742,7 +5385,7 @@ impl AsRef<str> for VariationValueType {
 
 /// <p>This structure contains the name and variation value of one variation of a feature.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VariationConfig {
     /// <p>The name of the variation.</p>
     #[doc(hidden)]
@@ -5759,14 +5402,6 @@ impl VariationConfig {
     /// <p>The value assigned to this variation.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::VariableValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for VariationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VariationConfig");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`VariationConfig`](crate::model::VariationConfig).
@@ -5912,7 +5547,7 @@ impl AsRef<str> for ExperimentStopDesiredState {
 
 /// <p>A structure that contains results of an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentReport {
     /// <p>The name of the metric that is analyzed in this experiment report.</p>
     #[doc(hidden)]
@@ -5943,16 +5578,6 @@ impl ExperimentReport {
     /// <p>The content of the report.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
-    }
-}
-impl std::fmt::Debug for ExperimentReport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentReport");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.field("report_name", &self.report_name);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`ExperimentReport`](crate::model::ExperimentReport).
@@ -6120,7 +5745,7 @@ impl AsRef<str> for ExperimentReportName {
 
 /// <p>A structure that contains experiment results for one metric that is monitored in the experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentResultsData {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -6151,16 +5776,6 @@ impl ExperimentResultsData {
     /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
     pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ExperimentResultsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentResultsData");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.field("result_stat", &self.result_stat);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ExperimentResultsData`](crate::model::ExperimentResultsData).
@@ -6562,7 +6177,7 @@ impl AsRef<str> for ExperimentBaseStat {
 
 /// <p>A structure containing the configuration details of an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Experiment {
     /// <p>The ARN of the experiment.</p>
     #[doc(hidden)]
@@ -6697,30 +6312,6 @@ impl Experiment {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Experiment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Experiment");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("project", &self.project);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("description", &self.description);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("execution", &self.execution);
-        formatter.field("treatments", &self.treatments);
-        formatter.field("metric_goals", &self.metric_goals);
-        formatter.field("randomization_salt", &self.randomization_salt);
-        formatter.field("sampling_rate", &self.sampling_rate);
-        formatter.field("segment", &self.segment);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("online_ab_definition", &self.online_ab_definition);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Experiment`](crate::model::Experiment).
@@ -7027,7 +6618,7 @@ impl Experiment {
 
 /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnlineAbDefinition {
     /// <p>The name of the variation that is the default variation that the other variations are compared to.</p>
     #[doc(hidden)]
@@ -7046,14 +6637,6 @@ impl OnlineAbDefinition {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
         self.treatment_weights.as_ref()
-    }
-}
-impl std::fmt::Debug for OnlineAbDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnlineAbDefinition");
-        formatter.field("control_treatment_name", &self.control_treatment_name);
-        formatter.field("treatment_weights", &self.treatment_weights);
-        formatter.finish()
     }
 }
 /// See [`OnlineAbDefinition`](crate::model::OnlineAbDefinition).
@@ -7202,7 +6785,7 @@ impl AsRef<str> for ExperimentType {
 
 /// <p>A structure that tells Evidently whether higher or lower values are desired for a metric that is used in an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricGoal {
     /// <p>A structure that contains details about the metric.</p>
     #[doc(hidden)]
@@ -7221,14 +6804,6 @@ impl MetricGoal {
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn desired_change(&self) -> std::option::Option<&crate::model::ChangeDirectionEnum> {
         self.desired_change.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricGoal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricGoal");
-        formatter.field("metric_definition", &self.metric_definition);
-        formatter.field("desired_change", &self.desired_change);
-        formatter.finish()
     }
 }
 /// See [`MetricGoal`](crate::model::MetricGoal).
@@ -7379,7 +6954,7 @@ impl AsRef<str> for ChangeDirectionEnum {
 
 /// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature that you are including in the experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Treatment {
     /// <p>The name of this treatment.</p>
     #[doc(hidden)]
@@ -7407,15 +6982,6 @@ impl Treatment {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.feature_variations.as_ref()
-    }
-}
-impl std::fmt::Debug for Treatment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Treatment");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("feature_variations", &self.feature_variations);
-        formatter.finish()
     }
 }
 /// See [`Treatment`](crate::model::Treatment).
@@ -7495,7 +7061,7 @@ impl Treatment {
 
 /// <p>This structure contains the date and time that the experiment started and ended.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentExecution {
     /// <p>The date and time that the experiment started.</p>
     #[doc(hidden)]
@@ -7512,14 +7078,6 @@ impl ExperimentExecution {
     /// <p>The date and time that the experiment ended.</p>
     pub fn ended_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ExperimentExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentExecution");
-        formatter.field("started_time", &self.started_time);
-        formatter.field("ended_time", &self.ended_time);
-        formatter.finish()
     }
 }
 /// See [`ExperimentExecution`](crate::model::ExperimentExecution).
@@ -7576,7 +7134,7 @@ impl ExperimentExecution {
 
 /// <p>This structure contains the time and date that Evidently completed the analysis of the experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentSchedule {
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
     #[doc(hidden)]
@@ -7586,13 +7144,6 @@ impl ExperimentSchedule {
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
     pub fn analysis_complete_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.analysis_complete_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ExperimentSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentSchedule");
-        formatter.field("analysis_complete_time", &self.analysis_complete_time);
-        formatter.finish()
     }
 }
 /// See [`ExperimentSchedule`](crate::model::ExperimentSchedule).
@@ -7739,7 +7290,7 @@ impl AsRef<str> for ExperimentStatus {
 
 /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnlineAbConfig {
     /// <p>The name of the variation that is to be the default variation that the other variations are compared to.</p>
     #[doc(hidden)]
@@ -7758,14 +7309,6 @@ impl OnlineAbConfig {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
         self.treatment_weights.as_ref()
-    }
-}
-impl std::fmt::Debug for OnlineAbConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnlineAbConfig");
-        formatter.field("control_treatment_name", &self.control_treatment_name);
-        formatter.field("treatment_weights", &self.treatment_weights);
-        formatter.finish()
     }
 }
 /// See [`OnlineAbConfig`](crate::model::OnlineAbConfig).
@@ -7829,7 +7372,7 @@ impl OnlineAbConfig {
 
 /// <p>Use this structure to tell Evidently whether higher or lower values are desired for a metric that is used in an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricGoalConfig {
     /// <p>A structure that contains details about the metric.</p>
     #[doc(hidden)]
@@ -7848,14 +7391,6 @@ impl MetricGoalConfig {
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn desired_change(&self) -> std::option::Option<&crate::model::ChangeDirectionEnum> {
         self.desired_change.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricGoalConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricGoalConfig");
-        formatter.field("metric_definition", &self.metric_definition);
-        formatter.field("desired_change", &self.desired_change);
-        formatter.finish()
     }
 }
 /// See [`MetricGoalConfig`](crate::model::MetricGoalConfig).
@@ -7914,7 +7449,7 @@ impl MetricGoalConfig {
 
 /// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature that you are including in the experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TreatmentConfig {
     /// <p>A name for this treatment.</p>
     #[doc(hidden)]
@@ -7945,16 +7480,6 @@ impl TreatmentConfig {
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
     pub fn variation(&self) -> std::option::Option<&str> {
         self.variation.as_deref()
-    }
-}
-impl std::fmt::Debug for TreatmentConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TreatmentConfig");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("feature", &self.feature);
-        formatter.field("variation", &self.variation);
-        formatter.finish()
     }
 }
 /// See [`TreatmentConfig`](crate::model::TreatmentConfig).

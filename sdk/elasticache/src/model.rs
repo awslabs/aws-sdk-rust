@@ -2,7 +2,7 @@
 
 /// <p>Contains all of the attributes of a specific Redis replication group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationGroup {
     /// <p>The identifier for the replication group.</p>
     #[doc(hidden)]
@@ -237,63 +237,6 @@ impl ReplicationGroup {
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
     pub fn auto_minor_version_upgrade(&self) -> bool {
         self.auto_minor_version_upgrade
-    }
-}
-impl std::fmt::Debug for ReplicationGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationGroup");
-        formatter.field("replication_group_id", &self.replication_group_id);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "global_replication_group_info",
-            &self.global_replication_group_info,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("pending_modified_values", &self.pending_modified_values);
-        formatter.field("member_clusters", &self.member_clusters);
-        formatter.field("node_groups", &self.node_groups);
-        formatter.field("snapshotting_cluster_id", &self.snapshotting_cluster_id);
-        formatter.field("automatic_failover", &self.automatic_failover);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("configuration_endpoint", &self.configuration_endpoint);
-        formatter.field("snapshot_retention_limit", &self.snapshot_retention_limit);
-        formatter.field("snapshot_window", &self.snapshot_window);
-        formatter.field("cluster_enabled", &self.cluster_enabled);
-        formatter.field("cache_node_type", &self.cache_node_type);
-        formatter.field("auth_token_enabled", &self.auth_token_enabled);
-        formatter.field(
-            "auth_token_last_modified_date",
-            &self.auth_token_last_modified_date,
-        );
-        formatter.field(
-            "transit_encryption_enabled",
-            &self.transit_encryption_enabled,
-        );
-        formatter.field(
-            "at_rest_encryption_enabled",
-            &self.at_rest_encryption_enabled,
-        );
-        formatter.field(
-            "member_clusters_outpost_arns",
-            &self.member_clusters_outpost_arns,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("user_group_ids", &self.user_group_ids);
-        formatter.field(
-            "log_delivery_configurations",
-            &self.log_delivery_configurations,
-        );
-        formatter.field(
-            "replication_group_create_time",
-            &self.replication_group_create_time,
-        );
-        formatter.field("data_tiering", &self.data_tiering);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicationGroup`](crate::model::ReplicationGroup).
@@ -861,7 +804,7 @@ impl AsRef<str> for DataTieringStatus {
 
 /// <p>Returns the destination, format and type of the logs. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogDeliveryConfiguration {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log.</p>
     #[doc(hidden)]
@@ -906,18 +849,6 @@ impl LogDeliveryConfiguration {
     /// <p>Returns an error message for the log delivery configuration.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for LogDeliveryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogDeliveryConfiguration");
-        formatter.field("log_type", &self.log_type);
-        formatter.field("destination_type", &self.destination_type);
-        formatter.field("destination_details", &self.destination_details);
-        formatter.field("log_format", &self.log_format);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`LogDeliveryConfiguration`](crate::model::LogDeliveryConfiguration).
@@ -1225,7 +1156,7 @@ impl AsRef<str> for LogFormat {
 
 /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationDetails {
     /// <p>The configuration details of the CloudWatch Logs destination.</p>
     #[doc(hidden)]
@@ -1248,14 +1179,6 @@ impl DestinationDetails {
         &self,
     ) -> std::option::Option<&crate::model::KinesisFirehoseDestinationDetails> {
         self.kinesis_firehose_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationDetails");
-        formatter.field("cloud_watch_logs_details", &self.cloud_watch_logs_details);
-        formatter.field("kinesis_firehose_details", &self.kinesis_firehose_details);
-        formatter.finish()
     }
 }
 /// See [`DestinationDetails`](crate::model::DestinationDetails).
@@ -1320,7 +1243,7 @@ impl DestinationDetails {
 
 /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseDestinationDetails {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
@@ -1330,13 +1253,6 @@ impl KinesisFirehoseDestinationDetails {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
     pub fn delivery_stream(&self) -> std::option::Option<&str> {
         self.delivery_stream.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisFirehoseDestinationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseDestinationDetails");
-        formatter.field("delivery_stream", &self.delivery_stream);
-        formatter.finish()
     }
 }
 /// See [`KinesisFirehoseDestinationDetails`](crate::model::KinesisFirehoseDestinationDetails).
@@ -1378,7 +1294,7 @@ impl KinesisFirehoseDestinationDetails {
 
 /// <p>The configuration details of the CloudWatch Logs destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsDestinationDetails {
     /// <p>The name of the CloudWatch Logs log group.</p>
     #[doc(hidden)]
@@ -1388,13 +1304,6 @@ impl CloudWatchLogsDestinationDetails {
     /// <p>The name of the CloudWatch Logs log group.</p>
     pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLogsDestinationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsDestinationDetails");
-        formatter.field("log_group", &self.log_group);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogsDestinationDetails`](crate::model::CloudWatchLogsDestinationDetails).
@@ -1613,7 +1522,7 @@ impl AsRef<str> for LogType {
 
 /// <p>Represents the information required for client programs to connect to a cache node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The DNS hostname of the cache node.</p>
     #[doc(hidden)]
@@ -1630,14 +1539,6 @@ impl Endpoint {
     /// <p>The port number that the cache engine is listening on.</p>
     pub fn port(&self) -> i32 {
         self.port
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("address", &self.address);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
@@ -1880,7 +1781,7 @@ impl AsRef<str> for AutomaticFailoverStatus {
 
 /// <p>Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeGroup {
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
     #[doc(hidden)]
@@ -1925,18 +1826,6 @@ impl NodeGroup {
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
     pub fn node_group_members(&self) -> std::option::Option<&[crate::model::NodeGroupMember]> {
         self.node_group_members.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeGroup");
-        formatter.field("node_group_id", &self.node_group_id);
-        formatter.field("status", &self.status);
-        formatter.field("primary_endpoint", &self.primary_endpoint);
-        formatter.field("reader_endpoint", &self.reader_endpoint);
-        formatter.field("slots", &self.slots);
-        formatter.field("node_group_members", &self.node_group_members);
-        formatter.finish()
     }
 }
 /// See [`NodeGroup`](crate::model::NodeGroup).
@@ -2054,7 +1943,7 @@ impl NodeGroup {
 
 /// <p>Represents a single node within a node group (shard).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeGroupMember {
     /// <p>The ID of the cluster to which the node belongs.</p>
     #[doc(hidden)]
@@ -2099,21 +1988,6 @@ impl NodeGroupMember {
     /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis (cluster mode disabled) replication groups.</p>
     pub fn current_role(&self) -> std::option::Option<&str> {
         self.current_role.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeGroupMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeGroupMember");
-        formatter.field("cache_cluster_id", &self.cache_cluster_id);
-        formatter.field("cache_node_id", &self.cache_node_id);
-        formatter.field("read_endpoint", &self.read_endpoint);
-        formatter.field(
-            "preferred_availability_zone",
-            &self.preferred_availability_zone,
-        );
-        formatter.field("preferred_outpost_arn", &self.preferred_outpost_arn);
-        formatter.field("current_role", &self.current_role);
-        formatter.finish()
     }
 }
 /// See [`NodeGroupMember`](crate::model::NodeGroupMember).
@@ -2230,7 +2104,7 @@ impl NodeGroupMember {
 
 /// <p>The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationGroupPendingModifiedValues {
     /// <p>The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
     #[doc(hidden)]
@@ -2281,21 +2155,6 @@ impl ReplicationGroupPendingModifiedValues {
         &self,
     ) -> std::option::Option<&[crate::model::PendingLogDeliveryConfiguration]> {
         self.log_delivery_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationGroupPendingModifiedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationGroupPendingModifiedValues");
-        formatter.field("primary_cluster_id", &self.primary_cluster_id);
-        formatter.field("automatic_failover_status", &self.automatic_failover_status);
-        formatter.field("resharding", &self.resharding);
-        formatter.field("auth_token_status", &self.auth_token_status);
-        formatter.field("user_groups", &self.user_groups);
-        formatter.field(
-            "log_delivery_configurations",
-            &self.log_delivery_configurations,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicationGroupPendingModifiedValues`](crate::model::ReplicationGroupPendingModifiedValues).
@@ -2428,7 +2287,7 @@ impl ReplicationGroupPendingModifiedValues {
 
 /// <p>The log delivery configurations being modified </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingLogDeliveryConfiguration {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
     #[doc(hidden)]
@@ -2459,16 +2318,6 @@ impl PendingLogDeliveryConfiguration {
     /// <p>Returns the log format, either JSON or TEXT</p>
     pub fn log_format(&self) -> std::option::Option<&crate::model::LogFormat> {
         self.log_format.as_ref()
-    }
-}
-impl std::fmt::Debug for PendingLogDeliveryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingLogDeliveryConfiguration");
-        formatter.field("log_type", &self.log_type);
-        formatter.field("destination_type", &self.destination_type);
-        formatter.field("destination_details", &self.destination_details);
-        formatter.field("log_format", &self.log_format);
-        formatter.finish()
     }
 }
 /// See [`PendingLogDeliveryConfiguration`](crate::model::PendingLogDeliveryConfiguration).
@@ -2552,7 +2401,7 @@ impl PendingLogDeliveryConfiguration {
 
 /// <p>The status of the user group update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserGroupsUpdateStatus {
     /// <p>The ID of the user group to add.</p>
     #[doc(hidden)]
@@ -2569,14 +2418,6 @@ impl UserGroupsUpdateStatus {
     /// <p>The ID of the user group to remove.</p>
     pub fn user_group_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.user_group_ids_to_remove.as_deref()
-    }
-}
-impl std::fmt::Debug for UserGroupsUpdateStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserGroupsUpdateStatus");
-        formatter.field("user_group_ids_to_add", &self.user_group_ids_to_add);
-        formatter.field("user_group_ids_to_remove", &self.user_group_ids_to_remove);
-        formatter.finish()
     }
 }
 /// See [`UserGroupsUpdateStatus`](crate::model::UserGroupsUpdateStatus).
@@ -2738,7 +2579,7 @@ impl AsRef<str> for AuthTokenUpdateStatus {
 
 /// <p>The status of an online resharding operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReshardingStatus {
     /// <p>Represents the progress of an online resharding operation.</p>
     #[doc(hidden)]
@@ -2748,13 +2589,6 @@ impl ReshardingStatus {
     /// <p>Represents the progress of an online resharding operation.</p>
     pub fn slot_migration(&self) -> std::option::Option<&crate::model::SlotMigration> {
         self.slot_migration.as_ref()
-    }
-}
-impl std::fmt::Debug for ReshardingStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReshardingStatus");
-        formatter.field("slot_migration", &self.slot_migration);
-        formatter.finish()
     }
 }
 /// See [`ReshardingStatus`](crate::model::ReshardingStatus).
@@ -2796,7 +2630,7 @@ impl ReshardingStatus {
 
 /// <p>Represents the progress of an online resharding operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
     #[doc(hidden)]
@@ -2806,13 +2640,6 @@ impl SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
     pub fn progress_percentage(&self) -> f64 {
         self.progress_percentage
-    }
-}
-impl std::fmt::Debug for SlotMigration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotMigration");
-        formatter.field("progress_percentage", &self.progress_percentage);
-        formatter.finish()
     }
 }
 /// See [`SlotMigration`](crate::model::SlotMigration).
@@ -2943,7 +2770,7 @@ impl AsRef<str> for PendingAutomaticFailoverStatus {
 
 /// <p>The name of the Global datastore and role of this replication group in the Global datastore.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalReplicationGroupInfo {
     /// <p>The name of the Global datastore</p>
     #[doc(hidden)]
@@ -2960,20 +2787,6 @@ impl GlobalReplicationGroupInfo {
     /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
     pub fn global_replication_group_member_role(&self) -> std::option::Option<&str> {
         self.global_replication_group_member_role.as_deref()
-    }
-}
-impl std::fmt::Debug for GlobalReplicationGroupInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalReplicationGroupInfo");
-        formatter.field(
-            "global_replication_group_id",
-            &self.global_replication_group_id,
-        );
-        formatter.field(
-            "global_replication_group_member_role",
-            &self.global_replication_group_member_role,
-        );
-        formatter.finish()
     }
 }
 /// See [`GlobalReplicationGroupInfo`](crate::model::GlobalReplicationGroupInfo).
@@ -3036,7 +2849,7 @@ impl GlobalReplicationGroupInfo {
 
 /// <p>The endpoint from which data should be migrated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerNodeEndpoint {
     /// <p>The address of the node endpoint</p>
     #[doc(hidden)]
@@ -3053,14 +2866,6 @@ impl CustomerNodeEndpoint {
     /// <p>The port of the node endpoint</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for CustomerNodeEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerNodeEndpoint");
-        formatter.field("address", &self.address);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`CustomerNodeEndpoint`](crate::model::CustomerNodeEndpoint).
@@ -3116,7 +2921,7 @@ impl CustomerNodeEndpoint {
 /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheSecurityGroup {
     /// <p>The Amazon account ID of the cache security group owner.</p>
     #[doc(hidden)]
@@ -3154,17 +2959,6 @@ impl CacheSecurityGroup {
     /// <p>The ARN of the cache security group,</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheSecurityGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheSecurityGroup");
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("cache_security_group_name", &self.cache_security_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("ec2_security_groups", &self.ec2_security_groups);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`CacheSecurityGroup`](crate::model::CacheSecurityGroup).
@@ -3264,7 +3058,7 @@ impl CacheSecurityGroup {
 
 /// <p>Provides ownership and status information for an Amazon EC2 security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2SecurityGroup {
     /// <p>The status of the Amazon EC2 security group.</p>
     #[doc(hidden)]
@@ -3288,18 +3082,6 @@ impl Ec2SecurityGroup {
     /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
     pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
         self.ec2_security_group_owner_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2SecurityGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2SecurityGroup");
-        formatter.field("status", &self.status);
-        formatter.field("ec2_security_group_name", &self.ec2_security_group_name);
-        formatter.field(
-            "ec2_security_group_owner_id",
-            &self.ec2_security_group_owner_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
@@ -3371,7 +3153,7 @@ impl Ec2SecurityGroup {
 
 /// <p>Describes a name-value pair that is used to update the value of a parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterNameValue {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -3388,14 +3170,6 @@ impl ParameterNameValue {
     /// <p>The value of the parameter.</p>
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterNameValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterNameValue");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
     }
 }
 /// See [`ParameterNameValue`](crate::model::ParameterNameValue).
@@ -3452,7 +3226,7 @@ impl ParameterNameValue {
 
 /// <p>A tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. You can use tags to categorize and track all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on replication groups, those actions will be replicated to all nodes in the replication group. A tag with a null Value is permitted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key for the tag. May not be null.</p>
     #[doc(hidden)]
@@ -3469,14 +3243,6 @@ impl Tag {
     /// <p>The tag's value. May be null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -3527,7 +3293,7 @@ impl Tag {
 
 /// <p>Contains all of the attributes of a specific cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheCluster {
     /// <p>The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.</p>
     #[doc(hidden)]
@@ -3864,72 +3630,6 @@ impl CacheCluster {
         &self,
     ) -> std::option::Option<&[crate::model::LogDeliveryConfiguration]> {
         self.log_delivery_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheCluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheCluster");
-        formatter.field("cache_cluster_id", &self.cache_cluster_id);
-        formatter.field("configuration_endpoint", &self.configuration_endpoint);
-        formatter.field(
-            "client_download_landing_page",
-            &self.client_download_landing_page,
-        );
-        formatter.field("cache_node_type", &self.cache_node_type);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("cache_cluster_status", &self.cache_cluster_status);
-        formatter.field("num_cache_nodes", &self.num_cache_nodes);
-        formatter.field(
-            "preferred_availability_zone",
-            &self.preferred_availability_zone,
-        );
-        formatter.field("preferred_outpost_arn", &self.preferred_outpost_arn);
-        formatter.field("cache_cluster_create_time", &self.cache_cluster_create_time);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("pending_modified_values", &self.pending_modified_values);
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.field("cache_security_groups", &self.cache_security_groups);
-        formatter.field("cache_parameter_group", &self.cache_parameter_group);
-        formatter.field("cache_subnet_group_name", &self.cache_subnet_group_name);
-        formatter.field("cache_nodes", &self.cache_nodes);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("replication_group_id", &self.replication_group_id);
-        formatter.field("snapshot_retention_limit", &self.snapshot_retention_limit);
-        formatter.field("snapshot_window", &self.snapshot_window);
-        formatter.field("auth_token_enabled", &self.auth_token_enabled);
-        formatter.field(
-            "auth_token_last_modified_date",
-            &self.auth_token_last_modified_date,
-        );
-        formatter.field(
-            "transit_encryption_enabled",
-            &self.transit_encryption_enabled,
-        );
-        formatter.field(
-            "at_rest_encryption_enabled",
-            &self.at_rest_encryption_enabled,
-        );
-        formatter.field("arn", &self.arn);
-        formatter.field(
-            "replication_group_log_delivery_enabled",
-            &self.replication_group_log_delivery_enabled,
-        );
-        formatter.field(
-            "log_delivery_configurations",
-            &self.log_delivery_configurations,
-        );
-        formatter.finish()
     }
 }
 /// See [`CacheCluster`](crate::model::CacheCluster).
@@ -4548,7 +4248,7 @@ impl CacheCluster {
 
 /// <p>Represents a single cache security group and its status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupMembership {
     /// <p>The identifier of the cache security group.</p>
     #[doc(hidden)]
@@ -4565,14 +4265,6 @@ impl SecurityGroupMembership {
     /// <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityGroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupMembership");
-        formatter.field("security_group_id", &self.security_group_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
@@ -4658,7 +4350,7 @@ impl SecurityGroupMembership {
 /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheNode {
     /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
     #[doc(hidden)]
@@ -4717,23 +4409,6 @@ impl CacheNode {
     /// <p>The customer outpost ARN of the cache node.</p>
     pub fn customer_outpost_arn(&self) -> std::option::Option<&str> {
         self.customer_outpost_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheNode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheNode");
-        formatter.field("cache_node_id", &self.cache_node_id);
-        formatter.field("cache_node_status", &self.cache_node_status);
-        formatter.field("cache_node_create_time", &self.cache_node_create_time);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("parameter_group_status", &self.parameter_group_status);
-        formatter.field("source_cache_node_id", &self.source_cache_node_id);
-        formatter.field(
-            "customer_availability_zone",
-            &self.customer_availability_zone,
-        );
-        formatter.field("customer_outpost_arn", &self.customer_outpost_arn);
-        formatter.finish()
     }
 }
 /// See [`CacheNode`](crate::model::CacheNode).
@@ -4877,7 +4552,7 @@ impl CacheNode {
 
 /// <p>Status of the cache parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheParameterGroupStatus {
     /// <p>The name of the cache parameter group.</p>
     #[doc(hidden)]
@@ -4901,18 +4576,6 @@ impl CacheParameterGroupStatus {
     /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
     pub fn cache_node_ids_to_reboot(&self) -> std::option::Option<&[std::string::String]> {
         self.cache_node_ids_to_reboot.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheParameterGroupStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheParameterGroupStatus");
-        formatter.field(
-            "cache_parameter_group_name",
-            &self.cache_parameter_group_name,
-        );
-        formatter.field("parameter_apply_status", &self.parameter_apply_status);
-        formatter.field("cache_node_ids_to_reboot", &self.cache_node_ids_to_reboot);
-        formatter.finish()
     }
 }
 /// See [`CacheParameterGroupStatus`](crate::model::CacheParameterGroupStatus).
@@ -4991,7 +4654,7 @@ impl CacheParameterGroupStatus {
 
 /// <p>Represents a cluster's status within a particular cache security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheSecurityGroupMembership {
     /// <p>The name of the cache security group.</p>
     #[doc(hidden)]
@@ -5008,14 +4671,6 @@ impl CacheSecurityGroupMembership {
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheSecurityGroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheSecurityGroupMembership");
-        formatter.field("cache_security_group_name", &self.cache_security_group_name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CacheSecurityGroupMembership`](crate::model::CacheSecurityGroupMembership).
@@ -5069,7 +4724,7 @@ impl CacheSecurityGroupMembership {
 
 /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
     #[doc(hidden)]
@@ -5086,14 +4741,6 @@ impl NotificationConfiguration {
     /// <p>The current state of the topic.</p>
     pub fn topic_status(&self) -> std::option::Option<&str> {
         self.topic_status.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfiguration");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("topic_status", &self.topic_status);
-        formatter.finish()
     }
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
@@ -5144,7 +4791,7 @@ impl NotificationConfiguration {
 
 /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingModifiedValues {
     /// <p>The new number of cache nodes for the cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
@@ -5194,21 +4841,6 @@ impl PendingModifiedValues {
         &self,
     ) -> std::option::Option<&[crate::model::PendingLogDeliveryConfiguration]> {
         self.log_delivery_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for PendingModifiedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingModifiedValues");
-        formatter.field("num_cache_nodes", &self.num_cache_nodes);
-        formatter.field("cache_node_ids_to_remove", &self.cache_node_ids_to_remove);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("cache_node_type", &self.cache_node_type);
-        formatter.field("auth_token_status", &self.auth_token_status);
-        formatter.field(
-            "log_delivery_configurations",
-            &self.log_delivery_configurations,
-        );
-        formatter.finish()
     }
 }
 /// See [`PendingModifiedValues`](crate::model::PendingModifiedValues).
@@ -5346,7 +4978,7 @@ impl PendingModifiedValues {
 /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalReplicationGroup {
     /// <p>The name of the Global datastore</p>
     #[doc(hidden)]
@@ -5448,37 +5080,6 @@ impl GlobalReplicationGroup {
     /// <p>The ARN (Amazon Resource Name) of the global replication group.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GlobalReplicationGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalReplicationGroup");
-        formatter.field(
-            "global_replication_group_id",
-            &self.global_replication_group_id,
-        );
-        formatter.field(
-            "global_replication_group_description",
-            &self.global_replication_group_description,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("cache_node_type", &self.cache_node_type);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("members", &self.members);
-        formatter.field("cluster_enabled", &self.cluster_enabled);
-        formatter.field("global_node_groups", &self.global_node_groups);
-        formatter.field("auth_token_enabled", &self.auth_token_enabled);
-        formatter.field(
-            "transit_encryption_enabled",
-            &self.transit_encryption_enabled,
-        );
-        formatter.field(
-            "at_rest_encryption_enabled",
-            &self.at_rest_encryption_enabled,
-        );
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`GlobalReplicationGroup`](crate::model::GlobalReplicationGroup).
@@ -5707,7 +5308,7 @@ impl GlobalReplicationGroup {
 
 /// <p>Indicates the slot configuration and global identifier for a slice group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalNodeGroup {
     /// <p>The name of the global node group</p>
     #[doc(hidden)]
@@ -5724,14 +5325,6 @@ impl GlobalNodeGroup {
     /// <p>The keyspace for this node group</p>
     pub fn slots(&self) -> std::option::Option<&str> {
         self.slots.as_deref()
-    }
-}
-impl std::fmt::Debug for GlobalNodeGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalNodeGroup");
-        formatter.field("global_node_group_id", &self.global_node_group_id);
-        formatter.field("slots", &self.slots);
-        formatter.finish()
     }
 }
 /// See [`GlobalNodeGroup`](crate::model::GlobalNodeGroup).
@@ -5785,7 +5378,7 @@ impl GlobalNodeGroup {
 
 /// <p>A member of a Global datastore. It contains the Replication Group Id, the Amazon region and the role of the replication group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalReplicationGroupMember {
     /// <p>The replication group id of the Global datastore member.</p>
     #[doc(hidden)]
@@ -5825,17 +5418,6 @@ impl GlobalReplicationGroupMember {
     /// <p>The status of the membership of the replication group.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for GlobalReplicationGroupMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalReplicationGroupMember");
-        formatter.field("replication_group_id", &self.replication_group_id);
-        formatter.field("replication_group_region", &self.replication_group_region);
-        formatter.field("role", &self.role);
-        formatter.field("automatic_failover", &self.automatic_failover);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`GlobalReplicationGroupMember`](crate::model::GlobalReplicationGroupMember).
@@ -5931,7 +5513,7 @@ impl GlobalReplicationGroupMember {
 
 /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedCacheNode {
     /// <p>The unique identifier for the reservation.</p>
     #[doc(hidden)]
@@ -6091,28 +5673,6 @@ impl ReservedCacheNode {
     /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code> </p>
     pub fn reservation_arn(&self) -> std::option::Option<&str> {
         self.reservation_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ReservedCacheNode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedCacheNode");
-        formatter.field("reserved_cache_node_id", &self.reserved_cache_node_id);
-        formatter.field(
-            "reserved_cache_nodes_offering_id",
-            &self.reserved_cache_nodes_offering_id,
-        );
-        formatter.field("cache_node_type", &self.cache_node_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("duration", &self.duration);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.field("cache_node_count", &self.cache_node_count);
-        formatter.field("product_description", &self.product_description);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("state", &self.state);
-        formatter.field("recurring_charges", &self.recurring_charges);
-        formatter.field("reservation_arn", &self.reservation_arn);
-        formatter.finish()
     }
 }
 /// See [`ReservedCacheNode`](crate::model::ReservedCacheNode).
@@ -6395,7 +5955,7 @@ impl ReservedCacheNode {
 
 /// <p>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecurringCharge {
     /// <p>The monetary amount of the recurring charge.</p>
     #[doc(hidden)]
@@ -6412,17 +5972,6 @@ impl RecurringCharge {
     /// <p>The frequency of the recurring charge.</p>
     pub fn recurring_charge_frequency(&self) -> std::option::Option<&str> {
         self.recurring_charge_frequency.as_deref()
-    }
-}
-impl std::fmt::Debug for RecurringCharge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecurringCharge");
-        formatter.field("recurring_charge_amount", &self.recurring_charge_amount);
-        formatter.field(
-            "recurring_charge_frequency",
-            &self.recurring_charge_frequency,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
@@ -6476,7 +6025,7 @@ impl RecurringCharge {
 
 /// <p>Returns the updates being applied to the user group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserGroupPendingChanges {
     /// <p>The list of user IDs to remove.</p>
     #[doc(hidden)]
@@ -6493,14 +6042,6 @@ impl UserGroupPendingChanges {
     /// <p>The list of user IDs to add.</p>
     pub fn user_ids_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids_to_add.as_deref()
-    }
-}
-impl std::fmt::Debug for UserGroupPendingChanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserGroupPendingChanges");
-        formatter.field("user_ids_to_remove", &self.user_ids_to_remove);
-        formatter.field("user_ids_to_add", &self.user_ids_to_add);
-        formatter.finish()
     }
 }
 /// See [`UserGroupPendingChanges`](crate::model::UserGroupPendingChanges).
@@ -6569,7 +6110,7 @@ impl UserGroupPendingChanges {
 
 /// <p>Indicates whether the user requires a password to authenticate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Authentication {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
     #[doc(hidden)]
@@ -6586,14 +6127,6 @@ impl Authentication {
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub fn password_count(&self) -> std::option::Option<i32> {
         self.password_count
-    }
-}
-impl std::fmt::Debug for Authentication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Authentication");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("password_count", &self.password_count);
-        formatter.finish()
     }
 }
 /// See [`Authentication`](crate::model::Authentication).
@@ -6739,7 +6272,7 @@ impl AsRef<str> for AuthenticationType {
 
 /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReshardingConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     #[doc(hidden)]
@@ -6756,17 +6289,6 @@ impl ReshardingConfiguration {
     /// <p>A list of preferred availability zones for the nodes in this cluster.</p>
     pub fn preferred_availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.preferred_availability_zones.as_deref()
-    }
-}
-impl std::fmt::Debug for ReshardingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReshardingConfiguration");
-        formatter.field("node_group_id", &self.node_group_id);
-        formatter.field(
-            "preferred_availability_zones",
-            &self.preferred_availability_zones,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReshardingConfiguration`](crate::model::ReshardingConfiguration).
@@ -6833,7 +6355,7 @@ impl ReshardingConfiguration {
 
 /// <p>Specifies the destination, format and type of the logs. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogDeliveryConfigurationRequest {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
     #[doc(hidden)]
@@ -6871,17 +6393,6 @@ impl LogDeliveryConfigurationRequest {
     /// <p>Specify if log delivery is enabled. Default <code>true</code>.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for LogDeliveryConfigurationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogDeliveryConfigurationRequest");
-        formatter.field("log_type", &self.log_type);
-        formatter.field("destination_type", &self.destination_type);
-        formatter.field("destination_details", &self.destination_details);
-        formatter.field("log_format", &self.log_format);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`LogDeliveryConfigurationRequest`](crate::model::LogDeliveryConfigurationRequest).
@@ -7078,7 +6589,7 @@ impl AsRef<str> for AuthTokenUpdateStrategyType {
 /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheSubnetGroup {
     /// <p>The name of the cache subnet group.</p>
     #[doc(hidden)]
@@ -7116,20 +6627,6 @@ impl CacheSubnetGroup {
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheSubnetGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheSubnetGroup");
-        formatter.field("cache_subnet_group_name", &self.cache_subnet_group_name);
-        formatter.field(
-            "cache_subnet_group_description",
-            &self.cache_subnet_group_description,
-        );
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`CacheSubnetGroup`](crate::model::CacheSubnetGroup).
@@ -7234,7 +6731,7 @@ impl CacheSubnetGroup {
 
 /// <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The unique identifier for the subnet.</p>
     #[doc(hidden)]
@@ -7258,15 +6755,6 @@ impl Subnet {
     /// <p>The outpost ARN of the subnet.</p>
     pub fn subnet_outpost(&self) -> std::option::Option<&crate::model::SubnetOutpost> {
         self.subnet_outpost.as_ref()
-    }
-}
-impl std::fmt::Debug for Subnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subnet");
-        formatter.field("subnet_identifier", &self.subnet_identifier);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field("subnet_outpost", &self.subnet_outpost);
-        formatter.finish()
     }
 }
 /// See [`Subnet`](crate::model::Subnet).
@@ -7338,7 +6826,7 @@ impl Subnet {
 
 /// <p>The ID of the outpost subnet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetOutpost {
     /// <p>The outpost ARN of the subnet.</p>
     #[doc(hidden)]
@@ -7348,13 +6836,6 @@ impl SubnetOutpost {
     /// <p>The outpost ARN of the subnet.</p>
     pub fn subnet_outpost_arn(&self) -> std::option::Option<&str> {
         self.subnet_outpost_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SubnetOutpost {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetOutpost");
-        formatter.field("subnet_outpost_arn", &self.subnet_outpost_arn);
-        formatter.finish()
     }
 }
 /// See [`SubnetOutpost`](crate::model::SubnetOutpost).
@@ -7396,7 +6877,7 @@ impl SubnetOutpost {
 
 /// <p>Describes an Availability Zone in which the cluster is launched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
@@ -7406,13 +6887,6 @@ impl AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZone");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
@@ -7539,7 +7013,7 @@ impl AsRef<str> for AzMode {
 
 /// <p>Node group (shard) configuration options when adding or removing replicas. Each node group (shard) configuration has the following members: NodeGroupId, NewReplicaCount, and PreferredAvailabilityZones. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureShard {
     /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
     #[doc(hidden)]
@@ -7588,19 +7062,6 @@ impl ConfigureShard {
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
     pub fn preferred_outpost_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.preferred_outpost_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigureShard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureShard");
-        formatter.field("node_group_id", &self.node_group_id);
-        formatter.field("new_replica_count", &self.new_replica_count);
-        formatter.field(
-            "preferred_availability_zones",
-            &self.preferred_availability_zones,
-        );
-        formatter.field("preferred_outpost_arns", &self.preferred_outpost_arns);
-        formatter.finish()
     }
 }
 /// See [`ConfigureShard`](crate::model::ConfigureShard).
@@ -7718,7 +7179,7 @@ impl ConfigureShard {
 
 /// <p>A list of the replication groups </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegionalConfiguration {
     /// <p>The name of the secondary cluster</p>
     #[doc(hidden)]
@@ -7745,15 +7206,6 @@ impl RegionalConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ReshardingConfiguration]> {
         self.resharding_configuration.as_deref()
-    }
-}
-impl std::fmt::Debug for RegionalConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegionalConfiguration");
-        formatter.field("replication_group_id", &self.replication_group_id);
-        formatter.field("replication_group_region", &self.replication_group_region);
-        formatter.field("resharding_configuration", &self.resharding_configuration);
-        formatter.finish()
     }
 }
 /// See [`RegionalConfiguration`](crate::model::RegionalConfiguration).
@@ -7835,7 +7287,7 @@ impl RegionalConfiguration {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
@@ -7901,21 +7353,6 @@ impl User {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("status", &self.status);
-        formatter.field("engine", &self.engine);
-        formatter.field("minimum_engine_version", &self.minimum_engine_version);
-        formatter.field("access_string", &self.access_string);
-        formatter.field("user_group_ids", &self.user_group_ids);
-        formatter.field("authentication", &self.authentication);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`User`](crate::model::User).
@@ -8068,7 +7505,7 @@ impl User {
 
 /// <p>Used to streamline results of a search based on the property being filtered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The property being filtered. For example, UserId.</p>
     #[doc(hidden)]
@@ -8085,14 +7522,6 @@ impl Filter {
     /// <p>The property values to filter on. For example, "user-123".</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -8152,7 +7581,7 @@ impl Filter {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserGroup {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
@@ -8211,20 +7640,6 @@ impl UserGroup {
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UserGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserGroup");
-        formatter.field("user_group_id", &self.user_group_id);
-        formatter.field("status", &self.status);
-        formatter.field("engine", &self.engine);
-        formatter.field("user_ids", &self.user_ids);
-        formatter.field("minimum_engine_version", &self.minimum_engine_version);
-        formatter.field("pending_changes", &self.pending_changes);
-        formatter.field("replication_groups", &self.replication_groups);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`UserGroup`](crate::model::UserGroup).
@@ -8374,7 +7789,7 @@ impl UserGroup {
 
 /// <p>The status of the service update for a specific replication group</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAction {
     /// <p>The ID of the replication group</p>
     #[doc(hidden)]
@@ -8508,41 +7923,6 @@ impl UpdateAction {
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAction");
-        formatter.field("replication_group_id", &self.replication_group_id);
-        formatter.field("cache_cluster_id", &self.cache_cluster_id);
-        formatter.field("service_update_name", &self.service_update_name);
-        formatter.field(
-            "service_update_release_date",
-            &self.service_update_release_date,
-        );
-        formatter.field("service_update_severity", &self.service_update_severity);
-        formatter.field("service_update_status", &self.service_update_status);
-        formatter.field(
-            "service_update_recommended_apply_by_date",
-            &self.service_update_recommended_apply_by_date,
-        );
-        formatter.field("service_update_type", &self.service_update_type);
-        formatter.field(
-            "update_action_available_date",
-            &self.update_action_available_date,
-        );
-        formatter.field("update_action_status", &self.update_action_status);
-        formatter.field("nodes_updated", &self.nodes_updated);
-        formatter.field(
-            "update_action_status_modified_date",
-            &self.update_action_status_modified_date,
-        );
-        formatter.field("sla_met", &self.sla_met);
-        formatter.field("node_group_update_status", &self.node_group_update_status);
-        formatter.field("cache_node_update_status", &self.cache_node_update_status);
-        formatter.field("estimated_update_time", &self.estimated_update_time);
-        formatter.field("engine", &self.engine);
-        formatter.finish()
     }
 }
 /// See [`UpdateAction`](crate::model::UpdateAction).
@@ -8851,7 +8231,7 @@ impl UpdateAction {
 
 /// <p>The status of the service update on the cache node</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheNodeUpdateStatus {
     /// <p>The node ID of the cache cluster</p>
     #[doc(hidden)]
@@ -8914,26 +8294,6 @@ impl CacheNodeUpdateStatus {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_status_modified_date.as_ref()
-    }
-}
-impl std::fmt::Debug for CacheNodeUpdateStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheNodeUpdateStatus");
-        formatter.field("cache_node_id", &self.cache_node_id);
-        formatter.field("node_update_status", &self.node_update_status);
-        formatter.field("node_deletion_date", &self.node_deletion_date);
-        formatter.field("node_update_start_date", &self.node_update_start_date);
-        formatter.field("node_update_end_date", &self.node_update_end_date);
-        formatter.field("node_update_initiated_by", &self.node_update_initiated_by);
-        formatter.field(
-            "node_update_initiated_date",
-            &self.node_update_initiated_date,
-        );
-        formatter.field(
-            "node_update_status_modified_date",
-            &self.node_update_status_modified_date,
-        );
-        formatter.finish()
     }
 }
 /// See [`CacheNodeUpdateStatus`](crate::model::CacheNodeUpdateStatus).
@@ -9297,7 +8657,7 @@ impl AsRef<str> for NodeUpdateStatus {
 
 /// <p>The status of the service update on the node group </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeGroupUpdateStatus {
     /// <p>The ID of the node group</p>
     #[doc(hidden)]
@@ -9317,17 +8677,6 @@ impl NodeGroupUpdateStatus {
         &self,
     ) -> std::option::Option<&[crate::model::NodeGroupMemberUpdateStatus]> {
         self.node_group_member_update_status.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeGroupUpdateStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeGroupUpdateStatus");
-        formatter.field("node_group_id", &self.node_group_id);
-        formatter.field(
-            "node_group_member_update_status",
-            &self.node_group_member_update_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`NodeGroupUpdateStatus`](crate::model::NodeGroupUpdateStatus).
@@ -9394,7 +8743,7 @@ impl NodeGroupUpdateStatus {
 
 /// <p>The status of the service update on the node group member </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeGroupMemberUpdateStatus {
     /// <p>The cache cluster ID</p>
     #[doc(hidden)]
@@ -9464,27 +8813,6 @@ impl NodeGroupMemberUpdateStatus {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.node_update_status_modified_date.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeGroupMemberUpdateStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeGroupMemberUpdateStatus");
-        formatter.field("cache_cluster_id", &self.cache_cluster_id);
-        formatter.field("cache_node_id", &self.cache_node_id);
-        formatter.field("node_update_status", &self.node_update_status);
-        formatter.field("node_deletion_date", &self.node_deletion_date);
-        formatter.field("node_update_start_date", &self.node_update_start_date);
-        formatter.field("node_update_end_date", &self.node_update_end_date);
-        formatter.field("node_update_initiated_by", &self.node_update_initiated_by);
-        formatter.field(
-            "node_update_initiated_date",
-            &self.node_update_initiated_date,
-        );
-        formatter.field(
-            "node_update_status_modified_date",
-            &self.node_update_status_modified_date,
-        );
-        formatter.finish()
     }
 }
 /// See [`NodeGroupMemberUpdateStatus`](crate::model::NodeGroupMemberUpdateStatus).
@@ -10172,7 +9500,7 @@ impl AsRef<str> for ServiceUpdateSeverity {
 
 /// <p>Filters update actions from the service updates that are in available status during the time range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeRangeFilter {
     /// <p>The start time of the time range filter</p>
     #[doc(hidden)]
@@ -10189,14 +9517,6 @@ impl TimeRangeFilter {
     /// <p>The end time of the time range filter</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeRangeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeRangeFilter");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`TimeRangeFilter`](crate::model::TimeRangeFilter).
@@ -10253,7 +9573,7 @@ impl TimeRangeFilter {
 
 /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
     #[doc(hidden)]
@@ -10550,55 +9870,6 @@ impl Snapshot {
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
     pub fn data_tiering(&self) -> std::option::Option<&crate::model::DataTieringStatus> {
         self.data_tiering.as_ref()
-    }
-}
-impl std::fmt::Debug for Snapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Snapshot");
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.field("replication_group_id", &self.replication_group_id);
-        formatter.field(
-            "replication_group_description",
-            &self.replication_group_description,
-        );
-        formatter.field("cache_cluster_id", &self.cache_cluster_id);
-        formatter.field("snapshot_status", &self.snapshot_status);
-        formatter.field("snapshot_source", &self.snapshot_source);
-        formatter.field("cache_node_type", &self.cache_node_type);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("num_cache_nodes", &self.num_cache_nodes);
-        formatter.field(
-            "preferred_availability_zone",
-            &self.preferred_availability_zone,
-        );
-        formatter.field("preferred_outpost_arn", &self.preferred_outpost_arn);
-        formatter.field("cache_cluster_create_time", &self.cache_cluster_create_time);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("port", &self.port);
-        formatter.field(
-            "cache_parameter_group_name",
-            &self.cache_parameter_group_name,
-        );
-        formatter.field("cache_subnet_group_name", &self.cache_subnet_group_name);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("snapshot_retention_limit", &self.snapshot_retention_limit);
-        formatter.field("snapshot_window", &self.snapshot_window);
-        formatter.field("num_node_groups", &self.num_node_groups);
-        formatter.field("automatic_failover", &self.automatic_failover);
-        formatter.field("node_snapshots", &self.node_snapshots);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("data_tiering", &self.data_tiering);
-        formatter.finish()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
@@ -11126,7 +10397,7 @@ impl Snapshot {
 
 /// <p>Represents an individual cache node in a snapshot of a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeSnapshot {
     /// <p>A unique identifier for the source cluster.</p>
     #[doc(hidden)]
@@ -11180,19 +10451,6 @@ impl NodeSnapshot {
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
     pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeSnapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeSnapshot");
-        formatter.field("cache_cluster_id", &self.cache_cluster_id);
-        formatter.field("node_group_id", &self.node_group_id);
-        formatter.field("cache_node_id", &self.cache_node_id);
-        formatter.field("node_group_configuration", &self.node_group_configuration);
-        formatter.field("cache_size", &self.cache_size);
-        formatter.field("cache_node_create_time", &self.cache_node_create_time);
-        formatter.field("snapshot_create_time", &self.snapshot_create_time);
-        formatter.finish()
     }
 }
 /// See [`NodeSnapshot`](crate::model::NodeSnapshot).
@@ -11325,7 +10583,7 @@ impl NodeSnapshot {
 
 /// <p>Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeGroupConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     #[doc(hidden)]
@@ -11379,22 +10637,6 @@ impl NodeGroupConfiguration {
     /// <p>The outpost ARN of the node replicas.</p>
     pub fn replica_outpost_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.replica_outpost_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeGroupConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeGroupConfiguration");
-        formatter.field("node_group_id", &self.node_group_id);
-        formatter.field("slots", &self.slots);
-        formatter.field("replica_count", &self.replica_count);
-        formatter.field("primary_availability_zone", &self.primary_availability_zone);
-        formatter.field(
-            "replica_availability_zones",
-            &self.replica_availability_zones,
-        );
-        formatter.field("primary_outpost_arn", &self.primary_outpost_arn);
-        formatter.field("replica_outpost_arns", &self.replica_outpost_arns);
-        formatter.finish()
     }
 }
 /// See [`NodeGroupConfiguration`](crate::model::NodeGroupConfiguration).
@@ -11535,7 +10777,7 @@ impl NodeGroupConfiguration {
 
 /// <p>An update that you can apply to your Redis clusters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUpdate {
     /// <p>The unique ID of the service update</p>
     #[doc(hidden)]
@@ -11626,36 +10868,6 @@ impl ServiceUpdate {
     /// <p>The estimated length of time the service update will take</p>
     pub fn estimated_update_time(&self) -> std::option::Option<&str> {
         self.estimated_update_time.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUpdate");
-        formatter.field("service_update_name", &self.service_update_name);
-        formatter.field(
-            "service_update_release_date",
-            &self.service_update_release_date,
-        );
-        formatter.field("service_update_end_date", &self.service_update_end_date);
-        formatter.field("service_update_severity", &self.service_update_severity);
-        formatter.field(
-            "service_update_recommended_apply_by_date",
-            &self.service_update_recommended_apply_by_date,
-        );
-        formatter.field("service_update_status", &self.service_update_status);
-        formatter.field(
-            "service_update_description",
-            &self.service_update_description,
-        );
-        formatter.field("service_update_type", &self.service_update_type);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "auto_update_after_recommended_apply_by_date",
-            &self.auto_update_after_recommended_apply_by_date,
-        );
-        formatter.field("estimated_update_time", &self.estimated_update_time);
-        formatter.finish()
     }
 }
 /// See [`ServiceUpdate`](crate::model::ServiceUpdate).
@@ -11869,7 +11081,7 @@ impl ServiceUpdate {
 
 /// <p>Describes all of the attributes of a reserved cache node offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedCacheNodesOffering {
     /// <p>A unique identifier for the reserved cache node offering.</p>
     #[doc(hidden)]
@@ -11992,23 +11204,6 @@ impl ReservedCacheNodesOffering {
     /// <p>The recurring price charged to run this reserved cache node.</p>
     pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
         self.recurring_charges.as_deref()
-    }
-}
-impl std::fmt::Debug for ReservedCacheNodesOffering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedCacheNodesOffering");
-        formatter.field(
-            "reserved_cache_nodes_offering_id",
-            &self.reserved_cache_nodes_offering_id,
-        );
-        formatter.field("cache_node_type", &self.cache_node_type);
-        formatter.field("duration", &self.duration);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.field("product_description", &self.product_description);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("recurring_charges", &self.recurring_charges);
-        formatter.finish()
     }
 }
 /// See [`ReservedCacheNodesOffering`](crate::model::ReservedCacheNodesOffering).
@@ -12220,7 +11415,7 @@ impl ReservedCacheNodesOffering {
 
 /// <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster, adding or removing a cache node, or rebooting a node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The identifier for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
     #[doc(hidden)]
@@ -12251,16 +11446,6 @@ impl Event {
     /// <p>The date and time when the event occurred.</p>
     pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("message", &self.message);
-        formatter.field("date", &self.date);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -12464,7 +11649,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineDefaults {
     /// <p>Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.x</code> </p>
@@ -12500,22 +11685,6 @@ impl EngineDefaults {
         &self,
     ) -> std::option::Option<&[crate::model::CacheNodeTypeSpecificParameter]> {
         self.cache_node_type_specific_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for EngineDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineDefaults");
-        formatter.field(
-            "cache_parameter_group_family",
-            &self.cache_parameter_group_family,
-        );
-        formatter.field("marker", &self.marker);
-        formatter.field("parameters", &self.parameters);
-        formatter.field(
-            "cache_node_type_specific_parameters",
-            &self.cache_node_type_specific_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`EngineDefaults`](crate::model::EngineDefaults).
@@ -12620,7 +11789,7 @@ impl EngineDefaults {
 
 /// <p>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheNodeTypeSpecificParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -12689,24 +11858,6 @@ impl CacheNodeTypeSpecificParameter {
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
-    }
-}
-impl std::fmt::Debug for CacheNodeTypeSpecificParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheNodeTypeSpecificParameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("description", &self.description);
-        formatter.field("source", &self.source);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("is_modifiable", &self.is_modifiable);
-        formatter.field("minimum_engine_version", &self.minimum_engine_version);
-        formatter.field(
-            "cache_node_type_specific_values",
-            &self.cache_node_type_specific_values,
-        );
-        formatter.field("change_type", &self.change_type);
-        formatter.finish()
     }
 }
 /// See [`CacheNodeTypeSpecificParameter`](crate::model::CacheNodeTypeSpecificParameter).
@@ -12956,7 +12107,7 @@ impl AsRef<str> for ChangeType {
 
 /// <p>A value that applies only to a certain cache node type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheNodeTypeSpecificValue {
     /// <p>The cache node type for which this value applies.</p>
     #[doc(hidden)]
@@ -12973,14 +12124,6 @@ impl CacheNodeTypeSpecificValue {
     /// <p>The value for the cache node type.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheNodeTypeSpecificValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheNodeTypeSpecificValue");
-        formatter.field("cache_node_type", &self.cache_node_type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CacheNodeTypeSpecificValue`](crate::model::CacheNodeTypeSpecificValue).
@@ -13034,7 +12177,7 @@ impl CacheNodeTypeSpecificValue {
 
 /// <p>Describes an individual setting that controls some aspect of ElastiCache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -13100,21 +12243,6 @@ impl Parameter {
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Parameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.field("description", &self.description);
-        formatter.field("source", &self.source);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("is_modifiable", &self.is_modifiable);
-        formatter.field("minimum_engine_version", &self.minimum_engine_version);
-        formatter.field("change_type", &self.change_type);
-        formatter.finish()
     }
 }
 /// See [`Parameter`](crate::model::Parameter).
@@ -13264,7 +12392,7 @@ impl Parameter {
 
 /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheParameterGroup {
     /// <p>The name of the cache parameter group.</p>
     #[doc(hidden)]
@@ -13304,23 +12432,6 @@ impl CacheParameterGroup {
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheParameterGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheParameterGroup");
-        formatter.field(
-            "cache_parameter_group_name",
-            &self.cache_parameter_group_name,
-        );
-        formatter.field(
-            "cache_parameter_group_family",
-            &self.cache_parameter_group_family,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("is_global", &self.is_global);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`CacheParameterGroup`](crate::model::CacheParameterGroup).
@@ -13418,7 +12529,7 @@ impl CacheParameterGroup {
 
 /// <p>Provides all of the details about a particular cache engine version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheEngineVersion {
     /// <p>The name of the cache engine.</p>
     #[doc(hidden)]
@@ -13458,23 +12569,6 @@ impl CacheEngineVersion {
     /// <p>The description of the cache engine version.</p>
     pub fn cache_engine_version_description(&self) -> std::option::Option<&str> {
         self.cache_engine_version_description.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheEngineVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheEngineVersion");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "cache_parameter_group_family",
-            &self.cache_parameter_group_family,
-        );
-        formatter.field("cache_engine_description", &self.cache_engine_description);
-        formatter.field(
-            "cache_engine_version_description",
-            &self.cache_engine_version_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`CacheEngineVersion`](crate::model::CacheEngineVersion).
@@ -13671,7 +12765,7 @@ impl AsRef<str> for OutpostMode {
 
 /// <p>Update action that has failed to be processed for the corresponding apply/stop request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedUpdateAction {
     /// <p>The replication group ID</p>
     #[doc(hidden)]
@@ -13709,17 +12803,6 @@ impl UnprocessedUpdateAction {
     /// <p>The error message that describes the reason the request was not processed</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedUpdateAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedUpdateAction");
-        formatter.field("replication_group_id", &self.replication_group_id);
-        formatter.field("cache_cluster_id", &self.cache_cluster_id);
-        formatter.field("service_update_name", &self.service_update_name);
-        formatter.field("error_type", &self.error_type);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedUpdateAction`](crate::model::UnprocessedUpdateAction).
@@ -13818,7 +12901,7 @@ impl UnprocessedUpdateAction {
 
 /// <p>Update action that has been processed for the corresponding apply/stop request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProcessedUpdateAction {
     /// <p>The ID of the replication group</p>
     #[doc(hidden)]
@@ -13849,16 +12932,6 @@ impl ProcessedUpdateAction {
     /// <p>The status of the update action on the Redis cluster</p>
     pub fn update_action_status(&self) -> std::option::Option<&crate::model::UpdateActionStatus> {
         self.update_action_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ProcessedUpdateAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProcessedUpdateAction");
-        formatter.field("replication_group_id", &self.replication_group_id);
-        formatter.field("cache_cluster_id", &self.cache_cluster_id);
-        formatter.field("service_update_name", &self.service_update_name);
-        formatter.field("update_action_status", &self.update_action_status);
-        formatter.finish()
     }
 }
 /// See [`ProcessedUpdateAction`](crate::model::ProcessedUpdateAction).

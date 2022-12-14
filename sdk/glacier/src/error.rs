@@ -2,7 +2,7 @@
 
 /// <p>Returned if the service cannot complete the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     /// <p>Server</p>
     #[doc(hidden)]
@@ -22,15 +22,6 @@ impl ServiceUnavailableException {
     /// <p>500 Internal Server Error</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ServiceUnavailableException {
@@ -111,7 +102,7 @@ impl ServiceUnavailableException {
 
 /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>Client</p>
     #[doc(hidden)]
@@ -131,15 +122,6 @@ impl ResourceNotFoundException {
     /// <p>404 Not Found</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -220,7 +202,7 @@ impl ResourceNotFoundException {
 
 /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestTimeoutException {
     /// <p>Client</p>
     #[doc(hidden)]
@@ -240,15 +222,6 @@ impl RequestTimeoutException {
     /// <p>408 Request Timeout</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestTimeoutException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestTimeoutException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl RequestTimeoutException {
@@ -329,7 +302,7 @@ impl RequestTimeoutException {
 
 /// <p>Returned if a required header or parameter is missing from the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingParameterValueException {
     /// <p>Client.</p>
     #[doc(hidden)]
@@ -349,15 +322,6 @@ impl MissingParameterValueException {
     /// <p>400 Bad Request</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for MissingParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingParameterValueException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl MissingParameterValueException {
@@ -438,7 +402,7 @@ impl MissingParameterValueException {
 
 /// <p>Returned if a parameter of the request is incorrectly specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterValueException {
     /// <p>Client</p>
     #[doc(hidden)]
@@ -458,15 +422,6 @@ impl InvalidParameterValueException {
     /// <p>400 Bad Request</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterValueException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidParameterValueException {
@@ -547,7 +502,7 @@ impl InvalidParameterValueException {
 
 /// <p>Returned if the request results in a vault or account limit being exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     /// <p>Client</p>
     #[doc(hidden)]
@@ -567,15 +522,6 @@ impl LimitExceededException {
     /// <p>400 Bad Request</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl LimitExceededException {
@@ -656,7 +602,7 @@ impl LimitExceededException {
 
 /// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyEnforcedException {
     /// <p>Client</p>
     #[doc(hidden)]
@@ -676,15 +622,6 @@ impl PolicyEnforcedException {
     /// <p>PolicyEnforcedException</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyEnforcedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyEnforcedException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl PolicyEnforcedException {
@@ -765,7 +702,7 @@ impl PolicyEnforcedException {
 
 /// <p>Returned if there is insufficient capacity to process this expedited request. This error only applies to expedited retrievals and not to standard or bulk retrievals.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientCapacityException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -785,15 +722,6 @@ impl InsufficientCapacityException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InsufficientCapacityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientCapacityException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InsufficientCapacityException {

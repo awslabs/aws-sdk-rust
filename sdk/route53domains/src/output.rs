@@ -2,7 +2,7 @@
 
 /// <p>The ViewBilling response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViewBillingOutput {
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ViewBillingOutput {
     /// <p>A summary of billing records.</p>
     pub fn billing_records(&self) -> std::option::Option<&[crate::model::BillingRecord]> {
         self.billing_records.as_deref()
-    }
-}
-impl std::fmt::Debug for ViewBillingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViewBillingOutput");
-        formatter.field("next_page_marker", &self.next_page_marker);
-        formatter.field("billing_records", &self.billing_records);
-        formatter.finish()
     }
 }
 /// See [`ViewBillingOutput`](crate::output::ViewBillingOutput).
@@ -89,14 +81,8 @@ impl ViewBillingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTagsForDomainOutput {}
-impl std::fmt::Debug for UpdateTagsForDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTagsForDomainOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
 pub mod update_tags_for_domain_output {
 
@@ -119,7 +105,7 @@ impl UpdateTagsForDomainOutput {
 
 /// <p>The UpdateDomainNameservers response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainNameserversOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -129,13 +115,6 @@ impl UpdateDomainNameserversOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDomainNameserversOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainNameserversOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
@@ -174,7 +153,7 @@ impl UpdateDomainNameserversOutput {
 
 /// <p>The UpdateDomainContactPrivacy response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainContactPrivacyOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     #[doc(hidden)]
@@ -184,13 +163,6 @@ impl UpdateDomainContactPrivacyOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDomainContactPrivacyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainContactPrivacyOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
@@ -229,7 +201,7 @@ impl UpdateDomainContactPrivacyOutput {
 
 /// <p>The UpdateDomainContact response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainContactOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -239,13 +211,6 @@ impl UpdateDomainContactOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDomainContactOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainContactOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
@@ -284,7 +249,7 @@ impl UpdateDomainContactOutput {
 
 /// <p>The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransferDomainToAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -301,14 +266,6 @@ impl TransferDomainToAnotherAwsAccountOutput {
     /// <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
-    }
-}
-impl std::fmt::Debug for TransferDomainToAnotherAwsAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransferDomainToAnotherAwsAccountOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("password", &self.password);
-        formatter.finish()
     }
 }
 /// See [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
@@ -359,7 +316,7 @@ impl TransferDomainToAnotherAwsAccountOutput {
 
 /// <p>The TransferDomain response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransferDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -369,13 +326,6 @@ impl TransferDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TransferDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransferDomainOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`TransferDomainOutput`](crate::output::TransferDomainOutput).
@@ -437,7 +387,7 @@ impl std::fmt::Debug for RetrieveDomainAuthCodeOutput {
 pub mod retrieve_domain_auth_code_output {
 
     /// A builder for [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) auth_code: std::option::Option<std::string::String>,
     }
@@ -459,6 +409,13 @@ pub mod retrieve_domain_auth_code_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl RetrieveDomainAuthCodeOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
@@ -469,7 +426,7 @@ impl RetrieveDomainAuthCodeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailOutput {
     /// <p>The domain name for which you requested a confirmation email.</p>
     #[doc(hidden)]
@@ -493,15 +450,6 @@ impl ResendContactReachabilityEmailOutput {
     /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub fn is_already_verified(&self) -> std::option::Option<bool> {
         self.is_already_verified
-    }
-}
-impl std::fmt::Debug for ResendContactReachabilityEmailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResendContactReachabilityEmailOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("is_already_verified", &self.is_already_verified);
-        formatter.finish()
     }
 }
 /// See [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
@@ -567,7 +515,7 @@ impl ResendContactReachabilityEmailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenewDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -577,13 +525,6 @@ impl RenewDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RenewDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenewDomainOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`RenewDomainOutput`](crate::output::RenewDomainOutput).
@@ -622,7 +563,7 @@ impl RenewDomainOutput {
 
 /// <p>The RejectDomainTransferFromAnotherAwsAccount response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectDomainTransferFromAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     #[doc(hidden)]
@@ -632,13 +573,6 @@ impl RejectDomainTransferFromAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RejectDomainTransferFromAnotherAwsAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectDomainTransferFromAnotherAwsAccountOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
@@ -678,7 +612,7 @@ impl RejectDomainTransferFromAnotherAwsAccountOutput {
 
 /// <p>The RegisterDomain response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -688,13 +622,6 @@ impl RegisterDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisterDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterDomainOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
@@ -733,7 +660,7 @@ impl RegisterDomainOutput {
 
 /// <p>The ListTagsForDomain response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForDomainOutput {
     /// <p>A list of the tags that are associated with the specified domain.</p>
     #[doc(hidden)]
@@ -743,13 +670,6 @@ impl ListTagsForDomainOutput {
     /// <p>A list of the tags that are associated with the specified domain.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForDomainOutput");
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
@@ -797,7 +717,7 @@ impl ListTagsForDomainOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricesOutput {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
     #[doc(hidden)]
@@ -816,14 +736,6 @@ impl ListPricesOutput {
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     pub fn next_page_marker(&self) -> std::option::Option<&str> {
         self.next_page_marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPricesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricesOutput");
-        formatter.field("prices", &self.prices);
-        formatter.field("next_page_marker", &self.next_page_marker);
-        formatter.finish()
     }
 }
 /// See [`ListPricesOutput`](crate::output::ListPricesOutput).
@@ -888,7 +800,7 @@ impl ListPricesOutput {
 
 /// <p>The ListOperations response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOperationsOutput {
     /// <p>Lists summaries of the operations.</p>
     #[doc(hidden)]
@@ -905,14 +817,6 @@ impl ListOperationsOutput {
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn next_page_marker(&self) -> std::option::Option<&str> {
         self.next_page_marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListOperationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOperationsOutput");
-        formatter.field("operations", &self.operations);
-        formatter.field("next_page_marker", &self.next_page_marker);
-        formatter.finish()
     }
 }
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
@@ -975,7 +879,7 @@ impl ListOperationsOutput {
 
 /// <p>The ListDomains response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsOutput {
     /// <p>A list of domains.</p>
     #[doc(hidden)]
@@ -992,14 +896,6 @@ impl ListDomainsOutput {
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn next_page_marker(&self) -> std::option::Option<&str> {
         self.next_page_marker.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsOutput");
-        formatter.field("domains", &self.domains);
-        formatter.field("next_page_marker", &self.next_page_marker);
-        formatter.finish()
     }
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
@@ -1062,7 +958,7 @@ impl ListDomainsOutput {
 
 /// <p>The GetOperationDetail response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
     #[doc(hidden)]
@@ -1107,18 +1003,6 @@ impl GetOperationDetailOutput {
     /// <p>The date when the request was submitted.</p>
     pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
-    }
-}
-impl std::fmt::Debug for GetOperationDetailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOperationDetailOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("submitted_date", &self.submitted_date);
-        formatter.finish()
     }
 }
 /// See [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
@@ -1223,7 +1107,7 @@ impl GetOperationDetailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainSuggestionsOutput {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
     #[doc(hidden)]
@@ -1233,13 +1117,6 @@ impl GetDomainSuggestionsOutput {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
     pub fn suggestions_list(&self) -> std::option::Option<&[crate::model::DomainSuggestion]> {
         self.suggestions_list.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDomainSuggestionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainSuggestionsOutput");
-        formatter.field("suggestions_list", &self.suggestions_list);
-        formatter.finish()
     }
 }
 /// See [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
@@ -1475,7 +1352,7 @@ impl std::fmt::Debug for GetDomainDetailOutput {
 pub mod get_domain_detail_output {
 
     /// A builder for [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) nameservers: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
@@ -1795,6 +1672,33 @@ pub mod get_domain_detail_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_name", &self.domain_name);
+            formatter.field("nameservers", &self.nameservers);
+            formatter.field("auto_renew", &self.auto_renew);
+            formatter.field("admin_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("admin_privacy", &self.admin_privacy);
+            formatter.field("registrant_privacy", &self.registrant_privacy);
+            formatter.field("tech_privacy", &self.tech_privacy);
+            formatter.field("registrar_name", &self.registrar_name);
+            formatter.field("who_is_server", &self.who_is_server);
+            formatter.field("registrar_url", &self.registrar_url);
+            formatter.field("abuse_contact_email", &self.abuse_contact_email);
+            formatter.field("abuse_contact_phone", &self.abuse_contact_phone);
+            formatter.field("registry_domain_id", &self.registry_domain_id);
+            formatter.field("creation_date", &self.creation_date);
+            formatter.field("updated_date", &self.updated_date);
+            formatter.field("expiration_date", &self.expiration_date);
+            formatter.field("reseller", &self.reseller);
+            formatter.field("dns_sec", &self.dns_sec);
+            formatter.field("status_list", &self.status_list);
+            formatter.finish()
+        }
+    }
 }
 impl GetDomainDetailOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
@@ -1805,7 +1709,7 @@ impl GetDomainDetailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactReachabilityStatusOutput {
     /// <p>The domain name for which you requested the reachability status.</p>
     #[doc(hidden)]
@@ -1862,14 +1766,6 @@ impl GetContactReachabilityStatusOutput {
     /// </dl>
     pub fn status(&self) -> std::option::Option<&crate::model::ReachabilityStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for GetContactReachabilityStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactReachabilityStatusOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
@@ -1963,7 +1859,7 @@ impl GetContactReachabilityStatusOutput {
 
 /// <p>The EnableDomainTransferLock response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     #[doc(hidden)]
@@ -1973,13 +1869,6 @@ impl EnableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EnableDomainTransferLockOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableDomainTransferLockOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
@@ -2018,14 +1907,8 @@ impl EnableDomainTransferLockOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableDomainAutoRenewOutput {}
-impl std::fmt::Debug for EnableDomainAutoRenewOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableDomainAutoRenewOutput");
-        formatter.finish()
-    }
-}
 /// See [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
 pub mod enable_domain_auto_renew_output {
 
@@ -2048,7 +1931,7 @@ impl EnableDomainAutoRenewOutput {
 
 /// <p>The DisableDomainTransferLock response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -2058,13 +1941,6 @@ impl DisableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DisableDomainTransferLockOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableDomainTransferLockOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
@@ -2103,14 +1979,8 @@ impl DisableDomainTransferLockOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableDomainAutoRenewOutput {}
-impl std::fmt::Debug for DisableDomainAutoRenewOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableDomainAutoRenewOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
 pub mod disable_domain_auto_renew_output {
 
@@ -2133,14 +2003,8 @@ impl DisableDomainAutoRenewOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsForDomainOutput {}
-impl std::fmt::Debug for DeleteTagsForDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsForDomainOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
 pub mod delete_tags_for_domain_output {
 
@@ -2163,7 +2027,7 @@ impl DeleteTagsForDomainOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -2173,13 +2037,6 @@ impl DeleteDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
@@ -2218,7 +2075,7 @@ impl DeleteDomainOutput {
 
 /// <p>The CheckDomainTransferability response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckDomainTransferabilityOutput {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
     #[doc(hidden)]
@@ -2228,13 +2085,6 @@ impl CheckDomainTransferabilityOutput {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
     pub fn transferability(&self) -> std::option::Option<&crate::model::DomainTransferability> {
         self.transferability.as_ref()
-    }
-}
-impl std::fmt::Debug for CheckDomainTransferabilityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckDomainTransferabilityOutput");
-        formatter.field("transferability", &self.transferability);
-        formatter.finish()
     }
 }
 /// See [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
@@ -2276,7 +2126,7 @@ impl CheckDomainTransferabilityOutput {
 
 /// <p>The CheckDomainAvailability response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckDomainAvailabilityOutput {
     /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only domains designated as <code>AVAILABLE</code>.</p>
@@ -2404,13 +2254,6 @@ impl CheckDomainAvailabilityOutput {
     /// </dl>
     pub fn availability(&self) -> std::option::Option<&crate::model::DomainAvailability> {
         self.availability.as_ref()
-    }
-}
-impl std::fmt::Debug for CheckDomainAvailabilityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckDomainAvailabilityOutput");
-        formatter.field("availability", &self.availability);
-        formatter.finish()
     }
 }
 /// See [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
@@ -2570,7 +2413,7 @@ impl CheckDomainAvailabilityOutput {
 
 /// <p>The <code>CancelDomainTransferToAnotherAwsAccount</code> response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelDomainTransferToAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     #[doc(hidden)]
@@ -2580,13 +2423,6 @@ impl CancelDomainTransferToAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelDomainTransferToAnotherAwsAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelDomainTransferToAnotherAwsAccountOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
@@ -2626,7 +2462,7 @@ impl CancelDomainTransferToAnotherAwsAccountOutput {
 
 /// <p>The AcceptDomainTransferFromAnotherAwsAccount response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
@@ -2636,13 +2472,6 @@ impl AcceptDomainTransferFromAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptDomainTransferFromAnotherAwsAccountOutput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
     }
 }
 /// See [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).

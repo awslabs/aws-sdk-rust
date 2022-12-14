@@ -2,7 +2,7 @@
 
 /// <p> Container for response returned by <code> <code>UpgradeElasticsearchDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeElasticsearchDomainOutput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -35,16 +35,6 @@ impl UpgradeElasticsearchDomainOutput {
         &self,
     ) -> std::option::Option<&crate::model::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
-    }
-}
-impl std::fmt::Debug for UpgradeElasticsearchDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeElasticsearchDomainOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("target_version", &self.target_version);
-        formatter.field("perform_check_only", &self.perform_check_only);
-        formatter.field("change_progress_details", &self.change_progress_details);
-        formatter.finish()
     }
 }
 /// See [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput).
@@ -129,7 +119,7 @@ impl UpgradeElasticsearchDomainOutput {
 
 /// <p> Container for response returned by <code> <code>UpdatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePackageOutput {
     /// <p>Information about the package <code>PackageDetails</code>.</p>
     #[doc(hidden)]
@@ -139,13 +129,6 @@ impl UpdatePackageOutput {
     /// <p>Information about the package <code>PackageDetails</code>.</p>
     pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
         self.package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdatePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePackageOutput");
-        formatter.field("package_details", &self.package_details);
-        formatter.finish()
     }
 }
 /// See [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
@@ -187,7 +170,7 @@ impl UpdatePackageOutput {
 
 /// <p>The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status of the Elasticsearch domain being updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfigOutput {
     /// <p>The status of the updated Elasticsearch domain. </p>
     #[doc(hidden)]
@@ -204,14 +187,6 @@ impl UpdateElasticsearchDomainConfigOutput {
     /// <p>Contains result of DryRun. </p>
     pub fn dry_run_results(&self) -> std::option::Option<&crate::model::DryRunResults> {
         self.dry_run_results.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateElasticsearchDomainConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateElasticsearchDomainConfigOutput");
-        formatter.field("domain_config", &self.domain_config);
-        formatter.field("dry_run_results", &self.dry_run_results);
-        formatter.finish()
     }
 }
 /// See [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput).
@@ -268,7 +243,7 @@ impl UpdateElasticsearchDomainConfigOutput {
 
 /// <p>The result of a <code>StartElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
     #[doc(hidden)]
@@ -280,13 +255,6 @@ impl StartElasticsearchServiceSoftwareUpdateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
-    }
-}
-impl std::fmt::Debug for StartElasticsearchServiceSoftwareUpdateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartElasticsearchServiceSoftwareUpdateOutput");
-        formatter.field("service_software_options", &self.service_software_options);
-        formatter.finish()
     }
 }
 /// See [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput).
@@ -332,14 +300,8 @@ impl StartElasticsearchServiceSoftwareUpdateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsOutput {}
-impl std::fmt::Debug for RemoveTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
@@ -362,7 +324,7 @@ impl RemoveTagsOutput {
 
 /// <p>The result of a <code><code>RejectInboundCrossClusterSearchConnection</code></code> operation. Contains details of rejected inbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of rejected inbound connection. </p>
     #[doc(hidden)]
@@ -375,16 +337,6 @@ impl RejectInboundCrossClusterSearchConnectionOutput {
         &self,
     ) -> std::option::Option<&crate::model::InboundCrossClusterSearchConnection> {
         self.cross_cluster_search_connection.as_ref()
-    }
-}
-impl std::fmt::Debug for RejectInboundCrossClusterSearchConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectInboundCrossClusterSearchConnectionOutput");
-        formatter.field(
-            "cross_cluster_search_connection",
-            &self.cross_cluster_search_connection,
-        );
-        formatter.finish()
     }
 }
 /// See [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput).
@@ -431,7 +383,7 @@ impl RejectInboundCrossClusterSearchConnectionOutput {
 
 /// <p>Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
     #[doc(hidden)]
@@ -448,17 +400,6 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// <p>The customer-specified identifier used to track this reservation.</p>
     pub fn reservation_name(&self) -> std::option::Option<&str> {
         self.reservation_name.as_deref()
-    }
-}
-impl std::fmt::Debug for PurchaseReservedElasticsearchInstanceOfferingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseReservedElasticsearchInstanceOfferingOutput");
-        formatter.field(
-            "reserved_elasticsearch_instance_id",
-            &self.reserved_elasticsearch_instance_id,
-        );
-        formatter.field("reservation_name", &self.reservation_name);
-        formatter.finish()
     }
 }
 /// See [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput).
@@ -519,7 +460,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutput {
 
 /// <p>The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsOutput {
     /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     #[doc(hidden)]
@@ -529,13 +470,6 @@ impl ListTagsOutput {
     /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsOutput");
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
@@ -583,7 +517,7 @@ impl ListTagsOutput {
 
 /// <p> Container for response parameters to <code> <code>ListPackagesForDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagesForDomainOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     #[doc(hidden)]
@@ -603,17 +537,6 @@ impl ListPackagesForDomainOutput {
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPackagesForDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagesForDomainOutput");
-        formatter.field(
-            "domain_package_details_list",
-            &self.domain_package_details_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
@@ -677,7 +600,7 @@ impl ListPackagesForDomainOutput {
 
 /// <p> Container for the parameters for response received from <code> <code>ListElasticsearchVersions</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListElasticsearchVersionsOutput {
     /// <p>List of supported elastic search versions. </p>
     #[doc(hidden)]
@@ -694,14 +617,6 @@ impl ListElasticsearchVersionsOutput {
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListElasticsearchVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListElasticsearchVersionsOutput");
-        formatter.field("elasticsearch_versions", &self.elasticsearch_versions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput).
@@ -761,7 +676,7 @@ impl ListElasticsearchVersionsOutput {
 
 /// <p> Container for the parameters returned by <code> <code>ListElasticsearchInstanceTypes</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypesOutput {
     /// <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
     #[doc(hidden)]
@@ -781,17 +696,6 @@ impl ListElasticsearchInstanceTypesOutput {
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListElasticsearchInstanceTypesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListElasticsearchInstanceTypesOutput");
-        formatter.field(
-            "elasticsearch_instance_types",
-            &self.elasticsearch_instance_types,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput).
@@ -855,7 +759,7 @@ impl ListElasticsearchInstanceTypesOutput {
 
 /// <p> Container for response parameters to <code> <code>ListDomainsForPackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsForPackageOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     #[doc(hidden)]
@@ -875,17 +779,6 @@ impl ListDomainsForPackageOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainsForPackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsForPackageOutput");
-        formatter.field(
-            "domain_package_details_list",
-            &self.domain_package_details_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
@@ -949,7 +842,7 @@ impl ListDomainsForPackageOutput {
 
 /// <p>The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
     #[doc(hidden)]
@@ -959,13 +852,6 @@ impl ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
     pub fn domain_names(&self) -> std::option::Option<&[crate::model::DomainInfo]> {
         self.domain_names.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainNamesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainNamesOutput");
-        formatter.field("domain_names", &self.domain_names);
-        formatter.finish()
     }
 }
 /// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
@@ -1013,7 +899,7 @@ impl ListDomainNamesOutput {
 
 /// <p> Container for response returned by <code> <code>GetUpgradeStatus</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUpgradeStatusOutput {
     /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
     /// <ul>
@@ -1063,15 +949,6 @@ impl GetUpgradeStatusOutput {
     /// <p>A string that describes the update briefly</p>
     pub fn upgrade_name(&self) -> std::option::Option<&str> {
         self.upgrade_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUpgradeStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUpgradeStatusOutput");
-        formatter.field("upgrade_step", &self.upgrade_step);
-        formatter.field("step_status", &self.step_status);
-        formatter.field("upgrade_name", &self.upgrade_name);
-        formatter.finish()
     }
 }
 /// See [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
@@ -1166,7 +1043,7 @@ impl GetUpgradeStatusOutput {
 
 /// <p> Container for response returned by <code> <code>GetUpgradeHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUpgradeHistoryOutput {
     /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
     #[doc(hidden)]
@@ -1183,14 +1060,6 @@ impl GetUpgradeHistoryOutput {
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUpgradeHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUpgradeHistoryOutput");
-        formatter.field("upgrade_histories", &self.upgrade_histories);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
@@ -1251,7 +1120,7 @@ impl GetUpgradeHistoryOutput {
 
 /// <p> Container for response returned by <code> <code>GetPackageVersionHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1278,18 +1147,6 @@ impl GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetPackageVersionHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPackageVersionHistoryOutput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field(
-            "package_version_history_list",
-            &self.package_version_history_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
@@ -1365,7 +1222,7 @@ impl GetPackageVersionHistoryOutput {
 
 /// <p> Container for response returned by <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCompatibleElasticsearchVersionsOutput {
     /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
     #[doc(hidden)]
@@ -1378,16 +1235,6 @@ impl GetCompatibleElasticsearchVersionsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::CompatibleVersionsMap]> {
         self.compatible_elasticsearch_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCompatibleElasticsearchVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCompatibleElasticsearchVersionsOutput");
-        formatter.field(
-            "compatible_elasticsearch_versions",
-            &self.compatible_elasticsearch_versions,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput).
@@ -1439,7 +1286,7 @@ impl GetCompatibleElasticsearchVersionsOutput {
 
 /// <p> Container for response returned by <code> <code>DissociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DissociatePackageOutput {
     /// <p><code>DomainPackageDetails</code></p>
     #[doc(hidden)]
@@ -1451,13 +1298,6 @@ impl DissociatePackageOutput {
         &self,
     ) -> std::option::Option<&crate::model::DomainPackageDetails> {
         self.domain_package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DissociatePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DissociatePackageOutput");
-        formatter.field("domain_package_details", &self.domain_package_details);
-        formatter.finish()
     }
 }
 /// See [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
@@ -1499,7 +1339,7 @@ impl DissociatePackageOutput {
 
 /// <p>Container for results from <code>DescribeReservedElasticsearchInstances</code></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstancesOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
@@ -1519,17 +1359,6 @@ impl DescribeReservedElasticsearchInstancesOutput {
         &self,
     ) -> std::option::Option<&[crate::model::ReservedElasticsearchInstance]> {
         self.reserved_elasticsearch_instances.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeReservedElasticsearchInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedElasticsearchInstancesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "reserved_elasticsearch_instances",
-            &self.reserved_elasticsearch_instances,
-        );
-        formatter.finish()
     }
 }
 /// See [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput).
@@ -1593,7 +1422,7 @@ impl DescribeReservedElasticsearchInstancesOutput {
 
 /// <p>Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
@@ -1613,17 +1442,6 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::ReservedElasticsearchInstanceOffering]> {
         self.reserved_elasticsearch_instance_offerings.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeReservedElasticsearchInstanceOfferingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedElasticsearchInstanceOfferingsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "reserved_elasticsearch_instance_offerings",
-            &self.reserved_elasticsearch_instance_offerings,
-        );
-        formatter.finish()
     }
 }
 /// See [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput).
@@ -1693,7 +1511,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutput {
 
 /// <p> Container for response returned by <code> <code>DescribePackages</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackagesOutput {
     /// <p>List of <code>PackageDetails</code> objects.</p>
     #[doc(hidden)]
@@ -1710,14 +1528,6 @@ impl DescribePackagesOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribePackagesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackagesOutput");
-        formatter.field("package_details_list", &self.package_details_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
@@ -1778,7 +1588,7 @@ impl DescribePackagesOutput {
 
 /// <p>The result of a <code><code>DescribeOutboundCrossClusterSearchConnections</code></code> request. Contains the list of connections matching the filter criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOutboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>OutboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
     #[doc(hidden)]
@@ -1798,17 +1608,6 @@ impl DescribeOutboundCrossClusterSearchConnectionsOutput {
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeOutboundCrossClusterSearchConnectionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOutboundCrossClusterSearchConnectionsOutput");
-        formatter.field(
-            "cross_cluster_search_connections",
-            &self.cross_cluster_search_connections,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput).
@@ -1875,7 +1674,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsOutput {
 
 /// <p>The result of a <code><code>DescribeInboundCrossClusterSearchConnections</code></code> request. Contains the list of connections matching the filter criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
     #[doc(hidden)]
@@ -1895,17 +1694,6 @@ impl DescribeInboundCrossClusterSearchConnectionsOutput {
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInboundCrossClusterSearchConnectionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInboundCrossClusterSearchConnectionsOutput");
-        formatter.field(
-            "cross_cluster_search_connections",
-            &self.cross_cluster_search_connections,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput).
@@ -1972,7 +1760,7 @@ impl DescribeInboundCrossClusterSearchConnectionsOutput {
 
 /// <p> Container for the parameters received from <code> <code>DescribeElasticsearchInstanceTypeLimits</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimitsOutput {
     /// <p> Map of Role of the Instance and Limits that are applicable. Role performed by given Instance in Elasticsearch can be one of the following: </p>
     /// <ul>
@@ -1998,13 +1786,6 @@ impl DescribeElasticsearchInstanceTypeLimitsOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Limits>>
     {
         self.limits_by_role.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeElasticsearchInstanceTypeLimitsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticsearchInstanceTypeLimitsOutput");
-        formatter.field("limits_by_role", &self.limits_by_role);
-        formatter.finish()
     }
 }
 /// See [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput).
@@ -2072,7 +1853,7 @@ impl DescribeElasticsearchInstanceTypeLimitsOutput {
 
 /// <p>The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
     #[doc(hidden)]
@@ -2085,13 +1866,6 @@ impl DescribeElasticsearchDomainsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::ElasticsearchDomainStatus]> {
         self.domain_status_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeElasticsearchDomainsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticsearchDomainsOutput");
-        formatter.field("domain_status_list", &self.domain_status_list);
-        formatter.finish()
     }
 }
 /// See [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput).
@@ -2143,7 +1917,7 @@ impl DescribeElasticsearchDomainsOutput {
 
 /// <p>The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
     #[doc(hidden)]
@@ -2153,13 +1927,6 @@ impl DescribeElasticsearchDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
     pub fn domain_config(&self) -> std::option::Option<&crate::model::ElasticsearchDomainConfig> {
         self.domain_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeElasticsearchDomainConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticsearchDomainConfigOutput");
-        formatter.field("domain_config", &self.domain_config);
-        formatter.finish()
     }
 }
 /// See [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput).
@@ -2201,7 +1968,7 @@ impl DescribeElasticsearchDomainConfigOutput {
 
 /// <p>The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status of the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainOutput {
     /// <p>The current status of the Elasticsearch domain.</p>
     #[doc(hidden)]
@@ -2211,13 +1978,6 @@ impl DescribeElasticsearchDomainOutput {
     /// <p>The current status of the Elasticsearch domain.</p>
     pub fn domain_status(&self) -> std::option::Option<&crate::model::ElasticsearchDomainStatus> {
         self.domain_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeElasticsearchDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticsearchDomainOutput");
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
     }
 }
 /// See [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput).
@@ -2259,7 +2019,7 @@ impl DescribeElasticsearchDomainOutput {
 
 /// <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested domain change. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressOutput {
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
     #[doc(hidden)]
@@ -2271,13 +2031,6 @@ impl DescribeDomainChangeProgressOutput {
         &self,
     ) -> std::option::Option<&crate::model::ChangeProgressStatusDetails> {
         self.change_progress_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainChangeProgressOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainChangeProgressOutput");
-        formatter.field("change_progress_status", &self.change_progress_status);
-        formatter.finish()
     }
 }
 /// See [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
@@ -2323,7 +2076,7 @@ impl DescribeDomainChangeProgressOutput {
 
 /// <p>The result of <code>DescribeDomainAutoTunes</code> request. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainAutoTunesOutput {
     /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     #[doc(hidden)]
@@ -2340,14 +2093,6 @@ impl DescribeDomainAutoTunesOutput {
     /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainAutoTunesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainAutoTunesOutput");
-        formatter.field("auto_tunes", &self.auto_tunes);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
@@ -2407,7 +2152,7 @@ impl DescribeDomainAutoTunesOutput {
 
 /// <p> Container for response parameters to <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackageOutput {
     /// <p><code>PackageDetails</code></p>
     #[doc(hidden)]
@@ -2417,13 +2162,6 @@ impl DeletePackageOutput {
     /// <p><code>PackageDetails</code></p>
     pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
         self.package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DeletePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackageOutput");
-        formatter.field("package_details", &self.package_details);
-        formatter.finish()
     }
 }
 /// See [`DeletePackageOutput`](crate::output::DeletePackageOutput).
@@ -2465,7 +2203,7 @@ impl DeletePackageOutput {
 
 /// <p>The result of a <code><code>DeleteOutboundCrossClusterSearchConnection</code></code> operation. Contains details of deleted outbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOutboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
     #[doc(hidden)]
@@ -2478,16 +2216,6 @@ impl DeleteOutboundCrossClusterSearchConnectionOutput {
         &self,
     ) -> std::option::Option<&crate::model::OutboundCrossClusterSearchConnection> {
         self.cross_cluster_search_connection.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteOutboundCrossClusterSearchConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOutboundCrossClusterSearchConnectionOutput");
-        formatter.field(
-            "cross_cluster_search_connection",
-            &self.cross_cluster_search_connection,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput).
@@ -2534,7 +2262,7 @@ impl DeleteOutboundCrossClusterSearchConnectionOutput {
 
 /// <p>The result of a <code><code>DeleteInboundCrossClusterSearchConnection</code></code> operation. Contains details of deleted inbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of deleted inbound connection. </p>
     #[doc(hidden)]
@@ -2547,16 +2275,6 @@ impl DeleteInboundCrossClusterSearchConnectionOutput {
         &self,
     ) -> std::option::Option<&crate::model::InboundCrossClusterSearchConnection> {
         self.cross_cluster_search_connection.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteInboundCrossClusterSearchConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInboundCrossClusterSearchConnectionOutput");
-        formatter.field(
-            "cross_cluster_search_connection",
-            &self.cross_cluster_search_connection,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput).
@@ -2603,14 +2321,8 @@ impl DeleteInboundCrossClusterSearchConnectionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteElasticsearchServiceRoleOutput {}
-impl std::fmt::Debug for DeleteElasticsearchServiceRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteElasticsearchServiceRoleOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput).
 pub mod delete_elasticsearch_service_role_output {
 
@@ -2633,7 +2345,7 @@ impl DeleteElasticsearchServiceRoleOutput {
 
 /// <p>The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteElasticsearchDomainOutput {
     /// <p>The status of the Elasticsearch domain being deleted.</p>
     #[doc(hidden)]
@@ -2643,13 +2355,6 @@ impl DeleteElasticsearchDomainOutput {
     /// <p>The status of the Elasticsearch domain being deleted.</p>
     pub fn domain_status(&self) -> std::option::Option<&crate::model::ElasticsearchDomainStatus> {
         self.domain_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteElasticsearchDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteElasticsearchDomainOutput");
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
     }
 }
 /// See [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
@@ -2691,7 +2396,7 @@ impl DeleteElasticsearchDomainOutput {
 
 /// <p> Container for response returned by <code> <code>CreatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePackageOutput {
     /// <p>Information about the package <code>PackageDetails</code>.</p>
     #[doc(hidden)]
@@ -2701,13 +2406,6 @@ impl CreatePackageOutput {
     /// <p>Information about the package <code>PackageDetails</code>.</p>
     pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
         self.package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for CreatePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePackageOutput");
-        formatter.field("package_details", &self.package_details);
-        formatter.finish()
     }
 }
 /// See [`CreatePackageOutput`](crate::output::CreatePackageOutput).
@@ -2749,7 +2447,7 @@ impl CreatePackageOutput {
 
 /// <p>The result of a <code><code>CreateOutboundCrossClusterSearchConnection</code></code> request. Contains the details of the newly created cross-cluster search connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOutboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     #[doc(hidden)]
@@ -2790,20 +2488,6 @@ impl CreateOutboundCrossClusterSearchConnectionOutput {
     /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
     pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
         self.cross_cluster_search_connection_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateOutboundCrossClusterSearchConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOutboundCrossClusterSearchConnectionOutput");
-        formatter.field("source_domain_info", &self.source_domain_info);
-        formatter.field("destination_domain_info", &self.destination_domain_info);
-        formatter.field("connection_alias", &self.connection_alias);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field(
-            "cross_cluster_search_connection_id",
-            &self.cross_cluster_search_connection_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput).
@@ -2913,7 +2597,7 @@ impl CreateOutboundCrossClusterSearchConnectionOutput {
 
 /// <p>The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateElasticsearchDomainOutput {
     /// <p>The status of the newly created Elasticsearch domain. </p>
     #[doc(hidden)]
@@ -2923,13 +2607,6 @@ impl CreateElasticsearchDomainOutput {
     /// <p>The status of the newly created Elasticsearch domain. </p>
     pub fn domain_status(&self) -> std::option::Option<&crate::model::ElasticsearchDomainStatus> {
         self.domain_status.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateElasticsearchDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateElasticsearchDomainOutput");
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
     }
 }
 /// See [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput).
@@ -2971,7 +2648,7 @@ impl CreateElasticsearchDomainOutput {
 
 /// <p>The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
     #[doc(hidden)]
@@ -2983,13 +2660,6 @@ impl CancelElasticsearchServiceSoftwareUpdateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
-    }
-}
-impl std::fmt::Debug for CancelElasticsearchServiceSoftwareUpdateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelElasticsearchServiceSoftwareUpdateOutput");
-        formatter.field("service_software_options", &self.service_software_options);
-        formatter.finish()
     }
 }
 /// See [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput).
@@ -3036,7 +2706,7 @@ impl CancelElasticsearchServiceSoftwareUpdateOutput {
 
 /// <p> Container for response returned by <code> <code>AssociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePackageOutput {
     /// <p><code>DomainPackageDetails</code></p>
     #[doc(hidden)]
@@ -3048,13 +2718,6 @@ impl AssociatePackageOutput {
         &self,
     ) -> std::option::Option<&crate::model::DomainPackageDetails> {
         self.domain_package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for AssociatePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePackageOutput");
-        formatter.field("domain_package_details", &self.domain_package_details);
-        formatter.finish()
     }
 }
 /// See [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
@@ -3096,14 +2759,8 @@ impl AssociatePackageOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput {}
-impl std::fmt::Debug for AddTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
@@ -3126,7 +2783,7 @@ impl AddTagsOutput {
 
 /// <p>The result of a <code><code>AcceptInboundCrossClusterSearchConnection</code></code> operation. Contains details of accepted inbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection. </p>
     #[doc(hidden)]
@@ -3139,16 +2796,6 @@ impl AcceptInboundCrossClusterSearchConnectionOutput {
         &self,
     ) -> std::option::Option<&crate::model::InboundCrossClusterSearchConnection> {
         self.cross_cluster_search_connection.as_ref()
-    }
-}
-impl std::fmt::Debug for AcceptInboundCrossClusterSearchConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptInboundCrossClusterSearchConnectionOutput");
-        formatter.field(
-            "cross_cluster_search_connection",
-            &self.cross_cluster_search_connection,
-        );
-        formatter.finish()
     }
 }
 /// See [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput).

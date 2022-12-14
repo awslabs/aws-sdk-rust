@@ -1270,7 +1270,7 @@ impl UpdateThingShadowInput {
 
 /// <p>The input for the UpdateThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThingShadowInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -1296,19 +1296,10 @@ impl UpdateThingShadowInput {
         self.payload.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateThingShadowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThingShadowInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("shadow_name", &self.shadow_name);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the Publish operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishInput {
     /// <p>The name of the MQTT topic.</p>
     #[doc(hidden)]
@@ -1349,20 +1340,10 @@ impl PublishInput {
         self.payload.as_ref()
     }
 }
-impl std::fmt::Debug for PublishInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishInput");
-        formatter.field("topic", &self.topic);
-        formatter.field("qos", &self.qos);
-        formatter.field("retain", &self.retain);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRetainedMessagesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -1381,18 +1362,10 @@ impl ListRetainedMessagesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRetainedMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRetainedMessagesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamedShadowsForThingInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -1418,19 +1391,10 @@ impl ListNamedShadowsForThingInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListNamedShadowsForThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNamedShadowsForThingInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the GetThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThingShadowInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -1449,18 +1413,10 @@ impl GetThingShadowInput {
         self.shadow_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetThingShadowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThingShadowInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("shadow_name", &self.shadow_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the GetRetainedMessage operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
     #[doc(hidden)]
@@ -1472,17 +1428,10 @@ impl GetRetainedMessageInput {
         self.topic.as_deref()
     }
 }
-impl std::fmt::Debug for GetRetainedMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRetainedMessageInput");
-        formatter.field("topic", &self.topic);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the DeleteThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThingShadowInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -1499,13 +1448,5 @@ impl DeleteThingShadowInput {
     /// <p>The name of the shadow.</p>
     pub fn shadow_name(&self) -> std::option::Option<&str> {
         self.shadow_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteThingShadowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThingShadowInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("shadow_name", &self.shadow_name);
-        formatter.finish()
     }
 }

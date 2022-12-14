@@ -2,7 +2,7 @@
 
 /// <p>Represents an FinSpace environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Environment {
     /// <p>The name of the FinSpace environment.</p>
     #[doc(hidden)]
@@ -91,30 +91,6 @@ impl Environment {
         &self,
     ) -> std::option::Option<&crate::model::FederationParameters> {
         self.federation_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for Environment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Environment");
-        formatter.field("name", &self.name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("status", &self.status);
-        formatter.field("environment_url", &self.environment_url);
-        formatter.field("description", &self.description);
-        formatter.field("environment_arn", &self.environment_arn);
-        formatter.field(
-            "sage_maker_studio_domain_url",
-            &self.sage_maker_studio_domain_url,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "dedicated_service_account_id",
-            &self.dedicated_service_account_id,
-        );
-        formatter.field("federation_mode", &self.federation_mode);
-        formatter.field("federation_parameters", &self.federation_parameters);
-        formatter.finish()
     }
 }
 /// See [`Environment`](crate::model::Environment).
@@ -318,7 +294,7 @@ impl Environment {
 
 /// <p>Configuration information when authentication mode is FEDERATED.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FederationParameters {
     /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
     #[doc(hidden)]
@@ -367,18 +343,6 @@ impl FederationParameters {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attribute_map.as_ref()
-    }
-}
-impl std::fmt::Debug for FederationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FederationParameters");
-        formatter.field("saml_metadata_document", &self.saml_metadata_document);
-        formatter.field("saml_metadata_url", &self.saml_metadata_url);
-        formatter.field("application_call_back_url", &self.application_call_back_url);
-        formatter.field("federation_urn", &self.federation_urn);
-        formatter.field("federation_provider_name", &self.federation_provider_name);
-        formatter.field("attribute_map", &self.attribute_map);
-        formatter.finish()
     }
 }
 /// See [`FederationParameters`](crate::model::FederationParameters).
@@ -781,7 +745,7 @@ impl std::fmt::Debug for SuperuserParameters {
 pub mod superuser_parameters {
 
     /// A builder for [`SuperuserParameters`](crate::model::SuperuserParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) first_name: std::option::Option<std::string::String>,
@@ -828,6 +792,15 @@ pub mod superuser_parameters {
                 first_name: self.first_name,
                 last_name: self.last_name,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("first_name", &self.first_name);
+            formatter.field("last_name", &self.last_name);
+            formatter.finish()
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /// Represents the output of a ListWorkspaces operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ListWorkspacesOutput {
     /// Pagination token to use when requesting the next page in this list.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListWorkspacesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkspacesOutput");
-        formatter.field("workspaces", &self.workspaces);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
@@ -86,7 +78,7 @@ impl ListWorkspacesOutput {
 
 /// Represents the output of a CreateWorkspace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
     #[doc(hidden)]
@@ -121,16 +113,6 @@ impl CreateWorkspaceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateWorkspaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkspaceOutput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
@@ -225,14 +207,8 @@ impl CreateWorkspaceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceOutput {}
-impl std::fmt::Debug for DeleteWorkspaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkspaceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
 pub mod delete_workspace_output {
 
@@ -255,14 +231,8 @@ impl DeleteWorkspaceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceAliasOutput {}
-impl std::fmt::Debug for UpdateWorkspaceAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkspaceAliasOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
 pub mod update_workspace_alias_output {
 
@@ -285,7 +255,7 @@ impl UpdateWorkspaceAliasOutput {
 
 /// Represents the output of a DescribeWorkspace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
     #[doc(hidden)]
@@ -295,13 +265,6 @@ impl DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
     pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeWorkspaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceOutput");
-        formatter.field("workspace", &self.workspace);
-        formatter.finish()
     }
 }
 /// See [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
@@ -343,7 +306,7 @@ impl DescribeWorkspaceOutput {
 
 /// Represents the output of a ListRuleGroupsNamespaces operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
     #[doc(hidden)]
@@ -363,14 +326,6 @@ impl ListRuleGroupsNamespacesOutput {
     /// Pagination token to use when requesting the next page in this list.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListRuleGroupsNamespacesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRuleGroupsNamespacesOutput");
-        formatter.field("rule_groups_namespaces", &self.rule_groups_namespaces);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput).
@@ -434,7 +389,7 @@ impl ListRuleGroupsNamespacesOutput {
 
 /// Represents the output of a CreateRuleGroupsNamespace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
     #[doc(hidden)]
@@ -469,16 +424,6 @@ impl CreateRuleGroupsNamespaceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateRuleGroupsNamespaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleGroupsNamespaceOutput");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput).
@@ -573,14 +518,8 @@ impl CreateRuleGroupsNamespaceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleGroupsNamespaceOutput {}
-impl std::fmt::Debug for DeleteRuleGroupsNamespaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleGroupsNamespaceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
 pub mod delete_rule_groups_namespace_output {
 
@@ -603,7 +542,7 @@ impl DeleteRuleGroupsNamespaceOutput {
 
 /// Represents the output of a PutRuleGroupsNamespace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
     #[doc(hidden)]
@@ -638,16 +577,6 @@ impl PutRuleGroupsNamespaceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for PutRuleGroupsNamespaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRuleGroupsNamespaceOutput");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput).
@@ -742,7 +671,7 @@ impl PutRuleGroupsNamespaceOutput {
 
 /// Represents the output of a DescribeRuleGroupsNamespace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
     #[doc(hidden)]
@@ -754,13 +683,6 @@ impl DescribeRuleGroupsNamespaceOutput {
         &self,
     ) -> std::option::Option<&crate::model::RuleGroupsNamespaceDescription> {
         self.rule_groups_namespace.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeRuleGroupsNamespaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuleGroupsNamespaceOutput");
-        formatter.field("rule_groups_namespace", &self.rule_groups_namespace);
-        formatter.finish()
     }
 }
 /// See [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput).
@@ -806,7 +728,7 @@ impl DescribeRuleGroupsNamespaceOutput {
 
 /// Represents the output of a CreateLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     #[doc(hidden)]
@@ -816,13 +738,6 @@ impl CreateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateLoggingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoggingConfigurationOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
@@ -864,14 +779,8 @@ impl CreateLoggingConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationOutput {}
-impl std::fmt::Debug for DeleteLoggingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoggingConfigurationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
 
@@ -894,7 +803,7 @@ impl DeleteLoggingConfigurationOutput {
 
 /// Represents the output of an UpdateLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     #[doc(hidden)]
@@ -904,13 +813,6 @@ impl UpdateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateLoggingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLoggingConfigurationOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
@@ -952,7 +854,7 @@ impl UpdateLoggingConfigurationOutput {
 
 /// Represents the output of a DescribeLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationOutput {
     /// Metadata object containing information about the logging configuration of a workspace.
     #[doc(hidden)]
@@ -964,13 +866,6 @@ impl DescribeLoggingConfigurationOutput {
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfigurationMetadata> {
         self.logging_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeLoggingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingConfigurationOutput");
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.finish()
     }
 }
 /// See [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
@@ -1016,7 +911,7 @@ impl DescribeLoggingConfigurationOutput {
 
 /// Represents the output of a CreateAlertManagerDefinition operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     #[doc(hidden)]
@@ -1026,13 +921,6 @@ impl CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAlertManagerDefinitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAlertManagerDefinitionOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput).
@@ -1074,14 +962,8 @@ impl CreateAlertManagerDefinitionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionOutput {}
-impl std::fmt::Debug for DeleteAlertManagerDefinitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAlertManagerDefinitionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
 pub mod delete_alert_manager_definition_output {
 
@@ -1104,7 +986,7 @@ impl DeleteAlertManagerDefinitionOutput {
 
 /// Represents the output of a PutAlertManagerDefinition operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     #[doc(hidden)]
@@ -1114,13 +996,6 @@ impl PutAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for PutAlertManagerDefinitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAlertManagerDefinitionOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput).
@@ -1162,7 +1037,7 @@ impl PutAlertManagerDefinitionOutput {
 
 /// Represents the output of a DescribeAlertManagerDefinition operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlertManagerDefinitionOutput {
     /// The properties of the selected workspace's alert manager definition.
     #[doc(hidden)]
@@ -1175,13 +1050,6 @@ impl DescribeAlertManagerDefinitionOutput {
         &self,
     ) -> std::option::Option<&crate::model::AlertManagerDefinitionDescription> {
         self.alert_manager_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeAlertManagerDefinitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlertManagerDefinitionOutput");
-        formatter.field("alert_manager_definition", &self.alert_manager_definition);
-        formatter.finish()
     }
 }
 /// See [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput).
@@ -1227,14 +1095,8 @@ impl DescribeAlertManagerDefinitionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -1257,14 +1119,8 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -1287,7 +1143,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// The list of tags assigned to the resource.
     #[doc(hidden)]
@@ -1301,13 +1157,6 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).

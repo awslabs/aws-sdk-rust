@@ -7209,7 +7209,7 @@ impl UpdateQualificationTypeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQualificationTypeInput {
     /// <p>The ID of the Qualification type to update.</p>
     #[doc(hidden)]
@@ -7285,25 +7285,10 @@ impl UpdateQualificationTypeInput {
         self.auto_granted_value
     }
 }
-impl std::fmt::Debug for UpdateQualificationTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQualificationTypeInput");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("description", &self.description);
-        formatter.field("qualification_type_status", &self.qualification_type_status);
-        formatter.field("test", &self.test);
-        formatter.field("answer_key", &self.answer_key);
-        formatter.field("test_duration_in_seconds", &self.test_duration_in_seconds);
-        formatter.field("retry_delay_in_seconds", &self.retry_delay_in_seconds);
-        formatter.field("auto_granted", &self.auto_granted);
-        formatter.field("auto_granted_value", &self.auto_granted_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNotificationSettingsInput {
     /// <p> The ID of the HIT type whose notification specification is being updated. </p>
     #[doc(hidden)]
@@ -7329,19 +7314,10 @@ impl UpdateNotificationSettingsInput {
         self.active
     }
 }
-impl std::fmt::Debug for UpdateNotificationSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNotificationSettingsInput");
-        formatter.field("hit_type_id", &self.hit_type_id);
-        formatter.field("notification", &self.notification);
-        formatter.field("active", &self.active);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHitTypeOfHitInput {
     /// <p>The HIT to update.</p>
     #[doc(hidden)]
@@ -7360,18 +7336,10 @@ impl UpdateHitTypeOfHitInput {
         self.hit_type_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateHitTypeOfHitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHitTypeOfHitInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field("hit_type_id", &self.hit_type_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHitReviewStatusInput {
     /// <p> The ID of the HIT to update. </p>
     #[doc(hidden)]
@@ -7398,18 +7366,10 @@ impl UpdateHitReviewStatusInput {
         self.revert
     }
 }
-impl std::fmt::Debug for UpdateHitReviewStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHitReviewStatusInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field("revert", &self.revert);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateExpirationForHitInput {
     /// <p> The HIT to update. </p>
     #[doc(hidden)]
@@ -7428,18 +7388,10 @@ impl UpdateExpirationForHitInput {
         self.expire_at.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateExpirationForHitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateExpirationForHitInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field("expire_at", &self.expire_at);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendTestEventNotificationInput {
     /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     #[doc(hidden)]
@@ -7458,18 +7410,10 @@ impl SendTestEventNotificationInput {
         self.test_event_type.as_ref()
     }
 }
-impl std::fmt::Debug for SendTestEventNotificationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendTestEventNotificationInput");
-        formatter.field("notification", &self.notification);
-        formatter.field("test_event_type", &self.test_event_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendBonusInput {
     /// <p>The ID of the Worker being paid the bonus.</p>
     #[doc(hidden)]
@@ -7509,21 +7453,10 @@ impl SendBonusInput {
         self.unique_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for SendBonusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendBonusInput");
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("bonus_amount", &self.bonus_amount);
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.field("reason", &self.reason);
-        formatter.field("unique_request_token", &self.unique_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectQualificationRequestInput {
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     #[doc(hidden)]
@@ -7542,18 +7475,10 @@ impl RejectQualificationRequestInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for RejectQualificationRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectQualificationRequestInput");
-        formatter.field("qualification_request_id", &self.qualification_request_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectAssignmentInput {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     #[doc(hidden)]
@@ -7572,18 +7497,10 @@ impl RejectAssignmentInput {
         self.requester_feedback.as_deref()
     }
 }
-impl std::fmt::Debug for RejectAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectAssignmentInput");
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.field("requester_feedback", &self.requester_feedback);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyWorkersInput {
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
     #[doc(hidden)]
@@ -7609,19 +7526,10 @@ impl NotifyWorkersInput {
         self.worker_ids.as_deref()
     }
 }
-impl std::fmt::Debug for NotifyWorkersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyWorkersInput");
-        formatter.field("subject", &self.subject);
-        formatter.field("message_text", &self.message_text);
-        formatter.field("worker_ids", &self.worker_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkersWithQualificationTypeInput {
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
     #[doc(hidden)]
@@ -7654,20 +7562,10 @@ impl ListWorkersWithQualificationTypeInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWorkersWithQualificationTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkersWithQualificationTypeInput");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkerBlocksInput {
     /// <p>Pagination token</p>
     #[doc(hidden)]
@@ -7686,18 +7584,10 @@ impl ListWorkerBlocksInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWorkerBlocksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkerBlocksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReviewPolicyResultsForHitInput {
     /// <p>The unique identifier of the HIT to retrieve review results for.</p>
     #[doc(hidden)]
@@ -7744,22 +7634,10 @@ impl ListReviewPolicyResultsForHitInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReviewPolicyResultsForHitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReviewPolicyResultsForHitInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field("policy_levels", &self.policy_levels);
-        formatter.field("retrieve_actions", &self.retrieve_actions);
-        formatter.field("retrieve_results", &self.retrieve_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReviewableHiTsInput {
     /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     #[doc(hidden)]
@@ -7792,20 +7670,10 @@ impl ListReviewableHiTsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReviewableHiTsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReviewableHiTsInput");
-        formatter.field("hit_type_id", &self.hit_type_id);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQualificationTypesInput {
     /// <p> A text query against all of the searchable attributes of Qualification types. </p>
     #[doc(hidden)]
@@ -7845,21 +7713,10 @@ impl ListQualificationTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListQualificationTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQualificationTypesInput");
-        formatter.field("query", &self.query);
-        formatter.field("must_be_requestable", &self.must_be_requestable);
-        formatter.field("must_be_owned_by_caller", &self.must_be_owned_by_caller);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQualificationRequestsInput {
     /// <p>The ID of the QualificationType.</p>
     #[doc(hidden)]
@@ -7885,19 +7742,10 @@ impl ListQualificationRequestsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListQualificationRequestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQualificationRequestsInput");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHiTsForQualificationTypeInput {
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
     #[doc(hidden)]
@@ -7923,19 +7771,10 @@ impl ListHiTsForQualificationTypeInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListHiTsForQualificationTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHiTsForQualificationTypeInput");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHiTsInput {
     /// <p>Pagination token</p>
     #[doc(hidden)]
@@ -7954,18 +7793,10 @@ impl ListHiTsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListHiTsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHiTsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBonusPaymentsInput {
     /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     #[doc(hidden)]
@@ -7998,20 +7829,10 @@ impl ListBonusPaymentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListBonusPaymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBonusPaymentsInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssignmentsForHitInput {
     /// <p>The ID of the HIT.</p>
     #[doc(hidden)]
@@ -8044,20 +7865,10 @@ impl ListAssignmentsForHitInput {
         self.assignment_statuses.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssignmentsForHitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssignmentsForHitInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("assignment_statuses", &self.assignment_statuses);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQualificationTypeInput {
     /// <p>The ID of the QualificationType.</p>
     #[doc(hidden)]
@@ -8069,17 +7880,10 @@ impl GetQualificationTypeInput {
         self.qualification_type_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQualificationTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQualificationTypeInput");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQualificationScoreInput {
     /// <p>The ID of the QualificationType.</p>
     #[doc(hidden)]
@@ -8098,18 +7902,10 @@ impl GetQualificationScoreInput {
         self.worker_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQualificationScoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQualificationScoreInput");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("worker_id", &self.worker_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHitInput {
     /// <p>The ID of the HIT to be retrieved.</p>
     #[doc(hidden)]
@@ -8121,17 +7917,10 @@ impl GetHitInput {
         self.hit_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetHitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHitInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFileUploadUrlInput {
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
     #[doc(hidden)]
@@ -8150,18 +7939,10 @@ impl GetFileUploadUrlInput {
         self.question_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFileUploadUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFileUploadUrlInput");
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.field("question_identifier", &self.question_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssignmentInput {
     /// <p>The ID of the Assignment to be retrieved.</p>
     #[doc(hidden)]
@@ -8173,28 +7954,15 @@ impl GetAssignmentInput {
         self.assignment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssignmentInput");
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountBalanceInput {}
-impl std::fmt::Debug for GetAccountBalanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountBalanceInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateQualificationFromWorkerInput {
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
     #[doc(hidden)]
@@ -8220,19 +7988,10 @@ impl DisassociateQualificationFromWorkerInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateQualificationFromWorkerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateQualificationFromWorkerInput");
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkerBlockInput {
     /// <p>The ID of the Worker to unblock.</p>
     #[doc(hidden)]
@@ -8251,18 +8010,10 @@ impl DeleteWorkerBlockInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkerBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkerBlockInput");
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQualificationTypeInput {
     /// <p>The ID of the QualificationType to dispose.</p>
     #[doc(hidden)]
@@ -8274,17 +8025,10 @@ impl DeleteQualificationTypeInput {
         self.qualification_type_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQualificationTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQualificationTypeInput");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHitInput {
     /// <p>The ID of the HIT to be deleted.</p>
     #[doc(hidden)]
@@ -8296,17 +8040,10 @@ impl DeleteHitInput {
         self.hit_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHitInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkerBlockInput {
     /// <p>The ID of the Worker to block.</p>
     #[doc(hidden)]
@@ -8325,18 +8062,10 @@ impl CreateWorkerBlockInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkerBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkerBlockInput");
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQualificationTypeInput {
     /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     #[doc(hidden)]
@@ -8427,26 +8156,10 @@ impl CreateQualificationTypeInput {
         self.auto_granted_value
     }
 }
-impl std::fmt::Debug for CreateQualificationTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQualificationTypeInput");
-        formatter.field("name", &self.name);
-        formatter.field("keywords", &self.keywords);
-        formatter.field("description", &self.description);
-        formatter.field("qualification_type_status", &self.qualification_type_status);
-        formatter.field("retry_delay_in_seconds", &self.retry_delay_in_seconds);
-        formatter.field("test", &self.test);
-        formatter.field("answer_key", &self.answer_key);
-        formatter.field("test_duration_in_seconds", &self.test_duration_in_seconds);
-        formatter.field("auto_granted", &self.auto_granted);
-        formatter.field("auto_granted_value", &self.auto_granted_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHitWithHitTypeInput {
     /// <p>The HIT type ID you want to create this HIT with.</p>
     #[doc(hidden)]
@@ -8537,26 +8250,10 @@ impl CreateHitWithHitTypeInput {
         self.hit_layout_parameters.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHitWithHitTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHitWithHitTypeInput");
-        formatter.field("hit_type_id", &self.hit_type_id);
-        formatter.field("max_assignments", &self.max_assignments);
-        formatter.field("lifetime_in_seconds", &self.lifetime_in_seconds);
-        formatter.field("question", &self.question);
-        formatter.field("requester_annotation", &self.requester_annotation);
-        formatter.field("unique_request_token", &self.unique_request_token);
-        formatter.field("assignment_review_policy", &self.assignment_review_policy);
-        formatter.field("hit_review_policy", &self.hit_review_policy);
-        formatter.field("hit_layout_id", &self.hit_layout_id);
-        formatter.field("hit_layout_parameters", &self.hit_layout_parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHitTypeInput {
     /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
     #[doc(hidden)]
@@ -8613,32 +8310,10 @@ impl CreateHitTypeInput {
         self.qualification_requirements.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHitTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHitTypeInput");
-        formatter.field(
-            "auto_approval_delay_in_seconds",
-            &self.auto_approval_delay_in_seconds,
-        );
-        formatter.field(
-            "assignment_duration_in_seconds",
-            &self.assignment_duration_in_seconds,
-        );
-        formatter.field("reward", &self.reward);
-        formatter.field("title", &self.title);
-        formatter.field("keywords", &self.keywords);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "qualification_requirements",
-            &self.qualification_requirements,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHitInput {
     /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     #[doc(hidden)]
@@ -8774,41 +8449,10 @@ impl CreateHitInput {
         self.hit_layout_parameters.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHitInput");
-        formatter.field("max_assignments", &self.max_assignments);
-        formatter.field(
-            "auto_approval_delay_in_seconds",
-            &self.auto_approval_delay_in_seconds,
-        );
-        formatter.field("lifetime_in_seconds", &self.lifetime_in_seconds);
-        formatter.field(
-            "assignment_duration_in_seconds",
-            &self.assignment_duration_in_seconds,
-        );
-        formatter.field("reward", &self.reward);
-        formatter.field("title", &self.title);
-        formatter.field("keywords", &self.keywords);
-        formatter.field("description", &self.description);
-        formatter.field("question", &self.question);
-        formatter.field("requester_annotation", &self.requester_annotation);
-        formatter.field(
-            "qualification_requirements",
-            &self.qualification_requirements,
-        );
-        formatter.field("unique_request_token", &self.unique_request_token);
-        formatter.field("assignment_review_policy", &self.assignment_review_policy);
-        formatter.field("hit_review_policy", &self.hit_review_policy);
-        formatter.field("hit_layout_id", &self.hit_layout_id);
-        formatter.field("hit_layout_parameters", &self.hit_layout_parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAdditionalAssignmentsForHitInput {
     /// <p>The ID of the HIT to extend.</p>
     #[doc(hidden)]
@@ -8834,22 +8478,10 @@ impl CreateAdditionalAssignmentsForHitInput {
         self.unique_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAdditionalAssignmentsForHitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAdditionalAssignmentsForHitInput");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field(
-            "number_of_additional_assignments",
-            &self.number_of_additional_assignments,
-        );
-        formatter.field("unique_request_token", &self.unique_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateQualificationWithWorkerInput {
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
     #[doc(hidden)]
@@ -8882,20 +8514,10 @@ impl AssociateQualificationWithWorkerInput {
         self.send_notification
     }
 }
-impl std::fmt::Debug for AssociateQualificationWithWorkerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateQualificationWithWorkerInput");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("integer_value", &self.integer_value);
-        formatter.field("send_notification", &self.send_notification);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApproveAssignmentInput {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     #[doc(hidden)]
@@ -8921,19 +8543,10 @@ impl ApproveAssignmentInput {
         self.override_rejection
     }
 }
-impl std::fmt::Debug for ApproveAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApproveAssignmentInput");
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.field("requester_feedback", &self.requester_feedback);
-        formatter.field("override_rejection", &self.override_rejection);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptQualificationRequestInput {
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
     #[doc(hidden)]
@@ -8950,13 +8563,5 @@ impl AcceptQualificationRequestInput {
     /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
     pub fn integer_value(&self) -> std::option::Option<i32> {
         self.integer_value
-    }
-}
-impl std::fmt::Debug for AcceptQualificationRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptQualificationRequestInput");
-        formatter.field("qualification_request_id", &self.qualification_request_id);
-        formatter.field("integer_value", &self.integer_value);
-        formatter.finish()
     }
 }

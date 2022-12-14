@@ -4623,7 +4623,7 @@ impl UpdateContactChannelInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
     #[doc(hidden)]
@@ -4649,19 +4649,10 @@ impl UpdateContactChannelInput {
         self.delivery_address.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContactChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactChannelInput");
-        formatter.field("contact_channel_id", &self.contact_channel_id);
-        formatter.field("name", &self.name);
-        formatter.field("delivery_address", &self.delivery_address);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
     #[doc(hidden)]
@@ -4687,19 +4678,10 @@ impl UpdateContactInput {
         self.plan.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("plan", &self.plan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
@@ -4718,18 +4700,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
@@ -4748,18 +4722,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     #[doc(hidden)]
@@ -4778,18 +4744,10 @@ impl StopEngagementInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for StopEngagementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopEngagementInput");
-        formatter.field("engagement_id", &self.engagement_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
     #[doc(hidden)]
@@ -4850,24 +4808,10 @@ impl StartEngagementInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartEngagementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartEngagementInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("sender", &self.sender);
-        formatter.field("subject", &self.subject);
-        formatter.field("content", &self.content);
-        formatter.field("public_subject", &self.public_subject);
-        formatter.field("public_content", &self.public_content);
-        formatter.field("incident_id", &self.incident_id);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendActivationCodeInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
@@ -4879,17 +4823,10 @@ impl SendActivationCodeInput {
         self.contact_channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for SendActivationCodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendActivationCodeInput");
-        formatter.field("contact_channel_id", &self.contact_channel_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutContactPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
@@ -4908,18 +4845,10 @@ impl PutContactPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutContactPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutContactPolicyInput");
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
@@ -4931,17 +4860,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPagesByEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     #[doc(hidden)]
@@ -4967,19 +4889,10 @@ impl ListPagesByEngagementInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPagesByEngagementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPagesByEngagementInput");
-        formatter.field("engagement_id", &self.engagement_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPagesByContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
     #[doc(hidden)]
@@ -5005,19 +4918,10 @@ impl ListPagesByContactInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPagesByContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPagesByContactInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPageReceiptsInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
     #[doc(hidden)]
@@ -5043,19 +4947,10 @@ impl ListPageReceiptsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPageReceiptsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPageReceiptsInput");
-        formatter.field("page_id", &self.page_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEngagementsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
@@ -5088,20 +4983,10 @@ impl ListEngagementsInput {
         self.time_range_value.as_ref()
     }
 }
-impl std::fmt::Debug for ListEngagementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEngagementsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("incident_id", &self.incident_id);
-        formatter.field("time_range_value", &self.time_range_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
@@ -5134,20 +5019,10 @@ impl ListContactsInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for ListContactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("alias_prefix", &self.alias_prefix);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactChannelsInput {
     /// <p>The Amazon Resource Name (ARN) of the contact. </p>
     #[doc(hidden)]
@@ -5173,19 +5048,10 @@ impl ListContactChannelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListContactChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactChannelsInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
@@ -5197,17 +5063,10 @@ impl GetContactPolicyInput {
         self.contact_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetContactPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactPolicyInput");
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
     #[doc(hidden)]
@@ -5219,17 +5078,10 @@ impl GetContactChannelInput {
         self.contact_channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetContactChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactChannelInput");
-        formatter.field("contact_channel_id", &self.contact_channel_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
@@ -5241,17 +5093,10 @@ impl GetContactInput {
         self.contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePageInput {
     /// <p>The ID of the engagement to a contact channel.</p>
     #[doc(hidden)]
@@ -5263,17 +5108,10 @@ impl DescribePageInput {
         self.page_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePageInput");
-        formatter.field("page_id", &self.page_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     #[doc(hidden)]
@@ -5285,17 +5123,10 @@ impl DescribeEngagementInput {
         self.engagement_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEngagementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEngagementInput");
-        formatter.field("engagement_id", &self.engagement_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
@@ -5307,17 +5138,10 @@ impl DeleteContactChannelInput {
         self.contact_channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContactChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContactChannelInput");
-        formatter.field("contact_channel_id", &self.contact_channel_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
     #[doc(hidden)]
@@ -5329,17 +5153,10 @@ impl DeleteContactInput {
         self.contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContactInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
     #[doc(hidden)]
@@ -5351,17 +5168,10 @@ impl DeactivateContactChannelInput {
         self.contact_channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeactivateContactChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateContactChannelInput");
-        formatter.field("contact_channel_id", &self.contact_channel_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
     #[doc(hidden)]
@@ -5428,22 +5238,10 @@ impl CreateContactChannelInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateContactChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContactChannelInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("delivery_address", &self.delivery_address);
-        formatter.field("defer_activation", &self.defer_activation);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContactInput {
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
     #[doc(hidden)]
@@ -5490,22 +5288,10 @@ impl CreateContactInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContactInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("plan", &self.plan);
-        formatter.field("tags", &self.tags);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
@@ -5524,18 +5310,10 @@ impl ActivateContactChannelInput {
         self.activation_code.as_deref()
     }
 }
-impl std::fmt::Debug for ActivateContactChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateContactChannelInput");
-        formatter.field("contact_channel_id", &self.contact_channel_id);
-        formatter.field("activation_code", &self.activation_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptPageInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     #[doc(hidden)]
@@ -5584,17 +5362,5 @@ impl AcceptPageInput {
         &self,
     ) -> std::option::Option<&crate::model::AcceptCodeValidation> {
         self.accept_code_validation.as_ref()
-    }
-}
-impl std::fmt::Debug for AcceptPageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptPageInput");
-        formatter.field("page_id", &self.page_id);
-        formatter.field("contact_channel_id", &self.contact_channel_id);
-        formatter.field("accept_type", &self.accept_type);
-        formatter.field("note", &self.note);
-        formatter.field("accept_code", &self.accept_code);
-        formatter.field("accept_code_validation", &self.accept_code_validation);
-        formatter.finish()
     }
 }

@@ -193,7 +193,7 @@ impl CreateActivityInput {
 pub mod create_state_machine_input {
 
     /// A builder for [`CreateStateMachineInput`](crate::input::CreateStateMachineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) definition: std::option::Option<std::string::String>,
@@ -334,6 +334,19 @@ pub mod create_state_machine_input {
                 tags: self.tags,
                 tracing_configuration: self.tracing_configuration,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("definition", &"*** Sensitive Data Redacted ***");
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("logging_configuration", &self.logging_configuration);
+            formatter.field("tags", &self.tags);
+            formatter.field("tracing_configuration", &self.tracing_configuration);
+            formatter.finish()
         }
     }
 }
@@ -2364,7 +2377,7 @@ impl ListTagsForResourceInput {
 pub mod send_task_failure_input {
 
     /// A builder for [`SendTaskFailureInput`](crate::input::SendTaskFailureInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<std::string::String>,
@@ -2411,6 +2424,15 @@ pub mod send_task_failure_input {
                 error: self.error,
                 cause: self.cause,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("task_token", &self.task_token);
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2680,7 +2702,7 @@ impl SendTaskHeartbeatInput {
 pub mod send_task_success_input {
 
     /// A builder for [`SendTaskSuccessInput`](crate::input::SendTaskSuccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) output: std::option::Option<std::string::String>,
@@ -2715,6 +2737,14 @@ pub mod send_task_success_input {
                 task_token: self.task_token,
                 output: self.output,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("task_token", &self.task_token);
+            formatter.field("output", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2837,7 +2867,7 @@ impl SendTaskSuccessInput {
 pub mod start_execution_input {
 
     /// A builder for [`StartExecutionInput`](crate::input::StartExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2925,6 +2955,16 @@ pub mod start_execution_input {
                 input: self.input,
                 trace_header: self.trace_header,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("state_machine_arn", &self.state_machine_arn);
+            formatter.field("name", &self.name);
+            formatter.field("input", &"*** Sensitive Data Redacted ***");
+            formatter.field("trace_header", &self.trace_header);
+            formatter.finish()
         }
     }
 }
@@ -3047,7 +3087,7 @@ impl StartExecutionInput {
 pub mod start_sync_execution_input {
 
     /// A builder for [`StartSyncExecutionInput`](crate::input::StartSyncExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3119,6 +3159,16 @@ pub mod start_sync_execution_input {
                 input: self.input,
                 trace_header: self.trace_header,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("state_machine_arn", &self.state_machine_arn);
+            formatter.field("name", &self.name);
+            formatter.field("input", &"*** Sensitive Data Redacted ***");
+            formatter.field("trace_header", &self.trace_header);
+            formatter.finish()
         }
     }
 }
@@ -3243,7 +3293,7 @@ impl StartSyncExecutionInput {
 pub mod stop_execution_input {
 
     /// A builder for [`StopExecutionInput`](crate::input::StopExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<std::string::String>,
@@ -3293,6 +3343,15 @@ pub mod stop_execution_input {
                 error: self.error,
                 cause: self.cause,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("execution_arn", &self.execution_arn);
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3749,7 +3808,7 @@ impl UntagResourceInput {
 pub mod update_state_machine_input {
 
     /// A builder for [`UpdateStateMachineInput`](crate::input::UpdateStateMachineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) definition: std::option::Option<std::string::String>,
@@ -3831,6 +3890,17 @@ pub mod update_state_machine_input {
                 logging_configuration: self.logging_configuration,
                 tracing_configuration: self.tracing_configuration,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("state_machine_arn", &self.state_machine_arn);
+            formatter.field("definition", &"*** Sensitive Data Redacted ***");
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("logging_configuration", &self.logging_configuration);
+            formatter.field("tracing_configuration", &self.tracing_configuration);
+            formatter.finish()
         }
     }
 }
@@ -4009,7 +4079,7 @@ impl std::fmt::Debug for UpdateStateMachineInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
     #[doc(hidden)]
@@ -4028,18 +4098,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
     #[doc(hidden)]
@@ -4058,14 +4120,6 @@ impl TagResourceInput {
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -4265,7 +4319,7 @@ impl std::fmt::Debug for SendTaskSuccessInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendTaskHeartbeatInput {
     /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     #[doc(hidden)]
@@ -4275,13 +4329,6 @@ impl SendTaskHeartbeatInput {
     /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
-    }
-}
-impl std::fmt::Debug for SendTaskHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendTaskHeartbeatInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.finish()
     }
 }
 
@@ -4325,7 +4372,7 @@ impl std::fmt::Debug for SendTaskFailureInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
     #[doc(hidden)]
@@ -4337,17 +4384,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStateMachinesInput {
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
@@ -4368,18 +4408,10 @@ impl ListStateMachinesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListStateMachinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStateMachinesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     #[doc(hidden)]
@@ -4414,20 +4446,10 @@ impl ListExecutionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExecutionsInput");
-        formatter.field("state_machine_arn", &self.state_machine_arn);
-        formatter.field("status_filter", &self.status_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActivitiesInput {
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
@@ -4448,18 +4470,10 @@ impl ListActivitiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListActivitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActivitiesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExecutionHistoryInput {
     /// <p>The Amazon Resource Name (ARN) of the execution.</p>
     #[doc(hidden)]
@@ -4501,21 +4515,10 @@ impl GetExecutionHistoryInput {
         self.include_execution_data
     }
 }
-impl std::fmt::Debug for GetExecutionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExecutionHistoryInput");
-        formatter.field("execution_arn", &self.execution_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("include_execution_data", &self.include_execution_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetActivityTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
     #[doc(hidden)]
@@ -4534,18 +4537,10 @@ impl GetActivityTaskInput {
         self.worker_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetActivityTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetActivityTaskInput");
-        formatter.field("activity_arn", &self.activity_arn);
-        formatter.field("worker_name", &self.worker_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStateMachineForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
     #[doc(hidden)]
@@ -4557,17 +4552,10 @@ impl DescribeStateMachineForExecutionInput {
         self.execution_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStateMachineForExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStateMachineForExecutionInput");
-        formatter.field("execution_arn", &self.execution_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
     #[doc(hidden)]
@@ -4579,17 +4567,10 @@ impl DescribeStateMachineInput {
         self.state_machine_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStateMachineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStateMachineInput");
-        formatter.field("state_machine_arn", &self.state_machine_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
     #[doc(hidden)]
@@ -4601,17 +4582,10 @@ impl DescribeExecutionInput {
         self.execution_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExecutionInput");
-        formatter.field("execution_arn", &self.execution_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
     #[doc(hidden)]
@@ -4623,17 +4597,10 @@ impl DescribeActivityInput {
         self.activity_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeActivityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeActivityInput");
-        formatter.field("activity_arn", &self.activity_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
     #[doc(hidden)]
@@ -4645,17 +4612,10 @@ impl DeleteStateMachineInput {
         self.state_machine_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStateMachineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStateMachineInput");
-        formatter.field("state_machine_arn", &self.state_machine_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
     #[doc(hidden)]
@@ -4665,13 +4625,6 @@ impl DeleteActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
     pub fn activity_arn(&self) -> std::option::Option<&str> {
         self.activity_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteActivityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteActivityInput");
-        formatter.field("activity_arn", &self.activity_arn);
-        formatter.finish()
     }
 }
 
@@ -4777,7 +4730,7 @@ impl std::fmt::Debug for CreateStateMachineInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateActivityInput {
     /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -4816,13 +4769,5 @@ impl CreateActivityInput {
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateActivityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateActivityInput");
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

@@ -2,14 +2,8 @@
 
 /// <p>The result body of the UpdateServiceSetting API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceSettingOutput {}
-impl std::fmt::Debug for UpdateServiceSettingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceSettingOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateServiceSettingOutput`](crate::output::UpdateServiceSettingOutput).
 pub mod update_service_setting_output {
 
@@ -32,14 +26,8 @@ impl UpdateServiceSettingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceDataSyncOutput {}
-impl std::fmt::Debug for UpdateResourceDataSyncOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceDataSyncOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateResourceDataSyncOutput`](crate::output::UpdateResourceDataSyncOutput).
 pub mod update_resource_data_sync_output {
 
@@ -62,7 +50,7 @@ impl UpdateResourceDataSyncOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePatchBaselineOutput {
     /// <p>The ID of the deleted patch baseline.</p>
     #[doc(hidden)]
@@ -165,32 +153,6 @@ impl UpdatePatchBaselineOutput {
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
         self.sources.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdatePatchBaselineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePatchBaselineOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.field("name", &self.name);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("global_filters", &self.global_filters);
-        formatter.field("approval_rules", &self.approval_rules);
-        formatter.field("approved_patches", &self.approved_patches);
-        formatter.field(
-            "approved_patches_compliance_level",
-            &self.approved_patches_compliance_level,
-        );
-        formatter.field(
-            "approved_patches_enable_non_security",
-            &self.approved_patches_enable_non_security,
-        );
-        formatter.field("rejected_patches", &self.rejected_patches);
-        formatter.field("rejected_patches_action", &self.rejected_patches_action);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("modified_date", &self.modified_date);
-        formatter.field("description", &self.description);
-        formatter.field("sources", &self.sources);
-        formatter.finish()
     }
 }
 /// See [`UpdatePatchBaselineOutput`](crate::output::UpdatePatchBaselineOutput).
@@ -440,7 +402,7 @@ impl UpdatePatchBaselineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
     #[doc(hidden)]
@@ -450,13 +412,6 @@ impl UpdateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
     pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
         self.ops_metadata_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateOpsMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOpsMetadataOutput");
-        formatter.field("ops_metadata_arn", &self.ops_metadata_arn);
-        formatter.finish()
     }
 }
 /// See [`UpdateOpsMetadataOutput`](crate::output::UpdateOpsMetadataOutput).
@@ -498,14 +453,8 @@ impl UpdateOpsMetadataOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOpsItemOutput {}
-impl std::fmt::Debug for UpdateOpsItemOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOpsItemOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateOpsItemOutput`](crate::output::UpdateOpsItemOutput).
 pub mod update_ops_item_output {
 
@@ -528,14 +477,8 @@ impl UpdateOpsItemOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateManagedInstanceRoleOutput {}
-impl std::fmt::Debug for UpdateManagedInstanceRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateManagedInstanceRoleOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateManagedInstanceRoleOutput`](crate::output::UpdateManagedInstanceRoleOutput).
 pub mod update_managed_instance_role_output {
 
@@ -721,7 +664,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
 pub mod update_maintenance_window_task_output {
 
     /// A builder for [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
         pub(crate) window_task_id: std::option::Option<std::string::String>,
@@ -980,6 +923,30 @@ pub mod update_maintenance_window_task_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_id", &self.window_id);
+            formatter.field("window_task_id", &self.window_task_id);
+            formatter.field("targets", &self.targets);
+            formatter.field("task_arn", &self.task_arn);
+            formatter.field("service_role_arn", &self.service_role_arn);
+            formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "task_invocation_parameters",
+                &self.task_invocation_parameters,
+            );
+            formatter.field("priority", &self.priority);
+            formatter.field("max_concurrency", &self.max_concurrency);
+            formatter.field("max_errors", &self.max_errors);
+            formatter.field("logging_info", &self.logging_info);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("cutoff_behavior", &self.cutoff_behavior);
+            formatter.field("alarm_configuration", &self.alarm_configuration);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateMaintenanceWindowTaskOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput).
@@ -1053,7 +1020,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTargetOutput {
 pub mod update_maintenance_window_target_output {
 
     /// A builder for [`UpdateMaintenanceWindowTargetOutput`](crate::output::UpdateMaintenanceWindowTargetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
         pub(crate) window_target_id: std::option::Option<std::string::String>,
@@ -1148,6 +1115,18 @@ pub mod update_maintenance_window_target_output {
                 name: self.name,
                 description: self.description,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_id", &self.window_id);
+            formatter.field("window_target_id", &self.window_target_id);
+            formatter.field("targets", &self.targets);
+            formatter.field("owner_information", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1274,7 +1253,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowOutput {
 pub mod update_maintenance_window_output {
 
     /// A builder for [`UpdateMaintenanceWindowOutput`](crate::output::UpdateMaintenanceWindowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1431,6 +1410,27 @@ pub mod update_maintenance_window_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_id", &self.window_id);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("start_date", &self.start_date);
+            formatter.field("end_date", &self.end_date);
+            formatter.field("schedule", &self.schedule);
+            formatter.field("schedule_timezone", &self.schedule_timezone);
+            formatter.field("schedule_offset", &self.schedule_offset);
+            formatter.field("duration", &self.duration);
+            formatter.field("cutoff", &self.cutoff);
+            formatter.field(
+                "allow_unassociated_targets",
+                &self.allow_unassociated_targets,
+            );
+            formatter.field("enabled", &self.enabled);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowOutput`](crate::output::UpdateMaintenanceWindowOutput).
@@ -1441,14 +1441,8 @@ impl UpdateMaintenanceWindowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentMetadataOutput {}
-impl std::fmt::Debug for UpdateDocumentMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentMetadataOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateDocumentMetadataOutput`](crate::output::UpdateDocumentMetadataOutput).
 pub mod update_document_metadata_output {
 
@@ -1471,7 +1465,7 @@ impl UpdateDocumentMetadataOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentDefaultVersionOutput {
     /// <p>The description of a custom document that you want to set as the default version.</p>
     #[doc(hidden)]
@@ -1483,13 +1477,6 @@ impl UpdateDocumentDefaultVersionOutput {
         &self,
     ) -> std::option::Option<&crate::model::DocumentDefaultVersionDescription> {
         self.description.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateDocumentDefaultVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentDefaultVersionOutput");
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`UpdateDocumentDefaultVersionOutput`](crate::output::UpdateDocumentDefaultVersionOutput).
@@ -1535,7 +1522,7 @@ impl UpdateDocumentDefaultVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentOutput {
     /// <p>A description of the document that was updated.</p>
     #[doc(hidden)]
@@ -1545,13 +1532,6 @@ impl UpdateDocumentOutput {
     /// <p>A description of the document that was updated.</p>
     pub fn document_description(&self) -> std::option::Option<&crate::model::DocumentDescription> {
         self.document_description.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateDocumentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentOutput");
-        formatter.field("document_description", &self.document_description);
-        formatter.finish()
     }
 }
 /// See [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
@@ -1593,7 +1573,7 @@ impl UpdateDocumentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssociationStatusOutput {
     /// <p>Information about the association.</p>
     #[doc(hidden)]
@@ -1605,13 +1585,6 @@ impl UpdateAssociationStatusOutput {
         &self,
     ) -> std::option::Option<&crate::model::AssociationDescription> {
         self.association_description.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateAssociationStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssociationStatusOutput");
-        formatter.field("association_description", &self.association_description);
-        formatter.finish()
     }
 }
 /// See [`UpdateAssociationStatusOutput`](crate::output::UpdateAssociationStatusOutput).
@@ -1657,7 +1630,7 @@ impl UpdateAssociationStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssociationOutput {
     /// <p>The description of the association that was updated.</p>
     #[doc(hidden)]
@@ -1669,13 +1642,6 @@ impl UpdateAssociationOutput {
         &self,
     ) -> std::option::Option<&crate::model::AssociationDescription> {
         self.association_description.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssociationOutput");
-        formatter.field("association_description", &self.association_description);
-        formatter.finish()
     }
 }
 /// See [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput).
@@ -1721,7 +1687,7 @@ impl UpdateAssociationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnlabelParameterVersionOutput {
     /// <p>A list of all labels deleted from the parameter.</p>
     #[doc(hidden)]
@@ -1738,14 +1704,6 @@ impl UnlabelParameterVersionOutput {
     /// <p>The labels that aren't attached to the given parameter version.</p>
     pub fn invalid_labels(&self) -> std::option::Option<&[std::string::String]> {
         self.invalid_labels.as_deref()
-    }
-}
-impl std::fmt::Debug for UnlabelParameterVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnlabelParameterVersionOutput");
-        formatter.field("removed_labels", &self.removed_labels);
-        formatter.field("invalid_labels", &self.invalid_labels);
-        formatter.finish()
     }
 }
 /// See [`UnlabelParameterVersionOutput`](crate::output::UnlabelParameterVersionOutput).
@@ -1814,7 +1772,7 @@ impl UnlabelParameterVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateSessionOutput {
     /// <p>The ID of the session that has been terminated.</p>
     #[doc(hidden)]
@@ -1824,13 +1782,6 @@ impl TerminateSessionOutput {
     /// <p>The ID of the session that has been terminated.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TerminateSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateSessionOutput");
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
     }
 }
 /// See [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
@@ -1869,14 +1820,8 @@ impl TerminateSessionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopAutomationExecutionOutput {}
-impl std::fmt::Debug for StopAutomationExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopAutomationExecutionOutput");
-        formatter.finish()
-    }
-}
 /// See [`StopAutomationExecutionOutput`](crate::output::StopAutomationExecutionOutput).
 pub mod stop_automation_execution_output {
 
@@ -1899,7 +1844,7 @@ impl StopAutomationExecutionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSessionOutput {
     /// <p>The ID of the session.</p>
     #[doc(hidden)]
@@ -1927,15 +1872,6 @@ impl StartSessionOutput {
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn stream_url(&self) -> std::option::Option<&str> {
         self.stream_url.as_deref()
-    }
-}
-impl std::fmt::Debug for StartSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSessionOutput");
-        formatter.field("session_id", &self.session_id);
-        formatter.field("token_value", &self.token_value);
-        formatter.field("stream_url", &self.stream_url);
-        formatter.finish()
     }
 }
 /// See [`StartSessionOutput`](crate::output::StartSessionOutput).
@@ -2002,7 +1938,7 @@ impl StartSessionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChangeRequestExecutionOutput {
     /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     #[doc(hidden)]
@@ -2012,13 +1948,6 @@ impl StartChangeRequestExecutionOutput {
     /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     pub fn automation_execution_id(&self) -> std::option::Option<&str> {
         self.automation_execution_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartChangeRequestExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChangeRequestExecutionOutput");
-        formatter.field("automation_execution_id", &self.automation_execution_id);
-        formatter.finish()
     }
 }
 /// See [`StartChangeRequestExecutionOutput`](crate::output::StartChangeRequestExecutionOutput).
@@ -2060,7 +1989,7 @@ impl StartChangeRequestExecutionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAutomationExecutionOutput {
     /// <p>The unique ID of a newly scheduled automation execution.</p>
     #[doc(hidden)]
@@ -2070,13 +1999,6 @@ impl StartAutomationExecutionOutput {
     /// <p>The unique ID of a newly scheduled automation execution.</p>
     pub fn automation_execution_id(&self) -> std::option::Option<&str> {
         self.automation_execution_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartAutomationExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAutomationExecutionOutput");
-        formatter.field("automation_execution_id", &self.automation_execution_id);
-        formatter.finish()
     }
 }
 /// See [`StartAutomationExecutionOutput`](crate::output::StartAutomationExecutionOutput).
@@ -2118,14 +2040,8 @@ impl StartAutomationExecutionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAssociationsOnceOutput {}
-impl std::fmt::Debug for StartAssociationsOnceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAssociationsOnceOutput");
-        formatter.finish()
-    }
-}
 /// See [`StartAssociationsOnceOutput`](crate::output::StartAssociationsOnceOutput).
 pub mod start_associations_once_output {
 
@@ -2148,7 +2064,7 @@ impl StartAssociationsOnceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendCommandOutput {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     #[doc(hidden)]
@@ -2158,13 +2074,6 @@ impl SendCommandOutput {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     pub fn command(&self) -> std::option::Option<&crate::model::Command> {
         self.command.as_ref()
-    }
-}
-impl std::fmt::Debug for SendCommandOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendCommandOutput");
-        formatter.field("command", &self.command);
-        formatter.finish()
     }
 }
 /// See [`SendCommandOutput`](crate::output::SendCommandOutput).
@@ -2203,14 +2112,8 @@ impl SendCommandOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendAutomationSignalOutput {}
-impl std::fmt::Debug for SendAutomationSignalOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendAutomationSignalOutput");
-        formatter.finish()
-    }
-}
 /// See [`SendAutomationSignalOutput`](crate::output::SendAutomationSignalOutput).
 pub mod send_automation_signal_output {
 
@@ -2233,7 +2136,7 @@ impl SendAutomationSignalOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeSessionOutput {
     /// <p>The ID of the session.</p>
     #[doc(hidden)]
@@ -2261,15 +2164,6 @@ impl ResumeSessionOutput {
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn stream_url(&self) -> std::option::Option<&str> {
         self.stream_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ResumeSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeSessionOutput");
-        formatter.field("session_id", &self.session_id);
-        formatter.field("token_value", &self.token_value);
-        formatter.field("stream_url", &self.stream_url);
-        formatter.finish()
     }
 }
 /// See [`ResumeSessionOutput`](crate::output::ResumeSessionOutput).
@@ -2336,7 +2230,7 @@ impl ResumeSessionOutput {
 
 /// <p>The result body of the ResetServiceSetting API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     #[doc(hidden)]
@@ -2346,13 +2240,6 @@ impl ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     pub fn service_setting(&self) -> std::option::Option<&crate::model::ServiceSetting> {
         self.service_setting.as_ref()
-    }
-}
-impl std::fmt::Debug for ResetServiceSettingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetServiceSettingOutput");
-        formatter.field("service_setting", &self.service_setting);
-        formatter.finish()
     }
 }
 /// See [`ResetServiceSettingOutput`](crate::output::ResetServiceSettingOutput).
@@ -2394,14 +2281,8 @@ impl ResetServiceSettingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceOutput {}
-impl std::fmt::Debug for RemoveTagsFromResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
 
@@ -2424,7 +2305,7 @@ impl RemoveTagsFromResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterTaskWithMaintenanceWindowOutput {
     /// <p>The ID of the task in the maintenance window.</p>
     #[doc(hidden)]
@@ -2434,13 +2315,6 @@ impl RegisterTaskWithMaintenanceWindowOutput {
     /// <p>The ID of the task in the maintenance window.</p>
     pub fn window_task_id(&self) -> std::option::Option<&str> {
         self.window_task_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisterTaskWithMaintenanceWindowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterTaskWithMaintenanceWindowOutput");
-        formatter.field("window_task_id", &self.window_task_id);
-        formatter.finish()
     }
 }
 /// See [`RegisterTaskWithMaintenanceWindowOutput`](crate::output::RegisterTaskWithMaintenanceWindowOutput).
@@ -2482,7 +2356,7 @@ impl RegisterTaskWithMaintenanceWindowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterTargetWithMaintenanceWindowOutput {
     /// <p>The ID of the target definition in this maintenance window.</p>
     #[doc(hidden)]
@@ -2492,13 +2366,6 @@ impl RegisterTargetWithMaintenanceWindowOutput {
     /// <p>The ID of the target definition in this maintenance window.</p>
     pub fn window_target_id(&self) -> std::option::Option<&str> {
         self.window_target_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisterTargetWithMaintenanceWindowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterTargetWithMaintenanceWindowOutput");
-        formatter.field("window_target_id", &self.window_target_id);
-        formatter.finish()
     }
 }
 /// See [`RegisterTargetWithMaintenanceWindowOutput`](crate::output::RegisterTargetWithMaintenanceWindowOutput).
@@ -2540,7 +2407,7 @@ impl RegisterTargetWithMaintenanceWindowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline the patch group was registered with.</p>
     #[doc(hidden)]
@@ -2557,14 +2424,6 @@ impl RegisterPatchBaselineForPatchGroupOutput {
     /// <p>The name of the patch group registered with the patch baseline.</p>
     pub fn patch_group(&self) -> std::option::Option<&str> {
         self.patch_group.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisterPatchBaselineForPatchGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterPatchBaselineForPatchGroupOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.field("patch_group", &self.patch_group);
-        formatter.finish()
     }
 }
 /// See [`RegisterPatchBaselineForPatchGroupOutput`](crate::output::RegisterPatchBaselineForPatchGroupOutput).
@@ -2615,7 +2474,7 @@ impl RegisterPatchBaselineForPatchGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
     #[doc(hidden)]
@@ -2625,13 +2484,6 @@ impl RegisterDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
     pub fn baseline_id(&self) -> std::option::Option<&str> {
         self.baseline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisterDefaultPatchBaselineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterDefaultPatchBaselineOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.finish()
     }
 }
 /// See [`RegisterDefaultPatchBaselineOutput`](crate::output::RegisterDefaultPatchBaselineOutput).
@@ -2670,7 +2522,7 @@ impl RegisterDefaultPatchBaselineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutParameterOutput {
     /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
     #[doc(hidden)]
@@ -2687,14 +2539,6 @@ impl PutParameterOutput {
     /// <p>The tier assigned to the parameter.</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::ParameterTier> {
         self.tier.as_ref()
-    }
-}
-impl std::fmt::Debug for PutParameterOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutParameterOutput");
-        formatter.field("version", &self.version);
-        formatter.field("tier", &self.tier);
-        formatter.finish()
     }
 }
 /// See [`PutParameterOutput`](crate::output::PutParameterOutput).
@@ -2745,7 +2589,7 @@ impl PutParameterOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutInventoryOutput {
     /// <p>Information about the request.</p>
     #[doc(hidden)]
@@ -2755,13 +2599,6 @@ impl PutInventoryOutput {
     /// <p>Information about the request.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for PutInventoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutInventoryOutput");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`PutInventoryOutput`](crate::output::PutInventoryOutput).
@@ -2800,14 +2637,8 @@ impl PutInventoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutComplianceItemsOutput {}
-impl std::fmt::Debug for PutComplianceItemsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutComplianceItemsOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutComplianceItemsOutput`](crate::output::PutComplianceItemsOutput).
 pub mod put_compliance_items_output {
 
@@ -2830,14 +2661,8 @@ impl PutComplianceItemsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDocumentPermissionOutput {}
-impl std::fmt::Debug for ModifyDocumentPermissionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDocumentPermissionOutput");
-        formatter.finish()
-    }
-}
 /// See [`ModifyDocumentPermissionOutput`](crate::output::ModifyDocumentPermissionOutput).
 pub mod modify_document_permission_output {
 
@@ -2860,7 +2685,7 @@ impl ModifyDocumentPermissionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags.</p>
     #[doc(hidden)]
@@ -2870,13 +2695,6 @@ impl ListTagsForResourceOutput {
     /// <p>A list of tags.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2924,7 +2742,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceDataSyncOutput {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
     #[doc(hidden)]
@@ -2944,14 +2762,6 @@ impl ListResourceDataSyncOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListResourceDataSyncOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceDataSyncOutput");
-        formatter.field("resource_data_sync_items", &self.resource_data_sync_items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListResourceDataSyncOutput`](crate::output::ListResourceDataSyncOutput).
@@ -3015,7 +2825,7 @@ impl ListResourceDataSyncOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceComplianceSummariesOutput {
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     #[doc(hidden)]
@@ -3035,17 +2845,6 @@ impl ListResourceComplianceSummariesOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListResourceComplianceSummariesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceComplianceSummariesOutput");
-        formatter.field(
-            "resource_compliance_summary_items",
-            &self.resource_compliance_summary_items,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListResourceComplianceSummariesOutput`](crate::output::ListResourceComplianceSummariesOutput).
@@ -3109,7 +2908,7 @@ impl ListResourceComplianceSummariesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOpsMetadataOutput {
     /// <p>Returns a list of OpsMetadata objects.</p>
     #[doc(hidden)]
@@ -3126,14 +2925,6 @@ impl ListOpsMetadataOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListOpsMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpsMetadataOutput");
-        formatter.field("ops_metadata_list", &self.ops_metadata_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListOpsMetadataOutput`](crate::output::ListOpsMetadataOutput).
@@ -3193,7 +2984,7 @@ impl ListOpsMetadataOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOpsItemRelatedItemsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
@@ -3210,14 +3001,6 @@ impl ListOpsItemRelatedItemsOutput {
     /// <p>A list of related-item resources for the specified OpsItem.</p>
     pub fn summaries(&self) -> std::option::Option<&[crate::model::OpsItemRelatedItemSummary]> {
         self.summaries.as_deref()
-    }
-}
-impl std::fmt::Debug for ListOpsItemRelatedItemsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpsItemRelatedItemsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("summaries", &self.summaries);
-        formatter.finish()
     }
 }
 /// See [`ListOpsItemRelatedItemsOutput`](crate::output::ListOpsItemRelatedItemsOutput).
@@ -3278,7 +3061,7 @@ impl ListOpsItemRelatedItemsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOpsItemEventsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
     #[doc(hidden)]
@@ -3295,14 +3078,6 @@ impl ListOpsItemEventsOutput {
     /// <p>A list of event information for the specified OpsItems.</p>
     pub fn summaries(&self) -> std::option::Option<&[crate::model::OpsItemEventSummary]> {
         self.summaries.as_deref()
-    }
-}
-impl std::fmt::Debug for ListOpsItemEventsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpsItemEventsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("summaries", &self.summaries);
-        formatter.finish()
     }
 }
 /// See [`ListOpsItemEventsOutput`](crate::output::ListOpsItemEventsOutput).
@@ -3362,7 +3137,7 @@ impl ListOpsItemEventsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInventoryEntriesOutput {
     /// <p>The type of inventory item returned by the request.</p>
     #[doc(hidden)]
@@ -3412,18 +3187,6 @@ impl ListInventoryEntriesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInventoryEntriesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInventoryEntriesOutput");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("capture_time", &self.capture_time);
-        formatter.field("entries", &self.entries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListInventoryEntriesOutput`](crate::output::ListInventoryEntriesOutput).
@@ -3541,7 +3304,7 @@ impl ListInventoryEntriesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDocumentVersionsOutput {
     /// <p>The document versions.</p>
     #[doc(hidden)]
@@ -3558,14 +3321,6 @@ impl ListDocumentVersionsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDocumentVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDocumentVersionsOutput");
-        formatter.field("document_versions", &self.document_versions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDocumentVersionsOutput`](crate::output::ListDocumentVersionsOutput).
@@ -3626,7 +3381,7 @@ impl ListDocumentVersionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDocumentsOutput {
     /// <p>The names of the SSM documents.</p>
     #[doc(hidden)]
@@ -3643,14 +3398,6 @@ impl ListDocumentsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDocumentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDocumentsOutput");
-        formatter.field("document_identifiers", &self.document_identifiers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDocumentsOutput`](crate::output::ListDocumentsOutput).
@@ -3711,7 +3458,7 @@ impl ListDocumentsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDocumentMetadataHistoryOutput {
     /// <p>The name of the change template.</p>
     #[doc(hidden)]
@@ -3749,17 +3496,6 @@ impl ListDocumentMetadataHistoryOutput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDocumentMetadataHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDocumentMetadataHistoryOutput");
-        formatter.field("name", &self.name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("author", &self.author);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDocumentMetadataHistoryOutput`](crate::output::ListDocumentMetadataHistoryOutput).
@@ -3852,7 +3588,7 @@ impl ListDocumentMetadataHistoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComplianceSummariesOutput {
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
     #[doc(hidden)]
@@ -3872,14 +3608,6 @@ impl ListComplianceSummariesOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListComplianceSummariesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComplianceSummariesOutput");
-        formatter.field("compliance_summary_items", &self.compliance_summary_items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListComplianceSummariesOutput`](crate::output::ListComplianceSummariesOutput).
@@ -3943,7 +3671,7 @@ impl ListComplianceSummariesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComplianceItemsOutput {
     /// <p>A list of compliance information for the specified resource ID. </p>
     #[doc(hidden)]
@@ -3960,14 +3688,6 @@ impl ListComplianceItemsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListComplianceItemsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComplianceItemsOutput");
-        formatter.field("compliance_items", &self.compliance_items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListComplianceItemsOutput`](crate::output::ListComplianceItemsOutput).
@@ -4028,7 +3748,7 @@ impl ListComplianceItemsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCommandsOutput {
     /// <p>(Optional) The list of commands requested by the user. </p>
     #[doc(hidden)]
@@ -4045,14 +3765,6 @@ impl ListCommandsOutput {
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListCommandsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCommandsOutput");
-        formatter.field("commands", &self.commands);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListCommandsOutput`](crate::output::ListCommandsOutput).
@@ -4112,7 +3824,7 @@ impl ListCommandsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCommandInvocationsOutput {
     /// <p>(Optional) A list of all invocations. </p>
     #[doc(hidden)]
@@ -4129,14 +3841,6 @@ impl ListCommandInvocationsOutput {
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListCommandInvocationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCommandInvocationsOutput");
-        formatter.field("command_invocations", &self.command_invocations);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListCommandInvocationsOutput`](crate::output::ListCommandInvocationsOutput).
@@ -4197,7 +3901,7 @@ impl ListCommandInvocationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
     #[doc(hidden)]
@@ -4217,14 +3921,6 @@ impl ListAssociationVersionsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAssociationVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociationVersionsOutput");
-        formatter.field("association_versions", &self.association_versions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListAssociationVersionsOutput`](crate::output::ListAssociationVersionsOutput).
@@ -4285,7 +3981,7 @@ impl ListAssociationVersionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociationsOutput {
     /// <p>The associations.</p>
     #[doc(hidden)]
@@ -4302,14 +3998,6 @@ impl ListAssociationsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAssociationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociationsOutput");
-        formatter.field("associations", &self.associations);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListAssociationsOutput`](crate::output::ListAssociationsOutput).
@@ -4369,7 +4057,7 @@ impl ListAssociationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelParameterVersionOutput {
     /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
@@ -4386,14 +4074,6 @@ impl LabelParameterVersionOutput {
     /// <p>The version of the parameter that has been labeled.</p>
     pub fn parameter_version(&self) -> i64 {
         self.parameter_version
-    }
-}
-impl std::fmt::Debug for LabelParameterVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelParameterVersionOutput");
-        formatter.field("invalid_labels", &self.invalid_labels);
-        formatter.field("parameter_version", &self.parameter_version);
-        formatter.finish()
     }
 }
 /// See [`LabelParameterVersionOutput`](crate::output::LabelParameterVersionOutput).
@@ -4453,7 +4133,7 @@ impl LabelParameterVersionOutput {
 
 /// <p>The query result body of the GetServiceSetting API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
     #[doc(hidden)]
@@ -4463,13 +4143,6 @@ impl GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
     pub fn service_setting(&self) -> std::option::Option<&crate::model::ServiceSetting> {
         self.service_setting.as_ref()
-    }
-}
-impl std::fmt::Debug for GetServiceSettingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceSettingOutput");
-        formatter.field("service_setting", &self.service_setting);
-        formatter.finish()
     }
 }
 /// See [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput).
@@ -4511,7 +4184,7 @@ impl GetServiceSettingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline that should be used for the patch group.</p>
     #[doc(hidden)]
@@ -4535,15 +4208,6 @@ impl GetPatchBaselineForPatchGroupOutput {
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
     pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
         self.operating_system.as_ref()
-    }
-}
-impl std::fmt::Debug for GetPatchBaselineForPatchGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPatchBaselineForPatchGroupOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.field("patch_group", &self.patch_group);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.finish()
     }
 }
 /// See [`GetPatchBaselineForPatchGroupOutput`](crate::output::GetPatchBaselineForPatchGroupOutput).
@@ -4609,7 +4273,7 @@ impl GetPatchBaselineForPatchGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPatchBaselineOutput {
     /// <p>The ID of the retrieved patch baseline.</p>
     #[doc(hidden)]
@@ -4719,33 +4383,6 @@ impl GetPatchBaselineOutput {
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
         self.sources.as_deref()
-    }
-}
-impl std::fmt::Debug for GetPatchBaselineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPatchBaselineOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.field("name", &self.name);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("global_filters", &self.global_filters);
-        formatter.field("approval_rules", &self.approval_rules);
-        formatter.field("approved_patches", &self.approved_patches);
-        formatter.field(
-            "approved_patches_compliance_level",
-            &self.approved_patches_compliance_level,
-        );
-        formatter.field(
-            "approved_patches_enable_non_security",
-            &self.approved_patches_enable_non_security,
-        );
-        formatter.field("rejected_patches", &self.rejected_patches);
-        formatter.field("rejected_patches_action", &self.rejected_patches_action);
-        formatter.field("patch_groups", &self.patch_groups);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("modified_date", &self.modified_date);
-        formatter.field("description", &self.description);
-        formatter.field("sources", &self.sources);
-        formatter.finish()
     }
 }
 /// See [`GetPatchBaselineOutput`](crate::output::GetPatchBaselineOutput).
@@ -5016,7 +4653,7 @@ impl GetPatchBaselineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetParametersByPathOutput {
     /// <p>A list of parameters found in the specified hierarchy.</p>
     #[doc(hidden)]
@@ -5033,14 +4670,6 @@ impl GetParametersByPathOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetParametersByPathOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetParametersByPathOutput");
-        formatter.field("parameters", &self.parameters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetParametersByPathOutput`](crate::output::GetParametersByPathOutput).
@@ -5100,7 +4729,7 @@ impl GetParametersByPathOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetParametersOutput {
     /// <p>A list of details for a parameter.</p>
     #[doc(hidden)]
@@ -5117,14 +4746,6 @@ impl GetParametersOutput {
     /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
     pub fn invalid_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.invalid_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for GetParametersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetParametersOutput");
-        formatter.field("parameters", &self.parameters);
-        formatter.field("invalid_parameters", &self.invalid_parameters);
-        formatter.finish()
     }
 }
 /// See [`GetParametersOutput`](crate::output::GetParametersOutput).
@@ -5193,7 +4814,7 @@ impl GetParametersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetParameterHistoryOutput {
     /// <p>A list of parameters returned by the request.</p>
     #[doc(hidden)]
@@ -5210,14 +4831,6 @@ impl GetParameterHistoryOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetParameterHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetParameterHistoryOutput");
-        formatter.field("parameters", &self.parameters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetParameterHistoryOutput`](crate::output::GetParameterHistoryOutput).
@@ -5277,7 +4890,7 @@ impl GetParameterHistoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetParameterOutput {
     /// <p>Information about a parameter.</p>
     #[doc(hidden)]
@@ -5287,13 +4900,6 @@ impl GetParameterOutput {
     /// <p>Information about a parameter.</p>
     pub fn parameter(&self) -> std::option::Option<&crate::model::Parameter> {
         self.parameter.as_ref()
-    }
-}
-impl std::fmt::Debug for GetParameterOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetParameterOutput");
-        formatter.field("parameter", &self.parameter);
-        formatter.finish()
     }
 }
 /// See [`GetParameterOutput`](crate::output::GetParameterOutput).
@@ -5335,7 +4941,7 @@ impl GetParameterOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOpsSummaryOutput {
     /// <p>The list of aggregated details and filtered OpsData.</p>
     #[doc(hidden)]
@@ -5352,14 +4958,6 @@ impl GetOpsSummaryOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetOpsSummaryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpsSummaryOutput");
-        formatter.field("entities", &self.entities);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetOpsSummaryOutput`](crate::output::GetOpsSummaryOutput).
@@ -5419,7 +5017,7 @@ impl GetOpsSummaryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOpsMetadataOutput {
     /// <p>The resource ID of the Application Manager application.</p>
     #[doc(hidden)]
@@ -5449,15 +5047,6 @@ impl GetOpsMetadataOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetOpsMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpsMetadataOutput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetOpsMetadataOutput`](crate::output::GetOpsMetadataOutput).
@@ -5537,7 +5126,7 @@ impl GetOpsMetadataOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOpsItemOutput {
     /// <p>The OpsItem.</p>
     #[doc(hidden)]
@@ -5547,13 +5136,6 @@ impl GetOpsItemOutput {
     /// <p>The OpsItem.</p>
     pub fn ops_item(&self) -> std::option::Option<&crate::model::OpsItem> {
         self.ops_item.as_ref()
-    }
-}
-impl std::fmt::Debug for GetOpsItemOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpsItemOutput");
-        formatter.field("ops_item", &self.ops_item);
-        formatter.finish()
     }
 }
 /// See [`GetOpsItemOutput`](crate::output::GetOpsItemOutput).
@@ -5771,7 +5353,7 @@ impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
 pub mod get_maintenance_window_task_output {
 
     /// A builder for [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
         pub(crate) window_task_id: std::option::Option<std::string::String>,
@@ -6053,6 +5635,31 @@ pub mod get_maintenance_window_task_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_id", &self.window_id);
+            formatter.field("window_task_id", &self.window_task_id);
+            formatter.field("targets", &self.targets);
+            formatter.field("task_arn", &self.task_arn);
+            formatter.field("service_role_arn", &self.service_role_arn);
+            formatter.field("task_type", &self.task_type);
+            formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "task_invocation_parameters",
+                &self.task_invocation_parameters,
+            );
+            formatter.field("priority", &self.priority);
+            formatter.field("max_concurrency", &self.max_concurrency);
+            formatter.field("max_errors", &self.max_errors);
+            formatter.field("logging_info", &self.logging_info);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("cutoff_behavior", &self.cutoff_behavior);
+            formatter.field("alarm_configuration", &self.alarm_configuration);
+            formatter.finish()
+        }
+    }
 }
 impl GetMaintenanceWindowTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput).
@@ -6174,7 +5781,7 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskInvocationOutput {
 pub mod get_maintenance_window_execution_task_invocation_output {
 
     /// A builder for [`GetMaintenanceWindowExecutionTaskInvocationOutput`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
         pub(crate) task_execution_id: std::option::Option<std::string::String>,
@@ -6358,6 +5965,24 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_execution_id", &self.window_execution_id);
+            formatter.field("task_execution_id", &self.task_execution_id);
+            formatter.field("invocation_id", &self.invocation_id);
+            formatter.field("execution_id", &self.execution_id);
+            formatter.field("task_type", &self.task_type);
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("status_details", &self.status_details);
+            formatter.field("start_time", &self.start_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("owner_information", &"*** Sensitive Data Redacted ***");
+            formatter.field("window_target_id", &self.window_target_id);
+            formatter.finish()
+        }
+    }
 }
 impl GetMaintenanceWindowExecutionTaskInvocationOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionTaskInvocationOutput`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput).
@@ -6532,7 +6157,7 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {
 pub mod get_maintenance_window_execution_task_output {
 
     /// A builder for [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
         pub(crate) task_execution_id: std::option::Option<std::string::String>,
@@ -6802,6 +6427,27 @@ pub mod get_maintenance_window_execution_task_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_execution_id", &self.window_execution_id);
+            formatter.field("task_execution_id", &self.task_execution_id);
+            formatter.field("task_arn", &self.task_arn);
+            formatter.field("service_role", &self.service_role);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("priority", &self.priority);
+            formatter.field("max_concurrency", &self.max_concurrency);
+            formatter.field("max_errors", &self.max_errors);
+            formatter.field("status", &self.status);
+            formatter.field("status_details", &self.status_details);
+            formatter.field("start_time", &self.start_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("alarm_configuration", &self.alarm_configuration);
+            formatter.field("triggered_alarms", &self.triggered_alarms);
+            formatter.finish()
+        }
+    }
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput).
@@ -6812,7 +6458,7 @@ impl GetMaintenanceWindowExecutionTaskOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution.</p>
     #[doc(hidden)]
@@ -6857,18 +6503,6 @@ impl GetMaintenanceWindowExecutionOutput {
     /// <p>The time the maintenance window finished running.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for GetMaintenanceWindowExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionOutput");
-        formatter.field("window_execution_id", &self.window_execution_id);
-        formatter.field("task_ids", &self.task_ids);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`GetMaintenanceWindowExecutionOutput`](crate::output::GetMaintenanceWindowExecutionOutput).
@@ -7129,7 +6763,7 @@ impl std::fmt::Debug for GetMaintenanceWindowOutput {
 pub mod get_maintenance_window_output {
 
     /// A builder for [`GetMaintenanceWindowOutput`](crate::output::GetMaintenanceWindowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7331,6 +6965,30 @@ pub mod get_maintenance_window_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_id", &self.window_id);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("start_date", &self.start_date);
+            formatter.field("end_date", &self.end_date);
+            formatter.field("schedule", &self.schedule);
+            formatter.field("schedule_timezone", &self.schedule_timezone);
+            formatter.field("schedule_offset", &self.schedule_offset);
+            formatter.field("next_execution_time", &self.next_execution_time);
+            formatter.field("duration", &self.duration);
+            formatter.field("cutoff", &self.cutoff);
+            formatter.field(
+                "allow_unassociated_targets",
+                &self.allow_unassociated_targets,
+            );
+            formatter.field("enabled", &self.enabled);
+            formatter.field("created_date", &self.created_date);
+            formatter.field("modified_date", &self.modified_date);
+            formatter.finish()
+        }
+    }
 }
 impl GetMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowOutput`](crate::output::GetMaintenanceWindowOutput).
@@ -7341,7 +6999,7 @@ impl GetMaintenanceWindowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInventorySchemaOutput {
     /// <p>Inventory schemas returned by the request.</p>
     #[doc(hidden)]
@@ -7358,14 +7016,6 @@ impl GetInventorySchemaOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetInventorySchemaOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInventorySchemaOutput");
-        formatter.field("schemas", &self.schemas);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetInventorySchemaOutput`](crate::output::GetInventorySchemaOutput).
@@ -7425,7 +7075,7 @@ impl GetInventorySchemaOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInventoryOutput {
     /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
     #[doc(hidden)]
@@ -7442,14 +7092,6 @@ impl GetInventoryOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetInventoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInventoryOutput");
-        formatter.field("entities", &self.entities);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetInventoryOutput`](crate::output::GetInventoryOutput).
@@ -7510,7 +7152,7 @@ impl GetInventoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentOutput {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
@@ -7608,25 +7250,6 @@ impl GetDocumentOutput {
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
     pub fn review_status(&self) -> std::option::Option<&crate::model::ReviewStatus> {
         self.review_status.as_ref()
-    }
-}
-impl std::fmt::Debug for GetDocumentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentOutput");
-        formatter.field("name", &self.name);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("status", &self.status);
-        formatter.field("status_information", &self.status_information);
-        formatter.field("content", &self.content);
-        formatter.field("document_type", &self.document_type);
-        formatter.field("document_format", &self.document_format);
-        formatter.field("requires", &self.requires);
-        formatter.field("attachments_content", &self.attachments_content);
-        formatter.field("review_status", &self.review_status);
-        formatter.finish()
     }
 }
 /// See [`GetDocumentOutput`](crate::output::GetDocumentOutput).
@@ -7853,7 +7476,7 @@ impl GetDocumentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeployablePatchSnapshotForInstanceOutput {
     /// <p>The managed node ID.</p>
     #[doc(hidden)]
@@ -7884,16 +7507,6 @@ impl GetDeployablePatchSnapshotForInstanceOutput {
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
     pub fn product(&self) -> std::option::Option<&str> {
         self.product.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDeployablePatchSnapshotForInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeployablePatchSnapshotForInstanceOutput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("snapshot_download_url", &self.snapshot_download_url);
-        formatter.field("product", &self.product);
-        formatter.finish()
     }
 }
 /// See [`GetDeployablePatchSnapshotForInstanceOutput`](crate::output::GetDeployablePatchSnapshotForInstanceOutput).
@@ -7971,7 +7584,7 @@ impl GetDeployablePatchSnapshotForInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
     #[doc(hidden)]
@@ -7988,14 +7601,6 @@ impl GetDefaultPatchBaselineOutput {
     /// <p>The operating system for the returned patch baseline. </p>
     pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
         self.operating_system.as_ref()
-    }
-}
-impl std::fmt::Debug for GetDefaultPatchBaselineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDefaultPatchBaselineOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.finish()
     }
 }
 /// See [`GetDefaultPatchBaselineOutput`](crate::output::GetDefaultPatchBaselineOutput).
@@ -8049,7 +7654,7 @@ impl GetDefaultPatchBaselineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectionStatusOutput {
     /// <p>The ID of the managed node to check connection status. </p>
     #[doc(hidden)]
@@ -8066,14 +7671,6 @@ impl GetConnectionStatusOutput {
     /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for GetConnectionStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectionStatusOutput");
-        formatter.field("target", &self.target);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`GetConnectionStatusOutput`](crate::output::GetConnectionStatusOutput).
@@ -8127,7 +7724,7 @@ impl GetConnectionStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCommandInvocationOutput {
     /// <p>The parent command ID of the invocation plugin.</p>
     #[doc(hidden)]
@@ -8283,29 +7880,6 @@ impl GetCommandInvocationOutput {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
-    }
-}
-impl std::fmt::Debug for GetCommandInvocationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCommandInvocationOutput");
-        formatter.field("command_id", &self.command_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("comment", &self.comment);
-        formatter.field("document_name", &self.document_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("plugin_name", &self.plugin_name);
-        formatter.field("response_code", &self.response_code);
-        formatter.field("execution_start_date_time", &self.execution_start_date_time);
-        formatter.field("execution_elapsed_time", &self.execution_elapsed_time);
-        formatter.field("execution_end_date_time", &self.execution_end_date_time);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("standard_output_content", &self.standard_output_content);
-        formatter.field("standard_output_url", &self.standard_output_url);
-        formatter.field("standard_error_content", &self.standard_error_content);
-        formatter.field("standard_error_url", &self.standard_error_url);
-        formatter.field("cloud_watch_output_config", &self.cloud_watch_output_config);
-        formatter.finish()
     }
 }
 /// See [`GetCommandInvocationOutput`](crate::output::GetCommandInvocationOutput).
@@ -8608,7 +8182,7 @@ impl GetCommandInvocationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCalendarStateOutput {
     /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
     #[doc(hidden)]
@@ -8632,15 +8206,6 @@ impl GetCalendarStateOutput {
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
     pub fn next_transition_time(&self) -> std::option::Option<&str> {
         self.next_transition_time.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCalendarStateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCalendarStateOutput");
-        formatter.field("state", &self.state);
-        formatter.field("at_time", &self.at_time);
-        formatter.field("next_transition_time", &self.next_transition_time);
-        formatter.finish()
     }
 }
 /// See [`GetCalendarStateOutput`](crate::output::GetCalendarStateOutput).
@@ -8709,7 +8274,7 @@ impl GetCalendarStateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAutomationExecutionOutput {
     /// <p>Detailed information about the current state of an automation execution.</p>
     #[doc(hidden)]
@@ -8719,13 +8284,6 @@ impl GetAutomationExecutionOutput {
     /// <p>Detailed information about the current state of an automation execution.</p>
     pub fn automation_execution(&self) -> std::option::Option<&crate::model::AutomationExecution> {
         self.automation_execution.as_ref()
-    }
-}
-impl std::fmt::Debug for GetAutomationExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAutomationExecutionOutput");
-        formatter.field("automation_execution", &self.automation_execution);
-        formatter.finish()
     }
 }
 /// See [`GetAutomationExecutionOutput`](crate::output::GetAutomationExecutionOutput).
@@ -8767,14 +8325,8 @@ impl GetAutomationExecutionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItemOutput {}
-impl std::fmt::Debug for DisassociateOpsItemRelatedItemOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateOpsItemRelatedItemOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisassociateOpsItemRelatedItemOutput`](crate::output::DisassociateOpsItemRelatedItemOutput).
 pub mod disassociate_ops_item_related_item_output {
 
@@ -8797,7 +8349,7 @@ impl DisassociateOpsItemRelatedItemOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSessionsOutput {
     /// <p>A list of sessions meeting the request parameters.</p>
     #[doc(hidden)]
@@ -8814,14 +8366,6 @@ impl DescribeSessionsOutput {
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeSessionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSessionsOutput");
-        formatter.field("sessions", &self.sessions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput).
@@ -8881,7 +8425,7 @@ impl DescribeSessionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePatchPropertiesOutput {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
     #[doc(hidden)]
@@ -8903,14 +8447,6 @@ impl DescribePatchPropertiesOutput {
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribePatchPropertiesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePatchPropertiesOutput");
-        formatter.field("properties", &self.properties);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribePatchPropertiesOutput`](crate::output::DescribePatchPropertiesOutput).
@@ -8977,7 +8513,7 @@ impl DescribePatchPropertiesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePatchGroupStateOutput {
     /// <p>The number of managed nodes in the patch group.</p>
     #[doc(hidden)]
@@ -9068,57 +8604,6 @@ impl DescribePatchGroupStateOutput {
     /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_other_non_compliant_patches(&self) -> std::option::Option<i32> {
         self.instances_with_other_non_compliant_patches
-    }
-}
-impl std::fmt::Debug for DescribePatchGroupStateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePatchGroupStateOutput");
-        formatter.field("instances", &self.instances);
-        formatter.field(
-            "instances_with_installed_patches",
-            &self.instances_with_installed_patches,
-        );
-        formatter.field(
-            "instances_with_installed_other_patches",
-            &self.instances_with_installed_other_patches,
-        );
-        formatter.field(
-            "instances_with_installed_pending_reboot_patches",
-            &self.instances_with_installed_pending_reboot_patches,
-        );
-        formatter.field(
-            "instances_with_installed_rejected_patches",
-            &self.instances_with_installed_rejected_patches,
-        );
-        formatter.field(
-            "instances_with_missing_patches",
-            &self.instances_with_missing_patches,
-        );
-        formatter.field(
-            "instances_with_failed_patches",
-            &self.instances_with_failed_patches,
-        );
-        formatter.field(
-            "instances_with_not_applicable_patches",
-            &self.instances_with_not_applicable_patches,
-        );
-        formatter.field(
-            "instances_with_unreported_not_applicable_patches",
-            &self.instances_with_unreported_not_applicable_patches,
-        );
-        formatter.field(
-            "instances_with_critical_non_compliant_patches",
-            &self.instances_with_critical_non_compliant_patches,
-        );
-        formatter.field(
-            "instances_with_security_non_compliant_patches",
-            &self.instances_with_security_non_compliant_patches,
-        );
-        formatter.field(
-            "instances_with_other_non_compliant_patches",
-            &self.instances_with_other_non_compliant_patches,
-        );
-        formatter.finish()
     }
 }
 /// See [`DescribePatchGroupStateOutput`](crate::output::DescribePatchGroupStateOutput).
@@ -9342,7 +8827,7 @@ impl DescribePatchGroupStateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePatchGroupsOutput {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
@@ -9367,14 +8852,6 @@ impl DescribePatchGroupsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribePatchGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePatchGroupsOutput");
-        formatter.field("mappings", &self.mappings);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribePatchGroupsOutput`](crate::output::DescribePatchGroupsOutput).
@@ -9443,7 +8920,7 @@ impl DescribePatchGroupsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePatchBaselinesOutput {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
     #[doc(hidden)]
@@ -9463,14 +8940,6 @@ impl DescribePatchBaselinesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribePatchBaselinesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePatchBaselinesOutput");
-        formatter.field("baseline_identities", &self.baseline_identities);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribePatchBaselinesOutput`](crate::output::DescribePatchBaselinesOutput).
@@ -9531,7 +9000,7 @@ impl DescribePatchBaselinesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeParametersOutput {
     /// <p>Parameters returned by the request.</p>
     #[doc(hidden)]
@@ -9548,14 +9017,6 @@ impl DescribeParametersOutput {
     /// <p>The token to use when requesting the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeParametersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeParametersOutput");
-        formatter.field("parameters", &self.parameters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
@@ -9615,7 +9076,7 @@ impl DescribeParametersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOpsItemsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
@@ -9632,14 +9093,6 @@ impl DescribeOpsItemsOutput {
     /// <p>A list of OpsItems.</p>
     pub fn ops_item_summaries(&self) -> std::option::Option<&[crate::model::OpsItemSummary]> {
         self.ops_item_summaries.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeOpsItemsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOpsItemsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("ops_item_summaries", &self.ops_item_summaries);
-        formatter.finish()
     }
 }
 /// See [`DescribeOpsItemsOutput`](crate::output::DescribeOpsItemsOutput).
@@ -9700,7 +9153,7 @@ impl DescribeOpsItemsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTasksOutput {
     /// <p>Information about the tasks in the maintenance window.</p>
     #[doc(hidden)]
@@ -9717,14 +9170,6 @@ impl DescribeMaintenanceWindowTasksOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMaintenanceWindowTasksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceWindowTasksOutput");
-        formatter.field("tasks", &self.tasks);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeMaintenanceWindowTasksOutput`](crate::output::DescribeMaintenanceWindowTasksOutput).
@@ -9784,7 +9229,7 @@ impl DescribeMaintenanceWindowTasksOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTargetsOutput {
     /// <p>Information about the targets in the maintenance window.</p>
     #[doc(hidden)]
@@ -9801,14 +9246,6 @@ impl DescribeMaintenanceWindowTargetsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMaintenanceWindowTargetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceWindowTargetsOutput");
-        formatter.field("targets", &self.targets);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeMaintenanceWindowTargetsOutput`](crate::output::DescribeMaintenanceWindowTargetsOutput).
@@ -9869,7 +9306,7 @@ impl DescribeMaintenanceWindowTargetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsForTargetOutput {
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
     #[doc(hidden)]
@@ -9889,14 +9326,6 @@ impl DescribeMaintenanceWindowsForTargetOutput {
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMaintenanceWindowsForTargetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceWindowsForTargetOutput");
-        formatter.field("window_identities", &self.window_identities);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeMaintenanceWindowsForTargetOutput`](crate::output::DescribeMaintenanceWindowsForTargetOutput).
@@ -9962,7 +9391,7 @@ impl DescribeMaintenanceWindowsForTargetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowScheduleOutput {
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
     #[doc(hidden)]
@@ -9982,17 +9411,6 @@ impl DescribeMaintenanceWindowScheduleOutput {
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMaintenanceWindowScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceWindowScheduleOutput");
-        formatter.field(
-            "scheduled_window_executions",
-            &self.scheduled_window_executions,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeMaintenanceWindowScheduleOutput`](crate::output::DescribeMaintenanceWindowScheduleOutput).
@@ -10056,7 +9474,7 @@ impl DescribeMaintenanceWindowScheduleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsOutput {
     /// <p>Information about the maintenance windows.</p>
     #[doc(hidden)]
@@ -10076,14 +9494,6 @@ impl DescribeMaintenanceWindowsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMaintenanceWindowsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceWindowsOutput");
-        formatter.field("window_identities", &self.window_identities);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeMaintenanceWindowsOutput`](crate::output::DescribeMaintenanceWindowsOutput).
@@ -10144,7 +9554,7 @@ impl DescribeMaintenanceWindowsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>Information about the task executions.</p>
     #[doc(hidden)]
@@ -10164,17 +9574,6 @@ impl DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMaintenanceWindowExecutionTasksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceWindowExecutionTasksOutput");
-        formatter.field(
-            "window_execution_task_identities",
-            &self.window_execution_task_identities,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput).
@@ -10241,7 +9640,7 @@ impl DescribeMaintenanceWindowExecutionTasksOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     /// <p>Information about the task invocation results per invocation.</p>
     #[doc(hidden)]
@@ -10263,18 +9662,6 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("DescribeMaintenanceWindowExecutionTaskInvocationsOutput");
-        formatter.field(
-            "window_execution_task_invocation_identities",
-            &self.window_execution_task_invocation_identities,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput).
@@ -10347,7 +9734,7 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionsOutput {
     /// <p>Information about the maintenance window executions.</p>
     #[doc(hidden)]
@@ -10367,14 +9754,6 @@ impl DescribeMaintenanceWindowExecutionsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMaintenanceWindowExecutionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceWindowExecutionsOutput");
-        formatter.field("window_executions", &self.window_executions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeMaintenanceWindowExecutionsOutput`](crate::output::DescribeMaintenanceWindowExecutionsOutput).
@@ -10438,7 +9817,7 @@ impl DescribeMaintenanceWindowExecutionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInventoryDeletionsOutput {
     /// <p>A list of status items for deleted inventory.</p>
     #[doc(hidden)]
@@ -10458,14 +9837,6 @@ impl DescribeInventoryDeletionsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInventoryDeletionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInventoryDeletionsOutput");
-        formatter.field("inventory_deletions", &self.inventory_deletions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeInventoryDeletionsOutput`](crate::output::DescribeInventoryDeletionsOutput).
@@ -10529,7 +9900,7 @@ impl DescribeInventoryDeletionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The high-level patch state for the requested managed nodes. </p>
     #[doc(hidden)]
@@ -10548,14 +9919,6 @@ impl DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInstancePatchStatesForPatchGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancePatchStatesForPatchGroupOutput");
-        formatter.field("instance_patch_states", &self.instance_patch_states);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput).
@@ -10617,7 +9980,7 @@ impl DescribeInstancePatchStatesForPatchGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesOutput {
     /// <p>The high-level patch state for the requested managed nodes.</p>
     #[doc(hidden)]
@@ -10636,14 +9999,6 @@ impl DescribeInstancePatchStatesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInstancePatchStatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancePatchStatesOutput");
-        formatter.field("instance_patch_states", &self.instance_patch_states);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeInstancePatchStatesOutput`](crate::output::DescribeInstancePatchStatesOutput).
@@ -10704,7 +10059,7 @@ impl DescribeInstancePatchStatesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancePatchesOutput {
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
@@ -10739,14 +10094,6 @@ impl DescribeInstancePatchesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInstancePatchesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancePatchesOutput");
-        formatter.field("patches", &self.patches);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeInstancePatchesOutput`](crate::output::DescribeInstancePatchesOutput).
@@ -10824,7 +10171,7 @@ impl DescribeInstancePatchesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceInformationOutput {
     /// <p>The managed node information list.</p>
     #[doc(hidden)]
@@ -10844,14 +10191,6 @@ impl DescribeInstanceInformationOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInstanceInformationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceInformationOutput");
-        formatter.field("instance_information_list", &self.instance_information_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeInstanceInformationOutput`](crate::output::DescribeInstanceInformationOutput).
@@ -10915,7 +10254,7 @@ impl DescribeInstanceInformationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceAssociationsStatusOutput {
     /// <p>Status information about the association.</p>
     #[doc(hidden)]
@@ -10935,17 +10274,6 @@ impl DescribeInstanceAssociationsStatusOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInstanceAssociationsStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceAssociationsStatusOutput");
-        formatter.field(
-            "instance_association_status_infos",
-            &self.instance_association_status_infos,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeInstanceAssociationsStatusOutput`](crate::output::DescribeInstanceAssociationsStatusOutput).
@@ -11009,7 +10337,7 @@ impl DescribeInstanceAssociationsStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEffectivePatchesForPatchBaselineOutput {
     /// <p>An array of patches and patch status.</p>
     #[doc(hidden)]
@@ -11026,14 +10354,6 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeEffectivePatchesForPatchBaselineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEffectivePatchesForPatchBaselineOutput");
-        formatter.field("effective_patches", &self.effective_patches);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput).
@@ -11095,7 +10415,7 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEffectiveInstanceAssociationsOutput {
     /// <p>The associations for the requested managed node.</p>
     #[doc(hidden)]
@@ -11112,14 +10432,6 @@ impl DescribeEffectiveInstanceAssociationsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeEffectiveInstanceAssociationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEffectiveInstanceAssociationsOutput");
-        formatter.field("associations", &self.associations);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeEffectiveInstanceAssociationsOutput`](crate::output::DescribeEffectiveInstanceAssociationsOutput).
@@ -11180,7 +10492,7 @@ impl DescribeEffectiveInstanceAssociationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDocumentPermissionOutput {
     /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
     #[doc(hidden)]
@@ -11207,15 +10519,6 @@ impl DescribeDocumentPermissionOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDocumentPermissionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDocumentPermissionOutput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("account_sharing_info_list", &self.account_sharing_info_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeDocumentPermissionOutput`](crate::output::DescribeDocumentPermissionOutput).
@@ -11300,7 +10603,7 @@ impl DescribeDocumentPermissionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDocumentOutput {
     /// <p>Information about the SSM document.</p>
     #[doc(hidden)]
@@ -11310,13 +10613,6 @@ impl DescribeDocumentOutput {
     /// <p>Information about the SSM document.</p>
     pub fn document(&self) -> std::option::Option<&crate::model::DocumentDescription> {
         self.document.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeDocumentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDocumentOutput");
-        formatter.field("document", &self.document);
-        formatter.finish()
     }
 }
 /// See [`DescribeDocumentOutput`](crate::output::DescribeDocumentOutput).
@@ -11358,7 +10654,7 @@ impl DescribeDocumentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAvailablePatchesOutput {
     /// <p>An array of patches. Each entry in the array is a patch structure.</p>
     #[doc(hidden)]
@@ -11375,14 +10671,6 @@ impl DescribeAvailablePatchesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeAvailablePatchesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAvailablePatchesOutput");
-        formatter.field("patches", &self.patches);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeAvailablePatchesOutput`](crate::output::DescribeAvailablePatchesOutput).
@@ -11442,7 +10730,7 @@ impl DescribeAvailablePatchesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutomationStepExecutionsOutput {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
     #[doc(hidden)]
@@ -11459,14 +10747,6 @@ impl DescribeAutomationStepExecutionsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeAutomationStepExecutionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutomationStepExecutionsOutput");
-        formatter.field("step_executions", &self.step_executions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeAutomationStepExecutionsOutput`](crate::output::DescribeAutomationStepExecutionsOutput).
@@ -11526,7 +10806,7 @@ impl DescribeAutomationStepExecutionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutomationExecutionsOutput {
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
     #[doc(hidden)]
@@ -11546,17 +10826,6 @@ impl DescribeAutomationExecutionsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeAutomationExecutionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutomationExecutionsOutput");
-        formatter.field(
-            "automation_execution_metadata_list",
-            &self.automation_execution_metadata_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeAutomationExecutionsOutput`](crate::output::DescribeAutomationExecutionsOutput).
@@ -11620,7 +10889,7 @@ impl DescribeAutomationExecutionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssociationExecutionTargetsOutput {
     /// <p>Information about the execution.</p>
     #[doc(hidden)]
@@ -11640,17 +10909,6 @@ impl DescribeAssociationExecutionTargetsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeAssociationExecutionTargetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssociationExecutionTargetsOutput");
-        formatter.field(
-            "association_execution_targets",
-            &self.association_execution_targets,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeAssociationExecutionTargetsOutput`](crate::output::DescribeAssociationExecutionTargetsOutput).
@@ -11714,7 +10972,7 @@ impl DescribeAssociationExecutionTargetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssociationExecutionsOutput {
     /// <p>A list of the executions for the specified association ID.</p>
     #[doc(hidden)]
@@ -11734,14 +10992,6 @@ impl DescribeAssociationExecutionsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeAssociationExecutionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssociationExecutionsOutput");
-        formatter.field("association_executions", &self.association_executions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeAssociationExecutionsOutput`](crate::output::DescribeAssociationExecutionsOutput).
@@ -11802,7 +11052,7 @@ impl DescribeAssociationExecutionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssociationOutput {
     /// <p>Information about the association.</p>
     #[doc(hidden)]
@@ -11814,13 +11064,6 @@ impl DescribeAssociationOutput {
         &self,
     ) -> std::option::Option<&crate::model::AssociationDescription> {
         self.association_description.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssociationOutput");
-        formatter.field("association_description", &self.association_description);
-        formatter.finish()
     }
 }
 /// See [`DescribeAssociationOutput`](crate::output::DescribeAssociationOutput).
@@ -11866,7 +11109,7 @@ impl DescribeAssociationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeActivationsOutput {
     /// <p>A list of activations for your Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -11883,14 +11126,6 @@ impl DescribeActivationsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeActivationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeActivationsOutput");
-        formatter.field("activation_list", &self.activation_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeActivationsOutput`](crate::output::DescribeActivationsOutput).
@@ -11950,7 +11185,7 @@ impl DescribeActivationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterTaskFromMaintenanceWindowOutput {
     /// <p>The ID of the maintenance window the task was removed from.</p>
     #[doc(hidden)]
@@ -11967,14 +11202,6 @@ impl DeregisterTaskFromMaintenanceWindowOutput {
     /// <p>The ID of the task removed from the maintenance window.</p>
     pub fn window_task_id(&self) -> std::option::Option<&str> {
         self.window_task_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeregisterTaskFromMaintenanceWindowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterTaskFromMaintenanceWindowOutput");
-        formatter.field("window_id", &self.window_id);
-        formatter.field("window_task_id", &self.window_task_id);
-        formatter.finish()
     }
 }
 /// See [`DeregisterTaskFromMaintenanceWindowOutput`](crate::output::DeregisterTaskFromMaintenanceWindowOutput).
@@ -12028,7 +11255,7 @@ impl DeregisterTaskFromMaintenanceWindowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterTargetFromMaintenanceWindowOutput {
     /// <p>The ID of the maintenance window the target was removed from.</p>
     #[doc(hidden)]
@@ -12045,14 +11272,6 @@ impl DeregisterTargetFromMaintenanceWindowOutput {
     /// <p>The ID of the removed target definition.</p>
     pub fn window_target_id(&self) -> std::option::Option<&str> {
         self.window_target_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeregisterTargetFromMaintenanceWindowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterTargetFromMaintenanceWindowOutput");
-        formatter.field("window_id", &self.window_id);
-        formatter.field("window_target_id", &self.window_target_id);
-        formatter.finish()
     }
 }
 /// See [`DeregisterTargetFromMaintenanceWindowOutput`](crate::output::DeregisterTargetFromMaintenanceWindowOutput).
@@ -12106,7 +11325,7 @@ impl DeregisterTargetFromMaintenanceWindowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline the patch group was deregistered from.</p>
     #[doc(hidden)]
@@ -12123,14 +11342,6 @@ impl DeregisterPatchBaselineForPatchGroupOutput {
     /// <p>The name of the patch group deregistered from the patch baseline.</p>
     pub fn patch_group(&self) -> std::option::Option<&str> {
         self.patch_group.as_deref()
-    }
-}
-impl std::fmt::Debug for DeregisterPatchBaselineForPatchGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterPatchBaselineForPatchGroupOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.field("patch_group", &self.patch_group);
-        formatter.finish()
     }
 }
 /// See [`DeregisterPatchBaselineForPatchGroupOutput`](crate::output::DeregisterPatchBaselineForPatchGroupOutput).
@@ -12181,14 +11392,8 @@ impl DeregisterPatchBaselineForPatchGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterManagedInstanceOutput {}
-impl std::fmt::Debug for DeregisterManagedInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterManagedInstanceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeregisterManagedInstanceOutput`](crate::output::DeregisterManagedInstanceOutput).
 pub mod deregister_managed_instance_output {
 
@@ -12211,14 +11416,8 @@ impl DeregisterManagedInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceDataSyncOutput {}
-impl std::fmt::Debug for DeleteResourceDataSyncOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceDataSyncOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteResourceDataSyncOutput`](crate::output::DeleteResourceDataSyncOutput).
 pub mod delete_resource_data_sync_output {
 
@@ -12241,7 +11440,7 @@ impl DeleteResourceDataSyncOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePatchBaselineOutput {
     /// <p>The ID of the deleted patch baseline.</p>
     #[doc(hidden)]
@@ -12251,13 +11450,6 @@ impl DeletePatchBaselineOutput {
     /// <p>The ID of the deleted patch baseline.</p>
     pub fn baseline_id(&self) -> std::option::Option<&str> {
         self.baseline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeletePatchBaselineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePatchBaselineOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.finish()
     }
 }
 /// See [`DeletePatchBaselineOutput`](crate::output::DeletePatchBaselineOutput).
@@ -12296,7 +11488,7 @@ impl DeletePatchBaselineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteParametersOutput {
     /// <p>The names of the deleted parameters.</p>
     #[doc(hidden)]
@@ -12313,14 +11505,6 @@ impl DeleteParametersOutput {
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
     pub fn invalid_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.invalid_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteParametersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteParametersOutput");
-        formatter.field("deleted_parameters", &self.deleted_parameters);
-        formatter.field("invalid_parameters", &self.invalid_parameters);
-        formatter.finish()
     }
 }
 /// See [`DeleteParametersOutput`](crate::output::DeleteParametersOutput).
@@ -12389,14 +11573,8 @@ impl DeleteParametersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteParameterOutput {}
-impl std::fmt::Debug for DeleteParameterOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteParameterOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteParameterOutput`](crate::output::DeleteParameterOutput).
 pub mod delete_parameter_output {
 
@@ -12419,14 +11597,8 @@ impl DeleteParameterOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOpsMetadataOutput {}
-impl std::fmt::Debug for DeleteOpsMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOpsMetadataOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteOpsMetadataOutput`](crate::output::DeleteOpsMetadataOutput).
 pub mod delete_ops_metadata_output {
 
@@ -12449,7 +11621,7 @@ impl DeleteOpsMetadataOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMaintenanceWindowOutput {
     /// <p>The ID of the deleted maintenance window.</p>
     #[doc(hidden)]
@@ -12459,13 +11631,6 @@ impl DeleteMaintenanceWindowOutput {
     /// <p>The ID of the deleted maintenance window.</p>
     pub fn window_id(&self) -> std::option::Option<&str> {
         self.window_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteMaintenanceWindowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMaintenanceWindowOutput");
-        formatter.field("window_id", &self.window_id);
-        formatter.finish()
     }
 }
 /// See [`DeleteMaintenanceWindowOutput`](crate::output::DeleteMaintenanceWindowOutput).
@@ -12504,7 +11669,7 @@ impl DeleteMaintenanceWindowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInventoryOutput {
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
     #[doc(hidden)]
@@ -12528,15 +11693,6 @@ impl DeleteInventoryOutput {
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn deletion_summary(&self) -> std::option::Option<&crate::model::InventoryDeletionSummary> {
         self.deletion_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteInventoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInventoryOutput");
-        formatter.field("deletion_id", &self.deletion_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("deletion_summary", &self.deletion_summary);
-        formatter.finish()
     }
 }
 /// See [`DeleteInventoryOutput`](crate::output::DeleteInventoryOutput).
@@ -12602,14 +11758,8 @@ impl DeleteInventoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentOutput {}
-impl std::fmt::Debug for DeleteDocumentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDocumentOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
 pub mod delete_document_output {
 
@@ -12632,14 +11782,8 @@ impl DeleteDocumentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssociationOutput {}
-impl std::fmt::Debug for DeleteAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssociationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAssociationOutput`](crate::output::DeleteAssociationOutput).
 pub mod delete_association_output {
 
@@ -12662,14 +11806,8 @@ impl DeleteAssociationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteActivationOutput {}
-impl std::fmt::Debug for DeleteActivationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteActivationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteActivationOutput`](crate::output::DeleteActivationOutput).
 pub mod delete_activation_output {
 
@@ -12692,14 +11830,8 @@ impl DeleteActivationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceDataSyncOutput {}
-impl std::fmt::Debug for CreateResourceDataSyncOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceDataSyncOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateResourceDataSyncOutput`](crate::output::CreateResourceDataSyncOutput).
 pub mod create_resource_data_sync_output {
 
@@ -12722,7 +11854,7 @@ impl CreateResourceDataSyncOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePatchBaselineOutput {
     /// <p>The ID of the created patch baseline.</p>
     #[doc(hidden)]
@@ -12732,13 +11864,6 @@ impl CreatePatchBaselineOutput {
     /// <p>The ID of the created patch baseline.</p>
     pub fn baseline_id(&self) -> std::option::Option<&str> {
         self.baseline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreatePatchBaselineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePatchBaselineOutput");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.finish()
     }
 }
 /// See [`CreatePatchBaselineOutput`](crate::output::CreatePatchBaselineOutput).
@@ -12777,7 +11902,7 @@ impl CreatePatchBaselineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
     #[doc(hidden)]
@@ -12787,13 +11912,6 @@ impl CreateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
     pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
         self.ops_metadata_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateOpsMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOpsMetadataOutput");
-        formatter.field("ops_metadata_arn", &self.ops_metadata_arn);
-        formatter.finish()
     }
 }
 /// See [`CreateOpsMetadataOutput`](crate::output::CreateOpsMetadataOutput).
@@ -12835,7 +11953,7 @@ impl CreateOpsMetadataOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
     #[doc(hidden)]
@@ -12845,13 +11963,6 @@ impl CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
     pub fn ops_item_id(&self) -> std::option::Option<&str> {
         self.ops_item_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateOpsItemOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOpsItemOutput");
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.finish()
     }
 }
 /// See [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput).
@@ -12890,7 +12001,7 @@ impl CreateOpsItemOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
     #[doc(hidden)]
@@ -12900,13 +12011,6 @@ impl CreateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
     pub fn window_id(&self) -> std::option::Option<&str> {
         self.window_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateMaintenanceWindowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMaintenanceWindowOutput");
-        formatter.field("window_id", &self.window_id);
-        formatter.finish()
     }
 }
 /// See [`CreateMaintenanceWindowOutput`](crate::output::CreateMaintenanceWindowOutput).
@@ -12945,7 +12049,7 @@ impl CreateMaintenanceWindowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDocumentOutput {
     /// <p>Information about the SSM document.</p>
     #[doc(hidden)]
@@ -12955,13 +12059,6 @@ impl CreateDocumentOutput {
     /// <p>Information about the SSM document.</p>
     pub fn document_description(&self) -> std::option::Option<&crate::model::DocumentDescription> {
         self.document_description.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDocumentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDocumentOutput");
-        formatter.field("document_description", &self.document_description);
-        formatter.finish()
     }
 }
 /// See [`CreateDocumentOutput`](crate::output::CreateDocumentOutput).
@@ -13003,7 +12100,7 @@ impl CreateDocumentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssociationBatchOutput {
     /// <p>Information about the associations that succeeded.</p>
     #[doc(hidden)]
@@ -13020,14 +12117,6 @@ impl CreateAssociationBatchOutput {
     /// <p>Information about the associations that failed.</p>
     pub fn failed(&self) -> std::option::Option<&[crate::model::FailedCreateAssociation]> {
         self.failed.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAssociationBatchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssociationBatchOutput");
-        formatter.field("successful", &self.successful);
-        formatter.field("failed", &self.failed);
-        formatter.finish()
     }
 }
 /// See [`CreateAssociationBatchOutput`](crate::output::CreateAssociationBatchOutput).
@@ -13098,7 +12187,7 @@ impl CreateAssociationBatchOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssociationOutput {
     /// <p>Information about the association.</p>
     #[doc(hidden)]
@@ -13110,13 +12199,6 @@ impl CreateAssociationOutput {
         &self,
     ) -> std::option::Option<&crate::model::AssociationDescription> {
         self.association_description.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssociationOutput");
-        formatter.field("association_description", &self.association_description);
-        formatter.finish()
     }
 }
 /// See [`CreateAssociationOutput`](crate::output::CreateAssociationOutput).
@@ -13162,7 +12244,7 @@ impl CreateAssociationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateActivationOutput {
     /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
     #[doc(hidden)]
@@ -13179,14 +12261,6 @@ impl CreateActivationOutput {
     /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
     pub fn activation_code(&self) -> std::option::Option<&str> {
         self.activation_code.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateActivationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateActivationOutput");
-        formatter.field("activation_id", &self.activation_id);
-        formatter.field("activation_code", &self.activation_code);
-        formatter.finish()
     }
 }
 /// See [`CreateActivationOutput`](crate::output::CreateActivationOutput).
@@ -13243,7 +12317,7 @@ impl CreateActivationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
     #[doc(hidden)]
@@ -13253,13 +12327,6 @@ impl CancelMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
     pub fn window_execution_id(&self) -> std::option::Option<&str> {
         self.window_execution_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelMaintenanceWindowExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelMaintenanceWindowExecutionOutput");
-        formatter.field("window_execution_id", &self.window_execution_id);
-        formatter.finish()
     }
 }
 /// See [`CancelMaintenanceWindowExecutionOutput`](crate::output::CancelMaintenanceWindowExecutionOutput).
@@ -13301,14 +12368,8 @@ impl CancelMaintenanceWindowExecutionOutput {
 
 /// <p>Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelCommandOutput {}
-impl std::fmt::Debug for CancelCommandOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelCommandOutput");
-        formatter.finish()
-    }
-}
 /// See [`CancelCommandOutput`](crate::output::CancelCommandOutput).
 pub mod cancel_command_output {
 
@@ -13331,7 +12392,7 @@ impl CancelCommandOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItemOutput {
     /// <p>The association ID.</p>
     #[doc(hidden)]
@@ -13341,13 +12402,6 @@ impl AssociateOpsItemRelatedItemOutput {
     /// <p>The association ID.</p>
     pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateOpsItemRelatedItemOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateOpsItemRelatedItemOutput");
-        formatter.field("association_id", &self.association_id);
-        formatter.finish()
     }
 }
 /// See [`AssociateOpsItemRelatedItemOutput`](crate::output::AssociateOpsItemRelatedItemOutput).
@@ -13389,14 +12443,8 @@ impl AssociateOpsItemRelatedItemOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceOutput {}
-impl std::fmt::Debug for AddTagsToResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
 

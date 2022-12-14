@@ -2,14 +2,8 @@
 
 /// <p> Response of UpdateSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSubscriberOutput {}
-impl std::fmt::Debug for UpdateSubscriberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSubscriberOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
 pub mod update_subscriber_output {
 
@@ -32,14 +26,8 @@ impl UpdateSubscriberOutput {
 
 /// <p> Response of UpdateNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNotificationOutput {}
-impl std::fmt::Debug for UpdateNotificationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNotificationOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
 pub mod update_notification_output {
 
@@ -62,7 +50,7 @@ impl UpdateNotificationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -93,16 +81,6 @@ impl UpdateBudgetActionOutput {
     /// <p> The updated action resource information. </p>
     pub fn new_action(&self) -> std::option::Option<&crate::model::Action> {
         self.new_action.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBudgetActionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBudgetActionOutput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("old_action", &self.old_action);
-        formatter.field("new_action", &self.new_action);
-        formatter.finish()
     }
 }
 /// See [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
@@ -177,14 +155,8 @@ impl UpdateBudgetActionOutput {
 
 /// <p> Response of UpdateBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBudgetOutput {}
-impl std::fmt::Debug for UpdateBudgetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBudgetOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
 pub mod update_budget_output {
 
@@ -207,7 +179,7 @@ impl UpdateBudgetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -238,16 +210,6 @@ impl ExecuteBudgetActionOutput {
     /// <p> The type of execution. </p>
     pub fn execution_type(&self) -> std::option::Option<&crate::model::ExecutionType> {
         self.execution_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ExecuteBudgetActionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteBudgetActionOutput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action_id", &self.action_id);
-        formatter.field("execution_type", &self.execution_type);
-        formatter.finish()
     }
 }
 /// See [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
@@ -325,7 +287,7 @@ impl ExecuteBudgetActionOutput {
 
 /// <p> Response of DescribeSubscribersForNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSubscribersForNotificationOutput {
     /// <p>A list of subscribers that are associated with a notification.</p>
     #[doc(hidden)]
@@ -342,14 +304,6 @@ impl DescribeSubscribersForNotificationOutput {
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeSubscribersForNotificationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSubscribersForNotificationOutput");
-        formatter.field("subscribers", &self.subscribers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
@@ -409,7 +363,7 @@ impl DescribeSubscribersForNotificationOutput {
 
 /// <p> Response of GetNotificationsForBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNotificationsForBudgetOutput {
     /// <p>A list of notifications that are associated with a budget.</p>
     #[doc(hidden)]
@@ -426,14 +380,6 @@ impl DescribeNotificationsForBudgetOutput {
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeNotificationsForBudgetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNotificationsForBudgetOutput");
-        formatter.field("notifications", &self.notifications);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
@@ -493,7 +439,7 @@ impl DescribeNotificationsForBudgetOutput {
 
 /// <p> Response of DescribeBudgets </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetsOutput {
     /// <p>A list of budgets.</p>
     #[doc(hidden)]
@@ -510,14 +456,6 @@ impl DescribeBudgetsOutput {
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeBudgetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetsOutput");
-        formatter.field("budgets", &self.budgets);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
@@ -577,7 +515,7 @@ impl DescribeBudgetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistoryOutput {
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
@@ -598,17 +536,6 @@ impl DescribeBudgetPerformanceHistoryOutput {
     /// <p> A generic string.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeBudgetPerformanceHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetPerformanceHistoryOutput");
-        formatter.field(
-            "budget_performance_history",
-            &self.budget_performance_history,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
@@ -668,7 +595,7 @@ impl DescribeBudgetPerformanceHistoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccountOutput {
     /// <p> A list of budget names and associated notifications for an account. </p>
     #[doc(hidden)]
@@ -688,17 +615,6 @@ impl DescribeBudgetNotificationsForAccountOutput {
     /// <p> A generic string.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeBudgetNotificationsForAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetNotificationsForAccountOutput");
-        formatter.field(
-            "budget_notifications_for_account",
-            &self.budget_notifications_for_account,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
@@ -762,7 +678,7 @@ impl DescribeBudgetNotificationsForAccountOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetActionsForBudgetOutput {
     /// <p> A list of the budget action resources information. </p>
     #[doc(hidden)]
@@ -779,14 +695,6 @@ impl DescribeBudgetActionsForBudgetOutput {
     /// <p> A generic string.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeBudgetActionsForBudgetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetActionsForBudgetOutput");
-        formatter.field("actions", &self.actions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
@@ -846,7 +754,7 @@ impl DescribeBudgetActionsForBudgetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetActionsForAccountOutput {
     /// <p> A list of the budget action resources information. </p>
     #[doc(hidden)]
@@ -863,14 +771,6 @@ impl DescribeBudgetActionsForAccountOutput {
     /// <p> A generic string.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeBudgetActionsForAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetActionsForAccountOutput");
-        formatter.field("actions", &self.actions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
@@ -930,7 +830,7 @@ impl DescribeBudgetActionsForAccountOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesOutput {
     /// <p> The historical record of the budget action resource. </p>
     #[doc(hidden)]
@@ -947,14 +847,6 @@ impl DescribeBudgetActionHistoriesOutput {
     /// <p> A generic string.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeBudgetActionHistoriesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetActionHistoriesOutput");
-        formatter.field("action_histories", &self.action_histories);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
@@ -1015,7 +907,7 @@ impl DescribeBudgetActionHistoriesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -1039,15 +931,6 @@ impl DescribeBudgetActionOutput {
     /// <p> A budget action resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::Action> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeBudgetActionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetActionOutput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
@@ -1110,7 +993,7 @@ impl DescribeBudgetActionOutput {
 
 /// <p> Response of DescribeBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
     #[doc(hidden)]
@@ -1120,13 +1003,6 @@ impl DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
     pub fn budget(&self) -> std::option::Option<&crate::model::Budget> {
         self.budget.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeBudgetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetOutput");
-        formatter.field("budget", &self.budget);
-        formatter.finish()
     }
 }
 /// See [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
@@ -1165,14 +1041,8 @@ impl DescribeBudgetOutput {
 
 /// <p> Response of DeleteSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSubscriberOutput {}
-impl std::fmt::Debug for DeleteSubscriberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSubscriberOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
 pub mod delete_subscriber_output {
 
@@ -1195,14 +1065,8 @@ impl DeleteSubscriberOutput {
 
 /// <p> Response of DeleteNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNotificationOutput {}
-impl std::fmt::Debug for DeleteNotificationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNotificationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
 pub mod delete_notification_output {
 
@@ -1225,7 +1089,7 @@ impl DeleteNotificationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -1249,15 +1113,6 @@ impl DeleteBudgetActionOutput {
     /// <p>A budget action resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::Action> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteBudgetActionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBudgetActionOutput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
@@ -1320,14 +1175,8 @@ impl DeleteBudgetActionOutput {
 
 /// <p> Response of DeleteBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBudgetOutput {}
-impl std::fmt::Debug for DeleteBudgetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBudgetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
 pub mod delete_budget_output {
 
@@ -1350,14 +1199,8 @@ impl DeleteBudgetOutput {
 
 /// <p> Response of CreateSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSubscriberOutput {}
-impl std::fmt::Debug for CreateSubscriberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSubscriberOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
 pub mod create_subscriber_output {
 
@@ -1380,14 +1223,8 @@ impl CreateSubscriberOutput {
 
 /// <p> Response of CreateNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNotificationOutput {}
-impl std::fmt::Debug for CreateNotificationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNotificationOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
 pub mod create_notification_output {
 
@@ -1410,7 +1247,7 @@ impl CreateNotificationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -1434,15 +1271,6 @@ impl CreateBudgetActionOutput {
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateBudgetActionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBudgetActionOutput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action_id", &self.action_id);
-        formatter.finish()
     }
 }
 /// See [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
@@ -1505,14 +1333,8 @@ impl CreateBudgetActionOutput {
 
 /// <p> Response of CreateBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBudgetOutput {}
-impl std::fmt::Debug for CreateBudgetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBudgetOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
 pub mod create_budget_output {
 

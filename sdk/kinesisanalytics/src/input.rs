@@ -3594,7 +3594,7 @@ impl UpdateApplicationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
     #[doc(hidden)]
@@ -3620,22 +3620,10 @@ impl UpdateApplicationInput {
         self.application_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("application_update", &self.application_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the Kinesis Analytics application from which to remove the tags.</p>
     #[doc(hidden)]
@@ -3654,18 +3642,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the application to assign the tags.</p>
     #[doc(hidden)]
@@ -3684,18 +3664,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopApplicationInput {
     /// <p>Name of the running application to stop.</p>
     #[doc(hidden)]
@@ -3707,17 +3679,10 @@ impl StopApplicationInput {
         self.application_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartApplicationInput {
     /// <p>Name of the application.</p>
     #[doc(hidden)]
@@ -3736,18 +3701,10 @@ impl StartApplicationInput {
         self.input_configurations.as_deref()
     }
 }
-impl std::fmt::Debug for StartApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("input_configurations", &self.input_configurations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the application for which to retrieve tags.</p>
     #[doc(hidden)]
@@ -3759,17 +3716,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>Maximum number of applications to list.</p>
     #[doc(hidden)]
@@ -3788,21 +3738,10 @@ impl ListApplicationsInput {
         self.exclusive_start_application_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field(
-            "exclusive_start_application_name",
-            &self.exclusive_start_application_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiscoverInputSchemaInput {
     /// <p>Amazon Resource Name (ARN) of the streaming source.</p>
     #[doc(hidden)]
@@ -3848,27 +3787,10 @@ impl DiscoverInputSchemaInput {
         self.input_processing_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for DiscoverInputSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiscoverInputSchemaInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field(
-            "input_starting_position_configuration",
-            &self.input_starting_position_configuration,
-        );
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field(
-            "input_processing_configuration",
-            &self.input_processing_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationInput {
     /// <p>Name of the application.</p>
     #[doc(hidden)]
@@ -3880,17 +3802,10 @@ impl DescribeApplicationInput {
         self.application_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationReferenceDataSourceInput {
     /// <p>Name of an existing application.</p>
     #[doc(hidden)]
@@ -3916,22 +3831,10 @@ impl DeleteApplicationReferenceDataSourceInput {
         self.reference_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationReferenceDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationReferenceDataSourceInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("reference_id", &self.reference_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationOutputInput {
     /// <p>Amazon Kinesis Analytics application name.</p>
     #[doc(hidden)]
@@ -3957,22 +3860,10 @@ impl DeleteApplicationOutputInput {
         self.output_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationOutputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationOutputInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("output_id", &self.output_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationInput {
     /// <p>The Kinesis Analytics application name.</p>
     #[doc(hidden)]
@@ -3998,22 +3889,10 @@ impl DeleteApplicationInputProcessingConfigurationInput {
         self.input_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInputProcessingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInputProcessingConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("input_id", &self.input_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Analytics application name.</p>
     #[doc(hidden)]
@@ -4039,25 +3918,10 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
         self.cloud_watch_logging_option_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationCloudWatchLoggingOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationCloudWatchLoggingOptionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field(
-            "cloud_watch_logging_option_id",
-            &self.cloud_watch_logging_option_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
     #[doc(hidden)]
@@ -4076,18 +3940,10 @@ impl DeleteApplicationInput {
         self.create_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.finish()
-    }
-}
 
 /// <p>TBD</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
     #[doc(hidden)]
@@ -4160,26 +4016,10 @@ impl CreateApplicationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("application_description", &self.application_description);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("outputs", &self.outputs);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("application_code", &self.application_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationReferenceDataSourceInput {
     /// <p>Name of an existing application.</p>
     #[doc(hidden)]
@@ -4205,22 +4045,10 @@ impl AddApplicationReferenceDataSourceInput {
         self.reference_data_source.as_ref()
     }
 }
-impl std::fmt::Debug for AddApplicationReferenceDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationReferenceDataSourceInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("reference_data_source", &self.reference_data_source);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationOutputInput {
     /// <p>Name of the application to which you want to add the output configuration.</p>
     #[doc(hidden)]
@@ -4246,22 +4074,10 @@ impl AddApplicationOutputInput {
         self.output.as_ref()
     }
 }
-impl std::fmt::Debug for AddApplicationOutputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationOutputInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("output", &self.output);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationInput {
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
     #[doc(hidden)]
@@ -4297,26 +4113,10 @@ impl AddApplicationInputProcessingConfigurationInput {
         self.input_processing_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for AddApplicationInputProcessingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationInputProcessingConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("input_id", &self.input_id);
-        formatter.field(
-            "input_processing_configuration",
-            &self.input_processing_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationInputInput {
     /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
     #[doc(hidden)]
@@ -4342,22 +4142,10 @@ impl AddApplicationInputInput {
         self.input.as_ref()
     }
 }
-impl std::fmt::Debug for AddApplicationInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationInputInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("input", &self.input);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Analytics application name.</p>
     #[doc(hidden)]
@@ -4383,20 +4171,5 @@ impl AddApplicationCloudWatchLoggingOptionInput {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOption> {
         self.cloud_watch_logging_option.as_ref()
-    }
-}
-impl std::fmt::Debug for AddApplicationCloudWatchLoggingOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationCloudWatchLoggingOptionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field(
-            "cloud_watch_logging_option",
-            &self.cloud_watch_logging_option,
-        );
-        formatter.finish()
     }
 }

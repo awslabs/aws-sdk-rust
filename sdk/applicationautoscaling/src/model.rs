@@ -2,7 +2,7 @@
 
 /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendedState {
     /// <p>Whether scale in by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to remove capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
     #[doc(hidden)]
@@ -26,24 +26,6 @@ impl SuspendedState {
     /// <p>Whether scheduled scaling is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add or remove capacity by initiating scheduled actions. The default is <code>false</code>. </p>
     pub fn scheduled_scaling_suspended(&self) -> std::option::Option<bool> {
         self.scheduled_scaling_suspended
-    }
-}
-impl std::fmt::Debug for SuspendedState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendedState");
-        formatter.field(
-            "dynamic_scaling_in_suspended",
-            &self.dynamic_scaling_in_suspended,
-        );
-        formatter.field(
-            "dynamic_scaling_out_suspended",
-            &self.dynamic_scaling_out_suspended,
-        );
-        formatter.field(
-            "scheduled_scaling_suspended",
-            &self.scheduled_scaling_suspended,
-        );
-        formatter.finish()
     }
 }
 /// See [`SuspendedState`](crate::model::SuspendedState).
@@ -532,7 +514,7 @@ impl AsRef<str> for ServiceNamespace {
 
 /// <p>Represents the minimum and maximum capacity for a scheduled action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalableTargetAction {
     /// <p>The minimum capacity.</p>
     /// <p>For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value allowed is 1.</p>
@@ -553,14 +535,6 @@ impl ScalableTargetAction {
     /// <p>Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you can request an increase. For more information, consult the documentation for that service. For information about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn max_capacity(&self) -> std::option::Option<i32> {
         self.max_capacity
-    }
-}
-impl std::fmt::Debug for ScalableTargetAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalableTargetAction");
-        formatter.field("min_capacity", &self.min_capacity);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.finish()
     }
 }
 /// See [`ScalableTargetAction`](crate::model::ScalableTargetAction).
@@ -615,7 +589,7 @@ impl ScalableTargetAction {
 
 /// <p>Represents a CloudWatch alarm associated with a scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
@@ -632,14 +606,6 @@ impl Alarm {
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn alarm_arn(&self) -> std::option::Option<&str> {
         self.alarm_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Alarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarm");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_arn", &self.alarm_arn);
-        formatter.finish()
     }
 }
 /// See [`Alarm`](crate::model::Alarm).
@@ -690,7 +656,7 @@ impl Alarm {
 
 /// <p>Represents a target tracking scaling policy configuration to use with Application Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p>
     #[doc(hidden)]
@@ -821,24 +787,6 @@ impl TargetTrackingScalingPolicyConfiguration {
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
     pub fn disable_scale_in(&self) -> std::option::Option<bool> {
         self.disable_scale_in
-    }
-}
-impl std::fmt::Debug for TargetTrackingScalingPolicyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetTrackingScalingPolicyConfiguration");
-        formatter.field("target_value", &self.target_value);
-        formatter.field(
-            "predefined_metric_specification",
-            &self.predefined_metric_specification,
-        );
-        formatter.field(
-            "customized_metric_specification",
-            &self.customized_metric_specification,
-        );
-        formatter.field("scale_out_cooldown", &self.scale_out_cooldown);
-        formatter.field("scale_in_cooldown", &self.scale_in_cooldown);
-        formatter.field("disable_scale_in", &self.disable_scale_in);
-        formatter.finish()
     }
 }
 /// See [`TargetTrackingScalingPolicyConfiguration`](crate::model::TargetTrackingScalingPolicyConfiguration).
@@ -1038,7 +986,7 @@ impl TargetTrackingScalingPolicyConfiguration {
 /// </ul>
 /// <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomizedMetricSpecification {
     /// <p>The name of the metric. </p>
     #[doc(hidden)]
@@ -1078,17 +1026,6 @@ impl CustomizedMetricSpecification {
     /// <p>The unit of the metric.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomizedMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomizedMetricSpecification");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
@@ -1294,7 +1231,7 @@ impl AsRef<str> for MetricStatistic {
 
 /// <p>Describes the dimension names and values associated with a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
@@ -1311,14 +1248,6 @@ impl MetricDimension {
     /// <p>The value of the dimension.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MetricDimension`](crate::model::MetricDimension).
@@ -1370,7 +1299,7 @@ impl MetricDimension {
 /// <p>Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.</p>
 /// <p>Only the Amazon Web Services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleet requests and ECS services.</p>
     #[doc(hidden)]
@@ -1423,14 +1352,6 @@ impl PredefinedMetricSpecification {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(&self) -> std::option::Option<&str> {
         self.resource_label.as_deref()
-    }
-}
-impl std::fmt::Debug for PredefinedMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredefinedMetricSpecification");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
     }
 }
 /// See [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
@@ -1770,7 +1691,7 @@ impl AsRef<str> for MetricType {
 
 /// <p>Represents a step scaling policy configuration to use with Application Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepScalingPolicyConfiguration {
     /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
     /// <p> <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
@@ -1856,17 +1777,6 @@ impl StepScalingPolicyConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::MetricAggregationType> {
         self.metric_aggregation_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StepScalingPolicyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepScalingPolicyConfiguration");
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.field("step_adjustments", &self.step_adjustments);
-        formatter.field("min_adjustment_magnitude", &self.min_adjustment_magnitude);
-        formatter.field("cooldown", &self.cooldown);
-        formatter.field("metric_aggregation_type", &self.metric_aggregation_type);
-        formatter.finish()
     }
 }
 /// See [`StepScalingPolicyConfiguration`](crate::model::StepScalingPolicyConfiguration).
@@ -2128,7 +2038,7 @@ impl AsRef<str> for MetricAggregationType {
 /// <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepAdjustment {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     #[doc(hidden)]
@@ -2154,21 +2064,6 @@ impl StepAdjustment {
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
     pub fn scaling_adjustment(&self) -> std::option::Option<i32> {
         self.scaling_adjustment
-    }
-}
-impl std::fmt::Debug for StepAdjustment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepAdjustment");
-        formatter.field(
-            "metric_interval_lower_bound",
-            &self.metric_interval_lower_bound,
-        );
-        formatter.field(
-            "metric_interval_upper_bound",
-            &self.metric_interval_upper_bound,
-        );
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.finish()
     }
 }
 /// See [`StepAdjustment`](crate::model::StepAdjustment).
@@ -2422,7 +2317,7 @@ impl AsRef<str> for PolicyType {
 
 /// <p>Represents a scheduled action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledAction {
     /// <p>The name of the scheduled action.</p>
     #[doc(hidden)]
@@ -2604,23 +2499,6 @@ impl ScheduledAction {
     /// <p>The date and time that the scheduled action was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduledAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledAction");
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("scheduled_action_arn", &self.scheduled_action_arn);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("scalable_target_action", &self.scalable_target_action);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`ScheduledAction`](crate::model::ScheduledAction).
@@ -2904,7 +2782,7 @@ impl ScheduledAction {
 /// <p>Represents a scaling policy to use with Application Auto Scaling.</p>
 /// <p>For more information about configuring scaling policies for a specific service, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html">Getting started with Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
     #[doc(hidden)]
@@ -3063,28 +2941,6 @@ impl ScalingPolicy {
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingPolicy");
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field(
-            "step_scaling_policy_configuration",
-            &self.step_scaling_policy_configuration,
-        );
-        formatter.field(
-            "target_tracking_scaling_policy_configuration",
-            &self.target_tracking_scaling_policy_configuration,
-        );
-        formatter.field("alarms", &self.alarms);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
@@ -3347,7 +3203,7 @@ impl ScalingPolicy {
 
 /// <p>Represents a scaling activity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingActivity {
     /// <p>The unique identifier of the scaling activity.</p>
     #[doc(hidden)]
@@ -3507,23 +3363,6 @@ impl ScalingActivity {
     /// <p>The details about the scaling activity.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for ScalingActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingActivity");
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("description", &self.description);
-        formatter.field("cause", &self.cause);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`ScalingActivity`](crate::model::ScalingActivity).
@@ -3899,7 +3738,7 @@ impl AsRef<str> for ScalingActivityStatusCode {
 
 /// <p>Represents a scalable target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalableTarget {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     #[doc(hidden)]
@@ -4038,20 +3877,6 @@ impl ScalableTarget {
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state. </p>
     pub fn suspended_state(&self) -> std::option::Option<&crate::model::SuspendedState> {
         self.suspended_state.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalableTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalableTarget");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("min_capacity", &self.min_capacity);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("suspended_state", &self.suspended_state);
-        formatter.finish()
     }
 }
 /// See [`ScalableTarget`](crate::model::ScalableTarget).

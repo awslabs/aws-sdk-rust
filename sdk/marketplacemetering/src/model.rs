@@ -3,7 +3,7 @@
 /// <p>Usage allocations allow you to split usage into buckets by tags.</p>
 /// <p>Each <code>UsageAllocation</code> indicates the usage quantity for a specific set of tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageAllocation {
     /// <p>The total quantity allocated to this bucket of usage.</p>
     #[doc(hidden)]
@@ -20,14 +20,6 @@ impl UsageAllocation {
     /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for UsageAllocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageAllocation");
-        formatter.field("allocated_usage_quantity", &self.allocated_usage_quantity);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`UsageAllocation`](crate::model::UsageAllocation).
@@ -87,7 +79,7 @@ impl UsageAllocation {
 
 /// <p>Metadata assigned to an allocation. Each tag is made up of a <code>key</code> and a <code>value</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a <code>tag</code>. A <code>key</code> is a label that acts like a category for the specific tag values.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl Tag {
     /// <p>One part of a key-value pair that makes up a <code>tag</code>. A <code>value</code> acts as a descriptor within a tag category (key). The value can be empty or null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -163,7 +147,7 @@ impl Tag {
 /// <p>A <code>UsageRecord</code> indicates a quantity of usage for a given product, customer, dimension and time.</p>
 /// <p>Multiple requests with the same <code>UsageRecords</code> as input will be de-duplicated to prevent double charges.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
@@ -203,17 +187,6 @@ impl UsageRecord {
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
     pub fn usage_allocations(&self) -> std::option::Option<&[crate::model::UsageAllocation]> {
         self.usage_allocations.as_deref()
-    }
-}
-impl std::fmt::Debug for UsageRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageRecord");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("customer_identifier", &self.customer_identifier);
-        formatter.field("dimension", &self.dimension);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("usage_allocations", &self.usage_allocations);
-        formatter.finish()
     }
 }
 /// See [`UsageRecord`](crate::model::UsageRecord).
@@ -318,7 +291,7 @@ impl UsageRecord {
 
 /// <p>A <code>UsageRecordResult</code> indicates the status of a given <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageRecordResult {
     /// <p>The <code>UsageRecord</code> that was part of the <code>BatchMeterUsage</code> request.</p>
     #[doc(hidden)]
@@ -362,15 +335,6 @@ impl UsageRecordResult {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::UsageRecordResultStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for UsageRecordResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageRecordResult");
-        formatter.field("usage_record", &self.usage_record);
-        formatter.field("metering_record_id", &self.metering_record_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`UsageRecordResult`](crate::model::UsageRecordResult).

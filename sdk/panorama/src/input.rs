@@ -6210,7 +6210,7 @@ impl UpdateDeviceMetadataInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeviceMetadataInput {
     /// <p>The device's ID.</p>
     #[doc(hidden)]
@@ -6229,18 +6229,10 @@ impl UpdateDeviceMetadataInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDeviceMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeviceMetadataInput");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The resource's ARN.</p>
     #[doc(hidden)]
@@ -6259,18 +6251,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The resource's ARN.</p>
     #[doc(hidden)]
@@ -6293,18 +6277,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveApplicationInstanceInput {
     /// <p>An application instance ID.</p>
     #[doc(hidden)]
@@ -6316,17 +6292,10 @@ impl RemoveApplicationInstanceInput {
         self.application_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveApplicationInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveApplicationInstanceInput");
-        formatter.field("application_instance_id", &self.application_instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterPackageVersionInput {
     /// <p>An owner account.</p>
     #[doc(hidden)]
@@ -6366,21 +6335,10 @@ impl RegisterPackageVersionInput {
         self.mark_latest
     }
 }
-impl std::fmt::Debug for RegisterPackageVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterPackageVersionInput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("patch_version", &self.patch_version);
-        formatter.field("mark_latest", &self.mark_latest);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionDeviceInput {
     /// <p>A name for the device.</p>
     #[doc(hidden)]
@@ -6417,20 +6375,10 @@ impl ProvisionDeviceInput {
         self.networking_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ProvisionDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionDeviceInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("networking_configuration", &self.networking_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource's ARN.</p>
     #[doc(hidden)]
@@ -6442,17 +6390,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagesInput {
     /// <p>The maximum number of packages to return in one page of results.</p>
     #[doc(hidden)]
@@ -6471,18 +6412,10 @@ impl ListPackagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackageImportJobsInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -6501,18 +6434,10 @@ impl ListPackageImportJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPackageImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackageImportJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNodesInput {
     /// <p>Search for nodes by category.</p>
     #[doc(hidden)]
@@ -6566,23 +6491,10 @@ impl ListNodesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNodesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNodesInput");
-        formatter.field("category", &self.category);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("patch_version", &self.patch_version);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNodeFromTemplateJobsInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -6601,18 +6513,10 @@ impl ListNodeFromTemplateJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNodeFromTemplateJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNodeFromTemplateJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDevicesJobsInput {
     /// <p>Filter results by the job's target device ID.</p>
     #[doc(hidden)]
@@ -6638,19 +6542,10 @@ impl ListDevicesJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDevicesJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDevicesJobsInput");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDevicesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -6699,25 +6594,10 @@ impl ListDevicesInput {
         self.device_aggregated_status_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDevicesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("name_filter", &self.name_filter);
-        formatter.field(
-            "device_aggregated_status_filter",
-            &self.device_aggregated_status_filter,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationInstancesInput {
     /// <p>The application instances' device ID.</p>
     #[doc(hidden)]
@@ -6750,20 +6630,10 @@ impl ListApplicationInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationInstancesInput");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("status_filter", &self.status_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationInstanceNodeInstancesInput {
     /// <p>The node instances' application instance ID.</p>
     #[doc(hidden)]
@@ -6789,19 +6659,10 @@ impl ListApplicationInstanceNodeInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationInstanceNodeInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationInstanceNodeInstancesInput");
-        formatter.field("application_instance_id", &self.application_instance_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationInstanceDependenciesInput {
     /// <p>The application instance's ID.</p>
     #[doc(hidden)]
@@ -6827,19 +6688,10 @@ impl ListApplicationInstanceDependenciesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationInstanceDependenciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationInstanceDependenciesInput");
-        formatter.field("application_instance_id", &self.application_instance_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackageVersionInput {
     /// <p>The version's owner account.</p>
     #[doc(hidden)]
@@ -6872,20 +6724,10 @@ impl DescribePackageVersionInput {
         self.patch_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackageVersionInput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("patch_version", &self.patch_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackageImportJobInput {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
@@ -6897,17 +6739,10 @@ impl DescribePackageImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackageImportJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackageInput {
     /// <p>The package's ID.</p>
     #[doc(hidden)]
@@ -6919,17 +6754,10 @@ impl DescribePackageInput {
         self.package_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNodeFromTemplateJobInput {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
@@ -6941,17 +6769,10 @@ impl DescribeNodeFromTemplateJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNodeFromTemplateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNodeFromTemplateJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNodeInput {
     /// <p>The node's ID.</p>
     #[doc(hidden)]
@@ -6970,18 +6791,10 @@ impl DescribeNodeInput {
         self.owner_account.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNodeInput");
-        formatter.field("node_id", &self.node_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeviceJobInput {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
@@ -6993,17 +6806,10 @@ impl DescribeDeviceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeviceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeviceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeviceInput {
     /// <p>The device's ID.</p>
     #[doc(hidden)]
@@ -7015,17 +6821,10 @@ impl DescribeDeviceInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeviceInput");
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationInstanceDetailsInput {
     /// <p>The application instance's ID.</p>
     #[doc(hidden)]
@@ -7037,17 +6836,10 @@ impl DescribeApplicationInstanceDetailsInput {
         self.application_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationInstanceDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationInstanceDetailsInput");
-        formatter.field("application_instance_id", &self.application_instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationInstanceInput {
     /// <p>The application instance's ID.</p>
     #[doc(hidden)]
@@ -7059,17 +6851,10 @@ impl DescribeApplicationInstanceInput {
         self.application_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationInstanceInput");
-        formatter.field("application_instance_id", &self.application_instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterPackageVersionInput {
     /// <p>An owner account.</p>
     #[doc(hidden)]
@@ -7109,24 +6894,10 @@ impl DeregisterPackageVersionInput {
         self.updated_latest_patch_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterPackageVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterPackageVersionInput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("patch_version", &self.patch_version);
-        formatter.field(
-            "updated_latest_patch_version",
-            &self.updated_latest_patch_version,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackageInput {
     /// <p>The package's ID.</p>
     #[doc(hidden)]
@@ -7145,18 +6916,10 @@ impl DeletePackageInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeletePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeviceInput {
     /// <p>The device's ID.</p>
     #[doc(hidden)]
@@ -7168,17 +6931,10 @@ impl DeleteDeviceInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeviceInput");
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePackageImportJobInput {
     /// <p>A job type for the package import job.</p>
     #[doc(hidden)]
@@ -7220,21 +6976,10 @@ impl CreatePackageImportJobInput {
         self.job_tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePackageImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePackageImportJobInput");
-        formatter.field("job_type", &self.job_type);
-        formatter.field("input_config", &self.input_config);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("job_tags", &self.job_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePackageInput {
     /// <p>A name for the package.</p>
     #[doc(hidden)]
@@ -7257,18 +7002,10 @@ impl CreatePackageInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePackageInput");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNodeFromTemplateJobInput {
     /// <p>The type of node.</p>
     #[doc(hidden)]
@@ -7326,23 +7063,10 @@ impl CreateNodeFromTemplateJobInput {
         self.job_tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNodeFromTemplateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNodeFromTemplateJobInput");
-        formatter.field("template_type", &self.template_type);
-        formatter.field("output_package_name", &self.output_package_name);
-        formatter.field("output_package_version", &self.output_package_version);
-        formatter.field("node_name", &self.node_name);
-        formatter.field("node_description", &self.node_description);
-        formatter.field("template_parameters", &self.template_parameters);
-        formatter.field("job_tags", &self.job_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobForDevicesInput {
     /// <p>IDs of target devices.</p>
     #[doc(hidden)]
@@ -7368,19 +7092,10 @@ impl CreateJobForDevicesInput {
         self.job_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobForDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobForDevicesInput");
-        formatter.field("device_ids", &self.device_ids);
-        formatter.field("device_job_config", &self.device_job_config);
-        formatter.field("job_type", &self.job_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInstanceInput {
     /// <p>A name for the application instance.</p>
     #[doc(hidden)]
@@ -7445,28 +7160,5 @@ impl CreateApplicationInstanceInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateApplicationInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInstanceInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("manifest_payload", &self.manifest_payload);
-        formatter.field(
-            "manifest_overrides_payload",
-            &self.manifest_overrides_payload,
-        );
-        formatter.field(
-            "application_instance_id_to_replace",
-            &self.application_instance_id_to_replace,
-        );
-        formatter.field("runtime_role_arn", &self.runtime_role_arn);
-        formatter.field(
-            "default_runtime_context_device",
-            &self.default_runtime_context_device,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

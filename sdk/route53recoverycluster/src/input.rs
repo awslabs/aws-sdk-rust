@@ -705,7 +705,7 @@ impl UpdateRoutingControlStatesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingControlStatesInput {
     /// <p>A set of routing control entries that you want to update.</p>
     #[doc(hidden)]
@@ -729,21 +729,10 @@ impl UpdateRoutingControlStatesInput {
         self.safety_rules_to_override.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingControlStatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingControlStatesInput");
-        formatter.field(
-            "update_routing_control_state_entries",
-            &self.update_routing_control_state_entries,
-        );
-        formatter.field("safety_rules_to_override", &self.safety_rules_to_override);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
     #[doc(hidden)]
@@ -771,19 +760,10 @@ impl UpdateRoutingControlStateInput {
         self.safety_rules_to_override.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingControlStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingControlStateInput");
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.field("routing_control_state", &self.routing_control_state);
-        formatter.field("safety_rules_to_override", &self.safety_rules_to_override);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoutingControlsInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
     #[doc(hidden)]
@@ -809,19 +789,10 @@ impl ListRoutingControlsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRoutingControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoutingControlsInput");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     #[doc(hidden)]
@@ -831,12 +802,5 @@ impl GetRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRoutingControlStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRoutingControlStateInput");
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.finish()
     }
 }

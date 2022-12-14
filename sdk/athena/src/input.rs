@@ -6406,7 +6406,7 @@ impl UpdateWorkGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkGroupInput {
     /// <p>The specified workgroup that will be updated.</p>
     #[doc(hidden)]
@@ -6441,20 +6441,10 @@ impl UpdateWorkGroupInput {
         self.state.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWorkGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkGroupInput");
-        formatter.field("work_group", &self.work_group);
-        formatter.field("description", &self.description);
-        formatter.field("configuration_updates", &self.configuration_updates);
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePreparedStatementInput {
     /// <p>The name of the prepared statement.</p>
     #[doc(hidden)]
@@ -6487,20 +6477,10 @@ impl UpdatePreparedStatementInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePreparedStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePreparedStatementInput");
-        formatter.field("statement_name", &self.statement_name);
-        formatter.field("work_group", &self.work_group);
-        formatter.field("query_statement", &self.query_statement);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNamedQueryInput {
     /// <p>The unique identifier (UUID) of the query.</p>
     #[doc(hidden)]
@@ -6533,20 +6513,10 @@ impl UpdateNamedQueryInput {
         self.query_string.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateNamedQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNamedQueryInput");
-        formatter.field("named_query_id", &self.named_query_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("query_string", &self.query_string);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataCatalogInput {
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     #[doc(hidden)]
@@ -6599,20 +6569,10 @@ impl UpdateDataCatalogInput {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDataCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
     #[doc(hidden)]
@@ -6631,18 +6591,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
     #[doc(hidden)]
@@ -6661,18 +6613,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopQueryExecutionInput {
     /// <p>The unique ID of the query execution to stop.</p>
     #[doc(hidden)]
@@ -6684,17 +6628,10 @@ impl StopQueryExecutionInput {
         self.query_execution_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopQueryExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopQueryExecutionInput");
-        formatter.field("query_execution_id", &self.query_execution_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
     #[doc(hidden)]
@@ -6747,22 +6684,10 @@ impl StartQueryExecutionInput {
         self.execution_parameters.as_deref()
     }
 }
-impl std::fmt::Debug for StartQueryExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartQueryExecutionInput");
-        formatter.field("query_string", &self.query_string);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("query_execution_context", &self.query_execution_context);
-        formatter.field("result_configuration", &self.result_configuration);
-        formatter.field("work_group", &self.work_group);
-        formatter.field("execution_parameters", &self.execution_parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkGroupsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     #[doc(hidden)]
@@ -6781,18 +6706,10 @@ impl ListWorkGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWorkGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Lists the tags for the resource with the specified ARN.</p>
     #[doc(hidden)]
@@ -6818,19 +6735,10 @@ impl ListTagsForResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTableMetadataInput {
     /// <p>The name of the data catalog for which table metadata should be returned.</p>
     #[doc(hidden)]
@@ -6870,21 +6778,10 @@ impl ListTableMetadataInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTableMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTableMetadataInput");
-        formatter.field("catalog_name", &self.catalog_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("expression", &self.expression);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueryExecutionsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     #[doc(hidden)]
@@ -6910,19 +6807,10 @@ impl ListQueryExecutionsInput {
         self.work_group.as_deref()
     }
 }
-impl std::fmt::Debug for ListQueryExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueryExecutionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPreparedStatementsInput {
     /// <p>The workgroup to list the prepared statements for.</p>
     #[doc(hidden)]
@@ -6948,19 +6836,10 @@ impl ListPreparedStatementsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPreparedStatementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPreparedStatementsInput");
-        formatter.field("work_group", &self.work_group);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamedQueriesInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     #[doc(hidden)]
@@ -6986,19 +6865,10 @@ impl ListNamedQueriesInput {
         self.work_group.as_deref()
     }
 }
-impl std::fmt::Debug for ListNamedQueriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNamedQueriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEngineVersionsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     #[doc(hidden)]
@@ -7017,18 +6887,10 @@ impl ListEngineVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEngineVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEngineVersionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataCatalogsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     #[doc(hidden)]
@@ -7047,18 +6909,10 @@ impl ListDataCatalogsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataCatalogsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataCatalogsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatabasesInput {
     /// <p>The name of the data catalog that contains the databases to return.</p>
     #[doc(hidden)]
@@ -7084,19 +6938,10 @@ impl ListDatabasesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatabasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatabasesInput");
-        formatter.field("catalog_name", &self.catalog_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkGroupInput {
     /// <p>The name of the workgroup.</p>
     #[doc(hidden)]
@@ -7108,17 +6953,10 @@ impl GetWorkGroupInput {
         self.work_group.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkGroupInput");
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTableMetadataInput {
     /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
     #[doc(hidden)]
@@ -7144,19 +6982,10 @@ impl GetTableMetadataInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetTableMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTableMetadataInput");
-        formatter.field("catalog_name", &self.catalog_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryRuntimeStatisticsInput {
     /// <p>The unique ID of the query execution.</p>
     #[doc(hidden)]
@@ -7168,17 +6997,10 @@ impl GetQueryRuntimeStatisticsInput {
         self.query_execution_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueryRuntimeStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryRuntimeStatisticsInput");
-        formatter.field("query_execution_id", &self.query_execution_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryResultsInput {
     /// <p>The unique ID of the query execution.</p>
     #[doc(hidden)]
@@ -7204,19 +7026,10 @@ impl GetQueryResultsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetQueryResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryResultsInput");
-        formatter.field("query_execution_id", &self.query_execution_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryExecutionInput {
     /// <p>The unique ID of the query execution.</p>
     #[doc(hidden)]
@@ -7228,17 +7041,10 @@ impl GetQueryExecutionInput {
         self.query_execution_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueryExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryExecutionInput");
-        formatter.field("query_execution_id", &self.query_execution_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPreparedStatementInput {
     /// <p>The name of the prepared statement to retrieve.</p>
     #[doc(hidden)]
@@ -7257,18 +7063,10 @@ impl GetPreparedStatementInput {
         self.work_group.as_deref()
     }
 }
-impl std::fmt::Debug for GetPreparedStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPreparedStatementInput");
-        formatter.field("statement_name", &self.statement_name);
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNamedQueryInput {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     #[doc(hidden)]
@@ -7280,17 +7078,10 @@ impl GetNamedQueryInput {
         self.named_query_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetNamedQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNamedQueryInput");
-        formatter.field("named_query_id", &self.named_query_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataCatalogInput {
     /// <p>The name of the data catalog to return.</p>
     #[doc(hidden)]
@@ -7302,17 +7093,10 @@ impl GetDataCatalogInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDatabaseInput {
     /// <p>The name of the data catalog that contains the database to return.</p>
     #[doc(hidden)]
@@ -7331,18 +7115,10 @@ impl GetDatabaseInput {
         self.database_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDatabaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDatabaseInput");
-        formatter.field("catalog_name", &self.catalog_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkGroupInput {
     /// <p>The unique name of the workgroup to delete.</p>
     #[doc(hidden)]
@@ -7361,18 +7137,10 @@ impl DeleteWorkGroupInput {
         self.recursive_delete_option
     }
 }
-impl std::fmt::Debug for DeleteWorkGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkGroupInput");
-        formatter.field("work_group", &self.work_group);
-        formatter.field("recursive_delete_option", &self.recursive_delete_option);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePreparedStatementInput {
     /// <p>The name of the prepared statement to delete.</p>
     #[doc(hidden)]
@@ -7391,18 +7159,10 @@ impl DeletePreparedStatementInput {
         self.work_group.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePreparedStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePreparedStatementInput");
-        formatter.field("statement_name", &self.statement_name);
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNamedQueryInput {
     /// <p>The unique ID of the query to delete.</p>
     #[doc(hidden)]
@@ -7414,17 +7174,10 @@ impl DeleteNamedQueryInput {
         self.named_query_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNamedQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNamedQueryInput");
-        formatter.field("named_query_id", &self.named_query_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataCatalogInput {
     /// <p>The name of the data catalog to delete.</p>
     #[doc(hidden)]
@@ -7436,17 +7189,10 @@ impl DeleteDataCatalogInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkGroupInput {
     /// <p>The workgroup name.</p>
     #[doc(hidden)]
@@ -7479,20 +7225,10 @@ impl CreateWorkGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePreparedStatementInput {
     /// <p>The name of the prepared statement.</p>
     #[doc(hidden)]
@@ -7525,20 +7261,10 @@ impl CreatePreparedStatementInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePreparedStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePreparedStatementInput");
-        formatter.field("statement_name", &self.statement_name);
-        formatter.field("work_group", &self.work_group);
-        formatter.field("query_statement", &self.query_statement);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNamedQueryInput {
     /// <p>The query name.</p>
     #[doc(hidden)]
@@ -7589,22 +7315,10 @@ impl CreateNamedQueryInput {
         self.work_group.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNamedQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNamedQueryInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("database", &self.database);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataCatalogInput {
     /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     #[doc(hidden)]
@@ -7676,21 +7390,10 @@ impl CreateDataCatalogInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDataCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains an array of query execution IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetQueryExecutionInput {
     /// <p>An array of query execution IDs.</p>
     #[doc(hidden)]
@@ -7702,17 +7405,10 @@ impl BatchGetQueryExecutionInput {
         self.query_execution_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetQueryExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetQueryExecutionInput");
-        formatter.field("query_execution_ids", &self.query_execution_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetPreparedStatementInput {
     /// <p>A list of prepared statement names to return.</p>
     #[doc(hidden)]
@@ -7731,18 +7427,10 @@ impl BatchGetPreparedStatementInput {
         self.work_group.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetPreparedStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetPreparedStatementInput");
-        formatter.field("prepared_statement_names", &self.prepared_statement_names);
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains an array of named query IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetNamedQueryInput {
     /// <p>An array of query IDs.</p>
     #[doc(hidden)]
@@ -7752,12 +7440,5 @@ impl BatchGetNamedQueryInput {
     /// <p>An array of query IDs.</p>
     pub fn named_query_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.named_query_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetNamedQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetNamedQueryInput");
-        formatter.field("named_query_ids", &self.named_query_ids);
-        formatter.finish()
     }
 }

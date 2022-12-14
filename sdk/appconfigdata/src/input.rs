@@ -357,7 +357,7 @@ impl StartConfigurationSessionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartConfigurationSessionInput {
     /// <p>The application ID or the application name.</p>
     #[doc(hidden)]
@@ -390,26 +390,10 @@ impl StartConfigurationSessionInput {
         self.required_minimum_poll_interval_in_seconds
     }
 }
-impl std::fmt::Debug for StartConfigurationSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartConfigurationSessionInput");
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field(
-            "configuration_profile_identifier",
-            &self.configuration_profile_identifier,
-        );
-        formatter.field(
-            "required_minimum_poll_interval_in_seconds",
-            &self.required_minimum_poll_interval_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLatestConfigurationInput {
     /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p>
     #[doc(hidden)]
@@ -419,12 +403,5 @@ impl GetLatestConfigurationInput {
     /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p>
     pub fn configuration_token(&self) -> std::option::Option<&str> {
         self.configuration_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetLatestConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLatestConfigurationInput");
-        formatter.field("configuration_token", &self.configuration_token);
-        formatter.finish()
     }
 }

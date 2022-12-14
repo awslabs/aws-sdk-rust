@@ -2,7 +2,7 @@
 
 /// <p>A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).

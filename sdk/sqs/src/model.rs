@@ -225,7 +225,7 @@ impl AsRef<str> for QueueAttributeName {
 
 /// <p>Gives a detailed description of the result of an action on each entry in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
     #[doc(hidden)]
@@ -256,16 +256,6 @@ impl BatchResultErrorEntry {
     /// <p>A message explaining why the action failed on this entry.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchResultErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchResultErrorEntry");
-        formatter.field("id", &self.id);
-        formatter.field("sender_fault", &self.sender_fault);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
@@ -340,7 +330,7 @@ impl BatchResultErrorEntry {
 
 /// <p>Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <code>SendMessageBatch</code>.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageBatchResultEntry {
     /// <p>An identifier for the message in this batch.</p>
     #[doc(hidden)]
@@ -389,21 +379,6 @@ impl SendMessageBatchResultEntry {
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     pub fn sequence_number(&self) -> std::option::Option<&str> {
         self.sequence_number.as_deref()
-    }
-}
-impl std::fmt::Debug for SendMessageBatchResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessageBatchResultEntry");
-        formatter.field("id", &self.id);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("md5_of_message_body", &self.md5_of_message_body);
-        formatter.field("md5_of_message_attributes", &self.md5_of_message_attributes);
-        formatter.field(
-            "md5_of_message_system_attributes",
-            &self.md5_of_message_system_attributes,
-        );
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.finish()
     }
 }
 /// See [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
@@ -521,7 +496,7 @@ impl SendMessageBatchResultEntry {
 
 /// <p>Contains the details of a single Amazon SQS message along with an <code>Id</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageBatchRequestEntry {
     /// <p>An identifier for a message in this batch used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
@@ -665,19 +640,6 @@ impl SendMessageBatchRequestEntry {
     /// </important>
     pub fn message_group_id(&self) -> std::option::Option<&str> {
         self.message_group_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SendMessageBatchRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessageBatchRequestEntry");
-        formatter.field("id", &self.id);
-        formatter.field("message_body", &self.message_body);
-        formatter.field("delay_seconds", &self.delay_seconds);
-        formatter.field("message_attributes", &self.message_attributes);
-        formatter.field("message_system_attributes", &self.message_system_attributes);
-        formatter.field("message_deduplication_id", &self.message_deduplication_id);
-        formatter.field("message_group_id", &self.message_group_id);
-        formatter.finish()
     }
 }
 /// See [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
@@ -909,7 +871,7 @@ impl SendMessageBatchRequestEntry {
 /// <p>The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <code>SendMessage</code>.</code> </p>
 /// <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageSystemAttributeValue {
     /// <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     #[doc(hidden)]
@@ -949,17 +911,6 @@ impl MessageSystemAttributeValue {
     /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn data_type(&self) -> std::option::Option<&str> {
         self.data_type.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageSystemAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageSystemAttributeValue");
-        formatter.field("string_value", &self.string_value);
-        formatter.field("binary_value", &self.binary_value);
-        formatter.field("string_list_values", &self.string_list_values);
-        formatter.field("binary_list_values", &self.binary_list_values);
-        formatter.field("data_type", &self.data_type);
-        formatter.finish()
     }
 }
 /// See [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
@@ -1157,7 +1108,7 @@ impl AsRef<str> for MessageSystemAttributeNameForSends {
 /// <p>The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <code>SendMessage</code>.</code> </p>
 /// <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageAttributeValue {
     /// <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     #[doc(hidden)]
@@ -1197,17 +1148,6 @@ impl MessageAttributeValue {
     /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn data_type(&self) -> std::option::Option<&str> {
         self.data_type.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageAttributeValue");
-        formatter.field("string_value", &self.string_value);
-        formatter.field("binary_value", &self.binary_value);
-        formatter.field("string_list_values", &self.string_list_values);
-        formatter.field("binary_list_values", &self.binary_list_values);
-        formatter.field("data_type", &self.data_type);
-        formatter.finish()
     }
 }
 /// See [`MessageAttributeValue`](crate::model::MessageAttributeValue).
@@ -1317,7 +1257,7 @@ impl MessageAttributeValue {
 
 /// <p>An Amazon SQS message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all Amazon Web Services accounts for an extended period of time.</p>
     #[doc(hidden)]
@@ -1401,19 +1341,6 @@ impl Message {
         &std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     > {
         self.message_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("receipt_handle", &self.receipt_handle);
-        formatter.field("md5_of_body", &self.md5_of_body);
-        formatter.field("body", &self.body);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("md5_of_message_attributes", &self.md5_of_message_attributes);
-        formatter.field("message_attributes", &self.message_attributes);
-        formatter.finish()
     }
 }
 /// See [`Message`](crate::model::Message).
@@ -1725,7 +1652,7 @@ impl AsRef<str> for MessageSystemAttributeName {
 
 /// <p>Encloses the <code>Id</code> of an entry in <code> <code>DeleteMessageBatch</code>.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMessageBatchResultEntry {
     /// <p>Represents a successfully deleted message.</p>
     #[doc(hidden)]
@@ -1735,13 +1662,6 @@ impl DeleteMessageBatchResultEntry {
     /// <p>Represents a successfully deleted message.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteMessageBatchResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMessageBatchResultEntry");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
@@ -1778,7 +1698,7 @@ impl DeleteMessageBatchResultEntry {
 
 /// <p>Encloses a receipt handle and an identifier for it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMessageBatchRequestEntry {
     /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
@@ -1801,14 +1721,6 @@ impl DeleteMessageBatchRequestEntry {
     /// <p>A receipt handle.</p>
     pub fn receipt_handle(&self) -> std::option::Option<&str> {
         self.receipt_handle.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteMessageBatchRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMessageBatchRequestEntry");
-        formatter.field("id", &self.id);
-        formatter.field("receipt_handle", &self.receipt_handle);
-        formatter.finish()
     }
 }
 /// See [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
@@ -1868,7 +1780,7 @@ impl DeleteMessageBatchRequestEntry {
 
 /// <p>Encloses the <code>Id</code> of an entry in <code> <code>ChangeMessageVisibilityBatch</code>.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchResultEntry {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
     #[doc(hidden)]
@@ -1878,13 +1790,6 @@ impl ChangeMessageVisibilityBatchResultEntry {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangeMessageVisibilityBatchResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeMessageVisibilityBatchResultEntry");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
@@ -1926,7 +1831,7 @@ impl ChangeMessageVisibilityBatchResultEntry {
 /// <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code> </p>
 /// <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchRequestEntry {
     /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
@@ -1956,15 +1861,6 @@ impl ChangeMessageVisibilityBatchRequestEntry {
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
     pub fn visibility_timeout(&self) -> i32 {
         self.visibility_timeout
-    }
-}
-impl std::fmt::Debug for ChangeMessageVisibilityBatchRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeMessageVisibilityBatchRequestEntry");
-        formatter.field("id", &self.id);
-        formatter.field("receipt_handle", &self.receipt_handle);
-        formatter.field("visibility_timeout", &self.visibility_timeout);
-        formatter.finish()
     }
 }
 /// See [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).

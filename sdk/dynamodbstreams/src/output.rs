@@ -2,7 +2,7 @@
 
 /// <p>Represents the output of a <code>ListStreams</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamsOutput {
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
     #[doc(hidden)]
@@ -23,14 +23,6 @@ impl ListStreamsOutput {
     /// <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
     pub fn last_evaluated_stream_arn(&self) -> std::option::Option<&str> {
         self.last_evaluated_stream_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListStreamsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamsOutput");
-        formatter.field("streams", &self.streams);
-        formatter.field("last_evaluated_stream_arn", &self.last_evaluated_stream_arn);
-        formatter.finish()
     }
 }
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
@@ -97,7 +89,7 @@ impl ListStreamsOutput {
 
 /// <p>Represents the output of a <code>GetShardIterator</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
     #[doc(hidden)]
@@ -107,13 +99,6 @@ impl GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
     pub fn shard_iterator(&self) -> std::option::Option<&str> {
         self.shard_iterator.as_deref()
-    }
-}
-impl std::fmt::Debug for GetShardIteratorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetShardIteratorOutput");
-        formatter.field("shard_iterator", &self.shard_iterator);
-        formatter.finish()
     }
 }
 /// See [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
@@ -155,7 +140,7 @@ impl GetShardIteratorOutput {
 
 /// <p>Represents the output of a <code>GetRecords</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecordsOutput {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
     #[doc(hidden)]
@@ -172,14 +157,6 @@ impl GetRecordsOutput {
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
     pub fn next_shard_iterator(&self) -> std::option::Option<&str> {
         self.next_shard_iterator.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRecordsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecordsOutput");
-        formatter.field("records", &self.records);
-        formatter.field("next_shard_iterator", &self.next_shard_iterator);
-        formatter.finish()
     }
 }
 /// See [`GetRecordsOutput`](crate::output::GetRecordsOutput).
@@ -242,7 +219,7 @@ impl GetRecordsOutput {
 
 /// <p>Represents the output of a <code>DescribeStream</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStreamOutput {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     #[doc(hidden)]
@@ -252,13 +229,6 @@ impl DescribeStreamOutput {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     pub fn stream_description(&self) -> std::option::Option<&crate::model::StreamDescription> {
         self.stream_description.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeStreamOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStreamOutput");
-        formatter.field("stream_description", &self.stream_description);
-        formatter.finish()
     }
 }
 /// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).

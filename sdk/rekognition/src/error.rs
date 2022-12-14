@@ -2,7 +2,7 @@
 
 /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -22,15 +22,6 @@ impl ThrottlingException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -111,7 +102,7 @@ impl ThrottlingException {
 
 /// <p>The resource specified in the request cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -131,15 +122,6 @@ impl ResourceNotFoundException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -220,7 +202,7 @@ impl ResourceNotFoundException {
 
 /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedThroughputExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -240,15 +222,6 @@ impl ProvisionedThroughputExceededException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ProvisionedThroughputExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedThroughputExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl ProvisionedThroughputExceededException {
@@ -329,7 +302,7 @@ impl ProvisionedThroughputExceededException {
 
 /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -349,15 +322,6 @@ impl InvalidParameterException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl InvalidParameterException {
@@ -438,7 +402,7 @@ impl InvalidParameterException {
 
 /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -458,15 +422,6 @@ impl InternalServerError {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl InternalServerError {
@@ -547,7 +502,7 @@ impl InternalServerError {
 
 /// <p>You are not authorized to perform the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -567,15 +522,6 @@ impl AccessDeniedException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -656,7 +602,7 @@ impl AccessDeniedException {
 
 /// <p>The specified resource is already being used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -676,15 +622,6 @@ impl ResourceInUseException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl ResourceInUseException {
@@ -765,7 +702,7 @@ impl ResourceInUseException {
 
 /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -785,15 +722,6 @@ impl LimitExceededException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl LimitExceededException {
@@ -875,7 +803,7 @@ impl LimitExceededException {
 /// <p></p>
 /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -895,15 +823,6 @@ impl ServiceQuotaExceededException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl ServiceQuotaExceededException {
@@ -984,7 +903,7 @@ impl ServiceQuotaExceededException {
 
 /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1004,15 +923,6 @@ impl VideoTooLargeException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for VideoTooLargeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoTooLargeException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl VideoTooLargeException {
@@ -1093,7 +1003,7 @@ impl VideoTooLargeException {
 
 /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3ObjectException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1113,15 +1023,6 @@ impl InvalidS3ObjectException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidS3ObjectException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3ObjectException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl InvalidS3ObjectException {
@@ -1202,7 +1103,7 @@ impl InvalidS3ObjectException {
 
 /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdempotentParameterMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1222,15 +1123,6 @@ impl IdempotentParameterMismatchException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for IdempotentParameterMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotentParameterMismatchException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl IdempotentParameterMismatchException {
@@ -1311,7 +1203,7 @@ impl IdempotentParameterMismatchException {
 
 /// <p>The provided image format is not supported. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidImageFormatException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1331,15 +1223,6 @@ impl InvalidImageFormatException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidImageFormatException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidImageFormatException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl InvalidImageFormatException {
@@ -1420,7 +1303,7 @@ impl InvalidImageFormatException {
 
 /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1440,15 +1323,6 @@ impl ImageTooLargeException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageTooLargeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageTooLargeException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl ImageTooLargeException {
@@ -1529,7 +1403,7 @@ impl ImageTooLargeException {
 
 /// <p>A resource with the specified ID already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1549,15 +1423,6 @@ impl ResourceAlreadyExistsException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl ResourceAlreadyExistsException {
@@ -1638,7 +1503,7 @@ impl ResourceAlreadyExistsException {
 
 /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MalformedPolicyDocumentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1658,15 +1523,6 @@ impl MalformedPolicyDocumentException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for MalformedPolicyDocumentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedPolicyDocumentException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl MalformedPolicyDocumentException {
@@ -1747,7 +1603,7 @@ impl MalformedPolicyDocumentException {
 
 /// <p>The supplied revision id for the project policy is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPolicyRevisionIdException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1767,15 +1623,6 @@ impl InvalidPolicyRevisionIdException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidPolicyRevisionIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPolicyRevisionIdException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl InvalidPolicyRevisionIdException {
@@ -1856,7 +1703,7 @@ impl InvalidPolicyRevisionIdException {
 
 /// <p>Pagination token in the request is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPaginationTokenException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1876,15 +1723,6 @@ impl InvalidPaginationTokenException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidPaginationTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPaginationTokenException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl InvalidPaginationTokenException {
@@ -1965,7 +1803,7 @@ impl InvalidPaginationTokenException {
 
 /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotReadyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1985,15 +1823,6 @@ impl ResourceNotReadyException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotReadyException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl ResourceNotReadyException {
@@ -2074,7 +1903,7 @@ impl ResourceNotReadyException {
 
 /// <p>The number of in-progress human reviews you have has exceeded the number allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopQuotaExceededException {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -2115,18 +1944,6 @@ impl HumanLoopQuotaExceededException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for HumanLoopQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopQuotaExceededException");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
     }
 }
 impl HumanLoopQuotaExceededException {

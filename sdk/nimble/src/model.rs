@@ -160,7 +160,7 @@ impl std::fmt::Debug for Studio {
 pub mod studio {
 
     /// A builder for [`Studio`](crate::model::Studio).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) admin_role_arn: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -407,6 +407,31 @@ pub mod studio {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("admin_role_arn", &self.admin_role_arn);
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("home_region", &self.home_region);
+            formatter.field("sso_client_id", &self.sso_client_id);
+            formatter.field("state", &self.state);
+            formatter.field("status_code", &self.status_code);
+            formatter.field("status_message", &self.status_message);
+            formatter.field(
+                "studio_encryption_configuration",
+                &self.studio_encryption_configuration,
+            );
+            formatter.field("studio_id", &self.studio_id);
+            formatter.field("studio_name", &self.studio_name);
+            formatter.field("studio_url", &self.studio_url);
+            formatter.field("tags", &self.tags);
+            formatter.field("updated_at", &self.updated_at);
+            formatter.field("user_role_arn", &self.user_role_arn);
+            formatter.finish()
+        }
+    }
 }
 impl Studio {
     /// Creates a new builder-style object to manufacture [`Studio`](crate::model::Studio).
@@ -417,7 +442,7 @@ impl Studio {
 
 /// <p>Configuration of the encryption method that is used for the studio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StudioEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     #[doc(hidden)]
@@ -436,14 +461,6 @@ impl StudioEncryptionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::StudioEncryptionConfigurationKeyType> {
         self.key_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StudioEncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StudioEncryptionConfiguration");
-        formatter.field("key_arn", &self.key_arn);
-        formatter.field("key_type", &self.key_type);
-        formatter.finish()
     }
 }
 /// See [`StudioEncryptionConfiguration`](crate::model::StudioEncryptionConfiguration).
@@ -927,7 +944,7 @@ impl AsRef<str> for StudioState {
 
 /// <p>A new studio user's membership.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewStudioMember {
     /// <p>The persona.</p>
     #[doc(hidden)]
@@ -944,14 +961,6 @@ impl NewStudioMember {
     /// <p>The principal ID.</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NewStudioMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewStudioMember");
-        formatter.field("persona", &self.persona);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.finish()
     }
 }
 /// See [`NewStudioMember`](crate::model::NewStudioMember).
@@ -1092,7 +1101,7 @@ impl AsRef<str> for StudioPersona {
 /// <p>When you add a user to your studio using the Nimble Studio console, they are given access to the studio's IAM Identity Center application and are given access to log in to the Nimble Studio portal. These users have the permissions provided by the studio's user IAM role and do not appear in the studio membership collection. Only studio admins appear in studio membership.</p>
 /// <p>When you add a user to studio membership with the persona ADMIN, upon logging in to the Nimble Studio portal, they are granted permissions specified by the Studio's Admin IAM role.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StudioMembership {
     /// <p>The ID of the identity store.</p>
     #[doc(hidden)]
@@ -1123,16 +1132,6 @@ impl StudioMembership {
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub fn sid(&self) -> std::option::Option<&str> {
         self.sid.as_deref()
-    }
-}
-impl std::fmt::Debug for StudioMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StudioMembership");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("persona", &self.persona);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("sid", &self.sid);
-        formatter.finish()
     }
 }
 /// See [`StudioMembership`](crate::model::StudioMembership).
@@ -1405,7 +1404,7 @@ impl std::fmt::Debug for StudioComponent {
 pub mod studio_component {
 
     /// A builder for [`StudioComponent`](crate::model::StudioComponent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
@@ -1740,6 +1739,35 @@ pub mod studio_component {
                 secure_initialization_role_arn: self.secure_initialization_role_arn,
                 runtime_role_arn: self.runtime_role_arn,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("configuration", &self.configuration);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("created_by", &self.created_by);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("ec2_security_group_ids", &self.ec2_security_group_ids);
+            formatter.field("initialization_scripts", &self.initialization_scripts);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("script_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("state", &self.state);
+            formatter.field("status_code", &self.status_code);
+            formatter.field("status_message", &self.status_message);
+            formatter.field("studio_component_id", &self.studio_component_id);
+            formatter.field("subtype", &self.subtype);
+            formatter.field("tags", &self.tags);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("updated_at", &self.updated_at);
+            formatter.field("updated_by", &self.updated_by);
+            formatter.field(
+                "secure_initialization_role_arn",
+                &self.secure_initialization_role_arn,
+            );
+            formatter.field("runtime_role_arn", &self.runtime_role_arn);
+            formatter.finish()
         }
     }
 }
@@ -2285,7 +2313,7 @@ impl AsRef<str> for StudioComponentState {
 
 /// <p>A parameter for a studio component script, in the form of a key:value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScriptParameterKeyValue {
     /// <p>A script parameter key.</p>
     #[doc(hidden)]
@@ -2302,14 +2330,6 @@ impl ScriptParameterKeyValue {
     /// <p>A script parameter value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ScriptParameterKeyValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScriptParameterKeyValue");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ScriptParameterKeyValue`](crate::model::ScriptParameterKeyValue).
@@ -2413,7 +2433,7 @@ impl std::fmt::Debug for StudioComponentInitializationScript {
 pub mod studio_component_initialization_script {
 
     /// A builder for [`StudioComponentInitializationScript`](crate::model::StudioComponentInitializationScript).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) launch_profile_protocol_version: std::option::Option<std::string::String>,
         pub(crate) platform: std::option::Option<crate::model::LaunchProfilePlatform>,
@@ -2485,6 +2505,19 @@ pub mod studio_component_initialization_script {
                 run_context: self.run_context,
                 script: self.script,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "launch_profile_protocol_version",
+                &self.launch_profile_protocol_version,
+            );
+            formatter.field("platform", &self.platform);
+            formatter.field("run_context", &self.run_context);
+            formatter.field("script", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2833,7 +2866,7 @@ impl std::fmt::Debug for SharedFileSystemConfiguration {
 pub mod shared_file_system_configuration {
 
     /// A builder for [`SharedFileSystemConfiguration`](crate::model::SharedFileSystemConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -2912,6 +2945,17 @@ pub mod shared_file_system_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("endpoint", &"*** Sensitive Data Redacted ***");
+            formatter.field("file_system_id", &self.file_system_id);
+            formatter.field("linux_mount_point", &"*** Sensitive Data Redacted ***");
+            formatter.field("share_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("windows_mount_drive", &self.windows_mount_drive);
+            formatter.finish()
+        }
+    }
 }
 impl SharedFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`SharedFileSystemConfiguration`](crate::model::SharedFileSystemConfiguration).
@@ -2945,7 +2989,7 @@ impl std::fmt::Debug for LicenseServiceConfiguration {
 pub mod license_service_configuration {
 
     /// A builder for [`LicenseServiceConfiguration`](crate::model::LicenseServiceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
     }
@@ -2965,6 +3009,13 @@ pub mod license_service_configuration {
             crate::model::LicenseServiceConfiguration {
                 endpoint: self.endpoint,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("endpoint", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3008,7 +3059,7 @@ impl std::fmt::Debug for ComputeFarmConfiguration {
 pub mod compute_farm_configuration {
 
     /// A builder for [`ComputeFarmConfiguration`](crate::model::ComputeFarmConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) active_directory_user: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -3043,6 +3094,14 @@ pub mod compute_farm_configuration {
                 active_directory_user: self.active_directory_user,
                 endpoint: self.endpoint,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("active_directory_user", &self.active_directory_user);
+            formatter.field("endpoint", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3100,7 +3159,7 @@ impl std::fmt::Debug for ActiveDirectoryConfiguration {
 pub mod active_directory_configuration {
 
     /// A builder for [`ActiveDirectoryConfiguration`](crate::model::ActiveDirectoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) computer_attributes:
             std::option::Option<std::vec::Vec<crate::model::ActiveDirectoryComputerAttribute>>,
@@ -3167,6 +3226,18 @@ pub mod active_directory_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("computer_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field(
+                "organizational_unit_distinguished_name",
+                &self.organizational_unit_distinguished_name,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl ActiveDirectoryConfiguration {
     /// Creates a new builder-style object to manufacture [`ActiveDirectoryConfiguration`](crate::model::ActiveDirectoryConfiguration).
@@ -3177,7 +3248,7 @@ impl ActiveDirectoryConfiguration {
 
 /// <p>An LDAP attribute of an Active Directory computer account, in the form of a name:value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveDirectoryComputerAttribute {
     /// <p>The name for the LDAP attribute.</p>
     #[doc(hidden)]
@@ -3194,14 +3265,6 @@ impl ActiveDirectoryComputerAttribute {
     /// <p>The value for the LDAP attribute.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ActiveDirectoryComputerAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveDirectoryComputerAttribute");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ActiveDirectoryComputerAttribute`](crate::model::ActiveDirectoryComputerAttribute).
@@ -3252,7 +3315,7 @@ impl ActiveDirectoryComputerAttribute {
 
 /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingSession {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -3399,32 +3462,6 @@ impl StreamingSession {
     /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
     pub fn stop_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_at.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamingSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingSession");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("ec2_instance_type", &self.ec2_instance_type);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("owned_by", &self.owned_by);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("state", &self.state);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("streaming_image_id", &self.streaming_image_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("terminate_at", &self.terminate_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("updated_by", &self.updated_by);
-        formatter.field("stopped_at", &self.stopped_at);
-        formatter.field("stopped_by", &self.stopped_by);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("started_by", &self.started_by);
-        formatter.field("stop_at", &self.stop_at);
-        formatter.finish()
     }
 }
 /// See [`StreamingSession`](crate::model::StreamingSession).
@@ -4177,7 +4214,7 @@ impl std::fmt::Debug for StreamingSessionStream {
 pub mod streaming_session_stream {
 
     /// A builder for [`StreamingSessionStream`](crate::model::StreamingSessionStream).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
@@ -4296,6 +4333,20 @@ pub mod streaming_session_stream {
                 stream_id: self.stream_id,
                 url: self.url,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("created_at", &self.created_at);
+            formatter.field("created_by", &self.created_by);
+            formatter.field("expires_at", &self.expires_at);
+            formatter.field("owned_by", &self.owned_by);
+            formatter.field("state", &self.state);
+            formatter.field("status_code", &self.status_code);
+            formatter.field("stream_id", &self.stream_id);
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4836,7 +4887,7 @@ impl std::fmt::Debug for StreamingImage {
 pub mod streaming_image {
 
     /// A builder for [`StreamingImage`](crate::model::StreamingImage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5045,6 +5096,25 @@ pub mod streaming_image {
                 streaming_image_id: self.streaming_image_id,
                 tags: self.tags,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("ec2_image_id", &self.ec2_image_id);
+            formatter.field("encryption_configuration", &self.encryption_configuration);
+            formatter.field("eula_ids", &self.eula_ids);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("owner", &self.owner);
+            formatter.field("platform", &self.platform);
+            formatter.field("state", &self.state);
+            formatter.field("status_code", &self.status_code);
+            formatter.field("status_message", &self.status_message);
+            formatter.field("streaming_image_id", &self.streaming_image_id);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -5325,7 +5395,7 @@ impl AsRef<str> for StreamingImageState {
 
 /// <p>Specifies how a streaming image is encrypted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingImageEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     #[doc(hidden)]
@@ -5344,14 +5414,6 @@ impl StreamingImageEncryptionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::StreamingImageEncryptionConfigurationKeyType> {
         self.key_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamingImageEncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingImageEncryptionConfiguration");
-        formatter.field("key_arn", &self.key_arn);
-        formatter.field("key_type", &self.key_type);
-        formatter.finish()
     }
 }
 /// See [`StreamingImageEncryptionConfiguration`](crate::model::StreamingImageEncryptionConfiguration).
@@ -5509,7 +5571,7 @@ impl AsRef<str> for StreamingImageEncryptionConfigurationKeyType {
 /// <li> <p>GetLaunchProfileDetails</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchProfileMembership {
     /// <p>The ID of the identity store.</p>
     #[doc(hidden)]
@@ -5540,16 +5602,6 @@ impl LaunchProfileMembership {
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub fn sid(&self) -> std::option::Option<&str> {
         self.sid.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchProfileMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchProfileMembership");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("persona", &self.persona);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("sid", &self.sid);
-        formatter.finish()
     }
 }
 /// See [`LaunchProfileMembership`](crate::model::LaunchProfileMembership).
@@ -5717,7 +5769,7 @@ impl AsRef<str> for LaunchProfilePersona {
 
 /// <p>A new member that is added to a launch profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewLaunchProfileMember {
     /// <p>The persona.</p>
     #[doc(hidden)]
@@ -5734,14 +5786,6 @@ impl NewLaunchProfileMember {
     /// <p>The principal ID.</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NewLaunchProfileMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewLaunchProfileMember");
-        formatter.field("persona", &self.persona);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.finish()
     }
 }
 /// See [`NewLaunchProfileMember`](crate::model::NewLaunchProfileMember).
@@ -5901,7 +5945,7 @@ impl std::fmt::Debug for LaunchProfileInitialization {
 pub mod launch_profile_initialization {
 
     /// A builder for [`LaunchProfileInitialization`](crate::model::LaunchProfileInitialization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) active_directory:
             std::option::Option<crate::model::LaunchProfileInitializationActiveDirectory>,
@@ -6080,6 +6124,30 @@ pub mod launch_profile_initialization {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("active_directory", &self.active_directory);
+            formatter.field("ec2_security_group_ids", &self.ec2_security_group_ids);
+            formatter.field("launch_profile_id", &self.launch_profile_id);
+            formatter.field(
+                "launch_profile_protocol_version",
+                &self.launch_profile_protocol_version,
+            );
+            formatter.field("launch_purpose", &self.launch_purpose);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("platform", &self.platform);
+            formatter.field(
+                "system_initialization_scripts",
+                &self.system_initialization_scripts,
+            );
+            formatter.field(
+                "user_initialization_scripts",
+                &self.user_initialization_scripts,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl LaunchProfileInitialization {
     /// Creates a new builder-style object to manufacture [`LaunchProfileInitialization`](crate::model::LaunchProfileInitialization).
@@ -6148,7 +6216,7 @@ impl std::fmt::Debug for LaunchProfileInitializationScript {
 pub mod launch_profile_initialization_script {
 
     /// A builder for [`LaunchProfileInitializationScript`](crate::model::LaunchProfileInitializationScript).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) script: std::option::Option<std::string::String>,
         pub(crate) studio_component_id: std::option::Option<std::string::String>,
@@ -6231,6 +6299,20 @@ pub mod launch_profile_initialization_script {
                 secure_initialization_role_arn: self.secure_initialization_role_arn,
                 runtime_role_arn: self.runtime_role_arn,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("script", &"*** Sensitive Data Redacted ***");
+            formatter.field("studio_component_id", &self.studio_component_id);
+            formatter.field("studio_component_name", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "secure_initialization_role_arn",
+                &self.secure_initialization_role_arn,
+            );
+            formatter.field("runtime_role_arn", &self.runtime_role_arn);
+            formatter.finish()
         }
     }
 }
@@ -6320,7 +6402,7 @@ impl std::fmt::Debug for LaunchProfileInitializationActiveDirectory {
 pub mod launch_profile_initialization_active_directory {
 
     /// A builder for [`LaunchProfileInitializationActiveDirectory`](crate::model::LaunchProfileInitializationActiveDirectory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) computer_attributes:
             std::option::Option<std::vec::Vec<crate::model::ActiveDirectoryComputerAttribute>>,
@@ -6453,6 +6535,22 @@ pub mod launch_profile_initialization_active_directory {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("computer_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("directory_name", &self.directory_name);
+            formatter.field("dns_ip_addresses", &self.dns_ip_addresses);
+            formatter.field(
+                "organizational_unit_distinguished_name",
+                &self.organizational_unit_distinguished_name,
+            );
+            formatter.field("studio_component_id", &self.studio_component_id);
+            formatter.field("studio_component_name", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl LaunchProfileInitializationActiveDirectory {
     /// Creates a new builder-style object to manufacture [`LaunchProfileInitializationActiveDirectory`](crate::model::LaunchProfileInitializationActiveDirectory).
@@ -6550,7 +6648,7 @@ impl std::fmt::Debug for StudioComponentSummary {
 pub mod studio_component_summary {
 
     /// A builder for [`StudioComponentSummary`](crate::model::StudioComponentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
@@ -6681,6 +6779,21 @@ pub mod studio_component_summary {
                 updated_at: self.updated_at,
                 updated_by: self.updated_by,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("created_at", &self.created_at);
+            formatter.field("created_by", &self.created_by);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("studio_component_id", &self.studio_component_id);
+            formatter.field("subtype", &self.subtype);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("updated_at", &self.updated_at);
+            formatter.field("updated_by", &self.updated_by);
+            formatter.finish()
         }
     }
 }
@@ -6852,7 +6965,7 @@ impl std::fmt::Debug for LaunchProfile {
 pub mod launch_profile {
 
     /// A builder for [`LaunchProfile`](crate::model::LaunchProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -7145,6 +7258,32 @@ pub mod launch_profile {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("created_by", &self.created_by);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("ec2_subnet_ids", &self.ec2_subnet_ids);
+            formatter.field("launch_profile_id", &self.launch_profile_id);
+            formatter.field(
+                "launch_profile_protocol_versions",
+                &self.launch_profile_protocol_versions,
+            );
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("state", &self.state);
+            formatter.field("status_code", &self.status_code);
+            formatter.field("status_message", &self.status_message);
+            formatter.field("stream_configuration", &self.stream_configuration);
+            formatter.field("studio_component_ids", &self.studio_component_ids);
+            formatter.field("tags", &self.tags);
+            formatter.field("updated_at", &self.updated_at);
+            formatter.field("updated_by", &self.updated_by);
+            formatter.field("validation_results", &self.validation_results);
+            formatter.finish()
+        }
+    }
 }
 impl LaunchProfile {
     /// Creates a new builder-style object to manufacture [`LaunchProfile`](crate::model::LaunchProfile).
@@ -7155,7 +7294,7 @@ impl LaunchProfile {
 
 /// <p>The launch profile validation result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationResult {
     /// <p>The type of the validation result.</p>
     #[doc(hidden)]
@@ -7188,16 +7327,6 @@ impl ValidationResult {
     /// <p>The status message for the validation result.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationResult");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`ValidationResult`](crate::model::ValidationResult).
@@ -7659,7 +7788,7 @@ impl AsRef<str> for LaunchProfileValidationType {
 
 /// <p>A configuration for a streaming session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamConfiguration {
     /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
     #[doc(hidden)]
@@ -7712,24 +7841,6 @@ impl StreamConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::StreamConfigurationSessionStorage> {
         self.session_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamConfiguration");
-        formatter.field("clipboard_mode", &self.clipboard_mode);
-        formatter.field("ec2_instance_types", &self.ec2_instance_types);
-        formatter.field(
-            "max_session_length_in_minutes",
-            &self.max_session_length_in_minutes,
-        );
-        formatter.field("streaming_image_ids", &self.streaming_image_ids);
-        formatter.field(
-            "max_stopped_session_length_in_minutes",
-            &self.max_stopped_session_length_in_minutes,
-        );
-        formatter.field("session_storage", &self.session_storage);
-        formatter.finish()
     }
 }
 /// See [`StreamConfiguration`](crate::model::StreamConfiguration).
@@ -7871,7 +7982,7 @@ impl StreamConfiguration {
 
 /// <p>The configuration for a streaming session’s upload storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamConfigurationSessionStorage {
     /// <p>The configuration for the upload storage root of the streaming session.</p>
     #[doc(hidden)]
@@ -7888,14 +7999,6 @@ impl StreamConfigurationSessionStorage {
     /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
     pub fn mode(&self) -> std::option::Option<&[crate::model::StreamingSessionStorageMode]> {
         self.mode.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamConfigurationSessionStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamConfigurationSessionStorage");
-        formatter.field("root", &self.root);
-        formatter.field("mode", &self.mode);
-        formatter.finish()
     }
 }
 /// See [`StreamConfigurationSessionStorage`](crate::model::StreamConfigurationSessionStorage).
@@ -8077,7 +8180,7 @@ impl std::fmt::Debug for StreamingSessionStorageRoot {
 pub mod streaming_session_storage_root {
 
     /// A builder for [`StreamingSessionStorageRoot`](crate::model::StreamingSessionStorageRoot).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) linux: std::option::Option<std::string::String>,
         pub(crate) windows: std::option::Option<std::string::String>,
@@ -8109,6 +8212,14 @@ pub mod streaming_session_storage_root {
                 linux: self.linux,
                 windows: self.windows,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("linux", &"*** Sensitive Data Redacted ***");
+            formatter.field("windows", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -8537,7 +8648,7 @@ impl AsRef<str> for LaunchProfileState {
 
 /// <p>Configuration for streaming workstations created using this launch profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamConfigurationCreate {
     /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
     #[doc(hidden)]
@@ -8590,24 +8701,6 @@ impl StreamConfigurationCreate {
         &self,
     ) -> std::option::Option<&crate::model::StreamConfigurationSessionStorage> {
         self.session_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamConfigurationCreate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamConfigurationCreate");
-        formatter.field("clipboard_mode", &self.clipboard_mode);
-        formatter.field("ec2_instance_types", &self.ec2_instance_types);
-        formatter.field(
-            "max_session_length_in_minutes",
-            &self.max_session_length_in_minutes,
-        );
-        formatter.field("streaming_image_ids", &self.streaming_image_ids);
-        formatter.field(
-            "max_stopped_session_length_in_minutes",
-            &self.max_stopped_session_length_in_minutes,
-        );
-        formatter.field("session_storage", &self.session_storage);
-        formatter.finish()
     }
 }
 /// See [`StreamConfigurationCreate`](crate::model::StreamConfigurationCreate).
@@ -8749,7 +8842,7 @@ impl StreamConfigurationCreate {
 
 /// <p>Represents a EULA resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Eula {
     /// <p>The EULA content.</p>
     #[doc(hidden)]
@@ -8787,17 +8880,6 @@ impl Eula {
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Eula {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Eula");
-        formatter.field("content", &self.content);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("eula_id", &self.eula_id);
-        formatter.field("name", &self.name);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`Eula`](crate::model::Eula).
@@ -8890,7 +8972,7 @@ impl Eula {
 
 /// <p>The acceptance of a EULA, required to use Amazon-provided streaming images.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EulaAcceptance {
     /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
     #[doc(hidden)]
@@ -8928,17 +9010,6 @@ impl EulaAcceptance {
     /// <p>The EULA ID.</p>
     pub fn eula_id(&self) -> std::option::Option<&str> {
         self.eula_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EulaAcceptance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EulaAcceptance");
-        formatter.field("accepted_at", &self.accepted_at);
-        formatter.field("accepted_by", &self.accepted_by);
-        formatter.field("acceptee_id", &self.acceptee_id);
-        formatter.field("eula_acceptance_id", &self.eula_acceptance_id);
-        formatter.field("eula_id", &self.eula_id);
-        formatter.finish()
     }
 }
 /// See [`EulaAcceptance`](crate::model::EulaAcceptance).

@@ -2,7 +2,7 @@
 
 /// <p>Specifies the attributes to add to your attribute-based access control (ABAC) configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceAccessControlAttributeConfiguration {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
     #[doc(hidden)]
@@ -15,13 +15,6 @@ impl InstanceAccessControlAttributeConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::AccessControlAttribute]> {
         self.access_control_attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceAccessControlAttributeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAccessControlAttributeConfiguration");
-        formatter.field("access_control_attributes", &self.access_control_attributes);
-        formatter.finish()
     }
 }
 /// See [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
@@ -73,7 +66,7 @@ impl InstanceAccessControlAttributeConfiguration {
 
 /// <p>These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlAttribute {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     #[doc(hidden)]
@@ -90,14 +83,6 @@ impl AccessControlAttribute {
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::AccessControlAttributeValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessControlAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AccessControlAttribute`](crate::model::AccessControlAttribute).
@@ -151,7 +136,7 @@ impl AccessControlAttribute {
 
 /// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlAttributeValue {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
     #[doc(hidden)]
@@ -161,13 +146,6 @@ impl AccessControlAttributeValue {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
     pub fn source(&self) -> std::option::Option<&[std::string::String]> {
         self.source.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessControlAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlAttributeValue");
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
@@ -215,7 +193,7 @@ impl AccessControlAttributeValue {
 
 /// <p>A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key for the tag.</p>
     #[doc(hidden)]
@@ -232,14 +210,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -292,7 +262,7 @@ impl Tag {
 /// <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionsBoundary {
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     #[doc(hidden)]
@@ -312,17 +282,6 @@ impl PermissionsBoundary {
     /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
     pub fn managed_policy_arn(&self) -> std::option::Option<&str> {
         self.managed_policy_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for PermissionsBoundary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionsBoundary");
-        formatter.field(
-            "customer_managed_policy_reference",
-            &self.customer_managed_policy_reference,
-        );
-        formatter.field("managed_policy_arn", &self.managed_policy_arn);
-        formatter.finish()
     }
 }
 /// See [`PermissionsBoundary`](crate::model::PermissionsBoundary).
@@ -383,7 +342,7 @@ impl PermissionsBoundary {
 
 /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedPolicyReference {
     /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
     #[doc(hidden)]
@@ -400,14 +359,6 @@ impl CustomerManagedPolicyReference {
     /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerManagedPolicyReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedPolicyReference");
-        formatter.field("name", &self.name);
-        formatter.field("path", &self.path);
-        formatter.finish()
     }
 }
 /// See [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
@@ -458,7 +409,7 @@ impl CustomerManagedPolicyReference {
 
 /// <p>A structure that is used to provide the status of the provisioning operation for a specified permission set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionSetProvisioningStatus {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
@@ -503,18 +454,6 @@ impl PermissionSetProvisioningStatus {
     /// <p>The date that the permission set was created.</p>
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
-    }
-}
-impl std::fmt::Debug for PermissionSetProvisioningStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionSetProvisioningStatus");
-        formatter.field("status", &self.status);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("permission_set_arn", &self.permission_set_arn);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("created_date", &self.created_date);
-        formatter.finish()
     }
 }
 /// See [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
@@ -915,7 +854,7 @@ impl AsRef<str> for ProvisioningStatus {
 
 /// <p>Provides information about the permission set provisioning status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionSetProvisioningStatusMetadata {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
@@ -939,15 +878,6 @@ impl PermissionSetProvisioningStatusMetadata {
     /// <p>The date that the permission set was created.</p>
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
-    }
-}
-impl std::fmt::Debug for PermissionSetProvisioningStatusMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionSetProvisioningStatusMetadata");
-        formatter.field("status", &self.status);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("created_date", &self.created_date);
-        formatter.finish()
     }
 }
 /// See [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
@@ -1016,7 +946,7 @@ impl PermissionSetProvisioningStatusMetadata {
 
 /// <p>Filters he operation status list based on the passed attribute value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationStatusFilter {
     /// <p>Filters the list operations result based on the status attribute.</p>
     #[doc(hidden)]
@@ -1026,13 +956,6 @@ impl OperationStatusFilter {
     /// <p>Filters the list operations result based on the status attribute.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::StatusValues> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for OperationStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationStatusFilter");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`OperationStatusFilter`](crate::model::OperationStatusFilter).
@@ -1074,7 +997,7 @@ impl OperationStatusFilter {
 
 /// <p>A structure that stores the details of the AWS managed policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachedManagedPolicy {
     /// <p>The name of the AWS managed policy.</p>
     #[doc(hidden)]
@@ -1091,14 +1014,6 @@ impl AttachedManagedPolicy {
     /// <p>The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachedManagedPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachedManagedPolicy");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
@@ -1149,7 +1064,7 @@ impl AttachedManagedPolicy {
 
 /// <p>Provides information about the IAM Identity Center instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMetadata {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
@@ -1166,14 +1081,6 @@ impl InstanceMetadata {
     /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMetadata");
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.finish()
     }
 }
 /// See [`InstanceMetadata`](crate::model::InstanceMetadata).
@@ -1229,7 +1136,7 @@ impl InstanceMetadata {
 /// <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAssignment {
     /// <p>The identifier of the AWS account.</p>
     #[doc(hidden)]
@@ -1260,16 +1167,6 @@ impl AccountAssignment {
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountAssignment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAssignment");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("permission_set_arn", &self.permission_set_arn);
-        formatter.field("principal_type", &self.principal_type);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.finish()
     }
 }
 /// See [`AccountAssignment`](crate::model::AccountAssignment).
@@ -1440,7 +1337,7 @@ impl AsRef<str> for PrincipalType {
 
 /// <p>Provides information about the <code>AccountAssignment</code> creation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAssignmentOperationStatusMetadata {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
@@ -1464,15 +1361,6 @@ impl AccountAssignmentOperationStatusMetadata {
     /// <p>The date that the permission set was created.</p>
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountAssignmentOperationStatusMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAssignmentOperationStatusMetadata");
-        formatter.field("status", &self.status);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("created_date", &self.created_date);
-        formatter.finish()
     }
 }
 /// See [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
@@ -1541,7 +1429,7 @@ impl AccountAssignmentOperationStatusMetadata {
 
 /// <p>An entity that contains IAM policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionSet {
     /// <p>The name of the permission set.</p>
     #[doc(hidden)]
@@ -1586,18 +1474,6 @@ impl PermissionSet {
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
     pub fn relay_state(&self) -> std::option::Option<&str> {
         self.relay_state.as_deref()
-    }
-}
-impl std::fmt::Debug for PermissionSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionSet");
-        formatter.field("name", &self.name);
-        formatter.field("permission_set_arn", &self.permission_set_arn);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("session_duration", &self.session_duration);
-        formatter.field("relay_state", &self.relay_state);
-        formatter.finish()
     }
 }
 /// See [`PermissionSet`](crate::model::PermissionSet).
@@ -1806,7 +1682,7 @@ impl AsRef<str> for InstanceAccessControlAttributeConfigurationStatus {
 
 /// <p>The status of the creation or deletion operation of an assignment that a principal needs to access an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAssignmentOperationStatus {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
@@ -1872,21 +1748,6 @@ impl AccountAssignmentOperationStatus {
     /// <p>The date that the permission set was created.</p>
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountAssignmentOperationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAssignmentOperationStatus");
-        formatter.field("status", &self.status);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("permission_set_arn", &self.permission_set_arn);
-        formatter.field("principal_type", &self.principal_type);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("created_date", &self.created_date);
-        formatter.finish()
     }
 }
 /// See [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).

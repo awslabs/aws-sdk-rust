@@ -2,7 +2,7 @@
 
 /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedDocumentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl UnsupportedDocumentException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedDocumentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedDocumentException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl UnsupportedDocumentException {
@@ -91,7 +83,7 @@ impl UnsupportedDocumentException {
 
 /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -180,7 +164,7 @@ impl ThrottlingException {
 
 /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedThroughputExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -193,14 +177,6 @@ impl ProvisionedThroughputExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for ProvisionedThroughputExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedThroughputExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl ProvisionedThroughputExceededException {
@@ -269,7 +245,7 @@ impl ProvisionedThroughputExceededException {
 
 /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -282,14 +258,6 @@ impl LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl LimitExceededException {
@@ -358,7 +326,7 @@ impl LimitExceededException {
 
 /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3ObjectException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -371,14 +339,6 @@ impl InvalidS3ObjectException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidS3ObjectException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3ObjectException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl InvalidS3ObjectException {
@@ -447,7 +407,7 @@ impl InvalidS3ObjectException {
 
 /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -460,14 +420,6 @@ impl InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl InvalidParameterException {
@@ -536,7 +488,7 @@ impl InvalidParameterException {
 
 /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidKmsKeyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -549,14 +501,6 @@ impl InvalidKmsKeyException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidKmsKeyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidKmsKeyException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl InvalidKmsKeyException {
@@ -625,7 +569,7 @@ impl InvalidKmsKeyException {
 
 /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -638,14 +582,6 @@ impl InternalServerError {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl InternalServerError {
@@ -714,7 +650,7 @@ impl InternalServerError {
 
 /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdempotentParameterMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -727,14 +663,6 @@ impl IdempotentParameterMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for IdempotentParameterMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotentParameterMismatchException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl IdempotentParameterMismatchException {
@@ -803,7 +731,7 @@ impl IdempotentParameterMismatchException {
 
 /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -816,14 +744,6 @@ impl DocumentTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentTooLargeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentTooLargeException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl DocumentTooLargeException {
@@ -892,7 +812,7 @@ impl DocumentTooLargeException {
 
 /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadDocumentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -905,14 +825,6 @@ impl BadDocumentException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for BadDocumentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadDocumentException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl BadDocumentException {
@@ -981,7 +893,7 @@ impl BadDocumentException {
 
 /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -994,14 +906,6 @@ impl AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -1070,7 +974,7 @@ impl AccessDeniedException {
 
 /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidJobIdException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1083,14 +987,6 @@ impl InvalidJobIdException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidJobIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidJobIdException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl InvalidJobIdException {
@@ -1159,7 +1055,7 @@ impl InvalidJobIdException {
 
 /// <p>Indicates you have exceeded the maximum number of active human in the loop workflows available</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopQuotaExceededException {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -1193,17 +1089,6 @@ impl HumanLoopQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for HumanLoopQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopQuotaExceededException");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl HumanLoopQuotaExceededException {

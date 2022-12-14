@@ -2,18 +2,11 @@
 
 /// <p>The request exceeds the maximum number of requests per second.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottledException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ThrottledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ThrottledException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl ThrottledException {
 
 /// <p>The request is missing required parameters or has invalid parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRequestException {
     /// Returns the error message.
@@ -136,7 +122,7 @@ impl InvalidRequestException {
 
 /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is correct.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -149,14 +135,6 @@ impl ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -228,7 +206,7 @@ impl ResourceNotFoundException {
 
 /// <p>You have exceeded the maximum number of tags you can apply to this resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -241,14 +219,6 @@ impl TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
     }
 }
 impl TooManyTagsException {
@@ -320,18 +290,11 @@ impl TooManyTagsException {
 
 /// <p>You have reached the maximum number of sampling rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RuleLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RuleLimitExceededException {
     /// Returns the error message.

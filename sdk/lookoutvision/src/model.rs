@@ -248,7 +248,7 @@ impl AsRef<str> for DatasetStatus {
 
 /// <p>A key and value pair that is attached to the specified Amazon Lookout for Vision model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag that is attached to the specified model.</p>
     #[doc(hidden)]
@@ -265,14 +265,6 @@ impl Tag {
     /// <p>The value of the tag that is attached to the specified model.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -436,7 +428,7 @@ impl AsRef<str> for ModelHostingStatus {
 
 /// <p> Configuration information for a Amazon Lookout for Vision model packaging job. For more information, see <code>StartModelPackagingJob</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelPackagingConfiguration {
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
     #[doc(hidden)]
@@ -446,13 +438,6 @@ impl ModelPackagingConfiguration {
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
     pub fn greengrass(&self) -> std::option::Option<&crate::model::GreengrassConfiguration> {
         self.greengrass.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelPackagingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelPackagingConfiguration");
-        formatter.field("greengrass", &self.greengrass);
-        formatter.finish()
     }
 }
 /// See [`ModelPackagingConfiguration`](crate::model::ModelPackagingConfiguration).
@@ -496,7 +481,7 @@ impl ModelPackagingConfiguration {
 /// <p>You can't specify a component with the same <code>ComponentName</code> and <code>Componentversion</code> as an existing component with the same component name and component version.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GreengrassConfiguration {
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -557,20 +542,6 @@ impl GreengrassConfiguration {
     /// <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for GreengrassConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GreengrassConfiguration");
-        formatter.field("compiler_options", &self.compiler_options);
-        formatter.field("target_device", &self.target_device);
-        formatter.field("target_platform", &self.target_platform);
-        formatter.field("s3_output_location", &self.s3_output_location);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("component_version", &self.component_version);
-        formatter.field("component_description", &self.component_description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GreengrassConfiguration`](crate::model::GreengrassConfiguration).
@@ -725,7 +696,7 @@ impl GreengrassConfiguration {
 
 /// <p>Information about the location of training output or the output of a model packaging job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
     #[doc(hidden)]
@@ -742,14 +713,6 @@ impl S3Location {
     /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -800,7 +763,7 @@ impl S3Location {
 
 /// <p>The platform on which a model runs on an AWS IoT Greengrass core device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetPlatform {
     /// <p>The target operating system for the model. Linux is the only operating system that is currently supported. </p>
     #[doc(hidden)]
@@ -832,15 +795,6 @@ impl TargetPlatform {
     /// </ul>
     pub fn accelerator(&self) -> std::option::Option<&crate::model::TargetPlatformAccelerator> {
         self.accelerator.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetPlatform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetPlatform");
-        formatter.field("os", &self.os);
-        formatter.field("arch", &self.arch);
-        formatter.field("accelerator", &self.accelerator);
-        formatter.finish()
     }
 }
 /// See [`TargetPlatform`](crate::model::TargetPlatform).
@@ -1269,7 +1223,7 @@ impl AsRef<str> for TargetDevice {
 
 /// <p>Metadata about an Amazon Lookout for Vision project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectMetadata {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
@@ -1293,15 +1247,6 @@ impl ProjectMetadata {
     /// <p>The unix timestamp for the date and time that the project was created. </p>
     pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectMetadata");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ProjectMetadata`](crate::model::ProjectMetadata).
@@ -1367,7 +1312,7 @@ impl ProjectMetadata {
 
 /// <p>Describes an Amazon Lookout for Vision model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelMetadata {
     /// <p>The unix timestamp for the date and time that the model was created. </p>
     #[doc(hidden)]
@@ -1419,19 +1364,6 @@ impl ModelMetadata {
     /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
     pub fn performance(&self) -> std::option::Option<&crate::model::ModelPerformance> {
         self.performance.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelMetadata");
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("performance", &self.performance);
-        formatter.finish()
     }
 }
 /// See [`ModelMetadata`](crate::model::ModelMetadata).
@@ -1554,7 +1486,7 @@ impl ModelMetadata {
 
 /// <p>Information about the evaluation performance of a trained model. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelPerformance {
     /// <p>The overall F1 score metric for the trained model.</p>
     #[doc(hidden)]
@@ -1578,15 +1510,6 @@ impl ModelPerformance {
     /// <p>The overall precision metric value for the trained model.</p>
     pub fn precision(&self) -> std::option::Option<f32> {
         self.precision
-    }
-}
-impl std::fmt::Debug for ModelPerformance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelPerformance");
-        formatter.field("f1_score", &self.f1_score);
-        formatter.field("recall", &self.recall);
-        formatter.field("precision", &self.precision);
-        formatter.finish()
     }
 }
 /// See [`ModelPerformance`](crate::model::ModelPerformance).
@@ -1784,7 +1707,7 @@ impl AsRef<str> for ModelStatus {
 
 /// <p> Metadata for a model packaging job. For more information, see <code>ListModelPackagingJobs</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelPackagingJobMetadata {
     /// <p> The name of the model packaging job. </p>
     #[doc(hidden)]
@@ -1850,24 +1773,6 @@ impl ModelPackagingJobMetadata {
     /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
     pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelPackagingJobMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelPackagingJobMetadata");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field(
-            "model_packaging_job_description",
-            &self.model_packaging_job_description,
-        );
-        formatter.field("model_packaging_method", &self.model_packaging_method);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ModelPackagingJobMetadata`](crate::model::ModelPackagingJobMetadata).
@@ -2128,7 +2033,7 @@ impl AsRef<str> for ModelPackagingJobStatus {
 
 /// <p>The prediction results from a call to <code>DetectAnomalies</code>. <code>DetectAnomalyResult</code> includes classification information for the prediction (<code>IsAnomalous</code> and <code>Confidence</code>). If the model you use is an image segementation model, <code>DetectAnomalyResult</code> also includes segmentation information (<code>Anomalies</code> and <code>AnomalyMask</code>). Classification information is calculated separately from segmentation information and you shouldn't assume a relationship between them.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectAnomalyResult {
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     #[doc(hidden)]
@@ -2174,17 +2079,6 @@ impl DetectAnomalyResult {
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
     pub fn anomaly_mask(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.anomaly_mask.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectAnomalyResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectAnomalyResult");
-        formatter.field("source", &self.source);
-        formatter.field("is_anomalous", &self.is_anomalous);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("anomalies", &self.anomalies);
-        formatter.field("anomaly_mask", &self.anomaly_mask);
-        formatter.finish()
     }
 }
 /// See [`DetectAnomalyResult`](crate::model::DetectAnomalyResult).
@@ -2291,7 +2185,7 @@ impl DetectAnomalyResult {
 
 /// <p>Information about an anomaly type found on an image by an image segmentation model. For more information, see <code>DetectAnomalies</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Anomaly {
     /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
     #[doc(hidden)]
@@ -2308,14 +2202,6 @@ impl Anomaly {
     /// <p>Information about the pixel mask that covers an anomaly type.</p>
     pub fn pixel_anomaly(&self) -> std::option::Option<&crate::model::PixelAnomaly> {
         self.pixel_anomaly.as_ref()
-    }
-}
-impl std::fmt::Debug for Anomaly {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Anomaly");
-        formatter.field("name", &self.name);
-        formatter.field("pixel_anomaly", &self.pixel_anomaly);
-        formatter.finish()
     }
 }
 /// See [`Anomaly`](crate::model::Anomaly).
@@ -2369,7 +2255,7 @@ impl Anomaly {
 
 /// <p>Information about the pixels in an anomaly mask. For more information, see <code>Anomaly</code>. <code>PixelAnomaly</code> is only returned by image segmentation models.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PixelAnomaly {
     /// <p>The percentage area of the image that the anomaly type covers.</p>
     #[doc(hidden)]
@@ -2386,14 +2272,6 @@ impl PixelAnomaly {
     /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
     pub fn color(&self) -> std::option::Option<&str> {
         self.color.as_deref()
-    }
-}
-impl std::fmt::Debug for PixelAnomaly {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PixelAnomaly");
-        formatter.field("total_percentage_area", &self.total_percentage_area);
-        formatter.field("color", &self.color);
-        formatter.finish()
     }
 }
 /// See [`PixelAnomaly`](crate::model::PixelAnomaly).
@@ -2444,7 +2322,7 @@ impl PixelAnomaly {
 
 /// <p>The source for an image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageSource {
     /// <p>The type of the image.</p>
     #[doc(hidden)]
@@ -2454,13 +2332,6 @@ impl ImageSource {
     /// <p>The type of the image.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageSource");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ImageSource`](crate::model::ImageSource).
@@ -2499,7 +2370,7 @@ impl ImageSource {
 
 /// <p>Describe an Amazon Lookout for Vision project. For more information, see <code>DescribeProject</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectDescription {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
@@ -2530,16 +2401,6 @@ impl ProjectDescription {
     /// <p>A list of datasets in the project.</p>
     pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetMetadata]> {
         self.datasets.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectDescription");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("datasets", &self.datasets);
-        formatter.finish()
     }
 }
 /// See [`ProjectDescription`](crate::model::ProjectDescription).
@@ -2626,7 +2487,7 @@ impl ProjectDescription {
 
 /// <p>Summary information for an Amazon Lookout for Vision dataset. For more information, see <code>DescribeDataset</code> and <code>ProjectDescription</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetMetadata {
     /// <p>The type of the dataset.</p>
     #[doc(hidden)]
@@ -2657,16 +2518,6 @@ impl DatasetMetadata {
     /// <p>The status message for the dataset.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetMetadata");
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`DatasetMetadata`](crate::model::DatasetMetadata).
@@ -2750,7 +2601,7 @@ impl DatasetMetadata {
 
 /// <p> Information about a model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelPackagingDescription {
     /// <p> The name of the model packaging job. </p>
     #[doc(hidden)]
@@ -2836,32 +2687,6 @@ impl ModelPackagingDescription {
     /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
     pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelPackagingDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelPackagingDescription");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field(
-            "model_packaging_configuration",
-            &self.model_packaging_configuration,
-        );
-        formatter.field(
-            "model_packaging_job_description",
-            &self.model_packaging_job_description,
-        );
-        formatter.field("model_packaging_method", &self.model_packaging_method);
-        formatter.field(
-            "model_packaging_output_details",
-            &self.model_packaging_output_details,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ModelPackagingDescription`](crate::model::ModelPackagingDescription).
@@ -3058,7 +2883,7 @@ impl ModelPackagingDescription {
 
 /// <p> Information about the output from a model packaging job. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelPackagingOutputDetails {
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
     #[doc(hidden)]
@@ -3068,13 +2893,6 @@ impl ModelPackagingOutputDetails {
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
     pub fn greengrass(&self) -> std::option::Option<&crate::model::GreengrassOutputDetails> {
         self.greengrass.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelPackagingOutputDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelPackagingOutputDetails");
-        formatter.field("greengrass", &self.greengrass);
-        formatter.finish()
     }
 }
 /// See [`ModelPackagingOutputDetails`](crate::model::ModelPackagingOutputDetails).
@@ -3116,7 +2934,7 @@ impl ModelPackagingOutputDetails {
 
 /// <p>Information about the AWS IoT Greengrass component created by a model packaging job. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GreengrassOutputDetails {
     /// <p> The Amazon Resource Name (ARN) of the component. </p>
     #[doc(hidden)]
@@ -3140,15 +2958,6 @@ impl GreengrassOutputDetails {
     /// <p> The version of the component. </p>
     pub fn component_version(&self) -> std::option::Option<&str> {
         self.component_version.as_deref()
-    }
-}
-impl std::fmt::Debug for GreengrassOutputDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GreengrassOutputDetails");
-        formatter.field("component_version_arn", &self.component_version_arn);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("component_version", &self.component_version);
-        formatter.finish()
     }
 }
 /// See [`GreengrassOutputDetails`](crate::model::GreengrassOutputDetails).
@@ -3220,7 +3029,7 @@ impl GreengrassOutputDetails {
 
 /// <p>Describes an Amazon Lookout for Vision model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelDescription {
     /// <p>The version of the model</p>
     #[doc(hidden)]
@@ -3321,26 +3130,6 @@ impl ModelDescription {
     /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
     pub fn max_inference_units(&self) -> std::option::Option<i32> {
         self.max_inference_units
-    }
-}
-impl std::fmt::Debug for ModelDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelDescription");
-        formatter.field("model_version", &self.model_version);
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("performance", &self.performance);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("evaluation_manifest", &self.evaluation_manifest);
-        formatter.field("evaluation_result", &self.evaluation_result);
-        formatter.field("evaluation_end_timestamp", &self.evaluation_end_timestamp);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("min_inference_units", &self.min_inference_units);
-        formatter.field("max_inference_units", &self.max_inference_units);
-        formatter.finish()
     }
 }
 /// See [`ModelDescription`](crate::model::ModelDescription).
@@ -3559,7 +3348,7 @@ impl ModelDescription {
 
 /// <p>The S3 location where Amazon Lookout for Vision saves training output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputS3Object {
     /// <p>The bucket that contains the training output.</p>
     #[doc(hidden)]
@@ -3576,14 +3365,6 @@ impl OutputS3Object {
     /// <p>The location of the training output in the bucket.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputS3Object {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputS3Object");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`OutputS3Object`](crate::model::OutputS3Object).
@@ -3634,7 +3415,7 @@ impl OutputS3Object {
 
 /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputConfig {
     /// <p>The S3 location for the output.</p>
     #[doc(hidden)]
@@ -3644,13 +3425,6 @@ impl OutputConfig {
     /// <p>The S3 location for the output.</p>
     pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputConfig");
-        formatter.field("s3_location", &self.s3_location);
-        formatter.finish()
     }
 }
 /// See [`OutputConfig`](crate::model::OutputConfig).
@@ -3692,7 +3466,7 @@ impl OutputConfig {
 
 /// <p>The description for a dataset. For more information, see <code>DescribeDataset</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetDescription {
     /// <p>The name of the project that contains the dataset.</p>
     #[doc(hidden)]
@@ -3744,19 +3518,6 @@ impl DatasetDescription {
     /// <p>Statistics about the images in a dataset.</p>
     pub fn image_stats(&self) -> std::option::Option<&crate::model::DatasetImageStats> {
         self.image_stats.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetDescription");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("image_stats", &self.image_stats);
-        formatter.finish()
     }
 }
 /// See [`DatasetDescription`](crate::model::DatasetDescription).
@@ -3882,7 +3643,7 @@ impl DatasetDescription {
 
 /// <p>Statistics about the images in a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetImageStats {
     /// <p>The total number of images in the dataset.</p>
     #[doc(hidden)]
@@ -3913,16 +3674,6 @@ impl DatasetImageStats {
     /// <p>the total number of images labeled as an anomaly.</p>
     pub fn anomaly(&self) -> std::option::Option<i32> {
         self.anomaly
-    }
-}
-impl std::fmt::Debug for DatasetImageStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetImageStats");
-        formatter.field("total", &self.total);
-        formatter.field("labeled", &self.labeled);
-        formatter.field("normal", &self.normal);
-        formatter.field("anomaly", &self.anomaly);
-        formatter.finish()
     }
 }
 /// See [`DatasetImageStats`](crate::model::DatasetImageStats).
@@ -3997,7 +3748,7 @@ impl DatasetImageStats {
 
 /// <p>Information about the location of a manifest file that Amazon Lookout for Vision uses to to create a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSource {
     /// <p>Location information for the manifest file.</p>
     #[doc(hidden)]
@@ -4009,13 +3760,6 @@ impl DatasetSource {
         &self,
     ) -> std::option::Option<&crate::model::DatasetGroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSource");
-        formatter.field("ground_truth_manifest", &self.ground_truth_manifest);
-        formatter.finish()
     }
 }
 /// See [`DatasetSource`](crate::model::DatasetSource).
@@ -4061,7 +3805,7 @@ impl DatasetSource {
 
 /// <p>Location information about a manifest file. You can use a manifest file to create a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetGroundTruthManifest {
     /// <p>The S3 bucket location for the manifest file.</p>
     #[doc(hidden)]
@@ -4071,13 +3815,6 @@ impl DatasetGroundTruthManifest {
     /// <p>The S3 bucket location for the manifest file.</p>
     pub fn s3_object(&self) -> std::option::Option<&crate::model::InputS3Object> {
         self.s3_object.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetGroundTruthManifest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetGroundTruthManifest");
-        formatter.field("s3_object", &self.s3_object);
-        formatter.finish()
     }
 }
 /// See [`DatasetGroundTruthManifest`](crate::model::DatasetGroundTruthManifest).
@@ -4119,7 +3856,7 @@ impl DatasetGroundTruthManifest {
 
 /// <p>Amazon S3 Location information for an input manifest file. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputS3Object {
     /// <p>The Amazon S3 bucket that contains the manifest.</p>
     #[doc(hidden)]
@@ -4143,15 +3880,6 @@ impl InputS3Object {
     /// <p>The version ID of the bucket.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InputS3Object {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputS3Object");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
     }
 }
 /// See [`InputS3Object`](crate::model::InputS3Object).

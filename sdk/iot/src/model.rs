@@ -2,7 +2,7 @@
 
 /// <p>Information about an error found in a behavior specification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationError {
     /// <p>The description of an error found in the behaviors.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl ValidationError {
     /// <p>The description of an error found in the behaviors.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationError");
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ValidationError`](crate::model::ValidationError).
@@ -60,7 +53,7 @@ impl ValidationError {
 
 /// <p>A Device Defender security profile behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Behavior {
     /// <p>The name you've given to the behavior.</p>
     #[doc(hidden)]
@@ -98,17 +91,6 @@ impl Behavior {
     /// <p> Suppresses alerts. </p>
     pub fn suppress_alerts(&self) -> std::option::Option<bool> {
         self.suppress_alerts
-    }
-}
-impl std::fmt::Debug for Behavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Behavior");
-        formatter.field("name", &self.name);
-        formatter.field("metric", &self.metric);
-        formatter.field("metric_dimension", &self.metric_dimension);
-        formatter.field("criteria", &self.criteria);
-        formatter.field("suppress_alerts", &self.suppress_alerts);
-        formatter.finish()
     }
 }
 /// See [`Behavior`](crate::model::Behavior).
@@ -201,7 +183,7 @@ impl Behavior {
 
 /// <p>The criteria by which the behavior is determined to be normal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BehaviorCriteria {
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
@@ -269,25 +251,6 @@ impl BehaviorCriteria {
         &self,
     ) -> std::option::Option<&crate::model::MachineLearningDetectionConfig> {
         self.ml_detection_config.as_ref()
-    }
-}
-impl std::fmt::Debug for BehaviorCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BehaviorCriteria");
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("value", &self.value);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field(
-            "consecutive_datapoints_to_alarm",
-            &self.consecutive_datapoints_to_alarm,
-        );
-        formatter.field(
-            "consecutive_datapoints_to_clear",
-            &self.consecutive_datapoints_to_clear,
-        );
-        formatter.field("statistical_threshold", &self.statistical_threshold);
-        formatter.field("ml_detection_config", &self.ml_detection_config);
-        formatter.finish()
     }
 }
 /// See [`BehaviorCriteria`](crate::model::BehaviorCriteria).
@@ -429,7 +392,7 @@ impl BehaviorCriteria {
 
 /// <p> The configuration of an ML Detect Security Profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MachineLearningDetectionConfig {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     #[doc(hidden)]
@@ -439,13 +402,6 @@ impl MachineLearningDetectionConfig {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     pub fn confidence_level(&self) -> std::option::Option<&crate::model::ConfidenceLevel> {
         self.confidence_level.as_ref()
-    }
-}
-impl std::fmt::Debug for MachineLearningDetectionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MachineLearningDetectionConfig");
-        formatter.field("confidence_level", &self.confidence_level);
-        formatter.finish()
     }
 }
 /// See [`MachineLearningDetectionConfig`](crate::model::MachineLearningDetectionConfig).
@@ -582,7 +538,7 @@ impl AsRef<str> for ConfidenceLevel {
 
 /// <p>A statistical ranking (percentile) that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatisticalThreshold {
     /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
     #[doc(hidden)]
@@ -592,13 +548,6 @@ impl StatisticalThreshold {
     /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
     pub fn statistic(&self) -> std::option::Option<&str> {
         self.statistic.as_deref()
-    }
-}
-impl std::fmt::Debug for StatisticalThreshold {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatisticalThreshold");
-        formatter.field("statistic", &self.statistic);
-        formatter.finish()
     }
 }
 /// See [`StatisticalThreshold`](crate::model::StatisticalThreshold).
@@ -637,7 +586,7 @@ impl StatisticalThreshold {
 
 /// <p>The value to be compared with the <code>metric</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricValue {
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
     #[doc(hidden)]
@@ -682,18 +631,6 @@ impl MetricValue {
     /// <p> The string values of a metric. </p>
     pub fn strings(&self) -> std::option::Option<&[std::string::String]> {
         self.strings.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricValue");
-        formatter.field("count", &self.count);
-        formatter.field("cidrs", &self.cidrs);
-        formatter.field("ports", &self.ports);
-        formatter.field("number", &self.number);
-        formatter.field("numbers", &self.numbers);
-        formatter.field("strings", &self.strings);
-        formatter.finish()
     }
 }
 /// See [`MetricValue`](crate::model::MetricValue).
@@ -965,7 +902,7 @@ impl AsRef<str> for ComparisonOperator {
 
 /// <p>The dimension of a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>A unique identifier for the dimension.</p>
     #[doc(hidden)]
@@ -982,14 +919,6 @@ impl MetricDimension {
     /// <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example, for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator, a message will be counted only if it doesn't match any of the topic filters. The operator is optional: if it's not provided (is <code>null</code>), it will be interpreted as <code>IN</code>.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::DimensionValueOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("dimension_name", &self.dimension_name);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`MetricDimension`](crate::model::MetricDimension).
@@ -1245,7 +1174,7 @@ impl AsRef<str> for TopicRuleDestinationStatus {
 
 /// <p>Thing group properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingGroupProperties {
     /// <p>The thing group description.</p>
     #[doc(hidden)]
@@ -1262,14 +1191,6 @@ impl ThingGroupProperties {
     /// <p>The thing group attributes in JSON format.</p>
     pub fn attribute_payload(&self) -> std::option::Option<&crate::model::AttributePayload> {
         self.attribute_payload.as_ref()
-    }
-}
-impl std::fmt::Debug for ThingGroupProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingGroupProperties");
-        formatter.field("thing_group_description", &self.thing_group_description);
-        formatter.field("attribute_payload", &self.attribute_payload);
-        formatter.finish()
     }
 }
 /// See [`ThingGroupProperties`](crate::model::ThingGroupProperties).
@@ -1326,7 +1247,7 @@ impl ThingGroupProperties {
 
 /// <p>The attribute payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributePayload {
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
     /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
@@ -1355,14 +1276,6 @@ impl AttributePayload {
     /// </note>
     pub fn merge(&self) -> bool {
         self.merge
-    }
-}
-impl std::fmt::Debug for AttributePayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributePayload");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("merge", &self.merge);
-        formatter.finish()
     }
 }
 /// See [`AttributePayload`](crate::model::AttributePayload).
@@ -1438,7 +1351,7 @@ impl AttributePayload {
 
 /// <p>Represents a file to stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamFile {
     /// <p>The file ID.</p>
     #[doc(hidden)]
@@ -1455,14 +1368,6 @@ impl StreamFile {
     /// <p>The location of the file in S3.</p>
     pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamFile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamFile");
-        formatter.field("file_id", &self.file_id);
-        formatter.field("s3_location", &self.s3_location);
-        formatter.finish()
     }
 }
 /// See [`StreamFile`](crate::model::StreamFile).
@@ -1516,7 +1421,7 @@ impl StreamFile {
 
 /// <p>The S3 location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The S3 bucket.</p>
     #[doc(hidden)]
@@ -1540,15 +1445,6 @@ impl S3Location {
     /// <p>The S3 bucket version.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -1611,7 +1507,7 @@ impl S3Location {
 
 /// <p>The metric you want to retain. Dimensions are optional.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricToRetain {
     /// <p>What is measured by the behavior.</p>
     #[doc(hidden)]
@@ -1628,14 +1524,6 @@ impl MetricToRetain {
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub fn metric_dimension(&self) -> std::option::Option<&crate::model::MetricDimension> {
         self.metric_dimension.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricToRetain {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricToRetain");
-        formatter.field("metric", &self.metric);
-        formatter.field("metric_dimension", &self.metric_dimension);
-        formatter.finish()
     }
 }
 /// See [`MetricToRetain`](crate::model::MetricToRetain).
@@ -1689,7 +1577,7 @@ impl MetricToRetain {
 
 /// <p>A structure containing the alert target ARN and the role ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlertTarget {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
     #[doc(hidden)]
@@ -1706,14 +1594,6 @@ impl AlertTarget {
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AlertTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlertTarget");
-        formatter.field("alert_target_arn", &self.alert_target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`AlertTarget`](crate::model::AlertTarget).
@@ -2067,7 +1947,7 @@ impl AsRef<str> for AuditFrequency {
 
 /// <p>Structure that contains <code>payloadVersion</code> and <code>targetArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisioningHook {
     /// <p>The payload that was sent to the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
@@ -2088,14 +1968,6 @@ impl ProvisioningHook {
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ProvisioningHook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisioningHook");
-        formatter.field("payload_version", &self.payload_version);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.finish()
     }
 }
 /// See [`ProvisioningHook`](crate::model::ProvisioningHook).
@@ -2153,7 +2025,7 @@ impl ProvisioningHook {
 
 /// <p>The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MitigationActionParams {
     /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
     #[doc(hidden)]
@@ -2213,36 +2085,6 @@ impl MitigationActionParams {
         &self,
     ) -> std::option::Option<&crate::model::PublishFindingToSnsParams> {
         self.publish_finding_to_sns_params.as_ref()
-    }
-}
-impl std::fmt::Debug for MitigationActionParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MitigationActionParams");
-        formatter.field(
-            "update_device_certificate_params",
-            &self.update_device_certificate_params,
-        );
-        formatter.field(
-            "update_ca_certificate_params",
-            &self.update_ca_certificate_params,
-        );
-        formatter.field(
-            "add_things_to_thing_group_params",
-            &self.add_things_to_thing_group_params,
-        );
-        formatter.field(
-            "replace_default_policy_version_params",
-            &self.replace_default_policy_version_params,
-        );
-        formatter.field(
-            "enable_io_t_logging_params",
-            &self.enable_io_t_logging_params,
-        );
-        formatter.field(
-            "publish_finding_to_sns_params",
-            &self.publish_finding_to_sns_params,
-        );
-        formatter.finish()
     }
 }
 /// See [`MitigationActionParams`](crate::model::MitigationActionParams).
@@ -2383,7 +2225,7 @@ impl MitigationActionParams {
 
 /// <p>Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
     #[doc(hidden)]
@@ -2393,13 +2235,6 @@ impl PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
     pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for PublishFindingToSnsParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishFindingToSnsParams");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
     }
 }
 /// See [`PublishFindingToSnsParams`](crate::model::PublishFindingToSnsParams).
@@ -2438,7 +2273,7 @@ impl PublishFindingToSnsParams {
 
 /// <p>Parameters used when defining a mitigation action that enable Amazon Web Services IoT Core logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableIoTLoggingParams {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
     #[doc(hidden)]
@@ -2455,14 +2290,6 @@ impl EnableIoTLoggingParams {
     /// <p>Specifies the type of information to be logged.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for EnableIoTLoggingParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableIoTLoggingParams");
-        formatter.field("role_arn_for_logging", &self.role_arn_for_logging);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`EnableIoTLoggingParams`](crate::model::EnableIoTLoggingParams).
@@ -2621,7 +2448,7 @@ impl AsRef<str> for LogLevel {
 
 /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
     #[doc(hidden)]
@@ -2631,13 +2458,6 @@ impl ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
     pub fn template_name(&self) -> std::option::Option<&crate::model::PolicyTemplateName> {
         self.template_name.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplaceDefaultPolicyVersionParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplaceDefaultPolicyVersionParams");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
     }
 }
 /// See [`ReplaceDefaultPolicyVersionParams`](crate::model::ReplaceDefaultPolicyVersionParams).
@@ -2766,7 +2586,7 @@ impl AsRef<str> for PolicyTemplateName {
 
 /// <p>Parameters used when defining a mitigation action that move a set of things to a thing group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
     #[doc(hidden)]
@@ -2783,14 +2603,6 @@ impl AddThingsToThingGroupParams {
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub fn override_dynamic_groups(&self) -> std::option::Option<bool> {
         self.override_dynamic_groups
-    }
-}
-impl std::fmt::Debug for AddThingsToThingGroupParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddThingsToThingGroupParams");
-        formatter.field("thing_group_names", &self.thing_group_names);
-        formatter.field("override_dynamic_groups", &self.override_dynamic_groups);
-        formatter.finish()
     }
 }
 /// See [`AddThingsToThingGroupParams`](crate::model::AddThingsToThingGroupParams).
@@ -2850,7 +2662,7 @@ impl AddThingsToThingGroupParams {
 
 /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCaCertificateParams {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     #[doc(hidden)]
@@ -2860,13 +2672,6 @@ impl UpdateCaCertificateParams {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::CaCertificateUpdateAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateCaCertificateParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCaCertificateParams");
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`UpdateCaCertificateParams`](crate::model::UpdateCaCertificateParams).
@@ -2995,7 +2800,7 @@ impl AsRef<str> for CaCertificateUpdateAction {
 
 /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeviceCertificateParams {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     #[doc(hidden)]
@@ -3005,13 +2810,6 @@ impl UpdateDeviceCertificateParams {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::DeviceCertificateUpdateAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateDeviceCertificateParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeviceCertificateParams");
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`UpdateDeviceCertificateParams`](crate::model::UpdateDeviceCertificateParams).
@@ -3140,7 +2938,7 @@ impl AsRef<str> for DeviceCertificateUpdateAction {
 
 /// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionsRetryConfig {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
     #[doc(hidden)]
@@ -3150,13 +2948,6 @@ impl JobExecutionsRetryConfig {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
     pub fn criteria_list(&self) -> std::option::Option<&[crate::model::RetryCriteria]> {
         self.criteria_list.as_deref()
-    }
-}
-impl std::fmt::Debug for JobExecutionsRetryConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionsRetryConfig");
-        formatter.field("criteria_list", &self.criteria_list);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionsRetryConfig`](crate::model::JobExecutionsRetryConfig).
@@ -3204,7 +2995,7 @@ impl JobExecutionsRetryConfig {
 
 /// <p>The criteria that determines how many retries are allowed for each failure type for a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryCriteria {
     /// <p>The type of job execution failures that can initiate a job retry.</p>
     #[doc(hidden)]
@@ -3221,14 +3012,6 @@ impl RetryCriteria {
     /// <p>The number of retries allowed for a failure type for the job.</p>
     pub fn number_of_retries(&self) -> std::option::Option<i32> {
         self.number_of_retries
-    }
-}
-impl std::fmt::Debug for RetryCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryCriteria");
-        formatter.field("failure_type", &self.failure_type);
-        formatter.field("number_of_retries", &self.number_of_retries);
-        formatter.finish()
     }
 }
 /// See [`RetryCriteria`](crate::model::RetryCriteria).
@@ -3379,7 +3162,7 @@ impl AsRef<str> for RetryableFailureType {
 
 /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeoutConfig {
     /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
     #[doc(hidden)]
@@ -3389,16 +3172,6 @@ impl TimeoutConfig {
     /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
     pub fn in_progress_timeout_in_minutes(&self) -> std::option::Option<i64> {
         self.in_progress_timeout_in_minutes
-    }
-}
-impl std::fmt::Debug for TimeoutConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeoutConfig");
-        formatter.field(
-            "in_progress_timeout_in_minutes",
-            &self.in_progress_timeout_in_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`TimeoutConfig`](crate::model::TimeoutConfig).
@@ -3440,7 +3213,7 @@ impl TimeoutConfig {
 
 /// <p>The criteria that determine when and how a job abort takes place.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     #[doc(hidden)]
@@ -3450,13 +3223,6 @@ impl AbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     pub fn criteria_list(&self) -> std::option::Option<&[crate::model::AbortCriteria]> {
         self.criteria_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AbortConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortConfig");
-        formatter.field("criteria_list", &self.criteria_list);
-        formatter.finish()
     }
 }
 /// See [`AbortConfig`](crate::model::AbortConfig).
@@ -3504,7 +3270,7 @@ impl AbortConfig {
 
 /// <p>The criteria that determine when and how a job abort takes place.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
     #[doc(hidden)]
@@ -3537,19 +3303,6 @@ impl AbortCriteria {
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn min_number_of_executed_things(&self) -> std::option::Option<i32> {
         self.min_number_of_executed_things
-    }
-}
-impl std::fmt::Debug for AbortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortCriteria");
-        formatter.field("failure_type", &self.failure_type);
-        formatter.field("action", &self.action);
-        formatter.field("threshold_percentage", &self.threshold_percentage);
-        formatter.field(
-            "min_number_of_executed_things",
-            &self.min_number_of_executed_things,
-        );
-        formatter.finish()
     }
 }
 /// See [`AbortCriteria`](crate::model::AbortCriteria).
@@ -3819,7 +3572,7 @@ impl AsRef<str> for JobExecutionFailureType {
 
 /// <p>Allows you to create a staged rollout of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionsRolloutConfig {
     /// <p>The maximum number of things that will be notified of a pending job, per minute. This parameter allows you to create a staged rollout.</p>
     #[doc(hidden)]
@@ -3836,14 +3589,6 @@ impl JobExecutionsRolloutConfig {
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
     pub fn exponential_rate(&self) -> std::option::Option<&crate::model::ExponentialRolloutRate> {
         self.exponential_rate.as_ref()
-    }
-}
-impl std::fmt::Debug for JobExecutionsRolloutConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionsRolloutConfig");
-        formatter.field("maximum_per_minute", &self.maximum_per_minute);
-        formatter.field("exponential_rate", &self.exponential_rate);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionsRolloutConfig`](crate::model::JobExecutionsRolloutConfig).
@@ -3897,7 +3642,7 @@ impl JobExecutionsRolloutConfig {
 
 /// <p>Allows you to create an exponential rate of rollout for a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
     #[doc(hidden)]
@@ -3925,15 +3670,6 @@ impl ExponentialRolloutRate {
         &self,
     ) -> std::option::Option<&crate::model::RateIncreaseCriteria> {
         self.rate_increase_criteria.as_ref()
-    }
-}
-impl std::fmt::Debug for ExponentialRolloutRate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExponentialRolloutRate");
-        formatter.field("base_rate_per_minute", &self.base_rate_per_minute);
-        formatter.field("increment_factor", &self.increment_factor);
-        formatter.field("rate_increase_criteria", &self.rate_increase_criteria);
-        formatter.finish()
     }
 }
 /// See [`ExponentialRolloutRate`](crate::model::ExponentialRolloutRate).
@@ -4001,7 +3737,7 @@ impl ExponentialRolloutRate {
 
 /// <p>Allows you to define a criteria to initiate the increase in rate of rollout for a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RateIncreaseCriteria {
     /// <p>The threshold for number of notified things that will initiate the increase in rate of rollout.</p>
     #[doc(hidden)]
@@ -4018,17 +3754,6 @@ impl RateIncreaseCriteria {
     /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
     pub fn number_of_succeeded_things(&self) -> std::option::Option<i32> {
         self.number_of_succeeded_things
-    }
-}
-impl std::fmt::Debug for RateIncreaseCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RateIncreaseCriteria");
-        formatter.field("number_of_notified_things", &self.number_of_notified_things);
-        formatter.field(
-            "number_of_succeeded_things",
-            &self.number_of_succeeded_things,
-        );
-        formatter.finish()
     }
 }
 /// See [`RateIncreaseCriteria`](crate::model::RateIncreaseCriteria).
@@ -4079,7 +3804,7 @@ impl RateIncreaseCriteria {
 
 /// <p>Configuration for pre-signed S3 URLs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PresignedUrlConfig {
     /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p> <important>
     /// <p>For information about addressing the confused deputy problem, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service confused deputy prevention</a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
@@ -4100,14 +3825,6 @@ impl PresignedUrlConfig {
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600 seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
     pub fn expires_in_sec(&self) -> std::option::Option<i64> {
         self.expires_in_sec
-    }
-}
-impl std::fmt::Debug for PresignedUrlConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PresignedUrlConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("expires_in_sec", &self.expires_in_sec);
-        formatter.finish()
     }
 }
 /// See [`PresignedUrlConfig`](crate::model::PresignedUrlConfig).
@@ -4162,7 +3879,7 @@ impl PresignedUrlConfig {
 
 /// <p>Thing group indexing configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingGroupIndexingConfiguration {
     /// <p>Thing group indexing mode.</p>
     #[doc(hidden)]
@@ -4190,15 +3907,6 @@ impl ThingGroupIndexingConfiguration {
     /// <p>Contains custom field names and their data type.</p>
     pub fn custom_fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.custom_fields.as_deref()
-    }
-}
-impl std::fmt::Debug for ThingGroupIndexingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingGroupIndexingConfiguration");
-        formatter.field("thing_group_indexing_mode", &self.thing_group_indexing_mode);
-        formatter.field("managed_fields", &self.managed_fields);
-        formatter.field("custom_fields", &self.custom_fields);
-        formatter.finish()
     }
 }
 /// See [`ThingGroupIndexingConfiguration`](crate::model::ThingGroupIndexingConfiguration).
@@ -4288,7 +3996,7 @@ impl ThingGroupIndexingConfiguration {
 
 /// <p>Describes the name and data type at a field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Field {
     /// <p>The name of the field.</p>
     #[doc(hidden)]
@@ -4305,14 +4013,6 @@ impl Field {
     /// <p>The data type of the field.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::FieldType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Field {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Field");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Field`](crate::model::Field).
@@ -4550,7 +4250,7 @@ impl AsRef<str> for ThingGroupIndexingMode {
 
 /// <p>The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingIndexingConfiguration {
     /// <p>Thing indexing mode. Valid values are:</p>
     /// <ul>
@@ -4648,28 +4348,6 @@ impl ThingIndexingConfiguration {
     /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::IndexingFilter> {
         self.filter.as_ref()
-    }
-}
-impl std::fmt::Debug for ThingIndexingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingIndexingConfiguration");
-        formatter.field("thing_indexing_mode", &self.thing_indexing_mode);
-        formatter.field(
-            "thing_connectivity_indexing_mode",
-            &self.thing_connectivity_indexing_mode,
-        );
-        formatter.field(
-            "device_defender_indexing_mode",
-            &self.device_defender_indexing_mode,
-        );
-        formatter.field(
-            "named_shadow_indexing_mode",
-            &self.named_shadow_indexing_mode,
-        );
-        formatter.field("managed_fields", &self.managed_fields);
-        formatter.field("custom_fields", &self.custom_fields);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
     }
 }
 /// See [`ThingIndexingConfiguration`](crate::model::ThingIndexingConfiguration).
@@ -4863,7 +4541,7 @@ impl ThingIndexingConfiguration {
 
 /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexingFilter {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
     #[doc(hidden)]
@@ -4873,13 +4551,6 @@ impl IndexingFilter {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
     pub fn named_shadow_names(&self) -> std::option::Option<&[std::string::String]> {
         self.named_shadow_names.as_deref()
-    }
-}
-impl std::fmt::Debug for IndexingFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexingFilter");
-        formatter.field("named_shadow_names", &self.named_shadow_names);
-        formatter.finish()
     }
 }
 /// See [`IndexingFilter`](crate::model::IndexingFilter).
@@ -5543,7 +5214,7 @@ impl AsRef<str> for FleetMetricUnit {
 
 /// <p>The type of aggregation queries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregationType {
     /// <p>The name of the aggregation type.</p>
     #[doc(hidden)]
@@ -5560,14 +5231,6 @@ impl AggregationType {
     /// <p>A list of the values of aggregation types.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregationType");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`AggregationType`](crate::model::AggregationType).
@@ -5727,7 +5390,7 @@ impl AsRef<str> for AggregationTypeName {
 
 /// <p>Configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Configuration {
     /// <p>True to enable the configuration.</p>
     #[doc(hidden)]
@@ -5737,13 +5400,6 @@ impl Configuration {
     /// <p>True to enable the configuration.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Configuration");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`Configuration`](crate::model::Configuration).
@@ -6021,7 +5677,7 @@ impl AsRef<str> for DomainConfigurationStatus {
 
 /// <p>An object that specifies the authorization service for a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizerConfig {
     /// <p>The name of the authorization service for a domain configuration.</p>
     #[doc(hidden)]
@@ -6038,14 +5694,6 @@ impl AuthorizerConfig {
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
     pub fn allow_authorizer_override(&self) -> std::option::Option<bool> {
         self.allow_authorizer_override
-    }
-}
-impl std::fmt::Debug for AuthorizerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizerConfig");
-        formatter.field("default_authorizer_name", &self.default_authorizer_name);
-        formatter.field("allow_authorizer_override", &self.allow_authorizer_override);
-        formatter.finish()
     }
 }
 /// See [`AuthorizerConfig`](crate::model::AuthorizerConfig).
@@ -6403,7 +6051,7 @@ impl AsRef<str> for CertificateStatus {
 
 /// <p>The registration configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistrationConfig {
     /// <p>The template body.</p>
     #[doc(hidden)]
@@ -6427,15 +6075,6 @@ impl RegistrationConfig {
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RegistrationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistrationConfig");
-        formatter.field("template_body", &self.template_body);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
     }
 }
 /// See [`RegistrationConfig`](crate::model::RegistrationConfig).
@@ -6688,7 +6327,7 @@ impl AsRef<str> for CaCertificateStatus {
 
 /// <p>The properties of a billing group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BillingGroupProperties {
     /// <p>The description of the billing group.</p>
     #[doc(hidden)]
@@ -6698,13 +6337,6 @@ impl BillingGroupProperties {
     /// <p>The description of the billing group.</p>
     pub fn billing_group_description(&self) -> std::option::Option<&str> {
         self.billing_group_description.as_deref()
-    }
-}
-impl std::fmt::Debug for BillingGroupProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BillingGroupProperties");
-        formatter.field("billing_group_description", &self.billing_group_description);
-        formatter.finish()
     }
 }
 /// See [`BillingGroupProperties`](crate::model::BillingGroupProperties).
@@ -6836,7 +6468,7 @@ impl AsRef<str> for AuthorizerStatus {
 
 /// <p>Information that identifies the noncompliant resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceIdentifier {
     /// <p>The ID of the certificate attached to the resource.</p>
     #[doc(hidden)]
@@ -6897,20 +6529,6 @@ impl ResourceIdentifier {
     /// <p>The ARN of the role alias that has overly permissive actions.</p>
     pub fn role_alias_arn(&self) -> std::option::Option<&str> {
         self.role_alias_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceIdentifier");
-        formatter.field("device_certificate_id", &self.device_certificate_id);
-        formatter.field("ca_certificate_id", &self.ca_certificate_id);
-        formatter.field("cognito_identity_pool_id", &self.cognito_identity_pool_id);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("policy_version_identifier", &self.policy_version_identifier);
-        formatter.field("account", &self.account);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("role_alias_arn", &self.role_alias_arn);
-        formatter.finish()
     }
 }
 /// See [`ResourceIdentifier`](crate::model::ResourceIdentifier).
@@ -7052,7 +6670,7 @@ impl ResourceIdentifier {
 
 /// <p>Information about the version of the policy associated with the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyVersionIdentifier {
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
@@ -7069,14 +6687,6 @@ impl PolicyVersionIdentifier {
     /// <p>The ID of the version of the policy associated with the resource.</p>
     pub fn policy_version_id(&self) -> std::option::Option<&str> {
         self.policy_version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyVersionIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyVersionIdentifier");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.finish()
     }
 }
 /// See [`PolicyVersionIdentifier`](crate::model::PolicyVersionIdentifier).
@@ -7130,7 +6740,7 @@ impl PolicyVersionIdentifier {
 
 /// <p>Which audit checks are enabled and disabled for this account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditCheckConfiguration {
     /// <p>True if this audit check is enabled for this account.</p>
     #[doc(hidden)]
@@ -7140,13 +6750,6 @@ impl AuditCheckConfiguration {
     /// <p>True if this audit check is enabled for this account.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for AuditCheckConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditCheckConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`AuditCheckConfiguration`](crate::model::AuditCheckConfiguration).
@@ -7185,7 +6788,7 @@ impl AuditCheckConfiguration {
 
 /// <p>Information about the targets to which audit notifications are sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditNotificationTarget {
     /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
     #[doc(hidden)]
@@ -7209,15 +6812,6 @@ impl AuditNotificationTarget {
     /// <p>True if notifications to the target are enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for AuditNotificationTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditNotificationTarget");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`AuditNotificationTarget`](crate::model::AuditNotificationTarget).
@@ -7367,7 +6961,7 @@ impl AsRef<str> for AuditNotificationType {
 
 /// <p>Specifies the TLS context to use for the test authorizer request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsContext {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
     #[doc(hidden)]
@@ -7377,13 +6971,6 @@ impl TlsContext {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TlsContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsContext");
-        formatter.field("server_name", &self.server_name);
-        formatter.finish()
     }
 }
 /// See [`TlsContext`](crate::model::TlsContext).
@@ -7422,7 +7009,7 @@ impl TlsContext {
 
 /// <p>Specifies the MQTT context to use for the test authorizer request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MqttContext {
     /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
     #[doc(hidden)]
@@ -7446,15 +7033,6 @@ impl MqttContext {
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MqttContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MqttContext");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.field("client_id", &self.client_id);
-        formatter.finish()
     }
 }
 /// See [`MqttContext`](crate::model::MqttContext).
@@ -7517,7 +7095,7 @@ impl MqttContext {
 
 /// <p>Specifies the HTTP context to use for the test authorizer request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpContext {
     /// <p>The header keys and values in an HTTP authorization request.</p>
     #[doc(hidden)]
@@ -7538,14 +7116,6 @@ impl HttpContext {
     /// <p>The query string keys and values in an HTTP authorization request.</p>
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpContext");
-        formatter.field("headers", &self.headers);
-        formatter.field("query_string", &self.query_string);
-        formatter.finish()
     }
 }
 /// See [`HttpContext`](crate::model::HttpContext).
@@ -7613,7 +7183,7 @@ impl HttpContext {
 
 /// <p>The authorizer result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthResult {
     /// <p>Authorization information.</p>
     #[doc(hidden)]
@@ -7651,17 +7221,6 @@ impl AuthResult {
     /// <p>Contains any missing context values found while evaluating policy.</p>
     pub fn missing_context_values(&self) -> std::option::Option<&[std::string::String]> {
         self.missing_context_values.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthResult");
-        formatter.field("auth_info", &self.auth_info);
-        formatter.field("allowed", &self.allowed);
-        formatter.field("denied", &self.denied);
-        formatter.field("auth_decision", &self.auth_decision);
-        formatter.field("missing_context_values", &self.missing_context_values);
-        formatter.finish()
     }
 }
 /// See [`AuthResult`](crate::model::AuthResult).
@@ -7855,7 +7414,7 @@ impl AsRef<str> for AuthDecision {
 
 /// <p>Contains information that denied the authorization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Denied {
     /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
     #[doc(hidden)]
@@ -7872,14 +7431,6 @@ impl Denied {
     /// <p>Information that explicitly denies the authorization. </p>
     pub fn explicit_deny(&self) -> std::option::Option<&crate::model::ExplicitDeny> {
         self.explicit_deny.as_ref()
-    }
-}
-impl std::fmt::Debug for Denied {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Denied");
-        formatter.field("implicit_deny", &self.implicit_deny);
-        formatter.field("explicit_deny", &self.explicit_deny);
-        formatter.finish()
     }
 }
 /// See [`Denied`](crate::model::Denied).
@@ -7936,7 +7487,7 @@ impl Denied {
 
 /// <p>Information that explicitly denies authorization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExplicitDeny {
     /// <p>The policies that denied the authorization.</p>
     #[doc(hidden)]
@@ -7946,13 +7497,6 @@ impl ExplicitDeny {
     /// <p>The policies that denied the authorization.</p>
     pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
         self.policies.as_deref()
-    }
-}
-impl std::fmt::Debug for ExplicitDeny {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExplicitDeny");
-        formatter.field("policies", &self.policies);
-        formatter.finish()
     }
 }
 /// See [`ExplicitDeny`](crate::model::ExplicitDeny).
@@ -8000,7 +7544,7 @@ impl ExplicitDeny {
 
 /// <p>Describes an IoT policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Policy {
     /// <p>The policy name.</p>
     #[doc(hidden)]
@@ -8017,14 +7561,6 @@ impl Policy {
     /// <p>The policy ARN.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Policy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Policy");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.finish()
     }
 }
 /// See [`Policy`](crate::model::Policy).
@@ -8075,7 +7611,7 @@ impl Policy {
 
 /// <p>Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImplicitDeny {
     /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
     #[doc(hidden)]
@@ -8085,13 +7621,6 @@ impl ImplicitDeny {
     /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
     pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
         self.policies.as_deref()
-    }
-}
-impl std::fmt::Debug for ImplicitDeny {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImplicitDeny");
-        formatter.field("policies", &self.policies);
-        formatter.finish()
     }
 }
 /// See [`ImplicitDeny`](crate::model::ImplicitDeny).
@@ -8139,7 +7668,7 @@ impl ImplicitDeny {
 
 /// <p>Contains information that allowed the authorization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Allowed {
     /// <p>A list of policies that allowed the authentication.</p>
     #[doc(hidden)]
@@ -8149,13 +7678,6 @@ impl Allowed {
     /// <p>A list of policies that allowed the authentication.</p>
     pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
         self.policies.as_deref()
-    }
-}
-impl std::fmt::Debug for Allowed {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Allowed");
-        formatter.field("policies", &self.policies);
-        formatter.finish()
     }
 }
 /// See [`Allowed`](crate::model::Allowed).
@@ -8203,7 +7725,7 @@ impl Allowed {
 
 /// <p>A collection of authorization information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthInfo {
     /// <p>The type of action for which the principal is being authorized.</p>
     #[doc(hidden)]
@@ -8220,14 +7742,6 @@ impl AuthInfo {
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
     pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthInfo");
-        formatter.field("action_type", &self.action_type);
-        formatter.field("resources", &self.resources);
-        formatter.finish()
     }
 }
 /// See [`AuthInfo`](crate::model::AuthInfo).
@@ -8390,7 +7904,7 @@ impl AsRef<str> for ActionType {
 
 /// <p>A set of key/value pairs that are used to manage the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -8407,14 +7921,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -8465,7 +7971,7 @@ impl Tag {
 
 /// <p> Specifies the time period of which violation events occurred between. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViolationEventOccurrenceRange {
     /// <p> The start date and time of a time period in which violation events occurred. </p>
     #[doc(hidden)]
@@ -8482,14 +7988,6 @@ impl ViolationEventOccurrenceRange {
     /// <p> The end date and time of a time period in which violation events occurred. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ViolationEventOccurrenceRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViolationEventOccurrenceRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`ViolationEventOccurrenceRange`](crate::model::ViolationEventOccurrenceRange).
@@ -8546,7 +8044,7 @@ impl ViolationEventOccurrenceRange {
 
 /// <p> The target of a mitigation action task. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskTarget {
     /// <p> The unique identifiers of the violations. </p>
     #[doc(hidden)]
@@ -8570,15 +8068,6 @@ impl DetectMitigationActionsTaskTarget {
     /// <p> The name of the behavior. </p>
     pub fn behavior_name(&self) -> std::option::Option<&str> {
         self.behavior_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DetectMitigationActionsTaskTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectMitigationActionsTaskTarget");
-        formatter.field("violation_ids", &self.violation_ids);
-        formatter.field("security_profile_name", &self.security_profile_name);
-        formatter.field("behavior_name", &self.behavior_name);
-        formatter.finish()
     }
 }
 /// See [`DetectMitigationActionsTaskTarget`](crate::model::DetectMitigationActionsTaskTarget).
@@ -8656,7 +8145,7 @@ impl DetectMitigationActionsTaskTarget {
 
 /// <p>Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditMitigationActionsTaskTarget {
     /// <p>If the task will apply a mitigation action to findings from a specific audit, this value uniquely identifies the audit.</p>
     #[doc(hidden)]
@@ -8686,18 +8175,6 @@ impl AuditMitigationActionsTaskTarget {
         &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     > {
         self.audit_check_to_reason_code_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for AuditMitigationActionsTaskTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditMitigationActionsTaskTarget");
-        formatter.field("audit_task_id", &self.audit_task_id);
-        formatter.field("finding_ids", &self.finding_ids);
-        formatter.field(
-            "audit_check_to_reason_code_filter",
-            &self.audit_check_to_reason_code_filter,
-        );
-        formatter.finish()
     }
 }
 /// See [`AuditMitigationActionsTaskTarget`](crate::model::AuditMitigationActionsTaskTarget).
@@ -8789,7 +8266,7 @@ impl AuditMitigationActionsTaskTarget {
 
 /// <p>A log target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogTarget {
     /// <p>The target type.</p>
     #[doc(hidden)]
@@ -8806,14 +8283,6 @@ impl LogTarget {
     /// <p>The target name.</p>
     pub fn target_name(&self) -> std::option::Option<&str> {
         self.target_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogTarget");
-        formatter.field("target_type", &self.target_type);
-        formatter.field("target_name", &self.target_name);
-        formatter.finish()
     }
 }
 /// See [`LogTarget`](crate::model::LogTarget).
@@ -8978,7 +8447,7 @@ impl AsRef<str> for LogTargetType {
 
 /// <p>Describes the logging options payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingOptionsPayload {
     /// <p>The ARN of the IAM role that grants access.</p>
     #[doc(hidden)]
@@ -8995,14 +8464,6 @@ impl LoggingOptionsPayload {
     /// <p>The log level.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for LoggingOptionsPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingOptionsPayload");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`LoggingOptionsPayload`](crate::model::LoggingOptionsPayload).
@@ -9053,7 +8514,7 @@ impl LoggingOptionsPayload {
 
 /// <p>The thing group search index document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingGroupDocument {
     /// <p>The thing group name.</p>
     #[doc(hidden)]
@@ -9095,17 +8556,6 @@ impl ThingGroupDocument {
     /// <p>Parent group names.</p>
     pub fn parent_group_names(&self) -> std::option::Option<&[std::string::String]> {
         self.parent_group_names.as_deref()
-    }
-}
-impl std::fmt::Debug for ThingGroupDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingGroupDocument");
-        formatter.field("thing_group_name", &self.thing_group_name);
-        formatter.field("thing_group_id", &self.thing_group_id);
-        formatter.field("thing_group_description", &self.thing_group_description);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("parent_group_names", &self.parent_group_names);
-        formatter.finish()
     }
 }
 /// See [`ThingGroupDocument`](crate::model::ThingGroupDocument).
@@ -9227,7 +8677,7 @@ impl ThingGroupDocument {
 
 /// <p>The thing search index document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingDocument {
     /// <p>The thing name.</p>
     #[doc(hidden)]
@@ -9294,20 +8744,6 @@ impl ThingDocument {
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
     pub fn connectivity(&self) -> std::option::Option<&crate::model::ThingConnectivity> {
         self.connectivity.as_ref()
-    }
-}
-impl std::fmt::Debug for ThingDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingDocument");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("thing_id", &self.thing_id);
-        formatter.field("thing_type_name", &self.thing_type_name);
-        formatter.field("thing_group_names", &self.thing_group_names);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("shadow", &self.shadow);
-        formatter.field("device_defender", &self.device_defender);
-        formatter.field("connectivity", &self.connectivity);
-        formatter.finish()
     }
 }
 /// See [`ThingDocument`](crate::model::ThingDocument).
@@ -9469,7 +8905,7 @@ impl ThingDocument {
 
 /// <p>The connectivity status of the thing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
     #[doc(hidden)]
@@ -9493,15 +8929,6 @@ impl ThingConnectivity {
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
     pub fn disconnect_reason(&self) -> std::option::Option<&str> {
         self.disconnect_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ThingConnectivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingConnectivity");
-        formatter.field("connected", &self.connected);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("disconnect_reason", &self.disconnect_reason);
-        formatter.finish()
     }
 }
 /// See [`ThingConnectivity`](crate::model::ThingConnectivity).
@@ -9567,7 +8994,7 @@ impl ThingConnectivity {
 
 /// <p>Describes a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicRulePayload {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -9612,18 +9039,6 @@ impl TopicRulePayload {
     /// <p>The action to take when an error occurs.</p>
     pub fn error_action(&self) -> std::option::Option<&crate::model::Action> {
         self.error_action.as_ref()
-    }
-}
-impl std::fmt::Debug for TopicRulePayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicRulePayload");
-        formatter.field("sql", &self.sql);
-        formatter.field("description", &self.description);
-        formatter.field("actions", &self.actions);
-        formatter.field("rule_disabled", &self.rule_disabled);
-        formatter.field("aws_iot_sql_version", &self.aws_iot_sql_version);
-        formatter.field("error_action", &self.error_action);
-        formatter.finish()
     }
 }
 /// See [`TopicRulePayload`](crate::model::TopicRulePayload).
@@ -9737,7 +9152,7 @@ impl TopicRulePayload {
 
 /// <p>Describes the actions associated with a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>Write to a DynamoDB table.</p>
     #[doc(hidden)]
@@ -9898,34 +9313,6 @@ impl Action {
     /// <p>Write data to an Amazon OpenSearch Service domain.</p>
     pub fn open_search(&self) -> std::option::Option<&crate::model::OpenSearchAction> {
         self.open_search.as_ref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("dynamo_db", &self.dynamo_db);
-        formatter.field("dynamo_d_bv2", &self.dynamo_d_bv2);
-        formatter.field("lambda", &self.lambda);
-        formatter.field("sns", &self.sns);
-        formatter.field("sqs", &self.sqs);
-        formatter.field("kinesis", &self.kinesis);
-        formatter.field("republish", &self.republish);
-        formatter.field("s3", &self.s3);
-        formatter.field("firehose", &self.firehose);
-        formatter.field("cloudwatch_metric", &self.cloudwatch_metric);
-        formatter.field("cloudwatch_alarm", &self.cloudwatch_alarm);
-        formatter.field("cloudwatch_logs", &self.cloudwatch_logs);
-        formatter.field("elasticsearch", &self.elasticsearch);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("iot_analytics", &self.iot_analytics);
-        formatter.field("iot_events", &self.iot_events);
-        formatter.field("iot_site_wise", &self.iot_site_wise);
-        formatter.field("step_functions", &self.step_functions);
-        formatter.field("timestream", &self.timestream);
-        formatter.field("http", &self.http);
-        formatter.field("kafka", &self.kafka);
-        formatter.field("open_search", &self.open_search);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -10271,7 +9658,7 @@ impl Action {
 
 /// <p>Describes an action that writes data to an Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenSearchAction {
     /// <p>The IAM role ARN that has access to OpenSearch.</p>
     #[doc(hidden)]
@@ -10309,17 +9696,6 @@ impl OpenSearchAction {
     /// <p>The unique identifier for the document you are storing.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for OpenSearchAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenSearchAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("index", &self.index);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`OpenSearchAction`](crate::model::OpenSearchAction).
@@ -10406,7 +9782,7 @@ impl OpenSearchAction {
 
 /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KafkaAction {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
     #[doc(hidden)]
@@ -10448,17 +9824,6 @@ impl KafkaAction {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.client_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for KafkaAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KafkaAction");
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("topic", &self.topic);
-        formatter.field("key", &self.key);
-        formatter.field("partition", &self.partition);
-        formatter.field("client_properties", &self.client_properties);
-        formatter.finish()
     }
 }
 /// See [`KafkaAction`](crate::model::KafkaAction).
@@ -10565,7 +9930,7 @@ impl KafkaAction {
 
 /// <p>Send data to an HTTPS endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpAction {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
     #[doc(hidden)]
@@ -10596,16 +9961,6 @@ impl HttpAction {
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
     pub fn auth(&self) -> std::option::Option<&crate::model::HttpAuthorization> {
         self.auth.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpAction");
-        formatter.field("url", &self.url);
-        formatter.field("confirmation_url", &self.confirmation_url);
-        formatter.field("headers", &self.headers);
-        formatter.field("auth", &self.auth);
-        formatter.finish()
     }
 }
 /// See [`HttpAction`](crate::model::HttpAction).
@@ -10695,7 +10050,7 @@ impl HttpAction {
 
 /// <p>The authorization method used to send messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpAuthorization {
     /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
     #[doc(hidden)]
@@ -10705,13 +10060,6 @@ impl HttpAuthorization {
     /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
     pub fn sigv4(&self) -> std::option::Option<&crate::model::SigV4Authorization> {
         self.sigv4.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpAuthorization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpAuthorization");
-        formatter.field("sigv4", &self.sigv4);
-        formatter.finish()
     }
 }
 /// See [`HttpAuthorization`](crate::model::HttpAuthorization).
@@ -10751,7 +10099,7 @@ impl HttpAuthorization {
 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 signing process</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigV4Authorization {
     /// <p>The signing region.</p>
     #[doc(hidden)]
@@ -10775,15 +10123,6 @@ impl SigV4Authorization {
     /// <p>The ARN of the signing role.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SigV4Authorization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigV4Authorization");
-        formatter.field("signing_region", &self.signing_region);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`SigV4Authorization`](crate::model::SigV4Authorization).
@@ -10849,7 +10188,7 @@ impl SigV4Authorization {
 
 /// <p>The HTTP action header.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpActionHeader {
     /// <p>The HTTP header key.</p>
     #[doc(hidden)]
@@ -10866,14 +10205,6 @@ impl HttpActionHeader {
     /// <p>The HTTP header value. Substitution templates are supported.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpActionHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpActionHeader");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`HttpActionHeader`](crate::model::HttpActionHeader).
@@ -10924,7 +10255,7 @@ impl HttpActionHeader {
 
 /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestreamAction {
     /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
     #[doc(hidden)]
@@ -10966,17 +10297,6 @@ impl TimestreamAction {
     /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
     pub fn timestamp(&self) -> std::option::Option<&crate::model::TimestreamTimestamp> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for TimestreamAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestreamAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`TimestreamAction`](crate::model::TimestreamAction).
@@ -11083,7 +10403,7 @@ impl TimestreamAction {
 
 /// <p>Describes how to interpret an application-defined timestamp value from an MQTT message payload and the precision of that value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestreamTimestamp {
     /// <p>An expression that returns a long epoch time value.</p>
     #[doc(hidden)]
@@ -11102,14 +10422,6 @@ impl TimestreamTimestamp {
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for TimestreamTimestamp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestreamTimestamp");
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`TimestreamTimestamp`](crate::model::TimestreamTimestamp).
@@ -11162,7 +10474,7 @@ impl TimestreamTimestamp {
 
 /// <p>Metadata attributes of the time series that are written in each measure record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestreamDimension {
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
@@ -11181,14 +10493,6 @@ impl TimestreamDimension {
     /// <p>The value to write in this column of the database record.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for TimestreamDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestreamDimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`TimestreamDimension`](crate::model::TimestreamDimension).
@@ -11241,7 +10545,7 @@ impl TimestreamDimension {
 
 /// <p>Starts execution of a Step Functions state machine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepFunctionsAction {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
     #[doc(hidden)]
@@ -11265,15 +10569,6 @@ impl StepFunctionsAction {
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for StepFunctionsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepFunctionsAction");
-        formatter.field("execution_name_prefix", &self.execution_name_prefix);
-        formatter.field("state_machine_name", &self.state_machine_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`StepFunctionsAction`](crate::model::StepFunctionsAction).
@@ -11342,7 +10637,7 @@ impl StepFunctionsAction {
 
 /// <p>Describes an action to send data from an MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotSiteWiseAction {
     /// <p>A list of asset property value entries.</p>
     #[doc(hidden)]
@@ -11362,17 +10657,6 @@ impl IotSiteWiseAction {
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IotSiteWiseAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotSiteWiseAction");
-        formatter.field(
-            "put_asset_property_value_entries",
-            &self.put_asset_property_value_entries,
-        );
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`IotSiteWiseAction`](crate::model::IotSiteWiseAction).
@@ -11436,7 +10720,7 @@ impl IotSiteWiseAction {
 
 /// <p>An asset property value entry containing the following information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAssetPropertyValueEntry {
     /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
     #[doc(hidden)]
@@ -11474,17 +10758,6 @@ impl PutAssetPropertyValueEntry {
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
     pub fn property_values(&self) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
         self.property_values.as_deref()
-    }
-}
-impl std::fmt::Debug for PutAssetPropertyValueEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAssetPropertyValueEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("property_values", &self.property_values);
-        formatter.finish()
     }
 }
 /// See [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
@@ -11584,7 +10857,7 @@ impl PutAssetPropertyValueEntry {
 
 /// <p>An asset property value entry containing the following information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetPropertyValue {
     /// <p>The value of the asset property.</p>
     #[doc(hidden)]
@@ -11608,15 +10881,6 @@ impl AssetPropertyValue {
     /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
     pub fn quality(&self) -> std::option::Option<&str> {
         self.quality.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetPropertyValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetPropertyValue");
-        formatter.field("value", &self.value);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("quality", &self.quality);
-        formatter.finish()
     }
 }
 /// See [`AssetPropertyValue`](crate::model::AssetPropertyValue).
@@ -11685,7 +10949,7 @@ impl AssetPropertyValue {
 
 /// <p>An asset property timestamp entry containing the following information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetPropertyTimestamp {
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
     #[doc(hidden)]
@@ -11702,14 +10966,6 @@ impl AssetPropertyTimestamp {
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
     pub fn offset_in_nanos(&self) -> std::option::Option<&str> {
         self.offset_in_nanos.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetPropertyTimestamp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetPropertyTimestamp");
-        formatter.field("time_in_seconds", &self.time_in_seconds);
-        formatter.field("offset_in_nanos", &self.offset_in_nanos);
-        formatter.finish()
     }
 }
 /// See [`AssetPropertyTimestamp`](crate::model::AssetPropertyTimestamp).
@@ -11847,7 +11103,7 @@ impl AssetPropertyVariant {
 
 /// <p>Sends an input to an IoT Events detector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotEventsAction {
     /// <p>The name of the IoT Events input.</p>
     #[doc(hidden)]
@@ -11886,16 +11142,6 @@ impl IotEventsAction {
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IotEventsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotEventsAction");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("batch_mode", &self.batch_mode);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`IotEventsAction`](crate::model::IotEventsAction).
@@ -11978,7 +11224,7 @@ impl IotEventsAction {
 
 /// <p>Sends message data to an IoT Analytics channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotAnalyticsAction {
     /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
     #[doc(hidden)]
@@ -12011,16 +11257,6 @@ impl IotAnalyticsAction {
     /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IotAnalyticsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotAnalyticsAction");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("batch_mode", &self.batch_mode);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`IotAnalyticsAction`](crate::model::IotAnalyticsAction).
@@ -12097,7 +11333,7 @@ impl IotAnalyticsAction {
 
 /// <p>Describes an action to write a message to a Salesforce IoT Cloud Input Stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceAction {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     #[doc(hidden)]
@@ -12114,14 +11350,6 @@ impl SalesforceAction {
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceAction");
-        formatter.field("token", &self.token);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`SalesforceAction`](crate::model::SalesforceAction).
@@ -12174,7 +11402,7 @@ impl SalesforceAction {
 /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchAction {
     /// <p>The IAM role ARN that has access to OpenSearch.</p>
     #[doc(hidden)]
@@ -12212,17 +11440,6 @@ impl ElasticsearchAction {
     /// <p>The unique identifier for the document you are storing.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for ElasticsearchAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("index", &self.index);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`ElasticsearchAction`](crate::model::ElasticsearchAction).
@@ -12309,7 +11526,7 @@ impl ElasticsearchAction {
 
 /// <p>Describes an action that sends data to CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudwatchLogsAction {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
     #[doc(hidden)]
@@ -12326,14 +11543,6 @@ impl CloudwatchLogsAction {
     /// <p>The CloudWatch log group to which the action sends data.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudwatchLogsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudwatchLogsAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`CloudwatchLogsAction`](crate::model::CloudwatchLogsAction).
@@ -12387,7 +11596,7 @@ impl CloudwatchLogsAction {
 
 /// <p>Describes an action that updates a CloudWatch alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudwatchAlarmAction {
     /// <p>The IAM role that allows access to the CloudWatch alarm.</p>
     #[doc(hidden)]
@@ -12418,16 +11627,6 @@ impl CloudwatchAlarmAction {
     /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
     pub fn state_value(&self) -> std::option::Option<&str> {
         self.state_value.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudwatchAlarmAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudwatchAlarmAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("state_value", &self.state_value);
-        formatter.finish()
     }
 }
 /// See [`CloudwatchAlarmAction`](crate::model::CloudwatchAlarmAction).
@@ -12502,7 +11701,7 @@ impl CloudwatchAlarmAction {
 
 /// <p>Describes an action that captures a CloudWatch metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudwatchMetricAction {
     /// <p>The IAM role that allows access to the CloudWatch metric.</p>
     #[doc(hidden)]
@@ -12547,18 +11746,6 @@ impl CloudwatchMetricAction {
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
     pub fn metric_timestamp(&self) -> std::option::Option<&str> {
         self.metric_timestamp.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudwatchMetricAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudwatchMetricAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("metric_namespace", &self.metric_namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.field("metric_unit", &self.metric_unit);
-        formatter.field("metric_timestamp", &self.metric_timestamp);
-        formatter.finish()
     }
 }
 /// See [`CloudwatchMetricAction`](crate::model::CloudwatchMetricAction).
@@ -12663,7 +11850,7 @@ impl CloudwatchMetricAction {
 
 /// <p>Describes an action that writes data to an Amazon Kinesis Firehose stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirehoseAction {
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
     #[doc(hidden)]
@@ -12696,16 +11883,6 @@ impl FirehoseAction {
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
     pub fn batch_mode(&self) -> std::option::Option<bool> {
         self.batch_mode
-    }
-}
-impl std::fmt::Debug for FirehoseAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirehoseAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("separator", &self.separator);
-        formatter.field("batch_mode", &self.batch_mode);
-        formatter.finish()
     }
 }
 /// See [`FirehoseAction`](crate::model::FirehoseAction).
@@ -12785,7 +11962,7 @@ impl FirehoseAction {
 
 /// <p>Describes an action to write data to an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Action {
     /// <p>The ARN of the IAM role that grants access.</p>
     #[doc(hidden)]
@@ -12816,16 +11993,6 @@ impl S3Action {
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub fn canned_acl(&self) -> std::option::Option<&crate::model::CannedAccessControlList> {
         self.canned_acl.as_ref()
-    }
-}
-impl std::fmt::Debug for S3Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Action");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("key", &self.key);
-        formatter.field("canned_acl", &self.canned_acl);
-        formatter.finish()
     }
 }
 /// See [`S3Action`](crate::model::S3Action).
@@ -13034,7 +12201,7 @@ impl AsRef<str> for CannedAccessControlList {
 
 /// <p>Describes an action to republish to another topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepublishAction {
     /// <p>The ARN of the IAM role that grants access.</p>
     #[doc(hidden)]
@@ -13058,15 +12225,6 @@ impl RepublishAction {
     /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
     pub fn qos(&self) -> std::option::Option<i32> {
         self.qos
-    }
-}
-impl std::fmt::Debug for RepublishAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepublishAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("topic", &self.topic);
-        formatter.field("qos", &self.qos);
-        formatter.finish()
     }
 }
 /// See [`RepublishAction`](crate::model::RepublishAction).
@@ -13129,7 +12287,7 @@ impl RepublishAction {
 
 /// <p>Describes an action to write data to an Amazon Kinesis stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisAction {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
     #[doc(hidden)]
@@ -13153,15 +12311,6 @@ impl KinesisAction {
     /// <p>The partition key.</p>
     pub fn partition_key(&self) -> std::option::Option<&str> {
         self.partition_key.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("partition_key", &self.partition_key);
-        formatter.finish()
     }
 }
 /// See [`KinesisAction`](crate::model::KinesisAction).
@@ -13227,7 +12376,7 @@ impl KinesisAction {
 
 /// <p>Describes an action to publish data to an Amazon SQS queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqsAction {
     /// <p>The ARN of the IAM role that grants access.</p>
     #[doc(hidden)]
@@ -13251,15 +12400,6 @@ impl SqsAction {
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn use_base64(&self) -> std::option::Option<bool> {
         self.use_base64
-    }
-}
-impl std::fmt::Debug for SqsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqsAction");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("use_base64", &self.use_base64);
-        formatter.finish()
     }
 }
 /// See [`SqsAction`](crate::model::SqsAction).
@@ -13322,7 +12462,7 @@ impl SqsAction {
 
 /// <p>Describes an action to publish to an Amazon SNS topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsAction {
     /// <p>The ARN of the SNS topic.</p>
     #[doc(hidden)]
@@ -13346,15 +12486,6 @@ impl SnsAction {
     /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub fn message_format(&self) -> std::option::Option<&crate::model::MessageFormat> {
         self.message_format.as_ref()
-    }
-}
-impl std::fmt::Debug for SnsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsAction");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("message_format", &self.message_format);
-        formatter.finish()
     }
 }
 /// See [`SnsAction`](crate::model::SnsAction).
@@ -13510,7 +12641,7 @@ impl AsRef<str> for MessageFormat {
 
 /// <p>Describes an action to invoke a Lambda function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaAction {
     /// <p>The ARN of the Lambda function.</p>
     #[doc(hidden)]
@@ -13520,13 +12651,6 @@ impl LambdaAction {
     /// <p>The ARN of the Lambda function.</p>
     pub fn function_arn(&self) -> std::option::Option<&str> {
         self.function_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaAction");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaAction`](crate::model::LambdaAction).
@@ -13566,7 +12690,7 @@ impl LambdaAction {
 /// <p>Describes an action to write to a DynamoDB table.</p>
 /// <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamoDBv2Action {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     #[doc(hidden)]
@@ -13587,14 +12711,6 @@ impl DynamoDBv2Action {
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
     pub fn put_item(&self) -> std::option::Option<&crate::model::PutItemInput> {
         self.put_item.as_ref()
-    }
-}
-impl std::fmt::Debug for DynamoDBv2Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamoDBv2Action");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("put_item", &self.put_item);
-        formatter.finish()
     }
 }
 /// See [`DynamoDBv2Action`](crate::model::DynamoDBv2Action).
@@ -13652,7 +12768,7 @@ impl DynamoDBv2Action {
 
 /// <p>The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutItemInput {
     /// <p>The table where the message data will be written.</p>
     #[doc(hidden)]
@@ -13662,13 +12778,6 @@ impl PutItemInput {
     /// <p>The table where the message data will be written.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
-    }
-}
-impl std::fmt::Debug for PutItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
     }
 }
 /// See [`PutItemInput`](crate::model::PutItemInput).
@@ -13713,7 +12822,7 @@ impl PutItemInput {
 /// <p>The following field uses the timestamp:</p>
 /// <p> <code>"rangeKeyValue": "${timestamp()}"</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamoDbAction {
     /// <p>The name of the DynamoDB table.</p>
     #[doc(hidden)]
@@ -13786,22 +12895,6 @@ impl DynamoDbAction {
     /// <p>The action payload. This name can be customized.</p>
     pub fn payload_field(&self) -> std::option::Option<&str> {
         self.payload_field.as_deref()
-    }
-}
-impl std::fmt::Debug for DynamoDbAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamoDbAction");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("operation", &self.operation);
-        formatter.field("hash_key_field", &self.hash_key_field);
-        formatter.field("hash_key_value", &self.hash_key_value);
-        formatter.field("hash_key_type", &self.hash_key_type);
-        formatter.field("range_key_field", &self.range_key_field);
-        formatter.field("range_key_value", &self.range_key_value);
-        formatter.field("range_key_type", &self.range_key_type);
-        formatter.field("payload_field", &self.payload_field);
-        formatter.finish()
     }
 }
 /// See [`DynamoDbAction`](crate::model::DynamoDbAction).
@@ -14256,7 +13349,7 @@ impl AsRef<str> for VerificationState {
 
 /// <p>Information about a Device Defender security profile behavior violation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViolationEvent {
     /// <p>The ID of the violation event.</p>
     #[doc(hidden)]
@@ -14332,28 +13425,6 @@ impl ViolationEvent {
     /// <p>The time the violation event occurred.</p>
     pub fn violation_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.violation_event_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ViolationEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViolationEvent");
-        formatter.field("violation_id", &self.violation_id);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("security_profile_name", &self.security_profile_name);
-        formatter.field("behavior", &self.behavior);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.field(
-            "violation_event_additional_info",
-            &self.violation_event_additional_info,
-        );
-        formatter.field("violation_event_type", &self.violation_event_type);
-        formatter.field("verification_state", &self.verification_state);
-        formatter.field(
-            "verification_state_description",
-            &self.verification_state_description,
-        );
-        formatter.field("violation_event_time", &self.violation_event_time);
-        formatter.finish()
     }
 }
 /// See [`ViolationEvent`](crate::model::ViolationEvent).
@@ -14625,7 +13696,7 @@ impl AsRef<str> for ViolationEventType {
 
 /// <p> The details of a violation event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViolationEventAdditionalInfo {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     #[doc(hidden)]
@@ -14635,13 +13706,6 @@ impl ViolationEventAdditionalInfo {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     pub fn confidence_level(&self) -> std::option::Option<&crate::model::ConfidenceLevel> {
         self.confidence_level.as_ref()
-    }
-}
-impl std::fmt::Debug for ViolationEventAdditionalInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViolationEventAdditionalInfo");
-        formatter.field("confidence_level", &self.confidence_level);
-        formatter.finish()
     }
 }
 /// See [`ViolationEventAdditionalInfo`](crate::model::ViolationEventAdditionalInfo).
@@ -14780,7 +13844,7 @@ impl AsRef<str> for BehaviorCriteriaType {
 
 /// <p>The target configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogTargetConfiguration {
     /// <p>A log target</p>
     #[doc(hidden)]
@@ -14797,14 +13861,6 @@ impl LogTargetConfiguration {
     /// <p>The logging level.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for LogTargetConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogTargetConfiguration");
-        formatter.field("log_target", &self.log_target);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`LogTargetConfiguration`](crate::model::LogTargetConfiguration).
@@ -14858,7 +13914,7 @@ impl LogTargetConfiguration {
 
 /// <p>Describes a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicRuleListItem {
     /// <p>The rule ARN.</p>
     #[doc(hidden)]
@@ -14896,17 +13952,6 @@ impl TopicRuleListItem {
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(&self) -> std::option::Option<bool> {
         self.rule_disabled
-    }
-}
-impl std::fmt::Debug for TopicRuleListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicRuleListItem");
-        formatter.field("rule_arn", &self.rule_arn);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("topic_pattern", &self.topic_pattern);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("rule_disabled", &self.rule_disabled);
-        formatter.finish()
     }
 }
 /// See [`TopicRuleListItem`](crate::model::TopicRuleListItem).
@@ -14999,7 +14044,7 @@ impl TopicRuleListItem {
 
 /// <p>Information about the topic rule destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicRuleDestinationSummary {
     /// <p>The topic rule destination ARN.</p>
     #[doc(hidden)]
@@ -15107,19 +14152,6 @@ impl TopicRuleDestinationSummary {
         &self,
     ) -> std::option::Option<&crate::model::VpcDestinationSummary> {
         self.vpc_destination_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for TopicRuleDestinationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicRuleDestinationSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("http_url_summary", &self.http_url_summary);
-        formatter.field("vpc_destination_summary", &self.vpc_destination_summary);
-        formatter.finish()
     }
 }
 /// See [`TopicRuleDestinationSummary`](crate::model::TopicRuleDestinationSummary).
@@ -15304,7 +14336,7 @@ impl TopicRuleDestinationSummary {
 
 /// <p>The summary of a virtual private cloud (VPC) destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcDestinationSummary {
     /// <p>The subnet IDs of the VPC destination.</p>
     #[doc(hidden)]
@@ -15335,16 +14367,6 @@ impl VpcDestinationSummary {
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcDestinationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcDestinationSummary");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`VpcDestinationSummary`](crate::model::VpcDestinationSummary).
@@ -15437,7 +14459,7 @@ impl VpcDestinationSummary {
 
 /// <p>Information about an HTTP URL destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpUrlDestinationSummary {
     /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
     #[doc(hidden)]
@@ -15447,13 +14469,6 @@ impl HttpUrlDestinationSummary {
     /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
     pub fn confirmation_url(&self) -> std::option::Option<&str> {
         self.confirmation_url.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpUrlDestinationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpUrlDestinationSummary");
-        formatter.field("confirmation_url", &self.confirmation_url);
-        formatter.finish()
     }
 }
 /// See [`HttpUrlDestinationSummary`](crate::model::HttpUrlDestinationSummary).
@@ -15495,7 +14510,7 @@ impl HttpUrlDestinationSummary {
 
 /// <p>The definition of the thing type, including thing type name and description.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingTypeDefinition {
     /// <p>The name of the thing type.</p>
     #[doc(hidden)]
@@ -15526,16 +14541,6 @@ impl ThingTypeDefinition {
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub fn thing_type_metadata(&self) -> std::option::Option<&crate::model::ThingTypeMetadata> {
         self.thing_type_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for ThingTypeDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingTypeDefinition");
-        formatter.field("thing_type_name", &self.thing_type_name);
-        formatter.field("thing_type_arn", &self.thing_type_arn);
-        formatter.field("thing_type_properties", &self.thing_type_properties);
-        formatter.field("thing_type_metadata", &self.thing_type_metadata);
-        formatter.finish()
     }
 }
 /// See [`ThingTypeDefinition`](crate::model::ThingTypeDefinition).
@@ -15622,7 +14627,7 @@ impl ThingTypeDefinition {
 
 /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingTypeMetadata {
     /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be associated with this type.</p>
     #[doc(hidden)]
@@ -15646,15 +14651,6 @@ impl ThingTypeMetadata {
     /// <p>The date and time when the thing type was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ThingTypeMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingTypeMetadata");
-        formatter.field("deprecated", &self.deprecated);
-        formatter.field("deprecation_date", &self.deprecation_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`ThingTypeMetadata`](crate::model::ThingTypeMetadata).
@@ -15723,7 +14719,7 @@ impl ThingTypeMetadata {
 
 /// <p>The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingTypeProperties {
     /// <p>The description of the thing type.</p>
     #[doc(hidden)]
@@ -15740,14 +14736,6 @@ impl ThingTypeProperties {
     /// <p>A list of searchable thing attribute names.</p>
     pub fn searchable_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.searchable_attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for ThingTypeProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingTypeProperties");
-        formatter.field("thing_type_description", &self.thing_type_description);
-        formatter.field("searchable_attributes", &self.searchable_attributes);
-        formatter.finish()
     }
 }
 /// See [`ThingTypeProperties`](crate::model::ThingTypeProperties).
@@ -15810,7 +14798,7 @@ impl ThingTypeProperties {
 
 /// <p>The properties of the thing, including thing name, thing type name, and a list of thing attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingAttribute {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -15852,17 +14840,6 @@ impl ThingAttribute {
     /// <p>The version of the thing record in the registry.</p>
     pub fn version(&self) -> i64 {
         self.version
-    }
-}
-impl std::fmt::Debug for ThingAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingAttribute");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("thing_type_name", &self.thing_type_name);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ThingAttribute`](crate::model::ThingAttribute).
@@ -16170,7 +15147,7 @@ impl AsRef<str> for ReportType {
 
 /// <p>The name and ARN of a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupNameAndArn {
     /// <p>The group name.</p>
     #[doc(hidden)]
@@ -16187,14 +15164,6 @@ impl GroupNameAndArn {
     /// <p>The group ARN.</p>
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupNameAndArn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupNameAndArn");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.finish()
     }
 }
 /// See [`GroupNameAndArn`](crate::model::GroupNameAndArn).
@@ -16245,7 +15214,7 @@ impl GroupNameAndArn {
 
 /// <p>A target to which an alert is sent when a security profile behavior is violated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfileTarget {
     /// <p>The ARN of the security profile.</p>
     #[doc(hidden)]
@@ -16255,13 +15224,6 @@ impl SecurityProfileTarget {
     /// <p>The ARN of the security profile.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityProfileTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityProfileTarget");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`SecurityProfileTarget`](crate::model::SecurityProfileTarget).
@@ -16298,7 +15260,7 @@ impl SecurityProfileTarget {
 
 /// <p>A summary of a stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSummary {
     /// <p>The stream ID.</p>
     #[doc(hidden)]
@@ -16329,16 +15291,6 @@ impl StreamSummary {
     /// <p>A description of the stream.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSummary");
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("stream_version", &self.stream_version);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`StreamSummary`](crate::model::StreamSummary).
@@ -16413,7 +15365,7 @@ impl StreamSummary {
 
 /// <p>Information about a security profile and the target associated with it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfileTargetMapping {
     /// <p>Information that identifies the security profile.</p>
     #[doc(hidden)]
@@ -16432,17 +15384,6 @@ impl SecurityProfileTargetMapping {
     /// <p>Information about the target (thing group) associated with the security profile.</p>
     pub fn target(&self) -> std::option::Option<&crate::model::SecurityProfileTarget> {
         self.target.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityProfileTargetMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityProfileTargetMapping");
-        formatter.field(
-            "security_profile_identifier",
-            &self.security_profile_identifier,
-        );
-        formatter.field("target", &self.target);
-        formatter.finish()
     }
 }
 /// See [`SecurityProfileTargetMapping`](crate::model::SecurityProfileTargetMapping).
@@ -16503,7 +15444,7 @@ impl SecurityProfileTargetMapping {
 
 /// <p>Identifying information for a Device Defender security profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfileIdentifier {
     /// <p>The name you've given to the security profile.</p>
     #[doc(hidden)]
@@ -16520,14 +15461,6 @@ impl SecurityProfileIdentifier {
     /// <p>The ARN of the security profile.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityProfileIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityProfileIdentifier");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`SecurityProfileIdentifier`](crate::model::SecurityProfileIdentifier).
@@ -16578,7 +15511,7 @@ impl SecurityProfileIdentifier {
 
 /// <p>Information about the scheduled audit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledAuditMetadata {
     /// <p>The name of the scheduled audit.</p>
     #[doc(hidden)]
@@ -16616,17 +15549,6 @@ impl ScheduledAuditMetadata {
     /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
     pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduledAuditMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledAuditMetadata");
-        formatter.field("scheduled_audit_name", &self.scheduled_audit_name);
-        formatter.field("scheduled_audit_arn", &self.scheduled_audit_arn);
-        formatter.field("frequency", &self.frequency);
-        formatter.field("day_of_month", &self.day_of_month);
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.finish()
     }
 }
 /// See [`ScheduledAuditMetadata`](crate::model::ScheduledAuditMetadata).
@@ -16725,7 +15647,7 @@ impl ScheduledAuditMetadata {
 
 /// <p>A summary of information about a fleet provision template version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisioningTemplateVersionSummary {
     /// <p>The ID of the fleet privisioning template version.</p>
     #[doc(hidden)]
@@ -16749,15 +15671,6 @@ impl ProvisioningTemplateVersionSummary {
     /// <p>True if the provisioning template version is the default version, otherwise false.</p>
     pub fn is_default_version(&self) -> bool {
         self.is_default_version
-    }
-}
-impl std::fmt::Debug for ProvisioningTemplateVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisioningTemplateVersionSummary");
-        formatter.field("version_id", &self.version_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("is_default_version", &self.is_default_version);
-        formatter.finish()
     }
 }
 /// See [`ProvisioningTemplateVersionSummary`](crate::model::ProvisioningTemplateVersionSummary).
@@ -16823,7 +15736,7 @@ impl ProvisioningTemplateVersionSummary {
 
 /// <p>A summary of information about a provisioning template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisioningTemplateSummary {
     /// <p>The ARN of the provisioning template.</p>
     #[doc(hidden)]
@@ -16875,19 +15788,6 @@ impl ProvisioningTemplateSummary {
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TemplateType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ProvisioningTemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisioningTemplateSummary");
-        formatter.field("template_arn", &self.template_arn);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ProvisioningTemplateSummary`](crate::model::ProvisioningTemplateSummary).
@@ -17097,7 +15997,7 @@ impl AsRef<str> for TemplateType {
 
 /// <p>Describes a policy version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyVersion {
     /// <p>The policy version ID.</p>
     #[doc(hidden)]
@@ -17121,15 +16021,6 @@ impl PolicyVersion {
     /// <p>The date and time the policy was created.</p>
     pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyVersion");
-        formatter.field("version_id", &self.version_id);
-        formatter.field("is_default_version", &self.is_default_version);
-        formatter.field("create_date", &self.create_date);
-        formatter.finish()
     }
 }
 /// See [`PolicyVersion`](crate::model::PolicyVersion).
@@ -17195,7 +16086,7 @@ impl PolicyVersion {
 
 /// <p>A certificate that has been transferred but not yet accepted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutgoingCertificate {
     /// <p>The certificate ARN.</p>
     #[doc(hidden)]
@@ -17240,18 +16131,6 @@ impl OutgoingCertificate {
     /// <p>The certificate creation date.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for OutgoingCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutgoingCertificate");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("transferred_to", &self.transferred_to);
-        formatter.field("transfer_date", &self.transfer_date);
-        formatter.field("transfer_message", &self.transfer_message);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`OutgoingCertificate`](crate::model::OutgoingCertificate).
@@ -17368,7 +16247,7 @@ impl OutgoingCertificate {
 
 /// <p>An OTA update summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OtaUpdateSummary {
     /// <p>The OTA update ID.</p>
     #[doc(hidden)]
@@ -17392,15 +16271,6 @@ impl OtaUpdateSummary {
     /// <p>The date when the OTA update was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for OtaUpdateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OtaUpdateSummary");
-        formatter.field("ota_update_id", &self.ota_update_id);
-        formatter.field("ota_update_arn", &self.ota_update_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`OtaUpdateSummary`](crate::model::OtaUpdateSummary).
@@ -17577,7 +16447,7 @@ impl AsRef<str> for OtaUpdateStatus {
 
 /// <p>Information that identifies a mitigation action. This information is returned by ListMitigationActions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MitigationActionIdentifier {
     /// <p>The friendly name of the mitigation action.</p>
     #[doc(hidden)]
@@ -17601,15 +16471,6 @@ impl MitigationActionIdentifier {
     /// <p>The date when this mitigation action was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for MitigationActionIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MitigationActionIdentifier");
-        formatter.field("action_name", &self.action_name);
-        formatter.field("action_arn", &self.action_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`MitigationActionIdentifier`](crate::model::MitigationActionIdentifier).
@@ -17794,7 +16655,7 @@ impl AsRef<str> for MitigationActionType {
 
 /// <p>A metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDatum {
     /// <p>The time the metric value was reported.</p>
     #[doc(hidden)]
@@ -17811,14 +16672,6 @@ impl MetricDatum {
     /// <p>The value reported for the metric.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::MetricValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricDatum {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDatum");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MetricDatum`](crate::model::MetricDatum).
@@ -17872,7 +16725,7 @@ impl MetricDatum {
 
 /// <p>An object that contains information about the managed template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedJobTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
     #[doc(hidden)]
@@ -17910,17 +16763,6 @@ impl ManagedJobTemplateSummary {
     /// <p>The version for a managed template.</p>
     pub fn template_version(&self) -> std::option::Option<&str> {
         self.template_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedJobTemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedJobTemplateSummary");
-        formatter.field("template_arn", &self.template_arn);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("environments", &self.environments);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
     }
 }
 /// See [`ManagedJobTemplateSummary`](crate::model::ManagedJobTemplateSummary).
@@ -18022,7 +16864,7 @@ impl ManagedJobTemplateSummary {
 
 /// <p>An object that contains information about the job template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobTemplateSummary {
     /// <p>The ARN of the job template.</p>
     #[doc(hidden)]
@@ -18053,16 +16895,6 @@ impl JobTemplateSummary {
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for JobTemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobTemplateSummary");
-        formatter.field("job_template_arn", &self.job_template_arn);
-        formatter.field("job_template_id", &self.job_template_id);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`JobTemplateSummary`](crate::model::JobTemplateSummary).
@@ -18146,7 +16978,7 @@ impl JobTemplateSummary {
 
 /// <p>The job summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The job ARN.</p>
     #[doc(hidden)]
@@ -18216,21 +17048,6 @@ impl JobSummary {
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub fn is_concurrent(&self) -> std::option::Option<bool> {
         self.is_concurrent
-    }
-}
-impl std::fmt::Debug for JobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobSummary");
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("thing_group_id", &self.thing_group_id);
-        formatter.field("target_selection", &self.target_selection);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("completed_at", &self.completed_at);
-        formatter.field("is_concurrent", &self.is_concurrent);
-        formatter.finish()
     }
 }
 /// See [`JobSummary`](crate::model::JobSummary).
@@ -18579,7 +17396,7 @@ impl AsRef<str> for TargetSelection {
 
 /// <p>The job execution summary for a thing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionSummaryForThing {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -18596,14 +17413,6 @@ impl JobExecutionSummaryForThing {
     /// <p>Contains a subset of information about a job execution.</p>
     pub fn job_execution_summary(&self) -> std::option::Option<&crate::model::JobExecutionSummary> {
         self.job_execution_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for JobExecutionSummaryForThing {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionSummaryForThing");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_execution_summary", &self.job_execution_summary);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionSummaryForThing`](crate::model::JobExecutionSummaryForThing).
@@ -18657,7 +17466,7 @@ impl JobExecutionSummaryForThing {
 
 /// <p>The job execution summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionSummary {
     /// <p>The status of the job execution.</p>
     #[doc(hidden)]
@@ -18702,18 +17511,6 @@ impl JobExecutionSummary {
     /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
     pub fn retry_attempt(&self) -> std::option::Option<i32> {
         self.retry_attempt
-    }
-}
-impl std::fmt::Debug for JobExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionSummary");
-        formatter.field("status", &self.status);
-        formatter.field("queued_at", &self.queued_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.field("retry_attempt", &self.retry_attempt);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionSummary`](crate::model::JobExecutionSummary).
@@ -18955,7 +17752,7 @@ impl AsRef<str> for JobExecutionStatus {
 
 /// <p>Contains a summary of information about job executions for a specific job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionSummaryForJob {
     /// <p>The ARN of the thing on which the job execution is running.</p>
     #[doc(hidden)]
@@ -18972,14 +17769,6 @@ impl JobExecutionSummaryForJob {
     /// <p>Contains a subset of information about a job execution.</p>
     pub fn job_execution_summary(&self) -> std::option::Option<&crate::model::JobExecutionSummary> {
         self.job_execution_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for JobExecutionSummaryForJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionSummaryForJob");
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.field("job_execution_summary", &self.job_execution_summary);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionSummaryForJob`](crate::model::JobExecutionSummaryForJob).
@@ -19033,7 +17822,7 @@ impl JobExecutionSummaryForJob {
 
 /// <p>The name and ARN of a fleet metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetMetricNameAndArn {
     /// <p>The fleet metric name.</p>
     #[doc(hidden)]
@@ -19050,14 +17839,6 @@ impl FleetMetricNameAndArn {
     /// <p>The fleet metric ARN.</p>
     pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for FleetMetricNameAndArn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetMetricNameAndArn");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_arn", &self.metric_arn);
-        formatter.finish()
     }
 }
 /// See [`FleetMetricNameAndArn`](crate::model::FleetMetricNameAndArn).
@@ -19113,7 +17894,7 @@ impl FleetMetricNameAndArn {
 /// <li> <p>CredentialProvider</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainConfigurationSummary {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
     #[doc(hidden)]
@@ -19137,15 +17918,6 @@ impl DomainConfigurationSummary {
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
         self.service_type.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainConfigurationSummary");
-        formatter.field("domain_configuration_name", &self.domain_configuration_name);
-        formatter.field("domain_configuration_arn", &self.domain_configuration_arn);
-        formatter.field("service_type", &self.service_type);
-        formatter.finish()
     }
 }
 /// See [`DomainConfigurationSummary`](crate::model::DomainConfigurationSummary).
@@ -19312,7 +18084,7 @@ impl AsRef<str> for ServiceType {
 
 /// <p> The summary of the mitigation action tasks. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskSummary {
     /// <p> The unique identifier of the task. </p>
     #[doc(hidden)]
@@ -19392,31 +18164,6 @@ impl DetectMitigationActionsTaskSummary {
         &self,
     ) -> std::option::Option<&crate::model::DetectMitigationActionsTaskStatistics> {
         self.task_statistics.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectMitigationActionsTaskSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectMitigationActionsTaskSummary");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("task_status", &self.task_status);
-        formatter.field("task_start_time", &self.task_start_time);
-        formatter.field("task_end_time", &self.task_end_time);
-        formatter.field("target", &self.target);
-        formatter.field(
-            "violation_event_occurrence_range",
-            &self.violation_event_occurrence_range,
-        );
-        formatter.field(
-            "only_active_violations_included",
-            &self.only_active_violations_included,
-        );
-        formatter.field(
-            "suppressed_alerts_included",
-            &self.suppressed_alerts_included,
-        );
-        formatter.field("actions_definition", &self.actions_definition);
-        formatter.field("task_statistics", &self.task_statistics);
-        formatter.finish()
     }
 }
 /// See [`DetectMitigationActionsTaskSummary`](crate::model::DetectMitigationActionsTaskSummary).
@@ -19608,7 +18355,7 @@ impl DetectMitigationActionsTaskSummary {
 
 /// <p> The statistics of a mitigation action task. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskStatistics {
     /// <p> The actions that were performed. </p>
     #[doc(hidden)]
@@ -19632,15 +18379,6 @@ impl DetectMitigationActionsTaskStatistics {
     /// <p> The actions that failed. </p>
     pub fn actions_failed(&self) -> std::option::Option<i64> {
         self.actions_failed
-    }
-}
-impl std::fmt::Debug for DetectMitigationActionsTaskStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectMitigationActionsTaskStatistics");
-        formatter.field("actions_executed", &self.actions_executed);
-        formatter.field("actions_skipped", &self.actions_skipped);
-        formatter.field("actions_failed", &self.actions_failed);
-        formatter.finish()
     }
 }
 /// See [`DetectMitigationActionsTaskStatistics`](crate::model::DetectMitigationActionsTaskStatistics).
@@ -19703,7 +18441,7 @@ impl DetectMitigationActionsTaskStatistics {
 
 /// <p>Describes which changes should be applied as part of a mitigation action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MitigationAction {
     /// <p>A user-friendly name for the mitigation action.</p>
     #[doc(hidden)]
@@ -19734,16 +18472,6 @@ impl MitigationAction {
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
     pub fn action_params(&self) -> std::option::Option<&crate::model::MitigationActionParams> {
         self.action_params.as_ref()
-    }
-}
-impl std::fmt::Debug for MitigationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MitigationAction");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("action_params", &self.action_params);
-        formatter.finish()
     }
 }
 /// See [`MitigationAction`](crate::model::MitigationAction).
@@ -19923,7 +18651,7 @@ impl AsRef<str> for DetectMitigationActionsTaskStatus {
 
 /// <p> Describes which mitigation actions should be executed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectMitigationActionExecution {
     /// <p> The unique identifier of the task. </p>
     #[doc(hidden)]
@@ -19991,21 +18719,6 @@ impl DetectMitigationActionExecution {
     /// <p> The message of a mitigation action. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DetectMitigationActionExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectMitigationActionExecution");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("violation_id", &self.violation_id);
-        formatter.field("action_name", &self.action_name);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("execution_start_date", &self.execution_start_date);
-        formatter.field("execution_end_date", &self.execution_end_date);
-        formatter.field("status", &self.status);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DetectMitigationActionExecution`](crate::model::DetectMitigationActionExecution).
@@ -20254,7 +18967,7 @@ impl AsRef<str> for DetectMitigationActionExecutionStatus {
 
 /// <p>Information about a certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The ARN of the certificate.</p>
     #[doc(hidden)]
@@ -20298,17 +19011,6 @@ impl Certificate {
     /// <p>The date and time the certificate was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("status", &self.status);
-        formatter.field("certificate_mode", &self.certificate_mode);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`Certificate`](crate::model::Certificate).
@@ -20416,7 +19118,7 @@ impl Certificate {
 
 /// <p>A CA certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaCertificate {
     /// <p>The ARN of the CA certificate.</p>
     #[doc(hidden)]
@@ -20449,16 +19151,6 @@ impl CaCertificate {
     /// <p>The date the CA certificate was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for CaCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaCertificate");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`CaCertificate`](crate::model::CaCertificate).
@@ -20547,7 +19239,7 @@ impl CaCertificate {
 
 /// <p>The authorizer summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizerSummary {
     /// <p>The authorizer name.</p>
     #[doc(hidden)]
@@ -20564,14 +19256,6 @@ impl AuthorizerSummary {
     /// <p>The authorizer ARN.</p>
     pub fn authorizer_arn(&self) -> std::option::Option<&str> {
         self.authorizer_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthorizerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizerSummary");
-        formatter.field("authorizer_name", &self.authorizer_name);
-        formatter.field("authorizer_arn", &self.authorizer_arn);
-        formatter.finish()
     }
 }
 /// See [`AuthorizerSummary`](crate::model::AuthorizerSummary).
@@ -20628,7 +19312,7 @@ impl AuthorizerSummary {
 
 /// <p>The audits that were performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditTaskMetadata {
     /// <p>The ID of this audit.</p>
     #[doc(hidden)]
@@ -20652,15 +19336,6 @@ impl AuditTaskMetadata {
     /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
     pub fn task_type(&self) -> std::option::Option<&crate::model::AuditTaskType> {
         self.task_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AuditTaskMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditTaskMetadata");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("task_status", &self.task_status);
-        formatter.field("task_type", &self.task_type);
-        formatter.finish()
     }
 }
 /// See [`AuditTaskMetadata`](crate::model::AuditTaskMetadata).
@@ -20919,7 +19594,7 @@ impl AsRef<str> for AuditTaskStatus {
 
 /// <p> Filters out specific findings of a Device Defender audit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditSuppression {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     #[doc(hidden)]
@@ -20957,17 +19632,6 @@ impl AuditSuppression {
     /// <p> The description of the audit suppression. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for AuditSuppression {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditSuppression");
-        formatter.field("check_name", &self.check_name);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("suppress_indefinitely", &self.suppress_indefinitely);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`AuditSuppression`](crate::model::AuditSuppression).
@@ -21060,7 +19724,7 @@ impl AuditSuppression {
 
 /// <p>Information about an audit mitigation actions task that is returned by <code>ListAuditMitigationActionsTasks</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditMitigationActionsTaskMetadata {
     /// <p>The unique identifier for the task.</p>
     #[doc(hidden)]
@@ -21086,15 +19750,6 @@ impl AuditMitigationActionsTaskMetadata {
         &self,
     ) -> std::option::Option<&crate::model::AuditMitigationActionsTaskStatus> {
         self.task_status.as_ref()
-    }
-}
-impl std::fmt::Debug for AuditMitigationActionsTaskMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditMitigationActionsTaskMetadata");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("task_status", &self.task_status);
-        formatter.finish()
     }
 }
 /// See [`AuditMitigationActionsTaskMetadata`](crate::model::AuditMitigationActionsTaskMetadata).
@@ -21268,7 +19923,7 @@ impl AsRef<str> for AuditMitigationActionsTaskStatus {
 
 /// <p>Returned by ListAuditMitigationActionsTask, this object contains information that describes a mitigation action that has been started.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditMitigationActionExecutionMetadata {
     /// <p>The unique identifier for the task that applies the mitigation action.</p>
     #[doc(hidden)]
@@ -21336,21 +19991,6 @@ impl AuditMitigationActionExecutionMetadata {
     /// <p>If an error occurred, a message that describes the error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for AuditMitigationActionExecutionMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditMitigationActionExecutionMetadata");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("finding_id", &self.finding_id);
-        formatter.field("action_name", &self.action_name);
-        formatter.field("action_id", &self.action_id);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`AuditMitigationActionExecutionMetadata`](crate::model::AuditMitigationActionExecutionMetadata).
@@ -21616,7 +20256,7 @@ impl AsRef<str> for AuditMitigationActionsExecutionStatus {
 
 /// <p>The findings (results) of the audit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditFinding {
     /// <p>A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or more sets of findings.</p>
     #[doc(hidden)]
@@ -21698,26 +20338,6 @@ impl AuditFinding {
     /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
     pub fn is_suppressed(&self) -> std::option::Option<bool> {
         self.is_suppressed
-    }
-}
-impl std::fmt::Debug for AuditFinding {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditFinding");
-        formatter.field("finding_id", &self.finding_id);
-        formatter.field("task_id", &self.task_id);
-        formatter.field("check_name", &self.check_name);
-        formatter.field("task_start_time", &self.task_start_time);
-        formatter.field("finding_time", &self.finding_time);
-        formatter.field("severity", &self.severity);
-        formatter.field("non_compliant_resource", &self.non_compliant_resource);
-        formatter.field("related_resources", &self.related_resources);
-        formatter.field("reason_for_non_compliance", &self.reason_for_non_compliance);
-        formatter.field(
-            "reason_for_non_compliance_code",
-            &self.reason_for_non_compliance_code,
-        );
-        formatter.field("is_suppressed", &self.is_suppressed);
-        formatter.finish()
     }
 }
 /// See [`AuditFinding`](crate::model::AuditFinding).
@@ -21907,7 +20527,7 @@ impl AuditFinding {
 
 /// <p>Information about a related resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelatedResource {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
@@ -21935,15 +20555,6 @@ impl RelatedResource {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.additional_info.as_ref()
-    }
-}
-impl std::fmt::Debug for RelatedResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelatedResource");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("additional_info", &self.additional_info);
-        formatter.finish()
     }
 }
 /// See [`RelatedResource`](crate::model::RelatedResource).
@@ -22158,7 +20769,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>Information about the resource that was noncompliant with the audit check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NonCompliantResource {
     /// <p>The type of the noncompliant resource.</p>
     #[doc(hidden)]
@@ -22186,15 +20797,6 @@ impl NonCompliantResource {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.additional_info.as_ref()
-    }
-}
-impl std::fmt::Debug for NonCompliantResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NonCompliantResource");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("additional_info", &self.additional_info);
-        formatter.finish()
     }
 }
 /// See [`NonCompliantResource`](crate::model::NonCompliantResource).
@@ -22382,7 +20984,7 @@ impl AsRef<str> for AuditFindingSeverity {
 
 /// <p>Information about an active Device Defender security profile behavior violation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveViolation {
     /// <p>The ID of the active violation.</p>
     #[doc(hidden)]
@@ -22458,28 +21060,6 @@ impl ActiveViolation {
     /// <p>The time the violation started.</p>
     pub fn violation_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.violation_start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ActiveViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveViolation");
-        formatter.field("violation_id", &self.violation_id);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("security_profile_name", &self.security_profile_name);
-        formatter.field("behavior", &self.behavior);
-        formatter.field("last_violation_value", &self.last_violation_value);
-        formatter.field(
-            "violation_event_additional_info",
-            &self.violation_event_additional_info,
-        );
-        formatter.field("verification_state", &self.verification_state);
-        formatter.field(
-            "verification_state_description",
-            &self.verification_state_description,
-        );
-        formatter.field("last_violation_time", &self.last_violation_time);
-        formatter.field("violation_start_time", &self.violation_start_time);
-        formatter.finish()
     }
 }
 /// See [`ActiveViolation`](crate::model::ActiveViolation).
@@ -22654,7 +21234,7 @@ impl ActiveViolation {
 
 /// <p>A topic rule destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicRuleDestination {
     /// <p>The topic rule destination URL.</p>
     #[doc(hidden)]
@@ -22760,19 +21340,6 @@ impl TopicRuleDestination {
     /// <p>Properties of the virtual private cloud (VPC) connection.</p>
     pub fn vpc_properties(&self) -> std::option::Option<&crate::model::VpcDestinationProperties> {
         self.vpc_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for TopicRuleDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicRuleDestination");
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("http_url_properties", &self.http_url_properties);
-        formatter.field("vpc_properties", &self.vpc_properties);
-        formatter.finish()
     }
 }
 /// See [`TopicRuleDestination`](crate::model::TopicRuleDestination).
@@ -22957,7 +21524,7 @@ impl TopicRuleDestination {
 
 /// <p>The properties of a virtual private cloud (VPC) destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcDestinationProperties {
     /// <p>The subnet IDs of the VPC destination.</p>
     #[doc(hidden)]
@@ -22988,16 +21555,6 @@ impl VpcDestinationProperties {
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcDestinationProperties");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`VpcDestinationProperties`](crate::model::VpcDestinationProperties).
@@ -23090,7 +21647,7 @@ impl VpcDestinationProperties {
 
 /// <p>HTTP URL destination properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpUrlDestinationProperties {
     /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
     #[doc(hidden)]
@@ -23100,13 +21657,6 @@ impl HttpUrlDestinationProperties {
     /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
     pub fn confirmation_url(&self) -> std::option::Option<&str> {
         self.confirmation_url.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpUrlDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpUrlDestinationProperties");
-        formatter.field("confirmation_url", &self.confirmation_url);
-        formatter.finish()
     }
 }
 /// See [`HttpUrlDestinationProperties`](crate::model::HttpUrlDestinationProperties).
@@ -23148,7 +21698,7 @@ impl HttpUrlDestinationProperties {
 
 /// <p>Describes a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicRule {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -23207,20 +21757,6 @@ impl TopicRule {
     /// <p>The action to perform when an error occurs.</p>
     pub fn error_action(&self) -> std::option::Option<&crate::model::Action> {
         self.error_action.as_ref()
-    }
-}
-impl std::fmt::Debug for TopicRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicRule");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("sql", &self.sql);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("actions", &self.actions);
-        formatter.field("rule_disabled", &self.rule_disabled);
-        formatter.field("aws_iot_sql_version", &self.aws_iot_sql_version);
-        formatter.field("error_action", &self.error_action);
-        formatter.finish()
     }
 }
 /// See [`TopicRule`](crate::model::TopicRule).
@@ -23361,7 +21897,7 @@ impl TopicRule {
 
 /// <p>A map of key-value pairs for all supported statistics. For issues with missing or unexpected values for this API, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html"> Fleet indexing troubleshooting guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Statistics {
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
     #[doc(hidden)]
@@ -23420,20 +21956,6 @@ impl Statistics {
     /// <p>The standard deviation of the aggregated field values.</p>
     pub fn std_deviation(&self) -> std::option::Option<f64> {
         self.std_deviation
-    }
-}
-impl std::fmt::Debug for Statistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Statistics");
-        formatter.field("count", &self.count);
-        formatter.field("average", &self.average);
-        formatter.field("sum", &self.sum);
-        formatter.field("minimum", &self.minimum);
-        formatter.field("maximum", &self.maximum);
-        formatter.field("sum_of_squares", &self.sum_of_squares);
-        formatter.field("variance", &self.variance);
-        formatter.field("std_deviation", &self.std_deviation);
-        formatter.finish()
     }
 }
 /// See [`Statistics`](crate::model::Statistics).
@@ -23556,7 +22078,7 @@ impl Statistics {
 
 /// <p>Describes the percentile and percentile value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PercentPair {
     /// <p>The percentile.</p>
     #[doc(hidden)]
@@ -23573,14 +22095,6 @@ impl PercentPair {
     /// <p>The value of the percentile.</p>
     pub fn value(&self) -> f64 {
         self.value
-    }
-}
-impl std::fmt::Debug for PercentPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PercentPair");
-        formatter.field("percent", &self.percent);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`PercentPair`](crate::model::PercentPair).
@@ -23631,7 +22145,7 @@ impl PercentPair {
 
 /// <p>Information about an OTA update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OtaUpdateInfo {
     /// <p>The OTA update ID.</p>
     #[doc(hidden)]
@@ -23755,34 +22269,6 @@ impl OtaUpdateInfo {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.additional_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for OtaUpdateInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OtaUpdateInfo");
-        formatter.field("ota_update_id", &self.ota_update_id);
-        formatter.field("ota_update_arn", &self.ota_update_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("description", &self.description);
-        formatter.field("targets", &self.targets);
-        formatter.field("protocols", &self.protocols);
-        formatter.field(
-            "aws_job_executions_rollout_config",
-            &self.aws_job_executions_rollout_config,
-        );
-        formatter.field(
-            "aws_job_presigned_url_config",
-            &self.aws_job_presigned_url_config,
-        );
-        formatter.field("target_selection", &self.target_selection);
-        formatter.field("ota_update_files", &self.ota_update_files);
-        formatter.field("ota_update_status", &self.ota_update_status);
-        formatter.field("aws_iot_job_id", &self.aws_iot_job_id);
-        formatter.field("aws_iot_job_arn", &self.aws_iot_job_arn);
-        formatter.field("error_info", &self.error_info);
-        formatter.field("additional_parameters", &self.additional_parameters);
-        formatter.finish()
     }
 }
 /// See [`OtaUpdateInfo`](crate::model::OtaUpdateInfo).
@@ -24087,7 +22573,7 @@ impl OtaUpdateInfo {
 
 /// <p>Error information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -24104,14 +22590,6 @@ impl ErrorInfo {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorInfo");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ErrorInfo`](crate::model::ErrorInfo).
@@ -24162,7 +22640,7 @@ impl ErrorInfo {
 
 /// <p>Describes a file to be associated with an OTA update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OtaUpdateFile {
     /// <p>The name of the file.</p>
     #[doc(hidden)]
@@ -24211,18 +22689,6 @@ impl OtaUpdateFile {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for OtaUpdateFile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OtaUpdateFile");
-        formatter.field("file_name", &self.file_name);
-        formatter.field("file_type", &self.file_type);
-        formatter.field("file_version", &self.file_version);
-        formatter.field("file_location", &self.file_location);
-        formatter.field("code_signing", &self.code_signing);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`OtaUpdateFile`](crate::model::OtaUpdateFile).
@@ -24344,7 +22810,7 @@ impl OtaUpdateFile {
 
 /// <p>Describes the method to use when code signing a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeSigning {
     /// <p>The ID of the <code>AWSSignerJob</code> which was created to sign the file.</p>
     #[doc(hidden)]
@@ -24370,18 +22836,6 @@ impl CodeSigning {
     /// <p>A custom method for code signing a file.</p>
     pub fn custom_code_signing(&self) -> std::option::Option<&crate::model::CustomCodeSigning> {
         self.custom_code_signing.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeSigning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeSigning");
-        formatter.field("aws_signer_job_id", &self.aws_signer_job_id);
-        formatter.field(
-            "start_signing_job_parameter",
-            &self.start_signing_job_parameter,
-        );
-        formatter.field("custom_code_signing", &self.custom_code_signing);
-        formatter.finish()
     }
 }
 /// See [`CodeSigning`](crate::model::CodeSigning).
@@ -24457,7 +22911,7 @@ impl CodeSigning {
 
 /// <p>Describes a custom method used to code sign a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomCodeSigning {
     /// <p>The signature for the file.</p>
     #[doc(hidden)]
@@ -24490,16 +22944,6 @@ impl CustomCodeSigning {
     /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
     pub fn signature_algorithm(&self) -> std::option::Option<&str> {
         self.signature_algorithm.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomCodeSigning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomCodeSigning");
-        formatter.field("signature", &self.signature);
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.field("hash_algorithm", &self.hash_algorithm);
-        formatter.field("signature_algorithm", &self.signature_algorithm);
-        formatter.finish()
     }
 }
 /// See [`CustomCodeSigning`](crate::model::CustomCodeSigning).
@@ -24590,7 +23034,7 @@ impl CustomCodeSigning {
 
 /// <p>Describes the certificate chain being used when code signing a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeSigningCertificateChain {
     /// <p>The name of the certificate.</p>
     #[doc(hidden)]
@@ -24607,14 +23051,6 @@ impl CodeSigningCertificateChain {
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
     pub fn inline_document(&self) -> std::option::Option<&str> {
         self.inline_document.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeSigningCertificateChain {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeSigningCertificateChain");
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("inline_document", &self.inline_document);
-        formatter.finish()
     }
 }
 /// See [`CodeSigningCertificateChain`](crate::model::CodeSigningCertificateChain).
@@ -24671,7 +23107,7 @@ impl CodeSigningCertificateChain {
 
 /// <p>Describes the signature for a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeSigningSignature {
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
     #[doc(hidden)]
@@ -24681,13 +23117,6 @@ impl CodeSigningSignature {
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
     pub fn inline_document(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.inline_document.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeSigningSignature {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeSigningSignature");
-        formatter.field("inline_document", &self.inline_document);
-        formatter.finish()
     }
 }
 /// See [`CodeSigningSignature`](crate::model::CodeSigningSignature).
@@ -24729,7 +23158,7 @@ impl CodeSigningSignature {
 
 /// <p>Information required to start a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSigningJobParameter {
     /// <p>Describes the code-signing profile.</p>
     #[doc(hidden)]
@@ -24755,15 +23184,6 @@ impl StartSigningJobParameter {
     /// <p>The location to write the code-signed file.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
         self.destination.as_ref()
-    }
-}
-impl std::fmt::Debug for StartSigningJobParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSigningJobParameter");
-        formatter.field("signing_profile_parameter", &self.signing_profile_parameter);
-        formatter.field("signing_profile_name", &self.signing_profile_name);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`StartSigningJobParameter`](crate::model::StartSigningJobParameter).
@@ -24839,7 +23259,7 @@ impl StartSigningJobParameter {
 
 /// <p>Describes the location of the updated firmware.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>Describes the location in S3 of the updated firmware.</p>
     #[doc(hidden)]
@@ -24849,13 +23269,6 @@ impl Destination {
     /// <p>Describes the location in S3 of the updated firmware.</p>
     pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
         self.s3_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.finish()
     }
 }
 /// See [`Destination`](crate::model::Destination).
@@ -24897,7 +23310,7 @@ impl Destination {
 
 /// <p>Describes the location of updated firmware in S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Destination {
     /// <p>The S3 bucket that contains the updated firmware.</p>
     #[doc(hidden)]
@@ -24914,14 +23327,6 @@ impl S3Destination {
     /// <p>The S3 prefix.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Destination");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Destination`](crate::model::S3Destination).
@@ -24972,7 +23377,7 @@ impl S3Destination {
 
 /// <p>Describes the code-signing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningProfileParameter {
     /// <p>Certificate ARN.</p>
     #[doc(hidden)]
@@ -24996,18 +23401,6 @@ impl SigningProfileParameter {
     /// <p>The location of the code-signing certificate on your device.</p>
     pub fn certificate_path_on_device(&self) -> std::option::Option<&str> {
         self.certificate_path_on_device.as_deref()
-    }
-}
-impl std::fmt::Debug for SigningProfileParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningProfileParameter");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("platform", &self.platform);
-        formatter.field(
-            "certificate_path_on_device",
-            &self.certificate_path_on_device,
-        );
-        formatter.finish()
     }
 }
 /// See [`SigningProfileParameter`](crate::model::SigningProfileParameter).
@@ -25076,7 +23469,7 @@ impl SigningProfileParameter {
 
 /// <p>The location of the OTA update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileLocation {
     /// <p>The stream that contains the OTA update.</p>
     #[doc(hidden)]
@@ -25093,14 +23486,6 @@ impl FileLocation {
     /// <p>The location of the updated firmware in S3.</p>
     pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for FileLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileLocation");
-        formatter.field("stream", &self.stream);
-        formatter.field("s3_location", &self.s3_location);
-        formatter.finish()
     }
 }
 /// See [`FileLocation`](crate::model::FileLocation).
@@ -25154,7 +23539,7 @@ impl FileLocation {
 
 /// <p>Describes a group of files that can be streamed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stream {
     /// <p>The stream ID.</p>
     #[doc(hidden)]
@@ -25171,14 +23556,6 @@ impl Stream {
     /// <p>The ID of a file associated with a stream.</p>
     pub fn file_id(&self) -> std::option::Option<i32> {
         self.file_id
-    }
-}
-impl std::fmt::Debug for Stream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stream");
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("file_id", &self.file_id);
-        formatter.finish()
     }
 }
 /// See [`Stream`](crate::model::Stream).
@@ -25229,7 +23606,7 @@ impl Stream {
 
 /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsJobPresignedUrlConfig {
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
     #[doc(hidden)]
@@ -25239,13 +23616,6 @@ impl AwsJobPresignedUrlConfig {
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
     pub fn expires_in_sec(&self) -> std::option::Option<i64> {
         self.expires_in_sec
-    }
-}
-impl std::fmt::Debug for AwsJobPresignedUrlConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsJobPresignedUrlConfig");
-        formatter.field("expires_in_sec", &self.expires_in_sec);
-        formatter.finish()
     }
 }
 /// See [`AwsJobPresignedUrlConfig`](crate::model::AwsJobPresignedUrlConfig).
@@ -25284,7 +23654,7 @@ impl AwsJobPresignedUrlConfig {
 
 /// <p>Configuration for the rollout of OTA updates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsJobExecutionsRolloutConfig {
     /// <p>The maximum number of OTA update job executions started per minute.</p>
     #[doc(hidden)]
@@ -25303,14 +23673,6 @@ impl AwsJobExecutionsRolloutConfig {
         &self,
     ) -> std::option::Option<&crate::model::AwsJobExponentialRolloutRate> {
         self.exponential_rate.as_ref()
-    }
-}
-impl std::fmt::Debug for AwsJobExecutionsRolloutConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsJobExecutionsRolloutConfig");
-        formatter.field("maximum_per_minute", &self.maximum_per_minute);
-        formatter.field("exponential_rate", &self.exponential_rate);
-        formatter.finish()
     }
 }
 /// See [`AwsJobExecutionsRolloutConfig`](crate::model::AwsJobExecutionsRolloutConfig).
@@ -25368,7 +23730,7 @@ impl AwsJobExecutionsRolloutConfig {
 
 /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsJobExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
     #[doc(hidden)]
@@ -25396,15 +23758,6 @@ impl AwsJobExponentialRolloutRate {
         &self,
     ) -> std::option::Option<&crate::model::AwsJobRateIncreaseCriteria> {
         self.rate_increase_criteria.as_ref()
-    }
-}
-impl std::fmt::Debug for AwsJobExponentialRolloutRate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsJobExponentialRolloutRate");
-        formatter.field("base_rate_per_minute", &self.base_rate_per_minute);
-        formatter.field("increment_factor", &self.increment_factor);
-        formatter.field("rate_increase_criteria", &self.rate_increase_criteria);
-        formatter.finish()
     }
 }
 /// See [`AwsJobExponentialRolloutRate`](crate::model::AwsJobExponentialRolloutRate).
@@ -25476,7 +23829,7 @@ impl AwsJobExponentialRolloutRate {
 
 /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsJobRateIncreaseCriteria {
     /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
     #[doc(hidden)]
@@ -25493,17 +23846,6 @@ impl AwsJobRateIncreaseCriteria {
     /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
     pub fn number_of_succeeded_things(&self) -> std::option::Option<i32> {
         self.number_of_succeeded_things
-    }
-}
-impl std::fmt::Debug for AwsJobRateIncreaseCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsJobRateIncreaseCriteria");
-        formatter.field("number_of_notified_things", &self.number_of_notified_things);
-        formatter.field(
-            "number_of_succeeded_things",
-            &self.number_of_succeeded_things,
-        );
-        formatter.finish()
     }
 }
 /// See [`AwsJobRateIncreaseCriteria`](crate::model::AwsJobRateIncreaseCriteria).
@@ -25644,7 +23986,7 @@ impl AsRef<str> for Protocol {
 
 /// <p>The policy that has the effect on the authorization results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EffectivePolicy {
     /// <p>The policy name.</p>
     #[doc(hidden)]
@@ -25668,15 +24010,6 @@ impl EffectivePolicy {
     /// <p>The IAM policy document.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
-    }
-}
-impl std::fmt::Debug for EffectivePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EffectivePolicy");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
     }
 }
 /// See [`EffectivePolicy`](crate::model::EffectivePolicy).
@@ -25742,7 +24075,7 @@ impl EffectivePolicy {
 
 /// <p>A count of documents that meets a specific aggregation criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The value counted for the particular bucket.</p>
     #[doc(hidden)]
@@ -25759,14 +24092,6 @@ impl Bucket {
     /// <p>The number of documents that have the value counted for the particular bucket.</p>
     pub fn count(&self) -> i32 {
         self.count
-    }
-}
-impl std::fmt::Debug for Bucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Bucket");
-        formatter.field("key_value", &self.key_value);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`Bucket`](crate::model::Bucket).
@@ -25817,7 +24142,7 @@ impl Bucket {
 
 /// <p>The type of bucketed aggregation performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketsAggregationType {
     /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
     #[doc(hidden)]
@@ -25827,13 +24152,6 @@ impl BucketsAggregationType {
     /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
     pub fn terms_aggregation(&self) -> std::option::Option<&crate::model::TermsAggregation> {
         self.terms_aggregation.as_ref()
-    }
-}
-impl std::fmt::Debug for BucketsAggregationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketsAggregationType");
-        formatter.field("terms_aggregation", &self.terms_aggregation);
-        formatter.finish()
     }
 }
 /// See [`BucketsAggregationType`](crate::model::BucketsAggregationType).
@@ -25875,7 +24193,7 @@ impl BucketsAggregationType {
 
 /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TermsAggregation {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
     #[doc(hidden)]
@@ -25885,13 +24203,6 @@ impl TermsAggregation {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
     pub fn max_buckets(&self) -> i32 {
         self.max_buckets
-    }
-}
-impl std::fmt::Debug for TermsAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TermsAggregation");
-        formatter.field("max_buckets", &self.max_buckets);
-        formatter.finish()
     }
 }
 /// See [`TermsAggregation`](crate::model::TermsAggregation).
@@ -25930,7 +24241,7 @@ impl TermsAggregation {
 
 /// <p> The summary of an ML Detect behavior model. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BehaviorModelTrainingSummary {
     /// <p> The name of the security profile. </p>
     #[doc(hidden)]
@@ -25977,24 +24288,6 @@ impl BehaviorModelTrainingSummary {
     /// <p> The date the model was last refreshed. </p>
     pub fn last_model_refresh_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_model_refresh_date.as_ref()
-    }
-}
-impl std::fmt::Debug for BehaviorModelTrainingSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BehaviorModelTrainingSummary");
-        formatter.field("security_profile_name", &self.security_profile_name);
-        formatter.field("behavior_name", &self.behavior_name);
-        formatter.field(
-            "training_data_collection_start_date",
-            &self.training_data_collection_start_date,
-        );
-        formatter.field("model_status", &self.model_status);
-        formatter.field(
-            "datapoints_collection_percentage",
-            &self.datapoints_collection_percentage,
-        );
-        formatter.field("last_model_refresh_date", &self.last_model_refresh_date);
-        formatter.finish()
     }
 }
 /// See [`BehaviorModelTrainingSummary`](crate::model::BehaviorModelTrainingSummary).
@@ -26307,7 +24600,7 @@ impl AsRef<str> for DynamicGroupStatus {
 
 /// <p>Thing group metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThingGroupMetadata {
     /// <p>The parent thing group name.</p>
     #[doc(hidden)]
@@ -26334,18 +24627,6 @@ impl ThingGroupMetadata {
     /// <p>The UNIX timestamp of when the thing group was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ThingGroupMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThingGroupMetadata");
-        formatter.field("parent_group_name", &self.parent_group_name);
-        formatter.field(
-            "root_to_parent_thing_groups",
-            &self.root_to_parent_thing_groups,
-        );
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`ThingGroupMetadata`](crate::model::ThingGroupMetadata).
@@ -26424,7 +24705,7 @@ impl ThingGroupMetadata {
 
 /// <p>Information about a stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamInfo {
     /// <p>The stream ID.</p>
     #[doc(hidden)]
@@ -26483,20 +24764,6 @@ impl StreamInfo {
     /// <p>An IAM role IoT assumes to access your S3 files.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamInfo");
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("stream_version", &self.stream_version);
-        formatter.field("description", &self.description);
-        formatter.field("files", &self.files);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`StreamInfo`](crate::model::StreamInfo).
@@ -26634,7 +24901,7 @@ impl StreamInfo {
 
 /// <p>Role alias description.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoleAliasDescription {
     /// <p>The role alias.</p>
     #[doc(hidden)]
@@ -26686,22 +24953,6 @@ impl RoleAliasDescription {
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
-    }
-}
-impl std::fmt::Debug for RoleAliasDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoleAliasDescription");
-        formatter.field("role_alias", &self.role_alias);
-        formatter.field("role_alias_arn", &self.role_alias_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("owner", &self.owner);
-        formatter.field(
-            "credential_duration_seconds",
-            &self.credential_duration_seconds,
-        );
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.finish()
     }
 }
 /// See [`RoleAliasDescription`](crate::model::RoleAliasDescription).
@@ -26823,7 +25074,7 @@ impl RoleAliasDescription {
 /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentParameter {
     /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
     #[doc(hidden)]
@@ -26861,17 +25112,6 @@ impl DocumentParameter {
     /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
     pub fn optional(&self) -> bool {
         self.optional
-    }
-}
-impl std::fmt::Debug for DocumentParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentParameter");
-        formatter.field("key", &self.key);
-        formatter.field("description", &self.description);
-        formatter.field("regex", &self.regex);
-        formatter.field("example", &self.example);
-        formatter.field("optional", &self.optional);
-        formatter.finish()
     }
 }
 /// See [`DocumentParameter`](crate::model::DocumentParameter).
@@ -26958,7 +25198,7 @@ impl DocumentParameter {
 
 /// <p>The job execution object represents the execution of a job on a particular device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecution {
     /// <p>The unique identifier you assigned to the job when it was created.</p>
     #[doc(hidden)]
@@ -27038,26 +25278,6 @@ impl JobExecution {
     /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.</p>
     pub fn approximate_seconds_before_timed_out(&self) -> std::option::Option<i64> {
         self.approximate_seconds_before_timed_out
-    }
-}
-impl std::fmt::Debug for JobExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecution");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("status", &self.status);
-        formatter.field("force_canceled", &self.force_canceled);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.field("queued_at", &self.queued_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.field("version_number", &self.version_number);
-        formatter.field(
-            "approximate_seconds_before_timed_out",
-            &self.approximate_seconds_before_timed_out,
-        );
-        formatter.finish()
     }
 }
 /// See [`JobExecution`](crate::model::JobExecution).
@@ -27234,7 +25454,7 @@ impl JobExecution {
 
 /// <p>Details of the job execution status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionStatusDetails {
     /// <p>The job execution status.</p>
     #[doc(hidden)]
@@ -27248,13 +25468,6 @@ impl JobExecutionStatusDetails {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.details_map.as_ref()
-    }
-}
-impl std::fmt::Debug for JobExecutionStatusDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionStatusDetails");
-        formatter.field("details_map", &self.details_map);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionStatusDetails`](crate::model::JobExecutionStatusDetails).
@@ -27310,7 +25523,7 @@ impl JobExecutionStatusDetails {
 
 /// <p>The <code>Job</code> object contains details about a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
     #[doc(hidden)]
@@ -27492,40 +25705,6 @@ impl Job {
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub fn is_concurrent(&self) -> std::option::Option<bool> {
         self.is_concurrent
-    }
-}
-impl std::fmt::Debug for Job {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Job");
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("target_selection", &self.target_selection);
-        formatter.field("status", &self.status);
-        formatter.field("force_canceled", &self.force_canceled);
-        formatter.field("reason_code", &self.reason_code);
-        formatter.field("comment", &self.comment);
-        formatter.field("targets", &self.targets);
-        formatter.field("description", &self.description);
-        formatter.field("presigned_url_config", &self.presigned_url_config);
-        formatter.field(
-            "job_executions_rollout_config",
-            &self.job_executions_rollout_config,
-        );
-        formatter.field("abort_config", &self.abort_config);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("completed_at", &self.completed_at);
-        formatter.field("job_process_details", &self.job_process_details);
-        formatter.field("timeout_config", &self.timeout_config);
-        formatter.field("namespace_id", &self.namespace_id);
-        formatter.field("job_template_arn", &self.job_template_arn);
-        formatter.field(
-            "job_executions_retry_config",
-            &self.job_executions_retry_config,
-        );
-        formatter.field("document_parameters", &self.document_parameters);
-        formatter.field("is_concurrent", &self.is_concurrent);
-        formatter.finish()
     }
 }
 /// See [`Job`](crate::model::Job).
@@ -27899,7 +26078,7 @@ impl Job {
 
 /// <p>The job process details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobProcessDetails {
     /// <p>The target devices to which the job execution is being rolled out. This value will be null after the job execution has finished rolling out to all the target devices.</p>
     #[doc(hidden)]
@@ -27965,30 +26144,6 @@ impl JobProcessDetails {
     /// <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>
     pub fn number_of_timed_out_things(&self) -> std::option::Option<i32> {
         self.number_of_timed_out_things
-    }
-}
-impl std::fmt::Debug for JobProcessDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobProcessDetails");
-        formatter.field("processing_targets", &self.processing_targets);
-        formatter.field("number_of_canceled_things", &self.number_of_canceled_things);
-        formatter.field(
-            "number_of_succeeded_things",
-            &self.number_of_succeeded_things,
-        );
-        formatter.field("number_of_failed_things", &self.number_of_failed_things);
-        formatter.field("number_of_rejected_things", &self.number_of_rejected_things);
-        formatter.field("number_of_queued_things", &self.number_of_queued_things);
-        formatter.field(
-            "number_of_in_progress_things",
-            &self.number_of_in_progress_things,
-        );
-        formatter.field("number_of_removed_things", &self.number_of_removed_things);
-        formatter.field(
-            "number_of_timed_out_things",
-            &self.number_of_timed_out_things,
-        );
-        formatter.finish()
     }
 }
 /// See [`JobProcessDetails`](crate::model::JobProcessDetails).
@@ -28322,7 +26477,7 @@ impl AsRef<str> for DomainType {
 
 /// <p>An object that contains information about a server certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerCertificateSummary {
     /// <p>The ARN of the server certificate.</p>
     #[doc(hidden)]
@@ -28348,18 +26503,6 @@ impl ServerCertificateSummary {
     /// <p>Details that explain the status of the server certificate.</p>
     pub fn server_certificate_status_detail(&self) -> std::option::Option<&str> {
         self.server_certificate_status_detail.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerCertificateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerCertificateSummary");
-        formatter.field("server_certificate_arn", &self.server_certificate_arn);
-        formatter.field("server_certificate_status", &self.server_certificate_status);
-        formatter.field(
-            "server_certificate_status_detail",
-            &self.server_certificate_status_detail,
-        );
-        formatter.finish()
     }
 }
 /// See [`ServerCertificateSummary`](crate::model::ServerCertificateSummary).
@@ -28530,7 +26673,7 @@ impl AsRef<str> for ServerCertificateStatus {
 
 /// <p>The authorizer description.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizerDescription {
     /// <p>The authorizer name.</p>
     #[doc(hidden)]
@@ -28607,22 +26750,6 @@ impl AuthorizerDescription {
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
     pub fn enable_caching_for_http(&self) -> std::option::Option<bool> {
         self.enable_caching_for_http
-    }
-}
-impl std::fmt::Debug for AuthorizerDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizerDescription");
-        formatter.field("authorizer_name", &self.authorizer_name);
-        formatter.field("authorizer_arn", &self.authorizer_arn);
-        formatter.field("authorizer_function_arn", &self.authorizer_function_arn);
-        formatter.field("token_key_name", &self.token_key_name);
-        formatter.field("token_signing_public_keys", &self.token_signing_public_keys);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("signing_disabled", &self.signing_disabled);
-        formatter.field("enable_caching_for_http", &self.enable_caching_for_http);
-        formatter.finish()
     }
 }
 /// See [`AuthorizerDescription`](crate::model::AuthorizerDescription).
@@ -28807,7 +26934,7 @@ impl AuthorizerDescription {
 
 /// <p>Describes a certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateDescription {
     /// <p>The ARN of the certificate.</p>
     #[doc(hidden)]
@@ -28914,26 +27041,6 @@ impl CertificateDescription {
     /// <p>For more information about the value for SNI extension, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in IoT</a>.</p>
     pub fn certificate_mode(&self) -> std::option::Option<&crate::model::CertificateMode> {
         self.certificate_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateDescription");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("ca_certificate_id", &self.ca_certificate_id);
-        formatter.field("status", &self.status);
-        formatter.field("certificate_pem", &self.certificate_pem);
-        formatter.field("owned_by", &self.owned_by);
-        formatter.field("previous_owned_by", &self.previous_owned_by);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("customer_version", &self.customer_version);
-        formatter.field("transfer_data", &self.transfer_data);
-        formatter.field("generation_id", &self.generation_id);
-        formatter.field("validity", &self.validity);
-        formatter.field("certificate_mode", &self.certificate_mode);
-        formatter.finish()
     }
 }
 /// See [`CertificateDescription`](crate::model::CertificateDescription).
@@ -29170,7 +27277,7 @@ impl CertificateDescription {
 
 /// <p>When the certificate is valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateValidity {
     /// <p>The certificate is not valid before this date.</p>
     #[doc(hidden)]
@@ -29187,14 +27294,6 @@ impl CertificateValidity {
     /// <p>The certificate is not valid after this date.</p>
     pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_after.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateValidity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateValidity");
-        formatter.field("not_before", &self.not_before);
-        formatter.field("not_after", &self.not_after);
-        formatter.finish()
     }
 }
 /// See [`CertificateValidity`](crate::model::CertificateValidity).
@@ -29251,7 +27350,7 @@ impl CertificateValidity {
 
 /// <p>Data used to transfer a certificate to an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransferData {
     /// <p>The transfer message.</p>
     #[doc(hidden)]
@@ -29289,17 +27388,6 @@ impl TransferData {
     /// <p>The date the transfer was rejected.</p>
     pub fn reject_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.reject_date.as_ref()
-    }
-}
-impl std::fmt::Debug for TransferData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransferData");
-        formatter.field("transfer_message", &self.transfer_message);
-        formatter.field("reject_reason", &self.reject_reason);
-        formatter.field("transfer_date", &self.transfer_date);
-        formatter.field("accept_date", &self.accept_date);
-        formatter.field("reject_date", &self.reject_date);
-        formatter.finish()
     }
 }
 /// See [`TransferData`](crate::model::TransferData).
@@ -29401,7 +27489,7 @@ impl TransferData {
 
 /// <p>Describes a CA certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaCertificateDescription {
     /// <p>The CA certificate ARN.</p>
     #[doc(hidden)]
@@ -29492,24 +27580,6 @@ impl CaCertificateDescription {
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     pub fn certificate_mode(&self) -> std::option::Option<&crate::model::CertificateMode> {
         self.certificate_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for CaCertificateDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaCertificateDescription");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("status", &self.status);
-        formatter.field("certificate_pem", &self.certificate_pem);
-        formatter.field("owned_by", &self.owned_by);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("auto_registration_status", &self.auto_registration_status);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("customer_version", &self.customer_version);
-        formatter.field("generation_id", &self.generation_id);
-        formatter.field("validity", &self.validity);
-        formatter.field("certificate_mode", &self.certificate_mode);
-        formatter.finish()
     }
 }
 /// See [`CaCertificateDescription`](crate::model::CaCertificateDescription).
@@ -29716,7 +27786,7 @@ impl CaCertificateDescription {
 
 /// <p>Additional information about the billing group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BillingGroupMetadata {
     /// <p>The date the billing group was created.</p>
     #[doc(hidden)]
@@ -29726,13 +27796,6 @@ impl BillingGroupMetadata {
     /// <p>The date the billing group was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for BillingGroupMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BillingGroupMetadata");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`BillingGroupMetadata`](crate::model::BillingGroupMetadata).
@@ -29774,7 +27837,7 @@ impl BillingGroupMetadata {
 
 /// <p>Information about the audit check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditCheckDetails {
     /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
     #[doc(hidden)]
@@ -29826,25 +27889,6 @@ impl AuditCheckDetails {
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for AuditCheckDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditCheckDetails");
-        formatter.field("check_run_status", &self.check_run_status);
-        formatter.field("check_compliant", &self.check_compliant);
-        formatter.field("total_resources_count", &self.total_resources_count);
-        formatter.field(
-            "non_compliant_resources_count",
-            &self.non_compliant_resources_count,
-        );
-        formatter.field(
-            "suppressed_non_compliant_resources_count",
-            &self.suppressed_non_compliant_resources_count,
-        );
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`AuditCheckDetails`](crate::model::AuditCheckDetails).
@@ -30084,7 +28128,7 @@ impl AsRef<str> for AuditCheckRunStatus {
 
 /// <p>Statistics for the checks performed during the audit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskStatistics {
     /// <p>The number of checks in this audit.</p>
     #[doc(hidden)]
@@ -30136,22 +28180,6 @@ impl TaskStatistics {
     /// <p>The number of checks that did not run because the audit was canceled.</p>
     pub fn canceled_checks(&self) -> std::option::Option<i32> {
         self.canceled_checks
-    }
-}
-impl std::fmt::Debug for TaskStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskStatistics");
-        formatter.field("total_checks", &self.total_checks);
-        formatter.field("in_progress_checks", &self.in_progress_checks);
-        formatter.field(
-            "waiting_for_data_collection_checks",
-            &self.waiting_for_data_collection_checks,
-        );
-        formatter.field("compliant_checks", &self.compliant_checks);
-        formatter.field("non_compliant_checks", &self.non_compliant_checks);
-        formatter.field("failed_checks", &self.failed_checks);
-        formatter.field("canceled_checks", &self.canceled_checks);
-        formatter.finish()
     }
 }
 /// See [`TaskStatistics`](crate::model::TaskStatistics).
@@ -30265,7 +28293,7 @@ impl TaskStatistics {
 
 /// <p>Provides summary counts of how many tasks for findings are in a particular state. This information is included in the response from DescribeAuditMitigationActionsTask.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskStatisticsForAuditCheck {
     /// <p>The total number of findings to which a task is being applied.</p>
     #[doc(hidden)]
@@ -30303,17 +28331,6 @@ impl TaskStatisticsForAuditCheck {
     /// <p>The number of findings to which the mitigation action task was canceled when applied.</p>
     pub fn canceled_findings_count(&self) -> std::option::Option<i64> {
         self.canceled_findings_count
-    }
-}
-impl std::fmt::Debug for TaskStatisticsForAuditCheck {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskStatisticsForAuditCheck");
-        formatter.field("total_findings_count", &self.total_findings_count);
-        formatter.field("failed_findings_count", &self.failed_findings_count);
-        formatter.field("succeeded_findings_count", &self.succeeded_findings_count);
-        formatter.field("skipped_findings_count", &self.skipped_findings_count);
-        formatter.field("canceled_findings_count", &self.canceled_findings_count);
-        formatter.finish()
     }
 }
 /// See [`TaskStatisticsForAuditCheck`](crate::model::TaskStatisticsForAuditCheck).
@@ -30400,7 +28417,7 @@ impl TaskStatisticsForAuditCheck {
 
 /// <p>Configuration of the topic rule destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicRuleDestinationConfiguration {
     /// <p>Configuration of the HTTP URL.</p>
     #[doc(hidden)]
@@ -30421,14 +28438,6 @@ impl TopicRuleDestinationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::VpcDestinationConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for TopicRuleDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicRuleDestinationConfiguration");
-        formatter.field("http_url_configuration", &self.http_url_configuration);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`TopicRuleDestinationConfiguration`](crate::model::TopicRuleDestinationConfiguration).
@@ -30493,7 +28502,7 @@ impl TopicRuleDestinationConfiguration {
 
 /// <p>The configuration information for a virtual private cloud (VPC) destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcDestinationConfiguration {
     /// <p>The subnet IDs of the VPC destination.</p>
     #[doc(hidden)]
@@ -30524,16 +28533,6 @@ impl VpcDestinationConfiguration {
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcDestinationConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`VpcDestinationConfiguration`](crate::model::VpcDestinationConfiguration).
@@ -30626,7 +28625,7 @@ impl VpcDestinationConfiguration {
 
 /// <p>HTTP URL destination configuration used by the topic rule's HTTP action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpUrlDestinationConfiguration {
     /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
     #[doc(hidden)]
@@ -30636,13 +28635,6 @@ impl HttpUrlDestinationConfiguration {
     /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
     pub fn confirmation_url(&self) -> std::option::Option<&str> {
         self.confirmation_url.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpUrlDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpUrlDestinationConfiguration");
-        formatter.field("confirmation_url", &self.confirmation_url);
-        formatter.finish()
     }
 }
 /// See [`HttpUrlDestinationConfiguration`](crate::model::HttpUrlDestinationConfiguration).
@@ -30715,7 +28707,7 @@ impl std::fmt::Debug for KeyPair {
 pub mod key_pair {
 
     /// A builder for [`KeyPair`](crate::model::KeyPair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) public_key: std::option::Option<std::string::String>,
         pub(crate) private_key: std::option::Option<std::string::String>,
@@ -30749,6 +28741,14 @@ pub mod key_pair {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("public_key", &self.public_key);
+            formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl KeyPair {
     /// Creates a new builder-style object to manufacture [`KeyPair`](crate::model::KeyPair).
@@ -30759,7 +28759,7 @@ impl KeyPair {
 
 /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsJobTimeoutConfig {
     /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
     #[doc(hidden)]
@@ -30769,16 +28769,6 @@ impl AwsJobTimeoutConfig {
     /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
     pub fn in_progress_timeout_in_minutes(&self) -> std::option::Option<i64> {
         self.in_progress_timeout_in_minutes
-    }
-}
-impl std::fmt::Debug for AwsJobTimeoutConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsJobTimeoutConfig");
-        formatter.field(
-            "in_progress_timeout_in_minutes",
-            &self.in_progress_timeout_in_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`AwsJobTimeoutConfig`](crate::model::AwsJobTimeoutConfig).
@@ -30820,7 +28810,7 @@ impl AwsJobTimeoutConfig {
 
 /// <p>The criteria that determine when and how a job abort takes place.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsJobAbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     #[doc(hidden)]
@@ -30830,13 +28820,6 @@ impl AwsJobAbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     pub fn abort_criteria_list(&self) -> std::option::Option<&[crate::model::AwsJobAbortCriteria]> {
         self.abort_criteria_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsJobAbortConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsJobAbortConfig");
-        formatter.field("abort_criteria_list", &self.abort_criteria_list);
-        formatter.finish()
     }
 }
 /// See [`AwsJobAbortConfig`](crate::model::AwsJobAbortConfig).
@@ -30885,7 +28868,7 @@ impl AwsJobAbortConfig {
 
 /// <p>The criteria that determine when and how a job abort takes place.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsJobAbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
     #[doc(hidden)]
@@ -30920,19 +28903,6 @@ impl AwsJobAbortCriteria {
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn min_number_of_executed_things(&self) -> std::option::Option<i32> {
         self.min_number_of_executed_things
-    }
-}
-impl std::fmt::Debug for AwsJobAbortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsJobAbortCriteria");
-        formatter.field("failure_type", &self.failure_type);
-        formatter.field("action", &self.action);
-        formatter.field("threshold_percentage", &self.threshold_percentage);
-        formatter.field(
-            "min_number_of_executed_things",
-            &self.min_number_of_executed_things,
-        );
-        formatter.finish()
     }
 }
 /// See [`AwsJobAbortCriteria`](crate::model::AwsJobAbortCriteria).

@@ -4,7 +4,7 @@
 /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The unique Id of the web application.</p>
     #[doc(hidden)]
@@ -56,22 +56,6 @@ impl ApplicationSummary {
     /// <p>The current state of the web application.</p>
     pub fn application_state(&self) -> std::option::Option<&crate::model::ApplicationState> {
         self.application_state.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSummary");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("application_description", &self.application_description);
-        formatter.field("application_url", &self.application_url);
-        formatter.field("application_creation_date", &self.application_creation_date);
-        formatter.field(
-            "application_last_update_date",
-            &self.application_last_update_date,
-        );
-        formatter.field("application_state", &self.application_state);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).

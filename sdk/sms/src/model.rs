@@ -92,7 +92,7 @@ impl AsRef<str> for LicenseType {
 
 /// <p>Key/value pair that can be assigned to an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag key.</p>
     #[doc(hidden)]
@@ -109,14 +109,6 @@ impl Tag {
     /// <p>The tag value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -167,7 +159,7 @@ impl Tag {
 
 /// <p>Logical grouping of servers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerGroup {
     /// <p>The ID of a server group.</p>
     #[doc(hidden)]
@@ -191,15 +183,6 @@ impl ServerGroup {
     /// <p>The servers that belong to a server group.</p>
     pub fn server_list(&self) -> std::option::Option<&[crate::model::Server]> {
         self.server_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerGroup");
-        formatter.field("server_group_id", &self.server_group_id);
-        formatter.field("name", &self.name);
-        formatter.field("server_list", &self.server_list);
-        formatter.finish()
     }
 }
 /// See [`ServerGroup`](crate::model::ServerGroup).
@@ -274,7 +257,7 @@ impl ServerGroup {
 
 /// <p>Represents a server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Server {
     /// <p>The ID of the server.</p>
     #[doc(hidden)]
@@ -312,20 +295,6 @@ impl Server {
     /// <p>Indicates whether the replication job is deleted or failed.</p>
     pub fn replication_job_terminated(&self) -> std::option::Option<bool> {
         self.replication_job_terminated
-    }
-}
-impl std::fmt::Debug for Server {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Server");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("server_type", &self.server_type);
-        formatter.field("vm_server", &self.vm_server);
-        formatter.field("replication_job_id", &self.replication_job_id);
-        formatter.field(
-            "replication_job_terminated",
-            &self.replication_job_terminated,
-        );
-        formatter.finish()
     }
 }
 /// See [`Server`](crate::model::Server).
@@ -418,7 +387,7 @@ impl Server {
 
 /// <p>Represents a VM server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VmServer {
     /// <p>The VM server location.</p>
     #[doc(hidden)]
@@ -456,17 +425,6 @@ impl VmServer {
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
     pub fn vm_path(&self) -> std::option::Option<&str> {
         self.vm_path.as_deref()
-    }
-}
-impl std::fmt::Debug for VmServer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VmServer");
-        formatter.field("vm_server_address", &self.vm_server_address);
-        formatter.field("vm_name", &self.vm_name);
-        formatter.field("vm_manager_name", &self.vm_manager_name);
-        formatter.field("vm_manager_type", &self.vm_manager_type);
-        formatter.field("vm_path", &self.vm_path);
-        formatter.finish()
     }
 }
 /// See [`VmServer`](crate::model::VmServer).
@@ -657,7 +615,7 @@ impl AsRef<str> for VmManagerType {
 
 /// <p>Represents a VM server location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VmServerAddress {
     /// <p>The ID of the VM manager.</p>
     #[doc(hidden)]
@@ -674,14 +632,6 @@ impl VmServerAddress {
     /// <p>The ID of the VM.</p>
     pub fn vm_id(&self) -> std::option::Option<&str> {
         self.vm_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VmServerAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VmServerAddress");
-        formatter.field("vm_manager_id", &self.vm_manager_id);
-        formatter.field("vm_id", &self.vm_id);
-        formatter.finish()
     }
 }
 /// See [`VmServerAddress`](crate::model::VmServerAddress).
@@ -820,7 +770,7 @@ impl AsRef<str> for ServerType {
 
 /// <p>Information about the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppSummary {
     /// <p>The unique ID of the application.</p>
     #[doc(hidden)]
@@ -962,40 +912,6 @@ impl AppSummary {
     /// <p>The number of servers present in the application.</p>
     pub fn total_servers(&self) -> std::option::Option<i32> {
         self.total_servers
-    }
-}
-impl std::fmt::Debug for AppSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppSummary");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("imported_app_id", &self.imported_app_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field(
-            "replication_configuration_status",
-            &self.replication_configuration_status,
-        );
-        formatter.field("replication_status", &self.replication_status);
-        formatter.field(
-            "replication_status_message",
-            &self.replication_status_message,
-        );
-        formatter.field("latest_replication_time", &self.latest_replication_time);
-        formatter.field(
-            "launch_configuration_status",
-            &self.launch_configuration_status,
-        );
-        formatter.field("launch_status", &self.launch_status);
-        formatter.field("launch_status_message", &self.launch_status_message);
-        formatter.field("launch_details", &self.launch_details);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("role_name", &self.role_name);
-        formatter.field("total_server_groups", &self.total_server_groups);
-        formatter.field("total_servers", &self.total_servers);
-        formatter.finish()
     }
 }
 /// See [`AppSummary`](crate::model::AppSummary).
@@ -1294,7 +1210,7 @@ impl AppSummary {
 
 /// <p>Details about the latest launch of an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchDetails {
     /// <p>The latest time that this application was launched successfully.</p>
     #[doc(hidden)]
@@ -1318,15 +1234,6 @@ impl LaunchDetails {
     /// <p>The ID of the latest stack launched for this application.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchDetails");
-        formatter.field("latest_launch_time", &self.latest_launch_time);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
     }
 }
 /// See [`LaunchDetails`](crate::model::LaunchDetails).
@@ -2043,7 +1950,7 @@ impl AsRef<str> for AppStatus {
 
 /// <p>Configuration for validating an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerGroupValidationConfiguration {
     /// <p>The ID of the server group.</p>
     #[doc(hidden)]
@@ -2063,17 +1970,6 @@ impl ServerGroupValidationConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ServerValidationConfiguration]> {
         self.server_validation_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerGroupValidationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerGroupValidationConfiguration");
-        formatter.field("server_group_id", &self.server_group_id);
-        formatter.field(
-            "server_validation_configurations",
-            &self.server_validation_configurations,
-        );
-        formatter.finish()
     }
 }
 /// See [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
@@ -2140,7 +2036,7 @@ impl ServerGroupValidationConfiguration {
 
 /// <p>Configuration for validating an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerValidationConfiguration {
     /// <p>Represents a server.</p>
     #[doc(hidden)]
@@ -2183,23 +2079,6 @@ impl ServerValidationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::UserDataValidationParameters> {
         self.user_data_validation_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for ServerValidationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerValidationConfiguration");
-        formatter.field("server", &self.server);
-        formatter.field("validation_id", &self.validation_id);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "server_validation_strategy",
-            &self.server_validation_strategy,
-        );
-        formatter.field(
-            "user_data_validation_parameters",
-            &self.user_data_validation_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
@@ -2303,7 +2182,7 @@ impl ServerValidationConfiguration {
 
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDataValidationParameters {
     /// <p>The location of the validation script.</p>
     #[doc(hidden)]
@@ -2320,14 +2199,6 @@ impl UserDataValidationParameters {
     /// <p>The type of validation script.</p>
     pub fn script_type(&self) -> std::option::Option<&crate::model::ScriptType> {
         self.script_type.as_ref()
-    }
-}
-impl std::fmt::Debug for UserDataValidationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserDataValidationParameters");
-        formatter.field("source", &self.source);
-        formatter.field("script_type", &self.script_type);
-        formatter.finish()
     }
 }
 /// See [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
@@ -2471,7 +2342,7 @@ impl AsRef<str> for ScriptType {
 
 /// <p>Contains the location of a validation script.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// <p>Location of an Amazon S3 object.</p>
     #[doc(hidden)]
@@ -2481,13 +2352,6 @@ impl Source {
     /// <p>Location of an Amazon S3 object.</p>
     pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field("s3_location", &self.s3_location);
-        formatter.finish()
     }
 }
 /// See [`Source`](crate::model::Source).
@@ -2529,7 +2393,7 @@ impl Source {
 
 /// <p>Location of an Amazon S3 object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
@@ -2546,14 +2410,6 @@ impl S3Location {
     /// <p>The Amazon S3 bucket key.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -2691,7 +2547,7 @@ impl AsRef<str> for ServerValidationStrategy {
 
 /// <p>Configuration for validating an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppValidationConfiguration {
     /// <p>The ID of the validation.</p>
     #[doc(hidden)]
@@ -2726,16 +2582,6 @@ impl AppValidationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SsmValidationParameters> {
         self.ssm_validation_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for AppValidationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppValidationConfiguration");
-        formatter.field("validation_id", &self.validation_id);
-        formatter.field("name", &self.name);
-        formatter.field("app_validation_strategy", &self.app_validation_strategy);
-        formatter.field("ssm_validation_parameters", &self.ssm_validation_parameters);
-        formatter.finish()
     }
 }
 /// See [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
@@ -2827,7 +2673,7 @@ impl AppValidationConfiguration {
 
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SsmValidationParameters {
     /// <p>The location of the validation script.</p>
     #[doc(hidden)]
@@ -2872,18 +2718,6 @@ impl SsmValidationParameters {
     /// <p>The name of the S3 bucket for output.</p>
     pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
         self.output_s3_bucket_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SsmValidationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsmValidationParameters");
-        formatter.field("source", &self.source);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("script_type", &self.script_type);
-        formatter.field("command", &self.command);
-        formatter.field("execution_timeout_seconds", &self.execution_timeout_seconds);
-        formatter.field("output_s3_bucket_name", &self.output_s3_bucket_name);
-        formatter.finish()
     }
 }
 /// See [`SsmValidationParameters`](crate::model::SsmValidationParameters).
@@ -3075,7 +2909,7 @@ impl AsRef<str> for AppValidationStrategy {
 
 /// <p>Replication configuration for a server group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerGroupReplicationConfiguration {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
     #[doc(hidden)]
@@ -3095,17 +2929,6 @@ impl ServerGroupReplicationConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ServerReplicationConfiguration]> {
         self.server_replication_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerGroupReplicationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerGroupReplicationConfiguration");
-        formatter.field("server_group_id", &self.server_group_id);
-        formatter.field(
-            "server_replication_configurations",
-            &self.server_replication_configurations,
-        );
-        formatter.finish()
     }
 }
 /// See [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
@@ -3172,7 +2995,7 @@ impl ServerGroupReplicationConfiguration {
 
 /// <p>Replication configuration of a server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerReplicationConfiguration {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
     #[doc(hidden)]
@@ -3192,17 +3015,6 @@ impl ServerReplicationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ServerReplicationParameters> {
         self.server_replication_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for ServerReplicationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerReplicationConfiguration");
-        formatter.field("server", &self.server);
-        formatter.field(
-            "server_replication_parameters",
-            &self.server_replication_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
@@ -3260,7 +3072,7 @@ impl ServerReplicationConfiguration {
 
 /// <p>The replication parameters for replicating a server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerReplicationParameters {
     /// <p>The seed time for creating a replication job for the server.</p>
     #[doc(hidden)]
@@ -3326,22 +3138,6 @@ impl ServerReplicationParameters {
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerReplicationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerReplicationParameters");
-        formatter.field("seed_time", &self.seed_time);
-        formatter.field("frequency", &self.frequency);
-        formatter.field("run_once", &self.run_once);
-        formatter.field("license_type", &self.license_type);
-        formatter.field(
-            "number_of_recent_amis_to_keep",
-            &self.number_of_recent_amis_to_keep,
-        );
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
@@ -3475,7 +3271,7 @@ impl ServerReplicationParameters {
 
 /// <p>Launch configuration for a server group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerGroupLaunchConfiguration {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
     #[doc(hidden)]
@@ -3502,18 +3298,6 @@ impl ServerGroupLaunchConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ServerLaunchConfiguration]> {
         self.server_launch_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerGroupLaunchConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerGroupLaunchConfiguration");
-        formatter.field("server_group_id", &self.server_group_id);
-        formatter.field("launch_order", &self.launch_order);
-        formatter.field(
-            "server_launch_configurations",
-            &self.server_launch_configurations,
-        );
-        formatter.finish()
     }
 }
 /// See [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
@@ -3592,7 +3376,7 @@ impl ServerGroupLaunchConfiguration {
 
 /// <p>Launch configuration for a server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerLaunchConfiguration {
     /// <p>The ID of the server with which the launch configuration is associated.</p>
     #[doc(hidden)]
@@ -3679,27 +3463,6 @@ impl ServerLaunchConfiguration {
     /// <p>The type of configuration script.</p>
     pub fn configure_script_type(&self) -> std::option::Option<&crate::model::ScriptType> {
         self.configure_script_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ServerLaunchConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerLaunchConfiguration");
-        formatter.field("server", &self.server);
-        formatter.field("logical_id", &self.logical_id);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("subnet", &self.subnet);
-        formatter.field("security_group", &self.security_group);
-        formatter.field("ec2_key_name", &self.ec2_key_name);
-        formatter.field("user_data", &self.user_data);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
-        formatter.field("iam_instance_profile_name", &self.iam_instance_profile_name);
-        formatter.field("configure_script", &self.configure_script);
-        formatter.field("configure_script_type", &self.configure_script_type);
-        formatter.finish()
     }
 }
 /// See [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
@@ -3885,7 +3648,7 @@ impl ServerLaunchConfiguration {
 
 /// <p>A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserData {
     /// <p>Amazon S3 location of the user-data script.</p>
     #[doc(hidden)]
@@ -3895,13 +3658,6 @@ impl UserData {
     /// <p>Amazon S3 location of the user-data script.</p>
     pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for UserData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserData");
-        formatter.field("s3_location", &self.s3_location);
-        formatter.finish()
     }
 }
 /// See [`UserData`](crate::model::UserData).
@@ -3943,7 +3699,7 @@ impl UserData {
 
 /// <p>Contains the status of validating an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationContext {
     /// <p>The ID of the validation.</p>
     #[doc(hidden)]
@@ -3967,15 +3723,6 @@ impl NotificationContext {
     /// <p>The status message.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationContext");
-        formatter.field("validation_id", &self.validation_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`NotificationContext`](crate::model::NotificationContext).
@@ -4271,7 +4018,7 @@ impl AsRef<str> for ServerCatalogStatus {
 
 /// <p>Represents a replication run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationRun {
     /// <p>The ID of the replication run.</p>
     #[doc(hidden)]
@@ -4365,23 +4112,6 @@ impl ReplicationRun {
     /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationRun");
-        formatter.field("replication_run_id", &self.replication_run_id);
-        formatter.field("state", &self.state);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("stage_details", &self.stage_details);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("ami_id", &self.ami_id);
-        formatter.field("scheduled_start_time", &self.scheduled_start_time);
-        formatter.field("completed_time", &self.completed_time);
-        formatter.field("description", &self.description);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`ReplicationRun`](crate::model::ReplicationRun).
@@ -4575,7 +4305,7 @@ impl ReplicationRun {
 
 /// <p>Details of the current stage of a replication run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationRunStageDetails {
     /// <p>The current stage of a replication run.</p>
     #[doc(hidden)]
@@ -4592,14 +4322,6 @@ impl ReplicationRunStageDetails {
     /// <p>The progress of the current stage of a replication run.</p>
     pub fn stage_progress(&self) -> std::option::Option<&str> {
         self.stage_progress.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationRunStageDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationRunStageDetails");
-        formatter.field("stage", &self.stage);
-        formatter.field("stage_progress", &self.stage_progress);
-        formatter.finish()
     }
 }
 /// See [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
@@ -4870,7 +4592,7 @@ impl AsRef<str> for ReplicationRunState {
 
 /// <p>Represents a replication job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationJob {
     /// <p>The ID of the replication job.</p>
     #[doc(hidden)]
@@ -5015,36 +4737,6 @@ impl ReplicationJob {
     /// <p>Information about the replication runs.</p>
     pub fn replication_run_list(&self) -> std::option::Option<&[crate::model::ReplicationRun]> {
         self.replication_run_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationJob");
-        formatter.field("replication_job_id", &self.replication_job_id);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("server_type", &self.server_type);
-        formatter.field("vm_server", &self.vm_server);
-        formatter.field("seed_replication_time", &self.seed_replication_time);
-        formatter.field("frequency", &self.frequency);
-        formatter.field("run_once", &self.run_once);
-        formatter.field(
-            "next_replication_run_start_time",
-            &self.next_replication_run_start_time,
-        );
-        formatter.field("license_type", &self.license_type);
-        formatter.field("role_name", &self.role_name);
-        formatter.field("latest_ami_id", &self.latest_ami_id);
-        formatter.field("state", &self.state);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "number_of_recent_amis_to_keep",
-            &self.number_of_recent_amis_to_keep,
-        );
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("replication_run_list", &self.replication_run_list);
-        formatter.finish()
     }
 }
 /// See [`ReplicationJob`](crate::model::ReplicationJob).
@@ -5472,7 +5164,7 @@ impl AsRef<str> for ReplicationJobState {
 
 /// <p>Represents a connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connector {
     /// <p>The ID of the connector.</p>
     #[doc(hidden)]
@@ -5545,22 +5237,6 @@ impl Connector {
     /// <p>The time the connector was associated.</p>
     pub fn associated_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.associated_on.as_ref()
-    }
-}
-impl std::fmt::Debug for Connector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connector");
-        formatter.field("connector_id", &self.connector_id);
-        formatter.field("version", &self.version);
-        formatter.field("status", &self.status);
-        formatter.field("capability_list", &self.capability_list);
-        formatter.field("vm_manager_name", &self.vm_manager_name);
-        formatter.field("vm_manager_type", &self.vm_manager_type);
-        formatter.field("vm_manager_id", &self.vm_manager_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("associated_on", &self.associated_on);
-        formatter.finish()
     }
 }
 /// See [`Connector`](crate::model::Connector).
@@ -5935,7 +5611,7 @@ impl AsRef<str> for ConnectorStatus {
 
 /// <p>Contains validation output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationOutput {
     /// <p>The ID of the validation.</p>
     #[doc(hidden)]
@@ -5989,19 +5665,6 @@ impl ValidationOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServerValidationOutput> {
         self.server_validation_output.as_ref()
-    }
-}
-impl std::fmt::Debug for ValidationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationOutput");
-        formatter.field("validation_id", &self.validation_id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("latest_validation_time", &self.latest_validation_time);
-        formatter.field("app_validation_output", &self.app_validation_output);
-        formatter.field("server_validation_output", &self.server_validation_output);
-        formatter.finish()
     }
 }
 /// See [`ValidationOutput`](crate::model::ValidationOutput).
@@ -6134,7 +5797,7 @@ impl ValidationOutput {
 
 /// <p>Contains output from validating an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerValidationOutput {
     /// <p>Represents a server.</p>
     #[doc(hidden)]
@@ -6144,13 +5807,6 @@ impl ServerValidationOutput {
     /// <p>Represents a server.</p>
     pub fn server(&self) -> std::option::Option<&crate::model::Server> {
         self.server.as_ref()
-    }
-}
-impl std::fmt::Debug for ServerValidationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerValidationOutput");
-        formatter.field("server", &self.server);
-        formatter.finish()
     }
 }
 /// See [`ServerValidationOutput`](crate::model::ServerValidationOutput).
@@ -6189,7 +5845,7 @@ impl ServerValidationOutput {
 
 /// <p>Output from validating an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppValidationOutput {
     /// <p>Output from using SSM to validate the application.</p>
     #[doc(hidden)]
@@ -6199,13 +5855,6 @@ impl AppValidationOutput {
     /// <p>Output from using SSM to validate the application.</p>
     pub fn ssm_output(&self) -> std::option::Option<&crate::model::SsmOutput> {
         self.ssm_output.as_ref()
-    }
-}
-impl std::fmt::Debug for AppValidationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppValidationOutput");
-        formatter.field("ssm_output", &self.ssm_output);
-        formatter.finish()
     }
 }
 /// See [`AppValidationOutput`](crate::model::AppValidationOutput).
@@ -6247,7 +5896,7 @@ impl AppValidationOutput {
 
 /// <p>Contains the location of validation output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SsmOutput {
     /// <p>Location of an Amazon S3 object.</p>
     #[doc(hidden)]
@@ -6257,13 +5906,6 @@ impl SsmOutput {
     /// <p>Location of an Amazon S3 object.</p>
     pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for SsmOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsmOutput");
-        formatter.field("s3_location", &self.s3_location);
-        formatter.finish()
     }
 }
 /// See [`SsmOutput`](crate::model::SsmOutput).

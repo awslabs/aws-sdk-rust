@@ -2,7 +2,7 @@
 
 /// <p> The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QualificationType {
     /// <p> A unique identifier for the Qualification type. A Qualification type is given a Qualification type ID when you call the CreateQualificationType operation. </p>
     #[doc(hidden)]
@@ -98,25 +98,6 @@ impl QualificationType {
     /// <p> The Qualification integer value to use for automatically granted Qualifications, if AutoGranted is true. This is 1 by default. </p>
     pub fn auto_granted_value(&self) -> std::option::Option<i32> {
         self.auto_granted_value
-    }
-}
-impl std::fmt::Debug for QualificationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QualificationType");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("keywords", &self.keywords);
-        formatter.field("qualification_type_status", &self.qualification_type_status);
-        formatter.field("test", &self.test);
-        formatter.field("test_duration_in_seconds", &self.test_duration_in_seconds);
-        formatter.field("answer_key", &self.answer_key);
-        formatter.field("retry_delay_in_seconds", &self.retry_delay_in_seconds);
-        formatter.field("is_requestable", &self.is_requestable);
-        formatter.field("auto_granted", &self.auto_granted);
-        formatter.field("auto_granted_value", &self.auto_granted_value);
-        formatter.finish()
     }
 }
 /// See [`QualificationType`](crate::model::QualificationType).
@@ -404,7 +385,7 @@ impl AsRef<str> for QualificationTypeStatus {
 
 /// <p>The NotificationSpecification data structure describes a HIT event notification for a HIT type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationSpecification {
     /// <p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p>
     /// <ul>
@@ -445,16 +426,6 @@ impl NotificationSpecification {
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
     pub fn event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
         self.event_types.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationSpecification");
-        formatter.field("destination", &self.destination);
-        formatter.field("transport", &self.transport);
-        formatter.field("version", &self.version);
-        formatter.field("event_types", &self.event_types);
-        formatter.finish()
     }
 }
 /// See [`NotificationSpecification`](crate::model::NotificationSpecification).
@@ -801,7 +772,7 @@ impl AsRef<str> for NotificationTransport {
 
 /// <p> When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyWorkersFailureStatus {
     /// <p> Encoded value for the failure type. </p>
     #[doc(hidden)]
@@ -827,21 +798,6 @@ impl NotifyWorkersFailureStatus {
     /// <p> The ID of the Worker.</p>
     pub fn worker_id(&self) -> std::option::Option<&str> {
         self.worker_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NotifyWorkersFailureStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyWorkersFailureStatus");
-        formatter.field(
-            "notify_workers_failure_code",
-            &self.notify_workers_failure_code,
-        );
-        formatter.field(
-            "notify_workers_failure_message",
-            &self.notify_workers_failure_message,
-        );
-        formatter.field("worker_id", &self.worker_id);
-        formatter.finish()
     }
 }
 /// See [`NotifyWorkersFailureStatus`](crate::model::NotifyWorkersFailureStatus).
@@ -1009,7 +965,7 @@ impl AsRef<str> for NotifyWorkersFailureCode {
 
 /// <p>The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Qualification {
     /// <p> The ID of the Qualification type for the Qualification.</p>
     #[doc(hidden)]
@@ -1054,18 +1010,6 @@ impl Qualification {
     /// <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::QualificationStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for Qualification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Qualification");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("grant_time", &self.grant_time);
-        formatter.field("integer_value", &self.integer_value);
-        formatter.field("locale_value", &self.locale_value);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`Qualification`](crate::model::Qualification).
@@ -1268,7 +1212,7 @@ impl AsRef<str> for QualificationStatus {
 
 /// <p>The Locale data structure represents a geographical region or location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Locale {
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
     #[doc(hidden)]
@@ -1285,14 +1229,6 @@ impl Locale {
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub fn subdivision(&self) -> std::option::Option<&str> {
         self.subdivision.as_deref()
-    }
-}
-impl std::fmt::Debug for Locale {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Locale");
-        formatter.field("country", &self.country);
-        formatter.field("subdivision", &self.subdivision);
-        formatter.finish()
     }
 }
 /// See [`Locale`](crate::model::Locale).
@@ -1343,7 +1279,7 @@ impl Locale {
 
 /// <p> The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkerBlock {
     /// <p> The ID of the Worker who accepted the HIT.</p>
     #[doc(hidden)]
@@ -1360,14 +1296,6 @@ impl WorkerBlock {
     /// <p> A message explaining the reason the Worker was blocked. </p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkerBlock {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkerBlock");
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`WorkerBlock`](crate::model::WorkerBlock).
@@ -1418,7 +1346,7 @@ impl WorkerBlock {
 
 /// <p> Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReviewReport {
     /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
     #[doc(hidden)]
@@ -1435,14 +1363,6 @@ impl ReviewReport {
     /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
     pub fn review_actions(&self) -> std::option::Option<&[crate::model::ReviewActionDetail]> {
         self.review_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for ReviewReport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReviewReport");
-        formatter.field("review_results", &self.review_results);
-        formatter.field("review_actions", &self.review_actions);
-        formatter.finish()
     }
 }
 /// See [`ReviewReport`](crate::model::ReviewReport).
@@ -1513,7 +1433,7 @@ impl ReviewReport {
 
 /// <p> Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReviewActionDetail {
     /// <p>The unique identifier for the action.</p>
     #[doc(hidden)]
@@ -1572,20 +1492,6 @@ impl ReviewActionDetail {
     /// <p> Present only when the Results have a FAILED Status.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ReviewActionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReviewActionDetail");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("action_name", &self.action_name);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("status", &self.status);
-        formatter.field("complete_time", &self.complete_time);
-        formatter.field("result", &self.result);
-        formatter.field("error_code", &self.error_code);
-        formatter.finish()
     }
 }
 /// See [`ReviewActionDetail`](crate::model::ReviewActionDetail).
@@ -1816,7 +1722,7 @@ impl AsRef<str> for ReviewActionStatus {
 
 /// <p> This data structure is returned multiple times for each result specified in the Review Policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReviewResultDetail {
     /// <p> A unique identifier of the Review action result. </p>
     #[doc(hidden)]
@@ -1861,18 +1767,6 @@ impl ReviewResultDetail {
     /// <p> The values of Key provided by the review policies you have selected. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ReviewResultDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReviewResultDetail");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("subject_id", &self.subject_id);
-        formatter.field("subject_type", &self.subject_type);
-        formatter.field("question_id", &self.question_id);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ReviewResultDetail`](crate::model::ReviewResultDetail).
@@ -1971,7 +1865,7 @@ impl ReviewResultDetail {
 
 /// <p> HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReviewPolicy {
     /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01 </p>
     #[doc(hidden)]
@@ -1988,14 +1882,6 @@ impl ReviewPolicy {
     /// <p>Name of the parameter from the Review policy.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::PolicyParameter]> {
         self.parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for ReviewPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReviewPolicy");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`ReviewPolicy`](crate::model::ReviewPolicy).
@@ -2055,7 +1941,7 @@ impl ReviewPolicy {
 
 /// <p> Name of the parameter from the Review policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyParameter {
     /// <p> Name of the parameter from the list of Review Polices. </p>
     #[doc(hidden)]
@@ -2079,15 +1965,6 @@ impl PolicyParameter {
     /// <p> List of ParameterMapEntry objects. </p>
     pub fn map_entries(&self) -> std::option::Option<&[crate::model::ParameterMapEntry]> {
         self.map_entries.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyParameter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("map_entries", &self.map_entries);
-        formatter.finish()
     }
 }
 /// See [`PolicyParameter`](crate::model::PolicyParameter).
@@ -2168,7 +2045,7 @@ impl PolicyParameter {
 
 /// <p> This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterMapEntry {
     /// <p> The QuestionID from the HIT that is used to identify which question requires Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
     #[doc(hidden)]
@@ -2185,14 +2062,6 @@ impl ParameterMapEntry {
     /// <p> The list of answers to the question specified in the MapEntry Key element. The Worker must match all values in order for the answer to be scored correctly. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterMapEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterMapEntry");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ParameterMapEntry`](crate::model::ParameterMapEntry).
@@ -2344,7 +2213,7 @@ impl AsRef<str> for ReviewPolicyLevel {
 
 /// <p> The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hit {
     /// <p> A unique identifier for the HIT.</p>
     #[doc(hidden)]
@@ -2497,51 +2366,6 @@ impl Hit {
     /// <p> The number of assignments for this HIT that have been approved or rejected.</p>
     pub fn number_of_assignments_completed(&self) -> std::option::Option<i32> {
         self.number_of_assignments_completed
-    }
-}
-impl std::fmt::Debug for Hit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hit");
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field("hit_type_id", &self.hit_type_id);
-        formatter.field("hit_group_id", &self.hit_group_id);
-        formatter.field("hit_layout_id", &self.hit_layout_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("question", &self.question);
-        formatter.field("keywords", &self.keywords);
-        formatter.field("hit_status", &self.hit_status);
-        formatter.field("max_assignments", &self.max_assignments);
-        formatter.field("reward", &self.reward);
-        formatter.field(
-            "auto_approval_delay_in_seconds",
-            &self.auto_approval_delay_in_seconds,
-        );
-        formatter.field("expiration", &self.expiration);
-        formatter.field(
-            "assignment_duration_in_seconds",
-            &self.assignment_duration_in_seconds,
-        );
-        formatter.field("requester_annotation", &self.requester_annotation);
-        formatter.field(
-            "qualification_requirements",
-            &self.qualification_requirements,
-        );
-        formatter.field("hit_review_status", &self.hit_review_status);
-        formatter.field(
-            "number_of_assignments_pending",
-            &self.number_of_assignments_pending,
-        );
-        formatter.field(
-            "number_of_assignments_available",
-            &self.number_of_assignments_available,
-        );
-        formatter.field(
-            "number_of_assignments_completed",
-            &self.number_of_assignments_completed,
-        );
-        formatter.finish()
     }
 }
 /// See [`Hit`](crate::model::Hit).
@@ -2971,7 +2795,7 @@ impl AsRef<str> for HitReviewStatus {
 
 /// <p> The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QualificationRequirement {
     /// <p> The ID of the Qualification type for the requirement.</p>
     #[doc(hidden)]
@@ -3018,18 +2842,6 @@ impl QualificationRequirement {
     /// <p> Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement from taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can preview the HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with multiple QualificationRequirements (which can have different values for the ActionGuarded attribute). In this case, the Worker is only permitted to perform an action when they have met all QualificationRequirements guarding the action. The actions in the order of least restrictive to most restrictive are Discover, Preview and Accept. For example, if a Worker meets all QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the <code>RequiredToPreview</code> field. </p>
     pub fn actions_guarded(&self) -> std::option::Option<&crate::model::HitAccessActions> {
         self.actions_guarded.as_ref()
-    }
-}
-impl std::fmt::Debug for QualificationRequirement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QualificationRequirement");
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("comparator", &self.comparator);
-        formatter.field("integer_values", &self.integer_values);
-        formatter.field("locale_values", &self.locale_values);
-        formatter.field("required_to_preview", &self.required_to_preview);
-        formatter.field("actions_guarded", &self.actions_guarded);
-        formatter.finish()
     }
 }
 /// See [`QualificationRequirement`](crate::model::QualificationRequirement).
@@ -3596,7 +3408,7 @@ impl AsRef<str> for ReviewableHitStatus {
 
 /// <p> The QualificationRequest data structure represents a request a Worker has made for a Qualification. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QualificationRequest {
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted. </p>
     #[doc(hidden)]
@@ -3641,18 +3453,6 @@ impl QualificationRequest {
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test. </p>
     pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
-    }
-}
-impl std::fmt::Debug for QualificationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QualificationRequest");
-        formatter.field("qualification_request_id", &self.qualification_request_id);
-        formatter.field("qualification_type_id", &self.qualification_type_id);
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("test", &self.test);
-        formatter.field("answer", &self.answer);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.finish()
     }
 }
 /// See [`QualificationRequest`](crate::model::QualificationRequest).
@@ -3760,7 +3560,7 @@ impl QualificationRequest {
 
 /// <p>An object representing a Bonus payment paid to a Worker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BonusPayment {
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
     #[doc(hidden)]
@@ -3798,17 +3598,6 @@ impl BonusPayment {
     /// <p>The date and time of when the bonus was granted.</p>
     pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.grant_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BonusPayment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BonusPayment");
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("bonus_amount", &self.bonus_amount);
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.field("reason", &self.reason);
-        formatter.field("grant_time", &self.grant_time);
-        formatter.finish()
     }
 }
 /// See [`BonusPayment`](crate::model::BonusPayment).
@@ -3901,7 +3690,7 @@ impl BonusPayment {
 
 /// <p> The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Assignment {
     /// <p> A unique identifier for the assignment.</p>
     #[doc(hidden)]
@@ -3988,24 +3777,6 @@ impl Assignment {
     /// <p> The feedback string included with the call to the ApproveAssignment operation or the RejectAssignment operation, if the Requester approved or rejected the assignment and specified feedback.</p>
     pub fn requester_feedback(&self) -> std::option::Option<&str> {
         self.requester_feedback.as_deref()
-    }
-}
-impl std::fmt::Debug for Assignment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Assignment");
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.field("worker_id", &self.worker_id);
-        formatter.field("hit_id", &self.hit_id);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.field("auto_approval_time", &self.auto_approval_time);
-        formatter.field("accept_time", &self.accept_time);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("approval_time", &self.approval_time);
-        formatter.field("rejection_time", &self.rejection_time);
-        formatter.field("deadline", &self.deadline);
-        formatter.field("answer", &self.answer);
-        formatter.field("requester_feedback", &self.requester_feedback);
-        formatter.finish()
     }
 }
 /// See [`Assignment`](crate::model::Assignment).
@@ -4298,7 +4069,7 @@ impl AsRef<str> for AssignmentStatus {
 
 /// <p> The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HitLayoutParameter {
     /// <p> The name of the parameter in the HITLayout. </p>
     #[doc(hidden)]
@@ -4315,14 +4086,6 @@ impl HitLayoutParameter {
     /// <p>The value substituted for the parameter referenced in the HITLayout. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for HitLayoutParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HitLayoutParameter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`HitLayoutParameter`](crate::model::HitLayoutParameter).

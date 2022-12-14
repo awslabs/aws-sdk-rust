@@ -2,18 +2,11 @@
 
 /// <p>This action isn't available in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedApiEndpointException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedApiEndpointException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedApiEndpointException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedApiEndpointException {
     /// Returns the error message.
@@ -73,7 +66,7 @@ impl UnsupportedApiEndpointException {
 /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p>
 /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -86,14 +79,6 @@ impl TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl TooManyRequestsException {
@@ -162,18 +147,11 @@ impl TooManyRequestsException {
 
 /// <p>Organizations can't complete your request because of an internal service error. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ServiceException {
     /// Returns the error message.
@@ -229,18 +207,11 @@ impl ServiceException {
 
 /// <p>We can't find a policy with the <code>PolicyId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PolicyNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PolicyNotFoundException {
     /// Returns the error message.
@@ -296,18 +267,11 @@ impl PolicyNotFoundException {
 
 /// <p>Changes to the effective policy are in progress, and its contents can't be returned. Try the operation again later. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyChangesInProgressException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PolicyChangesInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyChangesInProgressException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PolicyChangesInProgressException {
     /// Returns the error message.
@@ -363,18 +327,11 @@ impl PolicyChangesInProgressException {
 
 /// <p>The provided policy document doesn't meet the requirements of the specified policy type. For example, the syntax might be incorrect. For details about service control policy syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MalformedPolicyDocumentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MalformedPolicyDocumentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedPolicyDocumentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MalformedPolicyDocumentException {
     /// Returns the error message.
@@ -458,7 +415,7 @@ impl MalformedPolicyDocumentException {
 /// <li> <p>UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -471,14 +428,6 @@ impl InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(&self) -> std::option::Option<&crate::model::InvalidInputExceptionReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for InvalidInputException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInputException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 impl InvalidInputException {
@@ -550,18 +499,11 @@ impl InvalidInputException {
 
 /// <p>A policy with the same name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicatePolicyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicatePolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicatePolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicatePolicyException {
     /// Returns the error message.
@@ -657,7 +599,7 @@ impl DuplicatePolicyException {
 /// <li> <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting period before you can remove it from the organization. If you get an error that indicates that a wait period is required, try again in a few days.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConstraintViolationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -670,14 +612,6 @@ impl ConstraintViolationException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(&self) -> std::option::Option<&crate::model::ConstraintViolationExceptionReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for ConstraintViolationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConstraintViolationException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 impl ConstraintViolationException {
@@ -749,18 +683,11 @@ impl ConstraintViolationException {
 
 /// <p>The target of the operation is currently being modified by a different request. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModificationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
@@ -816,18 +743,11 @@ impl ConcurrentModificationException {
 
 /// <p>Your account isn't a member of an organization. To make this request, you must use the credentials of an account that belongs to an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsOrganizationsNotInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AwsOrganizationsNotInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsOrganizationsNotInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AwsOrganizationsNotInUseException {
     /// Returns the error message.
@@ -886,18 +806,11 @@ impl AwsOrganizationsNotInUseException {
 
 /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessDeniedException {
     /// Returns the error message.
@@ -953,18 +866,11 @@ impl AccessDeniedException {
 
 /// <p>We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationalUnitNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OrganizationalUnitNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationalUnitNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OrganizationalUnitNotFoundException {
     /// Returns the error message.
@@ -1020,18 +926,11 @@ impl OrganizationalUnitNotFoundException {
 
 /// <p>An OU with the same name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateOrganizationalUnitException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateOrganizationalUnitException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateOrganizationalUnitException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateOrganizationalUnitException {
     /// Returns the error message.
@@ -1087,18 +986,11 @@ impl DuplicateOrganizationalUnitException {
 
 /// <p>We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TargetNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TargetNotFoundException {
     /// Returns the error message.
@@ -1154,18 +1046,11 @@ impl TargetNotFoundException {
 
 /// <p>You can't remove a management account from an organization. If you want the management account to become a member account in another organization, you must first delete the current organization of the management account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MasterCannotLeaveOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MasterCannotLeaveOrganizationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MasterCannotLeaveOrganizationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MasterCannotLeaveOrganizationException {
     /// Returns the error message.
@@ -1221,18 +1106,11 @@ impl MasterCannotLeaveOrganizationException {
 
 /// <p> We can't find an Amazon Web Services account with the <code>AccountId</code> that you specified, or the account whose credentials you used to make this request isn't a member of an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccountNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccountNotFoundException {
     /// Returns the error message.
@@ -1288,18 +1166,11 @@ impl AccountNotFoundException {
 
 /// <p>The specified account is already a delegated administrator for this Amazon Web Services service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAlreadyRegisteredException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccountAlreadyRegisteredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAlreadyRegisteredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccountAlreadyRegisteredException {
     /// Returns the error message.
@@ -1355,18 +1226,11 @@ impl AccountAlreadyRegisteredException {
 
 /// <p>We can't find a source root or OU with the <code>ParentId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceParentNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SourceParentNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceParentNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SourceParentNotFoundException {
     /// Returns the error message.
@@ -1422,18 +1286,11 @@ impl SourceParentNotFoundException {
 
 /// <p>That account is already present in the specified destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateAccountException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateAccountException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateAccountException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateAccountException {
     /// Returns the error message.
@@ -1489,18 +1346,11 @@ impl DuplicateAccountException {
 
 /// <p>We can't find the destination container (a root or OU) with the <code>ParentId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationParentNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DestinationParentNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationParentNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DestinationParentNotFoundException {
     /// Returns the error message.
@@ -1556,18 +1406,11 @@ impl DestinationParentNotFoundException {
 
 /// <p>We can't find an organizational unit (OU) or Amazon Web Services account with the <code>ChildId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ChildNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ChildNotFoundException {
     /// Returns the error message.
@@ -1623,18 +1466,11 @@ impl ChildNotFoundException {
 
 /// <p>We can't find a root or OU with the <code>ParentId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParentNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParentNotFoundException {
     /// Returns the error message.
@@ -1690,18 +1526,11 @@ impl ParentNotFoundException {
 
 /// <p>The specified account is not a delegated administrator for this Amazon Web Services service. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountNotRegisteredException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccountNotRegisteredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountNotRegisteredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccountNotRegisteredException {
     /// Returns the error message.
@@ -1772,7 +1601,7 @@ impl AccountNotRegisteredException {
 /// <li> <p>PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that doesn't have a payment instrument, such as a credit card, associated with it.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HandshakeConstraintViolationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1787,14 +1616,6 @@ impl HandshakeConstraintViolationException {
         &self,
     ) -> std::option::Option<&crate::model::HandshakeConstraintViolationExceptionReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for HandshakeConstraintViolationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HandshakeConstraintViolationException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 impl HandshakeConstraintViolationException {
@@ -1870,18 +1691,11 @@ impl HandshakeConstraintViolationException {
 
 /// <p>Organizations couldn't perform the operation because your organization hasn't finished initializing. This can take up to an hour. Try again later. If after one hour you continue to receive this error, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FinalizingOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FinalizingOrganizationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FinalizingOrganizationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FinalizingOrganizationException {
     /// Returns the error message.
@@ -1937,18 +1751,11 @@ impl FinalizingOrganizationException {
 
 /// <p>A handshake with the same action and target already exists. For example, if you invited an account to join your organization, the invited account might already have a pending invitation from this organization. If you intend to resend an invitation to an account, ensure that existing handshakes that might be considered duplicates are canceled or declined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateHandshakeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateHandshakeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateHandshakeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateHandshakeException {
     /// Returns the error message.
@@ -2004,18 +1811,11 @@ impl DuplicateHandshakeException {
 
 /// <p>You can't invite an existing account to your organization until you verify that you own the email address associated with the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification">Email Address Verification</a> in the <i>Organizations User Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountOwnerNotVerifiedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccountOwnerNotVerifiedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountOwnerNotVerifiedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccountOwnerNotVerifiedException {
     /// Returns the error message.
@@ -2071,18 +1871,11 @@ impl AccountOwnerNotVerifiedException {
 
 /// <p>We can't find a root with the <code>RootId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RootNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RootNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RootNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RootNotFoundException {
     /// Returns the error message.
@@ -2138,18 +1931,11 @@ impl RootNotFoundException {
 
 /// <p>You can't use the specified policy type with the feature set currently enabled for this organization. For example, you can enable SCPs only after you enable all features in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Managing Organizations Policies</a>in the <i>Organizations User Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyTypeNotAvailableForOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PolicyTypeNotAvailableForOrganizationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyTypeNotAvailableForOrganizationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PolicyTypeNotAvailableForOrganizationException {
     /// Returns the error message.
@@ -2206,18 +1992,11 @@ impl PolicyTypeNotAvailableForOrganizationException {
 
 /// <p>The specified policy type is already enabled in the specified root.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyTypeAlreadyEnabledException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PolicyTypeAlreadyEnabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyTypeAlreadyEnabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PolicyTypeAlreadyEnabledException {
     /// Returns the error message.
@@ -2273,18 +2052,11 @@ impl PolicyTypeAlreadyEnabledException {
 
 /// <p>The specified policy type isn't currently enabled in this root. You can't attach policies of the specified type to entities in a root until you enable that type in the root. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyTypeNotEnabledException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PolicyTypeNotEnabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyTypeNotEnabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PolicyTypeNotEnabledException {
     /// Returns the error message.
@@ -2340,18 +2112,11 @@ impl PolicyTypeNotEnabledException {
 
 /// <p>The policy isn't attached to the specified target in the specified root.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyNotAttachedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PolicyNotAttachedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyNotAttachedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PolicyNotAttachedException {
     /// Returns the error message.
@@ -2407,18 +2172,11 @@ impl PolicyNotAttachedException {
 
 /// <p>We can't find a handshake with the <code>HandshakeId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HandshakeNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HandshakeNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HandshakeNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HandshakeNotFoundException {
     /// Returns the error message.
@@ -2474,18 +2232,11 @@ impl HandshakeNotFoundException {
 
 /// <p>If you ran this action on the management account, this policy type is not enabled. If you ran the action on a member account, the account doesn't have an effective policy of this type. Contact the administrator of your organization about attaching a policy of this type to the account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EffectivePolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EffectivePolicyNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EffectivePolicyNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EffectivePolicyNotFoundException {
     /// Returns the error message.
@@ -2541,18 +2292,11 @@ impl EffectivePolicyNotFoundException {
 
 /// <p>We can't find an create account request with the <code>CreateAccountRequestId</code> that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccountStatusNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CreateAccountStatusNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccountStatusNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CreateAccountStatusNotFoundException {
     /// Returns the error message.
@@ -2608,18 +2352,11 @@ impl CreateAccountStatusNotFoundException {
 
 /// <p>The policy is attached to one or more entities. You must detach it from all roots, OUs, and accounts before performing this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PolicyInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PolicyInUseException {
     /// Returns the error message.
@@ -2675,18 +2412,11 @@ impl PolicyInUseException {
 
 /// <p>The specified OU is not empty. Move all accounts to another root or to other OUs, remove all child OUs, and try the operation again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationalUnitNotEmptyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OrganizationalUnitNotEmptyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationalUnitNotEmptyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OrganizationalUnitNotEmptyException {
     /// Returns the error message.
@@ -2742,18 +2472,11 @@ impl OrganizationalUnitNotEmptyException {
 
 /// <p>The organization isn't empty. To delete an organization, you must first remove all accounts except the management account, delete all OUs, and delete all policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationNotEmptyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OrganizationNotEmptyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationNotEmptyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OrganizationNotEmptyException {
     /// Returns the error message.
@@ -2809,18 +2532,11 @@ impl OrganizationNotEmptyException {
 
 /// <p>You can't perform the operation on the handshake in its current state. For example, you can't cancel a handshake that was already accepted or accept a handshake that was already declined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidHandshakeTransitionException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidHandshakeTransitionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidHandshakeTransitionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidHandshakeTransitionException {
     /// Returns the error message.
@@ -2876,18 +2592,11 @@ impl InvalidHandshakeTransitionException {
 
 /// <p>The specified handshake is already in the requested state. For example, you can't accept a handshake that was already accepted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HandshakeAlreadyInStateException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HandshakeAlreadyInStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HandshakeAlreadyInStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HandshakeAlreadyInStateException {
     /// Returns the error message.
@@ -2943,18 +2652,11 @@ impl HandshakeAlreadyInStateException {
 
 /// <p>This account is already a member of an organization. An account can belong to only one organization at a time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlreadyInOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AlreadyInOrganizationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyInOrganizationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AlreadyInOrganizationException {
     /// Returns the error message.
@@ -3010,7 +2712,7 @@ impl AlreadyInOrganizationException {
 
 /// <p>The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> for <code>organizations.amazonaws.com</code> permission so that Organizations can create the required service-linked role. You don't have that permission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedForDependencyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3025,14 +2727,6 @@ impl AccessDeniedForDependencyException {
         &self,
     ) -> std::option::Option<&crate::model::AccessDeniedForDependencyExceptionReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedForDependencyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedForDependencyException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 impl AccessDeniedForDependencyException {
@@ -3108,18 +2802,11 @@ impl AccessDeniedForDependencyException {
 
 /// <p>The request failed because it conflicts with the current state of the specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConflictException {
     /// Returns the error message.
@@ -3175,18 +2862,11 @@ impl ConflictException {
 
 /// <p>You attempted to close an account that is already closed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAlreadyClosedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccountAlreadyClosedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAlreadyClosedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccountAlreadyClosedException {
     /// Returns the error message.
@@ -3242,18 +2922,11 @@ impl AccountAlreadyClosedException {
 
 /// <p>The selected policy is already attached to the specified target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicatePolicyAttachmentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicatePolicyAttachmentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicatePolicyAttachmentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicatePolicyAttachmentException {
     /// Returns the error message.

@@ -2,7 +2,7 @@
 
 /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -22,15 +22,6 @@ impl ValidationException {
     /// <p>The fields that caused the error, if applicable. </p>
     pub fn fields(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
         self.fields.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -124,7 +115,7 @@ impl ValidationException {
 
 /// <p>The request was denied due to request throttling. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -137,14 +128,6 @@ impl ThrottlingException {
     /// <p>Number of seconds you can safely retry after the call. </p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -213,7 +196,7 @@ impl ThrottlingException {
 
 /// <p>The request references a resource that doesn't exist. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -233,15 +216,6 @@ impl ResourceNotFoundException {
     /// <p>Resource type that was not found. </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -325,7 +299,7 @@ impl ResourceNotFoundException {
 
 /// <p>An unexpected error occurred while processing a request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -338,14 +312,6 @@ impl InternalServerException {
     /// <p>Number of seconds you can retry after the call. </p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
-    }
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
     }
 }
 impl InternalServerException {
@@ -414,18 +380,11 @@ impl InternalServerException {
 
 /// <p>You do not have sufficient access to perform this action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessDeniedException {
     /// Returns the error message.
@@ -481,7 +440,7 @@ impl AccessDeniedException {
 
 /// <p>The request would cause a service limit to exceed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -515,17 +474,6 @@ impl ServiceLimitExceededException {
     /// <p>The unique code for the service of the limit that is being exceeded. </p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("limit_code", &self.limit_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.finish()
     }
 }
 impl ServiceLimitExceededException {
@@ -633,7 +581,7 @@ impl ServiceLimitExceededException {
 
 /// <p>You can cause an inconsistent state by updating or deleting a resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -653,15 +601,6 @@ impl ConflictException {
     /// <p>Type of the resource in use. </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl ConflictException {

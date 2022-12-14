@@ -11,7 +11,7 @@
 /// </ul>
 /// <p>You cannot apply both event selectors and advanced event selectors to a trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvancedEventSelector {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
     #[doc(hidden)]
@@ -28,14 +28,6 @@ impl AdvancedEventSelector {
     /// <p>Contains all selector statements in an advanced event selector.</p>
     pub fn field_selectors(&self) -> std::option::Option<&[crate::model::AdvancedFieldSelector]> {
         self.field_selectors.as_deref()
-    }
-}
-impl std::fmt::Debug for AdvancedEventSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvancedEventSelector");
-        formatter.field("name", &self.name);
-        formatter.field("field_selectors", &self.field_selectors);
-        formatter.finish()
     }
 }
 /// See [`AdvancedEventSelector`](crate::model::AdvancedEventSelector).
@@ -96,7 +88,7 @@ impl AdvancedEventSelector {
 
 /// <p>A single selector statement in an advanced event selector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvancedFieldSelector {
     /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
     /// <ul>
@@ -494,19 +486,6 @@ impl AdvancedFieldSelector {
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
     pub fn not_ends_with(&self) -> std::option::Option<&[std::string::String]> {
         self.not_ends_with.as_deref()
-    }
-}
-impl std::fmt::Debug for AdvancedFieldSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvancedFieldSelector");
-        formatter.field("field", &self.field);
-        formatter.field("equals", &self.equals);
-        formatter.field("starts_with", &self.starts_with);
-        formatter.field("ends_with", &self.ends_with);
-        formatter.field("not_equals", &self.not_equals);
-        formatter.field("not_starts_with", &self.not_starts_with);
-        formatter.field("not_ends_with", &self.not_ends_with);
-        formatter.finish()
     }
 }
 /// See [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector).
@@ -1114,7 +1093,7 @@ impl AsRef<str> for EventDataStoreStatus {
 
 /// <p> Provides statistics for the specified <code>ImportID</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportStatistics {
     /// <p> The number of S3 prefixes found for the import. </p>
     #[doc(hidden)]
@@ -1152,17 +1131,6 @@ impl ImportStatistics {
     /// <p> The number of failed entries. </p>
     pub fn failed_entries(&self) -> std::option::Option<i64> {
         self.failed_entries
-    }
-}
-impl std::fmt::Debug for ImportStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportStatistics");
-        formatter.field("prefixes_found", &self.prefixes_found);
-        formatter.field("prefixes_completed", &self.prefixes_completed);
-        formatter.field("files_completed", &self.files_completed);
-        formatter.field("events_completed", &self.events_completed);
-        formatter.field("failed_entries", &self.failed_entries);
-        formatter.finish()
     }
 }
 /// See [`ImportStatistics`](crate::model::ImportStatistics).
@@ -1360,7 +1328,7 @@ impl AsRef<str> for ImportStatus {
 
 /// <p> The import source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportSource {
     /// <p> The source S3 bucket. </p>
     #[doc(hidden)]
@@ -1370,13 +1338,6 @@ impl ImportSource {
     /// <p> The source S3 bucket. </p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3ImportSource> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportSource");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`ImportSource`](crate::model::ImportSource).
@@ -1413,7 +1374,7 @@ impl ImportSource {
 
 /// <p> The settings for the source S3 bucket. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ImportSource {
     /// <p> The URI for the source S3 bucket. </p>
     #[doc(hidden)]
@@ -1437,15 +1398,6 @@ impl S3ImportSource {
     /// <p> The IAM ARN role used to access the source S3 bucket. </p>
     pub fn s3_bucket_access_role_arn(&self) -> std::option::Option<&str> {
         self.s3_bucket_access_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ImportSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ImportSource");
-        formatter.field("s3_location_uri", &self.s3_location_uri);
-        formatter.field("s3_bucket_region", &self.s3_bucket_region);
-        formatter.field("s3_bucket_access_role_arn", &self.s3_bucket_access_role_arn);
-        formatter.finish()
     }
 }
 /// See [`S3ImportSource`](crate::model::S3ImportSource).
@@ -1517,7 +1469,7 @@ impl S3ImportSource {
 
 /// <p>A custom key-value pair associated with a resource such as a CloudTrail trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
     #[doc(hidden)]
@@ -1534,14 +1486,6 @@ impl Tag {
     /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1592,7 +1536,7 @@ impl Tag {
 
 /// <p>A JSON string that contains a list of insight types that are logged on a trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightSelector {
     /// <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
     #[doc(hidden)]
@@ -1602,13 +1546,6 @@ impl InsightSelector {
     /// <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
     pub fn insight_type(&self) -> std::option::Option<&crate::model::InsightType> {
         self.insight_type.as_ref()
-    }
-}
-impl std::fmt::Debug for InsightSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightSelector");
-        formatter.field("insight_type", &self.insight_type);
-        formatter.finish()
     }
 }
 /// See [`InsightSelector`](crate::model::InsightSelector).
@@ -1742,7 +1679,7 @@ impl AsRef<str> for InsightType {
 /// <p>You can configure up to five event selectors for a trail.</p>
 /// <p>You cannot apply both event selectors and advanced event selectors to a trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSelector {
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
     /// <p> By default, the value is <code>All</code>.</p>
@@ -1783,19 +1720,6 @@ impl EventSelector {
     /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in regions that support the event source.</p>
     pub fn exclude_management_event_sources(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_management_event_sources.as_deref()
-    }
-}
-impl std::fmt::Debug for EventSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSelector");
-        formatter.field("read_write_type", &self.read_write_type);
-        formatter.field("include_management_events", &self.include_management_events);
-        formatter.field("data_resources", &self.data_resources);
-        formatter.field(
-            "exclude_management_event_sources",
-            &self.exclude_management_event_sources,
-        );
-        formatter.finish()
     }
 }
 /// See [`EventSelector`](crate::model::EventSelector).
@@ -1921,7 +1845,7 @@ impl EventSelector {
 /// <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </p> </li>
 /// </ol>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataResource {
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
@@ -1996,14 +1920,6 @@ impl DataResource {
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for DataResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataResource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`DataResource`](crate::model::DataResource).
@@ -2216,7 +2132,7 @@ impl AsRef<str> for ReadWriteType {
 
 /// <p>Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The CloudTrail ID of the event returned.</p>
     #[doc(hidden)]
@@ -2282,21 +2198,6 @@ impl Event {
     /// <p>A JSON string that contains a representation of the event returned.</p>
     pub fn cloud_trail_event(&self) -> std::option::Option<&str> {
         self.cloud_trail_event.as_deref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_name", &self.event_name);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.field("event_time", &self.event_time);
-        formatter.field("event_source", &self.event_source);
-        formatter.field("username", &self.username);
-        formatter.field("resources", &self.resources);
-        formatter.field("cloud_trail_event", &self.cloud_trail_event);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -2449,7 +2350,7 @@ impl Event {
 
 /// <p>Specifies the type and name of a resource referenced by an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The type of a resource referenced by the event returned. When the resource type cannot be determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2, <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM. To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
     #[doc(hidden)]
@@ -2466,14 +2367,6 @@ impl Resource {
     /// <p>The name of the resource referenced by the event returned. These are user-created names whose values will depend on the environment. For example, the resource name might be "auto-scaling-test-group" for an Auto Scaling Group or "i-1234567" for an EC2 Instance.</p>
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -2615,7 +2508,7 @@ impl AsRef<str> for EventCategory {
 
 /// <p>Specifies an attribute and value that filter the events returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookupAttribute {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
     #[doc(hidden)]
@@ -2632,14 +2525,6 @@ impl LookupAttribute {
     /// <p>Specifies a value for the specified AttributeKey.</p>
     pub fn attribute_value(&self) -> std::option::Option<&str> {
         self.attribute_value.as_deref()
-    }
-}
-impl std::fmt::Debug for LookupAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LookupAttribute");
-        formatter.field("attribute_key", &self.attribute_key);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
     }
 }
 /// See [`LookupAttribute`](crate::model::LookupAttribute).
@@ -2827,7 +2712,7 @@ impl AsRef<str> for LookupAttributeKey {
 
 /// <p>Information about a CloudTrail trail, including the trail's name, home region, and Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrailInfo {
     /// <p>The ARN of a trail.</p>
     #[doc(hidden)]
@@ -2851,15 +2736,6 @@ impl TrailInfo {
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
     pub fn home_region(&self) -> std::option::Option<&str> {
         self.home_region.as_deref()
-    }
-}
-impl std::fmt::Debug for TrailInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrailInfo");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("name", &self.name);
-        formatter.field("home_region", &self.home_region);
-        formatter.finish()
     }
 }
 /// See [`TrailInfo`](crate::model::TrailInfo).
@@ -2922,7 +2798,7 @@ impl TrailInfo {
 
 /// <p>A resource tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>Specifies the ARN of the resource.</p>
     #[doc(hidden)]
@@ -2939,14 +2815,6 @@ impl ResourceTag {
     /// <p>A list of tags.</p>
     pub fn tags_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTag");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tags_list", &self.tags_list);
-        formatter.finish()
     }
 }
 /// See [`ResourceTag`](crate::model::ResourceTag).
@@ -3006,7 +2874,7 @@ impl ResourceTag {
 
 /// <p>A SQL string of criteria about events that you want to collect in an event data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Query {
     /// <p>The ID of a query.</p>
     #[doc(hidden)]
@@ -3030,15 +2898,6 @@ impl Query {
     /// <p>The creation time of a query.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Query {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Query");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_status", &self.query_status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`Query`](crate::model::Query).
@@ -3224,7 +3083,7 @@ impl AsRef<str> for QueryStatus {
 
 /// <p>Contains information about a returned public key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKey {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
     #[doc(hidden)]
@@ -3255,16 +3114,6 @@ impl PublicKey {
     /// <p>The fingerprint of the public key.</p>
     pub fn fingerprint(&self) -> std::option::Option<&str> {
         self.fingerprint.as_deref()
-    }
-}
-impl std::fmt::Debug for PublicKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKey");
-        formatter.field("value", &self.value);
-        formatter.field("validity_start_time", &self.validity_start_time);
-        formatter.field("validity_end_time", &self.validity_end_time);
-        formatter.field("fingerprint", &self.fingerprint);
-        formatter.finish()
     }
 }
 /// See [`PublicKey`](crate::model::PublicKey).
@@ -3345,7 +3194,7 @@ impl PublicKey {
 
 /// <p> Contains information about an import that was returned by a lookup request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportsListItem {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
@@ -3383,17 +3232,6 @@ impl ImportsListItem {
     /// <p> The timestamp of the import's last update. </p>
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportsListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportsListItem");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ImportsListItem`](crate::model::ImportsListItem).
@@ -3498,7 +3336,7 @@ impl ImportsListItem {
 
 /// <p> Provides information about an import failure. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportFailureListItem {
     /// <p> The location of the failure in the S3 bucket. </p>
     #[doc(hidden)]
@@ -3536,17 +3374,6 @@ impl ImportFailureListItem {
     /// <p> When the import was last updated. </p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportFailureListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportFailureListItem");
-        formatter.field("location", &self.location);
-        formatter.field("status", &self.status);
-        formatter.field("error_type", &self.error_type);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`ImportFailureListItem`](crate::model::ImportFailureListItem).
@@ -3739,7 +3566,7 @@ impl AsRef<str> for ImportFailureStatus {
 
 /// <p>A storage lake of event data against which you can run complex SQL-based queries. An event data store can include events that you have logged on your account from the last 90 to 2557 days (about three months to up to seven years). To select events for an event data store, use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">advanced event selectors</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDataStore {
     /// <p>The ARN of the event data store.</p>
     #[doc(hidden)]
@@ -3835,25 +3662,6 @@ impl EventDataStore {
     #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for EventDataStore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDataStore");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`EventDataStore`](crate::model::EventDataStore).
@@ -4048,7 +3856,7 @@ impl EventDataStore {
 
 /// <p> Contains information about a returned CloudTrail channel. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// <p> The Amazon Resource Name (ARN) of the channel. </p>
     #[doc(hidden)]
@@ -4065,14 +3873,6 @@ impl Channel {
     /// <p> The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix created by the Amazon Web Services service. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Channel`](crate::model::Channel).
@@ -4123,7 +3923,7 @@ impl Channel {
 
 /// <p>The settings for a trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Trail {
     /// <p>Name of the trail set by calling <code>CreateTrail</code>. The maximum length is 128 characters.</p>
     #[doc(hidden)]
@@ -4246,40 +4046,6 @@ impl Trail {
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub fn is_organization_trail(&self) -> std::option::Option<bool> {
         self.is_organization_trail
-    }
-}
-impl std::fmt::Debug for Trail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Trail");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("sns_topic_name", &self.sns_topic_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field(
-            "include_global_service_events",
-            &self.include_global_service_events,
-        );
-        formatter.field("is_multi_region_trail", &self.is_multi_region_trail);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field(
-            "log_file_validation_enabled",
-            &self.log_file_validation_enabled,
-        );
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "has_custom_event_selectors",
-            &self.has_custom_event_selectors,
-        );
-        formatter.field("has_insight_selectors", &self.has_insight_selectors);
-        formatter.field("is_organization_trail", &self.is_organization_trail);
-        formatter.finish()
     }
 }
 /// See [`Trail`](crate::model::Trail).
@@ -4530,7 +4296,7 @@ impl Trail {
 
 /// <p>Metadata about a query, such as the number of results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStatistics {
     /// <p>The number of results returned.</p>
     #[doc(hidden)]
@@ -4554,15 +4320,6 @@ impl QueryStatistics {
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn bytes_scanned(&self) -> std::option::Option<i64> {
         self.bytes_scanned
-    }
-}
-impl std::fmt::Debug for QueryStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStatistics");
-        formatter.field("results_count", &self.results_count);
-        formatter.field("total_results_count", &self.total_results_count);
-        formatter.field("bytes_scanned", &self.bytes_scanned);
-        formatter.finish()
     }
 }
 /// See [`QueryStatistics`](crate::model::QueryStatistics).
@@ -4625,7 +4382,7 @@ impl QueryStatistics {
 
 /// <p> Contains information about the service where CloudTrail delivers events. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p> The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
     #[doc(hidden)]
@@ -4642,14 +4399,6 @@ impl Destination {
     /// <p> The location of the service. For service-linked channels, this is the name of the Amazon Web Services service. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`Destination`](crate::model::Destination).
@@ -4793,7 +4542,7 @@ impl AsRef<str> for DestinationType {
 
 /// <p> Contains configuration information about the service-linked channel. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceConfig {
     /// <p> Specifies whether the service-linked channel applies to one region or all regions. </p>
     #[doc(hidden)]
@@ -4813,14 +4562,6 @@ impl SourceConfig {
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceConfig");
-        formatter.field("apply_to_all_regions", &self.apply_to_all_regions);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.finish()
     }
 }
 /// See [`SourceConfig`](crate::model::SourceConfig).
@@ -4884,7 +4625,7 @@ impl SourceConfig {
 
 /// <p>Gets metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStatisticsForDescribeQuery {
     /// <p>The number of events that matched a query.</p>
     #[doc(hidden)]
@@ -4922,17 +4663,6 @@ impl QueryStatisticsForDescribeQuery {
     /// <p>The creation time of the query.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for QueryStatisticsForDescribeQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStatisticsForDescribeQuery");
-        formatter.field("events_matched", &self.events_matched);
-        formatter.field("events_scanned", &self.events_scanned);
-        formatter.field("bytes_scanned", &self.bytes_scanned);
-        formatter.field("execution_time_in_millis", &self.execution_time_in_millis);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery).

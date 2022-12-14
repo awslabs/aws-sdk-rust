@@ -2,7 +2,7 @@
 
 /// The input fails to satisfy the constraints specified by an AWS service.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl ValidationException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -94,7 +86,7 @@ impl ValidationException {
 
 /// The request was denied due to request throttling.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -107,14 +99,6 @@ impl ThrottlingException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -190,7 +174,7 @@ impl ThrottlingException {
 
 /// The specified resource was not found.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -203,14 +187,6 @@ impl ResourceNotFoundException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -282,7 +258,7 @@ impl ResourceNotFoundException {
 
 /// Request processing failed because of an error or failure with the service.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -295,14 +271,6 @@ impl InternalServerException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl InternalServerException {
@@ -378,7 +346,7 @@ impl InternalServerException {
 
 /// The request could not be processed because of conflict in the current state of the resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -391,14 +359,6 @@ impl ConflictException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl ConflictException {
@@ -470,7 +430,7 @@ impl ConflictException {
 
 /// You do not have sufficient access to perform this action.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -483,14 +443,6 @@ impl AccessDeniedException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -562,7 +514,7 @@ impl AccessDeniedException {
 
 /// The request could not be processed because of conflict in the current state of the campaign.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCampaignStateException {
     /// State of a campaign
     #[doc(hidden)]
@@ -582,15 +534,6 @@ impl InvalidCampaignStateException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidCampaignStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCampaignStateException");
-        formatter.field("state", &self.state);
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl InvalidCampaignStateException {
@@ -677,7 +620,7 @@ impl InvalidCampaignStateException {
 
 /// The request could not be processed because of conflict in the current state.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -690,14 +633,6 @@ impl InvalidStateException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidStateException");
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl InvalidStateException {
@@ -769,7 +704,7 @@ impl InvalidStateException {
 
 /// Request would cause a service quota to be exceeded.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -782,14 +717,6 @@ impl ServiceQuotaExceededException {
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("x_amz_error_type", &self.x_amz_error_type);
-        formatter.finish()
     }
 }
 impl ServiceQuotaExceededException {

@@ -3932,7 +3932,7 @@ impl UpdateSafetyRuleInput {
 
 /// <p>A rule that you add to Application Recovery Controller to ensure that recovery actions don't accidentally impair your application's availability.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSafetyRuleInput {
     /// <p>The assertion rule to update.</p>
     #[doc(hidden)]
@@ -3951,18 +3951,10 @@ impl UpdateSafetyRuleInput {
         self.gating_rule_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSafetyRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSafetyRuleInput");
-        formatter.field("assertion_rule_update", &self.assertion_rule_update);
-        formatter.field("gating_rule_update", &self.gating_rule_update);
-        formatter.finish()
-    }
-}
 
 /// <p>The details of the routing control that you're updating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     #[doc(hidden)]
@@ -3981,18 +3973,10 @@ impl UpdateRoutingControlInput {
         self.routing_control_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingControlInput");
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.field("routing_control_name", &self.routing_control_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The details of the control panel that you're updating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -4011,18 +3995,10 @@ impl UpdateControlPanelInput {
         self.control_panel_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateControlPanelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateControlPanelInput");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("control_panel_name", &self.control_panel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
     #[doc(hidden)]
@@ -4041,18 +4017,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Request of adding tag to the resource</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
     #[doc(hidden)]
@@ -4075,18 +4043,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
     #[doc(hidden)]
@@ -4098,17 +4058,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSafetyRulesInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -4134,19 +4087,10 @@ impl ListSafetyRulesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSafetyRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSafetyRulesInput");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoutingControlsInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -4172,19 +4116,10 @@ impl ListRoutingControlsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRoutingControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoutingControlsInput");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListControlPanelsInput {
     /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
     #[doc(hidden)]
@@ -4210,19 +4145,10 @@ impl ListControlPanelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListControlPanelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListControlPanelsInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClustersInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -4241,18 +4167,10 @@ impl ListClustersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClustersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociatedRoute53HealthChecksInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -4278,19 +4196,10 @@ impl ListAssociatedRoute53HealthChecksInput {
         self.routing_control_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssociatedRoute53HealthChecksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociatedRoute53HealthChecksInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSafetyRuleInput {
     /// <p>The ARN of the safety rule.</p>
     #[doc(hidden)]
@@ -4302,17 +4211,10 @@ impl DescribeSafetyRuleInput {
         self.safety_rule_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSafetyRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSafetyRuleInput");
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     #[doc(hidden)]
@@ -4324,17 +4226,10 @@ impl DescribeRoutingControlInput {
         self.routing_control_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRoutingControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRoutingControlInput");
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -4346,17 +4241,10 @@ impl DescribeControlPanelInput {
         self.control_panel_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeControlPanelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeControlPanelInput");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
@@ -4368,17 +4256,10 @@ impl DescribeClusterInput {
         self.cluster_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClusterInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSafetyRuleInput {
     /// <p>The ARN of the safety rule.</p>
     #[doc(hidden)]
@@ -4390,17 +4271,10 @@ impl DeleteSafetyRuleInput {
         self.safety_rule_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSafetyRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSafetyRuleInput");
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
     #[doc(hidden)]
@@ -4412,17 +4286,10 @@ impl DeleteRoutingControlInput {
         self.routing_control_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRoutingControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRoutingControlInput");
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -4434,17 +4301,10 @@ impl DeleteControlPanelInput {
         self.control_panel_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteControlPanelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteControlPanelInput");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
     #[doc(hidden)]
@@ -4456,17 +4316,10 @@ impl DeleteClusterInput {
         self.cluster_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClusterInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body that you include when you create a safety rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSafetyRuleInput {
     /// <p>The assertion rule requested.</p>
     #[doc(hidden)]
@@ -4503,20 +4356,10 @@ impl CreateSafetyRuleInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSafetyRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSafetyRuleInput");
-        formatter.field("assertion_rule", &self.assertion_rule);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("gating_rule", &self.gating_rule);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The details of the routing control that you're creating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRoutingControlInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     #[doc(hidden)]
@@ -4549,20 +4392,10 @@ impl CreateRoutingControlInput {
         self.routing_control_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRoutingControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRoutingControlInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("routing_control_name", &self.routing_control_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The details of the control panel that you're creating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateControlPanelInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     #[doc(hidden)]
@@ -4599,20 +4432,10 @@ impl CreateControlPanelInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateControlPanelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateControlPanelInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("control_panel_name", &self.control_panel_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateClusterInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     #[doc(hidden)]
@@ -4640,14 +4463,5 @@ impl CreateClusterInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateClusterInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

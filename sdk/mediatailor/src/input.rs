@@ -8200,7 +8200,7 @@ impl UpdateVodSourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVodSourceInput {
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
     #[doc(hidden)]
@@ -8229,22 +8229,10 @@ impl UpdateVodSourceInput {
         self.vod_source_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVodSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVodSourceInput");
-        formatter.field(
-            "http_package_configurations",
-            &self.http_package_configurations,
-        );
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSourceLocationInput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     #[doc(hidden)]
@@ -8290,27 +8278,10 @@ impl UpdateSourceLocationInput {
         self.source_location_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSourceLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSourceLocationInput");
-        formatter.field("access_configuration", &self.access_configuration);
-        formatter.field(
-            "default_segment_delivery_configuration",
-            &self.default_segment_delivery_configuration,
-        );
-        formatter.field("http_configuration", &self.http_configuration);
-        formatter.field(
-            "segment_delivery_configurations",
-            &self.segment_delivery_configurations,
-        );
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLiveSourceInput {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
     #[doc(hidden)]
@@ -8339,22 +8310,10 @@ impl UpdateLiveSourceInput {
         self.source_location_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLiveSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLiveSourceInput");
-        formatter.field(
-            "http_package_configurations",
-            &self.http_package_configurations,
-        );
-        formatter.field("live_source_name", &self.live_source_name);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -8380,19 +8339,10 @@ impl UpdateChannelInput {
         self.outputs.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("filler_slate", &self.filler_slate);
-        formatter.field("outputs", &self.outputs);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
     #[doc(hidden)]
@@ -8411,18 +8361,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
     #[doc(hidden)]
@@ -8445,18 +8387,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -8468,17 +8402,10 @@ impl StopChannelInput {
         self.channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -8490,17 +8417,10 @@ impl StartChannelInput {
         self.channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPlaybackConfigurationInput {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     #[doc(hidden)]
@@ -8625,36 +8545,10 @@ impl PutPlaybackConfigurationInput {
         self.video_content_source_url.as_deref()
     }
 }
-impl std::fmt::Debug for PutPlaybackConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPlaybackConfigurationInput");
-        formatter.field("ad_decision_server_url", &self.ad_decision_server_url);
-        formatter.field("avail_suppression", &self.avail_suppression);
-        formatter.field("bumper", &self.bumper);
-        formatter.field("cdn_configuration", &self.cdn_configuration);
-        formatter.field("configuration_aliases", &self.configuration_aliases);
-        formatter.field("dash_configuration", &self.dash_configuration);
-        formatter.field(
-            "live_pre_roll_configuration",
-            &self.live_pre_roll_configuration,
-        );
-        formatter.field("manifest_processing_rules", &self.manifest_processing_rules);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "personalization_threshold_seconds",
-            &self.personalization_threshold_seconds,
-        );
-        formatter.field("slate_ad_url", &self.slate_ad_url);
-        formatter.field("tags", &self.tags);
-        formatter.field("transcode_profile_name", &self.transcode_profile_name);
-        formatter.field("video_content_source_url", &self.video_content_source_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -8673,18 +8567,10 @@ impl PutChannelPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutChannelPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutChannelPolicyInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVodSourcesInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     #[doc(hidden)]
@@ -8710,19 +8596,10 @@ impl ListVodSourcesInput {
         self.source_location_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListVodSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVodSourcesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
     #[doc(hidden)]
@@ -8734,17 +8611,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSourceLocationsInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     #[doc(hidden)]
@@ -8763,18 +8633,10 @@ impl ListSourceLocationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSourceLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSourceLocationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
     #[doc(hidden)]
@@ -8813,23 +8675,10 @@ impl ListPrefetchSchedulesInput {
         self.stream_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListPrefetchSchedulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPrefetchSchedulesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "playback_configuration_name",
-            &self.playback_configuration_name,
-        );
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlaybackConfigurationsInput {
     /// <p>Maximum number of records to return.</p>
     #[doc(hidden)]
@@ -8848,18 +8697,10 @@ impl ListPlaybackConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlaybackConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlaybackConfigurationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLiveSourcesInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     #[doc(hidden)]
@@ -8885,19 +8726,10 @@ impl ListLiveSourcesInput {
         self.source_location_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListLiveSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLiveSourcesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     #[doc(hidden)]
@@ -8916,18 +8748,10 @@ impl ListChannelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlertsInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     #[doc(hidden)]
@@ -8953,19 +8777,10 @@ impl ListAlertsInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListAlertsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAlertsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPrefetchScheduleInput {
     /// <p>The identifier for the playback configuration.</p>
     #[doc(hidden)]
@@ -8984,21 +8799,10 @@ impl GetPrefetchScheduleInput {
         self.playback_configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPrefetchScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPrefetchScheduleInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "playback_configuration_name",
-            &self.playback_configuration_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
     #[doc(hidden)]
@@ -9010,17 +8814,10 @@ impl GetPlaybackConfigurationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPlaybackConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPlaybackConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelScheduleInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -9053,20 +8850,10 @@ impl GetChannelScheduleInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetChannelScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChannelScheduleInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("duration_minutes", &self.duration_minutes);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -9078,17 +8865,10 @@ impl GetChannelPolicyInput {
         self.channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetChannelPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChannelPolicyInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVodSourceInput {
     /// <p>The identifier for the source location you are working on.</p>
     #[doc(hidden)]
@@ -9107,18 +8887,10 @@ impl DescribeVodSourceInput {
         self.vod_source_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVodSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVodSourceInput");
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSourceLocationInput {
     /// <p>The identifier for the source location you are working on.</p>
     #[doc(hidden)]
@@ -9130,17 +8902,10 @@ impl DescribeSourceLocationInput {
         self.source_location_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSourceLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSourceLocationInput");
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProgramInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -9159,18 +8924,10 @@ impl DescribeProgramInput {
         self.program_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProgramInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProgramInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLiveSourceInput {
     /// <p>The identifier for the live source you are working on.</p>
     #[doc(hidden)]
@@ -9189,18 +8946,10 @@ impl DescribeLiveSourceInput {
         self.source_location_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLiveSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLiveSourceInput");
-        formatter.field("live_source_name", &self.live_source_name);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -9212,17 +8961,10 @@ impl DescribeChannelInput {
         self.channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVodSourceInput {
     /// <p>The identifier for the source location you are working on.</p>
     #[doc(hidden)]
@@ -9241,18 +8983,10 @@ impl DeleteVodSourceInput {
         self.vod_source_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVodSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVodSourceInput");
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSourceLocationInput {
     /// <p>The identifier for the source location you are working on.</p>
     #[doc(hidden)]
@@ -9264,17 +8998,10 @@ impl DeleteSourceLocationInput {
         self.source_location_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSourceLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSourceLocationInput");
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProgramInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -9293,18 +9020,10 @@ impl DeleteProgramInput {
         self.program_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProgramInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProgramInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePrefetchScheduleInput {
     /// <p>The identifier for the playback configuration.</p>
     #[doc(hidden)]
@@ -9323,21 +9042,10 @@ impl DeletePrefetchScheduleInput {
         self.playback_configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePrefetchScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePrefetchScheduleInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "playback_configuration_name",
-            &self.playback_configuration_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
     #[doc(hidden)]
@@ -9349,17 +9057,10 @@ impl DeletePlaybackConfigurationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePlaybackConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlaybackConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLiveSourceInput {
     /// <p>The identifier for the live source you are working on.</p>
     #[doc(hidden)]
@@ -9378,18 +9079,10 @@ impl DeleteLiveSourceInput {
         self.source_location_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLiveSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLiveSourceInput");
-        formatter.field("live_source_name", &self.live_source_name);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -9401,17 +9094,10 @@ impl DeleteChannelPolicyInput {
         self.channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelPolicyInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -9423,17 +9109,10 @@ impl DeleteChannelInput {
         self.channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVodSourceInput {
     /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
     #[doc(hidden)]
@@ -9473,23 +9152,10 @@ impl CreateVodSourceInput {
         self.vod_source_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVodSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVodSourceInput");
-        formatter.field(
-            "http_package_configurations",
-            &self.http_package_configurations,
-        );
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSourceLocationInput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     #[doc(hidden)]
@@ -9546,28 +9212,10 @@ impl CreateSourceLocationInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSourceLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSourceLocationInput");
-        formatter.field("access_configuration", &self.access_configuration);
-        formatter.field(
-            "default_segment_delivery_configuration",
-            &self.default_segment_delivery_configuration,
-        );
-        formatter.field("http_configuration", &self.http_configuration);
-        formatter.field(
-            "segment_delivery_configurations",
-            &self.segment_delivery_configurations,
-        );
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
     #[doc(hidden)]
@@ -9623,23 +9271,10 @@ impl CreateProgramInput {
         self.vod_source_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProgramInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProgramInput");
-        formatter.field("ad_breaks", &self.ad_breaks);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("live_source_name", &self.live_source_name);
-        formatter.field("program_name", &self.program_name);
-        formatter.field("schedule_configuration", &self.schedule_configuration);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePrefetchScheduleInput {
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
     #[doc(hidden)]
@@ -9679,24 +9314,10 @@ impl CreatePrefetchScheduleInput {
         self.stream_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePrefetchScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePrefetchScheduleInput");
-        formatter.field("consumption", &self.consumption);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "playback_configuration_name",
-            &self.playback_configuration_name,
-        );
-        formatter.field("retrieval", &self.retrieval);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLiveSourceInput {
     /// <p>A list of HTTP package configuration parameters for this live source.</p>
     #[doc(hidden)]
@@ -9736,23 +9357,10 @@ impl CreateLiveSourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLiveSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLiveSourceInput");
-        formatter.field(
-            "http_package_configurations",
-            &self.http_package_configurations,
-        );
-        formatter.field("live_source_name", &self.live_source_name);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     #[doc(hidden)]
@@ -9807,22 +9415,10 @@ impl CreateChannelInput {
         self.tier.as_ref()
     }
 }
-impl std::fmt::Debug for CreateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelInput");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("filler_slate", &self.filler_slate);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("playback_mode", &self.playback_mode);
-        formatter.field("tags", &self.tags);
-        formatter.field("tier", &self.tier);
-        formatter.finish()
-    }
-}
 
 /// <p>Configures Amazon CloudWatch log settings for a playback configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureLogsForPlaybackConfigurationInput {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: 0 - 100</p>
@@ -9841,16 +9437,5 @@ impl ConfigureLogsForPlaybackConfigurationInput {
     /// <p>The name of the playback configuration.</p>
     pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
         self.playback_configuration_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigureLogsForPlaybackConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureLogsForPlaybackConfigurationInput");
-        formatter.field("percent_enabled", &self.percent_enabled);
-        formatter.field(
-            "playback_configuration_name",
-            &self.playback_configuration_name,
-        );
-        formatter.finish()
     }
 }

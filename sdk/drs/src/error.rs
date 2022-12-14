@@ -2,7 +2,7 @@
 
 /// <p>The input fails to satisfy the constraints specified by the AWS service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -29,16 +29,6 @@ impl ValidationException {
     /// <p>A list of fields that failed validation.</p>
     pub fn field_list(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
         self.field_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("reason", &self.reason);
-        formatter.field("field_list", &self.field_list);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -144,7 +134,7 @@ impl ValidationException {
 
 /// <p>The account performing the request has not been initialized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UninitializedAccountException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -157,14 +147,6 @@ impl UninitializedAccountException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for UninitializedAccountException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UninitializedAccountException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl UninitializedAccountException {
@@ -233,7 +215,7 @@ impl UninitializedAccountException {
 
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -260,16 +242,6 @@ impl ThrottlingException {
     /// <p>The number of seconds after which the request should be safe to retry.</p>
     pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
         self.retry_after_seconds.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -365,7 +337,7 @@ impl ThrottlingException {
 
 /// <p>The resource for this operation was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -392,16 +364,6 @@ impl ResourceNotFoundException {
     /// <p>The type of the resource.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -497,7 +459,7 @@ impl ResourceNotFoundException {
 
 /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -510,14 +472,6 @@ impl InternalServerException {
     /// <p>The number of seconds after which the request should be safe to retry.</p>
     pub fn retry_after_seconds(&self) -> i64 {
         self.retry_after_seconds
-    }
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
     }
 }
 impl InternalServerException {
@@ -586,7 +540,7 @@ impl InternalServerException {
 
 /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -613,16 +567,6 @@ impl ConflictException {
     /// <p>The type of the resource.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl ConflictException {
@@ -718,7 +662,7 @@ impl ConflictException {
 
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -731,14 +675,6 @@ impl AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -807,7 +743,7 @@ impl AccessDeniedException {
 
 /// <p>The request could not be completed because its exceeded the service quota.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -848,18 +784,6 @@ impl ServiceQuotaExceededException {
     /// <p>Quota code.</p>
     pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.finish()
     }
 }
 impl ServiceQuotaExceededException {

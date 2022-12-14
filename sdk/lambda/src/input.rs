@@ -6684,7 +6684,7 @@ impl GetProvisionedConcurrencyConfigInput {
 pub mod invoke_input {
 
     /// A builder for [`InvokeInput`](crate::input::InvokeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) invocation_type: std::option::Option<crate::model::InvocationType>,
@@ -6802,6 +6802,18 @@ pub mod invoke_input {
                 payload: self.payload,
                 qualifier: self.qualifier,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("function_name", &self.function_name);
+            formatter.field("invocation_type", &self.invocation_type);
+            formatter.field("log_type", &self.log_type);
+            formatter.field("client_context", &self.client_context);
+            formatter.field("payload", &"*** Sensitive Data Redacted ***");
+            formatter.field("qualifier", &self.qualifier);
+            formatter.finish()
         }
     }
 }
@@ -12745,7 +12757,7 @@ impl UpdateEventSourceMappingInput {
 pub mod update_function_code_input {
 
     /// A builder for [`UpdateFunctionCodeInput`](crate::input::UpdateFunctionCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) zip_file: std::option::Option<aws_smithy_types::Blob>,
@@ -12907,6 +12919,22 @@ pub mod update_function_code_input {
                 revision_id: self.revision_id,
                 architectures: self.architectures,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("function_name", &self.function_name);
+            formatter.field("zip_file", &"*** Sensitive Data Redacted ***");
+            formatter.field("s3_bucket", &self.s3_bucket);
+            formatter.field("s3_key", &self.s3_key);
+            formatter.field("s3_object_version", &self.s3_object_version);
+            formatter.field("image_uri", &self.image_uri);
+            formatter.field("publish", &self.publish);
+            formatter.field("dry_run", &self.dry_run);
+            formatter.field("revision_id", &self.revision_id);
+            formatter.field("architectures", &self.architectures);
+            formatter.finish()
         }
     }
 }
@@ -13954,7 +13982,7 @@ impl UpdateFunctionUrlConfigInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14001,20 +14029,10 @@ impl UpdateFunctionUrlConfigInput {
         self.cors.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFunctionUrlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionUrlConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("cors", &self.cors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14082,24 +14100,10 @@ impl UpdateFunctionEventInvokeConfigInput {
         self.destination_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFunctionEventInvokeConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionEventInvokeConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "maximum_event_age_in_seconds",
-            &self.maximum_event_age_in_seconds,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionConfigurationInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14237,29 +14241,6 @@ impl UpdateFunctionConfigurationInput {
         self.ephemeral_storage.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFunctionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionConfigurationInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("role", &self.role);
-        formatter.field("handler", &self.handler);
-        formatter.field("description", &self.description);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("memory_size", &self.memory_size);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("environment", &self.environment);
-        formatter.field("runtime", &self.runtime);
-        formatter.field("dead_letter_config", &self.dead_letter_config);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("tracing_config", &self.tracing_config);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("layers", &self.layers);
-        formatter.field("file_system_configs", &self.file_system_configs);
-        formatter.field("image_config", &self.image_config);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -14371,7 +14352,7 @@ impl std::fmt::Debug for UpdateFunctionCodeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
@@ -14518,45 +14499,10 @@ impl UpdateEventSourceMappingInput {
         self.function_response_types.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEventSourceMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventSourceMappingInput");
-        formatter.field("uuid", &self.uuid);
-        formatter.field("function_name", &self.function_name);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field(
-            "maximum_record_age_in_seconds",
-            &self.maximum_record_age_in_seconds,
-        );
-        formatter.field(
-            "bisect_batch_on_function_error",
-            &self.bisect_batch_on_function_error,
-        );
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field("parallelization_factor", &self.parallelization_factor);
-        formatter.field(
-            "source_access_configurations",
-            &self.source_access_configurations,
-        );
-        formatter.field(
-            "tumbling_window_in_seconds",
-            &self.tumbling_window_in_seconds,
-        );
-        formatter.field("function_response_types", &self.function_response_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
@@ -14589,20 +14535,10 @@ impl UpdateCodeSigningConfigInput {
         self.code_signing_policies.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("description", &self.description);
-        formatter.field("allowed_publishers", &self.allowed_publishers);
-        formatter.field("code_signing_policies", &self.code_signing_policies);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAliasInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14663,22 +14599,10 @@ impl UpdateAliasInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAliasInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("name", &self.name);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("description", &self.description);
-        formatter.field("routing_config", &self.routing_config);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The function's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -14697,18 +14621,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The function's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -14731,18 +14647,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14789,20 +14697,10 @@ impl RemovePermissionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemovePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -14835,20 +14733,10 @@ impl RemoveLayerVersionPermissionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveLayerVersionPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveLayerVersionPermissionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14888,22 +14776,10 @@ impl PutProvisionedConcurrencyConfigInput {
         self.provisioned_concurrent_executions
     }
 }
-impl std::fmt::Debug for PutProvisionedConcurrencyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutProvisionedConcurrencyConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field(
-            "provisioned_concurrent_executions",
-            &self.provisioned_concurrent_executions,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14971,24 +14847,10 @@ impl PutFunctionEventInvokeConfigInput {
         self.destination_config.as_ref()
     }
 }
-impl std::fmt::Debug for PutFunctionEventInvokeConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFunctionEventInvokeConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "maximum_event_age_in_seconds",
-            &self.maximum_event_age_in_seconds,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15021,21 +14883,10 @@ impl PutFunctionConcurrencyInput {
         self.reserved_concurrent_executions
     }
 }
-impl std::fmt::Debug for PutFunctionConcurrencyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFunctionConcurrencyInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field(
-            "reserved_concurrent_executions",
-            &self.reserved_concurrent_executions,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
@@ -15068,18 +14919,10 @@ impl PutFunctionCodeSigningConfigInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutFunctionCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFunctionCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishVersionInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15126,20 +14969,10 @@ impl PublishVersionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for PublishVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishVersionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("code_sha256", &self.code_sha256);
-        formatter.field("description", &self.description);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -15196,22 +15029,10 @@ impl PublishLayerVersionInput {
         self.compatible_architectures.as_deref()
     }
 }
-impl std::fmt::Debug for PublishLayerVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishLayerVersionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("description", &self.description);
-        formatter.field("content", &self.content);
-        formatter.field("compatible_runtimes", &self.compatible_runtimes);
-        formatter.field("license_info", &self.license_info);
-        formatter.field("compatible_architectures", &self.compatible_architectures);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVersionsByFunctionInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15251,19 +15072,10 @@ impl ListVersionsByFunctionInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListVersionsByFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVersionsByFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
     #[doc(hidden)]
@@ -15275,17 +15087,10 @@ impl ListTagsInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProvisionedConcurrencyConfigsInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15325,19 +15130,10 @@ impl ListProvisionedConcurrencyConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListProvisionedConcurrencyConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProvisionedConcurrencyConfigsInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLayerVersionsInput {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     #[doc(hidden)]
@@ -15377,21 +15173,10 @@ impl ListLayerVersionsInput {
         self.compatible_architecture.as_ref()
     }
 }
-impl std::fmt::Debug for ListLayerVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLayerVersionsInput");
-        formatter.field("compatible_runtime", &self.compatible_runtime);
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("compatible_architecture", &self.compatible_architecture);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLayersInput {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     #[doc(hidden)]
@@ -15424,20 +15209,10 @@ impl ListLayersInput {
         self.compatible_architecture.as_ref()
     }
 }
-impl std::fmt::Debug for ListLayersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLayersInput");
-        formatter.field("compatible_runtime", &self.compatible_runtime);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("compatible_architecture", &self.compatible_architecture);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionUrlConfigsInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15477,19 +15252,10 @@ impl ListFunctionUrlConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFunctionUrlConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionUrlConfigsInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionsByCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
@@ -15515,19 +15281,10 @@ impl ListFunctionsByCodeSigningConfigInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFunctionsByCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionsByCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionsInput {
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
     #[doc(hidden)]
@@ -15560,20 +15317,10 @@ impl ListFunctionsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFunctionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionsInput");
-        formatter.field("master_region", &self.master_region);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionEventInvokeConfigsInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15613,19 +15360,10 @@ impl ListFunctionEventInvokeConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFunctionEventInvokeConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionEventInvokeConfigsInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventSourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
@@ -15686,20 +15424,10 @@ impl ListEventSourceMappingsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListEventSourceMappingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventSourceMappingsInput");
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCodeSigningConfigsInput {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -15718,18 +15446,10 @@ impl ListCodeSigningConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListCodeSigningConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCodeSigningConfigsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAliasesInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15776,20 +15496,11 @@ impl ListAliasesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAliasesInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated]
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct InvokeAsyncInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15819,14 +15530,6 @@ impl InvokeAsyncInput {
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     pub fn invoke_args(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.invoke_args
-    }
-}
-impl std::fmt::Debug for InvokeAsyncInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvokeAsyncInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("invoke_args", &self.invoke_args);
-        formatter.finish()
     }
 }
 
@@ -15920,7 +15623,7 @@ impl std::fmt::Debug for InvokeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15953,18 +15656,10 @@ impl GetProvisionedConcurrencyConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetProvisionedConcurrencyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProvisionedConcurrencyConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15997,18 +15692,10 @@ impl GetPolicyInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLayerVersionPolicyInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -16027,18 +15714,10 @@ impl GetLayerVersionPolicyInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for GetLayerVersionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLayerVersionPolicyInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLayerVersionByArnInput {
     /// <p>The ARN of the layer version.</p>
     #[doc(hidden)]
@@ -16050,17 +15729,10 @@ impl GetLayerVersionByArnInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLayerVersionByArnInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLayerVersionByArnInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -16079,18 +15751,10 @@ impl GetLayerVersionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for GetLayerVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLayerVersionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16123,18 +15787,10 @@ impl GetFunctionUrlConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionUrlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionUrlConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16167,18 +15823,10 @@ impl GetFunctionEventInvokeConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionEventInvokeConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionEventInvokeConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionConfigurationInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16211,18 +15859,10 @@ impl GetFunctionConfigurationInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionConfigurationInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16248,17 +15888,10 @@ impl GetFunctionConcurrencyInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionConcurrencyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionConcurrencyInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionCodeSigningConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16284,17 +15917,10 @@ impl GetFunctionCodeSigningConfigInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionCodeSigningConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16327,18 +15953,10 @@ impl GetFunctionInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
@@ -16350,17 +15968,10 @@ impl GetEventSourceMappingInput {
         self.uuid.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventSourceMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventSourceMappingInput");
-        formatter.field("uuid", &self.uuid);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
     #[doc(hidden)]
@@ -16372,17 +15983,10 @@ impl GetCodeSigningConfigInput {
         self.code_signing_config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAliasInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16415,29 +16019,15 @@ impl GetAliasInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAliasInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountSettingsInput {}
-impl std::fmt::Debug for GetAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16470,18 +16060,10 @@ impl DeleteProvisionedConcurrencyConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProvisionedConcurrencyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProvisionedConcurrencyConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -16500,18 +16082,10 @@ impl DeleteLayerVersionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteLayerVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLayerVersionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16544,18 +16118,10 @@ impl DeleteFunctionUrlConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionUrlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionUrlConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16588,18 +16154,10 @@ impl DeleteFunctionEventInvokeConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionEventInvokeConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionEventInvokeConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16625,17 +16183,10 @@ impl DeleteFunctionConcurrencyInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionConcurrencyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionConcurrencyInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionCodeSigningConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16661,17 +16212,10 @@ impl DeleteFunctionCodeSigningConfigInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionCodeSigningConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionInput {
     /// <p>The name of the Lambda function or version.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16704,18 +16248,10 @@ impl DeleteFunctionInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
@@ -16727,17 +16263,10 @@ impl DeleteEventSourceMappingInput {
         self.uuid.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventSourceMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventSourceMappingInput");
-        formatter.field("uuid", &self.uuid);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
@@ -16749,17 +16278,10 @@ impl DeleteCodeSigningConfigInput {
         self.code_signing_config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAliasInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16792,18 +16314,10 @@ impl DeleteAliasInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAliasInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16850,20 +16364,10 @@ impl CreateFunctionUrlConfigInput {
         self.cors.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFunctionUrlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFunctionUrlConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("cors", &self.cors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFunctionInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -17040,38 +16544,10 @@ impl CreateFunctionInput {
         self.ephemeral_storage.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("runtime", &self.runtime);
-        formatter.field("role", &self.role);
-        formatter.field("handler", &self.handler);
-        formatter.field("code", &self.code);
-        formatter.field("description", &self.description);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("memory_size", &self.memory_size);
-        formatter.field("publish", &self.publish);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("package_type", &self.package_type);
-        formatter.field("dead_letter_config", &self.dead_letter_config);
-        formatter.field("environment", &self.environment);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("tracing_config", &self.tracing_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("layers", &self.layers);
-        formatter.field("file_system_configs", &self.file_system_configs);
-        formatter.field("image_config", &self.image_config);
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("architectures", &self.architectures);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventSourceMappingInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
@@ -17287,61 +16763,10 @@ impl CreateEventSourceMappingInput {
         self.self_managed_kafka_event_source_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEventSourceMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventSourceMappingInput");
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("function_name", &self.function_name);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
-        formatter.field("parallelization_factor", &self.parallelization_factor);
-        formatter.field("starting_position", &self.starting_position);
-        formatter.field(
-            "starting_position_timestamp",
-            &self.starting_position_timestamp,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field(
-            "maximum_record_age_in_seconds",
-            &self.maximum_record_age_in_seconds,
-        );
-        formatter.field(
-            "bisect_batch_on_function_error",
-            &self.bisect_batch_on_function_error,
-        );
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "tumbling_window_in_seconds",
-            &self.tumbling_window_in_seconds,
-        );
-        formatter.field("topics", &self.topics);
-        formatter.field("queues", &self.queues);
-        formatter.field(
-            "source_access_configurations",
-            &self.source_access_configurations,
-        );
-        formatter.field("self_managed_event_source", &self.self_managed_event_source);
-        formatter.field("function_response_types", &self.function_response_types);
-        formatter.field(
-            "amazon_managed_kafka_event_source_config",
-            &self.amazon_managed_kafka_event_source_config,
-        );
-        formatter.field(
-            "self_managed_kafka_event_source_config",
-            &self.self_managed_kafka_event_source_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCodeSigningConfigInput {
     /// <p>Descriptive name for this code signing configuration.</p>
     #[doc(hidden)]
@@ -17367,19 +16792,10 @@ impl CreateCodeSigningConfigInput {
         self.code_signing_policies.as_ref()
     }
 }
-impl std::fmt::Debug for CreateCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCodeSigningConfigInput");
-        formatter.field("description", &self.description);
-        formatter.field("allowed_publishers", &self.allowed_publishers);
-        formatter.field("code_signing_policies", &self.code_signing_policies);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -17433,21 +16849,10 @@ impl CreateAliasInput {
         self.routing_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("name", &self.name);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("description", &self.description);
-        formatter.field("routing_config", &self.routing_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddPermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -17547,27 +16952,10 @@ impl AddPermissionInput {
         self.function_url_auth_type.as_ref()
     }
 }
-impl std::fmt::Debug for AddPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddPermissionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("source_account", &self.source_account);
-        formatter.field("event_source_token", &self.event_source_token);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("principal_org_id", &self.principal_org_id);
-        formatter.field("function_url_auth_type", &self.function_url_auth_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -17619,18 +17007,5 @@ impl AddLayerVersionPermissionInput {
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AddLayerVersionPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddLayerVersionPermissionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_environment_ec2_input {
 
     /// A builder for [`CreateEnvironmentEc2Input`](crate::input::CreateEnvironmentEc2Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -200,6 +200,26 @@ pub mod create_environment_ec2_input {
                 connection_type: self.connection_type,
                 dry_run: self.dry_run,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("instance_type", &self.instance_type);
+            formatter.field("subnet_id", &self.subnet_id);
+            formatter.field("image_id", &self.image_id);
+            formatter.field(
+                "automatic_stop_time_minutes",
+                &self.automatic_stop_time_minutes,
+            );
+            formatter.field("owner_arn", &self.owner_arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("connection_type", &self.connection_type);
+            formatter.field("dry_run", &self.dry_run);
+            formatter.finish()
         }
     }
 }
@@ -1653,7 +1673,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1697,6 +1717,14 @@ pub mod tag_resource_input {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1819,7 +1847,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1863,6 +1891,14 @@ pub mod untag_resource_input {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("tag_keys", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1985,7 +2021,7 @@ impl UntagResourceInput {
 pub mod update_environment_input {
 
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2068,6 +2104,19 @@ pub mod update_environment_input {
                 description: self.description,
                 managed_credentials_action: self.managed_credentials_action,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("environment_id", &self.environment_id);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "managed_credentials_action",
+                &self.managed_credentials_action,
+            );
+            formatter.finish()
         }
     }
 }
@@ -2372,7 +2421,7 @@ impl UpdateEnvironmentMembershipInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEnvironmentMembershipInput {
     /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
     #[doc(hidden)]
@@ -2404,15 +2453,6 @@ impl UpdateEnvironmentMembershipInput {
     /// </ul>
     pub fn permissions(&self) -> std::option::Option<&crate::model::MemberPermissions> {
         self.permissions.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateEnvironmentMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEnvironmentMembershipInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 
@@ -2541,7 +2581,7 @@ impl std::fmt::Debug for TagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.</p>
     #[doc(hidden)]
@@ -2553,17 +2593,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentsInput {
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     #[doc(hidden)]
@@ -2582,18 +2615,10 @@ impl ListEnvironmentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentStatusInput {
     /// <p>The ID of the environment to get status information about.</p>
     #[doc(hidden)]
@@ -2605,17 +2630,10 @@ impl DescribeEnvironmentStatusInput {
         self.environment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentStatusInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentsInput {
     /// <p>The IDs of individual environments to get information about.</p>
     #[doc(hidden)]
@@ -2627,17 +2645,10 @@ impl DescribeEnvironmentsInput {
         self.environment_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentsInput");
-        formatter.field("environment_ids", &self.environment_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsInput {
     /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
     #[doc(hidden)]
@@ -2689,21 +2700,10 @@ impl DescribeEnvironmentMembershipsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentMembershipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentMembershipsInput");
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentMembershipInput {
     /// <p>The ID of the environment to delete the environment member from.</p>
     #[doc(hidden)]
@@ -2722,18 +2722,10 @@ impl DeleteEnvironmentMembershipInput {
         self.user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEnvironmentMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentMembershipInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("user_arn", &self.user_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
     /// <p>The ID of the environment to delete.</p>
     #[doc(hidden)]
@@ -2745,17 +2737,10 @@ impl DeleteEnvironmentInput {
         self.environment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEnvironmentMembershipInput {
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
     #[doc(hidden)]
@@ -2787,15 +2772,6 @@ impl CreateEnvironmentMembershipInput {
     /// </ul>
     pub fn permissions(&self) -> std::option::Option<&crate::model::MemberPermissions> {
         self.permissions.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateEnvironmentMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEnvironmentMembershipInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 

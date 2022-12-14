@@ -2,7 +2,7 @@
 
 /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingleMasterConfiguration {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl SingleMasterConfiguration {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     pub fn message_ttl_seconds(&self) -> std::option::Option<i32> {
         self.message_ttl_seconds
-    }
-}
-impl std::fmt::Debug for SingleMasterConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingleMasterConfiguration");
-        formatter.field("message_ttl_seconds", &self.message_ttl_seconds);
-        formatter.finish()
     }
 }
 /// See [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
@@ -57,7 +50,7 @@ impl SingleMasterConfiguration {
 
 /// <p>The structure that contains the notification information for the KVS images delivery. If this parameter is null, the configuration will be deleted from the stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
     #[doc(hidden)]
@@ -76,14 +69,6 @@ impl NotificationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::NotificationDestinationConfig> {
         self.destination_config.as_ref()
-    }
-}
-impl std::fmt::Debug for NotificationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfiguration");
-        formatter.field("status", &self.status);
-        formatter.field("destination_config", &self.destination_config);
-        formatter.finish()
     }
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
@@ -144,7 +129,7 @@ impl NotificationConfiguration {
 
 /// <p>The structure that contains the information required to deliver a notification to a customer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationDestinationConfig {
     /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
     #[doc(hidden)]
@@ -154,13 +139,6 @@ impl NotificationDestinationConfig {
     /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationDestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationDestinationConfig");
-        formatter.field("uri", &self.uri);
-        formatter.finish()
     }
 }
 /// See [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
@@ -289,7 +267,7 @@ impl AsRef<str> for ConfigurationStatus {
 
 /// <p>The structure that contains the information required for the KVS images delivery. If null, the configuration will be deleted from the stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageGenerationConfiguration {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
     #[doc(hidden)]
@@ -356,20 +334,6 @@ impl ImageGenerationConfiguration {
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn height_pixels(&self) -> std::option::Option<i32> {
         self.height_pixels
-    }
-}
-impl std::fmt::Debug for ImageGenerationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageGenerationConfiguration");
-        formatter.field("status", &self.status);
-        formatter.field("image_selector_type", &self.image_selector_type);
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field("sampling_interval", &self.sampling_interval);
-        formatter.field("format", &self.format);
-        formatter.field("format_config", &self.format_config);
-        formatter.field("width_pixels", &self.width_pixels);
-        formatter.field("height_pixels", &self.height_pixels);
-        formatter.finish()
     }
 }
 /// See [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
@@ -697,7 +661,7 @@ impl AsRef<str> for Format {
 
 /// <p>The structure that contains the information required to deliver images to a customer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageGenerationDestinationConfig {
     /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
     #[doc(hidden)]
@@ -714,14 +678,6 @@ impl ImageGenerationDestinationConfig {
     /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
     pub fn destination_region(&self) -> std::option::Option<&str> {
         self.destination_region.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageGenerationDestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageGenerationDestinationConfig");
-        formatter.field("uri", &self.uri);
-        formatter.field("destination_region", &self.destination_region);
-        formatter.finish()
     }
 }
 /// See [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
@@ -959,7 +915,7 @@ impl AsRef<str> for UpdateDataRetentionOperation {
 
 /// <p>A key and value pair that is associated with the specified signaling channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag that is associated with the specified signaling channel.</p>
     #[doc(hidden)]
@@ -976,14 +932,6 @@ impl Tag {
     /// <p>The value of the tag that is associated with the specified signaling channel.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1034,7 +982,7 @@ impl Tag {
 
 /// <p>An object describing a Kinesis video stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamInfo {
     /// <p>The name of the device that is associated with the stream.</p>
     #[doc(hidden)]
@@ -1100,21 +1048,6 @@ impl StreamInfo {
     /// <p>How long the stream retains data, in hours.</p>
     pub fn data_retention_in_hours(&self) -> std::option::Option<i32> {
         self.data_retention_in_hours
-    }
-}
-impl std::fmt::Debug for StreamInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamInfo");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("media_type", &self.media_type);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("version", &self.version);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("data_retention_in_hours", &self.data_retention_in_hours);
-        formatter.finish()
     }
 }
 /// See [`StreamInfo`](crate::model::StreamInfo).
@@ -1352,7 +1285,7 @@ impl AsRef<str> for Status {
 
 /// <p>Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamNameCondition {
     /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>
     #[doc(hidden)]
@@ -1369,14 +1302,6 @@ impl StreamNameCondition {
     /// <p>A value to compare.</p>
     pub fn comparison_value(&self) -> std::option::Option<&str> {
         self.comparison_value.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamNameCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamNameCondition");
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("comparison_value", &self.comparison_value);
-        formatter.finish()
     }
 }
 /// See [`StreamNameCondition`](crate::model::StreamNameCondition).
@@ -1520,7 +1445,7 @@ impl AsRef<str> for ComparisonOperator {
 
 /// <p>A structure that encapsulates a signaling channel's metadata and properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelInfo {
     /// <p>The name of the signaling channel.</p>
     #[doc(hidden)]
@@ -1574,22 +1499,6 @@ impl ChannelInfo {
     /// <p>The current version of the signaling channel.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for ChannelInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelInfo");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("channel_status", &self.channel_status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field(
-            "single_master_configuration",
-            &self.single_master_configuration,
-        );
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ChannelInfo`](crate::model::ChannelInfo).
@@ -1806,7 +1715,7 @@ impl AsRef<str> for ChannelType {
 
 /// <p>An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelNameCondition {
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
     #[doc(hidden)]
@@ -1823,14 +1732,6 @@ impl ChannelNameCondition {
     /// <p>A value to compare.</p>
     pub fn comparison_value(&self) -> std::option::Option<&str> {
         self.comparison_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ChannelNameCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelNameCondition");
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("comparison_value", &self.comparison_value);
-        formatter.finish()
     }
 }
 /// See [`ChannelNameCondition`](crate::model::ChannelNameCondition).
@@ -1887,7 +1788,7 @@ impl ChannelNameCondition {
 
 /// <p>An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceEndpointListItem {
     /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
     #[doc(hidden)]
@@ -1904,14 +1805,6 @@ impl ResourceEndpointListItem {
     /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
     pub fn resource_endpoint(&self) -> std::option::Option<&str> {
         self.resource_endpoint.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceEndpointListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceEndpointListItem");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("resource_endpoint", &self.resource_endpoint);
-        formatter.finish()
     }
 }
 /// See [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
@@ -2058,7 +1951,7 @@ impl AsRef<str> for ChannelProtocol {
 
 /// <p>An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingleMasterChannelEndpointConfiguration {
     /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
     #[doc(hidden)]
@@ -2075,14 +1968,6 @@ impl SingleMasterChannelEndpointConfiguration {
     /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>
     pub fn role(&self) -> std::option::Option<&crate::model::ChannelRole> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for SingleMasterChannelEndpointConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingleMasterChannelEndpointConfiguration");
-        formatter.field("protocols", &self.protocols);
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 /// See [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).

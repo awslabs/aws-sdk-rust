@@ -498,7 +498,7 @@ impl CreateAliasInput {
 pub mod create_custom_key_store_input {
 
     /// A builder for [`CreateCustomKeyStoreInput`](crate::input::CreateCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) custom_key_store_name: std::option::Option<std::string::String>,
         pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
@@ -575,6 +575,16 @@ pub mod create_custom_key_store_input {
                 trust_anchor_certificate: self.trust_anchor_certificate,
                 key_store_password: self.key_store_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("custom_key_store_name", &self.custom_key_store_name);
+            formatter.field("cloud_hsm_cluster_id", &self.cloud_hsm_cluster_id);
+            formatter.field("trust_anchor_certificate", &self.trust_anchor_certificate);
+            formatter.field("key_store_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3311,7 +3321,7 @@ impl EnableKeyRotationInput {
 pub mod encrypt_input {
 
     /// A builder for [`EncryptInput`](crate::input::EncryptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
@@ -3440,6 +3450,17 @@ pub mod encrypt_input {
                 grant_tokens: self.grant_tokens,
                 encryption_algorithm: self.encryption_algorithm,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
+            formatter.field("encryption_context", &self.encryption_context);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.field("encryption_algorithm", &self.encryption_algorithm);
+            formatter.finish()
         }
     }
 }
@@ -4531,7 +4552,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
 pub mod generate_mac_input {
 
     /// A builder for [`GenerateMacInput`](crate::input::GenerateMacInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -4610,6 +4631,16 @@ pub mod generate_mac_input {
                 mac_algorithm: self.mac_algorithm,
                 grant_tokens: self.grant_tokens,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("mac_algorithm", &self.mac_algorithm);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.finish()
         }
     }
 }
@@ -8339,7 +8370,7 @@ impl ScheduleKeyDeletionInput {
 pub mod sign_input {
 
     /// A builder for [`SignInput`](crate::input::SignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
@@ -8449,6 +8480,17 @@ pub mod sign_input {
                 grant_tokens: self.grant_tokens,
                 signing_algorithm: self.signing_algorithm,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("message_type", &self.message_type);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.field("signing_algorithm", &self.signing_algorithm);
+            formatter.finish()
         }
     }
 }
@@ -9107,7 +9149,7 @@ impl UpdateAliasInput {
 pub mod update_custom_key_store_input {
 
     /// A builder for [`UpdateCustomKeyStoreInput`](crate::input::UpdateCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
         pub(crate) new_custom_key_store_name: std::option::Option<std::string::String>,
@@ -9184,6 +9226,16 @@ pub mod update_custom_key_store_input {
                 key_store_password: self.key_store_password,
                 cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("custom_key_store_id", &self.custom_key_store_id);
+            formatter.field("new_custom_key_store_name", &self.new_custom_key_store_name);
+            formatter.field("key_store_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("cloud_hsm_cluster_id", &self.cloud_hsm_cluster_id);
+            formatter.finish()
         }
     }
 }
@@ -9661,7 +9713,7 @@ impl UpdatePrimaryRegionInput {
 pub mod verify_input {
 
     /// A builder for [`VerifyInput`](crate::input::VerifyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
@@ -9787,6 +9839,18 @@ pub mod verify_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("message_type", &self.message_type);
+            formatter.field("signature", &self.signature);
+            formatter.field("signing_algorithm", &self.signing_algorithm);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.finish()
+        }
+    }
 }
 impl VerifyInput {
     /// Consumes the builder and constructs an Operation<[`Verify`](crate::operation::Verify)>
@@ -9902,7 +9966,7 @@ impl VerifyInput {
 pub mod verify_mac_input {
 
     /// A builder for [`VerifyMacInput`](crate::input::VerifyMacInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -9991,6 +10055,17 @@ pub mod verify_mac_input {
                 mac: self.mac,
                 grant_tokens: self.grant_tokens,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("mac_algorithm", &self.mac_algorithm);
+            formatter.field("mac", &self.mac);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.finish()
         }
     }
 }
@@ -10257,7 +10332,7 @@ impl std::fmt::Debug for VerifyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePrimaryRegionInput {
     /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a replica key.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
@@ -10292,18 +10367,10 @@ impl UpdatePrimaryRegionInput {
         self.primary_region.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePrimaryRegionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePrimaryRegionInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("primary_region", &self.primary_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateKeyDescriptionInput {
     /// <p>Updates the description of the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10334,14 +10401,6 @@ impl UpdateKeyDescriptionInput {
     /// <p>New description for the KMS key.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateKeyDescriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateKeyDescriptionInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 
@@ -10397,7 +10456,7 @@ impl std::fmt::Debug for UpdateCustomKeyStoreInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAliasInput {
     /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p>
     #[doc(hidden)]
@@ -10434,18 +10493,10 @@ impl UpdateAliasInput {
         self.target_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAliasInput");
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("target_key_id", &self.target_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Identifies the KMS key from which you are removing tags.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10478,18 +10529,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Identifies a customer managed key in the account and Region.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10524,14 +10567,6 @@ impl TagResourceInput {
     /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -10615,7 +10650,7 @@ impl std::fmt::Debug for SignInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleKeyDeletionInput {
     /// <p>The unique identifier of the KMS key to delete.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10652,18 +10687,10 @@ impl ScheduleKeyDeletionInput {
         self.pending_window_in_days
     }
 }
-impl std::fmt::Debug for ScheduleKeyDeletionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleKeyDeletionInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("pending_window_in_days", &self.pending_window_in_days);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeGrantInput {
     /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
@@ -10696,18 +10723,10 @@ impl RevokeGrantInput {
         self.grant_id.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeGrantInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_id", &self.grant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetireGrantInput {
     /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency.</p>
     /// <p>Only the <code>CreateGrant</code> operation returns a grant token. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -10743,19 +10762,10 @@ impl RetireGrantInput {
         self.grant_id.as_deref()
     }
 }
-impl std::fmt::Debug for RetireGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetireGrantInput");
-        formatter.field("grant_token", &self.grant_token);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_id", &self.grant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicateKeyInput {
     /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a KMS key is a multi-Region primary key, use the <code>DescribeKey</code> operation to check the value of the <code>MultiRegionKeyType</code> property.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
@@ -10874,25 +10884,10 @@ impl ReplicateKeyInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ReplicateKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicateKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("replica_region", &self.replica_region);
-        formatter.field("policy", &self.policy);
-        formatter.field(
-            "bypass_policy_lockout_safety_check",
-            &self.bypass_policy_lockout_safety_check,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReEncryptInput {
     /// <p>Ciphertext of the data to reencrypt.</p>
     #[doc(hidden)]
@@ -11024,33 +11019,10 @@ impl ReEncryptInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for ReEncryptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReEncryptInput");
-        formatter.field("ciphertext_blob", &self.ciphertext_blob);
-        formatter.field("source_encryption_context", &self.source_encryption_context);
-        formatter.field("source_key_id", &self.source_key_id);
-        formatter.field("destination_key_id", &self.destination_key_id);
-        formatter.field(
-            "destination_encryption_context",
-            &self.destination_encryption_context,
-        );
-        formatter.field(
-            "source_encryption_algorithm",
-            &self.source_encryption_algorithm,
-        );
-        formatter.field(
-            "destination_encryption_algorithm",
-            &self.destination_encryption_algorithm,
-        );
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutKeyPolicyInput {
     /// <p>Sets the key policy on the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11131,23 +11103,10 @@ impl PutKeyPolicyInput {
         self.bypass_policy_lockout_safety_check
     }
 }
-impl std::fmt::Debug for PutKeyPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutKeyPolicyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy", &self.policy);
-        formatter.field(
-            "bypass_policy_lockout_safety_check",
-            &self.bypass_policy_lockout_safety_check,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRetirableGrantsInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -11177,19 +11136,10 @@ impl ListRetirableGrantsInput {
         self.retiring_principal.as_deref()
     }
 }
-impl std::fmt::Debug for ListRetirableGrantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRetirableGrantsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.field("retiring_principal", &self.retiring_principal);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceTagsInput {
     /// <p>Gets tags on the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11233,19 +11183,10 @@ impl ListResourceTagsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceTagsInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeysInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
@@ -11266,18 +11207,10 @@ impl ListKeysInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeysInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeyPoliciesInput {
     /// <p>Gets the names of key policies for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11321,19 +11254,10 @@ impl ListKeyPoliciesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListKeyPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeyPoliciesInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGrantsInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -11389,21 +11313,10 @@ impl ListGrantsInput {
         self.grantee_principal.as_deref()
     }
 }
-impl std::fmt::Debug for ListGrantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGrantsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_id", &self.grant_id);
-        formatter.field("grantee_principal", &self.grantee_principal);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAliasesInput {
     /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account. </p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and Region.</p>
@@ -11447,19 +11360,10 @@ impl ListAliasesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAliasesInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportKeyMaterialInput {
     /// <p>The identifier of the symmetric encryption KMS key that receives the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>. You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11513,21 +11417,10 @@ impl ImportKeyMaterialInput {
         self.expiration_model.as_ref()
     }
 }
-impl std::fmt::Debug for ImportKeyMaterialInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportKeyMaterialInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("import_token", &self.import_token);
-        formatter.field("encrypted_key_material", &self.encrypted_key_material);
-        formatter.field("valid_to", &self.valid_to);
-        formatter.field("expiration_model", &self.expiration_model);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicKeyInput {
     /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -11566,18 +11459,10 @@ impl GetPublicKeyInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for GetPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetParametersForImportInput {
     /// <p>The identifier of the symmetric encryption KMS key into which you will import key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11617,19 +11502,10 @@ impl GetParametersForImportInput {
         self.wrapping_key_spec.as_ref()
     }
 }
-impl std::fmt::Debug for GetParametersForImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetParametersForImportInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("wrapping_algorithm", &self.wrapping_algorithm);
-        formatter.field("wrapping_key_spec", &self.wrapping_key_spec);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyRotationStatusInput {
     /// <p>Gets the rotation status for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
@@ -11655,17 +11531,10 @@ impl GetKeyRotationStatusInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetKeyRotationStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyRotationStatusInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyPolicyInput {
     /// <p>Gets the key policy for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11698,18 +11567,10 @@ impl GetKeyPolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetKeyPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyPolicyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateRandomInput {
     /// <p>The length of the random byte string. This parameter is required.</p>
     #[doc(hidden)]
@@ -11726,14 +11587,6 @@ impl GenerateRandomInput {
     /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateRandomInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateRandomInput");
-        formatter.field("number_of_bytes", &self.number_of_bytes);
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.finish()
     }
 }
 
@@ -11793,7 +11646,7 @@ impl std::fmt::Debug for GenerateMacInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataKeyWithoutPlaintextInput {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -11861,21 +11714,10 @@ impl GenerateDataKeyWithoutPlaintextInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataKeyWithoutPlaintextInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("key_spec", &self.key_spec);
-        formatter.field("number_of_bytes", &self.number_of_bytes);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataKeyPairWithoutPlaintextInput {
     /// <p>Specifies the encryption context that will be used when encrypting the private key in the data key pair.</p>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
@@ -11938,20 +11780,10 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateDataKeyPairWithoutPlaintextInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataKeyPairWithoutPlaintextInput");
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("key_pair_spec", &self.key_pair_spec);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataKeyPairInput {
     /// <p>Specifies the encryption context that will be used when encrypting the private key in the data key pair.</p>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
@@ -12014,20 +11846,10 @@ impl GenerateDataKeyPairInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateDataKeyPairInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataKeyPairInput");
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("key_pair_spec", &self.key_pair_spec);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataKeyInput {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -12097,17 +11919,6 @@ impl GenerateDataKeyInput {
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn grant_tokens(&self) -> std::option::Option<&[std::string::String]> {
         self.grant_tokens.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateDataKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("number_of_bytes", &self.number_of_bytes);
-        formatter.field("key_spec", &self.key_spec);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
     }
 }
 
@@ -12199,7 +12010,7 @@ impl std::fmt::Debug for EncryptInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableKeyRotationInput {
     /// <p>Identifies a symmetric encryption KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. The key rotation status of these KMS keys is always <code>false</code>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region keys</a>, set the property on the primary key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12225,17 +12036,10 @@ impl EnableKeyRotationInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableKeyRotationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableKeyRotationInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableKeyInput {
     /// <p>Identifies the KMS key to enable.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12261,17 +12065,10 @@ impl EnableKeyInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectCustomKeyStoreInput {
     /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     #[doc(hidden)]
@@ -12283,17 +12080,10 @@ impl DisconnectCustomKeyStoreInput {
         self.custom_key_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisconnectCustomKeyStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisconnectCustomKeyStoreInput");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableKeyRotationInput {
     /// <p>Identifies a symmetric encryption KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12319,17 +12109,10 @@ impl DisableKeyRotationInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableKeyRotationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableKeyRotationInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableKeyInput {
     /// <p>Identifies the KMS key to disable.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12355,17 +12138,10 @@ impl DisableKeyInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeKeyInput {
     /// <p>Describes the specified KMS key. </p>
     /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.</p>
@@ -12406,18 +12182,10 @@ impl DescribeKeyInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomKeyStoresInput {
     /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, you can use either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
@@ -12454,20 +12222,10 @@ impl DescribeCustomKeyStoresInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCustomKeyStoresInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomKeyStoresInput");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.field("custom_key_store_name", &self.custom_key_store_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialInput {
     /// <p>Identifies the KMS key from which you are deleting imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12493,17 +12251,10 @@ impl DeleteImportedKeyMaterialInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImportedKeyMaterialInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImportedKeyMaterialInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomKeyStoreInput {
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     #[doc(hidden)]
@@ -12515,17 +12266,10 @@ impl DeleteCustomKeyStoreInput {
         self.custom_key_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomKeyStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomKeyStoreInput");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAliasInput {
     /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
     #[doc(hidden)]
@@ -12537,17 +12281,10 @@ impl DeleteAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAliasInput");
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecryptInput {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
     #[doc(hidden)]
@@ -12623,21 +12360,10 @@ impl DecryptInput {
         self.encryption_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for DecryptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecryptInput");
-        formatter.field("ciphertext_blob", &self.ciphertext_blob);
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("encryption_algorithm", &self.encryption_algorithm);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKeyInput {
     /// <p>The key policy to attach to the KMS key. If you do not specify a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
@@ -12876,29 +12602,10 @@ impl CreateKeyInput {
         self.multi_region
     }
 }
-impl std::fmt::Debug for CreateKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKeyInput");
-        formatter.field("policy", &self.policy);
-        formatter.field("description", &self.description);
-        formatter.field("key_usage", &self.key_usage);
-        formatter.field("customer_master_key_spec", &self.customer_master_key_spec);
-        formatter.field("key_spec", &self.key_spec);
-        formatter.field("origin", &self.origin);
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.field(
-            "bypass_policy_lockout_safety_check",
-            &self.bypass_policy_lockout_safety_check,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("multi_region", &self.multi_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGrantInput {
     /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
@@ -12990,19 +12697,6 @@ impl CreateGrantInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGrantInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grantee_principal", &self.grantee_principal);
-        formatter.field("retiring_principal", &self.retiring_principal);
-        formatter.field("operations", &self.operations);
-        formatter.field("constraints", &self.constraints);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -13056,7 +12750,7 @@ impl std::fmt::Debug for CreateCustomKeyStoreInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>. </p>
     /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</p>
@@ -13095,18 +12789,10 @@ impl CreateAliasInput {
         self.target_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasInput");
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("target_key_id", &self.target_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectCustomKeyStoreInput {
     /// <p>Enter the key store ID of the custom key store that you want to connect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     #[doc(hidden)]
@@ -13118,17 +12804,10 @@ impl ConnectCustomKeyStoreInput {
         self.custom_key_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConnectCustomKeyStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectCustomKeyStoreInput");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelKeyDeletionInput {
     /// <p>Identifies the KMS key whose deletion is being canceled.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -13152,12 +12831,5 @@ impl CancelKeyDeletionInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelKeyDeletionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelKeyDeletionInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
     }
 }

@@ -703,7 +703,7 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
 pub mod create_billing_group_input {
 
     /// A builder for [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -831,6 +831,19 @@ pub mod create_billing_group_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("account_grouping", &self.account_grouping);
+            formatter.field("computation_preference", &self.computation_preference);
+            formatter.field("primary_account_id", &self.primary_account_id);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl CreateBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBillingGroup`](crate::operation::CreateBillingGroup)>
@@ -950,7 +963,7 @@ impl CreateBillingGroupInput {
 pub mod create_custom_line_item_input {
 
     /// A builder for [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1079,6 +1092,19 @@ pub mod create_custom_line_item_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("billing_group_arn", &self.billing_group_arn);
+            formatter.field("billing_period_range", &self.billing_period_range);
+            formatter.field("tags", &self.tags);
+            formatter.field("charge_details", &self.charge_details);
+            formatter.finish()
+        }
+    }
 }
 impl CreateCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomLineItem`](crate::operation::CreateCustomLineItem)>
@@ -1201,7 +1227,7 @@ impl CreateCustomLineItemInput {
 pub mod create_pricing_plan_input {
 
     /// A builder for [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1300,6 +1326,17 @@ pub mod create_pricing_plan_input {
                 pricing_rule_arns: self.pricing_rule_arns,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("pricing_rule_arns", &self.pricing_rule_arns);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1421,7 +1458,7 @@ impl CreatePricingPlanInput {
 pub mod create_pricing_rule_input {
 
     /// A builder for [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1553,6 +1590,20 @@ pub mod create_pricing_rule_input {
                 service: self.service,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("scope", &self.scope);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("modifier_percentage", &self.modifier_percentage);
+            formatter.field("service", &self.service);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -4780,7 +4831,7 @@ impl UntagResourceInput {
 pub mod update_billing_group_input {
 
     /// A builder for [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4862,6 +4913,17 @@ pub mod update_billing_group_input {
                 computation_preference: self.computation_preference,
                 description: self.description,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("computation_preference", &self.computation_preference);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4979,7 +5041,7 @@ impl UpdateBillingGroupInput {
 pub mod update_custom_line_item_input {
 
     /// A builder for [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5066,6 +5128,17 @@ pub mod update_custom_line_item_input {
                 charge_details: self.charge_details,
                 billing_period_range: self.billing_period_range,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("charge_details", &self.charge_details);
+            formatter.field("billing_period_range", &self.billing_period_range);
+            formatter.finish()
         }
     }
 }
@@ -5185,7 +5258,7 @@ impl UpdateCustomLineItemInput {
 pub mod update_pricing_plan_input {
 
     /// A builder for [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5234,6 +5307,15 @@ pub mod update_pricing_plan_input {
                 name: self.name,
                 description: self.description,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -5351,7 +5433,7 @@ impl UpdatePricingPlanInput {
 pub mod update_pricing_rule_input {
 
     /// A builder for [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5427,6 +5509,17 @@ pub mod update_pricing_rule_input {
                 r#type: self.r#type,
                 modifier_percentage: self.modifier_percentage,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("modifier_percentage", &self.modifier_percentage);
+            formatter.finish()
         }
     }
 }
@@ -5542,7 +5635,7 @@ impl UpdatePricingRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingRulesAssociatedToPricingPlanInput {
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
     #[doc(hidden)]
@@ -5575,20 +5668,10 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPricingRulesAssociatedToPricingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingRulesAssociatedToPricingPlanInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("pricing_plan_arn", &self.pricing_plan_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingRulesInput {
     /// <p> The preferred billing period to get the pricing plan. </p>
     #[doc(hidden)]
@@ -5619,16 +5702,6 @@ impl ListPricingRulesInput {
     /// <p> The pagination token used on subsequent call to get pricing rules. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPricingRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingRulesInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -5716,7 +5789,7 @@ impl std::fmt::Debug for CreatePricingRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
     #[doc(hidden)]
@@ -5726,13 +5799,6 @@ impl DeletePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeletePricingRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePricingRuleInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 
@@ -5792,7 +5858,7 @@ impl std::fmt::Debug for UpdatePricingRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociatePricingRulesInput {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     #[doc(hidden)]
@@ -5811,18 +5877,10 @@ impl DisassociatePricingRulesInput {
         self.pricing_rule_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociatePricingRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociatePricingRulesInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("pricing_rule_arns", &self.pricing_rule_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePricingRulesInput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
     #[doc(hidden)]
@@ -5841,18 +5899,10 @@ impl AssociatePricingRulesInput {
         self.pricing_rule_arns.as_deref()
     }
 }
-impl std::fmt::Debug for AssociatePricingRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePricingRulesInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("pricing_rule_arns", &self.pricing_rule_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingPlansAssociatedWithPricingRuleInput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
     #[doc(hidden)]
@@ -5885,20 +5935,10 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPricingPlansAssociatedWithPricingRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingPlansAssociatedWithPricingRuleInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("pricing_rule_arn", &self.pricing_rule_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingPlansInput {
     /// <p>The preferred billing period to get pricing plan. </p>
     #[doc(hidden)]
@@ -5929,16 +5969,6 @@ impl ListPricingPlansInput {
     /// <p>The pagination token used on subsequent call to get pricing plans. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPricingPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingPlansInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -6002,7 +6032,7 @@ impl std::fmt::Debug for CreatePricingPlanInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
     #[doc(hidden)]
@@ -6012,13 +6042,6 @@ impl DeletePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeletePricingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePricingPlanInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 
@@ -6062,7 +6085,7 @@ impl std::fmt::Debug for UpdatePricingPlanInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemInput {
     /// <p> The billing period for which the resource associations will be listed. </p>
     #[doc(hidden)]
@@ -6104,21 +6127,10 @@ impl ListResourcesAssociatedToCustomLineItemInput {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourcesAssociatedToCustomLineItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesAssociatedToCustomLineItemInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("arn", &self.arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemInput {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
     #[doc(hidden)]
@@ -6146,19 +6158,10 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
         self.billing_period_range.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateResourcesFromCustomLineItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDisassociateResourcesFromCustomLineItemInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("billing_period_range", &self.billing_period_range);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateResourcesToCustomLineItemInput {
     /// <p> A percentage custom line item ARN to associate the resources to. </p>
     #[doc(hidden)]
@@ -6186,19 +6189,10 @@ impl BatchAssociateResourcesToCustomLineItemInput {
         self.billing_period_range.as_ref()
     }
 }
-impl std::fmt::Debug for BatchAssociateResourcesToCustomLineItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAssociateResourcesToCustomLineItemInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("billing_period_range", &self.billing_period_range);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemsInput {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
     #[doc(hidden)]
@@ -6229,16 +6223,6 @@ impl ListCustomLineItemsInput {
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ListCustomLineItemsFilter> {
         self.filters.as_ref()
-    }
-}
-impl std::fmt::Debug for ListCustomLineItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemsInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 
@@ -6322,7 +6306,7 @@ impl std::fmt::Debug for CreateCustomLineItemInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomLineItemInput {
     /// <p> The ARN of the custom line item to be deleted. </p>
     #[doc(hidden)]
@@ -6341,14 +6325,6 @@ impl DeleteCustomLineItemInput {
         &self,
     ) -> std::option::Option<&crate::model::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteCustomLineItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomLineItemInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("billing_period_range", &self.billing_period_range);
-        formatter.finish()
     }
 }
 
@@ -6412,7 +6388,7 @@ impl std::fmt::Debug for UpdateCustomLineItemInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAccountsInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     #[doc(hidden)]
@@ -6431,18 +6407,10 @@ impl DisassociateAccountsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAccountsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAccountsInput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     #[doc(hidden)]
@@ -6461,18 +6429,10 @@ impl AssociateAccountsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAccountsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBillingGroupsInput {
     /// <p>The preferred billing period to get billing groups. </p>
     #[doc(hidden)]
@@ -6503,16 +6463,6 @@ impl ListBillingGroupsInput {
     /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ListBillingGroupsFilter> {
         self.filters.as_ref()
-    }
-}
-impl std::fmt::Debug for ListBillingGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBillingGroupsInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 
@@ -6594,7 +6544,7 @@ impl std::fmt::Debug for CreateBillingGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
     #[doc(hidden)]
@@ -6604,13 +6554,6 @@ impl DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteBillingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBillingGroupInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 
@@ -6672,7 +6615,7 @@ impl std::fmt::Debug for UpdateBillingGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to delete tags. </p>
     #[doc(hidden)]
@@ -6691,18 +6634,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
     #[doc(hidden)]
@@ -6725,18 +6660,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) that identifies the resource to list the tags. </p>
     #[doc(hidden)]
@@ -6748,17 +6675,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsInput {
     /// <p>The preferred billing period for your report. </p>
     #[doc(hidden)]
@@ -6791,20 +6711,10 @@ impl ListBillingGroupCostReportsInput {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for ListBillingGroupCostReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBillingGroupCostReportsInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccountAssociationsInput {
     /// <p> The preferred billing period to get account associations. </p>
     #[doc(hidden)]
@@ -6834,14 +6744,5 @@ impl ListAccountAssociationsInput {
     /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAccountAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccountAssociationsInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

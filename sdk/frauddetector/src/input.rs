@@ -1829,7 +1829,7 @@ impl CreateModelVersionInput {
 pub mod create_rule_input {
 
     /// A builder for [`CreateRuleInput`](crate::input::CreateRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
         pub(crate) detector_id: std::option::Option<std::string::String>,
@@ -1942,6 +1942,19 @@ pub mod create_rule_input {
                 outcomes: self.outcomes,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("rule_id", &self.rule_id);
+            formatter.field("detector_id", &self.detector_id);
+            formatter.field("description", &self.description);
+            formatter.field("expression", &"*** Sensitive Data Redacted ***");
+            formatter.field("language", &self.language);
+            formatter.field("outcomes", &self.outcomes);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -6104,7 +6117,7 @@ impl GetEventInput {
 pub mod get_event_prediction_input {
 
     /// A builder for [`GetEventPredictionInput`](crate::input::GetEventPredictionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) detector_id: std::option::Option<std::string::String>,
         pub(crate) detector_version_id: std::option::Option<std::string::String>,
@@ -6279,6 +6292,23 @@ pub mod get_event_prediction_input {
                 event_variables: self.event_variables,
                 external_model_endpoint_data_blobs: self.external_model_endpoint_data_blobs,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("detector_id", &self.detector_id);
+            formatter.field("detector_version_id", &self.detector_version_id);
+            formatter.field("event_id", &self.event_id);
+            formatter.field("event_type_name", &self.event_type_name);
+            formatter.field("entities", &self.entities);
+            formatter.field("event_timestamp", &self.event_timestamp);
+            formatter.field("event_variables", &self.event_variables);
+            formatter.field(
+                "external_model_endpoint_data_blobs",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
         }
     }
 }
@@ -12065,7 +12095,7 @@ impl UpdateRuleMetadataInput {
 pub mod update_rule_version_input {
 
     /// A builder for [`UpdateRuleVersionInput`](crate::input::UpdateRuleVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -12168,6 +12198,18 @@ pub mod update_rule_version_input {
                 outcomes: self.outcomes,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("rule", &self.rule);
+            formatter.field("description", &self.description);
+            formatter.field("expression", &"*** Sensitive Data Redacted ***");
+            formatter.field("language", &self.language);
+            formatter.field("outcomes", &self.outcomes);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -12475,7 +12517,7 @@ impl UpdateVariableInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVariableInput {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -12506,16 +12548,6 @@ impl UpdateVariableInput {
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn variable_type(&self) -> std::option::Option<&str> {
         self.variable_type.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateVariableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVariableInput");
-        formatter.field("name", &self.name);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("description", &self.description);
-        formatter.field("variable_type", &self.variable_type);
-        formatter.finish()
     }
 }
 
@@ -12583,7 +12615,7 @@ impl std::fmt::Debug for UpdateRuleVersionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuleMetadataInput {
     /// <p>The rule to update.</p>
     #[doc(hidden)]
@@ -12602,18 +12634,10 @@ impl UpdateRuleMetadataInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRuleMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuleMetadataInput");
-        formatter.field("rule", &self.rule);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelVersionStatusInput {
     /// <p>The model ID of the model version to update.</p>
     #[doc(hidden)]
@@ -12646,20 +12670,10 @@ impl UpdateModelVersionStatusInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateModelVersionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateModelVersionStatusInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("model_version_number", &self.model_version_number);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelVersionInput {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -12710,22 +12724,10 @@ impl UpdateModelVersionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateModelVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateModelVersionInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("major_version_number", &self.major_version_number);
-        formatter.field("external_events_detail", &self.external_events_detail);
-        formatter.field("ingested_events_detail", &self.ingested_events_detail);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelInput {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -12751,19 +12753,10 @@ impl UpdateModelInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateModelInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventLabelInput {
     /// <p>The ID of the event associated with the label to update.</p>
     #[doc(hidden)]
@@ -12796,20 +12789,10 @@ impl UpdateEventLabelInput {
         self.label_timestamp.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEventLabelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventLabelInput");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("assigned_label", &self.assigned_label);
-        formatter.field("label_timestamp", &self.label_timestamp);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDetectorVersionStatusInput {
     /// <p>The detector ID. </p>
     #[doc(hidden)]
@@ -12835,19 +12818,10 @@ impl UpdateDetectorVersionStatusInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDetectorVersionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDetectorVersionStatusInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDetectorVersionMetadataInput {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
@@ -12873,19 +12847,10 @@ impl UpdateDetectorVersionMetadataInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDetectorVersionMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDetectorVersionMetadataInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDetectorVersionInput {
     /// <p>The parent detector ID for the detector version you want to update.</p>
     #[doc(hidden)]
@@ -12945,23 +12910,10 @@ impl UpdateDetectorVersionInput {
         self.rule_execution_mode.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDetectorVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDetectorVersionInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.field("external_model_endpoints", &self.external_model_endpoints);
-        formatter.field("rules", &self.rules);
-        formatter.field("description", &self.description);
-        formatter.field("model_versions", &self.model_versions);
-        formatter.field("rule_execution_mode", &self.rule_execution_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource from which to remove the tag.</p>
     #[doc(hidden)]
@@ -12980,18 +12932,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -13010,18 +12954,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendEventInput {
     /// <p>The event ID to upload.</p>
     #[doc(hidden)]
@@ -13079,23 +13015,10 @@ impl SendEventInput {
         self.entities.as_deref()
     }
 }
-impl std::fmt::Debug for SendEventInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendEventInput");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("event_timestamp", &self.event_timestamp);
-        formatter.field("event_variables", &self.event_variables);
-        formatter.field("assigned_label", &self.assigned_label);
-        formatter.field("label_timestamp", &self.label_timestamp);
-        formatter.field("entities", &self.entities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutOutcomeInput {
     /// <p>The name of the outcome.</p>
     #[doc(hidden)]
@@ -13121,19 +13044,10 @@ impl PutOutcomeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutOutcomeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutOutcomeInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLabelInput {
     /// <p>The label name.</p>
     #[doc(hidden)]
@@ -13159,19 +13073,10 @@ impl PutLabelInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutLabelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLabelInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutKmsEncryptionKeyInput {
     /// <p>The KMS encryption key ARN.</p>
     #[doc(hidden)]
@@ -13183,17 +13088,10 @@ impl PutKmsEncryptionKeyInput {
         self.kms_encryption_key_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutKmsEncryptionKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutKmsEncryptionKeyInput");
-        formatter.field("kms_encryption_key_arn", &self.kms_encryption_key_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutExternalModelInput {
     /// <p>The model endpoints name.</p>
     #[doc(hidden)]
@@ -13251,26 +13149,10 @@ impl PutExternalModelInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutExternalModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutExternalModelInput");
-        formatter.field("model_endpoint", &self.model_endpoint);
-        formatter.field("model_source", &self.model_source);
-        formatter.field(
-            "invoke_model_endpoint_role_arn",
-            &self.invoke_model_endpoint_role_arn,
-        );
-        formatter.field("input_configuration", &self.input_configuration);
-        formatter.field("output_configuration", &self.output_configuration);
-        formatter.field("model_endpoint_status", &self.model_endpoint_status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventTypeInput {
     /// <p>The name.</p>
     #[doc(hidden)]
@@ -13324,23 +13206,10 @@ impl PutEventTypeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutEventTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventTypeInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("event_variables", &self.event_variables);
-        formatter.field("labels", &self.labels);
-        formatter.field("entity_types", &self.entity_types);
-        formatter.field("event_ingestion", &self.event_ingestion);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEntityTypeInput {
     /// <p>The name of the entity type.</p>
     #[doc(hidden)]
@@ -13366,19 +13235,10 @@ impl PutEntityTypeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutEntityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEntityTypeInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDetectorInput {
     /// <p>The detector ID. </p>
     #[doc(hidden)]
@@ -13411,20 +13271,10 @@ impl PutDetectorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDetectorInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("description", &self.description);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN that specifies the resource whose tags you want to list.</p>
     #[doc(hidden)]
@@ -13450,19 +13300,10 @@ impl ListTagsForResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventPredictionsInput {
     /// <p> The event ID. </p>
     #[doc(hidden)]
@@ -13516,23 +13357,10 @@ impl ListEventPredictionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEventPredictionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventPredictionsInput");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.field("prediction_time_range", &self.prediction_time_range);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVariablesInput {
     /// <p>The name of the variable. </p>
     #[doc(hidden)]
@@ -13558,19 +13386,10 @@ impl GetVariablesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetVariablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVariablesInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRulesInput {
     /// <p>The rule ID.</p>
     #[doc(hidden)]
@@ -13610,21 +13429,10 @@ impl GetRulesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRulesInput");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("rule_version", &self.rule_version);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOutcomesInput {
     /// <p>The name of the outcome or outcomes to get.</p>
     #[doc(hidden)]
@@ -13650,19 +13458,10 @@ impl GetOutcomesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetOutcomesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOutcomesInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelVersionInput {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -13688,19 +13487,10 @@ impl GetModelVersionInput {
         self.model_version_number.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelVersionInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("model_version_number", &self.model_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelsInput {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -13733,20 +13523,10 @@ impl GetModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelsInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLabelsInput {
     /// <p>The name of the label or labels to get.</p>
     #[doc(hidden)]
@@ -13772,30 +13552,15 @@ impl GetLabelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetLabelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLabelsInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKmsEncryptionKeyInput {}
-impl std::fmt::Debug for GetKmsEncryptionKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKmsEncryptionKeyInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExternalModelsInput {
     /// <p>The Amazon SageMaker model endpoint.</p>
     #[doc(hidden)]
@@ -13821,19 +13586,10 @@ impl GetExternalModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetExternalModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExternalModelsInput");
-        formatter.field("model_endpoint", &self.model_endpoint);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventTypesInput {
     /// <p>The name.</p>
     #[doc(hidden)]
@@ -13859,19 +13615,10 @@ impl GetEventTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetEventTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventTypesInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventPredictionMetadataInput {
     /// <p> The event ID. </p>
     #[doc(hidden)]
@@ -13911,17 +13658,6 @@ impl GetEventPredictionMetadataInput {
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn prediction_timestamp(&self) -> std::option::Option<&str> {
         self.prediction_timestamp.as_deref()
-    }
-}
-impl std::fmt::Debug for GetEventPredictionMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventPredictionMetadataInput");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.field("prediction_timestamp", &self.prediction_timestamp);
-        formatter.finish()
     }
 }
 
@@ -14032,7 +13768,7 @@ impl std::fmt::Debug for GetEventPredictionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventInput {
     /// <p>The ID of the event to retrieve.</p>
     #[doc(hidden)]
@@ -14051,18 +13787,10 @@ impl GetEventInput {
         self.event_type_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventInput");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEntityTypesInput {
     /// <p>The name.</p>
     #[doc(hidden)]
@@ -14088,19 +13816,10 @@ impl GetEntityTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetEntityTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEntityTypesInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDetectorVersionInput {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
@@ -14119,18 +13838,10 @@ impl GetDetectorVersionInput {
         self.detector_version_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDetectorVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDetectorVersionInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDetectorsInput {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
@@ -14156,19 +13867,10 @@ impl GetDetectorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetDetectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDetectorsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeleteEventsByEventTypeStatusInput {
     /// <p>Name of event type for which to get the deletion status.</p>
     #[doc(hidden)]
@@ -14180,17 +13882,10 @@ impl GetDeleteEventsByEventTypeStatusInput {
         self.event_type_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeleteEventsByEventTypeStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeleteEventsByEventTypeStatusInput");
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBatchPredictionJobsInput {
     /// <p>The batch prediction job for which to get the details.</p>
     #[doc(hidden)]
@@ -14216,19 +13911,10 @@ impl GetBatchPredictionJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetBatchPredictionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBatchPredictionJobsInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBatchImportJobsInput {
     /// <p>The ID of the batch import job to get.</p>
     #[doc(hidden)]
@@ -14254,19 +13940,10 @@ impl GetBatchImportJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetBatchImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBatchImportJobsInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeModelVersionsInput {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -14306,21 +13983,10 @@ impl DescribeModelVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeModelVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeModelVersionsInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_version_number", &self.model_version_number);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDetectorInput {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
@@ -14346,19 +14012,10 @@ impl DescribeDetectorInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDetectorInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVariableInput {
     /// <p>The name of the variable to delete.</p>
     #[doc(hidden)]
@@ -14370,17 +14027,10 @@ impl DeleteVariableInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVariableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVariableInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleInput {
     /// <p>A rule.</p>
     #[doc(hidden)]
@@ -14392,17 +14042,10 @@ impl DeleteRuleInput {
         self.rule.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleInput");
-        formatter.field("rule", &self.rule);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOutcomeInput {
     /// <p>The name of the outcome to delete.</p>
     #[doc(hidden)]
@@ -14414,17 +14057,10 @@ impl DeleteOutcomeInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOutcomeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOutcomeInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelVersionInput {
     /// <p>The model ID of the model version to delete.</p>
     #[doc(hidden)]
@@ -14450,19 +14086,10 @@ impl DeleteModelVersionInput {
         self.model_version_number.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteModelVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteModelVersionInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("model_version_number", &self.model_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelInput {
     /// <p>The model ID of the model to delete.</p>
     #[doc(hidden)]
@@ -14481,18 +14108,10 @@ impl DeleteModelInput {
         self.model_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteModelInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLabelInput {
     /// <p>The name of the label to delete.</p>
     #[doc(hidden)]
@@ -14504,17 +14123,10 @@ impl DeleteLabelInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLabelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLabelInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExternalModelInput {
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
     #[doc(hidden)]
@@ -14526,17 +14138,10 @@ impl DeleteExternalModelInput {
         self.model_endpoint.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteExternalModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExternalModelInput");
-        formatter.field("model_endpoint", &self.model_endpoint);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventTypeInput {
     /// <p>The name of the event type to delete.</p>
     #[doc(hidden)]
@@ -14548,17 +14153,10 @@ impl DeleteEventTypeInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventTypeInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventsByEventTypeInput {
     /// <p>The name of the event type.</p>
     #[doc(hidden)]
@@ -14570,17 +14168,10 @@ impl DeleteEventsByEventTypeInput {
         self.event_type_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventsByEventTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventsByEventTypeInput");
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventInput {
     /// <p>The ID of the event to delete.</p>
     #[doc(hidden)]
@@ -14606,19 +14197,10 @@ impl DeleteEventInput {
         self.delete_audit_history
     }
 }
-impl std::fmt::Debug for DeleteEventInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventInput");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("delete_audit_history", &self.delete_audit_history);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEntityTypeInput {
     /// <p>The name of the entity type to delete.</p>
     #[doc(hidden)]
@@ -14630,17 +14212,10 @@ impl DeleteEntityTypeInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEntityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEntityTypeInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDetectorVersionInput {
     /// <p>The ID of the parent detector for the detector version to delete.</p>
     #[doc(hidden)]
@@ -14659,18 +14234,10 @@ impl DeleteDetectorVersionInput {
         self.detector_version_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDetectorVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDetectorVersionInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDetectorInput {
     /// <p>The ID of the detector to delete.</p>
     #[doc(hidden)]
@@ -14682,17 +14249,10 @@ impl DeleteDetectorInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDetectorInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job to delete.</p>
     #[doc(hidden)]
@@ -14704,17 +14264,10 @@ impl DeleteBatchPredictionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBatchPredictionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBatchPredictionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBatchImportJobInput {
     /// <p>The ID of the batch import job to delete. </p>
     #[doc(hidden)]
@@ -14726,17 +14279,10 @@ impl DeleteBatchImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBatchImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBatchImportJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVariableInput {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -14790,19 +14336,6 @@ impl CreateVariableInput {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateVariableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVariableInput");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("description", &self.description);
-        formatter.field("variable_type", &self.variable_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -14878,7 +14411,7 @@ impl std::fmt::Debug for CreateRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelVersionInput {
     /// <p>The model ID. </p>
     #[doc(hidden)]
@@ -14938,23 +14471,10 @@ impl CreateModelVersionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateModelVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateModelVersionInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("training_data_source", &self.training_data_source);
-        formatter.field("training_data_schema", &self.training_data_schema);
-        formatter.field("external_events_detail", &self.external_events_detail);
-        formatter.field("ingested_events_detail", &self.ingested_events_detail);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelInput {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -14994,21 +14514,10 @@ impl CreateModelInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateModelInput");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("description", &self.description);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDetectorVersionInput {
     /// <p>The ID of the detector under which you want to create a new version.</p>
     #[doc(hidden)]
@@ -15070,23 +14579,10 @@ impl CreateDetectorVersionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDetectorVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDetectorVersionInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("description", &self.description);
-        formatter.field("external_model_endpoints", &self.external_model_endpoints);
-        formatter.field("rules", &self.rules);
-        formatter.field("model_versions", &self.model_versions);
-        formatter.field("rule_execution_mode", &self.rule_execution_mode);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job.</p>
     #[doc(hidden)]
@@ -15147,24 +14643,10 @@ impl CreateBatchPredictionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBatchPredictionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBatchPredictionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("input_path", &self.input_path);
-        formatter.field("output_path", &self.output_path);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("detector_name", &self.detector_name);
-        formatter.field("detector_version", &self.detector_version);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBatchImportJobInput {
     /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
     #[doc(hidden)]
@@ -15211,22 +14693,10 @@ impl CreateBatchImportJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBatchImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBatchImportJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("input_path", &self.input_path);
-        formatter.field("output_path", &self.output_path);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job to cancel.</p>
     #[doc(hidden)]
@@ -15238,17 +14708,10 @@ impl CancelBatchPredictionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelBatchPredictionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelBatchPredictionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelBatchImportJobInput {
     /// <p> The ID of an in-progress batch import job to cancel. </p>
     /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
@@ -15262,17 +14725,10 @@ impl CancelBatchImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelBatchImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelBatchImportJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetVariableInput {
     /// <p>The list of variable names to get.</p>
     #[doc(hidden)]
@@ -15284,17 +14740,10 @@ impl BatchGetVariableInput {
         self.names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetVariableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetVariableInput");
-        formatter.field("names", &self.names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateVariableInput {
     /// <p>The list of variables for the batch create variable request.</p>
     #[doc(hidden)]
@@ -15311,13 +14760,5 @@ impl BatchCreateVariableInput {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateVariableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateVariableInput");
-        formatter.field("variable_entries", &self.variable_entries);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

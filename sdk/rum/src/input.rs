@@ -1851,7 +1851,7 @@ impl UpdateAppMonitorInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppMonitorDataInput {
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
     #[doc(hidden)]
@@ -1891,21 +1891,10 @@ impl GetAppMonitorDataInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAppMonitorDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppMonitorDataInput");
-        formatter.field("name", &self.name);
-        formatter.field("time_range", &self.time_range);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppMonitorInput {
     /// <p>A name for the app monitor.</p>
     #[doc(hidden)]
@@ -1963,21 +1952,10 @@ impl CreateAppMonitorInput {
         self.cw_log_enabled
     }
 }
-impl std::fmt::Debug for CreateAppMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppMonitorInput");
-        formatter.field("name", &self.name);
-        formatter.field("domain", &self.domain);
-        formatter.field("tags", &self.tags);
-        formatter.field("app_monitor_configuration", &self.app_monitor_configuration);
-        formatter.field("cw_log_enabled", &self.cw_log_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAppMonitorsInput {
     /// <p>The maximum number of results to return in one operation. </p>
     #[doc(hidden)]
@@ -1996,18 +1974,10 @@ impl ListAppMonitorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAppMonitorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAppMonitorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppMonitorInput {
     /// <p>The name of the app monitor to delete.</p>
     #[doc(hidden)]
@@ -2019,17 +1989,10 @@ impl DeleteAppMonitorInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppMonitorInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAppMonitorInput {
     /// <p>The name of the app monitor to update.</p>
     #[doc(hidden)]
@@ -2064,20 +2027,10 @@ impl UpdateAppMonitorInput {
         self.cw_log_enabled
     }
 }
-impl std::fmt::Debug for UpdateAppMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAppMonitorInput");
-        formatter.field("name", &self.name);
-        formatter.field("domain", &self.domain);
-        formatter.field("app_monitor_configuration", &self.app_monitor_configuration);
-        formatter.field("cw_log_enabled", &self.cw_log_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppMonitorInput {
     /// <p>The app monitor to retrieve information for.</p>
     #[doc(hidden)]
@@ -2089,17 +2042,10 @@ impl GetAppMonitorInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAppMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppMonitorInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the CloudWatch RUM resource that you're removing tags from.</p>
     #[doc(hidden)]
@@ -2118,18 +2064,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the CloudWatch RUM resource that you're adding tags to.</p>
     #[doc(hidden)]
@@ -2152,18 +2090,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRumEventsInput {
     /// <p>The ID of the app monitor that is sending this data.</p>
     #[doc(hidden)]
@@ -2203,21 +2133,10 @@ impl PutRumEventsInput {
         self.rum_events.as_deref()
     }
 }
-impl std::fmt::Debug for PutRumEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRumEventsInput");
-        formatter.field("id", &self.id);
-        formatter.field("batch_id", &self.batch_id);
-        formatter.field("app_monitor_details", &self.app_monitor_details);
-        formatter.field("user_details", &self.user_details);
-        formatter.field("rum_events", &self.rum_events);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource that you want to see the tags of.</p>
     #[doc(hidden)]
@@ -2227,12 +2146,5 @@ impl ListTagsForResourceInput {
     /// <p>The ARN of the resource that you want to see the tags of.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

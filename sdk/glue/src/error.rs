@@ -2,18 +2,11 @@
 
 /// <p>The operation timed out.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationTimeoutException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OperationTimeoutException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationTimeoutException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OperationTimeoutException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl OperationTimeoutException {
 
 /// <p>The input provided was not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInputException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInputException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInputException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInputException {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl InvalidInputException {
 
 /// <p>An internal service error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServiceException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServiceException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalServiceException {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl InternalServiceException {
 
 /// <p>A specified entity does not exist</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityNotFoundException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EntityNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EntityNotFoundException {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl EntityNotFoundException {
 
 /// <p>Two processes are trying to modify a resource simultaneously.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentModificationException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModificationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl ConcurrentModificationException {
 
 /// <p>An encryption operation failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueEncryptionException {
     /// <p>The message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GlueEncryptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueEncryptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl GlueEncryptionException {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl GlueEncryptionException {
 
 /// <p>A resource numerical limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNumberLimitExceededException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNumberLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNumberLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNumberLimitExceededException {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl ResourceNumberLimitExceededException {
 
 /// <p>A resource was not ready for a transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotReadyException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotReadyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotReadyException {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl ResourceNotReadyException {
 
 /// <p>Access to a resource was denied.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessDeniedException {
     /// Returns the error message.
@@ -605,18 +542,11 @@ impl AccessDeniedException {
 
 /// <p>A value could not be validated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ValidationException {
     /// Returns the error message.
@@ -672,18 +602,11 @@ impl ValidationException {
 
 /// <p>There was a version conflict.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersionMismatchException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for VersionMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersionMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl VersionMismatchException {
     /// Returns the error message.
@@ -739,18 +662,11 @@ impl VersionMismatchException {
 
 /// <p>The specified scheduler is transitioning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchedulerTransitioningException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SchedulerTransitioningException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchedulerTransitioningException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SchedulerTransitioningException {
     /// Returns the error message.
@@ -806,18 +722,11 @@ impl SchedulerTransitioningException {
 
 /// <p>The operation cannot be performed because the crawler is already running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrawlerRunningException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CrawlerRunningException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrawlerRunningException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CrawlerRunningException {
     /// Returns the error message.
@@ -873,18 +782,11 @@ impl CrawlerRunningException {
 
 /// <p>The blueprint is in an invalid state to perform a requested operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IllegalBlueprintStateException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IllegalBlueprintStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IllegalBlueprintStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IllegalBlueprintStateException {
     /// Returns the error message.
@@ -940,18 +842,11 @@ impl IllegalBlueprintStateException {
 
 /// <p>The workflow is in an invalid state to perform a requested operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IllegalWorkflowStateException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IllegalWorkflowStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IllegalWorkflowStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IllegalWorkflowStateException {
     /// Returns the error message.
@@ -1007,18 +902,11 @@ impl IllegalWorkflowStateException {
 
 /// <p>The session is in an invalid state to perform a requested operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IllegalSessionStateException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IllegalSessionStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IllegalSessionStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IllegalSessionStateException {
     /// Returns the error message.
@@ -1074,18 +962,11 @@ impl IllegalSessionStateException {
 
 /// <p>The specified scheduler is not running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchedulerNotRunningException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SchedulerNotRunningException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchedulerNotRunningException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SchedulerNotRunningException {
     /// Returns the error message.
@@ -1141,18 +1022,11 @@ impl SchedulerNotRunningException {
 
 /// <p>The specified crawler is stopping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrawlerStoppingException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CrawlerStoppingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrawlerStoppingException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CrawlerStoppingException {
     /// Returns the error message.
@@ -1208,18 +1082,11 @@ impl CrawlerStoppingException {
 
 /// <p>The specified crawler is not running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrawlerNotRunningException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CrawlerNotRunningException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrawlerNotRunningException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CrawlerNotRunningException {
     /// Returns the error message.
@@ -1275,18 +1142,11 @@ impl CrawlerNotRunningException {
 
 /// <p>Too many jobs are being run concurrently.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentRunsExceededException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConcurrentRunsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentRunsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConcurrentRunsExceededException {
     /// Returns the error message.
@@ -1342,18 +1202,11 @@ impl ConcurrentRunsExceededException {
 
 /// <p>The machine learning transform is not ready to run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MlTransformNotReadyException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MlTransformNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MlTransformNotReadyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MlTransformNotReadyException {
     /// Returns the error message.
@@ -1412,18 +1265,11 @@ impl MlTransformNotReadyException {
 
 /// <p>The specified scheduler is already running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchedulerRunningException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SchedulerRunningException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchedulerRunningException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SchedulerRunningException {
     /// Returns the error message.
@@ -1479,18 +1325,11 @@ impl SchedulerRunningException {
 
 /// <p>There is no applicable schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoScheduleException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoScheduleException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoScheduleException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoScheduleException {
     /// Returns the error message.
@@ -1546,18 +1385,11 @@ impl NoScheduleException {
 
 /// <p>A resource to be created or added already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlreadyExistsException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AlreadyExistsException {
     /// Returns the error message.
@@ -1613,18 +1445,11 @@ impl AlreadyExistsException {
 
 /// <p>A specified condition was not satisfied.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionCheckFailureException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConditionCheckFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionCheckFailureException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConditionCheckFailureException {
     /// Returns the error message.
@@ -1680,18 +1505,11 @@ impl ConditionCheckFailureException {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionTypeMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PermissionTypeMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionTypeMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PermissionTypeMismatchException {
     /// Returns the error message.
@@ -1747,18 +1565,11 @@ impl PermissionTypeMismatchException {
 
 /// <p>An error that indicates your data is in an invalid state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidStateException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidStateException {
     /// Returns the error message.
@@ -1814,18 +1625,11 @@ impl InvalidStateException {
 
 /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConflictException {
     /// Returns the error message.
@@ -1881,18 +1685,11 @@ impl ConflictException {
 
 /// <p>The same unique identifier was associated with two different records.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdempotentParameterMismatchException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IdempotentParameterMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotentParameterMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IdempotentParameterMismatchException {
     /// Returns the error message.

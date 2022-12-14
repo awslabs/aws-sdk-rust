@@ -466,7 +466,7 @@ impl GetSessionInput {
 pub mod post_content_input {
 
     /// A builder for [`PostContentInput`](crate::input::PostContentInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -689,6 +689,21 @@ pub mod post_content_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bot_name", &self.bot_name);
+            formatter.field("bot_alias", &self.bot_alias);
+            formatter.field("user_id", &self.user_id);
+            formatter.field("session_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("request_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("content_type", &self.content_type);
+            formatter.field("accept", &self.accept);
+            formatter.field("input_stream", &self.input_stream);
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl PostContentInput {
     /// Consumes the builder and constructs an Operation<[`PostContent`](crate::operation::PostContent)>
@@ -874,7 +889,7 @@ impl PostContentInput {
 pub mod post_text_input {
 
     /// A builder for [`PostTextInput`](crate::input::PostTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -1034,6 +1049,19 @@ pub mod post_text_input {
                 input_text: self.input_text,
                 active_contexts: self.active_contexts,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bot_name", &self.bot_name);
+            formatter.field("bot_alias", &self.bot_alias);
+            formatter.field("user_id", &self.user_id);
+            formatter.field("session_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("request_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("input_text", &"*** Sensitive Data Redacted ***");
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1213,7 +1241,7 @@ impl PostTextInput {
 pub mod put_session_input {
 
     /// A builder for [`PutSessionInput`](crate::input::PutSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -1401,6 +1429,23 @@ pub mod put_session_input {
                 accept: self.accept,
                 active_contexts: self.active_contexts,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bot_name", &self.bot_name);
+            formatter.field("bot_alias", &self.bot_alias);
+            formatter.field("user_id", &self.user_id);
+            formatter.field("session_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("dialog_action", &self.dialog_action);
+            formatter.field(
+                "recent_intent_summary_view",
+                &self.recent_intent_summary_view,
+            );
+            formatter.field("accept", &self.accept);
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1984,7 +2029,7 @@ impl std::fmt::Debug for PostContentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
     #[doc(hidden)]
@@ -2019,20 +2064,10 @@ impl GetSessionInput {
         self.checkpoint_label_filter.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionInput");
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("bot_alias", &self.bot_alias);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("checkpoint_label_filter", &self.checkpoint_label_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
     #[doc(hidden)]
@@ -2056,14 +2091,5 @@ impl DeleteSessionInput {
     /// <p>The identifier of the user associated with the session data.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSessionInput");
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("bot_alias", &self.bot_alias);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
     }
 }

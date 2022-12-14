@@ -2,7 +2,7 @@
 
 /// <p>Returns information about the XML element or attribute that was sanitized in the configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SanitizationWarning {
     /// <p>The name of the XML attribute that has been sanitized.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl SanitizationWarning {
     /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::SanitizationWarningReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for SanitizationWarning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SanitizationWarning");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("element_name", &self.element_name);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`SanitizationWarning`](crate::model::SanitizationWarning).
@@ -208,7 +199,7 @@ impl AsRef<str> for SanitizationWarningReason {
 
 /// <p>Returns information about the specified configuration revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
     #[doc(hidden)]
@@ -232,15 +223,6 @@ impl ConfigurationRevision {
     /// <p>Required. The revision number of the configuration.</p>
     pub fn revision(&self) -> i32 {
         self.revision
-    }
-}
-impl std::fmt::Debug for ConfigurationRevision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationRevision");
-        formatter.field("created", &self.created);
-        formatter.field("description", &self.description);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationRevision`](crate::model::ConfigurationRevision).
@@ -306,7 +288,7 @@ impl ConfigurationRevision {
 
 /// <p>The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WeeklyStartTime {
     /// <p>Required. The day of the week.</p>
     #[doc(hidden)]
@@ -330,15 +312,6 @@ impl WeeklyStartTime {
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
     pub fn time_zone(&self) -> std::option::Option<&str> {
         self.time_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for WeeklyStartTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WeeklyStartTime");
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.field("time_of_day", &self.time_of_day);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.finish()
     }
 }
 /// See [`WeeklyStartTime`](crate::model::WeeklyStartTime).
@@ -527,7 +500,7 @@ impl AsRef<str> for DayOfWeek {
 
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Logs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
@@ -544,14 +517,6 @@ impl Logs {
     /// <p>Enables general logging.</p>
     pub fn general(&self) -> bool {
         self.general
-    }
-}
-impl std::fmt::Debug for Logs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Logs");
-        formatter.field("audit", &self.audit);
-        formatter.field("general", &self.general);
-        formatter.finish()
     }
 }
 /// See [`Logs`](crate::model::Logs).
@@ -602,7 +567,7 @@ impl Logs {
 
 /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LdapServerMetadataOutput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
     #[doc(hidden)]
@@ -675,22 +640,6 @@ impl LdapServerMetadataOutput {
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub fn user_search_subtree(&self) -> bool {
         self.user_search_subtree
-    }
-}
-impl std::fmt::Debug for LdapServerMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LdapServerMetadataOutput");
-        formatter.field("hosts", &self.hosts);
-        formatter.field("role_base", &self.role_base);
-        formatter.field("role_name", &self.role_name);
-        formatter.field("role_search_matching", &self.role_search_matching);
-        formatter.field("role_search_subtree", &self.role_search_subtree);
-        formatter.field("service_account_username", &self.service_account_username);
-        formatter.field("user_base", &self.user_base);
-        formatter.field("user_role_name", &self.user_role_name);
-        formatter.field("user_search_matching", &self.user_search_matching);
-        formatter.field("user_search_subtree", &self.user_search_subtree);
-        formatter.finish()
     }
 }
 /// See [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
@@ -860,7 +809,7 @@ impl LdapServerMetadataOutput {
 /// <p>Does not apply to RabbitMQ brokers.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
@@ -877,14 +826,6 @@ impl ConfigurationId {
     /// <p>The revision number of the configuration.</p>
     pub fn revision(&self) -> i32 {
         self.revision
-    }
-}
-impl std::fmt::Debug for ConfigurationId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationId");
-        formatter.field("id", &self.id);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationId`](crate::model::ConfigurationId).
@@ -1029,7 +970,7 @@ impl AsRef<str> for AuthenticationStrategy {
 /// <p>Does not apply to RabbitMQ brokers.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LdapServerMetadataInput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
     #[doc(hidden)]
@@ -1109,23 +1050,6 @@ impl LdapServerMetadataInput {
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub fn user_search_subtree(&self) -> bool {
         self.user_search_subtree
-    }
-}
-impl std::fmt::Debug for LdapServerMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LdapServerMetadataInput");
-        formatter.field("hosts", &self.hosts);
-        formatter.field("role_base", &self.role_base);
-        formatter.field("role_name", &self.role_name);
-        formatter.field("role_search_matching", &self.role_search_matching);
-        formatter.field("role_search_subtree", &self.role_search_subtree);
-        formatter.field("service_account_password", &self.service_account_password);
-        formatter.field("service_account_username", &self.service_account_username);
-        formatter.field("user_base", &self.user_base);
-        formatter.field("user_role_name", &self.user_role_name);
-        formatter.field("user_search_matching", &self.user_search_matching);
-        formatter.field("user_search_subtree", &self.user_search_subtree);
-        formatter.finish()
     }
 }
 /// See [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
@@ -1308,7 +1232,7 @@ impl LdapServerMetadataInput {
 
 /// <p>Returns a list of all broker users. Does not apply to RabbitMQ brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSummary {
     /// <p>The type of change pending for the broker user.</p>
     #[doc(hidden)]
@@ -1325,14 +1249,6 @@ impl UserSummary {
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for UserSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSummary");
-        formatter.field("pending_change", &self.pending_change);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`UserSummary`](crate::model::UserSummary).
@@ -1481,7 +1397,7 @@ impl AsRef<str> for ChangeType {
 
 /// <p>Returns information about all configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Configuration {
     /// <p>Required. The ARN of the configuration.</p>
     #[doc(hidden)]
@@ -1560,22 +1476,6 @@ impl Configuration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Configuration");
-        formatter.field("arn", &self.arn);
-        formatter.field("authentication_strategy", &self.authentication_strategy);
-        formatter.field("created", &self.created);
-        formatter.field("description", &self.description);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("id", &self.id);
-        formatter.field("latest_revision", &self.latest_revision);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Configuration`](crate::model::Configuration).
@@ -1848,7 +1748,7 @@ impl AsRef<str> for EngineType {
 
 /// <p>Returns information about all brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerSummary {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -1907,20 +1807,6 @@ impl BrokerSummary {
     /// <p>The broker's instance type.</p>
     pub fn host_instance_type(&self) -> std::option::Option<&str> {
         self.host_instance_type.as_deref()
-    }
-}
-impl std::fmt::Debug for BrokerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerSummary");
-        formatter.field("broker_arn", &self.broker_arn);
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("broker_name", &self.broker_name);
-        formatter.field("broker_state", &self.broker_state);
-        formatter.field("created", &self.created);
-        formatter.field("deployment_mode", &self.deployment_mode);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("host_instance_type", &self.host_instance_type);
-        formatter.finish()
     }
 }
 /// See [`BrokerSummary`](crate::model::BrokerSummary).
@@ -2274,7 +2160,7 @@ impl AsRef<str> for BrokerState {
 
 /// <p>Returns information about the status of the changes pending for the ActiveMQ user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPendingChanges {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     #[doc(hidden)]
@@ -2298,15 +2184,6 @@ impl UserPendingChanges {
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub fn pending_change(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.pending_change.as_ref()
-    }
-}
-impl std::fmt::Debug for UserPendingChanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPendingChanges");
-        formatter.field("console_access", &self.console_access);
-        formatter.field("groups", &self.groups);
-        formatter.field("pending_change", &self.pending_change);
-        formatter.finish()
     }
 }
 /// See [`UserPendingChanges`](crate::model::UserPendingChanges).
@@ -2381,7 +2258,7 @@ impl UserPendingChanges {
 
 /// <p>Option for host instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerInstanceOption {
     /// <p>The list of available az.</p>
     #[doc(hidden)]
@@ -2429,21 +2306,6 @@ impl BrokerInstanceOption {
     /// <p>The list of supported engine versions.</p>
     pub fn supported_engine_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_engine_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for BrokerInstanceOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerInstanceOption");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("host_instance_type", &self.host_instance_type);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field(
-            "supported_deployment_modes",
-            &self.supported_deployment_modes,
-        );
-        formatter.field("supported_engine_versions", &self.supported_engine_versions);
-        formatter.finish()
     }
 }
 /// See [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
@@ -2673,7 +2535,7 @@ impl AsRef<str> for BrokerStorageType {
 
 /// <p>Name of the availability zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>Id for the availability zone.</p>
     #[doc(hidden)]
@@ -2683,13 +2545,6 @@ impl AvailabilityZone {
     /// <p>Id for the availability zone.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZone");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
@@ -2726,7 +2581,7 @@ impl AvailabilityZone {
 
 /// <p>Types of broker engines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerEngineType {
     /// <p>The broker's engine type.</p>
     #[doc(hidden)]
@@ -2743,14 +2598,6 @@ impl BrokerEngineType {
     /// <p>The list of engine versions.</p>
     pub fn engine_versions(&self) -> std::option::Option<&[crate::model::EngineVersion]> {
         self.engine_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for BrokerEngineType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerEngineType");
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("engine_versions", &self.engine_versions);
-        formatter.finish()
     }
 }
 /// See [`BrokerEngineType`](crate::model::BrokerEngineType).
@@ -2813,7 +2660,7 @@ impl BrokerEngineType {
 
 /// <p>Id of the engine version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineVersion {
     /// <p>Id for the version.</p>
     #[doc(hidden)]
@@ -2823,13 +2670,6 @@ impl EngineVersion {
     /// <p>Id for the version.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for EngineVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineVersion");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`EngineVersion`](crate::model::EngineVersion).
@@ -2866,7 +2706,7 @@ impl EngineVersion {
 
 /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogsSummary {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
@@ -2904,17 +2744,6 @@ impl LogsSummary {
     /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
     pub fn pending(&self) -> std::option::Option<&crate::model::PendingLogs> {
         self.pending.as_ref()
-    }
-}
-impl std::fmt::Debug for LogsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogsSummary");
-        formatter.field("audit", &self.audit);
-        formatter.field("audit_log_group", &self.audit_log_group);
-        formatter.field("general", &self.general);
-        formatter.field("general_log_group", &self.general_log_group);
-        formatter.field("pending", &self.pending);
-        formatter.finish()
     }
 }
 /// See [`LogsSummary`](crate::model::LogsSummary).
@@ -3010,7 +2839,7 @@ impl LogsSummary {
 
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingLogs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
@@ -3027,14 +2856,6 @@ impl PendingLogs {
     /// <p>Enables general logging.</p>
     pub fn general(&self) -> bool {
         self.general
-    }
-}
-impl std::fmt::Debug for PendingLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingLogs");
-        formatter.field("audit", &self.audit);
-        formatter.field("general", &self.general);
-        formatter.finish()
     }
 }
 /// See [`PendingLogs`](crate::model::PendingLogs).
@@ -3088,7 +2909,7 @@ impl PendingLogs {
 /// </important>
 /// <p>Encryption options for the broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionOptions {
     /// <p>The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
     #[doc(hidden)]
@@ -3105,14 +2926,6 @@ impl EncryptionOptions {
     /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
     pub fn use_aws_owned_key(&self) -> bool {
         self.use_aws_owned_key
-    }
-}
-impl std::fmt::Debug for EncryptionOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionOptions");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("use_aws_owned_key", &self.use_aws_owned_key);
-        formatter.finish()
     }
 }
 /// See [`EncryptionOptions`](crate::model::EncryptionOptions).
@@ -3163,7 +2976,7 @@ impl EncryptionOptions {
 
 /// <p>Broker configuration information</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Configurations {
     /// <p>The broker's current configuration.</p>
     #[doc(hidden)]
@@ -3187,15 +3000,6 @@ impl Configurations {
     /// <p>The broker's pending configuration.</p>
     pub fn pending(&self) -> std::option::Option<&crate::model::ConfigurationId> {
         self.pending.as_ref()
-    }
-}
-impl std::fmt::Debug for Configurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Configurations");
-        formatter.field("current", &self.current);
-        formatter.field("history", &self.history);
-        formatter.field("pending", &self.pending);
-        formatter.finish()
     }
 }
 /// See [`Configurations`](crate::model::Configurations).
@@ -3273,7 +3077,7 @@ impl Configurations {
 
 /// <p>Returns information about all brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerInstance {
     /// <p>The brokers web console URL.</p>
     #[doc(hidden)]
@@ -3297,15 +3101,6 @@ impl BrokerInstance {
     /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
-    }
-}
-impl std::fmt::Debug for BrokerInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerInstance");
-        formatter.field("console_url", &self.console_url);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.finish()
     }
 }
 /// See [`BrokerInstance`](crate::model::BrokerInstance).
@@ -3377,7 +3172,7 @@ impl BrokerInstance {
 
 /// <p>The action required to resolve a broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionRequired {
     /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
     #[doc(hidden)]
@@ -3394,14 +3189,6 @@ impl ActionRequired {
     /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
     pub fn action_required_info(&self) -> std::option::Option<&str> {
         self.action_required_info.as_deref()
-    }
-}
-impl std::fmt::Debug for ActionRequired {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionRequired");
-        formatter.field("action_required_code", &self.action_required_code);
-        formatter.field("action_required_info", &self.action_required_info);
-        formatter.finish()
     }
 }
 /// See [`ActionRequired`](crate::model::ActionRequired).
@@ -3458,7 +3245,7 @@ impl ActionRequired {
 
 /// <p>A user associated with the broker. For RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
@@ -3499,16 +3286,6 @@ impl User {
     /// </important>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("console_access", &self.console_access);
-        formatter.field("groups", &self.groups);
-        formatter.field("password", &self.password);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`User`](crate::model::User).

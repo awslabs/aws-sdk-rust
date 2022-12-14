@@ -119,7 +119,7 @@ impl AsRef<str> for FlowStatus {
 
 /// <p> A class for modeling different type of tasks. Task implementation varies based on the <code>TaskType</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Task {
     /// <p> The source fields to which a particular task is applied. </p>
     #[doc(hidden)]
@@ -163,17 +163,6 @@ impl Task {
         &std::collections::HashMap<crate::model::OperatorPropertiesKeys, std::string::String>,
     > {
         self.task_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for Task {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Task");
-        formatter.field("source_fields", &self.source_fields);
-        formatter.field("connector_operator", &self.connector_operator);
-        formatter.field("destination_field", &self.destination_field);
-        formatter.field("task_type", &self.task_type);
-        formatter.field("task_properties", &self.task_properties);
-        formatter.finish()
     }
 }
 /// See [`Task`](crate::model::Task).
@@ -603,7 +592,7 @@ impl AsRef<str> for TaskType {
 
 /// <p> The operation to be performed on the provided source fields. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorOperator {
     /// <p> The operation to be performed on the provided Amplitude source fields. </p>
     #[doc(hidden)]
@@ -720,28 +709,6 @@ impl ConnectorOperator {
     /// <p>Operators supported by the custom connector.</p>
     pub fn custom_connector(&self) -> std::option::Option<&crate::model::Operator> {
         self.custom_connector.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorOperator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorOperator");
-        formatter.field("amplitude", &self.amplitude);
-        formatter.field("datadog", &self.datadog);
-        formatter.field("dynatrace", &self.dynatrace);
-        formatter.field("google_analytics", &self.google_analytics);
-        formatter.field("infor_nexus", &self.infor_nexus);
-        formatter.field("marketo", &self.marketo);
-        formatter.field("s3", &self.s3);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("service_now", &self.service_now);
-        formatter.field("singular", &self.singular);
-        formatter.field("slack", &self.slack);
-        formatter.field("trendmicro", &self.trendmicro);
-        formatter.field("veeva", &self.veeva);
-        formatter.field("zendesk", &self.zendesk);
-        formatter.field("sapo_data", &self.sapo_data);
-        formatter.field("custom_connector", &self.custom_connector);
-        formatter.finish()
     }
 }
 /// See [`ConnectorOperator`](crate::model::ConnectorOperator).
@@ -3833,7 +3800,7 @@ impl AsRef<str> for AmplitudeConnectorOperator {
 
 /// <p> Contains information about the configuration of destination connectors present in the flow. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     #[doc(hidden)]
@@ -3867,19 +3834,6 @@ impl DestinationFlowConfig {
         &self,
     ) -> std::option::Option<&crate::model::DestinationConnectorProperties> {
         self.destination_connector_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationFlowConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationFlowConfig");
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("api_version", &self.api_version);
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field(
-            "destination_connector_properties",
-            &self.destination_connector_properties,
-        );
-        formatter.finish()
     }
 }
 /// See [`DestinationFlowConfig`](crate::model::DestinationFlowConfig).
@@ -3967,7 +3921,7 @@ impl DestinationFlowConfig {
 
 /// <p> This stores the information that is required to query a particular connector. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationConnectorProperties {
     /// <p> The properties required to query Amazon Redshift. </p>
     #[doc(hidden)]
@@ -4071,25 +4025,6 @@ impl DestinationConnectorProperties {
     /// <p>The properties required to query SAPOData.</p>
     pub fn sapo_data(&self) -> std::option::Option<&crate::model::SapoDataDestinationProperties> {
         self.sapo_data.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationConnectorProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConnectorProperties");
-        formatter.field("redshift", &self.redshift);
-        formatter.field("s3", &self.s3);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("snowflake", &self.snowflake);
-        formatter.field("event_bridge", &self.event_bridge);
-        formatter.field("lookout_metrics", &self.lookout_metrics);
-        formatter.field("upsolver", &self.upsolver);
-        formatter.field("honeycode", &self.honeycode);
-        formatter.field("customer_profiles", &self.customer_profiles);
-        formatter.field("zendesk", &self.zendesk);
-        formatter.field("marketo", &self.marketo);
-        formatter.field("custom_connector", &self.custom_connector);
-        formatter.field("sapo_data", &self.sapo_data);
-        formatter.finish()
     }
 }
 /// See [`DestinationConnectorProperties`](crate::model::DestinationConnectorProperties).
@@ -4327,7 +4262,7 @@ impl DestinationConnectorProperties {
 
 /// <p>The properties that are applied when using SAPOData as a flow destination</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SapoDataDestinationProperties {
     /// <p>The object path specified in the SAPOData flow destination.</p>
     #[doc(hidden)]
@@ -4370,20 +4305,6 @@ impl SapoDataDestinationProperties {
     /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub fn write_operation_type(&self) -> std::option::Option<&crate::model::WriteOperationType> {
         self.write_operation_type.as_ref()
-    }
-}
-impl std::fmt::Debug for SapoDataDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SapoDataDestinationProperties");
-        formatter.field("object_path", &self.object_path);
-        formatter.field(
-            "success_response_handling_config",
-            &self.success_response_handling_config,
-        );
-        formatter.field("id_field_names", &self.id_field_names);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.field("write_operation_type", &self.write_operation_type);
-        formatter.finish()
     }
 }
 /// See [`SapoDataDestinationProperties`](crate::model::SapoDataDestinationProperties).
@@ -4597,7 +4518,7 @@ impl AsRef<str> for WriteOperationType {
 
 /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorHandlingConfig {
     /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
     #[doc(hidden)]
@@ -4621,18 +4542,6 @@ impl ErrorHandlingConfig {
     /// <p> Specifies the name of the Amazon S3 bucket. </p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorHandlingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorHandlingConfig");
-        formatter.field(
-            "fail_on_first_destination_error",
-            &self.fail_on_first_destination_error,
-        );
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.finish()
     }
 }
 /// See [`ErrorHandlingConfig`](crate::model::ErrorHandlingConfig).
@@ -4704,7 +4613,7 @@ impl ErrorHandlingConfig {
 /// <p>Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data.</p>
 /// <p>For example, this setting would determine where to write the response from the destination connector upon a successful insert operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuccessResponseHandlingConfig {
     /// <p>The Amazon S3 bucket prefix.</p>
     #[doc(hidden)]
@@ -4721,14 +4630,6 @@ impl SuccessResponseHandlingConfig {
     /// <p>The name of the Amazon S3 bucket.</p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SuccessResponseHandlingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuccessResponseHandlingConfig");
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.finish()
     }
 }
 /// See [`SuccessResponseHandlingConfig`](crate::model::SuccessResponseHandlingConfig).
@@ -4782,7 +4683,7 @@ impl SuccessResponseHandlingConfig {
 
 /// <p>The properties that are applied when the custom connector is being used as a destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomConnectorDestinationProperties {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
     #[doc(hidden)]
@@ -4824,17 +4725,6 @@ impl CustomConnectorDestinationProperties {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.custom_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomConnectorDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomConnectorDestinationProperties");
-        formatter.field("entity_name", &self.entity_name);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.field("write_operation_type", &self.write_operation_type);
-        formatter.field("id_field_names", &self.id_field_names);
-        formatter.field("custom_properties", &self.custom_properties);
-        formatter.finish()
     }
 }
 /// See [`CustomConnectorDestinationProperties`](crate::model::CustomConnectorDestinationProperties).
@@ -4953,7 +4843,7 @@ impl CustomConnectorDestinationProperties {
 
 /// <p>The properties that Amazon AppFlow applies when you use Marketo as a flow destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarketoDestinationProperties {
     /// <p>The object specified in the Marketo flow destination.</p>
     #[doc(hidden)]
@@ -4970,14 +4860,6 @@ impl MarketoDestinationProperties {
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
-    }
-}
-impl std::fmt::Debug for MarketoDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarketoDestinationProperties");
-        formatter.field("object", &self.object);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.finish()
     }
 }
 /// See [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties).
@@ -5031,7 +4913,7 @@ impl MarketoDestinationProperties {
 
 /// <p>The properties that are applied when Zendesk is used as a destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZendeskDestinationProperties {
     /// <p>The object specified in the Zendesk flow destination.</p>
     #[doc(hidden)]
@@ -5062,16 +4944,6 @@ impl ZendeskDestinationProperties {
     /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub fn write_operation_type(&self) -> std::option::Option<&crate::model::WriteOperationType> {
         self.write_operation_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ZendeskDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZendeskDestinationProperties");
-        formatter.field("object", &self.object);
-        formatter.field("id_field_names", &self.id_field_names);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.field("write_operation_type", &self.write_operation_type);
-        formatter.finish()
     }
 }
 /// See [`ZendeskDestinationProperties`](crate::model::ZendeskDestinationProperties).
@@ -5161,7 +5033,7 @@ impl ZendeskDestinationProperties {
 
 /// <p> The properties that are applied when Amazon Connect Customer Profiles is used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerProfilesDestinationProperties {
     /// <p> The unique name of the Amazon Connect Customer Profiles domain. </p>
     #[doc(hidden)]
@@ -5178,14 +5050,6 @@ impl CustomerProfilesDestinationProperties {
     /// <p> The object specified in the Amazon Connect Customer Profiles flow destination. </p>
     pub fn object_type_name(&self) -> std::option::Option<&str> {
         self.object_type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerProfilesDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerProfilesDestinationProperties");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.finish()
     }
 }
 /// See [`CustomerProfilesDestinationProperties`](crate::model::CustomerProfilesDestinationProperties).
@@ -5239,7 +5103,7 @@ impl CustomerProfilesDestinationProperties {
 
 /// <p> The properties that are applied when Amazon Honeycode is used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoneycodeDestinationProperties {
     /// <p> The object specified in the Amazon Honeycode flow destination. </p>
     #[doc(hidden)]
@@ -5256,14 +5120,6 @@ impl HoneycodeDestinationProperties {
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
-    }
-}
-impl std::fmt::Debug for HoneycodeDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoneycodeDestinationProperties");
-        formatter.field("object", &self.object);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.finish()
     }
 }
 /// See [`HoneycodeDestinationProperties`](crate::model::HoneycodeDestinationProperties).
@@ -5317,7 +5173,7 @@ impl HoneycodeDestinationProperties {
 
 /// <p> The properties that are applied when Upsolver is used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpsolverDestinationProperties {
     /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
     #[doc(hidden)]
@@ -5343,15 +5199,6 @@ impl UpsolverDestinationProperties {
         &self,
     ) -> std::option::Option<&crate::model::UpsolverS3OutputFormatConfig> {
         self.s3_output_format_config.as_ref()
-    }
-}
-impl std::fmt::Debug for UpsolverDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpsolverDestinationProperties");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("s3_output_format_config", &self.s3_output_format_config);
-        formatter.finish()
     }
 }
 /// See [`UpsolverDestinationProperties`](crate::model::UpsolverDestinationProperties).
@@ -5424,7 +5271,7 @@ impl UpsolverDestinationProperties {
 
 /// <p> The configuration that determines how Amazon AppFlow formats the flow output data when Upsolver is used as the destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpsolverS3OutputFormatConfig {
     /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
     #[doc(hidden)]
@@ -5448,15 +5295,6 @@ impl UpsolverS3OutputFormatConfig {
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
     pub fn aggregation_config(&self) -> std::option::Option<&crate::model::AggregationConfig> {
         self.aggregation_config.as_ref()
-    }
-}
-impl std::fmt::Debug for UpsolverS3OutputFormatConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpsolverS3OutputFormatConfig");
-        formatter.field("file_type", &self.file_type);
-        formatter.field("prefix_config", &self.prefix_config);
-        formatter.field("aggregation_config", &self.aggregation_config);
-        formatter.finish()
     }
 }
 /// See [`UpsolverS3OutputFormatConfig`](crate::model::UpsolverS3OutputFormatConfig).
@@ -5525,7 +5363,7 @@ impl UpsolverS3OutputFormatConfig {
 
 /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     #[doc(hidden)]
@@ -5535,13 +5373,6 @@ impl AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
         self.aggregation_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AggregationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregationConfig");
-        formatter.field("aggregation_type", &self.aggregation_type);
-        formatter.finish()
     }
 }
 /// See [`AggregationConfig`](crate::model::AggregationConfig).
@@ -5673,7 +5504,7 @@ impl AsRef<str> for AggregationType {
 
 /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrefixConfig {
     /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     #[doc(hidden)]
@@ -5690,14 +5521,6 @@ impl PrefixConfig {
     /// <p> Determines the level of granularity that's included in the prefix. </p>
     pub fn prefix_format(&self) -> std::option::Option<&crate::model::PrefixFormat> {
         self.prefix_format.as_ref()
-    }
-}
-impl std::fmt::Debug for PrefixConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrefixConfig");
-        formatter.field("prefix_type", &self.prefix_type);
-        formatter.field("prefix_format", &self.prefix_format);
-        formatter.finish()
     }
 }
 /// See [`PrefixConfig`](crate::model::PrefixConfig).
@@ -6049,14 +5872,8 @@ impl AsRef<str> for FileType {
 
 /// <p> The properties that are applied when Amazon Lookout for Metrics is used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookoutMetricsDestinationProperties {}
-impl std::fmt::Debug for LookoutMetricsDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LookoutMetricsDestinationProperties");
-        formatter.finish()
-    }
-}
 /// See [`LookoutMetricsDestinationProperties`](crate::model::LookoutMetricsDestinationProperties).
 pub mod lookout_metrics_destination_properties {
 
@@ -6079,7 +5896,7 @@ impl LookoutMetricsDestinationProperties {
 
 /// <p> The properties that are applied when Amazon EventBridge is being used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventBridgeDestinationProperties {
     /// <p> The object specified in the Amazon EventBridge flow destination. </p>
     #[doc(hidden)]
@@ -6096,14 +5913,6 @@ impl EventBridgeDestinationProperties {
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
-    }
-}
-impl std::fmt::Debug for EventBridgeDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventBridgeDestinationProperties");
-        formatter.field("object", &self.object);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.finish()
     }
 }
 /// See [`EventBridgeDestinationProperties`](crate::model::EventBridgeDestinationProperties).
@@ -6157,7 +5966,7 @@ impl EventBridgeDestinationProperties {
 
 /// <p> The properties that are applied when Snowflake is being used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnowflakeDestinationProperties {
     /// <p> The object specified in the Snowflake flow destination. </p>
     #[doc(hidden)]
@@ -6188,16 +5997,6 @@ impl SnowflakeDestinationProperties {
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
-    }
-}
-impl std::fmt::Debug for SnowflakeDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnowflakeDestinationProperties");
-        formatter.field("object", &self.object);
-        formatter.field("intermediate_bucket_name", &self.intermediate_bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.finish()
     }
 }
 /// See [`SnowflakeDestinationProperties`](crate::model::SnowflakeDestinationProperties).
@@ -6281,7 +6080,7 @@ impl SnowflakeDestinationProperties {
 
 /// <p> The properties that are applied when Salesforce is being used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
     #[doc(hidden)]
@@ -6312,16 +6111,6 @@ impl SalesforceDestinationProperties {
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     pub fn write_operation_type(&self) -> std::option::Option<&crate::model::WriteOperationType> {
         self.write_operation_type.as_ref()
-    }
-}
-impl std::fmt::Debug for SalesforceDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceDestinationProperties");
-        formatter.field("object", &self.object);
-        formatter.field("id_field_names", &self.id_field_names);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.field("write_operation_type", &self.write_operation_type);
-        formatter.finish()
     }
 }
 /// See [`SalesforceDestinationProperties`](crate::model::SalesforceDestinationProperties).
@@ -6411,7 +6200,7 @@ impl SalesforceDestinationProperties {
 
 /// <p> The properties that are applied when Amazon S3 is used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationProperties {
     /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
     #[doc(hidden)]
@@ -6437,15 +6226,6 @@ impl S3DestinationProperties {
         &self,
     ) -> std::option::Option<&crate::model::S3OutputFormatConfig> {
         self.s3_output_format_config.as_ref()
-    }
-}
-impl std::fmt::Debug for S3DestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationProperties");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("s3_output_format_config", &self.s3_output_format_config);
-        formatter.finish()
     }
 }
 /// See [`S3DestinationProperties`](crate::model::S3DestinationProperties).
@@ -6517,7 +6297,7 @@ impl S3DestinationProperties {
 
 /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3OutputFormatConfig {
     /// <p> Indicates the file type that Amazon AppFlow places in the Amazon S3 bucket. </p>
     #[doc(hidden)]
@@ -6556,19 +6336,6 @@ impl S3OutputFormatConfig {
     /// </ul>
     pub fn preserve_source_data_typing(&self) -> std::option::Option<bool> {
         self.preserve_source_data_typing
-    }
-}
-impl std::fmt::Debug for S3OutputFormatConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3OutputFormatConfig");
-        formatter.field("file_type", &self.file_type);
-        formatter.field("prefix_config", &self.prefix_config);
-        formatter.field("aggregation_config", &self.aggregation_config);
-        formatter.field(
-            "preserve_source_data_typing",
-            &self.preserve_source_data_typing,
-        );
-        formatter.finish()
     }
 }
 /// See [`S3OutputFormatConfig`](crate::model::S3OutputFormatConfig).
@@ -6657,7 +6424,7 @@ impl S3OutputFormatConfig {
 
 /// <p> The properties that are applied when Amazon Redshift is being used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftDestinationProperties {
     /// <p> The object specified in the Amazon Redshift flow destination. </p>
     #[doc(hidden)]
@@ -6688,16 +6455,6 @@ impl RedshiftDestinationProperties {
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Amazon Redshift destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
-    }
-}
-impl std::fmt::Debug for RedshiftDestinationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftDestinationProperties");
-        formatter.field("object", &self.object);
-        formatter.field("intermediate_bucket_name", &self.intermediate_bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("error_handling_config", &self.error_handling_config);
-        formatter.finish()
     }
 }
 /// See [`RedshiftDestinationProperties`](crate::model::RedshiftDestinationProperties).
@@ -7000,7 +6757,7 @@ impl AsRef<str> for ConnectorType {
 
 /// <p> Contains information about the configuration of the source connector used in the flow. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     #[doc(hidden)]
@@ -7042,20 +6799,6 @@ impl SourceFlowConfig {
         &self,
     ) -> std::option::Option<&crate::model::IncrementalPullConfig> {
         self.incremental_pull_config.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceFlowConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceFlowConfig");
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("api_version", &self.api_version);
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field(
-            "source_connector_properties",
-            &self.source_connector_properties,
-        );
-        formatter.field("incremental_pull_config", &self.incremental_pull_config);
-        formatter.finish()
     }
 }
 /// See [`SourceFlowConfig`](crate::model::SourceFlowConfig).
@@ -7162,7 +6905,7 @@ impl SourceFlowConfig {
 
 /// <p> Specifies the configuration used when importing incremental records from the source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncrementalPullConfig {
     /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
     #[doc(hidden)]
@@ -7172,13 +6915,6 @@ impl IncrementalPullConfig {
     /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
     pub fn datetime_type_field_name(&self) -> std::option::Option<&str> {
         self.datetime_type_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for IncrementalPullConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncrementalPullConfig");
-        formatter.field("datetime_type_field_name", &self.datetime_type_field_name);
-        formatter.finish()
     }
 }
 /// See [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
@@ -7220,7 +6956,7 @@ impl IncrementalPullConfig {
 
 /// <p> Specifies the information that is required to query a particular connector. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceConnectorProperties {
     /// <p> Specifies the information that is required for querying Amplitude. </p>
     #[doc(hidden)]
@@ -7339,28 +7075,6 @@ impl SourceConnectorProperties {
         &self,
     ) -> std::option::Option<&crate::model::CustomConnectorSourceProperties> {
         self.custom_connector.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceConnectorProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceConnectorProperties");
-        formatter.field("amplitude", &self.amplitude);
-        formatter.field("datadog", &self.datadog);
-        formatter.field("dynatrace", &self.dynatrace);
-        formatter.field("google_analytics", &self.google_analytics);
-        formatter.field("infor_nexus", &self.infor_nexus);
-        formatter.field("marketo", &self.marketo);
-        formatter.field("s3", &self.s3);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("service_now", &self.service_now);
-        formatter.field("singular", &self.singular);
-        formatter.field("slack", &self.slack);
-        formatter.field("trendmicro", &self.trendmicro);
-        formatter.field("veeva", &self.veeva);
-        formatter.field("zendesk", &self.zendesk);
-        formatter.field("sapo_data", &self.sapo_data);
-        formatter.field("custom_connector", &self.custom_connector);
-        formatter.finish()
     }
 }
 /// See [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
@@ -7635,7 +7349,7 @@ impl SourceConnectorProperties {
 
 /// <p>The properties that are applied when the custom connector is being used as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomConnectorSourceProperties {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
     #[doc(hidden)]
@@ -7656,14 +7370,6 @@ impl CustomConnectorSourceProperties {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.custom_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomConnectorSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomConnectorSourceProperties");
-        formatter.field("entity_name", &self.entity_name);
-        formatter.field("custom_properties", &self.custom_properties);
-        formatter.finish()
     }
 }
 /// See [`CustomConnectorSourceProperties`](crate::model::CustomConnectorSourceProperties).
@@ -7731,7 +7437,7 @@ impl CustomConnectorSourceProperties {
 
 /// <p> The properties that are applied when using SAPOData as a flow source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
     #[doc(hidden)]
@@ -7741,13 +7447,6 @@ impl SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
     pub fn object_path(&self) -> std::option::Option<&str> {
         self.object_path.as_deref()
-    }
-}
-impl std::fmt::Debug for SapoDataSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SapoDataSourceProperties");
-        formatter.field("object_path", &self.object_path);
-        formatter.finish()
     }
 }
 /// See [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties).
@@ -7786,7 +7485,7 @@ impl SapoDataSourceProperties {
 
 /// <p> The properties that are applied when using Zendesk as a flow source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZendeskSourceProperties {
     /// <p> The object specified in the Zendesk flow source. </p>
     #[doc(hidden)]
@@ -7796,13 +7495,6 @@ impl ZendeskSourceProperties {
     /// <p> The object specified in the Zendesk flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for ZendeskSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZendeskSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
@@ -7841,7 +7533,7 @@ impl ZendeskSourceProperties {
 
 /// <p> The properties that are applied when using Veeva as a flow source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
     #[doc(hidden)]
@@ -7879,17 +7571,6 @@ impl VeevaSourceProperties {
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub fn include_all_versions(&self) -> bool {
         self.include_all_versions
-    }
-}
-impl std::fmt::Debug for VeevaSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VeevaSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.field("document_type", &self.document_type);
-        formatter.field("include_source_files", &self.include_source_files);
-        formatter.field("include_renditions", &self.include_renditions);
-        formatter.field("include_all_versions", &self.include_all_versions);
-        formatter.finish()
     }
 }
 /// See [`VeevaSourceProperties`](crate::model::VeevaSourceProperties).
@@ -7979,7 +7660,7 @@ impl VeevaSourceProperties {
 
 /// <p> The properties that are applied when using Trend Micro as a flow source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrendmicroSourceProperties {
     /// <p> The object specified in the Trend Micro flow source. </p>
     #[doc(hidden)]
@@ -7989,13 +7670,6 @@ impl TrendmicroSourceProperties {
     /// <p> The object specified in the Trend Micro flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for TrendmicroSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrendmicroSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`TrendmicroSourceProperties`](crate::model::TrendmicroSourceProperties).
@@ -8034,7 +7708,7 @@ impl TrendmicroSourceProperties {
 
 /// <p> The properties that are applied when Slack is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlackSourceProperties {
     /// <p> The object specified in the Slack flow source. </p>
     #[doc(hidden)]
@@ -8044,13 +7718,6 @@ impl SlackSourceProperties {
     /// <p> The object specified in the Slack flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for SlackSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlackSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`SlackSourceProperties`](crate::model::SlackSourceProperties).
@@ -8089,7 +7756,7 @@ impl SlackSourceProperties {
 
 /// <p> The properties that are applied when Singular is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingularSourceProperties {
     /// <p> The object specified in the Singular flow source. </p>
     #[doc(hidden)]
@@ -8099,13 +7766,6 @@ impl SingularSourceProperties {
     /// <p> The object specified in the Singular flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for SingularSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingularSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`SingularSourceProperties`](crate::model::SingularSourceProperties).
@@ -8144,7 +7804,7 @@ impl SingularSourceProperties {
 
 /// <p> The properties that are applied when ServiceNow is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowSourceProperties {
     /// <p> The object specified in the ServiceNow flow source. </p>
     #[doc(hidden)]
@@ -8154,13 +7814,6 @@ impl ServiceNowSourceProperties {
     /// <p> The object specified in the ServiceNow flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceNowSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
@@ -8199,7 +7852,7 @@ impl ServiceNowSourceProperties {
 
 /// <p> The properties that are applied when Salesforce is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceSourceProperties {
     /// <p> The object specified in the Salesforce flow source. </p>
     #[doc(hidden)]
@@ -8223,18 +7876,6 @@ impl SalesforceSourceProperties {
     /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
     pub fn include_deleted_records(&self) -> bool {
         self.include_deleted_records
-    }
-}
-impl std::fmt::Debug for SalesforceSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.field(
-            "enable_dynamic_field_update",
-            &self.enable_dynamic_field_update,
-        );
-        formatter.field("include_deleted_records", &self.include_deleted_records);
-        formatter.finish()
     }
 }
 /// See [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
@@ -8297,7 +7938,7 @@ impl SalesforceSourceProperties {
 
 /// <p> The properties that are applied when Amazon S3 is being used as the flow source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SourceProperties {
     /// <p> The Amazon S3 bucket name where the source files are stored. </p>
     #[doc(hidden)]
@@ -8323,15 +7964,6 @@ impl S3SourceProperties {
         &self,
     ) -> std::option::Option<&crate::model::S3InputFormatConfig> {
         self.s3_input_format_config.as_ref()
-    }
-}
-impl std::fmt::Debug for S3SourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3SourceProperties");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("s3_input_format_config", &self.s3_input_format_config);
-        formatter.finish()
     }
 }
 /// See [`S3SourceProperties`](crate::model::S3SourceProperties).
@@ -8400,7 +8032,7 @@ impl S3SourceProperties {
 
 /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3InputFormatConfig {
     /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
     #[doc(hidden)]
@@ -8410,13 +8042,6 @@ impl S3InputFormatConfig {
     /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
     pub fn s3_input_file_type(&self) -> std::option::Option<&crate::model::S3InputFileType> {
         self.s3_input_file_type.as_ref()
-    }
-}
-impl std::fmt::Debug for S3InputFormatConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3InputFormatConfig");
-        formatter.field("s3_input_file_type", &self.s3_input_file_type);
-        formatter.finish()
     }
 }
 /// See [`S3InputFormatConfig`](crate::model::S3InputFormatConfig).
@@ -8548,7 +8173,7 @@ impl AsRef<str> for S3InputFileType {
 
 /// <p> The properties that are applied when Marketo is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarketoSourceProperties {
     /// <p> The object specified in the Marketo flow source. </p>
     #[doc(hidden)]
@@ -8558,13 +8183,6 @@ impl MarketoSourceProperties {
     /// <p> The object specified in the Marketo flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for MarketoSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarketoSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
@@ -8603,7 +8221,7 @@ impl MarketoSourceProperties {
 
 /// <p> The properties that are applied when Infor Nexus is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InforNexusSourceProperties {
     /// <p> The object specified in the Infor Nexus flow source. </p>
     #[doc(hidden)]
@@ -8613,13 +8231,6 @@ impl InforNexusSourceProperties {
     /// <p> The object specified in the Infor Nexus flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for InforNexusSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InforNexusSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`InforNexusSourceProperties`](crate::model::InforNexusSourceProperties).
@@ -8658,7 +8269,7 @@ impl InforNexusSourceProperties {
 
 /// <p> The properties that are applied when Google Analytics is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GoogleAnalyticsSourceProperties {
     /// <p> The object specified in the Google Analytics flow source. </p>
     #[doc(hidden)]
@@ -8668,13 +8279,6 @@ impl GoogleAnalyticsSourceProperties {
     /// <p> The object specified in the Google Analytics flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for GoogleAnalyticsSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GoogleAnalyticsSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`GoogleAnalyticsSourceProperties`](crate::model::GoogleAnalyticsSourceProperties).
@@ -8713,7 +8317,7 @@ impl GoogleAnalyticsSourceProperties {
 
 /// <p> The properties that are applied when Dynatrace is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynatraceSourceProperties {
     /// <p> The object specified in the Dynatrace flow source. </p>
     #[doc(hidden)]
@@ -8723,13 +8327,6 @@ impl DynatraceSourceProperties {
     /// <p> The object specified in the Dynatrace flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for DynatraceSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynatraceSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`DynatraceSourceProperties`](crate::model::DynatraceSourceProperties).
@@ -8768,7 +8365,7 @@ impl DynatraceSourceProperties {
 
 /// <p> The properties that are applied when Datadog is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatadogSourceProperties {
     /// <p> The object specified in the Datadog flow source. </p>
     #[doc(hidden)]
@@ -8778,13 +8375,6 @@ impl DatadogSourceProperties {
     /// <p> The object specified in the Datadog flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for DatadogSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatadogSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`DatadogSourceProperties`](crate::model::DatadogSourceProperties).
@@ -8823,7 +8413,7 @@ impl DatadogSourceProperties {
 
 /// <p> The properties that are applied when Amplitude is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmplitudeSourceProperties {
     /// <p> The object specified in the Amplitude flow source. </p>
     #[doc(hidden)]
@@ -8833,13 +8423,6 @@ impl AmplitudeSourceProperties {
     /// <p> The object specified in the Amplitude flow source. </p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for AmplitudeSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmplitudeSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`AmplitudeSourceProperties`](crate::model::AmplitudeSourceProperties).
@@ -8878,7 +8461,7 @@ impl AmplitudeSourceProperties {
 
 /// <p> The trigger settings that determine how and when Amazon AppFlow runs the specified flow. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerConfig {
     /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
     #[doc(hidden)]
@@ -8895,14 +8478,6 @@ impl TriggerConfig {
     /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
     pub fn trigger_properties(&self) -> std::option::Option<&crate::model::TriggerProperties> {
         self.trigger_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for TriggerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggerConfig");
-        formatter.field("trigger_type", &self.trigger_type);
-        formatter.field("trigger_properties", &self.trigger_properties);
-        formatter.finish()
     }
 }
 /// See [`TriggerConfig`](crate::model::TriggerConfig).
@@ -8959,7 +8534,7 @@ impl TriggerConfig {
 
 /// <p> Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerProperties {
     /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
     #[doc(hidden)]
@@ -8969,13 +8544,6 @@ impl TriggerProperties {
     /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
     pub fn scheduled(&self) -> std::option::Option<&crate::model::ScheduledTriggerProperties> {
         self.scheduled.as_ref()
-    }
-}
-impl std::fmt::Debug for TriggerProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggerProperties");
-        formatter.field("scheduled", &self.scheduled);
-        formatter.finish()
     }
 }
 /// See [`TriggerProperties`](crate::model::TriggerProperties).
@@ -9017,7 +8585,7 @@ impl TriggerProperties {
 
 /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledTriggerProperties {
     /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
     #[doc(hidden)]
@@ -9078,23 +8646,6 @@ impl ScheduledTriggerProperties {
     /// <p>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.</p>
     pub fn flow_error_deactivation_threshold(&self) -> std::option::Option<i32> {
         self.flow_error_deactivation_threshold
-    }
-}
-impl std::fmt::Debug for ScheduledTriggerProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledTriggerProperties");
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.field("data_pull_mode", &self.data_pull_mode);
-        formatter.field("schedule_start_time", &self.schedule_start_time);
-        formatter.field("schedule_end_time", &self.schedule_end_time);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("schedule_offset", &self.schedule_offset);
-        formatter.field("first_execution_from", &self.first_execution_from);
-        formatter.field(
-            "flow_error_deactivation_threshold",
-            &self.flow_error_deactivation_threshold,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
@@ -9422,7 +8973,7 @@ impl AsRef<str> for TriggerType {
 
 /// <p> Defines the connector-specific configuration and credentials for the connector profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorProfileConfig {
     /// <p> The connector-specific properties of the profile configuration. </p>
     #[doc(hidden)]
@@ -9444,20 +8995,6 @@ impl ConnectorProfileConfig {
         &self,
     ) -> std::option::Option<&crate::model::ConnectorProfileCredentials> {
         self.connector_profile_credentials.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorProfileConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorProfileConfig");
-        formatter.field(
-            "connector_profile_properties",
-            &self.connector_profile_properties,
-        );
-        formatter.field(
-            "connector_profile_credentials",
-            &self.connector_profile_credentials,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConnectorProfileConfig`](crate::model::ConnectorProfileConfig).
@@ -9522,7 +9059,7 @@ impl ConnectorProfileConfig {
 
 /// <p> The connector-specific credentials required by a connector. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorProfileCredentials {
     /// <p> The connector-specific credentials required when using Amplitude. </p>
     #[doc(hidden)]
@@ -9684,30 +9221,6 @@ impl ConnectorProfileCredentials {
         &self,
     ) -> std::option::Option<&crate::model::CustomConnectorProfileCredentials> {
         self.custom_connector.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorProfileCredentials");
-        formatter.field("amplitude", &self.amplitude);
-        formatter.field("datadog", &self.datadog);
-        formatter.field("dynatrace", &self.dynatrace);
-        formatter.field("google_analytics", &self.google_analytics);
-        formatter.field("honeycode", &self.honeycode);
-        formatter.field("infor_nexus", &self.infor_nexus);
-        formatter.field("marketo", &self.marketo);
-        formatter.field("redshift", &self.redshift);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("service_now", &self.service_now);
-        formatter.field("singular", &self.singular);
-        formatter.field("slack", &self.slack);
-        formatter.field("snowflake", &self.snowflake);
-        formatter.field("trendmicro", &self.trendmicro);
-        formatter.field("veeva", &self.veeva);
-        formatter.field("zendesk", &self.zendesk);
-        formatter.field("sapo_data", &self.sapo_data);
-        formatter.field("custom_connector", &self.custom_connector);
-        formatter.finish()
     }
 }
 /// See [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials).
@@ -10054,7 +9567,7 @@ impl ConnectorProfileCredentials {
 
 /// <p>The connector-specific profile credentials that are required when using the custom connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomConnectorProfileCredentials {
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
     #[doc(hidden)]
@@ -10092,17 +9605,6 @@ impl CustomConnectorProfileCredentials {
     /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
     pub fn custom(&self) -> std::option::Option<&crate::model::CustomAuthCredentials> {
         self.custom.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomConnectorProfileCredentials");
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("basic", &self.basic);
-        formatter.field("oauth2", &self.oauth2);
-        formatter.field("api_key", &self.api_key);
-        formatter.field("custom", &self.custom);
-        formatter.finish()
     }
 }
 /// See [`CustomConnectorProfileCredentials`](crate::model::CustomConnectorProfileCredentials).
@@ -10204,7 +9706,7 @@ impl CustomConnectorProfileCredentials {
 
 /// <p>The custom credentials required for custom authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
     #[doc(hidden)]
@@ -10225,17 +9727,6 @@ impl CustomAuthCredentials {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.credentials_map.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomAuthCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomAuthCredentials");
-        formatter.field(
-            "custom_authentication_type",
-            &self.custom_authentication_type,
-        );
-        formatter.field("credentials_map", &self.credentials_map);
-        formatter.finish()
     }
 }
 /// See [`CustomAuthCredentials`](crate::model::CustomAuthCredentials).
@@ -10337,7 +9828,7 @@ impl std::fmt::Debug for ApiKeyCredentials {
 pub mod api_key_credentials {
 
     /// A builder for [`ApiKeyCredentials`](crate::model::ApiKeyCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
         pub(crate) api_secret_key: std::option::Option<std::string::String>,
@@ -10372,6 +9863,14 @@ pub mod api_key_credentials {
                 api_key: self.api_key,
                 api_secret_key: self.api_secret_key,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("api_secret_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -10439,7 +9938,7 @@ impl std::fmt::Debug for OAuth2Credentials {
 pub mod o_auth2_credentials {
 
     /// A builder for [`OAuth2Credentials`](crate::model::OAuth2Credentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -10518,6 +10017,17 @@ pub mod o_auth2_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &self.client_id);
+            formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("refresh_token", &self.refresh_token);
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.finish()
+        }
+    }
 }
 impl OAuth2Credentials {
     /// Creates a new builder-style object to manufacture [`OAuth2Credentials`](crate::model::OAuth2Credentials).
@@ -10528,7 +10038,7 @@ impl OAuth2Credentials {
 
 /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorOAuthRequest {
     /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
     #[doc(hidden)]
@@ -10545,14 +10055,6 @@ impl ConnectorOAuthRequest {
     /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
     pub fn redirect_uri(&self) -> std::option::Option<&str> {
         self.redirect_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectorOAuthRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorOAuthRequest");
-        formatter.field("auth_code", &self.auth_code);
-        formatter.field("redirect_uri", &self.redirect_uri);
-        formatter.finish()
     }
 }
 /// See [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
@@ -10634,7 +10136,7 @@ impl std::fmt::Debug for BasicAuthCredentials {
 pub mod basic_auth_credentials {
 
     /// A builder for [`BasicAuthCredentials`](crate::model::BasicAuthCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -10666,6 +10168,14 @@ pub mod basic_auth_credentials {
                 username: self.username,
                 password: self.password,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -10780,7 +10290,7 @@ impl AsRef<str> for AuthenticationType {
 
 /// <p> The connector-specific profile credentials required when using SAPOData. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SapoDataConnectorProfileCredentials {
     /// <p> The SAPOData basic authentication credentials. </p>
     #[doc(hidden)]
@@ -10799,14 +10309,6 @@ impl SapoDataConnectorProfileCredentials {
     /// <p> The SAPOData OAuth type authentication credentials. </p>
     pub fn o_auth_credentials(&self) -> std::option::Option<&crate::model::OAuthCredentials> {
         self.o_auth_credentials.as_ref()
-    }
-}
-impl std::fmt::Debug for SapoDataConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SapoDataConnectorProfileCredentials");
-        formatter.field("basic_auth_credentials", &self.basic_auth_credentials);
-        formatter.field("o_auth_credentials", &self.o_auth_credentials);
-        formatter.finish()
     }
 }
 /// See [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials).
@@ -10918,7 +10420,7 @@ impl std::fmt::Debug for OAuthCredentials {
 pub mod o_auth_credentials {
 
     /// A builder for [`OAuthCredentials`](crate::model::OAuthCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -10997,6 +10499,17 @@ pub mod o_auth_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &self.client_id);
+            formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("refresh_token", &self.refresh_token);
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.finish()
+        }
+    }
 }
 impl OAuthCredentials {
     /// Creates a new builder-style object to manufacture [`OAuthCredentials`](crate::model::OAuthCredentials).
@@ -11054,7 +10567,7 @@ impl std::fmt::Debug for ZendeskConnectorProfileCredentials {
 pub mod zendesk_connector_profile_credentials {
 
     /// A builder for [`ZendeskConnectorProfileCredentials`](crate::model::ZendeskConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -11118,6 +10631,16 @@ pub mod zendesk_connector_profile_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &self.client_id);
+            formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.finish()
+        }
+    }
 }
 impl ZendeskConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`ZendeskConnectorProfileCredentials`](crate::model::ZendeskConnectorProfileCredentials).
@@ -11159,7 +10682,7 @@ impl std::fmt::Debug for VeevaConnectorProfileCredentials {
 pub mod veeva_connector_profile_credentials {
 
     /// A builder for [`VeevaConnectorProfileCredentials`](crate::model::VeevaConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -11191,6 +10714,14 @@ pub mod veeva_connector_profile_credentials {
                 username: self.username,
                 password: self.password,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11226,7 +10757,7 @@ impl std::fmt::Debug for TrendmicroConnectorProfileCredentials {
 pub mod trendmicro_connector_profile_credentials {
 
     /// A builder for [`TrendmicroConnectorProfileCredentials`](crate::model::TrendmicroConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) api_secret_key: std::option::Option<std::string::String>,
     }
@@ -11249,6 +10780,13 @@ pub mod trendmicro_connector_profile_credentials {
             crate::model::TrendmicroConnectorProfileCredentials {
                 api_secret_key: self.api_secret_key,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("api_secret_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11292,7 +10830,7 @@ impl std::fmt::Debug for SnowflakeConnectorProfileCredentials {
 pub mod snowflake_connector_profile_credentials {
 
     /// A builder for [`SnowflakeConnectorProfileCredentials`](crate::model::SnowflakeConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -11324,6 +10862,14 @@ pub mod snowflake_connector_profile_credentials {
                 username: self.username,
                 password: self.password,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11383,7 +10929,7 @@ impl std::fmt::Debug for SlackConnectorProfileCredentials {
 pub mod slack_connector_profile_credentials {
 
     /// A builder for [`SlackConnectorProfileCredentials`](crate::model::SlackConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -11447,6 +10993,16 @@ pub mod slack_connector_profile_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &self.client_id);
+            formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.finish()
+        }
+    }
 }
 impl SlackConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`SlackConnectorProfileCredentials`](crate::model::SlackConnectorProfileCredentials).
@@ -11480,7 +11036,7 @@ impl std::fmt::Debug for SingularConnectorProfileCredentials {
 pub mod singular_connector_profile_credentials {
 
     /// A builder for [`SingularConnectorProfileCredentials`](crate::model::SingularConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
     }
@@ -11500,6 +11056,13 @@ pub mod singular_connector_profile_credentials {
             crate::model::SingularConnectorProfileCredentials {
                 api_key: self.api_key,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11543,7 +11106,7 @@ impl std::fmt::Debug for ServiceNowConnectorProfileCredentials {
 pub mod service_now_connector_profile_credentials {
 
     /// A builder for [`ServiceNowConnectorProfileCredentials`](crate::model::ServiceNowConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -11575,6 +11138,14 @@ pub mod service_now_connector_profile_credentials {
                 username: self.username,
                 password: self.password,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11634,7 +11205,7 @@ impl std::fmt::Debug for SalesforceConnectorProfileCredentials {
 pub mod salesforce_connector_profile_credentials {
 
     /// A builder for [`SalesforceConnectorProfileCredentials`](crate::model::SalesforceConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) refresh_token: std::option::Option<std::string::String>,
@@ -11701,6 +11272,16 @@ pub mod salesforce_connector_profile_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("refresh_token", &self.refresh_token);
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.field("client_credentials_arn", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl SalesforceConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`SalesforceConnectorProfileCredentials`](crate::model::SalesforceConnectorProfileCredentials).
@@ -11742,7 +11323,7 @@ impl std::fmt::Debug for RedshiftConnectorProfileCredentials {
 pub mod redshift_connector_profile_credentials {
 
     /// A builder for [`RedshiftConnectorProfileCredentials`](crate::model::RedshiftConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -11774,6 +11355,14 @@ pub mod redshift_connector_profile_credentials {
                 username: self.username,
                 password: self.password,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11833,7 +11422,7 @@ impl std::fmt::Debug for MarketoConnectorProfileCredentials {
 pub mod marketo_connector_profile_credentials {
 
     /// A builder for [`MarketoConnectorProfileCredentials`](crate::model::MarketoConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -11897,6 +11486,16 @@ pub mod marketo_connector_profile_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &self.client_id);
+            formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.finish()
+        }
+    }
 }
 impl MarketoConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`MarketoConnectorProfileCredentials`](crate::model::MarketoConnectorProfileCredentials).
@@ -11954,7 +11553,7 @@ impl std::fmt::Debug for InforNexusConnectorProfileCredentials {
 pub mod infor_nexus_connector_profile_credentials {
 
     /// A builder for [`InforNexusConnectorProfileCredentials`](crate::model::InforNexusConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -12018,6 +11617,16 @@ pub mod infor_nexus_connector_profile_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("secret_access_key", &self.secret_access_key);
+            formatter.field("datakey", &self.datakey);
+            formatter.finish()
+        }
+    }
 }
 impl InforNexusConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`InforNexusConnectorProfileCredentials`](crate::model::InforNexusConnectorProfileCredentials).
@@ -12067,7 +11676,7 @@ impl std::fmt::Debug for HoneycodeConnectorProfileCredentials {
 pub mod honeycode_connector_profile_credentials {
 
     /// A builder for [`HoneycodeConnectorProfileCredentials`](crate::model::HoneycodeConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) refresh_token: std::option::Option<std::string::String>,
@@ -12117,6 +11726,15 @@ pub mod honeycode_connector_profile_credentials {
                 refresh_token: self.refresh_token,
                 o_auth_request: self.o_auth_request,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("refresh_token", &self.refresh_token);
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.finish()
         }
     }
 }
@@ -12184,7 +11802,7 @@ impl std::fmt::Debug for GoogleAnalyticsConnectorProfileCredentials {
 pub mod google_analytics_connector_profile_credentials {
 
     /// A builder for [`GoogleAnalyticsConnectorProfileCredentials`](crate::model::GoogleAnalyticsConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -12263,6 +11881,17 @@ pub mod google_analytics_connector_profile_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &self.client_id);
+            formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("refresh_token", &self.refresh_token);
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.finish()
+        }
+    }
 }
 impl GoogleAnalyticsConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`GoogleAnalyticsConnectorProfileCredentials`](crate::model::GoogleAnalyticsConnectorProfileCredentials).
@@ -12273,7 +11902,7 @@ impl GoogleAnalyticsConnectorProfileCredentials {
 
 /// <p> The connector-specific profile credentials required by Dynatrace. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
     #[doc(hidden)]
@@ -12283,13 +11912,6 @@ impl DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
     pub fn api_token(&self) -> std::option::Option<&str> {
         self.api_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DynatraceConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynatraceConnectorProfileCredentials");
-        formatter.field("api_token", &self.api_token);
-        formatter.finish()
     }
 }
 /// See [`DynatraceConnectorProfileCredentials`](crate::model::DynatraceConnectorProfileCredentials).
@@ -12359,7 +11981,7 @@ impl std::fmt::Debug for DatadogConnectorProfileCredentials {
 pub mod datadog_connector_profile_credentials {
 
     /// A builder for [`DatadogConnectorProfileCredentials`](crate::model::DatadogConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
         pub(crate) application_key: std::option::Option<std::string::String>,
@@ -12394,6 +12016,14 @@ pub mod datadog_connector_profile_credentials {
                 api_key: self.api_key,
                 application_key: self.application_key,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("application_key", &self.application_key);
+            formatter.finish()
         }
     }
 }
@@ -12437,7 +12067,7 @@ impl std::fmt::Debug for AmplitudeConnectorProfileCredentials {
 pub mod amplitude_connector_profile_credentials {
 
     /// A builder for [`AmplitudeConnectorProfileCredentials`](crate::model::AmplitudeConnectorProfileCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
         pub(crate) secret_key: std::option::Option<std::string::String>,
@@ -12471,6 +12101,14 @@ pub mod amplitude_connector_profile_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl AmplitudeConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`AmplitudeConnectorProfileCredentials`](crate::model::AmplitudeConnectorProfileCredentials).
@@ -12481,7 +12119,7 @@ impl AmplitudeConnectorProfileCredentials {
 
 /// <p> The connector-specific profile properties required by each connector. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorProfileProperties {
     /// <p> The connector-specific properties required by Amplitude. </p>
     #[doc(hidden)]
@@ -12637,30 +12275,6 @@ impl ConnectorProfileProperties {
         &self,
     ) -> std::option::Option<&crate::model::CustomConnectorProfileProperties> {
         self.custom_connector.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorProfileProperties");
-        formatter.field("amplitude", &self.amplitude);
-        formatter.field("datadog", &self.datadog);
-        formatter.field("dynatrace", &self.dynatrace);
-        formatter.field("google_analytics", &self.google_analytics);
-        formatter.field("honeycode", &self.honeycode);
-        formatter.field("infor_nexus", &self.infor_nexus);
-        formatter.field("marketo", &self.marketo);
-        formatter.field("redshift", &self.redshift);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("service_now", &self.service_now);
-        formatter.field("singular", &self.singular);
-        formatter.field("slack", &self.slack);
-        formatter.field("snowflake", &self.snowflake);
-        formatter.field("trendmicro", &self.trendmicro);
-        formatter.field("veeva", &self.veeva);
-        formatter.field("zendesk", &self.zendesk);
-        formatter.field("sapo_data", &self.sapo_data);
-        formatter.field("custom_connector", &self.custom_connector);
-        formatter.finish()
     }
 }
 /// See [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties).
@@ -13000,7 +12614,7 @@ impl ConnectorProfileProperties {
 
 /// <p>The profile properties required by the custom connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomConnectorProfileProperties {
     /// <p>A map of properties that are required to create a profile for the custom connector.</p>
     #[doc(hidden)]
@@ -13021,14 +12635,6 @@ impl CustomConnectorProfileProperties {
     /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
     pub fn o_auth2_properties(&self) -> std::option::Option<&crate::model::OAuth2Properties> {
         self.o_auth2_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomConnectorProfileProperties");
-        formatter.field("profile_properties", &self.profile_properties);
-        formatter.field("o_auth2_properties", &self.o_auth2_properties);
-        formatter.finish()
     }
 }
 /// See [`CustomConnectorProfileProperties`](crate::model::CustomConnectorProfileProperties).
@@ -13099,7 +12705,7 @@ impl CustomConnectorProfileProperties {
 
 /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
     #[doc(hidden)]
@@ -13127,18 +12733,6 @@ impl OAuth2Properties {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.token_url_custom_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for OAuth2Properties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OAuth2Properties");
-        formatter.field("token_url", &self.token_url);
-        formatter.field("o_auth2_grant_type", &self.o_auth2_grant_type);
-        formatter.field(
-            "token_url_custom_properties",
-            &self.token_url_custom_properties,
-        );
-        formatter.finish()
     }
 }
 /// See [`OAuth2Properties`](crate::model::OAuth2Properties).
@@ -13311,7 +12905,7 @@ impl AsRef<str> for OAuth2GrantType {
 
 /// <p> The connector-specific profile properties required when using SAPOData. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SapoDataConnectorProfileProperties {
     /// <p> The location of the SAPOData resource. </p>
     #[doc(hidden)]
@@ -13363,19 +12957,6 @@ impl SapoDataConnectorProfileProperties {
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
     pub fn o_auth_properties(&self) -> std::option::Option<&crate::model::OAuthProperties> {
         self.o_auth_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for SapoDataConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SapoDataConnectorProfileProperties");
-        formatter.field("application_host_url", &self.application_host_url);
-        formatter.field("application_service_path", &self.application_service_path);
-        formatter.field("port_number", &self.port_number);
-        formatter.field("client_number", &self.client_number);
-        formatter.field("logon_language", &self.logon_language);
-        formatter.field("private_link_service_name", &self.private_link_service_name);
-        formatter.field("o_auth_properties", &self.o_auth_properties);
-        formatter.finish()
     }
 }
 /// See [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties).
@@ -13504,7 +13085,7 @@ impl SapoDataConnectorProfileProperties {
 
 /// <p> The OAuth properties required for OAuth type authentication. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OAuthProperties {
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
     #[doc(hidden)]
@@ -13528,15 +13109,6 @@ impl OAuthProperties {
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
     pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.o_auth_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for OAuthProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OAuthProperties");
-        formatter.field("token_url", &self.token_url);
-        formatter.field("auth_code_url", &self.auth_code_url);
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.finish()
     }
 }
 /// See [`OAuthProperties`](crate::model::OAuthProperties).
@@ -13611,7 +13183,7 @@ impl OAuthProperties {
 
 /// <p> The connector-specific profile properties required when using Zendesk. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZendeskConnectorProfileProperties {
     /// <p> The location of the Zendesk resource. </p>
     #[doc(hidden)]
@@ -13621,13 +13193,6 @@ impl ZendeskConnectorProfileProperties {
     /// <p> The location of the Zendesk resource. </p>
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ZendeskConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZendeskConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.finish()
     }
 }
 /// See [`ZendeskConnectorProfileProperties`](crate::model::ZendeskConnectorProfileProperties).
@@ -13666,7 +13231,7 @@ impl ZendeskConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using Veeva. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VeevaConnectorProfileProperties {
     /// <p> The location of the Veeva resource. </p>
     #[doc(hidden)]
@@ -13676,13 +13241,6 @@ impl VeevaConnectorProfileProperties {
     /// <p> The location of the Veeva resource. </p>
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
-    }
-}
-impl std::fmt::Debug for VeevaConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VeevaConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.finish()
     }
 }
 /// See [`VeevaConnectorProfileProperties`](crate::model::VeevaConnectorProfileProperties).
@@ -13721,14 +13279,8 @@ impl VeevaConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using Trend Micro. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrendmicroConnectorProfileProperties {}
-impl std::fmt::Debug for TrendmicroConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrendmicroConnectorProfileProperties");
-        formatter.finish()
-    }
-}
 /// See [`TrendmicroConnectorProfileProperties`](crate::model::TrendmicroConnectorProfileProperties).
 pub mod trendmicro_connector_profile_properties {
 
@@ -13751,7 +13303,7 @@ impl TrendmicroConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using Snowflake. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnowflakeConnectorProfileProperties {
     /// <p> The name of the Snowflake warehouse. </p>
     #[doc(hidden)]
@@ -13807,19 +13359,6 @@ impl SnowflakeConnectorProfileProperties {
     /// <p> The Amazon Web Services Region of the Snowflake account. </p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for SnowflakeConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnowflakeConnectorProfileProperties");
-        formatter.field("warehouse", &self.warehouse);
-        formatter.field("stage", &self.stage);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("private_link_service_name", &self.private_link_service_name);
-        formatter.field("account_name", &self.account_name);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`SnowflakeConnectorProfileProperties`](crate::model::SnowflakeConnectorProfileProperties).
@@ -13940,7 +13479,7 @@ impl SnowflakeConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using Slack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
     #[doc(hidden)]
@@ -13950,13 +13489,6 @@ impl SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
-    }
-}
-impl std::fmt::Debug for SlackConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlackConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.finish()
     }
 }
 /// See [`SlackConnectorProfileProperties`](crate::model::SlackConnectorProfileProperties).
@@ -13995,14 +13527,8 @@ impl SlackConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using Singular. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingularConnectorProfileProperties {}
-impl std::fmt::Debug for SingularConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingularConnectorProfileProperties");
-        formatter.finish()
-    }
-}
 /// See [`SingularConnectorProfileProperties`](crate::model::SingularConnectorProfileProperties).
 pub mod singular_connector_profile_properties {
 
@@ -14025,7 +13551,7 @@ impl SingularConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using ServiceNow. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowConnectorProfileProperties {
     /// <p> The location of the ServiceNow resource. </p>
     #[doc(hidden)]
@@ -14035,13 +13561,6 @@ impl ServiceNowConnectorProfileProperties {
     /// <p> The location of the ServiceNow resource. </p>
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceNowConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.finish()
     }
 }
 /// See [`ServiceNowConnectorProfileProperties`](crate::model::ServiceNowConnectorProfileProperties).
@@ -14080,7 +13599,7 @@ impl ServiceNowConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using Salesforce. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
     #[doc(hidden)]
@@ -14097,14 +13616,6 @@ impl SalesforceConnectorProfileProperties {
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub fn is_sandbox_environment(&self) -> bool {
         self.is_sandbox_environment
-    }
-}
-impl std::fmt::Debug for SalesforceConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.field("is_sandbox_environment", &self.is_sandbox_environment);
-        formatter.finish()
     }
 }
 /// See [`SalesforceConnectorProfileProperties`](crate::model::SalesforceConnectorProfileProperties).
@@ -14155,7 +13666,7 @@ impl SalesforceConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties when using Amazon Redshift. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftConnectorProfileProperties {
     /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
     #[doc(hidden)]
@@ -14186,16 +13697,6 @@ impl RedshiftConnectorProfileProperties {
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftConnectorProfileProperties");
-        formatter.field("database_url", &self.database_url);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`RedshiftConnectorProfileProperties`](crate::model::RedshiftConnectorProfileProperties).
@@ -14273,7 +13774,7 @@ impl RedshiftConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using Marketo. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarketoConnectorProfileProperties {
     /// <p> The location of the Marketo resource. </p>
     #[doc(hidden)]
@@ -14283,13 +13784,6 @@ impl MarketoConnectorProfileProperties {
     /// <p> The location of the Marketo resource. </p>
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
-    }
-}
-impl std::fmt::Debug for MarketoConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarketoConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.finish()
     }
 }
 /// See [`MarketoConnectorProfileProperties`](crate::model::MarketoConnectorProfileProperties).
@@ -14328,7 +13822,7 @@ impl MarketoConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required by Infor Nexus. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InforNexusConnectorProfileProperties {
     /// <p> The location of the Infor Nexus resource. </p>
     #[doc(hidden)]
@@ -14338,13 +13832,6 @@ impl InforNexusConnectorProfileProperties {
     /// <p> The location of the Infor Nexus resource. </p>
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
-    }
-}
-impl std::fmt::Debug for InforNexusConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InforNexusConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.finish()
     }
 }
 /// See [`InforNexusConnectorProfileProperties`](crate::model::InforNexusConnectorProfileProperties).
@@ -14383,14 +13870,8 @@ impl InforNexusConnectorProfileProperties {
 
 /// <p> The connector-specific properties required when using Amazon Honeycode. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoneycodeConnectorProfileProperties {}
-impl std::fmt::Debug for HoneycodeConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoneycodeConnectorProfileProperties");
-        formatter.finish()
-    }
-}
 /// See [`HoneycodeConnectorProfileProperties`](crate::model::HoneycodeConnectorProfileProperties).
 pub mod honeycode_connector_profile_properties {
 
@@ -14413,14 +13894,8 @@ impl HoneycodeConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required by Google Analytics. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GoogleAnalyticsConnectorProfileProperties {}
-impl std::fmt::Debug for GoogleAnalyticsConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GoogleAnalyticsConnectorProfileProperties");
-        formatter.finish()
-    }
-}
 /// See [`GoogleAnalyticsConnectorProfileProperties`](crate::model::GoogleAnalyticsConnectorProfileProperties).
 pub mod google_analytics_connector_profile_properties {
 
@@ -14443,7 +13918,7 @@ impl GoogleAnalyticsConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required by Dynatrace. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
     #[doc(hidden)]
@@ -14453,13 +13928,6 @@ impl DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
-    }
-}
-impl std::fmt::Debug for DynatraceConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynatraceConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.finish()
     }
 }
 /// See [`DynatraceConnectorProfileProperties`](crate::model::DynatraceConnectorProfileProperties).
@@ -14498,7 +13966,7 @@ impl DynatraceConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required by Datadog. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatadogConnectorProfileProperties {
     /// <p> The location of the Datadog resource. </p>
     #[doc(hidden)]
@@ -14508,13 +13976,6 @@ impl DatadogConnectorProfileProperties {
     /// <p> The location of the Datadog resource. </p>
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
-    }
-}
-impl std::fmt::Debug for DatadogConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatadogConnectorProfileProperties");
-        formatter.field("instance_url", &self.instance_url);
-        formatter.finish()
     }
 }
 /// See [`DatadogConnectorProfileProperties`](crate::model::DatadogConnectorProfileProperties).
@@ -14553,14 +14014,8 @@ impl DatadogConnectorProfileProperties {
 
 /// <p> The connector-specific profile properties required when using Amplitude. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmplitudeConnectorProfileProperties {}
-impl std::fmt::Debug for AmplitudeConnectorProfileProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmplitudeConnectorProfileProperties");
-        formatter.finish()
-    }
-}
 /// See [`AmplitudeConnectorProfileProperties`](crate::model::AmplitudeConnectorProfileProperties).
 pub mod amplitude_connector_profile_properties {
 
@@ -14673,7 +14128,7 @@ impl AsRef<str> for ConnectionMode {
 
 /// <p>Contains information about the configuration of the connector being registered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorProvisioningConfig {
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
     #[doc(hidden)]
@@ -14683,13 +14138,6 @@ impl ConnectorProvisioningConfig {
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
     pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaConnectorProvisioningConfig> {
         self.lambda.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorProvisioningConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorProvisioningConfig");
-        formatter.field("lambda", &self.lambda);
-        formatter.finish()
     }
 }
 /// See [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
@@ -14731,7 +14179,7 @@ impl ConnectorProvisioningConfig {
 
 /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaConnectorProvisioningConfig {
     /// <p>Lambda ARN of the connector being registered.</p>
     #[doc(hidden)]
@@ -14741,13 +14189,6 @@ impl LambdaConnectorProvisioningConfig {
     /// <p>Lambda ARN of the connector being registered.</p>
     pub fn lambda_arn(&self) -> std::option::Option<&str> {
         self.lambda_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaConnectorProvisioningConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaConnectorProvisioningConfig");
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
@@ -14873,7 +14314,7 @@ impl AsRef<str> for ConnectorProvisioningType {
 
 /// <p> The properties of the flow, such as its source, destination, trigger type, and so on. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlowDefinition {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
@@ -14987,36 +14428,6 @@ impl FlowDefinition {
         &self,
     ) -> std::option::Option<&crate::model::ExecutionDetails> {
         self.last_run_execution_details.as_ref()
-    }
-}
-impl std::fmt::Debug for FlowDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlowDefinition");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("description", &self.description);
-        formatter.field("flow_name", &self.flow_name);
-        formatter.field("flow_status", &self.flow_status);
-        formatter.field("source_connector_type", &self.source_connector_type);
-        formatter.field("source_connector_label", &self.source_connector_label);
-        formatter.field(
-            "destination_connector_type",
-            &self.destination_connector_type,
-        );
-        formatter.field(
-            "destination_connector_label",
-            &self.destination_connector_label,
-        );
-        formatter.field("trigger_type", &self.trigger_type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("last_updated_by", &self.last_updated_by);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "last_run_execution_details",
-            &self.last_run_execution_details,
-        );
-        formatter.finish()
     }
 }
 /// See [`FlowDefinition`](crate::model::FlowDefinition).
@@ -15273,7 +14684,7 @@ impl FlowDefinition {
 
 /// <p> Describes the details of the flow run, including the timestamp, status, and message. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionDetails {
     /// <p> Describes the details of the most recent flow run. </p>
     #[doc(hidden)]
@@ -15299,24 +14710,6 @@ impl ExecutionDetails {
         &self,
     ) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.most_recent_execution_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ExecutionDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionDetails");
-        formatter.field(
-            "most_recent_execution_message",
-            &self.most_recent_execution_message,
-        );
-        formatter.field(
-            "most_recent_execution_time",
-            &self.most_recent_execution_time,
-        );
-        formatter.field(
-            "most_recent_execution_status",
-            &self.most_recent_execution_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`ExecutionDetails`](crate::model::ExecutionDetails).
@@ -15489,7 +14882,7 @@ impl AsRef<str> for ExecutionStatus {
 
 /// <p>Information about the registered connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorDetail {
     /// <p>A description about the registered connector.</p>
     #[doc(hidden)]
@@ -15571,26 +14964,6 @@ impl ConnectorDetail {
     /// <p>The connection mode that the connector supports.</p>
     pub fn connector_modes(&self) -> std::option::Option<&[std::string::String]> {
         self.connector_modes.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectorDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorDetail");
-        formatter.field("connector_description", &self.connector_description);
-        formatter.field("connector_name", &self.connector_name);
-        formatter.field("connector_owner", &self.connector_owner);
-        formatter.field("connector_version", &self.connector_version);
-        formatter.field("application_type", &self.application_type);
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("connector_label", &self.connector_label);
-        formatter.field("registered_at", &self.registered_at);
-        formatter.field("registered_by", &self.registered_by);
-        formatter.field(
-            "connector_provisioning_type",
-            &self.connector_provisioning_type,
-        );
-        formatter.field("connector_modes", &self.connector_modes);
-        formatter.finish()
     }
 }
 /// See [`ConnectorDetail`](crate::model::ConnectorDetail).
@@ -15792,7 +15165,7 @@ impl ConnectorDetail {
 
 /// <p> The high-level entity that can be queried in Amazon AppFlow. For example, a Salesforce entity might be an <i>Account</i> or <i>Opportunity</i>, whereas a ServiceNow entity might be an <i>Incident</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorEntity {
     /// <p> The name of the connector entity. </p>
     #[doc(hidden)]
@@ -15816,15 +15189,6 @@ impl ConnectorEntity {
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
     pub fn has_nested_entities(&self) -> bool {
         self.has_nested_entities
-    }
-}
-impl std::fmt::Debug for ConnectorEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorEntity");
-        formatter.field("name", &self.name);
-        formatter.field("label", &self.label);
-        formatter.field("has_nested_entities", &self.has_nested_entities);
-        formatter.finish()
     }
 }
 /// See [`ConnectorEntity`](crate::model::ConnectorEntity).
@@ -15887,7 +15251,7 @@ impl ConnectorEntity {
 
 /// <p> Specifies information about the past flow run instances for a given flow. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionRecord {
     /// <p> Specifies the identifier of the given flow run. </p>
     #[doc(hidden)]
@@ -15939,19 +15303,6 @@ impl ExecutionRecord {
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
     pub fn data_pull_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_pull_end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ExecutionRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionRecord");
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("execution_status", &self.execution_status);
-        formatter.field("execution_result", &self.execution_result);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("data_pull_start_time", &self.data_pull_start_time);
-        formatter.field("data_pull_end_time", &self.data_pull_end_time);
-        formatter.finish()
     }
 }
 /// See [`ExecutionRecord`](crate::model::ExecutionRecord).
@@ -16080,7 +15431,7 @@ impl ExecutionRecord {
 
 /// <p> Specifies the end result of the flow run. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionResult {
     /// <p> Provides any error message information related to the flow run. </p>
     #[doc(hidden)]
@@ -16111,16 +15462,6 @@ impl ExecutionResult {
     /// <p> The number of records processed in the flow run. </p>
     pub fn records_processed(&self) -> std::option::Option<i64> {
         self.records_processed
-    }
-}
-impl std::fmt::Debug for ExecutionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionResult");
-        formatter.field("error_info", &self.error_info);
-        formatter.field("bytes_processed", &self.bytes_processed);
-        formatter.field("bytes_written", &self.bytes_written);
-        formatter.field("records_processed", &self.records_processed);
-        formatter.finish()
     }
 }
 /// See [`ExecutionResult`](crate::model::ExecutionResult).
@@ -16198,7 +15539,7 @@ impl ExecutionResult {
 
 /// <p> Provides details in the event of a failed flow, including the failure count and the related error messages. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p> Specifies the failure count for the attempted flow. </p>
     #[doc(hidden)]
@@ -16215,14 +15556,6 @@ impl ErrorInfo {
     /// <p> Specifies the error message that appears if a flow fails. </p>
     pub fn execution_message(&self) -> std::option::Option<&str> {
         self.execution_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorInfo");
-        formatter.field("put_failures_count", &self.put_failures_count);
-        formatter.field("execution_message", &self.execution_message);
-        formatter.finish()
     }
 }
 /// See [`ErrorInfo`](crate::model::ErrorInfo).
@@ -16276,7 +15609,7 @@ impl ErrorInfo {
 
 /// <p> The configuration settings related to a given connector. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorConfiguration {
     /// <p> Specifies whether the connector can be used as a source. </p>
     #[doc(hidden)]
@@ -16480,59 +15813,6 @@ impl ConnectorConfiguration {
     /// <p>Information about who registered the connector.</p>
     pub fn registered_by(&self) -> std::option::Option<&str> {
         self.registered_by.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectorConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorConfiguration");
-        formatter.field("can_use_as_source", &self.can_use_as_source);
-        formatter.field("can_use_as_destination", &self.can_use_as_destination);
-        formatter.field(
-            "supported_destination_connectors",
-            &self.supported_destination_connectors,
-        );
-        formatter.field(
-            "supported_scheduling_frequencies",
-            &self.supported_scheduling_frequencies,
-        );
-        formatter.field("is_private_link_enabled", &self.is_private_link_enabled);
-        formatter.field(
-            "is_private_link_endpoint_url_required",
-            &self.is_private_link_endpoint_url_required,
-        );
-        formatter.field("supported_trigger_types", &self.supported_trigger_types);
-        formatter.field("connector_metadata", &self.connector_metadata);
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("connector_label", &self.connector_label);
-        formatter.field("connector_description", &self.connector_description);
-        formatter.field("connector_owner", &self.connector_owner);
-        formatter.field("connector_name", &self.connector_name);
-        formatter.field("connector_version", &self.connector_version);
-        formatter.field("connector_arn", &self.connector_arn);
-        formatter.field("connector_modes", &self.connector_modes);
-        formatter.field("authentication_config", &self.authentication_config);
-        formatter.field(
-            "connector_runtime_settings",
-            &self.connector_runtime_settings,
-        );
-        formatter.field("supported_api_versions", &self.supported_api_versions);
-        formatter.field("supported_operators", &self.supported_operators);
-        formatter.field(
-            "supported_write_operations",
-            &self.supported_write_operations,
-        );
-        formatter.field(
-            "connector_provisioning_type",
-            &self.connector_provisioning_type,
-        );
-        formatter.field(
-            "connector_provisioning_config",
-            &self.connector_provisioning_config,
-        );
-        formatter.field("logo_url", &self.logo_url);
-        formatter.field("registered_at", &self.registered_at);
-        formatter.field("registered_by", &self.registered_by);
-        formatter.finish()
     }
 }
 /// See [`ConnectorConfiguration`](crate::model::ConnectorConfiguration).
@@ -17219,7 +16499,7 @@ impl AsRef<str> for Operators {
 
 /// <p>Contains information about the connector runtime settings that are required for flow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorRuntimeSetting {
     /// <p>Contains value information about the connector runtime setting.</p>
     #[doc(hidden)]
@@ -17271,22 +16551,6 @@ impl ConnectorRuntimeSetting {
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
     pub fn connector_supplied_value_options(&self) -> std::option::Option<&[std::string::String]> {
         self.connector_supplied_value_options.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectorRuntimeSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorRuntimeSetting");
-        formatter.field("key", &self.key);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("is_required", &self.is_required);
-        formatter.field("label", &self.label);
-        formatter.field("description", &self.description);
-        formatter.field("scope", &self.scope);
-        formatter.field(
-            "connector_supplied_value_options",
-            &self.connector_supplied_value_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConnectorRuntimeSetting`](crate::model::ConnectorRuntimeSetting).
@@ -17410,7 +16674,7 @@ impl ConnectorRuntimeSetting {
 
 /// <p>Contains information about the authentication config that the connector supports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationConfig {
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
     #[doc(hidden)]
@@ -17455,18 +16719,6 @@ impl AuthenticationConfig {
     /// <p>Contains information required for custom authentication.</p>
     pub fn custom_auth_configs(&self) -> std::option::Option<&[crate::model::CustomAuthConfig]> {
         self.custom_auth_configs.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthenticationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationConfig");
-        formatter.field("is_basic_auth_supported", &self.is_basic_auth_supported);
-        formatter.field("is_api_key_auth_supported", &self.is_api_key_auth_supported);
-        formatter.field("is_o_auth2_supported", &self.is_o_auth2_supported);
-        formatter.field("is_custom_auth_supported", &self.is_custom_auth_supported);
-        formatter.field("o_auth2_defaults", &self.o_auth2_defaults);
-        formatter.field("custom_auth_configs", &self.custom_auth_configs);
-        formatter.finish()
     }
 }
 /// See [`AuthenticationConfig`](crate::model::AuthenticationConfig).
@@ -17578,7 +16830,7 @@ impl AuthenticationConfig {
 
 /// <p>Configuration information required for custom authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomAuthConfig {
     /// <p>The authentication type that the custom connector uses.</p>
     #[doc(hidden)]
@@ -17595,17 +16847,6 @@ impl CustomAuthConfig {
     /// <p>Information about authentication parameters required for authentication.</p>
     pub fn auth_parameters(&self) -> std::option::Option<&[crate::model::AuthParameter]> {
         self.auth_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomAuthConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomAuthConfig");
-        formatter.field(
-            "custom_authentication_type",
-            &self.custom_authentication_type,
-        );
-        formatter.field("auth_parameters", &self.auth_parameters);
-        formatter.finish()
     }
 }
 /// See [`CustomAuthConfig`](crate::model::CustomAuthConfig).
@@ -17668,7 +16909,7 @@ impl CustomAuthConfig {
 
 /// <p>Information about required authentication parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthParameter {
     /// <p>The authentication key required to authenticate with the connector.</p>
     #[doc(hidden)]
@@ -17713,18 +16954,6 @@ impl AuthParameter {
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
     pub fn connector_supplied_values(&self) -> std::option::Option<&[std::string::String]> {
         self.connector_supplied_values.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthParameter");
-        formatter.field("key", &self.key);
-        formatter.field("is_required", &self.is_required);
-        formatter.field("label", &self.label);
-        formatter.field("description", &self.description);
-        formatter.field("is_sensitive_field", &self.is_sensitive_field);
-        formatter.field("connector_supplied_values", &self.connector_supplied_values);
-        formatter.finish()
     }
 }
 /// See [`AuthParameter`](crate::model::AuthParameter).
@@ -17833,7 +17062,7 @@ impl AuthParameter {
 
 /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OAuth2Defaults {
     /// <p>OAuth 2.0 scopes that the connector supports.</p>
     #[doc(hidden)]
@@ -17877,20 +17106,6 @@ impl OAuth2Defaults {
         &self,
     ) -> std::option::Option<&[crate::model::OAuth2CustomParameter]> {
         self.oauth2_custom_properties.as_deref()
-    }
-}
-impl std::fmt::Debug for OAuth2Defaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OAuth2Defaults");
-        formatter.field("oauth_scopes", &self.oauth_scopes);
-        formatter.field("token_urls", &self.token_urls);
-        formatter.field("auth_code_urls", &self.auth_code_urls);
-        formatter.field(
-            "oauth2_grant_types_supported",
-            &self.oauth2_grant_types_supported,
-        );
-        formatter.field("oauth2_custom_properties", &self.oauth2_custom_properties);
-        formatter.finish()
     }
 }
 /// See [`OAuth2Defaults`](crate::model::OAuth2Defaults).
@@ -18030,7 +17245,7 @@ impl OAuth2Defaults {
 
 /// <p>Custom parameter required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OAuth2CustomParameter {
     /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
     #[doc(hidden)]
@@ -18082,19 +17297,6 @@ impl OAuth2CustomParameter {
     /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::OAuth2CustomPropType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for OAuth2CustomParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OAuth2CustomParameter");
-        formatter.field("key", &self.key);
-        formatter.field("is_required", &self.is_required);
-        formatter.field("label", &self.label);
-        formatter.field("description", &self.description);
-        formatter.field("is_sensitive_field", &self.is_sensitive_field);
-        formatter.field("connector_supplied_values", &self.connector_supplied_values);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter).
@@ -18310,7 +17512,7 @@ impl AsRef<str> for OAuth2CustomPropType {
 
 /// <p> A structure to specify connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorMetadata {
     /// <p> The connector metadata specific to Amplitude. </p>
     #[doc(hidden)]
@@ -18462,33 +17664,6 @@ impl ConnectorMetadata {
     /// <p> The connector metadata specific to SAPOData. </p>
     pub fn sapo_data(&self) -> std::option::Option<&crate::model::SapoDataMetadata> {
         self.sapo_data.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorMetadata");
-        formatter.field("amplitude", &self.amplitude);
-        formatter.field("datadog", &self.datadog);
-        formatter.field("dynatrace", &self.dynatrace);
-        formatter.field("google_analytics", &self.google_analytics);
-        formatter.field("infor_nexus", &self.infor_nexus);
-        formatter.field("marketo", &self.marketo);
-        formatter.field("redshift", &self.redshift);
-        formatter.field("s3", &self.s3);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("service_now", &self.service_now);
-        formatter.field("singular", &self.singular);
-        formatter.field("slack", &self.slack);
-        formatter.field("snowflake", &self.snowflake);
-        formatter.field("trendmicro", &self.trendmicro);
-        formatter.field("veeva", &self.veeva);
-        formatter.field("zendesk", &self.zendesk);
-        formatter.field("event_bridge", &self.event_bridge);
-        formatter.field("upsolver", &self.upsolver);
-        formatter.field("customer_profiles", &self.customer_profiles);
-        formatter.field("honeycode", &self.honeycode);
-        formatter.field("sapo_data", &self.sapo_data);
-        formatter.finish()
     }
 }
 /// See [`ConnectorMetadata`](crate::model::ConnectorMetadata).
@@ -18827,14 +18002,8 @@ impl ConnectorMetadata {
 
 /// <p> The connector metadata specific to SAPOData. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SapoDataMetadata {}
-impl std::fmt::Debug for SapoDataMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SapoDataMetadata");
-        formatter.finish()
-    }
-}
 /// See [`SapoDataMetadata`](crate::model::SapoDataMetadata).
 pub mod sapo_data_metadata {
 
@@ -18857,7 +18026,7 @@ impl SapoDataMetadata {
 
 /// <p> The connector metadata specific to Amazon Honeycode. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoneycodeMetadata {
     /// <p> The desired authorization scope for the Amazon Honeycode account. </p>
     #[doc(hidden)]
@@ -18867,13 +18036,6 @@ impl HoneycodeMetadata {
     /// <p> The desired authorization scope for the Amazon Honeycode account. </p>
     pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.o_auth_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for HoneycodeMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoneycodeMetadata");
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.finish()
     }
 }
 /// See [`HoneycodeMetadata`](crate::model::HoneycodeMetadata).
@@ -18921,14 +18083,8 @@ impl HoneycodeMetadata {
 
 /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerProfilesMetadata {}
-impl std::fmt::Debug for CustomerProfilesMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerProfilesMetadata");
-        formatter.finish()
-    }
-}
 /// See [`CustomerProfilesMetadata`](crate::model::CustomerProfilesMetadata).
 pub mod customer_profiles_metadata {
 
@@ -18951,14 +18107,8 @@ impl CustomerProfilesMetadata {
 
 /// <p> The connector metadata specific to Upsolver. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpsolverMetadata {}
-impl std::fmt::Debug for UpsolverMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpsolverMetadata");
-        formatter.finish()
-    }
-}
 /// See [`UpsolverMetadata`](crate::model::UpsolverMetadata).
 pub mod upsolver_metadata {
 
@@ -18981,14 +18131,8 @@ impl UpsolverMetadata {
 
 /// <p> The connector metadata specific to Amazon EventBridge. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventBridgeMetadata {}
-impl std::fmt::Debug for EventBridgeMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventBridgeMetadata");
-        formatter.finish()
-    }
-}
 /// See [`EventBridgeMetadata`](crate::model::EventBridgeMetadata).
 pub mod event_bridge_metadata {
 
@@ -19011,7 +18155,7 @@ impl EventBridgeMetadata {
 
 /// <p> The connector metadata specific to Zendesk. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZendeskMetadata {
     /// <p> The desired authorization scope for the Zendesk account. </p>
     #[doc(hidden)]
@@ -19021,13 +18165,6 @@ impl ZendeskMetadata {
     /// <p> The desired authorization scope for the Zendesk account. </p>
     pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.o_auth_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for ZendeskMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZendeskMetadata");
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.finish()
     }
 }
 /// See [`ZendeskMetadata`](crate::model::ZendeskMetadata).
@@ -19075,14 +18212,8 @@ impl ZendeskMetadata {
 
 /// <p> The connector metadata specific to Veeva. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VeevaMetadata {}
-impl std::fmt::Debug for VeevaMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VeevaMetadata");
-        formatter.finish()
-    }
-}
 /// See [`VeevaMetadata`](crate::model::VeevaMetadata).
 pub mod veeva_metadata {
 
@@ -19105,14 +18236,8 @@ impl VeevaMetadata {
 
 /// <p> The connector metadata specific to Trend Micro. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrendmicroMetadata {}
-impl std::fmt::Debug for TrendmicroMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrendmicroMetadata");
-        formatter.finish()
-    }
-}
 /// See [`TrendmicroMetadata`](crate::model::TrendmicroMetadata).
 pub mod trendmicro_metadata {
 
@@ -19135,7 +18260,7 @@ impl TrendmicroMetadata {
 
 /// <p> The connector metadata specific to Snowflake. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnowflakeMetadata {
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
     #[doc(hidden)]
@@ -19145,13 +18270,6 @@ impl SnowflakeMetadata {
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
     pub fn supported_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_regions.as_deref()
-    }
-}
-impl std::fmt::Debug for SnowflakeMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnowflakeMetadata");
-        formatter.field("supported_regions", &self.supported_regions);
-        formatter.finish()
     }
 }
 /// See [`SnowflakeMetadata`](crate::model::SnowflakeMetadata).
@@ -19199,7 +18317,7 @@ impl SnowflakeMetadata {
 
 /// <p> The connector metadata specific to Slack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlackMetadata {
     /// <p> The desired authorization scope for the Slack account. </p>
     #[doc(hidden)]
@@ -19209,13 +18327,6 @@ impl SlackMetadata {
     /// <p> The desired authorization scope for the Slack account. </p>
     pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.o_auth_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for SlackMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlackMetadata");
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.finish()
     }
 }
 /// See [`SlackMetadata`](crate::model::SlackMetadata).
@@ -19263,14 +18374,8 @@ impl SlackMetadata {
 
 /// <p> The connector metadata specific to Singular. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingularMetadata {}
-impl std::fmt::Debug for SingularMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingularMetadata");
-        formatter.finish()
-    }
-}
 /// See [`SingularMetadata`](crate::model::SingularMetadata).
 pub mod singular_metadata {
 
@@ -19293,14 +18398,8 @@ impl SingularMetadata {
 
 /// <p> The connector metadata specific to ServiceNow. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowMetadata {}
-impl std::fmt::Debug for ServiceNowMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowMetadata");
-        formatter.finish()
-    }
-}
 /// See [`ServiceNowMetadata`](crate::model::ServiceNowMetadata).
 pub mod service_now_metadata {
 
@@ -19323,7 +18422,7 @@ impl ServiceNowMetadata {
 
 /// <p> The connector metadata specific to Salesforce. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceMetadata {
     /// <p> The desired authorization scope for the Salesforce account. </p>
     #[doc(hidden)]
@@ -19333,13 +18432,6 @@ impl SalesforceMetadata {
     /// <p> The desired authorization scope for the Salesforce account. </p>
     pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.o_auth_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceMetadata");
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.finish()
     }
 }
 /// See [`SalesforceMetadata`](crate::model::SalesforceMetadata).
@@ -19387,14 +18479,8 @@ impl SalesforceMetadata {
 
 /// <p> The connector metadata specific to Amazon S3. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Metadata {}
-impl std::fmt::Debug for S3Metadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Metadata");
-        formatter.finish()
-    }
-}
 /// See [`S3Metadata`](crate::model::S3Metadata).
 pub mod s3_metadata {
 
@@ -19417,14 +18503,8 @@ impl S3Metadata {
 
 /// <p> The connector metadata specific to Amazon Redshift. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftMetadata {}
-impl std::fmt::Debug for RedshiftMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftMetadata");
-        formatter.finish()
-    }
-}
 /// See [`RedshiftMetadata`](crate::model::RedshiftMetadata).
 pub mod redshift_metadata {
 
@@ -19447,14 +18527,8 @@ impl RedshiftMetadata {
 
 /// <p> The connector metadata specific to Marketo. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarketoMetadata {}
-impl std::fmt::Debug for MarketoMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarketoMetadata");
-        formatter.finish()
-    }
-}
 /// See [`MarketoMetadata`](crate::model::MarketoMetadata).
 pub mod marketo_metadata {
 
@@ -19477,14 +18551,8 @@ impl MarketoMetadata {
 
 /// <p> The connector metadata specific to Infor Nexus. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InforNexusMetadata {}
-impl std::fmt::Debug for InforNexusMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InforNexusMetadata");
-        formatter.finish()
-    }
-}
 /// See [`InforNexusMetadata`](crate::model::InforNexusMetadata).
 pub mod infor_nexus_metadata {
 
@@ -19507,7 +18575,7 @@ impl InforNexusMetadata {
 
 /// <p> The connector metadata specific to Google Analytics. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GoogleAnalyticsMetadata {
     /// <p> The desired authorization scope for the Google Analytics account. </p>
     #[doc(hidden)]
@@ -19517,13 +18585,6 @@ impl GoogleAnalyticsMetadata {
     /// <p> The desired authorization scope for the Google Analytics account. </p>
     pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.o_auth_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for GoogleAnalyticsMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GoogleAnalyticsMetadata");
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.finish()
     }
 }
 /// See [`GoogleAnalyticsMetadata`](crate::model::GoogleAnalyticsMetadata).
@@ -19571,14 +18632,8 @@ impl GoogleAnalyticsMetadata {
 
 /// <p> The connector metadata specific to Dynatrace. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynatraceMetadata {}
-impl std::fmt::Debug for DynatraceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynatraceMetadata");
-        formatter.finish()
-    }
-}
 /// See [`DynatraceMetadata`](crate::model::DynatraceMetadata).
 pub mod dynatrace_metadata {
 
@@ -19601,14 +18656,8 @@ impl DynatraceMetadata {
 
 /// <p> The connector metadata specific to Datadog. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatadogMetadata {}
-impl std::fmt::Debug for DatadogMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatadogMetadata");
-        formatter.finish()
-    }
-}
 /// See [`DatadogMetadata`](crate::model::DatadogMetadata).
 pub mod datadog_metadata {
 
@@ -19631,14 +18680,8 @@ impl DatadogMetadata {
 
 /// <p> The connector metadata specific to Amplitude. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmplitudeMetadata {}
-impl std::fmt::Debug for AmplitudeMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmplitudeMetadata");
-        formatter.finish()
-    }
-}
 /// See [`AmplitudeMetadata`](crate::model::AmplitudeMetadata).
 pub mod amplitude_metadata {
 
@@ -19773,7 +18816,7 @@ impl AsRef<str> for ScheduleFrequencyType {
 
 /// <p> Describes an instance of a connector. This includes the provided name, credentials ARN, connection-mode, and so on. To keep the API intuitive and extensible, the fields that are common to all types of connector profiles are explicitly specified at the top level. The rest of the connector-specific properties are available via the <code>connectorProfileProperties</code> field. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorProfile {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     #[doc(hidden)]
@@ -19851,28 +18894,6 @@ impl ConnectorProfile {
         &self,
     ) -> std::option::Option<&crate::model::PrivateConnectionProvisioningState> {
         self.private_connection_provisioning_state.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorProfile");
-        formatter.field("connector_profile_arn", &self.connector_profile_arn);
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("connector_label", &self.connector_label);
-        formatter.field("connection_mode", &self.connection_mode);
-        formatter.field("credentials_arn", &self.credentials_arn);
-        formatter.field(
-            "connector_profile_properties",
-            &self.connector_profile_properties,
-        );
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field(
-            "private_connection_provisioning_state",
-            &self.private_connection_provisioning_state,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConnectorProfile`](crate::model::ConnectorProfile).
@@ -20057,7 +19078,7 @@ impl ConnectorProfile {
 
 /// <p> Specifies the private connection provisioning state. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateConnectionProvisioningState {
     /// <p> Specifies the private connection provisioning status. </p>
     #[doc(hidden)]
@@ -20085,15 +19106,6 @@ impl PrivateConnectionProvisioningState {
         &self,
     ) -> std::option::Option<&crate::model::PrivateConnectionProvisioningFailureCause> {
         self.failure_cause.as_ref()
-    }
-}
-impl std::fmt::Debug for PrivateConnectionProvisioningState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateConnectionProvisioningState");
-        formatter.field("status", &self.status);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.field("failure_cause", &self.failure_cause);
-        formatter.finish()
     }
 }
 /// See [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState).
@@ -20383,7 +19395,7 @@ impl AsRef<str> for PrivateConnectionProvisioningStatus {
 
 /// <p> Describes the data model of a connector field. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorEntityField {
     /// <p> The unique identifier of the connector field. </p>
     #[doc(hidden)]
@@ -20471,26 +19483,6 @@ impl ConnectorEntityField {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.custom_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorEntityField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorEntityField");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("parent_identifier", &self.parent_identifier);
-        formatter.field("label", &self.label);
-        formatter.field("is_primary_key", &self.is_primary_key);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("is_deprecated", &self.is_deprecated);
-        formatter.field(
-            "supported_field_type_details",
-            &self.supported_field_type_details,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("source_properties", &self.source_properties);
-        formatter.field("destination_properties", &self.destination_properties);
-        formatter.field("custom_properties", &self.custom_properties);
-        formatter.finish()
     }
 }
 /// See [`ConnectorEntityField`](crate::model::ConnectorEntityField).
@@ -20689,7 +19681,7 @@ impl ConnectorEntityField {
 
 /// <p> The properties that can be applied to a field when connector is being used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationFieldProperties {
     /// <p> Specifies if the destination field can be created by the current user. </p>
     #[doc(hidden)]
@@ -20737,21 +19729,6 @@ impl DestinationFieldProperties {
         &self,
     ) -> std::option::Option<&[crate::model::WriteOperationType]> {
         self.supported_write_operations.as_deref()
-    }
-}
-impl std::fmt::Debug for DestinationFieldProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationFieldProperties");
-        formatter.field("is_creatable", &self.is_creatable);
-        formatter.field("is_nullable", &self.is_nullable);
-        formatter.field("is_upsertable", &self.is_upsertable);
-        formatter.field("is_updatable", &self.is_updatable);
-        formatter.field("is_defaulted_on_create", &self.is_defaulted_on_create);
-        formatter.field(
-            "supported_write_operations",
-            &self.supported_write_operations,
-        );
-        formatter.finish()
     }
 }
 /// See [`DestinationFieldProperties`](crate::model::DestinationFieldProperties).
@@ -20863,7 +19840,7 @@ impl DestinationFieldProperties {
 
 /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceFieldProperties {
     /// <p> Indicates whether the field can be returned in a search result. </p>
     #[doc(hidden)]
@@ -20887,18 +19864,6 @@ impl SourceFieldProperties {
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
     pub fn is_timestamp_field_for_incremental_queries(&self) -> bool {
         self.is_timestamp_field_for_incremental_queries
-    }
-}
-impl std::fmt::Debug for SourceFieldProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceFieldProperties");
-        formatter.field("is_retrievable", &self.is_retrievable);
-        formatter.field("is_queryable", &self.is_queryable);
-        formatter.field(
-            "is_timestamp_field_for_incremental_queries",
-            &self.is_timestamp_field_for_incremental_queries,
-        );
-        formatter.finish()
     }
 }
 /// See [`SourceFieldProperties`](crate::model::SourceFieldProperties).
@@ -20966,7 +19931,7 @@ impl SourceFieldProperties {
 
 /// <p> Contains details regarding all the supported <code>FieldTypes</code> and their corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SupportedFieldTypeDetails {
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
     #[doc(hidden)]
@@ -20976,13 +19941,6 @@ impl SupportedFieldTypeDetails {
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
     pub fn v1(&self) -> std::option::Option<&crate::model::FieldTypeDetails> {
         self.v1.as_ref()
-    }
-}
-impl std::fmt::Debug for SupportedFieldTypeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SupportedFieldTypeDetails");
-        formatter.field("v1", &self.v1);
-        formatter.finish()
     }
 }
 /// See [`SupportedFieldTypeDetails`](crate::model::SupportedFieldTypeDetails).
@@ -21022,7 +19980,7 @@ impl SupportedFieldTypeDetails {
 
 /// <p> Contains details regarding the supported field type and the operators that can be applied for filtering. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldTypeDetails {
     /// <p> The type of field, such as string, integer, date, and so on. </p>
     #[doc(hidden)]
@@ -21074,19 +20032,6 @@ impl FieldTypeDetails {
     /// <p>This is the allowable length range for this field's value.</p>
     pub fn field_length_range(&self) -> std::option::Option<&crate::model::Range> {
         self.field_length_range.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldTypeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldTypeDetails");
-        formatter.field("field_type", &self.field_type);
-        formatter.field("filter_operators", &self.filter_operators);
-        formatter.field("supported_values", &self.supported_values);
-        formatter.field("value_regex_pattern", &self.value_regex_pattern);
-        formatter.field("supported_date_format", &self.supported_date_format);
-        formatter.field("field_value_range", &self.field_value_range);
-        formatter.field("field_length_range", &self.field_length_range);
-        formatter.finish()
     }
 }
 /// See [`FieldTypeDetails`](crate::model::FieldTypeDetails).
@@ -21227,7 +20172,7 @@ impl FieldTypeDetails {
 
 /// <p>The range of values that the property supports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Range {
     /// <p>Maximum value supported by the field.</p>
     #[doc(hidden)]
@@ -21244,14 +20189,6 @@ impl Range {
     /// <p>Minimum value supported by the field.</p>
     pub fn minimum(&self) -> f64 {
         self.minimum
-    }
-}
-impl std::fmt::Debug for Range {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Range");
-        formatter.field("maximum", &self.maximum);
-        formatter.field("minimum", &self.minimum);
-        formatter.finish()
     }
 }
 /// See [`Range`](crate::model::Range).

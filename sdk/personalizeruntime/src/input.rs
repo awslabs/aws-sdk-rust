@@ -548,7 +548,7 @@ impl GetRecommendationsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
     #[doc(hidden)]
@@ -634,25 +634,10 @@ impl GetRecommendationsInput {
         self.promotions.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationsInput");
-        formatter.field("campaign_arn", &self.campaign_arn);
-        formatter.field("item_id", &self.item_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("num_results", &self.num_results);
-        formatter.field("context", &self.context);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("filter_values", &self.filter_values);
-        formatter.field("recommender_arn", &self.recommender_arn);
-        formatter.field("promotions", &self.promotions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPersonalizedRankingInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
     #[doc(hidden)]
@@ -709,17 +694,5 @@ impl GetPersonalizedRankingInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.filter_values.as_ref()
-    }
-}
-impl std::fmt::Debug for GetPersonalizedRankingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPersonalizedRankingInput");
-        formatter.field("campaign_arn", &self.campaign_arn);
-        formatter.field("input_list", &self.input_list);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("context", &self.context);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("filter_values", &self.filter_values);
-        formatter.finish()
     }
 }

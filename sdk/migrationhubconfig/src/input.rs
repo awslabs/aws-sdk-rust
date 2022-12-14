@@ -494,18 +494,12 @@ impl GetHomeRegionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHomeRegionInput {}
-impl std::fmt::Debug for GetHomeRegionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHomeRegionInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsInput {
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
     #[doc(hidden)]
@@ -545,21 +539,10 @@ impl DescribeHomeRegionControlsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHomeRegionControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHomeRegionControlsInput");
-        formatter.field("control_id", &self.control_id);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("target", &self.target);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHomeRegionControlInput {
     /// <p>The name of the home region of the calling account.</p>
     #[doc(hidden)]
@@ -583,14 +566,5 @@ impl CreateHomeRegionControlInput {
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
-    }
-}
-impl std::fmt::Debug for CreateHomeRegionControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHomeRegionControlInput");
-        formatter.field("home_region", &self.home_region);
-        formatter.field("target", &self.target);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
     }
 }

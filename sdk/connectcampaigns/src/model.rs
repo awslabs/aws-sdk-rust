@@ -2,7 +2,7 @@
 
 /// Answering Machine Detection config
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
     #[doc(hidden)]
@@ -12,16 +12,6 @@ impl AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
     pub fn enable_answer_machine_detection(&self) -> std::option::Option<bool> {
         self.enable_answer_machine_detection
-    }
-}
-impl std::fmt::Debug for AnswerMachineDetectionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnswerMachineDetectionConfig");
-        formatter.field(
-            "enable_answer_machine_detection",
-            &self.enable_answer_machine_detection,
-        );
-        formatter.finish()
     }
 }
 /// See [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
@@ -118,7 +108,7 @@ impl DialerConfig {
 
 /// Predictive Dialer config
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
     #[doc(hidden)]
@@ -128,13 +118,6 @@ impl PredictiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
     pub fn bandwidth_allocation(&self) -> std::option::Option<f64> {
         self.bandwidth_allocation
-    }
-}
-impl std::fmt::Debug for PredictiveDialerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveDialerConfig");
-        formatter.field("bandwidth_allocation", &self.bandwidth_allocation);
-        formatter.finish()
     }
 }
 /// See [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
@@ -173,7 +156,7 @@ impl PredictiveDialerConfig {
 
 /// Progressive Dialer config
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProgressiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
     #[doc(hidden)]
@@ -183,13 +166,6 @@ impl ProgressiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
     pub fn bandwidth_allocation(&self) -> std::option::Option<f64> {
         self.bandwidth_allocation
-    }
-}
-impl std::fmt::Debug for ProgressiveDialerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProgressiveDialerConfig");
-        formatter.field("bandwidth_allocation", &self.bandwidth_allocation);
-        formatter.finish()
     }
 }
 /// See [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
@@ -333,7 +309,7 @@ impl AsRef<str> for CampaignState {
 
 /// Instance onboarding job status object
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceOnboardingJobStatus {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
@@ -359,15 +335,6 @@ impl InstanceOnboardingJobStatus {
         &self,
     ) -> std::option::Option<&crate::model::InstanceOnboardingJobFailureCode> {
         self.failure_code.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceOnboardingJobStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceOnboardingJobStatus");
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.field("status", &self.status);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.finish()
     }
 }
 /// See [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
@@ -667,7 +634,7 @@ impl AsRef<str> for InstanceOnboardingJobStatusCode {
 
 /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// Boolean to indicate if custom encryption has been enabled.
     #[doc(hidden)]
@@ -691,15 +658,6 @@ impl EncryptionConfig {
     /// KMS key id/arn for encryption config.
     pub fn key_arn(&self) -> std::option::Option<&str> {
         self.key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("key_arn", &self.key_arn);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
@@ -850,7 +808,7 @@ impl AsRef<str> for EncryptionType {
 
 /// A failed request identified by the unique client token.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
     #[doc(hidden)]
@@ -874,15 +832,6 @@ impl FailedRequest {
     /// A predefined code indicating the error that caused the failure.
     pub fn failure_code(&self) -> std::option::Option<&crate::model::FailureCode> {
         self.failure_code.as_ref()
-    }
-}
-impl std::fmt::Debug for FailedRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedRequest");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("id", &self.id);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.finish()
     }
 }
 /// See [`FailedRequest`](crate::model::FailedRequest).
@@ -1043,7 +992,7 @@ impl AsRef<str> for FailureCode {
 
 /// A successful request identified by the unique client token.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuccessfulRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
     #[doc(hidden)]
@@ -1060,14 +1009,6 @@ impl SuccessfulRequest {
     /// Identifier representing a Dial request
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for SuccessfulRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuccessfulRequest");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`SuccessfulRequest`](crate::model::SuccessfulRequest).
@@ -1169,7 +1110,7 @@ impl std::fmt::Debug for DialRequest {
 pub mod dial_request {
 
     /// A builder for [`DialRequest`](crate::model::DialRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -1247,6 +1188,16 @@ pub mod dial_request {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("expiration_time", &self.expiration_time);
+            formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl DialRequest {
     /// Creates a new builder-style object to manufacture [`DialRequest`](crate::model::DialRequest).
@@ -1257,7 +1208,7 @@ impl DialRequest {
 
 /// An Amazon Connect campaign summary.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignSummary {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -1288,16 +1239,6 @@ impl CampaignSummary {
     /// Amazon Connect Instance Id
     pub fn connect_instance_id(&self) -> std::option::Option<&str> {
         self.connect_instance_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CampaignSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.finish()
     }
 }
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
@@ -1375,7 +1316,7 @@ impl CampaignSummary {
 
 /// Filter model by type
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignFilters {
     /// Connect instance identifier filter
     #[doc(hidden)]
@@ -1385,13 +1326,6 @@ impl CampaignFilters {
     /// Connect instance identifier filter
     pub fn instance_id_filter(&self) -> std::option::Option<&crate::model::InstanceIdFilter> {
         self.instance_id_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for CampaignFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignFilters");
-        formatter.field("instance_id_filter", &self.instance_id_filter);
-        formatter.finish()
     }
 }
 /// See [`CampaignFilters`](crate::model::CampaignFilters).
@@ -1433,7 +1367,7 @@ impl CampaignFilters {
 
 /// Connect instance identifier filter
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceIdFilter {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
@@ -1450,14 +1384,6 @@ impl InstanceIdFilter {
     /// Operators for Connect instance identifier filter
     pub fn operator(&self) -> std::option::Option<&crate::model::InstanceIdFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceIdFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceIdFilter");
-        formatter.field("value", &self.value);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`InstanceIdFilter`](crate::model::InstanceIdFilter).
@@ -1598,7 +1524,7 @@ impl AsRef<str> for InstanceIdFilterOperator {
 
 /// Instance config object
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceConfig {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
@@ -1622,15 +1548,6 @@ impl InstanceConfig {
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceConfig");
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.field("service_linked_role_arn", &self.service_linked_role_arn);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.finish()
     }
 }
 /// See [`InstanceConfig`](crate::model::InstanceConfig).
@@ -1702,7 +1619,7 @@ impl InstanceConfig {
 
 /// Failed response of campaign state
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedCampaignStateResponse {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -1721,14 +1638,6 @@ impl FailedCampaignStateResponse {
         &self,
     ) -> std::option::Option<&crate::model::GetCampaignStateBatchFailureCode> {
         self.failure_code.as_ref()
-    }
-}
-impl std::fmt::Debug for FailedCampaignStateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedCampaignStateResponse");
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.finish()
     }
 }
 /// See [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
@@ -1878,7 +1787,7 @@ impl AsRef<str> for GetCampaignStateBatchFailureCode {
 
 /// Successful response of campaign state
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuccessfulCampaignStateResponse {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -1895,14 +1804,6 @@ impl SuccessfulCampaignStateResponse {
     /// State of a campaign
     pub fn state(&self) -> std::option::Option<&crate::model::CampaignState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for SuccessfulCampaignStateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuccessfulCampaignStateResponse");
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
@@ -1956,7 +1857,7 @@ impl SuccessfulCampaignStateResponse {
 
 /// An Amazon Connect campaign.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Campaign {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -2012,19 +1913,6 @@ impl Campaign {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Campaign {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Campaign");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.field("dialer_config", &self.dialer_config);
-        formatter.field("outbound_call_config", &self.outbound_call_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Campaign`](crate::model::Campaign).
@@ -2161,7 +2049,7 @@ impl Campaign {
 
 /// The configuration used for outbound calls.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutboundCallConfig {
     /// The identifier of the contact flow for the outbound call.
     #[doc(hidden)]
@@ -2195,22 +2083,6 @@ impl OutboundCallConfig {
         &self,
     ) -> std::option::Option<&crate::model::AnswerMachineDetectionConfig> {
         self.answer_machine_detection_config.as_ref()
-    }
-}
-impl std::fmt::Debug for OutboundCallConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutboundCallConfig");
-        formatter.field("connect_contact_flow_id", &self.connect_contact_flow_id);
-        formatter.field(
-            "connect_source_phone_number",
-            &self.connect_source_phone_number,
-        );
-        formatter.field("connect_queue_id", &self.connect_queue_id);
-        formatter.field(
-            "answer_machine_detection_config",
-            &self.answer_machine_detection_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`OutboundCallConfig`](crate::model::OutboundCallConfig).

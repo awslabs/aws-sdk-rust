@@ -18084,7 +18084,7 @@ impl UpdateTagOptionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTagOptionInput {
     /// <p>The TagOption identifier.</p>
     #[doc(hidden)]
@@ -18110,19 +18110,10 @@ impl UpdateTagOptionInput {
         self.active
     }
 }
-impl std::fmt::Debug for UpdateTagOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTagOptionInput");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.field("active", &self.active);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceActionInput {
     /// <p>The self-service action identifier.</p>
     #[doc(hidden)]
@@ -18178,21 +18169,10 @@ impl UpdateServiceActionInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServiceActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceActionInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("definition", &self.definition);
-        formatter.field("description", &self.description);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -18262,23 +18242,10 @@ impl UpdateProvisioningArtifactInput {
         self.guidance.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProvisioningArtifactInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("active", &self.active);
-        formatter.field("guidance", &self.guidance);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProvisionedProductPropertiesInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -18335,23 +18302,10 @@ impl UpdateProvisionedProductPropertiesInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProvisionedProductPropertiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProvisionedProductPropertiesInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("provisioned_product_id", &self.provisioned_product_id);
-        formatter.field(
-            "provisioned_product_properties",
-            &self.provisioned_product_properties,
-        );
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -18462,32 +18416,10 @@ impl UpdateProvisionedProductInput {
         self.update_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProvisionedProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProvisionedProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("provisioned_product_name", &self.provisioned_product_name);
-        formatter.field("provisioned_product_id", &self.provisioned_product_id);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field(
-            "provisioning_artifact_name",
-            &self.provisioning_artifact_name,
-        );
-        formatter.field("path_id", &self.path_id);
-        formatter.field("path_name", &self.path_name);
-        formatter.field("provisioning_parameters", &self.provisioning_parameters);
-        formatter.field("provisioning_preferences", &self.provisioning_preferences);
-        formatter.field("tags", &self.tags);
-        formatter.field("update_token", &self.update_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -18579,27 +18511,10 @@ impl UpdateProductInput {
         self.remove_tags.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("description", &self.description);
-        formatter.field("distributor", &self.distributor);
-        formatter.field("support_description", &self.support_description);
-        formatter.field("support_email", &self.support_email);
-        formatter.field("support_url", &self.support_url);
-        formatter.field("add_tags", &self.add_tags);
-        formatter.field("remove_tags", &self.remove_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -18649,21 +18564,10 @@ impl UpdatePortfolioShareInput {
         self.share_tag_options
     }
 }
-impl std::fmt::Debug for UpdatePortfolioShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePortfolioShareInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("organization_node", &self.organization_node);
-        formatter.field("share_tag_options", &self.share_tag_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -18727,23 +18631,10 @@ impl UpdatePortfolioInput {
         self.remove_tags.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("add_tags", &self.add_tags);
-        formatter.field("remove_tags", &self.remove_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -18882,20 +18773,10 @@ impl UpdateConstraintInput {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConstraintInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConstraintInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateProvisionedProductInput {
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     #[doc(hidden)]
@@ -18952,22 +18833,10 @@ impl TerminateProvisionedProductInput {
         self.retain_physical_resources
     }
 }
-impl std::fmt::Debug for TerminateProvisionedProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateProvisionedProductInput");
-        formatter.field("provisioned_product_name", &self.provisioned_product_name);
-        formatter.field("provisioned_product_id", &self.provisioned_product_id);
-        formatter.field("terminate_token", &self.terminate_token);
-        formatter.field("ignore_errors", &self.ignore_errors);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("retain_physical_resources", &self.retain_physical_resources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19047,23 +18916,10 @@ impl SearchProvisionedProductsInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for SearchProvisionedProductsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchProvisionedProductsInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("access_level_filter", &self.access_level_filter);
-        formatter.field("filters", &self.filters);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchProductsAsAdminInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19146,24 +19002,10 @@ impl SearchProductsAsAdminInput {
         self.product_source.as_ref()
     }
 }
-impl std::fmt::Debug for SearchProductsAsAdminInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchProductsAsAdminInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("product_source", &self.product_source);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchProductsInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19232,22 +19074,10 @@ impl SearchProductsInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for SearchProductsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchProductsInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("filters", &self.filters);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScanProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19290,20 +19120,10 @@ impl ScanProvisionedProductsInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ScanProvisionedProductsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScanProvisionedProductsInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("access_level_filter", &self.access_level_filter);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectPortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19351,19 +19171,10 @@ impl RejectPortfolioShareInput {
         self.portfolio_share_type.as_ref()
     }
 }
-impl std::fmt::Debug for RejectPortfolioShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectPortfolioShareInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("portfolio_share_type", &self.portfolio_share_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19474,32 +19285,10 @@ impl ProvisionProductInput {
         self.provision_token.as_deref()
     }
 }
-impl std::fmt::Debug for ProvisionProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field(
-            "provisioning_artifact_name",
-            &self.provisioning_artifact_name,
-        );
-        formatter.field("path_id", &self.path_id);
-        formatter.field("path_name", &self.path_name);
-        formatter.field("provisioned_product_name", &self.provisioned_product_name);
-        formatter.field("provisioning_parameters", &self.provisioning_parameters);
-        formatter.field("provisioning_preferences", &self.provisioning_preferences);
-        formatter.field("tags", &self.tags);
-        formatter.field("notification_arns", &self.notification_arns);
-        formatter.field("provision_token", &self.provision_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagOptionsInput {
     /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
     #[doc(hidden)]
@@ -19525,19 +19314,10 @@ impl ListTagOptionsInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagOptionsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStackInstancesForProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19580,20 +19360,10 @@ impl ListStackInstancesForProvisionedProductInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListStackInstancesForProvisionedProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStackInstancesForProvisionedProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("provisioned_product_id", &self.provisioned_product_id);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceActionsForProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     #[doc(hidden)]
@@ -19643,21 +19413,10 @@ impl ListServiceActionsForProvisioningArtifactInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for ListServiceActionsForProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceActionsForProvisioningArtifactInput");
-        formatter.field("product_id", &self.product_id);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceActionsInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19693,19 +19452,10 @@ impl ListServiceActionsInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListServiceActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceActionsInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesForTagOptionInput {
     /// <p>The TagOption identifier.</p>
     #[doc(hidden)]
@@ -19746,20 +19496,10 @@ impl ListResourcesForTagOptionInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourcesForTagOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesForTagOptionInput");
-        formatter.field("tag_option_id", &self.tag_option_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecordHistoryInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19811,21 +19551,10 @@ impl ListRecordHistoryInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecordHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecordHistoryInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("access_level_filter", &self.access_level_filter);
-        formatter.field("search_filter", &self.search_filter);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProvisioningArtifactsForServiceActionInput {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     #[doc(hidden)]
@@ -19868,20 +19597,10 @@ impl ListProvisioningArtifactsForServiceActionInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for ListProvisioningArtifactsForServiceActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProvisioningArtifactsForServiceActionInput");
-        formatter.field("service_action_id", &self.service_action_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProvisioningArtifactsInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19910,18 +19629,10 @@ impl ListProvisioningArtifactsInput {
         self.product_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListProvisioningArtifactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProvisioningArtifactsInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProvisionedProductPlansInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -19971,21 +19682,10 @@ impl ListProvisionedProductPlansInput {
         self.access_level_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListProvisionedProductPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProvisionedProductPlansInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("provision_product_id", &self.provision_product_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("access_level_filter", &self.access_level_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPrincipalsForPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20028,20 +19728,10 @@ impl ListPrincipalsForPortfolioInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPrincipalsForPortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPrincipalsForPortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPortfoliosForProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20084,20 +19774,10 @@ impl ListPortfoliosForProductInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListPortfoliosForProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPortfoliosForProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPortfoliosInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20133,19 +19813,10 @@ impl ListPortfoliosInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListPortfoliosInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPortfoliosInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20195,21 +19866,10 @@ impl ListPortfolioAccessInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListPortfolioAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPortfolioAccessInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("organization_parent_id", &self.organization_parent_id);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrganizationPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20271,21 +19931,10 @@ impl ListOrganizationPortfolioAccessInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListOrganizationPortfolioAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOrganizationPortfolioAccessInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("organization_node_type", &self.organization_node_type);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLaunchPathsInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20328,20 +19977,10 @@ impl ListLaunchPathsInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLaunchPathsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLaunchPathsInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConstraintsForPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20391,21 +20030,10 @@ impl ListConstraintsForPortfolioInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConstraintsForPortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConstraintsForPortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBudgetsForResourceInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20448,20 +20076,10 @@ impl ListBudgetsForResourceInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBudgetsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBudgetsForResourceInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAcceptedPortfolioSharesInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20514,20 +20132,10 @@ impl ListAcceptedPortfolioSharesInput {
         self.portfolio_share_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListAcceptedPortfolioSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAcceptedPortfolioSharesInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("portfolio_share_type", &self.portfolio_share_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAsProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20584,22 +20192,10 @@ impl ImportAsProvisionedProductInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for ImportAsProvisionedProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAsProvisionedProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field("provisioned_product_name", &self.provisioned_product_name);
-        formatter.field("physical_id", &self.physical_id);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProvisionedProductOutputsInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20656,33 +20252,15 @@ impl GetProvisionedProductOutputsInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetProvisionedProductOutputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProvisionedProductOutputsInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("provisioned_product_id", &self.provisioned_product_id);
-        formatter.field("provisioned_product_name", &self.provisioned_product_name);
-        formatter.field("output_keys", &self.output_keys);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAwsOrganizationsAccessStatusInput {}
-impl std::fmt::Debug for GetAwsOrganizationsAccessStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAwsOrganizationsAccessStatusInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteProvisionedProductServiceActionInput {
     /// <p>The identifier of the provisioned product.</p>
     #[doc(hidden)]
@@ -20738,21 +20316,10 @@ impl ExecuteProvisionedProductServiceActionInput {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for ExecuteProvisionedProductServiceActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteProvisionedProductServiceActionInput");
-        formatter.field("provisioned_product_id", &self.provisioned_product_id);
-        formatter.field("service_action_id", &self.service_action_id);
-        formatter.field("execute_token", &self.execute_token);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20788,30 +20355,15 @@ impl ExecuteProvisionedProductPlanInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for ExecuteProvisionedProductPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteProvisionedProductPlanInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("plan_id", &self.plan_id);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableAwsOrganizationsAccessInput {}
-impl std::fmt::Debug for EnableAwsOrganizationsAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableAwsOrganizationsAccessInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTagOptionFromResourceInput {
     /// <p>The resource identifier.</p>
     #[doc(hidden)]
@@ -20830,18 +20382,10 @@ impl DisassociateTagOptionFromResourceInput {
         self.tag_option_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateTagOptionFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateTagOptionFromResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tag_option_id", &self.tag_option_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateServiceActionFromProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     #[doc(hidden)]
@@ -20884,21 +20428,10 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateServiceActionFromProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("DisassociateServiceActionFromProvisioningArtifactInput");
-        formatter.field("product_id", &self.product_id);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field("service_action_id", &self.service_action_id);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateProductFromPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20934,19 +20467,10 @@ impl DisassociateProductFromPortfolioInput {
         self.portfolio_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateProductFromPortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateProductFromPortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociatePrincipalFromPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -20982,19 +20506,10 @@ impl DisassociatePrincipalFromPortfolioInput {
         self.principal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociatePrincipalFromPortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociatePrincipalFromPortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateBudgetFromResourceInput {
     /// <p>The name of the budget you want to disassociate.</p>
     #[doc(hidden)]
@@ -21013,29 +20528,15 @@ impl DisassociateBudgetFromResourceInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateBudgetFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateBudgetFromResourceInput");
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableAwsOrganizationsAccessInput {}
-impl std::fmt::Debug for DisableAwsOrganizationsAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableAwsOrganizationsAccessInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagOptionInput {
     /// <p>The TagOption identifier.</p>
     #[doc(hidden)]
@@ -21047,17 +20548,10 @@ impl DescribeTagOptionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagOptionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceActionExecutionParametersInput {
     /// <p>The identifier of the provisioned product.</p>
     #[doc(hidden)]
@@ -21093,19 +20587,10 @@ impl DescribeServiceActionExecutionParametersInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServiceActionExecutionParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceActionExecutionParametersInput");
-        formatter.field("provisioned_product_id", &self.provisioned_product_id);
-        formatter.field("service_action_id", &self.service_action_id);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceActionInput {
     /// <p>The self-service action identifier.</p>
     #[doc(hidden)]
@@ -21134,18 +20619,10 @@ impl DescribeServiceActionInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServiceActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceActionInput");
-        formatter.field("id", &self.id);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecordInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21188,20 +20665,10 @@ impl DescribeRecordInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for DescribeRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecordInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProvisioningParametersInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21265,26 +20732,10 @@ impl DescribeProvisioningParametersInput {
         self.path_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProvisioningParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProvisioningParametersInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field(
-            "provisioning_artifact_name",
-            &self.provisioning_artifact_name,
-        );
-        formatter.field("path_id", &self.path_id);
-        formatter.field("path_name", &self.path_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21341,25 +20792,10 @@ impl DescribeProvisioningArtifactInput {
         self.verbose
     }
 }
-impl std::fmt::Debug for DescribeProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProvisioningArtifactInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field("product_id", &self.product_id);
-        formatter.field(
-            "provisioning_artifact_name",
-            &self.provisioning_artifact_name,
-        );
-        formatter.field("product_name", &self.product_name);
-        formatter.field("verbose", &self.verbose);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21402,20 +20838,10 @@ impl DescribeProvisionedProductPlanInput {
         self.page_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProvisionedProductPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProvisionedProductPlanInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("plan_id", &self.plan_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("page_token", &self.page_token);
-        formatter.finish()
-    }
-}
 
 /// DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned product identifier. Customers must provide either Id or Name.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21455,19 +20881,10 @@ impl DescribeProvisionedProductInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProvisionedProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProvisionedProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProductViewInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21496,18 +20913,10 @@ impl DescribeProductViewInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProductViewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProductViewInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProductAsAdminInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21552,20 +20961,10 @@ impl DescribeProductAsAdminInput {
         self.source_portfolio_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProductAsAdminInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProductAsAdminInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("source_portfolio_id", &self.source_portfolio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21601,19 +21000,10 @@ impl DescribeProductInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePortfolioShareStatusInput {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
     #[doc(hidden)]
@@ -21625,17 +21015,10 @@ impl DescribePortfolioShareStatusInput {
         self.portfolio_share_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePortfolioShareStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePortfolioShareStatusInput");
-        formatter.field("portfolio_share_token", &self.portfolio_share_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePortfolioSharesInput {
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
     #[doc(hidden)]
@@ -21676,20 +21059,10 @@ impl DescribePortfolioSharesInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for DescribePortfolioSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePortfolioSharesInput");
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("page_token", &self.page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21718,18 +21091,10 @@ impl DescribePortfolioInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCopyProductStatusInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21758,18 +21123,10 @@ impl DescribeCopyProductStatusInput {
         self.copy_product_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCopyProductStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCopyProductStatusInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("copy_product_token", &self.copy_product_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21798,18 +21155,10 @@ impl DescribeConstraintInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConstraintInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConstraintInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagOptionInput {
     /// <p>The TagOption identifier.</p>
     #[doc(hidden)]
@@ -21821,17 +21170,10 @@ impl DeleteTagOptionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTagOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagOptionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceActionInput {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     #[doc(hidden)]
@@ -21860,18 +21202,10 @@ impl DeleteServiceActionInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServiceActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceActionInput");
-        formatter.field("id", &self.id);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21907,19 +21241,10 @@ impl DeleteProvisioningArtifactInput {
         self.provisioning_artifact_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProvisioningArtifactInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21955,19 +21280,10 @@ impl DeleteProvisionedProductPlanInput {
         self.ignore_errors
     }
 }
-impl std::fmt::Debug for DeleteProvisionedProductPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProvisionedProductPlanInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("plan_id", &self.plan_id);
-        formatter.field("ignore_errors", &self.ignore_errors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -21996,18 +21312,10 @@ impl DeleteProductInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22050,20 +21358,10 @@ impl DeletePortfolioShareInput {
         self.organization_node.as_ref()
     }
 }
-impl std::fmt::Debug for DeletePortfolioShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePortfolioShareInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("organization_node", &self.organization_node);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22092,18 +21390,10 @@ impl DeletePortfolioInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22132,18 +21422,10 @@ impl DeleteConstraintInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConstraintInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConstraintInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTagOptionInput {
     /// <p>The TagOption key.</p>
     #[doc(hidden)]
@@ -22162,18 +21444,10 @@ impl CreateTagOptionInput {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTagOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTagOptionInput");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServiceActionInput {
     /// <p>The self-service action name.</p>
     #[doc(hidden)]
@@ -22296,22 +21570,10 @@ impl CreateServiceActionInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateServiceActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServiceActionInput");
-        formatter.field("name", &self.name);
-        formatter.field("definition_type", &self.definition_type);
-        formatter.field("definition", &self.definition);
-        formatter.field("description", &self.description);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22354,20 +21616,10 @@ impl CreateProvisioningArtifactInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProvisioningArtifactInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22464,27 +21716,10 @@ impl CreateProvisionedProductPlanInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProvisionedProductPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProvisionedProductPlanInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("plan_name", &self.plan_name);
-        formatter.field("plan_type", &self.plan_type);
-        formatter.field("notification_arns", &self.notification_arns);
-        formatter.field("path_id", &self.path_id);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("provisioned_product_name", &self.provisioned_product_name);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field("provisioning_parameters", &self.provisioning_parameters);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22588,31 +21823,10 @@ impl CreateProductInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("description", &self.description);
-        formatter.field("distributor", &self.distributor);
-        formatter.field("support_description", &self.support_description);
-        formatter.field("support_email", &self.support_email);
-        formatter.field("support_url", &self.support_url);
-        formatter.field("product_type", &self.product_type);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "provisioning_artifact_parameters",
-            &self.provisioning_artifact_parameters,
-        );
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22662,21 +21876,10 @@ impl CreatePortfolioShareInput {
         self.share_tag_options
     }
 }
-impl std::fmt::Debug for CreatePortfolioShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePortfolioShareInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("organization_node", &self.organization_node);
-        formatter.field("share_tag_options", &self.share_tag_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22733,22 +21936,10 @@ impl CreatePortfolioInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -22922,23 +22113,10 @@ impl CreateConstraintInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConstraintInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConstraintInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyProductInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -23016,26 +22194,10 @@ impl CopyProductInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CopyProductInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyProductInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("source_product_arn", &self.source_product_arn);
-        formatter.field("target_product_id", &self.target_product_id);
-        formatter.field("target_product_name", &self.target_product_name);
-        formatter.field(
-            "source_provisioning_artifact_identifiers",
-            &self.source_provisioning_artifact_identifiers,
-        );
-        formatter.field("copy_options", &self.copy_options);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
     #[doc(hidden)]
@@ -23067,22 +22229,10 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateServiceActionFromProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("BatchDisassociateServiceActionFromProvisioningArtifactInput");
-        formatter.field(
-            "service_action_associations",
-            &self.service_action_associations,
-        );
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactInput {
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
     #[doc(hidden)]
@@ -23114,22 +22264,10 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAssociateServiceActionWithProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("BatchAssociateServiceActionWithProvisioningArtifactInput");
-        formatter.field(
-            "service_action_associations",
-            &self.service_action_associations,
-        );
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateTagOptionWithResourceInput {
     /// <p>The resource identifier.</p>
     #[doc(hidden)]
@@ -23148,18 +22286,10 @@ impl AssociateTagOptionWithResourceInput {
         self.tag_option_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateTagOptionWithResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateTagOptionWithResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tag_option_id", &self.tag_option_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateServiceActionWithProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     #[doc(hidden)]
@@ -23202,20 +22332,10 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
         self.accept_language.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateServiceActionWithProvisioningArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateServiceActionWithProvisioningArtifactInput");
-        formatter.field("product_id", &self.product_id);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field("service_action_id", &self.service_action_id);
-        formatter.field("accept_language", &self.accept_language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateProductWithPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -23258,20 +22378,10 @@ impl AssociateProductWithPortfolioInput {
         self.source_portfolio_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateProductWithPortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateProductWithPortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("source_portfolio_id", &self.source_portfolio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePrincipalWithPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -23314,20 +22424,10 @@ impl AssociatePrincipalWithPortfolioInput {
         self.principal_type.as_ref()
     }
 }
-impl std::fmt::Debug for AssociatePrincipalWithPortfolioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePrincipalWithPortfolioInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("principal_type", &self.principal_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateBudgetWithResourceInput {
     /// <p>The name of the budget you want to associate.</p>
     #[doc(hidden)]
@@ -23346,18 +22446,10 @@ impl AssociateBudgetWithResourceInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateBudgetWithResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateBudgetWithResourceInput");
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptPortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
@@ -23403,14 +22495,5 @@ impl AcceptPortfolioShareInput {
     /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
     pub fn portfolio_share_type(&self) -> std::option::Option<&crate::model::PortfolioShareType> {
         self.portfolio_share_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AcceptPortfolioShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptPortfolioShareInput");
-        formatter.field("accept_language", &self.accept_language);
-        formatter.field("portfolio_id", &self.portfolio_id);
-        formatter.field("portfolio_share_type", &self.portfolio_share_type);
-        formatter.finish()
     }
 }

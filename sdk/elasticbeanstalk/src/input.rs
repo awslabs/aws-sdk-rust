@@ -8931,7 +8931,7 @@ impl ValidateConfigurationSettingsInput {
 
 /// <p>A list of validation messages for a specified configuration template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsInput {
     /// <p>The name of the application that the configuration template or environment belongs to.</p>
     #[doc(hidden)]
@@ -8971,20 +8971,10 @@ impl ValidateConfigurationSettingsInput {
         self.option_settings.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateConfigurationSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateConfigurationSettingsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
@@ -9016,19 +9006,10 @@ impl UpdateTagsForResourceInput {
         self.tags_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags_to_add", &self.tags_to_add);
-        formatter.field("tags_to_remove", &self.tags_to_remove);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to update an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The name of the application with which the environment is associated.</p>
     #[doc(hidden)]
@@ -9128,28 +9109,10 @@ impl UpdateEnvironmentInput {
         self.options_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEnvironmentInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("tier", &self.tier);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("options_to_remove", &self.options_to_remove);
-        formatter.finish()
-    }
-}
 
 /// <p>The result message containing the options for the specified solution stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationTemplateInput {
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -9198,21 +9161,10 @@ impl UpdateConfigurationTemplateInput {
         self.options_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationTemplateInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("options_to_remove", &self.options_to_remove);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationVersionInput {
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
@@ -9242,19 +9194,10 @@ impl UpdateApplicationVersionInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationVersionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationResourceLifecycleInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -9276,18 +9219,10 @@ impl UpdateApplicationResourceLifecycleInput {
         self.resource_lifecycle_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationResourceLifecycleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationResourceLifecycleInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("resource_lifecycle_config", &self.resource_lifecycle_config);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to update an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
@@ -9308,18 +9243,10 @@ impl UpdateApplicationInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to terminate an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateEnvironmentInput {
     /// <p>The ID of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -9370,20 +9297,10 @@ impl TerminateEnvironmentInput {
         self.force_terminate
     }
 }
-impl std::fmt::Debug for TerminateEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateEnvironmentInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("terminate_resources", &self.terminate_resources);
-        formatter.field("force_terminate", &self.force_terminate);
-        formatter.finish()
-    }
-}
 
 /// <p>Swaps the CNAMEs of two environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SwapEnvironmentCnamEsInput {
     /// <p>The ID of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
@@ -9424,26 +9341,10 @@ impl SwapEnvironmentCnamEsInput {
         self.destination_environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for SwapEnvironmentCnamEsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SwapEnvironmentCnamEsInput");
-        formatter.field("source_environment_id", &self.source_environment_id);
-        formatter.field("source_environment_name", &self.source_environment_name);
-        formatter.field(
-            "destination_environment_id",
-            &self.destination_environment_id,
-        );
-        formatter.field(
-            "destination_environment_name",
-            &self.destination_environment_name,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Request to download logs retrieved with <code>RequestEnvironmentInfo</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoInput {
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
@@ -9477,19 +9378,10 @@ impl RetrieveEnvironmentInfoInput {
         self.info_type.as_ref()
     }
 }
-impl std::fmt::Debug for RetrieveEnvironmentInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetrieveEnvironmentInfoInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("info_type", &self.info_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestartAppServerInput {
     /// <p>The ID of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -9512,18 +9404,10 @@ impl RestartAppServerInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for RestartAppServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestartAppServerInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestEnvironmentInfoInput {
     /// <p>The ID of the environment of the requested data.</p>
     /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -9557,19 +9441,10 @@ impl RequestEnvironmentInfoInput {
         self.info_type.as_ref()
     }
 }
-impl std::fmt::Debug for RequestEnvironmentInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestEnvironmentInfoInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("info_type", &self.info_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebuildEnvironmentInput {
     /// <p>The ID of the environment to rebuild.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -9592,18 +9467,10 @@ impl RebuildEnvironmentInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for RebuildEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebuildEnvironmentInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
@@ -9617,17 +9484,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlatformVersionsInput {
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
     #[doc(hidden)]
@@ -9655,19 +9515,10 @@ impl ListPlatformVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlatformVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlatformVersionsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlatformBranchesInput {
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
@@ -9741,30 +9592,15 @@ impl ListPlatformBranchesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlatformBranchesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlatformBranchesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableSolutionStacksInput {}
-impl std::fmt::Debug for ListAvailableSolutionStacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableSolutionStacksInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Request to disassociate the operations role from an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
     #[doc(hidden)]
@@ -9776,17 +9612,10 @@ impl DisassociateEnvironmentOperationsRoleInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateEnvironmentOperationsRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateEnvironmentOperationsRoleInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePlatformVersionInput {
     /// <p>The ARN of the platform version.</p>
     #[doc(hidden)]
@@ -9798,17 +9627,10 @@ impl DescribePlatformVersionInput {
         self.platform_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePlatformVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePlatformVersionInput");
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Parameters for a call to <code>DescribeInstancesHealth</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancesHealthInput {
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
     #[doc(hidden)]
@@ -9843,20 +9665,10 @@ impl DescribeInstancesHealthInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstancesHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancesHealthInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to retrieve a list of events for an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
     #[doc(hidden)]
@@ -9945,28 +9757,10 @@ impl DescribeEventsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("severity", &self.severity);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe one or more environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
     #[doc(hidden)]
@@ -10035,24 +9829,10 @@ impl DescribeEnvironmentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("environment_ids", &self.environment_ids);
-        formatter.field("environment_names", &self.environment_names);
-        formatter.field("include_deleted", &self.include_deleted);
-        formatter.field("included_deleted_back_to", &self.included_deleted_back_to);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe the resources in an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesInput {
     /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -10075,18 +9855,10 @@ impl DescribeEnvironmentResourcesInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentResourcesInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to list an environment's upcoming and in-progress managed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsInput {
     /// <p>The name of the target environment.</p>
     #[doc(hidden)]
@@ -10112,19 +9884,10 @@ impl DescribeEnvironmentManagedActionsInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentManagedActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentManagedActionsInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to list completed and failed managed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionHistoryInput {
     /// <p>The environment ID of the target environment.</p>
     #[doc(hidden)]
@@ -10157,20 +9920,10 @@ impl DescribeEnvironmentManagedActionHistoryInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentManagedActionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentManagedActionHistoryInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>See the example below to learn how to create a request body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentHealthInput {
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
@@ -10203,19 +9956,10 @@ impl DescribeEnvironmentHealthInput {
         self.attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentHealthInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Result message containing all of the configuration settings for a specified solution stack or configuration template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsInput {
     /// <p>The application for the environment or configuration template.</p>
     #[doc(hidden)]
@@ -10245,19 +9989,10 @@ impl DescribeConfigurationSettingsInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationSettingsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Result message containing a list of application version descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationOptionsInput {
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
     #[doc(hidden)]
@@ -10304,22 +10039,10 @@ impl DescribeConfigurationOptionsInput {
         self.options.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationOptionsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("options", &self.options);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe application versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationVersionsInput {
     /// <p>Specify an application name to show only application versions for that application.</p>
     #[doc(hidden)]
@@ -10356,20 +10079,10 @@ impl DescribeApplicationVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationVersionsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_labels", &self.version_labels);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe one or more applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     #[doc(hidden)]
@@ -10381,28 +10094,15 @@ impl DescribeApplicationsInput {
         self.application_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationsInput");
-        formatter.field("application_names", &self.application_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountAttributesInput {}
-impl std::fmt::Debug for DescribeAccountAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountAttributesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlatformVersionInput {
     /// <p>The ARN of the version of the custom platform.</p>
     #[doc(hidden)]
@@ -10414,17 +10114,10 @@ impl DeletePlatformVersionInput {
         self.platform_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePlatformVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlatformVersionInput");
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete a draft environment configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentConfigurationInput {
     /// <p>The name of the application the environment is associated with.</p>
     #[doc(hidden)]
@@ -10443,18 +10136,10 @@ impl DeleteEnvironmentConfigurationInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEnvironmentConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete a configuration template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationTemplateInput {
     /// <p>The name of the application to delete the configuration template from.</p>
     #[doc(hidden)]
@@ -10473,18 +10158,10 @@ impl DeleteConfigurationTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationTemplateInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationVersionInput {
     /// <p>The name of the application to which the version belongs.</p>
     #[doc(hidden)]
@@ -10510,19 +10187,10 @@ impl DeleteApplicationVersionInput {
         self.delete_source_bundle
     }
 }
-impl std::fmt::Debug for DeleteApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationVersionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("delete_source_bundle", &self.delete_source_bundle);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the application to delete.</p>
     #[doc(hidden)]
@@ -10541,29 +10209,15 @@ impl DeleteApplicationInput {
         self.terminate_env_by_force
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("terminate_env_by_force", &self.terminate_env_by_force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStorageLocationInput {}
-impl std::fmt::Debug for CreateStorageLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStorageLocationInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create a new platform version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlatformVersionInput {
     /// <p>The name of your custom platform.</p>
     #[doc(hidden)]
@@ -10615,25 +10269,10 @@ impl CreatePlatformVersionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePlatformVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlatformVersionInput");
-        formatter.field("platform_name", &self.platform_name);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field(
-            "platform_definition_bundle",
-            &self.platform_definition_bundle,
-        );
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the application that is associated with this environment.</p>
     #[doc(hidden)]
@@ -10757,30 +10396,10 @@ impl CreateEnvironmentInput {
         self.operations_role.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEnvironmentInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("cname_prefix", &self.cname_prefix);
-        formatter.field("tier", &self.tier);
-        formatter.field("tags", &self.tags);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("options_to_remove", &self.options_to_remove);
-        formatter.field("operations_role", &self.operations_role);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create a configuration template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationTemplateInput {
     /// <p>The name of the Elastic Beanstalk application to associate with this configuration template.</p>
     #[doc(hidden)]
@@ -10867,25 +10486,10 @@ impl CreateConfigurationTemplateInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationTemplateInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("description", &self.description);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationVersionInput {
     /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
@@ -10971,25 +10575,10 @@ impl CreateApplicationVersionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationVersionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("description", &self.description);
-        formatter.field("source_build_information", &self.source_build_information);
-        formatter.field("source_bundle", &self.source_bundle);
-        formatter.field("build_configuration", &self.build_configuration);
-        formatter.field("auto_create_application", &self.auto_create_application);
-        formatter.field("process", &self.process);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. Must be unique within your account.</p>
     #[doc(hidden)]
@@ -11027,20 +10616,10 @@ impl CreateApplicationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("description", &self.description);
-        formatter.field("resource_lifecycle_config", &self.resource_lifecycle_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create or update a group of environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComposeEnvironmentsInput {
     /// <p>The name of the application to which the specified source bundles belong.</p>
     #[doc(hidden)]
@@ -11066,19 +10645,10 @@ impl ComposeEnvironmentsInput {
         self.version_labels.as_deref()
     }
 }
-impl std::fmt::Debug for ComposeEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComposeEnvironmentsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("version_labels", &self.version_labels);
-        formatter.finish()
-    }
-}
 
 /// <p>Results message indicating whether a CNAME is available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
     #[doc(hidden)]
@@ -11090,17 +10660,10 @@ impl CheckDnsAvailabilityInput {
         self.cname_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for CheckDnsAvailabilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckDnsAvailabilityInput");
-        formatter.field("cname_prefix", &self.cname_prefix);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to add or change the operations role used by an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment to which to set the operations role.</p>
     #[doc(hidden)]
@@ -11119,18 +10682,10 @@ impl AssociateEnvironmentOperationsRoleInput {
         self.operations_role.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateEnvironmentOperationsRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateEnvironmentOperationsRoleInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("operations_role", &self.operations_role);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to execute a scheduled managed action immediately.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplyEnvironmentManagedActionInput {
     /// <p>The name of the target environment.</p>
     #[doc(hidden)]
@@ -11156,19 +10711,10 @@ impl ApplyEnvironmentManagedActionInput {
         self.action_id.as_deref()
     }
 }
-impl std::fmt::Debug for ApplyEnvironmentManagedActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplyEnvironmentManagedActionInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("action_id", &self.action_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortEnvironmentUpdateInput {
     /// <p>This specifies the ID of the environment with the in-progress update that you want to cancel.</p>
     #[doc(hidden)]
@@ -11185,13 +10731,5 @@ impl AbortEnvironmentUpdateInput {
     /// <p>This specifies the name of the environment with the in-progress update that you want to cancel.</p>
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AbortEnvironmentUpdateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortEnvironmentUpdateInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
     }
 }

@@ -2,14 +2,8 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for UpdateConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
 pub mod update_configuration_set_event_destination_output {
 
@@ -32,14 +26,8 @@ impl UpdateConfigurationSetEventDestinationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -62,14 +50,8 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -92,7 +74,7 @@ impl TagResourceOutput {
 
 /// <p>A unique message ID that you receive when Amazon Pinpoint accepts an email for sending.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendEmailOutput {
     /// <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the message.</p> <note>
     /// <p>It is possible for Amazon Pinpoint to accept a message without sending it. This can happen when the message you're trying to send has an attachment doesn't pass a virus check, or when you send a templated email that contains invalid personalization content, for example.</p>
@@ -106,13 +88,6 @@ impl SendEmailOutput {
     /// </note>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SendEmailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendEmailOutput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }
 /// See [`SendEmailOutput`](crate::output::SendEmailOutput).
@@ -155,14 +130,8 @@ impl SendEmailOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailIdentityMailFromAttributesOutput {}
-impl std::fmt::Debug for PutEmailIdentityMailFromAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailIdentityMailFromAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
 pub mod put_email_identity_mail_from_attributes_output {
 
@@ -185,14 +154,8 @@ impl PutEmailIdentityMailFromAttributesOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailIdentityFeedbackAttributesOutput {}
-impl std::fmt::Debug for PutEmailIdentityFeedbackAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailIdentityFeedbackAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
 pub mod put_email_identity_feedback_attributes_output {
 
@@ -215,14 +178,8 @@ impl PutEmailIdentityFeedbackAttributesOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailIdentityDkimAttributesOutput {}
-impl std::fmt::Debug for PutEmailIdentityDkimAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailIdentityDkimAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
 pub mod put_email_identity_dkim_attributes_output {
 
@@ -245,14 +202,8 @@ impl PutEmailIdentityDkimAttributesOutput {
 
 /// <p>A response that indicates whether the Deliverability dashboard is enabled for your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOptionOutput {}
-impl std::fmt::Debug for PutDeliverabilityDashboardOptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDeliverabilityDashboardOptionOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
 pub mod put_deliverability_dashboard_option_output {
 
@@ -275,14 +226,8 @@ impl PutDeliverabilityDashboardOptionOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDedicatedIpWarmupAttributesOutput {}
-impl std::fmt::Debug for PutDedicatedIpWarmupAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDedicatedIpWarmupAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
 pub mod put_dedicated_ip_warmup_attributes_output {
 
@@ -305,14 +250,8 @@ impl PutDedicatedIpWarmupAttributesOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDedicatedIpInPoolOutput {}
-impl std::fmt::Debug for PutDedicatedIpInPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDedicatedIpInPoolOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
 pub mod put_dedicated_ip_in_pool_output {
 
@@ -335,14 +274,8 @@ impl PutDedicatedIpInPoolOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptionsOutput {}
-impl std::fmt::Debug for PutConfigurationSetTrackingOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetTrackingOptionsOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
 pub mod put_configuration_set_tracking_options_output {
 
@@ -365,14 +298,8 @@ impl PutConfigurationSetTrackingOptionsOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptionsOutput {}
-impl std::fmt::Debug for PutConfigurationSetSendingOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetSendingOptionsOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
 pub mod put_configuration_set_sending_options_output {
 
@@ -395,14 +322,8 @@ impl PutConfigurationSetSendingOptionsOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetReputationOptionsOutput {}
-impl std::fmt::Debug for PutConfigurationSetReputationOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetReputationOptionsOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
 pub mod put_configuration_set_reputation_options_output {
 
@@ -425,14 +346,8 @@ impl PutConfigurationSetReputationOptionsOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptionsOutput {}
-impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetDeliveryOptionsOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
 pub mod put_configuration_set_delivery_options_output {
 
@@ -455,14 +370,8 @@ impl PutConfigurationSetDeliveryOptionsOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountSendingAttributesOutput {}
-impl std::fmt::Debug for PutAccountSendingAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountSendingAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
 pub mod put_account_sending_attributes_output {
 
@@ -485,14 +394,8 @@ impl PutAccountSendingAttributesOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountDedicatedIpWarmupAttributesOutput {}
-impl std::fmt::Debug for PutAccountDedicatedIpWarmupAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountDedicatedIpWarmupAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
 pub mod put_account_dedicated_ip_warmup_attributes_output {
 
@@ -515,7 +418,7 @@ impl PutAccountDedicatedIpWarmupAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
     #[doc(hidden)]
@@ -525,13 +428,6 @@ impl ListTagsForResourceOutput {
     /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -577,7 +473,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>A list of all of the identities that you've attempted to verify for use with Amazon Pinpoint, regardless of whether or not those identities were successfully verified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEmailIdentitiesOutput {
     /// <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
@@ -594,14 +490,6 @@ impl ListEmailIdentitiesOutput {
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListEmailIdentitiesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEmailIdentitiesOutput");
-        formatter.field("email_identities", &self.email_identities);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
@@ -661,7 +549,7 @@ impl ListEmailIdentitiesOutput {
 
 /// <p>An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation) for the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
     #[doc(hidden)]
@@ -681,17 +569,6 @@ impl ListDomainDeliverabilityCampaignsOutput {
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainDeliverabilityCampaignsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainDeliverabilityCampaignsOutput");
-        formatter.field(
-            "domain_deliverability_campaigns",
-            &self.domain_deliverability_campaigns,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
@@ -755,7 +632,7 @@ impl ListDomainDeliverabilityCampaignsOutput {
 
 /// <p>A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
     #[doc(hidden)]
@@ -775,17 +652,6 @@ impl ListDeliverabilityTestReportsOutput {
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDeliverabilityTestReportsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeliverabilityTestReportsOutput");
-        formatter.field(
-            "deliverability_test_reports",
-            &self.deliverability_test_reports,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
@@ -849,7 +715,7 @@ impl ListDeliverabilityTestReportsOutput {
 
 /// <p>A list of dedicated IP pools.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
@@ -866,14 +732,6 @@ impl ListDedicatedIpPoolsOutput {
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDedicatedIpPoolsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDedicatedIpPoolsOutput");
-        formatter.field("dedicated_ip_pools", &self.dedicated_ip_pools);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
@@ -933,7 +791,7 @@ impl ListDedicatedIpPoolsOutput {
 
 /// <p>A list of configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationSetsOutput {
     /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
     #[doc(hidden)]
@@ -950,14 +808,6 @@ impl ListConfigurationSetsOutput {
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListConfigurationSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationSetsOutput");
-        formatter.field("configuration_sets", &self.configuration_sets);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
@@ -1017,7 +867,7 @@ impl ListConfigurationSetsOutput {
 
 /// <p>Details about an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEmailIdentityOutput {
     /// <p>The email identity type.</p>
     #[doc(hidden)]
@@ -1066,24 +916,6 @@ impl GetEmailIdentityOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for GetEmailIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEmailIdentityOutput");
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field(
-            "feedback_forwarding_status",
-            &self.feedback_forwarding_status,
-        );
-        formatter.field(
-            "verified_for_sending_status",
-            &self.verified_for_sending_status,
-        );
-        formatter.field("dkim_attributes", &self.dkim_attributes);
-        formatter.field("mail_from_attributes", &self.mail_from_attributes);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
@@ -1204,7 +1036,7 @@ impl GetEmailIdentityOutput {
 
 /// <p>An object that includes statistics that are related to the domain that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     #[doc(hidden)]
@@ -1221,14 +1053,6 @@ impl GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
     pub fn daily_volumes(&self) -> std::option::Option<&[crate::model::DailyVolume]> {
         self.daily_volumes.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDomainStatisticsReportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainStatisticsReportOutput");
-        formatter.field("overall_volume", &self.overall_volume);
-        formatter.field("daily_volumes", &self.daily_volumes);
-        formatter.finish()
     }
 }
 /// See [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
@@ -1291,7 +1115,7 @@ impl GetDomainStatisticsReportOutput {
 
 /// <p>An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
     #[doc(hidden)]
@@ -1304,16 +1128,6 @@ impl GetDomainDeliverabilityCampaignOutput {
         &self,
     ) -> std::option::Option<&crate::model::DomainDeliverabilityCampaign> {
         self.domain_deliverability_campaign.as_ref()
-    }
-}
-impl std::fmt::Debug for GetDomainDeliverabilityCampaignOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainDeliverabilityCampaignOutput");
-        formatter.field(
-            "domain_deliverability_campaign",
-            &self.domain_deliverability_campaign,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
@@ -1359,7 +1173,7 @@ impl GetDomainDeliverabilityCampaignOutput {
 
 /// <p>The results of the predictive inbox placement test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeliverabilityTestReportOutput {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
     #[doc(hidden)]
@@ -1399,20 +1213,6 @@ impl GetDeliverabilityTestReportOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDeliverabilityTestReportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeliverabilityTestReportOutput");
-        formatter.field(
-            "deliverability_test_report",
-            &self.deliverability_test_report,
-        );
-        formatter.field("overall_placement", &self.overall_placement);
-        formatter.field("isp_placements", &self.isp_placements);
-        formatter.field("message", &self.message);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
@@ -1527,7 +1327,7 @@ impl GetDeliverabilityTestReportOutput {
 
 /// <p>An object that shows the status of the Deliverability dashboard for your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeliverabilityDashboardOptionsOutput {
     /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value is <code>true</code>, the dashboard is enabled.</p>
     #[doc(hidden)]
@@ -1573,20 +1373,6 @@ impl GetDeliverabilityDashboardOptionsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
         self.pending_expiration_subscribed_domains.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDeliverabilityDashboardOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeliverabilityDashboardOptionsOutput");
-        formatter.field("dashboard_enabled", &self.dashboard_enabled);
-        formatter.field("subscription_expiry_date", &self.subscription_expiry_date);
-        formatter.field("account_status", &self.account_status);
-        formatter.field("active_subscribed_domains", &self.active_subscribed_domains);
-        formatter.field(
-            "pending_expiration_subscribed_domains",
-            &self.pending_expiration_subscribed_domains,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
@@ -1715,7 +1501,7 @@ impl GetDeliverabilityDashboardOptionsOutput {
 
 /// <p>Information about the dedicated IP addresses that are associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint account.</p>
     #[doc(hidden)]
@@ -1732,14 +1518,6 @@ impl GetDedicatedIpsOutput {
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDedicatedIpsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDedicatedIpsOutput");
-        formatter.field("dedicated_ips", &self.dedicated_ips);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
@@ -1799,7 +1577,7 @@ impl GetDedicatedIpsOutput {
 
 /// <p>Information about a dedicated IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
     #[doc(hidden)]
@@ -1809,13 +1587,6 @@ impl GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
     pub fn dedicated_ip(&self) -> std::option::Option<&crate::model::DedicatedIp> {
         self.dedicated_ip.as_ref()
-    }
-}
-impl std::fmt::Debug for GetDedicatedIpOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDedicatedIpOutput");
-        formatter.field("dedicated_ip", &self.dedicated_ip);
-        formatter.finish()
     }
 }
 /// See [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
@@ -1857,7 +1628,7 @@ impl GetDedicatedIpOutput {
 
 /// <p>Information about an event destination for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
     #[doc(hidden)]
@@ -1867,13 +1638,6 @@ impl GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
     pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
         self.event_destinations.as_deref()
-    }
-}
-impl std::fmt::Debug for GetConfigurationSetEventDestinationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigurationSetEventDestinationsOutput");
-        formatter.field("event_destinations", &self.event_destinations);
-        formatter.finish()
     }
 }
 /// See [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
@@ -1922,7 +1686,7 @@ impl GetConfigurationSetEventDestinationsOutput {
 
 /// <p>Information about a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigurationSetOutput {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
@@ -1967,18 +1731,6 @@ impl GetConfigurationSetOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for GetConfigurationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigurationSetOutput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("tracking_options", &self.tracking_options);
-        formatter.field("delivery_options", &self.delivery_options);
-        formatter.field("reputation_options", &self.reputation_options);
-        formatter.field("sending_options", &self.sending_options);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
@@ -2101,7 +1853,7 @@ impl GetConfigurationSetOutput {
 
 /// <p>An object that contains information about blacklist events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
     #[doc(hidden)]
@@ -2120,13 +1872,6 @@ impl GetBlacklistReportsOutput {
         >,
     > {
         self.blacklist_report.as_ref()
-    }
-}
-impl std::fmt::Debug for GetBlacklistReportsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBlacklistReportsOutput");
-        formatter.field("blacklist_report", &self.blacklist_report);
-        formatter.finish()
     }
 }
 /// See [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
@@ -2188,7 +1933,7 @@ impl GetBlacklistReportsOutput {
 
 /// <p>A list of details about the email-sending capabilities of your Amazon Pinpoint account in the current AWS Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountOutput {
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
     #[doc(hidden)]
@@ -2240,20 +1985,6 @@ impl GetAccountOutput {
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn production_access_enabled(&self) -> bool {
         self.production_access_enabled
-    }
-}
-impl std::fmt::Debug for GetAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountOutput");
-        formatter.field("send_quota", &self.send_quota);
-        formatter.field("sending_enabled", &self.sending_enabled);
-        formatter.field(
-            "dedicated_ip_auto_warmup_enabled",
-            &self.dedicated_ip_auto_warmup_enabled,
-        );
-        formatter.field("enforcement_status", &self.enforcement_status);
-        formatter.field("production_access_enabled", &self.production_access_enabled);
-        formatter.finish()
     }
 }
 /// See [`GetAccountOutput`](crate::output::GetAccountOutput).
@@ -2365,14 +2096,8 @@ impl GetAccountOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEmailIdentityOutput {}
-impl std::fmt::Debug for DeleteEmailIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEmailIdentityOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
 pub mod delete_email_identity_output {
 
@@ -2395,14 +2120,8 @@ impl DeleteEmailIdentityOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDedicatedIpPoolOutput {}
-impl std::fmt::Debug for DeleteDedicatedIpPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDedicatedIpPoolOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
 pub mod delete_dedicated_ip_pool_output {
 
@@ -2425,14 +2144,8 @@ impl DeleteDedicatedIpPoolOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for DeleteConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
 pub mod delete_configuration_set_event_destination_output {
 
@@ -2455,14 +2168,8 @@ impl DeleteConfigurationSetEventDestinationOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetOutput {}
-impl std::fmt::Debug for DeleteConfigurationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
 
@@ -2486,7 +2193,7 @@ impl DeleteConfigurationSetOutput {
 /// <p>If the email identity is a domain, this object contains tokens that you can use to create a set of CNAME records. To sucessfully verify your domain, you have to add these records to the DNS configuration for your domain.</p>
 /// <p>If the email identity is an email address, this object is empty. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEmailIdentityOutput {
     /// <p>The email identity type.</p>
     #[doc(hidden)]
@@ -2510,18 +2217,6 @@ impl CreateEmailIdentityOutput {
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
     pub fn dkim_attributes(&self) -> std::option::Option<&crate::model::DkimAttributes> {
         self.dkim_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateEmailIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEmailIdentityOutput");
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field(
-            "verified_for_sending_status",
-            &self.verified_for_sending_status,
-        );
-        formatter.field("dkim_attributes", &self.dkim_attributes);
-        formatter.finish()
     }
 }
 /// See [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
@@ -2590,7 +2285,7 @@ impl CreateEmailIdentityOutput {
 
 /// <p>Information about the predictive inbox placement test that you created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     #[doc(hidden)]
@@ -2609,17 +2304,6 @@ impl CreateDeliverabilityTestReportOutput {
         &self,
     ) -> std::option::Option<&crate::model::DeliverabilityTestStatus> {
         self.deliverability_test_status.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDeliverabilityTestReportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeliverabilityTestReportOutput");
-        formatter.field("report_id", &self.report_id);
-        formatter.field(
-            "deliverability_test_status",
-            &self.deliverability_test_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
@@ -2677,14 +2361,8 @@ impl CreateDeliverabilityTestReportOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDedicatedIpPoolOutput {}
-impl std::fmt::Debug for CreateDedicatedIpPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDedicatedIpPoolOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
 pub mod create_dedicated_ip_pool_output {
 
@@ -2707,14 +2385,8 @@ impl CreateDedicatedIpPoolOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for CreateConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
 pub mod create_configuration_set_event_destination_output {
 
@@ -2737,14 +2409,8 @@ impl CreateConfigurationSetEventDestinationOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetOutput {}
-impl std::fmt::Debug for CreateConfigurationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
 

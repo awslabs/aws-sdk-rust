@@ -3024,7 +3024,7 @@ impl RegisterScalableTargetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterScalableTargetInput {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     #[doc(hidden)]
@@ -3178,23 +3178,10 @@ impl RegisterScalableTargetInput {
         self.suspended_state.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterScalableTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterScalableTargetInput");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("min_capacity", &self.min_capacity);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("suspended_state", &self.suspended_state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScheduledActionInput {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     #[doc(hidden)]
@@ -3366,25 +3353,10 @@ impl PutScheduledActionInput {
         self.scalable_target_action.as_ref()
     }
 }
-impl std::fmt::Debug for PutScheduledActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutScheduledActionInput");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("scalable_target_action", &self.scalable_target_action);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScalingPolicyInput {
     /// <p>The name of the scaling policy.</p>
     #[doc(hidden)]
@@ -3536,29 +3508,10 @@ impl PutScalingPolicyInput {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutScalingPolicyInput");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field(
-            "step_scaling_policy_configuration",
-            &self.step_scaling_policy_configuration,
-        );
-        formatter.field(
-            "target_tracking_scaling_policy_configuration",
-            &self.target_tracking_scaling_policy_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScheduledActionsInput {
     /// <p>The names of the scheduled actions to describe.</p>
     #[doc(hidden)]
@@ -3687,22 +3640,10 @@ impl DescribeScheduledActionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScheduledActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScheduledActionsInput");
-        formatter.field("scheduled_action_names", &self.scheduled_action_names);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingPoliciesInput {
     /// <p>The names of the scaling policies to describe.</p>
     #[doc(hidden)]
@@ -3831,22 +3772,10 @@ impl DescribeScalingPoliciesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingPoliciesInput");
-        formatter.field("policy_names", &self.policy_names);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingActivitiesInput {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     #[doc(hidden)]
@@ -3968,21 +3897,10 @@ impl DescribeScalingActivitiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingActivitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingActivitiesInput");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalableTargetsInput {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     #[doc(hidden)]
@@ -4104,21 +4022,10 @@ impl DescribeScalableTargetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalableTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalableTargetsInput");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterScalableTargetInput {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     #[doc(hidden)]
@@ -4224,19 +4131,10 @@ impl DeregisterScalableTargetInput {
         self.scalable_dimension.as_ref()
     }
 }
-impl std::fmt::Debug for DeregisterScalableTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterScalableTargetInput");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduledActionInput {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     #[doc(hidden)]
@@ -4349,20 +4247,10 @@ impl DeleteScheduledActionInput {
         self.scalable_dimension.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteScheduledActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScheduledActionInput");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScalingPolicyInput {
     /// <p>The name of the scaling policy.</p>
     #[doc(hidden)]
@@ -4473,15 +4361,5 @@ impl DeleteScalingPolicyInput {
     /// </ul>
     pub fn scalable_dimension(&self) -> std::option::Option<&crate::model::ScalableDimension> {
         self.scalable_dimension.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScalingPolicyInput");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.finish()
     }
 }

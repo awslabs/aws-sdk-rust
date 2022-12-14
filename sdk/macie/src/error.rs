@@ -2,7 +2,7 @@
 
 /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInputException {
     /// Error code for the exception
     #[doc(hidden)]
@@ -22,15 +22,6 @@ impl InvalidInputException {
     /// Field that has invalid input
     pub fn field_name(&self) -> std::option::Option<&str> {
         self.field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidInputException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInputException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.field("field_name", &self.field_name);
-        formatter.finish()
     }
 }
 impl InvalidInputException {
@@ -111,7 +102,7 @@ impl InvalidInputException {
 
 /// <p>(Discontinued) Internal server error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalException {
     /// Error code for the exception
     #[doc(hidden)]
@@ -124,14 +115,6 @@ impl InternalException {
     /// Error code for the exception
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalException {
@@ -200,7 +183,7 @@ impl InternalException {
 
 /// <p>(Discontinued) You do not have required permissions to access the requested resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -213,14 +196,6 @@ impl AccessDeniedException {
     /// Resource type that caused the exception
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -292,7 +267,7 @@ impl AccessDeniedException {
 
 /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     /// Error code for the exception
     #[doc(hidden)]
@@ -312,15 +287,6 @@ impl LimitExceededException {
     /// Resource type that caused the exception
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl LimitExceededException {

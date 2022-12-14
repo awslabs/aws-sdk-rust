@@ -2,7 +2,7 @@
 
 /// <p>A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistribution {
     /// <p>The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -63,22 +63,6 @@ impl StreamingDistribution {
         &self,
     ) -> std::option::Option<&crate::model::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamingDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistribution");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("active_trusted_signers", &self.active_trusted_signers);
-        formatter.field(
-            "streaming_distribution_config",
-            &self.streaming_distribution_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`StreamingDistribution`](crate::model::StreamingDistribution).
@@ -206,7 +190,7 @@ impl StreamingDistribution {
 
 /// <p>The RTMP distribution's configuration information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
@@ -269,20 +253,6 @@ impl StreamingDistributionConfig {
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for StreamingDistributionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionConfig");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("s3_origin", &self.s3_origin);
-        formatter.field("aliases", &self.aliases);
-        formatter.field("comment", &self.comment);
-        formatter.field("logging", &self.logging);
-        formatter.field("trusted_signers", &self.trusted_signers);
-        formatter.field("price_class", &self.price_class);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`StreamingDistributionConfig`](crate::model::StreamingDistributionConfig).
@@ -516,7 +486,7 @@ impl AsRef<str> for PriceClass {
 
 /// <p>A list of Amazon Web Services accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedSigners {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
@@ -540,15 +510,6 @@ impl TrustedSigners {
     /// <p>A list of Amazon Web Services account identifiers.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for TrustedSigners {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedSigners");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`TrustedSigners`](crate::model::TrustedSigners).
@@ -620,7 +581,7 @@ impl TrustedSigners {
 
 /// <p>A complex type that controls whether access logs are written for this streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingLoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted. </p>
     #[doc(hidden)]
@@ -644,15 +605,6 @@ impl StreamingLoggingConfig {
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamingLoggingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingLoggingConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`StreamingLoggingConfig`](crate::model::StreamingLoggingConfig).
@@ -715,7 +667,7 @@ impl StreamingLoggingConfig {
 
 /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Aliases {
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
     #[doc(hidden)]
@@ -732,14 +684,6 @@ impl Aliases {
     /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for Aliases {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Aliases");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`Aliases`](crate::model::Aliases).
@@ -799,7 +743,7 @@ impl Aliases {
 
 /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Origin {
     /// <p>The DNS name of the Amazon S3 origin. </p>
     #[doc(hidden)]
@@ -824,14 +768,6 @@ impl S3Origin {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_access_identity(&self) -> std::option::Option<&str> {
         self.origin_access_identity.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Origin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Origin");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("origin_access_identity", &self.origin_access_identity);
-        formatter.finish()
     }
 }
 /// See [`S3Origin`](crate::model::S3Origin).
@@ -893,7 +829,7 @@ impl S3Origin {
 
 /// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveTrustedSigners {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
@@ -917,15 +853,6 @@ impl ActiveTrustedSigners {
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::Signer]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ActiveTrustedSigners {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveTrustedSigners");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ActiveTrustedSigners`](crate::model::ActiveTrustedSigners).
@@ -997,7 +924,7 @@ impl ActiveTrustedSigners {
 
 /// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Signer {
     /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.</p>
     #[doc(hidden)]
@@ -1014,14 +941,6 @@ impl Signer {
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn key_pair_ids(&self) -> std::option::Option<&crate::model::KeyPairIds> {
         self.key_pair_ids.as_ref()
-    }
-}
-impl std::fmt::Debug for Signer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Signer");
-        formatter.field("aws_account_number", &self.aws_account_number);
-        formatter.field("key_pair_ids", &self.key_pair_ids);
-        formatter.finish()
     }
 }
 /// See [`Signer`](crate::model::Signer).
@@ -1078,7 +997,7 @@ impl Signer {
 
 /// <p>A list of CloudFront key pair identifiers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPairIds {
     /// <p>The number of key pair identifiers in the list.</p>
     #[doc(hidden)]
@@ -1095,14 +1014,6 @@ impl KeyPairIds {
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyPairIds {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPairIds");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`KeyPairIds`](crate::model::KeyPairIds).
@@ -1165,7 +1076,7 @@ impl KeyPairIds {
 /// <p>After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match the cache behavior.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-response-headers.html">Adding HTTP headers to CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicy {
     /// <p>The identifier for the response headers policy.</p>
     #[doc(hidden)]
@@ -1194,18 +1105,6 @@ impl ResponseHeadersPolicy {
         &self,
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicyConfig> {
         self.response_headers_policy_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicy");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "response_headers_policy_config",
-            &self.response_headers_policy_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy).
@@ -1281,7 +1180,7 @@ impl ResponseHeadersPolicy {
 /// <p>A response headers policy configuration.</p>
 /// <p>A response headers policy configuration contains metadata about the response headers policy, and configurations for sets of HTTP response headers and their values. CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior associated with the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyConfig {
     /// <p>A comment to describe the response headers policy.</p>
     /// <p>The comment cannot be longer than 128 characters.</p>
@@ -1341,21 +1240,6 @@ impl ResponseHeadersPolicyConfig {
         &self,
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicyCustomHeadersConfig> {
         self.custom_headers_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("name", &self.name);
-        formatter.field("cors_config", &self.cors_config);
-        formatter.field("security_headers_config", &self.security_headers_config);
-        formatter.field(
-            "server_timing_headers_config",
-            &self.server_timing_headers_config,
-        );
-        formatter.field("custom_headers_config", &self.custom_headers_config);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig).
@@ -1484,7 +1368,7 @@ impl ResponseHeadersPolicyConfig {
 
 /// <p>A list of HTTP response header names and their values. CloudFront includes these headers in HTTP responses that it sends for requests that match a cache behavior that’s associated with this response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeadersConfig {
     /// <p>The number of HTTP response headers in the list.</p>
     #[doc(hidden)]
@@ -1501,14 +1385,6 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
     /// <p>The list of HTTP response headers and their values.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::ResponseHeadersPolicyCustomHeader]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyCustomHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyCustomHeadersConfig");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig).
@@ -1571,7 +1447,7 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
 
 /// <p>An HTTP response header name and its value. CloudFront includes this header in HTTP responses that it sends for requests that match a cache behavior that’s associated with this response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
     #[doc(hidden)]
@@ -1595,15 +1471,6 @@ impl ResponseHeadersPolicyCustomHeader {
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
     pub fn r#override(&self) -> std::option::Option<bool> {
         self.r#override
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyCustomHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyCustomHeader");
-        formatter.field("header", &self.header);
-        formatter.field("value", &self.value);
-        formatter.field("r#override", &self.r#override);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader).
@@ -1667,7 +1534,7 @@ impl ResponseHeadersPolicyCustomHeader {
 /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront. CloudFront adds this header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
 /// <p>You can use the <code>Server-Timing</code> header to view metrics that can help you gain insights about the behavior and performance of CloudFront. For example, you can see which cache layer served a cache hit, or the first byte latency from the origin when there was a cache miss. You can use the metrics in the <code>Server-Timing</code> header to troubleshoot issues or test the efficiency of your CloudFront configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html#server-timing-header">Server-Timing header</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyServerTimingHeadersConfig {
     /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
     #[doc(hidden)]
@@ -1684,14 +1551,6 @@ impl ResponseHeadersPolicyServerTimingHeadersConfig {
     /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
     pub fn sampling_rate(&self) -> std::option::Option<f64> {
         self.sampling_rate
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyServerTimingHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyServerTimingHeadersConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("sampling_rate", &self.sampling_rate);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
@@ -1743,7 +1602,7 @@ impl ResponseHeadersPolicyServerTimingHeadersConfig {
 
 /// <p>A configuration for a set of security-related HTTP response headers. CloudFront adds these headers to HTTP responses that it sends for requests that match a cache behavior associated with this response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicySecurityHeadersConfig {
     /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s value.</p>
     /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
@@ -1815,18 +1674,6 @@ impl ResponseHeadersPolicySecurityHeadersConfig {
         &self,
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicyStrictTransportSecurity> {
         self.strict_transport_security.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicySecurityHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicySecurityHeadersConfig");
-        formatter.field("xss_protection", &self.xss_protection);
-        formatter.field("frame_options", &self.frame_options);
-        formatter.field("referrer_policy", &self.referrer_policy);
-        formatter.field("content_security_policy", &self.content_security_policy);
-        formatter.field("content_type_options", &self.content_type_options);
-        formatter.field("strict_transport_security", &self.strict_transport_security);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig).
@@ -1980,7 +1827,7 @@ impl ResponseHeadersPolicySecurityHeadersConfig {
 /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header’s value.</p>
 /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyStrictTransportSecurity {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2011,19 +1858,6 @@ impl ResponseHeadersPolicyStrictTransportSecurity {
     /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn access_control_max_age_sec(&self) -> std::option::Option<i32> {
         self.access_control_max_age_sec
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyStrictTransportSecurity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyStrictTransportSecurity");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("include_subdomains", &self.include_subdomains);
-        formatter.field("preload", &self.preload);
-        formatter.field(
-            "access_control_max_age_sec",
-            &self.access_control_max_age_sec,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity).
@@ -2099,7 +1933,7 @@ impl ResponseHeadersPolicyStrictTransportSecurity {
 /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>.</p>
 /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentTypeOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2109,13 +1943,6 @@ impl ResponseHeadersPolicyContentTypeOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(&self) -> std::option::Option<bool> {
         self.r#override
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyContentTypeOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyContentTypeOptions");
-        formatter.field("r#override", &self.r#override);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions).
@@ -2155,7 +1982,7 @@ impl ResponseHeadersPolicyContentTypeOptions {
 /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
 /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentSecurityPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2172,14 +1999,6 @@ impl ResponseHeadersPolicyContentSecurityPolicy {
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     pub fn content_security_policy(&self) -> std::option::Option<&str> {
         self.content_security_policy.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyContentSecurityPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyContentSecurityPolicy");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("content_security_policy", &self.content_security_policy);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy).
@@ -2234,7 +2053,7 @@ impl ResponseHeadersPolicyContentSecurityPolicy {
 /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s value.</p>
 /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyReferrerPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2273,14 +2092,6 @@ impl ResponseHeadersPolicyReferrerPolicy {
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub fn referrer_policy(&self) -> std::option::Option<&crate::model::ReferrerPolicyList> {
         self.referrer_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyReferrerPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyReferrerPolicy");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("referrer_policy", &self.referrer_policy);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy).
@@ -2488,7 +2299,7 @@ impl AsRef<str> for ReferrerPolicyList {
 /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s value.</p>
 /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyFrameOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2507,14 +2318,6 @@ impl ResponseHeadersPolicyFrameOptions {
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn frame_option(&self) -> std::option::Option<&crate::model::FrameOptionsList> {
         self.frame_option.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyFrameOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyFrameOptions");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("frame_option", &self.frame_option);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions).
@@ -2661,7 +2464,7 @@ impl AsRef<str> for FrameOptionsList {
 /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s value.</p>
 /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyXssProtection {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2700,16 +2503,6 @@ impl ResponseHeadersPolicyXssProtection {
     /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub fn report_uri(&self) -> std::option::Option<&str> {
         self.report_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyXssProtection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyXssProtection");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("protection", &self.protection);
-        formatter.field("mode_block", &self.mode_block);
-        formatter.field("report_uri", &self.report_uri);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection).
@@ -2793,7 +2586,7 @@ impl ResponseHeadersPolicyXssProtection {
 /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS). CloudFront adds these headers to HTTP responses that it sends for CORS requests that match a cache behavior associated with this response headers policy.</p>
 /// <p>For more information about CORS, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCorsConfig {
     /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
@@ -2869,37 +2662,6 @@ impl ResponseHeadersPolicyCorsConfig {
     /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the origin with the ones specified in this response headers policy.</p>
     pub fn origin_override(&self) -> std::option::Option<bool> {
         self.origin_override
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyCorsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyCorsConfig");
-        formatter.field(
-            "access_control_allow_origins",
-            &self.access_control_allow_origins,
-        );
-        formatter.field(
-            "access_control_allow_headers",
-            &self.access_control_allow_headers,
-        );
-        formatter.field(
-            "access_control_allow_methods",
-            &self.access_control_allow_methods,
-        );
-        formatter.field(
-            "access_control_allow_credentials",
-            &self.access_control_allow_credentials,
-        );
-        formatter.field(
-            "access_control_expose_headers",
-            &self.access_control_expose_headers,
-        );
-        formatter.field(
-            "access_control_max_age_sec",
-            &self.access_control_max_age_sec,
-        );
-        formatter.field("origin_override", &self.origin_override);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig).
@@ -3062,7 +2824,7 @@ impl ResponseHeadersPolicyCorsConfig {
 /// <p>A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlExposeHeaders {
     /// <p>The number of HTTP headers in the list.</p>
     #[doc(hidden)]
@@ -3079,14 +2841,6 @@ impl ResponseHeadersPolicyAccessControlExposeHeaders {
     /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyAccessControlExposeHeaders {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlExposeHeaders");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders).
@@ -3148,7 +2902,7 @@ impl ResponseHeadersPolicyAccessControlExposeHeaders {
 /// <p>A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p>The number of HTTP methods in the list.</p>
     #[doc(hidden)]
@@ -3192,14 +2946,6 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
     ) -> std::option::Option<&[crate::model::ResponseHeadersPolicyAccessControlAllowMethodsValues]>
     {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowMethods {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowMethods");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods).
@@ -3416,7 +3162,7 @@ impl AsRef<str> for ResponseHeadersPolicyAccessControlAllowMethodsValues {
 /// <p>A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowHeaders {
     /// <p>The number of HTTP header names in the list.</p>
     #[doc(hidden)]
@@ -3433,14 +3179,6 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowHeaders {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowHeaders");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders).
@@ -3502,7 +3240,7 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
 /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowOrigins {
     /// <p>The number of origins in the list.</p>
     #[doc(hidden)]
@@ -3519,14 +3257,6 @@ impl ResponseHeadersPolicyAccessControlAllowOrigins {
     /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all origins.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowOrigins {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowOrigins");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins).
@@ -3587,7 +3317,7 @@ impl ResponseHeadersPolicyAccessControlAllowOrigins {
 
 /// <p>A real-time log configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeLogConfig {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
     #[doc(hidden)]
@@ -3627,17 +3357,6 @@ impl RealtimeLogConfig {
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn fields(&self) -> std::option::Option<&[std::string::String]> {
         self.fields.as_deref()
-    }
-}
-impl std::fmt::Debug for RealtimeLogConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeLogConfig");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("sampling_rate", &self.sampling_rate);
-        formatter.field("end_points", &self.end_points);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
     }
 }
 /// See [`RealtimeLogConfig`](crate::model::RealtimeLogConfig).
@@ -3744,7 +3463,7 @@ impl RealtimeLogConfig {
 
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data in a real-time log configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndPoint {
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
     #[doc(hidden)]
@@ -3761,14 +3480,6 @@ impl EndPoint {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub fn kinesis_stream_config(&self) -> std::option::Option<&crate::model::KinesisStreamConfig> {
         self.kinesis_stream_config.as_ref()
-    }
-}
-impl std::fmt::Debug for EndPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndPoint");
-        formatter.field("stream_type", &self.stream_type);
-        formatter.field("kinesis_stream_config", &self.kinesis_stream_config);
-        formatter.finish()
     }
 }
 /// See [`EndPoint`](crate::model::EndPoint).
@@ -3822,7 +3533,7 @@ impl EndPoint {
 
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send real-time log data to your Kinesis data stream.</p>
     /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -3841,14 +3552,6 @@ impl KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time log data.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamConfig`](crate::model::KinesisStreamConfig).
@@ -3901,7 +3604,7 @@ impl KinesisStreamConfig {
 
 /// <p>A public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKey {
     /// <p>The identifier of the public key.</p>
     #[doc(hidden)]
@@ -3925,15 +3628,6 @@ impl PublicKey {
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub fn public_key_config(&self) -> std::option::Option<&crate::model::PublicKeyConfig> {
         self.public_key_config.as_ref()
-    }
-}
-impl std::fmt::Debug for PublicKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKey");
-        formatter.field("id", &self.id);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("public_key_config", &self.public_key_config);
-        formatter.finish()
     }
 }
 /// See [`PublicKey`](crate::model::PublicKey).
@@ -4002,7 +3696,7 @@ impl PublicKey {
 
 /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeyConfig {
     /// <p>A string included in the request to help make sure that the request can’t be replayed.</p>
     #[doc(hidden)]
@@ -4033,16 +3727,6 @@ impl PublicKeyConfig {
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for PublicKeyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKeyConfig");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("name", &self.name);
-        formatter.field("encoded_key", &self.encoded_key);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`PublicKeyConfig`](crate::model::PublicKeyConfig).
@@ -4127,7 +3811,7 @@ impl PublicKeyConfig {
 /// </ul>
 /// <p>CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
     #[doc(hidden)]
@@ -4153,18 +3837,6 @@ impl OriginRequestPolicy {
         &self,
     ) -> std::option::Option<&crate::model::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicy");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "origin_request_policy_config",
-            &self.origin_request_policy_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`OriginRequestPolicy`](crate::model::OriginRequestPolicy).
@@ -4244,7 +3916,7 @@ impl OriginRequestPolicy {
 /// </ul>
 /// <p>CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyConfig {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
     #[doc(hidden)]
@@ -4289,17 +3961,6 @@ impl OriginRequestPolicyConfig {
         &self,
     ) -> std::option::Option<&crate::model::OriginRequestPolicyQueryStringsConfig> {
         self.query_strings_config.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginRequestPolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("name", &self.name);
-        formatter.field("headers_config", &self.headers_config);
-        formatter.field("cookies_config", &self.cookies_config);
-        formatter.field("query_strings_config", &self.query_strings_config);
-        formatter.finish()
     }
 }
 /// See [`OriginRequestPolicyConfig`](crate::model::OriginRequestPolicyConfig).
@@ -4407,7 +4068,7 @@ impl OriginRequestPolicyConfig {
 
 /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyQueryStringsConfig {
     /// <p>Determines whether any URL query strings in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -4437,14 +4098,6 @@ impl OriginRequestPolicyQueryStringsConfig {
     /// <p>Contains a list of the query strings in viewer requests that are included in requests that CloudFront sends to the origin.</p>
     pub fn query_strings(&self) -> std::option::Option<&crate::model::QueryStringNames> {
         self.query_strings.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginRequestPolicyQueryStringsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyQueryStringsConfig");
-        formatter.field("query_string_behavior", &self.query_string_behavior);
-        formatter.field("query_strings", &self.query_strings);
-        formatter.finish()
     }
 }
 /// See [`OriginRequestPolicyQueryStringsConfig`](crate::model::OriginRequestPolicyQueryStringsConfig).
@@ -4515,7 +4168,7 @@ impl OriginRequestPolicyQueryStringsConfig {
 
 /// <p>Contains a list of query string names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStringNames {
     /// <p>The number of query string names in the <code>Items</code> list.</p>
     #[doc(hidden)]
@@ -4532,14 +4185,6 @@ impl QueryStringNames {
     /// <p>A list of query string names.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryStringNames {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStringNames");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`QueryStringNames`](crate::model::QueryStringNames).
@@ -4696,7 +4341,7 @@ impl AsRef<str> for OriginRequestPolicyQueryStringBehavior {
 
 /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyCookiesConfig {
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -4725,14 +4370,6 @@ impl OriginRequestPolicyCookiesConfig {
     /// <p>Contains a list of cookie names.</p>
     pub fn cookies(&self) -> std::option::Option<&crate::model::CookieNames> {
         self.cookies.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginRequestPolicyCookiesConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyCookiesConfig");
-        formatter.field("cookie_behavior", &self.cookie_behavior);
-        formatter.field("cookies", &self.cookies);
-        formatter.finish()
     }
 }
 /// See [`OriginRequestPolicyCookiesConfig`](crate::model::OriginRequestPolicyCookiesConfig).
@@ -4803,7 +4440,7 @@ impl OriginRequestPolicyCookiesConfig {
 
 /// <p>Contains a list of cookie names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CookieNames {
     /// <p>The number of cookie names in the <code>Items</code> list.</p>
     #[doc(hidden)]
@@ -4820,14 +4457,6 @@ impl CookieNames {
     /// <p>A list of cookie names.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for CookieNames {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CookieNames");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`CookieNames`](crate::model::CookieNames).
@@ -4984,7 +4613,7 @@ impl AsRef<str> for OriginRequestPolicyCookieBehavior {
 
 /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -5015,14 +4644,6 @@ impl OriginRequestPolicyHeadersConfig {
     /// <p>Contains a list of HTTP header names.</p>
     pub fn headers(&self) -> std::option::Option<&crate::model::Headers> {
         self.headers.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginRequestPolicyHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyHeadersConfig");
-        formatter.field("header_behavior", &self.header_behavior);
-        formatter.field("headers", &self.headers);
-        formatter.finish()
     }
 }
 /// See [`OriginRequestPolicyHeadersConfig`](crate::model::OriginRequestPolicyHeadersConfig).
@@ -5092,7 +4713,7 @@ impl OriginRequestPolicyHeadersConfig {
 
 /// <p>Contains a list of HTTP header names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Headers {
     /// <p>The number of header names in the <code>Items</code> list.</p>
     #[doc(hidden)]
@@ -5109,14 +4730,6 @@ impl Headers {
     /// <p>A list of HTTP header names.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for Headers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Headers");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`Headers`](crate::model::Headers).
@@ -5287,7 +4900,7 @@ impl AsRef<str> for OriginRequestPolicyHeaderBehavior {
 
 /// <p>A CloudFront origin access control, including its unique identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControl {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
@@ -5306,17 +4919,6 @@ impl OriginAccessControl {
         &self,
     ) -> std::option::Option<&crate::model::OriginAccessControlConfig> {
         self.origin_access_control_config.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControl");
-        formatter.field("id", &self.id);
-        formatter.field(
-            "origin_access_control_config",
-            &self.origin_access_control_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`OriginAccessControl`](crate::model::OriginAccessControl).
@@ -5374,7 +4976,7 @@ impl OriginAccessControl {
 
 /// <p>A CloudFront origin access control configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControlConfig {
     /// <p>A name to identify the origin access control.</p>
     #[doc(hidden)]
@@ -5431,20 +5033,6 @@ impl OriginAccessControlConfig {
         &self,
     ) -> std::option::Option<&crate::model::OriginAccessControlOriginTypes> {
         self.origin_access_control_origin_type.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginAccessControlConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControlConfig");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("signing_protocol", &self.signing_protocol);
-        formatter.field("signing_behavior", &self.signing_behavior);
-        formatter.field(
-            "origin_access_control_origin_type",
-            &self.origin_access_control_origin_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
@@ -5836,7 +5424,7 @@ impl AsRef<str> for OriginAccessControlSigningProtocols {
 /// <p>A key group.</p>
 /// <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroup {
     /// <p>The identifier for the key group.</p>
     #[doc(hidden)]
@@ -5860,15 +5448,6 @@ impl KeyGroup {
     /// <p>The key group configuration.</p>
     pub fn key_group_config(&self) -> std::option::Option<&crate::model::KeyGroupConfig> {
         self.key_group_config.as_ref()
-    }
-}
-impl std::fmt::Debug for KeyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroup");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("key_group_config", &self.key_group_config);
-        formatter.finish()
     }
 }
 /// See [`KeyGroup`](crate::model::KeyGroup).
@@ -5938,7 +5517,7 @@ impl KeyGroup {
 /// <p>A key group configuration.</p>
 /// <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroupConfig {
     /// <p>A name to identify the key group.</p>
     #[doc(hidden)]
@@ -5962,15 +5541,6 @@ impl KeyGroupConfig {
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyGroupConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroupConfig");
-        formatter.field("name", &self.name);
-        formatter.field("items", &self.items);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`KeyGroupConfig`](crate::model::KeyGroupConfig).
@@ -6042,7 +5612,7 @@ impl KeyGroupConfig {
 
 /// <p>Contains configuration information and metadata about a CloudFront function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionSummary {
     /// <p>The name of the CloudFront function.</p>
     #[doc(hidden)]
@@ -6073,16 +5643,6 @@ impl FunctionSummary {
     /// <p>Contains metadata about a CloudFront function.</p>
     pub fn function_metadata(&self) -> std::option::Option<&crate::model::FunctionMetadata> {
         self.function_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionSummary");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("function_config", &self.function_config);
-        formatter.field("function_metadata", &self.function_metadata);
-        formatter.finish()
     }
 }
 /// See [`FunctionSummary`](crate::model::FunctionSummary).
@@ -6163,7 +5723,7 @@ impl FunctionSummary {
 
 /// <p>Contains metadata about a CloudFront function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
     #[doc(hidden)]
@@ -6198,16 +5758,6 @@ impl FunctionMetadata {
     /// <p>The date and time when the function was most recently updated.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionMetadata");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("stage", &self.stage);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`FunctionMetadata`](crate::model::FunctionMetadata).
@@ -6385,7 +5935,7 @@ impl AsRef<str> for FunctionStage {
 
 /// <p>Contains configuration information about a CloudFront function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionConfig {
     /// <p>A comment to describe the function.</p>
     #[doc(hidden)]
@@ -6402,14 +5952,6 @@ impl FunctionConfig {
     /// <p>The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
     pub fn runtime(&self) -> std::option::Option<&crate::model::FunctionRuntime> {
         self.runtime.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("runtime", &self.runtime);
-        formatter.finish()
     }
 }
 /// See [`FunctionConfig`](crate::model::FunctionConfig).
@@ -6548,7 +6090,7 @@ impl AsRef<str> for FunctionRuntime {
 
 /// <p>A complex data type for field-level encryption profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfile {
     /// <p>The ID for a field-level encryption profile configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
     #[doc(hidden)]
@@ -6575,18 +6117,6 @@ impl FieldLevelEncryptionProfile {
         &self,
     ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfileConfig> {
         self.field_level_encryption_profile_config.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldLevelEncryptionProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfile");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "field_level_encryption_profile_config",
-            &self.field_level_encryption_profile_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`FieldLevelEncryptionProfile`](crate::model::FieldLevelEncryptionProfile).
@@ -6659,7 +6189,7 @@ impl FieldLevelEncryptionProfile {
 
 /// <p>A complex data type of profiles for the field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileConfig {
     /// <p>Profile name for the field-level encryption profile.</p>
     #[doc(hidden)]
@@ -6690,16 +6220,6 @@ impl FieldLevelEncryptionProfileConfig {
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
     pub fn encryption_entities(&self) -> std::option::Option<&crate::model::EncryptionEntities> {
         self.encryption_entities.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldLevelEncryptionProfileConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileConfig");
-        formatter.field("name", &self.name);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("comment", &self.comment);
-        formatter.field("encryption_entities", &self.encryption_entities);
-        formatter.finish()
     }
 }
 /// See [`FieldLevelEncryptionProfileConfig`](crate::model::FieldLevelEncryptionProfileConfig).
@@ -6780,7 +6300,7 @@ impl FieldLevelEncryptionProfileConfig {
 
 /// <p>Complex data type for field-level encryption profiles that includes all of the encryption entities. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionEntities {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping. </p>
     #[doc(hidden)]
@@ -6797,14 +6317,6 @@ impl EncryptionEntities {
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
     pub fn items(&self) -> std::option::Option<&[crate::model::EncryptionEntity]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionEntities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionEntities");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`EncryptionEntities`](crate::model::EncryptionEntities).
@@ -6864,7 +6376,7 @@ impl EncryptionEntities {
 
 /// <p>Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionEntity {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns. </p>
     #[doc(hidden)]
@@ -6888,15 +6400,6 @@ impl EncryptionEntity {
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive. </p>
     pub fn field_patterns(&self) -> std::option::Option<&crate::model::FieldPatterns> {
         self.field_patterns.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionEntity");
-        formatter.field("public_key_id", &self.public_key_id);
-        formatter.field("provider_id", &self.provider_id);
-        formatter.field("field_patterns", &self.field_patterns);
-        formatter.finish()
     }
 }
 /// See [`EncryptionEntity`](crate::model::EncryptionEntity).
@@ -6965,7 +6468,7 @@ impl EncryptionEntity {
 
 /// <p>A complex data type that includes the field patterns to match for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldPatterns {
     /// <p>The number of field-level encryption field patterns.</p>
     #[doc(hidden)]
@@ -6982,14 +6485,6 @@ impl FieldPatterns {
     /// <p>An array of the field-level encryption field patterns.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldPatterns {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldPatterns");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`FieldPatterns`](crate::model::FieldPatterns).
@@ -7049,7 +6544,7 @@ impl FieldPatterns {
 
 /// <p>A complex data type that includes the profile configurations and other options specified for field-level encryption. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryption {
     /// <p>The configuration ID for a field-level encryption configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
     #[doc(hidden)]
@@ -7076,18 +6571,6 @@ impl FieldLevelEncryption {
         &self,
     ) -> std::option::Option<&crate::model::FieldLevelEncryptionConfig> {
         self.field_level_encryption_config.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldLevelEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryption");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "field_level_encryption_config",
-            &self.field_level_encryption_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`FieldLevelEncryption`](crate::model::FieldLevelEncryption).
@@ -7160,7 +6643,7 @@ impl FieldLevelEncryption {
 
 /// <p>A complex data type that includes the profile configurations specified for field-level encryption. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionConfig {
     /// <p>A unique number that ensures the request can't be replayed.</p>
     #[doc(hidden)]
@@ -7195,19 +6678,6 @@ impl FieldLevelEncryptionConfig {
         &self,
     ) -> std::option::Option<&crate::model::ContentTypeProfileConfig> {
         self.content_type_profile_config.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldLevelEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionConfig");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("comment", &self.comment);
-        formatter.field("query_arg_profile_config", &self.query_arg_profile_config);
-        formatter.field(
-            "content_type_profile_config",
-            &self.content_type_profile_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`FieldLevelEncryptionConfig`](crate::model::FieldLevelEncryptionConfig).
@@ -7299,7 +6769,7 @@ impl FieldLevelEncryptionConfig {
 
 /// <p>The configuration for a field-level encryption content type-profile mapping. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentTypeProfileConfig {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown. </p>
     #[doc(hidden)]
@@ -7316,17 +6786,6 @@ impl ContentTypeProfileConfig {
     /// <p>The configuration for a field-level encryption content type-profile. </p>
     pub fn content_type_profiles(&self) -> std::option::Option<&crate::model::ContentTypeProfiles> {
         self.content_type_profiles.as_ref()
-    }
-}
-impl std::fmt::Debug for ContentTypeProfileConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentTypeProfileConfig");
-        formatter.field(
-            "forward_when_content_type_is_unknown",
-            &self.forward_when_content_type_is_unknown,
-        );
-        formatter.field("content_type_profiles", &self.content_type_profiles);
-        formatter.finish()
     }
 }
 /// See [`ContentTypeProfileConfig`](crate::model::ContentTypeProfileConfig).
@@ -7383,7 +6842,7 @@ impl ContentTypeProfileConfig {
 
 /// <p>Field-level encryption content type-profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentTypeProfiles {
     /// <p>The number of field-level encryption content type-profile mappings. </p>
     #[doc(hidden)]
@@ -7400,14 +6859,6 @@ impl ContentTypeProfiles {
     /// <p>Items in a field-level encryption content type-profile mapping. </p>
     pub fn items(&self) -> std::option::Option<&[crate::model::ContentTypeProfile]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ContentTypeProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentTypeProfiles");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ContentTypeProfiles`](crate::model::ContentTypeProfiles).
@@ -7467,7 +6918,7 @@ impl ContentTypeProfiles {
 
 /// <p>A field-level encryption content type profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentTypeProfile {
     /// <p>The format for a field-level encryption content type-profile mapping. </p>
     #[doc(hidden)]
@@ -7491,15 +6942,6 @@ impl ContentTypeProfile {
     /// <p>The content type for a field-level encryption content type-profile mapping. </p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ContentTypeProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentTypeProfile");
-        formatter.field("format", &self.format);
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`ContentTypeProfile`](crate::model::ContentTypeProfile).
@@ -7647,7 +7089,7 @@ impl AsRef<str> for Format {
 
 /// <p>Configuration for query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryArgProfileConfig {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
     #[doc(hidden)]
@@ -7664,17 +7106,6 @@ impl QueryArgProfileConfig {
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
     pub fn query_arg_profiles(&self) -> std::option::Option<&crate::model::QueryArgProfiles> {
         self.query_arg_profiles.as_ref()
-    }
-}
-impl std::fmt::Debug for QueryArgProfileConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryArgProfileConfig");
-        formatter.field(
-            "forward_when_query_arg_profile_is_unknown",
-            &self.forward_when_query_arg_profile_is_unknown,
-        );
-        formatter.field("query_arg_profiles", &self.query_arg_profiles);
-        formatter.finish()
     }
 }
 /// See [`QueryArgProfileConfig`](crate::model::QueryArgProfileConfig).
@@ -7732,7 +7163,7 @@ impl QueryArgProfileConfig {
 
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryArgProfiles {
     /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
     #[doc(hidden)]
@@ -7749,14 +7180,6 @@ impl QueryArgProfiles {
     /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::QueryArgProfile]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryArgProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryArgProfiles");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`QueryArgProfiles`](crate::model::QueryArgProfiles).
@@ -7816,7 +7239,7 @@ impl QueryArgProfiles {
 
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryArgProfile {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
     #[doc(hidden)]
@@ -7833,14 +7256,6 @@ impl QueryArgProfile {
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
     pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryArgProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryArgProfile");
-        formatter.field("query_arg", &self.query_arg);
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
     }
 }
 /// See [`QueryArgProfile`](crate::model::QueryArgProfile).
@@ -7891,7 +7306,7 @@ impl QueryArgProfile {
 
 /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Distribution {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>. </p>
     #[doc(hidden)]
@@ -7976,25 +7391,6 @@ impl Distribution {
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
     pub fn alias_icp_recordals(&self) -> std::option::Option<&[crate::model::AliasIcpRecordal]> {
         self.alias_icp_recordals.as_deref()
-    }
-}
-impl std::fmt::Debug for Distribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Distribution");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "in_progress_invalidation_batches",
-            &self.in_progress_invalidation_batches,
-        );
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("active_trusted_signers", &self.active_trusted_signers);
-        formatter.field("active_trusted_key_groups", &self.active_trusted_key_groups);
-        formatter.field("distribution_config", &self.distribution_config);
-        formatter.field("alias_icp_recordals", &self.alias_icp_recordals);
-        formatter.finish()
     }
 }
 /// See [`Distribution`](crate::model::Distribution).
@@ -8179,7 +7575,7 @@ impl Distribution {
 /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.</p>
 /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AliasIcpRecordal {
     /// <p>A domain name associated with a distribution. </p>
     #[doc(hidden)]
@@ -8208,14 +7604,6 @@ impl AliasIcpRecordal {
     /// </ul>
     pub fn icp_recordal_status(&self) -> std::option::Option<&crate::model::IcpRecordalStatus> {
         self.icp_recordal_status.as_ref()
-    }
-}
-impl std::fmt::Debug for AliasIcpRecordal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AliasIcpRecordal");
-        formatter.field("cname", &self.cname);
-        formatter.field("icp_recordal_status", &self.icp_recordal_status);
-        formatter.finish()
     }
 }
 /// See [`AliasIcpRecordal`](crate::model::AliasIcpRecordal).
@@ -8585,7 +7973,7 @@ impl std::fmt::Debug for DistributionConfig {
 pub mod distribution_config {
 
     /// A builder for [`DistributionConfig`](crate::model::DistributionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) aliases: std::option::Option<crate::model::Aliases>,
@@ -8884,6 +8272,29 @@ pub mod distribution_config {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("caller_reference", &self.caller_reference);
+            formatter.field("aliases", &self.aliases);
+            formatter.field("default_root_object", &self.default_root_object);
+            formatter.field("origins", &self.origins);
+            formatter.field("origin_groups", &self.origin_groups);
+            formatter.field("default_cache_behavior", &self.default_cache_behavior);
+            formatter.field("cache_behaviors", &self.cache_behaviors);
+            formatter.field("custom_error_responses", &self.custom_error_responses);
+            formatter.field("comment", &"*** Sensitive Data Redacted ***");
+            formatter.field("logging", &self.logging);
+            formatter.field("price_class", &self.price_class);
+            formatter.field("enabled", &self.enabled);
+            formatter.field("viewer_certificate", &self.viewer_certificate);
+            formatter.field("restrictions", &self.restrictions);
+            formatter.field("web_acl_id", &self.web_acl_id);
+            formatter.field("http_version", &self.http_version);
+            formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
+            formatter.finish()
+        }
+    }
 }
 impl DistributionConfig {
     /// Creates a new builder-style object to manufacture [`DistributionConfig`](crate::model::DistributionConfig).
@@ -8994,7 +8405,7 @@ impl AsRef<str> for HttpVersion {
 
 /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Restrictions {
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
     #[doc(hidden)]
@@ -9004,13 +8415,6 @@ impl Restrictions {
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
     pub fn geo_restriction(&self) -> std::option::Option<&crate::model::GeoRestriction> {
         self.geo_restriction.as_ref()
-    }
-}
-impl std::fmt::Debug for Restrictions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Restrictions");
-        formatter.field("geo_restriction", &self.geo_restriction);
-        formatter.finish()
     }
 }
 /// See [`Restrictions`](crate::model::Restrictions).
@@ -9052,7 +8456,7 @@ impl Restrictions {
 
 /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeoRestriction {
     /// <p>The method that you want to use to restrict distribution of your content by country:</p>
     /// <ul>
@@ -9090,15 +8494,6 @@ impl GeoRestriction {
     /// <p>CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console, which includes both country names and codes.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for GeoRestriction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeoRestriction");
-        formatter.field("restriction_type", &self.restriction_type);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`GeoRestriction`](crate::model::GeoRestriction).
@@ -9301,7 +8696,7 @@ impl AsRef<str> for GeoRestrictionType {
 /// <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html">Using HTTPS with CloudFront</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html"> Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViewerCertificate {
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p>
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set this field to <code>false</code> and specify values for the following fields:</p>
@@ -9425,22 +8820,6 @@ impl ViewerCertificate {
     #[deprecated]
     pub fn certificate_source(&self) -> std::option::Option<&crate::model::CertificateSource> {
         self.certificate_source.as_ref()
-    }
-}
-impl std::fmt::Debug for ViewerCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViewerCertificate");
-        formatter.field(
-            "cloud_front_default_certificate",
-            &self.cloud_front_default_certificate,
-        );
-        formatter.field("iam_certificate_id", &self.iam_certificate_id);
-        formatter.field("acm_certificate_arn", &self.acm_certificate_arn);
-        formatter.field("ssl_support_method", &self.ssl_support_method);
-        formatter.field("minimum_protocol_version", &self.minimum_protocol_version);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("certificate_source", &self.certificate_source);
-        formatter.finish()
     }
 }
 /// See [`ViewerCertificate`](crate::model::ViewerCertificate).
@@ -9960,7 +9339,7 @@ impl AsRef<str> for SslSupportMethod {
 
 /// <p>A complex type that controls whether access logs are written for the distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a distribution or if you want to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values are automatically deleted.</p>
     #[doc(hidden)]
@@ -9991,16 +9370,6 @@ impl LoggingConfig {
     /// <p>An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("include_cookies", &self.include_cookies);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfig`](crate::model::LoggingConfig).
@@ -10080,7 +9449,7 @@ impl LoggingConfig {
 /// </ul>
 /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomErrorResponses {
     /// <p>The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     #[doc(hidden)]
@@ -10097,14 +9466,6 @@ impl CustomErrorResponses {
     /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you want to specify a custom error page and/or a caching duration. </p>
     pub fn items(&self) -> std::option::Option<&[crate::model::CustomErrorResponse]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomErrorResponses {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomErrorResponses");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`CustomErrorResponses`](crate::model::CustomErrorResponses).
@@ -10169,7 +9530,7 @@ impl CustomErrorResponses {
 /// </ul>
 /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomErrorResponse {
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
     #[doc(hidden)]
@@ -10226,16 +9587,6 @@ impl CustomErrorResponse {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn error_caching_min_ttl(&self) -> std::option::Option<i64> {
         self.error_caching_min_ttl
-    }
-}
-impl std::fmt::Debug for CustomErrorResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomErrorResponse");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("response_page_path", &self.response_page_path);
-        formatter.field("response_code", &self.response_code);
-        formatter.field("error_caching_min_ttl", &self.error_caching_min_ttl);
-        formatter.finish()
     }
 }
 /// See [`CustomErrorResponse`](crate::model::CustomErrorResponse).
@@ -10342,7 +9693,7 @@ impl CustomErrorResponse {
 
 /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheBehaviors {
     /// <p>The number of cache behaviors for this distribution. </p>
     #[doc(hidden)]
@@ -10359,14 +9710,6 @@ impl CacheBehaviors {
     /// <p>Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::CacheBehavior]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for CacheBehaviors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheBehaviors");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`CacheBehaviors`](crate::model::CacheBehaviors).
@@ -10432,7 +9775,7 @@ impl CacheBehaviors {
 /// <p>To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution.</p>
 /// <p>For more information about cache behaviors, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheBehavior {
     /// <p>The pattern (for example, <code>images/*.jpg</code>) that specifies which requests to apply the behavior to. When CloudFront receives a viewer request, the requested path is compared with path patterns in the order in which cache behaviors are listed in the distribution.</p> <note>
     /// <p>You can optionally include a slash (<code>/</code>) at the beginning of the path pattern. For example, <code>/images/*.jpg</code>. CloudFront behavior is the same with or without the leading <code>/</code>.</p>
@@ -10646,37 +9989,6 @@ impl CacheBehavior {
     #[deprecated]
     pub fn max_ttl(&self) -> std::option::Option<i64> {
         self.max_ttl
-    }
-}
-impl std::fmt::Debug for CacheBehavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheBehavior");
-        formatter.field("path_pattern", &self.path_pattern);
-        formatter.field("target_origin_id", &self.target_origin_id);
-        formatter.field("trusted_signers", &self.trusted_signers);
-        formatter.field("trusted_key_groups", &self.trusted_key_groups);
-        formatter.field("viewer_protocol_policy", &self.viewer_protocol_policy);
-        formatter.field("allowed_methods", &self.allowed_methods);
-        formatter.field("smooth_streaming", &self.smooth_streaming);
-        formatter.field("compress", &self.compress);
-        formatter.field(
-            "lambda_function_associations",
-            &self.lambda_function_associations,
-        );
-        formatter.field("function_associations", &self.function_associations);
-        formatter.field("field_level_encryption_id", &self.field_level_encryption_id);
-        formatter.field("realtime_log_config_arn", &self.realtime_log_config_arn);
-        formatter.field("cache_policy_id", &self.cache_policy_id);
-        formatter.field("origin_request_policy_id", &self.origin_request_policy_id);
-        formatter.field(
-            "response_headers_policy_id",
-            &self.response_headers_policy_id,
-        );
-        formatter.field("forwarded_values", &self.forwarded_values);
-        formatter.field("min_ttl", &self.min_ttl);
-        formatter.field("default_ttl", &self.default_ttl);
-        formatter.field("max_ttl", &self.max_ttl);
-        formatter.finish()
     }
 }
 /// See [`CacheBehavior`](crate::model::CacheBehavior).
@@ -11049,7 +10361,7 @@ impl CacheBehavior {
 /// <p>If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForwardedValues {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include query strings in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -11116,16 +10428,6 @@ impl ForwardedValues {
         &self,
     ) -> std::option::Option<&crate::model::QueryStringCacheKeys> {
         self.query_string_cache_keys.as_ref()
-    }
-}
-impl std::fmt::Debug for ForwardedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForwardedValues");
-        formatter.field("query_string", &self.query_string);
-        formatter.field("cookies", &self.cookies);
-        formatter.field("headers", &self.headers);
-        formatter.field("query_string_cache_keys", &self.query_string_cache_keys);
-        formatter.finish()
     }
 }
 /// See [`ForwardedValues`](crate::model::ForwardedValues).
@@ -11246,7 +10548,7 @@ impl ForwardedValues {
 /// <p>If you want to send query strings to the origin but not include them in the cache key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.</p>
 /// <p>A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStringCacheKeys {
     /// <p>The number of <code>whitelisted</code> query string parameters for a cache behavior.</p>
     #[doc(hidden)]
@@ -11263,14 +10565,6 @@ impl QueryStringCacheKeys {
     /// <p>A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>. </p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryStringCacheKeys {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStringCacheKeys");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`QueryStringCacheKeys`](crate::model::QueryStringCacheKeys).
@@ -11333,7 +10627,7 @@ impl QueryStringCacheKeys {
 /// <p>If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.</p>
 /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CookiePreference {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -11368,14 +10662,6 @@ impl CookiePreference {
     /// <p>For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn whitelisted_names(&self) -> std::option::Option<&crate::model::CookieNames> {
         self.whitelisted_names.as_ref()
-    }
-}
-impl std::fmt::Debug for CookiePreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CookiePreference");
-        formatter.field("forward", &self.forward);
-        formatter.field("whitelisted_names", &self.whitelisted_names);
-        formatter.finish()
     }
 }
 /// See [`CookiePreference`](crate::model::CookiePreference).
@@ -11545,7 +10831,7 @@ impl AsRef<str> for ItemSelection {
 
 /// <p>A list of CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionAssociations {
     /// <p>The number of CloudFront functions in the list.</p>
     #[doc(hidden)]
@@ -11562,14 +10848,6 @@ impl FunctionAssociations {
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::FunctionAssociation]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for FunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionAssociations");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`FunctionAssociations`](crate::model::FunctionAssociations).
@@ -11629,7 +10907,7 @@ impl FunctionAssociations {
 
 /// <p>A CloudFront function that is associated with a cache behavior in a CloudFront distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionAssociation {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     #[doc(hidden)]
@@ -11646,14 +10924,6 @@ impl FunctionAssociation {
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
     pub fn event_type(&self) -> std::option::Option<&crate::model::EventType> {
         self.event_type.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionAssociation");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("event_type", &self.event_type);
-        formatter.finish()
     }
 }
 /// See [`FunctionAssociation`](crate::model::FunctionAssociation).
@@ -11814,7 +11084,7 @@ impl AsRef<str> for EventType {
 /// <p>If you want to invoke one or more Lambda@Edge functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with only one function.</p>
 /// <p>If you don't want to invoke any Lambda@Edge functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     #[doc(hidden)]
@@ -11831,14 +11101,6 @@ impl LambdaFunctionAssociations {
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::LambdaFunctionAssociation]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaFunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionAssociations");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionAssociations`](crate::model::LambdaFunctionAssociations).
@@ -11899,7 +11161,7 @@ impl LambdaFunctionAssociations {
 
 /// <p>A complex type that contains a Lambda@Edge function association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionAssociation {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
     #[doc(hidden)]
@@ -11935,15 +11197,6 @@ impl LambdaFunctionAssociation {
     /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
     pub fn include_body(&self) -> std::option::Option<bool> {
         self.include_body
-    }
-}
-impl std::fmt::Debug for LambdaFunctionAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionAssociation");
-        formatter.field("lambda_function_arn", &self.lambda_function_arn);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("include_body", &self.include_body);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionAssociation`](crate::model::LambdaFunctionAssociation).
@@ -12030,7 +11283,7 @@ impl LambdaFunctionAssociation {
 /// </ul>
 /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowedMethods {
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
     #[doc(hidden)]
@@ -12064,15 +11317,6 @@ impl AllowedMethods {
     /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly. </p>
     pub fn cached_methods(&self) -> std::option::Option<&crate::model::CachedMethods> {
         self.cached_methods.as_ref()
-    }
-}
-impl std::fmt::Debug for AllowedMethods {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowedMethods");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.field("cached_methods", &self.cached_methods);
-        formatter.finish()
     }
 }
 /// See [`AllowedMethods`](crate::model::AllowedMethods).
@@ -12162,7 +11406,7 @@ impl AllowedMethods {
 /// </ul>
 /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachedMethods {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
     #[doc(hidden)]
@@ -12179,14 +11423,6 @@ impl CachedMethods {
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::Method]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for CachedMethods {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachedMethods");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`CachedMethods`](crate::model::CachedMethods).
@@ -12458,7 +11694,7 @@ impl AsRef<str> for ViewerProtocolPolicy {
 
 /// <p>A list of key groups whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedKeyGroups {
     /// <p>This field is <code>true</code> if any of the key groups in the list have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
@@ -12482,15 +11718,6 @@ impl TrustedKeyGroups {
     /// <p>A list of key groups identifiers.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for TrustedKeyGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedKeyGroups");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`TrustedKeyGroups`](crate::model::TrustedKeyGroups).
@@ -12562,7 +11789,7 @@ impl TrustedKeyGroups {
 
 /// <p>A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultCacheBehavior {
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the default cache behavior.</p>
     #[doc(hidden)]
@@ -12761,36 +11988,6 @@ impl DefaultCacheBehavior {
     #[deprecated]
     pub fn max_ttl(&self) -> std::option::Option<i64> {
         self.max_ttl
-    }
-}
-impl std::fmt::Debug for DefaultCacheBehavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultCacheBehavior");
-        formatter.field("target_origin_id", &self.target_origin_id);
-        formatter.field("trusted_signers", &self.trusted_signers);
-        formatter.field("trusted_key_groups", &self.trusted_key_groups);
-        formatter.field("viewer_protocol_policy", &self.viewer_protocol_policy);
-        formatter.field("allowed_methods", &self.allowed_methods);
-        formatter.field("smooth_streaming", &self.smooth_streaming);
-        formatter.field("compress", &self.compress);
-        formatter.field(
-            "lambda_function_associations",
-            &self.lambda_function_associations,
-        );
-        formatter.field("function_associations", &self.function_associations);
-        formatter.field("field_level_encryption_id", &self.field_level_encryption_id);
-        formatter.field("realtime_log_config_arn", &self.realtime_log_config_arn);
-        formatter.field("cache_policy_id", &self.cache_policy_id);
-        formatter.field("origin_request_policy_id", &self.origin_request_policy_id);
-        formatter.field(
-            "response_headers_policy_id",
-            &self.response_headers_policy_id,
-        );
-        formatter.field("forwarded_values", &self.forwarded_values);
-        formatter.field("min_ttl", &self.min_ttl);
-        formatter.field("default_ttl", &self.default_ttl);
-        formatter.field("max_ttl", &self.max_ttl);
-        formatter.finish()
     }
 }
 /// See [`DefaultCacheBehavior`](crate::model::DefaultCacheBehavior).
@@ -13140,7 +12337,7 @@ impl DefaultCacheBehavior {
 
 /// <p>A complex data type for the origin groups specified for a distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroups {
     /// <p>The number of origin groups.</p>
     #[doc(hidden)]
@@ -13157,14 +12354,6 @@ impl OriginGroups {
     /// <p>The items (origin groups) in a distribution.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::OriginGroup]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroups");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`OriginGroups`](crate::model::OriginGroups).
@@ -13224,7 +12413,7 @@ impl OriginGroups {
 
 /// <p>An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroup {
     /// <p>The origin group's ID.</p>
     #[doc(hidden)]
@@ -13250,15 +12439,6 @@ impl OriginGroup {
     /// <p>A complex type that contains information about the origins in an origin group.</p>
     pub fn members(&self) -> std::option::Option<&crate::model::OriginGroupMembers> {
         self.members.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroup");
-        formatter.field("id", &self.id);
-        formatter.field("failover_criteria", &self.failover_criteria);
-        formatter.field("members", &self.members);
-        formatter.finish()
     }
 }
 /// See [`OriginGroup`](crate::model::OriginGroup).
@@ -13331,7 +12511,7 @@ impl OriginGroup {
 
 /// <p>A complex data type for the origins included in an origin group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroupMembers {
     /// <p>The number of origins in an origin group.</p>
     #[doc(hidden)]
@@ -13348,14 +12528,6 @@ impl OriginGroupMembers {
     /// <p>Items (origins) in an origin group.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::OriginGroupMember]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginGroupMembers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroupMembers");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`OriginGroupMembers`](crate::model::OriginGroupMembers).
@@ -13415,7 +12587,7 @@ impl OriginGroupMembers {
 
 /// <p>An origin in an origin group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
     #[doc(hidden)]
@@ -13425,13 +12597,6 @@ impl OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
     pub fn origin_id(&self) -> std::option::Option<&str> {
         self.origin_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginGroupMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroupMember");
-        formatter.field("origin_id", &self.origin_id);
-        formatter.finish()
     }
 }
 /// See [`OriginGroupMember`](crate::model::OriginGroupMember).
@@ -13470,7 +12635,7 @@ impl OriginGroupMember {
 
 /// <p>A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroupFailoverCriteria {
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
     #[doc(hidden)]
@@ -13480,13 +12645,6 @@ impl OriginGroupFailoverCriteria {
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
     pub fn status_codes(&self) -> std::option::Option<&crate::model::StatusCodes> {
         self.status_codes.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginGroupFailoverCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroupFailoverCriteria");
-        formatter.field("status_codes", &self.status_codes);
-        formatter.finish()
     }
 }
 /// See [`OriginGroupFailoverCriteria`](crate::model::OriginGroupFailoverCriteria).
@@ -13528,7 +12686,7 @@ impl OriginGroupFailoverCriteria {
 
 /// <p>A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatusCodes {
     /// <p>The number of status codes.</p>
     #[doc(hidden)]
@@ -13545,14 +12703,6 @@ impl StatusCodes {
     /// <p>The items (status codes) for an origin group.</p>
     pub fn items(&self) -> std::option::Option<&[i32]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for StatusCodes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatusCodes");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`StatusCodes`](crate::model::StatusCodes).
@@ -13609,7 +12759,7 @@ impl StatusCodes {
 
 /// <p>Contains information about the origins for this distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Origins {
     /// <p>The number of origins for this distribution.</p>
     #[doc(hidden)]
@@ -13626,14 +12776,6 @@ impl Origins {
     /// <p>A list of origins.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::Origin]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for Origins {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Origins");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`Origins`](crate::model::Origins).
@@ -13706,7 +12848,7 @@ impl Origins {
 /// </ul>
 /// <p>For the current maximum number of origins that you can specify per distribution, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions">General Quotas on Web Distributions</a> in the <i>Amazon CloudFront Developer Guide</i> (quotas were formerly referred to as limits).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Origin {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
@@ -13797,22 +12939,6 @@ impl Origin {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_access_control_id(&self) -> std::option::Option<&str> {
         self.origin_access_control_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Origin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Origin");
-        formatter.field("id", &self.id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("origin_path", &self.origin_path);
-        formatter.field("custom_headers", &self.custom_headers);
-        formatter.field("s3_origin_config", &self.s3_origin_config);
-        formatter.field("custom_origin_config", &self.custom_origin_config);
-        formatter.field("connection_attempts", &self.connection_attempts);
-        formatter.field("connection_timeout", &self.connection_timeout);
-        formatter.field("origin_shield", &self.origin_shield);
-        formatter.field("origin_access_control_id", &self.origin_access_control_id);
-        formatter.finish()
     }
 }
 /// See [`Origin`](crate::model::Origin).
@@ -13993,7 +13119,7 @@ impl Origin {
 /// <p>CloudFront Origin Shield.</p>
 /// <p>Using Origin Shield can help reduce the load on your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginShield {
     /// <p>A flag that specifies whether Origin Shield is enabled.</p>
     /// <p>When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional edge caches.</p>
@@ -14016,14 +13142,6 @@ impl OriginShield {
     /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_shield_region(&self) -> std::option::Option<&str> {
         self.origin_shield_region.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginShield {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginShield");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("origin_shield_region", &self.origin_shield_region);
-        formatter.finish()
     }
 }
 /// See [`OriginShield`](crate::model::OriginShield).
@@ -14083,7 +13201,7 @@ impl OriginShield {
 
 /// <p>A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> <i>is</i> a custom origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
     #[doc(hidden)]
@@ -14146,18 +13264,6 @@ impl CustomOriginConfig {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_keepalive_timeout(&self) -> std::option::Option<i32> {
         self.origin_keepalive_timeout
-    }
-}
-impl std::fmt::Debug for CustomOriginConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomOriginConfig");
-        formatter.field("http_port", &self.http_port);
-        formatter.field("https_port", &self.https_port);
-        formatter.field("origin_protocol_policy", &self.origin_protocol_policy);
-        formatter.field("origin_ssl_protocols", &self.origin_ssl_protocols);
-        formatter.field("origin_read_timeout", &self.origin_read_timeout);
-        formatter.field("origin_keepalive_timeout", &self.origin_keepalive_timeout);
-        formatter.finish()
     }
 }
 /// See [`CustomOriginConfig`](crate::model::CustomOriginConfig).
@@ -14278,7 +13384,7 @@ impl CustomOriginConfig {
 
 /// <p>A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginSslProtocols {
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
     #[doc(hidden)]
@@ -14295,14 +13401,6 @@ impl OriginSslProtocols {
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::SslProtocol]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginSslProtocols {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginSslProtocols");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`OriginSslProtocols`](crate::model::OriginSslProtocols).
@@ -14559,7 +13657,7 @@ impl AsRef<str> for OriginProtocolPolicy {
 
 /// <p>A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3OriginConfig {
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
     /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i> </p>
@@ -14581,13 +13679,6 @@ impl S3OriginConfig {
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_access_identity(&self) -> std::option::Option<&str> {
         self.origin_access_identity.as_deref()
-    }
-}
-impl std::fmt::Debug for S3OriginConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3OriginConfig");
-        formatter.field("origin_access_identity", &self.origin_access_identity);
-        formatter.finish()
     }
 }
 /// See [`S3OriginConfig`](crate::model::S3OriginConfig).
@@ -14641,7 +13732,7 @@ impl S3OriginConfig {
 
 /// <p>A complex type that contains the list of Custom Headers for each origin. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomHeaders {
     /// <p>The number of custom headers, if any, for this distribution.</p>
     #[doc(hidden)]
@@ -14658,14 +13749,6 @@ impl CustomHeaders {
     /// <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::OriginCustomHeader]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomHeaders {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomHeaders");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`CustomHeaders`](crate::model::CustomHeaders).
@@ -14756,7 +13839,7 @@ impl std::fmt::Debug for OriginCustomHeader {
 pub mod origin_custom_header {
 
     /// A builder for [`OriginCustomHeader`](crate::model::OriginCustomHeader).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) header_name: std::option::Option<std::string::String>,
         pub(crate) header_value: std::option::Option<std::string::String>,
@@ -14790,6 +13873,14 @@ pub mod origin_custom_header {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("header_name", &self.header_name);
+            formatter.field("header_value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl OriginCustomHeader {
     /// Creates a new builder-style object to manufacture [`OriginCustomHeader`](crate::model::OriginCustomHeader).
@@ -14800,7 +13891,7 @@ impl OriginCustomHeader {
 
 /// <p>A list of key groups, and the public keys in each key group, that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveTrustedKeyGroups {
     /// <p>This field is <code>true</code> if any of the key groups have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
@@ -14824,15 +13915,6 @@ impl ActiveTrustedKeyGroups {
     /// <p>A list of key groups, including the identifiers of the public keys in each key group that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::KgKeyPairIds]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ActiveTrustedKeyGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveTrustedKeyGroups");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ActiveTrustedKeyGroups`](crate::model::ActiveTrustedKeyGroups).
@@ -14904,7 +13986,7 @@ impl ActiveTrustedKeyGroups {
 
 /// <p>A list of identifiers for the public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KgKeyPairIds {
     /// <p>The identifier of the key group that contains the public keys.</p>
     #[doc(hidden)]
@@ -14921,14 +14003,6 @@ impl KgKeyPairIds {
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn key_pair_ids(&self) -> std::option::Option<&crate::model::KeyPairIds> {
         self.key_pair_ids.as_ref()
-    }
-}
-impl std::fmt::Debug for KgKeyPairIds {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KgKeyPairIds");
-        formatter.field("key_group_id", &self.key_group_id);
-        formatter.field("key_pair_ids", &self.key_pair_ids);
-        formatter.finish()
     }
 }
 /// See [`KgKeyPairIds`](crate::model::KgKeyPairIds).
@@ -14982,7 +14056,7 @@ impl KgKeyPairIds {
 
 /// <p>CloudFront origin access identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentity {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
     #[doc(hidden)]
@@ -15009,18 +14083,6 @@ impl CloudFrontOriginAccessIdentity {
         &self,
     ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityConfig> {
         self.cloud_front_origin_access_identity_config.as_ref()
-    }
-}
-impl std::fmt::Debug for CloudFrontOriginAccessIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentity");
-        formatter.field("id", &self.id);
-        formatter.field("s3_canonical_user_id", &self.s3_canonical_user_id);
-        formatter.field(
-            "cloud_front_origin_access_identity_config",
-            &self.cloud_front_origin_access_identity_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`CloudFrontOriginAccessIdentity`](crate::model::CloudFrontOriginAccessIdentity).
@@ -15094,7 +14156,7 @@ impl CloudFrontOriginAccessIdentity {
 
 /// <p>Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentityConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.</p>
@@ -15117,14 +14179,6 @@ impl CloudFrontOriginAccessIdentityConfig {
     /// <p>A comment to describe the origin access identity. The comment cannot be longer than 128 characters.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudFrontOriginAccessIdentityConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentityConfig");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`CloudFrontOriginAccessIdentityConfig`](crate::model::CloudFrontOriginAccessIdentityConfig).
@@ -15190,7 +14244,7 @@ impl CloudFrontOriginAccessIdentityConfig {
 /// </ul>
 /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find a valid object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
     #[doc(hidden)]
@@ -15214,15 +14268,6 @@ impl CachePolicy {
     /// <p>The cache policy configuration.</p>
     pub fn cache_policy_config(&self) -> std::option::Option<&crate::model::CachePolicyConfig> {
         self.cache_policy_config.as_ref()
-    }
-}
-impl std::fmt::Debug for CachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicy");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("cache_policy_config", &self.cache_policy_config);
-        formatter.finish()
     }
 }
 /// See [`CachePolicy`](crate::model::CachePolicy).
@@ -15297,7 +14342,7 @@ impl CachePolicy {
 /// </ul>
 /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find a valid object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyConfig {
     /// <p>A comment to describe the cache policy. The comment cannot be longer than 128 characters.</p>
     #[doc(hidden)]
@@ -15350,21 +14395,6 @@ impl CachePolicyConfig {
     ) -> std::option::Option<&crate::model::ParametersInCacheKeyAndForwardedToOrigin> {
         self.parameters_in_cache_key_and_forwarded_to_origin
             .as_ref()
-    }
-}
-impl std::fmt::Debug for CachePolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("name", &self.name);
-        formatter.field("default_ttl", &self.default_ttl);
-        formatter.field("max_ttl", &self.max_ttl);
-        formatter.field("min_ttl", &self.min_ttl);
-        formatter.field(
-            "parameters_in_cache_key_and_forwarded_to_origin",
-            &self.parameters_in_cache_key_and_forwarded_to_origin,
-        );
-        formatter.finish()
     }
 }
 /// See [`CachePolicyConfig`](crate::model::CachePolicyConfig).
@@ -15476,7 +14506,7 @@ impl CachePolicyConfig {
 /// <p>This object determines the values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p>
 /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParametersInCacheKeyAndForwardedToOrigin {
     /// <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is included in the cache key and included in requests that CloudFront sends to the origin.</p>
     /// <p>This field is related to the <code>EnableAcceptEncodingBrotli</code> field. If one or both of these fields is <code>true</code> <i>and</i> the viewer request includes the <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
@@ -15552,23 +14582,6 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
         &self,
     ) -> std::option::Option<&crate::model::CachePolicyQueryStringsConfig> {
         self.query_strings_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ParametersInCacheKeyAndForwardedToOrigin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParametersInCacheKeyAndForwardedToOrigin");
-        formatter.field(
-            "enable_accept_encoding_gzip",
-            &self.enable_accept_encoding_gzip,
-        );
-        formatter.field(
-            "enable_accept_encoding_brotli",
-            &self.enable_accept_encoding_brotli,
-        );
-        formatter.field("headers_config", &self.headers_config);
-        formatter.field("cookies_config", &self.cookies_config);
-        formatter.field("query_strings_config", &self.query_strings_config);
-        formatter.finish()
     }
 }
 /// See [`ParametersInCacheKeyAndForwardedToOrigin`](crate::model::ParametersInCacheKeyAndForwardedToOrigin).
@@ -15707,7 +14720,7 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
 
 /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyQueryStringsConfig {
     /// <p>Determines whether any URL query strings in viewer requests are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -15738,14 +14751,6 @@ impl CachePolicyQueryStringsConfig {
     /// <p>Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i> included in the cache key and automatically included in requests that CloudFront sends to the origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query strings are).</p>
     pub fn query_strings(&self) -> std::option::Option<&crate::model::QueryStringNames> {
         self.query_strings.as_ref()
-    }
-}
-impl std::fmt::Debug for CachePolicyQueryStringsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyQueryStringsConfig");
-        formatter.field("query_string_behavior", &self.query_string_behavior);
-        formatter.field("query_strings", &self.query_strings);
-        formatter.finish()
     }
 }
 /// See [`CachePolicyQueryStringsConfig`](crate::model::CachePolicyQueryStringsConfig).
@@ -15920,7 +14925,7 @@ impl AsRef<str> for CachePolicyQueryStringBehavior {
 
 /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyCookiesConfig {
     /// <p>Determines whether any cookies in viewer requests are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -15949,14 +14954,6 @@ impl CachePolicyCookiesConfig {
     /// <p>Contains a list of cookie names.</p>
     pub fn cookies(&self) -> std::option::Option<&crate::model::CookieNames> {
         self.cookies.as_ref()
-    }
-}
-impl std::fmt::Debug for CachePolicyCookiesConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyCookiesConfig");
-        formatter.field("cookie_behavior", &self.cookie_behavior);
-        formatter.field("cookies", &self.cookies);
-        formatter.finish()
     }
 }
 /// See [`CachePolicyCookiesConfig`](crate::model::CachePolicyCookiesConfig).
@@ -16127,7 +15124,7 @@ impl AsRef<str> for CachePolicyCookieBehavior {
 
 /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -16152,14 +15149,6 @@ impl CachePolicyHeadersConfig {
     /// <p>Contains a list of HTTP header names.</p>
     pub fn headers(&self) -> std::option::Option<&crate::model::Headers> {
         self.headers.as_ref()
-    }
-}
-impl std::fmt::Debug for CachePolicyHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyHeadersConfig");
-        formatter.field("header_behavior", &self.header_behavior);
-        formatter.field("headers", &self.headers);
-        formatter.finish()
     }
 }
 /// See [`CachePolicyHeadersConfig`](crate::model::CachePolicyHeadersConfig).
@@ -16313,7 +15302,7 @@ impl AsRef<str> for CachePolicyHeaderBehavior {
 
 /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagKeys {
     /// <p> A complex type that contains <code>Tag</code> key elements.</p>
     #[doc(hidden)]
@@ -16323,13 +15312,6 @@ impl TagKeys {
     /// <p> A complex type that contains <code>Tag</code> key elements.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for TagKeys {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagKeys");
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`TagKeys`](crate::model::TagKeys).
@@ -16433,7 +15415,7 @@ impl std::fmt::Debug for TestResult {
 pub mod test_result {
 
     /// A builder for [`TestResult`](crate::model::TestResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) function_summary: std::option::Option<crate::model::FunctionSummary>,
         pub(crate) compute_utilization: std::option::Option<std::string::String>,
@@ -16524,6 +15506,20 @@ pub mod test_result {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("function_summary", &self.function_summary);
+            formatter.field("compute_utilization", &self.compute_utilization);
+            formatter.field(
+                "function_execution_logs",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("function_error_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("function_output", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl TestResult {
     /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult).
@@ -16534,7 +15530,7 @@ impl TestResult {
 
 /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tags {
     /// <p> A complex type that contains <code>Tag</code> elements.</p>
     #[doc(hidden)]
@@ -16544,13 +15540,6 @@ impl Tags {
     /// <p> A complex type that contains <code>Tag</code> elements.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for Tags {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tags");
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`Tags`](crate::model::Tags).
@@ -16596,7 +15585,7 @@ impl Tags {
 
 /// <p> A complex type that contains <code>Tag</code> key and <code>Tag</code> value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p> A string that contains <code>Tag</code> key.</p>
     /// <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
@@ -16617,14 +15606,6 @@ impl Tag {
     /// <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -16679,7 +15660,7 @@ impl Tag {
 
 /// <p>A streaming distribution list. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter. </p>
     #[doc(hidden)]
@@ -16724,18 +15705,6 @@ impl StreamingDistributionList {
     /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::StreamingDistributionSummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamingDistributionList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`StreamingDistributionList`](crate::model::StreamingDistributionList).
@@ -16844,7 +15813,7 @@ impl StreamingDistributionList {
 
 /// <p> A summary of the information for a CloudFront streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionSummary {
     /// <p>The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.</p>
     #[doc(hidden)]
@@ -16926,23 +15895,6 @@ impl StreamingDistributionSummary {
     /// <p>Whether the distribution is enabled to accept end user requests for content.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for StreamingDistributionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("s3_origin", &self.s3_origin);
-        formatter.field("aliases", &self.aliases);
-        formatter.field("trusted_signers", &self.trusted_signers);
-        formatter.field("comment", &self.comment);
-        formatter.field("price_class", &self.price_class);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`StreamingDistributionSummary`](crate::model::StreamingDistributionSummary).
@@ -17112,7 +16064,7 @@ impl StreamingDistributionSummary {
 
 /// <p>A list of response headers policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
     #[doc(hidden)]
@@ -17143,16 +16095,6 @@ impl ResponseHeadersPolicyList {
     /// <p>The response headers policies in the list.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::ResponseHeadersPolicySummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList).
@@ -17237,7 +16179,7 @@ impl ResponseHeadersPolicyList {
 
 /// <p>Contains a response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicySummary {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
@@ -17256,14 +16198,6 @@ impl ResponseHeadersPolicySummary {
         &self,
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicy> {
         self.response_headers_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicySummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("response_headers_policy", &self.response_headers_policy);
-        formatter.finish()
     }
 }
 /// See [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary).
@@ -17416,7 +16350,7 @@ impl AsRef<str> for ResponseHeadersPolicyType {
 
 /// <p>A list of real-time log configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeLogConfigs {
     /// <p>The maximum number of real-time log configurations requested.</p>
     #[doc(hidden)]
@@ -17454,17 +16388,6 @@ impl RealtimeLogConfigs {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off. </p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
-    }
-}
-impl std::fmt::Debug for RealtimeLogConfigs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeLogConfigs");
-        formatter.field("max_items", &self.max_items);
-        formatter.field("items", &self.items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.finish()
     }
 }
 /// See [`RealtimeLogConfigs`](crate::model::RealtimeLogConfigs).
@@ -17560,7 +16483,7 @@ impl RealtimeLogConfigs {
 
 /// <p>A list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeyList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your public keys where you left off.</p>
     #[doc(hidden)]
@@ -17591,16 +16514,6 @@ impl PublicKeyList {
     /// <p>A list of public keys.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::PublicKeySummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for PublicKeyList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKeyList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`PublicKeyList`](crate::model::PublicKeyList).
@@ -17684,7 +16597,7 @@ impl PublicKeyList {
 
 /// <p>Contains information about a public key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeySummary {
     /// <p>The identifier of the public key.</p>
     #[doc(hidden)]
@@ -17722,17 +16635,6 @@ impl PublicKeySummary {
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for PublicKeySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKeySummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("encoded_key", &self.encoded_key);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`PublicKeySummary`](crate::model::PublicKeySummary).
@@ -17822,7 +16724,7 @@ impl PublicKeySummary {
 
 /// <p>A list of origin request policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing origin request policies where you left off.</p>
     #[doc(hidden)]
@@ -17853,16 +16755,6 @@ impl OriginRequestPolicyList {
     /// <p>Contains the origin request policies in the list.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::OriginRequestPolicySummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginRequestPolicyList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`OriginRequestPolicyList`](crate::model::OriginRequestPolicyList).
@@ -17947,7 +16839,7 @@ impl OriginRequestPolicyList {
 
 /// <p>Contains an origin request policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
@@ -17964,14 +16856,6 @@ impl OriginRequestPolicySummary {
     /// <p>The origin request policy.</p>
     pub fn origin_request_policy(&self) -> std::option::Option<&crate::model::OriginRequestPolicy> {
         self.origin_request_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginRequestPolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicySummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("origin_request_policy", &self.origin_request_policy);
-        formatter.finish()
     }
 }
 /// See [`OriginRequestPolicySummary`](crate::model::OriginRequestPolicySummary).
@@ -18120,7 +17004,7 @@ impl AsRef<str> for OriginRequestPolicyType {
 
 /// <p>A list of CloudFront origin access controls.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControlList {
     /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
     #[doc(hidden)]
@@ -18165,18 +17049,6 @@ impl OriginAccessControlList {
     /// <p>Contains the origin access controls in the list.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::OriginAccessControlSummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginAccessControlList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControlList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`OriginAccessControlList`](crate::model::OriginAccessControlList).
@@ -18285,7 +17157,7 @@ impl OriginAccessControlList {
 
 /// <p>A CloudFront origin access control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControlSummary {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
@@ -18347,21 +17219,6 @@ impl OriginAccessControlSummary {
         &self,
     ) -> std::option::Option<&crate::model::OriginAccessControlOriginTypes> {
         self.origin_access_control_origin_type.as_ref()
-    }
-}
-impl std::fmt::Debug for OriginAccessControlSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControlSummary");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("signing_protocol", &self.signing_protocol);
-        formatter.field("signing_behavior", &self.signing_behavior);
-        formatter.field(
-            "origin_access_control_origin_type",
-            &self.origin_access_control_origin_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
@@ -18491,7 +17348,7 @@ impl OriginAccessControlSummary {
 
 /// <p>A list of key groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroupList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing key groups.</p>
     #[doc(hidden)]
@@ -18522,16 +17379,6 @@ impl KeyGroupList {
     /// <p>A list of key groups.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::KeyGroupSummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyGroupList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroupList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`KeyGroupList`](crate::model::KeyGroupList).
@@ -18615,7 +17462,7 @@ impl KeyGroupList {
 
 /// <p>Contains information about a key group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroupSummary {
     /// <p>A key group.</p>
     #[doc(hidden)]
@@ -18625,13 +17472,6 @@ impl KeyGroupSummary {
     /// <p>A key group.</p>
     pub fn key_group(&self) -> std::option::Option<&crate::model::KeyGroup> {
         self.key_group.as_ref()
-    }
-}
-impl std::fmt::Debug for KeyGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroupSummary");
-        formatter.field("key_group", &self.key_group);
-        formatter.finish()
     }
 }
 /// See [`KeyGroupSummary`](crate::model::KeyGroupSummary).
@@ -18670,7 +17510,7 @@ impl KeyGroupSummary {
 
 /// <p>The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidationList {
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
     #[doc(hidden)]
@@ -18715,18 +17555,6 @@ impl InvalidationList {
     /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each invalidation batch created by the current Amazon Web Services account.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::InvalidationSummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidationList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidationList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`InvalidationList`](crate::model::InvalidationList).
@@ -18834,7 +17662,7 @@ impl InvalidationList {
 
 /// <p>A summary of an invalidation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
     #[doc(hidden)]
@@ -18858,15 +17686,6 @@ impl InvalidationSummary {
     /// <p>The status of an invalidation request.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidationSummary");
-        formatter.field("id", &self.id);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`InvalidationSummary`](crate::model::InvalidationSummary).
@@ -18932,7 +17751,7 @@ impl InvalidationSummary {
 
 /// <p>A list of CloudFront functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing functions where you left off.</p>
     #[doc(hidden)]
@@ -18963,16 +17782,6 @@ impl FunctionList {
     /// <p>Contains the functions in the list.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::FunctionSummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for FunctionList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`FunctionList`](crate::model::FunctionList).
@@ -19056,7 +17865,7 @@ impl FunctionList {
 
 /// <p>List of field-level encryption profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
     #[doc(hidden)]
@@ -19089,16 +17898,6 @@ impl FieldLevelEncryptionProfileList {
         &self,
     ) -> std::option::Option<&[crate::model::FieldLevelEncryptionProfileSummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldLevelEncryptionProfileList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`FieldLevelEncryptionProfileList`](crate::model::FieldLevelEncryptionProfileList).
@@ -19185,7 +17984,7 @@ impl FieldLevelEncryptionProfileList {
 
 /// <p>The field-level encryption profile summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileSummary {
     /// <p>ID for the field-level encryption profile summary.</p>
     #[doc(hidden)]
@@ -19223,17 +18022,6 @@ impl FieldLevelEncryptionProfileSummary {
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldLevelEncryptionProfileSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileSummary");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("name", &self.name);
-        formatter.field("encryption_entities", &self.encryption_entities);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`FieldLevelEncryptionProfileSummary`](crate::model::FieldLevelEncryptionProfileSummary).
@@ -19326,7 +18114,7 @@ impl FieldLevelEncryptionProfileSummary {
 
 /// <p>List of field-level encrpytion configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your configurations where you left off.</p>
     #[doc(hidden)]
@@ -19357,16 +18145,6 @@ impl FieldLevelEncryptionList {
     /// <p>An array of field-level encryption items.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::FieldLevelEncryptionSummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldLevelEncryptionList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`FieldLevelEncryptionList`](crate::model::FieldLevelEncryptionList).
@@ -19451,7 +18229,7 @@ impl FieldLevelEncryptionList {
 
 /// <p>A summary of a field-level encryption item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionSummary {
     /// <p>The unique ID of a field-level encryption item.</p>
     #[doc(hidden)]
@@ -19493,20 +18271,6 @@ impl FieldLevelEncryptionSummary {
         &self,
     ) -> std::option::Option<&crate::model::ContentTypeProfileConfig> {
         self.content_type_profile_config.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldLevelEncryptionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("comment", &self.comment);
-        formatter.field("query_arg_profile_config", &self.query_arg_profile_config);
-        formatter.field(
-            "content_type_profile_config",
-            &self.content_type_profile_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`FieldLevelEncryptionSummary`](crate::model::FieldLevelEncryptionSummary).
@@ -19610,7 +18374,7 @@ impl FieldLevelEncryptionSummary {
 
 /// <p>A distribution list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
     #[doc(hidden)]
@@ -19655,18 +18419,6 @@ impl DistributionList {
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::DistributionSummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for DistributionList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`DistributionList`](crate::model::DistributionList).
@@ -19774,7 +18526,7 @@ impl DistributionList {
 
 /// <p>A summary of the information about a CloudFront distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
     #[doc(hidden)]
@@ -19923,32 +18675,6 @@ impl DistributionSummary {
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
     pub fn alias_icp_recordals(&self) -> std::option::Option<&[crate::model::AliasIcpRecordal]> {
         self.alias_icp_recordals.as_deref()
-    }
-}
-impl std::fmt::Debug for DistributionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("aliases", &self.aliases);
-        formatter.field("origins", &self.origins);
-        formatter.field("origin_groups", &self.origin_groups);
-        formatter.field("default_cache_behavior", &self.default_cache_behavior);
-        formatter.field("cache_behaviors", &self.cache_behaviors);
-        formatter.field("custom_error_responses", &self.custom_error_responses);
-        formatter.field("comment", &self.comment);
-        formatter.field("price_class", &self.price_class);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("viewer_certificate", &self.viewer_certificate);
-        formatter.field("restrictions", &self.restrictions);
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("http_version", &self.http_version);
-        formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
-        formatter.field("alias_icp_recordals", &self.alias_icp_recordals);
-        formatter.finish()
     }
 }
 /// See [`DistributionSummary`](crate::model::DistributionSummary).
@@ -20254,7 +18980,7 @@ impl DistributionSummary {
 
 /// <p>A list of distribution IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionIdList {
     /// <p>The value provided in the <code>Marker</code> request field.</p>
     #[doc(hidden)]
@@ -20299,18 +19025,6 @@ impl DistributionIdList {
     /// <p>Contains the distribution IDs in the list.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for DistributionIdList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionIdList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`DistributionIdList`](crate::model::DistributionIdList).
@@ -20418,7 +19132,7 @@ impl DistributionIdList {
 
 /// <p>A list of aliases (also called CNAMEs) and the CloudFront distributions and Amazon Web Services accounts that they are associated with. In the list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictingAliasesList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing conflicting aliases where you left off.</p>
     #[doc(hidden)]
@@ -20449,16 +19163,6 @@ impl ConflictingAliasesList {
     /// <p>Contains the conflicting aliases in the list.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::ConflictingAlias]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictingAliasesList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictingAliasesList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`ConflictingAliasesList`](crate::model::ConflictingAliasesList).
@@ -20542,7 +19246,7 @@ impl ConflictingAliasesList {
 
 /// <p>An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services account ID that it’s associated with. The distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictingAlias {
     /// <p>An alias (also called a CNAME).</p>
     #[doc(hidden)]
@@ -20566,15 +19270,6 @@ impl ConflictingAlias {
     /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated with the alias.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictingAlias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictingAlias");
-        formatter.field("alias", &self.alias);
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 /// See [`ConflictingAlias`](crate::model::ConflictingAlias).
@@ -20640,7 +19335,7 @@ impl ConflictingAlias {
 
 /// <p>Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentityList {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page). </p>
     #[doc(hidden)]
@@ -20688,18 +19383,6 @@ impl CloudFrontOriginAccessIdentityList {
         &self,
     ) -> std::option::Option<&[crate::model::CloudFrontOriginAccessIdentitySummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudFrontOriginAccessIdentityList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentityList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`CloudFrontOriginAccessIdentityList`](crate::model::CloudFrontOriginAccessIdentityList).
@@ -20810,7 +19493,7 @@ impl CloudFrontOriginAccessIdentityList {
 
 /// <p>Summary of the information about a CloudFront origin access identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentitySummary {
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
     #[doc(hidden)]
@@ -20834,15 +19517,6 @@ impl CloudFrontOriginAccessIdentitySummary {
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudFrontOriginAccessIdentitySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentitySummary");
-        formatter.field("id", &self.id);
-        formatter.field("s3_canonical_user_id", &self.s3_canonical_user_id);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`CloudFrontOriginAccessIdentitySummary`](crate::model::CloudFrontOriginAccessIdentitySummary).
@@ -20908,7 +19582,7 @@ impl CloudFrontOriginAccessIdentitySummary {
 
 /// <p>A list of cache policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>
     #[doc(hidden)]
@@ -20939,16 +19613,6 @@ impl CachePolicyList {
     /// <p>Contains the cache policies in the list.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::CachePolicySummary]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for CachePolicyList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`CachePolicyList`](crate::model::CachePolicyList).
@@ -21032,7 +19696,7 @@ impl CachePolicyList {
 
 /// <p>Contains a cache policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicySummary {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
@@ -21049,14 +19713,6 @@ impl CachePolicySummary {
     /// <p>The cache policy.</p>
     pub fn cache_policy(&self) -> std::option::Option<&crate::model::CachePolicy> {
         self.cache_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for CachePolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicySummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("cache_policy", &self.cache_policy);
-        formatter.finish()
     }
 }
 /// See [`CachePolicySummary`](crate::model::CachePolicySummary).
@@ -21203,7 +19859,7 @@ impl AsRef<str> for CachePolicyType {
 
 /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoringSubscription {
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
     #[doc(hidden)]
@@ -21216,16 +19872,6 @@ impl MonitoringSubscription {
         &self,
     ) -> std::option::Option<&crate::model::RealtimeMetricsSubscriptionConfig> {
         self.realtime_metrics_subscription_config.as_ref()
-    }
-}
-impl std::fmt::Debug for MonitoringSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoringSubscription");
-        formatter.field(
-            "realtime_metrics_subscription_config",
-            &self.realtime_metrics_subscription_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`MonitoringSubscription`](crate::model::MonitoringSubscription).
@@ -21271,7 +19917,7 @@ impl MonitoringSubscription {
 
 /// <p>A subscription configuration for additional CloudWatch metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeMetricsSubscriptionConfig {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     #[doc(hidden)]
@@ -21284,16 +19930,6 @@ impl RealtimeMetricsSubscriptionConfig {
         &self,
     ) -> std::option::Option<&crate::model::RealtimeMetricsSubscriptionStatus> {
         self.realtime_metrics_subscription_status.as_ref()
-    }
-}
-impl std::fmt::Debug for RealtimeMetricsSubscriptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeMetricsSubscriptionConfig");
-        formatter.field(
-            "realtime_metrics_subscription_status",
-            &self.realtime_metrics_subscription_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`RealtimeMetricsSubscriptionConfig`](crate::model::RealtimeMetricsSubscriptionConfig).
@@ -21431,7 +20067,7 @@ impl AsRef<str> for RealtimeMetricsSubscriptionStatus {
 
 /// <p>An invalidation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Invalidation {
     /// <p>The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.</p>
     #[doc(hidden)]
@@ -21462,16 +20098,6 @@ impl Invalidation {
     /// <p>The current invalidation information for the batch request. </p>
     pub fn invalidation_batch(&self) -> std::option::Option<&crate::model::InvalidationBatch> {
         self.invalidation_batch.as_ref()
-    }
-}
-impl std::fmt::Debug for Invalidation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Invalidation");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("invalidation_batch", &self.invalidation_batch);
-        formatter.finish()
     }
 }
 /// See [`Invalidation`](crate::model::Invalidation).
@@ -21552,7 +20178,7 @@ impl Invalidation {
 
 /// <p>An invalidation batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidationBatch {
     /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
     #[doc(hidden)]
@@ -21573,14 +20199,6 @@ impl InvalidationBatch {
     /// <p>If <code>CallerReference</code> is a value you already sent in a previous invalidation batch request but the content of any <code>Path</code> is different from the original request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.</p>
     pub fn caller_reference(&self) -> std::option::Option<&str> {
         self.caller_reference.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidationBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidationBatch");
-        formatter.field("paths", &self.paths);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.finish()
     }
 }
 /// See [`InvalidationBatch`](crate::model::InvalidationBatch).
@@ -21638,7 +20256,7 @@ impl InvalidationBatch {
 
 /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Paths {
     /// <p>The number of invalidation paths specified for the objects that you want to invalidate.</p>
     #[doc(hidden)]
@@ -21655,14 +20273,6 @@ impl Paths {
     /// <p>A complex type that contains a list of the paths that you want to invalidate.</p>
     pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for Paths {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Paths");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`Paths`](crate::model::Paths).
@@ -21722,7 +20332,7 @@ impl Paths {
 
 /// <p>A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionConfigWithTags {
     /// <p>A streaming distribution Configuration.</p>
     #[doc(hidden)]
@@ -21742,17 +20352,6 @@ impl StreamingDistributionConfigWithTags {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(&self) -> std::option::Option<&crate::model::Tags> {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamingDistributionConfigWithTags {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionConfigWithTags");
-        formatter.field(
-            "streaming_distribution_config",
-            &self.streaming_distribution_config,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`StreamingDistributionConfigWithTags`](crate::model::StreamingDistributionConfigWithTags).
@@ -21810,7 +20409,7 @@ impl StreamingDistributionConfigWithTags {
 
 /// <p>A distribution Configuration and a list of tags to be associated with the distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionConfigWithTags {
     /// <p>A distribution configuration.</p>
     #[doc(hidden)]
@@ -21827,14 +20426,6 @@ impl DistributionConfigWithTags {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(&self) -> std::option::Option<&crate::model::Tags> {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for DistributionConfigWithTags {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionConfigWithTags");
-        formatter.field("distribution_config", &self.distribution_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DistributionConfigWithTags`](crate::model::DistributionConfigWithTags).

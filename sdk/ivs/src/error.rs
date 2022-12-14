@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl ValidationException {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -94,7 +86,7 @@ impl ValidationException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>Request references a resource which does not exist.</p>
     #[doc(hidden)]
@@ -107,14 +99,6 @@ impl ResourceNotFoundException {
     /// <p>Request references a resource which does not exist.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -186,7 +170,7 @@ impl ResourceNotFoundException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingVerification {
     /// <p> Your account is pending verification. </p>
     #[doc(hidden)]
@@ -199,14 +183,6 @@ impl PendingVerification {
     /// <p> Your account is pending verification. </p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for PendingVerification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingVerification");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl PendingVerification {
@@ -278,7 +254,7 @@ impl PendingVerification {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     #[doc(hidden)]
@@ -291,14 +267,6 @@ impl ConflictException {
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ConflictException {
@@ -370,7 +338,7 @@ impl ConflictException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>User does not have sufficient access to perform this action.</p>
     #[doc(hidden)]
@@ -383,14 +351,6 @@ impl AccessDeniedException {
     /// <p>User does not have sufficient access to perform this action.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -462,7 +422,7 @@ impl AccessDeniedException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     /// <p>Unexpected error during processing of request.</p>
     #[doc(hidden)]
@@ -475,14 +435,6 @@ impl InternalServerException {
     /// <p>Unexpected error during processing of request.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalServerException {
@@ -554,7 +506,7 @@ impl InternalServerException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamUnavailable {
     /// <p>The stream is temporarily unavailable.</p>
     #[doc(hidden)]
@@ -567,14 +519,6 @@ impl StreamUnavailable {
     /// <p>The stream is temporarily unavailable.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamUnavailable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamUnavailable");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl StreamUnavailable {
@@ -646,7 +590,7 @@ impl StreamUnavailable {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelNotBroadcasting {
     /// <p>The stream is offline for the given channel ARN.</p>
     #[doc(hidden)]
@@ -659,14 +603,6 @@ impl ChannelNotBroadcasting {
     /// <p>The stream is offline for the given channel ARN.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ChannelNotBroadcasting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelNotBroadcasting");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ChannelNotBroadcasting {
@@ -738,7 +674,7 @@ impl ChannelNotBroadcasting {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>Request was denied due to request throttling.</p>
     #[doc(hidden)]
@@ -751,14 +687,6 @@ impl ThrottlingException {
     /// <p>Request was denied due to request throttling.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -830,7 +758,7 @@ impl ThrottlingException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     /// <p>Request would cause a service quota to be exceeded.</p>
     #[doc(hidden)]
@@ -843,14 +771,6 @@ impl ServiceQuotaExceededException {
     /// <p>Request would cause a service quota to be exceeded.</p>
     pub fn exception_message(&self) -> std::option::Option<&str> {
         self.exception_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("exception_message", &self.exception_message);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ServiceQuotaExceededException {

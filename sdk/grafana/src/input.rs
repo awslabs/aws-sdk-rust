@@ -192,7 +192,7 @@ impl AssociateLicenseInput {
 pub mod create_workspace_input {
 
     /// A builder for [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_access_type: std::option::Option<crate::model::AccountAccessType>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -454,6 +454,31 @@ pub mod create_workspace_input {
                 authentication_providers: self.authentication_providers,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_access_type", &self.account_access_type);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("organization_role_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("permission_type", &self.permission_type);
+            formatter.field("stack_set_name", &self.stack_set_name);
+            formatter.field("workspace_data_sources", &self.workspace_data_sources);
+            formatter.field("workspace_description", &"*** Sensitive Data Redacted ***");
+            formatter.field("workspace_name", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "workspace_notification_destinations",
+                &self.workspace_notification_destinations,
+            );
+            formatter.field(
+                "workspace_organizational_units",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_providers", &self.authentication_providers);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2720,7 +2745,7 @@ impl UpdatePermissionsInput {
 pub mod update_workspace_input {
 
     /// A builder for [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_access_type: std::option::Option<crate::model::AccountAccessType>,
         pub(crate) organization_role_name: std::option::Option<std::string::String>,
@@ -2926,6 +2951,29 @@ pub mod update_workspace_input {
                 workspace_organizational_units: self.workspace_organizational_units,
                 workspace_role_arn: self.workspace_role_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_access_type", &self.account_access_type);
+            formatter.field("organization_role_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("permission_type", &self.permission_type);
+            formatter.field("stack_set_name", &self.stack_set_name);
+            formatter.field("workspace_data_sources", &self.workspace_data_sources);
+            formatter.field("workspace_description", &"*** Sensitive Data Redacted ***");
+            formatter.field("workspace_id", &self.workspace_id);
+            formatter.field("workspace_name", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "workspace_notification_destinations",
+                &self.workspace_notification_destinations,
+            );
+            formatter.field(
+                "workspace_organizational_units",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3270,7 +3318,7 @@ impl UpdateWorkspaceAuthenticationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkspacesInput {
     /// <p>The maximum number of workspaces to include in the results.</p>
     #[doc(hidden)]
@@ -3287,14 +3335,6 @@ impl ListWorkspacesInput {
     /// <p>The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkspacesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -3442,7 +3482,7 @@ impl std::fmt::Debug for CreateWorkspaceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceInput {
     /// <p>The ID of the workspace to delete.</p>
     #[doc(hidden)]
@@ -3452,13 +3492,6 @@ impl DeleteWorkspaceInput {
     /// <p>The ID of the workspace to delete.</p>
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
     }
 }
 
@@ -3581,7 +3614,7 @@ impl std::fmt::Debug for UpdateWorkspaceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceInput {
     /// <p>The ID of the workspace to display information about.</p>
     #[doc(hidden)]
@@ -3593,17 +3626,10 @@ impl DescribeWorkspaceInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePermissionsInput {
     /// <p>An array of structures that contain the permission updates to make.</p>
     #[doc(hidden)]
@@ -3625,18 +3651,10 @@ impl UpdatePermissionsInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePermissionsInput");
-        formatter.field("update_instruction_batch", &self.update_instruction_batch);
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionsInput {
     /// <p>The maximum number of results to include in the response.</p>
     #[doc(hidden)]
@@ -3683,22 +3701,10 @@ impl ListPermissionsInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("user_type", &self.user_type);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateLicenseInput {
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
     #[doc(hidden)]
@@ -3717,18 +3723,10 @@ impl DisassociateLicenseInput {
         self.license_type.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateLicenseInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("license_type", &self.license_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateLicenseInput {
     /// <p>The ID of the workspace to associate the license with.</p>
     #[doc(hidden)]
@@ -3747,18 +3745,10 @@ impl AssociateLicenseInput {
         self.license_type.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateLicenseInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("license_type", &self.license_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to update the authentication for.</p>
     #[doc(hidden)]
@@ -3787,19 +3777,10 @@ impl UpdateWorkspaceAuthenticationInput {
         self.saml_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWorkspaceAuthenticationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkspaceAuthenticationInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("authentication_providers", &self.authentication_providers);
-        formatter.field("saml_configuration", &self.saml_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to return authentication information about.</p>
     #[doc(hidden)]
@@ -3811,17 +3792,10 @@ impl DescribeWorkspaceAuthenticationInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkspaceAuthenticationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceAuthenticationInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceApiKeyInput {
     /// <p>The name of the API key to delete.</p>
     #[doc(hidden)]
@@ -3840,18 +3814,10 @@ impl DeleteWorkspaceApiKeyInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkspaceApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkspaceApiKeyInput");
-        formatter.field("key_name", &self.key_name);
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspaceApiKeyInput {
     /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
     #[doc(hidden)]
@@ -3886,20 +3852,10 @@ impl CreateWorkspaceApiKeyInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkspaceApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkspaceApiKeyInput");
-        formatter.field("key_name", &self.key_name);
-        formatter.field("key_role", &self.key_role);
-        formatter.field("seconds_to_live", &self.seconds_to_live);
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource the tag association is removed from. </p>
     #[doc(hidden)]
@@ -3918,18 +3874,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource the tag is associated with.</p>
     #[doc(hidden)]
@@ -3952,18 +3900,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource the list of tags are associated with.</p>
     #[doc(hidden)]
@@ -3973,12 +3913,5 @@ impl ListTagsForResourceInput {
     /// <p>The ARN of the resource the list of tags are associated with.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

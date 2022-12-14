@@ -9213,7 +9213,7 @@ impl UpdateServiceSettingsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceSettingsInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
     #[doc(hidden)]
@@ -9248,26 +9248,10 @@ impl UpdateServiceSettingsInput {
         self.enable_cross_accounts_discovery
     }
 }
-impl std::fmt::Debug for UpdateServiceSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceSettingsInput");
-        formatter.field("s3_bucket_arn", &self.s3_bucket_arn);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field(
-            "organization_configuration",
-            &self.organization_configuration,
-        );
-        formatter.field(
-            "enable_cross_accounts_discovery",
-            &self.enable_cross_accounts_discovery,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     #[doc(hidden)]
@@ -9299,25 +9283,10 @@ impl UpdateLicenseSpecificationsForResourceInput {
         self.remove_license_specifications.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLicenseSpecificationsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLicenseSpecificationsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field(
-            "add_license_specifications",
-            &self.add_license_specifications,
-        );
-        formatter.field(
-            "remove_license_specifications",
-            &self.remove_license_specifications,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
     #[doc(hidden)]
@@ -9379,26 +9348,10 @@ impl UpdateLicenseManagerReportGeneratorInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLicenseManagerReportGeneratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLicenseManagerReportGeneratorInput");
-        formatter.field(
-            "license_manager_report_generator_arn",
-            &self.license_manager_report_generator_arn,
-        );
-        formatter.field("report_generator_name", &self.report_generator_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("report_context", &self.report_context);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9471,31 +9424,10 @@ impl UpdateLicenseConfigurationInput {
         self.disassociate_when_not_found
     }
 }
-impl std::fmt::Debug for UpdateLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field(
-            "license_configuration_status",
-            &self.license_configuration_status,
-        );
-        formatter.field("license_rules", &self.license_rules);
-        formatter.field("license_count", &self.license_count);
-        formatter.field("license_count_hard_limit", &self.license_count_hard_limit);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("product_information_list", &self.product_information_list);
-        formatter.field(
-            "disassociate_when_not_found",
-            &self.disassociate_when_not_found,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9514,18 +9446,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9544,18 +9468,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -9567,17 +9483,10 @@ impl RejectGrantInput {
         self.grant_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RejectGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectGrantInput");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsageForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9620,20 +9529,10 @@ impl ListUsageForLicenseConfigurationInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsageForLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsageForLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTokensInput {
     /// <p>Token IDs.</p>
     #[doc(hidden)]
@@ -9672,20 +9571,10 @@ impl ListTokensInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTokensInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTokensInput");
-        formatter.field("token_ids", &self.token_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9697,17 +9586,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceInventoryInput {
     /// <p>Maximum number of results to return in a single call.</p>
     #[doc(hidden)]
@@ -9751,19 +9633,10 @@ impl ListResourceInventoryInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceInventoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceInventoryInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceivedLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
     #[doc(hidden)]
@@ -9810,20 +9683,10 @@ impl ListReceivedLicensesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReceivedLicensesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReceivedLicensesInput");
-        formatter.field("license_arns", &self.license_arns);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceivedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
     #[doc(hidden)]
@@ -9870,20 +9733,10 @@ impl ListReceivedGrantsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReceivedGrantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReceivedGrantsInput");
-        formatter.field("grant_arns", &self.grant_arns);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseVersionsInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -9909,19 +9762,10 @@ impl ListLicenseVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLicenseVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseVersionsInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
     #[doc(hidden)]
@@ -9947,19 +9791,10 @@ impl ListLicenseSpecificationsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLicenseSpecificationsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseSpecificationsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
     #[doc(hidden)]
@@ -10004,20 +9839,10 @@ impl ListLicensesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLicensesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicensesInput");
-        formatter.field("license_arns", &self.license_arns);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseManagerReportGeneratorsInput {
     /// <p>Filters to scope the results. The following filters are supported: </p>
     /// <ul>
@@ -10049,19 +9874,10 @@ impl ListLicenseManagerReportGeneratorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLicenseManagerReportGeneratorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseManagerReportGeneratorsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseConversionTasksInput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
@@ -10087,19 +9903,10 @@ impl ListLicenseConversionTasksInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListLicenseConversionTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseConversionTasksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseConfigurationsInput {
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
     #[doc(hidden)]
@@ -10142,23 +9949,10 @@ impl ListLicenseConfigurationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListLicenseConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseConfigurationsInput");
-        formatter.field(
-            "license_configuration_arns",
-            &self.license_configuration_arns,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFailuresForLicenseConfigurationOperationsInput {
     /// <p>Amazon Resource Name of the license configuration.</p>
     #[doc(hidden)]
@@ -10184,19 +9978,10 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFailuresForLicenseConfigurationOperationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFailuresForLicenseConfigurationOperationsInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
     #[doc(hidden)]
@@ -10243,20 +10028,10 @@ impl ListDistributedGrantsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDistributedGrantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributedGrantsInput");
-        formatter.field("grant_arns", &self.grant_arns);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
     #[doc(hidden)]
@@ -10282,30 +10057,15 @@ impl ListAssociationsForLicenseConfigurationInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssociationsForLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociationsForLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceSettingsInput {}
-impl std::fmt::Debug for GetServiceSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseUsageInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -10317,17 +10077,10 @@ impl GetLicenseUsageInput {
         self.license_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseUsageInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
     #[doc(hidden)]
@@ -10339,20 +10092,10 @@ impl GetLicenseManagerReportGeneratorInput {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseManagerReportGeneratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseManagerReportGeneratorInput");
-        formatter.field(
-            "license_manager_report_generator_arn",
-            &self.license_manager_report_generator_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseConversionTaskInput {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
     #[doc(hidden)]
@@ -10364,20 +10107,10 @@ impl GetLicenseConversionTaskInput {
         self.license_conversion_task_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseConversionTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseConversionTaskInput");
-        formatter.field(
-            "license_conversion_task_id",
-            &self.license_conversion_task_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -10389,17 +10122,10 @@ impl GetLicenseConfigurationInput {
         self.license_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -10418,18 +10144,10 @@ impl GetLicenseInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -10448,18 +10166,10 @@ impl GetGrantInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGrantInput");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessTokenInput {
     /// <p>Refresh token, encoded as a JWT token.</p>
     #[doc(hidden)]
@@ -10478,18 +10188,10 @@ impl GetAccessTokenInput {
         self.token_properties.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessTokenInput");
-        formatter.field("token", &self.token);
-        formatter.field("token_properties", &self.token_properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendLicenseConsumptionInput {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
@@ -10508,18 +10210,10 @@ impl ExtendLicenseConsumptionInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for ExtendLicenseConsumptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendLicenseConsumptionInput");
-        formatter.field("license_consumption_token", &self.license_consumption_token);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTokenInput {
     /// <p>Token ID.</p>
     #[doc(hidden)]
@@ -10531,17 +10225,10 @@ impl DeleteTokenInput {
         self.token_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTokenInput");
-        formatter.field("token_id", &self.token_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
     #[doc(hidden)]
@@ -10553,20 +10240,10 @@ impl DeleteLicenseManagerReportGeneratorInput {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLicenseManagerReportGeneratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLicenseManagerReportGeneratorInput");
-        formatter.field(
-            "license_manager_report_generator_arn",
-            &self.license_manager_report_generator_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLicenseConfigurationInput {
     /// <p>ID of the license configuration.</p>
     #[doc(hidden)]
@@ -10578,17 +10255,10 @@ impl DeleteLicenseConfigurationInput {
         self.license_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -10607,18 +10277,10 @@ impl DeleteLicenseInput {
         self.source_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLicenseInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("source_version", &self.source_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -10644,19 +10306,10 @@ impl DeleteGrantInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGrantInput");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTokenInput {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
     #[doc(hidden)]
@@ -10696,21 +10349,10 @@ impl CreateTokenInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTokenInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("role_arns", &self.role_arns);
-        formatter.field("expiration_in_days", &self.expiration_in_days);
-        formatter.field("token_properties", &self.token_properties);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseVersionInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -10801,28 +10443,10 @@ impl CreateLicenseVersionInput {
         self.source_version.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLicenseVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseVersionInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("license_name", &self.license_name);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("validity", &self.validity);
-        formatter.field("license_metadata", &self.license_metadata);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("consumption_configuration", &self.consumption_configuration);
-        formatter.field("status", &self.status);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("source_version", &self.source_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorInput {
     /// <p>Name of the report generator.</p>
     #[doc(hidden)]
@@ -10884,23 +10508,10 @@ impl CreateLicenseManagerReportGeneratorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLicenseManagerReportGeneratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseManagerReportGeneratorInput");
-        formatter.field("report_generator_name", &self.report_generator_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("report_context", &self.report_context);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseConversionTaskForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
     #[doc(hidden)]
@@ -10930,22 +10541,10 @@ impl CreateLicenseConversionTaskForResourceInput {
         self.destination_license_context.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLicenseConversionTaskForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseConversionTaskForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("source_license_context", &self.source_license_context);
-        formatter.field(
-            "destination_license_context",
-            &self.destination_license_context,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseConfigurationInput {
     /// <p>Name of the license configuration.</p>
     #[doc(hidden)]
@@ -11030,28 +10629,10 @@ impl CreateLicenseConfigurationInput {
         self.product_information_list.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("license_counting_type", &self.license_counting_type);
-        formatter.field("license_count", &self.license_count);
-        formatter.field("license_count_hard_limit", &self.license_count_hard_limit);
-        formatter.field("license_rules", &self.license_rules);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disassociate_when_not_found",
-            &self.disassociate_when_not_found,
-        );
-        formatter.field("product_information_list", &self.product_information_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseInput {
     /// <p>License name.</p>
     #[doc(hidden)]
@@ -11135,27 +10716,10 @@ impl CreateLicenseInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseInput");
-        formatter.field("license_name", &self.license_name);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("product_sku", &self.product_sku);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("validity", &self.validity);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.field("consumption_configuration", &self.consumption_configuration);
-        formatter.field("license_metadata", &self.license_metadata);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGrantVersionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -11209,23 +10773,10 @@ impl CreateGrantVersionInput {
         self.source_version.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGrantVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGrantVersionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.field("grant_name", &self.grant_name);
-        formatter.field("allowed_operations", &self.allowed_operations);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("source_version", &self.source_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGrantInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -11272,22 +10823,10 @@ impl CreateGrantInput {
         self.allowed_operations.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGrantInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("grant_name", &self.grant_name);
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("principals", &self.principals);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("allowed_operations", &self.allowed_operations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckoutLicenseInput {
     /// <p>Product SKU.</p>
     #[doc(hidden)]
@@ -11341,23 +10880,10 @@ impl CheckoutLicenseInput {
         self.node_id.as_deref()
     }
 }
-impl std::fmt::Debug for CheckoutLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckoutLicenseInput");
-        formatter.field("product_sku", &self.product_sku);
-        formatter.field("checkout_type", &self.checkout_type);
-        formatter.field("key_fingerprint", &self.key_fingerprint);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.field("node_id", &self.node_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckoutBorrowLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
     #[doc(hidden)]
@@ -11406,22 +10932,10 @@ impl CheckoutBorrowLicenseInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CheckoutBorrowLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckoutBorrowLicenseInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("digital_signature_method", &self.digital_signature_method);
-        formatter.field("node_id", &self.node_id);
-        formatter.field("checkout_metadata", &self.checkout_metadata);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckInLicenseInput {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
@@ -11440,18 +10954,10 @@ impl CheckInLicenseInput {
         self.beneficiary.as_deref()
     }
 }
-impl std::fmt::Debug for CheckInLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckInLicenseInput");
-        formatter.field("license_consumption_token", &self.license_consumption_token);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -11461,12 +10967,5 @@ impl AcceptGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn grant_arn(&self) -> std::option::Option<&str> {
         self.grant_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptGrantInput");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.finish()
     }
 }

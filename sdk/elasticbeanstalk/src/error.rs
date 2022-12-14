@@ -2,18 +2,11 @@
 
 /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyBucketsException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyBucketsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyBucketsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyBucketsException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl TooManyBucketsException {
 
 /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientPrivilegesException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientPrivilegesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientPrivilegesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientPrivilegesException {
     /// Returns the error message.
@@ -137,18 +123,11 @@ impl InsufficientPrivilegesException {
 /// <p>The number of tags in the resource would exceed the number of tags that each resource can have.</p>
 /// <p>To calculate this, the operation considers both the number of tags the resource already has and the tags this operation would add if it succeeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTagsException {
     /// Returns the error message.
@@ -204,18 +183,11 @@ impl TooManyTagsException {
 
 /// <p>The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTypeNotSupportedException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceTypeNotSupportedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTypeNotSupportedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceTypeNotSupportedException {
     /// Returns the error message.
@@ -271,18 +243,11 @@ impl ResourceTypeNotSupportedException {
 
 /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -338,18 +303,11 @@ impl ResourceNotFoundException {
 
 /// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationInProgressException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OperationInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationInProgressException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OperationInProgressException {
     /// Returns the error message.
@@ -405,18 +363,11 @@ impl OperationInProgressException {
 
 /// <p>A generic service exception has occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticBeanstalkServiceException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ElasticBeanstalkServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticBeanstalkServiceException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ElasticBeanstalkServiceException {
     /// Returns the error message.
@@ -472,18 +423,11 @@ impl ElasticBeanstalkServiceException {
 
 /// <p>One or more input parameters is not valid. Please correct the input parameters and try the operation again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRequestException {
     /// Returns the error message.
@@ -539,18 +483,11 @@ impl InvalidRequestException {
 
 /// <p>You cannot delete the platform version because there are still environments running on it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformVersionStillReferencedException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PlatformVersionStillReferencedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformVersionStillReferencedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PlatformVersionStillReferencedException {
     /// Returns the error message.
@@ -606,18 +543,11 @@ impl PlatformVersionStillReferencedException {
 
 /// <p>Unable to delete the Amazon S3 source bundle associated with the application version. The application version was deleted successfully.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceBundleDeletionException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SourceBundleDeletionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceBundleDeletionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SourceBundleDeletionException {
     /// Returns the error message.
@@ -678,18 +608,11 @@ impl SourceBundleDeletionException {
 /// <li> <p>DUB/eu-west-1</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3LocationNotInServiceRegionException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for S3LocationNotInServiceRegionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3LocationNotInServiceRegionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl S3LocationNotInServiceRegionException {
     /// Returns the error message.
@@ -745,18 +668,11 @@ impl S3LocationNotInServiceRegionException {
 
 /// <p>The specified account does not have a subscription to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SubscriptionRequiredException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for S3SubscriptionRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3SubscriptionRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl S3SubscriptionRequiredException {
     /// Returns the error message.
@@ -812,18 +728,11 @@ impl S3SubscriptionRequiredException {
 
 /// <p>You have exceeded the maximum number of allowed platforms associated with the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyPlatformsException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyPlatformsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyPlatformsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyPlatformsException {
     /// Returns the error message.
@@ -879,18 +788,11 @@ impl TooManyPlatformsException {
 
 /// <p>The specified account has reached its limit of environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyEnvironmentsException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyEnvironmentsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyEnvironmentsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyEnvironmentsException {
     /// Returns the error message.
@@ -946,18 +848,11 @@ impl TooManyEnvironmentsException {
 
 /// <p>The specified account has reached its limit of configuration templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyConfigurationTemplatesException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyConfigurationTemplatesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyConfigurationTemplatesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyConfigurationTemplatesException {
     /// Returns the error message.
@@ -1013,18 +908,11 @@ impl TooManyConfigurationTemplatesException {
 
 /// <p>The specified account has reached its limit of application versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyApplicationVersionsException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyApplicationVersionsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyApplicationVersionsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyApplicationVersionsException {
     /// Returns the error message.
@@ -1080,18 +968,11 @@ impl TooManyApplicationVersionsException {
 
 /// <p>The specified account has reached its limit of applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyApplicationsException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyApplicationsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyApplicationsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyApplicationsException {
     /// Returns the error message.
@@ -1147,18 +1028,11 @@ impl TooManyApplicationsException {
 
 /// <p>AWS CodeBuild is not available in the specified region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeBuildNotInServiceRegionException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CodeBuildNotInServiceRegionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeBuildNotInServiceRegionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CodeBuildNotInServiceRegionException {
     /// Returns the error message.
@@ -1214,18 +1088,11 @@ impl CodeBuildNotInServiceRegionException {
 
 /// <p>Cannot modify the managed action in its current state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedActionInvalidStateException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ManagedActionInvalidStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedActionInvalidStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ManagedActionInvalidStateException {
     /// Returns the error message.

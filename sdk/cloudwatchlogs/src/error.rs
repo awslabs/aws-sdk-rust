@@ -2,18 +2,11 @@
 
 /// <p>The specified resource does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl ResourceNotFoundException {
 
 /// <p>The service cannot complete the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl ServiceUnavailableException {
 
 /// <p>A parameter is specified incorrectly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidParameterException {
     /// Returns the error message.
@@ -204,7 +183,7 @@ impl InvalidParameterException {
 /// <p>The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code> object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.</p>
 /// <p>For more information about valid query syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MalformedQueryException {
     /// <p>Reserved.</p>
     #[doc(hidden)]
@@ -217,14 +196,6 @@ impl MalformedQueryException {
     /// <p>Reserved.</p>
     pub fn query_compile_error(&self) -> std::option::Option<&crate::model::QueryCompileError> {
         self.query_compile_error.as_ref()
-    }
-}
-impl std::fmt::Debug for MalformedQueryException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedQueryException");
-        formatter.field("query_compile_error", &self.query_compile_error);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl MalformedQueryException {
@@ -296,18 +267,11 @@ impl MalformedQueryException {
 
 /// <p>You have reached the maximum number of resources that can be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LimitExceededException {
     /// Returns the error message.
@@ -363,18 +327,11 @@ impl LimitExceededException {
 
 /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationAbortedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OperationAbortedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationAbortedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OperationAbortedException {
     /// Returns the error message.
@@ -430,18 +387,11 @@ impl OperationAbortedException {
 
 /// <p>The most likely cause is an invalid Amazon Web Services access key ID or secret key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnrecognizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnrecognizedClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnrecognizedClientException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnrecognizedClientException {
     /// Returns the error message.
@@ -497,7 +447,7 @@ impl UnrecognizedClientException {
 
 /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSequenceTokenException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -510,14 +460,6 @@ impl InvalidSequenceTokenException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn expected_sequence_token(&self) -> std::option::Option<&str> {
         self.expected_sequence_token.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidSequenceTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSequenceTokenException");
-        formatter.field("expected_sequence_token", &self.expected_sequence_token);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidSequenceTokenException {
@@ -589,7 +531,7 @@ impl InvalidSequenceTokenException {
 
 /// <p>The event was already logged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataAlreadyAcceptedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -602,14 +544,6 @@ impl DataAlreadyAcceptedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn expected_sequence_token(&self) -> std::option::Option<&str> {
         self.expected_sequence_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DataAlreadyAcceptedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataAlreadyAcceptedException");
-        formatter.field("expected_sequence_token", &self.expected_sequence_token);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl DataAlreadyAcceptedException {
@@ -681,18 +615,11 @@ impl DataAlreadyAcceptedException {
 
 /// <p>The specified resource already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceAlreadyExistsException {
     /// Returns the error message.
@@ -748,18 +675,11 @@ impl ResourceAlreadyExistsException {
 
 /// <p>The operation is not valid on the specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOperationException {
     /// Returns the error message.

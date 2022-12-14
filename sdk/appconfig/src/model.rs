@@ -41,7 +41,7 @@ impl BadRequestDetails {
 
 /// <p>Detailed information about the bad request exception error when creating a hosted configuration version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConfigurationDetail {
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
     #[doc(hidden)]
@@ -79,17 +79,6 @@ impl InvalidConfigurationDetail {
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidConfigurationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConfigurationDetail");
-        formatter.field("constraint", &self.constraint);
-        formatter.field("location", &self.location);
-        formatter.field("reason", &self.reason);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`InvalidConfigurationDetail`](crate::model::InvalidConfigurationDetail).
@@ -261,7 +250,7 @@ impl AsRef<str> for BadRequestReason {
 
 /// <p>A value such as an Amazon Resource Name (ARN) or an Amazon Simple Notification Service topic entered in an extension when invoked. Parameter values are specified in an extension association. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parameter {
     /// <p>Information about the parameter.</p>
     #[doc(hidden)]
@@ -278,14 +267,6 @@ impl Parameter {
     /// <p>A parameter value must be specified in the extension association.</p>
     pub fn required(&self) -> bool {
         self.required
-    }
-}
-impl std::fmt::Debug for Parameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parameter");
-        formatter.field("description", &self.description);
-        formatter.field("required", &self.required);
-        formatter.finish()
     }
 }
 /// See [`Parameter`](crate::model::Parameter).
@@ -345,7 +326,7 @@ impl Parameter {
 /// <li> <p> <code>ON_DEPLOYMENT_ROLLED_BACK</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>The action name.</p>
     #[doc(hidden)]
@@ -376,16 +357,6 @@ impl Action {
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("uri", &self.uri);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -587,7 +558,7 @@ impl AsRef<str> for ActionPoint {
 
 /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Monitor {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
     #[doc(hidden)]
@@ -604,14 +575,6 @@ impl Monitor {
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
     pub fn alarm_role_arn(&self) -> std::option::Option<&str> {
         self.alarm_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Monitor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Monitor");
-        formatter.field("alarm_arn", &self.alarm_arn);
-        formatter.field("alarm_role_arn", &self.alarm_role_arn);
-        formatter.finish()
     }
 }
 /// See [`Monitor`](crate::model::Monitor).
@@ -981,7 +944,7 @@ impl std::fmt::Debug for Validator {
 pub mod validator {
 
     /// A builder for [`Validator`](crate::model::Validator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ValidatorType>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1013,6 +976,14 @@ pub mod validator {
                 r#type: self.r#type,
                 content: self.content,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1115,7 +1086,7 @@ impl AsRef<str> for ValidatorType {
 
 /// <p>An extension that was invoked during a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppliedExtension {
     /// <p>The system-generated ID of the extension.</p>
     #[doc(hidden)]
@@ -1150,16 +1121,6 @@ impl AppliedExtension {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for AppliedExtension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppliedExtension");
-        formatter.field("extension_id", &self.extension_id);
-        formatter.field("extension_association_id", &self.extension_association_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`AppliedExtension`](crate::model::AppliedExtension).
@@ -1254,7 +1215,7 @@ impl AppliedExtension {
 
 /// <p>An object that describes a deployment event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentEvent {
     /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
     #[doc(hidden)]
@@ -1292,17 +1253,6 @@ impl DeploymentEvent {
     /// <p>The date and time the event occurred.</p>
     pub fn occurred_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.occurred_at.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentEvent");
-        formatter.field("event_type", &self.event_type);
-        formatter.field("triggered_by", &self.triggered_by);
-        formatter.field("description", &self.description);
-        formatter.field("action_invocations", &self.action_invocations);
-        formatter.field("occurred_at", &self.occurred_at);
-        formatter.finish()
     }
 }
 /// See [`DeploymentEvent`](crate::model::DeploymentEvent).
@@ -1408,7 +1358,7 @@ impl DeploymentEvent {
 
 /// <p>An extension that was invoked as part of a deployment event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionInvocation {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     #[doc(hidden)]
@@ -1460,19 +1410,6 @@ impl ActionInvocation {
     /// <p>A system-generated ID for this invocation.</p>
     pub fn invocation_id(&self) -> std::option::Option<&str> {
         self.invocation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ActionInvocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionInvocation");
-        formatter.field("extension_identifier", &self.extension_identifier);
-        formatter.field("action_name", &self.action_name);
-        formatter.field("uri", &self.uri);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("invocation_id", &self.invocation_id);
-        formatter.finish()
     }
 }
 /// See [`ActionInvocation`](crate::model::ActionInvocation).
@@ -1928,7 +1865,7 @@ impl AsRef<str> for DeploymentState {
 
 /// <p>Information about the configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedConfigurationVersionSummary {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -1966,17 +1903,6 @@ impl HostedConfigurationVersionSummary {
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
-    }
-}
-impl std::fmt::Debug for HostedConfigurationVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedConfigurationVersionSummary");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("description", &self.description);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`HostedConfigurationVersionSummary`](crate::model::HostedConfigurationVersionSummary).
@@ -2069,7 +1995,7 @@ impl HostedConfigurationVersionSummary {
 
 /// <p>Information about an extension. Call <code>GetExtension</code> to get more information about an extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtensionSummary {
     /// <p>The system-generated ID of the extension.</p>
     #[doc(hidden)]
@@ -2107,17 +2033,6 @@ impl ExtensionSummary {
     /// <p>Information about the extension.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ExtensionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtensionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ExtensionSummary`](crate::model::ExtensionSummary).
@@ -2204,7 +2119,7 @@ impl ExtensionSummary {
 
 /// <p>Information about an association between an extension and an AppConfig resource such as an application, environment, or configuration profile. Call <code>GetExtensionAssociation</code> to get more information about an association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtensionAssociationSummary {
     /// <p>The extension association ID. This ID is used to call other <code>ExtensionAssociation</code> API actions such as <code>GetExtensionAssociation</code> or <code>DeleteExtensionAssociation</code>.</p>
     #[doc(hidden)]
@@ -2228,15 +2143,6 @@ impl ExtensionAssociationSummary {
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ExtensionAssociationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtensionAssociationSummary");
-        formatter.field("id", &self.id);
-        formatter.field("extension_arn", &self.extension_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`ExtensionAssociationSummary`](crate::model::ExtensionAssociationSummary).
@@ -2302,7 +2208,7 @@ impl ExtensionAssociationSummary {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Environment {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -2347,18 +2253,6 @@ impl Environment {
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
         self.monitors.as_deref()
-    }
-}
-impl std::fmt::Debug for Environment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Environment");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("monitors", &self.monitors);
-        formatter.finish()
     }
 }
 /// See [`Environment`](crate::model::Environment).
@@ -2472,7 +2366,7 @@ impl Environment {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentStrategy {
     /// <p>The deployment strategy ID.</p>
     #[doc(hidden)]
@@ -2531,26 +2425,6 @@ impl DeploymentStrategy {
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
         self.replicate_to.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentStrategy");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "deployment_duration_in_minutes",
-            &self.deployment_duration_in_minutes,
-        );
-        formatter.field("growth_type", &self.growth_type);
-        formatter.field("growth_factor", &self.growth_factor);
-        formatter.field(
-            "final_bake_time_in_minutes",
-            &self.final_bake_time_in_minutes,
-        );
-        formatter.field("replicate_to", &self.replicate_to);
-        formatter.finish()
     }
 }
 /// See [`DeploymentStrategy`](crate::model::DeploymentStrategy).
@@ -2684,7 +2558,7 @@ impl DeploymentStrategy {
 
 /// <p>Information about the deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentSummary {
     /// <p>The sequence number of the deployment.</p>
     #[doc(hidden)]
@@ -2764,29 +2638,6 @@ impl DeploymentSummary {
     /// <p>Time the deployment completed.</p>
     pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentSummary");
-        formatter.field("deployment_number", &self.deployment_number);
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.field("configuration_version", &self.configuration_version);
-        formatter.field(
-            "deployment_duration_in_minutes",
-            &self.deployment_duration_in_minutes,
-        );
-        formatter.field("growth_type", &self.growth_type);
-        formatter.field("growth_factor", &self.growth_factor);
-        formatter.field(
-            "final_bake_time_in_minutes",
-            &self.final_bake_time_in_minutes,
-        );
-        formatter.field("state", &self.state);
-        formatter.field("percentage_complete", &self.percentage_complete);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("completed_at", &self.completed_at);
-        formatter.finish()
     }
 }
 /// See [`DeploymentSummary`](crate::model::DeploymentSummary).
@@ -2968,7 +2819,7 @@ impl DeploymentSummary {
 
 /// <p>A summary of a configuration profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationProfileSummary {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -3017,18 +2868,6 @@ impl ConfigurationProfileSummary {
     /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationProfileSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationProfileSummary");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("location_uri", &self.location_uri);
-        formatter.field("validator_types", &self.validator_types);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationProfileSummary`](crate::model::ConfigurationProfileSummary).
@@ -3143,7 +2982,7 @@ impl ConfigurationProfileSummary {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Application {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -3167,15 +3006,6 @@ impl Application {
     /// <p>The description of the application.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for Application {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Application");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`Application`](crate::model::Application).

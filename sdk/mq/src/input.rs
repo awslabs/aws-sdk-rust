@@ -4420,7 +4420,7 @@ impl UpdateUserInput {
 
 /// <p>Updates the information for an ActiveMQ user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
@@ -4460,21 +4460,10 @@ impl UpdateUserInput {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserInput");
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("console_access", &self.console_access);
-        formatter.field("groups", &self.groups);
-        formatter.field("password", &self.password);
-        formatter.field("username", &self.username);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates the specified configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
@@ -4500,19 +4489,10 @@ impl UpdateConfigurationInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationInput");
-        formatter.field("configuration_id", &self.configuration_id);
-        formatter.field("data", &self.data);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates the broker using the specified properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     #[doc(hidden)]
@@ -4593,32 +4573,10 @@ impl UpdateBrokerInput {
         self.security_groups.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBrokerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBrokerInput");
-        formatter.field("authentication_strategy", &self.authentication_strategy);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("host_instance_type", &self.host_instance_type);
-        formatter.field("ldap_server_metadata", &self.ldap_server_metadata);
-        formatter.field("logs", &self.logs);
-        formatter.field(
-            "maintenance_window_start_time",
-            &self.maintenance_window_start_time,
-        );
-        formatter.field("security_groups", &self.security_groups);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
@@ -4630,17 +4588,10 @@ impl RebootBrokerInput {
         self.broker_id.as_deref()
     }
 }
-impl std::fmt::Debug for RebootBrokerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootBrokerInput");
-        formatter.field("broker_id", &self.broker_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
@@ -4666,19 +4617,10 @@ impl ListUsersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     #[doc(hidden)]
@@ -4690,17 +4632,10 @@ impl ListTagsInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationsInput {
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     #[doc(hidden)]
@@ -4719,18 +4654,10 @@ impl ListConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationRevisionsInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
@@ -4756,19 +4683,10 @@ impl ListConfigurationRevisionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConfigurationRevisionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationRevisionsInput");
-        formatter.field("configuration_id", &self.configuration_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBrokersInput {
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     #[doc(hidden)]
@@ -4787,18 +4705,10 @@ impl ListBrokersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBrokersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBrokersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
@@ -4817,18 +4727,10 @@ impl DescribeUserInput {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserInput");
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("username", &self.username);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationRevisionInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
@@ -4847,18 +4749,10 @@ impl DescribeConfigurationRevisionInput {
         self.configuration_revision.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationRevisionInput");
-        formatter.field("configuration_id", &self.configuration_id);
-        formatter.field("configuration_revision", &self.configuration_revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
@@ -4870,17 +4764,10 @@ impl DescribeConfigurationInput {
         self.configuration_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationInput");
-        formatter.field("configuration_id", &self.configuration_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBrokerInstanceOptionsInput {
     /// <p>Filter response by engine type.</p>
     #[doc(hidden)]
@@ -4920,21 +4807,10 @@ impl DescribeBrokerInstanceOptionsInput {
         self.storage_type.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBrokerInstanceOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBrokerInstanceOptionsInput");
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("host_instance_type", &self.host_instance_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBrokerEngineTypesInput {
     /// <p>Filter response by engine type.</p>
     #[doc(hidden)]
@@ -4960,19 +4836,10 @@ impl DescribeBrokerEngineTypesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBrokerEngineTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBrokerEngineTypesInput");
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
@@ -4984,17 +4851,10 @@ impl DescribeBrokerInput {
         self.broker_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBrokerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBrokerInput");
-        formatter.field("broker_id", &self.broker_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
@@ -5013,18 +4873,10 @@ impl DeleteUserInput {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("username", &self.username);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     #[doc(hidden)]
@@ -5043,18 +4895,10 @@ impl DeleteTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
@@ -5066,17 +4910,10 @@ impl DeleteBrokerInput {
         self.broker_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBrokerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBrokerInput");
-        formatter.field("broker_id", &self.broker_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new ActiveMQ user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
@@ -5116,21 +4953,10 @@ impl CreateUserInput {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserInput");
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("console_access", &self.console_access);
-        formatter.field("groups", &self.groups);
-        formatter.field("password", &self.password);
-        formatter.field("username", &self.username);
-        formatter.finish()
-    }
-}
 
 /// <p>A map of the key-value pairs for the resource tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     #[doc(hidden)]
@@ -5153,18 +4979,10 @@ impl CreateTagsInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationInput {
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
     #[doc(hidden)]
@@ -5210,21 +5028,10 @@ impl CreateConfigurationInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationInput");
-        formatter.field("authentication_strategy", &self.authentication_strategy);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a broker using the specified properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     #[doc(hidden)]
@@ -5380,36 +5187,5 @@ impl CreateBrokerInput {
     /// </important>
     pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
         self.users.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateBrokerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBrokerInput");
-        formatter.field("authentication_strategy", &self.authentication_strategy);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("broker_name", &self.broker_name);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("deployment_mode", &self.deployment_mode);
-        formatter.field("encryption_options", &self.encryption_options);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("host_instance_type", &self.host_instance_type);
-        formatter.field("ldap_server_metadata", &self.ldap_server_metadata);
-        formatter.field("logs", &self.logs);
-        formatter.field(
-            "maintenance_window_start_time",
-            &self.maintenance_window_start_time,
-        );
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field("users", &self.users);
-        formatter.finish()
     }
 }

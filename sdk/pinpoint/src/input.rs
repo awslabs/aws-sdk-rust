@@ -22541,7 +22541,7 @@ impl VerifyOtpMessageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyOtpMessageInput {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
     #[doc(hidden)]
@@ -22563,21 +22563,10 @@ impl VerifyOtpMessageInput {
         self.verify_otp_message_request_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for VerifyOtpMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyOtpMessageInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field(
-            "verify_otp_message_request_parameters",
-            &self.verify_otp_message_request_parameters,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVoiceTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -22630,20 +22619,10 @@ impl UpdateVoiceTemplateInput {
         self.voice_template_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateVoiceTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVoiceTemplateInput");
-        formatter.field("create_new_version", &self.create_new_version);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.field("voice_template_request", &self.voice_template_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -22662,18 +22641,10 @@ impl UpdateVoiceChannelInput {
         self.voice_channel_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateVoiceChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVoiceChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("voice_channel_request", &self.voice_channel_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateActiveVersionInput {
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
     #[doc(hidden)]
@@ -22702,22 +22673,10 @@ impl UpdateTemplateActiveVersionInput {
         self.template_type.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTemplateActiveVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateActiveVersionInput");
-        formatter.field(
-            "template_active_version_request",
-            &self.template_active_version_request,
-        );
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmsTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -22768,20 +22727,10 @@ impl UpdateSmsTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSmsTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmsTemplateInput");
-        formatter.field("create_new_version", &self.create_new_version);
-        formatter.field("sms_template_request", &self.sms_template_request);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -22800,18 +22749,10 @@ impl UpdateSmsChannelInput {
         self.sms_channel_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSmsChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmsChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("sms_channel_request", &self.sms_channel_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -22837,19 +22778,10 @@ impl UpdateSegmentInput {
         self.write_segment_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSegmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSegmentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("write_segment_request", &self.write_segment_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -22871,21 +22803,10 @@ impl UpdateRecommenderConfigurationInput {
         self.update_recommender_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRecommenderConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecommenderConfigurationInput");
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field(
-            "update_recommender_configuration",
-            &self.update_recommender_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePushTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -22939,23 +22860,10 @@ impl UpdatePushTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePushTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePushTemplateInput");
-        formatter.field("create_new_version", &self.create_new_version);
-        formatter.field(
-            "push_notification_template_request",
-            &self.push_notification_template_request,
-        );
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJourneyStateInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -22981,19 +22889,10 @@ impl UpdateJourneyStateInput {
         self.journey_state_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateJourneyStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJourneyStateInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("journey_state_request", &self.journey_state_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJourneyInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23019,19 +22918,10 @@ impl UpdateJourneyInput {
         self.write_journey_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateJourneyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJourneyInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("write_journey_request", &self.write_journey_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInAppTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -23084,20 +22974,10 @@ impl UpdateInAppTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateInAppTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInAppTemplateInput");
-        formatter.field("create_new_version", &self.create_new_version);
-        formatter.field("in_app_template_request", &self.in_app_template_request);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGcmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23116,18 +22996,10 @@ impl UpdateGcmChannelInput {
         self.gcm_channel_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGcmChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGcmChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("gcm_channel_request", &self.gcm_channel_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEndpointsBatchInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23148,18 +23020,10 @@ impl UpdateEndpointsBatchInput {
         self.endpoint_batch_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEndpointsBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEndpointsBatchInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("endpoint_batch_request", &self.endpoint_batch_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEndpointInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23185,19 +23049,10 @@ impl UpdateEndpointInput {
         self.endpoint_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEndpointInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("endpoint_request", &self.endpoint_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEmailTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -23250,20 +23105,10 @@ impl UpdateEmailTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEmailTemplateInput");
-        formatter.field("create_new_version", &self.create_new_version);
-        formatter.field("email_template_request", &self.email_template_request);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23282,18 +23127,10 @@ impl UpdateEmailChannelInput {
         self.email_channel_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEmailChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEmailChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("email_channel_request", &self.email_channel_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCampaignInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23321,19 +23158,10 @@ impl UpdateCampaignInput {
         self.write_campaign_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCampaignInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("write_campaign_request", &self.write_campaign_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBaiduChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23352,18 +23180,10 @@ impl UpdateBaiduChannelInput {
         self.baidu_channel_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBaiduChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBaiduChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("baidu_channel_request", &self.baidu_channel_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23385,21 +23205,10 @@ impl UpdateApplicationSettingsInput {
         self.write_application_settings_request.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationSettingsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field(
-            "write_application_settings_request",
-            &self.write_application_settings_request,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApnsVoipSandboxChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     #[doc(hidden)]
@@ -23421,21 +23230,10 @@ impl UpdateApnsVoipSandboxChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApnsVoipSandboxChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApnsVoipSandboxChannelInput");
-        formatter.field(
-            "apns_voip_sandbox_channel_request",
-            &self.apns_voip_sandbox_channel_request,
-        );
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApnsVoipChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     #[doc(hidden)]
@@ -23456,18 +23254,10 @@ impl UpdateApnsVoipChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApnsVoipChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApnsVoipChannelInput");
-        formatter.field("apns_voip_channel_request", &self.apns_voip_channel_request);
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApnsSandboxChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     #[doc(hidden)]
@@ -23488,21 +23278,10 @@ impl UpdateApnsSandboxChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApnsSandboxChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApnsSandboxChannelInput");
-        formatter.field(
-            "apns_sandbox_channel_request",
-            &self.apns_sandbox_channel_request,
-        );
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApnsChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
@@ -23521,18 +23300,10 @@ impl UpdateApnsChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApnsChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApnsChannelInput");
-        formatter.field("apns_channel_request", &self.apns_channel_request);
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAdmChannelInput {
     /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     #[doc(hidden)]
@@ -23551,18 +23322,10 @@ impl UpdateAdmChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAdmChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAdmChannelInput");
-        formatter.field("adm_channel_request", &self.adm_channel_request);
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -23581,18 +23344,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -23611,18 +23366,10 @@ impl TagResourceInput {
         self.tags_model.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags_model", &self.tags_model);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendUsersMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23643,21 +23390,10 @@ impl SendUsersMessagesInput {
         self.send_users_message_request.as_ref()
     }
 }
-impl std::fmt::Debug for SendUsersMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendUsersMessagesInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field(
-            "send_users_message_request",
-            &self.send_users_message_request,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendOtpMessageInput {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
     #[doc(hidden)]
@@ -23679,21 +23415,10 @@ impl SendOtpMessageInput {
         self.send_otp_message_request_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for SendOtpMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendOtpMessageInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field(
-            "send_otp_message_request_parameters",
-            &self.send_otp_message_request_parameters,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23712,18 +23437,10 @@ impl SendMessagesInput {
         self.message_request.as_ref()
     }
 }
-impl std::fmt::Debug for SendMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessagesInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("message_request", &self.message_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveAttributesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23761,19 +23478,10 @@ impl RemoveAttributesInput {
         self.update_attributes_request.as_ref()
     }
 }
-impl std::fmt::Debug for RemoveAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveAttributesInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.field("update_attributes_request", &self.update_attributes_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23792,18 +23500,10 @@ impl PutEventStreamInput {
         self.write_event_stream.as_ref()
     }
 }
-impl std::fmt::Debug for PutEventStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventStreamInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("write_event_stream", &self.write_event_stream);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23822,18 +23522,10 @@ impl PutEventsInput {
         self.events_request.as_ref()
     }
 }
-impl std::fmt::Debug for PutEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("events_request", &self.events_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhoneNumberValidateInput {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
     #[doc(hidden)]
@@ -23847,17 +23539,10 @@ impl PhoneNumberValidateInput {
         self.number_validate_request.as_ref()
     }
 }
-impl std::fmt::Debug for PhoneNumberValidateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhoneNumberValidateInput");
-        formatter.field("number_validate_request", &self.number_validate_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplateVersionsInput {
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     #[doc(hidden)]
@@ -23890,20 +23575,10 @@ impl ListTemplateVersionsInput {
         self.template_type.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplateVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplateVersionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplatesInput {
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     #[doc(hidden)]
@@ -23936,20 +23611,10 @@ impl ListTemplatesInput {
         self.template_type.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("template_type", &self.template_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -23961,17 +23626,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJourneysInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -23997,19 +23655,10 @@ impl ListJourneysInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJourneysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJourneysInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -24044,18 +23693,10 @@ impl GetVoiceTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24067,17 +23708,10 @@ impl GetVoiceChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserEndpointsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24096,18 +23730,10 @@ impl GetUserEndpointsInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetUserEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserEndpointsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSmsTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -24142,18 +23768,10 @@ impl GetSmsTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetSmsTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSmsTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSmsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24165,17 +23783,10 @@ impl GetSmsChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSmsChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSmsChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSegmentVersionsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24208,20 +23819,10 @@ impl GetSegmentVersionsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSegmentVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSegmentVersionsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSegmentVersionInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24247,19 +23848,10 @@ impl GetSegmentVersionInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetSegmentVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSegmentVersionInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSegmentsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24285,19 +23877,10 @@ impl GetSegmentsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSegmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSegmentsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSegmentImportJobsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24330,20 +23913,10 @@ impl GetSegmentImportJobsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSegmentImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSegmentImportJobsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSegmentExportJobsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24376,20 +23949,10 @@ impl GetSegmentExportJobsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSegmentExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSegmentExportJobsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24408,18 +23971,10 @@ impl GetSegmentInput {
         self.segment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSegmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSegmentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommenderConfigurationsInput {
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     #[doc(hidden)]
@@ -24438,18 +23993,10 @@ impl GetRecommenderConfigurationsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecommenderConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommenderConfigurationsInput");
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24461,17 +24008,10 @@ impl GetRecommenderConfigurationInput {
         self.recommender_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecommenderConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommenderConfigurationInput");
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPushTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -24506,18 +24046,10 @@ impl GetPushTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetPushTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPushTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJourneyExecutionMetricsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24550,20 +24082,10 @@ impl GetJourneyExecutionMetricsInput {
         self.page_size.as_deref()
     }
 }
-impl std::fmt::Debug for GetJourneyExecutionMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJourneyExecutionMetricsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJourneyExecutionActivityMetricsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24603,21 +24125,10 @@ impl GetJourneyExecutionActivityMetricsInput {
         self.page_size.as_deref()
     }
 }
-impl std::fmt::Debug for GetJourneyExecutionActivityMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJourneyExecutionActivityMetricsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_activity_id", &self.journey_activity_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJourneyDateRangeKpiInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24671,23 +24182,10 @@ impl GetJourneyDateRangeKpiInput {
         self.start_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetJourneyDateRangeKpiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJourneyDateRangeKpiInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJourneyInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24706,18 +24204,10 @@ impl GetJourneyInput {
         self.journey_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJourneyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJourneyInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInAppTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -24752,18 +24242,10 @@ impl GetInAppTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetInAppTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInAppTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInAppMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24782,18 +24264,10 @@ impl GetInAppMessagesInput {
         self.endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetInAppMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInAppMessagesInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImportJobsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24819,19 +24293,10 @@ impl GetImportJobsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImportJobsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24850,18 +24315,10 @@ impl GetImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImportJobInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGcmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24873,17 +24330,10 @@ impl GetGcmChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGcmChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGcmChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExportJobsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24909,19 +24359,10 @@ impl GetExportJobsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExportJobsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24940,18 +24381,10 @@ impl GetExportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExportJobInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24963,17 +24396,10 @@ impl GetEventStreamInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventStreamInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEndpointInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -24992,18 +24418,10 @@ impl GetEndpointInput {
         self.endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEndpointInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEmailTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -25038,18 +24456,10 @@ impl GetEmailTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25061,17 +24471,10 @@ impl GetEmailChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEmailChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEmailChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25083,17 +24486,10 @@ impl GetChannelsInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChannelsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignVersionsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25126,20 +24522,10 @@ impl GetCampaignVersionsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCampaignVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignVersionsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignVersionInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25165,19 +24551,10 @@ impl GetCampaignVersionInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetCampaignVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignVersionInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25203,19 +24580,10 @@ impl GetCampaignsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCampaignsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignDateRangeKpiInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25269,23 +24637,10 @@ impl GetCampaignDateRangeKpiInput {
         self.start_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetCampaignDateRangeKpiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignDateRangeKpiInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignActivitiesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25318,20 +24673,10 @@ impl GetCampaignActivitiesInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCampaignActivitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignActivitiesInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25350,18 +24695,10 @@ impl GetCampaignInput {
         self.campaign_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBaiduChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25373,17 +24710,10 @@ impl GetBaiduChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBaiduChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBaiduChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppsInput {
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     #[doc(hidden)]
@@ -25402,18 +24732,10 @@ impl GetAppsInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAppsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppsInput");
-        formatter.field("page_size", &self.page_size);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationSettingsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25425,17 +24747,10 @@ impl GetApplicationSettingsInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationSettingsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationDateRangeKpiInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25482,22 +24797,10 @@ impl GetApplicationDateRangeKpiInput {
         self.start_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetApplicationDateRangeKpiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationDateRangeKpiInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25509,17 +24812,10 @@ impl GetAppInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApnsVoipSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25531,17 +24827,10 @@ impl GetApnsVoipSandboxChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApnsVoipSandboxChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApnsVoipSandboxChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApnsVoipChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25553,17 +24842,10 @@ impl GetApnsVoipChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApnsVoipChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApnsVoipChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApnsSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25575,17 +24857,10 @@ impl GetApnsSandboxChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApnsSandboxChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApnsSandboxChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApnsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25597,17 +24872,10 @@ impl GetApnsChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApnsChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApnsChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAdmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25619,17 +24887,10 @@ impl GetAdmChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAdmChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAdmChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -25664,18 +24925,10 @@ impl DeleteVoiceTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25687,17 +24940,10 @@ impl DeleteVoiceChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserEndpointsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25716,18 +24962,10 @@ impl DeleteUserEndpointsInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserEndpointsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSmsTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -25762,18 +25000,10 @@ impl DeleteSmsTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSmsTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSmsTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSmsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25785,17 +25015,10 @@ impl DeleteSmsChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSmsChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSmsChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25814,18 +25037,10 @@ impl DeleteSegmentInput {
         self.segment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSegmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSegmentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25837,17 +25052,10 @@ impl DeleteRecommenderConfigurationInput {
         self.recommender_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRecommenderConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecommenderConfigurationInput");
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePushTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -25882,18 +25090,10 @@ impl DeletePushTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePushTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePushTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJourneyInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25912,18 +25112,10 @@ impl DeleteJourneyInput {
         self.journey_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteJourneyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJourneyInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInAppTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -25958,18 +25150,10 @@ impl DeleteInAppTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInAppTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInAppTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGcmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -25981,17 +25165,10 @@ impl DeleteGcmChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGcmChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGcmChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26003,17 +25180,10 @@ impl DeleteEventStreamInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventStreamInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26032,18 +25202,10 @@ impl DeleteEndpointInput {
         self.endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEndpointInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEmailTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -26078,18 +25240,10 @@ impl DeleteEmailTemplateInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26101,17 +25255,10 @@ impl DeleteEmailChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEmailChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEmailChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCampaignInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26130,18 +25277,10 @@ impl DeleteCampaignInput {
         self.campaign_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCampaignInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBaiduChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26153,17 +25292,10 @@ impl DeleteBaiduChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBaiduChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBaiduChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26175,17 +25307,10 @@ impl DeleteAppInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApnsVoipSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26197,17 +25322,10 @@ impl DeleteApnsVoipSandboxChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApnsVoipSandboxChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApnsVoipSandboxChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApnsVoipChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26219,17 +25337,10 @@ impl DeleteApnsVoipChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApnsVoipChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApnsVoipChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApnsSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26241,17 +25352,10 @@ impl DeleteApnsSandboxChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApnsSandboxChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApnsSandboxChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApnsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26263,17 +25367,10 @@ impl DeleteApnsChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApnsChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApnsChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAdmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26285,17 +25382,10 @@ impl DeleteAdmChannelInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAdmChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAdmChannelInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVoiceTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
@@ -26316,18 +25406,10 @@ impl CreateVoiceTemplateInput {
         self.voice_template_request.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVoiceTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVoiceTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("voice_template_request", &self.voice_template_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSmsTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     #[doc(hidden)]
@@ -26346,18 +25428,10 @@ impl CreateSmsTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSmsTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSmsTemplateInput");
-        formatter.field("sms_template_request", &self.sms_template_request);
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26376,18 +25450,10 @@ impl CreateSegmentInput {
         self.write_segment_request.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSegmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSegmentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("write_segment_request", &self.write_segment_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRecommenderConfigurationInput {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     #[doc(hidden)]
@@ -26402,20 +25468,10 @@ impl CreateRecommenderConfigurationInput {
         self.create_recommender_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRecommenderConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRecommenderConfigurationInput");
-        formatter.field(
-            "create_recommender_configuration",
-            &self.create_recommender_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePushTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     #[doc(hidden)]
@@ -26437,21 +25493,10 @@ impl CreatePushTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePushTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePushTemplateInput");
-        formatter.field(
-            "push_notification_template_request",
-            &self.push_notification_template_request,
-        );
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJourneyInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26470,18 +25515,10 @@ impl CreateJourneyInput {
         self.write_journey_request.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJourneyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJourneyInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("write_journey_request", &self.write_journey_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInAppTemplateInput {
     /// <p>InApp Template Request.</p>
     #[doc(hidden)]
@@ -26502,18 +25539,10 @@ impl CreateInAppTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInAppTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInAppTemplateInput");
-        formatter.field("in_app_template_request", &self.in_app_template_request);
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26532,18 +25561,10 @@ impl CreateImportJobInput {
         self.import_job_request.as_ref()
     }
 }
-impl std::fmt::Debug for CreateImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateImportJobInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("import_job_request", &self.import_job_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26562,18 +25583,10 @@ impl CreateExportJobInput {
         self.export_job_request.as_ref()
     }
 }
-impl std::fmt::Debug for CreateExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExportJobInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("export_job_request", &self.export_job_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEmailTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
     #[doc(hidden)]
@@ -26594,18 +25607,10 @@ impl CreateEmailTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEmailTemplateInput");
-        formatter.field("email_template_request", &self.email_template_request);
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCampaignInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -26626,18 +25631,10 @@ impl CreateCampaignInput {
         self.write_campaign_request.as_ref()
     }
 }
-impl std::fmt::Debug for CreateCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCampaignInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("write_campaign_request", &self.write_campaign_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppInput {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
     #[doc(hidden)]
@@ -26649,15 +25646,5 @@ impl CreateAppInput {
         &self,
     ) -> std::option::Option<&crate::model::CreateApplicationRequest> {
         self.create_application_request.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppInput");
-        formatter.field(
-            "create_application_request",
-            &self.create_application_request,
-        );
-        formatter.finish()
     }
 }

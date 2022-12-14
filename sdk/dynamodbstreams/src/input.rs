@@ -708,7 +708,7 @@ impl ListStreamsInput {
 
 /// <p>Represents the input of a <code>ListStreams</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamsInput {
     /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
     #[doc(hidden)]
@@ -734,22 +734,10 @@ impl ListStreamsInput {
         self.exclusive_start_stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("limit", &self.limit);
-        formatter.field(
-            "exclusive_start_stream_arn",
-            &self.exclusive_start_stream_arn,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetShardIterator</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetShardIteratorInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
@@ -794,20 +782,10 @@ impl GetShardIteratorInput {
         self.sequence_number.as_deref()
     }
 }
-impl std::fmt::Debug for GetShardIteratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetShardIteratorInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("shard_iterator_type", &self.shard_iterator_type);
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetRecords</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecordsInput {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
     #[doc(hidden)]
@@ -826,18 +804,10 @@ impl GetRecordsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetRecordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecordsInput");
-        formatter.field("shard_iterator", &self.shard_iterator);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DescribeStream</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStreamInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
@@ -861,14 +831,5 @@ impl DescribeStreamInput {
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn exclusive_start_shard_id(&self) -> std::option::Option<&str> {
         self.exclusive_start_shard_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStreamInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("limit", &self.limit);
-        formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
-        formatter.finish()
     }
 }

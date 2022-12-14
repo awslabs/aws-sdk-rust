@@ -2,7 +2,7 @@
 
 /// <p>Information about the result of a deployment on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentResult {
     /// <p>The name and unique ID of the deployment.</p>
     #[doc(hidden)]
@@ -47,18 +47,6 @@ impl DeploymentResult {
     /// <p>Returns a list of models deployed on the agent.</p>
     pub fn deployment_models(&self) -> std::option::Option<&[crate::model::DeploymentModel]> {
         self.deployment_models.as_deref()
-    }
-}
-impl std::fmt::Debug for DeploymentResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentResult");
-        formatter.field("deployment_name", &self.deployment_name);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("deployment_status_message", &self.deployment_status_message);
-        formatter.field("deployment_start_time", &self.deployment_start_time);
-        formatter.field("deployment_end_time", &self.deployment_end_time);
-        formatter.field("deployment_models", &self.deployment_models);
-        formatter.finish()
     }
 }
 /// See [`DeploymentResult`](crate::model::DeploymentResult).
@@ -182,7 +170,7 @@ impl DeploymentResult {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentModel {
     /// <p>The unique handle of the model.</p>
     #[doc(hidden)]
@@ -241,20 +229,6 @@ impl DeploymentModel {
     /// <p>Returns the error message if there is a rollback.</p>
     pub fn rollback_failure_reason(&self) -> std::option::Option<&str> {
         self.rollback_failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for DeploymentModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentModel");
-        formatter.field("model_handle", &self.model_handle);
-        formatter.field("model_name", &self.model_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("desired_state", &self.desired_state);
-        formatter.field("state", &self.state);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("rollback_failure_reason", &self.rollback_failure_reason);
-        formatter.finish()
     }
 }
 /// See [`DeploymentModel`](crate::model::DeploymentModel).
@@ -572,7 +546,7 @@ impl AsRef<str> for ModelState {
 
 /// <p>Information about a model deployed on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Model {
     /// <p>The name of the model.</p>
     #[doc(hidden)]
@@ -610,17 +584,6 @@ impl Model {
     /// <p>Information required for model metrics.</p>
     pub fn model_metrics(&self) -> std::option::Option<&[crate::model::EdgeMetric]> {
         self.model_metrics.as_deref()
-    }
-}
-impl std::fmt::Debug for Model {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Model");
-        formatter.field("model_name", &self.model_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("latest_sample_time", &self.latest_sample_time);
-        formatter.field("latest_inference", &self.latest_inference);
-        formatter.field("model_metrics", &self.model_metrics);
-        formatter.finish()
     }
 }
 /// See [`Model`](crate::model::Model).
@@ -725,7 +688,7 @@ impl Model {
 
 /// <p>Information required for edge device metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EdgeMetric {
     /// <p>The dimension of metrics published.</p>
     #[doc(hidden)]
@@ -756,16 +719,6 @@ impl EdgeMetric {
     /// <p>Timestamp of when the metric was requested.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for EdgeMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EdgeMetric");
-        formatter.field("dimension", &self.dimension);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("value", &self.value);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`EdgeMetric`](crate::model::EdgeMetric).
@@ -843,7 +796,7 @@ impl EdgeMetric {
 
 /// <p>Information about a deployment on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EdgeDeployment {
     /// <p>The name and unique ID of the deployment.</p>
     #[doc(hidden)]
@@ -876,16 +829,6 @@ impl EdgeDeployment {
     /// <p>Returns a list of Definition objects.</p>
     pub fn definitions(&self) -> std::option::Option<&[crate::model::Definition]> {
         self.definitions.as_deref()
-    }
-}
-impl std::fmt::Debug for EdgeDeployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EdgeDeployment");
-        formatter.field("deployment_name", &self.deployment_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("failure_handling_policy", &self.failure_handling_policy);
-        formatter.field("definitions", &self.definitions);
-        formatter.finish()
     }
 }
 /// See [`EdgeDeployment`](crate::model::EdgeDeployment).
@@ -982,7 +925,7 @@ impl EdgeDeployment {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Definition {
     /// <p>The unique model handle.</p>
     #[doc(hidden)]
@@ -1013,16 +956,6 @@ impl Definition {
     /// <p>The desired state of the model.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ModelState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for Definition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Definition");
-        formatter.field("model_handle", &self.model_handle);
-        formatter.field("s3_url", &self.s3_url);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`Definition`](crate::model::Definition).
@@ -1097,7 +1030,7 @@ impl Definition {
 
 /// <p>Information about the checksum of a model deployed on a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Checksum {
     /// <p>The type of the checksum.</p>
     #[doc(hidden)]
@@ -1114,14 +1047,6 @@ impl Checksum {
     /// <p>The checksum of the model.</p>
     pub fn sum(&self) -> std::option::Option<&str> {
         self.sum.as_deref()
-    }
-}
-impl std::fmt::Debug for Checksum {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Checksum");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("sum", &self.sum);
-        formatter.finish()
     }
 }
 /// See [`Checksum`](crate::model::Checksum).

@@ -2,7 +2,7 @@
 
 /// <p>A complex data type that contains a tag key and tag value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>A string that contains an optional tag value. The string length should be between 0 and 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>Information about a quota increase request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestedServiceQuotaChange {
     /// <p>The unique identifier.</p>
     #[doc(hidden)]
@@ -178,26 +170,6 @@ impl RequestedServiceQuotaChange {
     /// <p>The unit of measurement.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestedServiceQuotaChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestedServiceQuotaChange");
-        formatter.field("id", &self.id);
-        formatter.field("case_id", &self.case_id);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("quota_name", &self.quota_name);
-        formatter.field("desired_value", &self.desired_value);
-        formatter.field("status", &self.status);
-        formatter.field("created", &self.created);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("requester", &self.requester);
-        formatter.field("quota_arn", &self.quota_arn);
-        formatter.field("global_quota", &self.global_quota);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
@@ -512,7 +484,7 @@ impl AsRef<str> for RequestStatus {
 
 /// <p>Information about a quota increase request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaIncreaseRequestInTemplate {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -571,20 +543,6 @@ impl ServiceQuotaIncreaseRequestInTemplate {
     /// <p>Indicates whether the quota is global.</p>
     pub fn global_quota(&self) -> bool {
         self.global_quota
-    }
-}
-impl std::fmt::Debug for ServiceQuotaIncreaseRequestInTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaIncreaseRequestInTemplate");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("quota_name", &self.quota_name);
-        formatter.field("desired_value", &self.desired_value);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("unit", &self.unit);
-        formatter.field("global_quota", &self.global_quota);
-        formatter.finish()
     }
 }
 /// See [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
@@ -707,7 +665,7 @@ impl ServiceQuotaIncreaseRequestInTemplate {
 
 /// <p>Information about a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceInfo {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -724,14 +682,6 @@ impl ServiceInfo {
     /// <p>The service name.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceInfo");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
     }
 }
 /// See [`ServiceInfo`](crate::model::ServiceInfo).
@@ -782,7 +732,7 @@ impl ServiceInfo {
 
 /// <p>Information about a quota.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuota {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -869,24 +819,6 @@ impl ServiceQuota {
     /// <p>The error code and error reason.</p>
     pub fn error_reason(&self) -> std::option::Option<&crate::model::ErrorReason> {
         self.error_reason.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceQuota {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuota");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("quota_arn", &self.quota_arn);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("quota_name", &self.quota_name);
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.field("adjustable", &self.adjustable);
-        formatter.field("global_quota", &self.global_quota);
-        formatter.field("usage_metric", &self.usage_metric);
-        formatter.field("period", &self.period);
-        formatter.field("error_reason", &self.error_reason);
-        formatter.finish()
     }
 }
 /// See [`ServiceQuota`](crate::model::ServiceQuota).
@@ -1063,7 +995,7 @@ impl ServiceQuota {
 
 /// <p>An error that explains why an action did not succeed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorReason {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
@@ -1092,14 +1024,6 @@ impl ErrorReason {
     /// <p>The error message.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorReason");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ErrorReason`](crate::model::ErrorReason).
@@ -1273,7 +1197,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>Information about the quota period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuotaPeriod {
     /// <p>The value.</p>
     #[doc(hidden)]
@@ -1290,14 +1214,6 @@ impl QuotaPeriod {
     /// <p>The time unit.</p>
     pub fn period_unit(&self) -> std::option::Option<&crate::model::PeriodUnit> {
         self.period_unit.as_ref()
-    }
-}
-impl std::fmt::Debug for QuotaPeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuotaPeriod");
-        formatter.field("period_value", &self.period_value);
-        formatter.field("period_unit", &self.period_unit);
-        formatter.finish()
     }
 }
 /// See [`QuotaPeriod`](crate::model::QuotaPeriod).
@@ -1474,7 +1390,7 @@ impl AsRef<str> for PeriodUnit {
 
 /// <p>Information about the CloudWatch metric that reflects quota usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricInfo {
     /// <p>The namespace of the metric.</p>
     #[doc(hidden)]
@@ -1509,19 +1425,6 @@ impl MetricInfo {
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
     pub fn metric_statistic_recommendation(&self) -> std::option::Option<&str> {
         self.metric_statistic_recommendation.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricInfo");
-        formatter.field("metric_namespace", &self.metric_namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_dimensions", &self.metric_dimensions);
-        formatter.field(
-            "metric_statistic_recommendation",
-            &self.metric_statistic_recommendation,
-        );
-        formatter.finish()
     }
 }
 /// See [`MetricInfo`](crate::model::MetricInfo).

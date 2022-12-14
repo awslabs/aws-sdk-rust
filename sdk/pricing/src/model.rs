@@ -2,7 +2,7 @@
 
 /// <p>The constraints that you want all returned products to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The type of filter that you want to use.</p>
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
@@ -32,15 +32,6 @@ impl Filter {
     /// <p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("field", &self.field);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -194,7 +185,7 @@ impl AsRef<str> for FilterType {
 
 /// <p>The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeValue {
     /// <p>The specific value of an <code>attributeName</code>.</p>
     #[doc(hidden)]
@@ -204,13 +195,6 @@ impl AttributeValue {
     /// <p>The specific value of an <code>attributeName</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for AttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeValue");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AttributeValue`](crate::model::AttributeValue).
@@ -247,7 +231,7 @@ impl AttributeValue {
 
 /// <p>The metadata for a service, such as the service code and available attribute names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Service {
     /// <p>The code for the Amazon Web Services service.</p>
     #[doc(hidden)]
@@ -264,14 +248,6 @@ impl Service {
     /// <p>The attributes that are available for this service.</p>
     pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_names.as_deref()
-    }
-}
-impl std::fmt::Debug for Service {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Service");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
     }
 }
 /// See [`Service`](crate::model::Service).

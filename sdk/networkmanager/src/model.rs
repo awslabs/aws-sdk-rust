@@ -2,7 +2,7 @@
 
 /// <p>Describes a validation exception for a field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The message for the field.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>Describes a VPC attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcAttachment {
     /// <p>Provides details about the VPC attachment.</p>
     #[doc(hidden)]
@@ -208,15 +200,6 @@ impl VpcAttachment {
     /// <p>Provides details about the VPC attachment.</p>
     pub fn options(&self) -> std::option::Option<&crate::model::VpcOptions> {
         self.options.as_ref()
-    }
-}
-impl std::fmt::Debug for VpcAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcAttachment");
-        formatter.field("attachment", &self.attachment);
-        formatter.field("subnet_arns", &self.subnet_arns);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`VpcAttachment`](crate::model::VpcAttachment).
@@ -291,7 +274,7 @@ impl VpcAttachment {
 
 /// <p>Describes the VPC options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcOptions {
     /// <p>Indicates whether IPv6 is supported.</p>
     #[doc(hidden)]
@@ -301,13 +284,6 @@ impl VpcOptions {
     /// <p>Indicates whether IPv6 is supported.</p>
     pub fn ipv6_support(&self) -> bool {
         self.ipv6_support
-    }
-}
-impl std::fmt::Debug for VpcOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcOptions");
-        formatter.field("ipv6_support", &self.ipv6_support);
-        formatter.finish()
     }
 }
 /// See [`VpcOptions`](crate::model::VpcOptions).
@@ -346,7 +322,7 @@ impl VpcOptions {
 
 /// <p>Describes a core network attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attachment {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -449,29 +425,6 @@ impl Attachment {
     /// <p>The timestamp when the attachment was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Attachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attachment");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("core_network_arn", &self.core_network_arn);
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field("attachment_type", &self.attachment_type);
-        formatter.field("state", &self.state);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field(
-            "attachment_policy_rule_number",
-            &self.attachment_policy_rule_number,
-        );
-        formatter.field("segment_name", &self.segment_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("proposed_segment_change", &self.proposed_segment_change);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`Attachment`](crate::model::Attachment).
@@ -712,7 +665,7 @@ impl Attachment {
 
 /// <p>Describes a proposed segment change. In some cases, the segment change must first be evaluated and accepted. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProposedSegmentChange {
     /// <p>The list of key-value tags that changed for the segment.</p>
     #[doc(hidden)]
@@ -736,18 +689,6 @@ impl ProposedSegmentChange {
     /// <p>The name of the segment to change.</p>
     pub fn segment_name(&self) -> std::option::Option<&str> {
         self.segment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ProposedSegmentChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProposedSegmentChange");
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "attachment_policy_rule_number",
-            &self.attachment_policy_rule_number,
-        );
-        formatter.field("segment_name", &self.segment_name);
-        formatter.finish()
     }
 }
 /// See [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
@@ -822,7 +763,7 @@ impl ProposedSegmentChange {
 
 /// <p>Describes a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag key.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -843,14 +784,6 @@ impl Tag {
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1224,7 +1157,7 @@ impl std::fmt::Debug for Site {
 pub mod site {
 
     /// A builder for [`Site`](crate::model::Site).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
         pub(crate) site_arn: std::option::Option<std::string::String>,
@@ -1343,6 +1276,20 @@ pub mod site {
                 state: self.state,
                 tags: self.tags,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("site_id", &self.site_id);
+            formatter.field("site_arn", &self.site_arn);
+            formatter.field("global_network_id", &self.global_network_id);
+            formatter.field("description", &self.description);
+            formatter.field("location", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_at", &self.created_at);
+            formatter.field("state", &self.state);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1494,7 +1441,7 @@ impl std::fmt::Debug for Location {
 pub mod location {
 
     /// A builder for [`Location`](crate::model::Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) latitude: std::option::Option<std::string::String>,
@@ -1540,6 +1487,15 @@ pub mod location {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("address", &self.address);
+            formatter.field("latitude", &self.latitude);
+            formatter.field("longitude", &self.longitude);
+            formatter.finish()
+        }
+    }
 }
 impl Location {
     /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
@@ -1550,7 +1506,7 @@ impl Location {
 
 /// <p>Describes a link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Link {
     /// <p>The ID of the link.</p>
     #[doc(hidden)]
@@ -1630,23 +1586,6 @@ impl Link {
     /// <p>The tags for the link.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for Link {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Link");
-        formatter.field("link_id", &self.link_id);
-        formatter.field("link_arn", &self.link_arn);
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("site_id", &self.site_id);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("provider", &self.provider);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Link`](crate::model::Link).
@@ -1923,7 +1862,7 @@ impl AsRef<str> for LinkState {
 
 /// <p>Describes bandwidth information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Bandwidth {
     /// <p>Upload speed in Mbps.</p>
     #[doc(hidden)]
@@ -1940,14 +1879,6 @@ impl Bandwidth {
     /// <p>Download speed in Mbps.</p>
     pub fn download_speed(&self) -> std::option::Option<i32> {
         self.download_speed
-    }
-}
-impl std::fmt::Debug for Bandwidth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Bandwidth");
-        formatter.field("upload_speed", &self.upload_speed);
-        formatter.field("download_speed", &self.download_speed);
-        formatter.finish()
     }
 }
 /// See [`Bandwidth`](crate::model::Bandwidth).
@@ -1998,7 +1929,7 @@ impl Bandwidth {
 
 /// <p>Describes a global network. This is a single private network acting as a high-level container for your network objects, including an Amazon Web Services-managed Core Network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalNetwork {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -2043,18 +1974,6 @@ impl GlobalNetwork {
     /// <p>The tags for the global network.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for GlobalNetwork {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalNetwork");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("global_network_arn", &self.global_network_arn);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GlobalNetwork`](crate::model::GlobalNetwork).
@@ -2403,7 +2322,7 @@ impl std::fmt::Debug for Device {
 pub mod device {
 
     /// A builder for [`Device`](crate::model::Device).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) device_arn: std::option::Option<std::string::String>,
@@ -2602,6 +2521,26 @@ pub mod device {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_id", &self.device_id);
+            formatter.field("device_arn", &self.device_arn);
+            formatter.field("global_network_id", &self.global_network_id);
+            formatter.field("aws_location", &self.aws_location);
+            formatter.field("description", &self.description);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("vendor", &self.vendor);
+            formatter.field("model", &self.model);
+            formatter.field("serial_number", &self.serial_number);
+            formatter.field("location", &"*** Sensitive Data Redacted ***");
+            formatter.field("site_id", &self.site_id);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("state", &self.state);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl Device {
     /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
@@ -2712,7 +2651,7 @@ impl AsRef<str> for DeviceState {
 
 /// <p>Specifies a location in Amazon Web Services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsLocation {
     /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
     #[doc(hidden)]
@@ -2729,14 +2668,6 @@ impl AwsLocation {
     /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
     pub fn subnet_arn(&self) -> std::option::Option<&str> {
         self.subnet_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsLocation");
-        formatter.field("zone", &self.zone);
-        formatter.field("subnet_arn", &self.subnet_arn);
-        formatter.finish()
     }
 }
 /// See [`AwsLocation`](crate::model::AwsLocation).
@@ -2787,7 +2718,7 @@ impl AwsLocation {
 
 /// <p>Describes a core network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetwork {
     /// <p>The ID of the global network that your core network is a part of. </p>
     #[doc(hidden)]
@@ -2853,21 +2784,6 @@ impl CoreNetwork {
     /// <p>The list of key-value tags associated with a core network.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetwork {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetwork");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("core_network_arn", &self.core_network_arn);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("state", &self.state);
-        formatter.field("segments", &self.segments);
-        formatter.field("edges", &self.edges);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CoreNetwork`](crate::model::CoreNetwork).
@@ -3044,7 +2960,7 @@ impl CoreNetwork {
 
 /// <p>Describes a core network edge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkEdge {
     /// <p>The Region where a core network edge is located.</p>
     #[doc(hidden)]
@@ -3068,15 +2984,6 @@ impl CoreNetworkEdge {
     /// <p>The inside IP addresses used for core network edges.</p>
     pub fn inside_cidr_blocks(&self) -> std::option::Option<&[std::string::String]> {
         self.inside_cidr_blocks.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkEdge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkEdge");
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("asn", &self.asn);
-        formatter.field("inside_cidr_blocks", &self.inside_cidr_blocks);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
@@ -3151,7 +3058,7 @@ impl CoreNetworkEdge {
 
 /// <p>Describes a core network segment, which are dedicated routes. Only attachments within this segment can communicate with each other.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkSegment {
     /// <p>The name of a core network segment.</p>
     #[doc(hidden)]
@@ -3175,15 +3082,6 @@ impl CoreNetworkSegment {
     /// <p>The shared segments of a core network.</p>
     pub fn shared_segments(&self) -> std::option::Option<&[std::string::String]> {
         self.shared_segments.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkSegment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkSegment");
-        formatter.field("name", &self.name);
-        formatter.field("edge_locations", &self.edge_locations);
-        formatter.field("shared_segments", &self.shared_segments);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
@@ -3364,7 +3262,7 @@ impl AsRef<str> for CoreNetworkState {
 
 /// <p>Describes a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -3444,23 +3342,6 @@ impl Connection {
     /// <p>The tags for the connection.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("connected_device_id", &self.connected_device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("connected_link_id", &self.connected_link_id);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Connection`](crate::model::Connection).
@@ -3749,7 +3630,7 @@ impl AsRef<str> for ConnectionState {
 
 /// <p>Describes a route analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteAnalysis {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -3829,23 +3710,6 @@ impl RouteAnalysis {
     /// <p>The return path.</p>
     pub fn return_path(&self) -> std::option::Option<&crate::model::RouteAnalysisPath> {
         self.return_path.as_ref()
-    }
-}
-impl std::fmt::Debug for RouteAnalysis {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteAnalysis");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field("route_analysis_id", &self.route_analysis_id);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("include_return_path", &self.include_return_path);
-        formatter.field("use_middleboxes", &self.use_middleboxes);
-        formatter.field("forward_path", &self.forward_path);
-        formatter.field("return_path", &self.return_path);
-        formatter.finish()
     }
 }
 /// See [`RouteAnalysis`](crate::model::RouteAnalysis).
@@ -4031,7 +3895,7 @@ impl RouteAnalysis {
 
 /// <p>Describes a route analysis path.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteAnalysisPath {
     /// <p>The status of the analysis at completion.</p>
     #[doc(hidden)]
@@ -4048,14 +3912,6 @@ impl RouteAnalysisPath {
     /// <p>The route analysis path.</p>
     pub fn path(&self) -> std::option::Option<&[crate::model::PathComponent]> {
         self.path.as_deref()
-    }
-}
-impl std::fmt::Debug for RouteAnalysisPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteAnalysisPath");
-        formatter.field("completion_status", &self.completion_status);
-        formatter.field("path", &self.path);
-        formatter.finish()
     }
 }
 /// See [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
@@ -4118,7 +3974,7 @@ impl RouteAnalysisPath {
 
 /// <p>Describes a path component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathComponent {
     /// <p>The sequence number in the path. The destination is 0.</p>
     #[doc(hidden)]
@@ -4142,15 +3998,6 @@ impl PathComponent {
     /// <p>The destination CIDR block in the route table.</p>
     pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
         self.destination_cidr_block.as_deref()
-    }
-}
-impl std::fmt::Debug for PathComponent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathComponent");
-        formatter.field("sequence", &self.sequence);
-        formatter.field("resource", &self.resource);
-        formatter.field("destination_cidr_block", &self.destination_cidr_block);
-        formatter.finish()
     }
 }
 /// See [`PathComponent`](crate::model::PathComponent).
@@ -4219,7 +4066,7 @@ impl PathComponent {
 
 /// <p>Describes a network resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkResourceSummary {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
@@ -4264,18 +4111,6 @@ impl NetworkResourceSummary {
     /// <p>Indicates whether this is a middlebox appliance.</p>
     pub fn is_middlebox(&self) -> bool {
         self.is_middlebox
-    }
-}
-impl std::fmt::Debug for NetworkResourceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkResourceSummary");
-        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("definition", &self.definition);
-        formatter.field("name_tag", &self.name_tag);
-        formatter.field("is_middlebox", &self.is_middlebox);
-        formatter.finish()
     }
 }
 /// See [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
@@ -4380,7 +4215,7 @@ impl NetworkResourceSummary {
 
 /// <p>Describes the status of an analysis at completion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteAnalysisCompletion {
     /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
     #[doc(hidden)]
@@ -4434,15 +4269,6 @@ impl RouteAnalysisCompletion {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.reason_context.as_ref()
-    }
-}
-impl std::fmt::Debug for RouteAnalysisCompletion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteAnalysisCompletion");
-        formatter.field("result_code", &self.result_code);
-        formatter.field("reason_code", &self.reason_code);
-        formatter.field("reason_context", &self.reason_context);
-        formatter.finish()
     }
 }
 /// See [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
@@ -4827,7 +4653,7 @@ impl AsRef<str> for RouteAnalysisCompletionResultCode {
 
 /// <p>Describes a source or a destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteAnalysisEndpointOptions {
     /// <p>The ARN of the transit gateway attachment.</p>
     #[doc(hidden)]
@@ -4851,18 +4677,6 @@ impl RouteAnalysisEndpointOptions {
     /// <p>The IP address.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
-    }
-}
-impl std::fmt::Debug for RouteAnalysisEndpointOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteAnalysisEndpointOptions");
-        formatter.field(
-            "transit_gateway_attachment_arn",
-            &self.transit_gateway_attachment_arn,
-        );
-        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.finish()
     }
 }
 /// See [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
@@ -5031,7 +4845,7 @@ impl AsRef<str> for RouteAnalysisStatus {
 
 /// <p>Describes a source or a destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteAnalysisEndpointOptionsSpecification {
     /// <p>The ARN of the transit gateway attachment.</p>
     #[doc(hidden)]
@@ -5048,17 +4862,6 @@ impl RouteAnalysisEndpointOptionsSpecification {
     /// <p>The IP address.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
-    }
-}
-impl std::fmt::Debug for RouteAnalysisEndpointOptionsSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteAnalysisEndpointOptionsSpecification");
-        formatter.field(
-            "transit_gateway_attachment_arn",
-            &self.transit_gateway_attachment_arn,
-        );
-        formatter.field("ip_address", &self.ip_address);
-        formatter.finish()
     }
 }
 /// See [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
@@ -5115,7 +4918,7 @@ impl RouteAnalysisEndpointOptionsSpecification {
 
 /// <p>The status of an Amazon Web Services Organization and the accounts within that organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationStatus {
     /// <p>The ID of an Amazon Web Services Organization.</p>
     #[doc(hidden)]
@@ -5146,19 +4949,6 @@ impl OrganizationStatus {
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub fn account_status_list(&self) -> std::option::Option<&[crate::model::AccountStatus]> {
         self.account_status_list.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationStatus");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field(
-            "organization_aws_service_access_status",
-            &self.organization_aws_service_access_status,
-        );
-        formatter.field("slr_deployment_status", &self.slr_deployment_status);
-        formatter.field("account_status_list", &self.account_status_list);
-        formatter.finish()
     }
 }
 /// See [`OrganizationStatus`](crate::model::OrganizationStatus).
@@ -5255,7 +5045,7 @@ impl OrganizationStatus {
 
 /// <p>Describes the current status of an account within an Amazon Web Services Organization, including service-linked roles (SLRs).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountStatus {
     /// <p>The ID of an account within the Amazon Web Services Organization.</p>
     #[doc(hidden)]
@@ -5272,14 +5062,6 @@ impl AccountStatus {
     /// <p>The status of SLR deployment for the account.</p>
     pub fn slr_deployment_status(&self) -> std::option::Option<&str> {
         self.slr_deployment_status.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountStatus");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("slr_deployment_status", &self.slr_deployment_status);
-        formatter.finish()
     }
 }
 /// See [`AccountStatus`](crate::model::AccountStatus).
@@ -5333,7 +5115,7 @@ impl AccountStatus {
 
 /// <p>Describes a core network policy. You can have only one LIVE Core Policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkPolicy {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -5392,20 +5174,6 @@ impl CoreNetworkPolicy {
     /// <p>Describes a core network policy.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkPolicy");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("change_set_state", &self.change_set_state);
-        formatter.field("policy_errors", &self.policy_errors);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
@@ -5553,7 +5321,7 @@ impl CoreNetworkPolicy {
 
 /// <p>Provides details about an error in a core network policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkPolicyError {
     /// <p>The error code associated with a core network policy error.</p>
     #[doc(hidden)]
@@ -5577,15 +5345,6 @@ impl CoreNetworkPolicyError {
     /// <p>The JSON path where the error was discovered in the policy document.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkPolicyError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkPolicyError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.field("path", &self.path);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
@@ -5857,7 +5616,7 @@ impl AsRef<str> for CoreNetworkPolicyAlias {
 
 /// <p>Describes the registration of a transit gateway to a global network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransitGatewayRegistration {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -5883,15 +5642,6 @@ impl TransitGatewayRegistration {
         &self,
     ) -> std::option::Option<&crate::model::TransitGatewayRegistrationStateReason> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for TransitGatewayRegistration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransitGatewayRegistration");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
@@ -5963,7 +5713,7 @@ impl TransitGatewayRegistration {
 
 /// <p>Describes the status of a transit gateway registration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransitGatewayRegistrationStateReason {
     /// <p>The code for the state reason.</p>
     #[doc(hidden)]
@@ -5980,14 +5730,6 @@ impl TransitGatewayRegistrationStateReason {
     /// <p>The message for the state reason.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for TransitGatewayRegistrationStateReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransitGatewayRegistrationStateReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
@@ -6148,7 +5890,7 @@ impl AsRef<str> for TransitGatewayRegistrationState {
 
 /// <p>Describes a peering connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Peering {
     /// <p>The ID of the core network for the peering request.</p>
     #[doc(hidden)]
@@ -6221,22 +5963,6 @@ impl Peering {
     /// <p>The timestamp when the attachment peer was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Peering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Peering");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("core_network_arn", &self.core_network_arn);
-        formatter.field("peering_id", &self.peering_id);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field("peering_type", &self.peering_type);
-        formatter.field("state", &self.state);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`Peering`](crate::model::Peering).
@@ -6595,7 +6321,7 @@ impl AsRef<str> for PeeringType {
 
 /// <p>Returns summary information about a core network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkSummary {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -6647,19 +6373,6 @@ impl CoreNetworkSummary {
     /// <p>The key-value tags associated with a core network summary.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkSummary");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("core_network_arn", &self.core_network_arn);
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field("state", &self.state);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
@@ -6794,7 +6507,7 @@ impl CoreNetworkSummary {
 
 /// <p>Describes a core network policy version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkPolicyVersion {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -6839,18 +6552,6 @@ impl CoreNetworkPolicyVersion {
     /// <p>The status of the policy version change set.</p>
     pub fn change_set_state(&self) -> std::option::Option<&crate::model::ChangeSetState> {
         self.change_set_state.as_ref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkPolicyVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkPolicyVersion");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("change_set_state", &self.change_set_state);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
@@ -6961,7 +6662,7 @@ impl CoreNetworkPolicyVersion {
 
 /// <p>Summary description of a Connect peer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectPeerSummary {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -7013,19 +6714,6 @@ impl ConnectPeerSummary {
     /// <p>The list of key-value tags associated with the Connect peer summary.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectPeerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectPeerSummary");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("connect_attachment_id", &self.connect_attachment_id);
-        formatter.field("connect_peer_id", &self.connect_peer_id);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("connect_peer_state", &self.connect_peer_state);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
@@ -7263,7 +6951,7 @@ impl AsRef<str> for ConnectPeerState {
 
 /// <p>Describes a transit gateway route table attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransitGatewayRouteTableAttachment {
     /// <p>Describes a core network attachment.</p>
     #[doc(hidden)]
@@ -7287,18 +6975,6 @@ impl TransitGatewayRouteTableAttachment {
     /// <p>The ARN of the transit gateway attachment route table.</p>
     pub fn transit_gateway_route_table_arn(&self) -> std::option::Option<&str> {
         self.transit_gateway_route_table_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for TransitGatewayRouteTableAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransitGatewayRouteTableAttachment");
-        formatter.field("attachment", &self.attachment);
-        formatter.field("peering_id", &self.peering_id);
-        formatter.field(
-            "transit_gateway_route_table_arn",
-            &self.transit_gateway_route_table_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
@@ -7370,7 +7046,7 @@ impl TransitGatewayRouteTableAttachment {
 
 /// <p>Describes a transit gateway peering attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransitGatewayPeering {
     /// <p>Describes a transit gateway peer connection.</p>
     #[doc(hidden)]
@@ -7394,18 +7070,6 @@ impl TransitGatewayPeering {
     /// <p>The ID of the transit gateway peering attachment.</p>
     pub fn transit_gateway_peering_attachment_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_peering_attachment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TransitGatewayPeering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransitGatewayPeering");
-        formatter.field("peering", &self.peering);
-        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
-        formatter.field(
-            "transit_gateway_peering_attachment_id",
-            &self.transit_gateway_peering_attachment_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
@@ -7477,7 +7141,7 @@ impl TransitGatewayPeering {
 
 /// <p>Describes a transit gateway Connect peer association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransitGatewayConnectPeerAssociation {
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     #[doc(hidden)]
@@ -7517,20 +7181,6 @@ impl TransitGatewayConnectPeerAssociation {
         &self,
     ) -> std::option::Option<&crate::model::TransitGatewayConnectPeerAssociationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for TransitGatewayConnectPeerAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransitGatewayConnectPeerAssociation");
-        formatter.field(
-            "transit_gateway_connect_peer_arn",
-            &self.transit_gateway_connect_peer_arn,
-        );
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
@@ -7735,7 +7385,7 @@ impl AsRef<str> for TransitGatewayConnectPeerAssociationState {
 
 /// <p>Creates a site-to-site VPN attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SiteToSiteVpnAttachment {
     /// <p>Provides details about a site-to-site VPN attachment.</p>
     #[doc(hidden)]
@@ -7752,14 +7402,6 @@ impl SiteToSiteVpnAttachment {
     /// <p>The ARN of the site-to-site VPN attachment. </p>
     pub fn vpn_connection_arn(&self) -> std::option::Option<&str> {
         self.vpn_connection_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SiteToSiteVpnAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SiteToSiteVpnAttachment");
-        formatter.field("attachment", &self.attachment);
-        formatter.field("vpn_connection_arn", &self.vpn_connection_arn);
-        formatter.finish()
     }
 }
 /// See [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
@@ -7816,7 +7458,7 @@ impl SiteToSiteVpnAttachment {
 
 /// <p>Describes the telemetry information for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkTelemetry {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
@@ -7882,21 +7524,6 @@ impl NetworkTelemetry {
     /// <p>The connection health.</p>
     pub fn health(&self) -> std::option::Option<&crate::model::ConnectionHealth> {
         self.health.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkTelemetry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkTelemetry");
-        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("address", &self.address);
-        formatter.field("health", &self.health);
-        formatter.finish()
     }
 }
 /// See [`NetworkTelemetry`](crate::model::NetworkTelemetry).
@@ -8043,7 +7670,7 @@ impl NetworkTelemetry {
 
 /// <p>Describes connection health.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionHealth {
     /// <p>The connection type.</p>
     #[doc(hidden)]
@@ -8067,15 +7694,6 @@ impl ConnectionHealth {
     /// <p>The time the status was last updated.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectionHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionHealth");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`ConnectionHealth`](crate::model::ConnectionHealth).
@@ -8327,7 +7945,7 @@ impl AsRef<str> for ConnectionType {
 
 /// <p>Describes a network route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkRoute {
     /// <p>A unique identifier for the route, such as a CIDR block.</p>
     #[doc(hidden)]
@@ -8365,17 +7983,6 @@ impl NetworkRoute {
     /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RouteType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkRoute");
-        formatter.field("destination_cidr_block", &self.destination_cidr_block);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("prefix_list_id", &self.prefix_list_id);
-        formatter.field("state", &self.state);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`NetworkRoute`](crate::model::NetworkRoute).
@@ -8658,7 +8265,7 @@ impl AsRef<str> for RouteState {
 
 /// <p>Describes the destination of a network route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkRouteDestination {
     /// <p>The ID of a core network attachment.</p>
     #[doc(hidden)]
@@ -8703,24 +8310,6 @@ impl NetworkRouteDestination {
     /// <p>The ID of the resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkRouteDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkRouteDestination");
-        formatter.field(
-            "core_network_attachment_id",
-            &self.core_network_attachment_id,
-        );
-        formatter.field(
-            "transit_gateway_attachment_id",
-            &self.transit_gateway_attachment_id,
-        );
-        formatter.field("segment_name", &self.segment_name);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
@@ -8924,7 +8513,7 @@ impl AsRef<str> for RouteTableType {
 
 /// <p>Returns details about a core network edge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkSegmentEdgeIdentifier {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -8948,15 +8537,6 @@ impl CoreNetworkSegmentEdgeIdentifier {
     /// <p>The Region where the segment edge is located.</p>
     pub fn edge_location(&self) -> std::option::Option<&str> {
         self.edge_location.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkSegmentEdgeIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkSegmentEdgeIdentifier");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("segment_name", &self.segment_name);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
@@ -9025,7 +8605,7 @@ impl CoreNetworkSegmentEdgeIdentifier {
 
 /// <p>Describes a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteTableIdentifier {
     /// <p>The ARN of the transit gateway route table.</p>
     #[doc(hidden)]
@@ -9045,17 +8625,6 @@ impl RouteTableIdentifier {
         &self,
     ) -> std::option::Option<&crate::model::CoreNetworkSegmentEdgeIdentifier> {
         self.core_network_segment_edge.as_ref()
-    }
-}
-impl std::fmt::Debug for RouteTableIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteTableIdentifier");
-        formatter.field(
-            "transit_gateway_route_table_arn",
-            &self.transit_gateway_route_table_arn,
-        );
-        formatter.field("core_network_segment_edge", &self.core_network_segment_edge);
-        formatter.finish()
     }
 }
 /// See [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
@@ -9119,7 +8688,7 @@ impl RouteTableIdentifier {
 
 /// <p>Describes a network resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkResource {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
@@ -9247,23 +8816,6 @@ impl NetworkResource {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkResource");
-        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("definition", &self.definition);
-        formatter.field("definition_timestamp", &self.definition_timestamp);
-        formatter.field("tags", &self.tags);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
     }
 }
 /// See [`NetworkResource`](crate::model::NetworkResource).
@@ -9504,7 +9056,7 @@ impl NetworkResource {
 
 /// <p>Describes a resource relationship.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Relationship {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -9521,14 +9073,6 @@ impl Relationship {
     /// <p>The ARN of the resource.</p>
     pub fn to(&self) -> std::option::Option<&str> {
         self.to.as_deref()
-    }
-}
-impl std::fmt::Debug for Relationship {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Relationship");
-        formatter.field("from", &self.from);
-        formatter.field("to", &self.to);
-        formatter.finish()
     }
 }
 /// See [`Relationship`](crate::model::Relationship).
@@ -9579,7 +9123,7 @@ impl Relationship {
 
 /// <p>Describes a resource count.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkResourceCount {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -9596,14 +9140,6 @@ impl NetworkResourceCount {
     /// <p>The resource count.</p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
-    }
-}
-impl std::fmt::Debug for NetworkResourceCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkResourceCount");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`NetworkResourceCount`](crate::model::NetworkResourceCount).
@@ -9657,7 +9193,7 @@ impl NetworkResourceCount {
 
 /// <p>Describes the association between a device and a link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinkAssociation {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -9690,16 +9226,6 @@ impl LinkAssociation {
         &self,
     ) -> std::option::Option<&crate::model::LinkAssociationState> {
         self.link_association_state.as_ref()
-    }
-}
-impl std::fmt::Debug for LinkAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinkAssociation");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("link_association_state", &self.link_association_state);
-        formatter.finish()
     }
 }
 /// See [`LinkAssociation`](crate::model::LinkAssociation).
@@ -9882,7 +9408,7 @@ impl AsRef<str> for LinkAssociationState {
 
 /// <p>Describes the association between a customer gateway, a device, and a link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerGatewayAssociation {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     #[doc(hidden)]
@@ -9920,17 +9446,6 @@ impl CustomerGatewayAssociation {
     /// <p>The association state.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::CustomerGatewayAssociationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomerGatewayAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerGatewayAssociation");
-        formatter.field("customer_gateway_arn", &self.customer_gateway_arn);
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
@@ -10128,7 +9643,7 @@ impl AsRef<str> for CustomerGatewayAssociationState {
 
 /// <p>Details describing a core network change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkChange {
     /// <p>The type of change.</p>
     #[doc(hidden)]
@@ -10173,18 +9688,6 @@ impl CoreNetworkChange {
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
     pub fn identifier_path(&self) -> std::option::Option<&str> {
         self.identifier_path.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkChange");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("action", &self.action);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("previous_values", &self.previous_values);
-        formatter.field("new_values", &self.new_values);
-        formatter.field("identifier_path", &self.identifier_path);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkChange`](crate::model::CoreNetworkChange).
@@ -10295,7 +9798,7 @@ impl CoreNetworkChange {
 
 /// <p>Describes a core network change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkChangeValues {
     /// <p>The names of the segments in a core network.</p>
     #[doc(hidden)]
@@ -10347,19 +9850,6 @@ impl CoreNetworkChangeValues {
     /// <p>The shared segments for a core network change value. </p>
     pub fn shared_segments(&self) -> std::option::Option<&[std::string::String]> {
         self.shared_segments.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkChangeValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkChangeValues");
-        formatter.field("segment_name", &self.segment_name);
-        formatter.field("edge_locations", &self.edge_locations);
-        formatter.field("asn", &self.asn);
-        formatter.field("cidr", &self.cidr);
-        formatter.field("destination_identifier", &self.destination_identifier);
-        formatter.field("inside_cidr_blocks", &self.inside_cidr_blocks);
-        formatter.field("shared_segments", &self.shared_segments);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
@@ -10730,7 +10220,7 @@ impl AsRef<str> for ChangeType {
 
 /// <p>Describes a core network change event. This can be a change to a segment, attachment, route, etc.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkChangeEvent {
     /// <p>Describes the type of change event. </p>
     #[doc(hidden)]
@@ -10775,18 +10265,6 @@ impl CoreNetworkChangeEvent {
     /// <p>Details of the change event.</p>
     pub fn values(&self) -> std::option::Option<&crate::model::CoreNetworkChangeEventValues> {
         self.values.as_ref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkChangeEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkChangeEvent");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("action", &self.action);
-        formatter.field("identifier_path", &self.identifier_path);
-        formatter.field("event_time", &self.event_time);
-        formatter.field("status", &self.status);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
@@ -10900,7 +10378,7 @@ impl CoreNetworkChangeEvent {
 
 /// <p>Describes a core network change event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkChangeEventValues {
     /// <p>The edge location for the core network change event.</p>
     #[doc(hidden)]
@@ -10931,16 +10409,6 @@ impl CoreNetworkChangeEventValues {
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreNetworkChangeEventValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkChangeEventValues");
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("segment_name", &self.segment_name);
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("cidr", &self.cidr);
-        formatter.finish()
     }
 }
 /// See [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
@@ -11121,7 +10589,7 @@ impl AsRef<str> for ChangeStatus {
 
 /// <p>Describes a core network Connect peer association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectPeerAssociation {
     /// <p>The ID of the Connect peer.</p>
     #[doc(hidden)]
@@ -11159,17 +10627,6 @@ impl ConnectPeerAssociation {
     /// <p>The state of the Connect peer association.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ConnectPeerAssociationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectPeerAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectPeerAssociation");
-        formatter.field("connect_peer_id", &self.connect_peer_id);
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
@@ -11367,7 +10824,7 @@ impl AsRef<str> for ConnectPeerAssociationState {
 
 /// <p>Describes a core network Connect peer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectPeer {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -11426,20 +10883,6 @@ impl ConnectPeer {
     /// <p>The list of key-value tags associated with the Connect peer.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectPeer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectPeer");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("connect_attachment_id", &self.connect_attachment_id);
-        formatter.field("connect_peer_id", &self.connect_peer_id);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("state", &self.state);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ConnectPeer`](crate::model::ConnectPeer).
@@ -11592,7 +11035,7 @@ impl ConnectPeer {
 
 /// <p>Describes a core network Connect peer configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectPeerConfiguration {
     /// <p>The IP address of a core network.</p>
     #[doc(hidden)]
@@ -11633,17 +11076,6 @@ impl ConnectPeerConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ConnectPeerBgpConfiguration]> {
         self.bgp_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectPeerConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectPeerConfiguration");
-        formatter.field("core_network_address", &self.core_network_address);
-        formatter.field("peer_address", &self.peer_address);
-        formatter.field("inside_cidr_blocks", &self.inside_cidr_blocks);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("bgp_configurations", &self.bgp_configurations);
-        formatter.finish()
     }
 }
 /// See [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
@@ -11758,7 +11190,7 @@ impl ConnectPeerConfiguration {
 
 /// <p>Describes a core network BGP configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectPeerBgpConfiguration {
     /// <p>The ASN of the Coret Network.</p>
     #[doc(hidden)]
@@ -11789,16 +11221,6 @@ impl ConnectPeerBgpConfiguration {
     /// <p>The address of a core network Connect peer.</p>
     pub fn peer_address(&self) -> std::option::Option<&str> {
         self.peer_address.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectPeerBgpConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectPeerBgpConfiguration");
-        formatter.field("core_network_asn", &self.core_network_asn);
-        formatter.field("peer_asn", &self.peer_asn);
-        formatter.field("core_network_address", &self.core_network_address);
-        formatter.field("peer_address", &self.peer_address);
-        formatter.finish()
     }
 }
 /// See [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
@@ -11961,7 +11383,7 @@ impl AsRef<str> for TunnelProtocol {
 
 /// <p>Describes a core network Connect attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectAttachment {
     /// <p>The attachment details.</p>
     #[doc(hidden)]
@@ -11985,15 +11407,6 @@ impl ConnectAttachment {
     /// <p>Options for connecting an attachment.</p>
     pub fn options(&self) -> std::option::Option<&crate::model::ConnectAttachmentOptions> {
         self.options.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectAttachment");
-        formatter.field("attachment", &self.attachment);
-        formatter.field("transport_attachment_id", &self.transport_attachment_id);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`ConnectAttachment`](crate::model::ConnectAttachment).
@@ -12065,7 +11478,7 @@ impl ConnectAttachment {
 
 /// <p>Describes a core network Connect attachment options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectAttachmentOptions {
     /// <p>The protocol used for the attachment connection.</p>
     #[doc(hidden)]
@@ -12075,13 +11488,6 @@ impl ConnectAttachmentOptions {
     /// <p>The protocol used for the attachment connection.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::TunnelProtocol> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectAttachmentOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectAttachmentOptions");
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
@@ -12123,7 +11529,7 @@ impl ConnectAttachmentOptions {
 
 /// <p>Describes the BGP options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BgpOptions {
     /// <p>The Peer ASN of the BGP.</p>
     #[doc(hidden)]
@@ -12133,13 +11539,6 @@ impl BgpOptions {
     /// <p>The Peer ASN of the BGP.</p>
     pub fn peer_asn(&self) -> std::option::Option<i64> {
         self.peer_asn
-    }
-}
-impl std::fmt::Debug for BgpOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BgpOptions");
-        formatter.field("peer_asn", &self.peer_asn);
-        formatter.finish()
     }
 }
 /// See [`BgpOptions`](crate::model::BgpOptions).

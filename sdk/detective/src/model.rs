@@ -193,7 +193,7 @@ impl AsRef<str> for DatasourcePackage {
 
 /// <p>Information about the Detective administrator account for an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Administrator {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
     #[doc(hidden)]
@@ -217,15 +217,6 @@ impl Administrator {
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn delegation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delegation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Administrator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Administrator");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("graph_arn", &self.graph_arn);
-        formatter.field("delegation_time", &self.delegation_time);
-        formatter.finish()
     }
 }
 /// See [`Administrator`](crate::model::Administrator).
@@ -291,7 +282,7 @@ impl Administrator {
 
 /// <p>Details about a member account in a behavior graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberDetail {
     /// <p>The Amazon Web Services account identifier for the member account.</p>
     #[doc(hidden)]
@@ -484,40 +475,6 @@ impl MemberDetail {
         >,
     > {
         self.datasource_package_ingest_states.as_ref()
-    }
-}
-impl std::fmt::Debug for MemberDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberDetail");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("graph_arn", &self.graph_arn);
-        formatter.field("master_id", &self.master_id);
-        formatter.field("administrator_id", &self.administrator_id);
-        formatter.field("status", &self.status);
-        formatter.field("disabled_reason", &self.disabled_reason);
-        formatter.field("invited_time", &self.invited_time);
-        formatter.field("updated_time", &self.updated_time);
-        formatter.field("volume_usage_in_bytes", &self.volume_usage_in_bytes);
-        formatter.field("volume_usage_updated_time", &self.volume_usage_updated_time);
-        formatter.field(
-            "percent_of_graph_utilization",
-            &self.percent_of_graph_utilization,
-        );
-        formatter.field(
-            "percent_of_graph_utilization_updated_time",
-            &self.percent_of_graph_utilization_updated_time,
-        );
-        formatter.field("invitation_type", &self.invitation_type);
-        formatter.field(
-            "volume_usage_by_datasource_package",
-            &self.volume_usage_by_datasource_package,
-        );
-        formatter.field(
-            "datasource_package_ingest_states",
-            &self.datasource_package_ingest_states,
-        );
-        formatter.finish()
     }
 }
 /// See [`MemberDetail`](crate::model::MemberDetail).
@@ -971,7 +928,7 @@ impl AsRef<str> for DatasourcePackageIngestState {
 
 /// <p>Information on the usage of a data source package in the behavior graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasourcePackageUsageInfo {
     /// <p>Total volume of data in bytes per day ingested for a given data source package.</p>
     #[doc(hidden)]
@@ -988,14 +945,6 @@ impl DatasourcePackageUsageInfo {
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn volume_usage_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.volume_usage_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasourcePackageUsageInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasourcePackageUsageInfo");
-        formatter.field("volume_usage_in_bytes", &self.volume_usage_in_bytes);
-        formatter.field("volume_usage_update_time", &self.volume_usage_update_time);
-        formatter.finish()
     }
 }
 /// See [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
@@ -1342,7 +1291,7 @@ impl AsRef<str> for MemberStatus {
 
 /// <p>A behavior graph in Detective.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Graph {
     /// <p>The ARN of the behavior graph.</p>
     #[doc(hidden)]
@@ -1359,14 +1308,6 @@ impl Graph {
     /// <p>The date and time that the behavior graph was created. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Graph {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Graph");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`Graph`](crate::model::Graph).
@@ -1420,7 +1361,7 @@ impl Graph {
 
 /// <p>Details about the data source packages ingested by your behavior graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasourcePackageIngestDetail {
     /// <p>Details on which data source packages are ingested for a member account.</p>
     #[doc(hidden)]
@@ -1452,17 +1393,6 @@ impl DatasourcePackageIngestDetail {
         >,
     > {
         self.last_ingest_state_change.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasourcePackageIngestDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasourcePackageIngestDetail");
-        formatter.field(
-            "datasource_package_ingest_state",
-            &self.datasource_package_ingest_state,
-        );
-        formatter.field("last_ingest_state_change", &self.last_ingest_state_change);
-        formatter.finish()
     }
 }
 /// See [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
@@ -1543,7 +1473,7 @@ impl DatasourcePackageIngestDetail {
 
 /// <p>Details on when data collection began for a source package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampForCollection {
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[doc(hidden)]
@@ -1553,13 +1483,6 @@ impl TimestampForCollection {
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for TimestampForCollection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampForCollection");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`TimestampForCollection`](crate::model::TimestampForCollection).
@@ -1601,7 +1524,7 @@ impl TimestampForCollection {
 
 /// <p>A member account that was included in a request but for which the request could not be processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedAccount {
     /// <p>The Amazon Web Services account identifier of the member account that was not processed.</p>
     #[doc(hidden)]
@@ -1618,14 +1541,6 @@ impl UnprocessedAccount {
     /// <p>The reason that the member account request could not be processed.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedAccount");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedAccount`](crate::model::UnprocessedAccount).
@@ -1676,7 +1591,7 @@ impl UnprocessedAccount {
 
 /// <p>An Amazon Web Services account that is the administrator account of or a member of a behavior graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Account {
     /// <p>The account identifier of the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -1693,14 +1608,6 @@ impl Account {
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
-    }
-}
-impl std::fmt::Debug for Account {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Account");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
     }
 }
 /// See [`Account`](crate::model::Account).
@@ -1754,7 +1661,7 @@ impl Account {
 
 /// <p>Behavior graphs that could not be processed in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedGraph {
     /// <p>The ARN of the organization behavior graph.</p>
     #[doc(hidden)]
@@ -1771,14 +1678,6 @@ impl UnprocessedGraph {
     /// <p>The reason data source package information could not be processed for a behavior graph.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedGraph {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedGraph");
-        formatter.field("graph_arn", &self.graph_arn);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedGraph`](crate::model::UnprocessedGraph).
@@ -1829,7 +1728,7 @@ impl UnprocessedGraph {
 
 /// <p>Details on data source packages for members of the behavior graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MembershipDatasources {
     /// <p>The account identifier of the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -1871,18 +1770,6 @@ impl MembershipDatasources {
         >,
     > {
         self.datasource_package_ingest_history.as_ref()
-    }
-}
-impl std::fmt::Debug for MembershipDatasources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MembershipDatasources");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("graph_arn", &self.graph_arn);
-        formatter.field(
-            "datasource_package_ingest_history",
-            &self.datasource_package_ingest_history,
-        );
-        formatter.finish()
     }
 }
 /// See [`MembershipDatasources`](crate::model::MembershipDatasources).

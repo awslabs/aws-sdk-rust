@@ -93,7 +93,7 @@ impl AsRef<str> for PermissionsMode {
 /// <p>Information about the encryption of data at rest in an Amazon QLDB ledger. This includes the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in the case of an error).</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LedgerEncryptionDescription {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     #[doc(hidden)]
@@ -131,18 +131,6 @@ impl LedgerEncryptionDescription {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inaccessible_kms_key_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LedgerEncryptionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LedgerEncryptionDescription");
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("encryption_status", &self.encryption_status);
-        formatter.field(
-            "inaccessible_kms_key_date_time",
-            &self.inaccessible_kms_key_date_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
@@ -418,7 +406,7 @@ impl AsRef<str> for LedgerState {
 
 /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
     #[doc(hidden)]
@@ -437,14 +425,6 @@ impl KinesisConfiguration {
     /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn aggregation_enabled(&self) -> std::option::Option<bool> {
         self.aggregation_enabled
-    }
-}
-impl std::fmt::Debug for KinesisConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisConfiguration");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("aggregation_enabled", &self.aggregation_enabled);
-        formatter.finish()
     }
 }
 /// See [`KinesisConfiguration`](crate::model::KinesisConfiguration).
@@ -497,7 +477,7 @@ impl KinesisConfiguration {
 
 /// <p>Information about a ledger, including its name, state, and when it was created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LedgerSummary {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -521,15 +501,6 @@ impl LedgerSummary {
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LedgerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LedgerSummary");
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.finish()
     }
 }
 /// See [`LedgerSummary`](crate::model::LedgerSummary).
@@ -595,7 +566,7 @@ impl LedgerSummary {
 
 /// <p>Information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -671,21 +642,6 @@ impl JournalS3ExportDescription {
     /// <p>The output format of the exported journal data.</p>
     pub fn output_format(&self) -> std::option::Option<&crate::model::OutputFormat> {
         self.output_format.as_ref()
-    }
-}
-impl std::fmt::Debug for JournalS3ExportDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JournalS3ExportDescription");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("export_id", &self.export_id);
-        formatter.field("export_creation_time", &self.export_creation_time);
-        formatter.field("status", &self.status);
-        formatter.field("inclusive_start_time", &self.inclusive_start_time);
-        formatter.field("exclusive_end_time", &self.exclusive_end_time);
-        formatter.field("s3_export_configuration", &self.s3_export_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("output_format", &self.output_format);
-        formatter.finish()
     }
 }
 /// See [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
@@ -945,7 +901,7 @@ impl AsRef<str> for OutputFormat {
 
 /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ExportConfiguration {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
     /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
@@ -987,15 +943,6 @@ impl S3ExportConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::S3EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for S3ExportConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ExportConfiguration");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
     }
 }
 /// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
@@ -1081,7 +1028,7 @@ impl S3ExportConfiguration {
 
 /// <p>The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3EncryptionConfiguration {
     /// <p>The Amazon S3 object encryption type.</p>
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
@@ -1106,14 +1053,6 @@ impl S3EncryptionConfiguration {
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3EncryptionConfiguration");
-        formatter.field("object_encryption_type", &self.object_encryption_type);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
@@ -1369,7 +1308,7 @@ impl AsRef<str> for ExportStatus {
 
 /// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of the original stream creation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JournalKinesisStreamDescription {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -1451,23 +1390,6 @@ impl JournalKinesisStreamDescription {
     /// <p>The user-defined name of the QLDB journal stream.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for JournalKinesisStreamDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JournalKinesisStreamDescription");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("inclusive_start_time", &self.inclusive_start_time);
-        formatter.field("exclusive_end_time", &self.exclusive_end_time);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("kinesis_configuration", &self.kinesis_configuration);
-        formatter.field("error_cause", &self.error_cause);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.finish()
     }
 }
 /// See [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
@@ -1862,7 +1784,7 @@ impl std::fmt::Debug for ValueHolder {
 pub mod value_holder {
 
     /// A builder for [`ValueHolder`](crate::model::ValueHolder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) ion_text: std::option::Option<std::string::String>,
     }
@@ -1882,6 +1804,13 @@ pub mod value_holder {
             crate::model::ValueHolder {
                 ion_text: self.ion_text,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("ion_text", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }

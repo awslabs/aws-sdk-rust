@@ -13280,7 +13280,7 @@ impl UpdateVpceConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
     #[doc(hidden)]
@@ -13320,24 +13320,10 @@ impl UpdateVpceConfigurationInput {
         self.vpce_configuration_description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVpceConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVpceConfigurationInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("vpce_configuration_name", &self.vpce_configuration_name);
-        formatter.field("vpce_service_name", &self.vpce_service_name);
-        formatter.field("service_dns_name", &self.service_dns_name);
-        formatter.field(
-            "vpce_configuration_description",
-            &self.vpce_configuration_description,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUploadInput {
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
     #[doc(hidden)]
@@ -13370,20 +13356,10 @@ impl UpdateUploadInput {
         self.edit_content
     }
 }
-impl std::fmt::Debug for UpdateUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUploadInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("edit_content", &self.edit_content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTestGridProjectInput {
     /// <p>ARN of the project to update.</p>
     #[doc(hidden)]
@@ -13416,20 +13392,10 @@ impl UpdateTestGridProjectInput {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTestGridProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTestGridProjectInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the update project operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
     #[doc(hidden)]
@@ -13462,23 +13428,10 @@ impl UpdateProjectInput {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "default_job_timeout_minutes",
-            &self.default_job_timeout_minutes,
-        );
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNetworkProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
     #[doc(hidden)]
@@ -13567,28 +13520,10 @@ impl UpdateNetworkProfileInput {
         self.downlink_loss_percent
     }
 }
-impl std::fmt::Debug for UpdateNetworkProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNetworkProfileInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("uplink_bandwidth_bits", &self.uplink_bandwidth_bits);
-        formatter.field("downlink_bandwidth_bits", &self.downlink_bandwidth_bits);
-        formatter.field("uplink_delay_ms", &self.uplink_delay_ms);
-        formatter.field("downlink_delay_ms", &self.downlink_delay_ms);
-        formatter.field("uplink_jitter_ms", &self.uplink_jitter_ms);
-        formatter.field("downlink_jitter_ms", &self.downlink_jitter_ms);
-        formatter.field("uplink_loss_percent", &self.uplink_loss_percent);
-        formatter.field("downlink_loss_percent", &self.downlink_loss_percent);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     #[doc(hidden)]
@@ -13637,25 +13572,10 @@ impl UpdateInstanceProfileInput {
         self.reboot_after_use
     }
 }
-impl std::fmt::Debug for UpdateInstanceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInstanceProfileInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("package_cleanup", &self.package_cleanup);
-        formatter.field(
-            "exclude_app_packages_from_cleanup",
-            &self.exclude_app_packages_from_cleanup,
-        );
-        formatter.field("reboot_after_use", &self.reboot_after_use);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the update device pool operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDevicePoolInput {
     /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
     #[doc(hidden)]
@@ -13708,22 +13628,10 @@ impl UpdateDevicePoolInput {
         self.clear_max_devices
     }
 }
-impl std::fmt::Debug for UpdateDevicePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDevicePoolInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.field("max_devices", &self.max_devices);
-        formatter.field("clear_max_devices", &self.clear_max_devices);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeviceInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
     #[doc(hidden)]
@@ -13749,19 +13657,10 @@ impl UpdateDeviceInstanceInput {
         self.labels.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDeviceInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeviceInstanceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("profile_arn", &self.profile_arn);
-        formatter.field("labels", &self.labels);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     #[doc(hidden)]
@@ -13780,18 +13679,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     #[doc(hidden)]
@@ -13810,18 +13701,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to stop a specific run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopRunInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
     #[doc(hidden)]
@@ -13833,17 +13716,10 @@ impl StopRunInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopRunInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to stop the remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
     #[doc(hidden)]
@@ -13855,17 +13731,10 @@ impl StopRemoteAccessSessionInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopRemoteAccessSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopRemoteAccessSessionInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopJobInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
     #[doc(hidden)]
@@ -13877,17 +13746,10 @@ impl StopJobInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopJobInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the schedule run operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleRunInput {
     /// <p>The ARN of the project for the run to be scheduled.</p>
     #[doc(hidden)]
@@ -13955,27 +13817,10 @@ impl ScheduleRunInput {
         self.execution_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ScheduleRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleRunInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("app_arn", &self.app_arn);
-        formatter.field("device_pool_arn", &self.device_pool_arn);
-        formatter.field(
-            "device_selection_configuration",
-            &self.device_selection_configuration,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("test", &self.test);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("execution_configuration", &self.execution_configuration);
-        formatter.finish()
-    }
-}
 
 /// <p>A request that represents an offering renewal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenewOfferingInput {
     /// <p>The ID of a request to renew an offering.</p>
     #[doc(hidden)]
@@ -13994,18 +13839,10 @@ impl RenewOfferingInput {
         self.quantity
     }
 }
-impl std::fmt::Debug for RenewOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenewOfferingInput");
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("quantity", &self.quantity);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request for a purchase offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseOfferingInput {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
@@ -14031,19 +13868,10 @@ impl PurchaseOfferingInput {
         self.offering_promotion_id.as_deref()
     }
 }
-impl std::fmt::Debug for PurchaseOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseOfferingInput");
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("offering_promotion_id", &self.offering_promotion_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVpceConfigurationsInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     #[doc(hidden)]
@@ -14062,18 +13890,10 @@ impl ListVpceConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVpceConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVpceConfigurationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list uploads operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUploadsInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
     #[doc(hidden)]
@@ -14169,19 +13989,10 @@ impl ListUploadsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUploadsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUploadsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list unique problems operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUniqueProblemsInput {
     /// <p>The unique problems' ARNs.</p>
     #[doc(hidden)]
@@ -14200,18 +14011,10 @@ impl ListUniqueProblemsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUniqueProblemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUniqueProblemsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list tests operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTestsInput {
     /// <p>The test suite's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -14230,18 +14033,10 @@ impl ListTestsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTestsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTestGridSessionsInput {
     /// <p>ARN of a <code>TestGridProject</code>.</p>
     #[doc(hidden)]
@@ -14302,24 +14097,10 @@ impl ListTestGridSessionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTestGridSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTestGridSessionsInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time_after", &self.creation_time_after);
-        formatter.field("creation_time_before", &self.creation_time_before);
-        formatter.field("end_time_after", &self.end_time_after);
-        formatter.field("end_time_before", &self.end_time_before);
-        formatter.field("max_result", &self.max_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTestGridSessionArtifactsInput {
     /// <p>The ARN of a <code>TestGridSession</code>. </p>
     #[doc(hidden)]
@@ -14352,20 +14133,10 @@ impl ListTestGridSessionArtifactsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTestGridSessionArtifactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTestGridSessionArtifactsInput");
-        formatter.field("session_arn", &self.session_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("max_result", &self.max_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTestGridSessionActionsInput {
     /// <p>The ARN of the session to retrieve.</p>
     #[doc(hidden)]
@@ -14391,19 +14162,10 @@ impl ListTestGridSessionActionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTestGridSessionActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTestGridSessionActionsInput");
-        formatter.field("session_arn", &self.session_arn);
-        formatter.field("max_result", &self.max_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTestGridProjectsInput {
     /// <p>Return no more than this number of results.</p>
     #[doc(hidden)]
@@ -14422,18 +14184,10 @@ impl ListTestGridProjectsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTestGridProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTestGridProjectsInput");
-        formatter.field("max_result", &self.max_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     #[doc(hidden)]
@@ -14445,17 +14199,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list suites operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSuitesInput {
     /// <p>The job's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -14474,18 +14221,10 @@ impl ListSuitesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSuitesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSuitesInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list samples operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSamplesInput {
     /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
     #[doc(hidden)]
@@ -14504,18 +14243,10 @@ impl ListSamplesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSamplesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSamplesInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list runs operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRunsInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
     #[doc(hidden)]
@@ -14534,18 +14265,10 @@ impl ListRunsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRunsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to return information about the remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRemoteAccessSessionsInput {
     /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
     #[doc(hidden)]
@@ -14564,18 +14287,10 @@ impl ListRemoteAccessSessionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRemoteAccessSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRemoteAccessSessionsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list projects operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
     #[doc(hidden)]
@@ -14594,18 +14309,10 @@ impl ListProjectsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to list the offering transaction history.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOfferingTransactionsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
@@ -14617,17 +14324,10 @@ impl ListOfferingTransactionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOfferingTransactionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOfferingTransactionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to list all offerings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOfferingsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
@@ -14639,17 +14339,10 @@ impl ListOfferingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOfferingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOfferingsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOfferingPromotionsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
@@ -14661,17 +14354,10 @@ impl ListOfferingPromotionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOfferingPromotionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOfferingPromotionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworkProfilesInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
     #[doc(hidden)]
@@ -14697,19 +14383,10 @@ impl ListNetworkProfilesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNetworkProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworkProfilesInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list jobs operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The run's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -14728,18 +14405,10 @@ impl ListJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceProfilesInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     #[doc(hidden)]
@@ -14758,18 +14427,10 @@ impl ListInstanceProfilesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInstanceProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceProfilesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the result of a list devices request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
@@ -14855,19 +14516,10 @@ impl ListDevicesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDevicesInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the result of a list device pools request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDevicePoolsInput {
     /// <p>The project ARN.</p>
     #[doc(hidden)]
@@ -14903,19 +14555,10 @@ impl ListDevicePoolsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDevicePoolsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDevicePoolsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeviceInstancesInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     #[doc(hidden)]
@@ -14934,18 +14577,10 @@ impl ListDeviceInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeviceInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeviceInstancesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the list artifacts operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListArtifactsInput {
     /// <p>The run, job, suite, or test ARN.</p>
     #[doc(hidden)]
@@ -14983,19 +14618,10 @@ impl ListArtifactsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListArtifactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListArtifactsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstallToRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
     #[doc(hidden)]
@@ -15014,18 +14640,10 @@ impl InstallToRemoteAccessSessionInput {
         self.app_arn.as_deref()
     }
 }
-impl std::fmt::Debug for InstallToRemoteAccessSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstallToRemoteAccessSessionInput");
-        formatter.field("remote_access_session_arn", &self.remote_access_session_arn);
-        formatter.field("app_arn", &self.app_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
     #[doc(hidden)]
@@ -15037,17 +14655,10 @@ impl GetVpceConfigurationInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetVpceConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpceConfigurationInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get upload operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUploadInput {
     /// <p>The upload's ARN.</p>
     #[doc(hidden)]
@@ -15059,17 +14670,10 @@ impl GetUploadInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUploadInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTestGridSessionInput {
     /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
     #[doc(hidden)]
@@ -15095,19 +14699,10 @@ impl GetTestGridSessionInput {
         self.session_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetTestGridSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTestGridSessionInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("session_arn", &self.session_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTestGridProjectInput {
     /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     #[doc(hidden)]
@@ -15119,17 +14714,10 @@ impl GetTestGridProjectInput {
         self.project_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetTestGridProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTestGridProjectInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get test operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTestInput {
     /// <p>The test's ARN.</p>
     #[doc(hidden)]
@@ -15141,17 +14729,10 @@ impl GetTestInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetTestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTestInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get suite operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSuiteInput {
     /// <p>The suite's ARN.</p>
     #[doc(hidden)]
@@ -15163,17 +14744,10 @@ impl GetSuiteInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetSuiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSuiteInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get run operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRunInput {
     /// <p>The run's ARN.</p>
     #[doc(hidden)]
@@ -15185,17 +14759,10 @@ impl GetRunInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRunInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to get information about the specified remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
     #[doc(hidden)]
@@ -15207,17 +14774,10 @@ impl GetRemoteAccessSessionInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetRemoteAccessSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRemoteAccessSessionInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get project operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProjectInput {
     /// <p>The project's ARN.</p>
     #[doc(hidden)]
@@ -15229,17 +14789,10 @@ impl GetProjectInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProjectInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to retrieve the offering status for the specified customer or account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOfferingStatusInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
@@ -15251,17 +14804,10 @@ impl GetOfferingStatusInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetOfferingStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOfferingStatusInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkProfileInput {
     /// <p>The ARN of the network profile to return information about.</p>
     #[doc(hidden)]
@@ -15273,17 +14819,10 @@ impl GetNetworkProfileInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkProfileInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get job operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobInput {
     /// <p>The job's ARN.</p>
     #[doc(hidden)]
@@ -15295,17 +14834,10 @@ impl GetJobInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
     #[doc(hidden)]
@@ -15317,17 +14849,10 @@ impl GetInstanceProfileInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetInstanceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInstanceProfileInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get device pool compatibility operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityInput {
     /// <p>The device pool's ARN.</p>
     #[doc(hidden)]
@@ -15409,21 +14934,10 @@ impl GetDevicePoolCompatibilityInput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for GetDevicePoolCompatibilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDevicePoolCompatibilityInput");
-        formatter.field("device_pool_arn", &self.device_pool_arn);
-        formatter.field("app_arn", &self.app_arn);
-        formatter.field("test_type", &self.test_type);
-        formatter.field("test", &self.test);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get device pool operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDevicePoolInput {
     /// <p>The device pool's ARN.</p>
     #[doc(hidden)]
@@ -15435,17 +14949,10 @@ impl GetDevicePoolInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDevicePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDevicePoolInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
     #[doc(hidden)]
@@ -15457,17 +14964,10 @@ impl GetDeviceInstanceInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceInstanceInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the get device request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceInput {
     /// <p>The device type's ARN.</p>
     #[doc(hidden)]
@@ -15479,28 +14979,15 @@ impl GetDeviceInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request sent to retrieve the account settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountSettingsInput {}
-impl std::fmt::Debug for GetAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
     #[doc(hidden)]
@@ -15512,17 +14999,10 @@ impl DeleteVpceConfigurationInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVpceConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpceConfigurationInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the delete upload operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUploadInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
     #[doc(hidden)]
@@ -15534,17 +15014,10 @@ impl DeleteUploadInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUploadInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTestGridProjectInput {
     /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     #[doc(hidden)]
@@ -15556,17 +15029,10 @@ impl DeleteTestGridProjectInput {
         self.project_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTestGridProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTestGridProjectInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the delete run operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRunInput {
     /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
     #[doc(hidden)]
@@ -15578,17 +15044,10 @@ impl DeleteRunInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRunInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to delete the specified remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     #[doc(hidden)]
@@ -15600,17 +15059,10 @@ impl DeleteRemoteAccessSessionInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRemoteAccessSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRemoteAccessSessionInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the delete project operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
     #[doc(hidden)]
@@ -15622,17 +15074,10 @@ impl DeleteProjectInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNetworkProfileInput {
     /// <p>The ARN of the network profile to delete.</p>
     #[doc(hidden)]
@@ -15644,17 +15089,10 @@ impl DeleteNetworkProfileInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNetworkProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNetworkProfileInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
     #[doc(hidden)]
@@ -15666,17 +15104,10 @@ impl DeleteInstanceProfileInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInstanceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInstanceProfileInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the delete device pool operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDevicePoolInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
     #[doc(hidden)]
@@ -15688,17 +15119,10 @@ impl DeleteDevicePoolInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDevicePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDevicePoolInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpceConfigurationInput {
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
     #[doc(hidden)]
@@ -15731,23 +15155,10 @@ impl CreateVpceConfigurationInput {
         self.vpce_configuration_description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVpceConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpceConfigurationInput");
-        formatter.field("vpce_configuration_name", &self.vpce_configuration_name);
-        formatter.field("vpce_service_name", &self.vpce_service_name);
-        formatter.field("service_dns_name", &self.service_dns_name);
-        formatter.field(
-            "vpce_configuration_description",
-            &self.vpce_configuration_description,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the create upload operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUploadInput {
     /// <p>The ARN of the project for the upload.</p>
     #[doc(hidden)]
@@ -15852,20 +15263,10 @@ impl CreateUploadInput {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUploadInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTestGridUrlInput {
     /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
     #[doc(hidden)]
@@ -15884,18 +15285,10 @@ impl CreateTestGridUrlInput {
         self.expires_in_seconds
     }
 }
-impl std::fmt::Debug for CreateTestGridUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTestGridUrlInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("expires_in_seconds", &self.expires_in_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTestGridProjectInput {
     /// <p>Human-readable name of the Selenium testing project.</p>
     #[doc(hidden)]
@@ -15921,19 +15314,10 @@ impl CreateTestGridProjectInput {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTestGridProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTestGridProjectInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates and submits a request to start a remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
     #[doc(hidden)]
@@ -16042,28 +15426,10 @@ impl CreateRemoteAccessSessionInput {
         self.skip_app_resign
     }
 }
-impl std::fmt::Debug for CreateRemoteAccessSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRemoteAccessSessionInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("device_arn", &self.device_arn);
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.field("remote_debug_enabled", &self.remote_debug_enabled);
-        formatter.field("remote_record_enabled", &self.remote_record_enabled);
-        formatter.field("remote_record_app_arn", &self.remote_record_app_arn);
-        formatter.field("name", &self.name);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("interaction_mode", &self.interaction_mode);
-        formatter.field("skip_app_resign", &self.skip_app_resign);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the create project operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The project's name.</p>
     #[doc(hidden)]
@@ -16089,22 +15455,10 @@ impl CreateProjectInput {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "default_job_timeout_minutes",
-            &self.default_job_timeout_minutes,
-        );
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNetworkProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
     #[doc(hidden)]
@@ -16193,28 +15547,10 @@ impl CreateNetworkProfileInput {
         self.downlink_loss_percent
     }
 }
-impl std::fmt::Debug for CreateNetworkProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNetworkProfileInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("uplink_bandwidth_bits", &self.uplink_bandwidth_bits);
-        formatter.field("downlink_bandwidth_bits", &self.downlink_bandwidth_bits);
-        formatter.field("uplink_delay_ms", &self.uplink_delay_ms);
-        formatter.field("downlink_delay_ms", &self.downlink_delay_ms);
-        formatter.field("uplink_jitter_ms", &self.uplink_jitter_ms);
-        formatter.field("downlink_jitter_ms", &self.downlink_jitter_ms);
-        formatter.field("uplink_loss_percent", &self.uplink_loss_percent);
-        formatter.field("downlink_loss_percent", &self.downlink_loss_percent);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInstanceProfileInput {
     /// <p>The name of your instance profile.</p>
     #[doc(hidden)]
@@ -16256,24 +15592,10 @@ impl CreateInstanceProfileInput {
         self.reboot_after_use
     }
 }
-impl std::fmt::Debug for CreateInstanceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInstanceProfileInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("package_cleanup", &self.package_cleanup);
-        formatter.field(
-            "exclude_app_packages_from_cleanup",
-            &self.exclude_app_packages_from_cleanup,
-        );
-        formatter.field("reboot_after_use", &self.reboot_after_use);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to the create device pool operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDevicePoolInput {
     /// <p>The ARN of the project for the device pool.</p>
     #[doc(hidden)]
@@ -16313,16 +15635,5 @@ impl CreateDevicePoolInput {
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub fn max_devices(&self) -> std::option::Option<i32> {
         self.max_devices
-    }
-}
-impl std::fmt::Debug for CreateDevicePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDevicePoolInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.field("max_devices", &self.max_devices);
-        formatter.finish()
     }
 }

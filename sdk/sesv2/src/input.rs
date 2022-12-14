@@ -8995,7 +8995,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
 pub mod put_account_details_input {
 
     /// A builder for [`PutAccountDetailsInput`](crate::input::PutAccountDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) mail_type: std::option::Option<crate::model::MailType>,
         pub(crate) website_url: std::option::Option<std::string::String>,
@@ -9103,6 +9103,21 @@ pub mod put_account_details_input {
                 additional_contact_email_addresses: self.additional_contact_email_addresses,
                 production_access_enabled: self.production_access_enabled,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("mail_type", &self.mail_type);
+            formatter.field("website_url", &"*** Sensitive Data Redacted ***");
+            formatter.field("contact_language", &self.contact_language);
+            formatter.field("use_case_description", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "additional_contact_email_addresses",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("production_access_enabled", &self.production_access_enabled);
+            formatter.finish()
         }
     }
 }
@@ -14754,7 +14769,7 @@ impl UpdateEmailTemplateInput {
 
 /// <p>Represents a request to update an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEmailTemplateInput {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
@@ -14773,18 +14788,10 @@ impl UpdateEmailTemplateInput {
         self.template_content.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_content", &self.template_content);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEmailIdentityPolicyInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
@@ -14814,19 +14821,10 @@ impl UpdateEmailIdentityPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEmailIdentityPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEmailIdentityPolicyInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to update an existing custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to update.</p>
     #[doc(hidden)]
@@ -14873,22 +14871,10 @@ impl UpdateCustomVerificationEmailTemplateInput {
         self.failure_redirection_url.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCustomVerificationEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomVerificationEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field("template_subject", &self.template_subject);
-        formatter.field("template_content", &self.template_content);
-        formatter.field("success_redirection_url", &self.success_redirection_url);
-        formatter.field("failure_redirection_url", &self.failure_redirection_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactListInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
@@ -14914,19 +14900,10 @@ impl UpdateContactListInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateContactListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactListInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.field("topics", &self.topics);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
@@ -14966,21 +14943,10 @@ impl UpdateContactInput {
         self.attributes_data.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("topic_preferences", &self.topic_preferences);
-        formatter.field("unsubscribe_all", &self.unsubscribe_all);
-        formatter.field("attributes_data", &self.attributes_data);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change the settings for an event destination for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination to modify.</p>
     #[doc(hidden)]
@@ -15008,19 +14974,10 @@ impl UpdateConfigurationSetEventDestinationInput {
         self.event_destination.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("event_destination", &self.event_destination);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
     #[doc(hidden)]
@@ -15041,18 +14998,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>&gt;Represents a request to create a preview of the MIME content of an email when provided with a template and a set of replacement data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestRenderEmailTemplateInput {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
@@ -15071,18 +15020,10 @@ impl TestRenderEmailTemplateInput {
         self.template_data.as_deref()
     }
 }
-impl std::fmt::Debug for TestRenderEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestRenderEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_data", &self.template_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
     #[doc(hidden)]
@@ -15101,18 +15042,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendEmailInput {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
     #[doc(hidden)]
@@ -15200,35 +15133,10 @@ impl SendEmailInput {
         self.list_management_options.as_ref()
     }
 }
-impl std::fmt::Debug for SendEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendEmailInput");
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field(
-            "from_email_address_identity_arn",
-            &self.from_email_address_identity_arn,
-        );
-        formatter.field("destination", &self.destination);
-        formatter.field("reply_to_addresses", &self.reply_to_addresses);
-        formatter.field(
-            "feedback_forwarding_email_address",
-            &self.feedback_forwarding_email_address,
-        );
-        formatter.field(
-            "feedback_forwarding_email_address_identity_arn",
-            &self.feedback_forwarding_email_address_identity_arn,
-        );
-        formatter.field("content", &self.content);
-        formatter.field("email_tags", &self.email_tags);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("list_management_options", &self.list_management_options);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send a custom verification email to a specified recipient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendCustomVerificationEmailInput {
     /// <p>The email address to verify.</p>
     #[doc(hidden)]
@@ -15254,19 +15162,10 @@ impl SendCustomVerificationEmailInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for SendCustomVerificationEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendCustomVerificationEmailInput");
-        formatter.field("email_address", &self.email_address);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send email messages to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendBulkEmailInput {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
     #[doc(hidden)]
@@ -15343,34 +15242,10 @@ impl SendBulkEmailInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for SendBulkEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendBulkEmailInput");
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field(
-            "from_email_address_identity_arn",
-            &self.from_email_address_identity_arn,
-        );
-        formatter.field("reply_to_addresses", &self.reply_to_addresses);
-        formatter.field(
-            "feedback_forwarding_email_address",
-            &self.feedback_forwarding_email_address,
-        );
-        formatter.field(
-            "feedback_forwarding_email_address_identity_arn",
-            &self.feedback_forwarding_email_address_identity_arn,
-        );
-        formatter.field("default_email_tags", &self.default_email_tags);
-        formatter.field("default_content", &self.default_content);
-        formatter.field("bulk_email_entries", &self.bulk_email_entries);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to add an email destination to the suppression list for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSuppressedDestinationInput {
     /// <p>The email address that should be added to the suppression list for your account.</p>
     #[doc(hidden)]
@@ -15389,18 +15264,10 @@ impl PutSuppressedDestinationInput {
         self.reason.as_ref()
     }
 }
-impl std::fmt::Debug for PutSuppressedDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSuppressedDestinationInput");
-        formatter.field("email_address", &self.email_address);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to configure the custom MAIL FROM domain for a verified identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailIdentityMailFromAttributesInput {
     /// <p>The verified email identity.</p>
     #[doc(hidden)]
@@ -15440,19 +15307,10 @@ impl PutEmailIdentityMailFromAttributesInput {
         self.behavior_on_mx_failure.as_ref()
     }
 }
-impl std::fmt::Debug for PutEmailIdentityMailFromAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailIdentityMailFromAttributesInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("mail_from_domain", &self.mail_from_domain);
-        formatter.field("behavior_on_mx_failure", &self.behavior_on_mx_failure);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to set the attributes that control how bounce and complaint events are processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailIdentityFeedbackAttributesInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
@@ -15475,18 +15333,10 @@ impl PutEmailIdentityFeedbackAttributesInput {
         self.email_forwarding_enabled
     }
 }
-impl std::fmt::Debug for PutEmailIdentityFeedbackAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailIdentityFeedbackAttributesInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("email_forwarding_enabled", &self.email_forwarding_enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change the DKIM attributes for an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailIdentityDkimSigningAttributesInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
@@ -15522,19 +15372,10 @@ impl PutEmailIdentityDkimSigningAttributesInput {
         self.signing_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for PutEmailIdentityDkimSigningAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailIdentityDkimSigningAttributesInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("signing_attributes_origin", &self.signing_attributes_origin);
-        formatter.field("signing_attributes", &self.signing_attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to enable or disable DKIM signing of email that you send from an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
@@ -15555,18 +15396,10 @@ impl PutEmailIdentityDkimAttributesInput {
         self.signing_enabled
     }
 }
-impl std::fmt::Debug for PutEmailIdentityDkimAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailIdentityDkimAttributesInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("signing_enabled", &self.signing_enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to associate a configuration set with an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailIdentityConfigurationSetAttributesInput {
     /// <p>The email address or domain to associate with a configuration set.</p>
     #[doc(hidden)]
@@ -15585,19 +15418,11 @@ impl PutEmailIdentityConfigurationSetAttributesInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutEmailIdentityConfigurationSetAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailIdentityConfigurationSetAttributesInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.</p>
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOptionInput {
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
     #[doc(hidden)]
@@ -15619,18 +15444,10 @@ impl PutDeliverabilityDashboardOptionInput {
         self.subscribed_domains.as_deref()
     }
 }
-impl std::fmt::Debug for PutDeliverabilityDashboardOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDeliverabilityDashboardOptionInput");
-        formatter.field("dashboard_enabled", &self.dashboard_enabled);
-        formatter.field("subscribed_domains", &self.subscribed_domains);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDedicatedIpWarmupAttributesInput {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
     #[doc(hidden)]
@@ -15649,18 +15466,10 @@ impl PutDedicatedIpWarmupAttributesInput {
         self.warmup_percentage
     }
 }
-impl std::fmt::Debug for PutDedicatedIpWarmupAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDedicatedIpWarmupAttributesInput");
-        formatter.field("ip", &self.ip);
-        formatter.field("warmup_percentage", &self.warmup_percentage);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to move a dedicated IP address to a dedicated IP pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDedicatedIpInPoolInput {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -15679,18 +15488,10 @@ impl PutDedicatedIpInPoolInput {
         self.destination_pool_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutDedicatedIpInPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDedicatedIpInPoolInput");
-        formatter.field("ip", &self.ip);
-        formatter.field("destination_pool_name", &self.destination_pool_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to add a custom domain for tracking open and click events to a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
@@ -15709,18 +15510,10 @@ impl PutConfigurationSetTrackingOptionsInput {
         self.custom_redirect_domain.as_deref()
     }
 }
-impl std::fmt::Debug for PutConfigurationSetTrackingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetTrackingOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("custom_redirect_domain", &self.custom_redirect_domain);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change the account suppression list preferences for a specific configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
     #[doc(hidden)]
@@ -15749,18 +15542,10 @@ impl PutConfigurationSetSuppressionOptionsInput {
         self.suppressed_reasons.as_deref()
     }
 }
-impl std::fmt::Debug for PutConfigurationSetSuppressionOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetSuppressionOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("suppressed_reasons", &self.suppressed_reasons);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to enable or disable the ability of Amazon SES to send emails that use a specific configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptionsInput {
     /// <p>The name of the configuration set to enable or disable email sending for.</p>
     #[doc(hidden)]
@@ -15779,18 +15564,10 @@ impl PutConfigurationSetSendingOptionsInput {
         self.sending_enabled
     }
 }
-impl std::fmt::Debug for PutConfigurationSetSendingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetSendingOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("sending_enabled", &self.sending_enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to enable or disable tracking of reputation metrics for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
@@ -15809,21 +15586,10 @@ impl PutConfigurationSetReputationOptionsInput {
         self.reputation_metrics_enabled
     }
 }
-impl std::fmt::Debug for PutConfigurationSetReputationOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetReputationOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field(
-            "reputation_metrics_enabled",
-            &self.reputation_metrics_enabled,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>A request to associate a configuration set with a dedicated IP pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptionsInput {
     /// <p>The name of the configuration set to associate with a dedicated IP pool.</p>
     #[doc(hidden)]
@@ -15849,19 +15615,10 @@ impl PutConfigurationSetDeliveryOptionsInput {
         self.sending_pool_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetDeliveryOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("tls_policy", &self.tls_policy);
-        formatter.field("sending_pool_name", &self.sending_pool_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change your account's suppression preferences.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountSuppressionAttributesInput {
     /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
@@ -15883,17 +15640,10 @@ impl PutAccountSuppressionAttributesInput {
         self.suppressed_reasons.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccountSuppressionAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountSuppressionAttributesInput");
-        formatter.field("suppressed_reasons", &self.suppressed_reasons);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change the ability of your account to send email.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountSendingAttributesInput {
     /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
@@ -15907,13 +15657,6 @@ impl PutAccountSendingAttributesInput {
     /// </note>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
-    }
-}
-impl std::fmt::Debug for PutAccountSendingAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountSendingAttributesInput");
-        formatter.field("sending_enabled", &self.sending_enabled);
-        formatter.finish()
     }
 }
 
@@ -15990,7 +15733,7 @@ impl std::fmt::Debug for PutAccountDetailsInput {
 
 /// <p>A request to enable or disable the automatic IP address warm-up feature.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountDedicatedIpWarmupAttributesInput {
     /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
     #[doc(hidden)]
@@ -16002,17 +15745,10 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
         self.auto_warmup_enabled
     }
 }
-impl std::fmt::Debug for PutAccountDedicatedIpWarmupAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountDedicatedIpWarmupAttributesInput");
-        formatter.field("auto_warmup_enabled", &self.auto_warmup_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
     #[doc(hidden)]
@@ -16024,17 +15760,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain a list of email destinations that are on the suppression list for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSuppressedDestinationsInput {
     /// <p>The factors that caused the email address to be added to .</p>
     #[doc(hidden)]
@@ -16074,21 +15803,10 @@ impl ListSuppressedDestinationsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListSuppressedDestinationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSuppressedDestinationsInput");
-        formatter.field("reasons", &self.reasons);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to list all of the import jobs for a data destination within the specified maximum number of import jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportJobsInput {
     /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
     #[doc(hidden)]
@@ -16116,19 +15834,10 @@ impl ListImportJobsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportJobsInput");
-        formatter.field("import_destination_type", &self.import_destination_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to list the email templates present in your Amazon SES account in the current Amazon Web Services Region. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEmailTemplatesInput {
     /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
     #[doc(hidden)]
@@ -16149,18 +15858,10 @@ impl ListEmailTemplatesInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListEmailTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEmailTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to list all of the email identities associated with your Amazon Web Services account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEmailIdentitiesInput {
     /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
     #[doc(hidden)]
@@ -16181,18 +15882,10 @@ impl ListEmailIdentitiesInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListEmailIdentitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEmailIdentitiesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsInput {
     /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
     #[doc(hidden)]
@@ -16232,21 +15925,10 @@ impl ListDomainDeliverabilityCampaignsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListDomainDeliverabilityCampaignsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainDeliverabilityCampaignsInput");
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("subscribed_domain", &self.subscribed_domain);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to list all of the predictive inbox placement tests that you've performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeliverabilityTestReportsInput {
     /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
     #[doc(hidden)]
@@ -16267,18 +15949,10 @@ impl ListDeliverabilityTestReportsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListDeliverabilityTestReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeliverabilityTestReportsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain a list of dedicated IP pools.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDedicatedIpPoolsInput {
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
     #[doc(hidden)]
@@ -16297,18 +15971,10 @@ impl ListDedicatedIpPoolsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListDedicatedIpPoolsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDedicatedIpPoolsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to list the existing custom verification email templates for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomVerificationEmailTemplatesInput {
     /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
     #[doc(hidden)]
@@ -16329,18 +15995,10 @@ impl ListCustomVerificationEmailTemplatesInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListCustomVerificationEmailTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomVerificationEmailTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactsInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
@@ -16373,20 +16031,10 @@ impl ListContactsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListContactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactsInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.field("filter", &self.filter);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactListsInput {
     /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
     #[doc(hidden)]
@@ -16405,18 +16053,10 @@ impl ListContactListsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListContactListsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactListsInput");
-        formatter.field("page_size", &self.page_size);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain a list of configuration sets for your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationSetsInput {
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
     #[doc(hidden)]
@@ -16435,18 +16075,10 @@ impl ListConfigurationSetsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListConfigurationSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationSetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to retrieve information about an email address that's on the suppression list for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSuppressedDestinationInput {
     /// <p>The email address that's on the account suppression list.</p>
     #[doc(hidden)]
@@ -16458,17 +16090,10 @@ impl GetSuppressedDestinationInput {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for GetSuppressedDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSuppressedDestinationInput");
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request for information about an import job using the import job ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImportJobInput {
     /// <p>The ID of the import job.</p>
     #[doc(hidden)]
@@ -16480,17 +16105,10 @@ impl GetImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImportJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to display the template object (which includes the subject line, HTML part and text part) for the template you specify.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEmailTemplateInput {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
@@ -16502,17 +16120,10 @@ impl GetEmailTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to return the policies of an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEmailIdentityPoliciesInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
@@ -16524,17 +16135,10 @@ impl GetEmailIdentityPoliciesInput {
         self.email_identity.as_deref()
     }
 }
-impl std::fmt::Debug for GetEmailIdentityPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEmailIdentityPoliciesInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to return details about an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEmailIdentityInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
@@ -16546,17 +16150,10 @@ impl GetEmailIdentityInput {
         self.email_identity.as_deref()
     }
 }
-impl std::fmt::Debug for GetEmailIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEmailIdentityInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain deliverability metrics for a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainStatisticsReportInput {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
     #[doc(hidden)]
@@ -16582,19 +16179,10 @@ impl GetDomainStatisticsReportInput {
         self.end_date.as_ref()
     }
 }
-impl std::fmt::Debug for GetDomainStatisticsReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainStatisticsReportInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignInput {
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
     #[doc(hidden)]
@@ -16606,17 +16194,10 @@ impl GetDomainDeliverabilityCampaignInput {
         self.campaign_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainDeliverabilityCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainDeliverabilityCampaignInput");
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to retrieve the results of a predictive inbox placement test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeliverabilityTestReportInput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     #[doc(hidden)]
@@ -16628,29 +16209,16 @@ impl GetDeliverabilityTestReportInput {
         self.report_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeliverabilityTestReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeliverabilityTestReportInput");
-        formatter.field("report_id", &self.report_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieve information about the status of the Deliverability dashboard for your Amazon Web Services account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests.</p>
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeliverabilityDashboardOptionsInput {}
-impl std::fmt::Debug for GetDeliverabilityDashboardOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeliverabilityDashboardOptionsInput");
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain more information about dedicated IP pools.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDedicatedIpsInput {
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
     #[doc(hidden)]
@@ -16676,19 +16244,10 @@ impl GetDedicatedIpsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for GetDedicatedIpsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDedicatedIpsInput");
-        formatter.field("pool_name", &self.pool_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain more information about a dedicated IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDedicatedIpInput {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -16700,17 +16259,10 @@ impl GetDedicatedIpInput {
         self.ip.as_deref()
     }
 }
-impl std::fmt::Debug for GetDedicatedIpInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDedicatedIpInput");
-        formatter.field("ip", &self.ip);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to retrieve an existing custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to retrieve.</p>
     #[doc(hidden)]
@@ -16722,17 +16274,10 @@ impl GetCustomVerificationEmailTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCustomVerificationEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCustomVerificationEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactListInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
@@ -16744,17 +16289,10 @@ impl GetContactListInput {
         self.contact_list_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetContactListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactListInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactInput {
     /// <p>The name of the contact list to which the contact belongs.</p>
     #[doc(hidden)]
@@ -16773,18 +16311,10 @@ impl GetContactInput {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for GetContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain information about the event destinations for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsInput {
     /// <p>The name of the configuration set that contains the event destination.</p>
     #[doc(hidden)]
@@ -16796,17 +16326,10 @@ impl GetConfigurationSetEventDestinationsInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigurationSetEventDestinationsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain information about a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigurationSetInput {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
@@ -16818,17 +16341,10 @@ impl GetConfigurationSetInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetConfigurationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigurationSetInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBlacklistReportsInput {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
     #[doc(hidden)]
@@ -16840,28 +16356,15 @@ impl GetBlacklistReportsInput {
         self.blacklist_item_names.as_deref()
     }
 }
-impl std::fmt::Debug for GetBlacklistReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBlacklistReportsInput");
-        formatter.field("blacklist_item_names", &self.blacklist_item_names);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to obtain information about the email-sending capabilities of your Amazon SES account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountInput {}
-impl std::fmt::Debug for GetAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountInput");
-        formatter.finish()
-    }
-}
 
 /// <p>A request to remove an email address from the suppression list for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSuppressedDestinationInput {
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
     #[doc(hidden)]
@@ -16873,17 +16376,10 @@ impl DeleteSuppressedDestinationInput {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSuppressedDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSuppressedDestinationInput");
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEmailTemplateInput {
     /// <p>The name of the template to be deleted.</p>
     #[doc(hidden)]
@@ -16895,17 +16391,10 @@ impl DeleteEmailTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEmailIdentityPolicyInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
@@ -16926,18 +16415,10 @@ impl DeleteEmailIdentityPolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEmailIdentityPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEmailIdentityPolicyInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete an existing email identity. When you delete an identity, you lose the ability to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEmailIdentityInput {
     /// <p>The identity (that is, the email address or domain) to delete.</p>
     #[doc(hidden)]
@@ -16949,17 +16430,10 @@ impl DeleteEmailIdentityInput {
         self.email_identity.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEmailIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEmailIdentityInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete a dedicated IP pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
     #[doc(hidden)]
@@ -16971,17 +16445,10 @@ impl DeleteDedicatedIpPoolInput {
         self.pool_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDedicatedIpPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDedicatedIpPoolInput");
-        formatter.field("pool_name", &self.pool_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete an existing custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to delete.</p>
     #[doc(hidden)]
@@ -16993,17 +16460,10 @@ impl DeleteCustomVerificationEmailTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomVerificationEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomVerificationEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContactListInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
@@ -17015,17 +16475,10 @@ impl DeleteContactListInput {
         self.contact_list_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContactListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContactListInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContactInput {
     /// <p>The name of the contact list from which the contact should be removed.</p>
     #[doc(hidden)]
@@ -17044,18 +16497,10 @@ impl DeleteContactInput {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContactInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete an event destination from a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination to delete.</p>
     #[doc(hidden)]
@@ -17074,18 +16519,10 @@ impl DeleteConfigurationSetEventDestinationInput {
         self.event_destination_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
@@ -17097,17 +16534,10 @@ impl DeleteConfigurationSetInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create an import job from a data source for a data destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImportJobInput {
     /// <p>The destination for the import job.</p>
     #[doc(hidden)]
@@ -17126,18 +16556,10 @@ impl CreateImportJobInput {
         self.import_data_source.as_ref()
     }
 }
-impl std::fmt::Debug for CreateImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateImportJobInput");
-        formatter.field("import_destination", &self.import_destination);
-        formatter.field("import_data_source", &self.import_data_source);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEmailTemplateInput {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
@@ -17156,18 +16578,10 @@ impl CreateEmailTemplateInput {
         self.template_content.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_content", &self.template_content);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEmailIdentityPolicyInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
@@ -17197,19 +16611,10 @@ impl CreateEmailIdentityPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEmailIdentityPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEmailIdentityPolicyInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to begin the verification process for an email identity (an email address or domain).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEmailIdentityInput {
     /// <p>The email address or domain to verify.</p>
     #[doc(hidden)]
@@ -17246,20 +16651,10 @@ impl CreateEmailIdentityInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEmailIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEmailIdentityInput");
-        formatter.field("email_identity", &self.email_identity);
-        formatter.field("tags", &self.tags);
-        formatter.field("dkim_signing_attributes", &self.dkim_signing_attributes);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. We send that message to special email addresses spread across several major email providers around the world. The test takes about 24 hours to complete. When the test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportInput {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
     #[doc(hidden)]
@@ -17292,20 +16687,10 @@ impl CreateDeliverabilityTestReportInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeliverabilityTestReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeliverabilityTestReportInput");
-        formatter.field("report_name", &self.report_name);
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field("content", &self.content);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to create a new dedicated IP pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool.</p>
     #[doc(hidden)]
@@ -17324,18 +16709,10 @@ impl CreateDedicatedIpPoolInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDedicatedIpPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDedicatedIpPoolInput");
-        formatter.field("pool_name", &self.pool_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create a custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template.</p>
     #[doc(hidden)]
@@ -17382,22 +16759,10 @@ impl CreateCustomVerificationEmailTemplateInput {
         self.failure_redirection_url.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCustomVerificationEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomVerificationEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field("template_subject", &self.template_subject);
-        formatter.field("template_content", &self.template_content);
-        formatter.field("success_redirection_url", &self.success_redirection_url);
-        formatter.field("failure_redirection_url", &self.failure_redirection_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContactListInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
@@ -17430,20 +16795,10 @@ impl CreateContactListInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateContactListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContactListInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.field("topics", &self.topics);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContactInput {
     /// <p>The name of the contact list to which the contact should be added.</p>
     #[doc(hidden)]
@@ -17483,21 +16838,10 @@ impl CreateContactInput {
         self.attributes_data.as_deref()
     }
 }
-impl std::fmt::Debug for CreateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContactInput");
-        formatter.field("contact_list_name", &self.contact_list_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("topic_preferences", &self.topic_preferences);
-        formatter.field("unsubscribe_all", &self.unsubscribe_all);
-        formatter.field("attributes_data", &self.attributes_data);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to add an event destination to a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set .</p>
     #[doc(hidden)]
@@ -17525,19 +16869,10 @@ impl CreateConfigurationSetEventDestinationInput {
         self.event_destination.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("event_destination", &self.event_destination);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to create a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetInput {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
     #[doc(hidden)]
@@ -17589,18 +16924,5 @@ impl CreateConfigurationSetInput {
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
     pub fn suppression_options(&self) -> std::option::Option<&crate::model::SuppressionOptions> {
         self.suppression_options.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateConfigurationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("tracking_options", &self.tracking_options);
-        formatter.field("delivery_options", &self.delivery_options);
-        formatter.field("reputation_options", &self.reputation_options);
-        formatter.field("sending_options", &self.sending_options);
-        formatter.field("tags", &self.tags);
-        formatter.field("suppression_options", &self.suppression_options);
-        formatter.finish()
     }
 }

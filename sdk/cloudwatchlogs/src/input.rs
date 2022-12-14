@@ -7468,7 +7468,7 @@ impl UntagLogGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7487,18 +7487,10 @@ impl UntagLogGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UntagLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestMetricFilterInput {
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     #[doc(hidden)]
@@ -7517,18 +7509,10 @@ impl TestMetricFilterInput {
         self.log_event_messages.as_deref()
     }
 }
-impl std::fmt::Debug for TestMetricFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestMetricFilterInput");
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("log_event_messages", &self.log_event_messages);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7551,18 +7535,10 @@ impl TagLogGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopQueryInput {
     /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
     #[doc(hidden)]
@@ -7574,17 +7550,10 @@ impl StopQueryInput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopQueryInput");
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartQueryInput {
     /// <p>The log group on which to perform the query.</p>
     /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
@@ -7635,22 +7604,10 @@ impl StartQueryInput {
         self.limit
     }
 }
-impl std::fmt::Debug for StartQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartQueryInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_group_names", &self.log_group_names);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSubscriptionFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7709,22 +7666,10 @@ impl PutSubscriptionFilterInput {
         self.distribution.as_ref()
     }
 }
-impl std::fmt::Debug for PutSubscriptionFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSubscriptionFilterInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("distribution", &self.distribution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRetentionPolicyInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7745,18 +7690,10 @@ impl PutRetentionPolicyInput {
         self.retention_in_days
     }
 }
-impl std::fmt::Debug for PutRetentionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRetentionPolicyInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("retention_in_days", &self.retention_in_days);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>Name of the new policy. This parameter is required.</p>
     #[doc(hidden)]
@@ -7785,18 +7722,10 @@ impl PutResourcePolicyInput {
         self.policy_document.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutQueryDefinitionInput {
     /// <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
     #[doc(hidden)]
@@ -7833,20 +7762,10 @@ impl PutQueryDefinitionInput {
         self.query_string.as_deref()
     }
 }
-impl std::fmt::Debug for PutQueryDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutQueryDefinitionInput");
-        formatter.field("name", &self.name);
-        formatter.field("query_definition_id", &self.query_definition_id);
-        formatter.field("log_group_names", &self.log_group_names);
-        formatter.field("query_string", &self.query_string);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetricFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7882,20 +7801,10 @@ impl PutMetricFilterInput {
         self.metric_transformations.as_deref()
     }
 }
-impl std::fmt::Debug for PutMetricFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetricFilterInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("metric_transformations", &self.metric_transformations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLogEventsInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7928,20 +7837,10 @@ impl PutLogEventsInput {
         self.sequence_token.as_deref()
     }
 }
-impl std::fmt::Debug for PutLogEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLogEventsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("log_events", &self.log_events);
-        formatter.field("sequence_token", &self.sequence_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDestinationPolicyInput {
     /// <p>A name for an existing destination.</p>
     #[doc(hidden)]
@@ -7969,19 +7868,10 @@ impl PutDestinationPolicyInput {
         self.force_update
     }
 }
-impl std::fmt::Debug for PutDestinationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDestinationPolicyInput");
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("access_policy", &self.access_policy);
-        formatter.field("force_update", &self.force_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDestinationInput {
     /// <p>A name for the destination.</p>
     #[doc(hidden)]
@@ -8007,19 +7897,10 @@ impl PutDestinationInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDestinationInput");
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8031,17 +7912,10 @@ impl ListTagsLogGroupInput {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryResultsInput {
     /// <p>The ID number of the query.</p>
     #[doc(hidden)]
@@ -8053,17 +7927,10 @@ impl GetQueryResultsInput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueryResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryResultsInput");
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogRecordInput {
     /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
     #[doc(hidden)]
@@ -8075,17 +7942,10 @@ impl GetLogRecordInput {
         self.log_record_pointer.as_deref()
     }
 }
-impl std::fmt::Debug for GetLogRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLogRecordInput");
-        formatter.field("log_record_pointer", &self.log_record_pointer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogGroupFieldsInput {
     /// <p>The name of the log group to search.</p>
     #[doc(hidden)]
@@ -8106,18 +7966,10 @@ impl GetLogGroupFieldsInput {
         self.time
     }
 }
-impl std::fmt::Debug for GetLogGroupFieldsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLogGroupFieldsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("time", &self.time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogEventsInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8173,23 +8025,10 @@ impl GetLogEventsInput {
         self.start_from_head
     }
 }
-impl std::fmt::Debug for GetLogEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLogEventsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("start_from_head", &self.start_from_head);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterLogEventsInput {
     /// <p>The name of the log group to search.</p>
     #[doc(hidden)]
@@ -8271,25 +8110,10 @@ impl FilterLogEventsInput {
         self.interleaved
     }
 }
-impl std::fmt::Debug for FilterLogEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterLogEventsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_names", &self.log_stream_names);
-        formatter.field("log_stream_name_prefix", &self.log_stream_name_prefix);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("interleaved", &self.interleaved);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateKmsKeyInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8301,17 +8125,10 @@ impl DisassociateKmsKeyInput {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateKmsKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateKmsKeyInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSubscriptionFiltersInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8344,20 +8161,10 @@ impl DescribeSubscriptionFiltersInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeSubscriptionFiltersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSubscriptionFiltersInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name_prefix", &self.filter_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourcePoliciesInput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     #[doc(hidden)]
@@ -8376,18 +8183,10 @@ impl DescribeResourcePoliciesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeResourcePoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourcePoliciesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQueryDefinitionsInput {
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
     #[doc(hidden)]
@@ -8413,22 +8212,10 @@ impl DescribeQueryDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQueryDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQueryDefinitionsInput");
-        formatter.field(
-            "query_definition_name_prefix",
-            &self.query_definition_name_prefix,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQueriesInput {
     /// <p>Limits the returned queries to only those for the specified log group.</p>
     #[doc(hidden)]
@@ -8461,20 +8248,10 @@ impl DescribeQueriesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQueriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQueriesInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("status", &self.status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMetricFiltersInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8521,22 +8298,10 @@ impl DescribeMetricFiltersInput {
         self.metric_namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMetricFiltersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMetricFiltersInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name_prefix", &self.filter_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_namespace", &self.metric_namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLogStreamsInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8589,22 +8354,10 @@ impl DescribeLogStreamsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeLogStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLogStreamsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name_prefix", &self.log_stream_name_prefix);
-        formatter.field("order_by", &self.order_by);
-        formatter.field("descending", &self.descending);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLogGroupsInput {
     /// <p>The prefix to match.</p>
     #[doc(hidden)]
@@ -8630,19 +8383,10 @@ impl DescribeLogGroupsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeLogGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLogGroupsInput");
-        formatter.field("log_group_name_prefix", &self.log_group_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExportTasksInput {
     /// <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
     #[doc(hidden)]
@@ -8675,20 +8419,10 @@ impl DescribeExportTasksInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeExportTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExportTasksInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDestinationsInput {
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
     #[doc(hidden)]
@@ -8714,19 +8448,10 @@ impl DescribeDestinationsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeDestinationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDestinationsInput");
-        formatter.field("destination_name_prefix", &self.destination_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSubscriptionFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8745,18 +8470,10 @@ impl DeleteSubscriptionFilterInput {
         self.filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSubscriptionFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSubscriptionFilterInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRetentionPolicyInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8768,17 +8485,10 @@ impl DeleteRetentionPolicyInput {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRetentionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRetentionPolicyInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the policy to be revoked. This parameter is required.</p>
     #[doc(hidden)]
@@ -8790,17 +8500,10 @@ impl DeleteResourcePolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueryDefinitionInput {
     /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     #[doc(hidden)]
@@ -8812,17 +8515,10 @@ impl DeleteQueryDefinitionInput {
         self.query_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQueryDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueryDefinitionInput");
-        formatter.field("query_definition_id", &self.query_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMetricFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8841,18 +8537,10 @@ impl DeleteMetricFilterInput {
         self.filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMetricFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMetricFilterInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLogStreamInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8871,18 +8559,10 @@ impl DeleteLogStreamInput {
         self.log_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLogStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLogStreamInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8894,17 +8574,10 @@ impl DeleteLogGroupInput {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDestinationInput {
     /// <p>The name of the destination.</p>
     #[doc(hidden)]
@@ -8916,17 +8589,10 @@ impl DeleteDestinationInput {
         self.destination_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDestinationInput");
-        formatter.field("destination_name", &self.destination_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLogStreamInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8945,18 +8611,10 @@ impl CreateLogStreamInput {
         self.log_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLogStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLogStreamInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8988,19 +8646,10 @@ impl CreateLogGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExportTaskInput {
     /// <p>The name of the export task.</p>
     #[doc(hidden)]
@@ -9054,23 +8703,10 @@ impl CreateExportTaskInput {
         self.destination_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for CreateExportTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExportTaskInput");
-        formatter.field("task_name", &self.task_name);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name_prefix", &self.log_stream_name_prefix);
-        formatter.field("from", &self.from);
-        formatter.field("to", &self.to);
-        formatter.field("destination", &self.destination);
-        formatter.field("destination_prefix", &self.destination_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelExportTaskInput {
     /// <p>The ID of the export task.</p>
     #[doc(hidden)]
@@ -9082,17 +8718,10 @@ impl CancelExportTaskInput {
         self.task_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelExportTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelExportTaskInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateKmsKeyInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -9109,13 +8738,5 @@ impl AssociateKmsKeyInput {
     /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateKmsKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateKmsKeyInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }

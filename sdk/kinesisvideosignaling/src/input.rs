@@ -356,7 +356,7 @@ impl SendAlexaOfferToMasterInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterInput {
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
     #[doc(hidden)]
@@ -382,19 +382,10 @@ impl SendAlexaOfferToMasterInput {
         self.message_payload.as_deref()
     }
 }
-impl std::fmt::Debug for SendAlexaOfferToMasterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendAlexaOfferToMasterInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("sender_client_id", &self.sender_client_id);
-        formatter.field("message_payload", &self.message_payload);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIceServerConfigInput {
     /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     #[doc(hidden)]
@@ -425,15 +416,5 @@ impl GetIceServerConfigInput {
     /// <p>An optional user ID to be associated with the credentials.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for GetIceServerConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIceServerConfigInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("service", &self.service);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }

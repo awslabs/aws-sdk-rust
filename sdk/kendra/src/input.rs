@@ -11547,7 +11547,7 @@ impl UpdateThesaurusInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThesaurusInput {
     /// <p>The identifier of the thesaurus you want to update.</p>
     #[doc(hidden)]
@@ -11594,22 +11594,10 @@ impl UpdateThesaurusInput {
         self.source_s3_path.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateThesaurusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThesaurusInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("source_s3_path", &self.source_s3_path);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsConfigInput {
     /// <p> The identifier of the index with query suggestions you want to update.</p>
     #[doc(hidden)]
@@ -11678,31 +11666,10 @@ impl UpdateQuerySuggestionsConfigInput {
         self.minimum_query_count
     }
 }
-impl std::fmt::Debug for UpdateQuerySuggestionsConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQuerySuggestionsConfigInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("mode", &self.mode);
-        formatter.field(
-            "query_log_look_back_window_in_days",
-            &self.query_log_look_back_window_in_days,
-        );
-        formatter.field(
-            "include_queries_without_user_information",
-            &self.include_queries_without_user_information,
-        );
-        formatter.field(
-            "minimum_number_of_querying_users",
-            &self.minimum_number_of_querying_users,
-        );
-        formatter.field("minimum_query_count", &self.minimum_query_count);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index for the block list.</p>
     #[doc(hidden)]
@@ -11753,22 +11720,10 @@ impl UpdateQuerySuggestionsBlockListInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateQuerySuggestionsBlockListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQuerySuggestionsBlockListInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("source_s3_path", &self.source_s3_path);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIndexInput {
     /// <p>The identifier of the index you want to update.</p>
     #[doc(hidden)]
@@ -11847,31 +11802,10 @@ impl UpdateIndexInput {
         self.user_group_resolution_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIndexInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "document_metadata_configuration_updates",
-            &self.document_metadata_configuration_updates,
-        );
-        formatter.field("capacity_units", &self.capacity_units);
-        formatter.field("user_token_configurations", &self.user_token_configurations);
-        formatter.field("user_context_policy", &self.user_context_policy);
-        formatter.field(
-            "user_group_resolution_configuration",
-            &self.user_group_resolution_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
     #[doc(hidden)]
@@ -11918,22 +11852,10 @@ impl UpdateExperienceInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateExperienceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateExperienceInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSourceInput {
     /// <p>The identifier of the data source connector you want to update.</p>
     #[doc(hidden)]
@@ -12015,29 +11937,10 @@ impl UpdateDataSourceInput {
         self.custom_document_enrichment_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSourceInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("description", &self.description);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("language_code", &self.language_code);
-        formatter.field(
-            "custom_document_enrichment_configuration",
-            &self.custom_document_enrichment_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
     #[doc(hidden)]
@@ -12087,25 +11990,10 @@ impl UpdateAccessControlConfigurationInput {
         self.hierarchical_access_control_list.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccessControlConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccessControlConfigurationInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("access_control_list", &self.access_control_list);
-        formatter.field(
-            "hierarchical_access_control_list",
-            &self.hierarchical_access_control_list,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to remove the tag from.</p>
     #[doc(hidden)]
@@ -12124,18 +12012,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to tag.</p>
     #[doc(hidden)]
@@ -12154,18 +12034,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubmitFeedbackInput {
     /// <p>The identifier of the index that was queried.</p>
     #[doc(hidden)]
@@ -12201,20 +12073,10 @@ impl SubmitFeedbackInput {
         self.relevance_feedback_items.as_deref()
     }
 }
-impl std::fmt::Debug for SubmitFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubmitFeedbackInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("query_id", &self.query_id);
-        formatter.field("click_feedback_items", &self.click_feedback_items);
-        formatter.field("relevance_feedback_items", &self.relevance_feedback_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDataSourceSyncJobInput {
     /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
     #[doc(hidden)]
@@ -12233,18 +12095,10 @@ impl StopDataSourceSyncJobInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopDataSourceSyncJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDataSourceSyncJobInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDataSourceSyncJobInput {
     /// <p>The identifier of the data source connector to synchronize.</p>
     #[doc(hidden)]
@@ -12263,18 +12117,10 @@ impl StartDataSourceSyncJobInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartDataSourceSyncJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDataSourceSyncJobInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryInput {
     /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
     #[doc(hidden)]
@@ -12388,38 +12234,10 @@ impl QueryInput {
         self.spell_correction_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for QueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("query_text", &self.query_text);
-        formatter.field("attribute_filter", &self.attribute_filter);
-        formatter.field("facets", &self.facets);
-        formatter.field(
-            "requested_document_attributes",
-            &self.requested_document_attributes,
-        );
-        formatter.field("query_result_type_filter", &self.query_result_type_filter);
-        formatter.field(
-            "document_relevance_override_configurations",
-            &self.document_relevance_override_configurations,
-        );
-        formatter.field("page_number", &self.page_number);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("sorting_configuration", &self.sorting_configuration);
-        formatter.field("user_context", &self.user_context);
-        formatter.field("visitor_id", &self.visitor_id);
-        formatter.field(
-            "spell_correction_configuration",
-            &self.spell_correction_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPrincipalMappingInput {
     /// <p>The identifier of the index you want to map users to their groups.</p>
     #[doc(hidden)]
@@ -12478,22 +12296,10 @@ impl PutPrincipalMappingInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutPrincipalMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPrincipalMappingInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("group_members", &self.group_members);
-        formatter.field("ordering_id", &self.ordering_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThesauriInput {
     /// <p>The identifier of the index with one or more thesauri.</p>
     #[doc(hidden)]
@@ -12519,19 +12325,10 @@ impl ListThesauriInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListThesauriInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThesauriInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to get a list of tags for.</p>
     #[doc(hidden)]
@@ -12543,17 +12340,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQuerySuggestionsBlockListsInput {
     /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
@@ -12581,19 +12371,10 @@ impl ListQuerySuggestionsBlockListsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListQuerySuggestionsBlockListsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQuerySuggestionsBlockListsInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIndicesInput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
     #[doc(hidden)]
@@ -12612,18 +12393,10 @@ impl ListIndicesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIndicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIndicesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsOlderThanOrderingIdInput {
     /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
     #[doc(hidden)]
@@ -12663,21 +12436,10 @@ impl ListGroupsOlderThanOrderingIdInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListGroupsOlderThanOrderingIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsOlderThanOrderingIdInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("ordering_id", &self.ordering_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFaqsInput {
     /// <p>The index that contains the FAQ lists.</p>
     #[doc(hidden)]
@@ -12703,19 +12465,10 @@ impl ListFaqsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFaqsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFaqsInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExperiencesInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -12741,19 +12494,10 @@ impl ListExperiencesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListExperiencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExperiencesInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExperienceEntitiesInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -12779,19 +12523,10 @@ impl ListExperienceEntitiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListExperienceEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExperienceEntitiesInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntityPersonasInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -12824,20 +12559,10 @@ impl ListEntityPersonasInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntityPersonasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntityPersonasInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSourceSyncJobsInput {
     /// <p>The identifier of the data source connector.</p>
     #[doc(hidden)]
@@ -12884,22 +12609,10 @@ impl ListDataSourceSyncJobsInput {
         self.status_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListDataSourceSyncJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSourceSyncJobsInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("status_filter", &self.status_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSourcesInput {
     /// <p>The identifier of the index used with one or more data source connectors.</p>
     #[doc(hidden)]
@@ -12925,19 +12638,10 @@ impl ListDataSourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSourcesInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessControlConfigurationsInput {
     /// <p>The identifier of the index for the access control configuration.</p>
     #[doc(hidden)]
@@ -12963,19 +12667,10 @@ impl ListAccessControlConfigurationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessControlConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessControlConfigurationsInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSnapshotsInput {
     /// <p>The identifier of the index to get search metrics data.</p>
     #[doc(hidden)]
@@ -13033,21 +12728,10 @@ impl GetSnapshotsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSnapshotsInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("interval", &self.interval);
-        formatter.field("metric_type", &self.metric_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQuerySuggestionsInput {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     #[doc(hidden)]
@@ -13077,19 +12761,10 @@ impl GetQuerySuggestionsInput {
         self.max_suggestions_count
     }
 }
-impl std::fmt::Debug for GetQuerySuggestionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQuerySuggestionsInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("query_text", &self.query_text);
-        formatter.field("max_suggestions_count", &self.max_suggestions_count);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociatePersonasFromEntitiesInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -13115,19 +12790,10 @@ impl DisassociatePersonasFromEntitiesInput {
         self.entity_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociatePersonasFromEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociatePersonasFromEntitiesInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("entity_ids", &self.entity_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateEntitiesFromExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -13153,19 +12819,10 @@ impl DisassociateEntitiesFromExperienceInput {
         self.entity_list.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateEntitiesFromExperienceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateEntitiesFromExperienceInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("entity_list", &self.entity_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeThesaurusInput {
     /// <p>The identifier of the thesaurus you want to get information on.</p>
     #[doc(hidden)]
@@ -13184,18 +12841,10 @@ impl DescribeThesaurusInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeThesaurusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeThesaurusInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsConfigInput {
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     #[doc(hidden)]
@@ -13207,17 +12856,10 @@ impl DescribeQuerySuggestionsConfigInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQuerySuggestionsConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQuerySuggestionsConfigInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index for the block list.</p>
     #[doc(hidden)]
@@ -13236,18 +12878,10 @@ impl DescribeQuerySuggestionsBlockListInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQuerySuggestionsBlockListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQuerySuggestionsBlockListInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePrincipalMappingInput {
     /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     #[doc(hidden)]
@@ -13273,19 +12907,10 @@ impl DescribePrincipalMappingInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePrincipalMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePrincipalMappingInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIndexInput {
     /// <p>The identifier of the index you want to get information on.</p>
     #[doc(hidden)]
@@ -13297,17 +12922,10 @@ impl DescribeIndexInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIndexInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFaqInput {
     /// <p>The identifier of the FAQ you want to get information on.</p>
     #[doc(hidden)]
@@ -13326,18 +12944,10 @@ impl DescribeFaqInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFaqInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFaqInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
     #[doc(hidden)]
@@ -13356,18 +12966,10 @@ impl DescribeExperienceInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExperienceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExperienceInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSourceInput {
     /// <p>The identifier of the data source connector.</p>
     #[doc(hidden)]
@@ -13386,18 +12988,10 @@ impl DescribeDataSourceInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSourceInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
     #[doc(hidden)]
@@ -13416,18 +13010,10 @@ impl DescribeAccessControlConfigurationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccessControlConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccessControlConfigurationInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThesaurusInput {
     /// <p>The identifier of the thesaurus you want to delete.</p>
     #[doc(hidden)]
@@ -13446,18 +13032,10 @@ impl DeleteThesaurusInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteThesaurusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThesaurusInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index for the block list.</p>
     #[doc(hidden)]
@@ -13476,18 +13054,10 @@ impl DeleteQuerySuggestionsBlockListInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQuerySuggestionsBlockListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQuerySuggestionsBlockListInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePrincipalMappingInput {
     /// <p>The identifier of the index you want to delete a group from.</p>
     #[doc(hidden)]
@@ -13526,20 +13096,10 @@ impl DeletePrincipalMappingInput {
         self.ordering_id
     }
 }
-impl std::fmt::Debug for DeletePrincipalMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePrincipalMappingInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("ordering_id", &self.ordering_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIndexInput {
     /// <p>The identifier of the index you want to delete.</p>
     #[doc(hidden)]
@@ -13551,17 +13111,10 @@ impl DeleteIndexInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIndexInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFaqInput {
     /// <p>The identifier of the FAQ you want to remove.</p>
     #[doc(hidden)]
@@ -13580,18 +13133,10 @@ impl DeleteFaqInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFaqInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFaqInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to delete.</p>
     #[doc(hidden)]
@@ -13610,18 +13155,10 @@ impl DeleteExperienceInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteExperienceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExperienceInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSourceInput {
     /// <p>The identifier of the data source connector you want to delete.</p>
     #[doc(hidden)]
@@ -13640,18 +13177,10 @@ impl DeleteDataSourceInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSourceInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
     #[doc(hidden)]
@@ -13670,18 +13199,10 @@ impl DeleteAccessControlConfigurationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessControlConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessControlConfigurationInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThesaurusInput {
     /// <p>The identifier of the index for the thesaurus.</p>
     #[doc(hidden)]
@@ -13735,23 +13256,10 @@ impl CreateThesaurusInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateThesaurusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateThesaurusInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("source_s3_path", &self.source_s3_path);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
     #[doc(hidden)]
@@ -13815,23 +13323,10 @@ impl CreateQuerySuggestionsBlockListInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateQuerySuggestionsBlockListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQuerySuggestionsBlockListInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("source_s3_path", &self.source_s3_path);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIndexInput {
     /// <p>A name for the index.</p>
     #[doc(hidden)]
@@ -13947,32 +13442,10 @@ impl CreateIndexInput {
         self.user_group_resolution_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIndexInput");
-        formatter.field("name", &self.name);
-        formatter.field("edition", &self.edition);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.field("user_token_configurations", &self.user_token_configurations);
-        formatter.field("user_context_policy", &self.user_context_policy);
-        formatter.field(
-            "user_group_resolution_configuration",
-            &self.user_group_resolution_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFaqInput {
     /// <p>The identifier of the index for the FAQ.</p>
     #[doc(hidden)]
@@ -14044,25 +13517,10 @@ impl CreateFaqInput {
         self.language_code.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFaqInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFaqInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("s3_path", &self.s3_path);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExperienceInput {
     /// <p>A name for your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -14109,22 +13567,10 @@ impl CreateExperienceInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateExperienceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExperienceInput");
-        formatter.field("name", &self.name);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSourceInput {
     /// <p>A name for the data source connector.</p>
     #[doc(hidden)]
@@ -14230,31 +13676,10 @@ impl CreateDataSourceInput {
         self.custom_document_enrichment_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSourceInput");
-        formatter.field("name", &self.name);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("description", &self.description);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("language_code", &self.language_code);
-        formatter.field(
-            "custom_document_enrichment_configuration",
-            &self.custom_document_enrichment_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessControlConfigurationInput {
     /// <p>The identifier of the index to create an access control configuration for your documents.</p>
     #[doc(hidden)]
@@ -14304,25 +13729,10 @@ impl CreateAccessControlConfigurationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAccessControlConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessControlConfigurationInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("access_control_list", &self.access_control_list);
-        formatter.field(
-            "hierarchical_access_control_list",
-            &self.hierarchical_access_control_list,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClearQuerySuggestionsInput {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
     #[doc(hidden)]
@@ -14334,17 +13744,10 @@ impl ClearQuerySuggestionsInput {
         self.index_id.as_deref()
     }
 }
-impl std::fmt::Debug for ClearQuerySuggestionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClearQuerySuggestionsInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutDocumentInput {
     /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
     #[doc(hidden)]
@@ -14396,23 +13799,10 @@ impl BatchPutDocumentInput {
         self.custom_document_enrichment_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for BatchPutDocumentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutDocumentInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("documents", &self.documents);
-        formatter.field(
-            "custom_document_enrichment_configuration",
-            &self.custom_document_enrichment_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDocumentStatusInput {
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
     #[doc(hidden)]
@@ -14431,18 +13821,10 @@ impl BatchGetDocumentStatusInput {
         self.document_info_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDocumentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDocumentStatusInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("document_info_list", &self.document_info_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteDocumentInput {
     /// <p>The identifier of the index that contains the documents to delete.</p>
     #[doc(hidden)]
@@ -14471,22 +13853,10 @@ impl BatchDeleteDocumentInput {
         self.data_source_sync_job_metric_target.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDeleteDocumentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteDocumentInput");
-        formatter.field("index_id", &self.index_id);
-        formatter.field("document_id_list", &self.document_id_list);
-        formatter.field(
-            "data_source_sync_job_metric_target",
-            &self.data_source_sync_job_metric_target,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePersonasToEntitiesInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -14512,19 +13882,10 @@ impl AssociatePersonasToEntitiesInput {
         self.personas.as_deref()
     }
 }
-impl std::fmt::Debug for AssociatePersonasToEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePersonasToEntitiesInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("personas", &self.personas);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateEntitiesToExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -14548,14 +13909,5 @@ impl AssociateEntitiesToExperienceInput {
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
     pub fn entity_list(&self) -> std::option::Option<&[crate::model::EntityConfiguration]> {
         self.entity_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateEntitiesToExperienceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateEntitiesToExperienceInput");
-        formatter.field("id", &self.id);
-        formatter.field("index_id", &self.index_id);
-        formatter.field("entity_list", &self.entity_list);
-        formatter.finish()
     }
 }

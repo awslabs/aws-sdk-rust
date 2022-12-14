@@ -2,7 +2,7 @@
 
 /// <p>The resource configuration for updating backend storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendStorageResourceConfig {
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl UpdateBackendStorageResourceConfig {
     /// <p>The name of the storage service.</p>
     pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
         self.service_name.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBackendStorageResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendStorageResourceConfig");
-        formatter.field("permissions", &self.permissions);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
@@ -168,7 +160,7 @@ impl AsRef<str> for ServiceName {
 
 /// <p>Describes the read, write, and delete permissions users have against your storage S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendStoragePermissions {
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
     #[doc(hidden)]
@@ -185,14 +177,6 @@ impl BackendStoragePermissions {
     /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
     pub fn un_authenticated(&self) -> std::option::Option<&[crate::model::UnAuthenticatedElement]> {
         self.un_authenticated.as_deref()
-    }
-}
-impl std::fmt::Debug for BackendStoragePermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendStoragePermissions");
-        formatter.field("authenticated", &self.authenticated);
-        formatter.field("un_authenticated", &self.un_authenticated);
-        formatter.finish()
     }
 }
 /// See [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
@@ -457,7 +441,7 @@ impl AsRef<str> for AuthenticatedElement {
 
 /// <p>The request object for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoginAuthConfigReqObj {
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
     #[doc(hidden)]
@@ -488,22 +472,6 @@ impl LoginAuthConfigReqObj {
     /// <p>The web client ID for the Amazon Cognito user pools.</p>
     pub fn aws_user_pools_web_client_id(&self) -> std::option::Option<&str> {
         self.aws_user_pools_web_client_id.as_deref()
-    }
-}
-impl std::fmt::Debug for LoginAuthConfigReqObj {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoginAuthConfigReqObj");
-        formatter.field(
-            "aws_cognito_identity_pool_id",
-            &self.aws_cognito_identity_pool_id,
-        );
-        formatter.field("aws_cognito_region", &self.aws_cognito_region);
-        formatter.field("aws_user_pools_id", &self.aws_user_pools_id);
-        formatter.field(
-            "aws_user_pools_web_client_id",
-            &self.aws_user_pools_web_client_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
@@ -596,7 +564,7 @@ impl LoginAuthConfigReqObj {
 
 /// <p>Defines the resource configuration when updating an authentication resource in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthResourceConfig {
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
     #[doc(hidden)]
@@ -632,16 +600,6 @@ impl UpdateBackendAuthResourceConfig {
         &self,
     ) -> std::option::Option<&crate::model::UpdateBackendAuthUserPoolConfig> {
         self.user_pool_configs.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBackendAuthResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthResourceConfig");
-        formatter.field("auth_resources", &self.auth_resources);
-        formatter.field("identity_pool_configs", &self.identity_pool_configs);
-        formatter.field("service", &self.service);
-        formatter.field("user_pool_configs", &self.user_pool_configs);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
@@ -733,7 +691,7 @@ impl UpdateBackendAuthResourceConfig {
 
 /// <p>Describes the Amazon Cognito user pool configuration for the authorization resource to be configured for your Amplify project on an update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
@@ -778,17 +736,6 @@ impl UpdateBackendAuthUserPoolConfig {
         &self,
     ) -> std::option::Option<&crate::model::UpdateBackendAuthVerificationMessageConfig> {
         self.verification_message.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBackendAuthUserPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthUserPoolConfig");
-        formatter.field("forgot_password", &self.forgot_password);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("o_auth", &self.o_auth);
-        formatter.field("password_policy", &self.password_policy);
-        formatter.field("verification_message", &self.verification_message);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
@@ -902,7 +849,7 @@ impl UpdateBackendAuthUserPoolConfig {
 
 /// <p>Updates the configuration of the email or SMS message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
     #[doc(hidden)]
@@ -926,15 +873,6 @@ impl UpdateBackendAuthVerificationMessageConfig {
     /// <p>The settings for the SMS message.</p>
     pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
         self.sms_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBackendAuthVerificationMessageConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthVerificationMessageConfig");
-        formatter.field("delivery_method", &self.delivery_method);
-        formatter.field("email_settings", &self.email_settings);
-        formatter.field("sms_settings", &self.sms_settings);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
@@ -1006,7 +944,7 @@ impl UpdateBackendAuthVerificationMessageConfig {
 
 /// <p>SMS settings for authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsSettings {
     /// <p>The contents of the SMS message.</p>
     #[doc(hidden)]
@@ -1016,13 +954,6 @@ impl SmsSettings {
     /// <p>The contents of the SMS message.</p>
     pub fn sms_message(&self) -> std::option::Option<&str> {
         self.sms_message.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsSettings");
-        formatter.field("sms_message", &self.sms_message);
-        formatter.finish()
     }
 }
 /// See [`SmsSettings`](crate::model::SmsSettings).
@@ -1061,7 +992,7 @@ impl SmsSettings {
 
 /// <p>The configuration for the email sent when an app user forgets their password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailSettings {
     /// <p>The contents of the email message.</p>
     #[doc(hidden)]
@@ -1078,14 +1009,6 @@ impl EmailSettings {
     /// <p>The contents of the subject line of the email message.</p>
     pub fn email_subject(&self) -> std::option::Option<&str> {
         self.email_subject.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailSettings");
-        formatter.field("email_message", &self.email_message);
-        formatter.field("email_subject", &self.email_subject);
-        formatter.finish()
     }
 }
 /// See [`EmailSettings`](crate::model::EmailSettings).
@@ -1232,7 +1155,7 @@ impl AsRef<str> for DeliveryMethod {
 
 /// <p>Describes the password policy for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthPasswordPolicyConfig {
     /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
@@ -1252,14 +1175,6 @@ impl UpdateBackendAuthPasswordPolicyConfig {
     /// <p>Describes the minimum length of the password required to sign in to the auth resource, configured as a part of your Amplify project.</p>
     pub fn minimum_length(&self) -> f64 {
         self.minimum_length
-    }
-}
-impl std::fmt::Debug for UpdateBackendAuthPasswordPolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthPasswordPolicyConfig");
-        formatter.field("additional_constraints", &self.additional_constraints);
-        formatter.field("minimum_length", &self.minimum_length);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
@@ -1430,7 +1345,7 @@ impl AsRef<str> for AdditionalConstraintsElement {
 
 /// <p>The OAuth configurations for authenticating users into your Amplify app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthOAuthConfig {
     /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
     #[doc(hidden)]
@@ -1477,18 +1392,6 @@ impl UpdateBackendAuthOAuthConfig {
         &self,
     ) -> std::option::Option<&crate::model::SocialProviderSettings> {
         self.social_provider_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBackendAuthOAuthConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthOAuthConfig");
-        formatter.field("domain_prefix", &self.domain_prefix);
-        formatter.field("o_auth_grant_type", &self.o_auth_grant_type);
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.field("redirect_sign_in_ur_is", &self.redirect_sign_in_ur_is);
-        formatter.field("redirect_sign_out_ur_is", &self.redirect_sign_out_ur_is);
-        formatter.field("social_provider_settings", &self.social_provider_settings);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
@@ -1628,7 +1531,7 @@ impl UpdateBackendAuthOAuthConfig {
 
 /// <p>The settings for using the social identity providers for access to your Amplify app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SocialProviderSettings {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     #[doc(hidden)]
@@ -1663,16 +1566,6 @@ impl SocialProviderSettings {
         &self,
     ) -> std::option::Option<&crate::model::BackendAuthAppleProviderConfig> {
         self.sign_in_with_apple.as_ref()
-    }
-}
-impl std::fmt::Debug for SocialProviderSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SocialProviderSettings");
-        formatter.field("facebook", &self.facebook);
-        formatter.field("google", &self.google);
-        formatter.field("login_with_amazon", &self.login_with_amazon);
-        formatter.field("sign_in_with_apple", &self.sign_in_with_apple);
-        formatter.finish()
     }
 }
 /// See [`SocialProviderSettings`](crate::model::SocialProviderSettings).
@@ -1767,7 +1660,7 @@ impl SocialProviderSettings {
 
 /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendAuthAppleProviderConfig {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
     #[doc(hidden)]
@@ -1798,16 +1691,6 @@ impl BackendAuthAppleProviderConfig {
     /// <p>Describes the team_id that comes from Apple.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BackendAuthAppleProviderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendAuthAppleProviderConfig");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.finish()
     }
 }
 /// See [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
@@ -1882,7 +1765,7 @@ impl BackendAuthAppleProviderConfig {
 
 /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendAuthSocialProviderConfig {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     #[doc(hidden)]
@@ -1899,14 +1782,6 @@ impl BackendAuthSocialProviderConfig {
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
-    }
-}
-impl std::fmt::Debug for BackendAuthSocialProviderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendAuthSocialProviderConfig");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.finish()
     }
 }
 /// See [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
@@ -2163,7 +2038,7 @@ impl AsRef<str> for OAuthGrantType {
 
 /// <p>Updates the multi-factor authentication (MFA) configuration for the backend of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthMfaConfig {
     /// <p>The MFA mode for the backend of your Amplify project.</p>
     #[doc(hidden)]
@@ -2180,14 +2055,6 @@ impl UpdateBackendAuthMfaConfig {
     /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
         self.settings.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBackendAuthMfaConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthMfaConfig");
-        formatter.field("mfa_mode", &self.mfa_mode);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
@@ -2238,7 +2105,7 @@ impl UpdateBackendAuthMfaConfig {
 
 /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Settings {
     /// <p>The supported MFA types.</p>
     #[doc(hidden)]
@@ -2255,14 +2122,6 @@ impl Settings {
     /// <p>The body of the SMS message.</p>
     pub fn sms_message(&self) -> std::option::Option<&str> {
         self.sms_message.as_deref()
-    }
-}
-impl std::fmt::Debug for Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Settings");
-        formatter.field("mfa_types", &self.mfa_types);
-        formatter.field("sms_message", &self.sms_message);
-        formatter.finish()
     }
 }
 /// See [`Settings`](crate::model::Settings).
@@ -2507,7 +2366,7 @@ impl AsRef<str> for MfaMode {
 
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
     #[doc(hidden)]
@@ -2531,15 +2390,6 @@ impl UpdateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
     pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
         self.sms_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBackendAuthForgotPasswordConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthForgotPasswordConfig");
-        formatter.field("delivery_method", &self.delivery_method);
-        formatter.field("email_settings", &self.email_settings);
-        formatter.field("sms_settings", &self.sms_settings);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
@@ -2696,7 +2546,7 @@ impl AsRef<str> for Service {
 
 /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     #[doc(hidden)]
@@ -2706,13 +2556,6 @@ impl UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     pub fn unauthenticated_login(&self) -> bool {
         self.unauthenticated_login
-    }
-}
-impl std::fmt::Debug for UpdateBackendAuthIdentityPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthIdentityPoolConfig");
-        formatter.field("unauthenticated_login", &self.unauthenticated_login);
-        formatter.finish()
     }
 }
 /// See [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
@@ -2841,7 +2684,7 @@ impl AsRef<str> for AuthResources {
 
 /// <p>The resource config for the data model, configured as a part of the Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendApiResourceConfig {
     /// <p>Additional authentication methods used to interact with your data models.</p>
     #[doc(hidden)]
@@ -2890,18 +2733,6 @@ impl BackendApiResourceConfig {
     /// <p>The definition of the data model in the annotated transform of the GraphQL schema.</p>
     pub fn transform_schema(&self) -> std::option::Option<&str> {
         self.transform_schema.as_deref()
-    }
-}
-impl std::fmt::Debug for BackendApiResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendApiResourceConfig");
-        formatter.field("additional_auth_types", &self.additional_auth_types);
-        formatter.field("api_name", &self.api_name);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.field("default_auth_type", &self.default_auth_type);
-        formatter.field("service", &self.service);
-        formatter.field("transform_schema", &self.transform_schema);
-        formatter.finish()
     }
 }
 /// See [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
@@ -3023,7 +2854,7 @@ impl BackendApiResourceConfig {
 
 /// <p>Describes the auth types for your configured data models.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendApiAuthType {
     /// <p>Describes the authentication mode.</p>
     #[doc(hidden)]
@@ -3040,14 +2871,6 @@ impl BackendApiAuthType {
     /// <p>Describes settings for the authentication mode.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::BackendApiAppSyncAuthSettings> {
         self.settings.as_ref()
-    }
-}
-impl std::fmt::Debug for BackendApiAuthType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendApiAuthType");
-        formatter.field("mode", &self.mode);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
     }
 }
 /// See [`BackendApiAuthType`](crate::model::BackendApiAuthType).
@@ -3101,7 +2924,7 @@ impl BackendApiAuthType {
 
 /// <p>The authentication settings for accessing provisioned data models in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendApiAppSyncAuthSettings {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
     #[doc(hidden)]
@@ -3160,20 +2983,6 @@ impl BackendApiAppSyncAuthSettings {
     /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
     pub fn open_id_provider_name(&self) -> std::option::Option<&str> {
         self.open_id_provider_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BackendApiAppSyncAuthSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendApiAppSyncAuthSettings");
-        formatter.field("cognito_user_pool_id", &self.cognito_user_pool_id);
-        formatter.field("description", &self.description);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("open_id_auth_ttl", &self.open_id_auth_ttl);
-        formatter.field("open_id_client_id", &self.open_id_client_id);
-        formatter.field("open_id_iat_ttl", &self.open_id_iat_ttl);
-        formatter.field("open_id_issue_url", &self.open_id_issue_url);
-        formatter.field("open_id_provider_name", &self.open_id_provider_name);
-        formatter.finish()
     }
 }
 /// See [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
@@ -3419,7 +3228,7 @@ impl AsRef<str> for Mode {
 
 /// <p>Describes the conflict resolution configuration for your data model configured in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendApiConflictResolution {
     /// <p>The strategy for conflict resolution.</p>
     #[doc(hidden)]
@@ -3429,13 +3238,6 @@ impl BackendApiConflictResolution {
     /// <p>The strategy for conflict resolution.</p>
     pub fn resolution_strategy(&self) -> std::option::Option<&crate::model::ResolutionStrategy> {
         self.resolution_strategy.as_ref()
-    }
-}
-impl std::fmt::Debug for BackendApiConflictResolution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendApiConflictResolution");
-        formatter.field("resolution_strategy", &self.resolution_strategy);
-        formatter.finish()
     }
 }
 /// See [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
@@ -3579,7 +3381,7 @@ impl AsRef<str> for ResolutionStrategy {
 
 /// <p>Describes the metadata of the S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketInfo {
     /// <p>The creation date of the S3 bucket.</p>
     #[doc(hidden)]
@@ -3596,14 +3398,6 @@ impl S3BucketInfo {
     /// <p>The name of the S3 bucket.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for S3BucketInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketInfo");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`S3BucketInfo`](crate::model::S3BucketInfo).
@@ -3657,7 +3451,7 @@ impl S3BucketInfo {
 
 /// <p>The response object for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendJobRespObj {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -3716,20 +3510,6 @@ impl BackendJobRespObj {
     /// <p>The time when the job was last updated.</p>
     pub fn update_time(&self) -> std::option::Option<&str> {
         self.update_time.as_deref()
-    }
-}
-impl std::fmt::Debug for BackendJobRespObj {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendJobRespObj");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("error", &self.error);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("operation", &self.operation);
-        formatter.field("status", &self.status);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`BackendJobRespObj`](crate::model::BackendJobRespObj).
@@ -3855,7 +3635,7 @@ impl BackendJobRespObj {
 
 /// <p>The details for a backend storage resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -3886,16 +3666,6 @@ impl GetBackendStorageResourceConfig {
     /// <p>The name of the storage service.</p>
     pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
         self.service_name.as_ref()
-    }
-}
-impl std::fmt::Debug for GetBackendStorageResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendStorageResourceConfig");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("imported", &self.imported);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
     }
 }
 /// See [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
@@ -3976,7 +3746,7 @@ impl GetBackendStorageResourceConfig {
 
 /// <p>Defines the resource configuration when creating an auth resource in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthResourceConfig {
     /// <p>Defines whether you want to configure only authentication or both authentication and authorization settings.</p>
     #[doc(hidden)]
@@ -4012,16 +3782,6 @@ impl CreateBackendAuthResourceConfig {
         &self,
     ) -> std::option::Option<&crate::model::CreateBackendAuthUserPoolConfig> {
         self.user_pool_configs.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBackendAuthResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthResourceConfig");
-        formatter.field("auth_resources", &self.auth_resources);
-        formatter.field("identity_pool_configs", &self.identity_pool_configs);
-        formatter.field("service", &self.service);
-        formatter.field("user_pool_configs", &self.user_pool_configs);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
@@ -4113,7 +3873,7 @@ impl CreateBackendAuthResourceConfig {
 
 /// <p>Describes the Amazon Cognito user pool configuration for the auth resource to be configured for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
@@ -4182,23 +3942,6 @@ impl CreateBackendAuthUserPoolConfig {
         &self,
     ) -> std::option::Option<&crate::model::CreateBackendAuthVerificationMessageConfig> {
         self.verification_message.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBackendAuthUserPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthUserPoolConfig");
-        formatter.field("forgot_password", &self.forgot_password);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("o_auth", &self.o_auth);
-        formatter.field("password_policy", &self.password_policy);
-        formatter.field(
-            "required_sign_up_attributes",
-            &self.required_sign_up_attributes,
-        );
-        formatter.field("sign_in_method", &self.sign_in_method);
-        formatter.field("user_pool_name", &self.user_pool_name);
-        formatter.field("verification_message", &self.verification_message);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
@@ -4369,7 +4112,7 @@ impl CreateBackendAuthUserPoolConfig {
 
 /// <p>Creates an email or SMS verification message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
     #[doc(hidden)]
@@ -4393,15 +4136,6 @@ impl CreateBackendAuthVerificationMessageConfig {
     /// <p>The settings for the SMS message.</p>
     pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
         self.sms_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBackendAuthVerificationMessageConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthVerificationMessageConfig");
-        formatter.field("delivery_method", &self.delivery_method);
-        formatter.field("email_settings", &self.email_settings);
-        formatter.field("sms_settings", &self.sms_settings);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
@@ -4763,7 +4497,7 @@ impl AsRef<str> for RequiredSignUpAttributesElement {
 
 /// <p>The password policy configuration for the backend to your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthPasswordPolicyConfig {
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
     #[doc(hidden)]
@@ -4783,14 +4517,6 @@ impl CreateBackendAuthPasswordPolicyConfig {
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
     pub fn minimum_length(&self) -> f64 {
         self.minimum_length
-    }
-}
-impl std::fmt::Debug for CreateBackendAuthPasswordPolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthPasswordPolicyConfig");
-        formatter.field("additional_constraints", &self.additional_constraints);
-        formatter.field("minimum_length", &self.minimum_length);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
@@ -4854,7 +4580,7 @@ impl CreateBackendAuthPasswordPolicyConfig {
 
 /// <p>Creates the OAuth configuration for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthOAuthConfig {
     /// <p>The domain prefix for your Amplify app.</p>
     #[doc(hidden)]
@@ -4901,18 +4627,6 @@ impl CreateBackendAuthOAuthConfig {
         &self,
     ) -> std::option::Option<&crate::model::SocialProviderSettings> {
         self.social_provider_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBackendAuthOAuthConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthOAuthConfig");
-        formatter.field("domain_prefix", &self.domain_prefix);
-        formatter.field("o_auth_grant_type", &self.o_auth_grant_type);
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.field("redirect_sign_in_ur_is", &self.redirect_sign_in_ur_is);
-        formatter.field("redirect_sign_out_ur_is", &self.redirect_sign_out_ur_is);
-        formatter.field("social_provider_settings", &self.social_provider_settings);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
@@ -5052,7 +4766,7 @@ impl CreateBackendAuthOAuthConfig {
 
 /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthMfaConfig {
     /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
     #[doc(hidden)]
@@ -5069,14 +4783,6 @@ impl CreateBackendAuthMfaConfig {
     /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
         self.settings.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBackendAuthMfaConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthMfaConfig");
-        formatter.field("mfa_mode", &self.mfa_mode);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
@@ -5127,7 +4833,7 @@ impl CreateBackendAuthMfaConfig {
 
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
     #[doc(hidden)]
@@ -5151,15 +4857,6 @@ impl CreateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
     pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
         self.sms_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBackendAuthForgotPasswordConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthForgotPasswordConfig");
-        formatter.field("delivery_method", &self.delivery_method);
-        formatter.field("email_settings", &self.email_settings);
-        formatter.field("sms_settings", &self.sms_settings);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
@@ -5231,7 +4928,7 @@ impl CreateBackendAuthForgotPasswordConfig {
 
 /// <p>Describes authorization configurations for the auth resources, configured as a part of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthIdentityPoolConfig {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
     #[doc(hidden)]
@@ -5248,14 +4945,6 @@ impl CreateBackendAuthIdentityPoolConfig {
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
     pub fn unauthenticated_login(&self) -> bool {
         self.unauthenticated_login
-    }
-}
-impl std::fmt::Debug for CreateBackendAuthIdentityPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthIdentityPoolConfig");
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field("unauthenticated_login", &self.unauthenticated_login);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
@@ -5399,7 +5088,7 @@ impl AsRef<str> for Status {
 
 /// <p>The resource configuration for creating backend storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -5423,15 +5112,6 @@ impl CreateBackendStorageResourceConfig {
     /// <p>The name of the storage service.</p>
     pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
         self.service_name.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBackendStorageResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendStorageResourceConfig");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
@@ -5500,14 +5180,8 @@ impl CreateBackendStorageResourceConfig {
 
 /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceConfig {}
-impl std::fmt::Debug for ResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConfig");
-        formatter.finish()
-    }
-}
 /// See [`ResourceConfig`](crate::model::ResourceConfig).
 pub mod resource_config {
 

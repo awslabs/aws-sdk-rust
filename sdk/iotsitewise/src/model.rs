@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the current status of a portal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortalStatus {
     /// <p>The current state of the portal.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl PortalStatus {
     /// <p>Contains associated error information, if any.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::MonitorErrorDetails> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for PortalStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortalStatus");
-        formatter.field("state", &self.state);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`PortalStatus`](crate::model::PortalStatus).
@@ -80,7 +72,7 @@ impl PortalStatus {
 
 /// <p>Contains IoT SiteWise Monitor error details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitorErrorDetails {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -97,14 +89,6 @@ impl MonitorErrorDetails {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for MonitorErrorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitorErrorDetails");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`MonitorErrorDetails`](crate::model::MonitorErrorDetails).
@@ -358,7 +342,7 @@ impl AsRef<str> for PortalState {
 
 /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarms {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
     #[doc(hidden)]
@@ -375,14 +359,6 @@ impl Alarms {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub fn notification_lambda_arn(&self) -> std::option::Option<&str> {
         self.notification_lambda_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Alarms {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarms");
-        formatter.field("alarm_role_arn", &self.alarm_role_arn);
-        formatter.field("notification_lambda_arn", &self.notification_lambda_arn);
-        formatter.finish()
     }
 }
 /// See [`Alarms`](crate::model::Alarms).
@@ -443,7 +419,7 @@ impl Alarms {
 /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
     #[doc(hidden)]
@@ -460,14 +436,6 @@ impl Image {
     /// <p>Contains an image file.</p>
     pub fn file(&self) -> std::option::Option<&crate::model::ImageFile> {
         self.file.as_ref()
-    }
-}
-impl std::fmt::Debug for Image {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Image");
-        formatter.field("id", &self.id);
-        formatter.field("file", &self.file);
-        formatter.finish()
     }
 }
 /// See [`Image`](crate::model::Image).
@@ -518,7 +486,7 @@ impl Image {
 
 /// <p>Contains an image file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageFile {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     #[doc(hidden)]
@@ -535,14 +503,6 @@ impl ImageFile {
     /// <p>The file type of the image.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ImageFileType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageFile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageFile");
-        formatter.field("data", &self.data);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ImageFile`](crate::model::ImageFile).
@@ -872,7 +832,7 @@ impl AsRef<str> for PropertyNotificationState {
 
 /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetModelStatus {
     /// <p>The current state of the asset model.</p>
     #[doc(hidden)]
@@ -889,14 +849,6 @@ impl AssetModelStatus {
     /// <p>Contains associated error information, if any.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetModelStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetModelStatus");
-        formatter.field("state", &self.state);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`AssetModelStatus`](crate::model::AssetModelStatus).
@@ -950,7 +902,7 @@ impl AssetModelStatus {
 
 /// <p>Contains the details of an IoT SiteWise error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetails {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -974,15 +926,6 @@ impl ErrorDetails {
     /// <p> A list of detailed errors. </p>
     pub fn details(&self) -> std::option::Option<&[crate::model::DetailedError]> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetails");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
@@ -1054,7 +997,7 @@ impl ErrorDetails {
 
 /// <p>Contains detailed error information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetailedError {
     /// <p>The error code. </p>
     #[doc(hidden)]
@@ -1071,14 +1014,6 @@ impl DetailedError {
     /// <p>The error message. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DetailedError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetailedError");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DetailedError`](crate::model::DetailedError).
@@ -1438,7 +1373,7 @@ impl AsRef<str> for AssetModelState {
 
 /// <p>Contains information about a composite model in an asset model. This object contains the asset property definitions that you define in the composite model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetModelCompositeModel {
     /// <p>The name of the composite model.</p>
     #[doc(hidden)]
@@ -1469,16 +1404,6 @@ impl AssetModelCompositeModel {
     /// <p>The asset property definitions for this composite model.</p>
     pub fn properties(&self) -> std::option::Option<&[crate::model::AssetModelProperty]> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetModelCompositeModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetModelCompositeModel");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
@@ -1562,7 +1487,7 @@ impl AssetModelCompositeModel {
 
 /// <p>Contains information about an asset model property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetModelProperty {
     /// <p>The ID of the asset model property.</p>
     #[doc(hidden)]
@@ -1607,18 +1532,6 @@ impl AssetModelProperty {
     /// <p>The property type (see <code>PropertyType</code>).</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetModelProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetModelProperty");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("data_type_spec", &self.data_type_spec);
-        formatter.field("unit", &self.unit);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`AssetModelProperty`](crate::model::AssetModelProperty).
@@ -1723,7 +1636,7 @@ impl AssetModelProperty {
 
 /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyType {
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
     #[doc(hidden)]
@@ -1754,16 +1667,6 @@ impl PropertyType {
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
     pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
         self.metric.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyType");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("measurement", &self.measurement);
-        formatter.field("transform", &self.transform);
-        formatter.field("metric", &self.metric);
-        formatter.finish()
     }
 }
 /// See [`PropertyType`](crate::model::PropertyType).
@@ -1849,7 +1752,7 @@ impl PropertyType {
 /// <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metric {
     /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -1882,16 +1785,6 @@ impl Metric {
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
     pub fn processing_config(&self) -> std::option::Option<&crate::model::MetricProcessingConfig> {
         self.processing_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Metric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metric");
-        formatter.field("expression", &self.expression);
-        formatter.field("variables", &self.variables);
-        formatter.field("window", &self.window);
-        formatter.field("processing_config", &self.processing_config);
-        formatter.finish()
     }
 }
 /// See [`Metric`](crate::model::Metric).
@@ -1983,7 +1876,7 @@ impl Metric {
 
 /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricProcessingConfig {
     /// <p>The compute location for the given metric property. </p>
     #[doc(hidden)]
@@ -1993,13 +1886,6 @@ impl MetricProcessingConfig {
     /// <p>The compute location for the given metric property. </p>
     pub fn compute_location(&self) -> std::option::Option<&crate::model::ComputeLocation> {
         self.compute_location.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricProcessingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricProcessingConfig");
-        formatter.field("compute_location", &self.compute_location);
-        formatter.finish()
     }
 }
 /// See [`MetricProcessingConfig`](crate::model::MetricProcessingConfig).
@@ -2131,7 +2017,7 @@ impl AsRef<str> for ComputeLocation {
 
 /// <p>Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricWindow {
     /// <p>The tumbling time interval window.</p>
     #[doc(hidden)]
@@ -2141,13 +2027,6 @@ impl MetricWindow {
     /// <p>The tumbling time interval window.</p>
     pub fn tumbling(&self) -> std::option::Option<&crate::model::TumblingWindow> {
         self.tumbling.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricWindow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricWindow");
-        formatter.field("tumbling", &self.tumbling);
-        formatter.finish()
     }
 }
 /// See [`MetricWindow`](crate::model::MetricWindow).
@@ -2191,7 +2070,7 @@ impl MetricWindow {
 /// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code> represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds in <code>offset</code>.</p>
 /// <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and <code>PT5H</code> represents 5 hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TumblingWindow {
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
@@ -2248,14 +2127,6 @@ impl TumblingWindow {
     /// </ul>
     pub fn offset(&self) -> std::option::Option<&str> {
         self.offset.as_deref()
-    }
-}
-impl std::fmt::Debug for TumblingWindow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TumblingWindow");
-        formatter.field("interval", &self.interval);
-        formatter.field("offset", &self.offset);
-        formatter.finish()
     }
 }
 /// See [`TumblingWindow`](crate::model::TumblingWindow).
@@ -2346,7 +2217,7 @@ impl TumblingWindow {
 
 /// <p>Contains expression variable information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpressionVariable {
     /// <p>The friendly name of the variable to be used in the expression.</p>
     #[doc(hidden)]
@@ -2363,14 +2234,6 @@ impl ExpressionVariable {
     /// <p>The variable that identifies an asset property from which to use values.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::VariableValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for ExpressionVariable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpressionVariable");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ExpressionVariable`](crate::model::ExpressionVariable).
@@ -2424,7 +2287,7 @@ impl ExpressionVariable {
 
 /// <p>Identifies a property value used in an expression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VariableValue {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
     #[doc(hidden)]
@@ -2443,14 +2306,6 @@ impl VariableValue {
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn hierarchy_id(&self) -> std::option::Option<&str> {
         self.hierarchy_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VariableValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VariableValue");
-        formatter.field("property_id", &self.property_id);
-        formatter.field("hierarchy_id", &self.hierarchy_id);
-        formatter.finish()
     }
 }
 /// See [`VariableValue`](crate::model::VariableValue).
@@ -2504,7 +2359,7 @@ impl VariableValue {
 /// <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transform {
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -2532,15 +2387,6 @@ impl Transform {
         &self,
     ) -> std::option::Option<&crate::model::TransformProcessingConfig> {
         self.processing_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Transform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Transform");
-        formatter.field("expression", &self.expression);
-        formatter.field("variables", &self.variables);
-        formatter.field("processing_config", &self.processing_config);
-        formatter.finish()
     }
 }
 /// See [`Transform`](crate::model::Transform).
@@ -2617,7 +2463,7 @@ impl Transform {
 
 /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransformProcessingConfig {
     /// <p>The compute location for the given transform property. </p>
     #[doc(hidden)]
@@ -2634,14 +2480,6 @@ impl TransformProcessingConfig {
     /// <p>The forwarding configuration for a given property.</p>
     pub fn forwarding_config(&self) -> std::option::Option<&crate::model::ForwardingConfig> {
         self.forwarding_config.as_ref()
-    }
-}
-impl std::fmt::Debug for TransformProcessingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransformProcessingConfig");
-        formatter.field("compute_location", &self.compute_location);
-        formatter.field("forwarding_config", &self.forwarding_config);
-        formatter.finish()
     }
 }
 /// See [`TransformProcessingConfig`](crate::model::TransformProcessingConfig).
@@ -2698,7 +2536,7 @@ impl TransformProcessingConfig {
 
 /// <p>The forwarding configuration for a given property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
     #[doc(hidden)]
@@ -2708,13 +2546,6 @@ impl ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
     pub fn state(&self) -> std::option::Option<&crate::model::ForwardingConfigState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ForwardingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForwardingConfig");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ForwardingConfig`](crate::model::ForwardingConfig).
@@ -2846,7 +2677,7 @@ impl AsRef<str> for ForwardingConfigState {
 
 /// <p>Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Measurement {
     /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
     #[doc(hidden)]
@@ -2858,13 +2689,6 @@ impl Measurement {
         &self,
     ) -> std::option::Option<&crate::model::MeasurementProcessingConfig> {
         self.processing_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Measurement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Measurement");
-        formatter.field("processing_config", &self.processing_config);
-        formatter.finish()
     }
 }
 /// See [`Measurement`](crate::model::Measurement).
@@ -2910,7 +2734,7 @@ impl Measurement {
 
 /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeasurementProcessingConfig {
     /// <p>The forwarding configuration for the given measurement property. </p>
     #[doc(hidden)]
@@ -2920,13 +2744,6 @@ impl MeasurementProcessingConfig {
     /// <p>The forwarding configuration for the given measurement property. </p>
     pub fn forwarding_config(&self) -> std::option::Option<&crate::model::ForwardingConfig> {
         self.forwarding_config.as_ref()
-    }
-}
-impl std::fmt::Debug for MeasurementProcessingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeasurementProcessingConfig");
-        formatter.field("forwarding_config", &self.forwarding_config);
-        formatter.finish()
     }
 }
 /// See [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig).
@@ -2968,7 +2785,7 @@ impl MeasurementProcessingConfig {
 
 /// <p>Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
@@ -2978,13 +2795,6 @@ impl Attribute {
     /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Attribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attribute");
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
@@ -3131,7 +2941,7 @@ impl AsRef<str> for PropertyDataType {
 
 /// <p>Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetModelHierarchy {
     /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
     #[doc(hidden)]
@@ -3155,15 +2965,6 @@ impl AssetModelHierarchy {
     /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
     pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
         self.child_asset_model_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetModelHierarchy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetModelHierarchy");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("child_asset_model_id", &self.child_asset_model_id);
-        formatter.finish()
     }
 }
 /// See [`AssetModelHierarchy`](crate::model::AssetModelHierarchy).
@@ -3229,7 +3030,7 @@ impl AssetModelHierarchy {
 
 /// <p>Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetStatus {
     /// <p>The current status of the asset.</p>
     #[doc(hidden)]
@@ -3246,14 +3047,6 @@ impl AssetStatus {
     /// <p>Contains associated error information, if any.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetStatus");
-        formatter.field("state", &self.state);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`AssetStatus`](crate::model::AssetStatus).
@@ -3499,7 +3292,7 @@ impl AsRef<str> for Permission {
 
 /// <p>Contains an IoT SiteWise Monitor resource ID for a portal or project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>A portal resource.</p>
     #[doc(hidden)]
@@ -3516,14 +3309,6 @@ impl Resource {
     /// <p>A project resource.</p>
     pub fn project(&self) -> std::option::Option<&crate::model::ProjectResource> {
         self.project.as_ref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("portal", &self.portal);
-        formatter.field("project", &self.project);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -3580,7 +3365,7 @@ impl Resource {
 
 /// <p>Identifies a specific IoT SiteWise Monitor project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectResource {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -3590,13 +3375,6 @@ impl ProjectResource {
     /// <p>The ID of the project.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectResource");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`ProjectResource`](crate::model::ProjectResource).
@@ -3633,7 +3411,7 @@ impl ProjectResource {
 
 /// <p>Identifies an IoT SiteWise Monitor portal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortalResource {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
@@ -3643,13 +3421,6 @@ impl PortalResource {
     /// <p>The ID of the portal.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for PortalResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortalResource");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`PortalResource`](crate::model::PortalResource).
@@ -3688,7 +3459,7 @@ impl PortalResource {
 /// <p>Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services SSO identity IDs. You can find the Amazon Web Services SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">Amazon Web Services SSO console</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Identity {
     /// <p>An Amazon Web Services SSO user identity.</p>
     #[doc(hidden)]
@@ -3719,16 +3490,6 @@ impl Identity {
     /// <p>An IAM role identity.</p>
     pub fn iam_role(&self) -> std::option::Option<&crate::model::IamRoleIdentity> {
         self.iam_role.as_ref()
-    }
-}
-impl std::fmt::Debug for Identity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Identity");
-        formatter.field("user", &self.user);
-        formatter.field("group", &self.group);
-        formatter.field("iam_user", &self.iam_user);
-        formatter.field("iam_role", &self.iam_role);
-        formatter.finish()
     }
 }
 /// See [`Identity`](crate::model::Identity).
@@ -3812,7 +3573,7 @@ impl Identity {
 
 /// <p>Contains information about an Identity and Access Management role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamRoleIdentity {
     /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
@@ -3822,13 +3583,6 @@ impl IamRoleIdentity {
     /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IamRoleIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamRoleIdentity");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`IamRoleIdentity`](crate::model::IamRoleIdentity).
@@ -3865,7 +3619,7 @@ impl IamRoleIdentity {
 
 /// <p>Contains information about an Identity and Access Management user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamUserIdentity {
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
@@ -3879,13 +3633,6 @@ impl IamUserIdentity {
     /// </note>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IamUserIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamUserIdentity");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`IamUserIdentity`](crate::model::IamUserIdentity).
@@ -3926,7 +3673,7 @@ impl IamUserIdentity {
 
 /// <p>Contains information for a group identity in an access policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupIdentity {
     /// <p>The Amazon Web Services SSO ID of the group.</p>
     #[doc(hidden)]
@@ -3936,13 +3683,6 @@ impl GroupIdentity {
     /// <p>The Amazon Web Services SSO ID of the group.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupIdentity");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`GroupIdentity`](crate::model::GroupIdentity).
@@ -3979,7 +3719,7 @@ impl GroupIdentity {
 
 /// <p>Contains information for a user identity in an access policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserIdentity {
     /// <p>The Amazon Web Services SSO ID of the user.</p>
     #[doc(hidden)]
@@ -3989,13 +3729,6 @@ impl UserIdentity {
     /// <p>The Amazon Web Services SSO ID of the user.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for UserIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserIdentity");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`UserIdentity`](crate::model::UserIdentity).
@@ -4032,7 +3765,7 @@ impl UserIdentity {
 
 /// <p>Contains current status information for the configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationStatus {
     /// <p>The current state of the configuration.</p>
     #[doc(hidden)]
@@ -4049,14 +3782,6 @@ impl ConfigurationStatus {
     /// <p>Contains associated error information, if any.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ConfigurationErrorDetails> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigurationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationStatus");
-        formatter.field("state", &self.state);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationStatus`](crate::model::ConfigurationStatus).
@@ -4113,7 +3838,7 @@ impl ConfigurationStatus {
 
 /// <p>Contains the details of an IoT SiteWise configuration error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationErrorDetails {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -4130,14 +3855,6 @@ impl ConfigurationErrorDetails {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationErrorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationErrorDetails");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationErrorDetails`](crate::model::ConfigurationErrorDetails).
@@ -4285,7 +4002,7 @@ impl AsRef<str> for ConfigurationState {
 
 /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>The number of days that your data is kept.</p> <note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
@@ -4310,14 +4027,6 @@ impl RetentionPeriod {
     /// </note>
     pub fn unlimited(&self) -> std::option::Option<bool> {
         self.unlimited
-    }
-}
-impl std::fmt::Debug for RetentionPeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetentionPeriod");
-        formatter.field("number_of_days", &self.number_of_days);
-        formatter.field("unlimited", &self.unlimited);
-        formatter.finish()
     }
 }
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
@@ -4468,7 +4177,7 @@ impl AsRef<str> for DisassociatedDataStorageState {
 
 /// <p>Contains information about the storage destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiLayerStorage {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -4480,16 +4189,6 @@ impl MultiLayerStorage {
         &self,
     ) -> std::option::Option<&crate::model::CustomerManagedS3Storage> {
         self.customer_managed_s3_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for MultiLayerStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiLayerStorage");
-        formatter.field(
-            "customer_managed_s3_storage",
-            &self.customer_managed_s3_storage,
-        );
-        formatter.finish()
     }
 }
 /// See [`MultiLayerStorage`](crate::model::MultiLayerStorage).
@@ -4535,7 +4234,7 @@ impl MultiLayerStorage {
 
 /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedS3Storage {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     #[doc(hidden)]
@@ -4552,14 +4251,6 @@ impl CustomerManagedS3Storage {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerManagedS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedS3Storage");
-        formatter.field("s3_resource_arn", &self.s3_resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage).
@@ -4703,7 +4394,7 @@ impl AsRef<str> for StorageType {
 
 /// <p>Contains logging options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
     #[doc(hidden)]
@@ -4713,13 +4404,6 @@ impl LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
     pub fn level(&self) -> std::option::Option<&crate::model::LoggingLevel> {
         self.level.as_ref()
-    }
-}
-impl std::fmt::Debug for LoggingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingOptions");
-        formatter.field("level", &self.level);
-        formatter.finish()
     }
 }
 /// See [`LoggingOptions`](crate::model::LoggingOptions).
@@ -4941,7 +4625,7 @@ impl AsRef<str> for EncryptionType {
 
 /// <p>Contains a summary of a time series (data stream).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesSummary {
     /// <p>The ID of the asset in which the asset property was created.</p>
     #[doc(hidden)]
@@ -5004,23 +4688,6 @@ impl TimeSeriesSummary {
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
     pub fn time_series_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_series_last_update_date.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesSummary");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("time_series_id", &self.time_series_id);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("data_type_spec", &self.data_type_spec);
-        formatter.field("time_series_creation_date", &self.time_series_creation_date);
-        formatter.field(
-            "time_series_last_update_date",
-            &self.time_series_last_update_date,
-        );
-        formatter.finish()
     }
 }
 /// See [`TimeSeriesSummary`](crate::model::TimeSeriesSummary).
@@ -5254,7 +4921,7 @@ impl AsRef<str> for ListTimeSeriesType {
 
 /// <p>Contains project summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -5292,17 +4959,6 @@ impl ProjectSummary {
     /// <p>The date the project was last updated, in Unix epoch time.</p>
     pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.finish()
     }
 }
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
@@ -5395,7 +5051,7 @@ impl ProjectSummary {
 
 /// <p>Contains a portal summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortalSummary {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
@@ -5454,20 +5110,6 @@ impl PortalSummary {
     /// <p>Contains information about the current status of a portal.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::PortalStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for PortalSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortalSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("start_url", &self.start_url);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`PortalSummary`](crate::model::PortalSummary).
@@ -5599,7 +5241,7 @@ impl PortalSummary {
 
 /// <p>Contains a summary of a gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewaySummary {
     /// <p>The ID of the gateway device.</p>
     #[doc(hidden)]
@@ -5647,21 +5289,6 @@ impl GatewaySummary {
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
     pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
-    }
-}
-impl std::fmt::Debug for GatewaySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewaySummary");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.field("gateway_platform", &self.gateway_platform);
-        formatter.field(
-            "gateway_capability_summaries",
-            &self.gateway_capability_summaries,
-        );
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.finish()
     }
 }
 /// See [`GatewaySummary`](crate::model::GatewaySummary).
@@ -5782,7 +5409,7 @@ impl GatewaySummary {
 
 /// <p>Contains a summary of a gateway capability configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayCapabilitySummary {
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     #[doc(hidden)]
@@ -5811,14 +5438,6 @@ impl GatewayCapabilitySummary {
         &self,
     ) -> std::option::Option<&crate::model::CapabilitySyncStatus> {
         self.capability_sync_status.as_ref()
-    }
-}
-impl std::fmt::Debug for GatewayCapabilitySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayCapabilitySummary");
-        formatter.field("capability_namespace", &self.capability_namespace);
-        formatter.field("capability_sync_status", &self.capability_sync_status);
-        formatter.finish()
     }
 }
 /// See [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary).
@@ -5885,7 +5504,7 @@ impl GatewayCapabilitySummary {
 
 /// <p>Contains a gateway's platform information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayPlatform {
     /// <p>A gateway that runs on IoT Greengrass.</p>
     #[doc(hidden)]
@@ -5902,14 +5521,6 @@ impl GatewayPlatform {
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
     pub fn greengrass_v2(&self) -> std::option::Option<&crate::model::GreengrassV2> {
         self.greengrass_v2.as_ref()
-    }
-}
-impl std::fmt::Debug for GatewayPlatform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayPlatform");
-        formatter.field("greengrass", &self.greengrass);
-        formatter.field("greengrass_v2", &self.greengrass_v2);
-        formatter.finish()
     }
 }
 /// See [`GatewayPlatform`](crate::model::GatewayPlatform).
@@ -5966,7 +5577,7 @@ impl GatewayPlatform {
 
 /// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     #[doc(hidden)]
@@ -5976,13 +5587,6 @@ impl GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
         self.core_device_thing_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GreengrassV2 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GreengrassV2");
-        formatter.field("core_device_thing_name", &self.core_device_thing_name);
-        formatter.finish()
     }
 }
 /// See [`GreengrassV2`](crate::model::GreengrassV2).
@@ -6024,7 +5628,7 @@ impl GreengrassV2 {
 
 /// <p>Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Greengrass {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
     #[doc(hidden)]
@@ -6034,13 +5638,6 @@ impl Greengrass {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Greengrass {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Greengrass");
-        formatter.field("group_arn", &self.group_arn);
-        formatter.finish()
     }
 }
 /// See [`Greengrass`](crate::model::Greengrass).
@@ -6079,7 +5676,7 @@ impl Greengrass {
 
 /// <p>Contains a dashboard summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardSummary {
     /// <p>The ID of the dashboard.</p>
     #[doc(hidden)]
@@ -6117,17 +5714,6 @@ impl DashboardSummary {
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
     pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
-    }
-}
-impl std::fmt::Debug for DashboardSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.finish()
     }
 }
 /// See [`DashboardSummary`](crate::model::DashboardSummary).
@@ -6220,7 +5806,7 @@ impl DashboardSummary {
 
 /// <p>Contains a job summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The ID of the job.</p>
     #[doc(hidden)]
@@ -6260,15 +5846,6 @@ impl JobSummary {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for JobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`JobSummary`](crate::model::JobSummary).
@@ -6589,7 +6166,7 @@ impl AsRef<str> for ListBulkImportJobsFilter {
 
 /// <p>Contains a summary of an associated asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatedAssetsSummary {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -6657,21 +6234,6 @@ impl AssociatedAssetsSummary {
     /// <p>A description for the asset.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociatedAssetsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatedAssetsSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.field("status", &self.status);
-        formatter.field("hierarchies", &self.hierarchies);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary).
@@ -6826,7 +6388,7 @@ impl AssociatedAssetsSummary {
 
 /// <p>Describes an asset hierarchy that contains a hierarchy's name and ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetHierarchy {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
     #[doc(hidden)]
@@ -6843,14 +6405,6 @@ impl AssetHierarchy {
     /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetHierarchy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetHierarchy");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AssetHierarchy`](crate::model::AssetHierarchy).
@@ -6993,7 +6547,7 @@ impl AsRef<str> for TraversalDirection {
 
 /// <p>Contains a summary of an asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetSummary {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -7061,21 +6615,6 @@ impl AssetSummary {
     /// <p>A description for the asset.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.field("status", &self.status);
-        formatter.field("hierarchies", &self.hierarchies);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`AssetSummary`](crate::model::AssetSummary).
@@ -7320,7 +6859,7 @@ impl AsRef<str> for ListAssetsFilter {
 
 /// <p>Contains information about assets that are related to one another.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetRelationshipSummary {
     /// <p>The assets that are related through an asset hierarchy.</p>
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
@@ -7345,14 +6884,6 @@ impl AssetRelationshipSummary {
     /// </ul>
     pub fn relationship_type(&self) -> std::option::Option<&crate::model::AssetRelationshipType> {
         self.relationship_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetRelationshipSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetRelationshipSummary");
-        formatter.field("hierarchy_info", &self.hierarchy_info);
-        formatter.field("relationship_type", &self.relationship_type);
-        formatter.finish()
     }
 }
 /// See [`AssetRelationshipSummary`](crate::model::AssetRelationshipSummary).
@@ -7504,7 +7035,7 @@ impl AsRef<str> for AssetRelationshipType {
 
 /// <p>Contains information about a parent asset and a child asset that are related through an asset hierarchy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetHierarchyInfo {
     /// <p>The ID of the parent asset in this asset relationship.</p>
     #[doc(hidden)]
@@ -7521,14 +7052,6 @@ impl AssetHierarchyInfo {
     /// <p>The ID of the child asset in this asset relationship.</p>
     pub fn child_asset_id(&self) -> std::option::Option<&str> {
         self.child_asset_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetHierarchyInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetHierarchyInfo");
-        formatter.field("parent_asset_id", &self.parent_asset_id);
-        formatter.field("child_asset_id", &self.child_asset_id);
-        formatter.finish()
     }
 }
 /// See [`AssetHierarchyInfo`](crate::model::AssetHierarchyInfo).
@@ -7670,7 +7193,7 @@ impl AsRef<str> for TraversalType {
 
 /// <p>Contains a summary of an asset model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetModelSummary {
     /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
     #[doc(hidden)]
@@ -7724,19 +7247,6 @@ impl AssetModelSummary {
     /// <p>The current status of the asset model.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetModelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetModelSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AssetModelSummary`](crate::model::AssetModelSummary).
@@ -7858,7 +7368,7 @@ impl AssetModelSummary {
 
 /// <p>Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
@@ -7903,18 +7413,6 @@ impl AccessPolicySummary {
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
     pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessPolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPolicySummary");
-        formatter.field("id", &self.id);
-        formatter.field("identity", &self.identity);
-        formatter.field("resource", &self.resource);
-        formatter.field("permission", &self.permission);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.finish()
     }
 }
 /// See [`AccessPolicySummary`](crate::model::AccessPolicySummary).
@@ -8207,7 +7705,7 @@ impl AsRef<str> for IdentityType {
 
 /// <p>Contains information about an interpolated asset property value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InterpolatedAssetPropertyValue {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
     #[doc(hidden)]
@@ -8224,14 +7722,6 @@ impl InterpolatedAssetPropertyValue {
     /// <p>Contains an asset property value (of a single type only).</p>
     pub fn value(&self) -> std::option::Option<&crate::model::Variant> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for InterpolatedAssetPropertyValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InterpolatedAssetPropertyValue");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`InterpolatedAssetPropertyValue`](crate::model::InterpolatedAssetPropertyValue).
@@ -8285,7 +7775,7 @@ impl InterpolatedAssetPropertyValue {
 
 /// <p>Contains an asset property value (of a single type only).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Variant {
     /// <p>Asset property data of type string (sequence of characters).</p>
     #[doc(hidden)]
@@ -8316,16 +7806,6 @@ impl Variant {
     /// <p>Asset property data of type Boolean (true or false).</p>
     pub fn boolean_value(&self) -> std::option::Option<bool> {
         self.boolean_value
-    }
-}
-impl std::fmt::Debug for Variant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Variant");
-        formatter.field("string_value", &self.string_value);
-        formatter.field("integer_value", &self.integer_value);
-        formatter.field("double_value", &self.double_value);
-        formatter.field("boolean_value", &self.boolean_value);
-        formatter.finish()
     }
 }
 /// See [`Variant`](crate::model::Variant).
@@ -8400,7 +7880,7 @@ impl Variant {
 
 /// <p>Contains a timestamp with optional nanosecond granularity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeInNanos {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     #[doc(hidden)]
@@ -8417,14 +7897,6 @@ impl TimeInNanos {
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub fn offset_in_nanos(&self) -> std::option::Option<i32> {
         self.offset_in_nanos
-    }
-}
-impl std::fmt::Debug for TimeInNanos {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeInNanos");
-        formatter.field("time_in_seconds", &self.time_in_seconds);
-        formatter.field("offset_in_nanos", &self.offset_in_nanos);
-        formatter.finish()
     }
 }
 /// See [`TimeInNanos`](crate::model::TimeInNanos).
@@ -8570,7 +8042,7 @@ impl AsRef<str> for Quality {
 
 /// <p>Contains asset property value information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetPropertyValue {
     /// <p>The value of the asset property (see <code>Variant</code>).</p>
     #[doc(hidden)]
@@ -8594,15 +8066,6 @@ impl AssetPropertyValue {
     /// <p>The quality of the asset property value.</p>
     pub fn quality(&self) -> std::option::Option<&crate::model::Quality> {
         self.quality.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetPropertyValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetPropertyValue");
-        formatter.field("value", &self.value);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("quality", &self.quality);
-        formatter.finish()
     }
 }
 /// See [`AssetPropertyValue`](crate::model::AssetPropertyValue).
@@ -8758,7 +8221,7 @@ impl AsRef<str> for TimeOrdering {
 
 /// <p>Contains aggregated asset property values (for example, average, minimum, and maximum).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
     #[doc(hidden)]
@@ -8782,15 +8245,6 @@ impl AggregatedValue {
     /// <p>The value of the aggregates.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::Aggregates> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for AggregatedValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedValue");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("quality", &self.quality);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AggregatedValue`](crate::model::AggregatedValue).
@@ -8856,7 +8310,7 @@ impl AggregatedValue {
 
 /// <p>Contains the (pre-calculated) aggregate values for an asset property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Aggregates {
     /// <p>The average (mean) value of the time series over a time interval window.</p>
     #[doc(hidden)]
@@ -8901,18 +8355,6 @@ impl Aggregates {
     /// <p>The standard deviation of the time series over a time interval window.</p>
     pub fn standard_deviation(&self) -> std::option::Option<f64> {
         self.standard_deviation
-    }
-}
-impl std::fmt::Debug for Aggregates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Aggregates");
-        formatter.field("average", &self.average);
-        formatter.field("count", &self.count);
-        formatter.field("maximum", &self.maximum);
-        formatter.field("minimum", &self.minimum);
-        formatter.field("sum", &self.sum);
-        formatter.field("standard_deviation", &self.standard_deviation);
-        formatter.finish()
     }
 }
 /// See [`Aggregates`](crate::model::Aggregates).
@@ -9218,7 +8660,7 @@ impl AsRef<str> for AuthMode {
 
 /// <p>Contains an image that is uploaded to IoT SiteWise and available at a URL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageLocation {
     /// <p>The ID of the image.</p>
     #[doc(hidden)]
@@ -9235,14 +8677,6 @@ impl ImageLocation {
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageLocation");
-        formatter.field("id", &self.id);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`ImageLocation`](crate::model::ImageLocation).
@@ -9293,7 +8727,7 @@ impl ImageLocation {
 
 /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobConfiguration {
     /// <p>The file format of the data in Amazon S3.</p>
     #[doc(hidden)]
@@ -9303,13 +8737,6 @@ impl JobConfiguration {
     /// <p>The file format of the data in Amazon S3.</p>
     pub fn file_format(&self) -> std::option::Option<&crate::model::FileFormat> {
         self.file_format.as_ref()
-    }
-}
-impl std::fmt::Debug for JobConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobConfiguration");
-        formatter.field("file_format", &self.file_format);
-        formatter.finish()
     }
 }
 /// See [`JobConfiguration`](crate::model::JobConfiguration).
@@ -9351,7 +8778,7 @@ impl JobConfiguration {
 
 /// <p>The file format of the data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileFormat {
     /// <p>The .csv file format.</p>
     #[doc(hidden)]
@@ -9361,13 +8788,6 @@ impl FileFormat {
     /// <p>The .csv file format.</p>
     pub fn csv(&self) -> std::option::Option<&crate::model::Csv> {
         self.csv.as_ref()
-    }
-}
-impl std::fmt::Debug for FileFormat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileFormat");
-        formatter.field("csv", &self.csv);
-        formatter.finish()
     }
 }
 /// See [`FileFormat`](crate::model::FileFormat).
@@ -9404,7 +8824,7 @@ impl FileFormat {
 
 /// <p>A .csv file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Csv {
     /// <p>The column names specified in the .csv file.</p>
     #[doc(hidden)]
@@ -9414,13 +8834,6 @@ impl Csv {
     /// <p>The column names specified in the .csv file.</p>
     pub fn column_names(&self) -> std::option::Option<&[crate::model::ColumnName]> {
         self.column_names.as_deref()
-    }
-}
-impl std::fmt::Debug for Csv {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Csv");
-        formatter.field("column_names", &self.column_names);
-        formatter.finish()
     }
 }
 /// See [`Csv`](crate::model::Csv).
@@ -9597,7 +9010,7 @@ impl AsRef<str> for ColumnName {
 
 /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorReportLocation {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
     #[doc(hidden)]
@@ -9614,14 +9027,6 @@ impl ErrorReportLocation {
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorReportLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorReportLocation");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`ErrorReportLocation`](crate::model::ErrorReportLocation).
@@ -9672,7 +9077,7 @@ impl ErrorReportLocation {
 
 /// <p>The file in Amazon S3 where your data is saved. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct File {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
     #[doc(hidden)]
@@ -9696,15 +9101,6 @@ impl File {
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for File {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("File");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
     }
 }
 /// See [`File`](crate::model::File).
@@ -9767,7 +9163,7 @@ impl File {
 
 /// <p>Contains information about a composite model property on an asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompositeModelProperty {
     /// <p>The name of the property.</p>
     #[doc(hidden)]
@@ -9791,15 +9187,6 @@ impl CompositeModelProperty {
     /// <p>Contains asset property information.</p>
     pub fn asset_property(&self) -> std::option::Option<&crate::model::Property> {
         self.asset_property.as_ref()
-    }
-}
-impl std::fmt::Debug for CompositeModelProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompositeModelProperty");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("asset_property", &self.asset_property);
-        formatter.finish()
     }
 }
 /// See [`CompositeModelProperty`](crate::model::CompositeModelProperty).
@@ -9865,7 +9252,7 @@ impl CompositeModelProperty {
 
 /// <p>Contains asset property information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Property {
     /// <p>The ID of the asset property.</p>
     #[doc(hidden)]
@@ -9917,19 +9304,6 @@ impl Property {
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Property {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Property");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("alias", &self.alias);
-        formatter.field("notification", &self.notification);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("unit", &self.unit);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Property`](crate::model::Property).
@@ -10046,7 +9420,7 @@ impl Property {
 
 /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyNotification {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     #[doc(hidden)]
@@ -10063,14 +9437,6 @@ impl PropertyNotification {
     /// <p>The current notification state.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::PropertyNotificationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyNotification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyNotification");
-        formatter.field("topic", &self.topic);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`PropertyNotification`](crate::model::PropertyNotification).
@@ -10124,7 +9490,7 @@ impl PropertyNotification {
 
 /// <p>Contains information about a composite model in an asset. This object contains the asset's properties that you define in the composite model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetCompositeModel {
     /// <p>The name of the composite model.</p>
     #[doc(hidden)]
@@ -10155,16 +9521,6 @@ impl AssetCompositeModel {
     /// <p>The asset properties that this composite model defines.</p>
     pub fn properties(&self) -> std::option::Option<&[crate::model::AssetProperty]> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetCompositeModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetCompositeModel");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`AssetCompositeModel`](crate::model::AssetCompositeModel).
@@ -10248,7 +9604,7 @@ impl AssetCompositeModel {
 
 /// <p>Contains asset property information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetProperty {
     /// <p>The ID of the asset property.</p>
     #[doc(hidden)]
@@ -10300,19 +9656,6 @@ impl AssetProperty {
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetProperty");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("alias", &self.alias);
-        formatter.field("notification", &self.notification);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("data_type_spec", &self.data_type_spec);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`AssetProperty`](crate::model::AssetProperty).
@@ -10432,7 +9775,7 @@ impl AssetProperty {
 
 /// <p>Contains a composite model definition in an asset model. This composite model definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetModelCompositeModelDefinition {
     /// <p>The name of the composite model.</p>
     #[doc(hidden)]
@@ -10463,16 +9806,6 @@ impl AssetModelCompositeModelDefinition {
     /// <p>The asset property definitions for this composite model.</p>
     pub fn properties(&self) -> std::option::Option<&[crate::model::AssetModelPropertyDefinition]> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetModelCompositeModelDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetModelCompositeModelDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`AssetModelCompositeModelDefinition`](crate::model::AssetModelCompositeModelDefinition).
@@ -10557,7 +9890,7 @@ impl AssetModelCompositeModelDefinition {
 
 /// <p>Contains an asset model property definition. This property definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetModelPropertyDefinition {
     /// <p>The name of the property definition.</p>
     #[doc(hidden)]
@@ -10599,17 +9932,6 @@ impl AssetModelPropertyDefinition {
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetModelPropertyDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetModelPropertyDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("data_type_spec", &self.data_type_spec);
-        formatter.field("unit", &self.unit);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`AssetModelPropertyDefinition`](crate::model::AssetModelPropertyDefinition).
@@ -10706,7 +10028,7 @@ impl AssetModelPropertyDefinition {
 
 /// <p>Contains an asset model hierarchy used in asset model creation. An asset model hierarchy determines the kind (or type) of asset that can belong to a hierarchy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetModelHierarchyDefinition {
     /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
     #[doc(hidden)]
@@ -10723,14 +10045,6 @@ impl AssetModelHierarchyDefinition {
     /// <p>The ID of an asset model for this hierarchy.</p>
     pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
         self.child_asset_model_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetModelHierarchyDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetModelHierarchyDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("child_asset_model_id", &self.child_asset_model_id);
-        formatter.finish()
     }
 }
 /// See [`AssetModelHierarchyDefinition`](crate::model::AssetModelHierarchyDefinition).
@@ -10784,7 +10098,7 @@ impl AssetModelHierarchyDefinition {
 
 /// <p>Contains error information for asset property value entries that are associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutAssetPropertyErrorEntry {
     /// <p>The ID of the failed entry.</p>
     #[doc(hidden)]
@@ -10801,14 +10115,6 @@ impl BatchPutAssetPropertyErrorEntry {
     /// <p>The list of update property value errors.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchPutAssetPropertyError]> {
         self.errors.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPutAssetPropertyErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutAssetPropertyErrorEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("errors", &self.errors);
-        formatter.finish()
     }
 }
 /// See [`BatchPutAssetPropertyErrorEntry`](crate::model::BatchPutAssetPropertyErrorEntry).
@@ -10869,7 +10175,7 @@ impl BatchPutAssetPropertyErrorEntry {
 
 /// <p>Contains error information from updating a batch of asset property values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutAssetPropertyError {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -10895,15 +10201,6 @@ impl BatchPutAssetPropertyError {
     /// <p>A list of timestamps for each error, if any.</p>
     pub fn timestamps(&self) -> std::option::Option<&[crate::model::TimeInNanos]> {
         self.timestamps.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPutAssetPropertyError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutAssetPropertyError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("timestamps", &self.timestamps);
-        formatter.finish()
     }
 }
 /// See [`BatchPutAssetPropertyError`](crate::model::BatchPutAssetPropertyError).
@@ -11146,7 +10443,7 @@ impl AsRef<str> for BatchPutAssetPropertyValueErrorCode {
 
 /// <p>Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAssetPropertyValueEntry {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
     #[doc(hidden)]
@@ -11184,17 +10481,6 @@ impl PutAssetPropertyValueEntry {
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
     pub fn property_values(&self) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
         self.property_values.as_deref()
-    }
-}
-impl std::fmt::Debug for PutAssetPropertyValueEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAssetPropertyValueEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("property_values", &self.property_values);
-        formatter.finish()
     }
 }
 /// See [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
@@ -11294,7 +10580,7 @@ impl PutAssetPropertyValueEntry {
 
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistorySkippedEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -11322,15 +10608,6 @@ impl BatchGetAssetPropertyValueHistorySkippedEntry {
         &self,
     ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueHistoryErrorInfo> {
         self.error_info.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueHistorySkippedEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistorySkippedEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("completion_status", &self.completion_status);
-        formatter.field("error_info", &self.error_info);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry).
@@ -11407,7 +10684,7 @@ impl BatchGetAssetPropertyValueHistorySkippedEntry {
 
 /// <p>The error information, such as the error code and the timestamp.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryErrorInfo {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -11426,14 +10703,6 @@ impl BatchGetAssetPropertyValueHistoryErrorInfo {
     /// <p>The date the error occurred, in Unix epoch time.</p>
     pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryErrorInfo");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_timestamp", &self.error_timestamp);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo).
@@ -11699,7 +10968,7 @@ impl AsRef<str> for BatchEntryCompletionStatus {
 
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistorySuccessEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -11719,17 +10988,6 @@ impl BatchGetAssetPropertyValueHistorySuccessEntry {
         &self,
     ) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
         self.asset_property_value_history.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueHistorySuccessEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistorySuccessEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field(
-            "asset_property_value_history",
-            &self.asset_property_value_history,
-        );
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry).
@@ -11794,7 +11052,7 @@ impl BatchGetAssetPropertyValueHistorySuccessEntry {
 
 /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -11820,15 +11078,6 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The ID of the entry.</p>
     pub fn entry_id(&self) -> std::option::Option<&str> {
         self.entry_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryErrorEntry");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("entry_id", &self.entry_id);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry).
@@ -11906,7 +11155,7 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
 /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -11967,20 +11216,6 @@ impl BatchGetAssetPropertyValueHistoryEntry {
     /// <p>Default: <code>ASCENDING</code> </p>
     pub fn time_ordering(&self) -> std::option::Option<&crate::model::TimeOrdering> {
         self.time_ordering.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("qualities", &self.qualities);
-        formatter.field("time_ordering", &self.time_ordering);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry).
@@ -12126,7 +11361,7 @@ impl BatchGetAssetPropertyValueHistoryEntry {
 
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueSkippedEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -12154,15 +11389,6 @@ impl BatchGetAssetPropertyValueSkippedEntry {
         &self,
     ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueErrorInfo> {
         self.error_info.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueSkippedEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueSkippedEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("completion_status", &self.completion_status);
-        formatter.field("error_info", &self.error_info);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry).
@@ -12238,7 +11464,7 @@ impl BatchGetAssetPropertyValueSkippedEntry {
 
 /// <p>The error information, such as the error code and the timestamp.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueErrorInfo {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -12257,14 +11483,6 @@ impl BatchGetAssetPropertyValueErrorInfo {
     /// <p>The date the error occurred, in Unix epoch time.</p>
     pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueErrorInfo");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_timestamp", &self.error_timestamp);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo).
@@ -12434,7 +11652,7 @@ impl AsRef<str> for BatchGetAssetPropertyValueErrorCode {
 
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -12451,14 +11669,6 @@ impl BatchGetAssetPropertyValueSuccessEntry {
     /// <p>Contains asset property value information.</p>
     pub fn asset_property_value(&self) -> std::option::Option<&crate::model::AssetPropertyValue> {
         self.asset_property_value.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueSuccessEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueSuccessEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("asset_property_value", &self.asset_property_value);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry).
@@ -12512,7 +11722,7 @@ impl BatchGetAssetPropertyValueSuccessEntry {
 
 /// <p>Contains error information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueErrorEntry {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -12538,15 +11748,6 @@ impl BatchGetAssetPropertyValueErrorEntry {
     /// <p>The ID of the entry.</p>
     pub fn entry_id(&self) -> std::option::Option<&str> {
         self.entry_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueErrorEntry");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("entry_id", &self.entry_id);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry).
@@ -12624,7 +11825,7 @@ impl BatchGetAssetPropertyValueErrorEntry {
 /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -12655,16 +11856,6 @@ impl BatchGetAssetPropertyValueEntry {
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn property_alias(&self) -> std::option::Option<&str> {
         self.property_alias.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyValueEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry).
@@ -12742,7 +11933,7 @@ impl BatchGetAssetPropertyValueEntry {
 
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -12770,15 +11961,6 @@ impl BatchGetAssetPropertyAggregatesSkippedEntry {
         &self,
     ) -> std::option::Option<&crate::model::BatchGetAssetPropertyAggregatesErrorInfo> {
         self.error_info.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyAggregatesSkippedEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesSkippedEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("completion_status", &self.completion_status);
-        formatter.field("error_info", &self.error_info);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry).
@@ -12854,7 +12036,7 @@ impl BatchGetAssetPropertyAggregatesSkippedEntry {
 
 /// <p>Contains the error code and the timestamp for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesErrorInfo {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -12873,14 +12055,6 @@ impl BatchGetAssetPropertyAggregatesErrorInfo {
     /// <p>The date the error occurred, in Unix epoch time.</p>
     pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyAggregatesErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesErrorInfo");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_timestamp", &self.error_timestamp);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo).
@@ -13054,7 +12228,7 @@ impl AsRef<str> for BatchGetAssetPropertyAggregatesErrorCode {
 
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesSuccessEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -13071,14 +12245,6 @@ impl BatchGetAssetPropertyAggregatesSuccessEntry {
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
     pub fn aggregated_values(&self) -> std::option::Option<&[crate::model::AggregatedValue]> {
         self.aggregated_values.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyAggregatesSuccessEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesSuccessEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("aggregated_values", &self.aggregated_values);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry).
@@ -13139,7 +12305,7 @@ impl BatchGetAssetPropertyAggregatesSuccessEntry {
 
 /// <p>Contains error information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesErrorEntry {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -13165,15 +12331,6 @@ impl BatchGetAssetPropertyAggregatesErrorEntry {
     /// <p>The ID of the entry.</p>
     pub fn entry_id(&self) -> std::option::Option<&str> {
         self.entry_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyAggregatesErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesErrorEntry");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("entry_id", &self.entry_id);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry).
@@ -13251,7 +12408,7 @@ impl BatchGetAssetPropertyAggregatesErrorEntry {
 /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
@@ -13326,22 +12483,6 @@ impl BatchGetAssetPropertyAggregatesEntry {
     /// <p>Default: <code>ASCENDING</code> </p>
     pub fn time_ordering(&self) -> std::option::Option<&crate::model::TimeOrdering> {
         self.time_ordering.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetAssetPropertyAggregatesEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesEntry");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("aggregate_types", &self.aggregate_types);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("qualities", &self.qualities);
-        formatter.field("time_ordering", &self.time_ordering);
-        formatter.finish()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry).
@@ -13520,7 +12661,7 @@ impl BatchGetAssetPropertyAggregatesEntry {
 
 /// <p>Contains error details for the requested associate project asset action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetErrorDetails {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -13544,15 +12685,6 @@ impl AssetErrorDetails {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetErrorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetErrorDetails");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`AssetErrorDetails`](crate::model::AssetErrorDetails).

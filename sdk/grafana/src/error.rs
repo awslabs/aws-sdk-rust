@@ -2,7 +2,7 @@
 
 /// <p>The request was denied because of request throttling. Retry the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>A description of the error.</p>
     #[doc(hidden)]
@@ -29,16 +29,6 @@ impl ThrottlingException {
     /// <p>The value of a parameter in the request caused an error.</p>
     pub fn retry_after_seconds(&self) -> std::option::Option<i32> {
         self.retry_after_seconds
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -135,7 +125,7 @@ impl ThrottlingException {
 
 /// <p>Unexpected error while processing the request. Retry the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     /// <p>A description of the error.</p>
     #[doc(hidden)]
@@ -148,14 +138,6 @@ impl InternalServerException {
     /// <p>How long to wait before you retry this operation.</p>
     pub fn retry_after_seconds(&self) -> std::option::Option<i32> {
         self.retry_after_seconds
-    }
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
     }
 }
 impl InternalServerException {
@@ -228,18 +210,11 @@ impl InternalServerException {
 
 /// <p>You do not have sufficient permissions to perform this action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessDeniedException {
     /// Returns the error message.
@@ -295,7 +270,7 @@ impl AccessDeniedException {
 
 /// <p>The value of a parameter in the request caused an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>A description of the error.</p>
     #[doc(hidden)]
@@ -315,15 +290,6 @@ impl ValidationException {
     /// <p>A list of fields that might be associated with the error.</p>
     pub fn field_list(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
         self.field_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.field("field_list", &self.field_list);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -417,7 +383,7 @@ impl ValidationException {
 
 /// <p>The request would cause a service quota to be exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     /// <p>A description of the error.</p>
     #[doc(hidden)]
@@ -451,17 +417,6 @@ impl ServiceQuotaExceededException {
     /// <p>The ID of the service quota that was exceeded.</p>
     pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.finish()
     }
 }
 impl ServiceQuotaExceededException {
@@ -569,7 +524,7 @@ impl ServiceQuotaExceededException {
 
 /// <p>A resource was in an inconsistent state during an update or a deletion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>A description of the error.</p>
     #[doc(hidden)]
@@ -589,15 +544,6 @@ impl ConflictException {
     /// <p>The type of the resource that is associated with the error.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl ConflictException {
@@ -681,7 +627,7 @@ impl ConflictException {
 
 /// <p>The request references a resource that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The value of a parameter in the request caused an error.</p>
     #[doc(hidden)]
@@ -701,15 +647,6 @@ impl ResourceNotFoundException {
     /// <p>The type of the resource that is associated with the error.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {

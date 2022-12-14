@@ -150,7 +150,7 @@ impl std::fmt::Debug for PutSessionOutput {
 pub mod put_session_output {
 
     /// A builder for [`PutSessionOutput`](crate::output::PutSessionOutput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -365,6 +365,24 @@ pub mod put_session_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("content_type", &self.content_type);
+            formatter.field("intent_name", &self.intent_name);
+            formatter.field("slots", &self.slots);
+            formatter.field("session_attributes", &self.session_attributes);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("encoded_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("message_format", &self.message_format);
+            formatter.field("dialog_state", &self.dialog_state);
+            formatter.field("slot_to_elicit", &self.slot_to_elicit);
+            formatter.field("audio_stream", &self.audio_stream);
+            formatter.field("session_id", &self.session_id);
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl PutSessionOutput {
     /// Creates a new builder-style object to manufacture [`PutSessionOutput`](crate::output::PutSessionOutput).
@@ -554,7 +572,7 @@ impl std::fmt::Debug for PostTextOutput {
 pub mod post_text_output {
 
     /// A builder for [`PostTextOutput`](crate::output::PostTextOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) intent_name: std::option::Option<std::string::String>,
         pub(crate) nlu_intent_confidence: std::option::Option<crate::model::IntentConfidence>,
@@ -847,6 +865,26 @@ pub mod post_text_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("intent_name", &self.intent_name);
+            formatter.field("nlu_intent_confidence", &self.nlu_intent_confidence);
+            formatter.field("alternative_intents", &self.alternative_intents);
+            formatter.field("slots", &"*** Sensitive Data Redacted ***");
+            formatter.field("session_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("sentiment_response", &self.sentiment_response);
+            formatter.field("message_format", &self.message_format);
+            formatter.field("dialog_state", &self.dialog_state);
+            formatter.field("slot_to_elicit", &self.slot_to_elicit);
+            formatter.field("response_card", &self.response_card);
+            formatter.field("session_id", &self.session_id);
+            formatter.field("bot_version", &self.bot_version);
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl PostTextOutput {
     /// Creates a new builder-style object to manufacture [`PostTextOutput`](crate::output::PostTextOutput).
@@ -1091,7 +1129,7 @@ impl std::fmt::Debug for PostContentOutput {
 pub mod post_content_output {
 
     /// A builder for [`PostContentOutput`](crate::output::PostContentOutput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -1427,6 +1465,33 @@ pub mod post_content_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("content_type", &self.content_type);
+            formatter.field("intent_name", &self.intent_name);
+            formatter.field("nlu_intent_confidence", &self.nlu_intent_confidence);
+            formatter.field("alternative_intents", &self.alternative_intents);
+            formatter.field("slots", &self.slots);
+            formatter.field("session_attributes", &self.session_attributes);
+            formatter.field("sentiment_response", &self.sentiment_response);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("encoded_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("message_format", &self.message_format);
+            formatter.field("dialog_state", &self.dialog_state);
+            formatter.field("slot_to_elicit", &self.slot_to_elicit);
+            formatter.field("input_transcript", &self.input_transcript);
+            formatter.field(
+                "encoded_input_transcript",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("audio_stream", &self.audio_stream);
+            formatter.field("bot_version", &self.bot_version);
+            formatter.field("session_id", &self.session_id);
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl PostContentOutput {
     /// Creates a new builder-style object to manufacture [`PostContentOutput`](crate::output::PostContentOutput).
@@ -1505,7 +1570,7 @@ impl std::fmt::Debug for GetSessionOutput {
 pub mod get_session_output {
 
     /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) recent_intent_summary_view:
             std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
@@ -1618,6 +1683,20 @@ pub mod get_session_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "recent_intent_summary_view",
+                &self.recent_intent_summary_view,
+            );
+            formatter.field("session_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("session_id", &self.session_id);
+            formatter.field("dialog_action", &self.dialog_action);
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl GetSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput).
@@ -1628,7 +1707,7 @@ impl GetSessionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSessionOutput {
     /// <p>The name of the bot associated with the session data.</p>
     #[doc(hidden)]
@@ -1659,16 +1738,6 @@ impl DeleteSessionOutput {
     /// <p>The unique identifier for the session.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSessionOutput");
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("bot_alias", &self.bot_alias);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
     }
 }
 /// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).

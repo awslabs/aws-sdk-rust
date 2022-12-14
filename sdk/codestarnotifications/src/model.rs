@@ -131,7 +131,7 @@ impl std::fmt::Debug for Target {
 pub mod target {
 
     /// A builder for [`Target`](crate::model::Target).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) target_type: std::option::Option<std::string::String>,
         pub(crate) target_address: std::option::Option<std::string::String>,
@@ -174,6 +174,14 @@ pub mod target {
                 target_type: self.target_type,
                 target_address: self.target_address,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("target_type", &self.target_type);
+            formatter.field("target_address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -325,7 +333,7 @@ impl std::fmt::Debug for TargetSummary {
 pub mod target_summary {
 
     /// A builder for [`TargetSummary`](crate::model::TargetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) target_address: std::option::Option<std::string::String>,
         pub(crate) target_type: std::option::Option<std::string::String>,
@@ -383,6 +391,15 @@ pub mod target_summary {
                 target_type: self.target_type,
                 target_status: self.target_status,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("target_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("target_type", &self.target_type);
+            formatter.field("target_status", &self.target_status);
+            formatter.finish()
         }
     }
 }
@@ -506,7 +523,7 @@ impl AsRef<str> for TargetStatus {
 
 /// <p>Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Chatbot topics as targets, you could specify a ListTargetsFilter Name as <code>TargetType</code> and a Value of <code>SNS</code>, and a Name of <code>TARGET_STATUS</code> and a Value of <code>ACTIVE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
     #[doc(hidden)]
@@ -523,14 +540,6 @@ impl ListTargetsFilter {
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTargetsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTargetsFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ListTargetsFilter`](crate::model::ListTargetsFilter).
@@ -681,7 +690,7 @@ impl AsRef<str> for ListTargetsFilterName {
 
 /// <p>Information about a specified notification rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationRuleSummary {
     /// <p>The unique ID of the notification rule.</p>
     #[doc(hidden)]
@@ -698,14 +707,6 @@ impl NotificationRuleSummary {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationRuleSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationRuleSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
@@ -756,7 +757,7 @@ impl NotificationRuleSummary {
 
 /// <p>Information about a filter to apply to the list of returned notification rules. You can filter by event type, owner, resource, or target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNotificationRulesFilter {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
     #[doc(hidden)]
@@ -773,14 +774,6 @@ impl ListNotificationRulesFilter {
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ListNotificationRulesFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNotificationRulesFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
@@ -936,7 +929,7 @@ impl AsRef<str> for ListNotificationRulesFilterName {
 
 /// <p>Returns information about an event that has triggered a notification rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTypeSummary {
     /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
     #[doc(hidden)]
@@ -967,16 +960,6 @@ impl EventTypeSummary {
     /// <p>The resource type of the event.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for EventTypeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTypeSummary");
-        formatter.field("event_type_id", &self.event_type_id);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`EventTypeSummary`](crate::model::EventTypeSummary).
@@ -1060,7 +1043,7 @@ impl EventTypeSummary {
 
 /// <p>Information about a filter to apply to the list of returned event types. You can filter by resource type or service name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventTypesFilter {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
     #[doc(hidden)]
@@ -1077,14 +1060,6 @@ impl ListEventTypesFilter {
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ListEventTypesFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventTypesFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).

@@ -2,7 +2,7 @@
 
 /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Volume {
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     #[doc(hidden)]
@@ -116,27 +116,6 @@ impl Volume {
         &self,
     ) -> std::option::Option<&crate::model::OpenZfsVolumeConfiguration> {
         self.open_zfs_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Volume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Volume");
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("name", &self.name);
-        formatter.field("ontap_configuration", &self.ontap_configuration);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field(
-            "lifecycle_transition_reason",
-            &self.lifecycle_transition_reason,
-        );
-        formatter.field("administrative_actions", &self.administrative_actions);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.finish()
     }
 }
 /// See [`Volume`](crate::model::Volume).
@@ -376,7 +355,7 @@ impl Volume {
 
 /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenZfsVolumeConfiguration {
     /// <p>The ID of the parent volume.</p>
     #[doc(hidden)]
@@ -473,29 +452,6 @@ impl OpenZfsVolumeConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::OpenZfsUserOrGroupQuota]> {
         self.user_and_group_quotas.as_deref()
-    }
-}
-impl std::fmt::Debug for OpenZfsVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenZfsVolumeConfiguration");
-        formatter.field("parent_volume_id", &self.parent_volume_id);
-        formatter.field("volume_path", &self.volume_path);
-        formatter.field(
-            "storage_capacity_reservation_gi_b",
-            &self.storage_capacity_reservation_gi_b,
-        );
-        formatter.field(
-            "storage_capacity_quota_gi_b",
-            &self.storage_capacity_quota_gi_b,
-        );
-        formatter.field("record_size_ki_b", &self.record_size_ki_b);
-        formatter.field("data_compression_type", &self.data_compression_type);
-        formatter.field("copy_tags_to_snapshots", &self.copy_tags_to_snapshots);
-        formatter.field("origin_snapshot", &self.origin_snapshot);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("nfs_exports", &self.nfs_exports);
-        formatter.field("user_and_group_quotas", &self.user_and_group_quotas);
-        formatter.finish()
     }
 }
 /// See [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
@@ -706,7 +662,7 @@ impl OpenZfsVolumeConfiguration {
 
 /// <p>The configuration for how much storage a user or group can use on the volume. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenZfsUserOrGroupQuota {
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
     #[doc(hidden)]
@@ -730,18 +686,6 @@ impl OpenZfsUserOrGroupQuota {
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
     pub fn storage_capacity_quota_gi_b(&self) -> std::option::Option<i32> {
         self.storage_capacity_quota_gi_b
-    }
-}
-impl std::fmt::Debug for OpenZfsUserOrGroupQuota {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenZfsUserOrGroupQuota");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.field(
-            "storage_capacity_quota_gi_b",
-            &self.storage_capacity_quota_gi_b,
-        );
-        formatter.finish()
     }
 }
 /// See [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
@@ -897,7 +841,7 @@ impl AsRef<str> for OpenZfsQuotaType {
 
 /// <p>The Network File System (NFS) configurations for mounting an Amazon FSx for OpenZFS file system. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenZfsNfsExport {
     /// <p>A list of configuration objects that contain the client and options for mounting the OpenZFS file system. </p>
     #[doc(hidden)]
@@ -910,13 +854,6 @@ impl OpenZfsNfsExport {
         &self,
     ) -> std::option::Option<&[crate::model::OpenZfsClientConfiguration]> {
         self.client_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for OpenZfsNfsExport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenZfsNfsExport");
-        formatter.field("client_configurations", &self.client_configurations);
-        formatter.finish()
     }
 }
 /// See [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
@@ -968,7 +905,7 @@ impl OpenZfsNfsExport {
 
 /// <p>Specifies who can mount an OpenZFS file system and the options available while mounting the file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenZfsClientConfiguration {
     /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
     #[doc(hidden)]
@@ -993,14 +930,6 @@ impl OpenZfsClientConfiguration {
     /// </ul>
     pub fn options(&self) -> std::option::Option<&[std::string::String]> {
         self.options.as_deref()
-    }
-}
-impl std::fmt::Debug for OpenZfsClientConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenZfsClientConfiguration");
-        formatter.field("clients", &self.clients);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
@@ -1068,7 +997,7 @@ impl OpenZfsClientConfiguration {
 
 /// <p>The snapshot configuration to use when creating an OpenZFS volume from a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenZfsOriginSnapshotConfiguration {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
@@ -1093,14 +1022,6 @@ impl OpenZfsOriginSnapshotConfiguration {
     /// </ul>
     pub fn copy_strategy(&self) -> std::option::Option<&crate::model::OpenZfsCopyStrategy> {
         self.copy_strategy.as_ref()
-    }
-}
-impl std::fmt::Debug for OpenZfsOriginSnapshotConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenZfsOriginSnapshotConfiguration");
-        formatter.field("snapshot_arn", &self.snapshot_arn);
-        formatter.field("copy_strategy", &self.copy_strategy);
-        formatter.finish()
     }
 }
 /// See [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
@@ -1351,7 +1272,7 @@ impl AsRef<str> for OpenZfsDataCompressionType {
 
 /// <p>Describes a specific Amazon FSx administrative action for the current Windows, Lustre, or OpenZFS file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdministrativeAction {
     /// <p>Describes the type of administrative action, as follows:</p>
     /// <ul>
@@ -1454,23 +1375,6 @@ impl AdministrativeAction {
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
     pub fn target_snapshot_values(&self) -> std::option::Option<&crate::model::Snapshot> {
         self.target_snapshot_values.as_ref()
-    }
-}
-impl std::fmt::Debug for AdministrativeAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdministrativeAction");
-        formatter.field(
-            "administrative_action_type",
-            &self.administrative_action_type,
-        );
-        formatter.field("progress_percent", &self.progress_percent);
-        formatter.field("request_time", &self.request_time);
-        formatter.field("status", &self.status);
-        formatter.field("target_file_system_values", &self.target_file_system_values);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("target_volume_values", &self.target_volume_values);
-        formatter.field("target_snapshot_values", &self.target_snapshot_values);
-        formatter.finish()
     }
 }
 /// See [`AdministrativeAction`](crate::model::AdministrativeAction).
@@ -1659,7 +1563,7 @@ impl AdministrativeAction {
 
 /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
@@ -1742,24 +1646,6 @@ impl Snapshot {
         &self,
     ) -> std::option::Option<&[crate::model::AdministrativeAction]> {
         self.administrative_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for Snapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Snapshot");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("name", &self.name);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field(
-            "lifecycle_transition_reason",
-            &self.lifecycle_transition_reason,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("administrative_actions", &self.administrative_actions);
-        formatter.finish()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
@@ -1938,7 +1824,7 @@ impl Snapshot {
 
 /// <p>Specifies a key-value pair for a resource tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A value that specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the resource to which they are attached.</p>
     #[doc(hidden)]
@@ -1955,14 +1841,6 @@ impl Tag {
     /// <p>A value that specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key-value pair in a tag set of <code>finances : April</code> and also of <code>payroll : April</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -2013,7 +1891,7 @@ impl Tag {
 
 /// <p>Describes why a resource lifecycle state changed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleTransitionReason {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
@@ -2023,13 +1901,6 @@ impl LifecycleTransitionReason {
     /// <p>A detailed error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for LifecycleTransitionReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleTransitionReason");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
@@ -2170,7 +2041,7 @@ impl AsRef<str> for SnapshotLifecycle {
 
 /// <p>Provides information about a failed administrative action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdministrativeActionFailureDetails {
     /// <p>Error message providing details about the failed administrative action.</p>
     #[doc(hidden)]
@@ -2180,13 +2051,6 @@ impl AdministrativeActionFailureDetails {
     /// <p>Error message providing details about the failed administrative action.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for AdministrativeActionFailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdministrativeActionFailureDetails");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
@@ -2225,7 +2089,7 @@ impl AdministrativeActionFailureDetails {
 
 /// <p>A description of a specific Amazon FSx file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystem {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
     #[doc(hidden)]
@@ -2420,33 +2284,6 @@ impl FileSystem {
         &self,
     ) -> std::option::Option<&crate::model::OpenZfsFileSystemConfiguration> {
         self.open_zfs_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for FileSystem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystem");
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("file_system_type", &self.file_system_type);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("storage_capacity", &self.storage_capacity);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("network_interface_ids", &self.network_interface_ids);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("windows_configuration", &self.windows_configuration);
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.field("administrative_actions", &self.administrative_actions);
-        formatter.field("ontap_configuration", &self.ontap_configuration);
-        formatter.field("file_system_type_version", &self.file_system_type_version);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.finish()
     }
 }
 /// See [`FileSystem`](crate::model::FileSystem).
@@ -2845,7 +2682,7 @@ impl FileSystem {
 
 /// <p>The configuration for the Amazon FSx for OpenZFS file system. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenZfsFileSystemConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     #[doc(hidden)]
@@ -2919,30 +2756,6 @@ impl OpenZfsFileSystemConfiguration {
     /// <p>The ID of the root volume of the OpenZFS file system. </p>
     pub fn root_volume_id(&self) -> std::option::Option<&str> {
         self.root_volume_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OpenZfsFileSystemConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenZfsFileSystemConfiguration");
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("copy_tags_to_backups", &self.copy_tags_to_backups);
-        formatter.field("copy_tags_to_volumes", &self.copy_tags_to_volumes);
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("throughput_capacity", &self.throughput_capacity);
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
-        formatter.field("root_volume_id", &self.root_volume_id);
-        formatter.finish()
     }
 }
 /// See [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
@@ -3111,7 +2924,7 @@ impl OpenZfsFileSystemConfiguration {
 
 /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how the amount was provisioned (by the customer or by the system).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiskIopsConfiguration {
     /// <p>Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).</p>
     #[doc(hidden)]
@@ -3128,14 +2941,6 @@ impl DiskIopsConfiguration {
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
     pub fn iops(&self) -> std::option::Option<i64> {
         self.iops
-    }
-}
-impl std::fmt::Debug for DiskIopsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiskIopsConfiguration");
-        formatter.field("mode", &self.mode);
-        formatter.field("iops", &self.iops);
-        formatter.finish()
     }
 }
 /// See [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
@@ -3368,7 +3173,7 @@ impl AsRef<str> for OpenZfsDeploymentType {
 
 /// <p>Configuration for the FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OntapFileSystemConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     #[doc(hidden)]
@@ -3463,31 +3268,6 @@ impl OntapFileSystemConfiguration {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
-    }
-}
-impl std::fmt::Debug for OntapFileSystemConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OntapFileSystemConfiguration");
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("endpoint_ip_address_range", &self.endpoint_ip_address_range);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
-        formatter.field("preferred_subnet_id", &self.preferred_subnet_id);
-        formatter.field("route_table_ids", &self.route_table_ids);
-        formatter.field("throughput_capacity", &self.throughput_capacity);
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
@@ -3697,7 +3477,7 @@ impl OntapFileSystemConfiguration {
 
 /// <p>An Amazon FSx for NetApp ONTAP file system has the following endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemEndpoints {
     /// <p>An endpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems.</p>
     #[doc(hidden)]
@@ -3714,14 +3494,6 @@ impl FileSystemEndpoints {
     /// <p>An endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API.</p>
     pub fn management(&self) -> std::option::Option<&crate::model::FileSystemEndpoint> {
         self.management.as_ref()
-    }
-}
-impl std::fmt::Debug for FileSystemEndpoints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemEndpoints");
-        formatter.field("intercluster", &self.intercluster);
-        formatter.field("management", &self.management);
-        formatter.finish()
     }
 }
 /// See [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
@@ -3778,7 +3550,7 @@ impl FileSystemEndpoints {
 
 /// <p>An Amazon FSx for NetApp ONTAP file system has two endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. They are the <code>Management</code> and <code>Intercluster</code> endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemEndpoint {
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
     #[doc(hidden)]
@@ -3795,14 +3567,6 @@ impl FileSystemEndpoint {
     /// <p>IP addresses of the file system endpoint.</p>
     pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.ip_addresses.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemEndpoint");
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.finish()
     }
 }
 /// See [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
@@ -3954,7 +3718,7 @@ impl AsRef<str> for OntapDeploymentType {
 
 /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LustreFileSystemConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     #[doc(hidden)]
@@ -4080,39 +3844,6 @@ impl LustreFileSystemConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::LustreRootSquashConfiguration> {
         self.root_squash_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for LustreFileSystemConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LustreFileSystemConfiguration");
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field(
-            "data_repository_configuration",
-            &self.data_repository_configuration,
-        );
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field(
-            "per_unit_storage_throughput",
-            &self.per_unit_storage_throughput,
-        );
-        formatter.field("mount_name", &self.mount_name);
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("copy_tags_to_backups", &self.copy_tags_to_backups);
-        formatter.field("drive_cache_type", &self.drive_cache_type);
-        formatter.field("data_compression_type", &self.data_compression_type);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.field("root_squash_configuration", &self.root_squash_configuration);
-        formatter.finish()
     }
 }
 /// See [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
@@ -4359,7 +4090,7 @@ impl LustreFileSystemConfiguration {
 /// <p>The configuration for Lustre root squash used to restrict root-level access from clients that try to access your FSx for Lustre file system as root. Use the <code>RootSquash</code> parameter to enable root squash. To learn more about Lustre root squash, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/root-squash.html">Lustre root squash</a>.</p>
 /// <p>You can also use the <code>NoSquashNids</code> parameter to provide an array of clients who are not affected by the root squash setting. These clients will access the file system as root, with unrestricted privileges.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LustreRootSquashConfiguration {
     /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
     /// <ul>
@@ -4394,14 +4125,6 @@ impl LustreRootSquashConfiguration {
     /// </ul>
     pub fn no_squash_nids(&self) -> std::option::Option<&[std::string::String]> {
         self.no_squash_nids.as_deref()
-    }
-}
-impl std::fmt::Debug for LustreRootSquashConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LustreRootSquashConfiguration");
-        formatter.field("root_squash", &self.root_squash);
-        formatter.field("no_squash_nids", &self.no_squash_nids);
-        formatter.finish()
     }
 }
 /// See [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
@@ -4479,7 +4202,7 @@ impl LustreRootSquashConfiguration {
 
 /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon FSx for Lustre file system or Amazon File Cache resource to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LustreLogConfiguration {
     /// <p>The data repository events that are logged by Amazon FSx.</p>
     /// <ul>
@@ -4510,14 +4233,6 @@ impl LustreLogConfiguration {
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs. The destination can be any Amazon CloudWatch Logs log group ARN. The destination ARN must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
-    }
-}
-impl std::fmt::Debug for LustreLogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LustreLogConfiguration");
-        formatter.field("level", &self.level);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
@@ -4972,7 +4687,7 @@ impl AsRef<str> for LustreDeploymentType {
 /// <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
 /// <p>This data type is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryConfiguration {
     /// <p>Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository. The lifecycle can have the following values:</p>
     /// <ul>
@@ -5047,18 +4762,6 @@ impl DataRepositoryConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DataRepositoryFailureDetails> {
         self.failure_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DataRepositoryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryConfiguration");
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("import_path", &self.import_path);
-        formatter.field("export_path", &self.export_path);
-        formatter.field("imported_file_chunk_size", &self.imported_file_chunk_size);
-        formatter.field("auto_import_policy", &self.auto_import_policy);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.finish()
     }
 }
 /// See [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
@@ -5197,7 +4900,7 @@ impl DataRepositoryConfiguration {
 
 /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryFailureDetails {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
@@ -5207,13 +4910,6 @@ impl DataRepositoryFailureDetails {
     /// <p>A detailed error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DataRepositoryFailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryFailureDetails");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
@@ -5473,7 +5169,7 @@ impl AsRef<str> for DataRepositoryLifecycle {
 
 /// <p>The configuration for this Microsoft Windows file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WindowsFileSystemConfiguration {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory instance that the file system is joined to.</p>
     #[doc(hidden)]
@@ -5602,44 +5298,6 @@ impl WindowsFileSystemConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::WindowsAuditLogConfiguration> {
         self.audit_log_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for WindowsFileSystemConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WindowsFileSystemConfiguration");
-        formatter.field("active_directory_id", &self.active_directory_id);
-        formatter.field(
-            "self_managed_active_directory_configuration",
-            &self.self_managed_active_directory_configuration,
-        );
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field(
-            "remote_administration_endpoint",
-            &self.remote_administration_endpoint,
-        );
-        formatter.field("preferred_subnet_id", &self.preferred_subnet_id);
-        formatter.field("preferred_file_server_ip", &self.preferred_file_server_ip);
-        formatter.field("throughput_capacity", &self.throughput_capacity);
-        formatter.field(
-            "maintenance_operations_in_progress",
-            &self.maintenance_operations_in_progress,
-        );
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("copy_tags_to_backups", &self.copy_tags_to_backups);
-        formatter.field("aliases", &self.aliases);
-        formatter.field("audit_log_configuration", &self.audit_log_configuration);
-        formatter.finish()
     }
 }
 /// See [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
@@ -5924,7 +5582,7 @@ impl WindowsFileSystemConfiguration {
 
 /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/file-access-auditing.html"> File access auditing</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WindowsAuditLogConfiguration {
     /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
     /// <ul>
@@ -5981,21 +5639,6 @@ impl WindowsAuditLogConfiguration {
     /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub fn audit_log_destination(&self) -> std::option::Option<&str> {
         self.audit_log_destination.as_deref()
-    }
-}
-impl std::fmt::Debug for WindowsAuditLogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WindowsAuditLogConfiguration");
-        formatter.field(
-            "file_access_audit_log_level",
-            &self.file_access_audit_log_level,
-        );
-        formatter.field(
-            "file_share_access_audit_log_level",
-            &self.file_share_access_audit_log_level,
-        );
-        formatter.field("audit_log_destination", &self.audit_log_destination);
-        formatter.finish()
     }
 }
 /// See [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
@@ -6210,7 +5853,7 @@ impl AsRef<str> for WindowsAccessAuditLogLevel {
 
 /// <p>A DNS alias that is associated with the file system. You can use a DNS alias to access a file system using user-defined DNS names, in addition to the default DNS name that Amazon FSx assigns to the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">DNS aliases</a> in the <i>FSx for Windows File Server User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alias {
     /// <p>The name of the DNS alias. The alias name has to meet the following requirements:</p>
     /// <ul>
@@ -6255,14 +5898,6 @@ impl Alias {
     /// </ul>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::AliasLifecycle> {
         self.lifecycle.as_ref()
-    }
-}
-impl std::fmt::Debug for Alias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alias");
-        formatter.field("name", &self.name);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.finish()
     }
 }
 /// See [`Alias`](crate::model::Alias).
@@ -6644,7 +6279,7 @@ impl AsRef<str> for WindowsDeploymentType {
 
 /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelfManagedActiveDirectoryAttributes {
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
     #[doc(hidden)]
@@ -6682,23 +6317,6 @@ impl SelfManagedActiveDirectoryAttributes {
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ips.as_deref()
-    }
-}
-impl std::fmt::Debug for SelfManagedActiveDirectoryAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelfManagedActiveDirectoryAttributes");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field(
-            "organizational_unit_distinguished_name",
-            &self.organizational_unit_distinguished_name,
-        );
-        formatter.field(
-            "file_system_administrators_group",
-            &self.file_system_administrators_group,
-        );
-        formatter.field("user_name", &self.user_name);
-        formatter.field("dns_ips", &self.dns_ips);
-        formatter.finish()
     }
 }
 /// See [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
@@ -6896,7 +6514,7 @@ impl AsRef<str> for StorageType {
 
 /// <p>A structure providing details of any failures that occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemFailureDetails {
     /// <p>A message describing any failures that occurred.</p>
     #[doc(hidden)]
@@ -6906,13 +6524,6 @@ impl FileSystemFailureDetails {
     /// <p>A message describing any failures that occurred.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemFailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemFailureDetails");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
@@ -7571,7 +7182,7 @@ impl AsRef<str> for VolumeType {
 
 /// <p>The configuration of an Amazon FSx for NetApp ONTAP volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OntapVolumeConfiguration {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
@@ -7668,31 +7279,6 @@ impl OntapVolumeConfiguration {
     /// </ul>
     pub fn ontap_volume_type(&self) -> std::option::Option<&crate::model::OntapVolumeType> {
         self.ontap_volume_type.as_ref()
-    }
-}
-impl std::fmt::Debug for OntapVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OntapVolumeConfiguration");
-        formatter.field("flex_cache_endpoint_type", &self.flex_cache_endpoint_type);
-        formatter.field("junction_path", &self.junction_path);
-        formatter.field("security_style", &self.security_style);
-        formatter.field("size_in_megabytes", &self.size_in_megabytes);
-        formatter.field(
-            "storage_efficiency_enabled",
-            &self.storage_efficiency_enabled,
-        );
-        formatter.field(
-            "storage_virtual_machine_id",
-            &self.storage_virtual_machine_id,
-        );
-        formatter.field(
-            "storage_virtual_machine_root",
-            &self.storage_virtual_machine_root,
-        );
-        formatter.field("tiering_policy", &self.tiering_policy);
-        formatter.field("uuid", &self.uuid);
-        formatter.field("ontap_volume_type", &self.ontap_volume_type);
-        formatter.finish()
     }
 }
 /// See [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
@@ -7994,7 +7580,7 @@ impl AsRef<str> for OntapVolumeType {
 /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TieringPolicy {
     /// <p>Specifies the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to the capacity pool. Used with the <code>AUTO</code> and <code>SNAPSHOT_ONLY</code> tiering policies. Enter a whole number between 2 and 183. Default values are 31 days for <code>AUTO</code> and 2 days for <code>SNAPSHOT_ONLY</code>.</p>
     #[doc(hidden)]
@@ -8023,14 +7609,6 @@ impl TieringPolicy {
     /// </ul>
     pub fn name(&self) -> std::option::Option<&crate::model::TieringPolicyName> {
         self.name.as_ref()
-    }
-}
-impl std::fmt::Debug for TieringPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TieringPolicy");
-        formatter.field("cooling_period", &self.cooling_period);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`TieringPolicy`](crate::model::TieringPolicy).
@@ -8513,7 +8091,7 @@ impl AsRef<str> for VolumeLifecycle {
 
 /// <p>Used to specify changes to the OpenZFS configuration for the volume that you are updating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOpenZfsVolumeConfiguration {
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
     #[doc(hidden)]
@@ -8580,25 +8158,6 @@ impl UpdateOpenZfsVolumeConfiguration {
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
     pub fn read_only(&self) -> std::option::Option<bool> {
         self.read_only
-    }
-}
-impl std::fmt::Debug for UpdateOpenZfsVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOpenZfsVolumeConfiguration");
-        formatter.field(
-            "storage_capacity_reservation_gi_b",
-            &self.storage_capacity_reservation_gi_b,
-        );
-        formatter.field(
-            "storage_capacity_quota_gi_b",
-            &self.storage_capacity_quota_gi_b,
-        );
-        formatter.field("record_size_ki_b", &self.record_size_ki_b);
-        formatter.field("data_compression_type", &self.data_compression_type);
-        formatter.field("nfs_exports", &self.nfs_exports);
-        formatter.field("user_and_group_quotas", &self.user_and_group_quotas);
-        formatter.field("read_only", &self.read_only);
-        formatter.finish()
     }
 }
 /// See [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
@@ -8751,7 +8310,7 @@ impl UpdateOpenZfsVolumeConfiguration {
 
 /// <p>Used to specify changes to the ONTAP configuration for the volume you are updating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     #[doc(hidden)]
@@ -8789,20 +8348,6 @@ impl UpdateOntapVolumeConfiguration {
     /// <p>Update the volume's data tiering policy.</p>
     pub fn tiering_policy(&self) -> std::option::Option<&crate::model::TieringPolicy> {
         self.tiering_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateOntapVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOntapVolumeConfiguration");
-        formatter.field("junction_path", &self.junction_path);
-        formatter.field("security_style", &self.security_style);
-        formatter.field("size_in_megabytes", &self.size_in_megabytes);
-        formatter.field(
-            "storage_efficiency_enabled",
-            &self.storage_efficiency_enabled,
-        );
-        formatter.field("tiering_policy", &self.tiering_policy);
-        formatter.finish()
     }
 }
 /// See [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
@@ -8898,7 +8443,7 @@ impl UpdateOntapVolumeConfiguration {
 
 /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageVirtualMachine {
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
     #[doc(hidden)]
@@ -9016,37 +8561,6 @@ impl StorageVirtualMachine {
         &self,
     ) -> std::option::Option<&crate::model::StorageVirtualMachineRootVolumeSecurityStyle> {
         self.root_volume_security_style.as_ref()
-    }
-}
-impl std::fmt::Debug for StorageVirtualMachine {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageVirtualMachine");
-        formatter.field(
-            "active_directory_configuration",
-            &self.active_directory_configuration,
-        );
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("name", &self.name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field(
-            "storage_virtual_machine_id",
-            &self.storage_virtual_machine_id,
-        );
-        formatter.field("subtype", &self.subtype);
-        formatter.field("uuid", &self.uuid);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "lifecycle_transition_reason",
-            &self.lifecycle_transition_reason,
-        );
-        formatter.field(
-            "root_volume_security_style",
-            &self.root_volume_security_style,
-        );
-        formatter.finish()
     }
 }
 /// See [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
@@ -9616,7 +9130,7 @@ impl AsRef<str> for StorageVirtualMachineLifecycle {
 
 /// <p>An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has the following endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SvmEndpoints {
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
     #[doc(hidden)]
@@ -9647,16 +9161,6 @@ impl SvmEndpoints {
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
     pub fn smb(&self) -> std::option::Option<&crate::model::SvmEndpoint> {
         self.smb.as_ref()
-    }
-}
-impl std::fmt::Debug for SvmEndpoints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SvmEndpoints");
-        formatter.field("iscsi", &self.iscsi);
-        formatter.field("management", &self.management);
-        formatter.field("nfs", &self.nfs);
-        formatter.field("smb", &self.smb);
-        formatter.finish()
     }
 }
 /// See [`SvmEndpoints`](crate::model::SvmEndpoints).
@@ -9734,7 +9238,7 @@ impl SvmEndpoints {
 
 /// <p>An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has four endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SvmEndpoint {
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
     #[doc(hidden)]
@@ -9751,14 +9255,6 @@ impl SvmEndpoint {
     /// <p>The SVM endpoint's IP addresses.</p>
     pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.ip_addresses.as_deref()
-    }
-}
-impl std::fmt::Debug for SvmEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SvmEndpoint");
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.finish()
     }
 }
 /// See [`SvmEndpoint`](crate::model::SvmEndpoint).
@@ -9818,7 +9314,7 @@ impl SvmEndpoint {
 
 /// <p>Describes the configuration of the Microsoft Active Directory (AD) directory to which the Amazon FSx for ONTAP storage virtual machine (SVM) is joined. Pleae note, account credentials are not returned in the response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the Active Directory computer object that is joined to your SVM.</p>
     #[doc(hidden)]
@@ -9838,17 +9334,6 @@ impl SvmActiveDirectoryConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryAttributes> {
         self.self_managed_active_directory_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for SvmActiveDirectoryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SvmActiveDirectoryConfiguration");
-        formatter.field("net_bios_name", &self.net_bios_name);
-        formatter.field(
-            "self_managed_active_directory_configuration",
-            &self.self_managed_active_directory_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
@@ -9910,7 +9395,7 @@ impl SvmActiveDirectoryConfiguration {
 
 /// <p>Updates the Microsoft Active Directory (AD) configuration of an SVM joined to an AD. Please note, account credentials are not returned in the response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSvmActiveDirectoryConfiguration {
     /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.</p>
     #[doc(hidden)]
@@ -9923,16 +9408,6 @@ impl UpdateSvmActiveDirectoryConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryConfigurationUpdates> {
         self.self_managed_active_directory_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateSvmActiveDirectoryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSvmActiveDirectoryConfiguration");
-        formatter.field(
-            "self_managed_active_directory_configuration",
-            &self.self_managed_active_directory_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
@@ -10020,7 +9495,7 @@ impl std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
 pub mod self_managed_active_directory_configuration_updates {
 
     /// A builder for [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -10073,6 +9548,15 @@ pub mod self_managed_active_directory_configuration_updates {
                 password: self.password,
                 dns_ips: self.dns_ips,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &self.user_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("dns_ips", &self.dns_ips);
+            formatter.finish()
         }
     }
 }
@@ -10233,7 +9717,7 @@ impl AsRef<str> for ServiceLimit {
 
 /// <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileSystemOpenZfsConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     #[doc(hidden)]
@@ -10293,28 +9777,6 @@ impl UpdateFileSystemOpenZfsConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateFileSystemOpenZfsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFileSystemOpenZfsConfiguration");
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("copy_tags_to_backups", &self.copy_tags_to_backups);
-        formatter.field("copy_tags_to_volumes", &self.copy_tags_to_volumes);
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field("throughput_capacity", &self.throughput_capacity);
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
-        formatter.finish()
     }
 }
 /// See [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
@@ -10533,7 +9995,7 @@ impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
 pub mod update_file_system_ontap_configuration {
 
     /// A builder for [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
         pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
@@ -10646,6 +10108,27 @@ pub mod update_file_system_ontap_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "automatic_backup_retention_days",
+                &self.automatic_backup_retention_days,
+            );
+            formatter.field(
+                "daily_automatic_backup_start_time",
+                &self.daily_automatic_backup_start_time,
+            );
+            formatter.field("fsx_admin_password", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "weekly_maintenance_start_time",
+                &self.weekly_maintenance_start_time,
+            );
+            formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
+            formatter.field("throughput_capacity", &self.throughput_capacity);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateFileSystemOntapConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
@@ -10656,7 +10139,7 @@ impl UpdateFileSystemOntapConfiguration {
 
 /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     #[doc(hidden)]
@@ -10738,28 +10221,6 @@ impl UpdateFileSystemLustreConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::LustreRootSquashConfiguration> {
         self.root_squash_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateFileSystemLustreConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFileSystemLustreConfiguration");
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("auto_import_policy", &self.auto_import_policy);
-        formatter.field("data_compression_type", &self.data_compression_type);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.field("root_squash_configuration", &self.root_squash_configuration);
-        formatter.finish()
     }
 }
 /// See [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
@@ -10932,7 +10393,7 @@ impl UpdateFileSystemLustreConfiguration {
 /// <p>The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. An Amazon File Cache is created with Lustre logging enabled by default, with a setting of <code>WARN_ERROR</code> for the logging events. which can't be changed.</p>
 /// <p>Lustre logging writes the enabled logging events for your file system or cache to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LustreLogCreateConfiguration {
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
@@ -10977,14 +10438,6 @@ impl LustreLogCreateConfiguration {
     /// </ul>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
-    }
-}
-impl std::fmt::Debug for LustreLogCreateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LustreLogCreateConfiguration");
-        formatter.field("level", &self.level);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
@@ -11066,7 +10519,7 @@ impl LustreLogCreateConfiguration {
 
 /// <p>Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileSystemWindowsConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
     #[doc(hidden)]
@@ -11117,30 +10570,6 @@ impl UpdateFileSystemWindowsConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::WindowsAuditLogCreateConfiguration> {
         self.audit_log_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateFileSystemWindowsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFileSystemWindowsConfiguration");
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("throughput_capacity", &self.throughput_capacity);
-        formatter.field(
-            "self_managed_active_directory_configuration",
-            &self.self_managed_active_directory_configuration,
-        );
-        formatter.field("audit_log_configuration", &self.audit_log_configuration);
-        formatter.finish()
     }
 }
 /// See [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
@@ -11271,7 +10700,7 @@ impl UpdateFileSystemWindowsConfiguration {
 
 /// <p>The Windows file access auditing configuration used when creating or updating an Amazon FSx for Windows File Server file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WindowsAuditLogCreateConfiguration {
     /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
     /// <ul>
@@ -11340,21 +10769,6 @@ impl WindowsAuditLogCreateConfiguration {
     /// </ul>
     pub fn audit_log_destination(&self) -> std::option::Option<&str> {
         self.audit_log_destination.as_deref()
-    }
-}
-impl std::fmt::Debug for WindowsAuditLogCreateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WindowsAuditLogCreateConfiguration");
-        formatter.field(
-            "file_access_audit_log_level",
-            &self.file_access_audit_log_level,
-        );
-        formatter.field(
-            "file_share_access_audit_log_level",
-            &self.file_share_access_audit_log_level,
-        );
-        formatter.field("audit_log_destination", &self.audit_log_destination);
-        formatter.finish()
     }
 }
 /// See [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
@@ -11474,7 +10888,7 @@ impl WindowsAuditLogCreateConfiguration {
 
 /// <p>A description of a specific Amazon File Cache resource, which is a response object from the <code>DescribeFileCaches</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileCache {
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
     #[doc(hidden)]
@@ -11605,31 +11019,6 @@ impl FileCache {
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
     pub fn data_repository_association_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.data_repository_association_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for FileCache {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileCache");
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("file_cache_id", &self.file_cache_id);
-        formatter.field("file_cache_type", &self.file_cache_type);
-        formatter.field("file_cache_type_version", &self.file_cache_type_version);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("storage_capacity", &self.storage_capacity);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("network_interface_ids", &self.network_interface_ids);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.field(
-            "data_repository_association_ids",
-            &self.data_repository_association_ids,
-        );
-        formatter.finish()
     }
 }
 /// See [`FileCache`](crate::model::FileCache).
@@ -11918,7 +11307,7 @@ impl FileCache {
 
 /// <p>The configuration for the Amazon File Cache resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileCacheLustreConfiguration {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
     #[doc(hidden)]
@@ -11974,24 +11363,6 @@ impl FileCacheLustreConfiguration {
     /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
     pub fn log_configuration(&self) -> std::option::Option<&crate::model::LustreLogConfiguration> {
         self.log_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for FileCacheLustreConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileCacheLustreConfiguration");
-        formatter.field(
-            "per_unit_storage_throughput",
-            &self.per_unit_storage_throughput,
-        );
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("mount_name", &self.mount_name);
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field("metadata_configuration", &self.metadata_configuration);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.finish()
     }
 }
 /// See [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
@@ -12119,7 +11490,7 @@ impl FileCacheLustreConfiguration {
 
 /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume. The metadata on Amazon File Cache is managed by a Lustre Metadata Server (MDS) while the actual metadata is persisted on an MDT.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileCacheLustreMetadataConfiguration {
     /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
     #[doc(hidden)]
@@ -12129,13 +11500,6 @@ impl FileCacheLustreMetadataConfiguration {
     /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
     pub fn storage_capacity(&self) -> std::option::Option<i32> {
         self.storage_capacity
-    }
-}
-impl std::fmt::Debug for FileCacheLustreMetadataConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileCacheLustreMetadataConfiguration");
-        formatter.field("storage_capacity", &self.storage_capacity);
-        formatter.finish()
     }
 }
 /// See [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
@@ -12261,7 +11625,7 @@ impl AsRef<str> for FileCacheLustreDeploymentType {
 
 /// <p>A structure providing details of any failures that occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileCacheFailureDetails {
     /// <p>A message describing any failures that occurred.</p>
     #[doc(hidden)]
@@ -12271,13 +11635,6 @@ impl FileCacheFailureDetails {
     /// <p>A message describing any failures that occurred.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for FileCacheFailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileCacheFailureDetails");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
@@ -12508,7 +11865,7 @@ impl AsRef<str> for FileCacheType {
 
 /// <p>The configuration update for an Amazon File Cache resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileCacheLustreConfiguration {
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -12524,16 +11881,6 @@ impl UpdateFileCacheLustreConfiguration {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateFileCacheLustreConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFileCacheLustreConfiguration");
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
@@ -12590,7 +11937,7 @@ impl UpdateFileCacheLustreConfiguration {
 /// </ul>
 /// <p>Data repository associations are supported only for an Amazon FSx for Lustre file system with the <code>Persistent_2</code> deployment type and for an Amazon File Cache resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryAssociation {
     /// <p>The system-generated, unique ID of the data repository association.</p>
     #[doc(hidden)]
@@ -12761,34 +12108,6 @@ impl DataRepositoryAssociation {
     /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
     pub fn nfs(&self) -> std::option::Option<&crate::model::NfsDataRepositoryConfiguration> {
         self.nfs.as_ref()
-    }
-}
-impl std::fmt::Debug for DataRepositoryAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryAssociation");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("file_system_path", &self.file_system_path);
-        formatter.field("data_repository_path", &self.data_repository_path);
-        formatter.field(
-            "batch_import_meta_data_on_create",
-            &self.batch_import_meta_data_on_create,
-        );
-        formatter.field("imported_file_chunk_size", &self.imported_file_chunk_size);
-        formatter.field("s3", &self.s3);
-        formatter.field("tags", &self.tags);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("file_cache_id", &self.file_cache_id);
-        formatter.field("file_cache_path", &self.file_cache_path);
-        formatter.field(
-            "data_repository_subdirectories",
-            &self.data_repository_subdirectories,
-        );
-        formatter.field("nfs", &self.nfs);
-        formatter.finish()
     }
 }
 /// See [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
@@ -13122,7 +12441,7 @@ impl DataRepositoryAssociation {
 
 /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NfsDataRepositoryConfiguration {
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. Currently, the only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
     #[doc(hidden)]
@@ -13146,15 +12465,6 @@ impl NfsDataRepositoryConfiguration {
     /// <p>This parameter is not supported for Amazon File Cache.</p>
     pub fn auto_export_policy(&self) -> std::option::Option<&crate::model::AutoExportPolicy> {
         self.auto_export_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for NfsDataRepositoryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NfsDataRepositoryConfiguration");
-        formatter.field("version", &self.version);
-        formatter.field("dns_ips", &self.dns_ips);
-        formatter.field("auto_export_policy", &self.auto_export_policy);
-        formatter.finish()
     }
 }
 /// See [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
@@ -13230,7 +12540,7 @@ impl NfsDataRepositoryConfiguration {
 /// <p>Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx for Lustre automatically exports the defined changes asynchronously once your application finishes modifying the file.</p>
 /// <p>This <code>AutoExportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoExportPolicy {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
@@ -13252,13 +12562,6 @@ impl AutoExportPolicy {
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::EventType]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoExportPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoExportPolicy");
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`AutoExportPolicy`](crate::model::AutoExportPolicy).
@@ -13500,7 +12803,7 @@ impl AsRef<str> for NfsVersion {
 /// <p>Data repository associations on Amazon File Cache don't use <code>S3DataRepositoryConfiguration</code> because they don't support automatic import or automatic export.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DataRepositoryConfiguration {
     /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
     #[doc(hidden)]
@@ -13517,14 +12820,6 @@ impl S3DataRepositoryConfiguration {
     /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
     pub fn auto_export_policy(&self) -> std::option::Option<&crate::model::AutoExportPolicy> {
         self.auto_export_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for S3DataRepositoryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DataRepositoryConfiguration");
-        formatter.field("auto_import_policy", &self.auto_import_policy);
-        formatter.field("auto_export_policy", &self.auto_export_policy);
-        formatter.finish()
     }
 }
 /// See [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
@@ -13582,7 +12877,7 @@ impl S3DataRepositoryConfiguration {
 /// <p>Describes the data repository association's automatic import policy. The AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory listings up to date by importing changes to your Amazon FSx for Lustre file system as you modify objects in a linked S3 bucket.</p>
 /// <p>The <code>AutoImportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoImportPolicy {
     /// <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
     /// <ul>
@@ -13604,13 +12899,6 @@ impl AutoImportPolicy {
     /// <p>You can define any combination of event types for your <code>AutoImportPolicy</code>.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::EventType]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoImportPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoImportPolicy");
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`AutoImportPolicy`](crate::model::AutoImportPolicy).
@@ -13766,7 +13054,7 @@ impl AsRef<str> for RestoreOpenZfsVolumeOption {
 
 /// <p>A filter used to restrict the results of describe calls for Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volumes. You can use multiple filters to return results that meet all applied filter requirements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeFilter {
     /// <p>The name for this filter.</p>
     #[doc(hidden)]
@@ -13783,14 +13071,6 @@ impl VolumeFilter {
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for VolumeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`VolumeFilter`](crate::model::VolumeFilter).
@@ -13943,7 +13223,7 @@ impl AsRef<str> for VolumeFilterName {
 
 /// <p>A filter used to restrict the results of describe calls for Amazon FSx for NetApp ONTAP storage virtual machines (SVMs). You can use multiple filters to return results that meet all applied filter requirements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageVirtualMachineFilter {
     /// <p>The name for this filter.</p>
     #[doc(hidden)]
@@ -13960,14 +13240,6 @@ impl StorageVirtualMachineFilter {
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for StorageVirtualMachineFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageVirtualMachineFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
@@ -14117,7 +13389,7 @@ impl AsRef<str> for StorageVirtualMachineFilterName {
 
 /// <p>A filter used to restrict the results of <code>DescribeSnapshots</code> calls. You can use multiple filters to return results that meet all applied filter requirements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotFilter {
     /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
     #[doc(hidden)]
@@ -14134,14 +13406,6 @@ impl SnapshotFilter {
     /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SnapshotFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SnapshotFilter`](crate::model::SnapshotFilter).
@@ -14296,7 +13560,7 @@ impl AsRef<str> for SnapshotFilterName {
 
 /// <p>A description of the data repository task. You use data repository tasks to perform bulk transfer operations between an Amazon FSx for Lustre file system and a linked data repository. An Amazon File Cache resource uses a task to automatically release files from the cache.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryTask {
     /// <p>The system-generated, unique 17-digit ID of the data repository task.</p>
     #[doc(hidden)]
@@ -14438,27 +13702,6 @@ impl DataRepositoryTask {
     /// <p>The system-generated, unique ID of the cache.</p>
     pub fn file_cache_id(&self) -> std::option::Option<&str> {
         self.file_cache_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DataRepositoryTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryTask");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("paths", &self.paths);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("status", &self.status);
-        formatter.field("report", &self.report);
-        formatter.field("capacity_to_release", &self.capacity_to_release);
-        formatter.field("file_cache_id", &self.file_cache_id);
-        formatter.finish()
     }
 }
 /// See [`DataRepositoryTask`](crate::model::DataRepositoryTask).
@@ -14749,7 +13992,7 @@ impl DataRepositoryTask {
 
 /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompletionReport {
     /// <p>Set <code>Enabled</code> to <code>True</code> to generate a <code>CompletionReport</code> when the task completes. If set to <code>true</code>, then you need to provide a report <code>Scope</code>, <code>Path</code>, and <code>Format</code>. Set <code>Enabled</code> to <code>False</code> if you do not want a <code>CompletionReport</code> generated when the task completes.</p>
     #[doc(hidden)]
@@ -14780,16 +14023,6 @@ impl CompletionReport {
     /// <p>Required if <code>Enabled</code> is set to <code>true</code>. Specifies the scope of the <code>CompletionReport</code>; <code>FAILED_FILES_ONLY</code> is the only scope currently supported. When <code>Scope</code> is set to <code>FAILED_FILES_ONLY</code>, the <code>CompletionReport</code> only contains information about files that the data repository task failed to process.</p>
     pub fn scope(&self) -> std::option::Option<&crate::model::ReportScope> {
         self.scope.as_ref()
-    }
-}
-impl std::fmt::Debug for CompletionReport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompletionReport");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("path", &self.path);
-        formatter.field("format", &self.format);
-        formatter.field("scope", &self.scope);
-        formatter.finish()
     }
 }
 /// See [`CompletionReport`](crate::model::CompletionReport).
@@ -15037,7 +14270,7 @@ impl AsRef<str> for ReportFormat {
 
 /// <p>Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryTaskStatus {
     /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
     #[doc(hidden)]
@@ -15075,17 +14308,6 @@ impl DataRepositoryTaskStatus {
     /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
     pub fn released_capacity(&self) -> std::option::Option<i64> {
         self.released_capacity
-    }
-}
-impl std::fmt::Debug for DataRepositoryTaskStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryTaskStatus");
-        formatter.field("total_count", &self.total_count);
-        formatter.field("succeeded_count", &self.succeeded_count);
-        formatter.field("failed_count", &self.failed_count);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("released_capacity", &self.released_capacity);
-        formatter.finish()
     }
 }
 /// See [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
@@ -15175,7 +14397,7 @@ impl DataRepositoryTaskStatus {
 
 /// <p>Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryTaskFailureDetails {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
@@ -15185,13 +14407,6 @@ impl DataRepositoryTaskFailureDetails {
     /// <p>A detailed error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DataRepositoryTaskFailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryTaskFailureDetails");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
@@ -15456,7 +14671,7 @@ impl AsRef<str> for DataRepositoryTaskLifecycle {
 
 /// <p>(Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryTaskFilter {
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
     /// <ul>
@@ -15481,14 +14696,6 @@ impl DataRepositoryTaskFilter {
     /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for DataRepositoryTaskFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryTaskFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
@@ -15666,7 +14873,7 @@ impl AsRef<str> for DataRepositoryTaskFilterName {
 
 /// <p>A filter used to restrict the results of describe calls. You can use multiple filters to return results that meet all applied filter requirements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name for this filter.</p>
     #[doc(hidden)]
@@ -15683,14 +14890,6 @@ impl Filter {
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -15873,7 +15072,7 @@ impl AsRef<str> for FilterName {
 
 /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Backup {
     /// <p>The ID of the backup.</p>
     #[doc(hidden)]
@@ -16008,28 +15207,6 @@ impl Backup {
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
     pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
         self.volume.as_ref()
-    }
-}
-impl std::fmt::Debug for Backup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Backup");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("progress_percent", &self.progress_percent);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_system", &self.file_system);
-        formatter.field("directory_information", &self.directory_information);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("source_backup_id", &self.source_backup_id);
-        formatter.field("source_backup_region", &self.source_backup_region);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("volume", &self.volume);
-        formatter.finish()
     }
 }
 /// See [`Backup`](crate::model::Backup).
@@ -16393,7 +15570,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>The Microsoft Active Directory attributes of the Amazon FSx for Windows File Server file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveDirectoryBackupAttributes {
     /// <p>The fully qualified domain name of the self-managed Active Directory directory.</p>
     #[doc(hidden)]
@@ -16417,15 +15594,6 @@ impl ActiveDirectoryBackupAttributes {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ActiveDirectoryBackupAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveDirectoryBackupAttributes");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("active_directory_id", &self.active_directory_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
@@ -16586,7 +15754,7 @@ impl AsRef<str> for BackupType {
 
 /// <p>If backup creation fails, this structure contains the details of that failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupFailureDetails {
     /// <p>A message describing the backup-creation failure.</p>
     #[doc(hidden)]
@@ -16596,13 +15764,6 @@ impl BackupFailureDetails {
     /// <p>A message describing the backup-creation failure.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupFailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupFailureDetails");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BackupFailureDetails`](crate::model::BackupFailureDetails).
@@ -16796,7 +15957,7 @@ impl AsRef<str> for BackupLifecycle {
 
 /// <p>The response object for the Amazon FSx for NetApp ONTAP volume being deleted in the <code>DeleteVolume</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVolumeOntapResponse {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     #[doc(hidden)]
@@ -16813,14 +15974,6 @@ impl DeleteVolumeOntapResponse {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.final_backup_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteVolumeOntapResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVolumeOntapResponse");
-        formatter.field("final_backup_id", &self.final_backup_id);
-        formatter.field("final_backup_tags", &self.final_backup_tags);
-        formatter.finish()
     }
 }
 /// See [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
@@ -16883,7 +16036,7 @@ impl DeleteVolumeOntapResponse {
 
 /// <p>A value that specifies whether to delete all child volumes and snapshots. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVolumeOpenZfsConfiguration {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
     #[doc(hidden)]
@@ -16893,13 +16046,6 @@ impl DeleteVolumeOpenZfsConfiguration {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
     pub fn options(&self) -> std::option::Option<&[crate::model::DeleteOpenZfsVolumeOption]> {
         self.options.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteVolumeOpenZfsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVolumeOpenZfsConfiguration");
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
@@ -17039,7 +16185,7 @@ impl AsRef<str> for DeleteOpenZfsVolumeOption {
 
 /// <p>Use to specify skipping a final backup, or to add tags to a final backup.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVolumeOntapConfiguration {
     /// <p>Set to true if you want to skip taking a final backup of the volume you are deleting.</p>
     #[doc(hidden)]
@@ -17056,14 +16202,6 @@ impl DeleteVolumeOntapConfiguration {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.final_backup_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteVolumeOntapConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVolumeOntapConfiguration");
-        formatter.field("skip_final_backup", &self.skip_final_backup);
-        formatter.field("final_backup_tags", &self.final_backup_tags);
-        formatter.finish()
     }
 }
 /// See [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
@@ -17123,7 +16261,7 @@ impl DeleteVolumeOntapConfiguration {
 
 /// <p>The response object for the Amazon FSx for OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemOpenZfsResponse {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     #[doc(hidden)]
@@ -17140,14 +16278,6 @@ impl DeleteFileSystemOpenZfsResponse {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.final_backup_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteFileSystemOpenZfsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemOpenZfsResponse");
-        formatter.field("final_backup_id", &self.final_backup_id);
-        formatter.field("final_backup_tags", &self.final_backup_tags);
-        formatter.finish()
     }
 }
 /// See [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
@@ -17210,7 +16340,7 @@ impl DeleteFileSystemOpenZfsResponse {
 
 /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemLustreResponse {
     /// <p>The ID of the final backup for this file system.</p>
     #[doc(hidden)]
@@ -17227,14 +16357,6 @@ impl DeleteFileSystemLustreResponse {
     /// <p>The set of tags applied to the final backup.</p>
     pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.final_backup_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteFileSystemLustreResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemLustreResponse");
-        formatter.field("final_backup_id", &self.final_backup_id);
-        formatter.field("final_backup_tags", &self.final_backup_tags);
-        formatter.finish()
     }
 }
 /// See [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
@@ -17297,7 +16419,7 @@ impl DeleteFileSystemLustreResponse {
 
 /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemWindowsResponse {
     /// <p>The ID of the final backup for this file system.</p>
     #[doc(hidden)]
@@ -17314,14 +16436,6 @@ impl DeleteFileSystemWindowsResponse {
     /// <p>The set of tags applied to the final backup.</p>
     pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.final_backup_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteFileSystemWindowsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemWindowsResponse");
-        formatter.field("final_backup_id", &self.final_backup_id);
-        formatter.field("final_backup_tags", &self.final_backup_tags);
-        formatter.finish()
     }
 }
 /// See [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
@@ -17384,7 +16498,7 @@ impl DeleteFileSystemWindowsResponse {
 
 /// <p>The configuration object for the Amazon FSx for OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemOpenZfsConfiguration {
     /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
     #[doc(hidden)]
@@ -17408,15 +16522,6 @@ impl DeleteFileSystemOpenZfsConfiguration {
     /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
     pub fn options(&self) -> std::option::Option<&[crate::model::DeleteFileSystemOpenZfsOption]> {
         self.options.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteFileSystemOpenZfsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemOpenZfsConfiguration");
-        formatter.field("skip_final_backup", &self.skip_final_backup);
-        formatter.field("final_backup_tags", &self.final_backup_tags);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
@@ -17589,7 +16694,7 @@ impl AsRef<str> for DeleteFileSystemOpenZfsOption {
 
 /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemLustreConfiguration {
     /// <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup of the file system you are deleting. By default, Amazon FSx will not take a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. (Default = true)</p> <note>
     /// <p>The <code>fsx:CreateBackup</code> permission is required if you set <code>SkipFinalBackup</code> to <code>false</code> in order to delete the file system and take a final backup.</p>
@@ -17610,14 +16715,6 @@ impl DeleteFileSystemLustreConfiguration {
     /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to apply an array of tags to the final backup. If you have set the file system property <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
     pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.final_backup_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteFileSystemLustreConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemLustreConfiguration");
-        formatter.field("skip_final_backup", &self.skip_final_backup);
-        formatter.field("final_backup_tags", &self.final_backup_tags);
-        formatter.finish()
     }
 }
 /// See [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
@@ -17681,7 +16778,7 @@ impl DeleteFileSystemLustreConfiguration {
 
 /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemWindowsConfiguration {
     /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>
     #[doc(hidden)]
@@ -17698,14 +16795,6 @@ impl DeleteFileSystemWindowsConfiguration {
     /// <p>A set of tags for your final backup.</p>
     pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.final_backup_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteFileSystemWindowsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemWindowsConfiguration");
-        formatter.field("skip_final_backup", &self.skip_final_backup);
-        formatter.field("final_backup_tags", &self.final_backup_tags);
-        formatter.finish()
     }
 }
 /// See [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
@@ -17765,7 +16854,7 @@ impl DeleteFileSystemWindowsConfiguration {
 
 /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     #[doc(hidden)]
@@ -17846,24 +16935,6 @@ impl CreateOntapVolumeConfiguration {
     /// </ul>
     pub fn tiering_policy(&self) -> std::option::Option<&crate::model::TieringPolicy> {
         self.tiering_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateOntapVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOntapVolumeConfiguration");
-        formatter.field("junction_path", &self.junction_path);
-        formatter.field("security_style", &self.security_style);
-        formatter.field("size_in_megabytes", &self.size_in_megabytes);
-        formatter.field(
-            "storage_efficiency_enabled",
-            &self.storage_efficiency_enabled,
-        );
-        formatter.field(
-            "storage_virtual_machine_id",
-            &self.storage_virtual_machine_id,
-        );
-        formatter.field("tiering_policy", &self.tiering_policy);
-        formatter.finish()
     }
 }
 /// See [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
@@ -18010,7 +17081,7 @@ impl CreateOntapVolumeConfiguration {
 
 /// <p>Specifies the configuration of the Amazon FSx for OpenZFS volume that you are creating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOpenZfsVolumeConfiguration {
     /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
     #[doc(hidden)]
@@ -18105,28 +17176,6 @@ impl CreateOpenZfsVolumeConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::OpenZfsUserOrGroupQuota]> {
         self.user_and_group_quotas.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateOpenZfsVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOpenZfsVolumeConfiguration");
-        formatter.field("parent_volume_id", &self.parent_volume_id);
-        formatter.field(
-            "storage_capacity_reservation_gi_b",
-            &self.storage_capacity_reservation_gi_b,
-        );
-        formatter.field(
-            "storage_capacity_quota_gi_b",
-            &self.storage_capacity_quota_gi_b,
-        );
-        formatter.field("record_size_ki_b", &self.record_size_ki_b);
-        formatter.field("data_compression_type", &self.data_compression_type);
-        formatter.field("copy_tags_to_snapshots", &self.copy_tags_to_snapshots);
-        formatter.field("origin_snapshot", &self.origin_snapshot);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("nfs_exports", &self.nfs_exports);
-        formatter.field("user_and_group_quotas", &self.user_and_group_quotas);
-        formatter.finish()
     }
 }
 /// See [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
@@ -18329,7 +17378,7 @@ impl CreateOpenZfsVolumeConfiguration {
 
 /// <p>The snapshot configuration to use when creating an OpenZFS volume from a snapshot. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOpenZfsOriginSnapshotConfiguration {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
@@ -18354,14 +17403,6 @@ impl CreateOpenZfsOriginSnapshotConfiguration {
     /// </ul>
     pub fn copy_strategy(&self) -> std::option::Option<&crate::model::OpenZfsCopyStrategy> {
         self.copy_strategy.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateOpenZfsOriginSnapshotConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOpenZfsOriginSnapshotConfiguration");
-        formatter.field("snapshot_arn", &self.snapshot_arn);
-        formatter.field("copy_strategy", &self.copy_strategy);
-        formatter.finish()
     }
 }
 /// See [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
@@ -18534,7 +17575,7 @@ impl AsRef<str> for ActiveDirectoryErrorType {
 
 /// <p>The configuration that Amazon FSx uses to join the ONTAP storage virtual machine (SVM) to your self-managed (including on-premises) Microsoft Active Directory (AD) directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
     #[doc(hidden)]
@@ -18554,17 +17595,6 @@ impl CreateSvmActiveDirectoryConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryConfiguration> {
         self.self_managed_active_directory_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateSvmActiveDirectoryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSvmActiveDirectoryConfiguration");
-        formatter.field("net_bios_name", &self.net_bios_name);
-        formatter.field(
-            "self_managed_active_directory_configuration",
-            &self.self_managed_active_directory_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
@@ -18699,7 +17729,7 @@ impl std::fmt::Debug for SelfManagedActiveDirectoryConfiguration {
 pub mod self_managed_active_directory_configuration {
 
     /// A builder for [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) organizational_unit_distinguished_name: std::option::Option<std::string::String>,
@@ -18806,6 +17836,24 @@ pub mod self_managed_active_directory_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_name", &self.domain_name);
+            formatter.field(
+                "organizational_unit_distinguished_name",
+                &self.organizational_unit_distinguished_name,
+            );
+            formatter.field(
+                "file_system_administrators_group",
+                &self.file_system_administrators_group,
+            );
+            formatter.field("user_name", &self.user_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("dns_ips", &self.dns_ips);
+            formatter.finish()
+        }
+    }
 }
 impl SelfManagedActiveDirectoryConfiguration {
     /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
@@ -18816,7 +17864,7 @@ impl SelfManagedActiveDirectoryConfiguration {
 
 /// <p>The Amazon FSx for OpenZFS configuration properties for the file system that you are creating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileSystemOpenZfsConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     #[doc(hidden)]
@@ -18893,30 +17941,6 @@ impl CreateFileSystemOpenZfsConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::OpenZfsCreateRootVolumeConfiguration> {
         self.root_volume_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateFileSystemOpenZfsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFileSystemOpenZfsConfiguration");
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("copy_tags_to_backups", &self.copy_tags_to_backups);
-        formatter.field("copy_tags_to_volumes", &self.copy_tags_to_volumes);
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("throughput_capacity", &self.throughput_capacity);
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
-        formatter.field("root_volume_configuration", &self.root_volume_configuration);
-        formatter.finish()
     }
 }
 /// See [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
@@ -19089,7 +18113,7 @@ impl CreateFileSystemOpenZfsConfiguration {
 
 /// <p>The configuration of an Amazon FSx for OpenZFS root volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenZfsCreateRootVolumeConfiguration {
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     #[doc(hidden)]
@@ -19149,18 +18173,6 @@ impl OpenZfsCreateRootVolumeConfiguration {
     /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
     pub fn read_only(&self) -> std::option::Option<bool> {
         self.read_only
-    }
-}
-impl std::fmt::Debug for OpenZfsCreateRootVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenZfsCreateRootVolumeConfiguration");
-        formatter.field("record_size_ki_b", &self.record_size_ki_b);
-        formatter.field("data_compression_type", &self.data_compression_type);
-        formatter.field("nfs_exports", &self.nfs_exports);
-        formatter.field("user_and_group_quotas", &self.user_and_group_quotas);
-        formatter.field("copy_tags_to_snapshots", &self.copy_tags_to_snapshots);
-        formatter.field("read_only", &self.read_only);
-        formatter.finish()
     }
 }
 /// See [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
@@ -19306,7 +18318,7 @@ impl OpenZfsCreateRootVolumeConfiguration {
 /// </ul>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     #[doc(hidden)]
@@ -19483,38 +18495,6 @@ impl CreateFileSystemLustreConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::LustreRootSquashConfiguration> {
         self.root_squash_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateFileSystemLustreConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFileSystemLustreConfiguration");
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field("import_path", &self.import_path);
-        formatter.field("export_path", &self.export_path);
-        formatter.field("imported_file_chunk_size", &self.imported_file_chunk_size);
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("auto_import_policy", &self.auto_import_policy);
-        formatter.field(
-            "per_unit_storage_throughput",
-            &self.per_unit_storage_throughput,
-        );
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("copy_tags_to_backups", &self.copy_tags_to_backups);
-        formatter.field("drive_cache_type", &self.drive_cache_type);
-        formatter.field("data_compression_type", &self.data_compression_type);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.field("root_squash_configuration", &self.root_squash_configuration);
-        formatter.finish()
     }
 }
 /// See [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
@@ -19822,7 +18802,7 @@ impl CreateFileSystemLustreConfiguration {
 
 /// <p>The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileSystemWindowsConfiguration {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the file system should join when it's created.</p>
     #[doc(hidden)]
@@ -19938,35 +18918,6 @@ impl CreateFileSystemWindowsConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::WindowsAuditLogCreateConfiguration> {
         self.audit_log_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateFileSystemWindowsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFileSystemWindowsConfiguration");
-        formatter.field("active_directory_id", &self.active_directory_id);
-        formatter.field(
-            "self_managed_active_directory_configuration",
-            &self.self_managed_active_directory_configuration,
-        );
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("preferred_subnet_id", &self.preferred_subnet_id);
-        formatter.field("throughput_capacity", &self.throughput_capacity);
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field(
-            "daily_automatic_backup_start_time",
-            &self.daily_automatic_backup_start_time,
-        );
-        formatter.field(
-            "automatic_backup_retention_days",
-            &self.automatic_backup_retention_days,
-        );
-        formatter.field("copy_tags_to_backups", &self.copy_tags_to_backups);
-        formatter.field("aliases", &self.aliases);
-        formatter.field("audit_log_configuration", &self.audit_log_configuration);
-        formatter.finish()
     }
 }
 /// See [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
@@ -20329,7 +19280,7 @@ impl std::fmt::Debug for CreateFileSystemOntapConfiguration {
 pub mod create_file_system_ontap_configuration {
 
     /// A builder for [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
         pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
@@ -20522,6 +19473,31 @@ pub mod create_file_system_ontap_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "automatic_backup_retention_days",
+                &self.automatic_backup_retention_days,
+            );
+            formatter.field(
+                "daily_automatic_backup_start_time",
+                &self.daily_automatic_backup_start_time,
+            );
+            formatter.field("deployment_type", &self.deployment_type);
+            formatter.field("endpoint_ip_address_range", &self.endpoint_ip_address_range);
+            formatter.field("fsx_admin_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
+            formatter.field("preferred_subnet_id", &self.preferred_subnet_id);
+            formatter.field("route_table_ids", &self.route_table_ids);
+            formatter.field("throughput_capacity", &self.throughput_capacity);
+            formatter.field(
+                "weekly_maintenance_start_time",
+                &self.weekly_maintenance_start_time,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl CreateFileSystemOntapConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
@@ -20532,7 +19508,7 @@ impl CreateFileSystemOntapConfiguration {
 
 /// <p>The response object for the Amazon File Cache resource being created in the <code>CreateFileCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileCacheCreating {
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
     #[doc(hidden)]
@@ -20677,36 +19653,6 @@ impl FileCacheCreating {
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
     pub fn data_repository_association_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.data_repository_association_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for FileCacheCreating {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileCacheCreating");
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("file_cache_id", &self.file_cache_id);
-        formatter.field("file_cache_type", &self.file_cache_type);
-        formatter.field("file_cache_type_version", &self.file_cache_type_version);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("storage_capacity", &self.storage_capacity);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("network_interface_ids", &self.network_interface_ids);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "copy_tags_to_data_repository_associations",
-            &self.copy_tags_to_data_repository_associations,
-        );
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.field(
-            "data_repository_association_ids",
-            &self.data_repository_association_ids,
-        );
-        formatter.finish()
     }
 }
 /// See [`FileCacheCreating`](crate::model::FileCacheCreating).
@@ -21033,7 +19979,7 @@ impl FileCacheCreating {
 /// <p>The configuration for a data repository association (DRA) to be created during the Amazon File Cache resource creation. The DRA links the cache to either an Amazon S3 bucket or prefix, or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
 /// <p>The DRA does not support automatic import or automatic export.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileCacheDataRepositoryAssociation {
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
@@ -21088,19 +20034,6 @@ impl FileCacheDataRepositoryAssociation {
     /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
     pub fn nfs(&self) -> std::option::Option<&crate::model::FileCacheNfsConfiguration> {
         self.nfs.as_ref()
-    }
-}
-impl std::fmt::Debug for FileCacheDataRepositoryAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileCacheDataRepositoryAssociation");
-        formatter.field("file_cache_path", &self.file_cache_path);
-        formatter.field("data_repository_path", &self.data_repository_path);
-        formatter.field(
-            "data_repository_subdirectories",
-            &self.data_repository_subdirectories,
-        );
-        formatter.field("nfs", &self.nfs);
-        formatter.finish()
     }
 }
 /// See [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
@@ -21221,7 +20154,7 @@ impl FileCacheDataRepositoryAssociation {
 
 /// <p>The configuration for an NFS data repository association (DRA) created during the creation of the Amazon File Cache resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileCacheNfsConfiguration {
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
     #[doc(hidden)]
@@ -21238,14 +20171,6 @@ impl FileCacheNfsConfiguration {
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
     pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ips.as_deref()
-    }
-}
-impl std::fmt::Debug for FileCacheNfsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileCacheNfsConfiguration");
-        formatter.field("version", &self.version);
-        formatter.field("dns_ips", &self.dns_ips);
-        formatter.finish()
     }
 }
 /// See [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
@@ -21305,7 +20230,7 @@ impl FileCacheNfsConfiguration {
 
 /// <p>The Amazon File Cache configuration for the cache that you are creating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileCacheLustreConfiguration {
     /// <p>Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.</p>
     #[doc(hidden)]
@@ -21347,22 +20272,6 @@ impl CreateFileCacheLustreConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::FileCacheLustreMetadataConfiguration> {
         self.metadata_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateFileCacheLustreConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFileCacheLustreConfiguration");
-        formatter.field(
-            "per_unit_storage_throughput",
-            &self.per_unit_storage_throughput,
-        );
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field(
-            "weekly_maintenance_start_time",
-            &self.weekly_maintenance_start_time,
-        );
-        formatter.field("metadata_configuration", &self.metadata_configuration);
-        formatter.finish()
     }
 }
 /// See [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).

@@ -3771,7 +3771,7 @@ impl GetResourcePolicyInput {
 pub mod import_source_credentials_input {
 
     /// A builder for [`ImportSourceCredentialsInput`](crate::input::ImportSourceCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) token: std::option::Option<std::string::String>,
@@ -3847,6 +3847,17 @@ pub mod import_source_credentials_input {
                 auth_type: self.auth_type,
                 should_overwrite: self.should_overwrite,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("token", &"*** Sensitive Data Redacted ***");
+            formatter.field("server_type", &self.server_type);
+            formatter.field("auth_type", &self.auth_type);
+            formatter.field("should_overwrite", &self.should_overwrite);
+            formatter.finish()
         }
     }
 }
@@ -9698,7 +9709,7 @@ impl UpdateWebhookInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
     #[doc(hidden)]
@@ -9745,21 +9756,10 @@ impl UpdateWebhookInput {
         self.build_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWebhookInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("branch_filter", &self.branch_filter);
-        formatter.field("rotate_secret", &self.rotate_secret);
-        formatter.field("filter_groups", &self.filter_groups);
-        formatter.field("build_type", &self.build_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReportGroupInput {
     /// <p> The ARN of the report group to update. </p>
     #[doc(hidden)]
@@ -9795,19 +9795,10 @@ impl UpdateReportGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateReportGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReportGroupInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("export_config", &self.export_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
     #[doc(hidden)]
@@ -9861,19 +9852,10 @@ impl UpdateProjectVisibilityInput {
         self.resource_access_role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProjectVisibilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectVisibilityInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("project_visibility", &self.project_visibility);
-        formatter.field("resource_access_role", &self.resource_access_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>The name of the build project.</p> <note>
     /// <p>You cannot change a build project's name.</p>
@@ -10067,37 +10049,10 @@ impl UpdateProjectInput {
         self.concurrent_build_limit
     }
 }
-impl std::fmt::Debug for UpdateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("source", &self.source);
-        formatter.field("secondary_sources", &self.secondary_sources);
-        formatter.field("source_version", &self.source_version);
-        formatter.field("secondary_source_versions", &self.secondary_source_versions);
-        formatter.field("artifacts", &self.artifacts);
-        formatter.field("secondary_artifacts", &self.secondary_artifacts);
-        formatter.field("cache", &self.cache);
-        formatter.field("environment", &self.environment);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.field("queued_timeout_in_minutes", &self.queued_timeout_in_minutes);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("badge_enabled", &self.badge_enabled);
-        formatter.field("logs_config", &self.logs_config);
-        formatter.field("file_system_locations", &self.file_system_locations);
-        formatter.field("build_batch_config", &self.build_batch_config);
-        formatter.field("concurrent_build_limit", &self.concurrent_build_limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopBuildBatchInput {
     /// <p>The identifier of the batch build to stop.</p>
     #[doc(hidden)]
@@ -10109,17 +10064,10 @@ impl StopBuildBatchInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StopBuildBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopBuildBatchInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopBuildInput {
     /// <p>The ID of the build.</p>
     #[doc(hidden)]
@@ -10131,17 +10079,10 @@ impl StopBuildInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StopBuildInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopBuildInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBuildBatchInput {
     /// <p>The name of the project.</p>
     #[doc(hidden)]
@@ -10483,80 +10424,10 @@ impl StartBuildBatchInput {
         self.debug_session_enabled
     }
 }
-impl std::fmt::Debug for StartBuildBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartBuildBatchInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field(
-            "secondary_sources_override",
-            &self.secondary_sources_override,
-        );
-        formatter.field(
-            "secondary_sources_version_override",
-            &self.secondary_sources_version_override,
-        );
-        formatter.field("source_version", &self.source_version);
-        formatter.field("artifacts_override", &self.artifacts_override);
-        formatter.field(
-            "secondary_artifacts_override",
-            &self.secondary_artifacts_override,
-        );
-        formatter.field(
-            "environment_variables_override",
-            &self.environment_variables_override,
-        );
-        formatter.field("source_type_override", &self.source_type_override);
-        formatter.field("source_location_override", &self.source_location_override);
-        formatter.field("source_auth_override", &self.source_auth_override);
-        formatter.field("git_clone_depth_override", &self.git_clone_depth_override);
-        formatter.field(
-            "git_submodules_config_override",
-            &self.git_submodules_config_override,
-        );
-        formatter.field("buildspec_override", &self.buildspec_override);
-        formatter.field("insecure_ssl_override", &self.insecure_ssl_override);
-        formatter.field(
-            "report_build_batch_status_override",
-            &self.report_build_batch_status_override,
-        );
-        formatter.field("environment_type_override", &self.environment_type_override);
-        formatter.field("image_override", &self.image_override);
-        formatter.field("compute_type_override", &self.compute_type_override);
-        formatter.field("certificate_override", &self.certificate_override);
-        formatter.field("cache_override", &self.cache_override);
-        formatter.field("service_role_override", &self.service_role_override);
-        formatter.field("privileged_mode_override", &self.privileged_mode_override);
-        formatter.field(
-            "build_timeout_in_minutes_override",
-            &self.build_timeout_in_minutes_override,
-        );
-        formatter.field(
-            "queued_timeout_in_minutes_override",
-            &self.queued_timeout_in_minutes_override,
-        );
-        formatter.field("encryption_key_override", &self.encryption_key_override);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("logs_config_override", &self.logs_config_override);
-        formatter.field(
-            "registry_credential_override",
-            &self.registry_credential_override,
-        );
-        formatter.field(
-            "image_pull_credentials_type_override",
-            &self.image_pull_credentials_type_override,
-        );
-        formatter.field(
-            "build_batch_config_override",
-            &self.build_batch_config_override,
-        );
-        formatter.field("debug_session_enabled", &self.debug_session_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBuildInput {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
     #[doc(hidden)]
@@ -10900,80 +10771,10 @@ impl StartBuildInput {
         self.debug_session_enabled
     }
 }
-impl std::fmt::Debug for StartBuildInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartBuildInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field(
-            "secondary_sources_override",
-            &self.secondary_sources_override,
-        );
-        formatter.field(
-            "secondary_sources_version_override",
-            &self.secondary_sources_version_override,
-        );
-        formatter.field("source_version", &self.source_version);
-        formatter.field("artifacts_override", &self.artifacts_override);
-        formatter.field(
-            "secondary_artifacts_override",
-            &self.secondary_artifacts_override,
-        );
-        formatter.field(
-            "environment_variables_override",
-            &self.environment_variables_override,
-        );
-        formatter.field("source_type_override", &self.source_type_override);
-        formatter.field("source_location_override", &self.source_location_override);
-        formatter.field("source_auth_override", &self.source_auth_override);
-        formatter.field("git_clone_depth_override", &self.git_clone_depth_override);
-        formatter.field(
-            "git_submodules_config_override",
-            &self.git_submodules_config_override,
-        );
-        formatter.field("buildspec_override", &self.buildspec_override);
-        formatter.field("insecure_ssl_override", &self.insecure_ssl_override);
-        formatter.field(
-            "report_build_status_override",
-            &self.report_build_status_override,
-        );
-        formatter.field(
-            "build_status_config_override",
-            &self.build_status_config_override,
-        );
-        formatter.field("environment_type_override", &self.environment_type_override);
-        formatter.field("image_override", &self.image_override);
-        formatter.field("compute_type_override", &self.compute_type_override);
-        formatter.field("certificate_override", &self.certificate_override);
-        formatter.field("cache_override", &self.cache_override);
-        formatter.field("service_role_override", &self.service_role_override);
-        formatter.field("privileged_mode_override", &self.privileged_mode_override);
-        formatter.field(
-            "timeout_in_minutes_override",
-            &self.timeout_in_minutes_override,
-        );
-        formatter.field(
-            "queued_timeout_in_minutes_override",
-            &self.queued_timeout_in_minutes_override,
-        );
-        formatter.field("encryption_key_override", &self.encryption_key_override);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("logs_config_override", &self.logs_config_override);
-        formatter.field(
-            "registry_credential_override",
-            &self.registry_credential_override,
-        );
-        formatter.field(
-            "image_pull_credentials_type_override",
-            &self.image_pull_credentials_type_override,
-        );
-        formatter.field("debug_session_enabled", &self.debug_session_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryBuildBatchInput {
     /// <p>Specifies the identifier of the batch build to restart.</p>
     #[doc(hidden)]
@@ -10999,19 +10800,10 @@ impl RetryBuildBatchInput {
         self.retry_type.as_ref()
     }
 }
-impl std::fmt::Debug for RetryBuildBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryBuildBatchInput");
-        formatter.field("id", &self.id);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("retry_type", &self.retry_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryBuildInput {
     /// <p>Specifies the identifier of the build to restart.</p>
     #[doc(hidden)]
@@ -11030,18 +10822,10 @@ impl RetryBuildInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for RetryBuildInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryBuildInput");
-        formatter.field("id", &self.id);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
     #[doc(hidden)]
@@ -11060,29 +10844,15 @@ impl PutResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("policy", &self.policy);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSourceCredentialsInput {}
-impl std::fmt::Debug for ListSourceCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSourceCredentialsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSharedReportGroupsInput {
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
@@ -11131,20 +10901,10 @@ impl ListSharedReportGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSharedReportGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSharedReportGroupsInput");
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSharedProjectsInput {
     /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
     /// <ul>
@@ -11193,20 +10953,10 @@ impl ListSharedProjectsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSharedProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSharedProjectsInput");
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReportsForReportGroupInput {
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
     #[doc(hidden)]
@@ -11246,21 +10996,10 @@ impl ListReportsForReportGroupInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListReportsForReportGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReportsForReportGroupInput");
-        formatter.field("report_group_arn", &self.report_group_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReportsInput {
     /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p>
     /// <ul>
@@ -11301,20 +11040,10 @@ impl ListReportsInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReportsInput");
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReportGroupsInput {
     /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
     #[doc(hidden)]
@@ -11357,20 +11086,10 @@ impl ListReportGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReportGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReportGroupsInput");
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
@@ -11418,30 +11137,15 @@ impl ListProjectsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsInput");
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCuratedEnvironmentImagesInput {}
-impl std::fmt::Debug for ListCuratedEnvironmentImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCuratedEnvironmentImagesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuildsForProjectInput {
     /// <p>The name of the CodeBuild project.</p>
     #[doc(hidden)]
@@ -11479,19 +11183,10 @@ impl ListBuildsForProjectInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildsForProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBuildsForProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuildsInput {
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
@@ -11518,18 +11213,10 @@ impl ListBuildsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBuildsInput");
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuildBatchesForProjectInput {
     /// <p>The name of the project.</p>
     #[doc(hidden)]
@@ -11577,21 +11264,10 @@ impl ListBuildBatchesForProjectInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildBatchesForProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBuildBatchesForProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("filter", &self.filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuildBatchesInput {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
     #[doc(hidden)]
@@ -11632,20 +11308,10 @@ impl ListBuildBatchesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildBatchesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBuildBatchesInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidateProjectCacheInput {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
     #[doc(hidden)]
@@ -11655,13 +11321,6 @@ impl InvalidateProjectCacheInput {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidateProjectCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidateProjectCacheInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
     }
 }
 
@@ -11721,7 +11380,7 @@ impl std::fmt::Debug for ImportSourceCredentialsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
     #[doc(hidden)]
@@ -11733,17 +11392,10 @@ impl GetResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReportGroupTrendInput {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
     #[doc(hidden)]
@@ -11915,19 +11567,10 @@ impl GetReportGroupTrendInput {
         self.trend_field.as_ref()
     }
 }
-impl std::fmt::Debug for GetReportGroupTrendInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReportGroupTrendInput");
-        formatter.field("report_group_arn", &self.report_group_arn);
-        formatter.field("num_of_reports", &self.num_of_reports);
-        formatter.field("trend_field", &self.trend_field);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTestCasesInput {
     /// <p> The ARN of the report for which test cases are returned. </p>
     #[doc(hidden)]
@@ -11960,20 +11603,10 @@ impl DescribeTestCasesInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeTestCasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTestCasesInput");
-        formatter.field("report_arn", &self.report_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCodeCoveragesInput {
     /// <p> The ARN of the report for which test cases are returned. </p>
     #[doc(hidden)]
@@ -12055,29 +11688,10 @@ impl DescribeCodeCoveragesInput {
         self.max_line_coverage_percentage
     }
 }
-impl std::fmt::Debug for DescribeCodeCoveragesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCodeCoveragesInput");
-        formatter.field("report_arn", &self.report_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field(
-            "min_line_coverage_percentage",
-            &self.min_line_coverage_percentage,
-        );
-        formatter.field(
-            "max_line_coverage_percentage",
-            &self.max_line_coverage_percentage,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
     #[doc(hidden)]
@@ -12089,17 +11703,10 @@ impl DeleteWebhookInput {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWebhookInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSourceCredentialsInput {
     /// <p> The Amazon Resource Name (ARN) of the token.</p>
     #[doc(hidden)]
@@ -12111,17 +11718,10 @@ impl DeleteSourceCredentialsInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSourceCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSourceCredentialsInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
     #[doc(hidden)]
@@ -12133,17 +11733,10 @@ impl DeleteResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReportGroupInput {
     /// <p>The ARN of the report group to delete. </p>
     #[doc(hidden)]
@@ -12164,18 +11757,10 @@ impl DeleteReportGroupInput {
         self.delete_reports
     }
 }
-impl std::fmt::Debug for DeleteReportGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReportGroupInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("delete_reports", &self.delete_reports);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReportInput {
     /// <p> The ARN of the report to delete. </p>
     #[doc(hidden)]
@@ -12187,17 +11772,10 @@ impl DeleteReportInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReportInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The name of the build project.</p>
     #[doc(hidden)]
@@ -12209,17 +11787,10 @@ impl DeleteProjectInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBuildBatchInput {
     /// <p>The identifier of the batch build to delete.</p>
     #[doc(hidden)]
@@ -12231,17 +11802,10 @@ impl DeleteBuildBatchInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBuildBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBuildBatchInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
     #[doc(hidden)]
@@ -12283,20 +11847,10 @@ impl CreateWebhookInput {
         self.build_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebhookInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("branch_filter", &self.branch_filter);
-        formatter.field("filter_groups", &self.filter_groups);
-        formatter.field("build_type", &self.build_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReportGroupInput {
     /// <p> The name of the report group. </p>
     #[doc(hidden)]
@@ -12331,20 +11885,10 @@ impl CreateReportGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReportGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReportGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("export_config", &self.export_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name of the build project.</p>
     #[doc(hidden)]
@@ -12532,37 +12076,10 @@ impl CreateProjectInput {
         self.concurrent_build_limit
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("source", &self.source);
-        formatter.field("secondary_sources", &self.secondary_sources);
-        formatter.field("source_version", &self.source_version);
-        formatter.field("secondary_source_versions", &self.secondary_source_versions);
-        formatter.field("artifacts", &self.artifacts);
-        formatter.field("secondary_artifacts", &self.secondary_artifacts);
-        formatter.field("cache", &self.cache);
-        formatter.field("environment", &self.environment);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.field("queued_timeout_in_minutes", &self.queued_timeout_in_minutes);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("badge_enabled", &self.badge_enabled);
-        formatter.field("logs_config", &self.logs_config);
-        formatter.field("file_system_locations", &self.file_system_locations);
-        formatter.field("build_batch_config", &self.build_batch_config);
-        formatter.field("concurrent_build_limit", &self.concurrent_build_limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetReportsInput {
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
     #[doc(hidden)]
@@ -12574,17 +12091,10 @@ impl BatchGetReportsInput {
         self.report_arns.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetReportsInput");
-        formatter.field("report_arns", &self.report_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetReportGroupsInput {
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
     #[doc(hidden)]
@@ -12596,17 +12106,10 @@ impl BatchGetReportGroupsInput {
         self.report_group_arns.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetReportGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetReportGroupsInput");
-        formatter.field("report_group_arns", &self.report_group_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetProjectsInput {
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
     #[doc(hidden)]
@@ -12618,17 +12121,10 @@ impl BatchGetProjectsInput {
         self.names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetProjectsInput");
-        formatter.field("names", &self.names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetBuildsInput {
     /// <p>The IDs of the builds.</p>
     #[doc(hidden)]
@@ -12640,17 +12136,10 @@ impl BatchGetBuildsInput {
         self.ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetBuildsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetBuildsInput");
-        formatter.field("ids", &self.ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetBuildBatchesInput {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
     #[doc(hidden)]
@@ -12662,17 +12151,10 @@ impl BatchGetBuildBatchesInput {
         self.ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetBuildBatchesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetBuildBatchesInput");
-        formatter.field("ids", &self.ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteBuildsInput {
     /// <p>The IDs of the builds to delete.</p>
     #[doc(hidden)]
@@ -12682,12 +12164,5 @@ impl BatchDeleteBuildsInput {
     /// <p>The IDs of the builds to delete.</p>
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteBuildsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteBuildsInput");
-        formatter.field("ids", &self.ids);
-        formatter.finish()
     }
 }

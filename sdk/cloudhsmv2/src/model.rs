@@ -2,7 +2,7 @@
 
 /// <p>Contains a tag. A tag is a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Backup {
     /// <p>The identifier (ID) of the backup.</p>
     #[doc(hidden)]
@@ -157,23 +149,6 @@ impl Backup {
     /// <p>The list of tags for the backup.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for Backup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Backup");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("backup_state", &self.backup_state);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("copy_timestamp", &self.copy_timestamp);
-        formatter.field("never_expires", &self.never_expires);
-        formatter.field("source_region", &self.source_region);
-        formatter.field("source_backup", &self.source_backup);
-        formatter.field("source_cluster", &self.source_cluster);
-        formatter.field("delete_timestamp", &self.delete_timestamp);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }
 /// See [`Backup`](crate::model::Backup).
@@ -462,7 +437,7 @@ impl AsRef<str> for BackupState {
 
 /// <p>Contains information about an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The cluster's backup policy.</p>
     #[doc(hidden)]
@@ -576,27 +551,6 @@ impl Cluster {
     /// <p>The list of tags for the cluster.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("backup_policy", &self.backup_policy);
-        formatter.field("backup_retention_policy", &self.backup_retention_policy);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("hsms", &self.hsms);
-        formatter.field("hsm_type", &self.hsm_type);
-        formatter.field("pre_co_password", &self.pre_co_password);
-        formatter.field("security_group", &self.security_group);
-        formatter.field("source_backup_id", &self.source_backup_id);
-        formatter.field("state", &self.state);
-        formatter.field("state_message", &self.state_message);
-        formatter.field("subnet_mapping", &self.subnet_mapping);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("certificates", &self.certificates);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
@@ -866,7 +820,7 @@ impl Cluster {
 
 /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificates {
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
     #[doc(hidden)]
@@ -904,20 +858,6 @@ impl Certificates {
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
     pub fn cluster_certificate(&self) -> std::option::Option<&str> {
         self.cluster_certificate.as_deref()
-    }
-}
-impl std::fmt::Debug for Certificates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificates");
-        formatter.field("cluster_csr", &self.cluster_csr);
-        formatter.field("hsm_certificate", &self.hsm_certificate);
-        formatter.field("aws_hardware_certificate", &self.aws_hardware_certificate);
-        formatter.field(
-            "manufacturer_hardware_certificate",
-            &self.manufacturer_hardware_certificate,
-        );
-        formatter.field("cluster_certificate", &self.cluster_certificate);
-        formatter.finish()
     }
 }
 /// See [`Certificates`](crate::model::Certificates).
@@ -1154,7 +1094,7 @@ impl AsRef<str> for ClusterState {
 
 /// <p>Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hsm {
     /// <p>The Availability Zone that contains the HSM.</p>
     #[doc(hidden)]
@@ -1213,20 +1153,6 @@ impl Hsm {
     /// <p>A description of the HSM's state.</p>
     pub fn state_message(&self) -> std::option::Option<&str> {
         self.state_message.as_deref()
-    }
-}
-impl std::fmt::Debug for Hsm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hsm");
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("eni_id", &self.eni_id);
-        formatter.field("eni_ip", &self.eni_ip);
-        formatter.field("hsm_id", &self.hsm_id);
-        formatter.field("state", &self.state);
-        formatter.field("state_message", &self.state_message);
-        formatter.finish()
     }
 }
 /// See [`Hsm`](crate::model::Hsm).
@@ -1466,7 +1392,7 @@ impl AsRef<str> for HsmState {
 
 /// <p>A policy that defines the number of days to retain backups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupRetentionPolicy {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     #[doc(hidden)]
@@ -1483,14 +1409,6 @@ impl BackupRetentionPolicy {
     /// <p>Use a value between 7 - 379.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupRetentionPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupRetentionPolicy");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
@@ -1716,7 +1634,7 @@ impl AsRef<str> for BackupPolicy {
 
 /// <p>Contains information about the backup that will be copied and created by the <code>CopyBackupToRegion</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
     #[doc(hidden)]
@@ -1747,16 +1665,6 @@ impl DestinationBackup {
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
     pub fn source_cluster(&self) -> std::option::Option<&str> {
         self.source_cluster.as_deref()
-    }
-}
-impl std::fmt::Debug for DestinationBackup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationBackup");
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("source_region", &self.source_region);
-        formatter.field("source_backup", &self.source_backup);
-        formatter.field("source_cluster", &self.source_cluster);
-        formatter.finish()
     }
 }
 /// See [`DestinationBackup`](crate::model::DestinationBackup).

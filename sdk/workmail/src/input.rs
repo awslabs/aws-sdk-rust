@@ -2232,7 +2232,7 @@ impl CreateResourceInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2294,6 +2294,16 @@ pub mod create_user_input {
                 display_name: self.display_name,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("organization_id", &self.organization_id);
+            formatter.field("name", &self.name);
+            formatter.field("display_name", &self.display_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11641,7 +11651,7 @@ impl PutMobileDeviceAccessOverrideInput {
 pub mod put_retention_policy_input {
 
     /// A builder for [`PutRetentionPolicyInput`](crate::input::PutRetentionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -11727,6 +11737,17 @@ pub mod put_retention_policy_input {
                 description: self.description,
                 folder_configurations: self.folder_configurations,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("organization_id", &self.organization_id);
+            formatter.field("id", &self.id);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("folder_configurations", &self.folder_configurations);
+            formatter.finish()
         }
     }
 }
@@ -12200,7 +12221,7 @@ impl RegisterToWorkMailInput {
 pub mod reset_password_input {
 
     /// A builder for [`ResetPasswordInput`](crate::input::ResetPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -12250,6 +12271,15 @@ pub mod reset_password_input {
                 user_id: self.user_id,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("organization_id", &self.organization_id);
+            formatter.field("user_id", &self.user_id);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -14633,7 +14663,7 @@ impl UpdateResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
     #[doc(hidden)]
@@ -14666,20 +14696,10 @@ impl UpdateResourceInput {
         self.booking_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("name", &self.name);
-        formatter.field("booking_options", &self.booking_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePrimaryEmailAddressInput {
     /// <p>The organization that contains the user, group, or resource to update.</p>
     #[doc(hidden)]
@@ -14705,19 +14725,10 @@ impl UpdatePrimaryEmailAddressInput {
         self.email.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePrimaryEmailAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePrimaryEmailAddressInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("email", &self.email);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMobileDeviceAccessRuleInput {
     /// <p>The WorkMail organization under which the rule will be updated.</p>
     #[doc(hidden)]
@@ -14813,35 +14824,10 @@ impl UpdateMobileDeviceAccessRuleInput {
         self.not_device_user_agents.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMobileDeviceAccessRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMobileDeviceAccessRuleInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field(
-            "mobile_device_access_rule_id",
-            &self.mobile_device_access_rule_id,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("effect", &self.effect);
-        formatter.field("device_types", &self.device_types);
-        formatter.field("not_device_types", &self.not_device_types);
-        formatter.field("device_models", &self.device_models);
-        formatter.field("not_device_models", &self.not_device_models);
-        formatter.field("device_operating_systems", &self.device_operating_systems);
-        formatter.field(
-            "not_device_operating_systems",
-            &self.not_device_operating_systems,
-        );
-        formatter.field("device_user_agents", &self.device_user_agents);
-        formatter.field("not_device_user_agents", &self.not_device_user_agents);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMailboxQuotaInput {
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
     #[doc(hidden)]
@@ -14867,19 +14853,10 @@ impl UpdateMailboxQuotaInput {
         self.mailbox_quota
     }
 }
-impl std::fmt::Debug for UpdateMailboxQuotaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMailboxQuotaInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("mailbox_quota", &self.mailbox_quota);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateImpersonationRoleInput {
     /// <p>The WorkMail organization that contains the impersonation role to update.</p>
     #[doc(hidden)]
@@ -14926,22 +14903,10 @@ impl UpdateImpersonationRoleInput {
         self.rules.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateImpersonationRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateImpersonationRoleInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("impersonation_role_id", &self.impersonation_role_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDefaultMailDomainInput {
     /// <p>The WorkMail organization for which to list domains.</p>
     #[doc(hidden)]
@@ -14960,18 +14925,10 @@ impl UpdateDefaultMailDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDefaultMailDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDefaultMailDomainInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAvailabilityConfigurationInput {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
     #[doc(hidden)]
@@ -15006,20 +14963,10 @@ impl UpdateAvailabilityConfigurationInput {
         self.lambda_provider.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAvailabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAvailabilityConfigurationInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("ews_provider", &self.ews_provider);
-        formatter.field("lambda_provider", &self.lambda_provider);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -15038,18 +14985,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestAvailabilityConfigurationInput {
     /// <p>The WorkMail organization where the availability provider will be tested.</p>
     #[doc(hidden)]
@@ -15084,20 +15023,10 @@ impl TestAvailabilityConfigurationInput {
         self.lambda_provider.as_ref()
     }
 }
-impl std::fmt::Debug for TestAvailabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestAvailabilityConfigurationInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("ews_provider", &self.ews_provider);
-        formatter.field("lambda_provider", &self.lambda_provider);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -15116,18 +15045,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMailboxExportJobInput {
     /// <p>The idempotency token for the client request.</p>
     #[doc(hidden)]
@@ -15188,20 +15109,6 @@ impl StartMailboxExportJobInput {
         self.s3_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for StartMailboxExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMailboxExportJobInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15243,7 +15150,7 @@ impl std::fmt::Debug for ResetPasswordInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterToWorkMailInput {
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
     #[doc(hidden)]
@@ -15269,19 +15176,10 @@ impl RegisterToWorkMailInput {
         self.email.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterToWorkMailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterToWorkMailInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("email", &self.email);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterMailDomainInput {
     /// <p>Idempotency token used when retrying requests.</p>
     #[doc(hidden)]
@@ -15305,15 +15203,6 @@ impl RegisterMailDomainInput {
     /// <p>The name of the mail domain to create in WorkMail and SES.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisterMailDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterMailDomainInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
     }
 }
 
@@ -15376,7 +15265,7 @@ impl std::fmt::Debug for PutRetentionPolicyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMobileDeviceAccessOverrideInput {
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
     #[doc(hidden)]
@@ -15426,21 +15315,10 @@ impl PutMobileDeviceAccessOverrideInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for PutMobileDeviceAccessOverrideInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMobileDeviceAccessOverrideInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("effect", &self.effect);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     #[doc(hidden)]
@@ -15473,20 +15351,10 @@ impl PutMailboxPermissionsInput {
         self.permission_values.as_deref()
     }
 }
-impl std::fmt::Debug for PutMailboxPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMailboxPermissionsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("grantee_id", &self.grantee_id);
-        formatter.field("permission_values", &self.permission_values);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutInboundDmarcSettingsInput {
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
     #[doc(hidden)]
@@ -15505,18 +15373,10 @@ impl PutInboundDmarcSettingsInput {
         self.enforced
     }
 }
-impl std::fmt::Debug for PutInboundDmarcSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutInboundDmarcSettingsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("enforced", &self.enforced);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEmailMonitoringConfigurationInput {
     /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
     #[doc(hidden)]
@@ -15542,19 +15402,10 @@ impl PutEmailMonitoringConfigurationInput {
         self.log_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutEmailMonitoringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEmailMonitoringConfigurationInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccessControlRuleInput {
     /// <p>The rule name.</p>
     #[doc(hidden)]
@@ -15643,31 +15494,10 @@ impl PutAccessControlRuleInput {
         self.not_impersonation_role_ids.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccessControlRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccessControlRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("effect", &self.effect);
-        formatter.field("description", &self.description);
-        formatter.field("ip_ranges", &self.ip_ranges);
-        formatter.field("not_ip_ranges", &self.not_ip_ranges);
-        formatter.field("actions", &self.actions);
-        formatter.field("not_actions", &self.not_actions);
-        formatter.field("user_ids", &self.user_ids);
-        formatter.field("not_user_ids", &self.not_user_ids);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("impersonation_role_ids", &self.impersonation_role_ids);
-        formatter.field(
-            "not_impersonation_role_ids",
-            &self.not_impersonation_role_ids,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>The identifier for the organization under which the users exist.</p>
     #[doc(hidden)]
@@ -15693,19 +15523,10 @@ impl ListUsersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -15717,17 +15538,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesInput {
     /// <p>The identifier for the organization under which the resources exist.</p>
     #[doc(hidden)]
@@ -15753,19 +15567,10 @@ impl ListResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceDelegatesInput {
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     #[doc(hidden)]
@@ -15798,20 +15603,10 @@ impl ListResourceDelegatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListResourceDelegatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceDelegatesInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrganizationsInput {
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     #[doc(hidden)]
@@ -15830,18 +15625,10 @@ impl ListOrganizationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListOrganizationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOrganizationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMobileDeviceAccessRulesInput {
     /// <p>The WorkMail organization for which to list the rules.</p>
     #[doc(hidden)]
@@ -15853,17 +15640,10 @@ impl ListMobileDeviceAccessRulesInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListMobileDeviceAccessRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMobileDeviceAccessRulesInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMobileDeviceAccessOverridesInput {
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
     #[doc(hidden)]
@@ -15913,21 +15693,10 @@ impl ListMobileDeviceAccessOverridesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMobileDeviceAccessOverridesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMobileDeviceAccessOverridesInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMailDomainsInput {
     /// <p>The WorkMail organization for which to list domains.</p>
     #[doc(hidden)]
@@ -15953,19 +15722,10 @@ impl ListMailDomainsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMailDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMailDomainsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     #[doc(hidden)]
@@ -15998,20 +15758,10 @@ impl ListMailboxPermissionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMailboxPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMailboxPermissionsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMailboxExportJobsInput {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
@@ -16037,19 +15787,10 @@ impl ListMailboxExportJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMailboxExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMailboxExportJobsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImpersonationRolesInput {
     /// <p>The WorkMail organization to which the listed impersonation roles belong.</p>
     #[doc(hidden)]
@@ -16075,19 +15816,10 @@ impl ListImpersonationRolesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListImpersonationRolesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImpersonationRolesInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsInput {
     /// <p>The identifier for the organization under which the groups exist.</p>
     #[doc(hidden)]
@@ -16113,19 +15845,10 @@ impl ListGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupMembersInput {
     /// <p>The identifier for the organization under which the group exists.</p>
     #[doc(hidden)]
@@ -16158,20 +15881,10 @@ impl ListGroupMembersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListGroupMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupMembersInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailabilityConfigurationsInput {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
     #[doc(hidden)]
@@ -16197,19 +15910,10 @@ impl ListAvailabilityConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAvailabilityConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailabilityConfigurationsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAliasesInput {
     /// <p>The identifier for the organization under which the entity exists.</p>
     #[doc(hidden)]
@@ -16242,20 +15946,10 @@ impl ListAliasesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAliasesInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessControlRulesInput {
     /// <p>The identifier for the organization.</p>
     #[doc(hidden)]
@@ -16267,17 +15961,10 @@ impl ListAccessControlRulesInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListAccessControlRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessControlRulesInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMobileDeviceAccessOverrideInput {
     /// <p>The WorkMail organization to which you want to apply the override.</p>
     #[doc(hidden)]
@@ -16313,19 +16000,10 @@ impl GetMobileDeviceAccessOverrideInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMobileDeviceAccessOverrideInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMobileDeviceAccessOverrideInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMobileDeviceAccessEffectInput {
     /// <p>The WorkMail organization to simulate the access effect for.</p>
     #[doc(hidden)]
@@ -16365,21 +16043,10 @@ impl GetMobileDeviceAccessEffectInput {
         self.device_user_agent.as_deref()
     }
 }
-impl std::fmt::Debug for GetMobileDeviceAccessEffectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMobileDeviceAccessEffectInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("device_type", &self.device_type);
-        formatter.field("device_model", &self.device_model);
-        formatter.field("device_operating_system", &self.device_operating_system);
-        formatter.field("device_user_agent", &self.device_user_agent);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMailDomainInput {
     /// <p>The WorkMail organization for which the domain is retrieved.</p>
     #[doc(hidden)]
@@ -16398,18 +16065,10 @@ impl GetMailDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMailDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMailDomainInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMailboxDetailsInput {
     /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
     #[doc(hidden)]
@@ -16428,18 +16087,10 @@ impl GetMailboxDetailsInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMailboxDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMailboxDetailsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImpersonationRoleEffectInput {
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
     #[doc(hidden)]
@@ -16475,19 +16126,10 @@ impl GetImpersonationRoleEffectInput {
         self.target_user.as_deref()
     }
 }
-impl std::fmt::Debug for GetImpersonationRoleEffectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImpersonationRoleEffectInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("impersonation_role_id", &self.impersonation_role_id);
-        formatter.field("target_user", &self.target_user);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImpersonationRoleInput {
     /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
     #[doc(hidden)]
@@ -16506,18 +16148,10 @@ impl GetImpersonationRoleInput {
         self.impersonation_role_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetImpersonationRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImpersonationRoleInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("impersonation_role_id", &self.impersonation_role_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDefaultRetentionPolicyInput {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
@@ -16529,17 +16163,10 @@ impl GetDefaultRetentionPolicyInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDefaultRetentionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDefaultRetentionPolicyInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessControlEffectInput {
     /// <p>The identifier for the organization.</p>
     #[doc(hidden)]
@@ -16579,21 +16206,10 @@ impl GetAccessControlEffectInput {
         self.impersonation_role_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessControlEffectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessControlEffectInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("action", &self.action);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("impersonation_role_id", &self.impersonation_role_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMemberFromGroupInput {
     /// <p>The identifier for the organization under which the group exists.</p>
     #[doc(hidden)]
@@ -16619,19 +16235,10 @@ impl DisassociateMemberFromGroupInput {
         self.member_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMemberFromGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMemberFromGroupInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateDelegateFromResourceInput {
     /// <p>The identifier for the organization under which the resource exists.</p>
     #[doc(hidden)]
@@ -16657,19 +16264,10 @@ impl DisassociateDelegateFromResourceInput {
         self.entity_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateDelegateFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateDelegateFromResourceInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserInput {
     /// <p>The identifier for the organization under which the user exists.</p>
     #[doc(hidden)]
@@ -16688,18 +16286,10 @@ impl DescribeUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourceInput {
     /// <p>The identifier associated with the organization for which the resource is described.</p>
     #[doc(hidden)]
@@ -16718,18 +16308,10 @@ impl DescribeResourceInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourceInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationInput {
     /// <p>The identifier for the organization to be described.</p>
     #[doc(hidden)]
@@ -16741,17 +16323,10 @@ impl DescribeOrganizationInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrganizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMailboxExportJobInput {
     /// <p>The mailbox export job ID.</p>
     #[doc(hidden)]
@@ -16770,18 +16345,10 @@ impl DescribeMailboxExportJobInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMailboxExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMailboxExportJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInboundDmarcSettingsInput {
     /// <p>Lists the ID of the given organization.</p>
     #[doc(hidden)]
@@ -16793,17 +16360,10 @@ impl DescribeInboundDmarcSettingsInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInboundDmarcSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInboundDmarcSettingsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupInput {
     /// <p>The identifier for the organization under which the group exists.</p>
     #[doc(hidden)]
@@ -16822,18 +16382,10 @@ impl DescribeGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEmailMonitoringConfigurationInput {
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
     #[doc(hidden)]
@@ -16845,17 +16397,10 @@ impl DescribeEmailMonitoringConfigurationInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEmailMonitoringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEmailMonitoringConfigurationInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterMailDomainInput {
     /// <p>The WorkMail organization for which the domain will be deregistered.</p>
     #[doc(hidden)]
@@ -16874,18 +16419,10 @@ impl DeregisterMailDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterMailDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterMailDomainInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterFromWorkMailInput {
     /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
     #[doc(hidden)]
@@ -16904,18 +16441,10 @@ impl DeregisterFromWorkMailInput {
         self.entity_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterFromWorkMailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterFromWorkMailInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The organization that contains the user to be deleted.</p>
     #[doc(hidden)]
@@ -16934,18 +16463,10 @@ impl DeleteUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRetentionPolicyInput {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
@@ -16964,18 +16485,10 @@ impl DeleteRetentionPolicyInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRetentionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRetentionPolicyInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceInput {
     /// <p>The identifier associated with the organization from which the resource is deleted.</p>
     #[doc(hidden)]
@@ -16994,18 +16507,10 @@ impl DeleteResourceInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOrganizationInput {
     /// <p>The idempotency token associated with the request.</p>
     #[doc(hidden)]
@@ -17031,19 +16536,10 @@ impl DeleteOrganizationInput {
         self.delete_directory
     }
 }
-impl std::fmt::Debug for DeleteOrganizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOrganizationInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("delete_directory", &self.delete_directory);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessRuleInput {
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
     #[doc(hidden)]
@@ -17062,21 +16558,10 @@ impl DeleteMobileDeviceAccessRuleInput {
         self.mobile_device_access_rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMobileDeviceAccessRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMobileDeviceAccessRuleInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field(
-            "mobile_device_access_rule_id",
-            &self.mobile_device_access_rule_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessOverrideInput {
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
     #[doc(hidden)]
@@ -17112,19 +16597,10 @@ impl DeleteMobileDeviceAccessOverrideInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMobileDeviceAccessOverrideInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMobileDeviceAccessOverrideInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     #[doc(hidden)]
@@ -17150,19 +16626,10 @@ impl DeleteMailboxPermissionsInput {
         self.grantee_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMailboxPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMailboxPermissionsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("grantee_id", &self.grantee_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImpersonationRoleInput {
     /// <p>The WorkMail organization from which to delete the impersonation role.</p>
     #[doc(hidden)]
@@ -17181,18 +16648,10 @@ impl DeleteImpersonationRoleInput {
         self.impersonation_role_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImpersonationRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImpersonationRoleInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("impersonation_role_id", &self.impersonation_role_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The organization that contains the group.</p>
     #[doc(hidden)]
@@ -17211,18 +16670,10 @@ impl DeleteGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEmailMonitoringConfigurationInput {
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
     #[doc(hidden)]
@@ -17234,17 +16685,10 @@ impl DeleteEmailMonitoringConfigurationInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEmailMonitoringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEmailMonitoringConfigurationInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAvailabilityConfigurationInput {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     #[doc(hidden)]
@@ -17263,18 +16707,10 @@ impl DeleteAvailabilityConfigurationInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAvailabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAvailabilityConfigurationInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAliasInput {
     /// <p>The identifier for the organization under which the user exists.</p>
     #[doc(hidden)]
@@ -17300,19 +16736,10 @@ impl DeleteAliasInput {
         self.alias.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAliasInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("alias", &self.alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessControlRuleInput {
     /// <p>The identifier for the organization.</p>
     #[doc(hidden)]
@@ -17329,14 +16756,6 @@ impl DeleteAccessControlRuleInput {
     /// <p>The name of the access control rule.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteAccessControlRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessControlRuleInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -17388,7 +16807,7 @@ impl std::fmt::Debug for CreateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is created.</p>
     #[doc(hidden)]
@@ -17414,19 +16833,10 @@ impl CreateResourceInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOrganizationInput {
     /// <p>The AWS Directory Service directory ID.</p>
     #[doc(hidden)]
@@ -17473,22 +16883,10 @@ impl CreateOrganizationInput {
         self.enable_interoperability
     }
 }
-impl std::fmt::Debug for CreateOrganizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOrganizationInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("domains", &self.domains);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("enable_interoperability", &self.enable_interoperability);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMobileDeviceAccessRuleInput {
     /// <p>The WorkMail organization under which the rule will be created.</p>
     #[doc(hidden)]
@@ -17584,32 +16982,10 @@ impl CreateMobileDeviceAccessRuleInput {
         self.not_device_user_agents.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMobileDeviceAccessRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMobileDeviceAccessRuleInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("effect", &self.effect);
-        formatter.field("device_types", &self.device_types);
-        formatter.field("not_device_types", &self.not_device_types);
-        formatter.field("device_models", &self.device_models);
-        formatter.field("not_device_models", &self.not_device_models);
-        formatter.field("device_operating_systems", &self.device_operating_systems);
-        formatter.field(
-            "not_device_operating_systems",
-            &self.not_device_operating_systems,
-        );
-        formatter.field("device_user_agents", &self.device_user_agents);
-        formatter.field("not_device_user_agents", &self.not_device_user_agents);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImpersonationRoleInput {
     /// <p>The idempotency token for the client request.</p>
     #[doc(hidden)]
@@ -17656,22 +17032,10 @@ impl CreateImpersonationRoleInput {
         self.rules.as_deref()
     }
 }
-impl std::fmt::Debug for CreateImpersonationRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateImpersonationRoleInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// <p>The organization under which the group is to be created.</p>
     #[doc(hidden)]
@@ -17690,18 +17054,10 @@ impl CreateGroupInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAvailabilityConfigurationInput {
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
     #[doc(hidden)]
@@ -17743,21 +17099,10 @@ impl CreateAvailabilityConfigurationInput {
         self.lambda_provider.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAvailabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAvailabilityConfigurationInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("ews_provider", &self.ews_provider);
-        formatter.field("lambda_provider", &self.lambda_provider);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>The organization under which the member (user or group) exists.</p>
     #[doc(hidden)]
@@ -17783,19 +17128,10 @@ impl CreateAliasInput {
         self.alias.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("alias", &self.alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelMailboxExportJobInput {
     /// <p>The idempotency token for the client request.</p>
     #[doc(hidden)]
@@ -17821,19 +17157,10 @@ impl CancelMailboxExportJobInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelMailboxExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelMailboxExportJobInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeImpersonationRoleInput {
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
     #[doc(hidden)]
@@ -17852,18 +17179,10 @@ impl AssumeImpersonationRoleInput {
         self.impersonation_role_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssumeImpersonationRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeImpersonationRoleInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("impersonation_role_id", &self.impersonation_role_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMemberToGroupInput {
     /// <p>The organization under which the group exists.</p>
     #[doc(hidden)]
@@ -17889,19 +17208,10 @@ impl AssociateMemberToGroupInput {
         self.member_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateMemberToGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMemberToGroupInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateDelegateToResourceInput {
     /// <p>The organization under which the resource exists.</p>
     #[doc(hidden)]
@@ -17925,14 +17235,5 @@ impl AssociateDelegateToResourceInput {
     /// <p>The member (user or group) to associate to the resource.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateDelegateToResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateDelegateToResourceInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.finish()
     }
 }

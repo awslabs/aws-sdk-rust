@@ -945,6 +945,7 @@ impl PutObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct PutObjectInput {
     /// <p>The bytes to be stored. </p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
@@ -1018,22 +1019,10 @@ impl PutObjectInput {
         self.upload_availability.as_ref()
     }
 }
-impl std::fmt::Debug for PutObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectInput");
-        formatter.field("body", &self.body);
-        formatter.field("path", &self.path);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("cache_control", &self.cache_control);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("upload_availability", &self.upload_availability);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListItemsInput {
     /// <p>The path in the container from which to retrieve items. Format: <folder name>
     /// /
@@ -1075,19 +1064,10 @@ impl ListItemsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListItemsInput");
-        formatter.field("path", &self.path);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectInput {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
@@ -1130,18 +1110,10 @@ impl GetObjectInput {
         self.range.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectInput");
-        formatter.field("path", &self.path);
-        formatter.field("range", &self.range);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeObjectInput {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
@@ -1165,17 +1137,10 @@ impl DescribeObjectInput {
         self.path.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeObjectInput");
-        formatter.field("path", &self.path);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
@@ -1197,12 +1162,5 @@ impl DeleteObjectInput {
     /// </folder></p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectInput");
-        formatter.field("path", &self.path);
-        formatter.finish()
     }
 }

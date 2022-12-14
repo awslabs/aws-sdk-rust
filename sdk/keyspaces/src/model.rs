@@ -3,7 +3,7 @@
 /// <p>Enable custom Time to Live (TTL) settings for rows and columns without setting a TTL default for the specified table.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_enabling">Enabling TTL on tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeToLive {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
     #[doc(hidden)]
@@ -13,13 +13,6 @@ impl TimeToLive {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::TimeToLiveStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeToLive {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeToLive");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`TimeToLive`](crate::model::TimeToLive).
@@ -147,7 +140,7 @@ impl AsRef<str> for TimeToLiveStatus {
 /// <p>Point-in-time recovery (PITR) helps protect your Amazon Keyspaces tables from accidental write or delete operations by providing you continuous backups of your table data.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PointInTimeRecovery {
     /// <p>The options are:</p>
     /// <p>• <code>ENABLED</code> </p>
@@ -161,13 +154,6 @@ impl PointInTimeRecovery {
     /// <p>• <code>DISABLED</code> </p>
     pub fn status(&self) -> std::option::Option<&crate::model::PointInTimeRecoveryStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for PointInTimeRecovery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PointInTimeRecovery");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`PointInTimeRecovery`](crate::model::PointInTimeRecovery).
@@ -309,7 +295,7 @@ impl AsRef<str> for PointInTimeRecoveryStatus {
 /// <p>For more information about encryption at rest in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 /// <p>For more information about KMS, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">KMS management service concepts</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionSpecification {
     /// <p>The encryption option specified for the table. You can choose one of the following KMS keys (KMS keys):</p>
     /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
@@ -334,14 +320,6 @@ impl EncryptionSpecification {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
     pub fn kms_key_identifier(&self) -> std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionSpecification");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("kms_key_identifier", &self.kms_key_identifier);
-        formatter.finish()
     }
 }
 /// See [`EncryptionSpecification`](crate::model::EncryptionSpecification).
@@ -500,7 +478,7 @@ impl AsRef<str> for EncryptionType {
 /// <p> The read/write capacity mode that you choose controls how you are charged for read and write throughput and how table throughput capacity is managed.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacitySpecification {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
@@ -532,15 +510,6 @@ impl CapacitySpecification {
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     pub fn write_capacity_units(&self) -> std::option::Option<i64> {
         self.write_capacity_units
-    }
-}
-impl std::fmt::Debug for CapacitySpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacitySpecification");
-        formatter.field("throughput_mode", &self.throughput_mode);
-        formatter.field("read_capacity_units", &self.read_capacity_units);
-        formatter.field("write_capacity_units", &self.write_capacity_units);
-        formatter.finish()
     }
 }
 /// See [`CapacitySpecification`](crate::model::CapacitySpecification).
@@ -704,7 +673,7 @@ impl AsRef<str> for ThroughputMode {
 
 /// <p>The names and data types of regular columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnDefinition {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
@@ -721,14 +690,6 @@ impl ColumnDefinition {
     /// <p>The data type of the column. For a list of available data types, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ColumnDefinition`](crate::model::ColumnDefinition).
@@ -781,7 +742,7 @@ impl ColumnDefinition {
 /// <p>Amazon Web Services-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. Amazon Web Services-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag. Tag keys are case sensitive. Each Amazon Keyspaces resource can only have up to one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.</p>
     #[doc(hidden)]
@@ -798,14 +759,6 @@ impl Tag {
     /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -856,7 +809,7 @@ impl Tag {
 
 /// <p>Returns the name of the specified table, the keyspace it is stored in, and the unique identifier in the format of an Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableSummary {
     /// <p>The name of the keyspace that the table is stored in.</p>
     #[doc(hidden)]
@@ -880,15 +833,6 @@ impl TableSummary {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for TableSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableSummary");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`TableSummary`](crate::model::TableSummary).
@@ -954,7 +898,7 @@ impl TableSummary {
 
 /// <p>Represents the properties of a keyspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
@@ -971,14 +915,6 @@ impl KeyspaceSummary {
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyspaceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyspaceSummary");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`KeyspaceSummary`](crate::model::KeyspaceSummary).
@@ -1032,7 +968,7 @@ impl KeyspaceSummary {
 
 /// <p>An optional comment that describes the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Comment {
     /// <p>An optional description of the table.</p>
     #[doc(hidden)]
@@ -1042,13 +978,6 @@ impl Comment {
     /// <p>An optional description of the table.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for Comment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Comment");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`Comment`](crate::model::Comment).
@@ -1087,7 +1016,7 @@ impl Comment {
 
 /// <p>The point-in-time recovery status of the specified table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PointInTimeRecoverySummary {
     /// <p>Shows if point-in-time recovery is enabled or disabled for the specified table.</p>
     #[doc(hidden)]
@@ -1106,17 +1035,6 @@ impl PointInTimeRecoverySummary {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.earliest_restorable_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for PointInTimeRecoverySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PointInTimeRecoverySummary");
-        formatter.field("status", &self.status);
-        formatter.field(
-            "earliest_restorable_timestamp",
-            &self.earliest_restorable_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`PointInTimeRecoverySummary`](crate::model::PointInTimeRecoverySummary).
@@ -1176,7 +1094,7 @@ impl PointInTimeRecoverySummary {
 /// <p>• <code>throughputMode:PROVISIONED</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacitySpecificationSummary {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
@@ -1217,19 +1135,6 @@ impl CapacitySpecificationSummary {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_to_pay_per_request_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for CapacitySpecificationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacitySpecificationSummary");
-        formatter.field("throughput_mode", &self.throughput_mode);
-        formatter.field("read_capacity_units", &self.read_capacity_units);
-        formatter.field("write_capacity_units", &self.write_capacity_units);
-        formatter.field(
-            "last_update_to_pay_per_request_timestamp",
-            &self.last_update_to_pay_per_request_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`CapacitySpecificationSummary`](crate::model::CapacitySpecificationSummary).
@@ -1323,7 +1228,7 @@ impl CapacitySpecificationSummary {
 
 /// <p>Describes the schema of the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaDefinition {
     /// <p>The regular columns of the table.</p>
     #[doc(hidden)]
@@ -1354,16 +1259,6 @@ impl SchemaDefinition {
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
     pub fn static_columns(&self) -> std::option::Option<&[crate::model::StaticColumn]> {
         self.static_columns.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaDefinition");
-        formatter.field("all_columns", &self.all_columns);
-        formatter.field("partition_keys", &self.partition_keys);
-        formatter.field("clustering_keys", &self.clustering_keys);
-        formatter.field("static_columns", &self.static_columns);
-        formatter.finish()
     }
 }
 /// See [`SchemaDefinition`](crate::model::SchemaDefinition).
@@ -1474,7 +1369,7 @@ impl SchemaDefinition {
 
 /// <p>The static columns of the table. Static columns store values that are shared by all rows in the same partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StaticColumn {
     /// <p>The name of the static column.</p>
     #[doc(hidden)]
@@ -1484,13 +1379,6 @@ impl StaticColumn {
     /// <p>The name of the static column.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for StaticColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaticColumn");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`StaticColumn`](crate::model::StaticColumn).
@@ -1527,7 +1415,7 @@ impl StaticColumn {
 
 /// <p>The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusteringKey {
     /// <p>The name(s) of the clustering column(s).</p>
     #[doc(hidden)]
@@ -1544,14 +1432,6 @@ impl ClusteringKey {
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order_by.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusteringKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusteringKey");
-        formatter.field("name", &self.name);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
     }
 }
 /// See [`ClusteringKey`](crate::model::ClusteringKey).
@@ -1692,7 +1572,7 @@ impl AsRef<str> for SortOrder {
 
 /// <p>The partition key portion of the primary key is required and determines how Amazon Keyspaces stores the data. The partition key can be a single column, or it can be a compound value composed of two or more columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartitionKey {
     /// <p>The name(s) of the partition key column(s).</p>
     #[doc(hidden)]
@@ -1702,13 +1582,6 @@ impl PartitionKey {
     /// <p>The name(s) of the partition key column(s).</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for PartitionKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartitionKey");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`PartitionKey`](crate::model::PartitionKey).

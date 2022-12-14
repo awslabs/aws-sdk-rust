@@ -113,7 +113,7 @@ impl std::fmt::Debug for ContactInformation {
 pub mod contact_information {
 
     /// A builder for [`ContactInformation`](crate::model::ContactInformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) full_name: std::option::Option<std::string::String>,
         pub(crate) address_line1: std::option::Option<std::string::String>,
@@ -282,6 +282,24 @@ pub mod contact_information {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("full_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("address_line1", &"*** Sensitive Data Redacted ***");
+            formatter.field("address_line2", &"*** Sensitive Data Redacted ***");
+            formatter.field("address_line3", &"*** Sensitive Data Redacted ***");
+            formatter.field("city", &"*** Sensitive Data Redacted ***");
+            formatter.field("state_or_region", &"*** Sensitive Data Redacted ***");
+            formatter.field("district_or_county", &"*** Sensitive Data Redacted ***");
+            formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("country_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("company_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("website_url", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ContactInformation {
     /// Creates a new builder-style object to manufacture [`ContactInformation`](crate::model::ContactInformation).
@@ -446,7 +464,7 @@ impl std::fmt::Debug for AlternateContact {
 pub mod alternate_contact {
 
     /// A builder for [`AlternateContact`](crate::model::AlternateContact).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
@@ -520,6 +538,17 @@ pub mod alternate_contact {
                 phone_number: self.phone_number,
                 alternate_contact_type: self.alternate_contact_type,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("title", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("alternate_contact_type", &self.alternate_contact_type);
+            formatter.finish()
         }
     }
 }

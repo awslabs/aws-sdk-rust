@@ -2,7 +2,7 @@
 
 /// <p> Information about all the available strategy options for migrating and modernizing an application component. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StrategyOption {
     /// <p> Type of transformation. For example, Rehost, Replatform, and so on. </p>
     #[doc(hidden)]
@@ -33,16 +33,6 @@ impl StrategyOption {
     /// <p> Indicates if a specific strategy is preferred for the application component. </p>
     pub fn is_preferred(&self) -> std::option::Option<bool> {
         self.is_preferred
-    }
-}
-impl std::fmt::Debug for StrategyOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StrategyOption");
-        formatter.field("strategy", &self.strategy);
-        formatter.field("tool_name", &self.tool_name);
-        formatter.field("target_destination", &self.target_destination);
-        formatter.field("is_preferred", &self.is_preferred);
-        formatter.finish()
     }
 }
 /// See [`StrategyOption`](crate::model::StrategyOption).
@@ -566,7 +556,7 @@ impl AsRef<str> for Strategy {
 
 /// <p> Object containing source code information that is linked to an application component. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceCode {
     /// <p> The type of repository to use for the source code. </p>
     #[doc(hidden)]
@@ -590,15 +580,6 @@ impl SourceCode {
     /// <p> The repository name for the source code. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceCode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceCode");
-        formatter.field("version_control", &self.version_control);
-        formatter.field("source_version", &self.source_version);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`SourceCode`](crate::model::SourceCode).
@@ -847,7 +828,7 @@ impl AsRef<str> for InclusionStatus {
 
 /// <p> The object containing information about distinct imports or groups for Strategy Recommendations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Group {
     /// <p> The key of the specific import group. </p>
     #[doc(hidden)]
@@ -864,14 +845,6 @@ impl Group {
     /// <p> The value of the specific import group. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Group {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Group");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Group`](crate::model::Group).
@@ -1187,7 +1160,7 @@ impl AsRef<str> for DataSourceType {
 
 /// <p> Preferences on managing your databases on AWS. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabasePreferences {
     /// <p> Specifies whether you're interested in self-managed databases or databases managed by AWS. </p>
     #[doc(hidden)]
@@ -1210,20 +1183,6 @@ impl DatabasePreferences {
         &self,
     ) -> std::option::Option<&crate::model::DatabaseMigrationPreference> {
         self.database_migration_preference.as_ref()
-    }
-}
-impl std::fmt::Debug for DatabasePreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabasePreferences");
-        formatter.field(
-            "database_management_preference",
-            &self.database_management_preference,
-        );
-        formatter.field(
-            "database_migration_preference",
-            &self.database_migration_preference,
-        );
-        formatter.finish()
     }
 }
 /// See [`DatabasePreferences`](crate::model::DatabasePreferences).
@@ -1356,7 +1315,7 @@ impl DatabaseMigrationPreference {
 
 /// <p> The object containing details about database migration preferences, when you have no particular preference. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoDatabaseMigrationPreference {
     /// <p> The target database engine for database migration preference that you specify. </p>
     #[doc(hidden)]
@@ -1369,13 +1328,6 @@ impl NoDatabaseMigrationPreference {
         &self,
     ) -> std::option::Option<&[crate::model::TargetDatabaseEngine]> {
         self.target_database_engine.as_deref()
-    }
-}
-impl std::fmt::Debug for NoDatabaseMigrationPreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoDatabaseMigrationPreference");
-        formatter.field("target_database_engine", &self.target_database_engine);
-        formatter.finish()
     }
 }
 /// See [`NoDatabaseMigrationPreference`](crate::model::NoDatabaseMigrationPreference).
@@ -1567,7 +1519,7 @@ impl AsRef<str> for TargetDatabaseEngine {
 
 /// <p> The object containing details about homogeneous database preferences. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Homogeneous {
     /// <p> The target database engine for homogeneous database migration preferences. </p>
     #[doc(hidden)]
@@ -1580,13 +1532,6 @@ impl Homogeneous {
         &self,
     ) -> std::option::Option<&[crate::model::HomogeneousTargetDatabaseEngine]> {
         self.target_database_engine.as_deref()
-    }
-}
-impl std::fmt::Debug for Homogeneous {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Homogeneous");
-        formatter.field("target_database_engine", &self.target_database_engine);
-        formatter.finish()
     }
 }
 /// See [`Homogeneous`](crate::model::Homogeneous).
@@ -1727,7 +1672,7 @@ impl AsRef<str> for HomogeneousTargetDatabaseEngine {
 
 /// <p> The object containing details about heterogeneous database preferences. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Heterogeneous {
     /// <p> The target database engine for heterogeneous database migration preference. </p>
     #[doc(hidden)]
@@ -1740,13 +1685,6 @@ impl Heterogeneous {
         &self,
     ) -> std::option::Option<&[crate::model::HeterogeneousTargetDatabaseEngine]> {
         self.target_database_engine.as_deref()
-    }
-}
-impl std::fmt::Debug for Heterogeneous {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Heterogeneous");
-        formatter.field("target_database_engine", &self.target_database_engine);
-        formatter.finish()
     }
 }
 /// See [`Heterogeneous`](crate::model::Heterogeneous).
@@ -2040,7 +1978,7 @@ impl AsRef<str> for DatabaseManagementPreference {
 
 /// <p> Application preferences that you specify. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationPreferences {
     /// <p> Application preferences that you specify to prefer managed environment. </p>
     #[doc(hidden)]
@@ -2052,13 +1990,6 @@ impl ApplicationPreferences {
         &self,
     ) -> std::option::Option<&crate::model::ManagementPreference> {
         self.management_preference.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationPreferences");
-        formatter.field("management_preference", &self.management_preference);
-        formatter.finish()
     }
 }
 /// See [`ApplicationPreferences`](crate::model::ApplicationPreferences).
@@ -2172,7 +2103,7 @@ impl ManagementPreference {
 
 /// <p> Object containing the choice of application destination that you specify. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
     #[doc(hidden)]
@@ -2185,13 +2116,6 @@ impl NoManagementPreference {
         &self,
     ) -> std::option::Option<&[crate::model::NoPreferenceTargetDestination]> {
         self.target_destination.as_deref()
-    }
-}
-impl std::fmt::Debug for NoManagementPreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoManagementPreference");
-        formatter.field("target_destination", &self.target_destination);
-        formatter.finish()
     }
 }
 /// See [`NoManagementPreference`](crate::model::NoManagementPreference).
@@ -2374,7 +2298,7 @@ impl AsRef<str> for NoPreferenceTargetDestination {
 
 /// <p> Self-managed resources. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelfManageResources {
     /// <p> Self-managed resources target destination. </p>
     #[doc(hidden)]
@@ -2387,13 +2311,6 @@ impl SelfManageResources {
         &self,
     ) -> std::option::Option<&[crate::model::SelfManageTargetDestination]> {
         self.target_destination.as_deref()
-    }
-}
-impl std::fmt::Debug for SelfManageResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelfManageResources");
-        formatter.field("target_destination", &self.target_destination);
-        formatter.finish()
     }
 }
 /// See [`SelfManageResources`](crate::model::SelfManageResources).
@@ -2564,7 +2481,7 @@ impl AsRef<str> for SelfManageTargetDestination {
 
 /// <p> Object containing the choice of application destination that you specify. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsManagedResources {
     /// <p> The choice of application destination that you specify. </p>
     #[doc(hidden)]
@@ -2577,13 +2494,6 @@ impl AwsManagedResources {
         &self,
     ) -> std::option::Option<&[crate::model::AwsManagedTargetDestination]> {
         self.target_destination.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsManagedResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsManagedResources");
-        formatter.field("target_destination", &self.target_destination);
-        formatter.finish()
     }
 }
 /// See [`AwsManagedResources`](crate::model::AwsManagedResources).
@@ -2732,7 +2642,7 @@ impl AsRef<str> for AwsManagedTargetDestination {
 
 /// <p> Rank of business goals based on priority. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrioritizeBusinessGoals {
     /// <p> Rank of business goals based on priority. </p>
     #[doc(hidden)]
@@ -2742,13 +2652,6 @@ impl PrioritizeBusinessGoals {
     /// <p> Rank of business goals based on priority. </p>
     pub fn business_goals(&self) -> std::option::Option<&crate::model::BusinessGoals> {
         self.business_goals.as_ref()
-    }
-}
-impl std::fmt::Debug for PrioritizeBusinessGoals {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrioritizeBusinessGoals");
-        formatter.field("business_goals", &self.business_goals);
-        formatter.finish()
     }
 }
 /// See [`PrioritizeBusinessGoals`](crate::model::PrioritizeBusinessGoals).
@@ -2790,7 +2693,7 @@ impl PrioritizeBusinessGoals {
 
 /// <p> Business goals that you specify. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BusinessGoals {
     /// <p> Business goal to achieve migration at a fast pace. </p>
     #[doc(hidden)]
@@ -2823,22 +2726,6 @@ impl BusinessGoals {
     /// <p> Business goal to reduce license costs. </p>
     pub fn license_cost_reduction(&self) -> std::option::Option<i32> {
         self.license_cost_reduction
-    }
-}
-impl std::fmt::Debug for BusinessGoals {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BusinessGoals");
-        formatter.field("speed_of_migration", &self.speed_of_migration);
-        formatter.field(
-            "reduce_operational_overhead_with_managed_services",
-            &self.reduce_operational_overhead_with_managed_services,
-        );
-        formatter.field(
-            "modernize_infrastructure_with_cloud_native_technologies",
-            &self.modernize_infrastructure_with_cloud_native_technologies,
-        );
-        formatter.field("license_cost_reduction", &self.license_cost_reduction);
-        formatter.finish()
     }
 }
 /// See [`BusinessGoals`](crate::model::BusinessGoals).
@@ -2925,7 +2812,7 @@ impl BusinessGoals {
 
 /// <p> Detailed information about a server. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerDetail {
     /// <p> The server ID. </p>
     #[doc(hidden)]
@@ -3029,37 +2916,6 @@ impl ServerDetail {
     /// <p> The timestamp of when the server was assessed. </p>
     pub fn last_analyzed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_analyzed_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ServerDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerDetail");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("recommendation_set", &self.recommendation_set);
-        formatter.field("data_collection_status", &self.data_collection_status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field(
-            "list_antipattern_severity_summary",
-            &self.list_antipattern_severity_summary,
-        );
-        formatter.field("system_info", &self.system_info);
-        formatter.field(
-            "application_component_strategy_summary",
-            &self.application_component_strategy_summary,
-        );
-        formatter.field(
-            "antipattern_report_s3_object",
-            &self.antipattern_report_s3_object,
-        );
-        formatter.field("antipattern_report_status", &self.antipattern_report_status);
-        formatter.field(
-            "antipattern_report_status_message",
-            &self.antipattern_report_status_message,
-        );
-        formatter.field("server_type", &self.server_type);
-        formatter.field("last_analyzed_timestamp", &self.last_analyzed_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ServerDetail`](crate::model::ServerDetail).
@@ -3402,7 +3258,7 @@ impl AsRef<str> for AntipatternReportStatus {
 
 /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Object {
     /// <p> The S3 bucket name. </p>
     #[doc(hidden)]
@@ -3419,14 +3275,6 @@ impl S3Object {
     /// <p> The Amazon S3 key name. </p>
     pub fn s3key(&self) -> std::option::Option<&str> {
         self.s3key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Object {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Object");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3key", &self.s3key);
-        formatter.finish()
     }
 }
 /// See [`S3Object`](crate::model::S3Object).
@@ -3477,7 +3325,7 @@ impl S3Object {
 
 /// <p> Object containing the summary of the strategy recommendations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StrategySummary {
     /// <p> The name of recommended strategy. </p>
     #[doc(hidden)]
@@ -3494,14 +3342,6 @@ impl StrategySummary {
     /// <p> The count of recommendations per strategy. </p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
-    }
-}
-impl std::fmt::Debug for StrategySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StrategySummary");
-        formatter.field("strategy", &self.strategy);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`StrategySummary`](crate::model::StrategySummary).
@@ -3552,7 +3392,7 @@ impl StrategySummary {
 
 /// <p> Information about the server that hosts application components. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemInfo {
     /// <p> Operating system corresponding to a server. </p>
     #[doc(hidden)]
@@ -3583,16 +3423,6 @@ impl SystemInfo {
     /// <p> CPU architecture type for the server. </p>
     pub fn cpu_architecture(&self) -> std::option::Option<&str> {
         self.cpu_architecture.as_deref()
-    }
-}
-impl std::fmt::Debug for SystemInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemInfo");
-        formatter.field("os_info", &self.os_info);
-        formatter.field("file_system_type", &self.file_system_type);
-        formatter.field("network_info_list", &self.network_info_list);
-        formatter.field("cpu_architecture", &self.cpu_architecture);
-        formatter.finish()
     }
 }
 /// See [`SystemInfo`](crate::model::SystemInfo).
@@ -3682,7 +3512,7 @@ impl SystemInfo {
 
 /// <p> Information about the server's network for which the assessment was run. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInfo {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
     #[doc(hidden)]
@@ -3713,16 +3543,6 @@ impl NetworkInfo {
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
     pub fn net_mask(&self) -> std::option::Option<&str> {
         self.net_mask.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInfo");
-        formatter.field("interface_name", &self.interface_name);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("net_mask", &self.net_mask);
-        formatter.finish()
     }
 }
 /// See [`NetworkInfo`](crate::model::NetworkInfo).
@@ -3800,7 +3620,7 @@ impl NetworkInfo {
 
 /// <p> Information about the operating system. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OsInfo {
     /// <p> Information about the type of operating system. </p>
     #[doc(hidden)]
@@ -3817,14 +3637,6 @@ impl OsInfo {
     /// <p> Information about the version of operating system. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for OsInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OsInfo");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`OsInfo`](crate::model::OsInfo).
@@ -3965,7 +3777,7 @@ impl AsRef<str> for OsType {
 
 /// <p> Contains the summary of anti-patterns and their severity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AntipatternSeveritySummary {
     /// <p> Contains the severity of anti-patterns. </p>
     #[doc(hidden)]
@@ -3982,14 +3794,6 @@ impl AntipatternSeveritySummary {
     /// <p> Contains the count of anti-patterns. </p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
-    }
-}
-impl std::fmt::Debug for AntipatternSeveritySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AntipatternSeveritySummary");
-        formatter.field("severity", &self.severity);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`AntipatternSeveritySummary`](crate::model::AntipatternSeveritySummary).
@@ -4260,7 +4064,7 @@ impl AsRef<str> for RunTimeAssessmentStatus {
 
 /// <p> Contains a recommendation set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationSet {
     /// <p> The target destination for the recommendation set. </p>
     #[doc(hidden)]
@@ -4284,15 +4088,6 @@ impl RecommendationSet {
     /// <p> The recommended strategy. </p>
     pub fn strategy(&self) -> std::option::Option<&crate::model::Strategy> {
         self.strategy.as_ref()
-    }
-}
-impl std::fmt::Debug for RecommendationSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationSet");
-        formatter.field("transformation_tool", &self.transformation_tool);
-        formatter.field("target_destination", &self.target_destination);
-        formatter.field("strategy", &self.strategy);
-        formatter.finish()
     }
 }
 /// See [`RecommendationSet`](crate::model::RecommendationSet).
@@ -4361,7 +4156,7 @@ impl RecommendationSet {
 
 /// <p> Information of the transformation tool that can be used to migrate and modernize the application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransformationTool {
     /// <p> Name of the tool. </p>
     #[doc(hidden)]
@@ -4385,18 +4180,6 @@ impl TransformationTool {
     /// <p> URL for installing the tool. </p>
     pub fn tranformation_tool_installation_link(&self) -> std::option::Option<&str> {
         self.tranformation_tool_installation_link.as_deref()
-    }
-}
-impl std::fmt::Debug for TransformationTool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransformationTool");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "tranformation_tool_installation_link",
-            &self.tranformation_tool_installation_link,
-        );
-        formatter.finish()
     }
 }
 /// See [`TransformationTool`](crate::model::TransformationTool).
@@ -4669,7 +4452,7 @@ impl AsRef<str> for ServerCriteria {
 
 /// <p> Information about the import file tasks you request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportFileTaskInformation {
     /// <p> The ID of the import file task. </p>
     #[doc(hidden)]
@@ -4749,23 +4532,6 @@ impl ImportFileTaskInformation {
     /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
     pub fn import_name(&self) -> std::option::Option<&str> {
         self.import_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportFileTaskInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportFileTaskInformation");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("input_s3_bucket", &self.input_s3_bucket);
-        formatter.field("input_s3_key", &self.input_s3_key);
-        formatter.field("status_report_s3_bucket", &self.status_report_s3_bucket);
-        formatter.field("status_report_s3_key", &self.status_report_s3_key);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("number_of_records_success", &self.number_of_records_success);
-        formatter.field("number_of_records_failed", &self.number_of_records_failed);
-        formatter.field("import_name", &self.import_name);
-        formatter.finish()
     }
 }
 /// See [`ImportFileTaskInformation`](crate::model::ImportFileTaskInformation).
@@ -5073,7 +4839,7 @@ impl AsRef<str> for ImportFileTaskStatus {
 
 /// <p> Process data collector that runs in the environment that you specify. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Collector {
     /// <p> The ID of the collector. </p>
     #[doc(hidden)]
@@ -5125,19 +4891,6 @@ impl Collector {
     /// <p> Time when the collector last pinged the service. </p>
     pub fn last_activity_time_stamp(&self) -> std::option::Option<&str> {
         self.last_activity_time_stamp.as_deref()
-    }
-}
-impl std::fmt::Debug for Collector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Collector");
-        formatter.field("collector_id", &self.collector_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("host_name", &self.host_name);
-        formatter.field("collector_health", &self.collector_health);
-        formatter.field("collector_version", &self.collector_version);
-        formatter.field("registered_time_stamp", &self.registered_time_stamp);
-        formatter.field("last_activity_time_stamp", &self.last_activity_time_stamp);
-        formatter.finish()
     }
 }
 /// See [`Collector`](crate::model::Collector).
@@ -5350,7 +5103,7 @@ impl AsRef<str> for CollectorHealth {
 
 /// <p> Contains detailed information about an application component. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationComponentDetail {
     /// <p> The ID of the application component. </p>
     #[doc(hidden)]
@@ -5496,43 +5249,6 @@ impl ApplicationComponentDetail {
     /// <p> Set to true if the application component is running on multiple servers.</p>
     pub fn more_server_association_exists(&self) -> std::option::Option<bool> {
         self.more_server_association_exists
-    }
-}
-impl std::fmt::Debug for ApplicationComponentDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationComponentDetail");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("recommendation_set", &self.recommendation_set);
-        formatter.field("analysis_status", &self.analysis_status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field(
-            "list_antipattern_severity_summary",
-            &self.list_antipattern_severity_summary,
-        );
-        formatter.field("database_config_detail", &self.database_config_detail);
-        formatter.field("source_code_repositories", &self.source_code_repositories);
-        formatter.field("app_type", &self.app_type);
-        formatter.field("resource_sub_type", &self.resource_sub_type);
-        formatter.field("inclusion_status", &self.inclusion_status);
-        formatter.field(
-            "antipattern_report_s3_object",
-            &self.antipattern_report_s3_object,
-        );
-        formatter.field("antipattern_report_status", &self.antipattern_report_status);
-        formatter.field(
-            "antipattern_report_status_message",
-            &self.antipattern_report_status_message,
-        );
-        formatter.field("os_version", &self.os_version);
-        formatter.field("os_driver", &self.os_driver);
-        formatter.field("last_analyzed_timestamp", &self.last_analyzed_timestamp);
-        formatter.field("associated_server_id", &self.associated_server_id);
-        formatter.field(
-            "more_server_association_exists",
-            &self.more_server_association_exists,
-        );
-        formatter.finish()
     }
 }
 /// See [`ApplicationComponentDetail`](crate::model::ApplicationComponentDetail).
@@ -6068,7 +5784,7 @@ impl AsRef<str> for AppType {
 
 /// <p> Object containing source code information that is linked to an application component. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceCodeRepository {
     /// <p> The repository name for the source code. </p>
     #[doc(hidden)]
@@ -6092,15 +5808,6 @@ impl SourceCodeRepository {
     /// <p> The type of repository to use for the source code. </p>
     pub fn version_control_type(&self) -> std::option::Option<&str> {
         self.version_control_type.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceCodeRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceCodeRepository");
-        formatter.field("repository", &self.repository);
-        formatter.field("branch", &self.branch);
-        formatter.field("version_control_type", &self.version_control_type);
-        formatter.finish()
     }
 }
 /// See [`SourceCodeRepository`](crate::model::SourceCodeRepository).
@@ -6166,7 +5873,7 @@ impl SourceCodeRepository {
 
 /// <p> Configuration information used for assessing databases. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseConfigDetail {
     /// <p> AWS Secrets Manager key that holds the credentials that you use to connect to a database. </p>
     #[doc(hidden)]
@@ -6176,13 +5883,6 @@ impl DatabaseConfigDetail {
     /// <p> AWS Secrets Manager key that holds the credentials that you use to connect to a database. </p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DatabaseConfigDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseConfigDetail");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
     }
 }
 /// See [`DatabaseConfigDetail`](crate::model::DatabaseConfigDetail).
@@ -6447,7 +6147,7 @@ impl AsRef<str> for ApplicationComponentCriteria {
 
 /// <p> Contains information about a strategy recommendation for a server. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerStrategy {
     /// <p> Strategy recommendation for the server. </p>
     #[doc(hidden)]
@@ -6478,19 +6178,6 @@ impl ServerStrategy {
     /// <p> Set to true if the recommendation is set as preferred. </p>
     pub fn is_preferred(&self) -> std::option::Option<bool> {
         self.is_preferred
-    }
-}
-impl std::fmt::Debug for ServerStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerStrategy");
-        formatter.field("recommendation", &self.recommendation);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "number_of_application_components",
-            &self.number_of_application_components,
-        );
-        formatter.field("is_preferred", &self.is_preferred);
-        formatter.finish()
     }
 }
 /// See [`ServerStrategy`](crate::model::ServerStrategy).
@@ -6671,7 +6358,7 @@ impl AsRef<str> for StrategyRecommendation {
 
 /// <p> Object containing details about applications as defined in Application Discovery Service. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatedApplication {
     /// <p> Name of the application as defined in Application Discovery Service. </p>
     #[doc(hidden)]
@@ -6688,14 +6375,6 @@ impl AssociatedApplication {
     /// <p> ID of the application as defined in Application Discovery Service. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociatedApplication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatedApplication");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`AssociatedApplication`](crate::model::AssociatedApplication).
@@ -6746,7 +6425,7 @@ impl AssociatedApplication {
 
 /// <p> Contains detailed information about a recommendation report. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationReportDetails {
     /// <p> The status of the recommendation report generation task. </p>
     #[doc(hidden)]
@@ -6791,18 +6470,6 @@ impl RecommendationReportDetails {
     /// <p> The Amazon S3 key name of the report file. </p>
     pub fn s3_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for RecommendationReportDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationReportDetails");
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_keys", &self.s3_keys);
-        formatter.finish()
     }
 }
 /// See [`RecommendationReportDetails`](crate::model::RecommendationReportDetails).
@@ -7019,7 +6686,7 @@ impl AsRef<str> for RecommendationReportStatus {
 
 /// <p> Contains the summary of the assessment results. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentSummary {
     /// <p> List of ServerStrategySummary. </p>
     #[doc(hidden)]
@@ -7099,39 +6766,6 @@ impl AssessmentSummary {
     /// <p> The time the assessment was performed. </p>
     pub fn last_analyzed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_analyzed_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentSummary");
-        formatter.field(
-            "list_server_strategy_summary",
-            &self.list_server_strategy_summary,
-        );
-        formatter.field(
-            "list_application_component_strategy_summary",
-            &self.list_application_component_strategy_summary,
-        );
-        formatter.field(
-            "list_antipattern_severity_summary",
-            &self.list_antipattern_severity_summary,
-        );
-        formatter.field(
-            "list_application_component_summary",
-            &self.list_application_component_summary,
-        );
-        formatter.field("list_server_summary", &self.list_server_summary);
-        formatter.field(
-            "antipattern_report_s3_object",
-            &self.antipattern_report_s3_object,
-        );
-        formatter.field("antipattern_report_status", &self.antipattern_report_status);
-        formatter.field(
-            "antipattern_report_status_message",
-            &self.antipattern_report_status_message,
-        );
-        formatter.field("last_analyzed_timestamp", &self.last_analyzed_timestamp);
-        formatter.finish()
     }
 }
 /// See [`AssessmentSummary`](crate::model::AssessmentSummary).
@@ -7350,7 +6984,7 @@ impl AssessmentSummary {
 
 /// <p> Object containing details about the servers imported by Application Discovery Service </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerSummary {
     /// <p> Type of operating system for the servers. </p>
     #[doc(hidden)]
@@ -7367,14 +7001,6 @@ impl ServerSummary {
     /// <p> Number of servers. </p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
-    }
-}
-impl std::fmt::Debug for ServerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerSummary");
-        formatter.field("server_os_type", &self.server_os_type);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`ServerSummary`](crate::model::ServerSummary).
@@ -7539,7 +7165,7 @@ impl AsRef<str> for ServerOsType {
 
 /// <p> Contains the summary of application components. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationComponentSummary {
     /// <p> Contains the name of application types. </p>
     #[doc(hidden)]
@@ -7556,14 +7182,6 @@ impl ApplicationComponentSummary {
     /// <p> Contains the count of application type. </p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
-    }
-}
-impl std::fmt::Debug for ApplicationComponentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationComponentSummary");
-        formatter.field("app_type", &self.app_type);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`ApplicationComponentSummary`](crate::model::ApplicationComponentSummary).
@@ -7614,7 +7232,7 @@ impl ApplicationComponentSummary {
 
 /// <p> Detailed information about an assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataCollectionDetails {
     /// <p> The status of the assessment. </p>
     #[doc(hidden)]
@@ -7666,19 +7284,6 @@ impl DataCollectionDetails {
     /// <p> The time the assessment completes. </p>
     pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DataCollectionDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataCollectionDetails");
-        formatter.field("status", &self.status);
-        formatter.field("servers", &self.servers);
-        formatter.field("failed", &self.failed);
-        formatter.field("success", &self.success);
-        formatter.field("in_progress", &self.in_progress);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.finish()
     }
 }
 /// See [`DataCollectionDetails`](crate::model::DataCollectionDetails).
@@ -7898,7 +7503,7 @@ impl AsRef<str> for AssessmentStatus {
 
 /// <p> Contains information about a strategy recommendation for an application component. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationComponentStrategy {
     /// <p> Strategy recommendation for the application component. </p>
     #[doc(hidden)]
@@ -7922,15 +7527,6 @@ impl ApplicationComponentStrategy {
     /// <p> Set to true if the recommendation is set as preferred. </p>
     pub fn is_preferred(&self) -> std::option::Option<bool> {
         self.is_preferred
-    }
-}
-impl std::fmt::Debug for ApplicationComponentStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationComponentStrategy");
-        formatter.field("recommendation", &self.recommendation);
-        formatter.field("status", &self.status);
-        formatter.field("is_preferred", &self.is_preferred);
-        formatter.finish()
     }
 }
 /// See [`ApplicationComponentStrategy`](crate::model::ApplicationComponentStrategy).

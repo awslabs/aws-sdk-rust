@@ -3167,7 +3167,7 @@ impl CreateHoursOfOperationInput {
 pub mod create_instance_input {
 
     /// A builder for [`CreateInstanceInput`](crate::input::CreateInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) identity_management_type: std::option::Option<crate::model::DirectoryType>,
@@ -3256,6 +3256,18 @@ pub mod create_instance_input {
                 inbound_calls_enabled: self.inbound_calls_enabled,
                 outbound_calls_enabled: self.outbound_calls_enabled,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("identity_management_type", &self.identity_management_type);
+            formatter.field("instance_alias", &"*** Sensitive Data Redacted ***");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
+            formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+            formatter.finish()
         }
     }
 }
@@ -32998,7 +33010,7 @@ impl UpdateUserSecurityProfilesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserSecurityProfilesInput {
     /// <p>The identifiers of the security profiles for the user.</p>
     #[doc(hidden)]
@@ -33024,19 +33036,10 @@ impl UpdateUserSecurityProfilesInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserSecurityProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserSecurityProfilesInput");
-        formatter.field("security_profile_ids", &self.security_profile_ids);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserRoutingProfileInput {
     /// <p>The identifier of the routing profile for the user.</p>
     #[doc(hidden)]
@@ -33062,19 +33065,10 @@ impl UpdateUserRoutingProfileInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserRoutingProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserRoutingProfileInput");
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserPhoneConfigInput {
     /// <p>Information about phone configuration settings for the user.</p>
     #[doc(hidden)]
@@ -33100,19 +33094,10 @@ impl UpdateUserPhoneConfigInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserPhoneConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserPhoneConfigInput");
-        formatter.field("phone_config", &self.phone_config);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserIdentityInfoInput {
     /// <p>The identity information for the user.</p>
     #[doc(hidden)]
@@ -33138,19 +33123,10 @@ impl UpdateUserIdentityInfoInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserIdentityInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserIdentityInfoInput");
-        formatter.field("identity_info", &self.identity_info);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserHierarchyStructureInput {
     /// <p>The hierarchy levels to update.</p>
     #[doc(hidden)]
@@ -33171,18 +33147,10 @@ impl UpdateUserHierarchyStructureInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserHierarchyStructureInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserHierarchyStructureInput");
-        formatter.field("hierarchy_structure", &self.hierarchy_structure);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserHierarchyGroupNameInput {
     /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
     #[doc(hidden)]
@@ -33208,19 +33176,10 @@ impl UpdateUserHierarchyGroupNameInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserHierarchyGroupNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserHierarchyGroupNameInput");
-        formatter.field("name", &self.name);
-        formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserHierarchyInput {
     /// <p>The identifier of the hierarchy group.</p>
     #[doc(hidden)]
@@ -33246,19 +33205,10 @@ impl UpdateUserHierarchyInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserHierarchyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserHierarchyInput");
-        formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskTemplateInput {
     /// <p>A unique identifier for the task template.</p>
     #[doc(hidden)]
@@ -33326,25 +33276,10 @@ impl UpdateTaskTemplateInput {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTaskTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTaskTemplateInput");
-        formatter.field("task_template_id", &self.task_template_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("constraints", &self.constraints);
-        formatter.field("defaults", &self.defaults);
-        formatter.field("status", &self.status);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSecurityProfileInput {
     /// <p>The description of the security profile.</p>
     #[doc(hidden)]
@@ -33377,20 +33312,10 @@ impl UpdateSecurityProfileInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSecurityProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSecurityProfileInput");
-        formatter.field("description", &self.description);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("security_profile_id", &self.security_profile_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33416,19 +33341,10 @@ impl UpdateRoutingProfileQueuesInput {
         self.queue_configs.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingProfileQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingProfileQueuesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("queue_configs", &self.queue_configs);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingProfileNameInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33461,20 +33377,10 @@ impl UpdateRoutingProfileNameInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingProfileNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingProfileNameInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingProfileDefaultOutboundQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33500,19 +33406,10 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
         self.default_outbound_queue_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingProfileDefaultOutboundQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingProfileDefaultOutboundQueueInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("default_outbound_queue_id", &self.default_outbound_queue_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingProfileConcurrencyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33538,19 +33435,10 @@ impl UpdateRoutingProfileConcurrencyInput {
         self.media_concurrencies.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingProfileConcurrencyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingProfileConcurrencyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("media_concurrencies", &self.media_concurrencies);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQuickConnectNameInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33583,20 +33471,10 @@ impl UpdateQuickConnectNameInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateQuickConnectNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQuickConnectNameInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("quick_connect_id", &self.quick_connect_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQuickConnectConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33622,19 +33500,10 @@ impl UpdateQuickConnectConfigInput {
         self.quick_connect_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateQuickConnectConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQuickConnectConfigInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("quick_connect_id", &self.quick_connect_id);
-        formatter.field("quick_connect_config", &self.quick_connect_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQueueStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33660,19 +33529,10 @@ impl UpdateQueueStatusInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateQueueStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQueueStatusInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQueueOutboundCallerConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33700,19 +33560,10 @@ impl UpdateQueueOutboundCallerConfigInput {
         self.outbound_caller_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateQueueOutboundCallerConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQueueOutboundCallerConfigInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("outbound_caller_config", &self.outbound_caller_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQueueNameInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33745,20 +33596,10 @@ impl UpdateQueueNameInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateQueueNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQueueNameInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQueueMaxContactsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33784,19 +33625,10 @@ impl UpdateQueueMaxContactsInput {
         self.max_contacts
     }
 }
-impl std::fmt::Debug for UpdateQueueMaxContactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQueueMaxContactsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("max_contacts", &self.max_contacts);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateQueueHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33822,19 +33654,10 @@ impl UpdateQueueHoursOfOperationInput {
         self.hours_of_operation_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateQueueHoursOfOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateQueueHoursOfOperationInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePhoneNumberInput {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
@@ -33860,19 +33683,10 @@ impl UpdatePhoneNumberInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePhoneNumberInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33905,20 +33719,10 @@ impl UpdateInstanceStorageConfigInput {
         self.storage_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateInstanceStorageConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInstanceStorageConfigInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("storage_config", &self.storage_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInstanceAttributeInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -33948,19 +33752,10 @@ impl UpdateInstanceAttributeInput {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateInstanceAttributeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInstanceAttributeInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34007,22 +33802,10 @@ impl UpdateHoursOfOperationInput {
         self.config.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateHoursOfOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHoursOfOperationInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.field("config", &self.config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactScheduleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34048,19 +33831,10 @@ impl UpdateContactScheduleInput {
         self.scheduled_time.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContactScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactScheduleInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("scheduled_time", &self.scheduled_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactFlowNameInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
@@ -34093,20 +33867,10 @@ impl UpdateContactFlowNameInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateContactFlowNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactFlowNameInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactFlowModuleMetadataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34146,21 +33910,10 @@ impl UpdateContactFlowModuleMetadataInput {
         self.state.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContactFlowModuleMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactFlowModuleMetadataInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_module_id", &self.contact_flow_module_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactFlowModuleContentInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34186,19 +33939,10 @@ impl UpdateContactFlowModuleContentInput {
         self.content.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateContactFlowModuleContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactFlowModuleContentInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_module_id", &self.contact_flow_module_id);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactFlowMetadataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34238,21 +33982,10 @@ impl UpdateContactFlowMetadataInput {
         self.contact_flow_state.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContactFlowMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactFlowMetadataInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("contact_flow_state", &self.contact_flow_state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactFlowContentInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
@@ -34278,19 +34011,10 @@ impl UpdateContactFlowContentInput {
         self.content.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateContactFlowContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactFlowContentInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactAttributesInput {
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     #[doc(hidden)]
@@ -34322,19 +34046,10 @@ impl UpdateContactAttributesInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContactAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactAttributesInput");
-        formatter.field("initial_contact_id", &self.initial_contact_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34379,21 +34094,10 @@ impl UpdateContactInput {
         self.references.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContactInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("references", &self.references);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34447,23 +34151,10 @@ impl UpdateAgentStatusInput {
         self.reset_order_number
     }
 }
-impl std::fmt::Debug for UpdateAgentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAgentStatusInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("agent_status_id", &self.agent_status_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("display_order", &self.display_order);
-        formatter.field("reset_order_number", &self.reset_order_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -34482,18 +34173,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransferContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34540,22 +34223,10 @@ impl TransferContactInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for TransferContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransferContactInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -34578,18 +34249,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34615,19 +34278,10 @@ impl SuspendContactRecordingInput {
         self.initial_contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for SuspendContactRecordingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendContactRecordingInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("initial_contact_id", &self.initial_contact_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopContactStreamingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34653,19 +34307,10 @@ impl StopContactStreamingInput {
         self.streaming_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopContactStreamingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopContactStreamingInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("streaming_id", &self.streaming_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34691,19 +34336,10 @@ impl StopContactRecordingInput {
         self.initial_contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopContactRecordingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopContactRecordingInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("initial_contact_id", &self.initial_contact_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopContactInput {
     /// <p>The ID of the contact.</p>
     #[doc(hidden)]
@@ -34722,18 +34358,10 @@ impl StopContactInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopContactInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTaskContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34828,27 +34456,10 @@ impl StartTaskContactInput {
         self.quick_connect_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartTaskContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTaskContactInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("previous_contact_id", &self.previous_contact_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("name", &self.name);
-        formatter.field("references", &self.references);
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("scheduled_time", &self.scheduled_time);
-        formatter.field("task_template_id", &self.task_template_id);
-        formatter.field("quick_connect_id", &self.quick_connect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartOutboundVoiceContactInput {
     /// <p>The phone number of the customer, in E.164 format.</p>
     #[doc(hidden)]
@@ -34934,29 +34545,10 @@ impl StartOutboundVoiceContactInput {
         self.traffic_type.as_ref()
     }
 }
-impl std::fmt::Debug for StartOutboundVoiceContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartOutboundVoiceContactInput");
-        formatter.field("destination_phone_number", &self.destination_phone_number);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("source_phone_number", &self.source_phone_number);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.field(
-            "answer_machine_detection_config",
-            &self.answer_machine_detection_config,
-        );
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("traffic_type", &self.traffic_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartContactStreamingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -34991,23 +34583,10 @@ impl StartContactStreamingInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartContactStreamingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartContactStreamingInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field(
-            "chat_streaming_configuration",
-            &self.chat_streaming_configuration,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35043,23 +34622,10 @@ impl StartContactRecordingInput {
         self.voice_recording_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for StartContactRecordingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartContactRecordingInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("initial_contact_id", &self.initial_contact_id);
-        formatter.field(
-            "voice_recording_configuration",
-            &self.voice_recording_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35128,27 +34694,10 @@ impl StartChatContactInput {
         self.supported_messaging_content_types.as_deref()
     }
 }
-impl std::fmt::Debug for StartChatContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChatContactInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("participant_details", &self.participant_details);
-        formatter.field("initial_message", &self.initial_message);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("chat_duration_in_minutes", &self.chat_duration_in_minutes);
-        formatter.field(
-            "supported_messaging_content_types",
-            &self.supported_messaging_content_types,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchVocabulariesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35195,22 +34744,10 @@ impl SearchVocabulariesInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for SearchVocabulariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchVocabulariesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("state", &self.state);
-        formatter.field("name_starts_with", &self.name_starts_with);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchUsersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35254,21 +34791,10 @@ impl SearchUsersInput {
         self.search_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for SearchUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchUsersInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("search_filter", &self.search_filter);
-        formatter.field("search_criteria", &self.search_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchSecurityProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35312,21 +34838,10 @@ impl SearchSecurityProfilesInput {
         self.search_filter.as_ref()
     }
 }
-impl std::fmt::Debug for SearchSecurityProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchSecurityProfilesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("search_criteria", &self.search_criteria);
-        formatter.field("search_filter", &self.search_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchRoutingProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35368,21 +34883,10 @@ impl SearchRoutingProfilesInput {
         self.search_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for SearchRoutingProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchRoutingProfilesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("search_filter", &self.search_filter);
-        formatter.field("search_criteria", &self.search_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35422,21 +34926,10 @@ impl SearchQueuesInput {
         self.search_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for SearchQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchQueuesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("search_filter", &self.search_filter);
-        formatter.field("search_criteria", &self.search_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersInput {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
     #[doc(hidden)]
@@ -35485,22 +34978,10 @@ impl SearchAvailablePhoneNumbersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SearchAvailablePhoneNumbersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchAvailablePhoneNumbersInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("phone_number_country_code", &self.phone_number_country_code);
-        formatter.field("phone_number_type", &self.phone_number_type);
-        formatter.field("phone_number_prefix", &self.phone_number_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35526,19 +35007,10 @@ impl ResumeContactRecordingInput {
         self.initial_contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for ResumeContactRecordingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeContactRecordingInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("initial_contact_id", &self.initial_contact_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReleasePhoneNumberInput {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
@@ -35557,18 +35029,10 @@ impl ReleasePhoneNumberInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for ReleasePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReleasePhoneNumberInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutUserStatusInput {
     /// <p>The identifier of the user.</p>
     #[doc(hidden)]
@@ -35594,19 +35058,10 @@ impl PutUserStatusInput {
         self.agent_status_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutUserStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutUserStatusInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("agent_status_id", &self.agent_status_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35632,19 +35087,10 @@ impl ListUsersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserHierarchyGroupsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35670,19 +35116,10 @@ impl ListUserHierarchyGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUserHierarchyGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserHierarchyGroupsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides summary information about the use cases for the specified integration association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUseCasesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35715,23 +35152,10 @@ impl ListUseCasesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUseCasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUseCasesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field(
-            "integration_association_id",
-            &self.integration_association_id,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTaskTemplatesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35779,21 +35203,10 @@ impl ListTaskTemplatesInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTaskTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTaskTemplatesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("status", &self.status);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -35805,17 +35218,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecurityProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35841,19 +35247,10 @@ impl ListSecurityProfilesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSecurityProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecurityProfilesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecurityProfilePermissionsInput {
     /// <p>The identifier for the security profle.</p>
     #[doc(hidden)]
@@ -35886,20 +35283,10 @@ impl ListSecurityProfilePermissionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSecurityProfilePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecurityProfilePermissionsInput");
-        formatter.field("security_profile_id", &self.security_profile_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecurityKeysInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35925,19 +35312,10 @@ impl ListSecurityKeysInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSecurityKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecurityKeysInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoutingProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -35963,19 +35341,10 @@ impl ListRoutingProfilesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRoutingProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoutingProfilesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36008,20 +35377,10 @@ impl ListRoutingProfileQueuesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRoutingProfileQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoutingProfileQueuesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36054,20 +35413,10 @@ impl ListQuickConnectsInput {
         self.quick_connect_types.as_deref()
     }
 }
-impl std::fmt::Debug for ListQuickConnectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQuickConnectsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("quick_connect_types", &self.quick_connect_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36100,20 +35449,10 @@ impl ListQueuesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueuesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_types", &self.queue_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueueQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36146,20 +35485,10 @@ impl ListQueueQuickConnectsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListQueueQuickConnectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueueQuickConnectsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPromptsInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
@@ -36185,19 +35514,10 @@ impl ListPromptsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPromptsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPromptsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersV2Input {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
     #[doc(hidden)]
@@ -36247,25 +35567,10 @@ impl ListPhoneNumbersV2Input {
         self.phone_number_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for ListPhoneNumbersV2Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhoneNumbersV2Input");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "phone_number_country_codes",
-            &self.phone_number_country_codes,
-        );
-        formatter.field("phone_number_types", &self.phone_number_types);
-        formatter.field("phone_number_prefix", &self.phone_number_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36308,24 +35613,10 @@ impl ListPhoneNumbersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPhoneNumbersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhoneNumbersInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("phone_number_types", &self.phone_number_types);
-        formatter.field(
-            "phone_number_country_codes",
-            &self.phone_number_country_codes,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLexBotsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36351,19 +35642,10 @@ impl ListLexBotsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLexBotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLexBotsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLambdaFunctionsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36389,19 +35671,10 @@ impl ListLambdaFunctionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLambdaFunctionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLambdaFunctionsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIntegrationAssociationsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36434,20 +35707,10 @@ impl ListIntegrationAssociationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIntegrationAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIntegrationAssociationsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("integration_type", &self.integration_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceStorageConfigsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36480,20 +35743,10 @@ impl ListInstanceStorageConfigsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListInstanceStorageConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceStorageConfigsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstancesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -36512,18 +35765,10 @@ impl ListInstancesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstancesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceAttributesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36549,19 +35794,10 @@ impl ListInstanceAttributesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListInstanceAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceAttributesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHoursOfOperationsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36587,19 +35823,10 @@ impl ListHoursOfOperationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListHoursOfOperationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHoursOfOperationsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDefaultVocabulariesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36632,20 +35859,10 @@ impl ListDefaultVocabulariesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDefaultVocabulariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDefaultVocabulariesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactReferencesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36682,20 +35899,10 @@ impl ListContactReferencesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListContactReferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactReferencesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("reference_types", &self.reference_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactFlowsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36728,20 +35935,10 @@ impl ListContactFlowsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListContactFlowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactFlowsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_types", &self.contact_flow_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactFlowModulesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36776,20 +35973,10 @@ impl ListContactFlowModulesInput {
         self.contact_flow_module_state.as_ref()
     }
 }
-impl std::fmt::Debug for ListContactFlowModulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactFlowModulesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("contact_flow_module_state", &self.contact_flow_module_state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBotsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36822,20 +36009,10 @@ impl ListBotsInput {
         self.lex_version.as_ref()
     }
 }
-impl std::fmt::Debug for ListBotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBotsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("lex_version", &self.lex_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApprovedOriginsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36861,19 +36038,10 @@ impl ListApprovedOriginsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListApprovedOriginsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApprovedOriginsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAgentStatusesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36906,20 +36074,10 @@ impl ListAgentStatusesInput {
         self.agent_status_types.as_deref()
     }
 }
-impl std::fmt::Debug for ListAgentStatusesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAgentStatusesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("agent_status_types", &self.agent_status_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -36945,19 +36103,10 @@ impl GetTaskTemplateInput {
         self.snapshot_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetTaskTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTaskTemplateInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("task_template_id", &self.task_template_id);
-        formatter.field("snapshot_version", &self.snapshot_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMetricDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37390,24 +36539,10 @@ impl GetMetricDataInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetMetricDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMetricDataInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("filters", &self.filters);
-        formatter.field("groupings", &self.groupings);
-        formatter.field("historical_metrics", &self.historical_metrics);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFederationTokenInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37419,17 +36554,10 @@ impl GetFederationTokenInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFederationTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFederationTokenInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCurrentUserDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37462,20 +36590,10 @@ impl GetCurrentUserDataInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetCurrentUserDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCurrentUserDataInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCurrentMetricDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37720,22 +36838,10 @@ impl GetCurrentMetricDataInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetCurrentMetricDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCurrentMetricDataInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("groupings", &self.groupings);
-        formatter.field("current_metrics", &self.current_metrics);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactAttributesInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
@@ -37754,18 +36860,10 @@ impl GetContactAttributesInput {
         self.initial_contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetContactAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactAttributesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("initial_contact_id", &self.initial_contact_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateSecurityKeyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37784,18 +36882,10 @@ impl DisassociateSecurityKeyInput {
         self.association_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateSecurityKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateSecurityKeyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("association_id", &self.association_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37824,19 +36914,10 @@ impl DisassociateRoutingProfileQueuesInput {
         self.queue_references.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateRoutingProfileQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateRoutingProfileQueuesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("queue_references", &self.queue_references);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateQueueQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37862,19 +36943,10 @@ impl DisassociateQueueQuickConnectsInput {
         self.quick_connect_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateQueueQuickConnectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateQueueQuickConnectsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("quick_connect_ids", &self.quick_connect_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociatePhoneNumberContactFlowInput {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
@@ -37893,18 +36965,10 @@ impl DisassociatePhoneNumberContactFlowInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociatePhoneNumberContactFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociatePhoneNumberContactFlowInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateLexBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37930,19 +36994,10 @@ impl DisassociateLexBotInput {
         self.lex_region.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateLexBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateLexBotInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("lex_region", &self.lex_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateLambdaFunctionInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance..</p>
     #[doc(hidden)]
@@ -37961,18 +37016,10 @@ impl DisassociateLambdaFunctionInput {
         self.function_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateLambdaFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateLambdaFunctionInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("function_arn", &self.function_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -37998,19 +37045,10 @@ impl DisassociateInstanceStorageConfigInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateInstanceStorageConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateInstanceStorageConfigInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38036,19 +37074,10 @@ impl DisassociateBotInput {
         self.lex_v2_bot.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateBotInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("lex_bot", &self.lex_bot);
-        formatter.field("lex_v2_bot", &self.lex_v2_bot);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateApprovedOriginInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38067,18 +37096,10 @@ impl DisassociateApprovedOriginInput {
         self.origin.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateApprovedOriginInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateApprovedOriginInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("origin", &self.origin);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVocabularyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38097,18 +37118,10 @@ impl DescribeVocabularyInput {
         self.vocabulary_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVocabularyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("vocabulary_id", &self.vocabulary_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserHierarchyStructureInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38120,17 +37133,10 @@ impl DescribeUserHierarchyStructureInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserHierarchyStructureInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserHierarchyStructureInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserHierarchyGroupInput {
     /// <p>The identifier of the hierarchy group.</p>
     #[doc(hidden)]
@@ -38149,18 +37155,10 @@ impl DescribeUserHierarchyGroupInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserHierarchyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserHierarchyGroupInput");
-        formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserInput {
     /// <p>The identifier of the user account.</p>
     #[doc(hidden)]
@@ -38179,18 +37177,10 @@ impl DescribeUserInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSecurityProfileInput {
     /// <p>The identifier for the security profle.</p>
     #[doc(hidden)]
@@ -38209,18 +37199,10 @@ impl DescribeSecurityProfileInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSecurityProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSecurityProfileInput");
-        formatter.field("security_profile_id", &self.security_profile_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38239,18 +37221,10 @@ impl DescribeRoutingProfileInput {
         self.routing_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRoutingProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRoutingProfileInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQuickConnectInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38269,18 +37243,10 @@ impl DescribeQuickConnectInput {
         self.quick_connect_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQuickConnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQuickConnectInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("quick_connect_id", &self.quick_connect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38299,18 +37265,10 @@ impl DescribeQueueInput {
         self.queue_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQueueInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePhoneNumberInput {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
@@ -38322,17 +37280,10 @@ impl DescribePhoneNumberInput {
         self.phone_number_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePhoneNumberInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38358,19 +37309,10 @@ impl DescribeInstanceStorageConfigInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeInstanceStorageConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceStorageConfigInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceAttributeInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38389,18 +37331,10 @@ impl DescribeInstanceAttributeInput {
         self.attribute_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeInstanceAttributeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceAttributeInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38412,17 +37346,10 @@ impl DescribeInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38441,18 +37368,10 @@ impl DescribeHoursOfOperationInput {
         self.hours_of_operation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHoursOfOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHoursOfOperationInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38471,18 +37390,10 @@ impl DescribeContactFlowModuleInput {
         self.contact_flow_module_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContactFlowModuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContactFlowModuleInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_module_id", &self.contact_flow_module_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
@@ -38501,18 +37412,10 @@ impl DescribeContactFlowInput {
         self.contact_flow_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContactFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContactFlowInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38531,18 +37434,10 @@ impl DescribeContactInput {
         self.contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContactInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38561,18 +37456,10 @@ impl DescribeAgentStatusInput {
         self.agent_status_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAgentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAgentStatusInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("agent_status_id", &self.agent_status_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVocabularyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38591,18 +37478,10 @@ impl DeleteVocabularyInput {
         self.vocabulary_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVocabularyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("vocabulary_id", &self.vocabulary_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserHierarchyGroupInput {
     /// <p>The identifier of the hierarchy group.</p>
     #[doc(hidden)]
@@ -38621,18 +37500,10 @@ impl DeleteUserHierarchyGroupInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserHierarchyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserHierarchyGroupInput");
-        formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38651,18 +37522,10 @@ impl DeleteUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUseCaseInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38688,22 +37551,10 @@ impl DeleteUseCaseInput {
         self.use_case_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUseCaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUseCaseInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field(
-            "integration_association_id",
-            &self.integration_association_id,
-        );
-        formatter.field("use_case_id", &self.use_case_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38722,18 +37573,10 @@ impl DeleteTaskTemplateInput {
         self.task_template_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTaskTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTaskTemplateInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("task_template_id", &self.task_template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSecurityProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38752,18 +37595,10 @@ impl DeleteSecurityProfileInput {
         self.security_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSecurityProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSecurityProfileInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("security_profile_id", &self.security_profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQuickConnectInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38782,18 +37617,10 @@ impl DeleteQuickConnectInput {
         self.quick_connect_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQuickConnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQuickConnectInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("quick_connect_id", &self.quick_connect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationAssociationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38812,21 +37639,10 @@ impl DeleteIntegrationAssociationInput {
         self.integration_association_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIntegrationAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationAssociationInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field(
-            "integration_association_id",
-            &self.integration_association_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInstanceInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38838,17 +37654,10 @@ impl DeleteInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38867,18 +37676,10 @@ impl DeleteHoursOfOperationInput {
         self.hours_of_operation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHoursOfOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHoursOfOperationInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38897,18 +37698,10 @@ impl DeleteContactFlowModuleInput {
         self.contact_flow_module_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContactFlowModuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContactFlowModuleInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_module_id", &self.contact_flow_module_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -38927,18 +37720,10 @@ impl DeleteContactFlowInput {
         self.contact_flow_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContactFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContactFlowInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVocabularyInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
     #[doc(hidden)]
@@ -38989,22 +37774,10 @@ impl CreateVocabularyInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVocabularyInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("content", &self.content);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserHierarchyGroupInput {
     /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
     #[doc(hidden)]
@@ -39041,20 +37814,10 @@ impl CreateUserHierarchyGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUserHierarchyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserHierarchyGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("parent_group_id", &self.parent_group_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserInput {
     /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
     #[doc(hidden)]
@@ -39135,26 +37898,10 @@ impl CreateUserInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserInput");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.field("identity_info", &self.identity_info);
-        formatter.field("phone_config", &self.phone_config);
-        formatter.field("directory_user_id", &self.directory_user_id);
-        formatter.field("security_profile_ids", &self.security_profile_ids);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUseCaseInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39191,23 +37938,10 @@ impl CreateUseCaseInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUseCaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUseCaseInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field(
-            "integration_association_id",
-            &self.integration_association_id,
-        );
-        formatter.field("use_case_type", &self.use_case_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39275,25 +38009,10 @@ impl CreateTaskTemplateInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTaskTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTaskTemplateInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.field("constraints", &self.constraints);
-        formatter.field("defaults", &self.defaults);
-        formatter.field("status", &self.status);
-        formatter.field("fields", &self.fields);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSecurityProfileInput {
     /// <p>The name of the security profile.</p>
     #[doc(hidden)]
@@ -39337,21 +38056,10 @@ impl CreateSecurityProfileInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSecurityProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSecurityProfileInput");
-        formatter.field("security_profile_name", &self.security_profile_name);
-        formatter.field("description", &self.description);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39409,23 +38117,10 @@ impl CreateRoutingProfileInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRoutingProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRoutingProfileInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("default_outbound_queue_id", &self.default_outbound_queue_id);
-        formatter.field("queue_configs", &self.queue_configs);
-        formatter.field("media_concurrencies", &self.media_concurrencies);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQuickConnectInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39469,21 +38164,10 @@ impl CreateQuickConnectInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateQuickConnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQuickConnectInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("quick_connect_config", &self.quick_connect_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39550,24 +38234,10 @@ impl CreateQueueInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQueueInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("outbound_caller_config", &self.outbound_caller_config);
-        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
-        formatter.field("max_contacts", &self.max_contacts);
-        formatter.field("quick_connect_ids", &self.quick_connect_ids);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIntegrationAssociationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39627,19 +38297,6 @@ impl CreateIntegrationAssociationInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateIntegrationAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIntegrationAssociationInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("integration_type", &self.integration_type);
-        formatter.field("integration_arn", &self.integration_arn);
-        formatter.field("source_application_url", &self.source_application_url);
-        formatter.field("source_application_name", &self.source_application_name);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -39707,7 +38364,7 @@ impl std::fmt::Debug for CreateInstanceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39758,22 +38415,10 @@ impl CreateHoursOfOperationInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateHoursOfOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHoursOfOperationInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.field("config", &self.config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39824,22 +38469,10 @@ impl CreateContactFlowModuleInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateContactFlowModuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContactFlowModuleInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("content", &self.content);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
@@ -39890,22 +38523,10 @@ impl CreateContactFlowInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateContactFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContactFlowInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("content", &self.content);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -39956,22 +38577,10 @@ impl CreateAgentStatusInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAgentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAgentStatusInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("display_order", &self.display_order);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClaimPhoneNumberInput {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
     #[doc(hidden)]
@@ -40015,21 +38624,10 @@ impl ClaimPhoneNumberInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for ClaimPhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClaimPhoneNumberInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("phone_number_description", &self.phone_number_description);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateSecurityKeyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40048,18 +38646,10 @@ impl AssociateSecurityKeyInput {
         self.key.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateSecurityKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateSecurityKeyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("key", &self.key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40085,19 +38675,10 @@ impl AssociateRoutingProfileQueuesInput {
         self.queue_configs.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateRoutingProfileQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateRoutingProfileQueuesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("queue_configs", &self.queue_configs);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateQueueQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40123,19 +38704,10 @@ impl AssociateQueueQuickConnectsInput {
         self.quick_connect_ids.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateQueueQuickConnectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateQueueQuickConnectsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("quick_connect_ids", &self.quick_connect_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePhoneNumberContactFlowInput {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
@@ -40161,19 +38733,10 @@ impl AssociatePhoneNumberContactFlowInput {
         self.contact_flow_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociatePhoneNumberContactFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePhoneNumberContactFlowInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateLexBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40192,18 +38755,10 @@ impl AssociateLexBotInput {
         self.lex_bot.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateLexBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateLexBotInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("lex_bot", &self.lex_bot);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateLambdaFunctionInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40222,18 +38777,10 @@ impl AssociateLambdaFunctionInput {
         self.function_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateLambdaFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateLambdaFunctionInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("function_arn", &self.function_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40259,19 +38806,10 @@ impl AssociateInstanceStorageConfigInput {
         self.storage_config.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateInstanceStorageConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateInstanceStorageConfigInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("storage_config", &self.storage_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateDefaultVocabularyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40297,19 +38835,10 @@ impl AssociateDefaultVocabularyInput {
         self.vocabulary_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateDefaultVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateDefaultVocabularyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("vocabulary_id", &self.vocabulary_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40335,19 +38864,10 @@ impl AssociateBotInput {
         self.lex_v2_bot.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateBotInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("lex_bot", &self.lex_bot);
-        formatter.field("lex_v2_bot", &self.lex_v2_bot);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateApprovedOriginInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -40364,13 +38884,5 @@ impl AssociateApprovedOriginInput {
     /// <p>The domain to add to your allow list.</p>
     pub fn origin(&self) -> std::option::Option<&str> {
         self.origin.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateApprovedOriginInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateApprovedOriginInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("origin", &self.origin);
-        formatter.finish()
     }
 }

@@ -11240,7 +11240,7 @@ impl UpdateReservationInput {
 
 /// Request to update a reservation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReservationInput {
     /// Name of the reservation
     #[doc(hidden)]
@@ -11266,19 +11266,10 @@ impl UpdateReservationInput {
         self.reservation_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateReservationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReservationInput");
-        formatter.field("name", &self.name);
-        formatter.field("renewal_settings", &self.renewal_settings);
-        formatter.field("reservation_id", &self.reservation_id);
-        formatter.finish()
-    }
-}
 
 /// A request to update a program in a multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMultiplexProgramInput {
     /// The ID of the multiplex of the program to update.
     #[doc(hidden)]
@@ -11306,22 +11297,10 @@ impl UpdateMultiplexProgramInput {
         self.program_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMultiplexProgramInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMultiplexProgramInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.field(
-            "multiplex_program_settings",
-            &self.multiplex_program_settings,
-        );
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
-    }
-}
 
 /// A request to update a multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMultiplexInput {
     /// ID of the multiplex to update.
     #[doc(hidden)]
@@ -11347,19 +11326,10 @@ impl UpdateMultiplexInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMultiplexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMultiplexInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// The request to update some combination of the Input Security Group name and the IPv4 CIDRs the Input Security Group should allow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInputSecurityGroupInput {
     /// The id of the Input Security Group to update.
     #[doc(hidden)]
@@ -11389,19 +11359,10 @@ impl UpdateInputSecurityGroupInput {
         self.whitelist_rules.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateInputSecurityGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInputSecurityGroupInput");
-        formatter.field("input_security_group_id", &self.input_security_group_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("whitelist_rules", &self.whitelist_rules);
-        formatter.finish()
-    }
-}
 
 /// A request to update an input device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInputDeviceInput {
     /// The settings that you want to apply to the HD input device.
     #[doc(hidden)]
@@ -11438,20 +11399,10 @@ impl UpdateInputDeviceInput {
         self.uhd_device_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateInputDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInputDeviceInput");
-        formatter.field("hd_device_settings", &self.hd_device_settings);
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.field("name", &self.name);
-        formatter.field("uhd_device_settings", &self.uhd_device_settings);
-        formatter.finish()
-    }
-}
 
 /// A request to update an input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInputInput {
     /// Destination settings for PUSH type inputs.
     #[doc(hidden)]
@@ -11515,24 +11466,10 @@ impl UpdateInputInput {
         self.sources.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInputInput");
-        formatter.field("destinations", &self.destinations);
-        formatter.field("input_devices", &self.input_devices);
-        formatter.field("input_id", &self.input_id);
-        formatter.field("input_security_groups", &self.input_security_groups);
-        formatter.field("media_connect_flows", &self.media_connect_flows);
-        formatter.field("name", &self.name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("sources", &self.sources);
-        formatter.finish()
-    }
-}
 
 /// Channel class that the channel should be updated to.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelClassInput {
     /// The channel class that you wish to update this channel to use.
     #[doc(hidden)]
@@ -11558,19 +11495,10 @@ impl UpdateChannelClassInput {
         self.destinations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChannelClassInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelClassInput");
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("destinations", &self.destinations);
-        formatter.finish()
-    }
-}
 
 /// A request to update a channel.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// Specification of CDI inputs for this channel
     #[doc(hidden)]
@@ -11647,26 +11575,10 @@ impl UpdateChannelInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelInput");
-        formatter.field("cdi_input_specification", &self.cdi_input_specification);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("encoder_settings", &self.encoder_settings);
-        formatter.field("input_attachments", &self.input_attachments);
-        formatter.field("input_specification", &self.input_specification);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.field("name", &self.name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 /// A request to transfer an input device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransferInputDeviceInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     #[doc(hidden)]
@@ -11699,20 +11611,10 @@ impl TransferInputDeviceInput {
         self.transfer_message.as_deref()
     }
 }
-impl std::fmt::Debug for TransferInputDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransferInputDeviceInput");
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.field("target_customer_id", &self.target_customer_id);
-        formatter.field("target_region", &self.target_region);
-        formatter.field("transfer_message", &self.transfer_message);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for StopMultiplexRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMultiplexInput {
     /// The ID of the multiplex.
     #[doc(hidden)]
@@ -11724,17 +11626,10 @@ impl StopMultiplexInput {
         self.multiplex_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopMultiplexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMultiplexInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for StopChannelRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopChannelInput {
     /// A request to stop a running channel
     #[doc(hidden)]
@@ -11746,17 +11641,10 @@ impl StopChannelInput {
         self.channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopChannelInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for StartMultiplexRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMultiplexInput {
     /// The ID of the multiplex.
     #[doc(hidden)]
@@ -11768,17 +11656,10 @@ impl StartMultiplexInput {
         self.multiplex_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartMultiplexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMultiplexInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for StartInputDeviceMaintenanceWindowRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartInputDeviceMaintenanceWindowInput {
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
     #[doc(hidden)]
@@ -11790,17 +11671,10 @@ impl StartInputDeviceMaintenanceWindowInput {
         self.input_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartInputDeviceMaintenanceWindowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartInputDeviceMaintenanceWindowInput");
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for StartChannelRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChannelInput {
     /// A request to start a channel
     #[doc(hidden)]
@@ -11812,17 +11686,10 @@ impl StartChannelInput {
         self.channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChannelInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for RejectInputDeviceTransferRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectInputDeviceTransferInput {
     /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
     #[doc(hidden)]
@@ -11834,17 +11701,10 @@ impl RejectInputDeviceTransferInput {
         self.input_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for RejectInputDeviceTransferInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectInputDeviceTransferInput");
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.finish()
-    }
-}
 
 /// A request to reboot an AWS Elemental device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootInputDeviceInput {
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
     #[doc(hidden)]
@@ -11863,18 +11723,10 @@ impl RebootInputDeviceInput {
         self.input_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for RebootInputDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootInputDeviceInput");
-        formatter.field("force", &self.force);
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for PurchaseOfferingRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseOfferingInput {
     /// Number of resources
     #[doc(hidden)]
@@ -11932,23 +11784,10 @@ impl PurchaseOfferingInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PurchaseOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseOfferingInput");
-        formatter.field("count", &self.count);
-        formatter.field("name", &self.name);
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("renewal_settings", &self.renewal_settings);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("start", &self.start);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListTagsForResourceRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// Placeholder documentation for __string
     #[doc(hidden)]
@@ -11960,17 +11799,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListReservationsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReservationsInput {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
     #[doc(hidden)]
@@ -12045,26 +11877,10 @@ impl ListReservationsInput {
         self.video_quality.as_deref()
     }
 }
-impl std::fmt::Debug for ListReservationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReservationsInput");
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("codec", &self.codec);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("maximum_bitrate", &self.maximum_bitrate);
-        formatter.field("maximum_framerate", &self.maximum_framerate);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("special_feature", &self.special_feature);
-        formatter.field("video_quality", &self.video_quality);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListOfferingsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOfferingsInput {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
     #[doc(hidden)]
@@ -12153,28 +11969,10 @@ impl ListOfferingsInput {
         self.video_quality.as_deref()
     }
 }
-impl std::fmt::Debug for ListOfferingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOfferingsInput");
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("channel_configuration", &self.channel_configuration);
-        formatter.field("codec", &self.codec);
-        formatter.field("duration", &self.duration);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("maximum_bitrate", &self.maximum_bitrate);
-        formatter.field("maximum_framerate", &self.maximum_framerate);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("special_feature", &self.special_feature);
-        formatter.field("video_quality", &self.video_quality);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListMultiplexProgramsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultiplexProgramsInput {
     /// The maximum number of items to return.
     #[doc(hidden)]
@@ -12200,19 +11998,10 @@ impl ListMultiplexProgramsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMultiplexProgramsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultiplexProgramsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListMultiplexesRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultiplexesInput {
     /// The maximum number of items to return.
     #[doc(hidden)]
@@ -12231,18 +12020,10 @@ impl ListMultiplexesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMultiplexesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultiplexesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListInputSecurityGroupsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputSecurityGroupsInput {
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
@@ -12261,18 +12042,10 @@ impl ListInputSecurityGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInputSecurityGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputSecurityGroupsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListInputsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputsInput {
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
@@ -12291,18 +12064,10 @@ impl ListInputsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListInputDeviceTransfersRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputDeviceTransfersInput {
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
@@ -12328,19 +12093,10 @@ impl ListInputDeviceTransfersInput {
         self.transfer_type.as_deref()
     }
 }
-impl std::fmt::Debug for ListInputDeviceTransfersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputDeviceTransfersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("transfer_type", &self.transfer_type);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListInputDevicesRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputDevicesInput {
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
@@ -12359,18 +12115,10 @@ impl ListInputDevicesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInputDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputDevicesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for ListChannelsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
@@ -12389,18 +12137,10 @@ impl ListChannelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeScheduleRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScheduleInput {
     /// Id of the channel whose schedule is being updated.
     #[doc(hidden)]
@@ -12426,19 +12166,10 @@ impl DescribeScheduleInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScheduleInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeReservationRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     #[doc(hidden)]
@@ -12450,17 +12181,10 @@ impl DescribeReservationInput {
         self.reservation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReservationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservationInput");
-        formatter.field("reservation_id", &self.reservation_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeOfferingRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOfferingInput {
     /// Unique offering ID, e.g. '87654321'
     #[doc(hidden)]
@@ -12472,17 +12196,10 @@ impl DescribeOfferingInput {
         self.offering_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOfferingInput");
-        formatter.field("offering_id", &self.offering_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeMultiplexProgramRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMultiplexProgramInput {
     /// The ID of the multiplex that the program belongs to.
     #[doc(hidden)]
@@ -12501,18 +12218,10 @@ impl DescribeMultiplexProgramInput {
         self.program_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMultiplexProgramInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMultiplexProgramInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeMultiplexRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMultiplexInput {
     /// The ID of the multiplex.
     #[doc(hidden)]
@@ -12524,17 +12233,10 @@ impl DescribeMultiplexInput {
         self.multiplex_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMultiplexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMultiplexInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeInputSecurityGroupRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputSecurityGroupInput {
     /// The id of the Input Security Group to describe
     #[doc(hidden)]
@@ -12546,17 +12248,10 @@ impl DescribeInputSecurityGroupInput {
         self.input_security_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInputSecurityGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputSecurityGroupInput");
-        formatter.field("input_security_group_id", &self.input_security_group_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeInputDeviceThumbnailRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputDeviceThumbnailInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     #[doc(hidden)]
@@ -12575,18 +12270,10 @@ impl DescribeInputDeviceThumbnailInput {
         self.accept.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeInputDeviceThumbnailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputDeviceThumbnailInput");
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.field("accept", &self.accept);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeInputDeviceRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputDeviceInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     #[doc(hidden)]
@@ -12598,17 +12285,10 @@ impl DescribeInputDeviceInput {
         self.input_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInputDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputDeviceInput");
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeInputRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputInput {
     /// Unique ID of the input
     #[doc(hidden)]
@@ -12620,17 +12300,10 @@ impl DescribeInputInput {
         self.input_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputInput");
-        formatter.field("input_id", &self.input_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DescribeChannelRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// channel ID
     #[doc(hidden)]
@@ -12642,17 +12315,10 @@ impl DescribeChannelInput {
         self.channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DeleteTagsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsInput {
     /// Placeholder documentation for __string
     #[doc(hidden)]
@@ -12671,18 +12337,10 @@ impl DeleteTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DeleteScheduleRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduleInput {
     /// Id of the channel whose schedule is being deleted.
     #[doc(hidden)]
@@ -12694,17 +12352,10 @@ impl DeleteScheduleInput {
         self.channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScheduleInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DeleteReservationRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     #[doc(hidden)]
@@ -12716,17 +12367,10 @@ impl DeleteReservationInput {
         self.reservation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReservationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReservationInput");
-        formatter.field("reservation_id", &self.reservation_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DeleteMultiplexProgramRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMultiplexProgramInput {
     /// The ID of the multiplex that the program belongs to.
     #[doc(hidden)]
@@ -12745,18 +12389,10 @@ impl DeleteMultiplexProgramInput {
         self.program_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMultiplexProgramInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMultiplexProgramInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DeleteMultiplexRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMultiplexInput {
     /// The ID of the multiplex.
     #[doc(hidden)]
@@ -12768,17 +12404,10 @@ impl DeleteMultiplexInput {
         self.multiplex_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMultiplexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMultiplexInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DeleteInputSecurityGroupRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
     #[doc(hidden)]
@@ -12790,17 +12419,10 @@ impl DeleteInputSecurityGroupInput {
         self.input_security_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInputSecurityGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInputSecurityGroupInput");
-        formatter.field("input_security_group_id", &self.input_security_group_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DeleteInputRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInputInput {
     /// Unique ID of the input
     #[doc(hidden)]
@@ -12812,17 +12434,10 @@ impl DeleteInputInput {
         self.input_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInputInput");
-        formatter.field("input_id", &self.input_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for DeleteChannelRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// Unique ID of the channel.
     #[doc(hidden)]
@@ -12834,17 +12449,10 @@ impl DeleteChannelInput {
         self.channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for CreateTagsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTagsInput {
     /// Placeholder documentation for __string
     #[doc(hidden)]
@@ -12867,18 +12475,10 @@ impl CreateTagsInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// A request to create a partner input
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePartnerInputInput {
     /// Unique ID of the input.
     #[doc(hidden)]
@@ -12908,19 +12508,10 @@ impl CreatePartnerInputInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePartnerInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePartnerInputInput");
-        formatter.field("input_id", &self.input_id);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// A request to create a program in a multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMultiplexProgramInput {
     /// ID of the multiplex where the program is to be created.
     #[doc(hidden)]
@@ -12955,23 +12546,10 @@ impl CreateMultiplexProgramInput {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMultiplexProgramInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMultiplexProgramInput");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.field(
-            "multiplex_program_settings",
-            &self.multiplex_program_settings,
-        );
-        formatter.field("program_name", &self.program_name);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
 
 /// A request to create a multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMultiplexInput {
     /// A list of availability zones for the multiplex. You must specify exactly two.
     #[doc(hidden)]
@@ -13015,21 +12593,10 @@ impl CreateMultiplexInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMultiplexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMultiplexInput");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("name", &self.name);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// The IPv4 CIDRs to whitelist for this Input Security Group
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInputSecurityGroupInput {
     /// A collection of key-value pairs.
     #[doc(hidden)]
@@ -13052,18 +12619,10 @@ impl CreateInputSecurityGroupInput {
         self.whitelist_rules.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInputSecurityGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInputSecurityGroupInput");
-        formatter.field("tags", &self.tags);
-        formatter.field("whitelist_rules", &self.whitelist_rules);
-        formatter.finish()
-    }
-}
 
 /// The name of the input
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInputInput {
     /// Destination settings for PUSH type inputs.
     #[doc(hidden)]
@@ -13152,27 +12711,10 @@ impl CreateInputInput {
         self.vpc.as_ref()
     }
 }
-impl std::fmt::Debug for CreateInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInputInput");
-        formatter.field("destinations", &self.destinations);
-        formatter.field("input_devices", &self.input_devices);
-        formatter.field("input_security_groups", &self.input_security_groups);
-        formatter.field("media_connect_flows", &self.media_connect_flows);
-        formatter.field("name", &self.name);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("sources", &self.sources);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
-    }
-}
 
 /// A request to create a channel
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// Specification of CDI inputs for this channel
     #[doc(hidden)]
@@ -13283,30 +12825,10 @@ impl CreateChannelInput {
         self.vpc.as_ref()
     }
 }
-impl std::fmt::Debug for CreateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelInput");
-        formatter.field("cdi_input_specification", &self.cdi_input_specification);
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("encoder_settings", &self.encoder_settings);
-        formatter.field("input_attachments", &self.input_attachments);
-        formatter.field("input_specification", &self.input_specification);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.field("name", &self.name);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("reserved", &self.reserved);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
-    }
-}
 
 /// A request to claim an AWS Elemental device that you have purchased from a third-party vendor.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClaimDeviceInput {
     /// The id of the device you want to claim.
     #[doc(hidden)]
@@ -13318,17 +12840,10 @@ impl ClaimDeviceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for ClaimDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClaimDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for CancelInputDeviceTransferRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelInputDeviceTransferInput {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     #[doc(hidden)]
@@ -13340,17 +12855,10 @@ impl CancelInputDeviceTransferInput {
         self.input_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelInputDeviceTransferInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelInputDeviceTransferInput");
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.finish()
-    }
-}
 
 /// List of actions to create and list of actions to delete.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateScheduleInput {
     /// Id of the channel whose schedule is being updated.
     #[doc(hidden)]
@@ -13376,19 +12884,10 @@ impl BatchUpdateScheduleInput {
         self.deletes.as_ref()
     }
 }
-impl std::fmt::Debug for BatchUpdateScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateScheduleInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("creates", &self.creates);
-        formatter.field("deletes", &self.deletes);
-        formatter.finish()
-    }
-}
 
 /// A request to stop resources
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStopInput {
     /// List of channel IDs
     #[doc(hidden)]
@@ -13407,18 +12906,10 @@ impl BatchStopInput {
         self.multiplex_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchStopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStopInput");
-        formatter.field("channel_ids", &self.channel_ids);
-        formatter.field("multiplex_ids", &self.multiplex_ids);
-        formatter.finish()
-    }
-}
 
 /// A request to start resources
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStartInput {
     /// List of channel IDs
     #[doc(hidden)]
@@ -13437,18 +12928,10 @@ impl BatchStartInput {
         self.multiplex_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchStartInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStartInput");
-        formatter.field("channel_ids", &self.channel_ids);
-        formatter.field("multiplex_ids", &self.multiplex_ids);
-        formatter.finish()
-    }
-}
 
 /// A request to delete resources
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteInput {
     /// List of channel IDs
     #[doc(hidden)]
@@ -13481,20 +12964,10 @@ impl BatchDeleteInput {
         self.multiplex_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteInput");
-        formatter.field("channel_ids", &self.channel_ids);
-        formatter.field("input_ids", &self.input_ids);
-        formatter.field("input_security_group_ids", &self.input_security_group_ids);
-        formatter.field("multiplex_ids", &self.multiplex_ids);
-        formatter.finish()
-    }
-}
 
 /// Placeholder documentation for AcceptInputDeviceTransferRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptInputDeviceTransferInput {
     /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
     #[doc(hidden)]
@@ -13504,12 +12977,5 @@ impl AcceptInputDeviceTransferInput {
     /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
     pub fn input_device_id(&self) -> std::option::Option<&str> {
         self.input_device_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptInputDeviceTransferInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptInputDeviceTransferInput");
-        formatter.field("input_device_id", &self.input_device_id);
-        formatter.finish()
     }
 }

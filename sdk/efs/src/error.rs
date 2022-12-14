@@ -2,7 +2,7 @@
 
 /// <p>Returned if you don’t wait at least 24 hours before either changing the throughput mode, or decreasing the Provisioned Throughput value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequests {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl TooManyRequests {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyRequests {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequests");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl TooManyRequests {
@@ -91,7 +83,7 @@ impl TooManyRequests {
 
 /// <p>Returned if the throughput mode or amount of provisioned throughput can't be changed because the throughput limit of 1024 MiB/s has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThroughputLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl ThroughputLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ThroughputLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThroughputLimitExceeded");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ThroughputLimitExceeded {
@@ -180,7 +164,7 @@ impl ThroughputLimitExceeded {
 
 /// <p>Returned if an error occurred on the server side.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -193,14 +177,6 @@ impl InternalServerError {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalServerError {
@@ -269,7 +245,7 @@ impl InternalServerError {
 
 /// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from Bursting Throughput to Provisioned Throughput mode. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientThroughputCapacity {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -282,14 +258,6 @@ impl InsufficientThroughputCapacity {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InsufficientThroughputCapacity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientThroughputCapacity");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InsufficientThroughputCapacity {
@@ -358,7 +326,7 @@ impl InsufficientThroughputCapacity {
 
 /// <p>Returned if the file system's lifecycle state is not "available".</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncorrectFileSystemLifeCycleState {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -371,14 +339,6 @@ impl IncorrectFileSystemLifeCycleState {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for IncorrectFileSystemLifeCycleState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncorrectFileSystemLifeCycleState");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl IncorrectFileSystemLifeCycleState {
@@ -447,7 +407,7 @@ impl IncorrectFileSystemLifeCycleState {
 
 /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -460,14 +420,6 @@ impl FileSystemNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemNotFound");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl FileSystemNotFound {
@@ -536,7 +488,7 @@ impl FileSystemNotFound {
 
 /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequest {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -549,14 +501,6 @@ impl BadRequest {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for BadRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequest");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl BadRequest {
@@ -625,7 +569,7 @@ impl BadRequest {
 
 /// <p>Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPointNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -638,14 +582,6 @@ impl AccessPointNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessPointNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPointNotFound");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AccessPointNotFound {
@@ -714,7 +650,7 @@ impl AccessPointNotFound {
 
 /// <p>Returned if the <code>FileSystemPolicy</code> is malformed or contains an error such as a parameter value that is not valid or a missing required parameter. Returned in the case of a policy lockout safety check error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPolicyException {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -727,14 +663,6 @@ impl InvalidPolicyException {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPolicyException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidPolicyException {
@@ -803,7 +731,7 @@ impl InvalidPolicyException {
 
 /// <p>Returned if the Backup service is not available in the Amazon Web Services Region in which the request was made.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -816,14 +744,6 @@ impl ValidationException {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -892,7 +812,7 @@ impl ValidationException {
 
 /// <p>Returned if one of the specified security groups doesn't exist in the subnet's virtual private cloud (VPC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -905,14 +825,6 @@ impl SecurityGroupNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityGroupNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupNotFound");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl SecurityGroupNotFound {
@@ -981,7 +893,7 @@ impl SecurityGroupNotFound {
 
 /// <p>Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -994,14 +906,6 @@ impl SecurityGroupLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityGroupLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupLimitExceeded");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl SecurityGroupLimitExceeded {
@@ -1070,7 +974,7 @@ impl SecurityGroupLimitExceeded {
 
 /// <p>Returned if there is no mount target with the specified ID found in the caller's Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MountTargetNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1083,14 +987,6 @@ impl MountTargetNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for MountTargetNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MountTargetNotFound");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl MountTargetNotFound {
@@ -1159,7 +1055,7 @@ impl MountTargetNotFound {
 
 /// <p>Returned if the mount target is not in the correct state for the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncorrectMountTargetState {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1172,14 +1068,6 @@ impl IncorrectMountTargetState {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for IncorrectMountTargetState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncorrectMountTargetState");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl IncorrectMountTargetState {
@@ -1248,7 +1136,7 @@ impl IncorrectMountTargetState {
 
 /// <p>Returned if the specified file system does not have a replication configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationNotFound {
     /// <p>ReplicationNotFound</p>
     #[doc(hidden)]
@@ -1261,14 +1149,6 @@ impl ReplicationNotFound {
     /// <p>ReplicationNotFound</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationNotFound");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ReplicationNotFound {
@@ -1337,7 +1217,7 @@ impl ReplicationNotFound {
 
 /// <p>Returned if the default file system policy is in effect for the EFS file system specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1350,14 +1230,6 @@ impl PolicyNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyNotFound");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl PolicyNotFound {
@@ -1426,7 +1298,7 @@ impl PolicyNotFound {
 
 /// <p>The service timed out trying to fulfill the request, and the client should try the call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DependencyTimeout {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1439,14 +1311,6 @@ impl DependencyTimeout {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for DependencyTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependencyTimeout");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl DependencyTimeout {
@@ -1515,7 +1379,7 @@ impl DependencyTimeout {
 
 /// <p>Returned if a file system has mount targets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemInUse {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1528,14 +1392,6 @@ impl FileSystemInUse {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemInUse");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl FileSystemInUse {
@@ -1604,7 +1460,7 @@ impl FileSystemInUse {
 
 /// <p>Returned if the requested Amazon EFS functionality is not available in the specified Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedAvailabilityZone {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1617,14 +1473,6 @@ impl UnsupportedAvailabilityZone {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedAvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedAvailabilityZone");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl UnsupportedAvailabilityZone {
@@ -1693,7 +1541,7 @@ impl UnsupportedAvailabilityZone {
 
 /// <p>Returned if the Amazon Web Services account has already created the maximum number of file systems allowed per account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1706,14 +1554,6 @@ impl FileSystemLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemLimitExceeded");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl FileSystemLimitExceeded {
@@ -1782,7 +1622,7 @@ impl FileSystemLimitExceeded {
 
 /// <p>Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1795,14 +1635,6 @@ impl SubnetNotFound {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for SubnetNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetNotFound");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl SubnetNotFound {
@@ -1871,7 +1703,7 @@ impl SubnetNotFound {
 
 /// <p>Returned if <code>IpAddress</code> was not specified in the request and there are no free IP addresses in the subnet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoFreeAddressesInSubnet {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1884,14 +1716,6 @@ impl NoFreeAddressesInSubnet {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for NoFreeAddressesInSubnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoFreeAddressesInSubnet");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl NoFreeAddressesInSubnet {
@@ -1960,7 +1784,7 @@ impl NoFreeAddressesInSubnet {
 
 /// <p>The calling account has reached the limit for elastic network interfaces for the specific Amazon Web Services Region. Either delete some network interfaces or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces per Region</b> entry in the <b>Network interfaces</b> table). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterfaceLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -1973,14 +1797,6 @@ impl NetworkInterfaceLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterfaceLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterfaceLimitExceeded");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl NetworkInterfaceLimitExceeded {
@@ -2049,7 +1865,7 @@ impl NetworkInterfaceLimitExceeded {
 
 /// <p>Returned if the mount target would violate one of the specified restrictions based on the file system's existing mount targets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MountTargetConflict {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -2062,14 +1878,6 @@ impl MountTargetConflict {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for MountTargetConflict {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MountTargetConflict");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl MountTargetConflict {
@@ -2138,7 +1946,7 @@ impl MountTargetConflict {
 
 /// <p>Returned if the request specified an <code>IpAddress</code> that is already in use in the subnet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpAddressInUse {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -2151,14 +1959,6 @@ impl IpAddressInUse {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for IpAddressInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpAddressInUse");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl IpAddressInUse {
@@ -2227,7 +2027,7 @@ impl IpAddressInUse {
 
 /// <p>Returned if the Availability Zone that was specified for a mount target is different from the Availability Zone that was specified for One Zone storage. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional and One Zone storage redundancy</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZonesMismatch {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -2240,14 +2040,6 @@ impl AvailabilityZonesMismatch {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailabilityZonesMismatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZonesMismatch");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AvailabilityZonesMismatch {
@@ -2316,7 +2108,7 @@ impl AvailabilityZonesMismatch {
 
 /// <p>Returned if the file system you are trying to create already exists, with the creation token you provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemAlreadyExists {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -2336,15 +2128,6 @@ impl FileSystemAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemAlreadyExists");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
     }
 }
 impl FileSystemAlreadyExists {
@@ -2428,7 +2211,7 @@ impl FileSystemAlreadyExists {
 
 /// <p>Returned when the <code>CreateAccessPoint</code> API action is called too quickly and the number of Access Points in the account is nearing the limit of 120.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -2441,14 +2224,6 @@ impl ThrottlingException {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -2517,7 +2292,7 @@ impl ThrottlingException {
 
 /// <p>Returned if the Amazon Web Services account has already created the maximum number of access points allowed per file system. For more informaton, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPointLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -2530,14 +2305,6 @@ impl AccessPointLimitExceeded {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessPointLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPointLimitExceeded");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AccessPointLimitExceeded {
@@ -2606,7 +2373,7 @@ impl AccessPointLimitExceeded {
 
 /// <p>Returned if the access point that you are trying to create already exists, with the creation token you provided in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPointAlreadyExists {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     #[doc(hidden)]
@@ -2626,15 +2393,6 @@ impl AccessPointAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     pub fn access_point_id(&self) -> std::option::Option<&str> {
         self.access_point_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessPointAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPointAlreadyExists");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.field("access_point_id", &self.access_point_id);
-        formatter.finish()
     }
 }
 impl AccessPointAlreadyExists {

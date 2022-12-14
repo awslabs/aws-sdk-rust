@@ -2,7 +2,7 @@
 
 /// <p>Contains information about a validation exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the validation exception.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>A message about the validation exception.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>Contains information about the analyzer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzerSummary {
     /// <p>The ARN of the analyzer.</p>
     #[doc(hidden)]
@@ -254,21 +246,6 @@ impl AnalyzerSummary {
     /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
     pub fn status_reason(&self) -> std::option::Option<&crate::model::StatusReason> {
         self.status_reason.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalyzerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzerSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_resource_analyzed", &self.last_resource_analyzed);
-        formatter.field("last_resource_analyzed_at", &self.last_resource_analyzed_at);
-        formatter.field("tags", &self.tags);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`AnalyzerSummary`](crate::model::AnalyzerSummary).
@@ -435,7 +412,7 @@ impl AnalyzerSummary {
 
 /// <p>Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
     #[doc(hidden)]
@@ -445,13 +422,6 @@ impl StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
     pub fn code(&self) -> std::option::Option<&crate::model::ReasonCode> {
         self.code.as_ref()
-    }
-}
-impl std::fmt::Debug for StatusReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatusReason");
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 /// See [`StatusReason`](crate::model::StatusReason).
@@ -787,7 +757,7 @@ impl AsRef<str> for Type {
 
 /// <p>An criterion statement in an archive rule. Each archive rule may have multiple criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InlineArchiveRule {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -809,14 +779,6 @@ impl InlineArchiveRule {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
     {
         self.filter.as_ref()
-    }
-}
-impl std::fmt::Debug for InlineArchiveRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InlineArchiveRule");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
     }
 }
 /// See [`InlineArchiveRule`](crate::model::InlineArchiveRule).
@@ -884,7 +846,7 @@ impl InlineArchiveRule {
 
 /// <p>The criteria to use in the filter that defines the archive rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Criterion {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
     #[doc(hidden)]
@@ -915,16 +877,6 @@ impl Criterion {
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
     pub fn exists(&self) -> std::option::Option<bool> {
         self.exists
-    }
-}
-impl std::fmt::Debug for Criterion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Criterion");
-        formatter.field("eq", &self.eq);
-        formatter.field("neq", &self.neq);
-        formatter.field("contains", &self.contains);
-        formatter.field("exists", &self.exists);
-        formatter.finish()
     }
 }
 /// See [`Criterion`](crate::model::Criterion).
@@ -1026,7 +978,7 @@ impl Criterion {
 
 /// <p>Contains information about an archive rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveRuleSummary {
     /// <p>The name of the archive rule.</p>
     #[doc(hidden)]
@@ -1062,16 +1014,6 @@ impl ArchiveRuleSummary {
     /// <p>The time at which the archive rule was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ArchiveRuleSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveRuleSummary");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("filter", &self.filter);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`ArchiveRuleSummary`](crate::model::ArchiveRuleSummary).
@@ -1169,7 +1111,7 @@ impl ArchiveRuleSummary {
 
 /// <p>A finding in a policy. Each finding is an actionable recommendation that can be used to improve the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidatePolicyFinding {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     #[doc(hidden)]
@@ -1215,17 +1157,6 @@ impl ValidatePolicyFinding {
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
     pub fn locations(&self) -> std::option::Option<&[crate::model::Location]> {
         self.locations.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidatePolicyFinding {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidatePolicyFinding");
-        formatter.field("finding_details", &self.finding_details);
-        formatter.field("finding_type", &self.finding_type);
-        formatter.field("issue_code", &self.issue_code);
-        formatter.field("learn_more_link", &self.learn_more_link);
-        formatter.field("locations", &self.locations);
-        formatter.finish()
     }
 }
 /// See [`ValidatePolicyFinding`](crate::model::ValidatePolicyFinding).
@@ -1338,7 +1269,7 @@ impl ValidatePolicyFinding {
 
 /// <p>A location in a policy that is represented as a path through the JSON representation and a corresponding span.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Location {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
     #[doc(hidden)]
@@ -1355,14 +1286,6 @@ impl Location {
     /// <p>A span in a policy.</p>
     pub fn span(&self) -> std::option::Option<&crate::model::Span> {
         self.span.as_ref()
-    }
-}
-impl std::fmt::Debug for Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Location");
-        formatter.field("path", &self.path);
-        formatter.field("span", &self.span);
-        formatter.finish()
     }
 }
 /// See [`Location`](crate::model::Location).
@@ -1422,7 +1345,7 @@ impl Location {
 
 /// <p>A span in a policy. The span consists of a start position (inclusive) and end position (exclusive).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Span {
     /// <p>The start position of the span (inclusive).</p>
     #[doc(hidden)]
@@ -1439,14 +1362,6 @@ impl Span {
     /// <p>The end position of the span (exclusive).</p>
     pub fn end(&self) -> std::option::Option<&crate::model::Position> {
         self.end.as_ref()
-    }
-}
-impl std::fmt::Debug for Span {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Span");
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.finish()
     }
 }
 /// See [`Span`](crate::model::Span).
@@ -1497,7 +1412,7 @@ impl Span {
 
 /// <p>A position in a policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Position {
     /// <p>The line of the position, starting from 1.</p>
     #[doc(hidden)]
@@ -1521,15 +1436,6 @@ impl Position {
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
     pub fn offset(&self) -> std::option::Option<i32> {
         self.offset
-    }
-}
-impl std::fmt::Debug for Position {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Position");
-        formatter.field("line", &self.line);
-        formatter.field("column", &self.column);
-        formatter.field("offset", &self.offset);
-        formatter.finish()
     }
 }
 /// See [`Position`](crate::model::Position).
@@ -1673,7 +1579,7 @@ impl PathElement {
 
 /// <p>A reference to a substring of a literal string in a JSON document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Substring {
     /// <p>The start index of the substring, starting from 0.</p>
     #[doc(hidden)]
@@ -1690,14 +1596,6 @@ impl Substring {
     /// <p>The length of the substring.</p>
     pub fn length(&self) -> std::option::Option<i32> {
         self.length
-    }
-}
-impl std::fmt::Debug for Substring {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Substring");
-        formatter.field("start", &self.start);
-        formatter.field("length", &self.length);
-        formatter.finish()
     }
 }
 /// See [`Substring`](crate::model::Substring).
@@ -2294,7 +2192,7 @@ impl AsRef<str> for FindingStatusUpdate {
 
 /// <p>Contains information about CloudTrail access.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudTrailDetails {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
     #[doc(hidden)]
@@ -2325,16 +2223,6 @@ impl CloudTrailDetails {
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for CloudTrailDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudTrailDetails");
-        formatter.field("trails", &self.trails);
-        formatter.field("access_role", &self.access_role);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`CloudTrailDetails`](crate::model::CloudTrailDetails).
@@ -2424,7 +2312,7 @@ impl CloudTrailDetails {
 
 /// <p>Contains details about the CloudTrail trail being analyzed to generate a policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Trail {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     #[doc(hidden)]
@@ -2448,15 +2336,6 @@ impl Trail {
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn all_regions(&self) -> std::option::Option<bool> {
         self.all_regions
-    }
-}
-impl std::fmt::Debug for Trail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Trail");
-        formatter.field("cloud_trail_arn", &self.cloud_trail_arn);
-        formatter.field("regions", &self.regions);
-        formatter.field("all_regions", &self.all_regions);
-        formatter.finish()
     }
 }
 /// See [`Trail`](crate::model::Trail).
@@ -2531,7 +2410,7 @@ impl Trail {
 
 /// <p>Contains the ARN details about the IAM entity for which the policy is generated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     #[doc(hidden)]
@@ -2541,13 +2420,6 @@ impl PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyGenerationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyGenerationDetails");
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.finish()
     }
 }
 /// See [`PolicyGenerationDetails`](crate::model::PolicyGenerationDetails).
@@ -2589,7 +2461,7 @@ impl PolicyGenerationDetails {
 
 /// <p>Contains details about the policy generation status and properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyGeneration {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
@@ -2627,17 +2499,6 @@ impl PolicyGeneration {
     /// <p>A timestamp of when the policy generation was completed.</p>
     pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyGeneration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyGeneration");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("status", &self.status);
-        formatter.field("started_on", &self.started_on);
-        formatter.field("completed_on", &self.completed_on);
-        formatter.finish()
     }
 }
 /// See [`PolicyGeneration`](crate::model::PolicyGeneration).
@@ -2833,7 +2694,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p>Contains information about a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingSummary {
     /// <p>The ID of the finding.</p>
     #[doc(hidden)]
@@ -2942,26 +2803,6 @@ impl FindingSummary {
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
         self.sources.as_deref()
-    }
-}
-impl std::fmt::Debug for FindingSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingSummary");
-        formatter.field("id", &self.id);
-        formatter.field("principal", &self.principal);
-        formatter.field("action", &self.action);
-        formatter.field("resource", &self.resource);
-        formatter.field("is_public", &self.is_public);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("condition", &self.condition);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("analyzed_at", &self.analyzed_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("status", &self.status);
-        formatter.field("resource_owner_account", &self.resource_owner_account);
-        formatter.field("error", &self.error);
-        formatter.field("sources", &self.sources);
-        formatter.finish()
     }
 }
 /// See [`FindingSummary`](crate::model::FindingSummary).
@@ -3226,7 +3067,7 @@ impl FindingSummary {
 
 /// <p>The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
     #[doc(hidden)]
@@ -3243,14 +3084,6 @@ impl FindingSource {
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn detail(&self) -> std::option::Option<&crate::model::FindingSourceDetail> {
         self.detail.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingSource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("detail", &self.detail);
-        formatter.finish()
     }
 }
 /// See [`FindingSource`](crate::model::FindingSource).
@@ -3307,7 +3140,7 @@ impl FindingSource {
 
 /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     #[doc(hidden)]
@@ -3317,13 +3150,6 @@ impl FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     pub fn access_point_arn(&self) -> std::option::Option<&str> {
         self.access_point_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for FindingSourceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingSourceDetail");
-        formatter.field("access_point_arn", &self.access_point_arn);
-        formatter.finish()
     }
 }
 /// See [`FindingSourceDetail`](crate::model::FindingSourceDetail).
@@ -3680,7 +3506,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>The criteria used to sort.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SortCriteria {
     /// <p>The name of the attribute to sort on.</p>
     #[doc(hidden)]
@@ -3697,14 +3523,6 @@ impl SortCriteria {
     /// <p>The sort order, ascending or descending.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
-    }
-}
-impl std::fmt::Debug for SortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SortCriteria");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
     }
 }
 /// See [`SortCriteria`](crate::model::SortCriteria).
@@ -3848,7 +3666,7 @@ impl AsRef<str> for OrderBy {
 
 /// <p>Contains the ARN of the analyzed resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzedResourceSummary {
     /// <p>The ARN of the analyzed resource.</p>
     #[doc(hidden)]
@@ -3872,15 +3690,6 @@ impl AnalyzedResourceSummary {
     /// <p>The type of resource that was analyzed.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalyzedResourceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzedResourceSummary");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_owner_account", &self.resource_owner_account);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`AnalyzedResourceSummary`](crate::model::AnalyzedResourceSummary).
@@ -3949,7 +3758,7 @@ impl AnalyzedResourceSummary {
 
 /// <p>Contains a summary of information about an access preview.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPreviewSummary {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
@@ -3997,17 +3806,6 @@ impl AccessPreviewSummary {
     /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
     pub fn status_reason(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessPreviewSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPreviewSummary");
-        formatter.field("id", &self.id);
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`AccessPreviewSummary`](crate::model::AccessPreviewSummary).
@@ -4113,7 +3911,7 @@ impl AccessPreviewSummary {
 
 /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
     #[doc(hidden)]
@@ -4123,13 +3921,6 @@ impl AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
     pub fn code(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReasonCode> {
         self.code.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessPreviewStatusReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPreviewStatusReason");
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 /// See [`AccessPreviewStatusReason`](crate::model::AccessPreviewStatusReason).
@@ -4358,7 +4149,7 @@ impl AsRef<str> for AccessPreviewStatus {
 
 /// <p>An access preview finding generated by the access preview.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPreviewFinding {
     /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
     #[doc(hidden)]
@@ -4486,27 +4277,6 @@ impl AccessPreviewFinding {
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
         self.sources.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessPreviewFinding {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPreviewFinding");
-        formatter.field("id", &self.id);
-        formatter.field("existing_finding_id", &self.existing_finding_id);
-        formatter.field("existing_finding_status", &self.existing_finding_status);
-        formatter.field("principal", &self.principal);
-        formatter.field("action", &self.action);
-        formatter.field("condition", &self.condition);
-        formatter.field("resource", &self.resource);
-        formatter.field("is_public", &self.is_public);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("change_type", &self.change_type);
-        formatter.field("status", &self.status);
-        formatter.field("resource_owner_account", &self.resource_owner_account);
-        formatter.field("error", &self.error);
-        formatter.field("sources", &self.sources);
-        formatter.finish()
     }
 }
 /// See [`AccessPreviewFinding`](crate::model::AccessPreviewFinding).
@@ -4895,7 +4665,7 @@ impl AsRef<str> for FindingChangeType {
 
 /// <p>Contains the text for the generated policy and its details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeneratedPolicyResult {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
     #[doc(hidden)]
@@ -4912,14 +4682,6 @@ impl GeneratedPolicyResult {
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub fn generated_policies(&self) -> std::option::Option<&[crate::model::GeneratedPolicy]> {
         self.generated_policies.as_deref()
-    }
-}
-impl std::fmt::Debug for GeneratedPolicyResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeneratedPolicyResult");
-        formatter.field("properties", &self.properties);
-        formatter.field("generated_policies", &self.generated_policies);
-        formatter.finish()
     }
 }
 /// See [`GeneratedPolicyResult`](crate::model::GeneratedPolicyResult).
@@ -4983,7 +4745,7 @@ impl GeneratedPolicyResult {
 
 /// <p>Contains the text for the generated policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeneratedPolicy {
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     #[doc(hidden)]
@@ -4993,13 +4755,6 @@ impl GeneratedPolicy {
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
-    }
-}
-impl std::fmt::Debug for GeneratedPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeneratedPolicy");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
     }
 }
 /// See [`GeneratedPolicy`](crate::model::GeneratedPolicy).
@@ -5038,7 +4793,7 @@ impl GeneratedPolicy {
 
 /// <p>Contains the generated policy details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeneratedPolicyProperties {
     /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
     #[doc(hidden)]
@@ -5064,15 +4819,6 @@ impl GeneratedPolicyProperties {
         &self,
     ) -> std::option::Option<&crate::model::CloudTrailProperties> {
         self.cloud_trail_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for GeneratedPolicyProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeneratedPolicyProperties");
-        formatter.field("is_complete", &self.is_complete);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("cloud_trail_properties", &self.cloud_trail_properties);
-        formatter.finish()
     }
 }
 /// See [`GeneratedPolicyProperties`](crate::model::GeneratedPolicyProperties).
@@ -5141,7 +4887,7 @@ impl GeneratedPolicyProperties {
 
 /// <p>Contains information about CloudTrail access.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudTrailProperties {
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
     #[doc(hidden)]
@@ -5165,15 +4911,6 @@ impl CloudTrailProperties {
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for CloudTrailProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudTrailProperties");
-        formatter.field("trail_properties", &self.trail_properties);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`CloudTrailProperties`](crate::model::CloudTrailProperties).
@@ -5252,7 +4989,7 @@ impl CloudTrailProperties {
 
 /// <p>Contains details about the CloudTrail trail being analyzed to generate a policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrailProperties {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     #[doc(hidden)]
@@ -5276,15 +5013,6 @@ impl TrailProperties {
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn all_regions(&self) -> std::option::Option<bool> {
         self.all_regions
-    }
-}
-impl std::fmt::Debug for TrailProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrailProperties");
-        formatter.field("cloud_trail_arn", &self.cloud_trail_arn);
-        formatter.field("regions", &self.regions);
-        formatter.field("all_regions", &self.all_regions);
-        formatter.finish()
     }
 }
 /// See [`TrailProperties`](crate::model::TrailProperties).
@@ -5359,7 +5087,7 @@ impl TrailProperties {
 
 /// <p>Contains details about the policy generation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDetails {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
@@ -5397,17 +5125,6 @@ impl JobDetails {
     /// <p>The job error for the policy generation request.</p>
     pub fn job_error(&self) -> std::option::Option<&crate::model::JobError> {
         self.job_error.as_ref()
-    }
-}
-impl std::fmt::Debug for JobDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobDetails");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("status", &self.status);
-        formatter.field("started_on", &self.started_on);
-        formatter.field("completed_on", &self.completed_on);
-        formatter.field("job_error", &self.job_error);
-        formatter.finish()
     }
 }
 /// See [`JobDetails`](crate::model::JobDetails).
@@ -5500,7 +5217,7 @@ impl JobDetails {
 
 /// <p>Contains the details about the policy generation error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobError {
     /// <p>The job error code.</p>
     #[doc(hidden)]
@@ -5517,14 +5234,6 @@ impl JobError {
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for JobError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobError");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`JobError`](crate::model::JobError).
@@ -5680,7 +5389,7 @@ impl AsRef<str> for JobErrorCode {
 
 /// <p>Contains information about a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Finding {
     /// <p>The ID of the finding.</p>
     #[doc(hidden)]
@@ -5789,26 +5498,6 @@ impl Finding {
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
         self.sources.as_deref()
-    }
-}
-impl std::fmt::Debug for Finding {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Finding");
-        formatter.field("id", &self.id);
-        formatter.field("principal", &self.principal);
-        formatter.field("action", &self.action);
-        formatter.field("resource", &self.resource);
-        formatter.field("is_public", &self.is_public);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("condition", &self.condition);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("analyzed_at", &self.analyzed_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("status", &self.status);
-        formatter.field("resource_owner_account", &self.resource_owner_account);
-        formatter.field("error", &self.error);
-        formatter.field("sources", &self.sources);
-        formatter.finish()
     }
 }
 /// See [`Finding`](crate::model::Finding).
@@ -6073,7 +5762,7 @@ impl Finding {
 
 /// <p>Contains details about the analyzed resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzedResource {
     /// <p>The ARN of the resource that was analyzed.</p>
     #[doc(hidden)]
@@ -6153,23 +5842,6 @@ impl AnalyzedResource {
     /// <p>An error message.</p>
     pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalyzedResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzedResource");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("analyzed_at", &self.analyzed_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("is_public", &self.is_public);
-        formatter.field("actions", &self.actions);
-        formatter.field("shared_via", &self.shared_via);
-        formatter.field("status", &self.status);
-        formatter.field("resource_owner_account", &self.resource_owner_account);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`AnalyzedResource`](crate::model::AnalyzedResource).
@@ -6364,7 +6036,7 @@ impl AnalyzedResource {
 
 /// <p>Contains information about an access preview.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPreview {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
@@ -6427,18 +6099,6 @@ impl AccessPreview {
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     pub fn status_reason(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessPreview {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPreview");
-        formatter.field("id", &self.id);
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`AccessPreview`](crate::model::AccessPreview).
@@ -6673,7 +6333,7 @@ impl Configuration {
 
 /// <p>The proposed access control configuration for an Amazon SQS queue. You can propose a configuration for a new Amazon SQS queue or an existing Amazon SQS queue that you own by specifying the Amazon SQS policy. If the configuration is for an existing Amazon SQS queue and you do not specify the Amazon SQS policy, the access preview uses the existing Amazon SQS policy for the queue. If the access preview is for a new resource and you do not specify the policy, the access preview assumes an Amazon SQS queue without a policy. To propose deletion of an existing Amazon SQS queue policy, you can specify an empty string for the Amazon SQS policy. For more information about Amazon SQS policy limits, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html">Quotas related to policies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqsQueueConfiguration {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
     #[doc(hidden)]
@@ -6683,13 +6343,6 @@ impl SqsQueueConfiguration {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
     pub fn queue_policy(&self) -> std::option::Option<&str> {
         self.queue_policy.as_deref()
-    }
-}
-impl std::fmt::Debug for SqsQueueConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqsQueueConfiguration");
-        formatter.field("queue_policy", &self.queue_policy);
-        formatter.finish()
     }
 }
 /// See [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
@@ -6728,7 +6381,7 @@ impl SqsQueueConfiguration {
 
 /// <p>Proposed access control configuration for an Amazon S3 bucket. You can propose a configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, Amazon S3 access points, and multi-region access points attached to the bucket. If the configuration is for an existing Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the existing policy attached to the bucket. If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more information about bucket policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Bucket Policy Examples</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketConfiguration {
     /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -6771,19 +6424,6 @@ impl S3BucketConfiguration {
         &std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
     > {
         self.access_points.as_ref()
-    }
-}
-impl std::fmt::Debug for S3BucketConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketConfiguration");
-        formatter.field("bucket_policy", &self.bucket_policy);
-        formatter.field("bucket_acl_grants", &self.bucket_acl_grants);
-        formatter.field(
-            "bucket_public_access_block",
-            &self.bucket_public_access_block,
-        );
-        formatter.field("access_points", &self.access_points);
-        formatter.finish()
     }
 }
 /// See [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
@@ -6904,7 +6544,7 @@ impl S3BucketConfiguration {
 
 /// <p>The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points restrictions and limitations</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3AccessPointConfiguration {
     /// <p>The access point or multi-region access point policy.</p>
     #[doc(hidden)]
@@ -6930,15 +6570,6 @@ impl S3AccessPointConfiguration {
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
     pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOriginConfiguration> {
         self.network_origin.as_ref()
-    }
-}
-impl std::fmt::Debug for S3AccessPointConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3AccessPointConfiguration");
-        formatter.field("access_point_policy", &self.access_point_policy);
-        formatter.field("public_access_block", &self.public_access_block);
-        formatter.field("network_origin", &self.network_origin);
-        formatter.finish()
     }
 }
 /// See [`S3AccessPointConfiguration`](crate::model::S3AccessPointConfiguration).
@@ -7069,14 +6700,8 @@ impl NetworkOriginConfiguration {
 
 /// <p>This configuration sets the network origin for the Amazon S3 access point or multi-region access point to <code>Internet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternetConfiguration {}
-impl std::fmt::Debug for InternetConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternetConfiguration");
-        formatter.finish()
-    }
-}
 /// See [`InternetConfiguration`](crate::model::InternetConfiguration).
 pub mod internet_configuration {
 
@@ -7099,7 +6724,7 @@ impl InternetConfiguration {
 
 /// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
     #[doc(hidden)]
@@ -7109,13 +6734,6 @@ impl VpcConfiguration {
     /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfiguration");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -7154,7 +6772,7 @@ impl VpcConfiguration {
 
 /// <p>The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point or multi-region access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3PublicAccessBlockConfiguration {
     /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
     #[doc(hidden)]
@@ -7171,14 +6789,6 @@ impl S3PublicAccessBlockConfiguration {
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
     pub fn restrict_public_buckets(&self) -> std::option::Option<bool> {
         self.restrict_public_buckets
-    }
-}
-impl std::fmt::Debug for S3PublicAccessBlockConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3PublicAccessBlockConfiguration");
-        formatter.field("ignore_public_acls", &self.ignore_public_acls);
-        formatter.field("restrict_public_buckets", &self.restrict_public_buckets);
-        formatter.finish()
     }
 }
 /// See [`S3PublicAccessBlockConfiguration`](crate::model::S3PublicAccessBlockConfiguration).
@@ -7229,7 +6839,7 @@ impl S3PublicAccessBlockConfiguration {
 
 /// <p>A proposed access control list grant configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls">How to Specify an ACL</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketAclGrantConfiguration {
     /// <p>The permissions being granted.</p>
     #[doc(hidden)]
@@ -7246,14 +6856,6 @@ impl S3BucketAclGrantConfiguration {
     /// <p>The grantee to whom you’re assigning access rights.</p>
     pub fn grantee(&self) -> std::option::Option<&crate::model::AclGrantee> {
         self.grantee.as_ref()
-    }
-}
-impl std::fmt::Debug for S3BucketAclGrantConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketAclGrantConfiguration");
-        formatter.field("permission", &self.permission);
-        formatter.field("grantee", &self.grantee);
-        formatter.finish()
     }
 }
 /// See [`S3BucketAclGrantConfiguration`](crate::model::S3BucketAclGrantConfiguration).
@@ -7464,7 +7066,7 @@ impl AsRef<str> for AclPermission {
 /// <p>The configuration for a Secrets Manager secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html">CreateSecret</a>.</p>
 /// <p>You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you specify an empty string for the KMS key ID, the access preview uses the Amazon Web Services managed key of the Amazon Web Services account. For more information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for Secrets Manager.</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecretsManagerSecretConfiguration {
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
     #[doc(hidden)]
@@ -7481,14 +7083,6 @@ impl SecretsManagerSecretConfiguration {
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
     pub fn secret_policy(&self) -> std::option::Option<&str> {
         self.secret_policy.as_deref()
-    }
-}
-impl std::fmt::Debug for SecretsManagerSecretConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecretsManagerSecretConfiguration");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("secret_policy", &self.secret_policy);
-        formatter.finish()
     }
 }
 /// See [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
@@ -7543,7 +7137,7 @@ impl SecretsManagerSecretConfiguration {
 /// <p>Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>. For more information about key policy limits, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource quotas</a>.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsKeyConfiguration {
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
     #[doc(hidden)]
@@ -7564,14 +7158,6 @@ impl KmsKeyConfiguration {
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
     pub fn grants(&self) -> std::option::Option<&[crate::model::KmsGrantConfiguration]> {
         self.grants.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsKeyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKeyConfiguration");
-        formatter.field("key_policies", &self.key_policies);
-        formatter.field("grants", &self.grants);
-        formatter.finish()
     }
 }
 /// See [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
@@ -7648,7 +7234,7 @@ impl KmsKeyConfiguration {
 
 /// <p>A proposed grant configuration for a KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsGrantConfiguration {
     /// <p>A list of operations that the grant permits.</p>
     #[doc(hidden)]
@@ -7686,17 +7272,6 @@ impl KmsGrantConfiguration {
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     pub fn issuing_account(&self) -> std::option::Option<&str> {
         self.issuing_account.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsGrantConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsGrantConfiguration");
-        formatter.field("operations", &self.operations);
-        formatter.field("grantee_principal", &self.grantee_principal);
-        formatter.field("retiring_principal", &self.retiring_principal);
-        formatter.field("constraints", &self.constraints);
-        formatter.field("issuing_account", &self.issuing_account);
-        formatter.finish()
     }
 }
 /// See [`KmsGrantConfiguration`](crate::model::KmsGrantConfiguration).
@@ -7804,7 +7379,7 @@ impl KmsGrantConfiguration {
 
 /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. You can specify only one type of encryption context. An empty map is treated as not specified. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GrantConstraints.html">GrantConstraints</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsGrantConstraints {
     /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
     #[doc(hidden)]
@@ -7829,14 +7404,6 @@ impl KmsGrantConstraints {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.encryption_context_subset.as_ref()
-    }
-}
-impl std::fmt::Debug for KmsGrantConstraints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsGrantConstraints");
-        formatter.field("encryption_context_equals", &self.encryption_context_equals);
-        formatter.field("encryption_context_subset", &self.encryption_context_subset);
-        formatter.finish()
     }
 }
 /// See [`KmsGrantConstraints`](crate::model::KmsGrantConstraints).
@@ -8092,7 +7659,7 @@ impl AsRef<str> for KmsGrantOperation {
 
 /// <p>The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamRoleConfiguration {
     /// <p>The proposed trust policy for the IAM role.</p>
     #[doc(hidden)]
@@ -8102,13 +7669,6 @@ impl IamRoleConfiguration {
     /// <p>The proposed trust policy for the IAM role.</p>
     pub fn trust_policy(&self) -> std::option::Option<&str> {
         self.trust_policy.as_deref()
-    }
-}
-impl std::fmt::Debug for IamRoleConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamRoleConfiguration");
-        formatter.field("trust_policy", &self.trust_policy);
-        formatter.finish()
     }
 }
 /// See [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).

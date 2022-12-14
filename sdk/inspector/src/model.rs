@@ -1204,7 +1204,7 @@ impl AsRef<str> for InvalidCrossAccountRoleErrorCode {
 
 /// <p>Used in the exception error that is thrown if you start an assessment run for an assessment target that includes an EC2 instance that is already participating in another started assessment run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentAlreadyRunningAssessment {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
     #[doc(hidden)]
@@ -1221,14 +1221,6 @@ impl AgentAlreadyRunningAssessment {
     /// <p>The ARN of the assessment run that has already been started.</p>
     pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AgentAlreadyRunningAssessment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentAlreadyRunningAssessment");
-        formatter.field("agent_id", &self.agent_id);
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.finish()
     }
 }
 /// See [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
@@ -1282,7 +1274,7 @@ impl AgentAlreadyRunningAssessment {
 
 /// <p>A key and value pair. This data type is used as a request parameter in the <code>SetTagsForResource</code> action and a response element in the <code>ListTagsForResource</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A tag key.</p>
     #[doc(hidden)]
@@ -1299,14 +1291,6 @@ impl Tag {
     /// <p>A value assigned to a tag key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1357,7 +1341,7 @@ impl Tag {
 
 /// <p>Includes details about the failed items.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedItemDetails {
     /// <p>The status code of a failed item.</p>
     #[doc(hidden)]
@@ -1374,14 +1358,6 @@ impl FailedItemDetails {
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
     pub fn retryable(&self) -> std::option::Option<bool> {
         self.retryable
-    }
-}
-impl std::fmt::Debug for FailedItemDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedItemDetails");
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("retryable", &self.retryable);
-        formatter.finish()
     }
 }
 /// See [`FailedItemDetails`](crate::model::FailedItemDetails).
@@ -1554,7 +1530,7 @@ impl AsRef<str> for FailedItemErrorCode {
 
 /// <p>Used as a response element in the <code>PreviewAgents</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentPreview {
     /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     #[doc(hidden)]
@@ -1613,20 +1589,6 @@ impl AgentPreview {
     /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn ipv4_address(&self) -> std::option::Option<&str> {
         self.ipv4_address.as_deref()
-    }
-}
-impl std::fmt::Debug for AgentPreview {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentPreview");
-        formatter.field("hostname", &self.hostname);
-        formatter.field("agent_id", &self.agent_id);
-        formatter.field("auto_scaling_group", &self.auto_scaling_group);
-        formatter.field("agent_health", &self.agent_health);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("kernel_version", &self.kernel_version);
-        formatter.field("ipv4_address", &self.ipv4_address);
-        formatter.finish()
     }
 }
 /// See [`AgentPreview`](crate::model::AgentPreview).
@@ -1859,7 +1821,7 @@ impl AsRef<str> for AgentHealth {
 
 /// <p>This data type is used as a request parameter in the <code>ListFindings</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingFilter {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
     #[doc(hidden)]
@@ -1918,20 +1880,6 @@ impl FindingFilter {
     /// <p>The time range during which the finding is generated.</p>
     pub fn creation_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
         self.creation_time_range.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingFilter");
-        formatter.field("agent_ids", &self.agent_ids);
-        formatter.field("auto_scaling_groups", &self.auto_scaling_groups);
-        formatter.field("rule_names", &self.rule_names);
-        formatter.field("severities", &self.severities);
-        formatter.field("rules_package_arns", &self.rules_package_arns);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("user_attributes", &self.user_attributes);
-        formatter.field("creation_time_range", &self.creation_time_range);
-        formatter.finish()
     }
 }
 /// See [`FindingFilter`](crate::model::FindingFilter).
@@ -2120,7 +2068,7 @@ impl FindingFilter {
 
 /// <p>This data type is used in the <code>AssessmentRunFilter</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampRange {
     /// <p>The minimum value of the timestamp range.</p>
     #[doc(hidden)]
@@ -2137,14 +2085,6 @@ impl TimestampRange {
     /// <p>The maximum value of the timestamp range.</p>
     pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
-    }
-}
-impl std::fmt::Debug for TimestampRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampRange");
-        formatter.field("begin_date", &self.begin_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.finish()
     }
 }
 /// See [`TimestampRange`](crate::model::TimestampRange).
@@ -2201,7 +2141,7 @@ impl TimestampRange {
 
 /// <p>This data type is used as a request parameter in the <code>AddAttributesToFindings</code> and <code>CreateAssessmentTemplate</code> actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The attribute key.</p>
     #[doc(hidden)]
@@ -2218,14 +2158,6 @@ impl Attribute {
     /// <p>The value assigned to the attribute key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Attribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
@@ -2381,7 +2313,7 @@ impl AsRef<str> for Severity {
 
 /// <p>This data type is used as a response element in the <code>ListEventSubscriptions</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
     #[doc(hidden)]
@@ -2405,15 +2337,6 @@ impl Subscription {
     /// <p>The list of existing event subscriptions.</p>
     pub fn event_subscriptions(&self) -> std::option::Option<&[crate::model::EventSubscription]> {
         self.event_subscriptions.as_deref()
-    }
-}
-impl std::fmt::Debug for Subscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subscription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("event_subscriptions", &self.event_subscriptions);
-        formatter.finish()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
@@ -2486,7 +2409,7 @@ impl Subscription {
 
 /// <p>This data type is used in the <code>Subscription</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
     #[doc(hidden)]
@@ -2503,14 +2426,6 @@ impl EventSubscription {
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
     pub fn subscribed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscribed_at.as_ref()
-    }
-}
-impl std::fmt::Debug for EventSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSubscription");
-        formatter.field("event", &self.event);
-        formatter.field("subscribed_at", &self.subscribed_at);
-        formatter.finish()
     }
 }
 /// See [`EventSubscription`](crate::model::EventSubscription).
@@ -2567,7 +2482,7 @@ impl EventSubscription {
 
 /// <p>Used as the request parameter in the <code>ListAssessmentTemplates</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentTemplateFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
     #[doc(hidden)]
@@ -2591,15 +2506,6 @@ impl AssessmentTemplateFilter {
     /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
     pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.rules_package_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for AssessmentTemplateFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentTemplateFilter");
-        formatter.field("name_pattern", &self.name_pattern);
-        formatter.field("duration_range", &self.duration_range);
-        formatter.field("rules_package_arns", &self.rules_package_arns);
-        formatter.finish()
     }
 }
 /// See [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
@@ -2674,7 +2580,7 @@ impl AssessmentTemplateFilter {
 
 /// <p>This data type is used in the <code>AssessmentTemplateFilter</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DurationRange {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     #[doc(hidden)]
@@ -2691,14 +2597,6 @@ impl DurationRange {
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
     pub fn max_seconds(&self) -> i32 {
         self.max_seconds
-    }
-}
-impl std::fmt::Debug for DurationRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DurationRange");
-        formatter.field("min_seconds", &self.min_seconds);
-        formatter.field("max_seconds", &self.max_seconds);
-        formatter.finish()
     }
 }
 /// See [`DurationRange`](crate::model::DurationRange).
@@ -2749,7 +2647,7 @@ impl DurationRange {
 
 /// <p>Used as the request parameter in the <code>ListAssessmentTargets</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentTargetFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
     #[doc(hidden)]
@@ -2759,16 +2657,6 @@ impl AssessmentTargetFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
     pub fn assessment_target_name_pattern(&self) -> std::option::Option<&str> {
         self.assessment_target_name_pattern.as_deref()
-    }
-}
-impl std::fmt::Debug for AssessmentTargetFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentTargetFilter");
-        formatter.field(
-            "assessment_target_name_pattern",
-            &self.assessment_target_name_pattern,
-        );
-        formatter.finish()
     }
 }
 /// See [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
@@ -2813,7 +2701,7 @@ impl AssessmentTargetFilter {
 
 /// <p>Used as the request parameter in the <code>ListAssessmentRuns</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentRunFilter {
     /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
     #[doc(hidden)]
@@ -2865,19 +2753,6 @@ impl AssessmentRunFilter {
     /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn state_change_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
         self.state_change_time_range.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentRunFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentRunFilter");
-        formatter.field("name_pattern", &self.name_pattern);
-        formatter.field("states", &self.states);
-        formatter.field("duration_range", &self.duration_range);
-        formatter.field("rules_package_arns", &self.rules_package_arns);
-        formatter.field("start_time_range", &self.start_time_range);
-        formatter.field("completion_time_range", &self.completion_time_range);
-        formatter.field("state_change_time_range", &self.state_change_time_range);
-        formatter.finish()
     }
 }
 /// See [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
@@ -3183,7 +3058,7 @@ impl AsRef<str> for AssessmentRunState {
 
 /// <p>Contains information about an Amazon Inspector agent. This data type is used as a response element in the <code>ListAssessmentRunAgents</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentRunAgent {
     /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
     #[doc(hidden)]
@@ -3235,19 +3110,6 @@ impl AssessmentRunAgent {
     /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
     pub fn telemetry_metadata(&self) -> std::option::Option<&[crate::model::TelemetryMetadata]> {
         self.telemetry_metadata.as_deref()
-    }
-}
-impl std::fmt::Debug for AssessmentRunAgent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentRunAgent");
-        formatter.field("agent_id", &self.agent_id);
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.field("agent_health", &self.agent_health);
-        formatter.field("agent_health_code", &self.agent_health_code);
-        formatter.field("agent_health_details", &self.agent_health_details);
-        formatter.field("auto_scaling_group", &self.auto_scaling_group);
-        formatter.field("telemetry_metadata", &self.telemetry_metadata);
-        formatter.finish()
     }
 }
 /// See [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
@@ -3383,7 +3245,7 @@ impl AssessmentRunAgent {
 
 /// <p>The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <code>GetTelemetryMetadata</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TelemetryMetadata {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
     #[doc(hidden)]
@@ -3407,15 +3269,6 @@ impl TelemetryMetadata {
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn data_size(&self) -> std::option::Option<i64> {
         self.data_size
-    }
-}
-impl std::fmt::Debug for TelemetryMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TelemetryMetadata");
-        formatter.field("message_type", &self.message_type);
-        formatter.field("count", &self.count);
-        formatter.field("data_size", &self.data_size);
-        formatter.finish()
     }
 }
 /// See [`TelemetryMetadata`](crate::model::TelemetryMetadata).
@@ -3595,7 +3448,7 @@ impl AsRef<str> for AgentHealthCode {
 
 /// <p>Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <code>ListAssessmentRunAgents</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentFilter {
     /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
     #[doc(hidden)]
@@ -3612,14 +3465,6 @@ impl AgentFilter {
     /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
     pub fn agent_health_codes(&self) -> std::option::Option<&[crate::model::AgentHealthCode]> {
         self.agent_health_codes.as_deref()
-    }
-}
-impl std::fmt::Debug for AgentFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentFilter");
-        formatter.field("agent_healths", &self.agent_healths);
-        formatter.field("agent_health_codes", &self.agent_health_codes);
-        formatter.finish()
     }
 }
 /// See [`AgentFilter`](crate::model::AgentFilter).
@@ -3689,7 +3534,7 @@ impl AgentFilter {
 
 /// <p>Contains information about what is excluded from an assessment run given the current state of the assessment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExclusionPreview {
     /// <p>The name of the exclusion preview.</p>
     #[doc(hidden)]
@@ -3727,17 +3572,6 @@ impl ExclusionPreview {
     /// <p>The system-defined attributes for the exclusion preview.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for ExclusionPreview {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExclusionPreview");
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("recommendation", &self.recommendation);
-        formatter.field("scopes", &self.scopes);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`ExclusionPreview`](crate::model::ExclusionPreview).
@@ -3845,7 +3679,7 @@ impl ExclusionPreview {
 
 /// <p>This data type contains key-value pairs that identify various Amazon resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scope {
     /// <p>The type of the scope.</p>
     #[doc(hidden)]
@@ -3862,14 +3696,6 @@ impl Scope {
     /// <p>The resource identifier for the specified scope type.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Scope {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scope");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Scope`](crate::model::Scope).
@@ -4460,7 +4286,7 @@ impl AsRef<str> for ReportFileFormat {
 
 /// <p>Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <code>DescribeRulesPackages</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RulesPackage {
     /// <p>The ARN of the rules package.</p>
     #[doc(hidden)]
@@ -4498,17 +4324,6 @@ impl RulesPackage {
     /// <p>The description of the rules package.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for RulesPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RulesPackage");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("provider", &self.provider);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`RulesPackage`](crate::model::RulesPackage).
@@ -4595,7 +4410,7 @@ impl RulesPackage {
 
 /// <p>Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <code>DescribeResourceGroups</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceGroup {
     /// <p>The ARN of the resource group.</p>
     #[doc(hidden)]
@@ -4619,15 +4434,6 @@ impl ResourceGroup {
     /// <p>The time at which resource group is created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceGroup");
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`ResourceGroup`](crate::model::ResourceGroup).
@@ -4702,7 +4508,7 @@ impl ResourceGroup {
 
 /// <p>This data type is used as one of the elements of the <code>ResourceGroup</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceGroupTag {
     /// <p>A tag key.</p>
     #[doc(hidden)]
@@ -4719,14 +4525,6 @@ impl ResourceGroupTag {
     /// <p>The value assigned to a tag key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceGroupTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceGroupTag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceGroupTag`](crate::model::ResourceGroupTag).
@@ -4777,7 +4575,7 @@ impl ResourceGroupTag {
 
 /// <p>Contains information about an Amazon Inspector finding. This data type is used as the response element in the <code>DescribeFindings</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Finding {
     /// <p>The ARN that specifies the finding.</p>
     #[doc(hidden)]
@@ -4908,30 +4706,6 @@ impl Finding {
     /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Finding {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Finding");
-        formatter.field("arn", &self.arn);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("service", &self.service);
-        formatter.field("service_attributes", &self.service_attributes);
-        formatter.field("asset_type", &self.asset_type);
-        formatter.field("asset_attributes", &self.asset_attributes);
-        formatter.field("id", &self.id);
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("recommendation", &self.recommendation);
-        formatter.field("severity", &self.severity);
-        formatter.field("numeric_severity", &self.numeric_severity);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("indicator_of_compromise", &self.indicator_of_compromise);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("user_attributes", &self.user_attributes);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`Finding`](crate::model::Finding).
@@ -5214,7 +4988,7 @@ impl Finding {
 
 /// <p>A collection of attributes of the host from which the finding is generated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetAttributes {
     /// <p>The schema version of this data type.</p>
     #[doc(hidden)]
@@ -5273,20 +5047,6 @@ impl AssetAttributes {
     /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
     pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetAttributes");
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("agent_id", &self.agent_id);
-        formatter.field("auto_scaling_group", &self.auto_scaling_group);
-        formatter.field("ami_id", &self.ami_id);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("ipv4_addresses", &self.ipv4_addresses);
-        formatter.field("tags", &self.tags);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.finish()
     }
 }
 /// See [`AssetAttributes`](crate::model::AssetAttributes).
@@ -5440,7 +5200,7 @@ impl AssetAttributes {
 
 /// <p>Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <code>AssetAttributes</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
@@ -5513,22 +5273,6 @@ impl NetworkInterface {
     /// <p>A list of the security groups associated with the network interface. Includes the groupId and groupName.</p>
     pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroup]> {
         self.security_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("private_dns_name", &self.private_dns_name);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.field("private_ip_addresses", &self.private_ip_addresses);
-        formatter.field("public_dns_name", &self.public_dns_name);
-        formatter.field("public_ip", &self.public_ip);
-        formatter.field("ipv6_addresses", &self.ipv6_addresses);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -5715,7 +5459,7 @@ impl NetworkInterface {
 
 /// <p>Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <code>NetworkInterface</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroup {
     /// <p>The name of the security group.</p>
     #[doc(hidden)]
@@ -5732,14 +5476,6 @@ impl SecurityGroup {
     /// <p>The ID of the security group.</p>
     pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroup");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
     }
 }
 /// See [`SecurityGroup`](crate::model::SecurityGroup).
@@ -5790,7 +5526,7 @@ impl SecurityGroup {
 
 /// <p>Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <code>DescribeFindings</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateIp {
     /// <p>The DNS name of the private IP address.</p>
     #[doc(hidden)]
@@ -5807,14 +5543,6 @@ impl PrivateIp {
     /// <p>The full IP address of the network inteface.</p>
     pub fn private_ip_address(&self) -> std::option::Option<&str> {
         self.private_ip_address.as_deref()
-    }
-}
-impl std::fmt::Debug for PrivateIp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateIp");
-        formatter.field("private_dns_name", &self.private_dns_name);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.finish()
     }
 }
 /// See [`PrivateIp`](crate::model::PrivateIp).
@@ -5956,7 +5684,7 @@ impl AsRef<str> for AssetType {
 
 /// <p>This data type is used in the <code>Finding</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InspectorServiceAttributes {
     /// <p>The schema version of this data type.</p>
     #[doc(hidden)]
@@ -5980,15 +5708,6 @@ impl InspectorServiceAttributes {
     /// <p>The ARN of the rules package that is used to generate the finding.</p>
     pub fn rules_package_arn(&self) -> std::option::Option<&str> {
         self.rules_package_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for InspectorServiceAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InspectorServiceAttributes");
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.field("rules_package_arn", &self.rules_package_arn);
-        formatter.finish()
     }
 }
 /// See [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
@@ -6057,7 +5776,7 @@ impl InspectorServiceAttributes {
 
 /// <p>Contains information about what was excluded from an assessment run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Exclusion {
     /// <p>The ARN that specifies the exclusion.</p>
     #[doc(hidden)]
@@ -6102,18 +5821,6 @@ impl Exclusion {
     /// <p>The system-defined attributes for the exclusion.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for Exclusion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Exclusion");
-        formatter.field("arn", &self.arn);
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("recommendation", &self.recommendation);
-        formatter.field("scopes", &self.scopes);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`Exclusion`](crate::model::Exclusion).
@@ -6233,7 +5940,7 @@ impl Exclusion {
 
 /// <p>Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <code>DescribeAssessmentTemplates</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentTemplate {
     /// <p>The ARN of the assessment template.</p>
     #[doc(hidden)]
@@ -6299,24 +6006,6 @@ impl AssessmentTemplate {
     /// <p>The time at which the assessment template is created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentTemplate");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("assessment_target_arn", &self.assessment_target_arn);
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.field("rules_package_arns", &self.rules_package_arns);
-        formatter.field(
-            "user_attributes_for_findings",
-            &self.user_attributes_for_findings,
-        );
-        formatter.field("last_assessment_run_arn", &self.last_assessment_run_arn);
-        formatter.field("assessment_run_count", &self.assessment_run_count);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`AssessmentTemplate`](crate::model::AssessmentTemplate).
@@ -6479,7 +6168,7 @@ impl AssessmentTemplate {
 
 /// <p>Contains information about an Amazon Inspector application. This data type is used as the response element in the <code>DescribeAssessmentTargets</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentTarget {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
     #[doc(hidden)]
@@ -6517,17 +6206,6 @@ impl AssessmentTarget {
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentTarget");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("resource_group_arn", &self.resource_group_arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`AssessmentTarget`](crate::model::AssessmentTarget).
@@ -6624,7 +6302,7 @@ impl AssessmentTarget {
 /// <p>A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .</p>
 /// <p>Used as the response element in the <code>DescribeAssessmentRuns</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentRun {
     /// <p>The ARN of the assessment run.</p>
     #[doc(hidden)]
@@ -6734,30 +6412,6 @@ impl AssessmentRun {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::Severity, i32>> {
         self.finding_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentRun");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("assessment_template_arn", &self.assessment_template_arn);
-        formatter.field("state", &self.state);
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.field("rules_package_arns", &self.rules_package_arns);
-        formatter.field(
-            "user_attributes_for_findings",
-            &self.user_attributes_for_findings,
-        );
-        formatter.field("created_at", &self.created_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("completed_at", &self.completed_at);
-        formatter.field("state_changed_at", &self.state_changed_at);
-        formatter.field("data_collected", &self.data_collected);
-        formatter.field("state_changes", &self.state_changes);
-        formatter.field("notifications", &self.notifications);
-        formatter.field("finding_counts", &self.finding_counts);
-        formatter.finish()
     }
 }
 /// See [`AssessmentRun`](crate::model::AssessmentRun).
@@ -7031,7 +6685,7 @@ impl AssessmentRun {
 
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentRunNotification {
     /// <p>The date of the notification.</p>
     #[doc(hidden)]
@@ -7079,18 +6733,6 @@ impl AssessmentRunNotification {
         &self,
     ) -> std::option::Option<&crate::model::AssessmentRunNotificationSnsStatusCode> {
         self.sns_publish_status_code.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentRunNotification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentRunNotification");
-        formatter.field("date", &self.date);
-        formatter.field("event", &self.event);
-        formatter.field("message", &self.message);
-        formatter.field("error", &self.error);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("sns_publish_status_code", &self.sns_publish_status_code);
-        formatter.finish()
     }
 }
 /// See [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
@@ -7309,7 +6951,7 @@ impl AsRef<str> for AssessmentRunNotificationSnsStatusCode {
 
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentRunStateChange {
     /// <p>The last time the assessment run state changed.</p>
     #[doc(hidden)]
@@ -7326,14 +6968,6 @@ impl AssessmentRunStateChange {
     /// <p>The assessment run state.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::AssessmentRunState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentRunStateChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentRunStateChange");
-        formatter.field("state_changed_at", &self.state_changed_at);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).

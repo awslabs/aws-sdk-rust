@@ -2,7 +2,7 @@
 
 /// <p>Gets Suite Definition Configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuiteDefinitionConfiguration {
     /// <p>Gets Suite Definition Configuration name.</p>
     #[doc(hidden)]
@@ -54,25 +54,6 @@ impl SuiteDefinitionConfiguration {
     /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for SuiteDefinitionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuiteDefinitionConfiguration");
-        formatter.field("suite_definition_name", &self.suite_definition_name);
-        formatter.field("devices", &self.devices);
-        formatter.field(
-            "intended_for_qualification",
-            &self.intended_for_qualification,
-        );
-        formatter.field("is_long_duration_test", &self.is_long_duration_test);
-        formatter.field("root_group", &self.root_group);
-        formatter.field(
-            "device_permission_role_arn",
-            &self.device_permission_role_arn,
-        );
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
@@ -288,7 +269,7 @@ impl AsRef<str> for Protocol {
 
 /// <p>Information of a test device. A thing ARN or a certificate ARN is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceUnderTest {
     /// <p>Lists devices thing ARN.</p>
     #[doc(hidden)]
@@ -305,14 +286,6 @@ impl DeviceUnderTest {
     /// <p>Lists devices certificate ARN.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeviceUnderTest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceUnderTest");
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
     }
 }
 /// See [`DeviceUnderTest`](crate::model::DeviceUnderTest).
@@ -366,7 +339,7 @@ impl DeviceUnderTest {
 
 /// <p>Gets suite run configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuiteRunConfiguration {
     /// <p>Gets the primary device for suite run.</p>
     #[doc(hidden)]
@@ -390,15 +363,6 @@ impl SuiteRunConfiguration {
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub fn parallel_run(&self) -> bool {
         self.parallel_run
-    }
-}
-impl std::fmt::Debug for SuiteRunConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuiteRunConfiguration");
-        formatter.field("primary_device", &self.primary_device);
-        formatter.field("selected_test_list", &self.selected_test_list);
-        formatter.field("parallel_run", &self.parallel_run);
-        formatter.finish()
     }
 }
 /// See [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
@@ -474,7 +438,7 @@ impl SuiteRunConfiguration {
 /// <p>Information about the suite run.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SuiteRunInformation</a> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuiteRunInformation {
     /// <p>Suite definition ID of the suite run.</p>
     #[doc(hidden)]
@@ -547,22 +511,6 @@ impl SuiteRunInformation {
     /// <p>Number of test cases that failed in the suite run.</p>
     pub fn failed(&self) -> i32 {
         self.failed
-    }
-}
-impl std::fmt::Debug for SuiteRunInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuiteRunInformation");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field("suite_definition_version", &self.suite_definition_version);
-        formatter.field("suite_definition_name", &self.suite_definition_name);
-        formatter.field("suite_run_id", &self.suite_run_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("end_at", &self.end_at);
-        formatter.field("status", &self.status);
-        formatter.field("passed", &self.passed);
-        formatter.field("failed", &self.failed);
-        formatter.finish()
     }
 }
 /// See [`SuiteRunInformation`](crate::model::SuiteRunInformation).
@@ -865,7 +813,7 @@ impl AsRef<str> for SuiteRunStatus {
 
 /// <p>Information about the suite definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuiteDefinitionInformation {
     /// <p>Suite definition ID of the test suite.</p>
     #[doc(hidden)]
@@ -917,22 +865,6 @@ impl SuiteDefinitionInformation {
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for SuiteDefinitionInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuiteDefinitionInformation");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field("suite_definition_name", &self.suite_definition_name);
-        formatter.field("default_devices", &self.default_devices);
-        formatter.field(
-            "intended_for_qualification",
-            &self.intended_for_qualification,
-        );
-        formatter.field("is_long_duration_test", &self.is_long_duration_test);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
@@ -1062,7 +994,7 @@ impl SuiteDefinitionInformation {
 
 /// <p>Show each group result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestResult {
     /// <p>Show each group of test results.</p>
     #[doc(hidden)]
@@ -1072,13 +1004,6 @@ impl TestResult {
     /// <p>Show each group of test results.</p>
     pub fn groups(&self) -> std::option::Option<&[crate::model::GroupResult]> {
         self.groups.as_deref()
-    }
-}
-impl std::fmt::Debug for TestResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestResult");
-        formatter.field("groups", &self.groups);
-        formatter.finish()
     }
 }
 /// See [`TestResult`](crate::model::TestResult).
@@ -1126,7 +1051,7 @@ impl TestResult {
 
 /// <p>Show Group Result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupResult {
     /// <p>Group result ID.</p>
     #[doc(hidden)]
@@ -1150,15 +1075,6 @@ impl GroupResult {
     /// <p>Tests under Group Result.</p>
     pub fn tests(&self) -> std::option::Option<&[crate::model::TestCaseRun]> {
         self.tests.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupResult");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("tests", &self.tests);
-        formatter.finish()
     }
 }
 /// See [`GroupResult`](crate::model::GroupResult).
@@ -1230,7 +1146,7 @@ impl GroupResult {
 
 /// <p>Provides the test case run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestCaseRun {
     /// <p>Provides the test case run ID.</p>
     #[doc(hidden)]
@@ -1323,22 +1239,6 @@ impl TestCaseRun {
     /// <p> Provides the test scenarios for the test case run. </p>
     pub fn test_scenarios(&self) -> std::option::Option<&[crate::model::TestCaseScenario]> {
         self.test_scenarios.as_deref()
-    }
-}
-impl std::fmt::Debug for TestCaseRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestCaseRun");
-        formatter.field("test_case_run_id", &self.test_case_run_id);
-        formatter.field("test_case_definition_id", &self.test_case_definition_id);
-        formatter.field("test_case_definition_name", &self.test_case_definition_name);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("log_url", &self.log_url);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("failure", &self.failure);
-        formatter.field("test_scenarios", &self.test_scenarios);
-        formatter.finish()
     }
 }
 /// See [`TestCaseRun`](crate::model::TestCaseRun).
@@ -1530,7 +1430,7 @@ impl TestCaseRun {
 
 /// <p>Provides test case scenario.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestCaseScenario {
     /// <p>Provides test case scenario ID.</p>
     #[doc(hidden)]
@@ -1598,17 +1498,6 @@ impl TestCaseScenario {
     /// <p> </p>
     pub fn system_message(&self) -> std::option::Option<&str> {
         self.system_message.as_deref()
-    }
-}
-impl std::fmt::Debug for TestCaseScenario {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestCaseScenario");
-        formatter.field("test_case_scenario_id", &self.test_case_scenario_id);
-        formatter.field("test_case_scenario_type", &self.test_case_scenario_type);
-        formatter.field("status", &self.status);
-        formatter.field("failure", &self.failure);
-        formatter.field("system_message", &self.system_message);
-        formatter.finish()
     }
 }
 /// See [`TestCaseScenario`](crate::model::TestCaseScenario).

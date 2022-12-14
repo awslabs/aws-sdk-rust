@@ -31,7 +31,7 @@
 /// </dd>
 /// </dl>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceAttribute {
     /// <p>Type of resource.</p>
     #[doc(hidden)]
@@ -48,14 +48,6 @@ impl ResourceAttribute {
     /// <p>Value of the resource type.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAttribute");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceAttribute`](crate::model::ResourceAttribute).
@@ -252,7 +244,7 @@ impl AsRef<str> for ResourceAttributeType {
 
 /// <p>Task object encapsulating task information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Task {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
     #[doc(hidden)]
@@ -276,15 +268,6 @@ impl Task {
     /// <p>Indication of the percentage completion of the task.</p>
     pub fn progress_percent(&self) -> std::option::Option<i32> {
         self.progress_percent
-    }
-}
-impl std::fmt::Debug for Task {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Task");
-        formatter.field("status", &self.status);
-        formatter.field("status_detail", &self.status_detail);
-        formatter.field("progress_percent", &self.progress_percent);
-        formatter.finish()
     }
 }
 /// See [`Task`](crate::model::Task).
@@ -547,7 +530,7 @@ impl AsRef<str> for ApplicationStatus {
 
 /// <p>Summary of the AWS resource used for access control that is implicitly linked to your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProgressUpdateStreamSummary {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     #[doc(hidden)]
@@ -557,16 +540,6 @@ impl ProgressUpdateStreamSummary {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     pub fn progress_update_stream_name(&self) -> std::option::Option<&str> {
         self.progress_update_stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ProgressUpdateStreamSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProgressUpdateStreamSummary");
-        formatter.field(
-            "progress_update_stream_name",
-            &self.progress_update_stream_name,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
@@ -611,7 +584,7 @@ impl ProgressUpdateStreamSummary {
 
 /// <p>MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MigrationTaskSummary {
     /// <p>An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.</p>
     #[doc(hidden)]
@@ -656,18 +629,6 @@ impl MigrationTaskSummary {
     /// <p>The timestamp when the task was gathered.</p>
     pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for MigrationTaskSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MigrationTaskSummary");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("status", &self.status);
-        formatter.field("progress_percent", &self.progress_percent);
-        formatter.field("status_detail", &self.status_detail);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.finish()
     }
 }
 /// See [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
@@ -778,7 +739,7 @@ impl MigrationTaskSummary {
 
 /// <p>Object representing the on-premises resource being migrated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiscoveredResource {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
     #[doc(hidden)]
@@ -795,14 +756,6 @@ impl DiscoveredResource {
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for DiscoveredResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiscoveredResource");
-        formatter.field("configuration_id", &self.configuration_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`DiscoveredResource`](crate::model::DiscoveredResource).
@@ -856,7 +809,7 @@ impl DiscoveredResource {
 
 /// <p>An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatedArtifact {
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
     #[doc(hidden)]
@@ -873,14 +826,6 @@ impl CreatedArtifact {
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for CreatedArtifact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatedArtifact");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`CreatedArtifact`](crate::model::CreatedArtifact).
@@ -931,7 +876,7 @@ impl CreatedArtifact {
 
 /// <p>The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationState {
     /// <p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>
     #[doc(hidden)]
@@ -955,15 +900,6 @@ impl ApplicationState {
     /// <p>The timestamp when the application status was last updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationState");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("application_status", &self.application_status);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`ApplicationState`](crate::model::ApplicationState).
@@ -1035,7 +971,7 @@ impl ApplicationState {
 
 /// <p>Represents a migration task in a migration tool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MigrationTask {
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
     #[doc(hidden)]
@@ -1076,17 +1012,6 @@ impl MigrationTask {
         &self,
     ) -> std::option::Option<&[crate::model::ResourceAttribute]> {
         self.resource_attribute_list.as_deref()
-    }
-}
-impl std::fmt::Debug for MigrationTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MigrationTask");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("task", &self.task);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.field("resource_attribute_list", &self.resource_attribute_list);
-        formatter.finish()
     }
 }
 /// See [`MigrationTask`](crate::model::MigrationTask).

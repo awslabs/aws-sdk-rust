@@ -99,7 +99,7 @@ impl AsRef<str> for NotificationSeverityLevel {
 
 /// <p>The configuration for a Slack workspace that you added to an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -109,13 +109,6 @@ impl SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     pub fn team_id(&self) -> std::option::Option<&str> {
         self.team_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SlackWorkspaceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlackWorkspaceConfiguration");
-        formatter.field("team_id", &self.team_id);
-        formatter.finish()
     }
 }
 /// See [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
@@ -154,7 +147,7 @@ impl SlackWorkspaceConfiguration {
 
 /// <p>The configuration for a Slack channel that you added to an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlackChannelConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -215,26 +208,6 @@ impl SlackChannelConfiguration {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn channel_role_arn(&self) -> std::option::Option<&str> {
         self.channel_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SlackChannelConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlackChannelConfiguration");
-        formatter.field("team_id", &self.team_id);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field(
-            "notify_on_create_or_reopen_case",
-            &self.notify_on_create_or_reopen_case,
-        );
-        formatter.field(
-            "notify_on_add_correspondence_to_case",
-            &self.notify_on_add_correspondence_to_case,
-        );
-        formatter.field("notify_on_resolve_case", &self.notify_on_resolve_case);
-        formatter.field("notify_on_case_severity", &self.notify_on_case_severity);
-        formatter.field("channel_role_arn", &self.channel_role_arn);
-        formatter.finish()
     }
 }
 /// See [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).

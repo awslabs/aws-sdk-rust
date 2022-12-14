@@ -2,7 +2,7 @@
 
 /// <p>Configuration information for Organizations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationConfiguration {
     /// <p>Enables Organizations integration.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl OrganizationConfiguration {
     /// <p>Enables Organizations integration.</p>
     pub fn enable_integration(&self) -> bool {
         self.enable_integration
-    }
-}
-impl std::fmt::Debug for OrganizationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationConfiguration");
-        formatter.field("enable_integration", &self.enable_integration);
-        formatter.finish()
     }
 }
 /// See [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
@@ -57,7 +50,7 @@ impl OrganizationConfiguration {
 
 /// <p>Details for associating a license configuration with a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseSpecification {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -74,14 +67,6 @@ impl LicenseSpecification {
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub fn ami_association_scope(&self) -> std::option::Option<&str> {
         self.ami_association_scope.as_deref()
-    }
-}
-impl std::fmt::Debug for LicenseSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseSpecification");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("ami_association_scope", &self.ami_association_scope);
-        formatter.finish()
     }
 }
 /// See [`LicenseSpecification`](crate::model::LicenseSpecification).
@@ -138,7 +123,7 @@ impl LicenseSpecification {
 
 /// <p>Details about how frequently reports are generated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportFrequency {
     /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
     #[doc(hidden)]
@@ -155,14 +140,6 @@ impl ReportFrequency {
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
     pub fn period(&self) -> std::option::Option<&crate::model::ReportFrequencyType> {
         self.period.as_ref()
-    }
-}
-impl std::fmt::Debug for ReportFrequency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportFrequency");
-        formatter.field("value", &self.value);
-        formatter.field("period", &self.period);
-        formatter.finish()
     }
 }
 /// See [`ReportFrequency`](crate::model::ReportFrequency).
@@ -313,7 +290,7 @@ impl AsRef<str> for ReportFrequencyType {
 
 /// <p>Details of the license configuration that this generator reports on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     #[doc(hidden)]
@@ -323,16 +300,6 @@ impl ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.license_configuration_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for ReportContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportContext");
-        formatter.field(
-            "license_configuration_arns",
-            &self.license_configuration_arns,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReportContext`](crate::model::ReportContext).
@@ -474,7 +441,7 @@ impl AsRef<str> for ReportType {
 
 /// <p>Describes product information for a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProductInformation {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
     #[doc(hidden)]
@@ -528,17 +495,6 @@ impl ProductInformation {
         &self,
     ) -> std::option::Option<&[crate::model::ProductInformationFilter]> {
         self.product_information_filter_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ProductInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProductInformation");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field(
-            "product_information_filter_list",
-            &self.product_information_filter_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProductInformation`](crate::model::ProductInformation).
@@ -639,7 +595,7 @@ impl ProductInformation {
 
 /// <p>Describes product information filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProductInformationFilter {
     /// <p>Filter name.</p>
     #[doc(hidden)]
@@ -663,24 +619,6 @@ impl ProductInformationFilter {
     /// <p>Logical operator.</p>
     pub fn product_information_filter_comparator(&self) -> std::option::Option<&str> {
         self.product_information_filter_comparator.as_deref()
-    }
-}
-impl std::fmt::Debug for ProductInformationFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProductInformationFilter");
-        formatter.field(
-            "product_information_filter_name",
-            &self.product_information_filter_name,
-        );
-        formatter.field(
-            "product_information_filter_value",
-            &self.product_information_filter_value,
-        );
-        formatter.field(
-            "product_information_filter_comparator",
-            &self.product_information_filter_comparator,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProductInformationFilter`](crate::model::ProductInformationFilter).
@@ -860,7 +798,7 @@ impl AsRef<str> for LicenseConfigurationStatus {
 
 /// <p>Details about a tag for a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Tag key.</p>
     #[doc(hidden)]
@@ -877,14 +815,6 @@ impl Tag {
     /// <p>Tag value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1070,7 +1000,7 @@ impl AsRef<str> for GrantStatus {
 
 /// <p>Details about the usage of a resource associated with a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConfigurationUsage {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -1115,18 +1045,6 @@ impl LicenseConfigurationUsage {
     /// <p>Number of licenses consumed by the resource.</p>
     pub fn consumed_licenses(&self) -> std::option::Option<i64> {
         self.consumed_licenses
-    }
-}
-impl std::fmt::Debug for LicenseConfigurationUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConfigurationUsage");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_status", &self.resource_status);
-        formatter.field("resource_owner_id", &self.resource_owner_id);
-        formatter.field("association_time", &self.association_time);
-        formatter.field("consumed_licenses", &self.consumed_licenses);
-        formatter.finish()
     }
 }
 /// See [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
@@ -1348,7 +1266,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
@@ -1365,14 +1283,6 @@ impl Filter {
     /// <p>Filter values. Filter values are case-sensitive.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -1432,7 +1342,7 @@ impl Filter {
 
 /// <p>Describes a token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TokenData {
     /// <p>Token ID.</p>
     #[doc(hidden)]
@@ -1484,19 +1394,6 @@ impl TokenData {
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for TokenData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TokenData");
-        formatter.field("token_id", &self.token_id);
-        formatter.field("token_type", &self.token_type);
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("token_properties", &self.token_properties);
-        formatter.field("role_arns", &self.role_arns);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`TokenData`](crate::model::TokenData).
@@ -1628,7 +1525,7 @@ impl TokenData {
 
 /// <p>Details about a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInventory {
     /// <p>ID of the resource.</p>
     #[doc(hidden)]
@@ -1673,21 +1570,6 @@ impl ResourceInventory {
     /// <p>ID of the account that owns the resource.</p>
     pub fn resource_owning_account_id(&self) -> std::option::Option<&str> {
         self.resource_owning_account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceInventory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInventory");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("platform", &self.platform);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field(
-            "resource_owning_account_id",
-            &self.resource_owning_account_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResourceInventory`](crate::model::ResourceInventory).
@@ -1795,7 +1677,7 @@ impl ResourceInventory {
 
 /// <p>An inventory filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>Name of the filter.</p>
     #[doc(hidden)]
@@ -1819,15 +1701,6 @@ impl InventoryFilter {
     /// <p>Value of the filter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryFilter");
-        formatter.field("name", &self.name);
-        formatter.field("condition", &self.condition);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`InventoryFilter`](crate::model::InventoryFilter).
@@ -1995,7 +1868,7 @@ impl AsRef<str> for InventoryFilterCondition {
 
 /// <p>Describes a license that is granted to a grantee.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrantedLicense {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -2105,27 +1978,6 @@ impl GrantedLicense {
     /// <p>Granted license received metadata.</p>
     pub fn received_metadata(&self) -> std::option::Option<&crate::model::ReceivedMetadata> {
         self.received_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for GrantedLicense {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrantedLicense");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("license_name", &self.license_name);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("product_sku", &self.product_sku);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("status", &self.status);
-        formatter.field("validity", &self.validity);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("consumption_configuration", &self.consumption_configuration);
-        formatter.field("license_metadata", &self.license_metadata);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("version", &self.version);
-        formatter.field("received_metadata", &self.received_metadata);
-        formatter.finish()
     }
 }
 /// See [`GrantedLicense`](crate::model::GrantedLicense).
@@ -2369,7 +2221,7 @@ impl GrantedLicense {
 
 /// <p>Metadata associated with received licenses and grants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceivedMetadata {
     /// <p>Received status.</p>
     #[doc(hidden)]
@@ -2393,15 +2245,6 @@ impl ReceivedMetadata {
     /// <p>Allowed operations.</p>
     pub fn allowed_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
         self.allowed_operations.as_deref()
-    }
-}
-impl std::fmt::Debug for ReceivedMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceivedMetadata");
-        formatter.field("received_status", &self.received_status);
-        formatter.field("received_status_reason", &self.received_status_reason);
-        formatter.field("allowed_operations", &self.allowed_operations);
-        formatter.finish()
     }
 }
 /// See [`ReceivedMetadata`](crate::model::ReceivedMetadata).
@@ -2732,7 +2575,7 @@ impl AsRef<str> for ReceivedStatus {
 
 /// <p>Describes key/value pairs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metadata {
     /// <p>The key name.</p>
     #[doc(hidden)]
@@ -2749,14 +2592,6 @@ impl Metadata {
     /// <p>The value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Metadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metadata");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Metadata`](crate::model::Metadata).
@@ -2807,7 +2642,7 @@ impl Metadata {
 
 /// <p>Details about a consumption configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConsumptionConfiguration {
     /// <p>Renewal frequency.</p>
     #[doc(hidden)]
@@ -2833,15 +2668,6 @@ impl ConsumptionConfiguration {
     /// <p>Details about a borrow configuration.</p>
     pub fn borrow_configuration(&self) -> std::option::Option<&crate::model::BorrowConfiguration> {
         self.borrow_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ConsumptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConsumptionConfiguration");
-        formatter.field("renew_type", &self.renew_type);
-        formatter.field("provisional_configuration", &self.provisional_configuration);
-        formatter.field("borrow_configuration", &self.borrow_configuration);
-        formatter.finish()
     }
 }
 /// See [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
@@ -2917,7 +2743,7 @@ impl ConsumptionConfiguration {
 
 /// <p>Details about a borrow configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BorrowConfiguration {
     /// <p>Indicates whether early check-ins are allowed.</p>
     #[doc(hidden)]
@@ -2934,17 +2760,6 @@ impl BorrowConfiguration {
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
     pub fn max_time_to_live_in_minutes(&self) -> std::option::Option<i32> {
         self.max_time_to_live_in_minutes
-    }
-}
-impl std::fmt::Debug for BorrowConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BorrowConfiguration");
-        formatter.field("allow_early_check_in", &self.allow_early_check_in);
-        formatter.field(
-            "max_time_to_live_in_minutes",
-            &self.max_time_to_live_in_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`BorrowConfiguration`](crate::model::BorrowConfiguration).
@@ -2995,7 +2810,7 @@ impl BorrowConfiguration {
 
 /// <p>Details about a provisional configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionalConfiguration {
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
     #[doc(hidden)]
@@ -3005,16 +2820,6 @@ impl ProvisionalConfiguration {
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
     pub fn max_time_to_live_in_minutes(&self) -> std::option::Option<i32> {
         self.max_time_to_live_in_minutes
-    }
-}
-impl std::fmt::Debug for ProvisionalConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionalConfiguration");
-        formatter.field(
-            "max_time_to_live_in_minutes",
-            &self.max_time_to_live_in_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
@@ -3148,7 +2953,7 @@ impl AsRef<str> for RenewType {
 
 /// <p>Describes a resource entitled for use with a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entitlement {
     /// <p>Entitlement name.</p>
     #[doc(hidden)]
@@ -3193,18 +2998,6 @@ impl Entitlement {
     /// <p>Indicates whether check-ins are allowed.</p>
     pub fn allow_check_in(&self) -> std::option::Option<bool> {
         self.allow_check_in
-    }
-}
-impl std::fmt::Debug for Entitlement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entitlement");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("max_count", &self.max_count);
-        formatter.field("overage", &self.overage);
-        formatter.field("unit", &self.unit);
-        formatter.field("allow_check_in", &self.allow_check_in);
-        formatter.finish()
     }
 }
 /// See [`Entitlement`](crate::model::Entitlement).
@@ -3549,7 +3342,7 @@ impl AsRef<str> for EntitlementUnit {
 
 /// <p>Describes a time range, in ISO8601-UTC format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatetimeRange {
     /// <p>Start of the time range.</p>
     #[doc(hidden)]
@@ -3566,14 +3359,6 @@ impl DatetimeRange {
     /// <p>End of the time range.</p>
     pub fn end(&self) -> std::option::Option<&str> {
         self.end.as_deref()
-    }
-}
-impl std::fmt::Debug for DatetimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatetimeRange");
-        formatter.field("begin", &self.begin);
-        formatter.field("end", &self.end);
-        formatter.finish()
     }
 }
 /// See [`DatetimeRange`](crate::model::DatetimeRange).
@@ -3747,7 +3532,7 @@ impl AsRef<str> for LicenseStatus {
 
 /// <p>Details associated with the issuer of a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IssuerDetails {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
@@ -3771,15 +3556,6 @@ impl IssuerDetails {
     /// <p>Issuer key fingerprint.</p>
     pub fn key_fingerprint(&self) -> std::option::Option<&str> {
         self.key_fingerprint.as_deref()
-    }
-}
-impl std::fmt::Debug for IssuerDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IssuerDetails");
-        formatter.field("name", &self.name);
-        formatter.field("sign_key", &self.sign_key);
-        formatter.field("key_fingerprint", &self.key_fingerprint);
-        formatter.finish()
     }
 }
 /// See [`IssuerDetails`](crate::model::IssuerDetails).
@@ -3845,7 +3621,7 @@ impl IssuerDetails {
 
 /// <p>Describes a grant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -3918,22 +3694,6 @@ impl Grant {
     /// <p>Granted operations.</p>
     pub fn granted_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
         self.granted_operations.as_deref()
-    }
-}
-impl std::fmt::Debug for Grant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Grant");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.field("grant_name", &self.grant_name);
-        formatter.field("parent_arn", &self.parent_arn);
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("grantee_principal_arn", &self.grantee_principal_arn);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("grant_status", &self.grant_status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("version", &self.version);
-        formatter.field("granted_operations", &self.granted_operations);
-        formatter.finish()
     }
 }
 /// See [`Grant`](crate::model::Grant).
@@ -4099,7 +3859,7 @@ impl Grant {
 
 /// <p>Software license that is managed in License Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct License {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -4202,26 +3962,6 @@ impl License {
     /// <p>License version.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for License {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("License");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("license_name", &self.license_name);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("product_sku", &self.product_sku);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("status", &self.status);
-        formatter.field("validity", &self.validity);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("consumption_configuration", &self.consumption_configuration);
-        formatter.field("license_metadata", &self.license_metadata);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`License`](crate::model::License).
@@ -4450,7 +4190,7 @@ impl License {
 
 /// <p>Describe the details of a report generator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportGenerator {
     /// <p>Name of the report generator.</p>
     #[doc(hidden)]
@@ -4544,31 +4284,6 @@ impl ReportGenerator {
     /// <p>Tags associated with the report generator.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ReportGenerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportGenerator");
-        formatter.field("report_generator_name", &self.report_generator_name);
-        formatter.field("report_type", &self.report_type);
-        formatter.field("report_context", &self.report_context);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field(
-            "license_manager_report_generator_arn",
-            &self.license_manager_report_generator_arn,
-        );
-        formatter.field("last_run_status", &self.last_run_status);
-        formatter.field("last_run_failure_reason", &self.last_run_failure_reason);
-        formatter.field(
-            "last_report_generation_time",
-            &self.last_report_generation_time,
-        );
-        formatter.field("report_creator_account", &self.report_creator_account);
-        formatter.field("description", &self.description);
-        formatter.field("s3_location", &self.s3_location);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ReportGenerator`](crate::model::ReportGenerator).
@@ -4802,7 +4517,7 @@ impl ReportGenerator {
 
 /// <p>Details of the S3 bucket that report generator reports are published to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>Name of the S3 bucket reports are published to.</p>
     #[doc(hidden)]
@@ -4819,14 +4534,6 @@ impl S3Location {
     /// <p>Prefix of the S3 bucket reports are published to.</p>
     pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -4877,7 +4584,7 @@ impl S3Location {
 
 /// <p>Information about a license type conversion task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConversionTask {
     /// <p>The ID of the license type conversion task.</p>
     #[doc(hidden)]
@@ -4947,27 +4654,6 @@ impl LicenseConversionTask {
     /// <p>The time the conversion task was completed.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LicenseConversionTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConversionTask");
-        formatter.field(
-            "license_conversion_task_id",
-            &self.license_conversion_task_id,
-        );
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("source_license_context", &self.source_license_context);
-        formatter.field(
-            "destination_license_context",
-            &self.destination_license_context,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("license_conversion_time", &self.license_conversion_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`LicenseConversionTask`](crate::model::LicenseConversionTask).
@@ -5231,7 +4917,7 @@ impl AsRef<str> for LicenseConversionTaskStatus {
 
 /// <p>Information about a license type conversion task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConversionContext {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
     #[doc(hidden)]
@@ -5241,13 +4927,6 @@ impl LicenseConversionContext {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
     pub fn usage_operation(&self) -> std::option::Option<&str> {
         self.usage_operation.as_deref()
-    }
-}
-impl std::fmt::Debug for LicenseConversionContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConversionContext");
-        formatter.field("usage_operation", &self.usage_operation);
-        formatter.finish()
     }
 }
 /// See [`LicenseConversionContext`](crate::model::LicenseConversionContext).
@@ -5289,7 +4968,7 @@ impl LicenseConversionContext {
 
 /// <p>A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConfiguration {
     /// <p>Unique ID of the license configuration.</p>
     #[doc(hidden)]
@@ -5416,40 +5095,6 @@ impl LicenseConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::AutomatedDiscoveryInformation> {
         self.automated_discovery_information.as_ref()
-    }
-}
-impl std::fmt::Debug for LicenseConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConfiguration");
-        formatter.field("license_configuration_id", &self.license_configuration_id);
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("license_counting_type", &self.license_counting_type);
-        formatter.field("license_rules", &self.license_rules);
-        formatter.field("license_count", &self.license_count);
-        formatter.field("license_count_hard_limit", &self.license_count_hard_limit);
-        formatter.field(
-            "disassociate_when_not_found",
-            &self.disassociate_when_not_found,
-        );
-        formatter.field("consumed_licenses", &self.consumed_licenses);
-        formatter.field("status", &self.status);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field(
-            "consumed_license_summary_list",
-            &self.consumed_license_summary_list,
-        );
-        formatter.field(
-            "managed_resource_summary_list",
-            &self.managed_resource_summary_list,
-        );
-        formatter.field("product_information_list", &self.product_information_list);
-        formatter.field(
-            "automated_discovery_information",
-            &self.automated_discovery_information,
-        );
-        formatter.finish()
     }
 }
 /// See [`LicenseConfiguration`](crate::model::LicenseConfiguration).
@@ -5732,7 +5377,7 @@ impl LicenseConfiguration {
 
 /// <p>Describes automated discovery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
     #[doc(hidden)]
@@ -5742,13 +5387,6 @@ impl AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
     pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
-    }
-}
-impl std::fmt::Debug for AutomatedDiscoveryInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomatedDiscoveryInformation");
-        formatter.field("last_run_time", &self.last_run_time);
-        formatter.finish()
     }
 }
 /// See [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
@@ -5790,7 +5428,7 @@ impl AutomatedDiscoveryInformation {
 
 /// <p>Summary information about a managed resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedResourceSummary {
     /// <p>Type of resource associated with a license.</p>
     #[doc(hidden)]
@@ -5807,14 +5445,6 @@ impl ManagedResourceSummary {
     /// <p>Number of resources associated with licenses.</p>
     pub fn association_count(&self) -> std::option::Option<i64> {
         self.association_count
-    }
-}
-impl std::fmt::Debug for ManagedResourceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedResourceSummary");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("association_count", &self.association_count);
-        formatter.finish()
     }
 }
 /// See [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
@@ -5868,7 +5498,7 @@ impl ManagedResourceSummary {
 
 /// <p>Details about license consumption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConsumedLicenseSummary {
     /// <p>Resource type of the resource consuming a license.</p>
     #[doc(hidden)]
@@ -5885,14 +5515,6 @@ impl ConsumedLicenseSummary {
     /// <p>Number of licenses consumed by the resource.</p>
     pub fn consumed_licenses(&self) -> std::option::Option<i64> {
         self.consumed_licenses
-    }
-}
-impl std::fmt::Debug for ConsumedLicenseSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConsumedLicenseSummary");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("consumed_licenses", &self.consumed_licenses);
-        formatter.finish()
     }
 }
 /// See [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
@@ -6048,7 +5670,7 @@ impl AsRef<str> for LicenseCountingType {
 
 /// <p>Describes the failure of a license operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseOperationFailure {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -6107,20 +5729,6 @@ impl LicenseOperationFailure {
     /// <p>Reserved.</p>
     pub fn metadata_list(&self) -> std::option::Option<&[crate::model::Metadata]> {
         self.metadata_list.as_deref()
-    }
-}
-impl std::fmt::Debug for LicenseOperationFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseOperationFailure");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("failure_time", &self.failure_time);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("resource_owner_id", &self.resource_owner_id);
-        formatter.field("operation_requested_by", &self.operation_requested_by);
-        formatter.field("metadata_list", &self.metadata_list);
-        formatter.finish()
     }
 }
 /// See [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
@@ -6270,7 +5878,7 @@ impl LicenseOperationFailure {
 
 /// <p>Describes an association with a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConfigurationAssociation {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -6308,17 +5916,6 @@ impl LicenseConfigurationAssociation {
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub fn ami_association_scope(&self) -> std::option::Option<&str> {
         self.ami_association_scope.as_deref()
-    }
-}
-impl std::fmt::Debug for LicenseConfigurationAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConfigurationAssociation");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_owner_id", &self.resource_owner_id);
-        formatter.field("association_time", &self.association_time);
-        formatter.field("ami_association_scope", &self.ami_association_scope);
-        formatter.finish()
     }
 }
 /// See [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
@@ -6417,7 +6014,7 @@ impl LicenseConfigurationAssociation {
 
 /// <p>Describes the entitlement usage associated with a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseUsage {
     /// <p>License entitlement usages.</p>
     #[doc(hidden)]
@@ -6427,13 +6024,6 @@ impl LicenseUsage {
     /// <p>License entitlement usages.</p>
     pub fn entitlement_usages(&self) -> std::option::Option<&[crate::model::EntitlementUsage]> {
         self.entitlement_usages.as_deref()
-    }
-}
-impl std::fmt::Debug for LicenseUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseUsage");
-        formatter.field("entitlement_usages", &self.entitlement_usages);
-        formatter.finish()
     }
 }
 /// See [`LicenseUsage`](crate::model::LicenseUsage).
@@ -6482,7 +6072,7 @@ impl LicenseUsage {
 
 /// <p>Usage associated with an entitlement resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitlementUsage {
     /// <p>Entitlement usage name.</p>
     #[doc(hidden)]
@@ -6513,16 +6103,6 @@ impl EntitlementUsage {
     /// <p>Entitlement usage unit.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::EntitlementDataUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for EntitlementUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitlementUsage");
-        formatter.field("name", &self.name);
-        formatter.field("consumed_value", &self.consumed_value);
-        formatter.field("max_count", &self.max_count);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`EntitlementUsage`](crate::model::EntitlementUsage).
@@ -7025,7 +6605,7 @@ impl AsRef<str> for TokenType {
 
 /// <p>Details about the issuer of a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Issuer {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
@@ -7042,14 +6622,6 @@ impl Issuer {
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn sign_key(&self) -> std::option::Option<&str> {
         self.sign_key.as_deref()
-    }
-}
-impl std::fmt::Debug for Issuer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Issuer");
-        formatter.field("name", &self.name);
-        formatter.field("sign_key", &self.sign_key);
-        formatter.finish()
     }
 }
 /// See [`Issuer`](crate::model::Issuer).
@@ -7100,7 +6672,7 @@ impl Issuer {
 
 /// <p>Data associated with an entitlement resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitlementData {
     /// <p>Entitlement data name.</p>
     #[doc(hidden)]
@@ -7124,15 +6696,6 @@ impl EntitlementData {
     /// <p>Entitlement data unit.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::EntitlementDataUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for EntitlementData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitlementData");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`EntitlementData`](crate::model::EntitlementData).

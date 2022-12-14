@@ -7688,7 +7688,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>
     /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
@@ -7713,18 +7713,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
     /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
@@ -7749,18 +7741,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMetricStreamsInput {
     /// <p>The array of the names of metric streams to stop streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
@@ -7774,17 +7758,10 @@ impl StopMetricStreamsInput {
         self.names.as_deref()
     }
 }
-impl std::fmt::Debug for StopMetricStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMetricStreamsInput");
-        formatter.field("names", &self.names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMetricStreamsInput {
     /// <p>The array of the names of metric streams to start streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
@@ -7798,17 +7775,10 @@ impl StartMetricStreamsInput {
         self.names.as_deref()
     }
 }
-impl std::fmt::Debug for StartMetricStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMetricStreamsInput");
-        formatter.field("names", &self.names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetAlarmStateInput {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
@@ -7843,20 +7813,10 @@ impl SetAlarmStateInput {
         self.state_reason_data.as_deref()
     }
 }
-impl std::fmt::Debug for SetAlarmStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetAlarmStateInput");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("state_value", &self.state_value);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("state_reason_data", &self.state_reason_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetricStreamInput {
     /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
     /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
@@ -7942,24 +7902,10 @@ impl PutMetricStreamInput {
         self.statistics_configurations.as_deref()
     }
 }
-impl std::fmt::Debug for PutMetricStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetricStreamInput");
-        formatter.field("name", &self.name);
-        formatter.field("include_filters", &self.include_filters);
-        formatter.field("exclude_filters", &self.exclude_filters);
-        formatter.field("firehose_arn", &self.firehose_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("output_format", &self.output_format);
-        formatter.field("tags", &self.tags);
-        formatter.field("statistics_configurations", &self.statistics_configurations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetricDataInput {
     /// <p>The namespace for the metric data.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
@@ -7980,18 +7926,10 @@ impl PutMetricDataInput {
         self.metric_data.as_deref()
     }
 }
-impl std::fmt::Debug for PutMetricDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetricDataInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_data", &self.metric_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetricAlarmInput {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     #[doc(hidden)]
@@ -8204,41 +8142,10 @@ impl PutMetricAlarmInput {
         self.threshold_metric_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutMetricAlarmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetricAlarmInput");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_description", &self.alarm_description);
-        formatter.field("actions_enabled", &self.actions_enabled);
-        formatter.field("ok_actions", &self.ok_actions);
-        formatter.field("alarm_actions", &self.alarm_actions);
-        formatter.field("insufficient_data_actions", &self.insufficient_data_actions);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("extended_statistic", &self.extended_statistic);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("period", &self.period);
-        formatter.field("unit", &self.unit);
-        formatter.field("evaluation_periods", &self.evaluation_periods);
-        formatter.field("datapoints_to_alarm", &self.datapoints_to_alarm);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("treat_missing_data", &self.treat_missing_data);
-        formatter.field(
-            "evaluate_low_sample_count_percentile",
-            &self.evaluate_low_sample_count_percentile,
-        );
-        formatter.field("metrics", &self.metrics);
-        formatter.field("tags", &self.tags);
-        formatter.field("threshold_metric_id", &self.threshold_metric_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutManagedInsightRulesInput {
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
     #[doc(hidden)]
@@ -8250,17 +8157,10 @@ impl PutManagedInsightRulesInput {
         self.managed_rules.as_deref()
     }
 }
-impl std::fmt::Debug for PutManagedInsightRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutManagedInsightRulesInput");
-        formatter.field("managed_rules", &self.managed_rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutInsightRuleInput {
     /// <p>A unique name for the rule.</p>
     #[doc(hidden)]
@@ -8299,20 +8199,10 @@ impl PutInsightRuleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutInsightRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutInsightRuleInput");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("rule_state", &self.rule_state);
-        formatter.field("rule_definition", &self.rule_definition);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDashboardInput {
     /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
     #[doc(hidden)]
@@ -8333,18 +8223,10 @@ impl PutDashboardInput {
         self.dashboard_body.as_deref()
     }
 }
-impl std::fmt::Debug for PutDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDashboardInput");
-        formatter.field("dashboard_name", &self.dashboard_name);
-        formatter.field("dashboard_body", &self.dashboard_body);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutCompositeAlarmInput {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
     #[doc(hidden)]
@@ -8478,33 +8360,10 @@ impl PutCompositeAlarmInput {
         self.actions_suppressor_extension_period
     }
 }
-impl std::fmt::Debug for PutCompositeAlarmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutCompositeAlarmInput");
-        formatter.field("actions_enabled", &self.actions_enabled);
-        formatter.field("alarm_actions", &self.alarm_actions);
-        formatter.field("alarm_description", &self.alarm_description);
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_rule", &self.alarm_rule);
-        formatter.field("insufficient_data_actions", &self.insufficient_data_actions);
-        formatter.field("ok_actions", &self.ok_actions);
-        formatter.field("tags", &self.tags);
-        formatter.field("actions_suppressor", &self.actions_suppressor);
-        formatter.field(
-            "actions_suppressor_wait_period",
-            &self.actions_suppressor_wait_period,
-        );
-        formatter.field(
-            "actions_suppressor_extension_period",
-            &self.actions_suppressor_extension_period,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAnomalyDetectorInput {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
@@ -8611,29 +8470,10 @@ impl PutAnomalyDetectorInput {
         self.metric_math_anomaly_detector.as_ref()
     }
 }
-impl std::fmt::Debug for PutAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAnomalyDetectorInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("stat", &self.stat);
-        formatter.field("configuration", &self.configuration);
-        formatter.field(
-            "single_metric_anomaly_detector",
-            &self.single_metric_anomaly_detector,
-        );
-        formatter.field(
-            "metric_math_anomaly_detector",
-            &self.metric_math_anomaly_detector,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
     /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
@@ -8651,17 +8491,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMetricStreamsInput {
     /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
     #[doc(hidden)]
@@ -8680,18 +8513,10 @@ impl ListMetricStreamsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMetricStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMetricStreamsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMetricsInput {
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
     #[doc(hidden)]
@@ -8733,21 +8558,10 @@ impl ListMetricsInput {
         self.recently_active.as_ref()
     }
 }
-impl std::fmt::Debug for ListMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMetricsInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("recently_active", &self.recently_active);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListManagedInsightRulesInput {
     /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     #[doc(hidden)]
@@ -8773,19 +8587,10 @@ impl ListManagedInsightRulesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListManagedInsightRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListManagedInsightRulesInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDashboardsInput {
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
     #[doc(hidden)]
@@ -8804,18 +8609,10 @@ impl ListDashboardsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDashboardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDashboardsInput");
-        formatter.field("dashboard_name_prefix", &self.dashboard_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMetricWidgetImageInput {
     /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
     /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
@@ -8880,18 +8677,10 @@ impl GetMetricWidgetImageInput {
         self.output_format.as_deref()
     }
 }
-impl std::fmt::Debug for GetMetricWidgetImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMetricWidgetImageInput");
-        formatter.field("metric_widget", &self.metric_widget);
-        formatter.field("output_format", &self.output_format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMetricStreamInput {
     /// <p>The name of the metric stream to retrieve information about.</p>
     #[doc(hidden)]
@@ -8903,17 +8692,10 @@ impl GetMetricStreamInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMetricStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMetricStreamInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMetricStatisticsInput {
     /// <p>The namespace of the metric, with or without spaces.</p>
     #[doc(hidden)]
@@ -9011,25 +8793,10 @@ impl GetMetricStatisticsInput {
         self.unit.as_ref()
     }
 }
-impl std::fmt::Debug for GetMetricStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMetricStatisticsInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("period", &self.period);
-        formatter.field("statistics", &self.statistics);
-        formatter.field("extended_statistics", &self.extended_statistics);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMetricDataInput {
     /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
     #[doc(hidden)]
@@ -9105,23 +8872,10 @@ impl GetMetricDataInput {
         self.label_options.as_ref()
     }
 }
-impl std::fmt::Debug for GetMetricDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMetricDataInput");
-        formatter.field("metric_data_queries", &self.metric_data_queries);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("scan_by", &self.scan_by);
-        formatter.field("max_datapoints", &self.max_datapoints);
-        formatter.field("label_options", &self.label_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightRuleReportInput {
     /// <p>The name of the rule that you want to see data from.</p>
     #[doc(hidden)]
@@ -9193,23 +8947,10 @@ impl GetInsightRuleReportInput {
         self.order_by.as_deref()
     }
 }
-impl std::fmt::Debug for GetInsightRuleReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightRuleReportInput");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("period", &self.period);
-        formatter.field("max_contributor_count", &self.max_contributor_count);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDashboardInput {
     /// <p>The name of the dashboard to be described.</p>
     #[doc(hidden)]
@@ -9221,17 +8962,10 @@ impl GetDashboardInput {
         self.dashboard_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDashboardInput");
-        formatter.field("dashboard_name", &self.dashboard_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableInsightRulesInput {
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     #[doc(hidden)]
@@ -9243,17 +8977,10 @@ impl EnableInsightRulesInput {
         self.rule_names.as_deref()
     }
 }
-impl std::fmt::Debug for EnableInsightRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableInsightRulesInput");
-        formatter.field("rule_names", &self.rule_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableAlarmActionsInput {
     /// <p>The names of the alarms.</p>
     #[doc(hidden)]
@@ -9265,17 +8992,10 @@ impl EnableAlarmActionsInput {
         self.alarm_names.as_deref()
     }
 }
-impl std::fmt::Debug for EnableAlarmActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableAlarmActionsInput");
-        formatter.field("alarm_names", &self.alarm_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableInsightRulesInput {
     /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     #[doc(hidden)]
@@ -9287,17 +9007,10 @@ impl DisableInsightRulesInput {
         self.rule_names.as_deref()
     }
 }
-impl std::fmt::Debug for DisableInsightRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableInsightRulesInput");
-        formatter.field("rule_names", &self.rule_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableAlarmActionsInput {
     /// <p>The names of the alarms.</p>
     #[doc(hidden)]
@@ -9309,17 +9022,10 @@ impl DisableAlarmActionsInput {
         self.alarm_names.as_deref()
     }
 }
-impl std::fmt::Debug for DisableAlarmActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableAlarmActionsInput");
-        formatter.field("alarm_names", &self.alarm_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInsightRulesInput {
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
     #[doc(hidden)]
@@ -9338,18 +9044,10 @@ impl DescribeInsightRulesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeInsightRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInsightRulesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorsInput {
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     #[doc(hidden)]
@@ -9401,22 +9099,10 @@ impl DescribeAnomalyDetectorsInput {
         self.anomaly_detector_types.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnomalyDetectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnomalyDetectorsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("anomaly_detector_types", &self.anomaly_detector_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricInput {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -9470,23 +9156,10 @@ impl DescribeAlarmsForMetricInput {
         self.unit.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAlarmsForMetricInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlarmsForMetricInput");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("extended_statistic", &self.extended_statistic);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("period", &self.period);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlarmsInput {
     /// <p>The names of the alarms to retrieve information about.</p>
     #[doc(hidden)]
@@ -9568,25 +9241,10 @@ impl DescribeAlarmsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAlarmsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlarmsInput");
-        formatter.field("alarm_names", &self.alarm_names);
-        formatter.field("alarm_name_prefix", &self.alarm_name_prefix);
-        formatter.field("alarm_types", &self.alarm_types);
-        formatter.field("children_of_alarm_name", &self.children_of_alarm_name);
-        formatter.field("parents_of_alarm_name", &self.parents_of_alarm_name);
-        formatter.field("state_value", &self.state_value);
-        formatter.field("action_prefix", &self.action_prefix);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlarmHistoryInput {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
@@ -9647,24 +9305,10 @@ impl DescribeAlarmHistoryInput {
         self.scan_by.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAlarmHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlarmHistoryInput");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_types", &self.alarm_types);
-        formatter.field("history_item_type", &self.history_item_type);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("scan_by", &self.scan_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMetricStreamInput {
     /// <p>The name of the metric stream to delete.</p>
     #[doc(hidden)]
@@ -9676,17 +9320,10 @@ impl DeleteMetricStreamInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMetricStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMetricStreamInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInsightRulesInput {
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     #[doc(hidden)]
@@ -9698,17 +9335,10 @@ impl DeleteInsightRulesInput {
         self.rule_names.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInsightRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInsightRulesInput");
-        formatter.field("rule_names", &self.rule_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDashboardsInput {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
     #[doc(hidden)]
@@ -9720,17 +9350,10 @@ impl DeleteDashboardsInput {
         self.dashboard_names.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDashboardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDashboardsInput");
-        formatter.field("dashboard_names", &self.dashboard_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnomalyDetectorInput {
     /// <p>The namespace associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
@@ -9826,28 +9449,10 @@ impl DeleteAnomalyDetectorInput {
         self.metric_math_anomaly_detector.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnomalyDetectorInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("stat", &self.stat);
-        formatter.field(
-            "single_metric_anomaly_detector",
-            &self.single_metric_anomaly_detector,
-        );
-        formatter.field(
-            "metric_math_anomaly_detector",
-            &self.metric_math_anomaly_detector,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlarmsInput {
     /// <p>The alarms to be deleted.</p>
     #[doc(hidden)]
@@ -9857,12 +9462,5 @@ impl DeleteAlarmsInput {
     /// <p>The alarms to be deleted.</p>
     pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
         self.alarm_names.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteAlarmsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAlarmsInput");
-        formatter.field("alarm_names", &self.alarm_names);
-        formatter.finish()
     }
 }

@@ -7109,7 +7109,7 @@ impl VerifySmsSandboxPhoneNumberInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifySmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to verify.</p>
     #[doc(hidden)]
@@ -7128,18 +7128,10 @@ impl VerifySmsSandboxPhoneNumberInput {
         self.one_time_password.as_deref()
     }
 }
-impl std::fmt::Debug for VerifySmsSandboxPhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifySmsSandboxPhoneNumberInput");
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("one_time_password", &self.one_time_password);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the topic from which to remove tags.</p>
     #[doc(hidden)]
@@ -7158,18 +7150,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for Unsubscribe action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsubscribeInput {
     /// <p>The ARN of the subscription to be deleted.</p>
     #[doc(hidden)]
@@ -7181,17 +7165,10 @@ impl UnsubscribeInput {
         self.subscription_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UnsubscribeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsubscribeInput");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the topic to which to add tags.</p>
     #[doc(hidden)]
@@ -7210,18 +7187,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for Subscribe action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscribeInput {
     /// <p>The ARN of the topic you want to subscribe to.</p>
     #[doc(hidden)]
@@ -7345,21 +7314,10 @@ impl SubscribeInput {
         self.return_subscription_arn
     }
 }
-impl std::fmt::Debug for SubscribeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("return_subscription_arn", &self.return_subscription_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for SetTopicAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTopicAttributesInput {
     /// <p>The ARN of the topic to modify.</p>
     #[doc(hidden)]
@@ -7421,19 +7379,10 @@ impl SetTopicAttributesInput {
         self.attribute_value.as_deref()
     }
 }
-impl std::fmt::Debug for SetTopicAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTopicAttributesInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for SetSubscriptionAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetSubscriptionAttributesInput {
     /// <p>The ARN of the subscription to modify.</p>
     #[doc(hidden)]
@@ -7489,19 +7438,10 @@ impl SetSubscriptionAttributesInput {
         self.attribute_value.as_deref()
     }
 }
-impl std::fmt::Debug for SetSubscriptionAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSubscriptionAttributesInput");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the SetSMSAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetSmsAttributesInput {
     /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values for the following attribute names:</p>
     /// <p> <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p> <important>
@@ -7567,17 +7507,10 @@ impl SetSmsAttributesInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SetSmsAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSmsAttributesInput");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for SetPlatformApplicationAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetPlatformApplicationAttributesInput {
     /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
     #[doc(hidden)]
@@ -7664,18 +7597,10 @@ impl SetPlatformApplicationAttributesInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SetPlatformApplicationAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetPlatformApplicationAttributesInput");
-        formatter.field("platform_application_arn", &self.platform_application_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for SetEndpointAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetEndpointAttributesInput {
     /// <p>EndpointArn used for SetEndpointAttributes action.</p>
     #[doc(hidden)]
@@ -7708,18 +7633,10 @@ impl SetEndpointAttributesInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SetEndpointAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetEndpointAttributesInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for RemovePermission action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
     #[doc(hidden)]
@@ -7738,18 +7655,10 @@ impl RemovePermissionInput {
         self.label.as_deref()
     }
 }
-impl std::fmt::Debug for RemovePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("label", &self.label);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDataProtectionPolicyInput {
     /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
@@ -7774,18 +7683,10 @@ impl PutDataProtectionPolicyInput {
         self.data_protection_policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutDataProtectionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDataProtectionPolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("data_protection_policy", &self.data_protection_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishBatchInput {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
     #[doc(hidden)]
@@ -7807,21 +7708,10 @@ impl PublishBatchInput {
         self.publish_batch_request_entries.as_deref()
     }
 }
-impl std::fmt::Debug for PublishBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishBatchInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field(
-            "publish_batch_request_entries",
-            &self.publish_batch_request_entries,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Input for Publish action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishInput {
     /// <p>The topic you want to publish to.</p>
     /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
@@ -7957,25 +7847,10 @@ impl PublishInput {
         self.message_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for PublishInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("message", &self.message);
-        formatter.field("subject", &self.subject);
-        formatter.field("message_structure", &self.message_structure);
-        formatter.field("message_attributes", &self.message_attributes);
-        formatter.field("message_deduplication_id", &self.message_deduplication_id);
-        formatter.field("message_group_id", &self.message_group_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for the OptInPhoneNumber action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptInPhoneNumberInput {
     /// <p>The phone number to opt in. Use E.164 format.</p>
     #[doc(hidden)]
@@ -7987,17 +7862,10 @@ impl OptInPhoneNumberInput {
         self.phone_number.as_deref()
     }
 }
-impl std::fmt::Debug for OptInPhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptInPhoneNumberInput");
-        formatter.field("phone_number", &self.phone_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTopicsInput {
     /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
     #[doc(hidden)]
@@ -8009,17 +7877,10 @@ impl ListTopicsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTopicsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTopicsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the topic for which to list tags.</p>
     #[doc(hidden)]
@@ -8031,17 +7892,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for ListSubscriptionsByTopic action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubscriptionsByTopicInput {
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
     #[doc(hidden)]
@@ -8060,18 +7914,10 @@ impl ListSubscriptionsByTopicInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSubscriptionsByTopicInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubscriptionsByTopicInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for ListSubscriptions action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubscriptionsInput {
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     #[doc(hidden)]
@@ -8083,17 +7929,10 @@ impl ListSubscriptionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubscriptionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSmsSandboxPhoneNumbersInput {
     /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request returns.</p>
     #[doc(hidden)]
@@ -8112,18 +7951,10 @@ impl ListSmsSandboxPhoneNumbersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSmsSandboxPhoneNumbersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSmsSandboxPhoneNumbersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for ListPlatformApplications action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlatformApplicationsInput {
     /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
     #[doc(hidden)]
@@ -8135,17 +7966,10 @@ impl ListPlatformApplicationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlatformApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlatformApplicationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>ListPhoneNumbersOptedOut</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersOptedOutInput {
     /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
     #[doc(hidden)]
@@ -8157,17 +7981,10 @@ impl ListPhoneNumbersOptedOutInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPhoneNumbersOptedOutInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhoneNumbersOptedOutInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOriginationNumbersInput {
     /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
     #[doc(hidden)]
@@ -8186,18 +8003,10 @@ impl ListOriginationNumbersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListOriginationNumbersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOriginationNumbersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for ListEndpointsByPlatformApplication action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEndpointsByPlatformApplicationInput {
     /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
     #[doc(hidden)]
@@ -8216,18 +8025,10 @@ impl ListEndpointsByPlatformApplicationInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEndpointsByPlatformApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEndpointsByPlatformApplicationInput");
-        formatter.field("platform_application_arn", &self.platform_application_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for GetTopicAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTopicAttributesInput {
     /// <p>The ARN of the topic whose properties you want to get.</p>
     #[doc(hidden)]
@@ -8239,17 +8040,10 @@ impl GetTopicAttributesInput {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetTopicAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTopicAttributesInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for GetSubscriptionAttributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSubscriptionAttributesInput {
     /// <p>The ARN of the subscription whose properties you want to get.</p>
     #[doc(hidden)]
@@ -8261,28 +8055,15 @@ impl GetSubscriptionAttributesInput {
         self.subscription_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetSubscriptionAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSubscriptionAttributesInput");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSmsSandboxAccountStatusInput {}
-impl std::fmt::Debug for GetSmsSandboxAccountStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSmsSandboxAccountStatusInput");
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>GetSMSAttributes</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSmsAttributesInput {
     /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
     /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
@@ -8298,17 +8079,10 @@ impl GetSmsAttributesInput {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for GetSmsAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSmsAttributesInput");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for GetPlatformApplicationAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPlatformApplicationAttributesInput {
     /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
     #[doc(hidden)]
@@ -8320,17 +8094,10 @@ impl GetPlatformApplicationAttributesInput {
         self.platform_application_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetPlatformApplicationAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPlatformApplicationAttributesInput");
-        formatter.field("platform_application_arn", &self.platform_application_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for GetEndpointAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEndpointAttributesInput {
     /// <p>EndpointArn for GetEndpointAttributes input.</p>
     #[doc(hidden)]
@@ -8342,17 +8109,10 @@ impl GetEndpointAttributesInput {
         self.endpoint_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetEndpointAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEndpointAttributesInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataProtectionPolicyInput {
     /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
@@ -8366,17 +8126,10 @@ impl GetDataProtectionPolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataProtectionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataProtectionPolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTopicInput {
     /// <p>The ARN of the topic you want to delete.</p>
     #[doc(hidden)]
@@ -8388,17 +8141,10 @@ impl DeleteTopicInput {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTopicInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTopicInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to delete.</p>
     #[doc(hidden)]
@@ -8410,17 +8156,10 @@ impl DeleteSmsSandboxPhoneNumberInput {
         self.phone_number.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSmsSandboxPhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSmsSandboxPhoneNumberInput");
-        formatter.field("phone_number", &self.phone_number);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for DeletePlatformApplication action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlatformApplicationInput {
     /// <p>PlatformApplicationArn of platform application object to delete.</p>
     #[doc(hidden)]
@@ -8432,17 +8171,10 @@ impl DeletePlatformApplicationInput {
         self.platform_application_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePlatformApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlatformApplicationInput");
-        formatter.field("platform_application_arn", &self.platform_application_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for DeleteEndpoint action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>EndpointArn of endpoint to delete.</p>
     #[doc(hidden)]
@@ -8454,17 +8186,10 @@ impl DeleteEndpointInput {
         self.endpoint_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEndpointInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for CreateTopic action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTopicInput {
     /// <p>The name of the topic you want to create.</p>
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
@@ -8555,20 +8280,10 @@ impl CreateTopicInput {
         self.data_protection_policy.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTopicInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTopicInput");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("tags", &self.tags);
-        formatter.field("data_protection_policy", &self.data_protection_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.</p>
     #[doc(hidden)]
@@ -8587,18 +8302,10 @@ impl CreateSmsSandboxPhoneNumberInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSmsSandboxPhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSmsSandboxPhoneNumberInput");
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for CreatePlatformEndpoint action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlatformEndpointInput {
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
     #[doc(hidden)]
@@ -8635,20 +8342,10 @@ impl CreatePlatformEndpointInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePlatformEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlatformEndpointInput");
-        formatter.field("platform_application_arn", &self.platform_application_arn);
-        formatter.field("token", &self.token);
-        formatter.field("custom_user_data", &self.custom_user_data);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for CreatePlatformApplication action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlatformApplicationInput {
     /// <p>Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters long.</p>
     #[doc(hidden)]
@@ -8678,19 +8375,10 @@ impl CreatePlatformApplicationInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePlatformApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlatformApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.field("platform", &self.platform);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for ConfirmSubscription action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmSubscriptionInput {
     /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
     #[doc(hidden)]
@@ -8716,22 +8404,10 @@ impl ConfirmSubscriptionInput {
         self.authenticate_on_unsubscribe.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmSubscriptionInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("token", &self.token);
-        formatter.field(
-            "authenticate_on_unsubscribe",
-            &self.authenticate_on_unsubscribe,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckIfPhoneNumberIsOptedOutInput {
     /// <p>The phone number for which you want to check the opt out status.</p>
     #[doc(hidden)]
@@ -8743,17 +8419,10 @@ impl CheckIfPhoneNumberIsOptedOutInput {
         self.phone_number.as_deref()
     }
 }
-impl std::fmt::Debug for CheckIfPhoneNumberIsOptedOutInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckIfPhoneNumberIsOptedOutInput");
-        formatter.field("phone_number", &self.phone_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddPermissionInput {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
     #[doc(hidden)]
@@ -8786,15 +8455,5 @@ impl AddPermissionInput {
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
     pub fn action_name(&self) -> std::option::Option<&[std::string::String]> {
         self.action_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AddPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddPermissionInput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("label", &self.label);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("action_name", &self.action_name);
-        formatter.finish()
     }
 }

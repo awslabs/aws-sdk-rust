@@ -107,7 +107,7 @@ impl AsRef<str> for State {
 
 /// <p>The parent entity update request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentEntityUpdateRequest {
     /// <p>The type of the update.</p>
     #[doc(hidden)]
@@ -124,14 +124,6 @@ impl ParentEntityUpdateRequest {
     /// <p>The ID of the parent entity.</p>
     pub fn parent_entity_id(&self) -> std::option::Option<&str> {
         self.parent_entity_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ParentEntityUpdateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentEntityUpdateRequest");
-        formatter.field("update_type", &self.update_type);
-        formatter.field("parent_entity_id", &self.parent_entity_id);
-        formatter.finish()
     }
 }
 /// See [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
@@ -280,7 +272,7 @@ impl AsRef<str> for ParentEntityUpdateType {
 
 /// <p>The component update request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentUpdateRequest {
     /// <p>The update type of the component update request.</p>
     #[doc(hidden)]
@@ -317,16 +309,6 @@ impl ComponentUpdateRequest {
         &std::collections::HashMap<std::string::String, crate::model::PropertyRequest>,
     > {
         self.property_updates.as_ref()
-    }
-}
-impl std::fmt::Debug for ComponentUpdateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentUpdateRequest");
-        formatter.field("update_type", &self.update_type);
-        formatter.field("description", &self.description);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("property_updates", &self.property_updates);
-        formatter.finish()
     }
 }
 /// See [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
@@ -424,7 +406,7 @@ impl ComponentUpdateRequest {
 
 /// <p>An object that sets information about a property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyRequest {
     /// <p>An object that specifies information about a property.</p>
     #[doc(hidden)]
@@ -448,15 +430,6 @@ impl PropertyRequest {
     /// <p>The update type of the update property request.</p>
     pub fn update_type(&self) -> std::option::Option<&crate::model::PropertyUpdateType> {
         self.update_type.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyRequest");
-        formatter.field("definition", &self.definition);
-        formatter.field("value", &self.value);
-        formatter.field("update_type", &self.update_type);
-        formatter.finish()
     }
 }
 /// See [`PropertyRequest`](crate::model::PropertyRequest).
@@ -622,7 +595,7 @@ impl AsRef<str> for PropertyUpdateType {
 
 /// <p>An object that specifies a value for a property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataValue {
     /// <p>A Boolean value.</p>
     #[doc(hidden)]
@@ -693,21 +666,6 @@ impl DataValue {
     /// <p>An expression that produces the value.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
-    }
-}
-impl std::fmt::Debug for DataValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataValue");
-        formatter.field("boolean_value", &self.boolean_value);
-        formatter.field("double_value", &self.double_value);
-        formatter.field("integer_value", &self.integer_value);
-        formatter.field("long_value", &self.long_value);
-        formatter.field("string_value", &self.string_value);
-        formatter.field("list_value", &self.list_value);
-        formatter.field("map_value", &self.map_value);
-        formatter.field("relationship_value", &self.relationship_value);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
     }
 }
 /// See [`DataValue`](crate::model::DataValue).
@@ -871,7 +829,7 @@ impl DataValue {
 
 /// <p>A value that associates a component and an entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationshipValue {
     /// <p>The ID of the target entity associated with this relationship value.</p>
     #[doc(hidden)]
@@ -888,14 +846,6 @@ impl RelationshipValue {
     /// <p>The name of the target component associated with the relationship value.</p>
     pub fn target_component_name(&self) -> std::option::Option<&str> {
         self.target_component_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RelationshipValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationshipValue");
-        formatter.field("target_entity_id", &self.target_entity_id);
-        formatter.field("target_component_name", &self.target_component_name);
-        formatter.finish()
     }
 }
 /// See [`RelationshipValue`](crate::model::RelationshipValue).
@@ -952,7 +902,7 @@ impl RelationshipValue {
 
 /// <p>An object that sets information about a property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyDefinitionRequest {
     /// <p>An object that contains information about the data type.</p>
     #[doc(hidden)]
@@ -1008,19 +958,6 @@ impl PropertyDefinitionRequest {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyDefinitionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyDefinitionRequest");
-        formatter.field("data_type", &self.data_type);
-        formatter.field("is_required_in_entity", &self.is_required_in_entity);
-        formatter.field("is_external_id", &self.is_external_id);
-        formatter.field("is_stored_externally", &self.is_stored_externally);
-        formatter.field("is_time_series", &self.is_time_series);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
     }
 }
 /// See [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
@@ -1151,7 +1088,7 @@ impl PropertyDefinitionRequest {
 
 /// <p>An object that specifies the data type of a property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataType {
     /// <p>The underlying type of the data type.</p>
     #[doc(hidden)]
@@ -1189,17 +1126,6 @@ impl DataType {
     /// <p>A relationship that associates a component with another component.</p>
     pub fn relationship(&self) -> std::option::Option<&crate::model::Relationship> {
         self.relationship.as_ref()
-    }
-}
-impl std::fmt::Debug for DataType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataType");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("nested_type", &self.nested_type);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("unit_of_measure", &self.unit_of_measure);
-        formatter.field("relationship", &self.relationship);
-        formatter.finish()
     }
 }
 /// See [`DataType`](crate::model::DataType).
@@ -1307,7 +1233,7 @@ impl DataType {
 
 /// <p>An object that specifies a relationship with another component type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Relationship {
     /// <p>The ID of the target component type associated with this relationship.</p>
     #[doc(hidden)]
@@ -1324,14 +1250,6 @@ impl Relationship {
     /// <p>The type of the relationship.</p>
     pub fn relationship_type(&self) -> std::option::Option<&str> {
         self.relationship_type.as_deref()
-    }
-}
-impl std::fmt::Debug for Relationship {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Relationship");
-        formatter.field("target_component_type_id", &self.target_component_type_id);
-        formatter.field("relationship_type", &self.relationship_type);
-        formatter.finish()
     }
 }
 /// See [`Relationship`](crate::model::Relationship).
@@ -1614,7 +1532,7 @@ impl AsRef<str> for ComponentUpdateType {
 
 /// <p>The function request body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionRequest {
     /// <p>The required properties of the function.</p>
     #[doc(hidden)]
@@ -1638,15 +1556,6 @@ impl FunctionRequest {
     /// <p>The data connector.</p>
     pub fn implemented_by(&self) -> std::option::Option<&crate::model::DataConnector> {
         self.implemented_by.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionRequest");
-        formatter.field("required_properties", &self.required_properties);
-        formatter.field("scope", &self.scope);
-        formatter.field("implemented_by", &self.implemented_by);
-        formatter.finish()
     }
 }
 /// See [`FunctionRequest`](crate::model::FunctionRequest).
@@ -1715,7 +1624,7 @@ impl FunctionRequest {
 
 /// <p>The data connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataConnector {
     /// <p>The Lambda function associated with this data connector.</p>
     #[doc(hidden)]
@@ -1732,14 +1641,6 @@ impl DataConnector {
     /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
     pub fn is_native(&self) -> std::option::Option<bool> {
         self.is_native
-    }
-}
-impl std::fmt::Debug for DataConnector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataConnector");
-        formatter.field("lambda", &self.lambda);
-        formatter.field("is_native", &self.is_native);
-        formatter.finish()
     }
 }
 /// See [`DataConnector`](crate::model::DataConnector).
@@ -1793,7 +1694,7 @@ impl DataConnector {
 
 /// <p>The Lambda function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunction {
     /// <p>The ARN of the Lambda function.</p>
     #[doc(hidden)]
@@ -1803,13 +1704,6 @@ impl LambdaFunction {
     /// <p>The ARN of the Lambda function.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaFunction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunction");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunction`](crate::model::LambdaFunction).
@@ -1936,7 +1830,7 @@ impl AsRef<str> for Scope {
 
 /// <p>An object that contains information about a workspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceSummary {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -1974,17 +1868,6 @@ impl WorkspaceSummary {
     /// <p>The date and time when the workspace was last updated.</p>
     pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceSummary");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
@@ -2077,7 +1960,7 @@ impl WorkspaceSummary {
 
 /// <p>An object that contains information about a scene.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SceneSummary {
     /// <p>The ID of the scene.</p>
     #[doc(hidden)]
@@ -2122,18 +2005,6 @@ impl SceneSummary {
     /// <p>The scene description.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for SceneSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SceneSummary");
-        formatter.field("scene_id", &self.scene_id);
-        formatter.field("content_location", &self.content_location);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`SceneSummary`](crate::model::SceneSummary).
@@ -2241,7 +2112,7 @@ impl SceneSummary {
 
 /// <p>An object that contains information about an entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitySummary {
     /// <p>The ID of the entity.</p>
     #[doc(hidden)]
@@ -2307,21 +2178,6 @@ impl EntitySummary {
     /// <p>The last date and time when the entity was updated.</p>
     pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for EntitySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitySummary");
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("entity_name", &self.entity_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("parent_entity_id", &self.parent_entity_id);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("has_child_entities", &self.has_child_entities);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.finish()
     }
 }
 /// See [`EntitySummary`](crate::model::EntitySummary).
@@ -2465,7 +2321,7 @@ impl EntitySummary {
 
 /// <p>An object that represents the status of an entity, component, component type, or workspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Status {
     /// <p>The current state of the entity, component, component type, or workspace.</p>
     #[doc(hidden)]
@@ -2482,14 +2338,6 @@ impl Status {
     /// <p>The error message.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for Status {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Status");
-        formatter.field("state", &self.state);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`Status`](crate::model::Status).
@@ -2540,7 +2388,7 @@ impl Status {
 
 /// <p>The error details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetails {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -2557,14 +2405,6 @@ impl ErrorDetails {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetails");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
@@ -2771,7 +2611,7 @@ impl ListEntitiesFilter {
 
 /// <p>An object that contains information about a component type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentTypeSummary {
     /// <p>The ARN of the component type.</p>
     #[doc(hidden)]
@@ -2816,18 +2656,6 @@ impl ComponentTypeSummary {
     /// <p>The current status of the component type.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ComponentTypeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentTypeSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
@@ -3003,7 +2831,7 @@ impl ListComponentTypesFilter {
 
 /// <p>The history of values for a time series property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyValueHistory {
     /// <p>An object that uniquely identifies an entity property.</p>
     #[doc(hidden)]
@@ -3022,14 +2850,6 @@ impl PropertyValueHistory {
     /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::PropertyValue]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for PropertyValueHistory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyValueHistory");
-        formatter.field("entity_property_reference", &self.entity_property_reference);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`PropertyValueHistory`](crate::model::PropertyValueHistory).
@@ -3096,7 +2916,7 @@ impl PropertyValueHistory {
 
 /// <p>An object that contains information about a value for a time series property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyValue {
     /// <p>The timestamp of a value for a time series property.</p>
     #[deprecated(
@@ -3152,15 +2972,6 @@ impl PropertyValue {
     /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
     pub fn time(&self) -> std::option::Option<&str> {
         self.time.as_deref()
-    }
-}
-impl std::fmt::Debug for PropertyValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyValue");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.field("time", &self.time);
-        formatter.finish()
     }
 }
 /// See [`PropertyValue`](crate::model::PropertyValue).
@@ -3258,7 +3069,7 @@ impl PropertyValue {
 
 /// <p>An object that uniquely identifies an entity property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityPropertyReference {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
@@ -3293,16 +3104,6 @@ impl EntityPropertyReference {
     /// <p>The name of the property.</p>
     pub fn property_name(&self) -> std::option::Option<&str> {
         self.property_name.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityPropertyReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityPropertyReference");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("external_id_property", &self.external_id_property);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("property_name", &self.property_name);
-        formatter.finish()
     }
 }
 /// See [`EntityPropertyReference`](crate::model::EntityPropertyReference).
@@ -3490,7 +3291,7 @@ impl AsRef<str> for OrderByTime {
 
 /// <p>An object that specifies how to interpolate data in a list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InterpolationParameters {
     /// <p>The interpolation type.</p>
     #[doc(hidden)]
@@ -3507,14 +3308,6 @@ impl InterpolationParameters {
     /// <p>The interpolation time interval in seconds.</p>
     pub fn interval_in_seconds(&self) -> std::option::Option<i64> {
         self.interval_in_seconds
-    }
-}
-impl std::fmt::Debug for InterpolationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InterpolationParameters");
-        formatter.field("interpolation_type", &self.interpolation_type);
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`InterpolationParameters`](crate::model::InterpolationParameters).
@@ -3655,7 +3448,7 @@ impl AsRef<str> for InterpolationType {
 
 /// <p>An object that filters items returned by a property request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyFilter {
     /// <p>The property name associated with this property filter.</p>
     #[doc(hidden)]
@@ -3679,15 +3472,6 @@ impl PropertyFilter {
     /// <p>The value associated with this property filter.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::DataValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyFilter");
-        formatter.field("property_name", &self.property_name);
-        formatter.field("operator", &self.operator);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`PropertyFilter`](crate::model::PropertyFilter).
@@ -3753,7 +3537,7 @@ impl PropertyFilter {
 
 /// <p>The latest value of the property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyLatestValue {
     /// <p>An object that specifies information about a property.&gt;</p>
     #[doc(hidden)]
@@ -3772,14 +3556,6 @@ impl PropertyLatestValue {
     /// <p>The value of the property.</p>
     pub fn property_value(&self) -> std::option::Option<&crate::model::DataValue> {
         self.property_value.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyLatestValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyLatestValue");
-        formatter.field("property_reference", &self.property_reference);
-        formatter.field("property_value", &self.property_value);
-        formatter.finish()
     }
 }
 /// See [`PropertyLatestValue`](crate::model::PropertyLatestValue).
@@ -3836,7 +3612,7 @@ impl PropertyLatestValue {
 
 /// <p>An object that returns information about a component type create or update request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentResponse {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
@@ -3887,18 +3663,6 @@ impl ComponentResponse {
         &std::collections::HashMap<std::string::String, crate::model::PropertyResponse>,
     > {
         self.properties.as_ref()
-    }
-}
-impl std::fmt::Debug for ComponentResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentResponse");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("description", &self.description);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("status", &self.status);
-        formatter.field("defined_in", &self.defined_in);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`ComponentResponse`](crate::model::ComponentResponse).
@@ -4020,7 +3784,7 @@ impl ComponentResponse {
 
 /// <p>An object that contains information about a property response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyResponse {
     /// <p>An object that specifies information about a property.</p>
     #[doc(hidden)]
@@ -4037,14 +3801,6 @@ impl PropertyResponse {
     /// <p>The value of the property.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::DataValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyResponse");
-        formatter.field("definition", &self.definition);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`PropertyResponse`](crate::model::PropertyResponse).
@@ -4098,7 +3854,7 @@ impl PropertyResponse {
 
 /// <p>An object that contains response data from a property definition request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyDefinitionResponse {
     /// <p>An object that contains information about the data type.</p>
     #[doc(hidden)]
@@ -4175,22 +3931,6 @@ impl PropertyDefinitionResponse {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyDefinitionResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyDefinitionResponse");
-        formatter.field("data_type", &self.data_type);
-        formatter.field("is_time_series", &self.is_time_series);
-        formatter.field("is_required_in_entity", &self.is_required_in_entity);
-        formatter.field("is_external_id", &self.is_external_id);
-        formatter.field("is_stored_externally", &self.is_stored_externally);
-        formatter.field("is_imported", &self.is_imported);
-        formatter.field("is_final", &self.is_final);
-        formatter.field("is_inherited", &self.is_inherited);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
     }
 }
 /// See [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
@@ -4357,7 +4097,7 @@ impl PropertyDefinitionResponse {
 
 /// <p>The function response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionResponse {
     /// <p>The required properties of the function.</p>
     #[doc(hidden)]
@@ -4388,16 +4128,6 @@ impl FunctionResponse {
     /// <p>Indicates whether this function is inherited.</p>
     pub fn is_inherited(&self) -> std::option::Option<bool> {
         self.is_inherited
-    }
-}
-impl std::fmt::Debug for FunctionResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionResponse");
-        formatter.field("required_properties", &self.required_properties);
-        formatter.field("scope", &self.scope);
-        formatter.field("implemented_by", &self.implemented_by);
-        formatter.field("is_inherited", &self.is_inherited);
-        formatter.finish()
     }
 }
 /// See [`FunctionResponse`](crate::model::FunctionResponse).
@@ -4478,7 +4208,7 @@ impl FunctionResponse {
 
 /// <p>An object that sets information about a component type create or update request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentRequest {
     /// <p>The description of the component request.</p>
     #[doc(hidden)]
@@ -4508,15 +4238,6 @@ impl ComponentRequest {
         &std::collections::HashMap<std::string::String, crate::model::PropertyRequest>,
     > {
         self.properties.as_ref()
-    }
-}
-impl std::fmt::Debug for ComponentRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentRequest");
-        formatter.field("description", &self.description);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`ComponentRequest`](crate::model::ComponentRequest).
@@ -4599,7 +4320,7 @@ impl ComponentRequest {
 
 /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutPropertyErrorEntry {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
     #[doc(hidden)]
@@ -4609,13 +4330,6 @@ impl BatchPutPropertyErrorEntry {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchPutPropertyError]> {
         self.errors.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPutPropertyErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutPropertyErrorEntry");
-        formatter.field("errors", &self.errors);
-        formatter.finish()
     }
 }
 /// See [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
@@ -4663,7 +4377,7 @@ impl BatchPutPropertyErrorEntry {
 
 /// <p>An error returned by the <code>BatchPutProperty</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutPropertyError {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -4687,15 +4401,6 @@ impl BatchPutPropertyError {
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub fn entry(&self) -> std::option::Option<&crate::model::PropertyValueEntry> {
         self.entry.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchPutPropertyError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutPropertyError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("entry", &self.entry);
-        formatter.finish()
     }
 }
 /// See [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
@@ -4764,7 +4469,7 @@ impl BatchPutPropertyError {
 
 /// <p>An object that specifies information about time series property values. This object is used and consumed by the <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_BatchPutPropertyValues.html">BatchPutPropertyValues</a> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyValueEntry {
     /// <p>An object that contains information about the entity that has the property.</p>
     #[doc(hidden)]
@@ -4783,14 +4488,6 @@ impl PropertyValueEntry {
     /// <p>A list of objects that specify time series property values.</p>
     pub fn property_values(&self) -> std::option::Option<&[crate::model::PropertyValue]> {
         self.property_values.as_deref()
-    }
-}
-impl std::fmt::Debug for PropertyValueEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyValueEntry");
-        formatter.field("entity_property_reference", &self.entity_property_reference);
-        formatter.field("property_values", &self.property_values);
-        formatter.finish()
     }
 }
 /// See [`PropertyValueEntry`](crate::model::PropertyValueEntry).

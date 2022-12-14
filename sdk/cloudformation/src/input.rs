@@ -14047,7 +14047,7 @@ impl ValidateTemplateInput {
 
 /// <p>The input for <code>ValidateTemplate</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateTemplateInput {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
@@ -14070,18 +14070,10 @@ impl ValidateTemplateInput {
         self.template_url.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateTemplateInput");
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTerminationProtectionInput {
     /// <p>Whether to enable termination protection on the specified stack.</p>
     #[doc(hidden)]
@@ -14100,21 +14092,10 @@ impl UpdateTerminationProtectionInput {
         self.stack_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTerminationProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTerminationProtectionInput");
-        formatter.field(
-            "enable_termination_protection",
-            &self.enable_termination_protection,
-        );
-        formatter.field("stack_name", &self.stack_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStackSetInput {
     /// <p>The name or unique ID of the stack set that you want to update.</p>
     #[doc(hidden)]
@@ -14360,35 +14341,10 @@ impl UpdateStackSetInput {
         self.managed_execution.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateStackSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStackSetInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("description", &self.description);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.field("use_previous_template", &self.use_previous_template);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("tags", &self.tags);
-        formatter.field("operation_preferences", &self.operation_preferences);
-        formatter.field("administration_role_arn", &self.administration_role_arn);
-        formatter.field("execution_role_name", &self.execution_role_name);
-        formatter.field("deployment_targets", &self.deployment_targets);
-        formatter.field("permission_model", &self.permission_model);
-        formatter.field("auto_deployment", &self.auto_deployment);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("accounts", &self.accounts);
-        formatter.field("regions", &self.regions);
-        formatter.field("call_as", &self.call_as);
-        formatter.field("managed_execution", &self.managed_execution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStackInstancesInput {
     /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
     #[doc(hidden)]
@@ -14487,24 +14443,10 @@ impl UpdateStackInstancesInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateStackInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStackInstancesInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("accounts", &self.accounts);
-        formatter.field("deployment_targets", &self.deployment_targets);
-        formatter.field("regions", &self.regions);
-        formatter.field("parameter_overrides", &self.parameter_overrides);
-        formatter.field("operation_preferences", &self.operation_preferences);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for an <code>UpdateStack</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStackInput {
     /// <p>The name or unique stack ID of the stack to update.</p>
     #[doc(hidden)]
@@ -14698,39 +14640,10 @@ impl UpdateStackInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStackInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.field("use_previous_template", &self.use_previous_template);
-        formatter.field(
-            "stack_policy_during_update_body",
-            &self.stack_policy_during_update_body,
-        );
-        formatter.field(
-            "stack_policy_during_update_url",
-            &self.stack_policy_during_update_url,
-        );
-        formatter.field("parameters", &self.parameters);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("rollback_configuration", &self.rollback_configuration);
-        formatter.field("stack_policy_body", &self.stack_policy_body);
-        formatter.field("stack_policy_url", &self.stack_policy_url);
-        formatter.field("notification_ar_ns", &self.notification_ar_ns);
-        formatter.field("tags", &self.tags);
-        formatter.field("disable_rollback", &self.disable_rollback);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -14794,21 +14707,10 @@ impl TestTypeInput {
         self.log_delivery_bucket.as_deref()
     }
 }
-impl std::fmt::Debug for TestTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestTypeInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("log_delivery_bucket", &self.log_delivery_bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopStackSetOperationInput {
     /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
     #[doc(hidden)]
@@ -14844,19 +14746,10 @@ impl StopStackSetOperationInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for StopStackSetOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopStackSetOperationInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>SignalResource</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalResourceInput {
     /// <p>The stack name or unique stack ID that includes the resource that you want to signal.</p>
     #[doc(hidden)]
@@ -14889,20 +14782,10 @@ impl SignalResourceInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for SignalResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalResourceInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("unique_id", &self.unique_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTypeDefaultVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -14941,20 +14824,10 @@ impl SetTypeDefaultVersionInput {
         self.version_id.as_deref()
     }
 }
-impl std::fmt::Debug for SetTypeDefaultVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTypeDefaultVersionInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTypeConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region.</p>
@@ -15006,21 +14879,10 @@ impl SetTypeConfigurationInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for SetTypeConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTypeConfigurationInput");
-        formatter.field("type_arn", &self.type_arn);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("configuration_alias", &self.configuration_alias);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>SetStackPolicy</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetStackPolicyInput {
     /// <p>The name or unique stack ID that you want to associate a policy with.</p>
     #[doc(hidden)]
@@ -15046,19 +14908,10 @@ impl SetStackPolicyInput {
         self.stack_policy_url.as_deref()
     }
 }
-impl std::fmt::Debug for SetStackPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetStackPolicyInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("stack_policy_body", &self.stack_policy_body);
-        formatter.field("stack_policy_url", &self.stack_policy_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackStackInput {
     /// <p>The name that's associated with the stack.</p>
     #[doc(hidden)]
@@ -15084,19 +14937,10 @@ impl RollbackStackInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for RollbackStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackStackInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterTypeInput {
     /// <p>The kind of extension.</p>
     #[doc(hidden)]
@@ -15185,22 +15029,10 @@ impl RegisterTypeInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterTypeInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("schema_handler_package", &self.schema_handler_package);
-        formatter.field("logging_config", &self.logging_config);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterPublisherInput {
     /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to register to publish public extensions to the CloudFormation registry.</p>
     /// <p>The default is <code>false</code>.</p>
@@ -15223,21 +15055,10 @@ impl RegisterPublisherInput {
         self.connection_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterPublisherInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterPublisherInput");
-        formatter.field(
-            "accept_terms_and_conditions",
-            &self.accept_terms_and_conditions,
-        );
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordHandlerProgressInput {
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     #[doc(hidden)]
@@ -15291,23 +15112,10 @@ impl RecordHandlerProgressInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for RecordHandlerProgressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordHandlerProgressInput");
-        formatter.field("bearer_token", &self.bearer_token);
-        formatter.field("operation_status", &self.operation_status);
-        formatter.field("current_operation_status", &self.current_operation_status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("resource_model", &self.resource_model);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishTypeInput {
     /// <p>The type of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -15356,20 +15164,10 @@ impl PublishTypeInput {
         self.public_version_number.as_deref()
     }
 }
-impl std::fmt::Debug for PublishTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishTypeInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("arn", &self.arn);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("public_version_number", &self.public_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTypeVersionsInput {
     /// <p>The kind of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -15443,23 +15241,10 @@ impl ListTypeVersionsInput {
         self.publisher_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListTypeVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTypeVersionsInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("deprecated_status", &self.deprecated_status);
-        formatter.field("publisher_id", &self.publisher_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTypesInput {
     /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
@@ -15559,23 +15344,10 @@ impl ListTypesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTypesInput");
-        formatter.field("visibility", &self.visibility);
-        formatter.field("provisioning_type", &self.provisioning_type);
-        formatter.field("deprecated_status", &self.deprecated_status);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTypeRegistrationsInput {
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -15632,25 +15404,10 @@ impl ListTypeRegistrationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTypeRegistrationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTypeRegistrationsInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("type_arn", &self.type_arn);
-        formatter.field(
-            "registration_status_filter",
-            &self.registration_status_filter,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStackSetsInput {
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackSets</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     #[doc(hidden)]
@@ -15693,20 +15450,10 @@ impl ListStackSetsInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for ListStackSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStackSetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("status", &self.status);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStackSetOperationsInput {
     /// <p>The name or unique ID of the stack set that you want to get operation summaries for.</p>
     #[doc(hidden)]
@@ -15749,20 +15496,10 @@ impl ListStackSetOperationsInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for ListStackSetOperationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStackSetOperationsInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStackSetOperationResultsInput {
     /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
     #[doc(hidden)]
@@ -15812,21 +15549,10 @@ impl ListStackSetOperationResultsInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for ListStackSetOperationResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStackSetOperationResultsInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for <code>ListStacks</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStacksInput {
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
     #[doc(hidden)]
@@ -15845,18 +15571,10 @@ impl ListStacksInput {
         self.stack_status_filter.as_deref()
     }
 }
-impl std::fmt::Debug for ListStacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStacksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("stack_status_filter", &self.stack_status_filter);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>ListStackResource</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStackResourcesInput {
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -15885,18 +15603,10 @@ impl ListStackResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListStackResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStackResourcesInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
     #[doc(hidden)]
@@ -15960,23 +15670,10 @@ impl ListStackInstancesInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for ListStackInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStackInstancesInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field("stack_instance_account", &self.stack_instance_account);
-        formatter.field("stack_instance_region", &self.stack_instance_region);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p>The name of the exported output value. CloudFormation returns the stack names that are importing this value.</p>
     #[doc(hidden)]
@@ -15995,18 +15692,10 @@ impl ListImportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportsInput");
-        formatter.field("export_name", &self.export_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExportsInput {
     /// <p>A string (provided by the <code>ListExports</code> response output) that identifies the next page of exported output values that you asked to retrieve.</p>
     #[doc(hidden)]
@@ -16018,17 +15707,10 @@ impl ListExportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListExportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExportsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>ListChangeSets</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChangeSetsInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
     #[doc(hidden)]
@@ -16047,18 +15729,10 @@ impl ListChangeSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChangeSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChangeSetsInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportStacksToStackSetInput {
     /// <p>The name of the stack set. The name must be unique in the Region where you create your stack set.</p>
     #[doc(hidden)]
@@ -16128,23 +15802,10 @@ impl ImportStacksToStackSetInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for ImportStacksToStackSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportStacksToStackSetInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("stack_ids", &self.stack_ids);
-        formatter.field("stack_ids_url", &self.stack_ids_url);
-        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
-        formatter.field("operation_preferences", &self.operation_preferences);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>GetTemplateSummary</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateSummaryInput {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
@@ -16202,21 +15863,10 @@ impl GetTemplateSummaryInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for GetTemplateSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateSummaryInput");
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for a <code>GetTemplate</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateInput {
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -16254,19 +15904,10 @@ impl GetTemplateInput {
         self.template_stage.as_ref()
     }
 }
-impl std::fmt::Debug for GetTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("template_stage", &self.template_stage);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>GetStackPolicy</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStackPolicyInput {
     /// <p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p>
     #[doc(hidden)]
@@ -16278,17 +15919,10 @@ impl GetStackPolicyInput {
         self.stack_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetStackPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStackPolicyInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>ExecuteChangeSet</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
     #[doc(hidden)]
@@ -16323,20 +15957,10 @@ impl ExecuteChangeSetInput {
         self.disable_rollback
     }
 }
-impl std::fmt::Debug for ExecuteChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteChangeSetInput");
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("disable_rollback", &self.disable_rollback);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for an <code>EstimateTemplateCost</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EstimateTemplateCostInput {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
@@ -16366,19 +15990,10 @@ impl EstimateTemplateCostInput {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for EstimateTemplateCostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EstimateTemplateCostInput");
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectStackSetDriftInput {
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
     #[doc(hidden)]
@@ -16425,20 +16040,10 @@ impl DetectStackSetDriftInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for DetectStackSetDriftInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectStackSetDriftInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("operation_preferences", &self.operation_preferences);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectStackResourceDriftInput {
     /// <p>The name of the stack to which the resource belongs.</p>
     #[doc(hidden)]
@@ -16457,18 +16062,10 @@ impl DetectStackResourceDriftInput {
         self.logical_resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DetectStackResourceDriftInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectStackResourceDriftInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectStackDriftInput {
     /// <p>The name of the stack for which you want to detect drift.</p>
     #[doc(hidden)]
@@ -16487,18 +16084,10 @@ impl DetectStackDriftInput {
         self.logical_resource_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DetectStackDriftInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectStackDriftInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("logical_resource_ids", &self.logical_resource_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTypeRegistrationInput {
     /// <p>The identifier for this registration request.</p>
     /// <p>This registration token is generated by CloudFormation when you initiate a registration request using <code> <code>RegisterType</code> </code>.</p>
@@ -16512,17 +16101,10 @@ impl DescribeTypeRegistrationInput {
         self.registration_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTypeRegistrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTypeRegistrationInput");
-        formatter.field("registration_token", &self.registration_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTypeInput {
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -16579,22 +16161,10 @@ impl DescribeTypeInput {
         self.public_version_number.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTypeInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("publisher_id", &self.publisher_id);
-        formatter.field("public_version_number", &self.public_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackSetOperationInput {
     /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
     #[doc(hidden)]
@@ -16630,19 +16200,10 @@ impl DescribeStackSetOperationInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeStackSetOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackSetOperationInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackSetInput {
     /// <p>The name or unique ID of the stack set whose description you want.</p>
     #[doc(hidden)]
@@ -16671,18 +16232,10 @@ impl DescribeStackSetInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeStackSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackSetInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for <code>DescribeStacks</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStacksInput {
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -16711,18 +16264,10 @@ impl DescribeStacksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStacksInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for <code>DescribeStackResources</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackResourcesInput {
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -16768,19 +16313,10 @@ impl DescribeStackResourcesInput {
         self.physical_resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStackResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackResourcesInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsInput {
     /// <p>The name of the stack for which you want drift information.</p>
     #[doc(hidden)]
@@ -16828,23 +16364,10 @@ impl DescribeStackResourceDriftsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeStackResourceDriftsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackResourceDriftsInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field(
-            "stack_resource_drift_status_filters",
-            &self.stack_resource_drift_status_filters,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for <code>DescribeStackResource</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackResourceInput {
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -16875,18 +16398,10 @@ impl DescribeStackResourceInput {
         self.logical_resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStackResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackResourceInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackInstanceInput {
     /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
     #[doc(hidden)]
@@ -16929,20 +16444,10 @@ impl DescribeStackInstanceInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeStackInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackInstanceInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("stack_instance_account", &self.stack_instance_account);
-        formatter.field("stack_instance_region", &self.stack_instance_region);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for <code>DescribeStackEvents</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackEventsInput {
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -16971,18 +16476,10 @@ impl DescribeStackEventsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStackEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackEventsInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackDriftDetectionStatusInput {
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
@@ -16996,17 +16493,10 @@ impl DescribeStackDriftDetectionStatusInput {
         self.stack_drift_detection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStackDriftDetectionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackDriftDetectionStatusInput");
-        formatter.field("stack_drift_detection_id", &self.stack_drift_detection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePublisherInput {
     /// <p>The ID of the extension publisher.</p>
     /// <p>If you don't supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
@@ -17020,17 +16510,10 @@ impl DescribePublisherInput {
         self.publisher_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePublisherInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePublisherInput");
-        formatter.field("publisher_id", &self.publisher_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChangeSetHooksInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
     #[doc(hidden)]
@@ -17063,20 +16546,10 @@ impl DescribeChangeSetHooksInput {
         self.logical_resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChangeSetHooksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChangeSetHooksInput");
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DescribeChangeSet</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
     #[doc(hidden)]
@@ -17102,19 +16575,10 @@ impl DescribeChangeSetInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChangeSetInput");
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DescribeAccountLimits</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountLimitsInput {
     /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
     #[doc(hidden)]
@@ -17126,17 +16590,10 @@ impl DescribeAccountLimitsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccountLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountLimitsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -17175,20 +16632,10 @@ impl DeregisterTypeInput {
         self.version_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterTypeInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStackSetInput {
     /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value by running <code>ListStackSets</code>.</p>
     #[doc(hidden)]
@@ -17217,18 +16664,10 @@ impl DeleteStackSetInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteStackSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStackSetInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to delete stack instances for.</p>
     #[doc(hidden)]
@@ -17313,24 +16752,10 @@ impl DeleteStackInstancesInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteStackInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStackInstancesInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("accounts", &self.accounts);
-        formatter.field("deployment_targets", &self.deployment_targets);
-        formatter.field("regions", &self.regions);
-        formatter.field("operation_preferences", &self.operation_preferences);
-        formatter.field("retain_stacks", &self.retain_stacks);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for <code>DeleteStack</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStackInput {
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
     #[doc(hidden)]
@@ -17371,20 +16796,10 @@ impl DeleteStackInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStackInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("retain_resources", &self.retain_resources);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DeleteChangeSet</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
     #[doc(hidden)]
@@ -17403,18 +16818,10 @@ impl DeleteChangeSetInput {
         self.stack_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChangeSetInput");
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateTypeInput {
     /// <p>The type name of the extension, in this account and region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -17446,19 +16853,10 @@ impl DeactivateTypeInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeactivateTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateTypeInput");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStackSetInput {
     /// <p>The name to associate with the stack set. The name must be unique in the Region where you create your stack set.</p> <note>
     /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
@@ -17644,31 +17042,10 @@ impl CreateStackSetInput {
         self.managed_execution.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStackSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStackSetInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("description", &self.description);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("tags", &self.tags);
-        formatter.field("administration_role_arn", &self.administration_role_arn);
-        formatter.field("execution_role_name", &self.execution_role_name);
-        formatter.field("permission_model", &self.permission_model);
-        formatter.field("auto_deployment", &self.auto_deployment);
-        formatter.field("call_as", &self.call_as);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("managed_execution", &self.managed_execution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
     #[doc(hidden)]
@@ -17769,24 +17146,10 @@ impl CreateStackInstancesInput {
         self.call_as.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStackInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStackInstancesInput");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("accounts", &self.accounts);
-        formatter.field("deployment_targets", &self.deployment_targets);
-        formatter.field("regions", &self.regions);
-        formatter.field("parameter_overrides", &self.parameter_overrides);
-        formatter.field("operation_preferences", &self.operation_preferences);
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("call_as", &self.call_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for <code>CreateStack</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStackInput {
     /// <p>The name that's associated with the stack. The name must be unique in the Region in which you are creating the stack.</p> <note>
     /// <p>A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an alphabetical character and can't be longer than 128 characters.</p>
@@ -17976,36 +17339,10 @@ impl CreateStackInput {
         self.enable_termination_protection
     }
 }
-impl std::fmt::Debug for CreateStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStackInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("disable_rollback", &self.disable_rollback);
-        formatter.field("rollback_configuration", &self.rollback_configuration);
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.field("notification_ar_ns", &self.notification_ar_ns);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("on_failure", &self.on_failure);
-        formatter.field("stack_policy_body", &self.stack_policy_body);
-        formatter.field("stack_policy_url", &self.stack_policy_url);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field(
-            "enable_termination_protection",
-            &self.enable_termination_protection,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>CreateChangeSet</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChangeSetInput {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
     #[doc(hidden)]
@@ -18187,33 +17524,10 @@ impl CreateChangeSetInput {
         self.include_nested_stacks
     }
 }
-impl std::fmt::Debug for CreateChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChangeSetInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.field("use_previous_template", &self.use_previous_template);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("rollback_configuration", &self.rollback_configuration);
-        formatter.field("notification_ar_ns", &self.notification_ar_ns);
-        formatter.field("tags", &self.tags);
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.field("change_set_type", &self.change_set_type);
-        formatter.field("resources_to_import", &self.resources_to_import);
-        formatter.field("include_nested_stacks", &self.include_nested_stacks);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>ContinueUpdateRollback</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinueUpdateRollbackInput {
     /// <p>The name or the unique ID of the stack that you want to continue rolling back.</p> <note>
     /// <p>Don't specify the name of a nested stack (a stack that was created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the parent stack (the stack that contains the <code>AWS::CloudFormation::Stack</code> resource).</p>
@@ -18264,20 +17578,10 @@ impl ContinueUpdateRollbackInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for ContinueUpdateRollbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinueUpdateRollbackInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("resources_to_skip", &self.resources_to_skip);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>CancelUpdateStack</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelUpdateStackInput {
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
     #[doc(hidden)]
@@ -18296,18 +17600,10 @@ impl CancelUpdateStackInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CancelUpdateStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelUpdateStackInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsInput {
     /// <p>The list of identifiers for the desired extension configurations.</p>
     #[doc(hidden)]
@@ -18322,20 +17618,10 @@ impl BatchDescribeTypeConfigurationsInput {
         self.type_configuration_identifiers.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDescribeTypeConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDescribeTypeConfigurationsInput");
-        formatter.field(
-            "type_configuration_identifiers",
-            &self.type_configuration_identifiers,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateTypeInput {
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
@@ -18430,21 +17716,5 @@ impl ActivateTypeInput {
     /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not both.</p>
     pub fn major_version(&self) -> std::option::Option<i64> {
         self.major_version
-    }
-}
-impl std::fmt::Debug for ActivateTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateTypeInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("public_type_arn", &self.public_type_arn);
-        formatter.field("publisher_id", &self.publisher_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("type_name_alias", &self.type_name_alias);
-        formatter.field("auto_update", &self.auto_update);
-        formatter.field("logging_config", &self.logging_config);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("version_bump", &self.version_bump);
-        formatter.field("major_version", &self.major_version);
-        formatter.finish()
     }
 }

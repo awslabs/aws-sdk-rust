@@ -5150,7 +5150,7 @@ impl UpdateServiceIntegrationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceIntegrationInput {
     /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
     #[doc(hidden)]
@@ -5164,17 +5164,10 @@ impl UpdateServiceIntegrationInput {
         self.service_integration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateServiceIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceIntegrationInput");
-        formatter.field("service_integration", &self.service_integration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceCollectionInput {
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
     #[doc(hidden)]
@@ -5195,18 +5188,10 @@ impl UpdateResourceCollectionInput {
         self.resource_collection.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResourceCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceCollectionInput");
-        formatter.field("action", &self.action);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventSourcesConfigInput {
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
     #[doc(hidden)]
@@ -5218,17 +5203,10 @@ impl UpdateEventSourcesConfigInput {
         self.event_sources.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEventSourcesConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventSourcesConfigInput");
-        formatter.field("event_sources", &self.event_sources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartCostEstimationInput {
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
     #[doc(hidden)]
@@ -5250,18 +5228,10 @@ impl StartCostEstimationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartCostEstimationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartCostEstimationInput");
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchOrganizationInsightsInput {
     /// <p>The ID of the Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -5308,22 +5278,10 @@ impl SearchOrganizationInsightsInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for SearchOrganizationInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchOrganizationInsightsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("start_time_range", &self.start_time_range);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchInsightsInput {
     /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     #[doc(hidden)]
@@ -5363,21 +5321,10 @@ impl SearchInsightsInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for SearchInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchInsightsInput");
-        formatter.field("start_time_range", &self.start_time_range);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveNotificationChannelInput {
     /// <p> The ID of the notification channel to be removed. </p>
     #[doc(hidden)]
@@ -5389,17 +5336,10 @@ impl RemoveNotificationChannelInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveNotificationChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveNotificationChannelInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFeedbackInput {
     /// <p> The feedback from customers is about the recommendations in this insight. </p>
     #[doc(hidden)]
@@ -5411,17 +5351,10 @@ impl PutFeedbackInput {
         self.insight_feedback.as_ref()
     }
 }
-impl std::fmt::Debug for PutFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFeedbackInput");
-        formatter.field("insight_feedback", &self.insight_feedback);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecommendationsInput {
     /// <p> The ID of the requested insight. </p>
     #[doc(hidden)]
@@ -5454,20 +5387,10 @@ impl ListRecommendationsInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecommendationsInput");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("locale", &self.locale);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrganizationInsightsInput {
     /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
     #[doc(hidden)]
@@ -5507,21 +5430,10 @@ impl ListOrganizationInsightsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOrganizationInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOrganizationInsightsInput");
-        formatter.field("status_filter", &self.status_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNotificationChannelsInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     #[doc(hidden)]
@@ -5533,17 +5445,10 @@ impl ListNotificationChannelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNotificationChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNotificationChannelsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMonitoredResourcesInput {
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
     #[doc(hidden)]
@@ -5569,19 +5474,10 @@ impl ListMonitoredResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMonitoredResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMonitoredResourcesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInsightsInput {
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     #[doc(hidden)]
@@ -5607,19 +5503,10 @@ impl ListInsightsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInsightsInput");
-        formatter.field("status_filter", &self.status_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventsInput {
     /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
     #[doc(hidden)]
@@ -5652,20 +5539,10 @@ impl ListEventsInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsInput {
     /// <p> The ID of the insight containing the log groups. </p>
     #[doc(hidden)]
@@ -5691,19 +5568,10 @@ impl ListAnomalousLogGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAnomalousLogGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnomalousLogGroupsInput");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnomaliesForInsightInput {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     #[doc(hidden)]
@@ -5743,21 +5611,10 @@ impl ListAnomaliesForInsightInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListAnomaliesForInsightInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnomaliesForInsightInput");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("start_time_range", &self.start_time_range);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceCollectionInput {
     /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
@@ -5778,18 +5635,10 @@ impl GetResourceCollectionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceCollectionInput");
-        formatter.field("resource_collection_type", &self.resource_collection_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCostEstimationInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     #[doc(hidden)]
@@ -5801,28 +5650,15 @@ impl GetCostEstimationInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCostEstimationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCostEstimationInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceIntegrationInput {}
-impl std::fmt::Debug for DescribeServiceIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceIntegrationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourceCollectionHealthInput {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
@@ -5843,18 +5679,10 @@ impl DescribeResourceCollectionHealthInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourceCollectionHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourceCollectionHealthInput");
-        formatter.field("resource_collection_type", &self.resource_collection_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationResourceCollectionHealthInput {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
@@ -5897,24 +5725,10 @@ impl DescribeOrganizationResourceCollectionHealthInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeOrganizationResourceCollectionHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationResourceCollectionHealthInput");
-        formatter.field(
-            "organization_resource_collection_type",
-            &self.organization_resource_collection_type,
-        );
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationOverviewInput {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     #[doc(hidden)]
@@ -5947,20 +5761,10 @@ impl DescribeOrganizationOverviewInput {
         self.organizational_unit_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrganizationOverviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationOverviewInput");
-        formatter.field("from_time", &self.from_time);
-        formatter.field("to_time", &self.to_time);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationHealthInput {
     /// <p>The ID of the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -5979,18 +5783,10 @@ impl DescribeOrganizationHealthInput {
         self.organizational_unit_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrganizationHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationHealthInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInsightInput {
     /// <p> The ID of the insight. </p>
     #[doc(hidden)]
@@ -6009,18 +5805,10 @@ impl DescribeInsightInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInsightInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInsightInput");
-        formatter.field("id", &self.id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFeedbackInput {
     /// <p> The ID of the insight for which the feedback was provided. </p>
     #[doc(hidden)]
@@ -6032,28 +5820,15 @@ impl DescribeFeedbackInput {
         self.insight_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFeedbackInput");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventSourcesConfigInput {}
-impl std::fmt::Debug for DescribeEventSourcesConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventSourcesConfigInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnomalyInput {
     /// <p> The ID of the anomaly. </p>
     #[doc(hidden)]
@@ -6072,18 +5847,10 @@ impl DescribeAnomalyInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnomalyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnomalyInput");
-        formatter.field("id", &self.id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountOverviewInput {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     #[doc(hidden)]
@@ -6102,29 +5869,15 @@ impl DescribeAccountOverviewInput {
         self.to_time.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAccountOverviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountOverviewInput");
-        formatter.field("from_time", &self.from_time);
-        formatter.field("to_time", &self.to_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountHealthInput {}
-impl std::fmt::Debug for DescribeAccountHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountHealthInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInsightInput {
     /// <p>The ID of the insight.</p>
     #[doc(hidden)]
@@ -6136,17 +5889,10 @@ impl DeleteInsightInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInsightInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInsightInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddNotificationChannelInput {
     /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     #[doc(hidden)]
@@ -6156,12 +5902,5 @@ impl AddNotificationChannelInput {
     /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     pub fn config(&self) -> std::option::Option<&crate::model::NotificationChannelConfig> {
         self.config.as_ref()
-    }
-}
-impl std::fmt::Debug for AddNotificationChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddNotificationChannelInput");
-        formatter.field("config", &self.config);
-        formatter.finish()
     }
 }

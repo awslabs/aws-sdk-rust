@@ -2,7 +2,7 @@
 
 /// <p>The result of the <code>ResolveCustomer</code> operation. Contains the <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolveCustomerOutput {
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl ResolveCustomerOutput {
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub fn customer_aws_account_id(&self) -> std::option::Option<&str> {
         self.customer_aws_account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResolveCustomerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolveCustomerOutput");
-        formatter.field("customer_identifier", &self.customer_identifier);
-        formatter.field("product_code", &self.product_code);
-        formatter.field("customer_aws_account_id", &self.customer_aws_account_id);
-        formatter.finish()
     }
 }
 /// See [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
@@ -103,7 +94,7 @@ impl ResolveCustomerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
     #[doc(hidden)]
@@ -122,17 +113,6 @@ impl RegisterUsageOutput {
     /// <p>JWT Token</p>
     pub fn signature(&self) -> std::option::Option<&str> {
         self.signature.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisterUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterUsageOutput");
-        formatter.field(
-            "public_key_rotation_timestamp",
-            &self.public_key_rotation_timestamp,
-        );
-        formatter.field("signature", &self.signature);
-        formatter.finish()
     }
 }
 /// See [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
@@ -186,7 +166,7 @@ impl RegisterUsageOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeterUsageOutput {
     /// <p>Metering record id.</p>
     #[doc(hidden)]
@@ -196,13 +176,6 @@ impl MeterUsageOutput {
     /// <p>Metering record id.</p>
     pub fn metering_record_id(&self) -> std::option::Option<&str> {
         self.metering_record_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MeterUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeterUsageOutput");
-        formatter.field("metering_record_id", &self.metering_record_id);
-        formatter.finish()
     }
 }
 /// See [`MeterUsageOutput`](crate::output::MeterUsageOutput).
@@ -244,7 +217,7 @@ impl MeterUsageOutput {
 
 /// <p>Contains the <code>UsageRecords</code> processed by <code>BatchMeterUsage</code> and any records that have failed due to transient error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     #[doc(hidden)]
@@ -261,14 +234,6 @@ impl BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
     pub fn unprocessed_records(&self) -> std::option::Option<&[crate::model::UsageRecord]> {
         self.unprocessed_records.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchMeterUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchMeterUsageOutput");
-        formatter.field("results", &self.results);
-        formatter.field("unprocessed_records", &self.unprocessed_records);
-        formatter.finish()
     }
 }
 /// See [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).

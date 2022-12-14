@@ -584,7 +584,7 @@ impl GetProductsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProductsInput {
     /// <p>The code for the service whose products you want to retrieve. </p>
     #[doc(hidden)]
@@ -626,21 +626,10 @@ impl GetProductsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetProductsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProductsInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("filters", &self.filters);
-        formatter.field("format_version", &self.format_version);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttributeValuesInput {
     /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
     #[doc(hidden)]
@@ -673,20 +662,10 @@ impl GetAttributeValuesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAttributeValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAttributeValuesInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServicesInput {
     /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     #[doc(hidden)]
@@ -719,15 +698,5 @@ impl DescribeServicesInput {
     /// <p>The maximum number of results that you want returned in the response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for DescribeServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServicesInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("format_version", &self.format_version);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }

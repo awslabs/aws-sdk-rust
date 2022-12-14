@@ -6268,7 +6268,7 @@ impl UpdateAssessmentTargetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentTargetInput {
     /// <p>The ARN of the assessment target that you want to update.</p>
     #[doc(hidden)]
@@ -6294,19 +6294,10 @@ impl UpdateAssessmentTargetInput {
         self.resource_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssessmentTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssessmentTargetInput");
-        formatter.field("assessment_target_arn", &self.assessment_target_arn);
-        formatter.field("assessment_target_name", &self.assessment_target_name);
-        formatter.field("resource_group_arn", &self.resource_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsubscribeFromEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
     #[doc(hidden)]
@@ -6332,19 +6323,10 @@ impl UnsubscribeFromEventInput {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UnsubscribeFromEventInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsubscribeFromEventInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("event", &self.event);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscribeToEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
     #[doc(hidden)]
@@ -6370,19 +6352,10 @@ impl SubscribeToEventInput {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SubscribeToEventInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeToEventInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("event", &self.event);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopAssessmentRunInput {
     /// <p>The ARN of the assessment run that you want to stop.</p>
     #[doc(hidden)]
@@ -6401,18 +6374,10 @@ impl StopAssessmentRunInput {
         self.stop_action.as_ref()
     }
 }
-impl std::fmt::Debug for StopAssessmentRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopAssessmentRunInput");
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.field("stop_action", &self.stop_action);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAssessmentRunInput {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
     #[doc(hidden)]
@@ -6431,18 +6396,10 @@ impl StartAssessmentRunInput {
         self.assessment_run_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartAssessmentRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAssessmentRunInput");
-        formatter.field("assessment_template_arn", &self.assessment_template_arn);
-        formatter.field("assessment_run_name", &self.assessment_run_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTagsForResourceInput {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
     #[doc(hidden)]
@@ -6461,18 +6418,10 @@ impl SetTagsForResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for SetTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveAttributesFromFindingsInput {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
     #[doc(hidden)]
@@ -6491,18 +6440,10 @@ impl RemoveAttributesFromFindingsInput {
         self.attribute_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveAttributesFromFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveAttributesFromFindingsInput");
-        formatter.field("finding_arns", &self.finding_arns);
-        formatter.field("attribute_keys", &self.attribute_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterCrossAccountAccessRoleInput {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
     #[doc(hidden)]
@@ -6514,17 +6455,10 @@ impl RegisterCrossAccountAccessRoleInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterCrossAccountAccessRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterCrossAccountAccessRoleInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PreviewAgentsInput {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
     #[doc(hidden)]
@@ -6550,19 +6484,10 @@ impl PreviewAgentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for PreviewAgentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreviewAgentsInput");
-        formatter.field("preview_agents_arn", &self.preview_agents_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
     #[doc(hidden)]
@@ -6574,17 +6499,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRulesPackagesInput {
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     #[doc(hidden)]
@@ -6603,18 +6521,10 @@ impl ListRulesPackagesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRulesPackagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRulesPackagesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingsInput {
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
     #[doc(hidden)]
@@ -6649,20 +6559,10 @@ impl ListFindingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFindingsInput");
-        formatter.field("assessment_run_arns", &self.assessment_run_arns);
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExclusionsInput {
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
     #[doc(hidden)]
@@ -6688,19 +6588,10 @@ impl ListExclusionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListExclusionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExclusionsInput");
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventSubscriptionsInput {
     /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
     #[doc(hidden)]
@@ -6726,19 +6617,10 @@ impl ListEventSubscriptionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEventSubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventSubscriptionsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentTemplatesInput {
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
     #[doc(hidden)]
@@ -6773,20 +6655,10 @@ impl ListAssessmentTemplatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentTemplatesInput");
-        formatter.field("assessment_target_arns", &self.assessment_target_arns);
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentTargetsInput {
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
@@ -6814,19 +6686,10 @@ impl ListAssessmentTargetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentTargetsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentRunsInput {
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
     #[doc(hidden)]
@@ -6861,20 +6724,10 @@ impl ListAssessmentRunsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentRunsInput");
-        formatter.field("assessment_template_arns", &self.assessment_template_arns);
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentRunAgentsInput {
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
     #[doc(hidden)]
@@ -6909,20 +6762,10 @@ impl ListAssessmentRunAgentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentRunAgentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentRunAgentsInput");
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTelemetryMetadataInput {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
     #[doc(hidden)]
@@ -6934,17 +6777,10 @@ impl GetTelemetryMetadataInput {
         self.assessment_run_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetTelemetryMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTelemetryMetadataInput");
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
     #[doc(hidden)]
@@ -6984,21 +6820,10 @@ impl GetExclusionsPreviewInput {
         self.locale.as_ref()
     }
 }
-impl std::fmt::Debug for GetExclusionsPreviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExclusionsPreviewInput");
-        formatter.field("assessment_template_arn", &self.assessment_template_arn);
-        formatter.field("preview_token", &self.preview_token);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("locale", &self.locale);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssessmentReportInput {
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
     #[doc(hidden)]
@@ -7024,19 +6849,10 @@ impl GetAssessmentReportInput {
         self.report_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetAssessmentReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssessmentReportInput");
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.field("report_file_format", &self.report_file_format);
-        formatter.field("report_type", &self.report_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRulesPackagesInput {
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
     #[doc(hidden)]
@@ -7055,18 +6871,10 @@ impl DescribeRulesPackagesInput {
         self.locale.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeRulesPackagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRulesPackagesInput");
-        formatter.field("rules_package_arns", &self.rules_package_arns);
-        formatter.field("locale", &self.locale);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourceGroupsInput {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
     #[doc(hidden)]
@@ -7078,17 +6886,10 @@ impl DescribeResourceGroupsInput {
         self.resource_group_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourceGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourceGroupsInput");
-        formatter.field("resource_group_arns", &self.resource_group_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFindingsInput {
     /// <p>The ARN that specifies the finding that you want to describe.</p>
     #[doc(hidden)]
@@ -7107,18 +6908,10 @@ impl DescribeFindingsInput {
         self.locale.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFindingsInput");
-        formatter.field("finding_arns", &self.finding_arns);
-        formatter.field("locale", &self.locale);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExclusionsInput {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
     #[doc(hidden)]
@@ -7137,29 +6930,15 @@ impl DescribeExclusionsInput {
         self.locale.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeExclusionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExclusionsInput");
-        formatter.field("exclusion_arns", &self.exclusion_arns);
-        formatter.field("locale", &self.locale);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCrossAccountAccessRoleInput {}
-impl std::fmt::Debug for DescribeCrossAccountAccessRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCrossAccountAccessRoleInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssessmentTemplatesInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -7171,17 +6950,10 @@ impl DescribeAssessmentTemplatesInput {
         self.assessment_template_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssessmentTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssessmentTemplatesInput");
-        formatter.field("assessment_template_arns", &self.assessment_template_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssessmentTargetsInput {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
     #[doc(hidden)]
@@ -7193,17 +6965,10 @@ impl DescribeAssessmentTargetsInput {
         self.assessment_target_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssessmentTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssessmentTargetsInput");
-        formatter.field("assessment_target_arns", &self.assessment_target_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssessmentRunsInput {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
     #[doc(hidden)]
@@ -7215,17 +6980,10 @@ impl DescribeAssessmentRunsInput {
         self.assessment_run_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssessmentRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssessmentRunsInput");
-        formatter.field("assessment_run_arns", &self.assessment_run_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
     #[doc(hidden)]
@@ -7237,17 +6995,10 @@ impl DeleteAssessmentTemplateInput {
         self.assessment_template_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssessmentTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssessmentTemplateInput");
-        formatter.field("assessment_template_arn", &self.assessment_template_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssessmentTargetInput {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
     #[doc(hidden)]
@@ -7259,17 +7010,10 @@ impl DeleteAssessmentTargetInput {
         self.assessment_target_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssessmentTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssessmentTargetInput");
-        formatter.field("assessment_target_arn", &self.assessment_target_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssessmentRunInput {
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
     #[doc(hidden)]
@@ -7281,17 +7025,10 @@ impl DeleteAssessmentRunInput {
         self.assessment_run_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssessmentRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssessmentRunInput");
-        formatter.field("assessment_run_arn", &self.assessment_run_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceGroupInput {
     /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
@@ -7305,17 +7042,10 @@ impl CreateResourceGroupInput {
         self.resource_group_tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResourceGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceGroupInput");
-        formatter.field("resource_group_tags", &self.resource_group_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
     #[doc(hidden)]
@@ -7327,17 +7057,10 @@ impl CreateExclusionsPreviewInput {
         self.assessment_template_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateExclusionsPreviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExclusionsPreviewInput");
-        formatter.field("assessment_template_arn", &self.assessment_template_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
     #[doc(hidden)]
@@ -7377,24 +7100,10 @@ impl CreateAssessmentTemplateInput {
         self.user_attributes_for_findings.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAssessmentTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssessmentTemplateInput");
-        formatter.field("assessment_target_arn", &self.assessment_target_arn);
-        formatter.field("assessment_template_name", &self.assessment_template_name);
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.field("rules_package_arns", &self.rules_package_arns);
-        formatter.field(
-            "user_attributes_for_findings",
-            &self.user_attributes_for_findings,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssessmentTargetInput {
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
     #[doc(hidden)]
@@ -7413,18 +7122,10 @@ impl CreateAssessmentTargetInput {
         self.resource_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAssessmentTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssessmentTargetInput");
-        formatter.field("assessment_target_name", &self.assessment_target_name);
-        formatter.field("resource_group_arn", &self.resource_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddAttributesToFindingsInput {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
     #[doc(hidden)]
@@ -7441,13 +7142,5 @@ impl AddAttributesToFindingsInput {
     /// <p>The array of attributes that you want to assign to specified findings.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for AddAttributesToFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddAttributesToFindingsInput");
-        formatter.field("finding_arns", &self.finding_arns);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }

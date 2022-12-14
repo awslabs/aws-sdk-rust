@@ -2,14 +2,8 @@
 
 /// An empty object that indicates that the event destination was updated successfully.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for UpdateConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
 pub mod update_configuration_set_event_destination_output {
 
@@ -32,7 +26,7 @@ impl UpdateConfigurationSetEventDestinationOutput {
 
 /// An object that that contains the Message ID of a Voice message that was sent successfully.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendVoiceMessageOutput {
     /// A unique identifier for the voice message.
     #[doc(hidden)]
@@ -42,13 +36,6 @@ impl SendVoiceMessageOutput {
     /// A unique identifier for the voice message.
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SendVoiceMessageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendVoiceMessageOutput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }
 /// See [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
@@ -87,7 +74,7 @@ impl SendVoiceMessageOutput {
 
 /// An object that contains information about the configuration sets for your account in the current region.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationSetsOutput {
     /// An object that contains a list of configuration sets for your account in the current region.
     #[doc(hidden)]
@@ -104,14 +91,6 @@ impl ListConfigurationSetsOutput {
     /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListConfigurationSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationSetsOutput");
-        formatter.field("configuration_sets", &self.configuration_sets);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
@@ -171,7 +150,7 @@ impl ListConfigurationSetsOutput {
 
 /// An object that contains information about an event destination.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     #[doc(hidden)]
@@ -181,13 +160,6 @@ impl GetConfigurationSetEventDestinationsOutput {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
         self.event_destinations.as_deref()
-    }
-}
-impl std::fmt::Debug for GetConfigurationSetEventDestinationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigurationSetEventDestinationsOutput");
-        formatter.field("event_destinations", &self.event_destinations);
-        formatter.finish()
     }
 }
 /// See [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
@@ -236,14 +208,8 @@ impl GetConfigurationSetEventDestinationsOutput {
 
 /// An empty object that indicates that the event destination was deleted successfully.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for DeleteConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
 pub mod delete_configuration_set_event_destination_output {
 
@@ -266,14 +232,8 @@ impl DeleteConfigurationSetEventDestinationOutput {
 
 /// An empty object that indicates that the configuration set was deleted successfully.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetOutput {}
-impl std::fmt::Debug for DeleteConfigurationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
 
@@ -296,14 +256,8 @@ impl DeleteConfigurationSetOutput {
 
 /// An empty object that indicates that the event destination was created successfully.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for CreateConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
 pub mod create_configuration_set_event_destination_output {
 
@@ -326,14 +280,8 @@ impl CreateConfigurationSetEventDestinationOutput {
 
 /// An empty object that indicates that the configuration set was successfully created.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetOutput {}
-impl std::fmt::Debug for CreateConfigurationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
 

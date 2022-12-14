@@ -181,7 +181,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
@@ -212,15 +212,5 @@ impl ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListRealtimeContactAnalysisSegmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRealtimeContactAnalysisSegmentsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationWarning {
     /// <p>The identifier of the object that contains the validation warning.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationWarning {
     /// <p>A description of the validation warning.</p>
     pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
         self.warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationWarning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationWarning");
-        formatter.field("id", &self.id);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
     }
 }
 /// See [`ValidationWarning`](crate::model::ValidationWarning).
@@ -86,7 +78,7 @@ impl ValidationWarning {
 
 /// <p>Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationError {
     /// <p>The identifier of the object that contains the validation error.</p>
     #[doc(hidden)]
@@ -103,14 +95,6 @@ impl ValidationError {
     /// <p>A description of the validation error.</p>
     pub fn errors(&self) -> std::option::Option<&[std::string::String]> {
         self.errors.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationError");
-        formatter.field("id", &self.id);
-        formatter.field("errors", &self.errors);
-        formatter.finish()
     }
 }
 /// See [`ValidationError`](crate::model::ValidationError).
@@ -170,7 +154,7 @@ impl ValidationError {
 
 /// <p>A value or list of parameter values. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterValue {
     /// <p>The ID of the parameter value.</p>
     #[doc(hidden)]
@@ -187,14 +171,6 @@ impl ParameterValue {
     /// <p>The field value, expressed as a String.</p>
     pub fn string_value(&self) -> std::option::Option<&str> {
         self.string_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterValue");
-        formatter.field("id", &self.id);
-        formatter.field("string_value", &self.string_value);
-        formatter.finish()
     }
 }
 /// See [`ParameterValue`](crate::model::ParameterValue).
@@ -245,7 +221,7 @@ impl ParameterValue {
 
 /// <p>Contains information about a parameter object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterObject {
     /// <p>The ID of the parameter object. </p>
     #[doc(hidden)]
@@ -262,14 +238,6 @@ impl ParameterObject {
     /// <p>The attributes of the parameter object.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::ParameterAttribute]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterObject");
-        formatter.field("id", &self.id);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`ParameterObject`](crate::model::ParameterObject).
@@ -329,7 +297,7 @@ impl ParameterObject {
 
 /// <p>The attributes allowed or specified with a parameter object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterAttribute {
     /// <p>The field identifier.</p>
     #[doc(hidden)]
@@ -346,14 +314,6 @@ impl ParameterAttribute {
     /// <p>The field value, expressed as a String.</p>
     pub fn string_value(&self) -> std::option::Option<&str> {
         self.string_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("string_value", &self.string_value);
-        formatter.finish()
     }
 }
 /// See [`ParameterAttribute`](crate::model::ParameterAttribute).
@@ -404,7 +364,7 @@ impl ParameterAttribute {
 
 /// <p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineObject {
     /// <p>The ID of the object.</p>
     #[doc(hidden)]
@@ -428,15 +388,6 @@ impl PipelineObject {
     /// <p>Key-value pairs that define the properties of the object.</p>
     pub fn fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.fields.as_deref()
-    }
-}
-impl std::fmt::Debug for PipelineObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineObject");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
     }
 }
 /// See [`PipelineObject`](crate::model::PipelineObject).
@@ -508,7 +459,7 @@ impl PipelineObject {
 
 /// <p>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Field {
     /// <p>The field identifier.</p>
     #[doc(hidden)]
@@ -532,15 +483,6 @@ impl Field {
     /// <p>The field value, expressed as the identifier of another object.</p>
     pub fn ref_value(&self) -> std::option::Option<&str> {
         self.ref_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Field {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Field");
-        formatter.field("key", &self.key);
-        formatter.field("string_value", &self.string_value);
-        formatter.field("ref_value", &self.ref_value);
-        formatter.finish()
     }
 }
 /// See [`Field`](crate::model::Field).
@@ -698,7 +640,7 @@ impl AsRef<str> for TaskStatus {
 
 /// <p>Defines the query to run against an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
     #[doc(hidden)]
@@ -708,13 +650,6 @@ impl Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
     pub fn selectors(&self) -> std::option::Option<&[crate::model::Selector]> {
         self.selectors.as_deref()
-    }
-}
-impl std::fmt::Debug for Query {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Query");
-        formatter.field("selectors", &self.selectors);
-        formatter.finish()
     }
 }
 /// See [`Query`](crate::model::Query).
@@ -762,7 +697,7 @@ impl Query {
 
 /// <p>A comparision that is used to determine whether a query should return this object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Selector {
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
     #[doc(hidden)]
@@ -779,14 +714,6 @@ impl Selector {
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for Selector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Selector");
-        formatter.field("field_name", &self.field_name);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`Selector`](crate::model::Selector).
@@ -837,7 +764,7 @@ impl Selector {
 
 /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Operator {
     /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
     /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
@@ -896,14 +823,6 @@ impl Operator {
     /// <p>The value that the actual field value will be compared with.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Operator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Operator");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Operator`](crate::model::Operator).
@@ -1110,7 +1029,7 @@ impl AsRef<str> for OperatorType {
 
 /// <p>Contains information about a pipeline task that is assigned to a task runner.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskObject {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
     #[doc(hidden)]
@@ -1147,16 +1066,6 @@ impl TaskObject {
         &std::collections::HashMap<std::string::String, crate::model::PipelineObject>,
     > {
         self.objects.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskObject");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("attempt_id", &self.attempt_id);
-        formatter.field("objects", &self.objects);
-        formatter.finish()
     }
 }
 /// See [`TaskObject`](crate::model::TaskObject).
@@ -1250,7 +1159,7 @@ impl TaskObject {
 /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     #[doc(hidden)]
@@ -1267,14 +1176,6 @@ impl InstanceIdentity {
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     pub fn signature(&self) -> std::option::Option<&str> {
         self.signature.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceIdentity");
-        formatter.field("document", &self.document);
-        formatter.field("signature", &self.signature);
-        formatter.finish()
     }
 }
 /// See [`InstanceIdentity`](crate::model::InstanceIdentity).
@@ -1325,7 +1226,7 @@ impl InstanceIdentity {
 
 /// <p>Contains the name and identifier of a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineIdName {
     /// <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -1342,14 +1243,6 @@ impl PipelineIdName {
     /// <p>The name of the pipeline.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for PipelineIdName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineIdName");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`PipelineIdName`](crate::model::PipelineIdName).
@@ -1400,7 +1293,7 @@ impl PipelineIdName {
 
 /// <p>Contains pipeline metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineDescription {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -1438,17 +1331,6 @@ impl PipelineDescription {
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for PipelineDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineDescription");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("name", &self.name);
-        formatter.field("fields", &self.fields);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`PipelineDescription`](crate::model::PipelineDescription).
@@ -1553,7 +1435,7 @@ impl PipelineDescription {
 
 /// <p>Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key name of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -1570,14 +1452,6 @@ impl Tag {
     /// <p>The optional value portion of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).

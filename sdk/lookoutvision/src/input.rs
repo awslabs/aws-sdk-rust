@@ -4473,7 +4473,7 @@ impl UpdateDatasetEntriesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatasetEntriesInput {
     /// <p>The name of the project that contains the dataset that you want to update.</p>
     #[doc(hidden)]
@@ -4510,20 +4510,10 @@ impl UpdateDatasetEntriesInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDatasetEntriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDatasetEntriesInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("changes", &self.changes);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the model from which you want to remove tags. </p>
     #[doc(hidden)]
@@ -4542,18 +4532,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the model to assign the tags.</p>
     #[doc(hidden)]
@@ -4572,18 +4554,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopModelInput {
     /// <p>The name of the project that contains the model that you want to stop.</p>
     #[doc(hidden)]
@@ -4613,19 +4587,10 @@ impl StopModelInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StopModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopModelInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartModelPackagingJobInput {
     /// <p> The name of the project which contains the version of the model that you want to package. </p>
     #[doc(hidden)]
@@ -4676,22 +4641,10 @@ impl StartModelPackagingJobInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartModelPackagingJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartModelPackagingJobInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartModelInput {
     /// <p>The name of the project that contains the model that you want to start.</p>
     #[doc(hidden)]
@@ -4735,21 +4688,10 @@ impl StartModelInput {
         self.max_inference_units
     }
 }
-impl std::fmt::Debug for StartModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartModelInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("min_inference_units", &self.min_inference_units);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("max_inference_units", &self.max_inference_units);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the model for which you want to list tags. </p>
     #[doc(hidden)]
@@ -4761,17 +4703,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of projects.</p>
     #[doc(hidden)]
@@ -4790,18 +4725,10 @@ impl ListProjectsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListModelsInput {
     /// <p>The name of the project that contains the model versions that you want to list.</p>
     #[doc(hidden)]
@@ -4827,19 +4754,10 @@ impl ListModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListModelsInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListModelPackagingJobsInput {
     /// <p> The name of the project for which you want to list the model packaging jobs. </p>
     #[doc(hidden)]
@@ -4865,19 +4783,10 @@ impl ListModelPackagingJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListModelPackagingJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListModelPackagingJobsInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetEntriesInput {
     /// <p>The name of the project that contains the dataset that you want to list.</p>
     #[doc(hidden)]
@@ -4945,24 +4854,10 @@ impl ListDatasetEntriesInput {
         self.source_ref_contains.as_deref()
     }
 }
-impl std::fmt::Debug for ListDatasetEntriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetEntriesInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("labeled", &self.labeled);
-        formatter.field("anomaly_class", &self.anomaly_class);
-        formatter.field("before_creation_date", &self.before_creation_date);
-        formatter.field("after_creation_date", &self.after_creation_date);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("source_ref_contains", &self.source_ref_contains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DetectAnomaliesInput {
     /// <p>The name of the project that contains the model version that you want to use.</p>
     #[doc(hidden)]
@@ -4994,20 +4889,10 @@ impl DetectAnomaliesInput {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for DetectAnomaliesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectAnomaliesInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("body", &self.body);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project that you want to describe.</p>
     #[doc(hidden)]
@@ -5019,17 +4904,10 @@ impl DescribeProjectInput {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeModelPackagingJobInput {
     /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
     #[doc(hidden)]
@@ -5048,18 +4926,10 @@ impl DescribeModelPackagingJobInput {
         self.job_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeModelPackagingJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeModelPackagingJobInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("job_name", &self.job_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeModelInput {
     /// <p>The project that contains the version of a model that you want to describe.</p>
     #[doc(hidden)]
@@ -5078,18 +4948,10 @@ impl DescribeModelInput {
         self.model_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeModelInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetInput {
     /// <p>The name of the project that contains the dataset that you want to describe.</p>
     #[doc(hidden)]
@@ -5108,18 +4970,10 @@ impl DescribeDatasetInput {
         self.dataset_type.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The name of the project to delete.</p>
     #[doc(hidden)]
@@ -5142,18 +4996,10 @@ impl DeleteProjectInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelInput {
     /// <p>The name of the project that contains the model that you want to delete.</p>
     #[doc(hidden)]
@@ -5183,19 +5029,10 @@ impl DeleteModelInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteModelInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetInput {
     /// <p>The name of the project that contains the dataset that you want to delete.</p>
     #[doc(hidden)]
@@ -5225,19 +5062,10 @@ impl DeleteDatasetInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name for the project.</p>
     #[doc(hidden)]
@@ -5260,18 +5088,10 @@ impl CreateProjectInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelInput {
     /// <p>The name of the project in which you want to create a model version.</p>
     #[doc(hidden)]
@@ -5322,22 +5142,10 @@ impl CreateModelInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateModelInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The name of the project in which you want to create a dataset.</p>
     #[doc(hidden)]
@@ -5376,15 +5184,5 @@ impl CreateDatasetInput {
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency token is active for 8 hours. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("dataset_source", &self.dataset_source);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

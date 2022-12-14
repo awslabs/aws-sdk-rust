@@ -2,7 +2,7 @@
 
 /// <p>A key-value pair associated with a CloudWatch resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The value for the specified tag key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -172,7 +164,7 @@ impl AsRef<str> for StateValue {
 
 /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. This structure contains information for one metric that includes additional statistics in the stream. For more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricStreamStatisticsConfiguration {
     /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
     /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
@@ -198,14 +190,6 @@ impl MetricStreamStatisticsConfiguration {
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
     pub fn additional_statistics(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_statistics.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricStreamStatisticsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricStreamStatisticsConfiguration");
-        formatter.field("include_metrics", &self.include_metrics);
-        formatter.field("additional_statistics", &self.additional_statistics);
-        formatter.finish()
     }
 }
 /// See [`MetricStreamStatisticsConfiguration`](crate::model::MetricStreamStatisticsConfiguration).
@@ -284,7 +268,7 @@ impl MetricStreamStatisticsConfiguration {
 
 /// <p>This object contains the information for one metric that is to be streamed with additional statistics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricStreamStatisticsMetric {
     /// <p>The namespace of the metric.</p>
     #[doc(hidden)]
@@ -301,14 +285,6 @@ impl MetricStreamStatisticsMetric {
     /// <p>The name of the metric.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricStreamStatisticsMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricStreamStatisticsMetric");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.finish()
     }
 }
 /// See [`MetricStreamStatisticsMetric`](crate::model::MetricStreamStatisticsMetric).
@@ -451,7 +427,7 @@ impl AsRef<str> for MetricStreamOutputFormat {
 
 /// <p>This structure contains the name of one of the metric namespaces that is listed in a filter of a metric stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricStreamFilter {
     /// <p>The name of the metric namespace in the filter.</p>
     #[doc(hidden)]
@@ -461,13 +437,6 @@ impl MetricStreamFilter {
     /// <p>The name of the metric namespace in the filter.</p>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricStreamFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricStreamFilter");
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
     }
 }
 /// See [`MetricStreamFilter`](crate::model::MetricStreamFilter).
@@ -506,7 +475,7 @@ impl MetricStreamFilter {
 
 /// <p>Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDatum {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -582,21 +551,6 @@ impl MetricDatum {
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
     pub fn storage_resolution(&self) -> std::option::Option<i32> {
         self.storage_resolution
-    }
-}
-impl std::fmt::Debug for MetricDatum {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDatum");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.field("statistic_values", &self.statistic_values);
-        formatter.field("values", &self.values);
-        formatter.field("counts", &self.counts);
-        formatter.field("unit", &self.unit);
-        formatter.field("storage_resolution", &self.storage_resolution);
-        formatter.finish()
     }
 }
 /// See [`MetricDatum`](crate::model::MetricDatum).
@@ -1011,7 +965,7 @@ impl AsRef<str> for StandardUnit {
 
 /// <p>Represents a set of statistics that describes a specific metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatisticSet {
     /// <p>The number of samples used for the statistic set.</p>
     #[doc(hidden)]
@@ -1042,16 +996,6 @@ impl StatisticSet {
     /// <p>The maximum value of the sample set.</p>
     pub fn maximum(&self) -> std::option::Option<f64> {
         self.maximum
-    }
-}
-impl std::fmt::Debug for StatisticSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatisticSet");
-        formatter.field("sample_count", &self.sample_count);
-        formatter.field("sum", &self.sum);
-        formatter.field("minimum", &self.minimum);
-        formatter.field("maximum", &self.maximum);
-        formatter.finish()
     }
 }
 /// See [`StatisticSet`](crate::model::StatisticSet).
@@ -1127,7 +1071,7 @@ impl StatisticSet {
 /// <p>A dimension is a name/value pair that is part of the identity of a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. For example, many Amazon EC2 metrics publish <code>InstanceId</code> as a dimension name, and the actual instance ID as the value for that dimension.</p>
 /// <p>You can assign up to 30 dimensions to a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dimension {
     /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).</p>
     #[doc(hidden)]
@@ -1144,14 +1088,6 @@ impl Dimension {
     /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Dimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Dimension`](crate::model::Dimension).
@@ -1206,7 +1142,7 @@ impl Dimension {
 /// <p>Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 /// <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDataQuery {
     /// <p>A short name used to tie this object to the results in the response. This name must be unique within a single call to <code>GetMetricData</code>. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscore. The first character must be a lowercase letter.</p>
     #[doc(hidden)]
@@ -1270,19 +1206,6 @@ impl MetricDataQuery {
     /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDataQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDataQuery");
-        formatter.field("id", &self.id);
-        formatter.field("metric_stat", &self.metric_stat);
-        formatter.field("expression", &self.expression);
-        formatter.field("label", &self.label);
-        formatter.field("return_data", &self.return_data);
-        formatter.field("period", &self.period);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 /// See [`MetricDataQuery`](crate::model::MetricDataQuery).
@@ -1408,7 +1331,7 @@ impl MetricDataQuery {
 
 /// <p>This structure defines the metric to be returned, along with the statistics, period, and units.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricStat {
     /// <p>The metric to return, including the metric name, namespace, and dimensions.</p>
     #[doc(hidden)]
@@ -1453,16 +1376,6 @@ impl MetricStat {
     /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricStat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricStat");
-        formatter.field("metric", &self.metric);
-        formatter.field("period", &self.period);
-        formatter.field("stat", &self.stat);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`MetricStat`](crate::model::MetricStat).
@@ -1551,7 +1464,7 @@ impl MetricStat {
 
 /// <p>Represents a specific metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metric {
     /// <p>The namespace of the metric.</p>
     #[doc(hidden)]
@@ -1575,15 +1488,6 @@ impl Metric {
     /// <p>The dimensions for the metric.</p>
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
         self.dimensions.as_deref()
-    }
-}
-impl std::fmt::Debug for Metric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metric");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
     }
 }
 /// See [`Metric`](crate::model::Metric).
@@ -1889,7 +1793,7 @@ impl AsRef<str> for Statistic {
 
 /// <p>This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartialFailure {
     /// <p>The specified rule that could not be deleted.</p>
     #[doc(hidden)]
@@ -1920,16 +1824,6 @@ impl PartialFailure {
     /// <p>A description of the error.</p>
     pub fn failure_description(&self) -> std::option::Option<&str> {
         self.failure_description.as_deref()
-    }
-}
-impl std::fmt::Debug for PartialFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartialFailure");
-        formatter.field("failure_resource", &self.failure_resource);
-        formatter.field("exception_type", &self.exception_type);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_description", &self.failure_description);
-        formatter.finish()
     }
 }
 /// See [`PartialFailure`](crate::model::PartialFailure).
@@ -2013,7 +1907,7 @@ impl PartialFailure {
 
 /// <p> Contains the information that's required to enable a managed Contributor Insights rule for an Amazon Web Services resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRule {
     /// <p> The template name for the managed Contributor Insights rule, as returned by <code>ListManagedInsightRules</code>. </p>
     #[doc(hidden)]
@@ -2037,15 +1931,6 @@ impl ManagedRule {
     /// <p> A list of key-value pairs that you can associate with a managed Contributor Insights rule. You can associate as many as 50 tags with a rule. Tags can help you organize and categorize your resources. You also can use them to scope user permissions by granting a user permission to access or change only the resources that have certain tag values. To associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission. If you are using this operation to update an existing Contributor Insights rule, any tags that you specify in this parameter are ignored. To change the tags of an existing rule, use <code>TagResource</code>. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRule");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ManagedRule`](crate::model::ManagedRule).
@@ -2120,7 +2005,7 @@ impl ManagedRule {
 
 /// <p>An error or warning for the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardValidationMessage {
     /// <p>The data path related to the message.</p>
     #[doc(hidden)]
@@ -2137,14 +2022,6 @@ impl DashboardValidationMessage {
     /// <p>A message describing the error or warning.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DashboardValidationMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardValidationMessage");
-        formatter.field("data_path", &self.data_path);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DashboardValidationMessage`](crate::model::DashboardValidationMessage).
@@ -2195,7 +2072,7 @@ impl DashboardValidationMessage {
 
 /// <p>Indicates the CloudWatch math expression that provides the time series the anomaly detector uses as input. The designated math expression must return a single time series.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricMathAnomalyDetector {
     /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
     #[doc(hidden)]
@@ -2205,13 +2082,6 @@ impl MetricMathAnomalyDetector {
     /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
     pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricMathAnomalyDetector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricMathAnomalyDetector");
-        formatter.field("metric_data_queries", &self.metric_data_queries);
-        formatter.finish()
     }
 }
 /// See [`MetricMathAnomalyDetector`](crate::model::MetricMathAnomalyDetector).
@@ -2260,7 +2130,7 @@ impl MetricMathAnomalyDetector {
 
 /// <p>Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingleMetricAnomalyDetector {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[doc(hidden)]
@@ -2291,16 +2161,6 @@ impl SingleMetricAnomalyDetector {
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
     pub fn stat(&self) -> std::option::Option<&str> {
         self.stat.as_deref()
-    }
-}
-impl std::fmt::Debug for SingleMetricAnomalyDetector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingleMetricAnomalyDetector");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("stat", &self.stat);
-        formatter.finish()
     }
 }
 /// See [`SingleMetricAnomalyDetector`](crate::model::SingleMetricAnomalyDetector).
@@ -2384,7 +2244,7 @@ impl SingleMetricAnomalyDetector {
 
 /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyDetectorConfiguration {
     /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
     #[doc(hidden)]
@@ -2403,14 +2263,6 @@ impl AnomalyDetectorConfiguration {
     /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
     pub fn metric_timezone(&self) -> std::option::Option<&str> {
         self.metric_timezone.as_deref()
-    }
-}
-impl std::fmt::Debug for AnomalyDetectorConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyDetectorConfiguration");
-        formatter.field("excluded_time_ranges", &self.excluded_time_ranges);
-        formatter.field("metric_timezone", &self.metric_timezone);
-        formatter.finish()
     }
 }
 /// See [`AnomalyDetectorConfiguration`](crate::model::AnomalyDetectorConfiguration).
@@ -2475,7 +2327,7 @@ impl AnomalyDetectorConfiguration {
 
 /// <p>Specifies one range of days or times to exclude from use for training an anomaly detection model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Range {
     /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     #[doc(hidden)]
@@ -2492,14 +2344,6 @@ impl Range {
     /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Range {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Range");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`Range`](crate::model::Range).
@@ -2556,7 +2400,7 @@ impl Range {
 
 /// <p>This structure contains the configuration information about one metric stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricStreamEntry {
     /// <p>The ARN of the metric stream.</p>
     #[doc(hidden)]
@@ -2608,19 +2452,6 @@ impl MetricStreamEntry {
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
     pub fn output_format(&self) -> std::option::Option<&crate::model::MetricStreamOutputFormat> {
         self.output_format.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricStreamEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricStreamEntry");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_update_date", &self.last_update_date);
-        formatter.field("name", &self.name);
-        formatter.field("firehose_arn", &self.firehose_arn);
-        formatter.field("state", &self.state);
-        formatter.field("output_format", &self.output_format);
-        formatter.finish()
     }
 }
 /// See [`MetricStreamEntry`](crate::model::MetricStreamEntry).
@@ -2825,7 +2656,7 @@ impl AsRef<str> for RecentlyActive {
 
 /// <p>Represents filters for a dimension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionFilter {
     /// <p>The dimension name to be matched.</p>
     #[doc(hidden)]
@@ -2842,14 +2673,6 @@ impl DimensionFilter {
     /// <p>The value of the dimension to be matched.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for DimensionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DimensionFilter`](crate::model::DimensionFilter).
@@ -2900,7 +2723,7 @@ impl DimensionFilter {
 
 /// <p> Contains information about managed Contributor Insights rules, as returned by <code>ListManagedInsightRules</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleDescription {
     /// <p> The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>. </p>
     #[doc(hidden)]
@@ -2924,15 +2747,6 @@ impl ManagedRuleDescription {
     /// <p> Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource. </p>
     pub fn rule_state(&self) -> std::option::Option<&crate::model::ManagedRuleState> {
         self.rule_state.as_ref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleDescription");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("rule_state", &self.rule_state);
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleDescription`](crate::model::ManagedRuleDescription).
@@ -3001,7 +2815,7 @@ impl ManagedRuleDescription {
 
 /// <p> The status of a managed Contributor Insights rule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleState {
     /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
     #[doc(hidden)]
@@ -3018,14 +2832,6 @@ impl ManagedRuleState {
     /// <p> Indicates whether the rule is enabled or disabled. </p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleState");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleState`](crate::model::ManagedRuleState).
@@ -3076,7 +2882,7 @@ impl ManagedRuleState {
 
 /// <p>Represents a specific dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardEntry {
     /// <p>The name of the dashboard.</p>
     #[doc(hidden)]
@@ -3107,16 +2913,6 @@ impl DashboardEntry {
     /// <p>The size of the dashboard, in bytes.</p>
     pub fn size(&self) -> i64 {
         self.size
-    }
-}
-impl std::fmt::Debug for DashboardEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardEntry");
-        formatter.field("dashboard_name", &self.dashboard_name);
-        formatter.field("dashboard_arn", &self.dashboard_arn);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`DashboardEntry`](crate::model::DashboardEntry).
@@ -3200,7 +2996,7 @@ impl DashboardEntry {
 
 /// <p>Encapsulates the statistical data that CloudWatch computes from metric data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Datapoint {
     /// <p>The time stamp used for the data point.</p>
     #[doc(hidden)]
@@ -3262,20 +3058,6 @@ impl Datapoint {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
         self.extended_statistics.as_ref()
-    }
-}
-impl std::fmt::Debug for Datapoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Datapoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("sample_count", &self.sample_count);
-        formatter.field("average", &self.average);
-        formatter.field("sum", &self.sum);
-        formatter.field("minimum", &self.minimum);
-        formatter.field("maximum", &self.maximum);
-        formatter.field("unit", &self.unit);
-        formatter.field("extended_statistics", &self.extended_statistics);
-        formatter.finish()
     }
 }
 /// See [`Datapoint`](crate::model::Datapoint).
@@ -3412,7 +3194,7 @@ impl Datapoint {
 /// <p>A message returned by the <code>GetMetricData</code>API, including a code and a description.</p>
 /// <p>If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code> and a value of <code>Authentication too complex to retrieve cross region data</code>, you can correct the problem by running the <code>GetMetricData</code> operation in the same Region where the metric data is.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageData {
     /// <p>The error code or status code associated with the message.</p>
     #[doc(hidden)]
@@ -3429,14 +3211,6 @@ impl MessageData {
     /// <p>The message text.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageData");
-        formatter.field("code", &self.code);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MessageData`](crate::model::MessageData).
@@ -3487,7 +3261,7 @@ impl MessageData {
 
 /// <p>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDataResult {
     /// <p>The short name you specified to represent this metric.</p>
     #[doc(hidden)]
@@ -3532,18 +3306,6 @@ impl MetricDataResult {
     /// <p>A list of messages with additional information about the data returned.</p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::MessageData]> {
         self.messages.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDataResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDataResult");
-        formatter.field("id", &self.id);
-        formatter.field("label", &self.label);
-        formatter.field("timestamps", &self.timestamps);
-        formatter.field("values", &self.values);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("messages", &self.messages);
-        formatter.finish()
     }
 }
 /// See [`MetricDataResult`](crate::model::MetricDataResult).
@@ -3765,7 +3527,7 @@ impl AsRef<str> for StatusCode {
 /// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels that are associated with returned metrics display the correct time for your time zone. </p>
 /// <p>The <code>Timezone</code> value affects a label only if you have a time-based dynamic expression in the label. For more information about dynamic expressions in labels, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelOptions {
     /// <p>The time zone to use for metric data return in this operation. The format is <code>+</code> or <code>-</code> followed by four digits. The first two digits indicate the number of hours ahead or behind of UTC, and the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour and 30 minutes ahead of UTC. The default is +0000. </p>
     #[doc(hidden)]
@@ -3775,13 +3537,6 @@ impl LabelOptions {
     /// <p>The time zone to use for metric data return in this operation. The format is <code>+</code> or <code>-</code> followed by four digits. The first two digits indicate the number of hours ahead or behind of UTC, and the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour and 30 minutes ahead of UTC. The default is +0000. </p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
-    }
-}
-impl std::fmt::Debug for LabelOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelOptions");
-        formatter.field("timezone", &self.timezone);
-        formatter.finish()
     }
 }
 /// See [`LabelOptions`](crate::model::LabelOptions).
@@ -3911,7 +3666,7 @@ impl AsRef<str> for ScanBy {
 /// <p>One data point from the metric time series returned in a Contributor Insights rule report.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightRuleMetricDatapoint {
     /// <p>The timestamp of the data point.</p>
     #[doc(hidden)]
@@ -3984,20 +3739,6 @@ impl InsightRuleMetricDatapoint {
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub fn maximum(&self) -> std::option::Option<f64> {
         self.maximum
-    }
-}
-impl std::fmt::Debug for InsightRuleMetricDatapoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightRuleMetricDatapoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("unique_contributors", &self.unique_contributors);
-        formatter.field("max_contributor_value", &self.max_contributor_value);
-        formatter.field("sample_count", &self.sample_count);
-        formatter.field("average", &self.average);
-        formatter.field("sum", &self.sum);
-        formatter.field("minimum", &self.minimum);
-        formatter.field("maximum", &self.maximum);
-        formatter.finish()
     }
 }
 /// See [`InsightRuleMetricDatapoint`](crate::model::InsightRuleMetricDatapoint).
@@ -4139,7 +3880,7 @@ impl InsightRuleMetricDatapoint {
 /// <p>If the rule contains a single key, then each unique contributor is each unique value for this key.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightRuleContributor {
     /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
     #[doc(hidden)]
@@ -4166,18 +3907,6 @@ impl InsightRuleContributor {
         &self,
     ) -> std::option::Option<&[crate::model::InsightRuleContributorDatapoint]> {
         self.datapoints.as_deref()
-    }
-}
-impl std::fmt::Debug for InsightRuleContributor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightRuleContributor");
-        formatter.field("keys", &self.keys);
-        formatter.field(
-            "approximate_aggregate_value",
-            &self.approximate_aggregate_value,
-        );
-        formatter.field("datapoints", &self.datapoints);
-        formatter.finish()
     }
 }
 /// See [`InsightRuleContributor`](crate::model::InsightRuleContributor).
@@ -4262,7 +3991,7 @@ impl InsightRuleContributor {
 /// <p>One data point related to one contributor.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightRuleContributorDatapoint {
     /// <p>The timestamp of the data point.</p>
     #[doc(hidden)]
@@ -4279,14 +4008,6 @@ impl InsightRuleContributorDatapoint {
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub fn approximate_value(&self) -> std::option::Option<f64> {
         self.approximate_value
-    }
-}
-impl std::fmt::Debug for InsightRuleContributorDatapoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightRuleContributorDatapoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("approximate_value", &self.approximate_value);
-        formatter.finish()
     }
 }
 /// See [`InsightRuleContributorDatapoint`](crate::model::InsightRuleContributorDatapoint).
@@ -4340,7 +4061,7 @@ impl InsightRuleContributorDatapoint {
 
 /// <p>This structure contains the definition for a Contributor Insights rule. For more information about this rule, see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html"> Using Constributor Insights to analyze high-cardinality data</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightRule {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -4378,17 +4099,6 @@ impl InsightRule {
     /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub fn managed_rule(&self) -> bool {
         self.managed_rule
-    }
-}
-impl std::fmt::Debug for InsightRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightRule");
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.field("schema", &self.schema);
-        formatter.field("definition", &self.definition);
-        formatter.field("managed_rule", &self.managed_rule);
-        formatter.finish()
     }
 }
 /// See [`InsightRule`](crate::model::InsightRule).
@@ -4475,7 +4185,7 @@ impl InsightRule {
 
 /// <p>An anomaly detection model associated with a particular CloudWatch metric, statistic, or metric math expression. You can use the model to display a band of expected, normal values when the metric is graphed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyDetector {
     /// <p>The namespace of the metric associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Namespace property.")]
@@ -4549,26 +4259,6 @@ impl AnomalyDetector {
         &self,
     ) -> std::option::Option<&crate::model::MetricMathAnomalyDetector> {
         self.metric_math_anomaly_detector.as_ref()
-    }
-}
-impl std::fmt::Debug for AnomalyDetector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyDetector");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("stat", &self.stat);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("state_value", &self.state_value);
-        formatter.field(
-            "single_metric_anomaly_detector",
-            &self.single_metric_anomaly_detector,
-        );
-        formatter.field(
-            "metric_math_anomaly_detector",
-            &self.metric_math_anomaly_detector,
-        );
-        formatter.finish()
     }
 }
 /// See [`AnomalyDetector`](crate::model::AnomalyDetector).
@@ -4917,7 +4607,7 @@ impl AsRef<str> for AnomalyDetectorType {
 
 /// <p>The details about a metric alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricAlarm {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
@@ -5113,45 +4803,6 @@ impl MetricAlarm {
     /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
     pub fn threshold_metric_id(&self) -> std::option::Option<&str> {
         self.threshold_metric_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricAlarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricAlarm");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_arn", &self.alarm_arn);
-        formatter.field("alarm_description", &self.alarm_description);
-        formatter.field(
-            "alarm_configuration_updated_timestamp",
-            &self.alarm_configuration_updated_timestamp,
-        );
-        formatter.field("actions_enabled", &self.actions_enabled);
-        formatter.field("ok_actions", &self.ok_actions);
-        formatter.field("alarm_actions", &self.alarm_actions);
-        formatter.field("insufficient_data_actions", &self.insufficient_data_actions);
-        formatter.field("state_value", &self.state_value);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("state_reason_data", &self.state_reason_data);
-        formatter.field("state_updated_timestamp", &self.state_updated_timestamp);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("extended_statistic", &self.extended_statistic);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("period", &self.period);
-        formatter.field("unit", &self.unit);
-        formatter.field("evaluation_periods", &self.evaluation_periods);
-        formatter.field("datapoints_to_alarm", &self.datapoints_to_alarm);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("treat_missing_data", &self.treat_missing_data);
-        formatter.field(
-            "evaluate_low_sample_count_percentile",
-            &self.evaluate_low_sample_count_percentile,
-        );
-        formatter.field("metrics", &self.metrics);
-        formatter.field("threshold_metric_id", &self.threshold_metric_id);
-        formatter.finish()
     }
 }
 /// See [`MetricAlarm`](crate::model::MetricAlarm).
@@ -5590,7 +5241,7 @@ impl MetricAlarm {
 
 /// <p>The details about a composite alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompositeAlarm {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
     #[doc(hidden)]
@@ -5736,43 +5387,6 @@ impl CompositeAlarm {
     /// </important>
     pub fn actions_suppressor_extension_period(&self) -> std::option::Option<i32> {
         self.actions_suppressor_extension_period
-    }
-}
-impl std::fmt::Debug for CompositeAlarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompositeAlarm");
-        formatter.field("actions_enabled", &self.actions_enabled);
-        formatter.field("alarm_actions", &self.alarm_actions);
-        formatter.field("alarm_arn", &self.alarm_arn);
-        formatter.field(
-            "alarm_configuration_updated_timestamp",
-            &self.alarm_configuration_updated_timestamp,
-        );
-        formatter.field("alarm_description", &self.alarm_description);
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_rule", &self.alarm_rule);
-        formatter.field("insufficient_data_actions", &self.insufficient_data_actions);
-        formatter.field("ok_actions", &self.ok_actions);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("state_reason_data", &self.state_reason_data);
-        formatter.field("state_updated_timestamp", &self.state_updated_timestamp);
-        formatter.field("state_value", &self.state_value);
-        formatter.field(
-            "state_transitioned_timestamp",
-            &self.state_transitioned_timestamp,
-        );
-        formatter.field("actions_suppressed_by", &self.actions_suppressed_by);
-        formatter.field("actions_suppressed_reason", &self.actions_suppressed_reason);
-        formatter.field("actions_suppressor", &self.actions_suppressor);
-        formatter.field(
-            "actions_suppressor_wait_period",
-            &self.actions_suppressor_wait_period,
-        );
-        formatter.field(
-            "actions_suppressor_extension_period",
-            &self.actions_suppressor_extension_period,
-        );
-        formatter.finish()
     }
 }
 /// See [`CompositeAlarm`](crate::model::CompositeAlarm).
@@ -6287,7 +5901,7 @@ impl AsRef<str> for AlarmType {
 
 /// <p>Represents the history of a specific alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmHistoryItem {
     /// <p>The descriptive name for the alarm.</p>
     #[doc(hidden)]
@@ -6332,18 +5946,6 @@ impl AlarmHistoryItem {
     /// <p>Data about the alarm, in JSON format.</p>
     pub fn history_data(&self) -> std::option::Option<&str> {
         self.history_data.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmHistoryItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmHistoryItem");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_type", &self.alarm_type);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("history_item_type", &self.history_item_type);
-        formatter.field("history_summary", &self.history_summary);
-        formatter.field("history_data", &self.history_data);
-        formatter.finish()
     }
 }
 /// See [`AlarmHistoryItem`](crate::model::AlarmHistoryItem).

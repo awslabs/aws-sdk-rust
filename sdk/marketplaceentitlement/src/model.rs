@@ -2,7 +2,7 @@
 
 /// <p>An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entitlement {
     /// <p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>
     #[doc(hidden)]
@@ -40,17 +40,6 @@ impl Entitlement {
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Entitlement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entitlement");
-        formatter.field("product_code", &self.product_code);
-        formatter.field("dimension", &self.dimension);
-        formatter.field("customer_identifier", &self.customer_identifier);
-        formatter.field("value", &self.value);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.finish()
     }
 }
 /// See [`Entitlement`](crate::model::Entitlement).

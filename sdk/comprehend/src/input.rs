@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_detect_dominant_language_input {
 
     /// A builder for [`BatchDetectDominantLanguageInput`](crate::input::BatchDetectDominantLanguageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -39,6 +39,13 @@ pub mod batch_detect_dominant_language_input {
             Ok(crate::input::BatchDetectDominantLanguageInput {
                 text_list: self.text_list,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text_list", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -160,7 +167,7 @@ impl BatchDetectDominantLanguageInput {
 pub mod batch_detect_entities_input {
 
     /// A builder for [`BatchDetectEntitiesInput`](crate::input::BatchDetectEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -209,6 +216,14 @@ pub mod batch_detect_entities_input {
                 text_list: self.text_list,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -331,7 +346,7 @@ impl BatchDetectEntitiesInput {
 pub mod batch_detect_key_phrases_input {
 
     /// A builder for [`BatchDetectKeyPhrasesInput`](crate::input::BatchDetectKeyPhrasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -380,6 +395,14 @@ pub mod batch_detect_key_phrases_input {
                 text_list: self.text_list,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -504,7 +527,7 @@ impl BatchDetectKeyPhrasesInput {
 pub mod batch_detect_sentiment_input {
 
     /// A builder for [`BatchDetectSentimentInput`](crate::input::BatchDetectSentimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -557,6 +580,14 @@ pub mod batch_detect_sentiment_input {
                 text_list: self.text_list,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -681,7 +712,7 @@ impl BatchDetectSentimentInput {
 pub mod batch_detect_syntax_input {
 
     /// A builder for [`BatchDetectSyntaxInput`](crate::input::BatchDetectSyntaxInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
@@ -730,6 +761,14 @@ pub mod batch_detect_syntax_input {
                 text_list: self.text_list,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -852,7 +891,7 @@ impl BatchDetectSyntaxInput {
 pub mod batch_detect_targeted_sentiment_input {
 
     /// A builder for [`BatchDetectTargetedSentimentInput`](crate::input::BatchDetectTargetedSentimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -901,6 +940,14 @@ pub mod batch_detect_targeted_sentiment_input {
                 text_list: self.text_list,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -1022,7 +1069,7 @@ impl BatchDetectTargetedSentimentInput {
 pub mod classify_document_input {
 
     /// A builder for [`ClassifyDocumentInput`](crate::input::ClassifyDocumentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -1059,6 +1106,14 @@ pub mod classify_document_input {
                 text: self.text,
                 endpoint_arn: self.endpoint_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint_arn", &self.endpoint_arn);
+            formatter.finish()
         }
     }
 }
@@ -4796,7 +4851,7 @@ impl DescribeTopicsDetectionJobInput {
 pub mod detect_dominant_language_input {
 
     /// A builder for [`DetectDominantLanguageInput`](crate::input::DetectDominantLanguageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -4819,6 +4874,13 @@ pub mod detect_dominant_language_input {
             aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DetectDominantLanguageInput { text: self.text })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4943,7 +5005,7 @@ impl DetectDominantLanguageInput {
 pub mod detect_entities_input {
 
     /// A builder for [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -4999,6 +5061,15 @@ pub mod detect_entities_input {
                 language_code: self.language_code,
                 endpoint_arn: self.endpoint_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.field("endpoint_arn", &self.endpoint_arn);
+            formatter.finish()
         }
     }
 }
@@ -5121,7 +5192,7 @@ impl DetectEntitiesInput {
 pub mod detect_key_phrases_input {
 
     /// A builder for [`DetectKeyPhrasesInput`](crate::input::DetectKeyPhrasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5161,6 +5232,14 @@ pub mod detect_key_phrases_input {
                 text: self.text,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -5445,7 +5524,7 @@ impl DetectPiiEntitiesInput {
 pub mod detect_sentiment_input {
 
     /// A builder for [`DetectSentimentInput`](crate::input::DetectSentimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5487,6 +5566,14 @@ pub mod detect_sentiment_input {
                 text: self.text,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -5609,7 +5696,7 @@ impl DetectSentimentInput {
 pub mod detect_syntax_input {
 
     /// A builder for [`DetectSyntaxInput`](crate::input::DetectSyntaxInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
@@ -5647,6 +5734,14 @@ pub mod detect_syntax_input {
                 text: self.text,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -5769,7 +5864,7 @@ impl DetectSyntaxInput {
 pub mod detect_targeted_sentiment_input {
 
     /// A builder for [`DetectTargetedSentimentInput`](crate::input::DetectTargetedSentimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5809,6 +5904,14 @@ pub mod detect_targeted_sentiment_input {
                 text: self.text,
                 language_code: self.language_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("language_code", &self.language_code);
+            formatter.finish()
         }
     }
 }
@@ -13281,7 +13384,7 @@ impl UpdateEndpointInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
     #[doc(hidden)]
@@ -13314,23 +13417,10 @@ impl UpdateEndpointInput {
         self.desired_data_access_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEndpointInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("desired_model_arn", &self.desired_model_arn);
-        formatter.field("desired_inference_units", &self.desired_inference_units);
-        formatter.field(
-            "desired_data_access_role_arn",
-            &self.desired_data_access_role_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you want to remove the tags. </p>
     #[doc(hidden)]
@@ -13349,18 +13439,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want to associate the tags. </p>
     #[doc(hidden)]
@@ -13379,18 +13461,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopTrainingEntityRecognizerInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
     #[doc(hidden)]
@@ -13402,17 +13476,10 @@ impl StopTrainingEntityRecognizerInput {
         self.entity_recognizer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopTrainingEntityRecognizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopTrainingEntityRecognizerInput");
-        formatter.field("entity_recognizer_arn", &self.entity_recognizer_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopTrainingDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
     #[doc(hidden)]
@@ -13424,17 +13491,10 @@ impl StopTrainingDocumentClassifierInput {
         self.document_classifier_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopTrainingDocumentClassifierInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopTrainingDocumentClassifierInput");
-        formatter.field("document_classifier_arn", &self.document_classifier_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopTargetedSentimentDetectionJobInput {
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
     #[doc(hidden)]
@@ -13446,17 +13506,10 @@ impl StopTargetedSentimentDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopTargetedSentimentDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopTargetedSentimentDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopSentimentDetectionJobInput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
     #[doc(hidden)]
@@ -13468,17 +13521,10 @@ impl StopSentimentDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopSentimentDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopSentimentDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopPiiEntitiesDetectionJobInput {
     /// <p>The identifier of the PII entities detection job to stop.</p>
     #[doc(hidden)]
@@ -13490,17 +13536,10 @@ impl StopPiiEntitiesDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopPiiEntitiesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopPiiEntitiesDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopKeyPhrasesDetectionJobInput {
     /// <p>The identifier of the key phrases detection job to stop.</p>
     #[doc(hidden)]
@@ -13512,17 +13551,10 @@ impl StopKeyPhrasesDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopKeyPhrasesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopKeyPhrasesDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopEventsDetectionJobInput {
     /// <p>The identifier of the events detection job to stop.</p>
     #[doc(hidden)]
@@ -13534,17 +13566,10 @@ impl StopEventsDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopEventsDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopEventsDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopEntitiesDetectionJobInput {
     /// <p>The identifier of the entities detection job to stop.</p>
     #[doc(hidden)]
@@ -13556,17 +13581,10 @@ impl StopEntitiesDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopEntitiesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopEntitiesDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDominantLanguageDetectionJobInput {
     /// <p>The identifier of the dominant language detection job to stop.</p>
     #[doc(hidden)]
@@ -13578,17 +13596,10 @@ impl StopDominantLanguageDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopDominantLanguageDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDominantLanguageDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTopicsDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -13664,25 +13675,10 @@ impl StartTopicsDetectionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartTopicsDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTopicsDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("number_of_topics", &self.number_of_topics);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTargetedSentimentDetectionJobInput {
     /// <p>The input properties for an inference job.</p>
     #[doc(hidden)]
@@ -13758,25 +13754,10 @@ impl StartTargetedSentimentDetectionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartTargetedSentimentDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTargetedSentimentDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSentimentDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -13852,25 +13833,10 @@ impl StartSentimentDetectionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartSentimentDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSentimentDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPiiEntitiesDetectionJobInput {
     /// <p>The input properties for a PII entities detection job.</p>
     #[doc(hidden)]
@@ -13940,25 +13906,10 @@ impl StartPiiEntitiesDetectionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartPiiEntitiesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPiiEntitiesDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("mode", &self.mode);
-        formatter.field("redaction_config", &self.redaction_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartKeyPhrasesDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -14034,25 +13985,10 @@ impl StartKeyPhrasesDetectionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartKeyPhrasesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartKeyPhrasesDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartEventsDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -14113,24 +14049,10 @@ impl StartEventsDetectionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartEventsDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartEventsDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("target_event_types", &self.target_event_types);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartEntitiesDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -14213,26 +14135,10 @@ impl StartEntitiesDetectionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartEntitiesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartEntitiesDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("entity_recognizer_arn", &self.entity_recognizer_arn);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDominantLanguageDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -14301,24 +14207,10 @@ impl StartDominantLanguageDetectionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartDominantLanguageDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDominantLanguageDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDocumentClassificationJobInput {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
@@ -14394,25 +14286,10 @@ impl StartDocumentClassificationJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartDocumentClassificationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDocumentClassificationJobInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("document_classifier_arn", &self.document_classifier_arn);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
     #[doc(hidden)]
@@ -14444,19 +14321,10 @@ impl PutResourcePolicyInput {
         self.policy_revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_policy", &self.resource_policy);
-        formatter.field("policy_revision_id", &self.policy_revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTopicsDetectionJobsInput {
     /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
     #[doc(hidden)]
@@ -14482,19 +14350,10 @@ impl ListTopicsDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTopicsDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTopicsDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTargetedSentimentDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14522,19 +14381,10 @@ impl ListTargetedSentimentDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTargetedSentimentDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTargetedSentimentDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying. </p>
     #[doc(hidden)]
@@ -14546,17 +14396,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSentimentDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14582,19 +14425,10 @@ impl ListSentimentDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSentimentDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSentimentDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPiiEntitiesDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14620,19 +14454,10 @@ impl ListPiiEntitiesDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPiiEntitiesDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPiiEntitiesDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeyPhrasesDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14658,19 +14483,10 @@ impl ListKeyPhrasesDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListKeyPhrasesDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeyPhrasesDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventsDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14696,19 +14512,10 @@ impl ListEventsDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEventsDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventsDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntityRecognizerSummariesInput {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
@@ -14727,18 +14534,10 @@ impl ListEntityRecognizerSummariesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntityRecognizerSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntityRecognizerSummariesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntityRecognizersInput {
     /// <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14764,19 +14563,10 @@ impl ListEntityRecognizersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntityRecognizersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntityRecognizersInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitiesDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14802,19 +14592,10 @@ impl ListEntitiesDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntitiesDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitiesDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEndpointsInput {
     /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
     #[doc(hidden)]
@@ -14840,19 +14621,10 @@ impl ListEndpointsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEndpointsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDominantLanguageDetectionJobsInput {
     /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14878,19 +14650,10 @@ impl ListDominantLanguageDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDominantLanguageDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDominantLanguageDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDocumentClassifierSummariesInput {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
@@ -14909,18 +14672,10 @@ impl ListDocumentClassifierSummariesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDocumentClassifierSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDocumentClassifierSummariesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDocumentClassifiersInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14946,19 +14701,10 @@ impl ListDocumentClassifiersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDocumentClassifiersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDocumentClassifiersInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDocumentClassificationJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -14984,19 +14730,10 @@ impl ListDocumentClassificationJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDocumentClassificationJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDocumentClassificationJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportModelInput {
     /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
     #[doc(hidden)]
@@ -15049,18 +14786,6 @@ impl ImportModelInput {
     /// <p>Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportModelInput");
-        formatter.field("source_model_arn", &self.source_model_arn);
-        formatter.field("model_name", &self.model_name);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("model_kms_key_id", &self.model_kms_key_id);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -15160,7 +14885,7 @@ impl std::fmt::Debug for DetectSentimentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectPiiEntitiesInput {
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     #[doc(hidden)]
@@ -15177,14 +14902,6 @@ impl DetectPiiEntitiesInput {
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectPiiEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectPiiEntitiesInput");
-        formatter.field("text", &self.text);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
     }
 }
 
@@ -15286,7 +15003,7 @@ impl std::fmt::Debug for DetectDominantLanguageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTopicsDetectionJobInput {
     /// <p>The identifier assigned by the user to the detection job.</p>
     #[doc(hidden)]
@@ -15298,17 +15015,10 @@ impl DescribeTopicsDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTopicsDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTopicsDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTargetedSentimentDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -15320,17 +15030,10 @@ impl DescribeTargetedSentimentDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTargetedSentimentDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTargetedSentimentDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSentimentDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -15342,17 +15045,10 @@ impl DescribeSentimentDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSentimentDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSentimentDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
     #[doc(hidden)]
@@ -15364,17 +15060,10 @@ impl DescribeResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePiiEntitiesDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -15386,17 +15075,10 @@ impl DescribePiiEntitiesDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePiiEntitiesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePiiEntitiesDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeKeyPhrasesDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -15408,17 +15090,10 @@ impl DescribeKeyPhrasesDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeKeyPhrasesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeKeyPhrasesDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventsDetectionJobInput {
     /// <p>The identifier of the events detection job.</p>
     #[doc(hidden)]
@@ -15430,17 +15105,10 @@ impl DescribeEventsDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventsDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventsDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEntityRecognizerInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     #[doc(hidden)]
@@ -15452,17 +15120,10 @@ impl DescribeEntityRecognizerInput {
         self.entity_recognizer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEntityRecognizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEntityRecognizerInput");
-        formatter.field("entity_recognizer_arn", &self.entity_recognizer_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -15474,17 +15135,10 @@ impl DescribeEntitiesDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEntitiesDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEntitiesDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
     #[doc(hidden)]
@@ -15496,17 +15150,10 @@ impl DescribeEndpointInput {
         self.endpoint_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDominantLanguageDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -15518,17 +15165,10 @@ impl DescribeDominantLanguageDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDominantLanguageDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDominantLanguageDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -15540,17 +15180,10 @@ impl DescribeDocumentClassifierInput {
         self.document_classifier_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDocumentClassifierInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDocumentClassifierInput");
-        formatter.field("document_classifier_arn", &self.document_classifier_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDocumentClassificationJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -15562,17 +15195,10 @@ impl DescribeDocumentClassificationJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDocumentClassificationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDocumentClassificationJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
     #[doc(hidden)]
@@ -15591,18 +15217,10 @@ impl DeleteResourcePolicyInput {
         self.policy_revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy_revision_id", &self.policy_revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEntityRecognizerInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     #[doc(hidden)]
@@ -15614,17 +15232,10 @@ impl DeleteEntityRecognizerInput {
         self.entity_recognizer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEntityRecognizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEntityRecognizerInput");
-        formatter.field("entity_recognizer_arn", &self.entity_recognizer_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being deleted.</p>
     #[doc(hidden)]
@@ -15636,17 +15247,10 @@ impl DeleteEndpointInput {
         self.endpoint_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEndpointInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     #[doc(hidden)]
@@ -15658,17 +15262,10 @@ impl DeleteDocumentClassifierInput {
         self.document_classifier_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDocumentClassifierInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDocumentClassifierInput");
-        formatter.field("document_classifier_arn", &self.document_classifier_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEntityRecognizerInput {
     /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
     #[doc(hidden)]
@@ -15776,27 +15373,10 @@ impl CreateEntityRecognizerInput {
         self.model_policy.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEntityRecognizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEntityRecognizerInput");
-        formatter.field("recognizer_name", &self.recognizer_name);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("model_kms_key_id", &self.model_kms_key_id);
-        formatter.field("model_policy", &self.model_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEndpointInput {
     /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
     #[doc(hidden)]
@@ -15843,22 +15423,10 @@ impl CreateEndpointInput {
         self.data_access_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEndpointInput");
-        formatter.field("endpoint_name", &self.endpoint_name);
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("desired_inference_units", &self.desired_inference_units);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDocumentClassifierInput {
     /// <p>The name of the document classifier.</p>
     #[doc(hidden)]
@@ -15982,29 +15550,10 @@ impl CreateDocumentClassifierInput {
         self.model_policy.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDocumentClassifierInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDocumentClassifierInput");
-        formatter.field("document_classifier_name", &self.document_classifier_name);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("mode", &self.mode);
-        formatter.field("model_kms_key_id", &self.model_kms_key_id);
-        formatter.field("model_policy", &self.model_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainsPiiEntitiesInput {
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     #[doc(hidden)]
@@ -16021,14 +15570,6 @@ impl ContainsPiiEntitiesInput {
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainsPiiEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainsPiiEntitiesInput");
-        formatter.field("text", &self.text);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
     }
 }
 

@@ -5663,7 +5663,7 @@ impl UpdateWorkspaceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -5689,19 +5689,10 @@ impl UpdateWorkspaceInput {
         self.role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("description", &self.description);
-        formatter.field("role", &self.role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
@@ -5741,21 +5732,10 @@ impl UpdateSceneInput {
         self.capabilities.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSceneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSceneInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("scene_id", &self.scene_id);
-        formatter.field("content_location", &self.content_location);
-        formatter.field("description", &self.description);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
     #[doc(hidden)]
@@ -5810,22 +5790,10 @@ impl UpdateEntityInput {
         self.parent_entity_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEntityInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("entity_name", &self.entity_name);
-        formatter.field("description", &self.description);
-        formatter.field("component_updates", &self.component_updates);
-        formatter.field("parent_entity_update", &self.parent_entity_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
@@ -5891,23 +5859,10 @@ impl UpdateComponentTypeInput {
         self.functions.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateComponentTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateComponentTypeInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("is_singleton", &self.is_singleton);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("description", &self.description);
-        formatter.field("property_definitions", &self.property_definitions);
-        formatter.field("extends_from", &self.extends_from);
-        formatter.field("functions", &self.functions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5926,18 +5881,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5960,18 +5907,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkspacesInput {
     /// <p>The maximum number of results to display.</p>
     #[doc(hidden)]
@@ -5990,18 +5929,10 @@ impl ListWorkspacesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkspacesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -6027,19 +5958,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListScenesInput {
     /// <p>The ID of the workspace that contains the scenes.</p>
     #[doc(hidden)]
@@ -6065,19 +5987,10 @@ impl ListScenesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListScenesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListScenesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitiesInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6114,20 +6027,10 @@ impl ListEntitiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitiesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentTypesInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6160,20 +6063,10 @@ impl ListComponentTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListComponentTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentTypesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkspaceInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6185,17 +6078,10 @@ impl GetWorkspaceInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
@@ -6214,18 +6100,10 @@ impl GetSceneInput {
         self.scene_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSceneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSceneInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("scene_id", &self.scene_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6344,30 +6222,10 @@ impl GetPropertyValueHistoryInput {
         self.end_time.as_deref()
     }
 }
-impl std::fmt::Debug for GetPropertyValueHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPropertyValueHistoryInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("selected_properties", &self.selected_properties);
-        formatter.field("property_filters", &self.property_filters);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.field("interpolation", &self.interpolation);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("order_by_time", &self.order_by_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPropertyValueInput {
     /// <p>The name of the component whose property values the operation returns.</p>
     #[doc(hidden)]
@@ -6407,21 +6265,10 @@ impl GetPropertyValueInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPropertyValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPropertyValueInput");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("selected_properties", &self.selected_properties);
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEntityInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6440,18 +6287,10 @@ impl GetEntityInput {
         self.entity_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEntityInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
@@ -6470,18 +6309,10 @@ impl GetComponentTypeInput {
         self.component_type_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetComponentTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComponentTypeInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceInput {
     /// <p>The ID of the workspace to delete.</p>
     #[doc(hidden)]
@@ -6493,17 +6324,10 @@ impl DeleteWorkspaceInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSceneInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6522,18 +6346,10 @@ impl DeleteSceneInput {
         self.scene_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSceneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSceneInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("scene_id", &self.scene_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEntityInput {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
     #[doc(hidden)]
@@ -6559,19 +6375,10 @@ impl DeleteEntityInput {
         self.is_recursive
     }
 }
-impl std::fmt::Debug for DeleteEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEntityInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("is_recursive", &self.is_recursive);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
@@ -6590,18 +6397,10 @@ impl DeleteComponentTypeInput {
         self.component_type_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteComponentTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteComponentTypeInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6645,21 +6444,10 @@ impl CreateWorkspaceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("description", &self.description);
-        formatter.field("s3_location", &self.s3_location);
-        formatter.field("role", &self.role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
@@ -6710,22 +6498,10 @@ impl CreateSceneInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSceneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSceneInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("scene_id", &self.scene_id);
-        formatter.field("content_location", &self.content_location);
-        formatter.field("description", &self.description);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
     #[doc(hidden)]
@@ -6789,23 +6565,10 @@ impl CreateEntityInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEntityInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("entity_name", &self.entity_name);
-        formatter.field("description", &self.description);
-        formatter.field("components", &self.components);
-        formatter.field("parent_entity_id", &self.parent_entity_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
@@ -6882,24 +6645,10 @@ impl CreateComponentTypeInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateComponentTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateComponentTypeInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("is_singleton", &self.is_singleton);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("description", &self.description);
-        formatter.field("property_definitions", &self.property_definitions);
-        formatter.field("extends_from", &self.extends_from);
-        formatter.field("functions", &self.functions);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutPropertyValuesInput {
     /// <p>The ID of the workspace that contains the properties to set.</p>
     #[doc(hidden)]
@@ -6916,13 +6665,5 @@ impl BatchPutPropertyValuesInput {
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::PropertyValueEntry]> {
         self.entries.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPutPropertyValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutPropertyValuesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
     }
 }

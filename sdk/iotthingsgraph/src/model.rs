@@ -2,7 +2,7 @@
 
 /// <p>A document that defines an entity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefinitionDocument {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl DefinitionDocument {
     /// <p>The GraphQL text that defines the entity.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
-    }
-}
-impl std::fmt::Debug for DefinitionDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefinitionDocument");
-        formatter.field("language", &self.language);
-        formatter.field("text", &self.text);
-        formatter.finish()
     }
 }
 /// See [`DefinitionDocument`](crate::model::DefinitionDocument).
@@ -167,7 +159,7 @@ impl AsRef<str> for DefinitionLanguage {
 
 /// <p>An object that contains information about a system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemTemplateSummary {
     /// <p>The ID of the system.</p>
     #[doc(hidden)]
@@ -198,16 +190,6 @@ impl SystemTemplateSummary {
     /// <p>The date when the system was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for SystemTemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemTemplateSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("revision_number", &self.revision_number);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
@@ -285,7 +267,7 @@ impl SystemTemplateSummary {
 
 /// <p>An object that contains summary information about a workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlowTemplateSummary {
     /// <p>The ID of the workflow.</p>
     #[doc(hidden)]
@@ -316,16 +298,6 @@ impl FlowTemplateSummary {
     /// <p>The date when the workflow was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for FlowTemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlowTemplateSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("revision_number", &self.revision_number);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
@@ -403,7 +375,7 @@ impl FlowTemplateSummary {
 
 /// <p>An object that contains summary information about a system instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemInstanceSummary {
     /// <p>The ID of the system instance.</p>
     #[doc(hidden)]
@@ -469,24 +441,6 @@ impl SystemInstanceSummary {
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
     pub fn greengrass_group_version_id(&self) -> std::option::Option<&str> {
         self.greengrass_group_version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SystemInstanceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemInstanceSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("target", &self.target);
-        formatter.field("greengrass_group_name", &self.greengrass_group_name);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("greengrass_group_id", &self.greengrass_group_id);
-        formatter.field(
-            "greengrass_group_version_id",
-            &self.greengrass_group_version_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
@@ -866,7 +820,7 @@ impl AsRef<str> for SystemInstanceDeploymentStatus {
 
 /// <p>Metadata assigned to an AWS IoT Things Graph resource consisting of a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
     #[doc(hidden)]
@@ -883,14 +837,6 @@ impl Tag {
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -941,7 +887,7 @@ impl Tag {
 
 /// <p>An AWS IoT thing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Thing {
     /// <p>The ARN of the thing.</p>
     #[doc(hidden)]
@@ -958,14 +904,6 @@ impl Thing {
     /// <p>The name of the thing.</p>
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Thing {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Thing");
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.finish()
     }
 }
 /// See [`Thing`](crate::model::Thing).
@@ -1016,7 +954,7 @@ impl Thing {
 
 /// <p>An object that filters a system search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemTemplateFilter {
     /// <p>The name of the system search filter field.</p>
     #[doc(hidden)]
@@ -1033,14 +971,6 @@ impl SystemTemplateFilter {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn value(&self) -> std::option::Option<&[std::string::String]> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SystemTemplateFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemTemplateFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
@@ -1190,7 +1120,7 @@ impl AsRef<str> for SystemTemplateFilterName {
 
 /// <p>An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemInstanceFilter {
     /// <p>The name of the search filter field.</p>
     #[doc(hidden)]
@@ -1207,14 +1137,6 @@ impl SystemInstanceFilter {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
     pub fn value(&self) -> std::option::Option<&[std::string::String]> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SystemInstanceFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemInstanceFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
@@ -1374,7 +1296,7 @@ impl AsRef<str> for SystemInstanceFilterName {
 
 /// <p>An object that filters a workflow search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlowTemplateFilter {
     /// <p>The name of the search filter field.</p>
     #[doc(hidden)]
@@ -1391,14 +1313,6 @@ impl FlowTemplateFilter {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn value(&self) -> std::option::Option<&[std::string::String]> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FlowTemplateFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlowTemplateFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
@@ -1548,7 +1462,7 @@ impl AsRef<str> for FlowTemplateFilterName {
 
 /// <p>An object that contains summary information about a flow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlowExecutionSummary {
     /// <p>The ID of the flow execution.</p>
     #[doc(hidden)]
@@ -1593,18 +1507,6 @@ impl FlowExecutionSummary {
     /// <p>The date and time when the flow execution summary was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for FlowExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlowExecutionSummary");
-        formatter.field("flow_execution_id", &self.flow_execution_id);
-        formatter.field("status", &self.status);
-        formatter.field("system_instance_id", &self.system_instance_id);
-        formatter.field("flow_template_id", &self.flow_template_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
@@ -1823,7 +1725,7 @@ impl AsRef<str> for FlowExecutionStatus {
 
 /// <p>Describes the properties of an entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityDescription {
     /// <p>The entity ID.</p>
     #[doc(hidden)]
@@ -1861,17 +1763,6 @@ impl EntityDescription {
     /// <p>The definition document of the entity.</p>
     pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
         self.definition.as_ref()
-    }
-}
-impl std::fmt::Debug for EntityDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityDescription");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("definition", &self.definition);
-        formatter.finish()
     }
 }
 /// See [`EntityDescription`](crate::model::EntityDescription).
@@ -2105,7 +1996,7 @@ impl AsRef<str> for EntityType {
 
 /// <p>An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by the value of <code>REFERENCED_ENTITY_ID</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityFilter {
     /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     #[doc(hidden)]
@@ -2122,14 +2013,6 @@ impl EntityFilter {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn value(&self) -> std::option::Option<&[std::string::String]> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`EntityFilter`](crate::model::EntityFilter).
@@ -2297,7 +2180,7 @@ impl AsRef<str> for EntityFilterName {
 
 /// <p>An object that contains information about a flow event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlowExecutionMessage {
     /// <p>The unique identifier of the message.</p>
     #[doc(hidden)]
@@ -2328,16 +2211,6 @@ impl FlowExecutionMessage {
     /// <p>A string containing information about the flow event.</p>
     pub fn payload(&self) -> std::option::Option<&str> {
         self.payload.as_deref()
-    }
-}
-impl std::fmt::Debug for FlowExecutionMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlowExecutionMessage");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
@@ -2698,7 +2571,7 @@ impl AsRef<str> for UploadStatus {
 
 /// <p>An object that contains a system's definition document and summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemTemplateDescription {
     /// <p>An object that contains summary information about a system.</p>
     #[doc(hidden)]
@@ -2722,18 +2595,6 @@ impl SystemTemplateDescription {
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
     pub fn validated_namespace_version(&self) -> std::option::Option<i64> {
         self.validated_namespace_version
-    }
-}
-impl std::fmt::Debug for SystemTemplateDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemTemplateDescription");
-        formatter.field("summary", &self.summary);
-        formatter.field("definition", &self.definition);
-        formatter.field(
-            "validated_namespace_version",
-            &self.validated_namespace_version,
-        );
-        formatter.finish()
     }
 }
 /// See [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
@@ -2802,7 +2663,7 @@ impl SystemTemplateDescription {
 
 /// <p>An object that contains a system instance definition and summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemInstanceDescription {
     /// <p>An object that contains summary information about a system instance.</p>
     #[doc(hidden)]
@@ -2859,25 +2720,6 @@ impl SystemInstanceDescription {
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
     pub fn flow_actions_role_arn(&self) -> std::option::Option<&str> {
         self.flow_actions_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SystemInstanceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemInstanceDescription");
-        formatter.field("summary", &self.summary);
-        formatter.field("definition", &self.definition);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("metrics_configuration", &self.metrics_configuration);
-        formatter.field(
-            "validated_namespace_version",
-            &self.validated_namespace_version,
-        );
-        formatter.field(
-            "validated_dependency_revisions",
-            &self.validated_dependency_revisions,
-        );
-        formatter.field("flow_actions_role_arn", &self.flow_actions_role_arn);
-        formatter.finish()
     }
 }
 /// See [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
@@ -3016,7 +2858,7 @@ impl SystemInstanceDescription {
 
 /// <p>An object that contains the ID and revision number of a workflow or system that is part of a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DependencyRevision {
     /// <p>The ID of the workflow or system.</p>
     #[doc(hidden)]
@@ -3033,14 +2875,6 @@ impl DependencyRevision {
     /// <p>The revision number of the workflow or system.</p>
     pub fn revision_number(&self) -> std::option::Option<i64> {
         self.revision_number
-    }
-}
-impl std::fmt::Debug for DependencyRevision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependencyRevision");
-        formatter.field("id", &self.id);
-        formatter.field("revision_number", &self.revision_number);
-        formatter.finish()
     }
 }
 /// See [`DependencyRevision`](crate::model::DependencyRevision).
@@ -3091,7 +2925,7 @@ impl DependencyRevision {
 
 /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricsConfiguration {
     /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
     #[doc(hidden)]
@@ -3108,14 +2942,6 @@ impl MetricsConfiguration {
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
     pub fn metric_rule_role_arn(&self) -> std::option::Option<&str> {
         self.metric_rule_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricsConfiguration");
-        formatter.field("cloud_metric_enabled", &self.cloud_metric_enabled);
-        formatter.field("metric_rule_role_arn", &self.metric_rule_role_arn);
-        formatter.finish()
     }
 }
 /// See [`MetricsConfiguration`](crate::model::MetricsConfiguration).
@@ -3353,7 +3179,7 @@ impl AsRef<str> for NamespaceDeletionStatus {
 
 /// <p>An object that contains a workflow's definition and summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlowTemplateDescription {
     /// <p>An object that contains summary information about a workflow.</p>
     #[doc(hidden)]
@@ -3377,18 +3203,6 @@ impl FlowTemplateDescription {
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
     pub fn validated_namespace_version(&self) -> std::option::Option<i64> {
         self.validated_namespace_version
-    }
-}
-impl std::fmt::Debug for FlowTemplateDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlowTemplateDescription");
-        formatter.field("summary", &self.summary);
-        formatter.field("definition", &self.definition);
-        formatter.field(
-            "validated_namespace_version",
-            &self.validated_namespace_version,
-        );
-        formatter.finish()
     }
 }
 /// See [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).

@@ -228,7 +228,7 @@ impl ArrayValue {
 
 /// <p>Contains the metadata for a column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnMetadata {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
@@ -329,26 +329,6 @@ impl ColumnMetadata {
     /// <p>The type of the column.</p>
     pub fn array_base_column_type(&self) -> i32 {
         self.array_base_column_type
-    }
-}
-impl std::fmt::Debug for ColumnMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("label", &self.label);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("is_auto_increment", &self.is_auto_increment);
-        formatter.field("is_signed", &self.is_signed);
-        formatter.field("is_currency", &self.is_currency);
-        formatter.field("is_case_sensitive", &self.is_case_sensitive);
-        formatter.field("nullable", &self.nullable);
-        formatter.field("precision", &self.precision);
-        formatter.field("scale", &self.scale);
-        formatter.field("array_base_column_type", &self.array_base_column_type);
-        formatter.finish()
     }
 }
 /// See [`ColumnMetadata`](crate::model::ColumnMetadata).
@@ -635,7 +615,7 @@ impl AsRef<str> for RecordsFormatType {
 
 /// <p>Options that control how the result set is returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultSetOptions {
     /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
     /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
@@ -656,14 +636,6 @@ impl ResultSetOptions {
     /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
     pub fn long_return_type(&self) -> std::option::Option<&crate::model::LongReturnType> {
         self.long_return_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ResultSetOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultSetOptions");
-        formatter.field("decimal_return_type", &self.decimal_return_type);
-        formatter.field("long_return_type", &self.long_return_type);
-        formatter.finish()
     }
 }
 /// See [`ResultSetOptions`](crate::model::ResultSetOptions).
@@ -906,7 +878,7 @@ impl AsRef<str> for DecimalReturnType {
 
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -946,15 +918,6 @@ impl SqlParameter {
     /// </ul>
     pub fn type_hint(&self) -> std::option::Option<&crate::model::TypeHint> {
         self.type_hint.as_ref()
-    }
-}
-impl std::fmt::Debug for SqlParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlParameter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("type_hint", &self.type_hint);
-        formatter.finish()
     }
 }
 /// See [`SqlParameter`](crate::model::SqlParameter).
@@ -1145,7 +1108,7 @@ impl AsRef<str> for TypeHint {
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlStatementResult {
     /// <p>The result set of the SQL statement.</p>
     #[doc(hidden)]
@@ -1162,14 +1125,6 @@ impl SqlStatementResult {
     /// <p>The number of records updated by a SQL statement.</p>
     pub fn number_of_records_updated(&self) -> i64 {
         self.number_of_records_updated
-    }
-}
-impl std::fmt::Debug for SqlStatementResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlStatementResult");
-        formatter.field("result_frame", &self.result_frame);
-        formatter.field("number_of_records_updated", &self.number_of_records_updated);
-        formatter.finish()
     }
 }
 /// See [`SqlStatementResult`](crate::model::SqlStatementResult).
@@ -1225,7 +1180,7 @@ impl SqlStatementResult {
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultFrame {
     /// <p>The result-set metadata in the result set.</p>
     #[doc(hidden)]
@@ -1242,14 +1197,6 @@ impl ResultFrame {
     /// <p>The records in the result set.</p>
     pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
         self.records.as_deref()
-    }
-}
-impl std::fmt::Debug for ResultFrame {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultFrame");
-        formatter.field("result_set_metadata", &self.result_set_metadata);
-        formatter.field("records", &self.records);
-        formatter.finish()
     }
 }
 /// See [`ResultFrame`](crate::model::ResultFrame).
@@ -1314,7 +1261,7 @@ impl ResultFrame {
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Record {
     /// <p>The values returned in the record.</p>
     #[doc(hidden)]
@@ -1324,13 +1271,6 @@ impl Record {
     /// <p>The values returned in the record.</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::Value]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Record`](crate::model::Record).
@@ -1555,7 +1495,7 @@ impl Value {
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StructValue {
     /// <p>The attributes returned in the record.</p>
     #[doc(hidden)]
@@ -1565,13 +1505,6 @@ impl StructValue {
     /// <p>The attributes returned in the record.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Value]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for StructValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StructValue");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`StructValue`](crate::model::StructValue).
@@ -1619,7 +1552,7 @@ impl StructValue {
 
 /// <p>The metadata of the result set returned by a SQL statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultSetMetadata {
     /// <p>The number of columns in the result set.</p>
     #[doc(hidden)]
@@ -1636,14 +1569,6 @@ impl ResultSetMetadata {
     /// <p>The metadata of the columns in the result set.</p>
     pub fn column_metadata(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
         self.column_metadata.as_deref()
-    }
-}
-impl std::fmt::Debug for ResultSetMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultSetMetadata");
-        formatter.field("column_count", &self.column_count);
-        formatter.field("column_metadata", &self.column_metadata);
-        formatter.finish()
     }
 }
 /// See [`ResultSetMetadata`](crate::model::ResultSetMetadata).
@@ -1704,7 +1629,7 @@ impl ResultSetMetadata {
 
 /// <p>The response elements represent the results of an update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResult {
     /// <p>Values for fields generated during the request.</p>
     #[doc(hidden)]
@@ -1714,13 +1639,6 @@ impl UpdateResult {
     /// <p>Values for fields generated during the request.</p>
     pub fn generated_fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.generated_fields.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResult");
-        formatter.field("generated_fields", &self.generated_fields);
-        formatter.finish()
     }
 }
 /// See [`UpdateResult`](crate::model::UpdateResult).

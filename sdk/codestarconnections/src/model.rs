@@ -2,7 +2,7 @@
 
 /// <p>The VPC configuration provisioned for the host.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
     #[doc(hidden)]
@@ -33,16 +33,6 @@ impl VpcConfiguration {
     /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
     pub fn tls_certificate(&self) -> std::option::Option<&str> {
         self.tls_certificate.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfiguration");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("tls_certificate", &self.tls_certificate);
-        formatter.finish()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -139,7 +129,7 @@ impl VpcConfiguration {
 /// <p>A tag is a key-value pair that is used to manage the resource.</p>
 /// <p>This tag is available for use by AWS services that support tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -156,14 +146,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -216,7 +198,7 @@ impl Tag {
 /// <p>A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Host {
     /// <p>The name of the host.</p>
     #[doc(hidden)]
@@ -268,19 +250,6 @@ impl Host {
     /// <p>The status description for the host.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for Host {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Host");
-        formatter.field("name", &self.name);
-        formatter.field("host_arn", &self.host_arn);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("provider_endpoint", &self.provider_endpoint);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`Host`](crate::model::Host).
@@ -499,7 +468,7 @@ impl AsRef<str> for ProviderType {
 /// <p>A resource that is used to connect third-party source providers with services like AWS CodePipeline.</p>
 /// <p>Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The name of the connection. Connection names must be unique in an AWS user account.</p>
     #[doc(hidden)]
@@ -548,18 +517,6 @@ impl Connection {
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
     pub fn host_arn(&self) -> std::option::Option<&str> {
         self.host_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("host_arn", &self.host_arn);
-        formatter.finish()
     }
 }
 /// See [`Connection`](crate::model::Connection).

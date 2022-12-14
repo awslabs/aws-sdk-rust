@@ -4044,7 +4044,7 @@ impl CreateUsageReportSubscriptionInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) message_action: std::option::Option<crate::model::MessageAction>,
@@ -4129,6 +4129,17 @@ pub mod create_user_input {
                 last_name: self.last_name,
                 authentication_type: self.authentication_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("message_action", &self.message_action);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_type", &self.authentication_type);
+            formatter.finish()
         }
     }
 }
@@ -5713,7 +5724,7 @@ impl DeleteUsageReportSubscriptionInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -5755,6 +5766,14 @@ pub mod delete_user_input {
                 user_name: self.user_name,
                 authentication_type: self.authentication_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_type", &self.authentication_type);
+            formatter.finish()
         }
     }
 }
@@ -8249,7 +8268,7 @@ impl DescribeUsersInput {
 pub mod describe_user_stack_associations_input {
 
     /// A builder for [`DescribeUserStackAssociationsInput`](crate::input::DescribeUserStackAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -8329,6 +8348,17 @@ pub mod describe_user_stack_associations_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("stack_name", &self.stack_name);
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_type", &self.authentication_type);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &self.next_token);
+            formatter.finish()
         }
     }
 }
@@ -8450,7 +8480,7 @@ impl DescribeUserStackAssociationsInput {
 pub mod disable_user_input {
 
     /// A builder for [`DisableUserInput`](crate::input::DisableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -8492,6 +8522,14 @@ pub mod disable_user_input {
                 user_name: self.user_name,
                 authentication_type: self.authentication_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_type", &self.authentication_type);
+            formatter.finish()
         }
     }
 }
@@ -9110,7 +9148,7 @@ impl DisassociateFleetInput {
 pub mod enable_user_input {
 
     /// A builder for [`EnableUserInput`](crate::input::EnableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -9152,6 +9190,14 @@ pub mod enable_user_input {
                 user_name: self.user_name,
                 authentication_type: self.authentication_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_type", &self.authentication_type);
+            formatter.finish()
         }
     }
 }
@@ -12744,7 +12790,7 @@ impl UpdateStackInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStackInput {
     /// <p>The stack name to display.</p>
     #[doc(hidden)]
@@ -12845,32 +12891,10 @@ impl UpdateStackInput {
         self.streaming_experience_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStackInput");
-        formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("storage_connectors", &self.storage_connectors);
-        formatter.field("delete_storage_connectors", &self.delete_storage_connectors);
-        formatter.field("redirect_url", &self.redirect_url);
-        formatter.field("feedback_url", &self.feedback_url);
-        formatter.field("attributes_to_delete", &self.attributes_to_delete);
-        formatter.field("user_settings", &self.user_settings);
-        formatter.field("application_settings", &self.application_settings);
-        formatter.field("access_endpoints", &self.access_endpoints);
-        formatter.field("embed_host_domains", &self.embed_host_domains);
-        formatter.field(
-            "streaming_experience_settings",
-            &self.streaming_experience_settings,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateImagePermissionsInput {
     /// <p>The name of the private image.</p>
     #[doc(hidden)]
@@ -12896,19 +12920,10 @@ impl UpdateImagePermissionsInput {
         self.image_permissions.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateImagePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateImagePermissionsInput");
-        formatter.field("name", &self.name);
-        formatter.field("shared_account_id", &self.shared_account_id);
-        formatter.field("image_permissions", &self.image_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetInput {
     /// <p>The name of the image used to create the fleet.</p>
     #[doc(hidden)]
@@ -13156,52 +13171,10 @@ impl UpdateFleetInput {
         self.session_script_s3_location.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetInput");
-        formatter.field("image_name", &self.image_name);
-        formatter.field("image_arn", &self.image_arn);
-        formatter.field("name", &self.name);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("compute_capacity", &self.compute_capacity);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field(
-            "max_user_duration_in_seconds",
-            &self.max_user_duration_in_seconds,
-        );
-        formatter.field(
-            "disconnect_timeout_in_seconds",
-            &self.disconnect_timeout_in_seconds,
-        );
-        formatter.field("delete_vpc_config", &self.delete_vpc_config);
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "enable_default_internet_access",
-            &self.enable_default_internet_access,
-        );
-        formatter.field("domain_join_info", &self.domain_join_info);
-        formatter.field(
-            "idle_disconnect_timeout_in_seconds",
-            &self.idle_disconnect_timeout_in_seconds,
-        );
-        formatter.field("attributes_to_delete", &self.attributes_to_delete);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("stream_view", &self.stream_view);
-        formatter.field("platform", &self.platform);
-        formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
-        formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
-        formatter.field(
-            "session_script_s3_location",
-            &self.session_script_s3_location,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEntitlementInput {
     /// <p>The name of the entitlement.</p>
     #[doc(hidden)]
@@ -13241,21 +13214,10 @@ impl UpdateEntitlementInput {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEntitlementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEntitlementInput");
-        formatter.field("name", &self.name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("description", &self.description);
-        formatter.field("app_visibility", &self.app_visibility);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDirectoryConfigInput {
     /// <p>The name of the Directory Config object.</p>
     #[doc(hidden)]
@@ -13286,25 +13248,10 @@ impl UpdateDirectoryConfigInput {
         self.service_account_credentials.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDirectoryConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDirectoryConfigInput");
-        formatter.field("directory_name", &self.directory_name);
-        formatter.field(
-            "organizational_unit_distinguished_names",
-            &self.organizational_unit_distinguished_names,
-        );
-        formatter.field(
-            "service_account_credentials",
-            &self.service_account_credentials,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
     #[doc(hidden)]
@@ -13375,25 +13322,10 @@ impl UpdateApplicationInput {
         self.attributes_to_delete.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
-        formatter.field("icon_s3_location", &self.icon_s3_location);
-        formatter.field("launch_path", &self.launch_path);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field("launch_parameters", &self.launch_parameters);
-        formatter.field("app_block_arn", &self.app_block_arn);
-        formatter.field("attributes_to_delete", &self.attributes_to_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -13412,18 +13344,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -13452,18 +13376,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopImageBuilderInput {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
@@ -13475,17 +13391,10 @@ impl StopImageBuilderInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for StopImageBuilderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopImageBuilderInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopFleetInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -13497,17 +13406,10 @@ impl StopFleetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for StopFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopFleetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartImageBuilderInput {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
@@ -13526,18 +13428,10 @@ impl StartImageBuilderInput {
         self.appstream_agent_version.as_deref()
     }
 }
-impl std::fmt::Debug for StartImageBuilderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartImageBuilderInput");
-        formatter.field("name", &self.name);
-        formatter.field("appstream_agent_version", &self.appstream_agent_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFleetInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -13549,17 +13443,10 @@ impl StartFleetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for StartFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFleetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -13571,17 +13458,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitledApplicationsInput {
     /// <p>The name of the stack with which the entitlement is associated.</p>
     #[doc(hidden)]
@@ -13614,20 +13494,10 @@ impl ListEntitledApplicationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntitledApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitledApplicationsInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("entitlement_name", &self.entitlement_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociatedStacksInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -13646,18 +13516,10 @@ impl ListAssociatedStacksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssociatedStacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociatedStacksInput");
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociatedFleetsInput {
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
@@ -13676,18 +13538,10 @@ impl ListAssociatedFleetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssociatedFleetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociatedFleetsInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpireSessionInput {
     /// <p>The identifier of the streaming session.</p>
     #[doc(hidden)]
@@ -13697,13 +13551,6 @@ impl ExpireSessionInput {
     /// <p>The identifier of the streaming session.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ExpireSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpireSessionInput");
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
     }
 }
 
@@ -13743,7 +13590,7 @@ impl std::fmt::Debug for EnableUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateFleetInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -13762,18 +13609,10 @@ impl DisassociateFleetInput {
         self.stack_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateFleetInput");
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateApplicationFromEntitlementInput {
     /// <p>The name of the stack with which the entitlement is associated.</p>
     #[doc(hidden)]
@@ -13799,19 +13638,10 @@ impl DisassociateApplicationFromEntitlementInput {
         self.application_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateApplicationFromEntitlementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateApplicationFromEntitlementInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("entitlement_name", &self.entitlement_name);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateApplicationFleetInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -13828,14 +13658,6 @@ impl DisassociateApplicationFleetInput {
     /// <p>The ARN of the application.</p>
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DisassociateApplicationFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateApplicationFleetInput");
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.finish()
     }
 }
 
@@ -13933,7 +13755,7 @@ impl std::fmt::Debug for DescribeUserStackAssociationsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUsersInput {
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
     #[doc(hidden)]
@@ -13959,19 +13781,10 @@ impl DescribeUsersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUsersInput");
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUsageReportSubscriptionsInput {
     /// <p>The maximum size of each page of results.</p>
     #[doc(hidden)]
@@ -13990,18 +13803,10 @@ impl DescribeUsageReportSubscriptionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUsageReportSubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUsageReportSubscriptionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStacksInput {
     /// <p>The names of the stacks to describe.</p>
     #[doc(hidden)]
@@ -14020,18 +13825,10 @@ impl DescribeStacksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStacksInput");
-        formatter.field("names", &self.names);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSessionsInput {
     /// <p>The name of the stack. This value is case-sensitive.</p>
     #[doc(hidden)]
@@ -14078,22 +13875,10 @@ impl DescribeSessionsInput {
         self.authentication_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSessionsInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImagesInput {
     /// <p>The names of the public or private images to describe.</p>
     #[doc(hidden)]
@@ -14133,21 +13918,10 @@ impl DescribeImagesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeImagesInput");
-        formatter.field("names", &self.names);
-        formatter.field("arns", &self.arns);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImagePermissionsInput {
     /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
     #[doc(hidden)]
@@ -14180,20 +13954,10 @@ impl DescribeImagePermissionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeImagePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeImagePermissionsInput");
-        formatter.field("name", &self.name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("shared_aws_account_ids", &self.shared_aws_account_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImageBuildersInput {
     /// <p>The names of the image builders to describe.</p>
     #[doc(hidden)]
@@ -14219,19 +13983,10 @@ impl DescribeImageBuildersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeImageBuildersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeImageBuildersInput");
-        formatter.field("names", &self.names);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetsInput {
     /// <p>The names of the fleets to describe.</p>
     #[doc(hidden)]
@@ -14250,18 +14005,10 @@ impl DescribeFleetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetsInput");
-        formatter.field("names", &self.names);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEntitlementsInput {
     /// <p>The name of the entitlement.</p>
     #[doc(hidden)]
@@ -14294,20 +14041,10 @@ impl DescribeEntitlementsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeEntitlementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEntitlementsInput");
-        formatter.field("name", &self.name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectoryConfigsInput {
     /// <p>The directory names.</p>
     #[doc(hidden)]
@@ -14333,19 +14070,10 @@ impl DescribeDirectoryConfigsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectoryConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectoryConfigsInput");
-        formatter.field("directory_names", &self.directory_names);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationsInput {
     /// <p>The ARNs for the applications.</p>
     #[doc(hidden)]
@@ -14371,19 +14099,10 @@ impl DescribeApplicationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationsInput");
-        formatter.field("arns", &self.arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationFleetAssociationsInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -14416,20 +14135,10 @@ impl DescribeApplicationFleetAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationFleetAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationFleetAssociationsInput");
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppBlocksInput {
     /// <p>The ARNs of the app blocks.</p>
     #[doc(hidden)]
@@ -14453,15 +14162,6 @@ impl DescribeAppBlocksInput {
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for DescribeAppBlocksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppBlocksInput");
-        formatter.field("arns", &self.arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -14501,18 +14201,12 @@ impl std::fmt::Debug for DeleteUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUsageReportSubscriptionInput {}
-impl std::fmt::Debug for DeleteUsageReportSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUsageReportSubscriptionInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStackInput {
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
@@ -14524,17 +14218,10 @@ impl DeleteStackInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStackInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImagePermissionsInput {
     /// <p>The name of the private image.</p>
     #[doc(hidden)]
@@ -14553,18 +14240,10 @@ impl DeleteImagePermissionsInput {
         self.shared_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImagePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImagePermissionsInput");
-        formatter.field("name", &self.name);
-        formatter.field("shared_account_id", &self.shared_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImageBuilderInput {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
@@ -14576,17 +14255,10 @@ impl DeleteImageBuilderInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImageBuilderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImageBuilderInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImageInput {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
@@ -14598,17 +14270,10 @@ impl DeleteImageInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImageInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -14620,17 +14285,10 @@ impl DeleteFleetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEntitlementInput {
     /// <p>The name of the entitlement.</p>
     #[doc(hidden)]
@@ -14649,18 +14307,10 @@ impl DeleteEntitlementInput {
         self.stack_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEntitlementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEntitlementInput");
-        formatter.field("name", &self.name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectoryConfigInput {
     /// <p>The name of the directory configuration.</p>
     #[doc(hidden)]
@@ -14672,17 +14322,10 @@ impl DeleteDirectoryConfigInput {
         self.directory_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectoryConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectoryConfigInput");
-        formatter.field("directory_name", &self.directory_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -14694,17 +14337,10 @@ impl DeleteApplicationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppBlockInput {
     /// <p>The name of the app block.</p>
     #[doc(hidden)]
@@ -14714,13 +14350,6 @@ impl DeleteAppBlockInput {
     /// <p>The name of the app block.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteAppBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppBlockInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -14788,18 +14417,12 @@ impl std::fmt::Debug for CreateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUsageReportSubscriptionInput {}
-impl std::fmt::Debug for CreateUsageReportSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUsageReportSubscriptionInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUpdatedImageInput {
     /// <p>The name of the image to update.</p>
     #[doc(hidden)]
@@ -14858,22 +14481,10 @@ impl CreateUpdatedImageInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for CreateUpdatedImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUpdatedImageInput");
-        formatter.field("existing_image_name", &self.existing_image_name);
-        formatter.field("new_image_name", &self.new_image_name);
-        formatter.field("new_image_description", &self.new_image_description);
-        formatter.field("new_image_display_name", &self.new_image_display_name);
-        formatter.field("new_image_tags", &self.new_image_tags);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingUrlInput {
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
@@ -14920,22 +14531,10 @@ impl CreateStreamingUrlInput {
         self.session_context.as_deref()
     }
 }
-impl std::fmt::Debug for CreateStreamingUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingUrlInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("validity", &self.validity);
-        formatter.field("session_context", &self.session_context);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStackInput {
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
@@ -15039,31 +14638,10 @@ impl CreateStackInput {
         self.streaming_experience_settings.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStackInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("storage_connectors", &self.storage_connectors);
-        formatter.field("redirect_url", &self.redirect_url);
-        formatter.field("feedback_url", &self.feedback_url);
-        formatter.field("user_settings", &self.user_settings);
-        formatter.field("application_settings", &self.application_settings);
-        formatter.field("tags", &self.tags);
-        formatter.field("access_endpoints", &self.access_endpoints);
-        formatter.field("embed_host_domains", &self.embed_host_domains);
-        formatter.field(
-            "streaming_experience_settings",
-            &self.streaming_experience_settings,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImageBuilderStreamingUrlInput {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
@@ -15082,18 +14660,10 @@ impl CreateImageBuilderStreamingUrlInput {
         self.validity
     }
 }
-impl std::fmt::Debug for CreateImageBuilderStreamingUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateImageBuilderStreamingUrlInput");
-        formatter.field("name", &self.name);
-        formatter.field("validity", &self.validity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImageBuilderInput {
     /// <p>A unique name for the image builder.</p>
     #[doc(hidden)]
@@ -15273,32 +14843,10 @@ impl CreateImageBuilderInput {
         self.access_endpoints.as_deref()
     }
 }
-impl std::fmt::Debug for CreateImageBuilderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateImageBuilderInput");
-        formatter.field("name", &self.name);
-        formatter.field("image_name", &self.image_name);
-        formatter.field("image_arn", &self.image_arn);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field(
-            "enable_default_internet_access",
-            &self.enable_default_internet_access,
-        );
-        formatter.field("domain_join_info", &self.domain_join_info);
-        formatter.field("appstream_agent_version", &self.appstream_agent_version);
-        formatter.field("tags", &self.tags);
-        formatter.field("access_endpoints", &self.access_endpoints);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
     #[doc(hidden)]
@@ -15584,52 +15132,10 @@ impl CreateFleetInput {
         self.session_script_s3_location.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetInput");
-        formatter.field("name", &self.name);
-        formatter.field("image_name", &self.image_name);
-        formatter.field("image_arn", &self.image_arn);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("fleet_type", &self.fleet_type);
-        formatter.field("compute_capacity", &self.compute_capacity);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field(
-            "max_user_duration_in_seconds",
-            &self.max_user_duration_in_seconds,
-        );
-        formatter.field(
-            "disconnect_timeout_in_seconds",
-            &self.disconnect_timeout_in_seconds,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "enable_default_internet_access",
-            &self.enable_default_internet_access,
-        );
-        formatter.field("domain_join_info", &self.domain_join_info);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "idle_disconnect_timeout_in_seconds",
-            &self.idle_disconnect_timeout_in_seconds,
-        );
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("stream_view", &self.stream_view);
-        formatter.field("platform", &self.platform);
-        formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
-        formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
-        formatter.field(
-            "session_script_s3_location",
-            &self.session_script_s3_location,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEntitlementInput {
     /// <p>The name of the entitlement.</p>
     #[doc(hidden)]
@@ -15669,21 +15175,10 @@ impl CreateEntitlementInput {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEntitlementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEntitlementInput");
-        formatter.field("name", &self.name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("description", &self.description);
-        formatter.field("app_visibility", &self.app_visibility);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectoryConfigInput {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
     #[doc(hidden)]
@@ -15714,25 +15209,10 @@ impl CreateDirectoryConfigInput {
         self.service_account_credentials.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDirectoryConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectoryConfigInput");
-        formatter.field("directory_name", &self.directory_name);
-        formatter.field(
-            "organizational_unit_distinguished_names",
-            &self.organizational_unit_distinguished_names,
-        );
-        formatter.field(
-            "service_account_credentials",
-            &self.service_account_credentials,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
     #[doc(hidden)]
@@ -15818,27 +15298,10 @@ impl CreateApplicationInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
-        formatter.field("icon_s3_location", &self.icon_s3_location);
-        formatter.field("launch_path", &self.launch_path);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field("launch_parameters", &self.launch_parameters);
-        formatter.field("platforms", &self.platforms);
-        formatter.field("instance_families", &self.instance_families);
-        formatter.field("app_block_arn", &self.app_block_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppBlockInput {
     /// <p>The name of the app block.</p>
     #[doc(hidden)]
@@ -15889,22 +15352,10 @@ impl CreateAppBlockInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAppBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppBlockInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("source_s3_location", &self.source_s3_location);
-        formatter.field("setup_script_details", &self.setup_script_details);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyImageInput {
     /// <p>The name of the image to copy.</p>
     #[doc(hidden)]
@@ -15937,23 +15388,10 @@ impl CopyImageInput {
         self.destination_image_description.as_deref()
     }
 }
-impl std::fmt::Debug for CopyImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyImageInput");
-        formatter.field("source_image_name", &self.source_image_name);
-        formatter.field("destination_image_name", &self.destination_image_name);
-        formatter.field("destination_region", &self.destination_region);
-        formatter.field(
-            "destination_image_description",
-            &self.destination_image_description,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
     #[doc(hidden)]
@@ -15968,17 +15406,10 @@ impl BatchDisassociateUserStackInput {
         self.user_stack_associations.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateUserStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDisassociateUserStackInput");
-        formatter.field("user_stack_associations", &self.user_stack_associations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
     #[doc(hidden)]
@@ -15993,17 +15424,10 @@ impl BatchAssociateUserStackInput {
         self.user_stack_associations.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAssociateUserStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAssociateUserStackInput");
-        formatter.field("user_stack_associations", &self.user_stack_associations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateFleetInput {
     /// <p>The name of the fleet. </p>
     #[doc(hidden)]
@@ -16022,18 +15446,10 @@ impl AssociateFleetInput {
         self.stack_name.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateFleetInput");
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateApplicationToEntitlementInput {
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
@@ -16059,19 +15475,10 @@ impl AssociateApplicationToEntitlementInput {
         self.application_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateApplicationToEntitlementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateApplicationToEntitlementInput");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("entitlement_name", &self.entitlement_name);
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateApplicationFleetInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -16088,13 +15495,5 @@ impl AssociateApplicationFleetInput {
     /// <p>The ARN of the application.</p>
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateApplicationFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateApplicationFleetInput");
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.finish()
     }
 }

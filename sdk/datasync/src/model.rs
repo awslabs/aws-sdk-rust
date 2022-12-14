@@ -3,7 +3,7 @@
 /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
 /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Options {
     /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
     /// <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code> </p>
@@ -234,30 +234,6 @@ impl Options {
     /// <p>Default Value: <code>PRESERVE</code> </p>
     pub fn object_tags(&self) -> std::option::Option<&crate::model::ObjectTags> {
         self.object_tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Options {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Options");
-        formatter.field("verify_mode", &self.verify_mode);
-        formatter.field("overwrite_mode", &self.overwrite_mode);
-        formatter.field("atime", &self.atime);
-        formatter.field("mtime", &self.mtime);
-        formatter.field("uid", &self.uid);
-        formatter.field("gid", &self.gid);
-        formatter.field("preserve_deleted_files", &self.preserve_deleted_files);
-        formatter.field("preserve_devices", &self.preserve_devices);
-        formatter.field("posix_permissions", &self.posix_permissions);
-        formatter.field("bytes_per_second", &self.bytes_per_second);
-        formatter.field("task_queueing", &self.task_queueing);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("transfer_mode", &self.transfer_mode);
-        formatter.field(
-            "security_descriptor_copy_flags",
-            &self.security_descriptor_copy_flags,
-        );
-        formatter.field("object_tags", &self.object_tags);
-        formatter.finish()
     }
 }
 /// See [`Options`](crate::model::Options).
@@ -1912,7 +1888,7 @@ impl AsRef<str> for VerifyMode {
 
 /// <p>Specifies which files, folders, and objects to include or exclude when transferring files from source to destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterRule {
     /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
     #[doc(hidden)]
@@ -1931,14 +1907,6 @@ impl FilterRule {
     /// <p> </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterRule");
-        formatter.field("filter_type", &self.filter_type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FilterRule`](crate::model::FilterRule).
@@ -2079,7 +2047,7 @@ impl AsRef<str> for FilterType {
 
 /// <p>Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskSchedule {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
     #[doc(hidden)]
@@ -2089,13 +2057,6 @@ impl TaskSchedule {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskSchedule");
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.finish()
     }
 }
 /// See [`TaskSchedule`](crate::model::TaskSchedule).
@@ -2137,7 +2098,7 @@ impl TaskSchedule {
 
 /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmbMountOptions {
     /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
     #[doc(hidden)]
@@ -2147,13 +2108,6 @@ impl SmbMountOptions {
     /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
     pub fn version(&self) -> std::option::Option<&crate::model::SmbVersion> {
         self.version.as_ref()
-    }
-}
-impl std::fmt::Debug for SmbMountOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmbMountOptions");
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`SmbMountOptions`](crate::model::SmbMountOptions).
@@ -2379,7 +2333,7 @@ impl AsRef<str> for ObjectStorageServerProtocol {
 
 /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NfsMountOptions {
     /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
     /// <p>You can specify the following options:</p>
@@ -2407,13 +2361,6 @@ impl NfsMountOptions {
     /// </note>
     pub fn version(&self) -> std::option::Option<&crate::model::NfsVersion> {
         self.version.as_ref()
-    }
-}
-impl std::fmt::Debug for NfsMountOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NfsMountOptions");
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`NfsMountOptions`](crate::model::NfsMountOptions).
@@ -2570,7 +2517,7 @@ impl AsRef<str> for NfsVersion {
 
 /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnPremConfig {
     /// <p>ARNs of the agents to use for an NFS location.</p>
     #[doc(hidden)]
@@ -2580,13 +2527,6 @@ impl OnPremConfig {
     /// <p>ARNs of the agents to use for an NFS location.</p>
     pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for OnPremConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnPremConfig");
-        formatter.field("agent_arns", &self.agent_arns);
-        formatter.finish()
     }
 }
 /// See [`OnPremConfig`](crate::model::OnPremConfig).
@@ -2726,7 +2666,7 @@ impl AsRef<str> for HdfsAuthenticationType {
 
 /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QopConfiguration {
     /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on your Hadoop cluster.</p>
     #[doc(hidden)]
@@ -2745,14 +2685,6 @@ impl QopConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::HdfsDataTransferProtection> {
         self.data_transfer_protection.as_ref()
-    }
-}
-impl std::fmt::Debug for QopConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QopConfiguration");
-        formatter.field("rpc_protection", &self.rpc_protection);
-        formatter.field("data_transfer_protection", &self.data_transfer_protection);
-        formatter.finish()
     }
 }
 /// See [`QopConfiguration`](crate::model::QopConfiguration).
@@ -3017,7 +2949,7 @@ impl AsRef<str> for HdfsRpcProtection {
 
 /// <p>The NameNode of the Hadoop Distributed File System (HDFS). The NameNode manages the file system's namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HdfsNameNode {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
     #[doc(hidden)]
@@ -3034,14 +2966,6 @@ impl HdfsNameNode {
     /// <p>The port that the NameNode uses to listen to client requests.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for HdfsNameNode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HdfsNameNode");
-        formatter.field("hostname", &self.hostname);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`HdfsNameNode`](crate::model::HdfsNameNode).
@@ -3092,7 +3016,7 @@ impl HdfsNameNode {
 
 /// <p>Represents a single entry in a list of Amazon Web Services resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html">ListTagsForResource</a> operation is called.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagListEntry {
     /// <p>The key for an Amazon Web Services resource tag.</p>
     #[doc(hidden)]
@@ -3109,14 +3033,6 @@ impl TagListEntry {
     /// <p>The value for an Amazon Web Services resource tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for TagListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagListEntry");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`TagListEntry`](crate::model::TagListEntry).
@@ -3167,7 +3083,7 @@ impl TagListEntry {
 
 /// <p>Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html">ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskListEntry {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     #[doc(hidden)]
@@ -3191,15 +3107,6 @@ impl TaskListEntry {
     /// <p>The name of the task.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskListEntry");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("status", &self.status);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`TaskListEntry`](crate::model::TaskListEntry).
@@ -3368,7 +3275,7 @@ impl AsRef<str> for TaskStatus {
 /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering DataSync resources</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it. For example, <code>LocationId</code> for <code>ListTasks</code>.</p>
     #[doc(hidden)]
@@ -3392,15 +3299,6 @@ impl TaskFilter {
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`TaskFilter`](crate::model::TaskFilter).
@@ -3706,7 +3604,7 @@ impl AsRef<str> for TaskFilterName {
 
 /// <p>Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html">ListTaskExecutions</a> operation is called.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskExecutionListEntry {
     /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
     #[doc(hidden)]
@@ -3723,14 +3621,6 @@ impl TaskExecutionListEntry {
     /// <p>The status of a task execution.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::TaskExecutionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskExecutionListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskExecutionListEntry");
-        formatter.field("task_execution_arn", &self.task_execution_arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`TaskExecutionListEntry`](crate::model::TaskExecutionListEntry).
@@ -3912,7 +3802,7 @@ impl AsRef<str> for TaskExecutionStatus {
 
 /// <p>Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationListEntry {
     /// <p>The Amazon Resource Name (ARN) of the location. For Network File System (NFS) or Amazon EFS, the location is the export path. For Amazon S3, the location is the prefix path that you want to mount and use as the root of the location.</p>
     #[doc(hidden)]
@@ -3939,14 +3829,6 @@ impl LocationListEntry {
     /// <p></p>
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for LocationListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocationListEntry");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("location_uri", &self.location_uri);
-        formatter.finish()
     }
 }
 /// See [`LocationListEntry`](crate::model::LocationListEntry).
@@ -4008,7 +3890,7 @@ impl LocationListEntry {
 /// <p>Narrow down the list of resources returned by <code>ListLocations</code>. For example, to see all your Amazon S3 locations, create a filter using <code>"Name": "LocationType"</code>, <code>"Operator": "Equals"</code>, and <code>"Values": "S3"</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering resources</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
     #[doc(hidden)]
@@ -4032,15 +3914,6 @@ impl LocationFilter {
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for LocationFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocationFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`LocationFilter`](crate::model::LocationFilter).
@@ -4212,7 +4085,7 @@ impl AsRef<str> for LocationFilterName {
 
 /// <p>Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation is called.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentListEntry {
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
     #[doc(hidden)]
@@ -4236,15 +4109,6 @@ impl AgentListEntry {
     /// <p>The status of the agent.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::AgentStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AgentListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentListEntry");
-        formatter.field("agent_arn", &self.agent_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AgentListEntry`](crate::model::AgentListEntry).
@@ -4397,7 +4261,7 @@ impl AsRef<str> for AgentStatus {
 
 /// <p>Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskExecutionResultDetail {
     /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase. </p>
     #[doc(hidden)]
@@ -4463,21 +4327,6 @@ impl TaskExecutionResultDetail {
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     pub fn error_detail(&self) -> std::option::Option<&str> {
         self.error_detail.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskExecutionResultDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskExecutionResultDetail");
-        formatter.field("prepare_duration", &self.prepare_duration);
-        formatter.field("prepare_status", &self.prepare_status);
-        formatter.field("total_duration", &self.total_duration);
-        formatter.field("transfer_duration", &self.transfer_duration);
-        formatter.field("transfer_status", &self.transfer_status);
-        formatter.field("verify_duration", &self.verify_duration);
-        formatter.field("verify_status", &self.verify_status);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_detail", &self.error_detail);
-        formatter.finish()
     }
 }
 /// See [`TaskExecutionResultDetail`](crate::model::TaskExecutionResultDetail).
@@ -4717,7 +4566,7 @@ impl AsRef<str> for PhaseStatus {
 /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
 /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
     #[doc(hidden)]
@@ -4727,13 +4576,6 @@ impl S3Config {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
     pub fn bucket_access_role_arn(&self) -> std::option::Option<&str> {
         self.bucket_access_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Config {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Config");
-        formatter.field("bucket_access_role_arn", &self.bucket_access_role_arn);
-        formatter.finish()
     }
 }
 /// See [`S3Config`](crate::model::S3Config).
@@ -4898,7 +4740,7 @@ impl AsRef<str> for S3StorageClass {
 
 /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FsxProtocol {
     /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
     #[doc(hidden)]
@@ -4915,14 +4757,6 @@ impl FsxProtocol {
     /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
     pub fn smb(&self) -> std::option::Option<&crate::model::FsxProtocolSmb> {
         self.smb.as_ref()
-    }
-}
-impl std::fmt::Debug for FsxProtocol {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FsxProtocol");
-        formatter.field("nfs", &self.nfs);
-        formatter.field("smb", &self.smb);
-        formatter.finish()
     }
 }
 /// See [`FsxProtocol`](crate::model::FsxProtocol).
@@ -5040,7 +4874,7 @@ impl std::fmt::Debug for FsxProtocolSmb {
 pub mod fsx_protocol_smb {
 
     /// A builder for [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) mount_options: std::option::Option<crate::model::SmbMountOptions>,
@@ -5121,6 +4955,16 @@ pub mod fsx_protocol_smb {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain", &self.domain);
+            formatter.field("mount_options", &self.mount_options);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("user", &self.user);
+            formatter.finish()
+        }
+    }
 }
 impl FsxProtocolSmb {
     /// Creates a new builder-style object to manufacture [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
@@ -5131,7 +4975,7 @@ impl FsxProtocolSmb {
 
 /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FsxProtocolNfs {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     #[doc(hidden)]
@@ -5141,13 +4985,6 @@ impl FsxProtocolNfs {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
         self.mount_options.as_ref()
-    }
-}
-impl std::fmt::Debug for FsxProtocolNfs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FsxProtocolNfs");
-        formatter.field("mount_options", &self.mount_options);
-        formatter.finish()
     }
 }
 /// See [`FsxProtocolNfs`](crate::model::FsxProtocolNfs).
@@ -5281,7 +5118,7 @@ impl AsRef<str> for EfsInTransitEncryption {
 
 /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2Config {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
@@ -5312,14 +5149,6 @@ impl Ec2Config {
     /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
     pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2Config {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2Config");
-        formatter.field("subnet_arn", &self.subnet_arn);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.finish()
     }
 }
 /// See [`Ec2Config`](crate::model::Ec2Config).
@@ -5393,7 +5222,7 @@ impl Ec2Config {
 
 /// <p>The VPC endpoint, subnet, and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateLinkConfig {
     /// <p>The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will not be accessible over the public internet.</p>
     #[doc(hidden)]
@@ -5424,16 +5253,6 @@ impl PrivateLinkConfig {
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
     pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for PrivateLinkConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateLinkConfig");
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.field("private_link_endpoint", &self.private_link_endpoint);
-        formatter.field("subnet_arns", &self.subnet_arns);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.finish()
     }
 }
 /// See [`PrivateLinkConfig`](crate::model::PrivateLinkConfig).

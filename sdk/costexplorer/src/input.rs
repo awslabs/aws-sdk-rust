@@ -7933,7 +7933,7 @@ impl UpdateCostCategoryDefinitionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category.</p>
     #[doc(hidden)]
@@ -7983,22 +7983,10 @@ impl UpdateCostCategoryDefinitionInput {
         self.split_charge_rules.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCostCategoryDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCostCategoryDefinitionInput");
-        formatter.field("cost_category_arn", &self.cost_category_arn);
-        formatter.field("effective_start", &self.effective_start);
-        formatter.field("rule_version", &self.rule_version);
-        formatter.field("rules", &self.rules);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("split_charge_rules", &self.split_charge_rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusInput {
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
     #[doc(hidden)]
@@ -8013,20 +8001,10 @@ impl UpdateCostAllocationTagsStatusInput {
         self.cost_allocation_tags_status.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCostAllocationTagsStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCostAllocationTagsStatusInput");
-        formatter.field(
-            "cost_allocation_tags_status",
-            &self.cost_allocation_tags_status,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAnomalySubscriptionInput {
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
@@ -8073,22 +8051,10 @@ impl UpdateAnomalySubscriptionInput {
         self.subscription_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAnomalySubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAnomalySubscriptionInput");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("frequency", &self.frequency);
-        formatter.field("monitor_arn_list", &self.monitor_arn_list);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAnomalyMonitorInput {
     /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     #[doc(hidden)]
@@ -8107,18 +8073,10 @@ impl UpdateAnomalyMonitorInput {
         self.monitor_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAnomalyMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAnomalyMonitorInput");
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("monitor_name", &self.monitor_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
     #[doc(hidden)]
@@ -8137,18 +8095,10 @@ impl UntagResourceInput {
         self.resource_tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_tag_keys", &self.resource_tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
     #[doc(hidden)]
@@ -8187,18 +8137,10 @@ impl TagResourceInput {
         self.resource_tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackInput {
     /// <p>A cost anomaly ID. </p>
     #[doc(hidden)]
@@ -8217,18 +8159,10 @@ impl ProvideAnomalyFeedbackInput {
         self.feedback.as_ref()
     }
 }
-impl std::fmt::Debug for ProvideAnomalyFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvideAnomalyFeedbackInput");
-        formatter.field("anomaly_id", &self.anomaly_id);
-        formatter.field("feedback", &self.feedback);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.</p>
     #[doc(hidden)]
@@ -8240,17 +8174,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsInput {
     /// <p>The date when the Cost Category was effective. </p>
     #[doc(hidden)]
@@ -8276,19 +8203,10 @@ impl ListCostCategoryDefinitionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCostCategoryDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCostCategoryDefinitionsInput");
-        formatter.field("effective_on", &self.effective_on);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCostAllocationTagsInput {
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
     #[doc(hidden)]
@@ -8328,21 +8246,10 @@ impl ListCostAllocationTagsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCostAllocationTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCostAllocationTagsInput");
-        formatter.field("status", &self.status);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsageForecastInput {
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
     #[doc(hidden)]
@@ -8444,21 +8351,10 @@ impl GetUsageForecastInput {
         self.prediction_interval_level
     }
 }
-impl std::fmt::Debug for GetUsageForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsageForecastInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("metric", &self.metric);
-        formatter.field("granularity", &self.granularity);
-        formatter.field("filter", &self.filter);
-        formatter.field("prediction_interval_level", &self.prediction_interval_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagsInput {
     /// <p>The value that you want to search for.</p>
     #[doc(hidden)]
@@ -8556,23 +8452,10 @@ impl GetTagsInput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagsInput");
-        formatter.field("search_string", &self.search_string);
-        formatter.field("time_period", &self.time_period);
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("filter", &self.filter);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     #[doc(hidden)]
@@ -8657,22 +8540,10 @@ impl GetSavingsPlansUtilizationDetailsInput {
         self.sort_by.as_ref()
     }
 }
-impl std::fmt::Debug for GetSavingsPlansUtilizationDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSavingsPlansUtilizationDetailsInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("filter", &self.filter);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     #[doc(hidden)]
@@ -8743,20 +8614,10 @@ impl GetSavingsPlansUtilizationInput {
         self.sort_by.as_ref()
     }
 }
-impl std::fmt::Debug for GetSavingsPlansUtilizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSavingsPlansUtilizationInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("granularity", &self.granularity);
-        formatter.field("filter", &self.filter);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSavingsPlansPurchaseRecommendationInput {
     /// <p>The Savings Plans recommendation type that's requested.</p>
     #[doc(hidden)]
@@ -8823,24 +8684,10 @@ impl GetSavingsPlansPurchaseRecommendationInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for GetSavingsPlansPurchaseRecommendationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSavingsPlansPurchaseRecommendationInput");
-        formatter.field("savings_plans_type", &self.savings_plans_type);
-        formatter.field("term_in_years", &self.term_in_years);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("account_scope", &self.account_scope);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("lookback_period_in_days", &self.lookback_period_in_days);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSavingsPlansCoverageInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     #[doc(hidden)]
@@ -8941,24 +8788,10 @@ impl GetSavingsPlansCoverageInput {
         self.sort_by.as_ref()
     }
 }
-impl std::fmt::Debug for GetSavingsPlansCoverageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSavingsPlansCoverageInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("granularity", &self.granularity);
-        formatter.field("filter", &self.filter);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRightsizingRecommendationInput {
     /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
     /// <ul>
@@ -9018,21 +8851,10 @@ impl GetRightsizingRecommendationInput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetRightsizingRecommendationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRightsizingRecommendationInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("service", &self.service);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReservationUtilizationInput {
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
     #[doc(hidden)]
@@ -9158,23 +8980,10 @@ impl GetReservationUtilizationInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetReservationUtilizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReservationUtilizationInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("granularity", &self.granularity);
-        formatter.field("filter", &self.filter);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReservationPurchaseRecommendationInput {
     /// <p>The account ID that's associated with the recommendation. </p>
     #[doc(hidden)]
@@ -9271,26 +9080,10 @@ impl GetReservationPurchaseRecommendationInput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetReservationPurchaseRecommendationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReservationPurchaseRecommendationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("service", &self.service);
-        formatter.field("filter", &self.filter);
-        formatter.field("account_scope", &self.account_scope);
-        formatter.field("lookback_period_in_days", &self.lookback_period_in_days);
-        formatter.field("term_in_years", &self.term_in_years);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("service_specification", &self.service_specification);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 
 /// <p>You can use the following request parameters to query for how much of your instance usage a reservation covered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReservationCoverageInput {
     /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
     #[doc(hidden)]
@@ -9445,24 +9238,10 @@ impl GetReservationCoverageInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetReservationCoverageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReservationCoverageInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("granularity", &self.granularity);
-        formatter.field("filter", &self.filter);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDimensionValuesInput {
     /// <p>The value that you want to search the filter values for.</p>
     #[doc(hidden)]
@@ -9665,24 +9444,10 @@ impl GetDimensionValuesInput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDimensionValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDimensionValuesInput");
-        formatter.field("search_string", &self.search_string);
-        formatter.field("time_period", &self.time_period);
-        formatter.field("dimension", &self.dimension);
-        formatter.field("context", &self.context);
-        formatter.field("filter", &self.filter);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCostForecastInput {
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     #[doc(hidden)]
@@ -9790,21 +9555,10 @@ impl GetCostForecastInput {
         self.prediction_interval_level
     }
 }
-impl std::fmt::Debug for GetCostForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCostForecastInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("metric", &self.metric);
-        formatter.field("granularity", &self.granularity);
-        formatter.field("filter", &self.filter);
-        formatter.field("prediction_interval_level", &self.prediction_interval_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCostCategoriesInput {
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
@@ -9906,23 +9660,10 @@ impl GetCostCategoriesInput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCostCategoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCostCategoriesInput");
-        formatter.field("search_string", &self.search_string);
-        formatter.field("time_period", &self.time_period);
-        formatter.field("cost_category_name", &self.cost_category_name);
-        formatter.field("filter", &self.filter);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCostAndUsageWithResourcesInput {
     /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     #[doc(hidden)]
@@ -9983,22 +9724,10 @@ impl GetCostAndUsageWithResourcesInput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCostAndUsageWithResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCostAndUsageWithResourcesInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("granularity", &self.granularity);
-        formatter.field("filter", &self.filter);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCostAndUsageInput {
     /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     #[doc(hidden)]
@@ -10061,22 +9790,10 @@ impl GetCostAndUsageInput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCostAndUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCostAndUsageInput");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("granularity", &self.granularity);
-        formatter.field("filter", &self.filter);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsInput {
     /// <p>A list of cost anomaly subscription ARNs. </p>
     #[doc(hidden)]
@@ -10109,20 +9826,10 @@ impl GetAnomalySubscriptionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAnomalySubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAnomalySubscriptionsInput");
-        formatter.field("subscription_arn_list", &self.subscription_arn_list);
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAnomalyMonitorsInput {
     /// <p>A list of cost anomaly monitor ARNs. </p>
     #[doc(hidden)]
@@ -10148,19 +9855,10 @@ impl GetAnomalyMonitorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAnomalyMonitorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAnomalyMonitorsInput");
-        formatter.field("monitor_arn_list", &self.monitor_arn_list);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAnomaliesInput {
     /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
@@ -10207,22 +9905,10 @@ impl GetAnomaliesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAnomaliesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAnomaliesInput");
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("date_interval", &self.date_interval);
-        formatter.field("feedback", &self.feedback);
-        formatter.field("total_impact", &self.total_impact);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
@@ -10241,18 +9927,10 @@ impl DescribeCostCategoryDefinitionInput {
         self.effective_on.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCostCategoryDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCostCategoryDefinitionInput");
-        formatter.field("cost_category_arn", &self.cost_category_arn);
-        formatter.field("effective_on", &self.effective_on);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
@@ -10264,17 +9942,10 @@ impl DeleteCostCategoryDefinitionInput {
         self.cost_category_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCostCategoryDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCostCategoryDefinitionInput");
-        formatter.field("cost_category_arn", &self.cost_category_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnomalySubscriptionInput {
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
     #[doc(hidden)]
@@ -10286,17 +9957,10 @@ impl DeleteAnomalySubscriptionInput {
         self.subscription_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAnomalySubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnomalySubscriptionInput");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnomalyMonitorInput {
     /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
     #[doc(hidden)]
@@ -10308,17 +9972,10 @@ impl DeleteAnomalyMonitorInput {
         self.monitor_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAnomalyMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnomalyMonitorInput");
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCostCategoryDefinitionInput {
     /// <p>The unique name of the Cost Category.</p>
     #[doc(hidden)]
@@ -10395,23 +10052,10 @@ impl CreateCostCategoryDefinitionInput {
         self.resource_tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCostCategoryDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCostCategoryDefinitionInput");
-        formatter.field("name", &self.name);
-        formatter.field("effective_start", &self.effective_start);
-        formatter.field("rule_version", &self.rule_version);
-        formatter.field("rules", &self.rules);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("split_charge_rules", &self.split_charge_rules);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAnomalySubscriptionInput {
     /// <p>The cost anomaly subscription object that you want to create. </p>
     #[doc(hidden)]
@@ -10450,18 +10094,10 @@ impl CreateAnomalySubscriptionInput {
         self.resource_tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAnomalySubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAnomalySubscriptionInput");
-        formatter.field("anomaly_subscription", &self.anomaly_subscription);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAnomalyMonitorInput {
     /// <p>The cost anomaly detection monitor object that you want to create.</p>
     #[doc(hidden)]
@@ -10498,13 +10134,5 @@ impl CreateAnomalyMonitorInput {
     /// </ul>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAnomalyMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAnomalyMonitorInput");
-        formatter.field("anomaly_monitor", &self.anomaly_monitor);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.finish()
     }
 }

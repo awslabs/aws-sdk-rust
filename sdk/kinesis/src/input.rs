@@ -4946,7 +4946,7 @@ impl UpdateStreamModeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStreamModeInput {
     /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
     #[doc(hidden)]
@@ -4965,18 +4965,10 @@ impl UpdateStreamModeInput {
         self.stream_mode_details.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateStreamModeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStreamModeInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("stream_mode_details", &self.stream_mode_details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateShardCountInput {
     /// <p>The name of the stream.</p>
     #[doc(hidden)]
@@ -5014,19 +5006,10 @@ impl UpdateShardCountInput {
         self.scaling_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateShardCountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateShardCountInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("target_shard_count", &self.target_shard_count);
-        formatter.field("scaling_type", &self.scaling_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopStreamEncryptionInput {
     /// <p>The name of the stream on which to stop encrypting records.</p>
     #[doc(hidden)]
@@ -5066,19 +5049,10 @@ impl StopStreamEncryptionInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopStreamEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopStreamEncryptionInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStreamEncryptionInput {
     /// <p>The name of the stream for which to start encrypting records.</p>
     #[doc(hidden)]
@@ -5118,19 +5092,10 @@ impl StartStreamEncryptionInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartStreamEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartStreamEncryptionInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>SplitShard</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplitShardInput {
     /// <p>The name of the stream for the shard split.</p>
     #[doc(hidden)]
@@ -5156,19 +5121,10 @@ impl SplitShardInput {
         self.new_starting_hash_key.as_deref()
     }
 }
-impl std::fmt::Debug for SplitShardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplitShardInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("shard_to_split", &self.shard_to_split);
-        formatter.field("new_starting_hash_key", &self.new_starting_hash_key);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>RemoveTagsFromStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromStreamInput {
     /// <p>The name of the stream.</p>
     #[doc(hidden)]
@@ -5187,18 +5143,10 @@ impl RemoveTagsFromStreamInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromStreamInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -5217,18 +5165,10 @@ impl RegisterStreamConsumerInput {
         self.consumer_name.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterStreamConsumerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterStreamConsumerInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("consumer_name", &self.consumer_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A <code>PutRecords</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordsInput {
     /// <p>The records associated with the request.</p>
     #[doc(hidden)]
@@ -5247,18 +5187,10 @@ impl PutRecordsInput {
         self.stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordsInput");
-        formatter.field("records", &self.records);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>PutRecord</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordInput {
     /// <p>The name of the stream to put the data record into.</p>
     #[doc(hidden)]
@@ -5298,24 +5230,10 @@ impl PutRecordInput {
         self.sequence_number_for_ordering.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("data", &self.data);
-        formatter.field("partition_key", &self.partition_key);
-        formatter.field("explicit_hash_key", &self.explicit_hash_key);
-        formatter.field(
-            "sequence_number_for_ordering",
-            &self.sequence_number_for_ordering,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>MergeShards</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeShardsInput {
     /// <p>The name of the stream for the merge.</p>
     #[doc(hidden)]
@@ -5341,19 +5259,10 @@ impl MergeShardsInput {
         self.adjacent_shard_to_merge.as_deref()
     }
 }
-impl std::fmt::Debug for MergeShardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeShardsInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("shard_to_merge", &self.shard_to_merge);
-        formatter.field("adjacent_shard_to_merge", &self.adjacent_shard_to_merge);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>ListTagsForStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForStreamInput {
     /// <p>The name of the stream.</p>
     #[doc(hidden)]
@@ -5379,19 +5288,10 @@ impl ListTagsForStreamInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTagsForStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForStreamInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("exclusive_start_tag_key", &self.exclusive_start_tag_key);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>ListStreams</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamsInput {
     /// <p>The maximum number of streams to list. The default value is 100. If you specify a value greater than 100, at most 100 results are returned.</p>
     #[doc(hidden)]
@@ -5410,21 +5310,10 @@ impl ListStreamsInput {
         self.exclusive_start_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field(
-            "exclusive_start_stream_name",
-            &self.exclusive_start_stream_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamConsumersInput {
     /// <p>The ARN of the Kinesis data stream for which you want to list the registered consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -5467,20 +5356,10 @@ impl ListStreamConsumersInput {
         self.stream_creation_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for ListStreamConsumersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamConsumersInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListShardsInput {
     /// <p>The name of the data stream whose shards you want to list. </p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.</p>
@@ -5551,22 +5430,10 @@ impl ListShardsInput {
         self.shard_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListShardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListShardsInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
-        formatter.field("shard_filter", &self.shard_filter);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>IncreaseStreamRetentionPeriod</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncreaseStreamRetentionPeriodInput {
     /// <p>The name of the stream to modify.</p>
     #[doc(hidden)]
@@ -5585,18 +5452,10 @@ impl IncreaseStreamRetentionPeriodInput {
         self.retention_period_hours
     }
 }
-impl std::fmt::Debug for IncreaseStreamRetentionPeriodInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncreaseStreamRetentionPeriodInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("retention_period_hours", &self.retention_period_hours);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>GetShardIterator</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetShardIteratorInput {
     /// <p>The name of the Amazon Kinesis data stream.</p>
     #[doc(hidden)]
@@ -5652,21 +5511,10 @@ impl GetShardIteratorInput {
         self.timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for GetShardIteratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetShardIteratorInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("shard_iterator_type", &self.shard_iterator_type);
-        formatter.field("starting_sequence_number", &self.starting_sequence_number);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>GetRecords</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecordsInput {
     /// <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
     #[doc(hidden)]
@@ -5685,18 +5533,10 @@ impl GetRecordsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetRecordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecordsInput");
-        formatter.field("shard_iterator", &self.shard_iterator);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>EnableEnhancedMonitoring</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableEnhancedMonitoringInput {
     /// <p>The name of the stream for which to enable enhanced monitoring.</p>
     #[doc(hidden)]
@@ -5739,18 +5579,10 @@ impl EnableEnhancedMonitoringInput {
         self.shard_level_metrics.as_deref()
     }
 }
-impl std::fmt::Debug for EnableEnhancedMonitoringInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableEnhancedMonitoringInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("shard_level_metrics", &self.shard_level_metrics);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>DisableEnhancedMonitoring</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableEnhancedMonitoringInput {
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
     #[doc(hidden)]
@@ -5793,18 +5625,10 @@ impl DisableEnhancedMonitoringInput {
         self.shard_level_metrics.as_deref()
     }
 }
-impl std::fmt::Debug for DisableEnhancedMonitoringInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableEnhancedMonitoringInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("shard_level_metrics", &self.shard_level_metrics);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStreamSummaryInput {
     /// <p>The name of the stream to describe.</p>
     #[doc(hidden)]
@@ -5816,17 +5640,10 @@ impl DescribeStreamSummaryInput {
         self.stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStreamSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStreamSummaryInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -5852,19 +5669,10 @@ impl DescribeStreamConsumerInput {
         self.consumer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStreamConsumerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStreamConsumerInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("consumer_name", &self.consumer_name);
-        formatter.field("consumer_arn", &self.consumer_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>DescribeStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStreamInput {
     /// <p>The name of the stream to describe.</p>
     #[doc(hidden)]
@@ -5894,30 +5702,15 @@ impl DescribeStreamInput {
         self.exclusive_start_shard_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStreamInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLimitsInput {}
-impl std::fmt::Debug for DescribeLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLimitsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -5943,19 +5736,10 @@ impl DeregisterStreamConsumerInput {
         self.consumer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterStreamConsumerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterStreamConsumerInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("consumer_name", &self.consumer_name);
-        formatter.field("consumer_arn", &self.consumer_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>DeleteStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamInput {
     /// <p>The name of the stream to delete.</p>
     #[doc(hidden)]
@@ -5974,18 +5758,10 @@ impl DeleteStreamInput {
         self.enforce_consumer_deletion
     }
 }
-impl std::fmt::Debug for DeleteStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("enforce_consumer_deletion", &self.enforce_consumer_deletion);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>DecreaseStreamRetentionPeriod</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecreaseStreamRetentionPeriodInput {
     /// <p>The name of the stream to modify.</p>
     #[doc(hidden)]
@@ -6004,18 +5780,10 @@ impl DecreaseStreamRetentionPeriodInput {
         self.retention_period_hours
     }
 }
-impl std::fmt::Debug for DecreaseStreamRetentionPeriodInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecreaseStreamRetentionPeriodInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("retention_period_hours", &self.retention_period_hours);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>CreateStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamInput {
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
     #[doc(hidden)]
@@ -6041,19 +5809,10 @@ impl CreateStreamInput {
         self.stream_mode_details.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("shard_count", &self.shard_count);
-        formatter.field("stream_mode_details", &self.stream_mode_details);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for <code>AddTagsToStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToStreamInput {
     /// <p>The name of the stream.</p>
     #[doc(hidden)]
@@ -6074,13 +5833,5 @@ impl AddTagsToStreamInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for AddTagsToStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToStreamInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

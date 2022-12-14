@@ -2,7 +2,7 @@
 
 /// <p>(Discontinued) Includes details about the failed S3 resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedS3Resource {
     /// <p>(Discontinued) The failed S3 resources.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl FailedS3Resource {
     /// <p>(Discontinued) The error message of a failed item.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedS3Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedS3Resource");
-        formatter.field("failed_item", &self.failed_item);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`FailedS3Resource`](crate::model::FailedS3Resource).
@@ -103,7 +94,7 @@ impl FailedS3Resource {
 
 /// <p>(Discontinued) Contains information about the S3 resource. This data type is used as a request parameter in the <code>DisassociateS3Resources</code> action and can be used as a response parameter in the <code>AssociateS3Resources</code> and <code>UpdateS3Resources</code> actions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Resource {
     /// <p>(Discontinued) The name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -120,14 +111,6 @@ impl S3Resource {
     /// <p>(Discontinued) The prefix of the S3 bucket.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Resource");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Resource`](crate::model::S3Resource).
@@ -178,7 +161,7 @@ impl S3Resource {
 
 /// <p>(Discontinued) The S3 resources whose classification types you want to update. This data type is used as a request parameter in the <code>UpdateS3Resources</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ResourceClassificationUpdate {
     /// <p>(Discontinued) The name of the S3 bucket whose classification types you want to update.</p>
     #[doc(hidden)]
@@ -204,18 +187,6 @@ impl S3ResourceClassificationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::ClassificationTypeUpdate> {
         self.classification_type_update.as_ref()
-    }
-}
-impl std::fmt::Debug for S3ResourceClassificationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ResourceClassificationUpdate");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.field(
-            "classification_type_update",
-            &self.classification_type_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
@@ -285,7 +256,7 @@ impl S3ResourceClassificationUpdate {
 
 /// <p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources. At least one of the classification types (<code>oneTime</code> or <code>continuous</code>) must be specified. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassificationTypeUpdate {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
     #[doc(hidden)]
@@ -302,14 +273,6 @@ impl ClassificationTypeUpdate {
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic. </p>
     pub fn continuous(&self) -> std::option::Option<&crate::model::S3ContinuousClassificationType> {
         self.continuous.as_ref()
-    }
-}
-impl std::fmt::Debug for ClassificationTypeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassificationTypeUpdate");
-        formatter.field("one_time", &self.one_time);
-        formatter.field("continuous", &self.continuous);
-        formatter.finish()
     }
 }
 /// See [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
@@ -545,7 +508,7 @@ impl AsRef<str> for S3OneTimeClassificationType {
 
 /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This data type is used as a request parameter in the <code>AssociateS3Resources</code> action and a response parameter in the <code>ListS3Resources</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ResourceClassification {
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
     #[doc(hidden)]
@@ -569,15 +532,6 @@ impl S3ResourceClassification {
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
     pub fn classification_type(&self) -> std::option::Option<&crate::model::ClassificationType> {
         self.classification_type.as_ref()
-    }
-}
-impl std::fmt::Debug for S3ResourceClassification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ResourceClassification");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("classification_type", &self.classification_type);
-        formatter.finish()
     }
 }
 /// See [`S3ResourceClassification`](crate::model::S3ResourceClassification).
@@ -643,7 +597,7 @@ impl S3ResourceClassification {
 
 /// <p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassificationType {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
     #[doc(hidden)]
@@ -660,14 +614,6 @@ impl ClassificationType {
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
     pub fn continuous(&self) -> std::option::Option<&crate::model::S3ContinuousClassificationType> {
         self.continuous.as_ref()
-    }
-}
-impl std::fmt::Debug for ClassificationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassificationType");
-        formatter.field("one_time", &self.one_time);
-        formatter.field("continuous", &self.continuous);
-        formatter.finish()
     }
 }
 /// See [`ClassificationType`](crate::model::ClassificationType).
@@ -724,7 +670,7 @@ impl ClassificationType {
 
 /// <p>(Discontinued) Contains information about the Amazon Macie Classic member account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberAccount {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>
     #[doc(hidden)]
@@ -734,13 +680,6 @@ impl MemberAccount {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MemberAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberAccount");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 /// See [`MemberAccount`](crate::model::MemberAccount).

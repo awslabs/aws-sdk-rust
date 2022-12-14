@@ -2,7 +2,7 @@
 
 /// <p>A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HomeRegionControl {
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
     #[doc(hidden)]
@@ -33,16 +33,6 @@ impl HomeRegionControl {
     /// <p>A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.</p>
     pub fn requested_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_time.as_ref()
-    }
-}
-impl std::fmt::Debug for HomeRegionControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HomeRegionControl");
-        formatter.field("control_id", &self.control_id);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("target", &self.target);
-        formatter.field("requested_time", &self.requested_time);
-        formatter.finish()
     }
 }
 /// See [`HomeRegionControl`](crate::model::HomeRegionControl).
@@ -120,7 +110,7 @@ impl HomeRegionControl {
 
 /// <p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Target {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
     #[doc(hidden)]
@@ -137,14 +127,6 @@ impl Target {
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.) </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for Target {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Target");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`Target`](crate::model::Target).

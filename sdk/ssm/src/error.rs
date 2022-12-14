@@ -2,18 +2,11 @@
 
 /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyUpdates {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyUpdates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyUpdates");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyUpdates {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl TooManyUpdates {
 
 /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceSettingNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceSettingNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceSettingNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ServiceSettingNotFound {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl ServiceSettingNotFound {
 
 /// <p>An error occurred on the server side.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalServerError {
     /// Returns the error message.
@@ -203,7 +182,7 @@ impl InternalServerError {
 
 /// <p>The specified sync name wasn't found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -223,15 +202,6 @@ impl ResourceDataSyncNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn sync_type(&self) -> std::option::Option<&str> {
         self.sync_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncNotFoundException");
-        formatter.field("sync_name", &self.sync_name);
-        formatter.field("sync_type", &self.sync_type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceDataSyncNotFoundException {
@@ -312,18 +282,11 @@ impl ResourceDataSyncNotFoundException {
 
 /// <p>The specified sync configuration is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncInvalidConfigurationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceDataSyncInvalidConfigurationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncInvalidConfigurationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceDataSyncInvalidConfigurationException {
     /// Returns the error message.
@@ -379,18 +342,11 @@ impl ResourceDataSyncInvalidConfigurationException {
 
 /// <p>Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceDataSyncConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncConflictException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceDataSyncConflictException {
     /// Returns the error message.
@@ -447,18 +403,11 @@ impl ResourceDataSyncConflictException {
 /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
 /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DoesNotExistException {
     /// Returns the error message.
@@ -514,18 +463,11 @@ impl DoesNotExistException {
 
 /// <p>The system is processing too many concurrent updates. Wait a few moments and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsMetadataTooManyUpdatesException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OpsMetadataTooManyUpdatesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsMetadataTooManyUpdatesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OpsMetadataTooManyUpdatesException {
     /// Returns the error message.
@@ -581,18 +523,11 @@ impl OpsMetadataTooManyUpdatesException {
 
 /// <p>The OpsMetadata object doesn't exist. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsMetadataNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OpsMetadataNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsMetadataNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OpsMetadataNotFoundException {
     /// Returns the error message.
@@ -648,18 +583,11 @@ impl OpsMetadataNotFoundException {
 
 /// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an application in Application Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsMetadataKeyLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OpsMetadataKeyLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsMetadataKeyLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OpsMetadataKeyLimitExceededException {
     /// Returns the error message.
@@ -715,18 +643,11 @@ impl OpsMetadataKeyLimitExceededException {
 
 /// <p>One of the arguments passed is invalid. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsMetadataInvalidArgumentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OpsMetadataInvalidArgumentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsMetadataInvalidArgumentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OpsMetadataInvalidArgumentException {
     /// Returns the error message.
@@ -782,18 +703,11 @@ impl OpsMetadataInvalidArgumentException {
 
 /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OpsItemNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OpsItemNotFoundException {
     /// Returns the error message.
@@ -849,7 +763,7 @@ impl OpsItemNotFoundException {
 
 /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -876,16 +790,6 @@ impl OpsItemLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn limit_type(&self) -> std::option::Option<&str> {
         self.limit_type.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsItemLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemLimitExceededException");
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("limit", &self.limit);
-        formatter.field("limit_type", &self.limit_type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl OpsItemLimitExceededException {
@@ -986,7 +890,7 @@ impl OpsItemLimitExceededException {
 
 /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -999,14 +903,6 @@ impl OpsItemInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn parameter_names(&self) -> std::option::Option<&[std::string::String]> {
         self.parameter_names.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsItemInvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemInvalidParameterException");
-        formatter.field("parameter_names", &self.parameter_names);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl OpsItemInvalidParameterException {
@@ -1083,7 +979,7 @@ impl OpsItemInvalidParameterException {
 
 /// <p>The OpsItem already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1096,14 +992,6 @@ impl OpsItemAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn ops_item_id(&self) -> std::option::Option<&str> {
         self.ops_item_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsItemAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.finish()
     }
 }
 impl OpsItemAlreadyExistsException {
@@ -1178,18 +1066,11 @@ impl OpsItemAlreadyExistsException {
 /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInstanceId {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInstanceId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInstanceId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInstanceId {
     /// Returns the error message.
@@ -1245,18 +1126,11 @@ impl InvalidInstanceId {
 
 /// <p>The document version isn't valid or doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDocumentVersion {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDocumentVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDocumentVersion");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDocumentVersion {
     /// Returns the error message.
@@ -1312,18 +1186,11 @@ impl InvalidDocumentVersion {
 
 /// <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDocumentOperation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDocumentOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDocumentOperation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDocumentOperation {
     /// Returns the error message.
@@ -1379,18 +1246,11 @@ impl InvalidDocumentOperation {
 
 /// <p>The specified SSM document doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDocument {
     /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception can be issued by various API operations. </p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDocument");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDocument {
     /// Returns the error message.
@@ -1446,18 +1306,11 @@ impl InvalidDocument {
 
 /// <p>The version of the document schema isn't supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDocumentSchemaVersion {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDocumentSchemaVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDocumentSchemaVersion");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDocumentSchemaVersion {
     /// Returns the error message.
@@ -1513,18 +1366,11 @@ impl InvalidDocumentSchemaVersion {
 
 /// <p>The size limit of a document is 64 KB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxDocumentSizeExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxDocumentSizeExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxDocumentSizeExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxDocumentSizeExceeded {
     /// Returns the error message.
@@ -1580,18 +1426,11 @@ impl MaxDocumentSizeExceeded {
 
 /// <p>The content for the document isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDocumentContent {
     /// <p>A description of the validation error.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDocumentContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDocumentContent");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDocumentContent {
     /// Returns the error message.
@@ -1647,18 +1486,11 @@ impl InvalidDocumentContent {
 
 /// <p>The version name has already been used in this document. Specify a different version name, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateDocumentVersionName {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateDocumentVersionName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateDocumentVersionName");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateDocumentVersionName {
     /// Returns the error message.
@@ -1714,18 +1546,11 @@ impl DuplicateDocumentVersionName {
 
 /// <p>The content of the association document matches another document. Change the content of the document and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateDocumentContent {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateDocumentContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateDocumentContent");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateDocumentContent {
     /// Returns the error message.
@@ -1781,18 +1606,11 @@ impl DuplicateDocumentContent {
 
 /// <p>The document has too many versions. Delete one or more document versions and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentVersionLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DocumentVersionLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentVersionLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DocumentVersionLimitExceeded {
     /// Returns the error message.
@@ -1848,18 +1666,11 @@ impl DocumentVersionLimitExceeded {
 
 /// <p>The updated status is the same as the current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatusUnchanged {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StatusUnchanged {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatusUnchanged");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StatusUnchanged {
     /// Returns the error message.
@@ -1915,18 +1726,11 @@ impl StatusUnchanged {
 
 /// <p>The specified association doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AssociationDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AssociationDoesNotExist {
     /// Returns the error message.
@@ -1982,18 +1786,11 @@ impl AssociationDoesNotExist {
 
 /// <p>The update isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidUpdate {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidUpdate");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidUpdate {
     /// Returns the error message.
@@ -2049,18 +1846,11 @@ impl InvalidUpdate {
 
 /// <p>TargetMap parameter isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetMaps {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTargetMaps {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetMaps");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTargetMaps {
     /// Returns the error message.
@@ -2116,18 +1906,11 @@ impl InvalidTargetMaps {
 
 /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTarget {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTarget");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTarget {
     /// Returns the error message.
@@ -2183,18 +1966,11 @@ impl InvalidTarget {
 
 /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSchedule {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSchedule");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSchedule {
     /// Returns the error message.
@@ -2250,18 +2026,11 @@ impl InvalidSchedule {
 
 /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameters {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameters");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidParameters {
     /// Returns the error message.
@@ -2317,18 +2086,11 @@ impl InvalidParameters {
 
 /// <p>The output location isn't valid or doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOutputLocation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOutputLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOutputLocation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOutputLocation {
     /// Returns the error message.
@@ -2384,18 +2146,11 @@ impl InvalidOutputLocation {
 
 /// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of an association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAssociationVersion {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAssociationVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAssociationVersion");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAssociationVersion {
     /// Returns the error message.
@@ -2451,18 +2206,11 @@ impl InvalidAssociationVersion {
 
 /// <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationVersionLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AssociationVersionLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationVersionLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AssociationVersionLimitExceeded {
     /// Returns the error message.
@@ -2518,18 +2266,11 @@ impl AssociationVersionLimitExceeded {
 
 /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterVersionNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParameterVersionNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterVersionNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParameterVersionNotFound {
     /// Returns the error message.
@@ -2585,18 +2326,11 @@ impl ParameterVersionNotFound {
 
 /// <p>The parameter couldn't be found. Verify the name and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParameterNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParameterNotFound {
     /// Returns the error message.
@@ -2652,18 +2386,11 @@ impl ParameterNotFound {
 
 /// <p>The specified update status operation isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAutomationStatusUpdateException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAutomationStatusUpdateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAutomationStatusUpdateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAutomationStatusUpdateException {
     /// Returns the error message.
@@ -2719,18 +2446,11 @@ impl InvalidAutomationStatusUpdateException {
 
 /// <p>There is no automation execution information for the requested automation execution ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationExecutionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AutomationExecutionNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationExecutionNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AutomationExecutionNotFoundException {
     /// Returns the error message.
@@ -2786,18 +2506,11 @@ impl AutomationExecutionNotFoundException {
 
 /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetNotConnected {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TargetNotConnected {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetNotConnected");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TargetNotConnected {
     /// Returns the error message.
@@ -2853,18 +2566,11 @@ impl TargetNotConnected {
 
 /// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For example, they may not match the set of parameters permitted for the specified Automation document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAutomationExecutionParametersException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAutomationExecutionParametersException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAutomationExecutionParametersException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAutomationExecutionParametersException {
     /// Returns the error message.
@@ -2920,18 +2626,11 @@ impl InvalidAutomationExecutionParametersException {
 
 /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdempotentParameterMismatch {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IdempotentParameterMismatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotentParameterMismatch");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IdempotentParameterMismatch {
     /// Returns the error message.
@@ -2987,18 +2686,11 @@ impl IdempotentParameterMismatch {
 
 /// <p>The number of simultaneously running Automation executions exceeded the allowable limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationExecutionLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AutomationExecutionLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationExecutionLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AutomationExecutionLimitExceededException {
     /// Returns the error message.
@@ -3054,18 +2746,11 @@ impl AutomationExecutionLimitExceededException {
 
 /// <p>An Automation runbook with the specified name and version couldn't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationDefinitionVersionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AutomationDefinitionVersionNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationDefinitionVersionNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AutomationDefinitionVersionNotFoundException {
     /// Returns the error message.
@@ -3121,18 +2806,11 @@ impl AutomationDefinitionVersionNotFoundException {
 
 /// <p>An Automation runbook with the specified name couldn't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationDefinitionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AutomationDefinitionNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationDefinitionNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AutomationDefinitionNotFoundException {
     /// Returns the error message.
@@ -3188,18 +2866,11 @@ impl AutomationDefinitionNotFoundException {
 
 /// <p>Indicates that the Change Manager change template used in the change request was rejected or is still in a pending state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationDefinitionNotApprovedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AutomationDefinitionNotApprovedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationDefinitionNotApprovedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AutomationDefinitionNotApprovedException {
     /// Returns the error message.
@@ -3255,18 +2926,11 @@ impl AutomationDefinitionNotApprovedException {
 
 /// <p>The association isn't valid or doesn't exist. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAssociation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAssociation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAssociation {
     /// Returns the error message.
@@ -3322,18 +2986,11 @@ impl InvalidAssociation {
 
 /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for a Windows managed node to a Linux node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedPlatformType {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedPlatformType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedPlatformType");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedPlatformType {
     /// Returns the error message.
@@ -3389,18 +3046,11 @@ impl UnsupportedPlatformType {
 
 /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRole {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRole {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRole");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRole {
     /// Returns the error message.
@@ -3456,18 +3106,11 @@ impl InvalidRole {
 
 /// <p>The S3 bucket doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOutputFolder {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOutputFolder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOutputFolder");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOutputFolder {
     /// Returns the error message.
@@ -3523,18 +3166,11 @@ impl InvalidOutputFolder {
 
 /// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN) was provided for an Amazon Simple Notification Service topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNotificationConfig {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidNotificationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNotificationConfig");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidNotificationConfig {
     /// Returns the error message.
@@ -3590,18 +3226,11 @@ impl InvalidNotificationConfig {
 
 /// <p>You can't specify a managed node ID in more than one association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateInstanceId {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateInstanceId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateInstanceId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateInstanceId {
     /// Returns the error message.
@@ -3657,18 +3286,11 @@ impl DuplicateInstanceId {
 
 /// <p>The signal isn't valid for the current Automation execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAutomationSignalException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAutomationSignalException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAutomationSignalException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAutomationSignalException {
     /// Returns the error message.
@@ -3724,18 +3346,11 @@ impl InvalidAutomationSignalException {
 
 /// <p>The specified step name and execution ID don't exist. Verify the information and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationStepNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AutomationStepNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationStepNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AutomationStepNotFoundException {
     /// Returns the error message.
@@ -3791,18 +3406,11 @@ impl AutomationStepNotFoundException {
 
 /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the instance must be a registered managed node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResourceType {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResourceType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResourceType");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidResourceType {
     /// Returns the error message.
@@ -3858,18 +3466,11 @@ impl InvalidResourceType {
 
 /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResourceId {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResourceId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResourceId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidResourceId {
     /// Returns the error message.
@@ -3926,18 +3527,11 @@ impl InvalidResourceId {
 /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
 /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceLimitExceededException {
     /// Returns the error message.
@@ -3993,18 +3587,11 @@ impl ResourceLimitExceededException {
 
 /// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a region where the corresponding service isn't available. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeatureNotAvailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FeatureNotAvailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureNotAvailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FeatureNotAvailableException {
     /// Returns the error message.
@@ -4060,18 +3647,11 @@ impl FeatureNotAvailableException {
 
 /// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is already registered with a different patch baseline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AlreadyExistsException {
     /// Returns the error message.
@@ -4127,18 +3707,11 @@ impl AlreadyExistsException {
 
 /// <p>The parameter type isn't supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedParameterType {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedParameterType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedParameterType");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedParameterType {
     /// Returns the error message.
@@ -4194,18 +3767,11 @@ impl UnsupportedParameterType {
 
 /// <p>You specified more than the maximum number of allowed policies for the parameter. The maximum is 10.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PoliciesLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PoliciesLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PoliciesLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PoliciesLimitExceededException {
     /// Returns the error message.
@@ -4261,18 +3827,11 @@ impl PoliciesLimitExceededException {
 
 /// <p>The parameter name isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterPatternMismatchException {
     /// <p>The parameter name isn't valid.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParameterPatternMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterPatternMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParameterPatternMismatchException {
     /// Returns the error message.
@@ -4330,18 +3889,11 @@ impl ParameterPatternMismatchException {
 /// <p> <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code> </p>
 /// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to them from being deleted. To continue creating new parameters, first move the label from the oldest version of the parameter to a newer one for use in your operations. For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterMaxVersionLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParameterMaxVersionLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterMaxVersionLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParameterMaxVersionLimitExceeded {
     /// Returns the error message.
@@ -4397,18 +3949,11 @@ impl ParameterMaxVersionLimitExceeded {
 
 /// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more parameters and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParameterLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParameterLimitExceeded {
     /// Returns the error message.
@@ -4464,18 +4009,11 @@ impl ParameterLimitExceeded {
 
 /// <p>The parameter already exists. You can't create duplicate parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParameterAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParameterAlreadyExists {
     /// Returns the error message.
@@ -4531,18 +4069,11 @@ impl ParameterAlreadyExists {
 
 /// <p>The policy type isn't supported. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPolicyTypeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPolicyTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPolicyTypeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPolicyTypeException {
     /// Returns the error message.
@@ -4598,18 +4129,11 @@ impl InvalidPolicyTypeException {
 
 /// <p>A policy attribute or its value is invalid. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPolicyAttributeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPolicyAttributeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPolicyAttributeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPolicyAttributeException {
     /// Returns the error message.
@@ -4665,18 +4189,11 @@ impl InvalidPolicyAttributeException {
 
 /// <p>The query key ID isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidKeyId {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidKeyId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidKeyId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidKeyId {
     /// Returns the error message.
@@ -4732,18 +4249,11 @@ impl InvalidKeyId {
 
 /// <p>The request doesn't meet the regular expression requirement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAllowedPatternException {
     /// <p>The request doesn't meet the regular expression requirement.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAllowedPatternException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAllowedPatternException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAllowedPatternException {
     /// Returns the error message.
@@ -4799,18 +4309,11 @@ impl InvalidAllowedPatternException {
 
 /// <p>There is a conflict in the policies specified for this parameter. You can't, for example, specify two Expiration policies for a parameter. Review your policies, and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncompatiblePolicyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IncompatiblePolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatiblePolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IncompatiblePolicyException {
     /// Returns the error message.
@@ -4866,18 +4369,11 @@ impl IncompatiblePolicyException {
 
 /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyTypeMismatchException {
     /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HierarchyTypeMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyTypeMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HierarchyTypeMismatchException {
     /// Returns the error message.
@@ -4933,18 +4429,11 @@ impl HierarchyTypeMismatchException {
 
 /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyLevelLimitExceededException {
     /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HierarchyLevelLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyLevelLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HierarchyLevelLimitExceededException {
     /// Returns the error message.
@@ -5000,18 +4489,11 @@ impl HierarchyLevelLimitExceededException {
 
 /// <p>Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema to see the available schema version for each type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedInventorySchemaVersionException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedInventorySchemaVersionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedInventorySchemaVersionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedInventorySchemaVersionException {
     /// Returns the error message.
@@ -5067,7 +4549,7 @@ impl UnsupportedInventorySchemaVersionException {
 
 /// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with inventory types like <code>AWS:ComplianceItem</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedInventoryItemContextException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -5080,14 +4562,6 @@ impl UnsupportedInventoryItemContextException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedInventoryItemContextException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedInventoryItemContextException");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl UnsupportedInventoryItemContextException {
@@ -5156,18 +4630,11 @@ impl UnsupportedInventoryItemContextException {
 
 /// <p>The size of inventory data has exceeded the total size limit for the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TotalSizeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TotalSizeLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TotalSizeLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TotalSizeLimitExceededException {
     /// Returns the error message.
@@ -5223,18 +4690,11 @@ impl TotalSizeLimitExceededException {
 
 /// <p>The sub-type count exceeded the limit for the inventory type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubTypeCountLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubTypeCountLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubTypeCountLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubTypeCountLimitExceededException {
     /// Returns the error message.
@@ -5290,7 +4750,7 @@ impl SubTypeCountLimitExceededException {
 
 /// <p>The inventory item size has exceeded the size limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ItemSizeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -5303,14 +4763,6 @@ impl ItemSizeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ItemSizeLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemSizeLimitExceededException");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ItemSizeLimitExceededException {
@@ -5379,7 +4831,7 @@ impl ItemSizeLimitExceededException {
 
 /// <p>The inventory item has invalid content. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ItemContentMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -5392,14 +4844,6 @@ impl ItemContentMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ItemContentMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemContentMismatchException");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ItemContentMismatchException {
@@ -5468,18 +4912,11 @@ impl ItemContentMismatchException {
 
 /// <p>The parameter type name isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTypeNameException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTypeNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTypeNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTypeNameException {
     /// Returns the error message.
@@ -5535,7 +4972,7 @@ impl InvalidTypeNameException {
 
 /// <p>One or more content items isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidItemContentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -5548,14 +4985,6 @@ impl InvalidItemContentException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidItemContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidItemContentException");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidItemContentException {
@@ -5624,18 +5053,11 @@ impl InvalidItemContentException {
 
 /// <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInventoryItemContextException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInventoryItemContextException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInventoryItemContextException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInventoryItemContextException {
     /// Returns the error message.
@@ -5691,18 +5113,11 @@ impl InvalidInventoryItemContextException {
 
 /// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomSchemaCountLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CustomSchemaCountLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomSchemaCountLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CustomSchemaCountLimitExceededException {
     /// Returns the error message.
@@ -5758,18 +5173,11 @@ impl CustomSchemaCountLimitExceededException {
 
 /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceTypeCountLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ComplianceTypeCountLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceTypeCountLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ComplianceTypeCountLimitExceededException {
     /// Returns the error message.
@@ -5825,18 +5233,11 @@ impl ComplianceTypeCountLimitExceededException {
 
 /// <p>The permission type isn't supported. <i>Share</i> is the only supported permission type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPermissionType {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPermissionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPermissionType");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPermissionType {
     /// Returns the error message.
@@ -5892,18 +5293,11 @@ impl InvalidPermissionType {
 
 /// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact Amazon Web Services Support.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentPermissionLimit {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DocumentPermissionLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentPermissionLimit");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DocumentPermissionLimit {
     /// Returns the error message.
@@ -5959,18 +5353,11 @@ impl DocumentPermissionLimit {
 
 /// <p>You can have at most 500 active SSM documents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DocumentLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DocumentLimitExceeded {
     /// Returns the error message.
@@ -6026,18 +5413,11 @@ impl DocumentLimitExceeded {
 
 /// <p>The specified token isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNextToken {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidNextToken {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextToken");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidNextToken {
     /// Returns the error message.
@@ -6093,18 +5473,11 @@ impl InvalidNextToken {
 
 /// <p>The filter name isn't valid. Verify the you entered the correct name and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFilter {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFilter");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidFilter {
     /// Returns the error message.
@@ -6160,18 +5533,11 @@ impl InvalidFilter {
 
 /// <p>The specified key isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidFilterKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFilterKey");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidFilterKey {
     /// Returns the error message.
@@ -6227,18 +5593,11 @@ impl InvalidFilterKey {
 
 /// <p>The specified command ID isn't valid. Verify the ID and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCommandId {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidCommandId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCommandId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidCommandId {
     /// Returns the error message.
@@ -6294,18 +5653,11 @@ impl InvalidCommandId {
 
 /// <p>A parameter version can have a maximum of ten labels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterVersionLabelLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParameterVersionLabelLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterVersionLabelLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParameterVersionLabelLimitExceeded {
     /// Returns the error message.
@@ -6361,18 +5713,11 @@ impl ParameterVersionLabelLimitExceeded {
 
 /// <p>The filter value isn't valid. Verify the value and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFilterValue {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidFilterValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFilterValue");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidFilterValue {
     /// Returns the error message.
@@ -6428,18 +5773,11 @@ impl InvalidFilterValue {
 
 /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFilterOption {
     /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidFilterOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFilterOption");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidFilterOption {
     /// Returns the error message.
@@ -6495,18 +5833,11 @@ impl InvalidFilterOption {
 
 /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAggregatorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAggregatorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAggregatorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAggregatorException {
     /// Returns the error message.
@@ -6562,18 +5893,11 @@ impl InvalidAggregatorException {
 
 /// <p>The specified inventory item result attribute isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResultAttributeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResultAttributeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResultAttributeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidResultAttributeException {
     /// Returns the error message.
@@ -6629,18 +5953,11 @@ impl InvalidResultAttributeException {
 
 /// <p>The specified inventory group isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInventoryGroupException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInventoryGroupException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInventoryGroupException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInventoryGroupException {
     /// Returns the error message.
@@ -6696,18 +6013,11 @@ impl InvalidInventoryGroupException {
 
 /// <p>The operating systems you specified isn't supported, or the operation isn't supported for the operating system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperatingSystem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperatingSystem");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedOperatingSystem {
     /// Returns the error message.
@@ -6763,18 +6073,11 @@ impl UnsupportedOperatingSystem {
 
 /// <p>Patching for applications released by Microsoft is only available on EC2 instances and advanced instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedFeatureRequiredException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedFeatureRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedFeatureRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedFeatureRequiredException {
     /// Returns the error message.
@@ -6830,18 +6133,11 @@ impl UnsupportedFeatureRequiredException {
 
 /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the command ID and the managed node ID and try again. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvocationDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvocationDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvocationDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvocationDoesNotExist {
     /// Returns the error message.
@@ -6897,18 +6193,11 @@ impl InvocationDoesNotExist {
 
 /// <p>The plugin name isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPluginName {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPluginName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPluginName");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPluginName {
     /// Returns the error message.
@@ -6964,18 +6253,11 @@ impl InvalidPluginName {
 
 /// <p>The calendar entry contained in the specified SSM document isn't supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedCalendarException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedCalendarException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedCalendarException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedCalendarException {
     /// Returns the error message.
@@ -7031,18 +6313,11 @@ impl UnsupportedCalendarException {
 
 /// <p>The SSM document type isn't valid. Valid document types are described in the <code>DocumentType</code> property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDocumentType {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDocumentType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDocumentType");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDocumentType {
     /// Returns the error message.
@@ -7098,18 +6373,11 @@ impl InvalidDocumentType {
 
 /// <p>The association wasn't found using the parameters you specified in the call. Verify the information and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemRelatedItemAssociationNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OpsItemRelatedItemAssociationNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemRelatedItemAssociationNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OpsItemRelatedItemAssociationNotFoundException {
     /// Returns the error message.
@@ -7166,18 +6434,11 @@ impl OpsItemRelatedItemAssociationNotFoundException {
 
 /// <p>The ID specified for the delete operation doesn't exist or isn't valid. Verify the ID and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDeletionIdException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDeletionIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDeletionIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDeletionIdException {
     /// Returns the error message.
@@ -7233,18 +6494,11 @@ impl InvalidDeletionIdException {
 
 /// <p>The specified filter value isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInstanceInformationFilterValue {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInstanceInformationFilterValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInstanceInformationFilterValue");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInstanceInformationFilterValue {
     /// Returns the error message.
@@ -7300,18 +6554,11 @@ impl InvalidInstanceInformationFilterValue {
 
 /// <p>The specified execution ID doesn't exist. Verify the ID number and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationExecutionDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AssociationExecutionDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationExecutionDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AssociationExecutionDoesNotExist {
     /// Returns the error message.
@@ -7367,18 +6614,11 @@ impl AssociationExecutionDoesNotExist {
 
 /// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow operation, but the target is still referenced in a task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TargetInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TargetInUseException {
     /// Returns the error message.
@@ -7434,18 +6674,11 @@ impl TargetInUseException {
 
 /// <p>Error returned if an attempt is made to delete a patch baseline that is registered for a patch group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceInUseException {
     /// Returns the error message.
@@ -7501,18 +6734,11 @@ impl ResourceInUseException {
 
 /// <p>The delete inventory option specified isn't valid. Verify the option and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOptionException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOptionException {
     /// Returns the error message.
@@ -7568,18 +6794,11 @@ impl InvalidOptionException {
 
 /// <p>The request isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInventoryRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInventoryRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInventoryRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInventoryRequestException {
     /// Returns the error message.
@@ -7635,18 +6854,11 @@ impl InvalidInventoryRequestException {
 
 /// <p>One or more of the parameters specified for the delete operation isn't valid. Verify all parameters and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDeleteInventoryParametersException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDeleteInventoryParametersException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDeleteInventoryParametersException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDeleteInventoryParametersException {
     /// Returns the error message.
@@ -7702,18 +6914,11 @@ impl InvalidDeleteInventoryParametersException {
 
 /// <p>You must disassociate a document from all managed nodes before you can delete it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatedInstances {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AssociatedInstances {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatedInstances");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AssociatedInstances {
     /// Returns the error message.
@@ -7769,18 +6974,11 @@ impl AssociatedInstances {
 
 /// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidActivationId {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidActivationId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidActivationId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidActivationId {
     /// Returns the error message.
@@ -7836,18 +7034,11 @@ impl InvalidActivationId {
 
 /// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and the ActivationCode don't match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidActivation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidActivation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidActivation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidActivation {
     /// Returns the error message.
@@ -7903,18 +7094,11 @@ impl InvalidActivation {
 
 /// <p>You have exceeded the allowed maximum sync configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncCountExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceDataSyncCountExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncCountExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceDataSyncCountExceededException {
     /// Returns the error message.
@@ -7970,7 +7154,7 @@ impl ResourceDataSyncCountExceededException {
 
 /// <p>A sync configuration with the same name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -7983,14 +7167,6 @@ impl ResourceDataSyncAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn sync_name(&self) -> std::option::Option<&str> {
         self.sync_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncAlreadyExistsException");
-        formatter.field("sync_name", &self.sync_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceDataSyncAlreadyExistsException {
@@ -8059,18 +7235,11 @@ impl ResourceDataSyncAlreadyExistsException {
 
 /// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsMetadataLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OpsMetadataLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsMetadataLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OpsMetadataLimitExceededException {
     /// Returns the error message.
@@ -8126,18 +7295,11 @@ impl OpsMetadataLimitExceededException {
 
 /// <p>An OpsMetadata object already exists for the selected resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsMetadataAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OpsMetadataAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsMetadataAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OpsMetadataAlreadyExistsException {
     /// Returns the error message.
@@ -8193,18 +7355,11 @@ impl OpsMetadataAlreadyExistsException {
 
 /// <p>The specified document already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DocumentAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DocumentAlreadyExists {
     /// Returns the error message.
@@ -8260,18 +7415,11 @@ impl DocumentAlreadyExists {
 
 /// <p>You can have at most 2,000 active associations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AssociationLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AssociationLimitExceeded {
     /// Returns the error message.
@@ -8327,18 +7475,11 @@ impl AssociationLimitExceeded {
 
 /// <p>The tag key or value isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTag {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTag");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTag {
     /// Returns the error message.
@@ -8394,18 +7535,11 @@ impl InvalidTag {
 
 /// <p>The specified association already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AssociationAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AssociationAlreadyExists {
     /// Returns the error message.
@@ -8461,7 +7595,7 @@ impl AssociationAlreadyExists {
 
 /// <p>The Amazon Resource Name (ARN) is already associated with the OpsItem.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemRelatedItemAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -8481,15 +7615,6 @@ impl OpsItemRelatedItemAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn ops_item_id(&self) -> std::option::Option<&str> {
         self.ops_item_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsItemRelatedItemAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemRelatedItemAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_uri", &self.resource_uri);
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.finish()
     }
 }
 impl OpsItemRelatedItemAlreadyExistsException {
@@ -8570,18 +7695,11 @@ impl OpsItemRelatedItemAlreadyExistsException {
 
 /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTagsError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTagsError {
     /// Returns the error message.

@@ -2,7 +2,7 @@
 
 /// <p>Describes a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
@@ -110,27 +110,6 @@ impl User {
     /// <p>The storage for the user.</p>
     pub fn storage(&self) -> std::option::Option<&crate::model::UserStorageMetadata> {
         self.storage.as_ref()
-    }
-}
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("id", &self.id);
-        formatter.field("username", &self.username);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("root_folder_id", &self.root_folder_id);
-        formatter.field("recycle_bin_folder_id", &self.recycle_bin_folder_id);
-        formatter.field("status", &self.status);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("modified_timestamp", &self.modified_timestamp);
-        formatter.field("time_zone_id", &self.time_zone_id);
-        formatter.field("locale", &self.locale);
-        formatter.field("storage", &self.storage);
-        formatter.finish()
     }
 }
 /// See [`User`](crate::model::User).
@@ -361,7 +340,7 @@ impl User {
 
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserStorageMetadata {
     /// <p>The amount of storage used, in bytes.</p>
     #[doc(hidden)]
@@ -378,14 +357,6 @@ impl UserStorageMetadata {
     /// <p>The storage for a user.</p>
     pub fn storage_rule(&self) -> std::option::Option<&crate::model::StorageRuleType> {
         self.storage_rule.as_ref()
-    }
-}
-impl std::fmt::Debug for UserStorageMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserStorageMetadata");
-        formatter.field("storage_utilized_in_bytes", &self.storage_utilized_in_bytes);
-        formatter.field("storage_rule", &self.storage_rule);
-        formatter.finish()
     }
 }
 /// See [`UserStorageMetadata`](crate::model::UserStorageMetadata).
@@ -439,7 +410,7 @@ impl UserStorageMetadata {
 
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageRuleType {
     /// <p>The amount of storage allocated, in bytes.</p>
     #[doc(hidden)]
@@ -456,17 +427,6 @@ impl StorageRuleType {
     /// <p>The type of storage.</p>
     pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
         self.storage_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StorageRuleType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageRuleType");
-        formatter.field(
-            "storage_allocated_in_bytes",
-            &self.storage_allocated_in_bytes,
-        );
-        formatter.field("storage_type", &self.storage_type);
-        formatter.finish()
     }
 }
 /// See [`StorageRuleType`](crate::model::StorageRuleType).
@@ -1372,7 +1332,7 @@ impl std::fmt::Debug for UploadMetadata {
 pub mod upload_metadata {
 
     /// A builder for [`UploadMetadata`](crate::model::UploadMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) upload_url: std::option::Option<std::string::String>,
         pub(crate) signed_headers: std::option::Option<
@@ -1423,6 +1383,14 @@ pub mod upload_metadata {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("upload_url", &"*** Sensitive Data Redacted ***");
+            formatter.field("signed_headers", &self.signed_headers);
+            formatter.finish()
+        }
+    }
 }
 impl UploadMetadata {
     /// Creates a new builder-style object to manufacture [`UploadMetadata`](crate::model::UploadMetadata).
@@ -1433,7 +1401,7 @@ impl UploadMetadata {
 
 /// <p>Describes the document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentMetadata {
     /// <p>The ID of the document.</p>
     #[doc(hidden)]
@@ -1494,20 +1462,6 @@ impl DocumentMetadata {
     /// <p>List of labels on the document.</p>
     pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("creator_id", &self.creator_id);
-        formatter.field("parent_folder_id", &self.parent_folder_id);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("modified_timestamp", &self.modified_timestamp);
-        formatter.field("latest_version_metadata", &self.latest_version_metadata);
-        formatter.field("resource_state", &self.resource_state);
-        formatter.field("labels", &self.labels);
-        formatter.finish()
     }
 }
 /// See [`DocumentMetadata`](crate::model::DocumentMetadata).
@@ -1658,7 +1612,7 @@ impl DocumentMetadata {
 
 /// <p>Describes a version of a document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentVersionMetadata {
     /// <p>The ID of the version.</p>
     #[doc(hidden)]
@@ -1764,28 +1718,6 @@ impl DocumentVersionMetadata {
         &std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>,
     > {
         self.source.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentVersionMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentVersionMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("size", &self.size);
-        formatter.field("signature", &self.signature);
-        formatter.field("status", &self.status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("modified_timestamp", &self.modified_timestamp);
-        formatter.field("content_created_timestamp", &self.content_created_timestamp);
-        formatter.field(
-            "content_modified_timestamp",
-            &self.content_modified_timestamp,
-        );
-        formatter.field("creator_id", &self.creator_id);
-        formatter.field("thumbnail", &self.thumbnail);
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
@@ -2298,7 +2230,7 @@ impl AsRef<str> for DocumentStatusType {
 
 /// <p>Describes a folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderMetadata {
     /// <p>The ID of the folder.</p>
     #[doc(hidden)]
@@ -2378,23 +2310,6 @@ impl FolderMetadata {
     /// <p>The size of the latest version of the folder metadata.</p>
     pub fn latest_version_size(&self) -> std::option::Option<i64> {
         self.latest_version_size
-    }
-}
-impl std::fmt::Debug for FolderMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("creator_id", &self.creator_id);
-        formatter.field("parent_folder_id", &self.parent_folder_id);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("modified_timestamp", &self.modified_timestamp);
-        formatter.field("resource_state", &self.resource_state);
-        formatter.field("signature", &self.signature);
-        formatter.field("labels", &self.labels);
-        formatter.field("size", &self.size);
-        formatter.field("latest_version_size", &self.latest_version_size);
-        formatter.finish()
     }
 }
 /// See [`FolderMetadata`](crate::model::FolderMetadata).
@@ -2661,7 +2576,7 @@ impl AsRef<str> for ResourceCollectionType {
 
 /// <p>Describes the path information of a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePath {
     /// <p>The components of the resource path.</p>
     #[doc(hidden)]
@@ -2671,13 +2586,6 @@ impl ResourcePath {
     /// <p>The components of the resource path.</p>
     pub fn components(&self) -> std::option::Option<&[crate::model::ResourcePathComponent]> {
         self.components.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourcePath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePath");
-        formatter.field("components", &self.components);
-        formatter.finish()
     }
 }
 /// See [`ResourcePath`](crate::model::ResourcePath).
@@ -2726,7 +2634,7 @@ impl ResourcePath {
 
 /// <p>Describes the resource path.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePathComponent {
     /// <p>The ID of the resource path.</p>
     #[doc(hidden)]
@@ -2743,14 +2651,6 @@ impl ResourcePathComponent {
     /// <p>The name of the resource path.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourcePathComponent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePathComponent");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ResourcePathComponent`](crate::model::ResourcePathComponent).
@@ -3092,7 +2992,7 @@ impl AsRef<str> for UserFilterType {
 
 /// <p>Describes a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Principal {
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
@@ -3116,15 +3016,6 @@ impl Principal {
     /// <p>The permission information for the resource.</p>
     pub fn roles(&self) -> std::option::Option<&[crate::model::PermissionInfo]> {
         self.roles.as_deref()
-    }
-}
-impl std::fmt::Debug for Principal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Principal");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("roles", &self.roles);
-        formatter.finish()
     }
 }
 /// See [`Principal`](crate::model::Principal).
@@ -3196,7 +3087,7 @@ impl Principal {
 
 /// <p>Describes the permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionInfo {
     /// <p>The role of the user.</p>
     #[doc(hidden)]
@@ -3213,14 +3104,6 @@ impl PermissionInfo {
     /// <p>The type of permissions.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RolePermissionType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for PermissionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionInfo");
-        formatter.field("role", &self.role);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`PermissionInfo`](crate::model::PermissionInfo).
@@ -3466,7 +3349,7 @@ impl AsRef<str> for RoleType {
 
 /// <p>Describes a subscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The ID of the subscription.</p>
     #[doc(hidden)]
@@ -3490,15 +3373,6 @@ impl Subscription {
     /// <p>The protocol of the subscription.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::SubscriptionProtocolType> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for Subscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subscription");
-        formatter.field("subscription_id", &self.subscription_id);
-        formatter.field("end_point", &self.end_point);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
@@ -3654,7 +3528,7 @@ impl AsRef<str> for SubscriptionProtocolType {
 
 /// <p>Describes the metadata of a user group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupMetadata {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
@@ -3671,14 +3545,6 @@ impl GroupMetadata {
     /// <p>The name of the group.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`GroupMetadata`](crate::model::GroupMetadata).
@@ -4003,7 +3869,7 @@ impl std::fmt::Debug for Comment {
 pub mod comment {
 
     /// A builder for [`Comment`](crate::model::Comment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
         pub(crate) parent_id: std::option::Option<std::string::String>,
@@ -4128,6 +3994,21 @@ pub mod comment {
                 visibility: self.visibility,
                 recipient_id: self.recipient_id,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("comment_id", &self.comment_id);
+            formatter.field("parent_id", &self.parent_id);
+            formatter.field("thread_id", &self.thread_id);
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("contributor", &self.contributor);
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("status", &self.status);
+            formatter.field("visibility", &self.visibility);
+            formatter.field("recipient_id", &self.recipient_id);
+            formatter.finish()
         }
     }
 }
@@ -4329,7 +4210,7 @@ impl AsRef<str> for CommentStatusType {
 
 /// <p>Describes the activity information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Activity {
     /// <p>The activity type.</p>
     #[doc(hidden)]
@@ -4395,21 +4276,6 @@ impl Activity {
     /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
     pub fn comment_metadata(&self) -> std::option::Option<&crate::model::CommentMetadata> {
         self.comment_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for Activity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Activity");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("time_stamp", &self.time_stamp);
-        formatter.field("is_indirect_activity", &self.is_indirect_activity);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("initiator", &self.initiator);
-        formatter.field("participants", &self.participants);
-        formatter.field("resource_metadata", &self.resource_metadata);
-        formatter.field("original_parent", &self.original_parent);
-        formatter.field("comment_metadata", &self.comment_metadata);
-        formatter.finish()
     }
 }
 /// See [`Activity`](crate::model::Activity).
@@ -4565,7 +4431,7 @@ impl Activity {
 
 /// <p>Describes the metadata of a comment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentMetadata {
     /// <p>The ID of the comment.</p>
     #[doc(hidden)]
@@ -4603,17 +4469,6 @@ impl CommentMetadata {
     /// <p>The ID of the user being replied to.</p>
     pub fn recipient_id(&self) -> std::option::Option<&str> {
         self.recipient_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CommentMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentMetadata");
-        formatter.field("comment_id", &self.comment_id);
-        formatter.field("contributor", &self.contributor);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("comment_status", &self.comment_status);
-        formatter.field("recipient_id", &self.recipient_id);
-        formatter.finish()
     }
 }
 /// See [`CommentMetadata`](crate::model::CommentMetadata).
@@ -4706,7 +4561,7 @@ impl CommentMetadata {
 
 /// <p>Describes the metadata of a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceMetadata {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
@@ -4758,19 +4613,6 @@ impl ResourceMetadata {
     /// <p>The parent ID of the resource before a rename operation.</p>
     pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceMetadata");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("original_name", &self.original_name);
-        formatter.field("id", &self.id);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("owner", &self.owner);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.finish()
     }
 }
 /// See [`ResourceMetadata`](crate::model::ResourceMetadata).
@@ -4884,7 +4726,7 @@ impl ResourceMetadata {
 
 /// <p>Describes the metadata of the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserMetadata {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
@@ -4922,17 +4764,6 @@ impl UserMetadata {
     /// <p>The email address of the user.</p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
-    }
-}
-impl std::fmt::Debug for UserMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("username", &self.username);
-        formatter.field("given_name", &self.given_name);
-        formatter.field("surname", &self.surname);
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
     }
 }
 /// See [`UserMetadata`](crate::model::UserMetadata).
@@ -5112,7 +4943,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>Describes the users or user groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Participants {
     /// <p>The list of users.</p>
     #[doc(hidden)]
@@ -5129,14 +4960,6 @@ impl Participants {
     /// <p>The list of user groups.</p>
     pub fn groups(&self) -> std::option::Option<&[crate::model::GroupMetadata]> {
         self.groups.as_deref()
-    }
-}
-impl std::fmt::Debug for Participants {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Participants");
-        formatter.field("users", &self.users);
-        formatter.field("groups", &self.groups);
-        formatter.finish()
     }
 }
 /// See [`Participants`](crate::model::Participants).
@@ -5640,7 +5463,7 @@ impl std::fmt::Debug for ShareResult {
 pub mod share_result {
 
     /// A builder for [`ShareResult`](crate::model::ShareResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) principal_id: std::option::Option<std::string::String>,
         pub(crate) invitee_principal_id: std::option::Option<std::string::String>,
@@ -5729,6 +5552,18 @@ pub mod share_result {
                 share_id: self.share_id,
                 status_message: self.status_message,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("principal_id", &self.principal_id);
+            formatter.field("invitee_principal_id", &self.invitee_principal_id);
+            formatter.field("role", &self.role);
+            formatter.field("status", &self.status);
+            formatter.field("share_id", &self.share_id);
+            formatter.field("status_message", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -5862,7 +5697,7 @@ impl std::fmt::Debug for NotificationOptions {
 pub mod notification_options {
 
     /// A builder for [`NotificationOptions`](crate::model::NotificationOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) send_email: std::option::Option<bool>,
         pub(crate) email_message: std::option::Option<std::string::String>,
@@ -5899,6 +5734,14 @@ pub mod notification_options {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("send_email", &self.send_email);
+            formatter.field("email_message", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl NotificationOptions {
     /// Creates a new builder-style object to manufacture [`NotificationOptions`](crate::model::NotificationOptions).
@@ -5909,7 +5752,7 @@ impl NotificationOptions {
 
 /// <p>Describes the recipient type and ID, if available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SharePrincipal {
     /// <p>The ID of the recipient.</p>
     #[doc(hidden)]
@@ -5933,15 +5776,6 @@ impl SharePrincipal {
     /// <p>The role of the recipient.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::RoleType> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for SharePrincipal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SharePrincipal");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 /// See [`SharePrincipal`](crate::model::SharePrincipal).

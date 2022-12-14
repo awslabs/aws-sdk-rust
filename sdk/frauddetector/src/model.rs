@@ -2,7 +2,7 @@
 
 /// <p>A rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>The detector for which the rule is associated.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl Rule {
     /// <p>The rule version.</p>
     pub fn rule_version(&self) -> std::option::Option<&str> {
         self.rule_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("rule_version", &self.rule_version);
-        formatter.finish()
     }
 }
 /// See [`Rule`](crate::model::Rule).
@@ -97,7 +88,7 @@ impl Rule {
 
 /// <p>A key and value pair. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A tag key.</p>
     #[doc(hidden)]
@@ -114,14 +105,6 @@ impl Tag {
     /// <p>A value assigned to a tag key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -453,7 +436,7 @@ impl AsRef<str> for ModelTypeEnum {
 
 /// <p>The details of the ingested event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestedEventsDetail {
     /// <p>The start and stop time of the ingested events.</p>
     #[doc(hidden)]
@@ -465,16 +448,6 @@ impl IngestedEventsDetail {
         &self,
     ) -> std::option::Option<&crate::model::IngestedEventsTimeWindow> {
         self.ingested_events_time_window.as_ref()
-    }
-}
-impl std::fmt::Debug for IngestedEventsDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestedEventsDetail");
-        formatter.field(
-            "ingested_events_time_window",
-            &self.ingested_events_time_window,
-        );
-        formatter.finish()
     }
 }
 /// See [`IngestedEventsDetail`](crate::model::IngestedEventsDetail).
@@ -520,7 +493,7 @@ impl IngestedEventsDetail {
 
 /// <p>The start and stop time of the ingested events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestedEventsTimeWindow {
     /// <p>Timestamp of the first ingensted event.</p>
     #[doc(hidden)]
@@ -537,14 +510,6 @@ impl IngestedEventsTimeWindow {
     /// <p>Timestamp of the final ingested event.</p>
     pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
-    }
-}
-impl std::fmt::Debug for IngestedEventsTimeWindow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestedEventsTimeWindow");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`IngestedEventsTimeWindow`](crate::model::IngestedEventsTimeWindow).
@@ -595,7 +560,7 @@ impl IngestedEventsTimeWindow {
 
 /// <p>Details for the external events data used for model version training.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
     #[doc(hidden)]
@@ -612,14 +577,6 @@ impl ExternalEventsDetail {
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ExternalEventsDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExternalEventsDetail");
-        formatter.field("data_location", &self.data_location);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.finish()
     }
 }
 /// See [`ExternalEventsDetail`](crate::model::ExternalEventsDetail).
@@ -865,7 +822,7 @@ impl AsRef<str> for RuleExecutionMode {
 
 /// <p>The model version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelVersion {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -896,16 +853,6 @@ impl ModelVersion {
     /// <p>The model version ARN.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ModelVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelVersion");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("model_version_number", &self.model_version_number);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`ModelVersion`](crate::model::ModelVersion).
@@ -1017,7 +964,7 @@ impl std::fmt::Debug for Entity {
 pub mod entity {
 
     /// A builder for [`Entity`](crate::model::Entity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) entity_type: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -1049,6 +996,14 @@ pub mod entity {
                 entity_type: self.entity_type,
                 entity_id: self.entity_id,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("entity_type", &self.entity_type);
+            formatter.field("entity_id", &self.entity_id);
+            formatter.finish()
         }
     }
 }
@@ -1153,7 +1108,7 @@ impl AsRef<str> for ModelEndpointStatus {
 
 /// <p>Provides the Amazon Sagemaker model output configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelOutputConfiguration {
     /// <p>The format of the model output configuration.</p>
     #[doc(hidden)]
@@ -1185,15 +1140,6 @@ impl ModelOutputConfiguration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.csv_index_to_variable_map.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelOutputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelOutputConfiguration");
-        formatter.field("format", &self.format);
-        formatter.field("json_key_to_variable_map", &self.json_key_to_variable_map);
-        formatter.field("csv_index_to_variable_map", &self.csv_index_to_variable_map);
-        formatter.finish()
     }
 }
 /// See [`ModelOutputConfiguration`](crate::model::ModelOutputConfiguration).
@@ -1385,7 +1331,7 @@ impl AsRef<str> for ModelOutputDataFormat {
 
 /// <p>The Amazon SageMaker model input configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelInputConfiguration {
     /// <p>The event type name.</p>
     #[doc(hidden)]
@@ -1423,17 +1369,6 @@ impl ModelInputConfiguration {
     /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
     pub fn csv_input_template(&self) -> std::option::Option<&str> {
         self.csv_input_template.as_deref()
-    }
-}
-impl std::fmt::Debug for ModelInputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelInputConfiguration");
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("format", &self.format);
-        formatter.field("use_event_variables", &self.use_event_variables);
-        formatter.field("json_input_template", &self.json_input_template);
-        formatter.field("csv_input_template", &self.csv_input_template);
-        formatter.finish()
     }
 }
 /// See [`ModelInputConfiguration`](crate::model::ModelInputConfiguration).
@@ -1799,7 +1734,7 @@ impl AsRef<str> for EventIngestion {
 
 /// <p> Information about the summary of an event prediction. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventPredictionSummary {
     /// <p> The event ID. </p>
     #[doc(hidden)]
@@ -1844,18 +1779,6 @@ impl EventPredictionSummary {
     /// <p> The detector version ID. </p>
     pub fn detector_version_id(&self) -> std::option::Option<&str> {
         self.detector_version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EventPredictionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventPredictionSummary");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("event_timestamp", &self.event_timestamp);
-        formatter.field("prediction_timestamp", &self.prediction_timestamp);
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.finish()
     }
 }
 /// See [`EventPredictionSummary`](crate::model::EventPredictionSummary).
@@ -1966,7 +1889,7 @@ impl EventPredictionSummary {
 
 /// <p> The time period for when the predictions were generated. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictionTimeRange {
     /// <p> The start time of the time period for when the predictions were generated. </p>
     #[doc(hidden)]
@@ -1983,14 +1906,6 @@ impl PredictionTimeRange {
     /// <p> The end time of the time period for when the predictions were generated. </p>
     pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictionTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictionTimeRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`PredictionTimeRange`](crate::model::PredictionTimeRange).
@@ -2041,7 +1956,7 @@ impl PredictionTimeRange {
 
 /// <p> A conditional statement for filtering a list of past predictions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterCondition {
     /// <p> A statement containing a resource property and a value to specify filter condition. </p>
     #[doc(hidden)]
@@ -2051,13 +1966,6 @@ impl FilterCondition {
     /// <p> A statement containing a resource property and a value to specify filter condition. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterCondition");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FilterCondition`](crate::model::FilterCondition).
@@ -2094,7 +2002,7 @@ impl FilterCondition {
 
 /// <p>The variable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Variable {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -2162,21 +2070,6 @@ impl Variable {
     /// <p>The ARN of the variable.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Variable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Variable");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("description", &self.description);
-        formatter.field("variable_type", &self.variable_type);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Variable`](crate::model::Variable).
@@ -2615,7 +2508,7 @@ impl std::fmt::Debug for RuleDetail {
 pub mod rule_detail {
 
     /// A builder for [`RuleDetail`](crate::model::RuleDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2757,6 +2650,22 @@ pub mod rule_detail {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("rule_id", &self.rule_id);
+            formatter.field("description", &self.description);
+            formatter.field("detector_id", &self.detector_id);
+            formatter.field("rule_version", &self.rule_version);
+            formatter.field("expression", &"*** Sensitive Data Redacted ***");
+            formatter.field("language", &self.language);
+            formatter.field("outcomes", &self.outcomes);
+            formatter.field("last_updated_time", &self.last_updated_time);
+            formatter.field("created_time", &self.created_time);
+            formatter.field("arn", &self.arn);
+            formatter.finish()
+        }
+    }
 }
 impl RuleDetail {
     /// Creates a new builder-style object to manufacture [`RuleDetail`](crate::model::RuleDetail).
@@ -2767,7 +2676,7 @@ impl RuleDetail {
 
 /// <p>The outcome.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Outcome {
     /// <p>The outcome name.</p>
     #[doc(hidden)]
@@ -2805,17 +2714,6 @@ impl Outcome {
     /// <p>The outcome ARN.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Outcome {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Outcome");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Outcome`](crate::model::Outcome).
@@ -2905,7 +2803,7 @@ impl Outcome {
 
 /// <p>The training data schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrainingDataSchema {
     /// <p>The training data schema variables.</p>
     #[doc(hidden)]
@@ -2922,14 +2820,6 @@ impl TrainingDataSchema {
     /// <p>The label schema.</p>
     pub fn label_schema(&self) -> std::option::Option<&crate::model::LabelSchema> {
         self.label_schema.as_ref()
-    }
-}
-impl std::fmt::Debug for TrainingDataSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingDataSchema");
-        formatter.field("model_variables", &self.model_variables);
-        formatter.field("label_schema", &self.label_schema);
-        formatter.finish()
     }
 }
 /// See [`TrainingDataSchema`](crate::model::TrainingDataSchema).
@@ -2992,7 +2882,7 @@ impl TrainingDataSchema {
 
 /// <p>The label schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelSchema {
     /// <p>The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>, <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "<code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be: <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or <code>{"FRAUD" =&gt; ["false"]</code>, <code>"LEGIT" =&gt; ["true"]}</code> or <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>, <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have multiple label variants from your event type for a single Amazon Fraud Detector label. </p>
     #[doc(hidden)]
@@ -3017,17 +2907,6 @@ impl LabelSchema {
         &self,
     ) -> std::option::Option<&crate::model::UnlabeledEventsTreatment> {
         self.unlabeled_events_treatment.as_ref()
-    }
-}
-impl std::fmt::Debug for LabelSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelSchema");
-        formatter.field("label_mapper", &self.label_mapper);
-        formatter.field(
-            "unlabeled_events_treatment",
-            &self.unlabeled_events_treatment,
-        );
-        formatter.finish()
     }
 }
 /// See [`LabelSchema`](crate::model::LabelSchema).
@@ -3291,7 +3170,7 @@ impl AsRef<str> for TrainingDataSourceEnum {
 
 /// <p>The model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Model {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -3343,19 +3222,6 @@ impl Model {
     /// <p>The ARN of the model.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Model {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Model");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("description", &self.description);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Model`](crate::model::Model).
@@ -3475,7 +3341,7 @@ impl Model {
 
 /// <p>The label details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Label {
     /// <p>The label name.</p>
     #[doc(hidden)]
@@ -3513,17 +3379,6 @@ impl Label {
     /// <p>The label ARN.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Label {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Label");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Label`](crate::model::Label).
@@ -3613,7 +3468,7 @@ impl Label {
 
 /// <p>The KMS key details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsKey {
     /// <p>The encryption key ARN.</p>
     #[doc(hidden)]
@@ -3623,13 +3478,6 @@ impl KmsKey {
     /// <p>The encryption key ARN.</p>
     pub fn kms_encryption_key_arn(&self) -> std::option::Option<&str> {
         self.kms_encryption_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKey");
-        formatter.field("kms_encryption_key_arn", &self.kms_encryption_key_arn);
-        formatter.finish()
     }
 }
 /// See [`KmsKey`](crate::model::KmsKey).
@@ -3671,7 +3519,7 @@ impl KmsKey {
 
 /// <p>The Amazon SageMaker model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalModel {
     /// <p>The Amazon SageMaker model endpoints.</p>
     #[doc(hidden)]
@@ -3741,24 +3589,6 @@ impl ExternalModel {
     /// <p>The model ARN.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ExternalModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExternalModel");
-        formatter.field("model_endpoint", &self.model_endpoint);
-        formatter.field("model_source", &self.model_source);
-        formatter.field(
-            "invoke_model_endpoint_role_arn",
-            &self.invoke_model_endpoint_role_arn,
-        );
-        formatter.field("input_configuration", &self.input_configuration);
-        formatter.field("output_configuration", &self.output_configuration);
-        formatter.field("model_endpoint_status", &self.model_endpoint_status);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`ExternalModel`](crate::model::ExternalModel).
@@ -4018,7 +3848,7 @@ impl std::fmt::Debug for EventType {
 pub mod event_type {
 
     /// A builder for [`EventType`](crate::model::EventType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4188,6 +4018,22 @@ pub mod event_type {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("event_variables", &self.event_variables);
+            formatter.field("labels", &self.labels);
+            formatter.field("entity_types", &self.entity_types);
+            formatter.field("event_ingestion", &self.event_ingestion);
+            formatter.field("ingested_event_statistics", &self.ingested_event_statistics);
+            formatter.field("last_updated_time", &self.last_updated_time);
+            formatter.field("created_time", &self.created_time);
+            formatter.field("arn", &self.arn);
+            formatter.finish()
+        }
+    }
 }
 impl EventType {
     /// Creates a new builder-style object to manufacture [`EventType`](crate::model::EventType).
@@ -4198,7 +4044,7 @@ impl EventType {
 
 /// <p>Data about the stored events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestedEventStatistics {
     /// <p>The number of stored events.</p>
     #[doc(hidden)]
@@ -4236,17 +4082,6 @@ impl IngestedEventStatistics {
     /// <p>Timestamp of when the stored event was last updated. </p>
     pub fn last_updated_time(&self) -> std::option::Option<&str> {
         self.last_updated_time.as_deref()
-    }
-}
-impl std::fmt::Debug for IngestedEventStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestedEventStatistics");
-        formatter.field("number_of_events", &self.number_of_events);
-        formatter.field("event_data_size_in_bytes", &self.event_data_size_in_bytes);
-        formatter.field("least_recent_event", &self.least_recent_event);
-        formatter.field("most_recent_event", &self.most_recent_event);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`IngestedEventStatistics`](crate::model::IngestedEventStatistics).
@@ -4397,7 +4232,7 @@ impl std::fmt::Debug for EvaluatedExternalModel {
 pub mod evaluated_external_model {
 
     /// A builder for [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) model_endpoint: std::option::Option<std::string::String>,
         pub(crate) use_event_variables: std::option::Option<bool>,
@@ -4492,6 +4327,16 @@ pub mod evaluated_external_model {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("model_endpoint", &self.model_endpoint);
+            formatter.field("use_event_variables", &self.use_event_variables);
+            formatter.field("input_variables", &"*** Sensitive Data Redacted ***");
+            formatter.field("output_variables", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl EvaluatedExternalModel {
     /// Creates a new builder-style object to manufacture [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel).
@@ -4502,7 +4347,7 @@ impl EvaluatedExternalModel {
 
 /// <p> The model version evaluated for generating prediction. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluatedModelVersion {
     /// <p> The model ID. </p>
     #[doc(hidden)]
@@ -4535,16 +4380,6 @@ impl EvaluatedModelVersion {
     /// <p> Evaluations generated for the model version. </p>
     pub fn evaluations(&self) -> std::option::Option<&[crate::model::ModelVersionEvaluation]> {
         self.evaluations.as_deref()
-    }
-}
-impl std::fmt::Debug for EvaluatedModelVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluatedModelVersion");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("evaluations", &self.evaluations);
-        formatter.finish()
     }
 }
 /// See [`EvaluatedModelVersion`](crate::model::EvaluatedModelVersion).
@@ -4634,7 +4469,7 @@ impl EvaluatedModelVersion {
 
 /// <p> The model version evalutions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelVersionEvaluation {
     /// <p> The output variable name. </p>
     #[doc(hidden)]
@@ -4660,15 +4495,6 @@ impl ModelVersionEvaluation {
         &self,
     ) -> std::option::Option<&crate::model::PredictionExplanations> {
         self.prediction_explanations.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelVersionEvaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelVersionEvaluation");
-        formatter.field("output_variable_name", &self.output_variable_name);
-        formatter.field("evaluation_score", &self.evaluation_score);
-        formatter.field("prediction_explanations", &self.prediction_explanations);
-        formatter.finish()
     }
 }
 /// See [`ModelVersionEvaluation`](crate::model::ModelVersionEvaluation).
@@ -4744,7 +4570,7 @@ impl ModelVersionEvaluation {
 
 /// <p> The prediction explanations that provide insight into how each event variable impacted the model version's fraud prediction score. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictionExplanations {
     /// <p> The details of the event variable's impact on the prediction score. </p>
     #[doc(hidden)]
@@ -4769,20 +4595,6 @@ impl PredictionExplanations {
         &self,
     ) -> std::option::Option<&[crate::model::AggregatedVariablesImpactExplanation]> {
         self.aggregated_variables_impact_explanations.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictionExplanations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictionExplanations");
-        formatter.field(
-            "variable_impact_explanations",
-            &self.variable_impact_explanations,
-        );
-        formatter.field(
-            "aggregated_variables_impact_explanations",
-            &self.aggregated_variables_impact_explanations,
-        );
-        formatter.finish()
     }
 }
 /// See [`PredictionExplanations`](crate::model::PredictionExplanations).
@@ -4867,7 +4679,7 @@ impl PredictionExplanations {
 /// <p> The details of the impact of aggregated variables on the prediction score. </p>
 /// <p>Account Takeover Insights (ATI) model uses the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, the model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedVariablesImpactExplanation {
     /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
     #[doc(hidden)]
@@ -4899,15 +4711,6 @@ impl AggregatedVariablesImpactExplanation {
     /// </ul>
     pub fn log_odds_impact(&self) -> std::option::Option<f32> {
         self.log_odds_impact
-    }
-}
-impl std::fmt::Debug for AggregatedVariablesImpactExplanation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedVariablesImpactExplanation");
-        formatter.field("event_variable_names", &self.event_variable_names);
-        formatter.field("relative_impact", &self.relative_impact);
-        formatter.field("log_odds_impact", &self.log_odds_impact);
-        formatter.finish()
     }
 }
 /// See [`AggregatedVariablesImpactExplanation`](crate::model::AggregatedVariablesImpactExplanation).
@@ -4990,7 +4793,7 @@ impl AggregatedVariablesImpactExplanation {
 
 /// <p> The details of the event variable's impact on the prediction score. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VariableImpactExplanation {
     /// <p> The event variable name. </p>
     #[doc(hidden)]
@@ -5022,15 +4825,6 @@ impl VariableImpactExplanation {
     /// </ul>
     pub fn log_odds_impact(&self) -> std::option::Option<f32> {
         self.log_odds_impact
-    }
-}
-impl std::fmt::Debug for VariableImpactExplanation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VariableImpactExplanation");
-        formatter.field("event_variable_name", &self.event_variable_name);
-        formatter.field("relative_impact", &self.relative_impact);
-        formatter.field("log_odds_impact", &self.log_odds_impact);
-        formatter.finish()
     }
 }
 /// See [`VariableImpactExplanation`](crate::model::VariableImpactExplanation).
@@ -5178,7 +4972,7 @@ impl std::fmt::Debug for EvaluatedRule {
 pub mod evaluated_rule {
 
     /// A builder for [`EvaluatedRule`](crate::model::EvaluatedRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
         pub(crate) rule_version: std::option::Option<std::string::String>,
@@ -5284,6 +5078,19 @@ pub mod evaluated_rule {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("rule_id", &self.rule_id);
+            formatter.field("rule_version", &self.rule_version);
+            formatter.field("expression", &"*** Sensitive Data Redacted ***");
+            formatter.field("expression_with_values", &"*** Sensitive Data Redacted ***");
+            formatter.field("outcomes", &self.outcomes);
+            formatter.field("evaluated", &self.evaluated);
+            formatter.field("matched", &self.matched);
+            formatter.finish()
+        }
+    }
 }
 impl EvaluatedRule {
     /// Creates a new builder-style object to manufacture [`EvaluatedRule`](crate::model::EvaluatedRule).
@@ -5333,7 +5140,7 @@ impl std::fmt::Debug for EventVariableSummary {
 pub mod event_variable_summary {
 
     /// A builder for [`EventVariableSummary`](crate::model::EventVariableSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -5379,6 +5186,15 @@ pub mod event_variable_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.field("source", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl EventVariableSummary {
     /// Creates a new builder-style object to manufacture [`EventVariableSummary`](crate::model::EventVariableSummary).
@@ -5389,7 +5205,7 @@ impl EventVariableSummary {
 
 /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalModelOutputs {
     /// <p>The Amazon SageMaker model.</p>
     #[doc(hidden)]
@@ -5410,14 +5226,6 @@ impl ExternalModelOutputs {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.outputs.as_ref()
-    }
-}
-impl std::fmt::Debug for ExternalModelOutputs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExternalModelOutputs");
-        formatter.field("external_model", &self.external_model);
-        formatter.field("outputs", &self.outputs);
-        formatter.finish()
     }
 }
 /// See [`ExternalModelOutputs`](crate::model::ExternalModelOutputs).
@@ -5488,7 +5296,7 @@ impl ExternalModelOutputs {
 
 /// <p>The Amazon SageMaker model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalModelSummary {
     /// <p>The endpoint of the Amazon SageMaker model.</p>
     #[doc(hidden)]
@@ -5505,14 +5313,6 @@ impl ExternalModelSummary {
     /// <p>The source of the model.</p>
     pub fn model_source(&self) -> std::option::Option<&crate::model::ModelSource> {
         self.model_source.as_ref()
-    }
-}
-impl std::fmt::Debug for ExternalModelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExternalModelSummary");
-        formatter.field("model_endpoint", &self.model_endpoint);
-        formatter.field("model_source", &self.model_source);
-        formatter.finish()
     }
 }
 /// See [`ExternalModelSummary`](crate::model::ExternalModelSummary).
@@ -5569,7 +5369,7 @@ impl ExternalModelSummary {
 
 /// <p>The rule results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleResult {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
     #[doc(hidden)]
@@ -5586,14 +5386,6 @@ impl RuleResult {
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
     pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
         self.outcomes.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleResult");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("outcomes", &self.outcomes);
-        formatter.finish()
     }
 }
 /// See [`RuleResult`](crate::model::RuleResult).
@@ -5653,7 +5445,7 @@ impl RuleResult {
 
 /// <p>The fraud prediction scores.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelScores {
     /// <p>The model version.</p>
     #[doc(hidden)]
@@ -5672,14 +5464,6 @@ impl ModelScores {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, f32>> {
         self.scores.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelScores {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelScores");
-        formatter.field("model_version", &self.model_version);
-        formatter.field("scores", &self.scores);
-        formatter.finish()
     }
 }
 /// See [`ModelScores`](crate::model::ModelScores).
@@ -5742,7 +5526,7 @@ impl ModelScores {
 
 /// <p>A pre-formed Amazon SageMaker model input you can include if your detector version includes an imported Amazon SageMaker model endpoint with pass-through input configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelEndpointDataBlob {
     /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
     #[doc(hidden)]
@@ -5759,14 +5543,6 @@ impl ModelEndpointDataBlob {
     /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ModelEndpointDataBlob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelEndpointDataBlob");
-        formatter.field("byte_buffer", &self.byte_buffer);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`ModelEndpointDataBlob`](crate::model::ModelEndpointDataBlob).
@@ -5820,7 +5596,7 @@ impl ModelEndpointDataBlob {
 
 /// <p>The event details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The event ID.</p>
     #[doc(hidden)]
@@ -5876,19 +5652,6 @@ impl Event {
     /// <p>The event entities.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
         self.entities.as_deref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("event_timestamp", &self.event_timestamp);
-        formatter.field("event_variables", &self.event_variables);
-        formatter.field("current_label", &self.current_label);
-        formatter.field("label_timestamp", &self.label_timestamp);
-        formatter.field("entities", &self.entities);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -6037,7 +5800,7 @@ impl Event {
 
 /// <p>The entity type details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityType {
     /// <p>The entity type name.</p>
     #[doc(hidden)]
@@ -6075,17 +5838,6 @@ impl EntityType {
     /// <p>The entity type ARN.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityType");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`EntityType`](crate::model::EntityType).
@@ -6175,7 +5927,7 @@ impl EntityType {
 
 /// <p>The detector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Detector {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
@@ -6220,18 +5972,6 @@ impl Detector {
     /// <p>The detector ARN.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Detector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Detector");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("description", &self.description);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Detector`](crate::model::Detector).
@@ -6453,7 +6193,7 @@ impl AsRef<str> for AsyncJobStatus {
 
 /// <p>The batch prediction details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPrediction {
     /// <p>The job ID for the batch prediction.</p>
     #[doc(hidden)]
@@ -6561,27 +6301,6 @@ impl BatchPrediction {
     /// <p>The total number of records in the batch prediction job.</p>
     pub fn total_records_count(&self) -> std::option::Option<i32> {
         self.total_records_count
-    }
-}
-impl std::fmt::Debug for BatchPrediction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPrediction");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("last_heartbeat_time", &self.last_heartbeat_time);
-        formatter.field("input_path", &self.input_path);
-        formatter.field("output_path", &self.output_path);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("detector_name", &self.detector_name);
-        formatter.field("detector_version", &self.detector_version);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("arn", &self.arn);
-        formatter.field("processed_records_count", &self.processed_records_count);
-        formatter.field("total_records_count", &self.total_records_count);
-        formatter.finish()
     }
 }
 /// See [`BatchPrediction`](crate::model::BatchPrediction).
@@ -6809,7 +6528,7 @@ impl BatchPrediction {
 
 /// <p>The batch import job details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchImport {
     /// <p>The ID of the batch import job. </p>
     #[doc(hidden)]
@@ -6903,25 +6622,6 @@ impl BatchImport {
     /// <p>The total number of records in the batch import job.</p>
     pub fn total_records_count(&self) -> std::option::Option<i32> {
         self.total_records_count
-    }
-}
-impl std::fmt::Debug for BatchImport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchImport");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("input_path", &self.input_path);
-        formatter.field("output_path", &self.output_path);
-        formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("arn", &self.arn);
-        formatter.field("processed_records_count", &self.processed_records_count);
-        formatter.field("failed_records_count", &self.failed_records_count);
-        formatter.field("total_records_count", &self.total_records_count);
-        formatter.finish()
     }
 }
 /// See [`BatchImport`](crate::model::BatchImport).
@@ -7116,7 +6816,7 @@ impl BatchImport {
 
 /// <p>The details of the model version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelVersionDetail {
     /// <p>The model ID.</p>
     #[doc(hidden)]
@@ -7216,25 +6916,6 @@ impl ModelVersionDetail {
     /// <p> The training result details. The details include the relative importance of the variables. </p>
     pub fn training_result_v2(&self) -> std::option::Option<&crate::model::TrainingResultV2> {
         self.training_result_v2.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelVersionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelVersionDetail");
-        formatter.field("model_id", &self.model_id);
-        formatter.field("model_type", &self.model_type);
-        formatter.field("model_version_number", &self.model_version_number);
-        formatter.field("status", &self.status);
-        formatter.field("training_data_source", &self.training_data_source);
-        formatter.field("training_data_schema", &self.training_data_schema);
-        formatter.field("external_events_detail", &self.external_events_detail);
-        formatter.field("ingested_events_detail", &self.ingested_events_detail);
-        formatter.field("training_result", &self.training_result);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
-        formatter.field("training_result_v2", &self.training_result_v2);
-        formatter.finish()
     }
 }
 /// See [`ModelVersionDetail`](crate::model::ModelVersionDetail).
@@ -7444,7 +7125,7 @@ impl ModelVersionDetail {
 
 /// <p> The training result details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrainingResultV2 {
     /// <p>The model training data validation metrics.</p>
     #[doc(hidden)]
@@ -7484,22 +7165,6 @@ impl TrainingResultV2 {
         &self,
     ) -> std::option::Option<&crate::model::AggregatedVariablesImportanceMetrics> {
         self.aggregated_variables_importance_metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for TrainingResultV2 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingResultV2");
-        formatter.field("data_validation_metrics", &self.data_validation_metrics);
-        formatter.field("training_metrics_v2", &self.training_metrics_v2);
-        formatter.field(
-            "variable_importance_metrics",
-            &self.variable_importance_metrics,
-        );
-        formatter.field(
-            "aggregated_variables_importance_metrics",
-            &self.aggregated_variables_importance_metrics,
-        );
-        formatter.finish()
     }
 }
 /// See [`TrainingResultV2`](crate::model::TrainingResultV2).
@@ -7602,7 +7267,7 @@ impl TrainingResultV2 {
 /// <p>The details of the relative importance of the aggregated variables.</p>
 /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedVariablesImportanceMetrics {
     /// <p> List of variables' metrics. </p>
     #[doc(hidden)]
@@ -7614,13 +7279,6 @@ impl AggregatedVariablesImportanceMetrics {
         &self,
     ) -> std::option::Option<&[crate::model::AggregatedLogOddsMetric]> {
         self.log_odds_metrics.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregatedVariablesImportanceMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedVariablesImportanceMetrics");
-        formatter.field("log_odds_metrics", &self.log_odds_metrics);
-        formatter.finish()
     }
 }
 /// See [`AggregatedVariablesImportanceMetrics`](crate::model::AggregatedVariablesImportanceMetrics).
@@ -7670,7 +7328,7 @@ impl AggregatedVariablesImportanceMetrics {
 /// <p>The log odds metric details.</p>
 /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedLogOddsMetric {
     /// <p> The names of all the variables. </p>
     #[doc(hidden)]
@@ -7687,17 +7345,6 @@ impl AggregatedLogOddsMetric {
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
     pub fn aggregated_variables_importance(&self) -> std::option::Option<f32> {
         self.aggregated_variables_importance
-    }
-}
-impl std::fmt::Debug for AggregatedLogOddsMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedLogOddsMetric");
-        formatter.field("variable_names", &self.variable_names);
-        formatter.field(
-            "aggregated_variables_importance",
-            &self.aggregated_variables_importance,
-        );
-        formatter.finish()
     }
 }
 /// See [`AggregatedLogOddsMetric`](crate::model::AggregatedLogOddsMetric).
@@ -7760,7 +7407,7 @@ impl AggregatedLogOddsMetric {
 
 /// <p>The variable importance metrics details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VariableImportanceMetrics {
     /// <p>List of variable metrics.</p>
     #[doc(hidden)]
@@ -7770,13 +7417,6 @@ impl VariableImportanceMetrics {
     /// <p>List of variable metrics.</p>
     pub fn log_odds_metrics(&self) -> std::option::Option<&[crate::model::LogOddsMetric]> {
         self.log_odds_metrics.as_deref()
-    }
-}
-impl std::fmt::Debug for VariableImportanceMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VariableImportanceMetrics");
-        formatter.field("log_odds_metrics", &self.log_odds_metrics);
-        formatter.finish()
     }
 }
 /// See [`VariableImportanceMetrics`](crate::model::VariableImportanceMetrics).
@@ -7825,7 +7465,7 @@ impl VariableImportanceMetrics {
 
 /// <p>The log odds metric details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogOddsMetric {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -7849,15 +7489,6 @@ impl LogOddsMetric {
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
     pub fn variable_importance(&self) -> std::option::Option<f32> {
         self.variable_importance
-    }
-}
-impl std::fmt::Debug for LogOddsMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogOddsMetric");
-        formatter.field("variable_name", &self.variable_name);
-        formatter.field("variable_type", &self.variable_type);
-        formatter.field("variable_importance", &self.variable_importance);
-        formatter.finish()
     }
 }
 /// See [`LogOddsMetric`](crate::model::LogOddsMetric).
@@ -7926,7 +7557,7 @@ impl LogOddsMetric {
 
 /// <p> The training metrics details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrainingMetricsV2 {
     /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
     #[doc(hidden)]
@@ -7950,15 +7581,6 @@ impl TrainingMetricsV2 {
     /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
     pub fn ati(&self) -> std::option::Option<&crate::model::AtiTrainingMetricsValue> {
         self.ati.as_ref()
-    }
-}
-impl std::fmt::Debug for TrainingMetricsV2 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingMetricsV2");
-        formatter.field("ofi", &self.ofi);
-        formatter.field("tfi", &self.tfi);
-        formatter.field("ati", &self.ati);
-        formatter.finish()
     }
 }
 /// See [`TrainingMetricsV2`](crate::model::TrainingMetricsV2).
@@ -8030,7 +7652,7 @@ impl TrainingMetricsV2 {
 
 /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AtiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
     #[doc(hidden)]
@@ -8047,14 +7669,6 @@ impl AtiTrainingMetricsValue {
     /// <p> The model's overall performance scores. </p>
     pub fn model_performance(&self) -> std::option::Option<&crate::model::AtiModelPerformance> {
         self.model_performance.as_ref()
-    }
-}
-impl std::fmt::Debug for AtiTrainingMetricsValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AtiTrainingMetricsValue");
-        formatter.field("metric_data_points", &self.metric_data_points);
-        formatter.field("model_performance", &self.model_performance);
-        formatter.finish()
     }
 }
 /// See [`AtiTrainingMetricsValue`](crate::model::AtiTrainingMetricsValue).
@@ -8118,7 +7732,7 @@ impl AtiTrainingMetricsValue {
 
 /// <p> The Account Takeover Insights (ATI) model performance score. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AtiModelPerformance {
     /// <p> The anomaly separation index (ASI) score. This metric summarizes the overall ability of the model to separate anomalous activities from the normal behavior. Depending on the business, a large fraction of these anomalous activities can be malicious and correspond to the account takeover attacks. A model with no separability power will have the lowest possible ASI score of 0.5, whereas the a model with a high separability power will have the highest possible ASI score of 1.0 </p>
     #[doc(hidden)]
@@ -8128,13 +7742,6 @@ impl AtiModelPerformance {
     /// <p> The anomaly separation index (ASI) score. This metric summarizes the overall ability of the model to separate anomalous activities from the normal behavior. Depending on the business, a large fraction of these anomalous activities can be malicious and correspond to the account takeover attacks. A model with no separability power will have the lowest possible ASI score of 0.5, whereas the a model with a high separability power will have the highest possible ASI score of 1.0 </p>
     pub fn asi(&self) -> std::option::Option<f32> {
         self.asi
-    }
-}
-impl std::fmt::Debug for AtiModelPerformance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AtiModelPerformance");
-        formatter.field("asi", &self.asi);
-        formatter.finish()
     }
 }
 /// See [`AtiModelPerformance`](crate::model::AtiModelPerformance).
@@ -8171,7 +7778,7 @@ impl AtiModelPerformance {
 
 /// <p> The Account Takeover Insights (ATI) model performance metrics data points. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AtiMetricDataPoint {
     /// <p> The challenge rate. This indicates the percentage of login events that the model recommends to challenge such as one-time password, multi-factor authentication, and investigations. </p>
     #[doc(hidden)]
@@ -8202,16 +7809,6 @@ impl AtiMetricDataPoint {
     /// <p> The account takeover discovery rate. This metric quantifies the percentage of account compromise events that can be detected by the model at the selected score threshold. This metric is only available if 50 or more entities with at-least one labeled account takeover event is present in the ingested dataset. </p>
     pub fn atodr(&self) -> std::option::Option<f32> {
         self.atodr
-    }
-}
-impl std::fmt::Debug for AtiMetricDataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AtiMetricDataPoint");
-        formatter.field("cr", &self.cr);
-        formatter.field("adr", &self.adr);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("atodr", &self.atodr);
-        formatter.finish()
     }
 }
 /// See [`AtiMetricDataPoint`](crate::model::AtiMetricDataPoint).
@@ -8286,7 +7883,7 @@ impl AtiMetricDataPoint {
 
 /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TfiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
     #[doc(hidden)]
@@ -8303,14 +7900,6 @@ impl TfiTrainingMetricsValue {
     /// <p> The model performance score. </p>
     pub fn model_performance(&self) -> std::option::Option<&crate::model::TfiModelPerformance> {
         self.model_performance.as_ref()
-    }
-}
-impl std::fmt::Debug for TfiTrainingMetricsValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TfiTrainingMetricsValue");
-        formatter.field("metric_data_points", &self.metric_data_points);
-        formatter.field("model_performance", &self.model_performance);
-        formatter.finish()
     }
 }
 /// See [`TfiTrainingMetricsValue`](crate::model::TfiTrainingMetricsValue).
@@ -8374,7 +7963,7 @@ impl TfiTrainingMetricsValue {
 
 /// <p> The Transaction Fraud Insights (TFI) model performance score. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     #[doc(hidden)]
@@ -8384,13 +7973,6 @@ impl TfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     pub fn auc(&self) -> std::option::Option<f32> {
         self.auc
-    }
-}
-impl std::fmt::Debug for TfiModelPerformance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TfiModelPerformance");
-        formatter.field("auc", &self.auc);
-        formatter.finish()
     }
 }
 /// See [`TfiModelPerformance`](crate::model::TfiModelPerformance).
@@ -8427,7 +8009,7 @@ impl TfiModelPerformance {
 
 /// <p> The performance metrics data points for Transaction Fraud Insights (TFI) model. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TfiMetricDataPoint {
     /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
     #[doc(hidden)]
@@ -8458,16 +8040,6 @@ impl TfiMetricDataPoint {
     /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
     pub fn threshold(&self) -> std::option::Option<f32> {
         self.threshold
-    }
-}
-impl std::fmt::Debug for TfiMetricDataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TfiMetricDataPoint");
-        formatter.field("fpr", &self.fpr);
-        formatter.field("precision", &self.precision);
-        formatter.field("tpr", &self.tpr);
-        formatter.field("threshold", &self.threshold);
-        formatter.finish()
     }
 }
 /// See [`TfiMetricDataPoint`](crate::model::TfiMetricDataPoint).
@@ -8542,7 +8114,7 @@ impl TfiMetricDataPoint {
 
 /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OfiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
     #[doc(hidden)]
@@ -8559,14 +8131,6 @@ impl OfiTrainingMetricsValue {
     /// <p> The model's overall performance score. </p>
     pub fn model_performance(&self) -> std::option::Option<&crate::model::OfiModelPerformance> {
         self.model_performance.as_ref()
-    }
-}
-impl std::fmt::Debug for OfiTrainingMetricsValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OfiTrainingMetricsValue");
-        formatter.field("metric_data_points", &self.metric_data_points);
-        formatter.field("model_performance", &self.model_performance);
-        formatter.finish()
     }
 }
 /// See [`OfiTrainingMetricsValue`](crate::model::OfiTrainingMetricsValue).
@@ -8630,7 +8194,7 @@ impl OfiTrainingMetricsValue {
 
 /// <p> The Online Fraud Insights (OFI) model performance score. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     #[doc(hidden)]
@@ -8640,13 +8204,6 @@ impl OfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     pub fn auc(&self) -> std::option::Option<f32> {
         self.auc
-    }
-}
-impl std::fmt::Debug for OfiModelPerformance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OfiModelPerformance");
-        formatter.field("auc", &self.auc);
-        formatter.finish()
     }
 }
 /// See [`OfiModelPerformance`](crate::model::OfiModelPerformance).
@@ -8683,7 +8240,7 @@ impl OfiModelPerformance {
 
 /// <p> The Online Fraud Insights (OFI) model performance metrics data points. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OfiMetricDataPoint {
     /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
     #[doc(hidden)]
@@ -8714,16 +8271,6 @@ impl OfiMetricDataPoint {
     /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
     pub fn threshold(&self) -> std::option::Option<f32> {
         self.threshold
-    }
-}
-impl std::fmt::Debug for OfiMetricDataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OfiMetricDataPoint");
-        formatter.field("fpr", &self.fpr);
-        formatter.field("precision", &self.precision);
-        formatter.field("tpr", &self.tpr);
-        formatter.field("threshold", &self.threshold);
-        formatter.finish()
     }
 }
 /// See [`OfiMetricDataPoint`](crate::model::OfiMetricDataPoint).
@@ -8798,7 +8345,7 @@ impl OfiMetricDataPoint {
 
 /// <p>The model training data validation metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataValidationMetrics {
     /// <p>The file-specific model training data validation messages.</p>
     #[doc(hidden)]
@@ -8821,14 +8368,6 @@ impl DataValidationMetrics {
         &self,
     ) -> std::option::Option<&[crate::model::FieldValidationMessage]> {
         self.field_level_messages.as_deref()
-    }
-}
-impl std::fmt::Debug for DataValidationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataValidationMetrics");
-        formatter.field("file_level_messages", &self.file_level_messages);
-        formatter.field("field_level_messages", &self.field_level_messages);
-        formatter.finish()
     }
 }
 /// See [`DataValidationMetrics`](crate::model::DataValidationMetrics).
@@ -8899,7 +8438,7 @@ impl DataValidationMetrics {
 
 /// <p>The message details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldValidationMessage {
     /// <p>The field name.</p>
     #[doc(hidden)]
@@ -8937,17 +8476,6 @@ impl FieldValidationMessage {
     /// <p>The message type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldValidationMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldValidationMessage");
-        formatter.field("field_name", &self.field_name);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("title", &self.title);
-        formatter.field("content", &self.content);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`FieldValidationMessage`](crate::model::FieldValidationMessage).
@@ -9034,7 +8562,7 @@ impl FieldValidationMessage {
 
 /// <p>The message details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileValidationMessage {
     /// <p>The message title.</p>
     #[doc(hidden)]
@@ -9058,15 +8586,6 @@ impl FileValidationMessage {
     /// <p>The message type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for FileValidationMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileValidationMessage");
-        formatter.field("title", &self.title);
-        formatter.field("content", &self.content);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`FileValidationMessage`](crate::model::FileValidationMessage).
@@ -9129,7 +8648,7 @@ impl FileValidationMessage {
 
 /// <p>The training result details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrainingResult {
     /// <p>The validation metrics.</p>
     #[doc(hidden)]
@@ -9157,18 +8676,6 @@ impl TrainingResult {
         &self,
     ) -> std::option::Option<&crate::model::VariableImportanceMetrics> {
         self.variable_importance_metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for TrainingResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingResult");
-        formatter.field("data_validation_metrics", &self.data_validation_metrics);
-        formatter.field("training_metrics", &self.training_metrics);
-        formatter.field(
-            "variable_importance_metrics",
-            &self.variable_importance_metrics,
-        );
-        formatter.finish()
     }
 }
 /// See [`TrainingResult`](crate::model::TrainingResult).
@@ -9248,7 +8755,7 @@ impl TrainingResult {
 
 /// <p>The training metric details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrainingMetrics {
     /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
     #[doc(hidden)]
@@ -9265,14 +8772,6 @@ impl TrainingMetrics {
     /// <p>The data points details.</p>
     pub fn metric_data_points(&self) -> std::option::Option<&[crate::model::MetricDataPoint]> {
         self.metric_data_points.as_deref()
-    }
-}
-impl std::fmt::Debug for TrainingMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingMetrics");
-        formatter.field("auc", &self.auc);
-        formatter.field("metric_data_points", &self.metric_data_points);
-        formatter.finish()
     }
 }
 /// See [`TrainingMetrics`](crate::model::TrainingMetrics).
@@ -9333,7 +8832,7 @@ impl TrainingMetrics {
 
 /// <p>Model performance metrics data points.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDataPoint {
     /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
     #[doc(hidden)]
@@ -9364,16 +8863,6 @@ impl MetricDataPoint {
     /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
     pub fn threshold(&self) -> std::option::Option<f32> {
         self.threshold
-    }
-}
-impl std::fmt::Debug for MetricDataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDataPoint");
-        formatter.field("fpr", &self.fpr);
-        formatter.field("precision", &self.precision);
-        formatter.field("tpr", &self.tpr);
-        formatter.field("threshold", &self.threshold);
-        formatter.finish()
     }
 }
 /// See [`MetricDataPoint`](crate::model::MetricDataPoint).
@@ -9448,7 +8937,7 @@ impl MetricDataPoint {
 
 /// <p>The summary of the detector version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorVersionSummary {
     /// <p>The detector version ID. </p>
     #[doc(hidden)]
@@ -9479,16 +8968,6 @@ impl DetectorVersionSummary {
     /// <p>Timestamp of when the detector version was last updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&str> {
         self.last_updated_time.as_deref()
-    }
-}
-impl std::fmt::Debug for DetectorVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorVersionSummary");
-        formatter.field("detector_version_id", &self.detector_version_id);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`DetectorVersionSummary`](crate::model::DetectorVersionSummary).
@@ -9572,7 +9051,7 @@ impl DetectorVersionSummary {
 
 /// <p>Provides the error of the batch get variable API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetVariableError {
     /// <p>The error name. </p>
     #[doc(hidden)]
@@ -9596,15 +9075,6 @@ impl BatchGetVariableError {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetVariableError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetVariableError");
-        formatter.field("name", &self.name);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchGetVariableError`](crate::model::BatchGetVariableError).
@@ -9667,7 +9137,7 @@ impl BatchGetVariableError {
 
 /// <p>Provides the error of the batch create variable API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateVariableError {
     /// <p>The name.</p>
     #[doc(hidden)]
@@ -9691,15 +9161,6 @@ impl BatchCreateVariableError {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateVariableError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateVariableError");
-        formatter.field("name", &self.name);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchCreateVariableError`](crate::model::BatchCreateVariableError).
@@ -9762,7 +9223,7 @@ impl BatchCreateVariableError {
 
 /// <p>A variable in the list of variables for the batch create variable request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VariableEntry {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -9809,18 +9270,6 @@ impl VariableEntry {
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
     pub fn variable_type(&self) -> std::option::Option<&str> {
         self.variable_type.as_deref()
-    }
-}
-impl std::fmt::Debug for VariableEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VariableEntry");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("description", &self.description);
-        formatter.field("variable_type", &self.variable_type);
-        formatter.finish()
     }
 }
 /// See [`VariableEntry`](crate::model::VariableEntry).

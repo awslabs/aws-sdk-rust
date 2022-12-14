@@ -2,7 +2,7 @@
 
 /// <p> Specifies configuration information for the output results from for the inference, including KMS key ID and output S3 location. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceOutputConfiguration {
     /// <p> Specifies configuration information for the output results from for the inference, output S3 location. </p>
     #[doc(hidden)]
@@ -21,14 +21,6 @@ impl InferenceOutputConfiguration {
     /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InferenceOutputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceOutputConfiguration");
-        formatter.field("s3_output_configuration", &self.s3_output_configuration);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
@@ -86,7 +78,7 @@ impl InferenceOutputConfiguration {
 
 /// <p> Specifies configuration information for the output results from the inference, including output S3 location. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceS3OutputConfiguration {
     /// <p> The bucket containing the output results from the inference </p>
     #[doc(hidden)]
@@ -103,14 +95,6 @@ impl InferenceS3OutputConfiguration {
     /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for InferenceS3OutputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceS3OutputConfiguration");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
@@ -161,7 +145,7 @@ impl InferenceS3OutputConfiguration {
 
 /// <p>Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceInputConfiguration {
     /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
     #[doc(hidden)]
@@ -190,18 +174,6 @@ impl InferenceInputConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::InferenceInputNameConfiguration> {
         self.inference_input_name_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for InferenceInputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceInputConfiguration");
-        formatter.field("s3_input_configuration", &self.s3_input_configuration);
-        formatter.field("input_time_zone_offset", &self.input_time_zone_offset);
-        formatter.field(
-            "inference_input_name_configuration",
-            &self.inference_input_name_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
@@ -281,7 +253,7 @@ impl InferenceInputConfiguration {
 
 /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceInputNameConfiguration {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
     #[doc(hidden)]
@@ -298,17 +270,6 @@ impl InferenceInputNameConfiguration {
     /// <p>Indicates the delimiter character used between items in the data. </p>
     pub fn component_timestamp_delimiter(&self) -> std::option::Option<&str> {
         self.component_timestamp_delimiter.as_deref()
-    }
-}
-impl std::fmt::Debug for InferenceInputNameConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceInputNameConfiguration");
-        formatter.field("timestamp_format", &self.timestamp_format);
-        formatter.field(
-            "component_timestamp_delimiter",
-            &self.component_timestamp_delimiter,
-        );
-        formatter.finish()
     }
 }
 /// See [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
@@ -368,7 +329,7 @@ impl InferenceInputNameConfiguration {
 
 /// <p> Specifies configuration information for the input data for the inference, including input data S3 location. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceS3InputConfiguration {
     /// <p>The bucket containing the input dataset for the inference. </p>
     #[doc(hidden)]
@@ -385,14 +346,6 @@ impl InferenceS3InputConfiguration {
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for InferenceS3InputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceS3InputConfiguration");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
@@ -550,7 +503,7 @@ impl AsRef<str> for DataUploadFrequency {
 
 /// <p>A tag is a key-value pair that can be added to a resource as metadata. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key for the specified tag. </p>
     #[doc(hidden)]
@@ -567,14 +520,6 @@ impl Tag {
     /// <p>The value for the specified tag. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -824,7 +769,7 @@ impl AsRef<str> for IngestionJobStatus {
 
 /// <p> Specifies configuration information for the input data for the data ingestion job, including input data S3 location. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestionInputConfiguration {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
     #[doc(hidden)]
@@ -836,13 +781,6 @@ impl IngestionInputConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::IngestionS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for IngestionInputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestionInputConfiguration");
-        formatter.field("s3_input_configuration", &self.s3_input_configuration);
-        formatter.finish()
     }
 }
 /// See [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
@@ -888,7 +826,7 @@ impl IngestionInputConfiguration {
 
 /// <p> Specifies S3 configuration information for the input data for the data ingestion job. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestionS3InputConfiguration {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
     #[doc(hidden)]
@@ -912,15 +850,6 @@ impl IngestionS3InputConfiguration {
     /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
     pub fn key_pattern(&self) -> std::option::Option<&str> {
         self.key_pattern.as_deref()
-    }
-}
-impl std::fmt::Debug for IngestionS3InputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestionS3InputConfiguration");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("key_pattern", &self.key_pattern);
-        formatter.finish()
     }
 }
 /// See [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
@@ -983,7 +912,7 @@ impl IngestionS3InputConfiguration {
 
 /// <p> Summary of ingestion statistics like whether data exists, number of missing values, number of invalid values and so on related to the particular sensor. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SensorStatisticsSummary {
     /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
     #[doc(hidden)]
@@ -1079,25 +1008,6 @@ impl SensorStatisticsSummary {
     /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
     pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SensorStatisticsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SensorStatisticsSummary");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("sensor_name", &self.sensor_name);
-        formatter.field("data_exists", &self.data_exists);
-        formatter.field("missing_values", &self.missing_values);
-        formatter.field("invalid_values", &self.invalid_values);
-        formatter.field("invalid_date_entries", &self.invalid_date_entries);
-        formatter.field("duplicate_timestamps", &self.duplicate_timestamps);
-        formatter.field("categorical_values", &self.categorical_values);
-        formatter.field("multiple_operating_modes", &self.multiple_operating_modes);
-        formatter.field("large_timestamp_gaps", &self.large_timestamp_gaps);
-        formatter.field("monotonic_values", &self.monotonic_values);
-        formatter.field("data_start_time", &self.data_start_time);
-        formatter.field("data_end_time", &self.data_end_time);
-        formatter.finish()
     }
 }
 /// See [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
@@ -1317,7 +1227,7 @@ impl SensorStatisticsSummary {
 
 /// <p> Entity that comprises information on monotonic values in the data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonotonicValues {
     /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
     #[doc(hidden)]
@@ -1334,14 +1244,6 @@ impl MonotonicValues {
     /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
     pub fn monotonicity(&self) -> std::option::Option<&crate::model::Monotonicity> {
         self.monotonicity.as_ref()
-    }
-}
-impl std::fmt::Debug for MonotonicValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonotonicValues");
-        formatter.field("status", &self.status);
-        formatter.field("monotonicity", &self.monotonicity);
-        formatter.finish()
     }
 }
 /// See [`MonotonicValues`](crate::model::MonotonicValues).
@@ -1585,7 +1487,7 @@ impl AsRef<str> for StatisticalIssueStatus {
 
 /// <p> Entity that comprises information on large gaps between consecutive timestamps in data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LargeTimestampGaps {
     /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
     #[doc(hidden)]
@@ -1609,18 +1511,6 @@ impl LargeTimestampGaps {
     /// <p> Indicates the size of the largest timestamp gap, in days. </p>
     pub fn max_timestamp_gap_in_days(&self) -> std::option::Option<i32> {
         self.max_timestamp_gap_in_days
-    }
-}
-impl std::fmt::Debug for LargeTimestampGaps {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LargeTimestampGaps");
-        formatter.field("status", &self.status);
-        formatter.field(
-            "number_of_large_timestamp_gaps",
-            &self.number_of_large_timestamp_gaps,
-        );
-        formatter.field("max_timestamp_gap_in_days", &self.max_timestamp_gap_in_days);
-        formatter.finish()
     }
 }
 /// See [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
@@ -1689,7 +1579,7 @@ impl LargeTimestampGaps {
 
 /// <p> Entity that comprises information on operating modes in data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
     #[doc(hidden)]
@@ -1699,13 +1589,6 @@ impl MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for MultipleOperatingModes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultipleOperatingModes");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
@@ -1747,7 +1630,7 @@ impl MultipleOperatingModes {
 
 /// <p> Entity that comprises information on categorical values in data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
     #[doc(hidden)]
@@ -1764,14 +1647,6 @@ impl CategoricalValues {
     /// <p> Indicates the number of categories in the data. </p>
     pub fn number_of_category(&self) -> std::option::Option<i32> {
         self.number_of_category
-    }
-}
-impl std::fmt::Debug for CategoricalValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CategoricalValues");
-        formatter.field("status", &self.status);
-        formatter.field("number_of_category", &self.number_of_category);
-        formatter.finish()
     }
 }
 /// See [`CategoricalValues`](crate::model::CategoricalValues).
@@ -1825,7 +1700,7 @@ impl CategoricalValues {
 
 /// <p> Entity that comprises information of count and percentage. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountPercent {
     /// <p> Indicates the count of occurences of the given statistic. </p>
     #[doc(hidden)]
@@ -1842,14 +1717,6 @@ impl CountPercent {
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
     pub fn percentage(&self) -> f32 {
         self.percentage
-    }
-}
-impl std::fmt::Debug for CountPercent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountPercent");
-        formatter.field("count", &self.count);
-        formatter.field("percentage", &self.percentage);
-        formatter.finish()
     }
 }
 /// See [`CountPercent`](crate::model::CountPercent).
@@ -1900,7 +1767,7 @@ impl CountPercent {
 
 /// <p>Provides information about the specified ML model, including dataset and model names and ARNs, as well as status. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelSummary {
     /// <p>The name of the ML model. </p>
     #[doc(hidden)]
@@ -1945,18 +1812,6 @@ impl ModelSummary {
     /// <p>The time at which the specific model was created. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelSummary");
-        formatter.field("model_name", &self.model_name);
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`ModelSummary`](crate::model::ModelSummary).
@@ -2153,7 +2008,7 @@ impl AsRef<str> for ModelStatus {
 
 /// <p> Information about the label. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelSummary {
     /// <p> The name of the label group. </p>
     #[doc(hidden)]
@@ -2221,21 +2076,6 @@ impl LabelSummary {
     /// <p> The time at which the label was created. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for LabelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelSummary");
-        formatter.field("label_group_name", &self.label_group_name);
-        formatter.field("label_id", &self.label_id);
-        formatter.field("label_group_arn", &self.label_group_arn);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("rating", &self.rating);
-        formatter.field("fault_code", &self.fault_code);
-        formatter.field("equipment", &self.equipment);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`LabelSummary`](crate::model::LabelSummary).
@@ -2482,7 +2322,7 @@ impl AsRef<str> for LabelRating {
 
 /// <p> Contains information about the label group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelGroupSummary {
     /// <p> The name of the label group. </p>
     #[doc(hidden)]
@@ -2513,16 +2353,6 @@ impl LabelGroupSummary {
     /// <p> The time at which the label group was updated. </p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for LabelGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelGroupSummary");
-        formatter.field("label_group_name", &self.label_group_name);
-        formatter.field("label_group_arn", &self.label_group_arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`LabelGroupSummary`](crate::model::LabelGroupSummary).
@@ -2609,7 +2439,7 @@ impl LabelGroupSummary {
 
 /// <p>Contains information about the specific inference scheduler, including data delay offset, model name and ARN, status, and so on. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceSchedulerSummary {
     /// <p>The name of the ML model used for the inference scheduler. </p>
     #[doc(hidden)]
@@ -2670,23 +2500,6 @@ impl InferenceSchedulerSummary {
         &self,
     ) -> std::option::Option<&crate::model::LatestInferenceResult> {
         self.latest_inference_result.as_ref()
-    }
-}
-impl std::fmt::Debug for InferenceSchedulerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceSchedulerSummary");
-        formatter.field("model_name", &self.model_name);
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
-        formatter.field("inference_scheduler_arn", &self.inference_scheduler_arn);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "data_delay_offset_in_minutes",
-            &self.data_delay_offset_in_minutes,
-        );
-        formatter.field("data_upload_frequency", &self.data_upload_frequency);
-        formatter.field("latest_inference_result", &self.latest_inference_result);
-        formatter.finish()
     }
 }
 /// See [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
@@ -2920,7 +2733,7 @@ impl AsRef<str> for LatestInferenceResult {
 
 /// <p>Contains information about the specific inference execution, including input and output data configuration, inference scheduling information, status, and so on. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceExecutionSummary {
     /// <p>The name of the ML model being used for the inference execution. </p>
     #[doc(hidden)]
@@ -3011,24 +2824,6 @@ impl InferenceExecutionSummary {
     /// <p> Specifies the reason for failure when an inference execution has failed. </p>
     pub fn failed_reason(&self) -> std::option::Option<&str> {
         self.failed_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for InferenceExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceExecutionSummary");
-        formatter.field("model_name", &self.model_name);
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
-        formatter.field("inference_scheduler_arn", &self.inference_scheduler_arn);
-        formatter.field("scheduled_start_time", &self.scheduled_start_time);
-        formatter.field("data_start_time", &self.data_start_time);
-        formatter.field("data_end_time", &self.data_end_time);
-        formatter.field("data_input_configuration", &self.data_input_configuration);
-        formatter.field("data_output_configuration", &self.data_output_configuration);
-        formatter.field("customer_result_object", &self.customer_result_object);
-        formatter.field("status", &self.status);
-        formatter.field("failed_reason", &self.failed_reason);
-        formatter.finish()
     }
 }
 /// See [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
@@ -3334,7 +3129,7 @@ impl AsRef<str> for InferenceExecutionStatus {
 
 /// <p>Contains information about an S3 bucket. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Object {
     /// <p>The name of the specific S3 bucket. </p>
     #[doc(hidden)]
@@ -3351,14 +3146,6 @@ impl S3Object {
     /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Object {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Object");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`S3Object`](crate::model::S3Object).
@@ -3409,7 +3196,7 @@ impl S3Object {
 
 /// <p>Contains information about the specific inference event, including start and end time, diagnostics information, event duration and so on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceEventSummary {
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
     #[doc(hidden)]
@@ -3454,18 +3241,6 @@ impl InferenceEventSummary {
     /// <p> Indicates the size of an inference event in seconds. </p>
     pub fn event_duration_in_seconds(&self) -> std::option::Option<i64> {
         self.event_duration_in_seconds
-    }
-}
-impl std::fmt::Debug for InferenceEventSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceEventSummary");
-        formatter.field("inference_scheduler_arn", &self.inference_scheduler_arn);
-        formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
-        formatter.field("event_start_time", &self.event_start_time);
-        formatter.field("event_end_time", &self.event_end_time);
-        formatter.field("diagnostics", &self.diagnostics);
-        formatter.field("event_duration_in_seconds", &self.event_duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`InferenceEventSummary`](crate::model::InferenceEventSummary).
@@ -3576,7 +3351,7 @@ impl InferenceEventSummary {
 
 /// <p>Contains information about the specific data set, including name, ARN, and status. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset. </p>
     #[doc(hidden)]
@@ -3607,16 +3382,6 @@ impl DatasetSummary {
     /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSummary");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
@@ -3792,7 +3557,7 @@ impl AsRef<str> for DatasetStatus {
 
 /// <p>Provides information about a specified data ingestion job, including dataset information, data ingestion configuration, and status. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataIngestionJobSummary {
     /// <p>Indicates the job ID of the data ingestion job. </p>
     #[doc(hidden)]
@@ -3833,20 +3598,6 @@ impl DataIngestionJobSummary {
     /// <p>Indicates the status of the data ingestion job. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for DataIngestionJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataIngestionJobSummary");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field(
-            "ingestion_input_configuration",
-            &self.ingestion_input_configuration,
-        );
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
@@ -3944,7 +3695,7 @@ impl DataIngestionJobSummary {
 /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
 /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataPreProcessingConfiguration {
     /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
@@ -3956,13 +3707,6 @@ impl DataPreProcessingConfiguration {
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     pub fn target_sampling_rate(&self) -> std::option::Option<&crate::model::TargetSamplingRate> {
         self.target_sampling_rate.as_ref()
-    }
-}
-impl std::fmt::Debug for DataPreProcessingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataPreProcessingConfiguration");
-        formatter.field("target_sampling_rate", &self.target_sampling_rate);
-        formatter.finish()
     }
 }
 /// See [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
@@ -4146,7 +3890,7 @@ impl AsRef<str> for TargetSamplingRate {
 
 /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelsInputConfiguration {
     /// <p>Contains location information for the S3 location being used for label data. </p>
     #[doc(hidden)]
@@ -4165,14 +3909,6 @@ impl LabelsInputConfiguration {
     /// <p> The name of the label group to be used for label data. </p>
     pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LabelsInputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelsInputConfiguration");
-        formatter.field("s3_input_configuration", &self.s3_input_configuration);
-        formatter.field("label_group_name", &self.label_group_name);
-        formatter.finish()
     }
 }
 /// See [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
@@ -4233,7 +3969,7 @@ impl LabelsInputConfiguration {
 
 /// <p>The location information (prefix and bucket name) for the s3 location being used for label data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelsS3InputConfiguration {
     /// <p>The name of the S3 bucket holding the label data. </p>
     #[doc(hidden)]
@@ -4250,14 +3986,6 @@ impl LabelsS3InputConfiguration {
     /// <p> The prefix for the S3 bucket used for the label data. </p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for LabelsS3InputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelsS3InputConfiguration");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
@@ -4308,7 +4036,7 @@ impl LabelsS3InputConfiguration {
 
 /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestedFilesSummary {
     /// <p>Indicates the total number of files that were submitted for ingestion.</p>
     #[doc(hidden)]
@@ -4332,15 +4060,6 @@ impl IngestedFilesSummary {
     /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
     pub fn discarded_files(&self) -> std::option::Option<&[crate::model::S3Object]> {
         self.discarded_files.as_deref()
-    }
-}
-impl std::fmt::Debug for IngestedFilesSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestedFilesSummary");
-        formatter.field("total_number_of_files", &self.total_number_of_files);
-        formatter.field("ingested_number_of_files", &self.ingested_number_of_files);
-        formatter.field("discarded_files", &self.discarded_files);
-        formatter.finish()
     }
 }
 /// See [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
@@ -4412,7 +4131,7 @@ impl IngestedFilesSummary {
 
 /// <p> DataQualitySummary gives aggregated statistics over all the sensors about a completed ingestion job. It primarily gives more information about statistics over different incorrect data like MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, DuplicateTimeStamps. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataQualitySummary {
     /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
     #[doc(hidden)]
@@ -4454,17 +4173,6 @@ impl DataQualitySummary {
     /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
     pub fn duplicate_timestamps(&self) -> std::option::Option<&crate::model::DuplicateTimestamps> {
         self.duplicate_timestamps.as_ref()
-    }
-}
-impl std::fmt::Debug for DataQualitySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataQualitySummary");
-        formatter.field("insufficient_sensor_data", &self.insufficient_sensor_data);
-        formatter.field("missing_sensor_data", &self.missing_sensor_data);
-        formatter.field("invalid_sensor_data", &self.invalid_sensor_data);
-        formatter.field("unsupported_timestamps", &self.unsupported_timestamps);
-        formatter.field("duplicate_timestamps", &self.duplicate_timestamps);
-        formatter.finish()
     }
 }
 /// See [`DataQualitySummary`](crate::model::DataQualitySummary).
@@ -4573,7 +4281,7 @@ impl DataQualitySummary {
 
 /// <p> Entity that comprises information abount duplicate timestamps in the dataset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateTimestamps {
     /// <p> Indicates the total number of duplicate timestamps. </p>
     #[doc(hidden)]
@@ -4583,16 +4291,6 @@ impl DuplicateTimestamps {
     /// <p> Indicates the total number of duplicate timestamps. </p>
     pub fn total_number_of_duplicate_timestamps(&self) -> std::option::Option<i32> {
         self.total_number_of_duplicate_timestamps
-    }
-}
-impl std::fmt::Debug for DuplicateTimestamps {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateTimestamps");
-        formatter.field(
-            "total_number_of_duplicate_timestamps",
-            &self.total_number_of_duplicate_timestamps,
-        );
-        formatter.finish()
     }
 }
 /// See [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
@@ -4634,7 +4332,7 @@ impl DuplicateTimestamps {
 
 /// <p> Entity that comprises information abount unsupported timestamps in the dataset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedTimestamps {
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
     #[doc(hidden)]
@@ -4644,16 +4342,6 @@ impl UnsupportedTimestamps {
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
     pub fn total_number_of_unsupported_timestamps(&self) -> std::option::Option<i32> {
         self.total_number_of_unsupported_timestamps
-    }
-}
-impl std::fmt::Debug for UnsupportedTimestamps {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedTimestamps");
-        formatter.field(
-            "total_number_of_unsupported_timestamps",
-            &self.total_number_of_unsupported_timestamps,
-        );
-        formatter.finish()
     }
 }
 /// See [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
@@ -4695,7 +4383,7 @@ impl UnsupportedTimestamps {
 
 /// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSensorData {
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
     #[doc(hidden)]
@@ -4712,17 +4400,6 @@ impl InvalidSensorData {
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
     pub fn total_number_of_invalid_values(&self) -> std::option::Option<i32> {
         self.total_number_of_invalid_values
-    }
-}
-impl std::fmt::Debug for InvalidSensorData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSensorData");
-        formatter.field("affected_sensor_count", &self.affected_sensor_count);
-        formatter.field(
-            "total_number_of_invalid_values",
-            &self.total_number_of_invalid_values,
-        );
-        formatter.finish()
     }
 }
 /// See [`InvalidSensorData`](crate::model::InvalidSensorData).
@@ -4776,7 +4453,7 @@ impl InvalidSensorData {
 
 /// <p> Entity that comprises aggregated information on sensors having missing data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingSensorData {
     /// <p> Indicates the number of sensors that have atleast some data missing. </p>
     #[doc(hidden)]
@@ -4793,17 +4470,6 @@ impl MissingSensorData {
     /// <p> Indicates the total number of missing values across all the sensors. </p>
     pub fn total_number_of_missing_values(&self) -> std::option::Option<i32> {
         self.total_number_of_missing_values
-    }
-}
-impl std::fmt::Debug for MissingSensorData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingSensorData");
-        formatter.field("affected_sensor_count", &self.affected_sensor_count);
-        formatter.field(
-            "total_number_of_missing_values",
-            &self.total_number_of_missing_values,
-        );
-        formatter.finish()
     }
 }
 /// See [`MissingSensorData`](crate::model::MissingSensorData).
@@ -4857,7 +4523,7 @@ impl MissingSensorData {
 
 /// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientSensorData {
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
     #[doc(hidden)]
@@ -4878,20 +4544,6 @@ impl InsufficientSensorData {
         &self,
     ) -> std::option::Option<&crate::model::SensorsWithShortDateRange> {
         self.sensors_with_short_date_range.as_ref()
-    }
-}
-impl std::fmt::Debug for InsufficientSensorData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientSensorData");
-        formatter.field(
-            "missing_complete_sensor_data",
-            &self.missing_complete_sensor_data,
-        );
-        formatter.field(
-            "sensors_with_short_date_range",
-            &self.sensors_with_short_date_range,
-        );
-        formatter.finish()
     }
 }
 /// See [`InsufficientSensorData`](crate::model::InsufficientSensorData).
@@ -4956,7 +4608,7 @@ impl InsufficientSensorData {
 
 /// <p> Entity that comprises information on sensors that have shorter date range. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SensorsWithShortDateRange {
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
     #[doc(hidden)]
@@ -4966,13 +4618,6 @@ impl SensorsWithShortDateRange {
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
     pub fn affected_sensor_count(&self) -> std::option::Option<i32> {
         self.affected_sensor_count
-    }
-}
-impl std::fmt::Debug for SensorsWithShortDateRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SensorsWithShortDateRange");
-        formatter.field("affected_sensor_count", &self.affected_sensor_count);
-        formatter.finish()
     }
 }
 /// See [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
@@ -5011,7 +4656,7 @@ impl SensorsWithShortDateRange {
 
 /// <p> Entity that comprises information on sensors that have sensor data completely missing. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingCompleteSensorData {
     /// <p> Indicates the number of sensors that have data missing completely. </p>
     #[doc(hidden)]
@@ -5021,13 +4666,6 @@ impl MissingCompleteSensorData {
     /// <p> Indicates the number of sensors that have data missing completely. </p>
     pub fn affected_sensor_count(&self) -> std::option::Option<i32> {
         self.affected_sensor_count
-    }
-}
-impl std::fmt::Debug for MissingCompleteSensorData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingCompleteSensorData");
-        formatter.field("affected_sensor_count", &self.affected_sensor_count);
-        formatter.finish()
     }
 }
 /// See [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
@@ -5066,7 +4704,7 @@ impl MissingCompleteSensorData {
 
 /// <p>Provides information about the data schema used with the given dataset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSchema {
     /// <p> </p>
     #[doc(hidden)]
@@ -5076,13 +4714,6 @@ impl DatasetSchema {
     /// <p> </p>
     pub fn inline_data_schema(&self) -> std::option::Option<&str> {
         self.inline_data_schema.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSchema");
-        formatter.field("inline_data_schema", &self.inline_data_schema);
-        formatter.finish()
     }
 }
 /// See [`DatasetSchema`](crate::model::DatasetSchema).

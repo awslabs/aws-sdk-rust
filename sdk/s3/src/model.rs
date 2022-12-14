@@ -599,7 +599,7 @@ impl AsRef<str> for ObjectLockMode {
 
 /// <p>Container for all response elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyPartResult {
     /// <p>Entity tag of the object.</p>
     #[doc(hidden)]
@@ -644,18 +644,6 @@ impl CopyPartResult {
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(&self) -> std::option::Option<&str> {
         self.checksum_sha256.as_deref()
-    }
-}
-impl std::fmt::Debug for CopyPartResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyPartResult");
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("checksum_crc32", &self.checksum_crc32);
-        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
-        formatter.field("checksum_sha1", &self.checksum_sha1);
-        formatter.field("checksum_sha256", &self.checksum_sha256);
-        formatter.finish()
     }
 }
 /// See [`CopyPartResult`](crate::model::CopyPartResult).
@@ -1055,14 +1043,8 @@ impl SelectObjectContentEventStream {
 
 /// <p>A message that indicates the request is complete and no more messages will be sent. You should not assume that the request is complete until the client receives an <code>EndEvent</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndEvent {}
-impl std::fmt::Debug for EndEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndEvent");
-        formatter.finish()
-    }
-}
 /// See [`EndEvent`](crate::model::EndEvent).
 pub mod end_event {
 
@@ -1085,14 +1067,8 @@ impl EndEvent {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinuationEvent {}
-impl std::fmt::Debug for ContinuationEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinuationEvent");
-        formatter.finish()
-    }
-}
 /// See [`ContinuationEvent`](crate::model::ContinuationEvent).
 pub mod continuation_event {
 
@@ -1115,7 +1091,7 @@ impl ContinuationEvent {
 
 /// <p>This data type contains information about the progress event of an operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProgressEvent {
     /// <p>The Progress event details.</p>
     #[doc(hidden)]
@@ -1125,13 +1101,6 @@ impl ProgressEvent {
     /// <p>The Progress event details.</p>
     pub fn details(&self) -> std::option::Option<&crate::model::Progress> {
         self.details.as_ref()
-    }
-}
-impl std::fmt::Debug for ProgressEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProgressEvent");
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`ProgressEvent`](crate::model::ProgressEvent).
@@ -1170,7 +1139,7 @@ impl ProgressEvent {
 
 /// <p>This data type contains information about progress of an operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Progress {
     /// <p>The current number of object bytes scanned.</p>
     #[doc(hidden)]
@@ -1194,15 +1163,6 @@ impl Progress {
     /// <p>The current number of bytes of records payload data returned.</p>
     pub fn bytes_returned(&self) -> i64 {
         self.bytes_returned
-    }
-}
-impl std::fmt::Debug for Progress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Progress");
-        formatter.field("bytes_scanned", &self.bytes_scanned);
-        formatter.field("bytes_processed", &self.bytes_processed);
-        formatter.field("bytes_returned", &self.bytes_returned);
-        formatter.finish()
     }
 }
 /// See [`Progress`](crate::model::Progress).
@@ -1265,7 +1225,7 @@ impl Progress {
 
 /// <p>Container for the Stats Event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatsEvent {
     /// <p>The Stats event details.</p>
     #[doc(hidden)]
@@ -1275,13 +1235,6 @@ impl StatsEvent {
     /// <p>The Stats event details.</p>
     pub fn details(&self) -> std::option::Option<&crate::model::Stats> {
         self.details.as_ref()
-    }
-}
-impl std::fmt::Debug for StatsEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatsEvent");
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`StatsEvent`](crate::model::StatsEvent).
@@ -1320,7 +1273,7 @@ impl StatsEvent {
 
 /// <p>Container for the stats details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stats {
     /// <p>The total number of object bytes scanned.</p>
     #[doc(hidden)]
@@ -1344,15 +1297,6 @@ impl Stats {
     /// <p>The total number of bytes of records payload data returned.</p>
     pub fn bytes_returned(&self) -> i64 {
         self.bytes_returned
-    }
-}
-impl std::fmt::Debug for Stats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stats");
-        formatter.field("bytes_scanned", &self.bytes_scanned);
-        formatter.field("bytes_processed", &self.bytes_processed);
-        formatter.field("bytes_returned", &self.bytes_returned);
-        formatter.finish()
     }
 }
 /// See [`Stats`](crate::model::Stats).
@@ -1415,7 +1359,7 @@ impl Stats {
 
 /// <p>The container for the records event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordsEvent {
     /// <p>The byte array of partial, one or more result records.</p>
     #[doc(hidden)]
@@ -1425,13 +1369,6 @@ impl RecordsEvent {
     /// <p>The byte array of partial, one or more result records.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for RecordsEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordsEvent");
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`RecordsEvent`](crate::model::RecordsEvent).
@@ -1470,7 +1407,7 @@ impl RecordsEvent {
 
 /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScanRange {
     /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
     /// <scanrange>
@@ -1507,14 +1444,6 @@ impl ScanRange {
     /// </scanrange></code> means scan the last 50 bytes.</p>
     pub fn end(&self) -> i64 {
         self.end
-    }
-}
-impl std::fmt::Debug for ScanRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScanRange");
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.finish()
     }
 }
 /// See [`ScanRange`](crate::model::ScanRange).
@@ -1585,7 +1514,7 @@ impl ScanRange {
 
 /// <p>Describes how results of the Select job are serialized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded Select results.</p>
     #[doc(hidden)]
@@ -1602,14 +1531,6 @@ impl OutputSerialization {
     /// <p>Specifies JSON as request's output serialization format.</p>
     pub fn json(&self) -> std::option::Option<&crate::model::JsonOutput> {
         self.json.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputSerialization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputSerialization");
-        formatter.field("csv", &self.csv);
-        formatter.field("json", &self.json);
-        formatter.finish()
     }
 }
 /// See [`OutputSerialization`](crate::model::OutputSerialization).
@@ -1660,7 +1581,7 @@ impl OutputSerialization {
 
 /// <p>Specifies JSON as request's output serialization format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonOutput {
     /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
     #[doc(hidden)]
@@ -1670,13 +1591,6 @@ impl JsonOutput {
     /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
     pub fn record_delimiter(&self) -> std::option::Option<&str> {
         self.record_delimiter.as_deref()
-    }
-}
-impl std::fmt::Debug for JsonOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonOutput");
-        formatter.field("record_delimiter", &self.record_delimiter);
-        formatter.finish()
     }
 }
 /// See [`JsonOutput`](crate::model::JsonOutput).
@@ -1718,7 +1632,7 @@ impl JsonOutput {
 
 /// <p>Describes how uncompressed comma-separated values (CSV)-formatted results are formatted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvOutput {
     /// <p>Indicates whether to use quotation marks around output fields. </p>
     /// <ul>
@@ -1764,17 +1678,6 @@ impl CsvOutput {
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     pub fn quote_character(&self) -> std::option::Option<&str> {
         self.quote_character.as_deref()
-    }
-}
-impl std::fmt::Debug for CsvOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvOutput");
-        formatter.field("quote_fields", &self.quote_fields);
-        formatter.field("quote_escape_character", &self.quote_escape_character);
-        formatter.field("record_delimiter", &self.record_delimiter);
-        formatter.field("field_delimiter", &self.field_delimiter);
-        formatter.field("quote_character", &self.quote_character);
-        formatter.finish()
     }
 }
 /// See [`CsvOutput`](crate::model::CsvOutput).
@@ -1974,7 +1877,7 @@ impl AsRef<str> for QuoteFields {
 
 /// <p>Describes the serialization format of the object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     #[doc(hidden)]
@@ -2005,16 +1908,6 @@ impl InputSerialization {
     /// <p>Specifies Parquet as object's input serialization format.</p>
     pub fn parquet(&self) -> std::option::Option<&crate::model::ParquetInput> {
         self.parquet.as_ref()
-    }
-}
-impl std::fmt::Debug for InputSerialization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSerialization");
-        formatter.field("csv", &self.csv);
-        formatter.field("compression_type", &self.compression_type);
-        formatter.field("json", &self.json);
-        formatter.field("parquet", &self.parquet);
-        formatter.finish()
     }
 }
 /// See [`InputSerialization`](crate::model::InputSerialization).
@@ -2095,14 +1988,8 @@ impl InputSerialization {
 
 /// <p>Container for Parquet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParquetInput {}
-impl std::fmt::Debug for ParquetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParquetInput");
-        formatter.finish()
-    }
-}
 /// See [`ParquetInput`](crate::model::ParquetInput).
 pub mod parquet_input {
 
@@ -2125,7 +2012,7 @@ impl ParquetInput {
 
 /// <p>Specifies JSON as object's input serialization format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonInput {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
     #[doc(hidden)]
@@ -2135,13 +2022,6 @@ impl JsonInput {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::JsonType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for JsonInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`JsonInput`](crate::model::JsonInput).
@@ -2365,7 +2245,7 @@ impl AsRef<str> for CompressionType {
 
 /// <p>Describes how an uncompressed comma-separated values (CSV)-formatted input object is formatted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvInput {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
@@ -2433,22 +2313,6 @@ impl CsvInput {
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
     pub fn allow_quoted_record_delimiter(&self) -> bool {
         self.allow_quoted_record_delimiter
-    }
-}
-impl std::fmt::Debug for CsvInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvInput");
-        formatter.field("file_header_info", &self.file_header_info);
-        formatter.field("comments", &self.comments);
-        formatter.field("quote_escape_character", &self.quote_escape_character);
-        formatter.field("record_delimiter", &self.record_delimiter);
-        formatter.field("field_delimiter", &self.field_delimiter);
-        formatter.field("quote_character", &self.quote_character);
-        formatter.field(
-            "allow_quoted_record_delimiter",
-            &self.allow_quoted_record_delimiter,
-        );
-        formatter.finish()
     }
 }
 /// See [`CsvInput`](crate::model::CsvInput).
@@ -2690,7 +2554,7 @@ impl AsRef<str> for FileHeaderInfo {
 
 /// <p>Container for specifying if periodic <code>QueryProgress</code> messages should be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestProgress {
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     #[doc(hidden)]
@@ -2700,13 +2564,6 @@ impl RequestProgress {
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for RequestProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestProgress");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`RequestProgress`](crate::model::RequestProgress).
@@ -2830,7 +2687,7 @@ impl AsRef<str> for ExpressionType {
 
 /// <p>Container for restore job parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreRequest {
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
     /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
@@ -2886,19 +2743,6 @@ impl RestoreRequest {
     /// <p>Describes the location where the restore job's output is stored.</p>
     pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
-    }
-}
-impl std::fmt::Debug for RestoreRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreRequest");
-        formatter.field("days", &self.days);
-        formatter.field("glacier_job_parameters", &self.glacier_job_parameters);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("tier", &self.tier);
-        formatter.field("description", &self.description);
-        formatter.field("select_parameters", &self.select_parameters);
-        formatter.field("output_location", &self.output_location);
-        formatter.finish()
     }
 }
 /// See [`RestoreRequest`](crate::model::RestoreRequest).
@@ -3023,7 +2867,7 @@ impl RestoreRequest {
 
 /// <p>Describes the location where the restore job's output is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the restore request.</p>
     #[doc(hidden)]
@@ -3033,13 +2877,6 @@ impl OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the restore request.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputLocation");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`OutputLocation`](crate::model::OutputLocation).
@@ -3076,7 +2913,7 @@ impl OutputLocation {
 
 /// <p>Describes an Amazon S3 location that will receive the results of the restore request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the bucket where the restore results will be placed.</p>
     #[doc(hidden)]
@@ -3135,20 +2972,6 @@ impl S3Location {
     /// <p>The class of storage used to store the restore results.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("canned_acl", &self.canned_acl);
-        formatter.field("access_control_list", &self.access_control_list);
-        formatter.field("tagging", &self.tagging);
-        formatter.field("user_metadata", &self.user_metadata);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -3298,7 +3121,7 @@ impl S3Location {
 
 /// <p>A metadata key-value pair to store with an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetadataEntry {
     /// <p>Name of the Object.</p>
     #[doc(hidden)]
@@ -3315,14 +3138,6 @@ impl MetadataEntry {
     /// <p>Value of the Object.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for MetadataEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetadataEntry");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MetadataEntry`](crate::model::MetadataEntry).
@@ -3373,7 +3188,7 @@ impl MetadataEntry {
 
 /// <p>Container for <code>TagSet</code> elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tagging {
     /// <p>A collection for a set of tags</p>
     #[doc(hidden)]
@@ -3383,13 +3198,6 @@ impl Tagging {
     /// <p>A collection for a set of tags</p>
     pub fn tag_set(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_set.as_deref()
-    }
-}
-impl std::fmt::Debug for Tagging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tagging");
-        formatter.field("tag_set", &self.tag_set);
-        formatter.finish()
     }
 }
 /// See [`Tagging`](crate::model::Tagging).
@@ -3437,7 +3245,7 @@ impl Tagging {
 
 /// <p>A container of a key value name pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Name of the object key.</p>
     #[doc(hidden)]
@@ -3454,14 +3262,6 @@ impl Tag {
     /// <p>Value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -3512,7 +3312,7 @@ impl Tag {
 
 /// <p>Container for grant information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Grant {
     /// <p>The person being granted permissions.</p>
     #[doc(hidden)]
@@ -3529,14 +3329,6 @@ impl Grant {
     /// <p>Specifies the permission given to the grantee.</p>
     pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
         self.permission.as_ref()
-    }
-}
-impl std::fmt::Debug for Grant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Grant");
-        formatter.field("grantee", &self.grantee);
-        formatter.field("permission", &self.permission);
-        formatter.finish()
     }
 }
 /// See [`Grant`](crate::model::Grant).
@@ -3695,7 +3487,7 @@ impl AsRef<str> for Permission {
 
 /// <p>Container for the person being granted permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Grantee {
     /// <p>Screen name of the grantee.</p>
     #[doc(hidden)]
@@ -3759,17 +3551,6 @@ impl Grantee {
     /// <p>Type of grantee</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Grantee {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Grantee");
-        formatter.field("display_name", &self.display_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("id", &self.id);
-        formatter.field("uri", &self.uri);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Grantee`](crate::model::Grantee).
@@ -4142,7 +3923,7 @@ impl std::fmt::Debug for Encryption {
 pub mod encryption {
 
     /// A builder for [`Encryption`](crate::model::Encryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -4191,6 +3972,15 @@ pub mod encryption {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("encryption_type", &self.encryption_type);
+            formatter.field("kms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("kms_context", &self.kms_context);
+            formatter.finish()
+        }
+    }
 }
 impl Encryption {
     /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
@@ -4201,7 +3991,7 @@ impl Encryption {
 
 /// <p>Describes the parameters for Select job types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectParameters {
     /// <p>Describes the serialization format of the object.</p>
     #[doc(hidden)]
@@ -4232,16 +4022,6 @@ impl SelectParameters {
     /// <p>Describes how the results of the Select job are serialized.</p>
     pub fn output_serialization(&self) -> std::option::Option<&crate::model::OutputSerialization> {
         self.output_serialization.as_ref()
-    }
-}
-impl std::fmt::Debug for SelectParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectParameters");
-        formatter.field("input_serialization", &self.input_serialization);
-        formatter.field("expression_type", &self.expression_type);
-        formatter.field("expression", &self.expression);
-        formatter.field("output_serialization", &self.output_serialization);
-        formatter.finish()
     }
 }
 /// See [`SelectParameters`](crate::model::SelectParameters).
@@ -4507,7 +4287,7 @@ impl AsRef<str> for RestoreRequestType {
 
 /// <p>Container for S3 Glacier job parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
     #[doc(hidden)]
@@ -4517,13 +4297,6 @@ impl GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
         self.tier.as_ref()
-    }
-}
-impl std::fmt::Debug for GlacierJobParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlacierJobParameters");
-        formatter.field("tier", &self.tier);
-        formatter.finish()
     }
 }
 /// See [`GlacierJobParameters`](crate::model::GlacierJobParameters).
@@ -4560,7 +4333,7 @@ impl GlacierJobParameters {
 
 /// <p>The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
@@ -4609,16 +4382,6 @@ impl PublicAccessBlockConfiguration {
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     pub fn restrict_public_buckets(&self) -> bool {
         self.restrict_public_buckets
-    }
-}
-impl std::fmt::Debug for PublicAccessBlockConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicAccessBlockConfiguration");
-        formatter.field("block_public_acls", &self.block_public_acls);
-        formatter.field("ignore_public_acls", &self.ignore_public_acls);
-        formatter.field("block_public_policy", &self.block_public_policy);
-        formatter.field("restrict_public_buckets", &self.restrict_public_buckets);
-        formatter.finish()
     }
 }
 /// See [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration).
@@ -4711,7 +4474,7 @@ impl PublicAccessBlockConfiguration {
 
 /// <p>A Retention configuration for an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectLockRetention {
     /// <p>Indicates the Retention mode for the specified object.</p>
     #[doc(hidden)]
@@ -4728,14 +4491,6 @@ impl ObjectLockRetention {
     /// <p>The date on which this Object Lock Retention will expire.</p>
     pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.retain_until_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectLockRetention {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectLockRetention");
-        formatter.field("mode", &self.mode);
-        formatter.field("retain_until_date", &self.retain_until_date);
-        formatter.finish()
     }
 }
 /// See [`ObjectLockRetention`](crate::model::ObjectLockRetention).
@@ -4884,7 +4639,7 @@ impl AsRef<str> for ObjectLockRetentionMode {
 
 /// <p>The container element for Object Lock configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectLockConfiguration {
     /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket. </p>
     #[doc(hidden)]
@@ -4901,14 +4656,6 @@ impl ObjectLockConfiguration {
     /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub fn rule(&self) -> std::option::Option<&crate::model::ObjectLockRule> {
         self.rule.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectLockConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectLockConfiguration");
-        formatter.field("object_lock_enabled", &self.object_lock_enabled);
-        formatter.field("rule", &self.rule);
-        formatter.finish()
     }
 }
 /// See [`ObjectLockConfiguration`](crate::model::ObjectLockConfiguration).
@@ -4965,7 +4712,7 @@ impl ObjectLockConfiguration {
 
 /// <p>The container element for an Object Lock rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectLockRule {
     /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     #[doc(hidden)]
@@ -4975,13 +4722,6 @@ impl ObjectLockRule {
     /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub fn default_retention(&self) -> std::option::Option<&crate::model::DefaultRetention> {
         self.default_retention.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectLockRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectLockRule");
-        formatter.field("default_retention", &self.default_retention);
-        formatter.finish()
     }
 }
 /// See [`ObjectLockRule`](crate::model::ObjectLockRule).
@@ -5028,7 +4768,7 @@ impl ObjectLockRule {
 /// </ul>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultRetention {
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
     #[doc(hidden)]
@@ -5052,15 +4792,6 @@ impl DefaultRetention {
     /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub fn years(&self) -> i32 {
         self.years
-    }
-}
-impl std::fmt::Debug for DefaultRetention {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultRetention");
-        formatter.field("mode", &self.mode);
-        formatter.field("days", &self.days);
-        formatter.field("years", &self.years);
-        formatter.finish()
     }
 }
 /// See [`DefaultRetention`](crate::model::DefaultRetention).
@@ -5213,7 +4944,7 @@ impl AsRef<str> for ObjectLockEnabled {
 
 /// <p>A legal hold configuration for an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     #[doc(hidden)]
@@ -5223,13 +4954,6 @@ impl ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectLockLegalHold {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectLockLegalHold");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ObjectLockLegalHold`](crate::model::ObjectLockLegalHold).
@@ -5271,7 +4995,7 @@ impl ObjectLockLegalHold {
 
 /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlPolicy {
     /// <p>A list of grants.</p>
     #[doc(hidden)]
@@ -5288,14 +5012,6 @@ impl AccessControlPolicy {
     /// <p>Container for the bucket owner's display name and ID.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
         self.owner.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessControlPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlPolicy");
-        formatter.field("grants", &self.grants);
-        formatter.field("owner", &self.owner);
-        formatter.finish()
     }
 }
 /// See [`AccessControlPolicy`](crate::model::AccessControlPolicy).
@@ -5355,7 +5071,7 @@ impl AccessControlPolicy {
 
 /// <p>Container for the owner's display name and ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Owner {
     /// <p>Container for the display name of the owner.</p>
     #[doc(hidden)]
@@ -5372,14 +5088,6 @@ impl Owner {
     /// <p>Container for the ID of the owner.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for Owner {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Owner");
-        formatter.field("display_name", &self.display_name);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`Owner`](crate::model::Owner).
@@ -5430,7 +5138,7 @@ impl Owner {
 
 /// <p>Specifies website configuration parameters for an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebsiteConfiguration {
     /// <p>The name of the error document for the website.</p>
     #[doc(hidden)]
@@ -5467,16 +5175,6 @@ impl WebsiteConfiguration {
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     pub fn routing_rules(&self) -> std::option::Option<&[crate::model::RoutingRule]> {
         self.routing_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for WebsiteConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebsiteConfiguration");
-        formatter.field("error_document", &self.error_document);
-        formatter.field("index_document", &self.index_document);
-        formatter.field("redirect_all_requests_to", &self.redirect_all_requests_to);
-        formatter.field("routing_rules", &self.routing_rules);
-        formatter.finish()
     }
 }
 /// See [`WebsiteConfiguration`](crate::model::WebsiteConfiguration).
@@ -5577,7 +5275,7 @@ impl WebsiteConfiguration {
 
 /// <p>Specifies the redirect behavior and when a redirect is applied. For more information about routing rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects">Configuring advanced conditional redirects</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingRule {
     /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
     #[doc(hidden)]
@@ -5594,14 +5292,6 @@ impl RoutingRule {
     /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
     pub fn redirect(&self) -> std::option::Option<&crate::model::Redirect> {
         self.redirect.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingRule");
-        formatter.field("condition", &self.condition);
-        formatter.field("redirect", &self.redirect);
-        formatter.finish()
     }
 }
 /// See [`RoutingRule`](crate::model::RoutingRule).
@@ -5655,7 +5345,7 @@ impl RoutingRule {
 
 /// <p>Specifies how requests are redirected. In the event of an error, you can specify a different error code to return.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Redirect {
     /// <p>The host name to use in the redirect request.</p>
     #[doc(hidden)]
@@ -5701,17 +5391,6 @@ impl Redirect {
     /// </important>
     pub fn replace_key_with(&self) -> std::option::Option<&str> {
         self.replace_key_with.as_deref()
-    }
-}
-impl std::fmt::Debug for Redirect {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Redirect");
-        formatter.field("host_name", &self.host_name);
-        formatter.field("http_redirect_code", &self.http_redirect_code);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("replace_key_prefix_with", &self.replace_key_prefix_with);
-        formatter.field("replace_key_with", &self.replace_key_with);
-        formatter.finish()
     }
 }
 /// See [`Redirect`](crate::model::Redirect).
@@ -5905,7 +5584,7 @@ impl AsRef<str> for Protocol {
 
 /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error code equals this value, then the specified redirect is applied. Required when parent element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not specified. If both are specified, then both must be true for the redirect to be applied.</p>
     #[doc(hidden)]
@@ -5926,17 +5605,6 @@ impl Condition {
     /// </important>
     pub fn key_prefix_equals(&self) -> std::option::Option<&str> {
         self.key_prefix_equals.as_deref()
-    }
-}
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field(
-            "http_error_code_returned_equals",
-            &self.http_error_code_returned_equals,
-        );
-        formatter.field("key_prefix_equals", &self.key_prefix_equals);
-        formatter.finish()
     }
 }
 /// See [`Condition`](crate::model::Condition).
@@ -6000,7 +5668,7 @@ impl Condition {
 
 /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedirectAllRequestsTo {
     /// <p>Name of the host where requests are redirected.</p>
     #[doc(hidden)]
@@ -6017,14 +5685,6 @@ impl RedirectAllRequestsTo {
     /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for RedirectAllRequestsTo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedirectAllRequestsTo");
-        formatter.field("host_name", &self.host_name);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`RedirectAllRequestsTo`](crate::model::RedirectAllRequestsTo).
@@ -6075,7 +5735,7 @@ impl RedirectAllRequestsTo {
 
 /// <p>Container for the <code>Suffix</code> element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexDocument {
     /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
@@ -6089,13 +5749,6 @@ impl IndexDocument {
     /// </important>
     pub fn suffix(&self) -> std::option::Option<&str> {
         self.suffix.as_deref()
-    }
-}
-impl std::fmt::Debug for IndexDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexDocument");
-        formatter.field("suffix", &self.suffix);
-        formatter.finish()
     }
 }
 /// See [`IndexDocument`](crate::model::IndexDocument).
@@ -6138,7 +5791,7 @@ impl IndexDocument {
 
 /// <p>The error information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDocument {
     /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
@@ -6152,13 +5805,6 @@ impl ErrorDocument {
     /// </important>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDocument");
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`ErrorDocument`](crate::model::ErrorDocument).
@@ -6199,7 +5845,7 @@ impl ErrorDocument {
 
 /// <p>Describes the versioning state of an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html">PUT Bucket versioning</a> in the <i>Amazon S3 API Reference</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersioningConfiguration {
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
     #[doc(hidden)]
@@ -6216,14 +5862,6 @@ impl VersioningConfiguration {
     /// <p>The versioning state of the bucket.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::BucketVersioningStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VersioningConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersioningConfiguration");
-        formatter.field("mfa_delete", &self.mfa_delete);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VersioningConfiguration`](crate::model::VersioningConfiguration).
@@ -6462,7 +6100,7 @@ impl AsRef<str> for MfaDelete {
 
 /// <p>Container for Payer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestPaymentConfiguration {
     /// <p>Specifies who pays for the download and request fees.</p>
     #[doc(hidden)]
@@ -6472,13 +6110,6 @@ impl RequestPaymentConfiguration {
     /// <p>Specifies who pays for the download and request fees.</p>
     pub fn payer(&self) -> std::option::Option<&crate::model::Payer> {
         self.payer.as_ref()
-    }
-}
-impl std::fmt::Debug for RequestPaymentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestPaymentConfiguration");
-        formatter.field("payer", &self.payer);
-        formatter.finish()
     }
 }
 /// See [`RequestPaymentConfiguration`](crate::model::RequestPaymentConfiguration).
@@ -6605,7 +6236,7 @@ impl AsRef<str> for Payer {
 
 /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -6622,14 +6253,6 @@ impl ReplicationConfiguration {
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::ReplicationRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationConfiguration");
-        formatter.field("role", &self.role);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`ReplicationConfiguration`](crate::model::ReplicationConfiguration).
@@ -6689,7 +6312,7 @@ impl ReplicationConfiguration {
 
 /// <p>Specifies which Amazon S3 objects to replicate and where to store the replicas.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationRule {
     /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
     #[doc(hidden)]
@@ -6775,24 +6398,6 @@ impl ReplicationRule {
         &self,
     ) -> std::option::Option<&crate::model::DeleteMarkerReplication> {
         self.delete_marker_replication.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicationRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationRule");
-        formatter.field("id", &self.id);
-        formatter.field("priority", &self.priority);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("filter", &self.filter);
-        formatter.field("status", &self.status);
-        formatter.field("source_selection_criteria", &self.source_selection_criteria);
-        formatter.field(
-            "existing_object_replication",
-            &self.existing_object_replication,
-        );
-        formatter.field("destination", &self.destination);
-        formatter.field("delete_marker_replication", &self.delete_marker_replication);
-        formatter.finish()
     }
 }
 /// See [`ReplicationRule`](crate::model::ReplicationRule).
@@ -6974,7 +6579,7 @@ impl ReplicationRule {
 /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMarkerReplication {
     /// <p>Indicates whether to replicate delete markers.</p> <note>
     /// <p>Indicates whether to replicate delete markers.</p>
@@ -6988,13 +6593,6 @@ impl DeleteMarkerReplication {
     /// </note>
     pub fn status(&self) -> std::option::Option<&crate::model::DeleteMarkerReplicationStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteMarkerReplication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMarkerReplication");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`DeleteMarkerReplication`](crate::model::DeleteMarkerReplication).
@@ -7132,7 +6730,7 @@ impl AsRef<str> for DeleteMarkerReplicationStatus {
 
 /// <p>Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket and S3 Replication Time Control (S3 RTC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
     #[doc(hidden)]
@@ -7190,22 +6788,6 @@ impl Destination {
     /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
     pub fn metrics(&self) -> std::option::Option<&crate::model::Metrics> {
         self.metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("account", &self.account);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field(
-            "access_control_translation",
-            &self.access_control_translation,
-        );
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("replication_time", &self.replication_time);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
     }
 }
 /// See [`Destination`](crate::model::Destination).
@@ -7338,7 +6920,7 @@ impl Destination {
 
 /// <p> A container specifying replication metrics-related settings enabling replication metrics and events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metrics {
     /// <p> Specifies whether the replication metrics are enabled. </p>
     #[doc(hidden)]
@@ -7355,14 +6937,6 @@ impl Metrics {
     /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
     pub fn event_threshold(&self) -> std::option::Option<&crate::model::ReplicationTimeValue> {
         self.event_threshold.as_ref()
-    }
-}
-impl std::fmt::Debug for Metrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metrics");
-        formatter.field("status", &self.status);
-        formatter.field("event_threshold", &self.event_threshold);
-        formatter.finish()
     }
 }
 /// See [`Metrics`](crate::model::Metrics).
@@ -7419,7 +6993,7 @@ impl Metrics {
 
 /// <p> A container specifying the time value for S3 Replication Time Control (S3 RTC) and replication metrics <code>EventThreshold</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationTimeValue {
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
@@ -7431,13 +7005,6 @@ impl ReplicationTimeValue {
     /// <p> Valid value: 15</p>
     pub fn minutes(&self) -> i32 {
         self.minutes
-    }
-}
-impl std::fmt::Debug for ReplicationTimeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationTimeValue");
-        formatter.field("minutes", &self.minutes);
-        formatter.finish()
     }
 }
 /// See [`ReplicationTimeValue`](crate::model::ReplicationTimeValue).
@@ -7568,7 +7135,7 @@ impl AsRef<str> for MetricsStatus {
 
 /// <p> A container specifying S3 Replication Time Control (S3 RTC) related information, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationTime {
     /// <p> Specifies whether the replication time is enabled. </p>
     #[doc(hidden)]
@@ -7585,14 +7152,6 @@ impl ReplicationTime {
     /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
     pub fn time(&self) -> std::option::Option<&crate::model::ReplicationTimeValue> {
         self.time.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicationTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationTime");
-        formatter.field("status", &self.status);
-        formatter.field("time", &self.time);
-        formatter.finish()
     }
 }
 /// See [`ReplicationTime`](crate::model::ReplicationTime).
@@ -7741,7 +7300,7 @@ impl AsRef<str> for ReplicationTimeStatus {
 
 /// <p>Specifies encryption-related information for an Amazon S3 bucket that is a destination for replicated objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -7751,13 +7310,6 @@ impl EncryptionConfiguration {
     /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn replica_kms_key_id(&self) -> std::option::Option<&str> {
         self.replica_kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("replica_kms_key_id", &self.replica_kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
@@ -7799,7 +7351,7 @@ impl EncryptionConfiguration {
 
 /// <p>A container for information about access control for replicas.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlTranslation {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
     #[doc(hidden)]
@@ -7809,13 +7361,6 @@ impl AccessControlTranslation {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::OwnerOverride> {
         self.owner.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessControlTranslation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlTranslation");
-        formatter.field("owner", &self.owner);
-        formatter.finish()
     }
 }
 /// See [`AccessControlTranslation`](crate::model::AccessControlTranslation).
@@ -7940,7 +7485,7 @@ impl AsRef<str> for OwnerOverride {
 
 /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExistingObjectReplication {
     /// <p></p>
     #[doc(hidden)]
@@ -7950,13 +7495,6 @@ impl ExistingObjectReplication {
     /// <p></p>
     pub fn status(&self) -> std::option::Option<&crate::model::ExistingObjectReplicationStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ExistingObjectReplication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExistingObjectReplication");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ExistingObjectReplication`](crate::model::ExistingObjectReplication).
@@ -8090,7 +7628,7 @@ impl AsRef<str> for ExistingObjectReplicationStatus {
 
 /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceSelectionCriteria {
     /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
     #[doc(hidden)]
@@ -8115,14 +7653,6 @@ impl SourceSelectionCriteria {
         &self,
     ) -> std::option::Option<&crate::model::ReplicaModifications> {
         self.replica_modifications.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceSelectionCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceSelectionCriteria");
-        formatter.field("sse_kms_encrypted_objects", &self.sse_kms_encrypted_objects);
-        formatter.field("replica_modifications", &self.replica_modifications);
-        formatter.finish()
     }
 }
 /// See [`SourceSelectionCriteria`](crate::model::SourceSelectionCriteria).
@@ -8189,7 +7719,7 @@ impl SourceSelectionCriteria {
 /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaModifications {
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
     #[doc(hidden)]
@@ -8199,13 +7729,6 @@ impl ReplicaModifications {
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ReplicaModificationsStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaModifications {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaModifications");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ReplicaModifications`](crate::model::ReplicaModifications).
@@ -8339,7 +7862,7 @@ impl AsRef<str> for ReplicaModificationsStatus {
 
 /// <p>A container for filter information for the selection of S3 objects encrypted with Amazon Web Services KMS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SseKmsEncryptedObjects {
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     #[doc(hidden)]
@@ -8349,13 +7872,6 @@ impl SseKmsEncryptedObjects {
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::SseKmsEncryptedObjectsStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for SseKmsEncryptedObjects {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SseKmsEncryptedObjects");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SseKmsEncryptedObjects`](crate::model::SseKmsEncryptedObjects).
@@ -8659,7 +8175,7 @@ impl ReplicationRuleFilter {
 /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationRuleAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
     #[doc(hidden)]
@@ -8676,14 +8192,6 @@ impl ReplicationRuleAndOperator {
     /// <p>An array of tags containing key and value pairs.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationRuleAndOperator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationRuleAndOperator");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ReplicationRuleAndOperator`](crate::model::ReplicationRuleAndOperator).
@@ -8743,7 +8251,7 @@ impl ReplicationRuleAndOperator {
 
 /// <p>The container element for a bucket's ownership controls.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OwnershipControls {
     /// <p>The container element for an ownership control rule.</p>
     #[doc(hidden)]
@@ -8753,13 +8261,6 @@ impl OwnershipControls {
     /// <p>The container element for an ownership control rule.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::OwnershipControlsRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for OwnershipControls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OwnershipControls");
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`OwnershipControls`](crate::model::OwnershipControls).
@@ -8805,7 +8306,7 @@ impl OwnershipControls {
 
 /// <p>The container element for an ownership control rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OwnershipControlsRule {
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
@@ -8821,13 +8322,6 @@ impl OwnershipControlsRule {
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub fn object_ownership(&self) -> std::option::Option<&crate::model::ObjectOwnership> {
         self.object_ownership.as_ref()
-    }
-}
-impl std::fmt::Debug for OwnershipControlsRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OwnershipControlsRule");
-        formatter.field("object_ownership", &self.object_ownership);
-        formatter.finish()
     }
 }
 /// See [`OwnershipControlsRule`](crate::model::OwnershipControlsRule).
@@ -8984,7 +8478,7 @@ impl AsRef<str> for ObjectOwnership {
 
 /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
     #[doc(hidden)]
@@ -9020,22 +8514,6 @@ impl NotificationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventBridgeConfiguration> {
         self.event_bridge_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for NotificationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfiguration");
-        formatter.field("topic_configurations", &self.topic_configurations);
-        formatter.field("queue_configurations", &self.queue_configurations);
-        formatter.field(
-            "lambda_function_configurations",
-            &self.lambda_function_configurations,
-        );
-        formatter.field(
-            "event_bridge_configuration",
-            &self.event_bridge_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
@@ -9150,14 +8628,8 @@ impl NotificationConfiguration {
 
 /// <p>A container for specifying the configuration for Amazon EventBridge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventBridgeConfiguration {}
-impl std::fmt::Debug for EventBridgeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventBridgeConfiguration");
-        formatter.finish()
-    }
-}
 /// See [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
 pub mod event_bridge_configuration {
 
@@ -9180,7 +8652,7 @@ impl EventBridgeConfiguration {
 
 /// <p>A container for specifying the configuration for Lambda notifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     #[doc(hidden)]
@@ -9211,16 +8683,6 @@ impl LambdaFunctionConfiguration {
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
         self.filter.as_ref()
-    }
-}
-impl std::fmt::Debug for LambdaFunctionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionConfiguration");
-        formatter.field("id", &self.id);
-        formatter.field("lambda_function_arn", &self.lambda_function_arn);
-        formatter.field("events", &self.events);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionConfiguration`](crate::model::LambdaFunctionConfiguration).
@@ -9310,7 +8772,7 @@ impl LambdaFunctionConfiguration {
 
 /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfigurationFilter {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
     #[doc(hidden)]
@@ -9320,13 +8782,6 @@ impl NotificationConfigurationFilter {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
     pub fn key(&self) -> std::option::Option<&crate::model::S3KeyFilter> {
         self.key.as_ref()
-    }
-}
-impl std::fmt::Debug for NotificationConfigurationFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfigurationFilter");
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`NotificationConfigurationFilter`](crate::model::NotificationConfigurationFilter).
@@ -9363,7 +8818,7 @@ impl NotificationConfigurationFilter {
 
 /// <p>A container for object key name prefix and suffix filtering rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3KeyFilter {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
     #[doc(hidden)]
@@ -9373,13 +8828,6 @@ impl S3KeyFilter {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
     pub fn filter_rules(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.filter_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for S3KeyFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3KeyFilter");
-        formatter.field("filter_rules", &self.filter_rules);
-        formatter.finish()
     }
 }
 /// See [`S3KeyFilter`](crate::model::S3KeyFilter).
@@ -9427,7 +8875,7 @@ impl S3KeyFilter {
 
 /// <p>Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterRule {
     /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -9444,14 +8892,6 @@ impl FilterRule {
     /// <p>The value that the filter searches for in object key names.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterRule");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FilterRule`](crate::model::FilterRule).
@@ -9654,7 +9094,7 @@ where
 
 /// <p>Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     #[doc(hidden)]
@@ -9685,16 +9125,6 @@ impl QueueConfiguration {
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
         self.filter.as_ref()
-    }
-}
-impl std::fmt::Debug for QueueConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueConfiguration");
-        formatter.field("id", &self.id);
-        formatter.field("queue_arn", &self.queue_arn);
-        formatter.field("events", &self.events);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
     }
 }
 /// See [`QueueConfiguration`](crate::model::QueueConfiguration).
@@ -9781,7 +9211,7 @@ impl QueueConfiguration {
 
 /// <p>A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     #[doc(hidden)]
@@ -9812,16 +9242,6 @@ impl TopicConfiguration {
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
         self.filter.as_ref()
-    }
-}
-impl std::fmt::Debug for TopicConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicConfiguration");
-        formatter.field("id", &self.id);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("events", &self.events);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
     }
 }
 /// See [`TopicConfiguration`](crate::model::TopicConfiguration).
@@ -9908,7 +9328,7 @@ impl TopicConfiguration {
 
 /// <p>Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">PutBucketMetricsConfiguration</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricsConfiguration {
     /// <p>The ID used to identify the metrics configuration.</p>
     #[doc(hidden)]
@@ -9925,14 +9345,6 @@ impl MetricsConfiguration {
     /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::MetricsFilter> {
         self.filter.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricsConfiguration");
-        formatter.field("id", &self.id);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
     }
 }
 /// See [`MetricsConfiguration`](crate::model::MetricsConfiguration).
@@ -10067,7 +9479,7 @@ impl MetricsFilter {
 
 /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricsAndOperator {
     /// <p>The prefix used when evaluating an AND predicate.</p>
     #[doc(hidden)]
@@ -10091,15 +9503,6 @@ impl MetricsAndOperator {
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
     pub fn access_point_arn(&self) -> std::option::Option<&str> {
         self.access_point_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricsAndOperator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricsAndOperator");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("tags", &self.tags);
-        formatter.field("access_point_arn", &self.access_point_arn);
-        formatter.finish()
     }
 }
 /// See [`MetricsAndOperator`](crate::model::MetricsAndOperator).
@@ -10174,7 +9577,7 @@ impl MetricsAndOperator {
 
 /// <p>Container for logging status information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketLoggingStatus {
     /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     #[doc(hidden)]
@@ -10184,13 +9587,6 @@ impl BucketLoggingStatus {
     /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub fn logging_enabled(&self) -> std::option::Option<&crate::model::LoggingEnabled> {
         self.logging_enabled.as_ref()
-    }
-}
-impl std::fmt::Debug for BucketLoggingStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketLoggingStatus");
-        formatter.field("logging_enabled", &self.logging_enabled);
-        formatter.finish()
     }
 }
 /// See [`BucketLoggingStatus`](crate::model::BucketLoggingStatus).
@@ -10232,7 +9628,7 @@ impl BucketLoggingStatus {
 
 /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingEnabled {
     /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
     #[doc(hidden)]
@@ -10258,15 +9654,6 @@ impl LoggingEnabled {
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
     pub fn target_prefix(&self) -> std::option::Option<&str> {
         self.target_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggingEnabled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingEnabled");
-        formatter.field("target_bucket", &self.target_bucket);
-        formatter.field("target_grants", &self.target_grants);
-        formatter.field("target_prefix", &self.target_prefix);
-        formatter.finish()
     }
 }
 /// See [`LoggingEnabled`](crate::model::LoggingEnabled).
@@ -10347,7 +9734,7 @@ impl LoggingEnabled {
 /// <p>Container for granting information.</p>
 /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGrant {
     /// <p>Container for the person being granted permissions.</p>
     #[doc(hidden)]
@@ -10364,14 +9751,6 @@ impl TargetGrant {
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
     pub fn permission(&self) -> std::option::Option<&crate::model::BucketLogsPermission> {
         self.permission.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetGrant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGrant");
-        formatter.field("grantee", &self.grantee);
-        formatter.field("permission", &self.permission);
-        formatter.finish()
     }
 }
 /// See [`TargetGrant`](crate::model::TargetGrant).
@@ -10522,7 +9901,7 @@ impl AsRef<str> for BucketLogsPermission {
 
 /// <p>Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -10532,13 +9911,6 @@ impl BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::LifecycleRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for BucketLifecycleConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketLifecycleConfiguration");
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`BucketLifecycleConfiguration`](crate::model::BucketLifecycleConfiguration).
@@ -10584,7 +9956,7 @@ impl BucketLifecycleConfiguration {
 
 /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleRule {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
     #[doc(hidden)]
@@ -10665,30 +10037,6 @@ impl LifecycleRule {
         &self,
     ) -> std::option::Option<&crate::model::AbortIncompleteMultipartUpload> {
         self.abort_incomplete_multipart_upload.as_ref()
-    }
-}
-impl std::fmt::Debug for LifecycleRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleRule");
-        formatter.field("expiration", &self.expiration);
-        formatter.field("id", &self.id);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("filter", &self.filter);
-        formatter.field("status", &self.status);
-        formatter.field("transitions", &self.transitions);
-        formatter.field(
-            "noncurrent_version_transitions",
-            &self.noncurrent_version_transitions,
-        );
-        formatter.field(
-            "noncurrent_version_expiration",
-            &self.noncurrent_version_expiration,
-        );
-        formatter.field(
-            "abort_incomplete_multipart_upload",
-            &self.abort_incomplete_multipart_upload,
-        );
-        formatter.finish()
     }
 }
 /// See [`LifecycleRule`](crate::model::LifecycleRule).
@@ -10874,7 +10222,7 @@ impl LifecycleRule {
 
 /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortIncompleteMultipartUpload {
     /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload.</p>
     #[doc(hidden)]
@@ -10884,13 +10232,6 @@ impl AbortIncompleteMultipartUpload {
     /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload.</p>
     pub fn days_after_initiation(&self) -> i32 {
         self.days_after_initiation
-    }
-}
-impl std::fmt::Debug for AbortIncompleteMultipartUpload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortIncompleteMultipartUpload");
-        formatter.field("days_after_initiation", &self.days_after_initiation);
-        formatter.finish()
     }
 }
 /// See [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload).
@@ -10929,7 +10270,7 @@ impl AbortIncompleteMultipartUpload {
 
 /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoncurrentVersionExpiration {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. The value must be a non-zero positive integer. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -10946,14 +10287,6 @@ impl NoncurrentVersionExpiration {
     /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn newer_noncurrent_versions(&self) -> i32 {
         self.newer_noncurrent_versions
-    }
-}
-impl std::fmt::Debug for NoncurrentVersionExpiration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoncurrentVersionExpiration");
-        formatter.field("noncurrent_days", &self.noncurrent_days);
-        formatter.field("newer_noncurrent_versions", &self.newer_noncurrent_versions);
-        formatter.finish()
     }
 }
 /// See [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
@@ -11004,7 +10337,7 @@ impl NoncurrentVersionExpiration {
 
 /// <p>Container for the transition rule that describes when noncurrent objects transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's lifetime.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoncurrentVersionTransition {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -11028,15 +10361,6 @@ impl NoncurrentVersionTransition {
     /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn newer_noncurrent_versions(&self) -> i32 {
         self.newer_noncurrent_versions
-    }
-}
-impl std::fmt::Debug for NoncurrentVersionTransition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoncurrentVersionTransition");
-        formatter.field("noncurrent_days", &self.noncurrent_days);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("newer_noncurrent_versions", &self.newer_noncurrent_versions);
-        formatter.finish()
     }
 }
 /// See [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition).
@@ -11221,7 +10545,7 @@ impl AsRef<str> for TransitionStorageClass {
 
 /// <p>Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
     #[doc(hidden)]
@@ -11245,15 +10569,6 @@ impl Transition {
     /// <p>The storage class to which you want the object to transition.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
         self.storage_class.as_ref()
-    }
-}
-impl std::fmt::Debug for Transition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Transition");
-        formatter.field("date", &self.date);
-        formatter.field("days", &self.days);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.finish()
     }
 }
 /// See [`Transition`](crate::model::Transition).
@@ -11507,7 +10822,7 @@ impl LifecycleRuleFilter {
 
 /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
     #[doc(hidden)]
@@ -11538,16 +10853,6 @@ impl LifecycleRuleAndOperator {
     /// <p>Maximum object size to which the rule applies.</p>
     pub fn object_size_less_than(&self) -> i64 {
         self.object_size_less_than
-    }
-}
-impl std::fmt::Debug for LifecycleRuleAndOperator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleRuleAndOperator");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("tags", &self.tags);
-        formatter.field("object_size_greater_than", &self.object_size_greater_than);
-        formatter.field("object_size_less_than", &self.object_size_less_than);
-        formatter.finish()
     }
 }
 /// See [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
@@ -11631,7 +10936,7 @@ impl LifecycleRuleAndOperator {
 
 /// <p>Container for the expiration for the lifecycle of the object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleExpiration {
     /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.</p>
     #[doc(hidden)]
@@ -11655,18 +10960,6 @@ impl LifecycleExpiration {
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub fn expired_object_delete_marker(&self) -> bool {
         self.expired_object_delete_marker
-    }
-}
-impl std::fmt::Debug for LifecycleExpiration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleExpiration");
-        formatter.field("date", &self.date);
-        formatter.field("days", &self.days);
-        formatter.field(
-            "expired_object_delete_marker",
-            &self.expired_object_delete_marker,
-        );
-        formatter.finish()
     }
 }
 /// See [`LifecycleExpiration`](crate::model::LifecycleExpiration).
@@ -11732,7 +11025,7 @@ impl LifecycleExpiration {
 
 /// <p>Specifies the inventory configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET Bucket inventory</a> in the <i>Amazon S3 API Reference</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryConfiguration {
     /// <p>Contains information about where to publish the inventory results.</p>
     #[doc(hidden)]
@@ -11787,19 +11080,6 @@ impl InventoryConfiguration {
     /// <p>Specifies the schedule for generating inventory results.</p>
     pub fn schedule(&self) -> std::option::Option<&crate::model::InventorySchedule> {
         self.schedule.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryConfiguration");
-        formatter.field("destination", &self.destination);
-        formatter.field("is_enabled", &self.is_enabled);
-        formatter.field("filter", &self.filter);
-        formatter.field("id", &self.id);
-        formatter.field("included_object_versions", &self.included_object_versions);
-        formatter.field("optional_fields", &self.optional_fields);
-        formatter.field("schedule", &self.schedule);
-        formatter.finish()
     }
 }
 /// See [`InventoryConfiguration`](crate::model::InventoryConfiguration).
@@ -11936,7 +11216,7 @@ impl InventoryConfiguration {
 
 /// <p>Specifies the schedule for generating inventory results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
     #[doc(hidden)]
@@ -11946,13 +11226,6 @@ impl InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
     pub fn frequency(&self) -> std::option::Option<&crate::model::InventoryFrequency> {
         self.frequency.as_ref()
-    }
-}
-impl std::fmt::Debug for InventorySchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventorySchedule");
-        formatter.field("frequency", &self.frequency);
-        formatter.finish()
     }
 }
 /// See [`InventorySchedule`](crate::model::InventorySchedule).
@@ -12339,7 +11612,7 @@ impl AsRef<str> for InventoryIncludedObjectVersions {
 
 /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
     #[doc(hidden)]
@@ -12349,13 +11622,6 @@ impl InventoryFilter {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryFilter");
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`InventoryFilter`](crate::model::InventoryFilter).
@@ -12394,7 +11660,7 @@ impl InventoryFilter {
 
 /// <p>Specifies the inventory configuration for an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryDestination {
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
     #[doc(hidden)]
@@ -12406,13 +11672,6 @@ impl InventoryDestination {
         &self,
     ) -> std::option::Option<&crate::model::InventoryS3BucketDestination> {
         self.s3_bucket_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryDestination");
-        formatter.field("s3_bucket_destination", &self.s3_bucket_destination);
-        formatter.finish()
     }
 }
 /// See [`InventoryDestination`](crate::model::InventoryDestination).
@@ -12458,7 +11717,7 @@ impl InventoryDestination {
 
 /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryS3BucketDestination {
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data. </p> <note>
     /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
@@ -12500,17 +11759,6 @@ impl InventoryS3BucketDestination {
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
     pub fn encryption(&self) -> std::option::Option<&crate::model::InventoryEncryption> {
         self.encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryS3BucketDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryS3BucketDestination");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("format", &self.format);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("encryption", &self.encryption);
-        formatter.finish()
     }
 }
 /// See [`InventoryS3BucketDestination`](crate::model::InventoryS3BucketDestination).
@@ -12607,7 +11855,7 @@ impl InventoryS3BucketDestination {
 
 /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
     #[doc(hidden)]
@@ -12624,14 +11872,6 @@ impl InventoryEncryption {
     /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
     pub fn ssekms(&self) -> std::option::Option<&crate::model::Ssekms> {
         self.ssekms.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryEncryption");
-        formatter.field("sses3", &self.sses3);
-        formatter.field("ssekms", &self.ssekms);
-        formatter.finish()
     }
 }
 /// See [`InventoryEncryption`](crate::model::InventoryEncryption).
@@ -12705,7 +11945,7 @@ impl std::fmt::Debug for Ssekms {
 pub mod ssekms {
 
     /// A builder for [`Ssekms`](crate::model::Ssekms).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -12727,6 +11967,13 @@ pub mod ssekms {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Ssekms {
     /// Creates a new builder-style object to manufacture [`Ssekms`](crate::model::Ssekms).
@@ -12737,14 +11984,8 @@ impl Ssekms {
 
 /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sses3 {}
-impl std::fmt::Debug for Sses3 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sses3");
-        formatter.finish()
-    }
-}
 /// See [`Sses3`](crate::model::Sses3).
 pub mod sses3 {
 
@@ -12863,7 +12104,7 @@ impl AsRef<str> for InventoryFormat {
 /// <p>Specifies the S3 Intelligent-Tiering configuration for an Amazon S3 bucket.</p>
 /// <p>For information about the S3 Intelligent-Tiering storage class, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntelligentTieringConfiguration {
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     #[doc(hidden)]
@@ -12894,16 +12135,6 @@ impl IntelligentTieringConfiguration {
     /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
     pub fn tierings(&self) -> std::option::Option<&[crate::model::Tiering]> {
         self.tierings.as_deref()
-    }
-}
-impl std::fmt::Debug for IntelligentTieringConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntelligentTieringConfiguration");
-        formatter.field("id", &self.id);
-        formatter.field("filter", &self.filter);
-        formatter.field("status", &self.status);
-        formatter.field("tierings", &self.tierings);
-        formatter.finish()
     }
 }
 /// See [`IntelligentTieringConfiguration`](crate::model::IntelligentTieringConfiguration).
@@ -12993,7 +12224,7 @@ impl IntelligentTieringConfiguration {
 
 /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without additional operational overhead.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tiering {
     /// <p>The number of consecutive days of no access after which an object will be eligible to be transitioned to the corresponding tier. The minimum number of days specified for Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least 180 days. The maximum can be up to 2 years (730 days).</p>
     #[doc(hidden)]
@@ -13010,14 +12241,6 @@ impl Tiering {
     /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
     pub fn access_tier(&self) -> std::option::Option<&crate::model::IntelligentTieringAccessTier> {
         self.access_tier.as_ref()
-    }
-}
-impl std::fmt::Debug for Tiering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tiering");
-        formatter.field("days", &self.days);
-        formatter.field("access_tier", &self.access_tier);
-        formatter.finish()
     }
 }
 /// See [`Tiering`](crate::model::Tiering).
@@ -13255,7 +12478,7 @@ impl AsRef<str> for IntelligentTieringStatus {
 
 /// <p>The <code>Filter</code> is used to identify objects that the S3 Intelligent-Tiering configuration applies to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntelligentTieringFilter {
     /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
@@ -13283,15 +12506,6 @@ impl IntelligentTieringFilter {
     /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
     pub fn and(&self) -> std::option::Option<&crate::model::IntelligentTieringAndOperator> {
         self.and.as_ref()
-    }
-}
-impl std::fmt::Debug for IntelligentTieringFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntelligentTieringFilter");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("tag", &self.tag);
-        formatter.field("and", &self.and);
-        formatter.finish()
     }
 }
 /// See [`IntelligentTieringFilter`](crate::model::IntelligentTieringFilter).
@@ -13361,7 +12575,7 @@ impl IntelligentTieringFilter {
 
 /// <p>A container for specifying S3 Intelligent-Tiering filters. The filters determine the subset of objects to which the rule applies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntelligentTieringAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
     #[doc(hidden)]
@@ -13378,14 +12592,6 @@ impl IntelligentTieringAndOperator {
     /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for IntelligentTieringAndOperator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntelligentTieringAndOperator");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`IntelligentTieringAndOperator`](crate::model::IntelligentTieringAndOperator).
@@ -13445,7 +12651,7 @@ impl IntelligentTieringAndOperator {
 
 /// <p>Specifies the default server-side-encryption configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
     #[doc(hidden)]
@@ -13455,13 +12661,6 @@ impl ServerSideEncryptionConfiguration {
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::ServerSideEncryptionRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerSideEncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerSideEncryptionConfiguration");
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
@@ -13508,7 +12707,7 @@ impl ServerSideEncryptionConfiguration {
 
 /// <p>Specifies the default server-side encryption configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerSideEncryptionRule {
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
     #[doc(hidden)]
@@ -13530,17 +12729,6 @@ impl ServerSideEncryptionRule {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
-    }
-}
-impl std::fmt::Debug for ServerSideEncryptionRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerSideEncryptionRule");
-        formatter.field(
-            "apply_server_side_encryption_by_default",
-            &self.apply_server_side_encryption_by_default,
-        );
-        formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
-        formatter.finish()
     }
 }
 /// See [`ServerSideEncryptionRule`](crate::model::ServerSideEncryptionRule).
@@ -13648,7 +12836,7 @@ impl std::fmt::Debug for ServerSideEncryptionByDefault {
 pub mod server_side_encryption_by_default {
 
     /// A builder for [`ServerSideEncryptionByDefault`](crate::model::ServerSideEncryptionByDefault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) sse_algorithm: std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
@@ -13704,6 +12892,14 @@ pub mod server_side_encryption_by_default {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("sse_algorithm", &self.sse_algorithm);
+            formatter.field("kms_master_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ServerSideEncryptionByDefault {
     /// Creates a new builder-style object to manufacture [`ServerSideEncryptionByDefault`](crate::model::ServerSideEncryptionByDefault).
@@ -13714,7 +12910,7 @@ impl ServerSideEncryptionByDefault {
 
 /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     #[doc(hidden)]
@@ -13724,13 +12920,6 @@ impl CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     pub fn cors_rules(&self) -> std::option::Option<&[crate::model::CorsRule]> {
         self.cors_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for CorsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CorsConfiguration");
-        formatter.field("cors_rules", &self.cors_rules);
-        formatter.finish()
     }
 }
 /// See [`CorsConfiguration`](crate::model::CorsConfiguration).
@@ -13778,7 +12967,7 @@ impl CorsConfiguration {
 
 /// <p>Specifies a cross-origin access rule for an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CorsRule {
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
     #[doc(hidden)]
@@ -13823,18 +13012,6 @@ impl CorsRule {
     /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
     pub fn max_age_seconds(&self) -> i32 {
         self.max_age_seconds
-    }
-}
-impl std::fmt::Debug for CorsRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CorsRule");
-        formatter.field("id", &self.id);
-        formatter.field("allowed_headers", &self.allowed_headers);
-        formatter.field("allowed_methods", &self.allowed_methods);
-        formatter.field("allowed_origins", &self.allowed_origins);
-        formatter.field("expose_headers", &self.expose_headers);
-        formatter.field("max_age_seconds", &self.max_age_seconds);
-        formatter.finish()
     }
 }
 /// See [`CorsRule`](crate::model::CorsRule).
@@ -13969,7 +13146,7 @@ impl CorsRule {
 
 /// <p>Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyticsConfiguration {
     /// <p>The ID that identifies the analytics configuration.</p>
     #[doc(hidden)]
@@ -13995,15 +13172,6 @@ impl AnalyticsConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::StorageClassAnalysis> {
         self.storage_class_analysis.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalyticsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyticsConfiguration");
-        formatter.field("id", &self.id);
-        formatter.field("filter", &self.filter);
-        formatter.field("storage_class_analysis", &self.storage_class_analysis);
-        formatter.finish()
     }
 }
 /// See [`AnalyticsConfiguration`](crate::model::AnalyticsConfiguration).
@@ -14072,7 +13240,7 @@ impl AnalyticsConfiguration {
 
 /// <p>Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageClassAnalysis {
     /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
     #[doc(hidden)]
@@ -14084,13 +13252,6 @@ impl StorageClassAnalysis {
         &self,
     ) -> std::option::Option<&crate::model::StorageClassAnalysisDataExport> {
         self.data_export.as_ref()
-    }
-}
-impl std::fmt::Debug for StorageClassAnalysis {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageClassAnalysis");
-        formatter.field("data_export", &self.data_export);
-        formatter.finish()
     }
 }
 /// See [`StorageClassAnalysis`](crate::model::StorageClassAnalysis).
@@ -14132,7 +13293,7 @@ impl StorageClassAnalysis {
 
 /// <p>Container for data related to the storage class analysis for an Amazon S3 bucket for export.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageClassAnalysisDataExport {
     /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
     #[doc(hidden)]
@@ -14151,14 +13312,6 @@ impl StorageClassAnalysisDataExport {
     /// <p>The place to store the data for an analysis.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::AnalyticsExportDestination> {
         self.destination.as_ref()
-    }
-}
-impl std::fmt::Debug for StorageClassAnalysisDataExport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageClassAnalysisDataExport");
-        formatter.field("output_schema_version", &self.output_schema_version);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`StorageClassAnalysisDataExport`](crate::model::StorageClassAnalysisDataExport).
@@ -14219,7 +13372,7 @@ impl StorageClassAnalysisDataExport {
 
 /// <p>Where to publish the analytics results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyticsExportDestination {
     /// <p>A destination signifying output to an S3 bucket.</p>
     #[doc(hidden)]
@@ -14231,13 +13384,6 @@ impl AnalyticsExportDestination {
         &self,
     ) -> std::option::Option<&crate::model::AnalyticsS3BucketDestination> {
         self.s3_bucket_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalyticsExportDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyticsExportDestination");
-        formatter.field("s3_bucket_destination", &self.s3_bucket_destination);
-        formatter.finish()
     }
 }
 /// See [`AnalyticsExportDestination`](crate::model::AnalyticsExportDestination).
@@ -14283,7 +13429,7 @@ impl AnalyticsExportDestination {
 
 /// <p>Contains information about where to publish the analytics results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyticsS3BucketDestination {
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
     #[doc(hidden)]
@@ -14318,16 +13464,6 @@ impl AnalyticsS3BucketDestination {
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalyticsS3BucketDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyticsS3BucketDestination");
-        formatter.field("format", &self.format);
-        formatter.field("bucket_account_id", &self.bucket_account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`AnalyticsS3BucketDestination`](crate::model::AnalyticsS3BucketDestination).
@@ -14652,7 +13788,7 @@ impl AnalyticsFilter {
 
 /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates in any combination, and an object must match all of the predicates for the filter to apply.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyticsAndOperator {
     /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have to be included in the metrics results.</p>
     #[doc(hidden)]
@@ -14669,14 +13805,6 @@ impl AnalyticsAndOperator {
     /// <p>The list of tags to use when evaluating an AND predicate.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalyticsAndOperator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyticsAndOperator");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`AnalyticsAndOperator`](crate::model::AnalyticsAndOperator).
@@ -14841,7 +13969,7 @@ impl AsRef<str> for BucketCannedAcl {
 
 /// <p>Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Amazon S3 Transfer Acceleration</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccelerateConfiguration {
     /// <p>Specifies the transfer acceleration status of the bucket.</p>
     #[doc(hidden)]
@@ -14851,13 +13979,6 @@ impl AccelerateConfiguration {
     /// <p>Specifies the transfer acceleration status of the bucket.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::BucketAccelerateStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AccelerateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccelerateConfiguration");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AccelerateConfiguration`](crate::model::AccelerateConfiguration).
@@ -14991,7 +14112,7 @@ impl AsRef<str> for BucketAccelerateStatus {
 
 /// <p>Container element that identifies who initiated the multipart upload. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Initiator {
     /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p>
     #[doc(hidden)]
@@ -15008,14 +14129,6 @@ impl Initiator {
     /// <p>Name of the Principal.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Initiator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Initiator");
-        formatter.field("id", &self.id);
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
     }
 }
 /// See [`Initiator`](crate::model::Initiator).
@@ -15066,7 +14179,7 @@ impl Initiator {
 
 /// <p>Container for elements related to a part.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Part {
     /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
     #[doc(hidden)]
@@ -15125,20 +14238,6 @@ impl Part {
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(&self) -> std::option::Option<&str> {
         self.checksum_sha256.as_deref()
-    }
-}
-impl std::fmt::Debug for Part {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Part");
-        formatter.field("part_number", &self.part_number);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("size", &self.size);
-        formatter.field("checksum_crc32", &self.checksum_crc32);
-        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
-        formatter.field("checksum_sha1", &self.checksum_sha1);
-        formatter.field("checksum_sha256", &self.checksum_sha256);
-        formatter.finish()
     }
 }
 /// See [`Part`](crate::model::Part).
@@ -15365,7 +14464,7 @@ impl AsRef<str> for EncodingType {
 
 /// <p>Container for all (if there are any) keys between Prefix and the next occurrence of the string specified by a delimiter. CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix. For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommonPrefix {
     /// <p>Container for the specified common prefix.</p>
     #[doc(hidden)]
@@ -15375,13 +14474,6 @@ impl CommonPrefix {
     /// <p>Container for the specified common prefix.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for CommonPrefix {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommonPrefix");
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`CommonPrefix`](crate::model::CommonPrefix).
@@ -15420,7 +14512,7 @@ impl CommonPrefix {
 
 /// <p>Information about the delete marker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMarkerEntry {
     /// <p>The account that created the delete marker.&gt;</p>
     #[doc(hidden)]
@@ -15458,17 +14550,6 @@ impl DeleteMarkerEntry {
     /// <p>Date and time the object was last modified.</p>
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteMarkerEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMarkerEntry");
-        formatter.field("owner", &self.owner);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("is_latest", &self.is_latest);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.finish()
     }
 }
 /// See [`DeleteMarkerEntry`](crate::model::DeleteMarkerEntry).
@@ -15558,7 +14639,7 @@ impl DeleteMarkerEntry {
 
 /// <p>The version of an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectVersion {
     /// <p>The entity tag is an MD5 hash of that version of the object.</p>
     #[doc(hidden)]
@@ -15624,21 +14705,6 @@ impl ObjectVersion {
     /// <p>Specifies the owner of the object.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
         self.owner.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectVersion");
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("size", &self.size);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("is_latest", &self.is_latest);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("owner", &self.owner);
-        formatter.finish()
     }
 }
 /// See [`ObjectVersion`](crate::model::ObjectVersion).
@@ -15876,7 +14942,7 @@ impl AsRef<str> for ObjectVersionStorageClass {
 
 /// <p>An object consists of data and its descriptive metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Object {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
     #[doc(hidden)]
@@ -15938,19 +15004,6 @@ impl Object {
     /// <p>The owner of the object</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
         self.owner.as_ref()
-    }
-}
-impl std::fmt::Debug for Object {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Object");
-        formatter.field("key", &self.key);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("size", &self.size);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("owner", &self.owner);
-        formatter.finish()
     }
 }
 /// See [`Object`](crate::model::Object).
@@ -16224,7 +15277,7 @@ impl AsRef<str> for ObjectStorageClass {
 
 /// <p>Container for the <code>MultipartUpload</code> for the Amazon S3 object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultipartUpload {
     /// <p>Upload ID that identifies the multipart upload.</p>
     #[doc(hidden)]
@@ -16276,19 +15329,6 @@ impl MultipartUpload {
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
-    }
-}
-impl std::fmt::Debug for MultipartUpload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultipartUpload");
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("key", &self.key);
-        formatter.field("initiated", &self.initiated);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("owner", &self.owner);
-        formatter.field("initiator", &self.initiator);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.finish()
     }
 }
 /// See [`MultipartUpload`](crate::model::MultipartUpload).
@@ -16411,7 +15451,7 @@ impl MultipartUpload {
 
 /// <p> In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally unique, and the namespace is shared by all Amazon Web Services accounts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
@@ -16428,14 +15468,6 @@ impl Bucket {
     /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Bucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Bucket");
-        formatter.field("name", &self.name);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`Bucket`](crate::model::Bucket).
@@ -16664,7 +15696,7 @@ impl AsRef<str> for ChecksumMode {
 
 /// <p>A collection of parts associated with a multipart upload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectAttributesParts {
     /// <p>The total number of parts.</p>
     #[doc(hidden)]
@@ -16709,18 +15741,6 @@ impl GetObjectAttributesParts {
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
     pub fn parts(&self) -> std::option::Option<&[crate::model::ObjectPart]> {
         self.parts.as_deref()
-    }
-}
-impl std::fmt::Debug for GetObjectAttributesParts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectAttributesParts");
-        formatter.field("total_parts_count", &self.total_parts_count);
-        formatter.field("part_number_marker", &self.part_number_marker);
-        formatter.field("next_part_number_marker", &self.next_part_number_marker);
-        formatter.field("max_parts", &self.max_parts);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("parts", &self.parts);
-        formatter.finish()
     }
 }
 /// See [`GetObjectAttributesParts`](crate::model::GetObjectAttributesParts).
@@ -16834,7 +15854,7 @@ impl GetObjectAttributesParts {
 
 /// <p>A container for elements related to an individual part.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectPart {
     /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
     #[doc(hidden)]
@@ -16879,18 +15899,6 @@ impl ObjectPart {
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(&self) -> std::option::Option<&str> {
         self.checksum_sha256.as_deref()
-    }
-}
-impl std::fmt::Debug for ObjectPart {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectPart");
-        formatter.field("part_number", &self.part_number);
-        formatter.field("size", &self.size);
-        formatter.field("checksum_crc32", &self.checksum_crc32);
-        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
-        formatter.field("checksum_sha1", &self.checksum_sha1);
-        formatter.field("checksum_sha256", &self.checksum_sha256);
-        formatter.finish()
     }
 }
 /// See [`ObjectPart`](crate::model::ObjectPart).
@@ -17001,7 +16009,7 @@ impl ObjectPart {
 
 /// <p>Contains all the possible checksum or digest values for an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Checksum {
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -17032,16 +16040,6 @@ impl Checksum {
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(&self) -> std::option::Option<&str> {
         self.checksum_sha256.as_deref()
-    }
-}
-impl std::fmt::Debug for Checksum {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Checksum");
-        formatter.field("checksum_crc32", &self.checksum_crc32);
-        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
-        formatter.field("checksum_sha1", &self.checksum_sha1);
-        formatter.field("checksum_sha256", &self.checksum_sha256);
-        formatter.finish()
     }
 }
 /// See [`Checksum`](crate::model::Checksum).
@@ -17329,7 +16327,7 @@ impl AsRef<str> for MfaDeleteStatus {
 
 /// <p>The container element for a bucket's policy status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyStatus {
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     #[doc(hidden)]
@@ -17339,13 +16337,6 @@ impl PolicyStatus {
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     pub fn is_public(&self) -> bool {
         self.is_public
-    }
-}
-impl std::fmt::Debug for PolicyStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyStatus");
-        formatter.field("is_public", &self.is_public);
-        formatter.finish()
     }
 }
 /// See [`PolicyStatus`](crate::model::PolicyStatus).
@@ -17617,7 +16608,7 @@ impl AsRef<str> for BucketLocationConstraint {
 
 /// <p>Container for all error elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Error {
     /// <p>The error key.</p>
     #[doc(hidden)]
@@ -18888,16 +17879,6 @@ impl Error {
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for Error {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Error");
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`Error`](crate::model::Error).
@@ -20212,7 +19193,7 @@ impl Error {
 
 /// <p>Information about the deleted object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletedObject {
     /// <p>The name of the deleted object.</p>
     #[doc(hidden)]
@@ -20243,16 +19224,6 @@ impl DeletedObject {
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
     pub fn delete_marker_version_id(&self) -> std::option::Option<&str> {
         self.delete_marker_version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeletedObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletedObject");
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("delete_marker", &self.delete_marker);
-        formatter.field("delete_marker_version_id", &self.delete_marker_version_id);
-        formatter.finish()
     }
 }
 /// See [`DeletedObject`](crate::model::DeletedObject).
@@ -20330,7 +19301,7 @@ impl DeletedObject {
 
 /// <p>Container for the objects to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Delete {
     /// <p>The objects to delete.</p>
     #[doc(hidden)]
@@ -20347,14 +19318,6 @@ impl Delete {
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub fn quiet(&self) -> bool {
         self.quiet
-    }
-}
-impl std::fmt::Debug for Delete {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Delete");
-        formatter.field("objects", &self.objects);
-        formatter.field("quiet", &self.quiet);
-        formatter.finish()
     }
 }
 /// See [`Delete`](crate::model::Delete).
@@ -20414,7 +19377,7 @@ impl Delete {
 
 /// <p>Object Identifier is unique value to identify objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectIdentifier {
     /// <p>Key name of the object.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
@@ -20435,14 +19398,6 @@ impl ObjectIdentifier {
     /// <p>VersionId for the specific version of the object to delete.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ObjectIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectIdentifier");
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
     }
 }
 /// See [`ObjectIdentifier`](crate::model::ObjectIdentifier).
@@ -20497,7 +19452,7 @@ impl ObjectIdentifier {
 
 /// <p>The configuration information for the bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     #[doc(hidden)]
@@ -20509,13 +19464,6 @@ impl CreateBucketConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::BucketLocationConstraint> {
         self.location_constraint.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBucketConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBucketConfiguration");
-        formatter.field("location_constraint", &self.location_constraint);
-        formatter.finish()
     }
 }
 /// See [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration).
@@ -20560,7 +19508,7 @@ impl CreateBucketConfiguration {
 
 /// <p>Container for all response elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyObjectResult {
     /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
     #[doc(hidden)]
@@ -20605,18 +19553,6 @@ impl CopyObjectResult {
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(&self) -> std::option::Option<&str> {
         self.checksum_sha256.as_deref()
-    }
-}
-impl std::fmt::Debug for CopyObjectResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyObjectResult");
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("checksum_crc32", &self.checksum_crc32);
-        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
-        formatter.field("checksum_sha1", &self.checksum_sha1);
-        formatter.field("checksum_sha256", &self.checksum_sha256);
-        formatter.finish()
     }
 }
 /// See [`CopyObjectResult`](crate::model::CopyObjectResult).
@@ -20912,7 +19848,7 @@ impl AsRef<str> for MetadataDirective {
 
 /// <p>The container for the completed multipart upload details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
     /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
@@ -20924,13 +19860,6 @@ impl CompletedMultipartUpload {
     /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
     pub fn parts(&self) -> std::option::Option<&[crate::model::CompletedPart]> {
         self.parts.as_deref()
-    }
-}
-impl std::fmt::Debug for CompletedMultipartUpload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompletedMultipartUpload");
-        formatter.field("parts", &self.parts);
-        formatter.finish()
     }
 }
 /// See [`CompletedMultipartUpload`](crate::model::CompletedMultipartUpload).
@@ -20978,7 +19907,7 @@ impl CompletedMultipartUpload {
 
 /// <p>Details of the parts that were uploaded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompletedPart {
     /// <p>Entity tag returned when the part was uploaded.</p>
     #[doc(hidden)]
@@ -21023,18 +19952,6 @@ impl CompletedPart {
     /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
     pub fn part_number(&self) -> i32 {
         self.part_number
-    }
-}
-impl std::fmt::Debug for CompletedPart {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompletedPart");
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("checksum_crc32", &self.checksum_crc32);
-        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
-        formatter.field("checksum_sha1", &self.checksum_sha1);
-        formatter.field("checksum_sha256", &self.checksum_sha256);
-        formatter.field("part_number", &self.part_number);
-        formatter.finish()
     }
 }
 /// See [`CompletedPart`](crate::model::CompletedPart).

@@ -2,7 +2,7 @@
 
 /// <p> The result structure for the update webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl UpdateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateWebhookOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWebhookOutput");
-        formatter.field("webhook", &self.webhook);
-        formatter.finish()
     }
 }
 /// See [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput).
@@ -57,7 +50,7 @@ impl UpdateWebhookOutput {
 
 /// <p> The result structure for the update domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainAssociationOutput {
     /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
@@ -67,13 +60,6 @@ impl UpdateDomainAssociationOutput {
     /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateDomainAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainAssociationOutput");
-        formatter.field("domain_association", &self.domain_association);
-        formatter.finish()
     }
 }
 /// See [`UpdateDomainAssociationOutput`](crate::output::UpdateDomainAssociationOutput).
@@ -115,7 +101,7 @@ impl UpdateDomainAssociationOutput {
 
 /// <p> The result structure for the update branch request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
@@ -125,13 +111,6 @@ impl UpdateBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBranchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBranchOutput");
-        formatter.field("branch", &self.branch);
-        formatter.finish()
     }
 }
 /// See [`UpdateBranchOutput`](crate::output::UpdateBranchOutput).
@@ -170,7 +149,7 @@ impl UpdateBranchOutput {
 
 /// <p> The result structure for an Amplify app update request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAppOutput {
     /// <p> Represents the updated Amplify app. </p>
     #[doc(hidden)]
@@ -180,13 +159,6 @@ impl UpdateAppOutput {
     /// <p> Represents the updated Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateAppOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAppOutput");
-        formatter.field("app", &self.app);
-        formatter.finish()
     }
 }
 /// See [`UpdateAppOutput`](crate::output::UpdateAppOutput).
@@ -223,14 +195,8 @@ impl UpdateAppOutput {
 
 /// <p> The response for the untag resource request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -253,14 +219,8 @@ impl UntagResourceOutput {
 
 /// <p> The response for the tag resource request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -283,7 +243,7 @@ impl TagResourceOutput {
 
 /// <p> The result structure for the stop job request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopJobOutput {
     /// <p> The summary for the job. </p>
     #[doc(hidden)]
@@ -293,13 +253,6 @@ impl StopJobOutput {
     /// <p> The summary for the job. </p>
     pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
         self.job_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for StopJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopJobOutput");
-        formatter.field("job_summary", &self.job_summary);
-        formatter.finish()
     }
 }
 /// See [`StopJobOutput`](crate::output::StopJobOutput).
@@ -341,7 +294,7 @@ impl StopJobOutput {
 
 /// <p> The result structure for the run job request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartJobOutput {
     /// <p> The summary for the job. </p>
     #[doc(hidden)]
@@ -351,13 +304,6 @@ impl StartJobOutput {
     /// <p> The summary for the job. </p>
     pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
         self.job_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for StartJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartJobOutput");
-        formatter.field("job_summary", &self.job_summary);
-        formatter.finish()
     }
 }
 /// See [`StartJobOutput`](crate::output::StartJobOutput).
@@ -399,7 +345,7 @@ impl StartJobOutput {
 
 /// <p> The result structure for the start a deployment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDeploymentOutput {
     /// <p> The summary for the job. </p>
     #[doc(hidden)]
@@ -409,13 +355,6 @@ impl StartDeploymentOutput {
     /// <p> The summary for the job. </p>
     pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
         self.job_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for StartDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDeploymentOutput");
-        formatter.field("job_summary", &self.job_summary);
-        formatter.finish()
     }
 }
 /// See [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
@@ -457,7 +396,7 @@ impl StartDeploymentOutput {
 
 /// <p> The result structure for the list webhooks request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
     #[doc(hidden)]
@@ -474,14 +413,6 @@ impl ListWebhooksOutput {
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListWebhooksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebhooksOutput");
-        formatter.field("webhooks", &self.webhooks);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListWebhooksOutput`](crate::output::ListWebhooksOutput).
@@ -541,7 +472,7 @@ impl ListWebhooksOutput {
 
 /// <p> The response for the list tags for resource request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
@@ -555,13 +486,6 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -615,7 +539,7 @@ impl ListTagsForResourceOutput {
 
 /// <p> The maximum number of records to list in a single response. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
     #[doc(hidden)]
@@ -632,14 +556,6 @@ impl ListJobsOutput {
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListJobsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsOutput");
-        formatter.field("job_summaries", &self.job_summaries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
@@ -699,7 +615,7 @@ impl ListJobsOutput {
 
 /// <p> The result structure for the list domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
     #[doc(hidden)]
@@ -716,14 +632,6 @@ impl ListDomainAssociationsOutput {
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainAssociationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainAssociationsOutput");
-        formatter.field("domain_associations", &self.domain_associations);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDomainAssociationsOutput`](crate::output::ListDomainAssociationsOutput).
@@ -784,7 +692,7 @@ impl ListDomainAssociationsOutput {
 
 /// <p> The result structure for the list branches request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBranchesOutput {
     /// <p> A list of branches for an Amplify app. </p>
     #[doc(hidden)]
@@ -801,14 +709,6 @@ impl ListBranchesOutput {
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListBranchesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBranchesOutput");
-        formatter.field("branches", &self.branches);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListBranchesOutput`](crate::output::ListBranchesOutput).
@@ -868,7 +768,7 @@ impl ListBranchesOutput {
 
 /// <p> The result structure for the list backend environments result. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackendEnvironmentsOutput {
     /// <p> The list of backend environments for an Amplify app. </p>
     #[doc(hidden)]
@@ -885,14 +785,6 @@ impl ListBackendEnvironmentsOutput {
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListBackendEnvironmentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackendEnvironmentsOutput");
-        formatter.field("backend_environments", &self.backend_environments);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListBackendEnvironmentsOutput`](crate::output::ListBackendEnvironmentsOutput).
@@ -953,7 +845,7 @@ impl ListBackendEnvironmentsOutput {
 
 /// <p> The result structure for the list artifacts request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListArtifactsOutput {
     /// <p> A list of artifacts. </p>
     #[doc(hidden)]
@@ -970,14 +862,6 @@ impl ListArtifactsOutput {
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListArtifactsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListArtifactsOutput");
-        formatter.field("artifacts", &self.artifacts);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListArtifactsOutput`](crate::output::ListArtifactsOutput).
@@ -1037,7 +921,7 @@ impl ListArtifactsOutput {
 
 /// <p> The result structure for an Amplify app list request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAppsOutput {
     /// <p> A list of Amplify apps. </p>
     #[doc(hidden)]
@@ -1054,14 +938,6 @@ impl ListAppsOutput {
     /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAppsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAppsOutput");
-        formatter.field("apps", &self.apps);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListAppsOutput`](crate::output::ListAppsOutput).
@@ -1121,7 +997,7 @@ impl ListAppsOutput {
 
 /// <p> The result structure for the get webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
     #[doc(hidden)]
@@ -1131,13 +1007,6 @@ impl GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
-    }
-}
-impl std::fmt::Debug for GetWebhookOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWebhookOutput");
-        formatter.field("webhook", &self.webhook);
-        formatter.finish()
     }
 }
 /// See [`GetWebhookOutput`](crate::output::GetWebhookOutput).
@@ -1176,7 +1045,7 @@ impl GetWebhookOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobOutput {
     /// <p> Describes an execution job for an Amplify app. </p>
     #[doc(hidden)]
@@ -1186,13 +1055,6 @@ impl GetJobOutput {
     /// <p> Describes an execution job for an Amplify app. </p>
     pub fn job(&self) -> std::option::Option<&crate::model::Job> {
         self.job.as_ref()
-    }
-}
-impl std::fmt::Debug for GetJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobOutput");
-        formatter.field("job", &self.job);
-        formatter.finish()
     }
 }
 /// See [`GetJobOutput`](crate::output::GetJobOutput).
@@ -1229,7 +1091,7 @@ impl GetJobOutput {
 
 /// <p> The result structure for the get domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
@@ -1239,13 +1101,6 @@ impl GetDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
-    }
-}
-impl std::fmt::Debug for GetDomainAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainAssociationOutput");
-        formatter.field("domain_association", &self.domain_association);
-        formatter.finish()
     }
 }
 /// See [`GetDomainAssociationOutput`](crate::output::GetDomainAssociationOutput).
@@ -1287,7 +1142,7 @@ impl GetDomainAssociationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
@@ -1297,13 +1152,6 @@ impl GetBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
-    }
-}
-impl std::fmt::Debug for GetBranchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBranchOutput");
-        formatter.field("branch", &self.branch);
-        formatter.finish()
     }
 }
 /// See [`GetBranchOutput`](crate::output::GetBranchOutput).
@@ -1342,7 +1190,7 @@ impl GetBranchOutput {
 
 /// <p> The result structure for the get backend environment result. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     #[doc(hidden)]
@@ -1352,13 +1200,6 @@ impl GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
         self.backend_environment.as_ref()
-    }
-}
-impl std::fmt::Debug for GetBackendEnvironmentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendEnvironmentOutput");
-        formatter.field("backend_environment", &self.backend_environment);
-        formatter.finish()
     }
 }
 /// See [`GetBackendEnvironmentOutput`](crate::output::GetBackendEnvironmentOutput).
@@ -1400,7 +1241,7 @@ impl GetBackendEnvironmentOutput {
 
 /// <p> Returns the result structure for the get artifact request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetArtifactUrlOutput {
     /// <p> The unique ID for an artifact. </p>
     #[doc(hidden)]
@@ -1417,14 +1258,6 @@ impl GetArtifactUrlOutput {
     /// <p> The presigned URL for the artifact. </p>
     pub fn artifact_url(&self) -> std::option::Option<&str> {
         self.artifact_url.as_deref()
-    }
-}
-impl std::fmt::Debug for GetArtifactUrlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetArtifactUrlOutput");
-        formatter.field("artifact_id", &self.artifact_id);
-        formatter.field("artifact_url", &self.artifact_url);
-        formatter.finish()
     }
 }
 /// See [`GetArtifactUrlOutput`](crate::output::GetArtifactUrlOutput).
@@ -1475,7 +1308,7 @@ impl GetArtifactUrlOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     #[doc(hidden)]
@@ -1485,13 +1318,6 @@ impl GetAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
-    }
-}
-impl std::fmt::Debug for GetAppOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppOutput");
-        formatter.field("app", &self.app);
-        formatter.finish()
     }
 }
 /// See [`GetAppOutput`](crate::output::GetAppOutput).
@@ -1528,7 +1354,7 @@ impl GetAppOutput {
 
 /// <p> The result structure for the generate access logs request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
     #[doc(hidden)]
@@ -1538,13 +1364,6 @@ impl GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
     pub fn log_url(&self) -> std::option::Option<&str> {
         self.log_url.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateAccessLogsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateAccessLogsOutput");
-        formatter.field("log_url", &self.log_url);
-        formatter.finish()
     }
 }
 /// See [`GenerateAccessLogsOutput`](crate::output::GenerateAccessLogsOutput).
@@ -1583,7 +1402,7 @@ impl GenerateAccessLogsOutput {
 
 /// <p> The result structure for the delete webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     #[doc(hidden)]
@@ -1593,13 +1412,6 @@ impl DeleteWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteWebhookOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWebhookOutput");
-        formatter.field("webhook", &self.webhook);
-        formatter.finish()
     }
 }
 /// See [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput).
@@ -1638,7 +1450,7 @@ impl DeleteWebhookOutput {
 
 /// <p> The result structure for the delete job request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobOutput {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     #[doc(hidden)]
@@ -1648,13 +1460,6 @@ impl DeleteJobOutput {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
         self.job_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJobOutput");
-        formatter.field("job_summary", &self.job_summary);
-        formatter.finish()
     }
 }
 /// See [`DeleteJobOutput`](crate::output::DeleteJobOutput).
@@ -1696,7 +1501,7 @@ impl DeleteJobOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainAssociationOutput {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
@@ -1706,13 +1511,6 @@ impl DeleteDomainAssociationOutput {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteDomainAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainAssociationOutput");
-        formatter.field("domain_association", &self.domain_association);
-        formatter.finish()
     }
 }
 /// See [`DeleteDomainAssociationOutput`](crate::output::DeleteDomainAssociationOutput).
@@ -1754,7 +1552,7 @@ impl DeleteDomainAssociationOutput {
 
 /// <p> The result structure for the delete branch request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
@@ -1764,13 +1562,6 @@ impl DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteBranchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBranchOutput");
-        formatter.field("branch", &self.branch);
-        formatter.finish()
     }
 }
 /// See [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
@@ -1809,7 +1600,7 @@ impl DeleteBranchOutput {
 
 /// <p> The result structure of the delete backend environment result. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     #[doc(hidden)]
@@ -1819,13 +1610,6 @@ impl DeleteBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
         self.backend_environment.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteBackendEnvironmentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackendEnvironmentOutput");
-        formatter.field("backend_environment", &self.backend_environment);
-        formatter.finish()
     }
 }
 /// See [`DeleteBackendEnvironmentOutput`](crate::output::DeleteBackendEnvironmentOutput).
@@ -1867,7 +1651,7 @@ impl DeleteBackendEnvironmentOutput {
 
 /// <p> The result structure for the delete app request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     #[doc(hidden)]
@@ -1877,13 +1661,6 @@ impl DeleteAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteAppOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppOutput");
-        formatter.field("app", &self.app);
-        formatter.finish()
     }
 }
 /// See [`DeleteAppOutput`](crate::output::DeleteAppOutput).
@@ -1920,7 +1697,7 @@ impl DeleteAppOutput {
 
 /// <p> The result structure for the create webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     #[doc(hidden)]
@@ -1930,13 +1707,6 @@ impl CreateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateWebhookOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebhookOutput");
-        formatter.field("webhook", &self.webhook);
-        formatter.finish()
     }
 }
 /// See [`CreateWebhookOutput`](crate::output::CreateWebhookOutput).
@@ -1975,7 +1745,7 @@ impl CreateWebhookOutput {
 
 /// <p> The result structure for the create domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
@@ -1985,13 +1755,6 @@ impl CreateDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDomainAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainAssociationOutput");
-        formatter.field("domain_association", &self.domain_association);
-        formatter.finish()
     }
 }
 /// See [`CreateDomainAssociationOutput`](crate::output::CreateDomainAssociationOutput).
@@ -2033,7 +1796,7 @@ impl CreateDomainAssociationOutput {
 
 /// <p> The result structure for the create a new deployment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentOutput {
     /// <p> The job ID for this deployment. will supply to start deployment api. </p>
     #[doc(hidden)]
@@ -2061,15 +1824,6 @@ impl CreateDeploymentOutput {
     /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
     pub fn zip_upload_url(&self) -> std::option::Option<&str> {
         self.zip_upload_url.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentOutput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("file_upload_urls", &self.file_upload_urls);
-        formatter.field("zip_upload_url", &self.zip_upload_url);
-        formatter.finish()
     }
 }
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
@@ -2152,7 +1906,7 @@ impl CreateDeploymentOutput {
 
 /// <p> The result structure for create branch request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBranchOutput {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
@@ -2162,13 +1916,6 @@ impl CreateBranchOutput {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBranchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBranchOutput");
-        formatter.field("branch", &self.branch);
-        formatter.finish()
     }
 }
 /// See [`CreateBranchOutput`](crate::output::CreateBranchOutput).
@@ -2207,7 +1954,7 @@ impl CreateBranchOutput {
 
 /// <p> The result structure for the create backend environment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     #[doc(hidden)]
@@ -2217,13 +1964,6 @@ impl CreateBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
         self.backend_environment.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBackendEnvironmentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendEnvironmentOutput");
-        formatter.field("backend_environment", &self.backend_environment);
-        formatter.finish()
     }
 }
 /// See [`CreateBackendEnvironmentOutput`](crate::output::CreateBackendEnvironmentOutput).
@@ -2265,7 +2005,7 @@ impl CreateBackendEnvironmentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     #[doc(hidden)]
@@ -2275,13 +2015,6 @@ impl CreateAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAppOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppOutput");
-        formatter.field("app", &self.app);
-        formatter.finish()
     }
 }
 /// See [`CreateAppOutput`](crate::output::CreateAppOutput).

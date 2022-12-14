@@ -104,7 +104,7 @@ impl AsRef<str> for PartnerIntegrationStatus {
 
 /// <p>Describes a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
@@ -580,106 +580,6 @@ impl Cluster {
         &self,
     ) -> std::option::Option<&crate::model::ReservedNodeExchangeStatus> {
         self.reserved_node_exchange_status.as_ref()
-    }
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("cluster_status", &self.cluster_status);
-        formatter.field(
-            "cluster_availability_status",
-            &self.cluster_availability_status,
-        );
-        formatter.field("modify_status", &self.modify_status);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("db_name", &self.db_name);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("cluster_create_time", &self.cluster_create_time);
-        formatter.field(
-            "automated_snapshot_retention_period",
-            &self.automated_snapshot_retention_period,
-        );
-        formatter.field(
-            "manual_snapshot_retention_period",
-            &self.manual_snapshot_retention_period,
-        );
-        formatter.field("cluster_security_groups", &self.cluster_security_groups);
-        formatter.field("vpc_security_groups", &self.vpc_security_groups);
-        formatter.field("cluster_parameter_groups", &self.cluster_parameter_groups);
-        formatter.field("cluster_subnet_group_name", &self.cluster_subnet_group_name);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("pending_modified_values", &self.pending_modified_values);
-        formatter.field("cluster_version", &self.cluster_version);
-        formatter.field("allow_version_upgrade", &self.allow_version_upgrade);
-        formatter.field("number_of_nodes", &self.number_of_nodes);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("restore_status", &self.restore_status);
-        formatter.field("data_transfer_progress", &self.data_transfer_progress);
-        formatter.field("hsm_status", &self.hsm_status);
-        formatter.field(
-            "cluster_snapshot_copy_status",
-            &self.cluster_snapshot_copy_status,
-        );
-        formatter.field("cluster_public_key", &self.cluster_public_key);
-        formatter.field("cluster_nodes", &self.cluster_nodes);
-        formatter.field("elastic_ip_status", &self.elastic_ip_status);
-        formatter.field("cluster_revision_number", &self.cluster_revision_number);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
-        formatter.field("iam_roles", &self.iam_roles);
-        formatter.field("pending_actions", &self.pending_actions);
-        formatter.field("maintenance_track_name", &self.maintenance_track_name);
-        formatter.field(
-            "elastic_resize_number_of_node_options",
-            &self.elastic_resize_number_of_node_options,
-        );
-        formatter.field(
-            "deferred_maintenance_windows",
-            &self.deferred_maintenance_windows,
-        );
-        formatter.field(
-            "snapshot_schedule_identifier",
-            &self.snapshot_schedule_identifier,
-        );
-        formatter.field("snapshot_schedule_state", &self.snapshot_schedule_state);
-        formatter.field(
-            "expected_next_snapshot_schedule_time",
-            &self.expected_next_snapshot_schedule_time,
-        );
-        formatter.field(
-            "expected_next_snapshot_schedule_time_status",
-            &self.expected_next_snapshot_schedule_time_status,
-        );
-        formatter.field(
-            "next_maintenance_window_start_time",
-            &self.next_maintenance_window_start_time,
-        );
-        formatter.field("resize_info", &self.resize_info);
-        formatter.field(
-            "availability_zone_relocation_status",
-            &self.availability_zone_relocation_status,
-        );
-        formatter.field("cluster_namespace_arn", &self.cluster_namespace_arn);
-        formatter.field(
-            "total_storage_capacity_in_mega_bytes",
-            &self.total_storage_capacity_in_mega_bytes,
-        );
-        formatter.field("aqua_configuration", &self.aqua_configuration);
-        formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
-        formatter.field(
-            "reserved_node_exchange_status",
-            &self.reserved_node_exchange_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
@@ -1648,7 +1548,7 @@ impl Cluster {
 
 /// <p>Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeExchangeStatus {
     /// <p>The identifier of the reserved-node exchange request.</p>
     #[doc(hidden)]
@@ -1714,33 +1614,6 @@ impl ReservedNodeExchangeStatus {
     /// <p>The count of target reserved nodes in the cluster.</p>
     pub fn target_reserved_node_count(&self) -> i32 {
         self.target_reserved_node_count
-    }
-}
-impl std::fmt::Debug for ReservedNodeExchangeStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeExchangeStatus");
-        formatter.field(
-            "reserved_node_exchange_request_id",
-            &self.reserved_node_exchange_request_id,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("request_time", &self.request_time);
-        formatter.field("source_reserved_node_id", &self.source_reserved_node_id);
-        formatter.field("source_reserved_node_type", &self.source_reserved_node_type);
-        formatter.field(
-            "source_reserved_node_count",
-            &self.source_reserved_node_count,
-        );
-        formatter.field(
-            "target_reserved_node_offering_id",
-            &self.target_reserved_node_offering_id,
-        );
-        formatter.field("target_reserved_node_type", &self.target_reserved_node_type);
-        formatter.field(
-            "target_reserved_node_count",
-            &self.target_reserved_node_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus).
@@ -2021,7 +1894,7 @@ impl AsRef<str> for ReservedNodeExchangeStatusType {
 
 /// <p>The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AquaConfiguration {
     /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     #[doc(hidden)]
@@ -2040,14 +1913,6 @@ impl AquaConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
         self.aqua_configuration_status.as_ref()
-    }
-}
-impl std::fmt::Debug for AquaConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AquaConfiguration");
-        formatter.field("aqua_status", &self.aqua_status);
-        formatter.field("aqua_configuration_status", &self.aqua_configuration_status);
-        formatter.finish()
     }
 }
 /// See [`AquaConfiguration`](crate::model::AquaConfiguration).
@@ -2300,7 +2165,7 @@ impl AsRef<str> for AquaStatus {
 
 /// <p>Describes a resize operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResizeInfo {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
     #[doc(hidden)]
@@ -2317,14 +2182,6 @@ impl ResizeInfo {
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
     pub fn allow_cancel_resize(&self) -> bool {
         self.allow_cancel_resize
-    }
-}
-impl std::fmt::Debug for ResizeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResizeInfo");
-        formatter.field("resize_type", &self.resize_type);
-        formatter.field("allow_cancel_resize", &self.allow_cancel_resize);
-        formatter.finish()
     }
 }
 /// See [`ResizeInfo`](crate::model::ResizeInfo).
@@ -2470,7 +2327,7 @@ impl AsRef<str> for ScheduleState {
 
 /// <p>Describes a deferred maintenance window</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeferredMaintenanceWindow {
     /// <p>A unique identifier for the maintenance window.</p>
     #[doc(hidden)]
@@ -2494,24 +2351,6 @@ impl DeferredMaintenanceWindow {
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
     pub fn defer_maintenance_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.defer_maintenance_end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DeferredMaintenanceWindow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeferredMaintenanceWindow");
-        formatter.field(
-            "defer_maintenance_identifier",
-            &self.defer_maintenance_identifier,
-        );
-        formatter.field(
-            "defer_maintenance_start_time",
-            &self.defer_maintenance_start_time,
-        );
-        formatter.field(
-            "defer_maintenance_end_time",
-            &self.defer_maintenance_end_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeferredMaintenanceWindow`](crate::model::DeferredMaintenanceWindow).
@@ -2586,7 +2425,7 @@ impl DeferredMaintenanceWindow {
 
 /// <p>An Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other Amazon Web Services services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterIamRole {
     /// <p>The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
     #[doc(hidden)]
@@ -2615,14 +2454,6 @@ impl ClusterIamRole {
     /// </ul>
     pub fn apply_status(&self) -> std::option::Option<&str> {
         self.apply_status.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterIamRole {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterIamRole");
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("apply_status", &self.apply_status);
-        formatter.finish()
     }
 }
 /// See [`ClusterIamRole`](crate::model::ClusterIamRole).
@@ -2685,7 +2516,7 @@ impl ClusterIamRole {
 
 /// <p>A tag consisting of a name/value pair for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key, or name, for the resource tag.</p>
     #[doc(hidden)]
@@ -2702,14 +2533,6 @@ impl Tag {
     /// <p>The value for the resource tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -2760,7 +2583,7 @@ impl Tag {
 
 /// <p>Describes the status of the elastic IP (EIP) address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticIpStatus {
     /// <p>The elastic IP (EIP) address for the cluster.</p>
     #[doc(hidden)]
@@ -2777,14 +2600,6 @@ impl ElasticIpStatus {
     /// <p>The status of the elastic IP (EIP) address.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for ElasticIpStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticIpStatus");
-        formatter.field("elastic_ip", &self.elastic_ip);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ElasticIpStatus`](crate::model::ElasticIpStatus).
@@ -2835,7 +2650,7 @@ impl ElasticIpStatus {
 
 /// <p>The identifier of a node in a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterNode {
     /// <p>Whether the node is a leader node or a compute node.</p>
     #[doc(hidden)]
@@ -2859,15 +2674,6 @@ impl ClusterNode {
     /// <p>The public IP address of a node within a cluster.</p>
     pub fn public_ip_address(&self) -> std::option::Option<&str> {
         self.public_ip_address.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterNode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterNode");
-        formatter.field("node_role", &self.node_role);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.field("public_ip_address", &self.public_ip_address);
-        formatter.finish()
     }
 }
 /// See [`ClusterNode`](crate::model::ClusterNode).
@@ -2936,7 +2742,7 @@ impl ClusterNode {
 
 /// <p>Returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSnapshotCopyStatus {
     /// <p>The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.</p>
     #[doc(hidden)]
@@ -2969,19 +2775,6 @@ impl ClusterSnapshotCopyStatus {
     /// <p>The name of the snapshot copy grant.</p>
     pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
         self.snapshot_copy_grant_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterSnapshotCopyStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSnapshotCopyStatus");
-        formatter.field("destination_region", &self.destination_region);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "manual_snapshot_retention_period",
-            &self.manual_snapshot_retention_period,
-        );
-        formatter.field("snapshot_copy_grant_name", &self.snapshot_copy_grant_name);
-        formatter.finish()
     }
 }
 /// See [`ClusterSnapshotCopyStatus`](crate::model::ClusterSnapshotCopyStatus).
@@ -3069,7 +2862,7 @@ impl ClusterSnapshotCopyStatus {
 
 /// <p>Describes the status of changes to HSM settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmStatus {
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     #[doc(hidden)]
@@ -3095,21 +2888,6 @@ impl HsmStatus {
     /// <p>Values: active, applying</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for HsmStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmStatus");
-        formatter.field(
-            "hsm_client_certificate_identifier",
-            &self.hsm_client_certificate_identifier,
-        );
-        formatter.field(
-            "hsm_configuration_identifier",
-            &self.hsm_configuration_identifier,
-        );
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`HsmStatus`](crate::model::HsmStatus).
@@ -3186,7 +2964,7 @@ impl HsmStatus {
 
 /// <p>Describes the status of a cluster while it is in the process of resizing with an incremental resize.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataTransferProgress {
     /// <p>Describes the status of the cluster. While the transfer is in progress the status is <code>transferringdata</code>.</p>
     #[doc(hidden)]
@@ -3231,27 +3009,6 @@ impl DataTransferProgress {
     /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
     pub fn elapsed_time_in_seconds(&self) -> std::option::Option<i64> {
         self.elapsed_time_in_seconds
-    }
-}
-impl std::fmt::Debug for DataTransferProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataTransferProgress");
-        formatter.field("status", &self.status);
-        formatter.field(
-            "current_rate_in_mega_bytes_per_second",
-            &self.current_rate_in_mega_bytes_per_second,
-        );
-        formatter.field("total_data_in_mega_bytes", &self.total_data_in_mega_bytes);
-        formatter.field(
-            "data_transferred_in_mega_bytes",
-            &self.data_transferred_in_mega_bytes,
-        );
-        formatter.field(
-            "estimated_time_to_completion_in_seconds",
-            &self.estimated_time_to_completion_in_seconds,
-        );
-        formatter.field("elapsed_time_in_seconds", &self.elapsed_time_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`DataTransferProgress`](crate::model::DataTransferProgress).
@@ -3362,7 +3119,7 @@ impl DataTransferProgress {
 
 /// <p>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreStatus {
     /// <p>The status of the restore action. Returns starting, restoring, completed, or failed.</p>
     #[doc(hidden)]
@@ -3407,27 +3164,6 @@ impl RestoreStatus {
     /// <p>The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn estimated_time_to_completion_in_seconds(&self) -> i64 {
         self.estimated_time_to_completion_in_seconds
-    }
-}
-impl std::fmt::Debug for RestoreStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreStatus");
-        formatter.field("status", &self.status);
-        formatter.field(
-            "current_restore_rate_in_mega_bytes_per_second",
-            &self.current_restore_rate_in_mega_bytes_per_second,
-        );
-        formatter.field(
-            "snapshot_size_in_mega_bytes",
-            &self.snapshot_size_in_mega_bytes,
-        );
-        formatter.field("progress_in_mega_bytes", &self.progress_in_mega_bytes);
-        formatter.field("elapsed_time_in_seconds", &self.elapsed_time_in_seconds);
-        formatter.field(
-            "estimated_time_to_completion_in_seconds",
-            &self.estimated_time_to_completion_in_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`RestoreStatus`](crate::model::RestoreStatus).
@@ -3536,7 +3272,7 @@ impl RestoreStatus {
 
 /// <p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingModifiedValues {
     /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
     #[doc(hidden)]
@@ -3620,26 +3356,6 @@ impl PendingModifiedValues {
     /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
     pub fn encryption_type(&self) -> std::option::Option<&str> {
         self.encryption_type.as_deref()
-    }
-}
-impl std::fmt::Debug for PendingModifiedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingModifiedValues");
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("number_of_nodes", &self.number_of_nodes);
-        formatter.field("cluster_type", &self.cluster_type);
-        formatter.field("cluster_version", &self.cluster_version);
-        formatter.field(
-            "automated_snapshot_retention_period",
-            &self.automated_snapshot_retention_period,
-        );
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
-        formatter.field("maintenance_track_name", &self.maintenance_track_name);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.finish()
     }
 }
 /// See [`PendingModifiedValues`](crate::model::PendingModifiedValues).
@@ -3820,7 +3536,7 @@ impl PendingModifiedValues {
 
 /// <p>Describes the status of a parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterParameterGroupStatus {
     /// <p>The name of the cluster parameter group.</p>
     #[doc(hidden)]
@@ -3849,18 +3565,6 @@ impl ClusterParameterGroupStatus {
         &self,
     ) -> std::option::Option<&[crate::model::ClusterParameterStatus]> {
         self.cluster_parameter_status_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterParameterGroupStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterParameterGroupStatus");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("parameter_apply_status", &self.parameter_apply_status);
-        formatter.field(
-            "cluster_parameter_status_list",
-            &self.cluster_parameter_status_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ClusterParameterGroupStatus`](crate::model::ClusterParameterGroupStatus).
@@ -3944,7 +3648,7 @@ impl ClusterParameterGroupStatus {
 
 /// <p>Describes the status of a parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterParameterStatus {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -3988,18 +3692,6 @@ impl ClusterParameterStatus {
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     pub fn parameter_apply_error_description(&self) -> std::option::Option<&str> {
         self.parameter_apply_error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterParameterStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterParameterStatus");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_apply_status", &self.parameter_apply_status);
-        formatter.field(
-            "parameter_apply_error_description",
-            &self.parameter_apply_error_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`ClusterParameterStatus`](crate::model::ClusterParameterStatus).
@@ -4094,7 +3786,7 @@ impl ClusterParameterStatus {
 
 /// <p>Describes the members of a VPC security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcSecurityGroupMembership {
     /// <p>The identifier of the VPC security group.</p>
     #[doc(hidden)]
@@ -4111,14 +3803,6 @@ impl VpcSecurityGroupMembership {
     /// <p>The status of the VPC security group.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcSecurityGroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcSecurityGroupMembership");
-        formatter.field("vpc_security_group_id", &self.vpc_security_group_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
@@ -4172,7 +3856,7 @@ impl VpcSecurityGroupMembership {
 
 /// <p>Describes a cluster security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSecurityGroupMembership {
     /// <p>The name of the cluster security group.</p>
     #[doc(hidden)]
@@ -4189,17 +3873,6 @@ impl ClusterSecurityGroupMembership {
     /// <p>The status of the cluster security group.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterSecurityGroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSecurityGroupMembership");
-        formatter.field(
-            "cluster_security_group_name",
-            &self.cluster_security_group_name,
-        );
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ClusterSecurityGroupMembership`](crate::model::ClusterSecurityGroupMembership).
@@ -4256,7 +3929,7 @@ impl ClusterSecurityGroupMembership {
 
 /// <p>Describes a connection endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The DNS address of the Cluster.</p>
     #[doc(hidden)]
@@ -4280,15 +3953,6 @@ impl Endpoint {
     /// <p>Describes a connection endpoint.</p>
     pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::model::VpcEndpoint]> {
         self.vpc_endpoints.as_deref()
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("address", &self.address);
-        formatter.field("port", &self.port);
-        formatter.field("vpc_endpoints", &self.vpc_endpoints);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
@@ -4360,7 +4024,7 @@ impl Endpoint {
 
 /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcEndpoint {
     /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
     #[doc(hidden)]
@@ -4384,15 +4048,6 @@ impl VpcEndpoint {
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcEndpoint");
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.finish()
     }
 }
 /// See [`VpcEndpoint`](crate::model::VpcEndpoint).
@@ -4468,7 +4123,7 @@ impl VpcEndpoint {
 
 /// <p>Describes a network interface. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The network interface identifier. </p>
     #[doc(hidden)]
@@ -4499,16 +4154,6 @@ impl NetworkInterface {
     /// <p>The Availability Zone. </p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -4592,7 +4237,7 @@ impl NetworkInterface {
 
 /// <p>Describes a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The snapshot identifier that is provided in the request.</p>
     #[doc(hidden)]
@@ -4854,73 +4499,6 @@ impl Snapshot {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_retention_start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Snapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Snapshot");
-        formatter.field("snapshot_identifier", &self.snapshot_identifier);
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("snapshot_create_time", &self.snapshot_create_time);
-        formatter.field("status", &self.status);
-        formatter.field("port", &self.port);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("cluster_create_time", &self.cluster_create_time);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("cluster_version", &self.cluster_version);
-        formatter.field("engine_full_version", &self.engine_full_version);
-        formatter.field("snapshot_type", &self.snapshot_type);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("number_of_nodes", &self.number_of_nodes);
-        formatter.field("db_name", &self.db_name);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("encrypted_with_hsm", &self.encrypted_with_hsm);
-        formatter.field(
-            "accounts_with_restore_access",
-            &self.accounts_with_restore_access,
-        );
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "total_backup_size_in_mega_bytes",
-            &self.total_backup_size_in_mega_bytes,
-        );
-        formatter.field(
-            "actual_incremental_backup_size_in_mega_bytes",
-            &self.actual_incremental_backup_size_in_mega_bytes,
-        );
-        formatter.field(
-            "backup_progress_in_mega_bytes",
-            &self.backup_progress_in_mega_bytes,
-        );
-        formatter.field(
-            "current_backup_rate_in_mega_bytes_per_second",
-            &self.current_backup_rate_in_mega_bytes_per_second,
-        );
-        formatter.field(
-            "estimated_seconds_to_completion",
-            &self.estimated_seconds_to_completion,
-        );
-        formatter.field("elapsed_time_in_seconds", &self.elapsed_time_in_seconds);
-        formatter.field("source_region", &self.source_region);
-        formatter.field("tags", &self.tags);
-        formatter.field("restorable_node_types", &self.restorable_node_types);
-        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
-        formatter.field("maintenance_track_name", &self.maintenance_track_name);
-        formatter.field(
-            "manual_snapshot_retention_period",
-            &self.manual_snapshot_retention_period,
-        );
-        formatter.field(
-            "manual_snapshot_remaining_days",
-            &self.manual_snapshot_remaining_days,
-        );
-        formatter.field(
-            "snapshot_retention_start_time",
-            &self.snapshot_retention_start_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
@@ -5472,7 +5050,7 @@ impl Snapshot {
 
 /// <p>Describes an Amazon Web Services account authorized to restore a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountWithRestoreAccess {
     /// <p>The identifier of an Amazon Web Services account authorized to restore a snapshot.</p>
     #[doc(hidden)]
@@ -5489,14 +5067,6 @@ impl AccountWithRestoreAccess {
     /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
     pub fn account_alias(&self) -> std::option::Option<&str> {
         self.account_alias.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountWithRestoreAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountWithRestoreAccess");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("account_alias", &self.account_alias);
-        formatter.finish()
     }
 }
 /// See [`AccountWithRestoreAccess`](crate::model::AccountWithRestoreAccess).
@@ -5642,7 +5212,7 @@ impl AsRef<str> for AuthorizationStatus {
 
 /// <p>Describes a security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSecurityGroup {
     /// <p>The name of the cluster security group to which the operation was applied.</p>
     #[doc(hidden)]
@@ -5680,20 +5250,6 @@ impl ClusterSecurityGroup {
     /// <p>The list of tags for the cluster security group.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterSecurityGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSecurityGroup");
-        formatter.field(
-            "cluster_security_group_name",
-            &self.cluster_security_group_name,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("ec2_security_groups", &self.ec2_security_groups);
-        formatter.field("ip_ranges", &self.ip_ranges);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ClusterSecurityGroup`](crate::model::ClusterSecurityGroup).
@@ -5814,7 +5370,7 @@ impl ClusterSecurityGroup {
 
 /// <p>Describes an IP range used in a security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpRange {
     /// <p>The status of the IP range, for example, "authorized".</p>
     #[doc(hidden)]
@@ -5838,15 +5394,6 @@ impl IpRange {
     /// <p>The list of tags for the IP range.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for IpRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpRange");
-        formatter.field("status", &self.status);
-        formatter.field("cidrip", &self.cidrip);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`IpRange`](crate::model::IpRange).
@@ -5918,7 +5465,7 @@ impl IpRange {
 
 /// <p>Describes an Amazon EC2 security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2SecurityGroup {
     /// <p>The status of the EC2 security group.</p>
     #[doc(hidden)]
@@ -5949,19 +5496,6 @@ impl Ec2SecurityGroup {
     /// <p>The list of tags for the EC2 security group.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2SecurityGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2SecurityGroup");
-        formatter.field("status", &self.status);
-        formatter.field("ec2_security_group_name", &self.ec2_security_group_name);
-        formatter.field(
-            "ec2_security_group_owner_id",
-            &self.ec2_security_group_owner_id,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
@@ -6054,7 +5588,7 @@ impl Ec2SecurityGroup {
 
 /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableRestoreStatus {
     /// <p>The unique identifier for the table restore request.</p>
     #[doc(hidden)]
@@ -6157,26 +5691,6 @@ impl TableRestoreStatus {
     /// <p>The name of the table to create as a result of the table restore request.</p>
     pub fn new_table_name(&self) -> std::option::Option<&str> {
         self.new_table_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TableRestoreStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableRestoreStatus");
-        formatter.field("table_restore_request_id", &self.table_restore_request_id);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("request_time", &self.request_time);
-        formatter.field("progress_in_mega_bytes", &self.progress_in_mega_bytes);
-        formatter.field("total_data_in_mega_bytes", &self.total_data_in_mega_bytes);
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("snapshot_identifier", &self.snapshot_identifier);
-        formatter.field("source_database_name", &self.source_database_name);
-        formatter.field("source_schema_name", &self.source_schema_name);
-        formatter.field("source_table_name", &self.source_table_name);
-        formatter.field("target_database_name", &self.target_database_name);
-        formatter.field("target_schema_name", &self.target_schema_name);
-        formatter.field("new_table_name", &self.new_table_name);
-        formatter.finish()
     }
 }
 /// See [`TableRestoreStatus`](crate::model::TableRestoreStatus).
@@ -6513,7 +6027,7 @@ impl AsRef<str> for TableRestoreStatusType {
 
 /// <p>Describes a parameter in a cluster parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -6579,21 +6093,6 @@ impl Parameter {
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
         self.minimum_engine_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Parameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.field("description", &self.description);
-        formatter.field("source", &self.source);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("apply_type", &self.apply_type);
-        formatter.field("is_modifiable", &self.is_modifiable);
-        formatter.field("minimum_engine_version", &self.minimum_engine_version);
-        formatter.finish()
     }
 }
 /// See [`Parameter`](crate::model::Parameter).
@@ -6835,7 +6334,7 @@ impl AsRef<str> for ParameterApplyType {
 
 /// <p>The association of a datashare from a producer account with a data consumer. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataShareAssociation {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
     #[doc(hidden)]
@@ -6873,17 +6372,6 @@ impl DataShareAssociation {
     /// <p>The status change data of the datashare that is associated.</p>
     pub fn status_change_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_change_date.as_ref()
-    }
-}
-impl std::fmt::Debug for DataShareAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataShareAssociation");
-        formatter.field("consumer_identifier", &self.consumer_identifier);
-        formatter.field("status", &self.status);
-        formatter.field("consumer_region", &self.consumer_region);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("status_change_date", &self.status_change_date);
-        formatter.finish()
     }
 }
 /// See [`DataShareAssociation`](crate::model::DataShareAssociation).
@@ -7102,7 +6590,7 @@ impl AsRef<str> for DataShareStatus {
 
 /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNode {
     /// <p>The unique identifier for the reservation.</p>
     #[doc(hidden)]
@@ -7214,28 +6702,6 @@ impl ReservedNode {
         &self,
     ) -> std::option::Option<&crate::model::ReservedNodeOfferingType> {
         self.reserved_node_offering_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ReservedNode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNode");
-        formatter.field("reserved_node_id", &self.reserved_node_id);
-        formatter.field("reserved_node_offering_id", &self.reserved_node_offering_id);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("duration", &self.duration);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("node_count", &self.node_count);
-        formatter.field("state", &self.state);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("recurring_charges", &self.recurring_charges);
-        formatter.field(
-            "reserved_node_offering_type",
-            &self.reserved_node_offering_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReservedNode`](crate::model::ReservedNode).
@@ -7558,7 +7024,7 @@ impl AsRef<str> for ReservedNodeOfferingType {
 
 /// <p>Describes a recurring charge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecurringCharge {
     /// <p>The amount charged per the period of time specified by the recurring charge frequency.</p>
     #[doc(hidden)]
@@ -7575,17 +7041,6 @@ impl RecurringCharge {
     /// <p>The frequency at which the recurring charge amount is applied.</p>
     pub fn recurring_charge_frequency(&self) -> std::option::Option<&str> {
         self.recurring_charge_frequency.as_deref()
-    }
-}
-impl std::fmt::Debug for RecurringCharge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecurringCharge");
-        formatter.field("recurring_charge_amount", &self.recurring_charge_amount);
-        formatter.field(
-            "recurring_charge_frequency",
-            &self.recurring_charge_frequency,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
@@ -8024,7 +7479,7 @@ impl AsRef<str> for UsageLimitFeatureType {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterAssociatedToSchedule {
     /// <p></p>
     #[doc(hidden)]
@@ -8041,17 +7496,6 @@ impl ClusterAssociatedToSchedule {
     /// <p></p>
     pub fn schedule_association_state(&self) -> std::option::Option<&crate::model::ScheduleState> {
         self.schedule_association_state.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusterAssociatedToSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterAssociatedToSchedule");
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field(
-            "schedule_association_state",
-            &self.schedule_association_state,
-        );
-        formatter.finish()
     }
 }
 /// See [`ClusterAssociatedToSchedule`](crate::model::ClusterAssociatedToSchedule).
@@ -8200,7 +7644,7 @@ impl AsRef<str> for ScheduledActionState {
 
 /// <p>The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledActionType {
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
     #[doc(hidden)]
@@ -8224,15 +7668,6 @@ impl ScheduledActionType {
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
     pub fn resume_cluster(&self) -> std::option::Option<&crate::model::ResumeClusterMessage> {
         self.resume_cluster.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduledActionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledActionType");
-        formatter.field("resize_cluster", &self.resize_cluster);
-        formatter.field("pause_cluster", &self.pause_cluster);
-        formatter.field("resume_cluster", &self.resume_cluster);
-        formatter.finish()
     }
 }
 /// See [`ScheduledActionType`](crate::model::ScheduledActionType).
@@ -8304,7 +7739,7 @@ impl ScheduledActionType {
 
 /// <p>Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeClusterMessage {
     /// <p>The identifier of the cluster to be resumed.</p>
     #[doc(hidden)]
@@ -8314,13 +7749,6 @@ impl ResumeClusterMessage {
     /// <p>The identifier of the cluster to be resumed.</p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for ResumeClusterMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeClusterMessage");
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.finish()
     }
 }
 /// See [`ResumeClusterMessage`](crate::model::ResumeClusterMessage).
@@ -8362,7 +7790,7 @@ impl ResumeClusterMessage {
 
 /// <p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PauseClusterMessage {
     /// <p>The identifier of the cluster to be paused.</p>
     #[doc(hidden)]
@@ -8372,13 +7800,6 @@ impl PauseClusterMessage {
     /// <p>The identifier of the cluster to be paused.</p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for PauseClusterMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PauseClusterMessage");
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.finish()
     }
 }
 /// See [`PauseClusterMessage`](crate::model::PauseClusterMessage).
@@ -8420,7 +7841,7 @@ impl PauseClusterMessage {
 
 /// <p>Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResizeClusterMessage {
     /// <p>The unique identifier for the cluster to resize.</p>
     #[doc(hidden)]
@@ -8472,22 +7893,6 @@ impl ResizeClusterMessage {
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
         self.target_reserved_node_offering_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResizeClusterMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResizeClusterMessage");
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("cluster_type", &self.cluster_type);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("number_of_nodes", &self.number_of_nodes);
-        formatter.field("classic", &self.classic);
-        formatter.field("reserved_node_id", &self.reserved_node_id);
-        formatter.field(
-            "target_reserved_node_offering_id",
-            &self.target_reserved_node_offering_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResizeClusterMessage`](crate::model::ResizeClusterMessage).
@@ -8610,7 +8015,7 @@ impl ResizeClusterMessage {
 
 /// <p>Describes event subscriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification subscription.</p>
     #[doc(hidden)]
@@ -8704,26 +8109,6 @@ impl EventSubscription {
     /// <p>The list of tags for the event subscription.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for EventSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSubscription");
-        formatter.field("customer_aws_id", &self.customer_aws_id);
-        formatter.field("cust_subscription_id", &self.cust_subscription_id);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "subscription_creation_time",
-            &self.subscription_creation_time,
-        );
-        formatter.field("source_type", &self.source_type);
-        formatter.field("source_ids_list", &self.source_ids_list);
-        formatter.field("event_categories_list", &self.event_categories_list);
-        formatter.field("severity", &self.severity);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`EventSubscription`](crate::model::EventSubscription).
@@ -8935,7 +8320,7 @@ impl EventSubscription {
 
 /// <p>Describes a subnet group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSubnetGroup {
     /// <p>The name of the cluster subnet group.</p>
     #[doc(hidden)]
@@ -8980,18 +8365,6 @@ impl ClusterSubnetGroup {
     /// <p>The list of tags for the cluster subnet group.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterSubnetGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSubnetGroup");
-        formatter.field("cluster_subnet_group_name", &self.cluster_subnet_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_group_status", &self.subnet_group_status);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ClusterSubnetGroup`](crate::model::ClusterSubnetGroup).
@@ -9114,7 +8487,7 @@ impl ClusterSubnetGroup {
 
 /// <p>Describes a subnet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The identifier of the subnet.</p>
     #[doc(hidden)]
@@ -9138,15 +8511,6 @@ impl Subnet {
     /// <p>The status of the subnet.</p>
     pub fn subnet_status(&self) -> std::option::Option<&str> {
         self.subnet_status.as_deref()
-    }
-}
-impl std::fmt::Debug for Subnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subnet");
-        formatter.field("subnet_identifier", &self.subnet_identifier);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field("subnet_status", &self.subnet_status);
-        formatter.finish()
     }
 }
 /// See [`Subnet`](crate::model::Subnet).
@@ -9218,7 +8582,7 @@ impl Subnet {
 
 /// <p>Describes an availability zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the availability zone.</p>
     #[doc(hidden)]
@@ -9235,14 +8599,6 @@ impl AvailabilityZone {
     /// <p></p>
     pub fn supported_platforms(&self) -> std::option::Option<&[crate::model::SupportedPlatform]> {
         self.supported_platforms.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZone");
-        formatter.field("name", &self.name);
-        formatter.field("supported_platforms", &self.supported_platforms);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
@@ -9303,7 +8659,7 @@ impl AvailabilityZone {
 
 /// <p>A list of supported platforms for orderable clusters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SupportedPlatform {
     /// <p></p>
     #[doc(hidden)]
@@ -9313,13 +8669,6 @@ impl SupportedPlatform {
     /// <p></p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for SupportedPlatform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SupportedPlatform");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`SupportedPlatform`](crate::model::SupportedPlatform).
@@ -9356,7 +8705,7 @@ impl SupportedPlatform {
 
 /// <p>Describes a reserved node offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeOffering {
     /// <p>The offering identifier.</p>
     #[doc(hidden)]
@@ -9424,24 +8773,6 @@ impl ReservedNodeOffering {
         &self,
     ) -> std::option::Option<&crate::model::ReservedNodeOfferingType> {
         self.reserved_node_offering_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ReservedNodeOffering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeOffering");
-        formatter.field("reserved_node_offering_id", &self.reserved_node_offering_id);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("duration", &self.duration);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("recurring_charges", &self.recurring_charges);
-        formatter.field(
-            "reserved_node_offering_type",
-            &self.reserved_node_offering_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReservedNodeOffering`](crate::model::ReservedNodeOffering).
@@ -9602,7 +8933,7 @@ impl ReservedNodeOffering {
 
 /// <p>Details for a reserved-node exchange. Examples include the node type for a reserved node, the price for a node, the node's state, and other details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeConfigurationOption {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
     #[doc(hidden)]
@@ -9628,21 +8959,6 @@ impl ReservedNodeConfigurationOption {
         &self,
     ) -> std::option::Option<&crate::model::ReservedNodeOffering> {
         self.target_reserved_node_offering.as_ref()
-    }
-}
-impl std::fmt::Debug for ReservedNodeConfigurationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeConfigurationOption");
-        formatter.field("source_reserved_node", &self.source_reserved_node);
-        formatter.field(
-            "target_reserved_node_count",
-            &self.target_reserved_node_count,
-        );
-        formatter.field(
-            "target_reserved_node_offering",
-            &self.target_reserved_node_offering,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption).
@@ -9899,7 +9215,7 @@ impl AsRef<str> for LogDestinationType {
 
 /// <p>Describes a usage limit object for a cluster. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageLimit {
     /// <p>The identifier of the usage limit.</p>
     #[doc(hidden)]
@@ -9968,20 +9284,6 @@ impl UsageLimit {
     /// <p>A list of tag instances.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for UsageLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageLimit");
-        formatter.field("usage_limit_id", &self.usage_limit_id);
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("feature_type", &self.feature_type);
-        formatter.field("limit_type", &self.limit_type);
-        formatter.field("amount", &self.amount);
-        formatter.field("period", &self.period);
-        formatter.field("breach_action", &self.breach_action);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`UsageLimit`](crate::model::UsageLimit).
@@ -10141,7 +9443,7 @@ impl UsageLimit {
 
 /// <p>A tag and its associated resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaggedResource {
     /// <p>The tag for the resource.</p>
     #[doc(hidden)]
@@ -10189,15 +9491,6 @@ impl TaggedResource {
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for TaggedResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaggedResource");
-        formatter.field("tag", &self.tag);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`TaggedResource`](crate::model::TaggedResource).
@@ -10290,7 +9583,7 @@ impl TaggedResource {
 
 /// <p>Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotSchedule {
     /// <p>A list of ScheduleDefinitions.</p>
     #[doc(hidden)]
@@ -10345,19 +9638,6 @@ impl SnapshotSchedule {
         &self,
     ) -> std::option::Option<&[crate::model::ClusterAssociatedToSchedule]> {
         self.associated_clusters.as_deref()
-    }
-}
-impl std::fmt::Debug for SnapshotSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotSchedule");
-        formatter.field("schedule_definitions", &self.schedule_definitions);
-        formatter.field("schedule_identifier", &self.schedule_identifier);
-        formatter.field("schedule_description", &self.schedule_description);
-        formatter.field("tags", &self.tags);
-        formatter.field("next_invocations", &self.next_invocations);
-        formatter.field("associated_cluster_count", &self.associated_cluster_count);
-        formatter.field("associated_clusters", &self.associated_clusters);
-        formatter.finish()
     }
 }
 /// See [`SnapshotSchedule`](crate::model::SnapshotSchedule).
@@ -10515,7 +9795,7 @@ impl SnapshotSchedule {
 /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
 /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotCopyGrant {
     /// <p>The name of the snapshot copy grant.</p>
     #[doc(hidden)]
@@ -10539,15 +9819,6 @@ impl SnapshotCopyGrant {
     /// <p>A list of tag instances.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for SnapshotCopyGrant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotCopyGrant");
-        formatter.field("snapshot_copy_grant_name", &self.snapshot_copy_grant_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SnapshotCopyGrant`](crate::model::SnapshotCopyGrant).
@@ -10622,7 +9893,7 @@ impl SnapshotCopyGrant {
 
 /// <p>Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <code>ScheduledActionType</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledAction {
     /// <p>The name of the scheduled action. </p>
     #[doc(hidden)]
@@ -10694,24 +9965,6 @@ impl ScheduledAction {
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduledAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledAction");
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("target_action", &self.target_action);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("iam_role", &self.iam_role);
-        formatter.field(
-            "scheduled_action_description",
-            &self.scheduled_action_description,
-        );
-        formatter.field("state", &self.state);
-        formatter.field("next_invocations", &self.next_invocations);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`ScheduledAction`](crate::model::ScheduledAction).
@@ -10882,7 +10135,7 @@ impl ScheduledAction {
 
 /// <p>A set of elements to filter the returned scheduled actions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledActionFilter {
     /// <p>The type of element to filter. </p>
     #[doc(hidden)]
@@ -10899,14 +10152,6 @@ impl ScheduledActionFilter {
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduledActionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledActionFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ScheduledActionFilter`](crate::model::ScheduledActionFilter).
@@ -11158,7 +10403,7 @@ impl AsRef<str> for ScheduledActionTypeValues {
 
 /// <p>Describes a partner integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartnerIntegrationInfo {
     /// <p>The name of the database that receives data from a partner.</p>
     #[doc(hidden)]
@@ -11203,18 +10448,6 @@ impl PartnerIntegrationInfo {
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for PartnerIntegrationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartnerIntegrationInfo");
-        formatter.field("database_name", &self.database_name);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`PartnerIntegrationInfo`](crate::model::PartnerIntegrationInfo).
@@ -11328,7 +10561,7 @@ impl PartnerIntegrationInfo {
 
 /// <p>Describes an orderable cluster option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrderableClusterOption {
     /// <p>The version of the orderable cluster.</p>
     #[doc(hidden)]
@@ -11359,16 +10592,6 @@ impl OrderableClusterOption {
     /// <p>A list of availability zones for the orderable cluster.</p>
     pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
         self.availability_zones.as_deref()
-    }
-}
-impl std::fmt::Debug for OrderableClusterOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrderableClusterOption");
-        formatter.field("cluster_version", &self.cluster_version);
-        formatter.field("cluster_type", &self.cluster_type);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.finish()
     }
 }
 /// See [`OrderableClusterOption`](crate::model::OrderableClusterOption).
@@ -11456,7 +10679,7 @@ impl OrderableClusterOption {
 
 /// <p>A list of node configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeConfigurationOption {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
     #[doc(hidden)]
@@ -11487,19 +10710,6 @@ impl NodeConfigurationOption {
     /// <p>The category of the node configuration recommendation.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
         self.mode.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeConfigurationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeConfigurationOption");
-        formatter.field("node_type", &self.node_type);
-        formatter.field("number_of_nodes", &self.number_of_nodes);
-        formatter.field(
-            "estimated_disk_utilization_percent",
-            &self.estimated_disk_utilization_percent,
-        );
-        formatter.field("mode", &self.mode);
-        formatter.finish()
     }
 }
 /// See [`NodeConfigurationOption`](crate::model::NodeConfigurationOption).
@@ -11667,7 +10877,7 @@ impl AsRef<str> for Mode {
 
 /// <p>A set of elements to filter the returned node configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeConfigurationOptionsFilter {
     /// <p>The name of the element to filter.</p>
     #[doc(hidden)]
@@ -11691,15 +10901,6 @@ impl NodeConfigurationOptionsFilter {
     /// <p>List of values. Compare Name using Operator to Values. If filter Name is NumberOfNodes, then values can range from 0 to 200. If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100. For example, filter NumberOfNodes (name) GT (operator) 3 (values).</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeConfigurationOptionsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeConfigurationOptionsFilter");
-        formatter.field("name", &self.name);
-        formatter.field("operator", &self.operator);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`NodeConfigurationOptionsFilter`](crate::model::NodeConfigurationOptionsFilter).
@@ -12098,7 +11299,7 @@ impl AsRef<str> for ActionType {
 
 /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmConfiguration {
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
     #[doc(hidden)]
@@ -12136,20 +11337,6 @@ impl HsmConfiguration {
     /// <p>The list of tags for the HSM configuration.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for HsmConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmConfiguration");
-        formatter.field(
-            "hsm_configuration_identifier",
-            &self.hsm_configuration_identifier,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("hsm_ip_address", &self.hsm_ip_address);
-        formatter.field("hsm_partition_name", &self.hsm_partition_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`HsmConfiguration`](crate::model::HsmConfiguration).
@@ -12257,7 +11444,7 @@ impl HsmConfiguration {
 
 /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmClientCertificate {
     /// <p>The identifier of the HSM client certificate.</p>
     #[doc(hidden)]
@@ -12281,21 +11468,6 @@ impl HsmClientCertificate {
     /// <p>The list of tags for the HSM client certificate.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for HsmClientCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmClientCertificate");
-        formatter.field(
-            "hsm_client_certificate_identifier",
-            &self.hsm_client_certificate_identifier,
-        );
-        formatter.field(
-            "hsm_client_certificate_public_key",
-            &self.hsm_client_certificate_public_key,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`HsmClientCertificate`](crate::model::HsmClientCertificate).
@@ -12379,7 +11551,7 @@ impl HsmClientCertificate {
 
 /// <p>Describes an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The identifier for the source of the event.</p>
     #[doc(hidden)]
@@ -12435,19 +11607,6 @@ impl Event {
     /// <p>The identifier of the event.</p>
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("message", &self.message);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("severity", &self.severity);
-        formatter.field("date", &self.date);
-        formatter.field("event_id", &self.event_id);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -12688,7 +11847,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Describes event categories.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventCategoriesMap {
     /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
     #[doc(hidden)]
@@ -12705,14 +11864,6 @@ impl EventCategoriesMap {
     /// <p>The events in the event category.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::EventInfoMap]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for EventCategoriesMap {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventCategoriesMap");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`EventCategoriesMap`](crate::model::EventCategoriesMap).
@@ -12772,7 +11923,7 @@ impl EventCategoriesMap {
 
 /// <p>Describes event information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventInfoMap {
     /// <p>The identifier of an Amazon Redshift event.</p>
     #[doc(hidden)]
@@ -12805,16 +11956,6 @@ impl EventInfoMap {
     /// <p>Values: ERROR, INFO</p>
     pub fn severity(&self) -> std::option::Option<&str> {
         self.severity.as_deref()
-    }
-}
-impl std::fmt::Debug for EventInfoMap {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventInfoMap");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("event_description", &self.event_description);
-        formatter.field("severity", &self.severity);
-        formatter.finish()
     }
 }
 /// See [`EventInfoMap`](crate::model::EventInfoMap).
@@ -12903,7 +12044,7 @@ impl EventInfoMap {
 
 /// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointAuthorization {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     #[doc(hidden)]
@@ -12969,21 +12110,6 @@ impl EndpointAuthorization {
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub fn endpoint_count(&self) -> i32 {
         self.endpoint_count
-    }
-}
-impl std::fmt::Debug for EndpointAuthorization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointAuthorization");
-        formatter.field("grantor", &self.grantor);
-        formatter.field("grantee", &self.grantee);
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("authorize_time", &self.authorize_time);
-        formatter.field("cluster_status", &self.cluster_status);
-        formatter.field("status", &self.status);
-        formatter.field("allowed_all_vp_cs", &self.allowed_all_vp_cs);
-        formatter.field("allowed_vp_cs", &self.allowed_vp_cs);
-        formatter.field("endpoint_count", &self.endpoint_count);
-        formatter.finish()
     }
 }
 /// See [`EndpointAuthorization`](crate::model::EndpointAuthorization).
@@ -13139,7 +12265,7 @@ impl EndpointAuthorization {
 
 /// <p>Describes a Redshift-managed VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointAccess {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
     #[doc(hidden)]
@@ -13215,22 +12341,6 @@ impl EndpointAccess {
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
-    }
-}
-impl std::fmt::Debug for EndpointAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointAccess");
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("subnet_group_name", &self.subnet_group_name);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("endpoint_name", &self.endpoint_name);
-        formatter.field("endpoint_create_time", &self.endpoint_create_time);
-        formatter.field("port", &self.port);
-        formatter.field("address", &self.address);
-        formatter.field("vpc_security_groups", &self.vpc_security_groups);
-        formatter.field("vpc_endpoint", &self.vpc_endpoint);
-        formatter.finish()
     }
 }
 /// See [`EndpointAccess`](crate::model::EndpointAccess).
@@ -13411,7 +12521,7 @@ impl EndpointAccess {
 
 /// <p>Describes the default cluster parameters for a parameter group family.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultClusterParameters {
     /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
     #[doc(hidden)]
@@ -13435,15 +12545,6 @@ impl DefaultClusterParameters {
     /// <p>The list of cluster default parameters.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for DefaultClusterParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultClusterParameters");
-        formatter.field("parameter_group_family", &self.parameter_group_family);
-        formatter.field("marker", &self.marker);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`DefaultClusterParameters`](crate::model::DefaultClusterParameters).
@@ -13518,7 +12619,7 @@ impl DefaultClusterParameters {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataShare {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     #[doc(hidden)]
@@ -13559,20 +12660,6 @@ impl DataShare {
     /// <p>The identifier of a datashare to show its managing entity.</p>
     pub fn managed_by(&self) -> std::option::Option<&str> {
         self.managed_by.as_deref()
-    }
-}
-impl std::fmt::Debug for DataShare {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataShare");
-        formatter.field("data_share_arn", &self.data_share_arn);
-        formatter.field("producer_arn", &self.producer_arn);
-        formatter.field(
-            "allow_publicly_accessible_consumers",
-            &self.allow_publicly_accessible_consumers,
-        );
-        formatter.field("data_share_associations", &self.data_share_associations);
-        formatter.field("managed_by", &self.managed_by);
-        formatter.finish()
     }
 }
 /// See [`DataShare`](crate::model::DataShare).
@@ -13885,7 +12972,7 @@ impl AsRef<str> for DataShareStatusForConsumer {
 
 /// <p>Describes a cluster version, including the parameter group family and description of the version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterVersion {
     /// <p>The version number used by the cluster.</p>
     #[doc(hidden)]
@@ -13909,18 +12996,6 @@ impl ClusterVersion {
     /// <p>The description of the cluster version.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterVersion");
-        formatter.field("cluster_version", &self.cluster_version);
-        formatter.field(
-            "cluster_parameter_group_family",
-            &self.cluster_parameter_group_family,
-        );
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ClusterVersion`](crate::model::ClusterVersion).
@@ -13992,7 +13067,7 @@ impl ClusterVersion {
 
 /// <p>Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceTrack {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
     #[doc(hidden)]
@@ -14016,15 +13091,6 @@ impl MaintenanceTrack {
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
     pub fn update_targets(&self) -> std::option::Option<&[crate::model::UpdateTarget]> {
         self.update_targets.as_deref()
-    }
-}
-impl std::fmt::Debug for MaintenanceTrack {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceTrack");
-        formatter.field("maintenance_track_name", &self.maintenance_track_name);
-        formatter.field("database_version", &self.database_version);
-        formatter.field("update_targets", &self.update_targets);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceTrack`](crate::model::MaintenanceTrack).
@@ -14102,7 +13168,7 @@ impl MaintenanceTrack {
 
 /// <p>A maintenance track that you can switch the current track to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTarget {
     /// <p>The name of the new maintenance track.</p>
     #[doc(hidden)]
@@ -14126,15 +13192,6 @@ impl UpdateTarget {
     /// <p>A list of operations supported by the maintenance track.</p>
     pub fn supported_operations(&self) -> std::option::Option<&[crate::model::SupportedOperation]> {
         self.supported_operations.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTarget");
-        formatter.field("maintenance_track_name", &self.maintenance_track_name);
-        formatter.field("database_version", &self.database_version);
-        formatter.field("supported_operations", &self.supported_operations);
-        formatter.finish()
     }
 }
 /// See [`UpdateTarget`](crate::model::UpdateTarget).
@@ -14213,7 +13270,7 @@ impl UpdateTarget {
 
 /// <p>Describes the operations that are allowed on a maintenance track.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SupportedOperation {
     /// <p>A list of the supported operations.</p>
     #[doc(hidden)]
@@ -14223,13 +13280,6 @@ impl SupportedOperation {
     /// <p>A list of the supported operations.</p>
     pub fn operation_name(&self) -> std::option::Option<&str> {
         self.operation_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SupportedOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SupportedOperation");
-        formatter.field("operation_name", &self.operation_name);
-        formatter.finish()
     }
 }
 /// See [`SupportedOperation`](crate::model::SupportedOperation).
@@ -14271,7 +13321,7 @@ impl SupportedOperation {
 
 /// <p>Describes a sorting entity</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotSortingEntity {
     /// <p>The category for sorting the snapshots.</p>
     #[doc(hidden)]
@@ -14288,14 +13338,6 @@ impl SnapshotSortingEntity {
     /// <p>The order for listing the attributes.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortByOrder> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for SnapshotSortingEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotSortingEntity");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`SnapshotSortingEntity`](crate::model::SnapshotSortingEntity).
@@ -14539,7 +13581,7 @@ impl AsRef<str> for SnapshotAttributeToSortBy {
 
 /// <p>Describes a parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterParameterGroup {
     /// <p>The name of the cluster parameter group.</p>
     #[doc(hidden)]
@@ -14570,16 +13612,6 @@ impl ClusterParameterGroup {
     /// <p>The list of tags for the cluster parameter group.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterParameterGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterParameterGroup");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("parameter_group_family", &self.parameter_group_family);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ClusterParameterGroup`](crate::model::ClusterParameterGroup).
@@ -14669,7 +13701,7 @@ impl ClusterParameterGroup {
 
 /// <p>Describes a <code>ClusterDbRevision</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterDbRevision {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
@@ -14702,19 +13734,6 @@ impl ClusterDbRevision {
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
     pub fn revision_targets(&self) -> std::option::Option<&[crate::model::RevisionTarget]> {
         self.revision_targets.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterDbRevision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterDbRevision");
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("current_database_revision", &self.current_database_revision);
-        formatter.field(
-            "database_revision_release_date",
-            &self.database_revision_release_date,
-        );
-        formatter.field("revision_targets", &self.revision_targets);
-        formatter.finish()
     }
 }
 /// See [`ClusterDbRevision`](crate::model::ClusterDbRevision).
@@ -14808,7 +13827,7 @@ impl ClusterDbRevision {
 
 /// <p>Describes a <code>RevisionTarget</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionTarget {
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
     #[doc(hidden)]
@@ -14834,18 +13853,6 @@ impl RevisionTarget {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.database_revision_release_date.as_ref()
-    }
-}
-impl std::fmt::Debug for RevisionTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionTarget");
-        formatter.field("database_revision", &self.database_revision);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "database_revision_release_date",
-            &self.database_revision_release_date,
-        );
-        formatter.finish()
     }
 }
 /// See [`RevisionTarget`](crate::model::RevisionTarget).
@@ -14914,7 +13921,7 @@ impl RevisionTarget {
 
 /// <p>Describes an authentication profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationProfile {
     /// <p>The name of the authentication profile.</p>
     #[doc(hidden)]
@@ -14931,20 +13938,6 @@ impl AuthenticationProfile {
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
     pub fn authentication_profile_content(&self) -> std::option::Option<&str> {
         self.authentication_profile_content.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthenticationProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationProfile");
-        formatter.field(
-            "authentication_profile_name",
-            &self.authentication_profile_name,
-        );
-        formatter.field(
-            "authentication_profile_content",
-            &self.authentication_profile_content,
-        );
-        formatter.finish()
     }
 }
 /// See [`AuthenticationProfile`](crate::model::AuthenticationProfile).
@@ -15007,7 +14000,7 @@ impl AuthenticationProfile {
 
 /// <p>A name value pair that describes an aspect of an account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAttribute {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
@@ -15024,14 +14017,6 @@ impl AccountAttribute {
     /// <p>A list of attribute values.</p>
     pub fn attribute_values(&self) -> std::option::Option<&[crate::model::AttributeValueTarget]> {
         self.attribute_values.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAttribute");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_values", &self.attribute_values);
-        formatter.finish()
     }
 }
 /// See [`AccountAttribute`](crate::model::AccountAttribute).
@@ -15095,7 +14080,7 @@ impl AccountAttribute {
 
 /// <p>Describes an attribute value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeValueTarget {
     /// <p>The value of the attribute.</p>
     #[doc(hidden)]
@@ -15105,13 +14090,6 @@ impl AttributeValueTarget {
     /// <p>The value of the attribute.</p>
     pub fn attribute_value(&self) -> std::option::Option<&str> {
         self.attribute_value.as_deref()
-    }
-}
-impl std::fmt::Debug for AttributeValueTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeValueTarget");
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
     }
 }
 /// See [`AttributeValueTarget`](crate::model::AttributeValueTarget).
@@ -15153,7 +14131,7 @@ impl AttributeValueTarget {
 
 /// <p>Describes the errors returned by a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotErrorMessage {
     /// <p>A unique identifier for the snapshot returning the error.</p>
     #[doc(hidden)]
@@ -15184,19 +14162,6 @@ impl SnapshotErrorMessage {
     /// <p>The text message describing the error.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for SnapshotErrorMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotErrorMessage");
-        formatter.field("snapshot_identifier", &self.snapshot_identifier);
-        formatter.field(
-            "snapshot_cluster_identifier",
-            &self.snapshot_cluster_identifier,
-        );
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`SnapshotErrorMessage`](crate::model::SnapshotErrorMessage).
@@ -15283,7 +14248,7 @@ impl SnapshotErrorMessage {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClusterSnapshotMessage {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
@@ -15304,17 +14269,6 @@ impl DeleteClusterSnapshotMessage {
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_cluster_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteClusterSnapshotMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClusterSnapshotMessage");
-        formatter.field("snapshot_identifier", &self.snapshot_identifier);
-        formatter.field(
-            "snapshot_cluster_identifier",
-            &self.snapshot_cluster_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeleteClusterSnapshotMessage`](crate::model::DeleteClusterSnapshotMessage).

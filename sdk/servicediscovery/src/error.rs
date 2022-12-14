@@ -2,18 +2,11 @@
 
 /// <p>No service exists with the specified ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ServiceNotFound {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl ServiceNotFound {
 
 /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInput");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInput {
     /// Returns the error message.
@@ -136,7 +122,7 @@ impl InvalidInput {
 
 /// <p>The operation is already in progress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateRequest {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -149,14 +135,6 @@ impl DuplicateRequest {
     /// <p>The ID of the operation that's already in progress.</p>
     pub fn duplicate_operation_id(&self) -> std::option::Option<&str> {
         self.duplicate_operation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DuplicateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateRequest");
-        formatter.field("message", &self.message);
-        formatter.field("duplicate_operation_id", &self.duplicate_operation_id);
-        formatter.finish()
     }
 }
 impl DuplicateRequest {
@@ -228,18 +206,11 @@ impl DuplicateRequest {
 
 /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceInUse {
     /// Returns the error message.
@@ -295,18 +266,11 @@ impl ResourceInUse {
 
 /// <p>No namespace exists with the specified ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NamespaceNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NamespaceNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NamespaceNotFound {
     /// Returns the error message.
@@ -362,18 +326,11 @@ impl NamespaceNotFound {
 
 /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InstanceNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InstanceNotFound {
     /// Returns the error message.
@@ -429,18 +386,11 @@ impl InstanceNotFound {
 
 /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a custom health check. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomHealthNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CustomHealthNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomHealthNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CustomHealthNotFound {
     /// Returns the error message.
@@ -496,18 +446,11 @@ impl CustomHealthNotFound {
 
 /// <p>The operation can't be completed because the resource was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -563,7 +506,7 @@ impl ResourceNotFoundException {
 
 /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -576,14 +519,6 @@ impl TooManyTagsException {
     /// <p>The name of the resource.</p>
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
     }
 }
 impl TooManyTagsException {
@@ -655,18 +590,11 @@ impl TooManyTagsException {
 
 /// <p>The resource can't be created because you've reached the quota on the number of resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceLimitExceeded {
     /// Returns the error message.
@@ -722,18 +650,11 @@ impl ResourceLimitExceeded {
 
 /// <p>No operation exists with the specified ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OperationNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OperationNotFound {
     /// Returns the error message.
@@ -789,18 +710,11 @@ impl OperationNotFound {
 
 /// <p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RequestLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RequestLimitExceeded {
     /// Returns the error message.
@@ -856,7 +770,7 @@ impl RequestLimitExceeded {
 
 /// <p>The service can't be created because a service with the same name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -876,15 +790,6 @@ impl ServiceAlreadyExists {
     /// <p>The ID of the existing service.</p>
     pub fn service_id(&self) -> std::option::Option<&str> {
         self.service_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("service_id", &self.service_id);
-        formatter.finish()
     }
 }
 impl ServiceAlreadyExists {
@@ -968,7 +873,7 @@ impl ServiceAlreadyExists {
 
 /// <p>The namespace that you're trying to create already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -988,15 +893,6 @@ impl NamespaceAlreadyExists {
     /// <p>The ID of the existing namespace.</p>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
         self.namespace_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NamespaceAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NamespaceAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("namespace_id", &self.namespace_id);
-        formatter.finish()
     }
 }
 impl NamespaceAlreadyExists {

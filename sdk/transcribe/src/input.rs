@@ -7771,7 +7771,7 @@ impl UpdateVocabularyFilterInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVocabularyFilterInput {
     /// <p>The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.</p>
     #[doc(hidden)]
@@ -7805,22 +7805,10 @@ impl UpdateVocabularyFilterInput {
         self.vocabulary_filter_file_uri.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVocabularyFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVocabularyFilterInput");
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.field("words", &self.words);
-        formatter.field(
-            "vocabulary_filter_file_uri",
-            &self.vocabulary_filter_file_uri,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVocabularyInput {
     /// <p>The name of the custom vocabulary you want to update. Vocabulary names are case sensitive.</p>
     #[doc(hidden)]
@@ -7865,20 +7853,10 @@ impl UpdateVocabularyInput {
         self.vocabulary_file_uri.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVocabularyInput");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("phrases", &self.phrases);
-        formatter.field("vocabulary_file_uri", &self.vocabulary_file_uri);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMedicalVocabularyInput {
     /// <p>The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.</p>
     #[doc(hidden)]
@@ -7906,19 +7884,10 @@ impl UpdateMedicalVocabularyInput {
         self.vocabulary_file_uri.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMedicalVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMedicalVocabularyInput");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("vocabulary_file_uri", &self.vocabulary_file_uri);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
     #[doc(hidden)]
@@ -7937,18 +7906,10 @@ impl UpdateCallAnalyticsCategoryInput {
         self.rules.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCallAnalyticsCategoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCallAnalyticsCategoryInput");
-        formatter.field("category_name", &self.category_name);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from. ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     /// <p>For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
@@ -7971,18 +7932,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to tag. ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     /// <p>For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
@@ -8007,18 +7960,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTranscriptionJobInput {
     /// <p>A unique name, chosen by you, for your transcription job. The name you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
@@ -8272,41 +8217,10 @@ impl StartTranscriptionJobInput {
         self.language_id_settings.as_ref()
     }
 }
-impl std::fmt::Debug for StartTranscriptionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTranscriptionJobInput");
-        formatter.field("transcription_job_name", &self.transcription_job_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("media_sample_rate_hertz", &self.media_sample_rate_hertz);
-        formatter.field("media_format", &self.media_format);
-        formatter.field("media", &self.media);
-        formatter.field("output_bucket_name", &self.output_bucket_name);
-        formatter.field("output_key", &self.output_key);
-        formatter.field(
-            "output_encryption_kms_key_id",
-            &self.output_encryption_kms_key_id,
-        );
-        formatter.field("kms_encryption_context", &self.kms_encryption_context);
-        formatter.field("settings", &self.settings);
-        formatter.field("model_settings", &self.model_settings);
-        formatter.field("job_execution_settings", &self.job_execution_settings);
-        formatter.field("content_redaction", &self.content_redaction);
-        formatter.field("identify_language", &self.identify_language);
-        formatter.field(
-            "identify_multiple_languages",
-            &self.identify_multiple_languages,
-        );
-        formatter.field("language_options", &self.language_options);
-        formatter.field("subtitles", &self.subtitles);
-        formatter.field("tags", &self.tags);
-        formatter.field("language_id_settings", &self.language_id_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMedicalTranscriptionJobInput {
     /// <p>A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
@@ -8478,39 +8392,10 @@ impl StartMedicalTranscriptionJobInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartMedicalTranscriptionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMedicalTranscriptionJobInput");
-        formatter.field(
-            "medical_transcription_job_name",
-            &self.medical_transcription_job_name,
-        );
-        formatter.field("language_code", &self.language_code);
-        formatter.field("media_sample_rate_hertz", &self.media_sample_rate_hertz);
-        formatter.field("media_format", &self.media_format);
-        formatter.field("media", &self.media);
-        formatter.field("output_bucket_name", &self.output_bucket_name);
-        formatter.field("output_key", &self.output_key);
-        formatter.field(
-            "output_encryption_kms_key_id",
-            &self.output_encryption_kms_key_id,
-        );
-        formatter.field("kms_encryption_context", &self.kms_encryption_context);
-        formatter.field("settings", &self.settings);
-        formatter.field(
-            "content_identification_type",
-            &self.content_identification_type,
-        );
-        formatter.field("specialty", &self.specialty);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartCallAnalyticsJobInput {
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
@@ -8616,26 +8501,10 @@ impl StartCallAnalyticsJobInput {
         self.channel_definitions.as_deref()
     }
 }
-impl std::fmt::Debug for StartCallAnalyticsJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartCallAnalyticsJobInput");
-        formatter.field("call_analytics_job_name", &self.call_analytics_job_name);
-        formatter.field("media", &self.media);
-        formatter.field("output_location", &self.output_location);
-        formatter.field(
-            "output_encryption_kms_key_id",
-            &self.output_encryption_kms_key_id,
-        );
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("settings", &self.settings);
-        formatter.field("channel_definitions", &self.channel_definitions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVocabularyFiltersInput {
     /// <p>If your <code>ListVocabularyFilters</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     #[doc(hidden)]
@@ -8661,19 +8530,10 @@ impl ListVocabularyFiltersInput {
         self.name_contains.as_deref()
     }
 }
-impl std::fmt::Debug for ListVocabularyFiltersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVocabularyFiltersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("name_contains", &self.name_contains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVocabulariesInput {
     /// <p>If your <code>ListVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     #[doc(hidden)]
@@ -8706,20 +8566,10 @@ impl ListVocabulariesInput {
         self.name_contains.as_deref()
     }
 }
-impl std::fmt::Debug for ListVocabulariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVocabulariesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("state_equals", &self.state_equals);
-        formatter.field("name_contains", &self.name_contains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTranscriptionJobsInput {
     /// <p>Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all transcription jobs are returned.</p>
     #[doc(hidden)]
@@ -8752,20 +8602,10 @@ impl ListTranscriptionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTranscriptionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTranscriptionJobsInput");
-        formatter.field("status", &self.status);
-        formatter.field("job_name_contains", &self.job_name_contains);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Returns a list of all tags associated with the specified Amazon Resource Name (ARN). ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     /// <p>For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
@@ -8781,17 +8621,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMedicalVocabulariesInput {
     /// <p>If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     #[doc(hidden)]
@@ -8824,20 +8657,10 @@ impl ListMedicalVocabulariesInput {
         self.name_contains.as_deref()
     }
 }
-impl std::fmt::Debug for ListMedicalVocabulariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMedicalVocabulariesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("state_equals", &self.state_equals);
-        formatter.field("name_contains", &self.name_contains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMedicalTranscriptionJobsInput {
     /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
     #[doc(hidden)]
@@ -8870,20 +8693,10 @@ impl ListMedicalTranscriptionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMedicalTranscriptionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMedicalTranscriptionJobsInput");
-        formatter.field("status", &self.status);
-        formatter.field("job_name_contains", &self.job_name_contains);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLanguageModelsInput {
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
     #[doc(hidden)]
@@ -8916,20 +8729,10 @@ impl ListLanguageModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLanguageModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLanguageModelsInput");
-        formatter.field("status_equals", &self.status_equals);
-        formatter.field("name_contains", &self.name_contains);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCallAnalyticsJobsInput {
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all Call Analytics jobs are returned.</p>
     #[doc(hidden)]
@@ -8962,20 +8765,10 @@ impl ListCallAnalyticsJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCallAnalyticsJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCallAnalyticsJobsInput");
-        formatter.field("status", &self.status);
-        formatter.field("job_name_contains", &self.job_name_contains);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCallAnalyticsCategoriesInput {
     /// <p>If your <code>ListCallAnalyticsCategories</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     #[doc(hidden)]
@@ -8994,18 +8787,10 @@ impl ListCallAnalyticsCategoriesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCallAnalyticsCategoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCallAnalyticsCategoriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVocabularyFilterInput {
     /// <p>The name of the custom vocabulary filter you want information about. Vocabulary filter names are case sensitive.</p>
     #[doc(hidden)]
@@ -9017,17 +8802,10 @@ impl GetVocabularyFilterInput {
         self.vocabulary_filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetVocabularyFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVocabularyFilterInput");
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVocabularyInput {
     /// <p>The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.</p>
     #[doc(hidden)]
@@ -9039,17 +8817,10 @@ impl GetVocabularyInput {
         self.vocabulary_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVocabularyInput");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTranscriptionJobInput {
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
     #[doc(hidden)]
@@ -9061,17 +8832,10 @@ impl GetTranscriptionJobInput {
         self.transcription_job_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetTranscriptionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTranscriptionJobInput");
-        formatter.field("transcription_job_name", &self.transcription_job_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMedicalVocabularyInput {
     /// <p>The name of the custom medical vocabulary you want information about. Vocabulary names are case sensitive.</p>
     #[doc(hidden)]
@@ -9083,17 +8847,10 @@ impl GetMedicalVocabularyInput {
         self.vocabulary_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMedicalVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMedicalVocabularyInput");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMedicalTranscriptionJobInput {
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
     #[doc(hidden)]
@@ -9105,20 +8862,10 @@ impl GetMedicalTranscriptionJobInput {
         self.medical_transcription_job_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMedicalTranscriptionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMedicalTranscriptionJobInput");
-        formatter.field(
-            "medical_transcription_job_name",
-            &self.medical_transcription_job_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCallAnalyticsJobInput {
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
     #[doc(hidden)]
@@ -9130,17 +8877,10 @@ impl GetCallAnalyticsJobInput {
         self.call_analytics_job_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCallAnalyticsJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCallAnalyticsJobInput");
-        formatter.field("call_analytics_job_name", &self.call_analytics_job_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
     #[doc(hidden)]
@@ -9152,17 +8892,10 @@ impl GetCallAnalyticsCategoryInput {
         self.category_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCallAnalyticsCategoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCallAnalyticsCategoryInput");
-        formatter.field("category_name", &self.category_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLanguageModelInput {
     /// <p>The name of the custom language model you want information about. Model names are case sensitive.</p>
     #[doc(hidden)]
@@ -9174,17 +8907,10 @@ impl DescribeLanguageModelInput {
         self.model_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLanguageModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLanguageModelInput");
-        formatter.field("model_name", &self.model_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVocabularyFilterInput {
     /// <p>The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.</p>
     #[doc(hidden)]
@@ -9196,17 +8922,10 @@ impl DeleteVocabularyFilterInput {
         self.vocabulary_filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVocabularyFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVocabularyFilterInput");
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVocabularyInput {
     /// <p>The name of the custom vocabulary you want to delete. Vocabulary names are case sensitive.</p>
     #[doc(hidden)]
@@ -9218,17 +8937,10 @@ impl DeleteVocabularyInput {
         self.vocabulary_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVocabularyInput");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTranscriptionJobInput {
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
     #[doc(hidden)]
@@ -9240,17 +8952,10 @@ impl DeleteTranscriptionJobInput {
         self.transcription_job_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTranscriptionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTranscriptionJobInput");
-        formatter.field("transcription_job_name", &self.transcription_job_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMedicalVocabularyInput {
     /// <p>The name of the custom medical vocabulary you want to delete. Vocabulary names are case sensitive.</p>
     #[doc(hidden)]
@@ -9262,17 +8967,10 @@ impl DeleteMedicalVocabularyInput {
         self.vocabulary_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMedicalVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMedicalVocabularyInput");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMedicalTranscriptionJobInput {
     /// <p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p>
     #[doc(hidden)]
@@ -9284,20 +8982,10 @@ impl DeleteMedicalTranscriptionJobInput {
         self.medical_transcription_job_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMedicalTranscriptionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMedicalTranscriptionJobInput");
-        formatter.field(
-            "medical_transcription_job_name",
-            &self.medical_transcription_job_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLanguageModelInput {
     /// <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
     #[doc(hidden)]
@@ -9309,17 +8997,10 @@ impl DeleteLanguageModelInput {
         self.model_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLanguageModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLanguageModelInput");
-        formatter.field("model_name", &self.model_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCallAnalyticsJobInput {
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
     #[doc(hidden)]
@@ -9331,17 +9012,10 @@ impl DeleteCallAnalyticsJobInput {
         self.call_analytics_job_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCallAnalyticsJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCallAnalyticsJobInput");
-        formatter.field("call_analytics_job_name", &self.call_analytics_job_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
     #[doc(hidden)]
@@ -9353,17 +9027,10 @@ impl DeleteCallAnalyticsCategoryInput {
         self.category_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCallAnalyticsCategoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCallAnalyticsCategoryInput");
-        formatter.field("category_name", &self.category_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVocabularyFilterInput {
     /// <p>A unique name, chosen by you, for your new custom vocabulary filter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new vocabulary filter with the same name as an existing vocabulary filter, you get a <code>ConflictException</code> error.</p>
@@ -9419,24 +9086,10 @@ impl CreateVocabularyFilterInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVocabularyFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVocabularyFilterInput");
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("words", &self.words);
-        formatter.field(
-            "vocabulary_filter_file_uri",
-            &self.vocabulary_filter_file_uri,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVocabularyInput {
     /// <p>A unique name, chosen by you, for your new custom vocabulary.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new vocabulary with the same name as an existing vocabulary, you get a <code>ConflictException</code> error.</p>
@@ -9492,21 +9145,10 @@ impl CreateVocabularyInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVocabularyInput");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("phrases", &self.phrases);
-        formatter.field("vocabulary_file_uri", &self.vocabulary_file_uri);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMedicalVocabularyInput {
     /// <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new medical vocabulary with the same name as an existing medical vocabulary, you get a <code>ConflictException</code> error.</p>
@@ -9545,20 +9187,10 @@ impl CreateMedicalVocabularyInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMedicalVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMedicalVocabularyInput");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("vocabulary_file_uri", &self.vocabulary_file_uri);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLanguageModelInput {
     /// <p>The language code that represents the language of your model. Each language model must contain terms in only one language, and the language you select for your model must match the language of your training and tuning data.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
@@ -9610,21 +9242,10 @@ impl CreateLanguageModelInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLanguageModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLanguageModelInput");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("base_model_name", &self.base_model_name);
-        formatter.field("model_name", &self.model_name);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategoryInput {
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
@@ -9643,13 +9264,5 @@ impl CreateCallAnalyticsCategoryInput {
     /// <p>Rules define a Call Analytics category. When creating a new Call Analytics category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateCallAnalyticsCategoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCallAnalyticsCategoryInput");
-        formatter.field("category_name", &self.category_name);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }

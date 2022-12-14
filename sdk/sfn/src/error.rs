@@ -2,18 +2,11 @@
 
 /// <p>The specified state machine does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateMachineDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StateMachineDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateMachineDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StateMachineDoesNotExist {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl StateMachineDoesNotExist {
 
 /// <p>The specified state machine is being deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateMachineDeleting {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StateMachineDeleting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateMachineDeleting");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StateMachineDeleting {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl StateMachineDeleting {
 
 /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingRequiredParameter {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MissingRequiredParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingRequiredParameter");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MissingRequiredParameter {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl MissingRequiredParameter {
 
 /// <p>Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to <code>true</code> or <code>false</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTracingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTracingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTracingConfiguration");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTracingConfiguration {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl InvalidTracingConfiguration {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLoggingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidLoggingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLoggingConfiguration");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidLoggingConfiguration {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl InvalidLoggingConfiguration {
 
 /// <p>The provided Amazon States Language definition is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDefinition {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDefinition");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDefinition {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl InvalidDefinition {
 
 /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidArn {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidArn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidArn");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidArn {
     /// Returns the error message.
@@ -471,7 +422,7 @@ impl InvalidArn {
 
 /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -484,14 +435,6 @@ impl ResourceNotFound {
     #[allow(missing_docs)] // documentation missing in model
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFound");
-        formatter.field("message", &self.message);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
     }
 }
 impl ResourceNotFound {
@@ -563,7 +506,7 @@ impl ResourceNotFound {
 
 /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTags {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -576,14 +519,6 @@ impl TooManyTags {
     #[allow(missing_docs)] // documentation missing in model
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyTags {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTags");
-        formatter.field("message", &self.message);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
     }
 }
 impl TooManyTags {
@@ -655,18 +590,11 @@ impl TooManyTags {
 
 /// <p>The specified execution does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ExecutionDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ExecutionDoesNotExist {
     /// Returns the error message.
@@ -722,18 +650,11 @@ impl ExecutionDoesNotExist {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateMachineTypeNotSupported {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StateMachineTypeNotSupported {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateMachineTypeNotSupported");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StateMachineTypeNotSupported {
     /// Returns the error message.
@@ -789,18 +710,11 @@ impl StateMachineTypeNotSupported {
 
 /// <p>The provided name is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidName {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidName");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidName {
     /// Returns the error message.
@@ -856,18 +770,11 @@ impl InvalidName {
 
 /// <p>The provided JSON input data is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidExecutionInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidExecutionInput");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidExecutionInput {
     /// Returns the error message.
@@ -923,18 +830,11 @@ impl InvalidExecutionInput {
 
 /// <p>The maximum number of running executions has been reached. Running executions must end or be stopped before a new execution can be started.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ExecutionLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ExecutionLimitExceeded {
     /// Returns the error message.
@@ -992,18 +892,11 @@ impl ExecutionLimitExceeded {
 /// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ExecutionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ExecutionAlreadyExists {
     /// Returns the error message.
@@ -1059,18 +952,11 @@ impl ExecutionAlreadyExists {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskTimedOut {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TaskTimedOut {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskTimedOut");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TaskTimedOut {
     /// Returns the error message.
@@ -1126,18 +1012,11 @@ impl TaskTimedOut {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TaskDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TaskDoesNotExist {
     /// Returns the error message.
@@ -1193,18 +1072,11 @@ impl TaskDoesNotExist {
 
 /// <p>The provided token is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidToken {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidToken {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidToken");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidToken {
     /// Returns the error message.
@@ -1260,18 +1132,11 @@ impl InvalidToken {
 
 /// <p>The provided JSON output data is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOutput");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOutput {
     /// Returns the error message.
@@ -1327,18 +1192,11 @@ impl InvalidOutput {
 
 /// <p>The maximum number of workers concurrently polling for activity tasks has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityWorkerLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ActivityWorkerLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityWorkerLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ActivityWorkerLimitExceeded {
     /// Returns the error message.
@@ -1394,18 +1252,11 @@ impl ActivityWorkerLimitExceeded {
 
 /// <p>The specified activity does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ActivityDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ActivityDoesNotExist {
     /// Returns the error message.
@@ -1461,18 +1312,11 @@ impl ActivityDoesNotExist {
 
 /// <p>The maximum number of state machines has been reached. Existing state machines must be deleted before a new state machine can be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateMachineLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StateMachineLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateMachineLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StateMachineLimitExceeded {
     /// Returns the error message.
@@ -1528,18 +1372,11 @@ impl StateMachineLimitExceeded {
 
 /// <p>A state machine with the same name but a different definition or role ARN already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateMachineAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StateMachineAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateMachineAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StateMachineAlreadyExists {
     /// Returns the error message.
@@ -1595,18 +1432,11 @@ impl StateMachineAlreadyExists {
 
 /// <p>The maximum number of activities has been reached. Existing activities must be deleted before a new activity can be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ActivityLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ActivityLimitExceeded {
     /// Returns the error message.

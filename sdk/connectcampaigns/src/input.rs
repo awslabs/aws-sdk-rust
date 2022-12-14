@@ -3613,7 +3613,7 @@ impl UpdateCampaignOutboundCallConfigInput {
 
 /// UpdateCampaignOutboundCallConfigRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCampaignOutboundCallConfigInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -3649,26 +3649,10 @@ impl UpdateCampaignOutboundCallConfigInput {
         self.answer_machine_detection_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCampaignOutboundCallConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCampaignOutboundCallConfigInput");
-        formatter.field("id", &self.id);
-        formatter.field("connect_contact_flow_id", &self.connect_contact_flow_id);
-        formatter.field(
-            "connect_source_phone_number",
-            &self.connect_source_phone_number,
-        );
-        formatter.field(
-            "answer_machine_detection_config",
-            &self.answer_machine_detection_config,
-        );
-        formatter.finish()
-    }
-}
 
 /// UpdateCampaignNameRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCampaignNameInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -3687,18 +3671,10 @@ impl UpdateCampaignNameInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCampaignNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCampaignNameInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// UpdateCampaignDialerConfigRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfigInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -3717,18 +3693,10 @@ impl UpdateCampaignDialerConfigInput {
         self.dialer_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCampaignDialerConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCampaignDialerConfigInput");
-        formatter.field("id", &self.id);
-        formatter.field("dialer_config", &self.dialer_config);
-        formatter.finish()
-    }
-}
 
 /// UntagResourceRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// Arn
     #[doc(hidden)]
@@ -3747,18 +3715,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// TagResourceRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// Arn
     #[doc(hidden)]
@@ -3781,18 +3741,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// StopCampaignRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopCampaignInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -3804,17 +3756,10 @@ impl StopCampaignInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StopCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopCampaignInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// The request for StartInstanceOnboardingJob API.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
@@ -3833,18 +3778,10 @@ impl StartInstanceOnboardingJobInput {
         self.encryption_config.as_ref()
     }
 }
-impl std::fmt::Debug for StartInstanceOnboardingJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartInstanceOnboardingJobInput");
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.finish()
-    }
-}
 
 /// StartCampaignRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartCampaignInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -3856,17 +3793,10 @@ impl StartCampaignInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StartCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartCampaignInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// ResumeCampaignRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeCampaignInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -3878,17 +3808,10 @@ impl ResumeCampaignInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for ResumeCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeCampaignInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// PutDialRequestBatchRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDialRequestBatchInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -3907,18 +3830,10 @@ impl PutDialRequestBatchInput {
         self.dial_requests.as_deref()
     }
 }
-impl std::fmt::Debug for PutDialRequestBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDialRequestBatchInput");
-        formatter.field("id", &self.id);
-        formatter.field("dial_requests", &self.dial_requests);
-        formatter.finish()
-    }
-}
 
 /// PauseCampaignRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PauseCampaignInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -3930,17 +3845,10 @@ impl PauseCampaignInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for PauseCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PauseCampaignInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// ListTagsForResource
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// Arn
     #[doc(hidden)]
@@ -3952,17 +3860,10 @@ impl ListTagsForResourceInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// ListCampaignsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCampaignsInput {
     /// The maximum number of results to return per page.
     #[doc(hidden)]
@@ -3988,19 +3889,10 @@ impl ListCampaignsInput {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for ListCampaignsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCampaignsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// GetInstanceOnboardingJobStatusRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInstanceOnboardingJobStatusInput {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
@@ -4012,17 +3904,10 @@ impl GetInstanceOnboardingJobStatusInput {
         self.connect_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetInstanceOnboardingJobStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInstanceOnboardingJobStatusInput");
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.finish()
-    }
-}
 
 /// GetConnectInstanceConfigRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectInstanceConfigInput {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
@@ -4034,17 +3919,10 @@ impl GetConnectInstanceConfigInput {
         self.connect_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectInstanceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectInstanceConfigInput");
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.finish()
-    }
-}
 
 /// GetCampaignStateBatchRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignStateBatchInput {
     /// List of CampaignId
     #[doc(hidden)]
@@ -4056,17 +3934,10 @@ impl GetCampaignStateBatchInput {
         self.campaign_ids.as_deref()
     }
 }
-impl std::fmt::Debug for GetCampaignStateBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignStateBatchInput");
-        formatter.field("campaign_ids", &self.campaign_ids);
-        formatter.finish()
-    }
-}
 
 /// GetCampaignStateRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignStateInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -4078,17 +3949,10 @@ impl GetCampaignStateInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCampaignStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignStateInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// DescribeCampaignRequests
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCampaignInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -4100,17 +3964,10 @@ impl DescribeCampaignInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCampaignInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// The request for DeleteInstanceOnboardingJob API.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
@@ -4122,17 +3979,10 @@ impl DeleteInstanceOnboardingJobInput {
         self.connect_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInstanceOnboardingJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInstanceOnboardingJobInput");
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.finish()
-    }
-}
 
 /// DeleteCampaignRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectInstanceConfigInput {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
@@ -4144,17 +3994,10 @@ impl DeleteConnectInstanceConfigInput {
         self.connect_instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectInstanceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectInstanceConfigInput");
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.finish()
-    }
-}
 
 /// DeleteCampaignRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCampaignInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
@@ -4166,17 +4009,10 @@ impl DeleteCampaignInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCampaignInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// The request for Create Campaign API.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCampaignInput {
     /// The name of an Amazon Connect Campaign name.
     #[doc(hidden)]
@@ -4218,16 +4054,5 @@ impl CreateCampaignInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCampaignInput");
-        formatter.field("name", &self.name);
-        formatter.field("connect_instance_id", &self.connect_instance_id);
-        formatter.field("dialer_config", &self.dialer_config);
-        formatter.field("outbound_call_config", &self.outbound_call_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

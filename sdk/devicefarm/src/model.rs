@@ -2,7 +2,7 @@
 
 /// <p>Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration.</p>
     #[doc(hidden)]
@@ -40,20 +40,6 @@ impl VpceConfiguration {
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub fn vpce_configuration_description(&self) -> std::option::Option<&str> {
         self.vpce_configuration_description.as_deref()
-    }
-}
-impl std::fmt::Debug for VpceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpceConfiguration");
-        formatter.field("arn", &self.arn);
-        formatter.field("vpce_configuration_name", &self.vpce_configuration_name);
-        formatter.field("vpce_service_name", &self.vpce_service_name);
-        formatter.field("service_dns_name", &self.service_dns_name);
-        formatter.field(
-            "vpce_configuration_description",
-            &self.vpce_configuration_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`VpceConfiguration`](crate::model::VpceConfiguration).
@@ -342,7 +328,7 @@ impl std::fmt::Debug for Upload {
 pub mod upload {
 
     /// A builder for [`Upload`](crate::model::Upload).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -571,6 +557,22 @@ pub mod upload {
                 message: self.message,
                 category: self.category,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &self.name);
+            formatter.field("created", &self.created);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("status", &self.status);
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &self.metadata);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("message", &self.message);
+            formatter.field("category", &self.category);
+            formatter.finish()
         }
     }
 }
@@ -1046,7 +1048,7 @@ impl AsRef<str> for UploadType {
 
 /// <p>A Selenium testing project. Projects are used to collect and collate sessions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestGridProject {
     /// <p>The ARN for the project.</p>
     #[doc(hidden)]
@@ -1084,17 +1086,6 @@ impl TestGridProject {
     /// <p>When the project was created.</p>
     pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
-    }
-}
-impl std::fmt::Debug for TestGridProject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestGridProject");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("created", &self.created);
-        formatter.finish()
     }
 }
 /// See [`TestGridProject`](crate::model::TestGridProject).
@@ -1187,7 +1178,7 @@ impl TestGridProject {
 
 /// <p>The VPC security groups and subnets that are attached to a project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestGridVpcConfig {
     /// <p>A list of VPC security group IDs in your Amazon VPC.</p>
     #[doc(hidden)]
@@ -1211,15 +1202,6 @@ impl TestGridVpcConfig {
     /// <p>The ID of the Amazon VPC.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TestGridVpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestGridVpcConfig");
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`TestGridVpcConfig`](crate::model::TestGridVpcConfig).
@@ -1300,7 +1282,7 @@ impl TestGridVpcConfig {
 
 /// <p>Represents an operating-system neutral workspace for running and managing tests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Project {
     /// <p>The project's ARN.</p>
     #[doc(hidden)]
@@ -1338,20 +1320,6 @@ impl Project {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Project {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Project");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "default_job_timeout_minutes",
-            &self.default_job_timeout_minutes,
-        );
-        formatter.field("created", &self.created);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`Project`](crate::model::Project).
@@ -1444,7 +1412,7 @@ impl Project {
 
 /// <p>Contains the VPC configuration data necessary to interface with AWS Device Farm's services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>An array of one or more security groups IDs in your Amazon VPC.</p>
     #[doc(hidden)]
@@ -1468,15 +1436,6 @@ impl VpcConfig {
     /// <p>The ID of the Amazon VPC.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
@@ -1557,7 +1516,7 @@ impl VpcConfig {
 
 /// <p>An array of settings that describes characteristics of a network profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkProfile {
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
     #[doc(hidden)]
@@ -1644,24 +1603,6 @@ impl NetworkProfile {
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub fn downlink_loss_percent(&self) -> i32 {
         self.downlink_loss_percent
-    }
-}
-impl std::fmt::Debug for NetworkProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkProfile");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("uplink_bandwidth_bits", &self.uplink_bandwidth_bits);
-        formatter.field("downlink_bandwidth_bits", &self.downlink_bandwidth_bits);
-        formatter.field("uplink_delay_ms", &self.uplink_delay_ms);
-        formatter.field("downlink_delay_ms", &self.downlink_delay_ms);
-        formatter.field("uplink_jitter_ms", &self.uplink_jitter_ms);
-        formatter.field("downlink_jitter_ms", &self.downlink_jitter_ms);
-        formatter.field("uplink_loss_percent", &self.uplink_loss_percent);
-        formatter.field("downlink_loss_percent", &self.downlink_loss_percent);
-        formatter.finish()
     }
 }
 /// See [`NetworkProfile`](crate::model::NetworkProfile).
@@ -1927,7 +1868,7 @@ impl AsRef<str> for NetworkProfileType {
 
 /// <p>Represents the instance profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceProfile {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     #[doc(hidden)]
@@ -1974,21 +1915,6 @@ impl InstanceProfile {
     /// <p>The description of the instance profile.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceProfile");
-        formatter.field("arn", &self.arn);
-        formatter.field("package_cleanup", &self.package_cleanup);
-        formatter.field(
-            "exclude_app_packages_from_cleanup",
-            &self.exclude_app_packages_from_cleanup,
-        );
-        formatter.field("reboot_after_use", &self.reboot_after_use);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`InstanceProfile`](crate::model::InstanceProfile).
@@ -2102,7 +2028,7 @@ impl InstanceProfile {
 
 /// <p>Represents a collection of device types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DevicePool {
     /// <p>The device pool's ARN.</p>
     #[doc(hidden)]
@@ -2159,18 +2085,6 @@ impl DevicePool {
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub fn max_devices(&self) -> std::option::Option<i32> {
         self.max_devices
-    }
-}
-impl std::fmt::Debug for DevicePool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DevicePool");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("rules", &self.rules);
-        formatter.field("max_devices", &self.max_devices);
-        formatter.finish()
     }
 }
 /// See [`DevicePool`](crate::model::DevicePool).
@@ -2293,7 +2207,7 @@ impl DevicePool {
 
 /// <p>Represents a condition for a device pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
     /// <p>The supported operators for each attribute are provided in the following list.</p>
@@ -2507,15 +2421,6 @@ impl Rule {
     /// <p>The rule's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("operator", &self.operator);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Rule`](crate::model::Rule).
@@ -3152,7 +3057,7 @@ impl AsRef<str> for DevicePoolType {
 
 /// <p>Represents the device instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceInstance {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
     #[doc(hidden)]
@@ -3197,18 +3102,6 @@ impl DeviceInstance {
     /// <p>A object that contains information about the instance profile.</p>
     pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
         self.instance_profile.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceInstance");
-        formatter.field("arn", &self.arn);
-        formatter.field("device_arn", &self.device_arn);
-        formatter.field("labels", &self.labels);
-        formatter.field("status", &self.status);
-        formatter.field("udid", &self.udid);
-        formatter.field("instance_profile", &self.instance_profile);
-        formatter.finish()
     }
 }
 /// See [`DeviceInstance`](crate::model::DeviceInstance).
@@ -3422,7 +3315,7 @@ impl AsRef<str> for InstanceStatus {
 
 /// <p>The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -3439,14 +3332,6 @@ impl Tag {
     /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a tag category (key).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -3497,7 +3382,7 @@ impl Tag {
 
 /// <p>Represents a test run on a set of devices with a given app package, test parameters, and so on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Run {
     /// <p>The run's ARN.</p>
     #[doc(hidden)]
@@ -3834,44 +3719,6 @@ impl Run {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Run {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Run");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("platform", &self.platform);
-        formatter.field("created", &self.created);
-        formatter.field("status", &self.status);
-        formatter.field("result", &self.result);
-        formatter.field("started", &self.started);
-        formatter.field("stopped", &self.stopped);
-        formatter.field("counters", &self.counters);
-        formatter.field("message", &self.message);
-        formatter.field("total_jobs", &self.total_jobs);
-        formatter.field("completed_jobs", &self.completed_jobs);
-        formatter.field("billing_method", &self.billing_method);
-        formatter.field("device_minutes", &self.device_minutes);
-        formatter.field("network_profile", &self.network_profile);
-        formatter.field("parsing_result_url", &self.parsing_result_url);
-        formatter.field("result_code", &self.result_code);
-        formatter.field("seed", &self.seed);
-        formatter.field("app_upload", &self.app_upload);
-        formatter.field("event_count", &self.event_count);
-        formatter.field("job_timeout_minutes", &self.job_timeout_minutes);
-        formatter.field("device_pool_arn", &self.device_pool_arn);
-        formatter.field("locale", &self.locale);
-        formatter.field("radios", &self.radios);
-        formatter.field("location", &self.location);
-        formatter.field("customer_artifact_paths", &self.customer_artifact_paths);
-        formatter.field("web_url", &self.web_url);
-        formatter.field("skip_app_resign", &self.skip_app_resign);
-        formatter.field("test_spec_arn", &self.test_spec_arn);
-        formatter.field("device_selection_result", &self.device_selection_result);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`Run`](crate::model::Run).
@@ -4444,7 +4291,7 @@ impl Run {
 
 /// <p>Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceSelectionResult {
     /// <p>The filters in a device selection result.</p>
     #[doc(hidden)]
@@ -4468,15 +4315,6 @@ impl DeviceSelectionResult {
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
     pub fn max_devices(&self) -> std::option::Option<i32> {
         self.max_devices
-    }
-}
-impl std::fmt::Debug for DeviceSelectionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceSelectionResult");
-        formatter.field("filters", &self.filters);
-        formatter.field("matched_devices_count", &self.matched_devices_count);
-        formatter.field("max_devices", &self.max_devices);
-        formatter.finish()
     }
 }
 /// See [`DeviceSelectionResult`](crate::model::DeviceSelectionResult).
@@ -4549,7 +4387,7 @@ impl DeviceSelectionResult {
 /// <p>Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p>
 /// <p>It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <code>ListDevices</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceFilter {
     /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
     /// <p>The supported operators for each attribute are provided in the following list.</p>
@@ -4773,15 +4611,6 @@ impl DeviceFilter {
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for DeviceFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceFilter");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("operator", &self.operator);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`DeviceFilter`](crate::model::DeviceFilter).
@@ -5216,7 +5045,7 @@ impl AsRef<str> for DeviceFilterAttribute {
 /// <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p>
 /// <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerArtifactPaths {
     /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests are pulled from.</p>
     #[doc(hidden)]
@@ -5240,15 +5069,6 @@ impl CustomerArtifactPaths {
     /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the customer's tests are pulled from.</p>
     pub fn device_host_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.device_host_paths.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerArtifactPaths {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerArtifactPaths");
-        formatter.field("ios_paths", &self.ios_paths);
-        formatter.field("android_paths", &self.android_paths);
-        formatter.field("device_host_paths", &self.device_host_paths);
-        formatter.finish()
     }
 }
 /// See [`CustomerArtifactPaths`](crate::model::CustomerArtifactPaths).
@@ -5339,7 +5159,7 @@ impl CustomerArtifactPaths {
 /// <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p>
 /// <p>Elevation is currently not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Location {
     /// <p>The latitude.</p>
     #[doc(hidden)]
@@ -5356,14 +5176,6 @@ impl Location {
     /// <p>The longitude.</p>
     pub fn longitude(&self) -> std::option::Option<f64> {
         self.longitude
-    }
-}
-impl std::fmt::Debug for Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Location");
-        formatter.field("latitude", &self.latitude);
-        formatter.field("longitude", &self.longitude);
-        formatter.finish()
     }
 }
 /// See [`Location`](crate::model::Location).
@@ -5414,7 +5226,7 @@ impl Location {
 
 /// <p>Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Radios {
     /// <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
     #[doc(hidden)]
@@ -5445,16 +5257,6 @@ impl Radios {
     /// <p>True if GPS is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn gps(&self) -> std::option::Option<bool> {
         self.gps
-    }
-}
-impl std::fmt::Debug for Radios {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Radios");
-        formatter.field("wifi", &self.wifi);
-        formatter.field("bluetooth", &self.bluetooth);
-        formatter.field("nfc", &self.nfc);
-        formatter.field("gps", &self.gps);
-        formatter.finish()
     }
 }
 /// See [`Radios`](crate::model::Radios).
@@ -5621,7 +5423,7 @@ impl AsRef<str> for ExecutionResultCode {
 
 /// <p>Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceMinutes {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     #[doc(hidden)]
@@ -5645,15 +5447,6 @@ impl DeviceMinutes {
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub fn unmetered(&self) -> std::option::Option<f64> {
         self.unmetered
-    }
-}
-impl std::fmt::Debug for DeviceMinutes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceMinutes");
-        formatter.field("total", &self.total);
-        formatter.field("metered", &self.metered);
-        formatter.field("unmetered", &self.unmetered);
-        formatter.finish()
     }
 }
 /// See [`DeviceMinutes`](crate::model::DeviceMinutes).
@@ -5806,7 +5599,7 @@ impl AsRef<str> for BillingMethod {
 
 /// <p>Represents entity counters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Counters {
     /// <p>The total number of entities.</p>
     #[doc(hidden)]
@@ -5858,19 +5651,6 @@ impl Counters {
     /// <p>The number of skipped entities.</p>
     pub fn skipped(&self) -> std::option::Option<i32> {
         self.skipped
-    }
-}
-impl std::fmt::Debug for Counters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Counters");
-        formatter.field("total", &self.total);
-        formatter.field("passed", &self.passed);
-        formatter.field("failed", &self.failed);
-        formatter.field("warned", &self.warned);
-        formatter.field("errored", &self.errored);
-        formatter.field("stopped", &self.stopped);
-        formatter.field("skipped", &self.skipped);
-        formatter.finish()
     }
 }
 /// See [`Counters`](crate::model::Counters).
@@ -6530,7 +6310,7 @@ impl AsRef<str> for TestType {
 
 /// <p>Represents information about the remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
     #[doc(hidden)]
@@ -6747,34 +6527,6 @@ impl RemoteAccessSession {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for RemoteAccessSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoteAccessSession");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("created", &self.created);
-        formatter.field("status", &self.status);
-        formatter.field("result", &self.result);
-        formatter.field("message", &self.message);
-        formatter.field("started", &self.started);
-        formatter.field("stopped", &self.stopped);
-        formatter.field("device", &self.device);
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("remote_debug_enabled", &self.remote_debug_enabled);
-        formatter.field("remote_record_enabled", &self.remote_record_enabled);
-        formatter.field("remote_record_app_arn", &self.remote_record_app_arn);
-        formatter.field("host_address", &self.host_address);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("billing_method", &self.billing_method);
-        formatter.field("device_minutes", &self.device_minutes);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("device_udid", &self.device_udid);
-        formatter.field("interaction_mode", &self.interaction_mode);
-        formatter.field("skip_app_resign", &self.skip_app_resign);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`RemoteAccessSession`](crate::model::RemoteAccessSession).
@@ -7250,7 +7002,7 @@ impl AsRef<str> for InteractionMode {
 
 /// <p>Represents a device type that an app is tested against.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Device {
     /// <p>The device's ARN.</p>
     #[doc(hidden)]
@@ -7422,33 +7174,6 @@ impl Device {
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
     pub fn availability(&self) -> std::option::Option<&crate::model::DeviceAvailability> {
         self.availability.as_ref()
-    }
-}
-impl std::fmt::Debug for Device {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Device");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("manufacturer", &self.manufacturer);
-        formatter.field("model", &self.model);
-        formatter.field("model_id", &self.model_id);
-        formatter.field("form_factor", &self.form_factor);
-        formatter.field("platform", &self.platform);
-        formatter.field("os", &self.os);
-        formatter.field("cpu", &self.cpu);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("heap_size", &self.heap_size);
-        formatter.field("memory", &self.memory);
-        formatter.field("image", &self.image);
-        formatter.field("carrier", &self.carrier);
-        formatter.field("radio", &self.radio);
-        formatter.field("remote_access_enabled", &self.remote_access_enabled);
-        formatter.field("remote_debug_enabled", &self.remote_debug_enabled);
-        formatter.field("fleet_type", &self.fleet_type);
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("instances", &self.instances);
-        formatter.field("availability", &self.availability);
-        formatter.finish()
     }
 }
 /// See [`Device`](crate::model::Device).
@@ -7877,7 +7602,7 @@ impl AsRef<str> for DeviceAvailability {
 
 /// <p>Represents the screen resolution of a device in height and width, expressed in pixels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resolution {
     /// <p>The screen resolution's width, expressed in pixels.</p>
     #[doc(hidden)]
@@ -7894,14 +7619,6 @@ impl Resolution {
     /// <p>The screen resolution's height, expressed in pixels.</p>
     pub fn height(&self) -> std::option::Option<i32> {
         self.height
-    }
-}
-impl std::fmt::Debug for Resolution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resolution");
-        formatter.field("width", &self.width);
-        formatter.field("height", &self.height);
-        formatter.finish()
     }
 }
 /// See [`Resolution`](crate::model::Resolution).
@@ -7952,7 +7669,7 @@ impl Resolution {
 
 /// <p>Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cpu {
     /// <p>The CPU's frequency.</p>
     #[doc(hidden)]
@@ -7976,15 +7693,6 @@ impl Cpu {
     /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
     pub fn clock(&self) -> std::option::Option<f64> {
         self.clock
-    }
-}
-impl std::fmt::Debug for Cpu {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cpu");
-        formatter.field("frequency", &self.frequency);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("clock", &self.clock);
-        formatter.finish()
     }
 }
 /// See [`Cpu`](crate::model::Cpu).
@@ -8137,7 +7845,7 @@ impl AsRef<str> for DeviceFormFactor {
 
 /// <p>Represents a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Job {
     /// <p>The job's ARN.</p>
     #[doc(hidden)]
@@ -8331,27 +8039,6 @@ impl Job {
     /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
     pub fn video_capture(&self) -> std::option::Option<bool> {
         self.video_capture
-    }
-}
-impl std::fmt::Debug for Job {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Job");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("created", &self.created);
-        formatter.field("status", &self.status);
-        formatter.field("result", &self.result);
-        formatter.field("started", &self.started);
-        formatter.field("stopped", &self.stopped);
-        formatter.field("counters", &self.counters);
-        formatter.field("message", &self.message);
-        formatter.field("device", &self.device);
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("device_minutes", &self.device_minutes);
-        formatter.field("video_endpoint", &self.video_endpoint);
-        formatter.field("video_capture", &self.video_capture);
-        formatter.finish()
     }
 }
 /// See [`Job`](crate::model::Job).
@@ -8665,7 +8352,7 @@ impl Job {
 
 /// <p>Represents configuration information about a test run, such as the execution timeout (in minutes).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionConfiguration {
     /// <p>The number of minutes a test run executes before it times out.</p>
     #[doc(hidden)]
@@ -8705,17 +8392,6 @@ impl ExecutionConfiguration {
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
-    }
-}
-impl std::fmt::Debug for ExecutionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionConfiguration");
-        formatter.field("job_timeout_minutes", &self.job_timeout_minutes);
-        formatter.field("accounts_cleanup", &self.accounts_cleanup);
-        formatter.field("app_packages_cleanup", &self.app_packages_cleanup);
-        formatter.field("video_capture", &self.video_capture);
-        formatter.field("skip_app_resign", &self.skip_app_resign);
-        formatter.finish()
     }
 }
 /// See [`ExecutionConfiguration`](crate::model::ExecutionConfiguration).
@@ -8804,7 +8480,7 @@ impl ExecutionConfiguration {
 
 /// <p>Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleRunConfiguration {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
     #[doc(hidden)]
@@ -8876,21 +8552,6 @@ impl ScheduleRunConfiguration {
     /// </note>
     pub fn billing_method(&self) -> std::option::Option<&crate::model::BillingMethod> {
         self.billing_method.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduleRunConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleRunConfiguration");
-        formatter.field("extra_data_package_arn", &self.extra_data_package_arn);
-        formatter.field("network_profile_arn", &self.network_profile_arn);
-        formatter.field("locale", &self.locale);
-        formatter.field("location", &self.location);
-        formatter.field("vpce_configuration_arns", &self.vpce_configuration_arns);
-        formatter.field("customer_artifact_paths", &self.customer_artifact_paths);
-        formatter.field("radios", &self.radios);
-        formatter.field("auxiliary_apps", &self.auxiliary_apps);
-        formatter.field("billing_method", &self.billing_method);
-        formatter.finish()
     }
 }
 /// See [`ScheduleRunConfiguration`](crate::model::ScheduleRunConfiguration).
@@ -9063,7 +8724,7 @@ impl ScheduleRunConfiguration {
 
 /// <p>Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleRunTest {
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -9261,17 +8922,6 @@ impl ScheduleRunTest {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduleRunTest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleRunTest");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("test_package_arn", &self.test_package_arn);
-        formatter.field("test_spec_arn", &self.test_spec_arn);
-        formatter.field("filter", &self.filter);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`ScheduleRunTest`](crate::model::ScheduleRunTest).
@@ -9537,7 +9187,7 @@ impl ScheduleRunTest {
 
 /// <p>Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceSelectionConfiguration {
     /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
@@ -9624,14 +9274,6 @@ impl DeviceSelectionConfiguration {
     /// <p>The maximum number of devices to be included in a test run.</p>
     pub fn max_devices(&self) -> std::option::Option<i32> {
         self.max_devices
-    }
-}
-impl std::fmt::Debug for DeviceSelectionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceSelectionConfiguration");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_devices", &self.max_devices);
-        formatter.finish()
     }
 }
 /// See [`DeviceSelectionConfiguration`](crate::model::DeviceSelectionConfiguration).
@@ -9761,7 +9403,7 @@ impl DeviceSelectionConfiguration {
 
 /// <p>Represents the metadata of an offering transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OfferingTransaction {
     /// <p>The status of an offering transaction.</p>
     #[doc(hidden)]
@@ -9799,17 +9441,6 @@ impl OfferingTransaction {
     /// <p>The cost of an offering transaction.</p>
     pub fn cost(&self) -> std::option::Option<&crate::model::MonetaryAmount> {
         self.cost.as_ref()
-    }
-}
-impl std::fmt::Debug for OfferingTransaction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OfferingTransaction");
-        formatter.field("offering_status", &self.offering_status);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("offering_promotion_id", &self.offering_promotion_id);
-        formatter.field("created_on", &self.created_on);
-        formatter.field("cost", &self.cost);
-        formatter.finish()
     }
 }
 /// See [`OfferingTransaction`](crate::model::OfferingTransaction).
@@ -9911,7 +9542,7 @@ impl OfferingTransaction {
 
 /// <p>A number that represents the monetary amount for an offering or transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonetaryAmount {
     /// <p>The numerical amount of an offering or transaction.</p>
     #[doc(hidden)]
@@ -9928,14 +9559,6 @@ impl MonetaryAmount {
     /// <p>The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.</p>
     pub fn currency_code(&self) -> std::option::Option<&crate::model::CurrencyCode> {
         self.currency_code.as_ref()
-    }
-}
-impl std::fmt::Debug for MonetaryAmount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonetaryAmount");
-        formatter.field("amount", &self.amount);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.finish()
     }
 }
 /// See [`MonetaryAmount`](crate::model::MonetaryAmount).
@@ -10074,7 +9697,7 @@ impl AsRef<str> for CurrencyCode {
 
 /// <p>The status of the offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OfferingStatus {
     /// <p>The type specified for the offering status.</p>
     #[doc(hidden)]
@@ -10105,16 +9728,6 @@ impl OfferingStatus {
     /// <p>The date on which the offering is effective.</p>
     pub fn effective_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.effective_on.as_ref()
-    }
-}
-impl std::fmt::Debug for OfferingStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OfferingStatus");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("offering", &self.offering);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("effective_on", &self.effective_on);
-        formatter.finish()
     }
 }
 /// See [`OfferingStatus`](crate::model::OfferingStatus).
@@ -10195,7 +9808,7 @@ impl OfferingStatus {
 
 /// <p>Represents the metadata of a device offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Offering {
     /// <p>The ID that corresponds to a device offering.</p>
     #[doc(hidden)]
@@ -10233,17 +9846,6 @@ impl Offering {
     /// <p>Specifies whether there are recurring charges for the offering.</p>
     pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
         self.recurring_charges.as_deref()
-    }
-}
-impl std::fmt::Debug for Offering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Offering");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("platform", &self.platform);
-        formatter.field("recurring_charges", &self.recurring_charges);
-        formatter.finish()
     }
 }
 /// See [`Offering`](crate::model::Offering).
@@ -10343,7 +9945,7 @@ impl Offering {
 
 /// <p>Specifies whether charges for devices are recurring.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecurringCharge {
     /// <p>The cost of the recurring charge.</p>
     #[doc(hidden)]
@@ -10360,14 +9962,6 @@ impl RecurringCharge {
     /// <p>The frequency in which charges recur.</p>
     pub fn frequency(&self) -> std::option::Option<&crate::model::RecurringChargeFrequency> {
         self.frequency.as_ref()
-    }
-}
-impl std::fmt::Debug for RecurringCharge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecurringCharge");
-        formatter.field("cost", &self.cost);
-        formatter.field("frequency", &self.frequency);
-        formatter.finish()
     }
 }
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
@@ -10693,7 +10287,7 @@ impl AsRef<str> for OfferingTransactionType {
 
 /// <p>A collection of one or more problems, grouped by their result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UniqueProblem {
     /// <p>A message about the unique problems' result.</p>
     #[doc(hidden)]
@@ -10710,14 +10304,6 @@ impl UniqueProblem {
     /// <p>Information about the problems.</p>
     pub fn problems(&self) -> std::option::Option<&[crate::model::Problem]> {
         self.problems.as_deref()
-    }
-}
-impl std::fmt::Debug for UniqueProblem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UniqueProblem");
-        formatter.field("message", &self.message);
-        formatter.field("problems", &self.problems);
-        formatter.finish()
     }
 }
 /// See [`UniqueProblem`](crate::model::UniqueProblem).
@@ -10777,7 +10363,7 @@ impl UniqueProblem {
 
 /// <p>Represents a specific warning or failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Problem {
     /// <p>Information about the associated run.</p>
     #[doc(hidden)]
@@ -10849,19 +10435,6 @@ impl Problem {
     /// <p>A message about the problem's result.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for Problem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Problem");
-        formatter.field("run", &self.run);
-        formatter.field("job", &self.job);
-        formatter.field("suite", &self.suite);
-        formatter.field("test", &self.test);
-        formatter.field("device", &self.device);
-        formatter.field("result", &self.result);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`Problem`](crate::model::Problem).
@@ -10998,7 +10571,7 @@ impl Problem {
 
 /// <p>Information about a problem detail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProblemDetail {
     /// <p>The problem detail's ARN.</p>
     #[doc(hidden)]
@@ -11015,14 +10588,6 @@ impl ProblemDetail {
     /// <p>The problem detail's name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ProblemDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProblemDetail");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ProblemDetail`](crate::model::ProblemDetail).
@@ -11073,7 +10638,7 @@ impl ProblemDetail {
 
 /// <p>Represents a condition that is evaluated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Test {
     /// <p>The test's ARN.</p>
     #[doc(hidden)]
@@ -11243,23 +10808,6 @@ impl Test {
     /// <p>Represents the total (metered or unmetered) minutes used by the test.</p>
     pub fn device_minutes(&self) -> std::option::Option<&crate::model::DeviceMinutes> {
         self.device_minutes.as_ref()
-    }
-}
-impl std::fmt::Debug for Test {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Test");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("created", &self.created);
-        formatter.field("status", &self.status);
-        formatter.field("result", &self.result);
-        formatter.field("started", &self.started);
-        formatter.field("stopped", &self.stopped);
-        formatter.field("counters", &self.counters);
-        formatter.field("message", &self.message);
-        formatter.field("device_minutes", &self.device_minutes);
-        formatter.finish()
     }
 }
 /// See [`Test`](crate::model::Test).
@@ -11526,7 +11074,7 @@ impl Test {
 
 /// <p>A <code>TestGridSession</code> is a single instance of a browser launched from the URL provided by a call to <code>CreateTestGridUrl</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestGridSession {
     /// <p>The ARN of the session.</p>
     #[doc(hidden)]
@@ -11571,18 +11119,6 @@ impl TestGridSession {
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
     pub fn selenium_properties(&self) -> std::option::Option<&str> {
         self.selenium_properties.as_deref()
-    }
-}
-impl std::fmt::Debug for TestGridSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestGridSession");
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("created", &self.created);
-        formatter.field("ended", &self.ended);
-        formatter.field("billing_minutes", &self.billing_minutes);
-        formatter.field("selenium_properties", &self.selenium_properties);
-        formatter.finish()
     }
 }
 /// See [`TestGridSession`](crate::model::TestGridSession).
@@ -11828,7 +11364,7 @@ impl std::fmt::Debug for TestGridSessionArtifact {
 pub mod test_grid_session_artifact {
 
     /// A builder for [`TestGridSessionArtifact`](crate::model::TestGridSessionArtifact).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) filename: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestGridSessionArtifactType>,
@@ -11875,6 +11411,15 @@ pub mod test_grid_session_artifact {
                 r#type: self.r#type,
                 url: self.url,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("filename", &self.filename);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12076,7 +11621,7 @@ impl AsRef<str> for TestGridSessionArtifactCategory {
 
 /// <p>An action taken by a <code>TestGridSession</code> browser instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestGridSessionAction {
     /// <p>The action taken by the session.</p>
     #[doc(hidden)]
@@ -12114,17 +11659,6 @@ impl TestGridSessionAction {
     /// <p>HTTP method that the browser used to make the request.</p>
     pub fn request_method(&self) -> std::option::Option<&str> {
         self.request_method.as_deref()
-    }
-}
-impl std::fmt::Debug for TestGridSessionAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestGridSessionAction");
-        formatter.field("action", &self.action);
-        formatter.field("started", &self.started);
-        formatter.field("duration", &self.duration);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("request_method", &self.request_method);
-        formatter.finish()
     }
 }
 /// See [`TestGridSessionAction`](crate::model::TestGridSessionAction).
@@ -12217,7 +11751,7 @@ impl TestGridSessionAction {
 
 /// <p>Represents a collection of one or more tests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Suite {
     /// <p>The suite's ARN.</p>
     #[doc(hidden)]
@@ -12387,23 +11921,6 @@ impl Suite {
     /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
     pub fn device_minutes(&self) -> std::option::Option<&crate::model::DeviceMinutes> {
         self.device_minutes.as_ref()
-    }
-}
-impl std::fmt::Debug for Suite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Suite");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("created", &self.created);
-        formatter.field("status", &self.status);
-        formatter.field("result", &self.result);
-        formatter.field("started", &self.started);
-        formatter.field("stopped", &self.stopped);
-        formatter.field("counters", &self.counters);
-        formatter.field("message", &self.message);
-        formatter.field("device_minutes", &self.device_minutes);
-        formatter.finish()
     }
 }
 /// See [`Suite`](crate::model::Suite).
@@ -12670,7 +12187,7 @@ impl Suite {
 
 /// <p>Represents a sample of performance data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sample {
     /// <p>The sample's ARN.</p>
     #[doc(hidden)]
@@ -12734,15 +12251,6 @@ impl Sample {
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for Sample {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sample");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`Sample`](crate::model::Sample).
@@ -13028,7 +12536,7 @@ impl AsRef<str> for SampleType {
 
 /// <p>Represents information about an offering promotion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OfferingPromotion {
     /// <p>The ID of the offering promotion.</p>
     #[doc(hidden)]
@@ -13045,14 +12553,6 @@ impl OfferingPromotion {
     /// <p>A string that describes the offering promotion.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for OfferingPromotion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OfferingPromotion");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`OfferingPromotion`](crate::model::OfferingPromotion).
@@ -13103,7 +12603,7 @@ impl OfferingPromotion {
 
 /// <p>Represents the output of a test. Examples of artifacts include logs and screenshots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Artifact {
     /// <p>The artifact's ARN.</p>
     #[doc(hidden)]
@@ -13203,17 +12703,6 @@ impl Artifact {
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for Artifact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Artifact");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("extension", &self.extension);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`Artifact`](crate::model::Artifact).
@@ -13706,7 +13195,7 @@ impl AsRef<str> for ArtifactCategory {
 
 /// <p>Represents a device pool compatibility result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DevicePoolCompatibilityResult {
     /// <p>The device (phone or tablet) to return information about.</p>
     #[doc(hidden)]
@@ -13733,15 +13222,6 @@ impl DevicePoolCompatibilityResult {
         &self,
     ) -> std::option::Option<&[crate::model::IncompatibilityMessage]> {
         self.incompatibility_messages.as_deref()
-    }
-}
-impl std::fmt::Debug for DevicePoolCompatibilityResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DevicePoolCompatibilityResult");
-        formatter.field("device", &self.device);
-        formatter.field("compatible", &self.compatible);
-        formatter.field("incompatibility_messages", &self.incompatibility_messages);
-        formatter.finish()
     }
 }
 /// See [`DevicePoolCompatibilityResult`](crate::model::DevicePoolCompatibilityResult).
@@ -13817,7 +13297,7 @@ impl DevicePoolCompatibilityResult {
 
 /// <p>Represents information about incompatibility.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncompatibilityMessage {
     /// <p>A message about the incompatibility.</p>
     #[doc(hidden)]
@@ -13852,14 +13332,6 @@ impl IncompatibilityMessage {
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DeviceAttribute> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for IncompatibilityMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatibilityMessage");
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`IncompatibilityMessage`](crate::model::IncompatibilityMessage).
@@ -13931,7 +13403,7 @@ impl IncompatibilityMessage {
 
 /// <p>A container for account-level settings in AWS Device Farm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
     #[doc(hidden)]
@@ -14000,26 +13472,6 @@ impl AccountSettings {
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
-    }
-}
-impl std::fmt::Debug for AccountSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountSettings");
-        formatter.field("aws_account_number", &self.aws_account_number);
-        formatter.field("unmetered_devices", &self.unmetered_devices);
-        formatter.field(
-            "unmetered_remote_access_devices",
-            &self.unmetered_remote_access_devices,
-        );
-        formatter.field("max_job_timeout_minutes", &self.max_job_timeout_minutes);
-        formatter.field("trial_minutes", &self.trial_minutes);
-        formatter.field("max_slots", &self.max_slots);
-        formatter.field(
-            "default_job_timeout_minutes",
-            &self.default_job_timeout_minutes,
-        );
-        formatter.field("skip_app_resign", &self.skip_app_resign);
-        formatter.finish()
     }
 }
 /// See [`AccountSettings`](crate::model::AccountSettings).
@@ -14188,7 +13640,7 @@ impl AccountSettings {
 
 /// <p>Represents information about free trial device minutes for an AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrialMinutes {
     /// <p>The total number of free trial minutes that the account started with.</p>
     #[doc(hidden)]
@@ -14205,14 +13657,6 @@ impl TrialMinutes {
     /// <p>The number of free trial minutes remaining in the account.</p>
     pub fn remaining(&self) -> std::option::Option<f64> {
         self.remaining
-    }
-}
-impl std::fmt::Debug for TrialMinutes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrialMinutes");
-        formatter.field("total", &self.total);
-        formatter.field("remaining", &self.remaining);
-        formatter.finish()
     }
 }
 /// See [`TrialMinutes`](crate::model::TrialMinutes).
@@ -14263,7 +13707,7 @@ impl TrialMinutes {
 
 /// <p>Configuration settings for a remote access session, including billing method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionConfiguration {
     /// <p>The billing method for the remote access session.</p>
     #[doc(hidden)]
@@ -14280,14 +13724,6 @@ impl CreateRemoteAccessSessionConfiguration {
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
     pub fn vpce_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.vpce_configuration_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateRemoteAccessSessionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRemoteAccessSessionConfiguration");
-        formatter.field("billing_method", &self.billing_method);
-        formatter.field("vpce_configuration_arns", &self.vpce_configuration_arns);
-        formatter.finish()
     }
 }
 /// See [`CreateRemoteAccessSessionConfiguration`](crate::model::CreateRemoteAccessSessionConfiguration).

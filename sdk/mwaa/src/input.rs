@@ -150,7 +150,7 @@ impl CreateCliTokenInput {
 pub mod create_environment_input {
 
     /// A builder for [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
@@ -491,6 +491,41 @@ pub mod create_environment_input {
                 min_workers: self.min_workers,
                 schedulers: self.schedulers,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("execution_role_arn", &self.execution_role_arn);
+            formatter.field("source_bucket_arn", &self.source_bucket_arn);
+            formatter.field("dag_s3_path", &self.dag_s3_path);
+            formatter.field("network_configuration", &self.network_configuration);
+            formatter.field("plugins_s3_path", &self.plugins_s3_path);
+            formatter.field("plugins_s3_object_version", &self.plugins_s3_object_version);
+            formatter.field("requirements_s3_path", &self.requirements_s3_path);
+            formatter.field(
+                "requirements_s3_object_version",
+                &self.requirements_s3_object_version,
+            );
+            formatter.field(
+                "airflow_configuration_options",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("environment_class", &self.environment_class);
+            formatter.field("max_workers", &self.max_workers);
+            formatter.field("kms_key", &self.kms_key);
+            formatter.field("airflow_version", &self.airflow_version);
+            formatter.field("logging_configuration", &self.logging_configuration);
+            formatter.field(
+                "weekly_maintenance_window_start",
+                &self.weekly_maintenance_window_start,
+            );
+            formatter.field("tags", &self.tags);
+            formatter.field("webserver_access_mode", &self.webserver_access_mode);
+            formatter.field("min_workers", &self.min_workers);
+            formatter.field("schedulers", &self.schedulers);
+            formatter.finish()
         }
     }
 }
@@ -1952,7 +1987,7 @@ impl UntagResourceInput {
 pub mod update_environment_input {
 
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
@@ -2248,6 +2283,39 @@ pub mod update_environment_input {
                 min_workers: self.min_workers,
                 schedulers: self.schedulers,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("execution_role_arn", &self.execution_role_arn);
+            formatter.field("airflow_version", &self.airflow_version);
+            formatter.field("source_bucket_arn", &self.source_bucket_arn);
+            formatter.field("dag_s3_path", &self.dag_s3_path);
+            formatter.field("plugins_s3_path", &self.plugins_s3_path);
+            formatter.field("plugins_s3_object_version", &self.plugins_s3_object_version);
+            formatter.field("requirements_s3_path", &self.requirements_s3_path);
+            formatter.field(
+                "requirements_s3_object_version",
+                &self.requirements_s3_object_version,
+            );
+            formatter.field(
+                "airflow_configuration_options",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("environment_class", &self.environment_class);
+            formatter.field("max_workers", &self.max_workers);
+            formatter.field("network_configuration", &self.network_configuration);
+            formatter.field("logging_configuration", &self.logging_configuration);
+            formatter.field(
+                "weekly_maintenance_window_start",
+                &self.weekly_maintenance_window_start,
+            );
+            formatter.field("webserver_access_mode", &self.webserver_access_mode);
+            formatter.field("min_workers", &self.min_workers);
+            formatter.field("schedulers", &self.schedulers);
+            formatter.finish()
         }
     }
 }
@@ -2560,7 +2628,7 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
@@ -2579,18 +2647,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
@@ -2613,18 +2673,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishMetricsInput {
     /// <p> <b>Internal only</b>. The name of the environment.</p>
     #[doc(hidden)]
@@ -2643,18 +2695,10 @@ impl PublishMetricsInput {
         self.metric_data.as_deref()
     }
 }
-impl std::fmt::Debug for PublishMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishMetricsInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("metric_data", &self.metric_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
@@ -2666,17 +2710,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentsInput {
     /// <p>Retrieves the next page of the results.</p>
     #[doc(hidden)]
@@ -2695,18 +2732,10 @@ impl ListEnvironmentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnvironmentInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
@@ -2718,17 +2747,10 @@ impl GetEnvironmentInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnvironmentInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
@@ -2740,17 +2762,10 @@ impl DeleteEnvironmentInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebLoginTokenInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
@@ -2760,13 +2775,6 @@ impl CreateWebLoginTokenInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateWebLoginTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebLoginTokenInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -2975,7 +2983,7 @@ impl std::fmt::Debug for CreateEnvironmentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCliTokenInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
@@ -2985,12 +2993,5 @@ impl CreateCliTokenInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateCliTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCliTokenInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }

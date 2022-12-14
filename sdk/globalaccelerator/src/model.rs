@@ -16,7 +16,7 @@
 /// <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact Amazon Web Services support.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
     #[doc(hidden)]
@@ -40,15 +40,6 @@ impl ByoipCidr {
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::ByoipCidrEvent]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for ByoipCidr {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ByoipCidr");
-        formatter.field("cidr", &self.cidr);
-        formatter.field("state", &self.state);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`ByoipCidr`](crate::model::ByoipCidr).
@@ -123,7 +114,7 @@ impl ByoipCidr {
 
 /// <p>A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ByoipCidrEvent {
     /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
     #[doc(hidden)]
@@ -140,14 +131,6 @@ impl ByoipCidrEvent {
     /// <p>A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ByoipCidrEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ByoipCidrEvent");
-        formatter.field("message", &self.message);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`ByoipCidrEvent`](crate::model::ByoipCidrEvent).
@@ -348,7 +331,7 @@ impl AsRef<str> for ByoipCidrState {
 
 /// <p>A complex type for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Listener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
@@ -385,16 +368,6 @@ impl Listener {
     /// <p>The default value is <code>NONE</code>.</p>
     pub fn client_affinity(&self) -> std::option::Option<&crate::model::ClientAffinity> {
         self.client_affinity.as_ref()
-    }
-}
-impl std::fmt::Debug for Listener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Listener");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("port_ranges", &self.port_ranges);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("client_affinity", &self.client_affinity);
-        formatter.finish()
     }
 }
 /// See [`Listener`](crate::model::Listener).
@@ -667,7 +640,7 @@ impl AsRef<str> for Protocol {
 
 /// <p>A complex type for a range of ports for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The first port in the range of ports, inclusive.</p>
     #[doc(hidden)]
@@ -684,14 +657,6 @@ impl PortRange {
     /// <p>The last port in the range of ports, inclusive.</p>
     pub fn to_port(&self) -> std::option::Option<i32> {
         self.to_port
-    }
-}
-impl std::fmt::Debug for PortRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortRange");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.finish()
     }
 }
 /// See [`PortRange`](crate::model::PortRange).
@@ -742,7 +707,7 @@ impl PortRange {
 
 /// <p>A complex type for the endpoint group. An Amazon Web Services Region can have only one endpoint group for a specific listener. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointGroup {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
@@ -824,25 +789,6 @@ impl EndpointGroup {
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on. </p>
     pub fn port_overrides(&self) -> std::option::Option<&[crate::model::PortOverride]> {
         self.port_overrides.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointGroup");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_group_region", &self.endpoint_group_region);
-        formatter.field("endpoint_descriptions", &self.endpoint_descriptions);
-        formatter.field("traffic_dial_percentage", &self.traffic_dial_percentage);
-        formatter.field("health_check_port", &self.health_check_port);
-        formatter.field("health_check_protocol", &self.health_check_protocol);
-        formatter.field("health_check_path", &self.health_check_path);
-        formatter.field(
-            "health_check_interval_seconds",
-            &self.health_check_interval_seconds,
-        );
-        formatter.field("threshold_count", &self.threshold_count);
-        formatter.field("port_overrides", &self.port_overrides);
-        formatter.finish()
     }
 }
 /// See [`EndpointGroup`](crate::model::EndpointGroup).
@@ -1030,7 +976,7 @@ impl EndpointGroup {
 /// <p>Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortOverride {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
     #[doc(hidden)]
@@ -1047,14 +993,6 @@ impl PortOverride {
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
     pub fn endpoint_port(&self) -> std::option::Option<i32> {
         self.endpoint_port
-    }
-}
-impl std::fmt::Debug for PortOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortOverride");
-        formatter.field("listener_port", &self.listener_port);
-        formatter.field("endpoint_port", &self.endpoint_port);
-        formatter.finish()
     }
 }
 /// See [`PortOverride`](crate::model::PortOverride).
@@ -1202,7 +1140,7 @@ impl AsRef<str> for HealthCheckProtocol {
 
 /// <p>A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointDescription {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
@@ -1248,20 +1186,6 @@ impl EndpointDescription {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn client_ip_preservation_enabled(&self) -> std::option::Option<bool> {
         self.client_ip_preservation_enabled
-    }
-}
-impl std::fmt::Debug for EndpointDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointDescription");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("weight", &self.weight);
-        formatter.field("health_state", &self.health_state);
-        formatter.field("health_reason", &self.health_reason);
-        formatter.field(
-            "client_ip_preservation_enabled",
-            &self.client_ip_preservation_enabled,
-        );
-        formatter.finish()
     }
 }
 /// See [`EndpointDescription`](crate::model::EndpointDescription).
@@ -1460,7 +1384,7 @@ impl AsRef<str> for HealthState {
 
 /// <p>A complex type for endpoints. A resource must be valid and active when you add it as an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointConfiguration {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active when you add it as an endpoint.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
@@ -1492,18 +1416,6 @@ impl EndpointConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn client_ip_preservation_enabled(&self) -> std::option::Option<bool> {
         self.client_ip_preservation_enabled
-    }
-}
-impl std::fmt::Debug for EndpointConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointConfiguration");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("weight", &self.weight);
-        formatter.field(
-            "client_ip_preservation_enabled",
-            &self.client_ip_preservation_enabled,
-        );
-        formatter.finish()
     }
 }
 /// See [`EndpointConfiguration`](crate::model::EndpointConfiguration).
@@ -1577,7 +1489,7 @@ impl EndpointConfiguration {
 
 /// <p>A complex type for a listener for a custom routing accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingListener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
@@ -1596,14 +1508,6 @@ impl CustomRoutingListener {
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
     pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
         self.port_ranges.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRoutingListener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingListener");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("port_ranges", &self.port_ranges);
-        formatter.finish()
     }
 }
 /// See [`CustomRoutingListener`](crate::model::CustomRoutingListener).
@@ -1665,7 +1569,7 @@ impl CustomRoutingListener {
 
 /// <p>Attributes of a custom routing accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingAcceleratorAttributes {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
@@ -1695,15 +1599,6 @@ impl CustomRoutingAcceleratorAttributes {
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
         self.flow_logs_s3_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRoutingAcceleratorAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingAcceleratorAttributes");
-        formatter.field("flow_logs_enabled", &self.flow_logs_enabled);
-        formatter.field("flow_logs_s3_bucket", &self.flow_logs_s3_bucket);
-        formatter.field("flow_logs_s3_prefix", &self.flow_logs_s3_prefix);
-        formatter.finish()
     }
 }
 /// See [`CustomRoutingAcceleratorAttributes`](crate::model::CustomRoutingAcceleratorAttributes).
@@ -1778,7 +1673,7 @@ impl CustomRoutingAcceleratorAttributes {
 
 /// <p>Attributes of a custom routing accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingAccelerator {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
     #[doc(hidden)]
@@ -1852,21 +1747,6 @@ impl CustomRoutingAccelerator {
     /// <p>The date and time that the accelerator was last modified.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomRoutingAccelerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingAccelerator");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("name", &self.name);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("ip_sets", &self.ip_sets);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`CustomRoutingAccelerator`](crate::model::CustomRoutingAccelerator).
@@ -2125,7 +2005,7 @@ impl AsRef<str> for CustomRoutingAcceleratorStatus {
 
 /// <p>A complex type for the set of IP addresses for an accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSet {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
     #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
@@ -2151,15 +2031,6 @@ impl IpSet {
     /// <p>The types of IP addresses included in this IP set. </p>
     pub fn ip_address_family(&self) -> std::option::Option<&crate::model::IpAddressFamily> {
         self.ip_address_family.as_ref()
-    }
-}
-impl std::fmt::Debug for IpSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSet");
-        formatter.field("ip_family", &self.ip_family);
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.field("ip_address_family", &self.ip_address_family);
-        formatter.finish()
     }
 }
 /// See [`IpSet`](crate::model::IpSet).
@@ -2416,7 +2287,7 @@ impl AsRef<str> for IpAddressType {
 
 /// <p>Attributes of an accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorAttributes {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
@@ -2446,15 +2317,6 @@ impl AcceleratorAttributes {
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
         self.flow_logs_s3_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceleratorAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorAttributes");
-        formatter.field("flow_logs_enabled", &self.flow_logs_enabled);
-        formatter.field("flow_logs_s3_bucket", &self.flow_logs_s3_bucket);
-        formatter.field("flow_logs_s3_prefix", &self.flow_logs_s3_prefix);
-        formatter.finish()
     }
 }
 /// See [`AcceleratorAttributes`](crate::model::AcceleratorAttributes).
@@ -2529,7 +2391,7 @@ impl AcceleratorAttributes {
 
 /// <p>An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Accelerator {
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
     #[doc(hidden)]
@@ -2623,23 +2485,6 @@ impl Accelerator {
     /// <p>A history of changes that you make to an accelerator in Global Accelerator.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::AcceleratorEvent]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for Accelerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Accelerator");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("name", &self.name);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("ip_sets", &self.ip_sets);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("dual_stack_dns_name", &self.dual_stack_dns_name);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`Accelerator`](crate::model::Accelerator).
@@ -2848,7 +2693,7 @@ impl Accelerator {
 
 /// <p>A complex type that contains a <code>Timestamp</code> value and <code>Message</code> for changes that you make to an accelerator in Global Accelerator. Messages stored here provide progress or error information when you update an accelerator from IPv4 to dual-stack, or from dual-stack to IPv4. Global Accelerator stores a maximum of ten event messages. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorEvent {
     /// <p>A string that contains an <code>Event</code> message describing changes or errors when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
     #[doc(hidden)]
@@ -2865,14 +2710,6 @@ impl AcceleratorEvent {
     /// <p>A timestamp for when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for AcceleratorEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorEvent");
-        formatter.field("message", &self.message);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`AcceleratorEvent`](crate::model::AcceleratorEvent).
@@ -3018,7 +2855,7 @@ impl AsRef<str> for AcceleratorStatus {
 
 /// <p>A complex type that contains a <code>Tag</code> key and <code>Tag</code> value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A string that contains a <code>Tag</code> key.</p>
     #[doc(hidden)]
@@ -3035,14 +2872,6 @@ impl Tag {
     /// <p>A string that contains a <code>Tag</code> value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -3094,7 +2923,7 @@ impl Tag {
 /// <p>Provides authorization for Amazon to bring a specific IP address range to a specific Amazon Web Services account using bring your own IP addresses (BYOIP). </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
     #[doc(hidden)]
@@ -3111,14 +2940,6 @@ impl CidrAuthorizationContext {
     /// <p>The signed authorization message for the prefix and account.</p>
     pub fn signature(&self) -> std::option::Option<&str> {
         self.signature.as_deref()
-    }
-}
-impl std::fmt::Debug for CidrAuthorizationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrAuthorizationContext");
-        formatter.field("message", &self.message);
-        formatter.field("signature", &self.signature);
-        formatter.finish()
     }
 }
 /// See [`CidrAuthorizationContext`](crate::model::CidrAuthorizationContext).
@@ -3169,7 +2990,7 @@ impl CidrAuthorizationContext {
 
 /// <p>The port mappings for a specified endpoint IP address (destination).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationPortMapping {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator that you have port mappings for.</p>
     #[doc(hidden)]
@@ -3234,26 +3055,6 @@ impl DestinationPortMapping {
         &self,
     ) -> std::option::Option<&crate::model::CustomRoutingDestinationTrafficState> {
         self.destination_traffic_state.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationPortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationPortMapping");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field(
-            "accelerator_socket_addresses",
-            &self.accelerator_socket_addresses,
-        );
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("endpoint_group_region", &self.endpoint_group_region);
-        formatter.field(
-            "destination_socket_address",
-            &self.destination_socket_address,
-        );
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("destination_traffic_state", &self.destination_traffic_state);
-        formatter.finish()
     }
 }
 /// See [`DestinationPortMapping`](crate::model::DestinationPortMapping).
@@ -3500,7 +3301,7 @@ impl AsRef<str> for CustomRoutingDestinationTrafficState {
 
 /// <p>An IP address/port combination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SocketAddress {
     /// <p>The IP address for the socket address.</p>
     #[doc(hidden)]
@@ -3517,14 +3318,6 @@ impl SocketAddress {
     /// <p>The port for the socket address.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for SocketAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SocketAddress");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`SocketAddress`](crate::model::SocketAddress).
@@ -3575,7 +3368,7 @@ impl SocketAddress {
 
 /// <p>Returns the ports and associated IP addresses and ports of Amazon EC2 instances in your virtual private cloud (VPC) subnets. Custom routing is a port mapping protocol in Global Accelerator that statically associates port ranges with VPC subnets, which allows Global Accelerator to route to specific instances and ports within one or more subnets. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The accelerator port.</p>
     #[doc(hidden)]
@@ -3623,21 +3416,6 @@ impl PortMapping {
         &self,
     ) -> std::option::Option<&crate::model::CustomRoutingDestinationTrafficState> {
         self.destination_traffic_state.as_ref()
-    }
-}
-impl std::fmt::Debug for PortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortMapping");
-        formatter.field("accelerator_port", &self.accelerator_port);
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field(
-            "destination_socket_address",
-            &self.destination_socket_address,
-        );
-        formatter.field("protocols", &self.protocols);
-        formatter.field("destination_traffic_state", &self.destination_traffic_state);
-        formatter.finish()
     }
 }
 /// See [`PortMapping`](crate::model::PortMapping).
@@ -3851,7 +3629,7 @@ impl AsRef<str> for CustomRoutingProtocol {
 
 /// <p>A complex type for the endpoint group for a custom routing accelerator. An Amazon Web Services Region can have only one endpoint group for a specific listener. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingEndpointGroup {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
@@ -3888,16 +3666,6 @@ impl CustomRoutingEndpointGroup {
         &self,
     ) -> std::option::Option<&[crate::model::CustomRoutingEndpointDescription]> {
         self.endpoint_descriptions.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRoutingEndpointGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingEndpointGroup");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_group_region", &self.endpoint_group_region);
-        formatter.field("destination_descriptions", &self.destination_descriptions);
-        formatter.field("endpoint_descriptions", &self.endpoint_descriptions);
-        formatter.finish()
     }
 }
 /// See [`CustomRoutingEndpointGroup`](crate::model::CustomRoutingEndpointGroup).
@@ -4008,7 +3776,7 @@ impl CustomRoutingEndpointGroup {
 
 /// <p>A complex type for an endpoint for a custom routing accelerator. Each endpoint group can include one or more endpoints, which are virtual private cloud (VPC) subnets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingEndpointDescription {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
     #[doc(hidden)]
@@ -4018,13 +3786,6 @@ impl CustomRoutingEndpointDescription {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
     pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRoutingEndpointDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingEndpointDescription");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.finish()
     }
 }
 /// See [`CustomRoutingEndpointDescription`](crate::model::CustomRoutingEndpointDescription).
@@ -4063,7 +3824,7 @@ impl CustomRoutingEndpointDescription {
 
 /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingDestinationDescription {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     #[doc(hidden)]
@@ -4087,15 +3848,6 @@ impl CustomRoutingDestinationDescription {
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRoutingDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingDestinationDescription");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.field("protocols", &self.protocols);
-        formatter.finish()
     }
 }
 /// See [`CustomRoutingDestinationDescription`](crate::model::CustomRoutingDestinationDescription).
@@ -4167,7 +3919,7 @@ impl CustomRoutingDestinationDescription {
 
 /// <p>For a custom routing accelerator, sets the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingDestinationConfiguration {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     #[doc(hidden)]
@@ -4191,15 +3943,6 @@ impl CustomRoutingDestinationConfiguration {
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::CustomRoutingProtocol]> {
         self.protocols.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRoutingDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingDestinationConfiguration");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.field("protocols", &self.protocols);
-        formatter.finish()
     }
 }
 /// See [`CustomRoutingDestinationConfiguration`](crate::model::CustomRoutingDestinationConfiguration).
@@ -4272,7 +4015,7 @@ impl CustomRoutingDestinationConfiguration {
 
 /// <p>The list of endpoint objects. For custom routing, this is a list of virtual private cloud (VPC) subnet IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingEndpointConfiguration {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
     #[doc(hidden)]
@@ -4282,13 +4025,6 @@ impl CustomRoutingEndpointConfiguration {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
     pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRoutingEndpointConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingEndpointConfiguration");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.finish()
     }
 }
 /// See [`CustomRoutingEndpointConfiguration`](crate::model::CustomRoutingEndpointConfiguration).

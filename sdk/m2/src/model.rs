@@ -2,7 +2,7 @@
 
 /// <p>Contains information about a validation exception field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the exception field.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The message of the exception field.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>Contains a subset of the possible environment attributes. Used in the environment list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentSummary {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
@@ -243,20 +235,6 @@ impl EnvironmentSummary {
     /// <p>The timestamp when the environment was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for EnvironmentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentSummary");
-        formatter.field("name", &self.name);
-        formatter.field("environment_arn", &self.environment_arn);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("status", &self.status);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentSummary`](crate::model::EnvironmentSummary).
@@ -592,7 +570,7 @@ impl AsRef<str> for EnvironmentLifecycle {
 
 /// <p>Defines the details of a high availability configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration.</p>
     #[doc(hidden)]
@@ -602,13 +580,6 @@ impl HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration.</p>
     pub fn desired_capacity(&self) -> std::option::Option<i32> {
         self.desired_capacity
-    }
-}
-impl std::fmt::Debug for HighAvailabilityConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HighAvailabilityConfig");
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.finish()
     }
 }
 /// See [`HighAvailabilityConfig`](crate::model::HighAvailabilityConfig).
@@ -698,7 +669,7 @@ impl StorageConfiguration {
 
 /// <p>Defines the storage configuration for an Amazon FSx file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FsxStorageConfiguration {
     /// <p>The file system identifier.</p>
     #[doc(hidden)]
@@ -715,14 +686,6 @@ impl FsxStorageConfiguration {
     /// <p>The mount point for the file system.</p>
     pub fn mount_point(&self) -> std::option::Option<&str> {
         self.mount_point.as_deref()
-    }
-}
-impl std::fmt::Debug for FsxStorageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FsxStorageConfiguration");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("mount_point", &self.mount_point);
-        formatter.finish()
     }
 }
 /// See [`FsxStorageConfiguration`](crate::model::FsxStorageConfiguration).
@@ -776,7 +739,7 @@ impl FsxStorageConfiguration {
 
 /// <p>Defines the storage configuration for an Amazon EFS file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsStorageConfiguration {
     /// <p>The file system identifier.</p>
     #[doc(hidden)]
@@ -793,14 +756,6 @@ impl EfsStorageConfiguration {
     /// <p>The mount point for the file system.</p>
     pub fn mount_point(&self) -> std::option::Option<&str> {
         self.mount_point.as_deref()
-    }
-}
-impl std::fmt::Debug for EfsStorageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsStorageConfiguration");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("mount_point", &self.mount_point);
-        formatter.finish()
     }
 }
 /// See [`EfsStorageConfiguration`](crate::model::EfsStorageConfiguration).
@@ -854,7 +809,7 @@ impl EfsStorageConfiguration {
 
 /// <p>The scheduled maintenance for a runtime engine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingMaintenance {
     /// <p>The maintenance schedule for the engine version.</p>
     #[doc(hidden)]
@@ -871,14 +826,6 @@ impl PendingMaintenance {
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
-    }
-}
-impl std::fmt::Debug for PendingMaintenance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingMaintenance");
-        formatter.field("schedule", &self.schedule);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
     }
 }
 /// See [`PendingMaintenance`](crate::model::PendingMaintenance).
@@ -935,7 +882,7 @@ impl PendingMaintenance {
 
 /// <p>The information about the maintenance schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceSchedule {
     /// <p>The time the scheduled maintenance is to start.</p>
     #[doc(hidden)]
@@ -952,14 +899,6 @@ impl MaintenanceSchedule {
     /// <p>The time the scheduled maintenance is to end.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for MaintenanceSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceSchedule");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceSchedule`](crate::model::MaintenanceSchedule).
@@ -1071,7 +1010,7 @@ impl BatchJobIdentifier {
 
 /// <p>A batch job identifier in which the batch job to run is identified by the script name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScriptBatchJobIdentifier {
     /// <p>The name of the script containing the batch job definition.</p>
     #[doc(hidden)]
@@ -1081,13 +1020,6 @@ impl ScriptBatchJobIdentifier {
     /// <p>The name of the script containing the batch job definition.</p>
     pub fn script_name(&self) -> std::option::Option<&str> {
         self.script_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ScriptBatchJobIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScriptBatchJobIdentifier");
-        formatter.field("script_name", &self.script_name);
-        formatter.finish()
     }
 }
 /// See [`ScriptBatchJobIdentifier`](crate::model::ScriptBatchJobIdentifier).
@@ -1126,7 +1058,7 @@ impl ScriptBatchJobIdentifier {
 
 /// <p>A batch job identifier in which the batch job to run is identified by the file name and the relative path to the file name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileBatchJobIdentifier {
     /// <p>The file name for the batch job identifier.</p>
     #[doc(hidden)]
@@ -1143,14 +1075,6 @@ impl FileBatchJobIdentifier {
     /// <p>The relative path to the file name for the batch job identifier.</p>
     pub fn folder_path(&self) -> std::option::Option<&str> {
         self.folder_path.as_deref()
-    }
-}
-impl std::fmt::Debug for FileBatchJobIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileBatchJobIdentifier");
-        formatter.field("file_name", &self.file_name);
-        formatter.field("folder_path", &self.folder_path);
-        formatter.finish()
     }
 }
 /// See [`FileBatchJobIdentifier`](crate::model::FileBatchJobIdentifier).
@@ -1201,7 +1125,7 @@ impl FileBatchJobIdentifier {
 
 /// <p>A subset of information about a specific deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentSummary {
     /// <p>The unique identifier of the deployment.</p>
     #[doc(hidden)]
@@ -1253,19 +1177,6 @@ impl DeploymentSummary {
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for DeploymentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentSummary");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("application_version", &self.application_version);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`DeploymentSummary`](crate::model::DeploymentSummary).
@@ -1491,7 +1402,7 @@ impl AsRef<str> for DeploymentLifecycle {
 
 /// <p>A subset of the possible data set attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetSummary {
     /// <p>The name of the data set.</p>
     #[doc(hidden)]
@@ -1536,18 +1447,6 @@ impl DataSetSummary {
     /// <p>The last time the data set was referenced.</p>
     pub fn last_referenced_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_referenced_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetSummary");
-        formatter.field("data_set_name", &self.data_set_name);
-        formatter.field("data_set_org", &self.data_set_org);
-        formatter.field("format", &self.format);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("last_referenced_time", &self.last_referenced_time);
-        formatter.finish()
     }
 }
 /// See [`DataSetSummary`](crate::model::DataSetSummary).
@@ -1658,7 +1557,7 @@ impl DataSetSummary {
 
 /// <p>Contains information about a data set import task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetImportTask {
     /// <p>The identifier of the data set import task.</p>
     #[doc(hidden)]
@@ -1682,15 +1581,6 @@ impl DataSetImportTask {
     /// <p>A summary of the data set import task.</p>
     pub fn summary(&self) -> std::option::Option<&crate::model::DataSetImportSummary> {
         self.summary.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSetImportTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetImportTask");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("status", &self.status);
-        formatter.field("summary", &self.summary);
-        formatter.finish()
     }
 }
 /// See [`DataSetImportTask`](crate::model::DataSetImportTask).
@@ -1759,7 +1649,7 @@ impl DataSetImportTask {
 
 /// <p>Represents a summary of data set imports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetImportSummary {
     /// <p>The total number of data set imports.</p>
     #[doc(hidden)]
@@ -1797,17 +1687,6 @@ impl DataSetImportSummary {
     /// <p>The number of data set imports that are in progress.</p>
     pub fn in_progress(&self) -> i32 {
         self.in_progress
-    }
-}
-impl std::fmt::Debug for DataSetImportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetImportSummary");
-        formatter.field("total", &self.total);
-        formatter.field("succeeded", &self.succeeded);
-        formatter.field("failed", &self.failed);
-        formatter.field("pending", &self.pending);
-        formatter.field("in_progress", &self.in_progress);
-        formatter.finish()
     }
 }
 /// See [`DataSetImportSummary`](crate::model::DataSetImportSummary).
@@ -1991,7 +1870,7 @@ impl AsRef<str> for DataSetTaskLifecycle {
 
 /// <p>A subset of the possible batch job attributes. Used in the batch job list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchJobExecutionSummary {
     /// <p>The unique identifier of this execution of the batch job.</p>
     #[doc(hidden)]
@@ -2050,20 +1929,6 @@ impl BatchJobExecutionSummary {
     /// <p>The timestamp when this batch job execution ended.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchJobExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchJobExecutionSummary");
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_type", &self.job_type);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`BatchJobExecutionSummary`](crate::model::BatchJobExecutionSummary).
@@ -2488,7 +2353,7 @@ impl BatchJobDefinition {
 
 /// <p>A batch job definition contained in a script.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScriptBatchJobDefinition {
     /// <p>The name of the script containing the batch job definition.</p>
     #[doc(hidden)]
@@ -2498,13 +2363,6 @@ impl ScriptBatchJobDefinition {
     /// <p>The name of the script containing the batch job definition.</p>
     pub fn script_name(&self) -> std::option::Option<&str> {
         self.script_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ScriptBatchJobDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScriptBatchJobDefinition");
-        formatter.field("script_name", &self.script_name);
-        formatter.finish()
     }
 }
 /// See [`ScriptBatchJobDefinition`](crate::model::ScriptBatchJobDefinition).
@@ -2543,7 +2401,7 @@ impl ScriptBatchJobDefinition {
 
 /// <p>A file containing a batch job definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileBatchJobDefinition {
     /// <p>The name of the file containing the batch job definition.</p>
     #[doc(hidden)]
@@ -2560,14 +2418,6 @@ impl FileBatchJobDefinition {
     /// <p>The path to the file containing the batch job definition.</p>
     pub fn folder_path(&self) -> std::option::Option<&str> {
         self.folder_path.as_deref()
-    }
-}
-impl std::fmt::Debug for FileBatchJobDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileBatchJobDefinition");
-        formatter.field("file_name", &self.file_name);
-        formatter.field("folder_path", &self.folder_path);
-        formatter.finish()
     }
 }
 /// See [`FileBatchJobDefinition`](crate::model::FileBatchJobDefinition).
@@ -2618,7 +2468,7 @@ impl FileBatchJobDefinition {
 
 /// <p>Defines an application version summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationVersionSummary {
     /// <p>The application version.</p>
     #[doc(hidden)]
@@ -2649,16 +2499,6 @@ impl ApplicationVersionSummary {
     /// <p>The timestamp when the application version was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationVersionSummary");
-        formatter.field("application_version", &self.application_version);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
@@ -2890,7 +2730,7 @@ impl DatasetDetailOrgAttributes {
 
 /// <p>The required attributes for a generation data group data set. A generation data set is one of a collection of successive, historically related, catalogued data sets that together are known as a generation data group (GDG). Use this structure when you want to import a GDG. For more information on GDG, see <a href="https://www.ibm.com/docs/en/zos/2.3.0?topic=guide-generation-data-sets">Generation data sets</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GdgDetailAttributes {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
     #[doc(hidden)]
@@ -2907,14 +2747,6 @@ impl GdgDetailAttributes {
     /// <p>The disposition of the data set in the catalog.</p>
     pub fn roll_disposition(&self) -> std::option::Option<&str> {
         self.roll_disposition.as_deref()
-    }
-}
-impl std::fmt::Debug for GdgDetailAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GdgDetailAttributes");
-        formatter.field("limit", &self.limit);
-        formatter.field("roll_disposition", &self.roll_disposition);
-        formatter.finish()
     }
 }
 /// See [`GdgDetailAttributes`](crate::model::GdgDetailAttributes).
@@ -2968,7 +2800,7 @@ impl GdgDetailAttributes {
 
 /// <p>The attributes of a VSAM type data set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VsamDetailAttributes {
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
     #[doc(hidden)]
@@ -3013,18 +2845,6 @@ impl VsamDetailAttributes {
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
     pub fn alternate_keys(&self) -> std::option::Option<&[crate::model::AlternateKey]> {
         self.alternate_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for VsamDetailAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VsamDetailAttributes");
-        formatter.field("encoding", &self.encoding);
-        formatter.field("record_format", &self.record_format);
-        formatter.field("compressed", &self.compressed);
-        formatter.field("cache_at_startup", &self.cache_at_startup);
-        formatter.field("primary_key", &self.primary_key);
-        formatter.field("alternate_keys", &self.alternate_keys);
-        formatter.finish()
     }
 }
 /// See [`VsamDetailAttributes`](crate::model::VsamDetailAttributes).
@@ -3138,7 +2958,7 @@ impl VsamDetailAttributes {
 
 /// <p>Defines an alternate key. This value is optional. A legacy data set might not have any alternate key defined but if those alternate keys definitions exist, provide them, as some applications will make use of them.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlternateKey {
     /// <p>The name of the alternate key.</p>
     #[doc(hidden)]
@@ -3169,16 +2989,6 @@ impl AlternateKey {
     /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
     pub fn allow_duplicates(&self) -> bool {
         self.allow_duplicates
-    }
-}
-impl std::fmt::Debug for AlternateKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlternateKey");
-        formatter.field("name", &self.name);
-        formatter.field("offset", &self.offset);
-        formatter.field("length", &self.length);
-        formatter.field("allow_duplicates", &self.allow_duplicates);
-        formatter.finish()
     }
 }
 /// See [`AlternateKey`](crate::model::AlternateKey).
@@ -3253,7 +3063,7 @@ impl AlternateKey {
 
 /// <p>The primary key for a KSDS data set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrimaryKey {
     /// <p>A name for the Primary Key.</p>
     #[doc(hidden)]
@@ -3277,15 +3087,6 @@ impl PrimaryKey {
     /// <p>A strictly positive integer value representing the length of the primary key. </p>
     pub fn length(&self) -> i32 {
         self.length
-    }
-}
-impl std::fmt::Debug for PrimaryKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrimaryKey");
-        formatter.field("name", &self.name);
-        formatter.field("offset", &self.offset);
-        formatter.field("length", &self.length);
-        formatter.finish()
     }
 }
 /// See [`PrimaryKey`](crate::model::PrimaryKey).
@@ -3401,7 +3202,7 @@ impl DataSetImportConfig {
 
 /// <p>Identifies a specific data set to import from an external location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetImportItem {
     /// <p>The data set.</p>
     #[doc(hidden)]
@@ -3418,14 +3219,6 @@ impl DataSetImportItem {
     /// <p>The location of the data set.</p>
     pub fn external_location(&self) -> std::option::Option<&crate::model::ExternalLocation> {
         self.external_location.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSetImportItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetImportItem");
-        formatter.field("data_set", &self.data_set);
-        formatter.field("external_location", &self.external_location);
-        formatter.finish()
     }
 }
 /// See [`DataSetImportItem`](crate::model::DataSetImportItem).
@@ -3516,7 +3309,7 @@ impl ExternalLocation {
 
 /// <p>Defines a data set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSet {
     /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
     #[doc(hidden)]
@@ -3554,17 +3347,6 @@ impl DataSet {
     /// <p>The length of a record.</p>
     pub fn record_length(&self) -> std::option::Option<&crate::model::RecordLength> {
         self.record_length.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSet");
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("dataset_org", &self.dataset_org);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.field("record_length", &self.record_length);
-        formatter.finish()
     }
 }
 /// See [`DataSet`](crate::model::DataSet).
@@ -3660,7 +3442,7 @@ impl DataSet {
 
 /// <p>The length of the records in the data set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordLength {
     /// <p>The minimum record length of a record.</p>
     #[doc(hidden)]
@@ -3677,14 +3459,6 @@ impl RecordLength {
     /// <p>The maximum record length. In case of fixed, both minimum and maximum are the same.</p>
     pub fn max(&self) -> i32 {
         self.max
-    }
-}
-impl std::fmt::Debug for RecordLength {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordLength");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`RecordLength`](crate::model::RecordLength).
@@ -3786,7 +3560,7 @@ impl DatasetOrgAttributes {
 
 /// <p>The required attributes for a generation data group data set. A generation data set is one of a collection of successive, historically related, catalogued data sets that together are known as a generation data group (GDG). Use this structure when you want to import a GDG. For more information on GDG, see <a href="https://www.ibm.com/docs/en/zos/2.3.0?topic=guide-generation-data-sets">Generation data sets</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GdgAttributes {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
     #[doc(hidden)]
@@ -3803,14 +3577,6 @@ impl GdgAttributes {
     /// <p>The disposition of the data set in the catalog.</p>
     pub fn roll_disposition(&self) -> std::option::Option<&str> {
         self.roll_disposition.as_deref()
-    }
-}
-impl std::fmt::Debug for GdgAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GdgAttributes");
-        formatter.field("limit", &self.limit);
-        formatter.field("roll_disposition", &self.roll_disposition);
-        formatter.finish()
     }
 }
 /// See [`GdgAttributes`](crate::model::GdgAttributes).
@@ -3864,7 +3630,7 @@ impl GdgAttributes {
 
 /// <p>The attributes of a VSAM type data set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VsamAttributes {
     /// <p>The record format of the data set.</p>
     #[doc(hidden)]
@@ -3902,17 +3668,6 @@ impl VsamAttributes {
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
     pub fn alternate_keys(&self) -> std::option::Option<&[crate::model::AlternateKey]> {
         self.alternate_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for VsamAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VsamAttributes");
-        formatter.field("format", &self.format);
-        formatter.field("encoding", &self.encoding);
-        formatter.field("compressed", &self.compressed);
-        formatter.field("primary_key", &self.primary_key);
-        formatter.field("alternate_keys", &self.alternate_keys);
-        formatter.finish()
     }
 }
 /// See [`VsamAttributes`](crate::model::VsamAttributes).
@@ -4011,7 +3766,7 @@ impl VsamAttributes {
 
 /// <p>A subset of the possible application attributes. Used in the application list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -4102,24 +3857,6 @@ impl ApplicationSummary {
         &self,
     ) -> std::option::Option<&crate::model::ApplicationDeploymentLifecycle> {
         self.deployment_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSummary");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.field("application_version", &self.application_version);
-        formatter.field("status", &self.status);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("last_start_time", &self.last_start_time);
-        formatter.field("version_status", &self.version_status);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
@@ -4607,7 +4344,7 @@ impl Definition {
 
 /// <p>A subset of the attributes about a log group. In CloudWatch a log group is a group of log streams that share the same retention, monitoring, and access control settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogGroupSummary {
     /// <p>The type of log.</p>
     #[doc(hidden)]
@@ -4624,14 +4361,6 @@ impl LogGroupSummary {
     /// <p>The name of the log group.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LogGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogGroupSummary");
-        formatter.field("log_type", &self.log_type);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`LogGroupSummary`](crate::model::LogGroupSummary).
@@ -4685,7 +4414,7 @@ impl LogGroupSummary {
 
 /// <p>Contains a summary of a deployed application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeployedVersionSummary {
     /// <p>The version of the deployed application.</p>
     #[doc(hidden)]
@@ -4709,15 +4438,6 @@ impl DeployedVersionSummary {
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for DeployedVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeployedVersionSummary");
-        formatter.field("application_version", &self.application_version);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`DeployedVersionSummary`](crate::model::DeployedVersionSummary).
@@ -4786,7 +4506,7 @@ impl DeployedVersionSummary {
 
 /// <p>A subset of information about the engine version for a specific application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
     #[doc(hidden)]
@@ -4803,14 +4523,6 @@ impl EngineVersionsSummary {
     /// <p>The version of the engine type used by the application.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
-    }
-}
-impl std::fmt::Debug for EngineVersionsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineVersionsSummary");
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
     }
 }
 /// See [`EngineVersionsSummary`](crate::model::EngineVersionsSummary).

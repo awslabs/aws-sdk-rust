@@ -781,7 +781,7 @@ impl AssociateUserSettingsInput {
 pub mod create_browser_settings_input {
 
     /// A builder for [`CreateBrowserSettingsInput`](crate::input::CreateBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) customer_managed_key: std::option::Option<std::string::String>,
@@ -888,6 +888,20 @@ pub mod create_browser_settings_input {
                 browser_policy: self.browser_policy,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("tags", &self.tags);
+            formatter.field("customer_managed_key", &self.customer_managed_key);
+            formatter.field(
+                "additional_encryption_context",
+                &self.additional_encryption_context,
+            );
+            formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -1010,7 +1024,7 @@ impl CreateBrowserSettingsInput {
 pub mod create_identity_provider_input {
 
     /// A builder for [`CreateIdentityProviderInput`](crate::input::CreateIdentityProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -1188,6 +1202,20 @@ pub mod create_identity_provider_input {
                 identity_provider_details: self.identity_provider_details,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("portal_arn", &self.portal_arn);
+            formatter.field("identity_provider_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("identity_provider_type", &self.identity_provider_type);
+            formatter.field(
+                "identity_provider_details",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -1534,7 +1562,7 @@ impl CreateNetworkSettingsInput {
 pub mod create_portal_input {
 
     /// A builder for [`CreatePortalInput`](crate::input::CreatePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1636,6 +1664,20 @@ pub mod create_portal_input {
                 additional_encryption_context: self.additional_encryption_context,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.field("customer_managed_key", &self.customer_managed_key);
+            formatter.field(
+                "additional_encryption_context",
+                &self.additional_encryption_context,
+            );
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -6730,7 +6772,7 @@ impl UntagResourceInput {
 pub mod update_browser_settings_input {
 
     /// A builder for [`UpdateBrowserSettingsInput`](crate::input::UpdateBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
         pub(crate) browser_policy: std::option::Option<std::string::String>,
@@ -6787,6 +6829,15 @@ pub mod update_browser_settings_input {
                 browser_policy: self.browser_policy,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("browser_settings_arn", &self.browser_settings_arn);
+            formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -6933,7 +6984,7 @@ impl UpdateBrowserSettingsInput {
 pub mod update_identity_provider_input {
 
     /// A builder for [`UpdateIdentityProviderInput`](crate::input::UpdateIdentityProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -7114,6 +7165,20 @@ pub mod update_identity_provider_input {
                 identity_provider_details: self.identity_provider_details,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("identity_provider_arn", &self.identity_provider_arn);
+            formatter.field("identity_provider_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("identity_provider_type", &self.identity_provider_type);
+            formatter.field(
+                "identity_provider_details",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -7502,7 +7567,7 @@ impl UpdateNetworkSettingsInput {
 pub mod update_portal_input {
 
     /// A builder for [`UpdatePortalInput`](crate::input::UpdatePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -7537,6 +7602,14 @@ pub mod update_portal_input {
                 portal_arn: self.portal_arn,
                 display_name: self.display_name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("portal_arn", &self.portal_arn);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -8191,7 +8264,7 @@ impl UpdateUserSettingsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
     #[doc(hidden)]
@@ -8261,31 +8334,10 @@ impl UpdateUserSettingsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserSettingsInput");
-        formatter.field("user_settings_arn", &self.user_settings_arn);
-        formatter.field("copy_allowed", &self.copy_allowed);
-        formatter.field("paste_allowed", &self.paste_allowed);
-        formatter.field("download_allowed", &self.download_allowed);
-        formatter.field("upload_allowed", &self.upload_allowed);
-        formatter.field("print_allowed", &self.print_allowed);
-        formatter.field(
-            "disconnect_timeout_in_minutes",
-            &self.disconnect_timeout_in_minutes,
-        );
-        formatter.field(
-            "idle_disconnect_timeout_in_minutes",
-            &self.idle_disconnect_timeout_in_minutes,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrustStoreInput {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
@@ -8318,16 +8370,6 @@ impl UpdateTrustStoreInput {
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateTrustStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrustStoreInput");
-        formatter.field("trust_store_arn", &self.trust_store_arn);
-        formatter.field("certificates_to_add", &self.certificates_to_add);
-        formatter.field("certificates_to_delete", &self.certificates_to_delete);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }
 
@@ -8363,7 +8405,7 @@ impl std::fmt::Debug for UpdatePortalInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNetworkSettingsInput {
     /// <p>The ARN of the network settings.</p>
     #[doc(hidden)]
@@ -8403,17 +8445,6 @@ impl UpdateNetworkSettingsInput {
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateNetworkSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNetworkSettingsInput");
-        formatter.field("network_settings_arn", &self.network_settings_arn);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }
 
@@ -8604,7 +8635,7 @@ impl std::fmt::Debug for UpdateBrowserSettingsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -8623,18 +8654,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -8662,19 +8685,10 @@ impl TagResourceInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserSettingsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     #[doc(hidden)]
@@ -8693,18 +8707,10 @@ impl ListUserSettingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserSettingsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrustStoresInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
@@ -8723,18 +8729,10 @@ impl ListTrustStoresInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTrustStoresInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrustStoresInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrustStoreCertificatesInput {
     /// <p>The ARN of the trust store</p>
     #[doc(hidden)]
@@ -8760,19 +8758,10 @@ impl ListTrustStoreCertificatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTrustStoreCertificatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrustStoreCertificatesInput");
-        formatter.field("trust_store_arn", &self.trust_store_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -8784,17 +8773,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPortalsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     #[doc(hidden)]
@@ -8813,18 +8795,10 @@ impl ListPortalsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPortalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPortalsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworkSettingsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
@@ -8843,18 +8817,10 @@ impl ListNetworkSettingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNetworkSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworkSettingsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityProvidersInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
@@ -8880,19 +8846,10 @@ impl ListIdentityProvidersInput {
         self.portal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentityProvidersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityProvidersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBrowserSettingsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
@@ -8911,18 +8868,10 @@ impl ListBrowserSettingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListBrowserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBrowserSettingsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
     #[doc(hidden)]
@@ -8934,17 +8883,10 @@ impl GetUserSettingsInput {
         self.user_settings_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserSettingsInput");
-        formatter.field("user_settings_arn", &self.user_settings_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrustStoreCertificateInput {
     /// <p>The ARN of the trust store certificate.</p>
     #[doc(hidden)]
@@ -8963,18 +8905,10 @@ impl GetTrustStoreCertificateInput {
         self.thumbprint.as_deref()
     }
 }
-impl std::fmt::Debug for GetTrustStoreCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrustStoreCertificateInput");
-        formatter.field("trust_store_arn", &self.trust_store_arn);
-        formatter.field("thumbprint", &self.thumbprint);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrustStoreInput {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
@@ -8986,17 +8920,10 @@ impl GetTrustStoreInput {
         self.trust_store_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetTrustStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrustStoreInput");
-        formatter.field("trust_store_arn", &self.trust_store_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPortalServiceProviderMetadataInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9008,17 +8935,10 @@ impl GetPortalServiceProviderMetadataInput {
         self.portal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetPortalServiceProviderMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPortalServiceProviderMetadataInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPortalInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9030,17 +8950,10 @@ impl GetPortalInput {
         self.portal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetPortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPortalInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkSettingsInput {
     /// <p>The ARN of the network settings.</p>
     #[doc(hidden)]
@@ -9052,17 +8965,10 @@ impl GetNetworkSettingsInput {
         self.network_settings_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkSettingsInput");
-        formatter.field("network_settings_arn", &self.network_settings_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityProviderInput {
     /// <p>The ARN of the identity provider.</p>
     #[doc(hidden)]
@@ -9074,17 +8980,10 @@ impl GetIdentityProviderInput {
         self.identity_provider_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityProviderInput");
-        formatter.field("identity_provider_arn", &self.identity_provider_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBrowserSettingsInput {
     /// <p>The ARN of the browser settings.</p>
     #[doc(hidden)]
@@ -9096,17 +8995,10 @@ impl GetBrowserSettingsInput {
         self.browser_settings_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetBrowserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBrowserSettingsInput");
-        formatter.field("browser_settings_arn", &self.browser_settings_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateUserSettingsInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9118,17 +9010,10 @@ impl DisassociateUserSettingsInput {
         self.portal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateUserSettingsInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTrustStoreInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9140,17 +9025,10 @@ impl DisassociateTrustStoreInput {
         self.portal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateTrustStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateTrustStoreInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateNetworkSettingsInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9162,17 +9040,10 @@ impl DisassociateNetworkSettingsInput {
         self.portal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateNetworkSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateNetworkSettingsInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateBrowserSettingsInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9184,17 +9055,10 @@ impl DisassociateBrowserSettingsInput {
         self.portal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateBrowserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateBrowserSettingsInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
     #[doc(hidden)]
@@ -9206,17 +9070,10 @@ impl DeleteUserSettingsInput {
         self.user_settings_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserSettingsInput");
-        formatter.field("user_settings_arn", &self.user_settings_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrustStoreInput {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
@@ -9228,17 +9085,10 @@ impl DeleteTrustStoreInput {
         self.trust_store_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTrustStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrustStoreInput");
-        formatter.field("trust_store_arn", &self.trust_store_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePortalInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9250,17 +9100,10 @@ impl DeletePortalInput {
         self.portal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePortalInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNetworkSettingsInput {
     /// <p>The ARN of the network settings.</p>
     #[doc(hidden)]
@@ -9272,17 +9115,10 @@ impl DeleteNetworkSettingsInput {
         self.network_settings_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNetworkSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNetworkSettingsInput");
-        formatter.field("network_settings_arn", &self.network_settings_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityProviderInput {
     /// <p>The ARN of the identity provider.</p>
     #[doc(hidden)]
@@ -9294,17 +9130,10 @@ impl DeleteIdentityProviderInput {
         self.identity_provider_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIdentityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityProviderInput");
-        formatter.field("identity_provider_arn", &self.identity_provider_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBrowserSettingsInput {
     /// <p>The ARN of the browser settings.</p>
     #[doc(hidden)]
@@ -9316,17 +9145,10 @@ impl DeleteBrowserSettingsInput {
         self.browser_settings_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBrowserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBrowserSettingsInput");
-        formatter.field("browser_settings_arn", &self.browser_settings_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserSettingsInput {
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     #[doc(hidden)]
@@ -9396,31 +9218,10 @@ impl CreateUserSettingsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserSettingsInput");
-        formatter.field("copy_allowed", &self.copy_allowed);
-        formatter.field("paste_allowed", &self.paste_allowed);
-        formatter.field("download_allowed", &self.download_allowed);
-        formatter.field("upload_allowed", &self.upload_allowed);
-        formatter.field("print_allowed", &self.print_allowed);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disconnect_timeout_in_minutes",
-            &self.disconnect_timeout_in_minutes,
-        );
-        formatter.field(
-            "idle_disconnect_timeout_in_minutes",
-            &self.idle_disconnect_timeout_in_minutes,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrustStoreInput {
     /// <p>A list of CA certificates to be added to the trust store.</p>
     #[doc(hidden)]
@@ -9446,15 +9247,6 @@ impl CreateTrustStoreInput {
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateTrustStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrustStoreInput");
-        formatter.field("certificate_list", &self.certificate_list);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }
 
@@ -9523,7 +9315,7 @@ impl std::fmt::Debug for CreatePortalInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNetworkSettingsInput {
     /// <p>The VPC that streaming instances will connect to.</p>
     #[doc(hidden)]
@@ -9563,17 +9355,6 @@ impl CreateNetworkSettingsInput {
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateNetworkSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNetworkSettingsInput");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }
 
@@ -9787,7 +9568,7 @@ impl std::fmt::Debug for CreateBrowserSettingsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateUserSettingsInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9806,18 +9587,10 @@ impl AssociateUserSettingsInput {
         self.user_settings_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateUserSettingsInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.field("user_settings_arn", &self.user_settings_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateTrustStoreInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9836,18 +9609,10 @@ impl AssociateTrustStoreInput {
         self.trust_store_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateTrustStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateTrustStoreInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.field("trust_store_arn", &self.trust_store_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateNetworkSettingsInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9866,18 +9631,10 @@ impl AssociateNetworkSettingsInput {
         self.network_settings_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateNetworkSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateNetworkSettingsInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.field("network_settings_arn", &self.network_settings_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateBrowserSettingsInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
@@ -9894,13 +9651,5 @@ impl AssociateBrowserSettingsInput {
     /// <p>The ARN of the browser settings.</p>
     pub fn browser_settings_arn(&self) -> std::option::Option<&str> {
         self.browser_settings_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateBrowserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateBrowserSettingsInput");
-        formatter.field("portal_arn", &self.portal_arn);
-        formatter.field("browser_settings_arn", &self.browser_settings_arn);
-        formatter.finish()
     }
 }

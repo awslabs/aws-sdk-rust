@@ -2,7 +2,7 @@
 
 /// <p>A collection of key:value pairs associated with an Amazon Web Services resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each Amazon Web Services resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>An Firewall Manager protocols list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
     #[doc(hidden)]
@@ -135,19 +127,6 @@ impl ProtocolsListData {
         &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     > {
         self.previous_protocols_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ProtocolsListData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtocolsListData");
-        formatter.field("list_id", &self.list_id);
-        formatter.field("list_name", &self.list_name);
-        formatter.field("list_update_token", &self.list_update_token);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("protocols_list", &self.protocols_list);
-        formatter.field("previous_protocols_list", &self.previous_protocols_list);
-        formatter.finish()
     }
 }
 /// See [`ProtocolsListData`](crate::model::ProtocolsListData).
@@ -293,7 +272,7 @@ impl ProtocolsListData {
 
 /// <p>An Firewall Manager policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Policy {
     /// <p>The ID of the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -440,30 +419,6 @@ impl Policy {
         >,
     > {
         self.exclude_map.as_ref()
-    }
-}
-impl std::fmt::Debug for Policy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Policy");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_update_token", &self.policy_update_token);
-        formatter.field(
-            "security_service_policy_data",
-            &self.security_service_policy_data,
-        );
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_type_list", &self.resource_type_list);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("exclude_resource_tags", &self.exclude_resource_tags);
-        formatter.field("remediation_enabled", &self.remediation_enabled);
-        formatter.field(
-            "delete_unused_fm_managed_resources",
-            &self.delete_unused_fm_managed_resources,
-        );
-        formatter.field("include_map", &self.include_map);
-        formatter.field("exclude_map", &self.exclude_map);
-        formatter.finish()
     }
 }
 /// See [`Policy`](crate::model::Policy).
@@ -842,7 +797,7 @@ impl AsRef<str> for CustomerPolicyScopeIdType {
 
 /// <p>The resource tags that Firewall Manager uses to determine if a particular resource should be included or excluded from the Firewall Manager policy. Tags enable you to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The resource tag key.</p>
     #[doc(hidden)]
@@ -859,14 +814,6 @@ impl ResourceTag {
     /// <p>The resource tag value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceTag`](crate::model::ResourceTag).
@@ -917,7 +864,7 @@ impl ResourceTag {
 
 /// <p>Details about the security service that is being used to protect the resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityServicePolicyData {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
     #[doc(hidden)]
@@ -981,15 +928,6 @@ impl SecurityServicePolicyData {
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
     pub fn policy_option(&self) -> std::option::Option<&crate::model::PolicyOption> {
         self.policy_option.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityServicePolicyData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityServicePolicyData");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("managed_service_data", &self.managed_service_data);
-        formatter.field("policy_option", &self.policy_option);
-        formatter.finish()
     }
 }
 /// See [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
@@ -1101,7 +1039,7 @@ impl SecurityServicePolicyData {
 
 /// <p>Contains the Network Firewall firewall policy options to configure the policy's deployment model and third-party firewall policy settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyOption {
     /// <p>Defines the deployment model to use for the firewall policy.</p>
     #[doc(hidden)]
@@ -1122,17 +1060,6 @@ impl PolicyOption {
         &self,
     ) -> std::option::Option<&crate::model::ThirdPartyFirewallPolicy> {
         self.third_party_firewall_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyOption");
-        formatter.field("network_firewall_policy", &self.network_firewall_policy);
-        formatter.field(
-            "third_party_firewall_policy",
-            &self.third_party_firewall_policy,
-        );
-        formatter.finish()
     }
 }
 /// See [`PolicyOption`](crate::model::PolicyOption).
@@ -1197,7 +1124,7 @@ impl PolicyOption {
 
 /// <p>Configures the deployment model for the third-party firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallPolicy {
     /// <p>Defines the deployment model to use for the third-party firewall policy.</p>
     #[doc(hidden)]
@@ -1209,13 +1136,6 @@ impl ThirdPartyFirewallPolicy {
         &self,
     ) -> std::option::Option<&crate::model::FirewallDeploymentModel> {
         self.firewall_deployment_model.as_ref()
-    }
-}
-impl std::fmt::Debug for ThirdPartyFirewallPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallPolicy");
-        formatter.field("firewall_deployment_model", &self.firewall_deployment_model);
-        formatter.finish()
     }
 }
 /// See [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
@@ -1353,7 +1273,7 @@ impl AsRef<str> for FirewallDeploymentModel {
 
 /// <p>Configures the firewall policy deployment model of Network Firewall. For information about Network Firewall deployment models, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures.html">Network Firewall example architectures with routing</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallPolicy {
     /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
     #[doc(hidden)]
@@ -1365,13 +1285,6 @@ impl NetworkFirewallPolicy {
         &self,
     ) -> std::option::Option<&crate::model::FirewallDeploymentModel> {
         self.firewall_deployment_model.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallPolicy");
-        formatter.field("firewall_deployment_model", &self.firewall_deployment_model);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
@@ -1554,7 +1467,7 @@ impl AsRef<str> for SecurityServiceType {
 
 /// <p>An Firewall Manager applications list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppsListData {
     /// <p>The ID of the Firewall Manager applications list.</p>
     #[doc(hidden)]
@@ -1612,19 +1525,6 @@ impl AppsListData {
         &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::App>>,
     > {
         self.previous_apps_list.as_ref()
-    }
-}
-impl std::fmt::Debug for AppsListData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppsListData");
-        formatter.field("list_id", &self.list_id);
-        formatter.field("list_name", &self.list_name);
-        formatter.field("list_update_token", &self.list_update_token);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("apps_list", &self.apps_list);
-        formatter.field("previous_apps_list", &self.previous_apps_list);
-        formatter.finish()
     }
 }
 /// See [`AppsListData`](crate::model::AppsListData).
@@ -1770,7 +1670,7 @@ impl AppsListData {
 
 /// <p>An individual Firewall Manager application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct App {
     /// <p>The application's name.</p>
     #[doc(hidden)]
@@ -1794,15 +1694,6 @@ impl App {
     /// <p>The application's port number, for example <code>80</code>.</p>
     pub fn port(&self) -> std::option::Option<i64> {
         self.port
-    }
-}
-impl std::fmt::Debug for App {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("App");
-        formatter.field("app_name", &self.app_name);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`App`](crate::model::App).
@@ -1865,7 +1756,7 @@ impl App {
 
 /// <p>Configures the third-party firewall's firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallFirewallPolicy {
     /// <p>The ID of the specified firewall policy.</p>
     #[doc(hidden)]
@@ -1882,14 +1773,6 @@ impl ThirdPartyFirewallFirewallPolicy {
     /// <p>The name of the specified firewall policy.</p>
     pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ThirdPartyFirewallFirewallPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallFirewallPolicy");
-        formatter.field("firewall_policy_id", &self.firewall_policy_id);
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.finish()
     }
 }
 /// See [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
@@ -2033,7 +1916,7 @@ impl AsRef<str> for ThirdPartyFirewall {
 
 /// <p>Details of the Firewall Manager protocols list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtocolsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
     #[doc(hidden)]
@@ -2064,16 +1947,6 @@ impl ProtocolsListDataSummary {
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     pub fn protocols_list(&self) -> std::option::Option<&[std::string::String]> {
         self.protocols_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ProtocolsListDataSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtocolsListDataSummary");
-        formatter.field("list_arn", &self.list_arn);
-        formatter.field("list_id", &self.list_id);
-        formatter.field("list_name", &self.list_name);
-        formatter.field("protocols_list", &self.protocols_list);
-        formatter.finish()
     }
 }
 /// See [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
@@ -2157,7 +2030,7 @@ impl ProtocolsListDataSummary {
 
 /// <p>Details of the Firewall Manager policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicySummary {
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
     #[doc(hidden)]
@@ -2213,22 +2086,6 @@ impl PolicySummary {
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
     pub fn delete_unused_fm_managed_resources(&self) -> bool {
         self.delete_unused_fm_managed_resources
-    }
-}
-impl std::fmt::Debug for PolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicySummary");
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("security_service_type", &self.security_service_type);
-        formatter.field("remediation_enabled", &self.remediation_enabled);
-        formatter.field(
-            "delete_unused_fm_managed_resources",
-            &self.delete_unused_fm_managed_resources,
-        );
-        formatter.finish()
     }
 }
 /// See [`PolicySummary`](crate::model::PolicySummary).
@@ -2354,7 +2211,7 @@ impl PolicySummary {
 
 /// <p>Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyComplianceStatus {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -2412,19 +2269,6 @@ impl PolicyComplianceStatus {
         &std::collections::HashMap<crate::model::DependentServiceName, std::string::String>,
     > {
         self.issue_info_map.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyComplianceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyComplianceStatus");
-        formatter.field("policy_owner", &self.policy_owner);
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("member_account", &self.member_account);
-        formatter.field("evaluation_results", &self.evaluation_results);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("issue_info_map", &self.issue_info_map);
-        formatter.finish()
     }
 }
 /// See [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
@@ -2670,7 +2514,7 @@ impl AsRef<str> for DependentServiceName {
 
 /// <p>Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -2696,15 +2540,6 @@ impl EvaluationResult {
     /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
     pub fn evaluation_limit_exceeded(&self) -> bool {
         self.evaluation_limit_exceeded
-    }
-}
-impl std::fmt::Debug for EvaluationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationResult");
-        formatter.field("compliance_status", &self.compliance_status);
-        formatter.field("violator_count", &self.violator_count);
-        formatter.field("evaluation_limit_exceeded", &self.evaluation_limit_exceeded);
-        formatter.finish()
     }
 }
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
@@ -2865,7 +2700,7 @@ impl AsRef<str> for PolicyComplianceStatusType {
 
 /// <p>Details of the Firewall Manager applications list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     #[doc(hidden)]
@@ -2896,16 +2731,6 @@ impl AppsListDataSummary {
     /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
     pub fn apps_list(&self) -> std::option::Option<&[crate::model::App]> {
         self.apps_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AppsListDataSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppsListDataSummary");
-        formatter.field("list_arn", &self.list_arn);
-        formatter.field("list_id", &self.list_id);
-        formatter.field("list_name", &self.list_name);
-        formatter.field("apps_list", &self.apps_list);
-        formatter.finish()
     }
 }
 /// See [`AppsListDataSummary`](crate::model::AppsListDataSummary).
@@ -2989,7 +2814,7 @@ impl AppsListDataSummary {
 
 /// <p>Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViolationDetail {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
     #[doc(hidden)]
@@ -3041,19 +2866,6 @@ impl ViolationDetail {
     /// <p>Brief description for the requested resource.</p>
     pub fn resource_description(&self) -> std::option::Option<&str> {
         self.resource_description.as_deref()
-    }
-}
-impl std::fmt::Debug for ViolationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViolationDetail");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("member_account", &self.member_account);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_violations", &self.resource_violations);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("resource_description", &self.resource_description);
-        formatter.finish()
     }
 }
 /// See [`ViolationDetail`](crate::model::ViolationDetail).
@@ -3192,7 +3004,7 @@ impl ViolationDetail {
 
 /// <p>Violation detail based on resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceViolation {
     /// <p>Violation detail for security groups.</p>
     #[doc(hidden)]
@@ -3433,104 +3245,6 @@ impl ResourceViolation {
         &self,
     ) -> std::option::Option<&crate::model::FirewallSubnetMissingVpcEndpointViolation> {
         self.firewall_subnet_missing_vpc_endpoint_violation.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceViolation");
-        formatter.field(
-            "aws_vpc_security_group_violation",
-            &self.aws_vpc_security_group_violation,
-        );
-        formatter.field(
-            "aws_ec2_network_interface_violation",
-            &self.aws_ec2_network_interface_violation,
-        );
-        formatter.field(
-            "aws_ec2_instance_violation",
-            &self.aws_ec2_instance_violation,
-        );
-        formatter.field(
-            "network_firewall_missing_firewall_violation",
-            &self.network_firewall_missing_firewall_violation,
-        );
-        formatter.field(
-            "network_firewall_missing_subnet_violation",
-            &self.network_firewall_missing_subnet_violation,
-        );
-        formatter.field(
-            "network_firewall_missing_expected_rt_violation",
-            &self.network_firewall_missing_expected_rt_violation,
-        );
-        formatter.field(
-            "network_firewall_policy_modified_violation",
-            &self.network_firewall_policy_modified_violation,
-        );
-        formatter.field(
-            "network_firewall_internet_traffic_not_inspected_violation",
-            &self.network_firewall_internet_traffic_not_inspected_violation,
-        );
-        formatter.field(
-            "network_firewall_invalid_route_configuration_violation",
-            &self.network_firewall_invalid_route_configuration_violation,
-        );
-        formatter.field(
-            "network_firewall_black_hole_route_detected_violation",
-            &self.network_firewall_black_hole_route_detected_violation,
-        );
-        formatter.field(
-            "network_firewall_unexpected_firewall_routes_violation",
-            &self.network_firewall_unexpected_firewall_routes_violation,
-        );
-        formatter.field(
-            "network_firewall_unexpected_gateway_routes_violation",
-            &self.network_firewall_unexpected_gateway_routes_violation,
-        );
-        formatter.field(
-            "network_firewall_missing_expected_routes_violation",
-            &self.network_firewall_missing_expected_routes_violation,
-        );
-        formatter.field(
-            "dns_rule_group_priority_conflict_violation",
-            &self.dns_rule_group_priority_conflict_violation,
-        );
-        formatter.field(
-            "dns_duplicate_rule_group_violation",
-            &self.dns_duplicate_rule_group_violation,
-        );
-        formatter.field(
-            "dns_rule_group_limit_exceeded_violation",
-            &self.dns_rule_group_limit_exceeded_violation,
-        );
-        formatter.field(
-            "possible_remediation_actions",
-            &self.possible_remediation_actions,
-        );
-        formatter.field(
-            "firewall_subnet_is_out_of_scope_violation",
-            &self.firewall_subnet_is_out_of_scope_violation,
-        );
-        formatter.field(
-            "route_has_out_of_scope_endpoint_violation",
-            &self.route_has_out_of_scope_endpoint_violation,
-        );
-        formatter.field(
-            "third_party_firewall_missing_firewall_violation",
-            &self.third_party_firewall_missing_firewall_violation,
-        );
-        formatter.field(
-            "third_party_firewall_missing_subnet_violation",
-            &self.third_party_firewall_missing_subnet_violation,
-        );
-        formatter.field(
-            "third_party_firewall_missing_expected_route_table_violation",
-            &self.third_party_firewall_missing_expected_route_table_violation,
-        );
-        formatter.field(
-            "firewall_subnet_missing_vpc_endpoint_violation",
-            &self.firewall_subnet_missing_vpc_endpoint_violation,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResourceViolation`](crate::model::ResourceViolation).
@@ -4024,7 +3738,7 @@ impl ResourceViolation {
 
 /// <p>The violation details for a firewall subnet's VPC endpoint that's deleted or missing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallSubnetMissingVpcEndpointViolation {
     /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
     #[doc(hidden)]
@@ -4055,19 +3769,6 @@ impl FirewallSubnetMissingVpcEndpointViolation {
     /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
     pub fn subnet_availability_zone_id(&self) -> std::option::Option<&str> {
         self.subnet_availability_zone_id.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallSubnetMissingVpcEndpointViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallSubnetMissingVpcEndpointViolation");
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field(
-            "subnet_availability_zone_id",
-            &self.subnet_availability_zone_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
@@ -4154,7 +3855,7 @@ impl FirewallSubnetMissingVpcEndpointViolation {
 
 /// <p>The violation details for a third-party firewall that's not associated with an Firewall Manager managed route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingExpectedRouteTableViolation {
     /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
     #[doc(hidden)]
@@ -4192,17 +3893,6 @@ impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
     /// <p>The resource ID of the route table that should be associated with the subnet.</p>
     pub fn expected_route_table(&self) -> std::option::Option<&str> {
         self.expected_route_table.as_deref()
-    }
-}
-impl std::fmt::Debug for ThirdPartyFirewallMissingExpectedRouteTableViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingExpectedRouteTableViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("current_route_table", &self.current_route_table);
-        formatter.field("expected_route_table", &self.expected_route_table);
-        formatter.finish()
     }
 }
 /// See [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
@@ -4303,7 +3993,7 @@ impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
 
 /// <p>The violation details for a third-party firewall for an Availability Zone that's missing the Firewall Manager managed subnet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingSubnetViolation {
     /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
     #[doc(hidden)]
@@ -4334,16 +4024,6 @@ impl ThirdPartyFirewallMissingSubnetViolation {
     /// <p>The reason the resource is causing the violation, if a reason is available.</p>
     pub fn target_violation_reason(&self) -> std::option::Option<&str> {
         self.target_violation_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ThirdPartyFirewallMissingSubnetViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingSubnetViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("target_violation_reason", &self.target_violation_reason);
-        formatter.finish()
     }
 }
 /// See [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
@@ -4427,7 +4107,7 @@ impl ThirdPartyFirewallMissingSubnetViolation {
 
 /// <p>The violation details about a third-party firewall's subnet that doesn't have a Firewall Manager managed firewall in its VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingFirewallViolation {
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
     #[doc(hidden)]
@@ -4458,16 +4138,6 @@ impl ThirdPartyFirewallMissingFirewallViolation {
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
     pub fn target_violation_reason(&self) -> std::option::Option<&str> {
         self.target_violation_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ThirdPartyFirewallMissingFirewallViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingFirewallViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("target_violation_reason", &self.target_violation_reason);
-        formatter.finish()
     }
 }
 /// See [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
@@ -4551,7 +4221,7 @@ impl ThirdPartyFirewallMissingFirewallViolation {
 
 /// <p>Contains details about the route endpoint that violates the policy scope.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteHasOutOfScopeEndpointViolation {
     /// <p>The ID of the subnet associated with the route that violates the policy scope.</p>
     #[doc(hidden)]
@@ -4638,33 +4308,6 @@ impl RouteHasOutOfScopeEndpointViolation {
     /// <p>The routes in the route table associated with the Internet Gateway.</p>
     pub fn internet_gateway_routes(&self) -> std::option::Option<&[crate::model::Route]> {
         self.internet_gateway_routes.as_deref()
-    }
-}
-impl std::fmt::Debug for RouteHasOutOfScopeEndpointViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteHasOutOfScopeEndpointViolation");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field(
-            "subnet_availability_zone_id",
-            &self.subnet_availability_zone_id,
-        );
-        formatter.field(
-            "current_firewall_subnet_route_table",
-            &self.current_firewall_subnet_route_table,
-        );
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field("firewall_subnet_routes", &self.firewall_subnet_routes);
-        formatter.field("internet_gateway_id", &self.internet_gateway_id);
-        formatter.field(
-            "current_internet_gateway_route_table",
-            &self.current_internet_gateway_route_table,
-        );
-        formatter.field("internet_gateway_routes", &self.internet_gateway_routes);
-        formatter.finish()
     }
 }
 /// See [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
@@ -4892,7 +4535,7 @@ impl RouteHasOutOfScopeEndpointViolation {
 
 /// <p>Describes a route in a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Route {
     /// <p>The type of destination for the route.</p>
     #[doc(hidden)]
@@ -4923,16 +4566,6 @@ impl Route {
     /// <p>The route's target.</p>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
-    }
-}
-impl std::fmt::Debug for Route {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Route");
-        formatter.field("destination_type", &self.destination_type);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("destination", &self.destination);
-        formatter.field("target", &self.target);
-        formatter.finish()
     }
 }
 /// See [`Route`](crate::model::Route).
@@ -5249,7 +4882,7 @@ impl AsRef<str> for DestinationType {
 
 /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallSubnetIsOutOfScopeViolation {
     /// <p>The ID of the firewall subnet that violates the policy scope.</p>
     #[doc(hidden)]
@@ -5287,20 +4920,6 @@ impl FirewallSubnetIsOutOfScopeViolation {
     /// <p>The VPC endpoint ID of the firewall subnet that violates the policy scope.</p>
     pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallSubnetIsOutOfScopeViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallSubnetIsOutOfScopeViolation");
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field(
-            "subnet_availability_zone_id",
-            &self.subnet_availability_zone_id,
-        );
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.finish()
     }
 }
 /// See [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
@@ -5402,7 +5021,7 @@ impl FirewallSubnetIsOutOfScopeViolation {
 
 /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PossibleRemediationActions {
     /// <p>A description of the possible remediation actions list.</p>
     #[doc(hidden)]
@@ -5419,14 +5038,6 @@ impl PossibleRemediationActions {
     /// <p>Information about the actions.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::PossibleRemediationAction]> {
         self.actions.as_deref()
-    }
-}
-impl std::fmt::Debug for PossibleRemediationActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PossibleRemediationActions");
-        formatter.field("description", &self.description);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }
 /// See [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
@@ -5487,7 +5098,7 @@ impl PossibleRemediationActions {
 
 /// <p>A list of remediation actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PossibleRemediationAction {
     /// <p>A description of the list of remediation actions.</p>
     #[doc(hidden)]
@@ -5514,18 +5125,6 @@ impl PossibleRemediationAction {
     /// <p>Information about whether an action is taken by default.</p>
     pub fn is_default_action(&self) -> bool {
         self.is_default_action
-    }
-}
-impl std::fmt::Debug for PossibleRemediationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PossibleRemediationAction");
-        formatter.field("description", &self.description);
-        formatter.field(
-            "ordered_remediation_actions",
-            &self.ordered_remediation_actions,
-        );
-        formatter.field("is_default_action", &self.is_default_action);
-        formatter.finish()
     }
 }
 /// See [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
@@ -5601,7 +5200,7 @@ impl PossibleRemediationAction {
 
 /// <p>An ordered list of actions you can take to remediate a violation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationActionWithOrder {
     /// <p>Information about an action you can take to remediate a violation.</p>
     #[doc(hidden)]
@@ -5618,14 +5217,6 @@ impl RemediationActionWithOrder {
     /// <p>The order of the remediation actions in the list.</p>
     pub fn order(&self) -> i32 {
         self.order
-    }
-}
-impl std::fmt::Debug for RemediationActionWithOrder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationActionWithOrder");
-        formatter.field("remediation_action", &self.remediation_action);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
@@ -5679,7 +5270,7 @@ impl RemediationActionWithOrder {
 
 /// <p>Information about an individual action you can take to remediate a violation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationAction {
     /// <p>A description of a remediation action.</p>
     #[doc(hidden)]
@@ -5765,36 +5356,6 @@ impl RemediationAction {
     ) -> std::option::Option<&crate::model::FmsPolicyUpdateFirewallCreationConfigAction> {
         self.fms_policy_update_firewall_creation_config_action
             .as_ref()
-    }
-}
-impl std::fmt::Debug for RemediationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationAction");
-        formatter.field("description", &self.description);
-        formatter.field("ec2_create_route_action", &self.ec2_create_route_action);
-        formatter.field("ec2_replace_route_action", &self.ec2_replace_route_action);
-        formatter.field("ec2_delete_route_action", &self.ec2_delete_route_action);
-        formatter.field(
-            "ec2_copy_route_table_action",
-            &self.ec2_copy_route_table_action,
-        );
-        formatter.field(
-            "ec2_replace_route_table_association_action",
-            &self.ec2_replace_route_table_association_action,
-        );
-        formatter.field(
-            "ec2_associate_route_table_action",
-            &self.ec2_associate_route_table_action,
-        );
-        formatter.field(
-            "ec2_create_route_table_action",
-            &self.ec2_create_route_table_action,
-        );
-        formatter.field(
-            "fms_policy_update_firewall_creation_config_action",
-            &self.fms_policy_update_firewall_creation_config_action,
-        );
-        formatter.finish()
     }
 }
 /// See [`RemediationAction`](crate::model::RemediationAction).
@@ -5985,7 +5546,7 @@ impl RemediationAction {
 
 /// <p>Contains information about the actions that you can take to remediate scope violations caused by your policy's <code>FirewallCreationConfig</code>. <code>FirewallCreationConfig</code> is an optional configuration that you can use to choose which Availability Zones Firewall Manager creates Network Firewall endpoints in.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FmsPolicyUpdateFirewallCreationConfigAction {
     /// <p>Describes the remedial action.</p>
     #[doc(hidden)]
@@ -6002,14 +5563,6 @@ impl FmsPolicyUpdateFirewallCreationConfigAction {
     /// <p>A <code>FirewallCreationConfig</code> that you can copy into your current policy's <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a> in order to remedy scope violations.</p>
     pub fn firewall_creation_config(&self) -> std::option::Option<&str> {
         self.firewall_creation_config.as_deref()
-    }
-}
-impl std::fmt::Debug for FmsPolicyUpdateFirewallCreationConfigAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FmsPolicyUpdateFirewallCreationConfigAction");
-        formatter.field("description", &self.description);
-        formatter.field("firewall_creation_config", &self.firewall_creation_config);
-        formatter.finish()
     }
 }
 /// See [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
@@ -6063,7 +5616,7 @@ impl FmsPolicyUpdateFirewallCreationConfigAction {
 
 /// <p>Information about the CreateRouteTable action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2CreateRouteTableAction {
     /// <p>A description of the CreateRouteTable action.</p>
     #[doc(hidden)]
@@ -6080,14 +5633,6 @@ impl Ec2CreateRouteTableAction {
     /// <p>Information about the ID of a VPC.</p>
     pub fn vpc_id(&self) -> std::option::Option<&crate::model::ActionTarget> {
         self.vpc_id.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2CreateRouteTableAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2CreateRouteTableAction");
-        formatter.field("description", &self.description);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
@@ -6141,7 +5686,7 @@ impl Ec2CreateRouteTableAction {
 
 /// <p>Describes a remediation action target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionTarget {
     /// <p>The ID of the remediation target.</p>
     #[doc(hidden)]
@@ -6158,14 +5703,6 @@ impl ActionTarget {
     /// <p>A description of the remediation action target.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ActionTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionTarget");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ActionTarget`](crate::model::ActionTarget).
@@ -6216,7 +5753,7 @@ impl ActionTarget {
 
 /// <p>The action of associating an EC2 resource, such as a subnet or internet gateway, with a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2AssociateRouteTableAction {
     /// <p>A description of the EC2 route table that is associated with the remediation action.</p>
     #[doc(hidden)]
@@ -6247,16 +5784,6 @@ impl Ec2AssociateRouteTableAction {
     /// <p>The ID of the gateway to be used with the EC2 route table that is associated with the remediation action.</p>
     pub fn gateway_id(&self) -> std::option::Option<&crate::model::ActionTarget> {
         self.gateway_id.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2AssociateRouteTableAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2AssociateRouteTableAction");
-        formatter.field("description", &self.description);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.finish()
     }
 }
 /// See [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
@@ -6340,7 +5867,7 @@ impl Ec2AssociateRouteTableAction {
 
 /// <p>Information about the ReplaceRouteTableAssociation action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2ReplaceRouteTableAssociationAction {
     /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
     #[doc(hidden)]
@@ -6364,15 +5891,6 @@ impl Ec2ReplaceRouteTableAssociationAction {
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
     pub fn route_table_id(&self) -> std::option::Option<&crate::model::ActionTarget> {
         self.route_table_id.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2ReplaceRouteTableAssociationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2ReplaceRouteTableAssociationAction");
-        formatter.field("description", &self.description);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
     }
 }
 /// See [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
@@ -6441,7 +5959,7 @@ impl Ec2ReplaceRouteTableAssociationAction {
 
 /// <p>An action that copies the EC2 route table for use in remediation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2CopyRouteTableAction {
     /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
     #[doc(hidden)]
@@ -6465,15 +5983,6 @@ impl Ec2CopyRouteTableAction {
     /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
     pub fn route_table_id(&self) -> std::option::Option<&crate::model::ActionTarget> {
         self.route_table_id.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2CopyRouteTableAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2CopyRouteTableAction");
-        formatter.field("description", &self.description);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
     }
 }
 /// See [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
@@ -6542,7 +6051,7 @@ impl Ec2CopyRouteTableAction {
 
 /// <p>Information about the DeleteRoute action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2DeleteRouteAction {
     /// <p>A description of the DeleteRoute action.</p>
     #[doc(hidden)]
@@ -6580,23 +6089,6 @@ impl Ec2DeleteRouteAction {
     /// <p>Information about the ID of the route table.</p>
     pub fn route_table_id(&self) -> std::option::Option<&crate::model::ActionTarget> {
         self.route_table_id.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2DeleteRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2DeleteRouteAction");
-        formatter.field("description", &self.description);
-        formatter.field("destination_cidr_block", &self.destination_cidr_block);
-        formatter.field(
-            "destination_prefix_list_id",
-            &self.destination_prefix_list_id,
-        );
-        formatter.field(
-            "destination_ipv6_cidr_block",
-            &self.destination_ipv6_cidr_block,
-        );
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
     }
 }
 /// See [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
@@ -6698,7 +6190,7 @@ impl Ec2DeleteRouteAction {
 
 /// <p>Information about the ReplaceRoute action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2ReplaceRouteAction {
     /// <p>A description of the ReplaceRoute action in Amazon EC2.</p>
     #[doc(hidden)]
@@ -6743,24 +6235,6 @@ impl Ec2ReplaceRouteAction {
     /// <p>Information about the ID of the route table.</p>
     pub fn route_table_id(&self) -> std::option::Option<&crate::model::ActionTarget> {
         self.route_table_id.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2ReplaceRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2ReplaceRouteAction");
-        formatter.field("description", &self.description);
-        formatter.field("destination_cidr_block", &self.destination_cidr_block);
-        formatter.field(
-            "destination_prefix_list_id",
-            &self.destination_prefix_list_id,
-        );
-        formatter.field(
-            "destination_ipv6_cidr_block",
-            &self.destination_ipv6_cidr_block,
-        );
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
     }
 }
 /// See [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
@@ -6877,7 +6351,7 @@ impl Ec2ReplaceRouteAction {
 
 /// <p>Information about the CreateRoute action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2CreateRouteAction {
     /// <p>A description of CreateRoute action in Amazon EC2.</p>
     #[doc(hidden)]
@@ -6929,25 +6403,6 @@ impl Ec2CreateRouteAction {
     /// <p>Information about the ID of the route table for the route.</p>
     pub fn route_table_id(&self) -> std::option::Option<&crate::model::ActionTarget> {
         self.route_table_id.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2CreateRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2CreateRouteAction");
-        formatter.field("description", &self.description);
-        formatter.field("destination_cidr_block", &self.destination_cidr_block);
-        formatter.field(
-            "destination_prefix_list_id",
-            &self.destination_prefix_list_id,
-        );
-        formatter.field(
-            "destination_ipv6_cidr_block",
-            &self.destination_ipv6_cidr_block,
-        );
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
     }
 }
 /// See [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
@@ -7079,7 +6534,7 @@ impl Ec2CreateRouteAction {
 
 /// <p>The VPC that Firewall Manager was applying a DNS Fireall policy to reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed due to the limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsRuleGroupLimitExceededViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
@@ -7103,21 +6558,6 @@ impl DnsRuleGroupLimitExceededViolation {
     /// <p>The number of rule groups currently associated with the VPC. </p>
     pub fn number_of_rule_groups_already_associated(&self) -> i32 {
         self.number_of_rule_groups_already_associated
-    }
-}
-impl std::fmt::Debug for DnsRuleGroupLimitExceededViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsRuleGroupLimitExceededViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "violation_target_description",
-            &self.violation_target_description,
-        );
-        formatter.field(
-            "number_of_rule_groups_already_associated",
-            &self.number_of_rule_groups_already_associated,
-        );
-        formatter.finish()
     }
 }
 /// See [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
@@ -7194,7 +6634,7 @@ impl DnsRuleGroupLimitExceededViolation {
 
 /// <p>A DNS Firewall rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsDuplicateRuleGroupViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
@@ -7211,17 +6651,6 @@ impl DnsDuplicateRuleGroupViolation {
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
     pub fn violation_target_description(&self) -> std::option::Option<&str> {
         self.violation_target_description.as_deref()
-    }
-}
-impl std::fmt::Debug for DnsDuplicateRuleGroupViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsDuplicateRuleGroupViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "violation_target_description",
-            &self.violation_target_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
@@ -7281,7 +6710,7 @@ impl DnsDuplicateRuleGroupViolation {
 
 /// <p>A rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsRuleGroupPriorityConflictViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
@@ -7319,20 +6748,6 @@ impl DnsRuleGroupPriorityConflictViolation {
     /// <p>The priorities of rule groups that are already associated with the VPC. To retry your operation, choose priority settings that aren't in this list for the rule groups in your new DNS Firewall policy. </p>
     pub fn unavailable_priorities(&self) -> std::option::Option<&[i32]> {
         self.unavailable_priorities.as_deref()
-    }
-}
-impl std::fmt::Debug for DnsRuleGroupPriorityConflictViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsRuleGroupPriorityConflictViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "violation_target_description",
-            &self.violation_target_description,
-        );
-        formatter.field("conflicting_priority", &self.conflicting_priority);
-        formatter.field("conflicting_policy_id", &self.conflicting_policy_id);
-        formatter.field("unavailable_priorities", &self.unavailable_priorities);
-        formatter.finish()
     }
 }
 /// See [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
@@ -7440,7 +6855,7 @@ impl DnsRuleGroupPriorityConflictViolation {
 
 /// <p>Violation detail for an expected route missing in Network Firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallMissingExpectedRoutesViolation {
     /// <p>The target of the violation.</p>
     #[doc(hidden)]
@@ -7464,15 +6879,6 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallMissingExpectedRoutesViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallMissingExpectedRoutesViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("expected_routes", &self.expected_routes);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
@@ -7547,7 +6953,7 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
 
 /// <p>Information about the expected route in the route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpectedRoute {
     /// <p>Information about the IPv4 CIDR block.</p>
     #[doc(hidden)]
@@ -7592,18 +6998,6 @@ impl ExpectedRoute {
     /// <p>Information about the route table ID.</p>
     pub fn route_table_id(&self) -> std::option::Option<&str> {
         self.route_table_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ExpectedRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpectedRoute");
-        formatter.field("ip_v4_cidr", &self.ip_v4_cidr);
-        formatter.field("prefix_list_id", &self.prefix_list_id);
-        formatter.field("ip_v6_cidr", &self.ip_v6_cidr);
-        formatter.field("contributing_subnets", &self.contributing_subnets);
-        formatter.field("allowed_targets", &self.allowed_targets);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
     }
 }
 /// See [`ExpectedRoute`](crate::model::ExpectedRoute).
@@ -7726,7 +7120,7 @@ impl ExpectedRoute {
 
 /// <p>Violation detail for an unexpected gateway route that’s present in a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedGatewayRoutesViolation {
     /// <p>Information about the gateway ID.</p>
     #[doc(hidden)]
@@ -7757,16 +7151,6 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallUnexpectedGatewayRoutesViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallUnexpectedGatewayRoutesViolation");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
@@ -7854,7 +7238,7 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
 
 /// <p>Violation detail for an unexpected route that's present in a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// <p>The subnet ID for the firewall.</p>
     #[doc(hidden)]
@@ -7892,17 +7276,6 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallUnexpectedFirewallRoutesViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallUnexpectedFirewallRoutesViolation");
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("firewall_endpoint", &self.firewall_endpoint);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
@@ -8008,7 +7381,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
 
 /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallBlackHoleRouteDetectedViolation {
     /// <p>The subnet that has an inactive state.</p>
     #[doc(hidden)]
@@ -8039,16 +7412,6 @@ impl NetworkFirewallBlackHoleRouteDetectedViolation {
     /// <p>Information about the route or routes that are in violation.</p>
     pub fn violating_routes(&self) -> std::option::Option<&[crate::model::Route]> {
         self.violating_routes.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallBlackHoleRouteDetectedViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallBlackHoleRouteDetectedViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
@@ -8139,7 +7502,7 @@ impl NetworkFirewallBlackHoleRouteDetectedViolation {
 
 /// <p>Violation detail for the improperly configured subnet route. It's possible there is a missing route table route, or a configuration that causes traffic to cross an Availability Zone boundary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallInvalidRouteConfigurationViolation {
     /// <p>The subnets that are affected.</p>
     #[doc(hidden)]
@@ -8260,55 +7623,6 @@ impl NetworkFirewallInvalidRouteConfigurationViolation {
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallInvalidRouteConfigurationViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallInvalidRouteConfigurationViolation");
-        formatter.field("affected_subnets", &self.affected_subnets);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field(
-            "is_route_table_used_in_different_az",
-            &self.is_route_table_used_in_different_az,
-        );
-        formatter.field("violating_route", &self.violating_route);
-        formatter.field(
-            "current_firewall_subnet_route_table",
-            &self.current_firewall_subnet_route_table,
-        );
-        formatter.field(
-            "expected_firewall_endpoint",
-            &self.expected_firewall_endpoint,
-        );
-        formatter.field("actual_firewall_endpoint", &self.actual_firewall_endpoint);
-        formatter.field(
-            "expected_firewall_subnet_id",
-            &self.expected_firewall_subnet_id,
-        );
-        formatter.field("actual_firewall_subnet_id", &self.actual_firewall_subnet_id);
-        formatter.field(
-            "expected_firewall_subnet_routes",
-            &self.expected_firewall_subnet_routes,
-        );
-        formatter.field(
-            "actual_firewall_subnet_routes",
-            &self.actual_firewall_subnet_routes,
-        );
-        formatter.field("internet_gateway_id", &self.internet_gateway_id);
-        formatter.field(
-            "current_internet_gateway_route_table",
-            &self.current_internet_gateway_route_table,
-        );
-        formatter.field(
-            "expected_internet_gateway_routes",
-            &self.expected_internet_gateway_routes,
-        );
-        formatter.field(
-            "actual_internet_gateway_routes",
-            &self.actual_internet_gateway_routes,
-        );
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
@@ -8624,7 +7938,7 @@ impl NetworkFirewallInvalidRouteConfigurationViolation {
 
 /// <p>Violation detail for the subnet for which internet traffic that hasn't been inspected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallInternetTrafficNotInspectedViolation {
     /// <p>The subnet ID.</p>
     #[doc(hidden)]
@@ -8738,51 +8052,6 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallInternetTrafficNotInspectedViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallInternetTrafficNotInspectedViolation");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.field(
-            "is_route_table_used_in_different_az",
-            &self.is_route_table_used_in_different_az,
-        );
-        formatter.field(
-            "current_firewall_subnet_route_table",
-            &self.current_firewall_subnet_route_table,
-        );
-        formatter.field(
-            "expected_firewall_endpoint",
-            &self.expected_firewall_endpoint,
-        );
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field(
-            "expected_firewall_subnet_routes",
-            &self.expected_firewall_subnet_routes,
-        );
-        formatter.field(
-            "actual_firewall_subnet_routes",
-            &self.actual_firewall_subnet_routes,
-        );
-        formatter.field("internet_gateway_id", &self.internet_gateway_id);
-        formatter.field(
-            "current_internet_gateway_route_table",
-            &self.current_internet_gateway_route_table,
-        );
-        formatter.field(
-            "expected_internet_gateway_routes",
-            &self.expected_internet_gateway_routes,
-        );
-        formatter.field(
-            "actual_internet_gateway_routes",
-            &self.actual_internet_gateway_routes,
-        );
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
@@ -9077,7 +8346,7 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
 
 /// <p>Violation detail for Network Firewall for a firewall policy that has a different <code>NetworkFirewallPolicyDescription</code> than is required by the Firewall Manager policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallPolicyModifiedViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     #[doc(hidden)]
@@ -9107,21 +8376,6 @@ impl NetworkFirewallPolicyModifiedViolation {
         &self,
     ) -> std::option::Option<&crate::model::NetworkFirewallPolicyDescription> {
         self.expected_policy_description.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallPolicyModifiedViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallPolicyModifiedViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "current_policy_description",
-            &self.current_policy_description,
-        );
-        formatter.field(
-            "expected_policy_description",
-            &self.expected_policy_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
@@ -9201,7 +8455,7 @@ impl NetworkFirewallPolicyModifiedViolation {
 
 /// <p>The definition of the Network Firewall firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallPolicyDescription {
     /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
     #[doc(hidden)]
@@ -9273,22 +8527,6 @@ impl NetworkFirewallPolicyDescription {
         &self,
     ) -> std::option::Option<&crate::model::StatefulEngineOptions> {
         self.stateful_engine_options.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallPolicyDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallPolicyDescription");
-        formatter.field("stateless_rule_groups", &self.stateless_rule_groups);
-        formatter.field("stateless_default_actions", &self.stateless_default_actions);
-        formatter.field(
-            "stateless_fragment_default_actions",
-            &self.stateless_fragment_default_actions,
-        );
-        formatter.field("stateless_custom_actions", &self.stateless_custom_actions);
-        formatter.field("stateful_rule_groups", &self.stateful_rule_groups);
-        formatter.field("stateful_default_actions", &self.stateful_default_actions);
-        formatter.field("stateful_engine_options", &self.stateful_engine_options);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
@@ -9483,7 +8721,7 @@ impl NetworkFirewallPolicyDescription {
 
 /// <p>Configuration settings for the handling of the stateful rule groups in a Network Firewall firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -9493,13 +8731,6 @@ impl StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn rule_order(&self) -> std::option::Option<&crate::model::RuleOrder> {
         self.rule_order.as_ref()
-    }
-}
-impl std::fmt::Debug for StatefulEngineOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulEngineOptions");
-        formatter.field("rule_order", &self.rule_order);
-        formatter.finish()
     }
 }
 /// See [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
@@ -9631,7 +8862,7 @@ impl AsRef<str> for RuleOrder {
 
 /// <p>Network Firewall stateful rule group, used in a <code>NetworkFirewallPolicyDescription</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRuleGroup {
     /// <p>The name of the rule group.</p>
     #[doc(hidden)]
@@ -9659,15 +8890,6 @@ impl StatefulRuleGroup {
     /// <p> You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
-    }
-}
-impl std::fmt::Debug for StatefulRuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRuleGroup");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
@@ -9737,7 +8959,7 @@ impl StatefulRuleGroup {
 
 /// <p>Network Firewall stateless rule group, used in a <code>NetworkFirewallPolicyDescription</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatelessRuleGroup {
     /// <p>The name of the rule group.</p>
     #[doc(hidden)]
@@ -9761,15 +8983,6 @@ impl StatelessRuleGroup {
     /// <p>The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy starting from the lowest priority setting. </p>
     pub fn priority(&self) -> i32 {
         self.priority
-    }
-}
-impl std::fmt::Debug for StatelessRuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatelessRuleGroup");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
@@ -9835,7 +9048,7 @@ impl StatelessRuleGroup {
 
 /// <p>Violation detail for Network Firewall for a subnet that's not associated to the expected Firewall Manager managed route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallMissingExpectedRtViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     #[doc(hidden)]
@@ -9873,17 +9086,6 @@ impl NetworkFirewallMissingExpectedRtViolation {
     /// <p>The resource ID of the route table that should be associated with the subnet.</p>
     pub fn expected_route_table(&self) -> std::option::Option<&str> {
         self.expected_route_table.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallMissingExpectedRtViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallMissingExpectedRtViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("current_route_table", &self.current_route_table);
-        formatter.field("expected_route_table", &self.expected_route_table);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
@@ -9982,7 +9184,7 @@ impl NetworkFirewallMissingExpectedRtViolation {
 
 /// <p>Violation detail for Network Firewall for an Availability Zone that's missing the expected Firewall Manager managed subnet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallMissingSubnetViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     #[doc(hidden)]
@@ -10013,16 +9215,6 @@ impl NetworkFirewallMissingSubnetViolation {
     /// <p>The reason the resource has this violation, if one is available. </p>
     pub fn target_violation_reason(&self) -> std::option::Option<&str> {
         self.target_violation_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallMissingSubnetViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallMissingSubnetViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("target_violation_reason", &self.target_violation_reason);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
@@ -10106,7 +9298,7 @@ impl NetworkFirewallMissingSubnetViolation {
 
 /// <p>Violation detail for Network Firewall for a subnet that doesn't have a Firewall Manager managed firewall in its VPC. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallMissingFirewallViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     #[doc(hidden)]
@@ -10137,16 +9329,6 @@ impl NetworkFirewallMissingFirewallViolation {
     /// <p>The reason the resource has this violation, if one is available. </p>
     pub fn target_violation_reason(&self) -> std::option::Option<&str> {
         self.target_violation_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkFirewallMissingFirewallViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallMissingFirewallViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("target_violation_reason", &self.target_violation_reason);
-        formatter.finish()
     }
 }
 /// See [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
@@ -10230,7 +9412,7 @@ impl NetworkFirewallMissingFirewallViolation {
 
 /// <p>Violation detail for an EC2 instance resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEc2InstanceViolation {
     /// <p>The resource ID of the EC2 instance.</p>
     #[doc(hidden)]
@@ -10250,17 +9432,6 @@ impl AwsEc2InstanceViolation {
         &self,
     ) -> std::option::Option<&[crate::model::AwsEc2NetworkInterfaceViolation]> {
         self.aws_ec2_network_interface_violations.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsEc2InstanceViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsEc2InstanceViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "aws_ec2_network_interface_violations",
-            &self.aws_ec2_network_interface_violations,
-        );
-        formatter.finish()
     }
 }
 /// See [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
@@ -10331,7 +9502,7 @@ impl AwsEc2InstanceViolation {
 
 /// <p>Violation detail for network interfaces associated with an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceViolation {
     /// <p>The resource ID of the network interface.</p>
     #[doc(hidden)]
@@ -10348,14 +9519,6 @@ impl AwsEc2NetworkInterfaceViolation {
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
     pub fn violating_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.violating_security_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsEc2NetworkInterfaceViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsEc2NetworkInterfaceViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("violating_security_groups", &self.violating_security_groups);
-        formatter.finish()
     }
 }
 /// See [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
@@ -10419,7 +9582,7 @@ impl AwsEc2NetworkInterfaceViolation {
 
 /// <p>Violation detail for the rule violation in a security group when compared to the primary security group of the Firewall Manager policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsVpcSecurityGroupViolation {
     /// <p>The security group rule that is being evaluated.</p>
     #[doc(hidden)]
@@ -10453,22 +9616,6 @@ impl AwsVpcSecurityGroupViolation {
         &self,
     ) -> std::option::Option<&[crate::model::SecurityGroupRemediationAction]> {
         self.possible_security_group_remediation_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsVpcSecurityGroupViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsVpcSecurityGroupViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "violation_target_description",
-            &self.violation_target_description,
-        );
-        formatter.field("partial_matches", &self.partial_matches);
-        formatter.field(
-            "possible_security_group_remediation_actions",
-            &self.possible_security_group_remediation_actions,
-        );
-        formatter.finish()
     }
 }
 /// See [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
@@ -10577,7 +9724,7 @@ impl AwsVpcSecurityGroupViolation {
 
 /// <p>Remediation option for the rule specified in the <code>ViolationTarget</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupRemediationAction {
     /// <p>The remediation action that will be performed.</p>
     #[doc(hidden)]
@@ -10612,16 +9759,6 @@ impl SecurityGroupRemediationAction {
     /// <p>Indicates if the current action is the default action.</p>
     pub fn is_default_action(&self) -> bool {
         self.is_default_action
-    }
-}
-impl std::fmt::Debug for SecurityGroupRemediationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupRemediationAction");
-        formatter.field("remediation_action_type", &self.remediation_action_type);
-        formatter.field("description", &self.description);
-        formatter.field("remediation_result", &self.remediation_result);
-        formatter.field("is_default_action", &self.is_default_action);
-        formatter.finish()
     }
 }
 /// See [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
@@ -10710,7 +9847,7 @@ impl SecurityGroupRemediationAction {
 
 /// <p>Describes a set of permissions for a security group rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupRuleDescription {
     /// <p>The IPv4 ranges for the security group rule.</p>
     #[doc(hidden)]
@@ -10755,18 +9892,6 @@ impl SecurityGroupRuleDescription {
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes.</p>
     pub fn to_port(&self) -> std::option::Option<i64> {
         self.to_port
-    }
-}
-impl std::fmt::Debug for SecurityGroupRuleDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupRuleDescription");
-        formatter.field("ipv4_range", &self.ipv4_range);
-        formatter.field("ipv6_range", &self.ipv6_range);
-        formatter.field("prefix_list_id", &self.prefix_list_id);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.finish()
     }
 }
 /// See [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
@@ -10960,7 +10085,7 @@ impl AsRef<str> for RemediationActionType {
 
 /// <p>The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartialMatch {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -10977,14 +10102,6 @@ impl PartialMatch {
     /// <p>The violation reason.</p>
     pub fn target_violation_reasons(&self) -> std::option::Option<&[std::string::String]> {
         self.target_violation_reasons.as_deref()
-    }
-}
-impl std::fmt::Debug for PartialMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartialMatch");
-        formatter.field("reference", &self.reference);
-        formatter.field("target_violation_reasons", &self.target_violation_reasons);
-        formatter.finish()
     }
 }
 /// See [`PartialMatch`](crate::model::PartialMatch).
@@ -11255,7 +10372,7 @@ impl AsRef<str> for ThirdPartyFirewallAssociationStatus {
 
 /// <p>Describes the noncompliant resources in a member account for a specific Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyComplianceDetail {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -11313,19 +10430,6 @@ impl PolicyComplianceDetail {
         &std::collections::HashMap<crate::model::DependentServiceName, std::string::String>,
     > {
         self.issue_info_map.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyComplianceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyComplianceDetail");
-        formatter.field("policy_owner", &self.policy_owner);
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("member_account", &self.member_account);
-        formatter.field("violators", &self.violators);
-        formatter.field("evaluation_limit_exceeded", &self.evaluation_limit_exceeded);
-        formatter.field("expired_at", &self.expired_at);
-        formatter.field("issue_info_map", &self.issue_info_map);
-        formatter.finish()
     }
 }
 /// See [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
@@ -11468,7 +10572,7 @@ impl PolicyComplianceDetail {
 
 /// <p>Details of the resource that is not protected by the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceViolator {
     /// <p>The resource ID.</p>
     #[doc(hidden)]
@@ -11503,16 +10607,6 @@ impl ComplianceViolator {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceViolator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceViolator");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("violation_reason", &self.violation_reason);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
     }
 }
 /// See [`ComplianceViolator`](crate::model::ComplianceViolator).

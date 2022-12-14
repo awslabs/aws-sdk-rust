@@ -2,7 +2,7 @@
 
 /// General error information.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerErrorException {
     /// Details about the error.
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl InternalServerErrorException {
     /// Details about the error.
     pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
         self.error_details.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorException");
-        formatter.field("error_details", &self.error_details);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalServerErrorException {
@@ -100,7 +92,7 @@ impl InternalServerErrorException {
 
 /// General error information.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     /// Details about the error.
     #[doc(hidden)]
@@ -113,14 +105,6 @@ impl BadRequestException {
     /// Details about the error.
     pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
         self.error_details.as_deref()
-    }
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("error_details", &self.error_details);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl BadRequestException {

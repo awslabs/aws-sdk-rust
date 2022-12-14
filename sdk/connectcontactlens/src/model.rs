@@ -2,7 +2,7 @@
 
 /// <p>An analyzed segment for a real-time analysis session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl RealtimeContactAnalysisSegment {
     /// <p>The matched category rules.</p>
     pub fn categories(&self) -> std::option::Option<&crate::model::Categories> {
         self.categories.as_ref()
-    }
-}
-impl std::fmt::Debug for RealtimeContactAnalysisSegment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeContactAnalysisSegment");
-        formatter.field("transcript", &self.transcript);
-        formatter.field("categories", &self.categories);
-        formatter.finish()
     }
 }
 /// See [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
@@ -83,7 +75,7 @@ impl RealtimeContactAnalysisSegment {
 
 /// <p>Provides the category rules that are used to automatically categorize contacts based on uttered keywords and phrases.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Categories {
     /// <p>The category rules that have been matched in the analyzed segment.</p>
     #[doc(hidden)]
@@ -106,14 +98,6 @@ impl Categories {
         &std::collections::HashMap<std::string::String, crate::model::CategoryDetails>,
     > {
         self.matched_details.as_ref()
-    }
-}
-impl std::fmt::Debug for Categories {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Categories");
-        formatter.field("matched_categories", &self.matched_categories);
-        formatter.field("matched_details", &self.matched_details);
-        formatter.finish()
     }
 }
 /// See [`Categories`](crate::model::Categories).
@@ -190,7 +174,7 @@ impl Categories {
 
 /// <p>Provides information about the category rule that was matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
     #[doc(hidden)]
@@ -200,13 +184,6 @@ impl CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
     pub fn points_of_interest(&self) -> std::option::Option<&[crate::model::PointOfInterest]> {
         self.points_of_interest.as_deref()
-    }
-}
-impl std::fmt::Debug for CategoryDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CategoryDetails");
-        formatter.field("points_of_interest", &self.points_of_interest);
-        formatter.finish()
     }
 }
 /// See [`CategoryDetails`](crate::model::CategoryDetails).
@@ -255,7 +232,7 @@ impl CategoryDetails {
 
 /// <p>The section of the contact audio where that category rule was detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PointOfInterest {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     #[doc(hidden)]
@@ -272,14 +249,6 @@ impl PointOfInterest {
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
     pub fn end_offset_millis(&self) -> i32 {
         self.end_offset_millis
-    }
-}
-impl std::fmt::Debug for PointOfInterest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PointOfInterest");
-        formatter.field("begin_offset_millis", &self.begin_offset_millis);
-        formatter.field("end_offset_millis", &self.end_offset_millis);
-        formatter.finish()
     }
 }
 /// See [`PointOfInterest`](crate::model::PointOfInterest).
@@ -330,7 +299,7 @@ impl PointOfInterest {
 
 /// <p>A list of messages in the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transcript {
     /// <p>The identifier of the transcript.</p>
     #[doc(hidden)]
@@ -389,20 +358,6 @@ impl Transcript {
     /// <p>List of positions where issues were detected on the transcript.</p>
     pub fn issues_detected(&self) -> std::option::Option<&[crate::model::IssueDetected]> {
         self.issues_detected.as_deref()
-    }
-}
-impl std::fmt::Debug for Transcript {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Transcript");
-        formatter.field("id", &self.id);
-        formatter.field("participant_id", &self.participant_id);
-        formatter.field("participant_role", &self.participant_role);
-        formatter.field("content", &self.content);
-        formatter.field("begin_offset_millis", &self.begin_offset_millis);
-        formatter.field("end_offset_millis", &self.end_offset_millis);
-        formatter.field("sentiment", &self.sentiment);
-        formatter.field("issues_detected", &self.issues_detected);
-        formatter.finish()
     }
 }
 /// See [`Transcript`](crate::model::Transcript).
@@ -543,7 +498,7 @@ impl Transcript {
 
 /// <p>Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IssueDetected {
     /// <p>The offset for when the issue was detected in the segment.</p>
     #[doc(hidden)]
@@ -553,13 +508,6 @@ impl IssueDetected {
     /// <p>The offset for when the issue was detected in the segment.</p>
     pub fn character_offsets(&self) -> std::option::Option<&crate::model::CharacterOffsets> {
         self.character_offsets.as_ref()
-    }
-}
-impl std::fmt::Debug for IssueDetected {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IssueDetected");
-        formatter.field("character_offsets", &self.character_offsets);
-        formatter.finish()
     }
 }
 /// See [`IssueDetected`](crate::model::IssueDetected).
@@ -601,7 +549,7 @@ impl IssueDetected {
 
 /// <p>For characters that were detected as issues, where they occur in the transcript.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CharacterOffsets {
     /// <p>The beginning of the issue.</p>
     #[doc(hidden)]
@@ -618,14 +566,6 @@ impl CharacterOffsets {
     /// <p>The end of the issue.</p>
     pub fn end_offset_char(&self) -> i32 {
         self.end_offset_char
-    }
-}
-impl std::fmt::Debug for CharacterOffsets {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CharacterOffsets");
-        formatter.field("begin_offset_char", &self.begin_offset_char);
-        formatter.field("end_offset_char", &self.end_offset_char);
-        formatter.finish()
     }
 }
 /// See [`CharacterOffsets`](crate::model::CharacterOffsets).

@@ -2,7 +2,7 @@
 
 /// <p>An activity that performs a transformation on a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineActivity {
     /// <p>Determines the source of the messages to be processed.</p>
     #[doc(hidden)]
@@ -83,22 +83,6 @@ impl PipelineActivity {
         &self,
     ) -> std::option::Option<&crate::model::DeviceShadowEnrichActivity> {
         self.device_shadow_enrich.as_ref()
-    }
-}
-impl std::fmt::Debug for PipelineActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineActivity");
-        formatter.field("channel", &self.channel);
-        formatter.field("lambda", &self.lambda);
-        formatter.field("datastore", &self.datastore);
-        formatter.field("add_attributes", &self.add_attributes);
-        formatter.field("remove_attributes", &self.remove_attributes);
-        formatter.field("select_attributes", &self.select_attributes);
-        formatter.field("filter", &self.filter);
-        formatter.field("math", &self.math);
-        formatter.field("device_registry_enrich", &self.device_registry_enrich);
-        formatter.field("device_shadow_enrich", &self.device_shadow_enrich);
-        formatter.finish()
     }
 }
 /// See [`PipelineActivity`](crate::model::PipelineActivity).
@@ -280,7 +264,7 @@ impl PipelineActivity {
 
 /// <p>An activity that adds information from the IoT Device Shadow service to a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
     #[doc(hidden)]
@@ -318,17 +302,6 @@ impl DeviceShadowEnrichActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for DeviceShadowEnrichActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceShadowEnrichActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attribute", &self.attribute);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`DeviceShadowEnrichActivity`](crate::model::DeviceShadowEnrichActivity).
@@ -415,7 +388,7 @@ impl DeviceShadowEnrichActivity {
 
 /// <p>An activity that adds data from the IoT device registry to your message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceRegistryEnrichActivity {
     /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
     #[doc(hidden)]
@@ -453,17 +426,6 @@ impl DeviceRegistryEnrichActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for DeviceRegistryEnrichActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceRegistryEnrichActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attribute", &self.attribute);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`DeviceRegistryEnrichActivity`](crate::model::DeviceRegistryEnrichActivity).
@@ -550,7 +512,7 @@ impl DeviceRegistryEnrichActivity {
 
 /// <p>An activity that computes an arithmetic expression using the message's attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MathActivity {
     /// <p>The name of the math activity.</p>
     #[doc(hidden)]
@@ -581,16 +543,6 @@ impl MathActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for MathActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MathActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attribute", &self.attribute);
-        formatter.field("math", &self.math);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`MathActivity`](crate::model::MathActivity).
@@ -665,7 +617,7 @@ impl MathActivity {
 
 /// <p>An activity that filters a message based on its attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterActivity {
     /// <p>The name of the filter activity.</p>
     #[doc(hidden)]
@@ -689,15 +641,6 @@ impl FilterActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterActivity");
-        formatter.field("name", &self.name);
-        formatter.field("filter", &self.filter);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`FilterActivity`](crate::model::FilterActivity).
@@ -760,7 +703,7 @@ impl FilterActivity {
 
 /// <p>Used to create a new message using only the specified attributes from the original message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectAttributesActivity {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
     #[doc(hidden)]
@@ -784,15 +727,6 @@ impl SelectAttributesActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for SelectAttributesActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectAttributesActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`SelectAttributesActivity`](crate::model::SelectAttributesActivity).
@@ -864,7 +798,7 @@ impl SelectAttributesActivity {
 
 /// <p>An activity that removes attributes from a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveAttributesActivity {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
     #[doc(hidden)]
@@ -888,15 +822,6 @@ impl RemoveAttributesActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for RemoveAttributesActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveAttributesActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`RemoveAttributesActivity`](crate::model::RemoveAttributesActivity).
@@ -968,7 +893,7 @@ impl RemoveAttributesActivity {
 
 /// <p>An activity that adds other attributes based on existing attributes in the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddAttributesActivity {
     /// <p>The name of the addAttributes activity.</p>
     #[doc(hidden)]
@@ -1000,15 +925,6 @@ impl AddAttributesActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for AddAttributesActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddAttributesActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`AddAttributesActivity`](crate::model::AddAttributesActivity).
@@ -1092,7 +1008,7 @@ impl AddAttributesActivity {
 
 /// <p>The datastore activity that specifies where to store the processed data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreActivity {
     /// <p>The name of the datastore activity.</p>
     #[doc(hidden)]
@@ -1109,14 +1025,6 @@ impl DatastoreActivity {
     /// <p>The name of the data store where processed messages are stored.</p>
     pub fn datastore_name(&self) -> std::option::Option<&str> {
         self.datastore_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DatastoreActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreActivity");
-        formatter.field("name", &self.name);
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.finish()
     }
 }
 /// See [`DatastoreActivity`](crate::model::DatastoreActivity).
@@ -1170,7 +1078,7 @@ impl DatastoreActivity {
 
 /// <p>An activity that runs a Lambda function to modify the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaActivity {
     /// <p>The name of the lambda activity.</p>
     #[doc(hidden)]
@@ -1203,16 +1111,6 @@ impl LambdaActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaActivity");
-        formatter.field("name", &self.name);
-        formatter.field("lambda_name", &self.lambda_name);
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`LambdaActivity`](crate::model::LambdaActivity).
@@ -1289,7 +1187,7 @@ impl LambdaActivity {
 
 /// <p>The activity that determines the source of the messages to be processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelActivity {
     /// <p>The name of the channel activity.</p>
     #[doc(hidden)]
@@ -1313,15 +1211,6 @@ impl ChannelActivity {
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for ChannelActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelActivity");
-        formatter.field("name", &self.name);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`ChannelActivity`](crate::model::ChannelActivity).
@@ -1386,7 +1275,7 @@ impl ChannelActivity {
 /// <p>The default file format is JSON. You can specify only one format.</p>
 /// <p>You can't change the file format after you create the data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileFormatConfiguration {
     /// <p>Contains the configuration information of the JSON format.</p>
     #[doc(hidden)]
@@ -1405,14 +1294,6 @@ impl FileFormatConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ParquetConfiguration> {
         self.parquet_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for FileFormatConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileFormatConfiguration");
-        formatter.field("json_configuration", &self.json_configuration);
-        formatter.field("parquet_configuration", &self.parquet_configuration);
-        formatter.finish()
     }
 }
 /// See [`FileFormatConfiguration`](crate::model::FileFormatConfiguration).
@@ -1469,7 +1350,7 @@ impl FileFormatConfiguration {
 
 /// <p>Contains the configuration information of the Parquet format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
     #[doc(hidden)]
@@ -1479,13 +1360,6 @@ impl ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
     pub fn schema_definition(&self) -> std::option::Option<&crate::model::SchemaDefinition> {
         self.schema_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for ParquetConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParquetConfiguration");
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.finish()
     }
 }
 /// See [`ParquetConfiguration`](crate::model::ParquetConfiguration).
@@ -1527,7 +1401,7 @@ impl ParquetConfiguration {
 
 /// <p>Information needed to define a schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
@@ -1539,13 +1413,6 @@ impl SchemaDefinition {
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
     pub fn columns(&self) -> std::option::Option<&[crate::model::Column]> {
         self.columns.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaDefinition");
-        formatter.field("columns", &self.columns);
-        formatter.finish()
     }
 }
 /// See [`SchemaDefinition`](crate::model::SchemaDefinition).
@@ -1595,7 +1462,7 @@ impl SchemaDefinition {
 
 /// <p>Contains information about a column that stores your data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Column {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
@@ -1612,14 +1479,6 @@ impl Column {
     /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue Developer Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for Column {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Column");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Column`](crate::model::Column).
@@ -1670,14 +1529,8 @@ impl Column {
 
 /// <p>Contains the configuration information of the JSON format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonConfiguration {}
-impl std::fmt::Debug for JsonConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonConfiguration");
-        formatter.finish()
-    }
-}
 /// See [`JsonConfiguration`](crate::model::JsonConfiguration).
 pub mod json_configuration {
 
@@ -1772,7 +1625,7 @@ impl DatastoreStorage {
 
 /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreIotSiteWiseMultiLayerStorage {
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
     #[doc(hidden)]
@@ -1785,16 +1638,6 @@ impl DatastoreIotSiteWiseMultiLayerStorage {
         &self,
     ) -> std::option::Option<&crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage> {
         self.customer_managed_s3_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for DatastoreIotSiteWiseMultiLayerStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreIotSiteWiseMultiLayerStorage");
-        formatter.field(
-            "customer_managed_s3_storage",
-            &self.customer_managed_s3_storage,
-        );
-        formatter.finish()
     }
 }
 /// See [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage).
@@ -1840,7 +1683,7 @@ impl DatastoreIotSiteWiseMultiLayerStorage {
 
 /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
     #[doc(hidden)]
@@ -1857,14 +1700,6 @@ impl IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
     pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for IotSiteWiseCustomerManagedDatastoreS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotSiteWiseCustomerManagedDatastoreS3Storage");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.finish()
     }
 }
 /// See [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage).
@@ -1915,7 +1750,7 @@ impl IotSiteWiseCustomerManagedDatastoreS3Storage {
 
 /// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedDatastoreS3Storage {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     #[doc(hidden)]
@@ -1939,15 +1774,6 @@ impl CustomerManagedDatastoreS3Storage {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerManagedDatastoreS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedDatastoreS3Storage");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomerManagedDatastoreS3Storage`](crate::model::CustomerManagedDatastoreS3Storage).
@@ -2010,14 +1836,8 @@ impl CustomerManagedDatastoreS3Storage {
 
 /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedDatastoreS3Storage {}
-impl std::fmt::Debug for ServiceManagedDatastoreS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceManagedDatastoreS3Storage");
-        formatter.finish()
-    }
-}
 /// See [`ServiceManagedDatastoreS3Storage`](crate::model::ServiceManagedDatastoreS3Storage).
 pub mod service_managed_datastore_s3_storage {
 
@@ -2040,7 +1860,7 @@ impl ServiceManagedDatastoreS3Storage {
 
 /// <p>How long, in days, message data is kept.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>If true, message data is kept indefinitely.</p>
     #[doc(hidden)]
@@ -2057,14 +1877,6 @@ impl RetentionPeriod {
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
     pub fn number_of_days(&self) -> std::option::Option<i32> {
         self.number_of_days
-    }
-}
-impl std::fmt::Debug for RetentionPeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetentionPeriod");
-        formatter.field("unlimited", &self.unlimited);
-        formatter.field("number_of_days", &self.number_of_days);
-        formatter.finish()
     }
 }
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
@@ -2115,7 +1927,7 @@ impl RetentionPeriod {
 
 /// <p>A structure that contains the name and configuration information of a late data rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LateDataRule {
     /// <p>The name of the late data rule.</p>
     #[doc(hidden)]
@@ -2134,14 +1946,6 @@ impl LateDataRule {
         &self,
     ) -> std::option::Option<&crate::model::LateDataRuleConfiguration> {
         self.rule_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for LateDataRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LateDataRule");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("rule_configuration", &self.rule_configuration);
-        formatter.finish()
     }
 }
 /// See [`LateDataRule`](crate::model::LateDataRule).
@@ -2198,7 +2002,7 @@ impl LateDataRule {
 
 /// <p>The information needed to configure a delta time session window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LateDataRuleConfiguration {
     /// <p>The information needed to configure a delta time session window.</p>
     #[doc(hidden)]
@@ -2211,16 +2015,6 @@ impl LateDataRuleConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DeltaTimeSessionWindowConfiguration> {
         self.delta_time_session_window_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for LateDataRuleConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LateDataRuleConfiguration");
-        formatter.field(
-            "delta_time_session_window_configuration",
-            &self.delta_time_session_window_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`LateDataRuleConfiguration`](crate::model::LateDataRuleConfiguration).
@@ -2268,7 +2062,7 @@ impl LateDataRuleConfiguration {
 /// <p>A structure that contains the configuration information of a delta time session window.</p>
 /// <p> <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6"> Creating a SQL dataset with a delta window (CLI)</a> in the <i>IoT Analytics User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeltaTimeSessionWindowConfiguration {
     /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
@@ -2280,13 +2074,6 @@ impl DeltaTimeSessionWindowConfiguration {
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
     pub fn timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.timeout_in_minutes
-    }
-}
-impl std::fmt::Debug for DeltaTimeSessionWindowConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeltaTimeSessionWindowConfiguration");
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.finish()
     }
 }
 /// See [`DeltaTimeSessionWindowConfiguration`](crate::model::DeltaTimeSessionWindowConfiguration).
@@ -2327,7 +2114,7 @@ impl DeltaTimeSessionWindowConfiguration {
 
 /// <p>Information about the versioning of dataset contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersioningConfiguration {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     #[doc(hidden)]
@@ -2344,14 +2131,6 @@ impl VersioningConfiguration {
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     pub fn max_versions(&self) -> std::option::Option<i32> {
         self.max_versions
-    }
-}
-impl std::fmt::Debug for VersioningConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersioningConfiguration");
-        formatter.field("unlimited", &self.unlimited);
-        formatter.field("max_versions", &self.max_versions);
-        formatter.finish()
     }
 }
 /// See [`VersioningConfiguration`](crate::model::VersioningConfiguration).
@@ -2402,7 +2181,7 @@ impl VersioningConfiguration {
 
 /// <p>When dataset contents are created, they are delivered to destination specified here.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentDeliveryRule {
     /// <p>The name of the dataset content delivery rules entry.</p>
     #[doc(hidden)]
@@ -2421,14 +2200,6 @@ impl DatasetContentDeliveryRule {
         &self,
     ) -> std::option::Option<&crate::model::DatasetContentDeliveryDestination> {
         self.destination.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetContentDeliveryRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentDeliveryRule");
-        formatter.field("entry_name", &self.entry_name);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`DatasetContentDeliveryRule`](crate::model::DatasetContentDeliveryRule).
@@ -2486,7 +2257,7 @@ impl DatasetContentDeliveryRule {
 
 /// <p>The destination to which dataset contents are delivered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentDeliveryDestination {
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
     #[doc(hidden)]
@@ -2508,20 +2279,6 @@ impl DatasetContentDeliveryDestination {
         &self,
     ) -> std::option::Option<&crate::model::S3DestinationConfiguration> {
         self.s3_destination_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetContentDeliveryDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentDeliveryDestination");
-        formatter.field(
-            "iot_events_destination_configuration",
-            &self.iot_events_destination_configuration,
-        );
-        formatter.field(
-            "s3_destination_configuration",
-            &self.s3_destination_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`DatasetContentDeliveryDestination`](crate::model::DatasetContentDeliveryDestination).
@@ -2586,7 +2343,7 @@ impl DatasetContentDeliveryDestination {
 
 /// <p>Configuration information for delivery of dataset contents to Amazon Simple Storage Service (Amazon S3).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
     #[doc(hidden)]
@@ -2635,16 +2392,6 @@ impl S3DestinationConfiguration {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationConfiguration");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("glue_configuration", &self.glue_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
@@ -2740,7 +2487,7 @@ impl S3DestinationConfiguration {
 
 /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueConfiguration {
     /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
     #[doc(hidden)]
@@ -2757,14 +2504,6 @@ impl GlueConfiguration {
     /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GlueConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueConfiguration");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.finish()
     }
 }
 /// See [`GlueConfiguration`](crate::model::GlueConfiguration).
@@ -2818,7 +2557,7 @@ impl GlueConfiguration {
 
 /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
     #[doc(hidden)]
@@ -2835,14 +2574,6 @@ impl IotEventsDestinationConfiguration {
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IotEventsDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotEventsDestinationConfiguration");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`IotEventsDestinationConfiguration`](crate::model::IotEventsDestinationConfiguration).
@@ -2893,7 +2624,7 @@ impl IotEventsDestinationConfiguration {
 
 /// <p>The <code>DatasetTrigger</code> that specifies when the dataset is automatically updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetTrigger {
     /// <p>The Schedule when the trigger is initiated.</p>
     #[doc(hidden)]
@@ -2910,14 +2641,6 @@ impl DatasetTrigger {
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
     pub fn dataset(&self) -> std::option::Option<&crate::model::TriggeringDataset> {
         self.dataset.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetTrigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetTrigger");
-        formatter.field("schedule", &self.schedule);
-        formatter.field("dataset", &self.dataset);
-        formatter.finish()
     }
 }
 /// See [`DatasetTrigger`](crate::model::DatasetTrigger).
@@ -2971,7 +2694,7 @@ impl DatasetTrigger {
 
 /// <p>Information about the dataset whose content generation triggers the new dataset content generation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggeringDataset {
     /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
     #[doc(hidden)]
@@ -2981,13 +2704,6 @@ impl TriggeringDataset {
     /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for TriggeringDataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggeringDataset");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`TriggeringDataset`](crate::model::TriggeringDataset).
@@ -3024,7 +2740,7 @@ impl TriggeringDataset {
 
 /// <p>The schedule for when to trigger an update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     #[doc(hidden)]
@@ -3034,13 +2750,6 @@ impl Schedule {
     /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
-    }
-}
-impl std::fmt::Debug for Schedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schedule");
-        formatter.field("expression", &self.expression);
-        formatter.finish()
     }
 }
 /// See [`Schedule`](crate::model::Schedule).
@@ -3079,7 +2788,7 @@ impl Schedule {
 
 /// <p>A <code>DatasetAction</code> object that specifies how dataset contents are automatically created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetAction {
     /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
     #[doc(hidden)]
@@ -3103,15 +2812,6 @@ impl DatasetAction {
     /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
     pub fn container_action(&self) -> std::option::Option<&crate::model::ContainerDatasetAction> {
         self.container_action.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetAction");
-        formatter.field("action_name", &self.action_name);
-        formatter.field("query_action", &self.query_action);
-        formatter.field("container_action", &self.container_action);
-        formatter.finish()
     }
 }
 /// See [`DatasetAction`](crate::model::DatasetAction).
@@ -3180,7 +2880,7 @@ impl DatasetAction {
 
 /// <p>Information required to run the <code>containerAction</code> to produce dataset contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerDatasetAction {
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
     #[doc(hidden)]
@@ -3213,16 +2913,6 @@ impl ContainerDatasetAction {
     /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
     pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
         self.variables.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerDatasetAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerDatasetAction");
-        formatter.field("image", &self.image);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("resource_configuration", &self.resource_configuration);
-        formatter.field("variables", &self.variables);
-        formatter.finish()
     }
 }
 /// See [`ContainerDatasetAction`](crate::model::ContainerDatasetAction).
@@ -3315,7 +3005,7 @@ impl ContainerDatasetAction {
 
 /// <p>An instance of a variable to be passed to the <code>containerAction</code> execution. Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Variable {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -3356,20 +3046,6 @@ impl Variable {
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
     pub fn output_file_uri_value(&self) -> std::option::Option<&crate::model::OutputFileUriValue> {
         self.output_file_uri_value.as_ref()
-    }
-}
-impl std::fmt::Debug for Variable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Variable");
-        formatter.field("name", &self.name);
-        formatter.field("string_value", &self.string_value);
-        formatter.field("double_value", &self.double_value);
-        formatter.field(
-            "dataset_content_version_value",
-            &self.dataset_content_version_value,
-        );
-        formatter.field("output_file_uri_value", &self.output_file_uri_value);
-        formatter.finish()
     }
 }
 /// See [`Variable`](crate::model::Variable).
@@ -3466,7 +3142,7 @@ impl Variable {
 
 /// <p>The value of the variable as a structure that specifies an output file URI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
     #[doc(hidden)]
@@ -3476,13 +3152,6 @@ impl OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
     pub fn file_name(&self) -> std::option::Option<&str> {
         self.file_name.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputFileUriValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputFileUriValue");
-        formatter.field("file_name", &self.file_name);
-        formatter.finish()
     }
 }
 /// See [`OutputFileUriValue`](crate::model::OutputFileUriValue).
@@ -3521,7 +3190,7 @@ impl OutputFileUriValue {
 
 /// <p>The dataset whose latest contents are used as input to the notebook or application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
     #[doc(hidden)]
@@ -3531,13 +3200,6 @@ impl DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetContentVersionValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentVersionValue");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.finish()
     }
 }
 /// See [`DatasetContentVersionValue`](crate::model::DatasetContentVersionValue).
@@ -3576,7 +3238,7 @@ impl DatasetContentVersionValue {
 
 /// <p>The configuration of the resource used to execute the <code>containerAction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceConfiguration {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
     #[doc(hidden)]
@@ -3593,14 +3255,6 @@ impl ResourceConfiguration {
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
     pub fn volume_size_in_gb(&self) -> i32 {
         self.volume_size_in_gb
-    }
-}
-impl std::fmt::Debug for ResourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConfiguration");
-        formatter.field("compute_type", &self.compute_type);
-        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
-        formatter.finish()
     }
 }
 /// See [`ResourceConfiguration`](crate::model::ResourceConfiguration).
@@ -3744,7 +3398,7 @@ impl AsRef<str> for ComputeType {
 
 /// <p>The SQL query to modify the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
     #[doc(hidden)]
@@ -3761,14 +3415,6 @@ impl SqlQueryDatasetAction {
     /// <p>Prefilters applied to message data.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::QueryFilter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for SqlQueryDatasetAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlQueryDatasetAction");
-        formatter.field("sql_query", &self.sql_query);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 /// See [`SqlQueryDatasetAction`](crate::model::SqlQueryDatasetAction).
@@ -3828,7 +3474,7 @@ impl SqlQueryDatasetAction {
 
 /// <p>Information that is used to filter message data, to segregate it according to the timeframe in which it arrives.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryFilter {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     #[doc(hidden)]
@@ -3838,13 +3484,6 @@ impl QueryFilter {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     pub fn delta_time(&self) -> std::option::Option<&crate::model::DeltaTime> {
         self.delta_time.as_ref()
-    }
-}
-impl std::fmt::Debug for QueryFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryFilter");
-        formatter.field("delta_time", &self.delta_time);
-        formatter.finish()
     }
 }
 /// See [`QueryFilter`](crate::model::QueryFilter).
@@ -3886,7 +3525,7 @@ impl QueryFilter {
 
 /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeltaTime {
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     #[doc(hidden)]
@@ -3903,14 +3542,6 @@ impl DeltaTime {
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
     pub fn time_expression(&self) -> std::option::Option<&str> {
         self.time_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for DeltaTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeltaTime");
-        formatter.field("offset_seconds", &self.offset_seconds);
-        formatter.field("time_expression", &self.time_expression);
-        formatter.finish()
     }
 }
 /// See [`DeltaTime`](crate::model::DeltaTime).
@@ -3964,7 +3595,7 @@ impl DeltaTime {
 
 /// <p>Where channel data is stored. You may choose one of <code>serviceManagedS3</code>, <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. This can't be changed after creation of the channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelStorage {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
     #[doc(hidden)]
@@ -3985,14 +3616,6 @@ impl ChannelStorage {
         &self,
     ) -> std::option::Option<&crate::model::CustomerManagedChannelS3Storage> {
         self.customer_managed_s3.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelStorage");
-        formatter.field("service_managed_s3", &self.service_managed_s3);
-        formatter.field("customer_managed_s3", &self.customer_managed_s3);
-        formatter.finish()
     }
 }
 /// See [`ChannelStorage`](crate::model::ChannelStorage).
@@ -4057,7 +3680,7 @@ impl ChannelStorage {
 
 /// <p>Used to store channel data in an S3 bucket that you manage. If customer-managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedChannelS3Storage {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     #[doc(hidden)]
@@ -4081,15 +3704,6 @@ impl CustomerManagedChannelS3Storage {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerManagedChannelS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedChannelS3Storage");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomerManagedChannelS3Storage`](crate::model::CustomerManagedChannelS3Storage).
@@ -4152,14 +3766,8 @@ impl CustomerManagedChannelS3Storage {
 
 /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedChannelS3Storage {}
-impl std::fmt::Debug for ServiceManagedChannelS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceManagedChannelS3Storage");
-        formatter.finish()
-    }
-}
 /// See [`ServiceManagedChannelS3Storage`](crate::model::ServiceManagedChannelS3Storage).
 pub mod service_managed_channel_s3_storage {
 
@@ -4182,7 +3790,7 @@ impl ServiceManagedChannelS3Storage {
 
 /// <p>A set of key-value pairs that are used to manage the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -4199,14 +3807,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -4257,7 +3857,7 @@ impl Tag {
 
 /// <p>Specifies one or more sets of channel messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelMessages {
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
@@ -4271,13 +3871,6 @@ impl ChannelMessages {
     /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
     pub fn s3_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_paths.as_deref()
-    }
-}
-impl std::fmt::Debug for ChannelMessages {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelMessages");
-        formatter.field("s3_paths", &self.s3_paths);
-        formatter.finish()
     }
 }
 /// See [`ChannelMessages`](crate::model::ChannelMessages).
@@ -4329,7 +3922,7 @@ impl ChannelMessages {
 
 /// <p>Information about logging options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
     #[doc(hidden)]
@@ -4353,15 +3946,6 @@ impl LoggingOptions {
     /// <p>If true, logging is enabled for IoT Analytics.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for LoggingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingOptions");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("level", &self.level);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`LoggingOptions`](crate::model::LoggingOptions).
@@ -4509,7 +4093,7 @@ impl AsRef<str> for LoggingLevel {
 
 /// <p>A summary of information about a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineSummary {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
@@ -4543,16 +4127,6 @@ impl PipelineSummary {
     /// <p>When the pipeline was last updated.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PipelineSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineSummary");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("reprocessing_summaries", &self.reprocessing_summaries);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`PipelineSummary`](crate::model::PipelineSummary).
@@ -4646,7 +4220,7 @@ impl PipelineSummary {
 
 /// <p>Information about pipeline reprocessing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReprocessingSummary {
     /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
     #[doc(hidden)]
@@ -4670,15 +4244,6 @@ impl ReprocessingSummary {
     /// <p>The time the pipeline reprocessing was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ReprocessingSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReprocessingSummary");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`ReprocessingSummary`](crate::model::ReprocessingSummary).
@@ -4849,7 +4414,7 @@ impl AsRef<str> for ReprocessingStatus {
 
 /// <p>A summary of information about a data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreSummary {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -4912,20 +4477,6 @@ impl DatastoreSummary {
     /// <p> Contains information about the partition dimensions in a data store. </p>
     pub fn datastore_partitions(&self) -> std::option::Option<&crate::model::DatastorePartitions> {
         self.datastore_partitions.as_ref()
-    }
-}
-impl std::fmt::Debug for DatastoreSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreSummary");
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.field("datastore_storage", &self.datastore_storage);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_message_arrival_time", &self.last_message_arrival_time);
-        formatter.field("file_format_type", &self.file_format_type);
-        formatter.field("datastore_partitions", &self.datastore_partitions);
-        formatter.finish()
     }
 }
 /// See [`DatastoreSummary`](crate::model::DatastoreSummary).
@@ -5076,7 +4627,7 @@ impl DatastoreSummary {
 
 /// <p> Contains information about the partition dimensions in a data store. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastorePartitions {
     /// <p> A list of partition dimensions in a data store. </p>
     #[doc(hidden)]
@@ -5086,13 +4637,6 @@ impl DatastorePartitions {
     /// <p> A list of partition dimensions in a data store. </p>
     pub fn partitions(&self) -> std::option::Option<&[crate::model::DatastorePartition]> {
         self.partitions.as_deref()
-    }
-}
-impl std::fmt::Debug for DatastorePartitions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastorePartitions");
-        formatter.field("partitions", &self.partitions);
-        formatter.finish()
     }
 }
 /// See [`DatastorePartitions`](crate::model::DatastorePartitions).
@@ -5140,7 +4684,7 @@ impl DatastorePartitions {
 
 /// <p> A single dimension to partition a data store. The dimension must be an <code>AttributePartition</code> or a <code>TimestampPartition</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastorePartition {
     /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
     #[doc(hidden)]
@@ -5157,14 +4701,6 @@ impl DatastorePartition {
     /// <p> A partition dimension defined by a timestamp attribute. </p>
     pub fn timestamp_partition(&self) -> std::option::Option<&crate::model::TimestampPartition> {
         self.timestamp_partition.as_ref()
-    }
-}
-impl std::fmt::Debug for DatastorePartition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastorePartition");
-        formatter.field("attribute_partition", &self.attribute_partition);
-        formatter.field("timestamp_partition", &self.timestamp_partition);
-        formatter.finish()
     }
 }
 /// See [`DatastorePartition`](crate::model::DatastorePartition).
@@ -5221,7 +4757,7 @@ impl DatastorePartition {
 
 /// <p> A partition dimension defined by a timestamp attribute. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampPartition {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
     #[doc(hidden)]
@@ -5238,14 +4774,6 @@ impl TimestampPartition {
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn timestamp_format(&self) -> std::option::Option<&str> {
         self.timestamp_format.as_deref()
-    }
-}
-impl std::fmt::Debug for TimestampPartition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampPartition");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("timestamp_format", &self.timestamp_format);
-        formatter.finish()
     }
 }
 /// See [`TimestampPartition`](crate::model::TimestampPartition).
@@ -5302,7 +4830,7 @@ impl TimestampPartition {
 
 /// <p> A partition dimension defined by an attribute. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
     #[doc(hidden)]
@@ -5312,13 +4840,6 @@ impl Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Partition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Partition");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.finish()
     }
 }
 /// See [`Partition`](crate::model::Partition).
@@ -5545,7 +5066,7 @@ impl AsRef<str> for DatastoreStatus {
 
 /// <p>Contains information about your data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreStorageSummary {
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     #[doc(hidden)]
@@ -5578,18 +5099,6 @@ impl DatastoreStorageSummary {
         &self,
     ) -> std::option::Option<&crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary> {
         self.iot_site_wise_multi_layer_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for DatastoreStorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreStorageSummary");
-        formatter.field("service_managed_s3", &self.service_managed_s3);
-        formatter.field("customer_managed_s3", &self.customer_managed_s3);
-        formatter.field(
-            "iot_site_wise_multi_layer_storage",
-            &self.iot_site_wise_multi_layer_storage,
-        );
-        formatter.finish()
     }
 }
 /// See [`DatastoreStorageSummary`](crate::model::DatastoreStorageSummary).
@@ -5673,7 +5182,7 @@ impl DatastoreStorageSummary {
 
 /// <p> Contains information about the data store that you manage, which stores data used by IoT SiteWise. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreIotSiteWiseMultiLayerStorageSummary {
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
     #[doc(hidden)]
@@ -5687,16 +5196,6 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummary {
     ) -> std::option::Option<&crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>
     {
         self.customer_managed_s3_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for DatastoreIotSiteWiseMultiLayerStorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreIotSiteWiseMultiLayerStorageSummary");
-        formatter.field(
-            "customer_managed_s3_storage",
-            &self.customer_managed_s3_storage,
-        );
-        formatter.finish()
     }
 }
 /// See [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary).
@@ -5744,7 +5243,7 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummary {
 
 /// <p> Contains information about the data store that you manage, which stores data used by IoT SiteWise. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
     #[doc(hidden)]
@@ -5761,14 +5260,6 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
     pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotSiteWiseCustomerManagedDatastoreS3StorageSummary");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.finish()
     }
 }
 /// See [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
@@ -5821,7 +5312,7 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
 
 /// <p>Contains information about the data store that you manage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedDatastoreS3StorageSummary {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     #[doc(hidden)]
@@ -5845,15 +5336,6 @@ impl CustomerManagedDatastoreS3StorageSummary {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerManagedDatastoreS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedDatastoreS3StorageSummary");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomerManagedDatastoreS3StorageSummary`](crate::model::CustomerManagedDatastoreS3StorageSummary).
@@ -5916,14 +5398,8 @@ impl CustomerManagedDatastoreS3StorageSummary {
 
 /// <p>Contains information about the data store that is managed by IoT Analytics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedDatastoreS3StorageSummary {}
-impl std::fmt::Debug for ServiceManagedDatastoreS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceManagedDatastoreS3StorageSummary");
-        formatter.finish()
-    }
-}
 /// See [`ServiceManagedDatastoreS3StorageSummary`](crate::model::ServiceManagedDatastoreS3StorageSummary).
 pub mod service_managed_datastore_s3_storage_summary {
 
@@ -5946,7 +5422,7 @@ impl ServiceManagedDatastoreS3StorageSummary {
 
 /// <p>A summary of information about a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -5991,18 +5467,6 @@ impl DatasetSummary {
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::DatasetActionSummary]> {
         self.actions.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSummary");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("triggers", &self.triggers);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
@@ -6128,7 +5592,7 @@ impl DatasetSummary {
 
 /// <p>Information about the action that automatically creates the dataset's contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetActionSummary {
     /// <p>The name of the action that automatically creates the dataset's contents.</p>
     #[doc(hidden)]
@@ -6145,14 +5609,6 @@ impl DatasetActionSummary {
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
     pub fn action_type(&self) -> std::option::Option<&crate::model::DatasetActionType> {
         self.action_type.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetActionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetActionSummary");
-        formatter.field("action_name", &self.action_name);
-        formatter.field("action_type", &self.action_type);
-        formatter.finish()
     }
 }
 /// See [`DatasetActionSummary`](crate::model::DatasetActionSummary).
@@ -6393,7 +5849,7 @@ impl AsRef<str> for DatasetStatus {
 
 /// <p>Summary information about dataset contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentSummary {
     /// <p>The version of the dataset contents.</p>
     #[doc(hidden)]
@@ -6431,17 +5887,6 @@ impl DatasetContentSummary {
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
     pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetContentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentSummary");
-        formatter.field("version", &self.version);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("schedule_time", &self.schedule_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.finish()
     }
 }
 /// See [`DatasetContentSummary`](crate::model::DatasetContentSummary).
@@ -6540,7 +5985,7 @@ impl DatasetContentSummary {
 
 /// <p>The state of the dataset contents and the reason they are in this state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentStatus {
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
     #[doc(hidden)]
@@ -6557,14 +6002,6 @@ impl DatasetContentStatus {
     /// <p>The reason the dataset contents are in this state.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetContentStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentStatus");
-        formatter.field("state", &self.state);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`DatasetContentStatus`](crate::model::DatasetContentStatus).
@@ -6715,7 +6152,7 @@ impl AsRef<str> for DatasetContentState {
 
 /// <p>A summary of information about a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelSummary {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
@@ -6764,18 +6201,6 @@ impl ChannelSummary {
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelSummary");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("channel_storage", &self.channel_storage);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_message_arrival_time", &self.last_message_arrival_time);
-        formatter.finish()
     }
 }
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
@@ -6988,7 +6413,7 @@ impl AsRef<str> for ChannelStatus {
 
 /// <p>Where channel data is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelStorageSummary {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
     #[doc(hidden)]
@@ -7011,14 +6436,6 @@ impl ChannelStorageSummary {
         &self,
     ) -> std::option::Option<&crate::model::CustomerManagedChannelS3StorageSummary> {
         self.customer_managed_s3.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelStorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelStorageSummary");
-        formatter.field("service_managed_s3", &self.service_managed_s3);
-        formatter.field("customer_managed_s3", &self.customer_managed_s3);
-        formatter.finish()
     }
 }
 /// See [`ChannelStorageSummary`](crate::model::ChannelStorageSummary).
@@ -7083,7 +6500,7 @@ impl ChannelStorageSummary {
 
 /// <p>Used to store channel data in an S3 bucket that you manage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedChannelS3StorageSummary {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     #[doc(hidden)]
@@ -7107,15 +6524,6 @@ impl CustomerManagedChannelS3StorageSummary {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerManagedChannelS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedChannelS3StorageSummary");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomerManagedChannelS3StorageSummary`](crate::model::CustomerManagedChannelS3StorageSummary).
@@ -7178,14 +6586,8 @@ impl CustomerManagedChannelS3StorageSummary {
 
 /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedChannelS3StorageSummary {}
-impl std::fmt::Debug for ServiceManagedChannelS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceManagedChannelS3StorageSummary");
-        formatter.finish()
-    }
-}
 /// See [`ServiceManagedChannelS3StorageSummary`](crate::model::ServiceManagedChannelS3StorageSummary).
 pub mod service_managed_channel_s3_storage_summary {
 
@@ -7208,7 +6610,7 @@ impl ServiceManagedChannelS3StorageSummary {
 
 /// <p>The reference to a dataset entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetEntry {
     /// <p>The name of the dataset item.</p>
     #[doc(hidden)]
@@ -7225,14 +6627,6 @@ impl DatasetEntry {
     /// <p>The presigned URI of the dataset item.</p>
     pub fn data_uri(&self) -> std::option::Option<&str> {
         self.data_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetEntry");
-        formatter.field("entry_name", &self.entry_name);
-        formatter.field("data_uri", &self.data_uri);
-        formatter.finish()
     }
 }
 /// See [`DatasetEntry`](crate::model::DatasetEntry).
@@ -7283,7 +6677,7 @@ impl DatasetEntry {
 
 /// <p>Contains information about a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Pipeline {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
@@ -7331,18 +6725,6 @@ impl Pipeline {
     /// <p>The last time the pipeline was updated.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Pipeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Pipeline");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("activities", &self.activities);
-        formatter.field("reprocessing_summaries", &self.reprocessing_summaries);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`Pipeline`](crate::model::Pipeline).
@@ -7466,7 +6848,7 @@ impl Pipeline {
 
 /// <p>Statistical information about the data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreStatistics {
     /// <p>The estimated size of the data store.</p>
     #[doc(hidden)]
@@ -7476,13 +6858,6 @@ impl DatastoreStatistics {
     /// <p>The estimated size of the data store.</p>
     pub fn size(&self) -> std::option::Option<&crate::model::EstimatedResourceSize> {
         self.size.as_ref()
-    }
-}
-impl std::fmt::Debug for DatastoreStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreStatistics");
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`DatastoreStatistics`](crate::model::DatastoreStatistics).
@@ -7522,7 +6897,7 @@ impl DatastoreStatistics {
 
 /// <p>The estimated size of the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EstimatedResourceSize {
     /// <p>The estimated size of the resource, in bytes.</p>
     #[doc(hidden)]
@@ -7539,14 +6914,6 @@ impl EstimatedResourceSize {
     /// <p>The time when the estimate of the size of the resource was made.</p>
     pub fn estimated_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.estimated_on.as_ref()
-    }
-}
-impl std::fmt::Debug for EstimatedResourceSize {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EstimatedResourceSize");
-        formatter.field("estimated_size_in_bytes", &self.estimated_size_in_bytes);
-        formatter.field("estimated_on", &self.estimated_on);
-        formatter.finish()
     }
 }
 /// See [`EstimatedResourceSize`](crate::model::EstimatedResourceSize).
@@ -7600,7 +6967,7 @@ impl EstimatedResourceSize {
 
 /// <p>Information about a data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Datastore {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -7723,22 +7090,6 @@ impl Datastore {
     /// <p> Contains information about the partition dimensions in a data store. </p>
     pub fn datastore_partitions(&self) -> std::option::Option<&crate::model::DatastorePartitions> {
         self.datastore_partitions.as_ref()
-    }
-}
-impl std::fmt::Debug for Datastore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Datastore");
-        formatter.field("name", &self.name);
-        formatter.field("storage", &self.storage);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_message_arrival_time", &self.last_message_arrival_time);
-        formatter.field("file_format_configuration", &self.file_format_configuration);
-        formatter.field("datastore_partitions", &self.datastore_partitions);
-        formatter.finish()
     }
 }
 /// See [`Datastore`](crate::model::Datastore).
@@ -7961,7 +7312,7 @@ impl Datastore {
 
 /// <p>Information about a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -8046,23 +7397,6 @@ impl Dataset {
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub fn late_data_rules(&self) -> std::option::Option<&[crate::model::LateDataRule]> {
         self.late_data_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for Dataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dataset");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("actions", &self.actions);
-        formatter.field("triggers", &self.triggers);
-        formatter.field("content_delivery_rules", &self.content_delivery_rules);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("versioning_configuration", &self.versioning_configuration);
-        formatter.field("late_data_rules", &self.late_data_rules);
-        formatter.finish()
     }
 }
 /// See [`Dataset`](crate::model::Dataset).
@@ -8280,7 +7614,7 @@ impl Dataset {
 
 /// <p>Statistics information about the channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelStatistics {
     /// <p>The estimated size of the channel.</p>
     #[doc(hidden)]
@@ -8290,13 +7624,6 @@ impl ChannelStatistics {
     /// <p>The estimated size of the channel.</p>
     pub fn size(&self) -> std::option::Option<&crate::model::EstimatedResourceSize> {
         self.size.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelStatistics");
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`ChannelStatistics`](crate::model::ChannelStatistics).
@@ -8336,7 +7663,7 @@ impl ChannelStatistics {
 
 /// <p>A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
@@ -8399,20 +7726,6 @@ impl Channel {
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("name", &self.name);
-        formatter.field("storage", &self.storage);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_message_arrival_time", &self.last_message_arrival_time);
-        formatter.finish()
     }
 }
 /// See [`Channel`](crate::model::Channel).
@@ -8557,7 +7870,7 @@ impl Channel {
 
 /// <p>Contains informations about errors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutMessageErrorEntry {
     /// <p>The ID of the message that caused the error. See the value corresponding to the <code>messageId</code> key in the message object.</p>
     #[doc(hidden)]
@@ -8581,15 +7894,6 @@ impl BatchPutMessageErrorEntry {
     /// <p>The message associated with the error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPutMessageErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutMessageErrorEntry");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
@@ -8655,7 +7959,7 @@ impl BatchPutMessageErrorEntry {
 
 /// <p>Information about a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
     #[doc(hidden)]
@@ -8672,14 +7976,6 @@ impl Message {
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`Message`](crate::model::Message).

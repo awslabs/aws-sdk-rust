@@ -2,7 +2,7 @@
 
 /// <p>Indicates that the Template object you specified does not exist in your Amazon SES account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateDoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl TemplateDoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateDoesNotExistException");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl TemplateDoesNotExistException {
@@ -94,7 +86,7 @@ impl TemplateDoesNotExistException {
 
 /// <p>Indicates that the template that you specified could not be rendered. This issue may occur when a template refers to a partial that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTemplateException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -107,14 +99,6 @@ impl InvalidTemplateException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidTemplateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTemplateException");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidTemplateException {
@@ -186,7 +170,7 @@ impl InvalidTemplateException {
 
 /// <p>Indicates that the provided receipt rule set does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleSetDoesNotExistException {
     /// <p>Indicates that the named receipt rule set does not exist.</p>
     #[doc(hidden)]
@@ -199,14 +183,6 @@ impl RuleSetDoesNotExistException {
     /// <p>Indicates that the named receipt rule set does not exist.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleSetDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleSetDoesNotExistException");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl RuleSetDoesNotExistException {
@@ -275,7 +251,7 @@ impl RuleSetDoesNotExistException {
 
 /// <p>Indicates that the provided receipt rule does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleDoesNotExistException {
     /// <p>Indicates that the named receipt rule does not exist.</p>
     #[doc(hidden)]
@@ -288,14 +264,6 @@ impl RuleDoesNotExistException {
     /// <p>Indicates that the named receipt rule does not exist.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleDoesNotExistException");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl RuleDoesNotExistException {
@@ -364,18 +332,11 @@ impl RuleDoesNotExistException {
 
 /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LimitExceededException {
     /// Returns the error message.
@@ -431,7 +392,7 @@ impl LimitExceededException {
 
 /// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not publish to the topic, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSnsTopicException {
     /// <p>Indicates that the topic does not exist.</p>
     #[doc(hidden)]
@@ -444,14 +405,6 @@ impl InvalidSnsTopicException {
     /// <p>Indicates that the topic does not exist.</p>
     pub fn topic(&self) -> std::option::Option<&str> {
         self.topic.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidSnsTopicException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSnsTopicException");
-        formatter.field("topic", &self.topic);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidSnsTopicException {
@@ -520,7 +473,7 @@ impl InvalidSnsTopicException {
 
 /// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or that Amazon SES could not publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3ConfigurationException {
     /// <p>Indicated that the S3 Bucket was not found.</p>
     #[doc(hidden)]
@@ -533,14 +486,6 @@ impl InvalidS3ConfigurationException {
     /// <p>Indicated that the S3 Bucket was not found.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidS3ConfigurationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3ConfigurationException");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidS3ConfigurationException {
@@ -609,7 +554,7 @@ impl InvalidS3ConfigurationException {
 
 /// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could not execute the provided function, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLambdaFunctionException {
     /// <p>Indicates that the ARN of the function was not found.</p>
     #[doc(hidden)]
@@ -622,14 +567,6 @@ impl InvalidLambdaFunctionException {
     /// <p>Indicates that the ARN of the function was not found.</p>
     pub fn function_arn(&self) -> std::option::Option<&str> {
         self.function_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidLambdaFunctionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLambdaFunctionException");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidLambdaFunctionException {
@@ -698,7 +635,7 @@ impl InvalidLambdaFunctionException {
 
 /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FromEmailAddressNotVerifiedException {
     /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
     #[doc(hidden)]
@@ -711,14 +648,6 @@ impl FromEmailAddressNotVerifiedException {
     /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
     pub fn from_email_address(&self) -> std::option::Option<&str> {
         self.from_email_address.as_deref()
-    }
-}
-impl std::fmt::Debug for FromEmailAddressNotVerifiedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FromEmailAddressNotVerifiedException");
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl FromEmailAddressNotVerifiedException {
@@ -790,7 +719,7 @@ impl FromEmailAddressNotVerifiedException {
 
 /// <p>Indicates that a custom verification email template with the name you specified does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomVerificationEmailTemplateDoesNotExistException {
     /// <p>Indicates that the provided custom verification email template does not exist.</p>
     #[doc(hidden)]
@@ -803,17 +732,6 @@ impl CustomVerificationEmailTemplateDoesNotExistException {
     /// <p>Indicates that the provided custom verification email template does not exist.</p>
     pub fn custom_verification_email_template_name(&self) -> std::option::Option<&str> {
         self.custom_verification_email_template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomVerificationEmailTemplateDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomVerificationEmailTemplateDoesNotExistException");
-        formatter.field(
-            "custom_verification_email_template_name",
-            &self.custom_verification_email_template_name,
-        );
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl CustomVerificationEmailTemplateDoesNotExistException {
@@ -892,18 +810,11 @@ impl CustomVerificationEmailTemplateDoesNotExistException {
 
 /// <p>Indicates that custom verification email template provided content is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomVerificationEmailInvalidContentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CustomVerificationEmailInvalidContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomVerificationEmailInvalidContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CustomVerificationEmailInvalidContentException {
     /// Returns the error message.
@@ -959,7 +870,7 @@ impl CustomVerificationEmailInvalidContentException {
 
 /// <p>Indicates that the TrackingOptions object you specified does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrackingOptionsDoesNotExistException {
     /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
     #[doc(hidden)]
@@ -972,14 +883,6 @@ impl TrackingOptionsDoesNotExistException {
     /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TrackingOptionsDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrackingOptionsDoesNotExistException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl TrackingOptionsDoesNotExistException {
@@ -1055,18 +958,11 @@ impl TrackingOptionsDoesNotExistException {
 /// <li> <p>When the tracking domain you specified is not a valid domain or subdomain.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTrackingOptionsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTrackingOptionsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTrackingOptionsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTrackingOptionsException {
     /// Returns the error message.
@@ -1122,7 +1018,7 @@ impl InvalidTrackingOptionsException {
 
 /// <p>Indicates that the configuration set does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationSetDoesNotExistException {
     /// <p>Indicates that the configuration set does not exist.</p>
     #[doc(hidden)]
@@ -1135,14 +1031,6 @@ impl ConfigurationSetDoesNotExistException {
     /// <p>Indicates that the configuration set does not exist.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationSetDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationSetDoesNotExistException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ConfigurationSetDoesNotExistException {
@@ -1214,7 +1102,7 @@ impl ConfigurationSetDoesNotExistException {
 
 /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is invalid. See the error message for details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSnsDestinationException {
     /// <p>Indicates that the configuration set does not exist.</p>
     #[doc(hidden)]
@@ -1234,15 +1122,6 @@ impl InvalidSnsDestinationException {
     /// <p>Indicates that the event destination does not exist.</p>
     pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidSnsDestinationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSnsDestinationException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidSnsDestinationException {
@@ -1332,7 +1211,7 @@ impl InvalidSnsDestinationException {
 
 /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFirehoseDestinationException {
     /// <p>Indicates that the configuration set does not exist.</p>
     #[doc(hidden)]
@@ -1352,15 +1231,6 @@ impl InvalidFirehoseDestinationException {
     /// <p>Indicates that the event destination does not exist.</p>
     pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidFirehoseDestinationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFirehoseDestinationException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidFirehoseDestinationException {
@@ -1447,7 +1317,7 @@ impl InvalidFirehoseDestinationException {
 
 /// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCloudWatchDestinationException {
     /// <p>Indicates that the configuration set does not exist.</p>
     #[doc(hidden)]
@@ -1467,15 +1337,6 @@ impl InvalidCloudWatchDestinationException {
     /// <p>Indicates that the event destination does not exist.</p>
     pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidCloudWatchDestinationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCloudWatchDestinationException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidCloudWatchDestinationException {
@@ -1562,7 +1423,7 @@ impl InvalidCloudWatchDestinationException {
 
 /// <p>Indicates that the event destination does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDestinationDoesNotExistException {
     /// <p>Indicates that the configuration set does not exist.</p>
     #[doc(hidden)]
@@ -1582,15 +1443,6 @@ impl EventDestinationDoesNotExistException {
     /// <p>Indicates that the event destination does not exist.</p>
     pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
-    }
-}
-impl std::fmt::Debug for EventDestinationDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDestinationDoesNotExistException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl EventDestinationDoesNotExistException {
@@ -1677,7 +1529,7 @@ impl EventDestinationDoesNotExistException {
 
 /// <p>Indicates that one or more of the replacement values for the specified template was not specified. Ensure that the TemplateData object contains references to all of the replacement tags in the specified template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingRenderingAttributeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1690,14 +1542,6 @@ impl MissingRenderingAttributeException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MissingRenderingAttributeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingRenderingAttributeException");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl MissingRenderingAttributeException {
@@ -1769,7 +1613,7 @@ impl MissingRenderingAttributeException {
 
 /// <p>Indicates that one or more of the replacement values you provided is invalid. This error may occur when the TemplateData object contains invalid JSON.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRenderingParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1782,14 +1626,6 @@ impl InvalidRenderingParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRenderingParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRenderingParameterException");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidRenderingParameterException {
@@ -1861,18 +1697,11 @@ impl InvalidRenderingParameterException {
 
 /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageRejected {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MessageRejected {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageRejected");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MessageRejected {
     /// Returns the error message.
@@ -1928,18 +1757,11 @@ impl MessageRejected {
 
 /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MailFromDomainNotVerifiedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MailFromDomainNotVerifiedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MailFromDomainNotVerifiedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MailFromDomainNotVerifiedException {
     /// Returns the error message.
@@ -1996,7 +1818,7 @@ impl MailFromDomainNotVerifiedException {
 /// <p>Indicates that email sending is disabled for the configuration set.</p>
 /// <p>You can enable or disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationSetSendingPausedException {
     /// <p>The name of the configuration set for which email sending is disabled.</p>
     #[doc(hidden)]
@@ -2009,14 +1831,6 @@ impl ConfigurationSetSendingPausedException {
     /// <p>The name of the configuration set for which email sending is disabled.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationSetSendingPausedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationSetSendingPausedException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ConfigurationSetSendingPausedException {
@@ -2089,18 +1903,11 @@ impl ConfigurationSetSendingPausedException {
 /// <p>Indicates that email sending is disabled for your entire Amazon SES account.</p>
 /// <p>You can enable or disable email sending for your Amazon SES account using <code>UpdateAccountSendingEnabled</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountSendingPausedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccountSendingPausedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountSendingPausedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccountSendingPausedException {
     /// Returns the error message.
@@ -2156,18 +1963,11 @@ impl AccountSendingPausedException {
 
 /// <p>Indicates that the account has not been granted production access.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProductionAccessNotGrantedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ProductionAccessNotGrantedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProductionAccessNotGrantedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ProductionAccessNotGrantedException {
     /// Returns the error message.
@@ -2223,18 +2023,11 @@ impl ProductionAccessNotGrantedException {
 
 /// <p>Indicates that the provided policy is invalid. Check the error stack for more information about what caused the error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPolicyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPolicyException {
     /// Returns the error message.
@@ -2290,18 +2083,11 @@ impl InvalidPolicyException {
 
 /// <p>Indicates that provided delivery option is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDeliveryOptionsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDeliveryOptionsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDeliveryOptionsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDeliveryOptionsException {
     /// Returns the error message.
@@ -2357,7 +2143,7 @@ impl InvalidDeliveryOptionsException {
 
 /// <p>Indicates that the delete operation could not be completed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CannotDeleteException {
     /// <p>Indicates that a resource could not be deleted because no resource with the specified name exists.</p>
     #[doc(hidden)]
@@ -2370,14 +2156,6 @@ impl CannotDeleteException {
     /// <p>Indicates that a resource could not be deleted because no resource with the specified name exists.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CannotDeleteException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CannotDeleteException");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl CannotDeleteException {
@@ -2446,7 +2224,7 @@ impl CannotDeleteException {
 
 /// <p>Indicates that a resource could not be created because of a naming conflict.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlreadyExistsException {
     /// <p>Indicates that a resource could not be created because the resource name already exists.</p>
     #[doc(hidden)]
@@ -2459,14 +2237,6 @@ impl AlreadyExistsException {
     /// <p>Indicates that a resource could not be created because the resource name already exists.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsException");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AlreadyExistsException {
@@ -2535,7 +2305,7 @@ impl AlreadyExistsException {
 
 /// <p>Indicates that a custom verification email template with the name you specified already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomVerificationEmailTemplateAlreadyExistsException {
     /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
     #[doc(hidden)]
@@ -2548,17 +2318,6 @@ impl CustomVerificationEmailTemplateAlreadyExistsException {
     /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
     pub fn custom_verification_email_template_name(&self) -> std::option::Option<&str> {
         self.custom_verification_email_template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomVerificationEmailTemplateAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomVerificationEmailTemplateAlreadyExistsException");
-        formatter.field(
-            "custom_verification_email_template_name",
-            &self.custom_verification_email_template_name,
-        );
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl CustomVerificationEmailTemplateAlreadyExistsException {
@@ -2637,7 +2396,7 @@ impl CustomVerificationEmailTemplateAlreadyExistsException {
 
 /// <p>Indicates that the configuration set you specified already contains a TrackingOptions object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrackingOptionsAlreadyExistsException {
     /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
     #[doc(hidden)]
@@ -2650,14 +2409,6 @@ impl TrackingOptionsAlreadyExistsException {
     /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TrackingOptionsAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrackingOptionsAlreadyExistsException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl TrackingOptionsAlreadyExistsException {
@@ -2729,7 +2480,7 @@ impl TrackingOptionsAlreadyExistsException {
 
 /// <p>Indicates that the event destination could not be created because of a naming conflict.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDestinationAlreadyExistsException {
     /// <p>Indicates that the configuration set does not exist.</p>
     #[doc(hidden)]
@@ -2749,15 +2500,6 @@ impl EventDestinationAlreadyExistsException {
     /// <p>Indicates that the event destination does not exist.</p>
     pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
-    }
-}
-impl std::fmt::Debug for EventDestinationAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDestinationAlreadyExistsException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl EventDestinationAlreadyExistsException {
@@ -2844,18 +2586,11 @@ impl EventDestinationAlreadyExistsException {
 
 /// <p>Indicates that the configuration set is invalid. See the error message for details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConfigurationSetException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidConfigurationSetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConfigurationSetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidConfigurationSetException {
     /// Returns the error message.
@@ -2911,7 +2646,7 @@ impl InvalidConfigurationSetException {
 
 /// <p>Indicates that the configuration set could not be created because of a naming conflict.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationSetAlreadyExistsException {
     /// <p>Indicates that the configuration set does not exist.</p>
     #[doc(hidden)]
@@ -2924,14 +2659,6 @@ impl ConfigurationSetAlreadyExistsException {
     /// <p>Indicates that the configuration set does not exist.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationSetAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationSetAlreadyExistsException");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ConfigurationSetAlreadyExistsException {

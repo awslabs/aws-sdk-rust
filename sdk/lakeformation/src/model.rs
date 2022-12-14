@@ -97,7 +97,7 @@ impl AsRef<str> for OptimizerType {
 
 /// <p>Defines an object to add to or delete from a governed table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteOperation {
     /// <p>A new object to add to the governed table.</p>
     #[doc(hidden)]
@@ -114,14 +114,6 @@ impl WriteOperation {
     /// <p>An object to delete from the governed table.</p>
     pub fn delete_object(&self) -> std::option::Option<&crate::model::DeleteObjectInput> {
         self.delete_object.as_ref()
-    }
-}
-impl std::fmt::Debug for WriteOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteOperation");
-        formatter.field("add_object", &self.add_object);
-        formatter.field("delete_object", &self.delete_object);
-        formatter.finish()
     }
 }
 /// See [`WriteOperation`](crate::model::WriteOperation).
@@ -178,7 +170,7 @@ impl WriteOperation {
 
 /// <p>An object to delete from the governed table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// <p>The Amazon S3 location of the object to delete.</p>
     #[doc(hidden)]
@@ -202,15 +194,6 @@ impl DeleteObjectInput {
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
     pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
         self.partition_values.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectInput");
-        formatter.field("uri", &self.uri);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("partition_values", &self.partition_values);
-        formatter.finish()
     }
 }
 /// See [`DeleteObjectInput`](crate::model::DeleteObjectInput).
@@ -282,7 +265,7 @@ impl DeleteObjectInput {
 
 /// <p>A new object to add to the governed table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddObjectInput {
     /// <p>The Amazon S3 location of the object.</p>
     #[doc(hidden)]
@@ -315,16 +298,6 @@ impl AddObjectInput {
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
     pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
         self.partition_values.as_deref()
-    }
-}
-impl std::fmt::Debug for AddObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddObjectInput");
-        formatter.field("uri", &self.uri);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("size", &self.size);
-        formatter.field("partition_values", &self.partition_values);
-        formatter.finish()
     }
 }
 /// See [`AddObjectInput`](crate::model::AddObjectInput).
@@ -500,7 +473,7 @@ impl AsRef<str> for TransactionType {
 
 /// <p>A structure containing information about the query plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryPlanningContext {
     /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
@@ -542,17 +515,6 @@ impl QueryPlanningContext {
     /// <p>The transaction ID at which to read the table contents. If this transaction is not committed, the read will be treated as part of that transaction and will see its writes. If this transaction has aborted, an error will be returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
     pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryPlanningContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryPlanningContext");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("query_as_of_time", &self.query_as_of_time);
-        formatter.field("query_parameters", &self.query_parameters);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
     }
 }
 /// See [`QueryPlanningContext`](crate::model::QueryPlanningContext).
@@ -665,7 +627,7 @@ impl QueryPlanningContext {
 
 /// <p>A structure describing a table resource with LF-tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaggedTable {
     /// <p>A table that has LF-tags attached to it.</p>
     #[doc(hidden)]
@@ -696,16 +658,6 @@ impl TaggedTable {
     /// <p>A list of LF-tags attached to columns in the table.</p>
     pub fn lf_tags_on_columns(&self) -> std::option::Option<&[crate::model::ColumnLfTag]> {
         self.lf_tags_on_columns.as_deref()
-    }
-}
-impl std::fmt::Debug for TaggedTable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaggedTable");
-        formatter.field("table", &self.table);
-        formatter.field("lf_tag_on_database", &self.lf_tag_on_database);
-        formatter.field("lf_tags_on_table", &self.lf_tags_on_table);
-        formatter.field("lf_tags_on_columns", &self.lf_tags_on_columns);
-        formatter.finish()
     }
 }
 /// See [`TaggedTable`](crate::model::TaggedTable).
@@ -811,7 +763,7 @@ impl TaggedTable {
 
 /// <p>A structure containing the name of a column resource and the LF-tags attached to it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnLfTag {
     /// <p>The name of a column resource.</p>
     #[doc(hidden)]
@@ -828,14 +780,6 @@ impl ColumnLfTag {
     /// <p>The LF-tags attached to a column resource.</p>
     pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
         self.lf_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnLfTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnLfTag");
-        formatter.field("name", &self.name);
-        formatter.field("lf_tags", &self.lf_tags);
-        formatter.finish()
     }
 }
 /// See [`ColumnLfTag`](crate::model::ColumnLfTag).
@@ -895,7 +839,7 @@ impl ColumnLfTag {
 
 /// <p>A structure containing an LF-tag key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LfTagPair {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -919,15 +863,6 @@ impl LfTagPair {
     /// <p>A list of possible values an attribute can take.</p>
     pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values.as_deref()
-    }
-}
-impl std::fmt::Debug for LfTagPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LfTagPair");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
     }
 }
 /// See [`LfTagPair`](crate::model::LfTagPair).
@@ -999,7 +934,7 @@ impl LfTagPair {
 
 /// <p>A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
@@ -1032,16 +967,6 @@ impl TableResource {
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
     pub fn table_wildcard(&self) -> std::option::Option<&crate::model::TableWildcard> {
         self.table_wildcard.as_ref()
-    }
-}
-impl std::fmt::Debug for TableResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableResource");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("name", &self.name);
-        formatter.field("table_wildcard", &self.table_wildcard);
-        formatter.finish()
     }
 }
 /// See [`TableResource`](crate::model::TableResource).
@@ -1124,14 +1049,8 @@ impl TableResource {
 
 /// <p>A wildcard object representing every table under a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableWildcard {}
-impl std::fmt::Debug for TableWildcard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableWildcard");
-        formatter.finish()
-    }
-}
 /// See [`TableWildcard`](crate::model::TableWildcard).
 pub mod table_wildcard {
 
@@ -1154,7 +1073,7 @@ impl TableWildcard {
 
 /// <p>A structure that allows an admin to grant user permissions on certain conditions. For example, granting a role access to all columns that do not have the LF-tag 'PII' in tables that have the LF-tag 'Prod'.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LfTag {
     /// <p>The key-name for the LF-tag.</p>
     #[doc(hidden)]
@@ -1171,14 +1090,6 @@ impl LfTag {
     /// <p>A list of possible values an attribute can take.</p>
     pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values.as_deref()
-    }
-}
-impl std::fmt::Debug for LfTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LfTag");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
     }
 }
 /// See [`LfTag`](crate::model::LfTag).
@@ -1238,7 +1149,7 @@ impl LfTag {
 
 /// <p>A structure describing a database resource with LF-tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaggedDatabase {
     /// <p>A database that has LF-tags attached to it.</p>
     #[doc(hidden)]
@@ -1255,14 +1166,6 @@ impl TaggedDatabase {
     /// <p>A list of LF-tags attached to the database.</p>
     pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
         self.lf_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TaggedDatabase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaggedDatabase");
-        formatter.field("database", &self.database);
-        formatter.field("lf_tags", &self.lf_tags);
-        formatter.finish()
     }
 }
 /// See [`TaggedDatabase`](crate::model::TaggedDatabase).
@@ -1325,7 +1228,7 @@ impl TaggedDatabase {
 
 /// <p>A structure for the database object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
@@ -1342,14 +1245,6 @@ impl DatabaseResource {
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DatabaseResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseResource");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`DatabaseResource`](crate::model::DatabaseResource).
@@ -1553,7 +1448,7 @@ impl AsRef<str> for Permission {
 
 /// <p>A structure for the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -1614,20 +1509,6 @@ impl Resource {
     /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
     pub fn lf_tag_policy(&self) -> std::option::Option<&crate::model::LfTagPolicyResource> {
         self.lf_tag_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.field("table_with_columns", &self.table_with_columns);
-        formatter.field("data_location", &self.data_location);
-        formatter.field("data_cells_filter", &self.data_cells_filter);
-        formatter.field("lf_tag", &self.lf_tag);
-        formatter.field("lf_tag_policy", &self.lf_tag_policy);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -1774,7 +1655,7 @@ impl Resource {
 
 /// <p>A structure containing a list of LF-tag conditions that apply to a resource's LF-tag policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LfTagPolicyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -1798,15 +1679,6 @@ impl LfTagPolicyResource {
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
     pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
         self.expression.as_deref()
-    }
-}
-impl std::fmt::Debug for LfTagPolicyResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LfTagPolicyResource");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
     }
 }
 /// See [`LfTagPolicyResource`](crate::model::LfTagPolicyResource).
@@ -1971,7 +1843,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>A structure containing an LF-tag key and values for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LfTagKeyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -1995,15 +1867,6 @@ impl LfTagKeyResource {
     /// <p>A list of possible values an attribute can take.</p>
     pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values.as_deref()
-    }
-}
-impl std::fmt::Debug for LfTagKeyResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LfTagKeyResource");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
     }
 }
 /// See [`LfTagKeyResource`](crate::model::LfTagKeyResource).
@@ -2075,7 +1938,7 @@ impl LfTagKeyResource {
 
 /// <p>A structure for a data cells filter resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataCellsFilterResource {
     /// <p>The ID of the catalog to which the table belongs.</p>
     #[doc(hidden)]
@@ -2106,16 +1969,6 @@ impl DataCellsFilterResource {
     /// <p>The name of the data cells filter. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DataCellsFilterResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataCellsFilterResource");
-        formatter.field("table_catalog_id", &self.table_catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`DataCellsFilterResource`](crate::model::DataCellsFilterResource).
@@ -2196,7 +2049,7 @@ impl DataCellsFilterResource {
 
 /// <p>A structure for a data location object where permissions are granted or revoked. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataLocationResource {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
@@ -2213,14 +2066,6 @@ impl DataLocationResource {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DataLocationResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataLocationResource");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`DataLocationResource`](crate::model::DataLocationResource).
@@ -2272,7 +2117,7 @@ impl DataLocationResource {
 /// <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p>
 /// <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableWithColumnsResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
@@ -2310,17 +2155,6 @@ impl TableWithColumnsResource {
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub fn column_wildcard(&self) -> std::option::Option<&crate::model::ColumnWildcard> {
         self.column_wildcard.as_ref()
-    }
-}
-impl std::fmt::Debug for TableWithColumnsResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableWithColumnsResource");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("name", &self.name);
-        formatter.field("column_names", &self.column_names);
-        formatter.field("column_wildcard", &self.column_wildcard);
-        formatter.finish()
     }
 }
 /// See [`TableWithColumnsResource`](crate::model::TableWithColumnsResource).
@@ -2422,7 +2256,7 @@ impl TableWithColumnsResource {
 
 /// <p>A wildcard object, consisting of an optional list of excluded column names or indexes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
     #[doc(hidden)]
@@ -2432,13 +2266,6 @@ impl ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
     pub fn excluded_column_names(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_column_names.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnWildcard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnWildcard");
-        formatter.field("excluded_column_names", &self.excluded_column_names);
-        formatter.finish()
     }
 }
 /// See [`ColumnWildcard`](crate::model::ColumnWildcard).
@@ -2486,14 +2313,8 @@ impl ColumnWildcard {
 
 /// <p>A structure for the catalog object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogResource {}
-impl std::fmt::Debug for CatalogResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogResource");
-        formatter.finish()
-    }
-}
 /// See [`CatalogResource`](crate::model::CatalogResource).
 pub mod catalog_resource {
 
@@ -2516,7 +2337,7 @@ impl CatalogResource {
 
 /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
     #[doc(hidden)]
@@ -2526,16 +2347,6 @@ impl DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
     pub fn data_lake_principal_identifier(&self) -> std::option::Option<&str> {
         self.data_lake_principal_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DataLakePrincipal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataLakePrincipal");
-        formatter.field(
-            "data_lake_principal_identifier",
-            &self.data_lake_principal_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataLakePrincipal`](crate::model::DataLakePrincipal).
@@ -2580,7 +2391,7 @@ impl DataLakePrincipal {
 
 /// <p>A structure containing an error related to a <code>TagResource</code> or <code>UnTagResource</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LfTagError {
     /// <p>The key-name of the LF-tag.</p>
     #[doc(hidden)]
@@ -2597,14 +2408,6 @@ impl LfTagError {
     /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for LfTagError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LfTagError");
-        formatter.field("lf_tag", &self.lf_tag);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`LfTagError`](crate::model::LfTagError).
@@ -2655,7 +2458,7 @@ impl LfTagError {
 
 /// <p>Contains details about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetail {
     /// <p>The code associated with this error.</p>
     #[doc(hidden)]
@@ -2672,14 +2475,6 @@ impl ErrorDetail {
     /// <p>A message describing the error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetail");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
@@ -2733,7 +2528,7 @@ impl ErrorDetail {
 
 /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
     #[doc(hidden)]
@@ -2814,34 +2609,6 @@ impl DataLakeSettings {
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
     pub fn authorized_session_tag_value_list(&self) -> std::option::Option<&[std::string::String]> {
         self.authorized_session_tag_value_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DataLakeSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataLakeSettings");
-        formatter.field("data_lake_admins", &self.data_lake_admins);
-        formatter.field(
-            "create_database_default_permissions",
-            &self.create_database_default_permissions,
-        );
-        formatter.field(
-            "create_table_default_permissions",
-            &self.create_table_default_permissions,
-        );
-        formatter.field("trusted_resource_owners", &self.trusted_resource_owners);
-        formatter.field(
-            "allow_external_data_filtering",
-            &self.allow_external_data_filtering,
-        );
-        formatter.field(
-            "external_data_filtering_allow_list",
-            &self.external_data_filtering_allow_list,
-        );
-        formatter.field(
-            "authorized_session_tag_value_list",
-            &self.authorized_session_tag_value_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataLakeSettings`](crate::model::DataLakeSettings).
@@ -3046,7 +2813,7 @@ impl DataLakeSettings {
 
 /// <p>Permissions granted to a principal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrincipalPermissions {
     /// <p>The principal who is granted permissions.</p>
     #[doc(hidden)]
@@ -3063,14 +2830,6 @@ impl PrincipalPermissions {
     /// <p>The permissions that are granted to the principal.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for PrincipalPermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrincipalPermissions");
-        formatter.field("principal", &self.principal);
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 /// See [`PrincipalPermissions`](crate::model::PrincipalPermissions).
@@ -3133,7 +2892,7 @@ impl PrincipalPermissions {
 
 /// <p>A structure that contains information about a transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransactionDescription {
     /// <p>The ID of the transaction.</p>
     #[doc(hidden)]
@@ -3164,16 +2923,6 @@ impl TransactionDescription {
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
     pub fn transaction_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.transaction_end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TransactionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactionDescription");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("transaction_status", &self.transaction_status);
-        formatter.field("transaction_start_time", &self.transaction_start_time);
-        formatter.field("transaction_end_time", &self.transaction_end_time);
-        formatter.finish()
     }
 }
 /// See [`TransactionDescription`](crate::model::TransactionDescription).
@@ -3469,7 +3218,7 @@ impl AsRef<str> for TransactionStatusFilter {
 
 /// <p>A structure describing the configuration and details of a storage optimizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageOptimizer {
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
     #[doc(hidden)]
@@ -3515,17 +3264,6 @@ impl StorageOptimizer {
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
     pub fn last_run_details(&self) -> std::option::Option<&str> {
         self.last_run_details.as_deref()
-    }
-}
-impl std::fmt::Debug for StorageOptimizer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageOptimizer");
-        formatter.field("storage_optimizer_type", &self.storage_optimizer_type);
-        formatter.field("config", &self.config);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("last_run_details", &self.last_run_details);
-        formatter.finish()
     }
 }
 /// See [`StorageOptimizer`](crate::model::StorageOptimizer).
@@ -3642,7 +3380,7 @@ impl StorageOptimizer {
 
 /// <p>A structure containing information about an Lake Formation resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -3666,15 +3404,6 @@ impl ResourceInfo {
     /// <p>The date and time the resource was last modified.</p>
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInfo");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.finish()
     }
 }
 /// See [`ResourceInfo`](crate::model::ResourceInfo).
@@ -3740,7 +3469,7 @@ impl ResourceInfo {
 
 /// <p>This structure describes the filtering of columns in a table based on a filter condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterCondition {
     /// <p>The field to filter in the filter condition.</p>
     #[doc(hidden)]
@@ -3764,15 +3493,6 @@ impl FilterCondition {
     /// <p>A string with values used in evaluating the filter condition.</p>
     pub fn string_value_list(&self) -> std::option::Option<&[std::string::String]> {
         self.string_value_list.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterCondition");
-        formatter.field("field", &self.field);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("string_value_list", &self.string_value_list);
-        formatter.finish()
     }
 }
 /// See [`FilterCondition`](crate::model::FilterCondition).
@@ -4094,7 +3814,7 @@ impl AsRef<str> for FieldNameString {
 
 /// <p>The permissions granted or revoked on a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrincipalResourcePermissions {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
     #[doc(hidden)]
@@ -4134,20 +3854,6 @@ impl PrincipalResourcePermissions {
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     pub fn additional_details(&self) -> std::option::Option<&crate::model::DetailsMap> {
         self.additional_details.as_ref()
-    }
-}
-impl std::fmt::Debug for PrincipalResourcePermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrincipalResourcePermissions");
-        formatter.field("principal", &self.principal);
-        formatter.field("resource", &self.resource);
-        formatter.field("permissions", &self.permissions);
-        formatter.field(
-            "permissions_with_grant_option",
-            &self.permissions_with_grant_option,
-        );
-        formatter.field("additional_details", &self.additional_details);
-        formatter.finish()
     }
 }
 /// See [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions).
@@ -4260,7 +3966,7 @@ impl PrincipalResourcePermissions {
 /// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p>
 /// <p>If a catalog resource is shared through Resource Access Manager (RAM), then there will exist a corresponding RAM resource share ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
     #[doc(hidden)]
@@ -4270,13 +3976,6 @@ impl DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
     pub fn resource_share(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_share.as_deref()
-    }
-}
-impl std::fmt::Debug for DetailsMap {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetailsMap");
-        formatter.field("resource_share", &self.resource_share);
-        formatter.finish()
     }
 }
 /// See [`DetailsMap`](crate::model::DetailsMap).
@@ -4547,7 +4246,7 @@ impl AsRef<str> for ResourceShareType {
 
 /// <p>A structure that describes certain columns on certain rows.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataCellsFilter {
     /// <p>The ID of the catalog to which the table belongs.</p>
     #[doc(hidden)]
@@ -4601,19 +4300,6 @@ impl DataCellsFilter {
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub fn column_wildcard(&self) -> std::option::Option<&crate::model::ColumnWildcard> {
         self.column_wildcard.as_ref()
-    }
-}
-impl std::fmt::Debug for DataCellsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataCellsFilter");
-        formatter.field("table_catalog_id", &self.table_catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("name", &self.name);
-        formatter.field("row_filter", &self.row_filter);
-        formatter.field("column_names", &self.column_names);
-        formatter.field("column_wildcard", &self.column_wildcard);
-        formatter.finish()
     }
 }
 /// See [`DataCellsFilter`](crate::model::DataCellsFilter).
@@ -4747,7 +4433,7 @@ impl DataCellsFilter {
 
 /// <p>A PartiQL predicate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RowFilter {
     /// <p>A filter expression.</p>
     #[doc(hidden)]
@@ -4764,14 +4450,6 @@ impl RowFilter {
     /// <p>A wildcard for all rows.</p>
     pub fn all_rows_wildcard(&self) -> std::option::Option<&crate::model::AllRowsWildcard> {
         self.all_rows_wildcard.as_ref()
-    }
-}
-impl std::fmt::Debug for RowFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RowFilter");
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("all_rows_wildcard", &self.all_rows_wildcard);
-        formatter.finish()
     }
 }
 /// See [`RowFilter`](crate::model::RowFilter).
@@ -4828,14 +4506,8 @@ impl RowFilter {
 
 /// <p>A structure that you pass to indicate you want all rows in a filter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllRowsWildcard {}
-impl std::fmt::Debug for AllRowsWildcard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllRowsWildcard");
-        formatter.finish()
-    }
-}
 /// See [`AllRowsWildcard`](crate::model::AllRowsWildcard).
 pub mod all_rows_wildcard {
 
@@ -4858,7 +4530,7 @@ impl AllRowsWildcard {
 
 /// <p>Defines the valid range of work unit IDs for querying the execution service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkUnitRange {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
     #[doc(hidden)]
@@ -4882,15 +4554,6 @@ impl WorkUnitRange {
     /// <p>A work token used to query the execution service.</p>
     pub fn work_unit_token(&self) -> std::option::Option<&str> {
         self.work_unit_token.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkUnitRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkUnitRange");
-        formatter.field("work_unit_id_max", &self.work_unit_id_max);
-        formatter.field("work_unit_id_min", &self.work_unit_id_min);
-        formatter.field("work_unit_token", &self.work_unit_token);
-        formatter.finish()
     }
 }
 /// See [`WorkUnitRange`](crate::model::WorkUnitRange).
@@ -5046,7 +4709,7 @@ impl AsRef<str> for PermissionType {
 
 /// <p>A structure used to include auditing information on the privileged API. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditContext {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
     #[doc(hidden)]
@@ -5056,13 +4719,6 @@ impl AuditContext {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
     pub fn additional_audit_context(&self) -> std::option::Option<&str> {
         self.additional_audit_context.as_deref()
-    }
-}
-impl std::fmt::Debug for AuditContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditContext");
-        formatter.field("additional_audit_context", &self.additional_audit_context);
-        formatter.finish()
     }
 }
 /// See [`AuditContext`](crate::model::AuditContext).
@@ -5104,7 +4760,7 @@ impl AuditContext {
 
 /// <p>Contains a list of values defining partitions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartitionValueList {
     /// <p>The list of partition values.</p>
     #[doc(hidden)]
@@ -5114,13 +4770,6 @@ impl PartitionValueList {
     /// <p>The list of partition values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for PartitionValueList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartitionValueList");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`PartitionValueList`](crate::model::PartitionValueList).
@@ -5168,7 +4817,7 @@ impl PartitionValueList {
 
 /// <p>A structure containing a list of partition values and table objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartitionObjects {
     /// <p>A list of partition values.</p>
     #[doc(hidden)]
@@ -5185,14 +4834,6 @@ impl PartitionObjects {
     /// <p>A list of table objects</p>
     pub fn objects(&self) -> std::option::Option<&[crate::model::TableObject]> {
         self.objects.as_deref()
-    }
-}
-impl std::fmt::Debug for PartitionObjects {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartitionObjects");
-        formatter.field("partition_values", &self.partition_values);
-        formatter.field("objects", &self.objects);
-        formatter.finish()
     }
 }
 /// See [`PartitionObjects`](crate::model::PartitionObjects).
@@ -5261,7 +4902,7 @@ impl PartitionObjects {
 
 /// <p>Specifies the details of a governed table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableObject {
     /// <p>The Amazon S3 location of the object.</p>
     #[doc(hidden)]
@@ -5285,15 +4926,6 @@ impl TableObject {
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub fn size(&self) -> i64 {
         self.size
-    }
-}
-impl std::fmt::Debug for TableObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableObject");
-        formatter.field("uri", &self.uri);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`TableObject`](crate::model::TableObject).
@@ -5356,7 +4988,7 @@ impl TableObject {
 
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlanningStatistics {
     /// <p>An estimate of the data that was scanned in bytes.</p>
     #[doc(hidden)]
@@ -5387,22 +5019,6 @@ impl PlanningStatistics {
     /// <p>The number of work units generated.</p>
     pub fn work_units_generated_count(&self) -> i64 {
         self.work_units_generated_count
-    }
-}
-impl std::fmt::Debug for PlanningStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlanningStatistics");
-        formatter.field(
-            "estimated_data_to_scan_bytes",
-            &self.estimated_data_to_scan_bytes,
-        );
-        formatter.field("planning_time_millis", &self.planning_time_millis);
-        formatter.field("queue_time_millis", &self.queue_time_millis);
-        formatter.field(
-            "work_units_generated_count",
-            &self.work_units_generated_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`PlanningStatistics`](crate::model::PlanningStatistics).
@@ -5477,7 +5093,7 @@ impl PlanningStatistics {
 
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionStatistics {
     /// <p>The average time the request took to be executed.</p>
     #[doc(hidden)]
@@ -5501,18 +5117,6 @@ impl ExecutionStatistics {
     /// <p>The number of work units executed.</p>
     pub fn work_units_executed_count(&self) -> i64 {
         self.work_units_executed_count
-    }
-}
-impl std::fmt::Debug for ExecutionStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionStatistics");
-        formatter.field(
-            "average_execution_time_millis",
-            &self.average_execution_time_millis,
-        );
-        formatter.field("data_scanned_bytes", &self.data_scanned_bytes);
-        formatter.field("work_units_executed_count", &self.work_units_executed_count);
-        formatter.finish()
     }
 }
 /// See [`ExecutionStatistics`](crate::model::ExecutionStatistics).
@@ -5691,7 +5295,7 @@ impl AsRef<str> for QueryStateString {
 
 /// <p>An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that <code>VirtualPut</code> was called before writing the object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualObject {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
     #[doc(hidden)]
@@ -5708,14 +5312,6 @@ impl VirtualObject {
     /// <p>The ETag of the Amazon S3 object.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualObject");
-        formatter.field("uri", &self.uri);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`VirtualObject`](crate::model::VirtualObject).
@@ -5766,7 +5362,7 @@ impl VirtualObject {
 
 /// <p>A list of failures when performing a batch grant or batch revoke operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPermissionsFailureEntry {
     /// <p>An identifier for an entry of the batch request.</p>
     #[doc(hidden)]
@@ -5785,14 +5381,6 @@ impl BatchPermissionsFailureEntry {
     /// <p>An error message that applies to the failure of the entry.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchPermissionsFailureEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPermissionsFailureEntry");
-        formatter.field("request_entry", &self.request_entry);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry).
@@ -5846,7 +5434,7 @@ impl BatchPermissionsFailureEntry {
 
 /// <p>A permission to a resource granted by batch operation to the principal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPermissionsRequestEntry {
     /// <p>A unique identifier for the batch permissions request entry.</p>
     #[doc(hidden)]
@@ -5886,20 +5474,6 @@ impl BatchPermissionsRequestEntry {
         &self,
     ) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions_with_grant_option.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPermissionsRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPermissionsRequestEntry");
-        formatter.field("id", &self.id);
-        formatter.field("principal", &self.principal);
-        formatter.field("resource", &self.resource);
-        formatter.field("permissions", &self.permissions);
-        formatter.field(
-            "permissions_with_grant_option",
-            &self.permissions_with_grant_option,
-        );
-        formatter.finish()
     }
 }
 /// See [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry).

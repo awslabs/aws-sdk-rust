@@ -1789,7 +1789,7 @@ impl StopProductSubscriptionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopProductSubscriptionInput {
     /// <p>The user name from the identity provider for the user.</p>
     #[doc(hidden)]
@@ -1822,20 +1822,10 @@ impl StopProductSubscriptionInput {
         self.domain.as_deref()
     }
 }
-impl std::fmt::Debug for StopProductSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopProductSubscriptionInput");
-        formatter.field("username", &self.username);
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("product", &self.product);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartProductSubscriptionInput {
     /// <p>The user name from the identity provider of the user.</p>
     #[doc(hidden)]
@@ -1868,20 +1858,10 @@ impl StartProductSubscriptionInput {
         self.domain.as_deref()
     }
 }
-impl std::fmt::Debug for StartProductSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartProductSubscriptionInput");
-        formatter.field("username", &self.username);
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("product", &self.product);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
@@ -1900,18 +1880,10 @@ impl RegisterIdentityProviderInput {
         self.product.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterIdentityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterIdentityProviderInput");
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("product", &self.product);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserAssociationsInput {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     #[doc(hidden)]
@@ -1951,21 +1923,10 @@ impl ListUserAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUserAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserAssociationsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProductSubscriptionsInput {
     /// <p>The name of the user-based subscription product.</p>
     #[doc(hidden)]
@@ -2005,21 +1966,10 @@ impl ListProductSubscriptionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProductSubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProductSubscriptionsInput");
-        formatter.field("product", &self.product);
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstancesInput {
     /// <p>Maximum number of results to return in a single call.</p>
     #[doc(hidden)]
@@ -2045,19 +1995,10 @@ impl ListInstancesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstancesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityProvidersInput {
     /// <p>Maximum number of results to return in a single call.</p>
     #[doc(hidden)]
@@ -2076,18 +2017,10 @@ impl ListIdentityProvidersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentityProvidersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityProvidersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateUserInput {
     /// <p>The user name from the identity provider for the user.</p>
     #[doc(hidden)]
@@ -2120,20 +2053,10 @@ impl DisassociateUserInput {
         self.domain.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateUserInput");
-        formatter.field("username", &self.username);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
@@ -2152,18 +2075,10 @@ impl DeregisterIdentityProviderInput {
         self.product.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterIdentityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterIdentityProviderInput");
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("product", &self.product);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateUserInput {
     /// <p>The user name from the identity provider for the user.</p>
     #[doc(hidden)]
@@ -2194,15 +2109,5 @@ impl AssociateUserInput {
     /// <p>The domain name of the user.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateUserInput");
-        formatter.field("username", &self.username);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }

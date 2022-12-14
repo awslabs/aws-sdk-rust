@@ -2,7 +2,7 @@
 
 /// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where AWS Application Cost Profiler reports are generated and then written to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl S3Location {
     /// <p>Prefix for the location to write to.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -262,7 +254,7 @@ impl AsRef<str> for ReportFrequency {
 
 /// <p>The configuration of a report in AWS Application Cost Profiler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportDefinition {
     /// <p>The ID of the report.</p>
     #[doc(hidden)]
@@ -314,19 +306,6 @@ impl ReportDefinition {
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ReportDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportDefinition");
-        formatter.field("report_id", &self.report_id);
-        formatter.field("report_description", &self.report_description);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field("format", &self.format);
-        formatter.field("destination_s3_location", &self.destination_s3_location);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`ReportDefinition`](crate::model::ReportDefinition).
@@ -452,7 +431,7 @@ impl ReportDefinition {
 
 /// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where usage data is read from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceS3Location {
     /// <p>Name of the bucket.</p>
     #[doc(hidden)]
@@ -476,15 +455,6 @@ impl SourceS3Location {
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
     pub fn region(&self) -> std::option::Option<&crate::model::S3BucketRegion> {
         self.region.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceS3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceS3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`SourceS3Location`](crate::model::SourceS3Location).

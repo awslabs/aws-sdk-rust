@@ -2,7 +2,7 @@
 
 /// <p>Information about a template location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateLocation {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl TemplateLocation {
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateLocation");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.finish()
     }
 }
 /// See [`TemplateLocation`](crate::model::TemplateLocation).
@@ -77,7 +69,7 @@ impl TemplateLocation {
 
 /// <p>The object that contains the Docker image URI for either your robot or simulation applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Environment {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
     #[doc(hidden)]
@@ -87,13 +79,6 @@ impl Environment {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
-    }
-}
-impl std::fmt::Debug for Environment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Environment");
-        formatter.field("uri", &self.uri);
-        formatter.finish()
     }
 }
 /// See [`Environment`](crate::model::Environment).
@@ -130,7 +115,7 @@ impl Environment {
 
 /// <p>Information about a rendering engine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenderingEngine {
     /// <p>The name of the rendering engine.</p>
     #[doc(hidden)]
@@ -147,14 +132,6 @@ impl RenderingEngine {
     /// <p>The version of the rendering engine.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for RenderingEngine {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenderingEngine");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`RenderingEngine`](crate::model::RenderingEngine).
@@ -295,7 +272,7 @@ impl AsRef<str> for RenderingEngineType {
 
 /// <p>Information about a robot software suite (ROS distribution).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RobotSoftwareSuite {
     /// <p>The name of the robot software suite (ROS distribution).</p>
     #[doc(hidden)]
@@ -312,14 +289,6 @@ impl RobotSoftwareSuite {
     /// <p>The version of the robot software suite (ROS distribution).</p>
     pub fn version(&self) -> std::option::Option<&crate::model::RobotSoftwareSuiteVersionType> {
         self.version.as_ref()
-    }
-}
-impl std::fmt::Debug for RobotSoftwareSuite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RobotSoftwareSuite");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
@@ -575,7 +544,7 @@ impl AsRef<str> for RobotSoftwareSuiteType {
 
 /// <p>Information about a simulation software suite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulationSoftwareSuite {
     /// <p>The name of the simulation software suite.</p>
     #[doc(hidden)]
@@ -592,14 +561,6 @@ impl SimulationSoftwareSuite {
     /// <p>The version of the simulation software suite.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for SimulationSoftwareSuite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulationSoftwareSuite");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
@@ -750,7 +711,7 @@ impl AsRef<str> for SimulationSoftwareSuiteType {
 
 /// <p>Information about a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// <p>The s3 bucket name.</p>
     #[doc(hidden)]
@@ -781,16 +742,6 @@ impl Source {
     /// <p>The taget processor architecture for the application.</p>
     pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
         self.architecture.as_ref()
-    }
-}
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.field("etag", &self.etag);
-        formatter.field("architecture", &self.architecture);
-        formatter.finish()
     }
 }
 /// See [`Source`](crate::model::Source).
@@ -963,7 +914,7 @@ impl AsRef<str> for Architecture {
 
 /// <p>Information about a source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceConfig {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
@@ -987,15 +938,6 @@ impl SourceConfig {
     /// <p>The target processor architecture for the application.</p>
     pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
         self.architecture.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceConfig");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.field("architecture", &self.architecture);
-        formatter.finish()
     }
 }
 /// See [`SourceConfig`](crate::model::SourceConfig).
@@ -1300,7 +1242,7 @@ impl AsRef<str> for DeploymentJobErrorCode {
 
 /// <p>Information about a deployment application configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentApplicationConfig {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     #[doc(hidden)]
@@ -1324,15 +1266,6 @@ impl DeploymentApplicationConfig {
     /// <p>The launch configuration.</p>
     pub fn launch_config(&self) -> std::option::Option<&crate::model::DeploymentLaunchConfig> {
         self.launch_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentApplicationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentApplicationConfig");
-        formatter.field("application", &self.application);
-        formatter.field("application_version", &self.application_version);
-        formatter.field("launch_config", &self.launch_config);
-        formatter.finish()
     }
 }
 /// See [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
@@ -1401,7 +1334,7 @@ impl DeploymentApplicationConfig {
 
 /// <p>Configuration information for a deployment launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentLaunchConfig {
     /// <p>The package name.</p>
     #[doc(hidden)]
@@ -1443,17 +1376,6 @@ impl DeploymentLaunchConfig {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.environment_variables.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentLaunchConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentLaunchConfig");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("pre_launch_file", &self.pre_launch_file);
-        formatter.field("launch_file", &self.launch_file);
-        formatter.field("post_launch_file", &self.post_launch_file);
-        formatter.field("environment_variables", &self.environment_variables);
-        formatter.finish()
     }
 }
 /// See [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
@@ -1563,7 +1485,7 @@ impl DeploymentLaunchConfig {
 
 /// <p>Information about a deployment configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentConfig {
     /// <p>The percentage of robots receiving the deployment at the same time.</p>
     #[doc(hidden)]
@@ -1594,25 +1516,6 @@ impl DeploymentConfig {
     /// <p>The download condition file.</p>
     pub fn download_condition_file(&self) -> std::option::Option<&crate::model::S3Object> {
         self.download_condition_file.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentConfig");
-        formatter.field(
-            "concurrent_deployment_percentage",
-            &self.concurrent_deployment_percentage,
-        );
-        formatter.field(
-            "failure_threshold_percentage",
-            &self.failure_threshold_percentage,
-        );
-        formatter.field(
-            "robot_deployment_timeout_in_seconds",
-            &self.robot_deployment_timeout_in_seconds,
-        );
-        formatter.field("download_condition_file", &self.download_condition_file);
-        formatter.finish()
     }
 }
 /// See [`DeploymentConfig`](crate::model::DeploymentConfig).
@@ -1696,7 +1599,7 @@ impl DeploymentConfig {
 
 /// <p>Information about an S3 object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Object {
     /// <p>The bucket containing the object.</p>
     #[doc(hidden)]
@@ -1720,15 +1623,6 @@ impl S3Object {
     /// <p>The etag of the object.</p>
     pub fn etag(&self) -> std::option::Option<&str> {
         self.etag.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Object {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Object");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("etag", &self.etag);
-        formatter.finish()
     }
 }
 /// See [`S3Object`](crate::model::S3Object).
@@ -1908,7 +1802,7 @@ impl AsRef<str> for DeploymentStatus {
 
 /// <p>Summary information for a simulation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     #[doc(hidden)]
@@ -1967,23 +1861,6 @@ impl SimulationJobSummary {
     /// <p>The compute type for the simulation job summary.</p>
     pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
         self.compute_type.as_ref()
-    }
-}
-impl std::fmt::Debug for SimulationJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulationJobSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "simulation_application_names",
-            &self.simulation_application_names,
-        );
-        formatter.field("robot_application_names", &self.robot_application_names);
-        formatter.field("data_source_names", &self.data_source_names);
-        formatter.field("compute_type", &self.compute_type);
-        formatter.finish()
     }
 }
 /// See [`SimulationJobSummary`](crate::model::SimulationJobSummary).
@@ -2379,7 +2256,7 @@ impl AsRef<str> for SimulationJobStatus {
 
 /// <p>Information about a simulation job request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulationJobRequest {
     /// <p>The output location.</p>
     #[doc(hidden)]
@@ -2508,27 +2385,6 @@ impl SimulationJobRequest {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SimulationJobRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulationJobRequest");
-        formatter.field("output_location", &self.output_location);
-        formatter.field("logging_config", &self.logging_config);
-        formatter.field(
-            "max_job_duration_in_seconds",
-            &self.max_job_duration_in_seconds,
-        );
-        formatter.field("iam_role", &self.iam_role);
-        formatter.field("failure_behavior", &self.failure_behavior);
-        formatter.field("use_default_applications", &self.use_default_applications);
-        formatter.field("robot_applications", &self.robot_applications);
-        formatter.field("simulation_applications", &self.simulation_applications);
-        formatter.field("data_sources", &self.data_sources);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("compute", &self.compute);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SimulationJobRequest`](crate::model::SimulationJobRequest).
@@ -2792,7 +2648,7 @@ impl SimulationJobRequest {
 
 /// <p>Compute information for the simulation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Compute {
     /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
     #[doc(hidden)]
@@ -2816,15 +2672,6 @@ impl Compute {
     /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
     pub fn gpu_unit_limit(&self) -> std::option::Option<i32> {
         self.gpu_unit_limit
-    }
-}
-impl std::fmt::Debug for Compute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Compute");
-        formatter.field("simulation_unit_limit", &self.simulation_unit_limit);
-        formatter.field("compute_type", &self.compute_type);
-        formatter.field("gpu_unit_limit", &self.gpu_unit_limit);
-        formatter.finish()
     }
 }
 /// See [`Compute`](crate::model::Compute).
@@ -2890,7 +2737,7 @@ impl Compute {
 
 /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
     #[doc(hidden)]
@@ -2914,15 +2761,6 @@ impl VpcConfig {
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn assign_public_ip(&self) -> bool {
         self.assign_public_ip
-    }
-}
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("assign_public_ip", &self.assign_public_ip);
-        formatter.finish()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
@@ -3003,7 +2841,7 @@ impl VpcConfig {
 
 /// <p>Information about a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceConfig {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -3049,17 +2887,6 @@ impl DataSourceConfig {
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceConfig");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_keys", &self.s3_keys);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`DataSourceConfig`](crate::model::DataSourceConfig).
@@ -3261,7 +3088,7 @@ impl AsRef<str> for DataSourceType {
 
 /// <p>Information about a simulation application configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulationApplicationConfig {
     /// <p>The application information for the simulation application.</p>
     #[doc(hidden)]
@@ -3345,23 +3172,6 @@ impl SimulationApplicationConfig {
     )]
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
-    }
-}
-impl std::fmt::Debug for SimulationApplicationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulationApplicationConfig");
-        formatter.field("application", &self.application);
-        formatter.field("application_version", &self.application_version);
-        formatter.field("launch_config", &self.launch_config);
-        formatter.field("upload_configurations", &self.upload_configurations);
-        formatter.field("world_configs", &self.world_configs);
-        formatter.field(
-            "use_default_upload_configurations",
-            &self.use_default_upload_configurations,
-        );
-        formatter.field("tools", &self.tools);
-        formatter.field("use_default_tools", &self.use_default_tools);
-        formatter.finish()
     }
 }
 /// See [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
@@ -3543,7 +3353,7 @@ impl SimulationApplicationConfig {
 
 /// <p>Information about a tool. Tools are used in a simulation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tool {
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     #[doc(hidden)]
@@ -3581,20 +3391,6 @@ impl Tool {
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub fn exit_behavior(&self) -> std::option::Option<&crate::model::ExitBehavior> {
         self.exit_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for Tool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tool");
-        formatter.field("stream_ui", &self.stream_ui);
-        formatter.field("name", &self.name);
-        formatter.field("command", &self.command);
-        formatter.field(
-            "stream_output_to_cloud_watch",
-            &self.stream_output_to_cloud_watch,
-        );
-        formatter.field("exit_behavior", &self.exit_behavior);
-        formatter.finish()
     }
 }
 /// See [`Tool`](crate::model::Tool).
@@ -3777,7 +3573,7 @@ impl AsRef<str> for ExitBehavior {
 
 /// <p>Configuration information for a world.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorldConfig {
     /// <p>The world generated by Simulation WorldForge.</p>
     #[doc(hidden)]
@@ -3787,13 +3583,6 @@ impl WorldConfig {
     /// <p>The world generated by Simulation WorldForge.</p>
     pub fn world(&self) -> std::option::Option<&str> {
         self.world.as_deref()
-    }
-}
-impl std::fmt::Debug for WorldConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorldConfig");
-        formatter.field("world", &self.world);
-        formatter.finish()
     }
 }
 /// See [`WorldConfig`](crate::model::WorldConfig).
@@ -3830,7 +3619,7 @@ impl WorldConfig {
 
 /// <p>Provides upload configuration information. Files are uploaded from the simulation job to a location you specify. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadConfiguration {
     /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
     /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
@@ -3898,15 +3687,6 @@ impl UploadConfiguration {
     /// </dl>
     pub fn upload_behavior(&self) -> std::option::Option<&crate::model::UploadBehavior> {
         self.upload_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for UploadConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("path", &self.path);
-        formatter.field("upload_behavior", &self.upload_behavior);
-        formatter.finish()
     }
 }
 /// See [`UploadConfiguration`](crate::model::UploadConfiguration).
@@ -4106,7 +3886,7 @@ impl AsRef<str> for UploadBehavior {
 
 /// <p>Information about a launch configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchConfig {
     /// <p>The package name.</p>
     #[doc(hidden)]
@@ -4159,18 +3939,6 @@ impl LaunchConfig {
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     pub fn command(&self) -> std::option::Option<&[std::string::String]> {
         self.command.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchConfig");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("launch_file", &self.launch_file);
-        formatter.field("environment_variables", &self.environment_variables);
-        formatter.field("port_forwarding_config", &self.port_forwarding_config);
-        formatter.field("stream_ui", &self.stream_ui);
-        formatter.field("command", &self.command);
-        formatter.finish()
     }
 }
 /// See [`LaunchConfig`](crate::model::LaunchConfig).
@@ -4300,7 +4068,7 @@ impl LaunchConfig {
 
 /// <p>Configuration information for port forwarding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortForwardingConfig {
     /// <p>The port mappings for the configuration.</p>
     #[doc(hidden)]
@@ -4310,13 +4078,6 @@ impl PortForwardingConfig {
     /// <p>The port mappings for the configuration.</p>
     pub fn port_mappings(&self) -> std::option::Option<&[crate::model::PortMapping]> {
         self.port_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for PortForwardingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortForwardingConfig");
-        formatter.field("port_mappings", &self.port_mappings);
-        formatter.finish()
     }
 }
 /// See [`PortForwardingConfig`](crate::model::PortForwardingConfig).
@@ -4364,7 +4125,7 @@ impl PortForwardingConfig {
 
 /// <p>An object representing a port mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
     #[doc(hidden)]
@@ -4388,15 +4149,6 @@ impl PortMapping {
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
     pub fn enable_on_public_ip(&self) -> bool {
         self.enable_on_public_ip
-    }
-}
-impl std::fmt::Debug for PortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortMapping");
-        formatter.field("job_port", &self.job_port);
-        formatter.field("application_port", &self.application_port);
-        formatter.field("enable_on_public_ip", &self.enable_on_public_ip);
-        formatter.finish()
     }
 }
 /// See [`PortMapping`](crate::model::PortMapping).
@@ -4459,7 +4211,7 @@ impl PortMapping {
 
 /// <p>Application configuration information for a robot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RobotApplicationConfig {
     /// <p>The application information for the robot application.</p>
     #[doc(hidden)]
@@ -4536,22 +4288,6 @@ impl RobotApplicationConfig {
     )]
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
-    }
-}
-impl std::fmt::Debug for RobotApplicationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RobotApplicationConfig");
-        formatter.field("application", &self.application);
-        formatter.field("application_version", &self.application_version);
-        formatter.field("launch_config", &self.launch_config);
-        formatter.field("upload_configurations", &self.upload_configurations);
-        formatter.field(
-            "use_default_upload_configurations",
-            &self.use_default_upload_configurations,
-        );
-        formatter.field("tools", &self.tools);
-        formatter.field("use_default_tools", &self.use_default_tools);
-        formatter.finish()
     }
 }
 /// See [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
@@ -4802,7 +4538,7 @@ impl AsRef<str> for FailureBehavior {
 
 /// <p>The logging configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfig {
     /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
@@ -4822,13 +4558,6 @@ impl LoggingConfig {
     )]
     pub fn record_all_ros_topics(&self) -> std::option::Option<bool> {
         self.record_all_ros_topics
-    }
-}
-impl std::fmt::Debug for LoggingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfig");
-        formatter.field("record_all_ros_topics", &self.record_all_ros_topics);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfig`](crate::model::LoggingConfig).
@@ -4877,7 +4606,7 @@ impl LoggingConfig {
 
 /// <p>The output location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputLocation {
     /// <p>The S3 bucket for output.</p>
     #[doc(hidden)]
@@ -4894,14 +4623,6 @@ impl OutputLocation {
     /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
     pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputLocation");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.finish()
     }
 }
 /// See [`OutputLocation`](crate::model::OutputLocation).
@@ -4952,7 +4673,7 @@ impl OutputLocation {
 
 /// <p>Information about a failed create simulation job request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedCreateSimulationJobRequest {
     /// <p>The simulation job request.</p>
     #[doc(hidden)]
@@ -4983,16 +4704,6 @@ impl FailedCreateSimulationJobRequest {
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
     pub fn failed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.failed_at.as_ref()
-    }
-}
-impl std::fmt::Debug for FailedCreateSimulationJobRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedCreateSimulationJobRequest");
-        formatter.field("request", &self.request);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failed_at", &self.failed_at);
-        formatter.finish()
     }
 }
 /// See [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
@@ -5475,7 +5186,7 @@ impl AsRef<str> for SimulationJobBatchErrorCode {
 
 /// <p>Information about the batch policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPolicy {
     /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
     /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
@@ -5496,14 +5207,6 @@ impl BatchPolicy {
     /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
     pub fn max_concurrency(&self) -> std::option::Option<i32> {
         self.max_concurrency
-    }
-}
-impl std::fmt::Debug for BatchPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPolicy");
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.field("max_concurrency", &self.max_concurrency);
-        formatter.finish()
     }
 }
 /// See [`BatchPolicy`](crate::model::BatchPolicy).
@@ -5695,7 +5398,7 @@ impl AsRef<str> for SimulationJobBatchStatus {
 
 /// <p>Summary information for a template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSummary {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     #[doc(hidden)]
@@ -5733,17 +5436,6 @@ impl TemplateSummary {
     /// <p>The version of the template that you're using.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
@@ -5836,7 +5528,7 @@ impl TemplateSummary {
 
 /// <p>Information about a world.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorldSummary {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
     #[doc(hidden)]
@@ -5867,16 +5559,6 @@ impl WorldSummary {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
-    }
-}
-impl std::fmt::Debug for WorldSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorldSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("generation_job", &self.generation_job);
-        formatter.field("template", &self.template);
-        formatter.finish()
     }
 }
 /// See [`WorldSummary`](crate::model::WorldSummary).
@@ -5957,7 +5639,7 @@ impl WorldSummary {
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -5974,14 +5656,6 @@ impl Filter {
     /// <p>A list of values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -6041,7 +5715,7 @@ impl Filter {
 
 /// <p>Information about a world generator job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorldGenerationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
     #[doc(hidden)]
@@ -6181,19 +5855,6 @@ impl WorldGenerationJobSummary {
     /// <p>The number of worlds that failed.</p>
     pub fn failed_world_count(&self) -> i32 {
         self.failed_world_count
-    }
-}
-impl std::fmt::Debug for WorldGenerationJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorldGenerationJobSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("template", &self.template);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("world_count", &self.world_count);
-        formatter.field("succeeded_world_count", &self.succeeded_world_count);
-        formatter.field("failed_world_count", &self.failed_world_count);
-        formatter.finish()
     }
 }
 /// See [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
@@ -6402,7 +6063,7 @@ impl WorldGenerationJobSummary {
 /// <p>The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p>
 /// <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorldCount {
     /// <p>The number of unique floorplans.</p>
     #[doc(hidden)]
@@ -6419,17 +6080,6 @@ impl WorldCount {
     /// <p>The number of unique interiors per floorplan.</p>
     pub fn interior_count_per_floorplan(&self) -> std::option::Option<i32> {
         self.interior_count_per_floorplan
-    }
-}
-impl std::fmt::Debug for WorldCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorldCount");
-        formatter.field("floorplan_count", &self.floorplan_count);
-        formatter.field(
-            "interior_count_per_floorplan",
-            &self.interior_count_per_floorplan,
-        );
-        formatter.finish()
     }
 }
 /// See [`WorldCount`](crate::model::WorldCount).
@@ -6605,7 +6255,7 @@ impl AsRef<str> for WorldGenerationJobStatus {
 
 /// <p>Information about a world export job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorldExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
     #[doc(hidden)]
@@ -6719,17 +6369,6 @@ impl WorldExportJobSummary {
     /// <p>The output location.</p>
     pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
-    }
-}
-impl std::fmt::Debug for WorldExportJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorldExportJobSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("worlds", &self.worlds);
-        formatter.field("output_location", &self.output_location);
-        formatter.finish()
     }
 }
 /// See [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
@@ -7029,7 +6668,7 @@ impl AsRef<str> for WorldExportJobStatus {
 
 /// <p>Information about a simulation job batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulationJobBatchSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
     #[doc(hidden)]
@@ -7195,19 +6834,6 @@ impl SimulationJobBatchSummary {
     /// <p>The number of created simulation job requests.</p>
     pub fn created_request_count(&self) -> i32 {
         self.created_request_count
-    }
-}
-impl std::fmt::Debug for SimulationJobBatchSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulationJobBatchSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("failed_request_count", &self.failed_request_count);
-        formatter.field("pending_request_count", &self.pending_request_count);
-        formatter.field("created_request_count", &self.created_request_count);
-        formatter.finish()
     }
 }
 /// See [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
@@ -7441,7 +7067,7 @@ impl SimulationJobBatchSummary {
 
 /// <p>Summary information for a simulation application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulationApplicationSummary {
     /// <p>The name of the simulation application.</p>
     #[doc(hidden)]
@@ -7488,18 +7114,6 @@ impl SimulationApplicationSummary {
         &self,
     ) -> std::option::Option<&crate::model::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
-    }
-}
-impl std::fmt::Debug for SimulationApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulationApplicationSummary");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("robot_software_suite", &self.robot_software_suite);
-        formatter.field("simulation_software_suite", &self.simulation_software_suite);
-        formatter.finish()
     }
 }
 /// See [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
@@ -7611,7 +7225,7 @@ impl SimulationApplicationSummary {
 
 /// <p>Information about a robot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Robot {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     #[doc(hidden)]
@@ -7677,21 +7291,6 @@ impl Robot {
     /// <p>The time of the last deployment.</p>
     pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Robot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Robot");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("status", &self.status);
-        formatter.field("green_grass_group_id", &self.green_grass_group_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("last_deployment_job", &self.last_deployment_job);
-        formatter.field("last_deployment_time", &self.last_deployment_time);
-        formatter.finish()
     }
 }
 /// See [`Robot`](crate::model::Robot).
@@ -7964,7 +7563,7 @@ impl AsRef<str> for RobotStatus {
 
 /// <p>Summary information for a robot application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RobotApplicationSummary {
     /// <p>The name of the robot application.</p>
     #[doc(hidden)]
@@ -8002,17 +7601,6 @@ impl RobotApplicationSummary {
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
-    }
-}
-impl std::fmt::Debug for RobotApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RobotApplicationSummary");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("robot_software_suite", &self.robot_software_suite);
-        formatter.finish()
     }
 }
 /// See [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
@@ -8105,7 +7693,7 @@ impl RobotApplicationSummary {
 
 /// <p>Information about a fleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Fleet {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -8150,18 +7738,6 @@ impl Fleet {
     /// <p>The time of the last deployment.</p>
     pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Fleet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Fleet");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_deployment_status", &self.last_deployment_status);
-        formatter.field("last_deployment_job", &self.last_deployment_job);
-        formatter.field("last_deployment_time", &self.last_deployment_time);
-        formatter.finish()
     }
 }
 /// See [`Fleet`](crate::model::Fleet).
@@ -8272,7 +7848,7 @@ impl Fleet {
 
 /// <p>Information about a deployment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentJob {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     #[doc(hidden)]
@@ -8334,23 +7910,6 @@ impl DeploymentJob {
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentJob");
-        formatter.field("arn", &self.arn);
-        formatter.field("fleet", &self.fleet);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "deployment_application_configs",
-            &self.deployment_application_configs,
-        );
-        formatter.field("deployment_config", &self.deployment_config);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`DeploymentJob`](crate::model::DeploymentJob).
@@ -8501,7 +8060,7 @@ impl DeploymentJob {
 
 /// <p>Information about worlds that finished.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FinishedWorldsSummary {
     /// <p>The total number of finished worlds.</p>
     #[doc(hidden)]
@@ -8525,15 +8084,6 @@ impl FinishedWorldsSummary {
     /// <p>Information about worlds that failed.</p>
     pub fn failure_summary(&self) -> std::option::Option<&crate::model::FailureSummary> {
         self.failure_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for FinishedWorldsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FinishedWorldsSummary");
-        formatter.field("finished_count", &self.finished_count);
-        formatter.field("succeeded_worlds", &self.succeeded_worlds);
-        formatter.field("failure_summary", &self.failure_summary);
-        formatter.finish()
     }
 }
 /// See [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
@@ -8608,7 +8158,7 @@ impl FinishedWorldsSummary {
 
 /// <p>Information about worlds that failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailureSummary {
     /// <p>The total number of failures.</p>
     #[doc(hidden)]
@@ -8625,14 +8175,6 @@ impl FailureSummary {
     /// <p>The worlds that failed.</p>
     pub fn failures(&self) -> std::option::Option<&[crate::model::WorldFailure]> {
         self.failures.as_deref()
-    }
-}
-impl std::fmt::Debug for FailureSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailureSummary");
-        formatter.field("total_failure_count", &self.total_failure_count);
-        formatter.field("failures", &self.failures);
-        formatter.finish()
     }
 }
 /// See [`FailureSummary`](crate::model::FailureSummary).
@@ -8692,7 +8234,7 @@ impl FailureSummary {
 
 /// <p>Information about a failed world.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorldFailure {
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
@@ -8780,15 +8322,6 @@ impl WorldFailure {
     /// <p>The number of failed worlds.</p>
     pub fn failure_count(&self) -> i32 {
         self.failure_count
-    }
-}
-impl std::fmt::Debug for WorldFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorldFailure");
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("sample_failure_reason", &self.sample_failure_reason);
-        formatter.field("failure_count", &self.failure_count);
-        formatter.finish()
     }
 }
 /// See [`WorldFailure`](crate::model::WorldFailure).
@@ -9159,7 +8692,7 @@ impl AsRef<str> for WorldExportJobErrorCode {
 
 /// <p>Compute information for the simulation job</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeResponse {
     /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
     #[doc(hidden)]
@@ -9183,15 +8716,6 @@ impl ComputeResponse {
     /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
     pub fn gpu_unit_limit(&self) -> std::option::Option<i32> {
         self.gpu_unit_limit
-    }
-}
-impl std::fmt::Debug for ComputeResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeResponse");
-        formatter.field("simulation_unit_limit", &self.simulation_unit_limit);
-        formatter.field("compute_type", &self.compute_type);
-        formatter.field("gpu_unit_limit", &self.gpu_unit_limit);
-        formatter.finish()
     }
 }
 /// See [`ComputeResponse`](crate::model::ComputeResponse).
@@ -9257,7 +8781,7 @@ impl ComputeResponse {
 
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
@@ -9281,15 +8805,6 @@ impl NetworkInterface {
     /// <p>The IPv4 public address of the network interface.</p>
     pub fn public_ip_address(&self) -> std::option::Option<&str> {
         self.public_ip_address.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.field("public_ip_address", &self.public_ip_address);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -9361,7 +8876,7 @@ impl NetworkInterface {
 
 /// <p>VPC configuration associated with your simulation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigResponse {
     /// <p>A list of subnet IDs associated with the simulation job.</p>
     #[doc(hidden)]
@@ -9392,16 +8907,6 @@ impl VpcConfigResponse {
     /// <p>A boolean indicating if a public IP was assigned.</p>
     pub fn assign_public_ip(&self) -> bool {
         self.assign_public_ip
-    }
-}
-impl std::fmt::Debug for VpcConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigResponse");
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("assign_public_ip", &self.assign_public_ip);
-        formatter.finish()
     }
 }
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse).
@@ -9494,7 +8999,7 @@ impl VpcConfigResponse {
 
 /// <p>Information about a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -9540,17 +9045,6 @@ impl DataSource {
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_keys", &self.s3_keys);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
@@ -9657,7 +9151,7 @@ impl DataSource {
 
 /// <p>Information about S3 keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3KeyOutput {
     /// <p>The S3 key.</p>
     #[doc(hidden)]
@@ -9674,14 +9168,6 @@ impl S3KeyOutput {
     /// <p>The etag for the object.</p>
     pub fn etag(&self) -> std::option::Option<&str> {
         self.etag.as_deref()
-    }
-}
-impl std::fmt::Debug for S3KeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3KeyOutput");
-        formatter.field("s3_key", &self.s3_key);
-        formatter.field("etag", &self.etag);
-        formatter.finish()
     }
 }
 /// See [`S3KeyOutput`](crate::model::S3KeyOutput).
@@ -9732,7 +9218,7 @@ impl S3KeyOutput {
 
 /// <p>Information about a robot deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RobotDeployment {
     /// <p>The robot deployment Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -9784,19 +9270,6 @@ impl RobotDeployment {
     /// <p>The robot deployment failure code.</p>
     pub fn failure_code(&self) -> std::option::Option<&crate::model::DeploymentJobErrorCode> {
         self.failure_code.as_ref()
-    }
-}
-impl std::fmt::Debug for RobotDeployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RobotDeployment");
-        formatter.field("arn", &self.arn);
-        formatter.field("deployment_start_time", &self.deployment_start_time);
-        formatter.field("deployment_finish_time", &self.deployment_finish_time);
-        formatter.field("status", &self.status);
-        formatter.field("progress_detail", &self.progress_detail);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.finish()
     }
 }
 /// See [`RobotDeployment`](crate::model::RobotDeployment).
@@ -9922,7 +9395,7 @@ impl RobotDeployment {
 
 /// <p>Information about the progress of a deployment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProgressDetail {
     /// <p>The current progress status.</p>
     /// <dl>
@@ -10029,19 +9502,6 @@ impl ProgressDetail {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     pub fn target_resource(&self) -> std::option::Option<&str> {
         self.target_resource.as_deref()
-    }
-}
-impl std::fmt::Debug for ProgressDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProgressDetail");
-        formatter.field("current_progress", &self.current_progress);
-        formatter.field("percent_done", &self.percent_done);
-        formatter.field(
-            "estimated_time_remaining_seconds",
-            &self.estimated_time_remaining_seconds,
-        );
-        formatter.field("target_resource", &self.target_resource);
-        formatter.finish()
     }
 }
 /// See [`ProgressDetail`](crate::model::ProgressDetail).
@@ -10326,7 +9786,7 @@ impl AsRef<str> for RobotDeploymentStep {
 
 /// <p>Information about a simulation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimulationJob {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     #[doc(hidden)]
@@ -10514,36 +9974,6 @@ impl SimulationJob {
     /// <p>Compute information for the simulation job</p>
     pub fn compute(&self) -> std::option::Option<&crate::model::ComputeResponse> {
         self.compute.as_ref()
-    }
-}
-impl std::fmt::Debug for SimulationJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimulationJob");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("last_started_at", &self.last_started_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("failure_behavior", &self.failure_behavior);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("output_location", &self.output_location);
-        formatter.field("logging_config", &self.logging_config);
-        formatter.field(
-            "max_job_duration_in_seconds",
-            &self.max_job_duration_in_seconds,
-        );
-        formatter.field("simulation_time_millis", &self.simulation_time_millis);
-        formatter.field("iam_role", &self.iam_role);
-        formatter.field("robot_applications", &self.robot_applications);
-        formatter.field("simulation_applications", &self.simulation_applications);
-        formatter.field("data_sources", &self.data_sources);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("network_interface", &self.network_interface);
-        formatter.field("compute", &self.compute);
-        formatter.finish()
     }
 }
 /// See [`SimulationJob`](crate::model::SimulationJob).

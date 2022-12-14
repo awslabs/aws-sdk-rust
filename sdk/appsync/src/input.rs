@@ -10194,7 +10194,7 @@ impl UpdateTypeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTypeInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -10227,20 +10227,10 @@ impl UpdateTypeInput {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTypeInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("definition", &self.definition);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResolverInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -10334,27 +10324,10 @@ impl UpdateResolverInput {
         self.max_batch_size
     }
 }
-impl std::fmt::Debug for UpdateResolverInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResolverInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("field_name", &self.field_name);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("request_mapping_template", &self.request_mapping_template);
-        formatter.field("response_mapping_template", &self.response_mapping_template);
-        formatter.field("kind", &self.kind);
-        formatter.field("pipeline_config", &self.pipeline_config);
-        formatter.field("sync_config", &self.sync_config);
-        formatter.field("caching_config", &self.caching_config);
-        formatter.field("max_batch_size", &self.max_batch_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGraphqlApiInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -10429,28 +10402,10 @@ impl UpdateGraphqlApiInput {
         self.lambda_authorizer_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGraphqlApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGraphqlApiInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("name", &self.name);
-        formatter.field("log_config", &self.log_config);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("user_pool_config", &self.user_pool_config);
-        formatter.field("open_id_connect_config", &self.open_id_connect_config);
-        formatter.field(
-            "additional_authentication_providers",
-            &self.additional_authentication_providers,
-        );
-        formatter.field("xray_enabled", &self.xray_enabled);
-        formatter.field("lambda_authorizer_config", &self.lambda_authorizer_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionInput {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
@@ -10527,26 +10482,10 @@ impl UpdateFunctionInput {
         self.max_batch_size
     }
 }
-impl std::fmt::Debug for UpdateFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("function_id", &self.function_id);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("request_mapping_template", &self.request_mapping_template);
-        formatter.field("response_mapping_template", &self.response_mapping_template);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("sync_config", &self.sync_config);
-        formatter.field("max_batch_size", &self.max_batch_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -10565,18 +10504,10 @@ impl UpdateDomainNameInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSourceInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -10668,33 +10599,10 @@ impl UpdateDataSourceInput {
         self.relational_database_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSourceInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field("dynamodb_config", &self.dynamodb_config);
-        formatter.field("lambda_config", &self.lambda_config);
-        formatter.field("elasticsearch_config", &self.elasticsearch_config);
-        formatter.field(
-            "open_search_service_config",
-            &self.open_search_service_config,
-        );
-        formatter.field("http_config", &self.http_config);
-        formatter.field(
-            "relational_database_config",
-            &self.relational_database_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApiKeyInput {
     /// <p>The ID for the GraphQL API.</p>
     #[doc(hidden)]
@@ -10727,20 +10635,10 @@ impl UpdateApiKeyInput {
         self.expires
     }
 }
-impl std::fmt::Debug for UpdateApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApiKeyInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("expires", &self.expires);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>UpdateApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApiCacheInput {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
@@ -10825,20 +10723,10 @@ impl UpdateApiCacheInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApiCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApiCacheInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("api_caching_behavior", &self.api_caching_behavior);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -10857,18 +10745,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -10891,18 +10771,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSchemaCreationInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -10921,18 +10793,10 @@ impl StartSchemaCreationInput {
         self.definition.as_ref()
     }
 }
-impl std::fmt::Debug for StartSchemaCreationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSchemaCreationInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("definition", &self.definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTypesInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -10965,20 +10829,10 @@ impl ListTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTypesInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("format", &self.format);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -10990,17 +10844,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolversByFunctionInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11033,20 +10880,10 @@ impl ListResolversByFunctionInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListResolversByFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolversByFunctionInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("function_id", &self.function_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolversInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11079,20 +10916,10 @@ impl ListResolversInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListResolversInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolversInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGraphqlApisInput {
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     #[doc(hidden)]
@@ -11111,18 +10938,10 @@ impl ListGraphqlApisInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListGraphqlApisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGraphqlApisInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionsInput {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
@@ -11148,19 +10967,10 @@ impl ListFunctionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFunctionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionsInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainNamesInput {
     /// <p>The API token.</p>
     #[doc(hidden)]
@@ -11179,18 +10989,10 @@ impl ListDomainNamesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDomainNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainNamesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSourcesInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11216,19 +11018,10 @@ impl ListDataSourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSourcesInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApiKeysInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11254,19 +11047,10 @@ impl ListApiKeysInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListApiKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApiKeysInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTypeInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11292,19 +11076,10 @@ impl GetTypeInput {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for GetTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTypeInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSchemaCreationStatusInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11316,17 +11091,10 @@ impl GetSchemaCreationStatusInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSchemaCreationStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSchemaCreationStatusInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11352,19 +11120,10 @@ impl GetResolverInput {
         self.field_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("field_name", &self.field_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntrospectionSchemaInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11390,19 +11149,10 @@ impl GetIntrospectionSchemaInput {
         self.include_directives
     }
 }
-impl std::fmt::Debug for GetIntrospectionSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntrospectionSchemaInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("format", &self.format);
-        formatter.field("include_directives", &self.include_directives);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGraphqlApiInput {
     /// <p>The API ID for the GraphQL API.</p>
     #[doc(hidden)]
@@ -11414,17 +11164,10 @@ impl GetGraphqlApiInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGraphqlApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGraphqlApiInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionInput {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
@@ -11443,18 +11186,10 @@ impl GetFunctionInput {
         self.function_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("function_id", &self.function_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -11466,17 +11201,10 @@ impl GetDomainNameInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataSourceInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11495,18 +11223,10 @@ impl GetDataSourceInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataSourceInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiCacheInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11518,17 +11238,10 @@ impl GetApiCacheInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApiCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiCacheInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiAssociationInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -11540,17 +11253,10 @@ impl GetApiAssociationInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetApiAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiAssociationInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>FlushApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlushApiCacheInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11562,17 +11268,10 @@ impl FlushApiCacheInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for FlushApiCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlushApiCacheInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluateMappingTemplateInput {
     /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
     #[doc(hidden)]
@@ -11591,18 +11290,10 @@ impl EvaluateMappingTemplateInput {
         self.context.as_deref()
     }
 }
-impl std::fmt::Debug for EvaluateMappingTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluateMappingTemplateInput");
-        formatter.field("template", &self.template);
-        formatter.field("context", &self.context);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateApiInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -11614,17 +11305,10 @@ impl DisassociateApiInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateApiInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTypeInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11643,18 +11327,10 @@ impl DeleteTypeInput {
         self.type_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTypeInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResolverInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11680,19 +11356,10 @@ impl DeleteResolverInput {
         self.field_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResolverInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResolverInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("field_name", &self.field_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGraphqlApiInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11704,17 +11371,10 @@ impl DeleteGraphqlApiInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGraphqlApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGraphqlApiInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionInput {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
@@ -11733,18 +11393,10 @@ impl DeleteFunctionInput {
         self.function_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("function_id", &self.function_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -11756,17 +11408,10 @@ impl DeleteDomainNameInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSourceInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11785,18 +11430,10 @@ impl DeleteDataSourceInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSourceInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApiKeyInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11815,18 +11452,10 @@ impl DeleteApiKeyInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApiKeyInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApiCacheInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11838,17 +11467,10 @@ impl DeleteApiCacheInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApiCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApiCacheInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTypeInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
@@ -11876,19 +11498,10 @@ impl CreateTypeInput {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTypeInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("definition", &self.definition);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResolverInput {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
     #[doc(hidden)]
@@ -11982,27 +11595,10 @@ impl CreateResolverInput {
         self.max_batch_size
     }
 }
-impl std::fmt::Debug for CreateResolverInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResolverInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("field_name", &self.field_name);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("request_mapping_template", &self.request_mapping_template);
-        formatter.field("response_mapping_template", &self.response_mapping_template);
-        formatter.field("kind", &self.kind);
-        formatter.field("pipeline_config", &self.pipeline_config);
-        formatter.field("sync_config", &self.sync_config);
-        formatter.field("caching_config", &self.caching_config);
-        formatter.field("max_batch_size", &self.max_batch_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGraphqlApiInput {
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
     #[doc(hidden)]
@@ -12081,28 +11677,10 @@ impl CreateGraphqlApiInput {
         self.lambda_authorizer_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGraphqlApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGraphqlApiInput");
-        formatter.field("name", &self.name);
-        formatter.field("log_config", &self.log_config);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("user_pool_config", &self.user_pool_config);
-        formatter.field("open_id_connect_config", &self.open_id_connect_config);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "additional_authentication_providers",
-            &self.additional_authentication_providers,
-        );
-        formatter.field("xray_enabled", &self.xray_enabled);
-        formatter.field("lambda_authorizer_config", &self.lambda_authorizer_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFunctionInput {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
@@ -12172,25 +11750,10 @@ impl CreateFunctionInput {
         self.max_batch_size
     }
 }
-impl std::fmt::Debug for CreateFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFunctionInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("request_mapping_template", &self.request_mapping_template);
-        formatter.field("response_mapping_template", &self.response_mapping_template);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("sync_config", &self.sync_config);
-        formatter.field("max_batch_size", &self.max_batch_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -12216,19 +11779,10 @@ impl CreateDomainNameInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSourceInput {
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
     #[doc(hidden)]
@@ -12320,33 +11874,10 @@ impl CreateDataSourceInput {
         self.relational_database_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSourceInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field("dynamodb_config", &self.dynamodb_config);
-        formatter.field("lambda_config", &self.lambda_config);
-        formatter.field("elasticsearch_config", &self.elasticsearch_config);
-        formatter.field(
-            "open_search_service_config",
-            &self.open_search_service_config,
-        );
-        formatter.field("http_config", &self.http_config);
-        formatter.field(
-            "relational_database_config",
-            &self.relational_database_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiKeyInput {
     /// <p>The ID for your GraphQL API.</p>
     #[doc(hidden)]
@@ -12372,19 +11903,10 @@ impl CreateApiKeyInput {
         self.expires
     }
 }
-impl std::fmt::Debug for CreateApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApiKeyInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("description", &self.description);
-        formatter.field("expires", &self.expires);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>CreateApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiCacheInput {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
@@ -12483,28 +12005,10 @@ impl CreateApiCacheInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApiCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApiCacheInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("ttl", &self.ttl);
-        formatter.field(
-            "transit_encryption_enabled",
-            &self.transit_encryption_enabled,
-        );
-        formatter.field(
-            "at_rest_encryption_enabled",
-            &self.at_rest_encryption_enabled,
-        );
-        formatter.field("api_caching_behavior", &self.api_caching_behavior);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateApiInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -12521,13 +12025,5 @@ impl AssociateApiInput {
     /// <p>The API ID.</p>
     pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateApiInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
     }
 }

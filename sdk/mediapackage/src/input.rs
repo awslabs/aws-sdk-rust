@@ -3535,7 +3535,7 @@ impl UpdateOriginEndpointInput {
 
 /// Configuration parameters used to update an existing OriginEndpoint.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOriginEndpointInput {
     /// CDN Authorization credentials
     #[doc(hidden)]
@@ -3626,28 +3626,10 @@ impl UpdateOriginEndpointInput {
         self.whitelist.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateOriginEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOriginEndpointInput");
-        formatter.field("authorization", &self.authorization);
-        formatter.field("cmaf_package", &self.cmaf_package);
-        formatter.field("dash_package", &self.dash_package);
-        formatter.field("description", &self.description);
-        formatter.field("hls_package", &self.hls_package);
-        formatter.field("id", &self.id);
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("mss_package", &self.mss_package);
-        formatter.field("origination", &self.origination);
-        formatter.field("startover_window_seconds", &self.startover_window_seconds);
-        formatter.field("time_delay_seconds", &self.time_delay_seconds);
-        formatter.field("whitelist", &self.whitelist);
-        formatter.finish()
-    }
-}
 
 /// Configuration parameters used to update the Channel.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// A short text description of the Channel.
     #[doc(hidden)]
@@ -3666,18 +3648,10 @@ impl UpdateChannelInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelInput");
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3696,18 +3670,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3730,18 +3696,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotateIngestEndpointCredentialsInput {
     /// The ID of the channel the IngestEndpoint is on.
     #[doc(hidden)]
@@ -3760,19 +3718,11 @@ impl RotateIngestEndpointCredentialsInput {
         self.ingest_endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for RotateIngestEndpointCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotateIngestEndpointCredentialsInput");
-        formatter.field("id", &self.id);
-        formatter.field("ingest_endpoint_id", &self.ingest_endpoint_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotateChannelCredentialsInput {
     /// The ID of the channel to update.
     #[doc(hidden)]
@@ -3784,17 +3734,10 @@ impl RotateChannelCredentialsInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for RotateChannelCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotateChannelCredentialsInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3806,17 +3749,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOriginEndpointsInput {
     /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
     #[doc(hidden)]
@@ -3842,19 +3778,10 @@ impl ListOriginEndpointsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOriginEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOriginEndpointsInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHarvestJobsInput {
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
     #[doc(hidden)]
@@ -3887,20 +3814,10 @@ impl ListHarvestJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListHarvestJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHarvestJobsInput");
-        formatter.field("include_channel_id", &self.include_channel_id);
-        formatter.field("include_status", &self.include_status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// Upper bound on number of records to return.
     #[doc(hidden)]
@@ -3919,18 +3836,10 @@ impl ListChannelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOriginEndpointInput {
     /// The ID of the OriginEndpoint.
     #[doc(hidden)]
@@ -3942,17 +3851,10 @@ impl DescribeOriginEndpointInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOriginEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOriginEndpointInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHarvestJobInput {
     /// The ID of the HarvestJob.
     #[doc(hidden)]
@@ -3964,17 +3866,10 @@ impl DescribeHarvestJobInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHarvestJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHarvestJobInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// The ID of a Channel.
     #[doc(hidden)]
@@ -3986,17 +3881,10 @@ impl DescribeChannelInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOriginEndpointInput {
     /// The ID of the OriginEndpoint to delete.
     #[doc(hidden)]
@@ -4008,17 +3896,10 @@ impl DeleteOriginEndpointInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOriginEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOriginEndpointInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// The ID of the Channel to delete.
     #[doc(hidden)]
@@ -4030,17 +3911,10 @@ impl DeleteChannelInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// Configuration parameters used to create a new OriginEndpoint.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOriginEndpointInput {
     /// CDN Authorization credentials
     #[doc(hidden)]
@@ -4149,30 +4023,10 @@ impl CreateOriginEndpointInput {
         self.whitelist.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOriginEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOriginEndpointInput");
-        formatter.field("authorization", &self.authorization);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("cmaf_package", &self.cmaf_package);
-        formatter.field("dash_package", &self.dash_package);
-        formatter.field("description", &self.description);
-        formatter.field("hls_package", &self.hls_package);
-        formatter.field("id", &self.id);
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("mss_package", &self.mss_package);
-        formatter.field("origination", &self.origination);
-        formatter.field("startover_window_seconds", &self.startover_window_seconds);
-        formatter.field("tags", &self.tags);
-        formatter.field("time_delay_seconds", &self.time_delay_seconds);
-        formatter.field("whitelist", &self.whitelist);
-        formatter.finish()
-    }
-}
 
 /// Configuration parameters used to create a new HarvestJob.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHarvestJobInput {
     /// The end of the time-window which will be harvested
     #[doc(hidden)]
@@ -4212,21 +4066,10 @@ impl CreateHarvestJobInput {
         self.start_time.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHarvestJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHarvestJobInput");
-        formatter.field("end_time", &self.end_time);
-        formatter.field("id", &self.id);
-        formatter.field("origin_endpoint_id", &self.origin_endpoint_id);
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 
 /// A new Channel configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// A short text description of the Channel.
     #[doc(hidden)]
@@ -4256,19 +4099,10 @@ impl CreateChannelInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelInput");
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// the option to configure log subscription.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureLogsInput {
     /// Configure egress access logging.
     #[doc(hidden)]
@@ -4292,14 +4126,5 @@ impl ConfigureLogsInput {
     /// Configure ingress access logging.
     pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigureLogsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureLogsInput");
-        formatter.field("egress_access_logs", &self.egress_access_logs);
-        formatter.field("id", &self.id);
-        formatter.field("ingress_access_logs", &self.ingress_access_logs);
-        formatter.finish()
     }
 }

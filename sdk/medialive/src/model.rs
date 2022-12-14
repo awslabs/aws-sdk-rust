@@ -2,7 +2,7 @@
 
 /// Reserved resources available to use
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Reservation {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     #[doc(hidden)]
@@ -144,31 +144,6 @@ impl Reservation {
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn usage_price(&self) -> f64 {
         self.usage_price
-    }
-}
-impl std::fmt::Debug for Reservation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Reservation");
-        formatter.field("arn", &self.arn);
-        formatter.field("count", &self.count);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("duration", &self.duration);
-        formatter.field("duration_units", &self.duration_units);
-        formatter.field("end", &self.end);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("name", &self.name);
-        formatter.field("offering_description", &self.offering_description);
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("region", &self.region);
-        formatter.field("renewal_settings", &self.renewal_settings);
-        formatter.field("reservation_id", &self.reservation_id);
-        formatter.field("resource_specification", &self.resource_specification);
-        formatter.field("start", &self.start);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.finish()
     }
 }
 /// See [`Reservation`](crate::model::Reservation).
@@ -568,7 +543,7 @@ impl AsRef<str> for ReservationState {
 
 /// Resource configuration (codec, resolution, bitrate, ...)
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservationResourceSpecification {
     /// Channel class, e.g. 'STANDARD'
     #[doc(hidden)]
@@ -629,20 +604,6 @@ impl ReservationResourceSpecification {
     /// Video quality, e.g. 'STANDARD' (Outputs only)
     pub fn video_quality(&self) -> std::option::Option<&crate::model::ReservationVideoQuality> {
         self.video_quality.as_ref()
-    }
-}
-impl std::fmt::Debug for ReservationResourceSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservationResourceSpecification");
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("codec", &self.codec);
-        formatter.field("maximum_bitrate", &self.maximum_bitrate);
-        formatter.field("maximum_framerate", &self.maximum_framerate);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("special_feature", &self.special_feature);
-        formatter.field("video_quality", &self.video_quality);
-        formatter.finish()
     }
 }
 /// See [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification).
@@ -1580,7 +1541,7 @@ impl AsRef<str> for ChannelClass {
 
 /// The Renewal settings for Reservations
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenewalSettings {
     /// Automatic renewal status for the reservation
     #[doc(hidden)]
@@ -1599,14 +1560,6 @@ impl RenewalSettings {
     /// Count for the reservation renewal
     pub fn renewal_count(&self) -> i32 {
         self.renewal_count
-    }
-}
-impl std::fmt::Debug for RenewalSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenewalSettings");
-        formatter.field("automatic_renewal", &self.automatic_renewal);
-        formatter.field("renewal_count", &self.renewal_count);
-        formatter.finish()
     }
 }
 /// See [`RenewalSettings`](crate::model::RenewalSettings).
@@ -1933,7 +1886,7 @@ impl AsRef<str> for OfferingDurationUnits {
 
 /// Placeholder documentation for ValidationError
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationError {
     /// Path to the source of the error.
     #[doc(hidden)]
@@ -1950,14 +1903,6 @@ impl ValidationError {
     /// The error message.
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationError");
-        formatter.field("element_path", &self.element_path);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ValidationError`](crate::model::ValidationError).
@@ -2011,7 +1956,7 @@ impl ValidationError {
 
 /// The multiplex program object.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexProgram {
     /// The MediaLive channel associated with the program.
     #[doc(hidden)]
@@ -2057,20 +2002,6 @@ impl MultiplexProgram {
     /// The name of the multiplex program.
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiplexProgram {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexProgram");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field(
-            "multiplex_program_settings",
-            &self.multiplex_program_settings,
-        );
-        formatter.field("packet_identifiers_map", &self.packet_identifiers_map);
-        formatter.field("pipeline_details", &self.pipeline_details);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
     }
 }
 /// See [`MultiplexProgram`](crate::model::MultiplexProgram).
@@ -2184,7 +2115,7 @@ impl MultiplexProgram {
 
 /// The current source for one of the pipelines in the multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexProgramPipelineDetail {
     /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
     #[doc(hidden)]
@@ -2201,14 +2132,6 @@ impl MultiplexProgramPipelineDetail {
     /// Identifies a specific pipeline in the multiplex.
     pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiplexProgramPipelineDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexProgramPipelineDetail");
-        formatter.field("active_channel_pipeline", &self.active_channel_pipeline);
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.finish()
     }
 }
 /// See [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail).
@@ -2262,7 +2185,7 @@ impl MultiplexProgramPipelineDetail {
 
 /// Packet identifiers map for a given Multiplex program.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __listOf__integer
     #[doc(hidden)]
@@ -2356,25 +2279,6 @@ impl MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __integer
     pub fn video_pid(&self) -> i32 {
         self.video_pid
-    }
-}
-impl std::fmt::Debug for MultiplexProgramPacketIdentifiersMap {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexProgramPacketIdentifiersMap");
-        formatter.field("audio_pids", &self.audio_pids);
-        formatter.field("dvb_sub_pids", &self.dvb_sub_pids);
-        formatter.field("dvb_teletext_pid", &self.dvb_teletext_pid);
-        formatter.field("etv_platform_pid", &self.etv_platform_pid);
-        formatter.field("etv_signal_pid", &self.etv_signal_pid);
-        formatter.field("klv_data_pids", &self.klv_data_pids);
-        formatter.field("pcr_pid", &self.pcr_pid);
-        formatter.field("pmt_pid", &self.pmt_pid);
-        formatter.field("private_metadata_pid", &self.private_metadata_pid);
-        formatter.field("scte27_pids", &self.scte27_pids);
-        formatter.field("scte35_pid", &self.scte35_pid);
-        formatter.field("timed_metadata_pid", &self.timed_metadata_pid);
-        formatter.field("video_pid", &self.video_pid);
-        formatter.finish()
     }
 }
 /// See [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap).
@@ -2581,7 +2485,7 @@ impl MultiplexProgramPacketIdentifiersMap {
 
 /// Multiplex Program settings configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexProgramSettings {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
     #[doc(hidden)]
@@ -2616,19 +2520,6 @@ impl MultiplexProgramSettings {
     /// Program video settings configuration.
     pub fn video_settings(&self) -> std::option::Option<&crate::model::MultiplexVideoSettings> {
         self.video_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for MultiplexProgramSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexProgramSettings");
-        formatter.field(
-            "preferred_channel_pipeline",
-            &self.preferred_channel_pipeline,
-        );
-        formatter.field("program_number", &self.program_number);
-        formatter.field("service_descriptor", &self.service_descriptor);
-        formatter.field("video_settings", &self.video_settings);
-        formatter.finish()
     }
 }
 /// See [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings).
@@ -2720,7 +2611,7 @@ impl MultiplexProgramSettings {
 
 /// The video configuration for each program in a multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexVideoSettings {
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
     #[doc(hidden)]
@@ -2739,14 +2630,6 @@ impl MultiplexVideoSettings {
         &self,
     ) -> std::option::Option<&crate::model::MultiplexStatmuxVideoSettings> {
         self.statmux_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for MultiplexVideoSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexVideoSettings");
-        formatter.field("constant_bitrate", &self.constant_bitrate);
-        formatter.field("statmux_settings", &self.statmux_settings);
-        formatter.finish()
     }
 }
 /// See [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings).
@@ -2804,7 +2687,7 @@ impl MultiplexVideoSettings {
 
 /// Statmux rate control settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexStatmuxVideoSettings {
     /// Maximum statmux bitrate.
     #[doc(hidden)]
@@ -2828,15 +2711,6 @@ impl MultiplexStatmuxVideoSettings {
     /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
     pub fn priority(&self) -> i32 {
         self.priority
-    }
-}
-impl std::fmt::Debug for MultiplexStatmuxVideoSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexStatmuxVideoSettings");
-        formatter.field("maximum_bitrate", &self.maximum_bitrate);
-        formatter.field("minimum_bitrate", &self.minimum_bitrate);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings).
@@ -2899,7 +2773,7 @@ impl MultiplexStatmuxVideoSettings {
 
 /// Transport stream service descriptor configuration for the Multiplex program.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexProgramServiceDescriptor {
     /// Name of the provider.
     #[doc(hidden)]
@@ -2916,14 +2790,6 @@ impl MultiplexProgramServiceDescriptor {
     /// Name of the service.
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiplexProgramServiceDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexProgramServiceDescriptor");
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
     }
 }
 /// See [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor).
@@ -3078,7 +2944,7 @@ impl AsRef<str> for PreferredChannelPipeline {
 
 /// The multiplex object.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Multiplex {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
@@ -3155,22 +3021,6 @@ impl Multiplex {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Multiplex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Multiplex");
-        formatter.field("arn", &self.arn);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("id", &self.id);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("name", &self.name);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("program_count", &self.program_count);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Multiplex`](crate::model::Multiplex).
@@ -3494,7 +3344,7 @@ impl AsRef<str> for MultiplexState {
 
 /// Contains configuration for a Multiplex event
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexSettings {
     /// Maximum video buffer delay in milliseconds.
     #[doc(hidden)]
@@ -3525,22 +3375,6 @@ impl MultiplexSettings {
     /// Transport stream reserved bit rate.
     pub fn transport_stream_reserved_bitrate(&self) -> i32 {
         self.transport_stream_reserved_bitrate
-    }
-}
-impl std::fmt::Debug for MultiplexSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexSettings");
-        formatter.field(
-            "maximum_video_buffer_delay_milliseconds",
-            &self.maximum_video_buffer_delay_milliseconds,
-        );
-        formatter.field("transport_stream_bitrate", &self.transport_stream_bitrate);
-        formatter.field("transport_stream_id", &self.transport_stream_id);
-        formatter.field(
-            "transport_stream_reserved_bitrate",
-            &self.transport_stream_reserved_bitrate,
-        );
-        formatter.finish()
     }
 }
 /// See [`MultiplexSettings`](crate::model::MultiplexSettings).
@@ -3625,7 +3459,7 @@ impl MultiplexSettings {
 
 /// Multiplex output destination settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexOutputDestination {
     /// Multiplex MediaConnect output destination settings.
     #[doc(hidden)]
@@ -3638,13 +3472,6 @@ impl MultiplexOutputDestination {
         &self,
     ) -> std::option::Option<&crate::model::MultiplexMediaConnectOutputDestinationSettings> {
         self.media_connect_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for MultiplexOutputDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexOutputDestination");
-        formatter.field("media_connect_settings", &self.media_connect_settings);
-        formatter.finish()
     }
 }
 /// See [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination).
@@ -3692,7 +3519,7 @@ impl MultiplexOutputDestination {
 
 /// Multiplex MediaConnect output destination settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexMediaConnectOutputDestinationSettings {
     /// The MediaConnect entitlement ARN available as a Flow source.
     #[doc(hidden)]
@@ -3702,13 +3529,6 @@ impl MultiplexMediaConnectOutputDestinationSettings {
     /// The MediaConnect entitlement ARN available as a Flow source.
     pub fn entitlement_arn(&self) -> std::option::Option<&str> {
         self.entitlement_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiplexMediaConnectOutputDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexMediaConnectOutputDestinationSettings");
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.finish()
     }
 }
 /// See [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings).
@@ -3750,7 +3570,7 @@ impl MultiplexMediaConnectOutputDestinationSettings {
 
 /// An Input Security Group
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSecurityGroup {
     /// Unique ARN of Input Security Group
     #[doc(hidden)]
@@ -3799,18 +3619,6 @@ impl InputSecurityGroup {
     /// Whitelist rules and their sync status
     pub fn whitelist_rules(&self) -> std::option::Option<&[crate::model::InputWhitelistRule]> {
         self.whitelist_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for InputSecurityGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSecurityGroup");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("whitelist_rules", &self.whitelist_rules);
-        formatter.finish()
     }
 }
 /// See [`InputSecurityGroup`](crate::model::InputSecurityGroup).
@@ -3948,7 +3756,7 @@ impl InputSecurityGroup {
 
 /// Whitelist rule
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputWhitelistRule {
     /// The IPv4 CIDR that's whitelisted.
     #[doc(hidden)]
@@ -3958,13 +3766,6 @@ impl InputWhitelistRule {
     /// The IPv4 CIDR that's whitelisted.
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
-    }
-}
-impl std::fmt::Debug for InputWhitelistRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputWhitelistRule");
-        formatter.field("cidr", &self.cidr);
-        formatter.finish()
     }
 }
 /// See [`InputWhitelistRule`](crate::model::InputWhitelistRule).
@@ -4103,7 +3904,7 @@ impl AsRef<str> for InputSecurityGroupState {
 
 /// An IPv4 CIDR to whitelist.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputWhitelistRuleCidr {
     /// The IPv4 CIDR to whitelist.
     #[doc(hidden)]
@@ -4113,13 +3914,6 @@ impl InputWhitelistRuleCidr {
     /// The IPv4 CIDR to whitelist.
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
-    }
-}
-impl std::fmt::Debug for InputWhitelistRuleCidr {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputWhitelistRuleCidr");
-        formatter.field("cidr", &self.cidr);
-        formatter.finish()
     }
 }
 /// See [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr).
@@ -4156,7 +3950,7 @@ impl InputWhitelistRuleCidr {
 
 /// Settings that describe the active source from the input device, and the video characteristics of that source.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDeviceUhdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
     #[doc(hidden)]
@@ -4217,20 +4011,6 @@ impl InputDeviceUhdSettings {
     /// The width of the video source, in pixels.
     pub fn width(&self) -> i32 {
         self.width
-    }
-}
-impl std::fmt::Debug for InputDeviceUhdSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDeviceUhdSettings");
-        formatter.field("active_input", &self.active_input);
-        formatter.field("configured_input", &self.configured_input);
-        formatter.field("device_state", &self.device_state);
-        formatter.field("framerate", &self.framerate);
-        formatter.field("height", &self.height);
-        formatter.field("max_bitrate", &self.max_bitrate);
-        formatter.field("scan_type", &self.scan_type);
-        formatter.field("width", &self.width);
-        formatter.finish()
     }
 }
 /// See [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
@@ -4821,7 +4601,7 @@ impl AsRef<str> for InputDeviceType {
 
 /// The network settings for the input device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDeviceNetworkSettings {
     /// The DNS addresses of the input device.
     #[doc(hidden)]
@@ -4859,17 +4639,6 @@ impl InputDeviceNetworkSettings {
     /// The subnet mask of the input device.
     pub fn subnet_mask(&self) -> std::option::Option<&str> {
         self.subnet_mask.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDeviceNetworkSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDeviceNetworkSettings");
-        formatter.field("dns_addresses", &self.dns_addresses);
-        formatter.field("gateway", &self.gateway);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("ip_scheme", &self.ip_scheme);
-        formatter.field("subnet_mask", &self.subnet_mask);
-        formatter.finish()
     }
 }
 /// See [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings).
@@ -5060,7 +4829,7 @@ impl AsRef<str> for InputDeviceIpScheme {
 
 /// Settings that describe the active source from the input device, and the video characteristics of that source.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDeviceHdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
     #[doc(hidden)]
@@ -5121,20 +4890,6 @@ impl InputDeviceHdSettings {
     /// The width of the video source, in pixels.
     pub fn width(&self) -> i32 {
         self.width
-    }
-}
-impl std::fmt::Debug for InputDeviceHdSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDeviceHdSettings");
-        formatter.field("active_input", &self.active_input);
-        formatter.field("configured_input", &self.configured_input);
-        formatter.field("device_state", &self.device_state);
-        formatter.field("framerate", &self.framerate);
-        formatter.field("height", &self.height);
-        formatter.field("max_bitrate", &self.max_bitrate);
-        formatter.field("scan_type", &self.scan_type);
-        formatter.field("width", &self.width);
-        formatter.finish()
     }
 }
 /// See [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
@@ -5550,7 +5305,7 @@ impl AsRef<str> for InputDeviceConnectionState {
 
 /// Configurable settings for the input device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
     #[doc(hidden)]
@@ -5569,14 +5324,6 @@ impl InputDeviceConfigurableSettings {
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
-    }
-}
-impl std::fmt::Debug for InputDeviceConfigurableSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDeviceConfigurableSettings");
-        formatter.field("configured_input", &self.configured_input);
-        formatter.field("max_bitrate", &self.max_bitrate);
-        formatter.finish()
     }
 }
 /// See [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
@@ -5630,7 +5377,7 @@ impl InputDeviceConfigurableSettings {
 
 /// Placeholder documentation for Input
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Input {
     /// The Unique ARN of the input (generated, immutable).
     #[doc(hidden)]
@@ -5749,28 +5496,6 @@ impl Input {
     /// The different types of inputs that AWS Elemental MediaLive supports.
     pub fn r#type(&self) -> std::option::Option<&crate::model::InputType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Input");
-        formatter.field("arn", &self.arn);
-        formatter.field("attached_channels", &self.attached_channels);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("id", &self.id);
-        formatter.field("input_class", &self.input_class);
-        formatter.field("input_devices", &self.input_devices);
-        formatter.field("input_partner_ids", &self.input_partner_ids);
-        formatter.field("input_source_type", &self.input_source_type);
-        formatter.field("media_connect_flows", &self.media_connect_flows);
-        formatter.field("name", &self.name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("sources", &self.sources);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Input`](crate::model::Input).
@@ -6323,7 +6048,7 @@ impl AsRef<str> for InputState {
 
 /// The settings for a PULL type input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSource {
     /// The key used to extract the password from EC2 Parameter store.
     #[doc(hidden)]
@@ -6347,15 +6072,6 @@ impl InputSource {
     /// The username for the input source.
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for InputSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSource");
-        formatter.field("password_param", &self.password_param);
-        formatter.field("url", &self.url);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`InputSource`](crate::model::InputSource).
@@ -6421,7 +6137,7 @@ impl InputSource {
 
 /// The settings for a MediaConnect Flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaConnectFlow {
     /// The unique ARN of the MediaConnect Flow being used as a source.
     #[doc(hidden)]
@@ -6431,13 +6147,6 @@ impl MediaConnectFlow {
     /// The unique ARN of the MediaConnect Flow being used as a source.
     pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaConnectFlow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaConnectFlow");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.finish()
     }
 }
 /// See [`MediaConnectFlow`](crate::model::MediaConnectFlow).
@@ -6568,7 +6277,7 @@ impl AsRef<str> for InputSourceType {
 
 /// Settings for an input device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDeviceSettings {
     /// The unique ID for the device.
     #[doc(hidden)]
@@ -6578,13 +6287,6 @@ impl InputDeviceSettings {
     /// The unique ID for the device.
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDeviceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDeviceSettings");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`InputDeviceSettings`](crate::model::InputDeviceSettings).
@@ -6711,7 +6413,7 @@ impl AsRef<str> for InputClass {
 
 /// The settings for a PUSH type input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDestination {
     /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
     #[doc(hidden)]
@@ -6742,16 +6444,6 @@ impl InputDestination {
     /// The properties for a VPC type input destination.
     pub fn vpc(&self) -> std::option::Option<&crate::model::InputDestinationVpc> {
         self.vpc.as_ref()
-    }
-}
-impl std::fmt::Debug for InputDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDestination");
-        formatter.field("ip", &self.ip);
-        formatter.field("port", &self.port);
-        formatter.field("url", &self.url);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
     }
 }
 /// See [`InputDestination`](crate::model::InputDestination).
@@ -6829,7 +6521,7 @@ impl InputDestination {
 
 /// The properties for a VPC type input destination.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDestinationVpc {
     /// The availability zone of the Input destination.
     #[doc(hidden)]
@@ -6846,14 +6538,6 @@ impl InputDestinationVpc {
     /// The network interface ID of the Input destination in the VPC.
     pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDestinationVpc {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDestinationVpc");
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.finish()
     }
 }
 /// See [`InputDestinationVpc`](crate::model::InputDestinationVpc).
@@ -6910,7 +6594,7 @@ impl InputDestinationVpc {
 
 /// Settings for for a PULL type input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSourceRequest {
     /// The key used to extract the password from EC2 Parameter store.
     #[doc(hidden)]
@@ -6934,15 +6618,6 @@ impl InputSourceRequest {
     /// The username for the input source.
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for InputSourceRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSourceRequest");
-        formatter.field("password_param", &self.password_param);
-        formatter.field("url", &self.url);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`InputSourceRequest`](crate::model::InputSourceRequest).
@@ -7008,7 +6683,7 @@ impl InputSourceRequest {
 
 /// The settings for a MediaConnect Flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaConnectFlowRequest {
     /// The ARN of the MediaConnect Flow that you want to use as a source.
     #[doc(hidden)]
@@ -7018,13 +6693,6 @@ impl MediaConnectFlowRequest {
     /// The ARN of the MediaConnect Flow that you want to use as a source.
     pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaConnectFlowRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaConnectFlowRequest");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.finish()
     }
 }
 /// See [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest).
@@ -7063,7 +6731,7 @@ impl MediaConnectFlowRequest {
 
 /// Settings for an input device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDeviceRequest {
     /// The unique ID for the device.
     #[doc(hidden)]
@@ -7073,13 +6741,6 @@ impl InputDeviceRequest {
     /// The unique ID for the device.
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDeviceRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDeviceRequest");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`InputDeviceRequest`](crate::model::InputDeviceRequest).
@@ -7116,7 +6777,7 @@ impl InputDeviceRequest {
 
 /// Endpoint settings for a PUSH type input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDestinationRequest {
     /// A unique name for the location the RTMP stream is being pushed to.
     #[doc(hidden)]
@@ -7126,13 +6787,6 @@ impl InputDestinationRequest {
     /// A unique name for the location the RTMP stream is being pushed to.
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDestinationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDestinationRequest");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.finish()
     }
 }
 /// See [`InputDestinationRequest`](crate::model::InputDestinationRequest).
@@ -7171,7 +6825,7 @@ impl InputDestinationRequest {
 
 /// Placeholder documentation for Channel
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// The unique arn of the channel.
     #[doc(hidden)]
@@ -7306,30 +6960,6 @@ impl Channel {
     /// Settings for VPC output
     pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
-    }
-}
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("arn", &self.arn);
-        formatter.field("cdi_input_specification", &self.cdi_input_specification);
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("egress_endpoints", &self.egress_endpoints);
-        formatter.field("encoder_settings", &self.encoder_settings);
-        formatter.field("id", &self.id);
-        formatter.field("input_attachments", &self.input_attachments);
-        formatter.field("input_specification", &self.input_specification);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.field("name", &self.name);
-        formatter.field("pipeline_details", &self.pipeline_details);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
     }
 }
 /// See [`Channel`](crate::model::Channel).
@@ -7651,7 +7281,7 @@ impl Channel {
 
 /// The properties for a private VPC Output
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcOutputSettingsDescription {
     /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
     #[doc(hidden)]
@@ -7682,16 +7312,6 @@ impl VpcOutputSettingsDescription {
     /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcOutputSettingsDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcOutputSettingsDescription");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("network_interface_ids", &self.network_interface_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription).
@@ -7949,7 +7569,7 @@ impl AsRef<str> for ChannelState {
 
 /// Runtime details of a pipeline when a channel is running.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineDetail {
     /// The name of the active input attachment currently being ingested by this pipeline.
     #[doc(hidden)]
@@ -7987,29 +7607,6 @@ impl PipelineDetail {
     /// Pipeline ID
     pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PipelineDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineDetail");
-        formatter.field(
-            "active_input_attachment_name",
-            &self.active_input_attachment_name,
-        );
-        formatter.field(
-            "active_input_switch_action_name",
-            &self.active_input_switch_action_name,
-        );
-        formatter.field(
-            "active_motion_graphics_action_name",
-            &self.active_motion_graphics_action_name,
-        );
-        formatter.field(
-            "active_motion_graphics_uri",
-            &self.active_motion_graphics_uri,
-        );
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.finish()
     }
 }
 /// See [`PipelineDetail`](crate::model::PipelineDetail).
@@ -8117,7 +7714,7 @@ impl PipelineDetail {
 
 /// Placeholder documentation for MaintenanceStatus
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceStatus {
     /// The currently selected maintenance day.
     #[doc(hidden)]
@@ -8148,19 +7745,6 @@ impl MaintenanceStatus {
     /// The currently selected maintenance start time. Time is in UTC.
     pub fn maintenance_start_time(&self) -> std::option::Option<&str> {
         self.maintenance_start_time.as_deref()
-    }
-}
-impl std::fmt::Debug for MaintenanceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceStatus");
-        formatter.field("maintenance_day", &self.maintenance_day);
-        formatter.field("maintenance_deadline", &self.maintenance_deadline);
-        formatter.field(
-            "maintenance_scheduled_date",
-            &self.maintenance_scheduled_date,
-        );
-        formatter.field("maintenance_start_time", &self.maintenance_start_time);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceStatus`](crate::model::MaintenanceStatus).
@@ -8475,7 +8059,7 @@ impl AsRef<str> for LogLevel {
 
 /// Placeholder documentation for InputSpecification
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSpecification {
     /// Input codec
     #[doc(hidden)]
@@ -8499,15 +8083,6 @@ impl InputSpecification {
     /// Input resolution, categorized coarsely
     pub fn resolution(&self) -> std::option::Option<&crate::model::InputResolution> {
         self.resolution.as_ref()
-    }
-}
-impl std::fmt::Debug for InputSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSpecification");
-        formatter.field("codec", &self.codec);
-        formatter.field("maximum_bitrate", &self.maximum_bitrate);
-        formatter.field("resolution", &self.resolution);
-        formatter.finish()
     }
 }
 /// See [`InputSpecification`](crate::model::InputSpecification).
@@ -8863,7 +8438,7 @@ impl AsRef<str> for InputCodec {
 
 /// Placeholder documentation for InputAttachment
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputAttachment {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
     #[doc(hidden)]
@@ -8897,19 +8472,6 @@ impl InputAttachment {
     /// Settings of an input (caption selector, etc.)
     pub fn input_settings(&self) -> std::option::Option<&crate::model::InputSettings> {
         self.input_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for InputAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputAttachment");
-        formatter.field(
-            "automatic_input_failover_settings",
-            &self.automatic_input_failover_settings,
-        );
-        formatter.field("input_attachment_name", &self.input_attachment_name);
-        formatter.field("input_id", &self.input_id);
-        formatter.field("input_settings", &self.input_settings);
-        formatter.finish()
     }
 }
 /// See [`InputAttachment`](crate::model::InputAttachment).
@@ -8997,7 +8559,7 @@ impl InputAttachment {
 
 /// Live Event input parameters. There can be multiple inputs in a single Live Event.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSettings {
     /// Used to select the audio stream to decode for inputs that have multiple available.
     #[doc(hidden)]
@@ -9083,23 +8645,6 @@ impl InputSettings {
     /// Informs which video elementary stream to decode for input types that have multiple available.
     pub fn video_selector(&self) -> std::option::Option<&crate::model::VideoSelector> {
         self.video_selector.as_ref()
-    }
-}
-impl std::fmt::Debug for InputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSettings");
-        formatter.field("audio_selectors", &self.audio_selectors);
-        formatter.field("caption_selectors", &self.caption_selectors);
-        formatter.field("deblock_filter", &self.deblock_filter);
-        formatter.field("denoise_filter", &self.denoise_filter);
-        formatter.field("filter_strength", &self.filter_strength);
-        formatter.field("input_filter", &self.input_filter);
-        formatter.field("network_input_settings", &self.network_input_settings);
-        formatter.field("scte35_pid", &self.scte35_pid);
-        formatter.field("smpte2038_data_preference", &self.smpte2038_data_preference);
-        formatter.field("source_end_behavior", &self.source_end_behavior);
-        formatter.field("video_selector", &self.video_selector);
-        formatter.finish()
     }
 }
 /// See [`InputSettings`](crate::model::InputSettings).
@@ -9302,7 +8847,7 @@ impl InputSettings {
 
 /// Specifies a particular video stream within an input source. An input may have only a single video selector.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoSelector {
     /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
     #[doc(hidden)]
@@ -9337,16 +8882,6 @@ impl VideoSelector {
     /// The video selector settings.
     pub fn selector_settings(&self) -> std::option::Option<&crate::model::VideoSelectorSettings> {
         self.selector_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for VideoSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoSelector");
-        formatter.field("color_space", &self.color_space);
-        formatter.field("color_space_settings", &self.color_space_settings);
-        formatter.field("color_space_usage", &self.color_space_usage);
-        formatter.field("selector_settings", &self.selector_settings);
-        formatter.finish()
     }
 }
 /// See [`VideoSelector`](crate::model::VideoSelector).
@@ -9441,7 +8976,7 @@ impl VideoSelector {
 
 /// Video Selector Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoSelectorSettings {
     /// Video Selector Pid
     #[doc(hidden)]
@@ -9460,14 +8995,6 @@ impl VideoSelectorSettings {
         &self,
     ) -> std::option::Option<&crate::model::VideoSelectorProgramId> {
         self.video_selector_program_id.as_ref()
-    }
-}
-impl std::fmt::Debug for VideoSelectorSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoSelectorSettings");
-        formatter.field("video_selector_pid", &self.video_selector_pid);
-        formatter.field("video_selector_program_id", &self.video_selector_program_id);
-        formatter.finish()
     }
 }
 /// See [`VideoSelectorSettings`](crate::model::VideoSelectorSettings).
@@ -9528,7 +9055,7 @@ impl VideoSelectorSettings {
 
 /// Video Selector Program Id
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoSelectorProgramId {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     #[doc(hidden)]
@@ -9538,13 +9065,6 @@ impl VideoSelectorProgramId {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     pub fn program_id(&self) -> i32 {
         self.program_id
-    }
-}
-impl std::fmt::Debug for VideoSelectorProgramId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoSelectorProgramId");
-        formatter.field("program_id", &self.program_id);
-        formatter.finish()
     }
 }
 /// See [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId).
@@ -9583,7 +9103,7 @@ impl VideoSelectorProgramId {
 
 /// Video Selector Pid
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoSelectorPid {
     /// Selects a specific PID from within a video source.
     #[doc(hidden)]
@@ -9593,13 +9113,6 @@ impl VideoSelectorPid {
     /// Selects a specific PID from within a video source.
     pub fn pid(&self) -> i32 {
         self.pid
-    }
-}
-impl std::fmt::Debug for VideoSelectorPid {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoSelectorPid");
-        formatter.field("pid", &self.pid);
-        formatter.finish()
     }
 }
 /// See [`VideoSelectorPid`](crate::model::VideoSelectorPid).
@@ -9730,7 +9243,7 @@ impl AsRef<str> for VideoSelectorColorSpaceUsage {
 
 /// Video Selector Color Space Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoSelectorColorSpaceSettings {
     /// Hdr10 Settings
     #[doc(hidden)]
@@ -9740,13 +9253,6 @@ impl VideoSelectorColorSpaceSettings {
     /// Hdr10 Settings
     pub fn hdr10_settings(&self) -> std::option::Option<&crate::model::Hdr10Settings> {
         self.hdr10_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for VideoSelectorColorSpaceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoSelectorColorSpaceSettings");
-        formatter.field("hdr10_settings", &self.hdr10_settings);
-        formatter.finish()
     }
 }
 /// See [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings).
@@ -9788,7 +9294,7 @@ impl VideoSelectorColorSpaceSettings {
 
 /// Hdr10 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hdr10Settings {
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     #[doc(hidden)]
@@ -9805,14 +9311,6 @@ impl Hdr10Settings {
     /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
     pub fn max_fall(&self) -> i32 {
         self.max_fall
-    }
-}
-impl std::fmt::Debug for Hdr10Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hdr10Settings");
-        formatter.field("max_cll", &self.max_cll);
-        formatter.field("max_fall", &self.max_fall);
-        formatter.finish()
     }
 }
 /// See [`Hdr10Settings`](crate::model::Hdr10Settings).
@@ -10154,7 +9652,7 @@ impl AsRef<str> for Smpte2038DataPreference {
 
 /// Network source to transcode. Must be accessible to the Elemental Live node that is running the live event through a network connection.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInputSettings {
     /// Specifies HLS input settings when the uri is for a HLS manifest.
     #[doc(hidden)]
@@ -10173,14 +9671,6 @@ impl NetworkInputSettings {
         &self,
     ) -> std::option::Option<&crate::model::NetworkInputServerValidation> {
         self.server_validation.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkInputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInputSettings");
-        formatter.field("hls_input_settings", &self.hls_input_settings);
-        formatter.field("server_validation", &self.server_validation);
-        formatter.finish()
     }
 }
 /// See [`NetworkInputSettings`](crate::model::NetworkInputSettings).
@@ -10340,7 +9830,7 @@ impl AsRef<str> for NetworkInputServerValidation {
 
 /// Hls Input Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsInputSettings {
     /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
     #[doc(hidden)]
@@ -10378,17 +9868,6 @@ impl HlsInputSettings {
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
     pub fn scte35_source(&self) -> std::option::Option<&crate::model::HlsScte35SourceType> {
         self.scte35_source.as_ref()
-    }
-}
-impl std::fmt::Debug for HlsInputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsInputSettings");
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("buffer_segments", &self.buffer_segments);
-        formatter.field("retries", &self.retries);
-        formatter.field("retry_interval", &self.retry_interval);
-        formatter.field("scte35_source", &self.scte35_source);
-        formatter.finish()
     }
 }
 /// See [`HlsInputSettings`](crate::model::HlsInputSettings).
@@ -10849,7 +10328,7 @@ impl AsRef<str> for InputDeblockFilter {
 
 /// Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptionSelector {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
     #[doc(hidden)]
@@ -10873,15 +10352,6 @@ impl CaptionSelector {
     /// Caption selector settings.
     pub fn selector_settings(&self) -> std::option::Option<&crate::model::CaptionSelectorSettings> {
         self.selector_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for CaptionSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptionSelector");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("name", &self.name);
-        formatter.field("selector_settings", &self.selector_settings);
-        formatter.finish()
     }
 }
 /// See [`CaptionSelector`](crate::model::CaptionSelector).
@@ -10950,7 +10420,7 @@ impl CaptionSelector {
 
 /// Caption Selector Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptionSelectorSettings {
     /// Ancillary Source Settings
     #[doc(hidden)]
@@ -11014,19 +10484,6 @@ impl CaptionSelectorSettings {
         &self,
     ) -> std::option::Option<&crate::model::TeletextSourceSettings> {
         self.teletext_source_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for CaptionSelectorSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptionSelectorSettings");
-        formatter.field("ancillary_source_settings", &self.ancillary_source_settings);
-        formatter.field("arib_source_settings", &self.arib_source_settings);
-        formatter.field("dvb_sub_source_settings", &self.dvb_sub_source_settings);
-        formatter.field("embedded_source_settings", &self.embedded_source_settings);
-        formatter.field("scte20_source_settings", &self.scte20_source_settings);
-        formatter.field("scte27_source_settings", &self.scte27_source_settings);
-        formatter.field("teletext_source_settings", &self.teletext_source_settings);
-        formatter.finish()
     }
 }
 /// See [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings).
@@ -11173,7 +10630,7 @@ impl CaptionSelectorSettings {
 
 /// Teletext Source Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TeletextSourceSettings {
     /// Optionally defines a region where TTML style captions will be displayed
     #[doc(hidden)]
@@ -11190,14 +10647,6 @@ impl TeletextSourceSettings {
     /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
     pub fn page_number(&self) -> std::option::Option<&str> {
         self.page_number.as_deref()
-    }
-}
-impl std::fmt::Debug for TeletextSourceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TeletextSourceSettings");
-        formatter.field("output_rectangle", &self.output_rectangle);
-        formatter.field("page_number", &self.page_number);
-        formatter.finish()
     }
 }
 /// See [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
@@ -11251,7 +10700,7 @@ impl TeletextSourceSettings {
 
 /// Caption Rectangle
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptionRectangle {
     /// See the description in leftOffset. For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less. This field corresponds to tts:extent - Y in the TTML standard.
     #[doc(hidden)]
@@ -11282,16 +10731,6 @@ impl CaptionRectangle {
     /// See the description in leftOffset. For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less. This field corresponds to tts:extent - X in the TTML standard.
     pub fn width(&self) -> f64 {
         self.width
-    }
-}
-impl std::fmt::Debug for CaptionRectangle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptionRectangle");
-        formatter.field("height", &self.height);
-        formatter.field("left_offset", &self.left_offset);
-        formatter.field("top_offset", &self.top_offset);
-        formatter.field("width", &self.width);
-        formatter.finish()
     }
 }
 /// See [`CaptionRectangle`](crate::model::CaptionRectangle).
@@ -11366,7 +10805,7 @@ impl CaptionRectangle {
 
 /// Scte27 Source Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte27SourceSettings {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     #[doc(hidden)]
@@ -11383,14 +10822,6 @@ impl Scte27SourceSettings {
     /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
     pub fn pid(&self) -> i32 {
         self.pid
-    }
-}
-impl std::fmt::Debug for Scte27SourceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte27SourceSettings");
-        formatter.field("ocr_language", &self.ocr_language);
-        formatter.field("pid", &self.pid);
-        formatter.finish()
     }
 }
 /// See [`Scte27SourceSettings`](crate::model::Scte27SourceSettings).
@@ -11556,7 +10987,7 @@ impl AsRef<str> for Scte27OcrLanguage {
 
 /// Scte20 Source Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte20SourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
     #[doc(hidden)]
@@ -11573,14 +11004,6 @@ impl Scte20SourceSettings {
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn source608_channel_number(&self) -> i32 {
         self.source608_channel_number
-    }
-}
-impl std::fmt::Debug for Scte20SourceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte20SourceSettings");
-        formatter.field("convert608_to708", &self.convert608_to708);
-        formatter.field("source608_channel_number", &self.source608_channel_number);
-        formatter.finish()
     }
 }
 /// See [`Scte20SourceSettings`](crate::model::Scte20SourceSettings).
@@ -11726,7 +11149,7 @@ impl AsRef<str> for Scte20Convert608To708 {
 
 /// Embedded Source Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmbeddedSourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
     #[doc(hidden)]
@@ -11757,16 +11180,6 @@ impl EmbeddedSourceSettings {
     /// This field is unused and deprecated.
     pub fn source608_track_number(&self) -> i32 {
         self.source608_track_number
-    }
-}
-impl std::fmt::Debug for EmbeddedSourceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmbeddedSourceSettings");
-        formatter.field("convert608_to708", &self.convert608_to708);
-        formatter.field("scte20_detection", &self.scte20_detection);
-        formatter.field("source608_channel_number", &self.source608_channel_number);
-        formatter.field("source608_track_number", &self.source608_track_number);
-        formatter.finish()
     }
 }
 /// See [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
@@ -12031,7 +11444,7 @@ impl AsRef<str> for EmbeddedConvert608To708 {
 
 /// Dvb Sub Source Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DvbSubSourceSettings {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     #[doc(hidden)]
@@ -12048,14 +11461,6 @@ impl DvbSubSourceSettings {
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
     pub fn pid(&self) -> i32 {
         self.pid
-    }
-}
-impl std::fmt::Debug for DvbSubSourceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DvbSubSourceSettings");
-        formatter.field("ocr_language", &self.ocr_language);
-        formatter.field("pid", &self.pid);
-        formatter.finish()
     }
 }
 /// See [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
@@ -12221,14 +11626,8 @@ impl AsRef<str> for DvbSubOcrLanguage {
 
 /// Arib Source Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AribSourceSettings {}
-impl std::fmt::Debug for AribSourceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AribSourceSettings");
-        formatter.finish()
-    }
-}
 /// See [`AribSourceSettings`](crate::model::AribSourceSettings).
 pub mod arib_source_settings {
 
@@ -12251,7 +11650,7 @@ impl AribSourceSettings {
 
 /// Ancillary Source Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AncillarySourceSettings {
     /// Specifies the number (1 to 4) of the captions channel you want to extract from the ancillary captions. If you plan to convert the ancillary captions to another format, complete this field. If you plan to choose Embedded as the captions destination in the output (to pass through all the channels in the ancillary captions), leave this field blank because MediaLive ignores the field.
     #[doc(hidden)]
@@ -12261,16 +11660,6 @@ impl AncillarySourceSettings {
     /// Specifies the number (1 to 4) of the captions channel you want to extract from the ancillary captions. If you plan to convert the ancillary captions to another format, complete this field. If you plan to choose Embedded as the captions destination in the output (to pass through all the channels in the ancillary captions), leave this field blank because MediaLive ignores the field.
     pub fn source_ancillary_channel_number(&self) -> i32 {
         self.source_ancillary_channel_number
-    }
-}
-impl std::fmt::Debug for AncillarySourceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AncillarySourceSettings");
-        formatter.field(
-            "source_ancillary_channel_number",
-            &self.source_ancillary_channel_number,
-        );
-        formatter.finish()
     }
 }
 /// See [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
@@ -12314,7 +11703,7 @@ impl AncillarySourceSettings {
 
 /// Audio Selector
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioSelector {
     /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
     #[doc(hidden)]
@@ -12331,14 +11720,6 @@ impl AudioSelector {
     /// The audio selector settings.
     pub fn selector_settings(&self) -> std::option::Option<&crate::model::AudioSelectorSettings> {
         self.selector_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioSelector");
-        formatter.field("name", &self.name);
-        formatter.field("selector_settings", &self.selector_settings);
-        formatter.finish()
     }
 }
 /// See [`AudioSelector`](crate::model::AudioSelector).
@@ -12392,7 +11773,7 @@ impl AudioSelector {
 
 /// Audio Selector Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioSelectorSettings {
     /// Audio Hls Rendition Selection
     #[doc(hidden)]
@@ -12428,19 +11809,6 @@ impl AudioSelectorSettings {
     /// Audio Track Selection
     pub fn audio_track_selection(&self) -> std::option::Option<&crate::model::AudioTrackSelection> {
         self.audio_track_selection.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioSelectorSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioSelectorSettings");
-        formatter.field(
-            "audio_hls_rendition_selection",
-            &self.audio_hls_rendition_selection,
-        );
-        formatter.field("audio_language_selection", &self.audio_language_selection);
-        formatter.field("audio_pid_selection", &self.audio_pid_selection);
-        formatter.field("audio_track_selection", &self.audio_track_selection);
-        formatter.finish()
     }
 }
 /// See [`AudioSelectorSettings`](crate::model::AudioSelectorSettings).
@@ -12535,7 +11903,7 @@ impl AudioSelectorSettings {
 
 /// Audio Track Selection
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioTrackSelection {
     /// Selects one or more unique audio tracks from within a source.
     #[doc(hidden)]
@@ -12545,13 +11913,6 @@ impl AudioTrackSelection {
     /// Selects one or more unique audio tracks from within a source.
     pub fn tracks(&self) -> std::option::Option<&[crate::model::AudioTrack]> {
         self.tracks.as_deref()
-    }
-}
-impl std::fmt::Debug for AudioTrackSelection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioTrackSelection");
-        formatter.field("tracks", &self.tracks);
-        formatter.finish()
     }
 }
 /// See [`AudioTrackSelection`](crate::model::AudioTrackSelection).
@@ -12599,7 +11960,7 @@ impl AudioTrackSelection {
 
 /// Audio Track
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioTrack {
     /// 1-based integer value that maps to a specific audio track
     #[doc(hidden)]
@@ -12609,13 +11970,6 @@ impl AudioTrack {
     /// 1-based integer value that maps to a specific audio track
     pub fn track(&self) -> i32 {
         self.track
-    }
-}
-impl std::fmt::Debug for AudioTrack {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioTrack");
-        formatter.field("track", &self.track);
-        formatter.finish()
     }
 }
 /// See [`AudioTrack`](crate::model::AudioTrack).
@@ -12654,7 +12008,7 @@ impl AudioTrack {
 
 /// Audio Pid Selection
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioPidSelection {
     /// Selects a specific PID from within a source.
     #[doc(hidden)]
@@ -12664,13 +12018,6 @@ impl AudioPidSelection {
     /// Selects a specific PID from within a source.
     pub fn pid(&self) -> i32 {
         self.pid
-    }
-}
-impl std::fmt::Debug for AudioPidSelection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioPidSelection");
-        formatter.field("pid", &self.pid);
-        formatter.finish()
     }
 }
 /// See [`AudioPidSelection`](crate::model::AudioPidSelection).
@@ -12709,7 +12056,7 @@ impl AudioPidSelection {
 
 /// Audio Language Selection
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioLanguageSelection {
     /// Selects a specific three-letter language code from within an audio source.
     #[doc(hidden)]
@@ -12728,14 +12075,6 @@ impl AudioLanguageSelection {
         &self,
     ) -> std::option::Option<&crate::model::AudioLanguageSelectionPolicy> {
         self.language_selection_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioLanguageSelection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioLanguageSelection");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("language_selection_policy", &self.language_selection_policy);
-        formatter.finish()
     }
 }
 /// See [`AudioLanguageSelection`](crate::model::AudioLanguageSelection).
@@ -12888,7 +12227,7 @@ impl AsRef<str> for AudioLanguageSelectionPolicy {
 
 /// Audio Hls Rendition Selection
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioHlsRenditionSelection {
     /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     #[doc(hidden)]
@@ -12905,14 +12244,6 @@ impl AudioHlsRenditionSelection {
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AudioHlsRenditionSelection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioHlsRenditionSelection");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection).
@@ -12963,7 +12294,7 @@ impl AudioHlsRenditionSelection {
 
 /// The settings for Automatic Input Failover.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomaticInputFailoverSettings {
     /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
     #[doc(hidden)]
@@ -12994,16 +12325,6 @@ impl AutomaticInputFailoverSettings {
     /// The input ID of the secondary input in the automatic input failover pair.
     pub fn secondary_input_id(&self) -> std::option::Option<&str> {
         self.secondary_input_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AutomaticInputFailoverSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomaticInputFailoverSettings");
-        formatter.field("error_clear_time_msec", &self.error_clear_time_msec);
-        formatter.field("failover_conditions", &self.failover_conditions);
-        formatter.field("input_preference", &self.input_preference);
-        formatter.field("secondary_input_id", &self.secondary_input_id);
-        formatter.finish()
     }
 }
 /// See [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings).
@@ -13186,7 +12507,7 @@ impl AsRef<str> for InputPreference {
 
 /// Failover Condition settings. There can be multiple failover conditions inside AutomaticInputFailoverSettings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailoverCondition {
     /// Failover condition type-specific settings.
     #[doc(hidden)]
@@ -13198,16 +12519,6 @@ impl FailoverCondition {
         &self,
     ) -> std::option::Option<&crate::model::FailoverConditionSettings> {
         self.failover_condition_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for FailoverCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailoverCondition");
-        formatter.field(
-            "failover_condition_settings",
-            &self.failover_condition_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`FailoverCondition`](crate::model::FailoverCondition).
@@ -13253,7 +12564,7 @@ impl FailoverCondition {
 
 /// Settings for one failover condition.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailoverConditionSettings {
     /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
     #[doc(hidden)]
@@ -13283,15 +12594,6 @@ impl FailoverConditionSettings {
         &self,
     ) -> std::option::Option<&crate::model::VideoBlackFailoverSettings> {
         self.video_black_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for FailoverConditionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailoverConditionSettings");
-        formatter.field("audio_silence_settings", &self.audio_silence_settings);
-        formatter.field("input_loss_settings", &self.input_loss_settings);
-        formatter.field("video_black_settings", &self.video_black_settings);
-        formatter.finish()
     }
 }
 /// See [`FailoverConditionSettings`](crate::model::FailoverConditionSettings).
@@ -13375,7 +12677,7 @@ impl FailoverConditionSettings {
 
 /// Placeholder documentation for VideoBlackFailoverSettings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoBlackFailoverSettings {
     /// A value used in calculating the threshold below which MediaLive considers a pixel to be 'black'. For the input to be considered black, every pixel in a frame must be below this threshold. The threshold is calculated as a percentage (expressed as a decimal) of white. Therefore .1 means 10% white (or 90% black). Note how the formula works for any color depth. For example, if you set this field to 0.1 in 10-bit color depth: (1023*0.1=102.3), which means a pixel value of 102 or less is 'black'. If you set this field to .1 in an 8-bit color depth: (255*0.1=25.5), which means a pixel value of 25 or less is 'black'. The range is 0.0 to 1.0, with any number of decimal places.
     #[doc(hidden)]
@@ -13392,17 +12694,6 @@ impl VideoBlackFailoverSettings {
     /// The amount of time (in milliseconds) that the active input must be black before automatic input failover occurs.
     pub fn video_black_threshold_msec(&self) -> i32 {
         self.video_black_threshold_msec
-    }
-}
-impl std::fmt::Debug for VideoBlackFailoverSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoBlackFailoverSettings");
-        formatter.field("black_detect_threshold", &self.black_detect_threshold);
-        formatter.field(
-            "video_black_threshold_msec",
-            &self.video_black_threshold_msec,
-        );
-        formatter.finish()
     }
 }
 /// See [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings).
@@ -13453,7 +12744,7 @@ impl VideoBlackFailoverSettings {
 
 /// MediaLive will perform a failover if content is not detected in this input for the specified period.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLossFailoverSettings {
     /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
     #[doc(hidden)]
@@ -13463,13 +12754,6 @@ impl InputLossFailoverSettings {
     /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
     pub fn input_loss_threshold_msec(&self) -> i32 {
         self.input_loss_threshold_msec
-    }
-}
-impl std::fmt::Debug for InputLossFailoverSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLossFailoverSettings");
-        formatter.field("input_loss_threshold_msec", &self.input_loss_threshold_msec);
-        formatter.finish()
     }
 }
 /// See [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings).
@@ -13508,7 +12792,7 @@ impl InputLossFailoverSettings {
 
 /// Placeholder documentation for AudioSilenceFailoverSettings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioSilenceFailoverSettings {
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
     #[doc(hidden)]
@@ -13525,17 +12809,6 @@ impl AudioSilenceFailoverSettings {
     /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
     pub fn audio_silence_threshold_msec(&self) -> i32 {
         self.audio_silence_threshold_msec
-    }
-}
-impl std::fmt::Debug for AudioSilenceFailoverSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioSilenceFailoverSettings");
-        formatter.field("audio_selector_name", &self.audio_selector_name);
-        formatter.field(
-            "audio_silence_threshold_msec",
-            &self.audio_silence_threshold_msec,
-        );
-        formatter.finish()
     }
 }
 /// See [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings).
@@ -13589,7 +12862,7 @@ impl AudioSilenceFailoverSettings {
 
 /// Encoder Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncoderSettings {
     /// Placeholder documentation for __listOfAudioDescription
     #[doc(hidden)]
@@ -13681,27 +12954,6 @@ impl EncoderSettings {
     /// Placeholder documentation for __listOfVideoDescription
     pub fn video_descriptions(&self) -> std::option::Option<&[crate::model::VideoDescription]> {
         self.video_descriptions.as_deref()
-    }
-}
-impl std::fmt::Debug for EncoderSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncoderSettings");
-        formatter.field("audio_descriptions", &self.audio_descriptions);
-        formatter.field("avail_blanking", &self.avail_blanking);
-        formatter.field("avail_configuration", &self.avail_configuration);
-        formatter.field("blackout_slate", &self.blackout_slate);
-        formatter.field("caption_descriptions", &self.caption_descriptions);
-        formatter.field("feature_activations", &self.feature_activations);
-        formatter.field("global_configuration", &self.global_configuration);
-        formatter.field(
-            "motion_graphics_configuration",
-            &self.motion_graphics_configuration,
-        );
-        formatter.field("nielsen_configuration", &self.nielsen_configuration);
-        formatter.field("output_groups", &self.output_groups);
-        formatter.field("timecode_config", &self.timecode_config);
-        formatter.field("video_descriptions", &self.video_descriptions);
-        formatter.finish()
     }
 }
 /// See [`EncoderSettings`](crate::model::EncoderSettings).
@@ -13939,7 +13191,7 @@ impl EncoderSettings {
 
 /// Video settings for this stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoDescription {
     /// Video codec settings.
     #[doc(hidden)]
@@ -13995,19 +13247,6 @@ impl VideoDescription {
     /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
     pub fn width(&self) -> i32 {
         self.width
-    }
-}
-impl std::fmt::Debug for VideoDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoDescription");
-        formatter.field("codec_settings", &self.codec_settings);
-        formatter.field("height", &self.height);
-        formatter.field("name", &self.name);
-        formatter.field("respond_to_afd", &self.respond_to_afd);
-        formatter.field("scaling_behavior", &self.scaling_behavior);
-        formatter.field("sharpness", &self.sharpness);
-        formatter.field("width", &self.width);
-        formatter.finish()
     }
 }
 /// See [`VideoDescription`](crate::model::VideoDescription).
@@ -14320,7 +13559,7 @@ impl AsRef<str> for VideoDescriptionRespondToAfd {
 
 /// Video Codec Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoCodecSettings {
     /// Frame Capture Settings
     #[doc(hidden)]
@@ -14353,16 +13592,6 @@ impl VideoCodecSettings {
     /// Mpeg2 Settings
     pub fn mpeg2_settings(&self) -> std::option::Option<&crate::model::Mpeg2Settings> {
         self.mpeg2_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for VideoCodecSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoCodecSettings");
-        formatter.field("frame_capture_settings", &self.frame_capture_settings);
-        formatter.field("h264_settings", &self.h264_settings);
-        formatter.field("h265_settings", &self.h265_settings);
-        formatter.field("mpeg2_settings", &self.mpeg2_settings);
-        formatter.finish()
     }
 }
 /// See [`VideoCodecSettings`](crate::model::VideoCodecSettings).
@@ -14449,7 +13678,7 @@ impl VideoCodecSettings {
 
 /// Mpeg2 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Mpeg2Settings {
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
     #[doc(hidden)]
@@ -14568,28 +13797,6 @@ impl Mpeg2Settings {
         &self,
     ) -> std::option::Option<&crate::model::Mpeg2TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
-    }
-}
-impl std::fmt::Debug for Mpeg2Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Mpeg2Settings");
-        formatter.field("adaptive_quantization", &self.adaptive_quantization);
-        formatter.field("afd_signaling", &self.afd_signaling);
-        formatter.field("color_metadata", &self.color_metadata);
-        formatter.field("color_space", &self.color_space);
-        formatter.field("display_aspect_ratio", &self.display_aspect_ratio);
-        formatter.field("filter_settings", &self.filter_settings);
-        formatter.field("fixed_afd", &self.fixed_afd);
-        formatter.field("framerate_denominator", &self.framerate_denominator);
-        formatter.field("framerate_numerator", &self.framerate_numerator);
-        formatter.field("gop_closed_cadence", &self.gop_closed_cadence);
-        formatter.field("gop_num_b_frames", &self.gop_num_b_frames);
-        formatter.field("gop_size", &self.gop_size);
-        formatter.field("gop_size_units", &self.gop_size_units);
-        formatter.field("scan_type", &self.scan_type);
-        formatter.field("subgop_length", &self.subgop_length);
-        formatter.field("timecode_insertion", &self.timecode_insertion);
-        formatter.finish()
     }
 }
 /// See [`Mpeg2Settings`](crate::model::Mpeg2Settings).
@@ -15350,7 +14557,7 @@ impl AsRef<str> for FixedAfd {
 
 /// Mpeg2 Filter Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Mpeg2FilterSettings {
     /// Temporal Filter Settings
     #[doc(hidden)]
@@ -15362,13 +14569,6 @@ impl Mpeg2FilterSettings {
         &self,
     ) -> std::option::Option<&crate::model::TemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for Mpeg2FilterSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Mpeg2FilterSettings");
-        formatter.field("temporal_filter_settings", &self.temporal_filter_settings);
-        formatter.finish()
     }
 }
 /// See [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings).
@@ -15414,7 +14614,7 @@ impl Mpeg2FilterSettings {
 
 /// Temporal Filter Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemporalFilterSettings {
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
     #[doc(hidden)]
@@ -15434,14 +14634,6 @@ impl TemporalFilterSettings {
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
     pub fn strength(&self) -> std::option::Option<&crate::model::TemporalFilterStrength> {
         self.strength.as_ref()
-    }
-}
-impl std::fmt::Debug for TemporalFilterSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemporalFilterSettings");
-        formatter.field("post_filter_sharpening", &self.post_filter_sharpening);
-        formatter.field("strength", &self.strength);
-        formatter.finish()
     }
 }
 /// See [`TemporalFilterSettings`](crate::model::TemporalFilterSettings).
@@ -16260,7 +15452,7 @@ impl AsRef<str> for Mpeg2AdaptiveQuantization {
 
 /// H265 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct H265Settings {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     #[doc(hidden)]
@@ -16477,44 +15669,6 @@ impl H265Settings {
         &self,
     ) -> std::option::Option<&crate::model::H265TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
-    }
-}
-impl std::fmt::Debug for H265Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("H265Settings");
-        formatter.field("adaptive_quantization", &self.adaptive_quantization);
-        formatter.field("afd_signaling", &self.afd_signaling);
-        formatter.field(
-            "alternative_transfer_function",
-            &self.alternative_transfer_function,
-        );
-        formatter.field("bitrate", &self.bitrate);
-        formatter.field("buf_size", &self.buf_size);
-        formatter.field("color_metadata", &self.color_metadata);
-        formatter.field("color_space_settings", &self.color_space_settings);
-        formatter.field("filter_settings", &self.filter_settings);
-        formatter.field("fixed_afd", &self.fixed_afd);
-        formatter.field("flicker_aq", &self.flicker_aq);
-        formatter.field("framerate_denominator", &self.framerate_denominator);
-        formatter.field("framerate_numerator", &self.framerate_numerator);
-        formatter.field("gop_closed_cadence", &self.gop_closed_cadence);
-        formatter.field("gop_size", &self.gop_size);
-        formatter.field("gop_size_units", &self.gop_size_units);
-        formatter.field("level", &self.level);
-        formatter.field("look_ahead_rate_control", &self.look_ahead_rate_control);
-        formatter.field("max_bitrate", &self.max_bitrate);
-        formatter.field("min_i_interval", &self.min_i_interval);
-        formatter.field("par_denominator", &self.par_denominator);
-        formatter.field("par_numerator", &self.par_numerator);
-        formatter.field("profile", &self.profile);
-        formatter.field("qvbr_quality_level", &self.qvbr_quality_level);
-        formatter.field("rate_control_mode", &self.rate_control_mode);
-        formatter.field("scan_type", &self.scan_type);
-        formatter.field("scene_change_detect", &self.scene_change_detect);
-        formatter.field("slices", &self.slices);
-        formatter.field("tier", &self.tier);
-        formatter.field("timecode_insertion", &self.timecode_insertion);
-        formatter.finish()
     }
 }
 /// See [`H265Settings`](crate::model::H265Settings).
@@ -17940,7 +17094,7 @@ impl AsRef<str> for H265FlickerAq {
 
 /// H265 Filter Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct H265FilterSettings {
     /// Temporal Filter Settings
     #[doc(hidden)]
@@ -17952,13 +17106,6 @@ impl H265FilterSettings {
         &self,
     ) -> std::option::Option<&crate::model::TemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for H265FilterSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("H265FilterSettings");
-        formatter.field("temporal_filter_settings", &self.temporal_filter_settings);
-        formatter.finish()
     }
 }
 /// See [`H265FilterSettings`](crate::model::H265FilterSettings).
@@ -18004,7 +17151,7 @@ impl H265FilterSettings {
 
 /// H265 Color Space Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct H265ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
     #[doc(hidden)]
@@ -18047,20 +17194,6 @@ impl H265ColorSpaceSettings {
     /// Rec709 Settings
     pub fn rec709_settings(&self) -> std::option::Option<&crate::model::Rec709Settings> {
         self.rec709_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for H265ColorSpaceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("H265ColorSpaceSettings");
-        formatter.field(
-            "color_space_passthrough_settings",
-            &self.color_space_passthrough_settings,
-        );
-        formatter.field("dolby_vision81_settings", &self.dolby_vision81_settings);
-        formatter.field("hdr10_settings", &self.hdr10_settings);
-        formatter.field("rec601_settings", &self.rec601_settings);
-        formatter.field("rec709_settings", &self.rec709_settings);
-        formatter.finish()
     }
 }
 /// See [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings).
@@ -18170,14 +17303,8 @@ impl H265ColorSpaceSettings {
 
 /// Rec709 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rec709Settings {}
-impl std::fmt::Debug for Rec709Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rec709Settings");
-        formatter.finish()
-    }
-}
 /// See [`Rec709Settings`](crate::model::Rec709Settings).
 pub mod rec709_settings {
 
@@ -18200,14 +17327,8 @@ impl Rec709Settings {
 
 /// Rec601 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rec601Settings {}
-impl std::fmt::Debug for Rec601Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rec601Settings");
-        formatter.finish()
-    }
-}
 /// See [`Rec601Settings`](crate::model::Rec601Settings).
 pub mod rec601_settings {
 
@@ -18230,14 +17351,8 @@ impl Rec601Settings {
 
 /// Dolby Vision Profile 8.1 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DolbyVision81Settings {}
-impl std::fmt::Debug for DolbyVision81Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DolbyVision81Settings");
-        formatter.finish()
-    }
-}
 /// See [`DolbyVision81Settings`](crate::model::DolbyVision81Settings).
 pub mod dolby_vision81_settings {
 
@@ -18260,14 +17375,8 @@ impl DolbyVision81Settings {
 
 /// Passthrough applies no color space conversion to the output
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColorSpacePassthroughSettings {}
-impl std::fmt::Debug for ColorSpacePassthroughSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColorSpacePassthroughSettings");
-        formatter.finish()
-    }
-}
 /// See [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings).
 pub mod color_space_passthrough_settings {
 
@@ -18591,7 +17700,7 @@ impl AsRef<str> for H265AdaptiveQuantization {
 
 /// H264 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct H264Settings {
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
     #[doc(hidden)]
@@ -18891,53 +18000,6 @@ impl H264Settings {
         &self,
     ) -> std::option::Option<&crate::model::H264TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
-    }
-}
-impl std::fmt::Debug for H264Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("H264Settings");
-        formatter.field("adaptive_quantization", &self.adaptive_quantization);
-        formatter.field("afd_signaling", &self.afd_signaling);
-        formatter.field("bitrate", &self.bitrate);
-        formatter.field("buf_fill_pct", &self.buf_fill_pct);
-        formatter.field("buf_size", &self.buf_size);
-        formatter.field("color_metadata", &self.color_metadata);
-        formatter.field("color_space_settings", &self.color_space_settings);
-        formatter.field("entropy_encoding", &self.entropy_encoding);
-        formatter.field("filter_settings", &self.filter_settings);
-        formatter.field("fixed_afd", &self.fixed_afd);
-        formatter.field("flicker_aq", &self.flicker_aq);
-        formatter.field("force_field_pictures", &self.force_field_pictures);
-        formatter.field("framerate_control", &self.framerate_control);
-        formatter.field("framerate_denominator", &self.framerate_denominator);
-        formatter.field("framerate_numerator", &self.framerate_numerator);
-        formatter.field("gop_b_reference", &self.gop_b_reference);
-        formatter.field("gop_closed_cadence", &self.gop_closed_cadence);
-        formatter.field("gop_num_b_frames", &self.gop_num_b_frames);
-        formatter.field("gop_size", &self.gop_size);
-        formatter.field("gop_size_units", &self.gop_size_units);
-        formatter.field("level", &self.level);
-        formatter.field("look_ahead_rate_control", &self.look_ahead_rate_control);
-        formatter.field("max_bitrate", &self.max_bitrate);
-        formatter.field("min_i_interval", &self.min_i_interval);
-        formatter.field("num_ref_frames", &self.num_ref_frames);
-        formatter.field("par_control", &self.par_control);
-        formatter.field("par_denominator", &self.par_denominator);
-        formatter.field("par_numerator", &self.par_numerator);
-        formatter.field("profile", &self.profile);
-        formatter.field("quality_level", &self.quality_level);
-        formatter.field("qvbr_quality_level", &self.qvbr_quality_level);
-        formatter.field("rate_control_mode", &self.rate_control_mode);
-        formatter.field("scan_type", &self.scan_type);
-        formatter.field("scene_change_detect", &self.scene_change_detect);
-        formatter.field("slices", &self.slices);
-        formatter.field("softness", &self.softness);
-        formatter.field("spatial_aq", &self.spatial_aq);
-        formatter.field("subgop_length", &self.subgop_length);
-        formatter.field("syntax", &self.syntax);
-        formatter.field("temporal_aq", &self.temporal_aq);
-        formatter.field("timecode_insertion", &self.timecode_insertion);
-        formatter.finish()
     }
 }
 /// See [`H264Settings`](crate::model::H264Settings).
@@ -21303,7 +20365,7 @@ impl AsRef<str> for H264FlickerAq {
 
 /// H264 Filter Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct H264FilterSettings {
     /// Temporal Filter Settings
     #[doc(hidden)]
@@ -21315,13 +20377,6 @@ impl H264FilterSettings {
         &self,
     ) -> std::option::Option<&crate::model::TemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for H264FilterSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("H264FilterSettings");
-        formatter.field("temporal_filter_settings", &self.temporal_filter_settings);
-        formatter.finish()
     }
 }
 /// See [`H264FilterSettings`](crate::model::H264FilterSettings).
@@ -21459,7 +20514,7 @@ impl AsRef<str> for H264EntropyEncoding {
 
 /// H264 Color Space Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct H264ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
     #[doc(hidden)]
@@ -21486,18 +20541,6 @@ impl H264ColorSpaceSettings {
     /// Rec709 Settings
     pub fn rec709_settings(&self) -> std::option::Option<&crate::model::Rec709Settings> {
         self.rec709_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for H264ColorSpaceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("H264ColorSpaceSettings");
-        formatter.field(
-            "color_space_passthrough_settings",
-            &self.color_space_passthrough_settings,
-        );
-        formatter.field("rec601_settings", &self.rec601_settings);
-        formatter.field("rec709_settings", &self.rec709_settings);
-        formatter.finish()
     }
 }
 /// See [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings).
@@ -21782,7 +20825,7 @@ impl AsRef<str> for H264AdaptiveQuantization {
 
 /// Frame Capture Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameCaptureSettings {
     /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
     #[doc(hidden)]
@@ -21801,14 +20844,6 @@ impl FrameCaptureSettings {
         &self,
     ) -> std::option::Option<&crate::model::FrameCaptureIntervalUnit> {
         self.capture_interval_units.as_ref()
-    }
-}
-impl std::fmt::Debug for FrameCaptureSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameCaptureSettings");
-        formatter.field("capture_interval", &self.capture_interval);
-        formatter.field("capture_interval_units", &self.capture_interval_units);
-        formatter.finish()
     }
 }
 /// See [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
@@ -21958,7 +20993,7 @@ impl AsRef<str> for FrameCaptureIntervalUnit {
 
 /// Timecode Config
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimecodeConfig {
     /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
     #[doc(hidden)]
@@ -21975,14 +21010,6 @@ impl TimecodeConfig {
     /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
     pub fn sync_threshold(&self) -> i32 {
         self.sync_threshold
-    }
-}
-impl std::fmt::Debug for TimecodeConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimecodeConfig");
-        formatter.field("source", &self.source);
-        formatter.field("sync_threshold", &self.sync_threshold);
-        formatter.finish()
     }
 }
 /// See [`TimecodeConfig`](crate::model::TimecodeConfig).
@@ -22133,7 +21160,7 @@ impl AsRef<str> for TimecodeConfigSource {
 
 /// Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputGroup {
     /// Custom output group name optionally defined by the user.
     #[doc(hidden)]
@@ -22157,15 +21184,6 @@ impl OutputGroup {
     /// Placeholder documentation for __listOfOutput
     pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
         self.outputs.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputGroup");
-        formatter.field("name", &self.name);
-        formatter.field("output_group_settings", &self.output_group_settings);
-        formatter.field("outputs", &self.outputs);
-        formatter.finish()
     }
 }
 /// See [`OutputGroup`](crate::model::OutputGroup).
@@ -22240,7 +21258,7 @@ impl OutputGroup {
 
 /// Output settings. There can be multiple outputs within a group.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Output {
     /// The names of the AudioDescriptions used as audio sources for this output.
     #[doc(hidden)]
@@ -22278,17 +21296,6 @@ impl Output {
     /// The name of the VideoDescription used as the source for this output.
     pub fn video_description_name(&self) -> std::option::Option<&str> {
         self.video_description_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Output {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Output");
-        formatter.field("audio_description_names", &self.audio_description_names);
-        formatter.field("caption_description_names", &self.caption_description_names);
-        formatter.field("output_name", &self.output_name);
-        formatter.field("output_settings", &self.output_settings);
-        formatter.field("video_description_name", &self.video_description_name);
-        formatter.finish()
     }
 }
 /// See [`Output`](crate::model::Output).
@@ -22400,7 +21407,7 @@ impl Output {
 
 /// Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputSettings {
     /// Archive Output Settings
     #[doc(hidden)]
@@ -22471,26 +21478,6 @@ impl OutputSettings {
     /// Udp Output Settings
     pub fn udp_output_settings(&self) -> std::option::Option<&crate::model::UdpOutputSettings> {
         self.udp_output_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputSettings");
-        formatter.field("archive_output_settings", &self.archive_output_settings);
-        formatter.field(
-            "frame_capture_output_settings",
-            &self.frame_capture_output_settings,
-        );
-        formatter.field("hls_output_settings", &self.hls_output_settings);
-        formatter.field(
-            "media_package_output_settings",
-            &self.media_package_output_settings,
-        );
-        formatter.field("ms_smooth_output_settings", &self.ms_smooth_output_settings);
-        formatter.field("multiplex_output_settings", &self.multiplex_output_settings);
-        formatter.field("rtmp_output_settings", &self.rtmp_output_settings);
-        formatter.field("udp_output_settings", &self.udp_output_settings);
-        formatter.finish()
     }
 }
 /// See [`OutputSettings`](crate::model::OutputSettings).
@@ -22657,7 +21644,7 @@ impl OutputSettings {
 
 /// Udp Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UdpOutputSettings {
     /// UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.
     #[doc(hidden)]
@@ -22688,16 +21675,6 @@ impl UdpOutputSettings {
     /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
     pub fn fec_output_settings(&self) -> std::option::Option<&crate::model::FecOutputSettings> {
         self.fec_output_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for UdpOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UdpOutputSettings");
-        formatter.field("buffer_msec", &self.buffer_msec);
-        formatter.field("container_settings", &self.container_settings);
-        formatter.field("destination", &self.destination);
-        formatter.field("fec_output_settings", &self.fec_output_settings);
-        formatter.finish()
     }
 }
 /// See [`UdpOutputSettings`](crate::model::UdpOutputSettings).
@@ -22781,7 +21758,7 @@ impl UdpOutputSettings {
 
 /// Fec Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FecOutputSettings {
     /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
     #[doc(hidden)]
@@ -22805,15 +21782,6 @@ impl FecOutputSettings {
     /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
     pub fn row_length(&self) -> i32 {
         self.row_length
-    }
-}
-impl std::fmt::Debug for FecOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FecOutputSettings");
-        formatter.field("column_depth", &self.column_depth);
-        formatter.field("include_fec", &self.include_fec);
-        formatter.field("row_length", &self.row_length);
-        formatter.finish()
     }
 }
 /// See [`FecOutputSettings`](crate::model::FecOutputSettings).
@@ -22971,7 +21939,7 @@ impl AsRef<str> for FecOutputIncludeFec {
 
 /// Reference to an OutputDestination ID defined in the channel
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputLocationRef {
     /// Placeholder documentation for __string
     #[doc(hidden)]
@@ -22981,13 +21949,6 @@ impl OutputLocationRef {
     /// Placeholder documentation for __string
     pub fn destination_ref_id(&self) -> std::option::Option<&str> {
         self.destination_ref_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputLocationRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputLocationRef");
-        formatter.field("destination_ref_id", &self.destination_ref_id);
-        formatter.finish()
     }
 }
 /// See [`OutputLocationRef`](crate::model::OutputLocationRef).
@@ -23029,7 +21990,7 @@ impl OutputLocationRef {
 
 /// Udp Container Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UdpContainerSettings {
     /// M2ts Settings
     #[doc(hidden)]
@@ -23039,13 +22000,6 @@ impl UdpContainerSettings {
     /// M2ts Settings
     pub fn m2ts_settings(&self) -> std::option::Option<&crate::model::M2tsSettings> {
         self.m2ts_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for UdpContainerSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UdpContainerSettings");
-        formatter.field("m2ts_settings", &self.m2ts_settings);
-        formatter.finish()
     }
 }
 /// See [`UdpContainerSettings`](crate::model::UdpContainerSettings).
@@ -23087,7 +22041,7 @@ impl UdpContainerSettings {
 
 /// M2ts Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct M2tsSettings {
     /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
     #[doc(hidden)]
@@ -23430,62 +22384,6 @@ impl M2tsSettings {
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn video_pid(&self) -> std::option::Option<&str> {
         self.video_pid.as_deref()
-    }
-}
-impl std::fmt::Debug for M2tsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("M2tsSettings");
-        formatter.field(
-            "absent_input_audio_behavior",
-            &self.absent_input_audio_behavior,
-        );
-        formatter.field("arib", &self.arib);
-        formatter.field("arib_captions_pid", &self.arib_captions_pid);
-        formatter.field("arib_captions_pid_control", &self.arib_captions_pid_control);
-        formatter.field("audio_buffer_model", &self.audio_buffer_model);
-        formatter.field("audio_frames_per_pes", &self.audio_frames_per_pes);
-        formatter.field("audio_pids", &self.audio_pids);
-        formatter.field("audio_stream_type", &self.audio_stream_type);
-        formatter.field("bitrate", &self.bitrate);
-        formatter.field("buffer_model", &self.buffer_model);
-        formatter.field("cc_descriptor", &self.cc_descriptor);
-        formatter.field("dvb_nit_settings", &self.dvb_nit_settings);
-        formatter.field("dvb_sdt_settings", &self.dvb_sdt_settings);
-        formatter.field("dvb_sub_pids", &self.dvb_sub_pids);
-        formatter.field("dvb_tdt_settings", &self.dvb_tdt_settings);
-        formatter.field("dvb_teletext_pid", &self.dvb_teletext_pid);
-        formatter.field("ebif", &self.ebif);
-        formatter.field("ebp_audio_interval", &self.ebp_audio_interval);
-        formatter.field("ebp_lookahead_ms", &self.ebp_lookahead_ms);
-        formatter.field("ebp_placement", &self.ebp_placement);
-        formatter.field("ecm_pid", &self.ecm_pid);
-        formatter.field("es_rate_in_pes", &self.es_rate_in_pes);
-        formatter.field("etv_platform_pid", &self.etv_platform_pid);
-        formatter.field("etv_signal_pid", &self.etv_signal_pid);
-        formatter.field("fragment_time", &self.fragment_time);
-        formatter.field("klv", &self.klv);
-        formatter.field("klv_data_pids", &self.klv_data_pids);
-        formatter.field("nielsen_id3_behavior", &self.nielsen_id3_behavior);
-        formatter.field("null_packet_bitrate", &self.null_packet_bitrate);
-        formatter.field("pat_interval", &self.pat_interval);
-        formatter.field("pcr_control", &self.pcr_control);
-        formatter.field("pcr_period", &self.pcr_period);
-        formatter.field("pcr_pid", &self.pcr_pid);
-        formatter.field("pmt_interval", &self.pmt_interval);
-        formatter.field("pmt_pid", &self.pmt_pid);
-        formatter.field("program_num", &self.program_num);
-        formatter.field("rate_mode", &self.rate_mode);
-        formatter.field("scte27_pids", &self.scte27_pids);
-        formatter.field("scte35_control", &self.scte35_control);
-        formatter.field("scte35_pid", &self.scte35_pid);
-        formatter.field("segmentation_markers", &self.segmentation_markers);
-        formatter.field("segmentation_style", &self.segmentation_style);
-        formatter.field("segmentation_time", &self.segmentation_time);
-        formatter.field("timed_metadata_behavior", &self.timed_metadata_behavior);
-        formatter.field("timed_metadata_pid", &self.timed_metadata_pid);
-        formatter.field("transport_stream_id", &self.transport_stream_id);
-        formatter.field("video_pid", &self.video_pid);
-        formatter.finish()
     }
 }
 /// See [`M2tsSettings`](crate::model::M2tsSettings).
@@ -25288,7 +24186,7 @@ impl AsRef<str> for M2tsEbifControl {
 
 /// DVB Time and Date Table (SDT)
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
@@ -25298,13 +24196,6 @@ impl DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn rep_interval(&self) -> i32 {
         self.rep_interval
-    }
-}
-impl std::fmt::Debug for DvbTdtSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DvbTdtSettings");
-        formatter.field("rep_interval", &self.rep_interval);
-        formatter.finish()
     }
 }
 /// See [`DvbTdtSettings`](crate::model::DvbTdtSettings).
@@ -25343,7 +24234,7 @@ impl DvbTdtSettings {
 
 /// DVB Service Description Table (SDT)
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DvbSdtSettings {
     /// Selects method of inserting SDT information into output stream. The sdtFollow setting copies SDT information from input stream to output stream. The sdtFollowIfPresent setting copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. The sdtManual setting means user will enter the SDT information. The sdtNone setting means output stream will not contain SDT information.
     #[doc(hidden)]
@@ -25374,16 +24265,6 @@ impl DvbSdtSettings {
     /// The service provider name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
     pub fn service_provider_name(&self) -> std::option::Option<&str> {
         self.service_provider_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DvbSdtSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DvbSdtSettings");
-        formatter.field("output_sdt", &self.output_sdt);
-        formatter.field("rep_interval", &self.rep_interval);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_provider_name", &self.service_provider_name);
-        formatter.finish()
     }
 }
 /// See [`DvbSdtSettings`](crate::model::DvbSdtSettings).
@@ -25569,7 +24450,7 @@ impl AsRef<str> for DvbSdtOutputSdt {
 
 /// DVB Network Information Table (NIT)
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DvbNitSettings {
     /// The numeric value placed in the Network Information Table (NIT).
     #[doc(hidden)]
@@ -25593,15 +24474,6 @@ impl DvbNitSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn rep_interval(&self) -> i32 {
         self.rep_interval
-    }
-}
-impl std::fmt::Debug for DvbNitSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DvbNitSettings");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("network_name", &self.network_name);
-        formatter.field("rep_interval", &self.rep_interval);
-        formatter.finish()
     }
 }
 /// See [`DvbNitSettings`](crate::model::DvbNitSettings).
@@ -26302,7 +25174,7 @@ impl AsRef<str> for M2tsAbsentInputAudioBehavior {
 
 /// Rtmp Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RtmpOutputSettings {
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
     #[doc(hidden)]
@@ -26335,16 +25207,6 @@ impl RtmpOutputSettings {
     /// Number of retry attempts.
     pub fn num_retries(&self) -> i32 {
         self.num_retries
-    }
-}
-impl std::fmt::Debug for RtmpOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RtmpOutputSettings");
-        formatter.field("certificate_mode", &self.certificate_mode);
-        formatter.field("connection_retry_interval", &self.connection_retry_interval);
-        formatter.field("destination", &self.destination);
-        formatter.field("num_retries", &self.num_retries);
-        formatter.finish()
     }
 }
 /// See [`RtmpOutputSettings`](crate::model::RtmpOutputSettings).
@@ -26517,7 +25379,7 @@ impl AsRef<str> for RtmpOutputCertificateMode {
 
 /// Multiplex Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexOutputSettings {
     /// Destination is a Multiplex.
     #[doc(hidden)]
@@ -26527,13 +25389,6 @@ impl MultiplexOutputSettings {
     /// Destination is a Multiplex.
     pub fn destination(&self) -> std::option::Option<&crate::model::OutputLocationRef> {
         self.destination.as_ref()
-    }
-}
-impl std::fmt::Debug for MultiplexOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexOutputSettings");
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings).
@@ -26575,7 +25430,7 @@ impl MultiplexOutputSettings {
 
 /// Ms Smooth Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MsSmoothOutputSettings {
     /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
     #[doc(hidden)]
@@ -26594,14 +25449,6 @@ impl MsSmoothOutputSettings {
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub fn name_modifier(&self) -> std::option::Option<&str> {
         self.name_modifier.as_deref()
-    }
-}
-impl std::fmt::Debug for MsSmoothOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MsSmoothOutputSettings");
-        formatter.field("h265_packaging_type", &self.h265_packaging_type);
-        formatter.field("name_modifier", &self.name_modifier);
-        formatter.finish()
     }
 }
 /// See [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings).
@@ -26754,14 +25601,8 @@ impl AsRef<str> for MsSmoothH265PackagingType {
 
 /// Media Package Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaPackageOutputSettings {}
-impl std::fmt::Debug for MediaPackageOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaPackageOutputSettings");
-        formatter.finish()
-    }
-}
 /// See [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings).
 pub mod media_package_output_settings {
 
@@ -26784,7 +25625,7 @@ impl MediaPackageOutputSettings {
 
 /// Hls Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsOutputSettings {
     /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
     #[doc(hidden)]
@@ -26815,16 +25656,6 @@ impl HlsOutputSettings {
     /// String concatenated to end of segment filenames.
     pub fn segment_modifier(&self) -> std::option::Option<&str> {
         self.segment_modifier.as_deref()
-    }
-}
-impl std::fmt::Debug for HlsOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsOutputSettings");
-        formatter.field("h265_packaging_type", &self.h265_packaging_type);
-        formatter.field("hls_settings", &self.hls_settings);
-        formatter.field("name_modifier", &self.name_modifier);
-        formatter.field("segment_modifier", &self.segment_modifier);
-        formatter.finish()
     }
 }
 /// See [`HlsOutputSettings`](crate::model::HlsOutputSettings).
@@ -26911,7 +25742,7 @@ impl HlsOutputSettings {
 
 /// Hls Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsSettings {
     /// Audio Only Hls Settings
     #[doc(hidden)]
@@ -26946,19 +25777,6 @@ impl HlsSettings {
     /// Standard Hls Settings
     pub fn standard_hls_settings(&self) -> std::option::Option<&crate::model::StandardHlsSettings> {
         self.standard_hls_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for HlsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsSettings");
-        formatter.field("audio_only_hls_settings", &self.audio_only_hls_settings);
-        formatter.field("fmp4_hls_settings", &self.fmp4_hls_settings);
-        formatter.field(
-            "frame_capture_hls_settings",
-            &self.frame_capture_hls_settings,
-        );
-        formatter.field("standard_hls_settings", &self.standard_hls_settings);
-        formatter.finish()
     }
 }
 /// See [`HlsSettings`](crate::model::HlsSettings).
@@ -27052,7 +25870,7 @@ impl HlsSettings {
 
 /// Standard Hls Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StandardHlsSettings {
     /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
     #[doc(hidden)]
@@ -27069,14 +25887,6 @@ impl StandardHlsSettings {
     /// Settings information for the .m3u8 container
     pub fn m3u8_settings(&self) -> std::option::Option<&crate::model::M3u8Settings> {
         self.m3u8_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for StandardHlsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StandardHlsSettings");
-        formatter.field("audio_rendition_sets", &self.audio_rendition_sets);
-        formatter.field("m3u8_settings", &self.m3u8_settings);
-        formatter.finish()
     }
 }
 /// See [`StandardHlsSettings`](crate::model::StandardHlsSettings).
@@ -27133,7 +25943,7 @@ impl StandardHlsSettings {
 
 /// Settings information for the .m3u8 container
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct M3u8Settings {
     /// The number of audio frames to insert for each PES packet.
     #[doc(hidden)]
@@ -27259,29 +26069,6 @@ impl M3u8Settings {
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
     pub fn video_pid(&self) -> std::option::Option<&str> {
         self.video_pid.as_deref()
-    }
-}
-impl std::fmt::Debug for M3u8Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("M3u8Settings");
-        formatter.field("audio_frames_per_pes", &self.audio_frames_per_pes);
-        formatter.field("audio_pids", &self.audio_pids);
-        formatter.field("ecm_pid", &self.ecm_pid);
-        formatter.field("nielsen_id3_behavior", &self.nielsen_id3_behavior);
-        formatter.field("pat_interval", &self.pat_interval);
-        formatter.field("pcr_control", &self.pcr_control);
-        formatter.field("pcr_period", &self.pcr_period);
-        formatter.field("pcr_pid", &self.pcr_pid);
-        formatter.field("pmt_interval", &self.pmt_interval);
-        formatter.field("pmt_pid", &self.pmt_pid);
-        formatter.field("program_num", &self.program_num);
-        formatter.field("scte35_behavior", &self.scte35_behavior);
-        formatter.field("scte35_pid", &self.scte35_pid);
-        formatter.field("timed_metadata_behavior", &self.timed_metadata_behavior);
-        formatter.field("timed_metadata_pid", &self.timed_metadata_pid);
-        formatter.field("transport_stream_id", &self.transport_stream_id);
-        formatter.field("video_pid", &self.video_pid);
-        formatter.finish()
     }
 }
 /// See [`M3u8Settings`](crate::model::M3u8Settings).
@@ -27897,14 +26684,8 @@ impl AsRef<str> for M3u8NielsenId3Behavior {
 
 /// Frame Capture Hls Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameCaptureHlsSettings {}
-impl std::fmt::Debug for FrameCaptureHlsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameCaptureHlsSettings");
-        formatter.finish()
-    }
-}
 /// See [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings).
 pub mod frame_capture_hls_settings {
 
@@ -27927,7 +26708,7 @@ impl FrameCaptureHlsSettings {
 
 /// Fmp4 Hls Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Fmp4HlsSettings {
     /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
     #[doc(hidden)]
@@ -27955,15 +26736,6 @@ impl Fmp4HlsSettings {
         &self,
     ) -> std::option::Option<&crate::model::Fmp4TimedMetadataBehavior> {
         self.timed_metadata_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for Fmp4HlsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Fmp4HlsSettings");
-        formatter.field("audio_rendition_sets", &self.audio_rendition_sets);
-        formatter.field("nielsen_id3_behavior", &self.nielsen_id3_behavior);
-        formatter.field("timed_metadata_behavior", &self.timed_metadata_behavior);
-        formatter.finish()
     }
 }
 /// See [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings).
@@ -28223,7 +26995,7 @@ impl AsRef<str> for Fmp4NielsenId3Behavior {
 
 /// Audio Only Hls Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioOnlyHlsSettings {
     /// Specifies the group to which the audio Rendition belongs.
     #[doc(hidden)]
@@ -28254,16 +27026,6 @@ impl AudioOnlyHlsSettings {
     /// Specifies the segment type.
     pub fn segment_type(&self) -> std::option::Option<&crate::model::AudioOnlyHlsSegmentType> {
         self.segment_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioOnlyHlsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioOnlyHlsSettings");
-        formatter.field("audio_group_id", &self.audio_group_id);
-        formatter.field("audio_only_image", &self.audio_only_image);
-        formatter.field("audio_track_type", &self.audio_track_type);
-        formatter.field("segment_type", &self.segment_type);
-        formatter.finish()
     }
 }
 /// See [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings).
@@ -28553,7 +27315,7 @@ impl AsRef<str> for AudioOnlyHlsTrackType {
 
 /// Input Location
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLocation {
     /// key used to extract the password from EC2 Parameter store
     #[doc(hidden)]
@@ -28577,15 +27339,6 @@ impl InputLocation {
     /// Documentation update needed
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for InputLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLocation");
-        formatter.field("password_param", &self.password_param);
-        formatter.field("uri", &self.uri);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`InputLocation`](crate::model::InputLocation).
@@ -28743,7 +27496,7 @@ impl AsRef<str> for HlsH265PackagingType {
 
 /// Frame Capture Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameCaptureOutputSettings {
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
     #[doc(hidden)]
@@ -28753,13 +27506,6 @@ impl FrameCaptureOutputSettings {
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
     pub fn name_modifier(&self) -> std::option::Option<&str> {
         self.name_modifier.as_deref()
-    }
-}
-impl std::fmt::Debug for FrameCaptureOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameCaptureOutputSettings");
-        formatter.field("name_modifier", &self.name_modifier);
-        formatter.finish()
     }
 }
 /// See [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings).
@@ -28801,7 +27547,7 @@ impl FrameCaptureOutputSettings {
 
 /// Archive Output Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveOutputSettings {
     /// Settings specific to the container type of the file.
     #[doc(hidden)]
@@ -28827,15 +27573,6 @@ impl ArchiveOutputSettings {
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub fn name_modifier(&self) -> std::option::Option<&str> {
         self.name_modifier.as_deref()
-    }
-}
-impl std::fmt::Debug for ArchiveOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveOutputSettings");
-        formatter.field("container_settings", &self.container_settings);
-        formatter.field("extension", &self.extension);
-        formatter.field("name_modifier", &self.name_modifier);
-        formatter.finish()
     }
 }
 /// See [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings).
@@ -28904,7 +27641,7 @@ impl ArchiveOutputSettings {
 
 /// Archive Container Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveContainerSettings {
     /// M2ts Settings
     #[doc(hidden)]
@@ -28921,14 +27658,6 @@ impl ArchiveContainerSettings {
     /// Raw Settings
     pub fn raw_settings(&self) -> std::option::Option<&crate::model::RawSettings> {
         self.raw_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for ArchiveContainerSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveContainerSettings");
-        formatter.field("m2ts_settings", &self.m2ts_settings);
-        formatter.field("raw_settings", &self.raw_settings);
-        formatter.finish()
     }
 }
 /// See [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings).
@@ -28985,14 +27714,8 @@ impl ArchiveContainerSettings {
 
 /// Raw Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RawSettings {}
-impl std::fmt::Debug for RawSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RawSettings");
-        formatter.finish()
-    }
-}
 /// See [`RawSettings`](crate::model::RawSettings).
 pub mod raw_settings {
 
@@ -29015,7 +27738,7 @@ impl RawSettings {
 
 /// Output Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputGroupSettings {
     /// Archive Group Settings
     #[doc(hidden)]
@@ -29084,26 +27807,6 @@ impl OutputGroupSettings {
     /// Udp Group Settings
     pub fn udp_group_settings(&self) -> std::option::Option<&crate::model::UdpGroupSettings> {
         self.udp_group_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputGroupSettings");
-        formatter.field("archive_group_settings", &self.archive_group_settings);
-        formatter.field(
-            "frame_capture_group_settings",
-            &self.frame_capture_group_settings,
-        );
-        formatter.field("hls_group_settings", &self.hls_group_settings);
-        formatter.field(
-            "media_package_group_settings",
-            &self.media_package_group_settings,
-        );
-        formatter.field("ms_smooth_group_settings", &self.ms_smooth_group_settings);
-        formatter.field("multiplex_group_settings", &self.multiplex_group_settings);
-        formatter.field("rtmp_group_settings", &self.rtmp_group_settings);
-        formatter.field("udp_group_settings", &self.udp_group_settings);
-        formatter.finish()
     }
 }
 /// See [`OutputGroupSettings`](crate::model::OutputGroupSettings).
@@ -29266,7 +27969,7 @@ impl OutputGroupSettings {
 
 /// Udp Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UdpGroupSettings {
     /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
     #[doc(hidden)]
@@ -29294,15 +27997,6 @@ impl UdpGroupSettings {
     /// Timed Metadata interval in seconds.
     pub fn timed_metadata_id3_period(&self) -> i32 {
         self.timed_metadata_id3_period
-    }
-}
-impl std::fmt::Debug for UdpGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UdpGroupSettings");
-        formatter.field("input_loss_action", &self.input_loss_action);
-        formatter.field("timed_metadata_id3_frame", &self.timed_metadata_id3_frame);
-        formatter.field("timed_metadata_id3_period", &self.timed_metadata_id3_period);
-        formatter.finish()
     }
 }
 /// See [`UdpGroupSettings`](crate::model::UdpGroupSettings).
@@ -29569,7 +28263,7 @@ impl AsRef<str> for InputLossActionForUdpOut {
 
 /// Rtmp Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RtmpGroupSettings {
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
     #[doc(hidden)]
@@ -29625,19 +28319,6 @@ impl RtmpGroupSettings {
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(&self) -> i32 {
         self.restart_delay
-    }
-}
-impl std::fmt::Debug for RtmpGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RtmpGroupSettings");
-        formatter.field("ad_markers", &self.ad_markers);
-        formatter.field("authentication_scheme", &self.authentication_scheme);
-        formatter.field("cache_full_behavior", &self.cache_full_behavior);
-        formatter.field("cache_length", &self.cache_length);
-        formatter.field("caption_data", &self.caption_data);
-        formatter.field("input_loss_action", &self.input_loss_action);
-        formatter.field("restart_delay", &self.restart_delay);
-        formatter.finish()
     }
 }
 /// See [`RtmpGroupSettings`](crate::model::RtmpGroupSettings).
@@ -30225,14 +28906,8 @@ impl AsRef<str> for RtmpAdMarkers {
 
 /// Multiplex Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexGroupSettings {}
-impl std::fmt::Debug for MultiplexGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexGroupSettings");
-        formatter.finish()
-    }
-}
 /// See [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings).
 pub mod multiplex_group_settings {
 
@@ -30255,7 +28930,7 @@ impl MultiplexGroupSettings {
 
 /// Ms Smooth Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MsSmoothGroupSettings {
     /// The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
     #[doc(hidden)]
@@ -30409,34 +29084,6 @@ impl MsSmoothGroupSettings {
         &self,
     ) -> std::option::Option<&crate::model::SmoothGroupTimestampOffsetMode> {
         self.timestamp_offset_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for MsSmoothGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MsSmoothGroupSettings");
-        formatter.field("acquisition_point_id", &self.acquisition_point_id);
-        formatter.field(
-            "audio_only_timecode_control",
-            &self.audio_only_timecode_control,
-        );
-        formatter.field("certificate_mode", &self.certificate_mode);
-        formatter.field("connection_retry_interval", &self.connection_retry_interval);
-        formatter.field("destination", &self.destination);
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_id_mode", &self.event_id_mode);
-        formatter.field("event_stop_behavior", &self.event_stop_behavior);
-        formatter.field("filecache_duration", &self.filecache_duration);
-        formatter.field("fragment_length", &self.fragment_length);
-        formatter.field("input_loss_action", &self.input_loss_action);
-        formatter.field("num_retries", &self.num_retries);
-        formatter.field("restart_delay", &self.restart_delay);
-        formatter.field("segmentation_mode", &self.segmentation_mode);
-        formatter.field("send_delay_ms", &self.send_delay_ms);
-        formatter.field("sparse_track_type", &self.sparse_track_type);
-        formatter.field("stream_manifest_behavior", &self.stream_manifest_behavior);
-        formatter.field("timestamp_offset", &self.timestamp_offset);
-        formatter.field("timestamp_offset_mode", &self.timestamp_offset_mode);
-        formatter.finish()
     }
 }
 /// See [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
@@ -31592,7 +30239,7 @@ impl AsRef<str> for SmoothGroupAudioOnlyTimecodeControl {
 
 /// Media Package Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaPackageGroupSettings {
     /// MediaPackage channel destination.
     #[doc(hidden)]
@@ -31602,13 +30249,6 @@ impl MediaPackageGroupSettings {
     /// MediaPackage channel destination.
     pub fn destination(&self) -> std::option::Option<&crate::model::OutputLocationRef> {
         self.destination.as_ref()
-    }
-}
-impl std::fmt::Debug for MediaPackageGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaPackageGroupSettings");
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings).
@@ -31650,7 +30290,7 @@ impl MediaPackageGroupSettings {
 
 /// Hls Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsGroupSettings {
     /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
     #[doc(hidden)]
@@ -31978,61 +30618,6 @@ impl HlsGroupSettings {
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
     pub fn ts_file_mode(&self) -> std::option::Option<&crate::model::HlsTsFileMode> {
         self.ts_file_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for HlsGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsGroupSettings");
-        formatter.field("ad_markers", &self.ad_markers);
-        formatter.field("base_url_content", &self.base_url_content);
-        formatter.field("base_url_content1", &self.base_url_content1);
-        formatter.field("base_url_manifest", &self.base_url_manifest);
-        formatter.field("base_url_manifest1", &self.base_url_manifest1);
-        formatter.field("caption_language_mappings", &self.caption_language_mappings);
-        formatter.field("caption_language_setting", &self.caption_language_setting);
-        formatter.field("client_cache", &self.client_cache);
-        formatter.field("codec_specification", &self.codec_specification);
-        formatter.field("constant_iv", &self.constant_iv);
-        formatter.field("destination", &self.destination);
-        formatter.field("directory_structure", &self.directory_structure);
-        formatter.field("discontinuity_tags", &self.discontinuity_tags);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("hls_cdn_settings", &self.hls_cdn_settings);
-        formatter.field("hls_id3_segment_tagging", &self.hls_id3_segment_tagging);
-        formatter.field("i_frame_only_playlists", &self.i_frame_only_playlists);
-        formatter.field(
-            "incomplete_segment_behavior",
-            &self.incomplete_segment_behavior,
-        );
-        formatter.field("index_n_segments", &self.index_n_segments);
-        formatter.field("input_loss_action", &self.input_loss_action);
-        formatter.field("iv_in_manifest", &self.iv_in_manifest);
-        formatter.field("iv_source", &self.iv_source);
-        formatter.field("keep_segments", &self.keep_segments);
-        formatter.field("key_format", &self.key_format);
-        formatter.field("key_format_versions", &self.key_format_versions);
-        formatter.field("key_provider_settings", &self.key_provider_settings);
-        formatter.field("manifest_compression", &self.manifest_compression);
-        formatter.field("manifest_duration_format", &self.manifest_duration_format);
-        formatter.field("min_segment_length", &self.min_segment_length);
-        formatter.field("mode", &self.mode);
-        formatter.field("output_selection", &self.output_selection);
-        formatter.field("program_date_time", &self.program_date_time);
-        formatter.field("program_date_time_clock", &self.program_date_time_clock);
-        formatter.field("program_date_time_period", &self.program_date_time_period);
-        formatter.field("redundant_manifest", &self.redundant_manifest);
-        formatter.field("segment_length", &self.segment_length);
-        formatter.field("segmentation_mode", &self.segmentation_mode);
-        formatter.field("segments_per_subdirectory", &self.segments_per_subdirectory);
-        formatter.field("stream_inf_resolution", &self.stream_inf_resolution);
-        formatter.field("timed_metadata_id3_frame", &self.timed_metadata_id3_frame);
-        formatter.field("timed_metadata_id3_period", &self.timed_metadata_id3_period);
-        formatter.field(
-            "timestamp_delta_milliseconds",
-            &self.timestamp_delta_milliseconds,
-        );
-        formatter.field("ts_file_mode", &self.ts_file_mode);
-        formatter.finish()
     }
 }
 /// See [`HlsGroupSettings`](crate::model::HlsGroupSettings).
@@ -33744,7 +32329,7 @@ impl AsRef<str> for HlsManifestCompression {
 
 /// Key Provider Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyProviderSettings {
     /// Static Key Settings
     #[doc(hidden)]
@@ -33754,13 +32339,6 @@ impl KeyProviderSettings {
     /// Static Key Settings
     pub fn static_key_settings(&self) -> std::option::Option<&crate::model::StaticKeySettings> {
         self.static_key_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for KeyProviderSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyProviderSettings");
-        formatter.field("static_key_settings", &self.static_key_settings);
-        formatter.finish()
     }
 }
 /// See [`KeyProviderSettings`](crate::model::KeyProviderSettings).
@@ -33802,7 +32380,7 @@ impl KeyProviderSettings {
 
 /// Static Key Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StaticKeySettings {
     /// The URL of the license server used for protecting content.
     #[doc(hidden)]
@@ -33819,14 +32397,6 @@ impl StaticKeySettings {
     /// Static key value as a 32 character hexadecimal string.
     pub fn static_key_value(&self) -> std::option::Option<&str> {
         self.static_key_value.as_deref()
-    }
-}
-impl std::fmt::Debug for StaticKeySettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaticKeySettings");
-        formatter.field("key_provider_server", &self.key_provider_server);
-        formatter.field("static_key_value", &self.static_key_value);
-        formatter.finish()
     }
 }
 /// See [`StaticKeySettings`](crate::model::StaticKeySettings).
@@ -34431,7 +33001,7 @@ impl AsRef<str> for HlsId3SegmentTaggingState {
 
 /// Hls Cdn Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsCdnSettings {
     /// Hls Akamai Settings
     #[doc(hidden)]
@@ -34473,17 +33043,6 @@ impl HlsCdnSettings {
     /// Hls Webdav Settings
     pub fn hls_webdav_settings(&self) -> std::option::Option<&crate::model::HlsWebdavSettings> {
         self.hls_webdav_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for HlsCdnSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsCdnSettings");
-        formatter.field("hls_akamai_settings", &self.hls_akamai_settings);
-        formatter.field("hls_basic_put_settings", &self.hls_basic_put_settings);
-        formatter.field("hls_media_store_settings", &self.hls_media_store_settings);
-        formatter.field("hls_s3_settings", &self.hls_s3_settings);
-        formatter.field("hls_webdav_settings", &self.hls_webdav_settings);
-        formatter.finish()
     }
 }
 /// See [`HlsCdnSettings`](crate::model::HlsCdnSettings).
@@ -34589,7 +33148,7 @@ impl HlsCdnSettings {
 
 /// Hls Webdav Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsWebdavSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
@@ -34629,17 +33188,6 @@ impl HlsWebdavSettings {
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(&self) -> i32 {
         self.restart_delay
-    }
-}
-impl std::fmt::Debug for HlsWebdavSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsWebdavSettings");
-        formatter.field("connection_retry_interval", &self.connection_retry_interval);
-        formatter.field("filecache_duration", &self.filecache_duration);
-        formatter.field("http_transfer_mode", &self.http_transfer_mode);
-        formatter.field("num_retries", &self.num_retries);
-        formatter.field("restart_delay", &self.restart_delay);
-        formatter.finish()
     }
 }
 /// See [`HlsWebdavSettings`](crate::model::HlsWebdavSettings).
@@ -34824,7 +33372,7 @@ impl AsRef<str> for HlsWebdavHttpTransferMode {
 
 /// Hls S3 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     #[doc(hidden)]
@@ -34834,13 +33382,6 @@ impl HlsS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     pub fn canned_acl(&self) -> std::option::Option<&crate::model::S3CannedAcl> {
         self.canned_acl.as_ref()
-    }
-}
-impl std::fmt::Debug for HlsS3Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsS3Settings");
-        formatter.field("canned_acl", &self.canned_acl);
-        formatter.finish()
     }
 }
 /// See [`HlsS3Settings`](crate::model::HlsS3Settings).
@@ -34987,7 +33528,7 @@ impl AsRef<str> for S3CannedAcl {
 
 /// Hls Media Store Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsMediaStoreSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
@@ -35027,17 +33568,6 @@ impl HlsMediaStoreSettings {
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(&self) -> i32 {
         self.restart_delay
-    }
-}
-impl std::fmt::Debug for HlsMediaStoreSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsMediaStoreSettings");
-        formatter.field("connection_retry_interval", &self.connection_retry_interval);
-        formatter.field("filecache_duration", &self.filecache_duration);
-        formatter.field("media_store_storage_class", &self.media_store_storage_class);
-        formatter.field("num_retries", &self.num_retries);
-        formatter.field("restart_delay", &self.restart_delay);
-        formatter.finish()
     }
 }
 /// See [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings).
@@ -35218,7 +33748,7 @@ impl AsRef<str> for HlsMediaStoreStorageClass {
 
 /// Hls Basic Put Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsBasicPutSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
@@ -35249,16 +33779,6 @@ impl HlsBasicPutSettings {
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(&self) -> i32 {
         self.restart_delay
-    }
-}
-impl std::fmt::Debug for HlsBasicPutSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsBasicPutSettings");
-        formatter.field("connection_retry_interval", &self.connection_retry_interval);
-        formatter.field("filecache_duration", &self.filecache_duration);
-        formatter.field("num_retries", &self.num_retries);
-        formatter.field("restart_delay", &self.restart_delay);
-        formatter.finish()
     }
 }
 /// See [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings).
@@ -35333,7 +33853,7 @@ impl HlsBasicPutSettings {
 
 /// Hls Akamai Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsAkamaiSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
@@ -35387,19 +33907,6 @@ impl HlsAkamaiSettings {
     /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
     pub fn token(&self) -> std::option::Option<&str> {
         self.token.as_deref()
-    }
-}
-impl std::fmt::Debug for HlsAkamaiSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsAkamaiSettings");
-        formatter.field("connection_retry_interval", &self.connection_retry_interval);
-        formatter.field("filecache_duration", &self.filecache_duration);
-        formatter.field("http_transfer_mode", &self.http_transfer_mode);
-        formatter.field("num_retries", &self.num_retries);
-        formatter.field("restart_delay", &self.restart_delay);
-        formatter.field("salt", &self.salt);
-        formatter.field("token", &self.token);
-        formatter.finish()
     }
 }
 /// See [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings).
@@ -36163,7 +34670,7 @@ impl AsRef<str> for HlsCaptionLanguageSetting {
 
 /// Maps a caption channel to an ISO 693-2 language code (http://www.loc.gov/standards/iso639-2), with an optional description.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptionLanguageMapping {
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
     #[doc(hidden)]
@@ -36187,15 +34694,6 @@ impl CaptionLanguageMapping {
     /// Textual description of language
     pub fn language_description(&self) -> std::option::Option<&str> {
         self.language_description.as_deref()
-    }
-}
-impl std::fmt::Debug for CaptionLanguageMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptionLanguageMapping");
-        formatter.field("caption_channel", &self.caption_channel);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("language_description", &self.language_description);
-        formatter.finish()
     }
 }
 /// See [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping).
@@ -36359,7 +34857,7 @@ impl AsRef<str> for HlsAdMarkers {
 
 /// Frame Capture Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameCaptureGroupSettings {
     /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
     #[doc(hidden)]
@@ -36378,17 +34876,6 @@ impl FrameCaptureGroupSettings {
         &self,
     ) -> std::option::Option<&crate::model::FrameCaptureCdnSettings> {
         self.frame_capture_cdn_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for FrameCaptureGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameCaptureGroupSettings");
-        formatter.field("destination", &self.destination);
-        formatter.field(
-            "frame_capture_cdn_settings",
-            &self.frame_capture_cdn_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings).
@@ -36449,7 +34936,7 @@ impl FrameCaptureGroupSettings {
 
 /// Frame Capture Cdn Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameCaptureCdnSettings {
     /// Frame Capture S3 Settings
     #[doc(hidden)]
@@ -36461,13 +34948,6 @@ impl FrameCaptureCdnSettings {
         &self,
     ) -> std::option::Option<&crate::model::FrameCaptureS3Settings> {
         self.frame_capture_s3_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for FrameCaptureCdnSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameCaptureCdnSettings");
-        formatter.field("frame_capture_s3_settings", &self.frame_capture_s3_settings);
-        formatter.finish()
     }
 }
 /// See [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings).
@@ -36513,7 +34993,7 @@ impl FrameCaptureCdnSettings {
 
 /// Frame Capture S3 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameCaptureS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     #[doc(hidden)]
@@ -36523,13 +35003,6 @@ impl FrameCaptureS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     pub fn canned_acl(&self) -> std::option::Option<&crate::model::S3CannedAcl> {
         self.canned_acl.as_ref()
-    }
-}
-impl std::fmt::Debug for FrameCaptureS3Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameCaptureS3Settings");
-        formatter.field("canned_acl", &self.canned_acl);
-        formatter.finish()
     }
 }
 /// See [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings).
@@ -36571,7 +35044,7 @@ impl FrameCaptureS3Settings {
 
 /// Archive Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveGroupSettings {
     /// Parameters that control interactions with the CDN.
     #[doc(hidden)]
@@ -36595,15 +35068,6 @@ impl ArchiveGroupSettings {
     /// Number of seconds to write to archive file before closing and starting a new one.
     pub fn rollover_interval(&self) -> i32 {
         self.rollover_interval
-    }
-}
-impl std::fmt::Debug for ArchiveGroupSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveGroupSettings");
-        formatter.field("archive_cdn_settings", &self.archive_cdn_settings);
-        formatter.field("destination", &self.destination);
-        formatter.field("rollover_interval", &self.rollover_interval);
-        formatter.finish()
     }
 }
 /// See [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings).
@@ -36672,7 +35136,7 @@ impl ArchiveGroupSettings {
 
 /// Archive Cdn Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveCdnSettings {
     /// Archive S3 Settings
     #[doc(hidden)]
@@ -36682,13 +35146,6 @@ impl ArchiveCdnSettings {
     /// Archive S3 Settings
     pub fn archive_s3_settings(&self) -> std::option::Option<&crate::model::ArchiveS3Settings> {
         self.archive_s3_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for ArchiveCdnSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveCdnSettings");
-        formatter.field("archive_s3_settings", &self.archive_s3_settings);
-        formatter.finish()
     }
 }
 /// See [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings).
@@ -36730,7 +35187,7 @@ impl ArchiveCdnSettings {
 
 /// Archive S3 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     #[doc(hidden)]
@@ -36740,13 +35197,6 @@ impl ArchiveS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     pub fn canned_acl(&self) -> std::option::Option<&crate::model::S3CannedAcl> {
         self.canned_acl.as_ref()
-    }
-}
-impl std::fmt::Debug for ArchiveS3Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveS3Settings");
-        formatter.field("canned_acl", &self.canned_acl);
-        formatter.finish()
     }
 }
 /// See [`ArchiveS3Settings`](crate::model::ArchiveS3Settings).
@@ -36788,7 +35238,7 @@ impl ArchiveS3Settings {
 
 /// Nielsen Configuration
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NielsenConfiguration {
     /// Enter the Distributor ID assigned to your organization by Nielsen.
     #[doc(hidden)]
@@ -36807,17 +35257,6 @@ impl NielsenConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::NielsenPcmToId3TaggingState> {
         self.nielsen_pcm_to_id3_tagging.as_ref()
-    }
-}
-impl std::fmt::Debug for NielsenConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NielsenConfiguration");
-        formatter.field("distributor_id", &self.distributor_id);
-        formatter.field(
-            "nielsen_pcm_to_id3_tagging",
-            &self.nielsen_pcm_to_id3_tagging,
-        );
-        formatter.finish()
     }
 }
 /// See [`NielsenConfiguration`](crate::model::NielsenConfiguration).
@@ -36970,7 +35409,7 @@ impl AsRef<str> for NielsenPcmToId3TaggingState {
 
 /// Motion Graphics Configuration
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MotionGraphicsConfiguration {
     /// Motion Graphics Insertion
     #[doc(hidden)]
@@ -36991,14 +35430,6 @@ impl MotionGraphicsConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::MotionGraphicsSettings> {
         self.motion_graphics_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for MotionGraphicsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MotionGraphicsConfiguration");
-        formatter.field("motion_graphics_insertion", &self.motion_graphics_insertion);
-        formatter.field("motion_graphics_settings", &self.motion_graphics_settings);
-        formatter.finish()
     }
 }
 /// See [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration).
@@ -37063,7 +35494,7 @@ impl MotionGraphicsConfiguration {
 
 /// Motion Graphics Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MotionGraphicsSettings {
     /// Html Motion Graphics Settings
     #[doc(hidden)]
@@ -37076,16 +35507,6 @@ impl MotionGraphicsSettings {
         &self,
     ) -> std::option::Option<&crate::model::HtmlMotionGraphicsSettings> {
         self.html_motion_graphics_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for MotionGraphicsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MotionGraphicsSettings");
-        formatter.field(
-            "html_motion_graphics_settings",
-            &self.html_motion_graphics_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings).
@@ -37131,14 +35552,8 @@ impl MotionGraphicsSettings {
 
 /// Html Motion Graphics Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HtmlMotionGraphicsSettings {}
-impl std::fmt::Debug for HtmlMotionGraphicsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HtmlMotionGraphicsSettings");
-        formatter.finish()
-    }
-}
 /// See [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings).
 pub mod html_motion_graphics_settings {
 
@@ -37253,7 +35668,7 @@ impl AsRef<str> for MotionGraphicsInsertion {
 
 /// Global Configuration
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalConfiguration {
     /// Value to set the initial audio gain for the Live Event.
     #[doc(hidden)]
@@ -37309,21 +35724,6 @@ impl GlobalConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::GlobalConfigurationLowFramerateInputs> {
         self.support_low_framerate_inputs.as_ref()
-    }
-}
-impl std::fmt::Debug for GlobalConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalConfiguration");
-        formatter.field("initial_audio_gain", &self.initial_audio_gain);
-        formatter.field("input_end_action", &self.input_end_action);
-        formatter.field("input_loss_behavior", &self.input_loss_behavior);
-        formatter.field("output_locking_mode", &self.output_locking_mode);
-        formatter.field("output_timing_source", &self.output_timing_source);
-        formatter.field(
-            "support_low_framerate_inputs",
-            &self.support_low_framerate_inputs,
-        );
-        formatter.finish()
     }
 }
 /// See [`GlobalConfiguration`](crate::model::GlobalConfiguration).
@@ -37729,7 +36129,7 @@ impl AsRef<str> for GlobalConfigurationOutputLockingMode {
 
 /// Input Loss Behavior
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLossBehavior {
     /// Documentation update needed
     #[doc(hidden)]
@@ -37767,17 +36167,6 @@ impl InputLossBehavior {
     /// Documentation update needed
     pub fn repeat_frame_msec(&self) -> i32 {
         self.repeat_frame_msec
-    }
-}
-impl std::fmt::Debug for InputLossBehavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLossBehavior");
-        formatter.field("black_frame_msec", &self.black_frame_msec);
-        formatter.field("input_loss_image_color", &self.input_loss_image_color);
-        formatter.field("input_loss_image_slate", &self.input_loss_image_slate);
-        formatter.field("input_loss_image_type", &self.input_loss_image_type);
-        formatter.field("repeat_frame_msec", &self.repeat_frame_msec);
-        formatter.finish()
     }
 }
 /// See [`InputLossBehavior`](crate::model::InputLossBehavior).
@@ -38057,7 +36446,7 @@ impl AsRef<str> for GlobalConfigurationInputEndAction {
 
 /// Feature Activations
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeatureActivations {
     /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
     #[doc(hidden)]
@@ -38070,16 +36459,6 @@ impl FeatureActivations {
         &self,
     ) -> std::option::Option<&crate::model::FeatureActivationsInputPrepareScheduleActions> {
         self.input_prepare_schedule_actions.as_ref()
-    }
-}
-impl std::fmt::Debug for FeatureActivations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureActivations");
-        formatter.field(
-            "input_prepare_schedule_actions",
-            &self.input_prepare_schedule_actions,
-        );
-        formatter.finish()
     }
 }
 /// See [`FeatureActivations`](crate::model::FeatureActivations).
@@ -38217,7 +36596,7 @@ impl AsRef<str> for FeatureActivationsInputPrepareScheduleActions {
 
 /// Caption Description
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
     #[doc(hidden)]
@@ -38264,18 +36643,6 @@ impl CaptionDescription {
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CaptionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptionDescription");
-        formatter.field("accessibility", &self.accessibility);
-        formatter.field("caption_selector_name", &self.caption_selector_name);
-        formatter.field("destination_settings", &self.destination_settings);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("language_description", &self.language_description);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`CaptionDescription`](crate::model::CaptionDescription).
@@ -38393,7 +36760,7 @@ impl CaptionDescription {
 
 /// Caption Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptionDestinationSettings {
     /// Arib Destination Settings
     #[doc(hidden)]
@@ -38519,58 +36886,6 @@ impl CaptionDestinationSettings {
         &self,
     ) -> std::option::Option<&crate::model::WebvttDestinationSettings> {
         self.webvtt_destination_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for CaptionDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptionDestinationSettings");
-        formatter.field("arib_destination_settings", &self.arib_destination_settings);
-        formatter.field(
-            "burn_in_destination_settings",
-            &self.burn_in_destination_settings,
-        );
-        formatter.field(
-            "dvb_sub_destination_settings",
-            &self.dvb_sub_destination_settings,
-        );
-        formatter.field(
-            "ebu_tt_d_destination_settings",
-            &self.ebu_tt_d_destination_settings,
-        );
-        formatter.field(
-            "embedded_destination_settings",
-            &self.embedded_destination_settings,
-        );
-        formatter.field(
-            "embedded_plus_scte20_destination_settings",
-            &self.embedded_plus_scte20_destination_settings,
-        );
-        formatter.field(
-            "rtmp_caption_info_destination_settings",
-            &self.rtmp_caption_info_destination_settings,
-        );
-        formatter.field(
-            "scte20_plus_embedded_destination_settings",
-            &self.scte20_plus_embedded_destination_settings,
-        );
-        formatter.field(
-            "scte27_destination_settings",
-            &self.scte27_destination_settings,
-        );
-        formatter.field(
-            "smpte_tt_destination_settings",
-            &self.smpte_tt_destination_settings,
-        );
-        formatter.field(
-            "teletext_destination_settings",
-            &self.teletext_destination_settings,
-        );
-        formatter.field("ttml_destination_settings", &self.ttml_destination_settings);
-        formatter.field(
-            "webvtt_destination_settings",
-            &self.webvtt_destination_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
@@ -38846,7 +37161,7 @@ impl CaptionDestinationSettings {
 
 /// Webvtt Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebvttDestinationSettings {
     /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
     #[doc(hidden)]
@@ -38858,13 +37173,6 @@ impl WebvttDestinationSettings {
         &self,
     ) -> std::option::Option<&crate::model::WebvttDestinationStyleControl> {
         self.style_control.as_ref()
-    }
-}
-impl std::fmt::Debug for WebvttDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebvttDestinationSettings");
-        formatter.field("style_control", &self.style_control);
-        formatter.finish()
     }
 }
 /// See [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
@@ -38998,7 +37306,7 @@ impl AsRef<str> for WebvttDestinationStyleControl {
 
 /// Ttml Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TtmlDestinationSettings {
     /// This field is not currently supported and will not affect the output styling. Leave the default value.
     #[doc(hidden)]
@@ -39008,13 +37316,6 @@ impl TtmlDestinationSettings {
     /// This field is not currently supported and will not affect the output styling. Leave the default value.
     pub fn style_control(&self) -> std::option::Option<&crate::model::TtmlDestinationStyleControl> {
         self.style_control.as_ref()
-    }
-}
-impl std::fmt::Debug for TtmlDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TtmlDestinationSettings");
-        formatter.field("style_control", &self.style_control);
-        formatter.finish()
     }
 }
 /// See [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
@@ -39148,14 +37449,8 @@ impl AsRef<str> for TtmlDestinationStyleControl {
 
 /// Teletext Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TeletextDestinationSettings {}
-impl std::fmt::Debug for TeletextDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TeletextDestinationSettings");
-        formatter.finish()
-    }
-}
 /// See [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
 pub mod teletext_destination_settings {
 
@@ -39178,14 +37473,8 @@ impl TeletextDestinationSettings {
 
 /// Smpte Tt Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmpteTtDestinationSettings {}
-impl std::fmt::Debug for SmpteTtDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmpteTtDestinationSettings");
-        formatter.finish()
-    }
-}
 /// See [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings).
 pub mod smpte_tt_destination_settings {
 
@@ -39208,14 +37497,8 @@ impl SmpteTtDestinationSettings {
 
 /// Scte27 Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte27DestinationSettings {}
-impl std::fmt::Debug for Scte27DestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte27DestinationSettings");
-        formatter.finish()
-    }
-}
 /// See [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings).
 pub mod scte27_destination_settings {
 
@@ -39238,14 +37521,8 @@ impl Scte27DestinationSettings {
 
 /// Scte20 Plus Embedded Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte20PlusEmbeddedDestinationSettings {}
-impl std::fmt::Debug for Scte20PlusEmbeddedDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte20PlusEmbeddedDestinationSettings");
-        formatter.finish()
-    }
-}
 /// See [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings).
 pub mod scte20_plus_embedded_destination_settings {
 
@@ -39268,14 +37545,8 @@ impl Scte20PlusEmbeddedDestinationSettings {
 
 /// Rtmp Caption Info Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RtmpCaptionInfoDestinationSettings {}
-impl std::fmt::Debug for RtmpCaptionInfoDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RtmpCaptionInfoDestinationSettings");
-        formatter.finish()
-    }
-}
 /// See [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings).
 pub mod rtmp_caption_info_destination_settings {
 
@@ -39298,14 +37569,8 @@ impl RtmpCaptionInfoDestinationSettings {
 
 /// Embedded Plus Scte20 Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmbeddedPlusScte20DestinationSettings {}
-impl std::fmt::Debug for EmbeddedPlusScte20DestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmbeddedPlusScte20DestinationSettings");
-        formatter.finish()
-    }
-}
 /// See [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings).
 pub mod embedded_plus_scte20_destination_settings {
 
@@ -39328,14 +37593,8 @@ impl EmbeddedPlusScte20DestinationSettings {
 
 /// Embedded Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmbeddedDestinationSettings {}
-impl std::fmt::Debug for EmbeddedDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmbeddedDestinationSettings");
-        formatter.finish()
-    }
-}
 /// See [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
 pub mod embedded_destination_settings {
 
@@ -39358,7 +37617,7 @@ impl EmbeddedDestinationSettings {
 
 /// Ebu Tt DDestination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbuTtDDestinationSettings {
     /// Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions metadata.
     #[doc(hidden)]
@@ -39391,16 +37650,6 @@ impl EbuTtDDestinationSettings {
         &self,
     ) -> std::option::Option<&crate::model::EbuTtDDestinationStyleControl> {
         self.style_control.as_ref()
-    }
-}
-impl std::fmt::Debug for EbuTtDDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbuTtDDestinationSettings");
-        formatter.field("copyright_holder", &self.copyright_holder);
-        formatter.field("fill_line_gap", &self.fill_line_gap);
-        formatter.field("font_family", &self.font_family);
-        formatter.field("style_control", &self.style_control);
-        formatter.finish()
     }
 }
 /// See [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings).
@@ -39668,7 +37917,7 @@ impl AsRef<str> for EbuTtDFillLineGapControl {
 
 /// Dvb Sub Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DvbSubDestinationSettings {
     /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. This option is not valid for source captions that are STL or 608/embedded. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
@@ -39797,29 +38046,6 @@ impl DvbSubDestinationSettings {
     /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn y_position(&self) -> i32 {
         self.y_position
-    }
-}
-impl std::fmt::Debug for DvbSubDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DvbSubDestinationSettings");
-        formatter.field("alignment", &self.alignment);
-        formatter.field("background_color", &self.background_color);
-        formatter.field("background_opacity", &self.background_opacity);
-        formatter.field("font", &self.font);
-        formatter.field("font_color", &self.font_color);
-        formatter.field("font_opacity", &self.font_opacity);
-        formatter.field("font_resolution", &self.font_resolution);
-        formatter.field("font_size", &self.font_size);
-        formatter.field("outline_color", &self.outline_color);
-        formatter.field("outline_size", &self.outline_size);
-        formatter.field("shadow_color", &self.shadow_color);
-        formatter.field("shadow_opacity", &self.shadow_opacity);
-        formatter.field("shadow_x_offset", &self.shadow_x_offset);
-        formatter.field("shadow_y_offset", &self.shadow_y_offset);
-        formatter.field("teletext_grid_control", &self.teletext_grid_control);
-        formatter.field("x_position", &self.x_position);
-        formatter.field("y_position", &self.y_position);
-        formatter.finish()
     }
 }
 /// See [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
@@ -40683,7 +38909,7 @@ impl AsRef<str> for DvbSubDestinationAlignment {
 
 /// Burn In Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BurnInDestinationSettings {
     /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
@@ -40807,29 +39033,6 @@ impl BurnInDestinationSettings {
     /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
     pub fn y_position(&self) -> i32 {
         self.y_position
-    }
-}
-impl std::fmt::Debug for BurnInDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BurnInDestinationSettings");
-        formatter.field("alignment", &self.alignment);
-        formatter.field("background_color", &self.background_color);
-        formatter.field("background_opacity", &self.background_opacity);
-        formatter.field("font", &self.font);
-        formatter.field("font_color", &self.font_color);
-        formatter.field("font_opacity", &self.font_opacity);
-        formatter.field("font_resolution", &self.font_resolution);
-        formatter.field("font_size", &self.font_size);
-        formatter.field("outline_color", &self.outline_color);
-        formatter.field("outline_size", &self.outline_size);
-        formatter.field("shadow_color", &self.shadow_color);
-        formatter.field("shadow_opacity", &self.shadow_opacity);
-        formatter.field("shadow_x_offset", &self.shadow_x_offset);
-        formatter.field("shadow_y_offset", &self.shadow_y_offset);
-        formatter.field("teletext_grid_control", &self.teletext_grid_control);
-        formatter.field("x_position", &self.x_position);
-        formatter.field("y_position", &self.y_position);
-        formatter.finish()
     }
 }
 /// See [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings).
@@ -41685,14 +39888,8 @@ impl AsRef<str> for BurnInAlignment {
 
 /// Arib Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AribDestinationSettings {}
-impl std::fmt::Debug for AribDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AribDestinationSettings");
-        formatter.finish()
-    }
-}
 /// See [`AribDestinationSettings`](crate::model::AribDestinationSettings).
 pub mod arib_destination_settings {
 
@@ -41818,7 +40015,7 @@ impl AsRef<str> for AccessibilityType {
 
 /// Blackout Slate
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlackoutSlate {
     /// Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.
     #[doc(hidden)]
@@ -41858,20 +40055,6 @@ impl BlackoutSlate {
     /// When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.
     pub fn state(&self) -> std::option::Option<&crate::model::BlackoutSlateState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for BlackoutSlate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlackoutSlate");
-        formatter.field("blackout_slate_image", &self.blackout_slate_image);
-        formatter.field("network_end_blackout", &self.network_end_blackout);
-        formatter.field(
-            "network_end_blackout_image",
-            &self.network_end_blackout_image,
-        );
-        formatter.field("network_id", &self.network_id);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`BlackoutSlate`](crate::model::BlackoutSlate).
@@ -42158,7 +40341,7 @@ impl AsRef<str> for BlackoutSlateNetworkEndBlackout {
 
 /// Avail Configuration
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailConfiguration {
     /// Ad avail settings.
     #[doc(hidden)]
@@ -42168,13 +40351,6 @@ impl AvailConfiguration {
     /// Ad avail settings.
     pub fn avail_settings(&self) -> std::option::Option<&crate::model::AvailSettings> {
         self.avail_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for AvailConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailConfiguration");
-        formatter.field("avail_settings", &self.avail_settings);
-        formatter.finish()
     }
 }
 /// See [`AvailConfiguration`](crate::model::AvailConfiguration).
@@ -42216,7 +40392,7 @@ impl AvailConfiguration {
 
 /// Avail Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailSettings {
     /// Scte35 Splice Insert
     #[doc(hidden)]
@@ -42235,14 +40411,6 @@ impl AvailSettings {
         &self,
     ) -> std::option::Option<&crate::model::Scte35TimeSignalApos> {
         self.scte35_time_signal_apos.as_ref()
-    }
-}
-impl std::fmt::Debug for AvailSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailSettings");
-        formatter.field("scte35_splice_insert", &self.scte35_splice_insert);
-        formatter.field("scte35_time_signal_apos", &self.scte35_time_signal_apos);
-        formatter.finish()
     }
 }
 /// See [`AvailSettings`](crate::model::AvailSettings).
@@ -42302,7 +40470,7 @@ impl AvailSettings {
 
 /// Scte35 Time Signal Apos
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35TimeSignalApos {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
     #[doc(hidden)]
@@ -42332,15 +40500,6 @@ impl Scte35TimeSignalApos {
         &self,
     ) -> std::option::Option<&crate::model::Scte35AposWebDeliveryAllowedBehavior> {
         self.web_delivery_allowed_flag.as_ref()
-    }
-}
-impl std::fmt::Debug for Scte35TimeSignalApos {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35TimeSignalApos");
-        formatter.field("ad_avail_offset", &self.ad_avail_offset);
-        formatter.field("no_regional_blackout_flag", &self.no_regional_blackout_flag);
-        formatter.field("web_delivery_allowed_flag", &self.web_delivery_allowed_flag);
-        formatter.finish()
     }
 }
 /// See [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos).
@@ -42601,7 +40760,7 @@ impl AsRef<str> for Scte35AposNoRegionalBlackoutBehavior {
 
 /// Scte35 Splice Insert
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35SpliceInsert {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
     #[doc(hidden)]
@@ -42631,15 +40790,6 @@ impl Scte35SpliceInsert {
         &self,
     ) -> std::option::Option<&crate::model::Scte35SpliceInsertWebDeliveryAllowedBehavior> {
         self.web_delivery_allowed_flag.as_ref()
-    }
-}
-impl std::fmt::Debug for Scte35SpliceInsert {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35SpliceInsert");
-        formatter.field("ad_avail_offset", &self.ad_avail_offset);
-        formatter.field("no_regional_blackout_flag", &self.no_regional_blackout_flag);
-        formatter.field("web_delivery_allowed_flag", &self.web_delivery_allowed_flag);
-        formatter.finish()
     }
 }
 /// See [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert).
@@ -42900,7 +41050,7 @@ impl AsRef<str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
 
 /// Avail Blanking
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailBlanking {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
     #[doc(hidden)]
@@ -42917,14 +41067,6 @@ impl AvailBlanking {
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
     pub fn state(&self) -> std::option::Option<&crate::model::AvailBlankingState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for AvailBlanking {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailBlanking");
-        formatter.field("avail_blanking_image", &self.avail_blanking_image);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`AvailBlanking`](crate::model::AvailBlanking).
@@ -43073,7 +41215,7 @@ impl AsRef<str> for AvailBlankingState {
 
 /// Audio Description
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioDescription {
     /// Advanced audio normalization settings.
     #[doc(hidden)]
@@ -43162,29 +41304,6 @@ impl AudioDescription {
     /// Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary).
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AudioDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioDescription");
-        formatter.field(
-            "audio_normalization_settings",
-            &self.audio_normalization_settings,
-        );
-        formatter.field("audio_selector_name", &self.audio_selector_name);
-        formatter.field("audio_type", &self.audio_type);
-        formatter.field("audio_type_control", &self.audio_type_control);
-        formatter.field(
-            "audio_watermarking_settings",
-            &self.audio_watermarking_settings,
-        );
-        formatter.field("codec_settings", &self.codec_settings);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("language_code_control", &self.language_code_control);
-        formatter.field("name", &self.name);
-        formatter.field("remix_settings", &self.remix_settings);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.finish()
     }
 }
 /// See [`AudioDescription`](crate::model::AudioDescription).
@@ -43386,7 +41505,7 @@ impl AudioDescription {
 
 /// Remix Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemixSettings {
     /// Mapping of input channels to output channels, with appropriate gain adjustments.
     #[doc(hidden)]
@@ -43410,15 +41529,6 @@ impl RemixSettings {
     /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
     pub fn channels_out(&self) -> i32 {
         self.channels_out
-    }
-}
-impl std::fmt::Debug for RemixSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemixSettings");
-        formatter.field("channel_mappings", &self.channel_mappings);
-        formatter.field("channels_in", &self.channels_in);
-        formatter.field("channels_out", &self.channels_out);
-        formatter.finish()
     }
 }
 /// See [`RemixSettings`](crate::model::RemixSettings).
@@ -43491,7 +41601,7 @@ impl RemixSettings {
 
 /// Audio Channel Mapping
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioChannelMapping {
     /// Indices and gain values for each input channel that should be remixed into this output channel.
     #[doc(hidden)]
@@ -43508,14 +41618,6 @@ impl AudioChannelMapping {
     /// The index of the output channel being produced.
     pub fn output_channel(&self) -> i32 {
         self.output_channel
-    }
-}
-impl std::fmt::Debug for AudioChannelMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioChannelMapping");
-        formatter.field("input_channel_levels", &self.input_channel_levels);
-        formatter.field("output_channel", &self.output_channel);
-        formatter.finish()
     }
 }
 /// See [`AudioChannelMapping`](crate::model::AudioChannelMapping).
@@ -43576,7 +41678,7 @@ impl AudioChannelMapping {
 
 /// Input Channel Level
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputChannelLevel {
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
     #[doc(hidden)]
@@ -43593,14 +41695,6 @@ impl InputChannelLevel {
     /// The index of the input channel used as a source.
     pub fn input_channel(&self) -> i32 {
         self.input_channel
-    }
-}
-impl std::fmt::Debug for InputChannelLevel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputChannelLevel");
-        formatter.field("gain", &self.gain);
-        formatter.field("input_channel", &self.input_channel);
-        formatter.finish()
     }
 }
 /// See [`InputChannelLevel`](crate::model::InputChannelLevel).
@@ -43743,7 +41837,7 @@ impl AsRef<str> for AudioDescriptionLanguageCodeControl {
 
 /// Audio Codec Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioCodecSettings {
     /// Aac Settings
     #[doc(hidden)]
@@ -43795,19 +41889,6 @@ impl AudioCodecSettings {
     /// Wav Settings
     pub fn wav_settings(&self) -> std::option::Option<&crate::model::WavSettings> {
         self.wav_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioCodecSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioCodecSettings");
-        formatter.field("aac_settings", &self.aac_settings);
-        formatter.field("ac3_settings", &self.ac3_settings);
-        formatter.field("eac3_atmos_settings", &self.eac3_atmos_settings);
-        formatter.field("eac3_settings", &self.eac3_settings);
-        formatter.field("mp2_settings", &self.mp2_settings);
-        formatter.field("pass_through_settings", &self.pass_through_settings);
-        formatter.field("wav_settings", &self.wav_settings);
-        formatter.finish()
     }
 }
 /// See [`AudioCodecSettings`](crate::model::AudioCodecSettings).
@@ -43939,7 +42020,7 @@ impl AudioCodecSettings {
 
 /// Wav Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WavSettings {
     /// Bits per sample.
     #[doc(hidden)]
@@ -43963,15 +42044,6 @@ impl WavSettings {
     /// Sample rate in Hz.
     pub fn sample_rate(&self) -> f64 {
         self.sample_rate
-    }
-}
-impl std::fmt::Debug for WavSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WavSettings");
-        formatter.field("bit_depth", &self.bit_depth);
-        formatter.field("coding_mode", &self.coding_mode);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.finish()
     }
 }
 /// See [`WavSettings`](crate::model::WavSettings).
@@ -44142,14 +42214,8 @@ impl AsRef<str> for WavCodingMode {
 
 /// Pass Through Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PassThroughSettings {}
-impl std::fmt::Debug for PassThroughSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PassThroughSettings");
-        formatter.finish()
-    }
-}
 /// See [`PassThroughSettings`](crate::model::PassThroughSettings).
 pub mod pass_through_settings {
 
@@ -44172,7 +42238,7 @@ impl PassThroughSettings {
 
 /// Mp2 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Mp2Settings {
     /// Average bitrate in bits/second.
     #[doc(hidden)]
@@ -44196,15 +42262,6 @@ impl Mp2Settings {
     /// Sample rate in Hz.
     pub fn sample_rate(&self) -> f64 {
         self.sample_rate
-    }
-}
-impl std::fmt::Debug for Mp2Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Mp2Settings");
-        formatter.field("bitrate", &self.bitrate);
-        formatter.field("coding_mode", &self.coding_mode);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.finish()
     }
 }
 /// See [`Mp2Settings`](crate::model::Mp2Settings).
@@ -44360,7 +42417,7 @@ impl AsRef<str> for Mp2CodingMode {
 
 /// Eac3 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Eac3Settings {
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
     #[doc(hidden)]
@@ -44507,32 +42564,6 @@ impl Eac3Settings {
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
     pub fn surround_mode(&self) -> std::option::Option<&crate::model::Eac3SurroundMode> {
         self.surround_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for Eac3Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Eac3Settings");
-        formatter.field("attenuation_control", &self.attenuation_control);
-        formatter.field("bitrate", &self.bitrate);
-        formatter.field("bitstream_mode", &self.bitstream_mode);
-        formatter.field("coding_mode", &self.coding_mode);
-        formatter.field("dc_filter", &self.dc_filter);
-        formatter.field("dialnorm", &self.dialnorm);
-        formatter.field("drc_line", &self.drc_line);
-        formatter.field("drc_rf", &self.drc_rf);
-        formatter.field("lfe_control", &self.lfe_control);
-        formatter.field("lfe_filter", &self.lfe_filter);
-        formatter.field("lo_ro_center_mix_level", &self.lo_ro_center_mix_level);
-        formatter.field("lo_ro_surround_mix_level", &self.lo_ro_surround_mix_level);
-        formatter.field("lt_rt_center_mix_level", &self.lt_rt_center_mix_level);
-        formatter.field("lt_rt_surround_mix_level", &self.lt_rt_surround_mix_level);
-        formatter.field("metadata_control", &self.metadata_control);
-        formatter.field("passthrough_control", &self.passthrough_control);
-        formatter.field("phase_control", &self.phase_control);
-        formatter.field("stereo_downmix", &self.stereo_downmix);
-        formatter.field("surround_ex_mode", &self.surround_ex_mode);
-        formatter.field("surround_mode", &self.surround_mode);
-        formatter.finish()
     }
 }
 /// See [`Eac3Settings`](crate::model::Eac3Settings).
@@ -46210,7 +44241,7 @@ impl AsRef<str> for Eac3AttenuationControl {
 
 /// Eac3 Atmos Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Eac3AtmosSettings {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
     #[doc(hidden)]
@@ -46262,19 +44293,6 @@ impl Eac3AtmosSettings {
     /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     pub fn surround_trim(&self) -> f64 {
         self.surround_trim
-    }
-}
-impl std::fmt::Debug for Eac3AtmosSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Eac3AtmosSettings");
-        formatter.field("bitrate", &self.bitrate);
-        formatter.field("coding_mode", &self.coding_mode);
-        formatter.field("dialnorm", &self.dialnorm);
-        formatter.field("drc_line", &self.drc_line);
-        formatter.field("drc_rf", &self.drc_rf);
-        formatter.field("height_trim", &self.height_trim);
-        formatter.field("surround_trim", &self.surround_trim);
-        formatter.finish()
     }
 }
 /// See [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
@@ -46729,7 +44747,7 @@ impl AsRef<str> for Eac3AtmosCodingMode {
 
 /// Ac3 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ac3Settings {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     #[doc(hidden)]
@@ -46781,19 +44799,6 @@ impl Ac3Settings {
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     pub fn metadata_control(&self) -> std::option::Option<&crate::model::Ac3MetadataControl> {
         self.metadata_control.as_ref()
-    }
-}
-impl std::fmt::Debug for Ac3Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ac3Settings");
-        formatter.field("bitrate", &self.bitrate);
-        formatter.field("bitstream_mode", &self.bitstream_mode);
-        formatter.field("coding_mode", &self.coding_mode);
-        formatter.field("dialnorm", &self.dialnorm);
-        formatter.field("drc_profile", &self.drc_profile);
-        formatter.field("lfe_filter", &self.lfe_filter);
-        formatter.field("metadata_control", &self.metadata_control);
-        formatter.finish()
     }
 }
 /// See [`Ac3Settings`](crate::model::Ac3Settings).
@@ -47425,7 +45430,7 @@ impl AsRef<str> for Ac3BitstreamMode {
 
 /// Aac Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AacSettings {
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
     #[doc(hidden)]
@@ -47491,21 +45496,6 @@ impl AacSettings {
     /// VBR Quality Level - Only used if rateControlMode is VBR.
     pub fn vbr_quality(&self) -> std::option::Option<&crate::model::AacVbrQuality> {
         self.vbr_quality.as_ref()
-    }
-}
-impl std::fmt::Debug for AacSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AacSettings");
-        formatter.field("bitrate", &self.bitrate);
-        formatter.field("coding_mode", &self.coding_mode);
-        formatter.field("input_type", &self.input_type);
-        formatter.field("profile", &self.profile);
-        formatter.field("rate_control_mode", &self.rate_control_mode);
-        formatter.field("raw_format", &self.raw_format);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.field("spec", &self.spec);
-        formatter.field("vbr_quality", &self.vbr_quality);
-        formatter.finish()
     }
 }
 /// See [`AacSettings`](crate::model::AacSettings).
@@ -48323,7 +46313,7 @@ impl AsRef<str> for AacCodingMode {
 
 /// Audio Watermark Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioWatermarkSettings {
     /// Settings to configure Nielsen Watermarks in the audio encode
     #[doc(hidden)]
@@ -48335,16 +46325,6 @@ impl AudioWatermarkSettings {
         &self,
     ) -> std::option::Option<&crate::model::NielsenWatermarksSettings> {
         self.nielsen_watermarks_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioWatermarkSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioWatermarkSettings");
-        formatter.field(
-            "nielsen_watermarks_settings",
-            &self.nielsen_watermarks_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings).
@@ -48390,7 +46370,7 @@ impl AudioWatermarkSettings {
 
 /// Nielsen Watermarks Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NielsenWatermarksSettings {
     /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
     #[doc(hidden)]
@@ -48419,18 +46399,6 @@ impl NielsenWatermarksSettings {
         &self,
     ) -> std::option::Option<&crate::model::NielsenNaesIiNw> {
         self.nielsen_naes_ii_nw_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for NielsenWatermarksSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NielsenWatermarksSettings");
-        formatter.field("nielsen_cbet_settings", &self.nielsen_cbet_settings);
-        formatter.field("nielsen_distribution_type", &self.nielsen_distribution_type);
-        formatter.field(
-            "nielsen_naes_ii_nw_settings",
-            &self.nielsen_naes_ii_nw_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings).
@@ -48506,7 +46474,7 @@ impl NielsenWatermarksSettings {
 
 /// Nielsen Naes Ii Nw
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NielsenNaesIiNw {
     /// Enter the check digit string for the watermark
     #[doc(hidden)]
@@ -48523,14 +46491,6 @@ impl NielsenNaesIiNw {
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     pub fn sid(&self) -> f64 {
         self.sid
-    }
-}
-impl std::fmt::Debug for NielsenNaesIiNw {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NielsenNaesIiNw");
-        formatter.field("check_digit_string", &self.check_digit_string);
-        formatter.field("sid", &self.sid);
-        formatter.finish()
     }
 }
 /// See [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw).
@@ -48676,7 +46636,7 @@ impl AsRef<str> for NielsenWatermarksDistributionTypes {
 
 /// Nielsen CBET
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NielsenCbet {
     /// Enter the CBET check digits to use in the watermark.
     #[doc(hidden)]
@@ -48702,15 +46662,6 @@ impl NielsenCbet {
     /// Enter the CBET Source ID (CSID) to use in the watermark
     pub fn csid(&self) -> std::option::Option<&str> {
         self.csid.as_deref()
-    }
-}
-impl std::fmt::Debug for NielsenCbet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NielsenCbet");
-        formatter.field("cbet_check_digit_string", &self.cbet_check_digit_string);
-        formatter.field("cbet_stepaside", &self.cbet_stepaside);
-        formatter.field("csid", &self.csid);
-        formatter.finish()
     }
 }
 /// See [`NielsenCbet`](crate::model::NielsenCbet).
@@ -49072,7 +47023,7 @@ impl AsRef<str> for AudioType {
 
 /// Audio Normalization Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioNormalizationSettings {
     /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
     #[doc(hidden)]
@@ -49098,15 +47049,6 @@ impl AudioNormalizationSettings {
     /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
     pub fn target_lkfs(&self) -> f64 {
         self.target_lkfs
-    }
-}
-impl std::fmt::Debug for AudioNormalizationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioNormalizationSettings");
-        formatter.field("algorithm", &self.algorithm);
-        formatter.field("algorithm_control", &self.algorithm_control);
-        formatter.field("target_lkfs", &self.target_lkfs);
-        formatter.finish()
     }
 }
 /// See [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
@@ -49358,7 +47300,7 @@ impl AsRef<str> for AudioNormalizationAlgorithm {
 
 /// Placeholder documentation for ChannelEgressEndpoint
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelEgressEndpoint {
     /// Public IP of where a channel's output comes from
     #[doc(hidden)]
@@ -49368,13 +47310,6 @@ impl ChannelEgressEndpoint {
     /// Public IP of where a channel's output comes from
     pub fn source_ip(&self) -> std::option::Option<&str> {
         self.source_ip.as_deref()
-    }
-}
-impl std::fmt::Debug for ChannelEgressEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelEgressEndpoint");
-        formatter.field("source_ip", &self.source_ip);
-        formatter.finish()
     }
 }
 /// See [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint).
@@ -49413,7 +47348,7 @@ impl ChannelEgressEndpoint {
 
 /// Placeholder documentation for OutputDestination
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDestination {
     /// User-specified id. This is used in an output group or an output.
     #[doc(hidden)]
@@ -49450,16 +47385,6 @@ impl OutputDestination {
     /// Destination settings for a standard output; one destination for each redundant encoder.
     pub fn settings(&self) -> std::option::Option<&[crate::model::OutputDestinationSettings]> {
         self.settings.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDestination");
-        formatter.field("id", &self.id);
-        formatter.field("media_package_settings", &self.media_package_settings);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
     }
 }
 /// See [`OutputDestination`](crate::model::OutputDestination).
@@ -49566,7 +47491,7 @@ impl OutputDestination {
 
 /// Placeholder documentation for OutputDestinationSettings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDestinationSettings {
     /// key used to extract the password from EC2 Parameter store
     #[doc(hidden)]
@@ -49597,16 +47522,6 @@ impl OutputDestinationSettings {
     /// username for destination
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDestinationSettings");
-        formatter.field("password_param", &self.password_param);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("url", &self.url);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`OutputDestinationSettings`](crate::model::OutputDestinationSettings).
@@ -49684,7 +47599,7 @@ impl OutputDestinationSettings {
 
 /// Multiplex Program Input Destination Settings for outputting a Channel to a Multiplex
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexProgramChannelDestinationSettings {
     /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
     #[doc(hidden)]
@@ -49701,14 +47616,6 @@ impl MultiplexProgramChannelDestinationSettings {
     /// The program name of the Multiplex program that the encoder is providing output to.
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiplexProgramChannelDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexProgramChannelDestinationSettings");
-        formatter.field("multiplex_id", &self.multiplex_id);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
     }
 }
 /// See [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings).
@@ -49759,7 +47666,7 @@ impl MultiplexProgramChannelDestinationSettings {
 
 /// MediaPackage Output Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaPackageOutputDestinationSettings {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
     #[doc(hidden)]
@@ -49769,13 +47676,6 @@ impl MediaPackageOutputDestinationSettings {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaPackageOutputDestinationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaPackageOutputDestinationSettings");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
     }
 }
 /// See [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings).
@@ -49814,7 +47714,7 @@ impl MediaPackageOutputDestinationSettings {
 
 /// Placeholder documentation for CdiInputSpecification
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CdiInputSpecification {
     /// Maximum CDI input resolution
     #[doc(hidden)]
@@ -49824,13 +47724,6 @@ impl CdiInputSpecification {
     /// Maximum CDI input resolution
     pub fn resolution(&self) -> std::option::Option<&crate::model::CdiInputResolution> {
         self.resolution.as_ref()
-    }
-}
-impl std::fmt::Debug for CdiInputSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CdiInputSpecification");
-        formatter.field("resolution", &self.resolution);
-        formatter.finish()
     }
 }
 /// See [`CdiInputSpecification`](crate::model::CdiInputSpecification).
@@ -49974,7 +47867,7 @@ impl AsRef<str> for CdiInputResolution {
 
 /// Placeholder documentation for MaintenanceUpdateSettings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceUpdateSettings {
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
     #[doc(hidden)]
@@ -49998,18 +47891,6 @@ impl MaintenanceUpdateSettings {
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
     pub fn maintenance_start_time(&self) -> std::option::Option<&str> {
         self.maintenance_start_time.as_deref()
-    }
-}
-impl std::fmt::Debug for MaintenanceUpdateSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceUpdateSettings");
-        formatter.field("maintenance_day", &self.maintenance_day);
-        formatter.field(
-            "maintenance_scheduled_date",
-            &self.maintenance_scheduled_date,
-        );
-        formatter.field("maintenance_start_time", &self.maintenance_start_time);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings).
@@ -50173,7 +48054,7 @@ impl AsRef<str> for RebootInputDeviceForce {
 
 /// Reserved resources available for purchase
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Offering {
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
     #[doc(hidden)]
@@ -50255,23 +48136,6 @@ impl Offering {
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn usage_price(&self) -> f64 {
         self.usage_price
-    }
-}
-impl std::fmt::Debug for Offering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Offering");
-        formatter.field("arn", &self.arn);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("duration", &self.duration);
-        formatter.field("duration_units", &self.duration_units);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("offering_description", &self.offering_description);
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("region", &self.region);
-        formatter.field("resource_specification", &self.resource_specification);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.finish()
     }
 }
 /// See [`Offering`](crate::model::Offering).
@@ -50449,7 +48313,7 @@ impl Offering {
 
 /// Placeholder documentation for MultiplexProgramSummary
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexProgramSummary {
     /// The MediaLive Channel associated with the program.
     #[doc(hidden)]
@@ -50466,14 +48330,6 @@ impl MultiplexProgramSummary {
     /// The name of the multiplex program.
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiplexProgramSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexProgramSummary");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
     }
 }
 /// See [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary).
@@ -50524,7 +48380,7 @@ impl MultiplexProgramSummary {
 
 /// Placeholder documentation for MultiplexSummary
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexSummary {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
@@ -50596,21 +48452,6 @@ impl MultiplexSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for MultiplexSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("id", &self.id);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("name", &self.name);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("program_count", &self.program_count);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`MultiplexSummary`](crate::model::MultiplexSummary).
@@ -50777,7 +48618,7 @@ impl MultiplexSummary {
 
 /// Contains summary configuration for a Multiplex event.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexSettingsSummary {
     /// Transport stream bit rate.
     #[doc(hidden)]
@@ -50787,13 +48628,6 @@ impl MultiplexSettingsSummary {
     /// Transport stream bit rate.
     pub fn transport_stream_bitrate(&self) -> i32 {
         self.transport_stream_bitrate
-    }
-}
-impl std::fmt::Debug for MultiplexSettingsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiplexSettingsSummary");
-        formatter.field("transport_stream_bitrate", &self.transport_stream_bitrate);
-        formatter.finish()
     }
 }
 /// See [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary).
@@ -50832,7 +48666,7 @@ impl MultiplexSettingsSummary {
 
 /// Details about the input device that is being transferred.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransferringInputDeviceSummary {
     /// The unique ID of the input device.
     #[doc(hidden)]
@@ -50863,16 +48697,6 @@ impl TransferringInputDeviceSummary {
     /// The type (direction) of the input device transfer.
     pub fn transfer_type(&self) -> std::option::Option<&crate::model::InputDeviceTransferType> {
         self.transfer_type.as_ref()
-    }
-}
-impl std::fmt::Debug for TransferringInputDeviceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransferringInputDeviceSummary");
-        formatter.field("id", &self.id);
-        formatter.field("message", &self.message);
-        formatter.field("target_customer_id", &self.target_customer_id);
-        formatter.field("transfer_type", &self.transfer_type);
-        formatter.finish()
     }
 }
 /// See [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary).
@@ -51045,7 +48869,7 @@ impl AsRef<str> for InputDeviceTransferType {
 
 /// Details of the input device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDeviceSummary {
     /// The unique ARN of the input device.
     #[doc(hidden)]
@@ -51140,27 +48964,6 @@ impl InputDeviceSummary {
         &self,
     ) -> std::option::Option<&crate::model::InputDeviceUhdSettings> {
         self.uhd_device_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for InputDeviceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDeviceSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field(
-            "device_settings_sync_state",
-            &self.device_settings_sync_state,
-        );
-        formatter.field("device_update_status", &self.device_update_status);
-        formatter.field("hd_device_settings", &self.hd_device_settings);
-        formatter.field("id", &self.id);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("name", &self.name);
-        formatter.field("network_settings", &self.network_settings);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("uhd_device_settings", &self.uhd_device_settings);
-        formatter.finish()
     }
 }
 /// See [`InputDeviceSummary`](crate::model::InputDeviceSummary).
@@ -51359,7 +49162,7 @@ impl InputDeviceSummary {
 
 /// Placeholder documentation for ChannelSummary
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelSummary {
     /// The unique arn of the channel.
     #[doc(hidden)]
@@ -51480,28 +49283,6 @@ impl ChannelSummary {
     /// Settings for any VPC outputs.
     pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("cdi_input_specification", &self.cdi_input_specification);
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("egress_endpoints", &self.egress_endpoints);
-        formatter.field("id", &self.id);
-        formatter.field("input_attachments", &self.input_attachments);
-        formatter.field("input_specification", &self.input_specification);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.field("name", &self.name);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
     }
 }
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
@@ -51786,7 +49567,7 @@ impl ChannelSummary {
 
 /// Contains information on a single schedule action.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleAction {
     /// The name of the action, must be unique within the schedule. This name provides the main reference to an action once it is added to the schedule. A name is unique if it is no longer in the schedule. The schedule is automatically cleaned up to remove actions with a start time of more than 1 hour ago (approximately) so at that point a name can be reused.
     #[doc(hidden)]
@@ -51815,18 +49596,6 @@ impl ScheduleAction {
         &self,
     ) -> std::option::Option<&crate::model::ScheduleActionStartSettings> {
         self.schedule_action_start_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduleAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleAction");
-        formatter.field("action_name", &self.action_name);
-        formatter.field("schedule_action_settings", &self.schedule_action_settings);
-        formatter.field(
-            "schedule_action_start_settings",
-            &self.schedule_action_start_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScheduleAction`](crate::model::ScheduleAction).
@@ -51903,7 +49672,7 @@ impl ScheduleAction {
 
 /// Settings to specify when an action should occur. Only one of the options must be selected.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleActionStartSettings {
     /// Option for specifying the start time for an action.
     #[doc(hidden)]
@@ -51936,24 +49705,6 @@ impl ScheduleActionStartSettings {
         &self,
     ) -> std::option::Option<&crate::model::ImmediateModeScheduleActionStartSettings> {
         self.immediate_mode_schedule_action_start_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduleActionStartSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleActionStartSettings");
-        formatter.field(
-            "fixed_mode_schedule_action_start_settings",
-            &self.fixed_mode_schedule_action_start_settings,
-        );
-        formatter.field(
-            "follow_mode_schedule_action_start_settings",
-            &self.follow_mode_schedule_action_start_settings,
-        );
-        formatter.field(
-            "immediate_mode_schedule_action_start_settings",
-            &self.immediate_mode_schedule_action_start_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings).
@@ -52040,14 +49791,8 @@ impl ScheduleActionStartSettings {
 
 /// Settings to configure an action so that it occurs as soon as possible.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImmediateModeScheduleActionStartSettings {}
-impl std::fmt::Debug for ImmediateModeScheduleActionStartSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImmediateModeScheduleActionStartSettings");
-        formatter.finish()
-    }
-}
 /// See [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings).
 pub mod immediate_mode_schedule_action_start_settings {
 
@@ -52070,7 +49815,7 @@ impl ImmediateModeScheduleActionStartSettings {
 
 /// Settings to specify if an action follows another.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FollowModeScheduleActionStartSettings {
     /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
     #[doc(hidden)]
@@ -52087,14 +49832,6 @@ impl FollowModeScheduleActionStartSettings {
     /// The action name of another action that this one refers to.
     pub fn reference_action_name(&self) -> std::option::Option<&str> {
         self.reference_action_name.as_deref()
-    }
-}
-impl std::fmt::Debug for FollowModeScheduleActionStartSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FollowModeScheduleActionStartSettings");
-        formatter.field("follow_point", &self.follow_point);
-        formatter.field("reference_action_name", &self.reference_action_name);
-        formatter.finish()
     }
 }
 /// See [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings).
@@ -52241,7 +49978,7 @@ impl AsRef<str> for FollowPoint {
 
 /// Start time for the action.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FixedModeScheduleActionStartSettings {
     /// Start time for the action to start in the channel. (Not the time for the action to be added to the schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
     #[doc(hidden)]
@@ -52251,13 +49988,6 @@ impl FixedModeScheduleActionStartSettings {
     /// Start time for the action to start in the channel. (Not the time for the action to be added to the schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
     pub fn time(&self) -> std::option::Option<&str> {
         self.time.as_deref()
-    }
-}
-impl std::fmt::Debug for FixedModeScheduleActionStartSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FixedModeScheduleActionStartSettings");
-        formatter.field("time", &self.time);
-        formatter.finish()
     }
 }
 /// See [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings).
@@ -52294,7 +50024,7 @@ impl FixedModeScheduleActionStartSettings {
 
 /// Holds the settings for a single schedule action.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleActionSettings {
     /// Action to insert HLS ID3 segment tagging
     #[doc(hidden)]
@@ -52415,51 +50145,6 @@ impl ScheduleActionSettings {
         &self,
     ) -> std::option::Option<&crate::model::StaticImageDeactivateScheduleActionSettings> {
         self.static_image_deactivate_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleActionSettings");
-        formatter.field(
-            "hls_id3_segment_tagging_settings",
-            &self.hls_id3_segment_tagging_settings,
-        );
-        formatter.field(
-            "hls_timed_metadata_settings",
-            &self.hls_timed_metadata_settings,
-        );
-        formatter.field("input_prepare_settings", &self.input_prepare_settings);
-        formatter.field("input_switch_settings", &self.input_switch_settings);
-        formatter.field(
-            "motion_graphics_image_activate_settings",
-            &self.motion_graphics_image_activate_settings,
-        );
-        formatter.field(
-            "motion_graphics_image_deactivate_settings",
-            &self.motion_graphics_image_deactivate_settings,
-        );
-        formatter.field("pause_state_settings", &self.pause_state_settings);
-        formatter.field(
-            "scte35_return_to_network_settings",
-            &self.scte35_return_to_network_settings,
-        );
-        formatter.field(
-            "scte35_splice_insert_settings",
-            &self.scte35_splice_insert_settings,
-        );
-        formatter.field(
-            "scte35_time_signal_settings",
-            &self.scte35_time_signal_settings,
-        );
-        formatter.field(
-            "static_image_activate_settings",
-            &self.static_image_activate_settings,
-        );
-        formatter.field(
-            "static_image_deactivate_settings",
-            &self.static_image_deactivate_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScheduleActionSettings`](crate::model::ScheduleActionSettings).
@@ -52718,7 +50403,7 @@ impl ScheduleActionSettings {
 
 /// Settings for the action to deactivate the image in a specific layer.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StaticImageDeactivateScheduleActionSettings {
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
     #[doc(hidden)]
@@ -52735,14 +50420,6 @@ impl StaticImageDeactivateScheduleActionSettings {
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
     pub fn layer(&self) -> i32 {
         self.layer
-    }
-}
-impl std::fmt::Debug for StaticImageDeactivateScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaticImageDeactivateScheduleActionSettings");
-        formatter.field("fade_out", &self.fade_out);
-        formatter.field("layer", &self.layer);
-        formatter.finish()
     }
 }
 /// See [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings).
@@ -52793,7 +50470,7 @@ impl StaticImageDeactivateScheduleActionSettings {
 
 /// Settings for the action to activate a static image.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StaticImageActivateScheduleActionSettings {
     /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
     #[doc(hidden)]
@@ -52866,22 +50543,6 @@ impl StaticImageActivateScheduleActionSettings {
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
     pub fn width(&self) -> i32 {
         self.width
-    }
-}
-impl std::fmt::Debug for StaticImageActivateScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaticImageActivateScheduleActionSettings");
-        formatter.field("duration", &self.duration);
-        formatter.field("fade_in", &self.fade_in);
-        formatter.field("fade_out", &self.fade_out);
-        formatter.field("height", &self.height);
-        formatter.field("image", &self.image);
-        formatter.field("image_x", &self.image_x);
-        formatter.field("image_y", &self.image_y);
-        formatter.field("layer", &self.layer);
-        formatter.field("opacity", &self.opacity);
-        formatter.field("width", &self.width);
-        formatter.finish()
     }
 }
 /// See [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings).
@@ -53031,7 +50692,7 @@ impl StaticImageActivateScheduleActionSettings {
 
 /// Settings for a SCTE-35 time_signal.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35TimeSignalScheduleActionSettings {
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
     #[doc(hidden)]
@@ -53041,13 +50702,6 @@ impl Scte35TimeSignalScheduleActionSettings {
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
     pub fn scte35_descriptors(&self) -> std::option::Option<&[crate::model::Scte35Descriptor]> {
         self.scte35_descriptors.as_deref()
-    }
-}
-impl std::fmt::Debug for Scte35TimeSignalScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35TimeSignalScheduleActionSettings");
-        formatter.field("scte35_descriptors", &self.scte35_descriptors);
-        formatter.finish()
     }
 }
 /// See [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings).
@@ -53096,7 +50750,7 @@ impl Scte35TimeSignalScheduleActionSettings {
 
 /// Holds one set of SCTE-35 Descriptor Settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35Descriptor {
     /// SCTE-35 Descriptor Settings.
     #[doc(hidden)]
@@ -53108,16 +50762,6 @@ impl Scte35Descriptor {
         &self,
     ) -> std::option::Option<&crate::model::Scte35DescriptorSettings> {
         self.scte35_descriptor_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for Scte35Descriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35Descriptor");
-        formatter.field(
-            "scte35_descriptor_settings",
-            &self.scte35_descriptor_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`Scte35Descriptor`](crate::model::Scte35Descriptor).
@@ -53163,7 +50807,7 @@ impl Scte35Descriptor {
 
 /// SCTE-35 Descriptor settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35DescriptorSettings {
     /// SCTE-35 Segmentation Descriptor.
     #[doc(hidden)]
@@ -53177,16 +50821,6 @@ impl Scte35DescriptorSettings {
     ) -> std::option::Option<&crate::model::Scte35SegmentationDescriptor> {
         self.segmentation_descriptor_scte35_descriptor_settings
             .as_ref()
-    }
-}
-impl std::fmt::Debug for Scte35DescriptorSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35DescriptorSettings");
-        formatter.field(
-            "segmentation_descriptor_scte35_descriptor_settings",
-            &self.segmentation_descriptor_scte35_descriptor_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings).
@@ -53233,7 +50867,7 @@ impl Scte35DescriptorSettings {
 
 /// Corresponds to SCTE-35 segmentation_descriptor.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35SegmentationDescriptor {
     /// Holds the four SCTE-35 delivery restriction parameters.
     #[doc(hidden)]
@@ -53318,26 +50952,6 @@ impl Scte35SegmentationDescriptor {
     /// Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
     pub fn sub_segments_expected(&self) -> i32 {
         self.sub_segments_expected
-    }
-}
-impl std::fmt::Debug for Scte35SegmentationDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35SegmentationDescriptor");
-        formatter.field("delivery_restrictions", &self.delivery_restrictions);
-        formatter.field("segment_num", &self.segment_num);
-        formatter.field(
-            "segmentation_cancel_indicator",
-            &self.segmentation_cancel_indicator,
-        );
-        formatter.field("segmentation_duration", &self.segmentation_duration);
-        formatter.field("segmentation_event_id", &self.segmentation_event_id);
-        formatter.field("segmentation_type_id", &self.segmentation_type_id);
-        formatter.field("segmentation_upid", &self.segmentation_upid);
-        formatter.field("segmentation_upid_type", &self.segmentation_upid_type);
-        formatter.field("segments_expected", &self.segments_expected);
-        formatter.field("sub_segment_num", &self.sub_segment_num);
-        formatter.field("sub_segments_expected", &self.sub_segments_expected);
-        formatter.finish()
     }
 }
 /// See [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor).
@@ -53616,7 +51230,7 @@ impl AsRef<str> for Scte35SegmentationCancelIndicator {
 
 /// Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare delivery restrictions, include this element and its four "restriction" flags. To declare that there are no restrictions, omit this element.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35DeliveryRestrictions {
     /// Corresponds to SCTE-35 archive_allowed_flag.
     #[doc(hidden)]
@@ -53655,16 +51269,6 @@ impl Scte35DeliveryRestrictions {
         &self,
     ) -> std::option::Option<&crate::model::Scte35WebDeliveryAllowedFlag> {
         self.web_delivery_allowed_flag.as_ref()
-    }
-}
-impl std::fmt::Debug for Scte35DeliveryRestrictions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35DeliveryRestrictions");
-        formatter.field("archive_allowed_flag", &self.archive_allowed_flag);
-        formatter.field("device_restrictions", &self.device_restrictions);
-        formatter.field("no_regional_blackout_flag", &self.no_regional_blackout_flag);
-        formatter.field("web_delivery_allowed_flag", &self.web_delivery_allowed_flag);
-        formatter.finish()
     }
 }
 /// See [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions).
@@ -54149,7 +51753,7 @@ impl AsRef<str> for Scte35ArchiveAllowedFlag {
 
 /// Settings for a SCTE-35 splice_insert message.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35SpliceInsertScheduleActionSettings {
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
     #[doc(hidden)]
@@ -54166,14 +51770,6 @@ impl Scte35SpliceInsertScheduleActionSettings {
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub fn splice_event_id(&self) -> i64 {
         self.splice_event_id
-    }
-}
-impl std::fmt::Debug for Scte35SpliceInsertScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35SpliceInsertScheduleActionSettings");
-        formatter.field("duration", &self.duration);
-        formatter.field("splice_event_id", &self.splice_event_id);
-        formatter.finish()
     }
 }
 /// See [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings).
@@ -54224,7 +51820,7 @@ impl Scte35SpliceInsertScheduleActionSettings {
 
 /// Settings for a SCTE-35 return_to_network message.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte35ReturnToNetworkScheduleActionSettings {
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     #[doc(hidden)]
@@ -54234,13 +51830,6 @@ impl Scte35ReturnToNetworkScheduleActionSettings {
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub fn splice_event_id(&self) -> i64 {
         self.splice_event_id
-    }
-}
-impl std::fmt::Debug for Scte35ReturnToNetworkScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scte35ReturnToNetworkScheduleActionSettings");
-        formatter.field("splice_event_id", &self.splice_event_id);
-        formatter.finish()
     }
 }
 /// See [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
@@ -54279,7 +51868,7 @@ impl Scte35ReturnToNetworkScheduleActionSettings {
 
 /// Settings for the action to set pause state of a channel.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PauseStateScheduleActionSettings {
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
     #[doc(hidden)]
@@ -54289,13 +51878,6 @@ impl PauseStateScheduleActionSettings {
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
     pub fn pipelines(&self) -> std::option::Option<&[crate::model::PipelinePauseStateSettings]> {
         self.pipelines.as_deref()
-    }
-}
-impl std::fmt::Debug for PauseStateScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PauseStateScheduleActionSettings");
-        formatter.field("pipelines", &self.pipelines);
-        formatter.finish()
     }
 }
 /// See [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings).
@@ -54344,7 +51926,7 @@ impl PauseStateScheduleActionSettings {
 
 /// Settings for pausing a pipeline.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelinePauseStateSettings {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
     #[doc(hidden)]
@@ -54354,13 +51936,6 @@ impl PipelinePauseStateSettings {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
     pub fn pipeline_id(&self) -> std::option::Option<&crate::model::PipelineId> {
         self.pipeline_id.as_ref()
-    }
-}
-impl std::fmt::Debug for PipelinePauseStateSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelinePauseStateSettings");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.finish()
     }
 }
 /// See [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings).
@@ -54492,14 +52067,8 @@ impl AsRef<str> for PipelineId {
 
 /// Settings to specify the ending of rendering motion graphics into the video stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MotionGraphicsDeactivateScheduleActionSettings {}
-impl std::fmt::Debug for MotionGraphicsDeactivateScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MotionGraphicsDeactivateScheduleActionSettings");
-        formatter.finish()
-    }
-}
 /// See [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings).
 pub mod motion_graphics_deactivate_schedule_action_settings {
 
@@ -54522,7 +52091,7 @@ impl MotionGraphicsDeactivateScheduleActionSettings {
 
 /// Settings to specify the rendering of motion graphics into the video stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MotionGraphicsActivateScheduleActionSettings {
     /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
     #[doc(hidden)]
@@ -54553,16 +52122,6 @@ impl MotionGraphicsActivateScheduleActionSettings {
     /// Documentation update needed
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for MotionGraphicsActivateScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MotionGraphicsActivateScheduleActionSettings");
-        formatter.field("duration", &self.duration);
-        formatter.field("password_param", &self.password_param);
-        formatter.field("url", &self.url);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings).
@@ -54640,7 +52199,7 @@ impl MotionGraphicsActivateScheduleActionSettings {
 
 /// Settings for the "switch input" action: to switch from ingesting one input to ingesting another input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSwitchScheduleActionSettings {
     /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
     #[doc(hidden)]
@@ -54666,18 +52225,6 @@ impl InputSwitchScheduleActionSettings {
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
     pub fn url_path(&self) -> std::option::Option<&[std::string::String]> {
         self.url_path.as_deref()
-    }
-}
-impl std::fmt::Debug for InputSwitchScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSwitchScheduleActionSettings");
-        formatter.field(
-            "input_attachment_name_reference",
-            &self.input_attachment_name_reference,
-        );
-        formatter.field("input_clipping_settings", &self.input_clipping_settings);
-        formatter.field("url_path", &self.url_path);
-        formatter.finish()
     }
 }
 /// See [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings).
@@ -54762,7 +52309,7 @@ impl InputSwitchScheduleActionSettings {
 
 /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputClippingSettings {
     /// The source of the timecodes in the source being clipped.
     #[doc(hidden)]
@@ -54786,15 +52333,6 @@ impl InputClippingSettings {
     /// Settings to identify the end of the clip.
     pub fn stop_timecode(&self) -> std::option::Option<&crate::model::StopTimecode> {
         self.stop_timecode.as_ref()
-    }
-}
-impl std::fmt::Debug for InputClippingSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputClippingSettings");
-        formatter.field("input_timecode_source", &self.input_timecode_source);
-        formatter.field("start_timecode", &self.start_timecode);
-        formatter.field("stop_timecode", &self.stop_timecode);
-        formatter.finish()
     }
 }
 /// See [`InputClippingSettings`](crate::model::InputClippingSettings).
@@ -54866,7 +52404,7 @@ impl InputClippingSettings {
 
 /// Settings to identify the end of the clip.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopTimecode {
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
     #[doc(hidden)]
@@ -54885,17 +52423,6 @@ impl StopTimecode {
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     pub fn timecode(&self) -> std::option::Option<&str> {
         self.timecode.as_deref()
-    }
-}
-impl std::fmt::Debug for StopTimecode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopTimecode");
-        formatter.field(
-            "last_frame_clipping_behavior",
-            &self.last_frame_clipping_behavior,
-        );
-        formatter.field("timecode", &self.timecode);
-        formatter.finish()
     }
 }
 /// See [`StopTimecode`](crate::model::StopTimecode).
@@ -55045,7 +52572,7 @@ impl AsRef<str> for LastFrameClippingBehavior {
 
 /// Settings to identify the start of the clip.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTimecode {
     /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     #[doc(hidden)]
@@ -55055,13 +52582,6 @@ impl StartTimecode {
     /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     pub fn timecode(&self) -> std::option::Option<&str> {
         self.timecode.as_deref()
-    }
-}
-impl std::fmt::Debug for StartTimecode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTimecode");
-        formatter.field("timecode", &self.timecode);
-        formatter.finish()
     }
 }
 /// See [`StartTimecode`](crate::model::StartTimecode).
@@ -55192,7 +52712,7 @@ impl AsRef<str> for InputTimecodeSource {
 
 /// Action to prepare an input for a future immediate input switch.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputPrepareScheduleActionSettings {
     /// The name of the input attachment that should be prepared by this action. If no name is provided, the action will stop the most recent prepare (if any) when activated.
     #[doc(hidden)]
@@ -55218,18 +52738,6 @@ impl InputPrepareScheduleActionSettings {
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
     pub fn url_path(&self) -> std::option::Option<&[std::string::String]> {
         self.url_path.as_deref()
-    }
-}
-impl std::fmt::Debug for InputPrepareScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputPrepareScheduleActionSettings");
-        formatter.field(
-            "input_attachment_name_reference",
-            &self.input_attachment_name_reference,
-        );
-        formatter.field("input_clipping_settings", &self.input_clipping_settings);
-        formatter.field("url_path", &self.url_path);
-        formatter.finish()
     }
 }
 /// See [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings).
@@ -55314,7 +52822,7 @@ impl InputPrepareScheduleActionSettings {
 
 /// Settings for the action to emit HLS metadata
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsTimedMetadataScheduleActionSettings {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
     #[doc(hidden)]
@@ -55324,13 +52832,6 @@ impl HlsTimedMetadataScheduleActionSettings {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
     pub fn id3(&self) -> std::option::Option<&str> {
         self.id3.as_deref()
-    }
-}
-impl std::fmt::Debug for HlsTimedMetadataScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsTimedMetadataScheduleActionSettings");
-        formatter.field("id3", &self.id3);
-        formatter.finish()
     }
 }
 /// See [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings).
@@ -55367,7 +52868,7 @@ impl HlsTimedMetadataScheduleActionSettings {
 
 /// Settings for the action to insert a user-defined ID3 tag in each HLS segment
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsId3SegmentTaggingScheduleActionSettings {
     /// ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers: https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
     #[doc(hidden)]
@@ -55377,13 +52878,6 @@ impl HlsId3SegmentTaggingScheduleActionSettings {
     /// ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers: https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
     pub fn tag(&self) -> std::option::Option<&str> {
         self.tag.as_deref()
-    }
-}
-impl std::fmt::Debug for HlsId3SegmentTaggingScheduleActionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsId3SegmentTaggingScheduleActionSettings");
-        formatter.field("tag", &self.tag);
-        formatter.finish()
     }
 }
 /// See [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings).
@@ -55590,7 +53084,7 @@ impl AsRef<str> for AcceptHeader {
 
 /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputVpcRequest {
     /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces. Requires subnetIds. If none are specified then the VPC default security group will be used.
     #[doc(hidden)]
@@ -55607,14 +53101,6 @@ impl InputVpcRequest {
     /// A list of 2 VPC subnet IDs from the same VPC. Subnet IDs must be mapped to two unique availability zones (AZ).
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for InputVpcRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputVpcRequest");
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
     }
 }
 /// See [`InputVpcRequest`](crate::model::InputVpcRequest).
@@ -55683,7 +53169,7 @@ impl InputVpcRequest {
 
 /// The properties for a private VPC Output When this property is specified, the output egress addresses will be created in a user specified VPC
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcOutputSettings {
     /// List of public address allocation ids to associate with ENIs that will be created in Output VPC. Must specify one for SINGLE_PIPELINE, two for STANDARD channels
     #[doc(hidden)]
@@ -55707,18 +53193,6 @@ impl VpcOutputSettings {
     /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcOutputSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcOutputSettings");
-        formatter.field(
-            "public_address_allocation_ids",
-            &self.public_address_allocation_ids,
-        );
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcOutputSettings`](crate::model::VpcOutputSettings).
@@ -55812,7 +53286,7 @@ impl VpcOutputSettings {
 
 /// Placeholder documentation for MaintenanceCreateSettings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceCreateSettings {
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
     #[doc(hidden)]
@@ -55829,14 +53303,6 @@ impl MaintenanceCreateSettings {
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
     pub fn maintenance_start_time(&self) -> std::option::Option<&str> {
         self.maintenance_start_time.as_deref()
-    }
-}
-impl std::fmt::Debug for MaintenanceCreateSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceCreateSettings");
-        formatter.field("maintenance_day", &self.maintenance_day);
-        formatter.field("maintenance_start_time", &self.maintenance_start_time);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings).
@@ -55893,7 +53359,7 @@ impl MaintenanceCreateSettings {
 
 /// List of actions that have been deleted from the schedule.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchScheduleActionDeleteResult {
     /// List of actions that have been deleted from the schedule.
     #[doc(hidden)]
@@ -55903,13 +53369,6 @@ impl BatchScheduleActionDeleteResult {
     /// List of actions that have been deleted from the schedule.
     pub fn schedule_actions(&self) -> std::option::Option<&[crate::model::ScheduleAction]> {
         self.schedule_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchScheduleActionDeleteResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchScheduleActionDeleteResult");
-        formatter.field("schedule_actions", &self.schedule_actions);
-        formatter.finish()
     }
 }
 /// See [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult).
@@ -55958,7 +53417,7 @@ impl BatchScheduleActionDeleteResult {
 
 /// List of actions that have been created in the schedule.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchScheduleActionCreateResult {
     /// List of actions that have been created in the schedule.
     #[doc(hidden)]
@@ -55968,13 +53427,6 @@ impl BatchScheduleActionCreateResult {
     /// List of actions that have been created in the schedule.
     pub fn schedule_actions(&self) -> std::option::Option<&[crate::model::ScheduleAction]> {
         self.schedule_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchScheduleActionCreateResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchScheduleActionCreateResult");
-        formatter.field("schedule_actions", &self.schedule_actions);
-        formatter.finish()
     }
 }
 /// See [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult).
@@ -56023,7 +53475,7 @@ impl BatchScheduleActionCreateResult {
 
 /// A list of schedule actions to delete.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchScheduleActionDeleteRequest {
     /// A list of schedule actions to delete.
     #[doc(hidden)]
@@ -56033,13 +53485,6 @@ impl BatchScheduleActionDeleteRequest {
     /// A list of schedule actions to delete.
     pub fn action_names(&self) -> std::option::Option<&[std::string::String]> {
         self.action_names.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchScheduleActionDeleteRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchScheduleActionDeleteRequest");
-        formatter.field("action_names", &self.action_names);
-        formatter.finish()
     }
 }
 /// See [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest).
@@ -56087,7 +53532,7 @@ impl BatchScheduleActionDeleteRequest {
 
 /// A list of schedule actions to create (in a request) or that have been created (in a response).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchScheduleActionCreateRequest {
     /// A list of schedule actions to create.
     #[doc(hidden)]
@@ -56097,13 +53542,6 @@ impl BatchScheduleActionCreateRequest {
     /// A list of schedule actions to create.
     pub fn schedule_actions(&self) -> std::option::Option<&[crate::model::ScheduleAction]> {
         self.schedule_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchScheduleActionCreateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchScheduleActionCreateRequest");
-        formatter.field("schedule_actions", &self.schedule_actions);
-        formatter.finish()
     }
 }
 /// See [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest).
@@ -56152,7 +53590,7 @@ impl BatchScheduleActionCreateRequest {
 
 /// Details from a successful operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSuccessfulResultModel {
     /// ARN of the resource
     #[doc(hidden)]
@@ -56176,15 +53614,6 @@ impl BatchSuccessfulResultModel {
     /// Current state of the resource
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchSuccessfulResultModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSuccessfulResultModel");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel).
@@ -56247,7 +53676,7 @@ impl BatchSuccessfulResultModel {
 
 /// Details from a failed operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchFailedResultModel {
     /// ARN of the resource
     #[doc(hidden)]
@@ -56278,16 +53707,6 @@ impl BatchFailedResultModel {
     /// Error message for the failed operation
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchFailedResultModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchFailedResultModel");
-        formatter.field("arn", &self.arn);
-        formatter.field("code", &self.code);
-        formatter.field("id", &self.id);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchFailedResultModel`](crate::model::BatchFailedResultModel).

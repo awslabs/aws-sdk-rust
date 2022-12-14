@@ -14347,7 +14347,7 @@ impl UpdateProjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>The ID of the project to update.</p>
     #[doc(hidden)]
@@ -14380,20 +14380,10 @@ impl UpdateProjectInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("project_description", &self.project_description);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePortalInput {
     /// <p>The ID of the portal to update.</p>
     #[doc(hidden)]
@@ -14469,25 +14459,10 @@ impl UpdatePortalInput {
         self.alarms.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePortalInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.field("portal_name", &self.portal_name);
-        formatter.field("portal_description", &self.portal_description);
-        formatter.field("portal_contact_email", &self.portal_contact_email);
-        formatter.field("portal_logo_image", &self.portal_logo_image);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("notification_sender_email", &self.notification_sender_email);
-        formatter.field("alarms", &self.alarms);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway to be updated.</p>
     #[doc(hidden)]
@@ -14513,19 +14488,10 @@ impl UpdateGatewayCapabilityConfigurationInput {
         self.capability_configuration.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewayCapabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayCapabilityConfigurationInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("capability_namespace", &self.capability_namespace);
-        formatter.field("capability_configuration", &self.capability_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayInput {
     /// <p>The ID of the gateway to update.</p>
     #[doc(hidden)]
@@ -14544,18 +14510,10 @@ impl UpdateGatewayInput {
         self.gateway_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDashboardInput {
     /// <p>The ID of the dashboard to update.</p>
     #[doc(hidden)]
@@ -14595,21 +14553,10 @@ impl UpdateDashboardInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDashboardInput");
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("dashboard_name", &self.dashboard_name);
-        formatter.field("dashboard_description", &self.dashboard_description);
-        formatter.field("dashboard_definition", &self.dashboard_definition);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssetPropertyInput {
     /// <p>The ID of the asset to be updated.</p>
     #[doc(hidden)]
@@ -14662,25 +14609,10 @@ impl UpdateAssetPropertyInput {
         self.property_unit.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssetPropertyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssetPropertyInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field(
-            "property_notification_state",
-            &self.property_notification_state,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.field("property_unit", &self.property_unit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssetModelInput {
     /// <p>The ID of the asset model to update.</p>
     #[doc(hidden)]
@@ -14747,26 +14679,10 @@ impl UpdateAssetModelInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssetModelInput");
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("asset_model_name", &self.asset_model_name);
-        formatter.field("asset_model_description", &self.asset_model_description);
-        formatter.field("asset_model_properties", &self.asset_model_properties);
-        formatter.field("asset_model_hierarchies", &self.asset_model_hierarchies);
-        formatter.field(
-            "asset_model_composite_models",
-            &self.asset_model_composite_models,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssetInput {
     /// <p>The ID of the asset to update.</p>
     #[doc(hidden)]
@@ -14799,20 +14715,10 @@ impl UpdateAssetInput {
         self.asset_description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("asset_name", &self.asset_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("asset_description", &self.asset_description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
@@ -14852,21 +14758,10 @@ impl UpdateAccessPolicyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccessPolicyInput");
-        formatter.field("access_policy_id", &self.access_policy_id);
-        formatter.field("access_policy_identity", &self.access_policy_identity);
-        formatter.field("access_policy_resource", &self.access_policy_resource);
-        formatter.field("access_policy_permission", &self.access_policy_permission);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
     #[doc(hidden)]
@@ -14885,18 +14780,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
     #[doc(hidden)]
@@ -14919,18 +14806,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStorageConfigurationInput {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
@@ -14988,23 +14867,10 @@ impl PutStorageConfigurationInput {
         self.retention_period.as_ref()
     }
 }
-impl std::fmt::Debug for PutStorageConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutStorageConfigurationInput");
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("multi_layer_storage", &self.multi_layer_storage);
-        formatter.field(
-            "disassociated_data_storage",
-            &self.disassociated_data_storage,
-        );
-        formatter.field("retention_period", &self.retention_period);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingOptionsInput {
     /// <p>The logging options to set.</p>
     #[doc(hidden)]
@@ -15016,17 +14882,10 @@ impl PutLoggingOptionsInput {
         self.logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingOptionsInput");
-        formatter.field("logging_options", &self.logging_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDefaultEncryptionConfigurationInput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     #[doc(hidden)]
@@ -15045,18 +14904,10 @@ impl PutDefaultEncryptionConfigurationInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutDefaultEncryptionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDefaultEncryptionConfigurationInput");
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTimeSeriesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -15104,21 +14955,10 @@ impl ListTimeSeriesInput {
         self.time_series_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListTimeSeriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTimeSeriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("alias_prefix", &self.alias_prefix);
-        formatter.field("time_series_type", &self.time_series_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
     #[doc(hidden)]
@@ -15130,17 +14970,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
@@ -15168,19 +15001,10 @@ impl ListProjectsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectAssetsInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -15208,19 +15032,10 @@ impl ListProjectAssetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProjectAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectAssetsInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPortalsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -15241,18 +15056,10 @@ impl ListPortalsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPortalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPortalsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGatewaysInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -15273,18 +15080,10 @@ impl ListGatewaysInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGatewaysInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDashboardsInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -15312,19 +15111,10 @@ impl ListDashboardsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDashboardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDashboardsInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBulkImportJobsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -15350,19 +15140,10 @@ impl ListBulkImportJobsInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListBulkImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBulkImportJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociatedAssetsInput {
     /// <p>The ID of the asset to query.</p>
     #[doc(hidden)]
@@ -15416,21 +15197,10 @@ impl ListAssociatedAssetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssociatedAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociatedAssetsInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("hierarchy_id", &self.hierarchy_id);
-        formatter.field("traversal_direction", &self.traversal_direction);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -15475,20 +15245,10 @@ impl ListAssetsInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetRelationshipsInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15527,20 +15287,10 @@ impl ListAssetRelationshipsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssetRelationshipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssetRelationshipsInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("traversal_type", &self.traversal_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetModelsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -15561,18 +15311,10 @@ impl ListAssetModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssetModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssetModelsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPoliciesInput {
     /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
     #[doc(hidden)]
@@ -15628,23 +15370,10 @@ impl ListAccessPoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessPoliciesInput");
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("iam_arn", &self.iam_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15762,35 +15491,10 @@ impl GetInterpolatedAssetPropertyValuesInput {
         self.interval_window_in_seconds
     }
 }
-impl std::fmt::Debug for GetInterpolatedAssetPropertyValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInterpolatedAssetPropertyValuesInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("start_time_in_seconds", &self.start_time_in_seconds);
-        formatter.field(
-            "start_time_offset_in_nanos",
-            &self.start_time_offset_in_nanos,
-        );
-        formatter.field("end_time_in_seconds", &self.end_time_in_seconds);
-        formatter.field("end_time_offset_in_nanos", &self.end_time_offset_in_nanos);
-        formatter.field("quality", &self.quality);
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "interval_window_in_seconds",
-            &self.interval_window_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssetPropertyValueHistoryInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15862,25 +15566,10 @@ impl GetAssetPropertyValueHistoryInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAssetPropertyValueHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssetPropertyValueHistoryInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("qualities", &self.qualities);
-        formatter.field("time_ordering", &self.time_ordering);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssetPropertyValueInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15906,19 +15595,10 @@ impl GetAssetPropertyValueInput {
         self.property_alias.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssetPropertyValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssetPropertyValueInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssetPropertyAggregatesInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -16004,27 +15684,10 @@ impl GetAssetPropertyAggregatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAssetPropertyAggregatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssetPropertyAggregatesInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("aggregate_types", &self.aggregate_types);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("qualities", &self.qualities);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("time_ordering", &self.time_ordering);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTimeSeriesFromAssetPropertyInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
@@ -16057,20 +15720,10 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateTimeSeriesFromAssetPropertyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateTimeSeriesFromAssetPropertyInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAssetsInput {
     /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
     #[doc(hidden)]
@@ -16103,20 +15756,10 @@ impl DisassociateAssetsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAssetsInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("hierarchy_id", &self.hierarchy_id);
-        formatter.field("child_asset_id", &self.child_asset_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
@@ -16142,30 +15785,15 @@ impl DescribeTimeSeriesInput {
         self.property_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTimeSeriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTimeSeriesInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStorageConfigurationInput {}
-impl std::fmt::Debug for DescribeStorageConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStorageConfigurationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -16177,17 +15805,10 @@ impl DescribeProjectInput {
         self.project_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePortalInput {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
@@ -16199,28 +15820,15 @@ impl DescribePortalInput {
         self.portal_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePortalInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingOptionsInput {}
-impl std::fmt::Debug for DescribeLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingOptionsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
     #[doc(hidden)]
@@ -16239,18 +15847,10 @@ impl DescribeGatewayCapabilityConfigurationInput {
         self.capability_namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGatewayCapabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGatewayCapabilityConfigurationInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("capability_namespace", &self.capability_namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGatewayInput {
     /// <p>The ID of the gateway device.</p>
     #[doc(hidden)]
@@ -16262,28 +15862,15 @@ impl DescribeGatewayInput {
         self.gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGatewayInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDefaultEncryptionConfigurationInput {}
-impl std::fmt::Debug for DescribeDefaultEncryptionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDefaultEncryptionConfigurationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDashboardInput {
     /// <p>The ID of the dashboard.</p>
     #[doc(hidden)]
@@ -16295,17 +15882,10 @@ impl DescribeDashboardInput {
         self.dashboard_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDashboardInput");
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBulkImportJobInput {
     /// <p>The ID of the job.</p>
     #[doc(hidden)]
@@ -16317,17 +15897,10 @@ impl DescribeBulkImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBulkImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBulkImportJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssetPropertyInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -16346,18 +15919,10 @@ impl DescribeAssetPropertyInput {
         self.property_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssetPropertyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssetPropertyInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssetModelInput {
     /// <p>The ID of the asset model.</p>
     #[doc(hidden)]
@@ -16369,17 +15934,10 @@ impl DescribeAssetModelInput {
         self.asset_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssetModelInput");
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssetInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -16391,17 +15949,10 @@ impl DescribeAssetInput {
         self.asset_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
@@ -16413,17 +15964,10 @@ impl DescribeAccessPolicyInput {
         self.access_policy_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccessPolicyInput");
-        formatter.field("access_policy_id", &self.access_policy_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
@@ -16456,20 +16000,10 @@ impl DeleteTimeSeriesInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTimeSeriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTimeSeriesInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -16488,18 +16022,10 @@ impl DeleteProjectInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePortalInput {
     /// <p>The ID of the portal to delete.</p>
     #[doc(hidden)]
@@ -16518,18 +16044,10 @@ impl DeletePortalInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePortalInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayInput {
     /// <p>The ID of the gateway to delete.</p>
     #[doc(hidden)]
@@ -16541,17 +16059,10 @@ impl DeleteGatewayInput {
         self.gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDashboardInput {
     /// <p>The ID of the dashboard to delete.</p>
     #[doc(hidden)]
@@ -16570,18 +16081,10 @@ impl DeleteDashboardInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDashboardInput");
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssetModelInput {
     /// <p>The ID of the asset model to delete.</p>
     #[doc(hidden)]
@@ -16600,18 +16103,10 @@ impl DeleteAssetModelInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssetModelInput");
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssetInput {
     /// <p>The ID of the asset to delete.</p>
     #[doc(hidden)]
@@ -16630,18 +16125,10 @@ impl DeleteAssetInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPolicyInput {
     /// <p>The ID of the access policy to be deleted.</p>
     #[doc(hidden)]
@@ -16660,18 +16147,10 @@ impl DeleteAccessPolicyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPolicyInput");
-        formatter.field("access_policy_id", &self.access_policy_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The ID of the portal in which to create the project.</p>
     #[doc(hidden)]
@@ -16715,21 +16194,10 @@ impl CreateProjectInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("project_description", &self.project_description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePortalInput {
     /// <p>A friendly name for the portal.</p>
     #[doc(hidden)]
@@ -16824,26 +16292,10 @@ impl CreatePortalInput {
         self.alarms.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePortalInput");
-        formatter.field("portal_name", &self.portal_name);
-        formatter.field("portal_description", &self.portal_description);
-        formatter.field("portal_contact_email", &self.portal_contact_email);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("portal_logo_image_file", &self.portal_logo_image_file);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("portal_auth_mode", &self.portal_auth_mode);
-        formatter.field("notification_sender_email", &self.notification_sender_email);
-        formatter.field("alarms", &self.alarms);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGatewayInput {
     /// <p>A unique, friendly name for the gateway.</p>
     #[doc(hidden)]
@@ -16873,19 +16325,10 @@ impl CreateGatewayInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGatewayInput");
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.field("gateway_platform", &self.gateway_platform);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDashboardInput {
     /// <p>The ID of the project in which to create the dashboard.</p>
     #[doc(hidden)]
@@ -16936,22 +16379,10 @@ impl CreateDashboardInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDashboardInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("dashboard_name", &self.dashboard_name);
-        formatter.field("dashboard_description", &self.dashboard_description);
-        formatter.field("dashboard_definition", &self.dashboard_definition);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBulkImportJobInput {
     /// <p>The unique name that helps identify the job request.</p>
     #[doc(hidden)]
@@ -16991,21 +16422,10 @@ impl CreateBulkImportJobInput {
         self.job_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBulkImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBulkImportJobInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_role_arn", &self.job_role_arn);
-        formatter.field("files", &self.files);
-        formatter.field("error_report_location", &self.error_report_location);
-        formatter.field("job_configuration", &self.job_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssetModelInput {
     /// <p>A unique, friendly name for the asset model.</p>
     #[doc(hidden)]
@@ -17076,26 +16496,10 @@ impl CreateAssetModelInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAssetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssetModelInput");
-        formatter.field("asset_model_name", &self.asset_model_name);
-        formatter.field("asset_model_description", &self.asset_model_description);
-        formatter.field("asset_model_properties", &self.asset_model_properties);
-        formatter.field("asset_model_hierarchies", &self.asset_model_hierarchies);
-        formatter.field(
-            "asset_model_composite_models",
-            &self.asset_model_composite_models,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssetInput {
     /// <p>A friendly name for the asset.</p>
     #[doc(hidden)]
@@ -17139,21 +16543,10 @@ impl CreateAssetInput {
         self.asset_description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssetInput");
-        formatter.field("asset_name", &self.asset_name);
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.field("asset_description", &self.asset_description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPolicyInput {
     /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
     #[doc(hidden)]
@@ -17197,21 +16590,10 @@ impl CreateAccessPolicyInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessPolicyInput");
-        formatter.field("access_policy_identity", &self.access_policy_identity);
-        formatter.field("access_policy_resource", &self.access_policy_resource);
-        formatter.field("access_policy_permission", &self.access_policy_permission);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
     #[doc(hidden)]
@@ -17223,17 +16605,10 @@ impl BatchPutAssetPropertyValueInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutAssetPropertyValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutAssetPropertyValueInput");
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryInput {
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
@@ -17270,19 +16645,10 @@ impl BatchGetAssetPropertyValueHistoryInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryInput");
-        formatter.field("entries", &self.entries);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
@@ -17301,18 +16667,10 @@ impl BatchGetAssetPropertyValueInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetAssetPropertyValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueInput");
-        formatter.field("entries", &self.entries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesInput {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
@@ -17349,19 +16707,10 @@ impl BatchGetAssetPropertyAggregatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchGetAssetPropertyAggregatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesInput");
-        formatter.field("entries", &self.entries);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateProjectAssetsInput {
     /// <p>The ID of the project from which to disassociate the assets.</p>
     #[doc(hidden)]
@@ -17387,19 +16736,10 @@ impl BatchDisassociateProjectAssetsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateProjectAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDisassociateProjectAssetsInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("asset_ids", &self.asset_ids);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateProjectAssetsInput {
     /// <p>The ID of the project to which to associate the assets.</p>
     #[doc(hidden)]
@@ -17425,19 +16765,10 @@ impl BatchAssociateProjectAssetsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAssociateProjectAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAssociateProjectAssetsInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("asset_ids", &self.asset_ids);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateTimeSeriesToAssetPropertyInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
@@ -17470,20 +16801,10 @@ impl AssociateTimeSeriesToAssetPropertyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateTimeSeriesToAssetPropertyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateTimeSeriesToAssetPropertyInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAssetsInput {
     /// <p>The ID of the parent asset.</p>
     #[doc(hidden)]
@@ -17514,15 +16835,5 @@ impl AssociateAssetsInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAssetsInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("hierarchy_id", &self.hierarchy_id);
-        formatter.field("child_asset_id", &self.child_asset_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

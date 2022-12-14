@@ -2,7 +2,7 @@
 
 /// <p>The list of tags to be added to the specified topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The required key portion of the tag.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The optional value portion of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>Gives a detailed description of failed messages in the batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
     #[doc(hidden)]
@@ -108,16 +100,6 @@ impl BatchResultErrorEntry {
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
     pub fn sender_fault(&self) -> bool {
         self.sender_fault
-    }
-}
-impl std::fmt::Debug for BatchResultErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchResultErrorEntry");
-        formatter.field("id", &self.id);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("sender_fault", &self.sender_fault);
-        formatter.finish()
     }
 }
 /// See [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
@@ -192,7 +174,7 @@ impl BatchResultErrorEntry {
 
 /// <p>Encloses data related to a successful message in a batch request for topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishBatchResultEntry {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
     #[doc(hidden)]
@@ -220,15 +202,6 @@ impl PublishBatchResultEntry {
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     pub fn sequence_number(&self) -> std::option::Option<&str> {
         self.sequence_number.as_deref()
-    }
-}
-impl std::fmt::Debug for PublishBatchResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishBatchResultEntry");
-        formatter.field("id", &self.id);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.finish()
     }
 }
 /// See [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry).
@@ -298,7 +271,7 @@ impl PublishBatchResultEntry {
 
 /// <p>Contains the details of a single Amazon SNS message along with an <code>Id</code> that identifies a message within the batch. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishBatchRequestEntry {
     /// <p>An identifier for the message in this batch.</p> <note>
     /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
@@ -420,19 +393,6 @@ impl PublishBatchRequestEntry {
     /// </important>
     pub fn message_group_id(&self) -> std::option::Option<&str> {
         self.message_group_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PublishBatchRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishBatchRequestEntry");
-        formatter.field("id", &self.id);
-        formatter.field("message", &self.message);
-        formatter.field("subject", &self.subject);
-        formatter.field("message_structure", &self.message_structure);
-        formatter.field("message_attributes", &self.message_attributes);
-        formatter.field("message_deduplication_id", &self.message_deduplication_id);
-        formatter.field("message_group_id", &self.message_group_id);
-        formatter.finish()
     }
 }
 /// See [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry).
@@ -634,7 +594,7 @@ impl PublishBatchRequestEntry {
 /// <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p>
 /// <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Amazon SNS message attributes</a> and <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the <i>Amazon SNS Developer Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageAttributeValue {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     #[doc(hidden)]
@@ -658,15 +618,6 @@ impl MessageAttributeValue {
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     pub fn binary_value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.binary_value.as_ref()
-    }
-}
-impl std::fmt::Debug for MessageAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageAttributeValue");
-        formatter.field("data_type", &self.data_type);
-        formatter.field("string_value", &self.string_value);
-        formatter.field("binary_value", &self.binary_value);
-        formatter.finish()
     }
 }
 /// See [`MessageAttributeValue`](crate::model::MessageAttributeValue).
@@ -732,7 +683,7 @@ impl MessageAttributeValue {
 
 /// <p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Topic {
     /// <p>The topic's ARN.</p>
     #[doc(hidden)]
@@ -742,13 +693,6 @@ impl Topic {
     /// <p>The topic's ARN.</p>
     pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Topic {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Topic");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
     }
 }
 /// See [`Topic`](crate::model::Topic).
@@ -787,7 +731,7 @@ impl Topic {
 
 /// <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The subscription's ARN.</p>
     #[doc(hidden)]
@@ -825,17 +769,6 @@ impl Subscription {
     /// <p>The ARN of the subscription's topic.</p>
     pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Subscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subscription");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.field("owner", &self.owner);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
@@ -926,7 +859,7 @@ impl Subscription {
 /// <p>A verified or pending destination phone number in the SMS sandbox.</p>
 /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsSandboxPhoneNumber {
     /// <p>The destination phone number.</p>
     #[doc(hidden)]
@@ -945,14 +878,6 @@ impl SmsSandboxPhoneNumber {
         &self,
     ) -> std::option::Option<&crate::model::SmsSandboxPhoneNumberVerificationStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for SmsSandboxPhoneNumber {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsSandboxPhoneNumber");
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber).
@@ -1105,7 +1030,7 @@ impl AsRef<str> for SmsSandboxPhoneNumberVerificationStatus {
 
 /// <p>Platform application object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformApplication {
     /// <p>PlatformApplicationArn for platform application object.</p>
     #[doc(hidden)]
@@ -1126,14 +1051,6 @@ impl PlatformApplication {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for PlatformApplication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformApplication");
-        formatter.field("platform_application_arn", &self.platform_application_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`PlatformApplication`](crate::model::PlatformApplication).
@@ -1204,7 +1121,7 @@ impl PlatformApplication {
 
 /// <p>A list of phone numbers and their metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhoneNumberInformation {
     /// <p>The date and time when the phone number was created.</p>
     #[doc(hidden)]
@@ -1249,18 +1166,6 @@ impl PhoneNumberInformation {
     /// <p>The capabilities of each phone number.</p>
     pub fn number_capabilities(&self) -> std::option::Option<&[crate::model::NumberCapability]> {
         self.number_capabilities.as_deref()
-    }
-}
-impl std::fmt::Debug for PhoneNumberInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhoneNumberInformation");
-        formatter.field("created_at", &self.created_at);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("status", &self.status);
-        formatter.field("iso2_country_code", &self.iso2_country_code);
-        formatter.field("route_type", &self.route_type);
-        formatter.field("number_capabilities", &self.number_capabilities);
-        formatter.finish()
     }
 }
 /// See [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
@@ -1571,7 +1476,7 @@ impl AsRef<str> for RouteType {
 
 /// <p>The endpoint for mobile app and device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The <code>EndpointArn</code> for mobile app and device.</p>
     #[doc(hidden)]
@@ -1592,14 +1497,6 @@ impl Endpoint {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).

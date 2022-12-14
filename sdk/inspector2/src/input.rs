@@ -5147,7 +5147,7 @@ impl UpdateOrganizationConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
     #[doc(hidden)]
@@ -5159,17 +5159,10 @@ impl UpdateOrganizationConfigurationInput {
         self.auto_enable.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOrganizationConfigurationInput");
-        formatter.field("auto_enable", &self.auto_enable);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFilterInput {
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     #[doc(hidden)]
@@ -5216,22 +5209,10 @@ impl UpdateFilterInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFilterInput");
-        formatter.field("action", &self.action);
-        formatter.field("description", &self.description);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field("name", &self.name);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationInput {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     #[doc(hidden)]
@@ -5243,17 +5224,10 @@ impl UpdateConfigurationInput {
         self.ecr_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationInput");
-        formatter.field("ecr_configuration", &self.ecr_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
     #[doc(hidden)]
@@ -5272,18 +5246,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to apply a tag to.</p>
     #[doc(hidden)]
@@ -5306,18 +5272,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsageTotalsInput {
     /// <p>The maximum number of results to return in the response.</p>
     #[doc(hidden)]
@@ -5343,19 +5301,10 @@ impl ListUsageTotalsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsageTotalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsageTotalsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon resource number (ARN) of the resource to list tags of.</p>
     #[doc(hidden)]
@@ -5367,17 +5316,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMembersInput {
     /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
     #[doc(hidden)]
@@ -5403,19 +5345,10 @@ impl ListMembersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMembersInput");
-        formatter.field("only_associated", &self.only_associated);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingsInput {
     /// <p>The maximum number of results to return in the response.</p>
     #[doc(hidden)]
@@ -5448,20 +5381,10 @@ impl ListFindingsInput {
         self.sort_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for ListFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFindingsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field("sort_criteria", &self.sort_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingAggregationsInput {
     /// <p>The type of the aggregation request.</p>
     #[doc(hidden)]
@@ -5501,21 +5424,10 @@ impl ListFindingAggregationsInput {
         self.aggregation_request.as_ref()
     }
 }
-impl std::fmt::Debug for ListFindingAggregationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFindingAggregationsInput");
-        formatter.field("aggregation_type", &self.aggregation_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("aggregation_request", &self.aggregation_request);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFiltersInput {
     /// <p>The Amazon resource number (ARN) of the filter.</p>
     #[doc(hidden)]
@@ -5548,20 +5460,10 @@ impl ListFiltersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFiltersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFiltersInput");
-        formatter.field("arns", &self.arns);
-        formatter.field("action", &self.action);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDelegatedAdminAccountsInput {
     /// <p>The maximum number of results to return in the response.</p>
     #[doc(hidden)]
@@ -5580,18 +5482,10 @@ impl ListDelegatedAdminAccountsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDelegatedAdminAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDelegatedAdminAccountsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCoverageStatisticsInput {
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     #[doc(hidden)]
@@ -5617,19 +5511,10 @@ impl ListCoverageStatisticsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCoverageStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCoverageStatisticsInput");
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCoverageInput {
     /// <p>The maximum number of results to return in the response.</p>
     #[doc(hidden)]
@@ -5655,19 +5540,10 @@ impl ListCoverageInput {
         self.filter_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for ListCoverageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCoverageInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccountPermissionsInput {
     /// <p>The service scan type to check permissions for.</p>
     #[doc(hidden)]
@@ -5693,19 +5569,10 @@ impl ListAccountPermissionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAccountPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccountPermissionsInput");
-        formatter.field("service", &self.service);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
     #[doc(hidden)]
@@ -5717,17 +5584,10 @@ impl GetMemberInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMemberInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingsReportStatusInput {
     /// <p>The ID of the report to retrieve the status of.</p>
     #[doc(hidden)]
@@ -5739,39 +5599,20 @@ impl GetFindingsReportStatusInput {
         self.report_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFindingsReportStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFindingsReportStatusInput");
-        formatter.field("report_id", &self.report_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDelegatedAdminAccountInput {}
-impl std::fmt::Debug for GetDelegatedAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDelegatedAdminAccountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigurationInput {}
-impl std::fmt::Debug for GetConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigurationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableDelegatedAdminAccountInput {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
     #[doc(hidden)]
@@ -5790,21 +5631,10 @@ impl EnableDelegatedAdminAccountInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for EnableDelegatedAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableDelegatedAdminAccountInput");
-        formatter.field(
-            "delegated_admin_account_id",
-            &self.delegated_admin_account_id,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableInput {
     /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
     #[doc(hidden)]
@@ -5830,19 +5660,10 @@ impl EnableInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for EnableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to disassociate.</p>
     #[doc(hidden)]
@@ -5854,17 +5675,10 @@ impl DisassociateMemberInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMemberInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableDelegatedAdminAccountInput {
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
     #[doc(hidden)]
@@ -5876,20 +5690,10 @@ impl DisableDelegatedAdminAccountInput {
         self.delegated_admin_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableDelegatedAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableDelegatedAdminAccountInput");
-        formatter.field(
-            "delegated_admin_account_id",
-            &self.delegated_admin_account_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableInput {
     /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
     #[doc(hidden)]
@@ -5908,29 +5712,15 @@ impl DisableInput {
         self.resource_types.as_deref()
     }
 }
-impl std::fmt::Debug for DisableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationInput {}
-impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationConfigurationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFilterInput {
     /// <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
     #[doc(hidden)]
@@ -5942,17 +5732,10 @@ impl DeleteFilterInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFilterInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFindingsReportInput {
     /// <p>The filter criteria to apply to the results of the finding report.</p>
     #[doc(hidden)]
@@ -5978,19 +5761,10 @@ impl CreateFindingsReportInput {
         self.s3_destination.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFindingsReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFindingsReportInput");
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field("report_format", &self.report_format);
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFilterInput {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
     #[doc(hidden)]
@@ -6041,22 +5815,10 @@ impl CreateFilterInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFilterInput");
-        formatter.field("action", &self.action);
-        formatter.field("description", &self.description);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelFindingsReportInput {
     /// <p>The ID of the report to be canceled.</p>
     #[doc(hidden)]
@@ -6068,17 +5830,10 @@ impl CancelFindingsReportInput {
         self.report_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelFindingsReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelFindingsReportInput");
-        formatter.field("report_id", &self.report_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetFreeTrialInfoInput {
     /// <p>The account IDs to get free trial status for.</p>
     #[doc(hidden)]
@@ -6090,17 +5845,10 @@ impl BatchGetFreeTrialInfoInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetFreeTrialInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetFreeTrialInfoInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAccountStatusInput {
     /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
     #[doc(hidden)]
@@ -6112,17 +5860,10 @@ impl BatchGetAccountStatusInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetAccountStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAccountStatusInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
     #[doc(hidden)]
@@ -6132,12 +5873,5 @@ impl AssociateMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMemberInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }

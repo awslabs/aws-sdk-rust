@@ -2,18 +2,11 @@
 
 /// <p>The specified attribute doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAttributeName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAttributeName");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAttributeName {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl InvalidAttributeName {
 
 /// <p>Error code 400. Unsupported operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOperation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedOperation {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl UnsupportedOperation {
 
 /// <p>The batch request contains more entries than permissible.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyEntriesInBatchRequest {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyEntriesInBatchRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyEntriesInBatchRequest");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyEntriesInBatchRequest {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl TooManyEntriesInBatchRequest {
 
 /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidBatchEntryId {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidBatchEntryId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidBatchEntryId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidBatchEntryId {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl InvalidBatchEntryId {
 
 /// <p>The batch request doesn't contain any entries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmptyBatchRequest {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EmptyBatchRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmptyBatchRequest");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EmptyBatchRequest {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl EmptyBatchRequest {
 
 /// <p>The length of all the messages put together is more than the limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRequestTooLong {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BatchRequestTooLong {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRequestTooLong");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BatchRequestTooLong {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl BatchRequestTooLong {
 
 /// <p>Two or more batch entries in the request have the same <code>Id</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchEntryIdsNotDistinct {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BatchEntryIdsNotDistinct {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchEntryIdsNotDistinct");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BatchEntryIdsNotDistinct {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl BatchEntryIdsNotDistinct {
 
 /// <p>The message contains characters outside the allowed set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMessageContents {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidMessageContents {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMessageContents");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidMessageContents {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl InvalidMessageContents {
 
 /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverLimit {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OverLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverLimit");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OverLimit {
     /// Returns the error message.
@@ -605,18 +542,11 @@ impl OverLimit {
 
 /// <p>The specified queue doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for QueueDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl QueueDoesNotExist {
     /// Returns the error message.
@@ -672,18 +602,11 @@ impl QueueDoesNotExist {
 
 /// <p>Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds (the time it can take to delete the messages in the queue).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurgeQueueInProgress {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PurgeQueueInProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurgeQueueInProgress");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PurgeQueueInProgress {
     /// Returns the error message.
@@ -739,18 +662,11 @@ impl PurgeQueueInProgress {
 
 /// <p>The specified receipt handle isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceiptHandleIsInvalid {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReceiptHandleIsInvalid {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceiptHandleIsInvalid");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReceiptHandleIsInvalid {
     /// Returns the error message.
@@ -806,18 +722,11 @@ impl ReceiptHandleIsInvalid {
 
 /// <p>The specified receipt handle isn't valid for the current version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidIdFormat {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidIdFormat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidIdFormat");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidIdFormat {
     /// Returns the error message.
@@ -873,18 +782,11 @@ impl InvalidIdFormat {
 
 /// <p>A queue with this name already exists. Amazon SQS returns this error only if the request includes attributes whose values differ from those of the existing queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueNameExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for QueueNameExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueNameExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl QueueNameExists {
     /// Returns the error message.
@@ -940,18 +842,11 @@ impl QueueNameExists {
 
 /// <p>You must wait 60 seconds after deleting a queue before you can create another queue with the same name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueDeletedRecently {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for QueueDeletedRecently {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueDeletedRecently");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl QueueDeletedRecently {
     /// Returns the error message.
@@ -1007,18 +902,11 @@ impl QueueDeletedRecently {
 
 /// <p>The specified message isn't in flight.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageNotInflight {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MessageNotInflight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageNotInflight");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MessageNotInflight {
     /// Returns the error message.

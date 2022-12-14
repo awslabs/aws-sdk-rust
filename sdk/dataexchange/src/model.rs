@@ -197,7 +197,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>What occurs to start an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>What occurs to start the revision publish action.</p>
     #[doc(hidden)]
@@ -207,13 +207,6 @@ impl Event {
     /// <p>What occurs to start the revision publish action.</p>
     pub fn revision_published(&self) -> std::option::Option<&crate::model::RevisionPublished> {
         self.revision_published.as_ref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("revision_published", &self.revision_published);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -255,7 +248,7 @@ impl Event {
 
 /// <p>Information about the published revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionPublished {
     /// <p>The data set ID of the published revision.</p>
     #[doc(hidden)]
@@ -265,13 +258,6 @@ impl RevisionPublished {
     /// <p>The data set ID of the published revision.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RevisionPublished {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionPublished");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
     }
 }
 /// See [`RevisionPublished`](crate::model::RevisionPublished).
@@ -310,7 +296,7 @@ impl RevisionPublished {
 
 /// <p>What occurs after a certain event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>Details for the export revision to Amazon S3 action.</p>
     #[doc(hidden)]
@@ -323,13 +309,6 @@ impl Action {
         &self,
     ) -> std::option::Option<&crate::model::AutoExportRevisionToS3RequestDetails> {
         self.export_revision_to_s3.as_ref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("export_revision_to_s3", &self.export_revision_to_s3);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -375,7 +354,7 @@ impl Action {
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoExportRevisionToS3RequestDetails {
     /// <p>Encryption configuration for the auto export job.</p>
     #[doc(hidden)]
@@ -394,14 +373,6 @@ impl AutoExportRevisionToS3RequestDetails {
         &self,
     ) -> std::option::Option<&crate::model::AutoExportRevisionDestinationEntry> {
         self.revision_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoExportRevisionToS3RequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoExportRevisionToS3RequestDetails");
-        formatter.field("encryption", &self.encryption);
-        formatter.field("revision_destination", &self.revision_destination);
-        formatter.finish()
     }
 }
 /// See [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
@@ -462,7 +433,7 @@ impl AutoExportRevisionToS3RequestDetails {
 
 /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoExportRevisionDestinationEntry {
     /// <p>The S3 bucket that is the destination for the event action.</p>
     #[doc(hidden)]
@@ -479,14 +450,6 @@ impl AutoExportRevisionDestinationEntry {
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub fn key_pattern(&self) -> std::option::Option<&str> {
         self.key_pattern.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoExportRevisionDestinationEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoExportRevisionDestinationEntry");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_pattern", &self.key_pattern);
-        formatter.finish()
     }
 }
 /// See [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
@@ -537,7 +500,7 @@ impl AutoExportRevisionDestinationEntry {
 
 /// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
     #[doc(hidden)]
@@ -554,14 +517,6 @@ impl ExportServerSideEncryption {
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ServerSideEncryptionTypes> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportServerSideEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportServerSideEncryption");
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
@@ -707,7 +662,7 @@ impl AsRef<str> for ServerSideEncryptionTypes {
 
 /// <p>Information about the origin of the data set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
     #[doc(hidden)]
@@ -717,13 +672,6 @@ impl OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
     pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginDetails");
-        formatter.field("product_id", &self.product_id);
-        formatter.finish()
     }
 }
 /// See [`OriginDetails`](crate::model::OriginDetails).
@@ -947,7 +895,7 @@ impl AsRef<str> for AssetType {
 
 /// <p>Information about the asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetDetails {
     /// <p>The S3 object that is the asset.</p>
     #[doc(hidden)]
@@ -973,15 +921,6 @@ impl AssetDetails {
     /// <p>Information about the API Gateway API asset.</p>
     pub fn api_gateway_api_asset(&self) -> std::option::Option<&crate::model::ApiGatewayApiAsset> {
         self.api_gateway_api_asset.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetDetails");
-        formatter.field("s3_snapshot_asset", &self.s3_snapshot_asset);
-        formatter.field("redshift_data_share_asset", &self.redshift_data_share_asset);
-        formatter.field("api_gateway_api_asset", &self.api_gateway_api_asset);
-        formatter.finish()
     }
 }
 /// See [`AssetDetails`](crate::model::AssetDetails).
@@ -1057,7 +996,7 @@ impl AssetDetails {
 
 /// <p>The API Gateway API that is the asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiGatewayApiAsset {
     /// <p>The API description of the API asset.</p>
     #[doc(hidden)]
@@ -1125,27 +1064,6 @@ impl ApiGatewayApiAsset {
     /// <p>The stage of the API asset.</p>
     pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
-    }
-}
-impl std::fmt::Debug for ApiGatewayApiAsset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiGatewayApiAsset");
-        formatter.field("api_description", &self.api_description);
-        formatter.field("api_endpoint", &self.api_endpoint);
-        formatter.field("api_id", &self.api_id);
-        formatter.field("api_key", &self.api_key);
-        formatter.field("api_name", &self.api_name);
-        formatter.field(
-            "api_specification_download_url",
-            &self.api_specification_download_url,
-        );
-        formatter.field(
-            "api_specification_download_url_expires_at",
-            &self.api_specification_download_url_expires_at,
-        );
-        formatter.field("protocol_type", &self.protocol_type);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
     }
 }
 /// See [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
@@ -1385,7 +1303,7 @@ impl AsRef<str> for ProtocolType {
 
 /// <p>The Amazon Redshift datashare asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftDataShareAsset {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     #[doc(hidden)]
@@ -1395,13 +1313,6 @@ impl RedshiftDataShareAsset {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftDataShareAsset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftDataShareAsset");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
@@ -1438,7 +1349,7 @@ impl RedshiftDataShareAsset {
 
 /// <p>The S3 object that is the asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SnapshotAsset {
     /// <p>The size of the S3 object that is the object.</p>
     #[doc(hidden)]
@@ -1448,13 +1359,6 @@ impl S3SnapshotAsset {
     /// <p>The size of the S3 object that is the object.</p>
     pub fn size(&self) -> f64 {
         self.size
-    }
-}
-impl std::fmt::Debug for S3SnapshotAsset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3SnapshotAsset");
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
@@ -1493,7 +1397,7 @@ impl S3SnapshotAsset {
 
 /// <p>An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured data file, an image file, or some other data file that can be stored as an S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare. When you create an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you create an asset in AWS Data Exchange.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetEntry {
     /// <p>The ARN for the asset.</p>
     #[doc(hidden)]
@@ -1566,22 +1470,6 @@ impl AssetEntry {
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetEntry");
-        formatter.field("arn", &self.arn);
-        formatter.field("asset_details", &self.asset_details);
-        formatter.field("asset_type", &self.asset_type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("source_id", &self.source_id);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`AssetEntry`](crate::model::AssetEntry).
@@ -1740,7 +1628,7 @@ impl AssetEntry {
 
 /// <p>AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobEntry {
     /// <p>The ARN for the job.</p>
     #[doc(hidden)]
@@ -1799,20 +1687,6 @@ impl JobEntry {
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for JobEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobEntry");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("details", &self.details);
-        formatter.field("errors", &self.errors);
-        formatter.field("id", &self.id);
-        formatter.field("state", &self.state);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`JobEntry`](crate::model::JobEntry).
@@ -2193,7 +2067,7 @@ impl AsRef<str> for State {
 
 /// <p>An error that occurred with the job request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobError {
     /// <p>The code for the job error.</p>
     #[doc(hidden)]
@@ -2245,19 +2119,6 @@ impl JobError {
     /// <p>The type of resource related to the error.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::JobErrorResourceTypes> {
         self.resource_type.as_ref()
-    }
-}
-impl std::fmt::Debug for JobError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobError");
-        formatter.field("code", &self.code);
-        formatter.field("details", &self.details);
-        formatter.field("limit_name", &self.limit_name);
-        formatter.field("limit_value", &self.limit_value);
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`JobError`](crate::model::JobError).
@@ -2576,7 +2437,7 @@ impl AsRef<str> for JobErrorLimitName {
 
 /// <p>Information about the job error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Details {
     /// <p>Information about the job error.</p>
     #[doc(hidden)]
@@ -2599,20 +2460,6 @@ impl Details {
         &self,
     ) -> std::option::Option<&[crate::model::AssetSourceEntry]> {
         self.import_assets_from_s3_job_error_details.as_deref()
-    }
-}
-impl std::fmt::Debug for Details {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Details");
-        formatter.field(
-            "import_asset_from_signed_url_job_error_details",
-            &self.import_asset_from_signed_url_job_error_details,
-        );
-        formatter.field(
-            "import_assets_from_s3_job_error_details",
-            &self.import_assets_from_s3_job_error_details,
-        );
-        formatter.finish()
     }
 }
 /// See [`Details`](crate::model::Details).
@@ -2687,7 +2534,7 @@ impl Details {
 
 /// <p>The source of the assets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetSourceEntry {
     /// <p>The S3 bucket that's part of the source of the asset.</p>
     #[doc(hidden)]
@@ -2704,14 +2551,6 @@ impl AssetSourceEntry {
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetSourceEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetSourceEntry");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`AssetSourceEntry`](crate::model::AssetSourceEntry).
@@ -2762,7 +2601,7 @@ impl AssetSourceEntry {
 
 /// <p>Information about the job error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Information about the job error.</p>
     #[doc(hidden)]
@@ -2772,13 +2611,6 @@ impl ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Information about the job error.</p>
     pub fn asset_name(&self) -> std::option::Option<&str> {
         self.asset_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportAssetFromSignedUrlJobErrorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetFromSignedUrlJobErrorDetails");
-        formatter.field("asset_name", &self.asset_name);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
@@ -2940,7 +2772,7 @@ impl AsRef<str> for Code {
 
 /// <p>Details for the response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseDetails {
     /// <p>Details for the export to signed URL response.</p>
     #[doc(hidden)]
@@ -3011,31 +2843,6 @@ impl ResponseDetails {
         &self,
     ) -> std::option::Option<&crate::model::ImportAssetFromApiGatewayApiResponseDetails> {
         self.import_asset_from_api_gateway_api.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseDetails");
-        formatter.field(
-            "export_asset_to_signed_url",
-            &self.export_asset_to_signed_url,
-        );
-        formatter.field("export_assets_to_s3", &self.export_assets_to_s3);
-        formatter.field("export_revisions_to_s3", &self.export_revisions_to_s3);
-        formatter.field(
-            "import_asset_from_signed_url",
-            &self.import_asset_from_signed_url,
-        );
-        formatter.field("import_assets_from_s3", &self.import_assets_from_s3);
-        formatter.field(
-            "import_assets_from_redshift_data_shares",
-            &self.import_assets_from_redshift_data_shares,
-        );
-        formatter.field(
-            "import_asset_from_api_gateway_api",
-            &self.import_asset_from_api_gateway_api,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResponseDetails`](crate::model::ResponseDetails).
@@ -3198,7 +3005,7 @@ impl ResponseDetails {
 
 /// <p>The response details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetFromApiGatewayApiResponseDetails {
     /// <p>The API description.</p>
     #[doc(hidden)]
@@ -3280,32 +3087,6 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
     /// <p>The API stage.</p>
     pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportAssetFromApiGatewayApiResponseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetFromApiGatewayApiResponseDetails");
-        formatter.field("api_description", &self.api_description);
-        formatter.field("api_id", &self.api_id);
-        formatter.field("api_key", &self.api_key);
-        formatter.field("api_name", &self.api_name);
-        formatter.field(
-            "api_specification_md5_hash",
-            &self.api_specification_md5_hash,
-        );
-        formatter.field(
-            "api_specification_upload_url",
-            &self.api_specification_upload_url,
-        );
-        formatter.field(
-            "api_specification_upload_url_expires_at",
-            &self.api_specification_upload_url_expires_at,
-        );
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("protocol_type", &self.protocol_type);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
@@ -3487,7 +3268,7 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
 
 /// <p>Details from an import from Amazon Redshift datashare response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// <p>A list of Amazon Redshift datashare asset sources.</p>
     #[doc(hidden)]
@@ -3514,15 +3295,6 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportAssetsFromRedshiftDataSharesResponseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetsFromRedshiftDataSharesResponseDetails");
-        formatter.field("asset_sources", &self.asset_sources);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
@@ -3601,7 +3373,7 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetails {
 
 /// <p>The source of the Amazon Redshift datashare asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftDataShareAssetSourceEntry {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     #[doc(hidden)]
@@ -3611,13 +3383,6 @@ impl RedshiftDataShareAssetSourceEntry {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn data_share_arn(&self) -> std::option::Option<&str> {
         self.data_share_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftDataShareAssetSourceEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftDataShareAssetSourceEntry");
-        formatter.field("data_share_arn", &self.data_share_arn);
-        formatter.finish()
     }
 }
 /// See [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
@@ -3659,7 +3424,7 @@ impl RedshiftDataShareAssetSourceEntry {
 
 /// <p>Details from an import from Amazon S3 response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetsFromS3ResponseDetails {
     /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
     #[doc(hidden)]
@@ -3683,15 +3448,6 @@ impl ImportAssetsFromS3ResponseDetails {
     /// <p>The unique identifier for the revision associated with this import response.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportAssetsFromS3ResponseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetsFromS3ResponseDetails");
-        formatter.field("asset_sources", &self.asset_sources);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
@@ -3764,7 +3520,7 @@ impl ImportAssetsFromS3ResponseDetails {
 
 /// <p>The details in the response for an import request, including the signed URL and other information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlResponseDetails {
     /// <p>The name for the asset associated with this import job.</p>
     #[doc(hidden)]
@@ -3809,18 +3565,6 @@ impl ImportAssetFromSignedUrlResponseDetails {
     /// <p>The time and date at which the signed URL expires, in ISO 8601 format.</p>
     pub fn signed_url_expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.signed_url_expires_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportAssetFromSignedUrlResponseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetFromSignedUrlResponseDetails");
-        formatter.field("asset_name", &self.asset_name);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("md5_hash", &self.md5_hash);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("signed_url", &self.signed_url);
-        formatter.field("signed_url_expires_at", &self.signed_url_expires_at);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
@@ -3922,7 +3666,7 @@ impl ImportAssetFromSignedUrlResponseDetails {
 
 /// <p>Details about the export revisions to Amazon S3 response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportRevisionsToS3ResponseDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
     #[doc(hidden)]
@@ -3956,16 +3700,6 @@ impl ExportRevisionsToS3ResponseDetails {
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
     pub fn event_action_arn(&self) -> std::option::Option<&str> {
         self.event_action_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportRevisionsToS3ResponseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportRevisionsToS3ResponseDetails");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("revision_destinations", &self.revision_destinations);
-        formatter.field("event_action_arn", &self.event_action_arn);
-        formatter.finish()
     }
 }
 /// See [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
@@ -4059,7 +3793,7 @@ impl ExportRevisionsToS3ResponseDetails {
 
 /// <p>The destination where the assets in the revision will be exported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionDestinationEntry {
     /// <p>The S3 bucket that is the destination for the assets in the revision.</p>
     #[doc(hidden)]
@@ -4083,15 +3817,6 @@ impl RevisionDestinationEntry {
     /// <p>The unique identifier for the revision.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RevisionDestinationEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionDestinationEntry");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_pattern", &self.key_pattern);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
@@ -4154,7 +3879,7 @@ impl RevisionDestinationEntry {
 
 /// <p>Details about the export to Amazon S3 response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportAssetsToS3ResponseDetails {
     /// <p>The destination in Amazon S3 where the asset is exported.</p>
     #[doc(hidden)]
@@ -4187,16 +3912,6 @@ impl ExportAssetsToS3ResponseDetails {
     /// <p>The unique identifier for the revision associated with this export response.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportAssetsToS3ResponseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportAssetsToS3ResponseDetails");
-        formatter.field("asset_destinations", &self.asset_destinations);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
@@ -4284,7 +3999,7 @@ impl ExportAssetsToS3ResponseDetails {
 
 /// <p>The destination for the asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetDestinationEntry {
     /// <p>The unique identifier for the asset.</p>
     #[doc(hidden)]
@@ -4308,15 +4023,6 @@ impl AssetDestinationEntry {
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetDestinationEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetDestinationEntry");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
@@ -4379,7 +4085,7 @@ impl AssetDestinationEntry {
 
 /// <p>The details of the export to signed URL response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportAssetToSignedUrlResponseDetails {
     /// <p>The unique identifier for the asset associated with this export job.</p>
     #[doc(hidden)]
@@ -4417,17 +4123,6 @@ impl ExportAssetToSignedUrlResponseDetails {
     /// <p>The date and time that the signed URL expires, in ISO 8601 format.</p>
     pub fn signed_url_expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.signed_url_expires_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportAssetToSignedUrlResponseDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportAssetToSignedUrlResponseDetails");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("signed_url", &self.signed_url);
-        formatter.field("signed_url_expires_at", &self.signed_url_expires_at);
-        formatter.finish()
     }
 }
 /// See [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
@@ -4517,7 +4212,7 @@ impl ExportAssetToSignedUrlResponseDetails {
 
 /// <p>An event action is an object that defines the relationship between a specific event and an automated action that will be taken on behalf of the customer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventActionEntry {
     /// <p>What occurs after a certain event.</p>
     #[doc(hidden)]
@@ -4562,18 +4257,6 @@ impl EventActionEntry {
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for EventActionEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventActionEntry");
-        formatter.field("action", &self.action);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("event", &self.event);
-        formatter.field("id", &self.id);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`EventActionEntry`](crate::model::EventActionEntry).
@@ -4678,7 +4361,7 @@ impl EventActionEntry {
 
 /// <p>A data set is an AWS resource with one or more revisions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetEntry {
     /// <p>The ARN for the data set.</p>
     #[doc(hidden)]
@@ -4751,22 +4434,6 @@ impl DataSetEntry {
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSetEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetEntry");
-        formatter.field("arn", &self.arn);
-        formatter.field("asset_type", &self.asset_type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("origin", &self.origin);
-        formatter.field("origin_details", &self.origin_details);
-        formatter.field("source_id", &self.source_id);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`DataSetEntry`](crate::model::DataSetEntry).
@@ -4925,7 +4592,7 @@ impl DataSetEntry {
 
 /// <p>A revision is a container for one or more assets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionEntry {
     /// <p>The ARN for the revision.</p>
     #[doc(hidden)]
@@ -5005,23 +4672,6 @@ impl RevisionEntry {
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
-    }
-}
-impl std::fmt::Debug for RevisionEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionEntry");
-        formatter.field("arn", &self.arn);
-        formatter.field("comment", &self.comment);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("finalized", &self.finalized);
-        formatter.field("id", &self.id);
-        formatter.field("source_id", &self.source_id);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("revocation_comment", &self.revocation_comment);
-        formatter.field("revoked", &self.revoked);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.finish()
     }
 }
 /// See [`RevisionEntry`](crate::model::RevisionEntry).
@@ -5192,7 +4842,7 @@ impl RevisionEntry {
 
 /// <p>The details for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestDetails {
     /// <p>Details about the export to signed URL request.</p>
     #[doc(hidden)]
@@ -5263,31 +4913,6 @@ impl RequestDetails {
         &self,
     ) -> std::option::Option<&crate::model::ImportAssetFromApiGatewayApiRequestDetails> {
         self.import_asset_from_api_gateway_api.as_ref()
-    }
-}
-impl std::fmt::Debug for RequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestDetails");
-        formatter.field(
-            "export_asset_to_signed_url",
-            &self.export_asset_to_signed_url,
-        );
-        formatter.field("export_assets_to_s3", &self.export_assets_to_s3);
-        formatter.field("export_revisions_to_s3", &self.export_revisions_to_s3);
-        formatter.field(
-            "import_asset_from_signed_url",
-            &self.import_asset_from_signed_url,
-        );
-        formatter.field("import_assets_from_s3", &self.import_assets_from_s3);
-        formatter.field(
-            "import_assets_from_redshift_data_shares",
-            &self.import_assets_from_redshift_data_shares,
-        );
-        formatter.field(
-            "import_asset_from_api_gateway_api",
-            &self.import_asset_from_api_gateway_api,
-        );
-        formatter.finish()
     }
 }
 /// See [`RequestDetails`](crate::model::RequestDetails).
@@ -5450,7 +5075,7 @@ impl RequestDetails {
 
 /// <p>The request details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetFromApiGatewayApiRequestDetails {
     /// <p>The API description. Markdown supported.</p>
     #[doc(hidden)]
@@ -5516,24 +5141,6 @@ impl ImportAssetFromApiGatewayApiRequestDetails {
     /// <p>The API stage.</p>
     pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportAssetFromApiGatewayApiRequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetFromApiGatewayApiRequestDetails");
-        formatter.field("api_description", &self.api_description);
-        formatter.field("api_id", &self.api_id);
-        formatter.field("api_key", &self.api_key);
-        formatter.field("api_name", &self.api_name);
-        formatter.field(
-            "api_specification_md5_hash",
-            &self.api_specification_md5_hash,
-        );
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("protocol_type", &self.protocol_type);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
@@ -5677,7 +5284,7 @@ impl ImportAssetFromApiGatewayApiRequestDetails {
 
 /// <p>Details from an import from Amazon Redshift datashare request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetsFromRedshiftDataSharesRequestDetails {
     /// <p>A list of Amazon Redshift datashare assets.</p>
     #[doc(hidden)]
@@ -5704,15 +5311,6 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetails {
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportAssetsFromRedshiftDataSharesRequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetsFromRedshiftDataSharesRequestDetails");
-        formatter.field("asset_sources", &self.asset_sources);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
@@ -5791,7 +5389,7 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetails {
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetsFromS3RequestDetails {
     /// <p>Is a list of S3 bucket and object key pairs.</p>
     #[doc(hidden)]
@@ -5815,15 +5413,6 @@ impl ImportAssetsFromS3RequestDetails {
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportAssetsFromS3RequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetsFromS3RequestDetails");
-        formatter.field("asset_sources", &self.asset_sources);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
@@ -5896,7 +5485,7 @@ impl ImportAssetsFromS3RequestDetails {
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlRequestDetails {
     /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.</p>
     #[doc(hidden)]
@@ -5927,16 +5516,6 @@ impl ImportAssetFromSignedUrlRequestDetails {
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportAssetFromSignedUrlRequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportAssetFromSignedUrlRequestDetails");
-        formatter.field("asset_name", &self.asset_name);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("md5_hash", &self.md5_hash);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
@@ -6011,7 +5590,7 @@ impl ImportAssetFromSignedUrlRequestDetails {
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
     #[doc(hidden)]
@@ -6038,15 +5617,6 @@ impl ExportRevisionsToS3RequestDetails {
         &self,
     ) -> std::option::Option<&[crate::model::RevisionDestinationEntry]> {
         self.revision_destinations.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportRevisionsToS3RequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportRevisionsToS3RequestDetails");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("revision_destinations", &self.revision_destinations);
-        formatter.finish()
     }
 }
 /// See [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
@@ -6125,7 +5695,7 @@ impl ExportRevisionsToS3RequestDetails {
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportAssetsToS3RequestDetails {
     /// <p>The destination for the asset.</p>
     #[doc(hidden)]
@@ -6158,16 +5728,6 @@ impl ExportAssetsToS3RequestDetails {
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportAssetsToS3RequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportAssetsToS3RequestDetails");
-        formatter.field("asset_destinations", &self.asset_destinations);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
@@ -6255,7 +5815,7 @@ impl ExportAssetsToS3RequestDetails {
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportAssetToSignedUrlRequestDetails {
     /// <p>The unique identifier for the asset that is exported to a signed URL.</p>
     #[doc(hidden)]
@@ -6279,15 +5839,6 @@ impl ExportAssetToSignedUrlRequestDetails {
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportAssetToSignedUrlRequestDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportAssetToSignedUrlRequestDetails");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).

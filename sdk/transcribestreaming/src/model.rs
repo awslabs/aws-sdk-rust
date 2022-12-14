@@ -552,7 +552,7 @@ impl TranscriptResultStream {
 
 /// <p>Represents a set of transcription results from the server to the client. It contains one or more segments of the transcription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptEvent {
     /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
     #[doc(hidden)]
@@ -562,13 +562,6 @@ impl TranscriptEvent {
     /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
     pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
         self.transcript.as_ref()
-    }
-}
-impl std::fmt::Debug for TranscriptEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranscriptEvent");
-        formatter.field("transcript", &self.transcript);
-        formatter.finish()
     }
 }
 /// See [`TranscriptEvent`](crate::model::TranscriptEvent).
@@ -610,7 +603,7 @@ impl TranscriptEvent {
 
 /// <p>The transcription in a <code>TranscriptEvent</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transcript {
     /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
     #[doc(hidden)]
@@ -620,13 +613,6 @@ impl Transcript {
     /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::Result]> {
         self.results.as_deref()
-    }
-}
-impl std::fmt::Debug for Transcript {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Transcript");
-        formatter.field("results", &self.results);
-        formatter.finish()
     }
 }
 /// See [`Transcript`](crate::model::Transcript).
@@ -674,7 +660,7 @@ impl Transcript {
 
 /// <p>The result of transcribing a portion of the input audio stream. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Result {
     /// <p>A unique identifier for the result. </p>
     #[doc(hidden)]
@@ -740,20 +726,6 @@ impl Result {
         &self,
     ) -> std::option::Option<&[crate::model::LanguageWithScore]> {
         self.language_identification.as_deref()
-    }
-}
-impl std::fmt::Debug for Result {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Result");
-        formatter.field("result_id", &self.result_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("is_partial", &self.is_partial);
-        formatter.field("alternatives", &self.alternatives);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("language_identification", &self.language_identification);
-        formatter.finish()
     }
 }
 /// See [`Result`](crate::model::Result).
@@ -902,7 +874,7 @@ impl Result {
 
 /// <p>The language codes of the identified languages and their associated confidence scores. The confidence score is a value between zero and one; a larger value indicates a higher confidence in the identified language.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LanguageWithScore {
     /// <p>The language code of the language identified by Amazon Transcribe.</p>
     #[doc(hidden)]
@@ -919,14 +891,6 @@ impl LanguageWithScore {
     /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
     pub fn score(&self) -> f64 {
         self.score
-    }
-}
-impl std::fmt::Debug for LanguageWithScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LanguageWithScore");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`LanguageWithScore`](crate::model::LanguageWithScore).
@@ -980,7 +944,7 @@ impl LanguageWithScore {
 
 /// <p>A list of possible transcriptions for the audio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alternative {
     /// <p>The text that was transcribed from the audio.</p>
     #[doc(hidden)]
@@ -1004,15 +968,6 @@ impl Alternative {
     /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
         self.entities.as_deref()
-    }
-}
-impl std::fmt::Debug for Alternative {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alternative");
-        formatter.field("transcript", &self.transcript);
-        formatter.field("items", &self.items);
-        formatter.field("entities", &self.entities);
-        formatter.finish()
     }
 }
 /// See [`Alternative`](crate::model::Alternative).
@@ -1093,7 +1048,7 @@ impl Alternative {
 
 /// <p>The entity identified as personally identifiable information (PII).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entity {
     /// <p>The start time of speech that was identified as PII.</p>
     #[doc(hidden)]
@@ -1138,18 +1093,6 @@ impl Entity {
     /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Entity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entity");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("category", &self.category);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("content", &self.content);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Entity`](crate::model::Entity).
@@ -1248,7 +1191,7 @@ impl Entity {
 
 /// <p>A word, phrase, or punctuation mark that is transcribed from the input audio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Item {
     /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
     #[doc(hidden)]
@@ -1307,20 +1250,6 @@ impl Item {
     /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
     pub fn stable(&self) -> std::option::Option<bool> {
         self.stable
-    }
-}
-impl std::fmt::Debug for Item {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Item");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("content", &self.content);
-        formatter.field("vocabulary_filter_match", &self.vocabulary_filter_match);
-        formatter.field("speaker", &self.speaker);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("stable", &self.stable);
-        formatter.finish()
     }
 }
 /// See [`Item`](crate::model::Item).
@@ -1668,7 +1597,7 @@ impl AudioStream {
 /// <p>Provides a wrapper for the audio chunks that you are sending.</p>
 /// <p>For information on audio encoding in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For information on audio encoding formats in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioEvent {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
     #[doc(hidden)]
@@ -1678,13 +1607,6 @@ impl AudioEvent {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
     pub fn audio_chunk(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.audio_chunk.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioEvent");
-        formatter.field("audio_chunk", &self.audio_chunk);
-        formatter.finish()
     }
 }
 /// See [`AudioEvent`](crate::model::AudioEvent).
@@ -1852,7 +1774,7 @@ impl MedicalTranscriptResultStream {
 
 /// <p>Represents a set of transcription results from the server to the client. It contains one or more segments of the transcription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscriptEvent {
     /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
     #[doc(hidden)]
@@ -1862,13 +1784,6 @@ impl MedicalTranscriptEvent {
     /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
     pub fn transcript(&self) -> std::option::Option<&crate::model::MedicalTranscript> {
         self.transcript.as_ref()
-    }
-}
-impl std::fmt::Debug for MedicalTranscriptEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalTranscriptEvent");
-        formatter.field("transcript", &self.transcript);
-        formatter.finish()
     }
 }
 /// See [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
@@ -1910,7 +1825,7 @@ impl MedicalTranscriptEvent {
 
 /// <p>The medical transcript in a <code>MedicalTranscriptEvent</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscript {
     /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
     #[doc(hidden)]
@@ -1920,13 +1835,6 @@ impl MedicalTranscript {
     /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::MedicalResult]> {
         self.results.as_deref()
-    }
-}
-impl std::fmt::Debug for MedicalTranscript {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalTranscript");
-        formatter.field("results", &self.results);
-        formatter.finish()
     }
 }
 /// See [`MedicalTranscript`](crate::model::MedicalTranscript).
@@ -1974,7 +1882,7 @@ impl MedicalTranscript {
 
 /// <p>The results of transcribing a portion of the input audio stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalResult {
     /// <p>A unique identifier for the result.</p>
     #[doc(hidden)]
@@ -2023,18 +1931,6 @@ impl MedicalResult {
     /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MedicalResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalResult");
-        formatter.field("result_id", &self.result_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("is_partial", &self.is_partial);
-        formatter.field("alternatives", &self.alternatives);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
     }
 }
 /// See [`MedicalResult`](crate::model::MedicalResult).
@@ -2147,7 +2043,7 @@ impl MedicalResult {
 
 /// <p>A list of possible transcriptions for the audio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalAlternative {
     /// <p>The text that was transcribed from the audio.</p>
     #[doc(hidden)]
@@ -2171,15 +2067,6 @@ impl MedicalAlternative {
     /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::MedicalEntity]> {
         self.entities.as_deref()
-    }
-}
-impl std::fmt::Debug for MedicalAlternative {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalAlternative");
-        formatter.field("transcript", &self.transcript);
-        formatter.field("items", &self.items);
-        formatter.field("entities", &self.entities);
-        formatter.finish()
     }
 }
 /// See [`MedicalAlternative`](crate::model::MedicalAlternative).
@@ -2260,7 +2147,7 @@ impl MedicalAlternative {
 
 /// <p>The medical entity identified as personal health information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalEntity {
     /// <p>The start time of the speech that was identified as a medical entity.</p>
     #[doc(hidden)]
@@ -2298,17 +2185,6 @@ impl MedicalEntity {
     /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for MedicalEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalEntity");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("category", &self.category);
-        formatter.field("content", &self.content);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`MedicalEntity`](crate::model::MedicalEntity).
@@ -2395,7 +2271,7 @@ impl MedicalEntity {
 
 /// <p>A word, phrase, or punctuation mark that is transcribed from the input audio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalItem {
     /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
     #[doc(hidden)]
@@ -2440,18 +2316,6 @@ impl MedicalItem {
     /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
     pub fn speaker(&self) -> std::option::Option<&str> {
         self.speaker.as_deref()
-    }
-}
-impl std::fmt::Debug for MedicalItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalItem");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("content", &self.content);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("speaker", &self.speaker);
-        formatter.finish()
     }
 }
 /// See [`MedicalItem`](crate::model::MedicalItem).

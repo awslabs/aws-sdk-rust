@@ -4769,7 +4769,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
     #[doc(hidden)]
@@ -4788,18 +4788,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
     #[doc(hidden)]
@@ -4818,18 +4810,10 @@ impl TagResourceInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutProtocolsListInput {
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
     #[doc(hidden)]
@@ -4848,18 +4832,10 @@ impl PutProtocolsListInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for PutProtocolsListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutProtocolsListInput");
-        formatter.field("protocols_list", &self.protocols_list);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPolicyInput {
     /// <p>The details of the Firewall Manager policy to be created.</p>
     #[doc(hidden)]
@@ -4878,18 +4854,10 @@ impl PutPolicyInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for PutPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPolicyInput");
-        formatter.field("policy", &self.policy);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutNotificationChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
     #[doc(hidden)]
@@ -4908,18 +4876,10 @@ impl PutNotificationChannelInput {
         self.sns_role_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutNotificationChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutNotificationChannelInput");
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("sns_role_name", &self.sns_role_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAppsListInput {
     /// <p>The details of the Firewall Manager applications list to be created.</p>
     #[doc(hidden)]
@@ -4938,18 +4898,10 @@ impl PutAppsListInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for PutAppsListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAppsListInput");
-        formatter.field("apps_list", &self.apps_list);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThirdPartyFirewallFirewallPoliciesInput {
     /// <p>The name of the third-party firewall vendor.</p>
     #[doc(hidden)]
@@ -4977,19 +4929,10 @@ impl ListThirdPartyFirewallFirewallPoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListThirdPartyFirewallFirewallPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThirdPartyFirewallFirewallPoliciesInput");
-        formatter.field("third_party_firewall", &self.third_party_firewall);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
     #[doc(hidden)]
@@ -5001,17 +4944,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProtocolsListsInput {
     /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
     #[doc(hidden)]
@@ -5039,19 +4975,10 @@ impl ListProtocolsListsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProtocolsListsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProtocolsListsInput");
-        formatter.field("default_lists", &self.default_lists);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPoliciesInput {
     /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
     #[doc(hidden)]
@@ -5070,18 +4997,10 @@ impl ListPoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPoliciesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMemberAccountsInput {
     /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
     #[doc(hidden)]
@@ -5100,18 +5019,10 @@ impl ListMemberAccountsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMemberAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMemberAccountsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComplianceStatusInput {
     /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
     #[doc(hidden)]
@@ -5137,19 +5048,10 @@ impl ListComplianceStatusInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListComplianceStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComplianceStatusInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAppsListsInput {
     /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
     #[doc(hidden)]
@@ -5177,19 +5079,10 @@ impl ListAppsListsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAppsListsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAppsListsInput");
-        formatter.field("default_lists", &self.default_lists);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetViolationDetailsInput {
     /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
     #[doc(hidden)]
@@ -5222,20 +5115,10 @@ impl GetViolationDetailsInput {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for GetViolationDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetViolationDetailsInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("member_account", &self.member_account);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThirdPartyFirewallAssociationStatusInput {
     /// <p>The name of the third-party firewall vendor.</p>
     #[doc(hidden)]
@@ -5247,17 +5130,10 @@ impl GetThirdPartyFirewallAssociationStatusInput {
         self.third_party_firewall.as_ref()
     }
 }
-impl std::fmt::Debug for GetThirdPartyFirewallAssociationStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThirdPartyFirewallAssociationStatusInput");
-        formatter.field("third_party_firewall", &self.third_party_firewall);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProtocolsListInput {
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
     #[doc(hidden)]
@@ -5276,18 +5152,10 @@ impl GetProtocolsListInput {
         self.default_list
     }
 }
-impl std::fmt::Debug for GetProtocolsListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProtocolsListInput");
-        formatter.field("list_id", &self.list_id);
-        formatter.field("default_list", &self.default_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProtectionStatusInput {
     /// <p>The ID of the policy for which you want to get the attack information.</p>
     #[doc(hidden)]
@@ -5334,22 +5202,10 @@ impl GetProtectionStatusInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetProtectionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProtectionStatusInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyInput {
     /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
     #[doc(hidden)]
@@ -5361,28 +5217,15 @@ impl GetPolicyInput {
         self.policy_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNotificationChannelInput {}
-impl std::fmt::Debug for GetNotificationChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNotificationChannelInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComplianceDetailInput {
     /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
     #[doc(hidden)]
@@ -5401,18 +5244,10 @@ impl GetComplianceDetailInput {
         self.member_account.as_deref()
     }
 }
-impl std::fmt::Debug for GetComplianceDetailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComplianceDetailInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("member_account", &self.member_account);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppsListInput {
     /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
     #[doc(hidden)]
@@ -5431,29 +5266,15 @@ impl GetAppsListInput {
         self.default_list
     }
 }
-impl std::fmt::Debug for GetAppsListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppsListInput");
-        formatter.field("list_id", &self.list_id);
-        formatter.field("default_list", &self.default_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAdminAccountInput {}
-impl std::fmt::Debug for GetAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAdminAccountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateThirdPartyFirewallInput {
     /// <p>The name of the third-party firewall vendor.</p>
     #[doc(hidden)]
@@ -5465,28 +5286,15 @@ impl DisassociateThirdPartyFirewallInput {
         self.third_party_firewall.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateThirdPartyFirewallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateThirdPartyFirewallInput");
-        formatter.field("third_party_firewall", &self.third_party_firewall);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAdminAccountInput {}
-impl std::fmt::Debug for DisassociateAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAdminAccountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProtocolsListInput {
     /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
     #[doc(hidden)]
@@ -5498,17 +5306,10 @@ impl DeleteProtocolsListInput {
         self.list_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProtocolsListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProtocolsListInput");
-        formatter.field("list_id", &self.list_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePolicyInput {
     /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
     #[doc(hidden)]
@@ -5551,32 +5352,15 @@ impl DeletePolicyInput {
         self.delete_all_policy_resources
     }
 }
-impl std::fmt::Debug for DeletePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePolicyInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field(
-            "delete_all_policy_resources",
-            &self.delete_all_policy_resources,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNotificationChannelInput {}
-impl std::fmt::Debug for DeleteNotificationChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNotificationChannelInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppsListInput {
     /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
     #[doc(hidden)]
@@ -5588,17 +5372,10 @@ impl DeleteAppsListInput {
         self.list_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppsListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppsListInput");
-        formatter.field("list_id", &self.list_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateThirdPartyFirewallInput {
     /// <p>The name of the third-party firewall vendor.</p>
     #[doc(hidden)]
@@ -5610,17 +5387,10 @@ impl AssociateThirdPartyFirewallInput {
         self.third_party_firewall.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateThirdPartyFirewallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateThirdPartyFirewallInput");
-        formatter.field("third_party_firewall", &self.third_party_firewall);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAdminAccountInput {
     /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
     #[doc(hidden)]
@@ -5630,12 +5400,5 @@ impl AssociateAdminAccountInput {
     /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
     pub fn admin_account(&self) -> std::option::Option<&str> {
         self.admin_account.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAdminAccountInput");
-        formatter.field("admin_account", &self.admin_account);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     /// <p>429</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl TooManyRequestsException {
     /// <p>429</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl TooManyRequestsException {
@@ -91,7 +83,7 @@ impl TooManyRequestsException {
 
 /// <p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     /// <p>404</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl NotFoundException {
     /// <p>404</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl NotFoundException {
@@ -180,7 +164,7 @@ impl NotFoundException {
 
 /// <p>The AWS Serverless Application Repository service encountered an internal error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerErrorException {
     /// <p>500</p>
     #[doc(hidden)]
@@ -193,14 +177,6 @@ impl InternalServerErrorException {
     /// <p>500</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalServerErrorException {
@@ -269,7 +245,7 @@ impl InternalServerErrorException {
 
 /// <p>The client is not authenticated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForbiddenException {
     /// <p>403</p>
     #[doc(hidden)]
@@ -282,14 +258,6 @@ impl ForbiddenException {
     /// <p>403</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ForbiddenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ForbiddenException {
@@ -358,7 +326,7 @@ impl ForbiddenException {
 
 /// <p>The resource already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>409</p>
     #[doc(hidden)]
@@ -371,14 +339,6 @@ impl ConflictException {
     /// <p>409</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ConflictException {
@@ -447,7 +407,7 @@ impl ConflictException {
 
 /// <p>One of the parameters in the request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     /// <p>400</p>
     #[doc(hidden)]
@@ -460,14 +420,6 @@ impl BadRequestException {
     /// <p>400</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl BadRequestException {

@@ -2,7 +2,7 @@
 
 /// <p>Returns information about a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequest {
     /// <p>The system-generated ID of the pull request. </p>
     #[doc(hidden)]
@@ -82,23 +82,6 @@ impl PullRequest {
     /// <p>The approval rules applied to the pull request.</p>
     pub fn approval_rules(&self) -> std::option::Option<&[crate::model::ApprovalRule]> {
         self.approval_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for PullRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequest");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("last_activity_date", &self.last_activity_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("pull_request_status", &self.pull_request_status);
-        formatter.field("author_arn", &self.author_arn);
-        formatter.field("pull_request_targets", &self.pull_request_targets);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("approval_rules", &self.approval_rules);
-        formatter.finish()
     }
 }
 /// See [`PullRequest`](crate::model::PullRequest).
@@ -291,7 +274,7 @@ impl PullRequest {
 
 /// <p>Returns information about an approval rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRule {
     /// <p>The system-generated ID of the approval rule.</p>
     #[doc(hidden)]
@@ -353,23 +336,6 @@ impl ApprovalRule {
         &self,
     ) -> std::option::Option<&crate::model::OriginApprovalRuleTemplate> {
         self.origin_approval_rule_template.as_ref()
-    }
-}
-impl std::fmt::Debug for ApprovalRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRule");
-        formatter.field("approval_rule_id", &self.approval_rule_id);
-        formatter.field("approval_rule_name", &self.approval_rule_name);
-        formatter.field("approval_rule_content", &self.approval_rule_content);
-        formatter.field("rule_content_sha256", &self.rule_content_sha256);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_user", &self.last_modified_user);
-        formatter.field(
-            "origin_approval_rule_template",
-            &self.origin_approval_rule_template,
-        );
-        formatter.finish()
     }
 }
 /// See [`ApprovalRule`](crate::model::ApprovalRule).
@@ -520,7 +486,7 @@ impl ApprovalRule {
 
 /// <p>Returns information about the template that created the approval rule for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginApprovalRuleTemplate {
     /// <p>The ID of the template that created the approval rule.</p>
     #[doc(hidden)]
@@ -537,17 +503,6 @@ impl OriginApprovalRuleTemplate {
     /// <p>The name of the template that created the approval rule.</p>
     pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
         self.approval_rule_template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginApprovalRuleTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginApprovalRuleTemplate");
-        formatter.field("approval_rule_template_id", &self.approval_rule_template_id);
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.finish()
     }
 }
 /// See [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
@@ -607,7 +562,7 @@ impl OriginApprovalRuleTemplate {
 
 /// <p>Returns information about a pull request target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestTarget {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
     #[doc(hidden)]
@@ -659,19 +614,6 @@ impl PullRequestTarget {
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
     pub fn merge_metadata(&self) -> std::option::Option<&crate::model::MergeMetadata> {
         self.merge_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for PullRequestTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestTarget");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_reference", &self.source_reference);
-        formatter.field("destination_reference", &self.destination_reference);
-        formatter.field("destination_commit", &self.destination_commit);
-        formatter.field("source_commit", &self.source_commit);
-        formatter.field("merge_base", &self.merge_base);
-        formatter.field("merge_metadata", &self.merge_metadata);
-        formatter.finish()
     }
 }
 /// See [`PullRequestTarget`](crate::model::PullRequestTarget).
@@ -800,7 +742,7 @@ impl PullRequestTarget {
 
 /// <p>Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeMetadata {
     /// <p>A Boolean value indicating whether the merge has been made.</p>
     #[doc(hidden)]
@@ -831,16 +773,6 @@ impl MergeMetadata {
     /// <p>The merge strategy used in the merge.</p>
     pub fn merge_option(&self) -> std::option::Option<&crate::model::MergeOptionTypeEnum> {
         self.merge_option.as_ref()
-    }
-}
-impl std::fmt::Debug for MergeMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeMetadata");
-        formatter.field("is_merged", &self.is_merged);
-        formatter.field("merged_by", &self.merged_by);
-        formatter.field("merge_commit_id", &self.merge_commit_id);
-        formatter.field("merge_option", &self.merge_option);
-        formatter.finish()
     }
 }
 /// See [`MergeMetadata`](crate::model::MergeMetadata).
@@ -1200,7 +1132,7 @@ impl AsRef<str> for ApprovalState {
 
 /// <p>Returns information about a specific comment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Comment {
     /// <p>The system-generated comment ID.</p>
     #[doc(hidden)]
@@ -1275,22 +1207,6 @@ impl Comment {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
         self.reaction_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for Comment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Comment");
-        formatter.field("comment_id", &self.comment_id);
-        formatter.field("content", &self.content);
-        formatter.field("in_reply_to", &self.in_reply_to);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("author_arn", &self.author_arn);
-        formatter.field("deleted", &self.deleted);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("caller_reactions", &self.caller_reactions);
-        formatter.field("reaction_counts", &self.reaction_counts);
-        formatter.finish()
     }
 }
 /// See [`Comment`](crate::model::Comment).
@@ -1465,7 +1381,7 @@ impl Comment {
 
 /// <p>Returns information about an approval rule template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplate {
     /// <p>The system-generated ID of the approval rule template.</p>
     #[doc(hidden)]
@@ -1524,29 +1440,6 @@ impl ApprovalRuleTemplate {
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
     pub fn last_modified_user(&self) -> std::option::Option<&str> {
         self.last_modified_user.as_deref()
-    }
-}
-impl std::fmt::Debug for ApprovalRuleTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplate");
-        formatter.field("approval_rule_template_id", &self.approval_rule_template_id);
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field(
-            "approval_rule_template_description",
-            &self.approval_rule_template_description,
-        );
-        formatter.field(
-            "approval_rule_template_content",
-            &self.approval_rule_template_content,
-        );
-        formatter.field("rule_content_sha256", &self.rule_content_sha256);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_user", &self.last_modified_user);
-        formatter.finish()
     }
 }
 /// See [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
@@ -1702,7 +1595,7 @@ impl ApprovalRuleTemplate {
 
 /// <p>A trigger failed to run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
     #[doc(hidden)]
@@ -1719,14 +1612,6 @@ impl RepositoryTriggerExecutionFailure {
     /// <p>Message information about the trigger that did not run.</p>
     pub fn failure_message(&self) -> std::option::Option<&str> {
         self.failure_message.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryTriggerExecutionFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerExecutionFailure");
-        formatter.field("trigger", &self.trigger);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.finish()
     }
 }
 /// See [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
@@ -1780,7 +1665,7 @@ impl RepositoryTriggerExecutionFailure {
 
 /// <p>Information about a trigger for a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTrigger {
     /// <p>The name of the trigger.</p>
     #[doc(hidden)]
@@ -1826,17 +1711,6 @@ impl RepositoryTrigger {
     /// </note>
     pub fn events(&self) -> std::option::Option<&[crate::model::RepositoryTriggerEventEnum]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryTrigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTrigger");
-        formatter.field("name", &self.name);
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("custom_data", &self.custom_data);
-        formatter.field("branches", &self.branches);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`RepositoryTrigger`](crate::model::RepositoryTrigger).
@@ -2155,7 +2029,7 @@ impl AsRef<str> for FileModeTypeEnum {
 
 /// <p>Returns information about the location of a change or comment in the comparison between two commits or a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Location {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
     #[doc(hidden)]
@@ -2181,15 +2055,6 @@ impl Location {
         &self,
     ) -> std::option::Option<&crate::model::RelativeFileVersionEnum> {
         self.relative_file_version.as_ref()
-    }
-}
-impl std::fmt::Debug for Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Location");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_position", &self.file_position);
-        formatter.field("relative_file_version", &self.relative_file_version);
-        formatter.finish()
     }
 }
 /// See [`Location`](crate::model::Location).
@@ -2441,7 +2306,7 @@ impl AsRef<str> for OverrideStatus {
 
 /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictResolution {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
     #[doc(hidden)]
@@ -2465,15 +2330,6 @@ impl ConflictResolution {
     /// <p>File modes that are set as part of the merge conflict resolution.</p>
     pub fn set_file_modes(&self) -> std::option::Option<&[crate::model::SetFileModeEntry]> {
         self.set_file_modes.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictResolution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictResolution");
-        formatter.field("replace_contents", &self.replace_contents);
-        formatter.field("delete_files", &self.delete_files);
-        formatter.field("set_file_modes", &self.set_file_modes);
-        formatter.finish()
     }
 }
 /// See [`ConflictResolution`](crate::model::ConflictResolution).
@@ -2565,7 +2421,7 @@ impl ConflictResolution {
 
 /// <p>Information about the file mode changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
@@ -2582,14 +2438,6 @@ impl SetFileModeEntry {
     /// <p>The file mode for the file.</p>
     pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for SetFileModeEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetFileModeEntry");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
     }
 }
 /// See [`SetFileModeEntry`](crate::model::SetFileModeEntry).
@@ -2643,7 +2491,7 @@ impl SetFileModeEntry {
 
 /// <p>A file that is deleted as part of a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     #[doc(hidden)]
@@ -2653,13 +2501,6 @@ impl DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteFileEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileEntry");
-        formatter.field("file_path", &self.file_path);
-        formatter.finish()
     }
 }
 /// See [`DeleteFileEntry`](crate::model::DeleteFileEntry).
@@ -2698,7 +2539,7 @@ impl DeleteFileEntry {
 
 /// <p>Information about a replacement content entry in the conflict of a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplaceContentEntry {
     /// <p>The path of the conflicting file.</p>
     #[doc(hidden)]
@@ -2729,16 +2570,6 @@ impl ReplaceContentEntry {
     /// <p>The file mode to apply during conflict resoltion.</p>
     pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplaceContentEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplaceContentEntry");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("replacement_type", &self.replacement_type);
-        formatter.field("content", &self.content);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
     }
 }
 /// See [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
@@ -3120,7 +2951,7 @@ impl AsRef<str> for ConflictDetailLevelTypeEnum {
 
 /// <p>Information about a repository name and ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNameIdPair {
     /// <p>The name associated with the repository.</p>
     #[doc(hidden)]
@@ -3137,14 +2968,6 @@ impl RepositoryNameIdPair {
     /// <p>The ID associated with the repository.</p>
     pub fn repository_id(&self) -> std::option::Option<&str> {
         self.repository_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryNameIdPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNameIdPair");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_id", &self.repository_id);
-        formatter.finish()
     }
 }
 /// See [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
@@ -3381,7 +3204,7 @@ impl AsRef<str> for SortByEnum {
 
 /// <p>Information about a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
     #[doc(hidden)]
@@ -3454,22 +3277,6 @@ impl RepositoryMetadata {
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryMetadata");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("repository_id", &self.repository_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_description", &self.repository_description);
-        formatter.field("default_branch", &self.default_branch);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("clone_url_http", &self.clone_url_http);
-        formatter.field("clone_url_ssh", &self.clone_url_ssh);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`RepositoryMetadata`](crate::model::RepositoryMetadata).
@@ -3640,7 +3447,7 @@ impl RepositoryMetadata {
 
 /// <p>Returns information about a specific approval on a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Approval {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     #[doc(hidden)]
@@ -3657,14 +3464,6 @@ impl Approval {
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
     pub fn approval_state(&self) -> std::option::Option<&crate::model::ApprovalState> {
         self.approval_state.as_ref()
-    }
-}
-impl std::fmt::Debug for Approval {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Approval");
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("approval_state", &self.approval_state);
-        formatter.finish()
     }
 }
 /// See [`Approval`](crate::model::Approval).
@@ -3718,7 +3517,7 @@ impl Approval {
 
 /// <p>Information about the metadata for a conflict in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictMetadata {
     /// <p>The path of the file that contains conflicts.</p>
     #[doc(hidden)]
@@ -3791,22 +3590,6 @@ impl ConflictMetadata {
     /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
     pub fn merge_operations(&self) -> std::option::Option<&crate::model::MergeOperations> {
         self.merge_operations.as_ref()
-    }
-}
-impl std::fmt::Debug for ConflictMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictMetadata");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_sizes", &self.file_sizes);
-        formatter.field("file_modes", &self.file_modes);
-        formatter.field("object_types", &self.object_types);
-        formatter.field("number_of_conflicts", &self.number_of_conflicts);
-        formatter.field("is_binary_file", &self.is_binary_file);
-        formatter.field("content_conflict", &self.content_conflict);
-        formatter.field("file_mode_conflict", &self.file_mode_conflict);
-        formatter.field("object_type_conflict", &self.object_type_conflict);
-        formatter.field("merge_operations", &self.merge_operations);
-        formatter.finish()
     }
 }
 /// See [`ConflictMetadata`](crate::model::ConflictMetadata).
@@ -3968,7 +3751,7 @@ impl ConflictMetadata {
 
 /// <p>Information about the file operation conflicts in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeOperations {
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -3985,14 +3768,6 @@ impl MergeOperations {
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::ChangeTypeEnum> {
         self.destination.as_ref()
-    }
-}
-impl std::fmt::Debug for MergeOperations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeOperations");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`MergeOperations`](crate::model::MergeOperations).
@@ -4144,7 +3919,7 @@ impl AsRef<str> for ChangeTypeEnum {
 
 /// <p>Information about whether a file is binary or textual in a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IsBinaryFile {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -4168,15 +3943,6 @@ impl IsBinaryFile {
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     pub fn base(&self) -> std::option::Option<bool> {
         self.base
-    }
-}
-impl std::fmt::Debug for IsBinaryFile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IsBinaryFile");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
     }
 }
 /// See [`IsBinaryFile`](crate::model::IsBinaryFile).
@@ -4239,7 +4005,7 @@ impl IsBinaryFile {
 
 /// <p>Information about the type of an object in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectTypes {
     /// <p>The type of the object in the source branch.</p>
     #[doc(hidden)]
@@ -4263,15 +4029,6 @@ impl ObjectTypes {
     /// <p>The type of the object in the base commit of the merge.</p>
     pub fn base(&self) -> std::option::Option<&crate::model::ObjectTypeEnum> {
         self.base.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectTypes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectTypes");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
     }
 }
 /// See [`ObjectTypes`](crate::model::ObjectTypes).
@@ -4443,7 +4200,7 @@ impl AsRef<str> for ObjectTypeEnum {
 
 /// <p>Information about file modes in a merge or pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileModes {
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -4467,15 +4224,6 @@ impl FileModes {
     /// <p>The file mode of a file in the base of a merge or pull request.</p>
     pub fn base(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
         self.base.as_ref()
-    }
-}
-impl std::fmt::Debug for FileModes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileModes");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
     }
 }
 /// See [`FileModes`](crate::model::FileModes).
@@ -4547,7 +4295,7 @@ impl FileModes {
 
 /// <p>Information about the size of files in a merge or pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSizes {
     /// <p>The size of a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -4571,15 +4319,6 @@ impl FileSizes {
     /// <p>The size of a file in the base of a merge or pull request.</p>
     pub fn base(&self) -> i64 {
         self.base
-    }
-}
-impl std::fmt::Debug for FileSizes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSizes");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
     }
 }
 /// See [`FileSizes`](crate::model::FileSizes).
@@ -4642,7 +4381,7 @@ impl FileSizes {
 
 /// <p>Returns information about a submodule reference in a repository folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubModule {
     /// <p>The commit ID that contains the reference to the submodule.</p>
     #[doc(hidden)]
@@ -4666,15 +4405,6 @@ impl SubModule {
     /// <p>The relative path of the submodule from the folder where the query originated.</p>
     pub fn relative_path(&self) -> std::option::Option<&str> {
         self.relative_path.as_deref()
-    }
-}
-impl std::fmt::Debug for SubModule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubModule");
-        formatter.field("commit_id", &self.commit_id);
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.finish()
     }
 }
 /// See [`SubModule`](crate::model::SubModule).
@@ -4743,7 +4473,7 @@ impl SubModule {
 
 /// <p>Returns information about a symbolic link in a repository folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SymbolicLink {
     /// <p>The blob ID that contains the information about the symbolic link.</p>
     #[doc(hidden)]
@@ -4774,16 +4504,6 @@ impl SymbolicLink {
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
     pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for SymbolicLink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SymbolicLink");
-        formatter.field("blob_id", &self.blob_id);
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
     }
 }
 /// See [`SymbolicLink`](crate::model::SymbolicLink).
@@ -4867,7 +4587,7 @@ impl SymbolicLink {
 
 /// <p>Returns information about a file in a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct File {
     /// <p>The blob ID that contains the file information.</p>
     #[doc(hidden)]
@@ -4898,16 +4618,6 @@ impl File {
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for File {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("File");
-        formatter.field("blob_id", &self.blob_id);
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
     }
 }
 /// See [`File`](crate::model::File).
@@ -4991,7 +4701,7 @@ impl File {
 
 /// <p>Returns information about a folder in a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Folder {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     #[doc(hidden)]
@@ -5015,15 +4725,6 @@ impl Folder {
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
     pub fn relative_path(&self) -> std::option::Option<&str> {
         self.relative_path.as_deref()
-    }
-}
-impl std::fmt::Debug for Folder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Folder");
-        formatter.field("tree_id", &self.tree_id);
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.finish()
     }
 }
 /// See [`Folder`](crate::model::Folder).
@@ -5092,7 +4793,7 @@ impl Folder {
 
 /// <p>Returns information about a set of differences for a commit specifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Difference {
     /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
     #[doc(hidden)]
@@ -5116,15 +4817,6 @@ impl Difference {
     /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeTypeEnum> {
         self.change_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Difference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Difference");
-        formatter.field("before_blob", &self.before_blob);
-        formatter.field("after_blob", &self.after_blob);
-        formatter.field("change_type", &self.change_type);
-        formatter.finish()
     }
 }
 /// See [`Difference`](crate::model::Difference).
@@ -5196,7 +4888,7 @@ impl Difference {
 
 /// <p>Returns information about a specific Git blob object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlobMetadata {
     /// <p>The full ID of the blob.</p>
     #[doc(hidden)]
@@ -5232,15 +4924,6 @@ impl BlobMetadata {
     /// </ul>
     pub fn mode(&self) -> std::option::Option<&str> {
         self.mode.as_deref()
-    }
-}
-impl std::fmt::Debug for BlobMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlobMetadata");
-        formatter.field("blob_id", &self.blob_id);
-        formatter.field("path", &self.path);
-        formatter.field("mode", &self.mode);
-        formatter.finish()
     }
 }
 /// See [`BlobMetadata`](crate::model::BlobMetadata).
@@ -5315,7 +4998,7 @@ impl BlobMetadata {
 
 /// <p>Returns information about a specific commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Commit {
     /// <p>The full SHA ID of the specified commit. </p>
     #[doc(hidden)]
@@ -5369,19 +5052,6 @@ impl Commit {
     /// <p>Any other data associated with the specified commit.</p>
     pub fn additional_data(&self) -> std::option::Option<&str> {
         self.additional_data.as_deref()
-    }
-}
-impl std::fmt::Debug for Commit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Commit");
-        formatter.field("commit_id", &self.commit_id);
-        formatter.field("tree_id", &self.tree_id);
-        formatter.field("parents", &self.parents);
-        formatter.field("message", &self.message);
-        formatter.field("author", &self.author);
-        formatter.field("committer", &self.committer);
-        formatter.field("additional_data", &self.additional_data);
-        formatter.finish()
     }
 }
 /// See [`Commit`](crate::model::Commit).
@@ -5506,7 +5176,7 @@ impl Commit {
 
 /// <p>Information about the user who made a specified commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserInfo {
     /// <p>The name of the user who made the specified commit.</p>
     #[doc(hidden)]
@@ -5530,15 +5200,6 @@ impl UserInfo {
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
     pub fn date(&self) -> std::option::Option<&str> {
         self.date.as_deref()
-    }
-}
-impl std::fmt::Debug for UserInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserInfo");
-        formatter.field("name", &self.name);
-        formatter.field("email", &self.email);
-        formatter.field("date", &self.date);
-        formatter.finish()
     }
 }
 /// See [`UserInfo`](crate::model::UserInfo).
@@ -5601,7 +5262,7 @@ impl UserInfo {
 
 /// <p>Returns information about comments on a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentsForPullRequest {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
@@ -5660,20 +5321,6 @@ impl CommentsForPullRequest {
     /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
     pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
         self.comments.as_deref()
-    }
-}
-impl std::fmt::Debug for CommentsForPullRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentsForPullRequest");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("before_blob_id", &self.before_blob_id);
-        formatter.field("after_blob_id", &self.after_blob_id);
-        formatter.field("location", &self.location);
-        formatter.field("comments", &self.comments);
-        formatter.finish()
     }
 }
 /// See [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
@@ -5823,7 +5470,7 @@ impl CommentsForPullRequest {
 
 /// <p>Returns information about comments on the comparison between two commits.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentsForComparedCommit {
     /// <p>The name of the repository that contains the compared commits.</p>
     #[doc(hidden)]
@@ -5875,19 +5522,6 @@ impl CommentsForComparedCommit {
     /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
     pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
         self.comments.as_deref()
-    }
-}
-impl std::fmt::Debug for CommentsForComparedCommit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentsForComparedCommit");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("before_blob_id", &self.before_blob_id);
-        formatter.field("after_blob_id", &self.after_blob_id);
-        formatter.field("location", &self.location);
-        formatter.field("comments", &self.comments);
-        formatter.finish()
     }
 }
 /// See [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
@@ -6022,7 +5656,7 @@ impl CommentsForComparedCommit {
 
 /// <p>Information about the reaction values provided by users on a comment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactionForComment {
     /// <p>The reaction for a specified comment.</p>
     #[doc(hidden)]
@@ -6046,18 +5680,6 @@ impl ReactionForComment {
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     pub fn reactions_from_deleted_users_count(&self) -> std::option::Option<i32> {
         self.reactions_from_deleted_users_count
-    }
-}
-impl std::fmt::Debug for ReactionForComment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactionForComment");
-        formatter.field("reaction", &self.reaction);
-        formatter.field("reaction_users", &self.reaction_users);
-        formatter.field(
-            "reactions_from_deleted_users_count",
-            &self.reactions_from_deleted_users_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReactionForComment`](crate::model::ReactionForComment).
@@ -6135,7 +5757,7 @@ impl ReactionForComment {
 
 /// <p>Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactionValueFormats {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
     #[doc(hidden)]
@@ -6159,15 +5781,6 @@ impl ReactionValueFormats {
     /// <p>The Unicode codepoint for the reaction.</p>
     pub fn unicode(&self) -> std::option::Option<&str> {
         self.unicode.as_deref()
-    }
-}
-impl std::fmt::Debug for ReactionValueFormats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactionValueFormats");
-        formatter.field("emoji", &self.emoji);
-        formatter.field("short_code", &self.short_code);
-        formatter.field("unicode", &self.unicode);
-        formatter.finish()
     }
 }
 /// See [`ReactionValueFormats`](crate::model::ReactionValueFormats).
@@ -6230,7 +5843,7 @@ impl ReactionValueFormats {
 
 /// <p>Returns information about a branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchInfo {
     /// <p>The name of the branch.</p>
     #[doc(hidden)]
@@ -6247,14 +5860,6 @@ impl BranchInfo {
     /// <p>The ID of the last commit made to the branch.</p>
     pub fn commit_id(&self) -> std::option::Option<&str> {
         self.commit_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BranchInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchInfo");
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("commit_id", &self.commit_id);
-        formatter.finish()
     }
 }
 /// See [`BranchInfo`](crate::model::BranchInfo).
@@ -6305,7 +5910,7 @@ impl BranchInfo {
 
 /// <p>Returns information about the approval rules applied to a pull request and whether conditions have been met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>Whether the state of the pull request is approved.</p>
     #[doc(hidden)]
@@ -6336,19 +5941,6 @@ impl Evaluation {
     /// <p>The names of the approval rules that have not had their conditions met.</p>
     pub fn approval_rules_not_satisfied(&self) -> std::option::Option<&[std::string::String]> {
         self.approval_rules_not_satisfied.as_deref()
-    }
-}
-impl std::fmt::Debug for Evaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Evaluation");
-        formatter.field("approved", &self.approved);
-        formatter.field("overridden", &self.overridden);
-        formatter.field("approval_rules_satisfied", &self.approval_rules_satisfied);
-        formatter.field(
-            "approval_rules_not_satisfied",
-            &self.approval_rules_not_satisfied,
-        );
-        formatter.finish()
     }
 }
 /// See [`Evaluation`](crate::model::Evaluation).
@@ -6446,7 +6038,7 @@ impl Evaluation {
 
 /// <p>Returns information about a pull request event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestEvent {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
@@ -6550,44 +6142,6 @@ impl PullRequestEvent {
         &self,
     ) -> std::option::Option<&crate::model::ApprovalRuleOverriddenEventMetadata> {
         self.approval_rule_overridden_event_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for PullRequestEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestEvent");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("event_date", &self.event_date);
-        formatter.field("pull_request_event_type", &self.pull_request_event_type);
-        formatter.field("actor_arn", &self.actor_arn);
-        formatter.field(
-            "pull_request_created_event_metadata",
-            &self.pull_request_created_event_metadata,
-        );
-        formatter.field(
-            "pull_request_status_changed_event_metadata",
-            &self.pull_request_status_changed_event_metadata,
-        );
-        formatter.field(
-            "pull_request_source_reference_updated_event_metadata",
-            &self.pull_request_source_reference_updated_event_metadata,
-        );
-        formatter.field(
-            "pull_request_merged_state_changed_event_metadata",
-            &self.pull_request_merged_state_changed_event_metadata,
-        );
-        formatter.field(
-            "approval_rule_event_metadata",
-            &self.approval_rule_event_metadata,
-        );
-        formatter.field(
-            "approval_state_changed_event_metadata",
-            &self.approval_state_changed_event_metadata,
-        );
-        formatter.field(
-            "approval_rule_overridden_event_metadata",
-            &self.approval_rule_overridden_event_metadata,
-        );
-        formatter.finish()
     }
 }
 /// See [`PullRequestEvent`](crate::model::PullRequestEvent).
@@ -6813,7 +6367,7 @@ impl PullRequestEvent {
 
 /// <p>Returns information about an override event for approval rules for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleOverriddenEventMetadata {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
     #[doc(hidden)]
@@ -6830,14 +6384,6 @@ impl ApprovalRuleOverriddenEventMetadata {
     /// <p>The status of the override event.</p>
     pub fn override_status(&self) -> std::option::Option<&crate::model::OverrideStatus> {
         self.override_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ApprovalRuleOverriddenEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleOverriddenEventMetadata");
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("override_status", &self.override_status);
-        formatter.finish()
     }
 }
 /// See [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
@@ -6891,7 +6437,7 @@ impl ApprovalRuleOverriddenEventMetadata {
 
 /// <p>Returns information about a change in the approval state for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalStateChangedEventMetadata {
     /// <p>The revision ID of the pull request when the approval state changed.</p>
     #[doc(hidden)]
@@ -6908,14 +6454,6 @@ impl ApprovalStateChangedEventMetadata {
     /// <p>The approval status for the pull request.</p>
     pub fn approval_status(&self) -> std::option::Option<&crate::model::ApprovalState> {
         self.approval_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ApprovalStateChangedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalStateChangedEventMetadata");
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("approval_status", &self.approval_status);
-        formatter.finish()
     }
 }
 /// See [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
@@ -6969,7 +6507,7 @@ impl ApprovalStateChangedEventMetadata {
 
 /// <p>Returns information about an event for an approval rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleEventMetadata {
     /// <p>The name of the approval rule.</p>
     #[doc(hidden)]
@@ -6993,15 +6531,6 @@ impl ApprovalRuleEventMetadata {
     /// <p>The content of the approval rule.</p>
     pub fn approval_rule_content(&self) -> std::option::Option<&str> {
         self.approval_rule_content.as_deref()
-    }
-}
-impl std::fmt::Debug for ApprovalRuleEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleEventMetadata");
-        formatter.field("approval_rule_name", &self.approval_rule_name);
-        formatter.field("approval_rule_id", &self.approval_rule_id);
-        formatter.field("approval_rule_content", &self.approval_rule_content);
-        formatter.finish()
     }
 }
 /// See [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
@@ -7073,7 +6602,7 @@ impl ApprovalRuleEventMetadata {
 
 /// <p>Returns information about the change in the merge state for a pull request event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestMergedStateChangedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
     #[doc(hidden)]
@@ -7097,15 +6626,6 @@ impl PullRequestMergedStateChangedEventMetadata {
     /// <p>Information about the merge state change event.</p>
     pub fn merge_metadata(&self) -> std::option::Option<&crate::model::MergeMetadata> {
         self.merge_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for PullRequestMergedStateChangedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestMergedStateChangedEventMetadata");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("destination_reference", &self.destination_reference);
-        formatter.field("merge_metadata", &self.merge_metadata);
-        formatter.finish()
     }
 }
 /// See [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
@@ -7177,7 +6697,7 @@ impl PullRequestMergedStateChangedEventMetadata {
 
 /// <p>Information about an update to the source branch of a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestSourceReferenceUpdatedEventMetadata {
     /// <p>The name of the repository where the pull request was updated.</p>
     #[doc(hidden)]
@@ -7208,16 +6728,6 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub fn merge_base(&self) -> std::option::Option<&str> {
         self.merge_base.as_deref()
-    }
-}
-impl std::fmt::Debug for PullRequestSourceReferenceUpdatedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestSourceReferenceUpdatedEventMetadata");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("merge_base", &self.merge_base);
-        formatter.finish()
     }
 }
 /// See [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
@@ -7302,7 +6812,7 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
 
 /// <p>Information about a change to the status of a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestStatusChangedEventMetadata {
     /// <p>The changed status of the pull request.</p>
     #[doc(hidden)]
@@ -7312,13 +6822,6 @@ impl PullRequestStatusChangedEventMetadata {
     /// <p>The changed status of the pull request.</p>
     pub fn pull_request_status(&self) -> std::option::Option<&crate::model::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
-    }
-}
-impl std::fmt::Debug for PullRequestStatusChangedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestStatusChangedEventMetadata");
-        formatter.field("pull_request_status", &self.pull_request_status);
-        formatter.finish()
     }
 }
 /// See [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
@@ -7360,7 +6863,7 @@ impl PullRequestStatusChangedEventMetadata {
 
 /// <p>Metadata about the pull request that is used when comparing the pull request source with its destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestCreatedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
     #[doc(hidden)]
@@ -7391,16 +6894,6 @@ impl PullRequestCreatedEventMetadata {
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub fn merge_base(&self) -> std::option::Option<&str> {
         self.merge_base.as_deref()
-    }
-}
-impl std::fmt::Debug for PullRequestCreatedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestCreatedEventMetadata");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_id", &self.source_commit_id);
-        formatter.field("destination_commit_id", &self.destination_commit_id);
-        formatter.field("merge_base", &self.merge_base);
-        formatter.finish()
     }
 }
 /// See [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
@@ -7649,7 +7142,7 @@ impl AsRef<str> for PullRequestEventType {
 
 /// <p>Information about merge hunks in a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeHunk {
     /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
     #[doc(hidden)]
@@ -7680,16 +7173,6 @@ impl MergeHunk {
     /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
     pub fn base(&self) -> std::option::Option<&crate::model::MergeHunkDetail> {
         self.base.as_ref()
-    }
-}
-impl std::fmt::Debug for MergeHunk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeHunk");
-        formatter.field("is_conflict", &self.is_conflict);
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
     }
 }
 /// See [`MergeHunk`](crate::model::MergeHunk).
@@ -7773,7 +7256,7 @@ impl MergeHunk {
 
 /// <p>Information about the details of a merge hunk that contains a conflict in a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeHunkDetail {
     /// <p>The start position of the hunk in the merge result.</p>
     #[doc(hidden)]
@@ -7797,15 +7280,6 @@ impl MergeHunkDetail {
     /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
     pub fn hunk_content(&self) -> std::option::Option<&str> {
         self.hunk_content.as_deref()
-    }
-}
-impl std::fmt::Debug for MergeHunkDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeHunkDetail");
-        formatter.field("start_line", &self.start_line);
-        formatter.field("end_line", &self.end_line);
-        formatter.field("hunk_content", &self.hunk_content);
-        formatter.finish()
     }
 }
 /// See [`MergeHunkDetail`](crate::model::MergeHunkDetail).
@@ -7868,7 +7342,7 @@ impl MergeHunkDetail {
 
 /// <p>Returns information about a target for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Target {
     /// <p>The name of the repository that contains the pull request.</p>
     #[doc(hidden)]
@@ -7892,15 +7366,6 @@ impl Target {
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn destination_reference(&self) -> std::option::Option<&str> {
         self.destination_reference.as_deref()
-    }
-}
-impl std::fmt::Debug for Target {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Target");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_reference", &self.source_reference);
-        formatter.field("destination_reference", &self.destination_reference);
-        formatter.finish()
     }
 }
 /// See [`Target`](crate::model::Target).
@@ -7972,7 +7437,7 @@ impl Target {
 
 /// <p>A file to be added, updated, or deleted as part of a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileMetadata {
     /// <p>The full path to the file to be added or updated, including the name of the file.</p>
     #[doc(hidden)]
@@ -7996,15 +7461,6 @@ impl FileMetadata {
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for FileMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileMetadata");
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("blob_id", &self.blob_id);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
     }
 }
 /// See [`FileMetadata`](crate::model::FileMetadata).
@@ -8073,7 +7529,7 @@ impl FileMetadata {
 
 /// <p>Information about a file added or updated as part of a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFileEntry {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
     #[doc(hidden)]
@@ -8104,16 +7560,6 @@ impl PutFileEntry {
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
     pub fn source_file(&self) -> std::option::Option<&crate::model::SourceFileSpecifier> {
         self.source_file.as_ref()
-    }
-}
-impl std::fmt::Debug for PutFileEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFileEntry");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.field("file_content", &self.file_content);
-        formatter.field("source_file", &self.source_file);
-        formatter.finish()
     }
 }
 /// See [`PutFileEntry`](crate::model::PutFileEntry).
@@ -8197,7 +7643,7 @@ impl PutFileEntry {
 
 /// <p>Information about a source file that is part of changes made in a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceFileSpecifier {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
@@ -8214,14 +7660,6 @@ impl SourceFileSpecifier {
     /// <p>Whether to remove the source file from the parent commit.</p>
     pub fn is_move(&self) -> bool {
         self.is_move
-    }
-}
-impl std::fmt::Debug for SourceFileSpecifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceFileSpecifier");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("is_move", &self.is_move);
-        formatter.finish()
     }
 }
 /// See [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
@@ -8272,7 +7710,7 @@ impl SourceFileSpecifier {
 
 /// <p>Returns information about errors in a BatchGetCommits operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetCommitsError {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
     #[doc(hidden)]
@@ -8296,15 +7734,6 @@ impl BatchGetCommitsError {
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetCommitsError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetCommitsError");
-        formatter.field("commit_id", &self.commit_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
@@ -8370,7 +7799,7 @@ impl BatchGetCommitsError {
 
 /// <p>Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     /// <p>The name of the repository where the association with the template was not able to be removed.</p>
     #[doc(hidden)]
@@ -8394,16 +7823,6 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("BatchDisassociateApprovalRuleTemplateFromRepositoriesError");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
@@ -8476,7 +7895,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
 
 /// <p>Returns information about errors in a BatchDescribeMergeConflicts operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDescribeMergeConflictsError {
     /// <p>The path to the file.</p>
     #[doc(hidden)]
@@ -8500,15 +7919,6 @@ impl BatchDescribeMergeConflictsError {
     /// <p>The message provided by the exception.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDescribeMergeConflictsError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDescribeMergeConflictsError");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("exception_name", &self.exception_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
@@ -8574,7 +7984,7 @@ impl BatchDescribeMergeConflictsError {
 
 /// <p>Information about conflicts in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Conflict {
     /// <p>Metadata about a conflict in a merge operation.</p>
     #[doc(hidden)]
@@ -8591,14 +8001,6 @@ impl Conflict {
     /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
     pub fn merge_hunks(&self) -> std::option::Option<&[crate::model::MergeHunk]> {
         self.merge_hunks.as_deref()
-    }
-}
-impl std::fmt::Debug for Conflict {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Conflict");
-        formatter.field("conflict_metadata", &self.conflict_metadata);
-        formatter.field("merge_hunks", &self.merge_hunks);
-        formatter.finish()
     }
 }
 /// See [`Conflict`](crate::model::Conflict).
@@ -8661,7 +8063,7 @@ impl Conflict {
 
 /// <p>Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// <p>The name of the repository where the association was not made.</p>
     #[doc(hidden)]
@@ -8685,16 +8087,6 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("BatchAssociateApprovalRuleTemplateWithRepositoriesError");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).

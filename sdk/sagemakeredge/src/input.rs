@@ -544,7 +544,7 @@ impl SendHeartbeatInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendHeartbeatInput {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
     #[doc(hidden)]
@@ -591,22 +591,10 @@ impl SendHeartbeatInput {
         self.deployment_result.as_ref()
     }
 }
-impl std::fmt::Debug for SendHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendHeartbeatInput");
-        formatter.field("agent_metrics", &self.agent_metrics);
-        formatter.field("models", &self.models);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_fleet_name", &self.device_fleet_name);
-        formatter.field("deployment_result", &self.deployment_result);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceRegistrationInput {
     /// <p>The unique name of the device you want to get the registration status from.</p>
     #[doc(hidden)]
@@ -625,18 +613,10 @@ impl GetDeviceRegistrationInput {
         self.device_fleet_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceRegistrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceRegistrationInput");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_fleet_name", &self.device_fleet_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentsInput {
     /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
     #[doc(hidden)]
@@ -653,13 +633,5 @@ impl GetDeploymentsInput {
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn device_fleet_name(&self) -> std::option::Option<&str> {
         self.device_fleet_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentsInput");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_fleet_name", &self.device_fleet_name);
-        formatter.finish()
     }
 }

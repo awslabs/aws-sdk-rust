@@ -2,7 +2,7 @@
 
 /// <p>An object that defines the log patterns that belongs to a <code>LogPatternSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogPattern {
     /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     #[doc(hidden)]
@@ -33,16 +33,6 @@ impl LogPattern {
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
     pub fn rank(&self) -> i32 {
         self.rank
-    }
-}
-impl std::fmt::Debug for LogPattern {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogPattern");
-        formatter.field("pattern_set_name", &self.pattern_set_name);
-        formatter.field("pattern_name", &self.pattern_name);
-        formatter.field("pattern", &self.pattern);
-        formatter.field("rank", &self.rank);
-        formatter.finish()
     }
 }
 /// See [`LogPattern`](crate::model::LogPattern).
@@ -309,7 +299,7 @@ impl AsRef<str> for Tier {
 
 /// <p>Describes the status of the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationInfo {
     /// <p>The name of the resource group used for the application.</p>
     #[doc(hidden)]
@@ -376,20 +366,6 @@ impl ApplicationInfo {
     /// <p> The method used by Application Insights to onboard your resources. </p>
     pub fn discovery_type(&self) -> std::option::Option<&crate::model::DiscoveryType> {
         self.discovery_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationInfo");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("life_cycle", &self.life_cycle);
-        formatter.field("ops_item_sns_topic_arn", &self.ops_item_sns_topic_arn);
-        formatter.field("ops_center_enabled", &self.ops_center_enabled);
-        formatter.field("cwe_monitor_enabled", &self.cwe_monitor_enabled);
-        formatter.field("remarks", &self.remarks);
-        formatter.field("auto_config_enabled", &self.auto_config_enabled);
-        formatter.field("discovery_type", &self.discovery_type);
-        formatter.finish()
     }
 }
 /// See [`ApplicationInfo`](crate::model::ApplicationInfo).
@@ -625,7 +601,7 @@ impl AsRef<str> for DiscoveryType {
 /// <li> <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
     #[doc(hidden)]
@@ -642,14 +618,6 @@ impl Tag {
     /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -700,7 +668,7 @@ impl Tag {
 
 /// <p>Describes a problem that is detected by correlating observations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Problem {
     /// <p>The ID of the problem.</p>
     #[doc(hidden)]
@@ -793,24 +761,6 @@ impl Problem {
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn last_recurrence_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_recurrence_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Problem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Problem");
-        formatter.field("id", &self.id);
-        formatter.field("title", &self.title);
-        formatter.field("insights", &self.insights);
-        formatter.field("status", &self.status);
-        formatter.field("affected_resource", &self.affected_resource);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("severity_level", &self.severity_level);
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("feedback", &self.feedback);
-        formatter.field("recurring_count", &self.recurring_count);
-        formatter.field("last_recurrence_time", &self.last_recurrence_time);
-        formatter.finish()
     }
 }
 /// See [`Problem`](crate::model::Problem).
@@ -1396,7 +1346,7 @@ impl AsRef<str> for Status {
 
 /// <p> The event information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationEvent {
     /// <p> The resource monitored by Application Insights. </p>
     #[doc(hidden)]
@@ -1443,18 +1393,6 @@ impl ConfigurationEvent {
     /// <p> The name of the resource Application Insights attempted to configure. </p>
     pub fn event_resource_name(&self) -> std::option::Option<&str> {
         self.event_resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationEvent");
-        formatter.field("monitored_resource_arn", &self.monitored_resource_arn);
-        formatter.field("event_status", &self.event_status);
-        formatter.field("event_resource_type", &self.event_resource_type);
-        formatter.field("event_time", &self.event_time);
-        formatter.field("event_detail", &self.event_detail);
-        formatter.field("event_resource_name", &self.event_resource_name);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationEvent`](crate::model::ConfigurationEvent).
@@ -1776,7 +1714,7 @@ impl AsRef<str> for ConfigurationEventStatus {
 
 /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationComponent {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
@@ -1840,19 +1778,6 @@ impl ApplicationComponent {
         >,
     > {
         self.detected_workload.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationComponent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationComponent");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("component_remarks", &self.component_remarks);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("os_type", &self.os_type);
-        formatter.field("tier", &self.tier);
-        formatter.field("monitor", &self.monitor);
-        formatter.field("detected_workload", &self.detected_workload);
-        formatter.finish()
     }
 }
 /// See [`ApplicationComponent`](crate::model::ApplicationComponent).
@@ -2085,7 +2010,7 @@ impl AsRef<str> for OsType {
 
 /// <p>Describes observations related to the problem.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelatedObservations {
     /// <p>The list of observations related to the problem.</p>
     #[doc(hidden)]
@@ -2095,13 +2020,6 @@ impl RelatedObservations {
     /// <p>The list of observations related to the problem.</p>
     pub fn observation_list(&self) -> std::option::Option<&[crate::model::Observation]> {
         self.observation_list.as_deref()
-    }
-}
-impl std::fmt::Debug for RelatedObservations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelatedObservations");
-        formatter.field("observation_list", &self.observation_list);
-        formatter.finish()
     }
 }
 /// See [`RelatedObservations`](crate::model::RelatedObservations).
@@ -2149,7 +2067,7 @@ impl RelatedObservations {
 
 /// <p>Describes an anomaly or error with the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Observation {
     /// <p>The ID of the observation type.</p>
     #[doc(hidden)]
@@ -2469,72 +2387,6 @@ impl Observation {
     /// <p> The type of the X-Ray node. </p>
     pub fn x_ray_node_type(&self) -> std::option::Option<&str> {
         self.x_ray_node_type.as_deref()
-    }
-}
-impl std::fmt::Debug for Observation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Observation");
-        formatter.field("id", &self.id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("log_group", &self.log_group);
-        formatter.field("line_time", &self.line_time);
-        formatter.field("log_text", &self.log_text);
-        formatter.field("log_filter", &self.log_filter);
-        formatter.field("metric_namespace", &self.metric_namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("unit", &self.unit);
-        formatter.field("value", &self.value);
-        formatter.field("cloud_watch_event_id", &self.cloud_watch_event_id);
-        formatter.field("cloud_watch_event_source", &self.cloud_watch_event_source);
-        formatter.field(
-            "cloud_watch_event_detail_type",
-            &self.cloud_watch_event_detail_type,
-        );
-        formatter.field("health_event_arn", &self.health_event_arn);
-        formatter.field("health_service", &self.health_service);
-        formatter.field("health_event_type_code", &self.health_event_type_code);
-        formatter.field(
-            "health_event_type_category",
-            &self.health_event_type_category,
-        );
-        formatter.field("health_event_description", &self.health_event_description);
-        formatter.field("code_deploy_deployment_id", &self.code_deploy_deployment_id);
-        formatter.field(
-            "code_deploy_deployment_group",
-            &self.code_deploy_deployment_group,
-        );
-        formatter.field("code_deploy_state", &self.code_deploy_state);
-        formatter.field("code_deploy_application", &self.code_deploy_application);
-        formatter.field(
-            "code_deploy_instance_group_id",
-            &self.code_deploy_instance_group_id,
-        );
-        formatter.field("ec2_state", &self.ec2_state);
-        formatter.field("rds_event_categories", &self.rds_event_categories);
-        formatter.field("rds_event_message", &self.rds_event_message);
-        formatter.field("s3_event_name", &self.s3_event_name);
-        formatter.field("states_execution_arn", &self.states_execution_arn);
-        formatter.field("states_arn", &self.states_arn);
-        formatter.field("states_status", &self.states_status);
-        formatter.field("states_input", &self.states_input);
-        formatter.field("ebs_event", &self.ebs_event);
-        formatter.field("ebs_result", &self.ebs_result);
-        formatter.field("ebs_cause", &self.ebs_cause);
-        formatter.field("ebs_request_id", &self.ebs_request_id);
-        formatter.field("x_ray_fault_percent", &self.x_ray_fault_percent);
-        formatter.field("x_ray_throttle_percent", &self.x_ray_throttle_percent);
-        formatter.field("x_ray_error_percent", &self.x_ray_error_percent);
-        formatter.field("x_ray_request_count", &self.x_ray_request_count);
-        formatter.field(
-            "x_ray_request_average_latency",
-            &self.x_ray_request_average_latency,
-        );
-        formatter.field("x_ray_node_name", &self.x_ray_node_name);
-        formatter.field("x_ray_node_type", &self.x_ray_node_type);
-        formatter.finish()
     }
 }
 /// See [`Observation`](crate::model::Observation).

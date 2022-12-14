@@ -36456,7 +36456,7 @@ impl SwitchoverReadReplicaInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SwitchoverReadReplicaInput {
     /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -36476,17 +36476,10 @@ impl SwitchoverReadReplicaInput {
         self.db_instance_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for SwitchoverReadReplicaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SwitchoverReadReplicaInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDbInstanceAutomatedBackupsReplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     #[doc(hidden)]
@@ -36498,17 +36491,10 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
         self.source_db_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopDbInstanceAutomatedBackupsReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDbInstanceAutomatedBackupsReplicationInput");
-        formatter.field("source_db_instance_arn", &self.source_db_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDbInstanceInput {
     /// <p>The user-supplied instance identifier.</p>
     #[doc(hidden)]
@@ -36527,18 +36513,10 @@ impl StopDbInstanceInput {
         self.db_snapshot_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for StopDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDbInstanceInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDbClusterInput {
     /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
@@ -36550,17 +36528,10 @@ impl StopDbClusterInput {
         self.db_cluster_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for StopDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopActivityStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream. For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
     #[doc(hidden)]
@@ -36579,18 +36550,10 @@ impl StopActivityStreamInput {
         self.apply_immediately
     }
 }
-impl std::fmt::Debug for StopActivityStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopActivityStreamInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("apply_immediately", &self.apply_immediately);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartExportTaskInput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is to be exported to.</p>
     #[doc(hidden)]
@@ -36678,23 +36641,10 @@ impl StartExportTaskInput {
         self.export_only.as_deref()
     }
 }
-impl std::fmt::Debug for StartExportTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartExportTaskInput");
-        formatter.field("export_task_identifier", &self.export_task_identifier);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.field("export_only", &self.export_only);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDbInstanceAutomatedBackupsReplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     #[doc(hidden)]
@@ -36735,20 +36685,10 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
         self.pre_signed_url.as_deref()
     }
 }
-impl std::fmt::Debug for StartDbInstanceAutomatedBackupsReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDbInstanceAutomatedBackupsReplicationInput");
-        formatter.field("source_db_instance_arn", &self.source_db_instance_arn);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("pre_signed_url", &self.pre_signed_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDbInstanceInput {
     /// <p>The user-supplied instance identifier.</p>
     #[doc(hidden)]
@@ -36760,17 +36700,10 @@ impl StartDbInstanceInput {
         self.db_instance_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for StartDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDbInstanceInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDbClusterInput {
     /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
@@ -36782,17 +36715,10 @@ impl StartDbClusterInput {
         self.db_cluster_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for StartDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartActivityStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
     #[doc(hidden)]
@@ -36832,24 +36758,10 @@ impl StartActivityStreamInput {
         self.engine_native_audit_fields_included
     }
 }
-impl std::fmt::Debug for StartActivityStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartActivityStreamInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("mode", &self.mode);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("apply_immediately", &self.apply_immediately);
-        formatter.field(
-            "engine_native_audit_fields_included",
-            &self.engine_native_audit_fields_included,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeDbSecurityGroupIngressInput {
     /// <p>The name of the DB security group to revoke ingress from.</p>
     #[doc(hidden)]
@@ -36889,24 +36801,10 @@ impl RevokeDbSecurityGroupIngressInput {
         self.ec2_security_group_owner_id.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeDbSecurityGroupIngressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeDbSecurityGroupIngressInput");
-        formatter.field("db_security_group_name", &self.db_security_group_name);
-        formatter.field("cidrip", &self.cidrip);
-        formatter.field("ec2_security_group_name", &self.ec2_security_group_name);
-        formatter.field("ec2_security_group_id", &self.ec2_security_group_id);
-        formatter.field(
-            "ec2_security_group_owner_id",
-            &self.ec2_security_group_owner_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>The identifier of the source DB instance from which to restore.</p>
     /// <p>Constraints:</p>
@@ -37380,80 +37278,10 @@ impl RestoreDbInstanceToPointInTimeInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreDbInstanceToPointInTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreDbInstanceToPointInTimeInput");
-        formatter.field(
-            "source_db_instance_identifier",
-            &self.source_db_instance_identifier,
-        );
-        formatter.field(
-            "target_db_instance_identifier",
-            &self.target_db_instance_identifier,
-        );
-        formatter.field("restore_time", &self.restore_time);
-        formatter.field(
-            "use_latest_restorable_time",
-            &self.use_latest_restorable_time,
-        );
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("port", &self.port);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("license_model", &self.license_model);
-        formatter.field("db_name", &self.db_name);
-        formatter.field("engine", &self.engine);
-        formatter.field("iops", &self.iops);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("tags", &self.tags);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("tde_credential_arn", &self.tde_credential_arn);
-        formatter.field("tde_credential_password", &self.tde_credential_password);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field("processor_features", &self.processor_features);
-        formatter.field(
-            "use_default_processor_features",
-            &self.use_default_processor_features,
-        );
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("source_dbi_resource_id", &self.source_dbi_resource_id);
-        formatter.field("max_allocated_storage", &self.max_allocated_storage);
-        formatter.field(
-            "source_db_instance_automated_backups_arn",
-            &self.source_db_instance_automated_backups_arn,
-        );
-        formatter.field("enable_customer_owned_ip", &self.enable_customer_owned_ip);
-        formatter.field(
-            "custom_iam_instance_profile",
-            &self.custom_iam_instance_profile,
-        );
-        formatter.field("backup_target", &self.backup_target);
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreDbInstanceFromS3Input {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
     #[doc(hidden)]
@@ -37939,85 +37767,10 @@ impl RestoreDbInstanceFromS3Input {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreDbInstanceFromS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreDbInstanceFromS3Input");
-        formatter.field("db_name", &self.db_name);
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("engine", &self.engine);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("db_security_groups", &self.db_security_groups);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field("port", &self.port);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("license_model", &self.license_model);
-        formatter.field("iops", &self.iops);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("tags", &self.tags);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("monitoring_interval", &self.monitoring_interval);
-        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field("source_engine", &self.source_engine);
-        formatter.field("source_engine_version", &self.source_engine_version);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.field("s3_ingestion_role_arn", &self.s3_ingestion_role_arn);
-        formatter.field(
-            "enable_performance_insights",
-            &self.enable_performance_insights,
-        );
-        formatter.field(
-            "performance_insights_kms_key_id",
-            &self.performance_insights_kms_key_id,
-        );
-        formatter.field(
-            "performance_insights_retention_period",
-            &self.performance_insights_retention_period,
-        );
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field("processor_features", &self.processor_features);
-        formatter.field(
-            "use_default_processor_features",
-            &self.use_default_processor_features,
-        );
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("max_allocated_storage", &self.max_allocated_storage);
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -38438,63 +38191,10 @@ impl RestoreDbInstanceFromDbSnapshotInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreDbInstanceFromDbSnapshotInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("port", &self.port);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("license_model", &self.license_model);
-        formatter.field("db_name", &self.db_name);
-        formatter.field("engine", &self.engine);
-        formatter.field("iops", &self.iops);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("tde_credential_arn", &self.tde_credential_arn);
-        formatter.field("tde_credential_password", &self.tde_credential_password);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("domain", &self.domain);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field("processor_features", &self.processor_features);
-        formatter.field(
-            "use_default_processor_features",
-            &self.use_default_processor_features,
-        );
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("enable_customer_owned_ip", &self.enable_customer_owned_ip);
-        formatter.field(
-            "custom_iam_instance_profile",
-            &self.custom_iam_instance_profile,
-        );
-        formatter.field("backup_target", &self.backup_target);
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
@@ -38921,61 +38621,10 @@ impl RestoreDbClusterToPointInTimeInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreDbClusterToPointInTimeInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("restore_type", &self.restore_type);
-        formatter.field(
-            "source_db_cluster_identifier",
-            &self.source_db_cluster_identifier,
-        );
-        formatter.field("restore_to_time", &self.restore_to_time);
-        formatter.field(
-            "use_latest_restorable_time",
-            &self.use_latest_restorable_time,
-        );
-        formatter.field("port", &self.port);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field("backtrack_window", &self.backtrack_window);
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field("scaling_configuration", &self.scaling_configuration);
-        formatter.field("engine_mode", &self.engine_mode);
-        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("iops", &self.iops);
-        formatter.field(
-            "serverless_v2_scaling_configuration",
-            &self.serverless_v2_scaling_configuration,
-        );
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
@@ -39427,56 +39076,10 @@ impl RestoreDbClusterFromSnapshotInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreDbClusterFromSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreDbClusterFromSnapshotInput");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("snapshot_identifier", &self.snapshot_identifier);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("port", &self.port);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field("backtrack_window", &self.backtrack_window);
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field("engine_mode", &self.engine_mode);
-        formatter.field("scaling_configuration", &self.scaling_configuration);
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("iops", &self.iops);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field(
-            "serverless_v2_scaling_configuration",
-            &self.serverless_v2_scaling_configuration,
-        );
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreDbClusterFromS3Input {
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
     #[doc(hidden)]
@@ -39861,64 +39464,10 @@ impl RestoreDbClusterFromS3Input {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreDbClusterFromS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreDbClusterFromS3Input");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("character_set_name", &self.character_set_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("port", &self.port);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field("source_engine", &self.source_engine);
-        formatter.field("source_engine_version", &self.source_engine_version);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.field("s3_ingestion_role_arn", &self.s3_ingestion_role_arn);
-        formatter.field("backtrack_window", &self.backtrack_window);
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field(
-            "serverless_v2_scaling_configuration",
-            &self.serverless_v2_scaling_configuration,
-        );
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -39968,19 +39517,10 @@ impl ResetDbParameterGroupInput {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for ResetDbParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetDbParameterGroupInput");
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("reset_all_parameters", &self.reset_all_parameters);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to reset.</p>
     #[doc(hidden)]
@@ -40006,22 +39546,10 @@ impl ResetDbClusterParameterGroupInput {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for ResetDbClusterParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetDbClusterParameterGroupInput");
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("reset_all_parameters", &self.reset_all_parameters);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon RDS resource that the tags are removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
@@ -40040,18 +39568,10 @@ impl RemoveTagsFromResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveSourceIdentifierFromSubscriptionInput {
     /// <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
     #[doc(hidden)]
@@ -40070,18 +39590,10 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
         self.source_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveSourceIdentifierFromSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveSourceIdentifierFromSubscriptionInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveRoleFromDbInstanceInput {
     /// <p>The name of the DB instance to disassociate the IAM role from.</p>
     #[doc(hidden)]
@@ -40107,19 +39619,10 @@ impl RemoveRoleFromDbInstanceInput {
         self.feature_name.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveRoleFromDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveRoleFromDbInstanceInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("feature_name", &self.feature_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveRoleFromDbClusterInput {
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
     #[doc(hidden)]
@@ -40145,19 +39648,10 @@ impl RemoveRoleFromDbClusterInput {
         self.feature_name.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveRoleFromDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveRoleFromDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("feature_name", &self.feature_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveFromGlobalClusterInput {
     /// <p>The cluster identifier to detach from the Aurora global database cluster.</p>
     #[doc(hidden)]
@@ -40176,18 +39670,10 @@ impl RemoveFromGlobalClusterInput {
         self.db_cluster_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveFromGlobalClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveFromGlobalClusterInput");
-        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDbProxyTargetsInput {
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
     #[doc(hidden)]
@@ -40220,20 +39706,10 @@ impl RegisterDbProxyTargetsInput {
         self.db_cluster_identifiers.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterDbProxyTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterDbProxyTargetsInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("target_group_name", &self.target_group_name);
-        formatter.field("db_instance_identifiers", &self.db_instance_identifiers);
-        formatter.field("db_cluster_identifiers", &self.db_cluster_identifiers);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootDbInstanceInput {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -40262,18 +39738,10 @@ impl RebootDbInstanceInput {
         self.force_failover
     }
 }
-impl std::fmt::Debug for RebootDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootDbInstanceInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("force_failover", &self.force_failover);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootDbClusterInput {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -40293,17 +39761,10 @@ impl RebootDbClusterInput {
         self.db_cluster_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for RebootDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseReservedDbInstancesOfferingInput {
     /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
@@ -40342,23 +39803,10 @@ impl PurchaseReservedDbInstancesOfferingInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PurchaseReservedDbInstancesOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseReservedDbInstancesOfferingInput");
-        formatter.field(
-            "reserved_db_instances_offering_id",
-            &self.reserved_db_instances_offering_id,
-        );
-        formatter.field("reserved_db_instance_id", &self.reserved_db_instance_id);
-        formatter.field("db_instance_count", &self.db_instance_count);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PromoteReadReplicaDbClusterInput {
     /// <p>The identifier of the DB cluster read replica to promote. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -40380,17 +39828,10 @@ impl PromoteReadReplicaDbClusterInput {
         self.db_cluster_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for PromoteReadReplicaDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PromoteReadReplicaDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PromoteReadReplicaInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -40454,19 +39895,10 @@ impl PromoteReadReplicaInput {
         self.preferred_backup_window.as_deref()
     }
 }
-impl std::fmt::Debug for PromoteReadReplicaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PromoteReadReplicaInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyOptionGroupInput {
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
@@ -40501,20 +39933,10 @@ impl ModifyOptionGroupInput {
         self.apply_immediately
     }
 }
-impl std::fmt::Debug for ModifyOptionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyOptionGroupInput");
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("options_to_include", &self.options_to_include);
-        formatter.field("options_to_remove", &self.options_to_remove);
-        formatter.field("apply_immediately", &self.apply_immediately);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyGlobalClusterInput {
     /// <p>The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -40592,27 +40014,10 @@ impl ModifyGlobalClusterInput {
         self.allow_major_version_upgrade
     }
 }
-impl std::fmt::Debug for ModifyGlobalClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyGlobalClusterInput");
-        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
-        formatter.field(
-            "new_global_cluster_identifier",
-            &self.new_global_cluster_identifier,
-        );
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "allow_major_version_upgrade",
-            &self.allow_major_version_upgrade,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyEventSubscriptionInput {
     /// <p>The name of the RDS event notification subscription.</p>
     #[doc(hidden)]
@@ -40654,21 +40059,10 @@ impl ModifyEventSubscriptionInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for ModifyEventSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyEventSubscriptionInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -40698,22 +40092,10 @@ impl ModifyDbSubnetGroupInput {
         self.subnet_ids.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbSubnetGroupInput");
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field(
-            "db_subnet_group_description",
-            &self.db_subnet_group_description,
-        );
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbSnapshotAttributeInput {
     /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
     #[doc(hidden)]
@@ -40756,20 +40138,10 @@ impl ModifyDbSnapshotAttributeInput {
         self.values_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbSnapshotAttributeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbSnapshotAttributeInput");
-        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("values_to_add", &self.values_to_add);
-        formatter.field("values_to_remove", &self.values_to_remove);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbSnapshotInput {
     /// <p>The identifier of the DB snapshot to modify.</p>
     #[doc(hidden)]
@@ -40823,19 +40195,10 @@ impl ModifyDbSnapshotInput {
         self.option_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbSnapshotInput");
-        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbProxyTargetGroupInput {
     /// <p>The name of the target group to modify.</p>
     #[doc(hidden)]
@@ -40870,20 +40233,10 @@ impl ModifyDbProxyTargetGroupInput {
         self.new_name.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbProxyTargetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbProxyTargetGroupInput");
-        formatter.field("target_group_name", &self.target_group_name);
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("connection_pool_config", &self.connection_pool_config);
-        formatter.field("new_name", &self.new_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbProxyEndpointInput {
     /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
     #[doc(hidden)]
@@ -40909,22 +40262,10 @@ impl ModifyDbProxyEndpointInput {
         self.vpc_security_group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbProxyEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbProxyEndpointInput");
-        formatter.field("db_proxy_endpoint_name", &self.db_proxy_endpoint_name);
-        formatter.field(
-            "new_db_proxy_endpoint_name",
-            &self.new_db_proxy_endpoint_name,
-        );
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbProxyInput {
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
     #[doc(hidden)]
@@ -40985,24 +40326,10 @@ impl ModifyDbProxyInput {
         self.security_groups.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbProxyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbProxyInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("new_db_proxy_name", &self.new_db_proxy_name);
-        formatter.field("auth", &self.auth);
-        formatter.field("require_tls", &self.require_tls);
-        formatter.field("idle_client_timeout", &self.idle_client_timeout);
-        formatter.field("debug_logging", &self.debug_logging);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -41043,18 +40370,10 @@ impl ModifyDbParameterGroupInput {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbParameterGroupInput");
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbInstanceInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -41802,103 +41121,10 @@ impl ModifyDbInstanceInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbInstanceInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("db_security_groups", &self.db_security_groups);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("apply_immediately", &self.apply_immediately);
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "allow_major_version_upgrade",
-            &self.allow_major_version_upgrade,
-        );
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("license_model", &self.license_model);
-        formatter.field("iops", &self.iops);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field(
-            "new_db_instance_identifier",
-            &self.new_db_instance_identifier,
-        );
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("tde_credential_arn", &self.tde_credential_arn);
-        formatter.field("tde_credential_password", &self.tde_credential_password);
-        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
-        formatter.field("domain", &self.domain);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("monitoring_interval", &self.monitoring_interval);
-        formatter.field("db_port_number", &self.db_port_number);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field("promotion_tier", &self.promotion_tier);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field(
-            "enable_performance_insights",
-            &self.enable_performance_insights,
-        );
-        formatter.field(
-            "performance_insights_kms_key_id",
-            &self.performance_insights_kms_key_id,
-        );
-        formatter.field(
-            "performance_insights_retention_period",
-            &self.performance_insights_retention_period,
-        );
-        formatter.field(
-            "cloudwatch_logs_export_configuration",
-            &self.cloudwatch_logs_export_configuration,
-        );
-        formatter.field("processor_features", &self.processor_features);
-        formatter.field(
-            "use_default_processor_features",
-            &self.use_default_processor_features,
-        );
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("max_allocated_storage", &self.max_allocated_storage);
-        formatter.field(
-            "certificate_rotation_restart",
-            &self.certificate_rotation_restart,
-        );
-        formatter.field("replica_mode", &self.replica_mode);
-        formatter.field("enable_customer_owned_ip", &self.enable_customer_owned_ip);
-        formatter.field(
-            "aws_backup_recovery_point_arn",
-            &self.aws_backup_recovery_point_arn,
-        );
-        formatter.field("automation_mode", &self.automation_mode);
-        formatter.field(
-            "resume_full_automation_mode_minutes",
-            &self.resume_full_automation_mode_minutes,
-        );
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbClusterSnapshotAttributeInput {
     /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
     #[doc(hidden)]
@@ -41941,23 +41167,10 @@ impl ModifyDbClusterSnapshotAttributeInput {
         self.values_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbClusterSnapshotAttributeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbClusterSnapshotAttributeInput");
-        formatter.field(
-            "db_cluster_snapshot_identifier",
-            &self.db_cluster_snapshot_identifier,
-        );
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("values_to_add", &self.values_to_add);
-        formatter.field("values_to_remove", &self.values_to_remove);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to modify.</p>
     #[doc(hidden)]
@@ -41984,21 +41197,10 @@ impl ModifyDbClusterParameterGroupInput {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbClusterParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbClusterParameterGroupInput");
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbClusterEndpointInput {
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
@@ -42031,23 +41233,10 @@ impl ModifyDbClusterEndpointInput {
         self.excluded_members.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbClusterEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbClusterEndpointInput");
-        formatter.field(
-            "db_cluster_endpoint_identifier",
-            &self.db_cluster_endpoint_identifier,
-        );
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("static_members", &self.static_members);
-        formatter.field("excluded_members", &self.excluded_members);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints: This identifier must match the identifier of an existing DB cluster.</p>
@@ -42588,88 +41777,10 @@ impl ModifyDbClusterInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("new_db_cluster_identifier", &self.new_db_cluster_identifier);
-        formatter.field("apply_immediately", &self.apply_immediately);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("port", &self.port);
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field("backtrack_window", &self.backtrack_window);
-        formatter.field(
-            "cloudwatch_logs_export_configuration",
-            &self.cloudwatch_logs_export_configuration,
-        );
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "allow_major_version_upgrade",
-            &self.allow_major_version_upgrade,
-        );
-        formatter.field(
-            "db_instance_parameter_group_name",
-            &self.db_instance_parameter_group_name,
-        );
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field("scaling_configuration", &self.scaling_configuration);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("enable_http_endpoint", &self.enable_http_endpoint);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field(
-            "enable_global_write_forwarding",
-            &self.enable_global_write_forwarding,
-        );
-        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("iops", &self.iops);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("monitoring_interval", &self.monitoring_interval);
-        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
-        formatter.field(
-            "enable_performance_insights",
-            &self.enable_performance_insights,
-        );
-        formatter.field(
-            "performance_insights_kms_key_id",
-            &self.performance_insights_kms_key_id,
-        );
-        formatter.field(
-            "performance_insights_retention_period",
-            &self.performance_insights_retention_period,
-        );
-        formatter.field(
-            "serverless_v2_scaling_configuration",
-            &self.serverless_v2_scaling_configuration,
-        );
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyCustomDbEngineVersionInput {
     /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
     #[doc(hidden)]
@@ -42732,20 +41843,10 @@ impl ModifyCustomDbEngineVersionInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyCustomDbEngineVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyCustomDbEngineVersionInput");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyCurrentDbClusterCapacityInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -42804,20 +41905,10 @@ impl ModifyCurrentDbClusterCapacityInput {
         self.timeout_action.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyCurrentDbClusterCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyCurrentDbClusterCapacityInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("capacity", &self.capacity);
-        formatter.field("seconds_before_timeout", &self.seconds_before_timeout);
-        formatter.field("timeout_action", &self.timeout_action);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyCertificatesInput {
     /// <p>The new default certificate identifier to override the current one with.</p>
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
@@ -42838,18 +41929,10 @@ impl ModifyCertificatesInput {
         self.remove_customer_override
     }
 }
-impl std::fmt::Debug for ModifyCertificatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyCertificatesInput");
-        formatter.field("certificate_identifier", &self.certificate_identifier);
-        formatter.field("remove_customer_override", &self.remove_customer_override);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyActivityStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
     #[doc(hidden)]
@@ -42868,18 +41951,10 @@ impl ModifyActivityStreamInput {
         self.audit_policy_state.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyActivityStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyActivityStreamInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("audit_policy_state", &self.audit_policy_state);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     #[doc(hidden)]
@@ -42898,18 +41973,10 @@ impl ListTagsForResourceInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailoverGlobalClusterInput {
     /// <p>Identifier of the Aurora global database (<code>GlobalCluster</code>) that should be failed over. The identifier is the unique key assigned by the user when the Aurora global database was created. In other words, it's the name of the Aurora global database that you want to fail over.</p>
     /// <p>Constraints:</p>
@@ -42936,21 +42003,10 @@ impl FailoverGlobalClusterInput {
         self.target_db_cluster_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for FailoverGlobalClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailoverGlobalClusterInput");
-        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
-        formatter.field(
-            "target_db_cluster_identifier",
-            &self.target_db_cluster_identifier,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailoverDbClusterInput {
     /// <p>A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -42981,21 +42037,10 @@ impl FailoverDbClusterInput {
         self.target_db_instance_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for FailoverDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailoverDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field(
-            "target_db_instance_identifier",
-            &self.target_db_instance_identifier,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DownloadDbLogFilePortionInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
@@ -43050,20 +42095,10 @@ impl DownloadDbLogFilePortionInput {
         self.number_of_lines
     }
 }
-impl std::fmt::Debug for DownloadDbLogFilePortionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DownloadDbLogFilePortionInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("log_file_name", &self.log_file_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("number_of_lines", &self.number_of_lines);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeValidDbInstanceModificationsInput {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
     #[doc(hidden)]
@@ -43075,17 +42110,10 @@ impl DescribeValidDbInstanceModificationsInput {
         self.db_instance_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeValidDbInstanceModificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeValidDbInstanceModificationsInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSourceRegionsInput {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
@@ -43130,20 +42158,10 @@ impl DescribeSourceRegionsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSourceRegionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSourceRegionsInput");
-        formatter.field("region_name", &self.region_name);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedDbInstancesOfferingsInput {
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
@@ -43225,28 +42243,10 @@ impl DescribeReservedDbInstancesOfferingsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReservedDbInstancesOfferingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedDbInstancesOfferingsInput");
-        formatter.field(
-            "reserved_db_instances_offering_id",
-            &self.reserved_db_instances_offering_id,
-        );
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("duration", &self.duration);
-        formatter.field("product_description", &self.product_description);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedDbInstancesInput {
     /// <p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p>
     #[doc(hidden)]
@@ -43340,30 +42340,10 @@ impl DescribeReservedDbInstancesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReservedDbInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedDbInstancesInput");
-        formatter.field("reserved_db_instance_id", &self.reserved_db_instance_id);
-        formatter.field(
-            "reserved_db_instances_offering_id",
-            &self.reserved_db_instances_offering_id,
-        );
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("duration", &self.duration);
-        formatter.field("product_description", &self.product_description);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("lease_id", &self.lease_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsInput {
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
     #[doc(hidden)]
@@ -43410,20 +42390,10 @@ impl DescribePendingMaintenanceActionsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribePendingMaintenanceActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePendingMaintenanceActionsInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("filters", &self.filters);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <p>The name of the engine to retrieve DB instance options for.</p>
     /// <p>Valid Values:</p>
@@ -43537,25 +42507,10 @@ impl DescribeOrderableDbInstanceOptionsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrderableDbInstanceOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrderableDbInstanceOptionsInput");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("license_model", &self.license_model);
-        formatter.field("availability_zone_group", &self.availability_zone_group);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOptionGroupsInput {
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
     #[doc(hidden)]
@@ -43634,22 +42589,10 @@ impl DescribeOptionGroupsInput {
         self.major_engine_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOptionGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOptionGroupsInput");
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("engine_name", &self.engine_name);
-        formatter.field("major_engine_version", &self.major_engine_version);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOptionGroupOptionsInput {
     /// <p>A required parameter. Options available for the given engine name are described.</p>
     /// <p>Valid Values:</p>
@@ -43721,21 +42664,10 @@ impl DescribeOptionGroupOptionsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOptionGroupOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOptionGroupOptionsInput");
-        formatter.field("engine_name", &self.engine_name);
-        formatter.field("major_engine_version", &self.major_engine_version);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGlobalClustersInput {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -43780,20 +42712,10 @@ impl DescribeGlobalClustersInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGlobalClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGlobalClustersInput");
-        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExportTasksInput {
     /// <p>The identifier of the snapshot export task to be described.</p>
     #[doc(hidden)]
@@ -43867,21 +42789,10 @@ impl DescribeExportTasksInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeExportTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExportTasksInput");
-        formatter.field("export_task_identifier", &self.export_task_identifier);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("filters", &self.filters);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventSubscriptionsInput {
     /// <p>The name of the RDS event notification subscription you want to describe.</p>
     #[doc(hidden)]
@@ -43918,20 +42829,10 @@ impl DescribeEventSubscriptionsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventSubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventSubscriptionsInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
@@ -44033,25 +42934,10 @@ impl DescribeEventsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventsInput");
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("duration", &self.duration);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventCategoriesInput {
     /// <p>The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.</p>
     /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
@@ -44072,18 +42958,10 @@ impl DescribeEventCategoriesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventCategoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventCategoriesInput");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersInput {
     /// <p>The name of the DB parameter group family.</p>
     /// <p>Valid Values:</p>
@@ -44204,20 +43082,10 @@ impl DescribeEngineDefaultParametersInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEngineDefaultParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEngineDefaultParametersInput");
-        formatter.field("db_parameter_group_family", &self.db_parameter_group_family);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEngineDefaultClusterParametersInput {
     /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
     #[doc(hidden)]
@@ -44254,20 +43122,10 @@ impl DescribeEngineDefaultClusterParametersInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEngineDefaultClusterParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEngineDefaultClusterParametersInput");
-        formatter.field("db_parameter_group_family", &self.db_parameter_group_family);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbSubnetGroupsInput {
     /// <p>The name of the DB subnet group to return details for.</p>
     #[doc(hidden)]
@@ -44304,20 +43162,10 @@ impl DescribeDbSubnetGroupsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbSubnetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbSubnetGroupsInput");
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbSnapshotsInput {
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -44449,25 +43297,10 @@ impl DescribeDbSnapshotsInput {
         self.dbi_resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbSnapshotsInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
-        formatter.field("snapshot_type", &self.snapshot_type);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.field("include_shared", &self.include_shared);
-        formatter.field("include_public", &self.include_public);
-        formatter.field("dbi_resource_id", &self.dbi_resource_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbSnapshotAttributesInput {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
     #[doc(hidden)]
@@ -44479,17 +43312,10 @@ impl DescribeDbSnapshotAttributesInput {
         self.db_snapshot_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbSnapshotAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbSnapshotAttributesInput");
-        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbSecurityGroupsInput {
     /// <p>The name of the DB security group to return details for.</p>
     #[doc(hidden)]
@@ -44526,20 +43352,10 @@ impl DescribeDbSecurityGroupsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbSecurityGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbSecurityGroupsInput");
-        formatter.field("db_security_group_name", &self.db_security_group_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbProxyTargetsInput {
     /// <p>The identifier of the <code>DBProxyTarget</code> to describe.</p>
     #[doc(hidden)]
@@ -44583,21 +43399,10 @@ impl DescribeDbProxyTargetsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeDbProxyTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbProxyTargetsInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("target_group_name", &self.target_group_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbProxyTargetGroupsInput {
     /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
     #[doc(hidden)]
@@ -44641,21 +43446,10 @@ impl DescribeDbProxyTargetGroupsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeDbProxyTargetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbProxyTargetGroupsInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("target_group_name", &self.target_group_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbProxyEndpointsInput {
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
     #[doc(hidden)]
@@ -44699,21 +43493,10 @@ impl DescribeDbProxyEndpointsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeDbProxyEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbProxyEndpointsInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("db_proxy_endpoint_name", &self.db_proxy_endpoint_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbProxiesInput {
     /// <p>The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned by your Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -44750,20 +43533,10 @@ impl DescribeDbProxiesInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeDbProxiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbProxiesInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbParametersInput {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
@@ -44819,21 +43592,10 @@ impl DescribeDbParametersInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbParametersInput");
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("source", &self.source);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbParameterGroupsInput {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
@@ -44878,20 +43640,10 @@ impl DescribeDbParameterGroupsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbParameterGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbParameterGroupsInput");
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbLogFilesInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
@@ -44953,23 +43705,10 @@ impl DescribeDbLogFilesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbLogFilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbLogFilesInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("filename_contains", &self.filename_contains);
-        formatter.field("file_last_written", &self.file_last_written);
-        formatter.field("file_size", &self.file_size);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbInstancesInput {
     /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -45030,20 +43769,10 @@ impl DescribeDbInstancesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbInstancesInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>Parameter input for DescribeDBInstanceAutomatedBackups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbInstanceAutomatedBackupsInput {
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
     #[doc(hidden)]
@@ -45116,25 +43845,10 @@ impl DescribeDbInstanceAutomatedBackupsInput {
         self.db_instance_automated_backups_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbInstanceAutomatedBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbInstanceAutomatedBackupsInput");
-        formatter.field("dbi_resource_id", &self.dbi_resource_id);
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.field(
-            "db_instance_automated_backups_arn",
-            &self.db_instance_automated_backups_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbEngineVersionsInput {
     /// <p>The database engine to return.</p>
     /// <p>Valid Values:</p>
@@ -45303,29 +44017,10 @@ impl DescribeDbEngineVersionsInput {
         self.include_all
     }
 }
-impl std::fmt::Debug for DescribeDbEngineVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbEngineVersionsInput");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("db_parameter_group_family", &self.db_parameter_group_family);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.field("default_only", &self.default_only);
-        formatter.field(
-            "list_supported_character_sets",
-            &self.list_supported_character_sets,
-        );
-        formatter.field("list_supported_timezones", &self.list_supported_timezones);
-        formatter.field("include_all", &self.include_all);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbClusterSnapshotsInput {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -45442,27 +44137,10 @@ impl DescribeDbClusterSnapshotsInput {
         self.include_public
     }
 }
-impl std::fmt::Debug for DescribeDbClusterSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbClusterSnapshotsInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field(
-            "db_cluster_snapshot_identifier",
-            &self.db_cluster_snapshot_identifier,
-        );
-        formatter.field("snapshot_type", &self.snapshot_type);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.field("include_shared", &self.include_shared);
-        formatter.field("include_public", &self.include_public);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbClusterSnapshotAttributesInput {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
     #[doc(hidden)]
@@ -45474,20 +44152,10 @@ impl DescribeDbClusterSnapshotAttributesInput {
         self.db_cluster_snapshot_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbClusterSnapshotAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbClusterSnapshotAttributesInput");
-        formatter.field(
-            "db_cluster_snapshot_identifier",
-            &self.db_cluster_snapshot_identifier,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbClustersInput {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -45553,21 +44221,10 @@ impl DescribeDbClustersInput {
         self.include_shared
     }
 }
-impl std::fmt::Debug for DescribeDbClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbClustersInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.field("include_shared", &self.include_shared);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbClusterParametersInput {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
@@ -45619,24 +44276,10 @@ impl DescribeDbClusterParametersInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbClusterParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbClusterParametersInput");
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("source", &self.source);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbClusterParameterGroupsInput {
     /// <p>The name of a specific DB cluster parameter group to return details for.</p>
     /// <p>Constraints:</p>
@@ -45681,23 +44324,10 @@ impl DescribeDbClusterParameterGroupsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbClusterParameterGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbClusterParameterGroupsInput");
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbClusterEndpointsInput {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
@@ -45741,24 +44371,10 @@ impl DescribeDbClusterEndpointsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbClusterEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbClusterEndpointsInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field(
-            "db_cluster_endpoint_identifier",
-            &self.db_cluster_endpoint_identifier,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDbClusterBacktracksInput {
     /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -45846,21 +44462,10 @@ impl DescribeDbClusterBacktracksInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDbClusterBacktracksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDbClusterBacktracksInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("backtrack_identifier", &self.backtrack_identifier);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCertificatesInput {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the identified certificate is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -45905,31 +44510,15 @@ impl DescribeCertificatesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCertificatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCertificatesInput");
-        formatter.field("certificate_identifier", &self.certificate_identifier);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountAttributesInput {}
-impl std::fmt::Debug for DescribeAccountAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountAttributesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterDbProxyTargetsInput {
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
     #[doc(hidden)]
@@ -45962,20 +44551,10 @@ impl DeregisterDbProxyTargetsInput {
         self.db_cluster_identifiers.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterDbProxyTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterDbProxyTargetsInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("target_group_name", &self.target_group_name);
-        formatter.field("db_instance_identifiers", &self.db_instance_identifiers);
-        formatter.field("db_cluster_identifiers", &self.db_cluster_identifiers);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOptionGroupInput {
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
@@ -45991,17 +44570,10 @@ impl DeleteOptionGroupInput {
         self.option_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOptionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOptionGroupInput");
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGlobalClusterInput {
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
     #[doc(hidden)]
@@ -46013,17 +44585,10 @@ impl DeleteGlobalClusterInput {
         self.global_cluster_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGlobalClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGlobalClusterInput");
-        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the RDS event notification subscription you want to delete.</p>
     #[doc(hidden)]
@@ -46035,17 +44600,10 @@ impl DeleteEventSubscriptionInput {
         self.subscription_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventSubscriptionInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbSubnetGroupInput {
     /// <p>The name of the database subnet group to delete.</p> <note>
     /// <p>You can't delete the default subnet group.</p>
@@ -46065,17 +44623,10 @@ impl DeleteDbSubnetGroupInput {
         self.db_subnet_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbSubnetGroupInput");
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbSnapshotInput {
     /// <p>The DB snapshot identifier.</p>
     /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
@@ -46089,17 +44640,10 @@ impl DeleteDbSnapshotInput {
         self.db_snapshot_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbSnapshotInput");
-        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbSecurityGroupInput {
     /// <p>The name of the DB security group to delete.</p> <note>
     /// <p>You can't delete the default DB security group.</p>
@@ -46129,17 +44673,10 @@ impl DeleteDbSecurityGroupInput {
         self.db_security_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbSecurityGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbSecurityGroupInput");
-        formatter.field("db_security_group_name", &self.db_security_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbProxyEndpointInput {
     /// <p>The name of the DB proxy endpoint to delete.</p>
     #[doc(hidden)]
@@ -46151,17 +44688,10 @@ impl DeleteDbProxyEndpointInput {
         self.db_proxy_endpoint_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbProxyEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbProxyEndpointInput");
-        formatter.field("db_proxy_endpoint_name", &self.db_proxy_endpoint_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbProxyInput {
     /// <p>The name of the DB proxy to delete.</p>
     #[doc(hidden)]
@@ -46173,17 +44703,10 @@ impl DeleteDbProxyInput {
         self.db_proxy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbProxyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbProxyInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -46207,17 +44730,10 @@ impl DeleteDbParameterGroupInput {
         self.db_parameter_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbParameterGroupInput");
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbInstanceAutomatedBackupInput {
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -46238,21 +44754,10 @@ impl DeleteDbInstanceAutomatedBackupInput {
         self.db_instance_automated_backups_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbInstanceAutomatedBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbInstanceAutomatedBackupInput");
-        formatter.field("dbi_resource_id", &self.dbi_resource_id);
-        formatter.field(
-            "db_instance_automated_backups_arn",
-            &self.db_instance_automated_backups_arn,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbInstanceInput {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -46323,23 +44828,10 @@ impl DeleteDbInstanceInput {
         self.delete_automated_backups
     }
 }
-impl std::fmt::Debug for DeleteDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbInstanceInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("skip_final_snapshot", &self.skip_final_snapshot);
-        formatter.field(
-            "final_db_snapshot_identifier",
-            &self.final_db_snapshot_identifier,
-        );
-        formatter.field("delete_automated_backups", &self.delete_automated_backups);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
@@ -46353,20 +44845,10 @@ impl DeleteDbClusterSnapshotInput {
         self.db_cluster_snapshot_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbClusterSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbClusterSnapshotInput");
-        formatter.field(
-            "db_cluster_snapshot_identifier",
-            &self.db_cluster_snapshot_identifier,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -46390,20 +44872,10 @@ impl DeleteDbClusterParameterGroupInput {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbClusterParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbClusterParameterGroupInput");
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbClusterEndpointInput {
     /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
@@ -46415,20 +44887,10 @@ impl DeleteDbClusterEndpointInput {
         self.db_cluster_endpoint_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbClusterEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbClusterEndpointInput");
-        formatter.field(
-            "db_cluster_endpoint_identifier",
-            &self.db_cluster_endpoint_identifier,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbClusterInput {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -46482,22 +44944,10 @@ impl DeleteDbClusterInput {
         self.final_db_snapshot_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("skip_final_snapshot", &self.skip_final_snapshot);
-        formatter.field(
-            "final_db_snapshot_identifier",
-            &self.final_db_snapshot_identifier,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomDbEngineVersionInput {
     /// <p>The database engine. The only supported engine is <code>custom-oracle-ee</code>.</p>
     #[doc(hidden)]
@@ -46516,18 +44966,10 @@ impl DeleteCustomDbEngineVersionInput {
         self.engine_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomDbEngineVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomDbEngineVersionInput");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOptionGroupInput {
     /// <p>Specifies the name of the option group to be created.</p>
     /// <p>Constraints:</p>
@@ -46609,21 +45051,10 @@ impl CreateOptionGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOptionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOptionGroupInput");
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("engine_name", &self.engine_name);
-        formatter.field("major_engine_version", &self.major_engine_version);
-        formatter.field("option_group_description", &self.option_group_description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGlobalClusterInput {
     /// <p>The cluster identifier of the new global database cluster.</p>
     #[doc(hidden)]
@@ -46677,26 +45108,10 @@ impl CreateGlobalClusterInput {
         self.storage_encrypted
     }
 }
-impl std::fmt::Debug for CreateGlobalClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGlobalClusterInput");
-        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
-        formatter.field(
-            "source_db_cluster_identifier",
-            &self.source_db_cluster_identifier,
-        );
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventSubscriptionInput {
     /// <p>The name of the subscription.</p>
     /// <p>Constraints: The name must be less than 255 characters.</p>
@@ -46776,23 +45191,10 @@ impl CreateEventSubscriptionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEventSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventSubscriptionInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("source_ids", &self.source_ids);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -46839,23 +45241,10 @@ impl CreateDbSubnetGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbSubnetGroupInput");
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field(
-            "db_subnet_group_description",
-            &self.db_subnet_group_description,
-        );
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbSnapshotInput {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
@@ -46905,19 +45294,10 @@ impl CreateDbSnapshotInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbSnapshotInput");
-        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbSecurityGroupInput {
     /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -46959,22 +45339,10 @@ impl CreateDbSecurityGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbSecurityGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbSecurityGroupInput");
-        formatter.field("db_security_group_name", &self.db_security_group_name);
-        formatter.field(
-            "db_security_group_description",
-            &self.db_security_group_description,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbProxyEndpointInput {
     /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
     #[doc(hidden)]
@@ -47021,22 +45389,10 @@ impl CreateDbProxyEndpointInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbProxyEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbProxyEndpointInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("db_proxy_endpoint_name", &self.db_proxy_endpoint_name);
-        formatter.field("vpc_subnet_ids", &self.vpc_subnet_ids);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("target_role", &self.target_role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbProxyInput {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     #[doc(hidden)]
@@ -47111,26 +45467,10 @@ impl CreateDbProxyInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbProxyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbProxyInput");
-        formatter.field("db_proxy_name", &self.db_proxy_name);
-        formatter.field("engine_family", &self.engine_family);
-        formatter.field("auth", &self.auth);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("vpc_subnet_ids", &self.vpc_subnet_ids);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("require_tls", &self.require_tls);
-        formatter.field("idle_client_timeout", &self.idle_client_timeout);
-        formatter.field("debug_logging", &self.debug_logging);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -47227,20 +45567,10 @@ impl CreateDbParameterGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbParameterGroupInput");
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("db_parameter_group_family", &self.db_parameter_group_family);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbInstanceReadReplicaInput {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
@@ -47725,77 +46055,10 @@ impl CreateDbInstanceReadReplicaInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbInstanceReadReplicaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbInstanceReadReplicaInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field(
-            "source_db_instance_identifier",
-            &self.source_db_instance_identifier,
-        );
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("port", &self.port);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("iops", &self.iops);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("tags", &self.tags);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("monitoring_interval", &self.monitoring_interval);
-        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("pre_signed_url", &self.pre_signed_url);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field(
-            "enable_performance_insights",
-            &self.enable_performance_insights,
-        );
-        formatter.field(
-            "performance_insights_kms_key_id",
-            &self.performance_insights_kms_key_id,
-        );
-        formatter.field(
-            "performance_insights_retention_period",
-            &self.performance_insights_retention_period,
-        );
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field("processor_features", &self.processor_features);
-        formatter.field(
-            "use_default_processor_features",
-            &self.use_default_processor_features,
-        );
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field("replica_mode", &self.replica_mode);
-        formatter.field("max_allocated_storage", &self.max_allocated_storage);
-        formatter.field(
-            "custom_iam_instance_profile",
-            &self.custom_iam_instance_profile,
-        );
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
     /// <p> <b>MySQL</b> </p>
@@ -48913,91 +47176,10 @@ impl CreateDbInstanceInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbInstanceInput");
-        formatter.field("db_name", &self.db_name);
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("engine", &self.engine);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("db_security_groups", &self.db_security_groups);
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field("port", &self.port);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("license_model", &self.license_model);
-        formatter.field("iops", &self.iops);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("character_set_name", &self.character_set_name);
-        formatter.field("nchar_character_set_name", &self.nchar_character_set_name);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("tags", &self.tags);
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("tde_credential_arn", &self.tde_credential_arn);
-        formatter.field("tde_credential_password", &self.tde_credential_password);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("domain", &self.domain);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("monitoring_interval", &self.monitoring_interval);
-        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field("promotion_tier", &self.promotion_tier);
-        formatter.field("timezone", &self.timezone);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field(
-            "enable_performance_insights",
-            &self.enable_performance_insights,
-        );
-        formatter.field(
-            "performance_insights_kms_key_id",
-            &self.performance_insights_kms_key_id,
-        );
-        formatter.field(
-            "performance_insights_retention_period",
-            &self.performance_insights_retention_period,
-        );
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field("processor_features", &self.processor_features);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("max_allocated_storage", &self.max_allocated_storage);
-        formatter.field("enable_customer_owned_ip", &self.enable_customer_owned_ip);
-        formatter.field(
-            "custom_iam_instance_profile",
-            &self.custom_iam_instance_profile,
-        );
-        formatter.field("backup_target", &self.backup_target);
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -49047,22 +47229,10 @@ impl CreateDbClusterSnapshotInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbClusterSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbClusterSnapshotInput");
-        formatter.field(
-            "db_cluster_snapshot_identifier",
-            &self.db_cluster_snapshot_identifier,
-        );
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -49153,23 +47323,10 @@ impl CreateDbClusterParameterGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbClusterParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbClusterParameterGroupInput");
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("db_parameter_group_family", &self.db_parameter_group_family);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbClusterEndpointInput {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
@@ -49216,25 +47373,10 @@ impl CreateDbClusterEndpointInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbClusterEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbClusterEndpointInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field(
-            "db_cluster_endpoint_identifier",
-            &self.db_cluster_endpoint_identifier,
-        );
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("static_members", &self.static_members);
-        formatter.field("excluded_members", &self.excluded_members);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.</p>
     /// <p>For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -50002,95 +48144,10 @@ impl CreateDbClusterInput {
         self.network_type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDbClusterInput");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("character_set_name", &self.character_set_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("port", &self.port);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field(
-            "replication_source_identifier",
-            &self.replication_source_identifier,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("pre_signed_url", &self.pre_signed_url);
-        formatter.field(
-            "enable_iam_database_authentication",
-            &self.enable_iam_database_authentication,
-        );
-        formatter.field("backtrack_window", &self.backtrack_window);
-        formatter.field(
-            "enable_cloudwatch_logs_exports",
-            &self.enable_cloudwatch_logs_exports,
-        );
-        formatter.field("engine_mode", &self.engine_mode);
-        formatter.field("scaling_configuration", &self.scaling_configuration);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
-        formatter.field("enable_http_endpoint", &self.enable_http_endpoint);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
-        formatter.field(
-            "enable_global_write_forwarding",
-            &self.enable_global_write_forwarding,
-        );
-        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("iops", &self.iops);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("monitoring_interval", &self.monitoring_interval);
-        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
-        formatter.field(
-            "enable_performance_insights",
-            &self.enable_performance_insights,
-        );
-        formatter.field(
-            "performance_insights_kms_key_id",
-            &self.performance_insights_kms_key_id,
-        );
-        formatter.field(
-            "performance_insights_retention_period",
-            &self.performance_insights_retention_period,
-        );
-        formatter.field(
-            "serverless_v2_scaling_configuration",
-            &self.serverless_v2_scaling_configuration,
-        );
-        formatter.field("network_type", &self.network_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomDbEngineVersionInput {
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
     #[doc(hidden)]
@@ -50223,30 +48280,10 @@ impl CreateCustomDbEngineVersionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCustomDbEngineVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomDbEngineVersionInput");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "database_installation_files_s3_bucket_name",
-            &self.database_installation_files_s3_bucket_name,
-        );
-        formatter.field(
-            "database_installation_files_s3_prefix",
-            &self.database_installation_files_s3_prefix,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("description", &self.description);
-        formatter.field("manifest", &self.manifest);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyOptionGroupInput {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
@@ -50303,29 +48340,10 @@ impl CopyOptionGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CopyOptionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyOptionGroupInput");
-        formatter.field(
-            "source_option_group_identifier",
-            &self.source_option_group_identifier,
-        );
-        formatter.field(
-            "target_option_group_identifier",
-            &self.target_option_group_identifier,
-        );
-        formatter.field(
-            "target_option_group_description",
-            &self.target_option_group_description,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyDbSnapshotInput {
     /// <p>The identifier for the source DB snapshot.</p>
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier. For example, you might specify <code>rds:mysql-instance1-snapshot-20130805</code>.</p>
@@ -50456,33 +48474,10 @@ impl CopyDbSnapshotInput {
         self.target_custom_availability_zone.as_deref()
     }
 }
-impl std::fmt::Debug for CopyDbSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyDbSnapshotInput");
-        formatter.field(
-            "source_db_snapshot_identifier",
-            &self.source_db_snapshot_identifier,
-        );
-        formatter.field(
-            "target_db_snapshot_identifier",
-            &self.target_db_snapshot_identifier,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("copy_tags", &self.copy_tags);
-        formatter.field("pre_signed_url", &self.pre_signed_url);
-        formatter.field("option_group_name", &self.option_group_name);
-        formatter.field(
-            "target_custom_availability_zone",
-            &self.target_custom_availability_zone,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyDbParameterGroupInput {
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
@@ -50539,29 +48534,10 @@ impl CopyDbParameterGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CopyDbParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyDbParameterGroupInput");
-        formatter.field(
-            "source_db_parameter_group_identifier",
-            &self.source_db_parameter_group_identifier,
-        );
-        formatter.field(
-            "target_db_parameter_group_identifier",
-            &self.target_db_parameter_group_identifier,
-        );
-        formatter.field(
-            "target_db_parameter_group_description",
-            &self.target_db_parameter_group_description,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.</p>
     /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
@@ -50666,28 +48642,10 @@ impl CopyDbClusterSnapshotInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CopyDbClusterSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyDbClusterSnapshotInput");
-        formatter.field(
-            "source_db_cluster_snapshot_identifier",
-            &self.source_db_cluster_snapshot_identifier,
-        );
-        formatter.field(
-            "target_db_cluster_snapshot_identifier",
-            &self.target_db_cluster_snapshot_identifier,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("pre_signed_url", &self.pre_signed_url);
-        formatter.field("copy_tags", &self.copy_tags);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyDbClusterParameterGroupInput {
     /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
@@ -50745,29 +48703,10 @@ impl CopyDbClusterParameterGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CopyDbClusterParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyDbClusterParameterGroupInput");
-        formatter.field(
-            "source_db_cluster_parameter_group_identifier",
-            &self.source_db_cluster_parameter_group_identifier,
-        );
-        formatter.field(
-            "target_db_cluster_parameter_group_identifier",
-            &self.target_db_cluster_parameter_group_identifier,
-        );
-        formatter.field(
-            "target_db_cluster_parameter_group_description",
-            &self.target_db_cluster_parameter_group_description,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelExportTaskInput {
     /// <p>The identifier of the snapshot export task to cancel.</p>
     #[doc(hidden)]
@@ -50779,17 +48718,10 @@ impl CancelExportTaskInput {
         self.export_task_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for CancelExportTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelExportTaskInput");
-        formatter.field("export_task_identifier", &self.export_task_identifier);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BacktrackDbClusterInput {
     /// <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -50852,23 +48784,10 @@ impl BacktrackDbClusterInput {
         self.use_earliest_time_on_point_in_time_unavailable
     }
 }
-impl std::fmt::Debug for BacktrackDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BacktrackDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("backtrack_to", &self.backtrack_to);
-        formatter.field("force", &self.force);
-        formatter.field(
-            "use_earliest_time_on_point_in_time_unavailable",
-            &self.use_earliest_time_on_point_in_time_unavailable,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizeDbSecurityGroupIngressInput {
     /// <p>The name of the DB security group to add authorization to.</p>
     #[doc(hidden)]
@@ -50908,24 +48827,10 @@ impl AuthorizeDbSecurityGroupIngressInput {
         self.ec2_security_group_owner_id.as_deref()
     }
 }
-impl std::fmt::Debug for AuthorizeDbSecurityGroupIngressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizeDbSecurityGroupIngressInput");
-        formatter.field("db_security_group_name", &self.db_security_group_name);
-        formatter.field("cidrip", &self.cidrip);
-        formatter.field("ec2_security_group_name", &self.ec2_security_group_name);
-        formatter.field("ec2_security_group_id", &self.ec2_security_group_id);
-        formatter.field(
-            "ec2_security_group_owner_id",
-            &self.ec2_security_group_owner_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionInput {
     /// <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
     #[doc(hidden)]
@@ -50965,19 +48870,10 @@ impl ApplyPendingMaintenanceActionInput {
         self.opt_in_type.as_deref()
     }
 }
-impl std::fmt::Debug for ApplyPendingMaintenanceActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplyPendingMaintenanceActionInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("apply_action", &self.apply_action);
-        formatter.field("opt_in_type", &self.opt_in_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceInput {
     /// <p>The Amazon RDS resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
     #[doc(hidden)]
@@ -50996,18 +48892,10 @@ impl AddTagsToResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsToResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToResourceInput");
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddSourceIdentifierToSubscriptionInput {
     /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
     #[doc(hidden)]
@@ -51046,18 +48934,10 @@ impl AddSourceIdentifierToSubscriptionInput {
         self.source_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for AddSourceIdentifierToSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddSourceIdentifierToSubscriptionInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddRoleToDbInstanceInput {
     /// <p>The name of the DB instance to associate the IAM role with.</p>
     #[doc(hidden)]
@@ -51083,19 +48963,10 @@ impl AddRoleToDbInstanceInput {
         self.feature_name.as_deref()
     }
 }
-impl std::fmt::Debug for AddRoleToDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddRoleToDbInstanceInput");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("feature_name", &self.feature_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddRoleToDbClusterInput {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
     #[doc(hidden)]
@@ -51119,14 +48990,5 @@ impl AddRoleToDbClusterInput {
     /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(&self) -> std::option::Option<&str> {
         self.feature_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AddRoleToDbClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddRoleToDbClusterInput");
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("feature_name", &self.feature_name);
-        formatter.finish()
     }
 }

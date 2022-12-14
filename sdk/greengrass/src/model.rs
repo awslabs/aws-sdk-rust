@@ -2,7 +2,7 @@
 
 /// Details about the error.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetail {
     /// A detailed error code.
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ErrorDetail {
     /// A detailed error message.
     pub fn detailed_error_message(&self) -> std::option::Option<&str> {
         self.detailed_error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetail");
-        formatter.field("detailed_error_code", &self.detailed_error_code);
-        formatter.field("detailed_error_message", &self.detailed_error_message);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
@@ -83,7 +75,7 @@ impl ErrorDetail {
 
 /// Configuration settings for running telemetry.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TelemetryConfigurationUpdate {
     /// Configure telemetry to be on or off.
     #[doc(hidden)]
@@ -93,13 +85,6 @@ impl TelemetryConfigurationUpdate {
     /// Configure telemetry to be on or off.
     pub fn telemetry(&self) -> std::option::Option<&crate::model::Telemetry> {
         self.telemetry.as_ref()
-    }
-}
-impl std::fmt::Debug for TelemetryConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TelemetryConfigurationUpdate");
-        formatter.field("telemetry", &self.telemetry);
-        formatter.finish()
     }
 }
 /// See [`TelemetryConfigurationUpdate`](crate::model::TelemetryConfigurationUpdate).
@@ -231,7 +216,7 @@ impl AsRef<str> for Telemetry {
 
 /// Information about a Greengrass core's connectivity.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectivityInfo {
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
     #[doc(hidden)]
@@ -262,16 +247,6 @@ impl ConnectivityInfo {
     /// The port of the Greengrass core. Usually 8883.
     pub fn port_number(&self) -> i32 {
         self.port_number
-    }
-}
-impl std::fmt::Debug for ConnectivityInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectivityInfo");
-        formatter.field("host_address", &self.host_address);
-        formatter.field("id", &self.id);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("port_number", &self.port_number);
-        formatter.finish()
     }
 }
 /// See [`ConnectivityInfo`](crate::model::ConnectivityInfo).
@@ -346,7 +321,7 @@ impl ConnectivityInfo {
 
 /// Information about a version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersionInformation {
     /// The ARN of the version.
     #[doc(hidden)]
@@ -377,16 +352,6 @@ impl VersionInformation {
     /// The ID of the version.
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for VersionInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersionInformation");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`VersionInformation`](crate::model::VersionInformation).
@@ -464,7 +429,7 @@ impl VersionInformation {
 
 /// Information about a definition.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefinitionInformation {
     /// The ARN of the definition.
     #[doc(hidden)]
@@ -527,20 +492,6 @@ impl DefinitionInformation {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for DefinitionInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefinitionInformation");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("id", &self.id);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("latest_version", &self.latest_version);
-        formatter.field("latest_version_arn", &self.latest_version_arn);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DefinitionInformation`](crate::model::DefinitionInformation).
@@ -692,7 +643,7 @@ impl DefinitionInformation {
 
 /// Information about a group.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupInformation {
     /// The ARN of the group.
     #[doc(hidden)]
@@ -744,19 +695,6 @@ impl GroupInformation {
     /// The name of the group.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupInformation");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("id", &self.id);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("latest_version", &self.latest_version);
-        formatter.field("latest_version_arn", &self.latest_version_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`GroupInformation`](crate::model::GroupInformation).
@@ -879,7 +817,7 @@ impl GroupInformation {
 
 /// Information about a certificate authority for a group.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupCertificateAuthorityProperties {
     /// The ARN of the certificate authority for the group.
     #[doc(hidden)]
@@ -896,20 +834,6 @@ impl GroupCertificateAuthorityProperties {
     /// The ID of the certificate authority for the group.
     pub fn group_certificate_authority_id(&self) -> std::option::Option<&str> {
         self.group_certificate_authority_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupCertificateAuthorityProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupCertificateAuthorityProperties");
-        formatter.field(
-            "group_certificate_authority_arn",
-            &self.group_certificate_authority_arn,
-        );
-        formatter.field(
-            "group_certificate_authority_id",
-            &self.group_certificate_authority_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`GroupCertificateAuthorityProperties`](crate::model::GroupCertificateAuthorityProperties).
@@ -972,7 +896,7 @@ impl GroupCertificateAuthorityProperties {
 
 /// Information about a deployment.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Deployment {
     /// The time, in milliseconds since the epoch, when the deployment was created.
     #[doc(hidden)]
@@ -1010,17 +934,6 @@ impl Deployment {
     /// The ARN of the group for this deployment.
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Deployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Deployment");
-        formatter.field("created_at", &self.created_at);
-        formatter.field("deployment_arn", &self.deployment_arn);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.finish()
     }
 }
 /// See [`Deployment`](crate::model::Deployment).
@@ -1221,7 +1134,7 @@ impl AsRef<str> for DeploymentType {
 
 /// Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BulkDeployment {
     /// The ARN of the bulk deployment.
     #[doc(hidden)]
@@ -1245,15 +1158,6 @@ impl BulkDeployment {
     /// The time, in ISO format, when the deployment was created.
     pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
-    }
-}
-impl std::fmt::Debug for BulkDeployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BulkDeployment");
-        formatter.field("bulk_deployment_arn", &self.bulk_deployment_arn);
-        formatter.field("bulk_deployment_id", &self.bulk_deployment_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`BulkDeployment`](crate::model::BulkDeployment).
@@ -1322,7 +1226,7 @@ impl BulkDeployment {
 
 /// Information about an individual group deployment in a bulk deployment operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BulkDeploymentResult {
     /// The time, in ISO format, when the deployment was created.
     #[doc(hidden)]
@@ -1381,20 +1285,6 @@ impl BulkDeploymentResult {
     /// The ARN of the Greengrass group.
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for BulkDeploymentResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BulkDeploymentResult");
-        formatter.field("created_at", &self.created_at);
-        formatter.field("deployment_arn", &self.deployment_arn);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("error_details", &self.error_details);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.finish()
     }
 }
 /// See [`BulkDeploymentResult`](crate::model::BulkDeploymentResult).
@@ -1541,7 +1431,7 @@ impl BulkDeploymentResult {
 
 /// Runtime configuration for a thing.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimeConfiguration {
     /// Configuration for telemetry service.
     #[doc(hidden)]
@@ -1553,13 +1443,6 @@ impl RuntimeConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::TelemetryConfiguration> {
         self.telemetry_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for RuntimeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuntimeConfiguration");
-        formatter.field("telemetry_configuration", &self.telemetry_configuration);
-        formatter.finish()
     }
 }
 /// See [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
@@ -1605,7 +1488,7 @@ impl RuntimeConfiguration {
 
 /// Configuration settings for running telemetry.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TelemetryConfiguration {
     /// Synchronization status of the device reported configuration with the desired configuration.
     #[doc(hidden)]
@@ -1624,14 +1507,6 @@ impl TelemetryConfiguration {
     /// Configure telemetry to be on or off.
     pub fn telemetry(&self) -> std::option::Option<&crate::model::Telemetry> {
         self.telemetry.as_ref()
-    }
-}
-impl std::fmt::Debug for TelemetryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TelemetryConfiguration");
-        formatter.field("configuration_sync_status", &self.configuration_sync_status);
-        formatter.field("telemetry", &self.telemetry);
-        formatter.finish()
     }
 }
 /// See [`TelemetryConfiguration`](crate::model::TelemetryConfiguration).
@@ -1784,7 +1659,7 @@ impl AsRef<str> for ConfigurationSyncStatus {
 
 /// Information about a subscription definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionDefinitionVersion {
     /// A list of subscriptions.
     #[doc(hidden)]
@@ -1794,13 +1669,6 @@ impl SubscriptionDefinitionVersion {
     /// A list of subscriptions.
     pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
         self.subscriptions.as_deref()
-    }
-}
-impl std::fmt::Debug for SubscriptionDefinitionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionDefinitionVersion");
-        formatter.field("subscriptions", &self.subscriptions);
-        formatter.finish()
     }
 }
 /// See [`SubscriptionDefinitionVersion`](crate::model::SubscriptionDefinitionVersion).
@@ -1848,7 +1716,7 @@ impl SubscriptionDefinitionVersion {
 
 /// Information about a subscription.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subscription {
     /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     #[doc(hidden)]
@@ -1879,16 +1747,6 @@ impl Subscription {
     /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
-    }
-}
-impl std::fmt::Debug for Subscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subscription");
-        formatter.field("id", &self.id);
-        formatter.field("source", &self.source);
-        formatter.field("subject", &self.subject);
-        formatter.field("target", &self.target);
-        formatter.finish()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
@@ -1963,7 +1821,7 @@ impl Subscription {
 
 /// Information about a resource definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDefinitionVersion {
     /// A list of resources.
     #[doc(hidden)]
@@ -1973,13 +1831,6 @@ impl ResourceDefinitionVersion {
     /// A list of resources.
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceDefinitionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDefinitionVersion");
-        formatter.field("resources", &self.resources);
-        formatter.finish()
     }
 }
 /// See [`ResourceDefinitionVersion`](crate::model::ResourceDefinitionVersion).
@@ -2027,7 +1878,7 @@ impl ResourceDefinitionVersion {
 
 /// Information about a resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
     #[doc(hidden)]
@@ -2053,15 +1904,6 @@ impl Resource {
         &self,
     ) -> std::option::Option<&crate::model::ResourceDataContainer> {
         self.resource_data_container.as_ref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("resource_data_container", &self.resource_data_container);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -2131,7 +1973,7 @@ impl Resource {
 
 /// A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataContainer {
     /// Attributes that define the local device resource.
     #[doc(hidden)]
@@ -2183,32 +2025,6 @@ impl ResourceDataContainer {
         &self,
     ) -> std::option::Option<&crate::model::SecretsManagerSecretResourceData> {
         self.secrets_manager_secret_resource_data.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceDataContainer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataContainer");
-        formatter.field(
-            "local_device_resource_data",
-            &self.local_device_resource_data,
-        );
-        formatter.field(
-            "local_volume_resource_data",
-            &self.local_volume_resource_data,
-        );
-        formatter.field(
-            "s3_machine_learning_model_resource_data",
-            &self.s3_machine_learning_model_resource_data,
-        );
-        formatter.field(
-            "sage_maker_machine_learning_model_resource_data",
-            &self.sage_maker_machine_learning_model_resource_data,
-        );
-        formatter.field(
-            "secrets_manager_secret_resource_data",
-            &self.secrets_manager_secret_resource_data,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResourceDataContainer`](crate::model::ResourceDataContainer).
@@ -2332,7 +2148,7 @@ impl ResourceDataContainer {
 
 /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecretsManagerSecretResourceData {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
     #[doc(hidden)]
@@ -2352,17 +2168,6 @@ impl SecretsManagerSecretResourceData {
         &self,
     ) -> std::option::Option<&[std::string::String]> {
         self.additional_staging_labels_to_download.as_deref()
-    }
-}
-impl std::fmt::Debug for SecretsManagerSecretResourceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecretsManagerSecretResourceData");
-        formatter.field("arn", &self.arn);
-        formatter.field(
-            "additional_staging_labels_to_download",
-            &self.additional_staging_labels_to_download,
-        );
-        formatter.finish()
     }
 }
 /// See [`SecretsManagerSecretResourceData`](crate::model::SecretsManagerSecretResourceData).
@@ -2428,7 +2233,7 @@ impl SecretsManagerSecretResourceData {
 
 /// Attributes that define an Amazon SageMaker machine learning resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SageMakerMachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
     #[doc(hidden)]
@@ -2454,15 +2259,6 @@ impl SageMakerMachineLearningModelResourceData {
     /// The ARN of the Amazon SageMaker training job that represents the source model.
     pub fn sage_maker_job_arn(&self) -> std::option::Option<&str> {
         self.sage_maker_job_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SageMakerMachineLearningModelResourceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SageMakerMachineLearningModelResourceData");
-        formatter.field("destination_path", &self.destination_path);
-        formatter.field("owner_setting", &self.owner_setting);
-        formatter.field("sage_maker_job_arn", &self.sage_maker_job_arn);
-        formatter.finish()
     }
 }
 /// See [`SageMakerMachineLearningModelResourceData`](crate::model::SageMakerMachineLearningModelResourceData).
@@ -2534,7 +2330,7 @@ impl SageMakerMachineLearningModelResourceData {
 
 /// The owner setting for downloaded machine learning resources.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDownloadOwnerSetting {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
     #[doc(hidden)]
@@ -2551,14 +2347,6 @@ impl ResourceDownloadOwnerSetting {
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
     pub fn group_permission(&self) -> std::option::Option<&crate::model::Permission> {
         self.group_permission.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceDownloadOwnerSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDownloadOwnerSetting");
-        formatter.field("group_owner", &self.group_owner);
-        formatter.field("group_permission", &self.group_permission);
-        formatter.finish()
     }
 }
 /// See [`ResourceDownloadOwnerSetting`](crate::model::ResourceDownloadOwnerSetting).
@@ -2702,7 +2490,7 @@ impl AsRef<str> for Permission {
 
 /// Attributes that define an Amazon S3 machine learning resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3MachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
     #[doc(hidden)]
@@ -2728,15 +2516,6 @@ impl S3MachineLearningModelResourceData {
     /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for S3MachineLearningModelResourceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3MachineLearningModelResourceData");
-        formatter.field("destination_path", &self.destination_path);
-        formatter.field("owner_setting", &self.owner_setting);
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.finish()
     }
 }
 /// See [`S3MachineLearningModelResourceData`](crate::model::S3MachineLearningModelResourceData).
@@ -2805,7 +2584,7 @@ impl S3MachineLearningModelResourceData {
 
 /// Attributes that define a local volume resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocalVolumeResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
     #[doc(hidden)]
@@ -2829,15 +2608,6 @@ impl LocalVolumeResourceData {
     /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
     pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
-    }
-}
-impl std::fmt::Debug for LocalVolumeResourceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocalVolumeResourceData");
-        formatter.field("destination_path", &self.destination_path);
-        formatter.field("group_owner_setting", &self.group_owner_setting);
-        formatter.field("source_path", &self.source_path);
-        formatter.finish()
     }
 }
 /// See [`LocalVolumeResourceData`](crate::model::LocalVolumeResourceData).
@@ -2906,7 +2676,7 @@ impl LocalVolumeResourceData {
 
 /// Group owner related settings for local resources.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupOwnerSetting {
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
     #[doc(hidden)]
@@ -2923,14 +2693,6 @@ impl GroupOwnerSetting {
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
     pub fn group_owner(&self) -> std::option::Option<&str> {
         self.group_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupOwnerSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupOwnerSetting");
-        formatter.field("auto_add_group_owner", &self.auto_add_group_owner);
-        formatter.field("group_owner", &self.group_owner);
-        formatter.finish()
     }
 }
 /// See [`GroupOwnerSetting`](crate::model::GroupOwnerSetting).
@@ -2981,7 +2743,7 @@ impl GroupOwnerSetting {
 
 /// Attributes that define a local device resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocalDeviceResourceData {
     /// Group/owner related settings for local resources.
     #[doc(hidden)]
@@ -2998,14 +2760,6 @@ impl LocalDeviceResourceData {
     /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
     pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
-    }
-}
-impl std::fmt::Debug for LocalDeviceResourceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocalDeviceResourceData");
-        formatter.field("group_owner_setting", &self.group_owner_setting);
-        formatter.field("source_path", &self.source_path);
-        formatter.finish()
     }
 }
 /// See [`LocalDeviceResourceData`](crate::model::LocalDeviceResourceData).
@@ -3059,7 +2813,7 @@ impl LocalDeviceResourceData {
 
 /// Information about a logger definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggerDefinitionVersion {
     /// A list of loggers.
     #[doc(hidden)]
@@ -3069,13 +2823,6 @@ impl LoggerDefinitionVersion {
     /// A list of loggers.
     pub fn loggers(&self) -> std::option::Option<&[crate::model::Logger]> {
         self.loggers.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggerDefinitionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggerDefinitionVersion");
-        formatter.field("loggers", &self.loggers);
-        formatter.finish()
     }
 }
 /// See [`LoggerDefinitionVersion`](crate::model::LoggerDefinitionVersion).
@@ -3123,7 +2870,7 @@ impl LoggerDefinitionVersion {
 
 /// Information about a logger
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Logger {
     /// The component that will be subject to logging.
     #[doc(hidden)]
@@ -3161,17 +2908,6 @@ impl Logger {
     /// The type of log output which will be used.
     pub fn r#type(&self) -> std::option::Option<&crate::model::LoggerType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Logger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Logger");
-        formatter.field("component", &self.component);
-        formatter.field("id", &self.id);
-        formatter.field("level", &self.level);
-        formatter.field("space", &self.space);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Logger`](crate::model::Logger).
@@ -3546,7 +3282,7 @@ impl AsRef<str> for LoggerComponent {
 
 /// Information about a group version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupVersion {
     /// The ARN of the connector definition version for this group.
     #[doc(hidden)]
@@ -3598,40 +3334,6 @@ impl GroupVersion {
     /// The ARN of the subscription definition version for this group.
     pub fn subscription_definition_version_arn(&self) -> std::option::Option<&str> {
         self.subscription_definition_version_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupVersion");
-        formatter.field(
-            "connector_definition_version_arn",
-            &self.connector_definition_version_arn,
-        );
-        formatter.field(
-            "core_definition_version_arn",
-            &self.core_definition_version_arn,
-        );
-        formatter.field(
-            "device_definition_version_arn",
-            &self.device_definition_version_arn,
-        );
-        formatter.field(
-            "function_definition_version_arn",
-            &self.function_definition_version_arn,
-        );
-        formatter.field(
-            "logger_definition_version_arn",
-            &self.logger_definition_version_arn,
-        );
-        formatter.field(
-            "resource_definition_version_arn",
-            &self.resource_definition_version_arn,
-        );
-        formatter.field(
-            "subscription_definition_version_arn",
-            &self.subscription_definition_version_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`GroupVersion`](crate::model::GroupVersion).
@@ -3784,7 +3486,7 @@ impl GroupVersion {
 
 /// Information about a function definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionDefinitionVersion {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     #[doc(hidden)]
@@ -3801,14 +3503,6 @@ impl FunctionDefinitionVersion {
     /// A list of Lambda functions in this function definition version.
     pub fn functions(&self) -> std::option::Option<&[crate::model::Function]> {
         self.functions.as_deref()
-    }
-}
-impl std::fmt::Debug for FunctionDefinitionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionDefinitionVersion");
-        formatter.field("default_config", &self.default_config);
-        formatter.field("functions", &self.functions);
-        formatter.finish()
     }
 }
 /// See [`FunctionDefinitionVersion`](crate::model::FunctionDefinitionVersion).
@@ -3871,7 +3565,7 @@ impl FunctionDefinitionVersion {
 
 /// Information about a Lambda function.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Function {
     /// The ARN of the Lambda function.
     #[doc(hidden)]
@@ -3897,15 +3591,6 @@ impl Function {
     /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for Function {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Function");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("function_configuration", &self.function_configuration);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`Function`](crate::model::Function).
@@ -3974,7 +3659,7 @@ impl Function {
 
 /// The configuration of the Lambda function.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionConfiguration {
     /// The expected encoding type of the input payload for the function. The default is ''json''.
     #[doc(hidden)]
@@ -4028,19 +3713,6 @@ impl FunctionConfiguration {
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
     pub fn timeout(&self) -> i32 {
         self.timeout
-    }
-}
-impl std::fmt::Debug for FunctionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionConfiguration");
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("environment", &self.environment);
-        formatter.field("exec_args", &self.exec_args);
-        formatter.field("executable", &self.executable);
-        formatter.field("memory_size", &self.memory_size);
-        formatter.field("pinned", &self.pinned);
-        formatter.field("timeout", &self.timeout);
-        formatter.finish()
     }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -4160,7 +3832,7 @@ impl FunctionConfiguration {
 
 /// The environment configuration of the function.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionConfigurationEnvironment {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
     #[doc(hidden)]
@@ -4198,16 +3870,6 @@ impl FunctionConfigurationEnvironment {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.variables.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionConfigurationEnvironment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionConfigurationEnvironment");
-        formatter.field("access_sysfs", &self.access_sysfs);
-        formatter.field("execution", &self.execution);
-        formatter.field("resource_access_policies", &self.resource_access_policies);
-        formatter.field("variables", &self.variables);
-        formatter.finish()
     }
 }
 /// See [`FunctionConfigurationEnvironment`](crate::model::FunctionConfigurationEnvironment).
@@ -4315,7 +3977,7 @@ impl FunctionConfigurationEnvironment {
 
 /// A policy used by the function to access a resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceAccessPolicy {
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
     #[doc(hidden)]
@@ -4332,14 +3994,6 @@ impl ResourceAccessPolicy {
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceAccessPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAccessPolicy");
-        formatter.field("permission", &self.permission);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
     }
 }
 /// See [`ResourceAccessPolicy`](crate::model::ResourceAccessPolicy).
@@ -4393,7 +4047,7 @@ impl ResourceAccessPolicy {
 
 /// Configuration information that specifies how a Lambda function runs.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionExecutionConfig {
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
     #[doc(hidden)]
@@ -4410,14 +4064,6 @@ impl FunctionExecutionConfig {
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
     pub fn run_as(&self) -> std::option::Option<&crate::model::FunctionRunAsConfig> {
         self.run_as.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionExecutionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionExecutionConfig");
-        formatter.field("isolation_mode", &self.isolation_mode);
-        formatter.field("run_as", &self.run_as);
-        formatter.finish()
     }
 }
 /// See [`FunctionExecutionConfig`](crate::model::FunctionExecutionConfig).
@@ -4474,7 +4120,7 @@ impl FunctionExecutionConfig {
 
 /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionRunAsConfig {
     /// The group ID whose permissions are used to run a Lambda function.
     #[doc(hidden)]
@@ -4491,14 +4137,6 @@ impl FunctionRunAsConfig {
     /// The user ID whose permissions are used to run a Lambda function.
     pub fn uid(&self) -> i32 {
         self.uid
-    }
-}
-impl std::fmt::Debug for FunctionRunAsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionRunAsConfig");
-        formatter.field("gid", &self.gid);
-        formatter.field("uid", &self.uid);
-        formatter.finish()
     }
 }
 /// See [`FunctionRunAsConfig`](crate::model::FunctionRunAsConfig).
@@ -4731,7 +4369,7 @@ impl AsRef<str> for EncodingType {
 
 /// The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionDefaultConfig {
     /// Configuration information that specifies how a Lambda function runs.
     #[doc(hidden)]
@@ -4741,13 +4379,6 @@ impl FunctionDefaultConfig {
     /// Configuration information that specifies how a Lambda function runs.
     pub fn execution(&self) -> std::option::Option<&crate::model::FunctionDefaultExecutionConfig> {
         self.execution.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionDefaultConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionDefaultConfig");
-        formatter.field("execution", &self.execution);
-        formatter.finish()
     }
 }
 /// See [`FunctionDefaultConfig`](crate::model::FunctionDefaultConfig).
@@ -4789,7 +4420,7 @@ impl FunctionDefaultConfig {
 
 /// Configuration information that specifies how a Lambda function runs.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionDefaultExecutionConfig {
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
     #[doc(hidden)]
@@ -4806,14 +4437,6 @@ impl FunctionDefaultExecutionConfig {
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
     pub fn run_as(&self) -> std::option::Option<&crate::model::FunctionRunAsConfig> {
         self.run_as.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionDefaultExecutionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionDefaultExecutionConfig");
-        formatter.field("isolation_mode", &self.isolation_mode);
-        formatter.field("run_as", &self.run_as);
-        formatter.finish()
     }
 }
 /// See [`FunctionDefaultExecutionConfig`](crate::model::FunctionDefaultExecutionConfig).
@@ -4870,7 +4493,7 @@ impl FunctionDefaultExecutionConfig {
 
 /// Information about a device definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceDefinitionVersion {
     /// A list of devices in the definition version.
     #[doc(hidden)]
@@ -4880,13 +4503,6 @@ impl DeviceDefinitionVersion {
     /// A list of devices in the definition version.
     pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
         self.devices.as_deref()
-    }
-}
-impl std::fmt::Debug for DeviceDefinitionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceDefinitionVersion");
-        formatter.field("devices", &self.devices);
-        formatter.finish()
     }
 }
 /// See [`DeviceDefinitionVersion`](crate::model::DeviceDefinitionVersion).
@@ -4934,7 +4550,7 @@ impl DeviceDefinitionVersion {
 
 /// Information about a device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Device {
     /// The ARN of the certificate associated with the device.
     #[doc(hidden)]
@@ -4965,16 +4581,6 @@ impl Device {
     /// The thing ARN of the device.
     pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Device {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Device");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("id", &self.id);
-        formatter.field("sync_shadow", &self.sync_shadow);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.finish()
     }
 }
 /// See [`Device`](crate::model::Device).
@@ -5052,7 +4658,7 @@ impl Device {
 
 /// Information about a core definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreDefinitionVersion {
     /// A list of cores in the core definition version.
     #[doc(hidden)]
@@ -5062,13 +4668,6 @@ impl CoreDefinitionVersion {
     /// A list of cores in the core definition version.
     pub fn cores(&self) -> std::option::Option<&[crate::model::Core]> {
         self.cores.as_deref()
-    }
-}
-impl std::fmt::Debug for CoreDefinitionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreDefinitionVersion");
-        formatter.field("cores", &self.cores);
-        formatter.finish()
     }
 }
 /// See [`CoreDefinitionVersion`](crate::model::CoreDefinitionVersion).
@@ -5114,7 +4713,7 @@ impl CoreDefinitionVersion {
 
 /// Information about a core.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Core {
     /// The ARN of the certificate associated with the core.
     #[doc(hidden)]
@@ -5145,16 +4744,6 @@ impl Core {
     /// The ARN of the thing which is the core.
     pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Core {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Core");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("id", &self.id);
-        formatter.field("sync_shadow", &self.sync_shadow);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.finish()
     }
 }
 /// See [`Core`](crate::model::Core).
@@ -5232,7 +4821,7 @@ impl Core {
 
 /// Information about the connector definition version, which is a container for connectors.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorDefinitionVersion {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     #[doc(hidden)]
@@ -5242,13 +4831,6 @@ impl ConnectorDefinitionVersion {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     pub fn connectors(&self) -> std::option::Option<&[crate::model::Connector]> {
         self.connectors.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectorDefinitionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorDefinitionVersion");
-        formatter.field("connectors", &self.connectors);
-        formatter.finish()
     }
 }
 /// See [`ConnectorDefinitionVersion`](crate::model::ConnectorDefinitionVersion).
@@ -5296,7 +4878,7 @@ impl ConnectorDefinitionVersion {
 
 /// Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connector {
     /// The ARN of the connector.
     #[doc(hidden)]
@@ -5324,15 +4906,6 @@ impl Connector {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for Connector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connector");
-        formatter.field("connector_arn", &self.connector_arn);
-        formatter.field("id", &self.id);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`Connector`](crate::model::Connector).
@@ -5534,7 +5107,7 @@ impl AsRef<str> for BulkDeploymentStatus {
 
 /// Relevant metrics on input records processed during bulk deployment.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BulkDeploymentMetrics {
     /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
     #[doc(hidden)]
@@ -5558,15 +5131,6 @@ impl BulkDeploymentMetrics {
     /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
     pub fn retry_attempts(&self) -> i32 {
         self.retry_attempts
-    }
-}
-impl std::fmt::Debug for BulkDeploymentMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BulkDeploymentMetrics");
-        formatter.field("invalid_input_records", &self.invalid_input_records);
-        formatter.field("records_processed", &self.records_processed);
-        formatter.field("retry_attempts", &self.retry_attempts);
-        formatter.finish()
     }
 }
 /// See [`BulkDeploymentMetrics`](crate::model::BulkDeploymentMetrics).

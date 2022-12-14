@@ -271,7 +271,7 @@ impl AsRef<str> for RuleStatus {
 
 /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The tag key.</p>
     #[doc(hidden)]
@@ -288,14 +288,6 @@ impl ResourceTag {
     /// <p>The tag value.</p>
     pub fn resource_tag_value(&self) -> std::option::Option<&str> {
         self.resource_tag_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTag");
-        formatter.field("resource_tag_key", &self.resource_tag_key);
-        formatter.field("resource_tag_value", &self.resource_tag_value);
-        formatter.finish()
     }
 }
 /// See [`ResourceTag`](crate::model::ResourceTag).
@@ -442,7 +434,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     #[doc(hidden)]
@@ -459,14 +451,6 @@ impl RetentionPeriod {
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub fn retention_period_unit(&self) -> std::option::Option<&crate::model::RetentionPeriodUnit> {
         self.retention_period_unit.as_ref()
-    }
-}
-impl std::fmt::Debug for RetentionPeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetentionPeriod");
-        formatter.field("retention_period_value", &self.retention_period_value);
-        formatter.field("retention_period_unit", &self.retention_period_unit);
-        formatter.finish()
     }
 }
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
@@ -694,7 +678,7 @@ impl AsRef<str> for ServiceQuotaExceededExceptionReason {
 
 /// <p>Information about the tags to assign to the retention rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag key.</p>
     #[doc(hidden)]
@@ -711,14 +695,6 @@ impl Tag {
     /// <p>The tag value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -769,7 +745,7 @@ impl Tag {
 
 /// <p>Information about a Recycle Bin retention rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleSummary {
     /// <p>The unique ID of the retention rule.</p>
     #[doc(hidden)]
@@ -793,15 +769,6 @@ impl RuleSummary {
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleSummary");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("description", &self.description);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.finish()
     }
 }
 /// See [`RuleSummary`](crate::model::RuleSummary).

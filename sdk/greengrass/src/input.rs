@@ -16613,7 +16613,7 @@ impl UpdateThingRuntimeConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThingRuntimeConfigurationInput {
     /// Configuration for telemetry service.
     #[doc(hidden)]
@@ -16634,18 +16634,10 @@ impl UpdateThingRuntimeConfigurationInput {
         self.thing_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateThingRuntimeConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThingRuntimeConfigurationInput");
-        formatter.field("telemetry_configuration", &self.telemetry_configuration);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSubscriptionDefinitionInput {
     /// The name of the definition.
     #[doc(hidden)]
@@ -16664,21 +16656,10 @@ impl UpdateSubscriptionDefinitionInput {
         self.subscription_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSubscriptionDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSubscriptionDefinitionInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "subscription_definition_id",
-            &self.subscription_definition_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceDefinitionInput {
     /// The name of the definition.
     #[doc(hidden)]
@@ -16697,18 +16678,10 @@ impl UpdateResourceDefinitionInput {
         self.resource_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourceDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceDefinitionInput");
-        formatter.field("name", &self.name);
-        formatter.field("resource_definition_id", &self.resource_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLoggerDefinitionInput {
     /// The ID of the logger definition.
     #[doc(hidden)]
@@ -16727,18 +16700,10 @@ impl UpdateLoggerDefinitionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLoggerDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLoggerDefinitionInput");
-        formatter.field("logger_definition_id", &self.logger_definition_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupCertificateConfigurationInput {
     /// The amount of time remaining before the certificate expires, in milliseconds.
     #[doc(hidden)]
@@ -16757,21 +16722,10 @@ impl UpdateGroupCertificateConfigurationInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGroupCertificateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupCertificateConfigurationInput");
-        formatter.field(
-            "certificate_expiry_in_milliseconds",
-            &self.certificate_expiry_in_milliseconds,
-        );
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -16790,18 +16744,10 @@ impl UpdateGroupInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
     #[doc(hidden)]
@@ -16820,18 +16766,10 @@ impl UpdateFunctionDefinitionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFunctionDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionDefinitionInput");
-        formatter.field("function_definition_id", &self.function_definition_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeviceDefinitionInput {
     /// The ID of the device definition.
     #[doc(hidden)]
@@ -16850,18 +16788,10 @@ impl UpdateDeviceDefinitionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDeviceDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeviceDefinitionInput");
-        formatter.field("device_definition_id", &self.device_definition_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCoreDefinitionInput {
     /// The ID of the core definition.
     #[doc(hidden)]
@@ -16880,18 +16810,10 @@ impl UpdateCoreDefinitionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCoreDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCoreDefinitionInput");
-        formatter.field("core_definition_id", &self.core_definition_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectorDefinitionInput {
     /// The ID of the connector definition.
     #[doc(hidden)]
@@ -16910,18 +16832,10 @@ impl UpdateConnectorDefinitionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectorDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectorDefinitionInput");
-        formatter.field("connector_definition_id", &self.connector_definition_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// Connectivity information.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectivityInfoInput {
     /// A list of connectivity info.
     #[doc(hidden)]
@@ -16940,18 +16854,10 @@ impl UpdateConnectivityInfoInput {
         self.thing_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectivityInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectivityInfoInput");
-        formatter.field("connectivity_info", &self.connectivity_info);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource.
     #[doc(hidden)]
@@ -16970,18 +16876,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// A map of the key-value pairs for the resource tag.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource.
     #[doc(hidden)]
@@ -17004,18 +16902,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopBulkDeploymentInput {
     /// The ID of the bulk deployment.
     #[doc(hidden)]
@@ -17027,17 +16917,10 @@ impl StopBulkDeploymentInput {
         self.bulk_deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopBulkDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopBulkDeploymentInput");
-        formatter.field("bulk_deployment_id", &self.bulk_deployment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBulkDeploymentInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -17074,20 +16957,10 @@ impl StartBulkDeploymentInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StartBulkDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartBulkDeploymentInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("input_file_uri", &self.input_file_uri);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// Information needed to reset deployments.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetDeploymentsInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -17113,19 +16986,10 @@ impl ResetDeploymentsInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ResetDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetDeploymentsInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("force", &self.force);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) of the resource.
     #[doc(hidden)]
@@ -17137,17 +17001,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubscriptionDefinitionVersionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17173,22 +17030,10 @@ impl ListSubscriptionDefinitionVersionsInput {
         self.subscription_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListSubscriptionDefinitionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubscriptionDefinitionVersionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "subscription_definition_id",
-            &self.subscription_definition_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubscriptionDefinitionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17207,18 +17052,10 @@ impl ListSubscriptionDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSubscriptionDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubscriptionDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceDefinitionVersionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17244,19 +17081,10 @@ impl ListResourceDefinitionVersionsInput {
         self.resource_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceDefinitionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceDefinitionVersionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("resource_definition_id", &self.resource_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceDefinitionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17275,18 +17103,10 @@ impl ListResourceDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLoggerDefinitionVersionsInput {
     /// The ID of the logger definition.
     #[doc(hidden)]
@@ -17312,19 +17132,10 @@ impl ListLoggerDefinitionVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLoggerDefinitionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLoggerDefinitionVersionsInput");
-        formatter.field("logger_definition_id", &self.logger_definition_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLoggerDefinitionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17343,18 +17154,10 @@ impl ListLoggerDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLoggerDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLoggerDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupVersionsInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -17380,19 +17183,10 @@ impl ListGroupVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupVersionsInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17411,18 +17205,10 @@ impl ListGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupCertificateAuthoritiesInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -17434,17 +17220,10 @@ impl ListGroupCertificateAuthoritiesInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupCertificateAuthoritiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupCertificateAuthoritiesInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionDefinitionVersionsInput {
     /// The ID of the Lambda function definition.
     #[doc(hidden)]
@@ -17470,19 +17249,10 @@ impl ListFunctionDefinitionVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFunctionDefinitionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionDefinitionVersionsInput");
-        formatter.field("function_definition_id", &self.function_definition_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionDefinitionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17501,18 +17271,10 @@ impl ListFunctionDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFunctionDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeviceDefinitionVersionsInput {
     /// The ID of the device definition.
     #[doc(hidden)]
@@ -17538,19 +17300,10 @@ impl ListDeviceDefinitionVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeviceDefinitionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeviceDefinitionVersionsInput");
-        formatter.field("device_definition_id", &self.device_definition_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeviceDefinitionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17569,18 +17322,10 @@ impl ListDeviceDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeviceDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeviceDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentsInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -17606,19 +17351,10 @@ impl ListDeploymentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentsInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCoreDefinitionVersionsInput {
     /// The ID of the core definition.
     #[doc(hidden)]
@@ -17644,19 +17380,10 @@ impl ListCoreDefinitionVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCoreDefinitionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCoreDefinitionVersionsInput");
-        formatter.field("core_definition_id", &self.core_definition_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCoreDefinitionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17675,18 +17402,10 @@ impl ListCoreDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCoreDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCoreDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectorDefinitionVersionsInput {
     /// The ID of the connector definition.
     #[doc(hidden)]
@@ -17712,19 +17431,10 @@ impl ListConnectorDefinitionVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectorDefinitionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectorDefinitionVersionsInput");
-        formatter.field("connector_definition_id", &self.connector_definition_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectorDefinitionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17743,18 +17453,10 @@ impl ListConnectorDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectorDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectorDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBulkDeploymentsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
@@ -17773,18 +17475,10 @@ impl ListBulkDeploymentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBulkDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBulkDeploymentsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBulkDeploymentDetailedReportsInput {
     /// The ID of the bulk deployment.
     #[doc(hidden)]
@@ -17810,19 +17504,10 @@ impl ListBulkDeploymentDetailedReportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBulkDeploymentDetailedReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBulkDeploymentDetailedReportsInput");
-        formatter.field("bulk_deployment_id", &self.bulk_deployment_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThingRuntimeConfigurationInput {
     /// The thing name.
     #[doc(hidden)]
@@ -17834,17 +17519,10 @@ impl GetThingRuntimeConfigurationInput {
         self.thing_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetThingRuntimeConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThingRuntimeConfigurationInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSubscriptionDefinitionVersionInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
@@ -17870,25 +17548,10 @@ impl GetSubscriptionDefinitionVersionInput {
         self.subscription_definition_version_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSubscriptionDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSubscriptionDefinitionVersionInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "subscription_definition_id",
-            &self.subscription_definition_id,
-        );
-        formatter.field(
-            "subscription_definition_version_id",
-            &self.subscription_definition_version_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
     #[doc(hidden)]
@@ -17900,31 +17563,15 @@ impl GetSubscriptionDefinitionInput {
         self.subscription_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSubscriptionDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSubscriptionDefinitionInput");
-        formatter.field(
-            "subscription_definition_id",
-            &self.subscription_definition_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceRoleForAccountInput {}
-impl std::fmt::Debug for GetServiceRoleForAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceRoleForAccountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceDefinitionVersionInput {
     /// The ID of the resource definition.
     #[doc(hidden)]
@@ -17943,21 +17590,10 @@ impl GetResourceDefinitionVersionInput {
         self.resource_definition_version_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceDefinitionVersionInput");
-        formatter.field("resource_definition_id", &self.resource_definition_id);
-        formatter.field(
-            "resource_definition_version_id",
-            &self.resource_definition_version_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceDefinitionInput {
     /// The ID of the resource definition.
     #[doc(hidden)]
@@ -17969,17 +17605,10 @@ impl GetResourceDefinitionInput {
         self.resource_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceDefinitionInput");
-        formatter.field("resource_definition_id", &self.resource_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLoggerDefinitionVersionInput {
     /// The ID of the logger definition.
     #[doc(hidden)]
@@ -18005,22 +17634,10 @@ impl GetLoggerDefinitionVersionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetLoggerDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLoggerDefinitionVersionInput");
-        formatter.field("logger_definition_id", &self.logger_definition_id);
-        formatter.field(
-            "logger_definition_version_id",
-            &self.logger_definition_version_id,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLoggerDefinitionInput {
     /// The ID of the logger definition.
     #[doc(hidden)]
@@ -18032,17 +17649,10 @@ impl GetLoggerDefinitionInput {
         self.logger_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLoggerDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLoggerDefinitionInput");
-        formatter.field("logger_definition_id", &self.logger_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupVersionInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -18061,18 +17671,10 @@ impl GetGroupVersionInput {
         self.group_version_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGroupVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupVersionInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("group_version_id", &self.group_version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupCertificateConfigurationInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -18084,17 +17686,10 @@ impl GetGroupCertificateConfigurationInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGroupCertificateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupCertificateConfigurationInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupCertificateAuthorityInput {
     /// The ID of the certificate authority.
     #[doc(hidden)]
@@ -18113,18 +17708,10 @@ impl GetGroupCertificateAuthorityInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGroupCertificateAuthorityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupCertificateAuthorityInput");
-        formatter.field("certificate_authority_id", &self.certificate_authority_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -18136,17 +17723,10 @@ impl GetGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionDefinitionVersionInput {
     /// The ID of the Lambda function definition.
     #[doc(hidden)]
@@ -18172,22 +17752,10 @@ impl GetFunctionDefinitionVersionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionDefinitionVersionInput");
-        formatter.field("function_definition_id", &self.function_definition_id);
-        formatter.field(
-            "function_definition_version_id",
-            &self.function_definition_version_id,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
     #[doc(hidden)]
@@ -18199,17 +17767,10 @@ impl GetFunctionDefinitionInput {
         self.function_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionDefinitionInput");
-        formatter.field("function_definition_id", &self.function_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceDefinitionVersionInput {
     /// The ID of the device definition.
     #[doc(hidden)]
@@ -18235,22 +17796,10 @@ impl GetDeviceDefinitionVersionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceDefinitionVersionInput");
-        formatter.field("device_definition_id", &self.device_definition_id);
-        formatter.field(
-            "device_definition_version_id",
-            &self.device_definition_version_id,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceDefinitionInput {
     /// The ID of the device definition.
     #[doc(hidden)]
@@ -18262,17 +17811,10 @@ impl GetDeviceDefinitionInput {
         self.device_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceDefinitionInput");
-        formatter.field("device_definition_id", &self.device_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentStatusInput {
     /// The ID of the deployment.
     #[doc(hidden)]
@@ -18291,18 +17833,10 @@ impl GetDeploymentStatusInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentStatusInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCoreDefinitionVersionInput {
     /// The ID of the core definition.
     #[doc(hidden)]
@@ -18321,21 +17855,10 @@ impl GetCoreDefinitionVersionInput {
         self.core_definition_version_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCoreDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCoreDefinitionVersionInput");
-        formatter.field("core_definition_id", &self.core_definition_id);
-        formatter.field(
-            "core_definition_version_id",
-            &self.core_definition_version_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCoreDefinitionInput {
     /// The ID of the core definition.
     #[doc(hidden)]
@@ -18347,17 +17870,10 @@ impl GetCoreDefinitionInput {
         self.core_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCoreDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCoreDefinitionInput");
-        formatter.field("core_definition_id", &self.core_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectorDefinitionVersionInput {
     /// The ID of the connector definition.
     #[doc(hidden)]
@@ -18383,22 +17899,10 @@ impl GetConnectorDefinitionVersionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectorDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectorDefinitionVersionInput");
-        formatter.field("connector_definition_id", &self.connector_definition_id);
-        formatter.field(
-            "connector_definition_version_id",
-            &self.connector_definition_version_id,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectorDefinitionInput {
     /// The ID of the connector definition.
     #[doc(hidden)]
@@ -18410,17 +17914,10 @@ impl GetConnectorDefinitionInput {
         self.connector_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectorDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectorDefinitionInput");
-        formatter.field("connector_definition_id", &self.connector_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectivityInfoInput {
     /// The thing name.
     #[doc(hidden)]
@@ -18432,17 +17929,10 @@ impl GetConnectivityInfoInput {
         self.thing_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectivityInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectivityInfoInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBulkDeploymentStatusInput {
     /// The ID of the bulk deployment.
     #[doc(hidden)]
@@ -18454,17 +17944,10 @@ impl GetBulkDeploymentStatusInput {
         self.bulk_deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBulkDeploymentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBulkDeploymentStatusInput");
-        formatter.field("bulk_deployment_id", &self.bulk_deployment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssociatedRoleInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -18476,28 +17959,15 @@ impl GetAssociatedRoleInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssociatedRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssociatedRoleInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateServiceRoleFromAccountInput {}
-impl std::fmt::Debug for DisassociateServiceRoleFromAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateServiceRoleFromAccountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateRoleFromGroupInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -18509,17 +17979,10 @@ impl DisassociateRoleFromGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateRoleFromGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateRoleFromGroupInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
     #[doc(hidden)]
@@ -18531,20 +17994,10 @@ impl DeleteSubscriptionDefinitionInput {
         self.subscription_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSubscriptionDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSubscriptionDefinitionInput");
-        formatter.field(
-            "subscription_definition_id",
-            &self.subscription_definition_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceDefinitionInput {
     /// The ID of the resource definition.
     #[doc(hidden)]
@@ -18556,17 +18009,10 @@ impl DeleteResourceDefinitionInput {
         self.resource_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceDefinitionInput");
-        formatter.field("resource_definition_id", &self.resource_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoggerDefinitionInput {
     /// The ID of the logger definition.
     #[doc(hidden)]
@@ -18578,17 +18024,10 @@ impl DeleteLoggerDefinitionInput {
         self.logger_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLoggerDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoggerDefinitionInput");
-        formatter.field("logger_definition_id", &self.logger_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -18600,17 +18039,10 @@ impl DeleteGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
     #[doc(hidden)]
@@ -18622,17 +18054,10 @@ impl DeleteFunctionDefinitionInput {
         self.function_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionDefinitionInput");
-        formatter.field("function_definition_id", &self.function_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeviceDefinitionInput {
     /// The ID of the device definition.
     #[doc(hidden)]
@@ -18644,17 +18069,10 @@ impl DeleteDeviceDefinitionInput {
         self.device_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeviceDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeviceDefinitionInput");
-        formatter.field("device_definition_id", &self.device_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCoreDefinitionInput {
     /// The ID of the core definition.
     #[doc(hidden)]
@@ -18666,17 +18084,10 @@ impl DeleteCoreDefinitionInput {
         self.core_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCoreDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCoreDefinitionInput");
-        formatter.field("core_definition_id", &self.core_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectorDefinitionInput {
     /// The ID of the connector definition.
     #[doc(hidden)]
@@ -18688,17 +18099,10 @@ impl DeleteConnectorDefinitionInput {
         self.connector_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectorDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectorDefinitionInput");
-        formatter.field("connector_definition_id", &self.connector_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSubscriptionDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -18724,22 +18128,10 @@ impl CreateSubscriptionDefinitionVersionInput {
         self.subscriptions.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSubscriptionDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSubscriptionDefinitionVersionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field(
-            "subscription_definition_id",
-            &self.subscription_definition_id,
-        );
-        formatter.field("subscriptions", &self.subscriptions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSubscriptionDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -18778,20 +18170,10 @@ impl CreateSubscriptionDefinitionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSubscriptionDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSubscriptionDefinitionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("initial_version", &self.initial_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSoftwareUpdateJobInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -18852,29 +18234,10 @@ impl CreateSoftwareUpdateJobInput {
         self.update_targets_operating_system.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSoftwareUpdateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSoftwareUpdateJobInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("s3_url_signer_role", &self.s3_url_signer_role);
-        formatter.field("software_to_update", &self.software_to_update);
-        formatter.field("update_agent_log_level", &self.update_agent_log_level);
-        formatter.field("update_targets", &self.update_targets);
-        formatter.field(
-            "update_targets_architecture",
-            &self.update_targets_architecture,
-        );
-        formatter.field(
-            "update_targets_operating_system",
-            &self.update_targets_operating_system,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -18900,19 +18263,10 @@ impl CreateResourceDefinitionVersionInput {
         self.resources.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResourceDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceDefinitionVersionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("resource_definition_id", &self.resource_definition_id);
-        formatter.field("resources", &self.resources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -18949,20 +18303,10 @@ impl CreateResourceDefinitionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateResourceDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceDefinitionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("initial_version", &self.initial_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoggerDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -18988,19 +18332,10 @@ impl CreateLoggerDefinitionVersionInput {
         self.loggers.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLoggerDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoggerDefinitionVersionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("logger_definition_id", &self.logger_definition_id);
-        formatter.field("loggers", &self.loggers);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoggerDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19037,20 +18372,10 @@ impl CreateLoggerDefinitionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLoggerDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoggerDefinitionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("initial_version", &self.initial_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19118,46 +18443,10 @@ impl CreateGroupVersionInput {
         self.subscription_definition_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGroupVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupVersionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field(
-            "connector_definition_version_arn",
-            &self.connector_definition_version_arn,
-        );
-        formatter.field(
-            "core_definition_version_arn",
-            &self.core_definition_version_arn,
-        );
-        formatter.field(
-            "device_definition_version_arn",
-            &self.device_definition_version_arn,
-        );
-        formatter.field(
-            "function_definition_version_arn",
-            &self.function_definition_version_arn,
-        );
-        formatter.field("group_id", &self.group_id);
-        formatter.field(
-            "logger_definition_version_arn",
-            &self.logger_definition_version_arn,
-        );
-        formatter.field(
-            "resource_definition_version_arn",
-            &self.resource_definition_version_arn,
-        );
-        formatter.field(
-            "subscription_definition_version_arn",
-            &self.subscription_definition_version_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupCertificateAuthorityInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19176,18 +18465,10 @@ impl CreateGroupCertificateAuthorityInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGroupCertificateAuthorityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupCertificateAuthorityInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19224,20 +18505,10 @@ impl CreateGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("initial_version", &self.initial_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// Information needed to create a function definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFunctionDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19270,20 +18541,10 @@ impl CreateFunctionDefinitionVersionInput {
         self.functions.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFunctionDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFunctionDefinitionVersionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("default_config", &self.default_config);
-        formatter.field("function_definition_id", &self.function_definition_id);
-        formatter.field("functions", &self.functions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFunctionDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19320,20 +18581,10 @@ impl CreateFunctionDefinitionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFunctionDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFunctionDefinitionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("initial_version", &self.initial_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeviceDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19359,19 +18610,10 @@ impl CreateDeviceDefinitionVersionInput {
         self.devices.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeviceDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeviceDefinitionVersionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("device_definition_id", &self.device_definition_id);
-        formatter.field("devices", &self.devices);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeviceDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19408,20 +18650,10 @@ impl CreateDeviceDefinitionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDeviceDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeviceDefinitionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("initial_version", &self.initial_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19461,21 +18693,10 @@ impl CreateDeploymentInput {
         self.group_version_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("group_version_id", &self.group_version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCoreDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19501,19 +18722,10 @@ impl CreateCoreDefinitionVersionInput {
         self.cores.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCoreDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCoreDefinitionVersionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("core_definition_id", &self.core_definition_id);
-        formatter.field("cores", &self.cores);
-        formatter.finish()
-    }
-}
 
 /// Information needed to create a core definition.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCoreDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19550,20 +18762,10 @@ impl CreateCoreDefinitionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateCoreDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCoreDefinitionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("initial_version", &self.initial_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectorDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19589,19 +18791,10 @@ impl CreateConnectorDefinitionVersionInput {
         self.connectors.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectorDefinitionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectorDefinitionVersionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("connector_definition_id", &self.connector_definition_id);
-        formatter.field("connectors", &self.connectors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectorDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
@@ -19640,20 +18833,10 @@ impl CreateConnectorDefinitionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConnectorDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectorDefinitionInput");
-        formatter.field("amzn_client_token", &self.amzn_client_token);
-        formatter.field("initial_version", &self.initial_version);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateServiceRoleToAccountInput {
     /// The ARN of the service role you wish to associate with your account.
     #[doc(hidden)]
@@ -19665,17 +18848,10 @@ impl AssociateServiceRoleToAccountInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateServiceRoleToAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateServiceRoleToAccountInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateRoleToGroupInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
@@ -19692,13 +18868,5 @@ impl AssociateRoleToGroupInput {
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateRoleToGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateRoleToGroupInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }

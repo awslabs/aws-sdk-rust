@@ -963,7 +963,7 @@ impl ListSpeechSynthesisTasksInput {
 pub mod put_lexicon_input {
 
     /// A builder for [`PutLexiconInput`](crate::input::PutLexiconInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -998,6 +998,14 @@ pub mod put_lexicon_input {
                 name: self.name,
                 content: self.content,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1951,7 +1959,7 @@ impl SynthesizeSpeechInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SynthesizeSpeechInput {
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>
@@ -2041,25 +2049,10 @@ impl SynthesizeSpeechInput {
         self.voice_id.as_ref()
     }
 }
-impl std::fmt::Debug for SynthesizeSpeechInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SynthesizeSpeechInput");
-        formatter.field("engine", &self.engine);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("lexicon_names", &self.lexicon_names);
-        formatter.field("output_format", &self.output_format);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.field("speech_mark_types", &self.speech_mark_types);
-        formatter.field("text", &self.text);
-        formatter.field("text_type", &self.text_type);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSpeechSynthesisTaskInput {
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     #[doc(hidden)]
@@ -2154,24 +2147,6 @@ impl StartSpeechSynthesisTaskInput {
         self.voice_id.as_ref()
     }
 }
-impl std::fmt::Debug for StartSpeechSynthesisTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSpeechSynthesisTaskInput");
-        formatter.field("engine", &self.engine);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("lexicon_names", &self.lexicon_names);
-        formatter.field("output_format", &self.output_format);
-        formatter.field("output_s3_bucket_name", &self.output_s3_bucket_name);
-        formatter.field("output_s3_key_prefix", &self.output_s3_key_prefix);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("speech_mark_types", &self.speech_mark_types);
-        formatter.field("text", &self.text);
-        formatter.field("text_type", &self.text_type);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2205,7 +2180,7 @@ impl std::fmt::Debug for PutLexiconInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasksInput {
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
     #[doc(hidden)]
@@ -2231,19 +2206,10 @@ impl ListSpeechSynthesisTasksInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for ListSpeechSynthesisTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSpeechSynthesisTasksInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLexiconsInput {
     /// <p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>
     #[doc(hidden)]
@@ -2255,17 +2221,10 @@ impl ListLexiconsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLexiconsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLexiconsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSpeechSynthesisTaskInput {
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     #[doc(hidden)]
@@ -2277,17 +2236,10 @@ impl GetSpeechSynthesisTaskInput {
         self.task_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSpeechSynthesisTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSpeechSynthesisTaskInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLexiconInput {
     /// <p>Name of the lexicon.</p>
     #[doc(hidden)]
@@ -2299,17 +2251,10 @@ impl GetLexiconInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetLexiconInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLexiconInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVoicesInput {
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
     #[doc(hidden)]
@@ -2342,23 +2287,10 @@ impl DescribeVoicesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVoicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVoicesInput");
-        formatter.field("engine", &self.engine);
-        formatter.field("language_code", &self.language_code);
-        formatter.field(
-            "include_additional_language_codes",
-            &self.include_additional_language_codes,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLexiconInput {
     /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
     #[doc(hidden)]
@@ -2368,12 +2300,5 @@ impl DeleteLexiconInput {
     /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteLexiconInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLexiconInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }

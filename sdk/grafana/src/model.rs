@@ -112,7 +112,7 @@ impl std::fmt::Debug for WorkspaceSummary {
 pub mod workspace_summary {
 
     /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -299,6 +299,23 @@ pub mod workspace_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("created", &self.created);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint", &self.endpoint);
+            formatter.field("grafana_version", &self.grafana_version);
+            formatter.field("id", &self.id);
+            formatter.field("modified", &self.modified);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("notification_destinations", &self.notification_destinations);
+            formatter.field("status", &self.status);
+            formatter.field("authentication", &self.authentication);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl WorkspaceSummary {
     /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
@@ -309,7 +326,7 @@ impl WorkspaceSummary {
 
 /// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication, and whether that authentication is fully configured.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationSummary {
     /// <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
     #[doc(hidden)]
@@ -328,14 +345,6 @@ impl AuthenticationSummary {
         &self,
     ) -> std::option::Option<&crate::model::SamlConfigurationStatus> {
         self.saml_configuration_status.as_ref()
-    }
-}
-impl std::fmt::Debug for AuthenticationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationSummary");
-        formatter.field("providers", &self.providers);
-        formatter.field("saml_configuration_status", &self.saml_configuration_status);
-        formatter.finish()
     }
 }
 /// See [`AuthenticationSummary`](crate::model::AuthenticationSummary).
@@ -821,7 +830,7 @@ impl AsRef<str> for NotificationDestinationType {
 
 /// <p>A structure that contains information about a request parameter that caused an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field that caused the validation error.</p>
     #[doc(hidden)]
@@ -838,14 +847,6 @@ impl ValidationExceptionField {
     /// <p>A message describing why this field couldn't be validated.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -1205,7 +1206,7 @@ impl std::fmt::Debug for WorkspaceDescription {
 pub mod workspace_description {
 
     /// A builder for [`WorkspaceDescription`](crate::model::WorkspaceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_access_type: std::option::Option<crate::model::AccountAccessType>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
@@ -1568,6 +1569,34 @@ pub mod workspace_description {
                 authentication: self.authentication,
                 tags: self.tags,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_access_type", &self.account_access_type);
+            formatter.field("created", &self.created);
+            formatter.field("data_sources", &self.data_sources);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint", &self.endpoint);
+            formatter.field("grafana_version", &self.grafana_version);
+            formatter.field("id", &self.id);
+            formatter.field("modified", &self.modified);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("organization_role_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("notification_destinations", &self.notification_destinations);
+            formatter.field("organizational_units", &"*** Sensitive Data Redacted ***");
+            formatter.field("permission_type", &self.permission_type);
+            formatter.field("stack_set_name", &self.stack_set_name);
+            formatter.field("status", &self.status);
+            formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("license_type", &self.license_type);
+            formatter.field("free_trial_consumed", &self.free_trial_consumed);
+            formatter.field("license_expiration", &self.license_expiration);
+            formatter.field("free_trial_expiration", &self.free_trial_expiration);
+            formatter.field("authentication", &self.authentication);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1981,7 +2010,7 @@ impl AsRef<str> for AccountAccessType {
 
 /// <p>A structure containing information about one error encountered while performing an <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateError {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -2005,15 +2034,6 @@ impl UpdateError {
     /// <p>Specifies which permission update caused the error.</p>
     pub fn caused_by(&self) -> std::option::Option<&crate::model::UpdateInstruction> {
         self.caused_by.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateError");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("caused_by", &self.caused_by);
-        formatter.finish()
     }
 }
 /// See [`UpdateError`](crate::model::UpdateError).
@@ -2079,7 +2099,7 @@ impl UpdateError {
 
 /// <p>Contains the instructions for one Grafana role permission update in a <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInstruction {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
     #[doc(hidden)]
@@ -2103,15 +2123,6 @@ impl UpdateInstruction {
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
     pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
         self.users.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateInstruction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInstruction");
-        formatter.field("action", &self.action);
-        formatter.field("role", &self.role);
-        formatter.field("users", &self.users);
-        formatter.finish()
     }
 }
 /// See [`UpdateInstruction`](crate::model::UpdateInstruction).
@@ -2186,7 +2197,7 @@ impl UpdateInstruction {
 
 /// <p>A structure that specifies one user or group in the workspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
@@ -2205,14 +2216,6 @@ impl User {
     /// <p>Specifies whether this is a single user or a group.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`User`](crate::model::User).
@@ -2540,7 +2543,7 @@ impl AsRef<str> for UpdateAction {
 
 /// <p>A structure containing the identity of one user or group and the <code>Admin</code> or <code>Editor</code> role that they have.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
     #[doc(hidden)]
@@ -2557,14 +2560,6 @@ impl PermissionEntry {
     /// <p>Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::Role> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for PermissionEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionEntry");
-        formatter.field("user", &self.user);
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 /// See [`PermissionEntry`](crate::model::PermissionEntry).
@@ -2615,7 +2610,7 @@ impl PermissionEntry {
 
 /// <p>A structure containing information about the user authentication methods used by the workspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationDescription {
     /// <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
     #[doc(hidden)]
@@ -2639,15 +2634,6 @@ impl AuthenticationDescription {
     /// <p>A structure containing information about how this workspace works with Amazon Web Services SSO. </p>
     pub fn aws_sso(&self) -> std::option::Option<&crate::model::AwsSsoAuthentication> {
         self.aws_sso.as_ref()
-    }
-}
-impl std::fmt::Debug for AuthenticationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationDescription");
-        formatter.field("providers", &self.providers);
-        formatter.field("saml", &self.saml);
-        formatter.field("aws_sso", &self.aws_sso);
-        formatter.finish()
     }
 }
 /// See [`AuthenticationDescription`](crate::model::AuthenticationDescription).
@@ -2726,7 +2712,7 @@ impl AuthenticationDescription {
 
 /// <p>A structure containing information about how this workspace works with Amazon Web Services SSO. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsSsoAuthentication {
     /// <p>The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.</p>
     #[doc(hidden)]
@@ -2736,13 +2722,6 @@ impl AwsSsoAuthentication {
     /// <p>The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.</p>
     pub fn sso_client_id(&self) -> std::option::Option<&str> {
         self.sso_client_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsSsoAuthentication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsSsoAuthentication");
-        formatter.field("sso_client_id", &self.sso_client_id);
-        formatter.finish()
     }
 }
 /// See [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
@@ -2784,7 +2763,7 @@ impl AwsSsoAuthentication {
 
 /// <p>A structure containing information about how this workspace works with SAML. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamlAuthentication {
     /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
     #[doc(hidden)]
@@ -2801,14 +2780,6 @@ impl SamlAuthentication {
     /// <p>A structure containing details about how this workspace works with SAML. </p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::SamlConfiguration> {
         self.configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for SamlAuthentication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamlAuthentication");
-        formatter.field("status", &self.status);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
     }
 }
 /// See [`SamlAuthentication`](crate::model::SamlAuthentication).
@@ -2865,7 +2836,7 @@ impl SamlAuthentication {
 
 /// <p>A structure containing information about how this workspace works with SAML. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamlConfiguration {
     /// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace.</p>
     #[doc(hidden)]
@@ -2903,17 +2874,6 @@ impl SamlConfiguration {
     /// <p>How long a sign-on session by a SAML user is valid, before the user has to sign on again.</p>
     pub fn login_validity_duration(&self) -> i32 {
         self.login_validity_duration
-    }
-}
-impl std::fmt::Debug for SamlConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamlConfiguration");
-        formatter.field("idp_metadata", &self.idp_metadata);
-        formatter.field("assertion_attributes", &self.assertion_attributes);
-        formatter.field("role_values", &self.role_values);
-        formatter.field("allowed_organizations", &self.allowed_organizations);
-        formatter.field("login_validity_duration", &self.login_validity_duration);
-        formatter.finish()
     }
 }
 /// See [`SamlConfiguration`](crate::model::SamlConfiguration).
@@ -3018,7 +2978,7 @@ impl SamlConfiguration {
 
 /// <p>This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoleValues {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
     #[doc(hidden)]
@@ -3035,14 +2995,6 @@ impl RoleValues {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
     pub fn admin(&self) -> std::option::Option<&[std::string::String]> {
         self.admin.as_deref()
-    }
-}
-impl std::fmt::Debug for RoleValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoleValues");
-        formatter.field("editor", &self.editor);
-        formatter.field("admin", &self.admin);
-        formatter.finish()
     }
 }
 /// See [`RoleValues`](crate::model::RoleValues).
@@ -3111,7 +3063,7 @@ impl RoleValues {
 
 /// <p>A structure that defines which attributes in the IdP assertion are to be used to define information about the users authenticated by the IdP to use the workspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssertionAttributes {
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for SAML users.</p>
     #[doc(hidden)]
@@ -3156,18 +3108,6 @@ impl AssertionAttributes {
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for the users' organizations.</p>
     pub fn org(&self) -> std::option::Option<&str> {
         self.org.as_deref()
-    }
-}
-impl std::fmt::Debug for AssertionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssertionAttributes");
-        formatter.field("name", &self.name);
-        formatter.field("login", &self.login);
-        formatter.field("email", &self.email);
-        formatter.field("groups", &self.groups);
-        formatter.field("role", &self.role);
-        formatter.field("org", &self.org);
-        formatter.finish()
     }
 }
 /// See [`AssertionAttributes`](crate::model::AssertionAttributes).

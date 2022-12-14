@@ -109,7 +109,7 @@ impl AsRef<str> for ParallelDataStatus {
 
 /// <p>Specifies the format and S3 location of the parallel data input file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParallelDataConfig {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
     #[doc(hidden)]
@@ -126,14 +126,6 @@ impl ParallelDataConfig {
     /// <p>The format of the parallel data input file.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::ParallelDataFormat> {
         self.format.as_ref()
-    }
-}
-impl std::fmt::Debug for ParallelDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParallelDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("format", &self.format);
-        formatter.finish()
     }
 }
 /// See [`ParallelDataConfig`](crate::model::ParallelDataConfig).
@@ -284,7 +276,7 @@ impl AsRef<str> for ParallelDataFormat {
 
 /// <p>Settings that configure the translation output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranslationSettings {
     /// <p>You can optionally specify the desired level of formality for real-time translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
     /// <p>Note that asynchronous translation jobs don't support formality. If you provide a value for formality, the <code>StartTextTranslationJob</code> API throws an exception (InvalidRequestException).</p>
@@ -309,14 +301,6 @@ impl TranslationSettings {
     /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
     pub fn profanity(&self) -> std::option::Option<&crate::model::Profanity> {
         self.profanity.as_ref()
-    }
-}
-impl std::fmt::Debug for TranslationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranslationSettings");
-        formatter.field("formality", &self.formality);
-        formatter.field("profanity", &self.profanity);
-        formatter.finish()
     }
 }
 /// See [`TranslationSettings`](crate::model::TranslationSettings).
@@ -556,7 +540,7 @@ impl AsRef<str> for Formality {
 
 /// <p>The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppliedTerminology {
     /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
     #[doc(hidden)]
@@ -573,14 +557,6 @@ impl AppliedTerminology {
     /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
     pub fn terms(&self) -> std::option::Option<&[crate::model::Term]> {
         self.terms.as_deref()
-    }
-}
-impl std::fmt::Debug for AppliedTerminology {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppliedTerminology");
-        formatter.field("name", &self.name);
-        formatter.field("terms", &self.terms);
-        formatter.finish()
     }
 }
 /// See [`AppliedTerminology`](crate::model::AppliedTerminology).
@@ -640,7 +616,7 @@ impl AppliedTerminology {
 
 /// <p>The term being translated by the custom terminology.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Term {
     /// <p>The source text of the term being translated by the custom terminology.</p>
     #[doc(hidden)]
@@ -657,14 +633,6 @@ impl Term {
     /// <p>The target text of the term being translated by the custom terminology.</p>
     pub fn target_text(&self) -> std::option::Option<&str> {
         self.target_text.as_deref()
-    }
-}
-impl std::fmt::Debug for Term {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Term");
-        formatter.field("source_text", &self.source_text);
-        formatter.field("target_text", &self.target_text);
-        formatter.finish()
     }
 }
 /// See [`Term`](crate::model::Term).
@@ -715,7 +683,7 @@ impl Term {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -732,14 +700,6 @@ impl Tag {
     #[allow(missing_docs)] // documentation missing in model
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -913,7 +873,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p>The output configuration properties for a batch translation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDataConfig {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
@@ -930,14 +890,6 @@ impl OutputDataConfig {
     /// <p>The encryption key used to encrypt this object.</p>
     pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
         self.encryption_key.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.finish()
     }
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
@@ -991,7 +943,7 @@ impl OutputDataConfig {
 
 /// <p>The encryption key used to encrypt this object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKey {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
     #[doc(hidden)]
@@ -1008,14 +960,6 @@ impl EncryptionKey {
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKey");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`EncryptionKey`](crate::model::EncryptionKey).
@@ -1156,7 +1100,7 @@ impl AsRef<str> for EncryptionKeyType {
 
 /// <p>The input configuration properties for requesting a batch translation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
     /// <p>The URI can also point to a single input document, or it can provide the prefix for a collection of input documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses all of them as input.</p>
@@ -1197,14 +1141,6 @@ impl InputDataConfig {
     /// </important>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
@@ -1279,7 +1215,7 @@ impl InputDataConfig {
 
 /// <p>Provides information about a translation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextTranslationJobProperties {
     /// <p>The ID of the translation job.</p>
     #[doc(hidden)]
@@ -1387,27 +1323,6 @@ impl TextTranslationJobProperties {
     /// <p>Settings that configure the translation output.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
         self.settings.as_ref()
-    }
-}
-impl std::fmt::Debug for TextTranslationJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextTranslationJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("job_details", &self.job_details);
-        formatter.field("source_language_code", &self.source_language_code);
-        formatter.field("target_language_codes", &self.target_language_codes);
-        formatter.field("terminology_names", &self.terminology_names);
-        formatter.field("parallel_data_names", &self.parallel_data_names);
-        formatter.field("message", &self.message);
-        formatter.field("submitted_time", &self.submitted_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
     }
 }
 /// See [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
@@ -1668,7 +1583,7 @@ impl TextTranslationJobProperties {
 
 /// <p>The number of documents successfully and unsuccessfully processed during a translation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDetails {
     /// <p>The number of documents successfully processed during a translation job.</p>
     #[doc(hidden)]
@@ -1692,21 +1607,6 @@ impl JobDetails {
     /// <p>The number of documents used as input in a translation job.</p>
     pub fn input_documents_count(&self) -> std::option::Option<i32> {
         self.input_documents_count
-    }
-}
-impl std::fmt::Debug for JobDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobDetails");
-        formatter.field(
-            "translated_documents_count",
-            &self.translated_documents_count,
-        );
-        formatter.field(
-            "documents_with_errors_count",
-            &self.documents_with_errors_count,
-        );
-        formatter.field("input_documents_count", &self.input_documents_count);
-        formatter.finish()
     }
 }
 /// See [`JobDetails`](crate::model::JobDetails).
@@ -1769,7 +1669,7 @@ impl JobDetails {
 
 /// <p>Provides information for filtering a list of translation jobs. For more information, see <code>ListTextTranslationJobs</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextTranslationJobFilter {
     /// <p>Filters the list of jobs by name.</p>
     #[doc(hidden)]
@@ -1800,16 +1700,6 @@ impl TextTranslationJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submitted_after_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_after_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TextTranslationJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextTranslationJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submitted_before_time", &self.submitted_before_time);
-        formatter.field("submitted_after_time", &self.submitted_after_time);
-        formatter.finish()
     }
 }
 /// See [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
@@ -1893,7 +1783,7 @@ impl TextTranslationJobFilter {
 
 /// <p>The properties of the custom terminology.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminologyProperties {
     /// <p>The name of the custom terminology.</p>
     #[doc(hidden)]
@@ -2022,26 +1912,6 @@ impl TerminologyProperties {
     /// <p>The format of the custom terminology input file.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::TerminologyDataFormat> {
         self.format.as_ref()
-    }
-}
-impl std::fmt::Debug for TerminologyProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminologyProperties");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("arn", &self.arn);
-        formatter.field("source_language_code", &self.source_language_code);
-        formatter.field("target_language_codes", &self.target_language_codes);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("size_bytes", &self.size_bytes);
-        formatter.field("term_count", &self.term_count);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("directionality", &self.directionality);
-        formatter.field("message", &self.message);
-        formatter.field("skipped_term_count", &self.skipped_term_count);
-        formatter.field("format", &self.format);
-        formatter.finish()
     }
 }
 /// See [`TerminologyProperties`](crate::model::TerminologyProperties).
@@ -2478,7 +2348,7 @@ impl AsRef<str> for Directionality {
 
 /// <p>The properties of a parallel data resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParallelDataProperties {
     /// <p>The custom name assigned to the parallel data resource.</p>
     #[doc(hidden)]
@@ -2602,32 +2472,6 @@ impl ParallelDataProperties {
     /// <p>The time that the most recent update was attempted.</p>
     pub fn latest_update_attempt_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_update_attempt_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ParallelDataProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParallelDataProperties");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("source_language_code", &self.source_language_code);
-        formatter.field("target_language_codes", &self.target_language_codes);
-        formatter.field("parallel_data_config", &self.parallel_data_config);
-        formatter.field("message", &self.message);
-        formatter.field("imported_data_size", &self.imported_data_size);
-        formatter.field("imported_record_count", &self.imported_record_count);
-        formatter.field("failed_record_count", &self.failed_record_count);
-        formatter.field("skipped_record_count", &self.skipped_record_count);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field(
-            "latest_update_attempt_status",
-            &self.latest_update_attempt_status,
-        );
-        formatter.field("latest_update_attempt_at", &self.latest_update_attempt_at);
-        formatter.finish()
     }
 }
 /// See [`ParallelDataProperties`](crate::model::ParallelDataProperties).
@@ -3029,7 +2873,7 @@ impl AsRef<str> for DisplayLanguageCode {
 
 /// <p>A supported language.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Language {
     /// <p>Language name of the supported language.</p>
     #[doc(hidden)]
@@ -3046,14 +2890,6 @@ impl Language {
     /// <p>Language code for the supported language.</p>
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
-    }
-}
-impl std::fmt::Debug for Language {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Language");
-        formatter.field("language_name", &self.language_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
     }
 }
 /// See [`Language`](crate::model::Language).
@@ -3110,7 +2946,7 @@ impl Language {
 
 /// <p>The location of the custom terminology data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminologyDataLocation {
     /// <p>The repository type for the custom terminology data.</p>
     #[doc(hidden)]
@@ -3135,14 +2971,6 @@ impl TerminologyDataLocation {
     /// </important>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for TerminologyDataLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminologyDataLocation");
-        formatter.field("repository_type", &self.repository_type);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
@@ -3273,7 +3101,7 @@ impl std::fmt::Debug for TerminologyData {
 pub mod terminology_data {
 
     /// A builder for [`TerminologyData`](crate::model::TerminologyData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) file: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) format: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -3353,6 +3181,15 @@ pub mod terminology_data {
                 format: self.format,
                 directionality: self.directionality,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("file", &"*** Sensitive Data Redacted ***");
+            formatter.field("format", &self.format);
+            formatter.field("directionality", &self.directionality);
+            formatter.finish()
         }
     }
 }
@@ -3450,7 +3287,7 @@ impl AsRef<str> for MergeStrategy {
 
 /// <p>The location of the most recent parallel data input file that was successfully imported into Amazon Translate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParallelDataDataLocation {
     /// <p>Describes the repository that contains the parallel data input file.</p>
     #[doc(hidden)]
@@ -3475,14 +3312,6 @@ impl ParallelDataDataLocation {
     /// </important>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for ParallelDataDataLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParallelDataDataLocation");
-        formatter.field("repository_type", &self.repository_type);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).

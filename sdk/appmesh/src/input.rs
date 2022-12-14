@@ -8608,7 +8608,7 @@ impl UpdateVirtualServiceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMeshesInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -8631,18 +8631,10 @@ impl ListMeshesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListMeshesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMeshesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMeshInput {
     /// <p>The name to use for the service mesh.</p>
     #[doc(hidden)]
@@ -8675,20 +8667,10 @@ impl CreateMeshInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMeshInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMeshInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMeshInput {
     /// <p>The name of the service mesh to delete.</p>
     #[doc(hidden)]
@@ -8700,17 +8682,10 @@ impl DeleteMeshInput {
         self.mesh_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMeshInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMeshInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMeshInput {
     /// <p>The name of the service mesh to update.</p>
     #[doc(hidden)]
@@ -8736,19 +8711,10 @@ impl UpdateMeshInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMeshInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMeshInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMeshInput {
     /// <p>The name of the service mesh to describe.</p>
     #[doc(hidden)]
@@ -8767,18 +8733,10 @@ impl DescribeMeshInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMeshInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMeshInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualServicesInput {
     /// <p>The name of the service mesh to list virtual services in.</p>
     #[doc(hidden)]
@@ -8811,20 +8769,10 @@ impl ListVirtualServicesInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualServicesInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVirtualServiceInput {
     /// <p>The name to use for the virtual service.</p>
     #[doc(hidden)]
@@ -8871,22 +8819,10 @@ impl CreateVirtualServiceInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVirtualServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVirtualServiceInput");
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualServiceInput {
     /// <p>The name of the virtual service to delete.</p>
     #[doc(hidden)]
@@ -8912,19 +8848,10 @@ impl DeleteVirtualServiceInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualServiceInput");
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVirtualServiceInput {
     /// <p>The name of the virtual service to update.</p>
     #[doc(hidden)]
@@ -8964,21 +8891,10 @@ impl UpdateVirtualServiceInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVirtualServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVirtualServiceInput");
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualServiceInput {
     /// <p>The name of the virtual service to describe.</p>
     #[doc(hidden)]
@@ -9004,19 +8920,10 @@ impl DescribeVirtualServiceInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualServiceInput");
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualRoutersInput {
     /// <p>The name of the service mesh to list virtual routers in.</p>
     #[doc(hidden)]
@@ -9049,20 +8956,10 @@ impl ListVirtualRoutersInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualRoutersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualRoutersInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVirtualRouterInput {
     /// <p>The name to use for the virtual router.</p>
     #[doc(hidden)]
@@ -9109,22 +9006,10 @@ impl CreateVirtualRouterInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVirtualRouterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVirtualRouterInput");
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualRouterInput {
     /// <p>The name of the virtual router to delete.</p>
     #[doc(hidden)]
@@ -9150,19 +9035,10 @@ impl DeleteVirtualRouterInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualRouterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualRouterInput");
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVirtualRouterInput {
     /// <p>The name of the virtual router to update.</p>
     #[doc(hidden)]
@@ -9202,21 +9078,10 @@ impl UpdateVirtualRouterInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVirtualRouterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVirtualRouterInput");
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualRouterInput {
     /// <p>The name of the virtual router to describe.</p>
     #[doc(hidden)]
@@ -9242,19 +9107,10 @@ impl DescribeVirtualRouterInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualRouterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualRouterInput");
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoutesInput {
     /// <p>The name of the service mesh to list routes in.</p>
     #[doc(hidden)]
@@ -9294,21 +9150,10 @@ impl ListRoutesInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListRoutesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoutesInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRouteInput {
     /// <p>The name to use for the route.</p>
     #[doc(hidden)]
@@ -9362,23 +9207,10 @@ impl CreateRouteInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRouteInput");
-        formatter.field("route_name", &self.route_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRouteInput {
     /// <p>The name of the route to delete.</p>
     #[doc(hidden)]
@@ -9411,20 +9243,10 @@ impl DeleteRouteInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRouteInput");
-        formatter.field("route_name", &self.route_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRouteInput {
     /// <p>The name of the route to update.</p>
     #[doc(hidden)]
@@ -9471,22 +9293,10 @@ impl UpdateRouteInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRouteInput");
-        formatter.field("route_name", &self.route_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRouteInput {
     /// <p>The name of the route to describe.</p>
     #[doc(hidden)]
@@ -9519,20 +9329,10 @@ impl DescribeRouteInput {
         self.virtual_router_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRouteInput");
-        formatter.field("route_name", &self.route_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualNodesInput {
     /// <p>The name of the service mesh to list virtual nodes in.</p>
     #[doc(hidden)]
@@ -9565,20 +9365,10 @@ impl ListVirtualNodesInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualNodesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualNodesInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVirtualNodeInput {
     /// <p>The name to use for the virtual node.</p>
     #[doc(hidden)]
@@ -9625,22 +9415,10 @@ impl CreateVirtualNodeInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVirtualNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVirtualNodeInput");
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes a virtual node input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualNodeInput {
     /// <p>The name of the virtual node to delete.</p>
     #[doc(hidden)]
@@ -9666,19 +9444,10 @@ impl DeleteVirtualNodeInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualNodeInput");
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVirtualNodeInput {
     /// <p>The name of the virtual node to update.</p>
     #[doc(hidden)]
@@ -9718,21 +9487,10 @@ impl UpdateVirtualNodeInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVirtualNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVirtualNodeInput");
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualNodeInput {
     /// <p>The name of the virtual node to describe.</p>
     #[doc(hidden)]
@@ -9758,19 +9516,10 @@ impl DescribeVirtualNodeInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualNodeInput");
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualGatewaysInput {
     /// <p>The name of the service mesh to list virtual gateways in.</p>
     #[doc(hidden)]
@@ -9803,20 +9552,10 @@ impl ListVirtualGatewaysInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualGatewaysInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVirtualGatewayInput {
     /// <p>The name to use for the virtual gateway.</p>
     #[doc(hidden)]
@@ -9863,22 +9602,10 @@ impl CreateVirtualGatewayInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVirtualGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVirtualGatewayInput");
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualGatewayInput {
     /// <p>The name of the virtual gateway to delete.</p>
     #[doc(hidden)]
@@ -9904,19 +9631,10 @@ impl DeleteVirtualGatewayInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualGatewayInput");
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVirtualGatewayInput {
     /// <p>The name of the virtual gateway to update.</p>
     #[doc(hidden)]
@@ -9956,21 +9674,10 @@ impl UpdateVirtualGatewayInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVirtualGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVirtualGatewayInput");
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualGatewayInput {
     /// <p>The name of the virtual gateway to describe.</p>
     #[doc(hidden)]
@@ -9996,19 +9703,10 @@ impl DescribeVirtualGatewayInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualGatewayInput");
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGatewayRoutesInput {
     /// <p>The name of the service mesh to list gateway routes in.</p>
     #[doc(hidden)]
@@ -10048,21 +9746,10 @@ impl ListGatewayRoutesInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListGatewayRoutesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGatewayRoutesInput");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGatewayRouteInput {
     /// <p>The name to use for the gateway route.</p>
     #[doc(hidden)]
@@ -10116,23 +9803,10 @@ impl CreateGatewayRouteInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGatewayRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGatewayRouteInput");
-        formatter.field("gateway_route_name", &self.gateway_route_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayRouteInput {
     /// <p>The name of the gateway route to delete.</p>
     #[doc(hidden)]
@@ -10165,20 +9839,10 @@ impl DeleteGatewayRouteInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGatewayRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayRouteInput");
-        formatter.field("gateway_route_name", &self.gateway_route_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayRouteInput {
     /// <p>The name of the gateway route to update.</p>
     #[doc(hidden)]
@@ -10225,22 +9889,10 @@ impl UpdateGatewayRouteInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewayRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayRouteInput");
-        formatter.field("gateway_route_name", &self.gateway_route_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGatewayRouteInput {
     /// <p>The name of the gateway route to describe.</p>
     #[doc(hidden)]
@@ -10273,20 +9925,10 @@ impl DescribeGatewayRouteInput {
         self.mesh_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGatewayRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGatewayRouteInput");
-        formatter.field("gateway_route_name", &self.gateway_route_name);
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from.</p>
     #[doc(hidden)]
@@ -10305,18 +9947,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>
     #[doc(hidden)]
@@ -10335,18 +9969,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for.</p>
     #[doc(hidden)]
@@ -10370,14 +9996,5 @@ impl ListTagsForResourceInput {
     /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
     }
 }

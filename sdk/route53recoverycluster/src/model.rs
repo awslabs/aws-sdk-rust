@@ -2,7 +2,7 @@
 
 /// <p>There was a validation error on the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The field that had the validation exception.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>Information about the validation exception.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>A routing control state entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingControlStateEntry {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
     #[doc(hidden)]
@@ -201,14 +193,6 @@ impl UpdateRoutingControlStateEntry {
     /// <p>The routing control state in a set of routing control state entries.</p>
     pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
         self.routing_control_state.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateRoutingControlStateEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingControlStateEntry");
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.field("routing_control_state", &self.routing_control_state);
-        formatter.finish()
     }
 }
 /// See [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
@@ -357,7 +341,7 @@ impl AsRef<str> for RoutingControlState {
 
 /// <p>A routing control, which is a simple on/off switch that you can use to route traffic to cells. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
     #[doc(hidden)]
@@ -395,17 +379,6 @@ impl RoutingControl {
     /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
     pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
         self.routing_control_state.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingControl");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("control_panel_name", &self.control_panel_name);
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.field("routing_control_name", &self.routing_control_name);
-        formatter.field("routing_control_state", &self.routing_control_state);
-        formatter.finish()
     }
 }
 /// See [`RoutingControl`](crate::model::RoutingControl).

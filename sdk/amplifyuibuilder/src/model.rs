@@ -2,7 +2,7 @@
 
 /// <p>A theme is a collection of style settings that apply globally to the components associated with an Amplify application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Theme {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
     #[doc(hidden)]
@@ -72,21 +72,6 @@ impl Theme {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Theme {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Theme");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.field("values", &self.values);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Theme`](crate::model::Theme).
@@ -265,7 +250,7 @@ impl Theme {
 
 /// <p>A key-value pair that defines a property of a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeValues {
     /// <p>The name of the property.</p>
     #[doc(hidden)]
@@ -282,14 +267,6 @@ impl ThemeValues {
     /// <p>The value of the property.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::ThemeValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for ThemeValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeValues");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ThemeValues`](crate::model::ThemeValues).
@@ -340,7 +317,7 @@ impl ThemeValues {
 
 /// <p>Describes the configuration of a theme's properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeValue {
     /// <p>The value of a theme property.</p>
     #[doc(hidden)]
@@ -357,14 +334,6 @@ impl ThemeValue {
     /// <p>A list of key-value pairs that define the theme's properties.</p>
     pub fn children(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
         self.children.as_deref()
-    }
-}
-impl std::fmt::Debug for ThemeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeValue");
-        formatter.field("value", &self.value);
-        formatter.field("children", &self.children);
-        formatter.finish()
     }
 }
 /// See [`ThemeValue`](crate::model::ThemeValue).
@@ -424,7 +393,7 @@ impl ThemeValue {
 
 /// <p>Describes the basic information about a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeSummary {
     /// <p>The unique ID for the app associated with the theme summary.</p>
     #[doc(hidden)]
@@ -455,16 +424,6 @@ impl ThemeSummary {
     /// <p>The name of the theme.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ThemeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeSummary");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ThemeSummary`](crate::model::ThemeSummary).
@@ -542,7 +501,7 @@ impl ThemeSummary {
 
 /// <p>Represents all of the information that is required to create a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThemeData {
     /// <p>The name of the theme.</p>
     #[doc(hidden)]
@@ -577,16 +536,6 @@ impl CreateThemeData {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateThemeData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateThemeData");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateThemeData`](crate::model::CreateThemeData).
@@ -696,7 +645,7 @@ impl CreateThemeData {
 
 /// <p>Saves the data binding information for a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThemeData {
     /// <p>The unique ID of the theme to update.</p>
     #[doc(hidden)]
@@ -727,16 +676,6 @@ impl UpdateThemeData {
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
     pub fn overrides(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
         self.overrides.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateThemeData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThemeData");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("overrides", &self.overrides);
-        formatter.finish()
     }
 }
 /// See [`UpdateThemeData`](crate::model::UpdateThemeData).
@@ -829,7 +768,7 @@ impl UpdateThemeData {
 
 /// <p>Contains the configuration settings for a <code>Form</code> user interface (UI) element for an Amplify app. A form is a component you can add to your project by specifying a data source as the default configuration for the form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Form {
     /// <p>The unique ID of the Amplify app associated with the form.</p>
     #[doc(hidden)]
@@ -932,24 +871,6 @@ impl Form {
     /// <p>Stores the call to action configuration for the form.</p>
     pub fn cta(&self) -> std::option::Option<&crate::model::FormCta> {
         self.cta.as_ref()
-    }
-}
-impl std::fmt::Debug for Form {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Form");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("form_action_type", &self.form_action_type);
-        formatter.field("style", &self.style);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("fields", &self.fields);
-        formatter.field("sectional_elements", &self.sectional_elements);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("tags", &self.tags);
-        formatter.field("cta", &self.cta);
-        formatter.finish()
     }
 }
 /// See [`Form`](crate::model::Form).
@@ -1183,7 +1104,7 @@ impl Form {
 
 /// <p>Describes the call to action button configuration for the form..</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FormCta {
     /// <p>The position of the button.</p>
     #[doc(hidden)]
@@ -1214,16 +1135,6 @@ impl FormCta {
     /// <p>Displays a submit button.</p>
     pub fn submit(&self) -> std::option::Option<&crate::model::FormButton> {
         self.submit.as_ref()
-    }
-}
-impl std::fmt::Debug for FormCta {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FormCta");
-        formatter.field("position", &self.position);
-        formatter.field("clear", &self.clear);
-        formatter.field("cancel", &self.cancel);
-        formatter.field("submit", &self.submit);
-        formatter.finish()
     }
 }
 /// See [`FormCta`](crate::model::FormCta).
@@ -1301,7 +1212,7 @@ impl FormCta {
 
 /// <p>Describes the configuration for a button UI element that is a part of a form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FormButton {
     /// <p>Specifies whether the button is visible on the form.</p>
     #[doc(hidden)]
@@ -1325,15 +1236,6 @@ impl FormButton {
     /// <p>The position of the button.</p>
     pub fn position(&self) -> std::option::Option<&crate::model::FieldPosition> {
         self.position.as_ref()
-    }
-}
-impl std::fmt::Debug for FormButton {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FormButton");
-        formatter.field("excluded", &self.excluded);
-        formatter.field("children", &self.children);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`FormButton`](crate::model::FormButton).
@@ -1647,7 +1549,7 @@ impl AsRef<str> for FormButtonsPosition {
 
 /// <p>Stores the configuration information for a visual helper element for a form. A sectional element can be a header, a text block, or a divider. These elements are static and not associated with any data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SectionalElement {
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
     #[doc(hidden)]
@@ -1685,17 +1587,6 @@ impl SectionalElement {
     /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
     pub fn orientation(&self) -> std::option::Option<&str> {
         self.orientation.as_deref()
-    }
-}
-impl std::fmt::Debug for SectionalElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SectionalElement");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("position", &self.position);
-        formatter.field("text", &self.text);
-        formatter.field("level", &self.level);
-        formatter.field("orientation", &self.orientation);
-        formatter.finish()
     }
 }
 /// See [`SectionalElement`](crate::model::SectionalElement).
@@ -1785,7 +1676,7 @@ impl SectionalElement {
 
 /// <p>Describes the configuration information for a field in a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldConfig {
     /// <p>The label for the field.</p>
     #[doc(hidden)]
@@ -1825,17 +1716,6 @@ impl FieldConfig {
         &self,
     ) -> std::option::Option<&[crate::model::FieldValidationConfiguration]> {
         self.validations.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldConfig");
-        formatter.field("label", &self.label);
-        formatter.field("position", &self.position);
-        formatter.field("excluded", &self.excluded);
-        formatter.field("input_type", &self.input_type);
-        formatter.field("validations", &self.validations);
-        formatter.finish()
     }
 }
 /// See [`FieldConfig`](crate::model::FieldConfig).
@@ -1938,7 +1818,7 @@ impl FieldConfig {
 
 /// <p>Describes the validation configuration for a field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldValidationConfiguration {
     /// <p>The validation to perform on an object type.<code></code> </p>
     #[doc(hidden)]
@@ -1969,16 +1849,6 @@ impl FieldValidationConfiguration {
     /// <p>The validation message to display.</p>
     pub fn validation_message(&self) -> std::option::Option<&str> {
         self.validation_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldValidationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldValidationConfiguration");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("str_values", &self.str_values);
-        formatter.field("num_values", &self.num_values);
-        formatter.field("validation_message", &self.validation_message);
-        formatter.finish()
     }
 }
 /// See [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
@@ -2071,7 +1941,7 @@ impl FieldValidationConfiguration {
 
 /// <p>Describes the configuration for the default input values to display for a field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldInputConfig {
     /// <p>The input type for the field. </p>
     #[doc(hidden)]
@@ -2172,26 +2042,6 @@ impl FieldInputConfig {
     /// <p>The value for the field.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldInputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldInputConfig");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("required", &self.required);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("placeholder", &self.placeholder);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("descriptive_text", &self.descriptive_text);
-        formatter.field("default_checked", &self.default_checked);
-        formatter.field("default_country_code", &self.default_country_code);
-        formatter.field("value_mappings", &self.value_mappings);
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("step", &self.step);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FieldInputConfig`](crate::model::FieldInputConfig).
@@ -2398,7 +2248,7 @@ impl FieldInputConfig {
 
 /// <p>Represents the data binding configuration for a value map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValueMappings {
     /// <p>The value and display value pairs.</p>
     #[doc(hidden)]
@@ -2408,13 +2258,6 @@ impl ValueMappings {
     /// <p>The value and display value pairs.</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::ValueMapping]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ValueMappings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValueMappings");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ValueMappings`](crate::model::ValueMappings).
@@ -2462,7 +2305,7 @@ impl ValueMappings {
 
 /// <p>Associates a complex object with a display value. Use <code>ValueMapping</code> to store how to represent complex objects when they are displayed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValueMapping {
     /// <p>The value to display for the complex object.</p>
     #[doc(hidden)]
@@ -2479,14 +2322,6 @@ impl ValueMapping {
     /// <p>The complex object.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::FormInputValueProperty> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for ValueMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValueMapping");
-        formatter.field("display_value", &self.display_value);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ValueMapping`](crate::model::ValueMapping).
@@ -2543,7 +2378,7 @@ impl ValueMapping {
 
 /// <p>Describes the configuration for an input field on a form. Use <code>FormInputValueProperty</code> to specify the values to render or bind by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FormInputValueProperty {
     /// <p>The value to assign to the input field.</p>
     #[doc(hidden)]
@@ -2553,13 +2388,6 @@ impl FormInputValueProperty {
     /// <p>The value to assign to the input field.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FormInputValueProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FormInputValueProperty");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FormInputValueProperty`](crate::model::FormInputValueProperty).
@@ -2596,7 +2424,7 @@ impl FormInputValueProperty {
 
 /// <p>Describes the data type configuration for the data source associated with a form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     #[doc(hidden)]
@@ -2613,14 +2441,6 @@ impl FormDataTypeConfig {
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
     pub fn data_type_name(&self) -> std::option::Option<&str> {
         self.data_type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for FormDataTypeConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FormDataTypeConfig");
-        formatter.field("data_source_type", &self.data_source_type);
-        formatter.field("data_type_name", &self.data_type_name);
-        formatter.finish()
     }
 }
 /// See [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
@@ -2769,7 +2589,7 @@ impl AsRef<str> for FormDataSourceType {
 
 /// <p>Describes the configuration for the form's style.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FormStyle {
     /// <p>The spacing for the horizontal gap.</p>
     #[doc(hidden)]
@@ -2793,15 +2613,6 @@ impl FormStyle {
     /// <p>The size of the outer padding for the form.</p>
     pub fn outer_padding(&self) -> std::option::Option<&crate::model::FormStyleConfig> {
         self.outer_padding.as_ref()
-    }
-}
-impl std::fmt::Debug for FormStyle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FormStyle");
-        formatter.field("horizontal_gap", &self.horizontal_gap);
-        formatter.field("vertical_gap", &self.vertical_gap);
-        formatter.field("outer_padding", &self.outer_padding);
-        formatter.finish()
     }
 }
 /// See [`FormStyle`](crate::model::FormStyle).
@@ -3014,7 +2825,7 @@ impl AsRef<str> for FormActionType {
 
 /// <p>Describes the basic information about a form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FormSummary {
     /// <p>The unique ID for the app associated with the form summary.</p>
     #[doc(hidden)]
@@ -3059,18 +2870,6 @@ impl FormSummary {
     /// <p>The name of the form.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for FormSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FormSummary");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("form_action_type", &self.form_action_type);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`FormSummary`](crate::model::FormSummary).
@@ -3178,7 +2977,7 @@ impl FormSummary {
 
 /// <p>Represents all of the information that is required to create a form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFormData {
     /// <p>The name of the form.</p>
     #[doc(hidden)]
@@ -3260,21 +3059,6 @@ impl CreateFormData {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateFormData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFormData");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("form_action_type", &self.form_action_type);
-        formatter.field("fields", &self.fields);
-        formatter.field("style", &self.style);
-        formatter.field("sectional_elements", &self.sectional_elements);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("cta", &self.cta);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateFormData`](crate::model::CreateFormData).
@@ -3469,7 +3253,7 @@ impl CreateFormData {
 
 /// <p>Updates and saves all of the information about a form, based on form ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFormData {
     /// <p>The name of the form.</p>
     #[doc(hidden)]
@@ -3540,20 +3324,6 @@ impl UpdateFormData {
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
     pub fn cta(&self) -> std::option::Option<&crate::model::FormCta> {
         self.cta.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateFormData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFormData");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("form_action_type", &self.form_action_type);
-        formatter.field("fields", &self.fields);
-        formatter.field("style", &self.style);
-        formatter.field("sectional_elements", &self.sectional_elements);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("cta", &self.cta);
-        formatter.finish()
     }
 }
 /// See [`UpdateFormData`](crate::model::UpdateFormData).
@@ -3719,7 +3489,7 @@ impl UpdateFormData {
 
 /// <p>Contains the configuration settings for a user interface (UI) element for an Amplify app. A component is configured as a primary, stand-alone UI element. Use <code>ComponentChild</code> to configure an instance of a <code>Component</code>. A <code>ComponentChild</code> instance inherits the configuration of the main <code>Component</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Component {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
     #[doc(hidden)]
@@ -3889,29 +3659,6 @@ impl Component {
     /// <p>The schema version of the component when it was imported.</p>
     pub fn schema_version(&self) -> std::option::Option<&str> {
         self.schema_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Component {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Component");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("source_id", &self.source_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("component_type", &self.component_type);
-        formatter.field("properties", &self.properties);
-        formatter.field("children", &self.children);
-        formatter.field("variants", &self.variants);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("binding_properties", &self.binding_properties);
-        formatter.field("collection_properties", &self.collection_properties);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.field("tags", &self.tags);
-        formatter.field("events", &self.events);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
     }
 }
 /// See [`Component`](crate::model::Component).
@@ -4297,7 +4044,7 @@ impl Component {
 
 /// <p>Describes the configuration of an event. You can bind an event and a corresponding action to a <code>Component</code> or a <code>ComponentChild</code>. A button click is an example of an event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentEvent {
     /// <p>The action to perform when a specific event is raised.</p>
     #[doc(hidden)]
@@ -4321,15 +4068,6 @@ impl ComponentEvent {
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
     pub fn binding_event(&self) -> std::option::Option<&str> {
         self.binding_event.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentEvent");
-        formatter.field("action", &self.action);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("binding_event", &self.binding_event);
-        formatter.finish()
     }
 }
 /// See [`ComponentEvent`](crate::model::ComponentEvent).
@@ -4398,7 +4136,7 @@ impl ComponentEvent {
 
 /// <p>Represents the event action configuration for an element of a <code>Component</code> or <code>ComponentChild</code>. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components. <code>ActionParameters</code> defines the action that is performed when an event occurs on the component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionParameters {
     /// <p>The type of navigation action. Valid values are <code>url</code> and <code>anchor</code>. This value is required for a navigation action.</p>
     #[doc(hidden)]
@@ -4470,21 +4208,6 @@ impl ActionParameters {
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::MutationActionSetStateParameter> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ActionParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionParameters");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("url", &self.url);
-        formatter.field("anchor", &self.anchor);
-        formatter.field("target", &self.target);
-        formatter.field("global", &self.global);
-        formatter.field("model", &self.model);
-        formatter.field("id", &self.id);
-        formatter.field("fields", &self.fields);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ActionParameters`](crate::model::ActionParameters).
@@ -4657,7 +4380,7 @@ impl ActionParameters {
 
 /// <p>Represents the state configuration when an action modifies a property of another element within the same component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MutationActionSetStateParameter {
     /// <p>The name of the component that is being modified.</p>
     #[doc(hidden)]
@@ -4681,15 +4404,6 @@ impl MutationActionSetStateParameter {
     /// <p>The state configuration to assign to the property.</p>
     pub fn set(&self) -> std::option::Option<&crate::model::ComponentProperty> {
         self.set.as_ref()
-    }
-}
-impl std::fmt::Debug for MutationActionSetStateParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MutationActionSetStateParameter");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("property", &self.property);
-        formatter.field("set", &self.set);
-        formatter.finish()
     }
 }
 /// See [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
@@ -4758,7 +4472,7 @@ impl MutationActionSetStateParameter {
 
 /// <p>Describes the configuration for all of a component's properties. Use <code>ComponentProperty</code> to specify the values to render or bind by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentProperty {
     /// <p>The value to assign to the component property.</p>
     #[doc(hidden)]
@@ -4877,30 +4591,6 @@ impl ComponentProperty {
     /// <p>The name of the component's property that is affected by an event.</p>
     pub fn property(&self) -> std::option::Option<&str> {
         self.property.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentProperty");
-        formatter.field("value", &self.value);
-        formatter.field("binding_properties", &self.binding_properties);
-        formatter.field(
-            "collection_binding_properties",
-            &self.collection_binding_properties,
-        );
-        formatter.field("default_value", &self.default_value);
-        formatter.field("model", &self.model);
-        formatter.field("bindings", &self.bindings);
-        formatter.field("event", &self.event);
-        formatter.field("user_attribute", &self.user_attribute);
-        formatter.field("concat", &self.concat);
-        formatter.field("condition", &self.condition);
-        formatter.field("configured", &self.configured);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("imported_value", &self.imported_value);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("property", &self.property);
-        formatter.finish()
     }
 }
 /// See [`ComponentProperty`](crate::model::ComponentProperty).
@@ -5162,7 +4852,7 @@ impl ComponentProperty {
 
 /// <p>Represents a conditional expression to set a component property. Use <code>ComponentConditionProperty</code> to set a property to different values conditionally, based on the value of another property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentConditionProperty {
     /// <p>The name of the conditional property.</p>
     #[doc(hidden)]
@@ -5214,19 +4904,6 @@ impl ComponentConditionProperty {
     /// <p>The type of the property to evaluate.</p>
     pub fn operand_type(&self) -> std::option::Option<&str> {
         self.operand_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentConditionProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentConditionProperty");
-        formatter.field("property", &self.property);
-        formatter.field("field", &self.field);
-        formatter.field("operator", &self.operator);
-        formatter.field("operand", &self.operand);
-        formatter.field("then", &self.then);
-        formatter.field("r#else", &self.r#else);
-        formatter.field("operand_type", &self.operand_type);
-        formatter.finish()
     }
 }
 /// See [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
@@ -5349,7 +5026,7 @@ impl ComponentConditionProperty {
 
 /// <p>Describes how to bind a component property to form data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FormBindingElement {
     /// <p>The name of the component to retrieve a value from.</p>
     #[doc(hidden)]
@@ -5366,14 +5043,6 @@ impl FormBindingElement {
     /// <p>The property to retrieve a value from.</p>
     pub fn property(&self) -> std::option::Option<&str> {
         self.property.as_deref()
-    }
-}
-impl std::fmt::Debug for FormBindingElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FormBindingElement");
-        formatter.field("element", &self.element);
-        formatter.field("property", &self.property);
-        formatter.finish()
     }
 }
 /// See [`FormBindingElement`](crate::model::FormBindingElement).
@@ -5424,7 +5093,7 @@ impl FormBindingElement {
 
 /// <p>Associates a component property to a binding property. This enables exposed properties on the top level component to propagate data to the component's property values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentPropertyBindingProperties {
     /// <p>The component property to bind to the data field.</p>
     #[doc(hidden)]
@@ -5441,14 +5110,6 @@ impl ComponentPropertyBindingProperties {
     /// <p>The data field to bind the property to.</p>
     pub fn field(&self) -> std::option::Option<&str> {
         self.field.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentPropertyBindingProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentPropertyBindingProperties");
-        formatter.field("property", &self.property);
-        formatter.field("field", &self.field);
-        formatter.finish()
     }
 }
 /// See [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
@@ -5499,7 +5160,7 @@ impl ComponentPropertyBindingProperties {
 
 /// <p>Describes the configuration for binding a component's properties to data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentDataConfiguration {
     /// <p>The name of the data model to use to bind data to a component.</p>
     #[doc(hidden)]
@@ -5530,16 +5191,6 @@ impl ComponentDataConfiguration {
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
     pub fn identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.identifiers.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentDataConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentDataConfiguration");
-        formatter.field("model", &self.model);
-        formatter.field("sort", &self.sort);
-        formatter.field("predicate", &self.predicate);
-        formatter.field("identifiers", &self.identifiers);
-        formatter.finish()
     }
 }
 /// See [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
@@ -5635,7 +5286,7 @@ impl ComponentDataConfiguration {
 
 /// <p>Stores information for generating Amplify DataStore queries. Use a <code>Predicate</code> to retrieve a subset of the data in a collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Predicate {
     /// <p>A list of predicates to combine logically.</p>
     #[doc(hidden)]
@@ -5673,17 +5324,6 @@ impl Predicate {
     /// <p>The value to use when performing the evaluation.</p>
     pub fn operand(&self) -> std::option::Option<&str> {
         self.operand.as_deref()
-    }
-}
-impl std::fmt::Debug for Predicate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Predicate");
-        formatter.field("or", &self.or);
-        formatter.field("and", &self.and);
-        formatter.field("field", &self.field);
-        formatter.field("operator", &self.operator);
-        formatter.field("operand", &self.operand);
-        formatter.finish()
     }
 }
 /// See [`Predicate`](crate::model::Predicate).
@@ -5788,7 +5428,7 @@ impl Predicate {
 
 /// <p>Describes how to sort the data that you bind to a component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SortProperty {
     /// <p>The field to perform the sort on.</p>
     #[doc(hidden)]
@@ -5805,14 +5445,6 @@ impl SortProperty {
     /// <p>The direction of the sort, either ascending or descending.</p>
     pub fn direction(&self) -> std::option::Option<&crate::model::SortDirection> {
         self.direction.as_ref()
-    }
-}
-impl std::fmt::Debug for SortProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SortProperty");
-        formatter.field("field", &self.field);
-        formatter.field("direction", &self.direction);
-        formatter.finish()
     }
 }
 /// See [`SortProperty`](crate::model::SortProperty).
@@ -5897,7 +5529,7 @@ where
 
 /// <p>Represents the data binding configuration for a component at runtime. You can use <code>ComponentBindingPropertiesValue</code> to add exposed properties to a component to allow different values to be entered when a component is reused in different places in an app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentBindingPropertiesValue {
     /// <p>The property type.</p>
     #[doc(hidden)]
@@ -5924,15 +5556,6 @@ impl ComponentBindingPropertiesValue {
     /// <p>The default value of the property.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentBindingPropertiesValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentBindingPropertiesValue");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("binding_properties", &self.binding_properties);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
@@ -6005,7 +5628,7 @@ impl ComponentBindingPropertiesValue {
 
 /// <p>Represents the data binding configuration for a specific property using data stored in Amazon Web Services. For Amazon Web Services connected properties, you can bind a property to data stored in an Amazon S3 bucket, an Amplify DataStore model or an authenticated user attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentBindingPropertiesValueProperties {
     /// <p>An Amplify DataStore model.</p>
     #[doc(hidden)]
@@ -6064,20 +5687,6 @@ impl ComponentBindingPropertiesValueProperties {
     /// <p>The name of a component slot.</p>
     pub fn slot_name(&self) -> std::option::Option<&str> {
         self.slot_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentBindingPropertiesValueProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentBindingPropertiesValueProperties");
-        formatter.field("model", &self.model);
-        formatter.field("field", &self.field);
-        formatter.field("predicates", &self.predicates);
-        formatter.field("user_attribute", &self.user_attribute);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("slot_name", &self.slot_name);
-        formatter.finish()
     }
 }
 /// See [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
@@ -6215,7 +5824,7 @@ impl ComponentBindingPropertiesValueProperties {
 
 /// <p>Describes the style configuration of a unique variation of a main component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentVariant {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
     #[doc(hidden)]
@@ -6248,14 +5857,6 @@ impl ComponentVariant {
         >,
     > {
         self.overrides.as_ref()
-    }
-}
-impl std::fmt::Debug for ComponentVariant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentVariant");
-        formatter.field("variant_values", &self.variant_values);
-        formatter.field("overrides", &self.overrides);
-        formatter.finish()
     }
 }
 /// See [`ComponentVariant`](crate::model::ComponentVariant).
@@ -6346,7 +5947,7 @@ impl ComponentVariant {
 
 /// <p>A nested UI configuration within a parent <code>Component</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentChild {
     /// <p>The type of the child component. </p>
     #[doc(hidden)]
@@ -6403,18 +6004,6 @@ impl ComponentChild {
     /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
     pub fn source_id(&self) -> std::option::Option<&str> {
         self.source_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentChild {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentChild");
-        formatter.field("component_type", &self.component_type);
-        formatter.field("name", &self.name);
-        formatter.field("properties", &self.properties);
-        formatter.field("children", &self.children);
-        formatter.field("events", &self.events);
-        formatter.field("source_id", &self.source_id);
-        formatter.finish()
     }
 }
 /// See [`ComponentChild`](crate::model::ComponentChild).
@@ -6559,7 +6148,7 @@ impl ComponentChild {
 
 /// <p>Contains a summary of a component. This is a read-only data type that is returned by <code>ListComponents</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentSummary {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
     #[doc(hidden)]
@@ -6597,17 +6186,6 @@ impl ComponentSummary {
     /// <p>The component type.</p>
     pub fn component_type(&self) -> std::option::Option<&str> {
         self.component_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentSummary");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("component_type", &self.component_type);
-        formatter.finish()
     }
 }
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
@@ -6700,7 +6278,7 @@ impl ComponentSummary {
 
 /// <p>Represents all of the information that is required to create a component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateComponentData {
     /// <p>The name of the component</p>
     #[doc(hidden)]
@@ -6833,24 +6411,6 @@ impl CreateComponentData {
     /// <p>The schema version of the component when it was imported.</p>
     pub fn schema_version(&self) -> std::option::Option<&str> {
         self.schema_version.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateComponentData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateComponentData");
-        formatter.field("name", &self.name);
-        formatter.field("source_id", &self.source_id);
-        formatter.field("component_type", &self.component_type);
-        formatter.field("properties", &self.properties);
-        formatter.field("children", &self.children);
-        formatter.field("variants", &self.variants);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("binding_properties", &self.binding_properties);
-        formatter.field("collection_properties", &self.collection_properties);
-        formatter.field("tags", &self.tags);
-        formatter.field("events", &self.events);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
     }
 }
 /// See [`CreateComponentData`](crate::model::CreateComponentData).
@@ -7165,7 +6725,7 @@ impl CreateComponentData {
 
 /// <p>Updates and saves all of the information about a component, based on component ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateComponentData {
     /// <p>The unique ID of the component to update.</p>
     #[doc(hidden)]
@@ -7294,24 +6854,6 @@ impl UpdateComponentData {
     /// <p>The schema version of the component when it was imported.</p>
     pub fn schema_version(&self) -> std::option::Option<&str> {
         self.schema_version.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateComponentData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateComponentData");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("source_id", &self.source_id);
-        formatter.field("component_type", &self.component_type);
-        formatter.field("properties", &self.properties);
-        formatter.field("children", &self.children);
-        formatter.field("variants", &self.variants);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("binding_properties", &self.binding_properties);
-        formatter.field("collection_properties", &self.collection_properties);
-        formatter.field("events", &self.events);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
     }
 }
 /// See [`UpdateComponentData`](crate::model::UpdateComponentData).
@@ -7632,7 +7174,7 @@ impl std::fmt::Debug for RefreshTokenRequestBody {
 pub mod refresh_token_request_body {
 
     /// A builder for [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) token: std::option::Option<std::string::String>,
     }
@@ -7650,6 +7192,13 @@ pub mod refresh_token_request_body {
         /// Consumes the builder and constructs a [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
         pub fn build(self) -> crate::model::RefreshTokenRequestBody {
             crate::model::RefreshTokenRequestBody { token: self.token }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -7747,7 +7296,7 @@ impl AsRef<str> for TokenProviders {
 
 /// <p>Stores the metadata information about a feature on a form or view.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetadataFlagBody {
     /// <p>The new information to store.</p>
     #[doc(hidden)]
@@ -7757,13 +7306,6 @@ impl PutMetadataFlagBody {
     /// <p>The new information to store.</p>
     pub fn new_value(&self) -> std::option::Option<&str> {
         self.new_value.as_deref()
-    }
-}
-impl std::fmt::Debug for PutMetadataFlagBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetadataFlagBody");
-        formatter.field("new_value", &self.new_value);
-        formatter.finish()
     }
 }
 /// See [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
@@ -7833,7 +7375,7 @@ impl std::fmt::Debug for ExchangeCodeForTokenRequestBody {
 pub mod exchange_code_for_token_request_body {
 
     /// A builder for [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) redirect_uri: std::option::Option<std::string::String>,
@@ -7865,6 +7407,14 @@ pub mod exchange_code_for_token_request_body {
                 code: self.code,
                 redirect_uri: self.redirect_uri,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("code", &"*** Sensitive Data Redacted ***");
+            formatter.field("redirect_uri", &self.redirect_uri);
+            formatter.finish()
         }
     }
 }

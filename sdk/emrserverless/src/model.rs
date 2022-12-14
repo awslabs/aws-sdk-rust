@@ -2,7 +2,7 @@
 
 /// <p>The summary of attributes associated with a job run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobRunSummary {
     /// <p>The ID of the application the job is running on.</p>
     #[doc(hidden)]
@@ -89,24 +89,6 @@ impl JobRunSummary {
     /// <p>The type of job run, such as Spark or Hive.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for JobRunSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobRunSummary");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("execution_role", &self.execution_role);
-        formatter.field("state", &self.state);
-        formatter.field("state_details", &self.state_details);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`JobRunSummary`](crate::model::JobRunSummary).
@@ -424,7 +406,7 @@ impl AsRef<str> for JobRunState {
 
 /// <p>A configuration specification to be used to override existing configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationOverrides {
     /// <p>The override configurations for the application.</p>
     #[doc(hidden)]
@@ -443,14 +425,6 @@ impl ConfigurationOverrides {
         &self,
     ) -> std::option::Option<&crate::model::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigurationOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationOverrides");
-        formatter.field("application_configuration", &self.application_configuration);
-        formatter.field("monitoring_configuration", &self.monitoring_configuration);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationOverrides`](crate::model::ConfigurationOverrides).
@@ -518,7 +492,7 @@ impl ConfigurationOverrides {
 
 /// <p>The configuration setting for monitoring.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoringConfiguration {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
     #[doc(hidden)]
@@ -540,20 +514,6 @@ impl MonitoringConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ManagedPersistenceMonitoringConfiguration> {
         self.managed_persistence_monitoring_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for MonitoringConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoringConfiguration");
-        formatter.field(
-            "s3_monitoring_configuration",
-            &self.s3_monitoring_configuration,
-        );
-        formatter.field(
-            "managed_persistence_monitoring_configuration",
-            &self.managed_persistence_monitoring_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
@@ -619,7 +579,7 @@ impl MonitoringConfiguration {
 
 /// <p>The managed log persistence configuration for a job run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedPersistenceMonitoringConfiguration {
     /// <p>Enables managed logging and defaults to true. If set to false, managed logging will be turned off.</p>
     #[doc(hidden)]
@@ -636,14 +596,6 @@ impl ManagedPersistenceMonitoringConfiguration {
     /// <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
     pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedPersistenceMonitoringConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedPersistenceMonitoringConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.finish()
     }
 }
 /// See [`ManagedPersistenceMonitoringConfiguration`](crate::model::ManagedPersistenceMonitoringConfiguration).
@@ -697,7 +649,7 @@ impl ManagedPersistenceMonitoringConfiguration {
 
 /// <p>The Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3MonitoringConfiguration {
     /// <p>The Amazon S3 destination URI for log publishing.</p>
     #[doc(hidden)]
@@ -714,14 +666,6 @@ impl S3MonitoringConfiguration {
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
     pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3MonitoringConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3MonitoringConfiguration");
-        formatter.field("log_uri", &self.log_uri);
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.finish()
     }
 }
 /// See [`S3MonitoringConfiguration`](crate::model::S3MonitoringConfiguration).
@@ -818,7 +762,7 @@ impl std::fmt::Debug for Configuration {
 pub mod configuration {
 
     /// A builder for [`Configuration`](crate::model::Configuration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) classification: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<
@@ -891,6 +835,15 @@ pub mod configuration {
                 properties: self.properties,
                 configurations: self.configurations,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("classification", &self.classification);
+            formatter.field("properties", &"*** Sensitive Data Redacted ***");
+            formatter.field("configurations", &self.configurations);
+            formatter.finish()
         }
     }
 }
@@ -993,7 +946,7 @@ impl std::fmt::Debug for Hive {
 pub mod hive {
 
     /// A builder for [`Hive`](crate::model::Hive).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) query: std::option::Option<std::string::String>,
         pub(crate) init_query_file: std::option::Option<std::string::String>,
@@ -1040,6 +993,15 @@ pub mod hive {
                 init_query_file: self.init_query_file,
                 parameters: self.parameters,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("query", &"*** Sensitive Data Redacted ***");
+            formatter.field("init_query_file", &"*** Sensitive Data Redacted ***");
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1094,7 +1056,7 @@ impl std::fmt::Debug for SparkSubmit {
 pub mod spark_submit {
 
     /// A builder for [`SparkSubmit`](crate::model::SparkSubmit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) entry_point: std::option::Option<std::string::String>,
         pub(crate) entry_point_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1152,6 +1114,18 @@ pub mod spark_submit {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
+            formatter.field("entry_point_arguments", &self.entry_point_arguments);
+            formatter.field(
+                "spark_submit_parameters",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
+        }
+    }
 }
 impl SparkSubmit {
     /// Creates a new builder-style object to manufacture [`SparkSubmit`](crate::model::SparkSubmit).
@@ -1162,7 +1136,7 @@ impl SparkSubmit {
 
 /// <p>Information about a job run. A job run is a unit of work, such as a Spark JAR, Hive query, or SparkSQL query, that you submit to an EMR Serverless application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobRun {
     /// <p>The ID of the application the job is running on.</p>
     #[doc(hidden)]
@@ -1294,35 +1268,6 @@ impl JobRun {
     /// <p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
     pub fn total_execution_duration_seconds(&self) -> std::option::Option<i32> {
         self.total_execution_duration_seconds
-    }
-}
-impl std::fmt::Debug for JobRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobRun");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("job_run_id", &self.job_run_id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("execution_role", &self.execution_role);
-        formatter.field("state", &self.state);
-        formatter.field("state_details", &self.state_details);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("configuration_overrides", &self.configuration_overrides);
-        formatter.field("job_driver", &self.job_driver);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "total_resource_utilization",
-            &self.total_resource_utilization,
-        );
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field(
-            "total_execution_duration_seconds",
-            &self.total_execution_duration_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`JobRun`](crate::model::JobRun).
@@ -1611,7 +1556,7 @@ impl JobRun {
 
 /// <p>The network configuration for customer VPC connectivity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>The array of subnet Ids for customer VPC connectivity.</p>
     #[doc(hidden)]
@@ -1628,14 +1573,6 @@ impl NetworkConfiguration {
     /// <p>The array of security group Ids for customer VPC connectivity.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
@@ -1704,7 +1641,7 @@ impl NetworkConfiguration {
 
 /// <p>The aggregate vCPU, memory, and storage resources used from the time job start executing till the time job is terminated, rounded up to the nearest second.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TotalResourceUtilization {
     /// <p>The aggregated vCPU used per hour from the time job start executing till the time job is terminated.</p>
     #[doc(hidden)]
@@ -1728,15 +1665,6 @@ impl TotalResourceUtilization {
     /// <p>The aggregated storage used per hour from the time job start executing till the time job is terminated.</p>
     pub fn storage_gb_hour(&self) -> std::option::Option<f64> {
         self.storage_gb_hour
-    }
-}
-impl std::fmt::Debug for TotalResourceUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TotalResourceUtilization");
-        formatter.field("v_cpu_hour", &self.v_cpu_hour);
-        formatter.field("memory_gb_hour", &self.memory_gb_hour);
-        formatter.field("storage_gb_hour", &self.storage_gb_hour);
-        formatter.finish()
     }
 }
 /// See [`TotalResourceUtilization`](crate::model::TotalResourceUtilization).
@@ -1799,7 +1727,7 @@ impl TotalResourceUtilization {
 
 /// <p>The summary of attributes associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
@@ -1865,21 +1793,6 @@ impl ApplicationSummary {
     /// <p>The date and time when the application was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("state_details", &self.state_details);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
@@ -2152,7 +2065,7 @@ impl AsRef<str> for ApplicationState {
 
 /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoStopConfig {
     /// <p>Enables the application to automatically stop after a certain amount of time being idle. Defaults to true.</p>
     #[doc(hidden)]
@@ -2169,14 +2082,6 @@ impl AutoStopConfig {
     /// <p>The amount of idle time in minutes after which your application will automatically stop. Defaults to 15 minutes.</p>
     pub fn idle_timeout_minutes(&self) -> std::option::Option<i32> {
         self.idle_timeout_minutes
-    }
-}
-impl std::fmt::Debug for AutoStopConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoStopConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("idle_timeout_minutes", &self.idle_timeout_minutes);
-        formatter.finish()
     }
 }
 /// See [`AutoStopConfig`](crate::model::AutoStopConfig).
@@ -2227,7 +2132,7 @@ impl AutoStopConfig {
 
 /// <p>The configuration for an application to automatically start on job submission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoStartConfig {
     /// <p>Enables the application to automatically start on job submission. Defaults to true.</p>
     #[doc(hidden)]
@@ -2237,13 +2142,6 @@ impl AutoStartConfig {
     /// <p>Enables the application to automatically start on job submission. Defaults to true.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for AutoStartConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoStartConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`AutoStartConfig`](crate::model::AutoStartConfig).
@@ -2282,7 +2180,7 @@ impl AutoStartConfig {
 
 /// <p>The maximum allowed cumulative resources for an application. No new resources will be created once the limit is hit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumAllowedResources {
     /// <p>The maximum allowed CPU for an application.</p>
     #[doc(hidden)]
@@ -2306,15 +2204,6 @@ impl MaximumAllowedResources {
     /// <p>The maximum allowed disk for an application.</p>
     pub fn disk(&self) -> std::option::Option<&str> {
         self.disk.as_deref()
-    }
-}
-impl std::fmt::Debug for MaximumAllowedResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumAllowedResources");
-        formatter.field("cpu", &self.cpu);
-        formatter.field("memory", &self.memory);
-        formatter.field("disk", &self.disk);
-        formatter.finish()
     }
 }
 /// See [`MaximumAllowedResources`](crate::model::MaximumAllowedResources).
@@ -2377,7 +2266,7 @@ impl MaximumAllowedResources {
 
 /// <p>The initial capacity configuration per worker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitialCapacityConfig {
     /// <p>The number of workers in the initial capacity configuration.</p>
     #[doc(hidden)]
@@ -2394,14 +2283,6 @@ impl InitialCapacityConfig {
     /// <p>The resource configuration of the initial capacity configuration.</p>
     pub fn worker_configuration(&self) -> std::option::Option<&crate::model::WorkerResourceConfig> {
         self.worker_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for InitialCapacityConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitialCapacityConfig");
-        formatter.field("worker_count", &self.worker_count);
-        formatter.field("worker_configuration", &self.worker_configuration);
-        formatter.finish()
     }
 }
 /// See [`InitialCapacityConfig`](crate::model::InitialCapacityConfig).
@@ -2455,7 +2336,7 @@ impl InitialCapacityConfig {
 
 /// <p>The cumulative configuration requirements for every worker instance of the worker type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkerResourceConfig {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
     #[doc(hidden)]
@@ -2479,15 +2360,6 @@ impl WorkerResourceConfig {
     /// <p>The disk requirements for every worker instance of the worker type.</p>
     pub fn disk(&self) -> std::option::Option<&str> {
         self.disk.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkerResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkerResourceConfig");
-        formatter.field("cpu", &self.cpu);
-        formatter.field("memory", &self.memory);
-        formatter.field("disk", &self.disk);
-        formatter.finish()
     }
 }
 /// See [`WorkerResourceConfig`](crate::model::WorkerResourceConfig).
@@ -2550,7 +2422,7 @@ impl WorkerResourceConfig {
 
 /// <p>Information about an application. EMR Serverless uses applications to run jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Application {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
@@ -2670,27 +2542,6 @@ impl Application {
         &self,
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Application {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Application");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("state_details", &self.state_details);
-        formatter.field("initial_capacity", &self.initial_capacity);
-        formatter.field("maximum_capacity", &self.maximum_capacity);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("tags", &self.tags);
-        formatter.field("auto_start_configuration", &self.auto_start_configuration);
-        formatter.field("auto_stop_configuration", &self.auto_stop_configuration);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.finish()
     }
 }
 /// See [`Application`](crate::model::Application).

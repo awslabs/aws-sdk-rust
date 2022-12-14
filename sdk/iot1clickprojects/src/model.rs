@@ -2,7 +2,7 @@
 
 /// <p>An object defining the template for a placement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementTemplate {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     #[doc(hidden)]
@@ -29,14 +29,6 @@ impl PlacementTemplate {
         &std::collections::HashMap<std::string::String, crate::model::DeviceTemplate>,
     > {
         self.device_templates.as_ref()
-    }
-}
-impl std::fmt::Debug for PlacementTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementTemplate");
-        formatter.field("default_attributes", &self.default_attributes);
-        formatter.field("device_templates", &self.device_templates);
-        formatter.finish()
     }
 }
 /// See [`PlacementTemplate`](crate::model::PlacementTemplate).
@@ -121,7 +113,7 @@ impl PlacementTemplate {
 
 /// <p>An object representing a device for a placement template (see <code>PlacementTemplate</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceTemplate {
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
     #[doc(hidden)]
@@ -142,14 +134,6 @@ impl DeviceTemplate {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.callback_overrides.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceTemplate");
-        formatter.field("device_type", &self.device_type);
-        formatter.field("callback_overrides", &self.callback_overrides);
-        formatter.finish()
     }
 }
 /// See [`DeviceTemplate`](crate::model::DeviceTemplate).
@@ -217,7 +201,7 @@ impl DeviceTemplate {
 
 /// <p>An object providing summary information for a particular project for an associated AWS account and region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The ARN of the project.</p>
     #[doc(hidden)]
@@ -259,17 +243,6 @@ impl ProjectSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("updated_date", &self.updated_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
@@ -379,7 +352,7 @@ impl ProjectSummary {
 
 /// <p>An object providing summary information for a particular placement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementSummary {
     /// <p>The name of the project containing the placement.</p>
     #[doc(hidden)]
@@ -410,16 +383,6 @@ impl PlacementSummary {
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
-    }
-}
-impl std::fmt::Debug for PlacementSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementSummary");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("placement_name", &self.placement_name);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("updated_date", &self.updated_date);
-        formatter.finish()
     }
 }
 /// See [`PlacementSummary`](crate::model::PlacementSummary).
@@ -503,7 +466,7 @@ impl PlacementSummary {
 
 /// <p>An object providing detailed information for a particular project associated with an AWS account and region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectDescription {
     /// <p>The ARN of the project.</p>
     #[doc(hidden)]
@@ -559,19 +522,6 @@ impl ProjectDescription {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectDescription");
-        formatter.field("arn", &self.arn);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("updated_date", &self.updated_date);
-        formatter.field("placement_template", &self.placement_template);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ProjectDescription`](crate::model::ProjectDescription).
@@ -708,7 +658,7 @@ impl ProjectDescription {
 
 /// <p>An object describing a project's placement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementDescription {
     /// <p>The name of the project containing the placement.</p>
     #[doc(hidden)]
@@ -750,17 +700,6 @@ impl PlacementDescription {
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
-    }
-}
-impl std::fmt::Debug for PlacementDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementDescription");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("placement_name", &self.placement_name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("updated_date", &self.updated_date);
-        formatter.finish()
     }
 }
 /// See [`PlacementDescription`](crate::model::PlacementDescription).

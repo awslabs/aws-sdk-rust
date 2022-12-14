@@ -2,7 +2,7 @@
 
 /// <p>The serice is temporary unavailable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceTemporarilyUnavailableException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl ServiceTemporarilyUnavailableException {
     /// <p>You can wait and then retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for ServiceTemporarilyUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceTemporarilyUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl ServiceTemporarilyUnavailableException {
@@ -91,7 +83,7 @@ impl ServiceTemporarilyUnavailableException {
 
 /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchEntityException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -111,15 +103,6 @@ impl NoSuchEntityException {
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for NoSuchEntityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchEntityException");
-        formatter.field("message", &self.message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl NoSuchEntityException {
@@ -203,7 +186,7 @@ impl NoSuchEntityException {
 
 /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInputException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -223,15 +206,6 @@ impl InvalidInputException {
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for InvalidInputException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInputException");
-        formatter.field("message", &self.message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl InvalidInputException {
@@ -315,7 +289,7 @@ impl InvalidInputException {
 
 /// <p>Internal server error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -328,14 +302,6 @@ impl InternalException {
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for InternalException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalException");
-        formatter.field("message", &self.message);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl InternalException {
@@ -404,7 +370,7 @@ impl InternalException {
 
 /// <p>You do not have required permissions to access the requested resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -424,15 +390,6 @@ impl AccessDeniedException {
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -516,7 +473,7 @@ impl AccessDeniedException {
 
 /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -536,15 +493,6 @@ impl LimitExceededException {
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl LimitExceededException {
@@ -628,7 +576,7 @@ impl LimitExceededException {
 
 /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCrossAccountRoleException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -650,15 +598,6 @@ impl InvalidCrossAccountRoleException {
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for InvalidCrossAccountRoleException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCrossAccountRoleException");
-        formatter.field("message", &self.message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl InvalidCrossAccountRoleException {
@@ -742,7 +681,7 @@ impl InvalidCrossAccountRoleException {
 
 /// <p>You started an assessment run, but one of the instances is already participating in another assessment run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentsAlreadyRunningAssessmentException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -769,16 +708,6 @@ impl AgentsAlreadyRunningAssessmentException {
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for AgentsAlreadyRunningAssessmentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentsAlreadyRunningAssessmentException");
-        formatter.field("message", &self.message);
-        formatter.field("agents", &self.agents);
-        formatter.field("agents_truncated", &self.agents_truncated);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl AgentsAlreadyRunningAssessmentException {
@@ -881,7 +810,7 @@ impl AgentsAlreadyRunningAssessmentException {
 
 /// <p>Used by the <code>GetAssessmentReport</code> API. The request was rejected because you tried to generate a report for an assessment run that existed before reporting was supported in Amazon Inspector. You can only generate reports for assessment runs that took place or will take place after generating reports in Amazon Inspector became available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedFeatureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -894,14 +823,6 @@ impl UnsupportedFeatureException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for UnsupportedFeatureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedFeatureException");
-        formatter.field("message", &self.message);
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl UnsupportedFeatureException {
@@ -970,7 +891,7 @@ impl UnsupportedFeatureException {
 
 /// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentRunInProgressException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
@@ -997,19 +918,6 @@ impl AssessmentRunInProgressException {
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(&self) -> std::option::Option<bool> {
         self.can_retry
-    }
-}
-impl std::fmt::Debug for AssessmentRunInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentRunInProgressException");
-        formatter.field("message", &self.message);
-        formatter.field("assessment_run_arns", &self.assessment_run_arns);
-        formatter.field(
-            "assessment_run_arns_truncated",
-            &self.assessment_run_arns_truncated,
-        );
-        formatter.field("can_retry", &self.can_retry);
-        formatter.finish()
     }
 }
 impl AssessmentRunInProgressException {
@@ -1114,18 +1022,11 @@ impl AssessmentRunInProgressException {
 
 /// <p>The request is rejected. The specified assessment template is currently generating an exclusions preview.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PreviewGenerationInProgressException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PreviewGenerationInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreviewGenerationInProgressException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PreviewGenerationInProgressException {
     /// Returns the error message.

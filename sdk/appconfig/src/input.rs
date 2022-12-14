@@ -1493,7 +1493,7 @@ impl CreateExtensionAssociationInput {
 pub mod create_hosted_configuration_version_input {
 
     /// A builder for [`CreateHostedConfigurationVersionInput`](crate::input::CreateHostedConfigurationVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) configuration_profile_id: std::option::Option<std::string::String>,
@@ -1584,6 +1584,18 @@ pub mod create_hosted_configuration_version_input {
                 content_type: self.content_type,
                 latest_version_number: self.latest_version_number,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("application_id", &self.application_id);
+            formatter.field("configuration_profile_id", &self.configuration_profile_id);
+            formatter.field("description", &self.description);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("content_type", &self.content_type);
+            formatter.field("latest_version_number", &self.latest_version_number);
+            formatter.finish()
         }
     }
 }
@@ -8964,7 +8976,7 @@ impl ValidateConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateConfigurationInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -8990,19 +9002,10 @@ impl ValidateConfigurationInput {
         self.configuration_version.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateConfigurationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.field("configuration_version", &self.configuration_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateExtensionAssociationInput {
     /// <p>The system-generated ID for the association.</p>
     #[doc(hidden)]
@@ -9025,18 +9028,10 @@ impl UpdateExtensionAssociationInput {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateExtensionAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateExtensionAssociationInput");
-        formatter.field("extension_association_id", &self.extension_association_id);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateExtensionInput {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     #[doc(hidden)]
@@ -9087,21 +9082,10 @@ impl UpdateExtensionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for UpdateExtensionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateExtensionInput");
-        formatter.field("extension_identifier", &self.extension_identifier);
-        formatter.field("description", &self.description);
-        formatter.field("actions", &self.actions);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9141,21 +9125,10 @@ impl UpdateEnvironmentInput {
         self.monitors.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEnvironmentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("monitors", &self.monitors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeploymentStrategyInput {
     /// <p>The deployment strategy ID.</p>
     #[doc(hidden)]
@@ -9214,28 +9187,10 @@ impl UpdateDeploymentStrategyInput {
         self.growth_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDeploymentStrategyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeploymentStrategyInput");
-        formatter.field("deployment_strategy_id", &self.deployment_strategy_id);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "deployment_duration_in_minutes",
-            &self.deployment_duration_in_minutes,
-        );
-        formatter.field(
-            "final_bake_time_in_minutes",
-            &self.final_bake_time_in_minutes,
-        );
-        formatter.field("growth_factor", &self.growth_factor);
-        formatter.field("growth_type", &self.growth_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationProfileInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9282,22 +9237,10 @@ impl UpdateConfigurationProfileInput {
         self.validators.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationProfileInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("retrieval_role_arn", &self.retrieval_role_arn);
-        formatter.field("validators", &self.validators);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9323,19 +9266,10 @@ impl UpdateApplicationInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource for which to remove tags.</p>
     #[doc(hidden)]
@@ -9354,18 +9288,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource for which to retrieve tags.</p>
     #[doc(hidden)]
@@ -9388,18 +9314,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDeploymentInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9425,19 +9343,10 @@ impl StopDeploymentInput {
         self.deployment_number
     }
 }
-impl std::fmt::Debug for StopDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDeploymentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("deployment_number", &self.deployment_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDeploymentInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9495,23 +9404,10 @@ impl StartDeploymentInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StartDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDeploymentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("deployment_strategy_id", &self.deployment_strategy_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.field("configuration_version", &self.configuration_version);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -9523,17 +9419,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostedConfigurationVersionsInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9566,20 +9455,10 @@ impl ListHostedConfigurationVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListHostedConfigurationVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedConfigurationVersionsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExtensionsInput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     #[doc(hidden)]
@@ -9605,19 +9484,10 @@ impl ListExtensionsInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for ListExtensionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExtensionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExtensionAssociationsInput {
     /// <p>The ARN of an application, configuration profile, or environment.</p>
     #[doc(hidden)]
@@ -9657,21 +9527,10 @@ impl ListExtensionAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListExtensionAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExtensionAssociationsInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("extension_identifier", &self.extension_identifier);
-        formatter.field("extension_version_number", &self.extension_version_number);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentsInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9697,19 +9556,10 @@ impl ListEnvironmentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentStrategiesInput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     #[doc(hidden)]
@@ -9728,18 +9578,10 @@ impl ListDeploymentStrategiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentStrategiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentStrategiesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentsInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9772,20 +9614,10 @@ impl ListDeploymentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationProfilesInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9818,20 +9650,10 @@ impl ListConfigurationProfilesInput {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for ListConfigurationProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationProfilesInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     #[doc(hidden)]
@@ -9850,18 +9672,10 @@ impl ListApplicationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -9887,19 +9701,10 @@ impl GetHostedConfigurationVersionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for GetHostedConfigurationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostedConfigurationVersionInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExtensionAssociationInput {
     /// <p>The extension association ID to get.</p>
     #[doc(hidden)]
@@ -9911,17 +9716,10 @@ impl GetExtensionAssociationInput {
         self.extension_association_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetExtensionAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExtensionAssociationInput");
-        formatter.field("extension_association_id", &self.extension_association_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExtensionInput {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     #[doc(hidden)]
@@ -9940,18 +9738,10 @@ impl GetExtensionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for GetExtensionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExtensionInput");
-        formatter.field("extension_identifier", &self.extension_identifier);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnvironmentInput {
     /// <p>The ID of the application that includes the environment you want to get.</p>
     #[doc(hidden)]
@@ -9970,18 +9760,10 @@ impl GetEnvironmentInput {
         self.environment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnvironmentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy to get.</p>
     #[doc(hidden)]
@@ -9993,17 +9775,10 @@ impl GetDeploymentStrategyInput {
         self.deployment_strategy_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentStrategyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentStrategyInput");
-        formatter.field("deployment_strategy_id", &self.deployment_strategy_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentInput {
     /// <p>The ID of the application that includes the deployment you want to get. </p>
     #[doc(hidden)]
@@ -10029,19 +9804,10 @@ impl GetDeploymentInput {
         self.deployment_number
     }
 }
-impl std::fmt::Debug for GetDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("deployment_number", &self.deployment_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigurationProfileInput {
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
     #[doc(hidden)]
@@ -10060,18 +9826,10 @@ impl GetConfigurationProfileInput {
         self.configuration_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetConfigurationProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigurationProfileInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigurationInput {
     /// <p>The application to get. Specify either the application name or the application ID.</p>
     #[doc(hidden)]
@@ -10119,24 +9877,10 @@ impl GetConfigurationInput {
         self.client_configuration_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigurationInput");
-        formatter.field("application", &self.application);
-        formatter.field("environment", &self.environment);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("client_id", &self.client_id);
-        formatter.field(
-            "client_configuration_version",
-            &self.client_configuration_version,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The ID of the application you want to get.</p>
     #[doc(hidden)]
@@ -10148,17 +9892,10 @@ impl GetApplicationInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -10184,19 +9921,10 @@ impl DeleteHostedConfigurationVersionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteHostedConfigurationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHostedConfigurationVersionInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExtensionAssociationInput {
     /// <p>The ID of the extension association to delete.</p>
     #[doc(hidden)]
@@ -10208,17 +9936,10 @@ impl DeleteExtensionAssociationInput {
         self.extension_association_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteExtensionAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExtensionAssociationInput");
-        formatter.field("extension_association_id", &self.extension_association_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExtensionInput {
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
     #[doc(hidden)]
@@ -10237,18 +9958,10 @@ impl DeleteExtensionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteExtensionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExtensionInput");
-        formatter.field("extension_identifier", &self.extension_identifier);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
     /// <p>The application ID that includes the environment that you want to delete.</p>
     #[doc(hidden)]
@@ -10267,18 +9980,10 @@ impl DeleteEnvironmentInput {
         self.environment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy you want to delete.</p>
     #[doc(hidden)]
@@ -10290,17 +9995,10 @@ impl DeleteDeploymentStrategyInput {
         self.deployment_strategy_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeploymentStrategyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentStrategyInput");
-        formatter.field("deployment_strategy_id", &self.deployment_strategy_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationProfileInput {
     /// <p>The application ID that includes the configuration profile you want to delete.</p>
     #[doc(hidden)]
@@ -10319,18 +10017,10 @@ impl DeleteConfigurationProfileInput {
         self.configuration_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationProfileInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_profile_id", &self.configuration_profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The ID of the application to delete.</p>
     #[doc(hidden)]
@@ -10340,13 +10030,6 @@ impl DeleteApplicationInput {
     /// <p>The ID of the application to delete.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
     }
 }
 
@@ -10414,7 +10097,7 @@ impl std::fmt::Debug for CreateHostedConfigurationVersionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExtensionAssociationInput {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     #[doc(hidden)]
@@ -10462,21 +10145,10 @@ impl CreateExtensionAssociationInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateExtensionAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExtensionAssociationInput");
-        formatter.field("extension_identifier", &self.extension_identifier);
-        formatter.field("extension_version_number", &self.extension_version_number);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExtensionInput {
     /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
     #[doc(hidden)]
@@ -10538,22 +10210,10 @@ impl CreateExtensionInput {
         self.latest_version_number
     }
 }
-impl std::fmt::Debug for CreateExtensionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExtensionInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("actions", &self.actions);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("tags", &self.tags);
-        formatter.field("latest_version_number", &self.latest_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -10597,21 +10257,10 @@ impl CreateEnvironmentInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEnvironmentInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("monitors", &self.monitors);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentStrategyInput {
     /// <p>A name for the deployment strategy.</p>
     #[doc(hidden)]
@@ -10688,30 +10337,10 @@ impl CreateDeploymentStrategyInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentStrategyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentStrategyInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "deployment_duration_in_minutes",
-            &self.deployment_duration_in_minutes,
-        );
-        formatter.field(
-            "final_bake_time_in_minutes",
-            &self.final_bake_time_in_minutes,
-        );
-        formatter.field("growth_factor", &self.growth_factor);
-        formatter.field("growth_type", &self.growth_type);
-        formatter.field("replicate_to", &self.replicate_to);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationProfileInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -10798,24 +10427,10 @@ impl CreateConfigurationProfileInput {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationProfileInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("location_uri", &self.location_uri);
-        formatter.field("retrieval_role_arn", &self.retrieval_role_arn);
-        formatter.field("validators", &self.validators);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>A name for the application.</p>
     #[doc(hidden)]
@@ -10843,14 +10458,5 @@ impl CreateApplicationInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

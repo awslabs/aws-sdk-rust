@@ -92,7 +92,7 @@ impl AsRef<str> for RootDeviceType {
 
 /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// <p>The repository type.</p>
     #[doc(hidden)]
@@ -159,18 +159,6 @@ impl Source {
     /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
     pub fn revision(&self) -> std::option::Option<&str> {
         self.revision.as_deref()
-    }
-}
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("url", &self.url);
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.field("ssh_key", &self.ssh_key);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
     }
 }
 /// See [`Source`](crate::model::Source).
@@ -391,7 +379,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Describes the Chef configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChefConfiguration {
     /// <p>Whether to enable Berkshelf.</p>
     #[doc(hidden)]
@@ -408,14 +396,6 @@ impl ChefConfiguration {
     /// <p>The Berkshelf version.</p>
     pub fn berkshelf_version(&self) -> std::option::Option<&str> {
         self.berkshelf_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ChefConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChefConfiguration");
-        formatter.field("manage_berkshelf", &self.manage_berkshelf);
-        formatter.field("berkshelf_version", &self.berkshelf_version);
-        formatter.finish()
     }
 }
 /// See [`ChefConfiguration`](crate::model::ChefConfiguration).
@@ -469,7 +449,7 @@ impl ChefConfiguration {
 
 /// <p>Describes the configuration manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackConfigurationManager {
     /// <p>The name. This parameter must be set to "Chef".</p>
     #[doc(hidden)]
@@ -486,14 +466,6 @@ impl StackConfigurationManager {
     /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for StackConfigurationManager {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackConfigurationManager");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`StackConfigurationManager`](crate::model::StackConfigurationManager).
@@ -631,7 +603,7 @@ impl AsRef<str> for StackAttributesKeys {
 
 /// <p>Specifies the lifecycle event configuration</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleEventConfiguration {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     #[doc(hidden)]
@@ -641,13 +613,6 @@ impl LifecycleEventConfiguration {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub fn shutdown(&self) -> std::option::Option<&crate::model::ShutdownEventConfiguration> {
         self.shutdown.as_ref()
-    }
-}
-impl std::fmt::Debug for LifecycleEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleEventConfiguration");
-        formatter.field("shutdown", &self.shutdown);
-        formatter.finish()
     }
 }
 /// See [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration).
@@ -689,7 +654,7 @@ impl LifecycleEventConfiguration {
 
 /// <p>The Shutdown event configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShutdownEventConfiguration {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     #[doc(hidden)]
@@ -706,17 +671,6 @@ impl ShutdownEventConfiguration {
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
     pub fn delay_until_elb_connections_drained(&self) -> std::option::Option<bool> {
         self.delay_until_elb_connections_drained
-    }
-}
-impl std::fmt::Debug for ShutdownEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShutdownEventConfiguration");
-        formatter.field("execution_timeout", &self.execution_timeout);
-        formatter.field(
-            "delay_until_elb_connections_drained",
-            &self.delay_until_elb_connections_drained,
-        );
-        formatter.finish()
     }
 }
 /// See [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration).
@@ -771,7 +725,7 @@ impl ShutdownEventConfiguration {
 /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p>
 /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recipes {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
     #[doc(hidden)]
@@ -809,17 +763,6 @@ impl Recipes {
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
     pub fn shutdown(&self) -> std::option::Option<&[std::string::String]> {
         self.shutdown.as_deref()
-    }
-}
-impl std::fmt::Debug for Recipes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recipes");
-        formatter.field("setup", &self.setup);
-        formatter.field("configure", &self.configure);
-        formatter.field("deploy", &self.deploy);
-        formatter.field("undeploy", &self.undeploy);
-        formatter.field("shutdown", &self.shutdown);
-        formatter.finish()
     }
 }
 /// See [`Recipes`](crate::model::Recipes).
@@ -951,7 +894,7 @@ impl Recipes {
 
 /// <p>Describes an Amazon EBS volume configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeConfiguration {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
     #[doc(hidden)]
@@ -1017,19 +960,6 @@ impl VolumeConfiguration {
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
-    }
-}
-impl std::fmt::Debug for VolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeConfiguration");
-        formatter.field("mount_point", &self.mount_point);
-        formatter.field("raid_level", &self.raid_level);
-        formatter.field("number_of_disks", &self.number_of_disks);
-        formatter.field("size", &self.size);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("iops", &self.iops);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.finish()
     }
 }
 /// See [`VolumeConfiguration`](crate::model::VolumeConfiguration).
@@ -1154,7 +1084,7 @@ impl VolumeConfiguration {
 
 /// <p>Describes the Amazon CloudWatch logs configuration for a layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsConfiguration {
     /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
     #[doc(hidden)]
@@ -1171,14 +1101,6 @@ impl CloudWatchLogsConfiguration {
     /// <p>A list of configuration options for CloudWatch Logs.</p>
     pub fn log_streams(&self) -> std::option::Option<&[crate::model::CloudWatchLogsLogStream]> {
         self.log_streams.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLogsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("log_streams", &self.log_streams);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration).
@@ -1239,7 +1161,7 @@ impl CloudWatchLogsConfiguration {
 
 /// <p>Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsLogStream {
     /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
     #[doc(hidden)]
@@ -1325,23 +1247,6 @@ impl CloudWatchLogsLogStream {
     /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
-    }
-}
-impl std::fmt::Debug for CloudWatchLogsLogStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsLogStream");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("datetime_format", &self.datetime_format);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.field("file", &self.file);
-        formatter.field("file_fingerprint_lines", &self.file_fingerprint_lines);
-        formatter.field("multi_line_start_pattern", &self.multi_line_start_pattern);
-        formatter.field("initial_position", &self.initial_position);
-        formatter.field("encoding", &self.encoding);
-        formatter.field("buffer_duration", &self.buffer_duration);
-        formatter.field("batch_count", &self.batch_count);
-        formatter.field("batch_size", &self.batch_size);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream).
@@ -2761,7 +2666,7 @@ impl AsRef<str> for AutoScalingType {
 
 /// <p>Represents an app's environment variable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentVariable {
     /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     #[doc(hidden)]
@@ -2785,15 +2690,6 @@ impl EnvironmentVariable {
     /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn secure(&self) -> std::option::Option<bool> {
         self.secure
-    }
-}
-impl std::fmt::Debug for EnvironmentVariable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentVariable");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("secure", &self.secure);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentVariable`](crate::model::EnvironmentVariable).
@@ -2963,7 +2859,7 @@ impl AsRef<str> for AppAttributesKeys {
 
 /// <p>Describes an app's SSL configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SslConfiguration {
     /// <p>The contents of the certificate's domain.crt file.</p>
     #[doc(hidden)]
@@ -2987,15 +2883,6 @@ impl SslConfiguration {
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     pub fn chain(&self) -> std::option::Option<&str> {
         self.chain.as_deref()
-    }
-}
-impl std::fmt::Debug for SslConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SslConfiguration");
-        formatter.field("certificate", &self.certificate);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("chain", &self.chain);
-        formatter.finish()
     }
 }
 /// See [`SslConfiguration`](crate::model::SslConfiguration).
@@ -3181,7 +3068,7 @@ impl AsRef<str> for AppType {
 
 /// <p>Describes an app's data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
     #[doc(hidden)]
@@ -3205,15 +3092,6 @@ impl DataSource {
     /// <p>The database name.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("arn", &self.arn);
-        formatter.field("database_name", &self.database_name);
-        formatter.finish()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
@@ -3286,7 +3164,7 @@ impl DataSource {
 /// <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p>
 /// <p> <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WeeklyAutoScalingSchedule {
     /// <p>The schedule for Monday.</p>
     #[doc(hidden)]
@@ -3366,19 +3244,6 @@ impl WeeklyAutoScalingSchedule {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.sunday.as_ref()
-    }
-}
-impl std::fmt::Debug for WeeklyAutoScalingSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WeeklyAutoScalingSchedule");
-        formatter.field("monday", &self.monday);
-        formatter.field("tuesday", &self.tuesday);
-        formatter.field("wednesday", &self.wednesday);
-        formatter.field("thursday", &self.thursday);
-        formatter.field("friday", &self.friday);
-        formatter.field("saturday", &self.saturday);
-        formatter.field("sunday", &self.sunday);
-        formatter.finish()
     }
 }
 /// See [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule).
@@ -3608,7 +3473,7 @@ impl WeeklyAutoScalingSchedule {
 
 /// <p>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingThresholds {
     /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
     #[doc(hidden)]
@@ -3664,19 +3529,6 @@ impl AutoScalingThresholds {
     /// </note>
     pub fn alarms(&self) -> std::option::Option<&[std::string::String]> {
         self.alarms.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingThresholds {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingThresholds");
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("thresholds_wait_time", &self.thresholds_wait_time);
-        formatter.field("ignore_metrics_time", &self.ignore_metrics_time);
-        formatter.field("cpu_threshold", &self.cpu_threshold);
-        formatter.field("memory_threshold", &self.memory_threshold);
-        formatter.field("load_threshold", &self.load_threshold);
-        formatter.field("alarms", &self.alarms);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingThresholds`](crate::model::AutoScalingThresholds).
@@ -3800,7 +3652,7 @@ impl AutoScalingThresholds {
 
 /// <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceIdentity {
     /// <p>A JSON document that contains the metadata.</p>
     #[doc(hidden)]
@@ -3817,14 +3669,6 @@ impl InstanceIdentity {
     /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
     pub fn signature(&self) -> std::option::Option<&str> {
         self.signature.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceIdentity");
-        formatter.field("document", &self.document);
-        formatter.field("signature", &self.signature);
-        formatter.finish()
     }
 }
 /// See [`InstanceIdentity`](crate::model::InstanceIdentity).
@@ -3875,7 +3719,7 @@ impl InstanceIdentity {
 
 /// <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemporaryCredential {
     /// <p>The user name.</p>
     #[doc(hidden)]
@@ -3906,16 +3750,6 @@ impl TemporaryCredential {
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TemporaryCredential {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemporaryCredential");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.field("valid_for_in_minutes", &self.valid_for_in_minutes);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
     }
 }
 /// See [`TemporaryCredential`](crate::model::TemporaryCredential).
@@ -3990,7 +3824,7 @@ impl TemporaryCredential {
 
 /// <p>Describes an instance's Amazon EBS volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Volume {
     /// <p>The volume ID.</p>
     #[doc(hidden)]
@@ -4105,26 +3939,6 @@ impl Volume {
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
-    }
-}
-impl std::fmt::Debug for Volume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Volume");
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("ec2_volume_id", &self.ec2_volume_id);
-        formatter.field("name", &self.name);
-        formatter.field("raid_array_id", &self.raid_array_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("status", &self.status);
-        formatter.field("size", &self.size);
-        formatter.field("device", &self.device);
-        formatter.field("mount_point", &self.mount_point);
-        formatter.field("region", &self.region);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("iops", &self.iops);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.finish()
     }
 }
 /// See [`Volume`](crate::model::Volume).
@@ -4342,7 +4156,7 @@ impl Volume {
 
 /// <p>Describes a user's SSH information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserProfile {
     /// <p>The user's IAM ARN.</p>
     #[doc(hidden)]
@@ -4380,17 +4194,6 @@ impl UserProfile {
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     pub fn allow_self_management(&self) -> std::option::Option<bool> {
         self.allow_self_management
-    }
-}
-impl std::fmt::Debug for UserProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserProfile");
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("name", &self.name);
-        formatter.field("ssh_username", &self.ssh_username);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.field("allow_self_management", &self.allow_self_management);
-        formatter.finish()
     }
 }
 /// See [`UserProfile`](crate::model::UserProfile).
@@ -4480,7 +4283,7 @@ impl UserProfile {
 
 /// <p>Describes an instance's time-based auto scaling configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeBasedAutoScalingConfiguration {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -4499,14 +4302,6 @@ impl TimeBasedAutoScalingConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::WeeklyAutoScalingSchedule> {
         self.auto_scaling_schedule.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeBasedAutoScalingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeBasedAutoScalingConfiguration");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("auto_scaling_schedule", &self.auto_scaling_schedule);
-        formatter.finish()
     }
 }
 /// See [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration).
@@ -4564,7 +4359,7 @@ impl TimeBasedAutoScalingConfiguration {
 
 /// <p>Summarizes the number of layers, instances, and apps in a stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSummary {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -4609,18 +4404,6 @@ impl StackSummary {
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     pub fn instances_count(&self) -> std::option::Option<&crate::model::InstancesCount> {
         self.instances_count.as_ref()
-    }
-}
-impl std::fmt::Debug for StackSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSummary");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("layers_count", &self.layers_count);
-        formatter.field("apps_count", &self.apps_count);
-        formatter.field("instances_count", &self.instances_count);
-        formatter.finish()
     }
 }
 /// See [`StackSummary`](crate::model::StackSummary).
@@ -4722,7 +4505,7 @@ impl StackSummary {
 
 /// <p>Describes how many instances a stack has for each status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstancesCount {
     /// <p>The number of instances in the Assigning state.</p>
     #[doc(hidden)]
@@ -4865,32 +4648,6 @@ impl InstancesCount {
     /// <p>The number of instances in the Unassigning state.</p>
     pub fn unassigning(&self) -> std::option::Option<i32> {
         self.unassigning
-    }
-}
-impl std::fmt::Debug for InstancesCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstancesCount");
-        formatter.field("assigning", &self.assigning);
-        formatter.field("booting", &self.booting);
-        formatter.field("connection_lost", &self.connection_lost);
-        formatter.field("deregistering", &self.deregistering);
-        formatter.field("online", &self.online);
-        formatter.field("pending", &self.pending);
-        formatter.field("rebooting", &self.rebooting);
-        formatter.field("registered", &self.registered);
-        formatter.field("registering", &self.registering);
-        formatter.field("requested", &self.requested);
-        formatter.field("running_setup", &self.running_setup);
-        formatter.field("setup_failed", &self.setup_failed);
-        formatter.field("shutting_down", &self.shutting_down);
-        formatter.field("start_failed", &self.start_failed);
-        formatter.field("stop_failed", &self.stop_failed);
-        formatter.field("stopped", &self.stopped);
-        formatter.field("stopping", &self.stopping);
-        formatter.field("terminated", &self.terminated);
-        formatter.field("terminating", &self.terminating);
-        formatter.field("unassigning", &self.unassigning);
-        formatter.finish()
     }
 }
 /// See [`InstancesCount`](crate::model::InstancesCount).
@@ -5157,7 +4914,7 @@ impl InstancesCount {
 
 /// <p>Describes a stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stack {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -5326,40 +5083,6 @@ impl Stack {
     /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
     pub fn agent_version(&self) -> std::option::Option<&str> {
         self.agent_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Stack {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stack");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("region", &self.region);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field(
-            "default_instance_profile_arn",
-            &self.default_instance_profile_arn,
-        );
-        formatter.field("default_os", &self.default_os);
-        formatter.field("hostname_theme", &self.hostname_theme);
-        formatter.field("default_availability_zone", &self.default_availability_zone);
-        formatter.field("default_subnet_id", &self.default_subnet_id);
-        formatter.field("custom_json", &self.custom_json);
-        formatter.field("configuration_manager", &self.configuration_manager);
-        formatter.field("chef_configuration", &self.chef_configuration);
-        formatter.field("use_custom_cookbooks", &self.use_custom_cookbooks);
-        formatter.field(
-            "use_opsworks_security_groups",
-            &self.use_opsworks_security_groups,
-        );
-        formatter.field("custom_cookbooks_source", &self.custom_cookbooks_source);
-        formatter.field("default_ssh_key_name", &self.default_ssh_key_name);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("default_root_device_type", &self.default_root_device_type);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.finish()
     }
 }
 /// See [`Stack`](crate::model::Stack).
@@ -5714,7 +5437,7 @@ impl Stack {
 
 /// <p>Describes an AWS OpsWorks Stacks service error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceError {
     /// <p>The error ID.</p>
     #[doc(hidden)]
@@ -5759,18 +5482,6 @@ impl ServiceError {
     /// <p>When the error occurred.</p>
     pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceError");
-        formatter.field("service_error_id", &self.service_error_id);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`ServiceError`](crate::model::ServiceError).
@@ -5872,7 +5583,7 @@ impl ServiceError {
 
 /// <p>Describes an Amazon RDS instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsDbInstance {
     /// <p>The instance's ARN.</p>
     #[doc(hidden)]
@@ -5938,21 +5649,6 @@ impl RdsDbInstance {
     /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
     pub fn missing_on_rds(&self) -> std::option::Option<bool> {
         self.missing_on_rds
-    }
-}
-impl std::fmt::Debug for RdsDbInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsDbInstance");
-        formatter.field("rds_db_instance_arn", &self.rds_db_instance_arn);
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("db_user", &self.db_user);
-        formatter.field("db_password", &self.db_password);
-        formatter.field("region", &self.region);
-        formatter.field("address", &self.address);
-        formatter.field("engine", &self.engine);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("missing_on_rds", &self.missing_on_rds);
-        formatter.finish()
     }
 }
 /// See [`RdsDbInstance`](crate::model::RdsDbInstance).
@@ -6093,7 +5789,7 @@ impl RdsDbInstance {
 
 /// <p>Describes an instance's RAID array.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RaidArray {
     /// <p>The array ID.</p>
     #[doc(hidden)]
@@ -6187,25 +5883,6 @@ impl RaidArray {
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
-    }
-}
-impl std::fmt::Debug for RaidArray {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RaidArray");
-        formatter.field("raid_array_id", &self.raid_array_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("raid_level", &self.raid_level);
-        formatter.field("number_of_disks", &self.number_of_disks);
-        formatter.field("size", &self.size);
-        formatter.field("device", &self.device);
-        formatter.field("mount_point", &self.mount_point);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("iops", &self.iops);
-        formatter.finish()
     }
 }
 /// See [`RaidArray`](crate::model::RaidArray).
@@ -6394,7 +6071,7 @@ impl RaidArray {
 
 /// <p>Describes stack or user permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Permission {
     /// <p>A stack ID.</p>
     #[doc(hidden)]
@@ -6448,17 +6125,6 @@ impl Permission {
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     pub fn level(&self) -> std::option::Option<&str> {
         self.level.as_deref()
-    }
-}
-impl std::fmt::Debug for Permission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Permission");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("allow_ssh", &self.allow_ssh);
-        formatter.field("allow_sudo", &self.allow_sudo);
-        formatter.field("level", &self.level);
-        formatter.finish()
     }
 }
 /// See [`Permission`](crate::model::Permission).
@@ -6561,7 +6227,7 @@ impl Permission {
 
 /// <p>Describes supported operating systems in AWS OpsWorks Stacks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperatingSystem {
     /// <p>The name of the operating system, such as <code>Amazon Linux 2018.03</code>.</p>
     #[doc(hidden)]
@@ -6616,19 +6282,6 @@ impl OperatingSystem {
     /// <p>Indicates that an operating system is not supported for new instances.</p>
     pub fn supported(&self) -> std::option::Option<bool> {
         self.supported
-    }
-}
-impl std::fmt::Debug for OperatingSystem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperatingSystem");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("configuration_managers", &self.configuration_managers);
-        formatter.field("reported_name", &self.reported_name);
-        formatter.field("reported_version", &self.reported_version);
-        formatter.field("supported", &self.supported);
-        formatter.finish()
     }
 }
 /// See [`OperatingSystem`](crate::model::OperatingSystem).
@@ -6760,7 +6413,7 @@ impl OperatingSystem {
 
 /// <p>A block that contains information about the configuration manager (Chef) and the versions of the configuration manager that are supported for an operating system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperatingSystemConfigurationManager {
     /// <p>The name of the configuration manager, which is Chef.</p>
     #[doc(hidden)]
@@ -6777,14 +6430,6 @@ impl OperatingSystemConfigurationManager {
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for OperatingSystemConfigurationManager {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperatingSystemConfigurationManager");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager).
@@ -6835,7 +6480,7 @@ impl OperatingSystemConfigurationManager {
 
 /// <p>Describes a user's SSH information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelfUserProfile {
     /// <p>The user's IAM ARN.</p>
     #[doc(hidden)]
@@ -6866,16 +6511,6 @@ impl SelfUserProfile {
     /// <p>The user's SSH public key.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
-    }
-}
-impl std::fmt::Debug for SelfUserProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelfUserProfile");
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("name", &self.name);
-        formatter.field("ssh_username", &self.ssh_username);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.finish()
     }
 }
 /// See [`SelfUserProfile`](crate::model::SelfUserProfile).
@@ -6953,7 +6588,7 @@ impl SelfUserProfile {
 
 /// <p>Describes a layer's load-based auto scaling configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBasedAutoScalingConfiguration {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
@@ -6984,16 +6619,6 @@ impl LoadBasedAutoScalingConfiguration {
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
     pub fn down_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
         self.down_scaling.as_ref()
-    }
-}
-impl std::fmt::Debug for LoadBasedAutoScalingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBasedAutoScalingConfiguration");
-        formatter.field("layer_id", &self.layer_id);
-        formatter.field("enable", &self.enable);
-        formatter.field("up_scaling", &self.up_scaling);
-        formatter.field("down_scaling", &self.down_scaling);
-        formatter.finish()
     }
 }
 /// See [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration).
@@ -7074,7 +6699,7 @@ impl LoadBasedAutoScalingConfiguration {
 
 /// <p>Describes a layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Layer {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
     #[doc(hidden)]
@@ -7263,50 +6888,6 @@ impl Layer {
         &self,
     ) -> std::option::Option<&crate::model::LifecycleEventConfiguration> {
         self.lifecycle_event_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Layer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Layer");
-        formatter.field("arn", &self.arn);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("layer_id", &self.layer_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("shortname", &self.shortname);
-        formatter.field("attributes", &self.attributes);
-        formatter.field(
-            "cloud_watch_logs_configuration",
-            &self.cloud_watch_logs_configuration,
-        );
-        formatter.field(
-            "custom_instance_profile_arn",
-            &self.custom_instance_profile_arn,
-        );
-        formatter.field("custom_json", &self.custom_json);
-        formatter.field("custom_security_group_ids", &self.custom_security_group_ids);
-        formatter.field(
-            "default_security_group_names",
-            &self.default_security_group_names,
-        );
-        formatter.field("packages", &self.packages);
-        formatter.field("volume_configurations", &self.volume_configurations);
-        formatter.field("enable_auto_healing", &self.enable_auto_healing);
-        formatter.field("auto_assign_elastic_ips", &self.auto_assign_elastic_ips);
-        formatter.field("auto_assign_public_ips", &self.auto_assign_public_ips);
-        formatter.field("default_recipes", &self.default_recipes);
-        formatter.field("custom_recipes", &self.custom_recipes);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("install_updates_on_boot", &self.install_updates_on_boot);
-        formatter.field(
-            "use_ebs_optimized_instances",
-            &self.use_ebs_optimized_instances,
-        );
-        formatter.field(
-            "lifecycle_event_configuration",
-            &self.lifecycle_event_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`Layer`](crate::model::Layer).
@@ -7857,7 +7438,7 @@ impl AsRef<str> for LayerType {
 
 /// <p>Describes an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     #[doc(hidden)]
@@ -8187,62 +7768,6 @@ impl Instance {
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     pub fn virtualization_type(&self) -> std::option::Option<&crate::model::VirtualizationType> {
         self.virtualization_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("agent_version", &self.agent_version);
-        formatter.field("ami_id", &self.ami_id);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("arn", &self.arn);
-        formatter.field("auto_scaling_type", &self.auto_scaling_type);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field("ec2_instance_id", &self.ec2_instance_id);
-        formatter.field("ecs_cluster_arn", &self.ecs_cluster_arn);
-        formatter.field(
-            "ecs_container_instance_arn",
-            &self.ecs_container_instance_arn,
-        );
-        formatter.field("elastic_ip", &self.elastic_ip);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("infrastructure_class", &self.infrastructure_class);
-        formatter.field("install_updates_on_boot", &self.install_updates_on_boot);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_profile_arn", &self.instance_profile_arn);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("last_service_error_id", &self.last_service_error_id);
-        formatter.field("layer_ids", &self.layer_ids);
-        formatter.field("os", &self.os);
-        formatter.field("platform", &self.platform);
-        formatter.field("private_dns", &self.private_dns);
-        formatter.field("private_ip", &self.private_ip);
-        formatter.field("public_dns", &self.public_dns);
-        formatter.field("public_ip", &self.public_ip);
-        formatter.field("registered_by", &self.registered_by);
-        formatter.field("reported_agent_version", &self.reported_agent_version);
-        formatter.field("reported_os", &self.reported_os);
-        formatter.field("root_device_type", &self.root_device_type);
-        formatter.field("root_device_volume_id", &self.root_device_volume_id);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field(
-            "ssh_host_dsa_key_fingerprint",
-            &self.ssh_host_dsa_key_fingerprint,
-        );
-        formatter.field(
-            "ssh_host_rsa_key_fingerprint",
-            &self.ssh_host_rsa_key_fingerprint,
-        );
-        formatter.field("ssh_key_name", &self.ssh_key_name);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("status", &self.status);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("tenancy", &self.tenancy);
-        formatter.field("virtualization_type", &self.virtualization_type);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -8982,7 +8507,7 @@ impl AsRef<str> for VirtualizationType {
 
 /// <p>A registered instance's reported operating system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportedOs {
     /// <p>The operating system family.</p>
     #[doc(hidden)]
@@ -9006,15 +8531,6 @@ impl ReportedOs {
     /// <p>The operating system version.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for ReportedOs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportedOs");
-        formatter.field("family", &self.family);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ReportedOs`](crate::model::ReportedOs).
@@ -9077,7 +8593,7 @@ impl ReportedOs {
 
 /// <p>Describes a block device mapping. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockDeviceMapping {
     /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
     #[doc(hidden)]
@@ -9108,16 +8624,6 @@ impl BlockDeviceMapping {
     /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
     pub fn ebs(&self) -> std::option::Option<&crate::model::EbsBlockDevice> {
         self.ebs.as_ref()
-    }
-}
-impl std::fmt::Debug for BlockDeviceMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockDeviceMapping");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("no_device", &self.no_device);
-        formatter.field("virtual_name", &self.virtual_name);
-        formatter.field("ebs", &self.ebs);
-        formatter.finish()
     }
 }
 /// See [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
@@ -9192,7 +8698,7 @@ impl BlockDeviceMapping {
 
 /// <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsBlockDevice {
     /// <p>The snapshot ID.</p>
     #[doc(hidden)]
@@ -9232,17 +8738,6 @@ impl EbsBlockDevice {
     /// <p>Whether the volume is deleted on instance termination.</p>
     pub fn delete_on_termination(&self) -> std::option::Option<bool> {
         self.delete_on_termination
-    }
-}
-impl std::fmt::Debug for EbsBlockDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsBlockDevice");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("iops", &self.iops);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("delete_on_termination", &self.delete_on_termination);
-        formatter.finish()
     }
 }
 /// See [`EbsBlockDevice`](crate::model::EbsBlockDevice).
@@ -9429,7 +8924,7 @@ impl AsRef<str> for VolumeType {
 
 /// <p>Describes an Elastic Load Balancing instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticLoadBalancer {
     /// <p>The Elastic Load Balancing instance's name.</p>
     #[doc(hidden)]
@@ -9495,24 +8990,6 @@ impl ElasticLoadBalancer {
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
     pub fn ec2_instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ec2_instance_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for ElasticLoadBalancer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticLoadBalancer");
-        formatter.field(
-            "elastic_load_balancer_name",
-            &self.elastic_load_balancer_name,
-        );
-        formatter.field("region", &self.region);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("layer_id", &self.layer_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("ec2_instance_ids", &self.ec2_instance_ids);
-        formatter.finish()
     }
 }
 /// See [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer).
@@ -9677,7 +9154,7 @@ impl ElasticLoadBalancer {
 
 /// <p>Describes an Elastic IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticIp {
     /// <p>The IP address.</p>
     #[doc(hidden)]
@@ -9715,17 +9192,6 @@ impl ElasticIp {
     /// <p>The ID of the instance that the address is attached to.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ElasticIp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticIp");
-        formatter.field("ip", &self.ip);
-        formatter.field("name", &self.name);
-        formatter.field("domain", &self.domain);
-        formatter.field("region", &self.region);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
     }
 }
 /// See [`ElasticIp`](crate::model::ElasticIp).
@@ -9812,7 +9278,7 @@ impl ElasticIp {
 
 /// <p>Describes a registered Amazon ECS cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcsCluster {
     /// <p>The cluster's ARN.</p>
     #[doc(hidden)]
@@ -9843,16 +9309,6 @@ impl EcsCluster {
     /// <p>The time and date that the cluster was registered with the stack.</p>
     pub fn registered_at(&self) -> std::option::Option<&str> {
         self.registered_at.as_deref()
-    }
-}
-impl std::fmt::Debug for EcsCluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcsCluster");
-        formatter.field("ecs_cluster_arn", &self.ecs_cluster_arn);
-        formatter.field("ecs_cluster_name", &self.ecs_cluster_name);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("registered_at", &self.registered_at);
-        formatter.finish()
     }
 }
 /// See [`EcsCluster`](crate::model::EcsCluster).
@@ -9936,7 +9392,7 @@ impl EcsCluster {
 
 /// <p>Describes a deployment of a stack or app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Deployment {
     /// <p>The deployment ID.</p>
     #[doc(hidden)]
@@ -10037,24 +9493,6 @@ impl Deployment {
     /// <p>The IDs of the target instances.</p>
     pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for Deployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Deployment");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("app_id", &self.app_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("completed_at", &self.completed_at);
-        formatter.field("duration", &self.duration);
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("comment", &self.comment);
-        formatter.field("command", &self.command);
-        formatter.field("status", &self.status);
-        formatter.field("custom_json", &self.custom_json);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.finish()
     }
 }
 /// See [`Deployment`](crate::model::Deployment).
@@ -10254,7 +9692,7 @@ impl Deployment {
 
 /// <p>Used to specify a stack or deployment command.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentCommand {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
@@ -10329,14 +9767,6 @@ impl DeploymentCommand {
         &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     > {
         self.args.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentCommand {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentCommand");
-        formatter.field("name", &self.name);
-        formatter.field("args", &self.args);
-        formatter.finish()
     }
 }
 /// See [`DeploymentCommand`](crate::model::DeploymentCommand).
@@ -10614,7 +10044,7 @@ impl AsRef<str> for DeploymentCommandName {
 
 /// <p>Describes a command.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Command {
     /// <p>The command ID.</p>
     #[doc(hidden)]
@@ -10727,22 +10157,6 @@ impl Command {
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for Command {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Command");
-        formatter.field("command_id", &self.command_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("acknowledged_at", &self.acknowledged_at);
-        formatter.field("completed_at", &self.completed_at);
-        formatter.field("status", &self.status);
-        formatter.field("exit_code", &self.exit_code);
-        formatter.field("log_url", &self.log_url);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Command`](crate::model::Command).
@@ -10935,7 +10349,7 @@ impl Command {
 
 /// <p>A description of the app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct App {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -11046,26 +10460,6 @@ impl App {
     /// </note>
     pub fn environment(&self) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
         self.environment.as_deref()
-    }
-}
-impl std::fmt::Debug for App {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("App");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("shortname", &self.shortname);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("data_sources", &self.data_sources);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("app_source", &self.app_source);
-        formatter.field("domains", &self.domains);
-        formatter.field("enable_ssl", &self.enable_ssl);
-        formatter.field("ssl_configuration", &self.ssl_configuration);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("environment", &self.environment);
-        formatter.finish()
     }
 }
 /// See [`App`](crate::model::App).
@@ -11312,7 +10706,7 @@ impl App {
 
 /// <p>Describes an agent version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentVersion {
     /// <p>The agent version.</p>
     #[doc(hidden)]
@@ -11331,14 +10725,6 @@ impl AgentVersion {
         &self,
     ) -> std::option::Option<&crate::model::StackConfigurationManager> {
         self.configuration_manager.as_ref()
-    }
-}
-impl std::fmt::Debug for AgentVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentVersion");
-        formatter.field("version", &self.version);
-        formatter.field("configuration_manager", &self.configuration_manager);
-        formatter.finish()
     }
 }
 /// See [`AgentVersion`](crate::model::AgentVersion).

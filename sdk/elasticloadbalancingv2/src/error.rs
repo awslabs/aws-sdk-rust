@@ -2,18 +2,11 @@
 
 /// <p>The specified subnet does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubnetNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubnetNotFoundException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl SubnetNotFoundException {
 
 /// <p>The specified load balancer does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LoadBalancerNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LoadBalancerNotFoundException {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl LoadBalancerNotFoundException {
 
 /// <p>The specified subnet is out of available addresses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSubnetException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSubnetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubnetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSubnetException {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl InvalidSubnetException {
 
 /// <p>The requested configuration is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConfigurationRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidConfigurationRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConfigurationRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidConfigurationRequestException {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl InvalidConfigurationRequestException {
 
 /// <p>The specified Availability Zone is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZoneNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AvailabilityZoneNotSupportedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZoneNotSupportedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AvailabilityZoneNotSupportedException {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl AvailabilityZoneNotSupportedException {
 
 /// <p>The specified allocation ID does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocationIdNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AllocationIdNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocationIdNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AllocationIdNotFoundException {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl AllocationIdNotFoundException {
 
 /// <p>The specified security group does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSecurityGroupException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSecurityGroupException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSecurityGroupException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSecurityGroupException {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl InvalidSecurityGroupException {
 
 /// <p>The specified rule does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RuleNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RuleNotFoundException {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl RuleNotFoundException {
 
 /// <p>The specified priority is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PriorityInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PriorityInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PriorityInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PriorityInUseException {
     /// Returns the error message.
@@ -605,18 +542,11 @@ impl PriorityInUseException {
 
 /// <p>This operation is not allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationNotPermittedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OperationNotPermittedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationNotPermittedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OperationNotPermittedException {
     /// Returns the error message.
@@ -672,18 +602,11 @@ impl OperationNotPermittedException {
 
 /// <p>You've reached the limit on the number of tags per load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTagsException {
     /// Returns the error message.
@@ -739,18 +662,11 @@ impl TooManyTagsException {
 
 /// <p>The specified target group does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroupNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TargetGroupNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGroupNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TargetGroupNotFoundException {
     /// Returns the error message.
@@ -806,18 +722,11 @@ impl TargetGroupNotFoundException {
 
 /// <p>The specified listener does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ListenerNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ListenerNotFoundException {
     /// Returns the error message.
@@ -873,18 +782,11 @@ impl ListenerNotFoundException {
 
 /// <p>You've reached the limit on the number of targets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTargetsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTargetsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTargetsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTargetsException {
     /// Returns the error message.
@@ -940,18 +842,11 @@ impl TooManyTargetsException {
 
 /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRegistrationsForTargetIdException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyRegistrationsForTargetIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRegistrationsForTargetIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyRegistrationsForTargetIdException {
     /// Returns the error message.
@@ -1007,18 +902,11 @@ impl TooManyRegistrationsForTargetIdException {
 
 /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an unsupported instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTargetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTargetException {
     /// Returns the error message.
@@ -1074,18 +962,11 @@ impl InvalidTargetException {
 
 /// <p>The specified protocol is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedProtocolException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedProtocolException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedProtocolException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedProtocolException {
     /// Returns the error message.
@@ -1141,18 +1022,11 @@ impl UnsupportedProtocolException {
 
 /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyUniqueTargetGroupsPerLoadBalancerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyUniqueTargetGroupsPerLoadBalancerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyUniqueTargetGroupsPerLoadBalancerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyUniqueTargetGroupsPerLoadBalancerException {
     /// Returns the error message.
@@ -1209,18 +1083,11 @@ impl TooManyUniqueTargetGroupsPerLoadBalancerException {
 
 /// <p>You've reached the limit on the number of actions per rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyActionsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyActionsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyActionsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyActionsException {
     /// Returns the error message.
@@ -1276,18 +1143,11 @@ impl TooManyActionsException {
 
 /// <p>You've reached the limit on the number of load balancers per target group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroupAssociationLimitException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TargetGroupAssociationLimitException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGroupAssociationLimitException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TargetGroupAssociationLimitException {
     /// Returns the error message.
@@ -1343,18 +1203,11 @@ impl TargetGroupAssociationLimitException {
 
 /// <p>The requested action is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLoadBalancerActionException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidLoadBalancerActionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLoadBalancerActionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidLoadBalancerActionException {
     /// Returns the error message.
@@ -1410,18 +1263,11 @@ impl InvalidLoadBalancerActionException {
 
 /// <p>The specified configuration is not valid with this protocol.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncompatibleProtocolsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IncompatibleProtocolsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatibleProtocolsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IncompatibleProtocolsException {
     /// Returns the error message.
@@ -1477,18 +1323,11 @@ impl IncompatibleProtocolsException {
 
 /// <p>You've reached the limit on the number of listeners per load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyListenersException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyListenersException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyListenersException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyListenersException {
     /// Returns the error message.
@@ -1544,18 +1383,11 @@ impl TooManyListenersException {
 
 /// <p>You've reached the limit on the number of certificates per load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCertificatesException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCertificatesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCertificatesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCertificatesException {
     /// Returns the error message.
@@ -1611,18 +1443,11 @@ impl TooManyCertificatesException {
 
 /// <p>The specified SSL policy does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SslPolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SslPolicyNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SslPolicyNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SslPolicyNotFoundException {
     /// Returns the error message.
@@ -1678,18 +1503,11 @@ impl SslPolicyNotFoundException {
 
 /// <p>A listener with the specified port already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateListenerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateListenerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateListenerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateListenerException {
     /// Returns the error message.
@@ -1745,18 +1563,11 @@ impl DuplicateListenerException {
 
 /// <p>The specified certificate does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CertificateNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CertificateNotFoundException {
     /// Returns the error message.
@@ -1812,18 +1623,11 @@ impl CertificateNotFoundException {
 
 /// <p>The specified ALPN policy is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlpnPolicyNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AlpnPolicyNotSupportedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlpnPolicyNotSupportedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AlpnPolicyNotSupportedException {
     /// Returns the error message.
@@ -1882,18 +1686,11 @@ impl AlpnPolicyNotSupportedException {
 
 /// <p>The health of the specified targets could not be retrieved due to an internal error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HealthUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HealthUnavailableException {
     /// Returns the error message.
@@ -1949,18 +1746,11 @@ impl HealthUnavailableException {
 
 /// <p>A specified resource is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceInUseException {
     /// Returns the error message.
@@ -2016,18 +1806,11 @@ impl ResourceInUseException {
 
 /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTargetGroupsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTargetGroupsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTargetGroupsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTargetGroupsException {
     /// Returns the error message.
@@ -2083,18 +1866,11 @@ impl TooManyTargetGroupsException {
 
 /// <p>A target group with the specified name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateTargetGroupNameException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateTargetGroupNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateTargetGroupNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateTargetGroupNameException {
     /// Returns the error message.
@@ -2150,18 +1926,11 @@ impl DuplicateTargetGroupNameException {
 
 /// <p>You've reached the limit on the number of rules per load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRulesException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyRulesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRulesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyRulesException {
     /// Returns the error message.
@@ -2217,18 +1986,11 @@ impl TooManyRulesException {
 
 /// <p>You've reached the limit on the number of load balancers for your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyLoadBalancersException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyLoadBalancersException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyLoadBalancersException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyLoadBalancersException {
     /// Returns the error message.
@@ -2284,18 +2046,11 @@ impl TooManyLoadBalancersException {
 
 /// <p>The requested scheme is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSchemeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSchemeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSchemeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSchemeException {
     /// Returns the error message.
@@ -2351,18 +2106,11 @@ impl InvalidSchemeException {
 
 /// <p>A tag key was specified more than once.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateTagKeysException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateTagKeysException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateTagKeysException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateTagKeysException {
     /// Returns the error message.
@@ -2418,18 +2166,11 @@ impl DuplicateTagKeysException {
 
 /// <p>A load balancer with the specified name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateLoadBalancerNameException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateLoadBalancerNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateLoadBalancerNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateLoadBalancerNameException {
     /// Returns the error message.

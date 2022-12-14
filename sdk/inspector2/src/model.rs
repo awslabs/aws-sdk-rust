@@ -2,7 +2,7 @@
 
 /// <p>An object that describes a validation exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the validation exception.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The validation exception message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -174,7 +166,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     #[doc(hidden)]
@@ -191,14 +183,6 @@ impl AutoEnable {
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn ecr(&self) -> std::option::Option<bool> {
         self.ecr
-    }
-}
-impl std::fmt::Debug for AutoEnable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoEnable");
-        formatter.field("ec2", &self.ec2);
-        formatter.field("ecr", &self.ecr);
-        formatter.finish()
     }
 }
 /// See [`AutoEnable`](crate::model::AutoEnable).
@@ -249,7 +233,7 @@ impl AutoEnable {
 
 /// <p>Details on the criteria used to define the filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterCriteria {
     /// <p>Details on the finding ARNs used to filter findings.</p>
     #[doc(hidden)]
@@ -476,44 +460,6 @@ impl FilterCriteria {
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
     pub fn fix_available(&self) -> std::option::Option<&[crate::model::StringFilter]> {
         self.fix_available.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterCriteria");
-        formatter.field("finding_arn", &self.finding_arn);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("finding_type", &self.finding_type);
-        formatter.field("severity", &self.severity);
-        formatter.field("first_observed_at", &self.first_observed_at);
-        formatter.field("last_observed_at", &self.last_observed_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("finding_status", &self.finding_status);
-        formatter.field("title", &self.title);
-        formatter.field("inspector_score", &self.inspector_score);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("ec2_instance_image_id", &self.ec2_instance_image_id);
-        formatter.field("ec2_instance_vpc_id", &self.ec2_instance_vpc_id);
-        formatter.field("ec2_instance_subnet_id", &self.ec2_instance_subnet_id);
-        formatter.field("ecr_image_pushed_at", &self.ecr_image_pushed_at);
-        formatter.field("ecr_image_architecture", &self.ecr_image_architecture);
-        formatter.field("ecr_image_registry", &self.ecr_image_registry);
-        formatter.field("ecr_image_repository_name", &self.ecr_image_repository_name);
-        formatter.field("ecr_image_tags", &self.ecr_image_tags);
-        formatter.field("ecr_image_hash", &self.ecr_image_hash);
-        formatter.field("port_range", &self.port_range);
-        formatter.field("network_protocol", &self.network_protocol);
-        formatter.field("component_id", &self.component_id);
-        formatter.field("component_type", &self.component_type);
-        formatter.field("vulnerability_id", &self.vulnerability_id);
-        formatter.field("vulnerability_source", &self.vulnerability_source);
-        formatter.field("vendor_severity", &self.vendor_severity);
-        formatter.field("vulnerable_packages", &self.vulnerable_packages);
-        formatter.field("related_vulnerabilities", &self.related_vulnerabilities);
-        formatter.field("fix_available", &self.fix_available);
-        formatter.finish()
     }
 }
 /// See [`FilterCriteria`](crate::model::FilterCriteria).
@@ -1222,7 +1168,7 @@ impl FilterCriteria {
 
 /// <p>An object that describes the details of a string filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StringFilter {
     /// <p>The operator to use when comparing values in the filter</p>
     #[doc(hidden)]
@@ -1239,14 +1185,6 @@ impl StringFilter {
     /// <p>The value to filter on.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for StringFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StringFilter");
-        formatter.field("comparison", &self.comparison);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`StringFilter`](crate::model::StringFilter).
@@ -1395,7 +1333,7 @@ impl AsRef<str> for StringComparison {
 
 /// <p>Contains information on the details of a package filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageFilter {
     /// <p>An object that contains details on the name of the package to filter on.</p>
     #[doc(hidden)]
@@ -1440,18 +1378,6 @@ impl PackageFilter {
     /// <p>An object that contains details on the source layer hash to filter on.</p>
     pub fn source_layer_hash(&self) -> std::option::Option<&crate::model::StringFilter> {
         self.source_layer_hash.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageFilter");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("epoch", &self.epoch);
-        formatter.field("release", &self.release);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("source_layer_hash", &self.source_layer_hash);
-        formatter.finish()
     }
 }
 /// See [`PackageFilter`](crate::model::PackageFilter).
@@ -1562,7 +1488,7 @@ impl PackageFilter {
 
 /// <p>An object that describes the details of a number filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberFilter {
     /// <p>The highest number to be included in the filter.</p>
     #[doc(hidden)]
@@ -1579,14 +1505,6 @@ impl NumberFilter {
     /// <p>The lowest number to be included in the filter.</p>
     pub fn lower_inclusive(&self) -> std::option::Option<f64> {
         self.lower_inclusive
-    }
-}
-impl std::fmt::Debug for NumberFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberFilter");
-        formatter.field("upper_inclusive", &self.upper_inclusive);
-        formatter.field("lower_inclusive", &self.lower_inclusive);
-        formatter.finish()
     }
 }
 /// See [`NumberFilter`](crate::model::NumberFilter).
@@ -1637,7 +1555,7 @@ impl NumberFilter {
 
 /// <p>An object that describes the details of a port range filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortRangeFilter {
     /// <p>The port number the port range begins at.</p>
     #[doc(hidden)]
@@ -1654,14 +1572,6 @@ impl PortRangeFilter {
     /// <p>The port number the port range ends at.</p>
     pub fn end_inclusive(&self) -> std::option::Option<i32> {
         self.end_inclusive
-    }
-}
-impl std::fmt::Debug for PortRangeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortRangeFilter");
-        formatter.field("begin_inclusive", &self.begin_inclusive);
-        formatter.field("end_inclusive", &self.end_inclusive);
-        formatter.finish()
     }
 }
 /// See [`PortRangeFilter`](crate::model::PortRangeFilter).
@@ -1712,7 +1622,7 @@ impl PortRangeFilter {
 
 /// <p>Contains details on the time range used to filter findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateFilter {
     /// <p>A timestamp representing the start of the time period filtered on.</p>
     #[doc(hidden)]
@@ -1729,14 +1639,6 @@ impl DateFilter {
     /// <p>A timestamp representing the end of the time period filtered on.</p>
     pub fn end_inclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_inclusive.as_ref()
-    }
-}
-impl std::fmt::Debug for DateFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateFilter");
-        formatter.field("start_inclusive", &self.start_inclusive);
-        formatter.field("end_inclusive", &self.end_inclusive);
-        formatter.finish()
     }
 }
 /// See [`DateFilter`](crate::model::DateFilter).
@@ -1793,7 +1695,7 @@ impl DateFilter {
 
 /// <p>An object that describes details of a map filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MapFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
     #[doc(hidden)]
@@ -1817,15 +1719,6 @@ impl MapFilter {
     /// <p>The tag value used in the filter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for MapFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MapFilter");
-        formatter.field("comparison", &self.comparison);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MapFilter`](crate::model::MapFilter).
@@ -2066,7 +1959,7 @@ impl AsRef<str> for FilterAction {
 
 /// <p>Details about the ECR automated re-scan duration setting for your environment</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcrConfiguration {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
     #[doc(hidden)]
@@ -2076,13 +1969,6 @@ impl EcrConfiguration {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
     pub fn rescan_duration(&self) -> std::option::Option<&crate::model::EcrRescanDuration> {
         self.rescan_duration.as_ref()
-    }
-}
-impl std::fmt::Debug for EcrConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcrConfiguration");
-        formatter.field("rescan_duration", &self.rescan_duration);
-        formatter.finish()
     }
 }
 /// See [`EcrConfiguration`](crate::model::EcrConfiguration).
@@ -2221,7 +2107,7 @@ impl AsRef<str> for EcrRescanDuration {
 
 /// <p>The total of usage for an account ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageTotal {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
     #[doc(hidden)]
@@ -2238,14 +2124,6 @@ impl UsageTotal {
     /// <p>An object representing the total usage for an account.</p>
     pub fn usage(&self) -> std::option::Option<&[crate::model::Usage]> {
         self.usage.as_deref()
-    }
-}
-impl std::fmt::Debug for UsageTotal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageTotal");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("usage", &self.usage);
-        formatter.finish()
     }
 }
 /// See [`UsageTotal`](crate::model::UsageTotal).
@@ -2305,7 +2183,7 @@ impl UsageTotal {
 
 /// <p>Contains usage information about the cost of Amazon Inspector operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Usage {
     /// <p>The type scan.</p>
     #[doc(hidden)]
@@ -2336,16 +2214,6 @@ impl Usage {
     /// <p>The currency type used when calculating usage data.</p>
     pub fn currency(&self) -> std::option::Option<&crate::model::Currency> {
         self.currency.as_ref()
-    }
-}
-impl std::fmt::Debug for Usage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Usage");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("total", &self.total);
-        formatter.field("estimated_monthly_cost", &self.estimated_monthly_cost);
-        formatter.field("currency", &self.currency);
-        formatter.finish()
     }
 }
 /// See [`Usage`](crate::model::Usage).
@@ -2600,7 +2468,7 @@ impl AsRef<str> for UsageType {
 
 /// <p>Details on a member account in your organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
     #[doc(hidden)]
@@ -2631,19 +2499,6 @@ impl Member {
     /// <p>A timestamp showing when the status of this member was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Member {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Member");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("relationship_status", &self.relationship_status);
-        formatter.field(
-            "delegated_admin_account_id",
-            &self.delegated_admin_account_id,
-        );
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`Member`](crate::model::Member).
@@ -2886,7 +2741,7 @@ impl AsRef<str> for RelationshipStatus {
 
 /// <p>Details about an Amazon Inspector finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Finding {
     /// <p>The Amazon Resource Number (ARN) of the finding.</p>
     #[doc(hidden)]
@@ -3015,35 +2870,6 @@ impl Finding {
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
     pub fn fix_available(&self) -> std::option::Option<&crate::model::FixAvailable> {
         self.fix_available.as_ref()
-    }
-}
-impl std::fmt::Debug for Finding {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Finding");
-        formatter.field("finding_arn", &self.finding_arn);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("title", &self.title);
-        formatter.field("remediation", &self.remediation);
-        formatter.field("severity", &self.severity);
-        formatter.field("first_observed_at", &self.first_observed_at);
-        formatter.field("last_observed_at", &self.last_observed_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("status", &self.status);
-        formatter.field("resources", &self.resources);
-        formatter.field("inspector_score", &self.inspector_score);
-        formatter.field("inspector_score_details", &self.inspector_score_details);
-        formatter.field(
-            "network_reachability_details",
-            &self.network_reachability_details,
-        );
-        formatter.field(
-            "package_vulnerability_details",
-            &self.package_vulnerability_details,
-        );
-        formatter.field("fix_available", &self.fix_available);
-        formatter.finish()
     }
 }
 /// See [`Finding`](crate::model::Finding).
@@ -3420,7 +3246,7 @@ impl AsRef<str> for FixAvailable {
 
 /// <p>Information about a package vulnerability finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageVulnerabilityDetails {
     /// <p>The ID given to this vulnerability.</p>
     #[doc(hidden)]
@@ -3493,22 +3319,6 @@ impl PackageVulnerabilityDetails {
     /// <p>One or more URLs that contain details about this vulnerability type.</p>
     pub fn reference_urls(&self) -> std::option::Option<&[std::string::String]> {
         self.reference_urls.as_deref()
-    }
-}
-impl std::fmt::Debug for PackageVulnerabilityDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageVulnerabilityDetails");
-        formatter.field("vulnerability_id", &self.vulnerability_id);
-        formatter.field("vulnerable_packages", &self.vulnerable_packages);
-        formatter.field("source", &self.source);
-        formatter.field("cvss", &self.cvss);
-        formatter.field("related_vulnerabilities", &self.related_vulnerabilities);
-        formatter.field("source_url", &self.source_url);
-        formatter.field("vendor_severity", &self.vendor_severity);
-        formatter.field("vendor_created_at", &self.vendor_created_at);
-        formatter.field("vendor_updated_at", &self.vendor_updated_at);
-        formatter.field("reference_urls", &self.reference_urls);
-        formatter.finish()
     }
 }
 /// See [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails).
@@ -3704,7 +3514,7 @@ impl PackageVulnerabilityDetails {
 
 /// <p>The CVSS score for a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CvssScore {
     /// <p>The base CVSS score used for the finding.</p>
     #[doc(hidden)]
@@ -3735,16 +3545,6 @@ impl CvssScore {
     /// <p>The source of the CVSS score.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
-    }
-}
-impl std::fmt::Debug for CvssScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CvssScore");
-        formatter.field("base_score", &self.base_score);
-        formatter.field("scoring_vector", &self.scoring_vector);
-        formatter.field("version", &self.version);
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`CvssScore`](crate::model::CvssScore).
@@ -3822,7 +3622,7 @@ impl CvssScore {
 
 /// <p>Information on the vulnerable package identified by a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VulnerablePackage {
     /// <p>The name of the vulnerable package.</p>
     #[doc(hidden)]
@@ -3895,22 +3695,6 @@ impl VulnerablePackage {
     /// <p>The code to run in your environment to update packages with a fix available.</p>
     pub fn remediation(&self) -> std::option::Option<&str> {
         self.remediation.as_deref()
-    }
-}
-impl std::fmt::Debug for VulnerablePackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VulnerablePackage");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("source_layer_hash", &self.source_layer_hash);
-        formatter.field("epoch", &self.epoch);
-        formatter.field("release", &self.release);
-        formatter.field("arch", &self.arch);
-        formatter.field("package_manager", &self.package_manager);
-        formatter.field("file_path", &self.file_path);
-        formatter.field("fixed_in_version", &self.fixed_in_version);
-        formatter.field("remediation", &self.remediation);
-        formatter.finish()
     }
 }
 /// See [`VulnerablePackage`](crate::model::VulnerablePackage).
@@ -4243,7 +4027,7 @@ impl AsRef<str> for PackageManager {
 
 /// <p>Contains the details of a network reachability finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkReachabilityDetails {
     /// <p>An object that contains details about the open port range associated with a finding.</p>
     #[doc(hidden)]
@@ -4267,15 +4051,6 @@ impl NetworkReachabilityDetails {
     /// <p>An object that contains details about a network path associated with a finding.</p>
     pub fn network_path(&self) -> std::option::Option<&crate::model::NetworkPath> {
         self.network_path.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkReachabilityDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkReachabilityDetails");
-        formatter.field("open_port_range", &self.open_port_range);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("network_path", &self.network_path);
-        formatter.finish()
     }
 }
 /// See [`NetworkReachabilityDetails`](crate::model::NetworkReachabilityDetails).
@@ -4347,7 +4122,7 @@ impl NetworkReachabilityDetails {
 
 /// <p>Information on the network path associated with a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkPath {
     /// <p>The details on the steps in the network path.</p>
     #[doc(hidden)]
@@ -4357,13 +4132,6 @@ impl NetworkPath {
     /// <p>The details on the steps in the network path.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::Step]> {
         self.steps.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkPath");
-        formatter.field("steps", &self.steps);
-        formatter.finish()
     }
 }
 /// See [`NetworkPath`](crate::model::NetworkPath).
@@ -4409,7 +4177,7 @@ impl NetworkPath {
 
 /// <p>Details about the step associated with a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Step {
     /// <p>The component ID.</p>
     #[doc(hidden)]
@@ -4426,14 +4194,6 @@ impl Step {
     /// <p>The component type.</p>
     pub fn component_type(&self) -> std::option::Option<&str> {
         self.component_type.as_deref()
-    }
-}
-impl std::fmt::Debug for Step {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Step");
-        formatter.field("component_id", &self.component_id);
-        formatter.field("component_type", &self.component_type);
-        formatter.finish()
     }
 }
 /// See [`Step`](crate::model::Step).
@@ -4577,7 +4337,7 @@ impl AsRef<str> for NetworkProtocol {
 
 /// <p>Details about the port range associated with a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The beginning port in a port range.</p>
     #[doc(hidden)]
@@ -4594,14 +4354,6 @@ impl PortRange {
     /// <p>The ending port in a port range.</p>
     pub fn end(&self) -> std::option::Option<i32> {
         self.end
-    }
-}
-impl std::fmt::Debug for PortRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortRange");
-        formatter.field("begin", &self.begin);
-        formatter.field("end", &self.end);
-        formatter.finish()
     }
 }
 /// See [`PortRange`](crate::model::PortRange).
@@ -4652,7 +4404,7 @@ impl PortRange {
 
 /// <p>Information about the Amazon Inspector score given to a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InspectorScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
     #[doc(hidden)]
@@ -4662,13 +4414,6 @@ impl InspectorScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
     pub fn adjusted_cvss(&self) -> std::option::Option<&crate::model::CvssScoreDetails> {
         self.adjusted_cvss.as_ref()
-    }
-}
-impl std::fmt::Debug for InspectorScoreDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InspectorScoreDetails");
-        formatter.field("adjusted_cvss", &self.adjusted_cvss);
-        formatter.finish()
     }
 }
 /// See [`InspectorScoreDetails`](crate::model::InspectorScoreDetails).
@@ -4710,7 +4455,7 @@ impl InspectorScoreDetails {
 
 /// <p>Information about the CVSS score.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CvssScoreDetails {
     /// <p>The source for the CVSS score.</p>
     #[doc(hidden)]
@@ -4755,18 +4500,6 @@ impl CvssScoreDetails {
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
     pub fn adjustments(&self) -> std::option::Option<&[crate::model::CvssScoreAdjustment]> {
         self.adjustments.as_deref()
-    }
-}
-impl std::fmt::Debug for CvssScoreDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CvssScoreDetails");
-        formatter.field("score_source", &self.score_source);
-        formatter.field("cvss_source", &self.cvss_source);
-        formatter.field("version", &self.version);
-        formatter.field("score", &self.score);
-        formatter.field("scoring_vector", &self.scoring_vector);
-        formatter.field("adjustments", &self.adjustments);
-        formatter.finish()
     }
 }
 /// See [`CvssScoreDetails`](crate::model::CvssScoreDetails).
@@ -4878,7 +4611,7 @@ impl CvssScoreDetails {
 
 /// <p>Details on adjustments Amazon Inspector made to the CVSS score for a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CvssScoreAdjustment {
     /// <p>The metric used to adjust the CVSS score.</p>
     #[doc(hidden)]
@@ -4895,14 +4628,6 @@ impl CvssScoreAdjustment {
     /// <p>The reason the CVSS score has been adjustment.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for CvssScoreAdjustment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CvssScoreAdjustment");
-        formatter.field("metric", &self.metric);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment).
@@ -4953,7 +4678,7 @@ impl CvssScoreAdjustment {
 
 /// <p>Details about the resource involved in a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
@@ -5002,18 +4727,6 @@ impl Resource {
     /// <p>An object that contains details about the resource involved in a finding.</p>
     pub fn details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
         self.details.as_ref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.field("partition", &self.partition);
-        formatter.field("region", &self.region);
-        formatter.field("tags", &self.tags);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -5132,7 +4845,7 @@ impl Resource {
 
 /// <p>Contains details about the resource involved in the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
     #[doc(hidden)]
@@ -5151,14 +4864,6 @@ impl ResourceDetails {
         &self,
     ) -> std::option::Option<&crate::model::AwsEcrContainerImageDetails> {
         self.aws_ecr_container_image.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDetails");
-        formatter.field("aws_ec2_instance", &self.aws_ec2_instance);
-        formatter.field("aws_ecr_container_image", &self.aws_ecr_container_image);
-        formatter.finish()
     }
 }
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
@@ -5219,7 +4924,7 @@ impl ResourceDetails {
 
 /// <p>The image details of the Amazon ECR container image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEcrContainerImageDetails {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
     #[doc(hidden)]
@@ -5278,20 +4983,6 @@ impl AwsEcrContainerImageDetails {
     /// <p>The platform of the Amazon ECR container image.</p>
     pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsEcrContainerImageDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsEcrContainerImageDetails");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("image_tags", &self.image_tags);
-        formatter.field("pushed_at", &self.pushed_at);
-        formatter.field("author", &self.author);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("image_hash", &self.image_hash);
-        formatter.field("registry", &self.registry);
-        formatter.field("platform", &self.platform);
-        formatter.finish()
     }
 }
 /// See [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
@@ -5429,7 +5120,7 @@ impl AwsEcrContainerImageDetails {
 
 /// <p>Details of the Amazon EC2 instance involved in a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEc2InstanceDetails {
     /// <p>The type of the Amazon EC2 instance.</p>
     #[doc(hidden)]
@@ -5502,22 +5193,6 @@ impl AwsEc2InstanceDetails {
     /// <p>The platform of the Amazon EC2 instance.</p>
     pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsEc2InstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsEc2InstanceDetails");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("ip_v4_addresses", &self.ip_v4_addresses);
-        formatter.field("ip_v6_addresses", &self.ip_v6_addresses);
-        formatter.field("key_name", &self.key_name);
-        formatter.field("iam_instance_profile_arn", &self.iam_instance_profile_arn);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("launched_at", &self.launched_at);
-        formatter.field("platform", &self.platform);
-        formatter.finish()
     }
 }
 /// See [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
@@ -5999,7 +5674,7 @@ impl AsRef<str> for Severity {
 
 /// <p>Information on how to remediate a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Remediation {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     #[doc(hidden)]
@@ -6009,13 +5684,6 @@ impl Remediation {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     pub fn recommendation(&self) -> std::option::Option<&crate::model::Recommendation> {
         self.recommendation.as_ref()
-    }
-}
-impl std::fmt::Debug for Remediation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Remediation");
-        formatter.field("recommendation", &self.recommendation);
-        formatter.finish()
     }
 }
 /// See [`Remediation`](crate::model::Remediation).
@@ -6057,7 +5725,7 @@ impl Remediation {
 
 /// <p>Details about the recommended course of action to remediate the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>The recommended course of action to remediate the finding.</p>
     #[doc(hidden)]
@@ -6074,14 +5742,6 @@ impl Recommendation {
     /// <p>The URL address to the CVE remediation recommendations.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for Recommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recommendation");
-        formatter.field("text", &self.text);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`Recommendation`](crate::model::Recommendation).
@@ -6222,7 +5882,7 @@ impl AsRef<str> for FindingType {
 
 /// <p>Details about the criteria used to sort finding results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SortCriteria {
     /// <p>The finding detail field by which results are sorted.</p>
     #[doc(hidden)]
@@ -6239,14 +5899,6 @@ impl SortCriteria {
     /// <p>The order by which findings are sorted.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for SortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SortCriteria");
-        formatter.field("field", &self.field);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`SortCriteria`](crate::model::SortCriteria).
@@ -6741,7 +6393,7 @@ impl AggregationResponse {
 
 /// <p>A response that contains details on the results of a finding aggregation by title.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TitleAggregationResponse {
     /// <p>The title that the findings were aggregated on.</p>
     #[doc(hidden)]
@@ -6772,16 +6424,6 @@ impl TitleAggregationResponse {
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn severity_counts(&self) -> std::option::Option<&crate::model::SeverityCounts> {
         self.severity_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for TitleAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TitleAggregationResponse");
-        formatter.field("title", &self.title);
-        formatter.field("vulnerability_id", &self.vulnerability_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.finish()
     }
 }
 /// See [`TitleAggregationResponse`](crate::model::TitleAggregationResponse).
@@ -6862,7 +6504,7 @@ impl TitleAggregationResponse {
 
 /// <p>An object that contains the counts of aggregated finding per severity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SeverityCounts {
     /// <p>The total count of findings from all severities.</p>
     #[doc(hidden)]
@@ -6893,16 +6535,6 @@ impl SeverityCounts {
     /// <p>The total count of critical severity findings.</p>
     pub fn critical(&self) -> std::option::Option<i64> {
         self.critical
-    }
-}
-impl std::fmt::Debug for SeverityCounts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SeverityCounts");
-        formatter.field("all", &self.all);
-        formatter.field("medium", &self.medium);
-        formatter.field("high", &self.high);
-        formatter.field("critical", &self.critical);
-        formatter.finish()
     }
 }
 /// See [`SeverityCounts`](crate::model::SeverityCounts).
@@ -6977,7 +6609,7 @@ impl SeverityCounts {
 
 /// <p>A response that contains details on the results of a finding aggregation by repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryAggregationResponse {
     /// <p>The name of the repository associated with the findings.</p>
     #[doc(hidden)]
@@ -7008,16 +6640,6 @@ impl RepositoryAggregationResponse {
     /// <p>The number of container images impacted by the findings.</p>
     pub fn affected_images(&self) -> std::option::Option<i64> {
         self.affected_images
-    }
-}
-impl std::fmt::Debug for RepositoryAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryAggregationResponse");
-        formatter.field("repository", &self.repository);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.field("affected_images", &self.affected_images);
-        formatter.finish()
     }
 }
 /// See [`RepositoryAggregationResponse`](crate::model::RepositoryAggregationResponse).
@@ -7095,7 +6717,7 @@ impl RepositoryAggregationResponse {
 
 /// <p>A response that contains the results of a finding aggregation by image layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageAggregationResponse {
     /// <p>The name of the operating system package.</p>
     #[doc(hidden)]
@@ -7119,15 +6741,6 @@ impl PackageAggregationResponse {
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn severity_counts(&self) -> std::option::Option<&crate::model::SeverityCounts> {
         self.severity_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageAggregationResponse");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.finish()
     }
 }
 /// See [`PackageAggregationResponse`](crate::model::PackageAggregationResponse).
@@ -7193,7 +6806,7 @@ impl PackageAggregationResponse {
 
 /// <p>A response that contains the results of a finding aggregation by image layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageLayerAggregationResponse {
     /// <p>The repository the layer resides in.</p>
     #[doc(hidden)]
@@ -7231,17 +6844,6 @@ impl ImageLayerAggregationResponse {
     /// <p>An object that represents the count of matched findings per severity.</p>
     pub fn severity_counts(&self) -> std::option::Option<&crate::model::SeverityCounts> {
         self.severity_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageLayerAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageLayerAggregationResponse");
-        formatter.field("repository", &self.repository);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("layer_hash", &self.layer_hash);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.finish()
     }
 }
 /// See [`ImageLayerAggregationResponse`](crate::model::ImageLayerAggregationResponse).
@@ -7331,7 +6933,7 @@ impl ImageLayerAggregationResponse {
 
 /// <p>A response that contains the results of a finding type aggregation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingTypeAggregationResponse {
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     #[doc(hidden)]
@@ -7348,14 +6950,6 @@ impl FindingTypeAggregationResponse {
     /// <p>The value to sort results by.</p>
     pub fn severity_counts(&self) -> std::option::Option<&crate::model::SeverityCounts> {
         self.severity_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingTypeAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingTypeAggregationResponse");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.finish()
     }
 }
 /// See [`FindingTypeAggregationResponse`](crate::model::FindingTypeAggregationResponse).
@@ -7409,7 +7003,7 @@ impl FindingTypeAggregationResponse {
 
 /// <p>A response that contains the results of a finding aggregation by Amazon EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2InstanceAggregationResponse {
     /// <p>The Amazon EC2 instance ID.</p>
     #[doc(hidden)]
@@ -7465,19 +7059,6 @@ impl Ec2InstanceAggregationResponse {
     /// <p>The number of network findings for the Amazon EC2 instance.</p>
     pub fn network_findings(&self) -> std::option::Option<i64> {
         self.network_findings
-    }
-}
-impl std::fmt::Debug for Ec2InstanceAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2InstanceAggregationResponse");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("ami", &self.ami);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("instance_tags", &self.instance_tags);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.field("network_findings", &self.network_findings);
-        formatter.finish()
     }
 }
 /// See [`Ec2InstanceAggregationResponse`](crate::model::Ec2InstanceAggregationResponse).
@@ -7611,7 +7192,7 @@ impl Ec2InstanceAggregationResponse {
 
 /// <p>An aggregation of information about Amazon ECR containers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEcrContainerAggregationResponse {
     /// <p>The resource ID of the container.</p>
     #[doc(hidden)]
@@ -7663,19 +7244,6 @@ impl AwsEcrContainerAggregationResponse {
     /// <p>The number of finding by severity.</p>
     pub fn severity_counts(&self) -> std::option::Option<&crate::model::SeverityCounts> {
         self.severity_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for AwsEcrContainerAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsEcrContainerAggregationResponse");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("image_sha", &self.image_sha);
-        formatter.field("repository", &self.repository);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("image_tags", &self.image_tags);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.finish()
     }
 }
 /// See [`AwsEcrContainerAggregationResponse`](crate::model::AwsEcrContainerAggregationResponse).
@@ -7798,7 +7366,7 @@ impl AwsEcrContainerAggregationResponse {
 
 /// <p>A response that contains the results of a finding aggregation by AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmiAggregationResponse {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
     #[doc(hidden)]
@@ -7829,16 +7397,6 @@ impl AmiAggregationResponse {
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
     pub fn affected_instances(&self) -> std::option::Option<i64> {
         self.affected_instances
-    }
-}
-impl std::fmt::Debug for AmiAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmiAggregationResponse");
-        formatter.field("ami", &self.ami);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.field("affected_instances", &self.affected_instances);
-        formatter.finish()
     }
 }
 /// See [`AmiAggregationResponse`](crate::model::AmiAggregationResponse).
@@ -7916,7 +7474,7 @@ impl AmiAggregationResponse {
 
 /// <p>An aggregation of findings by Amazon Web Services account ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAggregationResponse {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -7933,14 +7491,6 @@ impl AccountAggregationResponse {
     /// <p>The number of findings by severity.</p>
     pub fn severity_counts(&self) -> std::option::Option<&crate::model::SeverityCounts> {
         self.severity_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountAggregationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAggregationResponse");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("severity_counts", &self.severity_counts);
-        formatter.finish()
     }
 }
 /// See [`AccountAggregationResponse`](crate::model::AccountAggregationResponse).
@@ -8301,7 +7851,7 @@ impl AggregationRequest {
 
 /// <p>The details that define an aggregation based on finding title.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TitleAggregation {
     /// <p>The finding titles to aggregate on.</p>
     #[doc(hidden)]
@@ -8339,17 +7889,6 @@ impl TitleAggregation {
     /// <p>The value to sort results by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::TitleSortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for TitleAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TitleAggregation");
-        formatter.field("titles", &self.titles);
-        formatter.field("vulnerability_ids", &self.vulnerability_ids);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`TitleAggregation`](crate::model::TitleAggregation).
@@ -8651,7 +8190,7 @@ impl AsRef<str> for AggregationResourceType {
 
 /// <p>The details that define an aggregation based on repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryAggregation {
     /// <p>The names of repositories to aggregate findings on.</p>
     #[doc(hidden)]
@@ -8675,15 +8214,6 @@ impl RepositoryAggregation {
     /// <p>The value to sort results by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::RepositorySortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for RepositoryAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryAggregation");
-        formatter.field("repositories", &self.repositories);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`RepositoryAggregation`](crate::model::RepositoryAggregation).
@@ -8861,7 +8391,7 @@ impl AsRef<str> for RepositorySortBy {
 
 /// <p>The details that define an aggregation based on operating system package type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageAggregation {
     /// <p>The names of packages to aggregate findings on.</p>
     #[doc(hidden)]
@@ -8885,15 +8415,6 @@ impl PackageAggregation {
     /// <p>The value to sort results by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::PackageSortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageAggregation");
-        formatter.field("package_names", &self.package_names);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`PackageAggregation`](crate::model::PackageAggregation).
@@ -9066,7 +8587,7 @@ impl AsRef<str> for PackageSortBy {
 
 /// <p>The details that define an aggregation based on container image layers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageLayerAggregation {
     /// <p>The repository associated with the container image hosting the layers.</p>
     #[doc(hidden)]
@@ -9104,17 +8625,6 @@ impl ImageLayerAggregation {
     /// <p>The value to sort results by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::ImageLayerSortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageLayerAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageLayerAggregation");
-        formatter.field("repositories", &self.repositories);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.field("layer_hashes", &self.layer_hashes);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`ImageLayerAggregation`](crate::model::ImageLayerAggregation).
@@ -9329,7 +8839,7 @@ impl AsRef<str> for ImageLayerSortBy {
 
 /// <p>The details that define an aggregation based on finding type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingTypeAggregation {
     /// <p>The finding type to aggregate.</p>
     #[doc(hidden)]
@@ -9360,16 +8870,6 @@ impl FindingTypeAggregation {
     /// <p>The value to sort results by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::FindingTypeSortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingTypeAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingTypeAggregation");
-        formatter.field("finding_type", &self.finding_type);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`FindingTypeAggregation`](crate::model::FindingTypeAggregation).
@@ -9645,7 +9145,7 @@ impl AsRef<str> for AggregationFindingType {
 
 /// <p>The details that define an aggregation based on Amazon EC2 instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2InstanceAggregation {
     /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
     #[doc(hidden)]
@@ -9690,18 +9190,6 @@ impl Ec2InstanceAggregation {
     /// <p>The value to sort results by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::Ec2InstanceSortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2InstanceAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2InstanceAggregation");
-        formatter.field("amis", &self.amis);
-        formatter.field("operating_systems", &self.operating_systems);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("instance_tags", &self.instance_tags);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`Ec2InstanceAggregation`](crate::model::Ec2InstanceAggregation).
@@ -9945,7 +9433,7 @@ impl AsRef<str> for Ec2InstanceSortBy {
 
 /// <p>An aggregation of information about Amazon ECR containers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEcrContainerAggregation {
     /// <p>The container resource IDs.</p>
     #[doc(hidden)]
@@ -9997,19 +9485,6 @@ impl AwsEcrContainerAggregation {
     /// <p>The value to sort by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::AwsEcrContainerSortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for AwsEcrContainerAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsEcrContainerAggregation");
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.field("image_shas", &self.image_shas);
-        formatter.field("repositories", &self.repositories);
-        formatter.field("architectures", &self.architectures);
-        formatter.field("image_tags", &self.image_tags);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`AwsEcrContainerAggregation`](crate::model::AwsEcrContainerAggregation).
@@ -10268,7 +9743,7 @@ impl AsRef<str> for AwsEcrContainerSortBy {
 
 /// <p>The details that define an aggregation based on Amazon machine images (AMIs).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmiAggregation {
     /// <p>The IDs of AMIs to aggregate findings for.</p>
     #[doc(hidden)]
@@ -10292,15 +9767,6 @@ impl AmiAggregation {
     /// <p>The value to sort results by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::AmiSortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for AmiAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmiAggregation");
-        formatter.field("amis", &self.amis);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`AmiAggregation`](crate::model::AmiAggregation).
@@ -10475,7 +9941,7 @@ impl AsRef<str> for AmiSortBy {
 
 /// <p>An object that contains details about an aggregation response based on Amazon Web Services accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAggregation {
     /// <p>The type of finding.</p>
     #[doc(hidden)]
@@ -10506,16 +9972,6 @@ impl AccountAggregation {
     /// <p>The value to sort by.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::AccountSortBy> {
         self.sort_by.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountAggregation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAggregation");
-        formatter.field("finding_type", &self.finding_type);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
     }
 }
 /// See [`AccountAggregation`](crate::model::AccountAggregation).
@@ -10697,7 +10153,7 @@ impl AsRef<str> for AccountSortBy {
 
 /// <p>Details about a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
     #[doc(hidden)]
@@ -10774,22 +10230,6 @@ impl Filter {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("arn", &self.arn);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("name", &self.name);
-        formatter.field("criteria", &self.criteria);
-        formatter.field("action", &self.action);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("description", &self.description);
-        formatter.field("reason", &self.reason);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -10965,7 +10405,7 @@ impl Filter {
 
 /// <p>Details of the Amazon Inspector delegated administrator for your organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegatedAdminAccount {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
     #[doc(hidden)]
@@ -10982,14 +10422,6 @@ impl DelegatedAdminAccount {
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::DelegatedAdminStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for DelegatedAdminAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegatedAdminAccount");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`DelegatedAdminAccount`](crate::model::DelegatedAdminAccount).
@@ -11135,7 +10567,7 @@ impl AsRef<str> for DelegatedAdminStatus {
 
 /// <p>a structure that contains information on the count of resources within a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Counts {
     /// <p>The number of resources.</p>
     #[doc(hidden)]
@@ -11152,14 +10584,6 @@ impl Counts {
     /// <p>The key associated with this group</p>
     pub fn group_key(&self) -> std::option::Option<&crate::model::GroupKey> {
         self.group_key.as_ref()
-    }
-}
-impl std::fmt::Debug for Counts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Counts");
-        formatter.field("count", &self.count);
-        formatter.field("group_key", &self.group_key);
-        formatter.finish()
     }
 }
 /// See [`Counts`](crate::model::Counts).
@@ -11321,7 +10745,7 @@ impl AsRef<str> for GroupKey {
 
 /// <p>A structure that identifies filter criteria for <code>GetCoverageStatistics</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoverageFilterCriteria {
     /// <p>The scan status code to filter on.</p>
     #[doc(hidden)]
@@ -11389,21 +10813,6 @@ impl CoverageFilterCriteria {
     /// <p>The Amazon EC2 instance tags to filter on.</p>
     pub fn ec2_instance_tags(&self) -> std::option::Option<&[crate::model::CoverageMapFilter]> {
         self.ec2_instance_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CoverageFilterCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoverageFilterCriteria");
-        formatter.field("scan_status_code", &self.scan_status_code);
-        formatter.field("scan_status_reason", &self.scan_status_reason);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("scan_type", &self.scan_type);
-        formatter.field("ecr_repository_name", &self.ecr_repository_name);
-        formatter.field("ecr_image_tags", &self.ecr_image_tags);
-        formatter.field("ec2_instance_tags", &self.ec2_instance_tags);
-        formatter.finish()
     }
 }
 /// See [`CoverageFilterCriteria`](crate::model::CoverageFilterCriteria).
@@ -11628,7 +11037,7 @@ impl CoverageFilterCriteria {
 
 /// <p>Contains details of a coverage map filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoverageMapFilter {
     /// <p>The operator to compare coverage on.</p>
     #[doc(hidden)]
@@ -11652,15 +11061,6 @@ impl CoverageMapFilter {
     /// <p>The tag value associated with the coverage map filter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for CoverageMapFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoverageMapFilter");
-        formatter.field("comparison", &self.comparison);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CoverageMapFilter`](crate::model::CoverageMapFilter).
@@ -11813,7 +11213,7 @@ impl AsRef<str> for CoverageMapComparison {
 
 /// <p>Contains details of a coverage string filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
     #[doc(hidden)]
@@ -11830,14 +11230,6 @@ impl CoverageStringFilter {
     /// <p>The value to compare strings on.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for CoverageStringFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoverageStringFilter");
-        formatter.field("comparison", &self.comparison);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CoverageStringFilter`](crate::model::CoverageStringFilter).
@@ -11983,7 +11375,7 @@ impl AsRef<str> for CoverageStringComparison {
 
 /// <p>An object that contains details about a resource covered by Amazon Inspector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoveredResource {
     /// <p>The type of the covered resource.</p>
     #[doc(hidden)]
@@ -12028,18 +11420,6 @@ impl CoveredResource {
     /// <p>An object that contains details about the metadata.</p>
     pub fn resource_metadata(&self) -> std::option::Option<&crate::model::ResourceScanMetadata> {
         self.resource_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for CoveredResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoveredResource");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("scan_type", &self.scan_type);
-        formatter.field("scan_status", &self.scan_status);
-        formatter.field("resource_metadata", &self.resource_metadata);
-        formatter.finish()
     }
 }
 /// See [`CoveredResource`](crate::model::CoveredResource).
@@ -12147,7 +11527,7 @@ impl CoveredResource {
 
 /// <p>An object that contains details about the metadata for an Amazon ECR resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceScanMetadata {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
     #[doc(hidden)]
@@ -12171,15 +11551,6 @@ impl ResourceScanMetadata {
     /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
     pub fn ec2(&self) -> std::option::Option<&crate::model::Ec2Metadata> {
         self.ec2.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceScanMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceScanMetadata");
-        formatter.field("ecr_repository", &self.ecr_repository);
-        formatter.field("ecr_image", &self.ecr_image);
-        formatter.field("ec2", &self.ec2);
-        formatter.finish()
     }
 }
 /// See [`ResourceScanMetadata`](crate::model::ResourceScanMetadata).
@@ -12248,7 +11619,7 @@ impl ResourceScanMetadata {
 
 /// <p>Meta data details of an Amazon EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2Metadata {
     /// <p>The tags attached to the instance.</p>
     #[doc(hidden)]
@@ -12276,15 +11647,6 @@ impl Ec2Metadata {
     /// <p>The platform of the instance.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Ec2Platform> {
         self.platform.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2Metadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2Metadata");
-        formatter.field("tags", &self.tags);
-        formatter.field("ami_id", &self.ami_id);
-        formatter.field("platform", &self.platform);
-        formatter.finish()
     }
 }
 /// See [`Ec2Metadata`](crate::model::Ec2Metadata).
@@ -12462,7 +11824,7 @@ impl AsRef<str> for Ec2Platform {
 
 /// <p>Information on the Amazon ECR image metadata associated with a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
     #[doc(hidden)]
@@ -12472,13 +11834,6 @@ impl EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
     pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for EcrContainerImageMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcrContainerImageMetadata");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`EcrContainerImageMetadata`](crate::model::EcrContainerImageMetadata).
@@ -12524,7 +11879,7 @@ impl EcrContainerImageMetadata {
 
 /// <p>Information on the Amazon ECR repository metadata associated with a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcrRepositoryMetadata {
     /// <p>The name of the Amazon ECR repository.</p>
     #[doc(hidden)]
@@ -12541,14 +11896,6 @@ impl EcrRepositoryMetadata {
     /// <p>The frequency of scans.</p>
     pub fn scan_frequency(&self) -> std::option::Option<&crate::model::EcrScanFrequency> {
         self.scan_frequency.as_ref()
-    }
-}
-impl std::fmt::Debug for EcrRepositoryMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcrRepositoryMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("scan_frequency", &self.scan_frequency);
-        formatter.finish()
     }
 }
 /// See [`EcrRepositoryMetadata`](crate::model::EcrRepositoryMetadata).
@@ -12697,7 +12044,7 @@ impl AsRef<str> for EcrScanFrequency {
 
 /// <p>The status of the scan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScanStatus {
     /// <p>The status code of the scan.</p>
     #[doc(hidden)]
@@ -12714,14 +12061,6 @@ impl ScanStatus {
     /// <p>The reason for the scan.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::ScanStatusReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for ScanStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScanStatus");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`ScanStatus`](crate::model::ScanStatus).
@@ -13236,7 +12575,7 @@ impl AsRef<str> for CoverageResourceType {
 
 /// <p>Contains information on the permissions an account has within Amazon Inspector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Permission {
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
     #[doc(hidden)]
@@ -13253,14 +12592,6 @@ impl Permission {
     /// <p>The operations that can be performed with the given permissions.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
-    }
-}
-impl std::fmt::Debug for Permission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Permission");
-        formatter.field("service", &self.service);
-        formatter.field("operation", &self.operation);
-        formatter.finish()
     }
 }
 /// See [`Permission`](crate::model::Permission).
@@ -13509,7 +12840,7 @@ impl AsRef<str> for Service {
 
 /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
     #[doc(hidden)]
@@ -13533,15 +12864,6 @@ impl Destination {
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`Destination`](crate::model::Destination).
@@ -13825,7 +13147,7 @@ impl AsRef<str> for ExternalReportStatus {
 
 /// <p>Details of the Amazon Inspector delegated administrator for your organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegatedAdmin {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
     #[doc(hidden)]
@@ -13842,14 +13164,6 @@ impl DelegatedAdmin {
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
     pub fn relationship_status(&self) -> std::option::Option<&crate::model::RelationshipStatus> {
         self.relationship_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DelegatedAdmin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegatedAdmin");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("relationship_status", &self.relationship_status);
-        formatter.finish()
     }
 }
 /// See [`DelegatedAdmin`](crate::model::DelegatedAdmin).
@@ -13903,7 +13217,7 @@ impl DelegatedAdmin {
 
 /// <p>Details about the state of the ECR scans for your environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcrConfigurationState {
     /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
     #[doc(hidden)]
@@ -13915,13 +13229,6 @@ impl EcrConfigurationState {
         &self,
     ) -> std::option::Option<&crate::model::EcrRescanDurationState> {
         self.rescan_duration_state.as_ref()
-    }
-}
-impl std::fmt::Debug for EcrConfigurationState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcrConfigurationState");
-        formatter.field("rescan_duration_state", &self.rescan_duration_state);
-        formatter.finish()
     }
 }
 /// See [`EcrConfigurationState`](crate::model::EcrConfigurationState).
@@ -13966,7 +13273,7 @@ impl EcrConfigurationState {
 
 /// <p>Details about the state of any changes to the ECR automated re-scan duration setting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcrRescanDurationState {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
     #[doc(hidden)]
@@ -13990,15 +13297,6 @@ impl EcrRescanDurationState {
     /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for EcrRescanDurationState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcrRescanDurationState");
-        formatter.field("rescan_duration", &self.rescan_duration);
-        formatter.field("status", &self.status);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`EcrRescanDurationState`](crate::model::EcrRescanDurationState).
@@ -14167,7 +13465,7 @@ impl AsRef<str> for EcrRescanDurationStatus {
 
 /// <p>An object with details on why an account failed to enable Amazon Inspector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedAccount {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -14205,17 +13503,6 @@ impl FailedAccount {
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedAccount");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("status", &self.status);
-        formatter.field("resource_status", &self.resource_status);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`FailedAccount`](crate::model::FailedAccount).
@@ -14476,7 +13763,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>Details the status of Amazon Inspector for each resource type Amazon Inspector scans.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceStatus {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
     #[doc(hidden)]
@@ -14493,14 +13780,6 @@ impl ResourceStatus {
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn ecr(&self) -> std::option::Option<&crate::model::Status> {
         self.ecr.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceStatus");
-        formatter.field("ec2", &self.ec2);
-        formatter.field("ecr", &self.ecr);
-        formatter.finish()
     }
 }
 /// See [`ResourceStatus`](crate::model::ResourceStatus).
@@ -14668,7 +13947,7 @@ impl AsRef<str> for Status {
 
 /// <p>An Amazon Web Services account within your environment that Amazon Inspector has been enabled for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Account {
     /// <p>The ID of the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -14692,15 +13971,6 @@ impl Account {
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
     pub fn resource_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
         self.resource_status.as_ref()
-    }
-}
-impl std::fmt::Debug for Account {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Account");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("status", &self.status);
-        formatter.field("resource_status", &self.resource_status);
-        formatter.finish()
     }
 }
 /// See [`Account`](crate::model::Account).
@@ -14946,7 +14216,7 @@ impl AsRef<str> for ReportFormat {
 
 /// <p>Information about an error received while accessing free trail data for an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FreeTrialInfoError {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
     #[doc(hidden)]
@@ -14970,15 +14240,6 @@ impl FreeTrialInfoError {
     /// <p>The error message returned.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for FreeTrialInfoError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FreeTrialInfoError");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`FreeTrialInfoError`](crate::model::FreeTrialInfoError).
@@ -15136,7 +14397,7 @@ impl AsRef<str> for FreeTrialInfoErrorCode {
 
 /// <p>Information about the Amazon Inspector free trial for an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FreeTrialAccountInfo {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
     #[doc(hidden)]
@@ -15153,14 +14414,6 @@ impl FreeTrialAccountInfo {
     /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
     pub fn free_trial_info(&self) -> std::option::Option<&[crate::model::FreeTrialInfo]> {
         self.free_trial_info.as_deref()
-    }
-}
-impl std::fmt::Debug for FreeTrialAccountInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FreeTrialAccountInfo");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("free_trial_info", &self.free_trial_info);
-        formatter.finish()
     }
 }
 /// See [`FreeTrialAccountInfo`](crate::model::FreeTrialAccountInfo).
@@ -15220,7 +14473,7 @@ impl FreeTrialAccountInfo {
 
 /// <p>An object that contains information about the Amazon Inspector free trial for an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FreeTrialInfo {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
     #[doc(hidden)]
@@ -15251,16 +14504,6 @@ impl FreeTrialInfo {
     /// <p>The order to sort results by.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::FreeTrialStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for FreeTrialInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FreeTrialInfo");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`FreeTrialInfo`](crate::model::FreeTrialInfo).
@@ -15518,7 +14761,7 @@ impl AsRef<str> for FreeTrialType {
 
 /// <p>An object with details the status of an Amazon Web Services account within your Amazon Inspector environment</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountState {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -15542,15 +14785,6 @@ impl AccountState {
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceState> {
         self.resource_state.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountState");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("state", &self.state);
-        formatter.field("resource_state", &self.resource_state);
-        formatter.finish()
     }
 }
 /// See [`AccountState`](crate::model::AccountState).
@@ -15616,7 +14850,7 @@ impl AccountState {
 
 /// <p>Details the state of Amazon Inspector for each resource type Amazon Inspector scans.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceState {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
     #[doc(hidden)]
@@ -15633,14 +14867,6 @@ impl ResourceState {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn ecr(&self) -> std::option::Option<&crate::model::State> {
         self.ecr.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceState");
-        formatter.field("ec2", &self.ec2);
-        formatter.field("ecr", &self.ecr);
-        formatter.finish()
     }
 }
 /// See [`ResourceState`](crate::model::ResourceState).
@@ -15691,7 +14917,7 @@ impl ResourceState {
 
 /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct State {
     /// <p>The status of Amazon Inspector for the account.</p>
     #[doc(hidden)]
@@ -15715,15 +14941,6 @@ impl State {
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for State {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("State");
-        formatter.field("status", &self.status);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`State`](crate::model::State).

@@ -2,18 +2,11 @@
 
 /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The exception message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ValidationException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl ValidationException {
 
 /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     /// <p>The exception message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalServerException {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl InternalServerException {
 
 /// <p>Connection to a database failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseConnectionException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DatabaseConnectionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseConnectionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DatabaseConnectionException {
     /// Returns the error message.
@@ -203,7 +182,7 @@ impl DatabaseConnectionException {
 
 /// <p>The Amazon Redshift Data API operation failed due to a missing resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The exception message.</p>
     #[doc(hidden)]
@@ -216,14 +195,6 @@ impl ResourceNotFoundException {
     /// <p>Resource identifier associated with the exception.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -292,7 +263,7 @@ impl ResourceNotFoundException {
 
 /// <p>The SQL statement encountered an environmental error while running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteStatementException {
     /// <p>The exception message.</p>
     #[doc(hidden)]
@@ -305,14 +276,6 @@ impl ExecuteStatementException {
     /// <p>Statement identifier of the exception.</p>
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ExecuteStatementException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteStatementException");
-        formatter.field("message", &self.message);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.finish()
     }
 }
 impl ExecuteStatementException {
@@ -381,18 +344,11 @@ impl ExecuteStatementException {
 
 /// <p>The number of active statements exceeds the limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveStatementsExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ActiveStatementsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveStatementsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ActiveStatementsExceededException {
     /// Returns the error message.
@@ -448,7 +404,7 @@ impl ActiveStatementsExceededException {
 
 /// <p>An SQL statement encountered an environmental error while running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchExecuteStatementException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -461,14 +417,6 @@ impl BatchExecuteStatementException {
     /// <p>Statement identifier of the exception.</p>
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchExecuteStatementException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchExecuteStatementException");
-        formatter.field("message", &self.message);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.finish()
     }
 }
 impl BatchExecuteStatementException {

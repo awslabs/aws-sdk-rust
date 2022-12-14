@@ -368,7 +368,7 @@ impl AsRef<str> for VocabularyState {
 
 /// <p>Provides you with the properties of the Call Analytics category you specified in your request. This includes the list of rules that define the specified category.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CategoryProperties {
     /// <p>The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -403,16 +403,6 @@ impl CategoryProperties {
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for CategoryProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CategoryProperties");
-        formatter.field("category_name", &self.category_name);
-        formatter.field("rules", &self.rules);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`CategoryProperties`](crate::model::CategoryProperties).
@@ -609,7 +599,7 @@ impl Rule {
 /// </ul>
 /// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a> for examples.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentFilter {
     /// <p>Specify the sentiments you want to flag.</p>
     #[doc(hidden)]
@@ -647,17 +637,6 @@ impl SentimentFilter {
     /// <p>Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments you specified in your request.</p>
     pub fn negate(&self) -> std::option::Option<bool> {
         self.negate
-    }
-}
-impl std::fmt::Debug for SentimentFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentFilter");
-        formatter.field("sentiments", &self.sentiments);
-        formatter.field("absolute_time_range", &self.absolute_time_range);
-        formatter.field("relative_time_range", &self.relative_time_range);
-        formatter.field("participant_role", &self.participant_role);
-        formatter.field("negate", &self.negate);
-        formatter.finish()
     }
 }
 /// See [`SentimentFilter`](crate::model::SentimentFilter).
@@ -855,7 +834,7 @@ impl AsRef<str> for ParticipantRole {
 /// <p>You can use also <code>First</code> to search from the start of the media file until the time you specify, or <code>Last</code> to search from the time you specify until the end of the media file. For example, setting <code>First</code> to 10 only searches for your specified criteria in the audio contained in the first 10 percent of the media file.</p>
 /// <p>If you prefer to use milliseconds instead of percentage, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelativeTimeRange {
     /// <p>The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file. If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.</p>
     #[doc(hidden)]
@@ -886,16 +865,6 @@ impl RelativeTimeRange {
     /// <p>The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
     pub fn last(&self) -> std::option::Option<i32> {
         self.last
-    }
-}
-impl std::fmt::Debug for RelativeTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelativeTimeRange");
-        formatter.field("start_percentage", &self.start_percentage);
-        formatter.field("end_percentage", &self.end_percentage);
-        formatter.field("first", &self.first);
-        formatter.field("last", &self.last);
-        formatter.finish()
     }
 }
 /// See [`RelativeTimeRange`](crate::model::RelativeTimeRange).
@@ -973,7 +942,7 @@ impl RelativeTimeRange {
 /// <p>You can use also <code>First</code> to search from the start of the audio until the time you specify, or <code>Last</code> to search from the time you specify until the end of the audio. For example, setting <code>First</code> to 50000 only searches for your specified criteria in the audio contained between the start of the media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code> independently of each other.</p>
 /// <p>If you prefer to use percentage instead of milliseconds, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbsoluteTimeRange {
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
     #[doc(hidden)]
@@ -1004,16 +973,6 @@ impl AbsoluteTimeRange {
     /// <p>The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
     pub fn last(&self) -> std::option::Option<i64> {
         self.last
-    }
-}
-impl std::fmt::Debug for AbsoluteTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbsoluteTimeRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("first", &self.first);
-        formatter.field("last", &self.last);
-        formatter.finish()
     }
 }
 /// See [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange).
@@ -1195,7 +1154,7 @@ impl AsRef<str> for SentimentValue {
 /// </ul>
 /// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a> for examples.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptFilter {
     /// <p>Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
@@ -1244,18 +1203,6 @@ impl TranscriptFilter {
     /// <p>Specify the phrases you want to flag.</p>
     pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
         self.targets.as_deref()
-    }
-}
-impl std::fmt::Debug for TranscriptFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranscriptFilter");
-        formatter.field("transcript_filter_type", &self.transcript_filter_type);
-        formatter.field("absolute_time_range", &self.absolute_time_range);
-        formatter.field("relative_time_range", &self.relative_time_range);
-        formatter.field("participant_role", &self.participant_role);
-        formatter.field("negate", &self.negate);
-        formatter.field("targets", &self.targets);
-        formatter.finish()
     }
 }
 /// See [`TranscriptFilter`](crate::model::TranscriptFilter).
@@ -1472,7 +1419,7 @@ impl AsRef<str> for TranscriptFilterType {
 /// </ul>
 /// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a> for usage examples.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InterruptionFilter {
     /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10000 milliseconds of interruptions.</p>
     #[doc(hidden)]
@@ -1510,17 +1457,6 @@ impl InterruptionFilter {
     /// <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
     pub fn negate(&self) -> std::option::Option<bool> {
         self.negate
-    }
-}
-impl std::fmt::Debug for InterruptionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InterruptionFilter");
-        formatter.field("threshold", &self.threshold);
-        formatter.field("participant_role", &self.participant_role);
-        formatter.field("absolute_time_range", &self.absolute_time_range);
-        formatter.field("relative_time_range", &self.relative_time_range);
-        formatter.field("negate", &self.negate);
-        formatter.finish()
     }
 }
 /// See [`InterruptionFilter`](crate::model::InterruptionFilter).
@@ -1622,7 +1558,7 @@ impl InterruptionFilter {
 /// </ul>
 /// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a> for usage examples.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NonTalkTimeFilter {
     /// <p>Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a silent period that lasts 30000 milliseconds.</p>
     #[doc(hidden)]
@@ -1653,16 +1589,6 @@ impl NonTalkTimeFilter {
     /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
     pub fn negate(&self) -> std::option::Option<bool> {
         self.negate
-    }
-}
-impl std::fmt::Debug for NonTalkTimeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NonTalkTimeFilter");
-        formatter.field("threshold", &self.threshold);
-        formatter.field("absolute_time_range", &self.absolute_time_range);
-        formatter.field("relative_time_range", &self.relative_time_range);
-        formatter.field("negate", &self.negate);
-        formatter.finish()
     }
 }
 /// See [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter).
@@ -1745,7 +1671,7 @@ impl NonTalkTimeFilter {
 /// <p>For example, you could add the tag <code>Department:Sales</code> to a resource to indicate that it pertains to your organization's sales department. You can also use tags for tag-based access control.</p>
 /// <p>To learn more about tagging, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag <code>Department:Sales</code>, the key is 'Department'.</p>
     #[doc(hidden)]
@@ -1764,14 +1690,6 @@ impl Tag {
     /// <p>Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to null. Omitting the tag value is the same as using an empty string.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1826,7 +1744,7 @@ impl Tag {
 /// <p>To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
 /// <p>If you enabled content redaction, the redacted transcript can be found at the location specified in <code>RedactedTranscriptFileUri</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptionJob {
     /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -2052,38 +1970,6 @@ impl TranscriptionJob {
         &std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
     > {
         self.language_id_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for TranscriptionJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranscriptionJob");
-        formatter.field("transcription_job_name", &self.transcription_job_name);
-        formatter.field("transcription_job_status", &self.transcription_job_status);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("media_sample_rate_hertz", &self.media_sample_rate_hertz);
-        formatter.field("media_format", &self.media_format);
-        formatter.field("media", &self.media);
-        formatter.field("transcript", &self.transcript);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("settings", &self.settings);
-        formatter.field("model_settings", &self.model_settings);
-        formatter.field("job_execution_settings", &self.job_execution_settings);
-        formatter.field("content_redaction", &self.content_redaction);
-        formatter.field("identify_language", &self.identify_language);
-        formatter.field(
-            "identify_multiple_languages",
-            &self.identify_multiple_languages,
-        );
-        formatter.field("language_options", &self.language_options);
-        formatter.field("identified_language_score", &self.identified_language_score);
-        formatter.field("language_codes", &self.language_codes);
-        formatter.field("tags", &self.tags);
-        formatter.field("subtitles", &self.subtitles);
-        formatter.field("language_id_settings", &self.language_id_settings);
-        formatter.finish()
     }
 }
 /// See [`TranscriptionJob`](crate::model::TranscriptionJob).
@@ -2533,7 +2419,7 @@ impl TranscriptionJob {
 /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
 /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LanguageIdSettings {
     /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Vocabulary names are case sensitive.</p>
     /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
@@ -2565,15 +2451,6 @@ impl LanguageIdSettings {
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LanguageIdSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LanguageIdSettings");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.field("language_model_name", &self.language_model_name);
-        formatter.finish()
     }
 }
 /// See [`LanguageIdSettings`](crate::model::LanguageIdSettings).
@@ -2653,7 +2530,7 @@ impl LanguageIdSettings {
 
 /// <p>Provides information about your subtitle file, including format, start index, and Amazon S3 location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubtitlesOutput {
     /// <p>Provides the format of your subtitle files. If your request included both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, both formats are shown.</p>
     #[doc(hidden)]
@@ -2685,15 +2562,6 @@ impl SubtitlesOutput {
     /// <p>Provides the start index value for your subtitle files. If you did not specify a value in your request, the default value of <code>0</code> is used.</p>
     pub fn output_start_index(&self) -> std::option::Option<i32> {
         self.output_start_index
-    }
-}
-impl std::fmt::Debug for SubtitlesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubtitlesOutput");
-        formatter.field("formats", &self.formats);
-        formatter.field("subtitle_file_uris", &self.subtitle_file_uris);
-        formatter.field("output_start_index", &self.output_start_index);
-        formatter.finish()
     }
 }
 /// See [`SubtitlesOutput`](crate::model::SubtitlesOutput).
@@ -2872,7 +2740,7 @@ impl AsRef<str> for SubtitleFormat {
 
 /// <p>Provides information on the speech contained in a discreet utterance when multi-language identification is enabled in your request. This utterance represents a block of speech consisting of one language, preceded or followed by a block of speech in a different language.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LanguageCodeItem {
     /// <p>Provides the language code for each language identified in your media.</p>
     #[doc(hidden)]
@@ -2889,14 +2757,6 @@ impl LanguageCodeItem {
     /// <p>Provides the total time, in seconds, each identified language is spoken in your media.</p>
     pub fn duration_in_seconds(&self) -> std::option::Option<f32> {
         self.duration_in_seconds
-    }
-}
-impl std::fmt::Debug for LanguageCodeItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LanguageCodeItem");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`LanguageCodeItem`](crate::model::LanguageCodeItem).
@@ -2950,7 +2810,7 @@ impl LanguageCodeItem {
 
 /// <p>Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentRedaction {
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
     #[doc(hidden)]
@@ -2978,15 +2838,6 @@ impl ContentRedaction {
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
     pub fn pii_entity_types(&self) -> std::option::Option<&[crate::model::PiiEntityType]> {
         self.pii_entity_types.as_deref()
-    }
-}
-impl std::fmt::Debug for ContentRedaction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentRedaction");
-        formatter.field("redaction_type", &self.redaction_type);
-        formatter.field("redaction_output", &self.redaction_output);
-        formatter.field("pii_entity_types", &self.pii_entity_types);
-        formatter.finish()
     }
 }
 /// See [`ContentRedaction`](crate::model::ContentRedaction).
@@ -3398,7 +3249,7 @@ impl AsRef<str> for RedactionType {
 /// <p>Allows you to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
 /// <p>If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionSettings {
     /// <p>Allows you to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
     /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
@@ -3423,14 +3274,6 @@ impl JobExecutionSettings {
     /// <p>Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include <code>AllowDeferredExecution</code>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for JobExecutionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionSettings");
-        formatter.field("allow_deferred_execution", &self.allow_deferred_execution);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionSettings`](crate::model::JobExecutionSettings).
@@ -3493,7 +3336,7 @@ impl JobExecutionSettings {
 /// <p>Provides the name of the custom language model that was included in the specified transcription job.</p>
 /// <p>Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter if you're <b>not</b> using automatic language identification (<code></code>). If using <code>LanguageIdSettings</code> in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelSettings {
     /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
@@ -3505,13 +3348,6 @@ impl ModelSettings {
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ModelSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelSettings");
-        formatter.field("language_model_name", &self.language_model_name);
-        formatter.finish()
     }
 }
 /// See [`ModelSettings`](crate::model::ModelSettings).
@@ -3555,7 +3391,7 @@ impl ModelSettings {
 
 /// <p>Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Settings {
     /// <p>The name of the custom vocabulary you want to use in your transcription job request. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -3652,20 +3488,6 @@ impl Settings {
         &self,
     ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
-    }
-}
-impl std::fmt::Debug for Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Settings");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("show_speaker_labels", &self.show_speaker_labels);
-        formatter.field("max_speaker_labels", &self.max_speaker_labels);
-        formatter.field("channel_identification", &self.channel_identification);
-        formatter.field("show_alternatives", &self.show_alternatives);
-        formatter.field("max_alternatives", &self.max_alternatives);
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.field("vocabulary_filter_method", &self.vocabulary_filter_method);
-        formatter.finish()
     }
 }
 /// See [`Settings`](crate::model::Settings).
@@ -3934,7 +3756,7 @@ impl AsRef<str> for VocabularyFilterMethod {
 
 /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transcript {
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
     /// <p>If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
@@ -3967,17 +3789,6 @@ impl Transcript {
     /// </note>
     pub fn redacted_transcript_file_uri(&self) -> std::option::Option<&str> {
         self.redacted_transcript_file_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for Transcript {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Transcript");
-        formatter.field("transcript_file_uri", &self.transcript_file_uri);
-        formatter.field(
-            "redacted_transcript_file_uri",
-            &self.redacted_transcript_file_uri,
-        );
-        formatter.finish()
     }
 }
 /// See [`Transcript`](crate::model::Transcript).
@@ -4053,7 +3864,7 @@ impl Transcript {
 
 /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Media {
     /// <p>The Amazon S3 location of the media file you want to transcribe. For example:</p>
     /// <ul>
@@ -4094,14 +3905,6 @@ impl Media {
     /// </important>
     pub fn redacted_media_file_uri(&self) -> std::option::Option<&str> {
         self.redacted_media_file_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for Media {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Media");
-        formatter.field("media_file_uri", &self.media_file_uri);
-        formatter.field("redacted_media_file_uri", &self.redacted_media_file_uri);
-        formatter.finish()
     }
 }
 /// See [`Media`](crate::model::Media).
@@ -4401,7 +4204,7 @@ impl AsRef<str> for TranscriptionJobStatus {
 /// <p>You can choose a start index of 0 or 1, and you can specify either WebVTT or SubRip (or both) as your output format.</p>
 /// <p>Note that your subtitle files are placed in the same location as your transcription output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subtitles {
     /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
     #[doc(hidden)]
@@ -4420,14 +4223,6 @@ impl Subtitles {
     /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
     pub fn output_start_index(&self) -> std::option::Option<i32> {
         self.output_start_index
-    }
-}
-impl std::fmt::Debug for Subtitles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subtitles");
-        formatter.field("formats", &self.formats);
-        formatter.field("output_start_index", &self.output_start_index);
-        formatter.finish()
     }
 }
 /// See [`Subtitles`](crate::model::Subtitles).
@@ -4490,7 +4285,7 @@ impl Subtitles {
 /// <p>Provides detailed information about a medical transcription job.</p>
 /// <p>To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscriptionJob {
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -4636,34 +4431,6 @@ impl MedicalTranscriptionJob {
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified medical transcription job.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for MedicalTranscriptionJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalTranscriptionJob");
-        formatter.field(
-            "medical_transcription_job_name",
-            &self.medical_transcription_job_name,
-        );
-        formatter.field("transcription_job_status", &self.transcription_job_status);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("media_sample_rate_hertz", &self.media_sample_rate_hertz);
-        formatter.field("media_format", &self.media_format);
-        formatter.field("media", &self.media);
-        formatter.field("transcript", &self.transcript);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("settings", &self.settings);
-        formatter.field(
-            "content_identification_type",
-            &self.content_identification_type,
-        );
-        formatter.field("specialty", &self.specialty);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`MedicalTranscriptionJob`](crate::model::MedicalTranscriptionJob).
@@ -5226,7 +4993,7 @@ impl AsRef<str> for MedicalContentIdentificationType {
 
 /// <p>Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscriptionSetting {
     /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
@@ -5301,18 +5068,6 @@ impl MedicalTranscriptionSetting {
     /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MedicalTranscriptionSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalTranscriptionSetting");
-        formatter.field("show_speaker_labels", &self.show_speaker_labels);
-        formatter.field("max_speaker_labels", &self.max_speaker_labels);
-        formatter.field("channel_identification", &self.channel_identification);
-        formatter.field("show_alternatives", &self.show_alternatives);
-        formatter.field("max_alternatives", &self.max_alternatives);
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.finish()
     }
 }
 /// See [`MedicalTranscriptionSetting`](crate::model::MedicalTranscriptionSetting).
@@ -5444,7 +5199,7 @@ impl MedicalTranscriptionSetting {
 
 /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscript {
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
     /// <p>If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
@@ -5462,13 +5217,6 @@ impl MedicalTranscript {
     /// </note>
     pub fn transcript_file_uri(&self) -> std::option::Option<&str> {
         self.transcript_file_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for MedicalTranscript {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalTranscript");
-        formatter.field("transcript_file_uri", &self.transcript_file_uri);
-        formatter.finish()
     }
 }
 /// See [`MedicalTranscript`](crate::model::MedicalTranscript).
@@ -5521,7 +5269,7 @@ impl MedicalTranscript {
 /// <p>If you enabled personally identifiable information (PII) redaction, the redacted transcript appears at the location specified in <code>RedactedTranscriptFileUri</code>.</p>
 /// <p>If you chose to redact the audio in your media file, you can find your redacted media file at the location specified in the <code>RedactedMediaFileUri</code> field of your response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CallAnalyticsJob {
     /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -5665,27 +5413,6 @@ impl CallAnalyticsJob {
     /// <p>Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
     pub fn channel_definitions(&self) -> std::option::Option<&[crate::model::ChannelDefinition]> {
         self.channel_definitions.as_deref()
-    }
-}
-impl std::fmt::Debug for CallAnalyticsJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CallAnalyticsJob");
-        formatter.field("call_analytics_job_name", &self.call_analytics_job_name);
-        formatter.field("call_analytics_job_status", &self.call_analytics_job_status);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("media_sample_rate_hertz", &self.media_sample_rate_hertz);
-        formatter.field("media_format", &self.media_format);
-        formatter.field("media", &self.media);
-        formatter.field("transcript", &self.transcript);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("identified_language_score", &self.identified_language_score);
-        formatter.field("settings", &self.settings);
-        formatter.field("channel_definitions", &self.channel_definitions);
-        formatter.finish()
     }
 }
 /// See [`CallAnalyticsJob`](crate::model::CallAnalyticsJob).
@@ -5973,7 +5700,7 @@ impl CallAnalyticsJob {
 
 /// <p>Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelDefinition {
     /// <p>Specify the audio channel you want to define.</p>
     #[doc(hidden)]
@@ -5990,14 +5717,6 @@ impl ChannelDefinition {
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
         self.participant_role.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelDefinition");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("participant_role", &self.participant_role);
-        formatter.finish()
     }
 }
 /// See [`ChannelDefinition`](crate::model::ChannelDefinition).
@@ -6051,7 +5770,7 @@ impl ChannelDefinition {
 
 /// <p>Provides additional optional settings for your request, including content redaction, automatic language identification; allows you to apply custom language models, vocabulary filters, and custom vocabularies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CallAnalyticsJobSettings {
     /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary names are case sensitive.</p>
     #[doc(hidden)]
@@ -6133,19 +5852,6 @@ impl CallAnalyticsJobSettings {
         &std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
     > {
         self.language_id_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for CallAnalyticsJobSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CallAnalyticsJobSettings");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.field("vocabulary_filter_method", &self.vocabulary_filter_method);
-        formatter.field("language_model_name", &self.language_model_name);
-        formatter.field("content_redaction", &self.content_redaction);
-        formatter.field("language_options", &self.language_options);
-        formatter.field("language_id_settings", &self.language_id_settings);
-        formatter.finish()
     }
 }
 /// See [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings).
@@ -6428,7 +6134,7 @@ impl AsRef<str> for CallAnalyticsJobStatus {
 
 /// <p>Provides information about a vocabulary filter, including the language of the filter, when it was last modified, and its name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VocabularyFilterInfo {
     /// <p>A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -6458,15 +6164,6 @@ impl VocabularyFilterInfo {
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for VocabularyFilterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VocabularyFilterInfo");
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`VocabularyFilterInfo`](crate::model::VocabularyFilterInfo).
@@ -6544,7 +6241,7 @@ impl VocabularyFilterInfo {
 
 /// <p>Provides information about a custom vocabulary, including the language of the vocabulary, when it was last modified, its name, and the processing state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VocabularyInfo {
     /// <p>A unique name, chosen by you, for your custom vocabulary. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -6579,16 +6276,6 @@ impl VocabularyInfo {
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
         self.vocabulary_state.as_ref()
-    }
-}
-impl std::fmt::Debug for VocabularyInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VocabularyInfo");
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("vocabulary_state", &self.vocabulary_state);
-        formatter.finish()
     }
 }
 /// See [`VocabularyInfo`](crate::model::VocabularyInfo).
@@ -6679,7 +6366,7 @@ impl VocabularyInfo {
 
 /// <p>Provides detailed information about a specific transcription job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptionJobSummary {
     /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -6798,29 +6485,6 @@ impl TranscriptionJobSummary {
     /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification, the singular version of this parameter, <code>LanguageCode</code>, is present.</p>
     pub fn language_codes(&self) -> std::option::Option<&[crate::model::LanguageCodeItem]> {
         self.language_codes.as_deref()
-    }
-}
-impl std::fmt::Debug for TranscriptionJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranscriptionJobSummary");
-        formatter.field("transcription_job_name", &self.transcription_job_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("transcription_job_status", &self.transcription_job_status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("output_location_type", &self.output_location_type);
-        formatter.field("content_redaction", &self.content_redaction);
-        formatter.field("model_settings", &self.model_settings);
-        formatter.field("identify_language", &self.identify_language);
-        formatter.field(
-            "identify_multiple_languages",
-            &self.identify_multiple_languages,
-        );
-        formatter.field("identified_language_score", &self.identified_language_score);
-        formatter.field("language_codes", &self.language_codes);
-        formatter.finish()
     }
 }
 /// See [`TranscriptionJobSummary`](crate::model::TranscriptionJobSummary).
@@ -7167,7 +6831,7 @@ impl AsRef<str> for OutputLocationType {
 
 /// <p>Provides detailed information about a specific medical transcription job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscriptionJobSummary {
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -7264,29 +6928,6 @@ impl MedicalTranscriptionJobSummary {
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for MedicalTranscriptionJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MedicalTranscriptionJobSummary");
-        formatter.field(
-            "medical_transcription_job_name",
-            &self.medical_transcription_job_name,
-        );
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("transcription_job_status", &self.transcription_job_status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("output_location_type", &self.output_location_type);
-        formatter.field("specialty", &self.specialty);
-        formatter.field(
-            "content_identification_type",
-            &self.content_identification_type,
-        );
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`MedicalTranscriptionJobSummary`](crate::model::MedicalTranscriptionJobSummary).
@@ -7498,7 +7139,7 @@ impl MedicalTranscriptionJobSummary {
 
 /// <p>Provides information about a custom language model, including the base model name, when the model was created, the location of the files used to train the model, when the model was last modified, the name you chose for the model, its language, its processing state, and if there is an upgrade available for the base model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LanguageModel {
     /// <p>A unique name, chosen by you, for your custom language model.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
@@ -7578,21 +7219,6 @@ impl LanguageModel {
     /// <p>The Amazon S3 location of the input files used to train and tune your custom language model, in addition to the data access role ARN (Amazon Resource Name) that has permissions to access these data.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
-    }
-}
-impl std::fmt::Debug for LanguageModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LanguageModel");
-        formatter.field("model_name", &self.model_name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("base_model_name", &self.base_model_name);
-        formatter.field("model_status", &self.model_status);
-        formatter.field("upgrade_availability", &self.upgrade_availability);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.finish()
     }
 }
 /// See [`LanguageModel`](crate::model::LanguageModel).
@@ -7763,7 +7389,7 @@ impl LanguageModel {
 /// <p>Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location.</p>
 /// <p>When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code> and <code>DataAccessRoleArn</code>. You can optionally include <code>TuningDataS3Uri</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code> </p>
@@ -7795,15 +7421,6 @@ impl InputDataConfig {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("tuning_data_s3_uri", &self.tuning_data_s3_uri);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.finish()
     }
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
@@ -8170,7 +7787,7 @@ impl AsRef<str> for ClmLanguageCode {
 
 /// <p>Provides detailed information about a specific Call Analytics job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CallAnalyticsJobSummary {
     /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -8232,19 +7849,6 @@ impl CallAnalyticsJobSummary {
     /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for CallAnalyticsJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CallAnalyticsJobSummary");
-        formatter.field("call_analytics_job_name", &self.call_analytics_job_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("call_analytics_job_status", &self.call_analytics_job_status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary).

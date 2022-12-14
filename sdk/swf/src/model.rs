@@ -2,7 +2,7 @@
 
 /// <p>Represents a workflow type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowType {
     /// <p> The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
@@ -27,14 +27,6 @@ impl WorkflowType {
     /// </note>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowType");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`WorkflowType`](crate::model::WorkflowType).
@@ -93,7 +85,7 @@ impl WorkflowType {
 
 /// <p>Represents an activity type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityType {
     /// <p>The name of this activity.</p> <note>
     /// <p>The combination of activity type name and version must be unique within a domain.</p>
@@ -118,14 +110,6 @@ impl ActivityType {
     /// </note>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivityType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityType");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ActivityType`](crate::model::ActivityType).
@@ -280,7 +264,7 @@ impl AsRef<str> for ChildPolicy {
 /// <p>Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.</p>
 /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The key of a tag.</p>
     #[doc(hidden)]
@@ -297,14 +281,6 @@ impl ResourceTag {
     /// <p>The value of a tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceTag`](crate::model::ResourceTag).
@@ -355,7 +331,7 @@ impl ResourceTag {
 
 /// <p>Represents a task list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskList {
     /// <p>The name of the task list.</p>
     #[doc(hidden)]
@@ -365,13 +341,6 @@ impl TaskList {
     /// <p>The name of the task list.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskList");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`TaskList`](crate::model::TaskList).
@@ -464,7 +433,7 @@ impl TaskList {
 /// <li> <p> <code> <code>StartChildWorkflowExecutionDecisionAttributes</code> </code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Decision {
     /// <p>Specifies the type of the decision.</p>
     #[doc(hidden)]
@@ -611,65 +580,6 @@ impl Decision {
         &self,
     ) -> std::option::Option<&crate::model::ScheduleLambdaFunctionDecisionAttributes> {
         self.schedule_lambda_function_decision_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for Decision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Decision");
-        formatter.field("decision_type", &self.decision_type);
-        formatter.field(
-            "schedule_activity_task_decision_attributes",
-            &self.schedule_activity_task_decision_attributes,
-        );
-        formatter.field(
-            "request_cancel_activity_task_decision_attributes",
-            &self.request_cancel_activity_task_decision_attributes,
-        );
-        formatter.field(
-            "complete_workflow_execution_decision_attributes",
-            &self.complete_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "fail_workflow_execution_decision_attributes",
-            &self.fail_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "cancel_workflow_execution_decision_attributes",
-            &self.cancel_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "continue_as_new_workflow_execution_decision_attributes",
-            &self.continue_as_new_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "record_marker_decision_attributes",
-            &self.record_marker_decision_attributes,
-        );
-        formatter.field(
-            "start_timer_decision_attributes",
-            &self.start_timer_decision_attributes,
-        );
-        formatter.field(
-            "cancel_timer_decision_attributes",
-            &self.cancel_timer_decision_attributes,
-        );
-        formatter.field(
-            "signal_external_workflow_execution_decision_attributes",
-            &self.signal_external_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "request_cancel_external_workflow_execution_decision_attributes",
-            &self.request_cancel_external_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "start_child_workflow_execution_decision_attributes",
-            &self.start_child_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "schedule_lambda_function_decision_attributes",
-            &self.schedule_lambda_function_decision_attributes,
-        );
-        formatter.finish()
     }
 }
 /// See [`Decision`](crate::model::Decision).
@@ -976,7 +886,7 @@ impl Decision {
 
 /// <p>Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <code>RespondDecisionTaskCompleted</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionDecisionAttributes {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
     #[doc(hidden)]
@@ -1014,17 +924,6 @@ impl ScheduleLambdaFunctionDecisionAttributes {
     /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.</p>
     pub fn start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.start_to_close_timeout.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduleLambdaFunctionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleLambdaFunctionDecisionAttributes");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.finish()
     }
 }
 /// See [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
@@ -1128,7 +1027,7 @@ impl ScheduleLambdaFunctionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChildWorkflowExecutionDecisionAttributes {
     /// <p> The type of the workflow execution to be started.</p>
     #[doc(hidden)]
@@ -1246,29 +1145,6 @@ impl StartChildWorkflowExecutionDecisionAttributes {
     /// <p>The IAM role attached to the child workflow execution.</p>
     pub fn lambda_role(&self) -> std::option::Option<&str> {
         self.lambda_role.as_deref()
-    }
-}
-impl std::fmt::Debug for StartChildWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChildWorkflowExecutionDecisionAttributes");
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
     }
 }
 /// See [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
@@ -1503,7 +1379,7 @@ impl StartChildWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the external workflow execution to cancel.</p>
     #[doc(hidden)]
@@ -1527,16 +1403,6 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("RequestCancelExternalWorkflowExecutionDecisionAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("control", &self.control);
-        formatter.finish()
     }
 }
 /// See [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
@@ -1610,7 +1476,7 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
     #[doc(hidden)]
@@ -1648,17 +1514,6 @@ impl SignalExternalWorkflowExecutionDecisionAttributes {
     /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
     pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
-    }
-}
-impl std::fmt::Debug for SignalExternalWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalExternalWorkflowExecutionDecisionAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("signal_name", &self.signal_name);
-        formatter.field("input", &self.input);
-        formatter.field("control", &self.control);
-        formatter.finish()
     }
 }
 /// See [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
@@ -1754,7 +1609,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
     #[doc(hidden)]
@@ -1764,13 +1619,6 @@ impl CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
     pub fn timer_id(&self) -> std::option::Option<&str> {
         self.timer_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelTimerDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelTimerDecisionAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.finish()
     }
 }
 /// See [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
@@ -1817,7 +1665,7 @@ impl CancelTimerDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
@@ -1845,15 +1693,6 @@ impl StartTimerDecisionAttributes {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
     pub fn start_to_fire_timeout(&self) -> std::option::Option<&str> {
         self.start_to_fire_timeout.as_deref()
-    }
-}
-impl std::fmt::Debug for StartTimerDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTimerDecisionAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("control", &self.control);
-        formatter.field("start_to_fire_timeout", &self.start_to_fire_timeout);
-        formatter.finish()
     }
 }
 /// See [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
@@ -1931,7 +1770,7 @@ impl StartTimerDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordMarkerDecisionAttributes {
     /// <p> The name of the marker.</p>
     #[doc(hidden)]
@@ -1948,14 +1787,6 @@ impl RecordMarkerDecisionAttributes {
     /// <p> The details of the marker.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for RecordMarkerDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordMarkerDecisionAttributes");
-        formatter.field("marker_name", &self.marker_name);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
@@ -2019,7 +1850,7 @@ impl RecordMarkerDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinueAsNewWorkflowExecutionDecisionAttributes {
     /// <p>The input provided to the new workflow execution.</p>
     #[doc(hidden)]
@@ -2115,27 +1946,6 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
     /// <p>The IAM role to attach to the new (continued) execution.</p>
     pub fn lambda_role(&self) -> std::option::Option<&str> {
         self.lambda_role.as_deref()
-    }
-}
-impl std::fmt::Debug for ContinueAsNewWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinueAsNewWorkflowExecutionDecisionAttributes");
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("workflow_type_version", &self.workflow_type_version);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
     }
 }
 /// See [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
@@ -2339,7 +2149,7 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelWorkflowExecutionDecisionAttributes {
     /// <p> Details of the cancellation.</p>
     #[doc(hidden)]
@@ -2349,13 +2159,6 @@ impl CancelWorkflowExecutionDecisionAttributes {
     /// <p> Details of the cancellation.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelWorkflowExecutionDecisionAttributes");
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
@@ -2402,7 +2205,7 @@ impl CancelWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailWorkflowExecutionDecisionAttributes {
     /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
     #[doc(hidden)]
@@ -2419,14 +2222,6 @@ impl FailWorkflowExecutionDecisionAttributes {
     /// <p> Details of the failure.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for FailWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailWorkflowExecutionDecisionAttributes");
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
@@ -2485,7 +2280,7 @@ impl FailWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteWorkflowExecutionDecisionAttributes {
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
     #[doc(hidden)]
@@ -2495,13 +2290,6 @@ impl CompleteWorkflowExecutionDecisionAttributes {
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
     pub fn result(&self) -> std::option::Option<&str> {
         self.result.as_deref()
-    }
-}
-impl std::fmt::Debug for CompleteWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteWorkflowExecutionDecisionAttributes");
-        formatter.field("result", &self.result);
-        formatter.finish()
     }
 }
 /// See [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
@@ -2548,7 +2336,7 @@ impl CompleteWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelActivityTaskDecisionAttributes {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
     #[doc(hidden)]
@@ -2558,13 +2346,6 @@ impl RequestCancelActivityTaskDecisionAttributes {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
     pub fn activity_id(&self) -> std::option::Option<&str> {
         self.activity_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestCancelActivityTaskDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestCancelActivityTaskDecisionAttributes");
-        formatter.field("activity_id", &self.activity_id);
-        formatter.finish()
     }
 }
 /// See [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
@@ -2616,7 +2397,7 @@ impl RequestCancelActivityTaskDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleActivityTaskDecisionAttributes {
     /// <p> The type of the activity task to schedule.</p>
     #[doc(hidden)]
@@ -2719,22 +2500,6 @@ impl ScheduleActivityTaskDecisionAttributes {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn heartbeat_timeout(&self) -> std::option::Option<&str> {
         self.heartbeat_timeout.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduleActivityTaskDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleActivityTaskDecisionAttributes");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field("schedule_to_close_timeout", &self.schedule_to_close_timeout);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("schedule_to_start_timeout", &self.schedule_to_start_timeout);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.finish()
     }
 }
 /// See [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
@@ -3142,7 +2907,7 @@ impl AsRef<str> for DecisionType {
 /// <li> <p> <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
     #[doc(hidden)]
@@ -3739,231 +3504,6 @@ impl HistoryEvent {
         &self,
     ) -> std::option::Option<&crate::model::StartLambdaFunctionFailedEventAttributes> {
         self.start_lambda_function_failed_event_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for HistoryEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistoryEvent");
-        formatter.field("event_timestamp", &self.event_timestamp);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("event_id", &self.event_id);
-        formatter.field(
-            "workflow_execution_started_event_attributes",
-            &self.workflow_execution_started_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_completed_event_attributes",
-            &self.workflow_execution_completed_event_attributes,
-        );
-        formatter.field(
-            "complete_workflow_execution_failed_event_attributes",
-            &self.complete_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_failed_event_attributes",
-            &self.workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "fail_workflow_execution_failed_event_attributes",
-            &self.fail_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_timed_out_event_attributes",
-            &self.workflow_execution_timed_out_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_canceled_event_attributes",
-            &self.workflow_execution_canceled_event_attributes,
-        );
-        formatter.field(
-            "cancel_workflow_execution_failed_event_attributes",
-            &self.cancel_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_continued_as_new_event_attributes",
-            &self.workflow_execution_continued_as_new_event_attributes,
-        );
-        formatter.field(
-            "continue_as_new_workflow_execution_failed_event_attributes",
-            &self.continue_as_new_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_terminated_event_attributes",
-            &self.workflow_execution_terminated_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_cancel_requested_event_attributes",
-            &self.workflow_execution_cancel_requested_event_attributes,
-        );
-        formatter.field(
-            "decision_task_scheduled_event_attributes",
-            &self.decision_task_scheduled_event_attributes,
-        );
-        formatter.field(
-            "decision_task_started_event_attributes",
-            &self.decision_task_started_event_attributes,
-        );
-        formatter.field(
-            "decision_task_completed_event_attributes",
-            &self.decision_task_completed_event_attributes,
-        );
-        formatter.field(
-            "decision_task_timed_out_event_attributes",
-            &self.decision_task_timed_out_event_attributes,
-        );
-        formatter.field(
-            "activity_task_scheduled_event_attributes",
-            &self.activity_task_scheduled_event_attributes,
-        );
-        formatter.field(
-            "activity_task_started_event_attributes",
-            &self.activity_task_started_event_attributes,
-        );
-        formatter.field(
-            "activity_task_completed_event_attributes",
-            &self.activity_task_completed_event_attributes,
-        );
-        formatter.field(
-            "activity_task_failed_event_attributes",
-            &self.activity_task_failed_event_attributes,
-        );
-        formatter.field(
-            "activity_task_timed_out_event_attributes",
-            &self.activity_task_timed_out_event_attributes,
-        );
-        formatter.field(
-            "activity_task_canceled_event_attributes",
-            &self.activity_task_canceled_event_attributes,
-        );
-        formatter.field(
-            "activity_task_cancel_requested_event_attributes",
-            &self.activity_task_cancel_requested_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_signaled_event_attributes",
-            &self.workflow_execution_signaled_event_attributes,
-        );
-        formatter.field(
-            "marker_recorded_event_attributes",
-            &self.marker_recorded_event_attributes,
-        );
-        formatter.field(
-            "record_marker_failed_event_attributes",
-            &self.record_marker_failed_event_attributes,
-        );
-        formatter.field(
-            "timer_started_event_attributes",
-            &self.timer_started_event_attributes,
-        );
-        formatter.field(
-            "timer_fired_event_attributes",
-            &self.timer_fired_event_attributes,
-        );
-        formatter.field(
-            "timer_canceled_event_attributes",
-            &self.timer_canceled_event_attributes,
-        );
-        formatter.field(
-            "start_child_workflow_execution_initiated_event_attributes",
-            &self.start_child_workflow_execution_initiated_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_started_event_attributes",
-            &self.child_workflow_execution_started_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_completed_event_attributes",
-            &self.child_workflow_execution_completed_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_failed_event_attributes",
-            &self.child_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_timed_out_event_attributes",
-            &self.child_workflow_execution_timed_out_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_canceled_event_attributes",
-            &self.child_workflow_execution_canceled_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_terminated_event_attributes",
-            &self.child_workflow_execution_terminated_event_attributes,
-        );
-        formatter.field(
-            "signal_external_workflow_execution_initiated_event_attributes",
-            &self.signal_external_workflow_execution_initiated_event_attributes,
-        );
-        formatter.field(
-            "external_workflow_execution_signaled_event_attributes",
-            &self.external_workflow_execution_signaled_event_attributes,
-        );
-        formatter.field(
-            "signal_external_workflow_execution_failed_event_attributes",
-            &self.signal_external_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "external_workflow_execution_cancel_requested_event_attributes",
-            &self.external_workflow_execution_cancel_requested_event_attributes,
-        );
-        formatter.field(
-            "request_cancel_external_workflow_execution_initiated_event_attributes",
-            &self.request_cancel_external_workflow_execution_initiated_event_attributes,
-        );
-        formatter.field(
-            "request_cancel_external_workflow_execution_failed_event_attributes",
-            &self.request_cancel_external_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "schedule_activity_task_failed_event_attributes",
-            &self.schedule_activity_task_failed_event_attributes,
-        );
-        formatter.field(
-            "request_cancel_activity_task_failed_event_attributes",
-            &self.request_cancel_activity_task_failed_event_attributes,
-        );
-        formatter.field(
-            "start_timer_failed_event_attributes",
-            &self.start_timer_failed_event_attributes,
-        );
-        formatter.field(
-            "cancel_timer_failed_event_attributes",
-            &self.cancel_timer_failed_event_attributes,
-        );
-        formatter.field(
-            "start_child_workflow_execution_failed_event_attributes",
-            &self.start_child_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_scheduled_event_attributes",
-            &self.lambda_function_scheduled_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_started_event_attributes",
-            &self.lambda_function_started_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_completed_event_attributes",
-            &self.lambda_function_completed_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_failed_event_attributes",
-            &self.lambda_function_failed_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_timed_out_event_attributes",
-            &self.lambda_function_timed_out_event_attributes,
-        );
-        formatter.field(
-            "schedule_lambda_function_failed_event_attributes",
-            &self.schedule_lambda_function_failed_event_attributes,
-        );
-        formatter.field(
-            "start_lambda_function_failed_event_attributes",
-            &self.start_lambda_function_failed_event_attributes,
-        );
-        formatter.finish()
     }
 }
 /// See [`HistoryEvent`](crate::model::HistoryEvent).
@@ -5141,7 +4681,7 @@ impl HistoryEvent {
 
 /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartLambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5169,15 +4709,6 @@ impl StartLambdaFunctionFailedEventAttributes {
     /// <p>A description that can help diagnose the cause of the fault.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for StartLambdaFunctionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartLambdaFunctionFailedEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("cause", &self.cause);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
@@ -5334,7 +4865,7 @@ impl AsRef<str> for StartLambdaFunctionFailedCause {
 
 /// <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionFailedEventAttributes {
     /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
     #[doc(hidden)]
@@ -5369,19 +4900,6 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for ScheduleLambdaFunctionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleLambdaFunctionFailedEventAttributes");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
@@ -5587,7 +5105,7 @@ impl AsRef<str> for ScheduleLambdaFunctionFailedCause {
 
 /// <p>Provides details of the <code>LambdaFunctionTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionTimedOutEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5611,15 +5129,6 @@ impl LambdaFunctionTimedOutEventAttributes {
     /// <p>The type of the timeout that caused this event.</p>
     pub fn timeout_type(&self) -> std::option::Option<&crate::model::LambdaFunctionTimeoutType> {
         self.timeout_type.as_ref()
-    }
-}
-impl std::fmt::Debug for LambdaFunctionTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionTimedOutEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
@@ -5772,7 +5281,7 @@ impl AsRef<str> for LambdaFunctionTimeoutType {
 
 /// <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5803,16 +5312,6 @@ impl LambdaFunctionFailedEventAttributes {
     /// <p>The details of the failure.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaFunctionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionFailedEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
@@ -5887,7 +5386,7 @@ impl LambdaFunctionFailedEventAttributes {
 
 /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionCompletedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5911,15 +5410,6 @@ impl LambdaFunctionCompletedEventAttributes {
     /// <p>The results of the Lambda task.</p>
     pub fn result(&self) -> std::option::Option<&str> {
         self.result.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaFunctionCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionCompletedEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field("result", &self.result);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
@@ -5982,7 +5472,7 @@ impl LambdaFunctionCompletedEventAttributes {
 
 /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionStartedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5992,13 +5482,6 @@ impl LambdaFunctionStartedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(&self) -> i64 {
         self.scheduled_event_id
-    }
-}
-impl std::fmt::Debug for LambdaFunctionStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionStartedEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
@@ -6037,7 +5520,7 @@ impl LambdaFunctionStartedEventAttributes {
 
 /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionScheduledEventAttributes {
     /// <p>The unique ID of the Lambda task.</p>
     #[doc(hidden)]
@@ -6082,21 +5565,6 @@ impl LambdaFunctionScheduledEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for LambdaFunctionScheduledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionScheduledEventAttributes");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
@@ -6203,7 +5671,7 @@ impl LambdaFunctionScheduledEventAttributes {
 
 /// <p>Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChildWorkflowExecutionFailedEventAttributes {
     /// <p>The workflow type provided in the <code>StartChildWorkflowExecution</code> <code>Decision</code> that failed.</p>
     #[doc(hidden)]
@@ -6256,21 +5724,6 @@ impl StartChildWorkflowExecutionFailedEventAttributes {
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
     pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
-    }
-}
-impl std::fmt::Debug for StartChildWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChildWorkflowExecutionFailedEventAttributes");
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("cause", &self.cause);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
     }
 }
 /// See [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
@@ -6561,7 +6014,7 @@ impl AsRef<str> for StartChildWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>CancelTimerFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTimerFailedEventAttributes {
     /// <p>The timerId provided in the <code>CancelTimer</code> decision that failed.</p>
     #[doc(hidden)]
@@ -6589,18 +6042,6 @@ impl CancelTimerFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for CancelTimerFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelTimerFailedEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
@@ -6767,7 +6208,7 @@ impl AsRef<str> for CancelTimerFailedCause {
 
 /// <p>Provides the details of the <code>StartTimerFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTimerFailedEventAttributes {
     /// <p>The timerId provided in the <code>StartTimer</code> decision that failed.</p>
     #[doc(hidden)]
@@ -6795,18 +6236,6 @@ impl StartTimerFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for StartTimerFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTimerFailedEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
@@ -6988,7 +6417,7 @@ impl AsRef<str> for StartTimerFailedCause {
 
 /// <p>Provides the details of the <code>RequestCancelActivityTaskFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelActivityTaskFailedEventAttributes {
     /// <p>The activityId provided in the <code>RequestCancelActivityTask</code> decision that failed.</p>
     #[doc(hidden)]
@@ -7018,18 +6447,6 @@ impl RequestCancelActivityTaskFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for RequestCancelActivityTaskFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestCancelActivityTaskFailedEventAttributes");
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
@@ -7201,7 +6618,7 @@ impl AsRef<str> for RequestCancelActivityTaskFailedCause {
 
 /// <p>Provides the details of the <code>ScheduleActivityTaskFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleActivityTaskFailedEventAttributes {
     /// <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
     #[doc(hidden)]
@@ -7236,19 +6653,6 @@ impl ScheduleActivityTaskFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for ScheduleActivityTaskFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleActivityTaskFailedEventAttributes");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
@@ -7519,7 +6923,7 @@ impl AsRef<str> for ScheduleActivityTaskFailedCause {
 
 /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow to which the cancel request was to be delivered.</p>
     #[doc(hidden)]
@@ -7570,22 +6974,6 @@ impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the workflow execution.</p>
     pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("RequestCancelExternalWorkflowExecutionFailedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("cause", &self.cause);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
     }
 }
 /// See [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
@@ -7805,7 +7193,7 @@ impl AsRef<str> for RequestCancelExternalWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
     #[doc(hidden)]
@@ -7836,20 +7224,6 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("RequestCancelExternalWorkflowExecutionInitiatedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
     }
 }
 /// See [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
@@ -7933,7 +7307,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
 
 /// <p>Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalWorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution to which the cancellation request was delivered.</p>
     #[doc(hidden)]
@@ -7950,15 +7324,6 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(&self) -> i64 {
         self.initiated_event_id
-    }
-}
-impl std::fmt::Debug for ExternalWorkflowExecutionCancelRequestedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("ExternalWorkflowExecutionCancelRequestedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.finish()
     }
 }
 /// See [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
@@ -8015,7 +7380,7 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
 
 /// <p>Represents a workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecution {
     /// <p>The user defined identifier associated with the workflow execution.</p>
     #[doc(hidden)]
@@ -8032,14 +7397,6 @@ impl WorkflowExecution {
     /// <p>A system-generated unique identifier for the workflow execution.</p>
     pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecution");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecution`](crate::model::WorkflowExecution).
@@ -8090,7 +7447,7 @@ impl WorkflowExecution {
 
 /// <p>Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionFailedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution that the signal was being delivered to.</p>
     #[doc(hidden)]
@@ -8141,21 +7498,6 @@ impl SignalExternalWorkflowExecutionFailedEventAttributes {
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the workflow execution.</p>
     pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
-    }
-}
-impl std::fmt::Debug for SignalExternalWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalExternalWorkflowExecutionFailedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("cause", &self.cause);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
     }
 }
 /// See [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
@@ -8370,7 +7712,7 @@ impl AsRef<str> for SignalExternalWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalWorkflowExecutionSignaledEventAttributes {
     /// <p>The external workflow execution that the signal was delivered to.</p>
     #[doc(hidden)]
@@ -8387,14 +7729,6 @@ impl ExternalWorkflowExecutionSignaledEventAttributes {
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(&self) -> i64 {
         self.initiated_event_id
-    }
-}
-impl std::fmt::Debug for ExternalWorkflowExecutionSignaledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExternalWorkflowExecutionSignaledEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.finish()
     }
 }
 /// See [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
@@ -8449,7 +7783,7 @@ impl ExternalWorkflowExecutionSignaledEventAttributes {
 
 /// <p>Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
     #[doc(hidden)]
@@ -8494,22 +7828,6 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
     pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
-    }
-}
-impl std::fmt::Debug for SignalExternalWorkflowExecutionInitiatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("SignalExternalWorkflowExecutionInitiatedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("signal_name", &self.signal_name);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
     }
 }
 /// See [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
@@ -8616,7 +7934,7 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionTerminated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionTerminatedEventAttributes {
     /// <p>The child workflow execution that was terminated.</p>
     #[doc(hidden)]
@@ -8647,16 +7965,6 @@ impl ChildWorkflowExecutionTerminatedEventAttributes {
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for ChildWorkflowExecutionTerminatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionTerminatedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
@@ -8738,7 +8046,7 @@ impl ChildWorkflowExecutionTerminatedEventAttributes {
 
 /// <p>Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionCanceledEventAttributes {
     /// <p>The child workflow execution that was canceled.</p>
     #[doc(hidden)]
@@ -8776,17 +8084,6 @@ impl ChildWorkflowExecutionCanceledEventAttributes {
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for ChildWorkflowExecutionCanceledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionCanceledEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("details", &self.details);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
@@ -8879,7 +8176,7 @@ impl ChildWorkflowExecutionCanceledEventAttributes {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionTimedOutEventAttributes {
     /// <p>The child workflow execution that timed out.</p>
     #[doc(hidden)]
@@ -8917,17 +8214,6 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for ChildWorkflowExecutionTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionTimedOutEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
@@ -9110,7 +8396,7 @@ impl AsRef<str> for WorkflowExecutionTimeoutType {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionFailedEventAttributes {
     /// <p>The child workflow execution that failed.</p>
     #[doc(hidden)]
@@ -9155,18 +8441,6 @@ impl ChildWorkflowExecutionFailedEventAttributes {
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for ChildWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionFailedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
@@ -9271,7 +8545,7 @@ impl ChildWorkflowExecutionFailedEventAttributes {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionCompletedEventAttributes {
     /// <p>The child workflow execution that was completed.</p>
     #[doc(hidden)]
@@ -9309,17 +8583,6 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for ChildWorkflowExecutionCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionCompletedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("result", &self.result);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
@@ -9412,7 +8675,7 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionStartedEventAttributes {
     /// <p>The child workflow execution that was started.</p>
     #[doc(hidden)]
@@ -9436,15 +8699,6 @@ impl ChildWorkflowExecutionStartedEventAttributes {
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(&self) -> i64 {
         self.initiated_event_id
-    }
-}
-impl std::fmt::Debug for ChildWorkflowExecutionStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionStartedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.finish()
     }
 }
 /// See [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
@@ -9513,7 +8767,7 @@ impl ChildWorkflowExecutionStartedEventAttributes {
 
 /// <p>Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the child workflow execution.</p>
     #[doc(hidden)]
@@ -9618,33 +8872,6 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <p>The IAM role to attach to the child workflow execution.</p>
     pub fn lambda_role(&self) -> std::option::Option<&str> {
         self.lambda_role.as_deref()
-    }
-}
-impl std::fmt::Debug for StartChildWorkflowExecutionInitiatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChildWorkflowExecutionInitiatedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
     }
 }
 /// See [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
@@ -9869,7 +9096,7 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
 
 /// <p> Provides the details of the <code>TimerCanceled</code> event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimerCanceledEventAttributes {
     /// <p>The unique ID of the timer that was canceled.</p>
     #[doc(hidden)]
@@ -9893,18 +9120,6 @@ impl TimerCanceledEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for TimerCanceledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimerCanceledEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
@@ -9972,7 +9187,7 @@ impl TimerCanceledEventAttributes {
 
 /// <p>Provides the details of the <code>TimerFired</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimerFiredEventAttributes {
     /// <p>The unique ID of the timer that fired.</p>
     #[doc(hidden)]
@@ -9989,14 +9204,6 @@ impl TimerFiredEventAttributes {
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for TimerFiredEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimerFiredEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
@@ -10047,7 +9254,7 @@ impl TimerFiredEventAttributes {
 
 /// <p>Provides the details of the <code>TimerStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimerStartedEventAttributes {
     /// <p>The unique ID of the timer that was started.</p>
     #[doc(hidden)]
@@ -10080,19 +9287,6 @@ impl TimerStartedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for TimerStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimerStartedEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("control", &self.control);
-        formatter.field("start_to_fire_timeout", &self.start_to_fire_timeout);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
@@ -10177,7 +9371,7 @@ impl TimerStartedEventAttributes {
 
 /// <p>Provides the details of the <code>RecordMarkerFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordMarkerFailedEventAttributes {
     /// <p>The marker's name.</p>
     #[doc(hidden)]
@@ -10205,18 +9399,6 @@ impl RecordMarkerFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarkerFailed</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for RecordMarkerFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordMarkerFailedEventAttributes");
-        formatter.field("marker_name", &self.marker_name);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
@@ -10378,7 +9560,7 @@ impl AsRef<str> for RecordMarkerFailedCause {
 
 /// <p>Provides the details of the <code>MarkerRecorded</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarkerRecordedEventAttributes {
     /// <p>The name of the marker.</p>
     #[doc(hidden)]
@@ -10402,18 +9584,6 @@ impl MarkerRecordedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for MarkerRecordedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarkerRecordedEventAttributes");
-        formatter.field("marker_name", &self.marker_name);
-        formatter.field("details", &self.details);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
@@ -10481,7 +9651,7 @@ impl MarkerRecordedEventAttributes {
 
 /// <p>Provides the details of the <code>WorkflowExecutionSignaled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionSignaledEventAttributes {
     /// <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
     #[doc(hidden)]
@@ -10514,22 +9684,6 @@ impl WorkflowExecutionSignaledEventAttributes {
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.</p>
     pub fn external_initiated_event_id(&self) -> i64 {
         self.external_initiated_event_id
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionSignaledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionSignaledEventAttributes");
-        formatter.field("signal_name", &self.signal_name);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "external_workflow_execution",
-            &self.external_workflow_execution,
-        );
-        formatter.field(
-            "external_initiated_event_id",
-            &self.external_initiated_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
@@ -10611,7 +9765,7 @@ impl WorkflowExecutionSignaledEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskCancelRequested</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskCancelRequestedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -10628,17 +9782,6 @@ impl ActivityTaskCancelRequestedEventAttributes {
     /// <p>The unique ID of the task.</p>
     pub fn activity_id(&self) -> std::option::Option<&str> {
         self.activity_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivityTaskCancelRequestedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskCancelRequestedEventAttributes");
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("activity_id", &self.activity_id);
-        formatter.finish()
     }
 }
 /// See [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
@@ -10694,7 +9837,7 @@ impl ActivityTaskCancelRequestedEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskCanceled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskCanceledEventAttributes {
     /// <p>Details of the cancellation.</p>
     #[doc(hidden)]
@@ -10725,19 +9868,6 @@ impl ActivityTaskCanceledEventAttributes {
     /// <p>If set, contains the ID of the last <code>ActivityTaskCancelRequested</code> event recorded for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn latest_cancel_requested_event_id(&self) -> i64 {
         self.latest_cancel_requested_event_id
-    }
-}
-impl std::fmt::Debug for ActivityTaskCanceledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskCanceledEventAttributes");
-        formatter.field("details", &self.details);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field(
-            "latest_cancel_requested_event_id",
-            &self.latest_cancel_requested_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
@@ -10817,7 +9947,7 @@ impl ActivityTaskCanceledEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskTimedOutEventAttributes {
     /// <p>The type of the timeout that caused this event.</p>
     #[doc(hidden)]
@@ -10848,16 +9978,6 @@ impl ActivityTaskTimedOutEventAttributes {
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivityTaskTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskTimedOutEventAttributes");
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
@@ -11042,7 +10162,7 @@ impl AsRef<str> for ActivityTaskTimeoutType {
 
 /// <p>Provides the details of the <code>ActivityTaskFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskFailedEventAttributes {
     /// <p>The reason provided for the failure.</p>
     #[doc(hidden)]
@@ -11073,16 +10193,6 @@ impl ActivityTaskFailedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for ActivityTaskFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskFailedEventAttributes");
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
@@ -11157,7 +10267,7 @@ impl ActivityTaskFailedEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskCompletedEventAttributes {
     /// <p>The results of the activity task.</p>
     #[doc(hidden)]
@@ -11181,15 +10291,6 @@ impl ActivityTaskCompletedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for ActivityTaskCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskCompletedEventAttributes");
-        formatter.field("result", &self.result);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
@@ -11252,7 +10353,7 @@ impl ActivityTaskCompletedEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskStartedEventAttributes {
     /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
     #[doc(hidden)]
@@ -11269,14 +10370,6 @@ impl ActivityTaskStartedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(&self) -> i64 {
         self.scheduled_event_id
-    }
-}
-impl std::fmt::Debug for ActivityTaskStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskStartedEventAttributes");
-        formatter.field("identity", &self.identity);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.finish()
     }
 }
 /// See [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
@@ -11327,7 +10420,7 @@ impl ActivityTaskStartedEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskScheduled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskScheduledEventAttributes {
     /// <p>The type of the activity task.</p>
     #[doc(hidden)]
@@ -11411,26 +10504,6 @@ impl ActivityTaskScheduledEventAttributes {
     /// <p>The maximum time before which the worker processing this task must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.</p>
     pub fn heartbeat_timeout(&self) -> std::option::Option<&str> {
         self.heartbeat_timeout.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivityTaskScheduledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskScheduledEventAttributes");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("input", &self.input);
-        formatter.field("control", &self.control);
-        formatter.field("schedule_to_start_timeout", &self.schedule_to_start_timeout);
-        formatter.field("schedule_to_close_timeout", &self.schedule_to_close_timeout);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.finish()
     }
 }
 /// See [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
@@ -11616,7 +10689,7 @@ impl ActivityTaskScheduledEventAttributes {
 
 /// <p>Provides the details of the <code>DecisionTaskTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecisionTaskTimedOutEventAttributes {
     /// <p>The type of timeout that expired before the decision task could be completed.</p>
     #[doc(hidden)]
@@ -11640,15 +10713,6 @@ impl DecisionTaskTimedOutEventAttributes {
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for DecisionTaskTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecisionTaskTimedOutEventAttributes");
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
@@ -11801,7 +10865,7 @@ impl AsRef<str> for DecisionTaskTimeoutType {
 
 /// <p>Provides the details of the <code>DecisionTaskCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecisionTaskCompletedEventAttributes {
     /// <p>User defined context for the workflow execution.</p>
     #[doc(hidden)]
@@ -11825,15 +10889,6 @@ impl DecisionTaskCompletedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
-    }
-}
-impl std::fmt::Debug for DecisionTaskCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecisionTaskCompletedEventAttributes");
-        formatter.field("execution_context", &self.execution_context);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
     }
 }
 /// See [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
@@ -11899,7 +10954,7 @@ impl DecisionTaskCompletedEventAttributes {
 
 /// <p>Provides the details of the <code>DecisionTaskStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecisionTaskStartedEventAttributes {
     /// <p>Identity of the decider making the request. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     #[doc(hidden)]
@@ -11916,14 +10971,6 @@ impl DecisionTaskStartedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(&self) -> i64 {
         self.scheduled_event_id
-    }
-}
-impl std::fmt::Debug for DecisionTaskStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecisionTaskStartedEventAttributes");
-        formatter.field("identity", &self.identity);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.finish()
     }
 }
 /// See [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
@@ -11974,7 +11021,7 @@ impl DecisionTaskStartedEventAttributes {
 
 /// <p>Provides details about the <code>DecisionTaskScheduled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecisionTaskScheduledEventAttributes {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
     #[doc(hidden)]
@@ -12002,15 +11049,6 @@ impl DecisionTaskScheduledEventAttributes {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.start_to_close_timeout.as_deref()
-    }
-}
-impl std::fmt::Debug for DecisionTaskScheduledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecisionTaskScheduledEventAttributes");
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.finish()
     }
 }
 /// See [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
@@ -12083,7 +11121,7 @@ impl DecisionTaskScheduledEventAttributes {
 
 /// <p>Provides the details of the <code>WorkflowExecutionCancelRequested</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution for which the cancellation was requested.</p>
     #[doc(hidden)]
@@ -12111,21 +11149,6 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
         &self,
     ) -> std::option::Option<&crate::model::WorkflowExecutionCancelRequestedCause> {
         self.cause.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionCancelRequestedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionCancelRequestedEventAttributes");
-        formatter.field(
-            "external_workflow_execution",
-            &self.external_workflow_execution,
-        );
-        formatter.field(
-            "external_initiated_event_id",
-            &self.external_initiated_event_id,
-        );
-        formatter.field("cause", &self.cause);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
@@ -12286,7 +11309,7 @@ impl AsRef<str> for WorkflowExecutionCancelRequestedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionTerminated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionTerminatedEventAttributes {
     /// <p>The reason provided for the termination.</p>
     #[doc(hidden)]
@@ -12329,16 +11352,6 @@ impl WorkflowExecutionTerminatedEventAttributes {
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
     pub fn cause(&self) -> std::option::Option<&crate::model::WorkflowExecutionTerminatedCause> {
         self.cause.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionTerminatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionTerminatedEventAttributes");
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("cause", &self.cause);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
@@ -12532,7 +11545,7 @@ impl AsRef<str> for WorkflowExecutionTerminatedCause {
 
 /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinueAsNewWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -12555,17 +11568,6 @@ impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for ContinueAsNewWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinueAsNewWorkflowExecutionFailedEventAttributes");
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
@@ -12768,7 +11770,7 @@ impl AsRef<str> for ContinueAsNewWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// <p>The input provided to the new workflow execution.</p>
     #[doc(hidden)]
@@ -12864,32 +11866,6 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
     /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
     pub fn lambda_role(&self) -> std::option::Option<&str> {
         self.lambda_role.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionContinuedAsNewEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionContinuedAsNewEventAttributes");
-        formatter.field("input", &self.input);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("new_execution_run_id", &self.new_execution_run_id);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
@@ -13103,7 +12079,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
 
 /// <p>Provides the details of the <code>CancelWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -13124,17 +12100,6 @@ impl CancelWorkflowExecutionFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for CancelWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelWorkflowExecutionFailedEventAttributes");
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
@@ -13289,7 +12254,7 @@ impl AsRef<str> for CancelWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionCanceled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionCanceledEventAttributes {
     /// <p>The details of the cancellation.</p>
     #[doc(hidden)]
@@ -13306,17 +12271,6 @@ impl WorkflowExecutionCanceledEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionCanceledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionCanceledEventAttributes");
-        formatter.field("details", &self.details);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
@@ -13372,7 +12326,7 @@ impl WorkflowExecutionCanceledEventAttributes {
 
 /// <p>Provides the details of the <code>WorkflowExecutionTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <p>The type of timeout that caused this event.</p>
     #[doc(hidden)]
@@ -13401,14 +12355,6 @@ impl WorkflowExecutionTimedOutEventAttributes {
     /// </ul>
     pub fn child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
         self.child_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionTimedOutEventAttributes");
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.field("child_policy", &self.child_policy);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
@@ -13477,7 +12423,7 @@ impl WorkflowExecutionTimedOutEventAttributes {
 
 /// <p>Provides the details of the <code>FailWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -13498,17 +12444,6 @@ impl FailWorkflowExecutionFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for FailWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailWorkflowExecutionFailedEventAttributes");
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
@@ -13663,7 +12598,7 @@ impl AsRef<str> for FailWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionFailedEventAttributes {
     /// <p>The descriptive reason provided for the failure.</p>
     #[doc(hidden)]
@@ -13687,18 +12622,6 @@ impl WorkflowExecutionFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionFailedEventAttributes");
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
@@ -13766,7 +12689,7 @@ impl WorkflowExecutionFailedEventAttributes {
 
 /// <p>Provides the details of the <code>CompleteWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -13789,17 +12712,6 @@ impl CompleteWorkflowExecutionFailedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for CompleteWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteWorkflowExecutionFailedEventAttributes");
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
@@ -13958,7 +12870,7 @@ impl AsRef<str> for CompleteWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionCompletedEventAttributes {
     /// <p>The result produced by the workflow execution upon successful completion.</p>
     #[doc(hidden)]
@@ -13975,17 +12887,6 @@ impl WorkflowExecutionCompletedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionCompletedEventAttributes");
-        formatter.field("result", &self.result);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
@@ -14041,7 +12942,7 @@ impl WorkflowExecutionCompletedEventAttributes {
 
 /// <p>Provides details of <code>WorkflowExecutionStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionStartedEventAttributes {
     /// <p>The input provided to the workflow execution.</p>
     #[doc(hidden)]
@@ -14146,33 +13047,6 @@ impl WorkflowExecutionStartedEventAttributes {
     /// <p>The IAM role attached to the workflow execution.</p>
     pub fn lambda_role(&self) -> std::option::Option<&str> {
         self.lambda_role.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionStartedEventAttributes");
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field(
-            "continued_execution_run_id",
-            &self.continued_execution_run_id,
-        );
-        formatter.field("parent_workflow_execution", &self.parent_workflow_execution);
-        formatter.field("parent_initiated_event_id", &self.parent_initiated_event_id);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
@@ -14828,7 +13702,7 @@ impl AsRef<str> for EventType {
 
 /// <p>Contains information about a workflow type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowTypeInfo {
     /// <p>The workflow type this information is about.</p>
     #[doc(hidden)]
@@ -14866,17 +13740,6 @@ impl WorkflowTypeInfo {
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
     pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowTypeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowTypeInfo");
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("deprecation_date", &self.deprecation_date);
-        formatter.finish()
     }
 }
 /// See [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
@@ -15067,7 +13930,7 @@ impl AsRef<str> for RegistrationStatus {
 
 /// <p>Contains information about a workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionInfo {
     /// <p>The workflow execution this information is about.</p>
     #[doc(hidden)]
@@ -15149,21 +14012,6 @@ impl WorkflowExecutionInfo {
     /// <p>Set to true if a cancellation is requested for this workflow execution.</p>
     pub fn cancel_requested(&self) -> bool {
         self.cancel_requested
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionInfo");
-        formatter.field("execution", &self.execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("close_timestamp", &self.close_timestamp);
-        formatter.field("execution_status", &self.execution_status);
-        formatter.field("close_status", &self.close_status);
-        formatter.field("parent", &self.parent);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("cancel_requested", &self.cancel_requested);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
@@ -15551,7 +14399,7 @@ impl AsRef<str> for ExecutionStatus {
 
 /// <p>Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     #[doc(hidden)]
@@ -15561,13 +14409,6 @@ impl WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionFilter");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
@@ -15606,7 +14447,7 @@ impl WorkflowExecutionFilter {
 
 /// <p>Used to filter the workflow executions in visibility APIs based on a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagFilter {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -15618,13 +14459,6 @@ impl TagFilter {
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tag(&self) -> std::option::Option<&str> {
         self.tag.as_deref()
-    }
-}
-impl std::fmt::Debug for TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagFilter");
-        formatter.field("tag", &self.tag);
-        formatter.finish()
     }
 }
 /// See [`TagFilter`](crate::model::TagFilter).
@@ -15663,7 +14497,7 @@ impl TagFilter {
 
 /// <p>Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowTypeFilter {
     /// <p> Name of the workflow type.</p>
     #[doc(hidden)]
@@ -15680,14 +14514,6 @@ impl WorkflowTypeFilter {
     /// <p>Version of the workflow type.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowTypeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowTypeFilter");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
@@ -15738,7 +14564,7 @@ impl WorkflowTypeFilter {
 
 /// <p>Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
     #[doc(hidden)]
@@ -15755,14 +14581,6 @@ impl ExecutionTimeFilter {
     /// <p>Specifies the latest start or close date and time to return.</p>
     pub fn latest_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ExecutionTimeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionTimeFilter");
-        formatter.field("oldest_date", &self.oldest_date);
-        formatter.field("latest_date", &self.latest_date);
-        formatter.finish()
     }
 }
 /// See [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
@@ -15819,7 +14637,7 @@ impl ExecutionTimeFilter {
 
 /// <p>Contains general information about a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainInfo {
     /// <p>The name of the domain. This name is unique within the account.</p>
     #[doc(hidden)]
@@ -15858,16 +14676,6 @@ impl DomainInfo {
     /// <p>The ARN of the domain.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainInfo");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`DomainInfo`](crate::model::DomainInfo).
@@ -15953,7 +14761,7 @@ impl DomainInfo {
 
 /// <p>Used to filter the closed workflow executions in visibility APIs by their close status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     #[doc(hidden)]
@@ -15963,13 +14771,6 @@ impl CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::CloseStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CloseStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloseStatusFilter");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CloseStatusFilter`](crate::model::CloseStatusFilter).
@@ -16008,7 +14809,7 @@ impl CloseStatusFilter {
 
 /// <p>Detailed information about an activity type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTypeInfo {
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
     #[doc(hidden)]
@@ -16046,17 +14847,6 @@ impl ActivityTypeInfo {
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
     pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ActivityTypeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTypeInfo");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("deprecation_date", &self.deprecation_date);
-        formatter.finish()
     }
 }
 /// See [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
@@ -16155,7 +14945,7 @@ impl ActivityTypeInfo {
 
 /// <p>The configuration settings of a workflow type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowTypeConfiguration {
     /// <p> The default maximum duration, specified when registering the workflow type, that a decision task for executions of this workflow type might take before returning completion or failure. If the task doesn'tdo close in the specified time then the task is automatically timed out and rescheduled. If the decider eventually reports a completion or failure, it is ignored. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -16224,24 +15014,6 @@ impl WorkflowTypeConfiguration {
     /// </note>
     pub fn default_lambda_role(&self) -> std::option::Option<&str> {
         self.default_lambda_role.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowTypeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowTypeConfiguration");
-        formatter.field(
-            "default_task_start_to_close_timeout",
-            &self.default_task_start_to_close_timeout,
-        );
-        formatter.field(
-            "default_execution_start_to_close_timeout",
-            &self.default_execution_start_to_close_timeout,
-        );
-        formatter.field("default_task_list", &self.default_task_list);
-        formatter.field("default_task_priority", &self.default_task_priority);
-        formatter.field("default_child_policy", &self.default_child_policy);
-        formatter.field("default_lambda_role", &self.default_lambda_role);
-        formatter.finish()
     }
 }
 /// See [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
@@ -16390,7 +15162,7 @@ impl WorkflowTypeConfiguration {
 
 /// <p>Contains the counts of open tasks, child workflow executions and timers for a workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionOpenCounts {
     /// <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
     #[doc(hidden)]
@@ -16428,20 +15200,6 @@ impl WorkflowExecutionOpenCounts {
     /// <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
     pub fn open_lambda_functions(&self) -> i32 {
         self.open_lambda_functions
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionOpenCounts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionOpenCounts");
-        formatter.field("open_activity_tasks", &self.open_activity_tasks);
-        formatter.field("open_decision_tasks", &self.open_decision_tasks);
-        formatter.field("open_timers", &self.open_timers);
-        formatter.field(
-            "open_child_workflow_executions",
-            &self.open_child_workflow_executions,
-        );
-        formatter.field("open_lambda_functions", &self.open_lambda_functions);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
@@ -16533,7 +15291,7 @@ impl WorkflowExecutionOpenCounts {
 
 /// <p>The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionConfiguration {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -16596,24 +15354,6 @@ impl WorkflowExecutionConfiguration {
     /// <p>The IAM role attached to the child workflow execution.</p>
     pub fn lambda_role(&self) -> std::option::Option<&str> {
         self.lambda_role.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowExecutionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionConfiguration");
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
     }
 }
 /// See [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
@@ -16748,7 +15488,7 @@ impl WorkflowExecutionConfiguration {
 
 /// <p>Contains the configuration settings of a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainConfiguration {
     /// <p>The retention period for workflow executions in this domain.</p>
     #[doc(hidden)]
@@ -16758,16 +15498,6 @@ impl DomainConfiguration {
     /// <p>The retention period for workflow executions in this domain.</p>
     pub fn workflow_execution_retention_period_in_days(&self) -> std::option::Option<&str> {
         self.workflow_execution_retention_period_in_days.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainConfiguration");
-        formatter.field(
-            "workflow_execution_retention_period_in_days",
-            &self.workflow_execution_retention_period_in_days,
-        );
-        formatter.finish()
     }
 }
 /// See [`DomainConfiguration`](crate::model::DomainConfiguration).
@@ -16814,7 +15544,7 @@ impl DomainConfiguration {
 
 /// <p>Configuration settings registered with the activity type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTypeConfiguration {
     /// <p> The default maximum duration for tasks of an activity type specified when registering the activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -16873,30 +15603,6 @@ impl ActivityTypeConfiguration {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn default_task_schedule_to_close_timeout(&self) -> std::option::Option<&str> {
         self.default_task_schedule_to_close_timeout.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivityTypeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTypeConfiguration");
-        formatter.field(
-            "default_task_start_to_close_timeout",
-            &self.default_task_start_to_close_timeout,
-        );
-        formatter.field(
-            "default_task_heartbeat_timeout",
-            &self.default_task_heartbeat_timeout,
-        );
-        formatter.field("default_task_list", &self.default_task_list);
-        formatter.field("default_task_priority", &self.default_task_priority);
-        formatter.field(
-            "default_task_schedule_to_start_timeout",
-            &self.default_task_schedule_to_start_timeout,
-        );
-        formatter.field(
-            "default_task_schedule_to_close_timeout",
-            &self.default_task_schedule_to_close_timeout,
-        );
-        formatter.finish()
     }
 }
 /// See [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).

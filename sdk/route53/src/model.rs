@@ -2,7 +2,7 @@
 
 /// <p>A complex type that contains settings for the new traffic policy instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrafficPolicyInstance {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
     #[doc(hidden)]
@@ -108,21 +108,6 @@ impl TrafficPolicyInstance {
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     pub fn traffic_policy_type(&self) -> std::option::Option<&crate::model::RrType> {
         self.traffic_policy_type.as_ref()
-    }
-}
-impl std::fmt::Debug for TrafficPolicyInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrafficPolicyInstance");
-        formatter.field("id", &self.id);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("name", &self.name);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("state", &self.state);
-        formatter.field("message", &self.message);
-        formatter.field("traffic_policy_id", &self.traffic_policy_id);
-        formatter.field("traffic_policy_version", &self.traffic_policy_version);
-        formatter.field("traffic_policy_type", &self.traffic_policy_type);
-        formatter.finish()
     }
 }
 /// See [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance).
@@ -454,7 +439,7 @@ impl AsRef<str> for RrType {
 
 /// <p>A complex type that contains settings for a traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrafficPolicy {
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
     #[doc(hidden)]
@@ -499,18 +484,6 @@ impl TrafficPolicy {
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for TrafficPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrafficPolicy");
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("document", &self.document);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`TrafficPolicy`](crate::model::TrafficPolicy).
@@ -609,7 +582,7 @@ impl TrafficPolicy {
 
 /// <p>A complex type that contains general information about the hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZone {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
     #[doc(hidden)]
@@ -656,18 +629,6 @@ impl HostedZone {
     /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
     pub fn linked_service(&self) -> std::option::Option<&crate::model::LinkedService> {
         self.linked_service.as_ref()
-    }
-}
-impl std::fmt::Debug for HostedZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZone");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("config", &self.config);
-        formatter.field("resource_record_set_count", &self.resource_record_set_count);
-        formatter.field("linked_service", &self.linked_service);
-        formatter.finish()
     }
 }
 /// See [`HostedZone`](crate::model::HostedZone).
@@ -777,7 +738,7 @@ impl HostedZone {
 
 /// <p>If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinkedService {
     /// <p>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     #[doc(hidden)]
@@ -794,14 +755,6 @@ impl LinkedService {
     /// <p>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for LinkedService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinkedService");
-        formatter.field("service_principal", &self.service_principal);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`LinkedService`](crate::model::LinkedService).
@@ -855,7 +808,7 @@ impl LinkedService {
 
 /// <p>A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZoneConfig {
     /// <p>Any comments that you want to include about the hosted zone.</p>
     #[doc(hidden)]
@@ -872,14 +825,6 @@ impl HostedZoneConfig {
     /// <p>A value that indicates whether this is a private hosted zone.</p>
     pub fn private_zone(&self) -> bool {
         self.private_zone
-    }
-}
-impl std::fmt::Debug for HostedZoneConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZoneConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("private_zone", &self.private_zone);
-        formatter.finish()
     }
 }
 /// See [`HostedZoneConfig`](crate::model::HostedZoneConfig).
@@ -930,7 +875,7 @@ impl HostedZoneConfig {
 
 /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheck {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
     #[doc(hidden)]
@@ -978,21 +923,6 @@ impl HealthCheck {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchAlarmConfiguration> {
         self.cloud_watch_alarm_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for HealthCheck {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheck");
-        formatter.field("id", &self.id);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("linked_service", &self.linked_service);
-        formatter.field("health_check_config", &self.health_check_config);
-        formatter.field("health_check_version", &self.health_check_version);
-        formatter.field(
-            "cloud_watch_alarm_configuration",
-            &self.cloud_watch_alarm_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`HealthCheck`](crate::model::HealthCheck).
@@ -1107,7 +1037,7 @@ impl HealthCheck {
 
 /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchAlarmConfiguration {
     /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
     #[doc(hidden)]
@@ -1166,20 +1096,6 @@ impl CloudWatchAlarmConfiguration {
     /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
         self.dimensions.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchAlarmConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchAlarmConfiguration");
-        formatter.field("evaluation_periods", &self.evaluation_periods);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("period", &self.period);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration).
@@ -1317,7 +1233,7 @@ impl CloudWatchAlarmConfiguration {
 
 /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dimension {
     /// <p>For the metric that the CloudWatch alarm is associated with, the name of one dimension.</p>
     #[doc(hidden)]
@@ -1334,14 +1250,6 @@ impl Dimension {
     /// <p>For the metric that the CloudWatch alarm is associated with, the value of one dimension.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Dimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Dimension`](crate::model::Dimension).
@@ -1604,7 +1512,7 @@ impl AsRef<str> for ComparisonOperator {
 
 /// <p>A complex type that contains information about the health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckConfig {
     /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
     /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p>
@@ -1892,36 +1800,6 @@ impl HealthCheckConfig {
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for HealthCheckConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckConfig");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("port", &self.port);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("resource_path", &self.resource_path);
-        formatter.field(
-            "fully_qualified_domain_name",
-            &self.fully_qualified_domain_name,
-        );
-        formatter.field("search_string", &self.search_string);
-        formatter.field("request_interval", &self.request_interval);
-        formatter.field("failure_threshold", &self.failure_threshold);
-        formatter.field("measure_latency", &self.measure_latency);
-        formatter.field("inverted", &self.inverted);
-        formatter.field("disabled", &self.disabled);
-        formatter.field("health_threshold", &self.health_threshold);
-        formatter.field("child_health_checks", &self.child_health_checks);
-        formatter.field("enable_sni", &self.enable_sni);
-        formatter.field("regions", &self.regions);
-        formatter.field("alarm_identifier", &self.alarm_identifier);
-        formatter.field(
-            "insufficient_data_health_status",
-            &self.insufficient_data_health_status,
-        );
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.finish()
     }
 }
 /// See [`HealthCheckConfig`](crate::model::HealthCheckConfig).
@@ -2463,7 +2341,7 @@ impl AsRef<str> for InsufficientDataHealthStatus {
 
 /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmIdentifier {
     /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p>
     /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -2494,14 +2372,6 @@ impl AlarmIdentifier {
     /// </note>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmIdentifier");
-        formatter.field("region", &self.region);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AlarmIdentifier`](crate::model::AlarmIdentifier).
@@ -3198,7 +3068,7 @@ impl AsRef<str> for ResettableElementName {
 /// <p>(Private hosted zones only) A complex type that contains information about an Amazon VPC.</p>
 /// <p>If you associate a private hosted zone with an Amazon VPC when you make a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a> request, the following parameters are also required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Vpc {
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
     #[doc(hidden)]
@@ -3215,14 +3085,6 @@ impl Vpc {
     /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Vpc {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Vpc");
-        formatter.field("vpc_region", &self.vpc_region);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`Vpc`](crate::model::Vpc).
@@ -3531,7 +3393,7 @@ impl AsRef<str> for VpcRegion {
 
 /// <p>A complex type that contains information about the latest version of one traffic policy that is associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrafficPolicySummary {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
     #[doc(hidden)]
@@ -3569,17 +3431,6 @@ impl TrafficPolicySummary {
     /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
     pub fn traffic_policy_count(&self) -> std::option::Option<i32> {
         self.traffic_policy_count
-    }
-}
-impl std::fmt::Debug for TrafficPolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrafficPolicySummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("latest_version", &self.latest_version);
-        formatter.field("traffic_policy_count", &self.traffic_policy_count);
-        formatter.finish()
     }
 }
 /// See [`TrafficPolicySummary`](crate::model::TrafficPolicySummary).
@@ -3666,7 +3517,7 @@ impl TrafficPolicySummary {
 
 /// <p>A complex type containing a resource and its associated tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTagSet {
     /// <p>The type of the resource.</p>
     /// <ul>
@@ -3698,15 +3549,6 @@ impl ResourceTagSet {
     /// <p>The tags associated with the specified resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceTagSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTagSet");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ResourceTagSet`](crate::model::ResourceTagSet).
@@ -3789,7 +3631,7 @@ impl ResourceTagSet {
 
 /// <p>A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p>
     /// <ul>
@@ -3826,14 +3668,6 @@ impl Tag {
     /// </ul>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -3994,7 +3828,7 @@ impl AsRef<str> for TagResourceType {
 
 /// <p>A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegationSet {
     /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
     #[doc(hidden)]
@@ -4018,15 +3852,6 @@ impl DelegationSet {
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
     pub fn name_servers(&self) -> std::option::Option<&[std::string::String]> {
         self.name_servers.as_deref()
-    }
-}
-impl std::fmt::Debug for DelegationSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegationSet");
-        formatter.field("id", &self.id);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("name_servers", &self.name_servers);
-        formatter.finish()
     }
 }
 /// See [`DelegationSet`](crate::model::DelegationSet).
@@ -4101,7 +3926,7 @@ impl DelegationSet {
 
 /// <p>Information about the resource record set to create or delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceRecordSet {
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
     /// <p> <b>ChangeResourceRecordSets Only</b> </p>
@@ -4474,29 +4299,6 @@ impl ResourceRecordSet {
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
     pub fn cidr_routing_config(&self) -> std::option::Option<&crate::model::CidrRoutingConfig> {
         self.cidr_routing_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceRecordSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceRecordSet");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("set_identifier", &self.set_identifier);
-        formatter.field("weight", &self.weight);
-        formatter.field("region", &self.region);
-        formatter.field("geo_location", &self.geo_location);
-        formatter.field("failover", &self.failover);
-        formatter.field("multi_value_answer", &self.multi_value_answer);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("resource_records", &self.resource_records);
-        formatter.field("alias_target", &self.alias_target);
-        formatter.field("health_check_id", &self.health_check_id);
-        formatter.field(
-            "traffic_policy_instance_id",
-            &self.traffic_policy_instance_id,
-        );
-        formatter.field("cidr_routing_config", &self.cidr_routing_config);
-        formatter.finish()
     }
 }
 /// See [`ResourceRecordSet`](crate::model::ResourceRecordSet).
@@ -4998,7 +4800,7 @@ impl ResourceRecordSet {
 /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
 /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrRoutingConfig {
     /// <p>The CIDR collection ID.</p>
     #[doc(hidden)]
@@ -5015,14 +4817,6 @@ impl CidrRoutingConfig {
     /// <p>The CIDR collection location name.</p>
     pub fn location_name(&self) -> std::option::Option<&str> {
         self.location_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CidrRoutingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrRoutingConfig");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("location_name", &self.location_name);
-        formatter.finish()
     }
 }
 /// See [`CidrRoutingConfig`](crate::model::CidrRoutingConfig).
@@ -5083,7 +4877,7 @@ impl CidrRoutingConfig {
 /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AliasTarget {
     /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
     /// <dl>
@@ -5511,15 +5305,6 @@ impl AliasTarget {
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn evaluate_target_health(&self) -> bool {
         self.evaluate_target_health
-    }
-}
-impl std::fmt::Debug for AliasTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AliasTarget");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("evaluate_target_health", &self.evaluate_target_health);
-        formatter.finish()
     }
 }
 /// See [`AliasTarget`](crate::model::AliasTarget).
@@ -5991,7 +5776,7 @@ impl AliasTarget {
 /// <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceRecord {
     /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note>
@@ -6007,13 +5792,6 @@ impl ResourceRecord {
     /// </note>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceRecord");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceRecord`](crate::model::ResourceRecord).
@@ -6148,7 +5926,7 @@ impl AsRef<str> for ResourceRecordSetFailover {
 
 /// <p>A complex type that contains information about a geographic location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeoLocation {
     /// <p>The two-letter code for the continent.</p>
     /// <p>Amazon Route 53 supports the following continent codes:</p>
@@ -6198,15 +5976,6 @@ impl GeoLocation {
     /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
     pub fn subdivision_code(&self) -> std::option::Option<&str> {
         self.subdivision_code.as_deref()
-    }
-}
-impl std::fmt::Debug for GeoLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeoLocation");
-        formatter.field("continent_code", &self.continent_code);
-        formatter.field("country_code", &self.country_code);
-        formatter.field("subdivision_code", &self.subdivision_code);
-        formatter.finish()
     }
 }
 /// See [`GeoLocation`](crate::model::GeoLocation).
@@ -6528,7 +6297,7 @@ impl AsRef<str> for ResourceRecordSetRegion {
 
 /// <p>A complex type that contains information about a configuration for DNS query logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryLoggingConfig {
     /// <p>The ID for a configuration for DNS query logging.</p>
     #[doc(hidden)]
@@ -6552,18 +6321,6 @@ impl QueryLoggingConfig {
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
     pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryLoggingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryLoggingConfig");
-        formatter.field("id", &self.id);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`QueryLoggingConfig`](crate::model::QueryLoggingConfig).
@@ -6635,7 +6392,7 @@ impl QueryLoggingConfig {
 
 /// <p>In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZoneSummary {
     /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
     #[doc(hidden)]
@@ -6659,15 +6416,6 @@ impl HostedZoneSummary {
     /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::HostedZoneOwner> {
         self.owner.as_ref()
-    }
-}
-impl std::fmt::Debug for HostedZoneSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZoneSummary");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.finish()
     }
 }
 /// See [`HostedZoneSummary`](crate::model::HostedZoneSummary).
@@ -6736,7 +6484,7 @@ impl HostedZoneSummary {
 
 /// <p>A complex type that identifies a hosted zone that a specified Amazon VPC is associated with and the owner of the hosted zone. If there is a value for <code>OwningAccount</code>, there is no value for <code>OwningService</code>, and vice versa. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZoneOwner {
     /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -6753,14 +6501,6 @@ impl HostedZoneOwner {
     /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
     pub fn owning_service(&self) -> std::option::Option<&str> {
         self.owning_service.as_deref()
-    }
-}
-impl std::fmt::Debug for HostedZoneOwner {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZoneOwner");
-        formatter.field("owning_account", &self.owning_account);
-        formatter.field("owning_service", &self.owning_service);
-        formatter.finish()
     }
 }
 /// See [`HostedZoneOwner`](crate::model::HostedZoneOwner).
@@ -6817,7 +6557,7 @@ impl HostedZoneOwner {
 
 /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeoLocationDetails {
     /// <p>The two-letter code for the continent.</p>
     #[doc(hidden)]
@@ -6862,18 +6602,6 @@ impl GeoLocationDetails {
     /// <p>The full name of the subdivision. Route 53 currently supports only states in the United States.</p>
     pub fn subdivision_name(&self) -> std::option::Option<&str> {
         self.subdivision_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GeoLocationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeoLocationDetails");
-        formatter.field("continent_code", &self.continent_code);
-        formatter.field("continent_name", &self.continent_name);
-        formatter.field("country_code", &self.country_code);
-        formatter.field("country_name", &self.country_name);
-        formatter.field("subdivision_code", &self.subdivision_code);
-        formatter.field("subdivision_name", &self.subdivision_name);
-        formatter.finish()
     }
 }
 /// See [`GeoLocationDetails`](crate::model::GeoLocationDetails).
@@ -6984,7 +6712,7 @@ impl GeoLocationDetails {
 
 /// <p>A complex type that contains information about the CIDR location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationSummary {
     /// <p>A string that specifies a location name.</p>
     #[doc(hidden)]
@@ -6994,13 +6722,6 @@ impl LocationSummary {
     /// <p>A string that specifies a location name.</p>
     pub fn location_name(&self) -> std::option::Option<&str> {
         self.location_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LocationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocationSummary");
-        formatter.field("location_name", &self.location_name);
-        formatter.finish()
     }
 }
 /// See [`LocationSummary`](crate::model::LocationSummary).
@@ -7042,7 +6763,7 @@ impl LocationSummary {
 
 /// <p>A complex type that is an entry in an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CidrCollection.html">CidrCollection</a> array.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CollectionSummary {
     /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
     #[doc(hidden)]
@@ -7073,16 +6794,6 @@ impl CollectionSummary {
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
     pub fn version(&self) -> std::option::Option<i64> {
         self.version
-    }
-}
-impl std::fmt::Debug for CollectionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CollectionSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`CollectionSummary`](crate::model::CollectionSummary).
@@ -7157,7 +6868,7 @@ impl CollectionSummary {
 
 /// <p>A complex type that lists the CIDR blocks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrBlockSummary {
     /// <p>Value for the CIDR block.</p>
     #[doc(hidden)]
@@ -7174,14 +6885,6 @@ impl CidrBlockSummary {
     /// <p>The location name of the CIDR block.</p>
     pub fn location_name(&self) -> std::option::Option<&str> {
         self.location_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CidrBlockSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrBlockSummary");
-        formatter.field("cidr_block", &self.cidr_block);
-        formatter.field("location_name", &self.location_name);
-        formatter.finish()
     }
 }
 /// See [`CidrBlockSummary`](crate::model::CidrBlockSummary).
@@ -7235,7 +6938,7 @@ impl CidrBlockSummary {
 
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReusableDelegationSetLimit {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
@@ -7252,14 +6955,6 @@ impl ReusableDelegationSetLimit {
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
     pub fn value(&self) -> i64 {
         self.value
-    }
-}
-impl std::fmt::Debug for ReusableDelegationSetLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReusableDelegationSetLimit");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit).
@@ -7404,7 +7099,7 @@ impl AsRef<str> for ReusableDelegationSetLimitType {
 
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZoneLimit {
     /// <p>The limit that you requested. Valid values include the following:</p>
     /// <ul>
@@ -7429,14 +7124,6 @@ impl HostedZoneLimit {
     /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
     pub fn value(&self) -> i64 {
         self.value
-    }
-}
-impl std::fmt::Debug for HostedZoneLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZoneLimit");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`HostedZoneLimit`](crate::model::HostedZoneLimit).
@@ -7590,7 +7277,7 @@ impl AsRef<str> for HostedZoneLimitType {
 
 /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckObservation {
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
     #[doc(hidden)]
@@ -7614,15 +7301,6 @@ impl HealthCheckObservation {
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
     pub fn status_report(&self) -> std::option::Option<&crate::model::StatusReport> {
         self.status_report.as_ref()
-    }
-}
-impl std::fmt::Debug for HealthCheckObservation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckObservation");
-        formatter.field("region", &self.region);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("status_report", &self.status_report);
-        formatter.finish()
     }
 }
 /// See [`HealthCheckObservation`](crate::model::HealthCheckObservation).
@@ -7691,7 +7369,7 @@ impl HealthCheckObservation {
 
 /// <p>A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatusReport {
     /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
     #[doc(hidden)]
@@ -7708,14 +7386,6 @@ impl StatusReport {
     /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
     pub fn checked_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.checked_time.as_ref()
-    }
-}
-impl std::fmt::Debug for StatusReport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatusReport");
-        formatter.field("status", &self.status);
-        formatter.field("checked_time", &self.checked_time);
-        formatter.finish()
     }
 }
 /// See [`StatusReport`](crate::model::StatusReport).
@@ -7769,7 +7439,7 @@ impl StatusReport {
 
 /// <p>A key-signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeySigningKey {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     #[doc(hidden)]
@@ -8024,31 +7694,6 @@ impl KeySigningKey {
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
-    }
-}
-impl std::fmt::Debug for KeySigningKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySigningKey");
-        formatter.field("name", &self.name);
-        formatter.field("kms_arn", &self.kms_arn);
-        formatter.field("flag", &self.flag);
-        formatter.field(
-            "signing_algorithm_mnemonic",
-            &self.signing_algorithm_mnemonic,
-        );
-        formatter.field("signing_algorithm_type", &self.signing_algorithm_type);
-        formatter.field("digest_algorithm_mnemonic", &self.digest_algorithm_mnemonic);
-        formatter.field("digest_algorithm_type", &self.digest_algorithm_type);
-        formatter.field("key_tag", &self.key_tag);
-        formatter.field("digest_value", &self.digest_value);
-        formatter.field("public_key", &self.public_key);
-        formatter.field("ds_record", &self.ds_record);
-        formatter.field("dnskey_record", &self.dnskey_record);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.finish()
     }
 }
 /// See [`KeySigningKey`](crate::model::KeySigningKey).
@@ -8425,7 +8070,7 @@ impl KeySigningKey {
 
 /// <p>A string repesenting the status of DNSSEC signing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnssecStatus {
     /// <p>A string that represents the current hosted zone signing status.</p>
     /// <p>Status can have one of the following values:</p>
@@ -8508,14 +8153,6 @@ impl DnssecStatus {
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for DnssecStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnssecStatus");
-        formatter.field("serve_signature", &self.serve_signature);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`DnssecStatus`](crate::model::DnssecStatus).
@@ -8638,7 +8275,7 @@ impl DnssecStatus {
 
 /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeInfo {
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
     #[doc(hidden)]
@@ -8669,16 +8306,6 @@ impl ChangeInfo {
     /// <p>A comment you can provide.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeInfo");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("submitted_at", &self.submitted_at);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`ChangeInfo`](crate::model::ChangeInfo).
@@ -8849,7 +8476,7 @@ impl AsRef<str> for ChangeStatus {
 
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The limit that you requested. Valid values include the following:</p>
     /// <ul>
@@ -8880,14 +8507,6 @@ impl AccountLimit {
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
     pub fn value(&self) -> i64 {
         self.value
-    }
-}
-impl std::fmt::Debug for AccountLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountLimit");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AccountLimit`](crate::model::AccountLimit).
@@ -9074,7 +8693,7 @@ impl AsRef<str> for AccountLimitType {
 
 /// <p>A complex type that identifies a CIDR collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrCollection {
     /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -9105,16 +8724,6 @@ impl CidrCollection {
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
     pub fn version(&self) -> std::option::Option<i64> {
         self.version
-    }
-}
-impl std::fmt::Debug for CidrCollection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrCollection");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`CidrCollection`](crate::model::CidrCollection).
@@ -9189,7 +8798,7 @@ impl CidrCollection {
 
 /// <p>The information for a change request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeBatch {
     /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
     #[doc(hidden)]
@@ -9206,14 +8815,6 @@ impl ChangeBatch {
     /// <p>Information about the changes to make to the record sets.</p>
     pub fn changes(&self) -> std::option::Option<&[crate::model::Change]> {
         self.changes.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangeBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeBatch");
-        formatter.field("comment", &self.comment);
-        formatter.field("changes", &self.changes);
-        formatter.finish()
     }
 }
 /// See [`ChangeBatch`](crate::model::ChangeBatch).
@@ -9273,7 +8874,7 @@ impl ChangeBatch {
 
 /// <p>The information for each resource record set that you want to change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Change {
     /// <p>The action to perform:</p>
     /// <ul>
@@ -9304,14 +8905,6 @@ impl Change {
     /// <p>Information about the resource record set to create, delete, or update.</p>
     pub fn resource_record_set(&self) -> std::option::Option<&crate::model::ResourceRecordSet> {
         self.resource_record_set.as_ref()
-    }
-}
-impl std::fmt::Debug for Change {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Change");
-        formatter.field("action", &self.action);
-        formatter.field("resource_record_set", &self.resource_record_set);
-        formatter.finish()
     }
 }
 /// See [`Change`](crate::model::Change).
@@ -9477,7 +9070,7 @@ impl AsRef<str> for ChangeAction {
 
 /// <p>A complex type that contains information about the CIDR collection change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrCollectionChange {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
     #[doc(hidden)]
@@ -9501,15 +9094,6 @@ impl CidrCollectionChange {
     /// <p>List of CIDR blocks.</p>
     pub fn cidr_list(&self) -> std::option::Option<&[std::string::String]> {
         self.cidr_list.as_deref()
-    }
-}
-impl std::fmt::Debug for CidrCollectionChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrCollectionChange");
-        formatter.field("location_name", &self.location_name);
-        formatter.field("action", &self.action);
-        formatter.field("cidr_list", &self.cidr_list);
-        formatter.finish()
     }
 }
 /// See [`CidrCollectionChange`](crate::model::CidrCollectionChange).

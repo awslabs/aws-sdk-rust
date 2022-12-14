@@ -5978,7 +5978,7 @@ impl UpdateFlowSourceInput {
 
 /// A request to update the source of a flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFlowSourceInput {
     /// The type of encryption used on the content ingested from this source.
     #[doc(hidden)]
@@ -6119,38 +6119,10 @@ impl UpdateFlowSourceInput {
         self.whitelist_cidr.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFlowSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFlowSourceInput");
-        formatter.field("decryption", &self.decryption);
-        formatter.field("description", &self.description);
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("ingest_port", &self.ingest_port);
-        formatter.field("max_bitrate", &self.max_bitrate);
-        formatter.field("max_latency", &self.max_latency);
-        formatter.field("max_sync_buffer", &self.max_sync_buffer);
-        formatter.field(
-            "media_stream_source_configurations",
-            &self.media_stream_source_configurations,
-        );
-        formatter.field("min_latency", &self.min_latency);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("sender_control_port", &self.sender_control_port);
-        formatter.field("sender_ip_address", &self.sender_ip_address);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("source_listener_address", &self.source_listener_address);
-        formatter.field("source_listener_port", &self.source_listener_port);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("vpc_interface_name", &self.vpc_interface_name);
-        formatter.field("whitelist_cidr", &self.whitelist_cidr);
-        formatter.finish()
-    }
-}
 
 /// The fields that you want to update in the output.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFlowOutputInput {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     #[doc(hidden)]
@@ -6279,36 +6251,10 @@ impl UpdateFlowOutputInput {
         self.vpc_interface_attachment.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFlowOutputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFlowOutputInput");
-        formatter.field("cidr_allow_list", &self.cidr_allow_list);
-        formatter.field("description", &self.description);
-        formatter.field("destination", &self.destination);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("max_latency", &self.max_latency);
-        formatter.field(
-            "media_stream_output_configurations",
-            &self.media_stream_output_configurations,
-        );
-        formatter.field("min_latency", &self.min_latency);
-        formatter.field("output_arn", &self.output_arn);
-        formatter.field("port", &self.port);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("remote_id", &self.remote_id);
-        formatter.field("sender_control_port", &self.sender_control_port);
-        formatter.field("sender_ip_address", &self.sender_ip_address);
-        formatter.field("smoothing_latency", &self.smoothing_latency);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("vpc_interface_attachment", &self.vpc_interface_attachment);
-        formatter.finish()
-    }
-}
 
 /// The fields that you want to update in the media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFlowMediaStreamInput {
     /// The attributes that you want to assign to the media stream.
     #[doc(hidden)]
@@ -6362,23 +6308,10 @@ impl UpdateFlowMediaStreamInput {
         self.video_format.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFlowMediaStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFlowMediaStreamInput");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("clock_rate", &self.clock_rate);
-        formatter.field("description", &self.description);
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.field("media_stream_type", &self.media_stream_type);
-        formatter.field("video_format", &self.video_format);
-        formatter.finish()
-    }
-}
 
 /// The entitlement fields that you want to update.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     #[doc(hidden)]
@@ -6425,22 +6358,10 @@ impl UpdateFlowEntitlementInput {
         self.subscribers.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFlowEntitlementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFlowEntitlementInput");
-        formatter.field("description", &self.description);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("entitlement_status", &self.entitlement_status);
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
-    }
-}
 
 /// A request to update flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFlowInput {
     /// The flow that you want to update.
     #[doc(hidden)]
@@ -6468,19 +6389,10 @@ impl UpdateFlowInput {
         self.maintenance.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFlowInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("source_failover_config", &self.source_failover_config);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
     #[doc(hidden)]
@@ -6499,18 +6411,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
     #[doc(hidden)]
@@ -6533,18 +6437,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopFlowInput {
     /// The ARN of the flow that you want to stop.
     #[doc(hidden)]
@@ -6556,17 +6452,10 @@ impl StopFlowInput {
         self.flow_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopFlowInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFlowInput {
     /// The ARN of the flow that you want to start.
     #[doc(hidden)]
@@ -6578,17 +6467,10 @@ impl StartFlowInput {
         self.flow_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFlowInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeFlowEntitlementInput {
     /// The ARN of the entitlement that you want to revoke.
     #[doc(hidden)]
@@ -6607,18 +6489,10 @@ impl RevokeFlowEntitlementInput {
         self.flow_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeFlowEntitlementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeFlowEntitlementInput");
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveFlowVpcInterfaceInput {
     /// The flow that you want to remove a VPC interface from.
     #[doc(hidden)]
@@ -6637,18 +6511,10 @@ impl RemoveFlowVpcInterfaceInput {
         self.vpc_interface_name.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveFlowVpcInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveFlowVpcInterfaceInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("vpc_interface_name", &self.vpc_interface_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveFlowSourceInput {
     /// The flow that you want to remove a source from.
     #[doc(hidden)]
@@ -6667,18 +6533,10 @@ impl RemoveFlowSourceInput {
         self.source_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveFlowSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveFlowSourceInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveFlowOutputInput {
     /// The flow that you want to remove an output from.
     #[doc(hidden)]
@@ -6697,18 +6555,10 @@ impl RemoveFlowOutputInput {
         self.output_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveFlowOutputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveFlowOutputInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("output_arn", &self.output_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveFlowMediaStreamInput {
     /// The Amazon Resource Name (ARN) of the flow.
     #[doc(hidden)]
@@ -6727,18 +6577,10 @@ impl RemoveFlowMediaStreamInput {
         self.media_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveFlowMediaStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveFlowMediaStreamInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.finish()
-    }
-}
 
 /// A request to purchase a offering.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
     #[doc(hidden)]
@@ -6764,19 +6606,10 @@ impl PurchaseOfferingInput {
         self.start.as_deref()
     }
 }
-impl std::fmt::Debug for PurchaseOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseOfferingInput");
-        formatter.field("offering_arn", &self.offering_arn);
-        formatter.field("reservation_name", &self.reservation_name);
-        formatter.field("start", &self.start);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
     #[doc(hidden)]
@@ -6788,17 +6621,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReservationsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     #[doc(hidden)]
@@ -6817,18 +6643,10 @@ impl ListReservationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListReservationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReservationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOfferingsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     #[doc(hidden)]
@@ -6847,18 +6665,10 @@ impl ListOfferingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOfferingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOfferingsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFlowsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     #[doc(hidden)]
@@ -6877,18 +6687,10 @@ impl ListFlowsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFlowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFlowsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitlementsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
     #[doc(hidden)]
@@ -6907,18 +6709,10 @@ impl ListEntitlementsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEntitlementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitlementsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// A request to grant entitlements on a flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrantFlowEntitlementsInput {
     /// The list of entitlements that you want to grant.
     #[doc(hidden)]
@@ -6937,18 +6731,10 @@ impl GrantFlowEntitlementsInput {
         self.flow_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GrantFlowEntitlementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrantFlowEntitlementsInput");
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservationInput {
     /// The Amazon Resource Name (ARN) of the reservation.
     #[doc(hidden)]
@@ -6960,17 +6746,10 @@ impl DescribeReservationInput {
         self.reservation_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReservationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservationInput");
-        formatter.field("reservation_arn", &self.reservation_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
     #[doc(hidden)]
@@ -6982,17 +6761,10 @@ impl DescribeOfferingInput {
         self.offering_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOfferingInput");
-        formatter.field("offering_arn", &self.offering_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFlowInput {
     /// The ARN of the flow that you want to describe.
     #[doc(hidden)]
@@ -7004,17 +6776,10 @@ impl DescribeFlowInput {
         self.flow_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFlowInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFlowInput {
     /// The ARN of the flow that you want to delete.
     #[doc(hidden)]
@@ -7026,17 +6791,10 @@ impl DeleteFlowInput {
         self.flow_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFlowInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.finish()
-    }
-}
 
 /// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFlowInput {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
     #[doc(hidden)]
@@ -7111,26 +6869,10 @@ impl CreateFlowInput {
         self.maintenance.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFlowInput");
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("media_streams", &self.media_streams);
-        formatter.field("name", &self.name);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("source", &self.source);
-        formatter.field("source_failover_config", &self.source_failover_config);
-        formatter.field("sources", &self.sources);
-        formatter.field("vpc_interfaces", &self.vpc_interfaces);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.finish()
-    }
-}
 
 /// A request to add VPC interfaces to the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesInput {
     /// The flow that you want to mutate.
     #[doc(hidden)]
@@ -7149,18 +6891,10 @@ impl AddFlowVpcInterfacesInput {
         self.vpc_interfaces.as_deref()
     }
 }
-impl std::fmt::Debug for AddFlowVpcInterfacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddFlowVpcInterfacesInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("vpc_interfaces", &self.vpc_interfaces);
-        formatter.finish()
-    }
-}
 
 /// A request to add sources to the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddFlowSourcesInput {
     /// The flow that you want to mutate.
     #[doc(hidden)]
@@ -7179,18 +6913,10 @@ impl AddFlowSourcesInput {
         self.sources.as_deref()
     }
 }
-impl std::fmt::Debug for AddFlowSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddFlowSourcesInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("sources", &self.sources);
-        formatter.finish()
-    }
-}
 
 /// A request to add outputs to the specified flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddFlowOutputsInput {
     /// The flow that you want to add outputs to.
     #[doc(hidden)]
@@ -7209,18 +6935,10 @@ impl AddFlowOutputsInput {
         self.outputs.as_deref()
     }
 }
-impl std::fmt::Debug for AddFlowOutputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddFlowOutputsInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("outputs", &self.outputs);
-        formatter.finish()
-    }
-}
 
 /// A request to add media streams to the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddFlowMediaStreamsInput {
     /// The Amazon Resource Name (ARN) of the flow.
     #[doc(hidden)]
@@ -7237,13 +6955,5 @@ impl AddFlowMediaStreamsInput {
     /// The media streams that you want to add to the flow.
     pub fn media_streams(&self) -> std::option::Option<&[crate::model::AddMediaStreamRequest]> {
         self.media_streams.as_deref()
-    }
-}
-impl std::fmt::Debug for AddFlowMediaStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddFlowMediaStreamsInput");
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("media_streams", &self.media_streams);
-        formatter.finish()
     }
 }

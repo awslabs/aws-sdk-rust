@@ -2,18 +2,11 @@
 
 /// <p>This action is not allowed against this storage tier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectAlreadyInActiveTierError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ObjectAlreadyInActiveTierError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectAlreadyInActiveTierError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ObjectAlreadyInActiveTierError {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl ObjectAlreadyInActiveTierError {
 
 /// <p>The specified key does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchKey {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchKey");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchKey {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl NoSuchKey {
 
 /// <p>The specified bucket does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchBucket {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchBucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchBucket");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchBucket {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl NoSuchBucket {
 
 /// <p>The specified content does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NotFound {
     /// Returns the error message.
@@ -270,7 +242,7 @@ impl NotFound {
 
 /// <p>Object is archived and inaccessible until restored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidObjectState {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -290,15 +262,6 @@ impl InvalidObjectState {
     #[allow(missing_docs)] // documentation missing in model
     pub fn access_tier(&self) -> std::option::Option<&crate::model::IntelligentTieringAccessTier> {
         self.access_tier.as_ref()
-    }
-}
-impl std::fmt::Debug for InvalidObjectState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidObjectState");
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("access_tier", &self.access_tier);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidObjectState {
@@ -385,18 +348,11 @@ impl InvalidObjectState {
 
 /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketAlreadyOwnedByYou {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BucketAlreadyOwnedByYou {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketAlreadyOwnedByYou");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BucketAlreadyOwnedByYou {
     /// Returns the error message.
@@ -452,18 +408,11 @@ impl BucketAlreadyOwnedByYou {
 
 /// <p>The requested bucket name is not available. The bucket namespace is shared by all users of the system. Select a different name and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BucketAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BucketAlreadyExists {
     /// Returns the error message.
@@ -519,18 +468,11 @@ impl BucketAlreadyExists {
 
 /// <p>The source object of the COPY action is not in the active tier and is only stored in Amazon S3 Glacier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectNotInActiveTierError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ObjectNotInActiveTierError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectNotInActiveTierError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ObjectNotInActiveTierError {
     /// Returns the error message.
@@ -586,18 +528,11 @@ impl ObjectNotInActiveTierError {
 
 /// <p>The specified multipart upload does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchUpload {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchUpload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchUpload");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchUpload {
     /// Returns the error message.

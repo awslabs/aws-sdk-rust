@@ -2,7 +2,7 @@
 
 /// <p>Information about the source of the data included in the resource data sync.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncSource {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>SingleAccountMultiRegions</code>.</p>
     #[doc(hidden)]
@@ -43,20 +43,6 @@ impl ResourceDataSyncSource {
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn enable_all_ops_data_sources(&self) -> bool {
         self.enable_all_ops_data_sources
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncSource");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("aws_organizations_source", &self.aws_organizations_source);
-        formatter.field("source_regions", &self.source_regions);
-        formatter.field("include_future_regions", &self.include_future_regions);
-        formatter.field(
-            "enable_all_ops_data_sources",
-            &self.enable_all_ops_data_sources,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResourceDataSyncSource`](crate::model::ResourceDataSyncSource).
@@ -159,7 +145,7 @@ impl ResourceDataSyncSource {
 
 /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations or, if an Amazon Web Services organization isn't present, from multiple Amazon Web Services Regions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncAwsOrganizationsSource {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
     #[doc(hidden)]
@@ -179,14 +165,6 @@ impl ResourceDataSyncAwsOrganizationsSource {
         &self,
     ) -> std::option::Option<&[crate::model::ResourceDataSyncOrganizationalUnit]> {
         self.organizational_units.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncAwsOrganizationsSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncAwsOrganizationsSource");
-        formatter.field("organization_source_type", &self.organization_source_type);
-        formatter.field("organizational_units", &self.organizational_units);
-        formatter.finish()
     }
 }
 /// See [`ResourceDataSyncAwsOrganizationsSource`](crate::model::ResourceDataSyncAwsOrganizationsSource).
@@ -255,7 +233,7 @@ impl ResourceDataSyncAwsOrganizationsSource {
 
 /// <p>The Organizations organizational unit data source for the sync.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncOrganizationalUnit {
     /// <p>The Organizations unit ID data source for the sync.</p>
     #[doc(hidden)]
@@ -265,13 +243,6 @@ impl ResourceDataSyncOrganizationalUnit {
     /// <p>The Organizations unit ID data source for the sync.</p>
     pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncOrganizationalUnit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncOrganizationalUnit");
-        formatter.field("organizational_unit_id", &self.organizational_unit_id);
-        formatter.finish()
     }
 }
 /// See [`ResourceDataSyncOrganizationalUnit`](crate::model::ResourceDataSyncOrganizationalUnit).
@@ -364,7 +335,7 @@ impl std::fmt::Debug for PatchSource {
 pub mod patch_source {
 
     /// A builder for [`PatchSource`](crate::model::PatchSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) products: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -432,6 +403,15 @@ pub mod patch_source {
                 products: self.products,
                 configuration: self.configuration,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("products", &self.products);
+            formatter.field("configuration", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -653,7 +633,7 @@ impl AsRef<str> for PatchComplianceLevel {
 
 /// <p>A set of rules defining the approval rules for a patch baseline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchRuleGroup {
     /// <p>The rules that make up the rule group.</p>
     #[doc(hidden)]
@@ -663,13 +643,6 @@ impl PatchRuleGroup {
     /// <p>The rules that make up the rule group.</p>
     pub fn patch_rules(&self) -> std::option::Option<&[crate::model::PatchRule]> {
         self.patch_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for PatchRuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchRuleGroup");
-        formatter.field("patch_rules", &self.patch_rules);
-        formatter.finish()
     }
 }
 /// See [`PatchRuleGroup`](crate::model::PatchRuleGroup).
@@ -717,7 +690,7 @@ impl PatchRuleGroup {
 
 /// <p>Defines an approval rule for a patch baseline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchRule {
     /// <p>The patch filter group that defines the criteria for the rule.</p>
     #[doc(hidden)]
@@ -757,17 +730,6 @@ impl PatchRule {
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn enable_non_security(&self) -> std::option::Option<bool> {
         self.enable_non_security
-    }
-}
-impl std::fmt::Debug for PatchRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchRule");
-        formatter.field("patch_filter_group", &self.patch_filter_group);
-        formatter.field("compliance_level", &self.compliance_level);
-        formatter.field("approve_after_days", &self.approve_after_days);
-        formatter.field("approve_until_date", &self.approve_until_date);
-        formatter.field("enable_non_security", &self.enable_non_security);
-        formatter.finish()
     }
 }
 /// See [`PatchRule`](crate::model::PatchRule).
@@ -865,7 +827,7 @@ impl PatchRule {
 
 /// <p>A set of patch filters, typically used for approval rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchFilterGroup {
     /// <p>The set of patch filters that make up the group.</p>
     #[doc(hidden)]
@@ -875,13 +837,6 @@ impl PatchFilterGroup {
     /// <p>The set of patch filters that make up the group.</p>
     pub fn patch_filters(&self) -> std::option::Option<&[crate::model::PatchFilter]> {
         self.patch_filters.as_deref()
-    }
-}
-impl std::fmt::Debug for PatchFilterGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchFilterGroup");
-        formatter.field("patch_filters", &self.patch_filters);
-        formatter.finish()
     }
 }
 /// See [`PatchFilterGroup`](crate::model::PatchFilterGroup).
@@ -932,7 +887,7 @@ impl PatchFilterGroup {
 /// <p>The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is <code>PRODUCT</code> and the filter values are <code>["Office 2013", "Office 2016"]</code>, then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values.</p>
 /// <p>You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <code>DescribePatchProperties</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchFilter {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
@@ -953,14 +908,6 @@ impl PatchFilter {
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for PatchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`PatchFilter`](crate::model::PatchFilter).
@@ -1372,7 +1319,7 @@ impl AsRef<str> for OperatingSystem {
 
 /// <p>Metadata to assign to an Application Manager application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetadataValue {
     /// <p>Metadata value to assign to an Application Manager application.</p>
     #[doc(hidden)]
@@ -1382,13 +1329,6 @@ impl MetadataValue {
     /// <p>Metadata value to assign to an Application Manager application.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for MetadataValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetadataValue");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MetadataValue`](crate::model::MetadataValue).
@@ -1620,7 +1560,7 @@ impl AsRef<str> for OpsItemStatus {
 
 /// <p>An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelatedOpsItem {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
     #[doc(hidden)]
@@ -1630,13 +1570,6 @@ impl RelatedOpsItem {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
     pub fn ops_item_id(&self) -> std::option::Option<&str> {
         self.ops_item_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RelatedOpsItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelatedOpsItem");
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.finish()
     }
 }
 /// See [`RelatedOpsItem`](crate::model::RelatedOpsItem).
@@ -1675,7 +1608,7 @@ impl RelatedOpsItem {
 
 /// <p>A notification about the OpsItem.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemNotification {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
     #[doc(hidden)]
@@ -1685,13 +1618,6 @@ impl OpsItemNotification {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsItemNotification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemNotification");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`OpsItemNotification`](crate::model::OpsItemNotification).
@@ -1728,7 +1654,7 @@ impl OpsItemNotification {
 
 /// <p>An object that defines the value of the key and its type in the OperationalData map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemDataValue {
     /// <p>The value of the OperationalData key.</p>
     #[doc(hidden)]
@@ -1745,14 +1671,6 @@ impl OpsItemDataValue {
     /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::OpsItemDataType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsItemDataValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemDataValue");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`OpsItemDataValue`](crate::model::OpsItemDataValue).
@@ -1896,7 +1814,7 @@ impl AsRef<str> for OpsItemDataType {
 
 /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmConfiguration {
     /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
     #[doc(hidden)]
@@ -1913,14 +1831,6 @@ impl AlarmConfiguration {
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
     pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
         self.alarms.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmConfiguration");
-        formatter.field("ignore_poll_alarm_failure", &self.ignore_poll_alarm_failure);
-        formatter.field("alarms", &self.alarms);
-        formatter.finish()
     }
 }
 /// See [`AlarmConfiguration`](crate::model::AlarmConfiguration).
@@ -1980,7 +1890,7 @@ impl AlarmConfiguration {
 
 /// <p>A CloudWatch alarm you apply to an automation or command.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of your CloudWatch alarm.</p>
     #[doc(hidden)]
@@ -1990,13 +1900,6 @@ impl Alarm {
     /// <p>The name of your CloudWatch alarm.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Alarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarm");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Alarm`](crate::model::Alarm).
@@ -2127,7 +2030,7 @@ impl AsRef<str> for MaintenanceWindowTaskCutoffBehavior {
 /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingInfo {
     /// <p>The name of an S3 bucket where execution logs are stored .</p>
     #[doc(hidden)]
@@ -2151,15 +2054,6 @@ impl LoggingInfo {
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
     pub fn s3_region(&self) -> std::option::Option<&str> {
         self.s3_region.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggingInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingInfo");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("s3_region", &self.s3_region);
-        formatter.finish()
     }
 }
 /// See [`LoggingInfo`](crate::model::LoggingInfo).
@@ -2228,7 +2122,7 @@ impl LoggingInfo {
 
 /// <p>The parameters for task execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceWindowTaskInvocationParameters {
     /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
     #[doc(hidden)]
@@ -2265,16 +2159,6 @@ impl MaintenanceWindowTaskInvocationParameters {
     /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
     pub fn lambda(&self) -> std::option::Option<&crate::model::MaintenanceWindowLambdaParameters> {
         self.lambda.as_ref()
-    }
-}
-impl std::fmt::Debug for MaintenanceWindowTaskInvocationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceWindowTaskInvocationParameters");
-        formatter.field("run_command", &self.run_command);
-        formatter.field("automation", &self.automation);
-        formatter.field("step_functions", &self.step_functions);
-        formatter.field("lambda", &self.lambda);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceWindowTaskInvocationParameters`](crate::model::MaintenanceWindowTaskInvocationParameters).
@@ -2417,7 +2301,7 @@ impl std::fmt::Debug for MaintenanceWindowLambdaParameters {
 pub mod maintenance_window_lambda_parameters {
 
     /// A builder for [`MaintenanceWindowLambdaParameters`](crate::model::MaintenanceWindowLambdaParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_context: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -2466,6 +2350,15 @@ pub mod maintenance_window_lambda_parameters {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_context", &self.client_context);
+            formatter.field("qualifier", &self.qualifier);
+            formatter.field("payload", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl MaintenanceWindowLambdaParameters {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowLambdaParameters`](crate::model::MaintenanceWindowLambdaParameters).
@@ -2512,7 +2405,7 @@ impl std::fmt::Debug for MaintenanceWindowStepFunctionsParameters {
 pub mod maintenance_window_step_functions_parameters {
 
     /// A builder for [`MaintenanceWindowStepFunctionsParameters`](crate::model::MaintenanceWindowStepFunctionsParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2546,6 +2439,14 @@ pub mod maintenance_window_step_functions_parameters {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("input", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.finish()
+        }
+    }
 }
 impl MaintenanceWindowStepFunctionsParameters {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowStepFunctionsParameters`](crate::model::MaintenanceWindowStepFunctionsParameters).
@@ -2556,7 +2457,7 @@ impl MaintenanceWindowStepFunctionsParameters {
 
 /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceWindowAutomationParameters {
     /// <p>The version of an Automation runbook to use during task execution.</p>
     #[doc(hidden)]
@@ -2589,14 +2490,6 @@ impl MaintenanceWindowAutomationParameters {
         &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     > {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for MaintenanceWindowAutomationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceWindowAutomationParameters");
-        formatter.field("document_version", &self.document_version);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceWindowAutomationParameters`](crate::model::MaintenanceWindowAutomationParameters).
@@ -2799,7 +2692,7 @@ impl std::fmt::Debug for MaintenanceWindowRunCommandParameters {
 pub mod maintenance_window_run_command_parameters {
 
     /// A builder for [`MaintenanceWindowRunCommandParameters`](crate::model::MaintenanceWindowRunCommandParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) cloud_watch_output_config:
@@ -2992,6 +2885,23 @@ pub mod maintenance_window_run_command_parameters {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("comment", &self.comment);
+            formatter.field("cloud_watch_output_config", &self.cloud_watch_output_config);
+            formatter.field("document_hash", &self.document_hash);
+            formatter.field("document_hash_type", &self.document_hash_type);
+            formatter.field("document_version", &self.document_version);
+            formatter.field("notification_config", &self.notification_config);
+            formatter.field("output_s3_bucket_name", &self.output_s3_bucket_name);
+            formatter.field("output_s3_key_prefix", &self.output_s3_key_prefix);
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("service_role_arn", &self.service_role_arn);
+            formatter.field("timeout_seconds", &self.timeout_seconds);
+            formatter.finish()
+        }
+    }
 }
 impl MaintenanceWindowRunCommandParameters {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowRunCommandParameters`](crate::model::MaintenanceWindowRunCommandParameters).
@@ -3002,7 +2912,7 @@ impl MaintenanceWindowRunCommandParameters {
 
 /// <p>Configurations for sending notifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfig {
     /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes notifications about command status changes to this topic.</p>
     #[doc(hidden)]
@@ -3034,15 +2944,6 @@ impl NotificationConfig {
     /// </ul>
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
-    }
-}
-impl std::fmt::Debug for NotificationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfig");
-        formatter.field("notification_arn", &self.notification_arn);
-        formatter.field("notification_events", &self.notification_events);
-        formatter.field("notification_type", &self.notification_type);
-        formatter.finish()
     }
 }
 /// See [`NotificationConfig`](crate::model::NotificationConfig).
@@ -3428,7 +3329,7 @@ impl AsRef<str> for DocumentHashType {
 
 /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchOutputConfig {
     /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
     /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
@@ -3447,20 +3348,6 @@ impl CloudWatchOutputConfig {
     /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
     pub fn cloud_watch_output_enabled(&self) -> bool {
         self.cloud_watch_output_enabled
-    }
-}
-impl std::fmt::Debug for CloudWatchOutputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchOutputConfig");
-        formatter.field(
-            "cloud_watch_log_group_name",
-            &self.cloud_watch_log_group_name,
-        );
-        formatter.field(
-            "cloud_watch_output_enabled",
-            &self.cloud_watch_output_enabled,
-        );
-        formatter.finish()
     }
 }
 /// See [`CloudWatchOutputConfig`](crate::model::CloudWatchOutputConfig).
@@ -3539,7 +3426,7 @@ impl std::fmt::Debug for MaintenanceWindowTaskParameterValueExpression {
 pub mod maintenance_window_task_parameter_value_expression {
 
     /// A builder for [`MaintenanceWindowTaskParameterValueExpression`](crate::model::MaintenanceWindowTaskParameterValueExpression).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3568,6 +3455,13 @@ pub mod maintenance_window_task_parameter_value_expression {
             crate::model::MaintenanceWindowTaskParameterValueExpression {
                 values: self.values,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("values", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3626,7 +3520,7 @@ impl MaintenanceWindowTaskParameterValueExpression {
 /// </ul>
 /// <p>For more information about how to send commands that target managed nodes using <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Target {
     /// <p>User-defined criteria for sending commands that target managed nodes that meet the criteria.</p>
     #[doc(hidden)]
@@ -3645,14 +3539,6 @@ impl Target {
     /// <p>Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of 50.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Target {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Target");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Target`](crate::model::Target).
@@ -3714,7 +3600,7 @@ impl Target {
 
 /// <p>Information about a document approval review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentReviews {
     /// <p>The action to take on a document approval review request.</p>
     #[doc(hidden)]
@@ -3731,14 +3617,6 @@ impl DocumentReviews {
     /// <p>A comment entered by a user in your organization about the document review request.</p>
     pub fn comment(&self) -> std::option::Option<&[crate::model::DocumentReviewCommentSource]> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentReviews {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentReviews");
-        formatter.field("action", &self.action);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`DocumentReviews`](crate::model::DocumentReviews).
@@ -3802,7 +3680,7 @@ impl DocumentReviews {
 
 /// <p>Information about comments added to a document review request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentReviewCommentSource {
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
     #[doc(hidden)]
@@ -3819,14 +3697,6 @@ impl DocumentReviewCommentSource {
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentReviewCommentSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentReviewCommentSource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`DocumentReviewCommentSource`](crate::model::DocumentReviewCommentSource).
@@ -4069,7 +3939,7 @@ impl AsRef<str> for DocumentReviewAction {
 
 /// <p>A default version of a document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentDefaultVersionDescription {
     /// <p>The name of the document.</p>
     #[doc(hidden)]
@@ -4093,15 +3963,6 @@ impl DocumentDefaultVersionDescription {
     /// <p>The default version of the artifact associated with the document.</p>
     pub fn default_version_name(&self) -> std::option::Option<&str> {
         self.default_version_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentDefaultVersionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentDefaultVersionDescription");
-        formatter.field("name", &self.name);
-        formatter.field("default_version", &self.default_version);
-        formatter.field("default_version_name", &self.default_version_name);
-        formatter.finish()
     }
 }
 /// See [`DocumentDefaultVersionDescription`](crate::model::DocumentDefaultVersionDescription).
@@ -4170,7 +4031,7 @@ impl DocumentDefaultVersionDescription {
 
 /// <p>Describes an Amazon Web Services Systems Manager document (SSM document). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentDescription {
     /// <p>The SHA1 hash of the document, which you can use for verification.</p>
     #[doc(hidden)]
@@ -4394,42 +4255,6 @@ impl DocumentDescription {
     /// <p>The value that identifies a document's category.</p>
     pub fn category_enum(&self) -> std::option::Option<&[std::string::String]> {
         self.category_enum.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentDescription");
-        formatter.field("sha1", &self.sha1);
-        formatter.field("hash", &self.hash);
-        formatter.field("hash_type", &self.hash_type);
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("owner", &self.owner);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("status", &self.status);
-        formatter.field("status_information", &self.status_information);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("platform_types", &self.platform_types);
-        formatter.field("document_type", &self.document_type);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("latest_version", &self.latest_version);
-        formatter.field("default_version", &self.default_version);
-        formatter.field("document_format", &self.document_format);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("attachments_information", &self.attachments_information);
-        formatter.field("requires", &self.requires);
-        formatter.field("author", &self.author);
-        formatter.field("review_information", &self.review_information);
-        formatter.field("approved_version", &self.approved_version);
-        formatter.field("pending_review_version", &self.pending_review_version);
-        formatter.field("review_status", &self.review_status);
-        formatter.field("category", &self.category);
-        formatter.field("category_enum", &self.category_enum);
-        formatter.finish()
     }
 }
 /// See [`DocumentDescription`](crate::model::DocumentDescription).
@@ -5040,7 +4865,7 @@ impl AsRef<str> for ReviewStatus {
 
 /// <p>Information about the result of a document review request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReviewInformation {
     /// <p>The time that the reviewer took action on the document review request.</p>
     #[doc(hidden)]
@@ -5064,15 +4889,6 @@ impl ReviewInformation {
     /// <p>The reviewer assigned to take action on the document review request.</p>
     pub fn reviewer(&self) -> std::option::Option<&str> {
         self.reviewer.as_deref()
-    }
-}
-impl std::fmt::Debug for ReviewInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReviewInformation");
-        formatter.field("reviewed_time", &self.reviewed_time);
-        formatter.field("status", &self.status);
-        formatter.field("reviewer", &self.reviewer);
-        formatter.finish()
     }
 }
 /// See [`ReviewInformation`](crate::model::ReviewInformation).
@@ -5141,7 +4957,7 @@ impl ReviewInformation {
 
 /// <p>An SSM document required by the current document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentRequires {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -5158,14 +4974,6 @@ impl DocumentRequires {
     /// <p>The document version required by the current document.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentRequires {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentRequires");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`DocumentRequires`](crate::model::DocumentRequires).
@@ -5216,7 +5024,7 @@ impl DocumentRequires {
 
 /// <p>An attribute of an attachment, such as the attachment name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentInformation {
     /// <p>The name of the attachment.</p>
     #[doc(hidden)]
@@ -5226,13 +5034,6 @@ impl AttachmentInformation {
     /// <p>The name of the attachment.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachmentInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentInformation");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AttachmentInformation`](crate::model::AttachmentInformation).
@@ -5269,7 +5070,7 @@ impl AttachmentInformation {
 
 /// <p>Metadata that you assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Amazon Web Services Systems Manager, you can apply tags to Systems Manager documents (SSM documents), managed nodes, maintenance windows, parameters, patch baselines, OpsItems, and OpsMetadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The name of the tag.</p>
     #[doc(hidden)]
@@ -5286,14 +5087,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -5699,7 +5492,7 @@ impl AsRef<str> for PlatformType {
 
 /// <p>Parameters specified in a System Manager document that run on the server when the command is run. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -5730,16 +5523,6 @@ impl DocumentParameter {
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentParameter");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`DocumentParameter`](crate::model::DocumentParameter).
@@ -6017,7 +5800,7 @@ impl AsRef<str> for DocumentStatus {
 
 /// <p>Identifying information about a document attachment, including the file name and a key-value pair that identifies the location of an attachment to a document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentsSource {
     /// <p>The key of a key-value pair that identifies the location of an attachment to a document.</p>
     #[doc(hidden)]
@@ -6051,15 +5834,6 @@ impl AttachmentsSource {
     /// <p>The name of the document attachment file.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachmentsSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentsSource");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AttachmentsSource`](crate::model::AttachmentsSource).
@@ -6520,7 +6294,7 @@ impl std::fmt::Debug for AssociationDescription {
 pub mod association_description {
 
     /// A builder for [`AssociationDescription`](crate::model::AssociationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7014,6 +6788,52 @@ pub mod association_description {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("instance_id", &self.instance_id);
+            formatter.field("association_version", &self.association_version);
+            formatter.field("date", &self.date);
+            formatter.field(
+                "last_update_association_date",
+                &self.last_update_association_date,
+            );
+            formatter.field("status", &self.status);
+            formatter.field("overview", &self.overview);
+            formatter.field("document_version", &self.document_version);
+            formatter.field(
+                "automation_target_parameter_name",
+                &self.automation_target_parameter_name,
+            );
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("association_id", &self.association_id);
+            formatter.field("targets", &self.targets);
+            formatter.field("schedule_expression", &self.schedule_expression);
+            formatter.field("output_location", &self.output_location);
+            formatter.field("last_execution_date", &self.last_execution_date);
+            formatter.field(
+                "last_successful_execution_date",
+                &self.last_successful_execution_date,
+            );
+            formatter.field("association_name", &self.association_name);
+            formatter.field("max_errors", &self.max_errors);
+            formatter.field("max_concurrency", &self.max_concurrency);
+            formatter.field("compliance_severity", &self.compliance_severity);
+            formatter.field("sync_compliance", &self.sync_compliance);
+            formatter.field(
+                "apply_only_at_cron_interval",
+                &self.apply_only_at_cron_interval,
+            );
+            formatter.field("calendar_names", &self.calendar_names);
+            formatter.field("target_locations", &self.target_locations);
+            formatter.field("schedule_offset", &self.schedule_offset);
+            formatter.field("target_maps", &self.target_maps);
+            formatter.field("alarm_configuration", &self.alarm_configuration);
+            formatter.field("triggered_alarms", &self.triggered_alarms);
+            formatter.finish()
+        }
+    }
 }
 impl AssociationDescription {
     /// Creates a new builder-style object to manufacture [`AssociationDescription`](crate::model::AssociationDescription).
@@ -7024,7 +6844,7 @@ impl AssociationDescription {
 
 /// <p>The details about the state of your CloudWatch alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmStateInformation {
     /// <p>The name of your CloudWatch alarm.</p>
     #[doc(hidden)]
@@ -7041,14 +6861,6 @@ impl AlarmStateInformation {
     /// <p>The state of your CloudWatch alarm.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ExternalAlarmState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for AlarmStateInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmStateInformation");
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`AlarmStateInformation`](crate::model::AlarmStateInformation).
@@ -7194,7 +7006,7 @@ impl AsRef<str> for ExternalAlarmState {
 
 /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetLocation {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
     #[doc(hidden)]
@@ -7232,23 +7044,6 @@ impl TargetLocation {
     /// <p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
     pub fn execution_role_name(&self) -> std::option::Option<&str> {
         self.execution_role_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TargetLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetLocation");
-        formatter.field("accounts", &self.accounts);
-        formatter.field("regions", &self.regions);
-        formatter.field(
-            "target_location_max_concurrency",
-            &self.target_location_max_concurrency,
-        );
-        formatter.field(
-            "target_location_max_errors",
-            &self.target_location_max_errors,
-        );
-        formatter.field("execution_role_name", &self.execution_role_name);
-        formatter.finish()
     }
 }
 /// See [`TargetLocation`](crate::model::TargetLocation).
@@ -7565,7 +7360,7 @@ impl AsRef<str> for AssociationComplianceSeverity {
 /// <p>An S3 bucket where you want to store the results of this request.</p>
 /// <p>For the minimal permissions required to enable Amazon S3 output for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html">Creating associations</a> in the <i>Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceAssociationOutputLocation {
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     #[doc(hidden)]
@@ -7575,13 +7370,6 @@ impl InstanceAssociationOutputLocation {
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub fn s3_location(&self) -> std::option::Option<&crate::model::S3OutputLocation> {
         self.s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceAssociationOutputLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAssociationOutputLocation");
-        formatter.field("s3_location", &self.s3_location);
-        formatter.finish()
     }
 }
 /// See [`InstanceAssociationOutputLocation`](crate::model::InstanceAssociationOutputLocation).
@@ -7623,7 +7411,7 @@ impl InstanceAssociationOutputLocation {
 
 /// <p>An S3 bucket where you want to store the results of this request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3OutputLocation {
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
     #[doc(hidden)]
@@ -7647,15 +7435,6 @@ impl S3OutputLocation {
     /// <p>The S3 bucket subfolder.</p>
     pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
         self.output_s3_key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3OutputLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3OutputLocation");
-        formatter.field("output_s3_region", &self.output_s3_region);
-        formatter.field("output_s3_bucket_name", &self.output_s3_bucket_name);
-        formatter.field("output_s3_key_prefix", &self.output_s3_key_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3OutputLocation`](crate::model::S3OutputLocation).
@@ -7727,7 +7506,7 @@ impl S3OutputLocation {
 
 /// <p>Information about the association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationOverview {
     /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
     #[doc(hidden)]
@@ -7754,18 +7533,6 @@ impl AssociationOverview {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
         self.association_status_aggregated_count.as_ref()
-    }
-}
-impl std::fmt::Debug for AssociationOverview {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationOverview");
-        formatter.field("status", &self.status);
-        formatter.field("detailed_status", &self.detailed_status);
-        formatter.field(
-            "association_status_aggregated_count",
-            &self.association_status_aggregated_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`AssociationOverview`](crate::model::AssociationOverview).
@@ -7845,7 +7612,7 @@ impl AssociationOverview {
 
 /// <p>Describes an association status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationStatus {
     /// <p>The date when the status changed.</p>
     #[doc(hidden)]
@@ -7876,16 +7643,6 @@ impl AssociationStatus {
     /// <p>A user-defined string.</p>
     pub fn additional_info(&self) -> std::option::Option<&str> {
         self.additional_info.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationStatus");
-        formatter.field("date", &self.date);
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.field("additional_info", &self.additional_info);
-        formatter.finish()
     }
 }
 /// See [`AssociationStatus`](crate::model::AssociationStatus).
@@ -8155,7 +7912,7 @@ impl AsRef<str> for StopType {
 /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Runbook {
     /// <p>The name of the Automation runbook used in a runbook workflow.</p>
     #[doc(hidden)]
@@ -8235,21 +7992,6 @@ impl Runbook {
     /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook operation.</p>
     pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
         self.target_locations.as_deref()
-    }
-}
-impl std::fmt::Debug for Runbook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Runbook");
-        formatter.field("document_name", &self.document_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("target_parameter_name", &self.target_parameter_name);
-        formatter.field("targets", &self.targets);
-        formatter.field("target_maps", &self.target_maps);
-        formatter.field("max_concurrency", &self.max_concurrency);
-        formatter.field("max_errors", &self.max_errors);
-        formatter.field("target_locations", &self.target_locations);
-        formatter.finish()
     }
 }
 /// See [`Runbook`](crate::model::Runbook).
@@ -8803,7 +8545,7 @@ impl std::fmt::Debug for Command {
 pub mod command {
 
     /// A builder for [`Command`](crate::model::Command).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) command_id: std::option::Option<std::string::String>,
         pub(crate) document_name: std::option::Option<std::string::String>,
@@ -9237,6 +8979,38 @@ pub mod command {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("command_id", &self.command_id);
+            formatter.field("document_name", &self.document_name);
+            formatter.field("document_version", &self.document_version);
+            formatter.field("comment", &self.comment);
+            formatter.field("expires_after", &self.expires_after);
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("instance_ids", &self.instance_ids);
+            formatter.field("targets", &self.targets);
+            formatter.field("requested_date_time", &self.requested_date_time);
+            formatter.field("status", &self.status);
+            formatter.field("status_details", &self.status_details);
+            formatter.field("output_s3_region", &self.output_s3_region);
+            formatter.field("output_s3_bucket_name", &self.output_s3_bucket_name);
+            formatter.field("output_s3_key_prefix", &self.output_s3_key_prefix);
+            formatter.field("max_concurrency", &self.max_concurrency);
+            formatter.field("max_errors", &self.max_errors);
+            formatter.field("target_count", &self.target_count);
+            formatter.field("completed_count", &self.completed_count);
+            formatter.field("error_count", &self.error_count);
+            formatter.field("delivery_timed_out_count", &self.delivery_timed_out_count);
+            formatter.field("service_role", &self.service_role);
+            formatter.field("notification_config", &self.notification_config);
+            formatter.field("cloud_watch_output_config", &self.cloud_watch_output_config);
+            formatter.field("timeout_seconds", &self.timeout_seconds);
+            formatter.field("alarm_configuration", &self.alarm_configuration);
+            formatter.field("triggered_alarms", &self.triggered_alarms);
+            formatter.finish()
+        }
+    }
 }
 impl Command {
     /// Creates a new builder-style object to manufacture [`Command`](crate::model::Command).
@@ -9477,7 +9251,7 @@ impl AsRef<str> for SignalType {
 /// <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p>
 /// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>UpdateServiceSetting</code> API operation to change the default setting. Or, use the <code>ResetServiceSetting</code> to change the value back to the original value defined by the Amazon Web Services service team.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceSetting {
     /// <p>The ID of the service setting.</p>
     #[doc(hidden)]
@@ -9532,18 +9306,6 @@ impl ServiceSetting {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceSetting");
-        formatter.field("setting_id", &self.setting_id);
-        formatter.field("setting_value", &self.setting_value);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("last_modified_user", &self.last_modified_user);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ServiceSetting`](crate::model::ServiceSetting).
@@ -10182,7 +9944,7 @@ impl AsRef<str> for ParameterType {
 
 /// <p>Information collected from managed nodes based on your inventory policy document</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryItem {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
     #[doc(hidden)]
@@ -10236,18 +9998,6 @@ impl InventoryItem {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryItem");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("capture_time", &self.capture_time);
-        formatter.field("content_hash", &self.content_hash);
-        formatter.field("content", &self.content);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 /// See [`InventoryItem`](crate::model::InventoryItem).
@@ -10474,7 +10224,7 @@ impl AsRef<str> for ComplianceUploadType {
 
 /// <p>Information about a compliance item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceItemEntry {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
     #[doc(hidden)]
@@ -10516,17 +10266,6 @@ impl ComplianceItemEntry {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.details.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceItemEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceItemEntry");
-        formatter.field("id", &self.id);
-        formatter.field("title", &self.title);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`ComplianceItemEntry`](crate::model::ComplianceItemEntry).
@@ -10845,7 +10584,7 @@ impl AsRef<str> for ComplianceSeverity {
 
 /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceExecutionSummary {
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
     #[doc(hidden)]
@@ -10869,15 +10608,6 @@ impl ComplianceExecutionSummary {
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
     pub fn execution_type(&self) -> std::option::Option<&str> {
         self.execution_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ComplianceExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceExecutionSummary");
-        formatter.field("execution_time", &self.execution_time);
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("execution_type", &self.execution_type);
-        formatter.finish()
     }
 }
 /// See [`ComplianceExecutionSummary`](crate::model::ComplianceExecutionSummary).
@@ -11033,7 +10763,7 @@ impl AsRef<str> for DocumentPermissionType {
 
 /// <p>Information about a resource data sync configuration, including its current status and last successful sync.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncItem {
     /// <p>The name of the resource data sync.</p>
     #[doc(hidden)]
@@ -11110,22 +10840,6 @@ impl ResourceDataSyncItem {
     /// <p>The status message details reported by the last sync.</p>
     pub fn last_sync_status_message(&self) -> std::option::Option<&str> {
         self.last_sync_status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncItem");
-        formatter.field("sync_name", &self.sync_name);
-        formatter.field("sync_type", &self.sync_type);
-        formatter.field("sync_source", &self.sync_source);
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.field("last_sync_time", &self.last_sync_time);
-        formatter.field("last_successful_sync_time", &self.last_successful_sync_time);
-        formatter.field("sync_last_modified_time", &self.sync_last_modified_time);
-        formatter.field("last_status", &self.last_status);
-        formatter.field("sync_created_time", &self.sync_created_time);
-        formatter.field("last_sync_status_message", &self.last_sync_status_message);
-        formatter.finish()
     }
 }
 /// See [`ResourceDataSyncItem`](crate::model::ResourceDataSyncItem).
@@ -11396,7 +11110,7 @@ impl AsRef<str> for LastResourceDataSyncStatus {
 
 /// <p>Information about the target S3 bucket for the resource data sync.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncS3Destination {
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
     #[doc(hidden)]
@@ -11444,18 +11158,6 @@ impl ResourceDataSyncS3Destination {
         &self,
     ) -> std::option::Option<&crate::model::ResourceDataSyncDestinationDataSharing> {
         self.destination_data_sharing.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncS3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncS3Destination");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("sync_format", &self.sync_format);
-        formatter.field("region", &self.region);
-        formatter.field("awskms_key_arn", &self.awskms_key_arn);
-        formatter.field("destination_data_sharing", &self.destination_data_sharing);
-        formatter.finish()
     }
 }
 /// See [`ResourceDataSyncS3Destination`](crate::model::ResourceDataSyncS3Destination).
@@ -11567,7 +11269,7 @@ impl ResourceDataSyncS3Destination {
 
 /// <p>Synchronize Amazon Web Services Systems Manager Inventory data from multiple Amazon Web Services accounts defined in Organizations to a centralized Amazon S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different Amazon Web Services account ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncDestinationDataSharing {
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
     #[doc(hidden)]
@@ -11577,16 +11279,6 @@ impl ResourceDataSyncDestinationDataSharing {
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
     pub fn destination_data_sharing_type(&self) -> std::option::Option<&str> {
         self.destination_data_sharing_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncDestinationDataSharing {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncDestinationDataSharing");
-        formatter.field(
-            "destination_data_sharing_type",
-            &self.destination_data_sharing_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResourceDataSyncDestinationDataSharing`](crate::model::ResourceDataSyncDestinationDataSharing).
@@ -11722,7 +11414,7 @@ impl AsRef<str> for ResourceDataSyncS3Format {
 /// <p> <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)</p>
 /// <p> <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in Organizations.)</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDataSyncSourceWithState {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>singleAccountMultiRegions</code>.</p>
     #[doc(hidden)]
@@ -11778,21 +11470,6 @@ impl ResourceDataSyncSourceWithState {
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn enable_all_ops_data_sources(&self) -> bool {
         self.enable_all_ops_data_sources
-    }
-}
-impl std::fmt::Debug for ResourceDataSyncSourceWithState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDataSyncSourceWithState");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("aws_organizations_source", &self.aws_organizations_source);
-        formatter.field("source_regions", &self.source_regions);
-        formatter.field("include_future_regions", &self.include_future_regions);
-        formatter.field("state", &self.state);
-        formatter.field(
-            "enable_all_ops_data_sources",
-            &self.enable_all_ops_data_sources,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResourceDataSyncSourceWithState`](crate::model::ResourceDataSyncSourceWithState).
@@ -11915,7 +11592,7 @@ impl ResourceDataSyncSourceWithState {
 
 /// <p>Compliance summary information for a specific resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceComplianceSummaryItem {
     /// <p>The compliance type.</p>
     #[doc(hidden)]
@@ -11976,20 +11653,6 @@ impl ResourceComplianceSummaryItem {
     /// <p>A list of items that aren't compliant for the resource.</p>
     pub fn non_compliant_summary(&self) -> std::option::Option<&crate::model::NonCompliantSummary> {
         self.non_compliant_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceComplianceSummaryItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceComplianceSummaryItem");
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("status", &self.status);
-        formatter.field("overall_severity", &self.overall_severity);
-        formatter.field("execution_summary", &self.execution_summary);
-        formatter.field("compliant_summary", &self.compliant_summary);
-        formatter.field("non_compliant_summary", &self.non_compliant_summary);
-        formatter.finish()
     }
 }
 /// See [`ResourceComplianceSummaryItem`](crate::model::ResourceComplianceSummaryItem).
@@ -12136,7 +11799,7 @@ impl ResourceComplianceSummaryItem {
 
 /// <p>A summary of resources that aren't compliant. The summary is organized according to resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NonCompliantSummary {
     /// <p>The total number of compliance items that aren't compliant.</p>
     #[doc(hidden)]
@@ -12153,14 +11816,6 @@ impl NonCompliantSummary {
     /// <p>A summary of the non-compliance severity by compliance type</p>
     pub fn severity_summary(&self) -> std::option::Option<&crate::model::SeveritySummary> {
         self.severity_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for NonCompliantSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NonCompliantSummary");
-        formatter.field("non_compliant_count", &self.non_compliant_count);
-        formatter.field("severity_summary", &self.severity_summary);
-        formatter.finish()
     }
 }
 /// See [`NonCompliantSummary`](crate::model::NonCompliantSummary).
@@ -12214,7 +11869,7 @@ impl NonCompliantSummary {
 
 /// <p>The number of managed nodes found for each patch severity level defined in the request filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SeveritySummary {
     /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
     #[doc(hidden)]
@@ -12259,18 +11914,6 @@ impl SeveritySummary {
     /// <p>The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.</p>
     pub fn unspecified_count(&self) -> i32 {
         self.unspecified_count
-    }
-}
-impl std::fmt::Debug for SeveritySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SeveritySummary");
-        formatter.field("critical_count", &self.critical_count);
-        formatter.field("high_count", &self.high_count);
-        formatter.field("medium_count", &self.medium_count);
-        formatter.field("low_count", &self.low_count);
-        formatter.field("informational_count", &self.informational_count);
-        formatter.field("unspecified_count", &self.unspecified_count);
-        formatter.finish()
     }
 }
 /// See [`SeveritySummary`](crate::model::SeveritySummary).
@@ -12369,7 +12012,7 @@ impl SeveritySummary {
 
 /// <p>A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompliantSummary {
     /// <p>The total number of resources that are compliant.</p>
     #[doc(hidden)]
@@ -12386,14 +12029,6 @@ impl CompliantSummary {
     /// <p>A summary of the compliance severity by compliance type.</p>
     pub fn severity_summary(&self) -> std::option::Option<&crate::model::SeveritySummary> {
         self.severity_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for CompliantSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompliantSummary");
-        formatter.field("compliant_count", &self.compliant_count);
-        formatter.field("severity_summary", &self.severity_summary);
-        formatter.finish()
     }
 }
 /// See [`CompliantSummary`](crate::model::CompliantSummary).
@@ -12447,7 +12082,7 @@ impl CompliantSummary {
 
 /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceStringFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -12471,15 +12106,6 @@ impl ComplianceStringFilter {
     /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith, LessThan, or GreaterThan.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ComplianceQueryOperatorType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceStringFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceStringFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ComplianceStringFilter`](crate::model::ComplianceStringFilter).
@@ -12667,7 +12293,7 @@ impl AsRef<str> for ComplianceQueryOperatorType {
 
 /// <p>Operational metadata for an application in Application Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsMetadata {
     /// <p>The ID of the Application Manager application.</p>
     #[doc(hidden)]
@@ -12705,17 +12331,6 @@ impl OpsMetadata {
     /// <p>The date the OpsMetadata objects was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsMetadata");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("ops_metadata_arn", &self.ops_metadata_arn);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("last_modified_user", &self.last_modified_user);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`OpsMetadata`](crate::model::OpsMetadata).
@@ -12814,7 +12429,7 @@ impl OpsMetadata {
 
 /// <p>A filter to limit the number of OpsMetadata objects displayed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsMetadataFilter {
     /// <p>A filter key.</p>
     #[doc(hidden)]
@@ -12831,14 +12446,6 @@ impl OpsMetadataFilter {
     /// <p>A filter value.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsMetadataFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsMetadataFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`OpsMetadataFilter`](crate::model::OpsMetadataFilter).
@@ -12898,7 +12505,7 @@ impl OpsMetadataFilter {
 
 /// <p>Summary information about related-item resources for an OpsItem.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemRelatedItemSummary {
     /// <p>The OpsItem ID.</p>
     #[doc(hidden)]
@@ -12964,21 +12571,6 @@ impl OpsItemRelatedItemSummary {
     /// <p>The time the related-item association was last updated.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsItemRelatedItemSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemRelatedItemSummary");
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("association_type", &self.association_type);
-        formatter.field("resource_uri", &self.resource_uri);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`OpsItemRelatedItemSummary`](crate::model::OpsItemRelatedItemSummary).
@@ -13134,7 +12726,7 @@ impl OpsItemRelatedItemSummary {
 
 /// <p>Information about the user or resource that created an OpsItem event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
     #[doc(hidden)]
@@ -13144,13 +12736,6 @@ impl OpsItemIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsItemIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemIdentity");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`OpsItemIdentity`](crate::model::OpsItemIdentity).
@@ -13187,7 +12772,7 @@ impl OpsItemIdentity {
 
 /// <p>Describes a filter for a specific list of related-item resources. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemRelatedItemsFilter {
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
     #[doc(hidden)]
@@ -13213,15 +12798,6 @@ impl OpsItemRelatedItemsFilter {
         &self,
     ) -> std::option::Option<&crate::model::OpsItemRelatedItemsFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsItemRelatedItemsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemRelatedItemsFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`OpsItemRelatedItemsFilter`](crate::model::OpsItemRelatedItemsFilter).
@@ -13483,7 +13059,7 @@ impl AsRef<str> for OpsItemRelatedItemsFilterKey {
 
 /// <p>Summary information about an OpsItem event or that associated an OpsItem with a related item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemEventSummary {
     /// <p>The ID of the OpsItem.</p>
     #[doc(hidden)]
@@ -13535,19 +13111,6 @@ impl OpsItemEventSummary {
     /// <p>The date and time the OpsItem event was created.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsItemEventSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemEventSummary");
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.field("event_id", &self.event_id);
-        formatter.field("source", &self.source);
-        formatter.field("detail_type", &self.detail_type);
-        formatter.field("detail", &self.detail);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`OpsItemEventSummary`](crate::model::OpsItemEventSummary).
@@ -13664,7 +13227,7 @@ impl OpsItemEventSummary {
 
 /// <p>Describes a filter for a specific list of OpsItem events. You can filter event information by using tags. You specify tags by using a key-value pair mapping. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemEventFilter {
     /// <p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>
     #[doc(hidden)]
@@ -13688,15 +13251,6 @@ impl OpsItemEventFilter {
     /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::OpsItemEventFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsItemEventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemEventFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`OpsItemEventFilter`](crate::model::OpsItemEventFilter).
@@ -13948,7 +13502,7 @@ impl AsRef<str> for OpsItemEventFilterKey {
 
 /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>The name of the filter key.</p>
     #[doc(hidden)]
@@ -13976,15 +13530,6 @@ impl InventoryFilter {
     /// </note>
     pub fn r#type(&self) -> std::option::Option<&crate::model::InventoryQueryOperatorType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`InventoryFilter`](crate::model::InventoryFilter).
@@ -14182,7 +13727,7 @@ impl AsRef<str> for InventoryQueryOperatorType {
 
 /// <p>Version information about the document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentVersionInfo {
     /// <p>The document name.</p>
     #[doc(hidden)]
@@ -14255,22 +13800,6 @@ impl DocumentVersionInfo {
     /// <p>The current status of the approval review for the latest version of the document.</p>
     pub fn review_status(&self) -> std::option::Option<&crate::model::ReviewStatus> {
         self.review_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentVersionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentVersionInfo");
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("is_default_version", &self.is_default_version);
-        formatter.field("document_format", &self.document_format);
-        formatter.field("status", &self.status);
-        formatter.field("status_information", &self.status_information);
-        formatter.field("review_status", &self.review_status);
-        formatter.finish()
     }
 }
 /// See [`DocumentVersionInfo`](crate::model::DocumentVersionInfo).
@@ -14435,7 +13964,7 @@ impl DocumentVersionInfo {
 
 /// <p>Describes the name of a SSM document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentIdentifier {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
@@ -14543,27 +14072,6 @@ impl DocumentIdentifier {
     /// <p>The user in your organization who created the document.</p>
     pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentIdentifier");
-        formatter.field("name", &self.name);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("owner", &self.owner);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("platform_types", &self.platform_types);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("document_type", &self.document_type);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("document_format", &self.document_format);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("requires", &self.requires);
-        formatter.field("review_status", &self.review_status);
-        formatter.field("author", &self.author);
-        formatter.finish()
     }
 }
 /// See [`DocumentIdentifier`](crate::model::DocumentIdentifier).
@@ -14863,7 +14371,7 @@ impl DocumentIdentifier {
 /// <p>For example, if you created a key called region and are using the Amazon Web Services CLI to call the <code>list-documents</code> command: </p>
 /// <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentKeyValuesFilter {
     /// <p>The name of the filter key.</p>
     #[doc(hidden)]
@@ -14880,14 +14388,6 @@ impl DocumentKeyValuesFilter {
     /// <p>The value for the filter key.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentKeyValuesFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentKeyValuesFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`DocumentKeyValuesFilter`](crate::model::DocumentKeyValuesFilter).
@@ -14947,7 +14447,7 @@ impl DocumentKeyValuesFilter {
 
 /// <p>This data type is deprecated. Instead, use <code>DocumentKeyValuesFilter</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -14964,14 +14464,6 @@ impl DocumentFilter {
     /// <p>The value of the filter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DocumentFilter`](crate::model::DocumentFilter).
@@ -15127,7 +14619,7 @@ impl AsRef<str> for DocumentFilterKey {
 
 /// <p>Details about the response to a document review request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentMetadataResponseInfo {
     /// <p>Details about a reviewer's response to a document review request.</p>
     #[doc(hidden)]
@@ -15140,13 +14632,6 @@ impl DocumentMetadataResponseInfo {
         &self,
     ) -> std::option::Option<&[crate::model::DocumentReviewerResponseSource]> {
         self.reviewer_response.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentMetadataResponseInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentMetadataResponseInfo");
-        formatter.field("reviewer_response", &self.reviewer_response);
-        formatter.finish()
     }
 }
 /// See [`DocumentMetadataResponseInfo`](crate::model::DocumentMetadataResponseInfo).
@@ -15198,7 +14683,7 @@ impl DocumentMetadataResponseInfo {
 
 /// <p>Information about a reviewer's response to a document review request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentReviewerResponseSource {
     /// <p>The date and time that a reviewer entered a response to a document review request.</p>
     #[doc(hidden)]
@@ -15240,17 +14725,6 @@ impl DocumentReviewerResponseSource {
     /// <p>The user in your organization assigned to review a document request.</p>
     pub fn reviewer(&self) -> std::option::Option<&str> {
         self.reviewer.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentReviewerResponseSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentReviewerResponseSource");
-        formatter.field("create_time", &self.create_time);
-        formatter.field("updated_time", &self.updated_time);
-        formatter.field("review_status", &self.review_status);
-        formatter.field("comment", &self.comment);
-        formatter.field("reviewer", &self.reviewer);
-        formatter.finish()
     }
 }
 /// See [`DocumentReviewerResponseSource`](crate::model::DocumentReviewerResponseSource).
@@ -15447,7 +14921,7 @@ impl AsRef<str> for DocumentMetadataEnum {
 
 /// <p>A summary of compliance information by compliance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceSummaryItem {
     /// <p>The type of compliance item. For example, the compliance type can be Association, Patch, or Custom:string.</p>
     #[doc(hidden)]
@@ -15471,15 +14945,6 @@ impl ComplianceSummaryItem {
     /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
     pub fn non_compliant_summary(&self) -> std::option::Option<&crate::model::NonCompliantSummary> {
         self.non_compliant_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceSummaryItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceSummaryItem");
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("compliant_summary", &self.compliant_summary);
-        formatter.field("non_compliant_summary", &self.non_compliant_summary);
-        formatter.finish()
     }
 }
 /// See [`ComplianceSummaryItem`](crate::model::ComplianceSummaryItem).
@@ -15551,7 +15016,7 @@ impl ComplianceSummaryItem {
 
 /// <p>Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceItem {
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
     #[doc(hidden)]
@@ -15623,21 +15088,6 @@ impl ComplianceItem {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.details.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceItem");
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("id", &self.id);
-        formatter.field("title", &self.title);
-        formatter.field("status", &self.status);
-        formatter.field("severity", &self.severity);
-        formatter.field("execution_summary", &self.execution_summary);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`ComplianceItem`](crate::model::ComplianceItem).
@@ -15809,7 +15259,7 @@ impl ComplianceItem {
 /// <p>A managed node ID can't be specified when a command status is <code>Pending</code> because the command hasn't run on the node yet.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommandFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
@@ -15910,14 +15360,6 @@ impl CommandFilter {
     /// </ul>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for CommandFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommandFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CommandFilter`](crate::model::CommandFilter).
@@ -16166,7 +15608,7 @@ impl AsRef<str> for CommandFilterKey {
 
 /// <p>An invocation is a copy of a command sent to a specific managed node. A command can apply to one or more managed nodes. A command invocation applies to one managed node. For example, if a user runs <code>SendCommand</code> against three managed nodes, then a command invocation is created for each requested managed node ID. A command invocation returns status and detail information about a command you ran. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommandInvocation {
     /// <p>The command against which this invocation was requested.</p>
     #[doc(hidden)]
@@ -16307,28 +15749,6 @@ impl CommandInvocation {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
-    }
-}
-impl std::fmt::Debug for CommandInvocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommandInvocation");
-        formatter.field("command_id", &self.command_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("comment", &self.comment);
-        formatter.field("document_name", &self.document_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("requested_date_time", &self.requested_date_time);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("trace_output", &self.trace_output);
-        formatter.field("standard_output_url", &self.standard_output_url);
-        formatter.field("standard_error_url", &self.standard_error_url);
-        formatter.field("command_plugins", &self.command_plugins);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("notification_config", &self.notification_config);
-        formatter.field("cloud_watch_output_config", &self.cloud_watch_output_config);
-        formatter.finish()
     }
 }
 /// See [`CommandInvocation`](crate::model::CommandInvocation).
@@ -16614,7 +16034,7 @@ impl CommandInvocation {
 
 /// <p>Describes plugin details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommandPlugin {
     /// <p>The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
     #[doc(hidden)]
@@ -16743,24 +16163,6 @@ impl CommandPlugin {
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
         self.output_s3_key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for CommandPlugin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommandPlugin");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("response_code", &self.response_code);
-        formatter.field("response_start_date_time", &self.response_start_date_time);
-        formatter.field("response_finish_date_time", &self.response_finish_date_time);
-        formatter.field("output", &self.output);
-        formatter.field("standard_output_url", &self.standard_output_url);
-        formatter.field("standard_error_url", &self.standard_error_url);
-        formatter.field("output_s3_region", &self.output_s3_region);
-        formatter.field("output_s3_bucket_name", &self.output_s3_bucket_name);
-        formatter.field("output_s3_key_prefix", &self.output_s3_key_prefix);
-        formatter.finish()
     }
 }
 /// See [`CommandPlugin`](crate::model::CommandPlugin).
@@ -17446,7 +16848,7 @@ impl std::fmt::Debug for AssociationVersionInfo {
 pub mod association_version_info {
 
     /// A builder for [`AssociationVersionInfo`](crate::model::AssociationVersionInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) association_version: std::option::Option<std::string::String>,
@@ -17801,6 +17203,34 @@ pub mod association_version_info {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("association_id", &self.association_id);
+            formatter.field("association_version", &self.association_version);
+            formatter.field("created_date", &self.created_date);
+            formatter.field("name", &self.name);
+            formatter.field("document_version", &self.document_version);
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("targets", &self.targets);
+            formatter.field("schedule_expression", &self.schedule_expression);
+            formatter.field("output_location", &self.output_location);
+            formatter.field("association_name", &self.association_name);
+            formatter.field("max_errors", &self.max_errors);
+            formatter.field("max_concurrency", &self.max_concurrency);
+            formatter.field("compliance_severity", &self.compliance_severity);
+            formatter.field("sync_compliance", &self.sync_compliance);
+            formatter.field(
+                "apply_only_at_cron_interval",
+                &self.apply_only_at_cron_interval,
+            );
+            formatter.field("calendar_names", &self.calendar_names);
+            formatter.field("target_locations", &self.target_locations);
+            formatter.field("schedule_offset", &self.schedule_offset);
+            formatter.field("target_maps", &self.target_maps);
+            formatter.finish()
+        }
+    }
 }
 impl AssociationVersionInfo {
     /// Creates a new builder-style object to manufacture [`AssociationVersionInfo`](crate::model::AssociationVersionInfo).
@@ -17811,7 +17241,7 @@ impl AssociationVersionInfo {
 
 /// <p>Describes an association of a Amazon Web Services Systems Manager document (SSM document) and a managed node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Association {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
@@ -17910,24 +17340,6 @@ impl Association {
         &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
     > {
         self.target_maps.as_deref()
-    }
-}
-impl std::fmt::Debug for Association {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Association");
-        formatter.field("name", &self.name);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("association_version", &self.association_version);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("targets", &self.targets);
-        formatter.field("last_execution_date", &self.last_execution_date);
-        formatter.field("overview", &self.overview);
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.field("association_name", &self.association_name);
-        formatter.field("schedule_offset", &self.schedule_offset);
-        formatter.field("target_maps", &self.target_maps);
-        formatter.finish()
     }
 }
 /// See [`Association`](crate::model::Association).
@@ -18158,7 +17570,7 @@ impl Association {
 
 /// <p>Describes a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated.</p>
@@ -18179,14 +17591,6 @@ impl AssociationFilter {
     /// <p>The filter value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociationFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AssociationFilter`](crate::model::AssociationFilter).
@@ -18474,7 +17878,7 @@ impl std::fmt::Debug for Parameter {
 pub mod parameter {
 
     /// A builder for [`Parameter`](crate::model::Parameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ParameterType>,
@@ -18610,6 +18014,21 @@ pub mod parameter {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.field("version", &self.version);
+            formatter.field("selector", &self.selector);
+            formatter.field("source_result", &self.source_result);
+            formatter.field("last_modified_date", &self.last_modified_date);
+            formatter.field("arn", &self.arn);
+            formatter.field("data_type", &self.data_type);
+            formatter.finish()
+        }
+    }
 }
 impl Parameter {
     /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
@@ -18620,7 +18039,7 @@ impl Parameter {
 
 /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterStringFilter {
     /// <p>The name of the filter.</p>
     /// <p>The <code>ParameterStringFilter</code> object is used by the <code>DescribeParameters</code> and <code>GetParametersByPath</code> API operations. However, not all of the pattern values listed for <code>Key</code> can be used with both operations.</p>
@@ -18654,15 +18073,6 @@ impl ParameterStringFilter {
     /// <p>The value you want to search for.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterStringFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterStringFilter");
-        formatter.field("key", &self.key);
-        formatter.field("option", &self.option);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ParameterStringFilter`](crate::model::ParameterStringFilter).
@@ -18867,7 +18277,7 @@ impl std::fmt::Debug for ParameterHistory {
 pub mod parameter_history {
 
     /// A builder for [`ParameterHistory`](crate::model::ParameterHistory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ParameterType>,
@@ -19065,6 +18475,25 @@ pub mod parameter_history {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("key_id", &self.key_id);
+            formatter.field("last_modified_date", &self.last_modified_date);
+            formatter.field("last_modified_user", &self.last_modified_user);
+            formatter.field("description", &self.description);
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.field("allowed_pattern", &self.allowed_pattern);
+            formatter.field("version", &self.version);
+            formatter.field("labels", &self.labels);
+            formatter.field("tier", &self.tier);
+            formatter.field("policies", &self.policies);
+            formatter.field("data_type", &self.data_type);
+            formatter.finish()
+        }
+    }
 }
 impl ParameterHistory {
     /// Creates a new builder-style object to manufacture [`ParameterHistory`](crate::model::ParameterHistory).
@@ -19075,7 +18504,7 @@ impl ParameterHistory {
 
 /// <p>One or more policies assigned to a parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterInlinePolicy {
     /// <p>The JSON text of the policy.</p>
     #[doc(hidden)]
@@ -19099,15 +18528,6 @@ impl ParameterInlinePolicy {
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     pub fn policy_status(&self) -> std::option::Option<&str> {
         self.policy_status.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterInlinePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterInlinePolicy");
-        formatter.field("policy_text", &self.policy_text);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field("policy_status", &self.policy_status);
-        formatter.finish()
     }
 }
 /// See [`ParameterInlinePolicy`](crate::model::ParameterInlinePolicy).
@@ -19173,7 +18593,7 @@ impl ParameterInlinePolicy {
 
 /// <p>The result of the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsEntity {
     /// <p>The query ID.</p>
     #[doc(hidden)]
@@ -19196,14 +18616,6 @@ impl OpsEntity {
         &std::collections::HashMap<std::string::String, crate::model::OpsEntityItem>,
     > {
         self.data.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsEntity");
-        formatter.field("id", &self.id);
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`OpsEntity`](crate::model::OpsEntity).
@@ -19271,7 +18683,7 @@ impl OpsEntity {
 
 /// <p>The OpsData summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsEntityItem {
     /// <p>The time the OpsData was captured.</p>
     #[doc(hidden)]
@@ -19293,14 +18705,6 @@ impl OpsEntityItem {
     ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
     {
         self.content.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsEntityItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsEntityItem");
-        formatter.field("capture_time", &self.capture_time);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`OpsEntityItem`](crate::model::OpsEntityItem).
@@ -19367,7 +18771,7 @@ impl OpsEntityItem {
 
 /// <p>The OpsItem data type to return.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsResultAttribute {
     /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
     #[doc(hidden)]
@@ -19377,13 +18781,6 @@ impl OpsResultAttribute {
     /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsResultAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsResultAttribute");
-        formatter.field("type_name", &self.type_name);
-        formatter.finish()
     }
 }
 /// See [`OpsResultAttribute`](crate::model::OpsResultAttribute).
@@ -19422,7 +18819,7 @@ impl OpsResultAttribute {
 
 /// <p>One or more aggregators for viewing counts of OpsData using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsAggregator {
     /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.</p>
     #[doc(hidden)]
@@ -19471,18 +18868,6 @@ impl OpsAggregator {
     /// <p>A nested aggregator for viewing counts of OpsData.</p>
     pub fn aggregators(&self) -> std::option::Option<&[crate::model::OpsAggregator]> {
         self.aggregators.as_deref()
-    }
-}
-impl std::fmt::Debug for OpsAggregator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsAggregator");
-        formatter.field("aggregator_type", &self.aggregator_type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("values", &self.values);
-        formatter.field("filters", &self.filters);
-        formatter.field("aggregators", &self.aggregators);
-        formatter.finish()
     }
 }
 /// See [`OpsAggregator`](crate::model::OpsAggregator).
@@ -19622,7 +19007,7 @@ impl OpsAggregator {
 
 /// <p>A filter for viewing OpsData summaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -19646,15 +19031,6 @@ impl OpsFilter {
     /// <p>The type of filter.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::OpsFilterOperatorType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`OpsFilter`](crate::model::OpsFilter).
@@ -19849,7 +19225,7 @@ impl AsRef<str> for OpsFilterOperatorType {
 /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational work items (OpsItems) impacting the performance and health of their Amazon Web Services resources. OpsCenter is integrated with Amazon EventBridge and Amazon CloudWatch. This means you can configure these services to automatically create an OpsItem in OpsCenter when a CloudWatch alarm enters the ALARM state or when EventBridge processes an event from any Amazon Web Services service that publishes events. Configuring Amazon CloudWatch alarms and EventBridge events to automatically create OpsItems allows you to quickly diagnose and remediate issues with Amazon Web Services resources from a single console.</p>
 /// <p>To help you diagnose issues, each OpsItem includes contextually relevant information such as the name and ID of the Amazon Web Services resource that generated the OpsItem, alarm or event details, alarm history, and an alarm timeline graph. For the Amazon Web Services resource, OpsCenter aggregates information from Config, CloudTrail logs, and EventBridge, so you don't have to navigate across multiple console pages during your investigation. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItem {
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
     #[doc(hidden)]
@@ -20013,33 +19389,6 @@ impl OpsItem {
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.planned_end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItem");
-        formatter.field("created_by", &self.created_by);
-        formatter.field("ops_item_type", &self.ops_item_type);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("description", &self.description);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("notifications", &self.notifications);
-        formatter.field("priority", &self.priority);
-        formatter.field("related_ops_items", &self.related_ops_items);
-        formatter.field("status", &self.status);
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.field("version", &self.version);
-        formatter.field("title", &self.title);
-        formatter.field("source", &self.source);
-        formatter.field("operational_data", &self.operational_data);
-        formatter.field("category", &self.category);
-        formatter.field("severity", &self.severity);
-        formatter.field("actual_start_time", &self.actual_start_time);
-        formatter.field("actual_end_time", &self.actual_end_time);
-        formatter.field("planned_start_time", &self.planned_start_time);
-        formatter.field("planned_end_time", &self.planned_end_time);
-        formatter.finish()
     }
 }
 /// See [`OpsItem`](crate::model::OpsItem).
@@ -20521,7 +19870,7 @@ impl AsRef<str> for MaintenanceWindowExecutionStatus {
 
 /// <p>The inventory item schema definition. Users can use this to compose inventory query filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryItemSchema {
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
     #[doc(hidden)]
@@ -20552,16 +19901,6 @@ impl InventoryItemSchema {
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryItemSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryItemSchema");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("version", &self.version);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
     }
 }
 /// See [`InventoryItemSchema`](crate::model::InventoryItemSchema).
@@ -20646,7 +19985,7 @@ impl InventoryItemSchema {
 
 /// <p>Attributes are the entries within the inventory item content. It contains name and value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryItemAttribute {
     /// <p>Name of the inventory item attribute.</p>
     #[doc(hidden)]
@@ -20663,14 +20002,6 @@ impl InventoryItemAttribute {
     /// <p>The data type of the inventory item attribute. </p>
     pub fn data_type(&self) -> std::option::Option<&crate::model::InventoryAttributeDataType> {
         self.data_type.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryItemAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryItemAttribute");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.finish()
     }
 }
 /// See [`InventoryItemAttribute`](crate::model::InventoryItemAttribute).
@@ -20816,7 +20147,7 @@ impl AsRef<str> for InventoryAttributeDataType {
 
 /// <p>Inventory query results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryResultEntity {
     /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID. </p>
     #[doc(hidden)]
@@ -20839,14 +20170,6 @@ impl InventoryResultEntity {
         &std::collections::HashMap<std::string::String, crate::model::InventoryResultItem>,
     > {
         self.data.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryResultEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryResultEntity");
-        formatter.field("id", &self.id);
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`InventoryResultEntity`](crate::model::InventoryResultEntity).
@@ -20914,7 +20237,7 @@ impl InventoryResultEntity {
 
 /// <p>The inventory result item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryResultItem {
     /// <p>The name of the inventory result item type.</p>
     #[doc(hidden)]
@@ -20957,17 +20280,6 @@ impl InventoryResultItem {
     ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
     {
         self.content.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryResultItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryResultItem");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("capture_time", &self.capture_time);
-        formatter.field("content_hash", &self.content_hash);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`InventoryResultItem`](crate::model::InventoryResultItem).
@@ -21073,7 +20385,7 @@ impl InventoryResultItem {
 
 /// <p>The inventory item result attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultAttribute {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
     #[doc(hidden)]
@@ -21083,13 +20395,6 @@ impl ResultAttribute {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResultAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultAttribute");
-        formatter.field("type_name", &self.type_name);
-        formatter.finish()
     }
 }
 /// See [`ResultAttribute`](crate::model::ResultAttribute).
@@ -21128,7 +20433,7 @@ impl ResultAttribute {
 
 /// <p>Specifies the inventory type and attribute for the aggregation execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryAggregator {
     /// <p>The inventory type and attribute name for aggregation.</p>
     #[doc(hidden)]
@@ -21152,15 +20457,6 @@ impl InventoryAggregator {
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
     pub fn groups(&self) -> std::option::Option<&[crate::model::InventoryGroup]> {
         self.groups.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryAggregator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryAggregator");
-        formatter.field("expression", &self.expression);
-        formatter.field("aggregators", &self.aggregators);
-        formatter.field("groups", &self.groups);
-        formatter.finish()
     }
 }
 /// See [`InventoryAggregator`](crate::model::InventoryAggregator).
@@ -21242,7 +20538,7 @@ impl InventoryAggregator {
 
 /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryGroup {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
@@ -21259,14 +20555,6 @@ impl InventoryGroup {
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::InventoryFilter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryGroup");
-        formatter.field("name", &self.name);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 /// See [`InventoryGroup`](crate::model::InventoryGroup).
@@ -21326,7 +20614,7 @@ impl InventoryGroup {
 
 /// <p>A structure that includes attributes that describe a document attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentContent {
     /// <p>The name of an attachment.</p>
     #[doc(hidden)]
@@ -21364,17 +20652,6 @@ impl AttachmentContent {
     /// <p>The URL location of the attachment content.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachmentContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentContent");
-        formatter.field("name", &self.name);
-        formatter.field("size", &self.size);
-        formatter.field("hash", &self.hash);
-        formatter.field("hash_type", &self.hash_type);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`AttachmentContent`](crate::model::AttachmentContent).
@@ -21551,7 +20828,7 @@ impl AsRef<str> for AttachmentHashType {
 
 /// <p>Defines the basic information about a patch baseline override.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaselineOverride {
     /// <p>The operating system rule used by the patch baseline override.</p>
     #[doc(hidden)]
@@ -21623,27 +20900,6 @@ impl BaselineOverride {
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
         self.sources.as_deref()
-    }
-}
-impl std::fmt::Debug for BaselineOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaselineOverride");
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("global_filters", &self.global_filters);
-        formatter.field("approval_rules", &self.approval_rules);
-        formatter.field("approved_patches", &self.approved_patches);
-        formatter.field(
-            "approved_patches_compliance_level",
-            &self.approved_patches_compliance_level,
-        );
-        formatter.field("rejected_patches", &self.rejected_patches);
-        formatter.field("rejected_patches_action", &self.rejected_patches_action);
-        formatter.field(
-            "approved_patches_enable_non_security",
-            &self.approved_patches_enable_non_security,
-        );
-        formatter.field("sources", &self.sources);
-        formatter.finish()
     }
 }
 /// See [`BaselineOverride`](crate::model::BaselineOverride).
@@ -22013,7 +21269,7 @@ impl AsRef<str> for CalendarState {
 
 /// <p>Detailed information about the current state of an individual Automation execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationExecution {
     /// <p>The execution ID.</p>
     #[doc(hidden)]
@@ -22273,51 +21529,6 @@ impl AutomationExecution {
     /// <p>The name of the Change Manager change request.</p>
     pub fn change_request_name(&self) -> std::option::Option<&str> {
         self.change_request_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AutomationExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationExecution");
-        formatter.field("automation_execution_id", &self.automation_execution_id);
-        formatter.field("document_name", &self.document_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("execution_start_time", &self.execution_start_time);
-        formatter.field("execution_end_time", &self.execution_end_time);
-        formatter.field(
-            "automation_execution_status",
-            &self.automation_execution_status,
-        );
-        formatter.field("step_executions", &self.step_executions);
-        formatter.field("step_executions_truncated", &self.step_executions_truncated);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.field("mode", &self.mode);
-        formatter.field(
-            "parent_automation_execution_id",
-            &self.parent_automation_execution_id,
-        );
-        formatter.field("executed_by", &self.executed_by);
-        formatter.field("current_step_name", &self.current_step_name);
-        formatter.field("current_action", &self.current_action);
-        formatter.field("target_parameter_name", &self.target_parameter_name);
-        formatter.field("targets", &self.targets);
-        formatter.field("target_maps", &self.target_maps);
-        formatter.field("resolved_targets", &self.resolved_targets);
-        formatter.field("max_concurrency", &self.max_concurrency);
-        formatter.field("max_errors", &self.max_errors);
-        formatter.field("target", &self.target);
-        formatter.field("target_locations", &self.target_locations);
-        formatter.field("progress_counters", &self.progress_counters);
-        formatter.field("alarm_configuration", &self.alarm_configuration);
-        formatter.field("triggered_alarms", &self.triggered_alarms);
-        formatter.field("automation_subtype", &self.automation_subtype);
-        formatter.field("scheduled_time", &self.scheduled_time);
-        formatter.field("runbooks", &self.runbooks);
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("change_request_name", &self.change_request_name);
-        formatter.finish()
     }
 }
 /// See [`AutomationExecution`](crate::model::AutomationExecution).
@@ -23002,7 +22213,7 @@ impl AsRef<str> for AutomationSubtype {
 
 /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProgressCounters {
     /// <p>The total number of steps run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
     #[doc(hidden)]
@@ -23040,17 +22251,6 @@ impl ProgressCounters {
     /// <p>The total number of steps that timed out in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
     pub fn timed_out_steps(&self) -> i32 {
         self.timed_out_steps
-    }
-}
-impl std::fmt::Debug for ProgressCounters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProgressCounters");
-        formatter.field("total_steps", &self.total_steps);
-        formatter.field("success_steps", &self.success_steps);
-        formatter.field("failed_steps", &self.failed_steps);
-        formatter.field("cancelled_steps", &self.cancelled_steps);
-        formatter.field("timed_out_steps", &self.timed_out_steps);
-        formatter.finish()
     }
 }
 /// See [`ProgressCounters`](crate::model::ProgressCounters).
@@ -23137,7 +22337,7 @@ impl ProgressCounters {
 
 /// <p>Information about targets that resolved during the Automation execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolvedTargets {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
     #[doc(hidden)]
@@ -23154,14 +22354,6 @@ impl ResolvedTargets {
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
-    }
-}
-impl std::fmt::Debug for ResolvedTargets {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolvedTargets");
-        formatter.field("parameter_values", &self.parameter_values);
-        formatter.field("truncated", &self.truncated);
-        formatter.finish()
     }
 }
 /// See [`ResolvedTargets`](crate::model::ResolvedTargets).
@@ -23221,7 +22413,7 @@ impl ResolvedTargets {
 
 /// <p>Detailed information about an the execution state of an Automation step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepExecution {
     /// <p>The name of this execution step.</p>
     #[doc(hidden)]
@@ -23394,34 +22586,6 @@ impl StepExecution {
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
     pub fn target_location(&self) -> std::option::Option<&crate::model::TargetLocation> {
         self.target_location.as_ref()
-    }
-}
-impl std::fmt::Debug for StepExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepExecution");
-        formatter.field("step_name", &self.step_name);
-        formatter.field("action", &self.action);
-        formatter.field("timeout_seconds", &self.timeout_seconds);
-        formatter.field("on_failure", &self.on_failure);
-        formatter.field("max_attempts", &self.max_attempts);
-        formatter.field("execution_start_time", &self.execution_start_time);
-        formatter.field("execution_end_time", &self.execution_end_time);
-        formatter.field("step_status", &self.step_status);
-        formatter.field("response_code", &self.response_code);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("response", &self.response);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("step_execution_id", &self.step_execution_id);
-        formatter.field("overridden_parameters", &self.overridden_parameters);
-        formatter.field("is_end", &self.is_end);
-        formatter.field("next_step", &self.next_step);
-        formatter.field("is_critical", &self.is_critical);
-        formatter.field("valid_next_steps", &self.valid_next_steps);
-        formatter.field("targets", &self.targets);
-        formatter.field("target_location", &self.target_location);
-        formatter.finish()
     }
 }
 /// See [`StepExecution`](crate::model::StepExecution).
@@ -23805,7 +22969,7 @@ impl StepExecution {
 
 /// <p>Information about an Automation failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
     #[doc(hidden)]
@@ -23835,15 +22999,6 @@ impl FailureDetails {
         &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     > {
         self.details.as_ref()
-    }
-}
-impl std::fmt::Debug for FailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailureDetails");
-        formatter.field("failure_stage", &self.failure_stage);
-        formatter.field("failure_type", &self.failure_type);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`FailureDetails`](crate::model::FailureDetails).
@@ -24129,7 +23284,7 @@ impl AsRef<str> for AutomationExecutionStatus {
 
 /// <p>Information about a Session Manager connection to a managed node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Session {
     /// <p>The ID of the session.</p>
     #[doc(hidden)]
@@ -24209,23 +23364,6 @@ impl Session {
     /// <p>The maximum duration of a session before it terminates.</p>
     pub fn max_session_duration(&self) -> std::option::Option<&str> {
         self.max_session_duration.as_deref()
-    }
-}
-impl std::fmt::Debug for Session {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Session");
-        formatter.field("session_id", &self.session_id);
-        formatter.field("target", &self.target);
-        formatter.field("status", &self.status);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("document_name", &self.document_name);
-        formatter.field("owner", &self.owner);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("output_url", &self.output_url);
-        formatter.field("max_session_duration", &self.max_session_duration);
-        formatter.finish()
     }
 }
 /// See [`Session`](crate::model::Session).
@@ -24402,7 +23540,7 @@ impl Session {
 
 /// <p>Reserved for future use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionManagerOutputUrl {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
@@ -24419,14 +23557,6 @@ impl SessionManagerOutputUrl {
     /// <p>Reserved for future use.</p>
     pub fn cloud_watch_output_url(&self) -> std::option::Option<&str> {
         self.cloud_watch_output_url.as_deref()
-    }
-}
-impl std::fmt::Debug for SessionManagerOutputUrl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionManagerOutputUrl");
-        formatter.field("s3_output_url", &self.s3_output_url);
-        formatter.field("cloud_watch_output_url", &self.cloud_watch_output_url);
-        formatter.finish()
     }
 }
 /// See [`SessionManagerOutputUrl`](crate::model::SessionManagerOutputUrl).
@@ -24600,7 +23730,7 @@ impl AsRef<str> for SessionStatus {
 
 /// <p>Describes a filter for Session Manager information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -24649,14 +23779,6 @@ impl SessionFilter {
     /// </ul>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SessionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SessionFilter`](crate::model::SessionFilter).
@@ -25156,7 +24278,7 @@ impl AsRef<str> for PatchProperty {
 
 /// <p>The mapping between a patch group and the patch baseline the patch group is registered with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchGroupPatchBaselineMapping {
     /// <p>The name of the patch group registered with the patch baseline.</p>
     #[doc(hidden)]
@@ -25173,14 +24295,6 @@ impl PatchGroupPatchBaselineMapping {
     /// <p>The patch baseline the patch group is registered with.</p>
     pub fn baseline_identity(&self) -> std::option::Option<&crate::model::PatchBaselineIdentity> {
         self.baseline_identity.as_ref()
-    }
-}
-impl std::fmt::Debug for PatchGroupPatchBaselineMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchGroupPatchBaselineMapping");
-        formatter.field("patch_group", &self.patch_group);
-        formatter.field("baseline_identity", &self.baseline_identity);
-        formatter.finish()
     }
 }
 /// See [`PatchGroupPatchBaselineMapping`](crate::model::PatchGroupPatchBaselineMapping).
@@ -25234,7 +24348,7 @@ impl PatchGroupPatchBaselineMapping {
 
 /// <p>Defines the basic information about a patch baseline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchBaselineIdentity {
     /// <p>The ID of the patch baseline.</p>
     #[doc(hidden)]
@@ -25272,17 +24386,6 @@ impl PatchBaselineIdentity {
     /// <p>Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p>
     pub fn default_baseline(&self) -> bool {
         self.default_baseline
-    }
-}
-impl std::fmt::Debug for PatchBaselineIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchBaselineIdentity");
-        formatter.field("baseline_id", &self.baseline_id);
-        formatter.field("baseline_name", &self.baseline_name);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("baseline_description", &self.baseline_description);
-        formatter.field("default_baseline", &self.default_baseline);
-        formatter.finish()
     }
 }
 /// See [`PatchBaselineIdentity`](crate::model::PatchBaselineIdentity).
@@ -25384,7 +24487,7 @@ impl PatchBaselineIdentity {
 /// <li> <p> <code>DescribePatchGroups</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchOrchestratorFilter {
     /// <p>The key for the filter.</p>
     #[doc(hidden)]
@@ -25401,14 +24504,6 @@ impl PatchOrchestratorFilter {
     /// <p>The value for the filter.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for PatchOrchestratorFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchOrchestratorFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`PatchOrchestratorFilter`](crate::model::PatchOrchestratorFilter).
@@ -25468,7 +24563,7 @@ impl PatchOrchestratorFilter {
 
 /// <p>Metadata includes information like the ARN of the last user and the date/time the parameter was last used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterMetadata {
     /// <p>The parameter name.</p>
     #[doc(hidden)]
@@ -25550,23 +24645,6 @@ impl ParameterMetadata {
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(&self) -> std::option::Option<&str> {
         self.data_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("last_modified_user", &self.last_modified_user);
-        formatter.field("description", &self.description);
-        formatter.field("allowed_pattern", &self.allowed_pattern);
-        formatter.field("version", &self.version);
-        formatter.field("tier", &self.tier);
-        formatter.field("policies", &self.policies);
-        formatter.field("data_type", &self.data_type);
-        formatter.finish()
     }
 }
 /// See [`ParameterMetadata`](crate::model::ParameterMetadata).
@@ -25746,7 +24824,7 @@ impl ParameterMetadata {
 
 /// <p>This data type is deprecated. Instead, use <code>ParameterStringFilter</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParametersFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -25763,14 +24841,6 @@ impl ParametersFilter {
     /// <p>The filter values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ParametersFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParametersFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ParametersFilter`](crate::model::ParametersFilter).
@@ -25930,7 +25000,7 @@ impl AsRef<str> for ParametersFilterKey {
 
 /// <p>A count of OpsItems.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemSummary {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
     #[doc(hidden)]
@@ -26058,29 +25128,6 @@ impl OpsItemSummary {
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.planned_end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsItemSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemSummary");
-        formatter.field("created_by", &self.created_by);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("priority", &self.priority);
-        formatter.field("source", &self.source);
-        formatter.field("status", &self.status);
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.field("title", &self.title);
-        formatter.field("operational_data", &self.operational_data);
-        formatter.field("category", &self.category);
-        formatter.field("severity", &self.severity);
-        formatter.field("ops_item_type", &self.ops_item_type);
-        formatter.field("actual_start_time", &self.actual_start_time);
-        formatter.field("actual_end_time", &self.actual_end_time);
-        formatter.field("planned_start_time", &self.planned_start_time);
-        formatter.field("planned_end_time", &self.planned_end_time);
-        formatter.finish()
     }
 }
 /// See [`OpsItemSummary`](crate::model::OpsItemSummary).
@@ -26355,7 +25402,7 @@ impl OpsItemSummary {
 
 /// <p>Describes an OpsItem filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsItemFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -26379,15 +25426,6 @@ impl OpsItemFilter {
     /// <p>The operator used by the filter call.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::OpsItemFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for OpsItemFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsItemFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`OpsItemFilter`](crate::model::OpsItemFilter).
@@ -26999,7 +26037,7 @@ impl std::fmt::Debug for MaintenanceWindowTask {
 pub mod maintenance_window_task {
 
     /// A builder for [`MaintenanceWindowTask`](crate::model::MaintenanceWindowTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
         pub(crate) window_task_id: std::option::Option<std::string::String>,
@@ -27282,6 +26320,27 @@ pub mod maintenance_window_task {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_id", &self.window_id);
+            formatter.field("window_task_id", &self.window_task_id);
+            formatter.field("task_arn", &self.task_arn);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("targets", &self.targets);
+            formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("priority", &self.priority);
+            formatter.field("logging_info", &self.logging_info);
+            formatter.field("service_role_arn", &self.service_role_arn);
+            formatter.field("max_concurrency", &self.max_concurrency);
+            formatter.field("max_errors", &self.max_errors);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("cutoff_behavior", &self.cutoff_behavior);
+            formatter.field("alarm_configuration", &self.alarm_configuration);
+            formatter.finish()
+        }
+    }
 }
 impl MaintenanceWindowTask {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowTask`](crate::model::MaintenanceWindowTask).
@@ -27300,7 +26359,7 @@ impl MaintenanceWindowTask {
 /// <li> <p> <code>DescribeMaintenanceWindowTasks</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceWindowFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -27317,14 +26376,6 @@ impl MaintenanceWindowFilter {
     /// <p>The filter values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for MaintenanceWindowFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceWindowFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceWindowFilter`](crate::model::MaintenanceWindowFilter).
@@ -27481,7 +26532,7 @@ impl std::fmt::Debug for MaintenanceWindowTarget {
 pub mod maintenance_window_target {
 
     /// A builder for [`MaintenanceWindowTarget`](crate::model::MaintenanceWindowTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
         pub(crate) window_target_id: std::option::Option<std::string::String>,
@@ -27617,6 +26668,19 @@ pub mod maintenance_window_target {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_id", &self.window_id);
+            formatter.field("window_target_id", &self.window_target_id);
+            formatter.field("resource_type", &self.resource_type);
+            formatter.field("targets", &self.targets);
+            formatter.field("owner_information", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl MaintenanceWindowTarget {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowTarget`](crate::model::MaintenanceWindowTarget).
@@ -27627,7 +26691,7 @@ impl MaintenanceWindowTarget {
 
 /// <p>The maintenance window to which the specified target belongs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceWindowIdentityForTarget {
     /// <p>The ID of the maintenance window.</p>
     #[doc(hidden)]
@@ -27644,14 +26708,6 @@ impl MaintenanceWindowIdentityForTarget {
     /// <p>The name of the maintenance window.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for MaintenanceWindowIdentityForTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceWindowIdentityForTarget");
-        formatter.field("window_id", &self.window_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceWindowIdentityForTarget`](crate::model::MaintenanceWindowIdentityForTarget).
@@ -27702,7 +26758,7 @@ impl MaintenanceWindowIdentityForTarget {
 
 /// <p>Information about a scheduled execution for a maintenance window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledWindowExecution {
     /// <p>The ID of the maintenance window to be run.</p>
     #[doc(hidden)]
@@ -27726,15 +26782,6 @@ impl ScheduledWindowExecution {
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
     pub fn execution_time(&self) -> std::option::Option<&str> {
         self.execution_time.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduledWindowExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledWindowExecution");
-        formatter.field("window_id", &self.window_id);
-        formatter.field("name", &self.name);
-        formatter.field("execution_time", &self.execution_time);
-        formatter.finish()
     }
 }
 /// See [`ScheduledWindowExecution`](crate::model::ScheduledWindowExecution).
@@ -27911,7 +26958,7 @@ impl std::fmt::Debug for MaintenanceWindowIdentity {
 pub mod maintenance_window_identity {
 
     /// A builder for [`MaintenanceWindowIdentity`](crate::model::MaintenanceWindowIdentity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -28071,6 +27118,24 @@ pub mod maintenance_window_identity {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_id", &self.window_id);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("enabled", &self.enabled);
+            formatter.field("duration", &self.duration);
+            formatter.field("cutoff", &self.cutoff);
+            formatter.field("schedule", &self.schedule);
+            formatter.field("schedule_timezone", &self.schedule_timezone);
+            formatter.field("schedule_offset", &self.schedule_offset);
+            formatter.field("end_date", &self.end_date);
+            formatter.field("start_date", &self.start_date);
+            formatter.field("next_execution_time", &self.next_execution_time);
+            formatter.finish()
+        }
+    }
 }
 impl MaintenanceWindowIdentity {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowIdentity`](crate::model::MaintenanceWindowIdentity).
@@ -28081,7 +27146,7 @@ impl MaintenanceWindowIdentity {
 
 /// <p>Information about a task execution performed as part of a maintenance window execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceWindowExecutionTaskIdentity {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
     #[doc(hidden)]
@@ -28154,22 +27219,6 @@ impl MaintenanceWindowExecutionTaskIdentity {
     /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
     pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
-    }
-}
-impl std::fmt::Debug for MaintenanceWindowExecutionTaskIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceWindowExecutionTaskIdentity");
-        formatter.field("window_execution_id", &self.window_execution_id);
-        formatter.field("task_execution_id", &self.task_execution_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("task_type", &self.task_type);
-        formatter.field("alarm_configuration", &self.alarm_configuration);
-        formatter.field("triggered_alarms", &self.triggered_alarms);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceWindowExecutionTaskIdentity`](crate::model::MaintenanceWindowExecutionTaskIdentity).
@@ -28461,7 +27510,7 @@ impl std::fmt::Debug for MaintenanceWindowExecutionTaskInvocationIdentity {
 pub mod maintenance_window_execution_task_invocation_identity {
 
     /// A builder for [`MaintenanceWindowExecutionTaskInvocationIdentity`](crate::model::MaintenanceWindowExecutionTaskInvocationIdentity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
         pub(crate) task_execution_id: std::option::Option<std::string::String>,
@@ -28645,6 +27694,24 @@ pub mod maintenance_window_execution_task_invocation_identity {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("window_execution_id", &self.window_execution_id);
+            formatter.field("task_execution_id", &self.task_execution_id);
+            formatter.field("invocation_id", &self.invocation_id);
+            formatter.field("execution_id", &self.execution_id);
+            formatter.field("task_type", &self.task_type);
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("status_details", &self.status_details);
+            formatter.field("start_time", &self.start_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("owner_information", &"*** Sensitive Data Redacted ***");
+            formatter.field("window_target_id", &self.window_target_id);
+            formatter.finish()
+        }
+    }
 }
 impl MaintenanceWindowExecutionTaskInvocationIdentity {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowExecutionTaskInvocationIdentity`](crate::model::MaintenanceWindowExecutionTaskInvocationIdentity).
@@ -28656,7 +27723,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentity {
 
 /// <p>Describes the information about an execution of a maintenance window. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceWindowExecution {
     /// <p>The ID of the maintenance window.</p>
     #[doc(hidden)]
@@ -28701,18 +27768,6 @@ impl MaintenanceWindowExecution {
     /// <p>The time the execution finished.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for MaintenanceWindowExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceWindowExecution");
-        formatter.field("window_id", &self.window_id);
-        formatter.field("window_execution_id", &self.window_execution_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceWindowExecution`](crate::model::MaintenanceWindowExecution).
@@ -28826,7 +27881,7 @@ impl MaintenanceWindowExecution {
 
 /// <p>Status information returned by the <code>DeleteInventory</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryDeletionStatusItem {
     /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
     #[doc(hidden)]
@@ -28878,19 +27933,6 @@ impl InventoryDeletionStatusItem {
     /// <p>The UTC timestamp of when the last status report.</p>
     pub fn last_status_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for InventoryDeletionStatusItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryDeletionStatusItem");
-        formatter.field("deletion_id", &self.deletion_id);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("deletion_start_time", &self.deletion_start_time);
-        formatter.field("last_status", &self.last_status);
-        formatter.field("last_status_message", &self.last_status_message);
-        formatter.field("deletion_summary", &self.deletion_summary);
-        formatter.field("last_status_update_time", &self.last_status_update_time);
-        formatter.finish()
     }
 }
 /// See [`InventoryDeletionStatusItem`](crate::model::InventoryDeletionStatusItem).
@@ -29016,7 +28058,7 @@ impl InventoryDeletionStatusItem {
 
 /// <p>Information about the delete operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryDeletionSummary {
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
     #[doc(hidden)]
@@ -29043,15 +28085,6 @@ impl InventoryDeletionSummary {
         &self,
     ) -> std::option::Option<&[crate::model::InventoryDeletionSummaryItem]> {
         self.summary_items.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryDeletionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryDeletionSummary");
-        formatter.field("total_count", &self.total_count);
-        formatter.field("remaining_count", &self.remaining_count);
-        formatter.field("summary_items", &self.summary_items);
-        formatter.finish()
     }
 }
 /// See [`InventoryDeletionSummary`](crate::model::InventoryDeletionSummary).
@@ -29124,7 +28157,7 @@ impl InventoryDeletionSummary {
 
 /// <p>Either a count, remaining count, or a version number in a delete inventory summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryDeletionSummaryItem {
     /// <p>The inventory type version.</p>
     #[doc(hidden)]
@@ -29148,15 +28181,6 @@ impl InventoryDeletionSummaryItem {
     /// <p>The remaining number of items to delete.</p>
     pub fn remaining_count(&self) -> i32 {
         self.remaining_count
-    }
-}
-impl std::fmt::Debug for InventoryDeletionSummaryItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryDeletionSummaryItem");
-        formatter.field("version", &self.version);
-        formatter.field("count", &self.count);
-        formatter.field("remaining_count", &self.remaining_count);
-        formatter.finish()
     }
 }
 /// See [`InventoryDeletionSummaryItem`](crate::model::InventoryDeletionSummaryItem).
@@ -29545,7 +28569,7 @@ impl std::fmt::Debug for InstancePatchState {
 pub mod instance_patch_state {
 
     /// A builder for [`InstancePatchState`](crate::model::InstancePatchState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) patch_group: std::option::Option<std::string::String>,
@@ -29876,6 +28900,49 @@ pub mod instance_patch_state {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("instance_id", &self.instance_id);
+            formatter.field("patch_group", &self.patch_group);
+            formatter.field("baseline_id", &self.baseline_id);
+            formatter.field("snapshot_id", &self.snapshot_id);
+            formatter.field("install_override_list", &self.install_override_list);
+            formatter.field("owner_information", &"*** Sensitive Data Redacted ***");
+            formatter.field("installed_count", &self.installed_count);
+            formatter.field("installed_other_count", &self.installed_other_count);
+            formatter.field(
+                "installed_pending_reboot_count",
+                &self.installed_pending_reboot_count,
+            );
+            formatter.field("installed_rejected_count", &self.installed_rejected_count);
+            formatter.field("missing_count", &self.missing_count);
+            formatter.field("failed_count", &self.failed_count);
+            formatter.field(
+                "unreported_not_applicable_count",
+                &self.unreported_not_applicable_count,
+            );
+            formatter.field("not_applicable_count", &self.not_applicable_count);
+            formatter.field("operation_start_time", &self.operation_start_time);
+            formatter.field("operation_end_time", &self.operation_end_time);
+            formatter.field("operation", &self.operation);
+            formatter.field(
+                "last_no_reboot_install_operation_time",
+                &self.last_no_reboot_install_operation_time,
+            );
+            formatter.field("reboot_option", &self.reboot_option);
+            formatter.field(
+                "critical_non_compliant_count",
+                &self.critical_non_compliant_count,
+            );
+            formatter.field(
+                "security_non_compliant_count",
+                &self.security_non_compliant_count,
+            );
+            formatter.field("other_non_compliant_count", &self.other_non_compliant_count);
+            formatter.finish()
+        }
+    }
 }
 impl InstancePatchState {
     /// Creates a new builder-style object to manufacture [`InstancePatchState`](crate::model::InstancePatchState).
@@ -30074,7 +29141,7 @@ impl AsRef<str> for PatchOperationType {
 /// <li> <p>Value for <code>Values</code>: <code>3</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstancePatchStateFilter {
     /// <p>The key for the filter. Supported values include the following:</p>
     /// <ul>
@@ -30118,15 +29185,6 @@ impl InstancePatchStateFilter {
     /// <p>The type of comparison that should be performed for the value.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::InstancePatchStateOperatorType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for InstancePatchStateFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstancePatchStateFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`InstancePatchStateFilter`](crate::model::InstancePatchStateFilter).
@@ -30323,7 +29381,7 @@ impl AsRef<str> for InstancePatchStateOperatorType {
 
 /// <p>Information about the state of a patch on a particular managed node as it relates to the patch baseline used to patch the node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchComplianceData {
     /// <p>The title of the patch.</p>
     #[doc(hidden)]
@@ -30377,19 +29435,6 @@ impl PatchComplianceData {
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
     pub fn cve_ids(&self) -> std::option::Option<&str> {
         self.cve_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for PatchComplianceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchComplianceData");
-        formatter.field("title", &self.title);
-        formatter.field("kb_id", &self.kb_id);
-        formatter.field("classification", &self.classification);
-        formatter.field("severity", &self.severity);
-        formatter.field("state", &self.state);
-        formatter.field("installed_time", &self.installed_time);
-        formatter.field("cve_ids", &self.cve_ids);
-        formatter.finish()
     }
 }
 /// See [`PatchComplianceData`](crate::model::PatchComplianceData).
@@ -30636,7 +29681,7 @@ impl AsRef<str> for PatchComplianceDataState {
 
 /// <p>Describes a filter for a specific list of managed nodes. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceInformation {
     /// <p>The managed node ID. </p>
     #[doc(hidden)]
@@ -30797,39 +29842,6 @@ impl InstanceInformation {
     /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. </p>
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceInformation");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("ping_status", &self.ping_status);
-        formatter.field("last_ping_date_time", &self.last_ping_date_time);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.field("is_latest_version", &self.is_latest_version);
-        formatter.field("platform_type", &self.platform_type);
-        formatter.field("platform_name", &self.platform_name);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("activation_id", &self.activation_id);
-        formatter.field("iam_role", &self.iam_role);
-        formatter.field("registration_date", &self.registration_date);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("name", &self.name);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("computer_name", &self.computer_name);
-        formatter.field("association_status", &self.association_status);
-        formatter.field(
-            "last_association_execution_date",
-            &self.last_association_execution_date,
-        );
-        formatter.field(
-            "last_successful_association_execution_date",
-            &self.last_successful_association_execution_date,
-        );
-        formatter.field("association_overview", &self.association_overview);
-        formatter.field("source_id", &self.source_id);
-        formatter.field("source_type", &self.source_type);
-        formatter.finish()
     }
 }
 /// See [`InstanceInformation`](crate::model::InstanceInformation).
@@ -31268,7 +30280,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Status information about the aggregated associations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceAggregatedAssociationOverview {
     /// <p>Detailed status information about the aggregated associations.</p>
     #[doc(hidden)]
@@ -31288,17 +30300,6 @@ impl InstanceAggregatedAssociationOverview {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
         self.instance_association_status_aggregated_count.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceAggregatedAssociationOverview {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAggregatedAssociationOverview");
-        formatter.field("detailed_status", &self.detailed_status);
-        formatter.field(
-            "instance_association_status_aggregated_count",
-            &self.instance_association_status_aggregated_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`InstanceAggregatedAssociationOverview`](crate::model::InstanceAggregatedAssociationOverview).
@@ -31559,7 +30560,7 @@ impl AsRef<str> for PingStatus {
 
 /// <p>The filters to describe or get information about your managed nodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceInformationStringFilter {
     /// <p>The filter key name to describe your managed nodes. For example:</p>
     /// <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" | "tag:<code>{keyname}</code> </p> <important>
@@ -31582,14 +30583,6 @@ impl InstanceInformationStringFilter {
     /// <p>The filter values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceInformationStringFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceInformationStringFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`InstanceInformationStringFilter`](crate::model::InstanceInformationStringFilter).
@@ -31656,7 +30649,7 @@ impl InstanceInformationStringFilter {
 /// <p>Describes a filter for a specific list of managed nodes. You can filter node information by using tags. You specify tags by using a key-value mapping.</p>
 /// <p>Use this operation instead of the <code>DescribeInstanceInformationRequest$InstanceInformationFilterList</code> method. The <code>InstanceInformationFilterList</code> method is a legacy method and doesn't support tags. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceInformationFilter {
     /// <p>The name of the filter. </p>
     #[doc(hidden)]
@@ -31673,14 +30666,6 @@ impl InstanceInformationFilter {
     /// <p>The filter values.</p>
     pub fn value_set(&self) -> std::option::Option<&[std::string::String]> {
         self.value_set.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceInformationFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceInformationFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value_set", &self.value_set);
-        formatter.finish()
     }
 }
 /// See [`InstanceInformationFilter`](crate::model::InstanceInformationFilter).
@@ -31874,7 +30859,7 @@ impl AsRef<str> for InstanceInformationFilterKey {
 
 /// <p>Status information about the association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceAssociationStatusInfo {
     /// <p>The association ID.</p>
     #[doc(hidden)]
@@ -31961,24 +30946,6 @@ impl InstanceAssociationStatusInfo {
     /// <p>The name of the association applied to the managed node.</p>
     pub fn association_name(&self) -> std::option::Option<&str> {
         self.association_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceAssociationStatusInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAssociationStatusInfo");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("name", &self.name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("association_version", &self.association_version);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("execution_date", &self.execution_date);
-        formatter.field("status", &self.status);
-        formatter.field("detailed_status", &self.detailed_status);
-        formatter.field("execution_summary", &self.execution_summary);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("output_url", &self.output_url);
-        formatter.field("association_name", &self.association_name);
-        formatter.finish()
     }
 }
 /// See [`InstanceAssociationStatusInfo`](crate::model::InstanceAssociationStatusInfo).
@@ -32173,7 +31140,7 @@ impl InstanceAssociationStatusInfo {
 
 /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceAssociationOutputUrl {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
     #[doc(hidden)]
@@ -32183,13 +31150,6 @@ impl InstanceAssociationOutputUrl {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
     pub fn s3_output_url(&self) -> std::option::Option<&crate::model::S3OutputUrl> {
         self.s3_output_url.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceAssociationOutputUrl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAssociationOutputUrl");
-        formatter.field("s3_output_url", &self.s3_output_url);
-        formatter.finish()
     }
 }
 /// See [`InstanceAssociationOutputUrl`](crate::model::InstanceAssociationOutputUrl).
@@ -32231,7 +31191,7 @@ impl InstanceAssociationOutputUrl {
 
 /// <p>A URL for the Amazon Web Services Systems Manager (Systems Manager) bucket where you want to store the results of this request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3OutputUrl {
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
     #[doc(hidden)]
@@ -32241,13 +31201,6 @@ impl S3OutputUrl {
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
     pub fn output_url(&self) -> std::option::Option<&str> {
         self.output_url.as_deref()
-    }
-}
-impl std::fmt::Debug for S3OutputUrl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3OutputUrl");
-        formatter.field("output_url", &self.output_url);
-        formatter.finish()
     }
 }
 /// See [`S3OutputUrl`](crate::model::S3OutputUrl).
@@ -32286,7 +31239,7 @@ impl S3OutputUrl {
 
 /// <p>The <code>EffectivePatch</code> structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EffectivePatch {
     /// <p>Provides metadata for a patch, including information such as the KB ID, severity, classification and a URL for where more information can be obtained about the patch.</p>
     #[doc(hidden)]
@@ -32303,14 +31256,6 @@ impl EffectivePatch {
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
     pub fn patch_status(&self) -> std::option::Option<&crate::model::PatchStatus> {
         self.patch_status.as_ref()
-    }
-}
-impl std::fmt::Debug for EffectivePatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EffectivePatch");
-        formatter.field("patch", &self.patch);
-        formatter.field("patch_status", &self.patch_status);
-        formatter.finish()
     }
 }
 /// See [`EffectivePatch`](crate::model::EffectivePatch).
@@ -32364,7 +31309,7 @@ impl EffectivePatch {
 
 /// <p>Information about the approval status of a patch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PatchStatus {
     /// <p>The approval status of a patch.</p>
     #[doc(hidden)]
@@ -32388,15 +31333,6 @@ impl PatchStatus {
     /// <p>The date the patch was approved (or will be approved if the status is <code>PENDING_APPROVAL</code>).</p>
     pub fn approval_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approval_date.as_ref()
-    }
-}
-impl std::fmt::Debug for PatchStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PatchStatus");
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("compliance_level", &self.compliance_level);
-        formatter.field("approval_date", &self.approval_date);
-        formatter.finish()
     }
 }
 /// See [`PatchStatus`](crate::model::PatchStatus).
@@ -32575,7 +31511,7 @@ impl AsRef<str> for PatchDeploymentStatus {
 
 /// <p>Represents metadata about a patch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Patch {
     /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
@@ -32743,35 +31679,6 @@ impl Patch {
     /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
-    }
-}
-impl std::fmt::Debug for Patch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Patch");
-        formatter.field("id", &self.id);
-        formatter.field("release_date", &self.release_date);
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("content_url", &self.content_url);
-        formatter.field("vendor", &self.vendor);
-        formatter.field("product_family", &self.product_family);
-        formatter.field("product", &self.product);
-        formatter.field("classification", &self.classification);
-        formatter.field("msrc_severity", &self.msrc_severity);
-        formatter.field("kb_number", &self.kb_number);
-        formatter.field("msrc_number", &self.msrc_number);
-        formatter.field("language", &self.language);
-        formatter.field("advisory_ids", &self.advisory_ids);
-        formatter.field("bugzilla_ids", &self.bugzilla_ids);
-        formatter.field("cve_ids", &self.cve_ids);
-        formatter.field("name", &self.name);
-        formatter.field("epoch", &self.epoch);
-        formatter.field("version", &self.version);
-        formatter.field("release", &self.release);
-        formatter.field("arch", &self.arch);
-        formatter.field("severity", &self.severity);
-        formatter.field("repository", &self.repository);
-        formatter.finish()
     }
 }
 /// See [`Patch`](crate::model::Patch).
@@ -33117,7 +32024,7 @@ impl Patch {
 
 /// <p>One or more association documents on the managed node. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceAssociation {
     /// <p>The association ID.</p>
     #[doc(hidden)]
@@ -33148,16 +32055,6 @@ impl InstanceAssociation {
     /// <p>Version information for the association on the managed node.</p>
     pub fn association_version(&self) -> std::option::Option<&str> {
         self.association_version.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAssociation");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("content", &self.content);
-        formatter.field("association_version", &self.association_version);
-        formatter.finish()
     }
 }
 /// See [`InstanceAssociation`](crate::model::InstanceAssociation).
@@ -33238,7 +32135,7 @@ impl InstanceAssociation {
 
 /// <p>Information includes the Amazon Web Services account ID where the current document is shared and the version shared with that account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountSharingInfo {
     /// <p>The Amazon Web Services account ID where the current document is shared.</p>
     #[doc(hidden)]
@@ -33255,14 +32152,6 @@ impl AccountSharingInfo {
     /// <p>The version of the current document shared with the account.</p>
     pub fn shared_document_version(&self) -> std::option::Option<&str> {
         self.shared_document_version.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountSharingInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountSharingInfo");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("shared_document_version", &self.shared_document_version);
-        formatter.finish()
     }
 }
 /// See [`AccountSharingInfo`](crate::model::AccountSharingInfo).
@@ -33316,7 +32205,7 @@ impl AccountSharingInfo {
 
 /// <p>A filter to limit the amount of step execution information returned by the call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepExecutionFilter {
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
     #[doc(hidden)]
@@ -33333,14 +32222,6 @@ impl StepExecutionFilter {
     /// <p>The values of the filter key.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for StepExecutionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepExecutionFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`StepExecutionFilter`](crate::model::StepExecutionFilter).
@@ -33522,7 +32403,7 @@ impl AsRef<str> for StepExecutionFilterKey {
 
 /// <p>Details about a specific Automation execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationExecutionMetadata {
     /// <p>The execution ID.</p>
     #[doc(hidden)]
@@ -33755,48 +32636,6 @@ impl AutomationExecutionMetadata {
     /// <p>The name of the Change Manager change request.</p>
     pub fn change_request_name(&self) -> std::option::Option<&str> {
         self.change_request_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AutomationExecutionMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationExecutionMetadata");
-        formatter.field("automation_execution_id", &self.automation_execution_id);
-        formatter.field("document_name", &self.document_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field(
-            "automation_execution_status",
-            &self.automation_execution_status,
-        );
-        formatter.field("execution_start_time", &self.execution_start_time);
-        formatter.field("execution_end_time", &self.execution_end_time);
-        formatter.field("executed_by", &self.executed_by);
-        formatter.field("log_file", &self.log_file);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("mode", &self.mode);
-        formatter.field(
-            "parent_automation_execution_id",
-            &self.parent_automation_execution_id,
-        );
-        formatter.field("current_step_name", &self.current_step_name);
-        formatter.field("current_action", &self.current_action);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.field("target_parameter_name", &self.target_parameter_name);
-        formatter.field("targets", &self.targets);
-        formatter.field("target_maps", &self.target_maps);
-        formatter.field("resolved_targets", &self.resolved_targets);
-        formatter.field("max_concurrency", &self.max_concurrency);
-        formatter.field("max_errors", &self.max_errors);
-        formatter.field("target", &self.target);
-        formatter.field("automation_type", &self.automation_type);
-        formatter.field("alarm_configuration", &self.alarm_configuration);
-        formatter.field("triggered_alarms", &self.triggered_alarms);
-        formatter.field("automation_subtype", &self.automation_subtype);
-        formatter.field("scheduled_time", &self.scheduled_time);
-        formatter.field("runbooks", &self.runbooks);
-        formatter.field("ops_item_id", &self.ops_item_id);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("change_request_name", &self.change_request_name);
-        formatter.finish()
     }
 }
 /// See [`AutomationExecutionMetadata`](crate::model::AutomationExecutionMetadata).
@@ -34412,7 +33251,7 @@ impl AsRef<str> for AutomationType {
 
 /// <p>A filter used to match specific automation executions. This is used to limit the scope of Automation execution information returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomationExecutionFilter {
     /// <p>One or more keys to limit the results.</p>
     #[doc(hidden)]
@@ -34429,14 +33268,6 @@ impl AutomationExecutionFilter {
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for AutomationExecutionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomationExecutionFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`AutomationExecutionFilter`](crate::model::AutomationExecutionFilter).
@@ -34654,7 +33485,7 @@ impl AsRef<str> for AutomationExecutionFilterKey {
 
 /// <p>Includes information about the specified association execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationExecutionTarget {
     /// <p>The association ID.</p>
     #[doc(hidden)]
@@ -34720,21 +33551,6 @@ impl AssociationExecutionTarget {
     /// <p>The location where the association details are saved.</p>
     pub fn output_source(&self) -> std::option::Option<&crate::model::OutputSource> {
         self.output_source.as_ref()
-    }
-}
-impl std::fmt::Debug for AssociationExecutionTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationExecutionTarget");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("association_version", &self.association_version);
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("status", &self.status);
-        formatter.field("detailed_status", &self.detailed_status);
-        formatter.field("last_execution_date", &self.last_execution_date);
-        formatter.field("output_source", &self.output_source);
-        formatter.finish()
     }
 }
 /// See [`AssociationExecutionTarget`](crate::model::AssociationExecutionTarget).
@@ -34887,7 +33703,7 @@ impl AssociationExecutionTarget {
 
 /// <p>Information about the source where the association execution details are stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputSource {
     /// <p>The ID of the output source, for example the URL of an S3 bucket.</p>
     #[doc(hidden)]
@@ -34904,14 +33720,6 @@ impl OutputSource {
     /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
     pub fn output_source_type(&self) -> std::option::Option<&str> {
         self.output_source_type.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputSource");
-        formatter.field("output_source_id", &self.output_source_id);
-        formatter.field("output_source_type", &self.output_source_type);
-        formatter.finish()
     }
 }
 /// See [`OutputSource`](crate::model::OutputSource).
@@ -34968,7 +33776,7 @@ impl OutputSource {
 
 /// <p>Filters for the association execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationExecutionTargetsFilter {
     /// <p>The key value used in the request.</p>
     #[doc(hidden)]
@@ -34985,14 +33793,6 @@ impl AssociationExecutionTargetsFilter {
     /// <p>The value specified for the key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociationExecutionTargetsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationExecutionTargetsFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AssociationExecutionTargetsFilter`](crate::model::AssociationExecutionTargetsFilter).
@@ -35143,7 +33943,7 @@ impl AsRef<str> for AssociationExecutionTargetsFilterKey {
 
 /// <p>Includes information about the specified association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationExecution {
     /// <p>The association ID.</p>
     #[doc(hidden)]
@@ -35216,22 +34016,6 @@ impl AssociationExecution {
     /// <p>The CloudWatch alarms that were invoked by the association.</p>
     pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociationExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationExecution");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("association_version", &self.association_version);
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("status", &self.status);
-        formatter.field("detailed_status", &self.detailed_status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_execution_date", &self.last_execution_date);
-        formatter.field("resource_count_by_status", &self.resource_count_by_status);
-        formatter.field("alarm_configuration", &self.alarm_configuration);
-        formatter.field("triggered_alarms", &self.triggered_alarms);
-        formatter.finish()
     }
 }
 /// See [`AssociationExecution`](crate::model::AssociationExecution).
@@ -35409,7 +34193,7 @@ impl AssociationExecution {
 
 /// <p>Filters used in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociationExecutionFilter {
     /// <p>The key value used in the request.</p>
     #[doc(hidden)]
@@ -35433,15 +34217,6 @@ impl AssociationExecutionFilter {
     /// <p>The filter type specified in the request.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::AssociationFilterOperatorType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for AssociationExecutionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociationExecutionFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`AssociationExecutionFilter`](crate::model::AssociationExecutionFilter).
@@ -35704,7 +34479,7 @@ impl AsRef<str> for AssociationExecutionFilterKey {
 
 /// <p>An activation registers one or more on-premises servers or virtual machines (VMs) with Amazon Web Services so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with Amazon Web Services Systems Manager is called a managed node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Activation {
     /// <p>The ID created by Systems Manager when you submitted the activation.</p>
     #[doc(hidden)]
@@ -35777,22 +34552,6 @@ impl Activation {
     /// <p>Tags assigned to the activation.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for Activation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Activation");
-        formatter.field("activation_id", &self.activation_id);
-        formatter.field("description", &self.description);
-        formatter.field("default_instance_name", &self.default_instance_name);
-        formatter.field("iam_role", &self.iam_role);
-        formatter.field("registration_limit", &self.registration_limit);
-        formatter.field("registrations_count", &self.registrations_count);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("expired", &self.expired);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Activation`](crate::model::Activation).
@@ -35960,7 +34719,7 @@ impl Activation {
 
 /// <p>Filter for the DescribeActivation API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeActivationsFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -35977,14 +34736,6 @@ impl DescribeActivationsFilter {
     /// <p>The filter values.</p>
     pub fn filter_values(&self) -> std::option::Option<&[std::string::String]> {
         self.filter_values.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeActivationsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeActivationsFilter");
-        formatter.field("filter_key", &self.filter_key);
-        formatter.field("filter_values", &self.filter_values);
-        formatter.finish()
     }
 }
 /// See [`DescribeActivationsFilter`](crate::model::DescribeActivationsFilter).
@@ -36236,7 +34987,7 @@ impl AsRef<str> for InventorySchemaDeleteOption {
 
 /// <p>Describes a failed association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedCreateAssociation {
     /// <p>The association.</p>
     #[doc(hidden)]
@@ -36260,15 +35011,6 @@ impl FailedCreateAssociation {
     /// <p>The source of the failure.</p>
     pub fn fault(&self) -> std::option::Option<&crate::model::Fault> {
         self.fault.as_ref()
-    }
-}
-impl std::fmt::Debug for FailedCreateAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedCreateAssociation");
-        formatter.field("entry", &self.entry);
-        formatter.field("message", &self.message);
-        formatter.field("fault", &self.fault);
-        formatter.finish()
     }
 }
 /// See [`FailedCreateAssociation`](crate::model::FailedCreateAssociation).
@@ -36644,7 +35386,7 @@ impl std::fmt::Debug for CreateAssociationBatchRequestEntry {
 pub mod create_association_batch_request_entry {
 
     /// A builder for [`CreateAssociationBatchRequestEntry`](crate::model::CreateAssociationBatchRequestEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -37015,6 +35757,37 @@ pub mod create_association_batch_request_entry {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("instance_id", &self.instance_id);
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "automation_target_parameter_name",
+                &self.automation_target_parameter_name,
+            );
+            formatter.field("document_version", &self.document_version);
+            formatter.field("targets", &self.targets);
+            formatter.field("schedule_expression", &self.schedule_expression);
+            formatter.field("output_location", &self.output_location);
+            formatter.field("association_name", &self.association_name);
+            formatter.field("max_errors", &self.max_errors);
+            formatter.field("max_concurrency", &self.max_concurrency);
+            formatter.field("compliance_severity", &self.compliance_severity);
+            formatter.field("sync_compliance", &self.sync_compliance);
+            formatter.field(
+                "apply_only_at_cron_interval",
+                &self.apply_only_at_cron_interval,
+            );
+            formatter.field("calendar_names", &self.calendar_names);
+            formatter.field("target_locations", &self.target_locations);
+            formatter.field("schedule_offset", &self.schedule_offset);
+            formatter.field("target_maps", &self.target_maps);
+            formatter.field("alarm_configuration", &self.alarm_configuration);
+            formatter.finish()
+        }
+    }
 }
 impl CreateAssociationBatchRequestEntry {
     /// Creates a new builder-style object to manufacture [`CreateAssociationBatchRequestEntry`](crate::model::CreateAssociationBatchRequestEntry).
@@ -37025,7 +35798,7 @@ impl CreateAssociationBatchRequestEntry {
 
 /// <p>Reserved for internal use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistrationMetadataItem {
     /// <p>Reserved for internal use.</p>
     #[doc(hidden)]
@@ -37042,14 +35815,6 @@ impl RegistrationMetadataItem {
     /// <p>Reserved for internal use.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for RegistrationMetadataItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistrationMetadataItem");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`RegistrationMetadataItem`](crate::model::RegistrationMetadataItem).

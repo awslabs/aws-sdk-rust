@@ -1027,7 +1027,7 @@ impl UpdateReportDefinitionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReportDefinitionInput {
     /// <p>Required. ID of the report to update.</p>
     #[doc(hidden)]
@@ -1067,21 +1067,10 @@ impl UpdateReportDefinitionInput {
         self.destination_s3_location.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReportDefinitionInput");
-        formatter.field("report_id", &self.report_id);
-        formatter.field("report_description", &self.report_description);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field("format", &self.format);
-        formatter.field("destination_s3_location", &self.destination_s3_location);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutReportDefinitionInput {
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
     #[doc(hidden)]
@@ -1121,21 +1110,10 @@ impl PutReportDefinitionInput {
         self.destination_s3_location.as_ref()
     }
 }
-impl std::fmt::Debug for PutReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutReportDefinitionInput");
-        formatter.field("report_id", &self.report_id);
-        formatter.field("report_description", &self.report_description);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field("format", &self.format);
-        formatter.field("destination_s3_location", &self.destination_s3_location);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReportDefinitionsInput {
     /// <p>The token value from a previous call to access the next page of results.</p>
     #[doc(hidden)]
@@ -1154,18 +1132,10 @@ impl ListReportDefinitionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReportDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReportDefinitionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportApplicationUsageInput {
     /// <p>Amazon S3 location to import application usage data from.</p>
     #[doc(hidden)]
@@ -1177,17 +1147,10 @@ impl ImportApplicationUsageInput {
         self.source_s3_location.as_ref()
     }
 }
-impl std::fmt::Debug for ImportApplicationUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportApplicationUsageInput");
-        formatter.field("source_s3_location", &self.source_s3_location);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReportDefinitionInput {
     /// <p>ID of the report to retrieve.</p>
     #[doc(hidden)]
@@ -1199,17 +1162,10 @@ impl GetReportDefinitionInput {
         self.report_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReportDefinitionInput");
-        formatter.field("report_id", &self.report_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReportDefinitionInput {
     /// <p>Required. ID of the report to delete.</p>
     #[doc(hidden)]
@@ -1219,12 +1175,5 @@ impl DeleteReportDefinitionInput {
     /// <p>Required. ID of the report to delete.</p>
     pub fn report_id(&self) -> std::option::Option<&str> {
         self.report_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReportDefinitionInput");
-        formatter.field("report_id", &self.report_id);
-        formatter.finish()
     }
 }

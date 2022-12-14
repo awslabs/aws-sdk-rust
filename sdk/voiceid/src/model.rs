@@ -101,7 +101,7 @@ impl std::fmt::Debug for DomainSummary {
 pub mod domain_summary {
 
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -242,6 +242,27 @@ pub mod domain_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("domain_status", &self.domain_status);
+            formatter.field(
+                "server_side_encryption_configuration",
+                &self.server_side_encryption_configuration,
+            );
+            formatter.field("created_at", &self.created_at);
+            formatter.field("updated_at", &self.updated_at);
+            formatter.field(
+                "server_side_encryption_update_details",
+                &self.server_side_encryption_update_details,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl DomainSummary {
     /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
@@ -252,7 +273,7 @@ impl DomainSummary {
 
 /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain’s data can only be accessed using the new KMS key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerSideEncryptionUpdateDetails {
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
     #[doc(hidden)]
@@ -278,15 +299,6 @@ impl ServerSideEncryptionUpdateDetails {
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerSideEncryptionUpdateDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerSideEncryptionUpdateDetails");
-        formatter.field("old_kms_key_id", &self.old_kms_key_id);
-        formatter.field("update_status", &self.update_status);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
@@ -456,7 +468,7 @@ impl AsRef<str> for ServerSideEncryptionUpdateStatus {
 
 /// <p>The configuration containing information about the customer managed key used for encrypting customer data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys. </p>
     #[doc(hidden)]
@@ -466,13 +478,6 @@ impl ServerSideEncryptionConfiguration {
     /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerSideEncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerSideEncryptionConfiguration");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
@@ -959,7 +964,7 @@ impl std::fmt::Debug for Domain {
 pub mod domain {
 
     /// A builder for [`Domain`](crate::model::Domain).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1100,6 +1105,27 @@ pub mod domain {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("domain_status", &self.domain_status);
+            formatter.field(
+                "server_side_encryption_configuration",
+                &self.server_side_encryption_configuration,
+            );
+            formatter.field("created_at", &self.created_at);
+            formatter.field("updated_at", &self.updated_at);
+            formatter.field(
+                "server_side_encryption_update_details",
+                &self.server_side_encryption_update_details,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl Domain {
     /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
@@ -1141,7 +1167,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1173,6 +1199,14 @@ pub mod tag {
                 key: self.key,
                 value: self.value,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key", &"*** Sensitive Data Redacted ***");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1296,7 +1330,7 @@ impl std::fmt::Debug for SpeakerEnrollmentJob {
 pub mod speaker_enrollment_job {
 
     /// A builder for [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1477,6 +1511,24 @@ pub mod speaker_enrollment_job {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("job_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("job_id", &self.job_id);
+            formatter.field("job_status", &self.job_status);
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("data_access_role_arn", &self.data_access_role_arn);
+            formatter.field("enrollment_config", &self.enrollment_config);
+            formatter.field("input_data_config", &self.input_data_config);
+            formatter.field("output_data_config", &self.output_data_config);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("ended_at", &self.ended_at);
+            formatter.field("failure_details", &self.failure_details);
+            formatter.field("job_progress", &self.job_progress);
+            formatter.finish()
+        }
+    }
 }
 impl SpeakerEnrollmentJob {
     /// Creates a new builder-style object to manufacture [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
@@ -1487,7 +1539,7 @@ impl SpeakerEnrollmentJob {
 
 /// <p>Indicates the completion progress for a batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobProgress {
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
     #[doc(hidden)]
@@ -1497,13 +1549,6 @@ impl JobProgress {
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
     pub fn percent_complete(&self) -> std::option::Option<i32> {
         self.percent_complete
-    }
-}
-impl std::fmt::Debug for JobProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobProgress");
-        formatter.field("percent_complete", &self.percent_complete);
-        formatter.finish()
     }
 }
 /// See [`JobProgress`](crate::model::JobProgress).
@@ -1542,7 +1587,7 @@ impl JobProgress {
 
 /// <p>Contains error details for a failed batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>An HTTP status code representing the nature of the error.</p>
     #[doc(hidden)]
@@ -1559,14 +1604,6 @@ impl FailureDetails {
     /// <p>A description of the error that caused the batch job failure.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for FailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailureDetails");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`FailureDetails`](crate::model::FailureDetails).
@@ -1617,7 +1654,7 @@ impl FailureDetails {
 
 /// <p>The configuration containing output file information for a batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDataConfig {
     /// <p>The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
     #[doc(hidden)]
@@ -1634,14 +1671,6 @@ impl OutputDataConfig {
     /// <p>The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment job/fraudster registration job. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
@@ -1692,7 +1721,7 @@ impl OutputDataConfig {
 
 /// <p>The configuration containing input file information for a batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     #[doc(hidden)]
@@ -1702,13 +1731,6 @@ impl InputDataConfig {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.finish()
     }
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
@@ -1747,7 +1769,7 @@ impl InputDataConfig {
 
 /// <p>Contains configurations defining enrollment behavior for the batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnrollmentConfig {
     /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     #[doc(hidden)]
@@ -1769,17 +1791,6 @@ impl EnrollmentConfig {
         &self,
     ) -> std::option::Option<&crate::model::EnrollmentJobFraudDetectionConfig> {
         self.fraud_detection_config.as_ref()
-    }
-}
-impl std::fmt::Debug for EnrollmentConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnrollmentConfig");
-        formatter.field(
-            "existing_enrollment_action",
-            &self.existing_enrollment_action,
-        );
-        formatter.field("fraud_detection_config", &self.fraud_detection_config);
-        formatter.finish()
     }
 }
 /// See [`EnrollmentConfig`](crate::model::EnrollmentConfig).
@@ -1844,7 +1855,7 @@ impl EnrollmentConfig {
 
 /// <p>The configuration defining the action to take when a speaker is flagged by the fraud detection system during a batch speaker enrollment job, and the risk threshold to use for identification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnrollmentJobFraudDetectionConfig {
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
     #[doc(hidden)]
@@ -1863,14 +1874,6 @@ impl EnrollmentJobFraudDetectionConfig {
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
     pub fn risk_threshold(&self) -> std::option::Option<i32> {
         self.risk_threshold
-    }
-}
-impl std::fmt::Debug for EnrollmentJobFraudDetectionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnrollmentJobFraudDetectionConfig");
-        formatter.field("fraud_detection_action", &self.fraud_detection_action);
-        formatter.field("risk_threshold", &self.risk_threshold);
-        formatter.finish()
     }
 }
 /// See [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
@@ -2332,7 +2335,7 @@ impl std::fmt::Debug for FraudsterRegistrationJob {
 pub mod fraudster_registration_job {
 
     /// A builder for [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2513,6 +2516,24 @@ pub mod fraudster_registration_job {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("job_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("job_id", &self.job_id);
+            formatter.field("job_status", &self.job_status);
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("data_access_role_arn", &self.data_access_role_arn);
+            formatter.field("registration_config", &self.registration_config);
+            formatter.field("input_data_config", &self.input_data_config);
+            formatter.field("output_data_config", &self.output_data_config);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("ended_at", &self.ended_at);
+            formatter.field("failure_details", &self.failure_details);
+            formatter.field("job_progress", &self.job_progress);
+            formatter.finish()
+        }
+    }
 }
 impl FraudsterRegistrationJob {
     /// Creates a new builder-style object to manufacture [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
@@ -2523,7 +2544,7 @@ impl FraudsterRegistrationJob {
 
 /// <p>The configuration defining the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster during a batch fraudster registration job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistrationConfig {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
     #[doc(hidden)]
@@ -2543,20 +2564,6 @@ impl RegistrationConfig {
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     pub fn fraudster_similarity_threshold(&self) -> std::option::Option<i32> {
         self.fraudster_similarity_threshold
-    }
-}
-impl std::fmt::Debug for RegistrationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistrationConfig");
-        formatter.field(
-            "duplicate_registration_action",
-            &self.duplicate_registration_action,
-        );
-        formatter.field(
-            "fraudster_similarity_threshold",
-            &self.fraudster_similarity_threshold,
-        );
-        formatter.finish()
     }
 }
 /// See [`RegistrationConfig`](crate::model::RegistrationConfig).
@@ -2893,7 +2900,7 @@ impl std::fmt::Debug for Speaker {
 pub mod speaker {
 
     /// A builder for [`Speaker`](crate::model::Speaker).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) customer_speaker_id: std::option::Option<std::string::String>,
@@ -3003,6 +3010,19 @@ pub mod speaker {
                 updated_at: self.updated_at,
                 last_accessed_at: self.last_accessed_at,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("customer_speaker_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("generated_speaker_id", &self.generated_speaker_id);
+            formatter.field("status", &self.status);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("updated_at", &self.updated_at);
+            formatter.field("last_accessed_at", &self.last_accessed_at);
+            formatter.finish()
         }
     }
 }
@@ -3186,7 +3206,7 @@ impl std::fmt::Debug for SpeakerSummary {
 pub mod speaker_summary {
 
     /// A builder for [`SpeakerSummary`](crate::model::SpeakerSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) customer_speaker_id: std::option::Option<std::string::String>,
@@ -3298,6 +3318,19 @@ pub mod speaker_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("customer_speaker_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("generated_speaker_id", &self.generated_speaker_id);
+            formatter.field("status", &self.status);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("updated_at", &self.updated_at);
+            formatter.field("last_accessed_at", &self.last_accessed_at);
+            formatter.finish()
+        }
+    }
 }
 impl SpeakerSummary {
     /// Creates a new builder-style object to manufacture [`SpeakerSummary`](crate::model::SpeakerSummary).
@@ -3387,7 +3420,7 @@ impl std::fmt::Debug for SpeakerEnrollmentJobSummary {
 pub mod speaker_enrollment_job_summary {
 
     /// A builder for [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3508,6 +3541,20 @@ pub mod speaker_enrollment_job_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("job_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("job_id", &self.job_id);
+            formatter.field("job_status", &self.job_status);
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("ended_at", &self.ended_at);
+            formatter.field("failure_details", &self.failure_details);
+            formatter.field("job_progress", &self.job_progress);
+            formatter.finish()
+        }
+    }
 }
 impl SpeakerEnrollmentJobSummary {
     /// Creates a new builder-style object to manufacture [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
@@ -3597,7 +3644,7 @@ impl std::fmt::Debug for FraudsterRegistrationJobSummary {
 pub mod fraudster_registration_job_summary {
 
     /// A builder for [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3718,6 +3765,20 @@ pub mod fraudster_registration_job_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("job_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("job_id", &self.job_id);
+            formatter.field("job_status", &self.job_status);
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("ended_at", &self.ended_at);
+            formatter.field("failure_details", &self.failure_details);
+            formatter.field("job_progress", &self.job_progress);
+            formatter.finish()
+        }
+    }
 }
 impl FraudsterRegistrationJobSummary {
     /// Creates a new builder-style object to manufacture [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
@@ -3728,7 +3789,7 @@ impl FraudsterRegistrationJobSummary {
 
 /// <p>The fraud detection result produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FraudDetectionResult {
     /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
     #[doc(hidden)]
@@ -3780,25 +3841,6 @@ impl FraudDetectionResult {
     /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
     pub fn risk_details(&self) -> std::option::Option<&crate::model::FraudRiskDetails> {
         self.risk_details.as_ref()
-    }
-}
-impl std::fmt::Debug for FraudDetectionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FraudDetectionResult");
-        formatter.field("fraud_detection_result_id", &self.fraud_detection_result_id);
-        formatter.field(
-            "audio_aggregation_started_at",
-            &self.audio_aggregation_started_at,
-        );
-        formatter.field(
-            "audio_aggregation_ended_at",
-            &self.audio_aggregation_ended_at,
-        );
-        formatter.field("configuration", &self.configuration);
-        formatter.field("decision", &self.decision);
-        formatter.field("reasons", &self.reasons);
-        formatter.field("risk_details", &self.risk_details);
-        formatter.finish()
     }
 }
 /// See [`FraudDetectionResult`](crate::model::FraudDetectionResult).
@@ -3936,7 +3978,7 @@ impl FraudDetectionResult {
 
 /// <p>Details regarding various fraud risk analyses performed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FraudRiskDetails {
     /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
     #[doc(hidden)]
@@ -3953,14 +3995,6 @@ impl FraudRiskDetails {
     /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
     pub fn voice_spoofing_risk(&self) -> std::option::Option<&crate::model::VoiceSpoofingRisk> {
         self.voice_spoofing_risk.as_ref()
-    }
-}
-impl std::fmt::Debug for FraudRiskDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FraudRiskDetails");
-        formatter.field("known_fraudster_risk", &self.known_fraudster_risk);
-        formatter.field("voice_spoofing_risk", &self.voice_spoofing_risk);
-        formatter.finish()
     }
 }
 /// See [`FraudRiskDetails`](crate::model::FraudRiskDetails).
@@ -4017,7 +4051,7 @@ impl FraudRiskDetails {
 
 /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceSpoofingRisk {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     #[doc(hidden)]
@@ -4027,13 +4061,6 @@ impl VoiceSpoofingRisk {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     pub fn risk_score(&self) -> std::option::Option<i32> {
         self.risk_score
-    }
-}
-impl std::fmt::Debug for VoiceSpoofingRisk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceSpoofingRisk");
-        formatter.field("risk_score", &self.risk_score);
-        formatter.finish()
     }
 }
 /// See [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
@@ -4072,7 +4099,7 @@ impl VoiceSpoofingRisk {
 
 /// <p>Contains details produced as a result of performing known fraudster risk analysis on a speaker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KnownFraudsterRisk {
     /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
     #[doc(hidden)]
@@ -4089,14 +4116,6 @@ impl KnownFraudsterRisk {
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
     pub fn generated_fraudster_id(&self) -> std::option::Option<&str> {
         self.generated_fraudster_id.as_deref()
-    }
-}
-impl std::fmt::Debug for KnownFraudsterRisk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KnownFraudsterRisk");
-        formatter.field("risk_score", &self.risk_score);
-        formatter.field("generated_fraudster_id", &self.generated_fraudster_id);
-        formatter.finish()
     }
 }
 /// See [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
@@ -4339,7 +4358,7 @@ impl AsRef<str> for FraudDetectionDecision {
 
 /// <p>The configuration used for performing fraud detection over a speaker during a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FraudDetectionConfiguration {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     #[doc(hidden)]
@@ -4349,13 +4368,6 @@ impl FraudDetectionConfiguration {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     pub fn risk_threshold(&self) -> std::option::Option<i32> {
         self.risk_threshold
-    }
-}
-impl std::fmt::Debug for FraudDetectionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FraudDetectionConfiguration");
-        formatter.field("risk_threshold", &self.risk_threshold);
-        formatter.finish()
     }
 }
 /// See [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
@@ -4479,7 +4491,7 @@ impl std::fmt::Debug for AuthenticationResult {
 pub mod authentication_result {
 
     /// A builder for [`AuthenticationResult`](crate::model::AuthenticationResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_result_id: std::option::Option<std::string::String>,
         pub(crate) audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -4606,6 +4618,26 @@ pub mod authentication_result {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_result_id", &self.authentication_result_id);
+            formatter.field(
+                "audio_aggregation_started_at",
+                &self.audio_aggregation_started_at,
+            );
+            formatter.field(
+                "audio_aggregation_ended_at",
+                &self.audio_aggregation_ended_at,
+            );
+            formatter.field("customer_speaker_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("generated_speaker_id", &self.generated_speaker_id);
+            formatter.field("decision", &self.decision);
+            formatter.field("score", &self.score);
+            formatter.field("configuration", &self.configuration);
+            formatter.finish()
+        }
+    }
 }
 impl AuthenticationResult {
     /// Creates a new builder-style object to manufacture [`AuthenticationResult`](crate::model::AuthenticationResult).
@@ -4616,7 +4648,7 @@ impl AuthenticationResult {
 
 /// <p>The configuration used to authenticate a speaker during a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationConfiguration {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     #[doc(hidden)]
@@ -4626,13 +4658,6 @@ impl AuthenticationConfiguration {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     pub fn acceptance_threshold(&self) -> std::option::Option<i32> {
         self.acceptance_threshold
-    }
-}
-impl std::fmt::Debug for AuthenticationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationConfiguration");
-        formatter.field("acceptance_threshold", &self.acceptance_threshold);
-        formatter.finish()
     }
 }
 /// See [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
@@ -4891,7 +4916,7 @@ impl AsRef<str> for StreamingStatus {
 
 /// <p>Contains all the information about a fraudster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Fraudster {
     /// <p>The identifier for the domain containing the fraudster.</p>
     #[doc(hidden)]
@@ -4915,15 +4940,6 @@ impl Fraudster {
     /// <p>The timestamp when Voice ID identified the fraudster.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Fraudster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Fraudster");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("generated_fraudster_id", &self.generated_fraudster_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`Fraudster`](crate::model::Fraudster).

@@ -8059,7 +8059,7 @@ impl UpdatePoolInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePoolInput {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
     #[doc(hidden)]
@@ -8113,29 +8113,10 @@ impl UpdatePoolInput {
         self.deletion_protection_enabled
     }
 }
-impl std::fmt::Debug for UpdatePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePoolInput");
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("two_way_enabled", &self.two_way_enabled);
-        formatter.field("two_way_channel_arn", &self.two_way_channel_arn);
-        formatter.field(
-            "self_managed_opt_outs_enabled",
-            &self.self_managed_opt_outs_enabled,
-        );
-        formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.field("shared_routes_enabled", &self.shared_routes_enabled);
-        formatter.field(
-            "deletion_protection_enabled",
-            &self.deletion_protection_enabled,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePhoneNumberInput {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
     #[doc(hidden)]
@@ -8182,28 +8163,10 @@ impl UpdatePhoneNumberInput {
         self.deletion_protection_enabled
     }
 }
-impl std::fmt::Debug for UpdatePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePhoneNumberInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.field("two_way_enabled", &self.two_way_enabled);
-        formatter.field("two_way_channel_arn", &self.two_way_channel_arn);
-        formatter.field(
-            "self_managed_opt_outs_enabled",
-            &self.self_managed_opt_outs_enabled,
-        );
-        formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.field(
-            "deletion_protection_enabled",
-            &self.deletion_protection_enabled,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventDestinationInput {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
     #[doc(hidden)]
@@ -8261,29 +8224,10 @@ impl UpdateEventDestinationInput {
         self.sns_destination.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("matching_event_types", &self.matching_event_types);
-        formatter.field(
-            "cloud_watch_logs_destination",
-            &self.cloud_watch_logs_destination,
-        );
-        formatter.field(
-            "kinesis_firehose_destination",
-            &self.kinesis_firehose_destination,
-        );
-        formatter.field("sns_destination", &self.sns_destination);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -8302,18 +8246,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -8332,18 +8268,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetVoiceMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on voice messages.</p>
     #[doc(hidden)]
@@ -8355,17 +8283,10 @@ impl SetVoiceMessageSpendLimitOverrideInput {
         self.monthly_limit
     }
 }
-impl std::fmt::Debug for SetVoiceMessageSpendLimitOverrideInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetVoiceMessageSpendLimitOverrideInput");
-        formatter.field("monthly_limit", &self.monthly_limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTextMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on text messages.</p>
     #[doc(hidden)]
@@ -8377,17 +8298,10 @@ impl SetTextMessageSpendLimitOverrideInput {
         self.monthly_limit
     }
 }
-impl std::fmt::Debug for SetTextMessageSpendLimitOverrideInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTextMessageSpendLimitOverrideInput");
-        formatter.field("monthly_limit", &self.monthly_limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDefaultSenderIdInput {
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
     #[doc(hidden)]
@@ -8406,18 +8320,10 @@ impl SetDefaultSenderIdInput {
         self.sender_id.as_deref()
     }
 }
-impl std::fmt::Debug for SetDefaultSenderIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDefaultSenderIdInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDefaultMessageTypeInput {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
     #[doc(hidden)]
@@ -8436,18 +8342,10 @@ impl SetDefaultMessageTypeInput {
         self.message_type.as_ref()
     }
 }
-impl std::fmt::Debug for SetDefaultMessageTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDefaultMessageTypeInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("message_type", &self.message_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendVoiceMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
     #[doc(hidden)]
@@ -8536,26 +8434,10 @@ impl SendVoiceMessageInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for SendVoiceMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendVoiceMessageInput");
-        formatter.field("destination_phone_number", &self.destination_phone_number);
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("message_body", &self.message_body);
-        formatter.field("message_body_text_type", &self.message_body_text_type);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("max_price_per_minute", &self.max_price_per_minute);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("context", &self.context);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
     #[doc(hidden)]
@@ -8653,30 +8535,10 @@ impl SendTextMessageInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for SendTextMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendTextMessageInput");
-        formatter.field("destination_phone_number", &self.destination_phone_number);
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("message_body", &self.message_body);
-        formatter.field("message_type", &self.message_type);
-        formatter.field("keyword", &self.keyword);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("max_price", &self.max_price);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("context", &self.context);
-        formatter.field(
-            "destination_country_parameters",
-            &self.destination_country_parameters,
-        );
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     #[doc(hidden)]
@@ -8751,29 +8613,10 @@ impl RequestPhoneNumberInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for RequestPhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestPhoneNumberInput");
-        formatter.field("iso_country_code", &self.iso_country_code);
-        formatter.field("message_type", &self.message_type);
-        formatter.field("number_capabilities", &self.number_capabilities);
-        formatter.field("number_type", &self.number_type);
-        formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("registration_id", &self.registration_id);
-        formatter.field(
-            "deletion_protection_enabled",
-            &self.deletion_protection_enabled,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReleasePhoneNumberInput {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
     #[doc(hidden)]
@@ -8785,17 +8628,10 @@ impl ReleasePhoneNumberInput {
         self.phone_number_id.as_deref()
     }
 }
-impl std::fmt::Debug for ReleasePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReleasePhoneNumberInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
     #[doc(hidden)]
@@ -8814,18 +8650,10 @@ impl PutOptedOutNumberInput {
         self.opted_out_number.as_deref()
     }
 }
-impl std::fmt::Debug for PutOptedOutNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutOptedOutNumberInput");
-        formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.field("opted_out_number", &self.opted_out_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
     #[doc(hidden)]
@@ -8868,20 +8696,10 @@ impl PutKeywordInput {
         self.keyword_action.as_ref()
     }
 }
-impl std::fmt::Debug for PutKeywordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutKeywordInput");
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("keyword", &self.keyword);
-        formatter.field("keyword_message", &self.keyword_message);
-        formatter.field("keyword_action", &self.keyword_action);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to query for.</p>
     #[doc(hidden)]
@@ -8893,17 +8711,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPoolOriginationIdentitiesInput {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
     #[doc(hidden)]
@@ -8936,20 +8747,10 @@ impl ListPoolOriginationIdentitiesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPoolOriginationIdentitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPoolOriginationIdentitiesInput");
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateOriginationIdentityInput {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
     #[doc(hidden)]
@@ -8982,20 +8783,10 @@ impl DisassociateOriginationIdentityInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateOriginationIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateOriginationIdentityInput");
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("iso_country_code", &self.iso_country_code);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSpendLimitsInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     #[doc(hidden)]
@@ -9014,18 +8805,10 @@ impl DescribeSpendLimitsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSpendLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSpendLimitsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSenderIdsInput {
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
     #[doc(hidden)]
@@ -9058,20 +8841,10 @@ impl DescribeSenderIdsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSenderIdsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSenderIdsInput");
-        formatter.field("sender_ids", &self.sender_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePoolsInput {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
     #[doc(hidden)]
@@ -9104,20 +8877,10 @@ impl DescribePoolsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribePoolsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePoolsInput");
-        formatter.field("pool_ids", &self.pool_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePhoneNumbersInput {
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
     #[doc(hidden)]
@@ -9150,20 +8913,10 @@ impl DescribePhoneNumbersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribePhoneNumbersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePhoneNumbersInput");
-        formatter.field("phone_number_ids", &self.phone_number_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
     #[doc(hidden)]
@@ -9189,19 +8942,10 @@ impl DescribeOptOutListsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeOptOutListsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOptOutListsInput");
-        formatter.field("opt_out_list_names", &self.opt_out_list_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
     #[doc(hidden)]
@@ -9241,21 +8985,10 @@ impl DescribeOptedOutNumbersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeOptedOutNumbersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOptedOutNumbersInput");
-        formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.field("opted_out_numbers", &self.opted_out_numbers);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeKeywordsInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
     #[doc(hidden)]
@@ -9295,21 +9028,10 @@ impl DescribeKeywordsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeKeywordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeKeywordsInput");
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("keywords", &self.keywords);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationSetsInput {
     /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
     #[doc(hidden)]
@@ -9342,20 +9064,10 @@ impl DescribeConfigurationSetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeConfigurationSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationSetsInput");
-        formatter.field("configuration_set_names", &self.configuration_set_names);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountLimitsInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     #[doc(hidden)]
@@ -9374,18 +9086,10 @@ impl DescribeAccountLimitsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeAccountLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountLimitsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountAttributesInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     #[doc(hidden)]
@@ -9404,40 +9108,20 @@ impl DescribeAccountAttributesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeAccountAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountAttributesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceMessageSpendLimitOverrideInput {}
-impl std::fmt::Debug for DeleteVoiceMessageSpendLimitOverrideInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceMessageSpendLimitOverrideInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTextMessageSpendLimitOverrideInput {}
-impl std::fmt::Debug for DeleteTextMessageSpendLimitOverrideInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTextMessageSpendLimitOverrideInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePoolInput {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
     #[doc(hidden)]
@@ -9449,17 +9133,10 @@ impl DeletePoolInput {
         self.pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePoolInput");
-        formatter.field("pool_id", &self.pool_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOptOutListInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
     #[doc(hidden)]
@@ -9471,17 +9148,10 @@ impl DeleteOptOutListInput {
         self.opt_out_list_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOptOutListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOptOutListInput");
-        formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
     #[doc(hidden)]
@@ -9500,18 +9170,10 @@ impl DeleteOptedOutNumberInput {
         self.opted_out_number.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOptedOutNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOptedOutNumberInput");
-        formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.field("opted_out_number", &self.opted_out_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
     #[doc(hidden)]
@@ -9530,18 +9192,10 @@ impl DeleteKeywordInput {
         self.keyword.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteKeywordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteKeywordInput");
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("keyword", &self.keyword);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventDestinationInput {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     #[doc(hidden)]
@@ -9560,18 +9214,10 @@ impl DeleteEventDestinationInput {
         self.event_destination_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDefaultSenderIdInput {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     #[doc(hidden)]
@@ -9583,17 +9229,10 @@ impl DeleteDefaultSenderIdInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDefaultSenderIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDefaultSenderIdInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDefaultMessageTypeInput {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     #[doc(hidden)]
@@ -9605,17 +9244,10 @@ impl DeleteDefaultMessageTypeInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDefaultMessageTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDefaultMessageTypeInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     #[doc(hidden)]
@@ -9627,17 +9259,10 @@ impl DeleteConfigurationSetInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePoolInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
     #[doc(hidden)]
@@ -9684,25 +9309,10 @@ impl CreatePoolInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePoolInput");
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("iso_country_code", &self.iso_country_code);
-        formatter.field("message_type", &self.message_type);
-        formatter.field(
-            "deletion_protection_enabled",
-            &self.deletion_protection_enabled,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOptOutListInput {
     /// <p>The name of the new OptOutList.</p>
     #[doc(hidden)]
@@ -9728,19 +9338,10 @@ impl CreateOptOutListInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOptOutListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOptOutListInput");
-        formatter.field("opt_out_list_name", &self.opt_out_list_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventDestinationInput {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     #[doc(hidden)]
@@ -9798,29 +9399,10 @@ impl CreateEventDestinationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.field("matching_event_types", &self.matching_event_types);
-        formatter.field(
-            "cloud_watch_logs_destination",
-            &self.cloud_watch_logs_destination,
-        );
-        formatter.field(
-            "kinesis_firehose_destination",
-            &self.kinesis_firehose_destination,
-        );
-        formatter.field("sns_destination", &self.sns_destination);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetInput {
     /// <p>The name to use for the new configuration set.</p>
     #[doc(hidden)]
@@ -9846,19 +9428,10 @@ impl CreateConfigurationSetInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateOriginationIdentityInput {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
     #[doc(hidden)]
@@ -9889,15 +9462,5 @@ impl AssociateOriginationIdentityInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateOriginationIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateOriginationIdentityInput");
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("iso_country_code", &self.iso_country_code);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

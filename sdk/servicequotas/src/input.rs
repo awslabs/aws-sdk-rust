@@ -3089,7 +3089,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
     #[doc(hidden)]
@@ -3108,18 +3108,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
     #[doc(hidden)]
@@ -3138,18 +3130,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestServiceQuotaIncreaseInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3175,19 +3159,10 @@ impl RequestServiceQuotaIncreaseInput {
         self.desired_value
     }
 }
-impl std::fmt::Debug for RequestServiceQuotaIncreaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestServiceQuotaIncreaseInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("desired_value", &self.desired_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// <p>The quota identifier.</p>
     #[doc(hidden)]
@@ -3220,20 +3195,10 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
         self.desired_value
     }
 }
-impl std::fmt::Debug for PutServiceQuotaIncreaseRequestIntoTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutServiceQuotaIncreaseRequestIntoTemplateInput");
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("desired_value", &self.desired_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
     #[doc(hidden)]
@@ -3245,17 +3210,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicesInput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
@@ -3274,18 +3232,10 @@ impl ListServicesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceQuotasInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3311,19 +3261,10 @@ impl ListServiceQuotasInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServiceQuotasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceQuotasInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3356,20 +3297,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServiceQuotaIncreaseRequestsInTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceQuotaIncreaseRequestsInTemplateInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3409,21 +3340,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryByQuotaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRequestedServiceQuotaChangeHistoryByQuotaInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3456,20 +3376,10 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRequestedServiceQuotaChangeHistoryInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAwsDefaultServiceQuotasInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3495,19 +3405,10 @@ impl ListAwsDefaultServiceQuotasInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAwsDefaultServiceQuotasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAwsDefaultServiceQuotasInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3533,19 +3434,10 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
         self.aws_region.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceQuotaIncreaseRequestFromTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceQuotaIncreaseRequestFromTemplateInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceQuotaInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3564,18 +3456,10 @@ impl GetServiceQuotaInput {
         self.quota_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceQuotaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceQuotaInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRequestedServiceQuotaChangeInput {
     /// <p>The ID of the quota increase request.</p>
     #[doc(hidden)]
@@ -3587,17 +3471,10 @@ impl GetRequestedServiceQuotaChangeInput {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRequestedServiceQuotaChangeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRequestedServiceQuotaChangeInput");
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAwsDefaultServiceQuotaInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3616,40 +3493,20 @@ impl GetAwsDefaultServiceQuotaInput {
         self.quota_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetAwsDefaultServiceQuotaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAwsDefaultServiceQuotaInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssociationForServiceQuotaTemplateInput {}
-impl std::fmt::Debug for GetAssociationForServiceQuotaTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssociationForServiceQuotaTemplateInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateServiceQuotaTemplateInput {}
-impl std::fmt::Debug for DisassociateServiceQuotaTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateServiceQuotaTemplateInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3675,23 +3532,8 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
         self.aws_region.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServiceQuotaIncreaseRequestFromTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceQuotaIncreaseRequestFromTemplateInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateServiceQuotaTemplateInput {}
-impl std::fmt::Debug for AssociateServiceQuotaTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateServiceQuotaTemplateInput");
-        formatter.finish()
-    }
-}

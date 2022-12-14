@@ -6076,7 +6076,7 @@ impl UpdateSubnetChangeProtectionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSubnetChangeProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6117,20 +6117,10 @@ impl UpdateSubnetChangeProtectionInput {
         self.subnet_change_protection
     }
 }
-impl std::fmt::Debug for UpdateSubnetChangeProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSubnetChangeProtectionInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("subnet_change_protection", &self.subnet_change_protection);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuleGroupInput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
@@ -6231,26 +6221,10 @@ impl UpdateRuleGroupInput {
         self.source_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuleGroupInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group", &self.rule_group);
-        formatter.field("rules", &self.rules);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("source_metadata", &self.source_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -6282,19 +6256,10 @@ impl UpdateLoggingConfigurationInput {
         self.logging_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLoggingConfigurationInput");
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallPolicyChangeProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6335,23 +6300,10 @@ impl UpdateFirewallPolicyChangeProtectionInput {
         self.firewall_policy_change_protection
     }
 }
-impl std::fmt::Debug for UpdateFirewallPolicyChangeProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallPolicyChangeProtectionInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field(
-            "firewall_policy_change_protection",
-            &self.firewall_policy_change_protection,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallPolicyInput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
@@ -6417,23 +6369,10 @@ impl UpdateFirewallPolicyInput {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallPolicyInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy", &self.firewall_policy);
-        formatter.field("description", &self.description);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallEncryptionConfigurationInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6472,20 +6411,10 @@ impl UpdateFirewallEncryptionConfigurationInput {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallEncryptionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallEncryptionConfigurationInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallDescriptionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6526,20 +6455,10 @@ impl UpdateFirewallDescriptionInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallDescriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallDescriptionInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallDeleteProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6580,20 +6499,10 @@ impl UpdateFirewallDeleteProtectionInput {
         self.delete_protection
     }
 }
-impl std::fmt::Debug for UpdateFirewallDeleteProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallDeleteProtectionInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("delete_protection", &self.delete_protection);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -6612,18 +6521,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -6642,18 +6543,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
     #[doc(hidden)]
@@ -6700,18 +6593,10 @@ impl PutResourcePolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
@@ -6737,19 +6622,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRuleGroupsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
@@ -6789,21 +6665,10 @@ impl ListRuleGroupsInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for ListRuleGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRuleGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("scope", &self.scope);
-        formatter.field("managed_type", &self.managed_type);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
@@ -6829,19 +6694,10 @@ impl ListFirewallsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFirewallsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("vpc_ids", &self.vpc_ids);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallPoliciesInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
@@ -6860,18 +6716,10 @@ impl ListFirewallPoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFirewallPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallPoliciesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateSubnetsInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6912,20 +6760,10 @@ impl DisassociateSubnetsInput {
         self.subnet_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateSubnetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateSubnetsInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuleGroupMetadataInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -6959,19 +6797,10 @@ impl DescribeRuleGroupMetadataInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeRuleGroupMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuleGroupMetadataInput");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7005,19 +6834,10 @@ impl DescribeRuleGroupInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuleGroupInput");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
     #[doc(hidden)]
@@ -7029,17 +6849,10 @@ impl DescribeResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7062,18 +6875,10 @@ impl DescribeLoggingConfigurationInput {
         self.firewall_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingConfigurationInput");
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7096,18 +6901,10 @@ impl DescribeFirewallPolicyInput {
         self.firewall_policy_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFirewallPolicyInput");
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7130,18 +6927,10 @@ impl DescribeFirewallInput {
         self.firewall_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFirewallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFirewallInput");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7175,19 +6964,10 @@ impl DeleteRuleGroupInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleGroupInput");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
     #[doc(hidden)]
@@ -7199,17 +6979,10 @@ impl DeleteResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7232,18 +7005,10 @@ impl DeleteFirewallPolicyInput {
         self.firewall_policy_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFirewallPolicyInput");
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7266,18 +7031,10 @@ impl DeleteFirewallInput {
         self.firewall_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFirewallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFirewallInput");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -7396,26 +7153,10 @@ impl CreateRuleGroupInput {
         self.source_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleGroupInput");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group", &self.rule_group);
-        formatter.field("rules", &self.rules);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("capacity", &self.capacity);
-        formatter.field("tags", &self.tags);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("source_metadata", &self.source_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     #[doc(hidden)]
@@ -7468,22 +7209,10 @@ impl CreateFirewallPolicyInput {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFirewallPolicyInput");
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy", &self.firewall_policy);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     #[doc(hidden)]
@@ -7562,29 +7291,10 @@ impl CreateFirewallInput {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFirewallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFirewallInput");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_mappings", &self.subnet_mappings);
-        formatter.field("delete_protection", &self.delete_protection);
-        formatter.field("subnet_change_protection", &self.subnet_change_protection);
-        formatter.field(
-            "firewall_policy_change_protection",
-            &self.firewall_policy_change_protection,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateSubnetsInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -7625,20 +7335,10 @@ impl AssociateSubnetsInput {
         self.subnet_mappings.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateSubnetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateSubnetsInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("subnet_mappings", &self.subnet_mappings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateFirewallPolicyInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -7677,15 +7377,5 @@ impl AssociateFirewallPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateFirewallPolicyInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.finish()
     }
 }

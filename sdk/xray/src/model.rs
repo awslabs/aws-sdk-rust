@@ -2,7 +2,7 @@
 
 /// <p>A <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingRule.html">SamplingRule</a> and its metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingRuleRecord {
     /// <p>The sampling rule.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl SamplingRuleRecord {
     /// <p>When the rule was last modified.</p>
     pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
-    }
-}
-impl std::fmt::Debug for SamplingRuleRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingRuleRecord");
-        formatter.field("sampling_rule", &self.sampling_rule);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.finish()
     }
 }
 /// See [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
@@ -106,7 +97,7 @@ impl SamplingRuleRecord {
 
 /// <p>A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingRule {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     #[doc(hidden)]
@@ -204,25 +195,6 @@ impl SamplingRule {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for SamplingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingRule");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("rule_arn", &self.rule_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("fixed_rate", &self.fixed_rate);
-        formatter.field("reservoir_size", &self.reservoir_size);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_type", &self.service_type);
-        formatter.field("host", &self.host);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("url_path", &self.url_path);
-        formatter.field("version", &self.version);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`SamplingRule`](crate::model::SamplingRule).
@@ -422,7 +394,7 @@ impl SamplingRule {
 
 /// <p>A document specifying changes to a sampling rule's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingRuleUpdate {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     #[doc(hidden)]
@@ -513,24 +485,6 @@ impl SamplingRuleUpdate {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for SamplingRuleUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingRuleUpdate");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("rule_arn", &self.rule_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("fixed_rate", &self.fixed_rate);
-        formatter.field("reservoir_size", &self.reservoir_size);
-        formatter.field("host", &self.host);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_type", &self.service_type);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("url_path", &self.url_path);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
@@ -718,7 +672,7 @@ impl SamplingRuleUpdate {
 
 /// <p>Details and metadata for a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Group {
     /// <p>The unique case-sensitive name of the group.</p>
     #[doc(hidden)]
@@ -759,16 +713,6 @@ impl Group {
         &self,
     ) -> std::option::Option<&crate::model::InsightsConfiguration> {
         self.insights_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Group {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Group");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("insights_configuration", &self.insights_configuration);
-        formatter.finish()
     }
 }
 /// See [`Group`](crate::model::Group).
@@ -860,7 +804,7 @@ impl Group {
 
 /// <p>The structure containing configurations related to insights.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightsConfiguration {
     /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
     #[doc(hidden)]
@@ -877,14 +821,6 @@ impl InsightsConfiguration {
     /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
     pub fn notifications_enabled(&self) -> std::option::Option<bool> {
         self.notifications_enabled
-    }
-}
-impl std::fmt::Debug for InsightsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightsConfiguration");
-        formatter.field("insights_enabled", &self.insights_enabled);
-        formatter.field("notifications_enabled", &self.notifications_enabled);
-        formatter.finish()
     }
 }
 /// See [`InsightsConfiguration`](crate::model::InsightsConfiguration).
@@ -941,7 +877,7 @@ impl InsightsConfiguration {
 /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     #[doc(hidden)]
@@ -958,14 +894,6 @@ impl Tag {
     /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1016,7 +944,7 @@ impl Tag {
 
 /// <p>Information about a segment that failed processing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedTraceSegment {
     /// <p>The segment's ID.</p>
     #[doc(hidden)]
@@ -1040,15 +968,6 @@ impl UnprocessedTraceSegment {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedTraceSegment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedTraceSegment");
-        formatter.field("id", &self.id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
@@ -1111,7 +1030,7 @@ impl UnprocessedTraceSegment {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TelemetryRecord {
     /// <p></p>
     #[doc(hidden)]
@@ -1158,18 +1077,6 @@ impl TelemetryRecord {
         &self,
     ) -> std::option::Option<&crate::model::BackendConnectionErrors> {
         self.backend_connection_errors.as_ref()
-    }
-}
-impl std::fmt::Debug for TelemetryRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TelemetryRecord");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("segments_received_count", &self.segments_received_count);
-        formatter.field("segments_sent_count", &self.segments_sent_count);
-        formatter.field("segments_spillover_count", &self.segments_spillover_count);
-        formatter.field("segments_rejected_count", &self.segments_rejected_count);
-        formatter.field("backend_connection_errors", &self.backend_connection_errors);
-        formatter.finish()
     }
 }
 /// See [`TelemetryRecord`](crate::model::TelemetryRecord).
@@ -1278,7 +1185,7 @@ impl TelemetryRecord {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendConnectionErrors {
     /// <p></p>
     #[doc(hidden)]
@@ -1323,18 +1230,6 @@ impl BackendConnectionErrors {
     /// <p></p>
     pub fn other_count(&self) -> std::option::Option<i32> {
         self.other_count
-    }
-}
-impl std::fmt::Debug for BackendConnectionErrors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendConnectionErrors");
-        formatter.field("timeout_count", &self.timeout_count);
-        formatter.field("connection_refused_count", &self.connection_refused_count);
-        formatter.field("http_code4_xx_count", &self.http_code4_xx_count);
-        formatter.field("http_code5_xx_count", &self.http_code5_xx_count);
-        formatter.field("unknown_host_count", &self.unknown_host_count);
-        formatter.field("other_count", &self.other_count);
-        formatter.finish()
     }
 }
 /// See [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
@@ -1433,7 +1328,7 @@ impl BackendConnectionErrors {
 
 /// <p>A configuration document that specifies encryption configuration settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
     #[doc(hidden)]
@@ -1457,15 +1352,6 @@ impl EncryptionConfig {
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfig");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("status", &self.status);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
@@ -1714,7 +1600,7 @@ impl AsRef<str> for EncryptionStatus {
 
 /// <p>Metadata generated from the segment documents in a trace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TraceSummary {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     #[doc(hidden)]
@@ -1875,32 +1761,6 @@ impl TraceSummary {
     /// <p>The matched time stamp of a defined event.</p>
     pub fn matched_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.matched_event_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TraceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TraceSummary");
-        formatter.field("id", &self.id);
-        formatter.field("duration", &self.duration);
-        formatter.field("response_time", &self.response_time);
-        formatter.field("has_fault", &self.has_fault);
-        formatter.field("has_error", &self.has_error);
-        formatter.field("has_throttle", &self.has_throttle);
-        formatter.field("is_partial", &self.is_partial);
-        formatter.field("http", &self.http);
-        formatter.field("annotations", &self.annotations);
-        formatter.field("users", &self.users);
-        formatter.field("service_ids", &self.service_ids);
-        formatter.field("resource_ar_ns", &self.resource_ar_ns);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("entry_point", &self.entry_point);
-        formatter.field("fault_root_causes", &self.fault_root_causes);
-        formatter.field("error_root_causes", &self.error_root_causes);
-        formatter.field("response_time_root_causes", &self.response_time_root_causes);
-        formatter.field("revision", &self.revision);
-        formatter.field("matched_event_time", &self.matched_event_time);
-        formatter.finish()
     }
 }
 /// See [`TraceSummary`](crate::model::TraceSummary).
@@ -2276,7 +2136,7 @@ impl TraceSummary {
 
 /// <p>The root cause information for a response time warning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseTimeRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
@@ -2293,14 +2153,6 @@ impl ResponseTimeRootCause {
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub fn client_impacting(&self) -> std::option::Option<bool> {
         self.client_impacting
-    }
-}
-impl std::fmt::Debug for ResponseTimeRootCause {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseTimeRootCause");
-        formatter.field("services", &self.services);
-        formatter.field("client_impacting", &self.client_impacting);
-        formatter.finish()
     }
 }
 /// See [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
@@ -2361,7 +2213,7 @@ impl ResponseTimeRootCause {
 
 /// <p>A collection of fields identifying the service in a response time warning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseTimeRootCauseService {
     /// <p>The service name.</p>
     #[doc(hidden)]
@@ -2406,18 +2258,6 @@ impl ResponseTimeRootCauseService {
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub fn inferred(&self) -> std::option::Option<bool> {
         self.inferred
-    }
-}
-impl std::fmt::Debug for ResponseTimeRootCauseService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseTimeRootCauseService");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("entity_path", &self.entity_path);
-        formatter.field("inferred", &self.inferred);
-        formatter.finish()
     }
 }
 /// See [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
@@ -2535,7 +2375,7 @@ impl ResponseTimeRootCauseService {
 
 /// <p>A collection of segments and corresponding subsegments associated to a response time warning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseTimeRootCauseEntity {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
@@ -2559,15 +2399,6 @@ impl ResponseTimeRootCauseEntity {
     /// <p>A flag that denotes a remote subsegment.</p>
     pub fn remote(&self) -> std::option::Option<bool> {
         self.remote
-    }
-}
-impl std::fmt::Debug for ResponseTimeRootCauseEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseTimeRootCauseEntity");
-        formatter.field("name", &self.name);
-        formatter.field("coverage", &self.coverage);
-        formatter.field("remote", &self.remote);
-        formatter.finish()
     }
 }
 /// See [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
@@ -2630,7 +2461,7 @@ impl ResponseTimeRootCauseEntity {
 
 /// <p>The root cause of a trace summary error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorRootCause {
     /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
@@ -2647,14 +2478,6 @@ impl ErrorRootCause {
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub fn client_impacting(&self) -> std::option::Option<bool> {
         self.client_impacting
-    }
-}
-impl std::fmt::Debug for ErrorRootCause {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorRootCause");
-        formatter.field("services", &self.services);
-        formatter.field("client_impacting", &self.client_impacting);
-        formatter.finish()
     }
 }
 /// See [`ErrorRootCause`](crate::model::ErrorRootCause).
@@ -2715,7 +2538,7 @@ impl ErrorRootCause {
 
 /// <p>A collection of fields identifying the services in a trace summary error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorRootCauseService {
     /// <p>The service name.</p>
     #[doc(hidden)]
@@ -2760,18 +2583,6 @@ impl ErrorRootCauseService {
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub fn inferred(&self) -> std::option::Option<bool> {
         self.inferred
-    }
-}
-impl std::fmt::Debug for ErrorRootCauseService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorRootCauseService");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("entity_path", &self.entity_path);
-        formatter.field("inferred", &self.inferred);
-        formatter.finish()
     }
 }
 /// See [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
@@ -2889,7 +2700,7 @@ impl ErrorRootCauseService {
 
 /// <p>A collection of segments and corresponding subsegments associated to a trace summary error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorRootCauseEntity {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
@@ -2913,15 +2724,6 @@ impl ErrorRootCauseEntity {
     /// <p>A flag that denotes a remote subsegment.</p>
     pub fn remote(&self) -> std::option::Option<bool> {
         self.remote
-    }
-}
-impl std::fmt::Debug for ErrorRootCauseEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorRootCauseEntity");
-        formatter.field("name", &self.name);
-        formatter.field("exceptions", &self.exceptions);
-        formatter.field("remote", &self.remote);
-        formatter.finish()
     }
 }
 /// See [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
@@ -2993,7 +2795,7 @@ impl ErrorRootCauseEntity {
 
 /// <p>The exception associated with a root cause.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RootCauseException {
     /// <p>The name of the exception.</p>
     #[doc(hidden)]
@@ -3010,14 +2812,6 @@ impl RootCauseException {
     /// <p>The message of the exception.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for RootCauseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RootCauseException");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`RootCauseException`](crate::model::RootCauseException).
@@ -3068,7 +2862,7 @@ impl RootCauseException {
 
 /// <p>The root cause information for a trace summary fault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaultRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
@@ -3085,14 +2879,6 @@ impl FaultRootCause {
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub fn client_impacting(&self) -> std::option::Option<bool> {
         self.client_impacting
-    }
-}
-impl std::fmt::Debug for FaultRootCause {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaultRootCause");
-        formatter.field("services", &self.services);
-        formatter.field("client_impacting", &self.client_impacting);
-        formatter.finish()
     }
 }
 /// See [`FaultRootCause`](crate::model::FaultRootCause).
@@ -3153,7 +2939,7 @@ impl FaultRootCause {
 
 /// <p>A collection of fields identifying the services in a trace summary fault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaultRootCauseService {
     /// <p>The service name.</p>
     #[doc(hidden)]
@@ -3198,18 +2984,6 @@ impl FaultRootCauseService {
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub fn inferred(&self) -> std::option::Option<bool> {
         self.inferred
-    }
-}
-impl std::fmt::Debug for FaultRootCauseService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaultRootCauseService");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("entity_path", &self.entity_path);
-        formatter.field("inferred", &self.inferred);
-        formatter.finish()
     }
 }
 /// See [`FaultRootCauseService`](crate::model::FaultRootCauseService).
@@ -3327,7 +3101,7 @@ impl FaultRootCauseService {
 
 /// <p>A collection of segments and corresponding subsegments associated to a trace summary fault error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaultRootCauseEntity {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
@@ -3351,15 +3125,6 @@ impl FaultRootCauseEntity {
     /// <p>A flag that denotes a remote subsegment.</p>
     pub fn remote(&self) -> std::option::Option<bool> {
         self.remote
-    }
-}
-impl std::fmt::Debug for FaultRootCauseEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaultRootCauseEntity");
-        formatter.field("name", &self.name);
-        formatter.field("exceptions", &self.exceptions);
-        formatter.field("remote", &self.remote);
-        formatter.finish()
     }
 }
 /// See [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
@@ -3431,7 +3196,7 @@ impl FaultRootCauseEntity {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceId {
     /// <p></p>
     #[doc(hidden)]
@@ -3462,16 +3227,6 @@ impl ServiceId {
     /// <p></p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceId");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ServiceId`](crate::model::ServiceId).
@@ -3555,7 +3310,7 @@ impl ServiceId {
 
 /// <p>A list of Availability Zones corresponding to the segments in a trace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZoneDetail {
     /// <p>The name of a corresponding Availability Zone.</p>
     #[doc(hidden)]
@@ -3565,13 +3320,6 @@ impl AvailabilityZoneDetail {
     /// <p>The name of a corresponding Availability Zone.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailabilityZoneDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZoneDetail");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
@@ -3608,7 +3356,7 @@ impl AvailabilityZoneDetail {
 
 /// <p>A list of EC2 instance IDs corresponding to the segments in a trace. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceIdDetail {
     /// <p>The ID of a corresponding EC2 instance.</p>
     #[doc(hidden)]
@@ -3618,13 +3366,6 @@ impl InstanceIdDetail {
     /// <p>The ID of a corresponding EC2 instance.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceIdDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceIdDetail");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`InstanceIdDetail`](crate::model::InstanceIdDetail).
@@ -3661,7 +3402,7 @@ impl InstanceIdDetail {
 
 /// <p>A list of resources ARNs corresponding to the segments in a trace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceArnDetail {
     /// <p>The ARN of a corresponding resource.</p>
     #[doc(hidden)]
@@ -3671,13 +3412,6 @@ impl ResourceArnDetail {
     /// <p>The ARN of a corresponding resource.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceArnDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceArnDetail");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`ResourceArnDetail`](crate::model::ResourceArnDetail).
@@ -3714,7 +3448,7 @@ impl ResourceArnDetail {
 
 /// <p>Information about a user recorded in segment documents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TraceUser {
     /// <p>The user's name.</p>
     #[doc(hidden)]
@@ -3731,14 +3465,6 @@ impl TraceUser {
     /// <p>Services that the user's request hit.</p>
     pub fn service_ids(&self) -> std::option::Option<&[crate::model::ServiceId]> {
         self.service_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for TraceUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TraceUser");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("service_ids", &self.service_ids);
-        formatter.finish()
     }
 }
 /// See [`TraceUser`](crate::model::TraceUser).
@@ -3798,7 +3524,7 @@ impl TraceUser {
 
 /// <p>Information about a segment annotation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValueWithServiceIds {
     /// <p>Values of the annotation.</p>
     #[doc(hidden)]
@@ -3815,14 +3541,6 @@ impl ValueWithServiceIds {
     /// <p>Services to which the annotation applies.</p>
     pub fn service_ids(&self) -> std::option::Option<&[crate::model::ServiceId]> {
         self.service_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for ValueWithServiceIds {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValueWithServiceIds");
-        formatter.field("annotation_value", &self.annotation_value);
-        formatter.field("service_ids", &self.service_ids);
-        formatter.finish()
     }
 }
 /// See [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
@@ -3951,7 +3669,7 @@ impl AnnotationValue {
 
 /// <p>Information about an HTTP request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Http {
     /// <p>The request URL.</p>
     #[doc(hidden)]
@@ -3989,17 +3707,6 @@ impl Http {
     /// <p>The IP address of the requestor.</p>
     pub fn client_ip(&self) -> std::option::Option<&str> {
         self.client_ip.as_deref()
-    }
-}
-impl std::fmt::Debug for Http {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Http");
-        formatter.field("http_url", &self.http_url);
-        formatter.field("http_status", &self.http_status);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("user_agent", &self.user_agent);
-        formatter.field("client_ip", &self.client_ip);
-        formatter.finish()
     }
 }
 /// See [`Http`](crate::model::Http).
@@ -4086,7 +3793,7 @@ impl Http {
 
 /// <p>The name and value of a sampling rule to apply to a trace summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingStrategy {
     /// <p>The name of a sampling rule.</p>
     #[doc(hidden)]
@@ -4103,14 +3810,6 @@ impl SamplingStrategy {
     /// <p>The value of a sampling rule.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
-    }
-}
-impl std::fmt::Debug for SamplingStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingStrategy");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SamplingStrategy`](crate::model::SamplingStrategy).
@@ -4346,7 +4045,7 @@ impl AsRef<str> for TimeRangeType {
 
 /// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Service {
     /// <p>Identifier for the service. Unique within the service map.</p>
     #[doc(hidden)]
@@ -4452,25 +4151,6 @@ impl Service {
     /// <p>A histogram that maps the spread of service response times.</p>
     pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
         self.response_time_histogram.as_deref()
-    }
-}
-impl std::fmt::Debug for Service {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Service");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("root", &self.root);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("edges", &self.edges);
-        formatter.field("summary_statistics", &self.summary_statistics);
-        formatter.field("duration_histogram", &self.duration_histogram);
-        formatter.field("response_time_histogram", &self.response_time_histogram);
-        formatter.finish()
     }
 }
 /// See [`Service`](crate::model::Service).
@@ -4712,7 +4392,7 @@ impl Service {
 
 /// <p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistogramEntry {
     /// <p>The value of the entry.</p>
     #[doc(hidden)]
@@ -4729,14 +4409,6 @@ impl HistogramEntry {
     /// <p>The prevalence of the entry.</p>
     pub fn count(&self) -> i32 {
         self.count
-    }
-}
-impl std::fmt::Debug for HistogramEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistogramEntry");
-        formatter.field("value", &self.value);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`HistogramEntry`](crate::model::HistogramEntry).
@@ -4787,7 +4459,7 @@ impl HistogramEntry {
 
 /// <p>Response statistics for a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     #[doc(hidden)]
@@ -4825,17 +4497,6 @@ impl ServiceStatistics {
     /// <p>The aggregate response time of completed requests.</p>
     pub fn total_response_time(&self) -> std::option::Option<f64> {
         self.total_response_time
-    }
-}
-impl std::fmt::Debug for ServiceStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceStatistics");
-        formatter.field("ok_count", &self.ok_count);
-        formatter.field("error_statistics", &self.error_statistics);
-        formatter.field("fault_statistics", &self.fault_statistics);
-        formatter.field("total_count", &self.total_count);
-        formatter.field("total_response_time", &self.total_response_time);
-        formatter.finish()
     }
 }
 /// See [`ServiceStatistics`](crate::model::ServiceStatistics).
@@ -4928,7 +4589,7 @@ impl ServiceStatistics {
 
 /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaultStatistics {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     #[doc(hidden)]
@@ -4945,14 +4606,6 @@ impl FaultStatistics {
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     pub fn total_count(&self) -> std::option::Option<i64> {
         self.total_count
-    }
-}
-impl std::fmt::Debug for FaultStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaultStatistics");
-        formatter.field("other_count", &self.other_count);
-        formatter.field("total_count", &self.total_count);
-        formatter.finish()
     }
 }
 /// See [`FaultStatistics`](crate::model::FaultStatistics).
@@ -5003,7 +4656,7 @@ impl FaultStatistics {
 
 /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorStatistics {
     /// <p>The number of requests that failed with a 419 throttling status code.</p>
     #[doc(hidden)]
@@ -5027,15 +4680,6 @@ impl ErrorStatistics {
     /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
     pub fn total_count(&self) -> std::option::Option<i64> {
         self.total_count
-    }
-}
-impl std::fmt::Debug for ErrorStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorStatistics");
-        formatter.field("throttle_count", &self.throttle_count);
-        formatter.field("other_count", &self.other_count);
-        formatter.field("total_count", &self.total_count);
-        formatter.finish()
     }
 }
 /// See [`ErrorStatistics`](crate::model::ErrorStatistics).
@@ -5098,7 +4742,7 @@ impl ErrorStatistics {
 
 /// <p>Information about a connection between two services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Edge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     #[doc(hidden)]
@@ -5143,18 +4787,6 @@ impl Edge {
     /// <p>Aliases for the edge.</p>
     pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
         self.aliases.as_deref()
-    }
-}
-impl std::fmt::Debug for Edge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Edge");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("summary_statistics", &self.summary_statistics);
-        formatter.field("response_time_histogram", &self.response_time_histogram);
-        formatter.field("aliases", &self.aliases);
-        formatter.finish()
     }
 }
 /// See [`Edge`](crate::model::Edge).
@@ -5281,7 +4913,7 @@ impl Edge {
 
 /// <p>An alias for an edge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alias {
     /// <p>The canonical name of the alias.</p>
     #[doc(hidden)]
@@ -5305,15 +4937,6 @@ impl Alias {
     /// <p>The type of the alias.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for Alias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alias");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Alias`](crate::model::Alias).
@@ -5385,7 +5008,7 @@ impl Alias {
 
 /// <p>Response statistics for an edge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EdgeStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     #[doc(hidden)]
@@ -5423,17 +5046,6 @@ impl EdgeStatistics {
     /// <p>The aggregate response time of completed requests.</p>
     pub fn total_response_time(&self) -> std::option::Option<f64> {
         self.total_response_time
-    }
-}
-impl std::fmt::Debug for EdgeStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EdgeStatistics");
-        formatter.field("ok_count", &self.ok_count);
-        formatter.field("error_statistics", &self.error_statistics);
-        formatter.field("fault_statistics", &self.fault_statistics);
-        formatter.field("total_count", &self.total_count);
-        formatter.field("total_response_time", &self.total_response_time);
-        formatter.finish()
     }
 }
 /// See [`EdgeStatistics`](crate::model::EdgeStatistics).
@@ -5526,7 +5138,7 @@ impl EdgeStatistics {
 
 /// <p>A list of TimeSeriesStatistic structures.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesServiceStatistics {
     /// <p>Timestamp of the window for which statistics are aggregated.</p>
     #[doc(hidden)]
@@ -5568,23 +5180,6 @@ impl TimeSeriesServiceStatistics {
     /// <p>The response time histogram for the selected entities.</p>
     pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
         self.response_time_histogram.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesServiceStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesServiceStatistics");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("edge_summary_statistics", &self.edge_summary_statistics);
-        formatter.field(
-            "service_summary_statistics",
-            &self.service_summary_statistics,
-        );
-        formatter.field(
-            "service_forecast_statistics",
-            &self.service_forecast_statistics,
-        );
-        formatter.field("response_time_histogram", &self.response_time_histogram);
-        formatter.finish()
     }
 }
 /// See [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
@@ -5700,7 +5295,7 @@ impl TimeSeriesServiceStatistics {
 
 /// <p>The predicted high and low fault count. This is used to determine if a service has become anomalous and if an insight should be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForecastStatistics {
     /// <p>The upper limit of fault counts for a service.</p>
     #[doc(hidden)]
@@ -5717,14 +5312,6 @@ impl ForecastStatistics {
     /// <p>The lower limit of fault counts for a service.</p>
     pub fn fault_count_low(&self) -> std::option::Option<i64> {
         self.fault_count_low
-    }
-}
-impl std::fmt::Debug for ForecastStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForecastStatistics");
-        formatter.field("fault_count_high", &self.fault_count_high);
-        formatter.field("fault_count_low", &self.fault_count_low);
-        formatter.finish()
     }
 }
 /// See [`ForecastStatistics`](crate::model::ForecastStatistics).
@@ -5775,7 +5362,7 @@ impl ForecastStatistics {
 
 /// <p>Sampling statistics from a call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> that X-Ray could not process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedStatistics {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
@@ -5799,15 +5386,6 @@ impl UnprocessedStatistics {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedStatistics");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
@@ -5870,7 +5448,7 @@ impl UnprocessedStatistics {
 
 /// <p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
@@ -5908,17 +5486,6 @@ impl SamplingTargetDocument {
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     pub fn interval(&self) -> std::option::Option<i32> {
         self.interval
-    }
-}
-impl std::fmt::Debug for SamplingTargetDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingTargetDocument");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("fixed_rate", &self.fixed_rate);
-        formatter.field("reservoir_quota", &self.reservoir_quota);
-        formatter.field("reservoir_quota_ttl", &self.reservoir_quota_ttl);
-        formatter.field("interval", &self.interval);
-        formatter.finish()
     }
 }
 /// See [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
@@ -6008,7 +5575,7 @@ impl SamplingTargetDocument {
 
 /// <p>Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingStatisticsDocument {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
@@ -6053,18 +5620,6 @@ impl SamplingStatisticsDocument {
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn borrow_count(&self) -> i32 {
         self.borrow_count
-    }
-}
-impl std::fmt::Debug for SamplingStatisticsDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingStatisticsDocument");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("request_count", &self.request_count);
-        formatter.field("sampled_count", &self.sampled_count);
-        formatter.field("borrow_count", &self.borrow_count);
-        formatter.finish()
     }
 }
 /// See [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
@@ -6166,7 +5721,7 @@ impl SamplingStatisticsDocument {
 
 /// <p>Aggregated request sampling data for a sampling rule across all services for a 10-second window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingStatisticSummary {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
@@ -6204,17 +5759,6 @@ impl SamplingStatisticSummary {
     /// <p>The number of requests recorded.</p>
     pub fn sampled_count(&self) -> i32 {
         self.sampled_count
-    }
-}
-impl std::fmt::Debug for SamplingStatisticSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingStatisticSummary");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("request_count", &self.request_count);
-        formatter.field("borrow_count", &self.borrow_count);
-        formatter.field("sampled_count", &self.sampled_count);
-        formatter.finish()
     }
 }
 /// See [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
@@ -6304,7 +5848,7 @@ impl SamplingStatisticSummary {
 
 /// <p>Information that describes an insight.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightSummary {
     /// <p>The insights unique identifier. </p>
     #[doc(hidden)]
@@ -6404,31 +5948,6 @@ impl InsightSummary {
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for InsightSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightSummary");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("root_cause_service_id", &self.root_cause_service_id);
-        formatter.field("categories", &self.categories);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("summary", &self.summary);
-        formatter.field(
-            "client_request_impact_statistics",
-            &self.client_request_impact_statistics,
-        );
-        formatter.field(
-            "root_cause_service_request_impact_statistics",
-            &self.root_cause_service_request_impact_statistics,
-        );
-        formatter.field("top_anomalous_services", &self.top_anomalous_services);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`InsightSummary`](crate::model::InsightSummary).
@@ -6657,7 +6176,7 @@ impl InsightSummary {
 
 /// <p>The service within the service graph that has anomalously high fault rates. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalousService {
     /// <p></p>
     #[doc(hidden)]
@@ -6667,13 +6186,6 @@ impl AnomalousService {
     /// <p></p>
     pub fn service_id(&self) -> std::option::Option<&crate::model::ServiceId> {
         self.service_id.as_ref()
-    }
-}
-impl std::fmt::Debug for AnomalousService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalousService");
-        formatter.field("service_id", &self.service_id);
-        formatter.finish()
     }
 }
 /// See [`AnomalousService`](crate::model::AnomalousService).
@@ -6715,7 +6227,7 @@ impl AnomalousService {
 
 /// <p>Statistics that describe how the incident has impacted a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestImpactStatistics {
     /// <p>The number of requests that have resulted in a fault,</p>
     #[doc(hidden)]
@@ -6739,15 +6251,6 @@ impl RequestImpactStatistics {
     /// <p>The total number of requests to the service.</p>
     pub fn total_count(&self) -> std::option::Option<i64> {
         self.total_count
-    }
-}
-impl std::fmt::Debug for RequestImpactStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestImpactStatistics");
-        formatter.field("fault_count", &self.fault_count);
-        formatter.field("ok_count", &self.ok_count);
-        formatter.field("total_count", &self.total_count);
-        formatter.finish()
     }
 }
 /// See [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
@@ -6985,7 +6488,7 @@ impl AsRef<str> for InsightCategory {
 
 /// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightImpactGraphService {
     /// <p>Identifier for the service. Unique within the service map.</p>
     #[doc(hidden)]
@@ -7042,18 +6545,6 @@ impl InsightImpactGraphService {
     /// <p>Connections to downstream services.</p>
     pub fn edges(&self) -> std::option::Option<&[crate::model::InsightImpactGraphEdge]> {
         self.edges.as_deref()
-    }
-}
-impl std::fmt::Debug for InsightImpactGraphService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightImpactGraphService");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("edges", &self.edges);
-        formatter.finish()
     }
 }
 /// See [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
@@ -7182,7 +6673,7 @@ impl InsightImpactGraphService {
 
 /// <p>The connection between two service in an insight impact graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightImpactGraphEdge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     #[doc(hidden)]
@@ -7192,13 +6683,6 @@ impl InsightImpactGraphEdge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     pub fn reference_id(&self) -> std::option::Option<i32> {
         self.reference_id
-    }
-}
-impl std::fmt::Debug for InsightImpactGraphEdge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightImpactGraphEdge");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.finish()
     }
 }
 /// See [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
@@ -7237,7 +6721,7 @@ impl InsightImpactGraphEdge {
 
 /// <p>X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightEvent {
     /// <p>A brief description of the event.</p>
     #[doc(hidden)]
@@ -7281,23 +6765,6 @@ impl InsightEvent {
     /// <p>The service during the event that is most impacted by the incident.</p>
     pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::model::AnomalousService]> {
         self.top_anomalous_services.as_deref()
-    }
-}
-impl std::fmt::Debug for InsightEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightEvent");
-        formatter.field("summary", &self.summary);
-        formatter.field("event_time", &self.event_time);
-        formatter.field(
-            "client_request_impact_statistics",
-            &self.client_request_impact_statistics,
-        );
-        formatter.field(
-            "root_cause_service_request_impact_statistics",
-            &self.root_cause_service_request_impact_statistics,
-        );
-        formatter.field("top_anomalous_services", &self.top_anomalous_services);
-        formatter.finish()
     }
 }
 /// See [`InsightEvent`](crate::model::InsightEvent).
@@ -7412,7 +6879,7 @@ impl InsightEvent {
 
 /// <p>When fault rates go outside of the expected range, X-Ray creates an insight. Insights tracks emergent issues within your applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Insight {
     /// <p>The insights unique identifier. </p>
     #[doc(hidden)]
@@ -7505,30 +6972,6 @@ impl Insight {
     /// <p>The service within the insight that is most impacted by the incident.</p>
     pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::model::AnomalousService]> {
         self.top_anomalous_services.as_deref()
-    }
-}
-impl std::fmt::Debug for Insight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Insight");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("root_cause_service_id", &self.root_cause_service_id);
-        formatter.field("categories", &self.categories);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("summary", &self.summary);
-        formatter.field(
-            "client_request_impact_statistics",
-            &self.client_request_impact_statistics,
-        );
-        formatter.field(
-            "root_cause_service_request_impact_statistics",
-            &self.root_cause_service_request_impact_statistics,
-        );
-        formatter.field("top_anomalous_services", &self.top_anomalous_services);
-        formatter.finish()
     }
 }
 /// See [`Insight`](crate::model::Insight).
@@ -7742,7 +7185,7 @@ impl Insight {
 
 /// <p>Details for a group without metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupSummary {
     /// <p>The unique case-sensitive name of the group.</p>
     #[doc(hidden)]
@@ -7783,16 +7226,6 @@ impl GroupSummary {
         &self,
     ) -> std::option::Option<&crate::model::InsightsConfiguration> {
         self.insights_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for GroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupSummary");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("insights_configuration", &self.insights_configuration);
-        formatter.finish()
     }
 }
 /// See [`GroupSummary`](crate::model::GroupSummary).
@@ -7884,7 +7317,7 @@ impl GroupSummary {
 
 /// <p>A collection of segment documents with matching trace IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Trace {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     #[doc(hidden)]
@@ -7915,16 +7348,6 @@ impl Trace {
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
     pub fn segments(&self) -> std::option::Option<&[crate::model::Segment]> {
         self.segments.as_deref()
-    }
-}
-impl std::fmt::Debug for Trace {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Trace");
-        formatter.field("id", &self.id);
-        formatter.field("duration", &self.duration);
-        formatter.field("limit_exceeded", &self.limit_exceeded);
-        formatter.field("segments", &self.segments);
-        formatter.finish()
     }
 }
 /// See [`Trace`](crate::model::Trace).
@@ -8009,7 +7432,7 @@ impl Trace {
 /// <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p>
 /// <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Segment {
     /// <p>The segment's ID.</p>
     #[doc(hidden)]
@@ -8026,14 +7449,6 @@ impl Segment {
     /// <p>The segment document.</p>
     pub fn document(&self) -> std::option::Option<&str> {
         self.document.as_deref()
-    }
-}
-impl std::fmt::Debug for Segment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Segment");
-        formatter.field("id", &self.id);
-        formatter.field("document", &self.document);
-        formatter.finish()
     }
 }
 /// See [`Segment`](crate::model::Segment).

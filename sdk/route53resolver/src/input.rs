@@ -11300,7 +11300,7 @@ impl UpdateResolverRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to update.</p>
     #[doc(hidden)]
@@ -11319,18 +11319,10 @@ impl UpdateResolverRuleInput {
         self.config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResolverRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResolverRuleInput");
-        formatter.field("resolver_rule_id", &self.resolver_rule_id);
-        formatter.field("config", &self.config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
     #[doc(hidden)]
@@ -11349,18 +11341,10 @@ impl UpdateResolverEndpointInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResolverEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResolverEndpointInput");
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
     #[doc(hidden)]
@@ -11379,18 +11363,10 @@ impl UpdateResolverDnssecConfigInput {
         self.validation.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResolverDnssecConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResolverDnssecConfigInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResolverConfigInput {
     /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
     #[doc(hidden)]
@@ -11417,18 +11393,10 @@ impl UpdateResolverConfigInput {
         self.autodefined_reverse_flag.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResolverConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResolverConfigInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("autodefined_reverse_flag", &self.autodefined_reverse_flag);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     #[doc(hidden)]
@@ -11465,23 +11433,10 @@ impl UpdateFirewallRuleGroupAssociationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallRuleGroupAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallRuleGroupAssociationInput");
-        formatter.field(
-            "firewall_rule_group_association_id",
-            &self.firewall_rule_group_association_id,
-        );
-        formatter.field("priority", &self.priority);
-        formatter.field("mutation_protection", &self.mutation_protection);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group for the rule. </p>
     #[doc(hidden)]
@@ -11573,25 +11528,10 @@ impl UpdateFirewallRuleInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallRuleInput");
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.field("priority", &self.priority);
-        formatter.field("action", &self.action);
-        formatter.field("block_response", &self.block_response);
-        formatter.field("block_override_domain", &self.block_override_domain);
-        formatter.field("block_override_dns_type", &self.block_override_dns_type);
-        formatter.field("block_override_ttl", &self.block_override_ttl);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallDomainsInput {
     /// <p>The ID of the domain list whose domains you want to update. </p>
     #[doc(hidden)]
@@ -11639,19 +11579,10 @@ impl UpdateFirewallDomainsInput {
         self.domains.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallDomainsInput");
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.field("operation", &self.operation);
-        formatter.field("domains", &self.domains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallConfigInput {
     /// <p>The ID of the VPC that the configuration is for.</p>
     #[doc(hidden)]
@@ -11680,18 +11611,10 @@ impl UpdateFirewallConfigInput {
         self.firewall_fail_open.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallConfigInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("firewall_fail_open", &self.firewall_fail_open);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable <code>Get</code> or <code>List</code> command: </p>
     /// <ul>
@@ -11726,18 +11649,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that you want to add tags to. To get the ARN for a resource, use the applicable <code>Get</code> or <code>List</code> command: </p>
     /// <ul>
@@ -11772,18 +11687,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResolverRulePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
     #[doc(hidden)]
@@ -11818,18 +11725,10 @@ impl PutResolverRulePolicyInput {
         self.resolver_rule_policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutResolverRulePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResolverRulePolicyInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("resolver_rule_policy", &self.resolver_rule_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResolverQueryLogConfigPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
     #[doc(hidden)]
@@ -11862,21 +11761,10 @@ impl PutResolverQueryLogConfigPolicyInput {
         self.resolver_query_log_config_policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutResolverQueryLogConfigPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResolverQueryLogConfigPolicyInput");
-        formatter.field("arn", &self.arn);
-        formatter.field(
-            "resolver_query_log_config_policy",
-            &self.resolver_query_log_config_policy,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
     #[doc(hidden)]
@@ -11895,21 +11783,10 @@ impl PutFirewallRuleGroupPolicyInput {
         self.firewall_rule_group_policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutFirewallRuleGroupPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFirewallRuleGroupPolicyInput");
-        formatter.field("arn", &self.arn);
-        formatter.field(
-            "firewall_rule_group_policy",
-            &self.firewall_rule_group_policy,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that you want to list tags for.</p>
     #[doc(hidden)]
@@ -11937,19 +11814,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolverRulesInput {
     /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
     #[doc(hidden)]
@@ -11981,19 +11849,10 @@ impl ListResolverRulesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListResolverRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolverRulesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolverRuleAssociationsInput {
     /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations. </p>
     #[doc(hidden)]
@@ -12025,19 +11884,10 @@ impl ListResolverRuleAssociationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListResolverRuleAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolverRuleAssociationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolverQueryLogConfigsInput {
     /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
     #[doc(hidden)]
@@ -12137,21 +11987,10 @@ impl ListResolverQueryLogConfigsInput {
         self.sort_order.as_ref()
     }
 }
-impl std::fmt::Debug for ListResolverQueryLogConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolverQueryLogConfigsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolverQueryLogConfigAssociationsInput {
     /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging associations. </p>
     #[doc(hidden)]
@@ -12251,21 +12090,10 @@ impl ListResolverQueryLogConfigAssociationsInput {
         self.sort_order.as_ref()
     }
 }
-impl std::fmt::Debug for ListResolverQueryLogConfigAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolverQueryLogConfigAssociationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolverEndpointsInput {
     /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
     #[doc(hidden)]
@@ -12297,19 +12125,10 @@ impl ListResolverEndpointsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListResolverEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolverEndpointsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolverEndpointIpAddressesInput {
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
     #[doc(hidden)]
@@ -12337,19 +12156,10 @@ impl ListResolverEndpointIpAddressesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResolverEndpointIpAddressesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolverEndpointIpAddressesInput");
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolverDnssecConfigsInput {
     /// <p> <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
     #[doc(hidden)]
@@ -12379,19 +12189,10 @@ impl ListResolverDnssecConfigsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListResolverDnssecConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolverDnssecConfigsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResolverConfigsInput {
     /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
     #[doc(hidden)]
@@ -12414,18 +12215,10 @@ impl ListResolverConfigsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResolverConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResolverConfigsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallRulesInput {
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
     #[doc(hidden)]
@@ -12483,21 +12276,10 @@ impl ListFirewallRulesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFirewallRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallRulesInput");
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.field("priority", &self.priority);
-        formatter.field("action", &self.action);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallRuleGroupsInput {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
@@ -12520,18 +12302,10 @@ impl ListFirewallRuleGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFirewallRuleGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallRuleGroupsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallRuleGroupAssociationsInput {
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
     #[doc(hidden)]
@@ -12582,22 +12356,10 @@ impl ListFirewallRuleGroupAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFirewallRuleGroupAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallRuleGroupAssociationsInput");
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("priority", &self.priority);
-        formatter.field("status", &self.status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallDomainsInput {
     /// <p>The ID of the domain list whose domains you want to retrieve. </p>
     #[doc(hidden)]
@@ -12627,19 +12389,10 @@ impl ListFirewallDomainsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFirewallDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallDomainsInput");
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallDomainListsInput {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
@@ -12662,18 +12415,10 @@ impl ListFirewallDomainListsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFirewallDomainListsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallDomainListsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallConfigsInput {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
@@ -12696,18 +12441,10 @@ impl ListFirewallConfigsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFirewallConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallConfigsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportFirewallDomainsInput {
     /// <p>The ID of the domain list that you want to modify with the import operation.</p>
     #[doc(hidden)]
@@ -12735,19 +12472,10 @@ impl ImportFirewallDomainsInput {
         self.domain_file_url.as_deref()
     }
 }
-impl std::fmt::Debug for ImportFirewallDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportFirewallDomainsInput");
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.field("operation", &self.operation);
-        formatter.field("domain_file_url", &self.domain_file_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverRulePolicyInput {
     /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
     #[doc(hidden)]
@@ -12759,17 +12487,10 @@ impl GetResolverRulePolicyInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverRulePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverRulePolicyInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverRuleAssociationInput {
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
     #[doc(hidden)]
@@ -12781,20 +12502,10 @@ impl GetResolverRuleAssociationInput {
         self.resolver_rule_association_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverRuleAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverRuleAssociationInput");
-        formatter.field(
-            "resolver_rule_association_id",
-            &self.resolver_rule_association_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to get information about.</p>
     #[doc(hidden)]
@@ -12806,17 +12517,10 @@ impl GetResolverRuleInput {
         self.resolver_rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverRuleInput");
-        formatter.field("resolver_rule_id", &self.resolver_rule_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigPolicyInput {
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
     #[doc(hidden)]
@@ -12828,17 +12532,10 @@ impl GetResolverQueryLogConfigPolicyInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverQueryLogConfigPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverQueryLogConfigPolicyInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigAssociationInput {
     /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
     #[doc(hidden)]
@@ -12850,20 +12547,10 @@ impl GetResolverQueryLogConfigAssociationInput {
         self.resolver_query_log_config_association_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverQueryLogConfigAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverQueryLogConfigAssociationInput");
-        formatter.field(
-            "resolver_query_log_config_association_id",
-            &self.resolver_query_log_config_association_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigInput {
     /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
     #[doc(hidden)]
@@ -12875,20 +12562,10 @@ impl GetResolverQueryLogConfigInput {
         self.resolver_query_log_config_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverQueryLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverQueryLogConfigInput");
-        formatter.field(
-            "resolver_query_log_config_id",
-            &self.resolver_query_log_config_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
     #[doc(hidden)]
@@ -12900,17 +12577,10 @@ impl GetResolverEndpointInput {
         self.resolver_endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverEndpointInput");
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
     #[doc(hidden)]
@@ -12922,17 +12592,10 @@ impl GetResolverDnssecConfigInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverDnssecConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverDnssecConfigInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResolverConfigInput {
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
     #[doc(hidden)]
@@ -12944,17 +12607,10 @@ impl GetResolverConfigInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResolverConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResolverConfigInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
     #[doc(hidden)]
@@ -12966,17 +12622,10 @@ impl GetFirewallRuleGroupPolicyInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetFirewallRuleGroupPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFirewallRuleGroupPolicyInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     #[doc(hidden)]
@@ -12988,20 +12637,10 @@ impl GetFirewallRuleGroupAssociationInput {
         self.firewall_rule_group_association_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFirewallRuleGroupAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFirewallRuleGroupAssociationInput");
-        formatter.field(
-            "firewall_rule_group_association_id",
-            &self.firewall_rule_group_association_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group. </p>
     #[doc(hidden)]
@@ -13013,17 +12652,10 @@ impl GetFirewallRuleGroupInput {
         self.firewall_rule_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFirewallRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFirewallRuleGroupInput");
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFirewallDomainListInput {
     /// <p>The ID of the domain list. </p>
     #[doc(hidden)]
@@ -13035,17 +12667,10 @@ impl GetFirewallDomainListInput {
         self.firewall_domain_list_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFirewallDomainListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFirewallDomainListInput");
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFirewallConfigInput {
     /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
     #[doc(hidden)]
@@ -13057,17 +12682,10 @@ impl GetFirewallConfigInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFirewallConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFirewallConfigInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResolverRuleInput {
     /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
     #[doc(hidden)]
@@ -13086,18 +12704,10 @@ impl DisassociateResolverRuleInput {
         self.resolver_rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateResolverRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResolverRuleInput");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("resolver_rule_id", &self.resolver_rule_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
     #[doc(hidden)]
@@ -13116,21 +12726,10 @@ impl DisassociateResolverQueryLogConfigInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateResolverQueryLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResolverQueryLogConfigInput");
-        formatter.field(
-            "resolver_query_log_config_id",
-            &self.resolver_query_log_config_id,
-        );
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResolverEndpointIpAddressInput {
     /// <p>The ID of the Resolver endpoint that you want to disassociate an IP address from.</p>
     #[doc(hidden)]
@@ -13149,18 +12748,10 @@ impl DisassociateResolverEndpointIpAddressInput {
         self.ip_address.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateResolverEndpointIpAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResolverEndpointIpAddressInput");
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateFirewallRuleGroupInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     #[doc(hidden)]
@@ -13172,20 +12763,10 @@ impl DisassociateFirewallRuleGroupInput {
         self.firewall_rule_group_association_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateFirewallRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateFirewallRuleGroupInput");
-        formatter.field(
-            "firewall_rule_group_association_id",
-            &self.firewall_rule_group_association_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
     #[doc(hidden)]
@@ -13197,17 +12778,10 @@ impl DeleteResolverRuleInput {
         self.resolver_rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResolverRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResolverRuleInput");
-        formatter.field("resolver_rule_id", &self.resolver_rule_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to delete.</p>
     #[doc(hidden)]
@@ -13219,20 +12793,10 @@ impl DeleteResolverQueryLogConfigInput {
         self.resolver_query_log_config_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResolverQueryLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResolverQueryLogConfigInput");
-        formatter.field(
-            "resolver_query_log_config_id",
-            &self.resolver_query_log_config_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to delete.</p>
     #[doc(hidden)]
@@ -13244,17 +12808,10 @@ impl DeleteResolverEndpointInput {
         self.resolver_endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResolverEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResolverEndpointInput");
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
     #[doc(hidden)]
@@ -13266,17 +12823,10 @@ impl DeleteFirewallRuleGroupInput {
         self.firewall_rule_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFirewallRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFirewallRuleGroupInput");
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
     #[doc(hidden)]
@@ -13295,18 +12845,10 @@ impl DeleteFirewallRuleInput {
         self.firewall_domain_list_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFirewallRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFirewallRuleInput");
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFirewallDomainListInput {
     /// <p>The ID of the domain list that you want to delete. </p>
     #[doc(hidden)]
@@ -13318,17 +12860,10 @@ impl DeleteFirewallDomainListInput {
         self.firewall_domain_list_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFirewallDomainListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFirewallDomainListInput");
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResolverRuleInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     #[doc(hidden)]
@@ -13390,23 +12925,10 @@ impl CreateResolverRuleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResolverRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResolverRuleInput");
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("name", &self.name);
-        formatter.field("rule_type", &self.rule_type);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("target_ips", &self.target_ips);
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResolverQueryLogConfigInput {
     /// <p>The name that you want to give the query logging configuration.</p>
     #[doc(hidden)]
@@ -13449,20 +12971,10 @@ impl CreateResolverQueryLogConfigInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResolverQueryLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResolverQueryLogConfigInput");
-        formatter.field("name", &self.name);
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResolverEndpointInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     #[doc(hidden)]
@@ -13517,22 +13029,10 @@ impl CreateResolverEndpointInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResolverEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResolverEndpointInput");
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("name", &self.name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("direction", &self.direction);
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFirewallRuleGroupInput {
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     #[doc(hidden)]
@@ -13558,19 +13058,10 @@ impl CreateFirewallRuleGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFirewallRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFirewallRuleGroupInput");
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFirewallRuleInput {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     #[doc(hidden)]
@@ -13677,26 +13168,10 @@ impl CreateFirewallRuleInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFirewallRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFirewallRuleInput");
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.field("priority", &self.priority);
-        formatter.field("action", &self.action);
-        formatter.field("block_response", &self.block_response);
-        formatter.field("block_override_domain", &self.block_override_domain);
-        formatter.field("block_override_dns_type", &self.block_override_dns_type);
-        formatter.field("block_override_ttl", &self.block_override_ttl);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFirewallDomainListInput {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     #[doc(hidden)]
@@ -13722,19 +13197,10 @@ impl CreateFirewallDomainListInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFirewallDomainListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFirewallDomainListInput");
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
     #[doc(hidden)]
@@ -13760,19 +13226,10 @@ impl AssociateResolverRuleInput {
         self.vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateResolverRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResolverRuleInput");
-        formatter.field("resolver_rule_id", &self.resolver_rule_id);
-        formatter.field("name", &self.name);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
     #[doc(hidden)]
@@ -13795,21 +13252,10 @@ impl AssociateResolverQueryLogConfigInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateResolverQueryLogConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResolverQueryLogConfigInput");
-        formatter.field(
-            "resolver_query_log_config_id",
-            &self.resolver_query_log_config_id,
-        );
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResolverEndpointIpAddressInput {
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
     #[doc(hidden)]
@@ -13828,18 +13274,10 @@ impl AssociateResolverEndpointIpAddressInput {
         self.ip_address.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateResolverEndpointIpAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResolverEndpointIpAddressInput");
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroupInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     #[doc(hidden)]
@@ -13897,18 +13335,5 @@ impl AssociateFirewallRuleGroupInput {
     /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateFirewallRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateFirewallRuleGroupInput");
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("priority", &self.priority);
-        formatter.field("name", &self.name);
-        formatter.field("mutation_protection", &self.mutation_protection);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

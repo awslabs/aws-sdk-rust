@@ -2,7 +2,7 @@
 
 /// <p>The event integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventIntegration {
     /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
     #[doc(hidden)]
@@ -51,18 +51,6 @@ impl EventIntegration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for EventIntegration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventIntegration");
-        formatter.field("event_integration_arn", &self.event_integration_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("event_filter", &self.event_filter);
-        formatter.field("event_bridge_bus", &self.event_bridge_bus);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`EventIntegration`](crate::model::EventIntegration).
@@ -187,7 +175,7 @@ impl EventIntegration {
 
 /// <p>The event filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventFilter {
     /// <p>The source of the events.</p>
     #[doc(hidden)]
@@ -197,13 +185,6 @@ impl EventFilter {
     /// <p>The source of the events.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
-    }
-}
-impl std::fmt::Debug for EventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventFilter");
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`EventFilter`](crate::model::EventFilter).
@@ -242,7 +223,7 @@ impl EventFilter {
 
 /// <p>The event integration association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventIntegrationAssociation {
     /// <p>The Amazon Resource Name (ARN) for the event integration association.</p>
     #[doc(hidden)]
@@ -291,27 +272,6 @@ impl EventIntegrationAssociation {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.client_association_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for EventIntegrationAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventIntegrationAssociation");
-        formatter.field(
-            "event_integration_association_arn",
-            &self.event_integration_association_arn,
-        );
-        formatter.field(
-            "event_integration_association_id",
-            &self.event_integration_association_id,
-        );
-        formatter.field("event_integration_name", &self.event_integration_name);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("event_bridge_rule_name", &self.event_bridge_rule_name);
-        formatter.field(
-            "client_association_metadata",
-            &self.client_association_metadata,
-        );
-        formatter.finish()
     }
 }
 /// See [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
@@ -445,7 +405,7 @@ impl EventIntegrationAssociation {
 
 /// <p>Summary information about the DataIntegration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataIntegrationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
     #[doc(hidden)]
@@ -469,15 +429,6 @@ impl DataIntegrationSummary {
     /// <p>The URI of the data source.</p>
     pub fn source_uri(&self) -> std::option::Option<&str> {
         self.source_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for DataIntegrationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataIntegrationSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("source_uri", &self.source_uri);
-        formatter.finish()
     }
 }
 /// See [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
@@ -540,7 +491,7 @@ impl DataIntegrationSummary {
 
 /// <p>Summary information about the DataIntegration association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataIntegrationAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
     #[doc(hidden)]
@@ -564,18 +515,6 @@ impl DataIntegrationAssociationSummary {
     /// <p>The identifier for teh client that is associated with the DataIntegration association.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DataIntegrationAssociationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataIntegrationAssociationSummary");
-        formatter.field(
-            "data_integration_association_arn",
-            &self.data_integration_association_arn,
-        );
-        formatter.field("data_integration_arn", &self.data_integration_arn);
-        formatter.field("client_id", &self.client_id);
-        formatter.finish()
     }
 }
 /// See [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
@@ -647,7 +586,7 @@ impl DataIntegrationAssociationSummary {
 
 /// <p>The name of the data and how often it should be pulled from the source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleConfiguration {
     /// <p>The start date for objects to import in the first flow run.</p>
     #[doc(hidden)]
@@ -671,15 +610,6 @@ impl ScheduleConfiguration {
     /// <p>How often the data should be pulled from data source.</p>
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduleConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleConfiguration");
-        formatter.field("first_execution_from", &self.first_execution_from);
-        formatter.field("object", &self.object);
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.finish()
     }
 }
 /// See [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).

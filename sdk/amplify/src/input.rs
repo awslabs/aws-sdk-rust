@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_app_input {
 
     /// A builder for [`CreateAppInput`](crate::input::CreateAppInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -330,6 +330,43 @@ pub mod create_app_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("repository", &self.repository);
+            formatter.field("platform", &self.platform);
+            formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
+            formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("environment_variables", &self.environment_variables);
+            formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
+            formatter.field(
+                "enable_branch_auto_deletion",
+                &self.enable_branch_auto_deletion,
+            );
+            formatter.field("enable_basic_auth", &self.enable_basic_auth);
+            formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("custom_rules", &self.custom_rules);
+            formatter.field("tags", &self.tags);
+            formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("custom_headers", &self.custom_headers);
+            formatter.field(
+                "enable_auto_branch_creation",
+                &self.enable_auto_branch_creation,
+            );
+            formatter.field(
+                "auto_branch_creation_patterns",
+                &self.auto_branch_creation_patterns,
+            );
+            formatter.field(
+                "auto_branch_creation_config",
+                &self.auto_branch_creation_config,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
@@ -649,7 +686,7 @@ impl CreateBackendEnvironmentInput {
 pub mod create_branch_input {
 
     /// A builder for [`CreateBranchInput`](crate::input::CreateBranchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) branch_name: std::option::Option<std::string::String>,
@@ -924,6 +961,36 @@ pub mod create_branch_input {
                 pull_request_environment_name: self.pull_request_environment_name,
                 backend_environment_arn: self.backend_environment_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_id", &self.app_id);
+            formatter.field("branch_name", &self.branch_name);
+            formatter.field("description", &self.description);
+            formatter.field("stage", &self.stage);
+            formatter.field("framework", &self.framework);
+            formatter.field("enable_notification", &self.enable_notification);
+            formatter.field("enable_auto_build", &self.enable_auto_build);
+            formatter.field("environment_variables", &self.environment_variables);
+            formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("enable_basic_auth", &self.enable_basic_auth);
+            formatter.field("enable_performance_mode", &self.enable_performance_mode);
+            formatter.field("tags", &self.tags);
+            formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("ttl", &self.ttl);
+            formatter.field("display_name", &self.display_name);
+            formatter.field(
+                "enable_pull_request_preview",
+                &self.enable_pull_request_preview,
+            );
+            formatter.field(
+                "pull_request_environment_name",
+                &self.pull_request_environment_name,
+            );
+            formatter.field("backend_environment_arn", &self.backend_environment_arn);
+            formatter.finish()
         }
     }
 }
@@ -6816,7 +6883,7 @@ impl UntagResourceInput {
 pub mod update_app_input {
 
     /// A builder for [`UpdateAppInput`](crate::input::UpdateAppInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7126,6 +7193,43 @@ pub mod update_app_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_id", &self.app_id);
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("platform", &self.platform);
+            formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
+            formatter.field("environment_variables", &self.environment_variables);
+            formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
+            formatter.field(
+                "enable_branch_auto_deletion",
+                &self.enable_branch_auto_deletion,
+            );
+            formatter.field("enable_basic_auth", &self.enable_basic_auth);
+            formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("custom_rules", &self.custom_rules);
+            formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("custom_headers", &self.custom_headers);
+            formatter.field(
+                "enable_auto_branch_creation",
+                &self.enable_auto_branch_creation,
+            );
+            formatter.field(
+                "auto_branch_creation_patterns",
+                &self.auto_branch_creation_patterns,
+            );
+            formatter.field(
+                "auto_branch_creation_config",
+                &self.auto_branch_creation_config,
+            );
+            formatter.field("repository", &self.repository);
+            formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
@@ -7258,7 +7362,7 @@ impl UpdateAppInput {
 pub mod update_branch_input {
 
     /// A builder for [`UpdateBranchInput`](crate::input::UpdateBranchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) branch_name: std::option::Option<std::string::String>,
@@ -7504,6 +7608,35 @@ pub mod update_branch_input {
                 pull_request_environment_name: self.pull_request_environment_name,
                 backend_environment_arn: self.backend_environment_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_id", &self.app_id);
+            formatter.field("branch_name", &self.branch_name);
+            formatter.field("description", &self.description);
+            formatter.field("framework", &self.framework);
+            formatter.field("stage", &self.stage);
+            formatter.field("enable_notification", &self.enable_notification);
+            formatter.field("enable_auto_build", &self.enable_auto_build);
+            formatter.field("environment_variables", &self.environment_variables);
+            formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("enable_basic_auth", &self.enable_basic_auth);
+            formatter.field("enable_performance_mode", &self.enable_performance_mode);
+            formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("ttl", &self.ttl);
+            formatter.field("display_name", &self.display_name);
+            formatter.field(
+                "enable_pull_request_preview",
+                &self.enable_pull_request_preview,
+            );
+            formatter.field(
+                "pull_request_environment_name",
+                &self.pull_request_environment_name,
+            );
+            formatter.field("backend_environment_arn", &self.backend_environment_arn);
+            formatter.finish()
         }
     }
 }
@@ -8121,7 +8254,7 @@ impl UpdateWebhookInput {
 
 /// <p> The request structure for the update webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWebhookInput {
     /// <p> The unique ID for a webhook. </p>
     #[doc(hidden)]
@@ -8147,19 +8280,10 @@ impl UpdateWebhookInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWebhookInput");
-        formatter.field("webhook_id", &self.webhook_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the update domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainAssociationInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -8204,21 +8328,6 @@ impl UpdateDomainAssociationInput {
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDomainAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainAssociationInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("enable_auto_sub_domain", &self.enable_auto_sub_domain);
-        formatter.field("sub_domain_settings", &self.sub_domain_settings);
-        formatter.field(
-            "auto_sub_domain_creation_patterns",
-            &self.auto_sub_domain_creation_patterns,
-        );
-        formatter.field("auto_sub_domain_iam_role", &self.auto_sub_domain_iam_role);
-        formatter.finish()
     }
 }
 
@@ -8584,7 +8693,7 @@ impl std::fmt::Debug for UpdateAppInput {
 
 /// <p> The request structure for the untag resource request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
     #[doc(hidden)]
@@ -8603,18 +8712,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure to tag a resource with a tag key and value. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
     #[doc(hidden)]
@@ -8637,18 +8738,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the stop job request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopJobInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -8674,19 +8767,10 @@ impl StopJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopJobInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the start job request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartJobInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -8747,24 +8831,10 @@ impl StartJobInput {
         self.commit_time.as_ref()
     }
 }
-impl std::fmt::Debug for StartJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartJobInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_type", &self.job_type);
-        formatter.field("job_reason", &self.job_reason);
-        formatter.field("commit_id", &self.commit_id);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("commit_time", &self.commit_time);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the start a deployment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDeploymentInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -8797,20 +8867,10 @@ impl StartDeploymentInput {
         self.source_url.as_deref()
     }
 }
-impl std::fmt::Debug for StartDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDeploymentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("source_url", &self.source_url);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the list webhooks request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebhooksInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -8836,19 +8896,10 @@ impl ListWebhooksInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWebhooksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebhooksInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure to use to list tags for a resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
     #[doc(hidden)]
@@ -8860,17 +8911,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the list jobs request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -8903,20 +8947,10 @@ impl ListJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the list domain associations request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainAssociationsInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -8942,19 +8976,10 @@ impl ListDomainAssociationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDomainAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainAssociationsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the list branches request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBranchesInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -8980,19 +9005,10 @@ impl ListBranchesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListBranchesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBranchesInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the list backend environments request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackendEnvironmentsInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9025,20 +9041,10 @@ impl ListBackendEnvironmentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListBackendEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackendEnvironmentsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p> Describes the request structure for the list artifacts request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListArtifactsInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9078,21 +9084,10 @@ impl ListArtifactsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListArtifactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListArtifactsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the list apps request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAppsInput {
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
@@ -9111,18 +9106,10 @@ impl ListAppsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAppsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAppsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the get webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWebhookInput {
     /// <p> The unique ID for a webhook. </p>
     #[doc(hidden)]
@@ -9134,17 +9121,10 @@ impl GetWebhookInput {
         self.webhook_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWebhookInput");
-        formatter.field("webhook_id", &self.webhook_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the get job request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9170,19 +9150,10 @@ impl GetJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the get domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainAssociationInput {
     /// <p> The unique id for an Amplify app. </p>
     #[doc(hidden)]
@@ -9201,18 +9172,10 @@ impl GetDomainAssociationInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainAssociationInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the get branch request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9231,18 +9194,10 @@ impl GetBranchInput {
         self.branch_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBranchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBranchInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the get backend environment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendEnvironmentInput {
     /// <p> The unique id for an Amplify app. </p>
     #[doc(hidden)]
@@ -9261,18 +9216,10 @@ impl GetBackendEnvironmentInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackendEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendEnvironmentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Returns the request structure for the get artifact request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetArtifactUrlInput {
     /// <p> The unique ID for an artifact. </p>
     #[doc(hidden)]
@@ -9284,17 +9231,10 @@ impl GetArtifactUrlInput {
         self.artifact_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetArtifactUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetArtifactUrlInput");
-        formatter.field("artifact_id", &self.artifact_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the get app request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9306,17 +9246,10 @@ impl GetAppInput {
         self.app_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the generate access logs request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateAccessLogsInput {
     /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     #[doc(hidden)]
@@ -9349,20 +9282,10 @@ impl GenerateAccessLogsInput {
         self.app_id.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateAccessLogsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateAccessLogsInput");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("app_id", &self.app_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the delete webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWebhookInput {
     /// <p> The unique ID for a webhook. </p>
     #[doc(hidden)]
@@ -9374,17 +9297,10 @@ impl DeleteWebhookInput {
         self.webhook_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWebhookInput");
-        formatter.field("webhook_id", &self.webhook_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the delete job request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9410,19 +9326,10 @@ impl DeleteJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJobInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the delete domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainAssociationInput {
     /// <p> The unique id for an Amplify app. </p>
     #[doc(hidden)]
@@ -9441,18 +9348,10 @@ impl DeleteDomainAssociationInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainAssociationInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the delete branch request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9471,18 +9370,10 @@ impl DeleteBranchInput {
         self.branch_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBranchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBranchInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the delete backend environment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackendEnvironmentInput {
     /// <p> The unique ID of an Amplify app. </p>
     #[doc(hidden)]
@@ -9501,18 +9392,10 @@ impl DeleteBackendEnvironmentInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackendEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackendEnvironmentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Describes the request structure for the delete app request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9524,17 +9407,10 @@ impl DeleteAppInput {
         self.app_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the create webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebhookInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9560,19 +9436,10 @@ impl CreateWebhookInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebhookInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the create domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainAssociationInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9619,25 +9486,10 @@ impl CreateDomainAssociationInput {
         self.auto_sub_domain_iam_role.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainAssociationInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("enable_auto_sub_domain", &self.enable_auto_sub_domain);
-        formatter.field("sub_domain_settings", &self.sub_domain_settings);
-        formatter.field(
-            "auto_sub_domain_creation_patterns",
-            &self.auto_sub_domain_creation_patterns,
-        );
-        formatter.field("auto_sub_domain_iam_role", &self.auto_sub_domain_iam_role);
-        formatter.finish()
-    }
-}
 
 /// <p> The request structure for the create a new deployment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9665,15 +9517,6 @@ impl CreateDeploymentInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.file_map.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("file_map", &self.file_map);
-        formatter.finish()
     }
 }
 
@@ -9853,7 +9696,7 @@ impl std::fmt::Debug for CreateBranchInput {
 
 /// <p> The request structure for the backend environment create request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendEnvironmentInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
@@ -9884,16 +9727,6 @@ impl CreateBackendEnvironmentInput {
     /// <p> The name of deployment artifacts. </p>
     pub fn deployment_artifacts(&self) -> std::option::Option<&str> {
         self.deployment_artifacts.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateBackendEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendEnvironmentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("deployment_artifacts", &self.deployment_artifacts);
-        formatter.finish()
     }
 }
 

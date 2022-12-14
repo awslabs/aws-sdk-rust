@@ -5374,7 +5374,7 @@ impl ValidatePolicyInput {
 
 /// <p>Retrieves a list of analyzers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnalyzersInput {
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
@@ -5400,19 +5400,10 @@ impl ListAnalyzersInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for ListAnalyzersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnalyzersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates an analyzer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAnalyzerInput {
     /// <p>The name of the analyzer to create.</p>
     #[doc(hidden)]
@@ -5456,21 +5447,10 @@ impl CreateAnalyzerInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAnalyzerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAnalyzerInput");
-        formatter.field("analyzer_name", &self.analyzer_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("archive_rules", &self.archive_rules);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes an analyzer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnalyzerInput {
     /// <p>The name of the analyzer to delete.</p>
     #[doc(hidden)]
@@ -5489,18 +5469,10 @@ impl DeleteAnalyzerInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAnalyzerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnalyzerInput");
-        formatter.field("analyzer_name", &self.analyzer_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves an analyzer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAnalyzerInput {
     /// <p>The name of the analyzer retrieved.</p>
     #[doc(hidden)]
@@ -5512,17 +5484,10 @@ impl GetAnalyzerInput {
         self.analyzer_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAnalyzerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAnalyzerInput");
-        formatter.field("analyzer_name", &self.analyzer_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves a list of archive rules created for the specified analyzer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListArchiveRulesInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
     #[doc(hidden)]
@@ -5548,19 +5513,10 @@ impl ListArchiveRulesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListArchiveRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListArchiveRulesInput");
-        formatter.field("analyzer_name", &self.analyzer_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates an archive rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateArchiveRuleInput {
     /// <p>The name of the created analyzer.</p>
     #[doc(hidden)]
@@ -5598,20 +5554,10 @@ impl CreateArchiveRuleInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateArchiveRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateArchiveRuleInput");
-        formatter.field("analyzer_name", &self.analyzer_name);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("filter", &self.filter);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes an archive rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteArchiveRuleInput {
     /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
     #[doc(hidden)]
@@ -5637,19 +5583,10 @@ impl DeleteArchiveRuleInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteArchiveRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteArchiveRuleInput");
-        formatter.field("analyzer_name", &self.analyzer_name);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates the specified archive rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateArchiveRuleInput {
     /// <p>The name of the analyzer to update the archive rules for.</p>
     #[doc(hidden)]
@@ -5687,20 +5624,10 @@ impl UpdateArchiveRuleInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateArchiveRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateArchiveRuleInput");
-        formatter.field("analyzer_name", &self.analyzer_name);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("filter", &self.filter);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves an archive rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetArchiveRuleInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
     #[doc(hidden)]
@@ -5719,18 +5646,10 @@ impl GetArchiveRuleInput {
         self.rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetArchiveRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetArchiveRuleInput");
-        formatter.field("analyzer_name", &self.analyzer_name);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidatePolicyInput {
     /// <p>The locale to use for localizing the findings.</p>
     #[doc(hidden)]
@@ -5784,25 +5703,10 @@ impl ValidatePolicyInput {
         self.validate_policy_resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for ValidatePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidatePolicyInput");
-        formatter.field("locale", &self.locale);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field(
-            "validate_policy_resource_type",
-            &self.validate_policy_resource_type,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Updates findings with the new values provided in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFindingsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
     #[doc(hidden)]
@@ -5842,21 +5746,10 @@ impl UpdateFindingsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFindingsInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("status", &self.status);
-        formatter.field("ids", &self.ids);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Removes a tag from the specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource to remove the tag from.</p>
     #[doc(hidden)]
@@ -5875,18 +5768,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Adds a tag to the specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to add the tag to.</p>
     #[doc(hidden)]
@@ -5909,18 +5794,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Starts a scan of the policies applied to the specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartResourceScanInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
     #[doc(hidden)]
@@ -5939,18 +5816,10 @@ impl StartResourceScanInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartResourceScanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartResourceScanInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPolicyGenerationInput {
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     #[doc(hidden)]
@@ -5980,19 +5849,10 @@ impl StartPolicyGenerationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartPolicyGenerationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPolicyGenerationInput");
-        formatter.field("policy_generation_details", &self.policy_generation_details);
-        formatter.field("cloud_trail_details", &self.cloud_trail_details);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves a list of tags applied to the specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to retrieve tags from.</p>
     #[doc(hidden)]
@@ -6004,17 +5864,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPolicyGenerationsInput {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
     #[doc(hidden)]
@@ -6040,19 +5893,10 @@ impl ListPolicyGenerationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPolicyGenerationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPolicyGenerationsInput");
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves a list of findings generated by the specified analyzer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
     #[doc(hidden)]
@@ -6097,21 +5941,10 @@ impl ListFindingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFindingsInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("filter", &self.filter);
-        formatter.field("sort", &self.sort);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves a list of resources that have been analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnalyzedResourcesInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
     #[doc(hidden)]
@@ -6144,20 +5977,10 @@ impl ListAnalyzedResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAnalyzedResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnalyzedResourcesInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPreviewsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     #[doc(hidden)]
@@ -6183,19 +6006,10 @@ impl ListAccessPreviewsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessPreviewsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessPreviewsInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPreviewFindingsInput {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
@@ -6240,21 +6054,10 @@ impl ListAccessPreviewFindingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessPreviewFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessPreviewFindingsInput");
-        formatter.field("access_preview_id", &self.access_preview_id);
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGeneratedPolicyInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
@@ -6284,25 +6087,10 @@ impl GetGeneratedPolicyInput {
         self.include_service_level_template
     }
 }
-impl std::fmt::Debug for GetGeneratedPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGeneratedPolicyInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field(
-            "include_resource_placeholders",
-            &self.include_resource_placeholders,
-        );
-        formatter.field(
-            "include_service_level_template",
-            &self.include_service_level_template,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
     #[doc(hidden)]
@@ -6321,18 +6109,10 @@ impl GetFindingInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFindingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFindingInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves an analyzed resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAnalyzedResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
     #[doc(hidden)]
@@ -6351,18 +6131,10 @@ impl GetAnalyzedResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetAnalyzedResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAnalyzedResourceInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPreviewInput {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
@@ -6381,18 +6153,10 @@ impl GetAccessPreviewInput {
         self.analyzer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPreviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPreviewInput");
-        formatter.field("access_preview_id", &self.access_preview_id);
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPreviewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
     #[doc(hidden)]
@@ -6424,19 +6188,10 @@ impl CreateAccessPreviewInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAccessPreviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessPreviewInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelPolicyGenerationInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
@@ -6448,17 +6203,10 @@ impl CancelPolicyGenerationInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelPolicyGenerationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelPolicyGenerationInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Retroactively applies an archive rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplyArchiveRuleInput {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
     #[doc(hidden)]
@@ -6482,14 +6230,5 @@ impl ApplyArchiveRuleInput {
     /// <p>A client token.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplyArchiveRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplyArchiveRuleInput");
-        formatter.field("analyzer_arn", &self.analyzer_arn);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

@@ -10851,7 +10851,7 @@ impl UpdateWorkspaceImagePermissionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceImagePermissionInput {
     /// <p>The identifier of the image.</p>
     #[doc(hidden)]
@@ -10881,19 +10881,10 @@ impl UpdateWorkspaceImagePermissionInput {
         self.shared_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWorkspaceImagePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkspaceImagePermissionInput");
-        formatter.field("image_id", &self.image_id);
-        formatter.field("allow_copy_image", &self.allow_copy_image);
-        formatter.field("shared_account_id", &self.shared_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceBundleInput {
     /// <p>The identifier of the bundle.</p>
     #[doc(hidden)]
@@ -10912,18 +10903,10 @@ impl UpdateWorkspaceBundleInput {
         self.image_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWorkspaceBundleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkspaceBundleInput");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("image_id", &self.image_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRulesOfIpGroupInput {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
@@ -10942,18 +10925,10 @@ impl UpdateRulesOfIpGroupInput {
         self.user_rules.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRulesOfIpGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRulesOfIpGroupInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("user_rules", &self.user_rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionAliasPermissionInput {
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
     #[doc(hidden)]
@@ -10974,21 +10949,10 @@ impl UpdateConnectionAliasPermissionInput {
         self.connection_alias_permission.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConnectionAliasPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionAliasPermissionInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field(
-            "connection_alias_permission",
-            &self.connection_alias_permission,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectClientAddInInput {
     /// <p>The identifier of the client add-in to update.</p>
     #[doc(hidden)]
@@ -11021,20 +10985,10 @@ impl UpdateConnectClientAddInInput {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectClientAddInInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectClientAddInInput");
-        formatter.field("add_in_id", &self.add_in_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("name", &self.name);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateWorkspacesInput {
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
@@ -11049,20 +11003,10 @@ impl TerminateWorkspacesInput {
         self.terminate_workspace_requests.as_deref()
     }
 }
-impl std::fmt::Debug for TerminateWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateWorkspacesInput");
-        formatter.field(
-            "terminate_workspace_requests",
-            &self.terminate_workspace_requests,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopWorkspacesInput {
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
@@ -11074,17 +11018,10 @@ impl StopWorkspacesInput {
         self.stop_workspace_requests.as_deref()
     }
 }
-impl std::fmt::Debug for StopWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopWorkspacesInput");
-        formatter.field("stop_workspace_requests", &self.stop_workspace_requests);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartWorkspacesInput {
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
@@ -11096,17 +11033,10 @@ impl StartWorkspacesInput {
         self.start_workspace_requests.as_deref()
     }
 }
-impl std::fmt::Debug for StartWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartWorkspacesInput");
-        formatter.field("start_workspace_requests", &self.start_workspace_requests);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeIpRulesInput {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
@@ -11125,18 +11055,10 @@ impl RevokeIpRulesInput {
         self.user_rules.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeIpRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeIpRulesInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("user_rules", &self.user_rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreWorkspaceInput {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -11148,17 +11070,10 @@ impl RestoreWorkspaceInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterWorkspaceDirectoryInput {
     /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
     #[doc(hidden)]
@@ -11205,22 +11120,10 @@ impl RegisterWorkspaceDirectoryInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterWorkspaceDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterWorkspaceDirectoryInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("enable_work_docs", &self.enable_work_docs);
-        formatter.field("enable_self_service", &self.enable_self_service);
-        formatter.field("tenancy", &self.tenancy);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebuildWorkspacesInput {
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
     #[doc(hidden)]
@@ -11235,20 +11138,10 @@ impl RebuildWorkspacesInput {
         self.rebuild_workspace_requests.as_deref()
     }
 }
-impl std::fmt::Debug for RebuildWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebuildWorkspacesInput");
-        formatter.field(
-            "rebuild_workspace_requests",
-            &self.rebuild_workspace_requests,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootWorkspacesInput {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
@@ -11260,17 +11153,10 @@ impl RebootWorkspacesInput {
         self.reboot_workspace_requests.as_deref()
     }
 }
-impl std::fmt::Debug for RebootWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootWorkspacesInput");
-        formatter.field("reboot_workspace_requests", &self.reboot_workspace_requests);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyWorkspaceStateInput {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -11289,18 +11175,10 @@ impl ModifyWorkspaceStateInput {
         self.workspace_state.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyWorkspaceStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyWorkspaceStateInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("workspace_state", &self.workspace_state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyWorkspacePropertiesInput {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -11319,18 +11197,10 @@ impl ModifyWorkspacePropertiesInput {
         self.workspace_properties.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyWorkspacePropertiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyWorkspacePropertiesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("workspace_properties", &self.workspace_properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyWorkspaceCreationPropertiesInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -11352,21 +11222,10 @@ impl ModifyWorkspaceCreationPropertiesInput {
         self.workspace_creation_properties.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyWorkspaceCreationPropertiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyWorkspaceCreationPropertiesInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field(
-            "workspace_creation_properties",
-            &self.workspace_creation_properties,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyWorkspaceAccessPropertiesInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -11387,21 +11246,10 @@ impl ModifyWorkspaceAccessPropertiesInput {
         self.workspace_access_properties.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyWorkspaceAccessPropertiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyWorkspaceAccessPropertiesInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field(
-            "workspace_access_properties",
-            &self.workspace_access_properties,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifySelfservicePermissionsInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -11422,18 +11270,10 @@ impl ModifySelfservicePermissionsInput {
         self.selfservice_permissions.as_ref()
     }
 }
-impl std::fmt::Debug for ModifySelfservicePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifySelfservicePermissionsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("selfservice_permissions", &self.selfservice_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifySamlPropertiesInput {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
     #[doc(hidden)]
@@ -11472,19 +11312,10 @@ impl ModifySamlPropertiesInput {
         self.properties_to_delete.as_deref()
     }
 }
-impl std::fmt::Debug for ModifySamlPropertiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifySamlPropertiesInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("saml_properties", &self.saml_properties);
-        formatter.field("properties_to_delete", &self.properties_to_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyClientPropertiesInput {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
     #[doc(hidden)]
@@ -11503,18 +11334,10 @@ impl ModifyClientPropertiesInput {
         self.client_properties.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyClientPropertiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyClientPropertiesInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("client_properties", &self.client_properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyAccountInput {
     /// <p>The status of BYOL.</p>
     #[doc(hidden)]
@@ -11535,21 +11358,10 @@ impl ModifyAccountInput {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyAccountInput");
-        formatter.field("dedicated_tenancy_support", &self.dedicated_tenancy_support);
-        formatter.field(
-            "dedicated_tenancy_management_cidr_range",
-            &self.dedicated_tenancy_management_cidr_range,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MigrateWorkspaceInput {
     /// <p>The identifier of the WorkSpace to migrate from.</p>
     #[doc(hidden)]
@@ -11568,18 +11380,10 @@ impl MigrateWorkspaceInput {
         self.bundle_id.as_deref()
     }
 }
-impl std::fmt::Debug for MigrateWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MigrateWorkspaceInput");
-        formatter.field("source_workspace_id", &self.source_workspace_id);
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableManagementCidrRangesInput {
     /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     #[doc(hidden)]
@@ -11605,22 +11409,10 @@ impl ListAvailableManagementCidrRangesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAvailableManagementCidrRangesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableManagementCidrRangesInput");
-        formatter.field(
-            "management_cidr_range_constraint",
-            &self.management_cidr_range_constraint,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportWorkspaceImageInput {
     /// <p>The identifier of the EC2 image.</p>
     #[doc(hidden)]
@@ -11675,22 +11467,10 @@ impl ImportWorkspaceImageInput {
         self.applications.as_deref()
     }
 }
-impl std::fmt::Debug for ImportWorkspaceImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportWorkspaceImageInput");
-        formatter.field("ec2_image_id", &self.ec2_image_id);
-        formatter.field("ingestion_process", &self.ingestion_process);
-        formatter.field("image_name", &self.image_name);
-        formatter.field("image_description", &self.image_description);
-        formatter.field("tags", &self.tags);
-        formatter.field("applications", &self.applications);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportClientBrandingInput {
     /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
     #[doc(hidden)]
@@ -11758,23 +11538,10 @@ impl ImportClientBrandingInput {
         self.device_type_web.as_ref()
     }
 }
-impl std::fmt::Debug for ImportClientBrandingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportClientBrandingInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("device_type_windows", &self.device_type_windows);
-        formatter.field("device_type_osx", &self.device_type_osx);
-        formatter.field("device_type_android", &self.device_type_android);
-        formatter.field("device_type_ios", &self.device_type_ios);
-        formatter.field("device_type_linux", &self.device_type_linux);
-        formatter.field("device_type_web", &self.device_type_web);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateIpGroupsInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -11793,18 +11560,10 @@ impl DisassociateIpGroupsInput {
         self.group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateIpGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateIpGroupsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("group_ids", &self.group_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateConnectionAliasInput {
     /// <p>The identifier of the connection alias to disassociate.</p>
     #[doc(hidden)]
@@ -11816,17 +11575,10 @@ impl DisassociateConnectionAliasInput {
         self.alias_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateConnectionAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateConnectionAliasInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceSnapshotsInput {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -11838,17 +11590,10 @@ impl DescribeWorkspaceSnapshotsInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkspaceSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceSnapshotsInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspacesConnectionStatusInput {
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
@@ -11867,18 +11612,10 @@ impl DescribeWorkspacesConnectionStatusInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkspacesConnectionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspacesConnectionStatusInput");
-        formatter.field("workspace_ids", &self.workspace_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspacesInput {
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
@@ -11927,22 +11664,10 @@ impl DescribeWorkspacesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspacesInput");
-        formatter.field("workspace_ids", &self.workspace_ids);
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceImagesInput {
     /// <p>The identifier of the image.</p>
     #[doc(hidden)]
@@ -11975,20 +11700,10 @@ impl DescribeWorkspaceImagesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeWorkspaceImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceImagesInput");
-        formatter.field("image_ids", &self.image_ids);
-        formatter.field("image_type", &self.image_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceImagePermissionsInput {
     /// <p>The identifier of the image.</p>
     #[doc(hidden)]
@@ -12014,19 +11729,10 @@ impl DescribeWorkspaceImagePermissionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeWorkspaceImagePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceImagePermissionsInput");
-        formatter.field("image_id", &self.image_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceDirectoriesInput {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     #[doc(hidden)]
@@ -12052,19 +11758,10 @@ impl DescribeWorkspaceDirectoriesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkspaceDirectoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceDirectoriesInput");
-        formatter.field("directory_ids", &self.directory_ids);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceBundlesInput {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
     #[doc(hidden)]
@@ -12092,19 +11789,10 @@ impl DescribeWorkspaceBundlesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkspaceBundlesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceBundlesInput");
-        formatter.field("bundle_ids", &self.bundle_ids);
-        formatter.field("owner", &self.owner);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     #[doc(hidden)]
@@ -12116,17 +11804,10 @@ impl DescribeTagsInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIpGroupsInput {
     /// <p>The identifiers of one or more IP access control groups.</p>
     #[doc(hidden)]
@@ -12152,19 +11833,10 @@ impl DescribeIpGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeIpGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIpGroupsInput");
-        formatter.field("group_ids", &self.group_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionAliasPermissionsInput {
     /// <p>The identifier of the connection alias.</p>
     #[doc(hidden)]
@@ -12190,19 +11862,10 @@ impl DescribeConnectionAliasPermissionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeConnectionAliasPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionAliasPermissionsInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionAliasesInput {
     /// <p>The identifiers of the connection aliases to describe.</p>
     #[doc(hidden)]
@@ -12235,20 +11898,10 @@ impl DescribeConnectionAliasesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionAliasesInput");
-        formatter.field("alias_ids", &self.alias_ids);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectClientAddInsInput {
     /// <p>The directory identifier for which the client add-in is configured.</p>
     #[doc(hidden)]
@@ -12274,19 +11927,10 @@ impl DescribeConnectClientAddInsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeConnectClientAddInsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectClientAddInsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClientPropertiesInput {
     /// <p>The resource identifier, in the form of directory IDs.</p>
     #[doc(hidden)]
@@ -12298,17 +11942,10 @@ impl DescribeClientPropertiesInput {
         self.resource_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClientPropertiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClientPropertiesInput");
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClientBrandingInput {
     /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
     #[doc(hidden)]
@@ -12320,17 +11957,10 @@ impl DescribeClientBrandingInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClientBrandingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClientBrandingInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountModificationsInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     #[doc(hidden)]
@@ -12342,28 +11972,15 @@ impl DescribeAccountModificationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccountModificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountModificationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountInput {}
-impl std::fmt::Debug for DescribeAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterWorkspaceDirectoryInput {
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     #[doc(hidden)]
@@ -12375,17 +11992,10 @@ impl DeregisterWorkspaceDirectoryInput {
         self.directory_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterWorkspaceDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterWorkspaceDirectoryInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceImageInput {
     /// <p>The identifier of the image.</p>
     #[doc(hidden)]
@@ -12397,17 +12007,10 @@ impl DeleteWorkspaceImageInput {
         self.image_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkspaceImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkspaceImageInput");
-        formatter.field("image_id", &self.image_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceBundleInput {
     /// <p>The identifier of the bundle.</p>
     #[doc(hidden)]
@@ -12419,17 +12022,10 @@ impl DeleteWorkspaceBundleInput {
         self.bundle_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkspaceBundleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkspaceBundleInput");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     #[doc(hidden)]
@@ -12448,18 +12044,10 @@ impl DeleteTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIpGroupInput {
     /// <p>The identifier of the IP access control group.</p>
     #[doc(hidden)]
@@ -12471,17 +12059,10 @@ impl DeleteIpGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIpGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIpGroupInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionAliasInput {
     /// <p>The identifier of the connection alias to delete.</p>
     #[doc(hidden)]
@@ -12493,17 +12074,10 @@ impl DeleteConnectionAliasInput {
         self.alias_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionAliasInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectClientAddInInput {
     /// <p>The identifier of the client add-in to delete.</p>
     #[doc(hidden)]
@@ -12522,18 +12096,10 @@ impl DeleteConnectClientAddInInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectClientAddInInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectClientAddInInput");
-        formatter.field("add_in_id", &self.add_in_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClientBrandingInput {
     /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
     #[doc(hidden)]
@@ -12552,18 +12118,10 @@ impl DeleteClientBrandingInput {
         self.platforms.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteClientBrandingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClientBrandingInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("platforms", &self.platforms);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspacesInput {
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
@@ -12575,17 +12133,10 @@ impl CreateWorkspacesInput {
         self.workspaces.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkspacesInput");
-        formatter.field("workspaces", &self.workspaces);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspaceImageInput {
     /// <p>The name of the new WorkSpace image.</p>
     #[doc(hidden)]
@@ -12618,20 +12169,10 @@ impl CreateWorkspaceImageInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkspaceImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkspaceImageInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspaceBundleInput {
     /// <p>The name of the bundle.</p>
     #[doc(hidden)]
@@ -12689,23 +12230,10 @@ impl CreateWorkspaceBundleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkspaceBundleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkspaceBundleInput");
-        formatter.field("bundle_name", &self.bundle_name);
-        formatter.field("bundle_description", &self.bundle_description);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("compute_type", &self.compute_type);
-        formatter.field("user_storage", &self.user_storage);
-        formatter.field("root_storage", &self.root_storage);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUpdatedWorkspaceImageInput {
     /// <p>The name of the new updated WorkSpace image.</p>
     #[doc(hidden)]
@@ -12742,20 +12270,10 @@ impl CreateUpdatedWorkspaceImageInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUpdatedWorkspaceImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUpdatedWorkspaceImageInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("source_image_id", &self.source_image_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     #[doc(hidden)]
@@ -12774,18 +12292,10 @@ impl CreateTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIpGroupInput {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
@@ -12818,20 +12328,10 @@ impl CreateIpGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIpGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIpGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_desc", &self.group_desc);
-        formatter.field("user_rules", &self.user_rules);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionAliasInput {
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
@@ -12854,18 +12354,10 @@ impl CreateConnectionAliasInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectionAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionAliasInput");
-        formatter.field("connection_string", &self.connection_string);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectClientAddInInput {
     /// <p>The directory identifier for which to configure the client add-in.</p>
     #[doc(hidden)]
@@ -12891,19 +12383,10 @@ impl CreateConnectClientAddInInput {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectClientAddInInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectClientAddInInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("name", &self.name);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyWorkspaceImageInput {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
@@ -12943,21 +12426,10 @@ impl CopyWorkspaceImageInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CopyWorkspaceImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyWorkspaceImageInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("source_image_id", &self.source_image_id);
-        formatter.field("source_region", &self.source_region);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizeIpRulesInput {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
@@ -12976,18 +12448,10 @@ impl AuthorizeIpRulesInput {
         self.user_rules.as_deref()
     }
 }
-impl std::fmt::Debug for AuthorizeIpRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizeIpRulesInput");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("user_rules", &self.user_rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateIpGroupsInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -13006,18 +12470,10 @@ impl AssociateIpGroupsInput {
         self.group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateIpGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateIpGroupsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("group_ids", &self.group_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateConnectionAliasInput {
     /// <p>The identifier of the connection alias.</p>
     #[doc(hidden)]
@@ -13034,13 +12490,5 @@ impl AssociateConnectionAliasInput {
     /// <p>The identifier of the directory to associate the connection alias with.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateConnectionAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateConnectionAliasInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
     }
 }

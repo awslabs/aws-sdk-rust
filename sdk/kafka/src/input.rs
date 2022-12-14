@@ -6506,7 +6506,7 @@ impl UpdateSecurityInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSecurityInput {
     /// <p>Includes all client authentication related information.</p>
     #[doc(hidden)]
@@ -6541,20 +6541,10 @@ impl UpdateSecurityInput {
         self.encryption_info.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSecurityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSecurityInput");
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("current_version", &self.current_version);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.finish()
-    }
-}
 
 /// Request body for UpdateMonitoring.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMonitoringInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -6594,21 +6584,10 @@ impl UpdateMonitoringInput {
         self.logging_info.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMonitoringInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMonitoringInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("current_version", &self.current_version);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.finish()
-    }
-}
 
 /// Request body for UpdateConnectivity.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectivityInput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
@@ -6634,19 +6613,10 @@ impl UpdateConnectivityInput {
         self.current_version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectivityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectivityInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("connectivity_info", &self.connectivity_info);
-        formatter.field("current_version", &self.current_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
@@ -6680,19 +6650,10 @@ impl UpdateConfigurationInput {
         self.server_properties.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("server_properties", &self.server_properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClusterKafkaVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     #[doc(hidden)]
@@ -6725,20 +6686,10 @@ impl UpdateClusterKafkaVersionInput {
         self.target_kafka_version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateClusterKafkaVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClusterKafkaVersionInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("configuration_info", &self.configuration_info);
-        formatter.field("current_version", &self.current_version);
-        formatter.field("target_kafka_version", &self.target_kafka_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClusterConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -6764,19 +6715,10 @@ impl UpdateClusterConfigurationInput {
         self.current_version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateClusterConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClusterConfigurationInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("configuration_info", &self.configuration_info);
-        formatter.field("current_version", &self.current_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBrokerTypeInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -6802,19 +6744,10 @@ impl UpdateBrokerTypeInput {
         self.target_instance_type.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBrokerTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBrokerTypeInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("current_version", &self.current_version);
-        formatter.field("target_instance_type", &self.target_instance_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBrokerStorageInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -6843,22 +6776,10 @@ impl UpdateBrokerStorageInput {
         self.target_broker_ebs_volume_info.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBrokerStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBrokerStorageInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("current_version", &self.current_version);
-        formatter.field(
-            "target_broker_ebs_volume_info",
-            &self.target_broker_ebs_volume_info,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBrokerCountInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -6884,22 +6805,10 @@ impl UpdateBrokerCountInput {
         self.target_number_of_broker_nodes
     }
 }
-impl std::fmt::Debug for UpdateBrokerCountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBrokerCountInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("current_version", &self.current_version);
-        formatter.field(
-            "target_number_of_broker_nodes",
-            &self.target_number_of_broker_nodes,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
     #[doc(hidden)]
@@ -6930,18 +6839,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
     #[doc(hidden)]
@@ -6964,18 +6865,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// Reboots a node.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootBrokerInput {
     /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
     #[doc(hidden)]
@@ -6994,18 +6887,10 @@ impl RebootBrokerInput {
         self.cluster_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RebootBrokerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootBrokerInput");
-        formatter.field("broker_ids", &self.broker_ids);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
     #[doc(hidden)]
@@ -7017,17 +6902,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListScramSecretsInput {
     /// <p>The arn of the cluster.</p>
     #[doc(hidden)]
@@ -7053,19 +6931,10 @@ impl ListScramSecretsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListScramSecretsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListScramSecretsInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNodesInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -7091,19 +6960,10 @@ impl ListNodesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNodesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNodesInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKafkaVersionsInput {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     #[doc(hidden)]
@@ -7122,18 +6982,10 @@ impl ListKafkaVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListKafkaVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKafkaVersionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationsInput {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     #[doc(hidden)]
@@ -7152,18 +7004,10 @@ impl ListConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationRevisionsInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     #[doc(hidden)]
@@ -7189,19 +7033,10 @@ impl ListConfigurationRevisionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConfigurationRevisionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationRevisionsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClustersV2Input {
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
     #[doc(hidden)]
@@ -7234,20 +7069,10 @@ impl ListClustersV2Input {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListClustersV2Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClustersV2Input");
-        formatter.field("cluster_name_filter", &self.cluster_name_filter);
-        formatter.field("cluster_type_filter", &self.cluster_type_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClustersInput {
     /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
     #[doc(hidden)]
@@ -7273,19 +7098,10 @@ impl ListClustersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClustersInput");
-        formatter.field("cluster_name_filter", &self.cluster_name_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClusterOperationsInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -7311,19 +7127,10 @@ impl ListClusterOperationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListClusterOperationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClusterOperationsInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCompatibleKafkaVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
     #[doc(hidden)]
@@ -7335,17 +7142,10 @@ impl GetCompatibleKafkaVersionsInput {
         self.cluster_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetCompatibleKafkaVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCompatibleKafkaVersionsInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBootstrapBrokersInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -7357,17 +7157,10 @@ impl GetBootstrapBrokersInput {
         self.cluster_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetBootstrapBrokersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBootstrapBrokersInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationRevisionInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     #[doc(hidden)]
@@ -7386,18 +7179,10 @@ impl DescribeConfigurationRevisionInput {
         self.revision
     }
 }
-impl std::fmt::Debug for DescribeConfigurationRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationRevisionInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     #[doc(hidden)]
@@ -7409,17 +7194,10 @@ impl DescribeConfigurationInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClusterV2Input {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -7431,17 +7209,10 @@ impl DescribeClusterV2Input {
         self.cluster_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClusterV2Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClusterV2Input");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClusterOperationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
     #[doc(hidden)]
@@ -7453,17 +7224,10 @@ impl DescribeClusterOperationInput {
         self.cluster_operation_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClusterOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClusterOperationInput");
-        formatter.field("cluster_operation_arn", &self.cluster_operation_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClusterInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -7475,17 +7239,10 @@ impl DescribeClusterInput {
         self.cluster_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClusterInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     #[doc(hidden)]
@@ -7497,17 +7254,10 @@ impl DeleteConfigurationInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
@@ -7526,18 +7276,10 @@ impl DeleteClusterInput {
         self.current_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClusterInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("current_version", &self.current_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationInput {
     /// <p>The description of the configuration.</p>
     #[doc(hidden)]
@@ -7578,20 +7320,10 @@ impl CreateConfigurationInput {
         self.server_properties.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationInput");
-        formatter.field("description", &self.description);
-        formatter.field("kafka_versions", &self.kafka_versions);
-        formatter.field("name", &self.name);
-        formatter.field("server_properties", &self.server_properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateClusterV2Input {
     /// <p>The name of the cluster.</p>
     #[doc(hidden)]
@@ -7628,20 +7360,10 @@ impl CreateClusterV2Input {
         self.serverless.as_ref()
     }
 }
-impl std::fmt::Debug for CreateClusterV2Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateClusterV2Input");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("provisioned", &self.provisioned);
-        formatter.field("serverless", &self.serverless);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateClusterInput {
     /// <p>Information about the broker nodes in the cluster.</p>
     #[doc(hidden)]
@@ -7731,27 +7453,10 @@ impl CreateClusterInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateClusterInput");
-        formatter.field("broker_node_group_info", &self.broker_node_group_info);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("configuration_info", &self.configuration_info);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("kafka_version", &self.kafka_version);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Disassociates sasl scram secrets to cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateScramSecretInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     #[doc(hidden)]
@@ -7770,18 +7475,10 @@ impl BatchDisassociateScramSecretInput {
         self.secret_arn_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateScramSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDisassociateScramSecretInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("secret_arn_list", &self.secret_arn_list);
-        formatter.finish()
-    }
-}
 
 /// <p>Associates sasl scram secrets to cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateScramSecretInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     #[doc(hidden)]
@@ -7798,13 +7495,5 @@ impl BatchAssociateScramSecretInput {
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
     pub fn secret_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.secret_arn_list.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchAssociateScramSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAssociateScramSecretInput");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("secret_arn_list", &self.secret_arn_list);
-        formatter.finish()
     }
 }

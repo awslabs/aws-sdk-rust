@@ -2,7 +2,7 @@
 
 /// <p>Specifies change details of the domain configuration change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeProgressDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ChangeProgressDetails {
     /// <p>Contains an optional message associated with the domain configuration change.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangeProgressDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeProgressDetails");
-        formatter.field("change_id", &self.change_id);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ChangeProgressDetails`](crate::model::ChangeProgressDetails).
@@ -77,7 +69,7 @@ impl ChangeProgressDetails {
 
 /// <p>Basic information about a package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageDetails {
     /// <p>Internal ID of the package.</p>
     #[doc(hidden)]
@@ -143,21 +135,6 @@ impl PackageDetails {
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error_details.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageDetails");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_type", &self.package_type);
-        formatter.field("package_description", &self.package_description);
-        formatter.field("package_status", &self.package_status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("available_package_version", &self.available_package_version);
-        formatter.field("error_details", &self.error_details);
-        formatter.finish()
     }
 }
 /// See [`PackageDetails`](crate::model::PackageDetails).
@@ -313,7 +290,7 @@ impl PackageDetails {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetails {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -330,14 +307,6 @@ impl ErrorDetails {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetails");
-        formatter.field("error_type", &self.error_type);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
@@ -605,7 +574,7 @@ impl AsRef<str> for PackageType {
 
 /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageSource {
     /// <p>The name of the Amazon S3 bucket containing the package.</p>
     #[doc(hidden)]
@@ -622,14 +591,6 @@ impl PackageSource {
     /// <p>Key (file name) of the package.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
-    }
-}
-impl std::fmt::Debug for PackageSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageSource");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.finish()
     }
 }
 /// See [`PackageSource`](crate::model::PackageSource).
@@ -683,7 +644,7 @@ impl PackageSource {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DryRunResults {
     /// <p> Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes). </p>
     #[doc(hidden)]
@@ -700,14 +661,6 @@ impl DryRunResults {
     /// <p>Contains an optional message associated with the DryRunResults.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DryRunResults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DryRunResults");
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DryRunResults`](crate::model::DryRunResults).
@@ -761,7 +714,7 @@ impl DryRunResults {
 
 /// <p>The configuration of a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainConfig {
     /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or Elasticsearch domain.</p>
     #[doc(hidden)]
@@ -883,33 +836,6 @@ impl DomainConfig {
         &self,
     ) -> std::option::Option<&crate::model::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainConfig");
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("cluster_config", &self.cluster_config);
-        formatter.field("ebs_options", &self.ebs_options);
-        formatter.field("access_policies", &self.access_policies);
-        formatter.field("snapshot_options", &self.snapshot_options);
-        formatter.field("vpc_options", &self.vpc_options);
-        formatter.field("cognito_options", &self.cognito_options);
-        formatter.field(
-            "encryption_at_rest_options",
-            &self.encryption_at_rest_options,
-        );
-        formatter.field(
-            "node_to_node_encryption_options",
-            &self.node_to_node_encryption_options,
-        );
-        formatter.field("advanced_options", &self.advanced_options);
-        formatter.field("log_publishing_options", &self.log_publishing_options);
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.field("advanced_security_options", &self.advanced_security_options);
-        formatter.field("auto_tune_options", &self.auto_tune_options);
-        formatter.field("change_progress_details", &self.change_progress_details);
-        formatter.finish()
     }
 }
 /// See [`DomainConfig`](crate::model::DomainConfig).
@@ -1185,7 +1111,7 @@ impl DomainConfig {
 
 /// <p>The Auto-Tune status for the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTuneOptionsStatus {
     /// <p>Specifies Auto-Tune options for the domain.</p>
     #[doc(hidden)]
@@ -1202,14 +1128,6 @@ impl AutoTuneOptionsStatus {
     /// <p>The status of the Auto-Tune options for the domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::AutoTuneStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoTuneOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTuneOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AutoTuneOptionsStatus`](crate::model::AutoTuneOptionsStatus).
@@ -1266,7 +1184,7 @@ impl AutoTuneOptionsStatus {
 
 /// <p>Provides the current Auto-Tune status for the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTuneStatus {
     /// <p>The timestamp of the Auto-Tune options creation date.</p>
     #[doc(hidden)]
@@ -1311,18 +1229,6 @@ impl AutoTuneStatus {
     /// <p>Indicates whether the domain is being deleted.</p>
     pub fn pending_deletion(&self) -> std::option::Option<bool> {
         self.pending_deletion
-    }
-}
-impl std::fmt::Debug for AutoTuneStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTuneStatus");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("update_date", &self.update_date);
-        formatter.field("update_version", &self.update_version);
-        formatter.field("state", &self.state);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("pending_deletion", &self.pending_deletion);
-        formatter.finish()
     }
 }
 /// See [`AutoTuneStatus`](crate::model::AutoTuneStatus).
@@ -1570,7 +1476,7 @@ impl AsRef<str> for AutoTuneState {
 
 /// <p>The Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling Auto-Tune options and list of maintenance schedules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTuneOptions {
     /// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
     #[doc(hidden)]
@@ -1597,15 +1503,6 @@ impl AutoTuneOptions {
         &self,
     ) -> std::option::Option<&[crate::model::AutoTuneMaintenanceSchedule]> {
         self.maintenance_schedules.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoTuneOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTuneOptions");
-        formatter.field("desired_state", &self.desired_state);
-        formatter.field("rollback_on_disable", &self.rollback_on_disable);
-        formatter.field("maintenance_schedules", &self.maintenance_schedules);
-        formatter.finish()
     }
 }
 /// See [`AutoTuneOptions`](crate::model::AutoTuneOptions).
@@ -1687,7 +1584,7 @@ impl AutoTuneOptions {
 
 /// <p>Specifies the Auto-Tune maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTuneMaintenanceSchedule {
     /// <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
     #[doc(hidden)]
@@ -1711,18 +1608,6 @@ impl AutoTuneMaintenanceSchedule {
     /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn cron_expression_for_recurrence(&self) -> std::option::Option<&str> {
         self.cron_expression_for_recurrence.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoTuneMaintenanceSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTuneMaintenanceSchedule");
-        formatter.field("start_at", &self.start_at);
-        formatter.field("duration", &self.duration);
-        formatter.field(
-            "cron_expression_for_recurrence",
-            &self.cron_expression_for_recurrence,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoTuneMaintenanceSchedule`](crate::model::AutoTuneMaintenanceSchedule).
@@ -1794,7 +1679,7 @@ impl AutoTuneMaintenanceSchedule {
 
 /// <p>The maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Duration {
     /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     #[doc(hidden)]
@@ -1811,14 +1696,6 @@ impl Duration {
     /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn unit(&self) -> std::option::Option<&crate::model::TimeUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for Duration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Duration");
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`Duration`](crate::model::Duration).
@@ -2142,7 +2019,7 @@ impl AsRef<str> for AutoTuneDesiredState {
 
 /// <p>The status of advanced security options for the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsStatus {
     /// <p>Advanced security options for the specified domain.</p>
     #[doc(hidden)]
@@ -2159,14 +2036,6 @@ impl AdvancedSecurityOptionsStatus {
     /// <p>Status of the advanced security options for the specified domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AdvancedSecurityOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvancedSecurityOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AdvancedSecurityOptionsStatus`](crate::model::AdvancedSecurityOptionsStatus).
@@ -2223,7 +2092,7 @@ impl AdvancedSecurityOptionsStatus {
 
 /// <p>Provides the current status of the entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptionStatus {
     /// <p>The timestamp of when the entity was created.</p>
     #[doc(hidden)]
@@ -2261,17 +2130,6 @@ impl OptionStatus {
     /// <p>Indicates whether the domain is being deleted.</p>
     pub fn pending_deletion(&self) -> std::option::Option<bool> {
         self.pending_deletion
-    }
-}
-impl std::fmt::Debug for OptionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptionStatus");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("update_date", &self.update_date);
-        formatter.field("update_version", &self.update_version);
-        formatter.field("state", &self.state);
-        formatter.field("pending_deletion", &self.pending_deletion);
-        formatter.finish()
     }
 }
 /// See [`OptionStatus`](crate::model::OptionStatus).
@@ -2463,7 +2321,7 @@ impl AsRef<str> for OptionState {
 
 /// <p>The advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvancedSecurityOptions {
     /// <p>True if advanced security is enabled.</p>
     #[doc(hidden)]
@@ -2501,23 +2359,6 @@ impl AdvancedSecurityOptions {
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
     pub fn anonymous_auth_enabled(&self) -> std::option::Option<bool> {
         self.anonymous_auth_enabled
-    }
-}
-impl std::fmt::Debug for AdvancedSecurityOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvancedSecurityOptions");
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "internal_user_database_enabled",
-            &self.internal_user_database_enabled,
-        );
-        formatter.field("saml_options", &self.saml_options);
-        formatter.field(
-            "anonymous_auth_disable_date",
-            &self.anonymous_auth_disable_date,
-        );
-        formatter.field("anonymous_auth_enabled", &self.anonymous_auth_enabled);
-        formatter.finish()
     }
 }
 /// See [`AdvancedSecurityOptions`](crate::model::AdvancedSecurityOptions).
@@ -2613,7 +2454,7 @@ impl AdvancedSecurityOptions {
 
 /// <p>Describes the SAML application configured for the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamlOptionsOutput {
     /// <p>True if SAML is enabled.</p>
     #[doc(hidden)]
@@ -2651,17 +2492,6 @@ impl SamlOptionsOutput {
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     pub fn session_timeout_minutes(&self) -> std::option::Option<i32> {
         self.session_timeout_minutes
-    }
-}
-impl std::fmt::Debug for SamlOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamlOptionsOutput");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("idp", &self.idp);
-        formatter.field("subject_key", &self.subject_key);
-        formatter.field("roles_key", &self.roles_key);
-        formatter.field("session_timeout_minutes", &self.session_timeout_minutes);
-        formatter.finish()
     }
 }
 /// See [`SamlOptionsOutput`](crate::model::SamlOptionsOutput).
@@ -2748,7 +2578,7 @@ impl SamlOptionsOutput {
 
 /// <p>The SAML identity povider's information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamlIdp {
     /// <p>The metadata of the SAML application in XML format.</p>
     #[doc(hidden)]
@@ -2765,14 +2595,6 @@ impl SamlIdp {
     /// <p>The unique entity ID of the application in SAML identity provider.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SamlIdp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamlIdp");
-        formatter.field("metadata_content", &self.metadata_content);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.finish()
     }
 }
 /// See [`SamlIdp`](crate::model::SamlIdp).
@@ -2826,7 +2648,7 @@ impl SamlIdp {
 
 /// <p>The configured endpoint options for the domain and their current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainEndpointOptionsStatus {
     /// <p>Options to configure the endpoint for the domain.</p>
     #[doc(hidden)]
@@ -2843,14 +2665,6 @@ impl DomainEndpointOptionsStatus {
     /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainEndpointOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainEndpointOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
@@ -2907,7 +2721,7 @@ impl DomainEndpointOptionsStatus {
 
 /// <p>Options to configure the endpoint for the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainEndpointOptions {
     /// <p>Whether only HTTPS endpoint should be enabled for the domain.</p>
     #[doc(hidden)]
@@ -2955,20 +2769,6 @@ impl DomainEndpointOptions {
     /// <p>The ACM certificate ARN for your custom endpoint.</p>
     pub fn custom_endpoint_certificate_arn(&self) -> std::option::Option<&str> {
         self.custom_endpoint_certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainEndpointOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainEndpointOptions");
-        formatter.field("enforce_https", &self.enforce_https);
-        formatter.field("tls_security_policy", &self.tls_security_policy);
-        formatter.field("custom_endpoint_enabled", &self.custom_endpoint_enabled);
-        formatter.field("custom_endpoint", &self.custom_endpoint);
-        formatter.field(
-            "custom_endpoint_certificate_arn",
-            &self.custom_endpoint_certificate_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
@@ -3169,7 +2969,7 @@ impl AsRef<str> for TlsSecurityPolicy {
 
 /// <p>The configured log publishing options for the domain and their current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogPublishingOptionsStatus {
     /// <p>The log publishing options configured for the domain.</p>
     #[doc(hidden)]
@@ -3192,14 +2992,6 @@ impl LogPublishingOptionsStatus {
     /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for LogPublishingOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogPublishingOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`LogPublishingOptionsStatus`](crate::model::LogPublishingOptionsStatus).
@@ -3275,7 +3067,7 @@ impl LogPublishingOptionsStatus {
 /// </ul>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogPublishingOption {
     /// <p>ARN of the Cloudwatch log group to publish logs to.</p>
     #[doc(hidden)]
@@ -3292,17 +3084,6 @@ impl LogPublishingOption {
     /// <p>Whether the given log publishing option is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for LogPublishingOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogPublishingOption");
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`LogPublishingOption`](crate::model::LogPublishingOption).
@@ -3482,7 +3263,7 @@ impl AsRef<str> for LogType {
 /// </ul>
 /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvancedOptionsStatus {
     /// <p>The status of advanced options for the specified domain.</p>
     #[doc(hidden)]
@@ -3503,14 +3284,6 @@ impl AdvancedOptionsStatus {
     /// <p>The <code>OptionStatus</code> for advanced options for the specified domain. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AdvancedOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvancedOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AdvancedOptionsStatus`](crate::model::AdvancedOptionsStatus).
@@ -3581,7 +3354,7 @@ impl AdvancedOptionsStatus {
 
 /// <p>Status of the node-to-node encryption options for the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeToNodeEncryptionOptionsStatus {
     /// <p>The node-to-node encryption options for the specified domain.</p>
     #[doc(hidden)]
@@ -3598,14 +3371,6 @@ impl NodeToNodeEncryptionOptionsStatus {
     /// <p>The status of the node-to-node encryption options for the specified domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeToNodeEncryptionOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeToNodeEncryptionOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`NodeToNodeEncryptionOptionsStatus`](crate::model::NodeToNodeEncryptionOptionsStatus).
@@ -3662,7 +3427,7 @@ impl NodeToNodeEncryptionOptionsStatus {
 
 /// <p>The node-to-node encryption options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeToNodeEncryptionOptions {
     /// <p>True to enable node-to-node encryption.</p>
     #[doc(hidden)]
@@ -3672,13 +3437,6 @@ impl NodeToNodeEncryptionOptions {
     /// <p>True to enable node-to-node encryption.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for NodeToNodeEncryptionOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeToNodeEncryptionOptions");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`NodeToNodeEncryptionOptions`](crate::model::NodeToNodeEncryptionOptions).
@@ -3717,7 +3475,7 @@ impl NodeToNodeEncryptionOptions {
 
 /// <p>Status of the encryption At Rest options for the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionAtRestOptionsStatus {
     /// <p>The Encryption At Rest options for the specified domain.</p>
     #[doc(hidden)]
@@ -3734,14 +3492,6 @@ impl EncryptionAtRestOptionsStatus {
     /// <p>The status of the Encryption At Rest options for the specified domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionAtRestOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionAtRestOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`EncryptionAtRestOptionsStatus`](crate::model::EncryptionAtRestOptionsStatus).
@@ -3798,7 +3548,7 @@ impl EncryptionAtRestOptionsStatus {
 
 /// <p>Specifies encryption at rest options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionAtRestOptions {
     /// <p>The option to enable encryption at rest.</p>
     #[doc(hidden)]
@@ -3815,14 +3565,6 @@ impl EncryptionAtRestOptions {
     /// <p>The KMS key ID for encryption at rest options.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionAtRestOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionAtRestOptions");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`EncryptionAtRestOptions`](crate::model::EncryptionAtRestOptions).
@@ -3873,7 +3615,7 @@ impl EncryptionAtRestOptions {
 
 /// <p>The status of the Cognito options for the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CognitoOptionsStatus {
     /// <p>Cognito options for the specified domain.</p>
     #[doc(hidden)]
@@ -3890,14 +3632,6 @@ impl CognitoOptionsStatus {
     /// <p>The status of the Cognito options for the specified domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CognitoOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CognitoOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CognitoOptionsStatus`](crate::model::CognitoOptionsStatus).
@@ -3954,7 +3688,7 @@ impl CognitoOptionsStatus {
 
 /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CognitoOptions {
     /// <p>The option to enable Cognito for OpenSearch Dashboards authentication.</p>
     #[doc(hidden)]
@@ -3985,16 +3719,6 @@ impl CognitoOptions {
     /// <p>The role ARN that provides OpenSearch permissions for accessing Cognito resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CognitoOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CognitoOptions");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`CognitoOptions`](crate::model::CognitoOptions).
@@ -4072,7 +3796,7 @@ impl CognitoOptions {
 
 /// <p>Status of the VPC options for the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcDerivedInfoStatus {
     /// <p>The VPC options for the specified domain.</p>
     #[doc(hidden)]
@@ -4089,14 +3813,6 @@ impl VpcDerivedInfoStatus {
     /// <p>The status of the VPC options for the specified domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VpcDerivedInfoStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcDerivedInfoStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VpcDerivedInfoStatus`](crate::model::VpcDerivedInfoStatus).
@@ -4153,7 +3869,7 @@ impl VpcDerivedInfoStatus {
 
 /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcDerivedInfo {
     /// <p>The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.</p>
     #[doc(hidden)]
@@ -4184,16 +3900,6 @@ impl VpcDerivedInfo {
     /// <p>The security groups for the VPC endpoint.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcDerivedInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcDerivedInfo");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
@@ -4295,7 +4001,7 @@ impl VpcDerivedInfo {
 
 /// <p>Status of a daily automated snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotOptionsStatus {
     /// <p>The daily snapshot options specified for the domain.</p>
     #[doc(hidden)]
@@ -4312,14 +4018,6 @@ impl SnapshotOptionsStatus {
     /// <p>The status of a daily automated snapshot.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for SnapshotOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SnapshotOptionsStatus`](crate::model::SnapshotOptionsStatus).
@@ -4376,7 +4074,7 @@ impl SnapshotOptionsStatus {
 
 /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotOptions {
     /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
     #[doc(hidden)]
@@ -4386,16 +4084,6 @@ impl SnapshotOptions {
     /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
     pub fn automated_snapshot_start_hour(&self) -> std::option::Option<i32> {
         self.automated_snapshot_start_hour
-    }
-}
-impl std::fmt::Debug for SnapshotOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotOptions");
-        formatter.field(
-            "automated_snapshot_start_hour",
-            &self.automated_snapshot_start_hour,
-        );
-        formatter.finish()
     }
 }
 /// See [`SnapshotOptions`](crate::model::SnapshotOptions).
@@ -4437,7 +4125,7 @@ impl SnapshotOptions {
 
 /// <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPoliciesStatus {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank"> Configuring access policies</a>for more information. </p>
     #[doc(hidden)]
@@ -4454,14 +4142,6 @@ impl AccessPoliciesStatus {
     /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessPoliciesStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPoliciesStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
@@ -4515,7 +4195,7 @@ impl AccessPoliciesStatus {
 
 /// <p>Status of the EBS options for the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsOptionsStatus {
     /// <p>The EBS options for the specified domain.</p>
     #[doc(hidden)]
@@ -4532,14 +4212,6 @@ impl EbsOptionsStatus {
     /// <p>The status of the EBS options for the specified domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for EbsOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`EbsOptionsStatus`](crate::model::EbsOptionsStatus).
@@ -4593,7 +4265,7 @@ impl EbsOptionsStatus {
 
 /// <p>Options to enable, disable, and specify the properties of EBS storage volumes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsOptions {
     /// <p>Whether EBS-based storage is enabled.</p>
     #[doc(hidden)]
@@ -4631,17 +4303,6 @@ impl EbsOptions {
     /// <p>The Throughput for GP3 EBS volume (SSD).</p>
     pub fn throughput(&self) -> std::option::Option<i32> {
         self.throughput
-    }
-}
-impl std::fmt::Debug for EbsOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsOptions");
-        formatter.field("ebs_enabled", &self.ebs_enabled);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.field("iops", &self.iops);
-        formatter.field("throughput", &self.throughput);
-        formatter.finish()
     }
 }
 /// See [`EbsOptions`](crate::model::EbsOptions).
@@ -4832,7 +4493,7 @@ impl AsRef<str> for VolumeType {
 
 /// <p>The configuration status for the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterConfigStatus {
     /// <p>The cluster configuration for the specified domain.</p>
     #[doc(hidden)]
@@ -4849,14 +4510,6 @@ impl ClusterConfigStatus {
     /// <p>The cluster configuration status for the specified domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusterConfigStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterConfigStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ClusterConfigStatus`](crate::model::ClusterConfigStatus).
@@ -4913,7 +4566,7 @@ impl ClusterConfigStatus {
 
 /// <p>The configuration for the domain cluster, such as the type and number of instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterConfig {
     /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances. </p>
     #[doc(hidden)]
@@ -4999,23 +4652,6 @@ impl ClusterConfig {
     /// <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
     pub fn cold_storage_options(&self) -> std::option::Option<&crate::model::ColdStorageOptions> {
         self.cold_storage_options.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusterConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterConfig");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("dedicated_master_enabled", &self.dedicated_master_enabled);
-        formatter.field("zone_awareness_enabled", &self.zone_awareness_enabled);
-        formatter.field("zone_awareness_config", &self.zone_awareness_config);
-        formatter.field("dedicated_master_type", &self.dedicated_master_type);
-        formatter.field("dedicated_master_count", &self.dedicated_master_count);
-        formatter.field("warm_enabled", &self.warm_enabled);
-        formatter.field("warm_type", &self.warm_type);
-        formatter.field("warm_count", &self.warm_count);
-        formatter.field("cold_storage_options", &self.cold_storage_options);
-        formatter.finish()
     }
 }
 /// See [`ClusterConfig`](crate::model::ClusterConfig).
@@ -5201,7 +4837,7 @@ impl ClusterConfig {
 
 /// <p>Specifies the configuration for cold storage options such as enabled</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColdStorageOptions {
     /// <p>Enable cold storage option. Accepted values true or false</p>
     #[doc(hidden)]
@@ -5211,13 +4847,6 @@ impl ColdStorageOptions {
     /// <p>Enable cold storage option. Accepted values true or false</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for ColdStorageOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColdStorageOptions");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`ColdStorageOptions`](crate::model::ColdStorageOptions).
@@ -6018,7 +5647,7 @@ impl AsRef<str> for OpenSearchPartitionInstanceType {
 
 /// <p>The zone awareness configuration for the domain cluster, such as the number of availability zones.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZoneAwarenessConfig {
     /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled. </p>
     #[doc(hidden)]
@@ -6028,13 +5657,6 @@ impl ZoneAwarenessConfig {
     /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled. </p>
     pub fn availability_zone_count(&self) -> std::option::Option<i32> {
         self.availability_zone_count
-    }
-}
-impl std::fmt::Debug for ZoneAwarenessConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZoneAwarenessConfig");
-        formatter.field("availability_zone_count", &self.availability_zone_count);
-        formatter.finish()
     }
 }
 /// See [`ZoneAwarenessConfig`](crate::model::ZoneAwarenessConfig).
@@ -6073,7 +5695,7 @@ impl ZoneAwarenessConfig {
 
 /// <p>The status of the OpenSearch version options for the specified OpenSearch domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersionStatus {
     /// <p>The OpenSearch version for the specified OpenSearch domain.</p>
     #[doc(hidden)]
@@ -6090,14 +5712,6 @@ impl VersionStatus {
     /// <p>The status of the OpenSearch version options for the specified OpenSearch domain.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VersionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersionStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VersionStatus`](crate::model::VersionStatus).
@@ -6151,7 +5765,7 @@ impl VersionStatus {
 
 /// <p>The advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsInput {
     /// <p>True if advanced security is enabled.</p>
     #[doc(hidden)]
@@ -6189,20 +5803,6 @@ impl AdvancedSecurityOptionsInput {
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
     pub fn anonymous_auth_enabled(&self) -> std::option::Option<bool> {
         self.anonymous_auth_enabled
-    }
-}
-impl std::fmt::Debug for AdvancedSecurityOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvancedSecurityOptionsInput");
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "internal_user_database_enabled",
-            &self.internal_user_database_enabled,
-        );
-        formatter.field("master_user_options", &self.master_user_options);
-        formatter.field("saml_options", &self.saml_options);
-        formatter.field("anonymous_auth_enabled", &self.anonymous_auth_enabled);
-        formatter.finish()
     }
 }
 /// See [`AdvancedSecurityOptionsInput`](crate::model::AdvancedSecurityOptionsInput).
@@ -6369,7 +5969,7 @@ impl std::fmt::Debug for SamlOptionsInput {
 pub mod saml_options_input {
 
     /// A builder for [`SamlOptionsInput`](crate::model::SamlOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) idp: std::option::Option<crate::model::SamlIdp>,
@@ -6469,6 +6069,19 @@ pub mod saml_options_input {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("enabled", &self.enabled);
+            formatter.field("idp", &self.idp);
+            formatter.field("master_user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("master_backend_role", &self.master_backend_role);
+            formatter.field("subject_key", &self.subject_key);
+            formatter.field("roles_key", &self.roles_key);
+            formatter.field("session_timeout_minutes", &self.session_timeout_minutes);
+            formatter.finish()
+        }
+    }
 }
 impl SamlOptionsInput {
     /// Creates a new builder-style object to manufacture [`SamlOptionsInput`](crate::model::SamlOptionsInput).
@@ -6518,7 +6131,7 @@ impl std::fmt::Debug for MasterUserOptions {
 pub mod master_user_options {
 
     /// A builder for [`MasterUserOptions`](crate::model::MasterUserOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) master_user_arn: std::option::Option<std::string::String>,
         pub(crate) master_user_name: std::option::Option<std::string::String>,
@@ -6573,6 +6186,15 @@ pub mod master_user_options {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("master_user_arn", &self.master_user_arn);
+            formatter.field("master_user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl MasterUserOptions {
     /// Creates a new builder-style object to manufacture [`MasterUserOptions`](crate::model::MasterUserOptions).
@@ -6583,7 +6205,7 @@ impl MasterUserOptions {
 
 /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcOptions {
     /// <p>The subnets for the VPC endpoint.</p>
     #[doc(hidden)]
@@ -6600,14 +6222,6 @@ impl VpcOptions {
     /// <p>The security groups for the VPC endpoint.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcOptions");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcOptions`](crate::model::VpcOptions).
@@ -6676,7 +6290,7 @@ impl VpcOptions {
 
 /// <p>The current options of an domain service software options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceSoftwareOptions {
     /// <p>The current service software version present on the domain.</p>
     #[doc(hidden)]
@@ -6735,20 +6349,6 @@ impl ServiceSoftwareOptions {
     /// <p> <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub fn optional_deployment(&self) -> std::option::Option<bool> {
         self.optional_deployment
-    }
-}
-impl std::fmt::Debug for ServiceSoftwareOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceSoftwareOptions");
-        formatter.field("current_version", &self.current_version);
-        formatter.field("new_version", &self.new_version);
-        formatter.field("update_available", &self.update_available);
-        formatter.field("cancellable", &self.cancellable);
-        formatter.field("update_status", &self.update_status);
-        formatter.field("description", &self.description);
-        formatter.field("automated_update_date", &self.automated_update_date);
-        formatter.field("optional_deployment", &self.optional_deployment);
-        formatter.finish()
     }
 }
 /// See [`ServiceSoftwareOptions`](crate::model::ServiceSoftwareOptions).
@@ -6991,7 +6591,7 @@ impl AsRef<str> for DeploymentStatus {
 
 /// <p>Details of an inbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InboundConnection {
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
     #[doc(hidden)]
@@ -7026,16 +6626,6 @@ impl InboundConnection {
     /// <p>The <code> <code>InboundConnectionStatus</code> </code> for the outbound connection. </p>
     pub fn connection_status(&self) -> std::option::Option<&crate::model::InboundConnectionStatus> {
         self.connection_status.as_ref()
-    }
-}
-impl std::fmt::Debug for InboundConnection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InboundConnection");
-        formatter.field("local_domain_info", &self.local_domain_info);
-        formatter.field("remote_domain_info", &self.remote_domain_info);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.finish()
     }
 }
 /// See [`InboundConnection`](crate::model::InboundConnection).
@@ -7129,7 +6719,7 @@ impl InboundConnection {
 
 /// <p>The connection status of an inbound cross-cluster connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InboundConnectionStatus {
     /// <p>The state code for the inbound connection. Can be one of the following:</p>
     /// <ul>
@@ -7166,14 +6756,6 @@ impl InboundConnectionStatus {
     /// <p>Verbose information for the inbound connection status.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for InboundConnectionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InboundConnectionStatus");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`InboundConnectionStatus`](crate::model::InboundConnectionStatus).
@@ -7378,7 +6960,7 @@ impl AsRef<str> for InboundConnectionStatusCode {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainInformationContainer {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -7390,13 +6972,6 @@ impl DomainInformationContainer {
         &self,
     ) -> std::option::Option<&crate::model::AwsDomainInformation> {
         self.aws_domain_information.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainInformationContainer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainInformationContainer");
-        formatter.field("aws_domain_information", &self.aws_domain_information);
-        formatter.finish()
     }
 }
 /// See [`DomainInformationContainer`](crate::model::DomainInformationContainer).
@@ -7438,7 +7013,7 @@ impl DomainInformationContainer {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsDomainInformation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -7462,15 +7037,6 @@ impl AwsDomainInformation {
     #[allow(missing_docs)] // documentation missing in model
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsDomainInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsDomainInformation");
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`AwsDomainInformation`](crate::model::AwsDomainInformation).
@@ -7533,7 +7099,7 @@ impl AwsDomainInformation {
 
 /// <p>A key value pair for a resource tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached. </p>
     #[doc(hidden)]
@@ -7550,14 +7116,6 @@ impl Tag {
     /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code> </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -7608,7 +7166,7 @@ impl Tag {
 
 /// <p>Information on a package associated with a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainPackageDetails {
     /// <p>The internal ID of the package.</p>
     #[doc(hidden)]
@@ -7674,21 +7232,6 @@ impl DomainPackageDetails {
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainPackageDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainPackageDetails");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_type", &self.package_type);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("domain_package_status", &self.domain_package_status);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("reference_path", &self.reference_path);
-        formatter.field("error_details", &self.error_details);
-        formatter.finish()
     }
 }
 /// See [`DomainPackageDetails`](crate::model::DomainPackageDetails).
@@ -7954,7 +7497,7 @@ impl AsRef<str> for DomainPackageStatus {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceTypeDetails {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -8008,19 +7551,6 @@ impl InstanceTypeDetails {
     #[allow(missing_docs)] // documentation missing in model
     pub fn instance_role(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_role.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceTypeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceTypeDetails");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("encryption_enabled", &self.encryption_enabled);
-        formatter.field("cognito_enabled", &self.cognito_enabled);
-        formatter.field("app_logs_enabled", &self.app_logs_enabled);
-        formatter.field("advanced_security_enabled", &self.advanced_security_enabled);
-        formatter.field("warm_enabled", &self.warm_enabled);
-        formatter.field("instance_role", &self.instance_role);
-        formatter.finish()
     }
 }
 /// See [`InstanceTypeDetails`](crate::model::InstanceTypeDetails).
@@ -8146,7 +7676,7 @@ impl InstanceTypeDetails {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainInfo {
     /// <p>The <code>DomainName</code>. </p>
     #[doc(hidden)]
@@ -8163,14 +7693,6 @@ impl DomainInfo {
     /// <p> Specifies the <code>EngineType</code> of the domain.</p>
     pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
         self.engine_type.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainInfo");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.finish()
     }
 }
 /// See [`DomainInfo`](crate::model::DomainInfo).
@@ -8514,7 +8036,7 @@ impl AsRef<str> for UpgradeStep {
 
 /// <p>History of the last 10 upgrades and upgrade eligibility checks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeHistory {
     /// <p>A string that briefly describes the upgrade.</p>
     #[doc(hidden)]
@@ -8559,16 +8081,6 @@ impl UpgradeHistory {
     /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as part of a specific upgrade or upgrade eligibility check. </p>
     pub fn steps_list(&self) -> std::option::Option<&[crate::model::UpgradeStepItem]> {
         self.steps_list.as_deref()
-    }
-}
-impl std::fmt::Debug for UpgradeHistory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeHistory");
-        formatter.field("upgrade_name", &self.upgrade_name);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("upgrade_status", &self.upgrade_status);
-        formatter.field("steps_list", &self.steps_list);
-        formatter.finish()
     }
 }
 /// See [`UpgradeHistory`](crate::model::UpgradeHistory).
@@ -8672,7 +8184,7 @@ impl UpgradeHistory {
 
 /// <p>Represents a single step of the upgrade or upgrade eligibility check workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeStepItem {
     /// <p> One of three steps an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
@@ -8729,16 +8241,6 @@ impl UpgradeStepItem {
     /// <p>The floating point value representing the progress percentage of a particular step.</p>
     pub fn progress_percent(&self) -> std::option::Option<f64> {
         self.progress_percent
-    }
-}
-impl std::fmt::Debug for UpgradeStepItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeStepItem");
-        formatter.field("upgrade_step", &self.upgrade_step);
-        formatter.field("upgrade_step_status", &self.upgrade_step_status);
-        formatter.field("issues", &self.issues);
-        formatter.field("progress_percent", &self.progress_percent);
-        formatter.finish()
     }
 }
 /// See [`UpgradeStepItem`](crate::model::UpgradeStepItem).
@@ -8854,7 +8356,7 @@ impl UpgradeStepItem {
 
 /// <p>Details of a package version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageVersionHistory {
     /// <p>The package version.</p>
     #[doc(hidden)]
@@ -8878,15 +8380,6 @@ impl PackageVersionHistory {
     /// <p>The timestamp of when the package was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageVersionHistory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageVersionHistory");
-        formatter.field("package_version", &self.package_version);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`PackageVersionHistory`](crate::model::PackageVersionHistory).
@@ -8958,7 +8451,7 @@ impl PackageVersionHistory {
 
 /// <p> A map from an <code> <code>EngineVersion</code> </code> to a list of compatible <code> <code>EngineVersion</code> </code> s to which the domain can be upgraded. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompatibleVersionsMap {
     /// <p>The current version of OpenSearch a domain is on.</p>
     #[doc(hidden)]
@@ -8975,14 +8468,6 @@ impl CompatibleVersionsMap {
     /// <p>List of supported OpenSearch versions. </p>
     pub fn target_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.target_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for CompatibleVersionsMap {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompatibleVersionsMap");
-        formatter.field("source_version", &self.source_version);
-        formatter.field("target_versions", &self.target_versions);
-        formatter.finish()
     }
 }
 /// See [`CompatibleVersionsMap`](crate::model::CompatibleVersionsMap).
@@ -9045,7 +8530,7 @@ impl CompatibleVersionsMap {
 
 /// <p>Details of a reserved OpenSearch instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedInstance {
     /// <p>The customer-specified identifier to track this reservation.</p>
     #[doc(hidden)]
@@ -9150,29 +8635,6 @@ impl ReservedInstance {
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
     pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
         self.recurring_charges.as_deref()
-    }
-}
-impl std::fmt::Debug for ReservedInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedInstance");
-        formatter.field("reservation_name", &self.reservation_name);
-        formatter.field("reserved_instance_id", &self.reserved_instance_id);
-        formatter.field("billing_subscription_id", &self.billing_subscription_id);
-        formatter.field(
-            "reserved_instance_offering_id",
-            &self.reserved_instance_offering_id,
-        );
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("duration", &self.duration);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("state", &self.state);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("recurring_charges", &self.recurring_charges);
-        formatter.finish()
     }
 }
 /// See [`ReservedInstance`](crate::model::ReservedInstance).
@@ -9408,7 +8870,7 @@ impl ReservedInstance {
 
 /// <p>Contains the specific price and frequency of a recurring charges for a reserved OpenSearch instance, or for a reserved OpenSearch instance offering. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecurringCharge {
     /// <p>The monetary amount of the recurring charge.</p>
     #[doc(hidden)]
@@ -9425,17 +8887,6 @@ impl RecurringCharge {
     /// <p>The frequency of the recurring charge.</p>
     pub fn recurring_charge_frequency(&self) -> std::option::Option<&str> {
         self.recurring_charge_frequency.as_deref()
-    }
-}
-impl std::fmt::Debug for RecurringCharge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecurringCharge");
-        formatter.field("recurring_charge_amount", &self.recurring_charge_amount);
-        formatter.field(
-            "recurring_charge_frequency",
-            &self.recurring_charge_frequency,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
@@ -9586,7 +9037,7 @@ impl AsRef<str> for ReservedInstancePaymentOption {
 
 /// <p>Details of a reserved OpenSearch instance offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedInstanceOffering {
     /// <p>The OpenSearch reserved instance offering identifier.</p>
     #[doc(hidden)]
@@ -9649,23 +9100,6 @@ impl ReservedInstanceOffering {
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
     pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
         self.recurring_charges.as_deref()
-    }
-}
-impl std::fmt::Debug for ReservedInstanceOffering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedInstanceOffering");
-        formatter.field(
-            "reserved_instance_offering_id",
-            &self.reserved_instance_offering_id,
-        );
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("duration", &self.duration);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("recurring_charges", &self.recurring_charges);
-        formatter.finish()
     }
 }
 /// See [`ReservedInstanceOffering`](crate::model::ReservedInstanceOffering).
@@ -9820,7 +9254,7 @@ impl ReservedInstanceOffering {
 
 /// <p>A filter to apply to the <code>DescribePackage</code> response. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackagesFilter {
     /// <p>Any field from <code>PackageDetails</code>. </p>
     #[doc(hidden)]
@@ -9837,14 +9271,6 @@ impl DescribePackagesFilter {
     /// <p>A list of values for the specified field.</p>
     pub fn value(&self) -> std::option::Option<&[std::string::String]> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribePackagesFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackagesFilter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DescribePackagesFilter`](crate::model::DescribePackagesFilter).
@@ -10004,7 +9430,7 @@ impl AsRef<str> for DescribePackagesFilterName {
 
 /// <p>Specifies details about an outbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutboundConnection {
     /// <p>The <code> <code>DomainInformation</code> </code> for the local OpenSearch domain. </p>
     #[doc(hidden)]
@@ -10048,17 +9474,6 @@ impl OutboundConnection {
         &self,
     ) -> std::option::Option<&crate::model::OutboundConnectionStatus> {
         self.connection_status.as_ref()
-    }
-}
-impl std::fmt::Debug for OutboundConnection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutboundConnection");
-        formatter.field("local_domain_info", &self.local_domain_info);
-        formatter.field("remote_domain_info", &self.remote_domain_info);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_alias", &self.connection_alias);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.finish()
     }
 }
 /// See [`OutboundConnection`](crate::model::OutboundConnection).
@@ -10167,7 +9582,7 @@ impl OutboundConnection {
 
 /// <p>The connection status of an outbound cross-cluster connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutboundConnectionStatus {
     /// <p>The state code for the outbound connection. Can be one of the following:</p>
     /// <ul>
@@ -10208,14 +9623,6 @@ impl OutboundConnectionStatus {
     /// <p>Verbose information for the outbound connection status.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for OutboundConnectionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutboundConnectionStatus");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`OutboundConnectionStatus`](crate::model::OutboundConnectionStatus).
@@ -10436,7 +9843,7 @@ impl AsRef<str> for OutboundConnectionStatusCode {
 
 /// <p> A filter used to limit results when describing inbound or outbound cross-cluster connections. Multiple values can be specified per filter. A cross-cluster connection must match at least one of the specified values for it to be returned from an operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p> The name of the filter. </p>
     #[doc(hidden)]
@@ -10453,14 +9860,6 @@ impl Filter {
     /// <p> Contains one or more values for the filter. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -10520,7 +9919,7 @@ impl Filter {
 
 /// <p> Limits for a given InstanceType and for each of its roles. <br><br> Limits contains the following: <code> <code>StorageTypes</code> </code>, <code> <code>InstanceLimits</code> </code>, and <code> <code>AdditionalLimits</code> </code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Limits {
     /// <p>Storage-related types and attributes that are available for a given InstanceType. </p>
     #[doc(hidden)]
@@ -10544,15 +9943,6 @@ impl Limits {
     /// <p> List of additional limits that are specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> . </p>
     pub fn additional_limits(&self) -> std::option::Option<&[crate::model::AdditionalLimit]> {
         self.additional_limits.as_deref()
-    }
-}
-impl std::fmt::Debug for Limits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Limits");
-        formatter.field("storage_types", &self.storage_types);
-        formatter.field("instance_limits", &self.instance_limits);
-        formatter.field("additional_limits", &self.additional_limits);
-        formatter.finish()
     }
 }
 /// See [`Limits`](crate::model::Limits).
@@ -10637,7 +10027,7 @@ impl Limits {
 
 /// <p> List of limits that are specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> . </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalLimit {
     /// <p> Additional limit is specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
     /// <ul>
@@ -10664,14 +10054,6 @@ impl AdditionalLimit {
     /// <p> Value for a given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
     pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
         self.limit_values.as_deref()
-    }
-}
-impl std::fmt::Debug for AdditionalLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalLimit");
-        formatter.field("limit_name", &self.limit_name);
-        formatter.field("limit_values", &self.limit_values);
-        formatter.finish()
     }
 }
 /// See [`AdditionalLimit`](crate::model::AdditionalLimit).
@@ -10741,7 +10123,7 @@ impl AdditionalLimit {
 
 /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceLimits {
     /// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
     #[doc(hidden)]
@@ -10751,13 +10133,6 @@ impl InstanceLimits {
     /// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
     pub fn instance_count_limits(&self) -> std::option::Option<&crate::model::InstanceCountLimits> {
         self.instance_count_limits.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceLimits");
-        formatter.field("instance_count_limits", &self.instance_count_limits);
-        formatter.finish()
     }
 }
 /// See [`InstanceLimits`](crate::model::InstanceLimits).
@@ -10799,7 +10174,7 @@ impl InstanceLimits {
 
 /// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceCountLimits {
     /// <p> Minimum number of instances that can be instantiated for a given InstanceType. </p>
     #[doc(hidden)]
@@ -10816,14 +10191,6 @@ impl InstanceCountLimits {
     /// <p> Maximum number of instances that can be instantiated for a given InstanceType. </p>
     pub fn maximum_instance_count(&self) -> i32 {
         self.maximum_instance_count
-    }
-}
-impl std::fmt::Debug for InstanceCountLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceCountLimits");
-        formatter.field("minimum_instance_count", &self.minimum_instance_count);
-        formatter.field("maximum_instance_count", &self.maximum_instance_count);
-        formatter.finish()
     }
 }
 /// See [`InstanceCountLimits`](crate::model::InstanceCountLimits).
@@ -10874,7 +10241,7 @@ impl InstanceCountLimits {
 
 /// <p>StorageTypes represents the list of storage-related types and their attributes that are available for a given InstanceType. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageType {
     /// <p> Type of storage. List of available storage options: </p>
     /// <ol>
@@ -10922,15 +10289,6 @@ impl StorageType {
     /// <p>Limits that are applicable for the given storage type. </p>
     pub fn storage_type_limits(&self) -> std::option::Option<&[crate::model::StorageTypeLimit]> {
         self.storage_type_limits.as_deref()
-    }
-}
-impl std::fmt::Debug for StorageType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageType");
-        formatter.field("storage_type_name", &self.storage_type_name);
-        formatter.field("storage_sub_type_name", &self.storage_sub_type_name);
-        formatter.field("storage_type_limits", &self.storage_type_limits);
-        formatter.finish()
     }
 }
 /// See [`StorageType`](crate::model::StorageType).
@@ -11033,7 +10391,7 @@ impl StorageType {
 
 /// <p>Limits that are applicable for the given storage type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageTypeLimit {
     /// <p> Name of storage limits that are applicable for the given storage type. If <code> <code>StorageType</code> </code> is "ebs", the following storage options are applicable: </p>
     /// <ol>
@@ -11068,14 +10426,6 @@ impl StorageTypeLimit {
     /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
     pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
         self.limit_values.as_deref()
-    }
-}
-impl std::fmt::Debug for StorageTypeLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageTypeLimit");
-        formatter.field("limit_name", &self.limit_name);
-        formatter.field("limit_values", &self.limit_values);
-        formatter.finish()
     }
 }
 /// See [`StorageTypeLimit`](crate::model::StorageTypeLimit).
@@ -11153,7 +10503,7 @@ impl StorageTypeLimit {
 
 /// <p>The current status of a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainStatus {
     /// <p>The unique identifier for the specified domain.</p>
     #[doc(hidden)]
@@ -11358,43 +10708,6 @@ impl DomainStatus {
         &self,
     ) -> std::option::Option<&crate::model::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainStatus");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created", &self.created);
-        formatter.field("deleted", &self.deleted);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("processing", &self.processing);
-        formatter.field("upgrade_processing", &self.upgrade_processing);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("cluster_config", &self.cluster_config);
-        formatter.field("ebs_options", &self.ebs_options);
-        formatter.field("access_policies", &self.access_policies);
-        formatter.field("snapshot_options", &self.snapshot_options);
-        formatter.field("vpc_options", &self.vpc_options);
-        formatter.field("cognito_options", &self.cognito_options);
-        formatter.field(
-            "encryption_at_rest_options",
-            &self.encryption_at_rest_options,
-        );
-        formatter.field(
-            "node_to_node_encryption_options",
-            &self.node_to_node_encryption_options,
-        );
-        formatter.field("advanced_options", &self.advanced_options);
-        formatter.field("log_publishing_options", &self.log_publishing_options);
-        formatter.field("service_software_options", &self.service_software_options);
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.field("advanced_security_options", &self.advanced_security_options);
-        formatter.field("auto_tune_options", &self.auto_tune_options);
-        formatter.field("change_progress_details", &self.change_progress_details);
-        formatter.finish()
     }
 }
 /// See [`DomainStatus`](crate::model::DomainStatus).
@@ -11838,7 +11151,7 @@ impl DomainStatus {
 
 /// <p>The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTuneOptionsOutput {
     /// <p>The <code>AutoTuneState</code> for the domain. </p>
     #[doc(hidden)]
@@ -11855,14 +11168,6 @@ impl AutoTuneOptionsOutput {
     /// <p>The error message while enabling or disabling Auto-Tune.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoTuneOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTuneOptionsOutput");
-        formatter.field("state", &self.state);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`AutoTuneOptionsOutput`](crate::model::AutoTuneOptionsOutput).
@@ -11919,7 +11224,7 @@ impl AutoTuneOptionsOutput {
 
 /// <p>The progress details of a specific domain configuration change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeProgressStatusDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
     #[doc(hidden)]
@@ -11974,19 +11279,6 @@ impl ChangeProgressStatusDetails {
         &self,
     ) -> std::option::Option<&[crate::model::ChangeProgressStage]> {
         self.change_progress_stages.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangeProgressStatusDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeProgressStatusDetails");
-        formatter.field("change_id", &self.change_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("status", &self.status);
-        formatter.field("pending_properties", &self.pending_properties);
-        formatter.field("completed_properties", &self.completed_properties);
-        formatter.field("total_number_of_stages", &self.total_number_of_stages);
-        formatter.field("change_progress_stages", &self.change_progress_stages);
-        formatter.finish()
     }
 }
 /// See [`ChangeProgressStatusDetails`](crate::model::ChangeProgressStatusDetails).
@@ -12131,7 +11423,7 @@ impl ChangeProgressStatusDetails {
 
 /// <p>A progress stage details of a specific domain configuration change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeProgressStage {
     /// <p>The name of the specific progress stage.</p>
     #[doc(hidden)]
@@ -12162,16 +11454,6 @@ impl ChangeProgressStage {
     /// <p>The last updated timestamp of the progress stage.</p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for ChangeProgressStage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeProgressStage");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`ChangeProgressStage`](crate::model::ChangeProgressStage).
@@ -12351,7 +11633,7 @@ impl AsRef<str> for OverallChangeStatus {
 
 /// <p>Specifies the Auto-Tune type and Auto-Tune action details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTune {
     /// <p>Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.</p>
     #[doc(hidden)]
@@ -12368,14 +11650,6 @@ impl AutoTune {
     /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn auto_tune_details(&self) -> std::option::Option<&crate::model::AutoTuneDetails> {
         self.auto_tune_details.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoTune {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTune");
-        formatter.field("auto_tune_type", &self.auto_tune_type);
-        formatter.field("auto_tune_details", &self.auto_tune_details);
-        formatter.finish()
     }
 }
 /// See [`AutoTune`](crate::model::AutoTune).
@@ -12432,7 +11706,7 @@ impl AutoTune {
 
 /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTuneDetails {
     /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     #[doc(hidden)]
@@ -12444,16 +11718,6 @@ impl AutoTuneDetails {
         &self,
     ) -> std::option::Option<&crate::model::ScheduledAutoTuneDetails> {
         self.scheduled_auto_tune_details.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoTuneDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTuneDetails");
-        formatter.field(
-            "scheduled_auto_tune_details",
-            &self.scheduled_auto_tune_details,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoTuneDetails`](crate::model::AutoTuneDetails).
@@ -12499,7 +11763,7 @@ impl AutoTuneDetails {
 
 /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledAutoTuneDetails {
     /// <p>The timestamp of the Auto-Tune action scheduled for the domain.</p>
     #[doc(hidden)]
@@ -12530,16 +11794,6 @@ impl ScheduledAutoTuneDetails {
     /// <p>The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.</p>
     pub fn severity(&self) -> std::option::Option<&crate::model::ScheduledAutoTuneSeverityType> {
         self.severity.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduledAutoTuneDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledAutoTuneDetails");
-        formatter.field("date", &self.date);
-        formatter.field("action_type", &self.action_type);
-        formatter.field("action", &self.action);
-        formatter.field("severity", &self.severity);
-        formatter.finish()
     }
 }
 /// See [`ScheduledAutoTuneDetails`](crate::model::ScheduledAutoTuneDetails).
@@ -12894,7 +12148,7 @@ impl AsRef<str> for AutoTuneType {
 
 /// <p>The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTuneOptionsInput {
     /// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
     #[doc(hidden)]
@@ -12914,14 +12168,6 @@ impl AutoTuneOptionsInput {
         &self,
     ) -> std::option::Option<&[crate::model::AutoTuneMaintenanceSchedule]> {
         self.maintenance_schedules.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoTuneOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTuneOptionsInput");
-        formatter.field("desired_state", &self.desired_state);
-        formatter.field("maintenance_schedules", &self.maintenance_schedules);
-        formatter.finish()
     }
 }
 /// See [`AutoTuneOptionsInput`](crate::model::AutoTuneOptionsInput).

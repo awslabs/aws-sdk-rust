@@ -5710,7 +5710,7 @@ impl PublishRecipeInput {
 pub mod send_project_session_action_input {
 
     /// A builder for [`SendProjectSessionActionInput`](crate::input::SendProjectSessionActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) preview: std::option::Option<bool>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5804,6 +5804,18 @@ pub mod send_project_session_action_input {
                 client_session_id: self.client_session_id,
                 view_frame: self.view_frame,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("preview", &self.preview);
+            formatter.field("name", &self.name);
+            formatter.field("recipe_step", &self.recipe_step);
+            formatter.field("step_index", &self.step_index);
+            formatter.field("client_session_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("view_frame", &self.view_frame);
+            formatter.finish()
         }
     }
 }
@@ -8454,7 +8466,7 @@ impl UpdateScheduleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateScheduleInput {
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
     #[doc(hidden)]
@@ -8480,19 +8492,10 @@ impl UpdateScheduleInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateScheduleInput");
-        formatter.field("job_names", &self.job_names);
-        formatter.field("cron_expression", &self.cron_expression);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRulesetInput {
     /// <p>The name of the ruleset to be updated.</p>
     #[doc(hidden)]
@@ -8518,19 +8521,10 @@ impl UpdateRulesetInput {
         self.rules.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRulesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRulesetInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecipeJobInput {
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     #[doc(hidden)]
@@ -8620,27 +8614,10 @@ impl UpdateRecipeJobInput {
         self.timeout
     }
 }
-impl std::fmt::Debug for UpdateRecipeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecipeJobInput");
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("name", &self.name);
-        formatter.field("log_subscription", &self.log_subscription);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("data_catalog_outputs", &self.data_catalog_outputs);
-        formatter.field("database_outputs", &self.database_outputs);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("timeout", &self.timeout);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecipeInput {
     /// <p>A description of the recipe.</p>
     #[doc(hidden)]
@@ -8666,19 +8643,10 @@ impl UpdateRecipeInput {
         self.steps.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecipeInput");
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("steps", &self.steps);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     #[doc(hidden)]
@@ -8704,19 +8672,10 @@ impl UpdateProjectInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectInput");
-        formatter.field("sample", &self.sample);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProfileJobInput {
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     #[doc(hidden)]
@@ -8816,28 +8775,10 @@ impl UpdateProfileJobInput {
         self.job_sample.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateProfileJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProfileJobInput");
-        formatter.field("configuration", &self.configuration);
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("name", &self.name);
-        formatter.field("log_subscription", &self.log_subscription);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("output_location", &self.output_location);
-        formatter.field("validation_configurations", &self.validation_configurations);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("job_sample", &self.job_sample);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatasetInput {
     /// <p>The name of the dataset to be updated.</p>
     #[doc(hidden)]
@@ -8877,21 +8818,10 @@ impl UpdateDatasetInput {
         self.path_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDatasetInput");
-        formatter.field("name", &self.name);
-        formatter.field("format", &self.format);
-        formatter.field("format_options", &self.format_options);
-        formatter.field("input", &self.input);
-        formatter.field("path_options", &self.path_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
@@ -8910,18 +8840,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
     #[doc(hidden)]
@@ -8944,18 +8866,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopJobRunInput {
     /// <p>The name of the job to be stopped.</p>
     #[doc(hidden)]
@@ -8974,18 +8888,10 @@ impl StopJobRunInput {
         self.run_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopJobRunInput");
-        formatter.field("name", &self.name);
-        formatter.field("run_id", &self.run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartProjectSessionInput {
     /// <p>The name of the project to act upon.</p>
     #[doc(hidden)]
@@ -9004,18 +8910,10 @@ impl StartProjectSessionInput {
         self.assume_control
     }
 }
-impl std::fmt::Debug for StartProjectSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartProjectSessionInput");
-        formatter.field("name", &self.name);
-        formatter.field("assume_control", &self.assume_control);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartJobRunInput {
     /// <p>The name of the job to be run.</p>
     #[doc(hidden)]
@@ -9025,13 +8923,6 @@ impl StartJobRunInput {
     /// <p>The name of the job to be run.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for StartJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartJobRunInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -9099,7 +8990,7 @@ impl std::fmt::Debug for SendProjectSessionActionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishRecipeInput {
     /// <p>A description of the recipe to be published, for this version of the recipe.</p>
     #[doc(hidden)]
@@ -9118,18 +9009,10 @@ impl PublishRecipeInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for PublishRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishRecipeInput");
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
     #[doc(hidden)]
@@ -9141,17 +9024,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSchedulesInput {
     /// <p>The name of the job that these schedules apply to.</p>
     #[doc(hidden)]
@@ -9177,19 +9053,10 @@ impl ListSchedulesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSchedulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSchedulesInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRulesetsInput {
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
     #[doc(hidden)]
@@ -9215,19 +9082,10 @@ impl ListRulesetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRulesetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRulesetsInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecipeVersionsInput {
     /// <p>The maximum number of results to return in this request. </p>
     #[doc(hidden)]
@@ -9253,19 +9111,10 @@ impl ListRecipeVersionsInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecipeVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecipeVersionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecipesInput {
     /// <p>The maximum number of results to return in this request. </p>
     #[doc(hidden)]
@@ -9293,19 +9142,10 @@ impl ListRecipesInput {
         self.recipe_version.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecipesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecipesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("recipe_version", &self.recipe_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -9324,18 +9164,10 @@ impl ListProjectsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
     #[doc(hidden)]
@@ -9368,20 +9200,10 @@ impl ListJobsInput {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobRunsInput {
     /// <p>The name of the job.</p>
     #[doc(hidden)]
@@ -9407,19 +9229,10 @@ impl ListJobRunsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobRunsInput");
-        formatter.field("name", &self.name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetsInput {
     /// <p>The maximum number of results to return in this request. </p>
     #[doc(hidden)]
@@ -9438,18 +9251,10 @@ impl ListDatasetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDatasetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScheduleInput {
     /// <p>The name of the schedule to be described.</p>
     #[doc(hidden)]
@@ -9461,17 +9266,10 @@ impl DescribeScheduleInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScheduleInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRulesetInput {
     /// <p>The name of the ruleset to be described.</p>
     #[doc(hidden)]
@@ -9483,17 +9281,10 @@ impl DescribeRulesetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRulesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRulesetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecipeInput {
     /// <p>The name of the recipe to be described.</p>
     #[doc(hidden)]
@@ -9512,18 +9303,10 @@ impl DescribeRecipeInput {
         self.recipe_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecipeInput");
-        formatter.field("name", &self.name);
-        formatter.field("recipe_version", &self.recipe_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project to be described.</p>
     #[doc(hidden)]
@@ -9535,17 +9318,10 @@ impl DescribeProjectInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobRunInput {
     /// <p>The name of the job being processed during this run.</p>
     #[doc(hidden)]
@@ -9564,18 +9340,10 @@ impl DescribeJobRunInput {
         self.run_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobRunInput");
-        formatter.field("name", &self.name);
-        formatter.field("run_id", &self.run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobInput {
     /// <p>The name of the job to be described.</p>
     #[doc(hidden)]
@@ -9587,17 +9355,10 @@ impl DescribeJobInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetInput {
     /// <p>The name of the dataset to be described.</p>
     #[doc(hidden)]
@@ -9609,17 +9370,10 @@ impl DescribeDatasetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduleInput {
     /// <p>The name of the schedule to be deleted.</p>
     #[doc(hidden)]
@@ -9631,17 +9385,10 @@ impl DeleteScheduleInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScheduleInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRulesetInput {
     /// <p>The name of the ruleset to be deleted.</p>
     #[doc(hidden)]
@@ -9653,17 +9400,10 @@ impl DeleteRulesetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRulesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRulesetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecipeVersionInput {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
@@ -9682,18 +9422,10 @@ impl DeleteRecipeVersionInput {
         self.recipe_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRecipeVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecipeVersionInput");
-        formatter.field("name", &self.name);
-        formatter.field("recipe_version", &self.recipe_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The name of the project to be deleted.</p>
     #[doc(hidden)]
@@ -9705,17 +9437,10 @@ impl DeleteProjectInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobInput {
     /// <p>The name of the job to be deleted.</p>
     #[doc(hidden)]
@@ -9727,17 +9452,10 @@ impl DeleteJobInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJobInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to be deleted.</p>
     #[doc(hidden)]
@@ -9749,17 +9467,10 @@ impl DeleteDatasetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateScheduleInput {
     /// <p>The name or names of one or more jobs to be run.</p>
     #[doc(hidden)]
@@ -9796,20 +9507,10 @@ impl CreateScheduleInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateScheduleInput");
-        formatter.field("job_names", &self.job_names);
-        formatter.field("cron_expression", &self.cron_expression);
-        formatter.field("tags", &self.tags);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRulesetInput {
     /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     #[doc(hidden)]
@@ -9853,21 +9554,10 @@ impl CreateRulesetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRulesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRulesetInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("rules", &self.rules);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRecipeJobInput {
     /// <p>The name of the dataset that this job processes.</p>
     #[doc(hidden)]
@@ -9989,31 +9679,10 @@ impl CreateRecipeJobInput {
         self.timeout
     }
 }
-impl std::fmt::Debug for CreateRecipeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRecipeJobInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("name", &self.name);
-        formatter.field("log_subscription", &self.log_subscription);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("data_catalog_outputs", &self.data_catalog_outputs);
-        formatter.field("database_outputs", &self.database_outputs);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("recipe_reference", &self.recipe_reference);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("timeout", &self.timeout);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRecipeInput {
     /// <p>A description for the recipe.</p>
     #[doc(hidden)]
@@ -10050,20 +9719,10 @@ impl CreateRecipeInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRecipeInput");
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("steps", &self.steps);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name of an existing dataset to associate this project with.</p>
     #[doc(hidden)]
@@ -10114,22 +9773,10 @@ impl CreateProjectInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("name", &self.name);
-        formatter.field("recipe_name", &self.recipe_name);
-        formatter.field("sample", &self.sample);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProfileJobInput {
     /// <p>The name of the dataset that this job is to act upon.</p>
     #[doc(hidden)]
@@ -10247,30 +9894,10 @@ impl CreateProfileJobInput {
         self.job_sample.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProfileJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProfileJobInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("name", &self.name);
-        formatter.field("log_subscription", &self.log_subscription);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("output_location", &self.output_location);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("validation_configurations", &self.validation_configurations);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("job_sample", &self.job_sample);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     #[doc(hidden)]
@@ -10321,22 +9948,10 @@ impl CreateDatasetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetInput");
-        formatter.field("name", &self.name);
-        formatter.field("format", &self.format);
-        formatter.field("format_options", &self.format_options);
-        formatter.field("input", &self.input);
-        formatter.field("path_options", &self.path_options);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionInput {
     /// <p>The name of the recipe whose versions are to be deleted.</p>
     #[doc(hidden)]
@@ -10353,13 +9968,5 @@ impl BatchDeleteRecipeVersionInput {
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub fn recipe_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.recipe_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteRecipeVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteRecipeVersionInput");
-        formatter.field("name", &self.name);
-        formatter.field("recipe_versions", &self.recipe_versions);
-        formatter.finish()
     }
 }

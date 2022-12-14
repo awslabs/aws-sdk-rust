@@ -2,18 +2,11 @@
 
 /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnknownResourceFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnknownResourceFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnknownResourceFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnknownResourceFault {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl UnknownResourceFault {
 
 /// <p>Returned when the caller doesn't have sufficient permissions to invoke the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationNotPermittedFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OperationNotPermittedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationNotPermittedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OperationNotPermittedFault {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl OperationNotPermittedFault {
 
 /// <p>Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or increase the limit by contacting AWS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LimitExceededFault {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl LimitExceededFault {
 
 /// <p>Returned if the type already exists in the specified domain. You may get this fault if you are registering a type that is either already registered or deprecated, or if you undeprecate a type that is currently registered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypeAlreadyExistsFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TypeAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypeAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TypeAlreadyExistsFault {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl TypeAlreadyExistsFault {
 
 /// <p>Returned if the domain already exists. You may get this fault if you are registering a domain that is either already registered or deprecated, or if you undeprecate a domain that is currently registered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainAlreadyExistsFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DomainAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DomainAlreadyExistsFault {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl DomainAlreadyExistsFault {
 
 /// <p>You've exceeded the number of tags allowed for a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTagsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTagsFault {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl TooManyTagsFault {
 
 /// <p>Returned by <code>StartWorkflowExecution</code> when an open execution with the same workflowId is already running in the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionAlreadyStartedFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WorkflowExecutionAlreadyStartedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionAlreadyStartedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WorkflowExecutionAlreadyStartedFault {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl WorkflowExecutionAlreadyStartedFault {
 
 /// <p>Returned when the specified activity or workflow type was already deprecated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypeDeprecatedFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TypeDeprecatedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypeDeprecatedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TypeDeprecatedFault {
     /// Returns the error message.
@@ -541,18 +485,11 @@ impl TypeDeprecatedFault {
 /// <p>If these parameters aren't set and no default parameters were defined in the workflow type, this error is displayed.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultUndefinedFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DefaultUndefinedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultUndefinedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DefaultUndefinedFault {
     /// Returns the error message.
@@ -608,18 +545,11 @@ impl DefaultUndefinedFault {
 
 /// <p>Returned when the specified domain has been deprecated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainDeprecatedFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DomainDeprecatedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainDeprecatedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DomainDeprecatedFault {
     /// Returns the error message.

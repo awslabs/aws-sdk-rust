@@ -2,7 +2,7 @@
 
 /// <p>Describes a mixed instances policy. A mixed instances policy contains the instance types that Amazon EC2 Auto Scaling can launch and other information that Amazon EC2 Auto Scaling can use to launch instances and help optimize your costs. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MixedInstancesPolicy {
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
     #[doc(hidden)]
@@ -21,14 +21,6 @@ impl MixedInstancesPolicy {
         &self,
     ) -> std::option::Option<&crate::model::InstancesDistribution> {
         self.instances_distribution.as_ref()
-    }
-}
-impl std::fmt::Debug for MixedInstancesPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MixedInstancesPolicy");
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("instances_distribution", &self.instances_distribution);
-        formatter.finish()
     }
 }
 /// See [`MixedInstancesPolicy`](crate::model::MixedInstancesPolicy).
@@ -88,7 +80,7 @@ impl MixedInstancesPolicy {
 
 /// <p>Describes an instances distribution for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstancesDistribution {
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. </p>
     /// <p>If you specify <code>lowest-price</code>, Amazon EC2 Auto Scaling uses price to determine the order, launching the lowest price first. </p>
@@ -163,24 +155,6 @@ impl InstancesDistribution {
     /// <p>Valid Range: Minimum value of 0.001</p>
     pub fn spot_max_price(&self) -> std::option::Option<&str> {
         self.spot_max_price.as_deref()
-    }
-}
-impl std::fmt::Debug for InstancesDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstancesDistribution");
-        formatter.field(
-            "on_demand_allocation_strategy",
-            &self.on_demand_allocation_strategy,
-        );
-        formatter.field("on_demand_base_capacity", &self.on_demand_base_capacity);
-        formatter.field(
-            "on_demand_percentage_above_base_capacity",
-            &self.on_demand_percentage_above_base_capacity,
-        );
-        formatter.field("spot_allocation_strategy", &self.spot_allocation_strategy);
-        formatter.field("spot_instance_pools", &self.spot_instance_pools);
-        formatter.field("spot_max_price", &self.spot_max_price);
-        formatter.finish()
     }
 }
 /// See [`InstancesDistribution`](crate::model::InstancesDistribution).
@@ -325,7 +299,7 @@ impl InstancesDistribution {
 
 /// <p>Describes a launch template and overrides. You specify these properties as part of a mixed instances policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplate {
     /// <p>The launch template to use.</p>
     #[doc(hidden)]
@@ -347,17 +321,6 @@ impl LaunchTemplate {
     /// <p>The overrides can include either one or more instance types or a set of instance requirements, but not both.</p>
     pub fn overrides(&self) -> std::option::Option<&[crate::model::LaunchTemplateOverrides]> {
         self.overrides.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplate");
-        formatter.field(
-            "launch_template_specification",
-            &self.launch_template_specification,
-        );
-        formatter.field("overrides", &self.overrides);
-        formatter.finish()
     }
 }
 /// See [`LaunchTemplate`](crate::model::LaunchTemplate).
@@ -427,7 +390,7 @@ impl LaunchTemplate {
 
 /// <p>Describes an override for a launch template. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-configuring-overrides.html">Configuring overrides</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateOverrides {
     /// <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your requested Region and Availability Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[doc(hidden)]
@@ -463,19 +426,6 @@ impl LaunchTemplateOverrides {
         &self,
     ) -> std::option::Option<&crate::model::InstanceRequirements> {
         self.instance_requirements.as_ref()
-    }
-}
-impl std::fmt::Debug for LaunchTemplateOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateOverrides");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.field(
-            "launch_template_specification",
-            &self.launch_template_specification,
-        );
-        formatter.field("instance_requirements", &self.instance_requirements);
-        formatter.finish()
     }
 }
 /// See [`LaunchTemplateOverrides`](crate::model::LaunchTemplateOverrides).
@@ -567,7 +517,7 @@ impl LaunchTemplateOverrides {
 /// <p>When you specify multiple parameters, you get instance types that satisfy all of the specified parameters. If you specify multiple values for a parameter, you get instance types that satisfy any of the specified values.</p>
 /// <p>Represents requirements for the types of instances that can be launched. You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>, but all other parameters are optional. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRequirements {
     /// <p>The minimum and maximum number of vCPUs for an instance type.</p>
     #[doc(hidden)]
@@ -850,45 +800,6 @@ impl InstanceRequirements {
         &self,
     ) -> std::option::Option<&crate::model::AcceleratorTotalMemoryMiBRequest> {
         self.accelerator_total_memory_mi_b.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceRequirements {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRequirements");
-        formatter.field("v_cpu_count", &self.v_cpu_count);
-        formatter.field("memory_mi_b", &self.memory_mi_b);
-        formatter.field("cpu_manufacturers", &self.cpu_manufacturers);
-        formatter.field("memory_gi_b_per_v_cpu", &self.memory_gi_b_per_v_cpu);
-        formatter.field("excluded_instance_types", &self.excluded_instance_types);
-        formatter.field("instance_generations", &self.instance_generations);
-        formatter.field(
-            "spot_max_price_percentage_over_lowest_price",
-            &self.spot_max_price_percentage_over_lowest_price,
-        );
-        formatter.field(
-            "on_demand_max_price_percentage_over_lowest_price",
-            &self.on_demand_max_price_percentage_over_lowest_price,
-        );
-        formatter.field("bare_metal", &self.bare_metal);
-        formatter.field("burstable_performance", &self.burstable_performance);
-        formatter.field("require_hibernate_support", &self.require_hibernate_support);
-        formatter.field("network_interface_count", &self.network_interface_count);
-        formatter.field("local_storage", &self.local_storage);
-        formatter.field("local_storage_types", &self.local_storage_types);
-        formatter.field("total_local_storage_gb", &self.total_local_storage_gb);
-        formatter.field(
-            "baseline_ebs_bandwidth_mbps",
-            &self.baseline_ebs_bandwidth_mbps,
-        );
-        formatter.field("accelerator_types", &self.accelerator_types);
-        formatter.field("accelerator_count", &self.accelerator_count);
-        formatter.field("accelerator_manufacturers", &self.accelerator_manufacturers);
-        formatter.field("accelerator_names", &self.accelerator_names);
-        formatter.field(
-            "accelerator_total_memory_mi_b",
-            &self.accelerator_total_memory_mi_b,
-        );
-        formatter.finish()
     }
 }
 /// See [`InstanceRequirements`](crate::model::InstanceRequirements).
@@ -1416,7 +1327,7 @@ impl InstanceRequirements {
 
 /// <p>Specifies the minimum and maximum for the <code>AcceleratorTotalMemoryMiB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorTotalMemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
     #[doc(hidden)]
@@ -1433,14 +1344,6 @@ impl AcceleratorTotalMemoryMiBRequest {
     /// <p>The memory maximum in MiB.</p>
     pub fn max(&self) -> std::option::Option<i32> {
         self.max
-    }
-}
-impl std::fmt::Debug for AcceleratorTotalMemoryMiBRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorTotalMemoryMiBRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`AcceleratorTotalMemoryMiBRequest`](crate::model::AcceleratorTotalMemoryMiBRequest).
@@ -1716,7 +1619,7 @@ impl AsRef<str> for AcceleratorManufacturer {
 
 /// <p>Specifies the minimum and maximum for the <code>AcceleratorCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorCountRequest {
     /// <p>The minimum value.</p>
     #[doc(hidden)]
@@ -1733,14 +1636,6 @@ impl AcceleratorCountRequest {
     /// <p>The maximum value.</p>
     pub fn max(&self) -> std::option::Option<i32> {
         self.max
-    }
-}
-impl std::fmt::Debug for AcceleratorCountRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorCountRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`AcceleratorCountRequest`](crate::model::AcceleratorCountRequest).
@@ -1886,7 +1781,7 @@ impl AsRef<str> for AcceleratorType {
 
 /// <p>Specifies the minimum and maximum for the <code>BaselineEbsBandwidthMbps</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaselineEbsBandwidthMbpsRequest {
     /// <p>The minimum value in Mbps.</p>
     #[doc(hidden)]
@@ -1903,14 +1798,6 @@ impl BaselineEbsBandwidthMbpsRequest {
     /// <p>The maximum value in Mbps.</p>
     pub fn max(&self) -> std::option::Option<i32> {
         self.max
-    }
-}
-impl std::fmt::Debug for BaselineEbsBandwidthMbpsRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaselineEbsBandwidthMbpsRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`BaselineEbsBandwidthMbpsRequest`](crate::model::BaselineEbsBandwidthMbpsRequest).
@@ -1961,7 +1848,7 @@ impl BaselineEbsBandwidthMbpsRequest {
 
 /// <p>Specifies the minimum and maximum for the <code>TotalLocalStorageGB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TotalLocalStorageGbRequest {
     /// <p>The storage minimum in GB.</p>
     #[doc(hidden)]
@@ -1978,14 +1865,6 @@ impl TotalLocalStorageGbRequest {
     /// <p>The storage maximum in GB.</p>
     pub fn max(&self) -> std::option::Option<f64> {
         self.max
-    }
-}
-impl std::fmt::Debug for TotalLocalStorageGbRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TotalLocalStorageGbRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`TotalLocalStorageGbRequest`](crate::model::TotalLocalStorageGbRequest).
@@ -2221,7 +2100,7 @@ impl AsRef<str> for LocalStorage {
 
 /// <p>Specifies the minimum and maximum for the <code>NetworkInterfaceCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterfaceCountRequest {
     /// <p>The minimum number of network interfaces.</p>
     #[doc(hidden)]
@@ -2238,14 +2117,6 @@ impl NetworkInterfaceCountRequest {
     /// <p>The maximum number of network interfaces.</p>
     pub fn max(&self) -> std::option::Option<i32> {
         self.max
-    }
-}
-impl std::fmt::Debug for NetworkInterfaceCountRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterfaceCountRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterfaceCountRequest`](crate::model::NetworkInterfaceCountRequest).
@@ -2580,7 +2451,7 @@ impl AsRef<str> for InstanceGeneration {
 
 /// <p>Specifies the minimum and maximum for the <code>MemoryGiBPerVCpu</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemoryGiBPerVCpuRequest {
     /// <p>The memory minimum in GiB.</p>
     #[doc(hidden)]
@@ -2597,14 +2468,6 @@ impl MemoryGiBPerVCpuRequest {
     /// <p>The memory maximum in GiB.</p>
     pub fn max(&self) -> std::option::Option<f64> {
         self.max
-    }
-}
-impl std::fmt::Debug for MemoryGiBPerVCpuRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemoryGiBPerVCpuRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`MemoryGiBPerVCpuRequest`](crate::model::MemoryGiBPerVCpuRequest).
@@ -2750,7 +2613,7 @@ impl AsRef<str> for CpuManufacturer {
 
 /// <p>Specifies the minimum and maximum for the <code>MemoryMiB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
     #[doc(hidden)]
@@ -2767,14 +2630,6 @@ impl MemoryMiBRequest {
     /// <p>The memory maximum in MiB.</p>
     pub fn max(&self) -> std::option::Option<i32> {
         self.max
-    }
-}
-impl std::fmt::Debug for MemoryMiBRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemoryMiBRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`MemoryMiBRequest`](crate::model::MemoryMiBRequest).
@@ -2825,7 +2680,7 @@ impl MemoryMiBRequest {
 
 /// <p>Specifies the minimum and maximum for the <code>VCpuCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VCpuCountRequest {
     /// <p>The minimum number of vCPUs.</p>
     #[doc(hidden)]
@@ -2842,14 +2697,6 @@ impl VCpuCountRequest {
     /// <p>The maximum number of vCPUs.</p>
     pub fn max(&self) -> std::option::Option<i32> {
         self.max
-    }
-}
-impl std::fmt::Debug for VCpuCountRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VCpuCountRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`VCpuCountRequest`](crate::model::VCpuCountRequest).
@@ -2900,7 +2747,7 @@ impl VCpuCountRequest {
 
 /// <p>Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more information about launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateSpecification {
     /// <p>The ID of the launch template. To get the template ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a> API operation. New launch templates can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a> API. </p>
     /// <p>Conditional: You must specify either a <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
@@ -2928,15 +2775,6 @@ impl LaunchTemplateSpecification {
     /// <p>The version number, <code>$Latest</code>, or <code>$Default</code>. To get the version number, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html">DescribeLaunchTemplateVersions</a> API operation. New launch template versions can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a> API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the launch template when launching instances. If the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of the launch template when launching instances. The default value is <code>$Default</code>.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchTemplateSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateSpecification");
-        formatter.field("launch_template_id", &self.launch_template_id);
-        formatter.field("launch_template_name", &self.launch_template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
@@ -3009,7 +2847,7 @@ impl LaunchTemplateSpecification {
 
 /// <p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Activity {
     /// <p>The ID of the activity.</p>
     #[doc(hidden)]
@@ -3096,24 +2934,6 @@ impl Activity {
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
     pub fn auto_scaling_group_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Activity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Activity");
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("cause", &self.cause);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("progress", &self.progress);
-        formatter.field("details", &self.details);
-        formatter.field("auto_scaling_group_state", &self.auto_scaling_group_state);
-        formatter.field("auto_scaling_group_arn", &self.auto_scaling_group_arn);
-        formatter.finish()
     }
 }
 /// See [`Activity`](crate::model::Activity).
@@ -3468,7 +3288,7 @@ impl AsRef<str> for ScalingActivityStatusCode {
 
 /// <p>Describes the preferences for an instance refresh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshPreferences {
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
@@ -3516,17 +3336,6 @@ impl RefreshPreferences {
     /// <p>A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration. If no desired configuration is specified, then it skips replacing instances that have the same configuration that is already set on the group. The default is <code>false</code>.</p>
     pub fn skip_matching(&self) -> std::option::Option<bool> {
         self.skip_matching
-    }
-}
-impl std::fmt::Debug for RefreshPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshPreferences");
-        formatter.field("min_healthy_percentage", &self.min_healthy_percentage);
-        formatter.field("instance_warmup", &self.instance_warmup);
-        formatter.field("checkpoint_percentages", &self.checkpoint_percentages);
-        formatter.field("checkpoint_delay", &self.checkpoint_delay);
-        formatter.field("skip_matching", &self.skip_matching);
-        formatter.finish()
     }
 }
 /// See [`RefreshPreferences`](crate::model::RefreshPreferences).
@@ -3633,7 +3442,7 @@ impl RefreshPreferences {
 /// <p>Describes the desired configuration for an instance refresh. </p>
 /// <p>If you specify a desired configuration, you must specify either a <code>LaunchTemplate</code> or a <code>MixedInstancesPolicy</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DesiredConfiguration {
     /// <p>Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more information about launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
@@ -3654,14 +3463,6 @@ impl DesiredConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::MixedInstancesPolicy> {
         self.mixed_instances_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for DesiredConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DesiredConfiguration");
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
-        formatter.finish()
     }
 }
 /// See [`DesiredConfiguration`](crate::model::DesiredConfiguration).
@@ -3804,7 +3605,7 @@ impl AsRef<str> for RefreshStrategy {
 /// <p>Describes an instance reuse policy for a warm pool. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceReusePolicy {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
     #[doc(hidden)]
@@ -3814,13 +3615,6 @@ impl InstanceReusePolicy {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
     pub fn reuse_on_scale_in(&self) -> std::option::Option<bool> {
         self.reuse_on_scale_in
-    }
-}
-impl std::fmt::Debug for InstanceReusePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceReusePolicy");
-        formatter.field("reuse_on_scale_in", &self.reuse_on_scale_in);
-        formatter.finish()
     }
 }
 /// See [`InstanceReusePolicy`](crate::model::InstanceReusePolicy).
@@ -3954,7 +3748,7 @@ impl AsRef<str> for WarmPoolState {
 
 /// <p>Describes an alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
@@ -3971,14 +3765,6 @@ impl Alarm {
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn alarm_arn(&self) -> std::option::Option<&str> {
         self.alarm_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Alarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarm");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_arn", &self.alarm_arn);
-        formatter.finish()
     }
 }
 /// See [`Alarm`](crate::model::Alarm).
@@ -4029,7 +3815,7 @@ impl Alarm {
 
 /// <p>Represents a predictive scaling policy configuration to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingConfiguration {
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
@@ -4091,20 +3877,6 @@ impl PredictiveScalingConfiguration {
     /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
     pub fn max_capacity_buffer(&self) -> std::option::Option<i32> {
         self.max_capacity_buffer
-    }
-}
-impl std::fmt::Debug for PredictiveScalingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingConfiguration");
-        formatter.field("metric_specifications", &self.metric_specifications);
-        formatter.field("mode", &self.mode);
-        formatter.field("scheduling_buffer_time", &self.scheduling_buffer_time);
-        formatter.field(
-            "max_capacity_breach_behavior",
-            &self.max_capacity_breach_behavior,
-        );
-        formatter.field("max_capacity_buffer", &self.max_capacity_buffer);
-        formatter.finish()
     }
 }
 /// See [`PredictiveScalingConfiguration`](crate::model::PredictiveScalingConfiguration).
@@ -4432,7 +4204,7 @@ impl AsRef<str> for PredictiveScalingMode {
 /// </ul>
 /// <p>For information about using custom metrics with predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced predictive scaling policy configurations using custom metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingMetricSpecification {
     /// <p>Specifies the target utilization.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
@@ -4506,37 +4278,6 @@ impl PredictiveScalingMetricSpecification {
         &self,
     ) -> std::option::Option<&crate::model::PredictiveScalingCustomizedCapacityMetric> {
         self.customized_capacity_metric_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for PredictiveScalingMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingMetricSpecification");
-        formatter.field("target_value", &self.target_value);
-        formatter.field(
-            "predefined_metric_pair_specification",
-            &self.predefined_metric_pair_specification,
-        );
-        formatter.field(
-            "predefined_scaling_metric_specification",
-            &self.predefined_scaling_metric_specification,
-        );
-        formatter.field(
-            "predefined_load_metric_specification",
-            &self.predefined_load_metric_specification,
-        );
-        formatter.field(
-            "customized_scaling_metric_specification",
-            &self.customized_scaling_metric_specification,
-        );
-        formatter.field(
-            "customized_load_metric_specification",
-            &self.customized_load_metric_specification,
-        );
-        formatter.field(
-            "customized_capacity_metric_specification",
-            &self.customized_capacity_metric_specification,
-        );
-        formatter.finish()
     }
 }
 /// See [`PredictiveScalingMetricSpecification`](crate::model::PredictiveScalingMetricSpecification).
@@ -4696,7 +4437,7 @@ impl PredictiveScalingMetricSpecification {
 
 /// <p>Describes a customized capacity metric for a predictive scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedCapacityMetric {
     /// <p>One or more metric data queries to provide the data points for a capacity metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     #[doc(hidden)]
@@ -4706,13 +4447,6 @@ impl PredictiveScalingCustomizedCapacityMetric {
     /// <p>One or more metric data queries to provide the data points for a capacity metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictiveScalingCustomizedCapacityMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingCustomizedCapacityMetric");
-        formatter.field("metric_data_queries", &self.metric_data_queries);
-        formatter.finish()
     }
 }
 /// See [`PredictiveScalingCustomizedCapacityMetric`](crate::model::PredictiveScalingCustomizedCapacityMetric).
@@ -4762,7 +4496,7 @@ impl PredictiveScalingCustomizedCapacityMetric {
 /// <p>The metric data to return. Also defines whether this call is returning data for one metric only, or whether it is performing a math expression on the values of returned metric statistics to create a new time series. A time series is a series of data points, each of which is associated with a timestamp.</p>
 /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced predictive scaling policy configurations using custom metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDataQuery {
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter. </p>
     #[doc(hidden)]
@@ -4808,17 +4542,6 @@ impl MetricDataQuery {
     /// <p>If you are only retrieving metrics and not performing any math expressions, do not specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).</p>
     pub fn return_data(&self) -> std::option::Option<bool> {
         self.return_data
-    }
-}
-impl std::fmt::Debug for MetricDataQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDataQuery");
-        formatter.field("id", &self.id);
-        formatter.field("expression", &self.expression);
-        formatter.field("metric_stat", &self.metric_stat);
-        formatter.field("label", &self.label);
-        formatter.field("return_data", &self.return_data);
-        formatter.finish()
     }
 }
 /// See [`MetricDataQuery`](crate::model::MetricDataQuery).
@@ -4917,7 +4640,7 @@ impl MetricDataQuery {
 /// <p>This structure defines the CloudWatch metric to return, along with the statistic, period, and unit.</p>
 /// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricStat {
     /// <p>The CloudWatch metric to return, including the metric name, namespace, and dimensions. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     #[doc(hidden)]
@@ -4943,15 +4666,6 @@ impl MetricStat {
     /// <p>The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricStat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricStat");
-        formatter.field("metric", &self.metric);
-        formatter.field("stat", &self.stat);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`MetricStat`](crate::model::MetricStat).
@@ -5016,7 +4730,7 @@ impl MetricStat {
 
 /// <p>Represents a specific metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metric {
     /// <p>The namespace of the metric. For more information, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     #[doc(hidden)]
@@ -5042,15 +4756,6 @@ impl Metric {
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::MetricDimension]> {
         self.dimensions.as_deref()
-    }
-}
-impl std::fmt::Debug for Metric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metric");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
     }
 }
 /// See [`Metric`](crate::model::Metric).
@@ -5124,7 +4829,7 @@ impl Metric {
 
 /// <p>Describes the dimension of a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
@@ -5141,14 +4846,6 @@ impl MetricDimension {
     /// <p>The value of the dimension.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MetricDimension`](crate::model::MetricDimension).
@@ -5199,7 +4896,7 @@ impl MetricDimension {
 
 /// <p>Describes a custom load metric for a predictive scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedLoadMetric {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     #[doc(hidden)]
@@ -5209,13 +4906,6 @@ impl PredictiveScalingCustomizedLoadMetric {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictiveScalingCustomizedLoadMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingCustomizedLoadMetric");
-        formatter.field("metric_data_queries", &self.metric_data_queries);
-        formatter.finish()
     }
 }
 /// See [`PredictiveScalingCustomizedLoadMetric`](crate::model::PredictiveScalingCustomizedLoadMetric).
@@ -5264,7 +4954,7 @@ impl PredictiveScalingCustomizedLoadMetric {
 
 /// <p>Describes a custom scaling metric for a predictive scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedScalingMetric {
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     #[doc(hidden)]
@@ -5274,13 +4964,6 @@ impl PredictiveScalingCustomizedScalingMetric {
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictiveScalingCustomizedScalingMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingCustomizedScalingMetric");
-        formatter.field("metric_data_queries", &self.metric_data_queries);
-        formatter.finish()
     }
 }
 /// See [`PredictiveScalingCustomizedScalingMetric`](crate::model::PredictiveScalingCustomizedScalingMetric).
@@ -5330,7 +5013,7 @@ impl PredictiveScalingCustomizedScalingMetric {
 /// <p>Describes a load metric for a predictive scaling policy.</p>
 /// <p>When returned in the output of <code>DescribePolicies</code>, it indicates that a predictive scaling policy uses individually specified load and scaling metrics instead of a metric pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingPredefinedLoadMetric {
     /// <p>The metric type.</p>
     #[doc(hidden)]
@@ -5385,14 +5068,6 @@ impl PredictiveScalingPredefinedLoadMetric {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(&self) -> std::option::Option<&str> {
         self.resource_label.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictiveScalingPredefinedLoadMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingPredefinedLoadMetric");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
     }
 }
 /// See [`PredictiveScalingPredefinedLoadMetric`](crate::model::PredictiveScalingPredefinedLoadMetric).
@@ -5597,7 +5272,7 @@ impl AsRef<str> for PredefinedLoadMetricType {
 /// <p>Describes a scaling metric for a predictive scaling policy.</p>
 /// <p>When returned in the output of <code>DescribePolicies</code>, it indicates that a predictive scaling policy uses individually specified load and scaling metrics instead of a metric pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingPredefinedScalingMetric {
     /// <p>The metric type.</p>
     #[doc(hidden)]
@@ -5652,14 +5327,6 @@ impl PredictiveScalingPredefinedScalingMetric {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(&self) -> std::option::Option<&str> {
         self.resource_label.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictiveScalingPredefinedScalingMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingPredefinedScalingMetric");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
     }
 }
 /// See [`PredictiveScalingPredefinedScalingMetric`](crate::model::PredictiveScalingPredefinedScalingMetric).
@@ -5863,7 +5530,7 @@ impl AsRef<str> for PredefinedScalingMetricType {
 
 /// <p>Represents a metric pair for a predictive scaling policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingPredefinedMetricPair {
     /// <p>Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric. For example, if the metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used as the load metric, and the average CPU metric is used for the scaling metric.</p>
     #[doc(hidden)]
@@ -5918,14 +5585,6 @@ impl PredictiveScalingPredefinedMetricPair {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(&self) -> std::option::Option<&str> {
         self.resource_label.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictiveScalingPredefinedMetricPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingPredefinedMetricPair");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
     }
 }
 /// See [`PredictiveScalingPredefinedMetricPair`](crate::model::PredictiveScalingPredefinedMetricPair).
@@ -6129,7 +5788,7 @@ impl AsRef<str> for PredefinedMetricPairType {
 
 /// <p>Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
@@ -6170,22 +5829,6 @@ impl TargetTrackingConfiguration {
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
     pub fn disable_scale_in(&self) -> std::option::Option<bool> {
         self.disable_scale_in
-    }
-}
-impl std::fmt::Debug for TargetTrackingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetTrackingConfiguration");
-        formatter.field(
-            "predefined_metric_specification",
-            &self.predefined_metric_specification,
-        );
-        formatter.field(
-            "customized_metric_specification",
-            &self.customized_metric_specification,
-        );
-        formatter.field("target_value", &self.target_value);
-        formatter.field("disable_scale_in", &self.disable_scale_in);
-        formatter.finish()
     }
 }
 /// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
@@ -6286,7 +5929,7 @@ impl TargetTrackingConfiguration {
 /// <p>Each individual service provides information about the metrics, namespace, and dimensions they use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomizedMetricSpecification {
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     #[doc(hidden)]
@@ -6326,17 +5969,6 @@ impl CustomizedMetricSpecification {
     /// <p>The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomizedMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomizedMetricSpecification");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
@@ -6542,7 +6174,7 @@ impl AsRef<str> for MetricStatistic {
 
 /// <p>Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
@@ -6607,14 +6239,6 @@ impl PredefinedMetricSpecification {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(&self) -> std::option::Option<&str> {
         self.resource_label.as_deref()
-    }
-}
-impl std::fmt::Debug for PredefinedMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredefinedMetricSpecification");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
     }
 }
 /// See [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
@@ -6837,7 +6461,7 @@ impl AsRef<str> for MetricType {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepAdjustment {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     #[doc(hidden)]
@@ -6865,21 +6489,6 @@ impl StepAdjustment {
     /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
     pub fn scaling_adjustment(&self) -> std::option::Option<i32> {
         self.scaling_adjustment
-    }
-}
-impl std::fmt::Debug for StepAdjustment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepAdjustment");
-        formatter.field(
-            "metric_interval_lower_bound",
-            &self.metric_interval_lower_bound,
-        );
-        formatter.field(
-            "metric_interval_upper_bound",
-            &self.metric_interval_upper_bound,
-        );
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.finish()
     }
 }
 /// See [`StepAdjustment`](crate::model::StepAdjustment).
@@ -6946,7 +6555,7 @@ impl StepAdjustment {
 
 /// <p>A <code>GetPredictiveScalingForecast</code> call returns the capacity forecast for a predictive scaling policy. This structure includes the data points for that capacity forecast, along with the timestamps of those data points. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacityForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
     #[doc(hidden)]
@@ -6963,14 +6572,6 @@ impl CapacityForecast {
     /// <p>The values of the data points.</p>
     pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for CapacityForecast {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityForecast");
-        formatter.field("timestamps", &self.timestamps);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`CapacityForecast`](crate::model::CapacityForecast).
@@ -7036,7 +6637,7 @@ impl CapacityForecast {
 
 /// <p>A <code>GetPredictiveScalingForecast</code> call returns the load forecast for a predictive scaling policy. This structure includes the data points for that load forecast, along with the timestamps of those data points and the metric specification. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
     #[doc(hidden)]
@@ -7063,15 +6664,6 @@ impl LoadForecast {
         &self,
     ) -> std::option::Option<&crate::model::PredictiveScalingMetricSpecification> {
         self.metric_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for LoadForecast {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadForecast");
-        formatter.field("timestamps", &self.timestamps);
-        formatter.field("values", &self.values);
-        formatter.field("metric_specification", &self.metric_specification);
-        formatter.finish()
     }
 }
 /// See [`LoadForecast`](crate::model::LoadForecast).
@@ -7156,7 +6748,7 @@ impl LoadForecast {
 
 /// <p>Describes an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -7226,21 +6818,6 @@ impl Instance {
     /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
     pub fn weighted_capacity(&self) -> std::option::Option<&str> {
         self.weighted_capacity.as_deref()
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("lifecycle_state", &self.lifecycle_state);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("protected_from_scale_in", &self.protected_from_scale_in);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -7617,7 +7194,7 @@ impl AsRef<str> for LifecycleState {
 
 /// <p>Describes a warm pool configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WarmPoolConfiguration {
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -7655,20 +7232,6 @@ impl WarmPoolConfiguration {
     /// <p>The instance reuse policy.</p>
     pub fn instance_reuse_policy(&self) -> std::option::Option<&crate::model::InstanceReusePolicy> {
         self.instance_reuse_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for WarmPoolConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WarmPoolConfiguration");
-        formatter.field(
-            "max_group_prepared_capacity",
-            &self.max_group_prepared_capacity,
-        );
-        formatter.field("min_size", &self.min_size);
-        formatter.field("pool_state", &self.pool_state);
-        formatter.field("status", &self.status);
-        formatter.field("instance_reuse_policy", &self.instance_reuse_policy);
-        formatter.finish()
     }
 }
 /// See [`WarmPoolConfiguration`](crate::model::WarmPoolConfiguration).
@@ -7849,7 +7412,7 @@ impl AsRef<str> for WarmPoolStatus {
 
 /// <p>Describes a tag for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagDescription {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
@@ -7887,17 +7450,6 @@ impl TagDescription {
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     pub fn propagate_at_launch(&self) -> std::option::Option<bool> {
         self.propagate_at_launch
-    }
-}
-impl std::fmt::Debug for TagDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagDescription");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("propagate_at_launch", &self.propagate_at_launch);
-        formatter.finish()
     }
 }
 /// See [`TagDescription`](crate::model::TagDescription).
@@ -7989,7 +7541,7 @@ impl TagDescription {
 /// <p>If you specify multiple filters, the filters are automatically logically joined with an <code>AND</code>, and the request returns only the results that match all of the specified filters. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
     /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
@@ -8042,14 +7594,6 @@ impl Filter {
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -8145,7 +7689,7 @@ impl Filter {
 
 /// <p>Describes a scheduled scaling action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledUpdateGroupAction {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -8227,23 +7771,6 @@ impl ScheduledUpdateGroupAction {
     /// <p>The time zone for the cron expression.</p>
     pub fn time_zone(&self) -> std::option::Option<&str> {
         self.time_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduledUpdateGroupAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledUpdateGroupAction");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("scheduled_action_arn", &self.scheduled_action_arn);
-        formatter.field("time", &self.time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("recurrence", &self.recurrence);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.finish()
     }
 }
 /// See [`ScheduledUpdateGroupAction`](crate::model::ScheduledUpdateGroupAction).
@@ -8420,7 +7947,7 @@ impl ScheduledUpdateGroupAction {
 /// <p>Describes a process type.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProcessType {
     /// <p>One of the following processes:</p>
     /// <ul>
@@ -8452,13 +7979,6 @@ impl ProcessType {
     /// </ul>
     pub fn process_name(&self) -> std::option::Option<&str> {
         self.process_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ProcessType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProcessType");
-        formatter.field("process_name", &self.process_name);
-        formatter.finish()
     }
 }
 /// See [`ProcessType`](crate::model::ProcessType).
@@ -8519,7 +8039,7 @@ impl ProcessType {
 
 /// <p>Describes a scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -8654,34 +8174,6 @@ impl ScalingPolicy {
         &self,
     ) -> std::option::Option<&crate::model::PredictiveScalingConfiguration> {
         self.predictive_scaling_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingPolicy");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.field("min_adjustment_step", &self.min_adjustment_step);
-        formatter.field("min_adjustment_magnitude", &self.min_adjustment_magnitude);
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.field("cooldown", &self.cooldown);
-        formatter.field("step_adjustments", &self.step_adjustments);
-        formatter.field("metric_aggregation_type", &self.metric_aggregation_type);
-        formatter.field("estimated_instance_warmup", &self.estimated_instance_warmup);
-        formatter.field("alarms", &self.alarms);
-        formatter.field(
-            "target_tracking_configuration",
-            &self.target_tracking_configuration,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "predictive_scaling_configuration",
-            &self.predictive_scaling_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
@@ -8956,7 +8448,7 @@ impl ScalingPolicy {
 
 /// <p>Describes a notification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -8994,15 +8486,6 @@ impl NotificationConfiguration {
     /// </ul>
     pub fn notification_type(&self) -> std::option::Option<&str> {
         self.notification_type.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfiguration");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("notification_type", &self.notification_type);
-        formatter.finish()
     }
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
@@ -9085,7 +8568,7 @@ impl NotificationConfiguration {
 
 /// <p>Describes a granularity of a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricGranularityType {
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     #[doc(hidden)]
@@ -9095,13 +8578,6 @@ impl MetricGranularityType {
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     pub fn granularity(&self) -> std::option::Option<&str> {
         self.granularity.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricGranularityType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricGranularityType");
-        formatter.field("granularity", &self.granularity);
-        formatter.finish()
     }
 }
 /// See [`MetricGranularityType`](crate::model::MetricGranularityType).
@@ -9140,7 +8616,7 @@ impl MetricGranularityType {
 
 /// <p>Describes a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricCollectionType {
     /// <p>One of the following metrics:</p>
     /// <ul>
@@ -9194,13 +8670,6 @@ impl MetricCollectionType {
     /// </ul>
     pub fn metric(&self) -> std::option::Option<&str> {
         self.metric.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricCollectionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricCollectionType");
-        formatter.field("metric", &self.metric);
-        formatter.finish()
     }
 }
 /// See [`MetricCollectionType`](crate::model::MetricCollectionType).
@@ -9283,7 +8752,7 @@ impl MetricCollectionType {
 
 /// <p>Describes the state of a target group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerTargetGroupState {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
@@ -9314,17 +8783,6 @@ impl LoadBalancerTargetGroupState {
     /// </ul>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerTargetGroupState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerTargetGroupState");
-        formatter.field(
-            "load_balancer_target_group_arn",
-            &self.load_balancer_target_group_arn,
-        );
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerTargetGroupState`](crate::model::LoadBalancerTargetGroupState).
@@ -9395,7 +8853,7 @@ impl LoadBalancerTargetGroupState {
 
 /// <p>Describes the state of a Classic Load Balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerState {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -9426,14 +8884,6 @@ impl LoadBalancerState {
     /// </ul>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerState");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerState`](crate::model::LoadBalancerState).
@@ -9501,7 +8951,7 @@ impl LoadBalancerState {
 
 /// <p>Describes a lifecycle hook. A lifecycle hook lets you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleHook {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -9571,21 +9021,6 @@ impl LifecycleHook {
     /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn default_result(&self) -> std::option::Option<&str> {
         self.default_result.as_deref()
-    }
-}
-impl std::fmt::Debug for LifecycleHook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleHook");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_transition", &self.lifecycle_transition);
-        formatter.field("notification_target_arn", &self.notification_target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("notification_metadata", &self.notification_metadata);
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.field("global_timeout", &self.global_timeout);
-        formatter.field("default_result", &self.default_result);
-        formatter.finish()
     }
 }
 /// See [`LifecycleHook`](crate::model::LifecycleHook).
@@ -9742,7 +9177,7 @@ impl LifecycleHook {
 
 /// <p>Describes a launch configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchConfiguration {
     /// <p>The name of the launch configuration.</p>
     #[doc(hidden)]
@@ -9897,38 +9332,6 @@ impl LaunchConfiguration {
     /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn metadata_options(&self) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
         self.metadata_options.as_ref()
-    }
-}
-impl std::fmt::Debug for LaunchConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchConfiguration");
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_configuration_arn", &self.launch_configuration_arn);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("key_name", &self.key_name);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("classic_link_vpc_id", &self.classic_link_vpc_id);
-        formatter.field(
-            "classic_link_vpc_security_groups",
-            &self.classic_link_vpc_security_groups,
-        );
-        formatter.field("user_data", &self.user_data);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("kernel_id", &self.kernel_id);
-        formatter.field("ramdisk_id", &self.ramdisk_id);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("instance_monitoring", &self.instance_monitoring);
-        formatter.field("spot_price", &self.spot_price);
-        formatter.field("iam_instance_profile", &self.iam_instance_profile);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
-        formatter.field("placement_tenancy", &self.placement_tenancy);
-        formatter.field("metadata_options", &self.metadata_options);
-        formatter.finish()
     }
 }
 /// See [`LaunchConfiguration`](crate::model::LaunchConfiguration).
@@ -10264,7 +9667,7 @@ impl LaunchConfiguration {
 
 /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMetadataOptions {
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0 role credentials are returned.</p>
@@ -10302,18 +9705,6 @@ impl InstanceMetadataOptions {
         &self,
     ) -> std::option::Option<&crate::model::InstanceMetadataEndpointState> {
         self.http_endpoint.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceMetadataOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMetadataOptions");
-        formatter.field("http_tokens", &self.http_tokens);
-        formatter.field(
-            "http_put_response_hop_limit",
-            &self.http_put_response_hop_limit,
-        );
-        formatter.field("http_endpoint", &self.http_endpoint);
-        formatter.finish()
     }
 }
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
@@ -10576,7 +9967,7 @@ impl AsRef<str> for InstanceMetadataHttpTokensState {
 
 /// <p>Describes whether detailed monitoring is enabled for the Auto Scaling instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMonitoring {
     /// <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     #[doc(hidden)]
@@ -10586,13 +9977,6 @@ impl InstanceMonitoring {
     /// <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for InstanceMonitoring {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMonitoring");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`InstanceMonitoring`](crate::model::InstanceMonitoring).
@@ -10631,7 +10015,7 @@ impl InstanceMonitoring {
 
 /// <p>Describes a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockDeviceMapping {
     /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
     #[doc(hidden)]
@@ -10668,16 +10052,6 @@ impl BlockDeviceMapping {
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
     pub fn no_device(&self) -> std::option::Option<bool> {
         self.no_device
-    }
-}
-impl std::fmt::Debug for BlockDeviceMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockDeviceMapping");
-        formatter.field("virtual_name", &self.virtual_name);
-        formatter.field("device_name", &self.device_name);
-        formatter.field("ebs", &self.ebs);
-        formatter.field("no_device", &self.no_device);
-        formatter.finish()
     }
 }
 /// See [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
@@ -10758,7 +10132,7 @@ impl BlockDeviceMapping {
 
 /// <p>Describes information used to set up an Amazon EBS volume specified in a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ebs {
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
@@ -10850,19 +10224,6 @@ impl Ebs {
     /// <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
     pub fn throughput(&self) -> std::option::Option<i32> {
         self.throughput
-    }
-}
-impl std::fmt::Debug for Ebs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ebs");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("delete_on_termination", &self.delete_on_termination);
-        formatter.field("iops", &self.iops);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("throughput", &self.throughput);
-        formatter.finish()
     }
 }
 /// See [`Ebs`](crate::model::Ebs).
@@ -11013,7 +10374,7 @@ impl Ebs {
 
 /// <p>Describes an instance refresh for an Auto Scaling group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRefresh {
     /// <p>The instance refresh ID.</p>
     #[doc(hidden)]
@@ -11113,23 +10474,6 @@ impl InstanceRefresh {
         &self,
     ) -> std::option::Option<&crate::model::DesiredConfiguration> {
         self.desired_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceRefresh {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRefresh");
-        formatter.field("instance_refresh_id", &self.instance_refresh_id);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("percentage_complete", &self.percentage_complete);
-        formatter.field("instances_to_update", &self.instances_to_update);
-        formatter.field("progress_details", &self.progress_details);
-        formatter.field("preferences", &self.preferences);
-        formatter.field("desired_configuration", &self.desired_configuration);
-        formatter.finish()
     }
 }
 /// See [`InstanceRefresh`](crate::model::InstanceRefresh).
@@ -11335,7 +10679,7 @@ impl InstanceRefresh {
 
 /// <p>Reports the progress of an instance refresh on an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRefreshProgressDetails {
     /// <p>Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -11356,14 +10700,6 @@ impl InstanceRefreshProgressDetails {
         &self,
     ) -> std::option::Option<&crate::model::InstanceRefreshWarmPoolProgress> {
         self.warm_pool_progress.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceRefreshProgressDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRefreshProgressDetails");
-        formatter.field("live_pool_progress", &self.live_pool_progress);
-        formatter.field("warm_pool_progress", &self.warm_pool_progress);
-        formatter.finish()
     }
 }
 /// See [`InstanceRefreshProgressDetails`](crate::model::InstanceRefreshProgressDetails).
@@ -11428,7 +10764,7 @@ impl InstanceRefreshProgressDetails {
 
 /// <p>Reports the progress of an instance refresh on instances that are in the warm pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRefreshWarmPoolProgress {
     /// <p>The percentage of instances in the warm pool that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
     #[doc(hidden)]
@@ -11445,14 +10781,6 @@ impl InstanceRefreshWarmPoolProgress {
     /// <p>The number of instances remaining to update.</p>
     pub fn instances_to_update(&self) -> std::option::Option<i32> {
         self.instances_to_update
-    }
-}
-impl std::fmt::Debug for InstanceRefreshWarmPoolProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRefreshWarmPoolProgress");
-        formatter.field("percentage_complete", &self.percentage_complete);
-        formatter.field("instances_to_update", &self.instances_to_update);
-        formatter.finish()
     }
 }
 /// See [`InstanceRefreshWarmPoolProgress`](crate::model::InstanceRefreshWarmPoolProgress).
@@ -11503,7 +10831,7 @@ impl InstanceRefreshWarmPoolProgress {
 
 /// <p>Reports the progress of an instance refresh on instances that are in the Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRefreshLivePoolProgress {
     /// <p>The percentage of instances in the Auto Scaling group that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
     #[doc(hidden)]
@@ -11520,14 +10848,6 @@ impl InstanceRefreshLivePoolProgress {
     /// <p>The number of instances remaining to update.</p>
     pub fn instances_to_update(&self) -> std::option::Option<i32> {
         self.instances_to_update
-    }
-}
-impl std::fmt::Debug for InstanceRefreshLivePoolProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRefreshLivePoolProgress");
-        formatter.field("percentage_complete", &self.percentage_complete);
-        formatter.field("instances_to_update", &self.instances_to_update);
-        formatter.finish()
     }
 }
 /// See [`InstanceRefreshLivePoolProgress`](crate::model::InstanceRefreshLivePoolProgress).
@@ -11697,7 +11017,7 @@ impl AsRef<str> for InstanceRefreshStatus {
 
 /// <p>Describes an EC2 instance associated with an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingInstanceDetails {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -11776,22 +11096,6 @@ impl AutoScalingInstanceDetails {
     /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
     pub fn weighted_capacity(&self) -> std::option::Option<&str> {
         self.weighted_capacity.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingInstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingInstanceDetails");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("lifecycle_state", &self.lifecycle_state);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("protected_from_scale_in", &self.protected_from_scale_in);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingInstanceDetails`](crate::model::AutoScalingInstanceDetails).
@@ -11966,7 +11270,7 @@ impl AutoScalingInstanceDetails {
 
 /// <p>Describes an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12208,48 +11512,6 @@ impl AutoScalingGroup {
     /// <p>The duration of the default instance warmup, in seconds.</p>
     pub fn default_instance_warmup(&self) -> std::option::Option<i32> {
         self.default_instance_warmup
-    }
-}
-impl std::fmt::Debug for AutoScalingGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroup");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("auto_scaling_group_arn", &self.auto_scaling_group_arn);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("predicted_capacity", &self.predicted_capacity);
-        formatter.field("default_cooldown", &self.default_cooldown);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.field("target_group_ar_ns", &self.target_group_ar_ns);
-        formatter.field("health_check_type", &self.health_check_type);
-        formatter.field("health_check_grace_period", &self.health_check_grace_period);
-        formatter.field("instances", &self.instances);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("suspended_processes", &self.suspended_processes);
-        formatter.field("placement_group", &self.placement_group);
-        formatter.field("vpc_zone_identifier", &self.vpc_zone_identifier);
-        formatter.field("enabled_metrics", &self.enabled_metrics);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.field("termination_policies", &self.termination_policies);
-        formatter.field(
-            "new_instances_protected_from_scale_in",
-            &self.new_instances_protected_from_scale_in,
-        );
-        formatter.field("service_linked_role_arn", &self.service_linked_role_arn);
-        formatter.field("max_instance_lifetime", &self.max_instance_lifetime);
-        formatter.field("capacity_rebalance", &self.capacity_rebalance);
-        formatter.field("warm_pool_configuration", &self.warm_pool_configuration);
-        formatter.field("warm_pool_size", &self.warm_pool_size);
-        formatter.field("context", &self.context);
-        formatter.field("desired_capacity_type", &self.desired_capacity_type);
-        formatter.field("default_instance_warmup", &self.default_instance_warmup);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
@@ -12790,7 +12052,7 @@ impl AutoScalingGroup {
 
 /// <p>Describes an enabled Auto Scaling group metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnabledMetric {
     /// <p>One of the following metrics:</p>
     /// <ul>
@@ -12853,14 +12115,6 @@ impl EnabledMetric {
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     pub fn granularity(&self) -> std::option::Option<&str> {
         self.granularity.as_deref()
-    }
-}
-impl std::fmt::Debug for EnabledMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnabledMetric");
-        formatter.field("metric", &self.metric);
-        formatter.field("granularity", &self.granularity);
-        formatter.finish()
     }
 }
 /// See [`EnabledMetric`](crate::model::EnabledMetric).
@@ -12958,7 +12212,7 @@ impl EnabledMetric {
 /// <p>Describes an auto scaling process that has been suspended.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendedProcess {
     /// <p>The name of the suspended process.</p>
     #[doc(hidden)]
@@ -12975,14 +12229,6 @@ impl SuspendedProcess {
     /// <p>The reason that the process was suspended.</p>
     pub fn suspension_reason(&self) -> std::option::Option<&str> {
         self.suspension_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for SuspendedProcess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendedProcess");
-        formatter.field("process_name", &self.process_name);
-        formatter.field("suspension_reason", &self.suspension_reason);
-        formatter.finish()
     }
 }
 /// See [`SuspendedProcess`](crate::model::SuspendedProcess).
@@ -13036,7 +12282,7 @@ impl SuspendedProcess {
 
 /// <p>Describes a policy adjustment type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdjustmentType {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     #[doc(hidden)]
@@ -13046,13 +12292,6 @@ impl AdjustmentType {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     pub fn adjustment_type(&self) -> std::option::Option<&str> {
         self.adjustment_type.as_deref()
-    }
-}
-impl std::fmt::Debug for AdjustmentType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdjustmentType");
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.finish()
     }
 }
 /// See [`AdjustmentType`](crate::model::AdjustmentType).
@@ -13094,7 +12333,7 @@ impl AdjustmentType {
 
 /// <p>Describes a tag for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13132,17 +12371,6 @@ impl Tag {
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     pub fn propagate_at_launch(&self) -> std::option::Option<bool> {
         self.propagate_at_launch
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("propagate_at_launch", &self.propagate_at_launch);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -13233,7 +12461,7 @@ impl Tag {
 /// <p>Describes information used to specify a lifecycle hook for an Auto Scaling group.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleHookSpecification {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -13297,19 +12525,6 @@ impl LifecycleHookSpecification {
     /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LifecycleHookSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleHookSpecification");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("lifecycle_transition", &self.lifecycle_transition);
-        formatter.field("notification_metadata", &self.notification_metadata);
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.field("default_result", &self.default_result);
-        formatter.field("notification_target_arn", &self.notification_target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`LifecycleHookSpecification`](crate::model::LifecycleHookSpecification).
@@ -13447,7 +12662,7 @@ impl LifecycleHookSpecification {
 
 /// <p>Describes a scheduled action that could not be created, updated, or deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedScheduledUpdateGroupActionRequest {
     /// <p>The name of the scheduled action.</p>
     #[doc(hidden)]
@@ -13471,15 +12686,6 @@ impl FailedScheduledUpdateGroupActionRequest {
     /// <p>The error message accompanying the error code.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedScheduledUpdateGroupActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedScheduledUpdateGroupActionRequest");
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`FailedScheduledUpdateGroupActionRequest`](crate::model::FailedScheduledUpdateGroupActionRequest).
@@ -13548,7 +12754,7 @@ impl FailedScheduledUpdateGroupActionRequest {
 
 /// <p>Describes information used for one or more scheduled scaling action updates in a <code>BatchPutScheduledUpdateGroupAction</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledUpdateGroupActionRequest {
     /// <p>The name of the scaling action.</p>
     #[doc(hidden)]
@@ -13617,20 +12823,6 @@ impl ScheduledUpdateGroupActionRequest {
     /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
     pub fn time_zone(&self) -> std::option::Option<&str> {
         self.time_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduledUpdateGroupActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledUpdateGroupActionRequest");
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("recurrence", &self.recurrence);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.finish()
     }
 }
 /// See [`ScheduledUpdateGroupActionRequest`](crate::model::ScheduledUpdateGroupActionRequest).

@@ -92,7 +92,7 @@ impl AsRef<str> for Reaction {
 
 /// <p>Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
@@ -179,20 +179,6 @@ impl RepositoryAssociationSummary {
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::RepositoryAssociationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for RepositoryAssociationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryAssociationSummary");
-        formatter.field("association_arn", &self.association_arn);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("last_updated_time_stamp", &self.last_updated_time_stamp);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
@@ -585,7 +571,7 @@ impl AsRef<str> for ProviderType {
 
 /// <p>Information about recommendations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationSummary {
     /// <p>Name of the file on which a recommendation is provided.</p>
     #[doc(hidden)]
@@ -646,20 +632,6 @@ impl RecommendationSummary {
     /// <p>The severity of the issue in the code that generated this recommendation.</p>
     pub fn severity(&self) -> std::option::Option<&crate::model::Severity> {
         self.severity.as_ref()
-    }
-}
-impl std::fmt::Debug for RecommendationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationSummary");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("start_line", &self.start_line);
-        formatter.field("end_line", &self.end_line);
-        formatter.field("description", &self.description);
-        formatter.field("recommendation_category", &self.recommendation_category);
-        formatter.field("rule_metadata", &self.rule_metadata);
-        formatter.field("severity", &self.severity);
-        formatter.finish()
     }
 }
 /// See [`RecommendationSummary`](crate::model::RecommendationSummary).
@@ -900,7 +872,7 @@ impl AsRef<str> for Severity {
 
 /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleMetadata {
     /// <p>The ID of the rule.</p>
     #[doc(hidden)]
@@ -938,17 +910,6 @@ impl RuleMetadata {
     /// <p>Tags that are associated with the rule.</p>
     pub fn rule_tags(&self) -> std::option::Option<&[std::string::String]> {
         self.rule_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleMetadata");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("short_description", &self.short_description);
-        formatter.field("long_description", &self.long_description);
-        formatter.field("rule_tags", &self.rule_tags);
-        formatter.finish()
     }
 }
 /// See [`RuleMetadata`](crate::model::RuleMetadata).
@@ -1199,7 +1160,7 @@ impl AsRef<str> for RecommendationCategory {
 
 /// <p>Information about recommendation feedback summaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationFeedbackSummary {
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
     #[doc(hidden)]
@@ -1225,15 +1186,6 @@ impl RecommendationFeedbackSummary {
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RecommendationFeedbackSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationFeedbackSummary");
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("reactions", &self.reactions);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
     }
 }
 /// See [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
@@ -1310,7 +1262,7 @@ impl RecommendationFeedbackSummary {
 
 /// <p>Information about the summary of the code review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeReviewSummary {
     /// <p>The name of the code review.</p>
     #[doc(hidden)]
@@ -1411,24 +1363,6 @@ impl CodeReviewSummary {
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn source_code_type(&self) -> std::option::Option<&crate::model::SourceCodeType> {
         self.source_code_type.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeReviewSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeReviewSummary");
-        formatter.field("name", &self.name);
-        formatter.field("code_review_arn", &self.code_review_arn);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("owner", &self.owner);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("state", &self.state);
-        formatter.field("created_time_stamp", &self.created_time_stamp);
-        formatter.field("last_updated_time_stamp", &self.last_updated_time_stamp);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("metrics_summary", &self.metrics_summary);
-        formatter.field("source_code_type", &self.source_code_type);
-        formatter.finish()
     }
 }
 /// See [`CodeReviewSummary`](crate::model::CodeReviewSummary).
@@ -1637,7 +1571,7 @@ impl CodeReviewSummary {
 
 /// <p>Specifies the source code that is analyzed in a code review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceCodeType {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.</p>
     #[doc(hidden)]
@@ -1677,17 +1611,6 @@ impl SourceCodeType {
     /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
     pub fn request_metadata(&self) -> std::option::Option<&crate::model::RequestMetadata> {
         self.request_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceCodeType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceCodeType");
-        formatter.field("commit_diff", &self.commit_diff);
-        formatter.field("repository_head", &self.repository_head);
-        formatter.field("branch_diff", &self.branch_diff);
-        formatter.field("s3_bucket_repository", &self.s3_bucket_repository);
-        formatter.field("request_metadata", &self.request_metadata);
-        formatter.finish()
     }
 }
 /// See [`SourceCodeType`](crate::model::SourceCodeType).
@@ -1792,7 +1715,7 @@ impl SourceCodeType {
 
 /// <p>Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestMetadata {
     /// <p>The ID of the request. This is required for a pull request code review.</p>
     #[doc(hidden)]
@@ -1823,16 +1746,6 @@ impl RequestMetadata {
     /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
     pub fn vendor_name(&self) -> std::option::Option<&crate::model::VendorName> {
         self.vendor_name.as_ref()
-    }
-}
-impl std::fmt::Debug for RequestMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestMetadata");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("requester", &self.requester);
-        formatter.field("event_info", &self.event_info);
-        formatter.field("vendor_name", &self.vendor_name);
-        formatter.finish()
     }
 }
 /// See [`RequestMetadata`](crate::model::RequestMetadata).
@@ -2008,7 +1921,7 @@ impl AsRef<str> for VendorName {
 
 /// <p>Information about an event. The event might be a push, pull request, scheduled request, or another type of event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventInfo {
     /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
     #[doc(hidden)]
@@ -2025,14 +1938,6 @@ impl EventInfo {
     /// <p>The state of an event. The state might be open, closed, or another state.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
-    }
-}
-impl std::fmt::Debug for EventInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventInfo");
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`EventInfo`](crate::model::EventInfo).
@@ -2083,7 +1988,7 @@ impl EventInfo {
 
 /// <p>Information about an associated repository in an S3 bucket. The associated repository contains a source code .zip file and a build artifacts .zip file that contains .jar or .class files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketRepository {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
     #[doc(hidden)]
@@ -2100,14 +2005,6 @@ impl S3BucketRepository {
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
     pub fn details(&self) -> std::option::Option<&crate::model::S3RepositoryDetails> {
         self.details.as_ref()
-    }
-}
-impl std::fmt::Debug for S3BucketRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketRepository");
-        formatter.field("name", &self.name);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`S3BucketRepository`](crate::model::S3BucketRepository).
@@ -2161,7 +2058,7 @@ impl S3BucketRepository {
 
 /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3RepositoryDetails {
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     #[doc(hidden)]
@@ -2178,14 +2075,6 @@ impl S3RepositoryDetails {
     /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
     pub fn code_artifacts(&self) -> std::option::Option<&crate::model::CodeArtifacts> {
         self.code_artifacts.as_ref()
-    }
-}
-impl std::fmt::Debug for S3RepositoryDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3RepositoryDetails");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("code_artifacts", &self.code_artifacts);
-        formatter.finish()
     }
 }
 /// See [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
@@ -2243,7 +2132,7 @@ impl S3RepositoryDetails {
 /// <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeArtifacts {
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
     #[doc(hidden)]
@@ -2260,20 +2149,6 @@ impl CodeArtifacts {
     /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
     pub fn build_artifacts_object_key(&self) -> std::option::Option<&str> {
         self.build_artifacts_object_key.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeArtifacts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeArtifacts");
-        formatter.field(
-            "source_code_artifacts_object_key",
-            &self.source_code_artifacts_object_key,
-        );
-        formatter.field(
-            "build_artifacts_object_key",
-            &self.build_artifacts_object_key,
-        );
-        formatter.finish()
     }
 }
 /// See [`CodeArtifacts`](crate::model::CodeArtifacts).
@@ -2333,7 +2208,7 @@ impl CodeArtifacts {
 
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a code diff between a source and destination branch in an associated repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchDiffSourceCodeType {
     /// <p>The source branch for a diff in an associated repository.</p>
     #[doc(hidden)]
@@ -2350,14 +2225,6 @@ impl BranchDiffSourceCodeType {
     /// <p>The destination branch for a diff in an associated repository.</p>
     pub fn destination_branch_name(&self) -> std::option::Option<&str> {
         self.destination_branch_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BranchDiffSourceCodeType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchDiffSourceCodeType");
-        formatter.field("source_branch_name", &self.source_branch_name);
-        formatter.field("destination_branch_name", &self.destination_branch_name);
-        formatter.finish()
     }
 }
 /// See [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
@@ -2414,7 +2281,7 @@ impl BranchDiffSourceCodeType {
 
 /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryHeadSourceCodeType {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
     #[doc(hidden)]
@@ -2424,13 +2291,6 @@ impl RepositoryHeadSourceCodeType {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryHeadSourceCodeType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryHeadSourceCodeType");
-        formatter.field("branch_name", &self.branch_name);
-        formatter.finish()
     }
 }
 /// See [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
@@ -2469,7 +2329,7 @@ impl RepositoryHeadSourceCodeType {
 
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitDiffSourceCodeType {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
     #[doc(hidden)]
@@ -2493,15 +2353,6 @@ impl CommitDiffSourceCodeType {
     /// <p>The SHA of the merge base of a commit.</p>
     pub fn merge_base_commit(&self) -> std::option::Option<&str> {
         self.merge_base_commit.as_deref()
-    }
-}
-impl std::fmt::Debug for CommitDiffSourceCodeType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitDiffSourceCodeType");
-        formatter.field("source_commit", &self.source_commit);
-        formatter.field("destination_commit", &self.destination_commit);
-        formatter.field("merge_base_commit", &self.merge_base_commit);
-        formatter.finish()
     }
 }
 /// See [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
@@ -2573,7 +2424,7 @@ impl CommitDiffSourceCodeType {
 
 /// <p>Information about metrics summaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricsSummary {
     /// <p>Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code.</p>
     #[doc(hidden)]
@@ -2597,21 +2448,6 @@ impl MetricsSummary {
     /// <p>Total number of recommendations found in the code review.</p>
     pub fn findings_count(&self) -> std::option::Option<i64> {
         self.findings_count
-    }
-}
-impl std::fmt::Debug for MetricsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricsSummary");
-        formatter.field(
-            "metered_lines_of_code_count",
-            &self.metered_lines_of_code_count,
-        );
-        formatter.field(
-            "suppressed_lines_of_code_count",
-            &self.suppressed_lines_of_code_count,
-        );
-        formatter.field("findings_count", &self.findings_count);
-        formatter.finish()
     }
 }
 /// See [`MetricsSummary`](crate::model::MetricsSummary).
@@ -2867,7 +2703,7 @@ impl AsRef<str> for JobState {
 
 /// <p>Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">DescribeRepositoryAssociation</a> operation returns a <code>RepositoryAssociation</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryAssociation {
     /// <p>The ID of the repository association.</p>
     #[doc(hidden)]
@@ -2990,24 +2826,6 @@ impl RepositoryAssociation {
     /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
     pub fn s3_repository_details(&self) -> std::option::Option<&crate::model::S3RepositoryDetails> {
         self.s3_repository_details.as_ref()
-    }
-}
-impl std::fmt::Debug for RepositoryAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryAssociation");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("association_arn", &self.association_arn);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("last_updated_time_stamp", &self.last_updated_time_stamp);
-        formatter.field("created_time_stamp", &self.created_time_stamp);
-        formatter.field("kms_key_details", &self.kms_key_details);
-        formatter.field("s3_repository_details", &self.s3_repository_details);
-        formatter.finish()
     }
 }
 /// See [`RepositoryAssociation`](crate::model::RepositoryAssociation).
@@ -3245,7 +3063,7 @@ impl RepositoryAssociation {
 /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsKeyDetails {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
     #[doc(hidden)]
@@ -3262,14 +3080,6 @@ impl KmsKeyDetails {
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     pub fn encryption_option(&self) -> std::option::Option<&crate::model::EncryptionOption> {
         self.encryption_option.as_ref()
-    }
-}
-impl std::fmt::Debug for KmsKeyDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKeyDetails");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("encryption_option", &self.encryption_option);
-        formatter.finish()
     }
 }
 /// See [`KmsKeyDetails`](crate::model::KmsKeyDetails).
@@ -3413,7 +3223,7 @@ impl AsRef<str> for EncryptionOption {
 
 /// <p>Information about the recommendation feedback.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationFeedback {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
@@ -3460,18 +3270,6 @@ impl RecommendationFeedback {
     /// <p>The time at which the feedback was last updated.</p>
     pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
-    }
-}
-impl std::fmt::Debug for RecommendationFeedback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationFeedback");
-        formatter.field("code_review_arn", &self.code_review_arn);
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("reactions", &self.reactions);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("created_time_stamp", &self.created_time_stamp);
-        formatter.field("last_updated_time_stamp", &self.last_updated_time_stamp);
-        formatter.finish()
     }
 }
 /// See [`RecommendationFeedback`](crate::model::RecommendationFeedback).
@@ -3593,7 +3391,7 @@ impl RecommendationFeedback {
 
 /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeReview {
     /// <p>The name of the code review.</p>
     #[doc(hidden)]
@@ -3720,28 +3518,6 @@ impl CodeReview {
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
     pub fn config_file_state(&self) -> std::option::Option<&crate::model::ConfigFileState> {
         self.config_file_state.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeReview {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeReview");
-        formatter.field("name", &self.name);
-        formatter.field("code_review_arn", &self.code_review_arn);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("owner", &self.owner);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("created_time_stamp", &self.created_time_stamp);
-        formatter.field("last_updated_time_stamp", &self.last_updated_time_stamp);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("source_code_type", &self.source_code_type);
-        formatter.field("association_arn", &self.association_arn);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("analysis_types", &self.analysis_types);
-        formatter.field("config_file_state", &self.config_file_state);
-        formatter.finish()
     }
 }
 /// See [`CodeReview`](crate::model::CodeReview).
@@ -4193,7 +3969,7 @@ impl AsRef<str> for AnalysisType {
 
 /// <p>Information about the statistics from the code review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metrics {
     /// <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.</p>
     #[doc(hidden)]
@@ -4217,21 +3993,6 @@ impl Metrics {
     /// <p>Total number of recommendations found in the code review.</p>
     pub fn findings_count(&self) -> std::option::Option<i64> {
         self.findings_count
-    }
-}
-impl std::fmt::Debug for Metrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metrics");
-        formatter.field(
-            "metered_lines_of_code_count",
-            &self.metered_lines_of_code_count,
-        );
-        formatter.field(
-            "suppressed_lines_of_code_count",
-            &self.suppressed_lines_of_code_count,
-        );
-        formatter.field("findings_count", &self.findings_count);
-        formatter.finish()
     }
 }
 /// See [`Metrics`](crate::model::Metrics).
@@ -4301,7 +4062,7 @@ impl Metrics {
 /// <li> <p> <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeReviewType {
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
     #[doc(hidden)]
@@ -4318,14 +4079,6 @@ impl CodeReviewType {
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub fn analysis_types(&self) -> std::option::Option<&[crate::model::AnalysisType]> {
         self.analysis_types.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeReviewType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeReviewType");
-        formatter.field("repository_analysis", &self.repository_analysis);
-        formatter.field("analysis_types", &self.analysis_types);
-        formatter.finish()
     }
 }
 /// See [`CodeReviewType`](crate::model::CodeReviewType).
@@ -4388,7 +4141,7 @@ impl CodeReviewType {
 
 /// <p>A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryAnalysis {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     #[doc(hidden)]
@@ -4407,14 +4160,6 @@ impl RepositoryAnalysis {
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn source_code_type(&self) -> std::option::Option<&crate::model::SourceCodeType> {
         self.source_code_type.as_ref()
-    }
-}
-impl std::fmt::Debug for RepositoryAnalysis {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryAnalysis");
-        formatter.field("repository_head", &self.repository_head);
-        formatter.field("source_code_type", &self.source_code_type);
-        formatter.finish()
     }
 }
 /// See [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
@@ -4474,7 +4219,7 @@ impl RepositoryAnalysis {
 
 /// <p>Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Repository {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
     #[doc(hidden)]
@@ -4507,16 +4252,6 @@ impl Repository {
     /// <p>Information about a repository in an S3 bucket.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&crate::model::S3Repository> {
         self.s3_bucket.as_ref()
-    }
-}
-impl std::fmt::Debug for Repository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Repository");
-        formatter.field("code_commit", &self.code_commit);
-        formatter.field("bitbucket", &self.bitbucket);
-        formatter.field("git_hub_enterprise_server", &self.git_hub_enterprise_server);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.finish()
     }
 }
 /// See [`Repository`](crate::model::Repository).
@@ -4607,7 +4342,7 @@ impl Repository {
 
 /// <p>Information about a repository in an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Repository {
     /// <p>The name of the repository in the S3 bucket.</p>
     #[doc(hidden)]
@@ -4624,14 +4359,6 @@ impl S3Repository {
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Repository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Repository");
-        formatter.field("name", &self.name);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.finish()
     }
 }
 /// See [`S3Repository`](crate::model::S3Repository).
@@ -4682,7 +4409,7 @@ impl S3Repository {
 
 /// <p>Information about a third-party source repository connected to CodeGuru Reviewer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartySourceRepository {
     /// <p>The name of the third party source repository.</p>
     #[doc(hidden)]
@@ -4706,15 +4433,6 @@ impl ThirdPartySourceRepository {
     /// <p>The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID </p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
-    }
-}
-impl std::fmt::Debug for ThirdPartySourceRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartySourceRepository");
-        formatter.field("name", &self.name);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("owner", &self.owner);
-        formatter.finish()
     }
 }
 /// See [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
@@ -4780,7 +4498,7 @@ impl ThirdPartySourceRepository {
 
 /// <p>Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeCommitRepository {
     /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
     #[doc(hidden)]
@@ -4790,13 +4508,6 @@ impl CodeCommitRepository {
     /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeCommitRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeCommitRepository");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`CodeCommitRepository`](crate::model::CodeCommitRepository).

@@ -1203,7 +1203,7 @@ impl DescribeTableDataImportJobInput {
 pub mod get_screen_data_input {
 
     /// A builder for [`GetScreenDataInput`](crate::input::GetScreenDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1307,6 +1307,18 @@ pub mod get_screen_data_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("workbook_id", &self.workbook_id);
+            formatter.field("app_id", &self.app_id);
+            formatter.field("screen_id", &self.screen_id);
+            formatter.field("variables", &"*** Sensitive Data Redacted ***");
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &self.next_token);
+            formatter.finish()
         }
     }
 }
@@ -1424,7 +1436,7 @@ impl GetScreenDataInput {
 pub mod invoke_screen_automation_input {
 
     /// A builder for [`InvokeScreenAutomationInput`](crate::input::InvokeScreenAutomationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1546,6 +1558,19 @@ pub mod invoke_screen_automation_input {
                 row_id: self.row_id,
                 client_request_token: self.client_request_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("workbook_id", &self.workbook_id);
+            formatter.field("app_id", &self.app_id);
+            formatter.field("screen_id", &self.screen_id);
+            formatter.field("screen_automation_id", &self.screen_automation_id);
+            formatter.field("variables", &"*** Sensitive Data Redacted ***");
+            formatter.field("row_id", &self.row_id);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.finish()
         }
     }
 }
@@ -3432,7 +3457,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -3451,18 +3476,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -3485,18 +3502,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTableDataImportJobInput {
     /// <p>The ID of the workbook where the rows are being imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -3549,22 +3558,10 @@ impl StartTableDataImportJobInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartTableDataImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTableDataImportJobInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("data_format", &self.data_format);
-        formatter.field("destination_table_id", &self.destination_table_id);
-        formatter.field("import_options", &self.import_options);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryTableRowsInput {
     /// <p>The ID of the workbook whose table rows are being queried.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -3610,21 +3607,10 @@ impl QueryTableRowsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for QueryTableRowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryTableRowsInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("filter_formula", &self.filter_formula);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -3636,17 +3622,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTablesInput {
     /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -3676,19 +3655,10 @@ impl ListTablesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTablesInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTableRowsInput {
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -3734,21 +3704,10 @@ impl ListTableRowsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTableRowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTableRowsInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("row_ids", &self.row_ids);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTableColumnsInput {
     /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -3778,15 +3737,6 @@ impl ListTableColumnsInput {
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTableColumnsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTableColumnsInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -3942,7 +3892,7 @@ impl std::fmt::Debug for GetScreenDataInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTableDataImportJobInput {
     /// <p>The ID of the workbook into which data was imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -3974,19 +3924,10 @@ impl DescribeTableDataImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTableDataImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTableDataImportJobInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpsertTableRowsInput {
     /// <p>The ID of the workbook where the rows are being upserted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -4027,20 +3968,10 @@ impl BatchUpsertTableRowsInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpsertTableRowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpsertTableRowsInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("rows_to_upsert", &self.rows_to_upsert);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateTableRowsInput {
     /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -4081,20 +4012,10 @@ impl BatchUpdateTableRowsInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateTableRowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateTableRowsInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("rows_to_update", &self.rows_to_update);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteTableRowsInput {
     /// <p>The ID of the workbook where the rows are being deleted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -4135,20 +4056,10 @@ impl BatchDeleteTableRowsInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteTableRowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteTableRowsInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("row_ids", &self.row_ids);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateTableRowsInput {
     /// <p>The ID of the workbook where the new rows are being added.</p>
     /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
@@ -4187,15 +4098,5 @@ impl BatchCreateTableRowsInput {
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateTableRowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateTableRowsInput");
-        formatter.field("workbook_id", &self.workbook_id);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("rows_to_create", &self.rows_to_create);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
     }
 }

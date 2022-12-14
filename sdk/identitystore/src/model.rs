@@ -245,7 +245,7 @@ impl std::fmt::Debug for User {
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -489,6 +489,28 @@ pub mod user {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("external_ids", &self.external_ids);
+            formatter.field("name", &self.name);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("nick_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("profile_url", &"*** Sensitive Data Redacted ***");
+            formatter.field("emails", &self.emails);
+            formatter.field("addresses", &self.addresses);
+            formatter.field("phone_numbers", &self.phone_numbers);
+            formatter.field("user_type", &"*** Sensitive Data Redacted ***");
+            formatter.field("title", &"*** Sensitive Data Redacted ***");
+            formatter.field("preferred_language", &"*** Sensitive Data Redacted ***");
+            formatter.field("locale", &"*** Sensitive Data Redacted ***");
+            formatter.field("timezone", &"*** Sensitive Data Redacted ***");
+            formatter.field("identity_store_id", &self.identity_store_id);
+            formatter.finish()
+        }
+    }
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -538,7 +560,7 @@ impl std::fmt::Debug for PhoneNumber {
 pub mod phone_number {
 
     /// A builder for [`PhoneNumber`](crate::model::PhoneNumber).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -582,6 +604,15 @@ pub mod phone_number {
                 r#type: self.r#type,
                 primary: self.primary.unwrap_or_default(),
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+            formatter.field("primary", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -673,7 +704,7 @@ impl std::fmt::Debug for Address {
 pub mod address {
 
     /// A builder for [`Address`](crate::model::Address).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) street_address: std::option::Option<std::string::String>,
         pub(crate) locality: std::option::Option<std::string::String>,
@@ -782,6 +813,20 @@ pub mod address {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("street_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("locality", &"*** Sensitive Data Redacted ***");
+            formatter.field("region", &"*** Sensitive Data Redacted ***");
+            formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("country", &"*** Sensitive Data Redacted ***");
+            formatter.field("formatted", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+            formatter.field("primary", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
@@ -831,7 +876,7 @@ impl std::fmt::Debug for Email {
 pub mod email {
 
     /// A builder for [`Email`](crate::model::Email).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -875,6 +920,15 @@ pub mod email {
                 r#type: self.r#type,
                 primary: self.primary.unwrap_or_default(),
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+            formatter.field("primary", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -950,7 +1004,7 @@ impl std::fmt::Debug for Name {
 pub mod name {
 
     /// A builder for [`Name`](crate::model::Name).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) formatted: std::option::Option<std::string::String>,
         pub(crate) family_name: std::option::Option<std::string::String>,
@@ -1038,6 +1092,18 @@ pub mod name {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("formatted", &"*** Sensitive Data Redacted ***");
+            formatter.field("family_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("given_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("middle_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("honorific_prefix", &"*** Sensitive Data Redacted ***");
+            formatter.field("honorific_suffix", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Name {
     /// Creates a new builder-style object to manufacture [`Name`](crate::model::Name).
@@ -1079,7 +1145,7 @@ impl std::fmt::Debug for ExternalId {
 pub mod external_id {
 
     /// A builder for [`ExternalId`](crate::model::ExternalId).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) issuer: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1111,6 +1177,14 @@ pub mod external_id {
                 issuer: self.issuer,
                 id: self.id,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("issuer", &"*** Sensitive Data Redacted ***");
+            formatter.field("id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1154,7 +1228,7 @@ impl std::fmt::Debug for Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) attribute_path: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,
@@ -1192,6 +1266,14 @@ pub mod filter {
                 attribute_path: self.attribute_path,
                 attribute_value: self.attribute_value,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("attribute_path", &self.attribute_path);
+            formatter.field("attribute_value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1300,7 +1382,7 @@ impl AsRef<str> for ConflictExceptionReason {
 
 /// <p>An operation that applies to the requested group. This operation might add, replace, or remove an attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeOperation {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     #[doc(hidden)]
@@ -1317,14 +1399,6 @@ impl AttributeOperation {
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
     pub fn attribute_value(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.attribute_value.as_ref()
-    }
-}
-impl std::fmt::Debug for AttributeOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeOperation");
-        formatter.field("attribute_path", &self.attribute_path);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
     }
 }
 /// See [`AttributeOperation`](crate::model::AttributeOperation).
@@ -1436,7 +1510,7 @@ impl std::fmt::Debug for Group {
 pub mod group {
 
     /// A builder for [`Group`](crate::model::Group).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1518,6 +1592,17 @@ pub mod group {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("group_id", &self.group_id);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("external_ids", &self.external_ids);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("identity_store_id", &self.identity_store_id);
+            formatter.finish()
+        }
+    }
 }
 impl Group {
     /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
@@ -1528,7 +1613,7 @@ impl Group {
 
 /// <p>Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -1559,16 +1644,6 @@ impl GroupMembership {
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn member_id(&self) -> std::option::Option<&crate::model::MemberId> {
         self.member_id.as_ref()
-    }
-}
-impl std::fmt::Debug for GroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupMembership");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("membership_id", &self.membership_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
     }
 }
 /// See [`GroupMembership`](crate::model::GroupMembership).
@@ -1725,7 +1800,7 @@ impl std::fmt::Debug for GroupMembershipExistenceResult {
 pub mod group_membership_existence_result {
 
     /// A builder for [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<crate::model::MemberId>,
@@ -1769,6 +1844,15 @@ pub mod group_membership_existence_result {
                 member_id: self.member_id,
                 membership_exists: self.membership_exists.unwrap_or_default(),
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("group_id", &self.group_id);
+            formatter.field("member_id", &self.member_id);
+            formatter.field("membership_exists", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1834,7 +1918,7 @@ impl AlternateIdentifier {
 
 /// <p>An entity attribute that's unique to a specific entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UniqueAttribute {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     #[doc(hidden)]
@@ -1851,14 +1935,6 @@ impl UniqueAttribute {
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
     pub fn attribute_value(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.attribute_value.as_ref()
-    }
-}
-impl std::fmt::Debug for UniqueAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UniqueAttribute");
-        formatter.field("attribute_path", &self.attribute_path);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
     }
 }
 /// See [`UniqueAttribute`](crate::model::UniqueAttribute).

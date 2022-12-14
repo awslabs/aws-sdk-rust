@@ -4965,7 +4965,7 @@ impl UpdateThemeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportThemesInput {
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
     #[doc(hidden)]
@@ -4991,19 +4991,10 @@ impl ExportThemesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ExportThemesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportThemesInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThemesInput {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
@@ -5036,20 +5027,10 @@ impl ListThemesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListThemesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThemesInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThemeInput {
     /// <p>The unique ID of the Amplify app associated with the theme.</p>
     #[doc(hidden)]
@@ -5082,20 +5063,10 @@ impl CreateThemeInput {
         self.theme_to_create.as_ref()
     }
 }
-impl std::fmt::Debug for CreateThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateThemeInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("theme_to_create", &self.theme_to_create);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThemeInput {
     /// <p>The unique ID of the Amplify app associated with the theme to delete.</p>
     #[doc(hidden)]
@@ -5121,19 +5092,10 @@ impl DeleteThemeInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThemeInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThemeInput {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
@@ -5173,21 +5135,10 @@ impl UpdateThemeInput {
         self.updated_theme.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThemeInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("updated_theme", &self.updated_theme);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThemeInput {
     /// <p>The unique ID of the Amplify app.</p>
     #[doc(hidden)]
@@ -5213,19 +5164,10 @@ impl GetThemeInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThemeInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportFormsInput {
     /// <p>The unique ID of the Amplify app to export forms to.</p>
     #[doc(hidden)]
@@ -5251,19 +5193,10 @@ impl ExportFormsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ExportFormsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportFormsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFormsInput {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
@@ -5296,20 +5229,10 @@ impl ListFormsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFormsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFormsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFormInput {
     /// <p>The unique ID of the Amplify app to associate with the form.</p>
     #[doc(hidden)]
@@ -5342,20 +5265,10 @@ impl CreateFormInput {
         self.form_to_create.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFormInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFormInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("form_to_create", &self.form_to_create);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFormInput {
     /// <p>The unique ID of the Amplify app associated with the form to delete.</p>
     #[doc(hidden)]
@@ -5381,19 +5294,10 @@ impl DeleteFormInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFormInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFormInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFormInput {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
@@ -5433,21 +5337,10 @@ impl UpdateFormInput {
         self.updated_form.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFormInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFormInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("updated_form", &self.updated_form);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFormInput {
     /// <p>The unique ID of the Amplify app.</p>
     #[doc(hidden)]
@@ -5473,19 +5366,10 @@ impl GetFormInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFormInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFormInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportComponentsInput {
     /// <p>The unique ID of the Amplify app to export components to.</p>
     #[doc(hidden)]
@@ -5511,19 +5395,10 @@ impl ExportComponentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ExportComponentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportComponentsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentsInput {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
@@ -5556,20 +5431,10 @@ impl ListComponentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListComponentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateComponentInput {
     /// <p>The unique ID of the Amplify app to associate with the component.</p>
     #[doc(hidden)]
@@ -5602,20 +5467,10 @@ impl CreateComponentInput {
         self.component_to_create.as_ref()
     }
 }
-impl std::fmt::Debug for CreateComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateComponentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("component_to_create", &self.component_to_create);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteComponentInput {
     /// <p>The unique ID of the Amplify app associated with the component to delete.</p>
     #[doc(hidden)]
@@ -5641,19 +5496,10 @@ impl DeleteComponentInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteComponentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateComponentInput {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
@@ -5693,21 +5539,10 @@ impl UpdateComponentInput {
         self.updated_component.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateComponentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("updated_component", &self.updated_component);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentInput {
     /// <p>The unique ID of the Amplify app.</p>
     #[doc(hidden)]
@@ -5733,19 +5568,10 @@ impl GetComponentInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComponentInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
     #[doc(hidden)]
@@ -5766,18 +5592,10 @@ impl RefreshTokenInput {
         self.refresh_token_body.as_ref()
     }
 }
-impl std::fmt::Debug for RefreshTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshTokenInput");
-        formatter.field("provider", &self.provider);
-        formatter.field("refresh_token_body", &self.refresh_token_body);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetadataFlagInput {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
@@ -5810,20 +5628,10 @@ impl PutMetadataFlagInput {
         self.body.as_ref()
     }
 }
-impl std::fmt::Debug for PutMetadataFlagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetadataFlagInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("feature_name", &self.feature_name);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMetadataInput {
     /// <p>The unique ID of the Amplify app.</p>
     #[doc(hidden)]
@@ -5842,18 +5650,10 @@ impl GetMetadataInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMetadataInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExchangeCodeForTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
     #[doc(hidden)]
@@ -5870,13 +5670,5 @@ impl ExchangeCodeForTokenInput {
     /// <p>Describes the configuration of the request.</p>
     pub fn request(&self) -> std::option::Option<&crate::model::ExchangeCodeForTokenRequestBody> {
         self.request.as_ref()
-    }
-}
-impl std::fmt::Debug for ExchangeCodeForTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExchangeCodeForTokenInput");
-        formatter.field("provider", &self.provider);
-        formatter.field("request", &self.request);
-        formatter.finish()
     }
 }

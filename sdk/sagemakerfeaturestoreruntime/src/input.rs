@@ -802,7 +802,7 @@ impl PutRecordInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordInput {
     /// <p>The name of the feature group that you want to insert the record into.</p>
     #[doc(hidden)]
@@ -831,18 +831,10 @@ impl PutRecordInput {
         self.record.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordInput");
-        formatter.field("feature_group_name", &self.feature_group_name);
-        formatter.field("record", &self.record);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecordInput {
     /// <p>The name of the feature group in which you want to put the records.</p>
     #[doc(hidden)]
@@ -868,22 +860,10 @@ impl GetRecordInput {
         self.feature_names.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecordInput");
-        formatter.field("feature_group_name", &self.feature_group_name);
-        formatter.field(
-            "record_identifier_value_as_string",
-            &self.record_identifier_value_as_string,
-        );
-        formatter.field("feature_names", &self.feature_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecordInput {
     /// <p>The name of the feature group to delete the record from. </p>
     #[doc(hidden)]
@@ -909,22 +889,10 @@ impl DeleteRecordInput {
         self.event_time.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecordInput");
-        formatter.field("feature_group_name", &self.feature_group_name);
-        formatter.field(
-            "record_identifier_value_as_string",
-            &self.record_identifier_value_as_string,
-        );
-        formatter.field("event_time", &self.event_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetRecordInput {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     #[doc(hidden)]
@@ -934,12 +902,5 @@ impl BatchGetRecordInput {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     pub fn identifiers(&self) -> std::option::Option<&[crate::model::BatchGetRecordIdentifier]> {
         self.identifiers.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetRecordInput");
-        formatter.field("identifiers", &self.identifiers);
-        formatter.finish()
     }
 }

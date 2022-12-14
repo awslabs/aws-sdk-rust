@@ -154,7 +154,7 @@ impl CancelRotateSecretInput {
 pub mod create_secret_input {
 
     /// A builder for [`CreateSecretInput`](crate::input::CreateSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -368,6 +368,24 @@ pub mod create_secret_input {
                     .force_overwrite_replica_secret
                     .unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("description", &self.description);
+            formatter.field("kms_key_id", &self.kms_key_id);
+            formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.field("add_replica_regions", &self.add_replica_regions);
+            formatter.field(
+                "force_overwrite_replica_secret",
+                &self.force_overwrite_replica_secret,
+            );
+            formatter.finish()
         }
     }
 }
@@ -2092,7 +2110,7 @@ impl PutResourcePolicyInput {
 pub mod put_secret_value_input {
 
     /// A builder for [`PutSecretValueInput`](crate::input::PutSecretValueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -2215,6 +2233,17 @@ pub mod put_secret_value_input {
                 secret_string: self.secret_string,
                 version_stages: self.version_stages,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("secret_id", &self.secret_id);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+            formatter.field("version_stages", &self.version_stages);
+            formatter.finish()
         }
     }
 }
@@ -3548,7 +3577,7 @@ impl UntagResourceInput {
 pub mod update_secret_input {
 
     /// A builder for [`UpdateSecretInput`](crate::input::UpdateSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -3662,6 +3691,18 @@ pub mod update_secret_input {
                 secret_binary: self.secret_binary,
                 secret_string: self.secret_string,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("secret_id", &self.secret_id);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("description", &self.description);
+            formatter.field("kms_key_id", &self.kms_key_id);
+            formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4147,7 +4188,7 @@ impl ValidateResourcePolicyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateResourcePolicyInput {
     /// <p>This field is reserved for internal use.</p>
     #[doc(hidden)]
@@ -4166,18 +4207,10 @@ impl ValidateResourcePolicyInput {
         self.resource_policy.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateResourcePolicyInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("resource_policy", &self.resource_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSecretVersionStageInput {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4212,16 +4245,6 @@ impl UpdateSecretVersionStageInput {
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
     pub fn move_to_version_id(&self) -> std::option::Option<&str> {
         self.move_to_version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateSecretVersionStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSecretVersionStageInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("version_stage", &self.version_stage);
-        formatter.field("remove_from_version_id", &self.remove_from_version_id);
-        formatter.field("move_to_version_id", &self.move_to_version_id);
-        formatter.finish()
     }
 }
 
@@ -4311,7 +4334,7 @@ impl std::fmt::Debug for UpdateSecretInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN or name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4336,18 +4359,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4370,18 +4385,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopReplicationToReplicaInput {
     /// <p>The ARN of the primary secret. </p>
     #[doc(hidden)]
@@ -4393,17 +4400,10 @@ impl StopReplicationToReplicaInput {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopReplicationToReplicaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopReplicationToReplicaInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotateSecretInput {
     /// <p>The ARN or name of the secret to rotate.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4453,21 +4453,10 @@ impl RotateSecretInput {
         self.rotate_immediately
     }
 }
-impl std::fmt::Debug for RotateSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotateSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
-        formatter.field("rotation_rules", &self.rotation_rules);
-        formatter.field("rotate_immediately", &self.rotate_immediately);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreSecretInput {
     /// <p>The ARN or name of the secret to restore.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4481,17 +4470,10 @@ impl RestoreSecretInput {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicateSecretToRegionsInput {
     /// <p>The ARN or name of the secret to replicate.</p>
     #[doc(hidden)]
@@ -4517,22 +4499,10 @@ impl ReplicateSecretToRegionsInput {
         self.force_overwrite_replica_secret
     }
 }
-impl std::fmt::Debug for ReplicateSecretToRegionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicateSecretToRegionsInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("add_replica_regions", &self.add_replica_regions);
-        formatter.field(
-            "force_overwrite_replica_secret",
-            &self.force_overwrite_replica_secret,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveRegionsFromReplicationInput {
     /// <p>The ARN or name of the secret.</p>
     #[doc(hidden)]
@@ -4549,14 +4519,6 @@ impl RemoveRegionsFromReplicationInput {
     /// <p>The Regions of the replicas to remove.</p>
     pub fn remove_replica_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.remove_replica_regions.as_deref()
-    }
-}
-impl std::fmt::Debug for RemoveRegionsFromReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveRegionsFromReplicationInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("remove_replica_regions", &self.remove_replica_regions);
-        formatter.finish()
     }
 }
 
@@ -4650,7 +4612,7 @@ impl std::fmt::Debug for PutSecretValueInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4678,19 +4640,10 @@ impl PutResourcePolicyInput {
         self.block_public_policy
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("resource_policy", &self.resource_policy);
-        formatter.field("block_public_policy", &self.block_public_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecretVersionIdsInput {
     /// <p>The ARN or name of the secret whose versions you want to list.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4727,20 +4680,10 @@ impl ListSecretVersionIdsInput {
         self.include_deprecated
     }
 }
-impl std::fmt::Debug for ListSecretVersionIdsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecretVersionIdsInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("include_deprecated", &self.include_deprecated);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecretsInput {
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
@@ -4775,20 +4718,10 @@ impl ListSecretsInput {
         self.sort_order.as_ref()
     }
 }
-impl std::fmt::Debug for ListSecretsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecretsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSecretValueInput {
     /// <p>The ARN or name of the secret to retrieve.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4820,19 +4753,10 @@ impl GetSecretValueInput {
         self.version_stage.as_deref()
     }
 }
-impl std::fmt::Debug for GetSecretValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSecretValueInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("version_stage", &self.version_stage);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
     /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4846,17 +4770,10 @@ impl GetResourcePolicyInput {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePolicyInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRandomPasswordInput {
     /// <p>The length of the password. If you don't include this parameter, the default length is 32 characters.</p>
     #[doc(hidden)]
@@ -4917,27 +4834,10 @@ impl GetRandomPasswordInput {
         self.require_each_included_type
     }
 }
-impl std::fmt::Debug for GetRandomPasswordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRandomPasswordInput");
-        formatter.field("password_length", &self.password_length);
-        formatter.field("exclude_characters", &self.exclude_characters);
-        formatter.field("exclude_numbers", &self.exclude_numbers);
-        formatter.field("exclude_punctuation", &self.exclude_punctuation);
-        formatter.field("exclude_uppercase", &self.exclude_uppercase);
-        formatter.field("exclude_lowercase", &self.exclude_lowercase);
-        formatter.field("include_space", &self.include_space);
-        formatter.field(
-            "require_each_included_type",
-            &self.require_each_included_type,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSecretInput {
     /// <p>The ARN or name of the secret. </p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4951,17 +4851,10 @@ impl DescribeSecretInput {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSecretInput {
     /// <p>The ARN or name of the secret to delete.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4995,22 +4888,10 @@ impl DeleteSecretInput {
         self.force_delete_without_recovery
     }
 }
-impl std::fmt::Debug for DeleteSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("recovery_window_in_days", &self.recovery_window_in_days);
-        formatter.field(
-            "force_delete_without_recovery",
-            &self.force_delete_without_recovery,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -5022,13 +4903,6 @@ impl DeleteResourcePolicyInput {
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
     }
 }
 
@@ -5185,7 +5059,7 @@ impl std::fmt::Debug for CreateSecretInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelRotateSecretInput {
     /// <p>The ARN or name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -5197,12 +5071,5 @@ impl CancelRotateSecretInput {
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelRotateSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelRotateSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
     }
 }

@@ -6,7 +6,7 @@
 /// <p>We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html">Best Practices for AWS Auto Scaling</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingInstruction {
     /// <p>The namespace of the AWS service.</p>
     #[doc(hidden)]
@@ -190,47 +190,6 @@ impl ScalingInstruction {
     /// <p>The default is enabled (<code>false</code>). </p>
     pub fn disable_dynamic_scaling(&self) -> std::option::Option<bool> {
         self.disable_dynamic_scaling
-    }
-}
-impl std::fmt::Debug for ScalingInstruction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingInstruction");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("min_capacity", &self.min_capacity);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field(
-            "target_tracking_configurations",
-            &self.target_tracking_configurations,
-        );
-        formatter.field(
-            "predefined_load_metric_specification",
-            &self.predefined_load_metric_specification,
-        );
-        formatter.field(
-            "customized_load_metric_specification",
-            &self.customized_load_metric_specification,
-        );
-        formatter.field(
-            "scheduled_action_buffer_time",
-            &self.scheduled_action_buffer_time,
-        );
-        formatter.field(
-            "predictive_scaling_max_capacity_behavior",
-            &self.predictive_scaling_max_capacity_behavior,
-        );
-        formatter.field(
-            "predictive_scaling_max_capacity_buffer",
-            &self.predictive_scaling_max_capacity_buffer,
-        );
-        formatter.field("predictive_scaling_mode", &self.predictive_scaling_mode);
-        formatter.field(
-            "scaling_policy_update_behavior",
-            &self.scaling_policy_update_behavior,
-        );
-        formatter.field("disable_dynamic_scaling", &self.disable_dynamic_scaling);
-        formatter.finish()
     }
 }
 /// See [`ScalingInstruction`](crate::model::ScalingInstruction).
@@ -851,7 +810,7 @@ impl AsRef<str> for PredictiveScalingMaxCapacityBehavior {
 /// <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 /// <p>After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomizedLoadMetricSpecification {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -891,17 +850,6 @@ impl CustomizedLoadMetricSpecification {
     /// <p>The unit of the metric.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomizedLoadMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomizedLoadMetricSpecification");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification).
@@ -1107,7 +1055,7 @@ impl AsRef<str> for MetricStatistic {
 
 /// <p>Represents a dimension for a customized metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
@@ -1124,14 +1072,6 @@ impl MetricDimension {
     /// <p>The value of the dimension.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MetricDimension`](crate::model::MetricDimension).
@@ -1183,7 +1123,7 @@ impl MetricDimension {
 /// <p>Represents a predefined metric that can be used for predictive scaling.</p>
 /// <p>After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredefinedLoadMetricSpecification {
     /// <p>The metric type.</p>
     #[doc(hidden)]
@@ -1258,17 +1198,6 @@ impl PredefinedLoadMetricSpecification {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(&self) -> std::option::Option<&str> {
         self.resource_label.as_deref()
-    }
-}
-impl std::fmt::Debug for PredefinedLoadMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredefinedLoadMetricSpecification");
-        formatter.field(
-            "predefined_load_metric_type",
-            &self.predefined_load_metric_type,
-        );
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
     }
 }
 /// See [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification).
@@ -1486,7 +1415,7 @@ impl AsRef<str> for LoadMetricType {
 
 /// <p>Describes a target tracking configuration to use with AWS Auto Scaling. Used with <code>ScalingInstruction</code> and <code>ScalingPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
@@ -1550,25 +1479,6 @@ impl TargetTrackingConfiguration {
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
     pub fn estimated_instance_warmup(&self) -> std::option::Option<i32> {
         self.estimated_instance_warmup
-    }
-}
-impl std::fmt::Debug for TargetTrackingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetTrackingConfiguration");
-        formatter.field(
-            "predefined_scaling_metric_specification",
-            &self.predefined_scaling_metric_specification,
-        );
-        formatter.field(
-            "customized_scaling_metric_specification",
-            &self.customized_scaling_metric_specification,
-        );
-        formatter.field("target_value", &self.target_value);
-        formatter.field("disable_scale_in", &self.disable_scale_in);
-        formatter.field("scale_out_cooldown", &self.scale_out_cooldown);
-        formatter.field("scale_in_cooldown", &self.scale_in_cooldown);
-        formatter.field("estimated_instance_warmup", &self.estimated_instance_warmup);
-        formatter.finish()
     }
 }
 /// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
@@ -1707,7 +1617,7 @@ impl TargetTrackingConfiguration {
 /// </ul>
 /// <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomizedScalingMetricSpecification {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -1747,17 +1657,6 @@ impl CustomizedScalingMetricSpecification {
     /// <p>The unit of the metric. </p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomizedScalingMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomizedScalingMetricSpecification");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification).
@@ -1858,7 +1757,7 @@ impl CustomizedScalingMetricSpecification {
 
 /// <p>Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredefinedScalingMetricSpecification {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
     #[doc(hidden)]
@@ -1933,17 +1832,6 @@ impl PredefinedScalingMetricSpecification {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(&self) -> std::option::Option<&str> {
         self.resource_label.as_deref()
-    }
-}
-impl std::fmt::Debug for PredefinedScalingMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredefinedScalingMetricSpecification");
-        formatter.field(
-            "predefined_scaling_metric_type",
-            &self.predefined_scaling_metric_type,
-        );
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
     }
 }
 /// See [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification).
@@ -2497,7 +2385,7 @@ impl AsRef<str> for ServiceNamespace {
 
 /// <p>Represents an application source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSource {
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
     #[doc(hidden)]
@@ -2514,14 +2402,6 @@ impl ApplicationSource {
     /// <p>A set of tags (up to 50).</p>
     pub fn tag_filters(&self) -> std::option::Option<&[crate::model::TagFilter]> {
         self.tag_filters.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSource");
-        formatter.field("cloud_formation_stack_arn", &self.cloud_formation_stack_arn);
-        formatter.field("tag_filters", &self.tag_filters);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSource`](crate::model::ApplicationSource).
@@ -2584,7 +2464,7 @@ impl ApplicationSource {
 
 /// <p>Represents a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>The tag key.</p>
     #[doc(hidden)]
@@ -2601,14 +2481,6 @@ impl TagFilter {
     /// <p>The tag values (0 to 20).</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`TagFilter`](crate::model::TagFilter).
@@ -2668,7 +2540,7 @@ impl TagFilter {
 
 /// <p>Represents a single value in the forecast data used for predictive scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Datapoint {
     /// <p>The time stamp for the data point in UTC format.</p>
     #[doc(hidden)]
@@ -2685,14 +2557,6 @@ impl Datapoint {
     /// <p>The value of the data point.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
-    }
-}
-impl std::fmt::Debug for Datapoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Datapoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Datapoint`](crate::model::Datapoint).
@@ -2851,7 +2715,7 @@ impl AsRef<str> for ForecastDataType {
 
 /// <p>Represents a scaling plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingPlan {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -2930,20 +2794,6 @@ impl ScalingPlan {
     /// <p>The Unix time stamp when the scaling plan was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalingPlan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingPlan");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("application_source", &self.application_source);
-        formatter.field("scaling_instructions", &self.scaling_instructions);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("status_start_time", &self.status_start_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`ScalingPlan`](crate::model::ScalingPlan).
@@ -3245,7 +3095,7 @@ impl AsRef<str> for ScalingPlanStatusCode {
 
 /// <p>Represents a scalable resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingPlanResource {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -3350,20 +3200,6 @@ impl ScalingPlanResource {
     /// <p>A simple message about the current scaling status of the resource.</p>
     pub fn scaling_status_message(&self) -> std::option::Option<&str> {
         self.scaling_status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ScalingPlanResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingPlanResource");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("scaling_policies", &self.scaling_policies);
-        formatter.field("scaling_status_code", &self.scaling_status_code);
-        formatter.field("scaling_status_message", &self.scaling_status_message);
-        formatter.finish()
     }
 }
 /// See [`ScalingPlanResource`](crate::model::ScalingPlanResource).
@@ -3654,7 +3490,7 @@ impl AsRef<str> for ScalingStatusCode {
 
 /// <p>Represents a scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>The name of the scaling policy.</p>
     #[doc(hidden)]
@@ -3681,18 +3517,6 @@ impl ScalingPolicy {
         &self,
     ) -> std::option::Option<&crate::model::TargetTrackingConfiguration> {
         self.target_tracking_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingPolicy");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field(
-            "target_tracking_configuration",
-            &self.target_tracking_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).

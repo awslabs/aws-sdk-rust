@@ -2,7 +2,7 @@
 
 /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PosixProfile {
     /// <p>The POSIX user ID used for all EFS operations by this user.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl PosixProfile {
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
     pub fn secondary_gids(&self) -> std::option::Option<&[i64]> {
         self.secondary_gids.as_deref()
-    }
-}
-impl std::fmt::Debug for PosixProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PosixProfile");
-        formatter.field("uid", &self.uid);
-        formatter.field("gid", &self.gid);
-        formatter.field("secondary_gids", &self.secondary_gids);
-        formatter.finish()
     }
 }
 /// See [`PosixProfile`](crate::model::PosixProfile).
@@ -108,7 +99,7 @@ impl PosixProfile {
 /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
 /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HomeDirectoryMapEntry {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
     #[doc(hidden)]
@@ -125,14 +116,6 @@ impl HomeDirectoryMapEntry {
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
-    }
-}
-impl std::fmt::Debug for HomeDirectoryMapEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HomeDirectoryMapEntry");
-        formatter.field("entry", &self.entry);
-        formatter.field("target", &self.target);
-        formatter.finish()
     }
 }
 /// See [`HomeDirectoryMapEntry`](crate::model::HomeDirectoryMapEntry).
@@ -275,7 +258,7 @@ impl AsRef<str> for HomeDirectoryType {
 
 /// <p>Container for the <code>WorkflowDetail</code> data type. It is used by actions that trigger a workflow to begin execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
@@ -289,13 +272,6 @@ impl WorkflowDetails {
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn on_upload(&self) -> std::option::Option<&[crate::model::WorkflowDetail]> {
         self.on_upload.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowDetails");
-        formatter.field("on_upload", &self.on_upload);
-        formatter.finish()
     }
 }
 /// See [`WorkflowDetails`](crate::model::WorkflowDetails).
@@ -347,7 +323,7 @@ impl WorkflowDetails {
 
 /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowDetail {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
@@ -364,14 +340,6 @@ impl WorkflowDetail {
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
     pub fn execution_role(&self) -> std::option::Option<&str> {
         self.execution_role.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowDetail");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("execution_role", &self.execution_role);
-        formatter.finish()
     }
 }
 /// See [`WorkflowDetail`](crate::model::WorkflowDetail).
@@ -525,7 +493,7 @@ impl AsRef<str> for Protocol {
 
 /// <p>Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityProviderDetails {
     /// <p>Provides the location of the service endpoint used to authenticate users.</p>
     #[doc(hidden)]
@@ -556,16 +524,6 @@ impl IdentityProviderDetails {
     /// <p>The ARN for a lambda function to use for the Identity provider.</p>
     pub fn function(&self) -> std::option::Option<&str> {
         self.function.as_deref()
-    }
-}
-impl std::fmt::Debug for IdentityProviderDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityProviderDetails");
-        formatter.field("url", &self.url);
-        formatter.field("invocation_role", &self.invocation_role);
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("function", &self.function);
-        formatter.finish()
     }
 }
 /// See [`IdentityProviderDetails`](crate::model::IdentityProviderDetails).
@@ -741,7 +699,7 @@ impl AsRef<str> for EndpointType {
 /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointDetails {
     /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
@@ -803,17 +761,6 @@ impl EndpointDetails {
     /// </note>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointDetails");
-        formatter.field("address_allocation_ids", &self.address_allocation_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`EndpointDetails`](crate::model::EndpointDetails).
@@ -954,7 +901,7 @@ impl EndpointDetails {
 
 /// <p> The protocol settings that are configured for your server. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtocolDetails {
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
     /// <p> <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p>
@@ -1017,19 +964,6 @@ impl ProtocolDetails {
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
     pub fn as2_transports(&self) -> std::option::Option<&[crate::model::As2Transport]> {
         self.as2_transports.as_deref()
-    }
-}
-impl std::fmt::Debug for ProtocolDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtocolDetails");
-        formatter.field("passive_ip", &self.passive_ip);
-        formatter.field(
-            "tls_session_resumption_mode",
-            &self.tls_session_resumption_mode,
-        );
-        formatter.field("set_stat_option", &self.set_stat_option);
-        formatter.field("as2_transports", &self.as2_transports);
-        formatter.finish()
     }
 }
 /// See [`ProtocolDetails`](crate::model::ProtocolDetails).
@@ -1425,7 +1359,7 @@ impl AsRef<str> for TlsSessionResumptionMode {
 
 /// <p>Contains the details for a connector object. The connector object is used for AS2 outbound processes, to connect the Transfer Family customer with the trading partner.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct As2ConnectorConfig {
     /// <p>A unique identifier for the AS2 local profile.</p>
     #[doc(hidden)]
@@ -1496,20 +1430,6 @@ impl As2ConnectorConfig {
     /// </ul>
     pub fn mdn_response(&self) -> std::option::Option<&crate::model::MdnResponse> {
         self.mdn_response.as_ref()
-    }
-}
-impl std::fmt::Debug for As2ConnectorConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("As2ConnectorConfig");
-        formatter.field("local_profile_id", &self.local_profile_id);
-        formatter.field("partner_profile_id", &self.partner_profile_id);
-        formatter.field("message_subject", &self.message_subject);
-        formatter.field("compression", &self.compression);
-        formatter.field("encryption_algorithm", &self.encryption_algorithm);
-        formatter.field("signing_algorithm", &self.signing_algorithm);
-        formatter.field("mdn_signing_algorithm", &self.mdn_signing_algorithm);
-        formatter.field("mdn_response", &self.mdn_response);
-        formatter.finish()
     }
 }
 /// See [`As2ConnectorConfig`](crate::model::As2ConnectorConfig).
@@ -2250,7 +2170,7 @@ impl AsRef<str> for AgreementStatusType {
 
 /// <p>Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The name assigned to the tag that you create.</p>
     #[doc(hidden)]
@@ -2267,14 +2187,6 @@ impl Tag {
     /// <p>Contains one or more values that you assigned to the key name you create.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -2415,7 +2327,7 @@ impl AsRef<str> for CustomStepStatus {
 
 /// <p>Contains the ID, text description, and Amazon Resource Name (ARN) for the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedWorkflow {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
@@ -2439,15 +2351,6 @@ impl ListedWorkflow {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListedWorkflow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedWorkflow");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("description", &self.description);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`ListedWorkflow`](crate::model::ListedWorkflow).
@@ -2510,7 +2413,7 @@ impl ListedWorkflow {
 
 /// <p>Returns properties of the user that you specify.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedUser {
     /// <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.</p>
     #[doc(hidden)]
@@ -2563,18 +2466,6 @@ impl ListedUser {
     /// <p>Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ListedUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedUser");
-        formatter.field("arn", &self.arn);
-        formatter.field("home_directory", &self.home_directory);
-        formatter.field("home_directory_type", &self.home_directory_type);
-        formatter.field("role", &self.role);
-        formatter.field("ssh_public_key_count", &self.ssh_public_key_count);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
     }
 }
 /// See [`ListedUser`](crate::model::ListedUser).
@@ -2687,7 +2578,7 @@ impl ListedUser {
 
 /// <p>Returns properties of a file transfer protocol-enabled server that was specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for a server to be listed.</p>
     #[doc(hidden)]
@@ -2756,20 +2647,6 @@ impl ListedServer {
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
     pub fn user_count(&self) -> std::option::Option<i32> {
         self.user_count
-    }
-}
-impl std::fmt::Debug for ListedServer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedServer");
-        formatter.field("arn", &self.arn);
-        formatter.field("domain", &self.domain);
-        formatter.field("identity_provider_type", &self.identity_provider_type);
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("logging_role", &self.logging_role);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("state", &self.state);
-        formatter.field("user_count", &self.user_count);
-        formatter.finish()
     }
 }
 /// See [`ListedServer`](crate::model::ListedServer).
@@ -3236,7 +3113,7 @@ impl AsRef<str> for Domain {
 
 /// <p>Returns the properties of the profile that was specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedProfile {
     /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
     #[doc(hidden)]
@@ -3267,16 +3144,6 @@ impl ListedProfile {
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn profile_type(&self) -> std::option::Option<&crate::model::ProfileType> {
         self.profile_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ListedProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedProfile");
-        formatter.field("arn", &self.arn);
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("as2_id", &self.as2_id);
-        formatter.field("profile_type", &self.profile_type);
-        formatter.finish()
     }
 }
 /// See [`ListedProfile`](crate::model::ListedProfile).
@@ -3444,7 +3311,7 @@ impl AsRef<str> for ProfileType {
 
 /// <p>Returns properties of the host key that is specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedHostKey {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the host key.</p>
     #[doc(hidden)]
@@ -3503,18 +3370,6 @@ impl ListedHostKey {
     /// <p>The date on which the host key was added to the server.</p>
     pub fn date_imported(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_imported.as_ref()
-    }
-}
-impl std::fmt::Debug for ListedHostKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedHostKey");
-        formatter.field("arn", &self.arn);
-        formatter.field("host_key_id", &self.host_key_id);
-        formatter.field("fingerprint", &self.fingerprint);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("date_imported", &self.date_imported);
-        formatter.finish()
     }
 }
 /// See [`ListedHostKey`](crate::model::ListedHostKey).
@@ -3630,7 +3485,7 @@ impl ListedHostKey {
 
 /// <p>Returns properties of the execution that is specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
     #[doc(hidden)]
@@ -3661,16 +3516,6 @@ impl ListedExecution {
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ListedExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedExecution");
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("initial_file_location", &self.initial_file_location);
-        formatter.field("service_metadata", &self.service_metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ListedExecution`](crate::model::ListedExecution).
@@ -3859,7 +3704,7 @@ impl AsRef<str> for ExecutionStatus {
 
 /// <p>A container object for the session details that are associated with a workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
     #[doc(hidden)]
@@ -3869,13 +3714,6 @@ impl ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
     pub fn user_details(&self) -> std::option::Option<&crate::model::UserDetails> {
         self.user_details.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceMetadata");
-        formatter.field("user_details", &self.user_details);
-        formatter.finish()
     }
 }
 /// See [`ServiceMetadata`](crate::model::ServiceMetadata).
@@ -3917,7 +3755,7 @@ impl ServiceMetadata {
 
 /// <p>Specifies the user name, server ID, and session ID for a workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDetails {
     /// <p>A unique string that identifies a user account associated with a server.</p>
     #[doc(hidden)]
@@ -3941,15 +3779,6 @@ impl UserDetails {
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UserDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserDetails");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
     }
 }
 /// See [`UserDetails`](crate::model::UserDetails).
@@ -4012,7 +3841,7 @@ impl UserDetails {
 
 /// <p>Specifies the Amazon S3 or EFS file details to be used in the step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileLocation {
     /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
     #[doc(hidden)]
@@ -4029,14 +3858,6 @@ impl FileLocation {
     /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
     pub fn efs_file_location(&self) -> std::option::Option<&crate::model::EfsFileLocation> {
         self.efs_file_location.as_ref()
-    }
-}
-impl std::fmt::Debug for FileLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileLocation");
-        formatter.field("s3_file_location", &self.s3_file_location);
-        formatter.field("efs_file_location", &self.efs_file_location);
-        formatter.finish()
     }
 }
 /// See [`FileLocation`](crate::model::FileLocation).
@@ -4094,7 +3915,7 @@ impl FileLocation {
 /// <p>Reserved for future use.</p>
 /// <p> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsFileLocation {
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
     #[doc(hidden)]
@@ -4111,14 +3932,6 @@ impl EfsFileLocation {
     /// <p>The pathname for the folder being used by a workflow.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
-    }
-}
-impl std::fmt::Debug for EfsFileLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsFileLocation");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("path", &self.path);
-        formatter.finish()
     }
 }
 /// See [`EfsFileLocation`](crate::model::EfsFileLocation).
@@ -4172,7 +3985,7 @@ impl EfsFileLocation {
 
 /// <p>Specifies the details for the file location for the file that's being used in the workflow. Only applicable if you are using S3 storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3FileLocation {
     /// <p>Specifies the S3 bucket that contains the file being used.</p>
     #[doc(hidden)]
@@ -4203,16 +4016,6 @@ impl S3FileLocation {
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
     pub fn etag(&self) -> std::option::Option<&str> {
         self.etag.as_deref()
-    }
-}
-impl std::fmt::Debug for S3FileLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3FileLocation");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("etag", &self.etag);
-        formatter.finish()
     }
 }
 /// See [`S3FileLocation`](crate::model::S3FileLocation).
@@ -4287,7 +4090,7 @@ impl S3FileLocation {
 
 /// <p>Returns details of the connector that is specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedConnector {
     /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
     #[doc(hidden)]
@@ -4311,15 +4114,6 @@ impl ListedConnector {
     /// <p>The URL of the partner's AS2 endpoint.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for ListedConnector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedConnector");
-        formatter.field("arn", &self.arn);
-        formatter.field("connector_id", &self.connector_id);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`ListedConnector`](crate::model::ListedConnector).
@@ -4382,7 +4176,7 @@ impl ListedConnector {
 
 /// <p>Describes the properties of a certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedCertificate {
     /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
     #[doc(hidden)]
@@ -4441,20 +4235,6 @@ impl ListedCertificate {
     /// <p>The name or short description that's used to identify the certificate.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ListedCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedCertificate");
-        formatter.field("arn", &self.arn);
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("usage", &self.usage);
-        formatter.field("status", &self.status);
-        formatter.field("active_date", &self.active_date);
-        formatter.field("inactive_date", &self.inactive_date);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ListedCertificate`](crate::model::ListedCertificate).
@@ -4874,7 +4654,7 @@ impl AsRef<str> for CertificateUsageType {
 
 /// <p>Describes the properties of an agreement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedAgreement {
     /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
     #[doc(hidden)]
@@ -4926,19 +4706,6 @@ impl ListedAgreement {
     /// <p>A unique identifier for the partner profile.</p>
     pub fn partner_profile_id(&self) -> std::option::Option<&str> {
         self.partner_profile_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ListedAgreement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedAgreement");
-        formatter.field("arn", &self.arn);
-        formatter.field("agreement_id", &self.agreement_id);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("local_profile_id", &self.local_profile_id);
-        formatter.field("partner_profile_id", &self.partner_profile_id);
-        formatter.finish()
     }
 }
 /// See [`ListedAgreement`](crate::model::ListedAgreement).
@@ -5058,7 +4825,7 @@ impl ListedAgreement {
 
 /// <p>Lists the properties for one or more specified associated accesses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedAccess {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
@@ -5097,16 +4864,6 @@ impl ListedAccess {
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ListedAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedAccess");
-        formatter.field("home_directory", &self.home_directory);
-        formatter.field("home_directory_type", &self.home_directory_type);
-        formatter.field("role", &self.role);
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
     }
 }
 /// See [`ListedAccess`](crate::model::ListedAccess).
@@ -5195,7 +4952,7 @@ impl ListedAccess {
 
 /// <p>Describes the properties of the specified workflow</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedWorkflow {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     #[doc(hidden)]
@@ -5240,18 +4997,6 @@ impl DescribedWorkflow {
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribedWorkflow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedWorkflow");
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("steps", &self.steps);
-        formatter.field("on_exception_steps", &self.on_exception_steps);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DescribedWorkflow`](crate::model::DescribedWorkflow).
@@ -5378,7 +5123,7 @@ impl DescribedWorkflow {
 
 /// <p>The basic building block of a workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowStep {
     /// <p> Currently, the following step types are supported. </p>
     /// <ul>
@@ -5444,17 +5189,6 @@ impl WorkflowStep {
     /// <p>You specify one or more tags: each tag contains a key/value pair.</p>
     pub fn tag_step_details(&self) -> std::option::Option<&crate::model::TagStepDetails> {
         self.tag_step_details.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowStep {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowStep");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("copy_step_details", &self.copy_step_details);
-        formatter.field("custom_step_details", &self.custom_step_details);
-        formatter.field("delete_step_details", &self.delete_step_details);
-        formatter.field("tag_step_details", &self.tag_step_details);
-        formatter.finish()
     }
 }
 /// See [`WorkflowStep`](crate::model::WorkflowStep).
@@ -5585,7 +5319,7 @@ impl WorkflowStep {
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 /// <p>The key/value pairs used to tag a file during the execution of a workflow step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
@@ -5617,15 +5351,6 @@ impl TagStepDetails {
     /// </ul>
     pub fn source_file_location(&self) -> std::option::Option<&str> {
         self.source_file_location.as_deref()
-    }
-}
-impl std::fmt::Debug for TagStepDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagStepDetails");
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.field("source_file_location", &self.source_file_location);
-        formatter.finish()
     }
 }
 /// See [`TagStepDetails`](crate::model::TagStepDetails).
@@ -5708,7 +5433,7 @@ impl TagStepDetails {
 
 /// <p>Specifies the key-value pair that are assigned to a file during the execution of a Tagging step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Tag {
     /// <p>The name assigned to the tag that you create.</p>
     #[doc(hidden)]
@@ -5725,14 +5450,6 @@ impl S3Tag {
     /// <p>The value that corresponds to the key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`S3Tag`](crate::model::S3Tag).
@@ -5783,7 +5500,7 @@ impl S3Tag {
 
 /// <p>The name of the step, used to identify the delete step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
@@ -5808,14 +5525,6 @@ impl DeleteStepDetails {
     /// </ul>
     pub fn source_file_location(&self) -> std::option::Option<&str> {
         self.source_file_location.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteStepDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStepDetails");
-        formatter.field("name", &self.name);
-        formatter.field("source_file_location", &self.source_file_location);
-        formatter.finish()
     }
 }
 /// See [`DeleteStepDetails`](crate::model::DeleteStepDetails).
@@ -5877,7 +5586,7 @@ impl DeleteStepDetails {
 
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
@@ -5916,16 +5625,6 @@ impl CustomStepDetails {
     /// </ul>
     pub fn source_file_location(&self) -> std::option::Option<&str> {
         self.source_file_location.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomStepDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomStepDetails");
-        formatter.field("name", &self.name);
-        formatter.field("target", &self.target);
-        formatter.field("timeout_seconds", &self.timeout_seconds);
-        formatter.field("source_file_location", &self.source_file_location);
-        formatter.finish()
     }
 }
 /// See [`CustomStepDetails`](crate::model::CustomStepDetails).
@@ -6011,7 +5710,7 @@ impl CustomStepDetails {
 
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
@@ -6052,16 +5751,6 @@ impl CopyStepDetails {
     /// </ul>
     pub fn source_file_location(&self) -> std::option::Option<&str> {
         self.source_file_location.as_deref()
-    }
-}
-impl std::fmt::Debug for CopyStepDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyStepDetails");
-        formatter.field("name", &self.name);
-        formatter.field("destination_file_location", &self.destination_file_location);
-        formatter.field("overwrite_existing", &self.overwrite_existing);
-        formatter.field("source_file_location", &self.source_file_location);
-        formatter.finish()
     }
 }
 /// See [`CopyStepDetails`](crate::model::CopyStepDetails).
@@ -6245,7 +5934,7 @@ impl AsRef<str> for OverwriteExisting {
 
 /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputFileLocation {
     /// <p>Specifies the details for the S3 file being copied.</p>
     #[doc(hidden)]
@@ -6262,14 +5951,6 @@ impl InputFileLocation {
     /// <p>Reserved for future use.</p>
     pub fn efs_file_location(&self) -> std::option::Option<&crate::model::EfsFileLocation> {
         self.efs_file_location.as_ref()
-    }
-}
-impl std::fmt::Debug for InputFileLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputFileLocation");
-        formatter.field("s3_file_location", &self.s3_file_location);
-        formatter.field("efs_file_location", &self.efs_file_location);
-        formatter.finish()
     }
 }
 /// See [`InputFileLocation`](crate::model::InputFileLocation).
@@ -6328,7 +6009,7 @@ impl InputFileLocation {
 /// <p> You need to provide the bucket and key. The key can represent either a path or a file. This is determined by whether or not you end the key value with the forward slash (/) character. If the final character is "/", then your file is copied to the folder, and its name does not change. If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten. </p>
 /// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder. If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>: each upload overwrites the previous version of the <i>bob</i> file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3InputFileLocation {
     /// <p>Specifies the S3 bucket for the customer input file.</p>
     #[doc(hidden)]
@@ -6345,14 +6026,6 @@ impl S3InputFileLocation {
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3InputFileLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3InputFileLocation");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`S3InputFileLocation`](crate::model::S3InputFileLocation).
@@ -6503,7 +6176,7 @@ impl AsRef<str> for WorkflowStepType {
 
 /// <p>Describes the properties of a user that was specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedUser {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the user that was requested to be described.</p>
     #[doc(hidden)]
@@ -6583,22 +6256,6 @@ impl DescribedUser {
     /// <p>Specifies the name of the user that was requested to be described. User names are used for authentication purposes. This is the string that will be used by your user when they log in to your server.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribedUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedUser");
-        formatter.field("arn", &self.arn);
-        formatter.field("home_directory", &self.home_directory);
-        formatter.field("home_directory_mappings", &self.home_directory_mappings);
-        formatter.field("home_directory_type", &self.home_directory_type);
-        formatter.field("policy", &self.policy);
-        formatter.field("posix_profile", &self.posix_profile);
-        formatter.field("role", &self.role);
-        formatter.field("ssh_public_keys", &self.ssh_public_keys);
-        formatter.field("tags", &self.tags);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
     }
 }
 /// See [`DescribedUser`](crate::model::DescribedUser).
@@ -6789,7 +6446,7 @@ impl DescribedUser {
 
 /// <p>Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SshPublicKey {
     /// <p>Specifies the date that the public key was added to the user account.</p>
     #[doc(hidden)]
@@ -6815,15 +6472,6 @@ impl SshPublicKey {
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
     pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
         self.ssh_public_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SshPublicKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SshPublicKey");
-        formatter.field("date_imported", &self.date_imported);
-        formatter.field("ssh_public_key_body", &self.ssh_public_key_body);
-        formatter.field("ssh_public_key_id", &self.ssh_public_key_id);
-        formatter.finish()
     }
 }
 /// See [`SshPublicKey`](crate::model::SshPublicKey).
@@ -6897,7 +6545,7 @@ impl SshPublicKey {
 
 /// <p>Describes the properties of a file transfer protocol-enabled server that was specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
     #[doc(hidden)]
@@ -7091,37 +6739,6 @@ impl DescribedServer {
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
         self.workflow_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribedServer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedServer");
-        formatter.field("arn", &self.arn);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("protocol_details", &self.protocol_details);
-        formatter.field("domain", &self.domain);
-        formatter.field("endpoint_details", &self.endpoint_details);
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("host_key_fingerprint", &self.host_key_fingerprint);
-        formatter.field("identity_provider_details", &self.identity_provider_details);
-        formatter.field("identity_provider_type", &self.identity_provider_type);
-        formatter.field("logging_role", &self.logging_role);
-        formatter.field(
-            "post_authentication_login_banner",
-            &self.post_authentication_login_banner,
-        );
-        formatter.field(
-            "pre_authentication_login_banner",
-            &self.pre_authentication_login_banner,
-        );
-        formatter.field("protocols", &self.protocols);
-        formatter.field("security_policy_name", &self.security_policy_name);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("user_count", &self.user_count);
-        formatter.field("workflow_details", &self.workflow_details);
-        formatter.finish()
     }
 }
 /// See [`DescribedServer`](crate::model::DescribedServer).
@@ -7488,7 +7105,7 @@ impl DescribedServer {
 
 /// <p>Describes the properties of a security policy that was specified. For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security policies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedSecurityPolicy {
     /// <p>Specifies whether this policy enables Federal Information Processing Standards (FIPS).</p>
     #[doc(hidden)]
@@ -7533,18 +7150,6 @@ impl DescribedSecurityPolicy {
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
     pub fn tls_ciphers(&self) -> std::option::Option<&[std::string::String]> {
         self.tls_ciphers.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribedSecurityPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedSecurityPolicy");
-        formatter.field("fips", &self.fips);
-        formatter.field("security_policy_name", &self.security_policy_name);
-        formatter.field("ssh_ciphers", &self.ssh_ciphers);
-        formatter.field("ssh_kexs", &self.ssh_kexs);
-        formatter.field("ssh_macs", &self.ssh_macs);
-        formatter.field("tls_ciphers", &self.tls_ciphers);
-        formatter.finish()
     }
 }
 /// See [`DescribedSecurityPolicy`](crate::model::DescribedSecurityPolicy).
@@ -7682,7 +7287,7 @@ impl DescribedSecurityPolicy {
 
 /// <p>The details for a local or partner AS2 profile. profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedProfile {
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
     #[doc(hidden)]
@@ -7727,18 +7332,6 @@ impl DescribedProfile {
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribedProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedProfile");
-        formatter.field("arn", &self.arn);
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("profile_type", &self.profile_type);
-        formatter.field("as2_id", &self.as2_id);
-        formatter.field("certificate_ids", &self.certificate_ids);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DescribedProfile`](crate::model::DescribedProfile).
@@ -7858,7 +7451,7 @@ impl DescribedProfile {
 
 /// <p>The details for a server host key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
     #[doc(hidden)]
@@ -7924,19 +7517,6 @@ impl DescribedHostKey {
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribedHostKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedHostKey");
-        formatter.field("arn", &self.arn);
-        formatter.field("host_key_id", &self.host_key_id);
-        formatter.field("host_key_fingerprint", &self.host_key_fingerprint);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("date_imported", &self.date_imported);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DescribedHostKey`](crate::model::DescribedHostKey).
@@ -8076,7 +7656,7 @@ impl DescribedHostKey {
 
 /// <p>The details for an execution object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
     #[doc(hidden)]
@@ -8137,20 +7717,6 @@ impl DescribedExecution {
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
     pub fn results(&self) -> std::option::Option<&crate::model::ExecutionResults> {
         self.results.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribedExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedExecution");
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("initial_file_location", &self.initial_file_location);
-        formatter.field("service_metadata", &self.service_metadata);
-        formatter.field("execution_role", &self.execution_role);
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.field("posix_profile", &self.posix_profile);
-        formatter.field("status", &self.status);
-        formatter.field("results", &self.results);
-        formatter.finish()
     }
 }
 /// See [`DescribedExecution`](crate::model::DescribedExecution).
@@ -8294,7 +7860,7 @@ impl DescribedExecution {
 
 /// <p>Specifies the steps in the workflow, as well as the steps to execute in case of any errors during workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionResults {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     #[doc(hidden)]
@@ -8311,14 +7877,6 @@ impl ExecutionResults {
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
     pub fn on_exception_steps(&self) -> std::option::Option<&[crate::model::ExecutionStepResult]> {
         self.on_exception_steps.as_deref()
-    }
-}
-impl std::fmt::Debug for ExecutionResults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionResults");
-        formatter.field("steps", &self.steps);
-        formatter.field("on_exception_steps", &self.on_exception_steps);
-        formatter.finish()
     }
 }
 /// See [`ExecutionResults`](crate::model::ExecutionResults).
@@ -8388,7 +7946,7 @@ impl ExecutionResults {
 
 /// <p>Specifies the following details for the step: error (if any), outputs (if any), and the step type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionStepResult {
     /// <p>One of the available step types.</p>
     /// <ul>
@@ -8424,15 +7982,6 @@ impl ExecutionStepResult {
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ExecutionError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for ExecutionStepResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionStepResult");
-        formatter.field("step_type", &self.step_type);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`ExecutionStepResult`](crate::model::ExecutionStepResult).
@@ -8513,7 +8062,7 @@ impl ExecutionStepResult {
 
 /// <p>Specifies the error message and type, for an error that occurs during the execution of the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionError {
     /// <p>Specifies the error type.</p>
     /// <ul>
@@ -8554,14 +8103,6 @@ impl ExecutionError {
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ExecutionError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionError");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ExecutionError`](crate::model::ExecutionError).
@@ -8770,7 +8311,7 @@ impl AsRef<str> for ExecutionErrorType {
 
 /// <p>Consists of the logging role and the log group name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     #[doc(hidden)]
@@ -8787,14 +8328,6 @@ impl LoggingConfiguration {
     /// <p>The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfiguration");
-        formatter.field("logging_role", &self.logging_role);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
@@ -8848,7 +8381,7 @@ impl LoggingConfiguration {
 
 /// <p>Describes the parameters for the connector, as identified by the <code>ConnectorId</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedConnector {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
     #[doc(hidden)]
@@ -8900,19 +8433,6 @@ impl DescribedConnector {
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribedConnector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedConnector");
-        formatter.field("arn", &self.arn);
-        formatter.field("connector_id", &self.connector_id);
-        formatter.field("url", &self.url);
-        formatter.field("as2_config", &self.as2_config);
-        formatter.field("access_role", &self.access_role);
-        formatter.field("logging_role", &self.logging_role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DescribedConnector`](crate::model::DescribedConnector).
@@ -9162,7 +8682,7 @@ impl std::fmt::Debug for DescribedCertificate {
 pub mod described_certificate {
 
     /// A builder for [`DescribedCertificate`](crate::model::DescribedCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) certificate_id: std::option::Option<std::string::String>,
@@ -9376,6 +8896,26 @@ pub mod described_certificate {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("certificate_id", &self.certificate_id);
+            formatter.field("usage", &self.usage);
+            formatter.field("status", &self.status);
+            formatter.field("certificate", &"*** Sensitive Data Redacted ***");
+            formatter.field("certificate_chain", &"*** Sensitive Data Redacted ***");
+            formatter.field("active_date", &self.active_date);
+            formatter.field("inactive_date", &self.inactive_date);
+            formatter.field("serial", &self.serial);
+            formatter.field("not_before_date", &self.not_before_date);
+            formatter.field("not_after_date", &self.not_after_date);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("description", &self.description);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl DescribedCertificate {
     /// Creates a new builder-style object to manufacture [`DescribedCertificate`](crate::model::DescribedCertificate).
@@ -9386,7 +8926,7 @@ impl DescribedCertificate {
 
 /// <p>Describes the properties of an agreement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedAgreement {
     /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
     #[doc(hidden)]
@@ -9459,22 +8999,6 @@ impl DescribedAgreement {
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribedAgreement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedAgreement");
-        formatter.field("arn", &self.arn);
-        formatter.field("agreement_id", &self.agreement_id);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("local_profile_id", &self.local_profile_id);
-        formatter.field("partner_profile_id", &self.partner_profile_id);
-        formatter.field("base_directory", &self.base_directory);
-        formatter.field("access_role", &self.access_role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DescribedAgreement`](crate::model::DescribedAgreement).
@@ -9642,7 +9166,7 @@ impl DescribedAgreement {
 
 /// <p>Describes the properties of the access that was specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribedAccess {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
@@ -9707,19 +9231,6 @@ impl DescribedAccess {
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribedAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribedAccess");
-        formatter.field("home_directory", &self.home_directory);
-        formatter.field("home_directory_mappings", &self.home_directory_mappings);
-        formatter.field("home_directory_type", &self.home_directory_type);
-        formatter.field("policy", &self.policy);
-        formatter.field("posix_profile", &self.posix_profile);
-        formatter.field("role", &self.role);
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
     }
 }
 /// See [`DescribedAccess`](crate::model::DescribedAccess).

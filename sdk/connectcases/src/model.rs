@@ -2,7 +2,7 @@
 
 /// <p>Template summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSummary {
     /// <p>The unique identifier for the template.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl TemplateSummary {
     /// <p>The template name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSummary");
-        formatter.field("template_id", &self.template_id);
-        formatter.field("template_arn", &self.template_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
@@ -97,7 +88,7 @@ impl TemplateSummary {
 
 /// <p>List of fields that must have a value provided to create a case.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequiredField {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
@@ -107,13 +98,6 @@ impl RequiredField {
     /// <p>Unique identifier of a field.</p>
     pub fn field_id(&self) -> std::option::Option<&str> {
         self.field_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RequiredField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequiredField");
-        formatter.field("field_id", &self.field_id);
-        formatter.finish()
     }
 }
 /// See [`RequiredField`](crate::model::RequiredField).
@@ -152,7 +136,7 @@ impl RequiredField {
 
 /// <p>Object to store configuration of layouts associated to the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LayoutConfiguration {
     /// <p> Unique identifier of a layout. </p>
     #[doc(hidden)]
@@ -162,13 +146,6 @@ impl LayoutConfiguration {
     /// <p> Unique identifier of a layout. </p>
     pub fn default_layout(&self) -> std::option::Option<&str> {
         self.default_layout.as_deref()
-    }
-}
-impl std::fmt::Debug for LayoutConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LayoutConfiguration");
-        formatter.field("default_layout", &self.default_layout);
-        formatter.finish()
     }
 }
 /// See [`LayoutConfiguration`](crate::model::LayoutConfiguration).
@@ -210,7 +187,7 @@ impl LayoutConfiguration {
 
 /// <p>Object for the summarized details of the layout.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LayoutSummary {
     /// <p>The unique identifier for of the layout.</p>
     #[doc(hidden)]
@@ -234,15 +211,6 @@ impl LayoutSummary {
     /// <p>The name of the layout.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for LayoutSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LayoutSummary");
-        formatter.field("layout_id", &self.layout_id);
-        formatter.field("layout_arn", &self.layout_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`LayoutSummary`](crate::model::LayoutSummary).
@@ -342,7 +310,7 @@ impl LayoutContent {
 
 /// <p>Content specific to <code>BasicLayout</code> type. It configures fields in the top panel and More Info tab of agent application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BasicLayout {
     /// <p>This represents sections in a panel of the page layout.</p>
     #[doc(hidden)]
@@ -359,14 +327,6 @@ impl BasicLayout {
     /// <p>This represents sections in a tab of the page layout.</p>
     pub fn more_info(&self) -> std::option::Option<&crate::model::LayoutSections> {
         self.more_info.as_ref()
-    }
-}
-impl std::fmt::Debug for BasicLayout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BasicLayout");
-        formatter.field("top_panel", &self.top_panel);
-        formatter.field("more_info", &self.more_info);
-        formatter.finish()
     }
 }
 /// See [`BasicLayout`](crate::model::BasicLayout).
@@ -423,7 +383,7 @@ impl BasicLayout {
 
 /// <p>Ordered list containing different kinds of sections that can be added. A LayoutSections object can only contain one section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LayoutSections {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
     #[doc(hidden)]
@@ -433,13 +393,6 @@ impl LayoutSections {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
     pub fn sections(&self) -> std::option::Option<&[crate::model::Section]> {
         self.sections.as_deref()
-    }
-}
-impl std::fmt::Debug for LayoutSections {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LayoutSections");
-        formatter.field("sections", &self.sections);
-        formatter.finish()
     }
 }
 /// See [`LayoutSections`](crate::model::LayoutSections).
@@ -524,7 +477,7 @@ impl Section {
 
 /// <p>Object for a group of fields and associated properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldGroup {
     /// <p>Name of the field group.</p>
     #[doc(hidden)]
@@ -541,14 +494,6 @@ impl FieldGroup {
     /// <p>Represents an ordered list containing field related information.</p>
     pub fn fields(&self) -> std::option::Option<&[crate::model::FieldItem]> {
         self.fields.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldGroup");
-        formatter.field("name", &self.name);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
     }
 }
 /// See [`FieldGroup`](crate::model::FieldGroup).
@@ -608,7 +553,7 @@ impl FieldGroup {
 
 /// <p>Object for field related information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldItem {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
@@ -618,13 +563,6 @@ impl FieldItem {
     /// <p>Unique identifier of a field.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldItem");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`FieldItem`](crate::model::FieldItem).
@@ -661,7 +599,7 @@ impl FieldItem {
 
 /// <p>Object for field Options information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldOption {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     #[doc(hidden)]
@@ -685,15 +623,6 @@ impl FieldOption {
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
-    }
-}
-impl std::fmt::Debug for FieldOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldOption");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("active", &self.active);
-        formatter.finish()
     }
 }
 /// See [`FieldOption`](crate::model::FieldOption).
@@ -756,7 +685,7 @@ impl FieldOption {
 
 /// <p>Object for field Options errors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldOptionError {
     /// <p>Error message from creating or updating field option.</p>
     #[doc(hidden)]
@@ -780,15 +709,6 @@ impl FieldOptionError {
     /// <p>The field option value that caused the error.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldOptionError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldOptionError");
-        formatter.field("message", &self.message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FieldOptionError`](crate::model::FieldOptionError).
@@ -851,7 +771,7 @@ impl FieldOptionError {
 
 /// <p>Object for errors on fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldError {
     /// <p>The field identifier that caused the error.</p>
     #[doc(hidden)]
@@ -875,15 +795,6 @@ impl FieldError {
     /// <p>The error message from getting a field.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldError");
-        formatter.field("id", &self.id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`FieldError`](crate::model::FieldError).
@@ -946,7 +857,7 @@ impl FieldError {
 
 /// <p>Object to store detailed field information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
     #[doc(hidden)]
@@ -1004,19 +915,6 @@ impl GetFieldResponse {
         &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     > {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GetFieldResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldResponse");
-        formatter.field("field_id", &self.field_id);
-        formatter.field("name", &self.name);
-        formatter.field("field_arn", &self.field_arn);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetFieldResponse`](crate::model::GetFieldResponse).
@@ -1348,7 +1246,7 @@ impl AsRef<str> for FieldType {
 
 /// <p>Object for unique identifier of a field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldIdentifier {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
@@ -1358,13 +1256,6 @@ impl FieldIdentifier {
     /// <p>Unique identifier of a field.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldIdentifier");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`FieldIdentifier`](crate::model::FieldIdentifier).
@@ -1401,7 +1292,7 @@ impl FieldIdentifier {
 
 /// <p>Object for the summarized details of the field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldSummary {
     /// <p>The unique identifier of a field.</p>
     #[doc(hidden)]
@@ -1439,17 +1330,6 @@ impl FieldSummary {
     /// <p>The namespace of a field.</p>
     pub fn namespace(&self) -> std::option::Option<&crate::model::FieldNamespace> {
         self.namespace.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldSummary");
-        formatter.field("field_id", &self.field_id);
-        formatter.field("field_arn", &self.field_arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
     }
 }
 /// See [`FieldSummary`](crate::model::FieldSummary).
@@ -1539,7 +1419,7 @@ impl FieldSummary {
 
 /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventBridgeConfiguration {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
     #[doc(hidden)]
@@ -1556,14 +1436,6 @@ impl EventBridgeConfiguration {
     /// <p>Details of what case and related item data is published through the case event stream.</p>
     pub fn included_data(&self) -> std::option::Option<&crate::model::EventIncludedData> {
         self.included_data.as_ref()
-    }
-}
-impl std::fmt::Debug for EventBridgeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventBridgeConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("included_data", &self.included_data);
-        formatter.finish()
     }
 }
 /// See [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
@@ -1617,7 +1489,7 @@ impl EventBridgeConfiguration {
 
 /// <p>Details of what case and related item data is published through the case event stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventIncludedData {
     /// <p>Details of what case data is published through the case event stream.</p>
     #[doc(hidden)]
@@ -1636,14 +1508,6 @@ impl EventIncludedData {
         &self,
     ) -> std::option::Option<&crate::model::RelatedItemEventIncludedData> {
         self.related_item_data.as_ref()
-    }
-}
-impl std::fmt::Debug for EventIncludedData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventIncludedData");
-        formatter.field("case_data", &self.case_data);
-        formatter.field("related_item_data", &self.related_item_data);
-        formatter.finish()
     }
 }
 /// See [`EventIncludedData`](crate::model::EventIncludedData).
@@ -1704,7 +1568,7 @@ impl EventIncludedData {
 
 /// <p>Details of what related item data is published through the case event stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelatedItemEventIncludedData {
     /// <p>Details of what related item data is published through the case event stream.</p>
     #[doc(hidden)]
@@ -1714,13 +1578,6 @@ impl RelatedItemEventIncludedData {
     /// <p>Details of what related item data is published through the case event stream.</p>
     pub fn include_content(&self) -> std::option::Option<bool> {
         self.include_content
-    }
-}
-impl std::fmt::Debug for RelatedItemEventIncludedData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelatedItemEventIncludedData");
-        formatter.field("include_content", &self.include_content);
-        formatter.finish()
     }
 }
 /// See [`RelatedItemEventIncludedData`](crate::model::RelatedItemEventIncludedData).
@@ -1759,7 +1616,7 @@ impl RelatedItemEventIncludedData {
 
 /// <p>Details of what case data is published through the case event stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
     #[doc(hidden)]
@@ -1769,13 +1626,6 @@ impl CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
     pub fn fields(&self) -> std::option::Option<&[crate::model::FieldIdentifier]> {
         self.fields.as_deref()
-    }
-}
-impl std::fmt::Debug for CaseEventIncludedData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaseEventIncludedData");
-        formatter.field("fields", &self.fields);
-        formatter.finish()
     }
 }
 /// See [`CaseEventIncludedData`](crate::model::CaseEventIncludedData).
@@ -1823,7 +1673,7 @@ impl CaseEventIncludedData {
 
 /// <p>Object for the summarized details of the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainSummary {
     /// <p>The unique identifier of the domain.</p>
     #[doc(hidden)]
@@ -1847,15 +1697,6 @@ impl DomainSummary {
     /// <p>The name of the domain.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainSummary");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
@@ -2013,7 +1854,7 @@ impl AsRef<str> for DomainStatus {
 
 /// <p>A list of items that represent cases.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchCasesResponseItem {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
@@ -2050,16 +1891,6 @@ impl SearchCasesResponseItem {
         &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     > {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchCasesResponseItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchCasesResponseItem");
-        formatter.field("case_id", &self.case_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("fields", &self.fields);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SearchCasesResponseItem`](crate::model::SearchCasesResponseItem).
@@ -2166,7 +1997,7 @@ impl SearchCasesResponseItem {
 
 /// <p>Object for case field values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldValue {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
@@ -2183,14 +2014,6 @@ impl FieldValue {
     /// <p>Union of potential field value types.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::FieldValueUnion> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldValue");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FieldValue`](crate::model::FieldValue).
@@ -2310,7 +2133,7 @@ impl FieldValueUnion {
 
 /// <p>A structured set of sort terms.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sort {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
@@ -2327,14 +2150,6 @@ impl Sort {
     /// <p>A structured set of sort terms</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::Order> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for Sort {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sort");
-        formatter.field("field_id", &self.field_id);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`Sort`](crate::model::Sort).
@@ -2658,7 +2473,7 @@ impl FieldFilter {
 
 /// <p>Case summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaseSummary {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
@@ -2675,14 +2490,6 @@ impl CaseSummary {
     /// <p>A unique identifier of a template.</p>
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CaseSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaseSummary");
-        formatter.field("case_id", &self.case_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
     }
 }
 /// See [`CaseSummary`](crate::model::CaseSummary).
@@ -2733,7 +2540,7 @@ impl CaseSummary {
 
 /// <p>A list of items that represent RelatedItems.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchRelatedItemsResponseItem {
     /// <p>Unique identifier of a related item.</p>
     #[doc(hidden)]
@@ -2777,17 +2584,6 @@ impl SearchRelatedItemsResponseItem {
         &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     > {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchRelatedItemsResponseItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchRelatedItemsResponseItem");
-        formatter.field("related_item_id", &self.related_item_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("association_time", &self.association_time);
-        formatter.field("content", &self.content);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SearchRelatedItemsResponseItem`](crate::model::SearchRelatedItemsResponseItem).
@@ -2960,7 +2756,7 @@ impl RelatedItemContent {
 
 /// <p>Represents the content of a <code>Comment</code> to be returned to agents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentContent {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
     #[doc(hidden)]
@@ -2977,14 +2773,6 @@ impl CommentContent {
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     pub fn content_type(&self) -> std::option::Option<&crate::model::CommentBodyTextType> {
         self.content_type.as_ref()
-    }
-}
-impl std::fmt::Debug for CommentContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentContent");
-        formatter.field("body", &self.body);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`CommentContent`](crate::model::CommentContent).
@@ -3125,7 +2913,7 @@ impl AsRef<str> for CommentBodyTextType {
 
 /// <p>An object that represents a content of an Amazon Connect contact object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactContent {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     #[doc(hidden)]
@@ -3149,15 +2937,6 @@ impl ContactContent {
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
     pub fn connected_to_system_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.connected_to_system_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ContactContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactContent");
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.field("channel", &self.channel);
-        formatter.field("connected_to_system_time", &self.connected_to_system_time);
-        formatter.finish()
     }
 }
 /// See [`ContactContent`](crate::model::ContactContent).
@@ -3364,14 +3143,8 @@ impl RelatedItemTypeFilter {
 
 /// <p>A filter for related items of type <code>Comment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentFilter {}
-impl std::fmt::Debug for CommentFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentFilter");
-        formatter.finish()
-    }
-}
 /// See [`CommentFilter`](crate::model::CommentFilter).
 pub mod comment_filter {
 
@@ -3394,7 +3167,7 @@ impl CommentFilter {
 
 /// <p>A filter for related items of type <code>Contact</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactFilter {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
     #[doc(hidden)]
@@ -3411,14 +3184,6 @@ impl ContactFilter {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn contact_arn(&self) -> std::option::Option<&str> {
         self.contact_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ContactFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactFilter");
-        formatter.field("channel", &self.channel);
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.finish()
     }
 }
 /// See [`ContactFilter`](crate::model::ContactFilter).
@@ -3529,7 +3294,7 @@ impl RelatedItemInputContent {
 
 /// <p>An object that represents an Amazon Connect contact object. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Contact {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     #[doc(hidden)]
@@ -3539,13 +3304,6 @@ impl Contact {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn contact_arn(&self) -> std::option::Option<&str> {
         self.contact_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Contact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Contact");
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.finish()
     }
 }
 /// See [`Contact`](crate::model::Contact).

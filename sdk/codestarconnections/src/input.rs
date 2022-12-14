@@ -1999,7 +1999,7 @@ impl UpdateHostInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHostInput {
     /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
     #[doc(hidden)]
@@ -2025,19 +2025,10 @@ impl UpdateHostInput {
         self.vpc_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateHostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHostInput");
-        formatter.field("host_arn", &self.host_arn);
-        formatter.field("provider_endpoint", &self.provider_endpoint);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
     #[doc(hidden)]
@@ -2056,18 +2047,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
     #[doc(hidden)]
@@ -2086,18 +2069,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
     #[doc(hidden)]
@@ -2109,17 +2084,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostsInput {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     #[doc(hidden)]
@@ -2138,18 +2106,10 @@ impl ListHostsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListHostsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectionsInput {
     /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
     #[doc(hidden)]
@@ -2182,20 +2142,10 @@ impl ListConnectionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectionsInput");
-        formatter.field("provider_type_filter", &self.provider_type_filter);
-        formatter.field("host_arn_filter", &self.host_arn_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostInput {
     /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
     #[doc(hidden)]
@@ -2207,17 +2157,10 @@ impl GetHostInput {
         self.host_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetHostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostInput");
-        formatter.field("host_arn", &self.host_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
     #[doc(hidden)]
@@ -2229,17 +2172,10 @@ impl GetConnectionInput {
         self.connection_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectionInput");
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHostInput {
     /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
     #[doc(hidden)]
@@ -2251,17 +2187,10 @@ impl DeleteHostInput {
         self.host_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHostInput");
-        formatter.field("host_arn", &self.host_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
@@ -2277,17 +2206,10 @@ impl DeleteConnectionInput {
         self.connection_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionInput");
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHostInput {
     /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
     #[doc(hidden)]
@@ -2327,21 +2249,10 @@ impl CreateHostInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHostInput");
-        formatter.field("name", &self.name);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("provider_endpoint", &self.provider_endpoint);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     #[doc(hidden)]
@@ -2372,15 +2283,5 @@ impl CreateConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub fn host_arn(&self) -> std::option::Option<&str> {
         self.host_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionInput");
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("host_arn", &self.host_arn);
-        formatter.finish()
     }
 }

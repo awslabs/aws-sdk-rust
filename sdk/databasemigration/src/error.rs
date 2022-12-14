@@ -2,18 +2,11 @@
 
 /// <p>The resource is in a state that prevents it from being used for database migration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResourceStateFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResourceStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResourceStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidResourceStateFault {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl InvalidResourceStateFault {
 
 /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessDeniedFault {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl AccessDeniedFault {
 
 /// <p>The quota for this resource quota has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceQuotaExceededFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceQuotaExceededFault {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl ResourceQuotaExceededFault {
 
 /// <p>The resource could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundFault {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl ResourceNotFoundFault {
 
 /// <p>DMS cannot access the KMS key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsKeyNotAccessibleFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsKeyNotAccessibleFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKeyNotAccessibleFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsKeyNotAccessibleFault {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl KmsKeyNotAccessibleFault {
 
 /// <p>A specified Amazon S3 bucket, bucket folder, or other object can't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ResourceNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for S3ResourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ResourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl S3ResourceNotFoundFault {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl S3ResourceNotFoundFault {
 
 /// <p>Insufficient privileges are preventing access to an Amazon S3 object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3AccessDeniedFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for S3AccessDeniedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3AccessDeniedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl S3AccessDeniedFault {
     /// Returns the error message.
@@ -471,7 +422,7 @@ impl S3AccessDeniedFault {
 
 /// <p>The resource you are attempting to create already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceAlreadyExistsFault {
     /// <p></p>
     #[doc(hidden)]
@@ -484,14 +435,6 @@ impl ResourceAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 impl ResourceAlreadyExistsFault {
@@ -560,18 +503,11 @@ impl ResourceAlreadyExistsFault {
 
 /// <p>The specified KMS entity or resource can't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsNotFoundFault {
     /// Returns the error message.
@@ -627,18 +563,11 @@ impl KmsNotFoundFault {
 
 /// <p>The state of the specified KMS resource isn't valid for this request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsInvalidStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsInvalidStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsInvalidStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsInvalidStateFault {
     /// Returns the error message.
@@ -694,18 +623,11 @@ impl KmsInvalidStateFault {
 
 /// <p>An Key Management Service (KMS) error is preventing access to KMS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsFault {
     /// Returns the error message.
@@ -761,18 +683,11 @@ impl KmsFault {
 
 /// <p>The specified KMS key isn't enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsDisabledFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsDisabledFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsDisabledFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsDisabledFault {
     /// Returns the error message.
@@ -828,18 +743,11 @@ impl KmsDisabledFault {
 
 /// <p>The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsAccessDeniedFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsAccessDeniedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsAccessDeniedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsAccessDeniedFault {
     /// Returns the error message.
@@ -895,18 +803,11 @@ impl KmsAccessDeniedFault {
 
 /// <p>The specified subnet is already in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetAlreadyInUse {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubnetAlreadyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetAlreadyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubnetAlreadyInUse {
     /// Returns the error message.
@@ -962,18 +863,11 @@ impl SubnetAlreadyInUse {
 
 /// <p>The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and add more AZs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationSubnetGroupDoesNotCoverEnoughAZs {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReplicationSubnetGroupDoesNotCoverEnoughAZs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationSubnetGroupDoesNotCoverEnoughAZs");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReplicationSubnetGroupDoesNotCoverEnoughAZs {
     /// Returns the error message.
@@ -1029,18 +923,11 @@ impl ReplicationSubnetGroupDoesNotCoverEnoughAZs {
 
 /// <p>The subnet provided is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSubnet {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSubnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubnet");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSubnet {
     /// Returns the error message.
@@ -1096,18 +983,11 @@ impl InvalidSubnet {
 
 /// <p>An upgrade dependency is preventing the database migration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeDependencyFailureFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UpgradeDependencyFailureFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeDependencyFailureFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UpgradeDependencyFailureFault {
     /// Returns the error message.
@@ -1163,18 +1043,11 @@ impl UpgradeDependencyFailureFault {
 
 /// <p>The storage quota has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageQuotaExceededFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StorageQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StorageQuotaExceededFault {
     /// Returns the error message.
@@ -1230,18 +1103,11 @@ impl StorageQuotaExceededFault {
 
 /// <p>There are not enough resources allocated to the database migration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientResourceCapacityFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientResourceCapacityFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientResourceCapacityFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientResourceCapacityFault {
     /// Returns the error message.
@@ -1297,18 +1163,11 @@ impl InsufficientResourceCapacityFault {
 
 /// <p>You are not authorized for the SNS subscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsNoAuthorizationFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnsNoAuthorizationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsNoAuthorizationFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnsNoAuthorizationFault {
     /// Returns the error message.
@@ -1364,18 +1223,11 @@ impl SnsNoAuthorizationFault {
 
 /// <p>The SNS topic is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsInvalidTopicFault {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnsInvalidTopicFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsInvalidTopicFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnsInvalidTopicFault {
     /// Returns the error message.
@@ -1431,18 +1283,11 @@ impl SnsInvalidTopicFault {
 
 /// <p>This request triggered KMS request throttling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsThrottlingFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsThrottlingFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsThrottlingFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsThrottlingFault {
     /// Returns the error message.
@@ -1498,18 +1343,11 @@ impl KmsThrottlingFault {
 
 /// <p>The certificate was not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCertificateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidCertificateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCertificateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidCertificateFault {
     /// Returns the error message.
@@ -1565,18 +1403,11 @@ impl InvalidCertificateFault {
 
 /// <p>The action or operation requested isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOperationFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOperationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOperationFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOperationFault {
     /// Returns the error message.
@@ -1632,18 +1463,11 @@ impl InvalidOperationFault {
 
 /// <p>The specified collector doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CollectorNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CollectorNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CollectorNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CollectorNotFoundFault {
     /// Returns the error message.

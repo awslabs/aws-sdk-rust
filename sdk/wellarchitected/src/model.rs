@@ -2,7 +2,7 @@
 
 /// <p>Stores information about a field passed inside a request that resulted in an exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The field name for which validation failed.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>Description of the error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>A workload share return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkloadShare {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
@@ -238,19 +230,6 @@ impl WorkloadShare {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkloadShare {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkloadShare");
-        formatter.field("share_id", &self.share_id);
-        formatter.field("shared_by", &self.shared_by);
-        formatter.field("shared_with", &self.shared_with);
-        formatter.field("permission_type", &self.permission_type);
-        formatter.field("status", &self.status);
-        formatter.field("workload_name", &self.workload_name);
-        formatter.field("workload_id", &self.workload_id);
-        formatter.finish()
     }
 }
 /// See [`WorkloadShare`](crate::model::WorkloadShare).
@@ -588,7 +567,7 @@ impl AsRef<str> for PermissionType {
 
 /// <p>A workload return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -824,38 +803,6 @@ impl Workload {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Workload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Workload");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("workload_arn", &self.workload_arn);
-        formatter.field("workload_name", &self.workload_name);
-        formatter.field("description", &self.description);
-        formatter.field("environment", &self.environment);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("aws_regions", &self.aws_regions);
-        formatter.field("non_aws_regions", &self.non_aws_regions);
-        formatter.field("architectural_design", &self.architectural_design);
-        formatter.field("review_owner", &self.review_owner);
-        formatter.field("review_restriction_date", &self.review_restriction_date);
-        formatter.field(
-            "is_review_owner_update_acknowledged",
-            &self.is_review_owner_update_acknowledged,
-        );
-        formatter.field("industry_type", &self.industry_type);
-        formatter.field("industry", &self.industry);
-        formatter.field("notes", &self.notes);
-        formatter.field("improvement_status", &self.improvement_status);
-        formatter.field("risk_counts", &self.risk_counts);
-        formatter.field("pillar_priorities", &self.pillar_priorities);
-        formatter.field("lenses", &self.lenses);
-        formatter.field("owner", &self.owner);
-        formatter.field("share_invitation_id", &self.share_invitation_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Workload`](crate::model::Workload).
@@ -1636,7 +1583,7 @@ impl AsRef<str> for WorkloadEnvironment {
 
 /// <p>The share invitation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShareInvitation {
     /// <p>The ID assigned to the share invitation.</p>
     #[doc(hidden)]
@@ -1680,17 +1627,6 @@ impl ShareInvitation {
     /// <p>The ARN for the lens.</p>
     pub fn lens_arn(&self) -> std::option::Option<&str> {
         self.lens_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ShareInvitation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShareInvitation");
-        formatter.field("share_invitation_id", &self.share_invitation_id);
-        formatter.field("share_resource_type", &self.share_resource_type);
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_arn", &self.lens_arn);
-        formatter.finish()
     }
 }
 /// See [`ShareInvitation`](crate::model::ShareInvitation).
@@ -1973,7 +1909,7 @@ impl AsRef<str> for ShareInvitationAction {
 
 /// <p>A lens review of a question.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LensReview {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -2057,22 +1993,6 @@ impl LensReview {
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for LensReview {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LensReview");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_arn", &self.lens_arn);
-        formatter.field("lens_version", &self.lens_version);
-        formatter.field("lens_name", &self.lens_name);
-        formatter.field("lens_status", &self.lens_status);
-        formatter.field("pillar_review_summaries", &self.pillar_review_summaries);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("notes", &self.notes);
-        formatter.field("risk_counts", &self.risk_counts);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`LensReview`](crate::model::LensReview).
@@ -2251,7 +2171,7 @@ impl LensReview {
 
 /// <p>A pillar review summary of a lens review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PillarReviewSummary {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -2286,16 +2206,6 @@ impl PillarReviewSummary {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::Risk, i32>> {
         self.risk_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for PillarReviewSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PillarReviewSummary");
-        formatter.field("pillar_id", &self.pillar_id);
-        formatter.field("pillar_name", &self.pillar_name);
-        formatter.field("notes", &self.notes);
-        formatter.field("risk_counts", &self.risk_counts);
-        formatter.finish()
     }
 }
 /// See [`PillarReviewSummary`](crate::model::PillarReviewSummary).
@@ -2585,7 +2495,7 @@ impl AsRef<str> for OrganizationSharingStatus {
 
 /// <p>An answer of the question.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Answer {
     /// <p>The ID of the question.</p>
     #[doc(hidden)]
@@ -2692,29 +2602,6 @@ impl Answer {
     /// <p>The reason why the question is not applicable to your workload.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::AnswerReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for Answer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Answer");
-        formatter.field("question_id", &self.question_id);
-        formatter.field("pillar_id", &self.pillar_id);
-        formatter.field("question_title", &self.question_title);
-        formatter.field("question_description", &self.question_description);
-        formatter.field("improvement_plan_url", &self.improvement_plan_url);
-        formatter.field("helpful_resource_url", &self.helpful_resource_url);
-        formatter.field(
-            "helpful_resource_display_text",
-            &self.helpful_resource_display_text,
-        );
-        formatter.field("choices", &self.choices);
-        formatter.field("selected_choices", &self.selected_choices);
-        formatter.field("choice_answers", &self.choice_answers);
-        formatter.field("is_applicable", &self.is_applicable);
-        formatter.field("risk", &self.risk);
-        formatter.field("notes", &self.notes);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`Answer`](crate::model::Answer).
@@ -3074,7 +2961,7 @@ impl AsRef<str> for AnswerReason {
 
 /// <p>A choice that has been answered on a question in your workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChoiceAnswer {
     /// <p>The ID of a choice.</p>
     #[doc(hidden)]
@@ -3105,16 +2992,6 @@ impl ChoiceAnswer {
     /// <p>The notes associated with a choice.</p>
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
-    }
-}
-impl std::fmt::Debug for ChoiceAnswer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChoiceAnswer");
-        formatter.field("choice_id", &self.choice_id);
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.field("notes", &self.notes);
-        formatter.finish()
     }
 }
 /// See [`ChoiceAnswer`](crate::model::ChoiceAnswer).
@@ -3401,7 +3278,7 @@ impl AsRef<str> for ChoiceStatus {
 
 /// <p>A choice available to answer question.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Choice {
     /// <p>The ID of a choice.</p>
     #[doc(hidden)]
@@ -3448,18 +3325,6 @@ impl Choice {
         &self,
     ) -> std::option::Option<&[crate::model::AdditionalResources]> {
         self.additional_resources.as_deref()
-    }
-}
-impl std::fmt::Debug for Choice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Choice");
-        formatter.field("choice_id", &self.choice_id);
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("helpful_resource", &self.helpful_resource);
-        formatter.field("improvement_plan", &self.improvement_plan);
-        formatter.field("additional_resources", &self.additional_resources);
-        formatter.finish()
     }
 }
 /// See [`Choice`](crate::model::Choice).
@@ -3574,7 +3439,7 @@ impl Choice {
 
 /// <p>The choice level additional resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalResources {
     /// <p>Type of additional resource.</p>
     #[doc(hidden)]
@@ -3591,14 +3456,6 @@ impl AdditionalResources {
     /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
     pub fn content(&self) -> std::option::Option<&[crate::model::ChoiceContent]> {
         self.content.as_deref()
-    }
-}
-impl std::fmt::Debug for AdditionalResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalResources");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`AdditionalResources`](crate::model::AdditionalResources).
@@ -3661,7 +3518,7 @@ impl AdditionalResources {
 
 /// <p>The choice content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChoiceContent {
     /// <p>The display text for the choice content.</p>
     #[doc(hidden)]
@@ -3678,14 +3535,6 @@ impl ChoiceContent {
     /// <p>The URL for the choice content.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for ChoiceContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChoiceContent");
-        formatter.field("display_text", &self.display_text);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`ChoiceContent`](crate::model::ChoiceContent).
@@ -3828,7 +3677,7 @@ impl AsRef<str> for AdditionalResourceType {
 
 /// <p>A list of choices to be updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChoiceUpdate {
     /// <p>The status of a choice.</p>
     #[doc(hidden)]
@@ -3852,15 +3701,6 @@ impl ChoiceUpdate {
     /// <p>The notes associated with a choice.</p>
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
-    }
-}
-impl std::fmt::Debug for ChoiceUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChoiceUpdate");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.field("notes", &self.notes);
-        formatter.finish()
     }
 }
 /// See [`ChoiceUpdate`](crate::model::ChoiceUpdate).
@@ -3929,7 +3769,7 @@ impl ChoiceUpdate {
 
 /// <p>A workload share summary return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkloadShareSummary {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
@@ -3967,17 +3807,6 @@ impl WorkloadShareSummary {
     /// <p>Optional message to compliment the Status field.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkloadShareSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkloadShareSummary");
-        formatter.field("share_id", &self.share_id);
-        formatter.field("shared_with", &self.shared_with);
-        formatter.field("permission_type", &self.permission_type);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
@@ -4070,7 +3899,7 @@ impl WorkloadShareSummary {
 
 /// <p>A workload summary return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkloadSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -4135,20 +3964,6 @@ impl WorkloadSummary {
         &self,
     ) -> std::option::Option<&crate::model::WorkloadImprovementStatus> {
         self.improvement_status.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkloadSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkloadSummary");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("workload_arn", &self.workload_arn);
-        formatter.field("workload_name", &self.workload_name);
-        formatter.field("owner", &self.owner);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("lenses", &self.lenses);
-        formatter.field("risk_counts", &self.risk_counts);
-        formatter.field("improvement_status", &self.improvement_status);
-        formatter.finish()
     }
 }
 /// See [`WorkloadSummary`](crate::model::WorkloadSummary).
@@ -4304,7 +4119,7 @@ impl WorkloadSummary {
 
 /// <p>A share invitation summary return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShareInvitationSummary {
     /// <p>The ID assigned to the share invitation.</p>
     #[doc(hidden)]
@@ -4372,21 +4187,6 @@ impl ShareInvitationSummary {
     /// <p>The ARN for the lens.</p>
     pub fn lens_arn(&self) -> std::option::Option<&str> {
         self.lens_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ShareInvitationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShareInvitationSummary");
-        formatter.field("share_invitation_id", &self.share_invitation_id);
-        formatter.field("shared_by", &self.shared_by);
-        formatter.field("shared_with", &self.shared_with);
-        formatter.field("permission_type", &self.permission_type);
-        formatter.field("share_resource_type", &self.share_resource_type);
-        formatter.field("workload_name", &self.workload_name);
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_name", &self.lens_name);
-        formatter.field("lens_arn", &self.lens_arn);
-        formatter.finish()
     }
 }
 /// See [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
@@ -4535,7 +4335,7 @@ impl ShareInvitationSummary {
 
 /// <p>A notification summary return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationSummary {
     /// <p>The type of notification.</p>
     #[doc(hidden)]
@@ -4552,14 +4352,6 @@ impl NotificationSummary {
     /// <p>Summary of lens upgrade.</p>
     pub fn lens_upgrade_summary(&self) -> std::option::Option<&crate::model::LensUpgradeSummary> {
         self.lens_upgrade_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for NotificationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationSummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("lens_upgrade_summary", &self.lens_upgrade_summary);
-        formatter.finish()
     }
 }
 /// See [`NotificationSummary`](crate::model::NotificationSummary).
@@ -4616,7 +4408,7 @@ impl NotificationSummary {
 
 /// <p>Lens upgrade summary return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LensUpgradeSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -4669,18 +4461,6 @@ impl LensUpgradeSummary {
     /// <p>The latest version of the lens.</p>
     pub fn latest_lens_version(&self) -> std::option::Option<&str> {
         self.latest_lens_version.as_deref()
-    }
-}
-impl std::fmt::Debug for LensUpgradeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LensUpgradeSummary");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("workload_name", &self.workload_name);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_arn", &self.lens_arn);
-        formatter.field("current_lens_version", &self.current_lens_version);
-        formatter.field("latest_lens_version", &self.latest_lens_version);
-        formatter.finish()
     }
 }
 /// See [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
@@ -4886,7 +4666,7 @@ impl AsRef<str> for NotificationType {
 
 /// <p>A milestone summary return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MilestoneSummary {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -4921,16 +4701,6 @@ impl MilestoneSummary {
     /// <p>A workload summary return object.</p>
     pub fn workload_summary(&self) -> std::option::Option<&crate::model::WorkloadSummary> {
         self.workload_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for MilestoneSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MilestoneSummary");
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.field("milestone_name", &self.milestone_name);
-        formatter.field("recorded_at", &self.recorded_at);
-        formatter.field("workload_summary", &self.workload_summary);
-        formatter.finish()
     }
 }
 /// See [`MilestoneSummary`](crate::model::MilestoneSummary).
@@ -5018,7 +4788,7 @@ impl MilestoneSummary {
 
 /// <p>A lens share summary return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LensShareSummary {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
@@ -5049,16 +4819,6 @@ impl LensShareSummary {
     /// <p>Optional message to compliment the Status field.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for LensShareSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LensShareSummary");
-        formatter.field("share_id", &self.share_id);
-        formatter.field("shared_with", &self.shared_with);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`LensShareSummary`](crate::model::LensShareSummary).
@@ -5136,7 +4896,7 @@ impl LensShareSummary {
 
 /// <p>A lens review summary of a workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LensReviewSummary {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -5196,19 +4956,6 @@ impl LensReviewSummary {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::Risk, i32>> {
         self.risk_counts.as_ref()
-    }
-}
-impl std::fmt::Debug for LensReviewSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LensReviewSummary");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_arn", &self.lens_arn);
-        formatter.field("lens_version", &self.lens_version);
-        formatter.field("lens_name", &self.lens_name);
-        formatter.field("lens_status", &self.lens_status);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("risk_counts", &self.risk_counts);
-        formatter.finish()
     }
 }
 /// See [`LensReviewSummary`](crate::model::LensReviewSummary).
@@ -5341,7 +5088,7 @@ impl LensReviewSummary {
 
 /// <p>An improvement summary of a lens review in a workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImprovementSummary {
     /// <p>The ID of the question.</p>
     #[doc(hidden)]
@@ -5390,18 +5137,6 @@ impl ImprovementSummary {
     /// <p>The improvement plan details.</p>
     pub fn improvement_plans(&self) -> std::option::Option<&[crate::model::ChoiceImprovementPlan]> {
         self.improvement_plans.as_deref()
-    }
-}
-impl std::fmt::Debug for ImprovementSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImprovementSummary");
-        formatter.field("question_id", &self.question_id);
-        formatter.field("pillar_id", &self.pillar_id);
-        formatter.field("question_title", &self.question_title);
-        formatter.field("risk", &self.risk);
-        formatter.field("improvement_plan_url", &self.improvement_plan_url);
-        formatter.field("improvement_plans", &self.improvement_plans);
-        formatter.finish()
     }
 }
 /// See [`ImprovementSummary`](crate::model::ImprovementSummary).
@@ -5520,7 +5255,7 @@ impl ImprovementSummary {
 
 /// <p>The choice level improvement plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChoiceImprovementPlan {
     /// <p>The ID of a choice.</p>
     #[doc(hidden)]
@@ -5546,15 +5281,6 @@ impl ChoiceImprovementPlan {
     /// <p>This value is only available if the question has been answered.</p>
     pub fn improvement_plan_url(&self) -> std::option::Option<&str> {
         self.improvement_plan_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ChoiceImprovementPlan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChoiceImprovementPlan");
-        formatter.field("choice_id", &self.choice_id);
-        formatter.field("display_text", &self.display_text);
-        formatter.field("improvement_plan_url", &self.improvement_plan_url);
-        formatter.finish()
     }
 }
 /// See [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
@@ -5622,7 +5348,7 @@ impl ChoiceImprovementPlan {
 
 /// <p>A lens summary of a lens.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LensSummary {
     /// <p>The ARN of the lens.</p>
     #[doc(hidden)]
@@ -5701,22 +5427,6 @@ impl LensSummary {
     /// <p>The status of the lens.</p>
     pub fn lens_status(&self) -> std::option::Option<&crate::model::LensStatus> {
         self.lens_status.as_ref()
-    }
-}
-impl std::fmt::Debug for LensSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LensSummary");
-        formatter.field("lens_arn", &self.lens_arn);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_name", &self.lens_name);
-        formatter.field("lens_type", &self.lens_type);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("lens_version", &self.lens_version);
-        formatter.field("owner", &self.owner);
-        formatter.field("lens_status", &self.lens_status);
-        formatter.finish()
     }
 }
 /// See [`LensSummary`](crate::model::LensSummary).
@@ -6068,7 +5778,7 @@ impl AsRef<str> for LensStatusType {
 
 /// <p>An answer summary of a lens review in a workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnswerSummary {
     /// <p>The ID of the question.</p>
     #[doc(hidden)]
@@ -6141,21 +5851,6 @@ impl AnswerSummary {
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::AnswerReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for AnswerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnswerSummary");
-        formatter.field("question_id", &self.question_id);
-        formatter.field("pillar_id", &self.pillar_id);
-        formatter.field("question_title", &self.question_title);
-        formatter.field("choices", &self.choices);
-        formatter.field("selected_choices", &self.selected_choices);
-        formatter.field("choice_answer_summaries", &self.choice_answer_summaries);
-        formatter.field("is_applicable", &self.is_applicable);
-        formatter.field("risk", &self.risk);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`AnswerSummary`](crate::model::AnswerSummary).
@@ -6328,7 +6023,7 @@ impl AnswerSummary {
 
 /// <p>A choice summary that has been answered on a question in your workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChoiceAnswerSummary {
     /// <p>The ID of a choice.</p>
     #[doc(hidden)]
@@ -6352,15 +6047,6 @@ impl ChoiceAnswerSummary {
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::ChoiceReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for ChoiceAnswerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChoiceAnswerSummary");
-        formatter.field("choice_id", &self.choice_id);
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
@@ -6524,7 +6210,7 @@ impl AsRef<str> for ImportLensStatus {
 
 /// <p>A milestone return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Milestone {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -6559,16 +6245,6 @@ impl Milestone {
     /// <p>A workload return object.</p>
     pub fn workload(&self) -> std::option::Option<&crate::model::Workload> {
         self.workload.as_ref()
-    }
-}
-impl std::fmt::Debug for Milestone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Milestone");
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.field("milestone_name", &self.milestone_name);
-        formatter.field("recorded_at", &self.recorded_at);
-        formatter.field("workload", &self.workload);
-        formatter.finish()
     }
 }
 /// See [`Milestone`](crate::model::Milestone).
@@ -6653,7 +6329,7 @@ impl Milestone {
 
 /// <p>The differences between the base and latest versions of the lens.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersionDifferences {
     /// <p>The differences between the base and latest versions of the lens.</p>
     #[doc(hidden)]
@@ -6663,13 +6339,6 @@ impl VersionDifferences {
     /// <p>The differences between the base and latest versions of the lens.</p>
     pub fn pillar_differences(&self) -> std::option::Option<&[crate::model::PillarDifference]> {
         self.pillar_differences.as_deref()
-    }
-}
-impl std::fmt::Debug for VersionDifferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersionDifferences");
-        formatter.field("pillar_differences", &self.pillar_differences);
-        formatter.finish()
     }
 }
 /// See [`VersionDifferences`](crate::model::VersionDifferences).
@@ -6718,7 +6387,7 @@ impl VersionDifferences {
 
 /// <p>A pillar difference return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PillarDifference {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -6751,16 +6420,6 @@ impl PillarDifference {
     /// <p>List of question differences.</p>
     pub fn question_differences(&self) -> std::option::Option<&[crate::model::QuestionDifference]> {
         self.question_differences.as_deref()
-    }
-}
-impl std::fmt::Debug for PillarDifference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PillarDifference");
-        formatter.field("pillar_id", &self.pillar_id);
-        formatter.field("pillar_name", &self.pillar_name);
-        formatter.field("difference_status", &self.difference_status);
-        formatter.field("question_differences", &self.question_differences);
-        formatter.finish()
     }
 }
 /// See [`PillarDifference`](crate::model::PillarDifference).
@@ -6850,7 +6509,7 @@ impl PillarDifference {
 
 /// <p>A question difference return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuestionDifference {
     /// <p>The ID of the question.</p>
     #[doc(hidden)]
@@ -6874,15 +6533,6 @@ impl QuestionDifference {
     /// <p>Indicates the type of change to the question.</p>
     pub fn difference_status(&self) -> std::option::Option<&crate::model::DifferenceStatus> {
         self.difference_status.as_ref()
-    }
-}
-impl std::fmt::Debug for QuestionDifference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuestionDifference");
-        formatter.field("question_id", &self.question_id);
-        formatter.field("question_title", &self.question_title);
-        formatter.field("difference_status", &self.difference_status);
-        formatter.finish()
     }
 }
 /// See [`QuestionDifference`](crate::model::QuestionDifference).
@@ -7046,7 +6696,7 @@ impl AsRef<str> for DifferenceStatus {
 
 /// <p>A report of a lens review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LensReviewReport {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -7078,15 +6728,6 @@ impl LensReviewReport {
     /// <p>This data can be used to create a PDF file.</p>
     pub fn base64_string(&self) -> std::option::Option<&str> {
         self.base64_string.as_deref()
-    }
-}
-impl std::fmt::Debug for LensReviewReport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LensReviewReport");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_arn", &self.lens_arn);
-        formatter.field("base64_string", &self.base64_string);
-        formatter.finish()
     }
 }
 /// See [`LensReviewReport`](crate::model::LensReviewReport).
@@ -7160,7 +6801,7 @@ impl LensReviewReport {
 
 /// <p>A lens return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Lens {
     /// <p>The ARN of a lens.</p>
     #[doc(hidden)]
@@ -7216,19 +6857,6 @@ impl Lens {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Lens {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Lens");
-        formatter.field("lens_arn", &self.lens_arn);
-        formatter.field("lens_version", &self.lens_version);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("owner", &self.owner);
-        formatter.field("share_invitation_id", &self.share_invitation_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Lens`](crate::model::Lens).

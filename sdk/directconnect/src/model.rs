@@ -2,7 +2,7 @@
 
 /// <p>Information about a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>Information about a BGP peer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BgpPeer {
     /// <p>The ID of the BGP peer.</p>
     #[doc(hidden)]
@@ -174,22 +166,6 @@ impl BgpPeer {
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BgpPeer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BgpPeer");
-        formatter.field("bgp_peer_id", &self.bgp_peer_id);
-        formatter.field("asn", &self.asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("bgp_peer_state", &self.bgp_peer_state);
-        formatter.field("bgp_status", &self.bgp_status);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.finish()
     }
 }
 /// See [`BgpPeer`](crate::model::BgpPeer).
@@ -671,7 +647,7 @@ impl AsRef<str> for AddressFamily {
 
 /// <p>Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteFilterPrefix {
     /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
     #[doc(hidden)]
@@ -681,13 +657,6 @@ impl RouteFilterPrefix {
     /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
-    }
-}
-impl std::fmt::Debug for RouteFilterPrefix {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteFilterPrefix");
-        formatter.field("cidr", &self.cidr);
-        formatter.finish()
     }
 }
 /// See [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
@@ -861,7 +830,7 @@ impl AsRef<str> for VirtualInterfaceState {
 
 /// <p>Information about the MAC Security (MACsec) secret key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MacSecKey {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     #[doc(hidden)]
@@ -906,16 +875,6 @@ impl MacSecKey {
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
     pub fn start_on(&self) -> std::option::Option<&str> {
         self.start_on.as_deref()
-    }
-}
-impl std::fmt::Debug for MacSecKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MacSecKey");
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("ckn", &self.ckn);
-        formatter.field("state", &self.state);
-        formatter.field("start_on", &self.start_on);
-        formatter.finish()
     }
 }
 /// See [`MacSecKey`](crate::model::MacSecKey).
@@ -1101,7 +1060,7 @@ impl AsRef<str> for HasLogicalRedundancy {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -1286,34 +1245,6 @@ impl Connection {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
     }
 }
 /// See [`Connection`](crate::model::Connection).
@@ -1939,7 +1870,7 @@ impl AsRef<str> for LagState {
 
 /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectConnectGatewayAssociation {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -2029,31 +1960,6 @@ impl DirectConnectGatewayAssociation {
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
     pub fn virtual_gateway_owner_account(&self) -> std::option::Option<&str> {
         self.virtual_gateway_owner_account.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectConnectGatewayAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectConnectGatewayAssociation");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field(
-            "direct_connect_gateway_owner_account",
-            &self.direct_connect_gateway_owner_account,
-        );
-        formatter.field("association_state", &self.association_state);
-        formatter.field("state_change_error", &self.state_change_error);
-        formatter.field("associated_gateway", &self.associated_gateway);
-        formatter.field("association_id", &self.association_id);
-        formatter.field(
-            "allowed_prefixes_to_direct_connect_gateway",
-            &self.allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("virtual_gateway_region", &self.virtual_gateway_region);
-        formatter.field(
-            "virtual_gateway_owner_account",
-            &self.virtual_gateway_owner_account,
-        );
-        formatter.finish()
     }
 }
 /// See [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
@@ -2265,7 +2171,7 @@ impl DirectConnectGatewayAssociation {
 
 /// <p>Information about the associated gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatedGateway {
     /// <p>The ID of the associated gateway.</p>
     #[doc(hidden)]
@@ -2296,16 +2202,6 @@ impl AssociatedGateway {
     /// <p>The Region where the associated gateway is located.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociatedGateway {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatedGateway");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`AssociatedGateway`](crate::model::AssociatedGateway).
@@ -2586,7 +2482,7 @@ impl AsRef<str> for DirectConnectGatewayAssociationState {
 
 /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectConnectGateway {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -2645,24 +2541,6 @@ impl DirectConnectGateway {
     /// <p>The error message if the state of an object failed to advance.</p>
     pub fn state_change_error(&self) -> std::option::Option<&str> {
         self.state_change_error.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectConnectGateway {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectConnectGateway");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field(
-            "direct_connect_gateway_name",
-            &self.direct_connect_gateway_name,
-        );
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "direct_connect_gateway_state",
-            &self.direct_connect_gateway_state,
-        );
-        formatter.field("state_change_error", &self.state_change_error);
-        formatter.finish()
     }
 }
 /// See [`DirectConnectGateway`](crate::model::DirectConnectGateway).
@@ -2897,7 +2775,7 @@ impl AsRef<str> for DirectConnectGatewayState {
 
 /// <p>Information about the virtual interface failover test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualInterfaceTestHistory {
     /// <p>The ID of the virtual interface failover test.</p>
     #[doc(hidden)]
@@ -2956,20 +2834,6 @@ impl VirtualInterfaceTestHistory {
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualInterfaceTestHistory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualInterfaceTestHistory");
-        formatter.field("test_id", &self.test_id);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("status", &self.status);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("test_duration_in_minutes", &self.test_duration_in_minutes);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
@@ -3113,7 +2977,7 @@ impl VirtualInterfaceTestHistory {
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualInterface {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
@@ -3324,38 +3188,6 @@ impl VirtualInterface {
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub fn site_link_enabled(&self) -> std::option::Option<bool> {
         self.site_link_enabled
-    }
-}
-impl std::fmt::Debug for VirtualInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualInterface");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("location", &self.location);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_type", &self.virtual_interface_type);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.field("customer_router_config", &self.customer_router_config);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("region", &self.region);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_link_enabled", &self.site_link_enabled);
-        formatter.finish()
     }
 }
 /// See [`VirtualInterface`](crate::model::VirtualInterface).
@@ -3792,7 +3624,7 @@ impl VirtualInterface {
 
 /// <p>Information about a virtual private gateway for a private virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGateway {
     /// <p>The ID of the virtual private gateway.</p>
     #[doc(hidden)]
@@ -3821,14 +3653,6 @@ impl VirtualGateway {
     /// </ul>
     pub fn virtual_gateway_state(&self) -> std::option::Option<&str> {
         self.virtual_gateway_state.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualGateway {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGateway");
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("virtual_gateway_state", &self.virtual_gateway_state);
-        formatter.finish()
     }
 }
 /// See [`VirtualGateway`](crate::model::VirtualGateway).
@@ -3897,7 +3721,7 @@ impl VirtualGateway {
 
 /// <p>Information about a tag associated with an Direct Connect resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -3914,14 +3738,6 @@ impl ResourceTag {
     /// <p>The tags.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTag");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ResourceTag`](crate::model::ResourceTag).
@@ -3981,7 +3797,7 @@ impl ResourceTag {
 
 /// <p>Information about the virtual router.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouterType {
     /// <p>The vendor for the virtual interface's router.</p>
     #[doc(hidden)]
@@ -4026,21 +3842,6 @@ impl RouterType {
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
     pub fn router_type_identifier(&self) -> std::option::Option<&str> {
         self.router_type_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for RouterType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouterType");
-        formatter.field("vendor", &self.vendor);
-        formatter.field("platform", &self.platform);
-        formatter.field("software", &self.software);
-        formatter.field("xslt_template_name", &self.xslt_template_name);
-        formatter.field(
-            "xslt_template_name_for_mac_sec",
-            &self.xslt_template_name_for_mac_sec,
-        );
-        formatter.field("router_type_identifier", &self.router_type_identifier);
-        formatter.finish()
     }
 }
 /// See [`RouterType`](crate::model::RouterType).
@@ -4151,7 +3952,7 @@ impl RouterType {
 
 /// <p>Information about an Direct Connect location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Location {
     /// <p>The code for the location.</p>
     #[doc(hidden)]
@@ -4196,21 +3997,6 @@ impl Location {
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
     pub fn available_mac_sec_port_speeds(&self) -> std::option::Option<&[std::string::String]> {
         self.available_mac_sec_port_speeds.as_deref()
-    }
-}
-impl std::fmt::Debug for Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Location");
-        formatter.field("location_code", &self.location_code);
-        formatter.field("location_name", &self.location_name);
-        formatter.field("region", &self.region);
-        formatter.field("available_port_speeds", &self.available_port_speeds);
-        formatter.field("available_providers", &self.available_providers);
-        formatter.field(
-            "available_mac_sec_port_speeds",
-            &self.available_mac_sec_port_speeds,
-        );
-        formatter.finish()
     }
 }
 /// See [`Location`](crate::model::Location).
@@ -4431,7 +4217,7 @@ impl AsRef<str> for LoaContentType {
 
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Lag {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     #[doc(hidden)]
@@ -4603,33 +4389,6 @@ impl Lag {
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for Lag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Lag");
-        formatter.field("connections_bandwidth", &self.connections_bandwidth);
-        formatter.field("number_of_connections", &self.number_of_connections);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("lag_name", &self.lag_name);
-        formatter.field("lag_state", &self.lag_state);
-        formatter.field("location", &self.location);
-        formatter.field("region", &self.region);
-        formatter.field("minimum_links", &self.minimum_links);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("connections", &self.connections);
-        formatter.field("allows_hosted_connections", &self.allows_hosted_connections);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
     }
 }
 /// See [`Lag`](crate::model::Lag).
@@ -4976,7 +4735,7 @@ impl Lag {
 
 /// <p>Information about an interconnect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Interconnect {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -5104,27 +4863,6 @@ impl Interconnect {
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Interconnect {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Interconnect");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.field("interconnect_name", &self.interconnect_name);
-        formatter.field("interconnect_state", &self.interconnect_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.finish()
     }
 }
 /// See [`Interconnect`](crate::model::Interconnect).
@@ -5507,7 +5245,7 @@ impl AsRef<str> for InterconnectState {
 
 /// <p>Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Loa {
     /// <p>The binary contents of the LOA-CFA document.</p>
     #[doc(hidden)]
@@ -5524,14 +5262,6 @@ impl Loa {
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub fn loa_content_type(&self) -> std::option::Option<&crate::model::LoaContentType> {
         self.loa_content_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Loa {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Loa");
-        formatter.field("loa_content", &self.loa_content);
-        formatter.field("loa_content_type", &self.loa_content_type);
-        formatter.finish()
     }
 }
 /// See [`Loa`](crate::model::Loa).
@@ -5588,7 +5318,7 @@ impl Loa {
 
 /// <p>Information about an attachment between a Direct Connect gateway and a virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectConnectGatewayAttachment {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -5656,22 +5386,6 @@ impl DirectConnectGatewayAttachment {
     /// <p>The error message if the state of an object failed to advance.</p>
     pub fn state_change_error(&self) -> std::option::Option<&str> {
         self.state_change_error.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectConnectGatewayAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectConnectGatewayAttachment");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("virtual_interface_region", &self.virtual_interface_region);
-        formatter.field(
-            "virtual_interface_owner_account",
-            &self.virtual_interface_owner_account,
-        );
-        formatter.field("attachment_state", &self.attachment_state);
-        formatter.field("attachment_type", &self.attachment_type);
-        formatter.field("state_change_error", &self.state_change_error);
-        formatter.finish()
     }
 }
 /// See [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
@@ -6028,7 +5742,7 @@ impl AsRef<str> for DirectConnectGatewayAttachmentState {
 
 /// <p>Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectConnectGatewayAssociationProposal {
     /// <p>The ID of the association proposal.</p>
     #[doc(hidden)]
@@ -6101,28 +5815,6 @@ impl DirectConnectGatewayAssociationProposal {
     ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
         self.requested_allowed_prefixes_to_direct_connect_gateway
             .as_deref()
-    }
-}
-impl std::fmt::Debug for DirectConnectGatewayAssociationProposal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectConnectGatewayAssociationProposal");
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field(
-            "direct_connect_gateway_owner_account",
-            &self.direct_connect_gateway_owner_account,
-        );
-        formatter.field("proposal_state", &self.proposal_state);
-        formatter.field("associated_gateway", &self.associated_gateway);
-        formatter.field(
-            "existing_allowed_prefixes_to_direct_connect_gateway",
-            &self.existing_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.field(
-            "requested_allowed_prefixes_to_direct_connect_gateway",
-            &self.requested_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.finish()
     }
 }
 /// See [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
@@ -6486,7 +6178,7 @@ impl AsRef<str> for NniPartnerType {
 
 /// <p>The name and status of a customer agreement. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerAgreement {
     /// <p>The name of the agreement.</p>
     #[doc(hidden)]
@@ -6503,14 +6195,6 @@ impl CustomerAgreement {
     /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomerAgreement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerAgreement");
-        formatter.field("agreement_name", &self.agreement_name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CustomerAgreement`](crate::model::CustomerAgreement).
@@ -6564,7 +6248,7 @@ impl CustomerAgreement {
 
 /// <p>Information about a transit virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewTransitVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     #[doc(hidden)]
@@ -6646,23 +6330,6 @@ impl NewTransitVirtualInterface {
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn enable_site_link(&self) -> std::option::Option<bool> {
         self.enable_site_link
-    }
-}
-impl std::fmt::Debug for NewTransitVirtualInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewTransitVirtualInterface");
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("enable_site_link", &self.enable_site_link);
-        formatter.finish()
     }
 }
 /// See [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
@@ -6847,7 +6514,7 @@ impl NewTransitVirtualInterface {
 
 /// <p>Information about a public virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewPublicVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     #[doc(hidden)]
@@ -6915,21 +6582,6 @@ impl NewPublicVirtualInterface {
     /// <p>The tags associated with the public virtual interface.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for NewPublicVirtualInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewPublicVirtualInterface");
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
@@ -7097,7 +6749,7 @@ impl NewPublicVirtualInterface {
 
 /// <p>Information about a private virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewPrivateVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     #[doc(hidden)]
@@ -7186,24 +6838,6 @@ impl NewPrivateVirtualInterface {
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn enable_site_link(&self) -> std::option::Option<bool> {
         self.enable_site_link
-    }
-}
-impl std::fmt::Debug for NewPrivateVirtualInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewPrivateVirtualInterface");
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("enable_site_link", &self.enable_site_link);
-        formatter.finish()
     }
 }
 /// See [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
@@ -7403,7 +7037,7 @@ impl NewPrivateVirtualInterface {
 
 /// <p>Information about a new BGP peer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewBgpPeer {
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     #[doc(hidden)]
@@ -7441,17 +7075,6 @@ impl NewBgpPeer {
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn customer_address(&self) -> std::option::Option<&str> {
         self.customer_address.as_deref()
-    }
-}
-impl std::fmt::Debug for NewBgpPeer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewBgpPeer");
-        formatter.field("asn", &self.asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.finish()
     }
 }
 /// See [`NewBgpPeer`](crate::model::NewBgpPeer).
@@ -7547,7 +7170,7 @@ impl NewBgpPeer {
 
 /// <p>Information about a transit virtual interface to be provisioned on a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewTransitVirtualInterfaceAllocation {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     #[doc(hidden)]
@@ -7615,21 +7238,6 @@ impl NewTransitVirtualInterfaceAllocation {
     /// <p>The tags associated with the transitive virtual interface.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for NewTransitVirtualInterfaceAllocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewTransitVirtualInterfaceAllocation");
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
@@ -7787,7 +7395,7 @@ impl NewTransitVirtualInterfaceAllocation {
 
 /// <p>Information about a public virtual interface to be provisioned on a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewPublicVirtualInterfaceAllocation {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     #[doc(hidden)]
@@ -7855,21 +7463,6 @@ impl NewPublicVirtualInterfaceAllocation {
     /// <p>The tags associated with the public virtual interface.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for NewPublicVirtualInterfaceAllocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewPublicVirtualInterfaceAllocation");
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
@@ -8037,7 +7630,7 @@ impl NewPublicVirtualInterfaceAllocation {
 
 /// <p>Information about a private virtual interface to be provisioned on a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewPrivateVirtualInterfaceAllocation {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     #[doc(hidden)]
@@ -8105,21 +7698,6 @@ impl NewPrivateVirtualInterfaceAllocation {
     /// <p>The tags associated with the private virtual interface.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for NewPrivateVirtualInterfaceAllocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewPrivateVirtualInterfaceAllocation");
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).

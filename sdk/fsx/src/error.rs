@@ -2,18 +2,11 @@
 
 /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeNotFound {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for VolumeNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl VolumeNotFound {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl VolumeNotFound {
 
 /// <p>A volume configuration is required for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingVolumeConfiguration {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MissingVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingVolumeConfiguration");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MissingVolumeConfiguration {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl MissingVolumeConfiguration {
 
 /// <p>A generic error indicating a server-side failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalServerError {
     /// Returns the error message.
@@ -203,7 +182,7 @@ impl InternalServerError {
 
 /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncompatibleParameterError {
     /// <p>A parameter that is incompatible with the earlier request.</p>
     #[doc(hidden)]
@@ -216,14 +195,6 @@ impl IncompatibleParameterError {
     /// <p>A parameter that is incompatible with the earlier request.</p>
     pub fn parameter(&self) -> std::option::Option<&str> {
         self.parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for IncompatibleParameterError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatibleParameterError");
-        formatter.field("parameter", &self.parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl IncompatibleParameterError {
@@ -292,18 +263,11 @@ impl IncompatibleParameterError {
 
 /// <p>A generic error indicating a failure with a client request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequest {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BadRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequest");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BadRequest {
     /// Returns the error message.
@@ -359,18 +323,11 @@ impl BadRequest {
 
 /// <p>The requested operation is not supported for this resource or API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOperation {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedOperation {
     /// Returns the error message.
@@ -426,18 +383,11 @@ impl UnsupportedOperation {
 
 /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageVirtualMachineNotFound {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StorageVirtualMachineNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageVirtualMachineNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StorageVirtualMachineNotFound {
     /// Returns the error message.
@@ -493,18 +443,11 @@ impl StorageVirtualMachineNotFound {
 
 /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotNotFound {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotNotFound {
     /// Returns the error message.
@@ -560,7 +503,7 @@ impl SnapshotNotFound {
 
 /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceLimitExceeded {
     /// <p>Enumeration of the service limit that was exceeded. </p>
     #[doc(hidden)]
@@ -573,14 +516,6 @@ impl ServiceLimitExceeded {
     /// <p>Enumeration of the service limit that was exceeded. </p>
     pub fn limit(&self) -> std::option::Option<&crate::model::ServiceLimit> {
         self.limit.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceLimitExceeded");
-        formatter.field("limit", &self.limit);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ServiceLimitExceeded {
@@ -649,18 +584,11 @@ impl ServiceLimitExceeded {
 
 /// <p>A file system configuration is required for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingFileSystemConfiguration {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MissingFileSystemConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingFileSystemConfiguration");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MissingFileSystemConfiguration {
     /// Returns the error message.
@@ -716,18 +644,11 @@ impl MissingFileSystemConfiguration {
 
 /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemNotFound {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileSystemNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileSystemNotFound {
     /// Returns the error message.
@@ -783,18 +704,11 @@ impl FileSystemNotFound {
 
 /// <p>A cache configuration is required for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingFileCacheConfiguration {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MissingFileCacheConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingFileCacheConfiguration");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MissingFileCacheConfiguration {
     /// Returns the error message.
@@ -850,18 +764,11 @@ impl MissingFileCacheConfiguration {
 
 /// <p>No caches were found based upon supplied parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileCacheNotFound {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileCacheNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileCacheNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileCacheNotFound {
     /// Returns the error message.
@@ -917,18 +824,11 @@ impl FileCacheNotFound {
 
 /// <p>No data repository associations were found based upon the supplied parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryAssociationNotFound {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DataRepositoryAssociationNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryAssociationNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DataRepositoryAssociationNotFound {
     /// Returns the error message.
@@ -984,7 +884,7 @@ impl DataRepositoryAssociationNotFound {
 
 /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFound {
     /// <p>The resource ARN of the resource that can't be found.</p>
     #[doc(hidden)]
@@ -997,14 +897,6 @@ impl ResourceNotFound {
     /// <p>The resource ARN of the resource that can't be found.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFound");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotFound {
@@ -1073,7 +965,7 @@ impl ResourceNotFound {
 
 /// <p>The resource specified does not support tagging. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDoesNotSupportTagging {
     /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>
     #[doc(hidden)]
@@ -1086,14 +978,6 @@ impl ResourceDoesNotSupportTagging {
     /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceDoesNotSupportTagging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDoesNotSupportTagging");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceDoesNotSupportTagging {
@@ -1162,7 +1046,7 @@ impl ResourceDoesNotSupportTagging {
 
 /// <p>The resource specified for the tagging operation is not a resource type owned by Amazon FSx. Use the API of the relevant service to perform the operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotServiceResourceError {
     /// <p>The Amazon Resource Name (ARN) of the non-Amazon FSx resource.</p>
     #[doc(hidden)]
@@ -1175,14 +1059,6 @@ impl NotServiceResourceError {
     /// <p>The Amazon Resource Name (ARN) of the non-Amazon FSx resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for NotServiceResourceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotServiceResourceError");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl NotServiceResourceError {
@@ -1251,18 +1127,11 @@ impl NotServiceResourceError {
 
 /// <p>The data repository task or tasks you specified could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryTaskNotFound {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DataRepositoryTaskNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryTaskNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DataRepositoryTaskNotFound {
     /// Returns the error message.
@@ -1318,18 +1187,11 @@ impl DataRepositoryTaskNotFound {
 
 /// <p>You have filtered the response to a data repository type that is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDataRepositoryType {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDataRepositoryType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDataRepositoryType");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDataRepositoryType {
     /// Returns the error message.
@@ -1385,18 +1247,11 @@ impl InvalidDataRepositoryType {
 
 /// <p>No Amazon FSx backups were found based upon the supplied parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupNotFound {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BackupNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BackupNotFound {
     /// Returns the error message.
@@ -1452,7 +1307,7 @@ impl BackupNotFound {
 
 /// <p>You can't delete a backup while it's being used to restore a file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupRestoring {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
@@ -1465,14 +1320,6 @@ impl BackupRestoring {
     /// <p>The ID of a file system being restored from the backup.</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupRestoring {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupRestoring");
-        formatter.field("message", &self.message);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
     }
 }
 impl BackupRestoring {
@@ -1544,18 +1391,11 @@ impl BackupRestoring {
 
 /// <p>Another backup is already under way. Wait for completion before initiating additional backups of this file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupInProgress {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BackupInProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupInProgress");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BackupInProgress {
     /// Returns the error message.
@@ -1611,7 +1451,7 @@ impl BackupInProgress {
 
 /// <p>You can't delete a backup while it's being copied.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupBeingCopied {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
@@ -1624,14 +1464,6 @@ impl BackupBeingCopied {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupBeingCopied {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupBeingCopied");
-        formatter.field("message", &self.message);
-        formatter.field("backup_id", &self.backup_id);
-        formatter.finish()
     }
 }
 impl BackupBeingCopied {
@@ -1700,7 +1532,7 @@ impl BackupBeingCopied {
 
 /// <p>An Active Directory error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveDirectoryError {
     /// <p>The directory ID of the directory that an error pertains to.</p>
     #[doc(hidden)]
@@ -1720,15 +1552,6 @@ impl ActiveDirectoryError {
     /// <p>The type of Active Directory error.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ActiveDirectoryErrorType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ActiveDirectoryError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveDirectoryError");
-        formatter.field("active_directory_id", &self.active_directory_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ActiveDirectoryError {
@@ -1815,18 +1638,11 @@ impl ActiveDirectoryError {
 
 /// <p>An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system again, using a valid value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPerUnitStorageThroughput {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPerUnitStorageThroughput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPerUnitStorageThroughput");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPerUnitStorageThroughput {
     /// Returns the error message.
@@ -1882,7 +1698,7 @@ impl InvalidPerUnitStorageThroughput {
 
 /// <p>One or more network settings specified in the request are invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNetworkSettings {
     /// <p>Error message explaining what's wrong with network settings.</p>
     #[doc(hidden)]
@@ -1909,16 +1725,6 @@ impl InvalidNetworkSettings {
     /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
     pub fn invalid_route_table_id(&self) -> std::option::Option<&str> {
         self.invalid_route_table_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidNetworkSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNetworkSettings");
-        formatter.field("message", &self.message);
-        formatter.field("invalid_subnet_id", &self.invalid_subnet_id);
-        formatter.field("invalid_security_group_id", &self.invalid_security_group_id);
-        formatter.field("invalid_route_table_id", &self.invalid_route_table_id);
-        formatter.finish()
     }
 }
 impl InvalidNetworkSettings {
@@ -2020,18 +1826,11 @@ impl InvalidNetworkSettings {
 
 /// <p>The path provided for data repository import isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidImportPath {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidImportPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidImportPath");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidImportPath {
     /// Returns the error message.
@@ -2087,18 +1886,11 @@ impl InvalidImportPath {
 
 /// <p>The path provided for data repository export isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidExportPath {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidExportPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidExportPath");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidExportPath {
     /// Returns the error message.
@@ -2154,18 +1946,11 @@ impl InvalidExportPath {
 
 /// <p>An existing data repository task is currently executing on the file system. Wait until the existing task has completed, then create the new task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryTaskExecuting {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DataRepositoryTaskExecuting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryTaskExecuting");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DataRepositoryTaskExecuting {
     /// Returns the error message.
@@ -2221,7 +2006,7 @@ impl DataRepositoryTaskExecuting {
 
 /// <p>The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceBackupUnavailable {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
@@ -2234,14 +2019,6 @@ impl SourceBackupUnavailable {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceBackupUnavailable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceBackupUnavailable");
-        formatter.field("message", &self.message);
-        formatter.field("backup_id", &self.backup_id);
-        formatter.finish()
     }
 }
 impl SourceBackupUnavailable {
@@ -2310,18 +2087,11 @@ impl SourceBackupUnavailable {
 
 /// <p>The Key Management Service (KMS) key of the source backup is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSourceKmsKey {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSourceKmsKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSourceKmsKey");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSourceKmsKey {
     /// Returns the error message.
@@ -2377,18 +2147,11 @@ impl InvalidSourceKmsKey {
 
 /// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different Amazon Web Services partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRegion {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRegion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRegion");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRegion {
     /// Returns the error message.
@@ -2444,18 +2207,11 @@ impl InvalidRegion {
 
 /// <p>The Key Management Service (KMS) key of the destination backup is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDestinationKmsKey {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDestinationKmsKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDestinationKmsKey");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDestinationKmsKey {
     /// Returns the error message.
@@ -2511,18 +2267,11 @@ impl InvalidDestinationKmsKey {
 
 /// <p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination Region, so the copied backup can't be restored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncompatibleRegionForMultiAz {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IncompatibleRegionForMultiAz {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatibleRegionForMultiAz");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IncompatibleRegionForMultiAz {
     /// Returns the error message.
@@ -2581,18 +2330,11 @@ impl IncompatibleRegionForMultiAz {
 
 /// <p>The data repository task could not be canceled because the task has already ended.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRepositoryTaskEnded {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DataRepositoryTaskEnded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRepositoryTaskEnded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DataRepositoryTaskEnded {
     /// Returns the error message.

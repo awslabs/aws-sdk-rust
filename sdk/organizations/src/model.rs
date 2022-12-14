@@ -528,7 +528,7 @@ impl AsRef<str> for ConstraintViolationExceptionReason {
 
 /// <p>Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Policy {
     /// <p>A structure that contains additional details about the policy.</p>
     #[doc(hidden)]
@@ -545,14 +545,6 @@ impl Policy {
     /// <p>The text content of the policy.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
-    }
-}
-impl std::fmt::Debug for Policy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Policy");
-        formatter.field("policy_summary", &self.policy_summary);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`Policy`](crate::model::Policy).
@@ -606,7 +598,7 @@ impl Policy {
 
 /// <p>Contains information about a policy, but does not include the content. To see the content of a policy, see <code>DescribePolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicySummary {
     /// <p>The unique identifier (ID) of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
@@ -657,18 +649,6 @@ impl PolicySummary {
     /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
     pub fn aws_managed(&self) -> bool {
         self.aws_managed
-    }
-}
-impl std::fmt::Debug for PolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicySummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("aws_managed", &self.aws_managed);
-        formatter.finish()
     }
 }
 /// See [`PolicySummary`](crate::model::PolicySummary).
@@ -878,7 +858,7 @@ impl AsRef<str> for PolicyType {
 
 /// <p>Contains details about an organizational unit (OU). An OU is a container of Amazon Web Services accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationalUnit {
     /// <p>The unique identifier (ID) associated with this OU.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
@@ -908,15 +888,6 @@ impl OrganizationalUnit {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationalUnit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationalUnit");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`OrganizationalUnit`](crate::model::OrganizationalUnit).
@@ -992,7 +963,7 @@ impl OrganizationalUnit {
 /// <li> <p>Policy</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key identifier, or name, of the tag.</p>
     #[doc(hidden)]
@@ -1009,14 +980,6 @@ impl Tag {
     /// <p>The string value that's associated with the key of the tag. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1067,7 +1030,7 @@ impl Tag {
 
 /// <p>Contains information about a root, OU, or account that a policy is attached to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyTargetSummary {
     /// <p>The unique identifier (ID) of the policy target.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
@@ -1114,16 +1077,6 @@ impl PolicyTargetSummary {
     /// <p>The type of the policy target.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyTargetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyTargetSummary");
-        formatter.field("target_id", &self.target_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
@@ -1309,7 +1262,7 @@ impl AsRef<str> for TargetType {
 
 /// <p>Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every Amazon Web Services account in the organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Root {
     /// <p>The unique identifier (ID) for the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
@@ -1350,16 +1303,6 @@ impl Root {
     /// </note>
     pub fn policy_types(&self) -> std::option::Option<&[crate::model::PolicyTypeSummary]> {
         self.policy_types.as_deref()
-    }
-}
-impl std::fmt::Debug for Root {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Root");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("policy_types", &self.policy_types);
-        formatter.finish()
     }
 }
 /// See [`Root`](crate::model::Root).
@@ -1454,7 +1397,7 @@ impl Root {
 
 /// <p>Contains information about a policy type and its status in the associated root.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyTypeSummary {
     /// <p>The name of the policy type.</p>
     #[doc(hidden)]
@@ -1471,14 +1414,6 @@ impl PolicyTypeSummary {
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::PolicyTypeStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyTypeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyTypeSummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
@@ -1627,7 +1562,7 @@ impl AsRef<str> for PolicyTypeStatus {
 
 /// <p>Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parent {
     /// <p>The unique identifier (ID) of the parent entity.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
@@ -1654,14 +1589,6 @@ impl Parent {
     /// <p>The type of the parent entity.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ParentType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Parent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parent");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Parent`](crate::model::Parent).
@@ -1813,7 +1740,7 @@ impl AsRef<str> for ParentType {
 /// <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p>
 /// <p> <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>EXPIRED</code> show up in lists for only 30 days after entering that state After that they are deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Handshake {
     /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
@@ -1902,20 +1829,6 @@ impl Handshake {
     /// <p>Additional information that is needed to process the handshake.</p>
     pub fn resources(&self) -> std::option::Option<&[crate::model::HandshakeResource]> {
         self.resources.as_deref()
-    }
-}
-impl std::fmt::Debug for Handshake {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Handshake");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("parties", &self.parties);
-        formatter.field("state", &self.state);
-        formatter.field("requested_timestamp", &self.requested_timestamp);
-        formatter.field("expiration_timestamp", &self.expiration_timestamp);
-        formatter.field("action", &self.action);
-        formatter.field("resources", &self.resources);
-        formatter.finish()
     }
 }
 /// See [`Handshake`](crate::model::Handshake).
@@ -2150,7 +2063,7 @@ impl std::fmt::Debug for HandshakeResource {
 pub mod handshake_resource {
 
     /// A builder for [`HandshakeResource`](crate::model::HandshakeResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::HandshakeResourceType>,
@@ -2222,6 +2135,15 @@ pub mod handshake_resource {
                 r#type: self.r#type,
                 resources: self.resources,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("resources", &self.resources);
+            formatter.finish()
         }
     }
 }
@@ -2624,7 +2546,7 @@ impl std::fmt::Debug for HandshakeParty {
 pub mod handshake_party {
 
     /// A builder for [`HandshakeParty`](crate::model::HandshakeParty).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::HandshakePartyType>,
@@ -2661,6 +2583,14 @@ pub mod handshake_party {
                 id: self.id,
                 r#type: self.r#type,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.finish()
         }
     }
 }
@@ -2770,7 +2700,7 @@ impl AsRef<str> for HandshakePartyType {
 
 /// <p>Specifies the criteria that are used to select the handshakes for the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HandshakeFilter {
     /// <p>Specifies the type of handshake action.</p>
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
@@ -2793,14 +2723,6 @@ impl HandshakeFilter {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn parent_handshake_id(&self) -> std::option::Option<&str> {
         self.parent_handshake_id.as_deref()
-    }
-}
-impl std::fmt::Debug for HandshakeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HandshakeFilter");
-        formatter.field("action_type", &self.action_type);
-        formatter.field("parent_handshake_id", &self.parent_handshake_id);
-        formatter.finish()
     }
 }
 /// See [`HandshakeFilter`](crate::model::HandshakeFilter).
@@ -2863,7 +2785,7 @@ impl HandshakeFilter {
 
 /// <p>Contains information about the Amazon Web Services service for which the account is a delegated administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegatedService {
     /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
     #[doc(hidden)]
@@ -2880,14 +2802,6 @@ impl DelegatedService {
     /// <p>The date that the account became a delegated administrator for this service. </p>
     pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delegation_enabled_date.as_ref()
-    }
-}
-impl std::fmt::Debug for DelegatedService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegatedService");
-        formatter.field("service_principal", &self.service_principal);
-        formatter.field("delegation_enabled_date", &self.delegation_enabled_date);
-        formatter.finish()
     }
 }
 /// See [`DelegatedService`](crate::model::DelegatedService).
@@ -3023,7 +2937,7 @@ impl std::fmt::Debug for DelegatedAdministrator {
 pub mod delegated_administrator {
 
     /// A builder for [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3139,6 +3053,20 @@ pub mod delegated_administrator {
                 joined_timestamp: self.joined_timestamp,
                 delegation_enabled_date: self.delegation_enabled_date,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("arn", &self.arn);
+            formatter.field("email", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("joined_method", &self.joined_method);
+            formatter.field("joined_timestamp", &self.joined_timestamp);
+            formatter.field("delegation_enabled_date", &self.delegation_enabled_date);
+            formatter.finish()
         }
     }
 }
@@ -3453,7 +3381,7 @@ impl std::fmt::Debug for CreateAccountStatus {
 pub mod create_account_status {
 
     /// A builder for [`CreateAccountStatus`](crate::model::CreateAccountStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) account_name: std::option::Option<std::string::String>,
@@ -3608,6 +3536,20 @@ pub mod create_account_status {
                 gov_cloud_account_id: self.gov_cloud_account_id,
                 failure_reason: self.failure_reason,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("account_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("state", &self.state);
+            formatter.field("requested_timestamp", &self.requested_timestamp);
+            formatter.field("completed_timestamp", &self.completed_timestamp);
+            formatter.field("account_id", &self.account_id);
+            formatter.field("gov_cloud_account_id", &self.gov_cloud_account_id);
+            formatter.field("failure_reason", &self.failure_reason);
+            formatter.finish()
         }
     }
 }
@@ -3896,7 +3838,7 @@ impl AsRef<str> for CreateAccountState {
 
 /// <p>Contains a list of child entities, either OUs or accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Child {
     /// <p>The unique identifier (ID) of this child entity.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
@@ -3923,14 +3865,6 @@ impl Child {
     /// <p>The type of this child entity.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChildType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Child {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Child");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Child`](crate::model::Child).
@@ -4081,7 +4015,7 @@ impl AsRef<str> for ChildType {
 
 /// <p>A structure that contains details of a service principal that represents an Amazon Web Services service that is enabled to integrate with Organizations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnabledServicePrincipal {
     /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
     #[doc(hidden)]
@@ -4098,14 +4032,6 @@ impl EnabledServicePrincipal {
     /// <p>The date that the service principal was enabled for integration with Organizations.</p>
     pub fn date_enabled(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_enabled.as_ref()
-    }
-}
-impl std::fmt::Debug for EnabledServicePrincipal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnabledServicePrincipal");
-        formatter.field("service_principal", &self.service_principal);
-        formatter.field("date_enabled", &self.date_enabled);
-        formatter.finish()
     }
 }
 /// See [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
@@ -4241,7 +4167,7 @@ impl std::fmt::Debug for Account {
 pub mod account {
 
     /// A builder for [`Account`](crate::model::Account).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4350,6 +4276,19 @@ pub mod account {
                 joined_method: self.joined_method,
                 joined_timestamp: self.joined_timestamp,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("arn", &self.arn);
+            formatter.field("email", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("joined_method", &self.joined_method);
+            formatter.field("joined_timestamp", &self.joined_timestamp);
+            formatter.finish()
         }
     }
 }
@@ -4590,7 +4529,7 @@ impl std::fmt::Debug for Organization {
 pub mod organization {
 
     /// A builder for [`Organization`](crate::model::Organization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4720,6 +4659,19 @@ pub mod organization {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("arn", &self.arn);
+            formatter.field("feature_set", &self.feature_set);
+            formatter.field("master_account_arn", &self.master_account_arn);
+            formatter.field("master_account_id", &self.master_account_id);
+            formatter.field("master_account_email", &"*** Sensitive Data Redacted ***");
+            formatter.field("available_policy_types", &self.available_policy_types);
+            formatter.finish()
+        }
+    }
 }
 impl Organization {
     /// Creates a new builder-style object to manufacture [`Organization`](crate::model::Organization).
@@ -4822,7 +4774,7 @@ impl AsRef<str> for OrganizationFeatureSet {
 
 /// <p>Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EffectivePolicy {
     /// <p>The text content of the policy.</p>
     #[doc(hidden)]
@@ -4853,16 +4805,6 @@ impl EffectivePolicy {
     /// <p>The policy type.</p>
     pub fn policy_type(&self) -> std::option::Option<&crate::model::EffectivePolicyType> {
         self.policy_type.as_ref()
-    }
-}
-impl std::fmt::Debug for EffectivePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EffectivePolicy");
-        formatter.field("policy_content", &self.policy_content);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.finish()
     }
 }
 /// See [`EffectivePolicy`](crate::model::EffectivePolicy).

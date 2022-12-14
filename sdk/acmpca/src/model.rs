@@ -127,7 +127,7 @@ impl AsRef<str> for CertificateAuthorityStatus {
 
 /// <p>Certificate revocation information used by the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can configure Online Certificate Status Protocol (OCSP) support and/or maintain a certificate revocation list (CRL). OCSP returns validation information about certificates as requested by clients, and a CRL contains an updated list of certificates revoked by your CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting up a certificate revocation method</a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevocationConfiguration {
     /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes.</p>
     #[doc(hidden)]
@@ -144,14 +144,6 @@ impl RevocationConfiguration {
     /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
     pub fn ocsp_configuration(&self) -> std::option::Option<&crate::model::OcspConfiguration> {
         self.ocsp_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for RevocationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevocationConfiguration");
-        formatter.field("crl_configuration", &self.crl_configuration);
-        formatter.field("ocsp_configuration", &self.ocsp_configuration);
-        formatter.finish()
     }
 }
 /// See [`RevocationConfiguration`](crate::model::RevocationConfiguration).
@@ -209,7 +201,7 @@ impl RevocationConfiguration {
 /// <p>Contains information to enable and configure Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
 /// <p>When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OcspConfiguration {
     /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
     #[doc(hidden)]
@@ -230,14 +222,6 @@ impl OcspConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
     pub fn ocsp_custom_cname(&self) -> std::option::Option<&str> {
         self.ocsp_custom_cname.as_deref()
-    }
-}
-impl std::fmt::Debug for OcspConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OcspConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("ocsp_custom_cname", &self.ocsp_custom_cname);
-        formatter.finish()
     }
 }
 /// See [`OcspConfiguration`](crate::model::OcspConfiguration).
@@ -325,7 +309,7 @@ impl OcspConfiguration {
 /// <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning a certificate revocation list (CRL)</a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrlConfiguration {
     /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
     #[doc(hidden)]
@@ -369,17 +353,6 @@ impl CrlConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3 bucket</a>.</p>
     pub fn s3_object_acl(&self) -> std::option::Option<&crate::model::S3ObjectAcl> {
         self.s3_object_acl.as_ref()
-    }
-}
-impl std::fmt::Debug for CrlConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrlConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("expiration_in_days", &self.expiration_in_days);
-        formatter.field("custom_cname", &self.custom_cname);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_object_acl", &self.s3_object_acl);
-        formatter.finish()
     }
 }
 /// See [`CrlConfiguration`](crate::model::CrlConfiguration).
@@ -568,7 +541,7 @@ impl AsRef<str> for S3ObjectAcl {
 
 /// <p>Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html">TagCertificateAuthority</a> action. To remove a tag, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Key (name) of the tag.</p>
     #[doc(hidden)]
@@ -585,14 +558,6 @@ impl Tag {
     /// <p>Value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -772,7 +737,7 @@ impl AsRef<str> for RevocationReason {
 
 /// <p>Permissions designate which private CA actions can be performed by an Amazon Web Services service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a> action, removed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a> action, and listed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Permission {
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
     #[doc(hidden)]
@@ -817,18 +782,6 @@ impl Permission {
     /// <p>The name of the policy that is associated with the permission.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
-    }
-}
-impl std::fmt::Debug for Permission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Permission");
-        formatter.field("certificate_authority_arn", &self.certificate_authority_arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("principal", &self.principal);
-        formatter.field("source_account", &self.source_account);
-        formatter.field("actions", &self.actions);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
     }
 }
 /// See [`Permission`](crate::model::Permission).
@@ -1040,7 +993,7 @@ impl AsRef<str> for ActionType {
 
 /// <p>Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a> action to import the signed certificate into Certificate Manager (ACM). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateAuthority {
     /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
     #[doc(hidden)]
@@ -1153,32 +1106,6 @@ impl CertificateAuthority {
         &self,
     ) -> std::option::Option<&crate::model::KeyStorageSecurityStandard> {
         self.key_storage_security_standard.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateAuthority {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateAuthority");
-        formatter.field("arn", &self.arn);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_state_change_at", &self.last_state_change_at);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("serial", &self.serial);
-        formatter.field("status", &self.status);
-        formatter.field("not_before", &self.not_before);
-        formatter.field("not_after", &self.not_after);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field(
-            "certificate_authority_configuration",
-            &self.certificate_authority_configuration,
-        );
-        formatter.field("revocation_configuration", &self.revocation_configuration);
-        formatter.field("restorable_until", &self.restorable_until);
-        formatter.field(
-            "key_storage_security_standard",
-            &self.key_storage_security_standard,
-        );
-        formatter.finish()
     }
 }
 /// See [`CertificateAuthority`](crate::model::CertificateAuthority).
@@ -1520,7 +1447,7 @@ impl AsRef<str> for KeyStorageSecurityStandard {
 
 /// <p>Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateAuthorityConfiguration {
     /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
     #[doc(hidden)]
@@ -1553,16 +1480,6 @@ impl CertificateAuthorityConfiguration {
     /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
     pub fn csr_extensions(&self) -> std::option::Option<&crate::model::CsrExtensions> {
         self.csr_extensions.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateAuthorityConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateAuthorityConfiguration");
-        formatter.field("key_algorithm", &self.key_algorithm);
-        formatter.field("signing_algorithm", &self.signing_algorithm);
-        formatter.field("subject", &self.subject);
-        formatter.field("csr_extensions", &self.csr_extensions);
-        formatter.finish()
     }
 }
 /// See [`CertificateAuthorityConfiguration`](crate::model::CertificateAuthorityConfiguration).
@@ -1651,7 +1568,7 @@ impl CertificateAuthorityConfiguration {
 
 /// <p>Describes the certificate extensions to be added to the certificate signing request (CSR).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsrExtensions {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
     #[doc(hidden)]
@@ -1671,17 +1588,6 @@ impl CsrExtensions {
         &self,
     ) -> std::option::Option<&[crate::model::AccessDescription]> {
         self.subject_information_access.as_deref()
-    }
-}
-impl std::fmt::Debug for CsrExtensions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsrExtensions");
-        formatter.field("key_usage", &self.key_usage);
-        formatter.field(
-            "subject_information_access",
-            &self.subject_information_access,
-        );
-        formatter.finish()
     }
 }
 /// See [`CsrExtensions`](crate::model::CsrExtensions).
@@ -1745,7 +1651,7 @@ impl CsrExtensions {
 
 /// <p>Provides access information used by the <code>authorityInfoAccess</code> and <code>subjectInfoAccess</code> extensions described in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDescription {
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
     #[doc(hidden)]
@@ -1762,14 +1668,6 @@ impl AccessDescription {
     /// <p>The location of <code>AccessDescription</code> information.</p>
     pub fn access_location(&self) -> std::option::Option<&crate::model::GeneralName> {
         self.access_location.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDescription");
-        formatter.field("access_method", &self.access_method);
-        formatter.field("access_location", &self.access_location);
-        formatter.finish()
     }
 }
 /// See [`AccessDescription`](crate::model::AccessDescription).
@@ -1826,7 +1724,7 @@ impl AccessDescription {
 
 /// <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeneralName {
     /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
     #[doc(hidden)]
@@ -1885,23 +1783,6 @@ impl GeneralName {
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub fn registered_id(&self) -> std::option::Option<&str> {
         self.registered_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GeneralName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeneralName");
-        formatter.field("other_name", &self.other_name);
-        formatter.field("rfc822_name", &self.rfc822_name);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("directory_name", &self.directory_name);
-        formatter.field("edi_party_name", &self.edi_party_name);
-        formatter.field(
-            "uniform_resource_identifier",
-            &self.uniform_resource_identifier,
-        );
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("registered_id", &self.registered_id);
-        formatter.finish()
     }
 }
 /// See [`GeneralName`](crate::model::GeneralName).
@@ -2042,7 +1923,7 @@ impl GeneralName {
 
 /// <p>Describes an Electronic Data Interchange (EDI) entity as described in as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">Subject Alternative Name</a> in RFC 5280.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EdiPartyName {
     /// <p>Specifies the party name.</p>
     #[doc(hidden)]
@@ -2059,14 +1940,6 @@ impl EdiPartyName {
     /// <p>Specifies the name assigner.</p>
     pub fn name_assigner(&self) -> std::option::Option<&str> {
         self.name_assigner.as_deref()
-    }
-}
-impl std::fmt::Debug for EdiPartyName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EdiPartyName");
-        formatter.field("party_name", &self.party_name);
-        formatter.field("name_assigner", &self.name_assigner);
-        formatter.finish()
     }
 }
 /// See [`EdiPartyName`](crate::model::EdiPartyName).
@@ -2120,7 +1993,7 @@ impl EdiPartyName {
 
 /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Asn1Subject {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
     #[doc(hidden)]
@@ -2236,30 +2109,6 @@ impl Asn1Subject {
     /// </note>
     pub fn custom_attributes(&self) -> std::option::Option<&[crate::model::CustomAttribute]> {
         self.custom_attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for Asn1Subject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Asn1Subject");
-        formatter.field("country", &self.country);
-        formatter.field("organization", &self.organization);
-        formatter.field("organizational_unit", &self.organizational_unit);
-        formatter.field(
-            "distinguished_name_qualifier",
-            &self.distinguished_name_qualifier,
-        );
-        formatter.field("state", &self.state);
-        formatter.field("common_name", &self.common_name);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("locality", &self.locality);
-        formatter.field("title", &self.title);
-        formatter.field("surname", &self.surname);
-        formatter.field("given_name", &self.given_name);
-        formatter.field("initials", &self.initials);
-        formatter.field("pseudonym", &self.pseudonym);
-        formatter.field("generation_qualifier", &self.generation_qualifier);
-        formatter.field("custom_attributes", &self.custom_attributes);
-        formatter.finish()
     }
 }
 /// See [`Asn1Subject`](crate::model::Asn1Subject).
@@ -2499,7 +2348,7 @@ impl Asn1Subject {
 
 /// <p>Defines the X.500 relative distinguished name (RDN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomAttribute {
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
     #[doc(hidden)]
@@ -2518,14 +2367,6 @@ impl CustomAttribute {
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomAttribute");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CustomAttribute`](crate::model::CustomAttribute).
@@ -2581,7 +2422,7 @@ impl CustomAttribute {
 
 /// <p>Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID) and value. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OtherName {
     /// <p>Specifies an OID. </p>
     #[doc(hidden)]
@@ -2598,14 +2439,6 @@ impl OtherName {
     /// <p>Specifies an OID value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for OtherName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OtherName");
-        formatter.field("type_id", &self.type_id);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`OtherName`](crate::model::OtherName).
@@ -2656,7 +2489,7 @@ impl OtherName {
 
 /// <p>Describes the type and format of extension access. Only one of <code>CustomObjectIdentifier</code> or <code>AccessMethodType</code> may be provided. Providing both results in <code>InvalidArgsException</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessMethod {
     /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     #[doc(hidden)]
@@ -2673,14 +2506,6 @@ impl AccessMethod {
     /// <p>Specifies the <code>AccessMethod</code>.</p>
     pub fn access_method_type(&self) -> std::option::Option<&crate::model::AccessMethodType> {
         self.access_method_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessMethod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessMethod");
-        formatter.field("custom_object_identifier", &self.custom_object_identifier);
-        formatter.field("access_method_type", &self.access_method_type);
-        formatter.finish()
     }
 }
 /// See [`AccessMethod`](crate::model::AccessMethod).
@@ -2836,7 +2661,7 @@ impl AsRef<str> for AccessMethodType {
 
 /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyUsage {
     /// <p> Key can be used for digital signing.</p>
     #[doc(hidden)]
@@ -2902,21 +2727,6 @@ impl KeyUsage {
     /// <p>Key can be used only to decipher data.</p>
     pub fn decipher_only(&self) -> bool {
         self.decipher_only
-    }
-}
-impl std::fmt::Debug for KeyUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyUsage");
-        formatter.field("digital_signature", &self.digital_signature);
-        formatter.field("non_repudiation", &self.non_repudiation);
-        formatter.field("key_encipherment", &self.key_encipherment);
-        formatter.field("data_encipherment", &self.data_encipherment);
-        formatter.field("key_agreement", &self.key_agreement);
-        formatter.field("key_cert_sign", &self.key_cert_sign);
-        formatter.field("crl_sign", &self.crl_sign);
-        formatter.field("encipher_only", &self.encipher_only);
-        formatter.field("decipher_only", &self.decipher_only);
-        formatter.finish()
     }
 }
 /// See [`KeyUsage`](crate::model::KeyUsage).
@@ -3546,7 +3356,7 @@ impl AsRef<str> for ResourceOwner {
 /// <p>Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
 /// <p>ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Validity {
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
     #[doc(hidden)]
@@ -3597,14 +3407,6 @@ impl Validity {
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ValidityPeriodType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Validity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Validity");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Validity`](crate::model::Validity).
@@ -3800,7 +3602,7 @@ impl AsRef<str> for ValidityPeriodType {
 /// <p>Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. </p>
 /// <p>If conflicting or duplicate certificate information is supplied from other sources, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiPassthrough {
     /// <p>Specifies X.509 extension information for a certificate.</p>
     #[doc(hidden)]
@@ -3817,14 +3619,6 @@ impl ApiPassthrough {
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub fn subject(&self) -> std::option::Option<&crate::model::Asn1Subject> {
         self.subject.as_ref()
-    }
-}
-impl std::fmt::Debug for ApiPassthrough {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiPassthrough");
-        formatter.field("extensions", &self.extensions);
-        formatter.field("subject", &self.subject);
-        formatter.finish()
     }
 }
 /// See [`ApiPassthrough`](crate::model::ApiPassthrough).
@@ -3881,7 +3675,7 @@ impl ApiPassthrough {
 
 /// <p>Contains X.509 extension information for a certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Extensions {
     /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
@@ -3923,17 +3717,6 @@ impl Extensions {
     /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn custom_extensions(&self) -> std::option::Option<&[crate::model::CustomExtension]> {
         self.custom_extensions.as_deref()
-    }
-}
-impl std::fmt::Debug for Extensions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Extensions");
-        formatter.field("certificate_policies", &self.certificate_policies);
-        formatter.field("extended_key_usage", &self.extended_key_usage);
-        formatter.field("key_usage", &self.key_usage);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.field("custom_extensions", &self.custom_extensions);
-        formatter.finish()
     }
 }
 /// See [`Extensions`](crate::model::Extensions).
@@ -4066,7 +3849,7 @@ impl Extensions {
 /// <p>Specifies the X.509 extension information for a certificate.</p>
 /// <p>Extensions present in <code>CustomExtensions</code> follow the <code>ApiPassthrough</code> <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">template rules</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomExtension {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
@@ -4096,15 +3879,6 @@ impl CustomExtension {
     /// <p>Specifies the critical flag of the X.509 extension.</p>
     pub fn critical(&self) -> std::option::Option<bool> {
         self.critical
-    }
-}
-impl std::fmt::Debug for CustomExtension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomExtension");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.field("value", &self.value);
-        formatter.field("critical", &self.critical);
-        formatter.finish()
     }
 }
 /// See [`CustomExtension`](crate::model::CustomExtension).
@@ -4176,7 +3950,7 @@ impl CustomExtension {
 
 /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendedKeyUsage {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     #[doc(hidden)]
@@ -4195,17 +3969,6 @@ impl ExtendedKeyUsage {
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
     pub fn extended_key_usage_object_identifier(&self) -> std::option::Option<&str> {
         self.extended_key_usage_object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for ExtendedKeyUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendedKeyUsage");
-        formatter.field("extended_key_usage_type", &self.extended_key_usage_type);
-        formatter.field(
-            "extended_key_usage_object_identifier",
-            &self.extended_key_usage_object_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
@@ -4405,7 +4168,7 @@ impl AsRef<str> for ExtendedKeyUsageType {
 
 /// <p>Defines the X.509 <code>CertificatePolicies</code> extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyInformation {
     /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     #[doc(hidden)]
@@ -4422,14 +4185,6 @@ impl PolicyInformation {
     /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
     pub fn policy_qualifiers(&self) -> std::option::Option<&[crate::model::PolicyQualifierInfo]> {
         self.policy_qualifiers.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyInformation");
-        formatter.field("cert_policy_id", &self.cert_policy_id);
-        formatter.field("policy_qualifiers", &self.policy_qualifiers);
-        formatter.finish()
     }
 }
 /// See [`PolicyInformation`](crate::model::PolicyInformation).
@@ -4493,7 +4248,7 @@ impl PolicyInformation {
 
 /// <p>Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyQualifierInfo {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
     #[doc(hidden)]
@@ -4510,14 +4265,6 @@ impl PolicyQualifierInfo {
     /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub fn qualifier(&self) -> std::option::Option<&crate::model::Qualifier> {
         self.qualifier.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyQualifierInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyQualifierInfo");
-        formatter.field("policy_qualifier_id", &self.policy_qualifier_id);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
     }
 }
 /// See [`PolicyQualifierInfo`](crate::model::PolicyQualifierInfo).
@@ -4574,7 +4321,7 @@ impl PolicyQualifierInfo {
 
 /// <p>Defines a <code>PolicyInformation</code> qualifier. ACM Private CA supports the <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     #[doc(hidden)]
@@ -4584,13 +4331,6 @@ impl Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     pub fn cps_uri(&self) -> std::option::Option<&str> {
         self.cps_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for Qualifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Qualifier");
-        formatter.field("cps_uri", &self.cps_uri);
-        formatter.finish()
     }
 }
 /// See [`Qualifier`](crate::model::Qualifier).

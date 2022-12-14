@@ -89,7 +89,7 @@ impl AsRef<str> for IdentityProviderType {
 
 /// <p>The summary of the certificate authority (CA).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebsiteCaSummary {
     /// <p>A unique identifier for the CA.</p>
     #[doc(hidden)]
@@ -113,15 +113,6 @@ impl WebsiteCaSummary {
     /// <p>The name to display.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
-    }
-}
-impl std::fmt::Debug for WebsiteCaSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebsiteCaSummary");
-        formatter.field("website_ca_id", &self.website_ca_id);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
     }
 }
 /// See [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
@@ -190,7 +181,7 @@ impl WebsiteCaSummary {
 
 /// <p>The summary of the website authorization provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebsiteAuthorizationProviderSummary {
     /// <p>A unique identifier for the authorization provider.</p>
     #[doc(hidden)]
@@ -223,19 +214,6 @@ impl WebsiteAuthorizationProviderSummary {
     /// <p>The time of creation.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WebsiteAuthorizationProviderSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebsiteAuthorizationProviderSummary");
-        formatter.field("authorization_provider_id", &self.authorization_provider_id);
-        formatter.field(
-            "authorization_provider_type",
-            &self.authorization_provider_type,
-        );
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
@@ -410,7 +388,7 @@ impl AsRef<str> for AuthorizationProviderType {
 
 /// <p>The summary of the fleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetSummary {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -473,20 +451,6 @@ impl FleetSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for FleetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetSummary");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("company_code", &self.company_code);
-        formatter.field("fleet_status", &self.fleet_status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`FleetSummary`](crate::model::FleetSummary).
@@ -752,7 +716,7 @@ impl AsRef<str> for FleetStatus {
 
 /// <p>The summary of the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainSummary {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
@@ -783,16 +747,6 @@ impl DomainSummary {
     /// <p>The status of the domain.</p>
     pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
         self.domain_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainSummary");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
@@ -1002,7 +956,7 @@ impl AsRef<str> for DomainStatus {
 
 /// <p>The summary of devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceSummary {
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
@@ -1019,14 +973,6 @@ impl DeviceSummary {
     /// <p>The status of the device.</p>
     pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
         self.device_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceSummary");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("device_status", &self.device_status);
-        formatter.finish()
     }
 }
 /// See [`DeviceSummary`](crate::model::DeviceSummary).

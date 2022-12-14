@@ -2,7 +2,7 @@
 
 /// <p>An arbitary key/value pair used to add searchable metadata to secure tunnel resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>The destination configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
     #[doc(hidden)]
@@ -94,14 +86,6 @@ impl DestinationConfig {
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
     pub fn services(&self) -> std::option::Option<&[std::string::String]> {
         self.services.as_deref()
-    }
-}
-impl std::fmt::Debug for DestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfig");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("services", &self.services);
-        formatter.finish()
     }
 }
 /// See [`DestinationConfig`](crate::model::DestinationConfig).
@@ -256,7 +240,7 @@ impl AsRef<str> for ClientMode {
 
 /// <p>Tunnel timeout configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeoutConfig {
     /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
     #[doc(hidden)]
@@ -266,16 +250,6 @@ impl TimeoutConfig {
     /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
     pub fn max_lifetime_timeout_minutes(&self) -> std::option::Option<i32> {
         self.max_lifetime_timeout_minutes
-    }
-}
-impl std::fmt::Debug for TimeoutConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeoutConfig");
-        formatter.field(
-            "max_lifetime_timeout_minutes",
-            &self.max_lifetime_timeout_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`TimeoutConfig`](crate::model::TimeoutConfig).
@@ -314,7 +288,7 @@ impl TimeoutConfig {
 
 /// <p>Information about the tunnel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TunnelSummary {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
     #[doc(hidden)]
@@ -359,18 +333,6 @@ impl TunnelSummary {
     /// <p>The time the tunnel was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for TunnelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TunnelSummary");
-        formatter.field("tunnel_id", &self.tunnel_id);
-        formatter.field("tunnel_arn", &self.tunnel_arn);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`TunnelSummary`](crate::model::TunnelSummary).
@@ -568,7 +530,7 @@ impl AsRef<str> for TunnelStatus {
 
 /// <p>A connection between a source computer and a destination device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tunnel {
     /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
     #[doc(hidden)]
@@ -650,26 +612,6 @@ impl Tunnel {
     /// <p>The last time the tunnel was updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Tunnel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tunnel");
-        formatter.field("tunnel_id", &self.tunnel_id);
-        formatter.field("tunnel_arn", &self.tunnel_arn);
-        formatter.field("status", &self.status);
-        formatter.field("source_connection_state", &self.source_connection_state);
-        formatter.field(
-            "destination_connection_state",
-            &self.destination_connection_state,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field("timeout_config", &self.timeout_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`Tunnel`](crate::model::Tunnel).
@@ -861,7 +803,7 @@ impl Tunnel {
 
 /// <p>The state of a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionState {
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
     #[doc(hidden)]
@@ -878,14 +820,6 @@ impl ConnectionState {
     /// <p>The last time the connection status was updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectionState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionState");
-        formatter.field("status", &self.status);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`ConnectionState`](crate::model::ConnectionState).

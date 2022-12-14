@@ -2,7 +2,7 @@
 
 /// <p>Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The ARN of the replication instance.</p>
     #[doc(hidden)]
@@ -59,21 +59,6 @@ impl Connection {
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     pub fn replication_instance_identifier(&self) -> std::option::Option<&str> {
         self.replication_instance_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_failure_message", &self.last_failure_message);
-        formatter.field("endpoint_identifier", &self.endpoint_identifier);
-        formatter.field(
-            "replication_instance_identifier",
-            &self.replication_instance_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`Connection`](crate::model::Connection).
@@ -199,7 +184,7 @@ impl Connection {
 
 /// <p>Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationTask {
     /// <p>The user-assigned replication task identifier or name.</p>
     /// <p>Constraints:</p>
@@ -427,43 +412,6 @@ impl ReplicationTask {
     /// <p>The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.</p>
     pub fn target_replication_instance_arn(&self) -> std::option::Option<&str> {
         self.target_replication_instance_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationTask");
-        formatter.field(
-            "replication_task_identifier",
-            &self.replication_task_identifier,
-        );
-        formatter.field("source_endpoint_arn", &self.source_endpoint_arn);
-        formatter.field("target_endpoint_arn", &self.target_endpoint_arn);
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("migration_type", &self.migration_type);
-        formatter.field("table_mappings", &self.table_mappings);
-        formatter.field("replication_task_settings", &self.replication_task_settings);
-        formatter.field("status", &self.status);
-        formatter.field("last_failure_message", &self.last_failure_message);
-        formatter.field("stop_reason", &self.stop_reason);
-        formatter.field(
-            "replication_task_creation_date",
-            &self.replication_task_creation_date,
-        );
-        formatter.field(
-            "replication_task_start_date",
-            &self.replication_task_start_date,
-        );
-        formatter.field("cdc_start_position", &self.cdc_start_position);
-        formatter.field("cdc_stop_position", &self.cdc_stop_position);
-        formatter.field("recovery_checkpoint", &self.recovery_checkpoint);
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field("replication_task_stats", &self.replication_task_stats);
-        formatter.field("task_data", &self.task_data);
-        formatter.field(
-            "target_replication_instance_arn",
-            &self.target_replication_instance_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicationTask`](crate::model::ReplicationTask).
@@ -860,7 +808,7 @@ impl ReplicationTask {
 
 /// <p>In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationTaskStats {
     /// <p>The percent complete for the full load migration task.</p>
     #[doc(hidden)]
@@ -940,26 +888,6 @@ impl ReplicationTaskStats {
     /// <p>The date the replication task full load was completed.</p>
     pub fn full_load_finish_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.full_load_finish_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicationTaskStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationTaskStats");
-        formatter.field(
-            "full_load_progress_percent",
-            &self.full_load_progress_percent,
-        );
-        formatter.field("elapsed_time_millis", &self.elapsed_time_millis);
-        formatter.field("tables_loaded", &self.tables_loaded);
-        formatter.field("tables_loading", &self.tables_loading);
-        formatter.field("tables_queued", &self.tables_queued);
-        formatter.field("tables_errored", &self.tables_errored);
-        formatter.field("fresh_start_date", &self.fresh_start_date);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("stop_date", &self.stop_date);
-        formatter.field("full_load_start_date", &self.full_load_start_date);
-        formatter.field("full_load_finish_date", &self.full_load_finish_date);
-        formatter.finish()
     }
 }
 /// See [`ReplicationTaskStats`](crate::model::ReplicationTaskStats).
@@ -1231,7 +1159,7 @@ impl AsRef<str> for MigrationTypeValue {
 /// <p>Provides information that describes a premigration assessment run that you have started using the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
 /// <p>Some of the information appears based on other operations that can return the <code>ReplicationTaskAssessmentRun</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationTaskAssessmentRun {
     /// <p>Amazon Resource Name (ARN) of this assessment run.</p>
     #[doc(hidden)]
@@ -1350,30 +1278,6 @@ impl ReplicationTaskAssessmentRun {
     /// <p>Unique name of the assessment run.</p>
     pub fn assessment_run_name(&self) -> std::option::Option<&str> {
         self.assessment_run_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationTaskAssessmentRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationTaskAssessmentRun");
-        formatter.field(
-            "replication_task_assessment_run_arn",
-            &self.replication_task_assessment_run_arn,
-        );
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "replication_task_assessment_run_creation_date",
-            &self.replication_task_assessment_run_creation_date,
-        );
-        formatter.field("assessment_progress", &self.assessment_progress);
-        formatter.field("last_failure_message", &self.last_failure_message);
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("result_location_bucket", &self.result_location_bucket);
-        formatter.field("result_location_folder", &self.result_location_folder);
-        formatter.field("result_encryption_mode", &self.result_encryption_mode);
-        formatter.field("result_kms_key_arn", &self.result_kms_key_arn);
-        formatter.field("assessment_run_name", &self.assessment_run_name);
-        formatter.finish()
     }
 }
 /// See [`ReplicationTaskAssessmentRun`](crate::model::ReplicationTaskAssessmentRun).
@@ -1615,7 +1519,7 @@ impl ReplicationTaskAssessmentRun {
 
 /// <p>The progress values reported by the <code>AssessmentProgress</code> response element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationTaskAssessmentRunProgress {
     /// <p>The number of individual assessments that are specified to run.</p>
     #[doc(hidden)]
@@ -1632,20 +1536,6 @@ impl ReplicationTaskAssessmentRunProgress {
     /// <p>The number of individual assessments that have completed, successfully or not.</p>
     pub fn individual_assessment_completed_count(&self) -> i32 {
         self.individual_assessment_completed_count
-    }
-}
-impl std::fmt::Debug for ReplicationTaskAssessmentRunProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationTaskAssessmentRunProgress");
-        formatter.field(
-            "individual_assessment_count",
-            &self.individual_assessment_count,
-        );
-        formatter.field(
-            "individual_assessment_completed_count",
-            &self.individual_assessment_completed_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicationTaskAssessmentRunProgress`](crate::model::ReplicationTaskAssessmentRunProgress).
@@ -1890,7 +1780,7 @@ impl AsRef<str> for ReloadOptionValue {
 
 /// <p>Provides the name of the schema and table to be reloaded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableToReload {
     /// <p>The schema name of the table to be reloaded.</p>
     #[doc(hidden)]
@@ -1907,14 +1797,6 @@ impl TableToReload {
     /// <p>The table name of the table to be reloaded.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TableToReload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableToReload");
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
     }
 }
 /// See [`TableToReload`](crate::model::TableToReload).
@@ -1965,7 +1847,7 @@ impl TableToReload {
 
 /// <p>Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshSchemasStatus {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
@@ -2003,17 +1885,6 @@ impl RefreshSchemasStatus {
     /// <p>The last failure message for the schema.</p>
     pub fn last_failure_message(&self) -> std::option::Option<&str> {
         self.last_failure_message.as_deref()
-    }
-}
-impl std::fmt::Debug for RefreshSchemasStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshSchemasStatus");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_refresh_date", &self.last_refresh_date);
-        formatter.field("last_failure_message", &self.last_failure_message);
-        formatter.finish()
     }
 }
 /// See [`RefreshSchemasStatus`](crate::model::RefreshSchemasStatus).
@@ -2209,7 +2080,7 @@ impl AsRef<str> for RefreshSchemasStatusTypeValue {
 
 /// <p>Provides information that defines a replication instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationInstance {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -2445,65 +2316,6 @@ impl ReplicationInstance {
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
     pub fn dns_name_servers(&self) -> std::option::Option<&str> {
         self.dns_name_servers.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationInstance");
-        formatter.field(
-            "replication_instance_identifier",
-            &self.replication_instance_identifier,
-        );
-        formatter.field(
-            "replication_instance_class",
-            &self.replication_instance_class,
-        );
-        formatter.field(
-            "replication_instance_status",
-            &self.replication_instance_status,
-        );
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("instance_create_time", &self.instance_create_time);
-        formatter.field("vpc_security_groups", &self.vpc_security_groups);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("replication_subnet_group", &self.replication_subnet_group);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("pending_modified_values", &self.pending_modified_values);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field(
-            "replication_instance_public_ip_address",
-            &self.replication_instance_public_ip_address,
-        );
-        formatter.field(
-            "replication_instance_private_ip_address",
-            &self.replication_instance_private_ip_address,
-        );
-        formatter.field(
-            "replication_instance_public_ip_addresses",
-            &self.replication_instance_public_ip_addresses,
-        );
-        formatter.field(
-            "replication_instance_private_ip_addresses",
-            &self.replication_instance_private_ip_addresses,
-        );
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field(
-            "secondary_availability_zone",
-            &self.secondary_availability_zone,
-        );
-        formatter.field("free_until", &self.free_until);
-        formatter.field("dns_name_servers", &self.dns_name_servers);
-        formatter.finish()
     }
 }
 /// See [`ReplicationInstance`](crate::model::ReplicationInstance).
@@ -2982,7 +2794,7 @@ impl ReplicationInstance {
 
 /// <p>Provides information about the values of pending modifications to a replication instance. This data type is an object of the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html"> <code>ReplicationInstance</code> </a> user-defined data type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationPendingModifiedValues {
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
@@ -3015,19 +2827,6 @@ impl ReplicationPendingModifiedValues {
     /// <p>The engine version number of the replication instance.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationPendingModifiedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationPendingModifiedValues");
-        formatter.field(
-            "replication_instance_class",
-            &self.replication_instance_class,
-        );
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
     }
 }
 /// See [`ReplicationPendingModifiedValues`](crate::model::ReplicationPendingModifiedValues).
@@ -3110,7 +2909,7 @@ impl ReplicationPendingModifiedValues {
 
 /// <p>Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationSubnetGroup {
     /// <p>The identifier of the replication instance subnet group.</p>
     #[doc(hidden)]
@@ -3148,23 +2947,6 @@ impl ReplicationSubnetGroup {
     /// <p>The subnets that are in the subnet group.</p>
     pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
         self.subnets.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationSubnetGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationSubnetGroup");
-        formatter.field(
-            "replication_subnet_group_identifier",
-            &self.replication_subnet_group_identifier,
-        );
-        formatter.field(
-            "replication_subnet_group_description",
-            &self.replication_subnet_group_description,
-        );
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_group_status", &self.subnet_group_status);
-        formatter.field("subnets", &self.subnets);
-        formatter.finish()
     }
 }
 /// See [`ReplicationSubnetGroup`](crate::model::ReplicationSubnetGroup).
@@ -3275,7 +3057,7 @@ impl ReplicationSubnetGroup {
 
 /// <p>In response to a request by the <code>DescribeReplicationSubnetGroups</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The subnet identifier.</p>
     #[doc(hidden)]
@@ -3299,15 +3081,6 @@ impl Subnet {
     /// <p>The status of the subnet.</p>
     pub fn subnet_status(&self) -> std::option::Option<&str> {
         self.subnet_status.as_deref()
-    }
-}
-impl std::fmt::Debug for Subnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subnet");
-        formatter.field("subnet_identifier", &self.subnet_identifier);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field("subnet_status", &self.subnet_status);
-        formatter.finish()
     }
 }
 /// See [`Subnet`](crate::model::Subnet).
@@ -3379,7 +3152,7 @@ impl Subnet {
 
 /// <p>The name of an Availability Zone for use during database migration. <code>AvailabilityZone</code> is an optional parameter to the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html"> <code>CreateReplicationInstance</code> </a> operation, and it’s value relates to the Amazon Web Services Region of an endpoint. For example, the availability zone of an endpoint in the us-east-1 region might be us-east-1a, us-east-1b, us-east-1c, or us-east-1d.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
@@ -3389,13 +3162,6 @@ impl AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZone");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
@@ -3432,7 +3198,7 @@ impl AvailabilityZone {
 
 /// <p>Describes the status of a security group associated with the virtual private cloud (VPC) hosting your replication and DB instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcSecurityGroupMembership {
     /// <p>The VPC security group ID.</p>
     #[doc(hidden)]
@@ -3449,14 +3215,6 @@ impl VpcSecurityGroupMembership {
     /// <p>The status of the VPC security group.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcSecurityGroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcSecurityGroupMembership");
-        formatter.field("vpc_security_group_id", &self.vpc_security_group_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
@@ -3510,7 +3268,7 @@ impl VpcSecurityGroupMembership {
 
 /// <p>Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The Amazon Web Services customer account associated with the DMS event notification subscription.</p>
     #[doc(hidden)]
@@ -3584,24 +3342,6 @@ impl EventSubscription {
     /// <p>Boolean value that indicates if the event subscription is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for EventSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSubscription");
-        formatter.field("customer_aws_id", &self.customer_aws_id);
-        formatter.field("cust_subscription_id", &self.cust_subscription_id);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "subscription_creation_time",
-            &self.subscription_creation_time,
-        );
-        formatter.field("source_type", &self.source_type);
-        formatter.field("source_ids_list", &self.source_ids_list);
-        formatter.field("event_categories_list", &self.event_categories_list);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`EventSubscription`](crate::model::EventSubscription).
@@ -3779,7 +3519,7 @@ impl EventSubscription {
 /// <li> <p> <code>ModifyEndpoint</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     #[doc(hidden)]
@@ -4038,53 +3778,6 @@ impl Endpoint {
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
     pub fn gcp_my_sql_settings(&self) -> std::option::Option<&crate::model::GcpMySqlSettings> {
         self.gcp_my_sql_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("endpoint_identifier", &self.endpoint_identifier);
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("engine_name", &self.engine_name);
-        formatter.field("engine_display_name", &self.engine_display_name);
-        formatter.field("username", &self.username);
-        formatter.field("server_name", &self.server_name);
-        formatter.field("port", &self.port);
-        formatter.field("database_name", &self.database_name);
-        formatter.field(
-            "extra_connection_attributes",
-            &self.extra_connection_attributes,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("ssl_mode", &self.ssl_mode);
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("external_table_definition", &self.external_table_definition);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("dynamo_db_settings", &self.dynamo_db_settings);
-        formatter.field("s3_settings", &self.s3_settings);
-        formatter.field("dms_transfer_settings", &self.dms_transfer_settings);
-        formatter.field("mongo_db_settings", &self.mongo_db_settings);
-        formatter.field("kinesis_settings", &self.kinesis_settings);
-        formatter.field("kafka_settings", &self.kafka_settings);
-        formatter.field("elasticsearch_settings", &self.elasticsearch_settings);
-        formatter.field("neptune_settings", &self.neptune_settings);
-        formatter.field("redshift_settings", &self.redshift_settings);
-        formatter.field("postgre_sql_settings", &self.postgre_sql_settings);
-        formatter.field("my_sql_settings", &self.my_sql_settings);
-        formatter.field("oracle_settings", &self.oracle_settings);
-        formatter.field("sybase_settings", &self.sybase_settings);
-        formatter.field(
-            "microsoft_sql_server_settings",
-            &self.microsoft_sql_server_settings,
-        );
-        formatter.field("ibm_db2_settings", &self.ibm_db2_settings);
-        formatter.field("doc_db_settings", &self.doc_db_settings);
-        formatter.field("redis_settings", &self.redis_settings);
-        formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
@@ -4779,7 +4472,7 @@ impl std::fmt::Debug for GcpMySqlSettings {
 pub mod gcp_my_sql_settings {
 
     /// A builder for [`GcpMySqlSettings`](crate::model::GcpMySqlSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) after_connect_script: std::option::Option<std::string::String>,
         pub(crate) clean_source_metadata_on_mismatch: std::option::Option<bool>,
@@ -5001,6 +4694,32 @@ pub mod gcp_my_sql_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("after_connect_script", &self.after_connect_script);
+            formatter.field(
+                "clean_source_metadata_on_mismatch",
+                &self.clean_source_metadata_on_mismatch,
+            );
+            formatter.field("database_name", &self.database_name);
+            formatter.field("events_poll_interval", &self.events_poll_interval);
+            formatter.field("target_db_type", &self.target_db_type);
+            formatter.field("max_file_size", &self.max_file_size);
+            formatter.field("parallel_load_threads", &self.parallel_load_threads);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.field("server_name", &self.server_name);
+            formatter.field("server_timezone", &self.server_timezone);
+            formatter.field("username", &self.username);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.finish()
+        }
+    }
 }
 impl GcpMySqlSettings {
     /// Creates a new builder-style object to manufacture [`GcpMySqlSettings`](crate::model::GcpMySqlSettings).
@@ -5176,7 +4895,7 @@ impl std::fmt::Debug for RedisSettings {
 pub mod redis_settings {
 
     /// A builder for [`RedisSettings`](crate::model::RedisSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) server_name: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -5289,6 +5008,19 @@ pub mod redis_settings {
                 auth_password: self.auth_password,
                 ssl_ca_certificate_arn: self.ssl_ca_certificate_arn,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("server_name", &self.server_name);
+            formatter.field("port", &self.port);
+            formatter.field("ssl_security_protocol", &self.ssl_security_protocol);
+            formatter.field("auth_type", &self.auth_type);
+            formatter.field("auth_user_name", &self.auth_user_name);
+            formatter.field("auth_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("ssl_ca_certificate_arn", &self.ssl_ca_certificate_arn);
+            formatter.finish()
         }
     }
 }
@@ -5606,7 +5338,7 @@ impl std::fmt::Debug for DocDbSettings {
 pub mod doc_db_settings {
 
     /// A builder for [`DocDbSettings`](crate::model::DocDbSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -5771,6 +5503,26 @@ pub mod doc_db_settings {
                 secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
                 secrets_manager_secret_id: self.secrets_manager_secret_id,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("server_name", &self.server_name);
+            formatter.field("port", &self.port);
+            formatter.field("database_name", &self.database_name);
+            formatter.field("nesting_level", &self.nesting_level);
+            formatter.field("extract_doc_id", &self.extract_doc_id);
+            formatter.field("docs_to_investigate", &self.docs_to_investigate);
+            formatter.field("kms_key_id", &self.kms_key_id);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.finish()
         }
     }
 }
@@ -5977,7 +5729,7 @@ impl std::fmt::Debug for IbmDb2Settings {
 pub mod ibm_db2_settings {
 
     /// A builder for [`IbmDb2Settings`](crate::model::IbmDb2Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -6121,6 +5873,25 @@ pub mod ibm_db2_settings {
                 secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
                 secrets_manager_secret_id: self.secrets_manager_secret_id,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("database_name", &self.database_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.field("server_name", &self.server_name);
+            formatter.field("set_data_capture_changes", &self.set_data_capture_changes);
+            formatter.field("current_lsn", &self.current_lsn);
+            formatter.field("max_k_bytes_per_read", &self.max_k_bytes_per_read);
+            formatter.field("username", &self.username);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.finish()
         }
     }
 }
@@ -6285,7 +6056,7 @@ impl std::fmt::Debug for MicrosoftSqlServerSettings {
 pub mod microsoft_sql_server_settings {
 
     /// A builder for [`MicrosoftSqlServerSettings`](crate::model::MicrosoftSqlServerSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
         pub(crate) bcp_packet_size: std::option::Option<i32>,
@@ -6504,6 +6275,36 @@ pub mod microsoft_sql_server_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("port", &self.port);
+            formatter.field("bcp_packet_size", &self.bcp_packet_size);
+            formatter.field("database_name", &self.database_name);
+            formatter.field("control_tables_file_group", &self.control_tables_file_group);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "query_single_always_on_node",
+                &self.query_single_always_on_node,
+            );
+            formatter.field("read_backup_only", &self.read_backup_only);
+            formatter.field("safeguard_policy", &self.safeguard_policy);
+            formatter.field("server_name", &self.server_name);
+            formatter.field("username", &self.username);
+            formatter.field("use_bcp_full_load", &self.use_bcp_full_load);
+            formatter.field(
+                "use_third_party_backup_device",
+                &self.use_third_party_backup_device,
+            );
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.field("trim_space_in_char", &self.trim_space_in_char);
+            formatter.finish()
+        }
+    }
 }
 impl MicrosoftSqlServerSettings {
     /// Creates a new builder-style object to manufacture [`MicrosoftSqlServerSettings`](crate::model::MicrosoftSqlServerSettings).
@@ -6695,7 +6496,7 @@ impl std::fmt::Debug for SybaseSettings {
 pub mod sybase_settings {
 
     /// A builder for [`SybaseSettings`](crate::model::SybaseSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -6803,6 +6604,22 @@ pub mod sybase_settings {
                 secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
                 secrets_manager_secret_id: self.secrets_manager_secret_id,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("database_name", &self.database_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.field("server_name", &self.server_name);
+            formatter.field("username", &self.username);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.finish()
         }
     }
 }
@@ -7224,7 +7041,7 @@ impl std::fmt::Debug for OracleSettings {
 pub mod oracle_settings {
 
     /// A builder for [`OracleSettings`](crate::model::OracleSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) add_supplemental_logging: std::option::Option<bool>,
         pub(crate) archived_log_dest_id: std::option::Option<i32>,
@@ -7831,6 +7648,86 @@ pub mod oracle_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("add_supplemental_logging", &self.add_supplemental_logging);
+            formatter.field("archived_log_dest_id", &self.archived_log_dest_id);
+            formatter.field(
+                "additional_archived_log_dest_id",
+                &self.additional_archived_log_dest_id,
+            );
+            formatter.field(
+                "extra_archived_log_dest_ids",
+                &self.extra_archived_log_dest_ids,
+            );
+            formatter.field(
+                "allow_select_nested_tables",
+                &self.allow_select_nested_tables,
+            );
+            formatter.field("parallel_asm_read_threads", &self.parallel_asm_read_threads);
+            formatter.field("read_ahead_blocks", &self.read_ahead_blocks);
+            formatter.field("access_alternate_directly", &self.access_alternate_directly);
+            formatter.field(
+                "use_alternate_folder_for_online",
+                &self.use_alternate_folder_for_online,
+            );
+            formatter.field("oracle_path_prefix", &self.oracle_path_prefix);
+            formatter.field("use_path_prefix", &self.use_path_prefix);
+            formatter.field("replace_path_prefix", &self.replace_path_prefix);
+            formatter.field(
+                "enable_homogenous_tablespace",
+                &self.enable_homogenous_tablespace,
+            );
+            formatter.field("direct_path_no_log", &self.direct_path_no_log);
+            formatter.field("archived_logs_only", &self.archived_logs_only);
+            formatter.field("asm_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("asm_server", &self.asm_server);
+            formatter.field("asm_user", &self.asm_user);
+            formatter.field("char_length_semantics", &self.char_length_semantics);
+            formatter.field("database_name", &self.database_name);
+            formatter.field("direct_path_parallel_load", &self.direct_path_parallel_load);
+            formatter.field(
+                "fail_tasks_on_lob_truncation",
+                &self.fail_tasks_on_lob_truncation,
+            );
+            formatter.field("number_datatype_scale", &self.number_datatype_scale);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.field("read_table_space_name", &self.read_table_space_name);
+            formatter.field("retry_interval", &self.retry_interval);
+            formatter.field("security_db_encryption", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "security_db_encryption_name",
+                &self.security_db_encryption_name,
+            );
+            formatter.field("server_name", &self.server_name);
+            formatter.field(
+                "spatial_data_option_to_geo_json_function_name",
+                &self.spatial_data_option_to_geo_json_function_name,
+            );
+            formatter.field("standby_delay_time", &self.standby_delay_time);
+            formatter.field("username", &self.username);
+            formatter.field("use_b_file", &self.use_b_file);
+            formatter.field("use_direct_path_full_load", &self.use_direct_path_full_load);
+            formatter.field("use_logminer_reader", &self.use_logminer_reader);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.field(
+                "secrets_manager_oracle_asm_access_role_arn",
+                &self.secrets_manager_oracle_asm_access_role_arn,
+            );
+            formatter.field(
+                "secrets_manager_oracle_asm_secret_id",
+                &self.secrets_manager_oracle_asm_secret_id,
+            );
+            formatter.field("trim_space_in_char", &self.trim_space_in_char);
+            formatter.finish()
+        }
+    }
 }
 impl OracleSettings {
     /// Creates a new builder-style object to manufacture [`OracleSettings`](crate::model::OracleSettings).
@@ -8091,7 +7988,7 @@ impl std::fmt::Debug for MySqlSettings {
 pub mod my_sql_settings {
 
     /// A builder for [`MySqlSettings`](crate::model::MySqlSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) after_connect_script: std::option::Option<std::string::String>,
         pub(crate) clean_source_metadata_on_mismatch: std::option::Option<bool>,
@@ -8313,6 +8210,32 @@ pub mod my_sql_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("after_connect_script", &self.after_connect_script);
+            formatter.field(
+                "clean_source_metadata_on_mismatch",
+                &self.clean_source_metadata_on_mismatch,
+            );
+            formatter.field("database_name", &self.database_name);
+            formatter.field("events_poll_interval", &self.events_poll_interval);
+            formatter.field("target_db_type", &self.target_db_type);
+            formatter.field("max_file_size", &self.max_file_size);
+            formatter.field("parallel_load_threads", &self.parallel_load_threads);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.field("server_name", &self.server_name);
+            formatter.field("server_timezone", &self.server_timezone);
+            formatter.field("username", &self.username);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.finish()
+        }
+    }
 }
 impl MySqlSettings {
     /// Creates a new builder-style object to manufacture [`MySqlSettings`](crate::model::MySqlSettings).
@@ -8516,7 +8439,7 @@ impl std::fmt::Debug for PostgreSqlSettings {
 pub mod postgre_sql_settings {
 
     /// A builder for [`PostgreSqlSettings`](crate::model::PostgreSqlSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) after_connect_script: std::option::Option<std::string::String>,
         pub(crate) capture_ddls: std::option::Option<bool>,
@@ -8799,6 +8722,37 @@ pub mod postgre_sql_settings {
                 secrets_manager_secret_id: self.secrets_manager_secret_id,
                 trim_space_in_char: self.trim_space_in_char,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("after_connect_script", &self.after_connect_script);
+            formatter.field("capture_ddls", &self.capture_ddls);
+            formatter.field("max_file_size", &self.max_file_size);
+            formatter.field("database_name", &self.database_name);
+            formatter.field("ddl_artifacts_schema", &self.ddl_artifacts_schema);
+            formatter.field("execute_timeout", &self.execute_timeout);
+            formatter.field(
+                "fail_tasks_on_lob_truncation",
+                &self.fail_tasks_on_lob_truncation,
+            );
+            formatter.field("heartbeat_enable", &self.heartbeat_enable);
+            formatter.field("heartbeat_schema", &self.heartbeat_schema);
+            formatter.field("heartbeat_frequency", &self.heartbeat_frequency);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.field("server_name", &self.server_name);
+            formatter.field("username", &self.username);
+            formatter.field("slot_name", &self.slot_name);
+            formatter.field("plugin_name", &self.plugin_name);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.field("trim_space_in_char", &self.trim_space_in_char);
+            formatter.finish()
         }
     }
 }
@@ -9194,7 +9148,7 @@ impl std::fmt::Debug for RedshiftSettings {
 pub mod redshift_settings {
 
     /// A builder for [`RedshiftSettings`](crate::model::RedshiftSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) accept_any_date: std::option::Option<bool>,
         pub(crate) after_connect_script: std::option::Option<std::string::String>,
@@ -9624,6 +9578,51 @@ pub mod redshift_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("accept_any_date", &self.accept_any_date);
+            formatter.field("after_connect_script", &self.after_connect_script);
+            formatter.field("bucket_folder", &self.bucket_folder);
+            formatter.field("bucket_name", &self.bucket_name);
+            formatter.field("case_sensitive_names", &self.case_sensitive_names);
+            formatter.field("comp_update", &self.comp_update);
+            formatter.field("connection_timeout", &self.connection_timeout);
+            formatter.field("database_name", &self.database_name);
+            formatter.field("date_format", &self.date_format);
+            formatter.field("empty_as_null", &self.empty_as_null);
+            formatter.field("encryption_mode", &self.encryption_mode);
+            formatter.field("explicit_ids", &self.explicit_ids);
+            formatter.field(
+                "file_transfer_upload_streams",
+                &self.file_transfer_upload_streams,
+            );
+            formatter.field("load_timeout", &self.load_timeout);
+            formatter.field("max_file_size", &self.max_file_size);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.field("remove_quotes", &self.remove_quotes);
+            formatter.field("replace_invalid_chars", &self.replace_invalid_chars);
+            formatter.field("replace_chars", &self.replace_chars);
+            formatter.field("server_name", &self.server_name);
+            formatter.field("service_access_role_arn", &self.service_access_role_arn);
+            formatter.field(
+                "server_side_encryption_kms_key_id",
+                &self.server_side_encryption_kms_key_id,
+            );
+            formatter.field("time_format", &self.time_format);
+            formatter.field("trim_blanks", &self.trim_blanks);
+            formatter.field("truncate_columns", &self.truncate_columns);
+            formatter.field("username", &self.username);
+            formatter.field("write_buffer_size", &self.write_buffer_size);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.finish()
+        }
+    }
 }
 impl RedshiftSettings {
     /// Creates a new builder-style object to manufacture [`RedshiftSettings`](crate::model::RedshiftSettings).
@@ -9726,7 +9725,7 @@ impl AsRef<str> for EncryptionModeValue {
 
 /// <p>Provides information that defines an Amazon Neptune endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NeptuneSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
     #[doc(hidden)]
@@ -9778,19 +9777,6 @@ impl NeptuneSettings {
     /// <p>If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.</p>
     pub fn iam_auth_enabled(&self) -> std::option::Option<bool> {
         self.iam_auth_enabled
-    }
-}
-impl std::fmt::Debug for NeptuneSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NeptuneSettings");
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_bucket_folder", &self.s3_bucket_folder);
-        formatter.field("error_retry_duration", &self.error_retry_duration);
-        formatter.field("max_file_size", &self.max_file_size);
-        formatter.field("max_retry_count", &self.max_retry_count);
-        formatter.field("iam_auth_enabled", &self.iam_auth_enabled);
-        formatter.finish()
     }
 }
 /// See [`NeptuneSettings`](crate::model::NeptuneSettings).
@@ -9910,7 +9896,7 @@ impl NeptuneSettings {
 
 /// <p>Provides information that defines an OpenSearch endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     #[doc(hidden)]
@@ -9950,20 +9936,6 @@ impl ElasticsearchSettings {
     /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
     pub fn use_new_mapping_type(&self) -> std::option::Option<bool> {
         self.use_new_mapping_type
-    }
-}
-impl std::fmt::Debug for ElasticsearchSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchSettings");
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("endpoint_uri", &self.endpoint_uri);
-        formatter.field(
-            "full_load_error_percentage",
-            &self.full_load_error_percentage,
-        );
-        formatter.field("error_retry_duration", &self.error_retry_duration);
-        formatter.field("use_new_mapping_type", &self.use_new_mapping_type);
-        formatter.finish()
     }
 }
 /// See [`ElasticsearchSettings`](crate::model::ElasticsearchSettings).
@@ -10229,7 +10201,7 @@ impl std::fmt::Debug for KafkaSettings {
 pub mod kafka_settings {
 
     /// A builder for [`KafkaSettings`](crate::model::KafkaSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) broker: std::option::Option<std::string::String>,
         pub(crate) topic: std::option::Option<std::string::String>,
@@ -10485,6 +10457,45 @@ pub mod kafka_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("broker", &self.broker);
+            formatter.field("topic", &self.topic);
+            formatter.field("message_format", &self.message_format);
+            formatter.field(
+                "include_transaction_details",
+                &self.include_transaction_details,
+            );
+            formatter.field("include_partition_value", &self.include_partition_value);
+            formatter.field(
+                "partition_include_schema_table",
+                &self.partition_include_schema_table,
+            );
+            formatter.field(
+                "include_table_alter_operations",
+                &self.include_table_alter_operations,
+            );
+            formatter.field("include_control_details", &self.include_control_details);
+            formatter.field("message_max_bytes", &self.message_max_bytes);
+            formatter.field("include_null_and_empty", &self.include_null_and_empty);
+            formatter.field("security_protocol", &self.security_protocol);
+            formatter.field(
+                "ssl_client_certificate_arn",
+                &self.ssl_client_certificate_arn,
+            );
+            formatter.field("ssl_client_key_arn", &self.ssl_client_key_arn);
+            formatter.field(
+                "ssl_client_key_password",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("ssl_ca_certificate_arn", &self.ssl_ca_certificate_arn);
+            formatter.field("sasl_username", &self.sasl_username);
+            formatter.field("sasl_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("no_hex_prefix", &self.no_hex_prefix);
+            formatter.finish()
+        }
+    }
 }
 impl KafkaSettings {
     /// Creates a new builder-style object to manufacture [`KafkaSettings`](crate::model::KafkaSettings).
@@ -10694,7 +10705,7 @@ impl AsRef<str> for MessageFormatValue {
 
 /// <p>Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisSettings {
     /// <p>The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams endpoint.</p>
     #[doc(hidden)]
@@ -10767,31 +10778,6 @@ impl KinesisSettings {
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to an Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
     pub fn no_hex_prefix(&self) -> std::option::Option<bool> {
         self.no_hex_prefix
-    }
-}
-impl std::fmt::Debug for KinesisSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisSettings");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("message_format", &self.message_format);
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field(
-            "include_transaction_details",
-            &self.include_transaction_details,
-        );
-        formatter.field("include_partition_value", &self.include_partition_value);
-        formatter.field(
-            "partition_include_schema_table",
-            &self.partition_include_schema_table,
-        );
-        formatter.field(
-            "include_table_alter_operations",
-            &self.include_table_alter_operations,
-        );
-        formatter.field("include_control_details", &self.include_control_details);
-        formatter.field("include_null_and_empty", &self.include_null_and_empty);
-        formatter.field("no_hex_prefix", &self.no_hex_prefix);
-        formatter.finish()
     }
 }
 /// See [`KinesisSettings`](crate::model::KinesisSettings).
@@ -11096,7 +11082,7 @@ impl std::fmt::Debug for MongoDbSettings {
 pub mod mongo_db_settings {
 
     /// A builder for [`MongoDbSettings`](crate::model::MongoDbSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -11317,6 +11303,29 @@ pub mod mongo_db_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("server_name", &self.server_name);
+            formatter.field("port", &self.port);
+            formatter.field("database_name", &self.database_name);
+            formatter.field("auth_type", &self.auth_type);
+            formatter.field("auth_mechanism", &self.auth_mechanism);
+            formatter.field("nesting_level", &self.nesting_level);
+            formatter.field("extract_doc_id", &self.extract_doc_id);
+            formatter.field("docs_to_investigate", &self.docs_to_investigate);
+            formatter.field("auth_source", &self.auth_source);
+            formatter.field("kms_key_id", &self.kms_key_id);
+            formatter.field(
+                "secrets_manager_access_role_arn",
+                &self.secrets_manager_access_role_arn,
+            );
+            formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+            formatter.finish()
+        }
+    }
 }
 impl MongoDbSettings {
     /// Creates a new builder-style object to manufacture [`MongoDbSettings`](crate::model::MongoDbSettings).
@@ -11514,7 +11523,7 @@ impl AsRef<str> for AuthTypeValue {
 
 /// <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DmsTransferSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     #[doc(hidden)]
@@ -11531,14 +11540,6 @@ impl DmsTransferSettings {
     /// <p> The name of the S3 bucket to use. </p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DmsTransferSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DmsTransferSettings");
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.finish()
     }
 }
 /// See [`DmsTransferSettings`](crate::model::DmsTransferSettings).
@@ -11592,7 +11593,7 @@ impl DmsTransferSettings {
 
 /// <p>Settings for exporting data to Amazon S3. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Settings {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an S3 bucket.</p>
     #[doc(hidden)]
@@ -12041,64 +12042,6 @@ impl S3Settings {
     /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Settings");
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("external_table_definition", &self.external_table_definition);
-        formatter.field("csv_row_delimiter", &self.csv_row_delimiter);
-        formatter.field("csv_delimiter", &self.csv_delimiter);
-        formatter.field("bucket_folder", &self.bucket_folder);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("compression_type", &self.compression_type);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field(
-            "server_side_encryption_kms_key_id",
-            &self.server_side_encryption_kms_key_id,
-        );
-        formatter.field("data_format", &self.data_format);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("dict_page_size_limit", &self.dict_page_size_limit);
-        formatter.field("row_group_length", &self.row_group_length);
-        formatter.field("data_page_size", &self.data_page_size);
-        formatter.field("parquet_version", &self.parquet_version);
-        formatter.field("enable_statistics", &self.enable_statistics);
-        formatter.field("include_op_for_full_load", &self.include_op_for_full_load);
-        formatter.field("cdc_inserts_only", &self.cdc_inserts_only);
-        formatter.field("timestamp_column_name", &self.timestamp_column_name);
-        formatter.field(
-            "parquet_timestamp_in_millisecond",
-            &self.parquet_timestamp_in_millisecond,
-        );
-        formatter.field("cdc_inserts_and_updates", &self.cdc_inserts_and_updates);
-        formatter.field("date_partition_enabled", &self.date_partition_enabled);
-        formatter.field("date_partition_sequence", &self.date_partition_sequence);
-        formatter.field("date_partition_delimiter", &self.date_partition_delimiter);
-        formatter.field("use_csv_no_sup_value", &self.use_csv_no_sup_value);
-        formatter.field("csv_no_sup_value", &self.csv_no_sup_value);
-        formatter.field("preserve_transactions", &self.preserve_transactions);
-        formatter.field("cdc_path", &self.cdc_path);
-        formatter.field(
-            "use_task_start_time_for_full_load_timestamp",
-            &self.use_task_start_time_for_full_load_timestamp,
-        );
-        formatter.field("canned_acl_for_objects", &self.canned_acl_for_objects);
-        formatter.field("add_column_name", &self.add_column_name);
-        formatter.field("cdc_max_batch_interval", &self.cdc_max_batch_interval);
-        formatter.field("cdc_min_file_size", &self.cdc_min_file_size);
-        formatter.field("csv_null_value", &self.csv_null_value);
-        formatter.field("ignore_header_rows", &self.ignore_header_rows);
-        formatter.field("max_file_size", &self.max_file_size);
-        formatter.field("rfc4180", &self.rfc4180);
-        formatter.field("date_partition_timezone", &self.date_partition_timezone);
-        formatter.field(
-            "add_trailing_padding_character",
-            &self.add_trailing_padding_character,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 /// See [`S3Settings`](crate::model::S3Settings).
@@ -13558,7 +13501,7 @@ impl AsRef<str> for CompressionTypeValue {
 
 /// <p>Provides the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamoDbSettings {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     #[doc(hidden)]
@@ -13568,13 +13511,6 @@ impl DynamoDbSettings {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DynamoDbSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamoDbSettings");
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.finish()
     }
 }
 /// See [`DynamoDbSettings`](crate::model::DynamoDbSettings).
@@ -13813,7 +13749,7 @@ impl AsRef<str> for ReplicationEndpointTypeValue {
 /// <li> <p> <code>RemoveTagsFromResource</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A key is the required name of the tag. The string value can be 1-128 Unicode characters in length and can't be prefixed with "aws:" or "dms:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     #[doc(hidden)]
@@ -13837,15 +13773,6 @@ impl Tag {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource for which the tag is created.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -13908,7 +13835,7 @@ impl Tag {
 
 /// <p>The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     #[doc(hidden)]
@@ -13981,22 +13908,6 @@ impl Certificate {
     /// <p>The key length of the cryptographic algorithm being used.</p>
     pub fn key_length(&self) -> std::option::Option<i32> {
         self.key_length
-    }
-}
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("certificate_identifier", &self.certificate_identifier);
-        formatter.field("certificate_creation_date", &self.certificate_creation_date);
-        formatter.field("certificate_pem", &self.certificate_pem);
-        formatter.field("certificate_wallet", &self.certificate_wallet);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_owner", &self.certificate_owner);
-        formatter.field("valid_from_date", &self.valid_from_date);
-        formatter.field("valid_to_date", &self.valid_to_date);
-        formatter.field("signing_algorithm", &self.signing_algorithm);
-        formatter.field("key_length", &self.key_length);
-        formatter.finish()
     }
 }
 /// See [`Certificate`](crate::model::Certificate).
@@ -14170,7 +14081,7 @@ impl Certificate {
 
 /// <p>Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableStatistics {
     /// <p>The schema name.</p>
     #[doc(hidden)]
@@ -14336,40 +14247,6 @@ impl TableStatistics {
     /// <p>Additional details about the state of validation.</p>
     pub fn validation_state_details(&self) -> std::option::Option<&str> {
         self.validation_state_details.as_deref()
-    }
-}
-impl std::fmt::Debug for TableStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableStatistics");
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("inserts", &self.inserts);
-        formatter.field("deletes", &self.deletes);
-        formatter.field("updates", &self.updates);
-        formatter.field("ddls", &self.ddls);
-        formatter.field("full_load_rows", &self.full_load_rows);
-        formatter.field(
-            "full_load_condtnl_chk_failed_rows",
-            &self.full_load_condtnl_chk_failed_rows,
-        );
-        formatter.field("full_load_error_rows", &self.full_load_error_rows);
-        formatter.field("full_load_start_time", &self.full_load_start_time);
-        formatter.field("full_load_end_time", &self.full_load_end_time);
-        formatter.field("full_load_reloaded", &self.full_load_reloaded);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("table_state", &self.table_state);
-        formatter.field(
-            "validation_pending_records",
-            &self.validation_pending_records,
-        );
-        formatter.field("validation_failed_records", &self.validation_failed_records);
-        formatter.field(
-            "validation_suspended_records",
-            &self.validation_suspended_records,
-        );
-        formatter.field("validation_state", &self.validation_state);
-        formatter.field("validation_state_details", &self.validation_state_details);
-        formatter.finish()
     }
 }
 /// See [`TableStatistics`](crate::model::TableStatistics).
@@ -14674,7 +14551,7 @@ impl TableStatistics {
 
 /// <p>Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter as specified for a <code>Describe*</code> or similar operation.</p>
     #[doc(hidden)]
@@ -14691,14 +14568,6 @@ impl Filter {
     /// <p>The filter value, which can specify one or more values used to narrow the returned results.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -14758,7 +14627,7 @@ impl Filter {
 
 /// <p>Provides information that describes an individual assessment from a premigration assessment run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationTaskIndividualAssessment {
     /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
     #[doc(hidden)]
@@ -14818,29 +14687,6 @@ impl ReplicationTaskIndividualAssessment {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replication_task_individual_assessment_start_date
             .as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicationTaskIndividualAssessment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationTaskIndividualAssessment");
-        formatter.field(
-            "replication_task_individual_assessment_arn",
-            &self.replication_task_individual_assessment_arn,
-        );
-        formatter.field(
-            "replication_task_assessment_run_arn",
-            &self.replication_task_assessment_run_arn,
-        );
-        formatter.field(
-            "individual_assessment_name",
-            &self.individual_assessment_name,
-        );
-        formatter.field("status", &self.status);
-        formatter.field(
-            "replication_task_individual_assessment_start_date",
-            &self.replication_task_individual_assessment_start_date,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicationTaskIndividualAssessment`](crate::model::ReplicationTaskIndividualAssessment).
@@ -14970,7 +14816,7 @@ impl ReplicationTaskIndividualAssessment {
 
 /// <p> The task assessment report in JSON format. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationTaskAssessmentResult {
     /// <p> The replication task identifier of the task on which the task assessment was run. </p>
     #[doc(hidden)]
@@ -15028,25 +14874,6 @@ impl ReplicationTaskAssessmentResult {
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
     pub fn s3_object_url(&self) -> std::option::Option<&str> {
         self.s3_object_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationTaskAssessmentResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationTaskAssessmentResult");
-        formatter.field(
-            "replication_task_identifier",
-            &self.replication_task_identifier,
-        );
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field(
-            "replication_task_last_assessment_date",
-            &self.replication_task_last_assessment_date,
-        );
-        formatter.field("assessment_status", &self.assessment_status);
-        formatter.field("assessment_results_file", &self.assessment_results_file);
-        formatter.field("assessment_results", &self.assessment_results);
-        formatter.field("s3_object_url", &self.s3_object_url);
-        formatter.finish()
     }
 }
 /// See [`ReplicationTaskAssessmentResult`](crate::model::ReplicationTaskAssessmentResult).
@@ -15189,7 +15016,7 @@ impl ReplicationTaskAssessmentResult {
 
 /// <p>Contains metadata for a replication instance task log.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationInstanceTaskLog {
     /// <p>The name of the replication task.</p>
     #[doc(hidden)]
@@ -15213,18 +15040,6 @@ impl ReplicationInstanceTaskLog {
     /// <p>The size, in bytes, of the replication task log.</p>
     pub fn replication_instance_task_log_size(&self) -> i64 {
         self.replication_instance_task_log_size
-    }
-}
-impl std::fmt::Debug for ReplicationInstanceTaskLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationInstanceTaskLog");
-        formatter.field("replication_task_name", &self.replication_task_name);
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field(
-            "replication_instance_task_log_size",
-            &self.replication_instance_task_log_size,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicationInstanceTaskLog`](crate::model::ReplicationInstanceTaskLog).
@@ -15298,7 +15113,7 @@ impl ReplicationInstanceTaskLog {
 
 /// <p>Identifies an DMS resource and any pending actions for it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePendingMaintenanceActions {
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon Resource Name (ARN) for DMS</a> in the DMS documentation.</p>
     #[doc(hidden)]
@@ -15318,17 +15133,6 @@ impl ResourcePendingMaintenanceActions {
         &self,
     ) -> std::option::Option<&[crate::model::PendingMaintenanceAction]> {
         self.pending_maintenance_action_details.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourcePendingMaintenanceActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePendingMaintenanceActions");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field(
-            "pending_maintenance_action_details",
-            &self.pending_maintenance_action_details,
-        );
-        formatter.finish()
     }
 }
 /// See [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
@@ -15395,7 +15199,7 @@ impl ResourcePendingMaintenanceActions {
 
 /// <p>Describes a maintenance action pending for an DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     #[doc(hidden)]
@@ -15440,18 +15244,6 @@ impl PendingMaintenanceAction {
     /// <p>A description providing more detail about the maintenance action.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for PendingMaintenanceAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingMaintenanceAction");
-        formatter.field("action", &self.action);
-        formatter.field("auto_applied_after_date", &self.auto_applied_after_date);
-        formatter.field("forced_apply_date", &self.forced_apply_date);
-        formatter.field("opt_in_status", &self.opt_in_status);
-        formatter.field("current_apply_date", &self.current_apply_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
@@ -15562,7 +15354,7 @@ impl PendingMaintenanceAction {
 
 /// <p>In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrderableReplicationInstance {
     /// <p>The version of the replication engine.</p>
     #[doc(hidden)]
@@ -15634,27 +15426,6 @@ impl OrderableReplicationInstance {
     /// </note>
     pub fn release_status(&self) -> std::option::Option<&crate::model::ReleaseStatusValues> {
         self.release_status.as_ref()
-    }
-}
-impl std::fmt::Debug for OrderableReplicationInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrderableReplicationInstance");
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "replication_instance_class",
-            &self.replication_instance_class,
-        );
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("min_allocated_storage", &self.min_allocated_storage);
-        formatter.field("max_allocated_storage", &self.max_allocated_storage);
-        formatter.field("default_allocated_storage", &self.default_allocated_storage);
-        formatter.field(
-            "included_allocated_storage",
-            &self.included_allocated_storage,
-        );
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("release_status", &self.release_status);
-        formatter.finish()
     }
 }
 /// See [`OrderableReplicationInstance`](crate::model::OrderableReplicationInstance).
@@ -15900,7 +15671,7 @@ impl AsRef<str> for ReleaseStatusValues {
 
 /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaResponse {
     /// <p>The number of lines of code in a schema in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
@@ -15968,21 +15739,6 @@ impl SchemaResponse {
     /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>
     pub fn similarity(&self) -> std::option::Option<f64> {
         self.similarity
-    }
-}
-impl std::fmt::Debug for SchemaResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaResponse");
-        formatter.field("code_line_count", &self.code_line_count);
-        formatter.field("code_size", &self.code_size);
-        formatter.field("complexity", &self.complexity);
-        formatter.field("server", &self.server);
-        formatter.field("database_instance", &self.database_instance);
-        formatter.field("schema_id", &self.schema_id);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("original_schema", &self.original_schema);
-        formatter.field("similarity", &self.similarity);
-        formatter.finish()
     }
 }
 /// See [`SchemaResponse`](crate::model::SchemaResponse).
@@ -16126,7 +15882,7 @@ impl SchemaResponse {
 
 /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaShortInfoResponse {
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
@@ -16164,17 +15920,6 @@ impl SchemaShortInfoResponse {
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_ip_address(&self) -> std::option::Option<&str> {
         self.database_ip_address.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaShortInfoResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaShortInfoResponse");
-        formatter.field("schema_id", &self.schema_id);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("database_id", &self.database_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("database_ip_address", &self.database_ip_address);
-        formatter.finish()
     }
 }
 /// See [`SchemaShortInfoResponse`](crate::model::SchemaShortInfoResponse).
@@ -16267,7 +16012,7 @@ impl SchemaShortInfoResponse {
 
 /// <p>Describes a database in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseShortInfoResponse {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
@@ -16298,16 +16043,6 @@ impl DatabaseShortInfoResponse {
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
     pub fn database_engine(&self) -> std::option::Option<&str> {
         self.database_engine.as_deref()
-    }
-}
-impl std::fmt::Debug for DatabaseShortInfoResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseShortInfoResponse");
-        formatter.field("database_id", &self.database_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("database_ip_address", &self.database_ip_address);
-        formatter.field("database_engine", &self.database_engine);
-        formatter.finish()
     }
 }
 /// See [`DatabaseShortInfoResponse`](crate::model::DatabaseShortInfoResponse).
@@ -16391,7 +16126,7 @@ impl DatabaseShortInfoResponse {
 
 /// <p>Describes a server in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerShortInfoResponse {
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
@@ -16415,15 +16150,6 @@ impl ServerShortInfoResponse {
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerShortInfoResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerShortInfoResponse");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("server_name", &self.server_name);
-        formatter.finish()
     }
 }
 /// See [`ServerShortInfoResponse`](crate::model::ServerShortInfoResponse).
@@ -16486,7 +16212,7 @@ impl ServerShortInfoResponse {
 
 /// <p>Describes a schema object in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetAdvisorSchemaObjectResponse {
     /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
@@ -16536,17 +16262,6 @@ impl FleetAdvisorSchemaObjectResponse {
     /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn code_size(&self) -> std::option::Option<i64> {
         self.code_size
-    }
-}
-impl std::fmt::Debug for FleetAdvisorSchemaObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetAdvisorSchemaObjectResponse");
-        formatter.field("schema_id", &self.schema_id);
-        formatter.field("object_type", &self.object_type);
-        formatter.field("number_of_objects", &self.number_of_objects);
-        formatter.field("code_line_count", &self.code_line_count);
-        formatter.field("code_size", &self.code_size);
-        formatter.finish()
     }
 }
 /// See [`FleetAdvisorSchemaObjectResponse`](crate::model::FleetAdvisorSchemaObjectResponse).
@@ -16645,7 +16360,7 @@ impl FleetAdvisorSchemaObjectResponse {
 
 /// <p>Describes a large-scale assessment (LSA) analysis run by a Fleet Advisor collector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetAdvisorLsaAnalysisResponse {
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
     #[doc(hidden)]
@@ -16662,14 +16377,6 @@ impl FleetAdvisorLsaAnalysisResponse {
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for FleetAdvisorLsaAnalysisResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetAdvisorLsaAnalysisResponse");
-        formatter.field("lsa_analysis_id", &self.lsa_analysis_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`FleetAdvisorLsaAnalysisResponse`](crate::model::FleetAdvisorLsaAnalysisResponse).
@@ -16723,7 +16430,7 @@ impl FleetAdvisorLsaAnalysisResponse {
 
 /// <p>Describes a database in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseResponse {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
@@ -16778,19 +16485,6 @@ impl DatabaseResponse {
     /// <p>A list of collectors associated with the database.</p>
     pub fn collectors(&self) -> std::option::Option<&[crate::model::CollectorShortInfoResponse]> {
         self.collectors.as_deref()
-    }
-}
-impl std::fmt::Debug for DatabaseResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseResponse");
-        formatter.field("database_id", &self.database_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("number_of_schemas", &self.number_of_schemas);
-        formatter.field("server", &self.server);
-        formatter.field("software_details", &self.software_details);
-        formatter.field("collectors", &self.collectors);
-        formatter.finish()
     }
 }
 /// See [`DatabaseResponse`](crate::model::DatabaseResponse).
@@ -16924,7 +16618,7 @@ impl DatabaseResponse {
 
 /// <p>Briefly describes a Fleet Advisor collector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CollectorShortInfoResponse {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
     #[doc(hidden)]
@@ -16941,14 +16635,6 @@ impl CollectorShortInfoResponse {
     /// <p>The name of the Fleet Advisor collector.</p>
     pub fn collector_name(&self) -> std::option::Option<&str> {
         self.collector_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CollectorShortInfoResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CollectorShortInfoResponse");
-        formatter.field("collector_referenced_id", &self.collector_referenced_id);
-        formatter.field("collector_name", &self.collector_name);
-        formatter.finish()
     }
 }
 /// See [`CollectorShortInfoResponse`](crate::model::CollectorShortInfoResponse).
@@ -17005,7 +16691,7 @@ impl CollectorShortInfoResponse {
 
 /// <p>Describes an inventory database instance for a Fleet Advisor collector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseInstanceSoftwareDetailsResponse {
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
     #[doc(hidden)]
@@ -17057,19 +16743,6 @@ impl DatabaseInstanceSoftwareDetailsResponse {
     /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
     pub fn tooltip(&self) -> std::option::Option<&str> {
         self.tooltip.as_deref()
-    }
-}
-impl std::fmt::Debug for DatabaseInstanceSoftwareDetailsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseInstanceSoftwareDetailsResponse");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("engine_edition", &self.engine_edition);
-        formatter.field("service_pack", &self.service_pack);
-        formatter.field("support_level", &self.support_level);
-        formatter.field("os_architecture", &self.os_architecture);
-        formatter.field("tooltip", &self.tooltip);
-        formatter.finish()
     }
 }
 /// See [`DatabaseInstanceSoftwareDetailsResponse`](crate::model::DatabaseInstanceSoftwareDetailsResponse).
@@ -17189,7 +16862,7 @@ impl DatabaseInstanceSoftwareDetailsResponse {
 
 /// <p>Describes a Fleet Advisor collector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CollectorResponse {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
     #[doc(hidden)]
@@ -17285,25 +16958,6 @@ impl CollectorResponse {
     /// <p>Describes a Fleet Advisor collector inventory.</p>
     pub fn inventory_data(&self) -> std::option::Option<&crate::model::InventoryData> {
         self.inventory_data.as_ref()
-    }
-}
-impl std::fmt::Debug for CollectorResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CollectorResponse");
-        formatter.field("collector_referenced_id", &self.collector_referenced_id);
-        formatter.field("collector_name", &self.collector_name);
-        formatter.field("collector_version", &self.collector_version);
-        formatter.field("version_status", &self.version_status);
-        formatter.field("description", &self.description);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("collector_health_check", &self.collector_health_check);
-        formatter.field("last_data_received", &self.last_data_received);
-        formatter.field("registered_date", &self.registered_date);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("modified_date", &self.modified_date);
-        formatter.field("inventory_data", &self.inventory_data);
-        formatter.finish()
     }
 }
 /// See [`CollectorResponse`](crate::model::CollectorResponse).
@@ -17519,7 +17173,7 @@ impl CollectorResponse {
 
 /// <p>Describes a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryData {
     /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
@@ -17536,14 +17190,6 @@ impl InventoryData {
     /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
     pub fn number_of_schemas(&self) -> std::option::Option<i32> {
         self.number_of_schemas
-    }
-}
-impl std::fmt::Debug for InventoryData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryData");
-        formatter.field("number_of_databases", &self.number_of_databases);
-        formatter.field("number_of_schemas", &self.number_of_schemas);
-        formatter.finish()
     }
 }
 /// See [`InventoryData`](crate::model::InventoryData).
@@ -17594,7 +17240,7 @@ impl InventoryData {
 
 /// <p>Describes the last Fleet Advisor collector health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CollectorHealthCheck {
     /// <p>The status of the Fleet Advisor collector.</p>
     #[doc(hidden)]
@@ -17625,19 +17271,6 @@ impl CollectorHealthCheck {
     /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
     pub fn web_collector_granted_role_based_access(&self) -> std::option::Option<bool> {
         self.web_collector_granted_role_based_access
-    }
-}
-impl std::fmt::Debug for CollectorHealthCheck {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CollectorHealthCheck");
-        formatter.field("collector_status", &self.collector_status);
-        formatter.field("local_collector_s3_access", &self.local_collector_s3_access);
-        formatter.field("web_collector_s3_access", &self.web_collector_s3_access);
-        formatter.field(
-            "web_collector_granted_role_based_access",
-            &self.web_collector_granted_role_based_access,
-        );
-        formatter.finish()
     }
 }
 /// See [`CollectorHealthCheck`](crate::model::CollectorHealthCheck).
@@ -17904,7 +17537,7 @@ impl AsRef<str> for VersionStatus {
 
 /// <p>Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the DMS resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p> The identifier of an event source.</p>
     #[doc(hidden)]
@@ -17944,17 +17577,6 @@ impl Event {
     /// <p>The date of the event.</p>
     pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("message", &self.message);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("date", &self.date);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -18143,7 +17765,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Lists categories of events subscribed to, and generated by, the applicable DMS resource type. This data type appears in response to the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_EventCategoryGroup.html"> <code>DescribeEventCategories</code> </a> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventCategoryGroup {
     /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
@@ -18162,14 +17784,6 @@ impl EventCategoryGroup {
     /// <p> A list of event categories from a source type that you've chosen.</p>
     pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories.as_deref()
-    }
-}
-impl std::fmt::Debug for EventCategoryGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventCategoryGroup");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.finish()
     }
 }
 /// See [`EventCategoryGroup`](crate::model::EventCategoryGroup).
@@ -18231,7 +17845,7 @@ impl EventCategoryGroup {
 
 /// <p>Provides information about types of supported endpoints in response to a request by the <code>DescribeEndpointTypes</code> operation. This information includes the type of endpoint, the database engine name, and whether change data capture (CDC) is supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SupportedEndpointType {
     /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
     #[doc(hidden)]
@@ -18271,20 +17885,6 @@ impl SupportedEndpointType {
     /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
     pub fn engine_display_name(&self) -> std::option::Option<&str> {
         self.engine_display_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SupportedEndpointType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SupportedEndpointType");
-        formatter.field("engine_name", &self.engine_name);
-        formatter.field("supports_cdc", &self.supports_cdc);
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field(
-            "replication_instance_engine_minimum_version",
-            &self.replication_instance_engine_minimum_version,
-        );
-        formatter.field("engine_display_name", &self.engine_display_name);
-        formatter.finish()
     }
 }
 /// See [`SupportedEndpointType`](crate::model::SupportedEndpointType).
@@ -18385,7 +17985,7 @@ impl SupportedEndpointType {
 
 /// <p>Endpoint settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointSetting {
     /// <p>The name that you want to give the endpoint settings.</p>
     #[doc(hidden)]
@@ -18451,21 +18051,6 @@ impl EndpointSetting {
     /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointSetting");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("enum_values", &self.enum_values);
-        formatter.field("sensitive", &self.sensitive);
-        formatter.field("units", &self.units);
-        formatter.field("applicability", &self.applicability);
-        formatter.field("int_value_min", &self.int_value_min);
-        formatter.field("int_value_max", &self.int_value_max);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`EndpointSetting`](crate::model::EndpointSetting).
@@ -18720,7 +18305,7 @@ impl AsRef<str> for EndpointSettingTypeValue {
 
 /// <p>Describes a quota for an Amazon Web Services account, for example the number of replication instances allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountQuota {
     /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -18744,15 +18329,6 @@ impl AccountQuota {
     /// <p>The maximum allowed value for the quota.</p>
     pub fn max(&self) -> i64 {
         self.max
-    }
-}
-impl std::fmt::Debug for AccountQuota {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountQuota");
-        formatter.field("account_quota_name", &self.account_quota_name);
-        formatter.field("used", &self.used);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`AccountQuota`](crate::model::AccountQuota).

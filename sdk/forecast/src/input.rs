@@ -11728,7 +11728,7 @@ impl UpdateDatasetGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatasetGroupInput {
     /// <p>The ARN of the dataset group.</p>
     #[doc(hidden)]
@@ -11747,18 +11747,10 @@ impl UpdateDatasetGroupInput {
         self.dataset_arns.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDatasetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDatasetGroupInput");
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("dataset_arns", &self.dataset_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     #[doc(hidden)]
@@ -11777,18 +11769,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     #[doc(hidden)]
@@ -11827,18 +11811,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
     #[doc(hidden)]
@@ -11850,17 +11826,10 @@ impl StopResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to resume.</p>
     #[doc(hidden)]
@@ -11872,17 +11841,10 @@ impl ResumeResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResumeResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWhatIfForecastsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -11930,19 +11892,10 @@ impl ListWhatIfForecastsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListWhatIfForecastsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWhatIfForecastsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWhatIfForecastExportsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -11990,19 +11943,10 @@ impl ListWhatIfForecastExportsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListWhatIfForecastExportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWhatIfForecastExportsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWhatIfAnalysesInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12050,19 +11994,10 @@ impl ListWhatIfAnalysesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListWhatIfAnalysesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWhatIfAnalysesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     #[doc(hidden)]
@@ -12074,17 +12009,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPredictorsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12126,19 +12054,10 @@ impl ListPredictorsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListPredictorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPredictorsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPredictorBacktestExportJobsInput {
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12176,19 +12095,10 @@ impl ListPredictorBacktestExportJobsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListPredictorBacktestExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPredictorBacktestExportJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMonitorsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12230,19 +12140,10 @@ impl ListMonitorsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListMonitorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMonitorsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMonitorEvaluationsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12291,20 +12192,10 @@ impl ListMonitorEvaluationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListMonitorEvaluationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMonitorEvaluationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListForecastsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12346,19 +12237,10 @@ impl ListForecastsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListForecastsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListForecastsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListForecastExportJobsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12406,19 +12288,10 @@ impl ListForecastExportJobsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListForecastExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListForecastExportJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExplainabilityExportsInput {
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12456,19 +12329,10 @@ impl ListExplainabilityExportsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListExplainabilityExportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExplainabilityExportsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExplainabilitiesInput {
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12506,19 +12370,10 @@ impl ListExplainabilitiesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListExplainabilitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExplainabilitiesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12537,18 +12392,10 @@ impl ListDatasetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatasetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetImportJobsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12590,19 +12437,10 @@ impl ListDatasetImportJobsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListDatasetImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetImportJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetGroupsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
@@ -12621,18 +12459,10 @@ impl ListDatasetGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatasetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccuracyMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
     #[doc(hidden)]
@@ -12644,17 +12474,10 @@ impl GetAccuracyMetricsInput {
         self.predictor_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccuracyMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccuracyMetricsInput");
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWhatIfForecastExportInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
     #[doc(hidden)]
@@ -12666,20 +12489,10 @@ impl DescribeWhatIfForecastExportInput {
         self.what_if_forecast_export_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWhatIfForecastExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWhatIfForecastExportInput");
-        formatter.field(
-            "what_if_forecast_export_arn",
-            &self.what_if_forecast_export_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWhatIfForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
     #[doc(hidden)]
@@ -12691,17 +12504,10 @@ impl DescribeWhatIfForecastInput {
         self.what_if_forecast_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWhatIfForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWhatIfForecastInput");
-        formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWhatIfAnalysisInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
     #[doc(hidden)]
@@ -12713,17 +12519,10 @@ impl DescribeWhatIfAnalysisInput {
         self.what_if_analysis_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWhatIfAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWhatIfAnalysisInput");
-        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
     #[doc(hidden)]
@@ -12735,20 +12534,10 @@ impl DescribePredictorBacktestExportJobInput {
         self.predictor_backtest_export_job_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePredictorBacktestExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePredictorBacktestExportJobInput");
-        formatter.field(
-            "predictor_backtest_export_job_arn",
-            &self.predictor_backtest_export_job_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
     #[doc(hidden)]
@@ -12760,17 +12549,10 @@ impl DescribePredictorInput {
         self.predictor_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePredictorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePredictorInput");
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMonitorInput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
     #[doc(hidden)]
@@ -12782,17 +12564,10 @@ impl DescribeMonitorInput {
         self.monitor_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMonitorInput");
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeForecastExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
     #[doc(hidden)]
@@ -12804,17 +12579,10 @@ impl DescribeForecastExportJobInput {
         self.forecast_export_job_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeForecastExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeForecastExportJobInput");
-        formatter.field("forecast_export_job_arn", &self.forecast_export_job_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     #[doc(hidden)]
@@ -12826,17 +12594,10 @@ impl DescribeForecastInput {
         self.forecast_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeForecastInput");
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExplainabilityExportInput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     #[doc(hidden)]
@@ -12848,17 +12609,10 @@ impl DescribeExplainabilityExportInput {
         self.explainability_export_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExplainabilityExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExplainabilityExportInput");
-        formatter.field("explainability_export_arn", &self.explainability_export_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExplainabilityInput {
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
     #[doc(hidden)]
@@ -12870,17 +12624,10 @@ impl DescribeExplainabilityInput {
         self.explainability_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExplainabilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExplainabilityInput");
-        formatter.field("explainability_arn", &self.explainability_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     #[doc(hidden)]
@@ -12892,17 +12639,10 @@ impl DescribeDatasetImportJobInput {
         self.dataset_import_job_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetImportJobInput");
-        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
@@ -12914,17 +12654,10 @@ impl DescribeDatasetGroupInput {
         self.dataset_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetGroupInput");
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
@@ -12936,17 +12669,10 @@ impl DescribeDatasetInput {
         self.dataset_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutoPredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
     #[doc(hidden)]
@@ -12958,17 +12684,10 @@ impl DescribeAutoPredictorInput {
         self.predictor_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAutoPredictorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoPredictorInput");
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWhatIfForecastExportInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
     #[doc(hidden)]
@@ -12980,20 +12699,10 @@ impl DeleteWhatIfForecastExportInput {
         self.what_if_forecast_export_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWhatIfForecastExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWhatIfForecastExportInput");
-        formatter.field(
-            "what_if_forecast_export_arn",
-            &self.what_if_forecast_export_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWhatIfForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
     #[doc(hidden)]
@@ -13005,17 +12714,10 @@ impl DeleteWhatIfForecastInput {
         self.what_if_forecast_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWhatIfForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWhatIfForecastInput");
-        formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWhatIfAnalysisInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
     #[doc(hidden)]
@@ -13027,17 +12729,10 @@ impl DeleteWhatIfAnalysisInput {
         self.what_if_analysis_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWhatIfAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWhatIfAnalysisInput");
-        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceTreeInput {
     /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
     #[doc(hidden)]
@@ -13049,17 +12744,10 @@ impl DeleteResourceTreeInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceTreeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceTreeInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
     #[doc(hidden)]
@@ -13071,20 +12759,10 @@ impl DeletePredictorBacktestExportJobInput {
         self.predictor_backtest_export_job_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePredictorBacktestExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePredictorBacktestExportJobInput");
-        formatter.field(
-            "predictor_backtest_export_job_arn",
-            &self.predictor_backtest_export_job_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
     #[doc(hidden)]
@@ -13096,17 +12774,10 @@ impl DeletePredictorInput {
         self.predictor_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePredictorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePredictorInput");
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMonitorInput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
     #[doc(hidden)]
@@ -13118,17 +12789,10 @@ impl DeleteMonitorInput {
         self.monitor_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMonitorInput");
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteForecastExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
     #[doc(hidden)]
@@ -13140,17 +12804,10 @@ impl DeleteForecastExportJobInput {
         self.forecast_export_job_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteForecastExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteForecastExportJobInput");
-        formatter.field("forecast_export_job_arn", &self.forecast_export_job_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
     #[doc(hidden)]
@@ -13162,17 +12819,10 @@ impl DeleteForecastInput {
         self.forecast_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteForecastInput");
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExplainabilityExportInput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
     #[doc(hidden)]
@@ -13184,17 +12834,10 @@ impl DeleteExplainabilityExportInput {
         self.explainability_export_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteExplainabilityExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExplainabilityExportInput");
-        formatter.field("explainability_export_arn", &self.explainability_export_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExplainabilityInput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
     #[doc(hidden)]
@@ -13206,17 +12849,10 @@ impl DeleteExplainabilityInput {
         self.explainability_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteExplainabilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExplainabilityInput");
-        formatter.field("explainability_arn", &self.explainability_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
     #[doc(hidden)]
@@ -13228,17 +12864,10 @@ impl DeleteDatasetImportJobInput {
         self.dataset_import_job_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetImportJobInput");
-        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
     #[doc(hidden)]
@@ -13250,17 +12879,10 @@ impl DeleteDatasetGroupInput {
         self.dataset_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetGroupInput");
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
     #[doc(hidden)]
@@ -13272,17 +12894,10 @@ impl DeleteDatasetInput {
         self.dataset_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWhatIfForecastExportInput {
     /// <p>The name of the what-if forecast to export.</p>
     #[doc(hidden)]
@@ -13324,24 +12939,10 @@ impl CreateWhatIfForecastExportInput {
         self.format.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWhatIfForecastExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWhatIfForecastExportInput");
-        formatter.field(
-            "what_if_forecast_export_name",
-            &self.what_if_forecast_export_name,
-        );
-        formatter.field("what_if_forecast_arns", &self.what_if_forecast_arns);
-        formatter.field("destination", &self.destination);
-        formatter.field("tags", &self.tags);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWhatIfForecastInput {
     /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
     #[doc(hidden)]
@@ -13391,27 +12992,10 @@ impl CreateWhatIfForecastInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWhatIfForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWhatIfForecastInput");
-        formatter.field("what_if_forecast_name", &self.what_if_forecast_name);
-        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
-        formatter.field(
-            "time_series_transformations",
-            &self.time_series_transformations,
-        );
-        formatter.field(
-            "time_series_replacements_data_source",
-            &self.time_series_replacements_data_source,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWhatIfAnalysisInput {
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
     #[doc(hidden)]
@@ -13456,20 +13040,10 @@ impl CreateWhatIfAnalysisInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWhatIfAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWhatIfAnalysisInput");
-        formatter.field("what_if_analysis_name", &self.what_if_analysis_name);
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.field("time_series_selector", &self.time_series_selector);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePredictorBacktestExportJobInput {
     /// <p>The name for the backtest export job.</p>
     #[doc(hidden)]
@@ -13527,24 +13101,10 @@ impl CreatePredictorBacktestExportJobInput {
         self.format.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePredictorBacktestExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePredictorBacktestExportJobInput");
-        formatter.field(
-            "predictor_backtest_export_job_name",
-            &self.predictor_backtest_export_job_name,
-        );
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.field("destination", &self.destination);
-        formatter.field("tags", &self.tags);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePredictorInput {
     /// <p>A name for the predictor.</p>
     #[doc(hidden)]
@@ -13734,31 +13294,10 @@ impl CreatePredictorInput {
         self.optimization_metric.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePredictorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePredictorInput");
-        formatter.field("predictor_name", &self.predictor_name);
-        formatter.field("algorithm_arn", &self.algorithm_arn);
-        formatter.field("forecast_horizon", &self.forecast_horizon);
-        formatter.field("forecast_types", &self.forecast_types);
-        formatter.field("perform_auto_ml", &self.perform_auto_ml);
-        formatter.field("auto_ml_override_strategy", &self.auto_ml_override_strategy);
-        formatter.field("perform_hpo", &self.perform_hpo);
-        formatter.field("training_parameters", &self.training_parameters);
-        formatter.field("evaluation_parameters", &self.evaluation_parameters);
-        formatter.field("hpo_config", &self.hpo_config);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("featurization_config", &self.featurization_config);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("optimization_metric", &self.optimization_metric);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMonitorInput {
     /// <p>The name of the monitor resource.</p>
     #[doc(hidden)]
@@ -13784,19 +13323,10 @@ impl CreateMonitorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMonitorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMonitorInput");
-        formatter.field("monitor_name", &self.monitor_name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateForecastExportJobInput {
     /// <p>The name for the forecast export job.</p>
     #[doc(hidden)]
@@ -13858,21 +13388,10 @@ impl CreateForecastExportJobInput {
         self.format.as_deref()
     }
 }
-impl std::fmt::Debug for CreateForecastExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateForecastExportJobInput");
-        formatter.field("forecast_export_job_name", &self.forecast_export_job_name);
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.field("destination", &self.destination);
-        formatter.field("tags", &self.tags);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateForecastInput {
     /// <p>A name for the forecast.</p>
     #[doc(hidden)]
@@ -13946,21 +13465,10 @@ impl CreateForecastInput {
         self.time_series_selector.as_ref()
     }
 }
-impl std::fmt::Debug for CreateForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateForecastInput");
-        formatter.field("forecast_name", &self.forecast_name);
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.field("forecast_types", &self.forecast_types);
-        formatter.field("tags", &self.tags);
-        formatter.field("time_series_selector", &self.time_series_selector);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExplainabilityExportInput {
     /// <p>A unique name for the Explainability export.</p>
     #[doc(hidden)]
@@ -14018,24 +13526,10 @@ impl CreateExplainabilityExportInput {
         self.format.as_deref()
     }
 }
-impl std::fmt::Debug for CreateExplainabilityExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExplainabilityExportInput");
-        formatter.field(
-            "explainability_export_name",
-            &self.explainability_export_name,
-        );
-        formatter.field("explainability_arn", &self.explainability_arn);
-        formatter.field("destination", &self.destination);
-        formatter.field("tags", &self.tags);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExplainabilityInput {
     /// <p>A unique name for the Explainability.</p>
     #[doc(hidden)]
@@ -14127,25 +13621,10 @@ impl CreateExplainabilityInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateExplainabilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExplainabilityInput");
-        formatter.field("explainability_name", &self.explainability_name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("explainability_config", &self.explainability_config);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("schema", &self.schema);
-        formatter.field("enable_visualization", &self.enable_visualization);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetImportJobInput {
     /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
     #[doc(hidden)]
@@ -14255,28 +13734,10 @@ impl CreateDatasetImportJobInput {
         self.format.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDatasetImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetImportJobInput");
-        formatter.field("dataset_import_job_name", &self.dataset_import_job_name);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("timestamp_format", &self.timestamp_format);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.field(
-            "use_geolocation_for_time_zone",
-            &self.use_geolocation_for_time_zone,
-        );
-        formatter.field("geolocation_format", &self.geolocation_format);
-        formatter.field("tags", &self.tags);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetGroupInput {
     /// <p>A name for the dataset group.</p>
     #[doc(hidden)]
@@ -14331,20 +13792,10 @@ impl CreateDatasetGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDatasetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetGroupInput");
-        formatter.field("dataset_group_name", &self.dataset_group_name);
-        formatter.field("domain", &self.domain);
-        formatter.field("dataset_arns", &self.dataset_arns);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>A name for the dataset.</p>
     #[doc(hidden)]
@@ -14422,23 +13873,10 @@ impl CreateDatasetInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetInput");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("domain", &self.domain);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("data_frequency", &self.data_frequency);
-        formatter.field("schema", &self.schema);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAutoPredictorInput {
     /// <p>A unique name for the predictor</p>
     #[doc(hidden)]
@@ -14568,24 +14006,5 @@ impl CreateAutoPredictorInput {
         &self,
     ) -> std::option::Option<&crate::model::TimeAlignmentBoundary> {
         self.time_alignment_boundary.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAutoPredictorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAutoPredictorInput");
-        formatter.field("predictor_name", &self.predictor_name);
-        formatter.field("forecast_horizon", &self.forecast_horizon);
-        formatter.field("forecast_types", &self.forecast_types);
-        formatter.field("forecast_dimensions", &self.forecast_dimensions);
-        formatter.field("forecast_frequency", &self.forecast_frequency);
-        formatter.field("data_config", &self.data_config);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.field("reference_predictor_arn", &self.reference_predictor_arn);
-        formatter.field("optimization_metric", &self.optimization_metric);
-        formatter.field("explain_predictor", &self.explain_predictor);
-        formatter.field("tags", &self.tags);
-        formatter.field("monitor_config", &self.monitor_config);
-        formatter.field("time_alignment_boundary", &self.time_alignment_boundary);
-        formatter.finish()
     }
 }

@@ -492,7 +492,7 @@ impl PostToConnectionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostToConnectionInput {
     /// <p>The data to be sent to the client specified by its connection id.</p>
     #[doc(hidden)]
@@ -511,18 +511,10 @@ impl PostToConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for PostToConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostToConnectionInput");
-        formatter.field("data", &self.data);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectionInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -534,17 +526,10 @@ impl GetConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -554,12 +539,5 @@ impl DeleteConnectionInput {
     #[allow(missing_docs)] // documentation missing in model
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
     }
 }

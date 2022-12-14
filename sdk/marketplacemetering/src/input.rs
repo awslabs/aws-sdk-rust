@@ -709,7 +709,7 @@ impl ResolveCustomerInput {
 
 /// <p>Contains input to the <code>ResolveCustomer</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolveCustomerInput {
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
     #[doc(hidden)]
@@ -721,17 +721,10 @@ impl ResolveCustomerInput {
         self.registration_token.as_deref()
     }
 }
-impl std::fmt::Debug for ResolveCustomerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolveCustomerInput");
-        formatter.field("registration_token", &self.registration_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     #[doc(hidden)]
@@ -757,19 +750,10 @@ impl RegisterUsageInput {
         self.nonce.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterUsageInput");
-        formatter.field("product_code", &self.product_code);
-        formatter.field("public_key_version", &self.public_key_version);
-        formatter.field("nonce", &self.nonce);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     #[doc(hidden)]
@@ -818,22 +802,10 @@ impl MeterUsageInput {
         self.usage_allocations.as_deref()
     }
 }
-impl std::fmt::Debug for MeterUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeterUsageInput");
-        formatter.field("product_code", &self.product_code);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("usage_dimension", &self.usage_dimension);
-        formatter.field("usage_quantity", &self.usage_quantity);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("usage_allocations", &self.usage_allocations);
-        formatter.finish()
-    }
-}
 
 /// <p>A <code>BatchMeterUsageRequest</code> contains <code>UsageRecords</code>, which indicate quantities of usage within your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchMeterUsageInput {
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
     #[doc(hidden)]
@@ -850,13 +822,5 @@ impl BatchMeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn product_code(&self) -> std::option::Option<&str> {
         self.product_code.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchMeterUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchMeterUsageInput");
-        formatter.field("usage_records", &self.usage_records);
-        formatter.field("product_code", &self.product_code);
-        formatter.finish()
     }
 }

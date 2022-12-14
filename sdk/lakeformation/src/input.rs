@@ -4035,7 +4035,7 @@ impl GetTemporaryGlueTableCredentialsInput {
 pub mod get_work_unit_results_input {
 
     /// A builder for [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) work_unit_id: std::option::Option<i64>,
@@ -4087,6 +4087,15 @@ pub mod get_work_unit_results_input {
                 work_unit_id: self.work_unit_id.unwrap_or_default(),
                 work_unit_token: self.work_unit_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("query_id", &self.query_id);
+            formatter.field("work_unit_id", &self.work_unit_id);
+            formatter.field("work_unit_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -6815,7 +6824,7 @@ impl SearchTablesByLfTagsInput {
 pub mod start_query_planning_input {
 
     /// A builder for [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) query_planning_context: std::option::Option<crate::model::QueryPlanningContext>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -6855,6 +6864,14 @@ pub mod start_query_planning_input {
                 query_planning_context: self.query_planning_context,
                 query_string: self.query_string,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("query_planning_context", &self.query_planning_context);
+            formatter.field("query_string", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -7872,7 +7889,7 @@ impl UpdateTableStorageOptimizerInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTableStorageOptimizerInput {
     /// <p>The Catalog ID of the table.</p>
     #[doc(hidden)]
@@ -7917,20 +7934,10 @@ impl UpdateTableStorageOptimizerInput {
         self.storage_optimizer_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTableStorageOptimizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTableStorageOptimizerInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("storage_optimizer_config", &self.storage_optimizer_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTableObjectsInput {
     /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
     #[doc(hidden)]
@@ -7970,21 +7977,10 @@ impl UpdateTableObjectsInput {
         self.write_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTableObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTableObjectsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("write_operations", &self.write_operations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceInput {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
     #[doc(hidden)]
@@ -8003,18 +7999,10 @@ impl UpdateResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -8047,20 +8035,10 @@ impl UpdateLfTagInput {
         self.tag_values_to_add.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLfTagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLfTagInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_values_to_delete", &self.tag_values_to_delete);
-        formatter.field("tag_values_to_add", &self.tag_values_to_add);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTransactionInput {
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
     #[doc(hidden)]
@@ -8070,13 +8048,6 @@ impl StartTransactionInput {
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
     pub fn transaction_type(&self) -> std::option::Option<&crate::model::TransactionType> {
         self.transaction_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StartTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTransactionInput");
-        formatter.field("transaction_type", &self.transaction_type);
-        formatter.finish()
     }
 }
 
@@ -8114,7 +8085,7 @@ impl std::fmt::Debug for StartQueryPlanningInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchTablesByLfTagsInput {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     #[doc(hidden)]
@@ -8147,20 +8118,10 @@ impl SearchTablesByLfTagsInput {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for SearchTablesByLfTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchTablesByLfTagsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchDatabasesByLfTagsInput {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     #[doc(hidden)]
@@ -8193,20 +8154,10 @@ impl SearchDatabasesByLfTagsInput {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for SearchDatabasesByLfTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchDatabasesByLfTagsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokePermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -8248,24 +8199,10 @@ impl RevokePermissionsInput {
         self.permissions_with_grant_option.as_deref()
     }
 }
-impl std::fmt::Debug for RevokePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokePermissionsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("principal", &self.principal);
-        formatter.field("resource", &self.resource);
-        formatter.field("permissions", &self.permissions);
-        formatter.field(
-            "permissions_with_grant_option",
-            &self.permissions_with_grant_option,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveLfTagsFromResourceInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -8291,19 +8228,10 @@ impl RemoveLfTagsFromResourceInput {
         self.lf_tags.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveLfTagsFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveLfTagsFromResourceInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("resource", &self.resource);
-        formatter.field("lf_tags", &self.lf_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
     #[doc(hidden)]
@@ -8331,19 +8259,10 @@ impl RegisterResourceInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("use_service_linked_role", &self.use_service_linked_role);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDataLakeSettingsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -8362,18 +8281,10 @@ impl PutDataLakeSettingsInput {
         self.data_lake_settings.as_ref()
     }
 }
-impl std::fmt::Debug for PutDataLakeSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDataLakeSettingsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("data_lake_settings", &self.data_lake_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTransactionsInput {
     /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
     #[doc(hidden)]
@@ -8406,20 +8317,10 @@ impl ListTransactionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTransactionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTransactionsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("status_filter", &self.status_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTableStorageOptimizersInput {
     /// <p>The Catalog ID of the table.</p>
     #[doc(hidden)]
@@ -8466,22 +8367,10 @@ impl ListTableStorageOptimizersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTableStorageOptimizersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTableStorageOptimizersInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("storage_optimizer_type", &self.storage_optimizer_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesInput {
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
     #[doc(hidden)]
@@ -8507,19 +8396,10 @@ impl ListResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesInput");
-        formatter.field("filter_condition_list", &self.filter_condition_list);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -8575,23 +8455,10 @@ impl ListPermissionsInput {
         self.include_related.as_deref()
     }
 }
-impl std::fmt::Debug for ListPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("principal", &self.principal);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource", &self.resource);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("include_related", &self.include_related);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLfTagsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -8624,20 +8491,10 @@ impl ListLfTagsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLfTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLfTagsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("resource_share_type", &self.resource_share_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataCellsFilterInput {
     /// <p>A table in the Glue Data Catalog.</p>
     #[doc(hidden)]
@@ -8663,19 +8520,10 @@ impl ListDataCellsFilterInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataCellsFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataCellsFilterInput");
-        formatter.field("table", &self.table);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrantPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -8719,24 +8567,10 @@ impl GrantPermissionsInput {
         self.permissions_with_grant_option.as_deref()
     }
 }
-impl std::fmt::Debug for GrantPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrantPermissionsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("principal", &self.principal);
-        formatter.field("resource", &self.resource);
-        formatter.field("permissions", &self.permissions);
-        formatter.field(
-            "permissions_with_grant_option",
-            &self.permissions_with_grant_option,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkUnitsInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     #[doc(hidden)]
@@ -8760,15 +8594,6 @@ impl GetWorkUnitsInput {
     /// <p>The ID of the plan query operation.</p>
     pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetWorkUnitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkUnitsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
     }
 }
 
@@ -8812,7 +8637,7 @@ impl std::fmt::Debug for GetWorkUnitResultsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemporaryGlueTableCredentialsInput {
     /// <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
     #[doc(hidden)]
@@ -8855,24 +8680,10 @@ impl GetTemporaryGlueTableCredentialsInput {
         self.supported_permission_types.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemporaryGlueTableCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemporaryGlueTableCredentialsInput");
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("audit_context", &self.audit_context);
-        formatter.field(
-            "supported_permission_types",
-            &self.supported_permission_types,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemporaryGluePartitionCredentialsInput {
     /// <p>The ARN of the partitions' table.</p>
     #[doc(hidden)]
@@ -8922,25 +8733,10 @@ impl GetTemporaryGluePartitionCredentialsInput {
         self.supported_permission_types.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemporaryGluePartitionCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemporaryGluePartitionCredentialsInput");
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("partition", &self.partition);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("audit_context", &self.audit_context);
-        formatter.field(
-            "supported_permission_types",
-            &self.supported_permission_types,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTableObjectsInput {
     /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
     #[doc(hidden)]
@@ -9011,24 +8807,10 @@ impl GetTableObjectsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTableObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTableObjectsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("query_as_of_time", &self.query_as_of_time);
-        formatter.field("partition_predicate", &self.partition_predicate);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceLfTagsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9054,19 +8836,10 @@ impl GetResourceLfTagsInput {
         self.show_assigned_lf_tags
     }
 }
-impl std::fmt::Debug for GetResourceLfTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceLfTagsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("resource", &self.resource);
-        formatter.field("show_assigned_lf_tags", &self.show_assigned_lf_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryStatisticsInput {
     /// <p>The ID of the plan query operation.</p>
     #[doc(hidden)]
@@ -9078,17 +8851,10 @@ impl GetQueryStatisticsInput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueryStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryStatisticsInput");
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryStateInput {
     /// <p>The ID of the plan query operation.</p>
     #[doc(hidden)]
@@ -9100,17 +8866,10 @@ impl GetQueryStateInput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueryStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryStateInput");
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9129,18 +8888,10 @@ impl GetLfTagInput {
         self.tag_key.as_deref()
     }
 }
-impl std::fmt::Debug for GetLfTagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLfTagInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("tag_key", &self.tag_key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEffectivePermissionsForPathInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9173,20 +8924,10 @@ impl GetEffectivePermissionsForPathInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetEffectivePermissionsForPathInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEffectivePermissionsForPathInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataLakeSettingsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9198,17 +8939,10 @@ impl GetDataLakeSettingsInput {
         self.catalog_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataLakeSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataLakeSettingsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendTransactionInput {
     /// <p>The transaction to extend.</p>
     #[doc(hidden)]
@@ -9220,17 +8954,10 @@ impl ExtendTransactionInput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for ExtendTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendTransactionInput");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTransactionInput {
     /// <p>The transaction for which to return status.</p>
     #[doc(hidden)]
@@ -9242,17 +8969,10 @@ impl DescribeTransactionInput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTransactionInput");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -9264,17 +8984,10 @@ impl DescribeResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     #[doc(hidden)]
@@ -9286,17 +8999,10 @@ impl DeregisterResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectsOnCancelInput {
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
     #[doc(hidden)]
@@ -9336,21 +9042,10 @@ impl DeleteObjectsOnCancelInput {
         self.objects.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteObjectsOnCancelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectsOnCancelInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("objects", &self.objects);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9369,18 +9064,10 @@ impl DeleteLfTagInput {
         self.tag_key.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLfTagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLfTagInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("tag_key", &self.tag_key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataCellsFilterInput {
     /// <p>The ID of the catalog to which the table belongs.</p>
     #[doc(hidden)]
@@ -9413,20 +9100,10 @@ impl DeleteDataCellsFilterInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataCellsFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataCellsFilterInput");
-        formatter.field("table_catalog_id", &self.table_catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9452,19 +9129,10 @@ impl CreateLfTagInput {
         self.tag_values.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLfTagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLfTagInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataCellsFilterInput {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
     #[doc(hidden)]
@@ -9476,17 +9144,10 @@ impl CreateDataCellsFilterInput {
         self.table_data.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataCellsFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataCellsFilterInput");
-        formatter.field("table_data", &self.table_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitTransactionInput {
     /// <p>The transaction to commit.</p>
     #[doc(hidden)]
@@ -9498,17 +9159,10 @@ impl CommitTransactionInput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for CommitTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitTransactionInput");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTransactionInput {
     /// <p>The transaction to cancel.</p>
     #[doc(hidden)]
@@ -9520,17 +9174,10 @@ impl CancelTransactionInput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelTransactionInput");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRevokePermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9549,18 +9196,10 @@ impl BatchRevokePermissionsInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for BatchRevokePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRevokePermissionsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGrantPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9579,18 +9218,10 @@ impl BatchGrantPermissionsInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGrantPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGrantPermissionsInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeDecoratedRoleWithSamlInput {
     /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
     #[doc(hidden)]
@@ -9623,20 +9254,10 @@ impl AssumeDecoratedRoleWithSamlInput {
         self.duration_seconds
     }
 }
-impl std::fmt::Debug for AssumeDecoratedRoleWithSamlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeDecoratedRoleWithSamlInput");
-        formatter.field("saml_assertion", &self.saml_assertion);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddLfTagsToResourceInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
@@ -9660,14 +9281,5 @@ impl AddLfTagsToResourceInput {
     /// <p>The LF-tags to attach to the resource.</p>
     pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
         self.lf_tags.as_deref()
-    }
-}
-impl std::fmt::Debug for AddLfTagsToResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddLfTagsToResourceInput");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("resource", &self.resource);
-        formatter.field("lf_tags", &self.lf_tags);
-        formatter.finish()
     }
 }

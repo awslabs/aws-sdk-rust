@@ -5166,7 +5166,7 @@ impl UpdateSiteRackPhysicalPropertiesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -5321,29 +5321,10 @@ impl UpdateSiteRackPhysicalPropertiesInput {
         self.maximum_supported_weight_lbs.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSiteRackPhysicalPropertiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSiteRackPhysicalPropertiesInput");
-        formatter.field("site_id", &self.site_id);
-        formatter.field("power_draw_kva", &self.power_draw_kva);
-        formatter.field("power_phase", &self.power_phase);
-        formatter.field("power_connector", &self.power_connector);
-        formatter.field("power_feed_drop", &self.power_feed_drop);
-        formatter.field("uplink_gbps", &self.uplink_gbps);
-        formatter.field("uplink_count", &self.uplink_count);
-        formatter.field("fiber_optic_cable_type", &self.fiber_optic_cable_type);
-        formatter.field("optical_standard", &self.optical_standard);
-        formatter.field(
-            "maximum_supported_weight_lbs",
-            &self.maximum_supported_weight_lbs,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSiteAddressInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -5373,19 +5354,10 @@ impl UpdateSiteAddressInput {
         self.address.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSiteAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSiteAddressInput");
-        formatter.field("site_id", &self.site_id);
-        formatter.field("address_type", &self.address_type);
-        formatter.field("address", &self.address);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSiteInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -5422,20 +5394,10 @@ impl UpdateSiteInput {
         self.notes.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSiteInput");
-        formatter.field("site_id", &self.site_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("notes", &self.notes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOutpostInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -5474,20 +5436,10 @@ impl UpdateOutpostInput {
         self.supported_hardware_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateOutpostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOutpostInput");
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("supported_hardware_type", &self.supported_hardware_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -5506,18 +5458,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -5540,18 +5484,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartConnectionInput {
     /// <p> The serial number of the dongle. </p>
     #[doc(hidden)]
@@ -5584,23 +5520,10 @@ impl StartConnectionInput {
         self.network_interface_device_index
     }
 }
-impl std::fmt::Debug for StartConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartConnectionInput");
-        formatter.field("device_serial_number", &self.device_serial_number);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("client_public_key", &self.client_public_key);
-        formatter.field(
-            "network_interface_device_index",
-            &self.network_interface_device_index,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -5612,17 +5535,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSitesInput {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
@@ -5674,30 +5590,10 @@ impl ListSitesInput {
         self.operating_address_city_filter.as_deref()
     }
 }
-impl std::fmt::Debug for ListSitesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSitesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field(
-            "operating_address_country_code_filter",
-            &self.operating_address_country_code_filter,
-        );
-        formatter.field(
-            "operating_address_state_or_region_filter",
-            &self.operating_address_state_or_region_filter,
-        );
-        formatter.field(
-            "operating_address_city_filter",
-            &self.operating_address_city_filter,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOutpostsInput {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
@@ -5743,24 +5639,10 @@ impl ListOutpostsInput {
         self.availability_zone_id_filter.as_deref()
     }
 }
-impl std::fmt::Debug for ListOutpostsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOutpostsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("life_cycle_status_filter", &self.life_cycle_status_filter);
-        formatter.field("availability_zone_filter", &self.availability_zone_filter);
-        formatter.field(
-            "availability_zone_id_filter",
-            &self.availability_zone_id_filter,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrdersInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     #[doc(hidden)]
@@ -5786,19 +5668,10 @@ impl ListOrdersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListOrdersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOrdersInput");
-        formatter.field("outpost_identifier_filter", &self.outpost_identifier_filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCatalogItemsInput {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
@@ -5847,21 +5720,10 @@ impl ListCatalogItemsInput {
         self.ec2_family_filter.as_deref()
     }
 }
-impl std::fmt::Debug for ListCatalogItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCatalogItemsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("item_class_filter", &self.item_class_filter);
-        formatter.field("supported_storage_filter", &self.supported_storage_filter);
-        formatter.field("ec2_family_filter", &self.ec2_family_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetsInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     #[doc(hidden)]
@@ -5896,20 +5758,10 @@ impl ListAssetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssetsInput");
-        formatter.field("outpost_identifier", &self.outpost_identifier);
-        formatter.field("host_id_filter", &self.host_id_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSiteAddressInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -5932,18 +5784,10 @@ impl GetSiteAddressInput {
         self.address_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetSiteAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSiteAddressInput");
-        formatter.field("site_id", &self.site_id);
-        formatter.field("address_type", &self.address_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSiteInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -5959,17 +5803,10 @@ impl GetSiteInput {
         self.site_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSiteInput");
-        formatter.field("site_id", &self.site_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOutpostInstanceTypesInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -5999,19 +5836,10 @@ impl GetOutpostInstanceTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetOutpostInstanceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOutpostInstanceTypesInput");
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOutpostInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -6027,17 +5855,10 @@ impl GetOutpostInput {
         self.outpost_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetOutpostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOutpostInput");
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOrderInput {
     /// <p>The ID of the order.</p>
     #[doc(hidden)]
@@ -6049,17 +5870,10 @@ impl GetOrderInput {
         self.order_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetOrderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOrderInput");
-        formatter.field("order_id", &self.order_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectionInput {
     /// <p> The ID of the connection you request. </p>
     #[doc(hidden)]
@@ -6071,17 +5885,10 @@ impl GetConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCatalogItemInput {
     /// <p>The ID of the catalog item.</p>
     #[doc(hidden)]
@@ -6093,17 +5900,10 @@ impl GetCatalogItemInput {
         self.catalog_item_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCatalogItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCatalogItemInput");
-        formatter.field("catalog_item_id", &self.catalog_item_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSiteInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -6119,17 +5919,10 @@ impl DeleteSiteInput {
         self.site_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSiteInput");
-        formatter.field("site_id", &self.site_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOutpostInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
@@ -6145,17 +5938,10 @@ impl DeleteOutpostInput {
         self.outpost_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOutpostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOutpostInput");
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSiteInput {
     /// <p>The name of the site.</p>
     #[doc(hidden)]
@@ -6215,23 +6001,10 @@ impl CreateSiteInput {
         self.rack_physical_properties.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSiteInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("notes", &self.notes);
-        formatter.field("tags", &self.tags);
-        formatter.field("operating_address", &self.operating_address);
-        formatter.field("shipping_address", &self.shipping_address);
-        formatter.field("rack_physical_properties", &self.rack_physical_properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOutpostInput {
     /// <p>The name of the Outpost.</p>
     #[doc(hidden)]
@@ -6295,23 +6068,10 @@ impl CreateOutpostInput {
         self.supported_hardware_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateOutpostInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOutpostInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("site_id", &self.site_id);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("availability_zone_id", &self.availability_zone_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("supported_hardware_type", &self.supported_hardware_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOrderInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     #[doc(hidden)]
@@ -6344,20 +6104,10 @@ impl CreateOrderInput {
         self.payment_term.as_ref()
     }
 }
-impl std::fmt::Debug for CreateOrderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOrderInput");
-        formatter.field("outpost_identifier", &self.outpost_identifier);
-        formatter.field("line_items", &self.line_items);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("payment_term", &self.payment_term);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelOrderInput {
     /// <p> The ID of the order to cancel. </p>
     #[doc(hidden)]
@@ -6367,12 +6117,5 @@ impl CancelOrderInput {
     /// <p> The ID of the order to cancel. </p>
     pub fn order_id(&self) -> std::option::Option<&str> {
         self.order_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelOrderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelOrderInput");
-        formatter.field("order_id", &self.order_id);
-        formatter.finish()
     }
 }

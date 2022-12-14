@@ -289,7 +289,7 @@ impl AsRef<str> for EnhancedInfrastructureMetrics {
 /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scope {
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
@@ -332,14 +332,6 @@ impl Scope {
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Scope {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scope");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Scope`](crate::model::Scope).
@@ -622,7 +614,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>A summary of a recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
     #[doc(hidden)]
@@ -665,23 +657,6 @@ impl RecommendationSummary {
         &self,
     ) -> std::option::Option<&crate::model::CurrentPerformanceRiskRatings> {
         self.current_performance_risk_ratings.as_ref()
-    }
-}
-impl std::fmt::Debug for RecommendationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationSummary");
-        formatter.field("summaries", &self.summaries);
-        formatter.field(
-            "recommendation_resource_type",
-            &self.recommendation_resource_type,
-        );
-        formatter.field("account_id", &self.account_id);
-        formatter.field("savings_opportunity", &self.savings_opportunity);
-        formatter.field(
-            "current_performance_risk_ratings",
-            &self.current_performance_risk_ratings,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecommendationSummary`](crate::model::RecommendationSummary).
@@ -795,7 +770,7 @@ impl RecommendationSummary {
 /// <p>Describes the performance risk ratings for a given resource type.</p>
 /// <p>Resources with a <code>high</code> or <code>medium</code> rating are at risk of not meeting the performance needs of their workloads, while resources with a <code>low</code> rating are performing well in their workloads.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CurrentPerformanceRiskRatings {
     /// <p>A count of the applicable resource types with a high performance risk rating.</p>
     #[doc(hidden)]
@@ -826,16 +801,6 @@ impl CurrentPerformanceRiskRatings {
     /// <p>A count of the applicable resource types with a very low performance risk rating.</p>
     pub fn very_low(&self) -> i64 {
         self.very_low
-    }
-}
-impl std::fmt::Debug for CurrentPerformanceRiskRatings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CurrentPerformanceRiskRatings");
-        formatter.field("high", &self.high);
-        formatter.field("medium", &self.medium);
-        formatter.field("low", &self.low);
-        formatter.field("very_low", &self.very_low);
-        formatter.finish()
     }
 }
 /// See [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings).
@@ -913,7 +878,7 @@ impl CurrentPerformanceRiskRatings {
 /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsOpportunity {
     /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer recommendations for a given resource.</p>
     #[doc(hidden)]
@@ -932,17 +897,6 @@ impl SavingsOpportunity {
         &self,
     ) -> std::option::Option<&crate::model::EstimatedMonthlySavings> {
         self.estimated_monthly_savings.as_ref()
-    }
-}
-impl std::fmt::Debug for SavingsOpportunity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsOpportunity");
-        formatter.field(
-            "savings_opportunity_percentage",
-            &self.savings_opportunity_percentage,
-        );
-        formatter.field("estimated_monthly_savings", &self.estimated_monthly_savings);
-        formatter.finish()
     }
 }
 /// See [`SavingsOpportunity`](crate::model::SavingsOpportunity).
@@ -1006,7 +960,7 @@ impl SavingsOpportunity {
 /// <p>Describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation">Estimated monthly savings and savings opportunities</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EstimatedMonthlySavings {
     /// <p>The currency of the estimated monthly savings.</p>
     #[doc(hidden)]
@@ -1023,14 +977,6 @@ impl EstimatedMonthlySavings {
     /// <p>The value of the estimated monthly savings.</p>
     pub fn value(&self) -> f64 {
         self.value
-    }
-}
-impl std::fmt::Debug for EstimatedMonthlySavings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EstimatedMonthlySavings");
-        formatter.field("currency", &self.currency);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings).
@@ -1278,7 +1224,7 @@ impl AsRef<str> for RecommendationSourceType {
 
 /// <p>The summary of a recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Summary {
     /// <p>The finding classification of the recommendation.</p>
     #[doc(hidden)]
@@ -1302,15 +1248,6 @@ impl Summary {
     /// <p>An array of objects that summarize a finding reason code.</p>
     pub fn reason_code_summaries(&self) -> std::option::Option<&[crate::model::ReasonCodeSummary]> {
         self.reason_code_summaries.as_deref()
-    }
-}
-impl std::fmt::Debug for Summary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Summary");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("reason_code_summaries", &self.reason_code_summaries);
-        formatter.finish()
     }
 }
 /// See [`Summary`](crate::model::Summary).
@@ -1383,7 +1320,7 @@ impl Summary {
 
 /// <p>A summary of a finding reason code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReasonCodeSummary {
     /// <p>The name of the finding reason code.</p>
     #[doc(hidden)]
@@ -1400,14 +1337,6 @@ impl ReasonCodeSummary {
     /// <p>The value of the finding reason code summary.</p>
     pub fn value(&self) -> f64 {
         self.value
-    }
-}
-impl std::fmt::Debug for ReasonCodeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReasonCodeSummary");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ReasonCodeSummary`](crate::model::ReasonCodeSummary).
@@ -1658,7 +1587,7 @@ impl AsRef<str> for Finding {
 
 /// <p>Describes a recommendation preference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationPreferencesDetail {
     /// <p>An object that describes the scope of the recommendation preference.</p>
     /// <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -1704,19 +1633,6 @@ impl RecommendationPreferencesDetail {
         &self,
     ) -> std::option::Option<&crate::model::InferredWorkloadTypesPreference> {
         self.inferred_workload_types.as_ref()
-    }
-}
-impl std::fmt::Debug for RecommendationPreferencesDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationPreferencesDetail");
-        formatter.field("scope", &self.scope);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field(
-            "enhanced_infrastructure_metrics",
-            &self.enhanced_infrastructure_metrics,
-        );
-        formatter.field("inferred_workload_types", &self.inferred_workload_types);
-        formatter.finish()
     }
 }
 /// See [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail).
@@ -1818,7 +1734,7 @@ impl RecommendationPreferencesDetail {
 
 /// <p>Describes an Lambda function recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
     #[doc(hidden)]
@@ -1953,27 +1869,6 @@ impl LambdaFunctionRecommendation {
         &self,
     ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
-    }
-}
-impl std::fmt::Debug for LambdaFunctionRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionRecommendation");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("current_memory_size", &self.current_memory_size);
-        formatter.field("number_of_invocations", &self.number_of_invocations);
-        formatter.field("utilization_metrics", &self.utilization_metrics);
-        formatter.field("lookback_period_in_days", &self.lookback_period_in_days);
-        formatter.field("last_refresh_timestamp", &self.last_refresh_timestamp);
-        formatter.field("finding", &self.finding);
-        formatter.field("finding_reason_codes", &self.finding_reason_codes);
-        formatter.field(
-            "memory_size_recommendation_options",
-            &self.memory_size_recommendation_options,
-        );
-        formatter.field("current_performance_risk", &self.current_performance_risk);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionRecommendation`](crate::model::LambdaFunctionRecommendation).
@@ -2343,7 +2238,7 @@ impl AsRef<str> for CurrentPerformanceRisk {
 
 /// <p>Describes a recommendation option for an Lambda function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionMemoryRecommendationOption {
     /// <p>The rank of the function recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
@@ -2379,19 +2274,6 @@ impl LambdaFunctionMemoryRecommendationOption {
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
-    }
-}
-impl std::fmt::Debug for LambdaFunctionMemoryRecommendationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionMemoryRecommendationOption");
-        formatter.field("rank", &self.rank);
-        formatter.field("memory_size", &self.memory_size);
-        formatter.field(
-            "projected_utilization_metrics",
-            &self.projected_utilization_metrics,
-        );
-        formatter.field("savings_opportunity", &self.savings_opportunity);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionMemoryRecommendationOption`](crate::model::LambdaFunctionMemoryRecommendationOption).
@@ -2486,7 +2368,7 @@ impl LambdaFunctionMemoryRecommendationOption {
 
 /// <p>Describes a projected utilization metric of an Lambda function recommendation option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionMemoryProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
     #[doc(hidden)]
@@ -2512,15 +2394,6 @@ impl LambdaFunctionMemoryProjectedMetric {
     /// <p>The values of the projected utilization metrics.</p>
     pub fn value(&self) -> f64 {
         self.value
-    }
-}
-impl std::fmt::Debug for LambdaFunctionMemoryProjectedMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionMemoryProjectedMetric");
-        formatter.field("name", &self.name);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionMemoryProjectedMetric`](crate::model::LambdaFunctionMemoryProjectedMetric).
@@ -2989,7 +2862,7 @@ impl AsRef<str> for LambdaFunctionRecommendationFinding {
 
 /// <p>Describes a utilization metric of an Lambda function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
@@ -3027,15 +2900,6 @@ impl LambdaFunctionUtilizationMetric {
     /// <p>The value of the utilization metric.</p>
     pub fn value(&self) -> f64 {
         self.value
-    }
-}
-impl std::fmt::Debug for LambdaFunctionUtilizationMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionUtilizationMetric");
-        formatter.field("name", &self.name);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionUtilizationMetric`](crate::model::LambdaFunctionUtilizationMetric).
@@ -3303,7 +3167,7 @@ impl AsRef<str> for LambdaFunctionMetricName {
 /// <p>Describes a filter that returns a more specific list of Lambda function recommendations. Use this filter with the <code>GetLambdaFunctionRecommendations</code> action.</p>
 /// <p>You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionRecommendationFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
@@ -3336,14 +3200,6 @@ impl LambdaFunctionRecommendationFilter {
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaFunctionRecommendationFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionRecommendationFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionRecommendationFilter`](crate::model::LambdaFunctionRecommendationFilter).
@@ -3512,7 +3368,7 @@ impl AsRef<str> for LambdaFunctionRecommendationFilterName {
 
 /// <p>Describes the enrollment status of an organization's member accounts in Compute Optimizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountEnrollmentStatus {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -3545,16 +3401,6 @@ impl AccountEnrollmentStatus {
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
     pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountEnrollmentStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountEnrollmentStatus");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`AccountEnrollmentStatus`](crate::model::AccountEnrollmentStatus).
@@ -3637,7 +3483,7 @@ impl AccountEnrollmentStatus {
 
 /// <p>Describes a filter that returns a more specific list of account enrollment statuses. Use this filter with the <code>GetEnrollmentStatusesForOrganization</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnrollmentFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
@@ -3658,14 +3504,6 @@ impl EnrollmentFilter {
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for EnrollmentFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnrollmentFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`EnrollmentFilter`](crate::model::EnrollmentFilter).
@@ -3821,7 +3659,7 @@ impl AsRef<str> for EnrollmentFilterName {
 /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendedOptionProjectedMetric {
     /// <p>The recommended instance type.</p>
     #[doc(hidden)]
@@ -3849,15 +3687,6 @@ impl RecommendedOptionProjectedMetric {
     /// <p>An array of objects that describe a projected utilization metric.</p>
     pub fn projected_metrics(&self) -> std::option::Option<&[crate::model::ProjectedMetric]> {
         self.projected_metrics.as_deref()
-    }
-}
-impl std::fmt::Debug for RecommendedOptionProjectedMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendedOptionProjectedMetric");
-        formatter.field("recommended_instance_type", &self.recommended_instance_type);
-        formatter.field("rank", &self.rank);
-        formatter.field("projected_metrics", &self.projected_metrics);
-        formatter.finish()
     }
 }
 /// See [`RecommendedOptionProjectedMetric`](crate::model::RecommendedOptionProjectedMetric).
@@ -3940,7 +3769,7 @@ impl RecommendedOptionProjectedMetric {
 /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following projected utilization metrics are returned:</p>
@@ -3978,15 +3807,6 @@ impl ProjectedMetric {
     /// <p>The values of the projected utilization metrics.</p>
     pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectedMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectedMetric");
-        formatter.field("name", &self.name);
-        formatter.field("timestamps", &self.timestamps);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ProjectedMetric`](crate::model::ProjectedMetric).
@@ -4243,7 +4063,7 @@ impl AsRef<str> for MetricName {
 
 /// <p>Describes the recommendation preferences to return in the response of a <code>GetAutoScalingGroupRecommendations</code>, <code>GetEC2InstanceRecommendations</code>, and <code>GetEC2RecommendationProjectedMetrics</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationPreferences {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
@@ -4268,13 +4088,6 @@ impl RecommendationPreferences {
         &self,
     ) -> std::option::Option<&[crate::model::CpuVendorArchitecture]> {
         self.cpu_vendor_architectures.as_deref()
-    }
-}
-impl std::fmt::Debug for RecommendationPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationPreferences");
-        formatter.field("cpu_vendor_architectures", &self.cpu_vendor_architectures);
-        formatter.finish()
     }
 }
 /// See [`RecommendationPreferences`](crate::model::RecommendationPreferences).
@@ -4521,7 +4334,7 @@ impl AsRef<str> for MetricStatistic {
 /// <p>Describes an error experienced when getting recommendations.</p>
 /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationError {
     /// <p>The ID of the error.</p>
     #[doc(hidden)]
@@ -4545,15 +4358,6 @@ impl GetRecommendationError {
     /// <p>The message, or reason, for the error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRecommendationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationError");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`GetRecommendationError`](crate::model::GetRecommendationError).
@@ -4616,7 +4420,7 @@ impl GetRecommendationError {
 
 /// <p>Describes an Amazon EC2 instance recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
     #[doc(hidden)]
@@ -4812,29 +4616,6 @@ impl InstanceRecommendation {
         &self,
     ) -> std::option::Option<&[crate::model::InferredWorkloadType]> {
         self.inferred_workload_types.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRecommendation");
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("current_instance_type", &self.current_instance_type);
-        formatter.field("finding", &self.finding);
-        formatter.field("finding_reason_codes", &self.finding_reason_codes);
-        formatter.field("utilization_metrics", &self.utilization_metrics);
-        formatter.field("look_back_period_in_days", &self.look_back_period_in_days);
-        formatter.field("recommendation_options", &self.recommendation_options);
-        formatter.field("recommendation_sources", &self.recommendation_sources);
-        formatter.field("last_refresh_timestamp", &self.last_refresh_timestamp);
-        formatter.field("current_performance_risk", &self.current_performance_risk);
-        formatter.field(
-            "effective_recommendation_preferences",
-            &self.effective_recommendation_preferences,
-        );
-        formatter.field("inferred_workload_types", &self.inferred_workload_types);
-        formatter.finish()
     }
 }
 /// See [`InstanceRecommendation`](crate::model::InstanceRecommendation).
@@ -5317,7 +5098,7 @@ impl AsRef<str> for InferredWorkloadType {
 
 /// <p>Describes the effective recommendation preferences for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EffectiveRecommendationPreferences {
     /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
@@ -5367,18 +5148,6 @@ impl EffectiveRecommendationPreferences {
         &self,
     ) -> std::option::Option<&crate::model::InferredWorkloadTypesPreference> {
         self.inferred_workload_types.as_ref()
-    }
-}
-impl std::fmt::Debug for EffectiveRecommendationPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EffectiveRecommendationPreferences");
-        formatter.field("cpu_vendor_architectures", &self.cpu_vendor_architectures);
-        formatter.field(
-            "enhanced_infrastructure_metrics",
-            &self.enhanced_infrastructure_metrics,
-        );
-        formatter.field("inferred_workload_types", &self.inferred_workload_types);
-        formatter.finish()
     }
 }
 /// See [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences).
@@ -5486,7 +5255,7 @@ impl EffectiveRecommendationPreferences {
 
 /// <p>Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationSource {
     /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
     #[doc(hidden)]
@@ -5505,17 +5274,6 @@ impl RecommendationSource {
         &self,
     ) -> std::option::Option<&crate::model::RecommendationSourceType> {
         self.recommendation_source_type.as_ref()
-    }
-}
-impl std::fmt::Debug for RecommendationSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationSource");
-        formatter.field("recommendation_source_arn", &self.recommendation_source_arn);
-        formatter.field(
-            "recommendation_source_type",
-            &self.recommendation_source_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecommendationSource`](crate::model::RecommendationSource).
@@ -5576,7 +5334,7 @@ impl RecommendationSource {
 
 /// <p>Describes a recommendation option for an Amazon EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRecommendationOption {
     /// <p>The instance type of the instance recommendation.</p>
     #[doc(hidden)]
@@ -5661,22 +5419,6 @@ impl InstanceRecommendationOption {
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub fn migration_effort(&self) -> std::option::Option<&crate::model::MigrationEffort> {
         self.migration_effort.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceRecommendationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRecommendationOption");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field(
-            "projected_utilization_metrics",
-            &self.projected_utilization_metrics,
-        );
-        formatter.field("platform_differences", &self.platform_differences);
-        formatter.field("performance_risk", &self.performance_risk);
-        formatter.field("rank", &self.rank);
-        formatter.field("savings_opportunity", &self.savings_opportunity);
-        formatter.field("migration_effort", &self.migration_effort);
-        formatter.finish()
     }
 }
 /// See [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption).
@@ -6069,7 +5811,7 @@ impl AsRef<str> for PlatformDifference {
 /// <p>Describes a utilization metric of a resource, such as an Amazon EC2 instance.</p>
 /// <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
@@ -6135,15 +5877,6 @@ impl UtilizationMetric {
     /// <p>The value of the utilization metric.</p>
     pub fn value(&self) -> f64 {
         self.value
-    }
-}
-impl std::fmt::Debug for UtilizationMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UtilizationMetric");
-        formatter.field("name", &self.name);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`UtilizationMetric`](crate::model::UtilizationMetric).
@@ -6487,7 +6220,7 @@ impl AsRef<str> for InstanceRecommendationFindingReasonCode {
 /// <p>Describes a filter that returns a more specific list of recommendations. Use this filter with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
 /// <p>You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, and <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>Underprovisioned</code>).</p>
@@ -6560,14 +6293,6 @@ impl Filter {
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -6778,7 +6503,7 @@ impl AsRef<str> for FilterName {
 
 /// <p>Describes an Amazon Elastic Block Store (Amazon EBS) volume recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
     #[doc(hidden)]
@@ -6861,24 +6586,6 @@ impl VolumeRecommendation {
         &self,
     ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
-    }
-}
-impl std::fmt::Debug for VolumeRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeRecommendation");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("current_configuration", &self.current_configuration);
-        formatter.field("finding", &self.finding);
-        formatter.field("utilization_metrics", &self.utilization_metrics);
-        formatter.field("look_back_period_in_days", &self.look_back_period_in_days);
-        formatter.field(
-            "volume_recommendation_options",
-            &self.volume_recommendation_options,
-        );
-        formatter.field("last_refresh_timestamp", &self.last_refresh_timestamp);
-        formatter.field("current_performance_risk", &self.current_performance_risk);
-        formatter.finish()
     }
 }
 /// See [`VolumeRecommendation`](crate::model::VolumeRecommendation).
@@ -7059,7 +6766,7 @@ impl VolumeRecommendation {
 
 /// <p>Describes a recommendation option for an Amazon Elastic Block Store (Amazon EBS) instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeRecommendationOption {
     /// <p>An array of objects that describe a volume configuration.</p>
     #[doc(hidden)]
@@ -7096,16 +6803,6 @@ impl VolumeRecommendationOption {
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
-    }
-}
-impl std::fmt::Debug for VolumeRecommendationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeRecommendationOption");
-        formatter.field("configuration", &self.configuration);
-        formatter.field("performance_risk", &self.performance_risk);
-        formatter.field("rank", &self.rank);
-        formatter.field("savings_opportunity", &self.savings_opportunity);
-        formatter.finish()
     }
 }
 /// See [`VolumeRecommendationOption`](crate::model::VolumeRecommendationOption).
@@ -7192,7 +6889,7 @@ impl VolumeRecommendationOption {
 
 /// <p>Describes the configuration of an Amazon Elastic Block Store (Amazon EBS) volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeConfiguration {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
@@ -7239,21 +6936,6 @@ impl VolumeConfiguration {
     /// <p>The burst throughput of the volume.</p>
     pub fn volume_burst_throughput(&self) -> i32 {
         self.volume_burst_throughput
-    }
-}
-impl std::fmt::Debug for VolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeConfiguration");
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.field("volume_baseline_iops", &self.volume_baseline_iops);
-        formatter.field("volume_burst_iops", &self.volume_burst_iops);
-        formatter.field(
-            "volume_baseline_throughput",
-            &self.volume_baseline_throughput,
-        );
-        formatter.field("volume_burst_throughput", &self.volume_burst_throughput);
-        formatter.finish()
     }
 }
 /// See [`VolumeConfiguration`](crate::model::VolumeConfiguration).
@@ -7355,7 +7037,7 @@ impl VolumeConfiguration {
 /// <p>Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS) volume.</p>
 /// <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
@@ -7397,15 +7079,6 @@ impl EbsUtilizationMetric {
     /// <p>The value of the utilization metric.</p>
     pub fn value(&self) -> f64 {
         self.value
-    }
-}
-impl std::fmt::Debug for EbsUtilizationMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsUtilizationMetric");
-        formatter.field("name", &self.name);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`EbsUtilizationMetric`](crate::model::EbsUtilizationMetric).
@@ -7685,7 +7358,7 @@ impl AsRef<str> for EbsFinding {
 /// <p>Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume recommendations. Use this filter with the <code>GetEBSVolumeRecommendations</code> action.</p>
 /// <p>You can use <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
@@ -7706,14 +7379,6 @@ impl EbsFilter {
     /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for EbsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`EbsFilter`](crate::model::EbsFilter).
@@ -7862,7 +7527,7 @@ impl AsRef<str> for EbsFilterName {
 
 /// <p>Describes an Auto Scaling group recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroupRecommendation {
     /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -7992,27 +7657,6 @@ impl AutoScalingGroupRecommendation {
         &self,
     ) -> std::option::Option<&[crate::model::InferredWorkloadType]> {
         self.inferred_workload_types.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingGroupRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroupRecommendation");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("auto_scaling_group_arn", &self.auto_scaling_group_arn);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("finding", &self.finding);
-        formatter.field("utilization_metrics", &self.utilization_metrics);
-        formatter.field("look_back_period_in_days", &self.look_back_period_in_days);
-        formatter.field("current_configuration", &self.current_configuration);
-        formatter.field("recommendation_options", &self.recommendation_options);
-        formatter.field("last_refresh_timestamp", &self.last_refresh_timestamp);
-        formatter.field("current_performance_risk", &self.current_performance_risk);
-        formatter.field(
-            "effective_recommendation_preferences",
-            &self.effective_recommendation_preferences,
-        );
-        formatter.field("inferred_workload_types", &self.inferred_workload_types);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation).
@@ -8281,7 +7925,7 @@ impl AutoScalingGroupRecommendation {
 
 /// <p>Describes a recommendation option for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     #[doc(hidden)]
@@ -8343,21 +7987,6 @@ impl AutoScalingGroupRecommendationOption {
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub fn migration_effort(&self) -> std::option::Option<&crate::model::MigrationEffort> {
         self.migration_effort.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoScalingGroupRecommendationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroupRecommendationOption");
-        formatter.field("configuration", &self.configuration);
-        formatter.field(
-            "projected_utilization_metrics",
-            &self.projected_utilization_metrics,
-        );
-        formatter.field("performance_risk", &self.performance_risk);
-        formatter.field("rank", &self.rank);
-        formatter.field("savings_opportunity", &self.savings_opportunity);
-        formatter.field("migration_effort", &self.migration_effort);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption).
@@ -8490,7 +8119,7 @@ impl AutoScalingGroupRecommendationOption {
 
 /// <p>Describes the configuration of an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroupConfiguration {
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -8521,16 +8150,6 @@ impl AutoScalingGroupConfiguration {
     /// <p>The instance type for the Auto Scaling group.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingGroupConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroupConfiguration");
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroupConfiguration`](crate::model::AutoScalingGroupConfiguration).
@@ -8608,7 +8227,7 @@ impl AutoScalingGroupConfiguration {
 
 /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Destination {
     /// <p>The name of the Amazon S3 bucket used as the destination of an export file.</p>
     #[doc(hidden)]
@@ -8636,15 +8255,6 @@ impl S3Destination {
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
     pub fn metadata_key(&self) -> std::option::Option<&str> {
         self.metadata_key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Destination");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("metadata_key", &self.metadata_key);
-        formatter.finish()
     }
 }
 /// See [`S3Destination`](crate::model::S3Destination).
@@ -8797,7 +8407,7 @@ impl AsRef<str> for FileFormat {
 /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
 /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationConfig {
     /// <p>The name of the Amazon S3 bucket to use as the destination for an export job.</p>
     #[doc(hidden)]
@@ -8814,14 +8424,6 @@ impl S3DestinationConfig {
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
     pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationConfig");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3DestinationConfig`](crate::model::S3DestinationConfig).
@@ -10244,7 +9846,7 @@ impl AsRef<str> for ExportableAutoScalingGroupField {
 /// <p>Use the <code>DescribeRecommendationExportJobs</code> action to view your recommendation export jobs.</p>
 /// <p>Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationExportJob {
     /// <p>The identification number of the export job.</p>
     #[doc(hidden)]
@@ -10296,19 +9898,6 @@ impl RecommendationExportJob {
     /// <p>The reason for an export job failure.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for RecommendationExportJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationExportJob");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("destination", &self.destination);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("status", &self.status);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`RecommendationExportJob`](crate::model::RecommendationExportJob).
@@ -10534,7 +10123,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p>Describes the destination of the recommendations export and metadata files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportDestination {
     /// <p>An object that describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     #[doc(hidden)]
@@ -10544,13 +10133,6 @@ impl ExportDestination {
     /// <p>An object that describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3Destination> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportDestination");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`ExportDestination`](crate::model::ExportDestination).
@@ -10588,7 +10170,7 @@ impl ExportDestination {
 /// <p>Describes a filter that returns a more specific list of recommendation export jobs. Use this filter with the <code>DescribeRecommendationExportJobs</code> action.</p>
 /// <p>You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type (for example, <code>Ec2Instance</code>).</p>
@@ -10619,14 +10201,6 @@ impl JobFilter {
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for JobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`JobFilter`](crate::model::JobFilter).

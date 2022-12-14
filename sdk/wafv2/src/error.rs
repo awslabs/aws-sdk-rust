@@ -2,18 +2,11 @@
 
 /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafUnavailableEntityException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafUnavailableEntityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafUnavailableEntityException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafUnavailableEntityException {
     /// Returns the error message.
@@ -72,18 +65,11 @@ impl WafUnavailableEntityException {
 
 /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafSubscriptionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafSubscriptionNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafSubscriptionNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafSubscriptionNotFoundException {
     /// Returns the error message.
@@ -142,18 +128,11 @@ impl WafSubscriptionNotFoundException {
 
 /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafOptimisticLockException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafOptimisticLockException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafOptimisticLockException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafOptimisticLockException {
     /// Returns the error message.
@@ -209,18 +188,11 @@ impl WafOptimisticLockException {
 
 /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafNonexistentItemException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafNonexistentItemException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafNonexistentItemException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafNonexistentItemException {
     /// Returns the error message.
@@ -279,18 +251,11 @@ impl WafNonexistentItemException {
 
 /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafLimitsExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafLimitsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafLimitsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafLimitsExceededException {
     /// Returns the error message.
@@ -346,18 +311,11 @@ impl WafLimitsExceededException {
 
 /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidResourceException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInvalidResourceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidResourceException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInvalidResourceException {
     /// Returns the error message.
@@ -422,7 +380,7 @@ impl WafInvalidResourceException {
 /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -449,16 +407,6 @@ impl WafInvalidParameterException {
     /// <p>Additional information about the exception.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for WafInvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.field("field", &self.field);
-        formatter.field("parameter", &self.parameter);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 impl WafInvalidParameterException {
@@ -557,18 +505,11 @@ impl WafInvalidParameterException {
 
 /// <p>The operation isn't valid. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInvalidOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInvalidOperationException {
     /// Returns the error message.
@@ -627,18 +568,11 @@ impl WafInvalidOperationException {
 
 /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInternalErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInternalErrorException {
     /// Returns the error message.
@@ -694,18 +628,11 @@ impl WafInternalErrorException {
 
 /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafExpiredManagedRuleGroupVersionException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafExpiredManagedRuleGroupVersionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafExpiredManagedRuleGroupVersionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafExpiredManagedRuleGroupVersionException {
     /// Returns the error message.
@@ -761,18 +688,11 @@ impl WafExpiredManagedRuleGroupVersionException {
 
 /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafDuplicateItemException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafDuplicateItemException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafDuplicateItemException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafDuplicateItemException {
     /// Returns the error message.
@@ -830,18 +750,11 @@ impl WafDuplicateItemException {
 /// <p>Provide the handling configuration and retry your operation.</p>
 /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafConfigurationWarningException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafConfigurationWarningException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafConfigurationWarningException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafConfigurationWarningException {
     /// Returns the error message.
@@ -900,18 +813,11 @@ impl WafConfigurationWarningException {
 
 /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafTagOperationInternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafTagOperationInternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafTagOperationInternalErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafTagOperationInternalErrorException {
     /// Returns the error message.
@@ -970,18 +876,11 @@ impl WafTagOperationInternalErrorException {
 
 /// <p>An error occurred during the tagging operation. Retry your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafTagOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafTagOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafTagOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafTagOperationException {
     /// Returns the error message.
@@ -1046,18 +945,11 @@ impl WafTagOperationException {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidPermissionPolicyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInvalidPermissionPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidPermissionPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInvalidPermissionPolicyException {
     /// Returns the error message.
@@ -1116,18 +1008,11 @@ impl WafInvalidPermissionPolicyException {
 
 /// <p>WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafServiceLinkedRoleErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafServiceLinkedRoleErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafServiceLinkedRoleErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafServiceLinkedRoleErrorException {
     /// Returns the error message.
@@ -1186,18 +1071,11 @@ impl WafServiceLinkedRoleErrorException {
 
 /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafLogDestinationPermissionIssueException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafLogDestinationPermissionIssueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafLogDestinationPermissionIssueException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafLogDestinationPermissionIssueException {
     /// Returns the error message.
@@ -1256,18 +1134,11 @@ impl WafLogDestinationPermissionIssueException {
 
 /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafAssociatedItemException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafAssociatedItemException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafAssociatedItemException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafAssociatedItemException {
     /// Returns the error message.

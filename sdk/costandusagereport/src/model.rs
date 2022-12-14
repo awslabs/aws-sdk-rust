@@ -2,7 +2,7 @@
 
 /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportDefinition {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
     #[doc(hidden)]
@@ -91,27 +91,6 @@ impl ReportDefinition {
     /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
     pub fn billing_view_arn(&self) -> std::option::Option<&str> {
         self.billing_view_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ReportDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportDefinition");
-        formatter.field("report_name", &self.report_name);
-        formatter.field("time_unit", &self.time_unit);
-        formatter.field("format", &self.format);
-        formatter.field("compression", &self.compression);
-        formatter.field(
-            "additional_schema_elements",
-            &self.additional_schema_elements,
-        );
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.field("s3_region", &self.s3_region);
-        formatter.field("additional_artifacts", &self.additional_artifacts);
-        formatter.field("refresh_closed_reports", &self.refresh_closed_reports);
-        formatter.field("report_versioning", &self.report_versioning);
-        formatter.field("billing_view_arn", &self.billing_view_arn);
-        formatter.finish()
     }
 }
 /// See [`ReportDefinition`](crate::model::ReportDefinition).

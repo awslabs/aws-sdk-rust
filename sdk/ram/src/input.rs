@@ -4872,7 +4872,7 @@ impl UpdateResourceShareInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
     #[doc(hidden)]
@@ -4907,20 +4907,10 @@ impl UpdateResourceShareInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceShareInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("name", &self.name);
-        formatter.field("allow_external_principals", &self.allow_external_principals);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
     #[doc(hidden)]
@@ -4939,18 +4929,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
     #[doc(hidden)]
@@ -4969,18 +4951,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectResourceShareInvitationInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
     #[doc(hidden)]
@@ -5001,21 +4975,10 @@ impl RejectResourceShareInvitationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for RejectResourceShareInvitationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectResourceShareInvitationInput");
-        formatter.field(
-            "resource_share_invitation_arn",
-            &self.resource_share_invitation_arn,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PromoteResourceShareCreatedFromPolicyInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
     #[doc(hidden)]
@@ -5027,17 +4990,10 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         self.resource_share_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PromoteResourceShareCreatedFromPolicyInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceTypesInput {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     #[doc(hidden)]
@@ -5077,19 +5033,10 @@ impl ListResourceTypesInput {
         self.resource_region_scope.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceTypesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceSharePermissionsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
     #[doc(hidden)]
@@ -5115,19 +5062,10 @@ impl ListResourceSharePermissionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListResourceSharePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceSharePermissionsInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesInput {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
@@ -5212,24 +5150,10 @@ impl ListResourcesInput {
         self.resource_region_scope.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesInput");
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("principal", &self.principal);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPrincipalsInput {
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
@@ -5313,23 +5237,10 @@ impl ListPrincipalsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPrincipalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPrincipalsInput");
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("principals", &self.principals);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionVersionsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
     #[doc(hidden)]
@@ -5355,19 +5266,10 @@ impl ListPermissionVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPermissionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionVersionsInput");
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionsInput {
     /// <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
     #[doc(hidden)]
@@ -5393,19 +5295,10 @@ impl ListPermissionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionsInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPendingInvitationResourcesInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
     #[doc(hidden)]
@@ -5452,23 +5345,10 @@ impl ListPendingInvitationResourcesInput {
         self.resource_region_scope.as_ref()
     }
 }
-impl std::fmt::Debug for ListPendingInvitationResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPendingInvitationResourcesInput");
-        formatter.field(
-            "resource_share_invitation_arn",
-            &self.resource_share_invitation_arn,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceSharesInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
     #[doc(hidden)]
@@ -5537,24 +5417,10 @@ impl GetResourceSharesInput {
         self.permission_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceSharesInput");
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("resource_share_status", &self.resource_share_status);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("name", &self.name);
-        formatter.field("tag_filters", &self.tag_filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceShareInvitationsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
     #[doc(hidden)]
@@ -5587,23 +5453,10 @@ impl GetResourceShareInvitationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetResourceShareInvitationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceShareInvitationsInput");
-        formatter.field(
-            "resource_share_invitation_arns",
-            &self.resource_share_invitation_arns,
-        );
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceShareAssociationsInput {
     /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
     /// <ul>
@@ -5673,23 +5526,10 @@ impl GetResourceShareAssociationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetResourceShareAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceShareAssociationsInput");
-        formatter.field("association_type", &self.association_type);
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("principal", &self.principal);
-        formatter.field("association_status", &self.association_status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePoliciesInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
     #[doc(hidden)]
@@ -5722,20 +5562,10 @@ impl GetResourcePoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetResourcePoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePoliciesInput");
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("principal", &self.principal);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPermissionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     #[doc(hidden)]
@@ -5754,29 +5584,15 @@ impl GetPermissionInput {
         self.permission_version
     }
 }
-impl std::fmt::Debug for GetPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPermissionInput");
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.field("permission_version", &self.permission_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableSharingWithAwsOrganizationInput {}
-impl std::fmt::Debug for EnableSharingWithAwsOrganizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableSharingWithAwsOrganizationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResourceSharePermissionInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
     #[doc(hidden)]
@@ -5804,19 +5620,10 @@ impl DisassociateResourceSharePermissionInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateResourceSharePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResourceSharePermissionInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResourceShareInput {
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
     #[doc(hidden)]
@@ -5871,20 +5678,10 @@ impl DisassociateResourceShareInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResourceShareInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("principals", &self.principals);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
     #[doc(hidden)]
@@ -5905,18 +5702,10 @@ impl DeleteResourceShareInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceShareInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceShareInput {
     /// <p>Specifies the name of the resource share.</p>
     #[doc(hidden)]
@@ -5992,23 +5781,10 @@ impl CreateResourceShareInput {
         self.permission_arns.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceShareInput");
-        formatter.field("name", &self.name);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("principals", &self.principals);
-        formatter.field("tags", &self.tags);
-        formatter.field("allow_external_principals", &self.allow_external_principals);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("permission_arns", &self.permission_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceSharePermissionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
     #[doc(hidden)]
@@ -6054,21 +5830,10 @@ impl AssociateResourceSharePermissionInput {
         self.permission_version
     }
 }
-impl std::fmt::Debug for AssociateResourceSharePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceSharePermissionInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.field("replace", &self.replace);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("permission_version", &self.permission_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
     #[doc(hidden)]
@@ -6125,20 +5890,10 @@ impl AssociateResourceShareInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceShareInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("principals", &self.principals);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptResourceShareInvitationInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
     #[doc(hidden)]
@@ -6157,16 +5912,5 @@ impl AcceptResourceShareInvitationInput {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptResourceShareInvitationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptResourceShareInvitationInput");
-        formatter.field(
-            "resource_share_invitation_arn",
-            &self.resource_share_invitation_arn,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

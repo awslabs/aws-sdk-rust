@@ -2,7 +2,7 @@
 
 /// <p>A typed link facet attribute update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkFacetAttributeUpdate {
     /// <p>The attribute to update.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl TypedLinkFacetAttributeUpdate {
     /// <p>The action to perform when updating the attribute.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::UpdateActionType> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for TypedLinkFacetAttributeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkFacetAttributeUpdate");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
@@ -173,7 +165,7 @@ impl AsRef<str> for UpdateActionType {
 
 /// <p>A typed link attribute definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkAttributeDefinition {
     /// <p>The unique name of the typed link attribute.</p>
     #[doc(hidden)]
@@ -224,18 +216,6 @@ impl TypedLinkAttributeDefinition {
         &self,
     ) -> std::option::Option<&crate::model::RequiredAttributeBehavior> {
         self.required_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for TypedLinkAttributeDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkAttributeDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("is_immutable", &self.is_immutable);
-        formatter.field("rules", &self.rules);
-        formatter.field("required_behavior", &self.required_behavior);
-        formatter.finish()
     }
 }
 /// See [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
@@ -447,7 +427,7 @@ impl AsRef<str> for RequiredAttributeBehavior {
 
 /// <p>Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>The type of attribute validation rule.</p>
     #[doc(hidden)]
@@ -468,14 +448,6 @@ impl Rule {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`Rule`](crate::model::Rule).
@@ -858,7 +830,7 @@ impl AsRef<str> for FacetAttributeType {
 
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
     #[doc(hidden)]
@@ -877,14 +849,6 @@ impl ObjectAttributeUpdate {
         &self,
     ) -> std::option::Option<&crate::model::ObjectAttributeAction> {
         self.object_attribute_action.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectAttributeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectAttributeUpdate");
-        formatter.field("object_attribute_key", &self.object_attribute_key);
-        formatter.field("object_attribute_action", &self.object_attribute_action);
-        formatter.finish()
     }
 }
 /// See [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
@@ -945,7 +909,7 @@ impl ObjectAttributeUpdate {
 
 /// <p>The action to take on the object attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectAttributeAction {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
     #[doc(hidden)]
@@ -966,20 +930,6 @@ impl ObjectAttributeAction {
         &self,
     ) -> std::option::Option<&crate::model::TypedAttributeValue> {
         self.object_attribute_update_value.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectAttributeAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectAttributeAction");
-        formatter.field(
-            "object_attribute_action_type",
-            &self.object_attribute_action_type,
-        );
-        formatter.field(
-            "object_attribute_update_value",
-            &self.object_attribute_update_value,
-        );
-        formatter.finish()
     }
 }
 /// See [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
@@ -1044,7 +994,7 @@ impl ObjectAttributeAction {
 
 /// <p>A unique identifier for an attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeKey {
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
     #[doc(hidden)]
@@ -1068,15 +1018,6 @@ impl AttributeKey {
     /// <p>The name of the attribute.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AttributeKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeKey");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("facet_name", &self.facet_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AttributeKey`](crate::model::AttributeKey).
@@ -1139,7 +1080,7 @@ impl AttributeKey {
 
 /// <p>The reference that identifies an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectReference {
     /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
     /// <ul>
@@ -1159,13 +1100,6 @@ impl ObjectReference {
     /// </ul>
     pub fn selector(&self) -> std::option::Option<&str> {
         self.selector.as_deref()
-    }
-}
-impl std::fmt::Debug for ObjectReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectReference");
-        formatter.field("selector", &self.selector);
-        formatter.finish()
     }
 }
 /// See [`ObjectReference`](crate::model::ObjectReference).
@@ -1214,7 +1148,7 @@ impl ObjectReference {
 
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinkAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
     #[doc(hidden)]
@@ -1231,14 +1165,6 @@ impl LinkAttributeUpdate {
     /// <p>The action to perform as part of the attribute update.</p>
     pub fn attribute_action(&self) -> std::option::Option<&crate::model::LinkAttributeAction> {
         self.attribute_action.as_ref()
-    }
-}
-impl std::fmt::Debug for LinkAttributeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinkAttributeUpdate");
-        formatter.field("attribute_key", &self.attribute_key);
-        formatter.field("attribute_action", &self.attribute_action);
-        formatter.finish()
     }
 }
 /// See [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
@@ -1295,7 +1221,7 @@ impl LinkAttributeUpdate {
 
 /// <p>The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinkAttributeAction {
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
     #[doc(hidden)]
@@ -1314,14 +1240,6 @@ impl LinkAttributeAction {
         &self,
     ) -> std::option::Option<&crate::model::TypedAttributeValue> {
         self.attribute_update_value.as_ref()
-    }
-}
-impl std::fmt::Debug for LinkAttributeAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinkAttributeAction");
-        formatter.field("attribute_action_type", &self.attribute_action_type);
-        formatter.field("attribute_update_value", &self.attribute_update_value);
-        formatter.finish()
     }
 }
 /// See [`LinkAttributeAction`](crate::model::LinkAttributeAction).
@@ -1378,7 +1296,7 @@ impl LinkAttributeAction {
 
 /// <p>Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <code>AttachTypedLink</code> API returns a typed link specifier while the <code>DetachTypedLink</code> API accepts one as input. Similarly, the <code>ListIncomingTypedLinks</code> and <code>ListOutgoingTypedLinks</code> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkSpecifier {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     #[doc(hidden)]
@@ -1414,16 +1332,6 @@ impl TypedLinkSpecifier {
         &self,
     ) -> std::option::Option<&[crate::model::AttributeNameAndValue]> {
         self.identity_attribute_values.as_deref()
-    }
-}
-impl std::fmt::Debug for TypedLinkSpecifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkSpecifier");
-        formatter.field("typed_link_facet", &self.typed_link_facet);
-        formatter.field("source_object_reference", &self.source_object_reference);
-        formatter.field("target_object_reference", &self.target_object_reference);
-        formatter.field("identity_attribute_values", &self.identity_attribute_values);
-        formatter.finish()
     }
 }
 /// See [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
@@ -1523,7 +1431,7 @@ impl TypedLinkSpecifier {
 
 /// <p>Identifies the attribute name and value for a typed link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeNameAndValue {
     /// <p>The attribute name of the typed link.</p>
     #[doc(hidden)]
@@ -1540,14 +1448,6 @@ impl AttributeNameAndValue {
     /// <p>The value for the typed link.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for AttributeNameAndValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeNameAndValue");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
@@ -1604,7 +1504,7 @@ impl AttributeNameAndValue {
 
 /// <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -1621,14 +1521,6 @@ impl TypedLinkSchemaAndFacetName {
     /// <p>The unique name of the typed link facet.</p>
     pub fn typed_link_name(&self) -> std::option::Option<&str> {
         self.typed_link_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TypedLinkSchemaAndFacetName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkSchemaAndFacetName");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("typed_link_name", &self.typed_link_name);
-        formatter.finish()
     }
 }
 /// See [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
@@ -1782,7 +1674,7 @@ impl AsRef<str> for ObjectType {
 
 /// <p>A structure that contains information used to update an attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetAttributeUpdate {
     /// <p>The attribute to update.</p>
     #[doc(hidden)]
@@ -1799,14 +1691,6 @@ impl FacetAttributeUpdate {
     /// <p>The action to perform when updating the attribute.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::UpdateActionType> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for FacetAttributeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetAttributeUpdate");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
@@ -1863,7 +1747,7 @@ impl FacetAttributeUpdate {
 
 /// <p>An attribute that is associated with the <code>Facet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetAttribute {
     /// <p>The name of the facet attribute.</p>
     #[doc(hidden)]
@@ -1900,16 +1784,6 @@ impl FacetAttribute {
         &self,
     ) -> std::option::Option<&crate::model::RequiredAttributeBehavior> {
         self.required_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for FacetAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetAttribute");
-        formatter.field("name", &self.name);
-        formatter.field("attribute_definition", &self.attribute_definition);
-        formatter.field("attribute_reference", &self.attribute_reference);
-        formatter.field("required_behavior", &self.required_behavior);
-        formatter.finish()
     }
 }
 /// See [`FacetAttribute`](crate::model::FacetAttribute).
@@ -1997,7 +1871,7 @@ impl FacetAttribute {
 
 /// <p>The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetAttributeReference {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     #[doc(hidden)]
@@ -2014,14 +1888,6 @@ impl FacetAttributeReference {
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn target_attribute_name(&self) -> std::option::Option<&str> {
         self.target_attribute_name.as_deref()
-    }
-}
-impl std::fmt::Debug for FacetAttributeReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetAttributeReference");
-        formatter.field("target_facet_name", &self.target_facet_name);
-        formatter.field("target_attribute_name", &self.target_attribute_name);
-        formatter.finish()
     }
 }
 /// See [`FacetAttributeReference`](crate::model::FacetAttributeReference).
@@ -2078,7 +1944,7 @@ impl FacetAttributeReference {
 
 /// <p>A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetAttributeDefinition {
     /// <p>The type of the attribute.</p>
     #[doc(hidden)]
@@ -2113,16 +1979,6 @@ impl FacetAttributeDefinition {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Rule>>
     {
         self.rules.as_ref()
-    }
-}
-impl std::fmt::Debug for FacetAttributeDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetAttributeDefinition");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("is_immutable", &self.is_immutable);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
@@ -2215,7 +2071,7 @@ impl FacetAttributeDefinition {
 
 /// <p>The tag structure that contains a tag key and value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key that is associated with the tag.</p>
     #[doc(hidden)]
@@ -2232,14 +2088,6 @@ impl Tag {
     /// <p>The value that is associated with the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -2290,7 +2138,7 @@ impl Tag {
 
 /// <p>A facet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaFacet {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
     #[doc(hidden)]
@@ -2307,14 +2155,6 @@ impl SchemaFacet {
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
     pub fn facet_name(&self) -> std::option::Option<&str> {
         self.facet_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaFacet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaFacet");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("facet_name", &self.facet_name);
-        formatter.finish()
     }
 }
 /// See [`SchemaFacet`](crate::model::SchemaFacet).
@@ -2365,7 +2205,7 @@ impl SchemaFacet {
 
 /// <p>Used when a regular object exists in a <code>Directory</code> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
     #[doc(hidden)]
@@ -2382,14 +2222,6 @@ impl PolicyToPath {
     /// <p>List of policy objects.</p>
     pub fn policies(&self) -> std::option::Option<&[crate::model::PolicyAttachment]> {
         self.policies.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyToPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyToPath");
-        formatter.field("path", &self.path);
-        formatter.field("policies", &self.policies);
-        formatter.finish()
     }
 }
 /// See [`PolicyToPath`](crate::model::PolicyToPath).
@@ -2449,7 +2281,7 @@ impl PolicyToPath {
 
 /// <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyAttachment {
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
     #[doc(hidden)]
@@ -2473,15 +2305,6 @@ impl PolicyAttachment {
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
     pub fn policy_type(&self) -> std::option::Option<&str> {
         self.policy_type.as_deref()
-    }
-}
-impl std::fmt::Debug for PolicyAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyAttachment");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.finish()
     }
 }
 /// See [`PolicyAttachment`](crate::model::PolicyAttachment).
@@ -2637,7 +2460,7 @@ impl AsRef<str> for ConsistencyLevel {
 
 /// <p>Identifies the range of attributes that are used by a specified filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkAttributeRange {
     /// <p>The unique name of the typed link attribute.</p>
     #[doc(hidden)]
@@ -2654,14 +2477,6 @@ impl TypedLinkAttributeRange {
     /// <p>The range of attribute values that are being selected.</p>
     pub fn range(&self) -> std::option::Option<&crate::model::TypedAttributeValueRange> {
         self.range.as_ref()
-    }
-}
-impl std::fmt::Debug for TypedLinkAttributeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkAttributeRange");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("range", &self.range);
-        formatter.finish()
     }
 }
 /// See [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
@@ -2718,7 +2533,7 @@ impl TypedLinkAttributeRange {
 
 /// <p>A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedAttributeValueRange {
     /// <p>The inclusive or exclusive range start.</p>
     #[doc(hidden)]
@@ -2749,16 +2564,6 @@ impl TypedAttributeValueRange {
     /// <p>The attribute value to terminate the range at.</p>
     pub fn end_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
         self.end_value.as_ref()
-    }
-}
-impl std::fmt::Debug for TypedAttributeValueRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedAttributeValueRange");
-        formatter.field("start_mode", &self.start_mode);
-        formatter.field("start_value", &self.start_value);
-        formatter.field("end_mode", &self.end_mode);
-        formatter.field("end_value", &self.end_value);
-        formatter.finish()
     }
 }
 /// See [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
@@ -2953,7 +2758,7 @@ impl AsRef<str> for RangeMode {
 
 /// <p>A pair of ObjectIdentifier and LinkName.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectIdentifierAndLinkNameTuple {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
@@ -2970,14 +2775,6 @@ impl ObjectIdentifierAndLinkNameTuple {
     /// <p>The name of the link between the parent and the child object.</p>
     pub fn link_name(&self) -> std::option::Option<&str> {
         self.link_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ObjectIdentifierAndLinkNameTuple {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectIdentifierAndLinkNameTuple");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.field("link_name", &self.link_name);
-        formatter.finish()
     }
 }
 /// See [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
@@ -3031,7 +2828,7 @@ impl ObjectIdentifierAndLinkNameTuple {
 
 /// <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathToObjectIdentifiers {
     /// <p>The path that is used to identify the object starting from directory root.</p>
     #[doc(hidden)]
@@ -3048,14 +2845,6 @@ impl PathToObjectIdentifiers {
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
     pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.object_identifiers.as_deref()
-    }
-}
-impl std::fmt::Debug for PathToObjectIdentifiers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathToObjectIdentifiers");
-        formatter.field("path", &self.path);
-        formatter.field("object_identifiers", &self.object_identifiers);
-        formatter.finish()
     }
 }
 /// See [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
@@ -3115,7 +2904,7 @@ impl PathToObjectIdentifiers {
 
 /// <p>The combination of an attribute key and an attribute value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeKeyAndValue {
     /// <p>The key of the attribute.</p>
     #[doc(hidden)]
@@ -3132,14 +2921,6 @@ impl AttributeKeyAndValue {
     /// <p>The value of the attribute.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for AttributeKeyAndValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeKeyAndValue");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
@@ -3193,7 +2974,7 @@ impl AttributeKeyAndValue {
 
 /// <p>Represents an index and an attached object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexAttachment {
     /// <p>The indexed attribute values.</p>
     #[doc(hidden)]
@@ -3210,14 +2991,6 @@ impl IndexAttachment {
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
     pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for IndexAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexAttachment");
-        formatter.field("indexed_attributes", &self.indexed_attributes);
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
     }
 }
 /// See [`IndexAttachment`](crate::model::IndexAttachment).
@@ -3281,7 +3054,7 @@ impl IndexAttachment {
 
 /// <p>A range of attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectAttributeRange {
     /// <p>The key of the attribute that the attribute range covers.</p>
     #[doc(hidden)]
@@ -3298,14 +3071,6 @@ impl ObjectAttributeRange {
     /// <p>The range of attribute values being selected.</p>
     pub fn range(&self) -> std::option::Option<&crate::model::TypedAttributeValueRange> {
         self.range.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectAttributeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectAttributeRange");
-        formatter.field("attribute_key", &self.attribute_key);
-        formatter.field("range", &self.range);
-        formatter.finish()
     }
 }
 /// See [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
@@ -3362,7 +3127,7 @@ impl ObjectAttributeRange {
 
 /// <p>Directory structure that includes the directory name and directory ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Directory {
     /// <p>The name of the directory.</p>
     #[doc(hidden)]
@@ -3393,16 +3158,6 @@ impl Directory {
     /// <p>The date and time when the directory was created.</p>
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Directory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Directory");
-        formatter.field("name", &self.name);
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("state", &self.state);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.finish()
     }
 }
 /// See [`Directory`](crate::model::Directory).
@@ -3581,7 +3336,7 @@ impl AsRef<str> for DirectoryState {
 
 /// <p>A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <code>Rule</code>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Facet {
     /// <p>The name of the <code>Facet</code>.</p>
     #[doc(hidden)]
@@ -3605,15 +3360,6 @@ impl Facet {
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn facet_style(&self) -> std::option::Option<&crate::model::FacetStyle> {
         self.facet_style.as_ref()
-    }
-}
-impl std::fmt::Debug for Facet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Facet");
-        formatter.field("name", &self.name);
-        formatter.field("object_type", &self.object_type);
-        formatter.field("facet_style", &self.facet_style);
-        formatter.finish()
     }
 }
 /// See [`Facet`](crate::model::Facet).
@@ -3772,7 +3518,7 @@ impl AsRef<str> for FacetStyle {
 
 /// <p>Defines the typed links structure and its attributes. To create a typed link facet, use the <code>CreateTypedLinkFacet</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkFacet {
     /// <p>The unique name of the typed link facet.</p>
     #[doc(hidden)]
@@ -3796,15 +3542,6 @@ impl TypedLinkFacet {
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
     pub fn identity_attribute_order(&self) -> std::option::Option<&[std::string::String]> {
         self.identity_attribute_order.as_deref()
-    }
-}
-impl std::fmt::Debug for TypedLinkFacet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkFacet");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("identity_attribute_order", &self.identity_attribute_order);
-        formatter.finish()
     }
 }
 /// See [`TypedLinkFacet`](crate::model::TypedLinkFacet).
@@ -4094,7 +3831,7 @@ impl AsRef<str> for BatchWriteExceptionType {
 
 /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchWriteOperationResponse {
     /// <p>Creates an object in a <code>Directory</code>.</p>
     #[doc(hidden)]
@@ -4221,27 +3958,6 @@ impl BatchWriteOperationResponse {
         &self,
     ) -> std::option::Option<&crate::model::BatchUpdateLinkAttributesResponse> {
         self.update_link_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchWriteOperationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchWriteOperationResponse");
-        formatter.field("create_object", &self.create_object);
-        formatter.field("attach_object", &self.attach_object);
-        formatter.field("detach_object", &self.detach_object);
-        formatter.field("update_object_attributes", &self.update_object_attributes);
-        formatter.field("delete_object", &self.delete_object);
-        formatter.field("add_facet_to_object", &self.add_facet_to_object);
-        formatter.field("remove_facet_from_object", &self.remove_facet_from_object);
-        formatter.field("attach_policy", &self.attach_policy);
-        formatter.field("detach_policy", &self.detach_policy);
-        formatter.field("create_index", &self.create_index);
-        formatter.field("attach_to_index", &self.attach_to_index);
-        formatter.field("detach_from_index", &self.detach_from_index);
-        formatter.field("attach_typed_link", &self.attach_typed_link);
-        formatter.field("detach_typed_link", &self.detach_typed_link);
-        formatter.field("update_link_attributes", &self.update_link_attributes);
-        formatter.finish()
     }
 }
 /// See [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
@@ -4521,14 +4237,8 @@ impl BatchWriteOperationResponse {
 
 /// <p>Represents the output of a <code>UpdateLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateLinkAttributesResponse {}
-impl std::fmt::Debug for BatchUpdateLinkAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateLinkAttributesResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
 pub mod batch_update_link_attributes_response {
 
@@ -4551,14 +4261,8 @@ impl BatchUpdateLinkAttributesResponse {
 
 /// <p>Represents the output of a <code>DetachTypedLink</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachTypedLinkResponse {}
-impl std::fmt::Debug for BatchDetachTypedLinkResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachTypedLinkResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
 pub mod batch_detach_typed_link_response {
 
@@ -4581,7 +4285,7 @@ impl BatchDetachTypedLinkResponse {
 
 /// <p>Represents the output of a <code>AttachTypedLink</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
@@ -4591,13 +4295,6 @@ impl BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
     pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchAttachTypedLinkResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachTypedLinkResponse");
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.finish()
     }
 }
 /// See [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
@@ -4639,7 +4336,7 @@ impl BatchAttachTypedLinkResponse {
 
 /// <p>Represents the output of a <code>DetachFromIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachFromIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     #[doc(hidden)]
@@ -4649,16 +4346,6 @@ impl BatchDetachFromIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
         self.detached_object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDetachFromIndexResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachFromIndexResponse");
-        formatter.field(
-            "detached_object_identifier",
-            &self.detached_object_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
@@ -4700,7 +4387,7 @@ impl BatchDetachFromIndexResponse {
 
 /// <p>Represents the output of a <code>AttachToIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     #[doc(hidden)]
@@ -4710,16 +4397,6 @@ impl BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
         self.attached_object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchAttachToIndexResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachToIndexResponse");
-        formatter.field(
-            "attached_object_identifier",
-            &self.attached_object_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
@@ -4761,7 +4438,7 @@ impl BatchAttachToIndexResponse {
 
 /// <p>Represents the output of a <code>CreateIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     #[doc(hidden)]
@@ -4771,13 +4448,6 @@ impl BatchCreateIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateIndexResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateIndexResponse");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
     }
 }
 /// See [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
@@ -4819,14 +4489,8 @@ impl BatchCreateIndexResponse {
 
 /// <p>Represents the output of a <code>DetachPolicy</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachPolicyResponse {}
-impl std::fmt::Debug for BatchDetachPolicyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachPolicyResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
 pub mod batch_detach_policy_response {
 
@@ -4849,14 +4513,8 @@ impl BatchDetachPolicyResponse {
 
 /// <p>Represents the output of an <code>AttachPolicy</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachPolicyResponse {}
-impl std::fmt::Debug for BatchAttachPolicyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachPolicyResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
 pub mod batch_attach_policy_response {
 
@@ -4879,14 +4537,8 @@ impl BatchAttachPolicyResponse {
 
 /// <p>An empty result that represents success.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRemoveFacetFromObjectResponse {}
-impl std::fmt::Debug for BatchRemoveFacetFromObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRemoveFacetFromObjectResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
 pub mod batch_remove_facet_from_object_response {
 
@@ -4909,14 +4561,8 @@ impl BatchRemoveFacetFromObjectResponse {
 
 /// <p>The result of a batch add facet to object operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAddFacetToObjectResponse {}
-impl std::fmt::Debug for BatchAddFacetToObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAddFacetToObjectResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
 pub mod batch_add_facet_to_object_response {
 
@@ -4939,14 +4585,8 @@ impl BatchAddFacetToObjectResponse {
 
 /// <p>Represents the output of a <code>DeleteObject</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteObjectResponse {}
-impl std::fmt::Debug for BatchDeleteObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteObjectResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
 pub mod batch_delete_object_response {
 
@@ -4969,7 +4609,7 @@ impl BatchDeleteObjectResponse {
 
 /// <p>Represents the output of a <code>BatchUpdate</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateObjectAttributesResponse {
     /// <p>ID that is associated with the object.</p>
     #[doc(hidden)]
@@ -4979,13 +4619,6 @@ impl BatchUpdateObjectAttributesResponse {
     /// <p>ID that is associated with the object.</p>
     pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchUpdateObjectAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateObjectAttributesResponse");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
     }
 }
 /// See [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
@@ -5027,7 +4660,7 @@ impl BatchUpdateObjectAttributesResponse {
 
 /// <p>Represents the output of a <code>DetachObject</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
     #[doc(hidden)]
@@ -5037,16 +4670,6 @@ impl BatchDetachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
     pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
         self.detached_object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDetachObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachObjectResponse");
-        formatter.field(
-            "detached_object_identifier",
-            &self.detached_object_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
@@ -5088,7 +4711,7 @@ impl BatchDetachObjectResponse {
 
 /// <p>Represents the output batch <code>AttachObject</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
     #[doc(hidden)]
@@ -5098,16 +4721,6 @@ impl BatchAttachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
     pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
         self.attached_object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchAttachObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachObjectResponse");
-        formatter.field(
-            "attached_object_identifier",
-            &self.attached_object_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
@@ -5149,7 +4762,7 @@ impl BatchAttachObjectResponse {
 
 /// <p>Represents the output of a <code>CreateObject</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
@@ -5159,13 +4772,6 @@ impl BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
     pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateObjectResponse");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
     }
 }
 /// See [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
@@ -5207,7 +4813,7 @@ impl BatchCreateObjectResponse {
 
 /// <p>Represents the output of a <code>BatchWrite</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchWriteOperation {
     /// <p>Creates an object.</p>
     #[doc(hidden)]
@@ -5321,27 +4927,6 @@ impl BatchWriteOperation {
         &self,
     ) -> std::option::Option<&crate::model::BatchUpdateLinkAttributes> {
         self.update_link_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchWriteOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchWriteOperation");
-        formatter.field("create_object", &self.create_object);
-        formatter.field("attach_object", &self.attach_object);
-        formatter.field("detach_object", &self.detach_object);
-        formatter.field("update_object_attributes", &self.update_object_attributes);
-        formatter.field("delete_object", &self.delete_object);
-        formatter.field("add_facet_to_object", &self.add_facet_to_object);
-        formatter.field("remove_facet_from_object", &self.remove_facet_from_object);
-        formatter.field("attach_policy", &self.attach_policy);
-        formatter.field("detach_policy", &self.detach_policy);
-        formatter.field("create_index", &self.create_index);
-        formatter.field("attach_to_index", &self.attach_to_index);
-        formatter.field("detach_from_index", &self.detach_from_index);
-        formatter.field("attach_typed_link", &self.attach_typed_link);
-        formatter.field("detach_typed_link", &self.detach_typed_link);
-        formatter.field("update_link_attributes", &self.update_link_attributes);
-        formatter.finish()
     }
 }
 /// See [`BatchWriteOperation`](crate::model::BatchWriteOperation).
@@ -5605,7 +5190,7 @@ impl BatchWriteOperation {
 
 /// <p>Updates a given typed link’s attributes inside a <code>BatchRead</code> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <code>UpdateLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     #[doc(hidden)]
@@ -5622,14 +5207,6 @@ impl BatchUpdateLinkAttributes {
     /// <p>The attributes update structure.</p>
     pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::LinkAttributeUpdate]> {
         self.attribute_updates.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchUpdateLinkAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateLinkAttributes");
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.finish()
     }
 }
 /// See [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
@@ -5693,7 +5270,7 @@ impl BatchUpdateLinkAttributes {
 
 /// <p>Detaches a typed link from a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>DetachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
     #[doc(hidden)]
@@ -5703,13 +5280,6 @@ impl BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
     pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchDetachTypedLink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachTypedLink");
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.finish()
     }
 }
 /// See [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
@@ -5751,7 +5321,7 @@ impl BatchDetachTypedLink {
 
 /// <p>Attaches a typed link to a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>AttachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachTypedLink {
     /// <p>Identifies the source object that the typed link will attach to.</p>
     #[doc(hidden)]
@@ -5784,16 +5354,6 @@ impl BatchAttachTypedLink {
     /// <p>A set of attributes that are associated with the typed link.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeNameAndValue]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchAttachTypedLink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachTypedLink");
-        formatter.field("source_object_reference", &self.source_object_reference);
-        formatter.field("target_object_reference", &self.target_object_reference);
-        formatter.field("typed_link_facet", &self.typed_link_facet);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
@@ -5890,7 +5450,7 @@ impl BatchAttachTypedLink {
 
 /// <p>Detaches the specified object from the specified index inside a <code>BatchRead</code> operation. For more information, see <code>DetachFromIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachFromIndex {
     /// <p>A reference to the index object.</p>
     #[doc(hidden)]
@@ -5907,14 +5467,6 @@ impl BatchDetachFromIndex {
     /// <p>A reference to the object being detached from the index.</p>
     pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.target_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchDetachFromIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachFromIndex");
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("target_reference", &self.target_reference);
-        formatter.finish()
     }
 }
 /// See [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
@@ -5971,7 +5523,7 @@ impl BatchDetachFromIndex {
 
 /// <p>Attaches the specified object to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>AttachToIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachToIndex {
     /// <p>A reference to the index that you are attaching the object to.</p>
     #[doc(hidden)]
@@ -5988,14 +5540,6 @@ impl BatchAttachToIndex {
     /// <p>A reference to the object that you are attaching to the index.</p>
     pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.target_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchAttachToIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachToIndex");
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("target_reference", &self.target_reference);
-        formatter.finish()
     }
 }
 /// See [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
@@ -6052,7 +5596,7 @@ impl BatchAttachToIndex {
 
 /// <p>Creates an index object inside of a <code>BatchRead</code> operation. For more information, see <code>CreateIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
     #[doc(hidden)]
@@ -6093,20 +5637,6 @@ impl BatchCreateIndex {
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub fn batch_reference_name(&self) -> std::option::Option<&str> {
         self.batch_reference_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateIndex");
-        formatter.field(
-            "ordered_indexed_attribute_list",
-            &self.ordered_indexed_attribute_list,
-        );
-        formatter.field("is_unique", &self.is_unique);
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.field("batch_reference_name", &self.batch_reference_name);
-        formatter.finish()
     }
 }
 /// See [`BatchCreateIndex`](crate::model::BatchCreateIndex).
@@ -6209,7 +5739,7 @@ impl BatchCreateIndex {
 
 /// <p>Detaches the specified policy from the specified directory inside a <code>BatchWrite</code> operation. For more information, see <code>DetachPolicy</code> and <code>BatchWriteRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachPolicy {
     /// <p>Reference that identifies the policy object.</p>
     #[doc(hidden)]
@@ -6226,14 +5756,6 @@ impl BatchDetachPolicy {
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchDetachPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachPolicy");
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
     }
 }
 /// See [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
@@ -6290,7 +5812,7 @@ impl BatchDetachPolicy {
 
 /// <p>Attaches a policy object to a regular object inside a <code>BatchRead</code> operation.&nbsp;For more information, see <code>AttachPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachPolicy {
     /// <p>The reference that is associated with the policy object.</p>
     #[doc(hidden)]
@@ -6307,14 +5829,6 @@ impl BatchAttachPolicy {
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchAttachPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachPolicy");
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
     }
 }
 /// See [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
@@ -6371,7 +5885,7 @@ impl BatchAttachPolicy {
 
 /// <p>A batch operation to remove a facet from an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRemoveFacetFromObject {
     /// <p>The facet to remove from the object.</p>
     #[doc(hidden)]
@@ -6388,14 +5902,6 @@ impl BatchRemoveFacetFromObject {
     /// <p>A reference to the object whose facet will be removed.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchRemoveFacetFromObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRemoveFacetFromObject");
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
     }
 }
 /// See [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
@@ -6452,7 +5958,7 @@ impl BatchRemoveFacetFromObject {
 
 /// <p>Represents the output of a batch add facet to object operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAddFacetToObject {
     /// <p>Represents the facet being added to the object.</p>
     #[doc(hidden)]
@@ -6479,15 +5985,6 @@ impl BatchAddFacetToObject {
     /// <p>A reference to the object being mutated.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchAddFacetToObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAddFacetToObject");
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("object_attribute_list", &self.object_attribute_list);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
     }
 }
 /// See [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
@@ -6566,7 +6063,7 @@ impl BatchAddFacetToObject {
 
 /// <p>Represents the output of a <code>DeleteObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteObject {
     /// <p>The reference that identifies the object.</p>
     #[doc(hidden)]
@@ -6576,13 +6073,6 @@ impl BatchDeleteObject {
     /// <p>The reference that identifies the object.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteObject");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
     }
 }
 /// See [`BatchDeleteObject`](crate::model::BatchDeleteObject).
@@ -6624,7 +6114,7 @@ impl BatchDeleteObject {
 
 /// <p>Represents the output of a <code>BatchUpdate</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateObjectAttributes {
     /// <p>Reference that identifies the object.</p>
     #[doc(hidden)]
@@ -6641,14 +6131,6 @@ impl BatchUpdateObjectAttributes {
     /// <p>Attributes update structure.</p>
     pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::ObjectAttributeUpdate]> {
         self.attribute_updates.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchUpdateObjectAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateObjectAttributes");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.finish()
     }
 }
 /// See [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
@@ -6712,7 +6194,7 @@ impl BatchUpdateObjectAttributes {
 
 /// <p>Represents the output of a <code>DetachObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachObject {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
     #[doc(hidden)]
@@ -6736,15 +6218,6 @@ impl BatchDetachObject {
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub fn batch_reference_name(&self) -> std::option::Option<&str> {
         self.batch_reference_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDetachObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachObject");
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.field("batch_reference_name", &self.batch_reference_name);
-        formatter.finish()
     }
 }
 /// See [`BatchDetachObject`](crate::model::BatchDetachObject).
@@ -6813,7 +6286,7 @@ impl BatchDetachObject {
 
 /// <p>Represents the output of an <code>AttachObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachObject {
     /// <p>The parent object reference.</p>
     #[doc(hidden)]
@@ -6837,15 +6310,6 @@ impl BatchAttachObject {
     /// <p>The name of the link.</p>
     pub fn link_name(&self) -> std::option::Option<&str> {
         self.link_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchAttachObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachObject");
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("child_reference", &self.child_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.finish()
     }
 }
 /// See [`BatchAttachObject`](crate::model::BatchAttachObject).
@@ -6914,7 +6378,7 @@ impl BatchAttachObject {
 
 /// <p>Represents the output of a <code>CreateObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -6955,17 +6419,6 @@ impl BatchCreateObject {
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub fn batch_reference_name(&self) -> std::option::Option<&str> {
         self.batch_reference_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateObject");
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("object_attribute_list", &self.object_attribute_list);
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.field("batch_reference_name", &self.batch_reference_name);
-        formatter.finish()
     }
 }
 /// See [`BatchCreateObject`](crate::model::BatchCreateObject).
@@ -7077,7 +6530,7 @@ impl BatchCreateObject {
 
 /// <p>Represents the output of a <code>BatchRead</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadOperationResponse {
     /// <p>Identifies which operation in a batch has succeeded.</p>
     #[doc(hidden)]
@@ -7096,14 +6549,6 @@ impl BatchReadOperationResponse {
     /// <p>Identifies which operation in a batch has failed.</p>
     pub fn exception_response(&self) -> std::option::Option<&crate::model::BatchReadException> {
         self.exception_response.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchReadOperationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadOperationResponse");
-        formatter.field("successful_response", &self.successful_response);
-        formatter.field("exception_response", &self.exception_response);
-        formatter.finish()
     }
 }
 /// See [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
@@ -7164,7 +6609,7 @@ impl BatchReadOperationResponse {
 
 /// <p>The batch read exception structure, which contains the exception type and message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadException {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     #[doc(hidden)]
@@ -7181,14 +6626,6 @@ impl BatchReadException {
     /// <p>An exception message that is associated with the failure.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchReadException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchReadException`](crate::model::BatchReadException).
@@ -7407,7 +6844,7 @@ impl AsRef<str> for BatchReadExceptionType {
 
 /// <p>Represents the output of a <code>BatchRead</code> success response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadSuccessfulResponse {
     /// <p>Lists all attributes that are associated with an object.</p>
     #[doc(hidden)]
@@ -7538,26 +6975,6 @@ impl BatchReadSuccessfulResponse {
         &self,
     ) -> std::option::Option<&crate::model::BatchListObjectParentsResponse> {
         self.list_object_parents.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchReadSuccessfulResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadSuccessfulResponse");
-        formatter.field("list_object_attributes", &self.list_object_attributes);
-        formatter.field("list_object_children", &self.list_object_children);
-        formatter.field("get_object_information", &self.get_object_information);
-        formatter.field("get_object_attributes", &self.get_object_attributes);
-        formatter.field("list_attached_indices", &self.list_attached_indices);
-        formatter.field("list_object_parent_paths", &self.list_object_parent_paths);
-        formatter.field("list_object_policies", &self.list_object_policies);
-        formatter.field("list_policy_attachments", &self.list_policy_attachments);
-        formatter.field("lookup_policy", &self.lookup_policy);
-        formatter.field("list_index", &self.list_index);
-        formatter.field("list_outgoing_typed_links", &self.list_outgoing_typed_links);
-        formatter.field("list_incoming_typed_links", &self.list_incoming_typed_links);
-        formatter.field("get_link_attributes", &self.get_link_attributes);
-        formatter.field("list_object_parents", &self.list_object_parents);
-        formatter.finish()
     }
 }
 /// See [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
@@ -7842,7 +7259,7 @@ impl BatchReadSuccessfulResponse {
 
 /// <p>Represents the output of a <code>ListObjectParents</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectParentsResponse {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     #[doc(hidden)]
@@ -7862,14 +7279,6 @@ impl BatchListObjectParentsResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListObjectParentsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectParentsResponse");
-        formatter.field("parent_links", &self.parent_links);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
@@ -7935,7 +7344,7 @@ impl BatchListObjectParentsResponse {
 
 /// <p>Represents the output of a <code>GetLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
     #[doc(hidden)]
@@ -7945,13 +7354,6 @@ impl BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetLinkAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetLinkAttributesResponse");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
@@ -8000,7 +7402,7 @@ impl BatchGetLinkAttributesResponse {
 
 /// <p>Represents the output of a <code>ListIncomingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListIncomingTypedLinksResponse {
     /// <p>Returns one or more typed link specifiers as output.</p>
     #[doc(hidden)]
@@ -8017,14 +7419,6 @@ impl BatchListIncomingTypedLinksResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListIncomingTypedLinksResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListIncomingTypedLinksResponse");
-        formatter.field("link_specifiers", &self.link_specifiers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
@@ -8085,7 +7479,7 @@ impl BatchListIncomingTypedLinksResponse {
 
 /// <p>Represents the output of a <code>ListOutgoingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListOutgoingTypedLinksResponse {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
@@ -8104,14 +7498,6 @@ impl BatchListOutgoingTypedLinksResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListOutgoingTypedLinksResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListOutgoingTypedLinksResponse");
-        formatter.field("typed_link_specifiers", &self.typed_link_specifiers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
@@ -8172,7 +7558,7 @@ impl BatchListOutgoingTypedLinksResponse {
 
 /// <p>Represents the output of a <code>ListIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListIndexResponse {
     /// <p>The objects and indexed values attached to the index.</p>
     #[doc(hidden)]
@@ -8189,14 +7575,6 @@ impl BatchListIndexResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListIndexResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListIndexResponse");
-        formatter.field("index_attachments", &self.index_attachments);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
@@ -8257,7 +7635,7 @@ impl BatchListIndexResponse {
 
 /// <p>Represents the output of a <code>LookupPolicy</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchLookupPolicyResponse {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     #[doc(hidden)]
@@ -8274,14 +7652,6 @@ impl BatchLookupPolicyResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchLookupPolicyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchLookupPolicyResponse");
-        formatter.field("policy_to_path_list", &self.policy_to_path_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
@@ -8342,7 +7712,7 @@ impl BatchLookupPolicyResponse {
 
 /// <p>Represents the output of a <code>ListPolicyAttachments</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListPolicyAttachmentsResponse {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     #[doc(hidden)]
@@ -8359,14 +7729,6 @@ impl BatchListPolicyAttachmentsResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListPolicyAttachmentsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListPolicyAttachmentsResponse");
-        formatter.field("object_identifiers", &self.object_identifiers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
@@ -8426,7 +7788,7 @@ impl BatchListPolicyAttachmentsResponse {
 
 /// <p>Represents the output of a <code>ListObjectPolicies</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectPoliciesResponse {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     #[doc(hidden)]
@@ -8443,14 +7805,6 @@ impl BatchListObjectPoliciesResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListObjectPoliciesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectPoliciesResponse");
-        formatter.field("attached_policy_ids", &self.attached_policy_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
@@ -8510,7 +7864,7 @@ impl BatchListObjectPoliciesResponse {
 
 /// <p>Represents the output of a <code>ListObjectParentPaths</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectParentPathsResponse {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     #[doc(hidden)]
@@ -8530,17 +7884,6 @@ impl BatchListObjectParentPathsResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListObjectParentPathsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectParentPathsResponse");
-        formatter.field(
-            "path_to_object_identifiers_list",
-            &self.path_to_object_identifiers_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
@@ -8604,7 +7947,7 @@ impl BatchListObjectParentPathsResponse {
 
 /// <p>Represents the output of a <code>ListAttachedIndices</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListAttachedIndicesResponse {
     /// <p>The indices attached to the specified object.</p>
     #[doc(hidden)]
@@ -8621,14 +7964,6 @@ impl BatchListAttachedIndicesResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListAttachedIndicesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListAttachedIndicesResponse");
-        formatter.field("index_attachments", &self.index_attachments);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
@@ -8689,7 +8024,7 @@ impl BatchListAttachedIndicesResponse {
 
 /// <p>Represents the output of a <code>GetObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
     #[doc(hidden)]
@@ -8699,13 +8034,6 @@ impl BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetObjectAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetObjectAttributesResponse");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
@@ -8754,7 +8082,7 @@ impl BatchGetObjectAttributesResponse {
 
 /// <p>Represents the output of a <code>GetObjectInformation</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetObjectInformationResponse {
     /// <p>The facets attached to the specified object.</p>
     #[doc(hidden)]
@@ -8771,14 +8099,6 @@ impl BatchGetObjectInformationResponse {
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetObjectInformationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetObjectInformationResponse");
-        formatter.field("schema_facets", &self.schema_facets);
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
     }
 }
 /// See [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
@@ -8841,7 +8161,7 @@ impl BatchGetObjectInformationResponse {
 
 /// <p>Represents the output of a <code>ListObjectChildren</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectChildrenResponse {
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     #[doc(hidden)]
@@ -8862,14 +8182,6 @@ impl BatchListObjectChildrenResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListObjectChildrenResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectChildrenResponse");
-        formatter.field("children", &self.children);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
@@ -8937,7 +8249,7 @@ impl BatchListObjectChildrenResponse {
 
 /// <p>Represents the output of a <code>ListObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectAttributesResponse {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
     #[doc(hidden)]
@@ -8954,14 +8266,6 @@ impl BatchListObjectAttributesResponse {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListObjectAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectAttributesResponse");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
@@ -9022,7 +8326,7 @@ impl BatchListObjectAttributesResponse {
 
 /// <p>Represents the output of a <code>BatchRead</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadOperation {
     /// <p>Lists all attributes that are associated with an object.</p>
     #[doc(hidden)]
@@ -9147,26 +8451,6 @@ impl BatchReadOperation {
         &self,
     ) -> std::option::Option<&crate::model::BatchGetLinkAttributes> {
         self.get_link_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchReadOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadOperation");
-        formatter.field("list_object_attributes", &self.list_object_attributes);
-        formatter.field("list_object_children", &self.list_object_children);
-        formatter.field("list_attached_indices", &self.list_attached_indices);
-        formatter.field("list_object_parent_paths", &self.list_object_parent_paths);
-        formatter.field("get_object_information", &self.get_object_information);
-        formatter.field("get_object_attributes", &self.get_object_attributes);
-        formatter.field("list_object_parents", &self.list_object_parents);
-        formatter.field("list_object_policies", &self.list_object_policies);
-        formatter.field("list_policy_attachments", &self.list_policy_attachments);
-        formatter.field("lookup_policy", &self.lookup_policy);
-        formatter.field("list_index", &self.list_index);
-        formatter.field("list_outgoing_typed_links", &self.list_outgoing_typed_links);
-        formatter.field("list_incoming_typed_links", &self.list_incoming_typed_links);
-        formatter.field("get_link_attributes", &self.get_link_attributes);
-        formatter.finish()
     }
 }
 /// See [`BatchReadOperation`](crate::model::BatchReadOperation).
@@ -9441,7 +8725,7 @@ impl BatchReadOperation {
 
 /// <p>Retrieves attributes that are associated with a typed link inside a <code>BatchRead</code> operation. For more information, see <code>GetLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     #[doc(hidden)]
@@ -9458,14 +8742,6 @@ impl BatchGetLinkAttributes {
     /// <p>A list of attribute names whose values will be retrieved.</p>
     pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_names.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetLinkAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetLinkAttributes");
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
     }
 }
 /// See [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
@@ -9528,7 +8804,7 @@ impl BatchGetLinkAttributes {
 
 /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object inside a <code>BatchRead</code> operation. For more information, see <code>ListIncomingTypedLinks</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListIncomingTypedLinks {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
@@ -9571,17 +8847,6 @@ impl BatchListIncomingTypedLinks {
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchListIncomingTypedLinks {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListIncomingTypedLinks");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("filter_attribute_ranges", &self.filter_attribute_ranges);
-        formatter.field("filter_typed_link", &self.filter_typed_link);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
@@ -9691,7 +8956,7 @@ impl BatchListIncomingTypedLinks {
 
 /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object inside a <code>BatchRead</code> operation. For more information, see <code>ListOutgoingTypedLinks</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListOutgoingTypedLinks {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
@@ -9734,17 +8999,6 @@ impl BatchListOutgoingTypedLinks {
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchListOutgoingTypedLinks {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListOutgoingTypedLinks");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("filter_attribute_ranges", &self.filter_attribute_ranges);
-        formatter.field("filter_typed_link", &self.filter_typed_link);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
@@ -9854,7 +9108,7 @@ impl BatchListOutgoingTypedLinks {
 
 /// <p>Lists objects attached to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>ListIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     #[doc(hidden)]
@@ -9888,16 +9142,6 @@ impl BatchListIndex {
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchListIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListIndex");
-        formatter.field("ranges_on_indexed_values", &self.ranges_on_indexed_values);
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`BatchListIndex`](crate::model::BatchListIndex).
@@ -9988,7 +9232,7 @@ impl BatchListIndex {
 
 /// <p>Lists all policies from the root of the Directory to the object specified inside a <code>BatchRead</code> operation. For more information, see <code>LookupPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchLookupPolicy {
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
     #[doc(hidden)]
@@ -10012,15 +9256,6 @@ impl BatchLookupPolicy {
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchLookupPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchLookupPolicy");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
@@ -10086,7 +9321,7 @@ impl BatchLookupPolicy {
 
 /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <code>BatchRead</code> operation. For more information, see <code>ListPolicyAttachments</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListPolicyAttachments {
     /// <p>The reference that identifies the policy object.</p>
     #[doc(hidden)]
@@ -10110,15 +9345,6 @@ impl BatchListPolicyAttachments {
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchListPolicyAttachments {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListPolicyAttachments");
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
@@ -10184,7 +9410,7 @@ impl BatchListPolicyAttachments {
 
 /// <p>Returns policies attached to an object in pagination fashion inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectPolicies</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectPolicies {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
@@ -10208,15 +9434,6 @@ impl BatchListObjectPolicies {
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchListObjectPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectPolicies");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
@@ -10282,7 +9499,7 @@ impl BatchListObjectPolicies {
 
 /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectParents {
     /// <p>The reference that identifies an object.</p>
     #[doc(hidden)]
@@ -10306,15 +9523,6 @@ impl BatchListObjectParents {
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchListObjectParents {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectParents");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectParents`](crate::model::BatchListObjectParents).
@@ -10380,7 +9588,7 @@ impl BatchListObjectParents {
 
 /// <p>Retrieves attributes within a facet that are associated with an object inside an <code>BatchRead</code> operation. For more information, see <code>GetObjectAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetObjectAttributes {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     #[doc(hidden)]
@@ -10404,15 +9612,6 @@ impl BatchGetObjectAttributes {
     /// <p>List of attribute names whose values will be retrieved.</p>
     pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_names.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetObjectAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetObjectAttributes");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
     }
 }
 /// See [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
@@ -10490,7 +9689,7 @@ impl BatchGetObjectAttributes {
 
 /// <p>Retrieves metadata about an object inside a <code>BatchRead</code> operation. For more information, see <code>GetObjectInformation</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
     #[doc(hidden)]
@@ -10500,13 +9699,6 @@ impl BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetObjectInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetObjectInformation");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
     }
 }
 /// See [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
@@ -10548,7 +9740,7 @@ impl BatchGetObjectInformation {
 
 /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectParentPaths</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectParentPaths {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
@@ -10572,15 +9764,6 @@ impl BatchListObjectParentPaths {
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchListObjectParentPaths {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectParentPaths");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
@@ -10646,7 +9829,7 @@ impl BatchListObjectParentPaths {
 
 /// <p>Lists indices attached to an object inside a <code>BatchRead</code> operation. For more information, see <code>ListAttachedIndices</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListAttachedIndices {
     /// <p>A reference to the object that has indices attached.</p>
     #[doc(hidden)]
@@ -10670,15 +9853,6 @@ impl BatchListAttachedIndices {
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchListAttachedIndices {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListAttachedIndices");
-        formatter.field("target_reference", &self.target_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
@@ -10744,7 +9918,7 @@ impl BatchListAttachedIndices {
 
 /// <p>Represents the output of a <code>ListObjectChildren</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectChildren {
     /// <p>Reference of the object for which child objects are being listed.</p>
     #[doc(hidden)]
@@ -10768,15 +9942,6 @@ impl BatchListObjectChildren {
     /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for BatchListObjectChildren {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectChildren");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
@@ -10842,7 +10007,7 @@ impl BatchListObjectChildren {
 
 /// <p>Represents the output of a <code>ListObjectAttributes</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectAttributes {
     /// <p>Reference of the object whose attributes need to be listed.</p>
     #[doc(hidden)]
@@ -10873,16 +10038,6 @@ impl BatchListObjectAttributes {
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     pub fn facet_filter(&self) -> std::option::Option<&crate::model::SchemaFacet> {
         self.facet_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchListObjectAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectAttributes");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("facet_filter", &self.facet_filter);
-        formatter.finish()
     }
 }
 /// See [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).

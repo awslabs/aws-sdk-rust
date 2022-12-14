@@ -2,7 +2,7 @@
 
 /// <p>Too many service requests were made over the given time period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -22,15 +22,6 @@ impl TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
-    }
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("message", &self.message);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl TooManyRequestsException {
@@ -111,7 +102,7 @@ impl TooManyRequestsException {
 
 /// <p>The target resource cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -131,15 +122,6 @@ impl NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
-    }
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl NotFoundException {
@@ -220,7 +202,7 @@ impl NotFoundException {
 
 /// <p>A service limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -240,15 +222,6 @@ impl LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl LimitExceededException {
@@ -329,7 +302,7 @@ impl LimitExceededException {
 
 /// <p>An internal server error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -349,15 +322,6 @@ impl InternalServerErrorException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
-    }
-}
-impl std::fmt::Debug for InternalServerErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorException");
-        formatter.field("message", &self.message);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl InternalServerErrorException {
@@ -438,7 +402,7 @@ impl InternalServerErrorException {
 
 /// <p>An access permissions issue occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -458,15 +422,6 @@ impl ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
-    }
-}
-impl std::fmt::Debug for ForbiddenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenException");
-        formatter.field("message", &self.message);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl ForbiddenException {
@@ -547,7 +502,7 @@ impl ForbiddenException {
 
 /// <p>A conflict occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -567,15 +522,6 @@ impl ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl ConflictException {
@@ -656,7 +602,7 @@ impl ConflictException {
 
 /// <p>The target request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -676,15 +622,6 @@ impl BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
-    }
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl BadRequestException {
@@ -765,7 +702,7 @@ impl BadRequestException {
 
 /// <p>A concurrent access issue occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentAccessException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -785,15 +722,6 @@ impl ConcurrentAccessException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
-    }
-}
-impl std::fmt::Debug for ConcurrentAccessException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentAccessException");
-        formatter.field("message", &self.message);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl ConcurrentAccessException {

@@ -7491,7 +7491,7 @@ impl UpgradeElasticsearchDomainInput {
 
 /// <p> Container for request parameters to <code> <code>UpgradeElasticsearchDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeElasticsearchDomainInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -7517,19 +7517,10 @@ impl UpgradeElasticsearchDomainInput {
         self.perform_check_only
     }
 }
-impl std::fmt::Debug for UpgradeElasticsearchDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeElasticsearchDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("target_version", &self.target_version);
-        formatter.field("perform_check_only", &self.perform_check_only);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>UpdatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePackageInput {
     /// <p>Unique identifier for the package.</p>
     #[doc(hidden)]
@@ -7562,20 +7553,10 @@ impl UpdatePackageInput {
         self.commit_message.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_source", &self.package_source);
-        formatter.field("package_description", &self.package_description);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>UpdateElasticsearchDomain</code></code> operation. Specifies the type and number of instances in the domain cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfigInput {
     /// <p>The name of the Elasticsearch domain that you are updating. </p>
     #[doc(hidden)]
@@ -7706,40 +7687,10 @@ impl UpdateElasticsearchDomainConfigInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for UpdateElasticsearchDomainConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateElasticsearchDomainConfigInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field(
-            "elasticsearch_cluster_config",
-            &self.elasticsearch_cluster_config,
-        );
-        formatter.field("ebs_options", &self.ebs_options);
-        formatter.field("snapshot_options", &self.snapshot_options);
-        formatter.field("vpc_options", &self.vpc_options);
-        formatter.field("cognito_options", &self.cognito_options);
-        formatter.field("advanced_options", &self.advanced_options);
-        formatter.field("access_policies", &self.access_policies);
-        formatter.field("log_publishing_options", &self.log_publishing_options);
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.field("advanced_security_options", &self.advanced_security_options);
-        formatter.field(
-            "node_to_node_encryption_options",
-            &self.node_to_node_encryption_options,
-        );
-        formatter.field(
-            "encryption_at_rest_options",
-            &self.encryption_at_rest_options,
-        );
-        formatter.field("auto_tune_options", &self.auto_tune_options);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>StartElasticsearchServiceSoftwareUpdate</code></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartElasticsearchServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
     #[doc(hidden)]
@@ -7751,17 +7702,10 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartElasticsearchServiceSoftwareUpdateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartElasticsearchServiceSoftwareUpdateInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>RemoveTags</code></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>
     #[doc(hidden)]
@@ -7780,18 +7724,10 @@ impl RemoveTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>RejectInboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to reject.</p>
     #[doc(hidden)]
@@ -7803,20 +7739,10 @@ impl RejectInboundCrossClusterSearchConnectionInput {
         self.cross_cluster_search_connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for RejectInboundCrossClusterSearchConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectInboundCrossClusterSearchConnectionInput");
-        formatter.field(
-            "cross_cluster_search_connection_id",
-            &self.cross_cluster_search_connection_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseReservedElasticsearchInstanceOfferingInput {
     /// <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
     #[doc(hidden)]
@@ -7842,22 +7768,10 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
         self.instance_count
     }
 }
-impl std::fmt::Debug for PurchaseReservedElasticsearchInstanceOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseReservedElasticsearchInstanceOfferingInput");
-        formatter.field(
-            "reserved_elasticsearch_instance_offering_id",
-            &self.reserved_elasticsearch_instance_offering_id,
-        );
-        formatter.field("reservation_name", &self.reservation_name);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>ListTags</code></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     #[doc(hidden)]
@@ -7869,17 +7783,10 @@ impl ListTagsInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>ListPackagesForDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagesForDomainInput {
     /// <p>The name of the domain for which you want to list associated packages.</p>
     #[doc(hidden)]
@@ -7905,22 +7812,13 @@ impl ListPackagesForDomainInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackagesForDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagesForDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the parameters to the <code> <code>ListElasticsearchVersions</code> </code> operation. </p>
 /// <p> Use <code> <code>MaxResults</code> </code> to control the maximum number of results to retrieve in a single call. </p>
 /// <p> Use <code> <code>NextToken</code> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve. </p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListElasticsearchVersionsInput {
     /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
     #[doc(hidden)]
@@ -7939,18 +7837,10 @@ impl ListElasticsearchVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListElasticsearchVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListElasticsearchVersionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the parameters to the <code> <code>ListElasticsearchInstanceTypes</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypesInput {
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
     #[doc(hidden)]
@@ -7983,20 +7873,10 @@ impl ListElasticsearchInstanceTypesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListElasticsearchInstanceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListElasticsearchInstanceTypesInput");
-        formatter.field("elasticsearch_version", &self.elasticsearch_version);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>ListDomainsForPackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsForPackageInput {
     /// <p>The package for which to list domains.</p>
     #[doc(hidden)]
@@ -8022,19 +7902,10 @@ impl ListDomainsForPackageInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDomainsForPackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsForPackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the parameters to the <code><code>ListDomainNames</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainNamesInput {
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     #[doc(hidden)]
@@ -8046,17 +7917,10 @@ impl ListDomainNamesInput {
         self.engine_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListDomainNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainNamesInput");
-        formatter.field("engine_type", &self.engine_type);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>GetUpgradeStatus</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUpgradeStatusInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -8068,17 +7932,10 @@ impl GetUpgradeStatusInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetUpgradeStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUpgradeStatusInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>GetUpgradeHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUpgradeHistoryInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -8104,19 +7961,10 @@ impl GetUpgradeHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetUpgradeHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUpgradeHistoryInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>GetPackageVersionHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPackageVersionHistoryInput {
     /// <p>Returns an audit history of versions of the package.</p>
     #[doc(hidden)]
@@ -8142,19 +7990,10 @@ impl GetPackageVersionHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetPackageVersionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPackageVersionHistoryInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCompatibleElasticsearchVersionsInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -8166,17 +8005,10 @@ impl GetCompatibleElasticsearchVersionsInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCompatibleElasticsearchVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCompatibleElasticsearchVersionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>DissociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DissociatePackageInput {
     /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
     #[doc(hidden)]
@@ -8195,18 +8027,10 @@ impl DissociatePackageInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DissociatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DissociatePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for parameters to <code>DescribeReservedElasticsearchInstances</code></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstancesInput {
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p>
     #[doc(hidden)]
@@ -8232,22 +8056,10 @@ impl DescribeReservedElasticsearchInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReservedElasticsearchInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedElasticsearchInstancesInput");
-        formatter.field(
-            "reserved_elasticsearch_instance_id",
-            &self.reserved_elasticsearch_instance_id,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsInput {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     #[doc(hidden)]
@@ -8273,22 +8085,10 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReservedElasticsearchInstanceOfferingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedElasticsearchInstanceOfferingsInput");
-        formatter.field(
-            "reserved_elasticsearch_instance_offering_id",
-            &self.reserved_elasticsearch_instance_offering_id,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>DescribePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackagesInput {
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
     #[doc(hidden)]
@@ -8314,19 +8114,10 @@ impl DescribePackagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackagesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeOutboundCrossClusterSearchConnections</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOutboundCrossClusterSearchConnectionsInput {
     /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
@@ -8368,19 +8159,10 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOutboundCrossClusterSearchConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOutboundCrossClusterSearchConnectionsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeInboundCrossClusterSearchConnections</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInboundCrossClusterSearchConnectionsInput {
     /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
@@ -8422,19 +8204,10 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInboundCrossClusterSearchConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInboundCrossClusterSearchConnectionsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the parameters to <code> <code>DescribeElasticsearchInstanceTypeLimits</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimitsInput {
     /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
     #[doc(hidden)]
@@ -8460,19 +8233,10 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
         self.elasticsearch_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeElasticsearchInstanceTypeLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticsearchInstanceTypeLimitsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("elasticsearch_version", &self.elasticsearch_version);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeElasticsearchDomains</code></code> operation. By default, the API returns the status of all Elasticsearch domains.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsInput {
     /// <p>The Elasticsearch domains for which you want information.</p>
     #[doc(hidden)]
@@ -8484,17 +8248,10 @@ impl DescribeElasticsearchDomainsInput {
         self.domain_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeElasticsearchDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticsearchDomainsInput");
-        formatter.field("domain_names", &self.domain_names);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainConfigInput {
     /// <p>The Elasticsearch domain that you want to get information about.</p>
     #[doc(hidden)]
@@ -8506,17 +8263,10 @@ impl DescribeElasticsearchDomainConfigInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeElasticsearchDomainConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticsearchDomainConfigInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeElasticsearchDomain</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain for which you want information.</p>
     #[doc(hidden)]
@@ -8528,17 +8278,10 @@ impl DescribeElasticsearchDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeElasticsearchDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticsearchDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the domain name and optional change specific identity for which you want progress information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressInput {
     /// <p>The domain you want to get the progress information about.</p>
     #[doc(hidden)]
@@ -8557,18 +8300,10 @@ impl DescribeDomainChangeProgressInput {
         self.change_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainChangeProgressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainChangeProgressInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("change_id", &self.change_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>DescribeDomainAutoTunes</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainAutoTunesInput {
     /// <p>Specifies the domain name for which you want Auto-Tune action details.</p>
     #[doc(hidden)]
@@ -8594,19 +8329,10 @@ impl DescribeDomainAutoTunesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainAutoTunesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainAutoTunesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackageInput {
     /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     #[doc(hidden)]
@@ -8618,17 +8344,10 @@ impl DeletePackageInput {
         self.package_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteOutboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOutboundCrossClusterSearchConnectionInput {
     /// <p>The id of the outbound connection that you want to permanently delete.</p>
     #[doc(hidden)]
@@ -8640,20 +8359,10 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
         self.cross_cluster_search_connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOutboundCrossClusterSearchConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOutboundCrossClusterSearchConnectionInput");
-        formatter.field(
-            "cross_cluster_search_connection_id",
-            &self.cross_cluster_search_connection_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteInboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to permanently delete.</p>
     #[doc(hidden)]
@@ -8665,31 +8374,15 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
         self.cross_cluster_search_connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInboundCrossClusterSearchConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInboundCrossClusterSearchConnectionInput");
-        formatter.field(
-            "cross_cluster_search_connection_id",
-            &self.cross_cluster_search_connection_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteElasticsearchServiceRoleInput {}
-impl std::fmt::Debug for DeleteElasticsearchServiceRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteElasticsearchServiceRoleInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteElasticsearchDomain</code></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
     #[doc(hidden)]
@@ -8701,17 +8394,10 @@ impl DeleteElasticsearchDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteElasticsearchDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteElasticsearchDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>CreatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePackageInput {
     /// <p>Unique identifier for the package.</p>
     #[doc(hidden)]
@@ -8744,20 +8430,10 @@ impl CreatePackageInput {
         self.package_source.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePackageInput");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_type", &self.package_type);
-        formatter.field("package_description", &self.package_description);
-        formatter.field("package_source", &self.package_source);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>CreateOutboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOutboundCrossClusterSearchConnectionInput {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     #[doc(hidden)]
@@ -8783,19 +8459,10 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
         self.connection_alias.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOutboundCrossClusterSearchConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOutboundCrossClusterSearchConnectionInput");
-        formatter.field("source_domain_info", &self.source_domain_info);
-        formatter.field("destination_domain_info", &self.destination_domain_info);
-        formatter.field("connection_alias", &self.connection_alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -8933,41 +8600,10 @@ impl CreateElasticsearchDomainInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for CreateElasticsearchDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateElasticsearchDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("elasticsearch_version", &self.elasticsearch_version);
-        formatter.field(
-            "elasticsearch_cluster_config",
-            &self.elasticsearch_cluster_config,
-        );
-        formatter.field("ebs_options", &self.ebs_options);
-        formatter.field("access_policies", &self.access_policies);
-        formatter.field("snapshot_options", &self.snapshot_options);
-        formatter.field("vpc_options", &self.vpc_options);
-        formatter.field("cognito_options", &self.cognito_options);
-        formatter.field(
-            "encryption_at_rest_options",
-            &self.encryption_at_rest_options,
-        );
-        formatter.field(
-            "node_to_node_encryption_options",
-            &self.node_to_node_encryption_options,
-        );
-        formatter.field("advanced_options", &self.advanced_options);
-        formatter.field("log_publishing_options", &self.log_publishing_options);
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.field("advanced_security_options", &self.advanced_security_options);
-        formatter.field("auto_tune_options", &self.auto_tune_options);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>CancelElasticsearchServiceSoftwareUpdate</code></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelElasticsearchServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to stop the latest service software update on.</p>
     #[doc(hidden)]
@@ -8979,17 +8615,10 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelElasticsearchServiceSoftwareUpdateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelElasticsearchServiceSoftwareUpdateInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to <code> <code>AssociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePackageInput {
     /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
     #[doc(hidden)]
@@ -9008,18 +8637,10 @@ impl AssociatePackageInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for AssociatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>AddTags</code></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
     #[doc(hidden)]
@@ -9038,18 +8659,10 @@ impl AddTagsInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>AcceptInboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to accept.</p>
     #[doc(hidden)]
@@ -9059,15 +8672,5 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to accept.</p>
     pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
         self.cross_cluster_search_connection_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptInboundCrossClusterSearchConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptInboundCrossClusterSearchConnectionInput");
-        formatter.field(
-            "cross_cluster_search_connection_id",
-            &self.cross_cluster_search_connection_id,
-        );
-        formatter.finish()
     }
 }

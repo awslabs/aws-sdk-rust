@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_app_instance_input {
 
     /// A builder for [`CreateAppInstanceInput`](crate::input::CreateAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
@@ -78,6 +78,16 @@ pub mod create_app_instance_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -384,7 +394,7 @@ impl CreateAppInstanceAdminInput {
 pub mod create_app_instance_user_input {
 
     /// A builder for [`CreateAppInstanceUserInput`](crate::input::CreateAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_user_id: std::option::Option<std::string::String>,
@@ -487,6 +497,18 @@ pub mod create_app_instance_user_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("app_instance_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1109,7 +1131,7 @@ impl DeleteAppInstanceUserInput {
 pub mod deregister_app_instance_user_endpoint_input {
 
     /// A builder for [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -1149,6 +1171,14 @@ pub mod deregister_app_instance_user_endpoint_input {
                 app_instance_user_arn: self.app_instance_user_arn,
                 endpoint_id: self.endpoint_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1796,7 +1826,7 @@ impl DescribeAppInstanceUserInput {
 pub mod describe_app_instance_user_endpoint_input {
 
     /// A builder for [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -1836,6 +1866,14 @@ pub mod describe_app_instance_user_endpoint_input {
                 app_instance_user_arn: self.app_instance_user_arn,
                 endpoint_id: self.endpoint_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2138,7 +2176,7 @@ impl GetAppInstanceRetentionSettingsInput {
 pub mod list_app_instance_admins_input {
 
     /// A builder for [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2190,6 +2228,15 @@ pub mod list_app_instance_admins_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2338,7 +2385,7 @@ impl ListAppInstanceAdminsInput {
 pub mod list_app_instances_input {
 
     /// A builder for [`ListAppInstancesInput`](crate::input::ListAppInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2375,6 +2422,14 @@ pub mod list_app_instances_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2499,7 +2554,7 @@ impl ListAppInstancesInput {
 pub mod list_app_instance_user_endpoints_input {
 
     /// A builder for [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2551,6 +2606,15 @@ pub mod list_app_instance_user_endpoints_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2699,7 +2763,7 @@ impl ListAppInstanceUserEndpointsInput {
 pub mod list_app_instance_users_input {
 
     /// A builder for [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2751,6 +2815,15 @@ pub mod list_app_instance_users_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3233,7 +3306,7 @@ impl PutAppInstanceRetentionSettingsInput {
 pub mod register_app_instance_user_endpoint_input {
 
     /// A builder for [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3357,6 +3430,19 @@ pub mod register_app_instance_user_endpoint_input {
                 client_request_token: self.client_request_token,
                 allow_messages: self.allow_messages,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint_attributes", &self.endpoint_attributes);
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("allow_messages", &self.allow_messages);
+            formatter.finish()
         }
     }
 }
@@ -3840,7 +3926,7 @@ impl UntagResourceInput {
 pub mod update_app_instance_input {
 
     /// A builder for [`UpdateAppInstanceInput`](crate::input::UpdateAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3892,6 +3978,15 @@ pub mod update_app_instance_input {
                 name: self.name,
                 metadata: self.metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4033,7 +4128,7 @@ impl UpdateAppInstanceInput {
 pub mod update_app_instance_user_input {
 
     /// A builder for [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4085,6 +4180,15 @@ pub mod update_app_instance_user_input {
                 name: self.name,
                 metadata: self.metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4228,7 +4332,7 @@ impl UpdateAppInstanceUserInput {
 pub mod update_app_instance_user_endpoint_input {
 
     /// A builder for [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -4295,6 +4399,16 @@ pub mod update_app_instance_user_endpoint_input {
                 name: self.name,
                 allow_messages: self.allow_messages,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("allow_messages", &self.allow_messages);
+            formatter.finish()
         }
     }
 }
@@ -4575,7 +4689,7 @@ impl std::fmt::Debug for UpdateAppInstanceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -4594,18 +4708,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -4622,14 +4728,6 @@ impl TagResourceInput {
     /// <p>The tag key-value pairs.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -4717,7 +4815,7 @@ impl std::fmt::Debug for RegisterAppInstanceUserEndpointInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -4739,21 +4837,10 @@ impl PutAppInstanceRetentionSettingsInput {
         self.app_instance_retention_settings.as_ref()
     }
 }
-impl std::fmt::Debug for PutAppInstanceRetentionSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAppInstanceRetentionSettingsInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.field(
-            "app_instance_retention_settings",
-            &self.app_instance_retention_settings,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -4763,13 +4850,6 @@ impl ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 
@@ -4919,7 +4999,7 @@ impl std::fmt::Debug for ListAppInstanceAdminsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -4929,13 +5009,6 @@ impl GetAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GetAppInstanceRetentionSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppInstanceRetentionSettingsInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
     }
 }
 
@@ -4971,7 +5044,7 @@ impl std::fmt::Debug for DescribeAppInstanceUserEndpointInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
@@ -4983,17 +5056,10 @@ impl DescribeAppInstanceUserInput {
         self.app_instance_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceUserInput");
-        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
     #[doc(hidden)]
@@ -5012,18 +5078,10 @@ impl DescribeAppInstanceAdminInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceAdminInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceAdminInput");
-        formatter.field("app_instance_admin_arn", &self.app_instance_admin_arn);
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -5033,13 +5091,6 @@ impl DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeAppInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
     }
 }
 
@@ -5075,7 +5126,7 @@ impl std::fmt::Debug for DeregisterAppInstanceUserEndpointInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceUserInput {
     /// <p>The ARN of the user request being deleted.</p>
     #[doc(hidden)]
@@ -5087,17 +5138,10 @@ impl DeleteAppInstanceUserInput {
         self.app_instance_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInstanceUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceUserInput");
-        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
     #[doc(hidden)]
@@ -5116,18 +5160,10 @@ impl DeleteAppInstanceAdminInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInstanceAdminInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceAdminInput");
-        formatter.field("app_instance_admin_arn", &self.app_instance_admin_arn);
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -5137,13 +5173,6 @@ impl DeleteAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteAppInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
     }
 }
 
@@ -5211,7 +5240,7 @@ impl std::fmt::Debug for CreateAppInstanceUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppInstanceAdminInput {
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -5228,14 +5257,6 @@ impl CreateAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAppInstanceAdminInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppInstanceAdminInput");
-        formatter.field("app_instance_admin_arn", &self.app_instance_admin_arn);
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
     }
 }
 

@@ -2,7 +2,7 @@
 
 /// <p>Contains information about a a field in a validation exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The message with more information about the validation exception.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>Describes a list of filters for choosing a subset of dimension values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricSetDimensionFilter {
     /// <p>The dimension that you want to filter on.</p>
     #[doc(hidden)]
@@ -201,14 +193,6 @@ impl MetricSetDimensionFilter {
     /// <p>The list of filters that you are applying.</p>
     pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filter_list.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricSetDimensionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricSetDimensionFilter");
-        formatter.field("name", &self.name);
-        formatter.field("filter_list", &self.filter_list);
-        formatter.finish()
     }
 }
 /// See [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
@@ -268,7 +252,7 @@ impl MetricSetDimensionFilter {
 
 /// <p>Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The value that you want to include in the filter.</p>
     #[doc(hidden)]
@@ -285,14 +269,6 @@ impl Filter {
     /// <p>The condition to apply.</p>
     pub fn filter_operation(&self) -> std::option::Option<&crate::model::FilterOperation> {
         self.filter_operation.as_ref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("dimension_value", &self.dimension_value);
-        formatter.field("filter_operation", &self.filter_operation);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -434,7 +410,7 @@ impl AsRef<str> for FilterOperation {
 
 /// <p>Contains information about source data used to generate metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricSource {
     /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
     #[doc(hidden)]
@@ -481,18 +457,6 @@ impl MetricSource {
     /// <p>Details about an Amazon Athena datasource.</p>
     pub fn athena_source_config(&self) -> std::option::Option<&crate::model::AthenaSourceConfig> {
         self.athena_source_config.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricSource");
-        formatter.field("s3_source_config", &self.s3_source_config);
-        formatter.field("app_flow_config", &self.app_flow_config);
-        formatter.field("cloud_watch_config", &self.cloud_watch_config);
-        formatter.field("rds_source_config", &self.rds_source_config);
-        formatter.field("redshift_source_config", &self.redshift_source_config);
-        formatter.field("athena_source_config", &self.athena_source_config);
-        formatter.finish()
     }
 }
 /// See [`MetricSource`](crate::model::MetricSource).
@@ -609,7 +573,7 @@ impl MetricSource {
 
 /// <p>Details about an Amazon Athena datasource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AthenaSourceConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
     #[doc(hidden)]
@@ -663,19 +627,6 @@ impl AthenaSourceConfig {
         &self,
     ) -> std::option::Option<&crate::model::BackTestConfiguration> {
         self.back_test_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AthenaSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AthenaSourceConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("data_catalog", &self.data_catalog);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("work_group_name", &self.work_group_name);
-        formatter.field("s3_results_path", &self.s3_results_path);
-        formatter.field("back_test_configuration", &self.back_test_configuration);
-        formatter.finish()
     }
 }
 /// See [`AthenaSourceConfig`](crate::model::AthenaSourceConfig).
@@ -802,7 +753,7 @@ impl AthenaSourceConfig {
 
 /// <p>Settings for backtest mode.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackTestConfiguration {
     /// <p>Run a backtest instead of monitoring new data.</p>
     #[doc(hidden)]
@@ -812,13 +763,6 @@ impl BackTestConfiguration {
     /// <p>Run a backtest instead of monitoring new data.</p>
     pub fn run_back_test_mode(&self) -> std::option::Option<bool> {
         self.run_back_test_mode
-    }
-}
-impl std::fmt::Debug for BackTestConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackTestConfiguration");
-        formatter.field("run_back_test_mode", &self.run_back_test_mode);
-        formatter.finish()
     }
 }
 /// See [`BackTestConfiguration`](crate::model::BackTestConfiguration).
@@ -857,7 +801,7 @@ impl BackTestConfiguration {
 
 /// <p>Provides information about the Amazon Redshift database configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftSourceConfig {
     /// <p>A string identifying the Redshift cluster.</p>
     #[doc(hidden)]
@@ -916,20 +860,6 @@ impl RedshiftSourceConfig {
     /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for RedshiftSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftSourceConfig");
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.field("database_host", &self.database_host);
-        formatter.field("database_port", &self.database_port);
-        formatter.field("secret_manager_arn", &self.secret_manager_arn);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`RedshiftSourceConfig`](crate::model::RedshiftSourceConfig).
@@ -1067,7 +997,7 @@ impl RedshiftSourceConfig {
 
 /// <p>Contains configuration information about the Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -1084,14 +1014,6 @@ impl VpcConfiguration {
     /// <p>An array of strings containing the list of security groups.</p>
     pub fn security_group_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_id_list.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfiguration");
-        formatter.field("subnet_id_list", &self.subnet_id_list);
-        formatter.field("security_group_id_list", &self.security_group_id_list);
-        formatter.finish()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -1160,7 +1082,7 @@ impl VpcConfiguration {
 
 /// <p>Contains information about the Amazon Relational Database Service (RDS) configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsSourceConfig {
     /// <p>A string identifying the database instance.</p>
     #[doc(hidden)]
@@ -1219,20 +1141,6 @@ impl RdsSourceConfig {
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for RdsSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsSourceConfig");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("database_host", &self.database_host);
-        formatter.field("database_port", &self.database_port);
-        formatter.field("secret_manager_arn", &self.secret_manager_arn);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`RdsSourceConfig`](crate::model::RdsSourceConfig).
@@ -1370,7 +1278,7 @@ impl RdsSourceConfig {
 
 /// <p>Details about an Amazon CloudWatch datasource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
     #[doc(hidden)]
@@ -1389,14 +1297,6 @@ impl CloudWatchConfig {
         &self,
     ) -> std::option::Option<&crate::model::BackTestConfiguration> {
         self.back_test_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CloudWatchConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("back_test_configuration", &self.back_test_configuration);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchConfig`](crate::model::CloudWatchConfig).
@@ -1454,7 +1354,7 @@ impl CloudWatchConfig {
 
 /// <p>Details about an Amazon AppFlow flow datasource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
     #[doc(hidden)]
@@ -1471,14 +1371,6 @@ impl AppFlowConfig {
     /// <p> name of the flow.</p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AppFlowConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppFlowConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("flow_name", &self.flow_name);
-        formatter.finish()
     }
 }
 /// See [`AppFlowConfig`](crate::model::AppFlowConfig).
@@ -1529,7 +1421,7 @@ impl AppFlowConfig {
 
 /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SourceConfig {
     /// <p>The ARN of an IAM role that has read and write access permissions to the source S3 bucket.</p>
     #[doc(hidden)]
@@ -1562,16 +1454,6 @@ impl S3SourceConfig {
         &self,
     ) -> std::option::Option<&crate::model::FileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
-    }
-}
-impl std::fmt::Debug for S3SourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3SourceConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("templated_path_list", &self.templated_path_list);
-        formatter.field("historical_data_path_list", &self.historical_data_path_list);
-        formatter.field("file_format_descriptor", &self.file_format_descriptor);
-        formatter.finish()
     }
 }
 /// See [`S3SourceConfig`](crate::model::S3SourceConfig).
@@ -1668,7 +1550,7 @@ impl S3SourceConfig {
 
 /// <p>Contains information about a source file's formatting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileFormatDescriptor {
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
     #[doc(hidden)]
@@ -1687,14 +1569,6 @@ impl FileFormatDescriptor {
         &self,
     ) -> std::option::Option<&crate::model::JsonFormatDescriptor> {
         self.json_format_descriptor.as_ref()
-    }
-}
-impl std::fmt::Debug for FileFormatDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileFormatDescriptor");
-        formatter.field("csv_format_descriptor", &self.csv_format_descriptor);
-        formatter.field("json_format_descriptor", &self.json_format_descriptor);
-        formatter.finish()
     }
 }
 /// See [`FileFormatDescriptor`](crate::model::FileFormatDescriptor).
@@ -1751,7 +1625,7 @@ impl FileFormatDescriptor {
 
 /// <p>Contains information about how a source JSON data file should be analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
     #[doc(hidden)]
@@ -1768,14 +1642,6 @@ impl JsonFormatDescriptor {
     /// <p>The character set in which the source JSON file is written.</p>
     pub fn charset(&self) -> std::option::Option<&str> {
         self.charset.as_deref()
-    }
-}
-impl std::fmt::Debug for JsonFormatDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonFormatDescriptor");
-        formatter.field("file_compression", &self.file_compression);
-        formatter.field("charset", &self.charset);
-        formatter.finish()
     }
 }
 /// See [`JsonFormatDescriptor`](crate::model::JsonFormatDescriptor).
@@ -1921,7 +1787,7 @@ impl AsRef<str> for JsonFileCompression {
 
 /// <p>Contains information about how a source CSV data file should be analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
     #[doc(hidden)]
@@ -1966,18 +1832,6 @@ impl CsvFormatDescriptor {
     /// <p>The character used as a quote character.</p>
     pub fn quote_symbol(&self) -> std::option::Option<&str> {
         self.quote_symbol.as_deref()
-    }
-}
-impl std::fmt::Debug for CsvFormatDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvFormatDescriptor");
-        formatter.field("file_compression", &self.file_compression);
-        formatter.field("charset", &self.charset);
-        formatter.field("contains_header", &self.contains_header);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("header_list", &self.header_list);
-        formatter.field("quote_symbol", &self.quote_symbol);
-        formatter.finish()
     }
 }
 /// See [`CsvFormatDescriptor`](crate::model::CsvFormatDescriptor).
@@ -2280,7 +2134,7 @@ impl AsRef<str> for Frequency {
 
 /// <p>Contains information about the column used to track time in a source data file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampColumn {
     /// <p>The name of the timestamp column.</p>
     #[doc(hidden)]
@@ -2297,14 +2151,6 @@ impl TimestampColumn {
     /// <p>The format of the timestamp column.</p>
     pub fn column_format(&self) -> std::option::Option<&str> {
         self.column_format.as_deref()
-    }
-}
-impl std::fmt::Debug for TimestampColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampColumn");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("column_format", &self.column_format);
-        formatter.finish()
     }
 }
 /// See [`TimestampColumn`](crate::model::TimestampColumn).
@@ -2358,7 +2204,7 @@ impl TimestampColumn {
 
 /// <p>A calculation made by contrasting a measure and a dimension from your source data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metric {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -2382,15 +2228,6 @@ impl Metric {
     /// <p>The namespace for the metric.</p>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
-    }
-}
-impl std::fmt::Debug for Metric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metric");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("aggregation_function", &self.aggregation_function);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
     }
 }
 /// See [`Metric`](crate::model::Metric).
@@ -2548,7 +2385,7 @@ impl AsRef<str> for AggregationFunction {
 
 /// <p>Contains information about a detector's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyDetectorConfig {
     /// <p>The frequency at which the detector analyzes its source data.</p>
     #[doc(hidden)]
@@ -2558,16 +2395,6 @@ impl AnomalyDetectorConfig {
     /// <p>The frequency at which the detector analyzes its source data.</p>
     pub fn anomaly_detector_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
         self.anomaly_detector_frequency.as_ref()
-    }
-}
-impl std::fmt::Debug for AnomalyDetectorConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyDetectorConfig");
-        formatter.field(
-            "anomaly_detector_frequency",
-            &self.anomaly_detector_frequency,
-        );
-        formatter.finish()
     }
 }
 /// See [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig).
@@ -2609,7 +2436,7 @@ impl AnomalyDetectorConfig {
 
 /// <p>The configuration of the alert filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlertFilters {
     /// <p>The list of measures that you want to get alerts for.</p>
     #[doc(hidden)]
@@ -2626,14 +2453,6 @@ impl AlertFilters {
     /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
     pub fn dimension_filter_list(&self) -> std::option::Option<&[crate::model::DimensionFilter]> {
         self.dimension_filter_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AlertFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlertFilters");
-        formatter.field("metric_list", &self.metric_list);
-        formatter.field("dimension_filter_list", &self.dimension_filter_list);
-        formatter.finish()
     }
 }
 /// See [`AlertFilters`](crate::model::AlertFilters).
@@ -2703,7 +2522,7 @@ impl AlertFilters {
 
 /// <p>The dimension filter, containing DimensionName and DimensionValueList.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionFilter {
     /// <p>The name of the dimension to filter on.</p>
     #[doc(hidden)]
@@ -2720,14 +2539,6 @@ impl DimensionFilter {
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
     pub fn dimension_value_list(&self) -> std::option::Option<&[std::string::String]> {
         self.dimension_value_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DimensionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionFilter");
-        formatter.field("dimension_name", &self.dimension_name);
-        formatter.field("dimension_value_list", &self.dimension_value_list);
-        formatter.finish()
     }
 }
 /// See [`DimensionFilter`](crate::model::DimensionFilter).
@@ -2790,7 +2601,7 @@ impl DimensionFilter {
 
 /// <p>A configuration that specifies the action to perform when anomalies are detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>A configuration for an Amazon SNS channel.</p>
     #[doc(hidden)]
@@ -2807,14 +2618,6 @@ impl Action {
     /// <p>A configuration for an AWS Lambda channel.</p>
     pub fn lambda_configuration(&self) -> std::option::Option<&crate::model::LambdaConfiguration> {
         self.lambda_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("sns_configuration", &self.sns_configuration);
-        formatter.field("lambda_configuration", &self.lambda_configuration);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -2871,7 +2674,7 @@ impl Action {
 
 /// <p>Contains information about a Lambda configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaConfiguration {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
     #[doc(hidden)]
@@ -2888,14 +2691,6 @@ impl LambdaConfiguration {
     /// <p>The ARN of the Lambda function.</p>
     pub fn lambda_arn(&self) -> std::option::Option<&str> {
         self.lambda_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaConfiguration`](crate::model::LambdaConfiguration).
@@ -2946,7 +2741,7 @@ impl LambdaConfiguration {
 
 /// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsConfiguration {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
     #[doc(hidden)]
@@ -2980,15 +2775,6 @@ impl SnsConfiguration {
     /// </ul>
     pub fn sns_format(&self) -> std::option::Option<&crate::model::SnsFormat> {
         self.sns_format.as_ref()
-    }
-}
-impl std::fmt::Debug for SnsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("sns_format", &self.sns_format);
-        formatter.finish()
     }
 }
 /// See [`SnsConfiguration`](crate::model::SnsConfiguration).
@@ -3162,7 +2948,7 @@ impl AsRef<str> for SnsFormat {
 
 /// <p>Feedback for an anomalous metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyGroupTimeSeriesFeedback {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
@@ -3186,15 +2972,6 @@ impl AnomalyGroupTimeSeriesFeedback {
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub fn is_anomaly(&self) -> std::option::Option<bool> {
         self.is_anomaly
-    }
-}
-impl std::fmt::Debug for AnomalyGroupTimeSeriesFeedback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyGroupTimeSeriesFeedback");
-        formatter.field("anomaly_group_id", &self.anomaly_group_id);
-        formatter.field("time_series_id", &self.time_series_id);
-        formatter.field("is_anomaly", &self.is_anomaly);
-        formatter.finish()
     }
 }
 /// See [`AnomalyGroupTimeSeriesFeedback`](crate::model::AnomalyGroupTimeSeriesFeedback).
@@ -3263,7 +3040,7 @@ impl AnomalyGroupTimeSeriesFeedback {
 
 /// <p>Contains information about a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricSetSummary {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
@@ -3319,19 +3096,6 @@ impl MetricSetSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricSetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricSetSummary");
-        formatter.field("metric_set_arn", &self.metric_set_arn);
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("metric_set_description", &self.metric_set_description);
-        formatter.field("metric_set_name", &self.metric_set_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`MetricSetSummary`](crate::model::MetricSetSummary).
@@ -3477,7 +3241,7 @@ impl MetricSetSummary {
 
 /// <p>Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeries {
     /// <p>The ID of the metric.</p>
     #[doc(hidden)]
@@ -3501,15 +3265,6 @@ impl TimeSeries {
     /// <p>The values for the metric.</p>
     pub fn metric_value_list(&self) -> std::option::Option<&[f64]> {
         self.metric_value_list.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeSeries {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeries");
-        formatter.field("time_series_id", &self.time_series_id);
-        formatter.field("dimension_list", &self.dimension_list);
-        formatter.field("metric_value_list", &self.metric_value_list);
-        formatter.finish()
     }
 }
 /// See [`TimeSeries`](crate::model::TimeSeries).
@@ -3594,7 +3349,7 @@ impl TimeSeries {
 
 /// <p>A dimension name and value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionNameValue {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
@@ -3611,14 +3366,6 @@ impl DimensionNameValue {
     /// <p>The value of the dimension.</p>
     pub fn dimension_value(&self) -> std::option::Option<&str> {
         self.dimension_value.as_deref()
-    }
-}
-impl std::fmt::Debug for DimensionNameValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionNameValue");
-        formatter.field("dimension_name", &self.dimension_name);
-        formatter.field("dimension_value", &self.dimension_value);
-        formatter.finish()
     }
 }
 /// See [`DimensionNameValue`](crate::model::DimensionNameValue).
@@ -3675,7 +3422,7 @@ impl DimensionNameValue {
 
 /// <p>Aggregated statistics for a group of anomalous metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyGroupStatistics {
     /// <p>The start of the time range that was searched.</p>
     #[doc(hidden)]
@@ -3702,18 +3449,6 @@ impl AnomalyGroupStatistics {
         &self,
     ) -> std::option::Option<&[crate::model::ItemizedMetricStats]> {
         self.itemized_metric_stats_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AnomalyGroupStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyGroupStatistics");
-        formatter.field("evaluation_start_date", &self.evaluation_start_date);
-        formatter.field("total_count", &self.total_count);
-        formatter.field(
-            "itemized_metric_stats_list",
-            &self.itemized_metric_stats_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`AnomalyGroupStatistics`](crate::model::AnomalyGroupStatistics).
@@ -3792,7 +3527,7 @@ impl AnomalyGroupStatistics {
 
 /// <p>Aggregated statistics about a measure affected by an anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ItemizedMetricStats {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
@@ -3809,14 +3544,6 @@ impl ItemizedMetricStats {
     /// <p>The number of times that the measure appears.</p>
     pub fn occurrence_count(&self) -> i32 {
         self.occurrence_count
-    }
-}
-impl std::fmt::Debug for ItemizedMetricStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemizedMetricStats");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("occurrence_count", &self.occurrence_count);
-        formatter.finish()
     }
 }
 /// See [`ItemizedMetricStats`](crate::model::ItemizedMetricStats).
@@ -3867,7 +3594,7 @@ impl ItemizedMetricStats {
 
 /// <p>Details about a group of anomalous metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyGroupSummary {
     /// <p>The start time for the group.</p>
     #[doc(hidden)]
@@ -3905,17 +3632,6 @@ impl AnomalyGroupSummary {
     /// <p>The name of the primary affected measure for the group.</p>
     pub fn primary_metric_name(&self) -> std::option::Option<&str> {
         self.primary_metric_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AnomalyGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyGroupSummary");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("anomaly_group_id", &self.anomaly_group_id);
-        formatter.field("anomaly_group_score", &self.anomaly_group_score);
-        formatter.field("primary_metric_name", &self.primary_metric_name);
-        formatter.finish()
     }
 }
 /// See [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary).
@@ -4009,7 +3725,7 @@ impl AnomalyGroupSummary {
 /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InterMetricImpactDetails {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
@@ -4040,16 +3756,6 @@ impl InterMetricImpactDetails {
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
     pub fn contribution_percentage(&self) -> std::option::Option<f64> {
         self.contribution_percentage
-    }
-}
-impl std::fmt::Debug for InterMetricImpactDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InterMetricImpactDetails");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("anomaly_group_id", &self.anomaly_group_id);
-        formatter.field("relationship_type", &self.relationship_type);
-        formatter.field("contribution_percentage", &self.contribution_percentage);
-        formatter.finish()
     }
 }
 /// See [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails).
@@ -4223,7 +3929,7 @@ impl AsRef<str> for RelationshipType {
 
 /// <p>Contains information about an an anomaly detector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyDetectorSummary {
     /// <p>The ARN of the detector.</p>
     #[doc(hidden)]
@@ -4279,22 +3985,6 @@ impl AnomalyDetectorSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for AnomalyDetectorSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyDetectorSummary");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("anomaly_detector_name", &self.anomaly_detector_name);
-        formatter.field(
-            "anomaly_detector_description",
-            &self.anomaly_detector_description,
-        );
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`AnomalyDetectorSummary`](crate::model::AnomalyDetectorSummary).
@@ -4592,7 +4282,7 @@ impl AsRef<str> for AnomalyDetectorStatus {
 
 /// <p>Provides a summary of an alert's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlertSummary {
     /// <p>The ARN of the alert.</p>
     #[doc(hidden)]
@@ -4662,24 +4352,6 @@ impl AlertSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for AlertSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlertSummary");
-        formatter.field("alert_arn", &self.alert_arn);
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("alert_name", &self.alert_name);
-        formatter.field(
-            "alert_sensitivity_threshold",
-            &self.alert_sensitivity_threshold,
-        );
-        formatter.field("alert_type", &self.alert_type);
-        formatter.field("alert_status", &self.alert_status);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`AlertSummary`](crate::model::AlertSummary).
@@ -5026,7 +4698,7 @@ impl AsRef<str> for AlertType {
 
 /// <p>Contains information about the source configuration in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SampleDataS3SourceConfig {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
     #[doc(hidden)]
@@ -5059,16 +4731,6 @@ impl SampleDataS3SourceConfig {
         &self,
     ) -> std::option::Option<&crate::model::FileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
-    }
-}
-impl std::fmt::Debug for SampleDataS3SourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SampleDataS3SourceConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("templated_path_list", &self.templated_path_list);
-        formatter.field("historical_data_path_list", &self.historical_data_path_list);
-        formatter.field("file_format_descriptor", &self.file_format_descriptor);
-        formatter.finish()
     }
 }
 /// See [`SampleDataS3SourceConfig`](crate::model::SampleDataS3SourceConfig).
@@ -5165,7 +4827,7 @@ impl SampleDataS3SourceConfig {
 
 /// <p>Details about feedback submitted for an anomalous metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesFeedback {
     /// <p>The ID of the metric.</p>
     #[doc(hidden)]
@@ -5182,14 +4844,6 @@ impl TimeSeriesFeedback {
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub fn is_anomaly(&self) -> std::option::Option<bool> {
         self.is_anomaly
-    }
-}
-impl std::fmt::Debug for TimeSeriesFeedback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesFeedback");
-        formatter.field("time_series_id", &self.time_series_id);
-        formatter.field("is_anomaly", &self.is_anomaly);
-        formatter.finish()
     }
 }
 /// See [`TimeSeriesFeedback`](crate::model::TimeSeriesFeedback).
@@ -5243,7 +4897,7 @@ impl TimeSeriesFeedback {
 
 /// <p>An anomalous metric in an anomaly group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyGroupTimeSeries {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
@@ -5260,14 +4914,6 @@ impl AnomalyGroupTimeSeries {
     /// <p>The ID of the metric.</p>
     pub fn time_series_id(&self) -> std::option::Option<&str> {
         self.time_series_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AnomalyGroupTimeSeries {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyGroupTimeSeries");
-        formatter.field("anomaly_group_id", &self.anomaly_group_id);
-        formatter.field("time_series_id", &self.time_series_id);
-        formatter.finish()
     }
 }
 /// See [`AnomalyGroupTimeSeries`](crate::model::AnomalyGroupTimeSeries).
@@ -5324,7 +4970,7 @@ impl AnomalyGroupTimeSeries {
 
 /// <p>Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <code>GetDataQualityMetrics</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyDetectorDataQualityMetric {
     /// <p>The start time for the data quality metrics collection.</p>
     #[doc(hidden)]
@@ -5344,17 +4990,6 @@ impl AnomalyDetectorDataQualityMetric {
         &self,
     ) -> std::option::Option<&[crate::model::MetricSetDataQualityMetric]> {
         self.metric_set_data_quality_metric_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AnomalyDetectorDataQualityMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyDetectorDataQualityMetric");
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field(
-            "metric_set_data_quality_metric_list",
-            &self.metric_set_data_quality_metric_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
@@ -5421,7 +5056,7 @@ impl AnomalyDetectorDataQualityMetric {
 
 /// <p>An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricSetDataQualityMetric {
     /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
     #[doc(hidden)]
@@ -5441,14 +5076,6 @@ impl MetricSetDataQualityMetric {
         &self,
     ) -> std::option::Option<&[crate::model::DataQualityMetric]> {
         self.data_quality_metric_list.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricSetDataQualityMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricSetDataQualityMetric");
-        formatter.field("metric_set_arn", &self.metric_set_arn);
-        formatter.field("data_quality_metric_list", &self.data_quality_metric_list);
-        formatter.finish()
     }
 }
 /// See [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
@@ -5512,7 +5139,7 @@ impl MetricSetDataQualityMetric {
 
 /// <p>An array that describes a data quality metric. Each <code>DataQualityMetric</code> object contains the data quality metric name, its value, a description of the metric, and the affected column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataQualityMetric {
     /// <p>The name of the data quality metric.</p>
     #[doc(hidden)]
@@ -5543,16 +5170,6 @@ impl DataQualityMetric {
     /// <p>The value of the data quality metric.</p>
     pub fn metric_value(&self) -> std::option::Option<f64> {
         self.metric_value
-    }
-}
-impl std::fmt::Debug for DataQualityMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataQualityMetric");
-        formatter.field("metric_type", &self.metric_type);
-        formatter.field("metric_description", &self.metric_description);
-        formatter.field("related_column_name", &self.related_column_name);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.finish()
     }
 }
 /// See [`DataQualityMetric`](crate::model::DataQualityMetric).
@@ -5795,7 +5412,7 @@ impl AsRef<str> for DataQualityMetricType {
 
 /// <p>A group of anomalous metrics</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyGroup {
     /// <p>The start time for the group.</p>
     #[doc(hidden)]
@@ -5843,18 +5460,6 @@ impl AnomalyGroup {
         &self,
     ) -> std::option::Option<&[crate::model::MetricLevelImpact]> {
         self.metric_level_impact_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AnomalyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyGroup");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("anomaly_group_id", &self.anomaly_group_id);
-        formatter.field("anomaly_group_score", &self.anomaly_group_score);
-        formatter.field("primary_metric_name", &self.primary_metric_name);
-        formatter.field("metric_level_impact_list", &self.metric_level_impact_list);
-        formatter.finish()
     }
 }
 /// See [`AnomalyGroup`](crate::model::AnomalyGroup).
@@ -5969,7 +5574,7 @@ impl AnomalyGroup {
 
 /// <p>Details about a measure affected by an anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricLevelImpact {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
@@ -5993,15 +5598,6 @@ impl MetricLevelImpact {
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     pub fn contribution_matrix(&self) -> std::option::Option<&crate::model::ContributionMatrix> {
         self.contribution_matrix.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricLevelImpact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricLevelImpact");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("num_time_series", &self.num_time_series);
-        formatter.field("contribution_matrix", &self.contribution_matrix);
-        formatter.finish()
     }
 }
 /// See [`MetricLevelImpact`](crate::model::MetricLevelImpact).
@@ -6067,7 +5663,7 @@ impl MetricLevelImpact {
 
 /// <p>Details about dimensions that contributed to an anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContributionMatrix {
     /// <p>A list of contributing dimensions.</p>
     #[doc(hidden)]
@@ -6080,16 +5676,6 @@ impl ContributionMatrix {
         &self,
     ) -> std::option::Option<&[crate::model::DimensionContribution]> {
         self.dimension_contribution_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ContributionMatrix {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContributionMatrix");
-        formatter.field(
-            "dimension_contribution_list",
-            &self.dimension_contribution_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ContributionMatrix`](crate::model::ContributionMatrix).
@@ -6141,7 +5727,7 @@ impl ContributionMatrix {
 
 /// <p>Details about a dimension that contributed to an anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionContribution {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
@@ -6161,17 +5747,6 @@ impl DimensionContribution {
         &self,
     ) -> std::option::Option<&[crate::model::DimensionValueContribution]> {
         self.dimension_value_contribution_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DimensionContribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionContribution");
-        formatter.field("dimension_name", &self.dimension_name);
-        formatter.field(
-            "dimension_value_contribution_list",
-            &self.dimension_value_contribution_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`DimensionContribution`](crate::model::DimensionContribution).
@@ -6238,7 +5813,7 @@ impl DimensionContribution {
 
 /// <p>The severity of a value of a dimension that contributed to an anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionValueContribution {
     /// <p>The value of the dimension.</p>
     #[doc(hidden)]
@@ -6255,14 +5830,6 @@ impl DimensionValueContribution {
     /// <p>The severity score of the value.</p>
     pub fn contribution_score(&self) -> std::option::Option<f64> {
         self.contribution_score
-    }
-}
-impl std::fmt::Debug for DimensionValueContribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionValueContribution");
-        formatter.field("dimension_value", &self.dimension_value);
-        formatter.field("contribution_score", &self.contribution_score);
-        formatter.finish()
     }
 }
 /// See [`DimensionValueContribution`](crate::model::DimensionValueContribution).
@@ -6316,7 +5883,7 @@ impl DimensionValueContribution {
 
 /// <p>An inferred dataset configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedMetricSetConfig {
     /// <p>The dataset's offset.</p>
     #[doc(hidden)]
@@ -6340,15 +5907,6 @@ impl DetectedMetricSetConfig {
     /// <p>The dataset's data source.</p>
     pub fn metric_source(&self) -> std::option::Option<&crate::model::DetectedMetricSource> {
         self.metric_source.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectedMetricSetConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedMetricSetConfig");
-        formatter.field("offset", &self.offset);
-        formatter.field("metric_set_frequency", &self.metric_set_frequency);
-        formatter.field("metric_source", &self.metric_source);
-        formatter.finish()
     }
 }
 /// See [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig).
@@ -6420,7 +5978,7 @@ impl DetectedMetricSetConfig {
 
 /// <p>An inferred data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedMetricSource {
     /// <p>The data source's source configuration.</p>
     #[doc(hidden)]
@@ -6430,13 +5988,6 @@ impl DetectedMetricSource {
     /// <p>The data source's source configuration.</p>
     pub fn s3_source_config(&self) -> std::option::Option<&crate::model::DetectedS3SourceConfig> {
         self.s3_source_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectedMetricSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedMetricSource");
-        formatter.field("s3_source_config", &self.s3_source_config);
-        formatter.finish()
     }
 }
 /// See [`DetectedMetricSource`](crate::model::DetectedMetricSource).
@@ -6478,7 +6029,7 @@ impl DetectedMetricSource {
 
 /// <p>An inferred source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedS3SourceConfig {
     /// <p>The source's file format descriptor.</p>
     #[doc(hidden)]
@@ -6490,13 +6041,6 @@ impl DetectedS3SourceConfig {
         &self,
     ) -> std::option::Option<&crate::model::DetectedFileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectedS3SourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedS3SourceConfig");
-        formatter.field("file_format_descriptor", &self.file_format_descriptor);
-        formatter.finish()
     }
 }
 /// See [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig).
@@ -6542,7 +6086,7 @@ impl DetectedS3SourceConfig {
 
 /// <p>Properties of an inferred data format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedFileFormatDescriptor {
     /// <p>Details about a CSV format.</p>
     #[doc(hidden)]
@@ -6563,14 +6107,6 @@ impl DetectedFileFormatDescriptor {
         &self,
     ) -> std::option::Option<&crate::model::DetectedJsonFormatDescriptor> {
         self.json_format_descriptor.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectedFileFormatDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedFileFormatDescriptor");
-        formatter.field("csv_format_descriptor", &self.csv_format_descriptor);
-        formatter.field("json_format_descriptor", &self.json_format_descriptor);
-        formatter.finish()
     }
 }
 /// See [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor).
@@ -6635,7 +6171,7 @@ impl DetectedFileFormatDescriptor {
 
 /// <p>A detected JSON format descriptor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedJsonFormatDescriptor {
     /// <p>The format's file compression.</p>
     #[doc(hidden)]
@@ -6652,14 +6188,6 @@ impl DetectedJsonFormatDescriptor {
     /// <p>The format's character set.</p>
     pub fn charset(&self) -> std::option::Option<&crate::model::DetectedField> {
         self.charset.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectedJsonFormatDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedJsonFormatDescriptor");
-        formatter.field("file_compression", &self.file_compression);
-        formatter.field("charset", &self.charset);
-        formatter.finish()
     }
 }
 /// See [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor).
@@ -6716,7 +6244,7 @@ impl DetectedJsonFormatDescriptor {
 
 /// <p>An inferred field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedField {
     /// <p>The field's value.</p>
     #[doc(hidden)]
@@ -6740,15 +6268,6 @@ impl DetectedField {
     /// <p>The field's message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DetectedField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedField");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DetectedField`](crate::model::DetectedField).
@@ -6912,7 +6431,7 @@ impl AsRef<str> for Confidence {
 
 /// <p>An attribute value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeValue {
     /// <p>A string.</p>
     #[doc(hidden)]
@@ -6957,18 +6476,6 @@ impl AttributeValue {
     /// <p>A list of binary values.</p>
     pub fn bs(&self) -> std::option::Option<&[std::string::String]> {
         self.bs.as_deref()
-    }
-}
-impl std::fmt::Debug for AttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeValue");
-        formatter.field("s", &self.s);
-        formatter.field("n", &self.n);
-        formatter.field("b", &self.b);
-        formatter.field("ss", &self.ss);
-        formatter.field("ns", &self.ns);
-        formatter.field("bs", &self.bs);
-        formatter.finish()
     }
 }
 /// See [`AttributeValue`](crate::model::AttributeValue).
@@ -7094,7 +6601,7 @@ impl AttributeValue {
 
 /// <p>Properties of an inferred CSV format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedCsvFormatDescriptor {
     /// <p>The format's file compression.</p>
     #[doc(hidden)]
@@ -7139,18 +6646,6 @@ impl DetectedCsvFormatDescriptor {
     /// <p>The format's quote symbol.</p>
     pub fn quote_symbol(&self) -> std::option::Option<&crate::model::DetectedField> {
         self.quote_symbol.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectedCsvFormatDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedCsvFormatDescriptor");
-        formatter.field("file_compression", &self.file_compression);
-        formatter.field("charset", &self.charset);
-        formatter.field("contains_header", &self.contains_header);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("header_list", &self.header_list);
-        formatter.field("quote_symbol", &self.quote_symbol);
-        formatter.finish()
     }
 }
 /// See [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor).
@@ -7267,7 +6762,7 @@ impl DetectedCsvFormatDescriptor {
 
 /// <p>An auto detection metric source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoDetectionMetricSource {
     /// <p>The source's source config.</p>
     #[doc(hidden)]
@@ -7279,13 +6774,6 @@ impl AutoDetectionMetricSource {
         &self,
     ) -> std::option::Option<&crate::model::AutoDetectionS3SourceConfig> {
         self.s3_source_config.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoDetectionMetricSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoDetectionMetricSource");
-        formatter.field("s3_source_config", &self.s3_source_config);
-        formatter.finish()
     }
 }
 /// See [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource).
@@ -7330,7 +6818,7 @@ impl AutoDetectionMetricSource {
 
 /// <p>An auto detection source config.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoDetectionS3SourceConfig {
     /// <p>The config's templated path list.</p>
     #[doc(hidden)]
@@ -7347,14 +6835,6 @@ impl AutoDetectionS3SourceConfig {
     /// <p>The config's historical data path list.</p>
     pub fn historical_data_path_list(&self) -> std::option::Option<&[std::string::String]> {
         self.historical_data_path_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoDetectionS3SourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoDetectionS3SourceConfig");
-        formatter.field("templated_path_list", &self.templated_path_list);
-        formatter.field("historical_data_path_list", &self.historical_data_path_list);
-        formatter.finish()
     }
 }
 /// See [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig).
@@ -7531,7 +7011,7 @@ impl AsRef<str> for AnomalyDetectorFailureType {
 
 /// <p>Contains information about a detector's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyDetectorConfigSummary {
     /// <p>The interval at which the detector analyzes its source data.</p>
     #[doc(hidden)]
@@ -7541,16 +7021,6 @@ impl AnomalyDetectorConfigSummary {
     /// <p>The interval at which the detector analyzes its source data.</p>
     pub fn anomaly_detector_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
         self.anomaly_detector_frequency.as_ref()
-    }
-}
-impl std::fmt::Debug for AnomalyDetectorConfigSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyDetectorConfigSummary");
-        formatter.field(
-            "anomaly_detector_frequency",
-            &self.anomaly_detector_frequency,
-        );
-        formatter.finish()
     }
 }
 /// See [`AnomalyDetectorConfigSummary`](crate::model::AnomalyDetectorConfigSummary).
@@ -7592,7 +7062,7 @@ impl AnomalyDetectorConfigSummary {
 
 /// <p>The status of an anomaly detector run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionStatus {
     /// <p>The run's timestamp.</p>
     #[doc(hidden)]
@@ -7616,15 +7086,6 @@ impl ExecutionStatus {
     /// <p>The reason that the run failed, if applicable.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ExecutionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionStatus");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`ExecutionStatus`](crate::model::ExecutionStatus).
@@ -7806,7 +7267,7 @@ impl AsRef<str> for AnomalyDetectionTaskStatus {
 
 /// <p>A configuration for Amazon SNS-integrated notifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alert {
     /// <p>Action that will be triggered when there is an alert.</p>
     #[doc(hidden)]
@@ -7886,26 +7347,6 @@ impl Alert {
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
     pub fn alert_filters(&self) -> std::option::Option<&crate::model::AlertFilters> {
         self.alert_filters.as_ref()
-    }
-}
-impl std::fmt::Debug for Alert {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alert");
-        formatter.field("action", &self.action);
-        formatter.field("alert_description", &self.alert_description);
-        formatter.field("alert_arn", &self.alert_arn);
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("alert_name", &self.alert_name);
-        formatter.field(
-            "alert_sensitivity_threshold",
-            &self.alert_sensitivity_threshold,
-        );
-        formatter.field("alert_type", &self.alert_type);
-        formatter.field("alert_status", &self.alert_status);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("alert_filters", &self.alert_filters);
-        formatter.finish()
     }
 }
 /// See [`Alert`](crate::model::Alert).

@@ -413,7 +413,7 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
 pub mod create_attendee_input {
 
     /// A builder for [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -482,6 +482,15 @@ pub mod create_attendee_input {
                 external_user_id: self.external_user_id,
                 capabilities: self.capabilities,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("meeting_id", &self.meeting_id);
+            formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("capabilities", &self.capabilities);
+            formatter.finish()
         }
     }
 }
@@ -623,7 +632,7 @@ impl CreateAttendeeInput {
 pub mod create_meeting_input {
 
     /// A builder for [`CreateMeetingInput`](crate::input::CreateMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) media_region: std::option::Option<std::string::String>,
@@ -820,6 +829,24 @@ pub mod create_meeting_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("media_region", &self.media_region);
+            formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "notifications_configuration",
+                &self.notifications_configuration,
+            );
+            formatter.field("meeting_features", &self.meeting_features);
+            formatter.field("primary_meeting_id", &self.primary_meeting_id);
+            formatter.field("tenant_ids", &self.tenant_ids);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl CreateMeetingInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeeting`](crate::operation::CreateMeeting)>
@@ -938,7 +965,7 @@ impl CreateMeetingInput {
 pub mod create_meeting_with_attendees_input {
 
     /// A builder for [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) media_region: std::option::Option<std::string::String>,
@@ -1129,6 +1156,25 @@ pub mod create_meeting_with_attendees_input {
                 tenant_ids: self.tenant_ids,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("media_region", &self.media_region);
+            formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("meeting_features", &self.meeting_features);
+            formatter.field(
+                "notifications_configuration",
+                &self.notifications_configuration,
+            );
+            formatter.field("attendees", &self.attendees);
+            formatter.field("primary_meeting_id", &self.primary_meeting_id);
+            formatter.field("tenant_ids", &self.tenant_ids);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -3170,7 +3216,7 @@ impl UpdateAttendeeCapabilitiesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAttendeeCapabilitiesInput {
     /// <p>The ID of the meeting associated with the update request.</p>
     #[doc(hidden)]
@@ -3196,19 +3242,10 @@ impl UpdateAttendeeCapabilitiesInput {
         self.capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAttendeeCapabilitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAttendeeCapabilitiesInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource that you're removing tags from.</p>
     #[doc(hidden)]
@@ -3227,18 +3264,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -3257,18 +3286,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
     #[doc(hidden)]
@@ -3280,17 +3301,10 @@ impl StopMeetingTranscriptionInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopMeetingTranscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMeetingTranscriptionInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting being transcribed.</p>
     #[doc(hidden)]
@@ -3311,21 +3325,10 @@ impl StartMeetingTranscriptionInput {
         self.transcription_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for StartMeetingTranscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMeetingTranscriptionInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field(
-            "transcription_configuration",
-            &self.transcription_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -3337,17 +3340,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttendeesInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3373,19 +3369,10 @@ impl ListAttendeesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAttendeesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttendeesInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3397,17 +3384,10 @@ impl GetMeetingInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMeetingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMeetingInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3426,18 +3406,10 @@ impl GetAttendeeInput {
         self.attendee_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3449,17 +3421,10 @@ impl DeleteMeetingInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMeetingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMeetingInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3476,14 +3441,6 @@ impl DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn attendee_id(&self) -> std::option::Option<&str> {
         self.attendee_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.finish()
     }
 }
 
@@ -3773,7 +3730,7 @@ impl std::fmt::Debug for CreateAttendeeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateAttendeeCapabilitiesExceptInput {
     /// <p>The ID of the meeting associated with the update request.</p>
     #[doc(hidden)]
@@ -3799,19 +3756,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
         self.capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for BatchUpdateAttendeeCapabilitiesExceptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateAttendeeCapabilitiesExceptInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("excluded_attendee_ids", &self.excluded_attendee_ids);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateAttendeeInput {
     /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
     #[doc(hidden)]
@@ -3828,13 +3776,5 @@ impl BatchCreateAttendeeInput {
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
     pub fn attendees(&self) -> std::option::Option<&[crate::model::CreateAttendeeRequestItem]> {
         self.attendees.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendees", &self.attendees);
-        formatter.finish()
     }
 }

@@ -16127,7 +16127,7 @@ impl UpdateVpcLinkInput {
 
 /// <p>Updates a VPC link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVpcLinkInput {
     /// <p>The name of the VPC link.</p>
     #[doc(hidden)]
@@ -16146,18 +16146,10 @@ impl UpdateVpcLinkInput {
         self.vpc_link_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVpcLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVpcLinkInput");
-        formatter.field("name", &self.name);
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a Stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStageInput {
     /// <p>Settings for logging access in this stage.</p>
     #[doc(hidden)]
@@ -16242,26 +16234,10 @@ impl UpdateStageInput {
         self.stage_variables.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStageInput");
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("api_id", &self.api_id);
-        formatter.field("auto_deploy", &self.auto_deploy);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("default_route_settings", &self.default_route_settings);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("description", &self.description);
-        formatter.field("route_settings", &self.route_settings);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("stage_variables", &self.stage_variables);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a RouteResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRouteResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -16325,26 +16301,10 @@ impl UpdateRouteResponseInput {
         self.route_response_key.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRouteResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRouteResponseInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field(
-            "model_selection_expression",
-            &self.model_selection_expression,
-        );
-        formatter.field("response_models", &self.response_models);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("route_id", &self.route_id);
-        formatter.field("route_response_id", &self.route_response_id);
-        formatter.field("route_response_key", &self.route_response_key);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a Route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRouteInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -16450,35 +16410,10 @@ impl UpdateRouteInput {
         self.target.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRouteInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field(
-            "model_selection_expression",
-            &self.model_selection_expression,
-        );
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("route_id", &self.route_id);
-        formatter.field("route_key", &self.route_key);
-        formatter.field(
-            "route_response_selection_expression",
-            &self.route_response_selection_expression,
-        );
-        formatter.field("target", &self.target);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a Model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -16525,22 +16460,10 @@ impl UpdateModelInput {
         self.schema.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateModelInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("description", &self.description);
-        formatter.field("model_id", &self.model_id);
-        formatter.field("name", &self.name);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates an IntegrationResponses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntegrationResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -16637,27 +16560,10 @@ impl UpdateIntegrationResponseInput {
         self.template_selection_expression.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateIntegrationResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntegrationResponseInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("content_handling_strategy", &self.content_handling_strategy);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.field("integration_response_id", &self.integration_response_id);
-        formatter.field("integration_response_key", &self.integration_response_key);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field(
-            "template_selection_expression",
-            &self.template_selection_expression,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Updates an Integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntegrationInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -16863,38 +16769,10 @@ impl UpdateIntegrationInput {
         self.tls_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntegrationInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("content_handling_strategy", &self.content_handling_strategy);
-        formatter.field("credentials_arn", &self.credentials_arn);
-        formatter.field("description", &self.description);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.field("integration_method", &self.integration_method);
-        formatter.field("integration_subtype", &self.integration_subtype);
-        formatter.field("integration_type", &self.integration_type);
-        formatter.field("integration_uri", &self.integration_uri);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("payload_format_version", &self.payload_format_version);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field(
-            "template_selection_expression",
-            &self.template_selection_expression,
-        );
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a DomainName.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -16925,22 +16803,10 @@ impl UpdateDomainNameInput {
         self.mutual_tls_authentication.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field(
-            "domain_name_configurations",
-            &self.domain_name_configurations,
-        );
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a Deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeploymentInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -16966,19 +16832,10 @@ impl UpdateDeploymentInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeploymentInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates an Authorizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAuthorizerInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17087,40 +16944,10 @@ impl UpdateAuthorizerInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAuthorizerInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field(
-            "authorizer_credentials_arn",
-            &self.authorizer_credentials_arn,
-        );
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field(
-            "authorizer_payload_format_version",
-            &self.authorizer_payload_format_version,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.field("authorizer_type", &self.authorizer_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("enable_simple_responses", &self.enable_simple_responses);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field("jwt_configuration", &self.jwt_configuration);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates an ApiMapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApiMappingInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17160,21 +16987,10 @@ impl UpdateApiMappingInput {
         self.stage.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApiMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApiMappingInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("api_mapping_id", &self.api_mapping_id);
-        formatter.field("api_mapping_key", &self.api_mapping_key);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates an Api.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApiInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17263,37 +17079,10 @@ impl UpdateApiInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApiInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field(
-            "api_key_selection_expression",
-            &self.api_key_selection_expression,
-        );
-        formatter.field("cors_configuration", &self.cors_configuration);
-        formatter.field("credentials_arn", &self.credentials_arn);
-        formatter.field("description", &self.description);
-        formatter.field("disable_schema_validation", &self.disable_schema_validation);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("route_key", &self.route_key);
-        formatter.field(
-            "route_selection_expression",
-            &self.route_selection_expression,
-        );
-        formatter.field("target", &self.target);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN for the tag.</p>
     #[doc(hidden)]
@@ -17312,18 +17101,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new Tag resource to represent a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The resource ARN for the tag.</p>
     #[doc(hidden)]
@@ -17346,18 +17127,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetAuthorizersCacheInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17376,18 +17149,10 @@ impl ResetAuthorizersCacheInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for ResetAuthorizersCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetAuthorizersCacheInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReimportApiInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17420,20 +17185,10 @@ impl ReimportApiInput {
         self.fail_on_warnings
     }
 }
-impl std::fmt::Debug for ReimportApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReimportApiInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("basepath", &self.basepath);
-        formatter.field("body", &self.body);
-        formatter.field("fail_on_warnings", &self.fail_on_warnings);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportApiInput {
     /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
@@ -17459,19 +17214,10 @@ impl ImportApiInput {
         self.fail_on_warnings
     }
 }
-impl std::fmt::Debug for ImportApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportApiInput");
-        formatter.field("basepath", &self.basepath);
-        formatter.field("body", &self.body);
-        formatter.field("fail_on_warnings", &self.fail_on_warnings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcLinksInput {
     /// <p>The maximum number of elements to be returned for this resource.</p>
     #[doc(hidden)]
@@ -17490,18 +17236,10 @@ impl GetVpcLinksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetVpcLinksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcLinksInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
     #[doc(hidden)]
@@ -17513,17 +17251,10 @@ impl GetVpcLinkInput {
         self.vpc_link_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVpcLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcLinkInput");
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagsInput {
     /// <p>The resource ARN for the tag.</p>
     #[doc(hidden)]
@@ -17535,17 +17266,10 @@ impl GetTagsInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStagesInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17571,19 +17295,10 @@ impl GetStagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetStagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStagesInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17602,18 +17317,10 @@ impl GetStageInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStageInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRoutesInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17639,19 +17346,10 @@ impl GetRoutesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetRoutesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRoutesInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRouteResponsesInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17684,20 +17382,10 @@ impl GetRouteResponsesInput {
         self.route_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRouteResponsesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRouteResponsesInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("route_id", &self.route_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRouteResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17723,19 +17411,10 @@ impl GetRouteResponseInput {
         self.route_response_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRouteResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRouteResponseInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("route_id", &self.route_id);
-        formatter.field("route_response_id", &self.route_response_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRouteInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17754,18 +17433,10 @@ impl GetRouteInput {
         self.route_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRouteInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("route_id", &self.route_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelTemplateInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17784,18 +17455,10 @@ impl GetModelTemplateInput {
         self.model_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelTemplateInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("model_id", &self.model_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelsInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17821,19 +17484,10 @@ impl GetModelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelsInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17852,18 +17506,10 @@ impl GetModelInput {
         self.model_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("model_id", &self.model_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationsInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17889,19 +17535,10 @@ impl GetIntegrationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetIntegrationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationsInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationResponsesInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17934,20 +17571,10 @@ impl GetIntegrationResponsesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetIntegrationResponsesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationResponsesInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -17973,19 +17600,10 @@ impl GetIntegrationResponseInput {
         self.integration_response_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIntegrationResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationResponseInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.field("integration_response_id", &self.integration_response_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18004,18 +17622,10 @@ impl GetIntegrationInput {
         self.integration_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNamesInput {
     /// <p>The maximum number of elements to be returned for this resource.</p>
     #[doc(hidden)]
@@ -18034,18 +17644,10 @@ impl GetDomainNamesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNamesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -18057,17 +17659,10 @@ impl GetDomainNameInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentsInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18093,19 +17688,10 @@ impl GetDeploymentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentsInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18124,18 +17710,10 @@ impl GetDeploymentInput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizersInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18161,19 +17739,10 @@ impl GetAuthorizersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAuthorizersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizersInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizerInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18192,18 +17761,10 @@ impl GetAuthorizerInput {
         self.authorizer_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizerInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApisInput {
     /// <p>The maximum number of elements to be returned for this resource.</p>
     #[doc(hidden)]
@@ -18222,18 +17783,10 @@ impl GetApisInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetApisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApisInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiMappingsInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -18259,19 +17812,10 @@ impl GetApiMappingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetApiMappingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiMappingsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiMappingInput {
     /// <p>The API mapping identifier.</p>
     #[doc(hidden)]
@@ -18290,18 +17834,10 @@ impl GetApiMappingInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetApiMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiMappingInput");
-        formatter.field("api_mapping_id", &self.api_mapping_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18313,17 +17849,10 @@ impl GetApiInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportApiInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18370,22 +17899,10 @@ impl ExportApiInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for ExportApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportApiInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("export_version", &self.export_version);
-        formatter.field("include_extensions", &self.include_extensions);
-        formatter.field("output_type", &self.output_type);
-        formatter.field("specification", &self.specification);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
     #[doc(hidden)]
@@ -18397,17 +17914,10 @@ impl DeleteVpcLinkInput {
         self.vpc_link_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVpcLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcLinkInput");
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStageInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18426,18 +17936,10 @@ impl DeleteStageInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStageInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRouteSettingsInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18463,19 +17965,10 @@ impl DeleteRouteSettingsInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRouteSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRouteSettingsInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("route_key", &self.route_key);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRouteResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18501,19 +17994,10 @@ impl DeleteRouteResponseInput {
         self.route_response_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRouteResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRouteResponseInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("route_id", &self.route_id);
-        formatter.field("route_response_id", &self.route_response_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRouteRequestParameterInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18539,19 +18023,10 @@ impl DeleteRouteRequestParameterInput {
         self.route_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRouteRequestParameterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRouteRequestParameterInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("request_parameter_key", &self.request_parameter_key);
-        formatter.field("route_id", &self.route_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRouteInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18570,18 +18045,10 @@ impl DeleteRouteInput {
         self.route_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRouteInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("route_id", &self.route_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18600,18 +18067,10 @@ impl DeleteModelInput {
         self.model_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteModelInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("model_id", &self.model_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18637,19 +18096,10 @@ impl DeleteIntegrationResponseInput {
         self.integration_response_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIntegrationResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationResponseInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.field("integration_response_id", &self.integration_response_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18668,18 +18118,10 @@ impl DeleteIntegrationInput {
         self.integration_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -18691,17 +18133,10 @@ impl DeleteDomainNameInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18720,18 +18155,10 @@ impl DeleteDeploymentInput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCorsConfigurationInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18743,17 +18170,10 @@ impl DeleteCorsConfigurationInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCorsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCorsConfigurationInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAuthorizerInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18772,18 +18192,10 @@ impl DeleteAuthorizerInput {
         self.authorizer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAuthorizerInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApiMappingInput {
     /// <p>The API mapping identifier.</p>
     #[doc(hidden)]
@@ -18802,18 +18214,10 @@ impl DeleteApiMappingInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApiMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApiMappingInput");
-        formatter.field("api_mapping_id", &self.api_mapping_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApiInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18825,17 +18229,10 @@ impl DeleteApiInput {
         self.api_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApiInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessLogSettingsInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -18854,18 +18251,10 @@ impl DeleteAccessLogSettingsInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessLogSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessLogSettingsInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a VPC link</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcLinkInput {
     /// <p>The name of the VPC link.</p>
     #[doc(hidden)]
@@ -18902,20 +18291,10 @@ impl CreateVpcLinkInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVpcLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcLinkInput");
-        formatter.field("name", &self.name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new Stage resource to represent a stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStageInput {
     /// <p>Settings for logging access in this stage.</p>
     #[doc(hidden)]
@@ -19011,27 +18390,10 @@ impl CreateStageInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStageInput");
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("api_id", &self.api_id);
-        formatter.field("auto_deploy", &self.auto_deploy);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("default_route_settings", &self.default_route_settings);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("description", &self.description);
-        formatter.field("route_settings", &self.route_settings);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("stage_variables", &self.stage_variables);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new RouteResponse resource to represent a route response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRouteResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -19088,25 +18450,10 @@ impl CreateRouteResponseInput {
         self.route_response_key.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRouteResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRouteResponseInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field(
-            "model_selection_expression",
-            &self.model_selection_expression,
-        );
-        formatter.field("response_models", &self.response_models);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("route_id", &self.route_id);
-        formatter.field("route_response_key", &self.route_response_key);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new Route resource to represent a route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRouteInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -19205,34 +18552,10 @@ impl CreateRouteInput {
         self.target.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRouteInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field(
-            "model_selection_expression",
-            &self.model_selection_expression,
-        );
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("route_key", &self.route_key);
-        formatter.field(
-            "route_response_selection_expression",
-            &self.route_response_selection_expression,
-        );
-        formatter.field("target", &self.target);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new Model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -19272,21 +18595,10 @@ impl CreateModelInput {
         self.schema.as_deref()
     }
 }
-impl std::fmt::Debug for CreateModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateModelInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new IntegrationResponse resource to represent an integration response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIntegrationResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -19356,26 +18668,10 @@ impl CreateIntegrationResponseInput {
         self.template_selection_expression.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIntegrationResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIntegrationResponseInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("content_handling_strategy", &self.content_handling_strategy);
-        formatter.field("integration_id", &self.integration_id);
-        formatter.field("integration_response_key", &self.integration_response_key);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field(
-            "template_selection_expression",
-            &self.template_selection_expression,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new Integration resource to represent an integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIntegrationInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -19574,37 +18870,10 @@ impl CreateIntegrationInput {
         self.tls_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIntegrationInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("content_handling_strategy", &self.content_handling_strategy);
-        formatter.field("credentials_arn", &self.credentials_arn);
-        formatter.field("description", &self.description);
-        formatter.field("integration_method", &self.integration_method);
-        formatter.field("integration_subtype", &self.integration_subtype);
-        formatter.field("integration_type", &self.integration_type);
-        formatter.field("integration_uri", &self.integration_uri);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("payload_format_version", &self.payload_format_version);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field(
-            "template_selection_expression",
-            &self.template_selection_expression,
-        );
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new DomainName resource to represent a domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -19646,23 +18915,10 @@ impl CreateDomainNameInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field(
-            "domain_name_configurations",
-            &self.domain_name_configurations,
-        );
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new Deployment resource to represent a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -19688,19 +18944,10 @@ impl CreateDeploymentInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("description", &self.description);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new Authorizer resource to represent an authorizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAuthorizerInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -19802,39 +19049,10 @@ impl CreateAuthorizerInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAuthorizerInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field(
-            "authorizer_credentials_arn",
-            &self.authorizer_credentials_arn,
-        );
-        formatter.field(
-            "authorizer_payload_format_version",
-            &self.authorizer_payload_format_version,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.field("authorizer_type", &self.authorizer_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("enable_simple_responses", &self.enable_simple_responses);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field("jwt_configuration", &self.jwt_configuration);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new ApiMapping resource to represent an API mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiMappingInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
@@ -19867,20 +19085,10 @@ impl CreateApiMappingInput {
         self.stage.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApiMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApiMappingInput");
-        formatter.field("api_id", &self.api_id);
-        formatter.field("api_mapping_key", &self.api_mapping_key);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new Api resource to represent an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiInput {
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
     #[doc(hidden)]
@@ -19978,33 +19186,5 @@ impl CreateApiInput {
     /// <p>A version identifier for the API.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApiInput");
-        formatter.field(
-            "api_key_selection_expression",
-            &self.api_key_selection_expression,
-        );
-        formatter.field("cors_configuration", &self.cors_configuration);
-        formatter.field("credentials_arn", &self.credentials_arn);
-        formatter.field("description", &self.description);
-        formatter.field("disable_schema_validation", &self.disable_schema_validation);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("protocol_type", &self.protocol_type);
-        formatter.field("route_key", &self.route_key);
-        formatter.field(
-            "route_selection_expression",
-            &self.route_selection_expression,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("target", &self.target);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }

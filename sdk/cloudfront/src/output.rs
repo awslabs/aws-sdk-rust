@@ -2,7 +2,7 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     #[doc(hidden)]
@@ -21,14 +21,6 @@ impl UpdateStreamingDistributionOutput {
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateStreamingDistributionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStreamingDistributionOutput");
-        formatter.field("streaming_distribution", &self.streaming_distribution);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateStreamingDistributionOutput`](crate::output::UpdateStreamingDistributionOutput).
@@ -85,7 +77,7 @@ impl UpdateStreamingDistributionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResponseHeadersPolicyOutput {
     /// <p>A response headers policy.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl UpdateResponseHeadersPolicyOutput {
     /// <p>The current version of the response headers policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateResponseHeadersPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResponseHeadersPolicyOutput");
-        formatter.field("response_headers_policy", &self.response_headers_policy);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateResponseHeadersPolicyOutput`](crate::output::UpdateResponseHeadersPolicyOutput).
@@ -169,7 +153,7 @@ impl UpdateResponseHeadersPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     #[doc(hidden)]
@@ -179,13 +163,6 @@ impl UpdateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     pub fn realtime_log_config(&self) -> std::option::Option<&crate::model::RealtimeLogConfig> {
         self.realtime_log_config.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateRealtimeLogConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRealtimeLogConfigOutput");
-        formatter.field("realtime_log_config", &self.realtime_log_config);
-        formatter.finish()
     }
 }
 /// See [`UpdateRealtimeLogConfigOutput`](crate::output::UpdateRealtimeLogConfigOutput).
@@ -227,7 +204,7 @@ impl UpdateRealtimeLogConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePublicKeyOutput {
     /// <p>The public key.</p>
     #[doc(hidden)]
@@ -244,14 +221,6 @@ impl UpdatePublicKeyOutput {
     /// <p>The identifier of the current version of the public key.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdatePublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePublicKeyOutput");
-        formatter.field("public_key", &self.public_key);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdatePublicKeyOutput`](crate::output::UpdatePublicKeyOutput).
@@ -305,7 +274,7 @@ impl UpdatePublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOriginRequestPolicyOutput {
     /// <p>An origin request policy.</p>
     #[doc(hidden)]
@@ -322,14 +291,6 @@ impl UpdateOriginRequestPolicyOutput {
     /// <p>The current version of the origin request policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateOriginRequestPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOriginRequestPolicyOutput");
-        formatter.field("origin_request_policy", &self.origin_request_policy);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateOriginRequestPolicyOutput`](crate::output::UpdateOriginRequestPolicyOutput).
@@ -383,7 +344,7 @@ impl UpdateOriginRequestPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOriginAccessControlOutput {
     /// <p>The origin access control after it has been updated.</p>
     #[doc(hidden)]
@@ -400,14 +361,6 @@ impl UpdateOriginAccessControlOutput {
     /// <p>The new version of the origin access control after it has been updated.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateOriginAccessControlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOriginAccessControlOutput");
-        formatter.field("origin_access_control", &self.origin_access_control);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateOriginAccessControlOutput`](crate::output::UpdateOriginAccessControlOutput).
@@ -461,7 +414,7 @@ impl UpdateOriginAccessControlOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateKeyGroupOutput {
     /// <p>The key group that was just updated.</p>
     #[doc(hidden)]
@@ -478,14 +431,6 @@ impl UpdateKeyGroupOutput {
     /// <p>The identifier for this version of the key group.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateKeyGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateKeyGroupOutput");
-        formatter.field("key_group", &self.key_group);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateKeyGroupOutput`](crate::output::UpdateKeyGroupOutput).
@@ -536,7 +481,7 @@ impl UpdateKeyGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     #[doc(hidden)]
@@ -553,14 +498,6 @@ impl UpdateFunctionOutput {
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateFunctionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionOutput");
-        formatter.field("function_summary", &self.function_summary);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateFunctionOutput`](crate::output::UpdateFunctionOutput).
@@ -614,7 +551,7 @@ impl UpdateFunctionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionProfileOutput {
     /// <p>Return the results of updating the profile.</p>
     #[doc(hidden)]
@@ -634,17 +571,6 @@ impl UpdateFieldLevelEncryptionProfileOutput {
     /// <p>The result of the field-level encryption profile request. </p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateFieldLevelEncryptionProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFieldLevelEncryptionProfileOutput");
-        formatter.field(
-            "field_level_encryption_profile",
-            &self.field_level_encryption_profile,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateFieldLevelEncryptionProfileOutput`](crate::output::UpdateFieldLevelEncryptionProfileOutput).
@@ -702,7 +628,7 @@ impl UpdateFieldLevelEncryptionProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionConfigOutput {
     /// <p>Return the results of updating the configuration.</p>
     #[doc(hidden)]
@@ -721,14 +647,6 @@ impl UpdateFieldLevelEncryptionConfigOutput {
     /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateFieldLevelEncryptionConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFieldLevelEncryptionConfigOutput");
-        formatter.field("field_level_encryption", &self.field_level_encryption);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateFieldLevelEncryptionConfigOutput`](crate::output::UpdateFieldLevelEncryptionConfigOutput).
@@ -782,7 +700,7 @@ impl UpdateFieldLevelEncryptionConfigOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDistributionOutput {
     /// <p>The distribution's information.</p>
     #[doc(hidden)]
@@ -799,14 +717,6 @@ impl UpdateDistributionOutput {
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDistributionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDistributionOutput");
-        formatter.field("distribution", &self.distribution);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
@@ -860,7 +770,7 @@ impl UpdateDistributionOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
     #[doc(hidden)]
@@ -880,17 +790,6 @@ impl UpdateCloudFrontOriginAccessIdentityOutput {
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateCloudFrontOriginAccessIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCloudFrontOriginAccessIdentityOutput");
-        formatter.field(
-            "cloud_front_origin_access_identity",
-            &self.cloud_front_origin_access_identity,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateCloudFrontOriginAccessIdentityOutput`](crate::output::UpdateCloudFrontOriginAccessIdentityOutput).
@@ -948,7 +847,7 @@ impl UpdateCloudFrontOriginAccessIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCachePolicyOutput {
     /// <p>A cache policy.</p>
     #[doc(hidden)]
@@ -965,14 +864,6 @@ impl UpdateCachePolicyOutput {
     /// <p>The current version of the cache policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateCachePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCachePolicyOutput");
-        formatter.field("cache_policy", &self.cache_policy);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateCachePolicyOutput`](crate::output::UpdateCachePolicyOutput).
@@ -1026,14 +917,8 @@ impl UpdateCachePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -1056,7 +941,7 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestFunctionOutput {
     /// <p>An object that represents the result of running the function with the provided event object.</p>
     #[doc(hidden)]
@@ -1066,13 +951,6 @@ impl TestFunctionOutput {
     /// <p>An object that represents the result of running the function with the provided event object.</p>
     pub fn test_result(&self) -> std::option::Option<&crate::model::TestResult> {
         self.test_result.as_ref()
-    }
-}
-impl std::fmt::Debug for TestFunctionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestFunctionOutput");
-        formatter.field("test_result", &self.test_result);
-        formatter.finish()
     }
 }
 /// See [`TestFunctionOutput`](crate::output::TestFunctionOutput).
@@ -1114,14 +992,8 @@ impl TestFunctionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -1144,7 +1016,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     #[doc(hidden)]
@@ -1154,13 +1026,6 @@ impl PublishFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     pub fn function_summary(&self) -> std::option::Option<&crate::model::FunctionSummary> {
         self.function_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for PublishFunctionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishFunctionOutput");
-        formatter.field("function_summary", &self.function_summary);
-        formatter.finish()
     }
 }
 /// See [`PublishFunctionOutput`](crate::output::PublishFunctionOutput).
@@ -1202,7 +1067,7 @@ impl PublishFunctionOutput {
 
 /// <p> The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
     #[doc(hidden)]
@@ -1212,13 +1077,6 @@ impl ListTagsForResourceOutput {
     /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(&self) -> std::option::Option<&crate::model::Tags> {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1255,7 +1113,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>The returned result of the corresponding request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamingDistributionsOutput {
     /// <p>The <code>StreamingDistributionList</code> type. </p>
     #[doc(hidden)]
@@ -1267,16 +1125,6 @@ impl ListStreamingDistributionsOutput {
         &self,
     ) -> std::option::Option<&crate::model::StreamingDistributionList> {
         self.streaming_distribution_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListStreamingDistributionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamingDistributionsOutput");
-        formatter.field(
-            "streaming_distribution_list",
-            &self.streaming_distribution_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListStreamingDistributionsOutput`](crate::output::ListStreamingDistributionsOutput).
@@ -1322,7 +1170,7 @@ impl ListStreamingDistributionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResponseHeadersPoliciesOutput {
     /// <p>A list of response headers policies.</p>
     #[doc(hidden)]
@@ -1334,16 +1182,6 @@ impl ListResponseHeadersPoliciesOutput {
         &self,
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicyList> {
         self.response_headers_policy_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListResponseHeadersPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResponseHeadersPoliciesOutput");
-        formatter.field(
-            "response_headers_policy_list",
-            &self.response_headers_policy_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListResponseHeadersPoliciesOutput`](crate::output::ListResponseHeadersPoliciesOutput).
@@ -1389,7 +1227,7 @@ impl ListResponseHeadersPoliciesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRealtimeLogConfigsOutput {
     /// <p>A list of real-time log configurations.</p>
     #[doc(hidden)]
@@ -1399,13 +1237,6 @@ impl ListRealtimeLogConfigsOutput {
     /// <p>A list of real-time log configurations.</p>
     pub fn realtime_log_configs(&self) -> std::option::Option<&crate::model::RealtimeLogConfigs> {
         self.realtime_log_configs.as_ref()
-    }
-}
-impl std::fmt::Debug for ListRealtimeLogConfigsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRealtimeLogConfigsOutput");
-        formatter.field("realtime_log_configs", &self.realtime_log_configs);
-        formatter.finish()
     }
 }
 /// See [`ListRealtimeLogConfigsOutput`](crate::output::ListRealtimeLogConfigsOutput).
@@ -1447,7 +1278,7 @@ impl ListRealtimeLogConfigsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPublicKeysOutput {
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
     #[doc(hidden)]
@@ -1457,13 +1288,6 @@ impl ListPublicKeysOutput {
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
     pub fn public_key_list(&self) -> std::option::Option<&crate::model::PublicKeyList> {
         self.public_key_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListPublicKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPublicKeysOutput");
-        formatter.field("public_key_list", &self.public_key_list);
-        formatter.finish()
     }
 }
 /// See [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
@@ -1505,7 +1329,7 @@ impl ListPublicKeysOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOriginRequestPoliciesOutput {
     /// <p>A list of origin request policies.</p>
     #[doc(hidden)]
@@ -1517,16 +1341,6 @@ impl ListOriginRequestPoliciesOutput {
         &self,
     ) -> std::option::Option<&crate::model::OriginRequestPolicyList> {
         self.origin_request_policy_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListOriginRequestPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOriginRequestPoliciesOutput");
-        formatter.field(
-            "origin_request_policy_list",
-            &self.origin_request_policy_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListOriginRequestPoliciesOutput`](crate::output::ListOriginRequestPoliciesOutput).
@@ -1572,7 +1386,7 @@ impl ListOriginRequestPoliciesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOriginAccessControlsOutput {
     /// <p>A list of origin access controls.</p>
     #[doc(hidden)]
@@ -1584,16 +1398,6 @@ impl ListOriginAccessControlsOutput {
         &self,
     ) -> std::option::Option<&crate::model::OriginAccessControlList> {
         self.origin_access_control_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListOriginAccessControlsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOriginAccessControlsOutput");
-        formatter.field(
-            "origin_access_control_list",
-            &self.origin_access_control_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListOriginAccessControlsOutput`](crate::output::ListOriginAccessControlsOutput).
@@ -1639,7 +1443,7 @@ impl ListOriginAccessControlsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeyGroupsOutput {
     /// <p>A list of key groups.</p>
     #[doc(hidden)]
@@ -1649,13 +1453,6 @@ impl ListKeyGroupsOutput {
     /// <p>A list of key groups.</p>
     pub fn key_group_list(&self) -> std::option::Option<&crate::model::KeyGroupList> {
         self.key_group_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListKeyGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeyGroupsOutput");
-        formatter.field("key_group_list", &self.key_group_list);
-        formatter.finish()
     }
 }
 /// See [`ListKeyGroupsOutput`](crate::output::ListKeyGroupsOutput).
@@ -1697,7 +1494,7 @@ impl ListKeyGroupsOutput {
 
 /// <p>The returned result of the corresponding request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInvalidationsOutput {
     /// <p>Information about invalidation batches. </p>
     #[doc(hidden)]
@@ -1707,13 +1504,6 @@ impl ListInvalidationsOutput {
     /// <p>Information about invalidation batches. </p>
     pub fn invalidation_list(&self) -> std::option::Option<&crate::model::InvalidationList> {
         self.invalidation_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListInvalidationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInvalidationsOutput");
-        formatter.field("invalidation_list", &self.invalidation_list);
-        formatter.finish()
     }
 }
 /// See [`ListInvalidationsOutput`](crate::output::ListInvalidationsOutput).
@@ -1755,7 +1545,7 @@ impl ListInvalidationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionsOutput {
     /// <p>A list of CloudFront functions.</p>
     #[doc(hidden)]
@@ -1765,13 +1555,6 @@ impl ListFunctionsOutput {
     /// <p>A list of CloudFront functions.</p>
     pub fn function_list(&self) -> std::option::Option<&crate::model::FunctionList> {
         self.function_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListFunctionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionsOutput");
-        formatter.field("function_list", &self.function_list);
-        formatter.finish()
     }
 }
 /// See [`ListFunctionsOutput`](crate::output::ListFunctionsOutput).
@@ -1813,7 +1596,7 @@ impl ListFunctionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionProfilesOutput {
     /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
     #[doc(hidden)]
@@ -1826,16 +1609,6 @@ impl ListFieldLevelEncryptionProfilesOutput {
         &self,
     ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfileList> {
         self.field_level_encryption_profile_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListFieldLevelEncryptionProfilesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFieldLevelEncryptionProfilesOutput");
-        formatter.field(
-            "field_level_encryption_profile_list",
-            &self.field_level_encryption_profile_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListFieldLevelEncryptionProfilesOutput`](crate::output::ListFieldLevelEncryptionProfilesOutput).
@@ -1881,7 +1654,7 @@ impl ListFieldLevelEncryptionProfilesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionConfigsOutput {
     /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
     #[doc(hidden)]
@@ -1893,16 +1666,6 @@ impl ListFieldLevelEncryptionConfigsOutput {
         &self,
     ) -> std::option::Option<&crate::model::FieldLevelEncryptionList> {
         self.field_level_encryption_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListFieldLevelEncryptionConfigsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFieldLevelEncryptionConfigsOutput");
-        formatter.field(
-            "field_level_encryption_list",
-            &self.field_level_encryption_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListFieldLevelEncryptionConfigsOutput`](crate::output::ListFieldLevelEncryptionConfigsOutput).
@@ -1948,7 +1711,7 @@ impl ListFieldLevelEncryptionConfigsOutput {
 
 /// <p>The response to a request to list the distributions that are associated with a specified WAF web ACL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByWebAclIdOutput {
     /// <p>The <code>DistributionList</code> type. </p>
     #[doc(hidden)]
@@ -1958,13 +1721,6 @@ impl ListDistributionsByWebAclIdOutput {
     /// <p>The <code>DistributionList</code> type. </p>
     pub fn distribution_list(&self) -> std::option::Option<&crate::model::DistributionList> {
         self.distribution_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListDistributionsByWebAclIdOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByWebAclIdOutput");
-        formatter.field("distribution_list", &self.distribution_list);
-        formatter.finish()
     }
 }
 /// See [`ListDistributionsByWebAclIdOutput`](crate::output::ListDistributionsByWebAclIdOutput).
@@ -2006,7 +1762,7 @@ impl ListDistributionsByWebAclIdOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByResponseHeadersPolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     #[doc(hidden)]
@@ -2016,13 +1772,6 @@ impl ListDistributionsByResponseHeadersPolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     pub fn distribution_id_list(&self) -> std::option::Option<&crate::model::DistributionIdList> {
         self.distribution_id_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListDistributionsByResponseHeadersPolicyIdOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByResponseHeadersPolicyIdOutput");
-        formatter.field("distribution_id_list", &self.distribution_id_list);
-        formatter.finish()
     }
 }
 /// See [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput).
@@ -2065,7 +1814,7 @@ impl ListDistributionsByResponseHeadersPolicyIdOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByRealtimeLogConfigOutput {
     /// <p>A distribution list.</p>
     #[doc(hidden)]
@@ -2075,13 +1824,6 @@ impl ListDistributionsByRealtimeLogConfigOutput {
     /// <p>A distribution list.</p>
     pub fn distribution_list(&self) -> std::option::Option<&crate::model::DistributionList> {
         self.distribution_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListDistributionsByRealtimeLogConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByRealtimeLogConfigOutput");
-        formatter.field("distribution_list", &self.distribution_list);
-        formatter.finish()
     }
 }
 /// See [`ListDistributionsByRealtimeLogConfigOutput`](crate::output::ListDistributionsByRealtimeLogConfigOutput).
@@ -2123,7 +1865,7 @@ impl ListDistributionsByRealtimeLogConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByOriginRequestPolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     #[doc(hidden)]
@@ -2133,13 +1875,6 @@ impl ListDistributionsByOriginRequestPolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     pub fn distribution_id_list(&self) -> std::option::Option<&crate::model::DistributionIdList> {
         self.distribution_id_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListDistributionsByOriginRequestPolicyIdOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByOriginRequestPolicyIdOutput");
-        formatter.field("distribution_id_list", &self.distribution_id_list);
-        formatter.finish()
     }
 }
 /// See [`ListDistributionsByOriginRequestPolicyIdOutput`](crate::output::ListDistributionsByOriginRequestPolicyIdOutput).
@@ -2182,7 +1917,7 @@ impl ListDistributionsByOriginRequestPolicyIdOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByKeyGroupOutput {
     /// <p>A list of distribution IDs.</p>
     #[doc(hidden)]
@@ -2192,13 +1927,6 @@ impl ListDistributionsByKeyGroupOutput {
     /// <p>A list of distribution IDs.</p>
     pub fn distribution_id_list(&self) -> std::option::Option<&crate::model::DistributionIdList> {
         self.distribution_id_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListDistributionsByKeyGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByKeyGroupOutput");
-        formatter.field("distribution_id_list", &self.distribution_id_list);
-        formatter.finish()
     }
 }
 /// See [`ListDistributionsByKeyGroupOutput`](crate::output::ListDistributionsByKeyGroupOutput).
@@ -2240,7 +1968,7 @@ impl ListDistributionsByKeyGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByCachePolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     #[doc(hidden)]
@@ -2250,13 +1978,6 @@ impl ListDistributionsByCachePolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     pub fn distribution_id_list(&self) -> std::option::Option<&crate::model::DistributionIdList> {
         self.distribution_id_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListDistributionsByCachePolicyIdOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsByCachePolicyIdOutput");
-        formatter.field("distribution_id_list", &self.distribution_id_list);
-        formatter.finish()
     }
 }
 /// See [`ListDistributionsByCachePolicyIdOutput`](crate::output::ListDistributionsByCachePolicyIdOutput).
@@ -2298,7 +2019,7 @@ impl ListDistributionsByCachePolicyIdOutput {
 
 /// <p>The returned result of the corresponding request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsOutput {
     /// <p>The <code>DistributionList</code> type. </p>
     #[doc(hidden)]
@@ -2308,13 +2029,6 @@ impl ListDistributionsOutput {
     /// <p>The <code>DistributionList</code> type. </p>
     pub fn distribution_list(&self) -> std::option::Option<&crate::model::DistributionList> {
         self.distribution_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListDistributionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionsOutput");
-        formatter.field("distribution_list", &self.distribution_list);
-        formatter.finish()
     }
 }
 /// See [`ListDistributionsOutput`](crate::output::ListDistributionsOutput).
@@ -2356,7 +2070,7 @@ impl ListDistributionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConflictingAliasesOutput {
     /// <p>A list of conflicting aliases.</p>
     #[doc(hidden)]
@@ -2368,13 +2082,6 @@ impl ListConflictingAliasesOutput {
         &self,
     ) -> std::option::Option<&crate::model::ConflictingAliasesList> {
         self.conflicting_aliases_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListConflictingAliasesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConflictingAliasesOutput");
-        formatter.field("conflicting_aliases_list", &self.conflicting_aliases_list);
-        formatter.finish()
     }
 }
 /// See [`ListConflictingAliasesOutput`](crate::output::ListConflictingAliasesOutput).
@@ -2420,7 +2127,7 @@ impl ListConflictingAliasesOutput {
 
 /// <p>The returned result of the corresponding request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCloudFrontOriginAccessIdentitiesOutput {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
     #[doc(hidden)]
@@ -2433,16 +2140,6 @@ impl ListCloudFrontOriginAccessIdentitiesOutput {
         &self,
     ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityList> {
         self.cloud_front_origin_access_identity_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListCloudFrontOriginAccessIdentitiesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCloudFrontOriginAccessIdentitiesOutput");
-        formatter.field(
-            "cloud_front_origin_access_identity_list",
-            &self.cloud_front_origin_access_identity_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::output::ListCloudFrontOriginAccessIdentitiesOutput).
@@ -2489,7 +2186,7 @@ impl ListCloudFrontOriginAccessIdentitiesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCachePoliciesOutput {
     /// <p>A list of cache policies.</p>
     #[doc(hidden)]
@@ -2499,13 +2196,6 @@ impl ListCachePoliciesOutput {
     /// <p>A list of cache policies.</p>
     pub fn cache_policy_list(&self) -> std::option::Option<&crate::model::CachePolicyList> {
         self.cache_policy_list.as_ref()
-    }
-}
-impl std::fmt::Debug for ListCachePoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCachePoliciesOutput");
-        formatter.field("cache_policy_list", &self.cache_policy_list);
-        formatter.finish()
     }
 }
 /// See [`ListCachePoliciesOutput`](crate::output::ListCachePoliciesOutput).
@@ -2547,7 +2237,7 @@ impl ListCachePoliciesOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamingDistributionConfigOutput {
     /// <p>The streaming distribution's configuration information.</p>
     #[doc(hidden)]
@@ -2567,17 +2257,6 @@ impl GetStreamingDistributionConfigOutput {
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetStreamingDistributionConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingDistributionConfigOutput");
-        formatter.field(
-            "streaming_distribution_config",
-            &self.streaming_distribution_config,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetStreamingDistributionConfigOutput`](crate::output::GetStreamingDistributionConfigOutput).
@@ -2635,7 +2314,7 @@ impl GetStreamingDistributionConfigOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     #[doc(hidden)]
@@ -2654,14 +2333,6 @@ impl GetStreamingDistributionOutput {
     /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetStreamingDistributionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingDistributionOutput");
-        formatter.field("streaming_distribution", &self.streaming_distribution);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetStreamingDistributionOutput`](crate::output::GetStreamingDistributionOutput).
@@ -2718,7 +2389,7 @@ impl GetStreamingDistributionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyConfigOutput {
     /// <p>Contains a response headers policy.</p>
     #[doc(hidden)]
@@ -2738,17 +2409,6 @@ impl GetResponseHeadersPolicyConfigOutput {
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetResponseHeadersPolicyConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResponseHeadersPolicyConfigOutput");
-        formatter.field(
-            "response_headers_policy_config",
-            &self.response_headers_policy_config,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetResponseHeadersPolicyConfigOutput`](crate::output::GetResponseHeadersPolicyConfigOutput).
@@ -2806,7 +2466,7 @@ impl GetResponseHeadersPolicyConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyOutput {
     /// <p>Contains a response headers policy.</p>
     #[doc(hidden)]
@@ -2825,14 +2485,6 @@ impl GetResponseHeadersPolicyOutput {
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetResponseHeadersPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResponseHeadersPolicyOutput");
-        formatter.field("response_headers_policy", &self.response_headers_policy);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetResponseHeadersPolicyOutput`](crate::output::GetResponseHeadersPolicyOutput).
@@ -2890,7 +2542,7 @@ impl GetResponseHeadersPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     #[doc(hidden)]
@@ -2900,13 +2552,6 @@ impl GetRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     pub fn realtime_log_config(&self) -> std::option::Option<&crate::model::RealtimeLogConfig> {
         self.realtime_log_config.as_ref()
-    }
-}
-impl std::fmt::Debug for GetRealtimeLogConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRealtimeLogConfigOutput");
-        formatter.field("realtime_log_config", &self.realtime_log_config);
-        formatter.finish()
     }
 }
 /// See [`GetRealtimeLogConfigOutput`](crate::output::GetRealtimeLogConfigOutput).
@@ -2948,7 +2593,7 @@ impl GetRealtimeLogConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicKeyConfigOutput {
     /// <p>A public key configuration.</p>
     #[doc(hidden)]
@@ -2965,14 +2610,6 @@ impl GetPublicKeyConfigOutput {
     /// <p>The identifier for this version of the public key configuration.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetPublicKeyConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicKeyConfigOutput");
-        formatter.field("public_key_config", &self.public_key_config);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetPublicKeyConfigOutput`](crate::output::GetPublicKeyConfigOutput).
@@ -3026,7 +2663,7 @@ impl GetPublicKeyConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicKeyOutput {
     /// <p>The public key.</p>
     #[doc(hidden)]
@@ -3043,14 +2680,6 @@ impl GetPublicKeyOutput {
     /// <p>The identifier for this version of the public key.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetPublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicKeyOutput");
-        formatter.field("public_key", &self.public_key);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput).
@@ -3104,7 +2733,7 @@ impl GetPublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginRequestPolicyConfigOutput {
     /// <p>The origin request policy configuration.</p>
     #[doc(hidden)]
@@ -3123,17 +2752,6 @@ impl GetOriginRequestPolicyConfigOutput {
     /// <p>The current version of the origin request policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetOriginRequestPolicyConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOriginRequestPolicyConfigOutput");
-        formatter.field(
-            "origin_request_policy_config",
-            &self.origin_request_policy_config,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetOriginRequestPolicyConfigOutput`](crate::output::GetOriginRequestPolicyConfigOutput).
@@ -3191,7 +2809,7 @@ impl GetOriginRequestPolicyConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginRequestPolicyOutput {
     /// <p>The origin request policy.</p>
     #[doc(hidden)]
@@ -3208,14 +2826,6 @@ impl GetOriginRequestPolicyOutput {
     /// <p>The current version of the origin request policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetOriginRequestPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOriginRequestPolicyOutput");
-        formatter.field("origin_request_policy", &self.origin_request_policy);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetOriginRequestPolicyOutput`](crate::output::GetOriginRequestPolicyOutput).
@@ -3269,7 +2879,7 @@ impl GetOriginRequestPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginAccessControlConfigOutput {
     /// <p>Contains an origin access control configuration.</p>
     #[doc(hidden)]
@@ -3288,17 +2898,6 @@ impl GetOriginAccessControlConfigOutput {
     /// <p>The version identifier for the current version of the origin access control.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetOriginAccessControlConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOriginAccessControlConfigOutput");
-        formatter.field(
-            "origin_access_control_config",
-            &self.origin_access_control_config,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetOriginAccessControlConfigOutput`](crate::output::GetOriginAccessControlConfigOutput).
@@ -3356,7 +2955,7 @@ impl GetOriginAccessControlConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginAccessControlOutput {
     /// <p>Contains an origin access control, including its unique identifier.</p>
     #[doc(hidden)]
@@ -3373,14 +2972,6 @@ impl GetOriginAccessControlOutput {
     /// <p>The version identifier for the current version of the origin access control.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetOriginAccessControlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOriginAccessControlOutput");
-        formatter.field("origin_access_control", &self.origin_access_control);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetOriginAccessControlOutput`](crate::output::GetOriginAccessControlOutput).
@@ -3434,7 +3025,7 @@ impl GetOriginAccessControlOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMonitoringSubscriptionOutput {
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     #[doc(hidden)]
@@ -3446,13 +3037,6 @@ impl GetMonitoringSubscriptionOutput {
         &self,
     ) -> std::option::Option<&crate::model::MonitoringSubscription> {
         self.monitoring_subscription.as_ref()
-    }
-}
-impl std::fmt::Debug for GetMonitoringSubscriptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMonitoringSubscriptionOutput");
-        formatter.field("monitoring_subscription", &self.monitoring_subscription);
-        formatter.finish()
     }
 }
 /// See [`GetMonitoringSubscriptionOutput`](crate::output::GetMonitoringSubscriptionOutput).
@@ -3498,7 +3082,7 @@ impl GetMonitoringSubscriptionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyGroupConfigOutput {
     /// <p>The key group configuration.</p>
     #[doc(hidden)]
@@ -3515,14 +3099,6 @@ impl GetKeyGroupConfigOutput {
     /// <p>The identifier for this version of the key group.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetKeyGroupConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyGroupConfigOutput");
-        formatter.field("key_group_config", &self.key_group_config);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetKeyGroupConfigOutput`](crate::output::GetKeyGroupConfigOutput).
@@ -3576,7 +3152,7 @@ impl GetKeyGroupConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyGroupOutput {
     /// <p>The key group.</p>
     #[doc(hidden)]
@@ -3593,14 +3169,6 @@ impl GetKeyGroupOutput {
     /// <p>The identifier for this version of the key group.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetKeyGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyGroupOutput");
-        formatter.field("key_group", &self.key_group);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetKeyGroupOutput`](crate::output::GetKeyGroupOutput).
@@ -3651,7 +3219,7 @@ impl GetKeyGroupOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInvalidationOutput {
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
     #[doc(hidden)]
@@ -3661,13 +3229,6 @@ impl GetInvalidationOutput {
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
     pub fn invalidation(&self) -> std::option::Option<&crate::model::Invalidation> {
         self.invalidation.as_ref()
-    }
-}
-impl std::fmt::Debug for GetInvalidationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInvalidationOutput");
-        formatter.field("invalidation", &self.invalidation);
-        formatter.finish()
     }
 }
 /// See [`GetInvalidationOutput`](crate::output::GetInvalidationOutput).
@@ -3748,7 +3309,7 @@ impl std::fmt::Debug for GetFunctionOutput {
 pub mod get_function_output {
 
     /// A builder for [`GetFunctionOutput`](crate::output::GetFunctionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) function_code: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
@@ -3797,6 +3358,15 @@ pub mod get_function_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("function_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("e_tag", &self.e_tag);
+            formatter.field("content_type", &self.content_type);
+            formatter.finish()
+        }
+    }
 }
 impl GetFunctionOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionOutput`](crate::output::GetFunctionOutput).
@@ -3807,7 +3377,7 @@ impl GetFunctionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionProfileConfigOutput {
     /// <p>Return the field-level encryption profile configuration information.</p>
     #[doc(hidden)]
@@ -3827,17 +3397,6 @@ impl GetFieldLevelEncryptionProfileConfigOutput {
     /// <p>The current version of the field-level encryption profile configuration result. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetFieldLevelEncryptionProfileConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldLevelEncryptionProfileConfigOutput");
-        formatter.field(
-            "field_level_encryption_profile_config",
-            &self.field_level_encryption_profile_config,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetFieldLevelEncryptionProfileConfigOutput`](crate::output::GetFieldLevelEncryptionProfileConfigOutput).
@@ -3895,7 +3454,7 @@ impl GetFieldLevelEncryptionProfileConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionProfileOutput {
     /// <p>Return the field-level encryption profile information.</p>
     #[doc(hidden)]
@@ -3915,17 +3474,6 @@ impl GetFieldLevelEncryptionProfileOutput {
     /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetFieldLevelEncryptionProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldLevelEncryptionProfileOutput");
-        formatter.field(
-            "field_level_encryption_profile",
-            &self.field_level_encryption_profile,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetFieldLevelEncryptionProfileOutput`](crate::output::GetFieldLevelEncryptionProfileOutput).
@@ -3983,7 +3531,7 @@ impl GetFieldLevelEncryptionProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionConfigOutput {
     /// <p>Return the field-level encryption configuration information.</p>
     #[doc(hidden)]
@@ -4003,17 +3551,6 @@ impl GetFieldLevelEncryptionConfigOutput {
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetFieldLevelEncryptionConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldLevelEncryptionConfigOutput");
-        formatter.field(
-            "field_level_encryption_config",
-            &self.field_level_encryption_config,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetFieldLevelEncryptionConfigOutput`](crate::output::GetFieldLevelEncryptionConfigOutput).
@@ -4071,7 +3608,7 @@ impl GetFieldLevelEncryptionConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionOutput {
     /// <p>Return the field-level encryption configuration information.</p>
     #[doc(hidden)]
@@ -4090,14 +3627,6 @@ impl GetFieldLevelEncryptionOutput {
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetFieldLevelEncryptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFieldLevelEncryptionOutput");
-        formatter.field("field_level_encryption", &self.field_level_encryption);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetFieldLevelEncryptionOutput`](crate::output::GetFieldLevelEncryptionOutput).
@@ -4151,7 +3680,7 @@ impl GetFieldLevelEncryptionOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDistributionConfigOutput {
     /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
@@ -4168,14 +3697,6 @@ impl GetDistributionConfigOutput {
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDistributionConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDistributionConfigOutput");
-        formatter.field("distribution_config", &self.distribution_config);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetDistributionConfigOutput`](crate::output::GetDistributionConfigOutput).
@@ -4229,7 +3750,7 @@ impl GetDistributionConfigOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDistributionOutput {
     /// <p>The distribution's information.</p>
     #[doc(hidden)]
@@ -4246,14 +3767,6 @@ impl GetDistributionOutput {
     /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDistributionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDistributionOutput");
-        formatter.field("distribution", &self.distribution);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetDistributionOutput`](crate::output::GetDistributionOutput).
@@ -4307,7 +3820,7 @@ impl GetDistributionOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The origin access identity's configuration information. </p>
     #[doc(hidden)]
@@ -4327,17 +3840,6 @@ impl GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCloudFrontOriginAccessIdentityConfigOutput");
-        formatter.field(
-            "cloud_front_origin_access_identity_config",
-            &self.cloud_front_origin_access_identity_config,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetCloudFrontOriginAccessIdentityConfigOutput`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput).
@@ -4397,7 +3899,7 @@ impl GetCloudFrontOriginAccessIdentityConfigOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
     #[doc(hidden)]
@@ -4417,17 +3919,6 @@ impl GetCloudFrontOriginAccessIdentityOutput {
     /// <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCloudFrontOriginAccessIdentityOutput");
-        formatter.field(
-            "cloud_front_origin_access_identity",
-            &self.cloud_front_origin_access_identity,
-        );
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetCloudFrontOriginAccessIdentityOutput`](crate::output::GetCloudFrontOriginAccessIdentityOutput).
@@ -4485,7 +3976,7 @@ impl GetCloudFrontOriginAccessIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCachePolicyConfigOutput {
     /// <p>The cache policy configuration.</p>
     #[doc(hidden)]
@@ -4502,14 +3993,6 @@ impl GetCachePolicyConfigOutput {
     /// <p>The current version of the cache policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCachePolicyConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCachePolicyConfigOutput");
-        formatter.field("cache_policy_config", &self.cache_policy_config);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetCachePolicyConfigOutput`](crate::output::GetCachePolicyConfigOutput).
@@ -4563,7 +4046,7 @@ impl GetCachePolicyConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCachePolicyOutput {
     /// <p>The cache policy.</p>
     #[doc(hidden)]
@@ -4580,14 +4063,6 @@ impl GetCachePolicyOutput {
     /// <p>The current version of the cache policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCachePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCachePolicyOutput");
-        formatter.field("cache_policy", &self.cache_policy);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`GetCachePolicyOutput`](crate::output::GetCachePolicyOutput).
@@ -4641,7 +4116,7 @@ impl GetCachePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     #[doc(hidden)]
@@ -4658,14 +4133,6 @@ impl DescribeFunctionOutput {
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeFunctionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFunctionOutput");
-        formatter.field("function_summary", &self.function_summary);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`DescribeFunctionOutput`](crate::output::DescribeFunctionOutput).
@@ -4719,14 +4186,8 @@ impl DescribeFunctionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamingDistributionOutput {}
-impl std::fmt::Debug for DeleteStreamingDistributionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamingDistributionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteStreamingDistributionOutput`](crate::output::DeleteStreamingDistributionOutput).
 pub mod delete_streaming_distribution_output {
 
@@ -4749,14 +4210,8 @@ impl DeleteStreamingDistributionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResponseHeadersPolicyOutput {}
-impl std::fmt::Debug for DeleteResponseHeadersPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResponseHeadersPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteResponseHeadersPolicyOutput`](crate::output::DeleteResponseHeadersPolicyOutput).
 pub mod delete_response_headers_policy_output {
 
@@ -4779,14 +4234,8 @@ impl DeleteResponseHeadersPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRealtimeLogConfigOutput {}
-impl std::fmt::Debug for DeleteRealtimeLogConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRealtimeLogConfigOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRealtimeLogConfigOutput`](crate::output::DeleteRealtimeLogConfigOutput).
 pub mod delete_realtime_log_config_output {
 
@@ -4809,14 +4258,8 @@ impl DeleteRealtimeLogConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePublicKeyOutput {}
-impl std::fmt::Debug for DeletePublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePublicKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePublicKeyOutput`](crate::output::DeletePublicKeyOutput).
 pub mod delete_public_key_output {
 
@@ -4839,14 +4282,8 @@ impl DeletePublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOriginRequestPolicyOutput {}
-impl std::fmt::Debug for DeleteOriginRequestPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOriginRequestPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteOriginRequestPolicyOutput`](crate::output::DeleteOriginRequestPolicyOutput).
 pub mod delete_origin_request_policy_output {
 
@@ -4869,14 +4306,8 @@ impl DeleteOriginRequestPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOriginAccessControlOutput {}
-impl std::fmt::Debug for DeleteOriginAccessControlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOriginAccessControlOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteOriginAccessControlOutput`](crate::output::DeleteOriginAccessControlOutput).
 pub mod delete_origin_access_control_output {
 
@@ -4899,14 +4330,8 @@ impl DeleteOriginAccessControlOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMonitoringSubscriptionOutput {}
-impl std::fmt::Debug for DeleteMonitoringSubscriptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMonitoringSubscriptionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteMonitoringSubscriptionOutput`](crate::output::DeleteMonitoringSubscriptionOutput).
 pub mod delete_monitoring_subscription_output {
 
@@ -4929,14 +4354,8 @@ impl DeleteMonitoringSubscriptionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKeyGroupOutput {}
-impl std::fmt::Debug for DeleteKeyGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteKeyGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteKeyGroupOutput`](crate::output::DeleteKeyGroupOutput).
 pub mod delete_key_group_output {
 
@@ -4959,14 +4378,8 @@ impl DeleteKeyGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionOutput {}
-impl std::fmt::Debug for DeleteFunctionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput).
 pub mod delete_function_output {
 
@@ -4989,14 +4402,8 @@ impl DeleteFunctionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFieldLevelEncryptionProfileOutput {}
-impl std::fmt::Debug for DeleteFieldLevelEncryptionProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFieldLevelEncryptionProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteFieldLevelEncryptionProfileOutput`](crate::output::DeleteFieldLevelEncryptionProfileOutput).
 pub mod delete_field_level_encryption_profile_output {
 
@@ -5019,14 +4426,8 @@ impl DeleteFieldLevelEncryptionProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFieldLevelEncryptionConfigOutput {}
-impl std::fmt::Debug for DeleteFieldLevelEncryptionConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFieldLevelEncryptionConfigOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteFieldLevelEncryptionConfigOutput`](crate::output::DeleteFieldLevelEncryptionConfigOutput).
 pub mod delete_field_level_encryption_config_output {
 
@@ -5049,14 +4450,8 @@ impl DeleteFieldLevelEncryptionConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDistributionOutput {}
-impl std::fmt::Debug for DeleteDistributionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDistributionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput).
 pub mod delete_distribution_output {
 
@@ -5079,14 +4474,8 @@ impl DeleteDistributionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCloudFrontOriginAccessIdentityOutput {}
-impl std::fmt::Debug for DeleteCloudFrontOriginAccessIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCloudFrontOriginAccessIdentityOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::output::DeleteCloudFrontOriginAccessIdentityOutput).
 pub mod delete_cloud_front_origin_access_identity_output {
 
@@ -5109,14 +4498,8 @@ impl DeleteCloudFrontOriginAccessIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCachePolicyOutput {}
-impl std::fmt::Debug for DeleteCachePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCachePolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteCachePolicyOutput`](crate::output::DeleteCachePolicyOutput).
 pub mod delete_cache_policy_output {
 
@@ -5139,7 +4522,7 @@ impl DeleteCachePolicyOutput {
 
 /// <p>The returned result of the corresponding request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingDistributionWithTagsOutput {
     /// <p>The streaming distribution's information. </p>
     #[doc(hidden)]
@@ -5165,15 +4548,6 @@ impl CreateStreamingDistributionWithTagsOutput {
     /// <p>The current version of the distribution created.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateStreamingDistributionWithTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingDistributionWithTagsOutput");
-        formatter.field("streaming_distribution", &self.streaming_distribution);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateStreamingDistributionWithTagsOutput`](crate::output::CreateStreamingDistributionWithTagsOutput).
@@ -5242,7 +4616,7 @@ impl CreateStreamingDistributionWithTagsOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     #[doc(hidden)]
@@ -5268,15 +4642,6 @@ impl CreateStreamingDistributionOutput {
     /// <p>The current version of the streaming distribution created.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateStreamingDistributionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingDistributionOutput");
-        formatter.field("streaming_distribution", &self.streaming_distribution);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateStreamingDistributionOutput`](crate::output::CreateStreamingDistributionOutput).
@@ -5345,7 +4710,7 @@ impl CreateStreamingDistributionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResponseHeadersPolicyOutput {
     /// <p>Contains a response headers policy.</p>
     #[doc(hidden)]
@@ -5371,15 +4736,6 @@ impl CreateResponseHeadersPolicyOutput {
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateResponseHeadersPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResponseHeadersPolicyOutput");
-        formatter.field("response_headers_policy", &self.response_headers_policy);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateResponseHeadersPolicyOutput`](crate::output::CreateResponseHeadersPolicyOutput).
@@ -5449,7 +4805,7 @@ impl CreateResponseHeadersPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     #[doc(hidden)]
@@ -5459,13 +4815,6 @@ impl CreateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     pub fn realtime_log_config(&self) -> std::option::Option<&crate::model::RealtimeLogConfig> {
         self.realtime_log_config.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateRealtimeLogConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRealtimeLogConfigOutput");
-        formatter.field("realtime_log_config", &self.realtime_log_config);
-        formatter.finish()
     }
 }
 /// See [`CreateRealtimeLogConfigOutput`](crate::output::CreateRealtimeLogConfigOutput).
@@ -5507,7 +4856,7 @@ impl CreateRealtimeLogConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePublicKeyOutput {
     /// <p>The public key.</p>
     #[doc(hidden)]
@@ -5531,15 +4880,6 @@ impl CreatePublicKeyOutput {
     /// <p>The identifier for this version of the public key.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreatePublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePublicKeyOutput");
-        formatter.field("public_key", &self.public_key);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreatePublicKeyOutput`](crate::output::CreatePublicKeyOutput).
@@ -5605,7 +4945,7 @@ impl CreatePublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOriginRequestPolicyOutput {
     /// <p>An origin request policy.</p>
     #[doc(hidden)]
@@ -5629,15 +4969,6 @@ impl CreateOriginRequestPolicyOutput {
     /// <p>The current version of the origin request policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateOriginRequestPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOriginRequestPolicyOutput");
-        formatter.field("origin_request_policy", &self.origin_request_policy);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateOriginRequestPolicyOutput`](crate::output::CreateOriginRequestPolicyOutput).
@@ -5703,7 +5034,7 @@ impl CreateOriginRequestPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOriginAccessControlOutput {
     /// <p>Contains an origin access control.</p>
     #[doc(hidden)]
@@ -5727,15 +5058,6 @@ impl CreateOriginAccessControlOutput {
     /// <p>The version identifier for the current version of the origin access control.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateOriginAccessControlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOriginAccessControlOutput");
-        formatter.field("origin_access_control", &self.origin_access_control);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateOriginAccessControlOutput`](crate::output::CreateOriginAccessControlOutput).
@@ -5801,7 +5123,7 @@ impl CreateOriginAccessControlOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMonitoringSubscriptionOutput {
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     #[doc(hidden)]
@@ -5813,13 +5135,6 @@ impl CreateMonitoringSubscriptionOutput {
         &self,
     ) -> std::option::Option<&crate::model::MonitoringSubscription> {
         self.monitoring_subscription.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateMonitoringSubscriptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMonitoringSubscriptionOutput");
-        formatter.field("monitoring_subscription", &self.monitoring_subscription);
-        formatter.finish()
     }
 }
 /// See [`CreateMonitoringSubscriptionOutput`](crate::output::CreateMonitoringSubscriptionOutput).
@@ -5865,7 +5180,7 @@ impl CreateMonitoringSubscriptionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKeyGroupOutput {
     /// <p>The key group that was just created.</p>
     #[doc(hidden)]
@@ -5889,15 +5204,6 @@ impl CreateKeyGroupOutput {
     /// <p>The identifier for this version of the key group.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateKeyGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKeyGroupOutput");
-        formatter.field("key_group", &self.key_group);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateKeyGroupOutput`](crate::output::CreateKeyGroupOutput).
@@ -5960,7 +5266,7 @@ impl CreateKeyGroupOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInvalidationOutput {
     /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
     #[doc(hidden)]
@@ -5977,14 +5283,6 @@ impl CreateInvalidationOutput {
     /// <p>The invalidation's information.</p>
     pub fn invalidation(&self) -> std::option::Option<&crate::model::Invalidation> {
         self.invalidation.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateInvalidationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInvalidationOutput");
-        formatter.field("location", &self.location);
-        formatter.field("invalidation", &self.invalidation);
-        formatter.finish()
     }
 }
 /// See [`CreateInvalidationOutput`](crate::output::CreateInvalidationOutput).
@@ -6038,7 +5336,7 @@ impl CreateInvalidationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     #[doc(hidden)]
@@ -6062,15 +5360,6 @@ impl CreateFunctionOutput {
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateFunctionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFunctionOutput");
-        formatter.field("function_summary", &self.function_summary);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateFunctionOutput`](crate::output::CreateFunctionOutput).
@@ -6136,7 +5425,7 @@ impl CreateFunctionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionProfileOutput {
     /// <p>Returned when you create a new field-level encryption profile.</p>
     #[doc(hidden)]
@@ -6163,18 +5452,6 @@ impl CreateFieldLevelEncryptionProfileOutput {
     /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateFieldLevelEncryptionProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFieldLevelEncryptionProfileOutput");
-        formatter.field(
-            "field_level_encryption_profile",
-            &self.field_level_encryption_profile,
-        );
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateFieldLevelEncryptionProfileOutput`](crate::output::CreateFieldLevelEncryptionProfileOutput).
@@ -6244,7 +5521,7 @@ impl CreateFieldLevelEncryptionProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionConfigOutput {
     /// <p>Returned when you create a new field-level encryption configuration.</p>
     #[doc(hidden)]
@@ -6270,15 +5547,6 @@ impl CreateFieldLevelEncryptionConfigOutput {
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateFieldLevelEncryptionConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFieldLevelEncryptionConfigOutput");
-        formatter.field("field_level_encryption", &self.field_level_encryption);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateFieldLevelEncryptionConfigOutput`](crate::output::CreateFieldLevelEncryptionConfigOutput).
@@ -6344,7 +5612,7 @@ impl CreateFieldLevelEncryptionConfigOutput {
 
 /// <p>The returned result of the corresponding request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDistributionWithTagsOutput {
     /// <p>The distribution's information. </p>
     #[doc(hidden)]
@@ -6368,15 +5636,6 @@ impl CreateDistributionWithTagsOutput {
     /// <p>The current version of the distribution created.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDistributionWithTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDistributionWithTagsOutput");
-        formatter.field("distribution", &self.distribution);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateDistributionWithTagsOutput`](crate::output::CreateDistributionWithTagsOutput).
@@ -6442,7 +5701,7 @@ impl CreateDistributionWithTagsOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDistributionOutput {
     /// <p>The distribution's information.</p>
     #[doc(hidden)]
@@ -6466,15 +5725,6 @@ impl CreateDistributionOutput {
     /// <p>The current version of the distribution created.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDistributionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDistributionOutput");
-        formatter.field("distribution", &self.distribution);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
@@ -6540,7 +5790,7 @@ impl CreateDistributionOutput {
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
     #[doc(hidden)]
@@ -6567,18 +5817,6 @@ impl CreateCloudFrontOriginAccessIdentityOutput {
     /// <p>The current version of the origin access identity created.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateCloudFrontOriginAccessIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCloudFrontOriginAccessIdentityOutput");
-        formatter.field(
-            "cloud_front_origin_access_identity",
-            &self.cloud_front_origin_access_identity,
-        );
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateCloudFrontOriginAccessIdentityOutput`](crate::output::CreateCloudFrontOriginAccessIdentityOutput).
@@ -6648,7 +5886,7 @@ impl CreateCloudFrontOriginAccessIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCachePolicyOutput {
     /// <p>A cache policy.</p>
     #[doc(hidden)]
@@ -6672,15 +5910,6 @@ impl CreateCachePolicyOutput {
     /// <p>The current version of the cache policy.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateCachePolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCachePolicyOutput");
-        formatter.field("cache_policy", &self.cache_policy);
-        formatter.field("location", &self.location);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateCachePolicyOutput`](crate::output::CreateCachePolicyOutput).
@@ -6746,14 +5975,8 @@ impl CreateCachePolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAliasOutput {}
-impl std::fmt::Debug for AssociateAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAliasOutput");
-        formatter.finish()
-    }
-}
 /// See [`AssociateAliasOutput`](crate::output::AssociateAliasOutput).
 pub mod associate_alias_output {
 

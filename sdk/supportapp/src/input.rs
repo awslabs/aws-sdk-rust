@@ -1492,7 +1492,7 @@ impl UpdateSlackChannelConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -1583,30 +1583,10 @@ impl UpdateSlackChannelConfigurationInput {
         self.channel_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSlackChannelConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSlackChannelConfigurationInput");
-        formatter.field("team_id", &self.team_id);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field(
-            "notify_on_create_or_reopen_case",
-            &self.notify_on_create_or_reopen_case,
-        );
-        formatter.field(
-            "notify_on_add_correspondence_to_case",
-            &self.notify_on_add_correspondence_to_case,
-        );
-        formatter.field("notify_on_resolve_case", &self.notify_on_resolve_case);
-        formatter.field("notify_on_case_severity", &self.notify_on_case_severity);
-        formatter.field("channel_role_arn", &self.channel_role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountAliasInput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -1618,17 +1598,10 @@ impl PutAccountAliasInput {
         self.account_alias.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccountAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountAliasInput");
-        formatter.field("account_alias", &self.account_alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSlackWorkspaceConfigurationsInput {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     #[doc(hidden)]
@@ -1640,17 +1613,10 @@ impl ListSlackWorkspaceConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSlackWorkspaceConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSlackWorkspaceConfigurationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSlackChannelConfigurationsInput {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     #[doc(hidden)]
@@ -1662,28 +1628,15 @@ impl ListSlackChannelConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSlackChannelConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSlackChannelConfigurationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountAliasInput {}
-impl std::fmt::Debug for GetAccountAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountAliasInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -1695,17 +1648,10 @@ impl DeleteSlackWorkspaceConfigurationInput {
         self.team_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSlackWorkspaceConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSlackWorkspaceConfigurationInput");
-        formatter.field("team_id", &self.team_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -1724,29 +1670,15 @@ impl DeleteSlackChannelConfigurationInput {
         self.channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSlackChannelConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSlackChannelConfigurationInput");
-        formatter.field("team_id", &self.team_id);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccountAliasInput {}
-impl std::fmt::Debug for DeleteAccountAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccountAliasInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -1835,25 +1767,5 @@ impl CreateSlackChannelConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn channel_role_arn(&self) -> std::option::Option<&str> {
         self.channel_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateSlackChannelConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSlackChannelConfigurationInput");
-        formatter.field("team_id", &self.team_id);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field(
-            "notify_on_create_or_reopen_case",
-            &self.notify_on_create_or_reopen_case,
-        );
-        formatter.field(
-            "notify_on_add_correspondence_to_case",
-            &self.notify_on_add_correspondence_to_case,
-        );
-        formatter.field("notify_on_resolve_case", &self.notify_on_resolve_case);
-        formatter.field("notify_on_case_severity", &self.notify_on_case_severity);
-        formatter.field("channel_role_arn", &self.channel_role_arn);
-        formatter.finish()
     }
 }

@@ -3892,7 +3892,7 @@ impl UpdateFlowInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
@@ -3942,25 +3942,10 @@ impl UpdateFlowInput {
         self.tasks.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFlowInput");
-        formatter.field("flow_name", &self.flow_name);
-        formatter.field("description", &self.description);
-        formatter.field("trigger_config", &self.trigger_config);
-        formatter.field("source_flow_config", &self.source_flow_config);
-        formatter.field(
-            "destination_flow_config_list",
-            &self.destination_flow_config_list,
-        );
-        formatter.field("tasks", &self.tasks);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectorProfileInput {
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -3988,19 +3973,10 @@ impl UpdateConnectorProfileInput {
         self.connector_profile_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConnectorProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectorProfileInput");
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field("connection_mode", &self.connection_mode);
-        formatter.field("connector_profile_config", &self.connector_profile_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
     #[doc(hidden)]
@@ -4019,18 +3995,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnregisterConnectorInput {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -4049,18 +4017,10 @@ impl UnregisterConnectorInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for UnregisterConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnregisterConnectorInput");
-        formatter.field("connector_label", &self.connector_label);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
     #[doc(hidden)]
@@ -4083,18 +4043,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
@@ -4106,17 +4058,10 @@ impl StopFlowInput {
         self.flow_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopFlowInput");
-        formatter.field("flow_name", &self.flow_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
@@ -4128,17 +4073,10 @@ impl StartFlowInput {
         self.flow_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFlowInput");
-        formatter.field("flow_name", &self.flow_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterConnectorInput {
     /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -4176,26 +4114,10 @@ impl RegisterConnectorInput {
         self.connector_provisioning_config.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterConnectorInput");
-        formatter.field("connector_label", &self.connector_label);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "connector_provisioning_type",
-            &self.connector_provisioning_type,
-        );
-        formatter.field(
-            "connector_provisioning_config",
-            &self.connector_provisioning_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
     #[doc(hidden)]
@@ -4207,17 +4129,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFlowsInput {
     /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
     #[doc(hidden)]
@@ -4236,18 +4151,10 @@ impl ListFlowsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFlowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFlowsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectorsInput {
     /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
     #[doc(hidden)]
@@ -4266,18 +4173,10 @@ impl ListConnectorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectorEntitiesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
     #[doc(hidden)]
@@ -4310,20 +4209,10 @@ impl ListConnectorEntitiesInput {
         self.api_version.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectorEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectorEntitiesInput");
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("entities_path", &self.entities_path);
-        formatter.field("api_version", &self.api_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFlowExecutionRecordsInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
@@ -4349,19 +4238,10 @@ impl DescribeFlowExecutionRecordsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFlowExecutionRecordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFlowExecutionRecordsInput");
-        formatter.field("flow_name", &self.flow_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
@@ -4373,17 +4253,10 @@ impl DescribeFlowInput {
         self.flow_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFlowInput");
-        formatter.field("flow_name", &self.flow_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectorsInput {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     #[doc(hidden)]
@@ -4409,19 +4282,10 @@ impl DescribeConnectorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectorsInput");
-        formatter.field("connector_types", &self.connector_types);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectorProfilesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -4461,21 +4325,10 @@ impl DescribeConnectorProfilesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectorProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectorProfilesInput");
-        formatter.field("connector_profile_names", &self.connector_profile_names);
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("connector_label", &self.connector_label);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectorEntityInput {
     /// <p> The entity name for that connector. </p>
     #[doc(hidden)]
@@ -4508,20 +4361,10 @@ impl DescribeConnectorEntityInput {
         self.api_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectorEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectorEntityInput");
-        formatter.field("connector_entity_name", &self.connector_entity_name);
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field("api_version", &self.api_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectorInput {
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
     #[doc(hidden)]
@@ -4540,18 +4383,10 @@ impl DescribeConnectorInput {
         self.connector_label.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectorInput");
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("connector_label", &self.connector_label);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
@@ -4570,18 +4405,10 @@ impl DeleteFlowInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeleteFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFlowInput");
-        formatter.field("flow_name", &self.flow_name);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
     #[doc(hidden)]
@@ -4600,18 +4427,10 @@ impl DeleteConnectorProfileInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeleteConnectorProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectorProfileInput");
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
@@ -4679,27 +4498,10 @@ impl CreateFlowInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFlowInput");
-        formatter.field("flow_name", &self.flow_name);
-        formatter.field("description", &self.description);
-        formatter.field("kms_arn", &self.kms_arn);
-        formatter.field("trigger_config", &self.trigger_config);
-        formatter.field("source_flow_config", &self.source_flow_config);
-        formatter.field(
-            "destination_flow_config_list",
-            &self.destination_flow_config_list,
-        );
-        formatter.field("tasks", &self.tasks);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -4746,17 +4548,5 @@ impl CreateConnectorProfileInput {
         &self,
     ) -> std::option::Option<&crate::model::ConnectorProfileConfig> {
         self.connector_profile_config.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateConnectorProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectorProfileInput");
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field("kms_arn", &self.kms_arn);
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("connector_label", &self.connector_label);
-        formatter.field("connection_mode", &self.connection_mode);
-        formatter.field("connector_profile_config", &self.connector_profile_config);
-        formatter.finish()
     }
 }

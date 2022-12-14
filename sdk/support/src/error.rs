@@ -2,18 +2,11 @@
 
 /// <p>An internal server error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     /// <p>An internal server error occurred.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalServerError {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl InternalServerError {
 
 /// <p>The requested <code>caseId</code> couldn't be located.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaseIdNotFound {
     /// <p>The requested <code>CaseId</code> could not be located.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CaseIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaseIdNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CaseIdNotFound {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl CaseIdNotFound {
 
 /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAttachmentLimitExceeded {
     /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DescribeAttachmentLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAttachmentLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DescribeAttachmentLimitExceeded {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl DescribeAttachmentLimitExceeded {
 
 /// <p>An attachment with the specified ID could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentIdNotFound {
     /// <p>An attachment with the specified ID could not be found.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AttachmentIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentIdNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AttachmentIdNotFound {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl AttachmentIdNotFound {
 
 /// <p>The case creation limit for the account has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaseCreationLimitExceeded {
     /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CaseCreationLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaseCreationLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CaseCreationLimitExceeded {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl CaseCreationLimitExceeded {
 
 /// <p>An attachment set with the specified ID could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentSetIdNotFound {
     /// <p>An attachment set with the specified ID could not be found.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AttachmentSetIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentSetIdNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AttachmentSetIdNotFound {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl AttachmentSetIdNotFound {
 
 /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentSetExpired {
     /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AttachmentSetExpired {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentSetExpired");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AttachmentSetExpired {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl AttachmentSetExpired {
 
 /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentSetSizeLimitExceeded {
     /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AttachmentSetSizeLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentSetSizeLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AttachmentSetSizeLimitExceeded {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl AttachmentSetSizeLimitExceeded {
 
 /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentLimitExceeded {
     /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AttachmentLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AttachmentLimitExceeded {
     /// Returns the error message.

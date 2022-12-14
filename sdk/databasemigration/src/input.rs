@@ -514,7 +514,7 @@ impl CancelReplicationTaskAssessmentRunInput {
 pub mod create_endpoint_input {
 
     /// A builder for [`CreateEndpointInput`](crate::input::CreateEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) endpoint_identifier: std::option::Option<std::string::String>,
         pub(crate) endpoint_type: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
@@ -1051,6 +1051,52 @@ pub mod create_endpoint_input {
                 redis_settings: self.redis_settings,
                 gcp_my_sql_settings: self.gcp_my_sql_settings,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("endpoint_identifier", &self.endpoint_identifier);
+            formatter.field("endpoint_type", &self.endpoint_type);
+            formatter.field("engine_name", &self.engine_name);
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("server_name", &self.server_name);
+            formatter.field("port", &self.port);
+            formatter.field("database_name", &self.database_name);
+            formatter.field(
+                "extra_connection_attributes",
+                &self.extra_connection_attributes,
+            );
+            formatter.field("kms_key_id", &self.kms_key_id);
+            formatter.field("tags", &self.tags);
+            formatter.field("certificate_arn", &self.certificate_arn);
+            formatter.field("ssl_mode", &self.ssl_mode);
+            formatter.field("service_access_role_arn", &self.service_access_role_arn);
+            formatter.field("external_table_definition", &self.external_table_definition);
+            formatter.field("dynamo_db_settings", &self.dynamo_db_settings);
+            formatter.field("s3_settings", &self.s3_settings);
+            formatter.field("dms_transfer_settings", &self.dms_transfer_settings);
+            formatter.field("mongo_db_settings", &self.mongo_db_settings);
+            formatter.field("kinesis_settings", &self.kinesis_settings);
+            formatter.field("kafka_settings", &self.kafka_settings);
+            formatter.field("elasticsearch_settings", &self.elasticsearch_settings);
+            formatter.field("neptune_settings", &self.neptune_settings);
+            formatter.field("redshift_settings", &self.redshift_settings);
+            formatter.field("postgre_sql_settings", &self.postgre_sql_settings);
+            formatter.field("my_sql_settings", &self.my_sql_settings);
+            formatter.field("oracle_settings", &self.oracle_settings);
+            formatter.field("sybase_settings", &self.sybase_settings);
+            formatter.field(
+                "microsoft_sql_server_settings",
+                &self.microsoft_sql_server_settings,
+            );
+            formatter.field("ibm_db2_settings", &self.ibm_db2_settings);
+            formatter.field("resource_identifier", &self.resource_identifier);
+            formatter.field("doc_db_settings", &self.doc_db_settings);
+            formatter.field("redis_settings", &self.redis_settings);
+            formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
+            formatter.finish()
         }
     }
 }
@@ -9166,7 +9212,7 @@ impl DescribeTableStatisticsInput {
 pub mod import_certificate_input {
 
     /// A builder for [`ImportCertificateInput`](crate::input::ImportCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) certificate_identifier: std::option::Option<std::string::String>,
         pub(crate) certificate_pem: std::option::Option<std::string::String>,
@@ -9247,6 +9293,16 @@ pub mod import_certificate_input {
                 certificate_wallet: self.certificate_wallet,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("certificate_identifier", &self.certificate_identifier);
+            formatter.field("certificate_pem", &"*** Sensitive Data Redacted ***");
+            formatter.field("certificate_wallet", &self.certificate_wallet);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -9539,7 +9595,7 @@ impl ListTagsForResourceInput {
 pub mod modify_endpoint_input {
 
     /// A builder for [`ModifyEndpointInput`](crate::input::ModifyEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_identifier: std::option::Option<std::string::String>,
@@ -10060,6 +10116,51 @@ pub mod modify_endpoint_input {
                 exact_settings: self.exact_settings,
                 gcp_my_sql_settings: self.gcp_my_sql_settings,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("endpoint_arn", &self.endpoint_arn);
+            formatter.field("endpoint_identifier", &self.endpoint_identifier);
+            formatter.field("endpoint_type", &self.endpoint_type);
+            formatter.field("engine_name", &self.engine_name);
+            formatter.field("username", &self.username);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("server_name", &self.server_name);
+            formatter.field("port", &self.port);
+            formatter.field("database_name", &self.database_name);
+            formatter.field(
+                "extra_connection_attributes",
+                &self.extra_connection_attributes,
+            );
+            formatter.field("certificate_arn", &self.certificate_arn);
+            formatter.field("ssl_mode", &self.ssl_mode);
+            formatter.field("service_access_role_arn", &self.service_access_role_arn);
+            formatter.field("external_table_definition", &self.external_table_definition);
+            formatter.field("dynamo_db_settings", &self.dynamo_db_settings);
+            formatter.field("s3_settings", &self.s3_settings);
+            formatter.field("dms_transfer_settings", &self.dms_transfer_settings);
+            formatter.field("mongo_db_settings", &self.mongo_db_settings);
+            formatter.field("kinesis_settings", &self.kinesis_settings);
+            formatter.field("kafka_settings", &self.kafka_settings);
+            formatter.field("elasticsearch_settings", &self.elasticsearch_settings);
+            formatter.field("neptune_settings", &self.neptune_settings);
+            formatter.field("redshift_settings", &self.redshift_settings);
+            formatter.field("postgre_sql_settings", &self.postgre_sql_settings);
+            formatter.field("my_sql_settings", &self.my_sql_settings);
+            formatter.field("oracle_settings", &self.oracle_settings);
+            formatter.field("sybase_settings", &self.sybase_settings);
+            formatter.field(
+                "microsoft_sql_server_settings",
+                &self.microsoft_sql_server_settings,
+            );
+            formatter.field("ibm_db2_settings", &self.ibm_db2_settings);
+            formatter.field("doc_db_settings", &self.doc_db_settings);
+            formatter.field("redis_settings", &self.redis_settings);
+            formatter.field("exact_settings", &self.exact_settings);
+            formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
+            formatter.finish()
         }
     }
 }
@@ -13344,7 +13445,7 @@ impl UpdateSubscriptionsToEventBridgeInput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSubscriptionsToEventBridgeInput {
     /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
     #[doc(hidden)]
@@ -13356,17 +13457,10 @@ impl UpdateSubscriptionsToEventBridgeInput {
         self.force_move
     }
 }
-impl std::fmt::Debug for UpdateSubscriptionsToEventBridgeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSubscriptionsToEventBridgeInput");
-        formatter.field("force_move", &self.force_move);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     #[doc(hidden)]
@@ -13385,18 +13479,10 @@ impl TestConnectionInput {
         self.endpoint_arn.as_deref()
     }
 }
-impl std::fmt::Debug for TestConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestConnectionInput");
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopReplicationTaskInput {
     /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
     #[doc(hidden)]
@@ -13408,17 +13494,10 @@ impl StopReplicationTaskInput {
         self.replication_task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopReplicationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopReplicationTaskInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
     #[doc(hidden)]
@@ -13506,25 +13585,10 @@ impl StartReplicationTaskAssessmentRunInput {
         self.exclude.as_deref()
     }
 }
-impl std::fmt::Debug for StartReplicationTaskAssessmentRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartReplicationTaskAssessmentRunInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("result_location_bucket", &self.result_location_bucket);
-        formatter.field("result_location_folder", &self.result_location_folder);
-        formatter.field("result_encryption_mode", &self.result_encryption_mode);
-        formatter.field("result_kms_key_arn", &self.result_kms_key_arn);
-        formatter.field("assessment_run_name", &self.assessment_run_name);
-        formatter.field("include_only", &self.include_only);
-        formatter.field("exclude", &self.exclude);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentInput {
     /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
     #[doc(hidden)]
@@ -13536,17 +13600,10 @@ impl StartReplicationTaskAssessmentInput {
         self.replication_task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartReplicationTaskAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartReplicationTaskAssessmentInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
     #[doc(hidden)]
@@ -13611,35 +13668,15 @@ impl StartReplicationTaskInput {
         self.cdc_stop_position.as_deref()
     }
 }
-impl std::fmt::Debug for StartReplicationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartReplicationTaskInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field(
-            "start_replication_task_type",
-            &self.start_replication_task_type,
-        );
-        formatter.field("cdc_start_time", &self.cdc_start_time);
-        formatter.field("cdc_start_position", &self.cdc_start_position);
-        formatter.field("cdc_stop_position", &self.cdc_stop_position);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunFleetAdvisorLsaAnalysisInput {}
-impl std::fmt::Debug for RunFleetAdvisorLsaAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunFleetAdvisorLsaAnalysisInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Removes one or more tags from an DMS resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -13658,18 +13695,10 @@ impl RemoveTagsFromResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReloadTablesInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
     #[doc(hidden)]
@@ -13699,19 +13728,10 @@ impl ReloadTablesInput {
         self.reload_option.as_ref()
     }
 }
-impl std::fmt::Debug for ReloadTablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReloadTablesInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field("tables_to_reload", &self.tables_to_reload);
-        formatter.field("reload_option", &self.reload_option);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshSchemasInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
@@ -13730,18 +13750,10 @@ impl RefreshSchemasInput {
         self.replication_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RefreshSchemasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshSchemasInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     #[doc(hidden)]
@@ -13767,19 +13779,10 @@ impl RebootReplicationInstanceInput {
         self.force_planned_failover
     }
 }
-impl std::fmt::Debug for RebootReplicationInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootReplicationInstanceInput");
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("force_failover", &self.force_failover);
-        formatter.field("force_planned_failover", &self.force_planned_failover);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MoveReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
     #[doc(hidden)]
@@ -13798,21 +13801,10 @@ impl MoveReplicationTaskInput {
         self.target_replication_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for MoveReplicationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MoveReplicationTaskInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field(
-            "target_replication_instance_arn",
-            &self.target_replication_instance_arn,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     #[doc(hidden)]
@@ -13910,28 +13902,10 @@ impl ModifyReplicationTaskInput {
         self.task_data.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyReplicationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyReplicationTaskInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field(
-            "replication_task_identifier",
-            &self.replication_task_identifier,
-        );
-        formatter.field("migration_type", &self.migration_type);
-        formatter.field("table_mappings", &self.table_mappings);
-        formatter.field("replication_task_settings", &self.replication_task_settings);
-        formatter.field("cdc_start_time", &self.cdc_start_time);
-        formatter.field("cdc_start_position", &self.cdc_start_position);
-        formatter.field("cdc_stop_position", &self.cdc_stop_position);
-        formatter.field("task_data", &self.task_data);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyReplicationSubnetGroupInput {
     /// <p>The name of the replication instance subnet group.</p>
     #[doc(hidden)]
@@ -13957,25 +13931,10 @@ impl ModifyReplicationSubnetGroupInput {
         self.subnet_ids.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyReplicationSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyReplicationSubnetGroupInput");
-        formatter.field(
-            "replication_subnet_group_identifier",
-            &self.replication_subnet_group_identifier,
-        );
-        formatter.field(
-            "replication_subnet_group_description",
-            &self.replication_subnet_group_description,
-        );
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     #[doc(hidden)]
@@ -14083,42 +14042,10 @@ impl ModifyReplicationInstanceInput {
         self.replication_instance_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyReplicationInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyReplicationInstanceInput");
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("apply_immediately", &self.apply_immediately);
-        formatter.field(
-            "replication_instance_class",
-            &self.replication_instance_class,
-        );
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "allow_major_version_upgrade",
-            &self.allow_major_version_upgrade,
-        );
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field(
-            "replication_instance_identifier",
-            &self.replication_instance_identifier,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription to be modified.</p>
     #[doc(hidden)]
@@ -14158,17 +14085,6 @@ impl ModifyEventSubscriptionInput {
     /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for ModifyEventSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyEventSubscriptionInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 
@@ -14491,7 +14407,7 @@ impl std::fmt::Debug for ModifyEndpointInput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
     #[doc(hidden)]
@@ -14508,14 +14424,6 @@ impl ListTagsForResourceInput {
     /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
     pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arn_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_arn_list", &self.resource_arn_list);
-        formatter.finish()
     }
 }
 
@@ -14569,7 +14477,7 @@ impl std::fmt::Debug for ImportCertificateInput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTableStatisticsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     #[doc(hidden)]
@@ -14610,20 +14518,10 @@ impl DescribeTableStatisticsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTableStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTableStatisticsInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSchemasInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
@@ -14653,19 +14551,10 @@ impl DescribeSchemasInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSchemasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSchemasInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationTasksInput {
     /// <p>Filters applied to replication tasks.</p>
     /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
@@ -14704,20 +14593,10 @@ impl DescribeReplicationTasksInput {
         self.without_settings
     }
 }
-impl std::fmt::Debug for DescribeReplicationTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationTasksInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.field("without_settings", &self.without_settings);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationTaskIndividualAssessmentsInput {
     /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
@@ -14745,19 +14624,10 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReplicationTaskIndividualAssessmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationTaskIndividualAssessmentsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentRunsInput {
     /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
@@ -14785,19 +14655,10 @@ impl DescribeReplicationTaskAssessmentRunsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReplicationTaskAssessmentRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationTaskAssessmentRunsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentResultsInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
     #[doc(hidden)]
@@ -14827,19 +14688,10 @@ impl DescribeReplicationTaskAssessmentResultsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReplicationTaskAssessmentResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationTaskAssessmentResultsInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationSubnetGroupsInput {
     /// <p>Filters applied to replication subnet groups.</p>
     /// <p>Valid filter names: replication-subnet-group-id</p>
@@ -14871,19 +14723,10 @@ impl DescribeReplicationSubnetGroupsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReplicationSubnetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationSubnetGroupsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationInstanceTaskLogsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     #[doc(hidden)]
@@ -14913,19 +14756,10 @@ impl DescribeReplicationInstanceTaskLogsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReplicationInstanceTaskLogsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationInstanceTaskLogsInput");
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationInstancesInput {
     /// <p>Filters applied to replication instances.</p>
     /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
@@ -14957,19 +14791,10 @@ impl DescribeReplicationInstancesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReplicationInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationInstancesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRefreshSchemasStatusInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
@@ -14981,17 +14806,10 @@ impl DescribeRefreshSchemasStatusInput {
         self.endpoint_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRefreshSchemasStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRefreshSchemasStatusInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     #[doc(hidden)]
@@ -15028,20 +14846,10 @@ impl DescribePendingMaintenanceActionsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribePendingMaintenanceActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePendingMaintenanceActionsInput");
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("filters", &self.filters);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrderableReplicationInstancesInput {
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
@@ -15064,18 +14872,10 @@ impl DescribeOrderableReplicationInstancesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrderableReplicationInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrderableReplicationInstancesInput");
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemasInput {
     /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
     /// <ul>
@@ -15125,19 +14925,10 @@ impl DescribeFleetAdvisorSchemasInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetAdvisorSchemasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetAdvisorSchemasInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemaObjectSummaryInput {
     /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
     /// <ul>
@@ -15171,19 +14962,10 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetAdvisorSchemaObjectSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetAdvisorSchemaObjectSummaryInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorLsaAnalysisInput {
     /// <p>Sets the maximum number of records returned in the response.</p>
     #[doc(hidden)]
@@ -15202,18 +14984,10 @@ impl DescribeFleetAdvisorLsaAnalysisInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetAdvisorLsaAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetAdvisorLsaAnalysisInput");
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorDatabasesInput {
     /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
     /// <ul>
@@ -15257,19 +15031,10 @@ impl DescribeFleetAdvisorDatabasesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetAdvisorDatabasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetAdvisorDatabasesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorCollectorsInput {
     /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
     /// <ul>
@@ -15305,19 +15070,10 @@ impl DescribeFleetAdvisorCollectorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetAdvisorCollectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetAdvisorCollectorsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventSubscriptionsInput {
     /// <p>The name of the DMS event subscription to be described.</p>
     #[doc(hidden)]
@@ -15356,20 +15112,10 @@ impl DescribeEventSubscriptionsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventSubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventSubscriptionsInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p> The identifier of an event source.</p>
     #[doc(hidden)]
@@ -15443,25 +15189,10 @@ impl DescribeEventsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventsInput");
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("duration", &self.duration);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventCategoriesInput {
     /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
@@ -15482,18 +15213,10 @@ impl DescribeEventCategoriesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventCategoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventCategoriesInput");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointTypesInput {
     /// <p>Filters applied to the endpoint types.</p>
     /// <p>Valid filter names: engine-name | endpoint-type</p>
@@ -15525,19 +15248,10 @@ impl DescribeEndpointTypesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEndpointTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointTypesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointSettingsInput {
     /// <p>The databse engine used for your source or target endpoint.</p>
     #[doc(hidden)]
@@ -15563,19 +15277,10 @@ impl DescribeEndpointSettingsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEndpointSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointSettingsInput");
-        formatter.field("engine_name", &self.engine_name);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointsInput {
     /// <p>Filters applied to the endpoints.</p>
     /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
@@ -15607,19 +15312,10 @@ impl DescribeEndpointsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionsInput {
     /// <p>The filters applied to the connection.</p>
     /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
@@ -15651,19 +15347,10 @@ impl DescribeConnectionsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCertificatesInput {
     /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
     #[doc(hidden)]
@@ -15691,19 +15378,10 @@ impl DescribeCertificatesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCertificatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCertificatesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicableIndividualAssessmentsInput {
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
     #[doc(hidden)]
@@ -15757,34 +15435,15 @@ impl DescribeApplicableIndividualAssessmentsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicableIndividualAssessmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicableIndividualAssessmentsInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("source_engine_name", &self.source_engine_name);
-        formatter.field("target_engine_name", &self.target_engine_name);
-        formatter.field("migration_type", &self.migration_type);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountAttributesInput {}
-impl std::fmt::Debug for DescribeAccountAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountAttributesInput");
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
     #[doc(hidden)]
@@ -15796,20 +15455,10 @@ impl DeleteReplicationTaskAssessmentRunInput {
         self.replication_task_assessment_run_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReplicationTaskAssessmentRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReplicationTaskAssessmentRunInput");
-        formatter.field(
-            "replication_task_assessment_run_arn",
-            &self.replication_task_assessment_run_arn,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
     #[doc(hidden)]
@@ -15821,17 +15470,10 @@ impl DeleteReplicationTaskInput {
         self.replication_task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReplicationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReplicationTaskInput");
-        formatter.field("replication_task_arn", &self.replication_task_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReplicationSubnetGroupInput {
     /// <p>The subnet group name of the replication instance.</p>
     #[doc(hidden)]
@@ -15843,20 +15485,10 @@ impl DeleteReplicationSubnetGroupInput {
         self.replication_subnet_group_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReplicationSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReplicationSubnetGroupInput");
-        formatter.field(
-            "replication_subnet_group_identifier",
-            &self.replication_subnet_group_identifier,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
     #[doc(hidden)]
@@ -15868,17 +15500,10 @@ impl DeleteReplicationInstanceInput {
         self.replication_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReplicationInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReplicationInstanceInput");
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetAdvisorDatabasesInput {
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
     #[doc(hidden)]
@@ -15890,17 +15515,10 @@ impl DeleteFleetAdvisorDatabasesInput {
         self.database_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetAdvisorDatabasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetAdvisorDatabasesInput");
-        formatter.field("database_ids", &self.database_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetAdvisorCollectorInput {
     /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
     #[doc(hidden)]
@@ -15912,17 +15530,10 @@ impl DeleteFleetAdvisorCollectorInput {
         self.collector_referenced_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetAdvisorCollectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetAdvisorCollectorInput");
-        formatter.field("collector_referenced_id", &self.collector_referenced_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription to be deleted.</p>
     #[doc(hidden)]
@@ -15934,17 +15545,10 @@ impl DeleteEventSubscriptionInput {
         self.subscription_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventSubscriptionInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
@@ -15956,17 +15560,10 @@ impl DeleteEndpointInput {
         self.endpoint_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEndpointInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
@@ -15985,18 +15582,10 @@ impl DeleteConnectionInput {
         self.replication_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionInput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     #[doc(hidden)]
@@ -16008,17 +15597,10 @@ impl DeleteCertificateInput {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCertificateInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReplicationTaskInput {
     /// <p>An identifier for the replication task.</p>
     /// <p>Constraints:</p>
@@ -16144,32 +15726,10 @@ impl CreateReplicationTaskInput {
         self.resource_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReplicationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReplicationTaskInput");
-        formatter.field(
-            "replication_task_identifier",
-            &self.replication_task_identifier,
-        );
-        formatter.field("source_endpoint_arn", &self.source_endpoint_arn);
-        formatter.field("target_endpoint_arn", &self.target_endpoint_arn);
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("migration_type", &self.migration_type);
-        formatter.field("table_mappings", &self.table_mappings);
-        formatter.field("replication_task_settings", &self.replication_task_settings);
-        formatter.field("cdc_start_time", &self.cdc_start_time);
-        formatter.field("cdc_start_position", &self.cdc_start_position);
-        formatter.field("cdc_stop_position", &self.cdc_stop_position);
-        formatter.field("tags", &self.tags);
-        formatter.field("task_data", &self.task_data);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReplicationSubnetGroupInput {
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
@@ -16206,26 +15766,10 @@ impl CreateReplicationSubnetGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReplicationSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReplicationSubnetGroupInput");
-        formatter.field(
-            "replication_subnet_group_identifier",
-            &self.replication_subnet_group_identifier,
-        );
-        formatter.field(
-            "replication_subnet_group_description",
-            &self.replication_subnet_group_description,
-        );
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReplicationInstanceInput {
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -16367,46 +15911,10 @@ impl CreateReplicationInstanceInput {
         self.resource_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReplicationInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReplicationInstanceInput");
-        formatter.field(
-            "replication_instance_identifier",
-            &self.replication_instance_identifier,
-        );
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field(
-            "replication_instance_class",
-            &self.replication_instance_class,
-        );
-        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field(
-            "replication_subnet_group_identifier",
-            &self.replication_subnet_group_identifier,
-        );
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("dns_name_servers", &self.dns_name_servers);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetAdvisorCollectorInput {
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
     #[doc(hidden)]
@@ -16439,20 +15947,10 @@ impl CreateFleetAdvisorCollectorInput {
         self.s3_bucket_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFleetAdvisorCollectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetAdvisorCollectorInput");
-        formatter.field("collector_name", &self.collector_name);
-        formatter.field("description", &self.description);
-        formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
     #[doc(hidden)]
@@ -16510,19 +16008,6 @@ impl CreateEventSubscriptionInput {
     /// <p>One or more tags to be assigned to the event subscription.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateEventSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventSubscriptionInput");
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("source_ids", &self.source_ids);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -16845,7 +16330,7 @@ impl std::fmt::Debug for CreateEndpointInput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
     #[doc(hidden)]
@@ -16857,20 +16342,10 @@ impl CancelReplicationTaskAssessmentRunInput {
         self.replication_task_assessment_run_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CancelReplicationTaskAssessmentRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelReplicationTaskAssessmentRunInput");
-        formatter.field(
-            "replication_task_assessment_run_arn",
-            &self.replication_task_assessment_run_arn,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionInput {
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
     #[doc(hidden)]
@@ -16910,19 +16385,10 @@ impl ApplyPendingMaintenanceActionInput {
         self.opt_in_type.as_deref()
     }
 }
-impl std::fmt::Debug for ApplyPendingMaintenanceActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplyPendingMaintenanceActionInput");
-        formatter.field("replication_instance_arn", &self.replication_instance_arn);
-        formatter.field("apply_action", &self.apply_action);
-        formatter.field("opt_in_type", &self.opt_in_type);
-        formatter.finish()
-    }
-}
 
 /// <p>Associates a set of tags with an DMS resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceInput {
     /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
     /// <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
@@ -16941,13 +16407,5 @@ impl AddTagsToResourceInput {
     /// <p>One or more tags to be assigned to the resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for AddTagsToResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

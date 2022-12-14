@@ -2,7 +2,7 @@
 
 /// <p>The request failed due to a temporary failure of the server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -29,16 +29,6 @@ impl ServiceUnavailableException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl ServiceUnavailableException {
@@ -131,7 +121,7 @@ impl ServiceUnavailableException {
 
 /// <p>A resource that is required for the action doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -158,16 +148,6 @@ impl ResourceNotFoundException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -260,7 +240,7 @@ impl ResourceNotFoundException {
 
 /// <p>Indicates that a required parameter is missing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingParameterValueException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -287,16 +267,6 @@ impl MissingParameterValueException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for MissingParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingParameterValueException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl MissingParameterValueException {
@@ -389,7 +359,7 @@ impl MissingParameterValueException {
 
 /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterValueException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -416,16 +386,6 @@ impl InvalidParameterValueException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterValueException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl InvalidParameterValueException {
@@ -518,7 +478,7 @@ impl InvalidParameterValueException {
 
 /// <p>Backup can't perform the action that you requested until it finishes performing a previous action. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -545,16 +505,6 @@ impl ConflictException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl ConflictException {
@@ -647,7 +597,7 @@ impl ConflictException {
 
 /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -674,16 +624,6 @@ impl InvalidRequestException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl InvalidRequestException {
@@ -776,7 +716,7 @@ impl InvalidRequestException {
 
 /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -803,16 +743,6 @@ impl LimitExceededException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl LimitExceededException {
@@ -905,7 +835,7 @@ impl LimitExceededException {
 
 /// <p>The required resource already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -946,18 +876,6 @@ impl AlreadyExistsException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl AlreadyExistsException {
@@ -1077,7 +995,7 @@ impl AlreadyExistsException {
 
 /// <p>Backup is already performing an action on this recovery point. It can't perform the action you requested until the first action finishes. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResourceStateException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1104,16 +1022,6 @@ impl InvalidResourceStateException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidResourceStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResourceStateException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl InvalidResourceStateException {
@@ -1206,7 +1114,7 @@ impl InvalidResourceStateException {
 
 /// <p>A dependent Amazon Web Services service or resource returned an error to the Backup service, and the action cannot be completed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DependencyFailureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1233,16 +1141,6 @@ impl DependencyFailureException {
     /// <p></p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
-    }
-}
-impl std::fmt::Debug for DependencyFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependencyFailureException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
     }
 }
 impl DependencyFailureException {

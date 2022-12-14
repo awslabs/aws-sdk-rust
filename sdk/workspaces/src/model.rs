@@ -2,7 +2,7 @@
 
 /// <p>Describes a rule for an IP access control group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpRuleItem {
     /// <p>The IP address range, in CIDR notation.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl IpRuleItem {
     /// <p>The description.</p>
     pub fn rule_desc(&self) -> std::option::Option<&str> {
         self.rule_desc.as_deref()
-    }
-}
-impl std::fmt::Debug for IpRuleItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpRuleItem");
-        formatter.field("ip_rule", &self.ip_rule);
-        formatter.field("rule_desc", &self.rule_desc);
-        formatter.finish()
     }
 }
 /// See [`IpRuleItem`](crate::model::IpRuleItem).
@@ -77,7 +69,7 @@ impl IpRuleItem {
 
 /// <p>Describes the permissions for a connection alias. Connection aliases are used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionAliasPermission {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
     #[doc(hidden)]
@@ -94,14 +86,6 @@ impl ConnectionAliasPermission {
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub fn allow_association(&self) -> std::option::Option<bool> {
         self.allow_association
-    }
-}
-impl std::fmt::Debug for ConnectionAliasPermission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionAliasPermission");
-        formatter.field("shared_account_id", &self.shared_account_id);
-        formatter.field("allow_association", &self.allow_association);
-        formatter.finish()
     }
 }
 /// See [`ConnectionAliasPermission`](crate::model::ConnectionAliasPermission).
@@ -155,7 +139,7 @@ impl ConnectionAliasPermission {
 
 /// <p>Describes a WorkSpace that could not be rebooted. (<code>RebootWorkspaces</code>), rebuilt (<code>RebuildWorkspaces</code>), restored (<code>RestoreWorkspace</code>), terminated (<code>TerminateWorkspaces</code>), started (<code>StartWorkspaces</code>), or stopped (<code>StopWorkspaces</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedWorkspaceChangeRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -179,15 +163,6 @@ impl FailedWorkspaceChangeRequest {
     /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedWorkspaceChangeRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedWorkspaceChangeRequest");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`FailedWorkspaceChangeRequest`](crate::model::FailedWorkspaceChangeRequest).
@@ -253,7 +228,7 @@ impl FailedWorkspaceChangeRequest {
 
 /// <p>Describes the information used to terminate a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -263,13 +238,6 @@ impl TerminateRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TerminateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateRequest");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
     }
 }
 /// See [`TerminateRequest`](crate::model::TerminateRequest).
@@ -308,7 +276,7 @@ impl TerminateRequest {
 
 /// <p>Describes the information used to stop a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -318,13 +286,6 @@ impl StopRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StopRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopRequest");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
     }
 }
 /// See [`StopRequest`](crate::model::StopRequest).
@@ -363,7 +324,7 @@ impl StopRequest {
 
 /// <p>Information used to start a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -373,13 +334,6 @@ impl StartRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartRequest");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
     }
 }
 /// See [`StartRequest`](crate::model::StartRequest).
@@ -418,7 +372,7 @@ impl StartRequest {
 
 /// <p>Describes a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -435,14 +389,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -583,7 +529,7 @@ impl AsRef<str> for Tenancy {
 
 /// <p>Describes the information used to rebuild a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebuildRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -593,13 +539,6 @@ impl RebuildRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RebuildRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebuildRequest");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
     }
 }
 /// See [`RebuildRequest`](crate::model::RebuildRequest).
@@ -638,7 +577,7 @@ impl RebuildRequest {
 
 /// <p>Describes the information used to reboot a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -648,13 +587,6 @@ impl RebootRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RebootRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootRequest");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
     }
 }
 /// See [`RebootRequest`](crate::model::RebootRequest).
@@ -785,7 +717,7 @@ impl AsRef<str> for TargetWorkspaceState {
 
 /// <p>Describes a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceProperties {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
     #[doc(hidden)]
@@ -823,20 +755,6 @@ impl WorkspaceProperties {
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub fn compute_type_name(&self) -> std::option::Option<&crate::model::Compute> {
         self.compute_type_name.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceProperties");
-        formatter.field("running_mode", &self.running_mode);
-        formatter.field(
-            "running_mode_auto_stop_timeout_in_minutes",
-            &self.running_mode_auto_stop_timeout_in_minutes,
-        );
-        formatter.field("root_volume_size_gib", &self.root_volume_size_gib);
-        formatter.field("user_volume_size_gib", &self.user_volume_size_gib);
-        formatter.field("compute_type_name", &self.compute_type_name);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceProperties`](crate::model::WorkspaceProperties).
@@ -1158,7 +1076,7 @@ impl AsRef<str> for RunningMode {
 
 /// <p>Describes the default properties that are used for creating WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceCreationProperties {
     /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
     /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
@@ -1219,21 +1137,6 @@ impl WorkspaceCreationProperties {
     /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
     pub fn enable_maintenance_mode(&self) -> std::option::Option<bool> {
         self.enable_maintenance_mode
-    }
-}
-impl std::fmt::Debug for WorkspaceCreationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceCreationProperties");
-        formatter.field("enable_work_docs", &self.enable_work_docs);
-        formatter.field("enable_internet_access", &self.enable_internet_access);
-        formatter.field("default_ou", &self.default_ou);
-        formatter.field("custom_security_group_id", &self.custom_security_group_id);
-        formatter.field(
-            "user_enabled_as_local_administrator",
-            &self.user_enabled_as_local_administrator,
-        );
-        formatter.field("enable_maintenance_mode", &self.enable_maintenance_mode);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceCreationProperties`](crate::model::WorkspaceCreationProperties).
@@ -1354,7 +1257,7 @@ impl WorkspaceCreationProperties {
 
 /// <p>The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceAccessProperties {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
     #[doc(hidden)]
@@ -1415,20 +1318,6 @@ impl WorkspaceAccessProperties {
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
     pub fn device_type_linux(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
         self.device_type_linux.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceAccessProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceAccessProperties");
-        formatter.field("device_type_windows", &self.device_type_windows);
-        formatter.field("device_type_osx", &self.device_type_osx);
-        formatter.field("device_type_web", &self.device_type_web);
-        formatter.field("device_type_ios", &self.device_type_ios);
-        formatter.field("device_type_android", &self.device_type_android);
-        formatter.field("device_type_chrome_os", &self.device_type_chrome_os);
-        formatter.field("device_type_zero_client", &self.device_type_zero_client);
-        formatter.field("device_type_linux", &self.device_type_linux);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceAccessProperties`](crate::model::WorkspaceAccessProperties).
@@ -1667,7 +1556,7 @@ impl AsRef<str> for AccessPropertyValue {
 
 /// <p>Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelfservicePermissions {
     /// <p>Specifies whether users can restart their WorkSpace.</p>
     #[doc(hidden)]
@@ -1705,17 +1594,6 @@ impl SelfservicePermissions {
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
     pub fn rebuild_workspace(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
         self.rebuild_workspace.as_ref()
-    }
-}
-impl std::fmt::Debug for SelfservicePermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelfservicePermissions");
-        formatter.field("restart_workspace", &self.restart_workspace);
-        formatter.field("increase_volume_size", &self.increase_volume_size);
-        formatter.field("change_compute_type", &self.change_compute_type);
-        formatter.field("switch_running_mode", &self.switch_running_mode);
-        formatter.field("rebuild_workspace", &self.rebuild_workspace);
-        formatter.finish()
     }
 }
 /// See [`SelfservicePermissions`](crate::model::SelfservicePermissions).
@@ -2006,7 +1884,7 @@ impl AsRef<str> for DeletableSamlProperty {
 
 /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamlProperties {
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
@@ -2042,18 +1920,6 @@ impl SamlProperties {
     /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
     pub fn relay_state_parameter_name(&self) -> std::option::Option<&str> {
         self.relay_state_parameter_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SamlProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamlProperties");
-        formatter.field("status", &self.status);
-        formatter.field("user_access_url", &self.user_access_url);
-        formatter.field(
-            "relay_state_parameter_name",
-            &self.relay_state_parameter_name,
-        );
-        formatter.finish()
     }
 }
 /// See [`SamlProperties`](crate::model::SamlProperties).
@@ -2240,7 +2106,7 @@ impl AsRef<str> for SamlStatusEnum {
 
 /// <p>Describes an Amazon WorkSpaces client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientProperties {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
     #[doc(hidden)]
@@ -2257,14 +2123,6 @@ impl ClientProperties {
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
     pub fn log_upload_enabled(&self) -> std::option::Option<&crate::model::LogUploadEnum> {
         self.log_upload_enabled.as_ref()
-    }
-}
-impl std::fmt::Debug for ClientProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientProperties");
-        formatter.field("reconnect_enabled", &self.reconnect_enabled);
-        formatter.field("log_upload_enabled", &self.log_upload_enabled);
-        formatter.finish()
     }
 }
 /// See [`ClientProperties`](crate::model::ClientProperties).
@@ -2703,7 +2561,7 @@ impl AsRef<str> for WorkspaceImageIngestionProcess {
 /// <p>Client branding attributes are public facing. Ensure that you don't include sensitive information.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultClientBrandingAttributes {
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     #[doc(hidden)]
@@ -2765,17 +2623,6 @@ impl DefaultClientBrandingAttributes {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.login_message.as_ref()
-    }
-}
-impl std::fmt::Debug for DefaultClientBrandingAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultClientBrandingAttributes");
-        formatter.field("logo_url", &self.logo_url);
-        formatter.field("support_email", &self.support_email);
-        formatter.field("support_link", &self.support_link);
-        formatter.field("forgot_password_link", &self.forgot_password_link);
-        formatter.field("login_message", &self.login_message);
-        formatter.finish()
     }
 }
 /// See [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes).
@@ -2907,7 +2754,7 @@ impl DefaultClientBrandingAttributes {
 /// <p>Client branding attributes are public facing. Ensure you do not include sensitive information.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IosClientBrandingAttributes {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     #[doc(hidden)]
@@ -2991,19 +2838,6 @@ impl IosClientBrandingAttributes {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.login_message.as_ref()
-    }
-}
-impl std::fmt::Debug for IosClientBrandingAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IosClientBrandingAttributes");
-        formatter.field("logo_url", &self.logo_url);
-        formatter.field("logo2x_url", &self.logo2x_url);
-        formatter.field("logo3x_url", &self.logo3x_url);
-        formatter.field("support_email", &self.support_email);
-        formatter.field("support_link", &self.support_link);
-        formatter.field("forgot_password_link", &self.forgot_password_link);
-        formatter.field("login_message", &self.login_message);
-        formatter.finish()
     }
 }
 /// See [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes).
@@ -3167,7 +3001,7 @@ impl IosClientBrandingAttributes {
 /// <p>Client branding attributes are public facing. Ensure that you do not include sensitive information.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultImportClientBrandingAttributes {
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     #[doc(hidden)]
@@ -3229,17 +3063,6 @@ impl DefaultImportClientBrandingAttributes {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.login_message.as_ref()
-    }
-}
-impl std::fmt::Debug for DefaultImportClientBrandingAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultImportClientBrandingAttributes");
-        formatter.field("logo", &self.logo);
-        formatter.field("support_email", &self.support_email);
-        formatter.field("support_link", &self.support_link);
-        formatter.field("forgot_password_link", &self.forgot_password_link);
-        formatter.field("login_message", &self.login_message);
-        formatter.finish()
     }
 }
 /// See [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes).
@@ -3371,7 +3194,7 @@ impl DefaultImportClientBrandingAttributes {
 /// <p>Client branding attributes are public facing. Ensure you do not include sensitive information.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IosImportClientBrandingAttributes {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     #[doc(hidden)]
@@ -3455,19 +3278,6 @@ impl IosImportClientBrandingAttributes {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.login_message.as_ref()
-    }
-}
-impl std::fmt::Debug for IosImportClientBrandingAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IosImportClientBrandingAttributes");
-        formatter.field("logo", &self.logo);
-        formatter.field("logo2x", &self.logo2x);
-        formatter.field("logo3x", &self.logo3x);
-        formatter.field("support_email", &self.support_email);
-        formatter.field("support_link", &self.support_link);
-        formatter.field("forgot_password_link", &self.forgot_password_link);
-        formatter.field("login_message", &self.login_message);
-        formatter.finish()
     }
 }
 /// See [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes).
@@ -3629,7 +3439,7 @@ impl IosImportClientBrandingAttributes {
 
 /// <p>Describes a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The time when the snapshot was created.</p>
     #[doc(hidden)]
@@ -3639,13 +3449,6 @@ impl Snapshot {
     /// <p>The time when the snapshot was created.</p>
     pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Snapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Snapshot");
-        formatter.field("snapshot_time", &self.snapshot_time);
-        formatter.finish()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
@@ -3687,7 +3490,7 @@ impl Snapshot {
 
 /// <p>Describes the connection status of a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceConnectionStatus {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -3722,22 +3525,6 @@ impl WorkspaceConnectionStatus {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_known_user_connection_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceConnectionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceConnectionStatus");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field(
-            "connection_state_check_timestamp",
-            &self.connection_state_check_timestamp,
-        );
-        formatter.field(
-            "last_known_user_connection_timestamp",
-            &self.last_known_user_connection_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`WorkspaceConnectionStatus`](crate::model::WorkspaceConnectionStatus).
@@ -3924,7 +3711,7 @@ impl AsRef<str> for ConnectionState {
 
 /// <p>Describes a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Workspace {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
@@ -4036,33 +3823,6 @@ impl Workspace {
     /// <p>The modification states of the WorkSpace.</p>
     pub fn modification_states(&self) -> std::option::Option<&[crate::model::ModificationState]> {
         self.modification_states.as_deref()
-    }
-}
-impl std::fmt::Debug for Workspace {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Workspace");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("state", &self.state);
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("computer_name", &self.computer_name);
-        formatter.field("volume_encryption_key", &self.volume_encryption_key);
-        formatter.field(
-            "user_volume_encryption_enabled",
-            &self.user_volume_encryption_enabled,
-        );
-        formatter.field(
-            "root_volume_encryption_enabled",
-            &self.root_volume_encryption_enabled,
-        );
-        formatter.field("workspace_properties", &self.workspace_properties);
-        formatter.field("modification_states", &self.modification_states);
-        formatter.finish()
     }
 }
 /// See [`Workspace`](crate::model::Workspace).
@@ -4304,7 +4064,7 @@ impl Workspace {
 
 /// <p>Describes a WorkSpace modification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModificationState {
     /// <p>The resource.</p>
     #[doc(hidden)]
@@ -4321,14 +4081,6 @@ impl ModificationState {
     /// <p>The modification state.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ModificationStateEnum> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ModificationState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModificationState");
-        formatter.field("resource", &self.resource);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ModificationState`](crate::model::ModificationState).
@@ -4757,7 +4509,7 @@ impl AsRef<str> for WorkspaceState {
 
 /// <p>Describes a WorkSpace image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceImage {
     /// <p>The identifier of the image.</p>
     #[doc(hidden)]
@@ -4839,23 +4591,6 @@ impl WorkspaceImage {
     /// <p>The updates (if any) that are available for the specified image.</p>
     pub fn updates(&self) -> std::option::Option<&crate::model::UpdateResult> {
         self.updates.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceImage");
-        formatter.field("image_id", &self.image_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("state", &self.state);
-        formatter.field("required_tenancy", &self.required_tenancy);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("created", &self.created);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceImage`](crate::model::WorkspaceImage).
@@ -5041,7 +4776,7 @@ impl WorkspaceImage {
 /// <p>Only Windows 10 WorkSpace images can be programmatically updated at this time.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResult {
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
     #[doc(hidden)]
@@ -5058,14 +4793,6 @@ impl UpdateResult {
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResult");
-        formatter.field("update_available", &self.update_available);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`UpdateResult`](crate::model::UpdateResult).
@@ -5305,7 +5032,7 @@ impl AsRef<str> for WorkspaceImageState {
 
 /// <p>The operating system that the image is running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperatingSystem {
     /// <p>The operating system.</p>
     #[doc(hidden)]
@@ -5315,13 +5042,6 @@ impl OperatingSystem {
     /// <p>The operating system.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::OperatingSystemType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for OperatingSystem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperatingSystem");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`OperatingSystem`](crate::model::OperatingSystem).
@@ -5545,7 +5265,7 @@ impl AsRef<str> for ImageType {
 
 /// <p>Describes the Amazon Web Services accounts that have been granted permission to use a shared image. For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html"> Share or Unshare a Custom WorkSpaces Image</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImagePermission {
     /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
     #[doc(hidden)]
@@ -5555,13 +5275,6 @@ impl ImagePermission {
     /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
     pub fn shared_account_id(&self) -> std::option::Option<&str> {
         self.shared_account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ImagePermission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImagePermission");
-        formatter.field("shared_account_id", &self.shared_account_id);
-        formatter.finish()
     }
 }
 /// See [`ImagePermission`](crate::model::ImagePermission).
@@ -5603,7 +5316,7 @@ impl ImagePermission {
 
 /// <p>Describes a directory that is used with Amazon WorkSpaces.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceDirectory {
     /// <p>The directory identifier.</p>
     #[doc(hidden)]
@@ -5732,38 +5445,6 @@ impl WorkspaceDirectory {
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
     pub fn saml_properties(&self) -> std::option::Option<&crate::model::SamlProperties> {
         self.saml_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceDirectory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceDirectory");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("directory_name", &self.directory_name);
-        formatter.field("registration_code", &self.registration_code);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("dns_ip_addresses", &self.dns_ip_addresses);
-        formatter.field("customer_user_name", &self.customer_user_name);
-        formatter.field("iam_role_id", &self.iam_role_id);
-        formatter.field("directory_type", &self.directory_type);
-        formatter.field(
-            "workspace_security_group_id",
-            &self.workspace_security_group_id,
-        );
-        formatter.field("state", &self.state);
-        formatter.field(
-            "workspace_creation_properties",
-            &self.workspace_creation_properties,
-        );
-        formatter.field("ip_group_ids", &self.ip_group_ids);
-        formatter.field(
-            "workspace_access_properties",
-            &self.workspace_access_properties,
-        );
-        formatter.field("tenancy", &self.tenancy);
-        formatter.field("selfservice_permissions", &self.selfservice_permissions);
-        formatter.field("saml_properties", &self.saml_properties);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceDirectory`](crate::model::WorkspaceDirectory).
@@ -6066,7 +5747,7 @@ impl WorkspaceDirectory {
 
 /// <p>Describes the default values that are used to create WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultWorkspaceCreationProperties {
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
     #[doc(hidden)]
@@ -6111,21 +5792,6 @@ impl DefaultWorkspaceCreationProperties {
     /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
     pub fn enable_maintenance_mode(&self) -> std::option::Option<bool> {
         self.enable_maintenance_mode
-    }
-}
-impl std::fmt::Debug for DefaultWorkspaceCreationProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultWorkspaceCreationProperties");
-        formatter.field("enable_work_docs", &self.enable_work_docs);
-        formatter.field("enable_internet_access", &self.enable_internet_access);
-        formatter.field("default_ou", &self.default_ou);
-        formatter.field("custom_security_group_id", &self.custom_security_group_id);
-        formatter.field(
-            "user_enabled_as_local_administrator",
-            &self.user_enabled_as_local_administrator,
-        );
-        formatter.field("enable_maintenance_mode", &self.enable_maintenance_mode);
-        formatter.finish()
     }
 }
 /// See [`DefaultWorkspaceCreationProperties`](crate::model::DefaultWorkspaceCreationProperties).
@@ -6435,7 +6101,7 @@ impl AsRef<str> for WorkspaceDirectoryType {
 
 /// <p>Describes a WorkSpace bundle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceBundle {
     /// <p>The identifier of the bundle.</p>
     #[doc(hidden)]
@@ -6508,22 +6174,6 @@ impl WorkspaceBundle {
     /// <p>The time when the bundle was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceBundle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceBundle");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("description", &self.description);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("root_storage", &self.root_storage);
-        formatter.field("user_storage", &self.user_storage);
-        formatter.field("compute_type", &self.compute_type);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceBundle`](crate::model::WorkspaceBundle).
@@ -6685,7 +6335,7 @@ impl WorkspaceBundle {
 
 /// <p>Describes the compute type of the bundle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeType {
     /// <p>The compute type.</p>
     #[doc(hidden)]
@@ -6695,13 +6345,6 @@ impl ComputeType {
     /// <p>The compute type.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::Compute> {
         self.name.as_ref()
-    }
-}
-impl std::fmt::Debug for ComputeType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeType");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ComputeType`](crate::model::ComputeType).
@@ -6738,7 +6381,7 @@ impl ComputeType {
 
 /// <p>Describes the user volume for a WorkSpace bundle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserStorage {
     /// <p>The size of the user volume.</p>
     #[doc(hidden)]
@@ -6748,13 +6391,6 @@ impl UserStorage {
     /// <p>The size of the user volume.</p>
     pub fn capacity(&self) -> std::option::Option<&str> {
         self.capacity.as_deref()
-    }
-}
-impl std::fmt::Debug for UserStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserStorage");
-        formatter.field("capacity", &self.capacity);
-        formatter.finish()
     }
 }
 /// See [`UserStorage`](crate::model::UserStorage).
@@ -6793,7 +6429,7 @@ impl UserStorage {
 
 /// <p>Describes the root volume for a WorkSpace bundle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RootStorage {
     /// <p>The size of the root volume.</p>
     #[doc(hidden)]
@@ -6803,13 +6439,6 @@ impl RootStorage {
     /// <p>The size of the root volume.</p>
     pub fn capacity(&self) -> std::option::Option<&str> {
         self.capacity.as_deref()
-    }
-}
-impl std::fmt::Debug for RootStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RootStorage");
-        formatter.field("capacity", &self.capacity);
-        formatter.finish()
     }
 }
 /// See [`RootStorage`](crate::model::RootStorage).
@@ -6848,7 +6477,7 @@ impl RootStorage {
 
 /// <p>Describes an IP access control group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspacesIpGroup {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
@@ -6879,16 +6508,6 @@ impl WorkspacesIpGroup {
     /// <p>The rules.</p>
     pub fn user_rules(&self) -> std::option::Option<&[crate::model::IpRuleItem]> {
         self.user_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkspacesIpGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspacesIpGroup");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_desc", &self.group_desc);
-        formatter.field("user_rules", &self.user_rules);
-        formatter.finish()
     }
 }
 /// See [`WorkspacesIpGroup`](crate::model::WorkspacesIpGroup).
@@ -6972,7 +6591,7 @@ impl WorkspacesIpGroup {
 
 /// <p>Describes a connection alias. Connection aliases are used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionAlias {
     /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
     #[doc(hidden)]
@@ -7010,17 +6629,6 @@ impl ConnectionAlias {
     /// <p>The association status of the connection alias.</p>
     pub fn associations(&self) -> std::option::Option<&[crate::model::ConnectionAliasAssociation]> {
         self.associations.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionAlias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionAlias");
-        formatter.field("connection_string", &self.connection_string);
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field("state", &self.state);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field("associations", &self.associations);
-        formatter.finish()
     }
 }
 /// See [`ConnectionAlias`](crate::model::ConnectionAlias).
@@ -7126,7 +6734,7 @@ impl ConnectionAlias {
 
 /// <p>Describes a connection alias association that is used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionAliasAssociation {
     /// <p>The association status of the connection alias.</p>
     #[doc(hidden)]
@@ -7157,16 +6765,6 @@ impl ConnectionAliasAssociation {
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub fn connection_identifier(&self) -> std::option::Option<&str> {
         self.connection_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionAliasAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionAliasAssociation");
-        formatter.field("association_status", &self.association_status);
-        formatter.field("associated_account_id", &self.associated_account_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("connection_identifier", &self.connection_identifier);
-        formatter.finish()
     }
 }
 /// See [`ConnectionAliasAssociation`](crate::model::ConnectionAliasAssociation).
@@ -7460,7 +7058,7 @@ impl AsRef<str> for ConnectionAliasState {
 
 /// <p>Describes an Amazon Connect client add-in.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectClientAddIn {
     /// <p>The client add-in identifier.</p>
     #[doc(hidden)]
@@ -7491,16 +7089,6 @@ impl ConnectClientAddIn {
     /// <p>The endpoint URL of the client add-in.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectClientAddIn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectClientAddIn");
-        formatter.field("add_in_id", &self.add_in_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("name", &self.name);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`ConnectClientAddIn`](crate::model::ConnectClientAddIn).
@@ -7575,7 +7163,7 @@ impl ConnectClientAddIn {
 
 /// <p>Information about the Amazon WorkSpaces client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientPropertiesResult {
     /// <p>The resource identifier, in the form of a directory ID.</p>
     #[doc(hidden)]
@@ -7592,14 +7180,6 @@ impl ClientPropertiesResult {
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub fn client_properties(&self) -> std::option::Option<&crate::model::ClientProperties> {
         self.client_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for ClientPropertiesResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientPropertiesResult");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("client_properties", &self.client_properties);
-        formatter.finish()
     }
 }
 /// See [`ClientPropertiesResult`](crate::model::ClientPropertiesResult).
@@ -7653,7 +7233,7 @@ impl ClientPropertiesResult {
 
 /// <p>Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountModification {
     /// <p>The state of the modification to the configuration of BYOL.</p>
     #[doc(hidden)]
@@ -7704,21 +7284,6 @@ impl AccountModification {
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountModification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountModification");
-        formatter.field("modification_state", &self.modification_state);
-        formatter.field("dedicated_tenancy_support", &self.dedicated_tenancy_support);
-        formatter.field(
-            "dedicated_tenancy_management_cidr_range",
-            &self.dedicated_tenancy_management_cidr_range,
-        );
-        formatter.field("start_time", &self.start_time);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`AccountModification`](crate::model::AccountModification).
@@ -8151,7 +7716,7 @@ impl AsRef<str> for ClientDeviceType {
 
 /// <p>Describes a WorkSpace that cannot be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedCreateWorkspaceRequest {
     /// <p>Information about the WorkSpace.</p>
     #[doc(hidden)]
@@ -8175,15 +7740,6 @@ impl FailedCreateWorkspaceRequest {
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedCreateWorkspaceRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedCreateWorkspaceRequest");
-        formatter.field("workspace_request", &self.workspace_request);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`FailedCreateWorkspaceRequest`](crate::model::FailedCreateWorkspaceRequest).
@@ -8252,7 +7808,7 @@ impl FailedCreateWorkspaceRequest {
 
 /// <p>Describes the information used to create a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
     #[doc(hidden)]
@@ -8311,26 +7867,6 @@ impl WorkspaceRequest {
     /// <p>The tags for the WorkSpace.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkspaceRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceRequest");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("volume_encryption_key", &self.volume_encryption_key);
-        formatter.field(
-            "user_volume_encryption_enabled",
-            &self.user_volume_encryption_enabled,
-        );
-        formatter.field(
-            "root_volume_encryption_enabled",
-            &self.root_volume_encryption_enabled,
-        );
-        formatter.field("workspace_properties", &self.workspace_properties);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceRequest`](crate::model::WorkspaceRequest).

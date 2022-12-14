@@ -2,18 +2,11 @@
 
 /// <p>If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same request, we recommend that you wait, in intervals of increasing duration, before you try the request again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PriorRequestNotComplete {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PriorRequestNotComplete {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PriorRequestNotComplete");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PriorRequestNotComplete {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl PriorRequestNotComplete {
 
 /// <p>No traffic policy instance exists with the specified ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchTrafficPolicyInstance {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchTrafficPolicyInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchTrafficPolicyInstance");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchTrafficPolicyInstance {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl NoSuchTrafficPolicyInstance {
 
 /// <p>No traffic policy exists with the specified ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchTrafficPolicy {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchTrafficPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchTrafficPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchTrafficPolicy {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl NoSuchTrafficPolicy {
 
 /// <p>The input is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInput {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInput");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInput {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl InvalidInput {
 
 /// <p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictingTypes {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConflictingTypes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictingTypes");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConflictingTypes {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl ConflictingTypes {
 
 /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentModification {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConcurrentModification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModification");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConcurrentModification {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl ConcurrentModification {
 
 /// <p>No hosted zone exists with the ID that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchHostedZone {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchHostedZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchHostedZone");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchHostedZone {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl NoSuchHostedZone {
 
 /// <p>No health check exists with the specified ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchHealthCheck {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchHealthCheck {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchHealthCheck");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchHealthCheck {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl NoSuchHealthCheck {
 
 /// <p>The value of <code>HealthCheckVersion</code> in the request doesn't match the value of <code>HealthCheckVersion</code> in the health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckVersionMismatch {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HealthCheckVersionMismatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckVersionMismatch");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HealthCheckVersionMismatch {
     /// Returns the error message.
@@ -605,18 +542,11 @@ impl HealthCheckVersionMismatch {
 
 /// <p>The value that you specified to get the second or subsequent page of results is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPaginationToken {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPaginationToken {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPaginationToken");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPaginationToken {
     /// Returns the error message.
@@ -672,18 +602,11 @@ impl InvalidPaginationToken {
 
 /// <p>The limit on the number of requests per second was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ThrottlingException {
     /// Returns the error message.
@@ -739,18 +662,11 @@ impl ThrottlingException {
 
 /// <p>The specified domain name is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDomainName {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDomainName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDomainName");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDomainName {
     /// Returns the error message.
@@ -806,18 +722,11 @@ impl InvalidDomainName {
 
 /// <p>A reusable delegation set with the specified ID does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchDelegationSet {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchDelegationSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchDelegationSet");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchDelegationSet {
     /// Returns the error message.
@@ -873,18 +782,11 @@ impl NoSuchDelegationSet {
 
 /// <p>A reusable delegation set with the specified ID does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegationSetNotReusable {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DelegationSetNotReusable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegationSetNotReusable");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DelegationSetNotReusable {
     /// Returns the error message.
@@ -940,18 +842,11 @@ impl DelegationSetNotReusable {
 
 /// <p>The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncompatibleVersion {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IncompatibleVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatibleVersion");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IncompatibleVersion {
     /// Returns the error message.
@@ -1007,18 +902,11 @@ impl IncompatibleVersion {
 
 /// <p>The CIDR collection you specified, doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchCidrCollectionException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchCidrCollectionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchCidrCollectionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchCidrCollectionException {
     /// Returns the error message.
@@ -1074,18 +962,11 @@ impl NoSuchCidrCollectionException {
 
 /// <p>The CIDR collection location doesn't match any locations in your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchCidrLocationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchCidrLocationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchCidrLocationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchCidrLocationException {
     /// Returns the error message.
@@ -1141,18 +1022,11 @@ impl NoSuchCidrLocationException {
 
 /// <p>There is no DNS query logging configuration with the specified ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchQueryLoggingConfig {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchQueryLoggingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchQueryLoggingConfig");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchQueryLoggingConfig {
     /// Returns the error message.
@@ -1208,18 +1082,11 @@ impl NoSuchQueryLoggingConfig {
 
 /// <p>The specified hosted zone is a public hosted zone, not a private hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZoneNotPrivate {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HostedZoneNotPrivate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZoneNotPrivate");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HostedZoneNotPrivate {
     /// Returns the error message.
@@ -1275,18 +1142,11 @@ impl HostedZoneNotPrivate {
 
 /// <p>Amazon Route 53 doesn't support the specified geographic location. For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchGeoLocation {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchGeoLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchGeoLocation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchGeoLocation {
     /// Returns the error message.
@@ -1342,18 +1202,11 @@ impl NoSuchGeoLocation {
 
 /// <p>Parameter name is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidArgument {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidArgument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidArgument");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidArgument {
     /// Returns the error message.
@@ -1409,18 +1262,11 @@ impl InvalidArgument {
 
 /// <p>A change with the specified change ID does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchChange {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchChange");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchChange {
     /// Returns the error message.
@@ -1476,18 +1322,11 @@ impl NoSuchChange {
 
 /// <p>A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeySigningKeyWithActiveStatusNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KeySigningKeyWithActiveStatusNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySigningKeyWithActiveStatusNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KeySigningKeyWithActiveStatusNotFound {
     /// Returns the error message.
@@ -1543,18 +1382,11 @@ impl KeySigningKeyWithActiveStatusNotFound {
 
 /// <p>The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidKmsArn {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidKmsArn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidKmsArn");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidKmsArn {
     /// Returns the error message.
@@ -1610,18 +1442,11 @@ impl InvalidKmsArn {
 
 /// <p>The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidKeySigningKeyStatus {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidKeySigningKeyStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidKeySigningKeyStatus");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidKeySigningKeyStatus {
     /// Returns the error message.
@@ -1677,18 +1502,11 @@ impl InvalidKeySigningKeyStatus {
 
 /// <p>The hosted zone nameservers don't match the parent nameservers. The hosted zone and parent must have the same nameservers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZonePartiallyDelegated {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HostedZonePartiallyDelegated {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZonePartiallyDelegated");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HostedZonePartiallyDelegated {
     /// Returns the error message.
@@ -1744,18 +1562,11 @@ impl HostedZonePartiallyDelegated {
 
 /// <p>The hosted zone doesn't have any DNSSEC resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnssecNotFound {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DnssecNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnssecNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DnssecNotFound {
     /// Returns the error message.
@@ -1811,18 +1622,11 @@ impl DnssecNotFound {
 
 /// <p>The specified VPC and hosted zone are not currently associated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcAssociationNotFound {
     /// <p>The specified VPC or hosted zone weren't found.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for VpcAssociationNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcAssociationNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl VpcAssociationNotFound {
     /// Returns the error message.
@@ -1878,18 +1682,11 @@ impl VpcAssociationNotFound {
 
 /// <p>The VPC that you're trying to disassociate from the private hosted zone is the last VPC that is associated with the hosted zone. Amazon Route 53 doesn't support disassociating the last VPC from a hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LastVpcAssociation {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LastVpcAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastVpcAssociation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LastVpcAssociation {
     /// Returns the error message.
@@ -1945,18 +1742,11 @@ impl LastVpcAssociation {
 
 /// <p>The VPC ID that you specified either isn't a valid ID or the current account is not authorized to access this VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidVpcId {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidVpcId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidVpcId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidVpcId {
     /// Returns the error message.
@@ -2012,18 +1802,11 @@ impl InvalidVpcId {
 
 /// <p>The key-signing key (KSK) is specified in a parent DS record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeySigningKeyInParentDsRecord {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KeySigningKeyInParentDsRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySigningKeyInParentDsRecord");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KeySigningKeyInParentDsRecord {
     /// Returns the error message.
@@ -2082,18 +1865,11 @@ impl KeySigningKeyInParentDsRecord {
 
 /// <p>The VPC that you specified is not authorized to be associated with the hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcAssociationAuthorizationNotFound {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for VpcAssociationAuthorizationNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcAssociationAuthorizationNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl VpcAssociationAuthorizationNotFound {
     /// Returns the error message.
@@ -2152,18 +1928,11 @@ impl VpcAssociationAuthorizationNotFound {
 
 /// <p>One or more traffic policy instances were created by using the specified traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrafficPolicyInUse {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TrafficPolicyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrafficPolicyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TrafficPolicyInUse {
     /// Returns the error message.
@@ -2219,18 +1988,11 @@ impl TrafficPolicyInUse {
 
 /// <p>The specified delegation contains associated hosted zones which must be deleted before the reusable delegation set can be deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegationSetInUse {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DelegationSetInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegationSetInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DelegationSetInUse {
     /// Returns the error message.
@@ -2286,18 +2048,11 @@ impl DelegationSetInUse {
 
 /// <p>The specified key-signing key (KSK) doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchKeySigningKey {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchKeySigningKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchKeySigningKey");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchKeySigningKey {
     /// Returns the error message.
@@ -2353,18 +2108,11 @@ impl NoSuchKeySigningKey {
 
 /// <p>Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSigningStatus {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSigningStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSigningStatus");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSigningStatus {
     /// Returns the error message.
@@ -2420,18 +2168,11 @@ impl InvalidSigningStatus {
 
 /// <p>The hosted zone contains resource records that are not SOA or NS records.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZoneNotEmpty {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HostedZoneNotEmpty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZoneNotEmpty");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HostedZoneNotEmpty {
     /// Returns the error message.
@@ -2488,18 +2229,11 @@ impl HostedZoneNotEmpty {
 /// <p>This error code is not in use.</p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckInUse {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HealthCheckInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HealthCheckInUse {
     /// Returns the error message.
@@ -2555,18 +2289,11 @@ impl HealthCheckInUse {
 
 /// <p>This CIDR collection is in use, and isn't empty.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrCollectionInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CidrCollectionInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrCollectionInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CidrCollectionInUseException {
     /// Returns the error message.
@@ -2622,18 +2349,11 @@ impl CidrCollectionInUseException {
 
 /// <p>The key-signing key (KSK) that you specified can't be deactivated because it's the only KSK for a currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeySigningKeyInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KeySigningKeyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySigningKeyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KeySigningKeyInUse {
     /// Returns the error message.
@@ -2689,18 +2409,11 @@ impl KeySigningKeyInUse {
 
 /// <p>You've created the maximum number of authorizations that can be created for the specified hosted zone. To authorize another VPC to be associated with the hosted zone, submit a <code>DeleteVPCAssociationAuthorization</code> request to remove an existing authorization. To get a list of existing authorizations, submit a <code>ListVPCAssociationAuthorizations</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyVpcAssociationAuthorizations {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyVpcAssociationAuthorizations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyVpcAssociationAuthorizations");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyVpcAssociationAuthorizations {
     /// Returns the error message.
@@ -2760,18 +2473,11 @@ impl TooManyVpcAssociationAuthorizations {
 /// <p>This traffic policy version can't be created because you've reached the limit of 1000 on the number of versions that you can create for the current traffic policy.</p>
 /// <p>To create more traffic policy versions, you can use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a> to get the traffic policy document for a specified traffic policy version, and then use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a> to create a new traffic policy using the traffic policy document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTrafficPolicyVersionsForCurrentPolicy {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTrafficPolicyVersionsForCurrentPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTrafficPolicyVersionsForCurrentPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTrafficPolicyVersionsForCurrentPolicy {
     /// Returns the error message.
@@ -2827,18 +2533,11 @@ impl TooManyTrafficPolicyVersionsForCurrentPolicy {
 
 /// <p>The format of the traffic policy document that you specified in the <code>Document</code> element is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTrafficPolicyDocument {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTrafficPolicyDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTrafficPolicyDocument");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTrafficPolicyDocument {
     /// Returns the error message.
@@ -2894,18 +2593,11 @@ impl InvalidTrafficPolicyDocument {
 
 /// <p>There is already a traffic policy instance with the specified ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrafficPolicyInstanceAlreadyExists {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TrafficPolicyInstanceAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrafficPolicyInstanceAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TrafficPolicyInstanceAlreadyExists {
     /// Returns the error message.
@@ -2964,18 +2656,11 @@ impl TrafficPolicyInstanceAlreadyExists {
 /// <p>For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.</p>
 /// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTrafficPolicyInstances {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTrafficPolicyInstances {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTrafficPolicyInstances");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTrafficPolicyInstances {
     /// Returns the error message.
@@ -3031,18 +2716,11 @@ impl TooManyTrafficPolicyInstances {
 
 /// <p>A traffic policy that has the same value for <code>Name</code> already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrafficPolicyAlreadyExists {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TrafficPolicyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrafficPolicyAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TrafficPolicyAlreadyExists {
     /// Returns the error message.
@@ -3101,18 +2779,11 @@ impl TrafficPolicyAlreadyExists {
 /// <p>To get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. </p>
 /// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTrafficPolicies {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTrafficPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTrafficPolicies");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTrafficPolicies {
     /// Returns the error message.
@@ -3168,18 +2839,11 @@ impl TooManyTrafficPolicies {
 
 /// <p>This operation can't be completed because the current account has reached the limit on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitsExceeded {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitsExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitsExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LimitsExceeded {
     /// Returns the error message.
@@ -3235,18 +2899,11 @@ impl LimitsExceeded {
 
 /// <p>The specified HostedZone can't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZoneNotFound {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HostedZoneNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZoneNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HostedZoneNotFound {
     /// Returns the error message.
@@ -3302,18 +2959,11 @@ impl HostedZoneNotFound {
 
 /// <p>You can create a hosted zone that has the same name as an existing hosted zone (example.com is common), but there is a limit to the number of hosted zones that have the same name. If you get this error, Amazon Route 53 has reached that limit. If you own the domain name and Route 53 generates this error, contact Customer Support.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegationSetNotAvailable {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DelegationSetNotAvailable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegationSetNotAvailable");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DelegationSetNotAvailable {
     /// Returns the error message.
@@ -3369,18 +3019,11 @@ impl DelegationSetNotAvailable {
 
 /// <p>The specified delegation set has already been marked as reusable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegationSetAlreadyReusable {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DelegationSetAlreadyReusable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegationSetAlreadyReusable");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DelegationSetAlreadyReusable {
     /// Returns the error message.
@@ -3436,18 +3079,11 @@ impl DelegationSetAlreadyReusable {
 
 /// <p>A delegation set with the same owner and caller reference combination has already been created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegationSetAlreadyCreated {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DelegationSetAlreadyCreated {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegationSetAlreadyCreated");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DelegationSetAlreadyCreated {
     /// Returns the error message.
@@ -3503,18 +3139,11 @@ impl DelegationSetAlreadyCreated {
 
 /// <p>You can create only one query logging configuration for a hosted zone, and a query logging configuration already exists for this hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryLoggingConfigAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for QueryLoggingConfigAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryLoggingConfigAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl QueryLoggingConfigAlreadyExists {
     /// Returns the error message.
@@ -3570,18 +3199,11 @@ impl QueryLoggingConfigAlreadyExists {
 
 /// <p>There is no CloudWatch Logs log group with the specified ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchCloudWatchLogsLogGroup {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchCloudWatchLogsLogGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchCloudWatchLogsLogGroup");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchCloudWatchLogsLogGroup {
     /// Returns the error message.
@@ -3643,18 +3265,11 @@ impl NoSuchCloudWatchLogsLogGroup {
 /// <li> <p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientCloudWatchLogsResourcePolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientCloudWatchLogsResourcePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientCloudWatchLogsResourcePolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientCloudWatchLogsResourcePolicy {
     /// Returns the error message.
@@ -3710,18 +3325,11 @@ impl InsufficientCloudWatchLogsResourcePolicy {
 
 /// <p>You've reached the limit for the number of key-signing keys (KSKs). Remove at least one KSK, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyKeySigningKeys {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyKeySigningKeys {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyKeySigningKeys");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyKeySigningKeys {
     /// Returns the error message.
@@ -3777,18 +3385,11 @@ impl TooManyKeySigningKeys {
 
 /// <p>You've already created a key-signing key (KSK) with this name or with the same customer managed key ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeySigningKeyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KeySigningKeyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySigningKeyAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KeySigningKeyAlreadyExists {
     /// Returns the error message.
@@ -3844,18 +3445,11 @@ impl KeySigningKeyAlreadyExists {
 
 /// <p>The key-signing key (KSK) name that you specified isn't a valid name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidKeySigningKeyName {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidKeySigningKeyName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidKeySigningKeyName");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidKeySigningKeyName {
     /// Returns the error message.
@@ -3915,18 +3509,11 @@ impl InvalidKeySigningKeyName {
 /// <p>To get the current limit on hosted zones that can be associated with a reusable delegation set, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSetLimit.html">GetReusableDelegationSetLimit</a>.</p>
 /// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyHostedZones {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyHostedZones {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyHostedZones");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyHostedZones {
     /// Returns the error message.
@@ -3982,18 +3569,11 @@ impl TooManyHostedZones {
 
 /// <p>The hosted zone you're trying to create already exists. Amazon Route 53 returns this error when a hosted zone has already been created with the specified <code>CallerReference</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostedZoneAlreadyExists {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HostedZoneAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostedZoneAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HostedZoneAlreadyExists {
     /// Returns the error message.
@@ -4054,18 +3634,11 @@ impl HostedZoneAlreadyExists {
 /// <li> <p> <b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is already associated with another hosted zone that has the same name.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictingDomainExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConflictingDomainExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictingDomainExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConflictingDomainExists {
     /// Returns the error message.
@@ -4124,18 +3697,11 @@ impl ConflictingDomainExists {
 /// <p>For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 /// <p>You have reached the maximum number of active health checks for an Amazon Web Services account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyHealthChecks {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyHealthChecks {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyHealthChecks");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyHealthChecks {
     /// Returns the error message.
@@ -4195,18 +3761,11 @@ impl TooManyHealthChecks {
 /// <li> <p>The same value for <code>CallerReference</code> as a health check that you created and later deleted, regardless of the other settings in the request.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckAlreadyExists {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HealthCheckAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HealthCheckAlreadyExists {
     /// Returns the error message.
@@ -4262,18 +3821,11 @@ impl HealthCheckAlreadyExists {
 
 /// <p>A CIDR collection with this name and a different caller reference already exists in this account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrCollectionAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CidrCollectionAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrCollectionAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CidrCollectionAlreadyExistsException {
     /// Returns the error message.
@@ -4329,7 +3881,7 @@ impl CidrCollectionAlreadyExistsException {
 
 /// <p>This exception contains a list of messages that might contain one or more error messages. Each error message indicates one error in the change batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidChangeBatch {
     /// <p></p>
     #[doc(hidden)]
@@ -4342,14 +3894,6 @@ impl InvalidChangeBatch {
     /// <p></p>
     pub fn messages(&self) -> std::option::Option<&[std::string::String]> {
         self.messages.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidChangeBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidChangeBatch");
-        formatter.field("messages", &self.messages);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidChangeBatch {
@@ -4427,18 +3971,11 @@ impl InvalidChangeBatch {
 
 /// <p>The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrCollectionVersionMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CidrCollectionVersionMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrCollectionVersionMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CidrCollectionVersionMismatchException {
     /// Returns the error message.
@@ -4494,18 +4031,11 @@ impl CidrCollectionVersionMismatchException {
 
 /// <p>This CIDR block is already in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrBlockInUseException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CidrBlockInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrBlockInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CidrBlockInUseException {
     /// Returns the error message.
@@ -4561,18 +4091,11 @@ impl CidrBlockInUseException {
 
 /// <p>You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a VPC with a public hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicZoneVpcAssociation {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PublicZoneVpcAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicZoneVpcAssociation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PublicZoneVpcAssociation {
     /// Returns the error message.
@@ -4628,18 +4151,11 @@ impl PublicZoneVpcAssociation {
 
 /// <p>Associating the specified VPC with the specified hosted zone has not been authorized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotAuthorizedException {
     /// <p></p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NotAuthorizedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotAuthorizedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NotAuthorizedException {
     /// Returns the error message.

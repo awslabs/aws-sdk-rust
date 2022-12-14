@@ -1535,7 +1535,7 @@ impl UpdateLifecyclePolicyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
     #[doc(hidden)]
@@ -1575,21 +1575,10 @@ impl UpdateLifecyclePolicyInput {
         self.policy_details.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLifecyclePolicyInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("description", &self.description);
-        formatter.field("policy_details", &self.policy_details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -1608,18 +1597,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -1642,18 +1623,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -1665,17 +1638,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
     #[doc(hidden)]
@@ -1687,17 +1653,10 @@ impl GetLifecyclePolicyInput {
         self.policy_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLifecyclePolicyInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLifecyclePoliciesInput {
     /// <p>The identifiers of the data lifecycle policies.</p>
     #[doc(hidden)]
@@ -1743,21 +1702,10 @@ impl GetLifecyclePoliciesInput {
         self.tags_to_add.as_deref()
     }
 }
-impl std::fmt::Debug for GetLifecyclePoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLifecyclePoliciesInput");
-        formatter.field("policy_ids", &self.policy_ids);
-        formatter.field("state", &self.state);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("target_tags", &self.target_tags);
-        formatter.field("tags_to_add", &self.tags_to_add);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
     #[doc(hidden)]
@@ -1769,17 +1717,10 @@ impl DeleteLifecyclePolicyInput {
         self.policy_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLifecyclePolicyInput");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLifecyclePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     #[doc(hidden)]
@@ -1821,16 +1762,5 @@ impl CreateLifecyclePolicyInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLifecyclePolicyInput");
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("policy_details", &self.policy_details);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

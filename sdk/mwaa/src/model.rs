@@ -94,7 +94,7 @@ impl AsRef<str> for WebserverAccessMode {
 
 /// <p>Defines the Apache Airflow log types to send to CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfigurationInput {
     /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -140,17 +140,6 @@ impl LoggingConfigurationInput {
     /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
     pub fn task_logs(&self) -> std::option::Option<&crate::model::ModuleLoggingConfigurationInput> {
         self.task_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for LoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfigurationInput");
-        formatter.field("dag_processing_logs", &self.dag_processing_logs);
-        formatter.field("scheduler_logs", &self.scheduler_logs);
-        formatter.field("webserver_logs", &self.webserver_logs);
-        formatter.field("worker_logs", &self.worker_logs);
-        formatter.field("task_logs", &self.task_logs);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfigurationInput`](crate::model::LoggingConfigurationInput).
@@ -264,7 +253,7 @@ impl LoggingConfigurationInput {
 
 /// <p>Enables the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) and defines the log level to send to CloudWatch Logs (e.g. <code>INFO</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModuleLoggingConfigurationInput {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     #[doc(hidden)]
@@ -281,14 +270,6 @@ impl ModuleLoggingConfigurationInput {
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LoggingLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for ModuleLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModuleLoggingConfigurationInput");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`ModuleLoggingConfigurationInput`](crate::model::ModuleLoggingConfigurationInput).
@@ -447,7 +428,7 @@ impl AsRef<str> for LoggingLevel {
 
 /// <p>Defines the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNetworkConfigurationInput {
     /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
     #[doc(hidden)]
@@ -457,13 +438,6 @@ impl UpdateNetworkConfigurationInput {
     /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateNetworkConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNetworkConfigurationInput");
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`UpdateNetworkConfigurationInput`](crate::model::UpdateNetworkConfigurationInput).
@@ -511,7 +485,7 @@ impl UpdateNetworkConfigurationInput {
 
 /// <p> <b>Internal only</b>. Collects Apache Airflow metrics. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDatum {
     /// <p> <b>Internal only</b>. The name of the metric.</p>
     #[doc(hidden)]
@@ -556,18 +530,6 @@ impl MetricDatum {
     /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
     pub fn statistic_values(&self) -> std::option::Option<&crate::model::StatisticSet> {
         self.statistic_values.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricDatum {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDatum");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.field("statistic_values", &self.statistic_values);
-        formatter.finish()
     }
 }
 /// See [`MetricDatum`](crate::model::MetricDatum).
@@ -681,7 +643,7 @@ impl MetricDatum {
 
 /// <p> <b>Internal only</b>. Represents a set of statistics that describe a specific metric. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatisticSet {
     /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
     #[doc(hidden)]
@@ -712,16 +674,6 @@ impl StatisticSet {
     /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
     pub fn maximum(&self) -> std::option::Option<f64> {
         self.maximum
-    }
-}
-impl std::fmt::Debug for StatisticSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatisticSet");
-        formatter.field("sample_count", &self.sample_count);
-        formatter.field("sum", &self.sum);
-        formatter.field("minimum", &self.minimum);
-        formatter.field("maximum", &self.maximum);
-        formatter.finish()
     }
 }
 /// See [`StatisticSet`](crate::model::StatisticSet).
@@ -1039,7 +991,7 @@ impl AsRef<str> for Unit {
 
 /// <p> <b>Internal only</b>. Represents the dimensions of a metric. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dimension {
     /// <p> <b>Internal only</b>. The name of the dimension.</p>
     #[doc(hidden)]
@@ -1056,14 +1008,6 @@ impl Dimension {
     /// <p> <b>Internal only</b>. The value of the dimension.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Dimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Dimension`](crate::model::Dimension).
@@ -1380,7 +1324,7 @@ impl std::fmt::Debug for Environment {
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
@@ -1815,6 +1759,47 @@ pub mod environment {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("status", &self.status);
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("webserver_url", &self.webserver_url);
+            formatter.field("execution_role_arn", &self.execution_role_arn);
+            formatter.field("service_role_arn", &self.service_role_arn);
+            formatter.field("kms_key", &self.kms_key);
+            formatter.field("airflow_version", &self.airflow_version);
+            formatter.field("source_bucket_arn", &self.source_bucket_arn);
+            formatter.field("dag_s3_path", &self.dag_s3_path);
+            formatter.field("plugins_s3_path", &self.plugins_s3_path);
+            formatter.field("plugins_s3_object_version", &self.plugins_s3_object_version);
+            formatter.field("requirements_s3_path", &self.requirements_s3_path);
+            formatter.field(
+                "requirements_s3_object_version",
+                &self.requirements_s3_object_version,
+            );
+            formatter.field(
+                "airflow_configuration_options",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("environment_class", &self.environment_class);
+            formatter.field("max_workers", &self.max_workers);
+            formatter.field("network_configuration", &self.network_configuration);
+            formatter.field("logging_configuration", &self.logging_configuration);
+            formatter.field("last_update", &self.last_update);
+            formatter.field(
+                "weekly_maintenance_window_start",
+                &self.weekly_maintenance_window_start,
+            );
+            formatter.field("tags", &self.tags);
+            formatter.field("webserver_access_mode", &self.webserver_access_mode);
+            formatter.field("min_workers", &self.min_workers);
+            formatter.field("schedulers", &self.schedulers);
+            formatter.finish()
+        }
+    }
 }
 impl Environment {
     /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
@@ -1825,7 +1810,7 @@ impl Environment {
 
 /// <p>Describes the status of the last update on the environment, and any errors that were encountered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LastUpdate {
     /// <p>The status of the last update on the environment.</p>
     #[doc(hidden)]
@@ -1856,16 +1841,6 @@ impl LastUpdate {
     /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
-    }
-}
-impl std::fmt::Debug for LastUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastUpdate");
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("error", &self.error);
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`LastUpdate`](crate::model::LastUpdate).
@@ -1946,7 +1921,7 @@ impl LastUpdate {
 
 /// <p>Describes the error(s) encountered with the last update of the environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateError {
     /// <p>The error code that corresponds to the error with the last update.</p>
     #[doc(hidden)]
@@ -1963,14 +1938,6 @@ impl UpdateError {
     /// <p>The error message that corresponds to the error code.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`UpdateError`](crate::model::UpdateError).
@@ -2119,7 +2086,7 @@ impl AsRef<str> for UpdateStatus {
 
 /// <p>Describes the Apache Airflow log types that are published to CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
     #[doc(hidden)]
@@ -2159,17 +2126,6 @@ impl LoggingConfiguration {
     /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
     pub fn task_logs(&self) -> std::option::Option<&crate::model::ModuleLoggingConfiguration> {
         self.task_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for LoggingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfiguration");
-        formatter.field("dag_processing_logs", &self.dag_processing_logs);
-        formatter.field("scheduler_logs", &self.scheduler_logs);
-        formatter.field("webserver_logs", &self.webserver_logs);
-        formatter.field("worker_logs", &self.worker_logs);
-        formatter.field("task_logs", &self.task_logs);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
@@ -2275,7 +2231,7 @@ impl LoggingConfiguration {
 
 /// <p>Describes the Apache Airflow log details for the log type (e.g. <code>DagProcessingLogs</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModuleLoggingConfiguration {
     /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
     #[doc(hidden)]
@@ -2299,15 +2255,6 @@ impl ModuleLoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
     pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ModuleLoggingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModuleLoggingConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.finish()
     }
 }
 /// See [`ModuleLoggingConfiguration`](crate::model::ModuleLoggingConfiguration).
@@ -2376,7 +2323,7 @@ impl ModuleLoggingConfiguration {
 
 /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>A list of subnet IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     #[doc(hidden)]
@@ -2393,14 +2340,6 @@ impl NetworkConfiguration {
     /// <p>A list of security group IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).

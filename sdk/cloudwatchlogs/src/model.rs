@@ -2,7 +2,7 @@
 
 /// <p>Represents a matched event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricFilterMatchRecord {
     /// <p>The event number.</p>
     #[doc(hidden)]
@@ -30,15 +30,6 @@ impl MetricFilterMatchRecord {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.extracted_values.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricFilterMatchRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricFilterMatchRecord");
-        formatter.field("event_number", &self.event_number);
-        formatter.field("event_message", &self.event_message);
-        formatter.field("extracted_values", &self.extracted_values);
-        formatter.finish()
     }
 }
 /// See [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
@@ -121,7 +112,7 @@ impl MetricFilterMatchRecord {
 
 /// <p>Reserved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryCompileError {
     /// <p>Reserved.</p>
     #[doc(hidden)]
@@ -138,14 +129,6 @@ impl QueryCompileError {
     /// <p>Reserved.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryCompileError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryCompileError");
-        formatter.field("location", &self.location);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`QueryCompileError`](crate::model::QueryCompileError).
@@ -199,7 +182,7 @@ impl QueryCompileError {
 
 /// <p>Reserved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryCompileErrorLocation {
     /// <p>Reserved.</p>
     #[doc(hidden)]
@@ -216,14 +199,6 @@ impl QueryCompileErrorLocation {
     /// <p>Reserved.</p>
     pub fn end_char_offset(&self) -> std::option::Option<i32> {
         self.end_char_offset
-    }
-}
-impl std::fmt::Debug for QueryCompileErrorLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryCompileErrorLocation");
-        formatter.field("start_char_offset", &self.start_char_offset);
-        formatter.field("end_char_offset", &self.end_char_offset);
-        formatter.finish()
     }
 }
 /// See [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
@@ -365,7 +340,7 @@ impl AsRef<str> for Distribution {
 
 /// <p>A policy enabling one or more entities to put logs to a log group in this account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p>The name of the resource policy.</p>
     #[doc(hidden)]
@@ -389,15 +364,6 @@ impl ResourcePolicy {
     /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn last_updated_time(&self) -> std::option::Option<i64> {
         self.last_updated_time
-    }
-}
-impl std::fmt::Debug for ResourcePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePolicy");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -463,7 +429,7 @@ impl ResourcePolicy {
 
 /// <p>Indicates how to transform ingested log events to metric data in a CloudWatch metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricTransformation {
     /// <p>The name of the CloudWatch metric.</p>
     #[doc(hidden)]
@@ -520,18 +486,6 @@ impl MetricTransformation {
     /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricTransformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricTransformation");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_namespace", &self.metric_namespace);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`MetricTransformation`](crate::model::MetricTransformation).
@@ -901,7 +855,7 @@ impl AsRef<str> for StandardUnit {
 
 /// <p>Represents the rejected events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectedLogEventsInfo {
     /// <p>The log events that are too new.</p>
     #[doc(hidden)]
@@ -925,24 +879,6 @@ impl RejectedLogEventsInfo {
     /// <p>The expired log events.</p>
     pub fn expired_log_event_end_index(&self) -> std::option::Option<i32> {
         self.expired_log_event_end_index
-    }
-}
-impl std::fmt::Debug for RejectedLogEventsInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectedLogEventsInfo");
-        formatter.field(
-            "too_new_log_event_start_index",
-            &self.too_new_log_event_start_index,
-        );
-        formatter.field(
-            "too_old_log_event_end_index",
-            &self.too_old_log_event_end_index,
-        );
-        formatter.field(
-            "expired_log_event_end_index",
-            &self.expired_log_event_end_index,
-        );
-        formatter.finish()
     }
 }
 /// See [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
@@ -1008,7 +944,7 @@ impl RejectedLogEventsInfo {
 
 /// <p>Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
@@ -1025,14 +961,6 @@ impl InputLogEvent {
     /// <p>The raw event message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for InputLogEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLogEvent");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`InputLogEvent`](crate::model::InputLogEvent).
@@ -1083,7 +1011,7 @@ impl InputLogEvent {
 
 /// <p>Represents a cross-account destination that receives subscription log events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>The name of the destination.</p>
     #[doc(hidden)]
@@ -1128,18 +1056,6 @@ impl Destination {
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn creation_time(&self) -> std::option::Option<i64> {
         self.creation_time
-    }
-}
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("access_policy", &self.access_policy);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`Destination`](crate::model::Destination).
@@ -1367,7 +1283,7 @@ impl AsRef<str> for QueryStatus {
 
 /// <p>Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStatistics {
     /// <p>The number of log events that matched the query string.</p>
     #[doc(hidden)]
@@ -1391,15 +1307,6 @@ impl QueryStatistics {
     /// <p>The total number of bytes in the log events scanned during the query.</p>
     pub fn bytes_scanned(&self) -> f64 {
         self.bytes_scanned
-    }
-}
-impl std::fmt::Debug for QueryStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStatistics");
-        formatter.field("records_matched", &self.records_matched);
-        formatter.field("records_scanned", &self.records_scanned);
-        formatter.field("bytes_scanned", &self.bytes_scanned);
-        formatter.finish()
     }
 }
 /// See [`QueryStatistics`](crate::model::QueryStatistics).
@@ -1463,7 +1370,7 @@ impl QueryStatistics {
 /// <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p>
 /// <p>For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultField {
     /// <p>The log event field.</p>
     #[doc(hidden)]
@@ -1480,14 +1387,6 @@ impl ResultField {
     /// <p>The value of this field.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResultField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultField");
-        formatter.field("field", &self.field);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResultField`](crate::model::ResultField).
@@ -1538,7 +1437,7 @@ impl ResultField {
 
 /// <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogGroupField {
     /// <p>The name of a log field.</p>
     #[doc(hidden)]
@@ -1555,14 +1454,6 @@ impl LogGroupField {
     /// <p>The percentage of log events queried that contained the field.</p>
     pub fn percent(&self) -> i32 {
         self.percent
-    }
-}
-impl std::fmt::Debug for LogGroupField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogGroupField");
-        formatter.field("name", &self.name);
-        formatter.field("percent", &self.percent);
-        formatter.finish()
     }
 }
 /// See [`LogGroupField`](crate::model::LogGroupField).
@@ -1613,7 +1504,7 @@ impl LogGroupField {
 
 /// <p>Represents a log event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
@@ -1637,15 +1528,6 @@ impl OutputLogEvent {
     /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn ingestion_time(&self) -> std::option::Option<i64> {
         self.ingestion_time
-    }
-}
-impl std::fmt::Debug for OutputLogEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputLogEvent");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("message", &self.message);
-        formatter.field("ingestion_time", &self.ingestion_time);
-        formatter.finish()
     }
 }
 /// See [`OutputLogEvent`](crate::model::OutputLogEvent).
@@ -1708,7 +1590,7 @@ impl OutputLogEvent {
 
 /// <p>Represents the search status of a log stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchedLogStream {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
@@ -1725,14 +1607,6 @@ impl SearchedLogStream {
     /// <p>Indicates whether all the events in this log stream were searched.</p>
     pub fn searched_completely(&self) -> std::option::Option<bool> {
         self.searched_completely
-    }
-}
-impl std::fmt::Debug for SearchedLogStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchedLogStream");
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("searched_completely", &self.searched_completely);
-        formatter.finish()
     }
 }
 /// See [`SearchedLogStream`](crate::model::SearchedLogStream).
@@ -1786,7 +1660,7 @@ impl SearchedLogStream {
 
 /// <p>Represents a matched event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilteredLogEvent {
     /// <p>The name of the log stream to which this event belongs.</p>
     #[doc(hidden)]
@@ -1824,17 +1698,6 @@ impl FilteredLogEvent {
     /// <p>The ID of the event.</p>
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
-    }
-}
-impl std::fmt::Debug for FilteredLogEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilteredLogEvent");
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("message", &self.message);
-        formatter.field("ingestion_time", &self.ingestion_time);
-        formatter.field("event_id", &self.event_id);
-        formatter.finish()
     }
 }
 /// See [`FilteredLogEvent`](crate::model::FilteredLogEvent).
@@ -1924,7 +1787,7 @@ impl FilteredLogEvent {
 
 /// <p>Represents a subscription filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionFilter {
     /// <p>The name of the subscription filter.</p>
     #[doc(hidden)]
@@ -1976,19 +1839,6 @@ impl SubscriptionFilter {
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn creation_time(&self) -> std::option::Option<i64> {
         self.creation_time
-    }
-}
-impl std::fmt::Debug for SubscriptionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionFilter");
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("distribution", &self.distribution);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`SubscriptionFilter`](crate::model::SubscriptionFilter).
@@ -2111,7 +1961,7 @@ impl SubscriptionFilter {
 
 /// <p>This structure contains details about a saved CloudWatch Logs Insights query definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryDefinition {
     /// <p>The unique ID of the query definition.</p>
     #[doc(hidden)]
@@ -2149,17 +1999,6 @@ impl QueryDefinition {
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
     pub fn log_group_names(&self) -> std::option::Option<&[std::string::String]> {
         self.log_group_names.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryDefinition");
-        formatter.field("query_definition_id", &self.query_definition_id);
-        formatter.field("name", &self.name);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("log_group_names", &self.log_group_names);
-        formatter.finish()
     }
 }
 /// See [`QueryDefinition`](crate::model::QueryDefinition).
@@ -2258,7 +2097,7 @@ impl QueryDefinition {
 
 /// <p>Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryInfo {
     /// <p>The unique ID number of this query.</p>
     #[doc(hidden)]
@@ -2296,17 +2135,6 @@ impl QueryInfo {
     /// <p>The name of the log group scanned by this query.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryInfo");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("status", &self.status);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`QueryInfo`](crate::model::QueryInfo).
@@ -2396,7 +2224,7 @@ impl QueryInfo {
 
 /// <p>Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricFilter {
     /// <p>The name of the metric filter.</p>
     #[doc(hidden)]
@@ -2437,17 +2265,6 @@ impl MetricFilter {
     /// <p>The name of the log group.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricFilter");
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("metric_transformations", &self.metric_transformations);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`MetricFilter`](crate::model::MetricFilter).
@@ -2550,7 +2367,7 @@ impl MetricFilter {
 
 /// <p>Represents a log stream, which is a sequence of log events from a single emitter of logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogStream {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
@@ -2617,20 +2434,6 @@ impl LogStream {
     )]
     pub fn stored_bytes(&self) -> std::option::Option<i64> {
         self.stored_bytes
-    }
-}
-impl std::fmt::Debug for LogStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogStream");
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("first_event_timestamp", &self.first_event_timestamp);
-        formatter.field("last_event_timestamp", &self.last_event_timestamp);
-        formatter.field("last_ingestion_time", &self.last_ingestion_time);
-        formatter.field("upload_sequence_token", &self.upload_sequence_token);
-        formatter.field("arn", &self.arn);
-        formatter.field("stored_bytes", &self.stored_bytes);
-        formatter.finish()
     }
 }
 /// See [`LogStream`](crate::model::LogStream).
@@ -2857,7 +2660,7 @@ impl AsRef<str> for OrderBy {
 
 /// <p>Represents a log group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogGroup {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -2911,19 +2714,6 @@ impl LogGroup {
     /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for LogGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogGroup");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("retention_in_days", &self.retention_in_days);
-        formatter.field("metric_filter_count", &self.metric_filter_count);
-        formatter.field("arn", &self.arn);
-        formatter.field("stored_bytes", &self.stored_bytes);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`LogGroup`](crate::model::LogGroup).
@@ -3039,7 +2829,7 @@ impl LogGroup {
 
 /// <p>Represents an export task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTask {
     /// <p>The ID of the export task.</p>
     #[doc(hidden)]
@@ -3105,21 +2895,6 @@ impl ExportTask {
     /// <p>Execution information about the export task.</p>
     pub fn execution_info(&self) -> std::option::Option<&crate::model::ExportTaskExecutionInfo> {
         self.execution_info.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTask");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("task_name", &self.task_name);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("from", &self.from);
-        formatter.field("to", &self.to);
-        formatter.field("destination", &self.destination);
-        formatter.field("destination_prefix", &self.destination_prefix);
-        formatter.field("status", &self.status);
-        formatter.field("execution_info", &self.execution_info);
-        formatter.finish()
     }
 }
 /// See [`ExportTask`](crate::model::ExportTask).
@@ -3266,7 +3041,7 @@ impl ExportTask {
 
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTaskExecutionInfo {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
@@ -3283,14 +3058,6 @@ impl ExportTaskExecutionInfo {
     /// <p>The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn completion_time(&self) -> std::option::Option<i64> {
         self.completion_time
-    }
-}
-impl std::fmt::Debug for ExportTaskExecutionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTaskExecutionInfo");
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.finish()
     }
 }
 /// See [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
@@ -3341,7 +3108,7 @@ impl ExportTaskExecutionInfo {
 
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTaskStatus {
     /// <p>The status code of the export task.</p>
     #[doc(hidden)]
@@ -3358,14 +3125,6 @@ impl ExportTaskStatus {
     /// <p>The status message related to the status code.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportTaskStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTaskStatus");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ExportTaskStatus`](crate::model::ExportTaskStatus).

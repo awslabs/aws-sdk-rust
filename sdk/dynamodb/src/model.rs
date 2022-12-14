@@ -2,7 +2,7 @@
 
 /// <p>Represents the settings used to enable or disable Time to Live (TTL) for the specified table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeToLiveSpecification {
     /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl TimeToLiveSpecification {
     /// <p>The name of the TTL attribute used to store the expiration time for items in the table.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeToLiveSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeToLiveSpecification");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.finish()
     }
 }
 /// See [`TimeToLiveSpecification`](crate::model::TimeToLiveSpecification).
@@ -80,7 +72,7 @@ impl TimeToLiveSpecification {
 
 /// <p>Represents the auto scaling configuration for a global table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableAutoScalingDescription {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -116,15 +108,6 @@ impl TableAutoScalingDescription {
     /// <p>Represents replicas of the global table.</p>
     pub fn replicas(&self) -> std::option::Option<&[crate::model::ReplicaAutoScalingDescription]> {
         self.replicas.as_deref()
-    }
-}
-impl std::fmt::Debug for TableAutoScalingDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableAutoScalingDescription");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("table_status", &self.table_status);
-        formatter.field("replicas", &self.replicas);
-        formatter.finish()
     }
 }
 /// See [`TableAutoScalingDescription`](crate::model::TableAutoScalingDescription).
@@ -212,7 +195,7 @@ impl TableAutoScalingDescription {
 
 /// <p>Represents the auto scaling settings of the replica.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaAutoScalingDescription {
     /// <p>The Region where the replica exists.</p>
     #[doc(hidden)]
@@ -275,23 +258,6 @@ impl ReplicaAutoScalingDescription {
     /// </ul>
     pub fn replica_status(&self) -> std::option::Option<&crate::model::ReplicaStatus> {
         self.replica_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaAutoScalingDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaAutoScalingDescription");
-        formatter.field("region_name", &self.region_name);
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.field(
-            "replica_provisioned_read_capacity_auto_scaling_settings",
-            &self.replica_provisioned_read_capacity_auto_scaling_settings,
-        );
-        formatter.field(
-            "replica_provisioned_write_capacity_auto_scaling_settings",
-            &self.replica_provisioned_write_capacity_auto_scaling_settings,
-        );
-        formatter.field("replica_status", &self.replica_status);
-        formatter.finish()
     }
 }
 /// See [`ReplicaAutoScalingDescription`](crate::model::ReplicaAutoScalingDescription).
@@ -552,7 +518,7 @@ impl AsRef<str> for ReplicaStatus {
 
 /// <p>Represents the auto scaling settings for a global table or global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingSettingsDescription {
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
     #[doc(hidden)]
@@ -593,17 +559,6 @@ impl AutoScalingSettingsDescription {
         &self,
     ) -> std::option::Option<&[crate::model::AutoScalingPolicyDescription]> {
         self.scaling_policies.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingSettingsDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingSettingsDescription");
-        formatter.field("minimum_units", &self.minimum_units);
-        formatter.field("maximum_units", &self.maximum_units);
-        formatter.field("auto_scaling_disabled", &self.auto_scaling_disabled);
-        formatter.field("auto_scaling_role_arn", &self.auto_scaling_role_arn);
-        formatter.field("scaling_policies", &self.scaling_policies);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingSettingsDescription`](crate::model::AutoScalingSettingsDescription).
@@ -706,7 +661,7 @@ impl AutoScalingSettingsDescription {
 
 /// <p>Represents the properties of the scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingPolicyDescription {
     /// <p>The name of the scaling policy.</p>
     #[doc(hidden)]
@@ -729,17 +684,6 @@ impl AutoScalingPolicyDescription {
         &crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription,
     > {
         self.target_tracking_scaling_policy_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoScalingPolicyDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingPolicyDescription");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field(
-            "target_tracking_scaling_policy_configuration",
-            &self.target_tracking_scaling_policy_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
@@ -801,7 +745,7 @@ impl AutoScalingPolicyDescription {
 
 /// <p>Represents the properties of a target tracking scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true, scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is false.</p>
     #[doc(hidden)]
@@ -832,17 +776,6 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
     pub fn target_value(&self) -> std::option::Option<f64> {
         self.target_value
-    }
-}
-impl std::fmt::Debug for AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("AutoScalingTargetTrackingScalingPolicyConfigurationDescription");
-        formatter.field("disable_scale_in", &self.disable_scale_in);
-        formatter.field("scale_in_cooldown", &self.scale_in_cooldown);
-        formatter.field("scale_out_cooldown", &self.scale_out_cooldown);
-        formatter.field("target_value", &self.target_value);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingTargetTrackingScalingPolicyConfigurationDescription`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription).
@@ -921,7 +854,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
 
 /// <p>Represents the auto scaling configuration for a replica global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingDescription {
     /// <p>The name of the global secondary index.</p>
     #[doc(hidden)]
@@ -972,22 +905,6 @@ impl ReplicaGlobalSecondaryIndexAutoScalingDescription {
     ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
         self.provisioned_write_capacity_auto_scaling_settings
             .as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaGlobalSecondaryIndexAutoScalingDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexAutoScalingDescription");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("index_status", &self.index_status);
-        formatter.field(
-            "provisioned_read_capacity_auto_scaling_settings",
-            &self.provisioned_read_capacity_auto_scaling_settings,
-        );
-        formatter.field(
-            "provisioned_write_capacity_auto_scaling_settings",
-            &self.provisioned_write_capacity_auto_scaling_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaGlobalSecondaryIndexAutoScalingDescription`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription).
@@ -1317,7 +1234,7 @@ impl AsRef<str> for TableStatus {
 
 /// <p>Represents the auto scaling settings of a replica that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaAutoScalingUpdate {
     /// <p>The Region where the replica exists.</p>
     #[doc(hidden)]
@@ -1349,21 +1266,6 @@ impl ReplicaAutoScalingUpdate {
     ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
         self.replica_provisioned_read_capacity_auto_scaling_update
             .as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaAutoScalingUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaAutoScalingUpdate");
-        formatter.field("region_name", &self.region_name);
-        formatter.field(
-            "replica_global_secondary_index_updates",
-            &self.replica_global_secondary_index_updates,
-        );
-        formatter.field(
-            "replica_provisioned_read_capacity_auto_scaling_update",
-            &self.replica_provisioned_read_capacity_auto_scaling_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaAutoScalingUpdate`](crate::model::ReplicaAutoScalingUpdate).
@@ -1452,7 +1354,7 @@ impl ReplicaAutoScalingUpdate {
 
 /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingSettingsUpdate {
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
     #[doc(hidden)]
@@ -1492,17 +1394,6 @@ impl AutoScalingSettingsUpdate {
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingPolicyUpdate> {
         self.scaling_policy_update.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoScalingSettingsUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingSettingsUpdate");
-        formatter.field("minimum_units", &self.minimum_units);
-        formatter.field("maximum_units", &self.maximum_units);
-        formatter.field("auto_scaling_disabled", &self.auto_scaling_disabled);
-        formatter.field("auto_scaling_role_arn", &self.auto_scaling_role_arn);
-        formatter.field("scaling_policy_update", &self.scaling_policy_update);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingSettingsUpdate`](crate::model::AutoScalingSettingsUpdate).
@@ -1599,7 +1490,7 @@ impl AutoScalingSettingsUpdate {
 
 /// <p>Represents the auto scaling policy to be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingPolicyUpdate {
     /// <p>The name of the scaling policy.</p>
     #[doc(hidden)]
@@ -1621,17 +1512,6 @@ impl AutoScalingPolicyUpdate {
     ) -> std::option::Option<&crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate>
     {
         self.target_tracking_scaling_policy_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoScalingPolicyUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingPolicyUpdate");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field(
-            "target_tracking_scaling_policy_configuration",
-            &self.target_tracking_scaling_policy_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoScalingPolicyUpdate`](crate::model::AutoScalingPolicyUpdate).
@@ -1693,7 +1573,7 @@ impl AutoScalingPolicyUpdate {
 
 /// <p>Represents the settings of a target tracking scaling policy that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true, scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is false.</p>
     #[doc(hidden)]
@@ -1724,17 +1604,6 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
     pub fn target_value(&self) -> std::option::Option<f64> {
         self.target_value
-    }
-}
-impl std::fmt::Debug for AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("AutoScalingTargetTrackingScalingPolicyConfigurationUpdate");
-        formatter.field("disable_scale_in", &self.disable_scale_in);
-        formatter.field("scale_in_cooldown", &self.scale_in_cooldown);
-        formatter.field("scale_out_cooldown", &self.scale_out_cooldown);
-        formatter.field("target_value", &self.target_value);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
@@ -1813,7 +1682,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
 
 /// <p>Represents the auto scaling settings of a global secondary index for a replica that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingUpdate {
     /// <p>The name of the global secondary index.</p>
     #[doc(hidden)]
@@ -1833,17 +1702,6 @@ impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
         self.provisioned_read_capacity_auto_scaling_update.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaGlobalSecondaryIndexAutoScalingUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexAutoScalingUpdate");
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "provisioned_read_capacity_auto_scaling_update",
-            &self.provisioned_read_capacity_auto_scaling_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaGlobalSecondaryIndexAutoScalingUpdate`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate).
@@ -1902,7 +1760,7 @@ impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
 
 /// <p>Represents the auto scaling settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalSecondaryIndexAutoScalingUpdate {
     /// <p>The name of the global secondary index.</p>
     #[doc(hidden)]
@@ -1922,17 +1780,6 @@ impl GlobalSecondaryIndexAutoScalingUpdate {
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
         self.provisioned_write_capacity_auto_scaling_update.as_ref()
-    }
-}
-impl std::fmt::Debug for GlobalSecondaryIndexAutoScalingUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalSecondaryIndexAutoScalingUpdate");
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "provisioned_write_capacity_auto_scaling_update",
-            &self.provisioned_write_capacity_auto_scaling_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`GlobalSecondaryIndexAutoScalingUpdate`](crate::model::GlobalSecondaryIndexAutoScalingUpdate).
@@ -1991,7 +1838,7 @@ impl GlobalSecondaryIndexAutoScalingUpdate {
 
 /// <p>Represents the properties of a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableDescription {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
     /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
@@ -2309,34 +2156,6 @@ impl TableDescription {
     /// <p>Contains details of the table class.</p>
     pub fn table_class_summary(&self) -> std::option::Option<&crate::model::TableClassSummary> {
         self.table_class_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for TableDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableDescription");
-        formatter.field("attribute_definitions", &self.attribute_definitions);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("table_status", &self.table_status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("table_size_bytes", &self.table_size_bytes);
-        formatter.field("item_count", &self.item_count);
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("billing_mode_summary", &self.billing_mode_summary);
-        formatter.field("local_secondary_indexes", &self.local_secondary_indexes);
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.field("stream_specification", &self.stream_specification);
-        formatter.field("latest_stream_label", &self.latest_stream_label);
-        formatter.field("latest_stream_arn", &self.latest_stream_arn);
-        formatter.field("global_table_version", &self.global_table_version);
-        formatter.field("replicas", &self.replicas);
-        formatter.field("restore_summary", &self.restore_summary);
-        formatter.field("sse_description", &self.sse_description);
-        formatter.field("archival_summary", &self.archival_summary);
-        formatter.field("table_class_summary", &self.table_class_summary);
-        formatter.finish()
     }
 }
 /// See [`TableDescription`](crate::model::TableDescription).
@@ -2873,7 +2692,7 @@ impl TableDescription {
 
 /// <p>Contains details of the table class.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableClassSummary {
     /// <p>The table class of the specified table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     #[doc(hidden)]
@@ -2890,14 +2709,6 @@ impl TableClassSummary {
     /// <p>The date and time at which the table class was last updated.</p>
     pub fn last_update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TableClassSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableClassSummary");
-        formatter.field("table_class", &self.table_class);
-        formatter.field("last_update_date_time", &self.last_update_date_time);
-        formatter.finish()
     }
 }
 /// See [`TableClassSummary`](crate::model::TableClassSummary).
@@ -3044,7 +2855,7 @@ impl AsRef<str> for TableClass {
 
 /// <p>Contains details of a table archival operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchivalSummary {
     /// <p>The date and time when table archival was initiated by DynamoDB, in UNIX epoch time format.</p>
     #[doc(hidden)]
@@ -3074,15 +2885,6 @@ impl ArchivalSummary {
     /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when applicable in the archival reason. If you wish to restore this backup to the same table name, you will need to delete the original table.</p>
     pub fn archival_backup_arn(&self) -> std::option::Option<&str> {
         self.archival_backup_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ArchivalSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchivalSummary");
-        formatter.field("archival_date_time", &self.archival_date_time);
-        formatter.field("archival_reason", &self.archival_reason);
-        formatter.field("archival_backup_arn", &self.archival_backup_arn);
-        formatter.finish()
     }
 }
 /// See [`ArchivalSummary`](crate::model::ArchivalSummary).
@@ -3160,7 +2962,7 @@ impl ArchivalSummary {
 
 /// <p>The description of the server-side encryption status on the specified table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SseDescription {
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
@@ -3207,19 +3009,6 @@ impl SseDescription {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inaccessible_encryption_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SseDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SseDescription");
-        formatter.field("status", &self.status);
-        formatter.field("sse_type", &self.sse_type);
-        formatter.field("kms_master_key_arn", &self.kms_master_key_arn);
-        formatter.field(
-            "inaccessible_encryption_date_time",
-            &self.inaccessible_encryption_date_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`SseDescription`](crate::model::SseDescription).
@@ -3513,7 +3302,7 @@ impl AsRef<str> for SseStatus {
 
 /// <p>Contains details for the restore.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreSummary {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
     #[doc(hidden)]
@@ -3544,16 +3333,6 @@ impl RestoreSummary {
     /// <p>Indicates if a restore is in progress or not.</p>
     pub fn restore_in_progress(&self) -> std::option::Option<bool> {
         self.restore_in_progress
-    }
-}
-impl std::fmt::Debug for RestoreSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreSummary");
-        formatter.field("source_backup_arn", &self.source_backup_arn);
-        formatter.field("source_table_arn", &self.source_table_arn);
-        formatter.field("restore_date_time", &self.restore_date_time);
-        formatter.field("restore_in_progress", &self.restore_in_progress);
-        formatter.finish()
     }
 }
 /// See [`RestoreSummary`](crate::model::RestoreSummary).
@@ -3637,7 +3416,7 @@ impl RestoreSummary {
 
 /// <p>Contains the details of the replica.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaDescription {
     /// <p>The name of the Region.</p>
     #[doc(hidden)]
@@ -3737,36 +3516,6 @@ impl ReplicaDescription {
         &self,
     ) -> std::option::Option<&crate::model::TableClassSummary> {
         self.replica_table_class_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaDescription");
-        formatter.field("region_name", &self.region_name);
-        formatter.field("replica_status", &self.replica_status);
-        formatter.field(
-            "replica_status_description",
-            &self.replica_status_description,
-        );
-        formatter.field(
-            "replica_status_percent_progress",
-            &self.replica_status_percent_progress,
-        );
-        formatter.field("kms_master_key_id", &self.kms_master_key_id);
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.field(
-            "replica_inaccessible_date_time",
-            &self.replica_inaccessible_date_time,
-        );
-        formatter.field(
-            "replica_table_class_summary",
-            &self.replica_table_class_summary,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaDescription`](crate::model::ReplicaDescription).
@@ -3973,7 +3722,7 @@ impl ReplicaDescription {
 
 /// <p>Represents the properties of a replica global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexDescription {
     /// <p>The name of the global secondary index.</p>
     #[doc(hidden)]
@@ -3993,17 +3742,6 @@ impl ReplicaGlobalSecondaryIndexDescription {
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaGlobalSecondaryIndexDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexDescription");
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaGlobalSecondaryIndexDescription`](crate::model::ReplicaGlobalSecondaryIndexDescription).
@@ -4061,7 +3799,7 @@ impl ReplicaGlobalSecondaryIndexDescription {
 
 /// <p>Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedThroughputOverride {
     /// <p>Replica-specific read capacity units. If not specified, uses the source table's read capacity settings.</p>
     #[doc(hidden)]
@@ -4071,13 +3809,6 @@ impl ProvisionedThroughputOverride {
     /// <p>Replica-specific read capacity units. If not specified, uses the source table's read capacity settings.</p>
     pub fn read_capacity_units(&self) -> std::option::Option<i64> {
         self.read_capacity_units
-    }
-}
-impl std::fmt::Debug for ProvisionedThroughputOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedThroughputOverride");
-        formatter.field("read_capacity_units", &self.read_capacity_units);
-        formatter.finish()
     }
 }
 /// See [`ProvisionedThroughputOverride`](crate::model::ProvisionedThroughputOverride).
@@ -4116,7 +3847,7 @@ impl ProvisionedThroughputOverride {
 
 /// <p>Represents the DynamoDB Streams configuration for a table in DynamoDB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
     #[doc(hidden)]
@@ -4145,14 +3876,6 @@ impl StreamSpecification {
     /// </ul>
     pub fn stream_view_type(&self) -> std::option::Option<&crate::model::StreamViewType> {
         self.stream_view_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSpecification");
-        formatter.field("stream_enabled", &self.stream_enabled);
-        formatter.field("stream_view_type", &self.stream_view_type);
-        formatter.finish()
     }
 }
 /// See [`StreamSpecification`](crate::model::StreamSpecification).
@@ -4318,7 +4041,7 @@ impl AsRef<str> for StreamViewType {
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalSecondaryIndexDescription {
     /// <p>The name of the global secondary index.</p>
     #[doc(hidden)]
@@ -4420,21 +4143,6 @@ impl GlobalSecondaryIndexDescription {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     pub fn index_arn(&self) -> std::option::Option<&str> {
         self.index_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GlobalSecondaryIndexDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalSecondaryIndexDescription");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("projection", &self.projection);
-        formatter.field("index_status", &self.index_status);
-        formatter.field("backfilling", &self.backfilling);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("index_size_bytes", &self.index_size_bytes);
-        formatter.field("item_count", &self.item_count);
-        formatter.field("index_arn", &self.index_arn);
-        formatter.finish()
     }
 }
 /// See [`GlobalSecondaryIndexDescription`](crate::model::GlobalSecondaryIndexDescription).
@@ -4625,7 +4333,7 @@ impl GlobalSecondaryIndexDescription {
 
 /// <p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedThroughputDescription {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
     #[doc(hidden)]
@@ -4663,17 +4371,6 @@ impl ProvisionedThroughputDescription {
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn write_capacity_units(&self) -> std::option::Option<i64> {
         self.write_capacity_units
-    }
-}
-impl std::fmt::Debug for ProvisionedThroughputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedThroughputDescription");
-        formatter.field("last_increase_date_time", &self.last_increase_date_time);
-        formatter.field("last_decrease_date_time", &self.last_decrease_date_time);
-        formatter.field("number_of_decreases_today", &self.number_of_decreases_today);
-        formatter.field("read_capacity_units", &self.read_capacity_units);
-        formatter.field("write_capacity_units", &self.write_capacity_units);
-        formatter.finish()
     }
 }
 /// See [`ProvisionedThroughputDescription`](crate::model::ProvisionedThroughputDescription).
@@ -4766,7 +4463,7 @@ impl ProvisionedThroughputDescription {
 
 /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Projection {
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
@@ -4795,14 +4492,6 @@ impl Projection {
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     pub fn non_key_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.non_key_attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for Projection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Projection");
-        formatter.field("projection_type", &self.projection_type);
-        formatter.field("non_key_attributes", &self.non_key_attributes);
-        formatter.finish()
     }
 }
 /// See [`Projection`](crate::model::Projection).
@@ -4974,7 +4663,7 @@ impl AsRef<str> for ProjectionType {
 /// <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p>
 /// <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeySchemaElement {
     /// <p>The name of a key attribute.</p>
     #[doc(hidden)]
@@ -5005,14 +4694,6 @@ impl KeySchemaElement {
     /// </note>
     pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
         self.key_type.as_ref()
-    }
-}
-impl std::fmt::Debug for KeySchemaElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySchemaElement");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("key_type", &self.key_type);
-        formatter.finish()
     }
 }
 /// See [`KeySchemaElement`](crate::model::KeySchemaElement).
@@ -5170,7 +4851,7 @@ impl AsRef<str> for KeyType {
 
 /// <p>Represents the properties of a local secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocalSecondaryIndexDescription {
     /// <p>Represents the name of the local secondary index.</p>
     #[doc(hidden)]
@@ -5229,18 +4910,6 @@ impl LocalSecondaryIndexDescription {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     pub fn index_arn(&self) -> std::option::Option<&str> {
         self.index_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LocalSecondaryIndexDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocalSecondaryIndexDescription");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("projection", &self.projection);
-        formatter.field("index_size_bytes", &self.index_size_bytes);
-        formatter.field("item_count", &self.item_count);
-        formatter.field("index_arn", &self.index_arn);
-        formatter.finish()
     }
 }
 /// See [`LocalSecondaryIndexDescription`](crate::model::LocalSecondaryIndexDescription).
@@ -5365,7 +5034,7 @@ impl LocalSecondaryIndexDescription {
 
 /// <p>Contains the details for the read/write capacity mode.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BillingModeSummary {
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
@@ -5392,17 +5061,6 @@ impl BillingModeSummary {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_to_pay_per_request_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BillingModeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BillingModeSummary");
-        formatter.field("billing_mode", &self.billing_mode);
-        formatter.field(
-            "last_update_to_pay_per_request_date_time",
-            &self.last_update_to_pay_per_request_date_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`BillingModeSummary`](crate::model::BillingModeSummary).
@@ -5562,7 +5220,7 @@ impl AsRef<str> for BillingMode {
 
 /// <p>Represents an attribute for describing the key schema for the table and indexes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeDefinition {
     /// <p>A name for the attribute.</p>
     #[doc(hidden)]
@@ -5589,14 +5247,6 @@ impl AttributeDefinition {
     /// </ul>
     pub fn attribute_type(&self) -> std::option::Option<&crate::model::ScalarAttributeType> {
         self.attribute_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AttributeDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeDefinition");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.finish()
     }
 }
 /// See [`AttributeDefinition`](crate::model::AttributeDefinition).
@@ -5767,7 +5417,7 @@ impl AsRef<str> for ScalarAttributeType {
 /// <p>When you manually remove a table or global table replica, you do not automatically remove any associated scalable targets, scaling policies, or CloudWatch alarms.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationGroupUpdate {
     /// <p>The parameters required for creating a replica for the table.</p>
     #[doc(hidden)]
@@ -5791,15 +5441,6 @@ impl ReplicationGroupUpdate {
     /// <p>The parameters required for deleting a replica for the table.</p>
     pub fn delete(&self) -> std::option::Option<&crate::model::DeleteReplicationGroupMemberAction> {
         self.delete.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicationGroupUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationGroupUpdate");
-        formatter.field("create", &self.create);
-        formatter.field("update", &self.update);
-        formatter.field("delete", &self.delete);
-        formatter.finish()
     }
 }
 /// See [`ReplicationGroupUpdate`](crate::model::ReplicationGroupUpdate).
@@ -5871,7 +5512,7 @@ impl ReplicationGroupUpdate {
 
 /// <p>Represents a replica to be deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
     #[doc(hidden)]
@@ -5881,13 +5522,6 @@ impl DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteReplicationGroupMemberAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReplicationGroupMemberAction");
-        formatter.field("region_name", &self.region_name);
-        formatter.finish()
     }
 }
 /// See [`DeleteReplicationGroupMemberAction`](crate::model::DeleteReplicationGroupMemberAction).
@@ -5926,7 +5560,7 @@ impl DeleteReplicationGroupMemberAction {
 
 /// <p>Represents a replica to be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
     #[doc(hidden)]
@@ -5970,20 +5604,6 @@ impl UpdateReplicationGroupMemberAction {
     /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
     pub fn table_class_override(&self) -> std::option::Option<&crate::model::TableClass> {
         self.table_class_override.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateReplicationGroupMemberAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReplicationGroupMemberAction");
-        formatter.field("region_name", &self.region_name);
-        formatter.field("kms_master_key_id", &self.kms_master_key_id);
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.field("table_class_override", &self.table_class_override);
-        formatter.finish()
     }
 }
 /// See [`UpdateReplicationGroupMemberAction`](crate::model::UpdateReplicationGroupMemberAction).
@@ -6096,7 +5716,7 @@ impl UpdateReplicationGroupMemberAction {
 
 /// <p>Represents the properties of a replica global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndex {
     /// <p>The name of the global secondary index.</p>
     #[doc(hidden)]
@@ -6116,17 +5736,6 @@ impl ReplicaGlobalSecondaryIndex {
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaGlobalSecondaryIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndex");
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaGlobalSecondaryIndex`](crate::model::ReplicaGlobalSecondaryIndex).
@@ -6184,7 +5793,7 @@ impl ReplicaGlobalSecondaryIndex {
 
 /// <p>Represents a replica to be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReplicationGroupMemberAction {
     /// <p>The Region where the new replica will be created.</p>
     #[doc(hidden)]
@@ -6228,20 +5837,6 @@ impl CreateReplicationGroupMemberAction {
     /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
     pub fn table_class_override(&self) -> std::option::Option<&crate::model::TableClass> {
         self.table_class_override.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateReplicationGroupMemberAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReplicationGroupMemberAction");
-        formatter.field("region_name", &self.region_name);
-        formatter.field("kms_master_key_id", &self.kms_master_key_id);
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.field("table_class_override", &self.table_class_override);
-        formatter.finish()
     }
 }
 /// See [`CreateReplicationGroupMemberAction`](crate::model::CreateReplicationGroupMemberAction).
@@ -6354,7 +5949,7 @@ impl CreateReplicationGroupMemberAction {
 
 /// <p>Represents the settings used to enable server-side encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SseSpecification {
     /// <p>Indicates whether server-side encryption is done using an Amazon Web Services managed key or an Amazon Web Services owned key. If enabled (true), server-side encryption type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS charges apply). If disabled (false) or not specified, server-side encryption is set to Amazon Web Services owned key.</p>
     #[doc(hidden)]
@@ -6384,15 +5979,6 @@ impl SseSpecification {
     /// <p>The KMS key that should be used for the KMS encryption. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
     pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SseSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SseSpecification");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("sse_type", &self.sse_type);
-        formatter.field("kms_master_key_id", &self.kms_master_key_id);
-        formatter.finish()
     }
 }
 /// See [`SseSpecification`](crate::model::SseSpecification).
@@ -6469,7 +6055,7 @@ impl SseSpecification {
 /// <li> <p>An existing global secondary index to be removed from an existing table.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalSecondaryIndexUpdate {
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
     #[doc(hidden)]
@@ -6507,15 +6093,6 @@ impl GlobalSecondaryIndexUpdate {
     /// <p>The name of an existing global secondary index to be removed.</p>
     pub fn delete(&self) -> std::option::Option<&crate::model::DeleteGlobalSecondaryIndexAction> {
         self.delete.as_ref()
-    }
-}
-impl std::fmt::Debug for GlobalSecondaryIndexUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalSecondaryIndexUpdate");
-        formatter.field("update", &self.update);
-        formatter.field("create", &self.create);
-        formatter.field("delete", &self.delete);
-        formatter.finish()
     }
 }
 /// See [`GlobalSecondaryIndexUpdate`](crate::model::GlobalSecondaryIndexUpdate).
@@ -6601,7 +6178,7 @@ impl GlobalSecondaryIndexUpdate {
 
 /// <p>Represents a global secondary index to be deleted from an existing table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be deleted.</p>
     #[doc(hidden)]
@@ -6611,13 +6188,6 @@ impl DeleteGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be deleted.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteGlobalSecondaryIndexAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGlobalSecondaryIndexAction");
-        formatter.field("index_name", &self.index_name);
-        formatter.finish()
     }
 }
 /// See [`DeleteGlobalSecondaryIndexAction`](crate::model::DeleteGlobalSecondaryIndexAction).
@@ -6656,7 +6226,7 @@ impl DeleteGlobalSecondaryIndexAction {
 
 /// <p>Represents a new global secondary index to be added to an existing table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
     #[doc(hidden)]
@@ -6691,16 +6261,6 @@ impl CreateGlobalSecondaryIndexAction {
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateGlobalSecondaryIndexAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGlobalSecondaryIndexAction");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("projection", &self.projection);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.finish()
     }
 }
 /// See [`CreateGlobalSecondaryIndexAction`](crate::model::CreateGlobalSecondaryIndexAction).
@@ -6796,7 +6356,7 @@ impl CreateGlobalSecondaryIndexAction {
 /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
 /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedThroughput {
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
@@ -6817,14 +6377,6 @@ impl ProvisionedThroughput {
     /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
     pub fn write_capacity_units(&self) -> std::option::Option<i64> {
         self.write_capacity_units
-    }
-}
-impl std::fmt::Debug for ProvisionedThroughput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedThroughput");
-        formatter.field("read_capacity_units", &self.read_capacity_units);
-        formatter.field("write_capacity_units", &self.write_capacity_units);
-        formatter.finish()
     }
 }
 /// See [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
@@ -6879,7 +6431,7 @@ impl ProvisionedThroughput {
 
 /// <p>Represents the new provisioned throughput settings to be applied to a global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be updated.</p>
     #[doc(hidden)]
@@ -6900,14 +6452,6 @@ impl UpdateGlobalSecondaryIndexAction {
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateGlobalSecondaryIndexAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalSecondaryIndexAction");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.finish()
     }
 }
 /// See [`UpdateGlobalSecondaryIndexAction`](crate::model::UpdateGlobalSecondaryIndexAction).
@@ -6966,7 +6510,7 @@ impl UpdateGlobalSecondaryIndexAction {
 
 /// <p>Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ItemCollectionMetrics {
     /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
     #[doc(hidden)]
@@ -6991,14 +6535,6 @@ impl ItemCollectionMetrics {
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
     pub fn size_estimate_range_gb(&self) -> std::option::Option<&[f64]> {
         self.size_estimate_range_gb.as_deref()
-    }
-}
-impl std::fmt::Debug for ItemCollectionMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemCollectionMetrics");
-        formatter.field("item_collection_key", &self.item_collection_key);
-        formatter.field("size_estimate_range_gb", &self.size_estimate_range_gb);
-        formatter.finish()
     }
 }
 /// See [`ItemCollectionMetrics`](crate::model::ItemCollectionMetrics).
@@ -7267,7 +6803,7 @@ impl AttributeValue {
 
 /// <p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConsumedCapacity {
     /// <p>The name of the table that was affected by the operation.</p>
     #[doc(hidden)]
@@ -7327,19 +6863,6 @@ impl ConsumedCapacity {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Capacity>>
     {
         self.global_secondary_indexes.as_ref()
-    }
-}
-impl std::fmt::Debug for ConsumedCapacity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConsumedCapacity");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("capacity_units", &self.capacity_units);
-        formatter.field("read_capacity_units", &self.read_capacity_units);
-        formatter.field("write_capacity_units", &self.write_capacity_units);
-        formatter.field("table", &self.table);
-        formatter.field("local_secondary_indexes", &self.local_secondary_indexes);
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.finish()
     }
 }
 /// See [`ConsumedCapacity`](crate::model::ConsumedCapacity).
@@ -7484,7 +7007,7 @@ impl ConsumedCapacity {
 
 /// <p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Capacity {
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
     #[doc(hidden)]
@@ -7508,15 +7031,6 @@ impl Capacity {
     /// <p>The total number of capacity units consumed on a table or an index.</p>
     pub fn capacity_units(&self) -> std::option::Option<f64> {
         self.capacity_units
-    }
-}
-impl std::fmt::Debug for Capacity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Capacity");
-        formatter.field("read_capacity_units", &self.read_capacity_units);
-        formatter.field("write_capacity_units", &self.write_capacity_units);
-        formatter.field("capacity_units", &self.capacity_units);
-        formatter.finish()
     }
 }
 /// See [`Capacity`](crate::model::Capacity).
@@ -7994,7 +7508,7 @@ impl AsRef<str> for ConditionalOperator {
 /// </ul>
 /// <p> <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a <code>ValidationException</code> exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpectedAttributeValue {
     /// <p>Represents the data for the expected attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
@@ -8101,16 +7615,6 @@ impl ExpectedAttributeValue {
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn attribute_value_list(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
         self.attribute_value_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ExpectedAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpectedAttributeValue");
-        formatter.field("value", &self.value);
-        formatter.field("exists", &self.exists);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("attribute_value_list", &self.attribute_value_list);
-        formatter.finish()
     }
 }
 /// See [`ExpectedAttributeValue`](crate::model::ExpectedAttributeValue).
@@ -8441,7 +7945,7 @@ impl AsRef<str> for ComparisonOperator {
 /// </note>
 /// <p>Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code> exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeValueUpdate {
     /// <p>Represents the data for an attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
@@ -8500,14 +8004,6 @@ impl AttributeValueUpdate {
     /// </ul>
     pub fn action(&self) -> std::option::Option<&crate::model::AttributeAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for AttributeValueUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeValueUpdate");
-        formatter.field("value", &self.value);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`AttributeValueUpdate`](crate::model::AttributeValueUpdate).
@@ -8701,7 +8197,7 @@ impl AsRef<str> for AttributeAction {
 
 /// <p>Represents the properties of a replica.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaSettingsDescription {
     /// <p>The Region name of the replica.</p>
     #[doc(hidden)]
@@ -8795,42 +8291,6 @@ impl ReplicaSettingsDescription {
         &self,
     ) -> std::option::Option<&crate::model::TableClassSummary> {
         self.replica_table_class_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaSettingsDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaSettingsDescription");
-        formatter.field("region_name", &self.region_name);
-        formatter.field("replica_status", &self.replica_status);
-        formatter.field(
-            "replica_billing_mode_summary",
-            &self.replica_billing_mode_summary,
-        );
-        formatter.field(
-            "replica_provisioned_read_capacity_units",
-            &self.replica_provisioned_read_capacity_units,
-        );
-        formatter.field(
-            "replica_provisioned_read_capacity_auto_scaling_settings",
-            &self.replica_provisioned_read_capacity_auto_scaling_settings,
-        );
-        formatter.field(
-            "replica_provisioned_write_capacity_units",
-            &self.replica_provisioned_write_capacity_units,
-        );
-        formatter.field(
-            "replica_provisioned_write_capacity_auto_scaling_settings",
-            &self.replica_provisioned_write_capacity_auto_scaling_settings,
-        );
-        formatter.field(
-            "replica_global_secondary_index_settings",
-            &self.replica_global_secondary_index_settings,
-        );
-        formatter.field(
-            "replica_table_class_summary",
-            &self.replica_table_class_summary,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaSettingsDescription`](crate::model::ReplicaSettingsDescription).
@@ -9037,7 +8497,7 @@ impl ReplicaSettingsDescription {
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     #[doc(hidden)]
@@ -9102,30 +8562,6 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
     ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
         self.provisioned_write_capacity_auto_scaling_settings
             .as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaGlobalSecondaryIndexSettingsDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexSettingsDescription");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("index_status", &self.index_status);
-        formatter.field(
-            "provisioned_read_capacity_units",
-            &self.provisioned_read_capacity_units,
-        );
-        formatter.field(
-            "provisioned_read_capacity_auto_scaling_settings",
-            &self.provisioned_read_capacity_auto_scaling_settings,
-        );
-        formatter.field(
-            "provisioned_write_capacity_units",
-            &self.provisioned_write_capacity_units,
-        );
-        formatter.field(
-            "provisioned_write_capacity_auto_scaling_settings",
-            &self.provisioned_write_capacity_auto_scaling_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaGlobalSecondaryIndexSettingsDescription`](crate::model::ReplicaGlobalSecondaryIndexSettingsDescription).
@@ -9261,7 +8697,7 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
 
 /// <p>Represents the settings for a global table in a Region that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaSettingsUpdate {
     /// <p>The Region of the replica to be added.</p>
     #[doc(hidden)]
@@ -9307,26 +8743,6 @@ impl ReplicaSettingsUpdate {
     /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
     pub fn replica_table_class(&self) -> std::option::Option<&crate::model::TableClass> {
         self.replica_table_class.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaSettingsUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaSettingsUpdate");
-        formatter.field("region_name", &self.region_name);
-        formatter.field(
-            "replica_provisioned_read_capacity_units",
-            &self.replica_provisioned_read_capacity_units,
-        );
-        formatter.field(
-            "replica_provisioned_read_capacity_auto_scaling_settings_update",
-            &self.replica_provisioned_read_capacity_auto_scaling_settings_update,
-        );
-        formatter.field(
-            "replica_global_secondary_index_settings_update",
-            &self.replica_global_secondary_index_settings_update,
-        );
-        formatter.field("replica_table_class", &self.replica_table_class);
-        formatter.finish()
     }
 }
 /// See [`ReplicaSettingsUpdate`](crate::model::ReplicaSettingsUpdate).
@@ -9447,7 +8863,7 @@ impl ReplicaSettingsUpdate {
 
 /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     #[doc(hidden)]
@@ -9475,21 +8891,6 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdate {
     ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
         self.provisioned_read_capacity_auto_scaling_settings_update
             .as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaGlobalSecondaryIndexSettingsUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexSettingsUpdate");
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "provisioned_read_capacity_units",
-            &self.provisioned_read_capacity_units,
-        );
-        formatter.field(
-            "provisioned_read_capacity_auto_scaling_settings_update",
-            &self.provisioned_read_capacity_auto_scaling_settings_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicaGlobalSecondaryIndexSettingsUpdate`](crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate).
@@ -9563,7 +8964,7 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdate {
 
 /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalTableGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     #[doc(hidden)]
@@ -9591,21 +8992,6 @@ impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
     ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
         self.provisioned_write_capacity_auto_scaling_settings_update
             .as_ref()
-    }
-}
-impl std::fmt::Debug for GlobalTableGlobalSecondaryIndexSettingsUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalTableGlobalSecondaryIndexSettingsUpdate");
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "provisioned_write_capacity_units",
-            &self.provisioned_write_capacity_units,
-        );
-        formatter.field(
-            "provisioned_write_capacity_auto_scaling_settings_update",
-            &self.provisioned_write_capacity_auto_scaling_settings_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`GlobalTableGlobalSecondaryIndexSettingsUpdate`](crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate).
@@ -9679,7 +9065,7 @@ impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
 
 /// <p>Contains details about the global table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalTableDescription {
     /// <p>The Regions where the global table has replicas.</p>
     #[doc(hidden)]
@@ -9729,17 +9115,6 @@ impl GlobalTableDescription {
     /// <p>The global table name.</p>
     pub fn global_table_name(&self) -> std::option::Option<&str> {
         self.global_table_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GlobalTableDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalTableDescription");
-        formatter.field("replication_group", &self.replication_group);
-        formatter.field("global_table_arn", &self.global_table_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("global_table_status", &self.global_table_status);
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.finish()
     }
 }
 /// See [`GlobalTableDescription`](crate::model::GlobalTableDescription).
@@ -9967,7 +9342,7 @@ impl AsRef<str> for GlobalTableStatus {
 /// <li> <p>An existing replica to be removed from an existing global table.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaUpdate {
     /// <p>The parameters required for creating a replica on an existing global table.</p>
     #[doc(hidden)]
@@ -9984,14 +9359,6 @@ impl ReplicaUpdate {
     /// <p>The name of the existing replica to be removed.</p>
     pub fn delete(&self) -> std::option::Option<&crate::model::DeleteReplicaAction> {
         self.delete.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicaUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaUpdate");
-        formatter.field("create", &self.create);
-        formatter.field("delete", &self.delete);
-        formatter.finish()
     }
 }
 /// See [`ReplicaUpdate`](crate::model::ReplicaUpdate).
@@ -10048,7 +9415,7 @@ impl ReplicaUpdate {
 
 /// <p>Represents a replica to be removed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReplicaAction {
     /// <p>The Region of the replica to be removed.</p>
     #[doc(hidden)]
@@ -10058,13 +9425,6 @@ impl DeleteReplicaAction {
     /// <p>The Region of the replica to be removed.</p>
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteReplicaAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReplicaAction");
-        formatter.field("region_name", &self.region_name);
-        formatter.finish()
     }
 }
 /// See [`DeleteReplicaAction`](crate::model::DeleteReplicaAction).
@@ -10103,7 +9463,7 @@ impl DeleteReplicaAction {
 
 /// <p>Represents a replica to be added.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReplicaAction {
     /// <p>The Region of the replica to be added.</p>
     #[doc(hidden)]
@@ -10113,13 +9473,6 @@ impl CreateReplicaAction {
     /// <p>The Region of the replica to be added.</p>
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateReplicaAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReplicaAction");
-        formatter.field("region_name", &self.region_name);
-        formatter.finish()
     }
 }
 /// See [`CreateReplicaAction`](crate::model::CreateReplicaAction).
@@ -10357,7 +9710,7 @@ impl AsRef<str> for ContributorInsightsAction {
 
 /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinuousBackupsDescription {
     /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     #[doc(hidden)]
@@ -10379,17 +9732,6 @@ impl ContinuousBackupsDescription {
         &self,
     ) -> std::option::Option<&crate::model::PointInTimeRecoveryDescription> {
         self.point_in_time_recovery_description.as_ref()
-    }
-}
-impl std::fmt::Debug for ContinuousBackupsDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinuousBackupsDescription");
-        formatter.field("continuous_backups_status", &self.continuous_backups_status);
-        formatter.field(
-            "point_in_time_recovery_description",
-            &self.point_in_time_recovery_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`ContinuousBackupsDescription`](crate::model::ContinuousBackupsDescription).
@@ -10454,7 +9796,7 @@ impl ContinuousBackupsDescription {
 
 /// <p>The description of the point in time settings applied to the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PointInTimeRecoveryDescription {
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
@@ -10490,24 +9832,6 @@ impl PointInTimeRecoveryDescription {
     /// <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub fn latest_restorable_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_restorable_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PointInTimeRecoveryDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PointInTimeRecoveryDescription");
-        formatter.field(
-            "point_in_time_recovery_status",
-            &self.point_in_time_recovery_status,
-        );
-        formatter.field(
-            "earliest_restorable_date_time",
-            &self.earliest_restorable_date_time,
-        );
-        formatter.field(
-            "latest_restorable_date_time",
-            &self.latest_restorable_date_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`PointInTimeRecoveryDescription`](crate::model::PointInTimeRecoveryDescription).
@@ -10775,7 +10099,7 @@ impl AsRef<str> for ContinuousBackupsStatus {
 
 /// <p>Represents the settings used to enable point in time recovery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PointInTimeRecoverySpecification {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     #[doc(hidden)]
@@ -10785,16 +10109,6 @@ impl PointInTimeRecoverySpecification {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     pub fn point_in_time_recovery_enabled(&self) -> std::option::Option<bool> {
         self.point_in_time_recovery_enabled
-    }
-}
-impl std::fmt::Debug for PointInTimeRecoverySpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PointInTimeRecoverySpecification");
-        formatter.field(
-            "point_in_time_recovery_enabled",
-            &self.point_in_time_recovery_enabled,
-        );
-        formatter.finish()
     }
 }
 /// See [`PointInTimeRecoverySpecification`](crate::model::PointInTimeRecoverySpecification).
@@ -10836,7 +10150,7 @@ impl PointInTimeRecoverySpecification {
 
 /// <p>An ordered list of errors for each item in the request which caused the transaction to get cancelled. The values of the list are ordered according to the ordering of the <code>TransactWriteItems</code> request parameter. If no error occurred for the associated item an error with a Null code and Null message will be present. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancellationReason {
     /// <p>Item in the request which caused the transaction to get cancelled.</p>
     #[doc(hidden)]
@@ -10866,15 +10180,6 @@ impl CancellationReason {
     /// <p>Cancellation reason message description.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for CancellationReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancellationReason");
-        formatter.field("item", &self.item);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`CancellationReason`](crate::model::CancellationReason).
@@ -10954,7 +10259,7 @@ impl CancellationReason {
 
 /// <p>A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransactWriteItem {
     /// <p>A request to perform a check item operation.</p>
     #[doc(hidden)]
@@ -10985,16 +10290,6 @@ impl TransactWriteItem {
     /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
     pub fn update(&self) -> std::option::Option<&crate::model::Update> {
         self.update.as_ref()
-    }
-}
-impl std::fmt::Debug for TransactWriteItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactWriteItem");
-        formatter.field("condition_check", &self.condition_check);
-        formatter.field("put", &self.put);
-        formatter.field("delete", &self.delete);
-        formatter.field("update", &self.update);
-        formatter.finish()
     }
 }
 /// See [`TransactWriteItem`](crate::model::TransactWriteItem).
@@ -11072,7 +10367,7 @@ impl TransactWriteItem {
 
 /// <p>Represents a request to perform an <code>UpdateItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Update {
     /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
     #[doc(hidden)]
@@ -11143,28 +10438,6 @@ impl Update {
         &self,
     ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
         self.return_values_on_condition_check_failure.as_ref()
-    }
-}
-impl std::fmt::Debug for Update {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Update");
-        formatter.field("key", &self.key);
-        formatter.field("update_expression", &self.update_expression);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.field(
-            "return_values_on_condition_check_failure",
-            &self.return_values_on_condition_check_failure,
-        );
-        formatter.finish()
     }
 }
 /// See [`Update`](crate::model::Update).
@@ -11432,7 +10705,7 @@ impl AsRef<str> for ReturnValuesOnConditionCheckFailure {
 
 /// <p>Represents a request to perform a <code>DeleteItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Delete {
     /// <p>The primary key of the item to be deleted. Each element consists of an attribute name and a value for that attribute.</p>
     #[doc(hidden)]
@@ -11496,27 +10769,6 @@ impl Delete {
         &self,
     ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
         self.return_values_on_condition_check_failure.as_ref()
-    }
-}
-impl std::fmt::Debug for Delete {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Delete");
-        formatter.field("key", &self.key);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.field(
-            "return_values_on_condition_check_failure",
-            &self.return_values_on_condition_check_failure,
-        );
-        formatter.finish()
     }
 }
 /// See [`Delete`](crate::model::Delete).
@@ -11677,7 +10929,7 @@ impl Delete {
 
 /// <p>Represents a request to perform a <code>PutItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Put {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
     #[doc(hidden)]
@@ -11741,27 +10993,6 @@ impl Put {
         &self,
     ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
         self.return_values_on_condition_check_failure.as_ref()
-    }
-}
-impl std::fmt::Debug for Put {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Put");
-        formatter.field("item", &self.item);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.field(
-            "return_values_on_condition_check_failure",
-            &self.return_values_on_condition_check_failure,
-        );
-        formatter.finish()
     }
 }
 /// See [`Put`](crate::model::Put).
@@ -11922,7 +11153,7 @@ impl Put {
 
 /// <p>Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionCheck {
     /// <p>The primary key of the item to be checked. Each element consists of an attribute name and a value for that attribute.</p>
     #[doc(hidden)]
@@ -11986,27 +11217,6 @@ impl ConditionCheck {
         &self,
     ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
         self.return_values_on_condition_check_failure.as_ref()
-    }
-}
-impl std::fmt::Debug for ConditionCheck {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionCheck");
-        formatter.field("key", &self.key);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.field(
-            "return_values_on_condition_check_failure",
-            &self.return_values_on_condition_check_failure,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConditionCheck`](crate::model::ConditionCheck).
@@ -12167,7 +11377,7 @@ impl ConditionCheck {
 
 /// <p>Details for the requested item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ItemResponse {
     /// <p>Map of attribute data consisting of the data type and attribute value.</p>
     #[doc(hidden)]
@@ -12183,13 +11393,6 @@ impl ItemResponse {
         &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     > {
         self.item.as_ref()
-    }
-}
-impl std::fmt::Debug for ItemResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemResponse");
-        formatter.field("item", &self.item);
-        formatter.finish()
     }
 }
 /// See [`ItemResponse`](crate::model::ItemResponse).
@@ -12243,7 +11446,7 @@ impl ItemResponse {
 
 /// <p>Specifies an item to be retrieved as part of the transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransactGetItem {
     /// <p>Contains the primary key that identifies the item to get, together with the name of the table that contains the item, and optionally the specific attributes of the item to retrieve.</p>
     #[doc(hidden)]
@@ -12253,13 +11456,6 @@ impl TransactGetItem {
     /// <p>Contains the primary key that identifies the item to get, together with the name of the table that contains the item, and optionally the specific attributes of the item to retrieve.</p>
     pub fn get(&self) -> std::option::Option<&crate::model::Get> {
         self.get.as_ref()
-    }
-}
-impl std::fmt::Debug for TransactGetItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactGetItem");
-        formatter.field("get", &self.get);
-        formatter.finish()
     }
 }
 /// See [`TransactGetItem`](crate::model::TransactGetItem).
@@ -12296,7 +11492,7 @@ impl TransactGetItem {
 
 /// <p>Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Get {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
     #[doc(hidden)]
@@ -12337,19 +11533,6 @@ impl Get {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.expression_attribute_names.as_ref()
-    }
-}
-impl std::fmt::Debug for Get {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Get");
-        formatter.field("key", &self.key);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("projection_expression", &self.projection_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.finish()
     }
 }
 /// See [`Get`](crate::model::Get).
@@ -12463,7 +11646,7 @@ impl Get {
 /// <p>Amazon Web Services-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. Amazon Web Services-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag.</p>
 /// <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.</p>
     #[doc(hidden)]
@@ -12480,14 +11663,6 @@ impl Tag {
     /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -12542,7 +11717,7 @@ impl Tag {
 /// <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
@@ -12611,14 +11786,6 @@ impl Condition {
     /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
-    }
-}
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field("attribute_value_list", &self.attribute_value_list);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.finish()
     }
 }
 /// See [`Condition`](crate::model::Condition).
@@ -12839,7 +12006,7 @@ impl AsRef<str> for Select {
 
 /// <p>Represents the properties of a local secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocalSecondaryIndex {
     /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
     #[doc(hidden)]
@@ -12877,15 +12044,6 @@ impl LocalSecondaryIndex {
     /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
         self.projection.as_ref()
-    }
-}
-impl std::fmt::Debug for LocalSecondaryIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocalSecondaryIndex");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("projection", &self.projection);
-        formatter.finish()
     }
 }
 /// See [`LocalSecondaryIndex`](crate::model::LocalSecondaryIndex).
@@ -12974,7 +12132,7 @@ impl LocalSecondaryIndex {
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalSecondaryIndex {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     #[doc(hidden)]
@@ -13023,16 +12181,6 @@ impl GlobalSecondaryIndex {
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
-    }
-}
-impl std::fmt::Debug for GlobalSecondaryIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalSecondaryIndex");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("projection", &self.projection);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.finish()
     }
 }
 /// See [`GlobalSecondaryIndex`](crate::model::GlobalSecondaryIndex).
@@ -13141,7 +12289,7 @@ impl GlobalSecondaryIndex {
 
 /// <p> Summary information about the source file for the import. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportSummary {
     /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
     #[doc(hidden)]
@@ -13200,20 +12348,6 @@ impl ImportSummary {
     /// <p> The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?) </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportSummary");
-        formatter.field("import_arn", &self.import_arn);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("s3_bucket_source", &self.s3_bucket_source);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("input_format", &self.input_format);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`ImportSummary`](crate::model::ImportSummary).
@@ -13449,7 +12583,7 @@ impl AsRef<str> for InputFormat {
 
 /// <p> The S3 bucket that is being imported from. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketSource {
     /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
     #[doc(hidden)]
@@ -13473,15 +12607,6 @@ impl S3BucketSource {
     /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3BucketSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketSource");
-        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3BucketSource`](crate::model::S3BucketSource).
@@ -13661,7 +12786,7 @@ impl AsRef<str> for ImportStatus {
 
 /// <p>Represents the properties of a global table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalTable {
     /// <p>The global table name.</p>
     #[doc(hidden)]
@@ -13678,14 +12803,6 @@ impl GlobalTable {
     /// <p>The Regions where the global table has replicas.</p>
     pub fn replication_group(&self) -> std::option::Option<&[crate::model::Replica]> {
         self.replication_group.as_deref()
-    }
-}
-impl std::fmt::Debug for GlobalTable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalTable");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.field("replication_group", &self.replication_group);
-        formatter.finish()
     }
 }
 /// See [`GlobalTable`](crate::model::GlobalTable).
@@ -13748,7 +12865,7 @@ impl GlobalTable {
 
 /// <p>Represents the properties of a replica.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Replica {
     /// <p>The Region where the replica needs to be created.</p>
     #[doc(hidden)]
@@ -13758,13 +12875,6 @@ impl Replica {
     /// <p>The Region where the replica needs to be created.</p>
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Replica {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Replica");
-        formatter.field("region_name", &self.region_name);
-        formatter.finish()
     }
 }
 /// See [`Replica`](crate::model::Replica).
@@ -13803,7 +12913,7 @@ impl Replica {
 
 /// <p>Summary information about an export task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
     #[doc(hidden)]
@@ -13820,14 +12930,6 @@ impl ExportSummary {
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
         self.export_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSummary");
-        formatter.field("export_arn", &self.export_arn);
-        formatter.field("export_status", &self.export_status);
-        formatter.finish()
     }
 }
 /// See [`ExportSummary`](crate::model::ExportSummary).
@@ -13976,7 +13078,7 @@ impl AsRef<str> for ExportStatus {
 
 /// <p>Represents a Contributor Insights summary entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContributorInsightsSummary {
     /// <p>Name of the table associated with the summary.</p>
     #[doc(hidden)]
@@ -14002,18 +13104,6 @@ impl ContributorInsightsSummary {
         &self,
     ) -> std::option::Option<&crate::model::ContributorInsightsStatus> {
         self.contributor_insights_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ContributorInsightsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContributorInsightsSummary");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "contributor_insights_status",
-            &self.contributor_insights_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`ContributorInsightsSummary`](crate::model::ContributorInsightsSummary).
@@ -14083,7 +13173,7 @@ impl ContributorInsightsSummary {
 
 /// <p>Contains details for the backup.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupSummary {
     /// <p>Name of the table.</p>
     #[doc(hidden)]
@@ -14166,22 +13256,6 @@ impl BackupSummary {
     /// <p>Size of the backup in bytes.</p>
     pub fn backup_size_bytes(&self) -> std::option::Option<i64> {
         self.backup_size_bytes
-    }
-}
-impl std::fmt::Debug for BackupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupSummary");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.field("backup_name", &self.backup_name);
-        formatter.field("backup_creation_date_time", &self.backup_creation_date_time);
-        formatter.field("backup_expiry_date_time", &self.backup_expiry_date_time);
-        formatter.field("backup_status", &self.backup_status);
-        formatter.field("backup_type", &self.backup_type);
-        formatter.field("backup_size_bytes", &self.backup_size_bytes);
-        formatter.finish()
     }
 }
 /// See [`BackupSummary`](crate::model::BackupSummary).
@@ -14640,7 +13714,7 @@ impl AsRef<str> for BackupTypeFilter {
 
 /// <p> Represents the properties of the table being imported into. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportTableDescription {
     /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
     #[doc(hidden)]
@@ -14780,31 +13854,6 @@ impl ImportTableDescription {
     /// <p> The error message corresponding to the failure that the import job ran into during execution. </p>
     pub fn failure_message(&self) -> std::option::Option<&str> {
         self.failure_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportTableDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportTableDescription");
-        formatter.field("import_arn", &self.import_arn);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("s3_bucket_source", &self.s3_bucket_source);
-        formatter.field("error_count", &self.error_count);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("input_format", &self.input_format);
-        formatter.field("input_format_options", &self.input_format_options);
-        formatter.field("input_compression_type", &self.input_compression_type);
-        formatter.field("table_creation_parameters", &self.table_creation_parameters);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("processed_size_bytes", &self.processed_size_bytes);
-        formatter.field("processed_item_count", &self.processed_item_count);
-        formatter.field("imported_item_count", &self.imported_item_count);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.finish()
     }
 }
 /// See [`ImportTableDescription`](crate::model::ImportTableDescription).
@@ -15093,7 +14142,7 @@ impl ImportTableDescription {
 
 /// <p> The parameters for the table created as part of the import operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableCreationParameters {
     /// <p> The name of the table created as part of the import operation. </p>
     #[doc(hidden)]
@@ -15155,19 +14204,6 @@ impl TableCreationParameters {
         &self,
     ) -> std::option::Option<&[crate::model::GlobalSecondaryIndex]> {
         self.global_secondary_indexes.as_deref()
-    }
-}
-impl std::fmt::Debug for TableCreationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableCreationParameters");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("attribute_definitions", &self.attribute_definitions);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("billing_mode", &self.billing_mode);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("sse_specification", &self.sse_specification);
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.finish()
     }
 }
 /// See [`TableCreationParameters`](crate::model::TableCreationParameters).
@@ -15421,7 +14457,7 @@ impl AsRef<str> for InputCompressionType {
 
 /// <p> The format options for the data that was imported into the target table. There is one value, CsvOption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputFormatOptions {
     /// <p> The options for imported source files in CSV format. The values are Delimiter and HeaderList. </p>
     #[doc(hidden)]
@@ -15431,13 +14467,6 @@ impl InputFormatOptions {
     /// <p> The options for imported source files in CSV format. The values are Delimiter and HeaderList. </p>
     pub fn csv(&self) -> std::option::Option<&crate::model::CsvOptions> {
         self.csv.as_ref()
-    }
-}
-impl std::fmt::Debug for InputFormatOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputFormatOptions");
-        formatter.field("csv", &self.csv);
-        formatter.finish()
     }
 }
 /// See [`InputFormatOptions`](crate::model::InputFormatOptions).
@@ -15474,7 +14503,7 @@ impl InputFormatOptions {
 
 /// <p> Processing options for the CSV file being imported. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvOptions {
     /// <p> The delimiter used for separating items in the CSV file being imported. </p>
     #[doc(hidden)]
@@ -15491,14 +14520,6 @@ impl CsvOptions {
     /// <p> List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header. </p>
     pub fn header_list(&self) -> std::option::Option<&[std::string::String]> {
         self.header_list.as_deref()
-    }
-}
-impl std::fmt::Debug for CsvOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvOptions");
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("header_list", &self.header_list);
-        formatter.finish()
     }
 }
 /// See [`CsvOptions`](crate::model::CsvOptions).
@@ -15558,7 +14579,7 @@ impl CsvOptions {
 
 /// <p>Represents the properties of the exported table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportDescription {
     /// <p>The Amazon Resource Name (ARN) of the table export.</p>
     #[doc(hidden)]
@@ -15702,31 +14723,6 @@ impl ExportDescription {
     /// <p>The number of items exported.</p>
     pub fn item_count(&self) -> std::option::Option<i64> {
         self.item_count
-    }
-}
-impl std::fmt::Debug for ExportDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportDescription");
-        formatter.field("export_arn", &self.export_arn);
-        formatter.field("export_status", &self.export_status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("export_manifest", &self.export_manifest);
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("export_time", &self.export_time);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.field("s3_sse_algorithm", &self.s3_sse_algorithm);
-        formatter.field("s3_sse_kms_key_id", &self.s3_sse_kms_key_id);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.field("export_format", &self.export_format);
-        formatter.field("billed_size_bytes", &self.billed_size_bytes);
-        formatter.field("item_count", &self.item_count);
-        formatter.finish()
     }
 }
 /// See [`ExportDescription`](crate::model::ExportDescription).
@@ -16199,7 +15195,7 @@ impl AsRef<str> for S3SseAlgorithm {
 
 /// <p> Represents a PartiQL statment that uses parameters. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterizedStatement {
     /// <p> A PartiQL statment that uses parameters. </p>
     #[doc(hidden)]
@@ -16216,14 +15212,6 @@ impl ParameterizedStatement {
     /// <p> The parameter values. </p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
         self.parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterizedStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterizedStatement");
-        formatter.field("statement", &self.statement);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`ParameterizedStatement`](crate::model::ParameterizedStatement).
@@ -16396,7 +15384,7 @@ impl AsRef<str> for DestinationStatus {
 
 /// <p>The description of the Time to Live (TTL) status on the specified table. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeToLiveDescription {
     /// <p> The TTL status for the table.</p>
     #[doc(hidden)]
@@ -16413,14 +15401,6 @@ impl TimeToLiveDescription {
     /// <p> The name of the TTL attribute for items in the table.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeToLiveDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeToLiveDescription");
-        formatter.field("time_to_live_status", &self.time_to_live_status);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.finish()
     }
 }
 /// See [`TimeToLiveDescription`](crate::model::TimeToLiveDescription).
@@ -16577,7 +15557,7 @@ impl AsRef<str> for TimeToLiveStatus {
 
 /// <p>Describes a Kinesis data stream destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisDataStreamDestination {
     /// <p>The ARN for a specific Kinesis data stream.</p>
     #[doc(hidden)]
@@ -16601,18 +15581,6 @@ impl KinesisDataStreamDestination {
     /// <p>The human-readable string that corresponds to the replica status.</p>
     pub fn destination_status_description(&self) -> std::option::Option<&str> {
         self.destination_status_description.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisDataStreamDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisDataStreamDestination");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("destination_status", &self.destination_status);
-        formatter.field(
-            "destination_status_description",
-            &self.destination_status_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`KinesisDataStreamDestination`](crate::model::KinesisDataStreamDestination).
@@ -16684,7 +15652,7 @@ impl KinesisDataStreamDestination {
 
 /// <p>An endpoint information details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>IP address of the endpoint.</p>
     #[doc(hidden)]
@@ -16701,14 +15669,6 @@ impl Endpoint {
     /// <p>Endpoint cache time to live (TTL) value.</p>
     pub fn cache_period_in_minutes(&self) -> i64 {
         self.cache_period_in_minutes
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("address", &self.address);
-        formatter.field("cache_period_in_minutes", &self.cache_period_in_minutes);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
@@ -16759,7 +15719,7 @@ impl Endpoint {
 
 /// <p>Represents a failure a contributor insights operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailureException {
     /// <p>Exception name.</p>
     #[doc(hidden)]
@@ -16776,14 +15736,6 @@ impl FailureException {
     /// <p>Description of the failure.</p>
     pub fn exception_description(&self) -> std::option::Option<&str> {
         self.exception_description.as_deref()
-    }
-}
-impl std::fmt::Debug for FailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailureException");
-        formatter.field("exception_name", &self.exception_name);
-        formatter.field("exception_description", &self.exception_description);
-        formatter.finish()
     }
 }
 /// See [`FailureException`](crate::model::FailureException).
@@ -16840,7 +15792,7 @@ impl FailureException {
 
 /// <p>Contains the description of the backup created for the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupDescription {
     /// <p>Contains the details of the backup created for the table. </p>
     #[doc(hidden)]
@@ -16866,18 +15818,6 @@ impl BackupDescription {
         &self,
     ) -> std::option::Option<&crate::model::SourceTableFeatureDetails> {
         self.source_table_feature_details.as_ref()
-    }
-}
-impl std::fmt::Debug for BackupDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupDescription");
-        formatter.field("backup_details", &self.backup_details);
-        formatter.field("source_table_details", &self.source_table_details);
-        formatter.field(
-            "source_table_feature_details",
-            &self.source_table_feature_details,
-        );
-        formatter.finish()
     }
 }
 /// See [`BackupDescription`](crate::model::BackupDescription).
@@ -16953,7 +15893,7 @@ impl BackupDescription {
 
 /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceTableFeatureDetails {
     /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
     #[doc(hidden)]
@@ -16999,17 +15939,6 @@ impl SourceTableFeatureDetails {
     /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
     pub fn sse_description(&self) -> std::option::Option<&crate::model::SseDescription> {
         self.sse_description.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceTableFeatureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceTableFeatureDetails");
-        formatter.field("local_secondary_indexes", &self.local_secondary_indexes);
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.field("stream_description", &self.stream_description);
-        formatter.field("time_to_live_description", &self.time_to_live_description);
-        formatter.field("sse_description", &self.sse_description);
-        formatter.finish()
     }
 }
 /// See [`SourceTableFeatureDetails`](crate::model::SourceTableFeatureDetails).
@@ -17135,7 +16064,7 @@ impl SourceTableFeatureDetails {
 
 /// <p>Represents the properties of a global secondary index for the table when the backup was created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalSecondaryIndexInfo {
     /// <p>The name of the global secondary index.</p>
     #[doc(hidden)]
@@ -17182,16 +16111,6 @@ impl GlobalSecondaryIndexInfo {
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
-    }
-}
-impl std::fmt::Debug for GlobalSecondaryIndexInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalSecondaryIndexInfo");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("projection", &self.projection);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.finish()
     }
 }
 /// See [`GlobalSecondaryIndexInfo`](crate::model::GlobalSecondaryIndexInfo).
@@ -17298,7 +16217,7 @@ impl GlobalSecondaryIndexInfo {
 
 /// <p>Represents the properties of a local secondary index for the table when the backup was created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocalSecondaryIndexInfo {
     /// <p>Represents the name of the local secondary index.</p>
     #[doc(hidden)]
@@ -17336,15 +16255,6 @@ impl LocalSecondaryIndexInfo {
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
         self.projection.as_ref()
-    }
-}
-impl std::fmt::Debug for LocalSecondaryIndexInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocalSecondaryIndexInfo");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("projection", &self.projection);
-        formatter.finish()
     }
 }
 /// See [`LocalSecondaryIndexInfo`](crate::model::LocalSecondaryIndexInfo).
@@ -17433,7 +16343,7 @@ impl LocalSecondaryIndexInfo {
 
 /// <p>Contains the details of the table when the backup was created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceTableDetails {
     /// <p>The name of the table for which the backup was created. </p>
     #[doc(hidden)]
@@ -17509,21 +16419,6 @@ impl SourceTableDetails {
     /// </ul>
     pub fn billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
         self.billing_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceTableDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceTableDetails");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("table_id", &self.table_id);
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("table_size_bytes", &self.table_size_bytes);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("table_creation_date_time", &self.table_creation_date_time);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("item_count", &self.item_count);
-        formatter.field("billing_mode", &self.billing_mode);
-        formatter.finish()
     }
 }
 /// See [`SourceTableDetails`](crate::model::SourceTableDetails).
@@ -17687,7 +16582,7 @@ impl SourceTableDetails {
 
 /// <p>Contains the details of the backup created for the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupDetails {
     /// <p>ARN associated with the backup.</p>
     #[doc(hidden)]
@@ -17749,19 +16644,6 @@ impl BackupDetails {
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
     pub fn backup_expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.backup_expiry_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BackupDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupDetails");
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.field("backup_name", &self.backup_name);
-        formatter.field("backup_size_bytes", &self.backup_size_bytes);
-        formatter.field("backup_status", &self.backup_status);
-        formatter.field("backup_type", &self.backup_type);
-        formatter.field("backup_creation_date_time", &self.backup_creation_date_time);
-        formatter.field("backup_expiry_date_time", &self.backup_expiry_date_time);
-        formatter.finish()
     }
 }
 /// See [`BackupDetails`](crate::model::BackupDetails).
@@ -17894,7 +16776,7 @@ impl BackupDetails {
 
 /// <p>Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these operations, you need to provide two separate <code>WriteRequest</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteRequest {
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
     #[doc(hidden)]
@@ -17911,14 +16793,6 @@ impl WriteRequest {
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
     pub fn delete_request(&self) -> std::option::Option<&crate::model::DeleteRequest> {
         self.delete_request.as_ref()
-    }
-}
-impl std::fmt::Debug for WriteRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteRequest");
-        formatter.field("put_request", &self.put_request);
-        formatter.field("delete_request", &self.delete_request);
-        formatter.finish()
     }
 }
 /// See [`WriteRequest`](crate::model::WriteRequest).
@@ -17975,7 +16849,7 @@ impl WriteRequest {
 
 /// <p>Represents a request to perform a <code>DeleteItem</code> operation on an item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRequest {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
     #[doc(hidden)]
@@ -17991,13 +16865,6 @@ impl DeleteRequest {
         &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     > {
         self.key.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRequest");
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`DeleteRequest`](crate::model::DeleteRequest).
@@ -18051,7 +16918,7 @@ impl DeleteRequest {
 
 /// <p>Represents a request to perform a <code>PutItem</code> operation on an item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRequest {
     /// <p>A map of attribute name to attribute values, representing the primary key of an item to be processed by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema.</p>
     #[doc(hidden)]
@@ -18067,13 +16934,6 @@ impl PutRequest {
         &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     > {
         self.item.as_ref()
-    }
-}
-impl std::fmt::Debug for PutRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRequest");
-        formatter.field("item", &self.item);
-        formatter.finish()
     }
 }
 /// See [`PutRequest`](crate::model::PutRequest).
@@ -18128,7 +16988,7 @@ impl PutRequest {
 /// <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p>
 /// <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeysAndAttributes {
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
     #[doc(hidden)]
@@ -18220,20 +17080,6 @@ impl KeysAndAttributes {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.expression_attribute_names.as_ref()
-    }
-}
-impl std::fmt::Debug for KeysAndAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeysAndAttributes");
-        formatter.field("keys", &self.keys);
-        formatter.field("attributes_to_get", &self.attributes_to_get);
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.field("projection_expression", &self.projection_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.finish()
     }
 }
 /// See [`KeysAndAttributes`](crate::model::KeysAndAttributes).
@@ -18413,7 +17259,7 @@ impl KeysAndAttributes {
 
 /// <p> A PartiQL batch statement response.. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStatementResponse {
     /// <p> The error associated with a failed PartiQL batch statement. </p>
     #[doc(hidden)]
@@ -18443,15 +17289,6 @@ impl BatchStatementResponse {
         &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     > {
         self.item.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchStatementResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStatementResponse");
-        formatter.field("error", &self.error);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("item", &self.item);
-        formatter.finish()
     }
 }
 /// See [`BatchStatementResponse`](crate::model::BatchStatementResponse).
@@ -18534,7 +17371,7 @@ impl BatchStatementResponse {
 
 /// <p> An error associated with a statement in a PartiQL batch that was run. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStatementError {
     /// <p> The error code associated with the failed PartiQL batch statement. </p>
     #[doc(hidden)]
@@ -18551,14 +17388,6 @@ impl BatchStatementError {
     /// <p> The error message associated with the PartiQL batch response. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchStatementError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStatementError");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchStatementError`](crate::model::BatchStatementError).
@@ -18769,7 +17598,7 @@ impl AsRef<str> for BatchStatementErrorCodeEnum {
 
 /// <p> A PartiQL batch statement request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStatementRequest {
     /// <p> A valid PartiQL statement. </p>
     #[doc(hidden)]
@@ -18793,15 +17622,6 @@ impl BatchStatementRequest {
     /// <p> The read consistency of the PartiQL batch request. </p>
     pub fn consistent_read(&self) -> std::option::Option<bool> {
         self.consistent_read
-    }
-}
-impl std::fmt::Debug for BatchStatementRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStatementRequest");
-        formatter.field("statement", &self.statement);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.finish()
     }
 }
 /// See [`BatchStatementRequest`](crate::model::BatchStatementRequest).

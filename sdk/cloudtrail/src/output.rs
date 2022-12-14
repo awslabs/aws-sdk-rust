@@ -2,7 +2,7 @@
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrailOutput {
     /// <p>Specifies the name of the trail.</p>
     #[doc(hidden)]
@@ -104,34 +104,6 @@ impl UpdateTrailOutput {
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub fn is_organization_trail(&self) -> std::option::Option<bool> {
         self.is_organization_trail
-    }
-}
-impl std::fmt::Debug for UpdateTrailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrailOutput");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("sns_topic_name", &self.sns_topic_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field(
-            "include_global_service_events",
-            &self.include_global_service_events,
-        );
-        formatter.field("is_multi_region_trail", &self.is_multi_region_trail);
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field(
-            "log_file_validation_enabled",
-            &self.log_file_validation_enabled,
-        );
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("is_organization_trail", &self.is_organization_trail);
-        formatter.finish()
     }
 }
 /// See [`UpdateTrailOutput`](crate::output::UpdateTrailOutput).
@@ -346,7 +318,7 @@ impl UpdateTrailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventDataStoreOutput {
     /// <p>The ARN of the event data store.</p>
     #[doc(hidden)]
@@ -422,25 +394,6 @@ impl UpdateEventDataStoreOutput {
     /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventDataStoreOutput");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
@@ -615,14 +568,8 @@ impl UpdateEventDataStoreOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopLoggingOutput {}
-impl std::fmt::Debug for StopLoggingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopLoggingOutput");
-        formatter.finish()
-    }
-}
 /// See [`StopLoggingOutput`](crate::output::StopLoggingOutput).
 pub mod stop_logging_output {
 
@@ -645,7 +592,7 @@ impl StopLoggingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopImportOutput {
     /// <p> The ID for the import. </p>
     #[doc(hidden)]
@@ -711,21 +658,6 @@ impl StopImportOutput {
     /// <p> Returns information on the stopped import. </p>
     pub fn import_statistics(&self) -> std::option::Option<&crate::model::ImportStatistics> {
         self.import_statistics.as_ref()
-    }
-}
-impl std::fmt::Debug for StopImportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopImportOutput");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("import_source", &self.import_source);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.field("start_event_time", &self.start_event_time);
-        formatter.field("end_event_time", &self.end_event_time);
-        formatter.field("import_statistics", &self.import_statistics);
-        formatter.finish()
     }
 }
 /// See [`StopImportOutput`](crate::output::StopImportOutput).
@@ -890,7 +822,7 @@ impl StopImportOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartQueryOutput {
     /// <p>The ID of the started query.</p>
     #[doc(hidden)]
@@ -900,13 +832,6 @@ impl StartQueryOutput {
     /// <p>The ID of the started query.</p>
     pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartQueryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartQueryOutput");
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
     }
 }
 /// See [`StartQueryOutput`](crate::output::StartQueryOutput).
@@ -945,14 +870,8 @@ impl StartQueryOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartLoggingOutput {}
-impl std::fmt::Debug for StartLoggingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartLoggingOutput");
-        formatter.finish()
-    }
-}
 /// See [`StartLoggingOutput`](crate::output::StartLoggingOutput).
 pub mod start_logging_output {
 
@@ -975,7 +894,7 @@ impl StartLoggingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartImportOutput {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
@@ -1034,20 +953,6 @@ impl StartImportOutput {
     /// <p> The timestamp of the import's last update, if applicable. </p>
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for StartImportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartImportOutput");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("import_source", &self.import_source);
-        formatter.field("start_event_time", &self.start_event_time);
-        formatter.field("end_event_time", &self.end_event_time);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`StartImportOutput`](crate::output::StartImportOutput).
@@ -1197,7 +1102,7 @@ impl StartImportOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreEventDataStoreOutput {
     /// <p>The event data store ARN.</p>
     #[doc(hidden)]
@@ -1273,25 +1178,6 @@ impl RestoreEventDataStoreOutput {
     /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for RestoreEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreEventDataStoreOutput");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
@@ -1466,14 +1352,8 @@ impl RestoreEventDataStoreOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsOutput {}
-impl std::fmt::Debug for RemoveTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
@@ -1496,7 +1376,7 @@ impl RemoveTagsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
     #[doc(hidden)]
@@ -1513,14 +1393,6 @@ impl PutInsightSelectorsOutput {
     /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     pub fn insight_selectors(&self) -> std::option::Option<&[crate::model::InsightSelector]> {
         self.insight_selectors.as_deref()
-    }
-}
-impl std::fmt::Debug for PutInsightSelectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutInsightSelectorsOutput");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("insight_selectors", &self.insight_selectors);
-        formatter.finish()
     }
 }
 /// See [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput).
@@ -1581,7 +1453,7 @@ impl PutInsightSelectorsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventSelectorsOutput {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
@@ -1610,15 +1482,6 @@ impl PutEventSelectorsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
-    }
-}
-impl std::fmt::Debug for PutEventSelectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventSelectorsOutput");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("event_selectors", &self.event_selectors);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.finish()
     }
 }
 /// See [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput).
@@ -1705,7 +1568,7 @@ impl PutEventSelectorsOutput {
 
 /// <p>Contains a response to a LookupEvents action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookupEventsOutput {
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
     #[doc(hidden)]
@@ -1722,14 +1585,6 @@ impl LookupEventsOutput {
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for LookupEventsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LookupEventsOutput");
-        formatter.field("events", &self.events);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`LookupEventsOutput`](crate::output::LookupEventsOutput).
@@ -1789,7 +1644,7 @@ impl LookupEventsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrailsOutput {
     /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
     #[doc(hidden)]
@@ -1806,14 +1661,6 @@ impl ListTrailsOutput {
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTrailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrailsOutput");
-        formatter.field("trails", &self.trails);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListTrailsOutput`](crate::output::ListTrailsOutput).
@@ -1873,7 +1720,7 @@ impl ListTrailsOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsOutput {
     /// <p>A list of resource tags.</p>
     #[doc(hidden)]
@@ -1890,14 +1737,6 @@ impl ListTagsOutput {
     /// <p>Reserved for future use.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsOutput");
-        formatter.field("resource_tag_list", &self.resource_tag_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
@@ -1957,7 +1796,7 @@ impl ListTagsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueriesOutput {
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
     #[doc(hidden)]
@@ -1974,14 +1813,6 @@ impl ListQueriesOutput {
     /// <p>A token you can use to get the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListQueriesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueriesOutput");
-        formatter.field("queries", &self.queries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListQueriesOutput`](crate::output::ListQueriesOutput).
@@ -2041,7 +1872,7 @@ impl ListQueriesOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPublicKeysOutput {
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
@@ -2062,14 +1893,6 @@ impl ListPublicKeysOutput {
     /// <p>Reserved for future use.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPublicKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPublicKeysOutput");
-        formatter.field("public_key_list", &self.public_key_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
@@ -2133,7 +1956,7 @@ impl ListPublicKeysOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportsOutput {
     /// <p> The list of returned imports. </p>
     #[doc(hidden)]
@@ -2150,14 +1973,6 @@ impl ListImportsOutput {
     /// <p> A token you can use to get the next page of import results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListImportsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportsOutput");
-        formatter.field("imports", &self.imports);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListImportsOutput`](crate::output::ListImportsOutput).
@@ -2217,7 +2032,7 @@ impl ListImportsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportFailuresOutput {
     /// <p> Contains information about the import failures. </p>
     #[doc(hidden)]
@@ -2234,14 +2049,6 @@ impl ListImportFailuresOutput {
     /// <p> A token you can use to get the next page of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListImportFailuresOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportFailuresOutput");
-        formatter.field("failures", &self.failures);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListImportFailuresOutput`](crate::output::ListImportFailuresOutput).
@@ -2302,7 +2109,7 @@ impl ListImportFailuresOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventDataStoresOutput {
     /// <p>Contains information about event data stores in the account, in the current region.</p>
     #[doc(hidden)]
@@ -2319,14 +2126,6 @@ impl ListEventDataStoresOutput {
     /// <p>A token you can use to get the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListEventDataStoresOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventDataStoresOutput");
-        formatter.field("event_data_stores", &self.event_data_stores);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
@@ -2387,7 +2186,7 @@ impl ListEventDataStoresOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsOutput {
     /// <p> The list of CloudTrail channels. </p>
     #[doc(hidden)]
@@ -2404,14 +2203,6 @@ impl ListChannelsOutput {
     /// <p> A token used to get the next page of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListChannelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsOutput");
-        formatter.field("channels", &self.channels);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
@@ -2471,7 +2262,7 @@ impl ListChannelsOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrailStatusOutput {
     /// <p>Whether the CloudTrail trail is currently logging Amazon Web Services API calls.</p>
     #[doc(hidden)]
@@ -2603,53 +2394,6 @@ impl GetTrailStatusOutput {
     /// <p>This field is no longer in use.</p>
     pub fn time_logging_stopped(&self) -> std::option::Option<&str> {
         self.time_logging_stopped.as_deref()
-    }
-}
-impl std::fmt::Debug for GetTrailStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrailStatusOutput");
-        formatter.field("is_logging", &self.is_logging);
-        formatter.field("latest_delivery_error", &self.latest_delivery_error);
-        formatter.field("latest_notification_error", &self.latest_notification_error);
-        formatter.field("latest_delivery_time", &self.latest_delivery_time);
-        formatter.field("latest_notification_time", &self.latest_notification_time);
-        formatter.field("start_logging_time", &self.start_logging_time);
-        formatter.field("stop_logging_time", &self.stop_logging_time);
-        formatter.field(
-            "latest_cloud_watch_logs_delivery_error",
-            &self.latest_cloud_watch_logs_delivery_error,
-        );
-        formatter.field(
-            "latest_cloud_watch_logs_delivery_time",
-            &self.latest_cloud_watch_logs_delivery_time,
-        );
-        formatter.field(
-            "latest_digest_delivery_time",
-            &self.latest_digest_delivery_time,
-        );
-        formatter.field(
-            "latest_digest_delivery_error",
-            &self.latest_digest_delivery_error,
-        );
-        formatter.field(
-            "latest_delivery_attempt_time",
-            &self.latest_delivery_attempt_time,
-        );
-        formatter.field(
-            "latest_notification_attempt_time",
-            &self.latest_notification_attempt_time,
-        );
-        formatter.field(
-            "latest_notification_attempt_succeeded",
-            &self.latest_notification_attempt_succeeded,
-        );
-        formatter.field(
-            "latest_delivery_attempt_succeeded",
-            &self.latest_delivery_attempt_succeeded,
-        );
-        formatter.field("time_logging_started", &self.time_logging_started);
-        formatter.field("time_logging_stopped", &self.time_logging_stopped);
-        formatter.finish()
     }
 }
 /// See [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput).
@@ -2958,7 +2702,7 @@ impl GetTrailStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrailOutput {
     /// <p>The settings for a trail.</p>
     #[doc(hidden)]
@@ -2968,13 +2712,6 @@ impl GetTrailOutput {
     /// <p>The settings for a trail.</p>
     pub fn trail(&self) -> std::option::Option<&crate::model::Trail> {
         self.trail.as_ref()
-    }
-}
-impl std::fmt::Debug for GetTrailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrailOutput");
-        formatter.field("trail", &self.trail);
-        formatter.finish()
     }
 }
 /// See [`GetTrailOutput`](crate::output::GetTrailOutput).
@@ -3011,7 +2748,7 @@ impl GetTrailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryResultsOutput {
     /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     #[doc(hidden)]
@@ -3057,17 +2794,6 @@ impl GetQueryResultsOutput {
     /// <p>The error message returned if a query failed.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for GetQueryResultsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryResultsOutput");
-        formatter.field("query_status", &self.query_status);
-        formatter.field("query_statistics", &self.query_statistics);
-        formatter.field("query_result_rows", &self.query_result_rows);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
@@ -3187,7 +2913,7 @@ impl GetQueryResultsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     #[doc(hidden)]
@@ -3204,14 +2930,6 @@ impl GetInsightSelectorsOutput {
     /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
     pub fn insight_selectors(&self) -> std::option::Option<&[crate::model::InsightSelector]> {
         self.insight_selectors.as_deref()
-    }
-}
-impl std::fmt::Debug for GetInsightSelectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightSelectorsOutput");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("insight_selectors", &self.insight_selectors);
-        formatter.finish()
     }
 }
 /// See [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput).
@@ -3272,7 +2990,7 @@ impl GetInsightSelectorsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImportOutput {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
@@ -3338,21 +3056,6 @@ impl GetImportOutput {
     /// <p> Provides statistics for the import. </p>
     pub fn import_statistics(&self) -> std::option::Option<&crate::model::ImportStatistics> {
         self.import_statistics.as_ref()
-    }
-}
-impl std::fmt::Debug for GetImportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImportOutput");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("import_source", &self.import_source);
-        formatter.field("start_event_time", &self.start_event_time);
-        formatter.field("end_event_time", &self.end_event_time);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.field("import_statistics", &self.import_statistics);
-        formatter.finish()
     }
 }
 /// See [`GetImportOutput`](crate::output::GetImportOutput).
@@ -3517,7 +3220,7 @@ impl GetImportOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventSelectorsOutput {
     /// <p>The specified trail ARN that has the event selectors.</p>
     #[doc(hidden)]
@@ -3544,15 +3247,6 @@ impl GetEventSelectorsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
-    }
-}
-impl std::fmt::Debug for GetEventSelectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventSelectorsOutput");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("event_selectors", &self.event_selectors);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.finish()
     }
 }
 /// See [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput).
@@ -3637,7 +3331,7 @@ impl GetEventSelectorsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventDataStoreOutput {
     /// <p>The event data store Amazon Resource Number (ARN).</p>
     #[doc(hidden)]
@@ -3713,25 +3407,6 @@ impl GetEventDataStoreOutput {
     /// <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for GetEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventDataStoreOutput");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
@@ -3906,7 +3581,7 @@ impl GetEventDataStoreOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelOutput {
     /// <p> The ARN of the CloudTrail service-linked channel. </p>
     #[doc(hidden)]
@@ -3944,17 +3619,6 @@ impl GetChannelOutput {
     /// <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
     pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
         self.destinations.as_deref()
-    }
-}
-impl std::fmt::Debug for GetChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChannelOutput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("name", &self.name);
-        formatter.field("source", &self.source);
-        formatter.field("source_config", &self.source_config);
-        formatter.field("destinations", &self.destinations);
-        formatter.finish()
     }
 }
 /// See [`GetChannelOutput`](crate::output::GetChannelOutput).
@@ -4053,7 +3717,7 @@ impl GetChannelOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrailsOutput {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
     #[doc(hidden)]
@@ -4063,13 +3727,6 @@ impl DescribeTrailsOutput {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
     pub fn trail_list(&self) -> std::option::Option<&[crate::model::Trail]> {
         self.trail_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeTrailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrailsOutput");
-        formatter.field("trail_list", &self.trail_list);
-        formatter.finish()
     }
 }
 /// See [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput).
@@ -4117,7 +3774,7 @@ impl DescribeTrailsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQueryOutput {
     /// <p>The ID of the query.</p>
     #[doc(hidden)]
@@ -4157,17 +3814,6 @@ impl DescribeQueryOutput {
     /// <p>The error message returned if a query failed.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeQueryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQueryOutput");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("query_status", &self.query_status);
-        formatter.field("query_statistics", &self.query_statistics);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
@@ -4267,14 +3913,8 @@ impl DescribeQueryOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrailOutput {}
-impl std::fmt::Debug for DeleteTrailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrailOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
 pub mod delete_trail_output {
 
@@ -4297,14 +3937,8 @@ impl DeleteTrailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventDataStoreOutput {}
-impl std::fmt::Debug for DeleteEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventDataStoreOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
 pub mod delete_event_data_store_output {
 
@@ -4327,7 +3961,7 @@ impl DeleteEventDataStoreOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrailOutput {
     /// <p>Specifies the name of the trail.</p>
     #[doc(hidden)]
@@ -4429,34 +4063,6 @@ impl CreateTrailOutput {
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub fn is_organization_trail(&self) -> std::option::Option<bool> {
         self.is_organization_trail
-    }
-}
-impl std::fmt::Debug for CreateTrailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrailOutput");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("sns_topic_name", &self.sns_topic_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field(
-            "include_global_service_events",
-            &self.include_global_service_events,
-        );
-        formatter.field("is_multi_region_trail", &self.is_multi_region_trail);
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field(
-            "log_file_validation_enabled",
-            &self.log_file_validation_enabled,
-        );
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("is_organization_trail", &self.is_organization_trail);
-        formatter.finish()
     }
 }
 /// See [`CreateTrailOutput`](crate::output::CreateTrailOutput).
@@ -4671,7 +4277,7 @@ impl CreateTrailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventDataStoreOutput {
     /// <p>The ARN of the event data store.</p>
     #[doc(hidden)]
@@ -4754,26 +4360,6 @@ impl CreateEventDataStoreOutput {
     /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventDataStoreOutput");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("tags_list", &self.tags_list);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
@@ -4969,7 +4555,7 @@ impl CreateEventDataStoreOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelQueryOutput {
     /// <p>The ID of the canceled query.</p>
     #[doc(hidden)]
@@ -4986,14 +4572,6 @@ impl CancelQueryOutput {
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
     pub fn query_status(&self) -> std::option::Option<&crate::model::QueryStatus> {
         self.query_status.as_ref()
-    }
-}
-impl std::fmt::Debug for CancelQueryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelQueryOutput");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_status", &self.query_status);
-        formatter.finish()
     }
 }
 /// See [`CancelQueryOutput`](crate::output::CancelQueryOutput).
@@ -5047,14 +4625,8 @@ impl CancelQueryOutput {
 
 /// <p>Returns the objects or data if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput {}
-impl std::fmt::Debug for AddTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 

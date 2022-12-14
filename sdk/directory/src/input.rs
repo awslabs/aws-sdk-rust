@@ -894,7 +894,7 @@ impl CancelSchemaExtensionInput {
 pub mod connect_directory_input {
 
     /// A builder for [`ConnectDirectoryInput`](crate::input::ConnectDirectoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) short_name: std::option::Option<std::string::String>,
@@ -1003,6 +1003,19 @@ pub mod connect_directory_input {
                 connect_settings: self.connect_settings,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("short_name", &self.short_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &self.description);
+            formatter.field("size", &self.size);
+            formatter.field("connect_settings", &self.connect_settings);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1284,7 +1297,7 @@ impl CreateAliasInput {
 pub mod create_computer_input {
 
     /// A builder for [`CreateComputerInput`](crate::input::CreateComputerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) computer_name: std::option::Option<std::string::String>,
@@ -1373,6 +1386,20 @@ pub mod create_computer_input {
                 organizational_unit_distinguished_name: self.organizational_unit_distinguished_name,
                 computer_attributes: self.computer_attributes,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("computer_name", &self.computer_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "organizational_unit_distinguished_name",
+                &self.organizational_unit_distinguished_name,
+            );
+            formatter.field("computer_attributes", &self.computer_attributes);
+            formatter.finish()
         }
     }
 }
@@ -1680,7 +1707,7 @@ impl CreateConditionalForwarderInput {
 pub mod create_directory_input {
 
     /// A builder for [`CreateDirectoryInput`](crate::input::CreateDirectoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) short_name: std::option::Option<std::string::String>,
@@ -1813,6 +1840,19 @@ pub mod create_directory_input {
                 vpc_settings: self.vpc_settings,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("short_name", &self.short_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &self.description);
+            formatter.field("size", &self.size);
+            formatter.field("vpc_settings", &self.vpc_settings);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2099,7 +2139,7 @@ impl CreateLogSubscriptionInput {
 pub mod create_microsoft_ad_input {
 
     /// A builder for [`CreateMicrosoftAdInput`](crate::input::CreateMicrosoftAdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) short_name: std::option::Option<std::string::String>,
@@ -2213,6 +2253,19 @@ pub mod create_microsoft_ad_input {
                 edition: self.edition,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("short_name", &self.short_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &self.description);
+            formatter.field("vpc_settings", &self.vpc_settings);
+            formatter.field("edition", &self.edition);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2492,7 +2545,7 @@ impl CreateSnapshotInput {
 pub mod create_trust_input {
 
     /// A builder for [`CreateTrustInput`](crate::input::CreateTrustInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) remote_domain_name: std::option::Option<std::string::String>,
@@ -2615,6 +2668,22 @@ pub mod create_trust_input {
                 conditional_forwarder_ip_addrs: self.conditional_forwarder_ip_addrs,
                 selective_auth: self.selective_auth,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("remote_domain_name", &self.remote_domain_name);
+            formatter.field("trust_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("trust_direction", &self.trust_direction);
+            formatter.field("trust_type", &self.trust_type);
+            formatter.field(
+                "conditional_forwarder_ip_addrs",
+                &self.conditional_forwarder_ip_addrs,
+            );
+            formatter.field("selective_auth", &self.selective_auth);
+            formatter.finish()
         }
     }
 }
@@ -6459,7 +6528,7 @@ impl DisableRadiusInput {
 pub mod disable_sso_input {
 
     /// A builder for [`DisableSsoInput`](crate::input::DisableSsoInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -6508,6 +6577,15 @@ pub mod disable_sso_input {
                 user_name: self.user_name,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("user_name", &self.user_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -7111,7 +7189,7 @@ impl EnableRadiusInput {
 pub mod enable_sso_input {
 
     /// A builder for [`EnableSsoInput`](crate::input::EnableSsoInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -7160,6 +7238,15 @@ pub mod enable_sso_input {
                 user_name: self.user_name,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("user_name", &self.user_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -9400,7 +9487,7 @@ impl RemoveTagsFromResourceInput {
 pub mod reset_user_password_input {
 
     /// A builder for [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -9449,6 +9536,15 @@ pub mod reset_user_password_input {
                 user_name: self.user_name,
                 new_password: self.new_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("user_name", &self.user_name);
+            formatter.field("new_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -9718,7 +9814,7 @@ impl RestoreFromSnapshotInput {
 pub mod share_directory_input {
 
     /// A builder for [`ShareDirectoryInput`](crate::input::ShareDirectoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) share_notes: std::option::Option<std::string::String>,
@@ -9783,6 +9879,16 @@ pub mod share_directory_input {
                 share_target: self.share_target,
                 share_method: self.share_method,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("directory_id", &self.directory_id);
+            formatter.field("share_notes", &"*** Sensitive Data Redacted ***");
+            formatter.field("share_target", &self.share_target);
+            formatter.field("share_method", &self.share_method);
+            formatter.finish()
         }
     }
 }
@@ -11229,7 +11335,7 @@ impl VerifyTrustInput {
 
 /// <p>Initiates the verification of an existing trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyTrustInput {
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
     #[doc(hidden)]
@@ -11241,17 +11347,10 @@ impl VerifyTrustInput {
         self.trust_id.as_deref()
     }
 }
-impl std::fmt::Debug for VerifyTrustInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyTrustInput");
-        formatter.field("trust_id", &self.trust_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrustInput {
     /// <p>Identifier of the trust relationship.</p>
     #[doc(hidden)]
@@ -11270,18 +11369,10 @@ impl UpdateTrustInput {
         self.selective_auth.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTrustInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrustInput");
-        formatter.field("trust_id", &self.trust_id);
-        formatter.field("selective_auth", &self.selective_auth);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSettingsInput {
     /// <p>The identifier of the directory for which to update settings.</p>
     #[doc(hidden)]
@@ -11300,18 +11391,10 @@ impl UpdateSettingsInput {
         self.settings.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSettingsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>UpdateRadius</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRadiusInput {
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
     #[doc(hidden)]
@@ -11330,18 +11413,10 @@ impl UpdateRadiusInput {
         self.radius_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRadiusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRadiusInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("radius_settings", &self.radius_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNumberOfDomainControllersInput {
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     #[doc(hidden)]
@@ -11360,18 +11435,10 @@ impl UpdateNumberOfDomainControllersInput {
         self.desired_number
     }
 }
-impl std::fmt::Debug for UpdateNumberOfDomainControllersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNumberOfDomainControllersInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("desired_number", &self.desired_number);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a conditional forwarder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConditionalForwarderInput {
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
     #[doc(hidden)]
@@ -11397,19 +11464,10 @@ impl UpdateConditionalForwarderInput {
         self.dns_ip_addrs.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConditionalForwarderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConditionalForwarderInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("remote_domain_name", &self.remote_domain_name);
-        formatter.field("dns_ip_addrs", &self.dns_ip_addrs);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnshareDirectoryInput {
     /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
     #[doc(hidden)]
@@ -11428,18 +11486,10 @@ impl UnshareDirectoryInput {
         self.unshare_target.as_ref()
     }
 }
-impl std::fmt::Debug for UnshareDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnshareDirectoryInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("unshare_target", &self.unshare_target);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSchemaExtensionInput {
     /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
     #[doc(hidden)]
@@ -11470,19 +11520,6 @@ impl StartSchemaExtensionInput {
     /// <p>A description of the schema extension.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for StartSchemaExtensionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSchemaExtensionInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field(
-            "create_snapshot_before_schema_extension",
-            &self.create_snapshot_before_schema_extension,
-        );
-        formatter.field("ldif_content", &self.ldif_content);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 
@@ -11534,7 +11571,7 @@ impl std::fmt::Debug for ShareDirectoryInput {
 
 /// <p>An object representing the inputs for the <code>RestoreFromSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreFromSnapshotInput {
     /// <p>The identifier of the snapshot to restore from.</p>
     #[doc(hidden)]
@@ -11544,13 +11581,6 @@ impl RestoreFromSnapshotInput {
     /// <p>The identifier of the snapshot to restore from.</p>
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RestoreFromSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreFromSnapshotInput");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
     }
 }
 
@@ -11594,7 +11624,7 @@ impl std::fmt::Debug for ResetUserPasswordInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>Identifier (ID) of the directory from which to remove the tag.</p>
     #[doc(hidden)]
@@ -11613,18 +11643,10 @@ impl RemoveTagsFromResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveRegionInput {
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
     #[doc(hidden)]
@@ -11636,17 +11658,10 @@ impl RemoveRegionInput {
         self.directory_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveRegionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveRegionInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveIpRoutesInput {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
     #[doc(hidden)]
@@ -11665,18 +11680,10 @@ impl RemoveIpRoutesInput {
         self.cidr_ips.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveIpRoutesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveIpRoutesInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("cidr_ips", &self.cidr_ips);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectSharedDirectoryInput {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     #[doc(hidden)]
@@ -11688,17 +11695,10 @@ impl RejectSharedDirectoryInput {
         self.shared_directory_id.as_deref()
     }
 }
-impl std::fmt::Debug for RejectSharedDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectSharedDirectoryInput");
-        formatter.field("shared_directory_id", &self.shared_directory_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Registers a new event topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterEventTopicInput {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
     #[doc(hidden)]
@@ -11717,18 +11717,10 @@ impl RegisterEventTopicInput {
         self.topic_name.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterEventTopicInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterEventTopicInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("topic_name", &self.topic_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterCertificateInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -11763,20 +11755,10 @@ impl RegisterCertificateInput {
         self.client_cert_auth_settings.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterCertificateInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("certificate_data", &self.certificate_data);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("client_cert_auth_settings", &self.client_cert_auth_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
     #[doc(hidden)]
@@ -11802,19 +11784,10 @@ impl ListTagsForResourceInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSchemaExtensionsInput {
     /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
     #[doc(hidden)]
@@ -11840,19 +11813,10 @@ impl ListSchemaExtensionsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListSchemaExtensionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSchemaExtensionsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLogSubscriptionsInput {
     /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
     #[doc(hidden)]
@@ -11878,19 +11842,10 @@ impl ListLogSubscriptionsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListLogSubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLogSubscriptionsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIpRoutesInput {
     /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
     #[doc(hidden)]
@@ -11916,19 +11871,10 @@ impl ListIpRoutesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListIpRoutesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIpRoutesInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCertificatesInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -11954,19 +11900,10 @@ impl ListCertificatesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListCertificatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCertificatesInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>GetSnapshotLimits</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSnapshotLimitsInput {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
     #[doc(hidden)]
@@ -11978,24 +11915,11 @@ impl GetSnapshotLimitsInput {
         self.directory_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSnapshotLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSnapshotLimitsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>GetDirectoryLimits</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDirectoryLimitsInput {}
-impl std::fmt::Debug for GetDirectoryLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDirectoryLimitsInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>EnableSso</code> operation.</p>
 #[non_exhaustive]
@@ -12039,7 +11963,7 @@ impl std::fmt::Debug for EnableSsoInput {
 
 /// <p>Contains the inputs for the <code>EnableRadius</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableRadiusInput {
     /// <p>The identifier of the directory for which to enable MFA.</p>
     #[doc(hidden)]
@@ -12058,18 +11982,10 @@ impl EnableRadiusInput {
         self.radius_settings.as_ref()
     }
 }
-impl std::fmt::Debug for EnableRadiusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableRadiusInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("radius_settings", &self.radius_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableLdapsInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -12088,18 +12004,10 @@ impl EnableLdapsInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for EnableLdapsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableLdapsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableClientAuthenticationInput {
     /// <p>The identifier of the specified directory. </p>
     #[doc(hidden)]
@@ -12116,14 +12024,6 @@ impl EnableClientAuthenticationInput {
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for EnableClientAuthenticationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableClientAuthenticationInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 
@@ -12169,7 +12069,7 @@ impl std::fmt::Debug for DisableSsoInput {
 
 /// <p>Contains the inputs for the <code>DisableRadius</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableRadiusInput {
     /// <p>The identifier of the directory for which to disable MFA.</p>
     #[doc(hidden)]
@@ -12181,17 +12081,10 @@ impl DisableRadiusInput {
         self.directory_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableRadiusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableRadiusInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableLdapsInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -12210,18 +12103,10 @@ impl DisableLdapsInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for DisableLdapsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableLdapsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableClientAuthenticationInput {
     /// <p>The identifier of the directory </p>
     #[doc(hidden)]
@@ -12240,18 +12125,10 @@ impl DisableClientAuthenticationInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for DisableClientAuthenticationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableClientAuthenticationInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 /// <p>Describes the trust relationships for a particular Managed Microsoft AD directory. If no input parameters are provided, such as directory ID or trust ID, this request describes all the trust relationships.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustsInput {
     /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
     #[doc(hidden)]
@@ -12286,20 +12163,10 @@ impl DescribeTrustsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeTrustsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("trust_ids", &self.trust_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>DescribeSnapshots</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSnapshotsInput {
     /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
     #[doc(hidden)]
@@ -12332,20 +12199,10 @@ impl DescribeSnapshotsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSnapshotsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("snapshot_ids", &self.snapshot_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesInput {
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
     #[doc(hidden)]
@@ -12378,20 +12235,10 @@ impl DescribeSharedDirectoriesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeSharedDirectoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSharedDirectoriesInput");
-        formatter.field("owner_directory_id", &self.owner_directory_id);
-        formatter.field("shared_directory_ids", &self.shared_directory_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSettingsInput {
     /// <p>The identifier of the directory for which to retrieve information.</p>
     #[doc(hidden)]
@@ -12417,19 +12264,10 @@ impl DescribeSettingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSettingsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRegionsInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -12455,19 +12293,10 @@ impl DescribeRegionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRegionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRegionsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("region_name", &self.region_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLdapsSettingsInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -12500,20 +12329,10 @@ impl DescribeLdapsSettingsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeLdapsSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLdapsSettingsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Describes event topics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventTopicsInput {
     /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
     #[doc(hidden)]
@@ -12534,18 +12353,10 @@ impl DescribeEventTopicsInput {
         self.topic_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventTopicsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventTopicsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("topic_names", &self.topic_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainControllersInput {
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
     #[doc(hidden)]
@@ -12578,20 +12389,10 @@ impl DescribeDomainControllersInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeDomainControllersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainControllersInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("domain_controller_ids", &self.domain_controller_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>DescribeDirectories</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectoriesInput {
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
@@ -12619,19 +12420,10 @@ impl DescribeDirectoriesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeDirectoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectoriesInput");
-        formatter.field("directory_ids", &self.directory_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Describes a conditional forwarder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConditionalForwardersInput {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
     #[doc(hidden)]
@@ -12650,18 +12442,10 @@ impl DescribeConditionalForwardersInput {
         self.remote_domain_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConditionalForwardersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConditionalForwardersInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("remote_domain_names", &self.remote_domain_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClientAuthenticationSettingsInput {
     /// <p>The identifier of the directory for which to retrieve information.</p>
     #[doc(hidden)]
@@ -12694,20 +12478,10 @@ impl DescribeClientAuthenticationSettingsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeClientAuthenticationSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClientAuthenticationSettingsInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCertificateInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -12726,18 +12500,10 @@ impl DescribeCertificateInput {
         self.certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCertificateInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Removes the specified directory as a publisher to the specified Amazon SNS topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterEventTopicInput {
     /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
     #[doc(hidden)]
@@ -12756,18 +12522,10 @@ impl DeregisterEventTopicInput {
         self.topic_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterEventTopicInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterEventTopicInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("topic_name", &self.topic_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterCertificateInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -12786,18 +12544,10 @@ impl DeregisterCertificateInput {
         self.certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterCertificateInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes the local side of an existing trust relationship between the Managed Microsoft AD directory and the external domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrustInput {
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
     #[doc(hidden)]
@@ -12816,21 +12566,10 @@ impl DeleteTrustInput {
         self.delete_associated_conditional_forwarder
     }
 }
-impl std::fmt::Debug for DeleteTrustInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrustInput");
-        formatter.field("trust_id", &self.trust_id);
-        formatter.field(
-            "delete_associated_conditional_forwarder",
-            &self.delete_associated_conditional_forwarder,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>DeleteSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSnapshotInput {
     /// <p>The identifier of the directory snapshot to be deleted.</p>
     #[doc(hidden)]
@@ -12842,17 +12581,10 @@ impl DeleteSnapshotInput {
         self.snapshot_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSnapshotInput");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLogSubscriptionInput {
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
     #[doc(hidden)]
@@ -12864,17 +12596,10 @@ impl DeleteLogSubscriptionInput {
         self.directory_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLogSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLogSubscriptionInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>DeleteDirectory</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectoryInput {
     /// <p>The identifier of the directory to delete.</p>
     #[doc(hidden)]
@@ -12886,17 +12611,10 @@ impl DeleteDirectoryInput {
         self.directory_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectoryInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes a conditional forwarder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConditionalForwarderInput {
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
     #[doc(hidden)]
@@ -12913,14 +12631,6 @@ impl DeleteConditionalForwarderInput {
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     pub fn remote_domain_name(&self) -> std::option::Option<&str> {
         self.remote_domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteConditionalForwarderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConditionalForwarderInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("remote_domain_name", &self.remote_domain_name);
-        formatter.finish()
     }
 }
 
@@ -13000,7 +12710,7 @@ impl std::fmt::Debug for CreateTrustInput {
 
 /// <p>Contains the inputs for the <code>CreateSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotInput {
     /// <p>The identifier of the directory of which to take a snapshot.</p>
     #[doc(hidden)]
@@ -13017,14 +12727,6 @@ impl CreateSnapshotInput {
     /// <p>The descriptive name to apply to the snapshot.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -13102,7 +12804,7 @@ impl std::fmt::Debug for CreateMicrosoftAdInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLogSubscriptionInput {
     /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
     #[doc(hidden)]
@@ -13119,14 +12821,6 @@ impl CreateLogSubscriptionInput {
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateLogSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLogSubscriptionInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 
@@ -13228,7 +12922,7 @@ impl std::fmt::Debug for CreateDirectoryInput {
 
 /// <p>Initiates the creation of a conditional forwarder for your Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConditionalForwarderInput {
     /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
     #[doc(hidden)]
@@ -13252,15 +12946,6 @@ impl CreateConditionalForwarderInput {
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ip_addrs.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateConditionalForwarderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConditionalForwarderInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("remote_domain_name", &self.remote_domain_name);
-        formatter.field("dns_ip_addrs", &self.dns_ip_addrs);
-        formatter.finish()
     }
 }
 
@@ -13323,7 +13008,7 @@ impl std::fmt::Debug for CreateComputerInput {
 
 /// <p>Contains the inputs for the <code>CreateAlias</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>The identifier of the directory for which to create the alias.</p>
     #[doc(hidden)]
@@ -13342,14 +13027,6 @@ impl CreateAliasInput {
     /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("alias", &self.alias);
-        formatter.finish()
     }
 }
 
@@ -13425,7 +13102,7 @@ impl std::fmt::Debug for ConnectDirectoryInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelSchemaExtensionInput {
     /// <p>The identifier of the directory whose schema extension will be canceled.</p>
     #[doc(hidden)]
@@ -13444,18 +13121,10 @@ impl CancelSchemaExtensionInput {
         self.schema_extension_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelSchemaExtensionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelSchemaExtensionInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("schema_extension_id", &self.schema_extension_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceInput {
     /// <p>Identifier (ID) for the directory to which to add the tag.</p>
     #[doc(hidden)]
@@ -13474,18 +13143,10 @@ impl AddTagsToResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsToResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddRegionInput {
     /// <p>The identifier of the directory to which you want to add Region replication.</p>
     #[doc(hidden)]
@@ -13511,19 +13172,10 @@ impl AddRegionInput {
         self.vpc_settings.as_ref()
     }
 }
-impl std::fmt::Debug for AddRegionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddRegionInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("region_name", &self.region_name);
-        formatter.field("vpc_settings", &self.vpc_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddIpRoutesInput {
     /// <p>Identifier (ID) of the directory to which to add the address block.</p>
     #[doc(hidden)]
@@ -13601,22 +13253,10 @@ impl AddIpRoutesInput {
         self.update_security_group_for_directory_controllers
     }
 }
-impl std::fmt::Debug for AddIpRoutesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddIpRoutesInput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("ip_routes", &self.ip_routes);
-        formatter.field(
-            "update_security_group_for_directory_controllers",
-            &self.update_security_group_for_directory_controllers,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptSharedDirectoryInput {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     #[doc(hidden)]
@@ -13626,12 +13266,5 @@ impl AcceptSharedDirectoryInput {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptSharedDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptSharedDirectoryInput");
-        formatter.field("shared_directory_id", &self.shared_directory_id);
-        formatter.finish()
     }
 }

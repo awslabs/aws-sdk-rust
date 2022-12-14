@@ -4504,7 +4504,7 @@ impl PutFeedbackInput {
 pub mod query_assistant_input {
 
     /// A builder for [`QueryAssistantInput`](crate::input::QueryAssistantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
         pub(crate) query_text: std::option::Option<std::string::String>,
@@ -4563,6 +4563,16 @@ pub mod query_assistant_input {
                 next_token: self.next_token,
                 max_results: self.max_results,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("assistant_id", &self.assistant_id);
+            formatter.field("query_text", &"*** Sensitive Data Redacted ***");
+            formatter.field("next_token", &self.next_token);
+            formatter.field("max_results", &self.max_results);
+            formatter.finish()
         }
     }
 }
@@ -6337,7 +6347,7 @@ impl UpdateKnowledgeBaseTemplateUriInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6356,18 +6366,10 @@ impl UpdateKnowledgeBaseTemplateUriInput {
         self.template_uri.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateKnowledgeBaseTemplateUriInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateKnowledgeBaseTemplateUriInput");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("template_uri", &self.template_uri);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartContentUploadInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6386,18 +6388,10 @@ impl StartContentUploadInput {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for StartContentUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartContentUploadInput");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchContentInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -6430,20 +6424,10 @@ impl SearchContentInput {
         self.search_expression.as_ref()
     }
 }
-impl std::fmt::Debug for SearchContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchContentInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("search_expression", &self.search_expression);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6455,17 +6439,10 @@ impl RemoveKnowledgeBaseTemplateUriInput {
         self.knowledge_base_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveKnowledgeBaseTemplateUriInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveKnowledgeBaseTemplateUriInput");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKnowledgeBasesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -6484,18 +6461,10 @@ impl ListKnowledgeBasesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListKnowledgeBasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKnowledgeBasesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKnowledgeBaseInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -6565,27 +6534,10 @@ impl CreateKnowledgeBaseInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateKnowledgeBaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKnowledgeBaseInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("name", &self.name);
-        formatter.field("knowledge_base_type", &self.knowledge_base_type);
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("rendering_configuration", &self.rendering_configuration);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKnowledgeBaseInput {
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6597,17 +6549,10 @@ impl DeleteKnowledgeBaseInput {
         self.knowledge_base_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteKnowledgeBaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteKnowledgeBaseInput");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKnowledgeBaseInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6619,17 +6564,10 @@ impl GetKnowledgeBaseInput {
         self.knowledge_base_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetKnowledgeBaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKnowledgeBaseInput");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContentSummaryInput {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6648,18 +6586,10 @@ impl GetContentSummaryInput {
         self.knowledge_base_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetContentSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContentSummaryInput");
-        formatter.field("content_id", &self.content_id);
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContentsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -6685,19 +6615,10 @@ impl ListContentsInput {
         self.knowledge_base_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListContentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContentsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6766,24 +6687,10 @@ impl CreateContentInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContentInput");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("name", &self.name);
-        formatter.field("title", &self.title);
-        formatter.field("override_link_out_uri", &self.override_link_out_uri);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6802,18 +6709,10 @@ impl DeleteContentInput {
         self.content_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContentInput");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("content_id", &self.content_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
     #[doc(hidden)]
@@ -6878,27 +6777,10 @@ impl UpdateContentInput {
         self.upload_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContentInput");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("content_id", &self.content_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("title", &self.title);
-        formatter.field("override_link_out_uri", &self.override_link_out_uri);
-        formatter.field(
-            "remove_override_link_out_uri",
-            &self.remove_override_link_out_uri,
-        );
-        formatter.field("metadata", &self.metadata);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContentInput {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -6917,18 +6799,10 @@ impl GetContentInput {
         self.knowledge_base_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContentInput");
-        formatter.field("content_id", &self.content_id);
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchSessionsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -6959,16 +6833,6 @@ impl SearchSessionsInput {
     /// <p>The search expression to filter results.</p>
     pub fn search_expression(&self) -> std::option::Option<&crate::model::SearchExpression> {
         self.search_expression.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchSessionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("search_expression", &self.search_expression);
-        formatter.finish()
     }
 }
 
@@ -7020,7 +6884,7 @@ impl std::fmt::Debug for QueryAssistantInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFeedbackInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7053,20 +6917,10 @@ impl PutFeedbackInput {
         self.feedback.as_ref()
     }
 }
-impl std::fmt::Debug for PutFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFeedbackInput");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("feedback", &self.feedback);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7092,19 +6946,10 @@ impl NotifyRecommendationsReceivedInput {
         self.recommendation_ids.as_deref()
     }
 }
-impl std::fmt::Debug for NotifyRecommendationsReceivedInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyRecommendationsReceivedInput");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("recommendation_ids", &self.recommendation_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationsInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7137,20 +6982,10 @@ impl GetRecommendationsInput {
         self.wait_time_seconds
     }
 }
-impl std::fmt::Debug for GetRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationsInput");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("wait_time_seconds", &self.wait_time_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssistantsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -7169,18 +7004,10 @@ impl ListAssistantsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssistantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssistantsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssistantInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -7234,25 +7061,10 @@ impl CreateAssistantInput {
         self.server_side_encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAssistantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssistantInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7264,17 +7076,10 @@ impl DeleteAssistantInput {
         self.assistant_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssistantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssistantInput");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7286,17 +7091,10 @@ impl GetAssistantInput {
         self.assistant_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssistantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssistantInput");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSessionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -7340,21 +7138,10 @@ impl CreateSessionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSessionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7373,18 +7160,10 @@ impl GetSessionInput {
         self.session_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionInput");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssistantAssociationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -7410,19 +7189,10 @@ impl ListAssistantAssociationsInput {
         self.assistant_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssistantAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssistantAssociationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssistantAssociationInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7466,21 +7236,10 @@ impl CreateAssistantAssociationInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAssistantAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssistantAssociationInput");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("association_type", &self.association_type);
-        formatter.field("association", &self.association);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7499,18 +7258,10 @@ impl DeleteAssistantAssociationInput {
         self.assistant_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssistantAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssistantAssociationInput");
-        formatter.field("assistant_association_id", &self.assistant_association_id);
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
@@ -7529,18 +7280,10 @@ impl GetAssistantAssociationInput {
         self.assistant_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssistantAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssistantAssociationInput");
-        formatter.field("assistant_association_id", &self.assistant_association_id);
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -7559,18 +7302,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -7593,18 +7328,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -7614,12 +7341,5 @@ impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

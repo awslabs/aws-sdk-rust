@@ -4751,7 +4751,7 @@ impl VoteOnProposalInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoteOnProposalInput {
     /// <p> The unique identifier of the network. </p>
     #[doc(hidden)]
@@ -4784,20 +4784,10 @@ impl VoteOnProposalInput {
         self.vote.as_ref()
     }
 }
-impl std::fmt::Debug for VoteOnProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoteOnProposalInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field("voter_member_id", &self.voter_member_id);
-        formatter.field("vote", &self.vote);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
     #[doc(hidden)]
@@ -4835,23 +4825,10 @@ impl UpdateNodeInput {
         self.log_publishing_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNodeInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("node_id", &self.node_id);
-        formatter.field(
-            "log_publishing_configuration",
-            &self.log_publishing_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMemberInput {
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
     #[doc(hidden)]
@@ -4880,22 +4857,10 @@ impl UpdateMemberInput {
         self.log_publishing_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMemberInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field(
-            "log_publishing_configuration",
-            &self.log_publishing_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
@@ -4914,18 +4879,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
@@ -4948,18 +4905,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectInvitationInput {
     /// <p>The unique identifier of the invitation to reject.</p>
     #[doc(hidden)]
@@ -4971,17 +4920,10 @@ impl RejectInvitationInput {
         self.invitation_id.as_deref()
     }
 }
-impl std::fmt::Debug for RejectInvitationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectInvitationInput");
-        formatter.field("invitation_id", &self.invitation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
@@ -4993,17 +4935,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProposalVotesInput {
     /// <p> The unique identifier of the network. </p>
     #[doc(hidden)]
@@ -5036,20 +4971,10 @@ impl ListProposalVotesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProposalVotesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProposalVotesInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProposalsInput {
     /// <p> The unique identifier of the network. </p>
     #[doc(hidden)]
@@ -5075,19 +5000,10 @@ impl ListProposalsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProposalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProposalsInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNodesInput {
     /// <p>The unique identifier of the network for which to list nodes.</p>
     #[doc(hidden)]
@@ -5129,21 +5045,10 @@ impl ListNodesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNodesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNodesInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("status", &self.status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworksInput {
     /// <p>The name of the network.</p>
     #[doc(hidden)]
@@ -5185,21 +5090,10 @@ impl ListNetworksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNetworksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworksInput");
-        formatter.field("name", &self.name);
-        formatter.field("framework", &self.framework);
-        formatter.field("status", &self.status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMembersInput {
     /// <p>The unique identifier of the network for which to list members.</p>
     #[doc(hidden)]
@@ -5246,22 +5140,10 @@ impl ListMembersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMembersInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("is_owned", &self.is_owned);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInvitationsInput {
     /// <p>The maximum number of invitations to return.</p>
     #[doc(hidden)]
@@ -5280,18 +5162,10 @@ impl ListInvitationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInvitationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInvitationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProposalInput {
     /// <p>The unique identifier of the network for which the proposal is made.</p>
     #[doc(hidden)]
@@ -5310,18 +5184,10 @@ impl GetProposalInput {
         self.proposal_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProposalInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
     #[doc(hidden)]
@@ -5349,19 +5215,10 @@ impl GetNodeInput {
         self.node_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNodeInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("node_id", &self.node_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkInput {
     /// <p>The unique identifier of the network to get information about.</p>
     #[doc(hidden)]
@@ -5373,17 +5230,10 @@ impl GetNetworkInput {
         self.network_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMemberInput {
     /// <p>The unique identifier of the network to which the member belongs.</p>
     #[doc(hidden)]
@@ -5402,18 +5252,10 @@ impl GetMemberInput {
         self.member_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMemberInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
@@ -5453,19 +5295,10 @@ impl DeleteNodeInput {
         self.node_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNodeInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("node_id", &self.node_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMemberInput {
     /// <p>The unique identifier of the network from which the member is removed.</p>
     #[doc(hidden)]
@@ -5484,18 +5317,10 @@ impl DeleteMemberInput {
         self.member_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMemberInput");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProposalInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
     #[doc(hidden)]
@@ -5550,22 +5375,10 @@ impl CreateProposalInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProposalInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("actions", &self.actions);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNodeInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
     #[doc(hidden)]
@@ -5627,21 +5440,10 @@ impl CreateNodeInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNodeInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("node_configuration", &self.node_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNetworkInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
     #[doc(hidden)]
@@ -5719,25 +5521,10 @@ impl CreateNetworkInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNetworkInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("framework", &self.framework);
-        formatter.field("framework_version", &self.framework_version);
-        formatter.field("framework_configuration", &self.framework_configuration);
-        formatter.field("voting_policy", &self.voting_policy);
-        formatter.field("member_configuration", &self.member_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMemberInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
     #[doc(hidden)]
@@ -5768,15 +5555,5 @@ impl CreateMemberInput {
     /// <p>Member configuration parameters.</p>
     pub fn member_configuration(&self) -> std::option::Option<&crate::model::MemberConfiguration> {
         self.member_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMemberInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("invitation_id", &self.invitation_id);
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_configuration", &self.member_configuration);
-        formatter.finish()
     }
 }

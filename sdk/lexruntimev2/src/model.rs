@@ -2,7 +2,7 @@
 
 /// <p>An intent that Amazon Lex V2 determined might satisfy the user's utterance. The intents are ordered by the confidence score. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Interpretation {
     /// <p>Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     #[doc(hidden)]
@@ -28,15 +28,6 @@ impl Interpretation {
     /// <p>A list of intents that might satisfy the user's utterance. The intents are ordered by the confidence score.</p>
     pub fn intent(&self) -> std::option::Option<&crate::model::Intent> {
         self.intent.as_ref()
-    }
-}
-impl std::fmt::Debug for Interpretation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Interpretation");
-        formatter.field("nlu_confidence", &self.nlu_confidence);
-        formatter.field("sentiment_response", &self.sentiment_response);
-        formatter.field("intent", &self.intent);
-        formatter.finish()
     }
 }
 /// See [`Interpretation`](crate::model::Interpretation).
@@ -107,7 +98,7 @@ impl Interpretation {
 
 /// <p>The current intent that Amazon Lex V2 is attempting to fulfill.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Intent {
     /// <p>The name of the intent.</p>
     #[doc(hidden)]
@@ -142,16 +133,6 @@ impl Intent {
     /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
     pub fn confirmation_state(&self) -> std::option::Option<&crate::model::ConfirmationState> {
         self.confirmation_state.as_ref()
-    }
-}
-impl std::fmt::Debug for Intent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Intent");
-        formatter.field("name", &self.name);
-        formatter.field("slots", &self.slots);
-        formatter.field("state", &self.state);
-        formatter.field("confirmation_state", &self.confirmation_state);
-        formatter.finish()
     }
 }
 /// See [`Intent`](crate::model::Intent).
@@ -455,7 +436,7 @@ impl AsRef<str> for IntentState {
 
 /// <p>A value that Amazon Lex V2 uses to fulfill an intent. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Slot {
     /// <p>The current value of the slot.</p>
     #[doc(hidden)]
@@ -490,16 +471,6 @@ impl Slot {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Slot>>
     {
         self.sub_slots.as_ref()
-    }
-}
-impl std::fmt::Debug for Slot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Slot");
-        formatter.field("value", &self.value);
-        formatter.field("shape", &self.shape);
-        formatter.field("values", &self.values);
-        formatter.field("sub_slots", &self.sub_slots);
-        formatter.finish()
     }
 }
 /// See [`Slot`](crate::model::Slot).
@@ -694,7 +665,7 @@ impl AsRef<str> for Shape {
 
 /// <p>The value of a slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Value {
     /// <p>The text of the utterance from the user that was entered for the slot.</p>
     #[doc(hidden)]
@@ -718,15 +689,6 @@ impl Value {
     /// <p>A list of additional values that have been recognized for the slot.</p>
     pub fn resolved_values(&self) -> std::option::Option<&[std::string::String]> {
         self.resolved_values.as_deref()
-    }
-}
-impl std::fmt::Debug for Value {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Value");
-        formatter.field("original_value", &self.original_value);
-        formatter.field("interpreted_value", &self.interpreted_value);
-        formatter.field("resolved_values", &self.resolved_values);
-        formatter.finish()
     }
 }
 /// See [`Value`](crate::model::Value).
@@ -805,7 +767,7 @@ impl Value {
 /// <p>Provides information about the sentiment expressed in a user's response in a conversation. Sentiments are determined using Amazon Comprehend. Sentiments are only returned if they are enabled for the bot.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html"> Determine Sentiment </a> in the <i>Amazon Comprehend developer guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentResponse {
     /// <p>The overall sentiment expressed in the user's response. This is the sentiment most likely expressed by the user based on the analysis by Amazon Comprehend.</p>
     #[doc(hidden)]
@@ -822,14 +784,6 @@ impl SentimentResponse {
     /// <p>The individual sentiment responses for the utterance.</p>
     pub fn sentiment_score(&self) -> std::option::Option<&crate::model::SentimentScore> {
         self.sentiment_score.as_ref()
-    }
-}
-impl std::fmt::Debug for SentimentResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentResponse");
-        formatter.field("sentiment", &self.sentiment);
-        formatter.field("sentiment_score", &self.sentiment_score);
-        formatter.finish()
     }
 }
 /// See [`SentimentResponse`](crate::model::SentimentResponse).
@@ -886,7 +840,7 @@ impl SentimentResponse {
 
 /// <p>The individual sentiment responses for the utterance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     #[doc(hidden)]
@@ -917,16 +871,6 @@ impl SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub fn mixed(&self) -> f64 {
         self.mixed
-    }
-}
-impl std::fmt::Debug for SentimentScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentScore");
-        formatter.field("positive", &self.positive);
-        formatter.field("negative", &self.negative);
-        formatter.field("neutral", &self.neutral);
-        formatter.field("mixed", &self.mixed);
-        formatter.finish()
     }
 }
 /// See [`SentimentScore`](crate::model::SentimentScore).
@@ -1101,7 +1045,7 @@ impl AsRef<str> for SentimentType {
 
 /// <p>Provides a score that indicates the confidence that Amazon Lex V2 has that an intent is the one that satisfies the user's intent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfidenceScore {
     /// <p>A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
     #[doc(hidden)]
@@ -1111,13 +1055,6 @@ impl ConfidenceScore {
     /// <p>A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
     pub fn score(&self) -> f64 {
         self.score
-    }
-}
-impl std::fmt::Debug for ConfidenceScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfidenceScore");
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`ConfidenceScore`](crate::model::ConfidenceScore).
@@ -1156,7 +1093,7 @@ impl ConfidenceScore {
 
 /// <p>The state of the user's session with Amazon Lex V2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionState {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
     #[doc(hidden)]
@@ -1205,18 +1142,6 @@ impl SessionState {
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
     pub fn runtime_hints(&self) -> std::option::Option<&crate::model::RuntimeHints> {
         self.runtime_hints.as_ref()
-    }
-}
-impl std::fmt::Debug for SessionState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionState");
-        formatter.field("dialog_action", &self.dialog_action);
-        formatter.field("intent", &self.intent);
-        formatter.field("active_contexts", &self.active_contexts);
-        formatter.field("session_attributes", &self.session_attributes);
-        formatter.field("originating_request_id", &self.originating_request_id);
-        formatter.field("runtime_hints", &self.runtime_hints);
-        formatter.finish()
     }
 }
 /// See [`SessionState`](crate::model::SessionState).
@@ -1352,7 +1277,7 @@ impl SessionState {
 /// <p>Before you can use runtime hints with an existing bot, you must first rebuild the bot.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using runtime hints to improve recognition of slot values</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimeHints {
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
     /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
@@ -1378,13 +1303,6 @@ impl RuntimeHints {
         >,
     > {
         self.slot_hints.as_ref()
-    }
-}
-impl std::fmt::Debug for RuntimeHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuntimeHints");
-        formatter.field("slot_hints", &self.slot_hints);
-        formatter.finish()
     }
 }
 /// See [`RuntimeHints`](crate::model::RuntimeHints).
@@ -1453,7 +1371,7 @@ impl RuntimeHints {
 
 /// <p>Provides an array of phrases that should be given preference when resolving values for a slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimeHintDetails {
     /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
     #[doc(hidden)]
@@ -1476,14 +1394,6 @@ impl RuntimeHintDetails {
         &std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
     > {
         self.sub_slot_hints.as_ref()
-    }
-}
-impl std::fmt::Debug for RuntimeHintDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuntimeHintDetails");
-        formatter.field("runtime_hint_values", &self.runtime_hint_values);
-        formatter.field("sub_slot_hints", &self.sub_slot_hints);
-        formatter.finish()
     }
 }
 /// See [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
@@ -1561,7 +1471,7 @@ impl RuntimeHintDetails {
 
 /// <p>Provides the phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimeHintValue {
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
     #[doc(hidden)]
@@ -1571,13 +1481,6 @@ impl RuntimeHintValue {
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
     pub fn phrase(&self) -> std::option::Option<&str> {
         self.phrase.as_deref()
-    }
-}
-impl std::fmt::Debug for RuntimeHintValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuntimeHintValue");
-        formatter.field("phrase", &self.phrase);
-        formatter.finish()
     }
 }
 /// See [`RuntimeHintValue`](crate::model::RuntimeHintValue).
@@ -1617,7 +1520,7 @@ impl RuntimeHintValue {
 /// <p>Contains information about the contexts that a user is using in a session. You can configure Amazon Lex V2 to set a context when an intent is fulfilled, or you can set a context using the , , or operations.</p>
 /// <p>Use a context to indicate to Amazon Lex V2 intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
     #[doc(hidden)]
@@ -1647,15 +1550,6 @@ impl ActiveContext {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for ActiveContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveContext");
-        formatter.field("name", &self.name);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("context_attributes", &self.context_attributes);
-        formatter.finish()
     }
 }
 /// See [`ActiveContext`](crate::model::ActiveContext).
@@ -1740,7 +1634,7 @@ impl ActiveContext {
 
 /// <p>The time that a context is active. You can specify the time to live in seconds or in conversation turns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveContextTimeToLive {
     /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
     #[doc(hidden)]
@@ -1757,14 +1651,6 @@ impl ActiveContextTimeToLive {
     /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
     pub fn turns_to_live(&self) -> std::option::Option<i32> {
         self.turns_to_live
-    }
-}
-impl std::fmt::Debug for ActiveContextTimeToLive {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveContextTimeToLive");
-        formatter.field("time_to_live_in_seconds", &self.time_to_live_in_seconds);
-        formatter.field("turns_to_live", &self.turns_to_live);
-        formatter.finish()
     }
 }
 /// See [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
@@ -1815,7 +1701,7 @@ impl ActiveContextTimeToLive {
 
 /// <p>The next action that Amazon Lex V2 should take.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DialogAction {
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
@@ -1870,16 +1756,6 @@ impl DialogAction {
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
     pub fn sub_slot_to_elicit(&self) -> std::option::Option<&crate::model::ElicitSubSlot> {
         self.sub_slot_to_elicit.as_ref()
-    }
-}
-impl std::fmt::Debug for DialogAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DialogAction");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("slot_to_elicit", &self.slot_to_elicit);
-        formatter.field("slot_elicitation_style", &self.slot_elicitation_style);
-        formatter.field("sub_slot_to_elicit", &self.sub_slot_to_elicit);
-        formatter.finish()
     }
 }
 /// See [`DialogAction`](crate::model::DialogAction).
@@ -1990,7 +1866,7 @@ impl DialogAction {
 
 /// <p>The specific constituent sub slot of the composite slot to elicit in dialog action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElicitSubSlot {
     /// <p>The name of the slot that should be elicited from the user.</p>
     #[doc(hidden)]
@@ -2007,14 +1883,6 @@ impl ElicitSubSlot {
     /// <p>The field is not supported.</p>
     pub fn sub_slot_to_elicit(&self) -> std::option::Option<&crate::model::ElicitSubSlot> {
         self.sub_slot_to_elicit.as_deref()
-    }
-}
-impl std::fmt::Debug for ElicitSubSlot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElicitSubSlot");
-        formatter.field("name", &self.name);
-        formatter.field("sub_slot_to_elicit", &self.sub_slot_to_elicit);
-        formatter.finish()
     }
 }
 /// See [`ElicitSubSlot`](crate::model::ElicitSubSlot).
@@ -2325,7 +2193,7 @@ impl std::fmt::Debug for Message {
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<crate::model::MessageContentType>,
@@ -2379,6 +2247,15 @@ pub mod message {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("content_type", &self.content_type);
+            formatter.field("image_response_card", &self.image_response_card);
+            formatter.finish()
+        }
+    }
 }
 impl Message {
     /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
@@ -2390,7 +2267,7 @@ impl Message {
 /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
 /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
     #[doc(hidden)]
@@ -2421,16 +2298,6 @@ impl ImageResponseCard {
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
     pub fn buttons(&self) -> std::option::Option<&[crate::model::Button]> {
         self.buttons.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageResponseCard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageResponseCard");
-        formatter.field("title", &self.title);
-        formatter.field("subtitle", &self.subtitle);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("buttons", &self.buttons);
-        formatter.finish()
     }
 }
 /// See [`ImageResponseCard`](crate::model::ImageResponseCard).
@@ -2514,7 +2381,7 @@ impl ImageResponseCard {
 
 /// <p>A button that appears on a response card show to the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Button {
     /// <p>The text that is displayed on the button.</p>
     #[doc(hidden)]
@@ -2531,14 +2398,6 @@ impl Button {
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Button {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Button");
-        formatter.field("text", &self.text);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Button`](crate::model::Button).

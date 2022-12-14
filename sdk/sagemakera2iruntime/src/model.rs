@@ -2,7 +2,7 @@
 
 /// <p>Attributes of the data specified by the customer. Use these to describe the data to be labeled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopDataAttributes {
     /// <p>Declares that your content is free of personally identifiable information or adult content.</p>
     /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
@@ -14,13 +14,6 @@ impl HumanLoopDataAttributes {
     /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
     pub fn content_classifiers(&self) -> std::option::Option<&[crate::model::ContentClassifier]> {
         self.content_classifiers.as_deref()
-    }
-}
-impl std::fmt::Debug for HumanLoopDataAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopDataAttributes");
-        formatter.field("content_classifiers", &self.content_classifiers);
-        formatter.finish()
     }
 }
 /// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
@@ -170,7 +163,7 @@ impl AsRef<str> for ContentClassifier {
 
 /// <p>An object containing the human loop input in JSON format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopInput {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
     #[doc(hidden)]
@@ -180,13 +173,6 @@ impl HumanLoopInput {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
     pub fn input_content(&self) -> std::option::Option<&str> {
         self.input_content.as_deref()
-    }
-}
-impl std::fmt::Debug for HumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopInput");
-        formatter.field("input_content", &self.input_content);
-        formatter.finish()
     }
 }
 /// See [`HumanLoopInput`](crate::model::HumanLoopInput).
@@ -228,7 +214,7 @@ impl HumanLoopInput {
 
 /// <p>Summary information about the human loop.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopSummary {
     /// <p>The name of the human loop.</p>
     #[doc(hidden)]
@@ -266,17 +252,6 @@ impl HumanLoopSummary {
     /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
     pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
         self.flow_definition_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for HumanLoopSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopSummary");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.field("human_loop_status", &self.human_loop_status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("flow_definition_arn", &self.flow_definition_arn);
-        formatter.finish()
     }
 }
 /// See [`HumanLoopSummary`](crate::model::HumanLoopSummary).
@@ -573,7 +548,7 @@ impl AsRef<str> for SortOrder {
 
 /// <p>Information about where the human output will be stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopOutput {
     /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
     #[doc(hidden)]
@@ -583,13 +558,6 @@ impl HumanLoopOutput {
     /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
     pub fn output_s3_uri(&self) -> std::option::Option<&str> {
         self.output_s3_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for HumanLoopOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopOutput");
-        formatter.field("output_s3_uri", &self.output_s3_uri);
-        formatter.finish()
     }
 }
 /// See [`HumanLoopOutput`](crate::model::HumanLoopOutput).

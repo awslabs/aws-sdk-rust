@@ -2,7 +2,7 @@
 
 /// <p>Contains data about the state of a job execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionState {
     /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
     #[doc(hidden)]
@@ -30,15 +30,6 @@ impl JobExecutionState {
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub fn version_number(&self) -> i64 {
         self.version_number
-    }
-}
-impl std::fmt::Debug for JobExecutionState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionState");
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionState`](crate::model::JobExecutionState).
@@ -252,7 +243,7 @@ impl AsRef<str> for JobExecutionStatus {
 
 /// <p>Contains data about a job execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecution {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -336,26 +327,6 @@ impl JobExecution {
     /// <p>The content of the job document.</p>
     pub fn job_document(&self) -> std::option::Option<&str> {
         self.job_document.as_deref()
-    }
-}
-impl std::fmt::Debug for JobExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecution");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("queued_at", &self.queued_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field(
-            "approximate_seconds_before_timed_out",
-            &self.approximate_seconds_before_timed_out,
-        );
-        formatter.field("version_number", &self.version_number);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.field("job_document", &self.job_document);
-        formatter.finish()
     }
 }
 /// See [`JobExecution`](crate::model::JobExecution).
@@ -537,7 +508,7 @@ impl JobExecution {
 
 /// <p>Contains a subset of information about a job execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionSummary {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -582,18 +553,6 @@ impl JobExecutionSummary {
     /// <p>A number that identifies a particular job execution on a particular device.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
-    }
-}
-impl std::fmt::Debug for JobExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionSummary");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("queued_at", &self.queued_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.finish()
     }
 }
 /// See [`JobExecutionSummary`](crate::model::JobExecutionSummary).

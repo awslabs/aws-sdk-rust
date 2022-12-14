@@ -1238,7 +1238,7 @@ impl CreateBotVersionInput {
 pub mod create_export_input {
 
     /// A builder for [`CreateExportInput`](crate::input::CreateExportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_specification:
             std::option::Option<crate::model::ExportResourceSpecification>,
@@ -1298,6 +1298,15 @@ pub mod create_export_input {
                 file_format: self.file_format,
                 file_password: self.file_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_specification", &self.resource_specification);
+            formatter.field("file_format", &self.file_format);
+            formatter.field("file_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12335,7 +12344,7 @@ impl StartBotRecommendationInput {
 pub mod start_import_input {
 
     /// A builder for [`StartImportInput`](crate::input::StartImportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
         pub(crate) resource_specification:
@@ -12407,6 +12416,16 @@ pub mod start_import_input {
                 merge_strategy: self.merge_strategy,
                 file_password: self.file_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("import_id", &self.import_id);
+            formatter.field("resource_specification", &self.resource_specification);
+            formatter.field("merge_strategy", &self.merge_strategy);
+            formatter.field("file_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -14214,7 +14233,7 @@ impl UpdateBotRecommendationInput {
 pub mod update_export_input {
 
     /// A builder for [`UpdateExportInput`](crate::input::UpdateExportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
         pub(crate) file_password: std::option::Option<std::string::String>,
@@ -14252,6 +14271,14 @@ pub mod update_export_input {
                 export_id: self.export_id,
                 file_password: self.file_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("export_id", &self.export_id);
+            formatter.field("file_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -15838,7 +15865,7 @@ impl UpdateSlotTypeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSlotTypeInput {
     /// <p>The unique identifier of the slot type to update.</p>
     #[doc(hidden)]
@@ -15926,33 +15953,10 @@ impl UpdateSlotTypeInput {
         self.composite_slot_type_setting.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSlotTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSlotTypeInput");
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.field("slot_type_name", &self.slot_type_name);
-        formatter.field("description", &self.description);
-        formatter.field("slot_type_values", &self.slot_type_values);
-        formatter.field("value_selection_setting", &self.value_selection_setting);
-        formatter.field(
-            "parent_slot_type_signature",
-            &self.parent_slot_type_signature,
-        );
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("external_source_setting", &self.external_source_setting);
-        formatter.field(
-            "composite_slot_type_setting",
-            &self.composite_slot_type_setting,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSlotInput {
     /// <p>The unique identifier for the slot to update.</p>
     #[doc(hidden)]
@@ -16047,28 +16051,10 @@ impl UpdateSlotInput {
         self.sub_slot_setting.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSlotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSlotInput");
-        formatter.field("slot_id", &self.slot_id);
-        formatter.field("slot_name", &self.slot_name);
-        formatter.field("description", &self.description);
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.field("value_elicitation_setting", &self.value_elicitation_setting);
-        formatter.field("obfuscation_setting", &self.obfuscation_setting);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("intent_id", &self.intent_id);
-        formatter.field("multiple_values_setting", &self.multiple_values_setting);
-        formatter.field("sub_slot_setting", &self.sub_slot_setting);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     #[doc(hidden)]
@@ -16098,19 +16084,10 @@ impl UpdateResourcePolicyInput {
         self.expected_revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy", &self.policy);
-        formatter.field("expected_revision_id", &self.expected_revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntentInput {
     /// <p>The unique identifier of the intent to update.</p>
     #[doc(hidden)]
@@ -16242,32 +16219,6 @@ impl UpdateIntentInput {
         self.initial_response_setting.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIntentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntentInput");
-        formatter.field("intent_id", &self.intent_id);
-        formatter.field("intent_name", &self.intent_name);
-        formatter.field("description", &self.description);
-        formatter.field("parent_intent_signature", &self.parent_intent_signature);
-        formatter.field("sample_utterances", &self.sample_utterances);
-        formatter.field("dialog_code_hook", &self.dialog_code_hook);
-        formatter.field("fulfillment_code_hook", &self.fulfillment_code_hook);
-        formatter.field("slot_priorities", &self.slot_priorities);
-        formatter.field(
-            "intent_confirmation_setting",
-            &self.intent_confirmation_setting,
-        );
-        formatter.field("intent_closing_setting", &self.intent_closing_setting);
-        formatter.field("input_contexts", &self.input_contexts);
-        formatter.field("output_contexts", &self.output_contexts);
-        formatter.field("kendra_configuration", &self.kendra_configuration);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("initial_response_setting", &self.initial_response_setting);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -16301,7 +16252,7 @@ impl std::fmt::Debug for UpdateExportInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBotRecommendationInput {
     /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
     #[doc(hidden)]
@@ -16341,21 +16292,10 @@ impl UpdateBotRecommendationInput {
         self.encryption_setting.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBotRecommendationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBotRecommendationInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
-        formatter.field("encryption_setting", &self.encryption_setting);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
     #[doc(hidden)]
@@ -16402,25 +16342,10 @@ impl UpdateBotLocaleInput {
         self.voice_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBotLocaleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBotLocaleInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "nlu_intent_confidence_threshold",
-            &self.nlu_intent_confidence_threshold,
-        );
-        formatter.field("voice_settings", &self.voice_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBotAliasInput {
     /// <p>The unique identifier of the bot alias.</p>
     #[doc(hidden)]
@@ -16491,27 +16416,10 @@ impl UpdateBotAliasInput {
         self.bot_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBotAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBotAliasInput");
-        formatter.field("bot_alias_id", &self.bot_alias_id);
-        formatter.field("bot_alias_name", &self.bot_alias_name);
-        formatter.field("description", &self.description);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("bot_alias_locale_settings", &self.bot_alias_locale_settings);
-        formatter.field("conversation_log_settings", &self.conversation_log_settings);
-        formatter.field(
-            "sentiment_analysis_settings",
-            &self.sentiment_analysis_settings,
-        );
-        formatter.field("bot_id", &self.bot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBotInput {
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
     #[doc(hidden)]
@@ -16562,25 +16470,10 @@ impl UpdateBotInput {
         self.idle_session_ttl_in_seconds
     }
 }
-impl std::fmt::Debug for UpdateBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBotInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("data_privacy", &self.data_privacy);
-        formatter.field(
-            "idle_session_ttl_in_seconds",
-            &self.idle_session_ttl_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     #[doc(hidden)]
@@ -16599,18 +16492,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
     #[doc(hidden)]
@@ -16633,18 +16518,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopBotRecommendationInput {
     /// <p>The unique identifier of the bot containing the bot recommendation to be stopped.</p>
     #[doc(hidden)]
@@ -16675,16 +16552,6 @@ impl StopBotRecommendationInput {
     /// <p>The unique identifier of the bot recommendation to be stopped.</p>
     pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
         self.bot_recommendation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StopBotRecommendationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopBotRecommendationInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
-        formatter.finish()
     }
 }
 
@@ -16738,7 +16605,7 @@ impl std::fmt::Debug for StartImportInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBotRecommendationInput {
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     #[doc(hidden)]
@@ -16780,21 +16647,10 @@ impl StartBotRecommendationInput {
         self.encryption_setting.as_ref()
     }
 }
-impl std::fmt::Debug for StartBotRecommendationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartBotRecommendationInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("transcript_source_setting", &self.transcript_source_setting);
-        formatter.field("encryption_setting", &self.encryption_setting);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchAssociatedTranscriptsInput {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     #[doc(hidden)]
@@ -16855,24 +16711,10 @@ impl SearchAssociatedTranscriptsInput {
         self.next_index
     }
 }
-impl std::fmt::Debug for SearchAssociatedTranscriptsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchAssociatedTranscriptsInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
-        formatter.field("search_order", &self.search_order);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_index", &self.next_index);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
     #[doc(hidden)]
@@ -16884,17 +16726,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSlotTypesInput {
     /// <p>The unique identifier of the bot that contains the slot types.</p>
     #[doc(hidden)]
@@ -16948,23 +16783,10 @@ impl ListSlotTypesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSlotTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSlotTypesInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSlotsInput {
     /// <p>The identifier of the bot that contains the slot.</p>
     #[doc(hidden)]
@@ -17025,24 +16847,10 @@ impl ListSlotsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSlotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSlotsInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("intent_id", &self.intent_id);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecommendedIntentsInput {
     /// <p>The unique identifier of the bot associated with the recommended intents.</p>
     #[doc(hidden)]
@@ -17089,22 +16897,10 @@ impl ListRecommendedIntentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRecommendedIntentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecommendedIntentsInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIntentsInput {
     /// <p>The unique identifier of the bot that contains the intent.</p>
     #[doc(hidden)]
@@ -17160,23 +16956,10 @@ impl ListIntentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIntentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIntentsInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     #[doc(hidden)]
@@ -17232,23 +17015,10 @@ impl ListImportsInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListImportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportsInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExportsInput {
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     #[doc(hidden)]
@@ -17304,23 +17074,10 @@ impl ListExportsInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListExportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExportsInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuiltInSlotTypesInput {
     /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     #[doc(hidden)]
@@ -17353,20 +17110,10 @@ impl ListBuiltInSlotTypesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuiltInSlotTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBuiltInSlotTypesInput");
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuiltInIntentsInput {
     /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     #[doc(hidden)]
@@ -17399,20 +17146,10 @@ impl ListBuiltInIntentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuiltInIntentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBuiltInIntentsInput");
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBotVersionsInput {
     /// <p>The identifier of the bot to list versions for.</p>
     #[doc(hidden)]
@@ -17445,20 +17182,10 @@ impl ListBotVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBotVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBotVersionsInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBotsInput {
     /// <p>Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.</p>
     #[doc(hidden)]
@@ -17493,20 +17220,10 @@ impl ListBotsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBotsInput");
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBotRecommendationsInput {
     /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
     #[doc(hidden)]
@@ -17546,21 +17263,10 @@ impl ListBotRecommendationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBotRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBotRecommendationsInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBotLocalesInput {
     /// <p>The identifier of the bot to list locales for.</p>
     #[doc(hidden)]
@@ -17607,22 +17313,10 @@ impl ListBotLocalesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBotLocalesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBotLocalesInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBotAliasesInput {
     /// <p>The identifier of the bot to list aliases for.</p>
     #[doc(hidden)]
@@ -17648,19 +17342,10 @@ impl ListBotAliasesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBotAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBotAliasesInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAggregatedUtterancesInput {
     /// <p>The unique identifier of the bot associated with this request.</p>
     #[doc(hidden)]
@@ -17730,25 +17415,10 @@ impl ListAggregatedUtterancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAggregatedUtterancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAggregatedUtterancesInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_alias_id", &self.bot_alias_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("aggregation_duration", &self.aggregation_duration);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSlotTypeInput {
     /// <p>The identifier of the slot type.</p>
     #[doc(hidden)]
@@ -17781,20 +17451,10 @@ impl DescribeSlotTypeInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSlotTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSlotTypeInput");
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSlotInput {
     /// <p>The unique identifier for the slot.</p>
     #[doc(hidden)]
@@ -17834,21 +17494,10 @@ impl DescribeSlotInput {
         self.intent_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSlotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSlotInput");
-        formatter.field("slot_id", &self.slot_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("intent_id", &self.intent_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     #[doc(hidden)]
@@ -17860,17 +17509,10 @@ impl DescribeResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIntentInput {
     /// <p>The identifier of the intent to describe.</p>
     #[doc(hidden)]
@@ -17903,20 +17545,10 @@ impl DescribeIntentInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIntentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIntentInput");
-        formatter.field("intent_id", &self.intent_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImportInput {
     /// <p>The unique identifier of the import to describe.</p>
     #[doc(hidden)]
@@ -17928,17 +17560,10 @@ impl DescribeImportInput {
         self.import_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeImportInput");
-        formatter.field("import_id", &self.import_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExportInput {
     /// <p>The unique identifier of the export to describe.</p>
     #[doc(hidden)]
@@ -17950,17 +17575,10 @@ impl DescribeExportInput {
         self.export_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExportInput");
-        formatter.field("export_id", &self.export_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomVocabularyMetadataInput {
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
     #[doc(hidden)]
@@ -17986,19 +17604,10 @@ impl DescribeCustomVocabularyMetadataInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCustomVocabularyMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomVocabularyMetadataInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBotVersionInput {
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
     #[doc(hidden)]
@@ -18017,18 +17626,10 @@ impl DescribeBotVersionInput {
         self.bot_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBotVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBotVersionInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBotRecommendationInput {
     /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
     #[doc(hidden)]
@@ -18061,20 +17662,10 @@ impl DescribeBotRecommendationInput {
         self.bot_recommendation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBotRecommendationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBotRecommendationInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBotLocaleInput {
     /// <p>The identifier of the bot associated with the locale.</p>
     #[doc(hidden)]
@@ -18100,19 +17691,10 @@ impl DescribeBotLocaleInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBotLocaleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBotLocaleInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBotAliasInput {
     /// <p>The identifier of the bot alias to describe.</p>
     #[doc(hidden)]
@@ -18131,18 +17713,10 @@ impl DescribeBotAliasInput {
         self.bot_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBotAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBotAliasInput");
-        formatter.field("bot_alias_id", &self.bot_alias_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBotInput {
     /// <p>The unique identifier of the bot to describe.</p>
     #[doc(hidden)]
@@ -18154,17 +17728,10 @@ impl DescribeBotInput {
         self.bot_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBotInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUtterancesInput {
     /// <p>The unique identifier of the bot that contains the utterances.</p>
     #[doc(hidden)]
@@ -18190,19 +17757,10 @@ impl DeleteUtterancesInput {
         self.session_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUtterancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUtterancesInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSlotTypeInput {
     /// <p>The identifier of the slot type to delete.</p>
     #[doc(hidden)]
@@ -18242,24 +17800,10 @@ impl DeleteSlotTypeInput {
         self.skip_resource_in_use_check
     }
 }
-impl std::fmt::Debug for DeleteSlotTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSlotTypeInput");
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field(
-            "skip_resource_in_use_check",
-            &self.skip_resource_in_use_check,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSlotInput {
     /// <p>The identifier of the slot to delete. </p>
     #[doc(hidden)]
@@ -18299,21 +17843,10 @@ impl DeleteSlotInput {
         self.intent_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSlotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSlotInput");
-        formatter.field("slot_id", &self.slot_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("intent_id", &self.intent_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     #[doc(hidden)]
@@ -18341,19 +17874,10 @@ impl DeleteResourcePolicyStatementInput {
         self.expected_revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyStatementInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("expected_revision_id", &self.expected_revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
     #[doc(hidden)]
@@ -18374,18 +17898,10 @@ impl DeleteResourcePolicyInput {
         self.expected_revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("expected_revision_id", &self.expected_revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntentInput {
     /// <p>The unique identifier of the intent to delete.</p>
     #[doc(hidden)]
@@ -18418,20 +17934,10 @@ impl DeleteIntentInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIntentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntentInput");
-        formatter.field("intent_id", &self.intent_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImportInput {
     /// <p>The unique identifier of the import to delete.</p>
     #[doc(hidden)]
@@ -18443,17 +17949,10 @@ impl DeleteImportInput {
         self.import_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImportInput");
-        formatter.field("import_id", &self.import_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExportInput {
     /// <p>The unique identifier of the export to delete.</p>
     #[doc(hidden)]
@@ -18465,17 +17964,10 @@ impl DeleteExportInput {
         self.export_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExportInput");
-        formatter.field("export_id", &self.export_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomVocabularyInput {
     /// <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
     #[doc(hidden)]
@@ -18501,19 +17993,10 @@ impl DeleteCustomVocabularyInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomVocabularyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomVocabularyInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBotVersionInput {
     /// <p>The identifier of the bot that contains the version.</p>
     #[doc(hidden)]
@@ -18539,22 +18022,10 @@ impl DeleteBotVersionInput {
         self.skip_resource_in_use_check
     }
 }
-impl std::fmt::Debug for DeleteBotVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBotVersionInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field(
-            "skip_resource_in_use_check",
-            &self.skip_resource_in_use_check,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
     #[doc(hidden)]
@@ -18580,19 +18051,10 @@ impl DeleteBotLocaleInput {
         self.locale_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBotLocaleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBotLocaleInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBotAliasInput {
     /// <p>The unique identifier of the bot alias to delete.</p>
     #[doc(hidden)]
@@ -18618,22 +18080,10 @@ impl DeleteBotAliasInput {
         self.skip_resource_in_use_check
     }
 }
-impl std::fmt::Debug for DeleteBotAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBotAliasInput");
-        formatter.field("bot_alias_id", &self.bot_alias_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field(
-            "skip_resource_in_use_check",
-            &self.skip_resource_in_use_check,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBotInput {
     /// <p>The identifier of the bot to delete. </p>
     #[doc(hidden)]
@@ -18652,32 +18102,15 @@ impl DeleteBotInput {
         self.skip_resource_in_use_check
     }
 }
-impl std::fmt::Debug for DeleteBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBotInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field(
-            "skip_resource_in_use_check",
-            &self.skip_resource_in_use_check,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUploadUrlInput {}
-impl std::fmt::Debug for CreateUploadUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUploadUrlInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSlotTypeInput {
     /// <p>The name for the slot. A slot type name must be unique within the account.</p>
     #[doc(hidden)]
@@ -18770,32 +18203,10 @@ impl CreateSlotTypeInput {
         self.composite_slot_type_setting.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSlotTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSlotTypeInput");
-        formatter.field("slot_type_name", &self.slot_type_name);
-        formatter.field("description", &self.description);
-        formatter.field("slot_type_values", &self.slot_type_values);
-        formatter.field("value_selection_setting", &self.value_selection_setting);
-        formatter.field(
-            "parent_slot_type_signature",
-            &self.parent_slot_type_signature,
-        );
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("external_source_setting", &self.external_source_setting);
-        formatter.field(
-            "composite_slot_type_setting",
-            &self.composite_slot_type_setting,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSlotInput {
     /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
     #[doc(hidden)]
@@ -18885,27 +18296,10 @@ impl CreateSlotInput {
         self.sub_slot_setting.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSlotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSlotInput");
-        formatter.field("slot_name", &self.slot_name);
-        formatter.field("description", &self.description);
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.field("value_elicitation_setting", &self.value_elicitation_setting);
-        formatter.field("obfuscation_setting", &self.obfuscation_setting);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("intent_id", &self.intent_id);
-        formatter.field("multiple_values_setting", &self.multiple_values_setting);
-        formatter.field("sub_slot_setting", &self.sub_slot_setting);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourcePolicyStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     #[doc(hidden)]
@@ -18975,23 +18369,10 @@ impl CreateResourcePolicyStatementInput {
         self.expected_revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResourcePolicyStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourcePolicyStatementInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("effect", &self.effect);
-        formatter.field("principal", &self.principal);
-        formatter.field("action", &self.action);
-        formatter.field("condition", &self.condition);
-        formatter.field("expected_revision_id", &self.expected_revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     #[doc(hidden)]
@@ -19012,18 +18393,10 @@ impl CreateResourcePolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIntentInput {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
     #[doc(hidden)]
@@ -19159,30 +18532,6 @@ impl CreateIntentInput {
         self.initial_response_setting.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIntentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIntentInput");
-        formatter.field("intent_name", &self.intent_name);
-        formatter.field("description", &self.description);
-        formatter.field("parent_intent_signature", &self.parent_intent_signature);
-        formatter.field("sample_utterances", &self.sample_utterances);
-        formatter.field("dialog_code_hook", &self.dialog_code_hook);
-        formatter.field("fulfillment_code_hook", &self.fulfillment_code_hook);
-        formatter.field(
-            "intent_confirmation_setting",
-            &self.intent_confirmation_setting,
-        );
-        formatter.field("intent_closing_setting", &self.intent_closing_setting);
-        formatter.field("input_contexts", &self.input_contexts);
-        formatter.field("output_contexts", &self.output_contexts);
-        formatter.field("kendra_configuration", &self.kendra_configuration);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("initial_response_setting", &self.initial_response_setting);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -19226,7 +18575,7 @@ impl std::fmt::Debug for CreateExportInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBotVersionInput {
     /// <p>The identifier of the bot to create the version for.</p>
     #[doc(hidden)]
@@ -19258,22 +18607,10 @@ impl CreateBotVersionInput {
         self.bot_version_locale_specification.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBotVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBotVersionInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "bot_version_locale_specification",
-            &self.bot_version_locale_specification,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBotLocaleInput {
     /// <p>The identifier of the bot to create the locale for.</p>
     #[doc(hidden)]
@@ -19334,25 +18671,10 @@ impl CreateBotLocaleInput {
         self.voice_settings.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBotLocaleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBotLocaleInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "nlu_intent_confidence_threshold",
-            &self.nlu_intent_confidence_threshold,
-        );
-        formatter.field("voice_settings", &self.voice_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBotAliasInput {
     /// <p>The alias to create. The name must be unique for the bot.</p>
     #[doc(hidden)]
@@ -19427,27 +18749,10 @@ impl CreateBotAliasInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBotAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBotAliasInput");
-        formatter.field("bot_alias_name", &self.bot_alias_name);
-        formatter.field("description", &self.description);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("bot_alias_locale_settings", &self.bot_alias_locale_settings);
-        formatter.field("conversation_log_settings", &self.conversation_log_settings);
-        formatter.field(
-            "sentiment_analysis_settings",
-            &self.sentiment_analysis_settings,
-        );
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBotInput {
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
     #[doc(hidden)]
@@ -19513,26 +18818,10 @@ impl CreateBotInput {
         self.test_bot_alias_tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBotInput");
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("data_privacy", &self.data_privacy);
-        formatter.field(
-            "idle_session_ttl_in_seconds",
-            &self.idle_session_ttl_in_seconds,
-        );
-        formatter.field("bot_tags", &self.bot_tags);
-        formatter.field("test_bot_alias_tags", &self.test_bot_alias_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildBotLocaleInput {
     /// <p>The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
     #[doc(hidden)]
@@ -19556,14 +18845,5 @@ impl BuildBotLocaleInput {
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildBotLocaleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildBotLocaleInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
     }
 }

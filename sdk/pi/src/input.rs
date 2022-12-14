@@ -1476,7 +1476,7 @@ impl ListAvailableResourceMetricsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     #[doc(hidden)]
@@ -1528,21 +1528,10 @@ impl ListAvailableResourceMetricsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAvailableResourceMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableResourceMetricsInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("metric_types", &self.metric_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableResourceDimensionsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     #[doc(hidden)]
@@ -1582,21 +1571,10 @@ impl ListAvailableResourceDimensionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAvailableResourceDimensionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableResourceDimensionsInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceMetricsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
@@ -1687,24 +1665,10 @@ impl GetResourceMetricsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceMetricsInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("metric_queries", &self.metric_queries);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("period_in_seconds", &self.period_in_seconds);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceMetadataInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     #[doc(hidden)]
@@ -1723,18 +1687,10 @@ impl GetResourceMetadataInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceMetadataInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
     #[doc(hidden)]
@@ -1798,21 +1754,10 @@ impl GetDimensionKeyDetailsInput {
         self.requested_dimensions.as_deref()
     }
 }
-impl std::fmt::Debug for GetDimensionKeyDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDimensionKeyDetailsInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("group", &self.group);
-        formatter.field("group_identifier", &self.group_identifier);
-        formatter.field("requested_dimensions", &self.requested_dimensions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDimensionKeysInput {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
     /// <ul>
@@ -1953,23 +1898,5 @@ impl DescribeDimensionKeysInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDimensionKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDimensionKeysInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("metric", &self.metric);
-        formatter.field("period_in_seconds", &self.period_in_seconds);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("additional_metrics", &self.additional_metrics);
-        formatter.field("partition_by", &self.partition_by);
-        formatter.field("filter", &self.filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

@@ -92,7 +92,7 @@ impl AsRef<str> for IpAddressType {
 
 /// <p>Information about an Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
@@ -126,16 +126,6 @@ impl AvailabilityZone {
         &self,
     ) -> std::option::Option<&[crate::model::LoadBalancerAddress]> {
         self.load_balancer_addresses.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZone");
-        formatter.field("zone_name", &self.zone_name);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.field("load_balancer_addresses", &self.load_balancer_addresses);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
@@ -220,7 +210,7 @@ impl AvailabilityZone {
 
 /// <p>Information about a static IP address for a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerAddress {
     /// <p>The static IP address.</p>
     #[doc(hidden)]
@@ -251,16 +241,6 @@ impl LoadBalancerAddress {
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub fn i_pv6_address(&self) -> std::option::Option<&str> {
         self.i_pv6_address.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerAddress");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("allocation_id", &self.allocation_id);
-        formatter.field("private_i_pv4_address", &self.private_i_pv4_address);
-        formatter.field("i_pv6_address", &self.i_pv6_address);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerAddress`](crate::model::LoadBalancerAddress).
@@ -344,7 +324,7 @@ impl LoadBalancerAddress {
 
 /// <p>Information about a subnet mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetMapping {
     /// <p>The ID of the subnet.</p>
     #[doc(hidden)]
@@ -375,16 +355,6 @@ impl SubnetMapping {
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub fn i_pv6_address(&self) -> std::option::Option<&str> {
         self.i_pv6_address.as_deref()
-    }
-}
-impl std::fmt::Debug for SubnetMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetMapping");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("allocation_id", &self.allocation_id);
-        formatter.field("private_i_pv4_address", &self.private_i_pv4_address);
-        formatter.field("i_pv6_address", &self.i_pv6_address);
-        formatter.finish()
     }
 }
 /// See [`SubnetMapping`](crate::model::SubnetMapping).
@@ -468,7 +438,7 @@ impl SubnetMapping {
 
 /// <p>Information about a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
@@ -506,17 +476,6 @@ impl Rule {
     /// <p>Indicates whether this is the default rule.</p>
     pub fn is_default(&self) -> bool {
         self.is_default
-    }
-}
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("rule_arn", &self.rule_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("conditions", &self.conditions);
-        formatter.field("actions", &self.actions);
-        formatter.field("is_default", &self.is_default);
-        formatter.finish()
     }
 }
 /// See [`Rule`](crate::model::Rule).
@@ -622,7 +581,7 @@ impl Rule {
 /// <p>Information about an action.</p>
 /// <p>Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>The type of action.</p>
     #[doc(hidden)]
@@ -688,23 +647,6 @@ impl Action {
     /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
     pub fn forward_config(&self) -> std::option::Option<&crate::model::ForwardActionConfig> {
         self.forward_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("target_group_arn", &self.target_group_arn);
-        formatter.field("authenticate_oidc_config", &self.authenticate_oidc_config);
-        formatter.field(
-            "authenticate_cognito_config",
-            &self.authenticate_cognito_config,
-        );
-        formatter.field("order", &self.order);
-        formatter.field("redirect_config", &self.redirect_config);
-        formatter.field("fixed_response_config", &self.fixed_response_config);
-        formatter.field("forward_config", &self.forward_config);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -860,7 +802,7 @@ impl Action {
 
 /// <p>Information about a forward action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForwardActionConfig {
     /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
     #[doc(hidden)]
@@ -880,17 +822,6 @@ impl ForwardActionConfig {
         &self,
     ) -> std::option::Option<&crate::model::TargetGroupStickinessConfig> {
         self.target_group_stickiness_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ForwardActionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForwardActionConfig");
-        formatter.field("target_groups", &self.target_groups);
-        formatter.field(
-            "target_group_stickiness_config",
-            &self.target_group_stickiness_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`ForwardActionConfig`](crate::model::ForwardActionConfig).
@@ -958,7 +889,7 @@ impl ForwardActionConfig {
 
 /// <p>Information about the target group stickiness for a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroupStickinessConfig {
     /// <p>Indicates whether target group stickiness is enabled.</p>
     #[doc(hidden)]
@@ -975,14 +906,6 @@ impl TargetGroupStickinessConfig {
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
         self.duration_seconds
-    }
-}
-impl std::fmt::Debug for TargetGroupStickinessConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGroupStickinessConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
     }
 }
 /// See [`TargetGroupStickinessConfig`](crate::model::TargetGroupStickinessConfig).
@@ -1033,7 +956,7 @@ impl TargetGroupStickinessConfig {
 
 /// <p>Information about how traffic will be distributed between multiple target groups in a forward rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroupTuple {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
@@ -1050,14 +973,6 @@ impl TargetGroupTuple {
     /// <p>The weight. The range is 0 to 999.</p>
     pub fn weight(&self) -> std::option::Option<i32> {
         self.weight
-    }
-}
-impl std::fmt::Debug for TargetGroupTuple {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGroupTuple");
-        formatter.field("target_group_arn", &self.target_group_arn);
-        formatter.field("weight", &self.weight);
-        formatter.finish()
     }
 }
 /// See [`TargetGroupTuple`](crate::model::TargetGroupTuple).
@@ -1111,7 +1026,7 @@ impl TargetGroupTuple {
 
 /// <p>Information about an action that returns a custom HTTP response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FixedResponseActionConfig {
     /// <p>The message.</p>
     #[doc(hidden)]
@@ -1137,15 +1052,6 @@ impl FixedResponseActionConfig {
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
-    }
-}
-impl std::fmt::Debug for FixedResponseActionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FixedResponseActionConfig");
-        formatter.field("message_body", &self.message_body);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`FixedResponseActionConfig`](crate::model::FixedResponseActionConfig).
@@ -1220,7 +1126,7 @@ impl FixedResponseActionConfig {
 /// </ul>
 /// <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedirectActionConfig {
     /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
     #[doc(hidden)]
@@ -1265,18 +1171,6 @@ impl RedirectActionConfig {
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
     pub fn status_code(&self) -> std::option::Option<&crate::model::RedirectActionStatusCodeEnum> {
         self.status_code.as_ref()
-    }
-}
-impl std::fmt::Debug for RedirectActionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedirectActionConfig");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.field("host", &self.host);
-        formatter.field("path", &self.path);
-        formatter.field("query", &self.query);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
     }
 }
 /// See [`RedirectActionConfig`](crate::model::RedirectActionConfig).
@@ -1470,7 +1364,7 @@ impl AsRef<str> for RedirectActionStatusCodeEnum {
 
 /// <p>Request parameters to use when integrating with Amazon Cognito to authenticate users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticateCognitoActionConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
     #[doc(hidden)]
@@ -1548,26 +1442,6 @@ impl AuthenticateCognitoActionConfig {
         &self,
     ) -> std::option::Option<&crate::model::AuthenticateCognitoActionConditionalBehaviorEnum> {
         self.on_unauthenticated_request.as_ref()
-    }
-}
-impl std::fmt::Debug for AuthenticateCognitoActionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticateCognitoActionConfig");
-        formatter.field("user_pool_arn", &self.user_pool_arn);
-        formatter.field("user_pool_client_id", &self.user_pool_client_id);
-        formatter.field("user_pool_domain", &self.user_pool_domain);
-        formatter.field("session_cookie_name", &self.session_cookie_name);
-        formatter.field("scope", &self.scope);
-        formatter.field("session_timeout", &self.session_timeout);
-        formatter.field(
-            "authentication_request_extra_params",
-            &self.authentication_request_extra_params,
-        );
-        formatter.field(
-            "on_unauthenticated_request",
-            &self.on_unauthenticated_request,
-        );
-        formatter.finish()
     }
 }
 /// See [`AuthenticateCognitoActionConfig`](crate::model::AuthenticateCognitoActionConfig).
@@ -1837,7 +1711,7 @@ impl AsRef<str> for AuthenticateCognitoActionConditionalBehaviorEnum {
 
 /// <p>Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticateOidcActionConfig {
     /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     #[doc(hidden)]
@@ -1943,33 +1817,6 @@ impl AuthenticateOidcActionConfig {
     /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
     pub fn use_existing_client_secret(&self) -> std::option::Option<bool> {
         self.use_existing_client_secret
-    }
-}
-impl std::fmt::Debug for AuthenticateOidcActionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticateOidcActionConfig");
-        formatter.field("issuer", &self.issuer);
-        formatter.field("authorization_endpoint", &self.authorization_endpoint);
-        formatter.field("token_endpoint", &self.token_endpoint);
-        formatter.field("user_info_endpoint", &self.user_info_endpoint);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.field("session_cookie_name", &self.session_cookie_name);
-        formatter.field("scope", &self.scope);
-        formatter.field("session_timeout", &self.session_timeout);
-        formatter.field(
-            "authentication_request_extra_params",
-            &self.authentication_request_extra_params,
-        );
-        formatter.field(
-            "on_unauthenticated_request",
-            &self.on_unauthenticated_request,
-        );
-        formatter.field(
-            "use_existing_client_secret",
-            &self.use_existing_client_secret,
-        );
-        formatter.finish()
     }
 }
 /// See [`AuthenticateOidcActionConfig`](crate::model::AuthenticateOidcActionConfig).
@@ -2400,7 +2247,7 @@ impl AsRef<str> for ActionTypeEnum {
 /// <p>Information about a condition for a rule.</p>
 /// <p>Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>. Note that the value for a condition cannot be empty.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleCondition {
     /// <p>The field in the HTTP request. The following are the possible values:</p>
     /// <ul>
@@ -2516,23 +2363,6 @@ impl RuleCondition {
     /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
     pub fn source_ip_config(&self) -> std::option::Option<&crate::model::SourceIpConditionConfig> {
         self.source_ip_config.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleCondition");
-        formatter.field("field", &self.field);
-        formatter.field("values", &self.values);
-        formatter.field("host_header_config", &self.host_header_config);
-        formatter.field("path_pattern_config", &self.path_pattern_config);
-        formatter.field("http_header_config", &self.http_header_config);
-        formatter.field("query_string_config", &self.query_string_config);
-        formatter.field(
-            "http_request_method_config",
-            &self.http_request_method_config,
-        );
-        formatter.field("source_ip_config", &self.source_ip_config);
-        formatter.finish()
     }
 }
 /// See [`RuleCondition`](crate::model::RuleCondition).
@@ -2747,7 +2577,7 @@ impl RuleCondition {
 /// <p>Information about a source IP condition.</p>
 /// <p>You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceIpConditionConfig {
     /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
     /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
@@ -2759,13 +2589,6 @@ impl SourceIpConditionConfig {
     /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceIpConditionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceIpConditionConfig");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SourceIpConditionConfig`](crate::model::SourceIpConditionConfig).
@@ -2816,7 +2639,7 @@ impl SourceIpConditionConfig {
 /// <p>Information about an HTTP method condition.</p>
 /// <p>HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the <a href="https://www.iana.org/assignments/http-methods/http-methods.xhtml">HTTP Method Registry</a>. You can also define custom HTTP methods.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRequestMethodConditionConfig {
     /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.</p>
@@ -2828,13 +2651,6 @@ impl HttpRequestMethodConditionConfig {
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpRequestMethodConditionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRequestMethodConditionConfig");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`HttpRequestMethodConditionConfig`](crate::model::HttpRequestMethodConditionConfig).
@@ -2885,7 +2701,7 @@ impl HttpRequestMethodConditionConfig {
 /// <p>Information about a query string condition.</p>
 /// <p>The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStringConditionConfig {
     /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
@@ -2897,13 +2713,6 @@ impl QueryStringConditionConfig {
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::QueryStringKeyValuePair]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryStringConditionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStringConditionConfig");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`QueryStringConditionConfig`](crate::model::QueryStringConditionConfig).
@@ -2954,7 +2763,7 @@ impl QueryStringConditionConfig {
 
 /// <p>Information about a key/value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStringKeyValuePair {
     /// <p>The key. You can omit the key.</p>
     #[doc(hidden)]
@@ -2971,14 +2780,6 @@ impl QueryStringKeyValuePair {
     /// <p>The value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryStringKeyValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStringKeyValuePair");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`QueryStringKeyValuePair`](crate::model::QueryStringKeyValuePair).
@@ -3030,7 +2831,7 @@ impl QueryStringKeyValuePair {
 /// <p>Information about an HTTP header condition.</p>
 /// <p>There is a set of standard HTTP header fields. You can also define custom HTTP header fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpHeaderConditionConfig {
     /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
@@ -3053,14 +2854,6 @@ impl HttpHeaderConditionConfig {
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpHeaderConditionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpHeaderConditionConfig");
-        formatter.field("http_header_name", &self.http_header_name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`HttpHeaderConditionConfig`](crate::model::HttpHeaderConditionConfig).
@@ -3129,7 +2922,7 @@ impl HttpHeaderConditionConfig {
 
 /// <p>Information about a path pattern condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathPatternConditionConfig {
     /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
@@ -3141,13 +2934,6 @@ impl PathPatternConditionConfig {
     /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for PathPatternConditionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathPatternConditionConfig");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`PathPatternConditionConfig`](crate::model::PathPatternConditionConfig).
@@ -3197,7 +2983,7 @@ impl PathPatternConditionConfig {
 
 /// <p>Information about a host header condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostHeaderConditionConfig {
     /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
@@ -3209,13 +2995,6 @@ impl HostHeaderConditionConfig {
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for HostHeaderConditionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostHeaderConditionConfig");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`HostHeaderConditionConfig`](crate::model::HostHeaderConditionConfig).
@@ -3265,7 +3044,7 @@ impl HostHeaderConditionConfig {
 
 /// <p>Information about the priorities for the rules for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RulePriorityPair {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
@@ -3282,14 +3061,6 @@ impl RulePriorityPair {
     /// <p>The rule priority.</p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
-    }
-}
-impl std::fmt::Debug for RulePriorityPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RulePriorityPair");
-        formatter.field("rule_arn", &self.rule_arn);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`RulePriorityPair`](crate::model::RulePriorityPair).
@@ -3340,7 +3111,7 @@ impl RulePriorityPair {
 
 /// <p>Information about an SSL server certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     #[doc(hidden)]
@@ -3357,14 +3128,6 @@ impl Certificate {
     /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
     pub fn is_default(&self) -> std::option::Option<bool> {
         self.is_default
-    }
-}
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("is_default", &self.is_default);
-        formatter.finish()
     }
 }
 /// See [`Certificate`](crate::model::Certificate).
@@ -3418,7 +3181,7 @@ impl Certificate {
 
 /// <p>Information about a target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetDescription {
     /// <p>The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
     #[doc(hidden)]
@@ -3450,15 +3213,6 @@ impl TargetDescription {
     /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for TargetDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetDescription");
-        formatter.field("id", &self.id);
-        formatter.field("port", &self.port);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.finish()
     }
 }
 /// See [`TargetDescription`](crate::model::TargetDescription).
@@ -3532,7 +3286,7 @@ impl TargetDescription {
 
 /// <p>Information about a target group attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroupAttribute {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported by all load balancers:</p>
@@ -3613,14 +3367,6 @@ impl TargetGroupAttribute {
     /// <p>The value of the attribute.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for TargetGroupAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGroupAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`TargetGroupAttribute`](crate::model::TargetGroupAttribute).
@@ -3735,7 +3481,7 @@ impl TargetGroupAttribute {
 
 /// <p>Information about a target group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroup {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
@@ -3866,36 +3612,6 @@ impl TargetGroup {
         &self,
     ) -> std::option::Option<&crate::model::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGroup");
-        formatter.field("target_group_arn", &self.target_group_arn);
-        formatter.field("target_group_name", &self.target_group_name);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("health_check_protocol", &self.health_check_protocol);
-        formatter.field("health_check_port", &self.health_check_port);
-        formatter.field("health_check_enabled", &self.health_check_enabled);
-        formatter.field(
-            "health_check_interval_seconds",
-            &self.health_check_interval_seconds,
-        );
-        formatter.field(
-            "health_check_timeout_seconds",
-            &self.health_check_timeout_seconds,
-        );
-        formatter.field("healthy_threshold_count", &self.healthy_threshold_count);
-        formatter.field("unhealthy_threshold_count", &self.unhealthy_threshold_count);
-        formatter.field("health_check_path", &self.health_check_path);
-        formatter.field("matcher", &self.matcher);
-        formatter.field("load_balancer_arns", &self.load_balancer_arns);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("protocol_version", &self.protocol_version);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.finish()
     }
 }
 /// See [`TargetGroup`](crate::model::TargetGroup).
@@ -4372,7 +4088,7 @@ impl AsRef<str> for TargetTypeEnum {
 
 /// <p>The codes to use when checking for a successful response from a target. If the protocol version is gRPC, these are gRPC codes. Otherwise, these are HTTP codes. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Matcher {
     /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
     /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
@@ -4393,14 +4109,6 @@ impl Matcher {
     /// <p>You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
     pub fn grpc_code(&self) -> std::option::Option<&str> {
         self.grpc_code.as_deref()
-    }
-}
-impl std::fmt::Debug for Matcher {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Matcher");
-        formatter.field("http_code", &self.http_code);
-        formatter.field("grpc_code", &self.grpc_code);
-        formatter.finish()
     }
 }
 /// See [`Matcher`](crate::model::Matcher).
@@ -4570,7 +4278,7 @@ impl AsRef<str> for ProtocolEnum {
 
 /// <p>Information about a load balancer attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerAttribute {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported by all load balancers:</p>
@@ -4651,14 +4359,6 @@ impl LoadBalancerAttribute {
     /// <p>The value of the attribute.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerAttribute`](crate::model::LoadBalancerAttribute).
@@ -4773,7 +4473,7 @@ impl LoadBalancerAttribute {
 
 /// <p>Information about a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Listener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
@@ -4832,20 +4532,6 @@ impl Listener {
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     pub fn alpn_policy(&self) -> std::option::Option<&[std::string::String]> {
         self.alpn_policy.as_deref()
-    }
-}
-impl std::fmt::Debug for Listener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Listener");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("load_balancer_arn", &self.load_balancer_arn);
-        formatter.field("port", &self.port);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("certificates", &self.certificates);
-        formatter.field("ssl_policy", &self.ssl_policy);
-        formatter.field("default_actions", &self.default_actions);
-        formatter.field("alpn_policy", &self.alpn_policy);
-        formatter.finish()
     }
 }
 /// See [`Listener`](crate::model::Listener).
@@ -5001,7 +4687,7 @@ impl Listener {
 
 /// <p>Information about the health of a target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetHealthDescription {
     /// <p>The description of the target.</p>
     #[doc(hidden)]
@@ -5025,15 +4711,6 @@ impl TargetHealthDescription {
     /// <p>The health information for the target.</p>
     pub fn target_health(&self) -> std::option::Option<&crate::model::TargetHealth> {
         self.target_health.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetHealthDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetHealthDescription");
-        formatter.field("target", &self.target);
-        formatter.field("health_check_port", &self.health_check_port);
-        formatter.field("target_health", &self.target_health);
-        formatter.finish()
     }
 }
 /// See [`TargetHealthDescription`](crate::model::TargetHealthDescription).
@@ -5105,7 +4782,7 @@ impl TargetHealthDescription {
 
 /// <p>Information about the current health of a target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetHealth {
     /// <p>The state of the target.</p>
     #[doc(hidden)]
@@ -5187,15 +4864,6 @@ impl TargetHealth {
     /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for TargetHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetHealth");
-        formatter.field("state", &self.state);
-        formatter.field("reason", &self.reason);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`TargetHealth`](crate::model::TargetHealth).
@@ -5596,7 +5264,7 @@ impl AsRef<str> for TargetHealthStateEnum {
 
 /// <p>The tags associated with a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagDescription {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -5613,14 +5281,6 @@ impl TagDescription {
     /// <p>Information about the tags.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TagDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`TagDescription`](crate::model::TagDescription).
@@ -5680,7 +5340,7 @@ impl TagDescription {
 
 /// <p>Information about a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -5697,14 +5357,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -5755,7 +5407,7 @@ impl Tag {
 
 /// <p>Information about a policy used for SSL negotiation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SslPolicy {
     /// <p>The protocols.</p>
     #[doc(hidden)]
@@ -5786,19 +5438,6 @@ impl SslPolicy {
     /// <p> The supported load balancers. </p>
     pub fn supported_load_balancer_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_load_balancer_types.as_deref()
-    }
-}
-impl std::fmt::Debug for SslPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SslPolicy");
-        formatter.field("ssl_protocols", &self.ssl_protocols);
-        formatter.field("ciphers", &self.ciphers);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "supported_load_balancer_types",
-            &self.supported_load_balancer_types,
-        );
-        formatter.finish()
     }
 }
 /// See [`SslPolicy`](crate::model::SslPolicy).
@@ -5904,7 +5543,7 @@ impl SslPolicy {
 
 /// <p>Information about a cipher used in a policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cipher {
     /// <p>The name of the cipher.</p>
     #[doc(hidden)]
@@ -5921,14 +5560,6 @@ impl Cipher {
     /// <p>The priority of the cipher.</p>
     pub fn priority(&self) -> i32 {
         self.priority
-    }
-}
-impl std::fmt::Debug for Cipher {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cipher");
-        formatter.field("name", &self.name);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`Cipher`](crate::model::Cipher).
@@ -6076,7 +5707,7 @@ impl AsRef<str> for LoadBalancerTypeEnum {
 
 /// <p>Information about a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancer {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
@@ -6172,25 +5803,6 @@ impl LoadBalancer {
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
     pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancer");
-        formatter.field("load_balancer_arn", &self.load_balancer_arn);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("canonical_hosted_zone_id", &self.canonical_hosted_zone_id);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("scheme", &self.scheme);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("state", &self.state);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("customer_owned_ipv4_pool", &self.customer_owned_ipv4_pool);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancer`](crate::model::LoadBalancer).
@@ -6421,7 +6033,7 @@ impl LoadBalancer {
 
 /// <p>Information about the state of the load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerState {
     /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
     #[doc(hidden)]
@@ -6438,14 +6050,6 @@ impl LoadBalancerState {
     /// <p>A description of the state.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerState");
-        formatter.field("code", &self.code);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerState`](crate::model::LoadBalancerState).
@@ -6693,7 +6297,7 @@ impl AsRef<str> for LoadBalancerSchemeEnum {
 
 /// <p>Information about an Elastic Load Balancing resource limit for your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
@@ -6750,14 +6354,6 @@ impl Limit {
     /// <p>The maximum value of the limit.</p>
     pub fn max(&self) -> std::option::Option<&str> {
         self.max.as_deref()
-    }
-}
-impl std::fmt::Debug for Limit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Limit");
-        formatter.field("name", &self.name);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`Limit`](crate::model::Limit).

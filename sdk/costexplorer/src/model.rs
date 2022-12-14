@@ -2,7 +2,7 @@
 
 /// <p>Use the split charge rule to split the cost of one Cost Category value across several other target values. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
     #[doc(hidden)]
@@ -42,16 +42,6 @@ impl CostCategorySplitChargeRule {
         &self,
     ) -> std::option::Option<&[crate::model::CostCategorySplitChargeRuleParameter]> {
         self.parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for CostCategorySplitChargeRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostCategorySplitChargeRule");
-        formatter.field("source", &self.source);
-        formatter.field("targets", &self.targets);
-        formatter.field("method", &self.method);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
@@ -159,7 +149,7 @@ impl CostCategorySplitChargeRule {
 
 /// <p>The parameters for a split charge method. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostCategorySplitChargeRuleParameter {
     /// <p>The parameter type. </p>
     #[doc(hidden)]
@@ -178,14 +168,6 @@ impl CostCategorySplitChargeRuleParameter {
     /// <p>The parameter values. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for CostCategorySplitChargeRuleParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostCategorySplitChargeRuleParameter");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
@@ -440,7 +422,7 @@ impl AsRef<str> for CostCategorySplitChargeMethod {
 
 /// <p>Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostCategoryRule {
     /// <p>The default value for the cost category.</p>
     #[doc(hidden)]
@@ -477,16 +459,6 @@ impl CostCategoryRule {
     /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::CostCategoryRuleType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for CostCategoryRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostCategoryRule");
-        formatter.field("value", &self.value);
-        formatter.field("rule", &self.rule);
-        formatter.field("inherited_value", &self.inherited_value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`CostCategoryRule`](crate::model::CostCategoryRule).
@@ -667,7 +639,7 @@ impl AsRef<str> for CostCategoryRuleType {
 
 /// <p>When you create or update a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility to define a rule that dynamically inherits the cost category value from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to dynamically group costs that are based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostCategoryInheritedValueDimension {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
@@ -688,14 +660,6 @@ impl CostCategoryInheritedValueDimension {
     /// <p>The key to extract cost category values.</p>
     pub fn dimension_key(&self) -> std::option::Option<&str> {
         self.dimension_key.as_deref()
-    }
-}
-impl std::fmt::Debug for CostCategoryInheritedValueDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostCategoryInheritedValueDimension");
-        formatter.field("dimension_name", &self.dimension_name);
-        formatter.field("dimension_key", &self.dimension_key);
-        formatter.finish()
     }
 }
 /// See [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
@@ -859,7 +823,7 @@ impl AsRef<str> for CostCategoryInheritedValueDimensionName {
 /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Expression {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
     #[doc(hidden)]
@@ -904,18 +868,6 @@ impl Expression {
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
     pub fn cost_categories(&self) -> std::option::Option<&crate::model::CostCategoryValues> {
         self.cost_categories.as_ref()
-    }
-}
-impl std::fmt::Debug for Expression {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Expression");
-        formatter.field("or", &self.or);
-        formatter.field("and", &self.and);
-        formatter.field("not", &self.not);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("tags", &self.tags);
-        formatter.field("cost_categories", &self.cost_categories);
-        formatter.finish()
     }
 }
 /// See [`Expression`](crate::model::Expression).
@@ -1043,7 +995,7 @@ impl Expression {
 /// <p>If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all Cost Categories. That is, it filters on resources that aren't mapped to any Cost Categories.</p>
 /// <p>If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the Cost Categories <code>Key</code> only. That is, it filters on resources without the given Cost Categories key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostCategoryValues {
     /// <p>The unique name of the Cost Category.</p>
     #[doc(hidden)]
@@ -1067,15 +1019,6 @@ impl CostCategoryValues {
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
     pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
         self.match_options.as_deref()
-    }
-}
-impl std::fmt::Debug for CostCategoryValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostCategoryValues");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("match_options", &self.match_options);
-        formatter.finish()
     }
 }
 /// See [`CostCategoryValues`](crate::model::CostCategoryValues).
@@ -1281,7 +1224,7 @@ impl AsRef<str> for MatchOption {
 /// <p>If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags.</p>
 /// <p>If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagValues {
     /// <p>The key for the tag.</p>
     #[doc(hidden)]
@@ -1305,15 +1248,6 @@ impl TagValues {
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
         self.match_options.as_deref()
-    }
-}
-impl std::fmt::Debug for TagValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagValues");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("match_options", &self.match_options);
-        formatter.finish()
     }
 }
 /// See [`TagValues`](crate::model::TagValues).
@@ -1394,7 +1328,7 @@ impl TagValues {
 
 /// <p>The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionValues {
     /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
     #[doc(hidden)]
@@ -1418,15 +1352,6 @@ impl DimensionValues {
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
         self.match_options.as_deref()
-    }
-}
-impl std::fmt::Debug for DimensionValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionValues");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("match_options", &self.match_options);
-        formatter.finish()
     }
 }
 /// See [`DimensionValues`](crate::model::DimensionValues).
@@ -1867,7 +1792,7 @@ impl AsRef<str> for CostCategoryRuleVersion {
 
 /// <p>Gives a detailed description of the result of an action. It's on each cost allocation tag entry in the request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusError {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
@@ -1891,15 +1816,6 @@ impl UpdateCostAllocationTagsStatusError {
     /// <p>A message explaining why the action failed on this entry. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateCostAllocationTagsStatusError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCostAllocationTagsStatusError");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
@@ -1962,7 +1878,7 @@ impl UpdateCostAllocationTagsStatusError {
 
 /// <p>The cost allocation tag status. The status of a key can either be active or inactive. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostAllocationTagStatusEntry {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
@@ -1979,14 +1895,6 @@ impl CostAllocationTagStatusEntry {
     /// <p>The status of a cost allocation tag. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::CostAllocationTagStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CostAllocationTagStatusEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostAllocationTagStatusEntry");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
@@ -2132,7 +2040,7 @@ impl AsRef<str> for CostAllocationTagStatus {
 
 /// <p>The recipient of <code>AnomalySubscription</code> notifications. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subscriber {
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
     #[doc(hidden)]
@@ -2156,15 +2064,6 @@ impl Subscriber {
     /// <p>Indicates if the subscriber accepts the notifications. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::SubscriberStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for Subscriber {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subscriber");
-        formatter.field("address", &self.address);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`Subscriber`](crate::model::Subscriber).
@@ -2512,7 +2411,7 @@ impl AsRef<str> for AnomalySubscriptionFrequency {
 /// <p>Tagging is supported only for the following Cost Explorer resource types: <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The key that's associated with the tag. </p>
     #[doc(hidden)]
@@ -2529,14 +2428,6 @@ impl ResourceTag {
     /// <p>The value that's associated with the tag. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceTag`](crate::model::ResourceTag).
@@ -2685,7 +2576,7 @@ impl AsRef<str> for AnomalyFeedbackType {
 /// <p>A reference to a Cost Category containing only enough information to identify the Cost Category.</p>
 /// <p>You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostCategoryReference {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
@@ -2747,20 +2638,6 @@ impl CostCategoryReference {
     /// <p>The default value for the cost category.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for CostCategoryReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostCategoryReference");
-        formatter.field("cost_category_arn", &self.cost_category_arn);
-        formatter.field("name", &self.name);
-        formatter.field("effective_start", &self.effective_start);
-        formatter.field("effective_end", &self.effective_end);
-        formatter.field("number_of_rules", &self.number_of_rules);
-        formatter.field("processing_status", &self.processing_status);
-        formatter.field("values", &self.values);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`CostCategoryReference`](crate::model::CostCategoryReference).
@@ -2917,7 +2794,7 @@ impl CostCategoryReference {
 
 /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostCategoryProcessingStatus {
     /// <p>The Cost Management product name of the applied status. </p>
     #[doc(hidden)]
@@ -2934,14 +2811,6 @@ impl CostCategoryProcessingStatus {
     /// <p>The process status for a specific cost category. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::CostCategoryStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CostCategoryProcessingStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostCategoryProcessingStatus");
-        formatter.field("component", &self.component);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
@@ -3177,7 +3046,7 @@ impl AsRef<str> for CostCategoryStatusComponent {
 
 /// <p>The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code> object. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
@@ -3201,15 +3070,6 @@ impl CostAllocationTag {
     /// <p>The status of a cost allocation tag. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::CostAllocationTagStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CostAllocationTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostAllocationTag");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CostAllocationTag`](crate::model::CostAllocationTag).
@@ -3370,7 +3230,7 @@ impl AsRef<str> for CostAllocationTagType {
 
 /// <p>The forecast that's created for your query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForecastResult {
     /// <p>The period of time that the forecast covers.</p>
     #[doc(hidden)]
@@ -3401,22 +3261,6 @@ impl ForecastResult {
     /// <p>The upper limit for the prediction interval. </p>
     pub fn prediction_interval_upper_bound(&self) -> std::option::Option<&str> {
         self.prediction_interval_upper_bound.as_deref()
-    }
-}
-impl std::fmt::Debug for ForecastResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForecastResult");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("mean_value", &self.mean_value);
-        formatter.field(
-            "prediction_interval_lower_bound",
-            &self.prediction_interval_lower_bound,
-        );
-        formatter.field(
-            "prediction_interval_upper_bound",
-            &self.prediction_interval_upper_bound,
-        );
-        formatter.finish()
     }
 }
 /// See [`ForecastResult`](crate::model::ForecastResult).
@@ -3506,7 +3350,7 @@ impl ForecastResult {
 
 /// <p>The time period of the request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateInterval {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     #[doc(hidden)]
@@ -3523,14 +3367,6 @@ impl DateInterval {
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
     pub fn end(&self) -> std::option::Option<&str> {
         self.end.as_deref()
-    }
-}
-impl std::fmt::Debug for DateInterval {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateInterval");
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.finish()
     }
 }
 /// See [`DateInterval`](crate::model::DateInterval).
@@ -3581,7 +3417,7 @@ impl DateInterval {
 
 /// <p>The aggregated value for a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricValue {
     /// <p>The actual number that represents the metric.</p>
     #[doc(hidden)]
@@ -3598,14 +3434,6 @@ impl MetricValue {
     /// <p>The unit that the metric is given in.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricValue");
-        formatter.field("amount", &self.amount);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`MetricValue`](crate::model::MetricValue).
@@ -3874,7 +3702,7 @@ impl AsRef<str> for Metric {
 
 /// <p>The details for how to sort the data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SortDefinition {
     /// <p>The key that's used to sort the data.</p>
     #[doc(hidden)]
@@ -3891,14 +3719,6 @@ impl SortDefinition {
     /// <p>The order that's used to sort the data.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for SortDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SortDefinition");
-        formatter.field("key", &self.key);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`SortDefinition`](crate::model::SortDefinition).
@@ -4042,7 +3862,7 @@ impl AsRef<str> for SortOrder {
 
 /// <p>The aggregated utilization metrics for your Savings Plans usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansUtilizationAggregates {
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     #[doc(hidden)]
@@ -4068,15 +3888,6 @@ impl SavingsPlansUtilizationAggregates {
         &self,
     ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
         self.amortized_commitment.as_ref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansUtilizationAggregates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansUtilizationAggregates");
-        formatter.field("utilization", &self.utilization);
-        formatter.field("savings", &self.savings);
-        formatter.field("amortized_commitment", &self.amortized_commitment);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
@@ -4152,7 +3963,7 @@ impl SavingsPlansUtilizationAggregates {
 
 /// <p>The amortized amount of Savings Plans purchased in a specific account during a specific time interval.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansAmortizedCommitment {
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
     #[doc(hidden)]
@@ -4176,24 +3987,6 @@ impl SavingsPlansAmortizedCommitment {
     /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
     pub fn total_amortized_commitment(&self) -> std::option::Option<&str> {
         self.total_amortized_commitment.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansAmortizedCommitment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansAmortizedCommitment");
-        formatter.field(
-            "amortized_recurring_commitment",
-            &self.amortized_recurring_commitment,
-        );
-        formatter.field(
-            "amortized_upfront_commitment",
-            &self.amortized_upfront_commitment,
-        );
-        formatter.field(
-            "total_amortized_commitment",
-            &self.total_amortized_commitment,
-        );
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
@@ -4271,7 +4064,7 @@ impl SavingsPlansAmortizedCommitment {
 
 /// <p>The amount of savings that you're accumulating, against the public On-Demand rate of the usage accrued in an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansSavings {
     /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
     #[doc(hidden)]
@@ -4288,14 +4081,6 @@ impl SavingsPlansSavings {
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
     pub fn on_demand_cost_equivalent(&self) -> std::option::Option<&str> {
         self.on_demand_cost_equivalent.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansSavings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansSavings");
-        formatter.field("net_savings", &self.net_savings);
-        formatter.field("on_demand_cost_equivalent", &self.on_demand_cost_equivalent);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
@@ -4349,7 +4134,7 @@ impl SavingsPlansSavings {
 
 /// <p>The measurement of how well you're using your existing Savings Plans.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansUtilization {
     /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
     #[doc(hidden)]
@@ -4380,16 +4165,6 @@ impl SavingsPlansUtilization {
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
     pub fn utilization_percentage(&self) -> std::option::Option<&str> {
         self.utilization_percentage.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansUtilization");
-        formatter.field("total_commitment", &self.total_commitment);
-        formatter.field("used_commitment", &self.used_commitment);
-        formatter.field("unused_commitment", &self.unused_commitment);
-        formatter.field("utilization_percentage", &self.utilization_percentage);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
@@ -4476,7 +4251,7 @@ impl SavingsPlansUtilization {
 
 /// <p>A single daily or monthly Savings Plans utilization rate and details for your account. A management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansUtilizationDetail {
     /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
     #[doc(hidden)]
@@ -4520,17 +4295,6 @@ impl SavingsPlansUtilizationDetail {
         &self,
     ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
         self.amortized_commitment.as_ref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansUtilizationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansUtilizationDetail");
-        formatter.field("savings_plan_arn", &self.savings_plan_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("utilization", &self.utilization);
-        formatter.field("savings", &self.savings);
-        formatter.field("amortized_commitment", &self.amortized_commitment);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
@@ -4757,7 +4521,7 @@ impl AsRef<str> for SavingsPlansDataType {
 
 /// <p>The amount of Savings Plans utilization (in hours).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansUtilizationByTime {
     /// <p>The time period of the request. </p>
     #[doc(hidden)]
@@ -4790,16 +4554,6 @@ impl SavingsPlansUtilizationByTime {
         &self,
     ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
         self.amortized_commitment.as_ref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansUtilizationByTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansUtilizationByTime");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("utilization", &self.utilization);
-        formatter.field("savings", &self.savings);
-        formatter.field("amortized_commitment", &self.amortized_commitment);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
@@ -4890,7 +4644,7 @@ impl SavingsPlansUtilizationByTime {
 
 /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendation {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     #[doc(hidden)]
@@ -4953,25 +4707,6 @@ impl SavingsPlansPurchaseRecommendation {
         &self,
     ) -> std::option::Option<&crate::model::SavingsPlansPurchaseRecommendationSummary> {
         self.savings_plans_purchase_recommendation_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansPurchaseRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansPurchaseRecommendation");
-        formatter.field("account_scope", &self.account_scope);
-        formatter.field("savings_plans_type", &self.savings_plans_type);
-        formatter.field("term_in_years", &self.term_in_years);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("lookback_period_in_days", &self.lookback_period_in_days);
-        formatter.field(
-            "savings_plans_purchase_recommendation_details",
-            &self.savings_plans_purchase_recommendation_details,
-        );
-        formatter.field(
-            "savings_plans_purchase_recommendation_summary",
-            &self.savings_plans_purchase_recommendation_summary,
-        );
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
@@ -5130,7 +4865,7 @@ impl SavingsPlansPurchaseRecommendation {
 
 /// <p>Summary metrics for your Savings Plans Purchase Recommendations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationSummary {
     /// <p>The estimated return on investment that's based on the recommended Savings Plans and estimated savings.</p>
     #[doc(hidden)]
@@ -5211,41 +4946,6 @@ impl SavingsPlansPurchaseRecommendationSummary {
     pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<&str> {
         self.estimated_on_demand_cost_with_current_commitment
             .as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansPurchaseRecommendationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansPurchaseRecommendationSummary");
-        formatter.field("estimated_roi", &self.estimated_roi);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("estimated_total_cost", &self.estimated_total_cost);
-        formatter.field("current_on_demand_spend", &self.current_on_demand_spend);
-        formatter.field("estimated_savings_amount", &self.estimated_savings_amount);
-        formatter.field(
-            "total_recommendation_count",
-            &self.total_recommendation_count,
-        );
-        formatter.field(
-            "daily_commitment_to_purchase",
-            &self.daily_commitment_to_purchase,
-        );
-        formatter.field(
-            "hourly_commitment_to_purchase",
-            &self.hourly_commitment_to_purchase,
-        );
-        formatter.field(
-            "estimated_savings_percentage",
-            &self.estimated_savings_percentage,
-        );
-        formatter.field(
-            "estimated_monthly_savings_amount",
-            &self.estimated_monthly_savings_amount,
-        );
-        formatter.field(
-            "estimated_on_demand_cost_with_current_commitment",
-            &self.estimated_on_demand_cost_with_current_commitment,
-        );
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
@@ -5454,7 +5154,7 @@ impl SavingsPlansPurchaseRecommendationSummary {
 
 /// <p>Details for your recommended Savings Plans.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationDetail {
     /// <p>Details for your recommended Savings Plans.</p>
     #[doc(hidden)]
@@ -5570,52 +5270,6 @@ impl SavingsPlansPurchaseRecommendationDetail {
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
     pub fn current_average_hourly_on_demand_spend(&self) -> std::option::Option<&str> {
         self.current_average_hourly_on_demand_spend.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansPurchaseRecommendationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansPurchaseRecommendationDetail");
-        formatter.field("savings_plans_details", &self.savings_plans_details);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("upfront_cost", &self.upfront_cost);
-        formatter.field("estimated_roi", &self.estimated_roi);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("estimated_sp_cost", &self.estimated_sp_cost);
-        formatter.field("estimated_on_demand_cost", &self.estimated_on_demand_cost);
-        formatter.field(
-            "estimated_on_demand_cost_with_current_commitment",
-            &self.estimated_on_demand_cost_with_current_commitment,
-        );
-        formatter.field("estimated_savings_amount", &self.estimated_savings_amount);
-        formatter.field(
-            "estimated_savings_percentage",
-            &self.estimated_savings_percentage,
-        );
-        formatter.field(
-            "hourly_commitment_to_purchase",
-            &self.hourly_commitment_to_purchase,
-        );
-        formatter.field(
-            "estimated_average_utilization",
-            &self.estimated_average_utilization,
-        );
-        formatter.field(
-            "estimated_monthly_savings_amount",
-            &self.estimated_monthly_savings_amount,
-        );
-        formatter.field(
-            "current_minimum_hourly_on_demand_spend",
-            &self.current_minimum_hourly_on_demand_spend,
-        );
-        formatter.field(
-            "current_maximum_hourly_on_demand_spend",
-            &self.current_maximum_hourly_on_demand_spend,
-        );
-        formatter.field(
-            "current_average_hourly_on_demand_spend",
-            &self.current_average_hourly_on_demand_spend,
-        );
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
@@ -5902,7 +5556,7 @@ impl SavingsPlansPurchaseRecommendationDetail {
 
 /// <p>The attribute details on a specific Savings Plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansDetails {
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
     #[doc(hidden)]
@@ -5926,15 +5580,6 @@ impl SavingsPlansDetails {
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
     pub fn offering_id(&self) -> std::option::Option<&str> {
         self.offering_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansDetails");
-        formatter.field("region", &self.region);
-        formatter.field("instance_family", &self.instance_family);
-        formatter.field("offering_id", &self.offering_id);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
@@ -6491,7 +6136,7 @@ impl AsRef<str> for AccountScope {
 
 /// <p>Metadata about your Savings Plans Purchase Recommendations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationMetadata {
     /// <p>The unique identifier for the recommendation set.</p>
     #[doc(hidden)]
@@ -6515,15 +6160,6 @@ impl SavingsPlansPurchaseRecommendationMetadata {
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
     pub fn additional_metadata(&self) -> std::option::Option<&str> {
         self.additional_metadata.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansPurchaseRecommendationMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansPurchaseRecommendationMetadata");
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("generation_timestamp", &self.generation_timestamp);
-        formatter.field("additional_metadata", &self.additional_metadata);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
@@ -6595,7 +6231,7 @@ impl SavingsPlansPurchaseRecommendationMetadata {
 
 /// <p>The amount of Savings Plans eligible usage that's covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansCoverage {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
     #[doc(hidden)]
@@ -6623,15 +6259,6 @@ impl SavingsPlansCoverage {
     /// <p>The time period of the request. </p>
     pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
         self.time_period.as_ref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansCoverage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansCoverage");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("coverage", &self.coverage);
-        formatter.field("time_period", &self.time_period);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
@@ -6717,7 +6344,7 @@ impl SavingsPlansCoverage {
 
 /// <p>Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlansCoverageData {
     /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
     #[doc(hidden)]
@@ -6748,19 +6375,6 @@ impl SavingsPlansCoverageData {
     /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
     pub fn coverage_percentage(&self) -> std::option::Option<&str> {
         self.coverage_percentage.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlansCoverageData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlansCoverageData");
-        formatter.field(
-            "spend_covered_by_savings_plans",
-            &self.spend_covered_by_savings_plans,
-        );
-        formatter.field("on_demand_cost", &self.on_demand_cost);
-        formatter.field("total_cost", &self.total_cost);
-        formatter.field("coverage_percentage", &self.coverage_percentage);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
@@ -6847,7 +6461,7 @@ impl SavingsPlansCoverageData {
 
 /// <p>Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupDefinition {
     /// <p>The string that represents the type of group.</p>
     #[doc(hidden)]
@@ -6864,14 +6478,6 @@ impl GroupDefinition {
     /// <p>The string that represents a key for a specified group.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupDefinition");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`GroupDefinition`](crate::model::GroupDefinition).
@@ -7022,7 +6628,7 @@ impl AsRef<str> for GroupDefinitionType {
 
 /// <p>You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or Reserved Instance (RI) benefits, or neither. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
     #[doc(hidden)]
@@ -7041,14 +6647,6 @@ impl RightsizingRecommendationConfiguration {
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
     pub fn benefits_considered(&self) -> bool {
         self.benefits_considered
-    }
-}
-impl std::fmt::Debug for RightsizingRecommendationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RightsizingRecommendationConfiguration");
-        formatter.field("recommendation_target", &self.recommendation_target);
-        formatter.field("benefits_considered", &self.benefits_considered);
-        formatter.finish()
     }
 }
 /// See [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
@@ -7194,7 +6792,7 @@ impl AsRef<str> for RecommendationTarget {
 
 /// <p>Recommendations to rightsize resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RightsizingRecommendation {
     /// <p>The account that this recommendation is for.</p>
     #[doc(hidden)]
@@ -7244,24 +6842,6 @@ impl RightsizingRecommendation {
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub fn finding_reason_codes(&self) -> std::option::Option<&[crate::model::FindingReasonCode]> {
         self.finding_reason_codes.as_deref()
-    }
-}
-impl std::fmt::Debug for RightsizingRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RightsizingRecommendation");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("current_instance", &self.current_instance);
-        formatter.field("rightsizing_type", &self.rightsizing_type);
-        formatter.field(
-            "modify_recommendation_detail",
-            &self.modify_recommendation_detail,
-        );
-        formatter.field(
-            "terminate_recommendation_detail",
-            &self.terminate_recommendation_detail,
-        );
-        formatter.field("finding_reason_codes", &self.finding_reason_codes);
-        formatter.finish()
     }
 }
 /// See [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
@@ -7581,7 +7161,7 @@ impl AsRef<str> for FindingReasonCode {
 
 /// <p>Details on termination recommendation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateRecommendationDetail {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
     #[doc(hidden)]
@@ -7598,14 +7178,6 @@ impl TerminateRecommendationDetail {
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn currency_code(&self) -> std::option::Option<&str> {
         self.currency_code.as_deref()
-    }
-}
-impl std::fmt::Debug for TerminateRecommendationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateRecommendationDetail");
-        formatter.field("estimated_monthly_savings", &self.estimated_monthly_savings);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.finish()
     }
 }
 /// See [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
@@ -7662,7 +7234,7 @@ impl TerminateRecommendationDetail {
 
 /// <p>Details for the modification recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyRecommendationDetail {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
     #[doc(hidden)]
@@ -7672,13 +7244,6 @@ impl ModifyRecommendationDetail {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
     pub fn target_instances(&self) -> std::option::Option<&[crate::model::TargetInstance]> {
         self.target_instances.as_deref()
-    }
-}
-impl std::fmt::Debug for ModifyRecommendationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyRecommendationDetail");
-        formatter.field("target_instances", &self.target_instances);
-        formatter.finish()
     }
 }
 /// See [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
@@ -7727,7 +7292,7 @@ impl ModifyRecommendationDetail {
 
 /// <p>Details on recommended instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetInstance {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
     #[doc(hidden)]
@@ -7781,22 +7346,6 @@ impl TargetInstance {
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     pub fn platform_differences(&self) -> std::option::Option<&[crate::model::PlatformDifference]> {
         self.platform_differences.as_deref()
-    }
-}
-impl std::fmt::Debug for TargetInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetInstance");
-        formatter.field("estimated_monthly_cost", &self.estimated_monthly_cost);
-        formatter.field("estimated_monthly_savings", &self.estimated_monthly_savings);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("default_target_instance", &self.default_target_instance);
-        formatter.field("resource_details", &self.resource_details);
-        formatter.field(
-            "expected_resource_utilization",
-            &self.expected_resource_utilization,
-        );
-        formatter.field("platform_differences", &self.platform_differences);
-        formatter.finish()
     }
 }
 /// See [`TargetInstance`](crate::model::TargetInstance).
@@ -8049,7 +7598,7 @@ impl AsRef<str> for PlatformDifference {
 
 /// <p>Resource utilization of current resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceUtilization {
     /// <p>The utilization of current Amazon EC2 instance. </p>
     #[doc(hidden)]
@@ -8061,13 +7610,6 @@ impl ResourceUtilization {
         &self,
     ) -> std::option::Option<&crate::model::Ec2ResourceUtilization> {
         self.ec2_resource_utilization.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceUtilization");
-        formatter.field("ec2_resource_utilization", &self.ec2_resource_utilization);
-        formatter.finish()
     }
 }
 /// See [`ResourceUtilization`](crate::model::ResourceUtilization).
@@ -8113,7 +7655,7 @@ impl ResourceUtilization {
 
 /// <p>Utilization metrics for the instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2ResourceUtilization {
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
     #[doc(hidden)]
@@ -8164,30 +7706,6 @@ impl Ec2ResourceUtilization {
         &self,
     ) -> std::option::Option<&crate::model::NetworkResourceUtilization> {
         self.network_resource_utilization.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2ResourceUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2ResourceUtilization");
-        formatter.field(
-            "max_cpu_utilization_percentage",
-            &self.max_cpu_utilization_percentage,
-        );
-        formatter.field(
-            "max_memory_utilization_percentage",
-            &self.max_memory_utilization_percentage,
-        );
-        formatter.field(
-            "max_storage_utilization_percentage",
-            &self.max_storage_utilization_percentage,
-        );
-        formatter.field("ebs_resource_utilization", &self.ebs_resource_utilization);
-        formatter.field("disk_resource_utilization", &self.disk_resource_utilization);
-        formatter.field(
-            "network_resource_utilization",
-            &self.network_resource_utilization,
-        );
-        formatter.finish()
     }
 }
 /// See [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
@@ -8325,7 +7843,7 @@ impl Ec2ResourceUtilization {
 
 /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkResourceUtilization {
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
     #[doc(hidden)]
@@ -8356,28 +7874,6 @@ impl NetworkResourceUtilization {
     /// <p>The network outbound packets that are measured in packets per second. </p>
     pub fn network_packets_out_per_second(&self) -> std::option::Option<&str> {
         self.network_packets_out_per_second.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkResourceUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkResourceUtilization");
-        formatter.field(
-            "network_in_bytes_per_second",
-            &self.network_in_bytes_per_second,
-        );
-        formatter.field(
-            "network_out_bytes_per_second",
-            &self.network_out_bytes_per_second,
-        );
-        formatter.field(
-            "network_packets_in_per_second",
-            &self.network_packets_in_per_second,
-        );
-        formatter.field(
-            "network_packets_out_per_second",
-            &self.network_packets_out_per_second,
-        );
-        formatter.finish()
     }
 }
 /// See [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
@@ -8476,7 +7972,7 @@ impl NetworkResourceUtilization {
 
 /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiskResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
     #[doc(hidden)]
@@ -8507,22 +8003,6 @@ impl DiskResourceUtilization {
     /// <p>The maximum write throughput operations per second. </p>
     pub fn disk_write_bytes_per_second(&self) -> std::option::Option<&str> {
         self.disk_write_bytes_per_second.as_deref()
-    }
-}
-impl std::fmt::Debug for DiskResourceUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiskResourceUtilization");
-        formatter.field("disk_read_ops_per_second", &self.disk_read_ops_per_second);
-        formatter.field("disk_write_ops_per_second", &self.disk_write_ops_per_second);
-        formatter.field(
-            "disk_read_bytes_per_second",
-            &self.disk_read_bytes_per_second,
-        );
-        formatter.field(
-            "disk_write_bytes_per_second",
-            &self.disk_write_bytes_per_second,
-        );
-        formatter.finish()
     }
 }
 /// See [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
@@ -8612,7 +8092,7 @@ impl DiskResourceUtilization {
 
 /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
     #[doc(hidden)]
@@ -8643,19 +8123,6 @@ impl EbsResourceUtilization {
     /// <p>The maximum size of write operations per second. </p>
     pub fn ebs_write_bytes_per_second(&self) -> std::option::Option<&str> {
         self.ebs_write_bytes_per_second.as_deref()
-    }
-}
-impl std::fmt::Debug for EbsResourceUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsResourceUtilization");
-        formatter.field("ebs_read_ops_per_second", &self.ebs_read_ops_per_second);
-        formatter.field("ebs_write_ops_per_second", &self.ebs_write_ops_per_second);
-        formatter.field("ebs_read_bytes_per_second", &self.ebs_read_bytes_per_second);
-        formatter.field(
-            "ebs_write_bytes_per_second",
-            &self.ebs_write_bytes_per_second,
-        );
-        formatter.finish()
     }
 }
 /// See [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
@@ -8742,7 +8209,7 @@ impl EbsResourceUtilization {
 
 /// <p>Details for the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>Details for the Amazon EC2 resource.</p>
     #[doc(hidden)]
@@ -8752,13 +8219,6 @@ impl ResourceDetails {
     /// <p>Details for the Amazon EC2 resource.</p>
     pub fn ec2_resource_details(&self) -> std::option::Option<&crate::model::Ec2ResourceDetails> {
         self.ec2_resource_details.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceDetails");
-        formatter.field("ec2_resource_details", &self.ec2_resource_details);
-        formatter.finish()
     }
 }
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
@@ -8800,7 +8260,7 @@ impl ResourceDetails {
 
 /// <p>Details on the Amazon EC2 Resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2ResourceDetails {
     /// <p>The hourly public On-Demand rate for the instance type.</p>
     #[doc(hidden)]
@@ -8866,21 +8326,6 @@ impl Ec2ResourceDetails {
     /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
     pub fn vcpu(&self) -> std::option::Option<&str> {
         self.vcpu.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2ResourceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2ResourceDetails");
-        formatter.field("hourly_on_demand_rate", &self.hourly_on_demand_rate);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("platform", &self.platform);
-        formatter.field("region", &self.region);
-        formatter.field("sku", &self.sku);
-        formatter.field("memory", &self.memory);
-        formatter.field("network_performance", &self.network_performance);
-        formatter.field("storage", &self.storage);
-        formatter.field("vcpu", &self.vcpu);
-        formatter.finish()
     }
 }
 /// See [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
@@ -9114,7 +8559,7 @@ impl AsRef<str> for RightsizingType {
 
 /// <p>Context about the current instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CurrentInstance {
     /// <p>Resource ID of the current instance.</p>
     #[doc(hidden)]
@@ -9195,35 +8640,6 @@ impl CurrentInstance {
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn currency_code(&self) -> std::option::Option<&str> {
         self.currency_code.as_deref()
-    }
-}
-impl std::fmt::Debug for CurrentInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CurrentInstance");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("resource_details", &self.resource_details);
-        formatter.field("resource_utilization", &self.resource_utilization);
-        formatter.field(
-            "reservation_covered_hours_in_lookback_period",
-            &self.reservation_covered_hours_in_lookback_period,
-        );
-        formatter.field(
-            "savings_plans_covered_hours_in_lookback_period",
-            &self.savings_plans_covered_hours_in_lookback_period,
-        );
-        formatter.field(
-            "on_demand_hours_in_lookback_period",
-            &self.on_demand_hours_in_lookback_period,
-        );
-        formatter.field(
-            "total_running_hours_in_lookback_period",
-            &self.total_running_hours_in_lookback_period,
-        );
-        formatter.field("monthly_cost", &self.monthly_cost);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.finish()
     }
 }
 /// See [`CurrentInstance`](crate::model::CurrentInstance).
@@ -9431,7 +8847,7 @@ impl CurrentInstance {
 
 /// <p>The summary of rightsizing recommendations </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RightsizingRecommendationSummary {
     /// <p>The total number of instance recommendations.</p>
     #[doc(hidden)]
@@ -9462,22 +8878,6 @@ impl RightsizingRecommendationSummary {
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
     pub fn savings_percentage(&self) -> std::option::Option<&str> {
         self.savings_percentage.as_deref()
-    }
-}
-impl std::fmt::Debug for RightsizingRecommendationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RightsizingRecommendationSummary");
-        formatter.field(
-            "total_recommendation_count",
-            &self.total_recommendation_count,
-        );
-        formatter.field(
-            "estimated_total_monthly_savings_amount",
-            &self.estimated_total_monthly_savings_amount,
-        );
-        formatter.field("savings_currency_code", &self.savings_currency_code);
-        formatter.field("savings_percentage", &self.savings_percentage);
-        formatter.finish()
     }
 }
 /// See [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
@@ -9567,7 +8967,7 @@ impl RightsizingRecommendationSummary {
 
 /// <p>Metadata for this recommendation set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RightsizingRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
@@ -9600,16 +9000,6 @@ impl RightsizingRecommendationMetadata {
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
     pub fn additional_metadata(&self) -> std::option::Option<&str> {
         self.additional_metadata.as_deref()
-    }
-}
-impl std::fmt::Debug for RightsizingRecommendationMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RightsizingRecommendationMetadata");
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("generation_timestamp", &self.generation_timestamp);
-        formatter.field("lookback_period_in_days", &self.lookback_period_in_days);
-        formatter.field("additional_metadata", &self.additional_metadata);
-        formatter.finish()
     }
 }
 /// See [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
@@ -9699,7 +9089,7 @@ impl RightsizingRecommendationMetadata {
 
 /// <p>The aggregated numbers for your reservation usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservationAggregates {
     /// <p>The percentage of reservation time that you used.</p>
     #[doc(hidden)]
@@ -9821,38 +9211,6 @@ impl ReservationAggregates {
     /// <p>The unrealized savings because of purchasing and using a reservation.</p>
     pub fn unrealized_savings(&self) -> std::option::Option<&str> {
         self.unrealized_savings.as_deref()
-    }
-}
-impl std::fmt::Debug for ReservationAggregates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservationAggregates");
-        formatter.field("utilization_percentage", &self.utilization_percentage);
-        formatter.field(
-            "utilization_percentage_in_units",
-            &self.utilization_percentage_in_units,
-        );
-        formatter.field("purchased_hours", &self.purchased_hours);
-        formatter.field("purchased_units", &self.purchased_units);
-        formatter.field("total_actual_hours", &self.total_actual_hours);
-        formatter.field("total_actual_units", &self.total_actual_units);
-        formatter.field("unused_hours", &self.unused_hours);
-        formatter.field("unused_units", &self.unused_units);
-        formatter.field(
-            "on_demand_cost_of_ri_hours_used",
-            &self.on_demand_cost_of_ri_hours_used,
-        );
-        formatter.field("net_ri_savings", &self.net_ri_savings);
-        formatter.field(
-            "total_potential_ri_savings",
-            &self.total_potential_ri_savings,
-        );
-        formatter.field("amortized_upfront_fee", &self.amortized_upfront_fee);
-        formatter.field("amortized_recurring_fee", &self.amortized_recurring_fee);
-        formatter.field("total_amortized_fee", &self.total_amortized_fee);
-        formatter.field("ri_cost_for_unused_hours", &self.ri_cost_for_unused_hours);
-        formatter.field("realized_savings", &self.realized_savings);
-        formatter.field("unrealized_savings", &self.unrealized_savings);
-        formatter.finish()
     }
 }
 /// See [`ReservationAggregates`](crate::model::ReservationAggregates).
@@ -10134,7 +9492,7 @@ impl ReservationAggregates {
 
 /// <p>The amount of utilization, in hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UtilizationByTime {
     /// <p>The period of time that this utilization was used for.</p>
     #[doc(hidden)]
@@ -10158,15 +9516,6 @@ impl UtilizationByTime {
     /// <p>The total number of reservation hours that were used.</p>
     pub fn total(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
         self.total.as_ref()
-    }
-}
-impl std::fmt::Debug for UtilizationByTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UtilizationByTime");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("groups", &self.groups);
-        formatter.field("total", &self.total);
-        formatter.finish()
     }
 }
 /// See [`UtilizationByTime`](crate::model::UtilizationByTime).
@@ -10245,7 +9594,7 @@ impl UtilizationByTime {
 
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservationUtilizationGroup {
     /// <p>The key for a specific reservation attribute.</p>
     #[doc(hidden)]
@@ -10280,16 +9629,6 @@ impl ReservationUtilizationGroup {
     /// <p>How much you used this group of reservations.</p>
     pub fn utilization(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
         self.utilization.as_ref()
-    }
-}
-impl std::fmt::Debug for ReservationUtilizationGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservationUtilizationGroup");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("utilization", &self.utilization);
-        formatter.finish()
     }
 }
 /// See [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
@@ -10384,7 +9723,7 @@ impl ReservationUtilizationGroup {
 
 /// <p>A specific reservation that Amazon Web Services recommends for purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendation {
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
     #[doc(hidden)]
@@ -10446,19 +9785,6 @@ impl ReservationPurchaseRecommendation {
         &self,
     ) -> std::option::Option<&crate::model::ReservationPurchaseRecommendationSummary> {
         self.recommendation_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ReservationPurchaseRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservationPurchaseRecommendation");
-        formatter.field("account_scope", &self.account_scope);
-        formatter.field("lookback_period_in_days", &self.lookback_period_in_days);
-        formatter.field("term_in_years", &self.term_in_years);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("service_specification", &self.service_specification);
-        formatter.field("recommendation_details", &self.recommendation_details);
-        formatter.field("recommendation_summary", &self.recommendation_summary);
-        formatter.finish()
     }
 }
 /// See [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
@@ -10610,7 +9936,7 @@ impl ReservationPurchaseRecommendation {
 
 /// <p>A summary about this recommendation, such as the currency code, the amount that Amazon Web Services estimates that you could save, and the total amount of reservation to purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationSummary {
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
     #[doc(hidden)]
@@ -10634,21 +9960,6 @@ impl ReservationPurchaseRecommendationSummary {
     /// <p>The currency code used for this recommendation.</p>
     pub fn currency_code(&self) -> std::option::Option<&str> {
         self.currency_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ReservationPurchaseRecommendationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservationPurchaseRecommendationSummary");
-        formatter.field(
-            "total_estimated_monthly_savings_amount",
-            &self.total_estimated_monthly_savings_amount,
-        );
-        formatter.field(
-            "total_estimated_monthly_savings_percentage",
-            &self.total_estimated_monthly_savings_percentage,
-        );
-        formatter.field("currency_code", &self.currency_code);
-        formatter.finish()
     }
 }
 /// See [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
@@ -10728,7 +10039,7 @@ impl ReservationPurchaseRecommendationSummary {
 
 /// <p>Details about your recommended reservation purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationDetail {
     /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
     #[doc(hidden)]
@@ -10865,73 +10176,6 @@ impl ReservationPurchaseRecommendationDetail {
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
     pub fn recurring_standard_monthly_cost(&self) -> std::option::Option<&str> {
         self.recurring_standard_monthly_cost.as_deref()
-    }
-}
-impl std::fmt::Debug for ReservationPurchaseRecommendationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservationPurchaseRecommendationDetail");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("instance_details", &self.instance_details);
-        formatter.field(
-            "recommended_number_of_instances_to_purchase",
-            &self.recommended_number_of_instances_to_purchase,
-        );
-        formatter.field(
-            "recommended_normalized_units_to_purchase",
-            &self.recommended_normalized_units_to_purchase,
-        );
-        formatter.field(
-            "minimum_number_of_instances_used_per_hour",
-            &self.minimum_number_of_instances_used_per_hour,
-        );
-        formatter.field(
-            "minimum_normalized_units_used_per_hour",
-            &self.minimum_normalized_units_used_per_hour,
-        );
-        formatter.field(
-            "maximum_number_of_instances_used_per_hour",
-            &self.maximum_number_of_instances_used_per_hour,
-        );
-        formatter.field(
-            "maximum_normalized_units_used_per_hour",
-            &self.maximum_normalized_units_used_per_hour,
-        );
-        formatter.field(
-            "average_number_of_instances_used_per_hour",
-            &self.average_number_of_instances_used_per_hour,
-        );
-        formatter.field(
-            "average_normalized_units_used_per_hour",
-            &self.average_normalized_units_used_per_hour,
-        );
-        formatter.field("average_utilization", &self.average_utilization);
-        formatter.field(
-            "estimated_break_even_in_months",
-            &self.estimated_break_even_in_months,
-        );
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field(
-            "estimated_monthly_savings_amount",
-            &self.estimated_monthly_savings_amount,
-        );
-        formatter.field(
-            "estimated_monthly_savings_percentage",
-            &self.estimated_monthly_savings_percentage,
-        );
-        formatter.field(
-            "estimated_monthly_on_demand_cost",
-            &self.estimated_monthly_on_demand_cost,
-        );
-        formatter.field(
-            "estimated_reservation_cost_for_lookback_period",
-            &self.estimated_reservation_cost_for_lookback_period,
-        );
-        formatter.field("upfront_cost", &self.upfront_cost);
-        formatter.field(
-            "recurring_standard_monthly_cost",
-            &self.recurring_standard_monthly_cost,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
@@ -11291,7 +10535,7 @@ impl ReservationPurchaseRecommendationDetail {
 
 /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceDetails {
     /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
     #[doc(hidden)]
@@ -11334,20 +10578,6 @@ impl InstanceDetails {
     /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
     pub fn es_instance_details(&self) -> std::option::Option<&crate::model::EsInstanceDetails> {
         self.es_instance_details.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceDetails");
-        formatter.field("ec2_instance_details", &self.ec2_instance_details);
-        formatter.field("rds_instance_details", &self.rds_instance_details);
-        formatter.field("redshift_instance_details", &self.redshift_instance_details);
-        formatter.field(
-            "elasti_cache_instance_details",
-            &self.elasti_cache_instance_details,
-        );
-        formatter.field("es_instance_details", &self.es_instance_details);
-        formatter.finish()
     }
 }
 /// See [`InstanceDetails`](crate::model::InstanceDetails).
@@ -11457,7 +10687,7 @@ impl InstanceDetails {
 
 /// <p>Details about the Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EsInstanceDetails {
     /// <p>The class of instance that Amazon Web Services recommends.</p>
     #[doc(hidden)]
@@ -11495,17 +10725,6 @@ impl EsInstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(&self) -> bool {
         self.size_flex_eligible
-    }
-}
-impl std::fmt::Debug for EsInstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EsInstanceDetails");
-        formatter.field("instance_class", &self.instance_class);
-        formatter.field("instance_size", &self.instance_size);
-        formatter.field("region", &self.region);
-        formatter.field("current_generation", &self.current_generation);
-        formatter.field("size_flex_eligible", &self.size_flex_eligible);
-        formatter.finish()
     }
 }
 /// See [`EsInstanceDetails`](crate::model::EsInstanceDetails).
@@ -11598,7 +10817,7 @@ impl EsInstanceDetails {
 
 /// <p>Details about the Amazon ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElastiCacheInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
@@ -11643,18 +10862,6 @@ impl ElastiCacheInstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(&self) -> bool {
         self.size_flex_eligible
-    }
-}
-impl std::fmt::Debug for ElastiCacheInstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElastiCacheInstanceDetails");
-        formatter.field("family", &self.family);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("region", &self.region);
-        formatter.field("product_description", &self.product_description);
-        formatter.field("current_generation", &self.current_generation);
-        formatter.field("size_flex_eligible", &self.size_flex_eligible);
-        formatter.finish()
     }
 }
 /// See [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
@@ -11756,7 +10963,7 @@ impl ElastiCacheInstanceDetails {
 
 /// <p>Details about the Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
@@ -11794,17 +11001,6 @@ impl RedshiftInstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(&self) -> bool {
         self.size_flex_eligible
-    }
-}
-impl std::fmt::Debug for RedshiftInstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftInstanceDetails");
-        formatter.field("family", &self.family);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("region", &self.region);
-        formatter.field("current_generation", &self.current_generation);
-        formatter.field("size_flex_eligible", &self.size_flex_eligible);
-        formatter.finish()
     }
 }
 /// See [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
@@ -11891,7 +11087,7 @@ impl RedshiftInstanceDetails {
 
 /// <p>Details about the Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
@@ -11957,21 +11153,6 @@ impl RdsInstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(&self) -> bool {
         self.size_flex_eligible
-    }
-}
-impl std::fmt::Debug for RdsInstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsInstanceDetails");
-        formatter.field("family", &self.family);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("region", &self.region);
-        formatter.field("database_engine", &self.database_engine);
-        formatter.field("database_edition", &self.database_edition);
-        formatter.field("deployment_option", &self.deployment_option);
-        formatter.field("license_model", &self.license_model);
-        formatter.field("current_generation", &self.current_generation);
-        formatter.field("size_flex_eligible", &self.size_flex_eligible);
-        formatter.finish()
     }
 }
 /// See [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
@@ -12121,7 +11302,7 @@ impl RdsInstanceDetails {
 
 /// <p>Details about the Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2InstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
@@ -12180,20 +11361,6 @@ impl Ec2InstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(&self) -> bool {
         self.size_flex_eligible
-    }
-}
-impl std::fmt::Debug for Ec2InstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2InstanceDetails");
-        formatter.field("family", &self.family);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("region", &self.region);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("platform", &self.platform);
-        formatter.field("tenancy", &self.tenancy);
-        formatter.field("current_generation", &self.current_generation);
-        formatter.field("size_flex_eligible", &self.size_flex_eligible);
-        formatter.finish()
     }
 }
 /// See [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
@@ -12322,7 +11489,7 @@ impl Ec2InstanceDetails {
 
 /// <p>Hardware specifications for the service that you want recommendations for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceSpecification {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
     #[doc(hidden)]
@@ -12332,13 +11499,6 @@ impl ServiceSpecification {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
     pub fn ec2_specification(&self) -> std::option::Option<&crate::model::Ec2Specification> {
         self.ec2_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceSpecification");
-        formatter.field("ec2_specification", &self.ec2_specification);
-        formatter.finish()
     }
 }
 /// See [`ServiceSpecification`](crate::model::ServiceSpecification).
@@ -12380,7 +11540,7 @@ impl ServiceSpecification {
 
 /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2Specification {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     #[doc(hidden)]
@@ -12390,13 +11550,6 @@ impl Ec2Specification {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     pub fn offering_class(&self) -> std::option::Option<&crate::model::OfferingClass> {
         self.offering_class.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2Specification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2Specification");
-        formatter.field("offering_class", &self.offering_class);
-        formatter.finish()
     }
 }
 /// See [`Ec2Specification`](crate::model::Ec2Specification).
@@ -12528,7 +11681,7 @@ impl AsRef<str> for OfferingClass {
 
 /// <p>Information about this specific recommendation, such as the timestamp for when Amazon Web Services made a specific recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
@@ -12545,14 +11698,6 @@ impl ReservationPurchaseRecommendationMetadata {
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
     pub fn generation_timestamp(&self) -> std::option::Option<&str> {
         self.generation_timestamp.as_deref()
-    }
-}
-impl std::fmt::Debug for ReservationPurchaseRecommendationMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservationPurchaseRecommendationMetadata");
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("generation_timestamp", &self.generation_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
@@ -12609,7 +11754,7 @@ impl ReservationPurchaseRecommendationMetadata {
 
 /// <p>The amount of instance usage that a reservation covered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Coverage {
     /// <p>The amount of instance usage that the reservation covered, in hours.</p>
     #[doc(hidden)]
@@ -12635,15 +11780,6 @@ impl Coverage {
     /// <p>The amount of cost that the reservation covered.</p>
     pub fn coverage_cost(&self) -> std::option::Option<&crate::model::CoverageCost> {
         self.coverage_cost.as_ref()
-    }
-}
-impl std::fmt::Debug for Coverage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Coverage");
-        formatter.field("coverage_hours", &self.coverage_hours);
-        formatter.field("coverage_normalized_units", &self.coverage_normalized_units);
-        formatter.field("coverage_cost", &self.coverage_cost);
-        formatter.finish()
     }
 }
 /// See [`Coverage`](crate::model::Coverage).
@@ -12719,7 +11855,7 @@ impl Coverage {
 
 /// <p>How much it costs to run an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoverageCost {
     /// <p>How much an On-Demand Instance costs.</p>
     #[doc(hidden)]
@@ -12729,13 +11865,6 @@ impl CoverageCost {
     /// <p>How much an On-Demand Instance costs.</p>
     pub fn on_demand_cost(&self) -> std::option::Option<&str> {
         self.on_demand_cost.as_deref()
-    }
-}
-impl std::fmt::Debug for CoverageCost {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoverageCost");
-        formatter.field("on_demand_cost", &self.on_demand_cost);
-        formatter.finish()
     }
 }
 /// See [`CoverageCost`](crate::model::CoverageCost).
@@ -12778,7 +11907,7 @@ impl CoverageCost {
 /// <p>The amount of instance usage, in normalized units. You can use normalized units to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose that you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. When you use normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoverageNormalizedUnits {
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
     #[doc(hidden)]
@@ -12809,25 +11938,6 @@ impl CoverageNormalizedUnits {
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
     pub fn coverage_normalized_units_percentage(&self) -> std::option::Option<&str> {
         self.coverage_normalized_units_percentage.as_deref()
-    }
-}
-impl std::fmt::Debug for CoverageNormalizedUnits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoverageNormalizedUnits");
-        formatter.field(
-            "on_demand_normalized_units",
-            &self.on_demand_normalized_units,
-        );
-        formatter.field("reserved_normalized_units", &self.reserved_normalized_units);
-        formatter.field(
-            "total_running_normalized_units",
-            &self.total_running_normalized_units,
-        );
-        formatter.field(
-            "coverage_normalized_units_percentage",
-            &self.coverage_normalized_units_percentage,
-        );
-        formatter.finish()
     }
 }
 /// See [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
@@ -12920,7 +12030,7 @@ impl CoverageNormalizedUnits {
 
 /// <p>How long a running instance either used a reservation or was On-Demand.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoverageHours {
     /// <p>The number of instance running hours that On-Demand Instances covered.</p>
     #[doc(hidden)]
@@ -12951,16 +12061,6 @@ impl CoverageHours {
     /// <p>The percentage of instance hours that a reservation covered.</p>
     pub fn coverage_hours_percentage(&self) -> std::option::Option<&str> {
         self.coverage_hours_percentage.as_deref()
-    }
-}
-impl std::fmt::Debug for CoverageHours {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoverageHours");
-        formatter.field("on_demand_hours", &self.on_demand_hours);
-        formatter.field("reserved_hours", &self.reserved_hours);
-        formatter.field("total_running_hours", &self.total_running_hours);
-        formatter.field("coverage_hours_percentage", &self.coverage_hours_percentage);
-        formatter.finish()
     }
 }
 /// See [`CoverageHours`](crate::model::CoverageHours).
@@ -13047,7 +12147,7 @@ impl CoverageHours {
 
 /// <p>Reservation coverage for a specified period, in hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoverageByTime {
     /// <p>The period that this coverage was used over.</p>
     #[doc(hidden)]
@@ -13071,15 +12171,6 @@ impl CoverageByTime {
     /// <p>The total reservation coverage, in hours.</p>
     pub fn total(&self) -> std::option::Option<&crate::model::Coverage> {
         self.total.as_ref()
-    }
-}
-impl std::fmt::Debug for CoverageByTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoverageByTime");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("groups", &self.groups);
-        formatter.field("total", &self.total);
-        formatter.finish()
     }
 }
 /// See [`CoverageByTime`](crate::model::CoverageByTime).
@@ -13155,7 +12246,7 @@ impl CoverageByTime {
 
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservationCoverageGroup {
     /// <p>The attributes for this group of reservations.</p>
     #[doc(hidden)]
@@ -13176,14 +12267,6 @@ impl ReservationCoverageGroup {
     /// <p>How much instance usage this group of reservations covered.</p>
     pub fn coverage(&self) -> std::option::Option<&crate::model::Coverage> {
         self.coverage.as_ref()
-    }
-}
-impl std::fmt::Debug for ReservationCoverageGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservationCoverageGroup");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("coverage", &self.coverage);
-        formatter.finish()
     }
 }
 /// See [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
@@ -13251,7 +12334,7 @@ impl ReservationCoverageGroup {
 
 /// <p>The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionValuesWithAttributes {
     /// <p>The value of a dimension with a specific attribute.</p>
     #[doc(hidden)]
@@ -13272,14 +12355,6 @@ impl DimensionValuesWithAttributes {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for DimensionValuesWithAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionValuesWithAttributes");
-        formatter.field("value", &self.value);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
@@ -13442,7 +12517,7 @@ impl AsRef<str> for Context {
 
 /// <p>The result that's associated with a time period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultByTime {
     /// <p>The time period that the result covers.</p>
     #[doc(hidden)]
@@ -13479,16 +12554,6 @@ impl ResultByTime {
     /// <p>Determines whether the result is estimated.</p>
     pub fn estimated(&self) -> bool {
         self.estimated
-    }
-}
-impl std::fmt::Debug for ResultByTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultByTime");
-        formatter.field("time_period", &self.time_period);
-        formatter.field("total", &self.total);
-        formatter.field("groups", &self.groups);
-        formatter.field("estimated", &self.estimated);
-        formatter.finish()
     }
 }
 /// See [`ResultByTime`](crate::model::ResultByTime).
@@ -13592,7 +12657,7 @@ impl ResultByTime {
 
 /// <p>One level of grouped data in the results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Group {
     /// <p>The keys that are included in this group.</p>
     #[doc(hidden)]
@@ -13615,14 +12680,6 @@ impl Group {
         &std::collections::HashMap<std::string::String, crate::model::MetricValue>,
     > {
         self.metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for Group {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Group");
-        formatter.field("keys", &self.keys);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
     }
 }
 /// See [`Group`](crate::model::Group).
@@ -13699,7 +12756,7 @@ impl Group {
 
 /// <p>The association between a monitor, threshold, and list of subscribers used to deliver notifications about anomalies detected by a monitor that exceeds a threshold. The content consists of the detailed metadata and the current status of the <code>AnomalySubscription</code> object. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalySubscription {
     /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
@@ -13751,19 +12808,6 @@ impl AnomalySubscription {
     /// <p>The name for the subscription. </p>
     pub fn subscription_name(&self) -> std::option::Option<&str> {
         self.subscription_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AnomalySubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalySubscription");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("monitor_arn_list", &self.monitor_arn_list);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("frequency", &self.frequency);
-        formatter.field("subscription_name", &self.subscription_name);
-        formatter.finish()
     }
 }
 /// See [`AnomalySubscription`](crate::model::AnomalySubscription).
@@ -13901,7 +12945,7 @@ impl AnomalySubscription {
 
 /// <p>This object continuously inspects your account's cost data for anomalies. It's based on <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists of detailed metadata and the current status of the monitor object. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyMonitor {
     /// <p>The Amazon Resource Name (ARN) value. </p>
     #[doc(hidden)]
@@ -13985,21 +13029,6 @@ impl AnomalyMonitor {
     /// <p>The value for evaluated dimensions. </p>
     pub fn dimensional_value_count(&self) -> i32 {
         self.dimensional_value_count
-    }
-}
-impl std::fmt::Debug for AnomalyMonitor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyMonitor");
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("monitor_name", &self.monitor_name);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("last_evaluated_date", &self.last_evaluated_date);
-        formatter.field("monitor_type", &self.monitor_type);
-        formatter.field("monitor_dimension", &self.monitor_dimension);
-        formatter.field("monitor_specification", &self.monitor_specification);
-        formatter.field("dimensional_value_count", &self.dimensional_value_count);
-        formatter.finish()
     }
 }
 /// See [`AnomalyMonitor`](crate::model::AnomalyMonitor).
@@ -14345,7 +13374,7 @@ impl AsRef<str> for MonitorType {
 
 /// <p>An unusual cost pattern. This consists of the detailed metadata and the current status of the anomaly object. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Anomaly {
     /// <p>The unique identifier for the anomaly. </p>
     #[doc(hidden)]
@@ -14411,21 +13440,6 @@ impl Anomaly {
     /// <p>The feedback value. </p>
     pub fn feedback(&self) -> std::option::Option<&crate::model::AnomalyFeedbackType> {
         self.feedback.as_ref()
-    }
-}
-impl std::fmt::Debug for Anomaly {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Anomaly");
-        formatter.field("anomaly_id", &self.anomaly_id);
-        formatter.field("anomaly_start_date", &self.anomaly_start_date);
-        formatter.field("anomaly_end_date", &self.anomaly_end_date);
-        formatter.field("dimension_value", &self.dimension_value);
-        formatter.field("root_causes", &self.root_causes);
-        formatter.field("anomaly_score", &self.anomaly_score);
-        formatter.field("impact", &self.impact);
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("feedback", &self.feedback);
-        formatter.finish()
     }
 }
 /// See [`Anomaly`](crate::model::Anomaly).
@@ -14584,7 +13598,7 @@ impl Anomaly {
 
 /// <p>The dollar value of the anomaly. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Impact {
     /// <p>The maximum dollar value that's observed for an anomaly. </p>
     #[doc(hidden)]
@@ -14601,14 +13615,6 @@ impl Impact {
     /// <p>The cumulative dollar value that's observed for an anomaly. </p>
     pub fn total_impact(&self) -> f64 {
         self.total_impact
-    }
-}
-impl std::fmt::Debug for Impact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Impact");
-        formatter.field("max_impact", &self.max_impact);
-        formatter.field("total_impact", &self.total_impact);
-        formatter.finish()
     }
 }
 /// See [`Impact`](crate::model::Impact).
@@ -14659,7 +13665,7 @@ impl Impact {
 
 /// <p>Quantifies the anomaly. The higher score means that it's more anomalous. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyScore {
     /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
     #[doc(hidden)]
@@ -14676,14 +13682,6 @@ impl AnomalyScore {
     /// <p>The last observed score. </p>
     pub fn current_score(&self) -> f64 {
         self.current_score
-    }
-}
-impl std::fmt::Debug for AnomalyScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyScore");
-        formatter.field("max_score", &self.max_score);
-        formatter.field("current_score", &self.current_score);
-        formatter.finish()
     }
 }
 /// See [`AnomalyScore`](crate::model::AnomalyScore).
@@ -14734,7 +13732,7 @@ impl AnomalyScore {
 
 /// <p>The combination of Amazon Web Service, linked account, Region, and usage type where a cost anomaly is observed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RootCause {
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
     #[doc(hidden)]
@@ -14765,16 +13763,6 @@ impl RootCause {
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
     pub fn usage_type(&self) -> std::option::Option<&str> {
         self.usage_type.as_deref()
-    }
-}
-impl std::fmt::Debug for RootCause {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RootCause");
-        formatter.field("service", &self.service);
-        formatter.field("region", &self.region);
-        formatter.field("linked_account", &self.linked_account);
-        formatter.field("usage_type", &self.usage_type);
-        formatter.finish()
     }
 }
 /// See [`RootCause`](crate::model::RootCause).
@@ -14852,7 +13840,7 @@ impl RootCause {
 
 /// <p>Filters cost anomalies based on the total impact. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TotalImpactFilter {
     /// <p>The comparing value that's used in the filter. </p>
     #[doc(hidden)]
@@ -14876,15 +13864,6 @@ impl TotalImpactFilter {
     /// <p>The upper bound dollar value that's used in the filter. </p>
     pub fn end_value(&self) -> f64 {
         self.end_value
-    }
-}
-impl std::fmt::Debug for TotalImpactFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TotalImpactFilter");
-        formatter.field("numeric_operator", &self.numeric_operator);
-        formatter.field("start_value", &self.start_value);
-        formatter.field("end_value", &self.end_value);
-        formatter.finish()
     }
 }
 /// See [`TotalImpactFilter`](crate::model::TotalImpactFilter).
@@ -15067,7 +14046,7 @@ impl AsRef<str> for NumericOperator {
 
 /// <p>The time period for an anomaly. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
     #[doc(hidden)]
@@ -15084,14 +14063,6 @@ impl AnomalyDateInterval {
     /// <p>The last date an anomaly was observed. </p>
     pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
-    }
-}
-impl std::fmt::Debug for AnomalyDateInterval {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyDateInterval");
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.finish()
     }
 }
 /// See [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
@@ -15142,7 +14113,7 @@ impl AnomalyDateInterval {
 
 /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
@@ -15214,21 +14185,6 @@ impl CostCategory {
     /// <p>The default value for the cost category.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for CostCategory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostCategory");
-        formatter.field("cost_category_arn", &self.cost_category_arn);
-        formatter.field("effective_start", &self.effective_start);
-        formatter.field("effective_end", &self.effective_end);
-        formatter.field("name", &self.name);
-        formatter.field("rule_version", &self.rule_version);
-        formatter.field("rules", &self.rules);
-        formatter.field("split_charge_rules", &self.split_charge_rules);
-        formatter.field("processing_status", &self.processing_status);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`CostCategory`](crate::model::CostCategory).

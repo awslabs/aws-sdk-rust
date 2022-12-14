@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_role_credentials_input {
 
     /// A builder for [`GetRoleCredentialsInput`](crate::input::GetRoleCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -54,6 +54,15 @@ pub mod get_role_credentials_input {
                 account_id: self.account_id,
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("role_name", &self.role_name);
+            formatter.field("account_id", &self.account_id);
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -199,7 +208,7 @@ impl GetRoleCredentialsInput {
 pub mod list_account_roles_input {
 
     /// A builder for [`ListAccountRolesInput`](crate::input::ListAccountRolesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -260,6 +269,16 @@ pub mod list_account_roles_input {
                 access_token: self.access_token,
                 account_id: self.account_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("next_token", &self.next_token);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("account_id", &self.account_id);
+            formatter.finish()
         }
     }
 }
@@ -402,7 +421,7 @@ impl ListAccountRolesInput {
 pub mod list_accounts_input {
 
     /// A builder for [`ListAccountsInput`](crate::input::ListAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -449,6 +468,15 @@ pub mod list_accounts_input {
                 max_results: self.max_results,
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("next_token", &self.next_token);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -575,7 +603,7 @@ impl ListAccountsInput {
 pub mod logout_input {
 
     /// A builder for [`LogoutInput`](crate::input::LogoutInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
@@ -598,6 +626,13 @@ pub mod logout_input {
             Ok(crate::input::LogoutInput {
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }

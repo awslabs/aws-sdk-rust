@@ -98,7 +98,7 @@ impl AsRef<str> for StreamProcessorParameterToDelete {
 
 /// <p> Allows you to opt in or opt out to share data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessorDataSharingPreference {
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
     #[doc(hidden)]
@@ -108,13 +108,6 @@ impl StreamProcessorDataSharingPreference {
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
     pub fn opt_in(&self) -> bool {
         self.opt_in
-    }
-}
-impl std::fmt::Debug for StreamProcessorDataSharingPreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessorDataSharingPreference");
-        formatter.field("opt_in", &self.opt_in);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
@@ -154,7 +147,7 @@ impl StreamProcessorDataSharingPreference {
 /// <p>Specifies a location within the frame that Rekognition checks for objects of interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code> to set a region of the screen.</p>
 /// <p>A word, face, or label is included in the region if it is more than half in that region. If there is more than one region, the word, face, or label is compared with all regions of the screen. Any object of interest that is more than half in a region is kept in the results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegionOfInterest {
     /// <p>The box representing a region of interest on screen.</p>
     #[doc(hidden)]
@@ -171,14 +164,6 @@ impl RegionOfInterest {
     /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
     pub fn polygon(&self) -> std::option::Option<&[crate::model::Point]> {
         self.polygon.as_deref()
-    }
-}
-impl std::fmt::Debug for RegionOfInterest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegionOfInterest");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("polygon", &self.polygon);
-        formatter.finish()
     }
 }
 /// See [`RegionOfInterest`](crate::model::RegionOfInterest).
@@ -242,7 +227,7 @@ impl RegionOfInterest {
 /// <p>The X and Y coordinates of a point on an image or video frame. The X and Y values are ratios of the overall image size or video resolution. For example, if an input image is 700x200 and the values are X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.</p>
 /// <p>An array of <code>Point</code> objects makes up a <code>Polygon</code>. A <code>Polygon</code> is returned by <code>DetectText</code> and by <code>DetectCustomLabels</code> <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Point {
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
     #[doc(hidden)]
@@ -259,14 +244,6 @@ impl Point {
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
     pub fn y(&self) -> std::option::Option<f32> {
         self.y
-    }
-}
-impl std::fmt::Debug for Point {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Point");
-        formatter.field("x", &self.x);
-        formatter.field("y", &self.y);
-        formatter.finish()
     }
 }
 /// See [`Point`](crate::model::Point).
@@ -321,7 +298,7 @@ impl Point {
 /// <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BoundingBox {
     /// <p>Width of the bounding box as a ratio of the overall image width.</p>
     #[doc(hidden)]
@@ -352,16 +329,6 @@ impl BoundingBox {
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
     pub fn top(&self) -> std::option::Option<f32> {
         self.top
-    }
-}
-impl std::fmt::Debug for BoundingBox {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BoundingBox");
-        formatter.field("width", &self.width);
-        formatter.field("height", &self.height);
-        formatter.field("left", &self.left);
-        formatter.field("top", &self.top);
-        formatter.finish()
     }
 }
 /// See [`BoundingBox`](crate::model::BoundingBox).
@@ -436,7 +403,7 @@ impl BoundingBox {
 
 /// <p> The stream processor settings that you want to update. <code>ConnectedHome</code> settings can be updated to detect different labels with a different minimum confidence. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessorSettingsForUpdate {
     /// <p> The label detection settings you want to use for your stream processor. </p>
     #[doc(hidden)]
@@ -449,13 +416,6 @@ impl StreamProcessorSettingsForUpdate {
         &self,
     ) -> std::option::Option<&crate::model::ConnectedHomeSettingsForUpdate> {
         self.connected_home_for_update.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamProcessorSettingsForUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessorSettingsForUpdate");
-        formatter.field("connected_home_for_update", &self.connected_home_for_update);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
@@ -501,7 +461,7 @@ impl StreamProcessorSettingsForUpdate {
 
 /// <p> The label detection settings you want to use in your stream processor. This includes the labels you want the stream processor to detect and the minimum confidence level allowed to label objects. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectedHomeSettingsForUpdate {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
     #[doc(hidden)]
@@ -518,14 +478,6 @@ impl ConnectedHomeSettingsForUpdate {
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
-    }
-}
-impl std::fmt::Debug for ConnectedHomeSettingsForUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectedHomeSettingsForUpdate");
-        formatter.field("labels", &self.labels);
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.finish()
     }
 }
 /// See [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
@@ -585,7 +537,7 @@ impl ConnectedHomeSettingsForUpdate {
 
 /// <p> Describes updates or additions to a dataset. A Single update or addition is an entry (JSON Line) that provides information about a single image. To update an existing entry, you match the <code>source-ref</code> field of the update entry with the <code>source-ref</code> filed of the entry that you want to update. If the <code>source-ref</code> field doesn't match an existing entry, the entry is added to dataset as a new entry. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetChanges {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
@@ -597,13 +549,6 @@ impl DatasetChanges {
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
     pub fn ground_truth(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.ground_truth.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetChanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetChanges");
-        formatter.field("ground_truth", &self.ground_truth);
-        formatter.finish()
     }
 }
 /// See [`DatasetChanges`](crate::model::DatasetChanges).
@@ -802,7 +747,7 @@ impl AsRef<str> for ProjectVersionStatus {
 
 /// <p>Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTextDetectionFilters {
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
     #[doc(hidden)]
@@ -819,14 +764,6 @@ impl StartTextDetectionFilters {
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
     pub fn regions_of_interest(&self) -> std::option::Option<&[crate::model::RegionOfInterest]> {
         self.regions_of_interest.as_deref()
-    }
-}
-impl std::fmt::Debug for StartTextDetectionFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTextDetectionFilters");
-        formatter.field("word_filter", &self.word_filter);
-        formatter.field("regions_of_interest", &self.regions_of_interest);
-        formatter.finish()
     }
 }
 /// See [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
@@ -890,7 +827,7 @@ impl StartTextDetectionFilters {
 
 /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectionFilter {
     /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
     #[doc(hidden)]
@@ -914,15 +851,6 @@ impl DetectionFilter {
     /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
     pub fn min_bounding_box_width(&self) -> std::option::Option<f32> {
         self.min_bounding_box_width
-    }
-}
-impl std::fmt::Debug for DetectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectionFilter");
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.field("min_bounding_box_height", &self.min_bounding_box_height);
-        formatter.field("min_bounding_box_width", &self.min_bounding_box_width);
-        formatter.finish()
     }
 }
 /// See [`DetectionFilter`](crate::model::DetectionFilter).
@@ -985,7 +913,7 @@ impl DetectionFilter {
 
 /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationChannel {
     /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
     #[doc(hidden)]
@@ -1002,14 +930,6 @@ impl NotificationChannel {
     /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationChannel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationChannel");
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`NotificationChannel`](crate::model::NotificationChannel).
@@ -1063,7 +983,7 @@ impl NotificationChannel {
 
 /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Video {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
     #[doc(hidden)]
@@ -1073,13 +993,6 @@ impl Video {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
     pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
         self.s3_object.as_ref()
-    }
-}
-impl std::fmt::Debug for Video {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Video");
-        formatter.field("s3_object", &self.s3_object);
-        formatter.finish()
     }
 }
 /// See [`Video`](crate::model::Video).
@@ -1120,7 +1033,7 @@ impl Video {
 /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
 /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Object {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -1144,15 +1057,6 @@ impl S3Object {
     /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Object {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Object");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`S3Object`](crate::model::S3Object).
@@ -1215,7 +1119,7 @@ impl S3Object {
 
 /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessingStopSelector {
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
     #[doc(hidden)]
@@ -1225,13 +1129,6 @@ impl StreamProcessingStopSelector {
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
     pub fn max_duration_in_seconds(&self) -> std::option::Option<i64> {
         self.max_duration_in_seconds
-    }
-}
-impl std::fmt::Debug for StreamProcessingStopSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessingStopSelector");
-        formatter.field("max_duration_in_seconds", &self.max_duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
@@ -1270,7 +1167,7 @@ impl StreamProcessingStopSelector {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessingStartSelector {
     /// <p> Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment number in a Kinesis stream. </p>
     #[doc(hidden)]
@@ -1283,13 +1180,6 @@ impl StreamProcessingStartSelector {
         &self,
     ) -> std::option::Option<&crate::model::KinesisVideoStreamStartSelector> {
         self.kvs_stream_start_selector.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamProcessingStartSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessingStartSelector");
-        formatter.field("kvs_stream_start_selector", &self.kvs_stream_start_selector);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
@@ -1335,7 +1225,7 @@ impl StreamProcessingStartSelector {
 
 /// <p> Specifies the starting point in a Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisVideoStreamStartSelector {
     /// <p> The timestamp from the producer corresponding to the fragment. </p>
     #[doc(hidden)]
@@ -1352,14 +1242,6 @@ impl KinesisVideoStreamStartSelector {
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
     pub fn fragment_number(&self) -> std::option::Option<&str> {
         self.fragment_number.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisVideoStreamStartSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisVideoStreamStartSelector");
-        formatter.field("producer_timestamp", &self.producer_timestamp);
-        formatter.field("fragment_number", &self.fragment_number);
-        formatter.finish()
     }
 }
 /// See [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
@@ -1503,7 +1385,7 @@ impl AsRef<str> for SegmentType {
 
 /// <p>Filters applied to the technical cue or shot detection segments. For more information, see <code>StartSegmentDetection</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSegmentDetectionFilters {
     /// <p>Filters that are specific to technical cues.</p>
     #[doc(hidden)]
@@ -1522,14 +1404,6 @@ impl StartSegmentDetectionFilters {
     /// <p>Filters that are specific to shot detections.</p>
     pub fn shot_filter(&self) -> std::option::Option<&crate::model::StartShotDetectionFilter> {
         self.shot_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for StartSegmentDetectionFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSegmentDetectionFilters");
-        formatter.field("technical_cue_filter", &self.technical_cue_filter);
-        formatter.field("shot_filter", &self.shot_filter);
-        formatter.finish()
     }
 }
 /// See [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
@@ -1590,7 +1464,7 @@ impl StartSegmentDetectionFilters {
 
 /// <p>Filters for the shot detection segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartShotDetectionFilter {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
@@ -1602,13 +1476,6 @@ impl StartShotDetectionFilter {
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub fn min_segment_confidence(&self) -> std::option::Option<f32> {
         self.min_segment_confidence
-    }
-}
-impl std::fmt::Debug for StartShotDetectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartShotDetectionFilter");
-        formatter.field("min_segment_confidence", &self.min_segment_confidence);
-        formatter.finish()
     }
 }
 /// See [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
@@ -1649,7 +1516,7 @@ impl StartShotDetectionFilter {
 
 /// <p>Filters for the technical segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTechnicalCueDetectionFilter {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
@@ -1668,14 +1535,6 @@ impl StartTechnicalCueDetectionFilter {
     /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
     pub fn black_frame(&self) -> std::option::Option<&crate::model::BlackFrame> {
         self.black_frame.as_ref()
-    }
-}
-impl std::fmt::Debug for StartTechnicalCueDetectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTechnicalCueDetectionFilter");
-        formatter.field("min_segment_confidence", &self.min_segment_confidence);
-        formatter.field("black_frame", &self.black_frame);
-        formatter.finish()
     }
 }
 /// See [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
@@ -1731,7 +1590,7 @@ impl StartTechnicalCueDetectionFilter {
 
 /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. As videos can come from multiple sources, formats, and time periods, they may contain different standards and varying noise levels for black frames that need to be accounted for. For more information, see <code>StartSegmentDetection</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlackFrame {
     /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p>
     /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
@@ -1754,14 +1613,6 @@ impl BlackFrame {
     /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
     pub fn min_coverage_percentage(&self) -> std::option::Option<f32> {
         self.min_coverage_percentage
-    }
-}
-impl std::fmt::Debug for BlackFrame {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlackFrame");
-        formatter.field("max_pixel_threshold", &self.max_pixel_threshold);
-        formatter.field("min_coverage_percentage", &self.min_coverage_percentage);
-        formatter.finish()
     }
 }
 /// See [`BlackFrame`](crate::model::BlackFrame).
@@ -1908,7 +1759,7 @@ impl AsRef<str> for FaceAttributes {
 
 /// <p>Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaceMatch {
     /// <p>Confidence in the match of this face with the input face.</p>
     #[doc(hidden)]
@@ -1925,14 +1776,6 @@ impl FaceMatch {
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
     pub fn face(&self) -> std::option::Option<&crate::model::Face> {
         self.face.as_ref()
-    }
-}
-impl std::fmt::Debug for FaceMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaceMatch");
-        formatter.field("similarity", &self.similarity);
-        formatter.field("face", &self.face);
-        formatter.finish()
     }
 }
 /// See [`FaceMatch`](crate::model::FaceMatch).
@@ -1983,7 +1826,7 @@ impl FaceMatch {
 
 /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Face {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
     #[doc(hidden)]
@@ -2028,18 +1871,6 @@ impl Face {
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
     pub fn index_faces_model_version(&self) -> std::option::Option<&str> {
         self.index_faces_model_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Face {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Face");
-        formatter.field("face_id", &self.face_id);
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("external_image_id", &self.external_image_id);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("index_faces_model_version", &self.index_faces_model_version);
-        formatter.finish()
     }
 }
 /// See [`Face`](crate::model::Face).
@@ -2258,7 +2089,7 @@ impl AsRef<str> for QualityFilter {
 /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
 /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
     /// <p>Blob of image bytes up to 5 MBs.</p>
     #[doc(hidden)]
@@ -2275,14 +2106,6 @@ impl Image {
     /// <p>Identifies an S3 object as the image source.</p>
     pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
         self.s3_object.as_ref()
-    }
-}
-impl std::fmt::Debug for Image {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Image");
-        formatter.field("bytes", &self.bytes);
-        formatter.field("s3_object", &self.s3_object);
-        formatter.finish()
     }
 }
 /// See [`Image`](crate::model::Image).
@@ -2435,7 +2258,7 @@ impl AsRef<str> for OrientationCorrection {
 
 /// <p>Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComparedFace {
     /// <p>Bounding box of the face.</p>
     #[doc(hidden)]
@@ -2487,19 +2310,6 @@ impl ComparedFace {
     /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
     pub fn smile(&self) -> std::option::Option<&crate::model::Smile> {
         self.smile.as_ref()
-    }
-}
-impl std::fmt::Debug for ComparedFace {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComparedFace");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("landmarks", &self.landmarks);
-        formatter.field("pose", &self.pose);
-        formatter.field("quality", &self.quality);
-        formatter.field("emotions", &self.emotions);
-        formatter.field("smile", &self.smile);
-        formatter.finish()
     }
 }
 /// See [`ComparedFace`](crate::model::ComparedFace).
@@ -2634,7 +2444,7 @@ impl ComparedFace {
 
 /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Smile {
     /// <p>Boolean value that indicates whether the face is smiling or not.</p>
     #[doc(hidden)]
@@ -2651,14 +2461,6 @@ impl Smile {
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Smile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Smile");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Smile`](crate::model::Smile).
@@ -2709,7 +2511,7 @@ impl Smile {
 
 /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Emotion {
     /// <p>Type of emotion detected.</p>
     #[doc(hidden)]
@@ -2726,14 +2528,6 @@ impl Emotion {
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Emotion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Emotion");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Emotion`](crate::model::Emotion).
@@ -2919,7 +2713,7 @@ impl AsRef<str> for EmotionName {
 
 /// <p>Identifies face image brightness and sharpness. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageQuality {
     /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
     #[doc(hidden)]
@@ -2936,14 +2730,6 @@ impl ImageQuality {
     /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
     pub fn sharpness(&self) -> std::option::Option<f32> {
         self.sharpness
-    }
-}
-impl std::fmt::Debug for ImageQuality {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageQuality");
-        formatter.field("brightness", &self.brightness);
-        formatter.field("sharpness", &self.sharpness);
-        formatter.finish()
     }
 }
 /// See [`ImageQuality`](crate::model::ImageQuality).
@@ -2994,7 +2780,7 @@ impl ImageQuality {
 
 /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Pose {
     /// <p>Value representing the face rotation on the roll axis.</p>
     #[doc(hidden)]
@@ -3018,15 +2804,6 @@ impl Pose {
     /// <p>Value representing the face rotation on the pitch axis.</p>
     pub fn pitch(&self) -> std::option::Option<f32> {
         self.pitch
-    }
-}
-impl std::fmt::Debug for Pose {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Pose");
-        formatter.field("roll", &self.roll);
-        formatter.field("yaw", &self.yaw);
-        formatter.field("pitch", &self.pitch);
-        formatter.finish()
     }
 }
 /// See [`Pose`](crate::model::Pose).
@@ -3089,7 +2866,7 @@ impl Pose {
 
 /// <p>Indicates the location of the landmark on the face.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Landmark {
     /// <p>Type of landmark.</p>
     #[doc(hidden)]
@@ -3113,15 +2890,6 @@ impl Landmark {
     /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
     pub fn y(&self) -> std::option::Option<f32> {
         self.y
-    }
-}
-impl std::fmt::Debug for Landmark {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Landmark");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("x", &self.x);
-        formatter.field("y", &self.y);
-        formatter.finish()
     }
 }
 /// See [`Landmark`](crate::model::Landmark).
@@ -3445,7 +3213,7 @@ impl AsRef<str> for LandmarkType {
 
 /// <p>Provides information about a celebrity recognized by the <code>RecognizeCelebrities</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Celebrity {
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
     #[doc(hidden)]
@@ -3490,18 +3258,6 @@ impl Celebrity {
     /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
     pub fn known_gender(&self) -> std::option::Option<&crate::model::KnownGender> {
         self.known_gender.as_ref()
-    }
-}
-impl std::fmt::Debug for Celebrity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Celebrity");
-        formatter.field("urls", &self.urls);
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("face", &self.face);
-        formatter.field("match_confidence", &self.match_confidence);
-        formatter.field("known_gender", &self.known_gender);
-        formatter.finish()
     }
 }
 /// See [`Celebrity`](crate::model::Celebrity).
@@ -3612,7 +3368,7 @@ impl Celebrity {
 
 /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KnownGender {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     #[doc(hidden)]
@@ -3622,13 +3378,6 @@ impl KnownGender {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::KnownGenderType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for KnownGender {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KnownGender");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`KnownGender`](crate::model::KnownGender).
@@ -3770,7 +3519,7 @@ impl AsRef<str> for KnownGenderType {
 
 /// <p>An object that recognizes faces or labels in a streaming video. An Amazon Rekognition stream processor is created by a call to <code>CreateStreamProcessor</code>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessor {
     /// <p>Name of the Amazon Rekognition stream processor. </p>
     #[doc(hidden)]
@@ -3787,14 +3536,6 @@ impl StreamProcessor {
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::StreamProcessorStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamProcessor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessor");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessor`](crate::model::StreamProcessor).
@@ -3963,7 +3704,7 @@ impl AsRef<str> for StreamProcessorStatus {
 /// <p>Describes a project policy in the response from <code>ListProjectPolicies</code>. </p>
 /// <p> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectPolicy {
     /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
     #[doc(hidden)]
@@ -4008,18 +3749,6 @@ impl ProjectPolicy {
     /// <p>The Unix datetime for when the project policy was last updated. </p>
     pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectPolicy");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_revision_id", &self.policy_revision_id);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ProjectPolicy`](crate::model::ProjectPolicy).
@@ -4130,7 +3859,7 @@ impl ProjectPolicy {
 
 /// <p> Describes a dataset label. For more information, see <code>ListDatasetLabels</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetLabelDescription {
     /// <p> The name of the label. </p>
     #[doc(hidden)]
@@ -4147,14 +3876,6 @@ impl DatasetLabelDescription {
     /// <p> Statistics about the label. </p>
     pub fn label_stats(&self) -> std::option::Option<&crate::model::DatasetLabelStats> {
         self.label_stats.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetLabelDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetLabelDescription");
-        formatter.field("label_name", &self.label_name);
-        formatter.field("label_stats", &self.label_stats);
-        formatter.finish()
     }
 }
 /// See [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
@@ -4208,7 +3929,7 @@ impl DatasetLabelDescription {
 
 /// <p> Statistics about a label used in a dataset. For more information, see <code>DatasetLabelDescription</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetLabelStats {
     /// <p> The total number of images that use the label. </p>
     #[doc(hidden)]
@@ -4225,14 +3946,6 @@ impl DatasetLabelStats {
     /// <p> The total number of images that have the label assigned to a bounding box. </p>
     pub fn bounding_box_count(&self) -> std::option::Option<i32> {
         self.bounding_box_count
-    }
-}
-impl std::fmt::Debug for DatasetLabelStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetLabelStats");
-        formatter.field("entry_count", &self.entry_count);
-        formatter.field("bounding_box_count", &self.bounding_box_count);
-        formatter.finish()
     }
 }
 /// See [`DatasetLabelStats`](crate::model::DatasetLabelStats).
@@ -4283,7 +3996,7 @@ impl DatasetLabelStats {
 
 /// <p>A face that <code>IndexFaces</code> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnindexedFace {
     /// <p>An array of reasons that specify why a face wasn't indexed. </p>
     /// <ul>
@@ -4316,14 +4029,6 @@ impl UnindexedFace {
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
     pub fn face_detail(&self) -> std::option::Option<&crate::model::FaceDetail> {
         self.face_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for UnindexedFace {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnindexedFace");
-        formatter.field("reasons", &self.reasons);
-        formatter.field("face_detail", &self.face_detail);
-        formatter.finish()
     }
 }
 /// See [`UnindexedFace`](crate::model::UnindexedFace).
@@ -4410,7 +4115,7 @@ impl UnindexedFace {
 /// </ul>
 /// <p>The Amazon Rekognition Image <code>DetectFaces</code> and <code>IndexFaces</code> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaceDetail {
     /// <p>Bounding box of the face. Default attribute.</p>
     #[doc(hidden)]
@@ -4518,27 +4223,6 @@ impl FaceDetail {
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for FaceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaceDetail");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("age_range", &self.age_range);
-        formatter.field("smile", &self.smile);
-        formatter.field("eyeglasses", &self.eyeglasses);
-        formatter.field("sunglasses", &self.sunglasses);
-        formatter.field("gender", &self.gender);
-        formatter.field("beard", &self.beard);
-        formatter.field("mustache", &self.mustache);
-        formatter.field("eyes_open", &self.eyes_open);
-        formatter.field("mouth_open", &self.mouth_open);
-        formatter.field("emotions", &self.emotions);
-        formatter.field("landmarks", &self.landmarks);
-        formatter.field("pose", &self.pose);
-        formatter.field("quality", &self.quality);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`FaceDetail`](crate::model::FaceDetail).
@@ -4778,7 +4462,7 @@ impl FaceDetail {
 
 /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MouthOpen {
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
     #[doc(hidden)]
@@ -4795,14 +4479,6 @@ impl MouthOpen {
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for MouthOpen {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MouthOpen");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`MouthOpen`](crate::model::MouthOpen).
@@ -4853,7 +4529,7 @@ impl MouthOpen {
 
 /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EyeOpen {
     /// <p>Boolean value that indicates whether the eyes on the face are open.</p>
     #[doc(hidden)]
@@ -4870,14 +4546,6 @@ impl EyeOpen {
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for EyeOpen {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EyeOpen");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`EyeOpen`](crate::model::EyeOpen).
@@ -4928,7 +4596,7 @@ impl EyeOpen {
 
 /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Mustache {
     /// <p>Boolean value that indicates whether the face has mustache or not.</p>
     #[doc(hidden)]
@@ -4945,14 +4613,6 @@ impl Mustache {
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Mustache {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Mustache");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Mustache`](crate::model::Mustache).
@@ -5003,7 +4663,7 @@ impl Mustache {
 
 /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Beard {
     /// <p>Boolean value that indicates whether the face has beard or not.</p>
     #[doc(hidden)]
@@ -5020,14 +4680,6 @@ impl Beard {
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Beard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Beard");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Beard`](crate::model::Beard).
@@ -5081,7 +4733,7 @@ impl Beard {
 /// <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p>
 /// <p>We don't recommend using gender binary predictions to make decisions that impact an individual's rights, privacy, or access to services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Gender {
     /// <p>The predicted gender of the face.</p>
     #[doc(hidden)]
@@ -5098,14 +4750,6 @@ impl Gender {
     /// <p>Level of confidence in the prediction.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Gender {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Gender");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Gender`](crate::model::Gender).
@@ -5246,7 +4890,7 @@ impl AsRef<str> for GenderType {
 
 /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sunglasses {
     /// <p>Boolean value that indicates whether the face is wearing sunglasses or not.</p>
     #[doc(hidden)]
@@ -5263,14 +4907,6 @@ impl Sunglasses {
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Sunglasses {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sunglasses");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Sunglasses`](crate::model::Sunglasses).
@@ -5321,7 +4957,7 @@ impl Sunglasses {
 
 /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Eyeglasses {
     /// <p>Boolean value that indicates whether the face is wearing eye glasses or not.</p>
     #[doc(hidden)]
@@ -5338,14 +4974,6 @@ impl Eyeglasses {
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Eyeglasses {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Eyeglasses");
-        formatter.field("value", &self.value);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Eyeglasses`](crate::model::Eyeglasses).
@@ -5397,7 +5025,7 @@ impl Eyeglasses {
 /// <p>Structure containing the estimated age range, in years, for a face.</p>
 /// <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgeRange {
     /// <p>The lowest estimated age.</p>
     #[doc(hidden)]
@@ -5414,14 +5042,6 @@ impl AgeRange {
     /// <p>The highest estimated age.</p>
     pub fn high(&self) -> std::option::Option<i32> {
         self.high
-    }
-}
-impl std::fmt::Debug for AgeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgeRange");
-        formatter.field("low", &self.low);
-        formatter.field("high", &self.high);
-        formatter.finish()
     }
 }
 /// See [`AgeRange`](crate::model::AgeRange).
@@ -5595,7 +5215,7 @@ impl AsRef<str> for Reason {
 
 /// <p>Object containing both the face metadata (stored in the backend database), and facial attributes that are detected but aren't stored in the database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaceRecord {
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
     #[doc(hidden)]
@@ -5612,14 +5232,6 @@ impl FaceRecord {
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
     pub fn face_detail(&self) -> std::option::Option<&crate::model::FaceDetail> {
         self.face_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for FaceRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaceRecord");
-        formatter.field("face", &self.face);
-        formatter.field("face_detail", &self.face_detail);
-        formatter.finish()
     }
 }
 /// See [`FaceRecord`](crate::model::FaceRecord).
@@ -5763,7 +5375,7 @@ impl AsRef<str> for Attribute {
 
 /// <p>Information about text detected in a video. Incudes the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextDetectionResult {
     /// <p>The time, in milliseconds from the start of the video, that the text was detected.</p>
     #[doc(hidden)]
@@ -5780,14 +5392,6 @@ impl TextDetectionResult {
     /// <p>Details about text detected in a video.</p>
     pub fn text_detection(&self) -> std::option::Option<&crate::model::TextDetection> {
         self.text_detection.as_ref()
-    }
-}
-impl std::fmt::Debug for TextDetectionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextDetectionResult");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("text_detection", &self.text_detection);
-        formatter.finish()
     }
 }
 /// See [`TextDetectionResult`](crate::model::TextDetectionResult).
@@ -5844,7 +5448,7 @@ impl TextDetectionResult {
 /// <p>Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. </p>
 /// <p>For more information, see Detecting text in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextDetection {
     /// <p>The word or line of text recognized by Amazon Rekognition. </p>
     #[doc(hidden)]
@@ -5889,18 +5493,6 @@ impl TextDetection {
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
     pub fn geometry(&self) -> std::option::Option<&crate::model::Geometry> {
         self.geometry.as_ref()
-    }
-}
-impl std::fmt::Debug for TextDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextDetection");
-        formatter.field("detected_text", &self.detected_text);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("geometry", &self.geometry);
-        formatter.finish()
     }
 }
 /// See [`TextDetection`](crate::model::TextDetection).
@@ -6002,7 +5594,7 @@ impl TextDetection {
 
 /// <p>Information about where an object (<code>DetectCustomLabels</code>) or text (<code>DetectText</code>) is located on an image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Geometry {
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
     #[doc(hidden)]
@@ -6019,14 +5611,6 @@ impl Geometry {
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
     pub fn polygon(&self) -> std::option::Option<&[crate::model::Point]> {
         self.polygon.as_deref()
-    }
-}
-impl std::fmt::Debug for Geometry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Geometry");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("polygon", &self.polygon);
-        formatter.finish()
     }
 }
 /// See [`Geometry`](crate::model::Geometry).
@@ -6179,7 +5763,7 @@ impl AsRef<str> for TextTypes {
 
 /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoMetadata {
     /// <p>Type of compression used in the analyzed video. </p>
     #[doc(hidden)]
@@ -6231,19 +5815,6 @@ impl VideoMetadata {
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
     pub fn color_range(&self) -> std::option::Option<&crate::model::VideoColorRange> {
         self.color_range.as_ref()
-    }
-}
-impl std::fmt::Debug for VideoMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoMetadata");
-        formatter.field("codec", &self.codec);
-        formatter.field("duration_millis", &self.duration_millis);
-        formatter.field("format", &self.format);
-        formatter.field("frame_rate", &self.frame_rate);
-        formatter.field("frame_height", &self.frame_height);
-        formatter.field("frame_width", &self.frame_width);
-        formatter.field("color_range", &self.color_range);
-        formatter.finish()
     }
 }
 /// See [`VideoMetadata`](crate::model::VideoMetadata).
@@ -6542,7 +6113,7 @@ impl AsRef<str> for VideoJobStatus {
 
 /// <p>Information about the type of a segment requested in a call to <code>StartSegmentDetection</code>. An array of <code>SegmentTypeInfo</code> objects is returned by the response from <code>GetSegmentDetection</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentTypeInfo {
     /// <p>The type of a segment (technical cue or shot detection).</p>
     #[doc(hidden)]
@@ -6559,14 +6130,6 @@ impl SegmentTypeInfo {
     /// <p>The version of the model used to detect segments.</p>
     pub fn model_version(&self) -> std::option::Option<&str> {
         self.model_version.as_deref()
-    }
-}
-impl std::fmt::Debug for SegmentTypeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentTypeInfo");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("model_version", &self.model_version);
-        formatter.finish()
     }
 }
 /// See [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
@@ -6620,7 +6183,7 @@ impl SegmentTypeInfo {
 
 /// <p>A technical cue or shot detection segment detected in a video. An array of <code>SegmentDetection</code> objects containing all segments detected in a stored video is returned by <code>GetSegmentDetection</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentDetection {
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
     #[doc(hidden)]
@@ -6707,24 +6270,6 @@ impl SegmentDetection {
     /// <p> The duration of a video segment, expressed in frames. </p>
     pub fn duration_frames(&self) -> std::option::Option<i64> {
         self.duration_frames
-    }
-}
-impl std::fmt::Debug for SegmentDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentDetection");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("start_timestamp_millis", &self.start_timestamp_millis);
-        formatter.field("end_timestamp_millis", &self.end_timestamp_millis);
-        formatter.field("duration_millis", &self.duration_millis);
-        formatter.field("start_timecode_smpte", &self.start_timecode_smpte);
-        formatter.field("end_timecode_smpte", &self.end_timecode_smpte);
-        formatter.field("duration_smpte", &self.duration_smpte);
-        formatter.field("technical_cue_segment", &self.technical_cue_segment);
-        formatter.field("shot_segment", &self.shot_segment);
-        formatter.field("start_frame_number", &self.start_frame_number);
-        formatter.field("end_frame_number", &self.end_frame_number);
-        formatter.field("duration_frames", &self.duration_frames);
-        formatter.finish()
     }
 }
 /// See [`SegmentDetection`](crate::model::SegmentDetection).
@@ -6910,7 +6455,7 @@ impl SegmentDetection {
 
 /// <p>Information about a shot detection segment detected in a video. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShotSegment {
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
     #[doc(hidden)]
@@ -6927,14 +6472,6 @@ impl ShotSegment {
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for ShotSegment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShotSegment");
-        formatter.field("index", &self.index);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`ShotSegment`](crate::model::ShotSegment).
@@ -6985,7 +6522,7 @@ impl ShotSegment {
 
 /// <p>Information about a technical cue segment. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TechnicalCueSegment {
     /// <p>The type of the technical cue.</p>
     #[doc(hidden)]
@@ -7002,14 +6539,6 @@ impl TechnicalCueSegment {
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for TechnicalCueSegment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TechnicalCueSegment");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
@@ -7186,7 +6715,7 @@ impl AsRef<str> for TechnicalCueType {
 
 /// <p>Metadata information about an audio stream. An array of <code>AudioMetadata</code> objects for the audio streams found in a stored video is returned by <code>GetSegmentDetection</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioMetadata {
     /// <p>The audio codec used to encode or decode the audio stream. </p>
     #[doc(hidden)]
@@ -7217,16 +6746,6 @@ impl AudioMetadata {
     /// <p>The number of audio channels in the segment.</p>
     pub fn number_of_channels(&self) -> std::option::Option<i64> {
         self.number_of_channels
-    }
-}
-impl std::fmt::Debug for AudioMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioMetadata");
-        formatter.field("codec", &self.codec);
-        formatter.field("duration_millis", &self.duration_millis);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.field("number_of_channels", &self.number_of_channels);
-        formatter.finish()
     }
 }
 /// See [`AudioMetadata`](crate::model::AudioMetadata).
@@ -7302,7 +6821,7 @@ impl AudioMetadata {
 /// <p>Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video. </p>
 /// <p>For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PersonDetection {
     /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked.</p>
     #[doc(hidden)]
@@ -7319,14 +6838,6 @@ impl PersonDetection {
     /// <p>Details about a person whose path was tracked in a video.</p>
     pub fn person(&self) -> std::option::Option<&crate::model::PersonDetail> {
         self.person.as_ref()
-    }
-}
-impl std::fmt::Debug for PersonDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PersonDetection");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("person", &self.person);
-        formatter.finish()
     }
 }
 /// See [`PersonDetection`](crate::model::PersonDetection).
@@ -7380,7 +6891,7 @@ impl PersonDetection {
 
 /// <p>Details about a person detected in a video analysis request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PersonDetail {
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
     #[doc(hidden)]
@@ -7404,15 +6915,6 @@ impl PersonDetail {
     /// <p>Face details for the detected person.</p>
     pub fn face(&self) -> std::option::Option<&crate::model::FaceDetail> {
         self.face.as_ref()
-    }
-}
-impl std::fmt::Debug for PersonDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PersonDetail");
-        formatter.field("index", &self.index);
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("face", &self.face);
-        formatter.finish()
     }
 }
 /// See [`PersonDetail`](crate::model::PersonDetail).
@@ -7570,7 +7072,7 @@ impl AsRef<str> for PersonTrackingSortBy {
 
 /// <p>Information about a label detected in a video analysis request and the time the label was detected in the video. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelDetection {
     /// <p>Time, in milliseconds from the start of the video, that the label was detected.</p>
     #[doc(hidden)]
@@ -7587,14 +7089,6 @@ impl LabelDetection {
     /// <p>Details about the detected label.</p>
     pub fn label(&self) -> std::option::Option<&crate::model::Label> {
         self.label.as_ref()
-    }
-}
-impl std::fmt::Debug for LabelDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelDetection");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("label", &self.label);
-        formatter.finish()
     }
 }
 /// See [`LabelDetection`](crate::model::LabelDetection).
@@ -7646,7 +7140,7 @@ impl LabelDetection {
 /// <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p>
 /// <p> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Label {
     /// <p>The name (label) of the object or scene.</p>
     #[doc(hidden)]
@@ -7677,16 +7171,6 @@ impl Label {
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
     pub fn parents(&self) -> std::option::Option<&[crate::model::Parent]> {
         self.parents.as_deref()
-    }
-}
-impl std::fmt::Debug for Label {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Label");
-        formatter.field("name", &self.name);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("instances", &self.instances);
-        formatter.field("parents", &self.parents);
-        formatter.finish()
     }
 }
 /// See [`Label`](crate::model::Label).
@@ -7779,7 +7263,7 @@ impl Label {
 
 /// <p>A parent label for a label. A label can have 0, 1, or more parents. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parent {
     /// <p>The name of the parent label.</p>
     #[doc(hidden)]
@@ -7789,13 +7273,6 @@ impl Parent {
     /// <p>The name of the parent label.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Parent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parent");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Parent`](crate::model::Parent).
@@ -7832,7 +7309,7 @@ impl Parent {
 
 /// <p>An instance of a label returned by Amazon Rekognition Image (<code>DetectLabels</code>) or by Amazon Rekognition Video (<code>GetLabelDetection</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The position of the label instance on the image.</p>
     #[doc(hidden)]
@@ -7849,14 +7326,6 @@ impl Instance {
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -8002,7 +7471,7 @@ impl AsRef<str> for LabelDetectionSortBy {
 
 /// <p>Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (<code>FaceMatch</code>), information about the person (<code>PersonDetail</code>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by <code>GetFaceSearch</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PersonMatch {
     /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
     #[doc(hidden)]
@@ -8026,15 +7495,6 @@ impl PersonMatch {
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
     pub fn face_matches(&self) -> std::option::Option<&[crate::model::FaceMatch]> {
         self.face_matches.as_deref()
-    }
-}
-impl std::fmt::Debug for PersonMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PersonMatch");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("person", &self.person);
-        formatter.field("face_matches", &self.face_matches);
-        formatter.finish()
     }
 }
 /// See [`PersonMatch`](crate::model::PersonMatch).
@@ -8199,7 +7659,7 @@ impl AsRef<str> for FaceSearchSortBy {
 
 /// <p>Information about a face detected in a video analysis request and the time the face was detected in the video. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaceDetection {
     /// <p>Time, in milliseconds from the start of the video, that the face was detected.</p>
     #[doc(hidden)]
@@ -8216,14 +7676,6 @@ impl FaceDetection {
     /// <p>The face properties for the detected face.</p>
     pub fn face(&self) -> std::option::Option<&crate::model::FaceDetail> {
         self.face.as_ref()
-    }
-}
-impl std::fmt::Debug for FaceDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaceDetection");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("face", &self.face);
-        formatter.finish()
     }
 }
 /// See [`FaceDetection`](crate::model::FaceDetection).
@@ -8274,7 +7726,7 @@ impl FaceDetection {
 
 /// <p>Information about an inappropriate, unwanted, or offensive content label detection in a stored video.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentModerationDetection {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
     #[doc(hidden)]
@@ -8291,14 +7743,6 @@ impl ContentModerationDetection {
     /// <p>The content moderation label detected by in the stored video.</p>
     pub fn moderation_label(&self) -> std::option::Option<&crate::model::ModerationLabel> {
         self.moderation_label.as_ref()
-    }
-}
-impl std::fmt::Debug for ContentModerationDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentModerationDetection");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("moderation_label", &self.moderation_label);
-        formatter.finish()
     }
 }
 /// See [`ContentModerationDetection`](crate::model::ContentModerationDetection).
@@ -8352,7 +7796,7 @@ impl ContentModerationDetection {
 
 /// <p>Provides information about a single type of inappropriate, unwanted, or offensive content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Content moderation in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModerationLabel {
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
@@ -8378,15 +7822,6 @@ impl ModerationLabel {
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
     pub fn parent_name(&self) -> std::option::Option<&str> {
         self.parent_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ModerationLabel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModerationLabel");
-        formatter.field("confidence", &self.confidence);
-        formatter.field("name", &self.name);
-        formatter.field("parent_name", &self.parent_name);
-        formatter.finish()
     }
 }
 /// See [`ModerationLabel`](crate::model::ModerationLabel).
@@ -8543,7 +7978,7 @@ impl AsRef<str> for ContentModerationSortBy {
 
 /// <p>Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CelebrityRecognition {
     /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized.</p>
     #[doc(hidden)]
@@ -8560,14 +7995,6 @@ impl CelebrityRecognition {
     /// <p>Information about a recognized celebrity.</p>
     pub fn celebrity(&self) -> std::option::Option<&crate::model::CelebrityDetail> {
         self.celebrity.as_ref()
-    }
-}
-impl std::fmt::Debug for CelebrityRecognition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CelebrityRecognition");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("celebrity", &self.celebrity);
-        formatter.finish()
     }
 }
 /// See [`CelebrityRecognition`](crate::model::CelebrityRecognition).
@@ -8621,7 +8048,7 @@ impl CelebrityRecognition {
 
 /// <p>Information about a recognized celebrity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CelebrityDetail {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
     #[doc(hidden)]
@@ -8673,19 +8100,6 @@ impl CelebrityDetail {
     /// <p>Retrieves the known gender for the celebrity.</p>
     pub fn known_gender(&self) -> std::option::Option<&crate::model::KnownGender> {
         self.known_gender.as_ref()
-    }
-}
-impl std::fmt::Debug for CelebrityDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CelebrityDetail");
-        formatter.field("urls", &self.urls);
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("face", &self.face);
-        formatter.field("known_gender", &self.known_gender);
-        formatter.finish()
     }
 }
 /// See [`CelebrityDetail`](crate::model::CelebrityDetail).
@@ -8903,7 +8317,7 @@ impl AsRef<str> for CelebrityRecognitionSortBy {
 
 /// <p> A training dataset or a test dataset used in a dataset distribution operation. For more information, see <code>DistributeDatasetEntries</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributeDataset {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
     #[doc(hidden)]
@@ -8913,13 +8327,6 @@ impl DistributeDataset {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DistributeDataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributeDataset");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`DistributeDataset`](crate::model::DistributeDataset).
@@ -8956,7 +8363,7 @@ impl DistributeDataset {
 
 /// <p>A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectTextFilters {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
     #[doc(hidden)]
@@ -8973,14 +8380,6 @@ impl DetectTextFilters {
     /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
     pub fn regions_of_interest(&self) -> std::option::Option<&[crate::model::RegionOfInterest]> {
         self.regions_of_interest.as_deref()
-    }
-}
-impl std::fmt::Debug for DetectTextFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectTextFilters");
-        formatter.field("word_filter", &self.word_filter);
-        formatter.field("regions_of_interest", &self.regions_of_interest);
-        formatter.finish()
     }
 }
 /// See [`DetectTextFilters`](crate::model::DetectTextFilters).
@@ -9045,7 +8444,7 @@ impl DetectTextFilters {
 /// <p>Summary information for required items of personal protective equipment (PPE) detected on persons by a call to <code>DetectProtectiveEquipment</code>. You specify the required type of PPE in the <code>SummarizationAttributes</code> (<code>ProtectiveEquipmentSummarizationAttributes</code>) input parameter. The summary includes which persons were detected wearing the required personal protective equipment (<code>PersonsWithRequiredEquipment</code>), which persons were detected as not wearing the required PPE (<code>PersonsWithoutRequiredEquipment</code>), and the persons in which a determination could not be made (<code>PersonsIndeterminate</code>).</p>
 /// <p>To get a total for each category, use the size of the field array. For example, to find out how many people were detected as wearing the specified PPE, use the size of the <code>PersonsWithRequiredEquipment</code> array. If you want to find out more about a person, such as the location (<code>BoundingBox</code>) of the person on the image, use the person ID in each array element. Each person ID matches the ID field of a <code>ProtectiveEquipmentPerson</code> object returned in the <code>Persons</code> array by <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectiveEquipmentSummary {
     /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
     #[doc(hidden)]
@@ -9069,21 +8468,6 @@ impl ProtectiveEquipmentSummary {
     /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
     pub fn persons_indeterminate(&self) -> std::option::Option<&[i32]> {
         self.persons_indeterminate.as_deref()
-    }
-}
-impl std::fmt::Debug for ProtectiveEquipmentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectiveEquipmentSummary");
-        formatter.field(
-            "persons_with_required_equipment",
-            &self.persons_with_required_equipment,
-        );
-        formatter.field(
-            "persons_without_required_equipment",
-            &self.persons_without_required_equipment,
-        );
-        formatter.field("persons_indeterminate", &self.persons_indeterminate);
-        formatter.finish()
     }
 }
 /// See [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
@@ -9173,7 +8557,7 @@ impl ProtectiveEquipmentSummary {
 
 /// <p>A person detected by a call to <code>DetectProtectiveEquipment</code>. The API returns all persons detected in the input image in an array of <code>ProtectiveEquipmentPerson</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectiveEquipmentPerson {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     #[doc(hidden)]
@@ -9204,16 +8588,6 @@ impl ProtectiveEquipmentPerson {
     /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
     pub fn id(&self) -> std::option::Option<i32> {
         self.id
-    }
-}
-impl std::fmt::Debug for ProtectiveEquipmentPerson {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectiveEquipmentPerson");
-        formatter.field("body_parts", &self.body_parts);
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
@@ -9301,7 +8675,7 @@ impl ProtectiveEquipmentPerson {
 
 /// <p>Information about a body part detected by <code>DetectProtectiveEquipment</code> that contains PPE. An array of <code>ProtectiveEquipmentBodyPart</code> objects is returned for each person detected by <code>DetectProtectiveEquipment</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectiveEquipmentBodyPart {
     /// <p>The detected body part.</p>
     #[doc(hidden)]
@@ -9325,15 +8699,6 @@ impl ProtectiveEquipmentBodyPart {
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
     pub fn equipment_detections(&self) -> std::option::Option<&[crate::model::EquipmentDetection]> {
         self.equipment_detections.as_deref()
-    }
-}
-impl std::fmt::Debug for ProtectiveEquipmentBodyPart {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectiveEquipmentBodyPart");
-        formatter.field("name", &self.name);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("equipment_detections", &self.equipment_detections);
-        formatter.finish()
     }
 }
 /// See [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
@@ -9406,7 +8771,7 @@ impl ProtectiveEquipmentBodyPart {
 
 /// <p>Information about an item of Personal Protective Equipment (PPE) detected by <code>DetectProtectiveEquipment</code>. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EquipmentDetection {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
     #[doc(hidden)]
@@ -9437,16 +8802,6 @@ impl EquipmentDetection {
     /// <p>Information about the body part covered by the detected PPE.</p>
     pub fn covers_body_part(&self) -> std::option::Option<&crate::model::CoversBodyPart> {
         self.covers_body_part.as_ref()
-    }
-}
-impl std::fmt::Debug for EquipmentDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EquipmentDetection");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("covers_body_part", &self.covers_body_part);
-        formatter.finish()
     }
 }
 /// See [`EquipmentDetection`](crate::model::EquipmentDetection).
@@ -9530,7 +8885,7 @@ impl EquipmentDetection {
 
 /// <p>Information about an item of Personal Protective Equipment covering a corresponding body part. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoversBodyPart {
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
     #[doc(hidden)]
@@ -9547,14 +8902,6 @@ impl CoversBodyPart {
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
     pub fn value(&self) -> bool {
         self.value
-    }
-}
-impl std::fmt::Debug for CoversBodyPart {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoversBodyPart");
-        formatter.field("confidence", &self.confidence);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CoversBodyPart`](crate::model::CoversBodyPart).
@@ -9802,7 +9149,7 @@ impl AsRef<str> for BodyPart {
 
 /// <p>Specifies summary attributes to return from a call to <code>DetectProtectiveEquipment</code>. You can specify which types of PPE to summarize. You can also specify a minimum confidence value for detections. Summary information is returned in the <code>Summary</code> (<code>ProtectiveEquipmentSummary</code>) field of the response from <code>DetectProtectiveEquipment</code>. The summary includes which persons in an image were detected wearing the requested types of person protective equipment (PPE), which persons were detected as not wearing PPE, and the persons in which a determination could not be made. For more information, see <code>ProtectiveEquipmentSummary</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectiveEquipmentSummarizationAttributes {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
@@ -9826,14 +9173,6 @@ impl ProtectiveEquipmentSummarizationAttributes {
         &self,
     ) -> std::option::Option<&[crate::model::ProtectiveEquipmentType]> {
         self.required_equipment_types.as_deref()
-    }
-}
-impl std::fmt::Debug for ProtectiveEquipmentSummarizationAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectiveEquipmentSummarizationAttributes");
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.field("required_equipment_types", &self.required_equipment_types);
-        formatter.finish()
     }
 }
 /// See [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
@@ -9901,7 +9240,7 @@ impl ProtectiveEquipmentSummarizationAttributes {
 
 /// <p>Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopActivationOutput {
     /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
     #[doc(hidden)]
@@ -9927,21 +9266,6 @@ impl HumanLoopActivationOutput {
     pub fn human_loop_activation_conditions_evaluation_results(&self) -> std::option::Option<&str> {
         self.human_loop_activation_conditions_evaluation_results
             .as_deref()
-    }
-}
-impl std::fmt::Debug for HumanLoopActivationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopActivationOutput");
-        formatter.field("human_loop_arn", &self.human_loop_arn);
-        formatter.field(
-            "human_loop_activation_reasons",
-            &self.human_loop_activation_reasons,
-        );
-        formatter.field(
-            "human_loop_activation_conditions_evaluation_results",
-            &self.human_loop_activation_conditions_evaluation_results,
-        );
-        formatter.finish()
     }
 }
 /// See [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
@@ -10028,7 +9352,7 @@ impl HumanLoopActivationOutput {
 
 /// <p>Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
     #[doc(hidden)]
@@ -10052,15 +9376,6 @@ impl HumanLoopConfig {
     /// <p>Sets attributes of the input data.</p>
     pub fn data_attributes(&self) -> std::option::Option<&crate::model::HumanLoopDataAttributes> {
         self.data_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for HumanLoopConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopConfig");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.field("flow_definition_arn", &self.flow_definition_arn);
-        formatter.field("data_attributes", &self.data_attributes);
-        formatter.finish()
     }
 }
 /// See [`HumanLoopConfig`](crate::model::HumanLoopConfig).
@@ -10132,7 +9447,7 @@ impl HumanLoopConfig {
 
 /// <p>Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information.</p>
     #[doc(hidden)]
@@ -10142,13 +9457,6 @@ impl HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information.</p>
     pub fn content_classifiers(&self) -> std::option::Option<&[crate::model::ContentClassifier]> {
         self.content_classifiers.as_deref()
-    }
-}
-impl std::fmt::Debug for HumanLoopDataAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HumanLoopDataAttributes");
-        formatter.field("content_classifiers", &self.content_classifiers);
-        formatter.finish()
     }
 }
 /// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
@@ -10296,7 +9604,7 @@ impl AsRef<str> for ContentClassifier {
 
 /// <p>A custom label detected in an image by a call to <code>DetectCustomLabels</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLabel {
     /// <p>The name of the custom label.</p>
     #[doc(hidden)]
@@ -10320,15 +9628,6 @@ impl CustomLabel {
     /// <p>The location of the detected object on the image that corresponds to the custom label. Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon for more accurate spatial information.</p>
     pub fn geometry(&self) -> std::option::Option<&crate::model::Geometry> {
         self.geometry.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomLabel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLabel");
-        formatter.field("name", &self.name);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("geometry", &self.geometry);
-        formatter.finish()
     }
 }
 /// See [`CustomLabel`](crate::model::CustomLabel).
@@ -10393,7 +9692,7 @@ impl CustomLabel {
 /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
 /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessorNotificationChannel {
     /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
     #[doc(hidden)]
@@ -10403,13 +9702,6 @@ impl StreamProcessorNotificationChannel {
     /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamProcessorNotificationChannel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessorNotificationChannel");
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
@@ -10451,7 +9743,7 @@ impl StreamProcessorNotificationChannel {
 
 /// <p>Input parameters used in a streaming video analyzed by a Amazon Rekognition stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessorSettings {
     /// <p>Face search settings to use on a streaming video. </p>
     #[doc(hidden)]
@@ -10468,14 +9760,6 @@ impl StreamProcessorSettings {
     /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
     pub fn connected_home(&self) -> std::option::Option<&crate::model::ConnectedHomeSettings> {
         self.connected_home.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamProcessorSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessorSettings");
-        formatter.field("face_search", &self.face_search);
-        formatter.field("connected_home", &self.connected_home);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
@@ -10532,7 +9816,7 @@ impl StreamProcessorSettings {
 
 /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectedHomeSettings {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
     #[doc(hidden)]
@@ -10549,14 +9833,6 @@ impl ConnectedHomeSettings {
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
-    }
-}
-impl std::fmt::Debug for ConnectedHomeSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectedHomeSettings");
-        formatter.field("labels", &self.labels);
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.finish()
     }
 }
 /// See [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
@@ -10616,7 +9892,7 @@ impl ConnectedHomeSettings {
 
 /// <p>Input face recognition parameters for an Amazon Rekognition stream processor. Includes the collection to use for face recognition and the face attributes to detect. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaceSearchSettings {
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
     #[doc(hidden)]
@@ -10633,14 +9909,6 @@ impl FaceSearchSettings {
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
     pub fn face_match_threshold(&self) -> std::option::Option<f32> {
         self.face_match_threshold
-    }
-}
-impl std::fmt::Debug for FaceSearchSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaceSearchSettings");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("face_match_threshold", &self.face_match_threshold);
-        formatter.finish()
     }
 }
 /// See [`FaceSearchSettings`](crate::model::FaceSearchSettings).
@@ -10694,7 +9962,7 @@ impl FaceSearchSettings {
 
 /// <p>Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessorOutput {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
     #[doc(hidden)]
@@ -10711,14 +9979,6 @@ impl StreamProcessorOutput {
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
     pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
         self.s3_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamProcessorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessorOutput");
-        formatter.field("kinesis_data_stream", &self.kinesis_data_stream);
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
@@ -10775,7 +10035,7 @@ impl StreamProcessorOutput {
 
 /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. These results include the name of the stream processor resource, the session ID of the stream processing session, and labeled timestamps and bounding boxes for detected labels. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Destination {
     /// <p> The name of the Amazon S3 bucket you want to associate with the streaming video project. You must be the owner of the Amazon S3 bucket. </p>
     #[doc(hidden)]
@@ -10792,14 +10052,6 @@ impl S3Destination {
     /// <p> The prefix value of the location within the bucket that you want the information to be published to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Using prefixes</a>. </p>
     pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Destination");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Destination`](crate::model::S3Destination).
@@ -10850,7 +10102,7 @@ impl S3Destination {
 
 /// <p>The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisDataStream {
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
     #[doc(hidden)]
@@ -10860,13 +10112,6 @@ impl KinesisDataStream {
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisDataStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisDataStream");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisDataStream`](crate::model::KinesisDataStream).
@@ -10903,7 +10148,7 @@ impl KinesisDataStream {
 
 /// <p>Information about the source streaming video. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamProcessorInput {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
     #[doc(hidden)]
@@ -10913,13 +10158,6 @@ impl StreamProcessorInput {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
     pub fn kinesis_video_stream(&self) -> std::option::Option<&crate::model::KinesisVideoStream> {
         self.kinesis_video_stream.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamProcessorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamProcessorInput");
-        formatter.field("kinesis_video_stream", &self.kinesis_video_stream);
-        formatter.finish()
     }
 }
 /// See [`StreamProcessorInput`](crate::model::StreamProcessorInput).
@@ -10961,7 +10199,7 @@ impl StreamProcessorInput {
 
 /// <p>Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisVideoStream {
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
     #[doc(hidden)]
@@ -10971,13 +10209,6 @@ impl KinesisVideoStream {
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisVideoStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisVideoStream");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisVideoStream`](crate::model::KinesisVideoStream).
@@ -11014,7 +10245,7 @@ impl KinesisVideoStream {
 
 /// <p>A description of a version of an Amazon Rekognition Custom Labels model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
     #[doc(hidden)]
@@ -11122,33 +10353,6 @@ impl ProjectVersionDescription {
     /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
     pub fn source_project_version_arn(&self) -> std::option::Option<&str> {
         self.source_project_version_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectVersionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectVersionDescription");
-        formatter.field("project_version_arn", &self.project_version_arn);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("min_inference_units", &self.min_inference_units);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field(
-            "billable_training_time_in_seconds",
-            &self.billable_training_time_in_seconds,
-        );
-        formatter.field("training_end_timestamp", &self.training_end_timestamp);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("training_data_result", &self.training_data_result);
-        formatter.field("testing_data_result", &self.testing_data_result);
-        formatter.field("evaluation_result", &self.evaluation_result);
-        formatter.field("manifest_summary", &self.manifest_summary);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("max_inference_units", &self.max_inference_units);
-        formatter.field(
-            "source_project_version_arn",
-            &self.source_project_version_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
@@ -11391,7 +10595,7 @@ impl ProjectVersionDescription {
 
 /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroundTruthManifest {
     /// <p>Provides the S3 bucket name and object name.</p>
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
@@ -11405,13 +10609,6 @@ impl GroundTruthManifest {
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
     pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
         self.s3_object.as_ref()
-    }
-}
-impl std::fmt::Debug for GroundTruthManifest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroundTruthManifest");
-        formatter.field("s3_object", &self.s3_object);
-        formatter.finish()
     }
 }
 /// See [`GroundTruthManifest`](crate::model::GroundTruthManifest).
@@ -11454,7 +10651,7 @@ impl GroundTruthManifest {
 
 /// <p>The evaluation results for the training of a model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
     #[doc(hidden)]
@@ -11471,14 +10668,6 @@ impl EvaluationResult {
     /// <p>The S3 bucket that contains the training summary.</p>
     pub fn summary(&self) -> std::option::Option<&crate::model::Summary> {
         self.summary.as_ref()
-    }
-}
-impl std::fmt::Debug for EvaluationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationResult");
-        formatter.field("f1_score", &self.f1_score);
-        formatter.field("summary", &self.summary);
-        formatter.finish()
     }
 }
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
@@ -11530,7 +10719,7 @@ impl EvaluationResult {
 /// <p>The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label. </p>
 /// <p>You get the training summary S3 bucket location by calling <code>DescribeProjectVersions</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Summary {
     /// <p>Provides the S3 bucket name and object name.</p>
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
@@ -11544,13 +10733,6 @@ impl Summary {
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
     pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
         self.s3_object.as_ref()
-    }
-}
-impl std::fmt::Debug for Summary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Summary");
-        formatter.field("s3_object", &self.s3_object);
-        formatter.finish()
     }
 }
 /// See [`Summary`](crate::model::Summary).
@@ -11593,7 +10775,7 @@ impl Summary {
 
 /// <p>Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestingDataResult {
     /// <p>The testing dataset that was supplied for training.</p>
     #[doc(hidden)]
@@ -11617,15 +10799,6 @@ impl TestingDataResult {
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
     pub fn validation(&self) -> std::option::Option<&crate::model::ValidationData> {
         self.validation.as_ref()
-    }
-}
-impl std::fmt::Debug for TestingDataResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestingDataResult");
-        formatter.field("input", &self.input);
-        formatter.field("output", &self.output);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
     }
 }
 /// See [`TestingDataResult`](crate::model::TestingDataResult).
@@ -11694,7 +10867,7 @@ impl TestingDataResult {
 /// <p>You get the <code>ValidationData</code> object for the training dataset (<code>TrainingDataResult</code>) and the test dataset (<code>TestingDataResult</code>) by calling <code>DescribeProjectVersions</code>. </p>
 /// <p>The assets array contains a single <code>Asset</code> object. The <code>GroundTruthManifest</code> field of the Asset object contains the S3 bucket location of the validation data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationData {
     /// <p>The assets that comprise the validation data. </p>
     #[doc(hidden)]
@@ -11704,13 +10877,6 @@ impl ValidationData {
     /// <p>The assets that comprise the validation data. </p>
     pub fn assets(&self) -> std::option::Option<&[crate::model::Asset]> {
         self.assets.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationData");
-        formatter.field("assets", &self.assets);
-        formatter.finish()
     }
 }
 /// See [`ValidationData`](crate::model::ValidationData).
@@ -11758,7 +10924,7 @@ impl ValidationData {
 
 /// <p>Assets are the images that you use to train and evaluate a model version. Assets can also contain validation information that you use to debug a failed model training. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Asset {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
     #[doc(hidden)]
@@ -11768,13 +10934,6 @@ impl Asset {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
     pub fn ground_truth_manifest(&self) -> std::option::Option<&crate::model::GroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
-    }
-}
-impl std::fmt::Debug for Asset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Asset");
-        formatter.field("ground_truth_manifest", &self.ground_truth_manifest);
-        formatter.finish()
     }
 }
 /// See [`Asset`](crate::model::Asset).
@@ -11816,7 +10975,7 @@ impl Asset {
 
 /// <p>The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels uses the training dataset to create a test dataset with a temporary split of the training dataset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestingData {
     /// <p>The assets used for testing.</p>
     #[doc(hidden)]
@@ -11833,14 +10992,6 @@ impl TestingData {
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
     pub fn auto_create(&self) -> bool {
         self.auto_create
-    }
-}
-impl std::fmt::Debug for TestingData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestingData");
-        formatter.field("assets", &self.assets);
-        formatter.field("auto_create", &self.auto_create);
-        formatter.finish()
     }
 }
 /// See [`TestingData`](crate::model::TestingData).
@@ -11900,7 +11051,7 @@ impl TestingData {
 
 /// <p>Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrainingDataResult {
     /// <p>The training assets that you supplied for training.</p>
     #[doc(hidden)]
@@ -11924,15 +11075,6 @@ impl TrainingDataResult {
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
     pub fn validation(&self) -> std::option::Option<&crate::model::ValidationData> {
         self.validation.as_ref()
-    }
-}
-impl std::fmt::Debug for TrainingDataResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingDataResult");
-        formatter.field("input", &self.input);
-        formatter.field("output", &self.output);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
     }
 }
 /// See [`TrainingDataResult`](crate::model::TrainingDataResult).
@@ -12001,7 +11143,7 @@ impl TrainingDataResult {
 
 /// <p>The dataset used for training.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
     #[doc(hidden)]
@@ -12011,13 +11153,6 @@ impl TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
     pub fn assets(&self) -> std::option::Option<&[crate::model::Asset]> {
         self.assets.as_deref()
-    }
-}
-impl std::fmt::Debug for TrainingData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingData");
-        formatter.field("assets", &self.assets);
-        formatter.finish()
     }
 }
 /// See [`TrainingData`](crate::model::TrainingData).
@@ -12065,7 +11200,7 @@ impl TrainingData {
 
 /// <p>The S3 bucket and folder location where training output is placed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputConfig {
     /// <p>The S3 bucket where training output is placed.</p>
     #[doc(hidden)]
@@ -12082,14 +11217,6 @@ impl OutputConfig {
     /// <p>The prefix applied to the training output files. </p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputConfig");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.finish()
     }
 }
 /// See [`OutputConfig`](crate::model::OutputConfig).
@@ -12143,7 +11270,7 @@ impl OutputConfig {
 
 /// <p>A description of an Amazon Rekognition Custom Labels project. For more information, see <code>DescribeProjects</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectDescription {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
@@ -12174,16 +11301,6 @@ impl ProjectDescription {
     /// <p> Information about the training and test datasets in the project. </p>
     pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetMetadata]> {
         self.datasets.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectDescription");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("datasets", &self.datasets);
-        formatter.finish()
     }
 }
 /// See [`ProjectDescription`](crate::model::ProjectDescription).
@@ -12273,7 +11390,7 @@ impl ProjectDescription {
 
 /// <p> Summary information for an Amazon Rekognition Custom Labels dataset. For more information, see <code>ProjectDescription</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetMetadata {
     /// <p> The Unix timestamp for the date and time that the dataset was created. </p>
     #[doc(hidden)]
@@ -12320,18 +11437,6 @@ impl DatasetMetadata {
         &self,
     ) -> std::option::Option<&crate::model::DatasetStatusMessageCode> {
         self.status_message_code.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetMetadata");
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("status_message_code", &self.status_message_code);
-        formatter.finish()
     }
 }
 /// See [`DatasetMetadata`](crate::model::DatasetMetadata).
@@ -12854,7 +11959,7 @@ impl AsRef<str> for ProjectStatus {
 /// <p> A description for a dataset. For more information, see <code>DescribeDataset</code>.</p>
 /// <p>The status fields <code>Status</code>, <code>StatusMessage</code>, and <code>StatusMessageCode</code> reflect the last operation on the dataset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetDescription {
     /// <p> The Unix timestamp for the time and date that the dataset was created. </p>
     #[doc(hidden)]
@@ -12901,18 +12006,6 @@ impl DatasetDescription {
     /// <p> The status message code for the dataset. </p>
     pub fn dataset_stats(&self) -> std::option::Option<&crate::model::DatasetStats> {
         self.dataset_stats.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetDescription");
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("status_message_code", &self.status_message_code);
-        formatter.field("dataset_stats", &self.dataset_stats);
-        formatter.finish()
     }
 }
 /// See [`DatasetDescription`](crate::model::DatasetDescription).
@@ -13032,7 +12125,7 @@ impl DatasetDescription {
 
 /// <p> Provides statistics about a dataset. For more information, see <code>DescribeDataset</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetStats {
     /// <p> The total number of images in the dataset that have labels. </p>
     #[doc(hidden)]
@@ -13063,16 +12156,6 @@ impl DatasetStats {
     /// <p> The total number of entries that contain at least one error. </p>
     pub fn error_entries(&self) -> std::option::Option<i32> {
         self.error_entries
-    }
-}
-impl std::fmt::Debug for DatasetStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetStats");
-        formatter.field("labeled_entries", &self.labeled_entries);
-        formatter.field("total_entries", &self.total_entries);
-        formatter.field("total_labels", &self.total_labels);
-        formatter.field("error_entries", &self.error_entries);
-        formatter.finish()
     }
 }
 /// See [`DatasetStats`](crate::model::DatasetStats).
@@ -13149,7 +12232,7 @@ impl DatasetStats {
 /// <p>You need to specify a value for <code>DatasetArn</code> or <code>GroundTruthManifest</code>, but not both. if you supply both values, or if you don't specify any values, an InvalidParameterException exception occurs. </p>
 /// <p>For more information, see <code>CreateDataset</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSource {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
     #[doc(hidden)]
@@ -13166,14 +12249,6 @@ impl DatasetSource {
     /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSource");
-        formatter.field("ground_truth_manifest", &self.ground_truth_manifest);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.finish()
     }
 }
 /// See [`DatasetSource`](crate::model::DatasetSource).
@@ -13227,7 +12302,7 @@ impl DatasetSource {
 
 /// <p>Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompareFacesMatch {
     /// <p>Level of confidence that the faces match.</p>
     #[doc(hidden)]
@@ -13244,14 +12319,6 @@ impl CompareFacesMatch {
     /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
     pub fn face(&self) -> std::option::Option<&crate::model::ComparedFace> {
         self.face.as_ref()
-    }
-}
-impl std::fmt::Debug for CompareFacesMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompareFacesMatch");
-        formatter.field("similarity", &self.similarity);
-        formatter.field("face", &self.face);
-        formatter.finish()
     }
 }
 /// See [`CompareFacesMatch`](crate::model::CompareFacesMatch).
@@ -13302,7 +12369,7 @@ impl CompareFacesMatch {
 
 /// <p>Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComparedSourceImageFace {
     /// <p>Bounding box of the face.</p>
     #[doc(hidden)]
@@ -13319,14 +12386,6 @@ impl ComparedSourceImageFace {
     /// <p>Confidence level that the selected bounding box contains a face.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
-    }
-}
-impl std::fmt::Debug for ComparedSourceImageFace {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComparedSourceImageFace");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("confidence", &self.confidence);
-        formatter.finish()
     }
 }
 /// See [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).

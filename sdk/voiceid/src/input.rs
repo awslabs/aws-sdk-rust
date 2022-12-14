@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_domain_input {
 
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -92,6 +92,20 @@ pub mod create_domain_input {
                 client_token: self.client_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "server_side_encryption_configuration",
+                &self.server_side_encryption_configuration,
+            );
+            formatter.field("client_token", &self.client_token);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -362,7 +376,7 @@ impl DeleteDomainInput {
 pub mod delete_fraudster_input {
 
     /// A builder for [`DeleteFraudsterInput`](crate::input::DeleteFraudsterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) fraudster_id: std::option::Option<std::string::String>,
@@ -397,6 +411,14 @@ pub mod delete_fraudster_input {
                 domain_id: self.domain_id,
                 fraudster_id: self.fraudster_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("fraudster_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -519,7 +541,7 @@ impl DeleteFraudsterInput {
 pub mod delete_speaker_input {
 
     /// A builder for [`DeleteSpeakerInput`](crate::input::DeleteSpeakerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) speaker_id: std::option::Option<std::string::String>,
@@ -554,6 +576,14 @@ pub mod delete_speaker_input {
                 domain_id: self.domain_id,
                 speaker_id: self.speaker_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("speaker_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -821,7 +851,7 @@ impl DescribeDomainInput {
 pub mod describe_fraudster_input {
 
     /// A builder for [`DescribeFraudsterInput`](crate::input::DescribeFraudsterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) fraudster_id: std::option::Option<std::string::String>,
@@ -858,6 +888,14 @@ pub mod describe_fraudster_input {
                 domain_id: self.domain_id,
                 fraudster_id: self.fraudster_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("fraudster_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1138,7 +1176,7 @@ impl DescribeFraudsterRegistrationJobInput {
 pub mod describe_speaker_input {
 
     /// A builder for [`DescribeSpeakerInput`](crate::input::DescribeSpeakerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) speaker_id: std::option::Option<std::string::String>,
@@ -1173,6 +1211,14 @@ pub mod describe_speaker_input {
                 domain_id: self.domain_id,
                 speaker_id: self.speaker_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("speaker_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2461,7 +2507,7 @@ impl ListTagsForResourceInput {
 pub mod opt_out_speaker_input {
 
     /// A builder for [`OptOutSpeakerInput`](crate::input::OptOutSpeakerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) speaker_id: std::option::Option<std::string::String>,
@@ -2496,6 +2542,14 @@ pub mod opt_out_speaker_input {
                 domain_id: self.domain_id,
                 speaker_id: self.speaker_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("speaker_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2618,7 +2672,7 @@ impl OptOutSpeakerInput {
 pub mod start_fraudster_registration_job_input {
 
     /// A builder for [`StartFraudsterRegistrationJobInput`](crate::input::StartFraudsterRegistrationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2727,6 +2781,19 @@ pub mod start_fraudster_registration_job_input {
                 input_data_config: self.input_data_config,
                 output_data_config: self.output_data_config,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("job_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("data_access_role_arn", &self.data_access_role_arn);
+            formatter.field("registration_config", &self.registration_config);
+            formatter.field("input_data_config", &self.input_data_config);
+            formatter.field("output_data_config", &self.output_data_config);
+            formatter.finish()
         }
     }
 }
@@ -2851,7 +2918,7 @@ impl StartFraudsterRegistrationJobInput {
 pub mod start_speaker_enrollment_job_input {
 
     /// A builder for [`StartSpeakerEnrollmentJobInput`](crate::input::StartSpeakerEnrollmentJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2960,6 +3027,19 @@ pub mod start_speaker_enrollment_job_input {
                 input_data_config: self.input_data_config,
                 output_data_config: self.output_data_config,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("job_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("data_access_role_arn", &self.data_access_role_arn);
+            formatter.field("enrollment_config", &self.enrollment_config);
+            formatter.field("input_data_config", &self.input_data_config);
+            formatter.field("output_data_config", &self.output_data_config);
+            formatter.finish()
         }
     }
 }
@@ -3419,7 +3499,7 @@ impl UntagResourceInput {
 pub mod update_domain_input {
 
     /// A builder for [`UpdateDomainInput`](crate::input::UpdateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3485,6 +3565,19 @@ pub mod update_domain_input {
                 description: self.description,
                 server_side_encryption_configuration: self.server_side_encryption_configuration,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_id", &self.domain_id);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "server_side_encryption_configuration",
+                &self.server_side_encryption_configuration,
+            );
+            formatter.finish()
         }
     }
 }
@@ -3605,7 +3698,7 @@ impl UpdateDomainInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>The maximum number of domains to list per API call.</p>
     #[doc(hidden)]
@@ -3622,14 +3715,6 @@ impl ListDomainsInput {
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -3695,7 +3780,7 @@ impl std::fmt::Debug for CreateDomainInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p>The identifier of the domain you want to delete.</p>
     #[doc(hidden)]
@@ -3705,13 +3790,6 @@ impl DeleteDomainInput {
     /// <p>The identifier of the domain you want to delete.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.finish()
     }
 }
 
@@ -3769,7 +3847,7 @@ impl std::fmt::Debug for UpdateDomainInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainInput {
     /// <p>The identifier of the domain you are describing.</p>
     #[doc(hidden)]
@@ -3781,17 +3859,10 @@ impl DescribeDomainInput {
         self.domain_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.</p>
     #[doc(hidden)]
@@ -3810,18 +3881,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to tag.</p>
     #[doc(hidden)]
@@ -3838,14 +3901,6 @@ impl TagResourceInput {
     /// <p>The list of tags to assign to the specified resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -4021,7 +4076,7 @@ impl std::fmt::Debug for OptOutSpeakerInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
     #[doc(hidden)]
@@ -4033,17 +4088,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSpeakersInput {
     /// <p>The identifier of the domain.</p>
     #[doc(hidden)]
@@ -4069,19 +4117,10 @@ impl ListSpeakersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSpeakersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSpeakersInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSpeakerEnrollmentJobsInput {
     /// <p>The identifier of the domain containing the speaker enrollment jobs.</p>
     #[doc(hidden)]
@@ -4114,20 +4153,10 @@ impl ListSpeakerEnrollmentJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSpeakerEnrollmentJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSpeakerEnrollmentJobsInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFraudsterRegistrationJobsInput {
     /// <p>The identifier of the domain containing the fraudster registration Jobs.</p>
     #[doc(hidden)]
@@ -4160,20 +4189,10 @@ impl ListFraudsterRegistrationJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFraudsterRegistrationJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFraudsterRegistrationJobsInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
     #[doc(hidden)]
@@ -4192,18 +4211,10 @@ impl EvaluateSessionInput {
         self.session_name_or_id.as_deref()
     }
 }
-impl std::fmt::Debug for EvaluateSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluateSessionInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("session_name_or_id", &self.session_name_or_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSpeakerEnrollmentJobInput {
     /// <p>The identifier of the domain containing the speaker enrollment job.</p>
     #[doc(hidden)]
@@ -4220,14 +4231,6 @@ impl DescribeSpeakerEnrollmentJobInput {
     /// <p>The identifier of the speaker enrollment job you are describing.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeSpeakerEnrollmentJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSpeakerEnrollmentJobInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }
 
@@ -4263,7 +4266,7 @@ impl std::fmt::Debug for DescribeSpeakerInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFraudsterRegistrationJobInput {
     /// <p>The identifier for the domain containing the fraudster registration job.</p>
     #[doc(hidden)]
@@ -4280,14 +4283,6 @@ impl DescribeFraudsterRegistrationJobInput {
     /// <p>The identifier for the fraudster registration job you are describing.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeFraudsterRegistrationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFraudsterRegistrationJobInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }
 

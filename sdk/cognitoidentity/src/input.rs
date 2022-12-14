@@ -4449,7 +4449,7 @@ impl UpdateIdentityPoolInput {
 
 /// <p>An object representing an Amazon Cognito identity pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -4535,35 +4535,10 @@ impl UpdateIdentityPoolInput {
         self.identity_pool_tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIdentityPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIdentityPoolInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field(
-            "allow_unauthenticated_identities",
-            &self.allow_unauthenticated_identities,
-        );
-        formatter.field("allow_classic_flow", &self.allow_classic_flow);
-        formatter.field("supported_login_providers", &self.supported_login_providers);
-        formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field(
-            "open_id_connect_provider_ar_ns",
-            &self.open_id_connect_provider_ar_ns,
-        );
-        formatter.field(
-            "cognito_identity_providers",
-            &self.cognito_identity_providers,
-        );
-        formatter.field("saml_provider_ar_ns", &self.saml_provider_ar_ns);
-        formatter.field("identity_pool_tags", &self.identity_pool_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
     #[doc(hidden)]
@@ -4582,18 +4557,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the UnlinkIdentity action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnlinkIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -4623,19 +4590,10 @@ impl UnlinkIdentityInput {
         self.logins_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UnlinkIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnlinkIdentityInput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("logins", &self.logins);
-        formatter.field("logins_to_remove", &self.logins_to_remove);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -4668,20 +4626,10 @@ impl UnlinkDeveloperIdentityInput {
         self.developer_user_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for UnlinkDeveloperIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnlinkDeveloperIdentityInput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field("developer_user_identifier", &self.developer_user_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
     #[doc(hidden)]
@@ -4704,18 +4652,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetPrincipalTagAttributeMapInput {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
     #[doc(hidden)]
@@ -4752,20 +4692,10 @@ impl SetPrincipalTagAttributeMapInput {
         self.principal_tags.as_ref()
     }
 }
-impl std::fmt::Debug for SetPrincipalTagAttributeMapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetPrincipalTagAttributeMapInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_provider_name", &self.identity_provider_name);
-        formatter.field("use_defaults", &self.use_defaults);
-        formatter.field("principal_tags", &self.principal_tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>SetIdentityPoolRoles</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -4803,19 +4733,10 @@ impl SetIdentityPoolRolesInput {
         self.role_mappings.as_ref()
     }
 }
-impl std::fmt::Debug for SetIdentityPoolRolesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityPoolRolesInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("roles", &self.roles);
-        formatter.field("role_mappings", &self.role_mappings);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>MergeDeveloperIdentities</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeDeveloperIdentitiesInput {
     /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
     #[doc(hidden)]
@@ -4848,23 +4769,10 @@ impl MergeDeveloperIdentitiesInput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for MergeDeveloperIdentitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeDeveloperIdentitiesInput");
-        formatter.field("source_user_identifier", &self.source_user_identifier);
-        formatter.field(
-            "destination_user_identifier",
-            &self.destination_user_identifier,
-        );
-        formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookupDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -4904,21 +4812,10 @@ impl LookupDeveloperIdentityInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for LookupDeveloperIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LookupDeveloperIdentityInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("developer_user_identifier", &self.developer_user_identifier);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
     #[doc(hidden)]
@@ -4930,17 +4827,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the ListIdentityPools action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityPoolsInput {
     /// <p>The maximum number of identities to return.</p>
     #[doc(hidden)]
@@ -4959,18 +4849,10 @@ impl ListIdentityPoolsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentityPoolsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityPoolsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the ListIdentities action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentitiesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -5003,20 +4885,10 @@ impl ListIdentitiesInput {
         self.hide_disabled
     }
 }
-impl std::fmt::Debug for ListIdentitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentitiesInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("hide_disabled", &self.hide_disabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPrincipalTagAttributeMapInput {
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
     #[doc(hidden)]
@@ -5035,18 +4907,10 @@ impl GetPrincipalTagAttributeMapInput {
         self.identity_provider_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPrincipalTagAttributeMapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPrincipalTagAttributeMapInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_provider_name", &self.identity_provider_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOpenIdTokenForDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -5098,21 +4962,10 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
         self.token_duration
     }
 }
-impl std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpenIdTokenForDeveloperIdentityInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("logins", &self.logins);
-        formatter.field("principal_tags", &self.principal_tags);
-        formatter.field("token_duration", &self.token_duration);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the GetOpenIdToken action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOpenIdTokenInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -5135,18 +4988,10 @@ impl GetOpenIdTokenInput {
         self.logins.as_ref()
     }
 }
-impl std::fmt::Debug for GetOpenIdTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpenIdTokenInput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("logins", &self.logins);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>GetIdentityPoolRoles</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -5158,17 +5003,10 @@ impl GetIdentityPoolRolesInput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityPoolRolesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityPoolRolesInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the GetId action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdInput {
     /// <p>A standard AWS account ID (9+ digits).</p>
     #[doc(hidden)]
@@ -5222,19 +5060,10 @@ impl GetIdInput {
         self.logins.as_ref()
     }
 }
-impl std::fmt::Debug for GetIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("logins", &self.logins);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>GetCredentialsForIdentity</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCredentialsForIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -5268,19 +5097,10 @@ impl GetCredentialsForIdentityInput {
         self.custom_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetCredentialsForIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCredentialsForIdentityInput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("logins", &self.logins);
-        formatter.field("custom_role_arn", &self.custom_role_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the DescribeIdentityPool action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -5292,17 +5112,10 @@ impl DescribeIdentityPoolInput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityPoolInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>DescribeIdentity</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -5314,17 +5127,10 @@ impl DescribeIdentityInput {
         self.identity_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityInput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the DeleteIdentityPool action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -5336,17 +5142,10 @@ impl DeleteIdentityPoolInput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIdentityPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityPoolInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the <code>DeleteIdentities</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
     #[doc(hidden)]
@@ -5358,17 +5157,10 @@ impl DeleteIdentitiesInput {
         self.identity_ids_to_delete.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIdentitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentitiesInput");
-        formatter.field("identity_ids_to_delete", &self.identity_ids_to_delete);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to the CreateIdentityPool action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIdentityPoolInput {
     /// <p>A string that you provide.</p>
     #[doc(hidden)]
@@ -5447,29 +5239,5 @@ impl CreateIdentityPoolInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.identity_pool_tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateIdentityPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIdentityPoolInput");
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field(
-            "allow_unauthenticated_identities",
-            &self.allow_unauthenticated_identities,
-        );
-        formatter.field("allow_classic_flow", &self.allow_classic_flow);
-        formatter.field("supported_login_providers", &self.supported_login_providers);
-        formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field(
-            "open_id_connect_provider_ar_ns",
-            &self.open_id_connect_provider_ar_ns,
-        );
-        formatter.field(
-            "cognito_identity_providers",
-            &self.cognito_identity_providers,
-        );
-        formatter.field("saml_provider_ar_ns", &self.saml_provider_ar_ns);
-        formatter.field("identity_pool_tags", &self.identity_pool_tags);
-        formatter.finish()
     }
 }

@@ -258,7 +258,7 @@ impl SendCommandInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendCommandInput {
     /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
     /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
@@ -321,19 +321,5 @@ impl SendCommandInput {
     /// <p>Command to fetch a page.</p>
     pub fn fetch_page(&self) -> std::option::Option<&crate::model::FetchPageRequest> {
         self.fetch_page.as_ref()
-    }
-}
-impl std::fmt::Debug for SendCommandInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendCommandInput");
-        formatter.field("session_token", &self.session_token);
-        formatter.field("start_session", &self.start_session);
-        formatter.field("start_transaction", &self.start_transaction);
-        formatter.field("end_session", &self.end_session);
-        formatter.field("commit_transaction", &self.commit_transaction);
-        formatter.field("abort_transaction", &self.abort_transaction);
-        formatter.field("execute_statement", &self.execute_statement);
-        formatter.field("fetch_page", &self.fetch_page);
-        formatter.finish()
     }
 }

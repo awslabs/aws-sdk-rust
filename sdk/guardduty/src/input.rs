@@ -12507,7 +12507,7 @@ impl UpdateThreatIntelSetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThreatIntelSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
     #[doc(hidden)]
@@ -12547,21 +12547,10 @@ impl UpdateThreatIntelSetInput {
         self.activate
     }
 }
-impl std::fmt::Debug for UpdateThreatIntelSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThreatIntelSetInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("threat_intel_set_id", &self.threat_intel_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("location", &self.location);
-        formatter.field("activate", &self.activate);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePublishingDestinationInput {
     /// <p>The ID of the detector associated with the publishing destinations to update.</p>
     #[doc(hidden)]
@@ -12589,19 +12578,10 @@ impl UpdatePublishingDestinationInput {
         self.destination_properties.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePublishingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePublishingDestinationInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("destination_id", &self.destination_id);
-        formatter.field("destination_properties", &self.destination_properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>The ID of the detector to update the delegated administrator for.</p>
     #[doc(hidden)]
@@ -12629,19 +12609,10 @@ impl UpdateOrganizationConfigurationInput {
         self.data_sources.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOrganizationConfigurationInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("auto_enable", &self.auto_enable);
-        formatter.field("data_sources", &self.data_sources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMemberDetectorsInput {
     /// <p>The detector ID of the administrator account.</p>
     #[doc(hidden)]
@@ -12667,19 +12638,10 @@ impl UpdateMemberDetectorsInput {
         self.data_sources.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMemberDetectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMemberDetectorsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("data_sources", &self.data_sources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMalwareScanSettingsInput {
     /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
     #[doc(hidden)]
@@ -12709,19 +12671,10 @@ impl UpdateMalwareScanSettingsInput {
         self.ebs_snapshot_preservation.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMalwareScanSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMalwareScanSettingsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("scan_resource_criteria", &self.scan_resource_criteria);
-        formatter.field("ebs_snapshot_preservation", &self.ebs_snapshot_preservation);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIpSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
     #[doc(hidden)]
@@ -12761,21 +12714,10 @@ impl UpdateIpSetInput {
         self.activate
     }
 }
-impl std::fmt::Debug for UpdateIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIpSetInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("ip_set_id", &self.ip_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("location", &self.location);
-        formatter.field("activate", &self.activate);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFindingsFeedbackInput {
     /// <p>The ID of the detector associated with the findings to update feedback for.</p>
     #[doc(hidden)]
@@ -12808,20 +12750,10 @@ impl UpdateFindingsFeedbackInput {
         self.comments.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFindingsFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFindingsFeedbackInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("finding_ids", &self.finding_ids);
-        formatter.field("feedback", &self.feedback);
-        formatter.field("comments", &self.comments);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFilterInput {
     /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
     #[doc(hidden)]
@@ -12868,22 +12800,10 @@ impl UpdateFilterInput {
         self.finding_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFilterInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("description", &self.description);
-        formatter.field("action", &self.action);
-        formatter.field("rank", &self.rank);
-        formatter.field("finding_criteria", &self.finding_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDetectorInput {
     /// <p>The unique ID of the detector to update.</p>
     #[doc(hidden)]
@@ -12918,23 +12838,10 @@ impl UpdateDetectorInput {
         self.data_sources.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDetectorInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("enable", &self.enable);
-        formatter.field(
-            "finding_publishing_frequency",
-            &self.finding_publishing_frequency,
-        );
-        formatter.field("data_sources", &self.data_sources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
     #[doc(hidden)]
@@ -12953,18 +12860,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnarchiveFindingsInput {
     /// <p>The ID of the detector associated with the findings to unarchive.</p>
     #[doc(hidden)]
@@ -12983,18 +12882,10 @@ impl UnarchiveFindingsInput {
         self.finding_ids.as_deref()
     }
 }
-impl std::fmt::Debug for UnarchiveFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnarchiveFindingsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("finding_ids", &self.finding_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
     #[doc(hidden)]
@@ -13017,18 +12908,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMonitoringMembersInput {
     /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
     #[doc(hidden)]
@@ -13047,18 +12930,10 @@ impl StopMonitoringMembersInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for StopMonitoringMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMonitoringMembersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMonitoringMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
     #[doc(hidden)]
@@ -13077,18 +12952,10 @@ impl StartMonitoringMembersInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for StartMonitoringMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMonitoringMembersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThreatIntelSetsInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
     #[doc(hidden)]
@@ -13114,19 +12981,10 @@ impl ListThreatIntelSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListThreatIntelSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThreatIntelSetsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
     #[doc(hidden)]
@@ -13138,17 +12996,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPublishingDestinationsInput {
     /// <p>The ID of the detector to retrieve publishing destinations for.</p>
     #[doc(hidden)]
@@ -13174,19 +13025,10 @@ impl ListPublishingDestinationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPublishingDestinationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPublishingDestinationsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of results to return in the response.</p>
     #[doc(hidden)]
@@ -13205,18 +13047,10 @@ impl ListOrganizationAdminAccountsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOrganizationAdminAccountsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMembersInput {
     /// <p>The unique ID of the detector the member is associated with.</p>
     #[doc(hidden)]
@@ -13249,20 +13083,10 @@ impl ListMembersInput {
         self.only_associated.as_deref()
     }
 }
-impl std::fmt::Debug for ListMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMembersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("only_associated", &self.only_associated);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIpSetsInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
     #[doc(hidden)]
@@ -13288,19 +13112,10 @@ impl ListIpSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIpSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIpSetsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInvitationsInput {
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     #[doc(hidden)]
@@ -13319,18 +13134,10 @@ impl ListInvitationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInvitationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInvitationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
     #[doc(hidden)]
@@ -13470,21 +13277,10 @@ impl ListFindingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFindingsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("finding_criteria", &self.finding_criteria);
-        formatter.field("sort_criteria", &self.sort_criteria);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFiltersInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     #[doc(hidden)]
@@ -13510,19 +13306,10 @@ impl ListFiltersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFiltersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFiltersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDetectorsInput {
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     #[doc(hidden)]
@@ -13541,18 +13328,10 @@ impl ListDetectorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDetectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDetectorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InviteMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
     #[doc(hidden)]
@@ -13585,23 +13364,10 @@ impl InviteMembersInput {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for InviteMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InviteMembersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field(
-            "disable_email_notification",
-            &self.disable_email_notification,
-        );
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsageStatisticsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
     #[doc(hidden)]
@@ -13648,22 +13414,10 @@ impl GetUsageStatisticsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetUsageStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsageStatisticsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("usage_statistic_type", &self.usage_statistic_type);
-        formatter.field("usage_criteria", &self.usage_criteria);
-        formatter.field("unit", &self.unit);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThreatIntelSetInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
     #[doc(hidden)]
@@ -13682,18 +13436,10 @@ impl GetThreatIntelSetInput {
         self.threat_intel_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetThreatIntelSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThreatIntelSetInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("threat_intel_set_id", &self.threat_intel_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRemainingFreeTrialDaysInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
@@ -13712,18 +13458,10 @@ impl GetRemainingFreeTrialDaysInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for GetRemainingFreeTrialDaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRemainingFreeTrialDaysInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
     #[doc(hidden)]
@@ -13742,18 +13480,10 @@ impl GetMembersInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for GetMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMembersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMemberDetectorsInput {
     /// <p>The detector ID for the administrator account.</p>
     #[doc(hidden)]
@@ -13772,19 +13502,11 @@ impl GetMemberDetectorsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for GetMemberDetectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMemberDetectorsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This input is deprecated, use GetAdministratorAccountRequest instead")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
@@ -13796,17 +13518,10 @@ impl GetMasterAccountInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMasterAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMasterAccountInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMalwareScanSettingsInput {
     /// <p>The unique ID of the detector that the scan setting is associated with.</p>
     #[doc(hidden)]
@@ -13818,17 +13533,10 @@ impl GetMalwareScanSettingsInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMalwareScanSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMalwareScanSettingsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIpSetInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
     #[doc(hidden)]
@@ -13847,29 +13555,15 @@ impl GetIpSetInput {
         self.ip_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIpSetInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("ip_set_id", &self.ip_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInvitationsCountInput {}
-impl std::fmt::Debug for GetInvitationsCountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInvitationsCountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingsStatisticsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
     #[doc(hidden)]
@@ -13898,19 +13592,10 @@ impl GetFindingsStatisticsInput {
         self.finding_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for GetFindingsStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFindingsStatisticsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("finding_statistic_types", &self.finding_statistic_types);
-        formatter.field("finding_criteria", &self.finding_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
     #[doc(hidden)]
@@ -13936,19 +13621,10 @@ impl GetFindingsInput {
         self.sort_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for GetFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFindingsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("finding_ids", &self.finding_ids);
-        formatter.field("sort_criteria", &self.sort_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFilterInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     #[doc(hidden)]
@@ -13967,18 +13643,10 @@ impl GetFilterInput {
         self.filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFilterInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDetectorInput {
     /// <p>The unique ID of the detector that you want to get.</p>
     #[doc(hidden)]
@@ -13990,17 +13658,10 @@ impl GetDetectorInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDetectorInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAdministratorAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
@@ -14012,17 +13673,10 @@ impl GetAdministratorAccountInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAdministratorAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAdministratorAccountInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     #[doc(hidden)]
@@ -14034,17 +13688,10 @@ impl EnableOrganizationAdminAccountInput {
         self.admin_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableOrganizationAdminAccountInput");
-        formatter.field("admin_account_id", &self.admin_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
     #[doc(hidden)]
@@ -14063,21 +13710,13 @@ impl DisassociateMembersInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMembersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "This input is deprecated, use DisassociateFromAdministratorAccountRequest instead"
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateFromMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
@@ -14089,17 +13728,10 @@ impl DisassociateFromMasterAccountInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateFromMasterAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateFromMasterAccountInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateFromAdministratorAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
@@ -14111,17 +13743,10 @@ impl DisassociateFromAdministratorAccountInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateFromAdministratorAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateFromAdministratorAccountInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     #[doc(hidden)]
@@ -14133,17 +13758,10 @@ impl DisableOrganizationAdminAccountInput {
         self.admin_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableOrganizationAdminAccountInput");
-        formatter.field("admin_account_id", &self.admin_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePublishingDestinationInput {
     /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
     #[doc(hidden)]
@@ -14162,18 +13780,10 @@ impl DescribePublishingDestinationInput {
         self.destination_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePublishingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePublishingDestinationInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("destination_id", &self.destination_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationInput {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     #[doc(hidden)]
@@ -14185,17 +13795,10 @@ impl DescribeOrganizationConfigurationInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationConfigurationInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMalwareScansInput {
     /// <p>The unique ID of the detector that the request is associated with.</p>
     #[doc(hidden)]
@@ -14235,21 +13838,10 @@ impl DescribeMalwareScansInput {
         self.sort_criteria.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeMalwareScansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMalwareScansInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field("sort_criteria", &self.sort_criteria);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThreatIntelSetInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
     #[doc(hidden)]
@@ -14268,18 +13860,10 @@ impl DeleteThreatIntelSetInput {
         self.threat_intel_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteThreatIntelSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThreatIntelSetInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("threat_intel_set_id", &self.threat_intel_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePublishingDestinationInput {
     /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
     #[doc(hidden)]
@@ -14298,18 +13882,10 @@ impl DeletePublishingDestinationInput {
         self.destination_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePublishingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePublishingDestinationInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("destination_id", &self.destination_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
     #[doc(hidden)]
@@ -14328,18 +13904,10 @@ impl DeleteMembersInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMembersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIpSetInput {
     /// <p>The unique ID of the detector associated with the IPSet.</p>
     #[doc(hidden)]
@@ -14358,18 +13926,10 @@ impl DeleteIpSetInput {
         self.ip_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIpSetInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("ip_set_id", &self.ip_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInvitationsInput {
     /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
     #[doc(hidden)]
@@ -14381,17 +13941,10 @@ impl DeleteInvitationsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInvitationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInvitationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFilterInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     #[doc(hidden)]
@@ -14410,18 +13963,10 @@ impl DeleteFilterInput {
         self.filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFilterInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDetectorInput {
     /// <p>The unique ID of the detector that you want to delete.</p>
     #[doc(hidden)]
@@ -14433,17 +13978,10 @@ impl DeleteDetectorInput {
         self.detector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDetectorInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeclineInvitationsInput {
     /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
     #[doc(hidden)]
@@ -14455,17 +13993,10 @@ impl DeclineInvitationsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DeclineInvitationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeclineInvitationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThreatIntelSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
     #[doc(hidden)]
@@ -14523,23 +14054,10 @@ impl CreateThreatIntelSetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateThreatIntelSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateThreatIntelSetInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("name", &self.name);
-        formatter.field("format", &self.format);
-        formatter.field("location", &self.location);
-        formatter.field("activate", &self.activate);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSampleFindingsInput {
     /// <p>The ID of the detector to create sample findings for.</p>
     #[doc(hidden)]
@@ -14558,18 +14076,10 @@ impl CreateSampleFindingsInput {
         self.finding_types.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSampleFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSampleFindingsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("finding_types", &self.finding_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePublishingDestinationInput {
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
     #[doc(hidden)]
@@ -14604,20 +14114,10 @@ impl CreatePublishingDestinationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePublishingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePublishingDestinationInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("destination_type", &self.destination_type);
-        formatter.field("destination_properties", &self.destination_properties);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
     #[doc(hidden)]
@@ -14636,18 +14136,10 @@ impl CreateMembersInput {
         self.account_details.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMembersInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("account_details", &self.account_details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIpSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
     #[doc(hidden)]
@@ -14707,23 +14199,10 @@ impl CreateIpSetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIpSetInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("name", &self.name);
-        formatter.field("format", &self.format);
-        formatter.field("location", &self.location);
-        formatter.field("activate", &self.activate);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFilterInput {
     /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
     #[doc(hidden)]
@@ -14908,24 +14387,10 @@ impl CreateFilterInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFilterInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("action", &self.action);
-        formatter.field("rank", &self.rank);
-        formatter.field("finding_criteria", &self.finding_criteria);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDetectorInput {
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
     #[doc(hidden)]
@@ -14971,24 +14436,10 @@ impl CreateDetectorInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDetectorInput");
-        formatter.field("enable", &self.enable);
-        formatter.field("client_token", &self.client_token);
-        formatter.field(
-            "finding_publishing_frequency",
-            &self.finding_publishing_frequency,
-        );
-        formatter.field("data_sources", &self.data_sources);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
     #[doc(hidden)]
@@ -15007,19 +14458,11 @@ impl ArchiveFindingsInput {
         self.finding_ids.as_deref()
     }
 }
-impl std::fmt::Debug for ArchiveFindingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveFindingsInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("finding_ids", &self.finding_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This input is deprecated, use AcceptAdministratorInvitationRequest instead")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptInvitationInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
@@ -15045,19 +14488,10 @@ impl AcceptInvitationInput {
         self.invitation_id.as_deref()
     }
 }
-impl std::fmt::Debug for AcceptInvitationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptInvitationInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("master_id", &self.master_id);
-        formatter.field("invitation_id", &self.invitation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptAdministratorInvitationInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
@@ -15081,14 +14515,5 @@ impl AcceptAdministratorInvitationInput {
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub fn invitation_id(&self) -> std::option::Option<&str> {
         self.invitation_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptAdministratorInvitationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptAdministratorInvitationInput");
-        formatter.field("detector_id", &self.detector_id);
-        formatter.field("administrator_id", &self.administrator_id);
-        formatter.field("invitation_id", &self.invitation_id);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Describes a type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Type {
     /// <p>The type name.</p>
     #[doc(hidden)]
@@ -40,17 +40,6 @@ impl Type {
     /// <p>The type format: SDL or JSON.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::TypeDefinitionFormat> {
         self.format.as_ref()
-    }
-}
-impl std::fmt::Debug for Type {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Type");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("arn", &self.arn);
-        formatter.field("definition", &self.definition);
-        formatter.field("format", &self.format);
-        formatter.finish()
     }
 }
 /// See [`Type`](crate::model::Type).
@@ -232,7 +221,7 @@ impl AsRef<str> for TypeDefinitionFormat {
 
 /// <p>Describes a resolver.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resolver {
     /// <p>The resolver type name.</p>
     #[doc(hidden)]
@@ -320,23 +309,6 @@ impl Resolver {
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(&self) -> i32 {
         self.max_batch_size
-    }
-}
-impl std::fmt::Debug for Resolver {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resolver");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("field_name", &self.field_name);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("resolver_arn", &self.resolver_arn);
-        formatter.field("request_mapping_template", &self.request_mapping_template);
-        formatter.field("response_mapping_template", &self.response_mapping_template);
-        formatter.field("kind", &self.kind);
-        formatter.field("pipeline_config", &self.pipeline_config);
-        formatter.field("sync_config", &self.sync_config);
-        formatter.field("caching_config", &self.caching_config);
-        formatter.field("max_batch_size", &self.max_batch_size);
-        formatter.finish()
     }
 }
 /// See [`Resolver`](crate::model::Resolver).
@@ -521,7 +493,7 @@ impl Resolver {
 
 /// <p>The caching configuration for a resolver that has caching activated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachingConfig {
     /// <p>The TTL in seconds for a resolver that has caching activated.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
@@ -542,14 +514,6 @@ impl CachingConfig {
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
     pub fn caching_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.caching_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for CachingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachingConfig");
-        formatter.field("ttl", &self.ttl);
-        formatter.field("caching_keys", &self.caching_keys);
-        formatter.finish()
     }
 }
 /// See [`CachingConfig`](crate::model::CachingConfig).
@@ -614,7 +578,7 @@ impl CachingConfig {
 /// <p>Describes a Sync configuration for a resolver.</p>
 /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SyncConfig {
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
     /// <ul>
@@ -659,18 +623,6 @@ impl SyncConfig {
         &self,
     ) -> std::option::Option<&crate::model::LambdaConflictHandlerConfig> {
         self.lambda_conflict_handler_config.as_ref()
-    }
-}
-impl std::fmt::Debug for SyncConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SyncConfig");
-        formatter.field("conflict_handler", &self.conflict_handler);
-        formatter.field("conflict_detection", &self.conflict_detection);
-        formatter.field(
-            "lambda_conflict_handler_config",
-            &self.lambda_conflict_handler_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`SyncConfig`](crate::model::SyncConfig).
@@ -764,7 +716,7 @@ impl SyncConfig {
 
 /// <p>The <code>LambdaConflictHandlerConfig</code> object when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaConflictHandlerConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
     #[doc(hidden)]
@@ -774,16 +726,6 @@ impl LambdaConflictHandlerConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
     pub fn lambda_conflict_handler_arn(&self) -> std::option::Option<&str> {
         self.lambda_conflict_handler_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaConflictHandlerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaConflictHandlerConfig");
-        formatter.field(
-            "lambda_conflict_handler_arn",
-            &self.lambda_conflict_handler_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
@@ -1022,7 +964,7 @@ impl AsRef<str> for ConflictHandlerType {
 
 /// <p>The pipeline configuration for a resolver of kind <code>PIPELINE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineConfig {
     /// <p>A list of <code>Function</code> objects.</p>
     #[doc(hidden)]
@@ -1032,13 +974,6 @@ impl PipelineConfig {
     /// <p>A list of <code>Function</code> objects.</p>
     pub fn functions(&self) -> std::option::Option<&[std::string::String]> {
         self.functions.as_deref()
-    }
-}
-impl std::fmt::Debug for PipelineConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineConfig");
-        formatter.field("functions", &self.functions);
-        formatter.finish()
     }
 }
 /// See [`PipelineConfig`](crate::model::PipelineConfig).
@@ -1176,7 +1111,7 @@ impl AsRef<str> for ResolverKind {
 
 /// <p>Describes a GraphQL API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GraphqlApi {
     /// <p>The API name.</p>
     #[doc(hidden)]
@@ -1285,28 +1220,6 @@ impl GraphqlApi {
         &self,
     ) -> std::option::Option<&crate::model::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
-    }
-}
-impl std::fmt::Debug for GraphqlApi {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GraphqlApi");
-        formatter.field("name", &self.name);
-        formatter.field("api_id", &self.api_id);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("log_config", &self.log_config);
-        formatter.field("user_pool_config", &self.user_pool_config);
-        formatter.field("open_id_connect_config", &self.open_id_connect_config);
-        formatter.field("arn", &self.arn);
-        formatter.field("uris", &self.uris);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "additional_authentication_providers",
-            &self.additional_authentication_providers,
-        );
-        formatter.field("xray_enabled", &self.xray_enabled);
-        formatter.field("waf_web_acl_arn", &self.waf_web_acl_arn);
-        formatter.field("lambda_authorizer_config", &self.lambda_authorizer_config);
-        formatter.finish()
     }
 }
 /// See [`GraphqlApi`](crate::model::GraphqlApi).
@@ -1560,7 +1473,7 @@ impl GraphqlApi {
 
 /// <p>A <code>LambdaAuthorizerConfig</code> specifies how to authorize AppSync API access when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API can have only one Lambda authorizer configured at a time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaAuthorizerConfig {
     /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0 disables caching of responses.</p>
     #[doc(hidden)]
@@ -1588,21 +1501,6 @@ impl LambdaAuthorizerConfig {
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
     pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
         self.identity_validation_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaAuthorizerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaAuthorizerConfig");
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.finish()
     }
 }
 /// See [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
@@ -1683,7 +1581,7 @@ impl LambdaAuthorizerConfig {
 
 /// <p>Describes an additional authentication provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalAuthenticationProvider {
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     #[doc(hidden)]
@@ -1718,16 +1616,6 @@ impl AdditionalAuthenticationProvider {
         &self,
     ) -> std::option::Option<&crate::model::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
-    }
-}
-impl std::fmt::Debug for AdditionalAuthenticationProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalAuthenticationProvider");
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("open_id_connect_config", &self.open_id_connect_config);
-        formatter.field("user_pool_config", &self.user_pool_config);
-        formatter.field("lambda_authorizer_config", &self.lambda_authorizer_config);
-        formatter.finish()
     }
 }
 /// See [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
@@ -1818,7 +1706,7 @@ impl AdditionalAuthenticationProvider {
 
 /// <p>Describes an Amazon Cognito user pool configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CognitoUserPoolConfig {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -1842,15 +1730,6 @@ impl CognitoUserPoolConfig {
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
         self.app_id_client_regex.as_deref()
-    }
-}
-impl std::fmt::Debug for CognitoUserPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CognitoUserPoolConfig");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("app_id_client_regex", &self.app_id_client_regex);
-        formatter.finish()
     }
 }
 /// See [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
@@ -1916,7 +1795,7 @@ impl CognitoUserPoolConfig {
 
 /// <p>Describes an OpenID Connect (OIDC) configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenIdConnectConfig {
     /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
     #[doc(hidden)]
@@ -1947,16 +1826,6 @@ impl OpenIdConnectConfig {
     /// <p>The number of milliseconds that a token is valid after being authenticated.</p>
     pub fn auth_ttl(&self) -> i64 {
         self.auth_ttl
-    }
-}
-impl std::fmt::Debug for OpenIdConnectConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenIdConnectConfig");
-        formatter.field("issuer", &self.issuer);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("iat_ttl", &self.iat_ttl);
-        formatter.field("auth_ttl", &self.auth_ttl);
-        formatter.finish()
     }
 }
 /// See [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
@@ -2144,7 +2013,7 @@ impl AsRef<str> for AuthenticationType {
 
 /// <p>Describes an Amazon Cognito user pool configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPoolConfig {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -2175,16 +2044,6 @@ impl UserPoolConfig {
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
         self.app_id_client_regex.as_deref()
-    }
-}
-impl std::fmt::Debug for UserPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPoolConfig");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("default_action", &self.default_action);
-        formatter.field("app_id_client_regex", &self.app_id_client_regex);
-        formatter.finish()
     }
 }
 /// See [`UserPoolConfig`](crate::model::UserPoolConfig).
@@ -2355,7 +2214,7 @@ impl AsRef<str> for DefaultAction {
 
 /// <p>The Amazon CloudWatch Logs configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogConfig {
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
@@ -2407,15 +2266,6 @@ impl LogConfig {
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub fn exclude_verbose_content(&self) -> bool {
         self.exclude_verbose_content
-    }
-}
-impl std::fmt::Debug for LogConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogConfig");
-        formatter.field("field_log_level", &self.field_log_level);
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("exclude_verbose_content", &self.exclude_verbose_content);
-        formatter.finish()
     }
 }
 /// See [`LogConfig`](crate::model::LogConfig).
@@ -2607,7 +2457,7 @@ impl AsRef<str> for FieldLogLevel {
 
 /// <p>A function is a reusable entity. You can use multiple functions to compose the resolver logic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionConfiguration {
     /// <p>A unique ID representing the <code>Function</code> object.</p>
     #[doc(hidden)]
@@ -2682,22 +2532,6 @@ impl FunctionConfiguration {
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(&self) -> i32 {
         self.max_batch_size
-    }
-}
-impl std::fmt::Debug for FunctionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionConfiguration");
-        formatter.field("function_id", &self.function_id);
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("request_mapping_template", &self.request_mapping_template);
-        formatter.field("response_mapping_template", &self.response_mapping_template);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("sync_config", &self.sync_config);
-        formatter.field("max_batch_size", &self.max_batch_size);
-        formatter.finish()
     }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -2861,7 +2695,7 @@ impl FunctionConfiguration {
 
 /// <p>Describes a configuration for a custom domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainNameConfig {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -2899,17 +2733,6 @@ impl DomainNameConfig {
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
     pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainNameConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainNameConfig");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("description", &self.description);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("appsync_domain_name", &self.appsync_domain_name);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.finish()
     }
 }
 /// See [`DomainNameConfig`](crate::model::DomainNameConfig).
@@ -3005,7 +2828,7 @@ impl DomainNameConfig {
 
 /// <p>Describes a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The data source Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -3111,29 +2934,6 @@ impl DataSource {
         &self,
     ) -> std::option::Option<&crate::model::RelationalDatabaseDataSourceConfig> {
         self.relational_database_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("data_source_arn", &self.data_source_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field("dynamodb_config", &self.dynamodb_config);
-        formatter.field("lambda_config", &self.lambda_config);
-        formatter.field("elasticsearch_config", &self.elasticsearch_config);
-        formatter.field(
-            "open_search_service_config",
-            &self.open_search_service_config,
-        );
-        formatter.field("http_config", &self.http_config);
-        formatter.field(
-            "relational_database_config",
-            &self.relational_database_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
@@ -3349,7 +3149,7 @@ impl DataSource {
 
 /// <p>Describes a relational database data source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabaseDataSourceConfig {
     /// <p>Source type for the relational database.</p>
     /// <ul>
@@ -3377,17 +3177,6 @@ impl RelationalDatabaseDataSourceConfig {
         &self,
     ) -> std::option::Option<&crate::model::RdsHttpEndpointConfig> {
         self.rds_http_endpoint_config.as_ref()
-    }
-}
-impl std::fmt::Debug for RelationalDatabaseDataSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabaseDataSourceConfig");
-        formatter.field(
-            "relational_database_source_type",
-            &self.relational_database_source_type,
-        );
-        formatter.field("rds_http_endpoint_config", &self.rds_http_endpoint_config);
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
@@ -3458,7 +3247,7 @@ impl RelationalDatabaseDataSourceConfig {
 
 /// <p>The Amazon Relational Database Service (Amazon RDS) HTTP endpoint configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsHttpEndpointConfig {
     /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
     #[doc(hidden)]
@@ -3496,17 +3285,6 @@ impl RdsHttpEndpointConfig {
     /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
     pub fn aws_secret_store_arn(&self) -> std::option::Option<&str> {
         self.aws_secret_store_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RdsHttpEndpointConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsHttpEndpointConfig");
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("schema", &self.schema);
-        formatter.field("aws_secret_store_arn", &self.aws_secret_store_arn);
-        formatter.finish()
     }
 }
 /// See [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
@@ -3689,7 +3467,7 @@ impl AsRef<str> for RelationalDatabaseSourceType {
 
 /// <p>Describes an HTTP data source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpDataSourceConfig {
     /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
     #[doc(hidden)]
@@ -3706,14 +3484,6 @@ impl HttpDataSourceConfig {
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
     pub fn authorization_config(&self) -> std::option::Option<&crate::model::AuthorizationConfig> {
         self.authorization_config.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpDataSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpDataSourceConfig");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("authorization_config", &self.authorization_config);
-        formatter.finish()
     }
 }
 /// See [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
@@ -3767,7 +3537,7 @@ impl HttpDataSourceConfig {
 
 /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationConfig {
     /// <p>The authorization type that the HTTP endpoint requires.</p>
     /// <ul>
@@ -3790,14 +3560,6 @@ impl AuthorizationConfig {
     /// <p>The Identity and Access Management (IAM) settings.</p>
     pub fn aws_iam_config(&self) -> std::option::Option<&crate::model::AwsIamConfig> {
         self.aws_iam_config.as_ref()
-    }
-}
-impl std::fmt::Debug for AuthorizationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationConfig");
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("aws_iam_config", &self.aws_iam_config);
-        formatter.finish()
     }
 }
 /// See [`AuthorizationConfig`](crate::model::AuthorizationConfig).
@@ -3860,7 +3622,7 @@ impl AuthorizationConfig {
 
 /// <p>The Identity and Access Management (IAM) configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsIamConfig {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
     #[doc(hidden)]
@@ -3877,14 +3639,6 @@ impl AwsIamConfig {
     /// <p>The signing service name for IAM authorization.</p>
     pub fn signing_service_name(&self) -> std::option::Option<&str> {
         self.signing_service_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsIamConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsIamConfig");
-        formatter.field("signing_region", &self.signing_region);
-        formatter.field("signing_service_name", &self.signing_service_name);
-        formatter.finish()
     }
 }
 /// See [`AwsIamConfig`](crate::model::AwsIamConfig).
@@ -4028,7 +3782,7 @@ impl AsRef<str> for AuthorizationType {
 
 /// <p>Describes an OpenSearch data source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenSearchServiceDataSourceConfig {
     /// <p>The endpoint.</p>
     #[doc(hidden)]
@@ -4045,14 +3799,6 @@ impl OpenSearchServiceDataSourceConfig {
     /// <p>The Amazon Web Services Region.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for OpenSearchServiceDataSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenSearchServiceDataSourceConfig");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
@@ -4104,7 +3850,7 @@ impl OpenSearchServiceDataSourceConfig {
 /// <p>Describes an OpenSearch data source configuration.</p>
 /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>OpenSearchServiceDataSourceConfig</code> to specify an OpenSearch data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchDataSourceConfig {
     /// <p>The endpoint.</p>
     #[doc(hidden)]
@@ -4121,14 +3867,6 @@ impl ElasticsearchDataSourceConfig {
     /// <p>The Amazon Web Services Region.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for ElasticsearchDataSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchDataSourceConfig");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
@@ -4179,7 +3917,7 @@ impl ElasticsearchDataSourceConfig {
 
 /// <p>Describes an Lambda data source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaDataSourceConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
     #[doc(hidden)]
@@ -4189,13 +3927,6 @@ impl LambdaDataSourceConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
     pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
         self.lambda_function_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaDataSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaDataSourceConfig");
-        formatter.field("lambda_function_arn", &self.lambda_function_arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
@@ -4237,7 +3968,7 @@ impl LambdaDataSourceConfig {
 
 /// <p>Describes an Amazon DynamoDB data source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamodbDataSourceConfig {
     /// <p>The table name.</p>
     #[doc(hidden)]
@@ -4275,17 +4006,6 @@ impl DynamodbDataSourceConfig {
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
     pub fn versioned(&self) -> bool {
         self.versioned
-    }
-}
-impl std::fmt::Debug for DynamodbDataSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamodbDataSourceConfig");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("use_caller_credentials", &self.use_caller_credentials);
-        formatter.field("delta_sync_config", &self.delta_sync_config);
-        formatter.field("versioned", &self.versioned);
-        formatter.finish()
     }
 }
 /// See [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
@@ -4375,7 +4095,7 @@ impl DynamodbDataSourceConfig {
 
 /// <p>Describes a Delta Sync configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeltaSyncConfig {
     /// <p>The number of minutes that an Item is stored in the data source.</p>
     #[doc(hidden)]
@@ -4399,15 +4119,6 @@ impl DeltaSyncConfig {
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
     pub fn delta_sync_table_ttl(&self) -> i64 {
         self.delta_sync_table_ttl
-    }
-}
-impl std::fmt::Debug for DeltaSyncConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeltaSyncConfig");
-        formatter.field("base_table_ttl", &self.base_table_ttl);
-        formatter.field("delta_sync_table_name", &self.delta_sync_table_name);
-        formatter.field("delta_sync_table_ttl", &self.delta_sync_table_ttl);
-        formatter.finish()
     }
 }
 /// See [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
@@ -4614,7 +4325,7 @@ impl AsRef<str> for DataSourceType {
 /// <li> <p>Deletion is stored in DynamoDB as seconds. The key is deleted after deletion time.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiKey {
     /// <p>The API key ID.</p>
     #[doc(hidden)]
@@ -4645,16 +4356,6 @@ impl ApiKey {
     /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
     pub fn deletes(&self) -> i64 {
         self.deletes
-    }
-}
-impl std::fmt::Debug for ApiKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiKey");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("expires", &self.expires);
-        formatter.field("deletes", &self.deletes);
-        formatter.finish()
     }
 }
 /// See [`ApiKey`](crate::model::ApiKey).
@@ -4729,7 +4430,7 @@ impl ApiKey {
 
 /// <p>The <code>ApiCache</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiCache {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
@@ -4840,24 +4541,6 @@ impl ApiCache {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ApiCacheStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ApiCache {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiCache");
-        formatter.field("ttl", &self.ttl);
-        formatter.field("api_caching_behavior", &self.api_caching_behavior);
-        formatter.field(
-            "transit_encryption_enabled",
-            &self.transit_encryption_enabled,
-        );
-        formatter.field(
-            "at_rest_encryption_enabled",
-            &self.at_rest_encryption_enabled,
-        );
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ApiCache`](crate::model::ApiCache).
@@ -5603,7 +5286,7 @@ impl AsRef<str> for OutputType {
 
 /// <p>Describes an <code>ApiAssociation</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiAssociation {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -5644,16 +5327,6 @@ impl ApiAssociation {
     /// <p>Details about the last deployment status.</p>
     pub fn deployment_detail(&self) -> std::option::Option<&str> {
         self.deployment_detail.as_deref()
-    }
-}
-impl std::fmt::Debug for ApiAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiAssociation");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("api_id", &self.api_id);
-        formatter.field("association_status", &self.association_status);
-        formatter.field("deployment_detail", &self.deployment_detail);
-        formatter.finish()
     }
 }
 /// See [`ApiAssociation`](crate::model::ApiAssociation).
@@ -5841,7 +5514,7 @@ impl AsRef<str> for AssociationStatus {
 
 /// <p>Contains the list of errors generated when attempting to evaluate a mapping template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetail {
     /// <p>The error payload.</p>
     #[doc(hidden)]
@@ -5851,13 +5524,6 @@ impl ErrorDetail {
     /// <p>The error payload.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetail");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).

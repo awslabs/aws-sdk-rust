@@ -2,7 +2,7 @@
 
 /// <p> The details of an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorType {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl AcceleratorType {
     /// <p> The throughput information of the Elastic Inference Accelerator type. </p>
     pub fn throughput_info(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
         self.throughput_info.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceleratorType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorType");
-        formatter.field("accelerator_type_name", &self.accelerator_type_name);
-        formatter.field("memory_info", &self.memory_info);
-        formatter.field("throughput_info", &self.throughput_info);
-        formatter.finish()
     }
 }
 /// See [`AcceleratorType`](crate::model::AcceleratorType).
@@ -112,7 +103,7 @@ impl AcceleratorType {
 
 /// <p> A throughput entry for an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyValuePair {
     /// <p> The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS. </p>
     #[doc(hidden)]
@@ -129,14 +120,6 @@ impl KeyValuePair {
     /// <p> The throughput value of the Elastic Inference Accelerator type. </p>
     pub fn value(&self) -> i32 {
         self.value
-    }
-}
-impl std::fmt::Debug for KeyValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyValuePair");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`KeyValuePair`](crate::model::KeyValuePair).
@@ -187,7 +170,7 @@ impl KeyValuePair {
 
 /// <p> The memory information of an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemoryInfo {
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
@@ -197,13 +180,6 @@ impl MemoryInfo {
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
     pub fn size_in_mi_b(&self) -> i32 {
         self.size_in_mi_b
-    }
-}
-impl std::fmt::Debug for MemoryInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemoryInfo");
-        formatter.field("size_in_mi_b", &self.size_in_mi_b);
-        formatter.finish()
     }
 }
 /// See [`MemoryInfo`](crate::model::MemoryInfo).
@@ -242,7 +218,7 @@ impl MemoryInfo {
 
 /// <p> The details of an Elastic Inference Accelerator. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticInferenceAccelerator {
     /// <p> The health of the Elastic Inference Accelerator. </p>
     #[doc(hidden)]
@@ -282,17 +258,6 @@ impl ElasticInferenceAccelerator {
     /// <p> The ARN of the resource that the Elastic Inference Accelerator is attached to. </p>
     pub fn attached_resource(&self) -> std::option::Option<&str> {
         self.attached_resource.as_deref()
-    }
-}
-impl std::fmt::Debug for ElasticInferenceAccelerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticInferenceAccelerator");
-        formatter.field("accelerator_health", &self.accelerator_health);
-        formatter.field("accelerator_type", &self.accelerator_type);
-        formatter.field("accelerator_id", &self.accelerator_id);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("attached_resource", &self.attached_resource);
-        formatter.finish()
     }
 }
 /// See [`ElasticInferenceAccelerator`](crate::model::ElasticInferenceAccelerator).
@@ -398,7 +363,7 @@ impl ElasticInferenceAccelerator {
 
 /// <p> The health details of an Elastic Inference Accelerator. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticInferenceAcceleratorHealth {
     /// <p> The health status of the Elastic Inference Accelerator. </p>
     #[doc(hidden)]
@@ -408,13 +373,6 @@ impl ElasticInferenceAcceleratorHealth {
     /// <p> The health status of the Elastic Inference Accelerator. </p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for ElasticInferenceAcceleratorHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticInferenceAcceleratorHealth");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ElasticInferenceAcceleratorHealth`](crate::model::ElasticInferenceAcceleratorHealth).
@@ -453,7 +411,7 @@ impl ElasticInferenceAcceleratorHealth {
 
 /// <p> A filter expression for the Elastic Inference Accelerator list. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p> The filter name for the Elastic Inference Accelerator list. It can assume the following values: accelerator-type: the type of Elastic Inference Accelerator to filter for. instance-id: an EC2 instance id to filter for. </p>
     #[doc(hidden)]
@@ -470,14 +428,6 @@ impl Filter {
     /// <p> The values for the filter of the Elastic Inference Accelerator list. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -537,7 +487,7 @@ impl Filter {
 
 /// <p> The offering for an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorTypeOffering {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
@@ -561,15 +511,6 @@ impl AcceleratorTypeOffering {
     /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceleratorTypeOffering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorTypeOffering");
-        formatter.field("accelerator_type", &self.accelerator_type);
-        formatter.field("location_type", &self.location_type);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`AcceleratorTypeOffering`](crate::model::AcceleratorTypeOffering).

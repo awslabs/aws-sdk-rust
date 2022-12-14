@@ -2,7 +2,7 @@
 
 /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthenticatedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -29,16 +29,6 @@ impl UnauthenticatedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn tip(&self) -> std::option::Option<&str> {
         self.tip.as_deref()
-    }
-}
-impl std::fmt::Debug for UnauthenticatedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthenticatedException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
     }
 }
 impl UnauthenticatedException {
@@ -131,7 +121,7 @@ impl UnauthenticatedException {
 
 /// <p>A general service exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -158,16 +148,6 @@ impl ServiceException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn tip(&self) -> std::option::Option<&str> {
         self.tip.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
     }
 }
 impl ServiceException {
@@ -260,7 +240,7 @@ impl ServiceException {
 
 /// <p>Lightsail throws this exception when an operation fails to execute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationFailureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -287,16 +267,6 @@ impl OperationFailureException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn tip(&self) -> std::option::Option<&str> {
         self.tip.as_deref()
-    }
-}
-impl std::fmt::Debug for OperationFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationFailureException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
     }
 }
 impl OperationFailureException {
@@ -389,7 +359,7 @@ impl OperationFailureException {
 
 /// <p>Lightsail throws this exception when it cannot find a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -416,16 +386,6 @@ impl NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn tip(&self) -> std::option::Option<&str> {
         self.tip.as_deref()
-    }
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
     }
 }
 impl NotFoundException {
@@ -520,7 +480,7 @@ impl NotFoundException {
 /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -547,16 +507,6 @@ impl InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn tip(&self) -> std::option::Option<&str> {
         self.tip.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidInputException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInputException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
     }
 }
 impl InvalidInputException {
@@ -649,7 +599,7 @@ impl InvalidInputException {
 
 /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountSetupInProgressException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -676,16 +626,6 @@ impl AccountSetupInProgressException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn tip(&self) -> std::option::Option<&str> {
         self.tip.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountSetupInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountSetupInProgressException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
     }
 }
 impl AccountSetupInProgressException {
@@ -778,7 +718,7 @@ impl AccountSetupInProgressException {
 
 /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -805,16 +745,6 @@ impl AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn tip(&self) -> std::option::Option<&str> {
         self.tip.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {

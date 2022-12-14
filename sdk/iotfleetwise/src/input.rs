@@ -9240,7 +9240,7 @@ impl UpdateVehicleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateVehicleFleetInput {
     /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
     #[doc(hidden)]
@@ -9259,18 +9259,10 @@ impl DisassociateVehicleFleetInput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateVehicleFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateVehicleFleetInput");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateVehicleFleetInput {
     /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     #[doc(hidden)]
@@ -9289,18 +9281,10 @@ impl AssociateVehicleFleetInput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateVehicleFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateVehicleFleetInput");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVehiclesInput {
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest). You can use this optional parameter to list only the vehicles created from a certain vehicle model. </p>
     #[doc(hidden)]
@@ -9328,19 +9312,10 @@ impl ListVehiclesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListVehiclesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVehiclesInput");
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVehicleInput {
     /// <p> The unique ID of the vehicle to create. </p>
     #[doc(hidden)]
@@ -9395,22 +9370,10 @@ impl CreateVehicleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVehicleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVehicleInput");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("decoder_manifest_arn", &self.decoder_manifest_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("association_behavior", &self.association_behavior);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVehicleInput {
     /// <p>The ID of the vehicle to delete. </p>
     #[doc(hidden)]
@@ -9422,17 +9385,10 @@ impl DeleteVehicleInput {
         self.vehicle_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVehicleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVehicleInput");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVehicleInput {
     /// <p>The unique ID of the vehicle to update.</p>
     #[doc(hidden)]
@@ -9480,21 +9436,10 @@ impl UpdateVehicleInput {
         self.attribute_update_mode.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateVehicleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVehicleInput");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("decoder_manifest_arn", &self.decoder_manifest_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("attribute_update_mode", &self.attribute_update_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVehicleInput {
     /// <p> The ID of the vehicle to retrieve information about. </p>
     #[doc(hidden)]
@@ -9506,17 +9451,10 @@ impl GetVehicleInput {
         self.vehicle_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetVehicleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVehicleInput");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFleetsForVehicleInput {
     /// <p> The ID of the vehicle to retrieve information about. </p>
     #[doc(hidden)]
@@ -9544,19 +9482,10 @@ impl ListFleetsForVehicleInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFleetsForVehicleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFleetsForVehicleInput");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSignalCatalogNodesInput {
     /// <p> The name of the signal catalog to list information about. </p>
     #[doc(hidden)]
@@ -9584,19 +9513,10 @@ impl ListSignalCatalogNodesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSignalCatalogNodesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSignalCatalogNodesInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportSignalCatalogInput {
     /// <p>The name of the signal catalog to import.</p>
     #[doc(hidden)]
@@ -9629,20 +9549,10 @@ impl ImportSignalCatalogInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ImportSignalCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportSignalCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("vss", &self.vss);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSignalCatalogsInput {
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
@@ -9663,18 +9573,10 @@ impl ListSignalCatalogsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSignalCatalogsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSignalCatalogsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSignalCatalogInput {
     /// <p> The name of the signal catalog to create. </p>
     #[doc(hidden)]
@@ -9707,20 +9609,10 @@ impl CreateSignalCatalogInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSignalCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSignalCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("nodes", &self.nodes);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSignalCatalogInput {
     /// <p> The name of the signal catalog to delete. </p>
     #[doc(hidden)]
@@ -9732,17 +9624,10 @@ impl DeleteSignalCatalogInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSignalCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSignalCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSignalCatalogInput {
     /// <p> The name of the signal catalog to update. </p>
     #[doc(hidden)]
@@ -9782,21 +9667,10 @@ impl UpdateSignalCatalogInput {
         self.nodes_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSignalCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSignalCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("nodes_to_add", &self.nodes_to_add);
-        formatter.field("nodes_to_update", &self.nodes_to_update);
-        formatter.field("nodes_to_remove", &self.nodes_to_remove);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSignalCatalogInput {
     /// <p> The name of the signal catalog to retrieve information about. </p>
     #[doc(hidden)]
@@ -9808,17 +9682,10 @@ impl GetSignalCatalogInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetSignalCatalogInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSignalCatalogInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListModelManifestNodesInput {
     /// <p> The name of the vehicle model to list information about. </p>
     #[doc(hidden)]
@@ -9846,19 +9713,10 @@ impl ListModelManifestNodesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListModelManifestNodesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListModelManifestNodesInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListModelManifestsInput {
     /// <p> The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
     #[doc(hidden)]
@@ -9886,19 +9744,10 @@ impl ListModelManifestsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListModelManifestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListModelManifestsInput");
-        formatter.field("signal_catalog_arn", &self.signal_catalog_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelManifestInput {
     /// <p> The name of the vehicle model to create.</p>
     #[doc(hidden)]
@@ -9938,21 +9787,10 @@ impl CreateModelManifestInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateModelManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateModelManifestInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("nodes", &self.nodes);
-        formatter.field("signal_catalog_arn", &self.signal_catalog_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelManifestInput {
     /// <p> The name of the model manifest to delete. </p>
     #[doc(hidden)]
@@ -9964,17 +9802,10 @@ impl DeleteModelManifestInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteModelManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteModelManifestInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelManifestInput {
     /// <p> The name of the vehicle model to update. </p>
     #[doc(hidden)]
@@ -10014,21 +9845,10 @@ impl UpdateModelManifestInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateModelManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateModelManifestInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("nodes_to_add", &self.nodes_to_add);
-        formatter.field("nodes_to_remove", &self.nodes_to_remove);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelManifestInput {
     /// <p> The name of the vehicle model to retrieve information about. </p>
     #[doc(hidden)]
@@ -10040,17 +9860,10 @@ impl GetModelManifestInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelManifestInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFleetsInput {
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
@@ -10071,18 +9884,10 @@ impl ListFleetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFleetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFleetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetInput {
     /// <p> The unique ID of the fleet to create. </p>
     #[doc(hidden)]
@@ -10115,20 +9920,10 @@ impl CreateFleetInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("description", &self.description);
-        formatter.field("signal_catalog_arn", &self.signal_catalog_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetInput {
     /// <p> The ID of the fleet to delete. </p>
     #[doc(hidden)]
@@ -10140,17 +9935,10 @@ impl DeleteFleetInput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetInput {
     /// <p> The ID of the fleet to update. </p>
     #[doc(hidden)]
@@ -10169,18 +9957,10 @@ impl UpdateFleetInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFleetInput {
     /// <p> The ID of the fleet to retrieve information about. </p>
     #[doc(hidden)]
@@ -10192,17 +9972,10 @@ impl GetFleetInput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFleetInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVehiclesInFleetInput {
     /// <p> The ID of a fleet. </p>
     #[doc(hidden)]
@@ -10230,19 +10003,10 @@ impl ListVehiclesInFleetInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListVehiclesInFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVehiclesInFleetInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDecoderManifestSignalsInput {
     /// <p> The name of the decoder manifest to list information about. </p>
     #[doc(hidden)]
@@ -10270,19 +10034,10 @@ impl ListDecoderManifestSignalsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDecoderManifestSignalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDecoderManifestSignalsInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDecoderManifestNetworkInterfacesInput {
     /// <p> The name of the decoder manifest to list information about. </p>
     #[doc(hidden)]
@@ -10310,19 +10065,10 @@ impl ListDecoderManifestNetworkInterfacesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDecoderManifestNetworkInterfacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDecoderManifestNetworkInterfacesInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportDecoderManifestInput {
     /// <p> The name of the decoder manifest to import. </p>
     #[doc(hidden)]
@@ -10344,18 +10090,10 @@ impl ImportDecoderManifestInput {
         self.network_file_definitions.as_deref()
     }
 }
-impl std::fmt::Debug for ImportDecoderManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportDecoderManifestInput");
-        formatter.field("name", &self.name);
-        formatter.field("network_file_definitions", &self.network_file_definitions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDecoderManifestsInput {
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest. </p>
     #[doc(hidden)]
@@ -10383,19 +10121,10 @@ impl ListDecoderManifestsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDecoderManifestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDecoderManifestsInput");
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDecoderManifestInput {
     /// <p> The unique name of the decoder manifest to create.</p>
     #[doc(hidden)]
@@ -10442,22 +10171,10 @@ impl CreateDecoderManifestInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDecoderManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDecoderManifestInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("signal_decoders", &self.signal_decoders);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDecoderManifestInput {
     /// <p> The name of the decoder manifest to delete. </p>
     #[doc(hidden)]
@@ -10469,17 +10186,10 @@ impl DeleteDecoderManifestInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDecoderManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDecoderManifestInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDecoderManifestInput {
     /// <p> The name of the decoder manifest to update.</p>
     #[doc(hidden)]
@@ -10553,31 +10263,10 @@ impl UpdateDecoderManifestInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDecoderManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDecoderManifestInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("signal_decoders_to_add", &self.signal_decoders_to_add);
-        formatter.field("signal_decoders_to_update", &self.signal_decoders_to_update);
-        formatter.field("signal_decoders_to_remove", &self.signal_decoders_to_remove);
-        formatter.field("network_interfaces_to_add", &self.network_interfaces_to_add);
-        formatter.field(
-            "network_interfaces_to_update",
-            &self.network_interfaces_to_update,
-        );
-        formatter.field(
-            "network_interfaces_to_remove",
-            &self.network_interfaces_to_remove,
-        );
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDecoderManifestInput {
     /// <p> The name of the decoder manifest to retrieve information about. </p>
     #[doc(hidden)]
@@ -10589,17 +10278,10 @@ impl GetDecoderManifestInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDecoderManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDecoderManifestInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCampaignsInput {
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
@@ -10627,19 +10309,10 @@ impl ListCampaignsInput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for ListCampaignsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCampaignsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCampaignInput {
     /// <p> The name of the campaign to create. </p>
     #[doc(hidden)]
@@ -10765,34 +10438,10 @@ impl CreateCampaignInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCampaignInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("signal_catalog_arn", &self.signal_catalog_arn);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("expiry_time", &self.expiry_time);
-        formatter.field(
-            "post_trigger_collection_duration",
-            &self.post_trigger_collection_duration,
-        );
-        formatter.field("diagnostics_mode", &self.diagnostics_mode);
-        formatter.field("spooling_mode", &self.spooling_mode);
-        formatter.field("compression", &self.compression);
-        formatter.field("priority", &self.priority);
-        formatter.field("signals_to_collect", &self.signals_to_collect);
-        formatter.field("collection_scheme", &self.collection_scheme);
-        formatter.field("data_extra_dimensions", &self.data_extra_dimensions);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCampaignInput {
     /// <p> The name of the campaign to delete. </p>
     #[doc(hidden)]
@@ -10804,17 +10453,10 @@ impl DeleteCampaignInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCampaignInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCampaignInput {
     /// <p> The name of the campaign to update. </p>
     #[doc(hidden)]
@@ -10861,20 +10503,10 @@ impl UpdateCampaignInput {
         self.action.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCampaignInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("data_extra_dimensions", &self.data_extra_dimensions);
-        formatter.field("action", &self.action);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCampaignInput {
     /// <p> The name of the campaign to retrieve information about. </p>
     #[doc(hidden)]
@@ -10886,17 +10518,10 @@ impl GetCampaignInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCampaignInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCampaignInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -10915,18 +10540,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -10945,18 +10562,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterAccountInput {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[doc(hidden)]
@@ -10977,18 +10586,10 @@ impl RegisterAccountInput {
         self.iam_resources.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterAccountInput");
-        formatter.field("timestream_resources", &self.timestream_resources);
-        formatter.field("iam_resources", &self.iam_resources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingOptionsInput {
     /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -11002,17 +10603,10 @@ impl PutLoggingOptionsInput {
         self.cloud_watch_log_delivery.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingOptionsInput");
-        formatter.field("cloud_watch_log_delivery", &self.cloud_watch_log_delivery);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -11024,17 +10618,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVehicleStatusInput {
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
@@ -11062,41 +10649,20 @@ impl GetVehicleStatusInput {
         self.vehicle_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetVehicleStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVehicleStatusInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRegisterAccountStatusInput {}
-impl std::fmt::Debug for GetRegisterAccountStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRegisterAccountStatusInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLoggingOptionsInput {}
-impl std::fmt::Debug for GetLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLoggingOptionsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateVehicleInput {
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
     #[doc(hidden)]
@@ -11108,17 +10674,10 @@ impl BatchUpdateVehicleInput {
         self.vehicles.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateVehicleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateVehicleInput");
-        formatter.field("vehicles", &self.vehicles);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
     #[doc(hidden)]
@@ -11128,12 +10687,5 @@ impl BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
     pub fn vehicles(&self) -> std::option::Option<&[crate::model::CreateVehicleRequestItem]> {
         self.vehicles.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateVehicleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateVehicleInput");
-        formatter.field("vehicles", &self.vehicles);
-        formatter.finish()
     }
 }

@@ -3022,7 +3022,7 @@ impl UpdateApplicationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDashboardForJobRunInput {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
@@ -3041,18 +3041,10 @@ impl GetDashboardForJobRunInput {
         self.job_run_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDashboardForJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDashboardForJobRunInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("job_run_id", &self.job_run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the application for which to list the job run.</p>
     #[doc(hidden)]
@@ -3099,22 +3091,10 @@ impl ListJobRunsInput {
         self.states.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobRunsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("created_at_after", &self.created_at_after);
-        formatter.field("created_at_before", &self.created_at_before);
-        formatter.field("states", &self.states);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartJobRunInput {
     /// <p>The ID of the application on which to run the job.</p>
     #[doc(hidden)]
@@ -3181,24 +3161,10 @@ impl StartJobRunInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for StartJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartJobRunInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("job_driver", &self.job_driver);
-        formatter.field("configuration_overrides", &self.configuration_overrides);
-        formatter.field("tags", &self.tags);
-        formatter.field("execution_timeout_minutes", &self.execution_timeout_minutes);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobRunInput {
     /// <p>The ID of the application on which the job run will be canceled.</p>
     #[doc(hidden)]
@@ -3217,18 +3183,10 @@ impl CancelJobRunInput {
         self.job_run_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobRunInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("job_run_id", &self.job_run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobRunInput {
     /// <p>The ID of the application on which the job run is submitted.</p>
     #[doc(hidden)]
@@ -3247,18 +3205,10 @@ impl GetJobRunInput {
         self.job_run_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobRunInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("job_run_id", &self.job_run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopApplicationInput {
     /// <p>The ID of the application to stop.</p>
     #[doc(hidden)]
@@ -3270,17 +3220,10 @@ impl StopApplicationInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartApplicationInput {
     /// <p>The ID of the application to start.</p>
     #[doc(hidden)]
@@ -3292,17 +3235,10 @@ impl StartApplicationInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>The token for the next set of application results.</p>
     #[doc(hidden)]
@@ -3328,19 +3264,10 @@ impl ListApplicationsInput {
         self.states.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("states", &self.states);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -3427,26 +3354,10 @@ impl CreateApplicationInput {
         self.network_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("initial_capacity", &self.initial_capacity);
-        formatter.field("maximum_capacity", &self.maximum_capacity);
-        formatter.field("tags", &self.tags);
-        formatter.field("auto_start_configuration", &self.auto_start_configuration);
-        formatter.field("auto_stop_configuration", &self.auto_stop_configuration);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The ID of the application that will be deleted.</p>
     #[doc(hidden)]
@@ -3458,17 +3369,10 @@ impl DeleteApplicationInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
     #[doc(hidden)]
@@ -3530,23 +3434,10 @@ impl UpdateApplicationInput {
         self.network_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("initial_capacity", &self.initial_capacity);
-        formatter.field("maximum_capacity", &self.maximum_capacity);
-        formatter.field("auto_start_configuration", &self.auto_start_configuration);
-        formatter.field("auto_stop_configuration", &self.auto_stop_configuration);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The ID of the application that will be described.</p>
     #[doc(hidden)]
@@ -3558,17 +3449,10 @@ impl GetApplicationInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>
     #[doc(hidden)]
@@ -3587,18 +3471,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>
     #[doc(hidden)]
@@ -3621,18 +3497,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>
     #[doc(hidden)]
@@ -3642,12 +3510,5 @@ impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

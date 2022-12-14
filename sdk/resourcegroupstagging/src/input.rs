@@ -1538,7 +1538,7 @@ impl UntagResourcesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourcesInput {
     /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -1559,18 +1559,10 @@ impl UntagResourcesInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourcesInput");
-        formatter.field("resource_arn_list", &self.resource_arn_list);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourcesInput {
     /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -1595,18 +1587,10 @@ impl TagResourcesInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourcesInput");
-        formatter.field("resource_arn_list", &self.resource_arn_list);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartReportCreationInput {
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
     /// <p> <code>awsexamplebucket</code> </p>
@@ -1622,17 +1606,10 @@ impl StartReportCreationInput {
         self.s3_bucket.as_deref()
     }
 }
-impl std::fmt::Debug for StartReportCreationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartReportCreationInput");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagValuesInput {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     #[doc(hidden)]
@@ -1651,18 +1628,10 @@ impl GetTagValuesInput {
         self.key.as_deref()
     }
 }
-impl std::fmt::Debug for GetTagValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagValuesInput");
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.field("key", &self.key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagKeysInput {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     #[doc(hidden)]
@@ -1674,17 +1643,10 @@ impl GetTagKeysInput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTagKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagKeysInput");
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcesInput {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     #[doc(hidden)]
@@ -1789,30 +1751,10 @@ impl GetResourcesInput {
         self.resource_arn_list.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcesInput");
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.field("tag_filters", &self.tag_filters);
-        formatter.field("resources_per_page", &self.resources_per_page);
-        formatter.field("tags_per_page", &self.tags_per_page);
-        formatter.field("resource_type_filters", &self.resource_type_filters);
-        formatter.field(
-            "include_compliance_details",
-            &self.include_compliance_details,
-        );
-        formatter.field(
-            "exclude_compliant_resources",
-            &self.exclude_compliant_resources,
-        );
-        formatter.field("resource_arn_list", &self.resource_arn_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComplianceSummaryInput {
     /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
     #[doc(hidden)]
@@ -1880,27 +1822,8 @@ impl GetComplianceSummaryInput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetComplianceSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComplianceSummaryInput");
-        formatter.field("target_id_filters", &self.target_id_filters);
-        formatter.field("region_filters", &self.region_filters);
-        formatter.field("resource_type_filters", &self.resource_type_filters);
-        formatter.field("tag_key_filters", &self.tag_key_filters);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReportCreationInput {}
-impl std::fmt::Debug for DescribeReportCreationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReportCreationInput");
-        formatter.finish()
-    }
-}

@@ -15924,7 +15924,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
     #[doc(hidden)]
@@ -15943,18 +15943,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
     #[doc(hidden)]
@@ -15973,18 +15965,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>StopConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     #[doc(hidden)]
@@ -15996,20 +15980,10 @@ impl StopConfigurationRecorderInput {
         self.configuration_recorder_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopConfigurationRecorderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopConfigurationRecorderInput");
-        formatter.field(
-            "configuration_recorder_name",
-            &self.configuration_recorder_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRemediationExecutionInput {
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
     #[doc(hidden)]
@@ -16028,18 +16002,10 @@ impl StartRemediationExecutionInput {
         self.resource_keys.as_deref()
     }
 }
-impl std::fmt::Debug for StartRemediationExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartRemediationExecutionInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("resource_keys", &self.resource_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>StartConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     #[doc(hidden)]
@@ -16051,20 +16017,10 @@ impl StartConfigurationRecorderInput {
         self.configuration_recorder_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartConfigurationRecorderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartConfigurationRecorderInput");
-        formatter.field(
-            "configuration_recorder_name",
-            &self.configuration_recorder_name,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartConfigRulesEvaluationInput {
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
     #[doc(hidden)]
@@ -16076,17 +16032,10 @@ impl StartConfigRulesEvaluationInput {
         self.config_rule_names.as_deref()
     }
 }
-impl std::fmt::Debug for StartConfigRulesEvaluationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartConfigRulesEvaluationInput");
-        formatter.field("config_rule_names", &self.config_rule_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectResourceConfigInput {
     /// <p>The SQL query <code>SELECT</code> command.</p>
     #[doc(hidden)]
@@ -16112,19 +16061,10 @@ impl SelectResourceConfigInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SelectResourceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectResourceConfigInput");
-        formatter.field("expression", &self.expression);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectAggregateResourceConfigInput {
     /// <p>The SQL query SELECT command. </p>
     #[doc(hidden)]
@@ -16164,24 +16104,10 @@ impl SelectAggregateResourceConfigInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SelectAggregateResourceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectAggregateResourceConfigInput");
-        formatter.field("expression", &self.expression);
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStoredQueryInput {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
@@ -16204,18 +16130,10 @@ impl PutStoredQueryInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutStoredQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutStoredQueryInput");
-        formatter.field("stored_query", &self.stored_query);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRetentionConfigurationInput {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
@@ -16231,17 +16149,10 @@ impl PutRetentionConfigurationInput {
         self.retention_period_in_days
     }
 }
-impl std::fmt::Debug for PutRetentionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRetentionConfigurationInput");
-        formatter.field("retention_period_in_days", &self.retention_period_in_days);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourceConfigInput {
     /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
@@ -16304,22 +16215,10 @@ impl PutResourceConfigInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PutResourceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourceConfigInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("schema_version_id", &self.schema_version_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRemediationExceptionsInput {
     /// <p>The name of the Config rule for which you want to create remediation exception.</p>
     #[doc(hidden)]
@@ -16355,20 +16254,10 @@ impl PutRemediationExceptionsInput {
         self.expiration_time.as_ref()
     }
 }
-impl std::fmt::Debug for PutRemediationExceptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRemediationExceptionsInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("resource_keys", &self.resource_keys);
-        formatter.field("message", &self.message);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRemediationConfigurationsInput {
     /// <p>A list of remediation configuration objects.</p>
     #[doc(hidden)]
@@ -16383,20 +16272,10 @@ impl PutRemediationConfigurationsInput {
         self.remediation_configurations.as_deref()
     }
 }
-impl std::fmt::Debug for PutRemediationConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRemediationConfigurationsInput");
-        formatter.field(
-            "remediation_configurations",
-            &self.remediation_configurations,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutOrganizationConformancePackInput {
     /// <p>Name of the organization conformance pack you want to create.</p>
     #[doc(hidden)]
@@ -16465,29 +16344,10 @@ impl PutOrganizationConformancePackInput {
         self.excluded_accounts.as_deref()
     }
 }
-impl std::fmt::Debug for PutOrganizationConformancePackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutOrganizationConformancePackInput");
-        formatter.field(
-            "organization_conformance_pack_name",
-            &self.organization_conformance_pack_name,
-        );
-        formatter.field("template_s3_uri", &self.template_s3_uri);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("delivery_s3_bucket", &self.delivery_s3_bucket);
-        formatter.field("delivery_s3_key_prefix", &self.delivery_s3_key_prefix);
-        formatter.field(
-            "conformance_pack_input_parameters",
-            &self.conformance_pack_input_parameters,
-        );
-        formatter.field("excluded_accounts", &self.excluded_accounts);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutOrganizationConfigRuleInput {
     /// <p>The name that you assign to an organization Config rule.</p>
     #[doc(hidden)]
@@ -16536,33 +16396,10 @@ impl PutOrganizationConfigRuleInput {
         self.organization_custom_policy_rule_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for PutOrganizationConfigRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutOrganizationConfigRuleInput");
-        formatter.field(
-            "organization_config_rule_name",
-            &self.organization_config_rule_name,
-        );
-        formatter.field(
-            "organization_managed_rule_metadata",
-            &self.organization_managed_rule_metadata,
-        );
-        formatter.field(
-            "organization_custom_rule_metadata",
-            &self.organization_custom_rule_metadata,
-        );
-        formatter.field("excluded_accounts", &self.excluded_accounts);
-        formatter.field(
-            "organization_custom_policy_rule_metadata",
-            &self.organization_custom_policy_rule_metadata,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutExternalEvaluationInput {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
@@ -16581,18 +16418,10 @@ impl PutExternalEvaluationInput {
         self.external_evaluation.as_ref()
     }
 }
-impl std::fmt::Debug for PutExternalEvaluationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutExternalEvaluationInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("external_evaluation", &self.external_evaluation);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEvaluationsInput {
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
     #[doc(hidden)]
@@ -16622,19 +16451,10 @@ impl PutEvaluationsInput {
         self.test_mode
     }
 }
-impl std::fmt::Debug for PutEvaluationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEvaluationsInput");
-        formatter.field("evaluations", &self.evaluations);
-        formatter.field("result_token", &self.result_token);
-        formatter.field("test_mode", &self.test_mode);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDeliveryChannelInput {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     #[doc(hidden)]
@@ -16646,17 +16466,10 @@ impl PutDeliveryChannelInput {
         self.delivery_channel.as_ref()
     }
 }
-impl std::fmt::Debug for PutDeliveryChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDeliveryChannelInput");
-        formatter.field("delivery_channel", &self.delivery_channel);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConformancePackInput {
     /// <p>The unique name of the conformance pack you want to deploy.</p>
     #[doc(hidden)]
@@ -16732,29 +16545,10 @@ impl PutConformancePackInput {
         self.template_ssm_document_details.as_ref()
     }
 }
-impl std::fmt::Debug for PutConformancePackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConformancePackInput");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("template_s3_uri", &self.template_s3_uri);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("delivery_s3_bucket", &self.delivery_s3_bucket);
-        formatter.field("delivery_s3_key_prefix", &self.delivery_s3_key_prefix);
-        formatter.field(
-            "conformance_pack_input_parameters",
-            &self.conformance_pack_input_parameters,
-        );
-        formatter.field(
-            "template_ssm_document_details",
-            &self.template_ssm_document_details,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>PutConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationRecorderInput {
     /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
     #[doc(hidden)]
@@ -16768,17 +16562,10 @@ impl PutConfigurationRecorderInput {
         self.configuration_recorder.as_ref()
     }
 }
-impl std::fmt::Debug for PutConfigurationRecorderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationRecorderInput");
-        formatter.field("configuration_recorder", &self.configuration_recorder);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -16817,29 +16604,10 @@ impl PutConfigurationAggregatorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutConfigurationAggregatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationAggregatorInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field(
-            "account_aggregation_sources",
-            &self.account_aggregation_sources,
-        );
-        formatter.field(
-            "organization_aggregation_source",
-            &self.organization_aggregation_source,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigRuleInput {
     /// <p>The rule that you want to add to your account.</p>
     #[doc(hidden)]
@@ -16858,18 +16626,10 @@ impl PutConfigRuleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutConfigRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigRuleInput");
-        formatter.field("config_rule", &self.config_rule);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAggregationAuthorizationInput {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     #[doc(hidden)]
@@ -16895,19 +16655,10 @@ impl PutAggregationAuthorizationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutAggregationAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAggregationAuthorizationInput");
-        formatter.field("authorized_account_id", &self.authorized_account_id);
-        formatter.field("authorized_aws_region", &self.authorized_aws_region);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
     #[doc(hidden)]
@@ -16933,19 +16684,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStoredQueriesInput {
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     #[doc(hidden)]
@@ -16964,18 +16706,10 @@ impl ListStoredQueriesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListStoredQueriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStoredQueriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDiscoveredResourcesInput {
     /// <p>The type of resources that you want Config to list in the response.</p>
     #[doc(hidden)]
@@ -17022,22 +16756,10 @@ impl ListDiscoveredResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDiscoveredResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDiscoveredResourcesInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("include_deleted_resources", &self.include_deleted_resources);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConformancePackComplianceScoresInput {
     /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
     #[doc(hidden)]
@@ -17083,21 +16805,10 @@ impl ListConformancePackComplianceScoresInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConformancePackComplianceScoresInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConformancePackComplianceScoresInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAggregateDiscoveredResourcesInput {
     /// <p>The name of the configuration aggregator. </p>
     #[doc(hidden)]
@@ -17137,24 +16848,10 @@ impl ListAggregateDiscoveredResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAggregateDiscoveredResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAggregateDiscoveredResourcesInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("filters", &self.filters);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStoredQueryInput {
     /// <p>The name of the query.</p>
     #[doc(hidden)]
@@ -17166,17 +16863,10 @@ impl GetStoredQueryInput {
         self.query_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetStoredQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStoredQueryInput");
-        formatter.field("query_name", &self.query_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>GetResourceConfigHistory</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceConfigHistoryInput {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -17230,23 +16920,10 @@ impl GetResourceConfigHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceConfigHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceConfigHistoryInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("later_time", &self.later_time);
-        formatter.field("earlier_time", &self.earlier_time);
-        formatter.field("chronological_order", &self.chronological_order);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOrganizationCustomRulePolicyInput {
     /// <p>The name of your organization Config Custom Policy rule. </p>
     #[doc(hidden)]
@@ -17258,20 +16935,10 @@ impl GetOrganizationCustomRulePolicyInput {
         self.organization_config_rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetOrganizationCustomRulePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOrganizationCustomRulePolicyInput");
-        formatter.field(
-            "organization_config_rule_name",
-            &self.organization_config_rule_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOrganizationConformancePackDetailedStatusInput {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
     #[doc(hidden)]
@@ -17306,23 +16973,10 @@ impl GetOrganizationConformancePackDetailedStatusInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetOrganizationConformancePackDetailedStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOrganizationConformancePackDetailedStatusInput");
-        formatter.field(
-            "organization_conformance_pack_name",
-            &self.organization_conformance_pack_name,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOrganizationConfigRuleDetailedStatusInput {
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
     #[doc(hidden)]
@@ -17355,23 +17009,10 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetOrganizationConfigRuleDetailedStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOrganizationConfigRuleDetailedStatusInput");
-        formatter.field(
-            "organization_config_rule_name",
-            &self.organization_config_rule_name,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDiscoveredResourceCountsInput {
     /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
     /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
@@ -17403,19 +17044,10 @@ impl GetDiscoveredResourceCountsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDiscoveredResourceCountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDiscoveredResourceCountsInput");
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCustomRulePolicyInput {
     /// <p>The name of your Config Custom Policy rule.</p>
     #[doc(hidden)]
@@ -17427,17 +17059,10 @@ impl GetCustomRulePolicyInput {
         self.config_rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCustomRulePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCustomRulePolicyInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConformancePackComplianceSummaryInput {
     /// <p>Names of conformance packs.</p>
     #[doc(hidden)]
@@ -17463,19 +17088,10 @@ impl GetConformancePackComplianceSummaryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetConformancePackComplianceSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConformancePackComplianceSummaryInput");
-        formatter.field("conformance_pack_names", &self.conformance_pack_names);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConformancePackComplianceDetailsInput {
     /// <p>Name of the conformance pack.</p>
     #[doc(hidden)]
@@ -17508,20 +17124,10 @@ impl GetConformancePackComplianceDetailsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetConformancePackComplianceDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConformancePackComplianceDetailsInput");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComplianceSummaryByResourceTypeInput {
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
@@ -17535,28 +17141,15 @@ impl GetComplianceSummaryByResourceTypeInput {
         self.resource_types.as_deref()
     }
 }
-impl std::fmt::Debug for GetComplianceSummaryByResourceTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComplianceSummaryByResourceTypeInput");
-        formatter.field("resource_types", &self.resource_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComplianceSummaryByConfigRuleInput {}
-impl std::fmt::Debug for GetComplianceSummaryByConfigRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComplianceSummaryByConfigRuleInput");
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComplianceDetailsByResourceInput {
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     #[doc(hidden)]
@@ -17591,20 +17184,10 @@ impl GetComplianceDetailsByResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetComplianceDetailsByResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComplianceDetailsByResourceInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("compliance_types", &self.compliance_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComplianceDetailsByConfigRuleInput {
     /// <p>The name of the Config rule for which you want compliance information.</p>
     #[doc(hidden)]
@@ -17639,20 +17222,10 @@ impl GetComplianceDetailsByConfigRuleInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetComplianceDetailsByConfigRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComplianceDetailsByConfigRuleInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("compliance_types", &self.compliance_types);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -17673,21 +17246,10 @@ impl GetAggregateResourceConfigInput {
         self.resource_identifier.as_ref()
     }
 }
-impl std::fmt::Debug for GetAggregateResourceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAggregateResourceConfigInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAggregateDiscoveredResourceCountsInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -17727,24 +17289,10 @@ impl GetAggregateDiscoveredResourceCountsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAggregateDiscoveredResourceCountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAggregateDiscoveredResourceCountsInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("group_by_key", &self.group_by_key);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAggregateConformancePackComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -17790,24 +17338,10 @@ impl GetAggregateConformancePackComplianceSummaryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAggregateConformancePackComplianceSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAggregateConformancePackComplianceSummaryInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("group_by_key", &self.group_by_key);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAggregateConfigRuleComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -17851,24 +17385,10 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAggregateConfigRuleComplianceSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAggregateConfigRuleComplianceSummaryInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("group_by_key", &self.group_by_key);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -17926,26 +17446,10 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAggregateComplianceDetailsByConfigRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAggregateComplianceDetailsByConfigRuleInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRetentionConfigurationsInput {
     /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
@@ -17968,21 +17472,10 @@ impl DescribeRetentionConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRetentionConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRetentionConfigurationsInput");
-        formatter.field(
-            "retention_configuration_names",
-            &self.retention_configuration_names,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRemediationExecutionStatusInput {
     /// <p>A list of Config rule names.</p>
     #[doc(hidden)]
@@ -18015,20 +17508,10 @@ impl DescribeRemediationExecutionStatusInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRemediationExecutionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRemediationExecutionStatusInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("resource_keys", &self.resource_keys);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRemediationExceptionsInput {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
@@ -18064,20 +17547,10 @@ impl DescribeRemediationExceptionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRemediationExceptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRemediationExceptionsInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("resource_keys", &self.resource_keys);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsInput {
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     #[doc(hidden)]
@@ -18089,17 +17562,10 @@ impl DescribeRemediationConfigurationsInput {
         self.config_rule_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRemediationConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRemediationConfigurationsInput");
-        formatter.field("config_rule_names", &self.config_rule_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePendingAggregationRequestsInput {
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
@@ -18118,18 +17584,10 @@ impl DescribePendingAggregationRequestsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePendingAggregationRequestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePendingAggregationRequestsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePackStatusesInput {
     /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     #[doc(hidden)]
@@ -18158,22 +17616,10 @@ impl DescribeOrganizationConformancePackStatusesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrganizationConformancePackStatusesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationConformancePackStatusesInput");
-        formatter.field(
-            "organization_conformance_pack_names",
-            &self.organization_conformance_pack_names,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePacksInput {
     /// <p>The name that you assign to an organization conformance pack.</p>
     #[doc(hidden)]
@@ -18202,22 +17648,10 @@ impl DescribeOrganizationConformancePacksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrganizationConformancePacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationConformancePacksInput");
-        formatter.field(
-            "organization_conformance_pack_names",
-            &self.organization_conformance_pack_names,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRuleStatusesInput {
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     #[doc(hidden)]
@@ -18243,22 +17677,10 @@ impl DescribeOrganizationConfigRuleStatusesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrganizationConfigRuleStatusesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationConfigRuleStatusesInput");
-        formatter.field(
-            "organization_config_rule_names",
-            &self.organization_config_rule_names,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRulesInput {
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     #[doc(hidden)]
@@ -18284,22 +17706,10 @@ impl DescribeOrganizationConfigRulesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOrganizationConfigRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOrganizationConfigRulesInput");
-        formatter.field(
-            "organization_config_rule_names",
-            &self.organization_config_rule_names,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DeliveryChannelStatus</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeliveryChannelStatusInput {
     /// <p>A list of delivery channel names.</p>
     #[doc(hidden)]
@@ -18311,17 +17721,10 @@ impl DescribeDeliveryChannelStatusInput {
         self.delivery_channel_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeliveryChannelStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeliveryChannelStatusInput");
-        formatter.field("delivery_channel_names", &self.delivery_channel_names);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DescribeDeliveryChannels</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeliveryChannelsInput {
     /// <p>A list of delivery channel names.</p>
     #[doc(hidden)]
@@ -18333,17 +17736,10 @@ impl DescribeDeliveryChannelsInput {
         self.delivery_channel_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeliveryChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeliveryChannelsInput");
-        formatter.field("delivery_channel_names", &self.delivery_channel_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConformancePackStatusInput {
     /// <p>Comma-separated list of conformance pack names.</p>
     #[doc(hidden)]
@@ -18369,19 +17765,10 @@ impl DescribeConformancePackStatusInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConformancePackStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConformancePackStatusInput");
-        formatter.field("conformance_pack_names", &self.conformance_pack_names);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConformancePacksInput {
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
     #[doc(hidden)]
@@ -18407,19 +17794,10 @@ impl DescribeConformancePacksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConformancePacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConformancePacksInput");
-        formatter.field("conformance_pack_names", &self.conformance_pack_names);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConformancePackComplianceInput {
     /// <p>Name of the conformance pack.</p>
     #[doc(hidden)]
@@ -18452,20 +17830,10 @@ impl DescribeConformancePackComplianceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConformancePackComplianceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConformancePackComplianceInput");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DescribeConfigurationRecorderStatus</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatusInput {
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
     #[doc(hidden)]
@@ -18477,20 +17845,10 @@ impl DescribeConfigurationRecorderStatusInput {
         self.configuration_recorder_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationRecorderStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationRecorderStatusInput");
-        formatter.field(
-            "configuration_recorder_names",
-            &self.configuration_recorder_names,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DescribeConfigurationRecorders</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersInput {
     /// <p>A list of configuration recorder names.</p>
     #[doc(hidden)]
@@ -18502,20 +17860,10 @@ impl DescribeConfigurationRecordersInput {
         self.configuration_recorder_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationRecordersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationRecordersInput");
-        formatter.field(
-            "configuration_recorder_names",
-            &self.configuration_recorder_names,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -18560,23 +17908,10 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeConfigurationAggregatorSourcesStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationAggregatorSourcesStatusInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("update_status", &self.update_status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorsInput {
     /// <p>The name of the configuration aggregators.</p>
     #[doc(hidden)]
@@ -18602,22 +17937,10 @@ impl DescribeConfigurationAggregatorsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeConfigurationAggregatorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationAggregatorsInput");
-        formatter.field(
-            "configuration_aggregator_names",
-            &self.configuration_aggregator_names,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigRulesInput {
     /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
     #[doc(hidden)]
@@ -18636,18 +17959,10 @@ impl DescribeConfigRulesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigRulesInput");
-        formatter.field("config_rule_names", &self.config_rule_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigRuleEvaluationStatusInput {
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
     #[doc(hidden)]
@@ -18677,19 +17992,10 @@ impl DescribeConfigRuleEvaluationStatusInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeConfigRuleEvaluationStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigRuleEvaluationStatusInput");
-        formatter.field("config_rule_names", &self.config_rule_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeComplianceByResourceInput {
     /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     #[doc(hidden)]
@@ -18731,21 +18037,10 @@ impl DescribeComplianceByResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeComplianceByResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeComplianceByResourceInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("compliance_types", &self.compliance_types);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeComplianceByConfigRuleInput {
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
     #[doc(hidden)]
@@ -18773,19 +18068,10 @@ impl DescribeComplianceByConfigRuleInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeComplianceByConfigRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeComplianceByConfigRuleInput");
-        formatter.field("config_rule_names", &self.config_rule_names);
-        formatter.field("compliance_types", &self.compliance_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAggregationAuthorizationsInput {
     /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
@@ -18804,18 +18090,10 @@ impl DescribeAggregationAuthorizationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAggregationAuthorizationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAggregationAuthorizationsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAggregateComplianceByConformancePacksInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -18850,23 +18128,10 @@ impl DescribeAggregateComplianceByConformancePacksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAggregateComplianceByConformancePacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAggregateComplianceByConformancePacksInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAggregateComplianceByConfigRulesInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -18899,23 +18164,10 @@ impl DescribeAggregateComplianceByConfigRulesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAggregateComplianceByConfigRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAggregateComplianceByConfigRulesInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DeliverConfigSnapshot</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliverConfigSnapshotInput {
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     #[doc(hidden)]
@@ -18927,17 +18179,10 @@ impl DeliverConfigSnapshotInput {
         self.delivery_channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeliverConfigSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliverConfigSnapshotInput");
-        formatter.field("delivery_channel_name", &self.delivery_channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStoredQueryInput {
     /// <p>The name of the query that you want to delete.</p>
     #[doc(hidden)]
@@ -18949,17 +18194,10 @@ impl DeleteStoredQueryInput {
         self.query_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStoredQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStoredQueryInput");
-        formatter.field("query_name", &self.query_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRetentionConfigurationInput {
     /// <p>The name of the retention configuration to delete.</p>
     #[doc(hidden)]
@@ -18971,20 +18209,10 @@ impl DeleteRetentionConfigurationInput {
         self.retention_configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRetentionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRetentionConfigurationInput");
-        formatter.field(
-            "retention_configuration_name",
-            &self.retention_configuration_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceConfigInput {
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
@@ -19003,18 +18231,10 @@ impl DeleteResourceConfigInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceConfigInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRemediationExceptionsInput {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
     #[doc(hidden)]
@@ -19036,18 +18256,10 @@ impl DeleteRemediationExceptionsInput {
         self.resource_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRemediationExceptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRemediationExceptionsInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("resource_keys", &self.resource_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRemediationConfigurationInput {
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
     #[doc(hidden)]
@@ -19066,18 +18278,10 @@ impl DeleteRemediationConfigurationInput {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRemediationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRemediationConfigurationInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePendingAggregationRequestInput {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     #[doc(hidden)]
@@ -19096,18 +18300,10 @@ impl DeletePendingAggregationRequestInput {
         self.requester_aws_region.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePendingAggregationRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePendingAggregationRequestInput");
-        formatter.field("requester_account_id", &self.requester_account_id);
-        formatter.field("requester_aws_region", &self.requester_aws_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOrganizationConformancePackInput {
     /// <p>The name of organization conformance pack that you want to delete.</p>
     #[doc(hidden)]
@@ -19119,20 +18315,10 @@ impl DeleteOrganizationConformancePackInput {
         self.organization_conformance_pack_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOrganizationConformancePackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOrganizationConformancePackInput");
-        formatter.field(
-            "organization_conformance_pack_name",
-            &self.organization_conformance_pack_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOrganizationConfigRuleInput {
     /// <p>The name of organization Config rule that you want to delete.</p>
     #[doc(hidden)]
@@ -19144,20 +18330,10 @@ impl DeleteOrganizationConfigRuleInput {
         self.organization_config_rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOrganizationConfigRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOrganizationConfigRuleInput");
-        formatter.field(
-            "organization_config_rule_name",
-            &self.organization_config_rule_name,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEvaluationResultsInput {
     /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
     #[doc(hidden)]
@@ -19169,17 +18345,10 @@ impl DeleteEvaluationResultsInput {
         self.config_rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEvaluationResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEvaluationResultsInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the <code>DeleteDeliveryChannel</code> action. The action accepts the following data, in JSON format. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeliveryChannelInput {
     /// <p>The name of the delivery channel to delete.</p>
     #[doc(hidden)]
@@ -19191,17 +18360,10 @@ impl DeleteDeliveryChannelInput {
         self.delivery_channel_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeliveryChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeliveryChannelInput");
-        formatter.field("delivery_channel_name", &self.delivery_channel_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConformancePackInput {
     /// <p>Name of the conformance pack you want to delete.</p>
     #[doc(hidden)]
@@ -19213,17 +18375,10 @@ impl DeleteConformancePackInput {
         self.conformance_pack_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConformancePackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConformancePackInput");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for the <code>DeleteConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationRecorderInput {
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
     #[doc(hidden)]
@@ -19235,20 +18390,10 @@ impl DeleteConfigurationRecorderInput {
         self.configuration_recorder_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationRecorderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationRecorderInput");
-        formatter.field(
-            "configuration_recorder_name",
-            &self.configuration_recorder_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -19260,20 +18405,10 @@ impl DeleteConfigurationAggregatorInput {
         self.configuration_aggregator_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationAggregatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationAggregatorInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigRuleInput {
     /// <p>The name of the Config rule that you want to delete.</p>
     #[doc(hidden)]
@@ -19285,17 +18420,10 @@ impl DeleteConfigRuleInput {
         self.config_rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigRuleInput");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAggregationAuthorizationInput {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     #[doc(hidden)]
@@ -19314,18 +18442,10 @@ impl DeleteAggregationAuthorizationInput {
         self.authorized_aws_region.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAggregationAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAggregationAuthorizationInput");
-        formatter.field("authorized_account_id", &self.authorized_account_id);
-        formatter.field("authorized_aws_region", &self.authorized_aws_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetResourceConfigInput {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     #[doc(hidden)]
@@ -19337,17 +18457,10 @@ impl BatchGetResourceConfigInput {
         self.resource_keys.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetResourceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetResourceConfigInput");
-        formatter.field("resource_keys", &self.resource_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
@@ -19367,16 +18480,5 @@ impl BatchGetAggregateResourceConfigInput {
         &self,
     ) -> std::option::Option<&[crate::model::AggregateResourceIdentifier]> {
         self.resource_identifiers.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetAggregateResourceConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAggregateResourceConfigInput");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field("resource_identifiers", &self.resource_identifiers);
-        formatter.finish()
     }
 }

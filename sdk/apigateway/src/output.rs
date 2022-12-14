@@ -2,7 +2,7 @@
 
 /// <p>An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVpcLinkOutput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -58,19 +58,6 @@ impl UpdateVpcLinkOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateVpcLinkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVpcLinkOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_arns", &self.target_arns);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput).
@@ -213,7 +200,7 @@ impl UpdateVpcLinkOutput {
 
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUsagePlanOutput {
     /// <p>The identifier of a UsagePlan resource.</p>
     #[doc(hidden)]
@@ -276,20 +263,6 @@ impl UpdateUsagePlanOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateUsagePlanOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUsagePlanOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("api_stages", &self.api_stages);
-        formatter.field("throttle", &self.throttle);
-        formatter.field("quota", &self.quota);
-        formatter.field("product_code", &self.product_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`UpdateUsagePlanOutput`](crate::output::UpdateUsagePlanOutput).
@@ -444,7 +417,7 @@ impl UpdateUsagePlanOutput {
 
 /// <p>Represents the usage data of a usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUsageOutput {
     /// <p>The plan Id associated with this usage data.</p>
     #[doc(hidden)]
@@ -488,17 +461,6 @@ impl UpdateUsageOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUsageOutput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`UpdateUsageOutput`](crate::output::UpdateUsageOutput).
@@ -605,7 +567,7 @@ impl UpdateUsageOutput {
 
 /// <p>Represents a unique identifier for a version of a deployed RestApi that is callable by users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStageOutput {
     /// <p>The identifier of the Deployment that the stage points to.</p>
     #[doc(hidden)]
@@ -741,29 +703,6 @@ impl UpdateStageOutput {
     /// <p>The timestamp when the stage last updated.</p>
     pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateStageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStageOutput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("description", &self.description);
-        formatter.field("cache_cluster_enabled", &self.cache_cluster_enabled);
-        formatter.field("cache_cluster_size", &self.cache_cluster_size);
-        formatter.field("cache_cluster_status", &self.cache_cluster_status);
-        formatter.field("method_settings", &self.method_settings);
-        formatter.field("variables", &self.variables);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("canary_settings", &self.canary_settings);
-        formatter.field("tracing_enabled", &self.tracing_enabled);
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.finish()
     }
 }
 /// See [`UpdateStageOutput`](crate::output::UpdateStageOutput).
@@ -1072,7 +1011,7 @@ impl UpdateStageOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -1172,28 +1111,6 @@ impl UpdateRestApiOutput {
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(&self) -> bool {
         self.disable_execute_api_endpoint
-    }
-}
-impl std::fmt::Debug for UpdateRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdateRestApiOutput`](crate::output::UpdateRestApiOutput).
@@ -1426,7 +1343,7 @@ impl UpdateRestApiOutput {
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceOutput {
     /// <p>The resource's identifier.</p>
     #[doc(hidden)]
@@ -1468,17 +1385,6 @@ impl UpdateResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Method>>
     {
         self.resource_methods.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceOutput");
-        formatter.field("id", &self.id);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("path_part", &self.path_part);
-        formatter.field("path", &self.path);
-        formatter.field("resource_methods", &self.resource_methods);
-        formatter.finish()
     }
 }
 /// See [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
@@ -1582,7 +1488,7 @@ impl UpdateResourceOutput {
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
     #[doc(hidden)]
@@ -1613,19 +1519,6 @@ impl UpdateRequestValidatorOutput {
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_parameters(&self) -> bool {
         self.validate_request_parameters
-    }
-}
-impl std::fmt::Debug for UpdateRequestValidatorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRequestValidatorOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("validate_request_body", &self.validate_request_body);
-        formatter.field(
-            "validate_request_parameters",
-            &self.validate_request_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdateRequestValidatorOutput`](crate::output::UpdateRequestValidatorOutput).
@@ -1700,7 +1593,7 @@ impl UpdateRequestValidatorOutput {
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelOutput {
     /// <p>The identifier for the model resource.</p>
     #[doc(hidden)]
@@ -1738,17 +1631,6 @@ impl UpdateModelOutput {
     /// <p>The content-type for the model.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateModelOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("schema", &self.schema);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`UpdateModelOutput`](crate::output::UpdateModelOutput).
@@ -1835,7 +1717,7 @@ impl UpdateModelOutput {
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMethodResponseOutput {
     /// <p>The method response's status code.</p>
     #[doc(hidden)]
@@ -1866,15 +1748,6 @@ impl UpdateMethodResponseOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.response_models.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateMethodResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMethodResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_models", &self.response_models);
-        formatter.finish()
     }
 }
 /// See [`UpdateMethodResponseOutput`](crate::output::UpdateMethodResponseOutput).
@@ -1964,7 +1837,7 @@ impl UpdateMethodResponseOutput {
 
 /// <p> Represents a client-facing interface by which the client calls the API to access back-end resources. A Method resource is integrated with an Integration resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a Method resource, whereas an integration request is embodied in an Integration resource. On the other hand, a method response is represented by a MethodResponse resource, whereas an integration response is represented by an IntegrationResponse resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMethodOutput {
     /// <p>The method's HTTP verb.</p>
     #[doc(hidden)]
@@ -2057,23 +1930,6 @@ impl UpdateMethodOutput {
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.authorization_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMethodOutput");
-        formatter.field("http_method", &self.http_method);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("method_responses", &self.method_responses);
-        formatter.field("method_integration", &self.method_integration);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.finish()
     }
 }
 /// See [`UpdateMethodOutput`](crate::output::UpdateMethodOutput).
@@ -2300,7 +2156,7 @@ impl UpdateMethodOutput {
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntegrationResponseOutput {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     #[doc(hidden)]
@@ -2348,17 +2204,6 @@ impl UpdateIntegrationResponseOutput {
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
         self.content_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateIntegrationResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntegrationResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("selection_pattern", &self.selection_pattern);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.finish()
     }
 }
 /// See [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput).
@@ -2487,7 +2332,7 @@ impl UpdateIntegrationResponseOutput {
 
 /// <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntegrationOutput {
     /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
     /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.</p>
@@ -2615,27 +2460,6 @@ impl UpdateIntegrationOutput {
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
         self.tls_config.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateIntegrationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntegrationOutput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("uri", &self.uri);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("cache_namespace", &self.cache_namespace);
-        formatter.field("cache_key_parameters", &self.cache_key_parameters);
-        formatter.field("integration_responses", &self.integration_responses);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
     }
 }
 /// See [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput).
@@ -2929,7 +2753,7 @@ impl UpdateIntegrationOutput {
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayResponseOutput {
     /// <p>The response type of the associated GatewayResponse.</p>
     #[doc(hidden)]
@@ -2975,17 +2799,6 @@ impl UpdateGatewayResponseOutput {
     /// <p>A Boolean flag to indicate whether this GatewayResponse is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     pub fn default_response(&self) -> bool {
         self.default_response
-    }
-}
-impl std::fmt::Debug for UpdateGatewayResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayResponseOutput");
-        formatter.field("response_type", &self.response_type);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("default_response", &self.default_response);
-        formatter.finish()
     }
 }
 /// See [`UpdateGatewayResponseOutput`](crate::output::UpdateGatewayResponseOutput).
@@ -3109,7 +2922,7 @@ impl UpdateGatewayResponseOutput {
 
 /// <p>Represents a custom domain name as a user-friendly host name of an API (RestApi).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainNameOutput {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     #[doc(hidden)]
@@ -3239,38 +3052,6 @@ impl UpdateDomainNameOutput {
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub fn ownership_verification_certificate_arn(&self) -> std::option::Option<&str> {
         self.ownership_verification_certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDomainNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainNameOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_upload_date", &self.certificate_upload_date);
-        formatter.field("regional_domain_name", &self.regional_domain_name);
-        formatter.field("regional_hosted_zone_id", &self.regional_hosted_zone_id);
-        formatter.field("regional_certificate_name", &self.regional_certificate_name);
-        formatter.field("regional_certificate_arn", &self.regional_certificate_arn);
-        formatter.field("distribution_domain_name", &self.distribution_domain_name);
-        formatter.field(
-            "distribution_hosted_zone_id",
-            &self.distribution_hosted_zone_id,
-        );
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("domain_name_status", &self.domain_name_status);
-        formatter.field(
-            "domain_name_status_message",
-            &self.domain_name_status_message,
-        );
-        formatter.field("security_policy", &self.security_policy);
-        formatter.field("tags", &self.tags);
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field(
-            "ownership_verification_certificate_arn",
-            &self.ownership_verification_certificate_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput).
@@ -3576,7 +3357,7 @@ impl UpdateDomainNameOutput {
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
@@ -3600,15 +3381,6 @@ impl UpdateDocumentationVersionOutput {
     /// <p>The description of the API documentation snapshot.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDocumentationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentationVersionOutput");
-        formatter.field("version", &self.version);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`UpdateDocumentationVersionOutput`](crate::output::UpdateDocumentationVersionOutput).
@@ -3674,7 +3446,7 @@ impl UpdateDocumentationVersionOutput {
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentationPartOutput {
     /// <p>The DocumentationPart identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     #[doc(hidden)]
@@ -3698,15 +3470,6 @@ impl UpdateDocumentationPartOutput {
     /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the properties map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     pub fn properties(&self) -> std::option::Option<&str> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDocumentationPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentationPartOutput");
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`UpdateDocumentationPartOutput`](crate::output::UpdateDocumentationPartOutput).
@@ -3772,7 +3535,7 @@ impl UpdateDocumentationPartOutput {
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeploymentOutput {
     /// <p>The identifier for the deployment resource.</p>
     #[doc(hidden)]
@@ -3815,16 +3578,6 @@ impl UpdateDeploymentOutput {
         >,
     > {
         self.api_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeploymentOutput");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("api_summary", &self.api_summary);
-        formatter.finish()
     }
 }
 /// See [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput).
@@ -3925,7 +3678,7 @@ impl UpdateDeploymentOutput {
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClientCertificateOutput {
     /// <p>The identifier of the client certificate.</p>
     #[doc(hidden)]
@@ -3974,18 +3727,6 @@ impl UpdateClientCertificateOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateClientCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClientCertificateOutput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("description", &self.description);
-        formatter.field("pem_encoded_certificate", &self.pem_encoded_certificate);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`UpdateClientCertificateOutput`](crate::output::UpdateClientCertificateOutput).
@@ -4113,7 +3854,7 @@ impl UpdateClientCertificateOutput {
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBasePathMappingOutput {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
@@ -4137,15 +3878,6 @@ impl UpdateBasePathMappingOutput {
     /// <p>The name of the associated stage.</p>
     pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateBasePathMappingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBasePathMappingOutput");
-        formatter.field("base_path", &self.base_path);
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
     }
 }
 /// See [`UpdateBasePathMappingOutput`](crate::output::UpdateBasePathMappingOutput).
@@ -4208,7 +3940,7 @@ impl UpdateBasePathMappingOutput {
 
 /// <p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAuthorizerOutput {
     /// <p>The identifier for the authorizer resource.</p>
     #[doc(hidden)]
@@ -4281,28 +4013,6 @@ impl UpdateAuthorizerOutput {
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     pub fn authorizer_result_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.authorizer_result_ttl_in_seconds
-    }
-}
-impl std::fmt::Debug for UpdateAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAuthorizerOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("provider_ar_ns", &self.provider_ar_ns);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("authorizer_credentials", &self.authorizer_credentials);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput).
@@ -4479,7 +4189,7 @@ impl UpdateAuthorizerOutput {
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
     #[doc(hidden)]
@@ -4556,22 +4266,6 @@ impl UpdateApiKeyOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateApiKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApiKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.field("customer_id", &self.customer_id);
-        formatter.field("description", &self.description);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("stage_keys", &self.stage_keys);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput).
@@ -4750,7 +4444,7 @@ impl UpdateApiKeyOutput {
 
 /// <p>Represents an AWS account that is associated with API Gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountOutput {
     /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
     #[doc(hidden)]
@@ -4781,16 +4475,6 @@ impl UpdateAccountOutput {
     /// <p>The version of the API keys used for the account.</p>
     pub fn api_key_version(&self) -> std::option::Option<&str> {
         self.api_key_version.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountOutput");
-        formatter.field("cloudwatch_role_arn", &self.cloudwatch_role_arn);
-        formatter.field("throttle_settings", &self.throttle_settings);
-        formatter.field("features", &self.features);
-        formatter.field("api_key_version", &self.api_key_version);
-        formatter.finish()
     }
 }
 /// See [`UpdateAccountOutput`](crate::output::UpdateAccountOutput).
@@ -4883,14 +4567,8 @@ impl UpdateAccountOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -4913,7 +4591,7 @@ impl UntagResourceOutput {
 
 /// <p>Represents the response of the test invoke request in the HTTP method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestInvokeMethodOutput {
     /// <p>The HTTP status code.</p>
     #[doc(hidden)]
@@ -4968,18 +4646,6 @@ impl TestInvokeMethodOutput {
     /// <p>The execution latency of the test invoke request.</p>
     pub fn latency(&self) -> i64 {
         self.latency
-    }
-}
-impl std::fmt::Debug for TestInvokeMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestInvokeMethodOutput");
-        formatter.field("status", &self.status);
-        formatter.field("body", &self.body);
-        formatter.field("headers", &self.headers);
-        formatter.field("multi_value_headers", &self.multi_value_headers);
-        formatter.field("log", &self.log);
-        formatter.field("latency", &self.latency);
-        formatter.finish()
     }
 }
 /// See [`TestInvokeMethodOutput`](crate::output::TestInvokeMethodOutput).
@@ -5112,7 +4778,7 @@ impl TestInvokeMethodOutput {
 
 /// <p>Represents the response of the test invoke request for a custom Authorizer</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestInvokeAuthorizerOutput {
     /// <p>The HTTP status code that the client would have received. Value is 0 if the authorizer succeeded.</p>
     #[doc(hidden)]
@@ -5174,19 +4840,6 @@ impl TestInvokeAuthorizerOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.claims.as_ref()
-    }
-}
-impl std::fmt::Debug for TestInvokeAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestInvokeAuthorizerOutput");
-        formatter.field("client_status", &self.client_status);
-        formatter.field("log", &self.log);
-        formatter.field("latency", &self.latency);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("policy", &self.policy);
-        formatter.field("authorization", &self.authorization);
-        formatter.field("claims", &self.claims);
-        formatter.finish()
     }
 }
 /// See [`TestInvokeAuthorizerOutput`](crate::output::TestInvokeAuthorizerOutput).
@@ -5331,14 +4984,8 @@ impl TestInvokeAuthorizerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -5361,7 +5008,7 @@ impl TagResourceOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -5461,28 +5108,6 @@ impl PutRestApiOutput {
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(&self) -> bool {
         self.disable_execute_api_endpoint
-    }
-}
-impl std::fmt::Debug for PutRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
     }
 }
 /// See [`PutRestApiOutput`](crate::output::PutRestApiOutput).
@@ -5715,7 +5340,7 @@ impl PutRestApiOutput {
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMethodResponseOutput {
     /// <p>The method response's status code.</p>
     #[doc(hidden)]
@@ -5746,15 +5371,6 @@ impl PutMethodResponseOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.response_models.as_ref()
-    }
-}
-impl std::fmt::Debug for PutMethodResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMethodResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_models", &self.response_models);
-        formatter.finish()
     }
 }
 /// See [`PutMethodResponseOutput`](crate::output::PutMethodResponseOutput).
@@ -5844,7 +5460,7 @@ impl PutMethodResponseOutput {
 
 /// <p> Represents a client-facing interface by which the client calls the API to access back-end resources. A Method resource is integrated with an Integration resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a Method resource, whereas an integration request is embodied in an Integration resource. On the other hand, a method response is represented by a MethodResponse resource, whereas an integration response is represented by an IntegrationResponse resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMethodOutput {
     /// <p>The method's HTTP verb.</p>
     #[doc(hidden)]
@@ -5937,23 +5553,6 @@ impl PutMethodOutput {
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.authorization_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for PutMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMethodOutput");
-        formatter.field("http_method", &self.http_method);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("method_responses", &self.method_responses);
-        formatter.field("method_integration", &self.method_integration);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.finish()
     }
 }
 /// See [`PutMethodOutput`](crate::output::PutMethodOutput).
@@ -6180,7 +5779,7 @@ impl PutMethodOutput {
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIntegrationResponseOutput {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     #[doc(hidden)]
@@ -6228,17 +5827,6 @@ impl PutIntegrationResponseOutput {
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
         self.content_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for PutIntegrationResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIntegrationResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("selection_pattern", &self.selection_pattern);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.finish()
     }
 }
 /// See [`PutIntegrationResponseOutput`](crate::output::PutIntegrationResponseOutput).
@@ -6367,7 +5955,7 @@ impl PutIntegrationResponseOutput {
 
 /// <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIntegrationOutput {
     /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
     /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.</p>
@@ -6495,27 +6083,6 @@ impl PutIntegrationOutput {
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
         self.tls_config.as_ref()
-    }
-}
-impl std::fmt::Debug for PutIntegrationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIntegrationOutput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("uri", &self.uri);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("cache_namespace", &self.cache_namespace);
-        formatter.field("cache_key_parameters", &self.cache_key_parameters);
-        formatter.field("integration_responses", &self.integration_responses);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
     }
 }
 /// See [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
@@ -6809,7 +6376,7 @@ impl PutIntegrationOutput {
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutGatewayResponseOutput {
     /// <p>The response type of the associated GatewayResponse.</p>
     #[doc(hidden)]
@@ -6855,17 +6422,6 @@ impl PutGatewayResponseOutput {
     /// <p>A Boolean flag to indicate whether this GatewayResponse is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     pub fn default_response(&self) -> bool {
         self.default_response
-    }
-}
-impl std::fmt::Debug for PutGatewayResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutGatewayResponseOutput");
-        formatter.field("response_type", &self.response_type);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("default_response", &self.default_response);
-        formatter.finish()
     }
 }
 /// See [`PutGatewayResponseOutput`](crate::output::PutGatewayResponseOutput).
@@ -6989,7 +6545,7 @@ impl PutGatewayResponseOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -7089,28 +6645,6 @@ impl ImportRestApiOutput {
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(&self) -> bool {
         self.disable_execute_api_endpoint
-    }
-}
-impl std::fmt::Debug for ImportRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
     }
 }
 /// See [`ImportRestApiOutput`](crate::output::ImportRestApiOutput).
@@ -7343,7 +6877,7 @@ impl ImportRestApiOutput {
 
 /// <p>A collection of the imported DocumentationPart identifiers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportDocumentationPartsOutput {
     /// <p>A list of the returned documentation part identifiers.</p>
     #[doc(hidden)]
@@ -7360,14 +6894,6 @@ impl ImportDocumentationPartsOutput {
     /// <p>A list of warning messages reported during import of documentation parts.</p>
     pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
         self.warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportDocumentationPartsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportDocumentationPartsOutput");
-        formatter.field("ids", &self.ids);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
     }
 }
 /// See [`ImportDocumentationPartsOutput`](crate::output::ImportDocumentationPartsOutput).
@@ -7436,7 +6962,7 @@ impl ImportDocumentationPartsOutput {
 
 /// <p>The identifier of an ApiKey used in a UsagePlan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportApiKeysOutput {
     /// <p>A list of all the ApiKey identifiers.</p>
     #[doc(hidden)]
@@ -7453,14 +6979,6 @@ impl ImportApiKeysOutput {
     /// <p>A list of warning messages.</p>
     pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
         self.warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportApiKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportApiKeysOutput");
-        formatter.field("ids", &self.ids);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
     }
 }
 /// See [`ImportApiKeysOutput`](crate::output::ImportApiKeysOutput).
@@ -7529,7 +7047,7 @@ impl ImportApiKeysOutput {
 
 /// <p>The collection of VPC links under the caller's account in a region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcLinksOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -7546,14 +7064,6 @@ impl GetVpcLinksOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetVpcLinksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcLinksOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput).
@@ -7613,7 +7123,7 @@ impl GetVpcLinksOutput {
 
 /// <p>An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcLinkOutput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -7669,19 +7179,6 @@ impl GetVpcLinkOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GetVpcLinkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcLinkOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_arns", &self.target_arns);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput).
@@ -7824,7 +7321,7 @@ impl GetVpcLinkOutput {
 
 /// <p>Represents a collection of usage plans for an AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlansOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -7841,14 +7338,6 @@ impl GetUsagePlansOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUsagePlansOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlansOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetUsagePlansOutput`](crate::output::GetUsagePlansOutput).
@@ -7908,7 +7397,7 @@ impl GetUsagePlansOutput {
 
 /// <p>Represents the collection of usage plan keys added to usage plans for the associated API keys and, possibly, other types of keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanKeysOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -7925,14 +7414,6 @@ impl GetUsagePlanKeysOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUsagePlanKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanKeysOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetUsagePlanKeysOutput`](crate::output::GetUsagePlanKeysOutput).
@@ -7992,7 +7473,7 @@ impl GetUsagePlanKeysOutput {
 
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanKeyOutput {
     /// <p>The Id of a usage plan key.</p>
     #[doc(hidden)]
@@ -8023,16 +7504,6 @@ impl GetUsagePlanKeyOutput {
     /// <p>The name of a usage plan key.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUsagePlanKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`GetUsagePlanKeyOutput`](crate::output::GetUsagePlanKeyOutput).
@@ -8107,7 +7578,7 @@ impl GetUsagePlanKeyOutput {
 
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanOutput {
     /// <p>The identifier of a UsagePlan resource.</p>
     #[doc(hidden)]
@@ -8170,20 +7641,6 @@ impl GetUsagePlanOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GetUsagePlanOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("api_stages", &self.api_stages);
-        formatter.field("throttle", &self.throttle);
-        formatter.field("quota", &self.quota);
-        formatter.field("product_code", &self.product_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetUsagePlanOutput`](crate::output::GetUsagePlanOutput).
@@ -8338,7 +7795,7 @@ impl GetUsagePlanOutput {
 
 /// <p>Represents the usage data of a usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsageOutput {
     /// <p>The plan Id associated with this usage data.</p>
     #[doc(hidden)]
@@ -8382,17 +7839,6 @@ impl GetUsageOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsageOutput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetUsageOutput`](crate::output::GetUsageOutput).
@@ -8499,7 +7945,7 @@ impl GetUsageOutput {
 
 /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagsOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[doc(hidden)]
@@ -8513,13 +7959,6 @@ impl GetTagsOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GetTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput).
@@ -8573,7 +8012,7 @@ impl GetTagsOutput {
 
 /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStagesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -8583,13 +8022,6 @@ impl GetStagesOutput {
     /// <p>The current page of elements from this collection.</p>
     pub fn item(&self) -> std::option::Option<&[crate::model::Stage]> {
         self.item.as_deref()
-    }
-}
-impl std::fmt::Debug for GetStagesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStagesOutput");
-        formatter.field("item", &self.item);
-        formatter.finish()
     }
 }
 /// See [`GetStagesOutput`](crate::output::GetStagesOutput).
@@ -8635,7 +8067,7 @@ impl GetStagesOutput {
 
 /// <p>Represents a unique identifier for a version of a deployed RestApi that is callable by users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageOutput {
     /// <p>The identifier of the Deployment that the stage points to.</p>
     #[doc(hidden)]
@@ -8771,29 +8203,6 @@ impl GetStageOutput {
     /// <p>The timestamp when the stage last updated.</p>
     pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
-    }
-}
-impl std::fmt::Debug for GetStageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStageOutput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("description", &self.description);
-        formatter.field("cache_cluster_enabled", &self.cache_cluster_enabled);
-        formatter.field("cache_cluster_size", &self.cache_cluster_size);
-        formatter.field("cache_cluster_status", &self.cache_cluster_status);
-        formatter.field("method_settings", &self.method_settings);
-        formatter.field("variables", &self.variables);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("canary_settings", &self.canary_settings);
-        formatter.field("tracing_enabled", &self.tracing_enabled);
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.finish()
     }
 }
 /// See [`GetStageOutput`](crate::output::GetStageOutput).
@@ -9102,7 +8511,7 @@ impl GetStageOutput {
 
 /// <p>The collection of SdkType instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkTypesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -9112,13 +8521,6 @@ impl GetSdkTypesOutput {
     /// <p>The current page of elements from this collection.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::SdkType]> {
         self.items.as_deref()
-    }
-}
-impl std::fmt::Debug for GetSdkTypesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkTypesOutput");
-        formatter.field("items", &self.items);
-        formatter.finish()
     }
 }
 /// See [`GetSdkTypesOutput`](crate::output::GetSdkTypesOutput).
@@ -9164,7 +8566,7 @@ impl GetSdkTypesOutput {
 
 /// <p>A type of SDK that API Gateway can generate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkTypeOutput {
     /// <p>The identifier of an SdkType instance.</p>
     #[doc(hidden)]
@@ -9198,16 +8600,6 @@ impl GetSdkTypeOutput {
         &self,
     ) -> std::option::Option<&[crate::model::SdkConfigurationProperty]> {
         self.configuration_properties.as_deref()
-    }
-}
-impl std::fmt::Debug for GetSdkTypeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkTypeOutput");
-        formatter.field("id", &self.id);
-        formatter.field("friendly_name", &self.friendly_name);
-        formatter.field("description", &self.description);
-        formatter.field("configuration_properties", &self.configuration_properties);
-        formatter.finish()
     }
 }
 /// See [`GetSdkTypeOutput`](crate::output::GetSdkTypeOutput).
@@ -9298,7 +8690,7 @@ impl GetSdkTypeOutput {
 
 /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkOutput {
     /// <p>The content-type header value in the HTTP response.</p>
     #[doc(hidden)]
@@ -9322,15 +8714,6 @@ impl GetSdkOutput {
     /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
     pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.body.as_ref()
-    }
-}
-impl std::fmt::Debug for GetSdkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkOutput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_disposition", &self.content_disposition);
-        formatter.field("body", &self.body);
-        formatter.finish()
     }
 }
 /// See [`GetSdkOutput`](crate::output::GetSdkOutput).
@@ -9396,7 +8779,7 @@ impl GetSdkOutput {
 
 /// <p>Contains references to your APIs and links that guide you in how to interact with your collection. A collection offers a paginated view of your APIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRestApisOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -9413,14 +8796,6 @@ impl GetRestApisOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRestApisOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRestApisOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetRestApisOutput`](crate::output::GetRestApisOutput).
@@ -9480,7 +8855,7 @@ impl GetRestApisOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -9580,28 +8955,6 @@ impl GetRestApiOutput {
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(&self) -> bool {
         self.disable_execute_api_endpoint
-    }
-}
-impl std::fmt::Debug for GetRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetRestApiOutput`](crate::output::GetRestApiOutput).
@@ -9834,7 +9187,7 @@ impl GetRestApiOutput {
 
 /// <p>Represents a collection of Resource resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -9851,14 +9204,6 @@ impl GetResourcesOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetResourcesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetResourcesOutput`](crate::output::GetResourcesOutput).
@@ -9918,7 +9263,7 @@ impl GetResourcesOutput {
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceOutput {
     /// <p>The resource's identifier.</p>
     #[doc(hidden)]
@@ -9960,17 +9305,6 @@ impl GetResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Method>>
     {
         self.resource_methods.as_ref()
-    }
-}
-impl std::fmt::Debug for GetResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceOutput");
-        formatter.field("id", &self.id);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("path_part", &self.path_part);
-        formatter.field("path", &self.path);
-        formatter.field("resource_methods", &self.resource_methods);
-        formatter.finish()
     }
 }
 /// See [`GetResourceOutput`](crate::output::GetResourceOutput).
@@ -10074,7 +9408,7 @@ impl GetResourceOutput {
 
 /// <p>A collection of RequestValidator resources of a given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRequestValidatorsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -10091,14 +9425,6 @@ impl GetRequestValidatorsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRequestValidatorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRequestValidatorsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetRequestValidatorsOutput`](crate::output::GetRequestValidatorsOutput).
@@ -10158,7 +9484,7 @@ impl GetRequestValidatorsOutput {
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
     #[doc(hidden)]
@@ -10189,19 +9515,6 @@ impl GetRequestValidatorOutput {
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_parameters(&self) -> bool {
         self.validate_request_parameters
-    }
-}
-impl std::fmt::Debug for GetRequestValidatorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRequestValidatorOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("validate_request_body", &self.validate_request_body);
-        formatter.field(
-            "validate_request_parameters",
-            &self.validate_request_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetRequestValidatorOutput`](crate::output::GetRequestValidatorOutput).
@@ -10276,7 +9589,7 @@ impl GetRequestValidatorOutput {
 
 /// <p>Represents a mapping template used to transform a payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelTemplateOutput {
     /// <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
     #[doc(hidden)]
@@ -10286,13 +9599,6 @@ impl GetModelTemplateOutput {
     /// <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for GetModelTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelTemplateOutput");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput).
@@ -10329,7 +9635,7 @@ impl GetModelTemplateOutput {
 
 /// <p>Represents a collection of Model resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -10346,14 +9652,6 @@ impl GetModelsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetModelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetModelsOutput`](crate::output::GetModelsOutput).
@@ -10413,7 +9711,7 @@ impl GetModelsOutput {
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelOutput {
     /// <p>The identifier for the model resource.</p>
     #[doc(hidden)]
@@ -10451,17 +9749,6 @@ impl GetModelOutput {
     /// <p>The content-type for the model.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
-    }
-}
-impl std::fmt::Debug for GetModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("schema", &self.schema);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`GetModelOutput`](crate::output::GetModelOutput).
@@ -10548,7 +9835,7 @@ impl GetModelOutput {
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMethodResponseOutput {
     /// <p>The method response's status code.</p>
     #[doc(hidden)]
@@ -10579,15 +9866,6 @@ impl GetMethodResponseOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.response_models.as_ref()
-    }
-}
-impl std::fmt::Debug for GetMethodResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMethodResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_models", &self.response_models);
-        formatter.finish()
     }
 }
 /// See [`GetMethodResponseOutput`](crate::output::GetMethodResponseOutput).
@@ -10677,7 +9955,7 @@ impl GetMethodResponseOutput {
 
 /// <p> Represents a client-facing interface by which the client calls the API to access back-end resources. A Method resource is integrated with an Integration resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a Method resource, whereas an integration request is embodied in an Integration resource. On the other hand, a method response is represented by a MethodResponse resource, whereas an integration response is represented by an IntegrationResponse resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMethodOutput {
     /// <p>The method's HTTP verb.</p>
     #[doc(hidden)]
@@ -10770,23 +10048,6 @@ impl GetMethodOutput {
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.authorization_scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for GetMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMethodOutput");
-        formatter.field("http_method", &self.http_method);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("method_responses", &self.method_responses);
-        formatter.field("method_integration", &self.method_integration);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.finish()
     }
 }
 /// See [`GetMethodOutput`](crate::output::GetMethodOutput).
@@ -11013,7 +10274,7 @@ impl GetMethodOutput {
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationResponseOutput {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     #[doc(hidden)]
@@ -11061,17 +10322,6 @@ impl GetIntegrationResponseOutput {
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
         self.content_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for GetIntegrationResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("selection_pattern", &self.selection_pattern);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.finish()
     }
 }
 /// See [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput).
@@ -11200,7 +10450,7 @@ impl GetIntegrationResponseOutput {
 
 /// <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationOutput {
     /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
     /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.</p>
@@ -11328,27 +10578,6 @@ impl GetIntegrationOutput {
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
         self.tls_config.as_ref()
-    }
-}
-impl std::fmt::Debug for GetIntegrationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationOutput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("uri", &self.uri);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("cache_namespace", &self.cache_namespace);
-        formatter.field("cache_key_parameters", &self.cache_key_parameters);
-        formatter.field("integration_responses", &self.integration_responses);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
     }
 }
 /// See [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
@@ -11642,7 +10871,7 @@ impl GetIntegrationOutput {
 
 /// <p>The collection of the GatewayResponse instances of a RestApi as a <code>responseType</code>-to-GatewayResponse object map of key-value pairs. As such, pagination is not supported for querying this collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGatewayResponsesOutput {
     /// <p>Returns the entire collection, because of no pagination support.</p>
     #[doc(hidden)]
@@ -11659,14 +10888,6 @@ impl GetGatewayResponsesOutput {
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetGatewayResponsesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGatewayResponsesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetGatewayResponsesOutput`](crate::output::GetGatewayResponsesOutput).
@@ -11726,7 +10947,7 @@ impl GetGatewayResponsesOutput {
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGatewayResponseOutput {
     /// <p>The response type of the associated GatewayResponse.</p>
     #[doc(hidden)]
@@ -11772,17 +10993,6 @@ impl GetGatewayResponseOutput {
     /// <p>A Boolean flag to indicate whether this GatewayResponse is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     pub fn default_response(&self) -> bool {
         self.default_response
-    }
-}
-impl std::fmt::Debug for GetGatewayResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGatewayResponseOutput");
-        formatter.field("response_type", &self.response_type);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("default_response", &self.default_response);
-        formatter.finish()
     }
 }
 /// See [`GetGatewayResponseOutput`](crate::output::GetGatewayResponseOutput).
@@ -11906,7 +11116,7 @@ impl GetGatewayResponseOutput {
 
 /// <p>The binary blob response to GetExport, which contains the generated SDK.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExportOutput {
     /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
     #[doc(hidden)]
@@ -11930,15 +11140,6 @@ impl GetExportOutput {
     /// <p>The binary blob response to GetExport, which contains the export.</p>
     pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.body.as_ref()
-    }
-}
-impl std::fmt::Debug for GetExportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExportOutput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_disposition", &self.content_disposition);
-        formatter.field("body", &self.body);
-        formatter.finish()
     }
 }
 /// See [`GetExportOutput`](crate::output::GetExportOutput).
@@ -12004,7 +11205,7 @@ impl GetExportOutput {
 
 /// <p>Represents a collection of DomainName resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNamesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -12021,14 +11222,6 @@ impl GetDomainNamesOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDomainNamesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNamesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput).
@@ -12088,7 +11281,7 @@ impl GetDomainNamesOutput {
 
 /// <p>Represents a custom domain name as a user-friendly host name of an API (RestApi).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNameOutput {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     #[doc(hidden)]
@@ -12218,38 +11411,6 @@ impl GetDomainNameOutput {
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub fn ownership_verification_certificate_arn(&self) -> std::option::Option<&str> {
         self.ownership_verification_certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDomainNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNameOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_upload_date", &self.certificate_upload_date);
-        formatter.field("regional_domain_name", &self.regional_domain_name);
-        formatter.field("regional_hosted_zone_id", &self.regional_hosted_zone_id);
-        formatter.field("regional_certificate_name", &self.regional_certificate_name);
-        formatter.field("regional_certificate_arn", &self.regional_certificate_arn);
-        formatter.field("distribution_domain_name", &self.distribution_domain_name);
-        formatter.field(
-            "distribution_hosted_zone_id",
-            &self.distribution_hosted_zone_id,
-        );
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("domain_name_status", &self.domain_name_status);
-        formatter.field(
-            "domain_name_status_message",
-            &self.domain_name_status_message,
-        );
-        formatter.field("security_policy", &self.security_policy);
-        formatter.field("tags", &self.tags);
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field(
-            "ownership_verification_certificate_arn",
-            &self.ownership_verification_certificate_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetDomainNameOutput`](crate::output::GetDomainNameOutput).
@@ -12555,7 +11716,7 @@ impl GetDomainNameOutput {
 
 /// <p>The collection of documentation snapshots of an API. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationVersionsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -12572,14 +11733,6 @@ impl GetDocumentationVersionsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDocumentationVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationVersionsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetDocumentationVersionsOutput`](crate::output::GetDocumentationVersionsOutput).
@@ -12639,7 +11792,7 @@ impl GetDocumentationVersionsOutput {
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
@@ -12663,15 +11816,6 @@ impl GetDocumentationVersionOutput {
     /// <p>The description of the API documentation snapshot.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDocumentationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationVersionOutput");
-        formatter.field("version", &self.version);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`GetDocumentationVersionOutput`](crate::output::GetDocumentationVersionOutput).
@@ -12737,7 +11881,7 @@ impl GetDocumentationVersionOutput {
 
 /// <p>The collection of documentation parts of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationPartsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -12754,14 +11898,6 @@ impl GetDocumentationPartsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDocumentationPartsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationPartsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetDocumentationPartsOutput`](crate::output::GetDocumentationPartsOutput).
@@ -12821,7 +11957,7 @@ impl GetDocumentationPartsOutput {
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationPartOutput {
     /// <p>The DocumentationPart identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     #[doc(hidden)]
@@ -12845,15 +11981,6 @@ impl GetDocumentationPartOutput {
     /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the properties map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     pub fn properties(&self) -> std::option::Option<&str> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDocumentationPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationPartOutput");
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`GetDocumentationPartOutput`](crate::output::GetDocumentationPartOutput).
@@ -12919,7 +12046,7 @@ impl GetDocumentationPartOutput {
 
 /// <p>Represents a collection resource that contains zero or more references to your existing deployments, and links that guide you on how to interact with your collection. The collection offers a paginated view of the contained deployments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -12936,14 +12063,6 @@ impl GetDeploymentsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDeploymentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
@@ -13003,7 +12122,7 @@ impl GetDeploymentsOutput {
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentOutput {
     /// <p>The identifier for the deployment resource.</p>
     #[doc(hidden)]
@@ -13046,16 +12165,6 @@ impl GetDeploymentOutput {
         >,
     > {
         self.api_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for GetDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentOutput");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("api_summary", &self.api_summary);
-        formatter.finish()
     }
 }
 /// See [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
@@ -13156,7 +12265,7 @@ impl GetDeploymentOutput {
 
 /// <p>Represents a collection of ClientCertificate resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClientCertificatesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -13173,14 +12282,6 @@ impl GetClientCertificatesOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetClientCertificatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetClientCertificatesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetClientCertificatesOutput`](crate::output::GetClientCertificatesOutput).
@@ -13240,7 +12341,7 @@ impl GetClientCertificatesOutput {
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClientCertificateOutput {
     /// <p>The identifier of the client certificate.</p>
     #[doc(hidden)]
@@ -13289,18 +12390,6 @@ impl GetClientCertificateOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GetClientCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetClientCertificateOutput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("description", &self.description);
-        formatter.field("pem_encoded_certificate", &self.pem_encoded_certificate);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetClientCertificateOutput`](crate::output::GetClientCertificateOutput).
@@ -13428,7 +12517,7 @@ impl GetClientCertificateOutput {
 
 /// <p>Represents a collection of BasePathMapping resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBasePathMappingsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -13445,14 +12534,6 @@ impl GetBasePathMappingsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetBasePathMappingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBasePathMappingsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetBasePathMappingsOutput`](crate::output::GetBasePathMappingsOutput).
@@ -13512,7 +12593,7 @@ impl GetBasePathMappingsOutput {
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBasePathMappingOutput {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
@@ -13536,15 +12617,6 @@ impl GetBasePathMappingOutput {
     /// <p>The name of the associated stage.</p>
     pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
-    }
-}
-impl std::fmt::Debug for GetBasePathMappingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBasePathMappingOutput");
-        formatter.field("base_path", &self.base_path);
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
     }
 }
 /// See [`GetBasePathMappingOutput`](crate::output::GetBasePathMappingOutput).
@@ -13607,7 +12679,7 @@ impl GetBasePathMappingOutput {
 
 /// <p>Represents a collection of Authorizer resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizersOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -13624,14 +12696,6 @@ impl GetAuthorizersOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetAuthorizersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizersOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput).
@@ -13691,7 +12755,7 @@ impl GetAuthorizersOutput {
 
 /// <p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizerOutput {
     /// <p>The identifier for the authorizer resource.</p>
     #[doc(hidden)]
@@ -13764,28 +12828,6 @@ impl GetAuthorizerOutput {
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     pub fn authorizer_result_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.authorizer_result_ttl_in_seconds
-    }
-}
-impl std::fmt::Debug for GetAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizerOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("provider_ar_ns", &self.provider_ar_ns);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("authorizer_credentials", &self.authorizer_credentials);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput).
@@ -13962,7 +13004,7 @@ impl GetAuthorizerOutput {
 
 /// <p>Represents a collection of API keys as represented by an ApiKeys resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiKeysOutput {
     /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
     #[doc(hidden)]
@@ -13986,15 +13028,6 @@ impl GetApiKeysOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
-    }
-}
-impl std::fmt::Debug for GetApiKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiKeysOutput");
-        formatter.field("warnings", &self.warnings);
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`GetApiKeysOutput`](crate::output::GetApiKeysOutput).
@@ -14075,7 +13108,7 @@ impl GetApiKeysOutput {
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
     #[doc(hidden)]
@@ -14152,22 +13185,6 @@ impl GetApiKeyOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GetApiKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.field("customer_id", &self.customer_id);
-        formatter.field("description", &self.description);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("stage_keys", &self.stage_keys);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GetApiKeyOutput`](crate::output::GetApiKeyOutput).
@@ -14346,7 +13363,7 @@ impl GetApiKeyOutput {
 
 /// <p>Represents an AWS account that is associated with API Gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountOutput {
     /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
     #[doc(hidden)]
@@ -14377,16 +13394,6 @@ impl GetAccountOutput {
     /// <p>The version of the API keys used for the account.</p>
     pub fn api_key_version(&self) -> std::option::Option<&str> {
         self.api_key_version.as_deref()
-    }
-}
-impl std::fmt::Debug for GetAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountOutput");
-        formatter.field("cloudwatch_role_arn", &self.cloudwatch_role_arn);
-        formatter.field("throttle_settings", &self.throttle_settings);
-        formatter.field("features", &self.features);
-        formatter.field("api_key_version", &self.api_key_version);
-        formatter.finish()
     }
 }
 /// See [`GetAccountOutput`](crate::output::GetAccountOutput).
@@ -14479,7 +13486,7 @@ impl GetAccountOutput {
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateClientCertificateOutput {
     /// <p>The identifier of the client certificate.</p>
     #[doc(hidden)]
@@ -14528,18 +13535,6 @@ impl GenerateClientCertificateOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GenerateClientCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateClientCertificateOutput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("description", &self.description);
-        formatter.field("pem_encoded_certificate", &self.pem_encoded_certificate);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GenerateClientCertificateOutput`](crate::output::GenerateClientCertificateOutput).
@@ -14667,14 +13662,8 @@ impl GenerateClientCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlushStageCacheOutput {}
-impl std::fmt::Debug for FlushStageCacheOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlushStageCacheOutput");
-        formatter.finish()
-    }
-}
 /// See [`FlushStageCacheOutput`](crate::output::FlushStageCacheOutput).
 pub mod flush_stage_cache_output {
 
@@ -14697,14 +13686,8 @@ impl FlushStageCacheOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlushStageAuthorizersCacheOutput {}
-impl std::fmt::Debug for FlushStageAuthorizersCacheOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlushStageAuthorizersCacheOutput");
-        formatter.finish()
-    }
-}
 /// See [`FlushStageAuthorizersCacheOutput`](crate::output::FlushStageAuthorizersCacheOutput).
 pub mod flush_stage_authorizers_cache_output {
 
@@ -14727,14 +13710,8 @@ impl FlushStageAuthorizersCacheOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcLinkOutput {}
-impl std::fmt::Debug for DeleteVpcLinkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcLinkOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput).
 pub mod delete_vpc_link_output {
 
@@ -14757,14 +13734,8 @@ impl DeleteVpcLinkOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUsagePlanKeyOutput {}
-impl std::fmt::Debug for DeleteUsagePlanKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUsagePlanKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUsagePlanKeyOutput`](crate::output::DeleteUsagePlanKeyOutput).
 pub mod delete_usage_plan_key_output {
 
@@ -14787,14 +13758,8 @@ impl DeleteUsagePlanKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUsagePlanOutput {}
-impl std::fmt::Debug for DeleteUsagePlanOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUsagePlanOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUsagePlanOutput`](crate::output::DeleteUsagePlanOutput).
 pub mod delete_usage_plan_output {
 
@@ -14817,14 +13782,8 @@ impl DeleteUsagePlanOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStageOutput {}
-impl std::fmt::Debug for DeleteStageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStageOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteStageOutput`](crate::output::DeleteStageOutput).
 pub mod delete_stage_output {
 
@@ -14847,14 +13806,8 @@ impl DeleteStageOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRestApiOutput {}
-impl std::fmt::Debug for DeleteRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRestApiOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRestApiOutput`](crate::output::DeleteRestApiOutput).
 pub mod delete_rest_api_output {
 
@@ -14877,14 +13830,8 @@ impl DeleteRestApiOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceOutput {}
-impl std::fmt::Debug for DeleteResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
 pub mod delete_resource_output {
 
@@ -14907,14 +13854,8 @@ impl DeleteResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRequestValidatorOutput {}
-impl std::fmt::Debug for DeleteRequestValidatorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRequestValidatorOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRequestValidatorOutput`](crate::output::DeleteRequestValidatorOutput).
 pub mod delete_request_validator_output {
 
@@ -14937,14 +13878,8 @@ impl DeleteRequestValidatorOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelOutput {}
-impl std::fmt::Debug for DeleteModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteModelOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteModelOutput`](crate::output::DeleteModelOutput).
 pub mod delete_model_output {
 
@@ -14967,14 +13902,8 @@ impl DeleteModelOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMethodResponseOutput {}
-impl std::fmt::Debug for DeleteMethodResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMethodResponseOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteMethodResponseOutput`](crate::output::DeleteMethodResponseOutput).
 pub mod delete_method_response_output {
 
@@ -14997,14 +13926,8 @@ impl DeleteMethodResponseOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMethodOutput {}
-impl std::fmt::Debug for DeleteMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMethodOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteMethodOutput`](crate::output::DeleteMethodOutput).
 pub mod delete_method_output {
 
@@ -15027,14 +13950,8 @@ impl DeleteMethodOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationResponseOutput {}
-impl std::fmt::Debug for DeleteIntegrationResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationResponseOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput).
 pub mod delete_integration_response_output {
 
@@ -15057,14 +13974,8 @@ impl DeleteIntegrationResponseOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationOutput {}
-impl std::fmt::Debug for DeleteIntegrationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
 pub mod delete_integration_output {
 
@@ -15087,14 +13998,8 @@ impl DeleteIntegrationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayResponseOutput {}
-impl std::fmt::Debug for DeleteGatewayResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayResponseOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteGatewayResponseOutput`](crate::output::DeleteGatewayResponseOutput).
 pub mod delete_gateway_response_output {
 
@@ -15117,14 +14022,8 @@ impl DeleteGatewayResponseOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainNameOutput {}
-impl std::fmt::Debug for DeleteDomainNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainNameOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
 pub mod delete_domain_name_output {
 
@@ -15147,14 +14046,8 @@ impl DeleteDomainNameOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentationVersionOutput {}
-impl std::fmt::Debug for DeleteDocumentationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDocumentationVersionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDocumentationVersionOutput`](crate::output::DeleteDocumentationVersionOutput).
 pub mod delete_documentation_version_output {
 
@@ -15177,14 +14070,8 @@ impl DeleteDocumentationVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentationPartOutput {}
-impl std::fmt::Debug for DeleteDocumentationPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDocumentationPartOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDocumentationPartOutput`](crate::output::DeleteDocumentationPartOutput).
 pub mod delete_documentation_part_output {
 
@@ -15207,14 +14094,8 @@ impl DeleteDocumentationPartOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentOutput {}
-impl std::fmt::Debug for DeleteDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
 pub mod delete_deployment_output {
 
@@ -15237,14 +14118,8 @@ impl DeleteDeploymentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClientCertificateOutput {}
-impl std::fmt::Debug for DeleteClientCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClientCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteClientCertificateOutput`](crate::output::DeleteClientCertificateOutput).
 pub mod delete_client_certificate_output {
 
@@ -15267,14 +14142,8 @@ impl DeleteClientCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBasePathMappingOutput {}
-impl std::fmt::Debug for DeleteBasePathMappingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBasePathMappingOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteBasePathMappingOutput`](crate::output::DeleteBasePathMappingOutput).
 pub mod delete_base_path_mapping_output {
 
@@ -15297,14 +14166,8 @@ impl DeleteBasePathMappingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAuthorizerOutput {}
-impl std::fmt::Debug for DeleteAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAuthorizerOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput).
 pub mod delete_authorizer_output {
 
@@ -15327,14 +14190,8 @@ impl DeleteAuthorizerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApiKeyOutput {}
-impl std::fmt::Debug for DeleteApiKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApiKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput).
 pub mod delete_api_key_output {
 
@@ -15357,7 +14214,7 @@ impl DeleteApiKeyOutput {
 
 /// <p>An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcLinkOutput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -15413,19 +14270,6 @@ impl CreateVpcLinkOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateVpcLinkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcLinkOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_arns", &self.target_arns);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput).
@@ -15568,7 +14412,7 @@ impl CreateVpcLinkOutput {
 
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUsagePlanKeyOutput {
     /// <p>The Id of a usage plan key.</p>
     #[doc(hidden)]
@@ -15599,16 +14443,6 @@ impl CreateUsagePlanKeyOutput {
     /// <p>The name of a usage plan key.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateUsagePlanKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUsagePlanKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`CreateUsagePlanKeyOutput`](crate::output::CreateUsagePlanKeyOutput).
@@ -15683,7 +14517,7 @@ impl CreateUsagePlanKeyOutput {
 
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUsagePlanOutput {
     /// <p>The identifier of a UsagePlan resource.</p>
     #[doc(hidden)]
@@ -15746,20 +14580,6 @@ impl CreateUsagePlanOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateUsagePlanOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUsagePlanOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("api_stages", &self.api_stages);
-        formatter.field("throttle", &self.throttle);
-        formatter.field("quota", &self.quota);
-        formatter.field("product_code", &self.product_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateUsagePlanOutput`](crate::output::CreateUsagePlanOutput).
@@ -15914,7 +14734,7 @@ impl CreateUsagePlanOutput {
 
 /// <p>Represents a unique identifier for a version of a deployed RestApi that is callable by users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStageOutput {
     /// <p>The identifier of the Deployment that the stage points to.</p>
     #[doc(hidden)]
@@ -16050,29 +14870,6 @@ impl CreateStageOutput {
     /// <p>The timestamp when the stage last updated.</p>
     pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateStageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStageOutput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("description", &self.description);
-        formatter.field("cache_cluster_enabled", &self.cache_cluster_enabled);
-        formatter.field("cache_cluster_size", &self.cache_cluster_size);
-        formatter.field("cache_cluster_status", &self.cache_cluster_status);
-        formatter.field("method_settings", &self.method_settings);
-        formatter.field("variables", &self.variables);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("canary_settings", &self.canary_settings);
-        formatter.field("tracing_enabled", &self.tracing_enabled);
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.finish()
     }
 }
 /// See [`CreateStageOutput`](crate::output::CreateStageOutput).
@@ -16381,7 +15178,7 @@ impl CreateStageOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -16481,28 +15278,6 @@ impl CreateRestApiOutput {
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(&self) -> bool {
         self.disable_execute_api_endpoint
-    }
-}
-impl std::fmt::Debug for CreateRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateRestApiOutput`](crate::output::CreateRestApiOutput).
@@ -16735,7 +15510,7 @@ impl CreateRestApiOutput {
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceOutput {
     /// <p>The resource's identifier.</p>
     #[doc(hidden)]
@@ -16777,17 +15552,6 @@ impl CreateResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Method>>
     {
         self.resource_methods.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceOutput");
-        formatter.field("id", &self.id);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("path_part", &self.path_part);
-        formatter.field("path", &self.path);
-        formatter.field("resource_methods", &self.resource_methods);
-        formatter.finish()
     }
 }
 /// See [`CreateResourceOutput`](crate::output::CreateResourceOutput).
@@ -16891,7 +15655,7 @@ impl CreateResourceOutput {
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
     #[doc(hidden)]
@@ -16922,19 +15686,6 @@ impl CreateRequestValidatorOutput {
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_parameters(&self) -> bool {
         self.validate_request_parameters
-    }
-}
-impl std::fmt::Debug for CreateRequestValidatorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRequestValidatorOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("validate_request_body", &self.validate_request_body);
-        formatter.field(
-            "validate_request_parameters",
-            &self.validate_request_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateRequestValidatorOutput`](crate::output::CreateRequestValidatorOutput).
@@ -17009,7 +15760,7 @@ impl CreateRequestValidatorOutput {
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelOutput {
     /// <p>The identifier for the model resource.</p>
     #[doc(hidden)]
@@ -17047,17 +15798,6 @@ impl CreateModelOutput {
     /// <p>The content-type for the model.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateModelOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("schema", &self.schema);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`CreateModelOutput`](crate::output::CreateModelOutput).
@@ -17144,7 +15884,7 @@ impl CreateModelOutput {
 
 /// <p>Represents a custom domain name as a user-friendly host name of an API (RestApi).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainNameOutput {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     #[doc(hidden)]
@@ -17274,38 +16014,6 @@ impl CreateDomainNameOutput {
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub fn ownership_verification_certificate_arn(&self) -> std::option::Option<&str> {
         self.ownership_verification_certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDomainNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainNameOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_upload_date", &self.certificate_upload_date);
-        formatter.field("regional_domain_name", &self.regional_domain_name);
-        formatter.field("regional_hosted_zone_id", &self.regional_hosted_zone_id);
-        formatter.field("regional_certificate_name", &self.regional_certificate_name);
-        formatter.field("regional_certificate_arn", &self.regional_certificate_arn);
-        formatter.field("distribution_domain_name", &self.distribution_domain_name);
-        formatter.field(
-            "distribution_hosted_zone_id",
-            &self.distribution_hosted_zone_id,
-        );
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("domain_name_status", &self.domain_name_status);
-        formatter.field(
-            "domain_name_status_message",
-            &self.domain_name_status_message,
-        );
-        formatter.field("security_policy", &self.security_policy);
-        formatter.field("tags", &self.tags);
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field(
-            "ownership_verification_certificate_arn",
-            &self.ownership_verification_certificate_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput).
@@ -17611,7 +16319,7 @@ impl CreateDomainNameOutput {
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
@@ -17635,15 +16343,6 @@ impl CreateDocumentationVersionOutput {
     /// <p>The description of the API documentation snapshot.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDocumentationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDocumentationVersionOutput");
-        formatter.field("version", &self.version);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`CreateDocumentationVersionOutput`](crate::output::CreateDocumentationVersionOutput).
@@ -17709,7 +16408,7 @@ impl CreateDocumentationVersionOutput {
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDocumentationPartOutput {
     /// <p>The DocumentationPart identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     #[doc(hidden)]
@@ -17733,15 +16432,6 @@ impl CreateDocumentationPartOutput {
     /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the properties map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     pub fn properties(&self) -> std::option::Option<&str> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDocumentationPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDocumentationPartOutput");
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`CreateDocumentationPartOutput`](crate::output::CreateDocumentationPartOutput).
@@ -17807,7 +16497,7 @@ impl CreateDocumentationPartOutput {
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentOutput {
     /// <p>The identifier for the deployment resource.</p>
     #[doc(hidden)]
@@ -17850,16 +16540,6 @@ impl CreateDeploymentOutput {
         >,
     > {
         self.api_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentOutput");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("api_summary", &self.api_summary);
-        formatter.finish()
     }
 }
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
@@ -17960,7 +16640,7 @@ impl CreateDeploymentOutput {
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBasePathMappingOutput {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
@@ -17984,15 +16664,6 @@ impl CreateBasePathMappingOutput {
     /// <p>The name of the associated stage.</p>
     pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateBasePathMappingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBasePathMappingOutput");
-        formatter.field("base_path", &self.base_path);
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
     }
 }
 /// See [`CreateBasePathMappingOutput`](crate::output::CreateBasePathMappingOutput).
@@ -18055,7 +16726,7 @@ impl CreateBasePathMappingOutput {
 
 /// <p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAuthorizerOutput {
     /// <p>The identifier for the authorizer resource.</p>
     #[doc(hidden)]
@@ -18128,28 +16799,6 @@ impl CreateAuthorizerOutput {
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     pub fn authorizer_result_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.authorizer_result_ttl_in_seconds
-    }
-}
-impl std::fmt::Debug for CreateAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAuthorizerOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("provider_ar_ns", &self.provider_ar_ns);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("authorizer_credentials", &self.authorizer_credentials);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput).
@@ -18326,7 +16975,7 @@ impl CreateAuthorizerOutput {
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
     #[doc(hidden)]
@@ -18403,22 +17052,6 @@ impl CreateApiKeyOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateApiKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApiKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.field("customer_id", &self.customer_id);
-        formatter.field("description", &self.description);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("stage_keys", &self.stage_keys);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput).

@@ -260,7 +260,7 @@ impl AbortMultipartUploadInput {
 pub mod complete_multipart_upload_input {
 
     /// A builder for [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -465,6 +465,25 @@ pub mod complete_multipart_upload_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("key", &self.key);
+            formatter.field("multipart_upload", &self.multipart_upload);
+            formatter.field("upload_id", &self.upload_id);
+            formatter.field("checksum_crc32", &self.checksum_crc32);
+            formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+            formatter.field("checksum_sha1", &self.checksum_sha1);
+            formatter.field("checksum_sha256", &self.checksum_sha256);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.finish()
+        }
+    }
 }
 impl CompleteMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteMultipartUpload`](crate::operation::CompleteMultipartUpload)>
@@ -651,7 +670,7 @@ impl CompleteMultipartUploadInput {
 pub mod copy_object_input {
 
     /// A builder for [`CopyObjectInput`](crate::input::CopyObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1363,6 +1382,80 @@ pub mod copy_object_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("acl", &self.acl);
+            formatter.field("bucket", &self.bucket);
+            formatter.field("cache_control", &self.cache_control);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.field("content_disposition", &self.content_disposition);
+            formatter.field("content_encoding", &self.content_encoding);
+            formatter.field("content_language", &self.content_language);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("copy_source", &self.copy_source);
+            formatter.field("copy_source_if_match", &self.copy_source_if_match);
+            formatter.field(
+                "copy_source_if_modified_since",
+                &self.copy_source_if_modified_since,
+            );
+            formatter.field("copy_source_if_none_match", &self.copy_source_if_none_match);
+            formatter.field(
+                "copy_source_if_unmodified_since",
+                &self.copy_source_if_unmodified_since,
+            );
+            formatter.field("expires", &self.expires);
+            formatter.field("grant_full_control", &self.grant_full_control);
+            formatter.field("grant_read", &self.grant_read);
+            formatter.field("grant_read_acp", &self.grant_read_acp);
+            formatter.field("grant_write_acp", &self.grant_write_acp);
+            formatter.field("key", &self.key);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("metadata_directive", &self.metadata_directive);
+            formatter.field("tagging_directive", &self.tagging_directive);
+            formatter.field("server_side_encryption", &self.server_side_encryption);
+            formatter.field("storage_class", &self.storage_class);
+            formatter.field("website_redirect_location", &self.website_redirect_location);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "ssekms_encryption_context",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+            formatter.field(
+                "copy_source_sse_customer_algorithm",
+                &self.copy_source_sse_customer_algorithm,
+            );
+            formatter.field(
+                "copy_source_sse_customer_key",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field(
+                "copy_source_sse_customer_key_md5",
+                &self.copy_source_sse_customer_key_md5,
+            );
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("tagging", &self.tagging);
+            formatter.field("object_lock_mode", &self.object_lock_mode);
+            formatter.field(
+                "object_lock_retain_until_date",
+                &self.object_lock_retain_until_date,
+            );
+            formatter.field(
+                "object_lock_legal_hold_status",
+                &self.object_lock_legal_hold_status,
+            );
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field(
+                "expected_source_bucket_owner",
+                &self.expected_source_bucket_owner,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl CopyObjectInput {
     /// Consumes the builder and constructs an Operation<[`CopyObject`](crate::operation::CopyObject)>
@@ -1824,7 +1917,7 @@ impl CreateBucketInput {
 pub mod create_multipart_upload_input {
 
     /// A builder for [`CreateMultipartUploadInput`](crate::input::CreateMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2303,6 +2396,51 @@ pub mod create_multipart_upload_input {
                 expected_bucket_owner: self.expected_bucket_owner,
                 checksum_algorithm: self.checksum_algorithm,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("acl", &self.acl);
+            formatter.field("bucket", &self.bucket);
+            formatter.field("cache_control", &self.cache_control);
+            formatter.field("content_disposition", &self.content_disposition);
+            formatter.field("content_encoding", &self.content_encoding);
+            formatter.field("content_language", &self.content_language);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("expires", &self.expires);
+            formatter.field("grant_full_control", &self.grant_full_control);
+            formatter.field("grant_read", &self.grant_read);
+            formatter.field("grant_read_acp", &self.grant_read_acp);
+            formatter.field("grant_write_acp", &self.grant_write_acp);
+            formatter.field("key", &self.key);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("server_side_encryption", &self.server_side_encryption);
+            formatter.field("storage_class", &self.storage_class);
+            formatter.field("website_redirect_location", &self.website_redirect_location);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "ssekms_encryption_context",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("tagging", &self.tagging);
+            formatter.field("object_lock_mode", &self.object_lock_mode);
+            formatter.field(
+                "object_lock_retain_until_date",
+                &self.object_lock_retain_until_date,
+            );
+            formatter.field(
+                "object_lock_legal_hold_status",
+                &self.object_lock_legal_hold_status,
+            );
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.finish()
         }
     }
 }
@@ -9587,7 +9725,7 @@ impl GetBucketWebsiteInput {
 pub mod get_object_input {
 
     /// A builder for [`GetObjectInput`](crate::input::GetObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
@@ -9908,6 +10046,36 @@ pub mod get_object_input {
                 expected_bucket_owner: self.expected_bucket_owner,
                 checksum_mode: self.checksum_mode,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("if_match", &self.if_match);
+            formatter.field("if_modified_since", &self.if_modified_since);
+            formatter.field("if_none_match", &self.if_none_match);
+            formatter.field("if_unmodified_since", &self.if_unmodified_since);
+            formatter.field("key", &self.key);
+            formatter.field("range", &self.range);
+            formatter.field("response_cache_control", &self.response_cache_control);
+            formatter.field(
+                "response_content_disposition",
+                &self.response_content_disposition,
+            );
+            formatter.field("response_content_encoding", &self.response_content_encoding);
+            formatter.field("response_content_language", &self.response_content_language);
+            formatter.field("response_content_type", &self.response_content_type);
+            formatter.field("response_expires", &self.response_expires);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("part_number", &self.part_number);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("checksum_mode", &self.checksum_mode);
+            formatter.finish()
         }
     }
 }
@@ -10613,7 +10781,7 @@ impl GetObjectAclInput {
 pub mod get_object_attributes_input {
 
     /// A builder for [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -10790,6 +10958,23 @@ pub mod get_object_attributes_input {
                 expected_bucket_owner: self.expected_bucket_owner,
                 object_attributes: self.object_attributes,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("key", &self.key);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("max_parts", &self.max_parts);
+            formatter.field("part_number_marker", &self.part_number_marker);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("object_attributes", &self.object_attributes);
+            formatter.finish()
         }
     }
 }
@@ -12419,7 +12604,7 @@ impl HeadBucketInput {
 pub mod head_object_input {
 
     /// A builder for [`HeadObjectInput`](crate::input::HeadObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
@@ -12643,6 +12828,27 @@ pub mod head_object_input {
                 expected_bucket_owner: self.expected_bucket_owner,
                 checksum_mode: self.checksum_mode,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("if_match", &self.if_match);
+            formatter.field("if_modified_since", &self.if_modified_since);
+            formatter.field("if_none_match", &self.if_none_match);
+            formatter.field("if_unmodified_since", &self.if_unmodified_since);
+            formatter.field("key", &self.key);
+            formatter.field("range", &self.range);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("part_number", &self.part_number);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("checksum_mode", &self.checksum_mode);
+            formatter.finish()
         }
     }
 }
@@ -14924,7 +15130,7 @@ impl ListObjectVersionsInput {
 pub mod list_parts_input {
 
     /// A builder for [`ListPartsInput`](crate::input::ListPartsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -15077,6 +15283,22 @@ pub mod list_parts_input {
                 sse_customer_key: self.sse_customer_key,
                 sse_customer_key_md5: self.sse_customer_key_md5,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("key", &self.key);
+            formatter.field("max_parts", &self.max_parts);
+            formatter.field("part_number_marker", &self.part_number_marker);
+            formatter.field("upload_id", &self.upload_id);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.finish()
         }
     }
 }
@@ -19876,7 +20098,7 @@ impl PutBucketWebsiteInput {
 pub mod put_object_input {
 
     /// A builder for [`PutObjectInput`](crate::input::PutObjectInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -20464,6 +20686,58 @@ pub mod put_object_input {
                 object_lock_legal_hold_status: self.object_lock_legal_hold_status,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("acl", &self.acl);
+            formatter.field("body", &self.body);
+            formatter.field("bucket", &self.bucket);
+            formatter.field("cache_control", &self.cache_control);
+            formatter.field("content_disposition", &self.content_disposition);
+            formatter.field("content_encoding", &self.content_encoding);
+            formatter.field("content_language", &self.content_language);
+            formatter.field("content_length", &self.content_length);
+            formatter.field("content_md5", &self.content_md5);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.field("checksum_crc32", &self.checksum_crc32);
+            formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+            formatter.field("checksum_sha1", &self.checksum_sha1);
+            formatter.field("checksum_sha256", &self.checksum_sha256);
+            formatter.field("expires", &self.expires);
+            formatter.field("grant_full_control", &self.grant_full_control);
+            formatter.field("grant_read", &self.grant_read);
+            formatter.field("grant_read_acp", &self.grant_read_acp);
+            formatter.field("grant_write_acp", &self.grant_write_acp);
+            formatter.field("key", &self.key);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("server_side_encryption", &self.server_side_encryption);
+            formatter.field("storage_class", &self.storage_class);
+            formatter.field("website_redirect_location", &self.website_redirect_location);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "ssekms_encryption_context",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("tagging", &self.tagging);
+            formatter.field("object_lock_mode", &self.object_lock_mode);
+            formatter.field(
+                "object_lock_retain_until_date",
+                &self.object_lock_retain_until_date,
+            );
+            formatter.field(
+                "object_lock_legal_hold_status",
+                &self.object_lock_legal_hold_status,
+            );
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.finish()
         }
     }
 }
@@ -23112,7 +23386,7 @@ impl RestoreObjectInput {
 pub mod select_object_content_input {
 
     /// A builder for [`SelectObjectContentInput`](crate::input::SelectObjectContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -23346,6 +23620,24 @@ pub mod select_object_content_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("key", &self.key);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("expression", &self.expression);
+            formatter.field("expression_type", &self.expression_type);
+            formatter.field("request_progress", &self.request_progress);
+            formatter.field("input_serialization", &self.input_serialization);
+            formatter.field("output_serialization", &self.output_serialization);
+            formatter.field("scan_range", &self.scan_range);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.finish()
+        }
+    }
 }
 impl SelectObjectContentInput {
     /// Consumes the builder and constructs an Operation<[`SelectObjectContent`](crate::operation::SelectObjectContent)>
@@ -23515,7 +23807,7 @@ impl SelectObjectContentInput {
 pub mod upload_part_input {
 
     /// A builder for [`UploadPartInput`](crate::input::UploadPartInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -23771,6 +24063,29 @@ pub mod upload_part_input {
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("body", &self.body);
+            formatter.field("bucket", &self.bucket);
+            formatter.field("content_length", &self.content_length);
+            formatter.field("content_md5", &self.content_md5);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.field("checksum_crc32", &self.checksum_crc32);
+            formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+            formatter.field("checksum_sha1", &self.checksum_sha1);
+            formatter.field("checksum_sha256", &self.checksum_sha256);
+            formatter.field("key", &self.key);
+            formatter.field("part_number", &self.part_number);
+            formatter.field("upload_id", &self.upload_id);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.finish()
         }
     }
 }
@@ -24207,7 +24522,7 @@ impl UploadPartInput {
 pub mod upload_part_copy_input {
 
     /// A builder for [`UploadPartCopyInput`](crate::input::UploadPartCopyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) copy_source: std::option::Option<std::string::String>,
@@ -24565,6 +24880,49 @@ pub mod upload_part_copy_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("copy_source", &self.copy_source);
+            formatter.field("copy_source_if_match", &self.copy_source_if_match);
+            formatter.field(
+                "copy_source_if_modified_since",
+                &self.copy_source_if_modified_since,
+            );
+            formatter.field("copy_source_if_none_match", &self.copy_source_if_none_match);
+            formatter.field(
+                "copy_source_if_unmodified_since",
+                &self.copy_source_if_unmodified_since,
+            );
+            formatter.field("copy_source_range", &self.copy_source_range);
+            formatter.field("key", &self.key);
+            formatter.field("part_number", &self.part_number);
+            formatter.field("upload_id", &self.upload_id);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field(
+                "copy_source_sse_customer_algorithm",
+                &self.copy_source_sse_customer_algorithm,
+            );
+            formatter.field(
+                "copy_source_sse_customer_key",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field(
+                "copy_source_sse_customer_key_md5",
+                &self.copy_source_sse_customer_key_md5,
+            );
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field(
+                "expected_source_bucket_owner",
+                &self.expected_source_bucket_owner,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl UploadPartCopyInput {
     /// Consumes the builder and constructs an Operation<[`UploadPartCopy`](crate::operation::UploadPartCopy)>
@@ -24739,7 +25097,7 @@ impl UploadPartCopyInput {
 pub mod write_get_object_response_input {
 
     /// A builder for [`WriteGetObjectResponseInput`](crate::input::WriteGetObjectResponseInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) request_route: std::option::Option<std::string::String>,
         pub(crate) request_token: std::option::Option<std::string::String>,
@@ -25385,6 +25743,58 @@ pub mod write_get_object_response_input {
                 version_id: self.version_id,
                 bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("request_route", &self.request_route);
+            formatter.field("request_token", &self.request_token);
+            formatter.field("body", &self.body);
+            formatter.field("status_code", &self.status_code);
+            formatter.field("error_code", &self.error_code);
+            formatter.field("error_message", &self.error_message);
+            formatter.field("accept_ranges", &self.accept_ranges);
+            formatter.field("cache_control", &self.cache_control);
+            formatter.field("content_disposition", &self.content_disposition);
+            formatter.field("content_encoding", &self.content_encoding);
+            formatter.field("content_language", &self.content_language);
+            formatter.field("content_length", &self.content_length);
+            formatter.field("content_range", &self.content_range);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("checksum_crc32", &self.checksum_crc32);
+            formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+            formatter.field("checksum_sha1", &self.checksum_sha1);
+            formatter.field("checksum_sha256", &self.checksum_sha256);
+            formatter.field("delete_marker", &self.delete_marker);
+            formatter.field("e_tag", &self.e_tag);
+            formatter.field("expires", &self.expires);
+            formatter.field("expiration", &self.expiration);
+            formatter.field("last_modified", &self.last_modified);
+            formatter.field("missing_meta", &self.missing_meta);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("object_lock_mode", &self.object_lock_mode);
+            formatter.field(
+                "object_lock_legal_hold_status",
+                &self.object_lock_legal_hold_status,
+            );
+            formatter.field(
+                "object_lock_retain_until_date",
+                &self.object_lock_retain_until_date,
+            );
+            formatter.field("parts_count", &self.parts_count);
+            formatter.field("replication_status", &self.replication_status);
+            formatter.field("request_charged", &self.request_charged);
+            formatter.field("restore", &self.restore);
+            formatter.field("server_side_encryption", &self.server_side_encryption);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("storage_class", &self.storage_class);
+            formatter.field("tag_count", &self.tag_count);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+            formatter.finish()
         }
     }
 }
@@ -26494,7 +26904,7 @@ impl std::fmt::Debug for SelectObjectContentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreObjectInput {
     /// <p>The bucket name containing the object to restore. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -26554,23 +26964,10 @@ impl RestoreObjectInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreObjectInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("restore_request", &self.restore_request);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPublicAccessBlockInput {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     #[doc(hidden)]
@@ -26617,24 +27014,10 @@ impl PutPublicAccessBlockInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutPublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPublicAccessBlockInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "public_access_block_configuration",
-            &self.public_access_block_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectTaggingInput {
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -26703,24 +27086,10 @@ impl PutObjectTaggingInput {
         self.request_payer.as_ref()
     }
 }
-impl std::fmt::Debug for PutObjectTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("tagging", &self.tagging);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectRetentionInput {
     /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -26794,28 +27163,10 @@ impl PutObjectRetentionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutObjectRetentionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectRetentionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("retention", &self.retention);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("version_id", &self.version_id);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectLockConfigurationInput {
     /// <p>The bucket whose Object Lock configuration you want to create or replace.</p>
     #[doc(hidden)]
@@ -26875,23 +27226,10 @@ impl PutObjectLockConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutObjectLockConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectLockConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("object_lock_configuration", &self.object_lock_configuration);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("token", &self.token);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectLegalHoldInput {
     /// <p>The bucket name containing the object that you want to place a legal hold on. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -26958,24 +27296,10 @@ impl PutObjectLegalHoldInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutObjectLegalHoldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectLegalHoldInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("legal_hold", &self.legal_hold);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectAclInput {
     /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
     #[doc(hidden)]
@@ -27096,26 +27420,6 @@ impl PutObjectAclInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for PutObjectAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectAclInput");
-        formatter.field("acl", &self.acl);
-        formatter.field("access_control_policy", &self.access_control_policy);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("grant_full_control", &self.grant_full_control);
-        formatter.field("grant_read", &self.grant_read);
-        formatter.field("grant_read_acp", &self.grant_read_acp);
-        formatter.field("grant_write", &self.grant_write);
-        formatter.field("grant_write_acp", &self.grant_write_acp);
-        formatter.field("key", &self.key);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -27476,7 +27780,7 @@ impl std::fmt::Debug for PutObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketWebsiteInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -27522,21 +27826,10 @@ impl PutBucketWebsiteInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketWebsiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketWebsiteInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("website_configuration", &self.website_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketVersioningInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -27589,22 +27882,10 @@ impl PutBucketVersioningInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketVersioningInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketVersioningInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("versioning_configuration", &self.versioning_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketTaggingInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -27648,21 +27929,10 @@ impl PutBucketTaggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("tagging", &self.tagging);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketRequestPaymentInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -27709,24 +27979,10 @@ impl PutBucketRequestPaymentInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketRequestPaymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketRequestPaymentInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "request_payment_configuration",
-            &self.request_payment_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketReplicationInput {
     /// <p>The name of the bucket</p>
     #[doc(hidden)]
@@ -27779,22 +28035,10 @@ impl PutBucketReplicationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketReplicationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("replication_configuration", &self.replication_configuration);
-        formatter.field("token", &self.token);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketPolicyInput {
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
@@ -27845,25 +28089,10 @@ impl PutBucketPolicyInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketPolicyInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "confirm_remove_self_bucket_access",
-            &self.confirm_remove_self_bucket_access,
-        );
-        formatter.field("policy", &self.policy);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
     #[doc(hidden)]
@@ -27898,20 +28127,10 @@ impl PutBucketOwnershipControlsInput {
         self.ownership_controls.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketOwnershipControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketOwnershipControlsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("ownership_controls", &self.ownership_controls);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketNotificationConfigurationInput {
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
@@ -27946,26 +28165,10 @@ impl PutBucketNotificationConfigurationInput {
         self.skip_destination_validation
     }
 }
-impl std::fmt::Debug for PutBucketNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketNotificationConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field(
-            "skip_destination_validation",
-            &self.skip_destination_validation,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketMetricsConfigurationInput {
     /// <p>The name of the bucket for which the metrics configuration is set.</p>
     #[doc(hidden)]
@@ -28000,20 +28203,10 @@ impl PutBucketMetricsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketMetricsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketMetricsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("metrics_configuration", &self.metrics_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketLoggingInput {
     /// <p>The name of the bucket for which to set the logging parameters.</p>
     #[doc(hidden)]
@@ -28057,21 +28250,10 @@ impl PutBucketLoggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketLoggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("bucket_logging_status", &self.bucket_logging_status);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationInput {
     /// <p>The name of the bucket for which to set the configuration.</p>
     #[doc(hidden)]
@@ -28108,20 +28290,10 @@ impl PutBucketLifecycleConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketLifecycleConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketInventoryConfigurationInput {
     /// <p>The name of the bucket where the inventory configuration will be stored.</p>
     #[doc(hidden)]
@@ -28156,20 +28328,10 @@ impl PutBucketInventoryConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketInventoryConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketInventoryConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("inventory_configuration", &self.inventory_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
@@ -28198,22 +28360,10 @@ impl PutBucketIntelligentTieringConfigurationInput {
         self.intelligent_tiering_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketIntelligentTieringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketIntelligentTieringConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field(
-            "intelligent_tiering_configuration",
-            &self.intelligent_tiering_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketEncryptionInput {
     /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -28260,24 +28410,10 @@ impl PutBucketEncryptionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketEncryptionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketCorsInput {
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
     #[doc(hidden)]
@@ -28321,21 +28457,10 @@ impl PutBucketCorsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketCorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketCorsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("cors_configuration", &self.cors_configuration);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket to which an analytics configuration is stored.</p>
     #[doc(hidden)]
@@ -28370,20 +28495,10 @@ impl PutBucketAnalyticsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketAnalyticsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketAnalyticsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("analytics_configuration", &self.analytics_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAclInput {
     /// <p>The canned ACL to apply to the bucket.</p>
     #[doc(hidden)]
@@ -28471,27 +28586,10 @@ impl PutBucketAclInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketAclInput");
-        formatter.field("acl", &self.acl);
-        formatter.field("access_control_policy", &self.access_control_policy);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("grant_full_control", &self.grant_full_control);
-        formatter.field("grant_read", &self.grant_read);
-        formatter.field("grant_read_acp", &self.grant_read_acp);
-        formatter.field("grant_write", &self.grant_write);
-        formatter.field("grant_write_acp", &self.grant_write_acp);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is set.</p>
     #[doc(hidden)]
@@ -28526,16 +28624,6 @@ impl PutBucketAccelerateConfigurationInput {
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
-    }
-}
-impl std::fmt::Debug for PutBucketAccelerateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketAccelerateConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("accelerate_configuration", &self.accelerate_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.finish()
     }
 }
 
@@ -28639,7 +28727,7 @@ impl std::fmt::Debug for ListPartsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectVersionsInput {
     /// <p>The bucket name that contains the objects. </p>
     #[doc(hidden)]
@@ -28704,24 +28792,10 @@ impl ListObjectVersionsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListObjectVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectVersionsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("key_marker", &self.key_marker);
-        formatter.field("max_keys", &self.max_keys);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("version_id_marker", &self.version_id_marker);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectsV2Input {
     /// <p>Bucket name to list. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28800,26 +28874,10 @@ impl ListObjectsV2Input {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListObjectsV2Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectsV2Input");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("max_keys", &self.max_keys);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("fetch_owner", &self.fetch_owner);
-        formatter.field("start_after", &self.start_after);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectsInput {
     /// <p>The name of the bucket containing the objects.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28884,24 +28942,10 @@ impl ListObjectsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_keys", &self.max_keys);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultipartUploadsInput {
     /// <p>The name of the bucket to which the multipart upload was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28972,35 +29016,15 @@ impl ListMultipartUploadsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListMultipartUploadsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultipartUploadsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("key_marker", &self.key_marker);
-        formatter.field("max_uploads", &self.max_uploads);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("upload_id_marker", &self.upload_id_marker);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketsInput {}
-impl std::fmt::Debug for ListBucketsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketMetricsConfigurationsInput {
     /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
     #[doc(hidden)]
@@ -29026,19 +29050,10 @@ impl ListBucketMetricsConfigurationsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListBucketMetricsConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketMetricsConfigurationsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketInventoryConfigurationsInput {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
     #[doc(hidden)]
@@ -29064,19 +29079,10 @@ impl ListBucketInventoryConfigurationsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListBucketInventoryConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketInventoryConfigurationsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketIntelligentTieringConfigurationsInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
@@ -29095,18 +29101,10 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         self.continuation_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBucketIntelligentTieringConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketIntelligentTieringConfigurationsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketAnalyticsConfigurationsInput {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     #[doc(hidden)]
@@ -29130,15 +29128,6 @@ impl ListBucketAnalyticsConfigurationsInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for ListBucketAnalyticsConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketAnalyticsConfigurationsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -29284,7 +29273,7 @@ impl std::fmt::Debug for HeadObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HeadBucketInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29307,18 +29296,10 @@ impl HeadBucketInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for HeadBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HeadBucketInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicAccessBlockInput {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to retrieve. </p>
     #[doc(hidden)]
@@ -29337,18 +29318,10 @@ impl GetPublicAccessBlockInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetPublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicAccessBlockInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectTorrentInput {
     /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
     #[doc(hidden)]
@@ -29381,20 +29354,10 @@ impl GetObjectTorrentInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectTorrentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectTorrentInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectTaggingInput {
     /// <p>The bucket name containing the object for which to get the tagging information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29438,21 +29401,10 @@ impl GetObjectTaggingInput {
         self.request_payer.as_ref()
     }
 }
-impl std::fmt::Debug for GetObjectTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectRetentionInput {
     /// <p>The bucket name containing the object whose retention settings you want to retrieve. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29494,21 +29446,10 @@ impl GetObjectRetentionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectRetentionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectRetentionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectLockConfigurationInput {
     /// <p>The bucket whose Object Lock configuration you want to retrieve.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29529,18 +29470,10 @@ impl GetObjectLockConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectLockConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectLockConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectLegalHoldInput {
     /// <p>The bucket name containing the object whose legal hold status you want to retrieve. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29580,17 +29513,6 @@ impl GetObjectLegalHoldInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for GetObjectLegalHoldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectLegalHoldInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -29702,7 +29624,7 @@ impl std::fmt::Debug for GetObjectAttributesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectAclInput {
     /// <p>The bucket name that contains the object for which to get the ACL information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29742,17 +29664,6 @@ impl GetObjectAclInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for GetObjectAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectAclInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -29953,7 +29864,7 @@ impl std::fmt::Debug for GetObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketWebsiteInput {
     /// <p>The bucket name for which to get the website configuration.</p>
     #[doc(hidden)]
@@ -29972,18 +29883,10 @@ impl GetBucketWebsiteInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketWebsiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketWebsiteInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketVersioningInput {
     /// <p>The name of the bucket for which to get the versioning information.</p>
     #[doc(hidden)]
@@ -30002,18 +29905,10 @@ impl GetBucketVersioningInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketVersioningInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketVersioningInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketTaggingInput {
     /// <p>The name of the bucket for which to get the tagging information.</p>
     #[doc(hidden)]
@@ -30032,18 +29927,10 @@ impl GetBucketTaggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketRequestPaymentInput {
     /// <p>The name of the bucket for which to get the payment request configuration</p>
     #[doc(hidden)]
@@ -30062,18 +29949,10 @@ impl GetBucketRequestPaymentInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketRequestPaymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketRequestPaymentInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketReplicationInput {
     /// <p>The bucket name for which to get the replication information.</p>
     #[doc(hidden)]
@@ -30092,18 +29971,10 @@ impl GetBucketReplicationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketReplicationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketPolicyStatusInput {
     /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
     #[doc(hidden)]
@@ -30122,18 +29993,10 @@ impl GetBucketPolicyStatusInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketPolicyStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketPolicyStatusInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketPolicyInput {
     /// <p>The bucket name for which to get the bucket policy.</p>
     #[doc(hidden)]
@@ -30152,18 +30015,10 @@ impl GetBucketPolicyInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketPolicyInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve. </p>
     #[doc(hidden)]
@@ -30182,18 +30037,10 @@ impl GetBucketOwnershipControlsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketOwnershipControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketOwnershipControlsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketNotificationConfigurationInput {
     /// <p>The name of the bucket for which to get the notification configuration.</p>
     #[doc(hidden)]
@@ -30212,18 +30059,10 @@ impl GetBucketNotificationConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketNotificationConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketMetricsConfigurationInput {
     /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
     #[doc(hidden)]
@@ -30249,19 +30088,10 @@ impl GetBucketMetricsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketMetricsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketMetricsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketLoggingInput {
     /// <p>The bucket name for which to get the logging information.</p>
     #[doc(hidden)]
@@ -30280,18 +30110,10 @@ impl GetBucketLoggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketLoggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketLocationInput {
     /// <p>The name of the bucket for which to get the location.</p>
     #[doc(hidden)]
@@ -30310,18 +30132,10 @@ impl GetBucketLocationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketLocationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketLifecycleConfigurationInput {
     /// <p>The name of the bucket for which to get the lifecycle information.</p>
     #[doc(hidden)]
@@ -30340,18 +30154,10 @@ impl GetBucketLifecycleConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketLifecycleConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketInventoryConfigurationInput {
     /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
     #[doc(hidden)]
@@ -30377,19 +30183,10 @@ impl GetBucketInventoryConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketInventoryConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketInventoryConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
@@ -30408,18 +30205,10 @@ impl GetBucketIntelligentTieringConfigurationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketIntelligentTieringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketIntelligentTieringConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketEncryptionInput {
     /// <p>The name of the bucket from which the server-side encryption configuration is retrieved.</p>
     #[doc(hidden)]
@@ -30438,18 +30227,10 @@ impl GetBucketEncryptionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketEncryptionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketCorsInput {
     /// <p>The bucket name for which to get the cors configuration.</p>
     #[doc(hidden)]
@@ -30468,18 +30249,10 @@ impl GetBucketCorsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketCorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketCorsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
     #[doc(hidden)]
@@ -30505,19 +30278,10 @@ impl GetBucketAnalyticsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketAnalyticsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketAnalyticsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketAclInput {
     /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
     #[doc(hidden)]
@@ -30536,18 +30300,10 @@ impl GetBucketAclInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketAclInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
     #[doc(hidden)]
@@ -30566,18 +30322,10 @@ impl GetBucketAccelerateConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketAccelerateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketAccelerateConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePublicAccessBlockInput {
     /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
     #[doc(hidden)]
@@ -30596,18 +30344,10 @@ impl DeletePublicAccessBlockInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePublicAccessBlockInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectTaggingInput {
     /// <p>The bucket name containing the objects from which to remove the tags. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -30644,20 +30384,10 @@ impl DeleteObjectTaggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteObjectTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectsInput {
     /// <p>The bucket name containing the objects to delete. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -30719,26 +30449,10 @@ impl DeleteObjectsInput {
         self.checksum_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delete", &self.delete);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// <p>The bucket name of the bucket containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -30796,26 +30510,10 @@ impl DeleteObjectInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketWebsiteInput {
     /// <p>The bucket name for which you want to remove the website configuration. </p>
     #[doc(hidden)]
@@ -30834,18 +30532,10 @@ impl DeleteBucketWebsiteInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketWebsiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketWebsiteInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketTaggingInput {
     /// <p>The bucket that has the tag set to be removed.</p>
     #[doc(hidden)]
@@ -30864,18 +30554,10 @@ impl DeleteBucketTaggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketReplicationInput {
     /// <p> The bucket name. </p>
     #[doc(hidden)]
@@ -30894,18 +30576,10 @@ impl DeleteBucketReplicationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketReplicationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketPolicyInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -30924,18 +30598,10 @@ impl DeleteBucketPolicyInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketPolicyInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketOwnershipControlsInput {
     /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
     #[doc(hidden)]
@@ -30954,18 +30620,10 @@ impl DeleteBucketOwnershipControlsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketOwnershipControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketOwnershipControlsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketMetricsConfigurationInput {
     /// <p>The name of the bucket containing the metrics configuration to delete.</p>
     #[doc(hidden)]
@@ -30991,19 +30649,10 @@ impl DeleteBucketMetricsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketMetricsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketMetricsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketLifecycleInput {
     /// <p>The bucket name of the lifecycle to delete.</p>
     #[doc(hidden)]
@@ -31022,18 +30671,10 @@ impl DeleteBucketLifecycleInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketLifecycleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketLifecycleInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketInventoryConfigurationInput {
     /// <p>The name of the bucket containing the inventory configuration to delete.</p>
     #[doc(hidden)]
@@ -31059,19 +30700,10 @@ impl DeleteBucketInventoryConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketInventoryConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketInventoryConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
@@ -31090,18 +30722,10 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketIntelligentTieringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketIntelligentTieringConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketEncryptionInput {
     /// <p>The name of the bucket containing the server-side encryption configuration to delete.</p>
     #[doc(hidden)]
@@ -31120,18 +30744,10 @@ impl DeleteBucketEncryptionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketEncryptionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketCorsInput {
     /// <p>Specifies the bucket whose <code>cors</code> configuration is being deleted.</p>
     #[doc(hidden)]
@@ -31150,18 +30766,10 @@ impl DeleteBucketCorsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketCorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketCorsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket from which an analytics configuration is deleted.</p>
     #[doc(hidden)]
@@ -31187,19 +30795,10 @@ impl DeleteBucketAnalyticsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketAnalyticsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketAnalyticsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketInput {
     /// <p>Specifies the bucket being deleted.</p>
     #[doc(hidden)]
@@ -31216,14 +30815,6 @@ impl DeleteBucketInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -31518,7 +31109,7 @@ impl std::fmt::Debug for CreateMultipartUploadInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p>
     #[doc(hidden)]
@@ -31601,28 +31192,6 @@ impl CreateBucketInput {
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub fn object_ownership(&self) -> std::option::Option<&crate::model::ObjectOwnership> {
         self.object_ownership.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBucketInput");
-        formatter.field("acl", &self.acl);
-        formatter.field("bucket", &self.bucket);
-        formatter.field(
-            "create_bucket_configuration",
-            &self.create_bucket_configuration,
-        );
-        formatter.field("grant_full_control", &self.grant_full_control);
-        formatter.field("grant_read", &self.grant_read);
-        formatter.field("grant_read_acp", &self.grant_read_acp);
-        formatter.field("grant_write", &self.grant_write);
-        formatter.field("grant_write_acp", &self.grant_write_acp);
-        formatter.field(
-            "object_lock_enabled_for_bucket",
-            &self.object_lock_enabled_for_bucket,
-        );
-        formatter.field("object_ownership", &self.object_ownership);
-        formatter.finish()
     }
 }
 
@@ -32205,7 +31774,7 @@ impl std::fmt::Debug for CompleteMultipartUploadInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortMultipartUploadInput {
     /// <p>The bucket name to which the upload was taking place. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -32247,16 +31816,5 @@ impl AbortMultipartUploadInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for AbortMultipartUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortMultipartUploadInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }

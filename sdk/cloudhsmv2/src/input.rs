@@ -2596,7 +2596,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     #[doc(hidden)]
@@ -2615,18 +2615,10 @@ impl UntagResourceInput {
         self.tag_key_list.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tag_key_list", &self.tag_key_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     #[doc(hidden)]
@@ -2645,18 +2637,10 @@ impl TagResourceInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreBackupInput {
     /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     #[doc(hidden)]
@@ -2668,17 +2652,10 @@ impl RestoreBackupInput {
         self.backup_id.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreBackupInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
     #[doc(hidden)]
@@ -2699,18 +2676,10 @@ impl ModifyClusterInput {
         self.cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyClusterInput");
-        formatter.field("backup_retention_policy", &self.backup_retention_policy);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyBackupAttributesInput {
     /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     #[doc(hidden)]
@@ -2729,18 +2698,10 @@ impl ModifyBackupAttributesInput {
         self.never_expires
     }
 }
-impl std::fmt::Debug for ModifyBackupAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyBackupAttributesInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("never_expires", &self.never_expires);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     #[doc(hidden)]
@@ -2766,19 +2727,10 @@ impl ListTagsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitializeClusterInput {
     /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     #[doc(hidden)]
@@ -2804,19 +2756,10 @@ impl InitializeClusterInput {
         self.trust_anchor.as_deref()
     }
 }
-impl std::fmt::Debug for InitializeClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitializeClusterInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("signed_cert", &self.signed_cert);
-        formatter.field("trust_anchor", &self.trust_anchor);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClustersInput {
     /// <p>One or more filters to limit the items returned in the response.</p>
     /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
@@ -2854,19 +2797,10 @@ impl DescribeClustersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClustersInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBackupsInput {
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
     #[doc(hidden)]
@@ -2915,20 +2849,10 @@ impl DescribeBackupsInput {
         self.sort_ascending
     }
 }
-impl std::fmt::Debug for DescribeBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBackupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field("sort_ascending", &self.sort_ascending);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHsmInput {
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
     #[doc(hidden)]
@@ -2961,20 +2885,10 @@ impl DeleteHsmInput {
         self.eni_ip.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHsmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHsmInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("hsm_id", &self.hsm_id);
-        formatter.field("eni_id", &self.eni_id);
-        formatter.field("eni_ip", &self.eni_ip);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     #[doc(hidden)]
@@ -2986,17 +2900,10 @@ impl DeleteClusterInput {
         self.cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClusterInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupInput {
     /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     #[doc(hidden)]
@@ -3008,17 +2915,10 @@ impl DeleteBackupInput {
         self.backup_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHsmInput {
     /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     #[doc(hidden)]
@@ -3044,19 +2944,10 @@ impl CreateHsmInput {
         self.ip_address.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHsmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHsmInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
     #[doc(hidden)]
@@ -3106,21 +2997,10 @@ impl CreateClusterInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for CreateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateClusterInput");
-        formatter.field("backup_retention_policy", &self.backup_retention_policy);
-        formatter.field("hsm_type", &self.hsm_type);
-        formatter.field("source_backup_id", &self.source_backup_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyBackupToRegionInput {
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
     #[doc(hidden)]
@@ -3144,14 +3024,5 @@ impl CopyBackupToRegionInput {
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for CopyBackupToRegionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyBackupToRegionInput");
-        formatter.field("destination_region", &self.destination_region);
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }

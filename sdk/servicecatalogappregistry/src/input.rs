@@ -4077,7 +4077,7 @@ impl UpdateAttributeGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     #[doc(hidden)]
@@ -4112,20 +4112,10 @@ impl UpdateAttributeGroupInput {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAttributeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAttributeGroupInput");
-        formatter.field("attribute_group", &self.attribute_group);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name or ID of the application that will be updated.</p>
     #[doc(hidden)]
@@ -4153,19 +4143,10 @@ impl UpdateApplicationInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     #[doc(hidden)]
@@ -4184,18 +4165,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     #[doc(hidden)]
@@ -4218,18 +4191,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SyncResourceInput {
     /// <p>The type of resource of which the application will be associated.</p>
     #[doc(hidden)]
@@ -4248,18 +4213,10 @@ impl SyncResourceInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for SyncResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SyncResourceInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     #[doc(hidden)]
@@ -4271,17 +4228,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttributeGroupsForApplicationInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4307,19 +4257,10 @@ impl ListAttributeGroupsForApplicationInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAttributeGroupsForApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttributeGroupsForApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttributeGroupsInput {
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     #[doc(hidden)]
@@ -4338,18 +4279,10 @@ impl ListAttributeGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAttributeGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttributeGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociatedResourcesInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4375,19 +4308,10 @@ impl ListAssociatedResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssociatedResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociatedResourcesInput");
-        formatter.field("application", &self.application);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociatedAttributeGroupsInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4413,19 +4337,10 @@ impl ListAssociatedAttributeGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssociatedAttributeGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociatedAttributeGroupsInput");
-        formatter.field("application", &self.application);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     #[doc(hidden)]
@@ -4444,18 +4359,10 @@ impl ListApplicationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     #[doc(hidden)]
@@ -4467,17 +4374,10 @@ impl GetAttributeGroupInput {
         self.attribute_group.as_deref()
     }
 }
-impl std::fmt::Debug for GetAttributeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAttributeGroupInput");
-        formatter.field("attribute_group", &self.attribute_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssociatedResourceInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4503,19 +4403,10 @@ impl GetAssociatedResourceInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssociatedResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssociatedResourceInput");
-        formatter.field("application", &self.application);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4527,17 +4418,10 @@ impl GetApplicationInput {
         self.application.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResourceInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4563,19 +4447,10 @@ impl DisassociateResourceInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResourceInput");
-        formatter.field("application", &self.application);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAttributeGroupInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4594,18 +4469,10 @@ impl DisassociateAttributeGroupInput {
         self.attribute_group.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateAttributeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAttributeGroupInput");
-        formatter.field("application", &self.application);
-        formatter.field("attribute_group", &self.attribute_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     #[doc(hidden)]
@@ -4617,17 +4484,10 @@ impl DeleteAttributeGroupInput {
         self.attribute_group.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAttributeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAttributeGroupInput");
-        formatter.field("attribute_group", &self.attribute_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4639,17 +4499,10 @@ impl DeleteApplicationInput {
         self.application.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAttributeGroupInput {
     /// <p>The name of the attribute group.</p>
     #[doc(hidden)]
@@ -4693,21 +4546,10 @@ impl CreateAttributeGroupInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAttributeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAttributeGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
     #[doc(hidden)]
@@ -4744,20 +4586,10 @@ impl CreateApplicationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4783,19 +4615,10 @@ impl AssociateResourceInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceInput");
-        formatter.field("application", &self.application);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAttributeGroupInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
@@ -4812,13 +4635,5 @@ impl AssociateAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub fn attribute_group(&self) -> std::option::Option<&str> {
         self.attribute_group.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateAttributeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAttributeGroupInput");
-        formatter.field("application", &self.application);
-        formatter.field("attribute_group", &self.attribute_group);
-        formatter.finish()
     }
 }

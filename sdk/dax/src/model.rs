@@ -6,7 +6,7 @@
 /// <li> <p> <i>ModifySubnetGroup</i> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetGroup {
     /// <p>The name of the subnet group.</p>
     #[doc(hidden)]
@@ -37,16 +37,6 @@ impl SubnetGroup {
     /// <p>A list of subnets associated with the subnet group. </p>
     pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
         self.subnets.as_deref()
-    }
-}
-impl std::fmt::Debug for SubnetGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetGroup");
-        formatter.field("subnet_group_name", &self.subnet_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnets", &self.subnets);
-        formatter.finish()
     }
 }
 /// See [`SubnetGroup`](crate::model::SubnetGroup).
@@ -133,7 +123,7 @@ impl SubnetGroup {
 
 /// <p>Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The system-assigned identifier for the subnet.</p>
     #[doc(hidden)]
@@ -150,14 +140,6 @@ impl Subnet {
     /// <p>The Availability Zone (AZ) for the subnet.</p>
     pub fn subnet_availability_zone(&self) -> std::option::Option<&str> {
         self.subnet_availability_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for Subnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subnet");
-        formatter.field("subnet_identifier", &self.subnet_identifier);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.finish()
     }
 }
 /// See [`Subnet`](crate::model::Subnet).
@@ -214,7 +196,7 @@ impl Subnet {
 
 /// <p>A named set of parameters that are applied to all of the nodes in a DAX cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterGroup {
     /// <p>The name of the parameter group.</p>
     #[doc(hidden)]
@@ -231,14 +213,6 @@ impl ParameterGroup {
     /// <p>A description of the parameter group.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterGroup");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ParameterGroup`](crate::model::ParameterGroup).
@@ -292,7 +266,7 @@ impl ParameterGroup {
 
 /// <p>An individual DAX parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterNameValue {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -309,14 +283,6 @@ impl ParameterNameValue {
     /// <p>The value of the parameter.</p>
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterNameValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterNameValue");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
     }
 }
 /// See [`ParameterNameValue`](crate::model::ParameterNameValue).
@@ -373,7 +339,7 @@ impl ParameterNameValue {
 
 /// <p>Contains all of the attributes of a specific DAX cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The name of the DAX cluster.</p>
     #[doc(hidden)]
@@ -513,42 +479,6 @@ impl Cluster {
         &self,
     ) -> std::option::Option<&crate::model::ClusterEndpointEncryptionType> {
         self.cluster_endpoint_encryption_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("description", &self.description);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("total_nodes", &self.total_nodes);
-        formatter.field("active_nodes", &self.active_nodes);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "cluster_discovery_endpoint",
-            &self.cluster_discovery_endpoint,
-        );
-        formatter.field("node_ids_to_remove", &self.node_ids_to_remove);
-        formatter.field("nodes", &self.nodes);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.field("subnet_group", &self.subnet_group);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("parameter_group", &self.parameter_group);
-        formatter.field("sse_description", &self.sse_description);
-        formatter.field(
-            "cluster_endpoint_encryption_type",
-            &self.cluster_endpoint_encryption_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
@@ -946,7 +876,7 @@ impl AsRef<str> for ClusterEndpointEncryptionType {
 
 /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SseDescription {
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
@@ -968,13 +898,6 @@ impl SseDescription {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::SseStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for SseDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SseDescription");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SseDescription`](crate::model::SseDescription).
@@ -1125,7 +1048,7 @@ impl AsRef<str> for SseStatus {
 
 /// <p>The status of a parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterGroupStatus {
     /// <p>The name of the parameter group.</p>
     #[doc(hidden)]
@@ -1149,15 +1072,6 @@ impl ParameterGroupStatus {
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
     pub fn node_ids_to_reboot(&self) -> std::option::Option<&[std::string::String]> {
         self.node_ids_to_reboot.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterGroupStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterGroupStatus");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("parameter_apply_status", &self.parameter_apply_status);
-        formatter.field("node_ids_to_reboot", &self.node_ids_to_reboot);
-        formatter.finish()
     }
 }
 /// See [`ParameterGroupStatus`](crate::model::ParameterGroupStatus).
@@ -1235,7 +1149,7 @@ impl ParameterGroupStatus {
 
 /// <p>An individual VPC security group and its status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupMembership {
     /// <p>The unique ID for this security group.</p>
     #[doc(hidden)]
@@ -1252,14 +1166,6 @@ impl SecurityGroupMembership {
     /// <p>The status of this security group.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityGroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupMembership");
-        formatter.field("security_group_identifier", &self.security_group_identifier);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
@@ -1313,7 +1219,7 @@ impl SecurityGroupMembership {
 
 /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
     #[doc(hidden)]
@@ -1330,14 +1236,6 @@ impl NotificationConfiguration {
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
     pub fn topic_status(&self) -> std::option::Option<&str> {
         self.topic_status.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfiguration");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("topic_status", &self.topic_status);
-        formatter.finish()
     }
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
@@ -1388,7 +1286,7 @@ impl NotificationConfiguration {
 
 /// <p>Represents an individual node within a DAX cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Node {
     /// <p>A system-generated identifier for the node.</p>
     #[doc(hidden)]
@@ -1433,18 +1331,6 @@ impl Node {
     /// <p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>
     pub fn parameter_group_status(&self) -> std::option::Option<&str> {
         self.parameter_group_status.as_deref()
-    }
-}
-impl std::fmt::Debug for Node {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Node");
-        formatter.field("node_id", &self.node_id);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("node_create_time", &self.node_create_time);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("node_status", &self.node_status);
-        formatter.field("parameter_group_status", &self.parameter_group_status);
-        formatter.finish()
     }
 }
 /// See [`Node`](crate::model::Node).
@@ -1552,7 +1438,7 @@ impl Node {
 
 /// <p>Represents the information required for client programs to connect to the endpoint for a DAX cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The DNS hostname of the endpoint.</p>
     #[doc(hidden)]
@@ -1576,15 +1462,6 @@ impl Endpoint {
     /// <p>The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("address", &self.address);
-        formatter.field("port", &self.port);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
@@ -1649,7 +1526,7 @@ impl Endpoint {
 /// <p>AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.</p>
 /// <p>You cannot backdate the application of a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key for the tag. Tag keys are case sensitive. Every DAX cluster can only have one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.</p>
     #[doc(hidden)]
@@ -1666,14 +1543,6 @@ impl Tag {
     /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1724,7 +1593,7 @@ impl Tag {
 
 /// <p>Describes an individual setting that controls some aspect of DAX behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -1800,22 +1669,6 @@ impl Parameter {
     /// <p>The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.</p>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Parameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_type", &self.parameter_type);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.field("node_type_specific_values", &self.node_type_specific_values);
-        formatter.field("description", &self.description);
-        formatter.field("source", &self.source);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("is_modifiable", &self.is_modifiable);
-        formatter.field("change_type", &self.change_type);
-        formatter.finish()
     }
 }
 /// See [`Parameter`](crate::model::Parameter).
@@ -2178,7 +2031,7 @@ impl AsRef<str> for IsModifiable {
 
 /// <p>Represents a parameter value that is applicable to a particular node type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeTypeSpecificValue {
     /// <p>A node type to which the parameter value applies.</p>
     #[doc(hidden)]
@@ -2195,14 +2048,6 @@ impl NodeTypeSpecificValue {
     /// <p>The parameter value for this node type.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeTypeSpecificValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeTypeSpecificValue");
-        formatter.field("node_type", &self.node_type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`NodeTypeSpecificValue`](crate::model::NodeTypeSpecificValue).
@@ -2343,7 +2188,7 @@ impl AsRef<str> for ParameterType {
 
 /// <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>
     #[doc(hidden)]
@@ -2374,16 +2219,6 @@ impl Event {
     /// <p>The date and time when the event occurred.</p>
     pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("source_name", &self.source_name);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("message", &self.message);
-        formatter.field("date", &self.date);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -2556,7 +2391,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Represents the settings used to enable server-side encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SseSpecification {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     #[doc(hidden)]
@@ -2566,13 +2401,6 @@ impl SseSpecification {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for SseSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SseSpecification");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`SseSpecification`](crate::model::SseSpecification).

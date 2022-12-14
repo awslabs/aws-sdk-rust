@@ -1226,7 +1226,7 @@ impl UpdateScalingPlanInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -1263,20 +1263,10 @@ impl UpdateScalingPlanInput {
         self.scaling_instructions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateScalingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateScalingPlanInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("application_source", &self.application_source);
-        formatter.field("scaling_instructions", &self.scaling_instructions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataInput {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -1351,24 +1341,10 @@ impl GetScalingPlanResourceForecastDataInput {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetScalingPlanResourceForecastDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetScalingPlanResourceForecastDataInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("forecast_data_type", &self.forecast_data_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingPlansInput {
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
     #[doc(hidden)]
@@ -1412,21 +1388,10 @@ impl DescribeScalingPlansInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingPlansInput");
-        formatter.field("scaling_plan_names", &self.scaling_plan_names);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("application_sources", &self.application_sources);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingPlanResourcesInput {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -1459,20 +1424,10 @@ impl DescribeScalingPlanResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingPlanResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingPlanResourcesInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -1491,18 +1446,10 @@ impl DeleteScalingPlanInput {
         self.scaling_plan_version
     }
 }
-impl std::fmt::Debug for DeleteScalingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScalingPlanInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateScalingPlanInput {
     /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
     #[doc(hidden)]
@@ -1530,14 +1477,5 @@ impl CreateScalingPlanInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     pub fn scaling_instructions(&self) -> std::option::Option<&[crate::model::ScalingInstruction]> {
         self.scaling_instructions.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateScalingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateScalingPlanInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("application_source", &self.application_source);
-        formatter.field("scaling_instructions", &self.scaling_instructions);
-        formatter.finish()
     }
 }

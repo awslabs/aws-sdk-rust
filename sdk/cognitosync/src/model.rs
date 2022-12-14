@@ -2,7 +2,7 @@
 
 /// The basic data structure of a dataset.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Record {
     /// The key for the record.
     #[doc(hidden)]
@@ -47,18 +47,6 @@ impl Record {
     /// The last modified date of the client device.
     pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("sync_count", &self.sync_count);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("device_last_modified_date", &self.device_last_modified_date);
-        formatter.finish()
     }
 }
 /// See [`Record`](crate::model::Record).
@@ -166,7 +154,7 @@ impl Record {
 
 /// An update operation for a record.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordPatch {
     /// An operation, either replace or remove.
     #[doc(hidden)]
@@ -204,17 +192,6 @@ impl RecordPatch {
     /// The last modified date of the client device.
     pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
-    }
-}
-impl std::fmt::Debug for RecordPatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordPatch");
-        formatter.field("op", &self.op);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("sync_count", &self.sync_count);
-        formatter.field("device_last_modified_date", &self.device_last_modified_date);
-        formatter.finish()
     }
 }
 /// See [`RecordPatch`](crate::model::RecordPatch).
@@ -394,7 +371,7 @@ impl AsRef<str> for Operation {
 
 /// Configuration options for configure Cognito streams.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CognitoStreams {
     /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
     #[doc(hidden)]
@@ -422,15 +399,6 @@ impl CognitoStreams {
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
     pub fn streaming_status(&self) -> std::option::Option<&crate::model::StreamingStatus> {
         self.streaming_status.as_ref()
-    }
-}
-impl std::fmt::Debug for CognitoStreams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CognitoStreams");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("streaming_status", &self.streaming_status);
-        formatter.finish()
     }
 }
 /// See [`CognitoStreams`](crate::model::CognitoStreams).
@@ -590,7 +558,7 @@ impl AsRef<str> for StreamingStatus {
 
 /// <p>Configuration options to be applied to the identity pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PushSync {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
     #[doc(hidden)]
@@ -607,14 +575,6 @@ impl PushSync {
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for PushSync {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PushSync");
-        formatter.field("application_arns", &self.application_arns);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`PushSync`](crate::model::PushSync).
@@ -774,7 +734,7 @@ impl AsRef<str> for Platform {
 
 /// Usage information for the identity pool.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityPoolUsage {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -805,16 +765,6 @@ impl IdentityPoolUsage {
     /// Date on which the identity pool was last modified.
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
-    }
-}
-impl std::fmt::Debug for IdentityPoolUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityPoolUsage");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("sync_sessions_count", &self.sync_sessions_count);
-        formatter.field("data_storage", &self.data_storage);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.finish()
     }
 }
 /// See [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
@@ -895,7 +845,7 @@ impl IdentityPoolUsage {
 
 /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dataset {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -947,19 +897,6 @@ impl Dataset {
     /// Number of records in this dataset.
     pub fn num_records(&self) -> std::option::Option<i64> {
         self.num_records
-    }
-}
-impl std::fmt::Debug for Dataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dataset");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("data_storage", &self.data_storage);
-        formatter.field("num_records", &self.num_records);
-        formatter.finish()
     }
 }
 /// See [`Dataset`](crate::model::Dataset).
@@ -1181,7 +1118,7 @@ impl AsRef<str> for BulkPublishStatus {
 
 /// Usage information for the identity.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityUsage {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -1219,17 +1156,6 @@ impl IdentityUsage {
     /// Total data storage for this identity.
     pub fn data_storage(&self) -> std::option::Option<i64> {
         self.data_storage
-    }
-}
-impl std::fmt::Debug for IdentityUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityUsage");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("dataset_count", &self.dataset_count);
-        formatter.field("data_storage", &self.data_storage);
-        formatter.finish()
     }
 }
 /// See [`IdentityUsage`](crate::model::IdentityUsage).

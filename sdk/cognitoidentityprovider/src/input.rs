@@ -174,7 +174,7 @@ impl AddCustomAttributesInput {
 pub mod admin_add_user_to_group_input {
 
     /// A builder for [`AdminAddUserToGroupInput`](crate::input::AdminAddUserToGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -223,6 +223,15 @@ pub mod admin_add_user_to_group_input {
                 username: self.username,
                 group_name: self.group_name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("group_name", &self.group_name);
+            formatter.finish()
         }
     }
 }
@@ -347,7 +356,7 @@ impl AdminAddUserToGroupInput {
 pub mod admin_confirm_sign_up_input {
 
     /// A builder for [`AdminConfirmSignUpInput`](crate::input::AdminConfirmSignUpInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -431,6 +440,15 @@ pub mod admin_confirm_sign_up_input {
                 username: self.username,
                 client_metadata: self.client_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
         }
     }
 }
@@ -553,7 +571,7 @@ impl AdminConfirmSignUpInput {
 pub mod admin_create_user_input {
 
     /// A builder for [`AdminCreateUserInput`](crate::input::AdminCreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -771,6 +789,21 @@ pub mod admin_create_user_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_attributes", &self.user_attributes);
+            formatter.field("validation_data", &self.validation_data);
+            formatter.field("temporary_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("force_alias_creation", &self.force_alias_creation);
+            formatter.field("message_action", &self.message_action);
+            formatter.field("desired_delivery_mediums", &self.desired_delivery_mediums);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
+        }
+    }
 }
 impl AdminCreateUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminCreateUser`](crate::operation::AdminCreateUser)>
@@ -891,7 +924,7 @@ impl AdminCreateUserInput {
 pub mod admin_delete_user_input {
 
     /// A builder for [`AdminDeleteUserInput`](crate::input::AdminDeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -926,6 +959,14 @@ pub mod admin_delete_user_input {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1048,7 +1089,7 @@ impl AdminDeleteUserInput {
 pub mod admin_delete_user_attributes_input {
 
     /// A builder for [`AdminDeleteUserAttributesInput`](crate::input::AdminDeleteUserAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1108,6 +1149,15 @@ pub mod admin_delete_user_attributes_input {
                 username: self.username,
                 user_attribute_names: self.user_attribute_names,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_attribute_names", &self.user_attribute_names);
+            formatter.finish()
         }
     }
 }
@@ -1393,7 +1443,7 @@ impl AdminDisableProviderForUserInput {
 pub mod admin_disable_user_input {
 
     /// A builder for [`AdminDisableUserInput`](crate::input::AdminDisableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1430,6 +1480,14 @@ pub mod admin_disable_user_input {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1552,7 +1610,7 @@ impl AdminDisableUserInput {
 pub mod admin_enable_user_input {
 
     /// A builder for [`AdminEnableUserInput`](crate::input::AdminEnableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1587,6 +1645,14 @@ pub mod admin_enable_user_input {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1709,7 +1775,7 @@ impl AdminEnableUserInput {
 pub mod admin_forget_device_input {
 
     /// A builder for [`AdminForgetDeviceInput`](crate::input::AdminForgetDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1758,6 +1824,15 @@ pub mod admin_forget_device_input {
                 username: self.username,
                 device_key: self.device_key,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("device_key", &self.device_key);
+            formatter.finish()
         }
     }
 }
@@ -1880,7 +1955,7 @@ impl AdminForgetDeviceInput {
 pub mod admin_get_device_input {
 
     /// A builder for [`AdminGetDeviceInput`](crate::input::AdminGetDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) device_key: std::option::Option<std::string::String>,
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -1927,6 +2002,15 @@ pub mod admin_get_device_input {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_key", &self.device_key);
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2049,7 +2133,7 @@ impl AdminGetDeviceInput {
 pub mod admin_get_user_input {
 
     /// A builder for [`AdminGetUserInput`](crate::input::AdminGetUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -2084,6 +2168,14 @@ pub mod admin_get_user_input {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2206,7 +2298,7 @@ impl AdminGetUserInput {
 pub mod admin_initiate_auth_input {
 
     /// A builder for [`AdminInitiateAuthInput`](crate::input::AdminInitiateAuthInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -2432,6 +2524,19 @@ pub mod admin_initiate_auth_input {
                 analytics_metadata: self.analytics_metadata,
                 context_data: self.context_data,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("auth_flow", &self.auth_flow);
+            formatter.field("auth_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("context_data", &self.context_data);
+            formatter.finish()
         }
     }
 }
@@ -2749,7 +2854,7 @@ impl AdminLinkProviderForUserInput {
 pub mod admin_list_devices_input {
 
     /// A builder for [`AdminListDevicesInput`](crate::input::AdminListDevicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -2813,6 +2918,16 @@ pub mod admin_list_devices_input {
                 limit: self.limit,
                 pagination_token: self.pagination_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("limit", &self.limit);
+            formatter.field("pagination_token", &self.pagination_token);
+            formatter.finish()
         }
     }
 }
@@ -2935,7 +3050,7 @@ impl AdminListDevicesInput {
 pub mod admin_list_groups_for_user_input {
 
     /// A builder for [`AdminListGroupsForUserInput`](crate::input::AdminListGroupsForUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -2996,6 +3111,16 @@ pub mod admin_list_groups_for_user_input {
                 limit: self.limit,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("limit", &self.limit);
+            formatter.field("next_token", &self.next_token);
+            formatter.finish()
         }
     }
 }
@@ -3120,7 +3245,7 @@ impl AdminListGroupsForUserInput {
 pub mod admin_list_user_auth_events_input {
 
     /// A builder for [`AdminListUserAuthEventsInput`](crate::input::AdminListUserAuthEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -3181,6 +3306,16 @@ pub mod admin_list_user_auth_events_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &self.next_token);
+            formatter.finish()
         }
     }
 }
@@ -3305,7 +3440,7 @@ impl AdminListUserAuthEventsInput {
 pub mod admin_remove_user_from_group_input {
 
     /// A builder for [`AdminRemoveUserFromGroupInput`](crate::input::AdminRemoveUserFromGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -3354,6 +3489,15 @@ pub mod admin_remove_user_from_group_input {
                 username: self.username,
                 group_name: self.group_name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("group_name", &self.group_name);
+            formatter.finish()
         }
     }
 }
@@ -3478,7 +3622,7 @@ impl AdminRemoveUserFromGroupInput {
 pub mod admin_reset_user_password_input {
 
     /// A builder for [`AdminResetUserPasswordInput`](crate::input::AdminResetUserPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -3562,6 +3706,15 @@ pub mod admin_reset_user_password_input {
                 username: self.username,
                 client_metadata: self.client_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
         }
     }
 }
@@ -3686,7 +3839,7 @@ impl AdminResetUserPasswordInput {
 pub mod admin_respond_to_auth_challenge_input {
 
     /// A builder for [`AdminRespondToAuthChallengeInput`](crate::input::AdminRespondToAuthChallengeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -3904,6 +4057,20 @@ pub mod admin_respond_to_auth_challenge_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("challenge_name", &self.challenge_name);
+            formatter.field("challenge_responses", &self.challenge_responses);
+            formatter.field("session", &self.session);
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("context_data", &self.context_data);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
+        }
+    }
 }
 impl AdminRespondToAuthChallengeInput {
     /// Consumes the builder and constructs an Operation<[`AdminRespondToAuthChallenge`](crate::operation::AdminRespondToAuthChallenge)>
@@ -4023,7 +4190,7 @@ impl AdminRespondToAuthChallengeInput {
 pub mod admin_set_user_mfa_preference_input {
 
     /// A builder for [`AdminSetUserMfaPreferenceInput`](crate::input::AdminSetUserMfaPreferenceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) sms_mfa_settings: std::option::Option<crate::model::SmsMfaSettingsType>,
         pub(crate) software_token_mfa_settings:
@@ -4094,6 +4261,19 @@ pub mod admin_set_user_mfa_preference_input {
                 username: self.username,
                 user_pool_id: self.user_pool_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
+            formatter.field(
+                "software_token_mfa_settings",
+                &self.software_token_mfa_settings,
+            );
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.finish()
         }
     }
 }
@@ -4215,7 +4395,7 @@ impl AdminSetUserMfaPreferenceInput {
 pub mod admin_set_user_password_input {
 
     /// A builder for [`AdminSetUserPasswordInput`](crate::input::AdminSetUserPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -4276,6 +4456,16 @@ pub mod admin_set_user_password_input {
                 password: self.password,
                 permanent: self.permanent.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("permanent", &self.permanent);
+            formatter.finish()
         }
     }
 }
@@ -4400,7 +4590,7 @@ impl AdminSetUserPasswordInput {
 pub mod admin_set_user_settings_input {
 
     /// A builder for [`AdminSetUserSettingsInput`](crate::input::AdminSetUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -4458,6 +4648,15 @@ pub mod admin_set_user_settings_input {
                 username: self.username,
                 mfa_options: self.mfa_options,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("mfa_options", &self.mfa_options);
+            formatter.finish()
         }
     }
 }
@@ -4582,7 +4781,7 @@ impl AdminSetUserSettingsInput {
 pub mod admin_update_auth_event_feedback_input {
 
     /// A builder for [`AdminUpdateAuthEventFeedbackInput`](crate::input::AdminUpdateAuthEventFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -4646,6 +4845,16 @@ pub mod admin_update_auth_event_feedback_input {
                 event_id: self.event_id,
                 feedback_value: self.feedback_value,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("event_id", &self.event_id);
+            formatter.field("feedback_value", &self.feedback_value);
+            formatter.finish()
         }
     }
 }
@@ -4767,7 +4976,7 @@ impl AdminUpdateAuthEventFeedbackInput {
 pub mod admin_update_device_status_input {
 
     /// A builder for [`AdminUpdateDeviceStatusInput`](crate::input::AdminUpdateDeviceStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -4835,6 +5044,16 @@ pub mod admin_update_device_status_input {
                 device_key: self.device_key,
                 device_remembered_status: self.device_remembered_status,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("device_key", &self.device_key);
+            formatter.field("device_remembered_status", &self.device_remembered_status);
+            formatter.finish()
         }
     }
 }
@@ -4959,7 +5178,7 @@ impl AdminUpdateDeviceStatusInput {
 pub mod admin_update_user_attributes_input {
 
     /// A builder for [`AdminUpdateUserAttributesInput`](crate::input::AdminUpdateUserAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -5070,6 +5289,16 @@ pub mod admin_update_user_attributes_input {
                 user_attributes: self.user_attributes,
                 client_metadata: self.client_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_attributes", &self.user_attributes);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
         }
     }
 }
@@ -5194,7 +5423,7 @@ impl AdminUpdateUserAttributesInput {
 pub mod admin_user_global_sign_out_input {
 
     /// A builder for [`AdminUserGlobalSignOutInput`](crate::input::AdminUserGlobalSignOutInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -5231,6 +5460,14 @@ pub mod admin_user_global_sign_out_input {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -5355,7 +5592,7 @@ impl AdminUserGlobalSignOutInput {
 pub mod associate_software_token_input {
 
     /// A builder for [`AssociateSoftwareTokenInput`](crate::input::AssociateSoftwareTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) session: std::option::Option<std::string::String>,
@@ -5392,6 +5629,14 @@ pub mod associate_software_token_input {
                 access_token: self.access_token,
                 session: self.session,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("session", &self.session);
+            formatter.finish()
         }
     }
 }
@@ -5516,7 +5761,7 @@ impl AssociateSoftwareTokenInput {
 pub mod change_password_input {
 
     /// A builder for [`ChangePasswordInput`](crate::input::ChangePasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) previous_password: std::option::Option<std::string::String>,
         pub(crate) proposed_password: std::option::Option<std::string::String>,
@@ -5569,6 +5814,15 @@ pub mod change_password_input {
                 proposed_password: self.proposed_password,
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("previous_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("proposed_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -5692,7 +5946,7 @@ impl ChangePasswordInput {
 pub mod confirm_device_input {
 
     /// A builder for [`ConfirmDeviceInput`](crate::input::ConfirmDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) device_key: std::option::Option<std::string::String>,
@@ -5758,6 +6012,19 @@ pub mod confirm_device_input {
                 device_secret_verifier_config: self.device_secret_verifier_config,
                 device_name: self.device_name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("device_key", &self.device_key);
+            formatter.field(
+                "device_secret_verifier_config",
+                &self.device_secret_verifier_config,
+            );
+            formatter.field("device_name", &self.device_name);
+            formatter.finish()
         }
     }
 }
@@ -5880,7 +6147,7 @@ impl ConfirmDeviceInput {
 pub mod confirm_forgot_password_input {
 
     /// A builder for [`ConfirmForgotPasswordInput`](crate::input::ConfirmForgotPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) secret_hash: std::option::Option<std::string::String>,
@@ -6035,6 +6302,20 @@ pub mod confirm_forgot_password_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("confirmation_code", &self.confirmation_code);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("user_context_data", &self.user_context_data);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
+        }
+    }
 }
 impl ConfirmForgotPasswordInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmForgotPassword`](crate::operation::ConfirmForgotPassword)>
@@ -6158,7 +6439,7 @@ impl ConfirmForgotPasswordInput {
 pub mod confirm_sign_up_input {
 
     /// A builder for [`ConfirmSignUpInput`](crate::input::ConfirmSignUpInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) secret_hash: std::option::Option<std::string::String>,
@@ -6309,6 +6590,20 @@ pub mod confirm_sign_up_input {
                 user_context_data: self.user_context_data,
                 client_metadata: self.client_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("confirmation_code", &self.confirmation_code);
+            formatter.field("force_alias_creation", &self.force_alias_creation);
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("user_context_data", &self.user_context_data);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
         }
     }
 }
@@ -9241,7 +9536,7 @@ impl DeleteResourceServerInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
@@ -9264,6 +9559,13 @@ pub mod delete_user_input {
             Ok(crate::input::DeleteUserInput {
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -9387,7 +9689,7 @@ impl DeleteUserInput {
 pub mod delete_user_attributes_input {
 
     /// A builder for [`DeleteUserAttributesInput`](crate::input::DeleteUserAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -9435,6 +9737,14 @@ pub mod delete_user_attributes_input {
                 user_attribute_names: self.user_attribute_names,
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_attribute_names", &self.user_attribute_names);
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -9705,7 +10015,7 @@ impl DeleteUserPoolInput {
 pub mod delete_user_pool_client_input {
 
     /// A builder for [`DeleteUserPoolClientInput`](crate::input::DeleteUserPoolClientInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -9742,6 +10052,14 @@ pub mod delete_user_pool_client_input {
                 user_pool_id: self.user_pool_id,
                 client_id: self.client_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -10352,7 +10670,7 @@ impl DescribeResourceServerInput {
 pub mod describe_risk_configuration_input {
 
     /// A builder for [`DescribeRiskConfigurationInput`](crate::input::DescribeRiskConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -10389,6 +10707,14 @@ pub mod describe_risk_configuration_input {
                 user_pool_id: self.user_pool_id,
                 client_id: self.client_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -10821,7 +11147,7 @@ impl DescribeUserPoolInput {
 pub mod describe_user_pool_client_input {
 
     /// A builder for [`DescribeUserPoolClientInput`](crate::input::DescribeUserPoolClientInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -10858,6 +11184,14 @@ pub mod describe_user_pool_client_input {
                 user_pool_id: self.user_pool_id,
                 client_id: self.client_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11131,7 +11465,7 @@ impl DescribeUserPoolDomainInput {
 pub mod forget_device_input {
 
     /// A builder for [`ForgetDeviceInput`](crate::input::ForgetDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) device_key: std::option::Option<std::string::String>,
@@ -11166,6 +11500,14 @@ pub mod forget_device_input {
                 access_token: self.access_token,
                 device_key: self.device_key,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("device_key", &self.device_key);
+            formatter.finish()
         }
     }
 }
@@ -11288,7 +11630,7 @@ impl ForgetDeviceInput {
 pub mod forgot_password_input {
 
     /// A builder for [`ForgotPasswordInput`](crate::input::ForgotPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) secret_hash: std::option::Option<std::string::String>,
@@ -11412,6 +11754,18 @@ pub mod forgot_password_input {
                 analytics_metadata: self.analytics_metadata,
                 client_metadata: self.client_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_context_data", &self.user_context_data);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
         }
     }
 }
@@ -11680,7 +12034,7 @@ impl GetCsvHeaderInput {
 pub mod get_device_input {
 
     /// A builder for [`GetDeviceInput`](crate::input::GetDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) device_key: std::option::Option<std::string::String>,
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -11715,6 +12069,14 @@ pub mod get_device_input {
                 device_key: self.device_key,
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_key", &self.device_key);
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12300,7 +12662,7 @@ impl GetSigningCertificateInput {
 pub mod get_ui_customization_input {
 
     /// A builder for [`GetUiCustomizationInput`](crate::input::GetUiCustomizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -12337,6 +12699,14 @@ pub mod get_ui_customization_input {
                 user_pool_id: self.user_pool_id,
                 client_id: self.client_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12459,7 +12829,7 @@ impl GetUiCustomizationInput {
 pub mod get_user_input {
 
     /// A builder for [`GetUserInput`](crate::input::GetUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
@@ -12482,6 +12852,13 @@ pub mod get_user_input {
             Ok(crate::input::GetUserInput {
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12603,7 +12980,7 @@ impl GetUserInput {
 pub mod get_user_attribute_verification_code_input {
 
     /// A builder for [`GetUserAttributeVerificationCodeInput`](crate::input::GetUserAttributeVerificationCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -12690,6 +13067,15 @@ pub mod get_user_attribute_verification_code_input {
                 attribute_name: self.attribute_name,
                 client_metadata: self.client_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("attribute_name", &self.attribute_name);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
         }
     }
 }
@@ -12961,7 +13347,7 @@ impl GetUserPoolMfaConfigInput {
 pub mod global_sign_out_input {
 
     /// A builder for [`GlobalSignOutInput`](crate::input::GlobalSignOutInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
@@ -12984,6 +13370,13 @@ pub mod global_sign_out_input {
             Ok(crate::input::GlobalSignOutInput {
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -13106,7 +13499,7 @@ impl GlobalSignOutInput {
 pub mod initiate_auth_input {
 
     /// A builder for [`InitiateAuthInput`](crate::input::InitiateAuthInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) auth_flow: std::option::Option<crate::model::AuthFlowType>,
         pub(crate) auth_parameters: std::option::Option<
@@ -13318,6 +13711,18 @@ pub mod initiate_auth_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("auth_flow", &self.auth_flow);
+            formatter.field("auth_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("user_context_data", &self.user_context_data);
+            formatter.finish()
+        }
+    }
 }
 impl InitiateAuthInput {
     /// Consumes the builder and constructs an Operation<[`InitiateAuth`](crate::operation::InitiateAuth)>
@@ -13439,7 +13844,7 @@ impl InitiateAuthInput {
 pub mod list_devices_input {
 
     /// A builder for [`ListDevicesInput`](crate::input::ListDevicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -13489,6 +13894,15 @@ pub mod list_devices_input {
                 limit: self.limit,
                 pagination_token: self.pagination_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("limit", &self.limit);
+            formatter.field("pagination_token", &self.pagination_token);
+            formatter.finish()
         }
     }
 }
@@ -15211,7 +15625,7 @@ impl ListUsersInGroupInput {
 pub mod resend_confirmation_code_input {
 
     /// A builder for [`ResendConfirmationCodeInput`](crate::input::ResendConfirmationCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) secret_hash: std::option::Option<std::string::String>,
@@ -15339,6 +15753,18 @@ pub mod resend_confirmation_code_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_context_data", &self.user_context_data);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
+        }
+    }
 }
 impl ResendConfirmationCodeInput {
     /// Consumes the builder and constructs an Operation<[`ResendConfirmationCode`](crate::operation::ResendConfirmationCode)>
@@ -15462,7 +15888,7 @@ impl ResendConfirmationCodeInput {
 pub mod respond_to_auth_challenge_input {
 
     /// A builder for [`RespondToAuthChallengeInput`](crate::input::RespondToAuthChallengeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) challenge_name: std::option::Option<crate::model::ChallengeNameType>,
@@ -15654,6 +16080,19 @@ pub mod respond_to_auth_challenge_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("challenge_name", &self.challenge_name);
+            formatter.field("session", &self.session);
+            formatter.field("challenge_responses", &self.challenge_responses);
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("user_context_data", &self.user_context_data);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
+        }
+    }
 }
 impl RespondToAuthChallengeInput {
     /// Consumes the builder and constructs an Operation<[`RespondToAuthChallenge`](crate::operation::RespondToAuthChallenge)>
@@ -15777,7 +16216,7 @@ impl RespondToAuthChallengeInput {
 pub mod revoke_token_input {
 
     /// A builder for [`RevokeTokenInput`](crate::input::RevokeTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) token: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -15827,6 +16266,15 @@ pub mod revoke_token_input {
                 client_id: self.client_id,
                 client_secret: self.client_secret,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("token", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -15949,7 +16397,7 @@ impl RevokeTokenInput {
 pub mod set_risk_configuration_input {
 
     /// A builder for [`SetRiskConfigurationInput`](crate::input::SetRiskConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -16046,6 +16494,26 @@ pub mod set_risk_configuration_input {
                 account_takeover_risk_configuration: self.account_takeover_risk_configuration,
                 risk_exception_configuration: self.risk_exception_configuration,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "compromised_credentials_risk_configuration",
+                &self.compromised_credentials_risk_configuration,
+            );
+            formatter.field(
+                "account_takeover_risk_configuration",
+                &self.account_takeover_risk_configuration,
+            );
+            formatter.field(
+                "risk_exception_configuration",
+                &self.risk_exception_configuration,
+            );
+            formatter.finish()
         }
     }
 }
@@ -16170,7 +16638,7 @@ impl SetRiskConfigurationInput {
 pub mod set_ui_customization_input {
 
     /// A builder for [`SetUiCustomizationInput`](crate::input::SetUiCustomizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -16234,6 +16702,16 @@ pub mod set_ui_customization_input {
                 css: self.css,
                 image_file: self.image_file,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("css", &self.css);
+            formatter.field("image_file", &self.image_file);
+            formatter.finish()
         }
     }
 }
@@ -16356,7 +16834,7 @@ impl SetUiCustomizationInput {
 pub mod set_user_mfa_preference_input {
 
     /// A builder for [`SetUserMfaPreferenceInput`](crate::input::SetUserMfaPreferenceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) sms_mfa_settings: std::option::Option<crate::model::SmsMfaSettingsType>,
         pub(crate) software_token_mfa_settings:
@@ -16415,6 +16893,18 @@ pub mod set_user_mfa_preference_input {
                 software_token_mfa_settings: self.software_token_mfa_settings,
                 access_token: self.access_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
+            formatter.field(
+                "software_token_mfa_settings",
+                &self.software_token_mfa_settings,
+            );
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -16747,7 +17237,7 @@ impl SetUserPoolMfaConfigInput {
 pub mod set_user_settings_input {
 
     /// A builder for [`SetUserSettingsInput`](crate::input::SetUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -16791,6 +17281,14 @@ pub mod set_user_settings_input {
                 access_token: self.access_token,
                 mfa_options: self.mfa_options,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("mfa_options", &self.mfa_options);
+            formatter.finish()
         }
     }
 }
@@ -16914,7 +17412,7 @@ impl SetUserSettingsInput {
 pub mod sign_up_input {
 
     /// A builder for [`SignUpInput`](crate::input::SignUpInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) secret_hash: std::option::Option<std::string::String>,
@@ -17094,6 +17592,21 @@ pub mod sign_up_input {
                 user_context_data: self.user_context_data,
                 client_metadata: self.client_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_attributes", &self.user_attributes);
+            formatter.field("validation_data", &self.validation_data);
+            formatter.field("analytics_metadata", &self.analytics_metadata);
+            formatter.field("user_context_data", &self.user_context_data);
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
         }
     }
 }
@@ -17873,7 +18386,7 @@ impl UntagResourceInput {
 pub mod update_auth_event_feedback_input {
 
     /// A builder for [`UpdateAuthEventFeedbackInput`](crate::input::UpdateAuthEventFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -17952,6 +18465,17 @@ pub mod update_auth_event_feedback_input {
                 feedback_token: self.feedback_token,
                 feedback_value: self.feedback_value,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("event_id", &self.event_id);
+            formatter.field("feedback_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("feedback_value", &self.feedback_value);
+            formatter.finish()
         }
     }
 }
@@ -18076,7 +18600,7 @@ impl UpdateAuthEventFeedbackInput {
 pub mod update_device_status_input {
 
     /// A builder for [`UpdateDeviceStatusInput`](crate::input::UpdateDeviceStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) device_key: std::option::Option<std::string::String>,
@@ -18132,6 +18656,15 @@ pub mod update_device_status_input {
                 device_key: self.device_key,
                 device_remembered_status: self.device_remembered_status,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("device_key", &self.device_key);
+            formatter.field("device_remembered_status", &self.device_remembered_status);
+            formatter.finish()
         }
     }
 }
@@ -18885,7 +19418,7 @@ impl UpdateResourceServerInput {
 pub mod update_user_attributes_input {
 
     /// A builder for [`UpdateUserAttributesInput`](crate::input::UpdateUserAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -18982,6 +19515,15 @@ pub mod update_user_attributes_input {
                 access_token: self.access_token,
                 client_metadata: self.client_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_attributes", &self.user_attributes);
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_metadata", &self.client_metadata);
+            formatter.finish()
         }
     }
 }
@@ -19564,7 +20106,7 @@ impl UpdateUserPoolInput {
 pub mod update_user_pool_client_input {
 
     /// A builder for [`UpdateUserPoolClientInput`](crate::input::UpdateUserPoolClientInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -20068,6 +20610,46 @@ pub mod update_user_pool_client_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_name", &self.client_name);
+            formatter.field("refresh_token_validity", &self.refresh_token_validity);
+            formatter.field("access_token_validity", &self.access_token_validity);
+            formatter.field("id_token_validity", &self.id_token_validity);
+            formatter.field("token_validity_units", &self.token_validity_units);
+            formatter.field("read_attributes", &self.read_attributes);
+            formatter.field("write_attributes", &self.write_attributes);
+            formatter.field("explicit_auth_flows", &self.explicit_auth_flows);
+            formatter.field(
+                "supported_identity_providers",
+                &self.supported_identity_providers,
+            );
+            formatter.field("callback_ur_ls", &self.callback_ur_ls);
+            formatter.field("logout_ur_ls", &self.logout_ur_ls);
+            formatter.field("default_redirect_uri", &self.default_redirect_uri);
+            formatter.field("allowed_o_auth_flows", &self.allowed_o_auth_flows);
+            formatter.field("allowed_o_auth_scopes", &self.allowed_o_auth_scopes);
+            formatter.field(
+                "allowed_o_auth_flows_user_pool_client",
+                &self.allowed_o_auth_flows_user_pool_client,
+            );
+            formatter.field("analytics_configuration", &self.analytics_configuration);
+            formatter.field(
+                "prevent_user_existence_errors",
+                &self.prevent_user_existence_errors,
+            );
+            formatter.field("enable_token_revocation", &self.enable_token_revocation);
+            formatter.field(
+                "enable_propagate_additional_user_context_data",
+                &self.enable_propagate_additional_user_context_data,
+            );
+            formatter.field("auth_session_validity", &self.auth_session_validity);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserPoolClient`](crate::operation::UpdateUserPoolClient)>
@@ -20368,7 +20950,7 @@ impl UpdateUserPoolDomainInput {
 pub mod verify_software_token_input {
 
     /// A builder for [`VerifySoftwareTokenInput`](crate::input::VerifySoftwareTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) session: std::option::Option<std::string::String>,
@@ -20432,6 +21014,16 @@ pub mod verify_software_token_input {
                 user_code: self.user_code,
                 friendly_device_name: self.friendly_device_name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("session", &self.session);
+            formatter.field("user_code", &self.user_code);
+            formatter.field("friendly_device_name", &self.friendly_device_name);
+            formatter.finish()
         }
     }
 }
@@ -20554,7 +21146,7 @@ impl VerifySoftwareTokenInput {
 pub mod verify_user_attribute_input {
 
     /// A builder for [`VerifyUserAttributeInput`](crate::input::VerifyUserAttributeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -20606,6 +21198,15 @@ pub mod verify_user_attribute_input {
                 attribute_name: self.attribute_name,
                 code: self.code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("attribute_name", &self.attribute_name);
+            formatter.field("code", &self.code);
+            formatter.finish()
         }
     }
 }
@@ -20811,7 +21412,7 @@ impl std::fmt::Debug for VerifySoftwareTokenInput {
 
 /// <p>The UpdateUserPoolDomain request input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserPoolDomainInput {
     /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. One example might be <code>auth.example.com</code>. </p>
     /// <p>This string can include only lowercase letters, numbers, and hyphens. Don't use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
@@ -20839,15 +21440,6 @@ impl UpdateUserPoolDomainInput {
         &self,
     ) -> std::option::Option<&crate::model::CustomDomainConfigType> {
         self.custom_domain_config.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateUserPoolDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserPoolDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("custom_domain_config", &self.custom_domain_config);
-        formatter.finish()
     }
 }
 
@@ -21183,7 +21775,7 @@ impl std::fmt::Debug for UpdateUserPoolClientInput {
 
 /// <p>Represents the request to update the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserPoolInput {
     /// <p>The user pool ID for the user pool you want to update.</p>
     #[doc(hidden)]
@@ -21349,45 +21941,6 @@ impl UpdateUserPoolInput {
         self.account_recovery_setting.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateUserPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserPoolInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("policies", &self.policies);
-        formatter.field("lambda_config", &self.lambda_config);
-        formatter.field("auto_verified_attributes", &self.auto_verified_attributes);
-        formatter.field("sms_verification_message", &self.sms_verification_message);
-        formatter.field(
-            "email_verification_message",
-            &self.email_verification_message,
-        );
-        formatter.field(
-            "email_verification_subject",
-            &self.email_verification_subject,
-        );
-        formatter.field(
-            "verification_message_template",
-            &self.verification_message_template,
-        );
-        formatter.field(
-            "sms_authentication_message",
-            &self.sms_authentication_message,
-        );
-        formatter.field(
-            "user_attribute_update_settings",
-            &self.user_attribute_update_settings,
-        );
-        formatter.field("mfa_configuration", &self.mfa_configuration);
-        formatter.field("device_configuration", &self.device_configuration);
-        formatter.field("email_configuration", &self.email_configuration);
-        formatter.field("sms_configuration", &self.sms_configuration);
-        formatter.field("user_pool_tags", &self.user_pool_tags);
-        formatter.field("admin_create_user_config", &self.admin_create_user_config);
-        formatter.field("user_pool_add_ons", &self.user_pool_add_ons);
-        formatter.field("account_recovery_setting", &self.account_recovery_setting);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to update user attributes.</p>
 #[non_exhaustive]
@@ -21455,7 +22008,7 @@ impl std::fmt::Debug for UpdateUserAttributesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceServerInput {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
@@ -21488,20 +22041,10 @@ impl UpdateResourceServerInput {
         self.scopes.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourceServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceServerInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("name", &self.name);
-        formatter.field("scopes", &self.scopes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIdentityProviderInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -21549,21 +22092,10 @@ impl UpdateIdentityProviderInput {
         self.idp_identifiers.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateIdentityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIdentityProviderInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("provider_details", &self.provider_details);
-        formatter.field("attribute_mapping", &self.attribute_mapping);
-        formatter.field("idp_identifiers", &self.idp_identifiers);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupInput {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
@@ -21601,17 +22133,6 @@ impl UpdateGroupInput {
     /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
     pub fn precedence(&self) -> std::option::Option<i32> {
         self.precedence
-    }
-}
-impl std::fmt::Debug for UpdateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("precedence", &self.precedence);
-        formatter.finish()
     }
 }
 
@@ -21711,7 +22232,7 @@ impl std::fmt::Debug for UpdateAuthEventFeedbackInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
     #[doc(hidden)]
@@ -21730,18 +22251,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the user pool to assign the tags to.</p>
     #[doc(hidden)]
@@ -21764,18 +22277,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to stop the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopUserImportJobInput {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     #[doc(hidden)]
@@ -21794,18 +22299,10 @@ impl StopUserImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopUserImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopUserImportJobInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to start the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartUserImportJobInput {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     #[doc(hidden)]
@@ -21822,14 +22319,6 @@ impl StartUserImportJobInput {
     /// <p>The job ID for the user import job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartUserImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartUserImportJobInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }
 
@@ -21975,7 +22464,7 @@ impl std::fmt::Debug for SetUserSettingsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetUserPoolMfaConfigInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -22019,19 +22508,6 @@ impl SetUserPoolMfaConfigInput {
     /// </ul>
     pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for SetUserPoolMfaConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetUserPoolMfaConfigInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("sms_mfa_configuration", &self.sms_mfa_configuration);
-        formatter.field(
-            "software_token_mfa_configuration",
-            &self.software_token_mfa_configuration,
-        );
-        formatter.field("mfa_configuration", &self.mfa_configuration);
-        formatter.finish()
     }
 }
 
@@ -22451,7 +22927,7 @@ impl std::fmt::Debug for ResendConfirmationCodeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInGroupInput {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
@@ -22484,20 +22960,10 @@ impl ListUsersInGroupInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersInGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInGroupInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to list users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>The user pool ID for the user pool on which the search should be performed.</p>
     #[doc(hidden)]
@@ -22585,21 +23051,10 @@ impl ListUsersInput {
         self.filter.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("attributes_to_get", &self.attributes_to_get);
-        formatter.field("limit", &self.limit);
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to list user pools.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserPoolsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
@@ -22618,18 +23073,10 @@ impl ListUserPoolsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUserPoolsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserPoolsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to list the user pool clients.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserPoolClientsInput {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
     #[doc(hidden)]
@@ -22655,19 +23102,10 @@ impl ListUserPoolClientsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUserPoolClientsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserPoolClientsInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to list the user import jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserImportJobsInput {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     #[doc(hidden)]
@@ -22693,19 +23131,10 @@ impl ListUserImportJobsInput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUserImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserImportJobsInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
     #[doc(hidden)]
@@ -22717,17 +23146,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceServersInput {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
@@ -22753,19 +23175,10 @@ impl ListResourceServersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceServersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceServersInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityProvidersInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -22791,19 +23204,10 @@ impl ListIdentityProvidersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentityProvidersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityProvidersInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsInput {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
@@ -22827,15 +23231,6 @@ impl ListGroupsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -23055,7 +23450,7 @@ impl std::fmt::Debug for GlobalSignOutInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserPoolMfaConfigInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -23065,13 +23460,6 @@ impl GetUserPoolMfaConfigInput {
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUserPoolMfaConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserPoolMfaConfigInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.finish()
     }
 }
 
@@ -23189,7 +23577,7 @@ impl std::fmt::Debug for GetUiCustomizationInput {
 
 /// <p>Request to get a signing certificate from Amazon Cognito.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSigningCertificateInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -23201,17 +23589,10 @@ impl GetSigningCertificateInput {
         self.user_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSigningCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSigningCertificateInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -23230,18 +23611,10 @@ impl GetIdentityProviderByIdentifierInput {
         self.idp_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityProviderByIdentifierInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityProviderByIdentifierInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("idp_identifier", &self.idp_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupInput {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
@@ -23258,14 +23631,6 @@ impl GetGroupInput {
     /// <p>The user pool ID for the user pool.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.finish()
     }
 }
 
@@ -23301,7 +23666,7 @@ impl std::fmt::Debug for GetDeviceInput {
 
 /// <p>Represents the request to get the header information of the CSV file for the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCsvHeaderInput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
     #[doc(hidden)]
@@ -23311,13 +23676,6 @@ impl GetCsvHeaderInput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCsvHeaderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCsvHeaderInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.finish()
     }
 }
 
@@ -23437,7 +23795,7 @@ impl std::fmt::Debug for ForgetDeviceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     #[doc(hidden)]
@@ -23447,13 +23805,6 @@ impl DescribeUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeUserPoolDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserPoolDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 
@@ -23489,7 +23840,7 @@ impl std::fmt::Debug for DescribeUserPoolClientInput {
 
 /// <p>Represents the request to describe the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserPoolInput {
     /// <p>The user pool ID for the user pool you want to describe.</p>
     #[doc(hidden)]
@@ -23501,17 +23852,10 @@ impl DescribeUserPoolInput {
         self.user_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserPoolInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to describe the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserImportJobInput {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     #[doc(hidden)]
@@ -23528,14 +23872,6 @@ impl DescribeUserImportJobInput {
     /// <p>The job ID for the user import job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeUserImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserImportJobInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }
 
@@ -23571,7 +23907,7 @@ impl std::fmt::Debug for DescribeRiskConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourceServerInput {
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
     #[doc(hidden)]
@@ -23590,18 +23926,10 @@ impl DescribeResourceServerInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourceServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourceServerInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityProviderInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -23620,18 +23948,10 @@ impl DescribeIdentityProviderInput {
         self.provider_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityProviderInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     #[doc(hidden)]
@@ -23648,14 +23968,6 @@ impl DeleteUserPoolDomainInput {
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteUserPoolDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserPoolDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.finish()
     }
 }
 
@@ -23691,7 +24003,7 @@ impl std::fmt::Debug for DeleteUserPoolClientInput {
 
 /// <p>Represents the request to delete a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserPoolInput {
     /// <p>The user pool ID for the user pool you want to delete.</p>
     #[doc(hidden)]
@@ -23701,13 +24013,6 @@ impl DeleteUserPoolInput {
     /// <p>The user pool ID for the user pool you want to delete.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteUserPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserPoolInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.finish()
     }
 }
 
@@ -23767,7 +24072,7 @@ impl std::fmt::Debug for DeleteUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceServerInput {
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
     #[doc(hidden)]
@@ -23786,18 +24091,10 @@ impl DeleteResourceServerInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceServerInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityProviderInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -23816,18 +24113,10 @@ impl DeleteIdentityProviderInput {
         self.provider_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIdentityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityProviderInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
@@ -23846,18 +24135,10 @@ impl DeleteGroupInput {
         self.user_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     #[doc(hidden)]
@@ -23889,19 +24170,10 @@ impl CreateUserPoolDomainInput {
         self.custom_domain_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUserPoolDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserPoolDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("custom_domain_config", &self.custom_domain_config);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to create a user pool client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserPoolClientInput {
     /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
     #[doc(hidden)]
@@ -24248,50 +24520,10 @@ impl CreateUserPoolClientInput {
         self.auth_session_validity
     }
 }
-impl std::fmt::Debug for CreateUserPoolClientInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserPoolClientInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("client_name", &self.client_name);
-        formatter.field("generate_secret", &self.generate_secret);
-        formatter.field("refresh_token_validity", &self.refresh_token_validity);
-        formatter.field("access_token_validity", &self.access_token_validity);
-        formatter.field("id_token_validity", &self.id_token_validity);
-        formatter.field("token_validity_units", &self.token_validity_units);
-        formatter.field("read_attributes", &self.read_attributes);
-        formatter.field("write_attributes", &self.write_attributes);
-        formatter.field("explicit_auth_flows", &self.explicit_auth_flows);
-        formatter.field(
-            "supported_identity_providers",
-            &self.supported_identity_providers,
-        );
-        formatter.field("callback_ur_ls", &self.callback_ur_ls);
-        formatter.field("logout_ur_ls", &self.logout_ur_ls);
-        formatter.field("default_redirect_uri", &self.default_redirect_uri);
-        formatter.field("allowed_o_auth_flows", &self.allowed_o_auth_flows);
-        formatter.field("allowed_o_auth_scopes", &self.allowed_o_auth_scopes);
-        formatter.field(
-            "allowed_o_auth_flows_user_pool_client",
-            &self.allowed_o_auth_flows_user_pool_client,
-        );
-        formatter.field("analytics_configuration", &self.analytics_configuration);
-        formatter.field(
-            "prevent_user_existence_errors",
-            &self.prevent_user_existence_errors,
-        );
-        formatter.field("enable_token_revocation", &self.enable_token_revocation);
-        formatter.field(
-            "enable_propagate_additional_user_context_data",
-            &self.enable_propagate_additional_user_context_data,
-        );
-        formatter.field("auth_session_validity", &self.auth_session_validity);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to create a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserPoolInput {
     /// <p>A string used to name the user pool.</p>
     #[doc(hidden)]
@@ -24490,53 +24722,10 @@ impl CreateUserPoolInput {
         self.account_recovery_setting.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUserPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserPoolInput");
-        formatter.field("pool_name", &self.pool_name);
-        formatter.field("policies", &self.policies);
-        formatter.field("lambda_config", &self.lambda_config);
-        formatter.field("auto_verified_attributes", &self.auto_verified_attributes);
-        formatter.field("alias_attributes", &self.alias_attributes);
-        formatter.field("username_attributes", &self.username_attributes);
-        formatter.field("sms_verification_message", &self.sms_verification_message);
-        formatter.field(
-            "email_verification_message",
-            &self.email_verification_message,
-        );
-        formatter.field(
-            "email_verification_subject",
-            &self.email_verification_subject,
-        );
-        formatter.field(
-            "verification_message_template",
-            &self.verification_message_template,
-        );
-        formatter.field(
-            "sms_authentication_message",
-            &self.sms_authentication_message,
-        );
-        formatter.field("mfa_configuration", &self.mfa_configuration);
-        formatter.field(
-            "user_attribute_update_settings",
-            &self.user_attribute_update_settings,
-        );
-        formatter.field("device_configuration", &self.device_configuration);
-        formatter.field("email_configuration", &self.email_configuration);
-        formatter.field("sms_configuration", &self.sms_configuration);
-        formatter.field("user_pool_tags", &self.user_pool_tags);
-        formatter.field("admin_create_user_config", &self.admin_create_user_config);
-        formatter.field("schema", &self.schema);
-        formatter.field("user_pool_add_ons", &self.user_pool_add_ons);
-        formatter.field("username_configuration", &self.username_configuration);
-        formatter.field("account_recovery_setting", &self.account_recovery_setting);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the request to create the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserImportJobInput {
     /// <p>The job name for the user import job.</p>
     #[doc(hidden)]
@@ -24562,19 +24751,10 @@ impl CreateUserImportJobInput {
         self.cloud_watch_logs_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUserImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserImportJobInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceServerInput {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
@@ -24607,20 +24787,10 @@ impl CreateResourceServerInput {
         self.scopes.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResourceServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceServerInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("name", &self.name);
-        formatter.field("scopes", &self.scopes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIdentityProviderInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -24769,22 +24939,10 @@ impl CreateIdentityProviderInput {
         self.idp_identifiers.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIdentityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIdentityProviderInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("provider_details", &self.provider_details);
-        formatter.field("attribute_mapping", &self.attribute_mapping);
-        formatter.field("idp_identifiers", &self.idp_identifiers);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// <p>The name of the group. Must be unique.</p>
     #[doc(hidden)]
@@ -24826,17 +24984,6 @@ impl CreateGroupInput {
     /// <p>The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is <code>2^31-1</code>.</p>
     pub fn precedence(&self) -> std::option::Option<i32> {
         self.precedence
-    }
-}
-impl std::fmt::Debug for CreateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("precedence", &self.precedence);
-        formatter.finish()
     }
 }
 
@@ -25882,7 +26029,7 @@ impl std::fmt::Debug for AdminListDevicesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminLinkProviderForUserInput {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
@@ -25924,15 +26071,6 @@ impl AdminLinkProviderForUserInput {
     /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
     pub fn source_user(&self) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
         self.source_user.as_ref()
-    }
-}
-impl std::fmt::Debug for AdminLinkProviderForUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminLinkProviderForUserInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("destination_user", &self.destination_user);
-        formatter.field("source_user", &self.source_user);
-        formatter.finish()
     }
 }
 
@@ -26268,7 +26406,7 @@ impl std::fmt::Debug for AdminDisableUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminDisableProviderForUserInput {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
@@ -26285,14 +26423,6 @@ impl AdminDisableProviderForUserInput {
     /// <p>The user to be disabled.</p>
     pub fn user(&self) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
         self.user.as_ref()
-    }
-}
-impl std::fmt::Debug for AdminDisableProviderForUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminDisableProviderForUserInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
     }
 }
 
@@ -26605,7 +26735,7 @@ impl std::fmt::Debug for AdminAddUserToGroupInput {
 
 /// <p>Represents the request to add custom attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddCustomAttributesInput {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
     #[doc(hidden)]
@@ -26622,13 +26752,5 @@ impl AddCustomAttributesInput {
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
     pub fn custom_attributes(&self) -> std::option::Option<&[crate::model::SchemaAttributeType]> {
         self.custom_attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for AddCustomAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddCustomAttributesInput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("custom_attributes", &self.custom_attributes);
-        formatter.finish()
     }
 }

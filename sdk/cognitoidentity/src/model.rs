@@ -2,7 +2,7 @@
 
 /// <p>A provider representing an Amazon Cognito user pool and its client ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CognitoIdentityProvider {
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
     #[doc(hidden)]
@@ -30,15 +30,6 @@ impl CognitoIdentityProvider {
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub fn server_side_token_check(&self) -> std::option::Option<bool> {
         self.server_side_token_check
-    }
-}
-impl std::fmt::Debug for CognitoIdentityProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CognitoIdentityProvider");
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("server_side_token_check", &self.server_side_token_check);
-        formatter.finish()
     }
 }
 /// See [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
@@ -108,7 +99,7 @@ impl CognitoIdentityProvider {
 
 /// <p>A role mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoleMapping {
     /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
     #[doc(hidden)]
@@ -140,15 +131,6 @@ impl RoleMapping {
         &self,
     ) -> std::option::Option<&crate::model::RulesConfigurationType> {
         self.rules_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for RoleMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoleMapping");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("ambiguous_role_resolution", &self.ambiguous_role_resolution);
-        formatter.field("rules_configuration", &self.rules_configuration);
-        formatter.finish()
     }
 }
 /// See [`RoleMapping`](crate::model::RoleMapping).
@@ -228,7 +210,7 @@ impl RoleMapping {
 
 /// <p>A container for rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RulesConfigurationType {
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
@@ -240,13 +222,6 @@ impl RulesConfigurationType {
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::MappingRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for RulesConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RulesConfigurationType");
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`RulesConfigurationType`](crate::model::RulesConfigurationType).
@@ -294,7 +269,7 @@ impl RulesConfigurationType {
 
 /// <p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MappingRule {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     #[doc(hidden)]
@@ -325,16 +300,6 @@ impl MappingRule {
     /// <p>The role ARN.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MappingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MappingRule");
-        formatter.field("claim", &self.claim);
-        formatter.field("match_type", &self.match_type);
-        formatter.field("value", &self.value);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`MappingRule`](crate::model::MappingRule).
@@ -696,7 +661,7 @@ impl AsRef<str> for RoleMappingType {
 
 /// <p>A description of the identity pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityPoolShortDescription {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -713,14 +678,6 @@ impl IdentityPoolShortDescription {
     /// <p>A string that you provide.</p>
     pub fn identity_pool_name(&self) -> std::option::Option<&str> {
         self.identity_pool_name.as_deref()
-    }
-}
-impl std::fmt::Debug for IdentityPoolShortDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityPoolShortDescription");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.finish()
     }
 }
 /// See [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
@@ -777,7 +734,7 @@ impl IdentityPoolShortDescription {
 
 /// <p>A description of the identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityDescription {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -808,16 +765,6 @@ impl IdentityDescription {
     /// <p>Date on which the identity was last modified.</p>
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
-    }
-}
-impl std::fmt::Debug for IdentityDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityDescription");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("logins", &self.logins);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.finish()
     }
 }
 /// See [`IdentityDescription`](crate::model::IdentityDescription).
@@ -907,7 +854,7 @@ impl IdentityDescription {
 
 /// <p>Credentials for the provided identity ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Credentials {
     /// <p>The Access Key portion of the credentials.</p>
     #[doc(hidden)]
@@ -938,16 +885,6 @@ impl Credentials {
     /// <p>The date at which these credentials will expire.</p>
     pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
-    }
-}
-impl std::fmt::Debug for Credentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Credentials");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.field("secret_key", &self.secret_key);
-        formatter.field("session_token", &self.session_token);
-        formatter.field("expiration", &self.expiration);
-        formatter.finish()
     }
 }
 /// See [`Credentials`](crate::model::Credentials).
@@ -1031,7 +968,7 @@ impl Credentials {
 
 /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedIdentityId {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -1048,14 +985,6 @@ impl UnprocessedIdentityId {
     /// <p>The error code indicating the type of error that occurred.</p>
     pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
         self.error_code.as_ref()
-    }
-}
-impl std::fmt::Debug for UnprocessedIdentityId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedIdentityId");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).

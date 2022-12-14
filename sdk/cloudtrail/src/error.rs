@@ -2,18 +2,11 @@
 
 /// <p>This exception is thrown when the requested operation is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOperationException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedOperationException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl UnsupportedOperationException {
 
 /// <p>This exception is no longer in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrailNotProvidedException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TrailNotProvidedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrailNotProvidedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TrailNotProvidedException {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl TrailNotProvidedException {
 
 /// <p>This exception is thrown when the trail with the given name is not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrailNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TrailNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrailNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TrailNotFoundException {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl TrailNotFoundException {
 
 /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketDoesNotExistException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for S3BucketDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl S3BucketDoesNotExistException {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl S3BucketDoesNotExistException {
 
 /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationsNotInUseException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OrganizationsNotInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationsNotInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OrganizationsNotInUseException {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl OrganizationsNotInUseException {
 
 /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationNotInAllFeaturesModeException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OrganizationNotInAllFeaturesModeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationNotInAllFeaturesModeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OrganizationNotInAllFeaturesModeException {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl OrganizationNotInAllFeaturesModeException {
 
 /// <p>This exception is thrown when the requested operation is not permitted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationNotPermittedException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OperationNotPermittedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationNotPermittedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OperationNotPermittedException {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl OperationNotPermittedException {
 
 /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotOrganizationMasterAccountException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NotOrganizationMasterAccountException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotOrganizationMasterAccountException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NotOrganizationMasterAccountException {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl NotOrganizationMasterAccountException {
 
 /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsKeyNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsKeyNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKeyNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsKeyNotFoundException {
     /// Returns the error message.
@@ -606,18 +543,11 @@ impl KmsKeyNotFoundException {
 /// <p>This exception is no longer in use.</p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsKeyDisabledException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsKeyDisabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKeyDisabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsKeyDisabledException {
     /// Returns the error message.
@@ -673,18 +603,11 @@ impl KmsKeyDisabledException {
 
 /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsException {
     /// Returns the error message.
@@ -747,18 +670,11 @@ impl KmsException {
 /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTrailNameException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTrailNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTrailNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTrailNameException {
     /// Returns the error message.
@@ -814,18 +730,11 @@ impl InvalidTrailNameException {
 
 /// <p>This exception is thrown when the provided SNS topic name is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSnsTopicNameException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSnsTopicNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSnsTopicNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSnsTopicNameException {
     /// Returns the error message.
@@ -881,18 +790,11 @@ impl InvalidSnsTopicNameException {
 
 /// <p>This exception is thrown when the provided S3 prefix is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3PrefixException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidS3PrefixException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3PrefixException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidS3PrefixException {
     /// Returns the error message.
@@ -948,18 +850,11 @@ impl InvalidS3PrefixException {
 
 /// <p>This exception is thrown when the provided S3 bucket name is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3BucketNameException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidS3BucketNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3BucketNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidS3BucketNameException {
     /// Returns the error message.
@@ -1015,18 +910,11 @@ impl InvalidS3BucketNameException {
 
 /// <p>This exception is thrown when the combination of parameters provided is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterCombinationException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidParameterCombinationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterCombinationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidParameterCombinationException {
     /// Returns the error message.
@@ -1082,18 +970,11 @@ impl InvalidParameterCombinationException {
 
 /// <p>This exception is thrown when the KMS key ARN is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidKmsKeyIdException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidKmsKeyIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidKmsKeyIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidKmsKeyIdException {
     /// Returns the error message.
@@ -1149,18 +1030,11 @@ impl InvalidKmsKeyIdException {
 
 /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidHomeRegionException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidHomeRegionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidHomeRegionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidHomeRegionException {
     /// Returns the error message.
@@ -1223,18 +1097,11 @@ impl InvalidHomeRegionException {
 /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEventSelectorsException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidEventSelectorsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEventSelectorsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidEventSelectorsException {
     /// Returns the error message.
@@ -1290,18 +1157,11 @@ impl InvalidEventSelectorsException {
 
 /// <p>This exception is thrown when the provided role is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCloudWatchLogsRoleArnException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidCloudWatchLogsRoleArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCloudWatchLogsRoleArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidCloudWatchLogsRoleArnException {
     /// Returns the error message.
@@ -1357,18 +1217,11 @@ impl InvalidCloudWatchLogsRoleArnException {
 
 /// <p>This exception is thrown when the provided CloudWatch Logs log group is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCloudWatchLogsLogGroupArnException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidCloudWatchLogsLogGroupArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCloudWatchLogsLogGroupArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidCloudWatchLogsLogGroupArnException {
     /// Returns the error message.
@@ -1424,18 +1277,11 @@ impl InvalidCloudWatchLogsLogGroupArnException {
 
 /// <p>This exception is thrown when the policy on the Amazon SNS topic is not sufficient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientSnsTopicPolicyException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientSnsTopicPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientSnsTopicPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientSnsTopicPolicyException {
     /// Returns the error message.
@@ -1491,18 +1337,11 @@ impl InsufficientSnsTopicPolicyException {
 
 /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientS3BucketPolicyException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientS3BucketPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientS3BucketPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientS3BucketPolicyException {
     /// Returns the error message.
@@ -1558,18 +1397,11 @@ impl InsufficientS3BucketPolicyException {
 
 /// <p>This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientEncryptionPolicyException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientEncryptionPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientEncryptionPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientEncryptionPolicyException {
     /// Returns the error message.
@@ -1625,19 +1457,11 @@ impl InsufficientEncryptionPolicyException {
 
 /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientDependencyServiceAccessPermissionException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientDependencyServiceAccessPermissionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("InsufficientDependencyServiceAccessPermissionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientDependencyServiceAccessPermissionException {
     /// Returns the error message.
@@ -1695,18 +1519,11 @@ impl InsufficientDependencyServiceAccessPermissionException {
 
 /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsDeliveryUnavailableException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CloudWatchLogsDeliveryUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsDeliveryUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CloudWatchLogsDeliveryUnavailableException {
     /// Returns the error message.
@@ -1762,18 +1579,11 @@ impl CloudWatchLogsDeliveryUnavailableException {
 
 /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudTrailInvalidClientTokenIdException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CloudTrailInvalidClientTokenIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudTrailInvalidClientTokenIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CloudTrailInvalidClientTokenIdException {
     /// Returns the error message.
@@ -1829,18 +1639,11 @@ impl CloudTrailInvalidClientTokenIdException {
 
 /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudTrailAccessNotEnabledException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CloudTrailAccessNotEnabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudTrailAccessNotEnabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CloudTrailAccessNotEnabledException {
     /// Returns the error message.
@@ -1896,18 +1699,11 @@ impl CloudTrailAccessNotEnabledException {
 
 /// <p>The request includes a parameter that is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidParameterException {
     /// Returns the error message.
@@ -1963,18 +1759,11 @@ impl InvalidParameterException {
 
 /// <p>The event data store is inactive.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InactiveEventDataStoreException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InactiveEventDataStoreException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InactiveEventDataStoreException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InactiveEventDataStoreException {
     /// Returns the error message.
@@ -2030,18 +1819,11 @@ impl InactiveEventDataStoreException {
 
 /// <p>The specified event data store was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDataStoreNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EventDataStoreNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDataStoreNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EventDataStoreNotFoundException {
     /// Returns the error message.
@@ -2097,18 +1879,11 @@ impl EventDataStoreNotFoundException {
 
 /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDataStoreHasOngoingImportException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EventDataStoreHasOngoingImportException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDataStoreHasOngoingImportException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EventDataStoreHasOngoingImportException {
     /// Returns the error message.
@@ -2164,18 +1939,11 @@ impl EventDataStoreHasOngoingImportException {
 
 /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDataStoreArnInvalidException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EventDataStoreArnInvalidException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDataStoreArnInvalidException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EventDataStoreArnInvalidException {
     /// Returns the error message.
@@ -2234,18 +2002,11 @@ impl EventDataStoreArnInvalidException {
 
 /// <p> The specified import was not found. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ImportNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ImportNotFoundException {
     /// Returns the error message.
@@ -2301,18 +2062,11 @@ impl ImportNotFoundException {
 
 /// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxConcurrentQueriesException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxConcurrentQueriesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxConcurrentQueriesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxConcurrentQueriesException {
     /// Returns the error message.
@@ -2368,18 +2122,11 @@ impl MaxConcurrentQueriesException {
 
 /// <p>The query that was submitted has validation errors, or uses incorrect syntax or unsupported keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidQueryStatementException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidQueryStatementException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidQueryStatementException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidQueryStatementException {
     /// Returns the error message.
@@ -2435,18 +2182,11 @@ impl InvalidQueryStatementException {
 
 /// <p> This exception is thrown when the provided source S3 bucket is not valid for import. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidImportSourceException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidImportSourceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidImportSourceException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidImportSourceException {
     /// Returns the error message.
@@ -2502,18 +2242,11 @@ impl InvalidImportSourceException {
 
 /// <p>The event data store is not in a status that supports the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEventDataStoreStatusException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidEventDataStoreStatusException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEventDataStoreStatusException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidEventDataStoreStatusException {
     /// Returns the error message.
@@ -2569,18 +2302,11 @@ impl InvalidEventDataStoreStatusException {
 
 /// <p> This exception is thrown when the event data store category is not valid for the import. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEventDataStoreCategoryException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidEventDataStoreCategoryException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEventDataStoreCategoryException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidEventDataStoreCategoryException {
     /// Returns the error message.
@@ -2636,18 +2362,11 @@ impl InvalidEventDataStoreCategoryException {
 
 /// <p> This exception is thrown when you start a new import and a previous import is still in progress. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountHasOngoingImportException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccountHasOngoingImportException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountHasOngoingImportException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccountHasOngoingImportException {
     /// Returns the error message.
@@ -2703,18 +2422,11 @@ impl AccountHasOngoingImportException {
 
 /// <p>Your account has used the maximum number of event data stores.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDataStoreMaxLimitExceededException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EventDataStoreMaxLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDataStoreMaxLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EventDataStoreMaxLimitExceededException {
     /// Returns the error message.
@@ -2770,18 +2482,11 @@ impl EventDataStoreMaxLimitExceededException {
 
 /// <p>This exception is thrown when the specified resource type is not supported by CloudTrail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTypeNotSupportedException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceTypeNotSupportedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTypeNotSupportedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceTypeNotSupportedException {
     /// Returns the error message.
@@ -2837,18 +2542,11 @@ impl ResourceTypeNotSupportedException {
 
 /// <p>This exception is thrown when the specified resource is not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -2904,18 +2602,11 @@ impl ResourceNotFoundException {
 
 /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTagParameterException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTagParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTagParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTagParameterException {
     /// Returns the error message.
@@ -2972,18 +2663,11 @@ impl InvalidTagParameterException {
 /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
 /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudTrailArnInvalidException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CloudTrailArnInvalidException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudTrailArnInvalidException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CloudTrailArnInvalidException {
     /// Returns the error message.
@@ -3042,18 +2726,11 @@ impl CloudTrailArnInvalidException {
 
 /// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInsightSelectorsException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInsightSelectorsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInsightSelectorsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInsightSelectorsException {
     /// Returns the error message.
@@ -3109,18 +2786,11 @@ impl InvalidInsightSelectorsException {
 
 /// <p>Occurs if the timestamp values are not valid. Either the start time occurs after the end time, or the time range is outside the range of possible values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTimeRangeException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTimeRangeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTimeRangeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTimeRangeException {
     /// Returns the error message.
@@ -3176,18 +2846,11 @@ impl InvalidTimeRangeException {
 
 /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNextTokenException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidNextTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
@@ -3243,18 +2906,11 @@ impl InvalidNextTokenException {
 
 /// <p>This exception is thrown if the limit specified is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMaxResultsException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidMaxResultsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMaxResultsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidMaxResultsException {
     /// Returns the error message.
@@ -3310,18 +2966,11 @@ impl InvalidMaxResultsException {
 
 /// <p>Occurs when a lookup attribute is specified that is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLookupAttributesException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidLookupAttributesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLookupAttributesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidLookupAttributesException {
     /// Returns the error message.
@@ -3377,18 +3026,11 @@ impl InvalidLookupAttributesException {
 
 /// <p>Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEventCategoryException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidEventCategoryException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEventCategoryException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidEventCategoryException {
     /// Returns the error message.
@@ -3444,18 +3086,11 @@ impl InvalidEventCategoryException {
 
 /// <p>Reserved for future use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTokenException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTokenException {
     /// Returns the error message.
@@ -3511,18 +3146,11 @@ impl InvalidTokenException {
 
 /// <p>The query status is not valid for the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidQueryStatusException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidQueryStatusException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidQueryStatusException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidQueryStatusException {
     /// Returns the error message.
@@ -3578,18 +3206,11 @@ impl InvalidQueryStatusException {
 
 /// <p>A date range for the query was specified that is not valid. Be sure that the start time is chronologically before the end time. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDateRangeException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDateRangeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDateRangeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDateRangeException {
     /// Returns the error message.
@@ -3645,18 +3266,11 @@ impl InvalidDateRangeException {
 
 /// <p>The query ID does not exist or does not map to a query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryIdNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for QueryIdNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryIdNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl QueryIdNotFoundException {
     /// Returns the error message.
@@ -3712,18 +3326,11 @@ impl QueryIdNotFoundException {
 
 /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightNotEnabledException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsightNotEnabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightNotEnabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsightNotEnabledException {
     /// Returns the error message.
@@ -3779,18 +3386,11 @@ impl InsightNotEnabledException {
 
 /// <p> The specified channel was not found. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ChannelNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ChannelNotFoundException {
     /// Returns the error message.
@@ -3846,18 +3446,11 @@ impl ChannelNotFoundException {
 
 /// <p> The specified channel ARN is not valid or does not map to a channel in your account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelArnInvalidException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ChannelArnInvalidException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelArnInvalidException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ChannelArnInvalidException {
     /// Returns the error message.
@@ -3913,18 +3506,11 @@ impl ChannelArnInvalidException {
 
 /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConflictException {
     /// Returns the error message.
@@ -3980,18 +3566,11 @@ impl ConflictException {
 
 /// <p>The event data store cannot be deleted because termination protection is enabled for it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDataStoreTerminationProtectedException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EventDataStoreTerminationProtectedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDataStoreTerminationProtectedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EventDataStoreTerminationProtectedException {
     /// Returns the error message.
@@ -4047,18 +3626,11 @@ impl EventDataStoreTerminationProtectedException {
 
 /// <p>This exception is thrown when the specified trail already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrailAlreadyExistsException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TrailAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrailAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TrailAlreadyExistsException {
     /// Returns the error message.
@@ -4114,18 +3686,11 @@ impl TrailAlreadyExistsException {
 
 /// <p>This exception is thrown when the maximum number of trails is reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumNumberOfTrailsExceededException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumNumberOfTrailsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumNumberOfTrailsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumNumberOfTrailsExceededException {
     /// Returns the error message.
@@ -4181,18 +3746,11 @@ impl MaximumNumberOfTrailsExceededException {
 
 /// <p>An event data store with that name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDataStoreAlreadyExistsException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EventDataStoreAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDataStoreAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EventDataStoreAlreadyExistsException {
     /// Returns the error message.
@@ -4248,18 +3806,11 @@ impl EventDataStoreAlreadyExistsException {
 
 /// <p>The specified query cannot be canceled because it is in the <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InactiveQueryException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InactiveQueryException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InactiveQueryException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InactiveQueryException {
     /// Returns the error message.
@@ -4315,18 +3866,11 @@ impl InactiveQueryException {
 
 /// <p>The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagsLimitExceededException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TagsLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagsLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TagsLimitExceededException {
     /// Returns the error message.

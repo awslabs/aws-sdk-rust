@@ -2,7 +2,7 @@
 
 /// <p>Provides information about which field caused the exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field that caused the exception.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>Information about what caused the field to cause an exception.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactChannelAddress {
     /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
@@ -204,13 +196,6 @@ impl ContactChannelAddress {
     /// </ul>
     pub fn simple_address(&self) -> std::option::Option<&str> {
         self.simple_address.as_deref()
-    }
-}
-impl std::fmt::Debug for ContactChannelAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactChannelAddress");
-        formatter.field("simple_address", &self.simple_address);
-        formatter.finish()
     }
 }
 /// See [`ContactChannelAddress`](crate::model::ContactChannelAddress).
@@ -262,7 +247,7 @@ impl ContactChannelAddress {
 
 /// <p>The stages that an escalation plan or engagement plan engages contacts and contact methods in.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     #[doc(hidden)]
@@ -272,13 +257,6 @@ impl Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     pub fn stages(&self) -> std::option::Option<&[crate::model::Stage]> {
         self.stages.as_deref()
-    }
-}
-impl std::fmt::Debug for Plan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Plan");
-        formatter.field("stages", &self.stages);
-        formatter.finish()
     }
 }
 /// See [`Plan`](crate::model::Plan).
@@ -326,7 +304,7 @@ impl Plan {
 
 /// <p>A set amount of time that an escalation plan or engagement plan engages the specified contacts or contact methods.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stage {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
     #[doc(hidden)]
@@ -343,14 +321,6 @@ impl Stage {
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
-    }
-}
-impl std::fmt::Debug for Stage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stage");
-        formatter.field("duration_in_minutes", &self.duration_in_minutes);
-        formatter.field("targets", &self.targets);
-        formatter.finish()
     }
 }
 /// See [`Stage`](crate::model::Stage).
@@ -410,7 +380,7 @@ impl Stage {
 
 /// <p>The contact or contact channel that's being engaged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Target {
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
     #[doc(hidden)]
@@ -427,14 +397,6 @@ impl Target {
     /// <p>Information about the contact that Incident Manager is engaging.</p>
     pub fn contact_target_info(&self) -> std::option::Option<&crate::model::ContactTargetInfo> {
         self.contact_target_info.as_ref()
-    }
-}
-impl std::fmt::Debug for Target {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Target");
-        formatter.field("channel_target_info", &self.channel_target_info);
-        formatter.field("contact_target_info", &self.contact_target_info);
-        formatter.finish()
     }
 }
 /// See [`Target`](crate::model::Target).
@@ -491,7 +453,7 @@ impl Target {
 
 /// <p>The contact that Incident Manager is engaging during an incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     #[doc(hidden)]
@@ -508,14 +470,6 @@ impl ContactTargetInfo {
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn is_essential(&self) -> std::option::Option<bool> {
         self.is_essential
-    }
-}
-impl std::fmt::Debug for ContactTargetInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactTargetInfo");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("is_essential", &self.is_essential);
-        formatter.finish()
     }
 }
 /// See [`ContactTargetInfo`](crate::model::ContactTargetInfo).
@@ -566,7 +520,7 @@ impl ContactTargetInfo {
 
 /// <p>Information about the contact channel that Incident Manager uses to engage the contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
@@ -583,14 +537,6 @@ impl ChannelTargetInfo {
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub fn retry_interval_in_minutes(&self) -> std::option::Option<i32> {
         self.retry_interval_in_minutes
-    }
-}
-impl std::fmt::Debug for ChannelTargetInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelTargetInfo");
-        formatter.field("contact_channel_id", &self.contact_channel_id);
-        formatter.field("retry_interval_in_minutes", &self.retry_interval_in_minutes);
-        formatter.finish()
     }
 }
 /// See [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
@@ -644,7 +590,7 @@ impl ChannelTargetInfo {
 
 /// <p>A container of a key-value name pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Name of the object key.</p>
     #[doc(hidden)]
@@ -661,14 +607,6 @@ impl Tag {
     /// <p>Value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -719,7 +657,7 @@ impl Tag {
 
 /// <p>Incident Manager engaging a contact's contact channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Page {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
     #[doc(hidden)]
@@ -778,20 +716,6 @@ impl Page {
     /// <p>The time that the contact channel acknowledged engagement.</p>
     pub fn read_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.read_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Page {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Page");
-        formatter.field("page_arn", &self.page_arn);
-        formatter.field("engagement_arn", &self.engagement_arn);
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.field("sender", &self.sender);
-        formatter.field("incident_id", &self.incident_id);
-        formatter.field("sent_time", &self.sent_time);
-        formatter.field("delivery_time", &self.delivery_time);
-        formatter.field("read_time", &self.read_time);
-        formatter.finish()
     }
 }
 /// See [`Page`](crate::model::Page).
@@ -926,7 +850,7 @@ impl Page {
 
 /// <p>Records events during an engagement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
     #[doc(hidden)]
@@ -957,16 +881,6 @@ impl Receipt {
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
     pub fn receipt_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.receipt_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Receipt {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Receipt");
-        formatter.field("contact_channel_arn", &self.contact_channel_arn);
-        formatter.field("receipt_type", &self.receipt_type);
-        formatter.field("receipt_info", &self.receipt_info);
-        formatter.field("receipt_time", &self.receipt_time);
-        formatter.finish()
     }
 }
 /// See [`Receipt`](crate::model::Receipt).
@@ -1155,7 +1069,7 @@ impl AsRef<str> for ReceiptType {
 
 /// <p>Incident Manager reaching out to a contact or escalation plan to engage contact during an incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Engagement {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     #[doc(hidden)]
@@ -1200,18 +1114,6 @@ impl Engagement {
     /// <p>The time that the engagement ended.</p>
     pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Engagement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Engagement");
-        formatter.field("engagement_arn", &self.engagement_arn);
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.field("sender", &self.sender);
-        formatter.field("incident_id", &self.incident_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("stop_time", &self.stop_time);
-        formatter.finish()
     }
 }
 /// See [`Engagement`](crate::model::Engagement).
@@ -1319,7 +1221,7 @@ impl Engagement {
 
 /// <p>A range of between two set times</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>The start of the time range.</p>
     #[doc(hidden)]
@@ -1336,14 +1238,6 @@ impl TimeRange {
     /// <p>The end of the time range.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`TimeRange`](crate::model::TimeRange).
@@ -1400,7 +1294,7 @@ impl TimeRange {
 
 /// <p>A personal contact or escalation plan that Incident Manager engages during an incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Contact {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
@@ -1431,16 +1325,6 @@ impl Contact {
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Contact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Contact");
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.field("alias", &self.alias);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Contact`](crate::model::Contact).
@@ -1605,7 +1489,7 @@ impl AsRef<str> for ContactType {
 
 /// <p>The method that Incident Manager uses to engage a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactChannel {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
@@ -1660,18 +1544,6 @@ impl ContactChannel {
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
     pub fn activation_status(&self) -> std::option::Option<&crate::model::ActivationStatus> {
         self.activation_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ContactChannel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactChannel");
-        formatter.field("contact_channel_arn", &self.contact_channel_arn);
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("delivery_address", &self.delivery_address);
-        formatter.field("activation_status", &self.activation_status);
-        formatter.finish()
     }
 }
 /// See [`ContactChannel`](crate::model::ContactChannel).

@@ -2,7 +2,7 @@
 
 /// <p>The tags for the resource. The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceKey {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -94,14 +86,6 @@ impl ResourceKey {
     /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceKey");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
     }
 }
 /// See [`ResourceKey`](crate::model::ResourceKey).
@@ -1112,7 +1096,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>Details about the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryInfo {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
     #[doc(hidden)]
@@ -1122,13 +1106,6 @@ impl QueryInfo {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
     pub fn select_fields(&self) -> std::option::Option<&[crate::model::FieldInfo]> {
         self.select_fields.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryInfo");
-        formatter.field("select_fields", &self.select_fields);
-        formatter.finish()
     }
 }
 /// See [`QueryInfo`](crate::model::QueryInfo).
@@ -1176,7 +1153,7 @@ impl QueryInfo {
 
 /// <p>Details about the fields such as name of the field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldInfo {
     /// <p>Name of the field.</p>
     #[doc(hidden)]
@@ -1186,13 +1163,6 @@ impl FieldInfo {
     /// <p>Name of the field.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldInfo");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`FieldInfo`](crate::model::FieldInfo).
@@ -1229,7 +1199,7 @@ impl FieldInfo {
 
 /// <p>Provides the details of a stored query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StoredQuery {
     /// <p>The ID of the query.</p>
     #[doc(hidden)]
@@ -1267,17 +1237,6 @@ impl StoredQuery {
     /// <p>The expression of the query. For example, <code>SELECT resourceId, resourceType, supplementaryConfiguration.BucketVersioningConfiguration.status WHERE resourceType = 'AWS::S3::Bucket' AND supplementaryConfiguration.BucketVersioningConfiguration.status = 'Off'.</code> </p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
-    }
-}
-impl std::fmt::Debug for StoredQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StoredQuery");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_arn", &self.query_arn);
-        formatter.field("query_name", &self.query_name);
-        formatter.field("description", &self.description);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
     }
 }
 /// See [`StoredQuery`](crate::model::StoredQuery).
@@ -1364,7 +1323,7 @@ impl StoredQuery {
 
 /// <p>An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in Config.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
     #[doc(hidden)]
@@ -1385,14 +1344,6 @@ impl RetentionConfiguration {
     /// </note>
     pub fn retention_period_in_days(&self) -> i32 {
         self.retention_period_in_days
-    }
-}
-impl std::fmt::Debug for RetentionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetentionConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("retention_period_in_days", &self.retention_period_in_days);
-        formatter.finish()
     }
 }
 /// See [`RetentionConfiguration`](crate::model::RetentionConfiguration).
@@ -1447,7 +1398,7 @@ impl RetentionConfiguration {
 
 /// <p>List of each of the failed remediation exceptions with specific reasons.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedRemediationExceptionBatch {
     /// <p>Returns a failure message. For example, the auto-remediation has failed.</p>
     #[doc(hidden)]
@@ -1464,14 +1415,6 @@ impl FailedRemediationExceptionBatch {
     /// <p>Returns remediation exception resource key object of the failed items.</p>
     pub fn failed_items(&self) -> std::option::Option<&[crate::model::RemediationException]> {
         self.failed_items.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedRemediationExceptionBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedRemediationExceptionBatch");
-        formatter.field("failure_message", &self.failure_message);
-        formatter.field("failed_items", &self.failed_items);
-        formatter.finish()
     }
 }
 /// See [`FailedRemediationExceptionBatch`](crate::model::FailedRemediationExceptionBatch).
@@ -1535,7 +1478,7 @@ impl FailedRemediationExceptionBatch {
 
 /// <p>An object that represents the details about the remediation exception. The details include the rule name, an explanation of an exception, the time when the exception will be deleted, the resource ID, and resource type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationException {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
@@ -1573,17 +1516,6 @@ impl RemediationException {
     /// <p>The time when the remediation exception will be deleted.</p>
     pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
-    }
-}
-impl std::fmt::Debug for RemediationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationException");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("message", &self.message);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.finish()
     }
 }
 /// See [`RemediationException`](crate::model::RemediationException).
@@ -1679,7 +1611,7 @@ impl RemediationException {
 
 /// <p>The details that identify a resource within Config, including the resource type and resource ID. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationExceptionResourceKey {
     /// <p>The type of a resource.</p>
     #[doc(hidden)]
@@ -1696,14 +1628,6 @@ impl RemediationExceptionResourceKey {
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RemediationExceptionResourceKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationExceptionResourceKey");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
     }
 }
 /// See [`RemediationExceptionResourceKey`](crate::model::RemediationExceptionResourceKey).
@@ -1757,7 +1681,7 @@ impl RemediationExceptionResourceKey {
 
 /// <p>List of each of the failed remediations with specific reasons.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedRemediationBatch {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
     #[doc(hidden)]
@@ -1774,14 +1698,6 @@ impl FailedRemediationBatch {
     /// <p>Returns remediation configurations of the failed items.</p>
     pub fn failed_items(&self) -> std::option::Option<&[crate::model::RemediationConfiguration]> {
         self.failed_items.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedRemediationBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedRemediationBatch");
-        formatter.field("failure_message", &self.failure_message);
-        formatter.field("failed_items", &self.failed_items);
-        formatter.finish()
     }
 }
 /// See [`FailedRemediationBatch`](crate::model::FailedRemediationBatch).
@@ -1845,7 +1761,7 @@ impl FailedRemediationBatch {
 
 /// <p>An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationConfiguration {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
@@ -1946,27 +1862,6 @@ impl RemediationConfiguration {
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
     pub fn created_by_service(&self) -> std::option::Option<&str> {
         self.created_by_service.as_deref()
-    }
-}
-impl std::fmt::Debug for RemediationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationConfiguration");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_version", &self.target_version);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("automatic", &self.automatic);
-        formatter.field("execution_controls", &self.execution_controls);
-        formatter.field(
-            "maximum_automatic_attempts",
-            &self.maximum_automatic_attempts,
-        );
-        formatter.field("retry_attempt_seconds", &self.retry_attempt_seconds);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_by_service", &self.created_by_service);
-        formatter.finish()
     }
 }
 /// See [`RemediationConfiguration`](crate::model::RemediationConfiguration).
@@ -2183,7 +2078,7 @@ impl RemediationConfiguration {
 
 /// <p>The controls that Config uses for executing remediations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionControls {
     /// <p>A SsmControls object.</p>
     #[doc(hidden)]
@@ -2193,13 +2088,6 @@ impl ExecutionControls {
     /// <p>A SsmControls object.</p>
     pub fn ssm_controls(&self) -> std::option::Option<&crate::model::SsmControls> {
         self.ssm_controls.as_ref()
-    }
-}
-impl std::fmt::Debug for ExecutionControls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionControls");
-        formatter.field("ssm_controls", &self.ssm_controls);
-        formatter.finish()
     }
 }
 /// See [`ExecutionControls`](crate::model::ExecutionControls).
@@ -2241,7 +2129,7 @@ impl ExecutionControls {
 
 /// <p>Amazon Web Services Systems Manager (SSM) specific remediation controls.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SsmControls {
     /// <p>The maximum percentage of remediation actions allowed to run in parallel on the non-compliant resources for that specific rule. You can specify a percentage, such as 10%. The default value is 10. </p>
     #[doc(hidden)]
@@ -2258,17 +2146,6 @@ impl SsmControls {
     /// <p>The percentage of errors that are allowed before SSM stops running automations on non-compliant resources for that specific rule. You can specify a percentage of errors, for example 10%. If you do not specifiy a percentage, the default is 50%. For example, if you set the ErrorPercentage to 40% for 10 non-compliant resources, then SSM stops running the automations when the fifth error is received. </p>
     pub fn error_percentage(&self) -> std::option::Option<i32> {
         self.error_percentage
-    }
-}
-impl std::fmt::Debug for SsmControls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsmControls");
-        formatter.field(
-            "concurrent_execution_rate_percentage",
-            &self.concurrent_execution_rate_percentage,
-        );
-        formatter.field("error_percentage", &self.error_percentage);
-        formatter.finish()
     }
 }
 /// See [`SsmControls`](crate::model::SsmControls).
@@ -2322,7 +2199,7 @@ impl SsmControls {
 
 /// <p>The value is either a dynamic (resource) value or a static value. You must select either a dynamic value or a static value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationParameterValue {
     /// <p>The value is dynamic and changes at run-time.</p>
     #[doc(hidden)]
@@ -2339,14 +2216,6 @@ impl RemediationParameterValue {
     /// <p>The value is static and does not change at run-time.</p>
     pub fn static_value(&self) -> std::option::Option<&crate::model::StaticValue> {
         self.static_value.as_ref()
-    }
-}
-impl std::fmt::Debug for RemediationParameterValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationParameterValue");
-        formatter.field("resource_value", &self.resource_value);
-        formatter.field("static_value", &self.static_value);
-        formatter.finish()
     }
 }
 /// See [`RemediationParameterValue`](crate::model::RemediationParameterValue).
@@ -2403,7 +2272,7 @@ impl RemediationParameterValue {
 
 /// <p>The static value of the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StaticValue {
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
     #[doc(hidden)]
@@ -2413,13 +2282,6 @@ impl StaticValue {
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for StaticValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaticValue");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`StaticValue`](crate::model::StaticValue).
@@ -2467,7 +2329,7 @@ impl StaticValue {
 
 /// <p>The dynamic value of the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceValue {
     /// <p>The value is a resource ID.</p>
     #[doc(hidden)]
@@ -2477,13 +2339,6 @@ impl ResourceValue {
     /// <p>The value is a resource ID.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::ResourceValueType> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceValue");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceValue`](crate::model::ResourceValue).
@@ -2697,7 +2552,7 @@ impl AsRef<str> for RemediationTargetType {
 
 /// <p>Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 255 characters, and values can have a maximum length of 4096 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackInputParameter {
     /// <p>One part of a key-value pair.</p>
     #[doc(hidden)]
@@ -2714,14 +2569,6 @@ impl ConformancePackInputParameter {
     /// <p>Another part of the key-value pair. </p>
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ConformancePackInputParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackInputParameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
     }
 }
 /// See [`ConformancePackInputParameter`](crate::model::ConformancePackInputParameter).
@@ -2778,7 +2625,7 @@ impl ConformancePackInputParameter {
 
 /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationCustomPolicyRuleMetadata {
     /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
     #[doc(hidden)]
@@ -2871,32 +2718,6 @@ impl OrganizationCustomPolicyRuleMetadata {
     /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
     pub fn debug_log_delivery_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.debug_log_delivery_accounts.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationCustomPolicyRuleMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationCustomPolicyRuleMetadata");
-        formatter.field("description", &self.description);
-        formatter.field(
-            "organization_config_rule_trigger_types",
-            &self.organization_config_rule_trigger_types,
-        );
-        formatter.field("input_parameters", &self.input_parameters);
-        formatter.field(
-            "maximum_execution_frequency",
-            &self.maximum_execution_frequency,
-        );
-        formatter.field("resource_types_scope", &self.resource_types_scope);
-        formatter.field("resource_id_scope", &self.resource_id_scope);
-        formatter.field("tag_key_scope", &self.tag_key_scope);
-        formatter.field("tag_value_scope", &self.tag_value_scope);
-        formatter.field("policy_runtime", &self.policy_runtime);
-        formatter.field("policy_text", &self.policy_text);
-        formatter.field(
-            "debug_log_delivery_accounts",
-            &self.debug_log_delivery_accounts,
-        );
-        formatter.finish()
     }
 }
 /// See [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata).
@@ -3340,7 +3161,7 @@ impl AsRef<str> for OrganizationConfigRuleTriggerTypeNoSn {
 
 /// <p>An object that specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationCustomRuleMetadata {
     /// <p>The description that you provide for your organization Config rule.</p>
     #[doc(hidden)]
@@ -3425,27 +3246,6 @@ impl OrganizationCustomRuleMetadata {
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). </p>
     pub fn tag_value_scope(&self) -> std::option::Option<&str> {
         self.tag_value_scope.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationCustomRuleMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationCustomRuleMetadata");
-        formatter.field("description", &self.description);
-        formatter.field("lambda_function_arn", &self.lambda_function_arn);
-        formatter.field(
-            "organization_config_rule_trigger_types",
-            &self.organization_config_rule_trigger_types,
-        );
-        formatter.field("input_parameters", &self.input_parameters);
-        formatter.field(
-            "maximum_execution_frequency",
-            &self.maximum_execution_frequency,
-        );
-        formatter.field("resource_types_scope", &self.resource_types_scope);
-        formatter.field("resource_id_scope", &self.resource_id_scope);
-        formatter.field("tag_key_scope", &self.tag_key_scope);
-        formatter.field("tag_value_scope", &self.tag_value_scope);
-        formatter.finish()
     }
 }
 /// See [`OrganizationCustomRuleMetadata`](crate::model::OrganizationCustomRuleMetadata).
@@ -3751,7 +3551,7 @@ impl AsRef<str> for OrganizationConfigRuleTriggerType {
 
 /// <p>An object that specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationManagedRuleMetadata {
     /// <p>The description that you provide for your organization Config rule.</p>
     #[doc(hidden)]
@@ -3816,23 +3616,6 @@ impl OrganizationManagedRuleMetadata {
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub fn tag_value_scope(&self) -> std::option::Option<&str> {
         self.tag_value_scope.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationManagedRuleMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationManagedRuleMetadata");
-        formatter.field("description", &self.description);
-        formatter.field("rule_identifier", &self.rule_identifier);
-        formatter.field("input_parameters", &self.input_parameters);
-        formatter.field(
-            "maximum_execution_frequency",
-            &self.maximum_execution_frequency,
-        );
-        formatter.field("resource_types_scope", &self.resource_types_scope);
-        formatter.field("resource_id_scope", &self.resource_id_scope);
-        formatter.field("tag_key_scope", &self.tag_key_scope);
-        formatter.field("tag_value_scope", &self.tag_value_scope);
-        formatter.finish()
     }
 }
 /// See [`OrganizationManagedRuleMetadata`](crate::model::OrganizationManagedRuleMetadata).
@@ -3990,7 +3773,7 @@ impl OrganizationManagedRuleMetadata {
 
 /// <p>Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalEvaluation {
     /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
     #[doc(hidden)]
@@ -4028,17 +3811,6 @@ impl ExternalEvaluation {
     /// <p>The time when the compliance was recorded. </p>
     pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ExternalEvaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExternalEvaluation");
-        formatter.field("compliance_resource_type", &self.compliance_resource_type);
-        formatter.field("compliance_resource_id", &self.compliance_resource_id);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("annotation", &self.annotation);
-        formatter.field("ordering_timestamp", &self.ordering_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ExternalEvaluation`](crate::model::ExternalEvaluation).
@@ -4242,7 +4014,7 @@ impl AsRef<str> for ComplianceType {
 
 /// <p>Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     #[doc(hidden)]
@@ -4284,17 +4056,6 @@ impl Evaluation {
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
     pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for Evaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Evaluation");
-        formatter.field("compliance_resource_type", &self.compliance_resource_type);
-        formatter.field("compliance_resource_id", &self.compliance_resource_id);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("annotation", &self.annotation);
-        formatter.field("ordering_timestamp", &self.ordering_timestamp);
-        formatter.finish()
     }
 }
 /// See [`Evaluation`](crate::model::Evaluation).
@@ -4397,7 +4158,7 @@ impl Evaluation {
 
 /// <p>The channel through which Config delivers notifications and updated configuration states.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryChannel {
     /// <p>The name of the delivery channel. By default, Config assigns the name "default" when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>
     #[doc(hidden)]
@@ -4449,21 +4210,6 @@ impl DeliveryChannel {
         &self,
     ) -> std::option::Option<&crate::model::ConfigSnapshotDeliveryProperties> {
         self.config_snapshot_delivery_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for DeliveryChannel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryChannel");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("s3_kms_key_arn", &self.s3_kms_key_arn);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field(
-            "config_snapshot_delivery_properties",
-            &self.config_snapshot_delivery_properties,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeliveryChannel`](crate::model::DeliveryChannel).
@@ -4599,7 +4345,7 @@ impl DeliveryChannel {
 /// <p>You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.</p>
 /// <p>To update the <code>deliveryFrequency</code> with which Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigSnapshotDeliveryProperties {
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
     #[doc(hidden)]
@@ -4611,13 +4357,6 @@ impl ConfigSnapshotDeliveryProperties {
         &self,
     ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
         self.delivery_frequency.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigSnapshotDeliveryProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigSnapshotDeliveryProperties");
-        formatter.field("delivery_frequency", &self.delivery_frequency);
-        formatter.finish()
     }
 }
 /// See [`ConfigSnapshotDeliveryProperties`](crate::model::ConfigSnapshotDeliveryProperties).
@@ -4663,7 +4402,7 @@ impl ConfigSnapshotDeliveryProperties {
 /// <p>This API allows you to create a conformance pack template with an Amazon Web Services Systems Manager document (SSM document). To deploy a conformance pack using an SSM document, you first create an SSM document with conformance pack content, and then provide the <code>DocumentName</code> (and optionally <code>DocumentVersion</code>) in the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack API</a>.</p>
 /// <p>The <code>TemplateSSMDocumentDetails</code> object contains the name of the SSM document and the version of the SSM document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSsmDocumentDetails {
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
     #[doc(hidden)]
@@ -4684,14 +4423,6 @@ impl TemplateSsmDocumentDetails {
     /// </note>
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateSsmDocumentDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSsmDocumentDetails");
-        formatter.field("document_name", &self.document_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.finish()
     }
 }
 /// See [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
@@ -4752,7 +4483,7 @@ impl TemplateSsmDocumentDetails {
 
 /// <p>An object that represents the recording of configuration changes of an Amazon Web Services resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationRecorder {
     /// <p>The name of the recorder. By default, Config automatically assigns the name "default" when creating the configuration recorder. You cannot change the assigned name.</p>
     #[doc(hidden)]
@@ -4780,15 +4511,6 @@ impl ConfigurationRecorder {
     /// <p>Specifies the types of Amazon Web Services resources for which Config records configuration changes.</p>
     pub fn recording_group(&self) -> std::option::Option<&crate::model::RecordingGroup> {
         self.recording_group.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigurationRecorder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationRecorder");
-        formatter.field("name", &self.name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("recording_group", &self.recording_group);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationRecorder`](crate::model::ConfigurationRecorder).
@@ -4866,7 +4588,7 @@ impl ConfigurationRecorder {
 /// <p>For a list of supported resource types, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources Config Records</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordingGroup {
     /// <p>Specifies whether Config records configuration changes for every supported type of regional resource.</p>
     /// <p>If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it starts recording resources of that type automatically.</p>
@@ -4906,18 +4628,6 @@ impl RecordingGroup {
     /// <p>For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     pub fn resource_types(&self) -> std::option::Option<&[crate::model::ResourceType]> {
         self.resource_types.as_deref()
-    }
-}
-impl std::fmt::Debug for RecordingGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordingGroup");
-        formatter.field("all_supported", &self.all_supported);
-        formatter.field(
-            "include_global_resource_types",
-            &self.include_global_resource_types,
-        );
-        formatter.field("resource_types", &self.resource_types);
-        formatter.finish()
     }
 }
 /// See [`RecordingGroup`](crate::model::RecordingGroup).
@@ -5010,7 +4720,7 @@ impl RecordingGroup {
 
 /// <p>The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationAggregator {
     /// <p>The name of the aggregator.</p>
     #[doc(hidden)]
@@ -5068,31 +4778,6 @@ impl ConfigurationAggregator {
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationAggregator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationAggregator");
-        formatter.field(
-            "configuration_aggregator_name",
-            &self.configuration_aggregator_name,
-        );
-        formatter.field(
-            "configuration_aggregator_arn",
-            &self.configuration_aggregator_arn,
-        );
-        formatter.field(
-            "account_aggregation_sources",
-            &self.account_aggregation_sources,
-        );
-        formatter.field(
-            "organization_aggregation_source",
-            &self.organization_aggregation_source,
-        );
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_by", &self.created_by);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationAggregator`](crate::model::ConfigurationAggregator).
@@ -5241,7 +4926,7 @@ impl ConfigurationAggregator {
 
 /// <p>This object contains regions to set up the aggregator and an IAM role to retrieve organization details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationAggregationSource {
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
     #[doc(hidden)]
@@ -5265,15 +4950,6 @@ impl OrganizationAggregationSource {
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn all_aws_regions(&self) -> bool {
         self.all_aws_regions
-    }
-}
-impl std::fmt::Debug for OrganizationAggregationSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationAggregationSource");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("aws_regions", &self.aws_regions);
-        formatter.field("all_aws_regions", &self.all_aws_regions);
-        formatter.finish()
     }
 }
 /// See [`OrganizationAggregationSource`](crate::model::OrganizationAggregationSource).
@@ -5345,7 +5021,7 @@ impl OrganizationAggregationSource {
 
 /// <p>A collection of accounts and regions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAggregationSource {
     /// <p>The 12-digit account ID of the account being aggregated. </p>
     #[doc(hidden)]
@@ -5369,15 +5045,6 @@ impl AccountAggregationSource {
     /// <p>The source regions being aggregated.</p>
     pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.aws_regions.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountAggregationSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAggregationSource");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("all_aws_regions", &self.all_aws_regions);
-        formatter.field("aws_regions", &self.aws_regions);
-        formatter.finish()
     }
 }
 /// See [`AccountAggregationSource`](crate::model::AccountAggregationSource).
@@ -5462,7 +5129,7 @@ impl AccountAggregationSource {
 /// <p>You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to create a rule that triggers evaluations for your resources when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigRule {
     /// <p>The name that you assign to the Config rule. The name is required if you are adding a new rule.</p>
     #[doc(hidden)]
@@ -5563,25 +5230,6 @@ impl ConfigRule {
     /// </note>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigRule");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("config_rule_arn", &self.config_rule_arn);
-        formatter.field("config_rule_id", &self.config_rule_id);
-        formatter.field("description", &self.description);
-        formatter.field("scope", &self.scope);
-        formatter.field("source", &self.source);
-        formatter.field("input_parameters", &self.input_parameters);
-        formatter.field(
-            "maximum_execution_frequency",
-            &self.maximum_execution_frequency,
-        );
-        formatter.field("config_rule_state", &self.config_rule_state);
-        formatter.field("created_by", &self.created_by);
-        formatter.finish()
     }
 }
 /// See [`ConfigRule`](crate::model::ConfigRule).
@@ -5876,7 +5524,7 @@ impl AsRef<str> for ConfigRuleState {
 
 /// <p>Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the events that cause the evaluation of your Amazon Web Services resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
     /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the <i>Config developer guide</i>.</p>
@@ -5917,16 +5565,6 @@ impl Source {
     /// <p>Provides the runtime system, policy definition, and whether debug logging is enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
     pub fn custom_policy_details(&self) -> std::option::Option<&crate::model::CustomPolicyDetails> {
         self.custom_policy_details.as_ref()
-    }
-}
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field("owner", &self.owner);
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.field("source_details", &self.source_details);
-        formatter.field("custom_policy_details", &self.custom_policy_details);
-        formatter.finish()
     }
 }
 /// See [`Source`](crate::model::Source).
@@ -6026,7 +5664,7 @@ impl Source {
 
 /// <p>Provides the runtime system, policy definition, and whether debug logging enabled. You can specify the following CustomPolicyDetails parameter values only for Config Custom Policy rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomPolicyDetails {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
     #[doc(hidden)]
@@ -6050,15 +5688,6 @@ impl CustomPolicyDetails {
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
     pub fn enable_debug_log_delivery(&self) -> bool {
         self.enable_debug_log_delivery
-    }
-}
-impl std::fmt::Debug for CustomPolicyDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomPolicyDetails");
-        formatter.field("policy_runtime", &self.policy_runtime);
-        formatter.field("policy_text", &self.policy_text);
-        formatter.field("enable_debug_log_delivery", &self.enable_debug_log_delivery);
-        formatter.finish()
     }
 }
 /// See [`CustomPolicyDetails`](crate::model::CustomPolicyDetails).
@@ -6124,7 +5753,7 @@ impl CustomPolicyDetails {
 
 /// <p>Provides the source and the message types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceDetail {
     /// <p>The source of the event, such as an Amazon Web Services service, that triggers Config to evaluate your Amazon Web Services resources.</p>
     #[doc(hidden)]
@@ -6170,18 +5799,6 @@ impl SourceDetail {
         &self,
     ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
         self.maximum_execution_frequency.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceDetail");
-        formatter.field("event_source", &self.event_source);
-        formatter.field("message_type", &self.message_type);
-        formatter.field(
-            "maximum_execution_frequency",
-            &self.maximum_execution_frequency,
-        );
-        formatter.finish()
     }
 }
 /// See [`SourceDetail`](crate::model::SourceDetail).
@@ -6574,7 +6191,7 @@ impl AsRef<str> for Owner {
 
 /// <p>Defines which resources trigger an evaluation for an Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scope {
     /// <p>The resource types of only those Amazon Web Services resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>
     #[doc(hidden)]
@@ -6605,16 +6222,6 @@ impl Scope {
     /// <p>The ID of the only Amazon Web Services resource that you want to trigger an evaluation for the rule. If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.</p>
     pub fn compliance_resource_id(&self) -> std::option::Option<&str> {
         self.compliance_resource_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Scope {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scope");
-        formatter.field("compliance_resource_types", &self.compliance_resource_types);
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_value", &self.tag_value);
-        formatter.field("compliance_resource_id", &self.compliance_resource_id);
-        formatter.finish()
     }
 }
 /// See [`Scope`](crate::model::Scope).
@@ -6702,7 +6309,7 @@ impl Scope {
 
 /// <p>An object that represents the authorizations granted to aggregator accounts and regions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregationAuthorization {
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
     #[doc(hidden)]
@@ -6733,19 +6340,6 @@ impl AggregationAuthorization {
     /// <p>The time stamp when the aggregation authorization was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for AggregationAuthorization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregationAuthorization");
-        formatter.field(
-            "aggregation_authorization_arn",
-            &self.aggregation_authorization_arn,
-        );
-        formatter.field("authorized_account_id", &self.authorized_account_id);
-        formatter.field("authorized_aws_region", &self.authorized_aws_region);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`AggregationAuthorization`](crate::model::AggregationAuthorization).
@@ -6835,7 +6429,7 @@ impl AggregationAuthorization {
 
 /// <p>Returns details of a specific query. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StoredQueryMetadata {
     /// <p>The ID of the query. </p>
     #[doc(hidden)]
@@ -6866,16 +6460,6 @@ impl StoredQueryMetadata {
     /// <p>A unique description for the query.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for StoredQueryMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StoredQueryMetadata");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_arn", &self.query_arn);
-        formatter.field("query_name", &self.query_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`StoredQueryMetadata`](crate::model::StoredQueryMetadata).
@@ -6950,7 +6534,7 @@ impl StoredQueryMetadata {
 
 /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceIdentifier {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
@@ -6981,16 +6565,6 @@ impl ResourceIdentifier {
     /// <p>The time that the resource was deleted.</p>
     pub fn resource_deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.resource_deletion_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceIdentifier");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("resource_deletion_time", &self.resource_deletion_time);
-        formatter.finish()
     }
 }
 /// See [`ResourceIdentifier`](crate::model::ResourceIdentifier).
@@ -7074,7 +6648,7 @@ impl ResourceIdentifier {
 
 /// <p>A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs, and can be used to identify, investigate, and understand the level of compliance in your conformance packs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackComplianceScore {
     /// <p>Compliance score for the conformance pack. Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.</p>
     #[doc(hidden)]
@@ -7098,15 +6672,6 @@ impl ConformancePackComplianceScore {
     /// <p>The time that the conformance pack compliance score was last updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ConformancePackComplianceScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackComplianceScore");
-        formatter.field("score", &self.score);
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
@@ -7350,7 +6915,7 @@ impl AsRef<str> for SortOrder {
 
 /// <p>A list of filters to apply to the conformance pack compliance score result set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackComplianceScoresFilters {
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
     #[doc(hidden)]
@@ -7360,13 +6925,6 @@ impl ConformancePackComplianceScoresFilters {
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
     pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
         self.conformance_pack_names.as_deref()
-    }
-}
-impl std::fmt::Debug for ConformancePackComplianceScoresFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackComplianceScoresFilters");
-        formatter.field("conformance_pack_names", &self.conformance_pack_names);
-        formatter.finish()
     }
 }
 /// See [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
@@ -7414,7 +6972,7 @@ impl ConformancePackComplianceScoresFilters {
 
 /// <p>The details that identify a resource that is collected by Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateResourceIdentifier {
     /// <p>The 12-digit account ID of the source account.</p>
     #[doc(hidden)]
@@ -7452,17 +7010,6 @@ impl AggregateResourceIdentifier {
     /// <p>The name of the Amazon Web Services resource.</p>
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregateResourceIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateResourceIdentifier");
-        formatter.field("source_account_id", &self.source_account_id);
-        formatter.field("source_region", &self.source_region);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
     }
 }
 /// See [`AggregateResourceIdentifier`](crate::model::AggregateResourceIdentifier).
@@ -7561,7 +7108,7 @@ impl AggregateResourceIdentifier {
 
 /// <p>Filters the results by resource account ID, region, resource ID, and resource name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceFilters {
     /// <p>The 12-digit source account ID.</p>
     #[doc(hidden)]
@@ -7592,16 +7139,6 @@ impl ResourceFilters {
     /// <p>The source region.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceFilters");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`ResourceFilters`](crate::model::ResourceFilters).
@@ -7679,7 +7216,7 @@ impl ResourceFilters {
 
 /// <p>A list that contains detailed configurations of a specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
     #[doc(hidden)]
@@ -7844,39 +7381,6 @@ impl ConfigurationItem {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.supplementary_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigurationItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationItem");
-        formatter.field("version", &self.version);
-        formatter.field("account_id", &self.account_id);
-        formatter.field(
-            "configuration_item_capture_time",
-            &self.configuration_item_capture_time,
-        );
-        formatter.field("configuration_item_status", &self.configuration_item_status);
-        formatter.field("configuration_state_id", &self.configuration_state_id);
-        formatter.field(
-            "configuration_item_md5_hash",
-            &self.configuration_item_md5_hash,
-        );
-        formatter.field("arn", &self.arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("resource_creation_time", &self.resource_creation_time);
-        formatter.field("tags", &self.tags);
-        formatter.field("related_events", &self.related_events);
-        formatter.field("relationships", &self.relationships);
-        formatter.field("configuration", &self.configuration);
-        formatter.field(
-            "supplementary_configuration",
-            &self.supplementary_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConfigurationItem`](crate::model::ConfigurationItem).
@@ -8232,7 +7736,7 @@ impl ConfigurationItem {
 
 /// <p>The relationship of the related resource to the main resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Relationship {
     /// <p>The resource type of the related resource.</p>
     #[doc(hidden)]
@@ -8263,16 +7767,6 @@ impl Relationship {
     /// <p>The type of relationship with the related resource.</p>
     pub fn relationship_name(&self) -> std::option::Option<&str> {
         self.relationship_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Relationship {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Relationship");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("relationship_name", &self.relationship_name);
-        formatter.finish()
     }
 }
 /// See [`Relationship`](crate::model::Relationship).
@@ -8561,7 +8055,7 @@ impl AsRef<str> for ChronologicalOrder {
 
 /// <p>Organization conformance pack creation or deletion status in each member account. This includes the name of the conformance pack, the status, error code and error message when the conformance pack creation or deletion failed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationConformancePackDetailedStatus {
     /// <p>The 12-digit account ID of a member account.</p>
     #[doc(hidden)]
@@ -8630,18 +8124,6 @@ impl OrganizationConformancePackDetailedStatus {
     /// <p>The timestamp of the last status update.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for OrganizationConformancePackDetailedStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationConformancePackDetailedStatus");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("status", &self.status);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`OrganizationConformancePackDetailedStatus`](crate::model::OrganizationConformancePackDetailedStatus).
@@ -8913,7 +8395,7 @@ impl AsRef<str> for OrganizationResourceDetailedStatus {
 
 /// <p>Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationResourceDetailedStatusFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     #[doc(hidden)]
@@ -8954,14 +8436,6 @@ impl OrganizationResourceDetailedStatusFilters {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::OrganizationResourceDetailedStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for OrganizationResourceDetailedStatusFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationResourceDetailedStatusFilters");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`OrganizationResourceDetailedStatusFilters`](crate::model::OrganizationResourceDetailedStatusFilters).
@@ -9039,7 +8513,7 @@ impl OrganizationResourceDetailedStatusFilters {
 
 /// <p>Organization Config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberAccountStatus {
     /// <p>The 12-digit account ID of a member account.</p>
     #[doc(hidden)]
@@ -9110,21 +8584,6 @@ impl MemberAccountStatus {
     /// <p>The timestamp of the last status update.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for MemberAccountStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberAccountStatus");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field(
-            "member_account_rule_status",
-            &self.member_account_rule_status,
-        );
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`MemberAccountStatus`](crate::model::MemberAccountStatus).
@@ -9400,7 +8859,7 @@ impl AsRef<str> for MemberAccountRuleStatus {
 
 /// <p>Status filter object to filter results based on specific member account ID or status type for an organization Config rule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatusDetailFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     #[doc(hidden)]
@@ -9443,17 +8902,6 @@ impl StatusDetailFilters {
         &self,
     ) -> std::option::Option<&crate::model::MemberAccountRuleStatus> {
         self.member_account_rule_status.as_ref()
-    }
-}
-impl std::fmt::Debug for StatusDetailFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatusDetailFilters");
-        formatter.field("account_id", &self.account_id);
-        formatter.field(
-            "member_account_rule_status",
-            &self.member_account_rule_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`StatusDetailFilters`](crate::model::StatusDetailFilters).
@@ -9535,7 +8983,7 @@ impl StatusDetailFilters {
 
 /// <p>An object that contains the resource type and the number of resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceCount {
     /// <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     #[doc(hidden)]
@@ -9552,14 +9000,6 @@ impl ResourceCount {
     /// <p>The number of resources.</p>
     pub fn count(&self) -> i64 {
         self.count
-    }
-}
-impl std::fmt::Debug for ResourceCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceCount");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`ResourceCount`](crate::model::ResourceCount).
@@ -9613,7 +9053,7 @@ impl ResourceCount {
 
 /// <p>Summary includes the name and status of the conformance pack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackComplianceSummary {
     /// <p>The name of the conformance pack name.</p>
     #[doc(hidden)]
@@ -9633,17 +9073,6 @@ impl ConformancePackComplianceSummary {
         &self,
     ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
         self.conformance_pack_compliance_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ConformancePackComplianceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackComplianceSummary");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field(
-            "conformance_pack_compliance_status",
-            &self.conformance_pack_compliance_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConformancePackComplianceSummary`](crate::model::ConformancePackComplianceSummary).
@@ -9801,7 +9230,7 @@ impl AsRef<str> for ConformancePackComplianceType {
 
 /// <p>The details of a conformance pack evaluation. Provides Config rule and Amazon Web Services resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackEvaluationResult {
     /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     #[doc(hidden)]
@@ -9843,20 +9272,6 @@ impl ConformancePackEvaluationResult {
     /// <p>Supplementary information about how the evaluation determined the compliance. </p>
     pub fn annotation(&self) -> std::option::Option<&str> {
         self.annotation.as_deref()
-    }
-}
-impl std::fmt::Debug for ConformancePackEvaluationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackEvaluationResult");
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field(
-            "evaluation_result_identifier",
-            &self.evaluation_result_identifier,
-        );
-        formatter.field("config_rule_invoked_time", &self.config_rule_invoked_time);
-        formatter.field("result_recorded_time", &self.result_recorded_time);
-        formatter.field("annotation", &self.annotation);
-        formatter.finish()
     }
 }
 /// See [`ConformancePackEvaluationResult`](crate::model::ConformancePackEvaluationResult).
@@ -9963,7 +9378,7 @@ impl ConformancePackEvaluationResult {
 
 /// <p>Uniquely identifies an evaluation result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationResultIdentifier {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
     #[doc(hidden)]
@@ -9982,17 +9397,6 @@ impl EvaluationResultIdentifier {
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
     pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for EvaluationResultIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationResultIdentifier");
-        formatter.field(
-            "evaluation_result_qualifier",
-            &self.evaluation_result_qualifier,
-        );
-        formatter.field("ordering_timestamp", &self.ordering_timestamp);
-        formatter.finish()
     }
 }
 /// See [`EvaluationResultIdentifier`](crate::model::EvaluationResultIdentifier).
@@ -10053,7 +9457,7 @@ impl EvaluationResultIdentifier {
 
 /// <p>Identifies an Config rule that evaluated an Amazon Web Services resource, and provides the type and ID of the resource that the rule evaluated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationResultQualifier {
     /// <p>The name of the Config rule that was used in the evaluation.</p>
     #[doc(hidden)]
@@ -10077,15 +9481,6 @@ impl EvaluationResultQualifier {
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EvaluationResultQualifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationResultQualifier");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
     }
 }
 /// See [`EvaluationResultQualifier`](crate::model::EvaluationResultQualifier).
@@ -10154,7 +9549,7 @@ impl EvaluationResultQualifier {
 
 /// <p>Filters a conformance pack by Config rule names, compliance types, Amazon Web Services resource types, and resource IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackEvaluationFilters {
     /// <p>Filters the results by Config rule names.</p>
     #[doc(hidden)]
@@ -10193,16 +9588,6 @@ impl ConformancePackEvaluationFilters {
     /// </note>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for ConformancePackEvaluationFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackEvaluationFilters");
-        formatter.field("config_rule_names", &self.config_rule_names);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.finish()
     }
 }
 /// See [`ConformancePackEvaluationFilters`](crate::model::ConformancePackEvaluationFilters).
@@ -10311,7 +9696,7 @@ impl ConformancePackEvaluationFilters {
 
 /// <p>The number of Amazon Web Services resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceSummaryByResourceType {
     /// <p>The type of Amazon Web Services resource.</p>
     #[doc(hidden)]
@@ -10328,14 +9713,6 @@ impl ComplianceSummaryByResourceType {
     /// <p>The number of Amazon Web Services resources that are compliant or noncompliant, up to a maximum of 100 for each.</p>
     pub fn compliance_summary(&self) -> std::option::Option<&crate::model::ComplianceSummary> {
         self.compliance_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceSummaryByResourceType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceSummaryByResourceType");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("compliance_summary", &self.compliance_summary);
-        formatter.finish()
     }
 }
 /// See [`ComplianceSummaryByResourceType`](crate::model::ComplianceSummaryByResourceType).
@@ -10392,7 +9769,7 @@ impl ComplianceSummaryByResourceType {
 
 /// <p>The number of Config rules or Amazon Web Services resources that are compliant and noncompliant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceSummary {
     /// <p>The number of Config rules or Amazon Web Services resources that are compliant, up to a maximum of 25 for rules and 100 for resources.</p>
     #[doc(hidden)]
@@ -10420,21 +9797,6 @@ impl ComplianceSummary {
     /// <p>The time that Config created the compliance summary.</p>
     pub fn compliance_summary_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.compliance_summary_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceSummary");
-        formatter.field("compliant_resource_count", &self.compliant_resource_count);
-        formatter.field(
-            "non_compliant_resource_count",
-            &self.non_compliant_resource_count,
-        );
-        formatter.field(
-            "compliance_summary_timestamp",
-            &self.compliance_summary_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`ComplianceSummary`](crate::model::ComplianceSummary).
@@ -10514,7 +9876,7 @@ impl ComplianceSummary {
 
 /// <p>The number of Amazon Web Services resources or Config rules responsible for the current compliance of the item, up to a maximum number.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceContributorCount {
     /// <p>The number of Amazon Web Services resources or Config rules responsible for the current compliance of the item.</p>
     #[doc(hidden)]
@@ -10531,14 +9893,6 @@ impl ComplianceContributorCount {
     /// <p>Indicates whether the maximum count is reached.</p>
     pub fn cap_exceeded(&self) -> bool {
         self.cap_exceeded
-    }
-}
-impl std::fmt::Debug for ComplianceContributorCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceContributorCount");
-        formatter.field("capped_count", &self.capped_count);
-        formatter.field("cap_exceeded", &self.cap_exceeded);
-        formatter.finish()
     }
 }
 /// See [`ComplianceContributorCount`](crate::model::ComplianceContributorCount).
@@ -10589,7 +9943,7 @@ impl ComplianceContributorCount {
 
 /// <p>The details of an Config evaluation. Provides the Amazon Web Services resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>Uniquely identifies the evaluation result.</p>
     #[doc(hidden)]
@@ -10638,21 +9992,6 @@ impl EvaluationResult {
     /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being evaluated, and the event that triggered the evaluation.</p>
     pub fn result_token(&self) -> std::option::Option<&str> {
         self.result_token.as_deref()
-    }
-}
-impl std::fmt::Debug for EvaluationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationResult");
-        formatter.field(
-            "evaluation_result_identifier",
-            &self.evaluation_result_identifier,
-        );
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("result_recorded_time", &self.result_recorded_time);
-        formatter.field("config_rule_invoked_time", &self.config_rule_invoked_time);
-        formatter.field("annotation", &self.annotation);
-        formatter.field("result_token", &self.result_token);
-        formatter.finish()
     }
 }
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
@@ -10769,7 +10108,7 @@ impl EvaluationResult {
 
 /// <p>The count of resources that are grouped by the group name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupedResourceCount {
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
     #[doc(hidden)]
@@ -10786,14 +10125,6 @@ impl GroupedResourceCount {
     /// <p>The number of resources in the group.</p>
     pub fn resource_count(&self) -> i64 {
         self.resource_count
-    }
-}
-impl std::fmt::Debug for GroupedResourceCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupedResourceCount");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("resource_count", &self.resource_count);
-        formatter.finish()
     }
 }
 /// See [`GroupedResourceCount`](crate::model::GroupedResourceCount).
@@ -10941,7 +10272,7 @@ impl AsRef<str> for ResourceCountGroupKey {
 
 /// <p>Filters the resource count based on account ID, region, and resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceCountFilters {
     /// <p>The type of the Amazon Web Services resource.</p>
     #[doc(hidden)]
@@ -10965,15 +10296,6 @@ impl ResourceCountFilters {
     /// <p>The region where the account is located.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceCountFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceCountFilters");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`ResourceCountFilters`](crate::model::ResourceCountFilters).
@@ -11039,7 +10361,7 @@ impl ResourceCountFilters {
 
 /// <p>Provides a summary of compliance based on either account ID or region. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceSummary {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
     #[doc(hidden)]
@@ -11059,14 +10381,6 @@ impl AggregateConformancePackComplianceSummary {
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregateConformancePackComplianceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateConformancePackComplianceSummary");
-        formatter.field("compliance_summary", &self.compliance_summary);
-        formatter.field("group_name", &self.group_name);
-        formatter.finish()
     }
 }
 /// See [`AggregateConformancePackComplianceSummary`](crate::model::AggregateConformancePackComplianceSummary).
@@ -11124,7 +10438,7 @@ impl AggregateConformancePackComplianceSummary {
 
 /// <p>The number of conformance packs that are compliant and noncompliant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceCount {
     /// <p>Number of compliant conformance packs.</p>
     #[doc(hidden)]
@@ -11141,20 +10455,6 @@ impl AggregateConformancePackComplianceCount {
     /// <p>Number of noncompliant conformance packs.</p>
     pub fn non_compliant_conformance_pack_count(&self) -> i32 {
         self.non_compliant_conformance_pack_count
-    }
-}
-impl std::fmt::Debug for AggregateConformancePackComplianceCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateConformancePackComplianceCount");
-        formatter.field(
-            "compliant_conformance_pack_count",
-            &self.compliant_conformance_pack_count,
-        );
-        formatter.field(
-            "non_compliant_conformance_pack_count",
-            &self.non_compliant_conformance_pack_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`AggregateConformancePackComplianceCount`](crate::model::AggregateConformancePackComplianceCount).
@@ -11307,7 +10607,7 @@ impl AsRef<str> for AggregateConformancePackComplianceSummaryGroupKey {
 
 /// <p>Filters the results based on account ID and region. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceSummaryFilters {
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     #[doc(hidden)]
@@ -11324,14 +10624,6 @@ impl AggregateConformancePackComplianceSummaryFilters {
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregateConformancePackComplianceSummaryFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateConformancePackComplianceSummaryFilters");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`AggregateConformancePackComplianceSummaryFilters`](crate::model::AggregateConformancePackComplianceSummaryFilters).
@@ -11383,7 +10675,7 @@ impl AggregateConformancePackComplianceSummaryFilters {
 
 /// <p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateComplianceCount {
     /// <p>The 12-digit account ID or region based on the GroupByKey value.</p>
     #[doc(hidden)]
@@ -11400,14 +10692,6 @@ impl AggregateComplianceCount {
     /// <p>The number of compliant and noncompliant Config rules.</p>
     pub fn compliance_summary(&self) -> std::option::Option<&crate::model::ComplianceSummary> {
         self.compliance_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for AggregateComplianceCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateComplianceCount");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("compliance_summary", &self.compliance_summary);
-        formatter.finish()
     }
 }
 /// See [`AggregateComplianceCount`](crate::model::AggregateComplianceCount).
@@ -11553,7 +10837,7 @@ impl AsRef<str> for ConfigRuleComplianceSummaryGroupKey {
 
 /// <p>Filters the results based on the account IDs and regions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigRuleComplianceSummaryFilters {
     /// <p>The 12-digit account ID of the source account.</p>
     #[doc(hidden)]
@@ -11570,14 +10854,6 @@ impl ConfigRuleComplianceSummaryFilters {
     /// <p>The source region where the data is aggregated.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigRuleComplianceSummaryFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigRuleComplianceSummaryFilters");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`ConfigRuleComplianceSummaryFilters`](crate::model::ConfigRuleComplianceSummaryFilters).
@@ -11628,7 +10904,7 @@ impl ConfigRuleComplianceSummaryFilters {
 
 /// <p>The details of an Config evaluation for an account ID and region in an aggregator. Provides the Amazon Web Services resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateEvaluationResult {
     /// <p>Uniquely identifies the evaluation result.</p>
     #[doc(hidden)]
@@ -11684,22 +10960,6 @@ impl AggregateEvaluationResult {
     /// <p>The source region from where the data is aggregated.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregateEvaluationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateEvaluationResult");
-        formatter.field(
-            "evaluation_result_identifier",
-            &self.evaluation_result_identifier,
-        );
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("result_recorded_time", &self.result_recorded_time);
-        formatter.field("config_rule_invoked_time", &self.config_rule_invoked_time);
-        formatter.field("annotation", &self.annotation);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`AggregateEvaluationResult`](crate::model::AggregateEvaluationResult).
@@ -11828,7 +11088,7 @@ impl AggregateEvaluationResult {
 
 /// <p>Provides details of the current status of the invoked remediation action for that resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationExecutionStatus {
     /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
     #[doc(hidden)]
@@ -11866,17 +11126,6 @@ impl RemediationExecutionStatus {
     /// <p>The time when the remediation execution was last updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for RemediationExecutionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationExecutionStatus");
-        formatter.field("resource_key", &self.resource_key);
-        formatter.field("state", &self.state);
-        formatter.field("step_details", &self.step_details);
-        formatter.field("invocation_time", &self.invocation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`RemediationExecutionStatus`](crate::model::RemediationExecutionStatus).
@@ -11985,7 +11234,7 @@ impl RemediationExecutionStatus {
 
 /// <p>Name of the step from the SSM document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationExecutionStep {
     /// <p>The details of the step.</p>
     #[doc(hidden)]
@@ -12023,17 +11272,6 @@ impl RemediationExecutionStep {
     /// <p>The time when the step stopped.</p>
     pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
-    }
-}
-impl std::fmt::Debug for RemediationExecutionStep {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationExecutionStep");
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("stop_time", &self.stop_time);
-        formatter.finish()
     }
 }
 /// See [`RemediationExecutionStep`](crate::model::RemediationExecutionStep).
@@ -12331,7 +11569,7 @@ impl AsRef<str> for RemediationExecutionState {
 
 /// <p>An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingAggregationRequest {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     #[doc(hidden)]
@@ -12348,14 +11586,6 @@ impl PendingAggregationRequest {
     /// <p>The region requesting to aggregate data. </p>
     pub fn requester_aws_region(&self) -> std::option::Option<&str> {
         self.requester_aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for PendingAggregationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingAggregationRequest");
-        formatter.field("requester_account_id", &self.requester_account_id);
-        formatter.field("requester_aws_region", &self.requester_aws_region);
-        formatter.finish()
     }
 }
 /// See [`PendingAggregationRequest`](crate::model::PendingAggregationRequest).
@@ -12412,7 +11642,7 @@ impl PendingAggregationRequest {
 
 /// <p>Returns the status for an organization conformance pack in an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationConformancePackStatus {
     /// <p>The name that you assign to organization conformance pack.</p>
     #[doc(hidden)]
@@ -12474,20 +11704,6 @@ impl OrganizationConformancePackStatus {
     /// <p>The timestamp of the last update.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for OrganizationConformancePackStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationConformancePackStatus");
-        formatter.field(
-            "organization_conformance_pack_name",
-            &self.organization_conformance_pack_name,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`OrganizationConformancePackStatus`](crate::model::OrganizationConformancePackStatus).
@@ -12750,7 +11966,7 @@ impl AsRef<str> for OrganizationResourceStatus {
 
 /// <p>An organization conformance pack that has information about conformance packs that Config creates in member accounts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationConformancePack {
     /// <p>The name you assign to an organization conformance pack.</p>
     #[doc(hidden)]
@@ -12813,28 +12029,6 @@ impl OrganizationConformancePack {
     /// <p>Last time when organization conformation pack was updated.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for OrganizationConformancePack {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationConformancePack");
-        formatter.field(
-            "organization_conformance_pack_name",
-            &self.organization_conformance_pack_name,
-        );
-        formatter.field(
-            "organization_conformance_pack_arn",
-            &self.organization_conformance_pack_arn,
-        );
-        formatter.field("delivery_s3_bucket", &self.delivery_s3_bucket);
-        formatter.field("delivery_s3_key_prefix", &self.delivery_s3_key_prefix);
-        formatter.field(
-            "conformance_pack_input_parameters",
-            &self.conformance_pack_input_parameters,
-        );
-        formatter.field("excluded_accounts", &self.excluded_accounts);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`OrganizationConformancePack`](crate::model::OrganizationConformancePack).
@@ -12996,7 +12190,7 @@ impl OrganizationConformancePack {
 
 /// <p>Returns the status for an organization Config rule in an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationConfigRuleStatus {
     /// <p>The name that you assign to organization Config rule.</p>
     #[doc(hidden)]
@@ -13060,20 +12254,6 @@ impl OrganizationConfigRuleStatus {
     /// <p>The timestamp of the last update.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for OrganizationConfigRuleStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationConfigRuleStatus");
-        formatter.field(
-            "organization_config_rule_name",
-            &self.organization_config_rule_name,
-        );
-        formatter.field("organization_rule_status", &self.organization_rule_status);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
     }
 }
 /// See [`OrganizationConfigRuleStatus`](crate::model::OrganizationConfigRuleStatus).
@@ -13340,7 +12520,7 @@ impl AsRef<str> for OrganizationRuleStatus {
 
 /// <p>An organization Config rule that has information about Config rules that Config creates in member accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationConfigRule {
     /// <p>The name that you assign to organization Config rule.</p>
     #[doc(hidden)]
@@ -13401,34 +12581,6 @@ impl OrganizationConfigRule {
         &self,
     ) -> std::option::Option<&crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy> {
         self.organization_custom_policy_rule_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for OrganizationConfigRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationConfigRule");
-        formatter.field(
-            "organization_config_rule_name",
-            &self.organization_config_rule_name,
-        );
-        formatter.field(
-            "organization_config_rule_arn",
-            &self.organization_config_rule_arn,
-        );
-        formatter.field(
-            "organization_managed_rule_metadata",
-            &self.organization_managed_rule_metadata,
-        );
-        formatter.field(
-            "organization_custom_rule_metadata",
-            &self.organization_custom_rule_metadata,
-        );
-        formatter.field("excluded_accounts", &self.excluded_accounts);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field(
-            "organization_custom_policy_rule_metadata",
-            &self.organization_custom_policy_rule_metadata,
-        );
-        formatter.finish()
     }
 }
 /// See [`OrganizationConfigRule`](crate::model::OrganizationConfigRule).
@@ -13585,7 +12737,7 @@ impl OrganizationConfigRule {
 
 /// <p>An object that specifies metadata for your organization Config Custom Policy rule including the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that trigger Config to evaluate Amazon Web Services resources against a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationCustomPolicyRuleMetadataNoPolicy {
     /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
     #[doc(hidden)]
@@ -13671,31 +12823,6 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
     /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
     pub fn debug_log_delivery_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.debug_log_delivery_accounts.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationCustomPolicyRuleMetadataNoPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationCustomPolicyRuleMetadataNoPolicy");
-        formatter.field("description", &self.description);
-        formatter.field(
-            "organization_config_rule_trigger_types",
-            &self.organization_config_rule_trigger_types,
-        );
-        formatter.field("input_parameters", &self.input_parameters);
-        formatter.field(
-            "maximum_execution_frequency",
-            &self.maximum_execution_frequency,
-        );
-        formatter.field("resource_types_scope", &self.resource_types_scope);
-        formatter.field("resource_id_scope", &self.resource_id_scope);
-        formatter.field("tag_key_scope", &self.tag_key_scope);
-        formatter.field("tag_value_scope", &self.tag_value_scope);
-        formatter.field("policy_runtime", &self.policy_runtime);
-        formatter.field(
-            "debug_log_delivery_accounts",
-            &self.debug_log_delivery_accounts,
-        );
-        formatter.finish()
     }
 }
 /// See [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy).
@@ -13912,7 +13039,7 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
 /// <p>The status of a specified delivery channel.</p>
 /// <p>Valid values: <code>Success</code> | <code>Failure</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryChannelStatus {
     /// <p>The name of the delivery channel.</p>
     #[doc(hidden)]
@@ -13949,25 +13076,6 @@ impl DeliveryChannelStatus {
         &self,
     ) -> std::option::Option<&crate::model::ConfigStreamDeliveryInfo> {
         self.config_stream_delivery_info.as_ref()
-    }
-}
-impl std::fmt::Debug for DeliveryChannelStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryChannelStatus");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "config_snapshot_delivery_info",
-            &self.config_snapshot_delivery_info,
-        );
-        formatter.field(
-            "config_history_delivery_info",
-            &self.config_history_delivery_info,
-        );
-        formatter.field(
-            "config_stream_delivery_info",
-            &self.config_stream_delivery_info,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeliveryChannelStatus`](crate::model::DeliveryChannelStatus).
@@ -14063,7 +13171,7 @@ impl DeliveryChannelStatus {
 
 /// <p>A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigStreamDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
     /// <p> <b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
@@ -14096,16 +13204,6 @@ impl ConfigStreamDeliveryInfo {
     /// <p>The time from the last status change.</p>
     pub fn last_status_change_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigStreamDeliveryInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigStreamDeliveryInfo");
-        formatter.field("last_status", &self.last_status);
-        formatter.field("last_error_code", &self.last_error_code);
-        formatter.field("last_error_message", &self.last_error_message);
-        formatter.field("last_status_change_time", &self.last_status_change_time);
-        formatter.finish()
     }
 }
 /// See [`ConfigStreamDeliveryInfo`](crate::model::ConfigStreamDeliveryInfo).
@@ -14289,7 +13387,7 @@ impl AsRef<str> for DeliveryStatus {
 
 /// <p>Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigExportDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
     #[doc(hidden)]
@@ -14334,18 +13432,6 @@ impl ConfigExportDeliveryInfo {
     /// <p>The time that the next delivery occurs.</p>
     pub fn next_delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_delivery_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigExportDeliveryInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigExportDeliveryInfo");
-        formatter.field("last_status", &self.last_status);
-        formatter.field("last_error_code", &self.last_error_code);
-        formatter.field("last_error_message", &self.last_error_message);
-        formatter.field("last_attempt_time", &self.last_attempt_time);
-        formatter.field("last_successful_time", &self.last_successful_time);
-        formatter.field("next_delivery_time", &self.next_delivery_time);
-        formatter.finish()
     }
 }
 /// See [`ConfigExportDeliveryInfo`](crate::model::ConfigExportDeliveryInfo).
@@ -14462,7 +13548,7 @@ impl ConfigExportDeliveryInfo {
 
 /// <p>Status details of a conformance pack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackStatusDetail {
     /// <p>Name of the conformance pack.</p>
     #[doc(hidden)]
@@ -14539,29 +13625,6 @@ impl ConformancePackStatusDetail {
     /// <p>Last time when conformation pack creation and update was successful.</p>
     pub fn last_update_completed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_completed_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ConformancePackStatusDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackStatusDetail");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("conformance_pack_id", &self.conformance_pack_id);
-        formatter.field("conformance_pack_arn", &self.conformance_pack_arn);
-        formatter.field("conformance_pack_state", &self.conformance_pack_state);
-        formatter.field("stack_arn", &self.stack_arn);
-        formatter.field(
-            "conformance_pack_status_reason",
-            &self.conformance_pack_status_reason,
-        );
-        formatter.field(
-            "last_update_requested_time",
-            &self.last_update_requested_time,
-        );
-        formatter.field(
-            "last_update_completed_time",
-            &self.last_update_completed_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConformancePackStatusDetail`](crate::model::ConformancePackStatusDetail).
@@ -14837,7 +13900,7 @@ impl AsRef<str> for ConformancePackState {
 
 /// <p>Returns details of a conformance pack. A conformance pack is a collection of Config rules and remediation actions that can be easily deployed in an account and a region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackDetail {
     /// <p>Name of the conformance pack.</p>
     #[doc(hidden)]
@@ -14917,30 +13980,6 @@ impl ConformancePackDetail {
         &self,
     ) -> std::option::Option<&crate::model::TemplateSsmDocumentDetails> {
         self.template_ssm_document_details.as_ref()
-    }
-}
-impl std::fmt::Debug for ConformancePackDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackDetail");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("conformance_pack_arn", &self.conformance_pack_arn);
-        formatter.field("conformance_pack_id", &self.conformance_pack_id);
-        formatter.field("delivery_s3_bucket", &self.delivery_s3_bucket);
-        formatter.field("delivery_s3_key_prefix", &self.delivery_s3_key_prefix);
-        formatter.field(
-            "conformance_pack_input_parameters",
-            &self.conformance_pack_input_parameters,
-        );
-        formatter.field(
-            "last_update_requested_time",
-            &self.last_update_requested_time,
-        );
-        formatter.field("created_by", &self.created_by);
-        formatter.field(
-            "template_ssm_document_details",
-            &self.template_ssm_document_details,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConformancePackDetail`](crate::model::ConformancePackDetail).
@@ -15121,7 +14160,7 @@ impl ConformancePackDetail {
 
 /// <p>Compliance information of one or more Config rules within a conformance pack. You can filter using Config rule names and compliance types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackRuleCompliance {
     /// <p>Name of the Config rule.</p>
     #[doc(hidden)]
@@ -15149,15 +14188,6 @@ impl ConformancePackRuleCompliance {
     /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives. A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
     pub fn controls(&self) -> std::option::Option<&[std::string::String]> {
         self.controls.as_deref()
-    }
-}
-impl std::fmt::Debug for ConformancePackRuleCompliance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackRuleCompliance");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("controls", &self.controls);
-        formatter.finish()
     }
 }
 /// See [`ConformancePackRuleCompliance`](crate::model::ConformancePackRuleCompliance).
@@ -15241,7 +14271,7 @@ impl ConformancePackRuleCompliance {
 
 /// <p>Filters the conformance pack by compliance types and Config rule names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackComplianceFilters {
     /// <p>Filters the results by Config rule names.</p>
     #[doc(hidden)]
@@ -15262,14 +14292,6 @@ impl ConformancePackComplianceFilters {
         &self,
     ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ConformancePackComplianceFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackComplianceFilters");
-        formatter.field("config_rule_names", &self.config_rule_names);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.finish()
     }
 }
 /// See [`ConformancePackComplianceFilters`](crate::model::ConformancePackComplianceFilters).
@@ -15338,7 +14360,7 @@ impl ConformancePackComplianceFilters {
 
 /// <p>The current status of the configuration recorder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationRecorderStatus {
     /// <p>The name of the configuration recorder.</p>
     #[doc(hidden)]
@@ -15397,20 +14419,6 @@ impl ConfigurationRecorderStatus {
     /// <p>The time when the status was last changed.</p>
     pub fn last_status_change_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigurationRecorderStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationRecorderStatus");
-        formatter.field("name", &self.name);
-        formatter.field("last_start_time", &self.last_start_time);
-        formatter.field("last_stop_time", &self.last_stop_time);
-        formatter.field("recording", &self.recording);
-        formatter.field("last_status", &self.last_status);
-        formatter.field("last_error_code", &self.last_error_code);
-        formatter.field("last_error_message", &self.last_error_message);
-        formatter.field("last_status_change_time", &self.last_status_change_time);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationRecorderStatus`](crate::model::ConfigurationRecorderStatus).
@@ -15646,7 +14654,7 @@ impl AsRef<str> for RecorderStatus {
 
 /// <p>The current sync status between the source and the aggregator account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedSourceStatus {
     /// <p>The source account ID or an organization.</p>
     #[doc(hidden)]
@@ -15710,19 +14718,6 @@ impl AggregatedSourceStatus {
     /// <p>The message indicating that the source account aggregation failed due to an error.</p>
     pub fn last_error_message(&self) -> std::option::Option<&str> {
         self.last_error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregatedSourceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedSourceStatus");
-        formatter.field("source_id", &self.source_id);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("last_update_status", &self.last_update_status);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_error_code", &self.last_error_code);
-        formatter.field("last_error_message", &self.last_error_message);
-        formatter.finish()
     }
 }
 /// See [`AggregatedSourceStatus`](crate::model::AggregatedSourceStatus).
@@ -16052,7 +15047,7 @@ impl AsRef<str> for AggregatedSourceType {
 /// <p>Status information for your Config Managed rules and Config Custom Policy rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.</p>
 /// <p>This action does not return status information about Config Custom Lambda rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigRuleEvaluationStatus {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
@@ -16172,48 +15167,6 @@ impl ConfigRuleEvaluationStatus {
     /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
     pub fn last_debug_log_delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_debug_log_delivery_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigRuleEvaluationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigRuleEvaluationStatus");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("config_rule_arn", &self.config_rule_arn);
-        formatter.field("config_rule_id", &self.config_rule_id);
-        formatter.field(
-            "last_successful_invocation_time",
-            &self.last_successful_invocation_time,
-        );
-        formatter.field(
-            "last_failed_invocation_time",
-            &self.last_failed_invocation_time,
-        );
-        formatter.field(
-            "last_successful_evaluation_time",
-            &self.last_successful_evaluation_time,
-        );
-        formatter.field(
-            "last_failed_evaluation_time",
-            &self.last_failed_evaluation_time,
-        );
-        formatter.field("first_activated_time", &self.first_activated_time);
-        formatter.field("last_deactivated_time", &self.last_deactivated_time);
-        formatter.field("last_error_code", &self.last_error_code);
-        formatter.field("last_error_message", &self.last_error_message);
-        formatter.field("first_evaluation_started", &self.first_evaluation_started);
-        formatter.field(
-            "last_debug_log_delivery_status",
-            &self.last_debug_log_delivery_status,
-        );
-        formatter.field(
-            "last_debug_log_delivery_status_reason",
-            &self.last_debug_log_delivery_status_reason,
-        );
-        formatter.field(
-            "last_debug_log_delivery_time",
-            &self.last_debug_log_delivery_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConfigRuleEvaluationStatus`](crate::model::ConfigRuleEvaluationStatus).
@@ -16482,7 +15435,7 @@ impl ConfigRuleEvaluationStatus {
 
 /// <p>Indicates whether an Amazon Web Services resource that is evaluated according to one or more Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceByResource {
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
     #[doc(hidden)]
@@ -16506,15 +15459,6 @@ impl ComplianceByResource {
     /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
     pub fn compliance(&self) -> std::option::Option<&crate::model::Compliance> {
         self.compliance.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceByResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceByResource");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("compliance", &self.compliance);
-        formatter.finish()
     }
 }
 /// See [`ComplianceByResource`](crate::model::ComplianceByResource).
@@ -16583,7 +15527,7 @@ impl ComplianceByResource {
 
 /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Compliance {
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant.</p>
     /// <p>A resource is compliant if it complies with all of the Config rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.</p>
@@ -16610,17 +15554,6 @@ impl Compliance {
         &self,
     ) -> std::option::Option<&crate::model::ComplianceContributorCount> {
         self.compliance_contributor_count.as_ref()
-    }
-}
-impl std::fmt::Debug for Compliance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Compliance");
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field(
-            "compliance_contributor_count",
-            &self.compliance_contributor_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`Compliance`](crate::model::Compliance).
@@ -16689,7 +15622,7 @@ impl Compliance {
 
 /// <p>Indicates whether an Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceByConfigRule {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
@@ -16706,14 +15639,6 @@ impl ComplianceByConfigRule {
     /// <p>Indicates whether the Config rule is compliant.</p>
     pub fn compliance(&self) -> std::option::Option<&crate::model::Compliance> {
         self.compliance.as_ref()
-    }
-}
-impl std::fmt::Debug for ComplianceByConfigRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceByConfigRule");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("compliance", &self.compliance);
-        formatter.finish()
     }
 }
 /// See [`ComplianceByConfigRule`](crate::model::ComplianceByConfigRule).
@@ -16771,7 +15696,7 @@ impl ComplianceByConfigRule {
 /// <p>Provides aggregate compliance of the conformance pack. Indicates whether a conformance pack is compliant based on the name of the conformance pack, account ID, and region.</p>
 /// <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateComplianceByConformancePack {
     /// <p>The name of the conformance pack.</p>
     #[doc(hidden)]
@@ -16804,16 +15729,6 @@ impl AggregateComplianceByConformancePack {
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregateComplianceByConformancePack {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateComplianceByConformancePack");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("compliance", &self.compliance);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`AggregateComplianceByConformancePack`](crate::model::AggregateComplianceByConformancePack).
@@ -16899,7 +15814,7 @@ impl AggregateComplianceByConformancePack {
 /// <p>Provides the number of compliant and noncompliant rules within a conformance pack. Also provides the compliance status of the conformance pack and the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.</p>
 /// <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateConformancePackCompliance {
     /// <p>The compliance status of the conformance pack.</p>
     #[doc(hidden)]
@@ -16932,16 +15847,6 @@ impl AggregateConformancePackCompliance {
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
     pub fn total_rule_count(&self) -> i32 {
         self.total_rule_count
-    }
-}
-impl std::fmt::Debug for AggregateConformancePackCompliance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateConformancePackCompliance");
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("compliant_rule_count", &self.compliant_rule_count);
-        formatter.field("non_compliant_rule_count", &self.non_compliant_rule_count);
-        formatter.field("total_rule_count", &self.total_rule_count);
-        formatter.finish()
     }
 }
 /// See [`AggregateConformancePackCompliance`](crate::model::AggregateConformancePackCompliance).
@@ -17023,7 +15928,7 @@ impl AggregateConformancePackCompliance {
 
 /// <p>Filters the conformance packs based on an account ID, region, compliance type, and the name of the conformance pack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceFilters {
     /// <p>The name of the conformance pack.</p>
     #[doc(hidden)]
@@ -17056,16 +15961,6 @@ impl AggregateConformancePackComplianceFilters {
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregateConformancePackComplianceFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateConformancePackComplianceFilters");
-        formatter.field("conformance_pack_name", &self.conformance_pack_name);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`AggregateConformancePackComplianceFilters`](crate::model::AggregateConformancePackComplianceFilters).
@@ -17151,7 +16046,7 @@ impl AggregateConformancePackComplianceFilters {
 /// <p>Indicates whether an Config rule is compliant based on account ID, region, compliance, and rule name.</p>
 /// <p>A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateComplianceByConfigRule {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
@@ -17182,16 +16077,6 @@ impl AggregateComplianceByConfigRule {
     /// <p>The source region from where the data is aggregated.</p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for AggregateComplianceByConfigRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateComplianceByConfigRule");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("compliance", &self.compliance);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`AggregateComplianceByConfigRule`](crate::model::AggregateComplianceByConfigRule).
@@ -17272,7 +16157,7 @@ impl AggregateComplianceByConfigRule {
 
 /// <p>Filters the compliance results based on account ID, region, compliance type, and rule name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigRuleComplianceFilters {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
@@ -17305,16 +16190,6 @@ impl ConfigRuleComplianceFilters {
     /// <p>The source region where the data is aggregated. </p>
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigRuleComplianceFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigRuleComplianceFilters");
-        formatter.field("config_rule_name", &self.config_rule_name);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
     }
 }
 /// See [`ConfigRuleComplianceFilters`](crate::model::ConfigRuleComplianceFilters).
@@ -17397,7 +16272,7 @@ impl ConfigRuleComplianceFilters {
 
 /// <p>List of each of the failed delete remediation exceptions with specific reasons.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedDeleteRemediationExceptionsBatch {
     /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
     #[doc(hidden)]
@@ -17417,14 +16292,6 @@ impl FailedDeleteRemediationExceptionsBatch {
         &self,
     ) -> std::option::Option<&[crate::model::RemediationExceptionResourceKey]> {
         self.failed_items.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedDeleteRemediationExceptionsBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedDeleteRemediationExceptionsBatch");
-        formatter.field("failure_message", &self.failure_message);
-        formatter.field("failed_items", &self.failed_items);
-        formatter.finish()
     }
 }
 /// See [`FailedDeleteRemediationExceptionsBatch`](crate::model::FailedDeleteRemediationExceptionsBatch).
@@ -17493,7 +16360,7 @@ impl FailedDeleteRemediationExceptionsBatch {
 
 /// <p>The detailed configuration of a specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaseConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
     #[doc(hidden)]
@@ -17620,32 +16487,6 @@ impl BaseConfigurationItem {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.supplementary_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for BaseConfigurationItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaseConfigurationItem");
-        formatter.field("version", &self.version);
-        formatter.field("account_id", &self.account_id);
-        formatter.field(
-            "configuration_item_capture_time",
-            &self.configuration_item_capture_time,
-        );
-        formatter.field("configuration_item_status", &self.configuration_item_status);
-        formatter.field("configuration_state_id", &self.configuration_state_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("resource_creation_time", &self.resource_creation_time);
-        formatter.field("configuration", &self.configuration);
-        formatter.field(
-            "supplementary_configuration",
-            &self.supplementary_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`BaseConfigurationItem`](crate::model::BaseConfigurationItem).

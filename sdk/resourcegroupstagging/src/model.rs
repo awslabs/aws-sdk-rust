@@ -8,7 +8,7 @@
 /// </ul>
 /// <p>For more information on errors that are generated from other Amazon Web Services services, see the documentation for that service. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailureInfo {
     /// <p>The HTTP status code of the common error.</p>
     #[doc(hidden)]
@@ -32,15 +32,6 @@ impl FailureInfo {
     /// <p>The message of the common error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FailureInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailureInfo");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`FailureInfo`](crate::model::FailureInfo).
@@ -199,7 +190,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>A list of resource ARNs and the tags (keys and values) that are associated with each.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTagMapping {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -223,15 +214,6 @@ impl ResourceTagMapping {
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
     pub fn compliance_details(&self) -> std::option::Option<&crate::model::ComplianceDetails> {
         self.compliance_details.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceTagMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTagMapping");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("compliance_details", &self.compliance_details);
-        formatter.finish()
     }
 }
 /// See [`ResourceTagMapping`](crate::model::ResourceTagMapping).
@@ -306,7 +288,7 @@ impl ResourceTagMapping {
 
 /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceDetails {
     /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
     #[doc(hidden)]
@@ -330,18 +312,6 @@ impl ComplianceDetails {
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
     pub fn compliance_status(&self) -> std::option::Option<bool> {
         self.compliance_status
-    }
-}
-impl std::fmt::Debug for ComplianceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceDetails");
-        formatter.field("noncompliant_keys", &self.noncompliant_keys);
-        formatter.field(
-            "keys_with_noncompliant_values",
-            &self.keys_with_noncompliant_values,
-        );
-        formatter.field("compliance_status", &self.compliance_status);
-        formatter.finish()
     }
 }
 /// See [`ComplianceDetails`](crate::model::ComplianceDetails).
@@ -426,7 +396,7 @@ impl ComplianceDetails {
 
 /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -443,14 +413,6 @@ impl Tag {
     /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -501,7 +463,7 @@ impl Tag {
 
 /// <p>A list of tags (keys and values) that are used to specify the associated resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -518,14 +480,6 @@ impl TagFilter {
     /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagFilter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`TagFilter`](crate::model::TagFilter).
@@ -585,7 +539,7 @@ impl TagFilter {
 
 /// <p>A count of noncompliant resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Summary {
     /// <p>The timestamp that shows when this summary was generated in this Region. </p>
     #[doc(hidden)]
@@ -630,18 +584,6 @@ impl Summary {
     /// <p>The count of noncompliant resources.</p>
     pub fn non_compliant_resources(&self) -> i64 {
         self.non_compliant_resources
-    }
-}
-impl std::fmt::Debug for Summary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Summary");
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_id_type", &self.target_id_type);
-        formatter.field("region", &self.region);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("non_compliant_resources", &self.non_compliant_resources);
-        formatter.finish()
     }
 }
 /// See [`Summary`](crate::model::Summary).

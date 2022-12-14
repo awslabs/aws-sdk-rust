@@ -757,7 +757,7 @@ impl CancelServicePipelineDeploymentInput {
 pub mod create_component_input {
 
     /// A builder for [`CreateComponentInput`](crate::input::CreateComponentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -902,6 +902,21 @@ pub mod create_component_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("service_name", &self.service_name);
+            formatter.field("service_instance_name", &self.service_instance_name);
+            formatter.field("environment_name", &self.environment_name);
+            formatter.field("template_file", &"*** Sensitive Data Redacted ***");
+            formatter.field("manifest", &"*** Sensitive Data Redacted ***");
+            formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl CreateComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponent`](crate::operation::CreateComponent)>
@@ -1022,7 +1037,7 @@ impl CreateComponentInput {
 pub mod create_environment_input {
 
     /// A builder for [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -1216,6 +1231,26 @@ pub mod create_environment_input {
                 provisioning_repository: self.provisioning_repository,
                 component_role_arn: self.component_role_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("proton_service_role_arn", &self.proton_service_role_arn);
+            formatter.field(
+                "environment_account_connection_id",
+                &self.environment_account_connection_id,
+            );
+            formatter.field("tags", &self.tags);
+            formatter.field("provisioning_repository", &self.provisioning_repository);
+            formatter.field("component_role_arn", &self.component_role_arn);
+            formatter.finish()
         }
     }
 }
@@ -1571,7 +1606,7 @@ impl CreateEnvironmentAccountConnectionInput {
 pub mod create_environment_template_input {
 
     /// A builder for [`CreateEnvironmentTemplateInput`](crate::input::CreateEnvironmentTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1673,6 +1708,18 @@ pub mod create_environment_template_input {
                 provisioning: self.provisioning,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("encryption_key", &self.encryption_key);
+            formatter.field("provisioning", &self.provisioning);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1797,7 +1844,7 @@ impl CreateEnvironmentTemplateInput {
 pub mod create_environment_template_version_input {
 
     /// A builder for [`CreateEnvironmentTemplateVersionInput`](crate::input::CreateEnvironmentTemplateVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -1904,6 +1951,18 @@ pub mod create_environment_template_version_input {
                 source: self.source,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("major_version", &self.major_version);
+            formatter.field("source", &self.source);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2243,7 +2302,7 @@ impl CreateRepositoryInput {
 pub mod create_service_input {
 
     /// A builder for [`CreateServiceInput`](crate::input::CreateServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2402,6 +2461,22 @@ pub mod create_service_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("template_name", &self.template_name);
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("repository_connection_arn", &self.repository_connection_arn);
+            formatter.field("repository_id", &self.repository_id);
+            formatter.field("branch_name", &self.branch_name);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl CreateServiceInput {
     /// Consumes the builder and constructs an Operation<[`CreateService`](crate::operation::CreateService)>
@@ -2522,7 +2597,7 @@ impl CreateServiceInput {
 pub mod create_service_template_input {
 
     /// A builder for [`CreateServiceTemplateInput`](crate::input::CreateServiceTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -2624,6 +2699,18 @@ pub mod create_service_template_input {
                 pipeline_provisioning: self.pipeline_provisioning,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("encryption_key", &self.encryption_key);
+            formatter.field("pipeline_provisioning", &self.pipeline_provisioning);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2748,7 +2835,7 @@ impl CreateServiceTemplateInput {
 pub mod create_service_template_version_input {
 
     /// A builder for [`CreateServiceTemplateVersionInput`](crate::input::CreateServiceTemplateVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -2912,6 +2999,26 @@ pub mod create_service_template_version_input {
                 tags: self.tags,
                 supported_component_sources: self.supported_component_sources,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("major_version", &self.major_version);
+            formatter.field("source", &self.source);
+            formatter.field(
+                "compatible_environment_templates",
+                &self.compatible_environment_templates,
+            );
+            formatter.field("tags", &self.tags);
+            formatter.field(
+                "supported_component_sources",
+                &self.supported_component_sources,
+            );
+            formatter.finish()
         }
     }
 }
@@ -10489,7 +10596,7 @@ impl ListTagsForResourceInput {
 pub mod notify_resource_deployment_status_change_input {
 
     /// A builder for [`NotifyResourceDeploymentStatusChangeInput`](crate::input::NotifyResourceDeploymentStatusChangeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ResourceDeploymentStatus>,
@@ -10580,6 +10687,17 @@ pub mod notify_resource_deployment_status_change_input {
                 deployment_id: self.deployment_id,
                 status_message: self.status_message,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("status", &self.status);
+            formatter.field("outputs", &self.outputs);
+            formatter.field("deployment_id", &self.deployment_id);
+            formatter.field("status_message", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11368,7 +11486,7 @@ impl UpdateAccountSettingsInput {
 pub mod update_component_input {
 
     /// A builder for [`UpdateComponentInput`](crate::input::UpdateComponentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) deployment_type:
@@ -11506,6 +11624,19 @@ pub mod update_component_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("deployment_type", &self.deployment_type);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("service_name", &self.service_name);
+            formatter.field("service_instance_name", &self.service_instance_name);
+            formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("template_file", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl UpdateComponentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateComponent`](crate::operation::UpdateComponent)>
@@ -11626,7 +11757,7 @@ impl UpdateComponentInput {
 pub mod update_environment_input {
 
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -11837,6 +11968,25 @@ pub mod update_environment_input {
                 provisioning_repository: self.provisioning_repository,
                 component_role_arn: self.component_role_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.field("proton_service_role_arn", &self.proton_service_role_arn);
+            formatter.field("deployment_type", &self.deployment_type);
+            formatter.field(
+                "environment_account_connection_id",
+                &self.environment_account_connection_id,
+            );
+            formatter.field("provisioning_repository", &self.provisioning_repository);
+            formatter.field("component_role_arn", &self.component_role_arn);
+            formatter.finish()
         }
     }
 }
@@ -12136,7 +12286,7 @@ impl UpdateEnvironmentAccountConnectionInput {
 pub mod update_environment_template_input {
 
     /// A builder for [`UpdateEnvironmentTemplateInput`](crate::input::UpdateEnvironmentTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -12185,6 +12335,15 @@ pub mod update_environment_template_input {
                 display_name: self.display_name,
                 description: self.description,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12309,7 +12468,7 @@ impl UpdateEnvironmentTemplateInput {
 pub mod update_environment_template_version_input {
 
     /// A builder for [`UpdateEnvironmentTemplateVersionInput`](crate::input::UpdateEnvironmentTemplateVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) major_version: std::option::Option<std::string::String>,
@@ -12394,6 +12553,17 @@ pub mod update_environment_template_version_input {
                 description: self.description,
                 status: self.status,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("template_name", &self.template_name);
+            formatter.field("major_version", &self.major_version);
+            formatter.field("minor_version", &self.minor_version);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.finish()
         }
     }
 }
@@ -12515,7 +12685,7 @@ impl UpdateEnvironmentTemplateVersionInput {
 pub mod update_service_input {
 
     /// A builder for [`UpdateServiceInput`](crate::input::UpdateServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -12562,6 +12732,15 @@ pub mod update_service_input {
                 description: self.description,
                 spec: self.spec,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12684,7 +12863,7 @@ impl UpdateServiceInput {
 pub mod update_service_instance_input {
 
     /// A builder for [`UpdateServiceInstanceInput`](crate::input::UpdateServiceInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -12824,6 +13003,18 @@ pub mod update_service_instance_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("service_name", &self.service_name);
+            formatter.field("deployment_type", &self.deployment_type);
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateServiceInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceInstance`](crate::operation::UpdateServiceInstance)>
@@ -12946,7 +13137,7 @@ impl UpdateServiceInstanceInput {
 pub mod update_service_pipeline_input {
 
     /// A builder for [`UpdateServicePipelineInput`](crate::input::UpdateServicePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) spec: std::option::Option<std::string::String>,
@@ -13076,6 +13267,17 @@ pub mod update_service_pipeline_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("service_name", &self.service_name);
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("deployment_type", &self.deployment_type);
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateServicePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServicePipeline`](crate::operation::UpdateServicePipeline)>
@@ -13198,7 +13400,7 @@ impl UpdateServicePipelineInput {
 pub mod update_service_template_input {
 
     /// A builder for [`UpdateServiceTemplateInput`](crate::input::UpdateServiceTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -13247,6 +13449,15 @@ pub mod update_service_template_input {
                 display_name: self.display_name,
                 description: self.description,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -13371,7 +13582,7 @@ impl UpdateServiceTemplateInput {
 pub mod update_service_template_version_input {
 
     /// A builder for [`UpdateServiceTemplateVersionInput`](crate::input::UpdateServiceTemplateVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) major_version: std::option::Option<std::string::String>,
@@ -13517,6 +13728,25 @@ pub mod update_service_template_version_input {
                 compatible_environment_templates: self.compatible_environment_templates,
                 supported_component_sources: self.supported_component_sources,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("template_name", &self.template_name);
+            formatter.field("major_version", &self.major_version);
+            formatter.field("minor_version", &self.minor_version);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field(
+                "compatible_environment_templates",
+                &self.compatible_environment_templates,
+            );
+            formatter.field(
+                "supported_component_sources",
+                &self.supported_component_sources,
+            );
+            formatter.finish()
         }
     }
 }
@@ -13857,7 +14087,7 @@ impl UpdateTemplateSyncConfigInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateSyncConfigInput {
     /// <p>The name of your registered template.</p>
     #[doc(hidden)]
@@ -13904,22 +14134,10 @@ impl CreateTemplateSyncConfigInput {
         self.subdirectory.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTemplateSyncConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateSyncConfigInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("repository_provider", &self.repository_provider);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch", &self.branch);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTemplateSyncConfigInput {
     /// <p>The template name.</p>
     #[doc(hidden)]
@@ -13938,18 +14156,10 @@ impl DeleteTemplateSyncConfigInput {
         self.template_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteTemplateSyncConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTemplateSyncConfigInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateSyncConfigInput {
     /// <p>The synced template name.</p>
     #[doc(hidden)]
@@ -13996,22 +14206,10 @@ impl UpdateTemplateSyncConfigInput {
         self.subdirectory.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTemplateSyncConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateSyncConfigInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("repository_provider", &self.repository_provider);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch", &self.branch);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateSyncConfigInput {
     /// <p>The template name.</p>
     #[doc(hidden)]
@@ -14030,18 +14228,10 @@ impl GetTemplateSyncConfigInput {
         self.template_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetTemplateSyncConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateSyncConfigInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceTemplateVersionsInput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     #[doc(hidden)]
@@ -14074,16 +14264,6 @@ impl ListServiceTemplateVersionsInput {
     /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ListServiceTemplateVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceTemplateVersionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.finish()
     }
 }
 
@@ -14186,7 +14366,7 @@ impl std::fmt::Debug for CreateServiceTemplateVersionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
     #[doc(hidden)]
@@ -14210,15 +14390,6 @@ impl DeleteServiceTemplateVersionInput {
     /// <p>The service template minor version to delete.</p>
     pub fn minor_version(&self) -> std::option::Option<&str> {
         self.minor_version.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteServiceTemplateVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceTemplateVersionInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.field("minor_version", &self.minor_version);
-        formatter.finish()
     }
 }
 
@@ -14313,7 +14484,7 @@ impl std::fmt::Debug for UpdateServiceTemplateVersionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceTemplateVersionInput {
     /// <p>The name of the service template a version of which you want to get detailed data for.</p>
     #[doc(hidden)]
@@ -14339,19 +14510,10 @@ impl GetServiceTemplateVersionInput {
         self.minor_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceTemplateVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceTemplateVersionInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.field("minor_version", &self.minor_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceTemplatesInput {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
     #[doc(hidden)]
@@ -14368,14 +14530,6 @@ impl ListServiceTemplatesInput {
     /// <p>The maximum number of service templates to list.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for ListServiceTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -14445,7 +14599,7 @@ impl std::fmt::Debug for CreateServiceTemplateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceTemplateInput {
     /// <p>The name of the service template to delete.</p>
     #[doc(hidden)]
@@ -14455,13 +14609,6 @@ impl DeleteServiceTemplateInput {
     /// <p>The name of the service template to delete.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteServiceTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceTemplateInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -14505,7 +14652,7 @@ impl std::fmt::Debug for UpdateServiceTemplateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceTemplateInput {
     /// <p>The name of the service template that you want to get detailed data for.</p>
     #[doc(hidden)]
@@ -14517,17 +14664,10 @@ impl GetServiceTemplateInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceTemplateInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicesInput {
     /// <p>A token that indicates the location of the next service in the array of services, after the list of services that was previously requested.</p>
     #[doc(hidden)]
@@ -14544,14 +14684,6 @@ impl ListServicesInput {
     /// <p>The maximum number of services to list.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for ListServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -14653,7 +14785,7 @@ impl std::fmt::Debug for CreateServiceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The name of the service to delete.</p>
     #[doc(hidden)]
@@ -14663,13 +14795,6 @@ impl DeleteServiceInput {
     /// <p>The name of the service to delete.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -14713,7 +14838,7 @@ impl std::fmt::Debug for UpdateServiceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceInput {
     /// <p>The name of the service that you want to get the detailed data for.</p>
     #[doc(hidden)]
@@ -14723,13 +14848,6 @@ impl GetServiceInput {
     /// <p>The name of the service that you want to get the detailed data for.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for GetServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -14835,7 +14953,7 @@ impl std::fmt::Debug for UpdateServicePipelineInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicePipelineProvisionedResourcesInput {
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
     #[doc(hidden)]
@@ -14854,18 +14972,10 @@ impl ListServicePipelineProvisionedResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListServicePipelineProvisionedResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicePipelineProvisionedResourcesInput");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicePipelineOutputsInput {
     /// <p>The name of the service whose pipeline's outputs you want.</p>
     #[doc(hidden)]
@@ -14884,18 +14994,10 @@ impl ListServicePipelineOutputsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListServicePipelineOutputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicePipelineOutputsInput");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceInstancesInput {
     /// <p>The name of the service that the service instance belongs to.</p>
     #[doc(hidden)]
@@ -14919,15 +15021,6 @@ impl ListServiceInstancesInput {
     /// <p>The maximum number of service instances to list.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for ListServiceInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceInstancesInput");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -15039,7 +15132,7 @@ impl std::fmt::Debug for UpdateServiceInstanceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceInstanceInput {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
     #[doc(hidden)]
@@ -15058,18 +15151,10 @@ impl GetServiceInstanceInput {
         self.service_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceInstanceInput");
-        formatter.field("name", &self.name);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceInstanceProvisionedResourcesInput {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     #[doc(hidden)]
@@ -15095,19 +15180,10 @@ impl ListServiceInstanceProvisionedResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListServiceInstanceProvisionedResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceInstanceProvisionedResourcesInput");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_instance_name", &self.service_instance_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceInstanceOutputsInput {
     /// <p>The name of the service instance whose outputs you want.</p>
     #[doc(hidden)]
@@ -15133,19 +15209,10 @@ impl ListServiceInstanceOutputsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListServiceInstanceOutputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceInstanceOutputsInput");
-        formatter.field("service_instance_name", &self.service_instance_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositoriesInput {
     /// <p>A token that indicates the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
     #[doc(hidden)]
@@ -15164,18 +15231,10 @@ impl ListRepositoriesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRepositoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositoriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRepositoryInput {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
@@ -15217,21 +15276,10 @@ impl CreateRepositoryInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRepositoryInput");
-        formatter.field("provider", &self.provider);
-        formatter.field("name", &self.name);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryInput {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
@@ -15250,18 +15298,10 @@ impl DeleteRepositoryInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRepositoryInput");
-        formatter.field("provider", &self.provider);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryInput {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
@@ -15280,18 +15320,10 @@ impl GetRepositoryInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryInput");
-        formatter.field("provider", &self.provider);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentTemplateVersionsInput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     #[doc(hidden)]
@@ -15324,16 +15356,6 @@ impl ListEnvironmentTemplateVersionsInput {
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ListEnvironmentTemplateVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentTemplateVersionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.finish()
     }
 }
 
@@ -15405,7 +15427,7 @@ impl std::fmt::Debug for CreateEnvironmentTemplateVersionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
     #[doc(hidden)]
@@ -15429,15 +15451,6 @@ impl DeleteEnvironmentTemplateVersionInput {
     /// <p>The environment template minor version to delete.</p>
     pub fn minor_version(&self) -> std::option::Option<&str> {
         self.minor_version.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteEnvironmentTemplateVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentTemplateVersionInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.field("minor_version", &self.minor_version);
-        formatter.finish()
     }
 }
 
@@ -15497,7 +15510,7 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateVersionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
     #[doc(hidden)]
@@ -15523,19 +15536,10 @@ impl GetEnvironmentTemplateVersionInput {
         self.minor_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetEnvironmentTemplateVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnvironmentTemplateVersionInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.field("minor_version", &self.minor_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentTemplatesInput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
     #[doc(hidden)]
@@ -15552,14 +15556,6 @@ impl ListEnvironmentTemplatesInput {
     /// <p>The maximum number of environment templates to list.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for ListEnvironmentTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -15629,7 +15625,7 @@ impl std::fmt::Debug for CreateEnvironmentTemplateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateInput {
     /// <p>The name of the environment template to delete.</p>
     #[doc(hidden)]
@@ -15639,13 +15635,6 @@ impl DeleteEnvironmentTemplateInput {
     /// <p>The name of the environment template to delete.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteEnvironmentTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentTemplateInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -15689,7 +15678,7 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnvironmentTemplateInput {
     /// <p>The name of the environment template that you want to get the detailed data for.</p>
     #[doc(hidden)]
@@ -15701,17 +15690,10 @@ impl GetEnvironmentTemplateInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetEnvironmentTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnvironmentTemplateInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentsInput {
     /// <p>A token that indicates the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
     #[doc(hidden)]
@@ -15738,15 +15720,6 @@ impl ListEnvironmentsInput {
         &self,
     ) -> std::option::Option<&[crate::model::EnvironmentTemplateFilter]> {
         self.environment_templates.as_deref()
-    }
-}
-impl std::fmt::Debug for ListEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("environment_templates", &self.environment_templates);
-        formatter.finish()
     }
 }
 
@@ -15871,7 +15844,7 @@ impl std::fmt::Debug for CreateEnvironmentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
     /// <p>The name of the environment to delete.</p>
     #[doc(hidden)]
@@ -15881,13 +15854,6 @@ impl DeleteEnvironmentInput {
     /// <p>The name of the environment to delete.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -16042,7 +16008,7 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnvironmentInput {
     /// <p>The name of the environment that you want to get the detailed data for.</p>
     #[doc(hidden)]
@@ -16054,17 +16020,10 @@ impl GetEnvironmentInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnvironmentInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentProvisionedResourcesInput {
     /// <p>The environment name.</p>
     #[doc(hidden)]
@@ -16083,18 +16042,10 @@ impl ListEnvironmentProvisionedResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEnvironmentProvisionedResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentProvisionedResourcesInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentOutputsInput {
     /// <p>The environment name.</p>
     #[doc(hidden)]
@@ -16113,18 +16064,10 @@ impl ListEnvironmentOutputsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEnvironmentOutputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentOutputsInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to reject.</p>
     #[doc(hidden)]
@@ -16136,17 +16079,10 @@ impl RejectEnvironmentAccountConnectionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for RejectEnvironmentAccountConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectEnvironmentAccountConnectionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection.</p>
     #[doc(hidden)]
@@ -16158,17 +16094,10 @@ impl AcceptEnvironmentAccountConnectionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for AcceptEnvironmentAccountConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptEnvironmentAccountConnectionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsInput {
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
     #[doc(hidden)]
@@ -16214,21 +16143,10 @@ impl ListEnvironmentAccountConnectionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEnvironmentAccountConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnvironmentAccountConnectionsInput");
-        formatter.field("requested_by", &self.requested_by);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("statuses", &self.statuses);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEnvironmentAccountConnectionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
     #[doc(hidden)]
@@ -16281,22 +16199,10 @@ impl CreateEnvironmentAccountConnectionInput {
         self.component_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEnvironmentAccountConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEnvironmentAccountConnectionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("management_account_id", &self.management_account_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("component_role_arn", &self.component_role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to delete.</p>
     #[doc(hidden)]
@@ -16308,17 +16214,10 @@ impl DeleteEnvironmentAccountConnectionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEnvironmentAccountConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentAccountConnectionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to update.</p>
     #[doc(hidden)]
@@ -16348,19 +16247,10 @@ impl UpdateEnvironmentAccountConnectionInput {
         self.component_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEnvironmentAccountConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEnvironmentAccountConnectionInput");
-        formatter.field("id", &self.id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("component_role_arn", &self.component_role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     #[doc(hidden)]
@@ -16372,17 +16262,10 @@ impl GetEnvironmentAccountConnectionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEnvironmentAccountConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnvironmentAccountConnectionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentsInput {
     /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
     #[doc(hidden)]
@@ -16420,17 +16303,6 @@ impl ListComponentsInput {
     /// <p>The maximum number of components to list.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for ListComponentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_instance_name", &self.service_instance_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -16528,7 +16400,7 @@ impl std::fmt::Debug for CreateComponentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteComponentInput {
     /// <p>The name of the component to delete.</p>
     #[doc(hidden)]
@@ -16538,13 +16410,6 @@ impl DeleteComponentInput {
     /// <p>The name of the component to delete.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteComponentInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -16650,7 +16515,7 @@ impl std::fmt::Debug for UpdateComponentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentInput {
     /// <p>The name of the component that you want to get the detailed data for.</p>
     #[doc(hidden)]
@@ -16662,17 +16527,10 @@ impl GetComponentInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComponentInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentProvisionedResourcesInput {
     /// <p>The name of the component whose provisioned resources you want.</p>
     #[doc(hidden)]
@@ -16691,18 +16549,10 @@ impl ListComponentProvisionedResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListComponentProvisionedResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentProvisionedResourcesInput");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentOutputsInput {
     /// <p>The name of the component whose outputs you want.</p>
     #[doc(hidden)]
@@ -16721,18 +16571,10 @@ impl ListComponentOutputsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListComponentOutputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentOutputsInput");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     /// <p>To remove a previously configured ARN, specify an empty string.</p>
@@ -16764,36 +16606,15 @@ impl UpdateAccountSettingsInput {
         self.delete_pipeline_provisioning_repository
     }
 }
-impl std::fmt::Debug for UpdateAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountSettingsInput");
-        formatter.field("pipeline_service_role_arn", &self.pipeline_service_role_arn);
-        formatter.field(
-            "pipeline_provisioning_repository",
-            &self.pipeline_provisioning_repository,
-        );
-        formatter.field(
-            "delete_pipeline_provisioning_repository",
-            &self.delete_pipeline_provisioning_repository,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountSettingsInput {}
-impl std::fmt::Debug for GetAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove customer tags from.</p>
     #[doc(hidden)]
@@ -16812,18 +16633,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Proton resource to apply customer tags to.</p>
     #[doc(hidden)]
@@ -16840,14 +16653,6 @@ impl TagResourceInput {
     /// <p>A list of customer tags to apply to the Proton resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -16907,7 +16712,7 @@ impl std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
     #[doc(hidden)]
@@ -16933,19 +16738,10 @@ impl ListTagsForResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsInput {
     /// <p>The repository name.</p>
     #[doc(hidden)]
@@ -16978,20 +16774,10 @@ impl ListRepositorySyncDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRepositorySyncDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositorySyncDefinitionsInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_provider", &self.repository_provider);
-        formatter.field("sync_type", &self.sync_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateSyncStatusInput {
     /// <p>The template name.</p>
     #[doc(hidden)]
@@ -17017,19 +16803,10 @@ impl GetTemplateSyncStatusInput {
         self.template_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateSyncStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateSyncStatusInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositorySyncStatusInput {
     /// <p>The repository name.</p>
     #[doc(hidden)]
@@ -17062,20 +16839,10 @@ impl GetRepositorySyncStatusInput {
         self.sync_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetRepositorySyncStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositorySyncStatusInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_provider", &self.repository_provider);
-        formatter.field("branch", &self.branch);
-        formatter.field("sync_type", &self.sync_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelServicePipelineDeploymentInput {
     /// <p>The name of the service with the service pipeline deployment to cancel.</p>
     #[doc(hidden)]
@@ -17087,17 +16854,10 @@ impl CancelServicePipelineDeploymentInput {
         self.service_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelServicePipelineDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelServicePipelineDeploymentInput");
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelServiceInstanceDeploymentInput {
     /// <p>The name of the service instance with the deployment to cancel.</p>
     #[doc(hidden)]
@@ -17116,18 +16876,10 @@ impl CancelServiceInstanceDeploymentInput {
         self.service_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelServiceInstanceDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelServiceInstanceDeploymentInput");
-        formatter.field("service_instance_name", &self.service_instance_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelEnvironmentDeploymentInput {
     /// <p>The name of the environment with the deployment to cancel.</p>
     #[doc(hidden)]
@@ -17139,17 +16891,10 @@ impl CancelEnvironmentDeploymentInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelEnvironmentDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelEnvironmentDeploymentInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelComponentDeploymentInput {
     /// <p>The name of the component with the deployment to cancel.</p>
     #[doc(hidden)]
@@ -17159,12 +16904,5 @@ impl CancelComponentDeploymentInput {
     /// <p>The name of the component with the deployment to cancel.</p>
     pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelComponentDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelComponentDeploymentInput");
-        formatter.field("component_name", &self.component_name);
-        formatter.finish()
     }
 }

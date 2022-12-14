@@ -2,7 +2,7 @@
 
 /// <p>Contains detailed information about a report setting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportSetting {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
@@ -28,15 +28,6 @@ impl ReportSetting {
     /// <p>The number of frameworks a report covers.</p>
     pub fn number_of_frameworks(&self) -> i32 {
         self.number_of_frameworks
-    }
-}
-impl std::fmt::Debug for ReportSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportSetting");
-        formatter.field("report_template", &self.report_template);
-        formatter.field("framework_arns", &self.framework_arns);
-        formatter.field("number_of_frameworks", &self.number_of_frameworks);
-        formatter.finish()
     }
 }
 /// See [`ReportSetting`](crate::model::ReportSetting).
@@ -113,7 +104,7 @@ impl ReportSetting {
 
 /// <p>Contains information from your report plan about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportDeliveryChannel {
     /// <p>The unique name of the S3 bucket that receives your reports.</p>
     #[doc(hidden)]
@@ -137,15 +128,6 @@ impl ReportDeliveryChannel {
     /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
     pub fn formats(&self) -> std::option::Option<&[std::string::String]> {
         self.formats.as_deref()
-    }
-}
-impl std::fmt::Debug for ReportDeliveryChannel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportDeliveryChannel");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("formats", &self.formats);
-        formatter.finish()
     }
 }
 /// See [`ReportDeliveryChannel`](crate::model::ReportDeliveryChannel).
@@ -226,7 +208,7 @@ impl ReportDeliveryChannel {
 /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
 /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CalculatedLifecycle {
     /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
     #[doc(hidden)]
@@ -243,14 +225,6 @@ impl CalculatedLifecycle {
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
     pub fn delete_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delete_at.as_ref()
-    }
-}
-impl std::fmt::Debug for CalculatedLifecycle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CalculatedLifecycle");
-        formatter.field("move_to_cold_storage_at", &self.move_to_cold_storage_at);
-        formatter.field("delete_at", &self.delete_at);
-        formatter.finish()
     }
 }
 /// See [`CalculatedLifecycle`](crate::model::CalculatedLifecycle).
@@ -309,7 +283,7 @@ impl CalculatedLifecycle {
 /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
 /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Lifecycle {
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
     #[doc(hidden)]
@@ -326,17 +300,6 @@ impl Lifecycle {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub fn delete_after_days(&self) -> std::option::Option<i64> {
         self.delete_after_days
-    }
-}
-impl std::fmt::Debug for Lifecycle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Lifecycle");
-        formatter.field(
-            "move_to_cold_storage_after_days",
-            &self.move_to_cold_storage_after_days,
-        );
-        formatter.field("delete_after_days", &self.delete_after_days);
-        formatter.finish()
     }
 }
 /// See [`Lifecycle`](crate::model::Lifecycle).
@@ -390,7 +353,7 @@ impl Lifecycle {
 
 /// <p>Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameworkControl {
     /// <p>The name of a control. This name is between 1 and 256 characters.</p>
     #[doc(hidden)]
@@ -417,15 +380,6 @@ impl FrameworkControl {
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
     pub fn control_scope(&self) -> std::option::Option<&crate::model::ControlScope> {
         self.control_scope.as_ref()
-    }
-}
-impl std::fmt::Debug for FrameworkControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameworkControl");
-        formatter.field("control_name", &self.control_name);
-        formatter.field("control_input_parameters", &self.control_input_parameters);
-        formatter.field("control_scope", &self.control_scope);
-        formatter.finish()
     }
 }
 /// See [`FrameworkControl`](crate::model::FrameworkControl).
@@ -506,7 +460,7 @@ impl FrameworkControl {
 /// <p>To set a control scope that includes all of a particular resource, leave the <code>ControlScope</code> empty or do not pass it when calling <code>CreateFramework</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlScope {
     /// <p>The ID of the only Amazon Web Services resource that you want your control scope to contain.</p>
     #[doc(hidden)]
@@ -534,15 +488,6 @@ impl ControlScope {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ControlScope {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlScope");
-        formatter.field("compliance_resource_ids", &self.compliance_resource_ids);
-        formatter.field("compliance_resource_types", &self.compliance_resource_types);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ControlScope`](crate::model::ControlScope).
@@ -641,7 +586,7 @@ impl ControlScope {
 
 /// <p>A list of parameters for a control. A control can have zero, one, or more than one parameter. An example of a control with two parameters is: "backup plan frequency is at least <code>daily</code> and the retention period is at least <code>1 year</code>". The first parameter is <code>daily</code>. The second parameter is <code>1 year</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlInputParameter {
     /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
     #[doc(hidden)]
@@ -658,14 +603,6 @@ impl ControlInputParameter {
     /// <p>The value of parameter, for example, <code>hourly</code>.</p>
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ControlInputParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlInputParameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
     }
 }
 /// See [`ControlInputParameter`](crate::model::ControlInputParameter).
@@ -722,7 +659,7 @@ impl ControlInputParameter {
 
 /// <p>A list of backup options for each resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvancedBackupSetting {
     /// <p>Specifies an object containing resource type and backup options. The only supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy Service (VSS). For a CloudFormation example, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample CloudFormation template to enable Windows VSS</a> in the <i>Backup User Guide</i>.</p>
     /// <p>Valid values: <code>EC2</code>.</p>
@@ -755,14 +692,6 @@ impl AdvancedBackupSetting {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.backup_options.as_ref()
-    }
-}
-impl std::fmt::Debug for AdvancedBackupSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvancedBackupSetting");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("backup_options", &self.backup_options);
-        formatter.finish()
     }
 }
 /// See [`AdvancedBackupSetting`](crate::model::AdvancedBackupSetting).
@@ -845,7 +774,7 @@ impl AdvancedBackupSetting {
 
 /// <p>Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupPlanInput {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     #[doc(hidden)]
@@ -872,15 +801,6 @@ impl BackupPlanInput {
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedBackupSetting]> {
         self.advanced_backup_settings.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupPlanInput");
-        formatter.field("backup_plan_name", &self.backup_plan_name);
-        formatter.field("rules", &self.rules);
-        formatter.field("advanced_backup_settings", &self.advanced_backup_settings);
-        formatter.finish()
     }
 }
 /// See [`BackupPlanInput`](crate::model::BackupPlanInput).
@@ -1063,7 +983,7 @@ impl std::fmt::Debug for BackupRuleInput {
 pub mod backup_rule_input {
 
     /// A builder for [`BackupRuleInput`](crate::model::BackupRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) target_backup_vault_name: std::option::Option<std::string::String>,
@@ -1220,6 +1140,21 @@ pub mod backup_rule_input {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("rule_name", &self.rule_name);
+            formatter.field("target_backup_vault_name", &self.target_backup_vault_name);
+            formatter.field("schedule_expression", &self.schedule_expression);
+            formatter.field("start_window_minutes", &self.start_window_minutes);
+            formatter.field("completion_window_minutes", &self.completion_window_minutes);
+            formatter.field("lifecycle", &self.lifecycle);
+            formatter.field("recovery_point_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("copy_actions", &self.copy_actions);
+            formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
+            formatter.finish()
+        }
+    }
 }
 impl BackupRuleInput {
     /// Creates a new builder-style object to manufacture [`BackupRuleInput`](crate::model::BackupRuleInput).
@@ -1230,7 +1165,7 @@ impl BackupRuleInput {
 
 /// <p>The details of the copy operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyAction {
     /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
@@ -1251,17 +1186,6 @@ impl CopyAction {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn destination_backup_vault_arn(&self) -> std::option::Option<&str> {
         self.destination_backup_vault_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CopyAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyAction");
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field(
-            "destination_backup_vault_arn",
-            &self.destination_backup_vault_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`CopyAction`](crate::model::CopyAction).
@@ -1508,7 +1432,7 @@ impl AsRef<str> for BackupVaultEvent {
 
 /// <p>Contains metadata about a restore job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreJobsListMember {
     /// <p>The account ID that owns the restore job.</p>
     #[doc(hidden)]
@@ -1602,28 +1526,6 @@ impl RestoreJobsListMember {
     /// <p>The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for RestoreJobsListMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreJobsListMember");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("restore_job_id", &self.restore_job_id);
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("percent_done", &self.percent_done);
-        formatter.field("backup_size_in_bytes", &self.backup_size_in_bytes);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field(
-            "expected_completion_time_minutes",
-            &self.expected_completion_time_minutes,
-        );
-        formatter.field("created_resource_arn", &self.created_resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`RestoreJobsListMember`](crate::model::RestoreJobsListMember).
@@ -1938,7 +1840,7 @@ impl AsRef<str> for RestoreJobStatus {
 
 /// <p>Contains detailed information about a report plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportPlan {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     #[doc(hidden)]
@@ -2016,27 +1918,6 @@ impl ReportPlan {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_successful_execution_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ReportPlan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportPlan");
-        formatter.field("report_plan_arn", &self.report_plan_arn);
-        formatter.field("report_plan_name", &self.report_plan_name);
-        formatter.field("report_plan_description", &self.report_plan_description);
-        formatter.field("report_setting", &self.report_setting);
-        formatter.field("report_delivery_channel", &self.report_delivery_channel);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field(
-            "last_attempted_execution_time",
-            &self.last_attempted_execution_time,
-        );
-        formatter.field(
-            "last_successful_execution_time",
-            &self.last_successful_execution_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReportPlan`](crate::model::ReportPlan).
@@ -2208,7 +2089,7 @@ impl ReportPlan {
 
 /// <p>Contains detailed information about a report job. A report job compiles a report based on a report plan and publishes it to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportJob {
     /// <p>The identifier for a report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. Report job IDs cannot be edited.</p>
     #[doc(hidden)]
@@ -2273,20 +2154,6 @@ impl ReportJob {
     /// <p>The S3 bucket name and S3 keys for the destination where the report job publishes the report.</p>
     pub fn report_destination(&self) -> std::option::Option<&crate::model::ReportDestination> {
         self.report_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for ReportJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportJob");
-        formatter.field("report_job_id", &self.report_job_id);
-        formatter.field("report_plan_arn", &self.report_plan_arn);
-        formatter.field("report_template", &self.report_template);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("report_destination", &self.report_destination);
-        formatter.finish()
     }
 }
 /// See [`ReportJob`](crate::model::ReportJob).
@@ -2436,7 +2303,7 @@ impl ReportJob {
 
 /// <p>Contains information from your report job about your report destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportDestination {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
     #[doc(hidden)]
@@ -2453,14 +2320,6 @@ impl ReportDestination {
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
     pub fn s3_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for ReportDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportDestination");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_keys", &self.s3_keys);
-        formatter.finish()
     }
 }
 /// See [`ReportDestination`](crate::model::ReportDestination).
@@ -2523,7 +2382,7 @@ impl ReportDestination {
 
 /// <p>Contains detailed information about a saved recovery point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryPointByResource {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     #[doc(hidden)]
@@ -2575,19 +2434,6 @@ impl RecoveryPointByResource {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RecoveryPointByResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryPointByResource");
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.field("backup_size_bytes", &self.backup_size_bytes);
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.finish()
     }
 }
 /// See [`RecoveryPointByResource`](crate::model::RecoveryPointByResource).
@@ -2818,7 +2664,7 @@ impl AsRef<str> for RecoveryPointStatus {
 
 /// <p>Contains detailed information about the recovery points stored in a backup vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryPointByBackupVault {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     #[doc(hidden)]
@@ -2951,30 +2797,6 @@ impl RecoveryPointByBackupVault {
     /// <p>The date and time a recovery point was last restored, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_restore_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_restore_time.as_ref()
-    }
-}
-impl std::fmt::Debug for RecoveryPointByBackupVault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryPointByBackupVault");
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("backup_vault_arn", &self.backup_vault_arn);
-        formatter.field("source_backup_vault_arn", &self.source_backup_vault_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("backup_size_in_bytes", &self.backup_size_in_bytes);
-        formatter.field("calculated_lifecycle", &self.calculated_lifecycle);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.field("is_encrypted", &self.is_encrypted);
-        formatter.field("last_restore_time", &self.last_restore_time);
-        formatter.finish()
     }
 }
 /// See [`RecoveryPointByBackupVault`](crate::model::RecoveryPointByBackupVault).
@@ -3263,7 +3085,7 @@ impl RecoveryPointByBackupVault {
 
 /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryPointCreator {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -3294,16 +3116,6 @@ impl RecoveryPointCreator {
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
     pub fn backup_rule_id(&self) -> std::option::Option<&str> {
         self.backup_rule_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RecoveryPointCreator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryPointCreator");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("backup_plan_arn", &self.backup_plan_arn);
-        formatter.field("backup_plan_version", &self.backup_plan_version);
-        formatter.field("backup_rule_id", &self.backup_rule_id);
-        formatter.finish()
     }
 }
 /// See [`RecoveryPointCreator`](crate::model::RecoveryPointCreator).
@@ -3390,7 +3202,7 @@ impl RecoveryPointCreator {
 
 /// <p>A structure that contains information about a backed-up resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectedResource {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     #[doc(hidden)]
@@ -3414,15 +3226,6 @@ impl ProtectedResource {
     /// <p>The date and time a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ProtectedResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectedResource");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("last_backup_time", &self.last_backup_time);
-        formatter.finish()
     }
 }
 /// See [`ProtectedResource`](crate::model::ProtectedResource).
@@ -3491,7 +3294,7 @@ impl ProtectedResource {
 
 /// <p>Contains detailed information about a framework. Frameworks contain controls, which evaluate and report on your backup events and resources. Frameworks generate daily compliance results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Framework {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
@@ -3538,18 +3341,6 @@ impl Framework {
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
     pub fn deployment_status(&self) -> std::option::Option<&str> {
         self.deployment_status.as_deref()
-    }
-}
-impl std::fmt::Debug for Framework {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Framework");
-        formatter.field("framework_name", &self.framework_name);
-        formatter.field("framework_arn", &self.framework_arn);
-        formatter.field("framework_description", &self.framework_description);
-        formatter.field("number_of_controls", &self.number_of_controls);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.finish()
     }
 }
 /// See [`Framework`](crate::model::Framework).
@@ -3665,7 +3456,7 @@ impl Framework {
 
 /// <p>Contains detailed information about a copy job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyJob {
     /// <p>The account ID that owns the copy job.</p>
     #[doc(hidden)]
@@ -3773,33 +3564,6 @@ impl CopyJob {
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for CopyJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyJob");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("copy_job_id", &self.copy_job_id);
-        formatter.field("source_backup_vault_arn", &self.source_backup_vault_arn);
-        formatter.field("source_recovery_point_arn", &self.source_recovery_point_arn);
-        formatter.field(
-            "destination_backup_vault_arn",
-            &self.destination_backup_vault_arn,
-        );
-        formatter.field(
-            "destination_recovery_point_arn",
-            &self.destination_recovery_point_arn,
-        );
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("state", &self.state);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("backup_size_in_bytes", &self.backup_size_in_bytes);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`CopyJob`](crate::model::CopyJob).
@@ -4139,7 +3903,7 @@ impl AsRef<str> for CopyJobState {
 
 /// <p>Contains metadata about a backup vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupVaultListMember {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -4224,22 +3988,6 @@ impl BackupVaultListMember {
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn lock_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.lock_date.as_ref()
-    }
-}
-impl std::fmt::Debug for BackupVaultListMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupVaultListMember");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("backup_vault_arn", &self.backup_vault_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("encryption_key_arn", &self.encryption_key_arn);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("number_of_recovery_points", &self.number_of_recovery_points);
-        formatter.field("locked", &self.locked);
-        formatter.field("min_retention_days", &self.min_retention_days);
-        formatter.field("max_retention_days", &self.max_retention_days);
-        formatter.field("lock_date", &self.lock_date);
-        formatter.finish()
     }
 }
 /// See [`BackupVaultListMember`](crate::model::BackupVaultListMember).
@@ -4416,7 +4164,7 @@ impl BackupVaultListMember {
 
 /// <p>Contains metadata about a <code>BackupSelection</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupSelectionsListMember {
     /// <p>Uniquely identifies a request to assign a set of resources to a backup plan.</p>
     #[doc(hidden)]
@@ -4463,18 +4211,6 @@ impl BackupSelectionsListMember {
     /// <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupSelectionsListMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupSelectionsListMember");
-        formatter.field("selection_id", &self.selection_id);
-        formatter.field("selection_name", &self.selection_name);
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.finish()
     }
 }
 /// See [`BackupSelectionsListMember`](crate::model::BackupSelectionsListMember).
@@ -4587,7 +4323,7 @@ impl BackupSelectionsListMember {
 
 /// <p>Contains metadata about a backup plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupPlansListMember {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     #[doc(hidden)]
@@ -4658,21 +4394,6 @@ impl BackupPlansListMember {
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedBackupSetting]> {
         self.advanced_backup_settings.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupPlansListMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupPlansListMember");
-        formatter.field("backup_plan_arn", &self.backup_plan_arn);
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("deletion_date", &self.deletion_date);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("backup_plan_name", &self.backup_plan_name);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("last_execution_date", &self.last_execution_date);
-        formatter.field("advanced_backup_settings", &self.advanced_backup_settings);
-        formatter.finish()
     }
 }
 /// See [`BackupPlansListMember`](crate::model::BackupPlansListMember).
@@ -4843,7 +4564,7 @@ impl BackupPlansListMember {
 
 /// <p>An object specifying metadata associated with a backup plan template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupPlanTemplatesListMember {
     /// <p>Uniquely identifies a stored backup plan template.</p>
     #[doc(hidden)]
@@ -4860,14 +4581,6 @@ impl BackupPlanTemplatesListMember {
     /// <p>The optional display name of a backup plan template.</p>
     pub fn backup_plan_template_name(&self) -> std::option::Option<&str> {
         self.backup_plan_template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupPlanTemplatesListMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupPlanTemplatesListMember");
-        formatter.field("backup_plan_template_id", &self.backup_plan_template_id);
-        formatter.field("backup_plan_template_name", &self.backup_plan_template_name);
-        formatter.finish()
     }
 }
 /// See [`BackupPlanTemplatesListMember`](crate::model::BackupPlanTemplatesListMember).
@@ -4924,7 +4637,7 @@ impl BackupPlanTemplatesListMember {
 
 /// <p>Contains detailed information about a backup job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupJob {
     /// <p>The account ID that owns the backup job.</p>
     #[doc(hidden)]
@@ -5073,32 +4786,6 @@ impl BackupJob {
     /// <p>Represents the type of backup for a backup job.</p>
     pub fn backup_type(&self) -> std::option::Option<&str> {
         self.backup_type.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupJob");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("backup_job_id", &self.backup_job_id);
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("backup_vault_arn", &self.backup_vault_arn);
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("state", &self.state);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("percent_done", &self.percent_done);
-        formatter.field("backup_size_in_bytes", &self.backup_size_in_bytes);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("expected_completion_date", &self.expected_completion_date);
-        formatter.field("start_by", &self.start_by);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("bytes_transferred", &self.bytes_transferred);
-        formatter.field("backup_options", &self.backup_options);
-        formatter.field("backup_type", &self.backup_type);
-        formatter.finish()
     }
 }
 /// See [`BackupJob`](crate::model::BackupJob).
@@ -5550,7 +5237,7 @@ impl AsRef<str> for BackupJobState {
 /// <p>Used to specify a set of resources to a backup plan.</p>
 /// <p>Specifying your desired <code>Conditions</code>, <code>ListOfTags</code>, <code>NotResources</code>, and/or <code>Resources</code> is recommended. If none of these are specified, Backup will attempt to select all supported and opted-in storage resources, which could have unintended cost implications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupSelection {
     /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     #[doc(hidden)]
@@ -5619,18 +5306,6 @@ impl BackupSelection {
     /// </ul>
     pub fn conditions(&self) -> std::option::Option<&crate::model::Conditions> {
         self.conditions.as_ref()
-    }
-}
-impl std::fmt::Debug for BackupSelection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupSelection");
-        formatter.field("selection_name", &self.selection_name);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("resources", &self.resources);
-        formatter.field("list_of_tags", &self.list_of_tags);
-        formatter.field("not_resources", &self.not_resources);
-        formatter.field("conditions", &self.conditions);
-        formatter.finish()
     }
 }
 /// See [`BackupSelection`](crate::model::BackupSelection).
@@ -5786,7 +5461,7 @@ impl BackupSelection {
 
 /// <p>Contains information about which resources to include or exclude from a backup plan using their tags. Conditions are case sensitive.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Conditions {
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
     #[doc(hidden)]
@@ -5817,16 +5492,6 @@ impl Conditions {
     /// <p>Filters the values of your tagged resources for non-matching tag values with the use of a wildcard character (*) anywhere in the string.</p>
     pub fn string_not_like(&self) -> std::option::Option<&[crate::model::ConditionParameter]> {
         self.string_not_like.as_deref()
-    }
-}
-impl std::fmt::Debug for Conditions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Conditions");
-        formatter.field("string_equals", &self.string_equals);
-        formatter.field("string_not_equals", &self.string_not_equals);
-        formatter.field("string_like", &self.string_like);
-        formatter.field("string_not_like", &self.string_not_like);
-        formatter.finish()
     }
 }
 /// See [`Conditions`](crate::model::Conditions).
@@ -5941,7 +5606,7 @@ impl Conditions {
 
 /// <p>Includes information about tags you define to assign tagged resources to a backup plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionParameter {
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
     #[doc(hidden)]
@@ -5958,14 +5623,6 @@ impl ConditionParameter {
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn condition_value(&self) -> std::option::Option<&str> {
         self.condition_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ConditionParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionParameter");
-        formatter.field("condition_key", &self.condition_key);
-        formatter.field("condition_value", &self.condition_value);
-        formatter.finish()
     }
 }
 /// See [`ConditionParameter`](crate::model::ConditionParameter).
@@ -6022,7 +5679,7 @@ impl ConditionParameter {
 
 /// <p>Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>), a key, and a value. Used to filter resources using their tags and assign them to a backup plan. Case sensitive.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
     #[doc(hidden)]
@@ -6046,15 +5703,6 @@ impl Condition {
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn condition_value(&self) -> std::option::Option<&str> {
         self.condition_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field("condition_type", &self.condition_type);
-        formatter.field("condition_key", &self.condition_key);
-        formatter.field("condition_value", &self.condition_value);
-        formatter.finish()
     }
 }
 /// See [`Condition`](crate::model::Condition).
@@ -6211,7 +5859,7 @@ impl AsRef<str> for ConditionType {
 
 /// <p>Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of Amazon Web Services resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupPlan {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     #[doc(hidden)]
@@ -6238,15 +5886,6 @@ impl BackupPlan {
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedBackupSetting]> {
         self.advanced_backup_settings.as_deref()
-    }
-}
-impl std::fmt::Debug for BackupPlan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupPlan");
-        formatter.field("backup_plan_name", &self.backup_plan_name);
-        formatter.field("rules", &self.rules);
-        formatter.field("advanced_backup_settings", &self.advanced_backup_settings);
-        formatter.finish()
     }
 }
 /// See [`BackupPlan`](crate::model::BackupPlan).
@@ -6437,7 +6076,7 @@ impl std::fmt::Debug for BackupRule {
 pub mod backup_rule {
 
     /// A builder for [`BackupRule`](crate::model::BackupRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) target_backup_vault_name: std::option::Option<std::string::String>,
@@ -6604,6 +6243,22 @@ pub mod backup_rule {
                 copy_actions: self.copy_actions,
                 enable_continuous_backup: self.enable_continuous_backup,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("rule_name", &self.rule_name);
+            formatter.field("target_backup_vault_name", &self.target_backup_vault_name);
+            formatter.field("schedule_expression", &self.schedule_expression);
+            formatter.field("start_window_minutes", &self.start_window_minutes);
+            formatter.field("completion_window_minutes", &self.completion_window_minutes);
+            formatter.field("lifecycle", &self.lifecycle);
+            formatter.field("recovery_point_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("rule_id", &self.rule_id);
+            formatter.field("copy_actions", &self.copy_actions);
+            formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
+            formatter.finish()
         }
     }
 }

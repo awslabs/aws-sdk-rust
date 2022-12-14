@@ -2,7 +2,7 @@
 
 /// <p>Displays errors that occurred during validation of the resource policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationErrorsEntry {
     /// <p>Checks the name of the policy.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationErrorsEntry {
     /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationErrorsEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationErrorsEntry");
-        formatter.field("check_name", &self.check_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
@@ -80,7 +72,7 @@ impl ValidationErrorsEntry {
 
 /// <p>A structure that contains information about a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key identifier, or name, of the tag.</p>
     #[doc(hidden)]
@@ -97,14 +89,6 @@ impl Tag {
     /// <p>The string value associated with the key of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -155,7 +139,7 @@ impl Tag {
 
 /// <p>A structure that defines the rotation configuration for the secret.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotationRulesType {
     /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
     /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
@@ -185,15 +169,6 @@ impl RotationRulesType {
     /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for RotationRulesType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotationRulesType");
-        formatter.field("automatically_after_days", &self.automatically_after_days);
-        formatter.field("duration", &self.duration);
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.finish()
     }
 }
 /// See [`RotationRulesType`](crate::model::RotationRulesType).
@@ -265,7 +240,7 @@ impl RotationRulesType {
 
 /// <p>A replication object consisting of a <code>RegionReplicationStatus</code> object and includes a Region, KMSKeyId, status, and status message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationStatusType {
     /// <p>The Region where replication occurs.</p>
     #[doc(hidden)]
@@ -303,17 +278,6 @@ impl ReplicationStatusType {
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicationStatusType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationStatusType");
-        formatter.field("region", &self.region);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("last_accessed_date", &self.last_accessed_date);
-        formatter.finish()
     }
 }
 /// See [`ReplicationStatusType`](crate::model::ReplicationStatusType).
@@ -501,7 +465,7 @@ impl AsRef<str> for StatusType {
 
 /// <p>A custom type that specifies a <code>Region</code> and the <code>KmsKeyId</code> for a replica secret.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaRegionType {
     /// <p>A Region code. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name and code of Regions</a>.</p>
     #[doc(hidden)]
@@ -518,14 +482,6 @@ impl ReplicaRegionType {
     /// <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicaRegionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaRegionType");
-        formatter.field("region", &self.region);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`ReplicaRegionType`](crate::model::ReplicaRegionType).
@@ -576,7 +532,7 @@ impl ReplicaRegionType {
 
 /// <p>A structure that contains information about one version of a secret.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecretVersionsListEntry {
     /// <p>The unique version identifier of this version of the secret.</p>
     #[doc(hidden)]
@@ -614,17 +570,6 @@ impl SecretVersionsListEntry {
     /// <p>The KMS keys used to encrypt the secret version.</p>
     pub fn kms_key_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.kms_key_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for SecretVersionsListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecretVersionsListEntry");
-        formatter.field("version_id", &self.version_id);
-        formatter.field("version_stages", &self.version_stages);
-        formatter.field("last_accessed_date", &self.last_accessed_date);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("kms_key_ids", &self.kms_key_ids);
-        formatter.finish()
     }
 }
 /// See [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
@@ -735,7 +680,7 @@ impl SecretVersionsListEntry {
 
 /// <p>A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html">GetSecretValue</a> .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecretListEntry {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     #[doc(hidden)]
@@ -860,28 +805,6 @@ impl SecretListEntry {
     /// <p>The Region where Secrets Manager originated the secret.</p>
     pub fn primary_region(&self) -> std::option::Option<&str> {
         self.primary_region.as_deref()
-    }
-}
-impl std::fmt::Debug for SecretListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecretListEntry");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("rotation_enabled", &self.rotation_enabled);
-        formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
-        formatter.field("rotation_rules", &self.rotation_rules);
-        formatter.field("last_rotated_date", &self.last_rotated_date);
-        formatter.field("last_changed_date", &self.last_changed_date);
-        formatter.field("last_accessed_date", &self.last_accessed_date);
-        formatter.field("deleted_date", &self.deleted_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("secret_versions_to_stages", &self.secret_versions_to_stages);
-        formatter.field("owning_service", &self.owning_service);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("primary_region", &self.primary_region);
-        formatter.finish()
     }
 }
 /// See [`SecretListEntry`](crate::model::SecretListEntry).
@@ -1247,7 +1170,7 @@ impl AsRef<str> for SortOrderType {
 
 /// <p>Allows you to add filters when you use the search function in Secrets Manager. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find secrets in Secrets Manager</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The following are keys you can use:</p>
     /// <ul>
@@ -1282,14 +1205,6 @@ impl Filter {
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).

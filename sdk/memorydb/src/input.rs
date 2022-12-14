@@ -6639,7 +6639,7 @@ impl UpdateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The name of the user</p>
     #[doc(hidden)]
@@ -6665,19 +6665,10 @@ impl UpdateUserInput {
         self.access_string.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("authentication_mode", &self.authentication_mode);
-        formatter.field("access_string", &self.access_string);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSubnetGroupInput {
     /// <p>The name of the subnet group</p>
     #[doc(hidden)]
@@ -6703,19 +6694,10 @@ impl UpdateSubnetGroupInput {
         self.subnet_ids.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSubnetGroupInput");
-        formatter.field("subnet_group_name", &self.subnet_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateParameterGroupInput {
     /// <p>The name of the parameter group to update.</p>
     #[doc(hidden)]
@@ -6736,18 +6718,10 @@ impl UpdateParameterGroupInput {
         self.parameter_name_values.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateParameterGroupInput");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("parameter_name_values", &self.parameter_name_values);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClusterInput {
     /// <p>The name of the cluster to update</p>
     #[doc(hidden)]
@@ -6854,30 +6828,10 @@ impl UpdateClusterInput {
         self.acl_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClusterInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("description", &self.description);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("maintenance_window", &self.maintenance_window);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("sns_topic_status", &self.sns_topic_status);
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("snapshot_window", &self.snapshot_window);
-        formatter.field("snapshot_retention_limit", &self.snapshot_retention_limit);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("replica_configuration", &self.replica_configuration);
-        formatter.field("shard_configuration", &self.shard_configuration);
-        formatter.field("acl_name", &self.acl_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAclInput {
     /// <p>The name of the Access Control List</p>
     #[doc(hidden)]
@@ -6903,19 +6857,10 @@ impl UpdateAclInput {
         self.user_names_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAclInput");
-        formatter.field("acl_name", &self.acl_name);
-        formatter.field("user_names_to_add", &self.user_names_to_add);
-        formatter.field("user_names_to_remove", &self.user_names_to_remove);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be removed</p>
     #[doc(hidden)]
@@ -6934,18 +6879,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added</p>
     #[doc(hidden)]
@@ -6964,18 +6901,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetParameterGroupInput {
     /// <p>The name of the parameter group to reset.</p>
     #[doc(hidden)]
@@ -7001,19 +6930,10 @@ impl ResetParameterGroupInput {
         self.parameter_names.as_deref()
     }
 }
-impl std::fmt::Debug for ResetParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetParameterGroupInput");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("all_parameters", &self.all_parameters);
-        formatter.field("parameter_names", &self.parameter_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</p>
     #[doc(hidden)]
@@ -7025,17 +6945,10 @@ impl ListTagsInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAllowedNodeTypeUpdatesInput {
     /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
     #[doc(hidden)]
@@ -7047,17 +6960,10 @@ impl ListAllowedNodeTypeUpdatesInput {
         self.cluster_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListAllowedNodeTypeUpdatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAllowedNodeTypeUpdatesInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailoverShardInput {
     /// <p>The cluster being failed over</p>
     #[doc(hidden)]
@@ -7076,18 +6982,10 @@ impl FailoverShardInput {
         self.shard_name.as_deref()
     }
 }
-impl std::fmt::Debug for FailoverShardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailoverShardInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("shard_name", &self.shard_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUsersInput {
     /// <p>The name of the user</p>
     #[doc(hidden)]
@@ -7120,20 +7018,10 @@ impl DescribeUsersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUsersInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSubnetGroupsInput {
     /// <p>The name of the subnet group to return details for.</p>
     #[doc(hidden)]
@@ -7159,19 +7047,10 @@ impl DescribeSubnetGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSubnetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSubnetGroupsInput");
-        formatter.field("subnet_group_name", &self.subnet_group_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSnapshotsInput {
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     #[doc(hidden)]
@@ -7218,22 +7097,10 @@ impl DescribeSnapshotsInput {
         self.show_detail
     }
 }
-impl std::fmt::Debug for DescribeSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSnapshotsInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.field("source", &self.source);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("show_detail", &self.show_detail);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceUpdatesInput {
     /// <p>The unique ID of the service update to describe.</p>
     #[doc(hidden)]
@@ -7273,21 +7140,10 @@ impl DescribeServiceUpdatesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServiceUpdatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceUpdatesInput");
-        formatter.field("service_update_name", &self.service_update_name);
-        formatter.field("cluster_names", &self.cluster_names);
-        formatter.field("status", &self.status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeParametersInput {
     /// <p>he name of a specific parameter group to return details for.</p>
     #[doc(hidden)]
@@ -7313,19 +7169,10 @@ impl DescribeParametersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeParametersInput");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeParameterGroupsInput {
     /// <p>The name of a specific parameter group to return details for.</p>
     #[doc(hidden)]
@@ -7351,19 +7198,10 @@ impl DescribeParameterGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeParameterGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeParameterGroupsInput");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
     #[doc(hidden)]
@@ -7417,23 +7255,10 @@ impl DescribeEventsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventsInput");
-        formatter.field("source_name", &self.source_name);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("duration", &self.duration);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEngineVersionsInput {
     /// <p>The Redis engine version</p>
     #[doc(hidden)]
@@ -7473,21 +7298,10 @@ impl DescribeEngineVersionsInput {
         self.default_only
     }
 }
-impl std::fmt::Debug for DescribeEngineVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEngineVersionsInput");
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("parameter_group_family", &self.parameter_group_family);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("default_only", &self.default_only);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClustersInput {
     /// <p>The name of the cluster</p>
     #[doc(hidden)]
@@ -7520,20 +7334,10 @@ impl DescribeClustersInput {
         self.show_shard_details
     }
 }
-impl std::fmt::Debug for DescribeClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClustersInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("show_shard_details", &self.show_shard_details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAcLsInput {
     /// <p>The name of the ACL</p>
     #[doc(hidden)]
@@ -7559,19 +7363,10 @@ impl DescribeAcLsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAcLsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAcLsInput");
-        formatter.field("acl_name", &self.acl_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The name of the user to delete</p>
     #[doc(hidden)]
@@ -7583,17 +7378,10 @@ impl DeleteUserInput {
         self.user_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSubnetGroupInput {
     /// <p>The name of the subnet group to delete</p>
     #[doc(hidden)]
@@ -7605,17 +7393,10 @@ impl DeleteSubnetGroupInput {
         self.subnet_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSubnetGroupInput");
-        formatter.field("subnet_group_name", &self.subnet_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSnapshotInput {
     /// <p>The name of the snapshot to delete</p>
     #[doc(hidden)]
@@ -7627,17 +7408,10 @@ impl DeleteSnapshotInput {
         self.snapshot_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSnapshotInput");
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteParameterGroupInput {
     /// <p>The name of the parameter group to delete.</p>
     #[doc(hidden)]
@@ -7649,17 +7423,10 @@ impl DeleteParameterGroupInput {
         self.parameter_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteParameterGroupInput");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The name of the cluster to be deleted</p>
     #[doc(hidden)]
@@ -7678,18 +7445,10 @@ impl DeleteClusterInput {
         self.final_snapshot_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClusterInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("final_snapshot_name", &self.final_snapshot_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAclInput {
     /// <p>The name of the Access Control List to delete</p>
     #[doc(hidden)]
@@ -7701,17 +7460,10 @@ impl DeleteAclInput {
         self.acl_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAclInput");
-        formatter.field("acl_name", &self.acl_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserInput {
     /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
     #[doc(hidden)]
@@ -7744,20 +7496,10 @@ impl CreateUserInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("authentication_mode", &self.authentication_mode);
-        formatter.field("access_string", &self.access_string);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSubnetGroupInput {
     /// <p>The name of the subnet group.</p>
     #[doc(hidden)]
@@ -7790,20 +7532,10 @@ impl CreateSubnetGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSubnetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSubnetGroupInput");
-        formatter.field("subnet_group_name", &self.subnet_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotInput {
     /// <p>The snapshot is created from this cluster.</p>
     #[doc(hidden)]
@@ -7836,20 +7568,10 @@ impl CreateSnapshotInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateParameterGroupInput {
     /// <p>The name of the parameter group.</p>
     #[doc(hidden)]
@@ -7882,20 +7604,10 @@ impl CreateParameterGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateParameterGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateParameterGroupInput");
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("family", &self.family);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateClusterInput {
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
     #[doc(hidden)]
@@ -8051,40 +7763,10 @@ impl CreateClusterInput {
         self.auto_minor_version_upgrade
     }
 }
-impl std::fmt::Debug for CreateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateClusterInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("parameter_group_name", &self.parameter_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("num_shards", &self.num_shards);
-        formatter.field("num_replicas_per_shard", &self.num_replicas_per_shard);
-        formatter.field("subnet_group_name", &self.subnet_group_name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("maintenance_window", &self.maintenance_window);
-        formatter.field("port", &self.port);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("tls_enabled", &self.tls_enabled);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("snapshot_arns", &self.snapshot_arns);
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.field("snapshot_retention_limit", &self.snapshot_retention_limit);
-        formatter.field("tags", &self.tags);
-        formatter.field("snapshot_window", &self.snapshot_window);
-        formatter.field("acl_name", &self.acl_name);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAclInput {
     /// <p>The name of the Access Control List.</p>
     #[doc(hidden)]
@@ -8110,19 +7792,10 @@ impl CreateAclInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAclInput");
-        formatter.field("acl_name", &self.acl_name);
-        formatter.field("user_names", &self.user_names);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopySnapshotInput {
     /// <p>The name of an existing snapshot from which to make a copy.</p>
     #[doc(hidden)]
@@ -8162,21 +7835,10 @@ impl CopySnapshotInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CopySnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopySnapshotInput");
-        formatter.field("source_snapshot_name", &self.source_snapshot_name);
-        formatter.field("target_snapshot_name", &self.target_snapshot_name);
-        formatter.field("target_bucket", &self.target_bucket);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateClusterInput {
     /// <p>The cluster names to apply the updates.</p>
     #[doc(hidden)]
@@ -8193,13 +7855,5 @@ impl BatchUpdateClusterInput {
     /// <p>The unique ID of the service update</p>
     pub fn service_update(&self) -> std::option::Option<&crate::model::ServiceUpdateRequest> {
         self.service_update.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchUpdateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateClusterInput");
-        formatter.field("cluster_names", &self.cluster_names);
-        formatter.field("service_update", &self.service_update);
-        formatter.finish()
     }
 }

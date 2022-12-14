@@ -2,7 +2,7 @@
 
 /// <p>The configuration details of the recommender.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommenderConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
     #[doc(hidden)]
@@ -23,17 +23,6 @@ impl RecommenderConfig {
     /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
     pub fn min_recommendation_requests_per_second(&self) -> std::option::Option<i32> {
         self.min_recommendation_requests_per_second
-    }
-}
-impl std::fmt::Debug for RecommenderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommenderConfig");
-        formatter.field("item_exploration_config", &self.item_exploration_config);
-        formatter.field(
-            "min_recommendation_requests_per_second",
-            &self.min_recommendation_requests_per_second,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecommenderConfig`](crate::model::RecommenderConfig).
@@ -104,7 +93,7 @@ impl RecommenderConfig {
 
 /// <p>The configuration details of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
     #[doc(hidden)]
@@ -118,13 +107,6 @@ impl CampaignConfig {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.item_exploration_config.as_ref()
-    }
-}
-impl std::fmt::Debug for CampaignConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignConfig");
-        formatter.field("item_exploration_config", &self.item_exploration_config);
-        formatter.finish()
     }
 }
 /// See [`CampaignConfig`](crate::model::CampaignConfig).
@@ -180,7 +162,7 @@ impl CampaignConfig {
 
 /// <p>The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -197,14 +179,6 @@ impl Tag {
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub fn tag_value(&self) -> std::option::Option<&str> {
         self.tag_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_value", &self.tag_value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -255,7 +229,7 @@ impl Tag {
 
 /// <p>Provides a summary of the properties of a solution version. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
     #[doc(hidden)]
@@ -301,17 +275,6 @@ impl SolutionVersionSummary {
     /// <p>If a solution version fails, the reason behind the failure.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for SolutionVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionVersionSummary");
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
@@ -418,7 +381,7 @@ impl SolutionVersionSummary {
 
 /// <p>Provides a summary of the properties of a solution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionSummary {
     /// <p>The name of the solution.</p>
     #[doc(hidden)]
@@ -466,17 +429,6 @@ impl SolutionSummary {
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SolutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionSummary");
-        formatter.field("name", &self.name);
-        formatter.field("solution_arn", &self.solution_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`SolutionSummary`](crate::model::SolutionSummary).
@@ -579,7 +531,7 @@ impl SolutionSummary {
 
 /// <p>Provides a summary of the properties of a dataset schema. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSchemaSummary {
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
@@ -617,17 +569,6 @@ impl DatasetSchemaSummary {
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetSchemaSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSchemaSummary");
-        formatter.field("name", &self.name);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 /// See [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
@@ -810,7 +751,7 @@ impl AsRef<str> for Domain {
 
 /// <p>Provides a summary of the properties of the recommender.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommenderSummary {
     /// <p>The name of the recommender.</p>
     #[doc(hidden)]
@@ -879,20 +820,6 @@ impl RecommenderSummary {
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for RecommenderSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommenderSummary");
-        formatter.field("name", &self.name);
-        formatter.field("recommender_arn", &self.recommender_arn);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("recommender_config", &self.recommender_config);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`RecommenderSummary`](crate::model::RecommenderSummary).
@@ -1040,7 +967,7 @@ impl RecommenderSummary {
 
 /// <p>Provides a summary of the properties of a recipe. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html">DescribeRecipe</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecipeSummary {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
@@ -1085,18 +1012,6 @@ impl RecipeSummary {
     /// <p>The domain of the recipe (if the recipe is a Domain dataset group use case).</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
-    }
-}
-impl std::fmt::Debug for RecipeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecipeSummary");
-        formatter.field("name", &self.name);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 /// See [`RecipeSummary`](crate::model::RecipeSummary).
@@ -1286,7 +1201,7 @@ impl AsRef<str> for RecipeProvider {
 
 /// <p>A short summary of a filter's attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterSummary {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -1338,19 +1253,6 @@ impl FilterSummary {
     /// <p>The status of the filter.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterSummary");
-        formatter.field("name", &self.name);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`FilterSummary`](crate::model::FilterSummary).
@@ -1473,7 +1375,7 @@ impl FilterSummary {
 
 /// <p>Provides a summary of the properties of an event tracker. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTrackerSummary {
     /// <p>The name of the event tracker.</p>
     #[doc(hidden)]
@@ -1521,17 +1423,6 @@ impl EventTrackerSummary {
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for EventTrackerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTrackerSummary");
-        formatter.field("name", &self.name);
-        formatter.field("event_tracker_arn", &self.event_tracker_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`EventTrackerSummary`](crate::model::EventTrackerSummary).
@@ -1637,7 +1528,7 @@ impl EventTrackerSummary {
 
 /// <p>Provides a summary of the properties of a dataset. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -1704,18 +1595,6 @@ impl DatasetSummary {
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSummary");
-        formatter.field("name", &self.name);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
@@ -1842,7 +1721,7 @@ impl DatasetSummary {
 
 /// <p>Provides a summary of the properties of a dataset import job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     #[doc(hidden)]
@@ -1902,19 +1781,6 @@ impl DatasetImportJobSummary {
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
     pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
         self.import_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetImportJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetImportJobSummary");
-        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.finish()
     }
 }
 /// See [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
@@ -2138,7 +2004,7 @@ impl AsRef<str> for ImportMode {
 
 /// <p>Provides a summary of the properties of a dataset group. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetGroupSummary {
     /// <p>The name of the dataset group.</p>
     #[doc(hidden)]
@@ -2200,19 +2066,6 @@ impl DatasetGroupSummary {
     /// <p>The domain of a Domain dataset group.</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetGroupSummary");
-        formatter.field("name", &self.name);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 /// See [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
@@ -2345,7 +2198,7 @@ impl DatasetGroupSummary {
 
 /// <p>Provides a summary of the properties of a dataset export job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     #[doc(hidden)]
@@ -2398,18 +2251,6 @@ impl DatasetExportJobSummary {
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetExportJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetExportJobSummary");
-        formatter.field("dataset_export_job_arn", &self.dataset_export_job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
@@ -2528,7 +2369,7 @@ impl DatasetExportJobSummary {
 
 /// <p>Provides a summary of the properties of a campaign. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignSummary {
     /// <p>The name of the campaign.</p>
     #[doc(hidden)]
@@ -2583,18 +2424,6 @@ impl CampaignSummary {
     /// <p>If a campaign fails, the reason behind the failure.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for CampaignSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignSummary");
-        formatter.field("name", &self.name);
-        formatter.field("campaign_arn", &self.campaign_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
@@ -2712,7 +2541,7 @@ impl CampaignSummary {
 
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html">BatchSegmentJob</a> datatype. <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html">ListBatchSegmentJobs</a> operation returns a list of batch segment job summaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSegmentJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
     #[doc(hidden)]
@@ -2776,19 +2605,6 @@ impl BatchSegmentJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchSegmentJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSegmentJobSummary");
-        formatter.field("batch_segment_job_arn", &self.batch_segment_job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.finish()
     }
 }
 /// See [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
@@ -2926,7 +2742,7 @@ impl BatchSegmentJobSummary {
 
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html">BatchInferenceJob</a>. The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchInferenceJobs.html">ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
     #[doc(hidden)]
@@ -2990,19 +2806,6 @@ impl BatchInferenceJobSummary {
     /// <p>The ARN of the solution version used by the batch inference job.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchInferenceJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJobSummary");
-        formatter.field("batch_inference_job_arn", &self.batch_inference_job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.finish()
     }
 }
 /// See [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
@@ -3140,7 +2943,7 @@ impl BatchInferenceJobSummary {
 
 /// <p>An object that provides information about a specific version of a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html">Solution</a> in a Custom dataset group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionVersion {
     /// <p>The ARN of the solution version.</p>
     #[doc(hidden)]
@@ -3270,27 +3073,6 @@ impl SolutionVersion {
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SolutionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionVersion");
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("solution_arn", &self.solution_arn);
-        formatter.field("perform_hpo", &self.perform_hpo);
-        formatter.field("perform_auto_ml", &self.perform_auto_ml);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("solution_config", &self.solution_config);
-        formatter.field("training_hours", &self.training_hours);
-        formatter.field("training_mode", &self.training_mode);
-        formatter.field("tuned_hpo_params", &self.tuned_hpo_params);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`SolutionVersion`](crate::model::SolutionVersion).
@@ -3543,7 +3325,7 @@ impl SolutionVersion {
 
 /// <p>If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     #[doc(hidden)]
@@ -3557,16 +3339,6 @@ impl TunedHpoParams {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.algorithm_hyper_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for TunedHpoParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TunedHpoParams");
-        formatter.field(
-            "algorithm_hyper_parameters",
-            &self.algorithm_hyper_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`TunedHpoParams`](crate::model::TunedHpoParams).
@@ -3712,7 +3484,7 @@ impl AsRef<str> for TrainingMode {
 
 /// <p>Describes the configuration properties for the solution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
     #[doc(hidden)]
@@ -3767,24 +3539,6 @@ impl SolutionConfig {
         &self,
     ) -> std::option::Option<&crate::model::OptimizationObjective> {
         self.optimization_objective.as_ref()
-    }
-}
-impl std::fmt::Debug for SolutionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionConfig");
-        formatter.field("event_value_threshold", &self.event_value_threshold);
-        formatter.field("hpo_config", &self.hpo_config);
-        formatter.field(
-            "algorithm_hyper_parameters",
-            &self.algorithm_hyper_parameters,
-        );
-        formatter.field(
-            "feature_transformation_parameters",
-            &self.feature_transformation_parameters,
-        );
-        formatter.field("auto_ml_config", &self.auto_ml_config);
-        formatter.field("optimization_objective", &self.optimization_objective);
-        formatter.finish()
     }
 }
 /// See [`SolutionConfig`](crate::model::SolutionConfig).
@@ -3932,7 +3686,7 @@ impl SolutionConfig {
 
 /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptimizationObjective {
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
     #[doc(hidden)]
@@ -3951,14 +3705,6 @@ impl OptimizationObjective {
         &self,
     ) -> std::option::Option<&crate::model::ObjectiveSensitivity> {
         self.objective_sensitivity.as_ref()
-    }
-}
-impl std::fmt::Debug for OptimizationObjective {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptimizationObjective");
-        formatter.field("item_attribute", &self.item_attribute);
-        formatter.field("objective_sensitivity", &self.objective_sensitivity);
-        formatter.finish()
     }
 }
 /// See [`OptimizationObjective`](crate::model::OptimizationObjective).
@@ -4117,7 +3863,7 @@ impl AsRef<str> for ObjectiveSensitivity {
 
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoMlConfig {
     /// <p>The metric to optimize.</p>
     #[doc(hidden)]
@@ -4134,14 +3880,6 @@ impl AutoMlConfig {
     /// <p>The list of candidate recipes.</p>
     pub fn recipe_list(&self) -> std::option::Option<&[std::string::String]> {
         self.recipe_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoMlConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoMlConfig");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("recipe_list", &self.recipe_list);
-        formatter.finish()
     }
 }
 /// See [`AutoMlConfig`](crate::model::AutoMlConfig).
@@ -4201,7 +3939,7 @@ impl AutoMlConfig {
 
 /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HpoConfig {
     /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
@@ -4231,18 +3969,6 @@ impl HpoConfig {
         &self,
     ) -> std::option::Option<&crate::model::HyperParameterRanges> {
         self.algorithm_hyper_parameter_ranges.as_ref()
-    }
-}
-impl std::fmt::Debug for HpoConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HpoConfig");
-        formatter.field("hpo_objective", &self.hpo_objective);
-        formatter.field("hpo_resource_config", &self.hpo_resource_config);
-        formatter.field(
-            "algorithm_hyper_parameter_ranges",
-            &self.algorithm_hyper_parameter_ranges,
-        );
-        formatter.finish()
     }
 }
 /// See [`HpoConfig`](crate::model::HpoConfig).
@@ -4322,7 +4048,7 @@ impl HpoConfig {
 
 /// <p>Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their ranges.</p>
     #[doc(hidden)]
@@ -4355,24 +4081,6 @@ impl HyperParameterRanges {
         &self,
     ) -> std::option::Option<&[crate::model::CategoricalHyperParameterRange]> {
         self.categorical_hyper_parameter_ranges.as_deref()
-    }
-}
-impl std::fmt::Debug for HyperParameterRanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterRanges");
-        formatter.field(
-            "integer_hyper_parameter_ranges",
-            &self.integer_hyper_parameter_ranges,
-        );
-        formatter.field(
-            "continuous_hyper_parameter_ranges",
-            &self.continuous_hyper_parameter_ranges,
-        );
-        formatter.field(
-            "categorical_hyper_parameter_ranges",
-            &self.categorical_hyper_parameter_ranges,
-        );
-        formatter.finish()
     }
 }
 /// See [`HyperParameterRanges`](crate::model::HyperParameterRanges).
@@ -4474,7 +4182,7 @@ impl HyperParameterRanges {
 
 /// <p>Provides the name and range of a categorical hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -4491,14 +4199,6 @@ impl CategoricalHyperParameterRange {
     /// <p>A list of the categories for the hyperparameter.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for CategoricalHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CategoricalHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
@@ -4558,7 +4258,7 @@ impl CategoricalHyperParameterRange {
 
 /// <p>Provides the name and range of a continuous hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -4582,15 +4282,6 @@ impl ContinuousHyperParameterRange {
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn max_value(&self) -> f64 {
         self.max_value
-    }
-}
-impl std::fmt::Debug for ContinuousHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinuousHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.finish()
     }
 }
 /// See [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
@@ -4653,7 +4344,7 @@ impl ContinuousHyperParameterRange {
 
 /// <p>Provides the name and range of an integer-valued hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -4677,15 +4368,6 @@ impl IntegerHyperParameterRange {
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn max_value(&self) -> i32 {
         self.max_value
-    }
-}
-impl std::fmt::Debug for IntegerHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntegerHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.finish()
     }
 }
 /// See [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
@@ -4748,7 +4430,7 @@ impl IntegerHyperParameterRange {
 
 /// <p>Describes the resource configuration for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HpoResourceConfig {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
     #[doc(hidden)]
@@ -4765,20 +4447,6 @@ impl HpoResourceConfig {
     /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
     pub fn max_parallel_training_jobs(&self) -> std::option::Option<&str> {
         self.max_parallel_training_jobs.as_deref()
-    }
-}
-impl std::fmt::Debug for HpoResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HpoResourceConfig");
-        formatter.field(
-            "max_number_of_training_jobs",
-            &self.max_number_of_training_jobs,
-        );
-        formatter.field(
-            "max_parallel_training_jobs",
-            &self.max_parallel_training_jobs,
-        );
-        formatter.finish()
     }
 }
 /// See [`HpoResourceConfig`](crate::model::HpoResourceConfig).
@@ -4840,7 +4508,7 @@ impl HpoResourceConfig {
 /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HpoObjective {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
     #[doc(hidden)]
@@ -4864,15 +4532,6 @@ impl HpoObjective {
     /// <p>A regular expression for finding the metric in the training job logs.</p>
     pub fn metric_regex(&self) -> std::option::Option<&str> {
         self.metric_regex.as_deref()
-    }
-}
-impl std::fmt::Debug for HpoObjective {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HpoObjective");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_regex", &self.metric_regex);
-        formatter.finish()
     }
 }
 /// See [`HpoObjective`](crate::model::HpoObjective).
@@ -4935,7 +4594,7 @@ impl HpoObjective {
 
 /// <p>An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Solution {
     /// <p>The name of the solution.</p>
     #[doc(hidden)]
@@ -5041,25 +4700,6 @@ impl Solution {
         &self,
     ) -> std::option::Option<&crate::model::SolutionVersionSummary> {
         self.latest_solution_version.as_ref()
-    }
-}
-impl std::fmt::Debug for Solution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Solution");
-        formatter.field("name", &self.name);
-        formatter.field("solution_arn", &self.solution_arn);
-        formatter.field("perform_hpo", &self.perform_hpo);
-        formatter.field("perform_auto_ml", &self.perform_auto_ml);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("solution_config", &self.solution_config);
-        formatter.field("auto_ml_result", &self.auto_ml_result);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("latest_solution_version", &self.latest_solution_version);
-        formatter.finish()
     }
 }
 /// See [`Solution`](crate::model::Solution).
@@ -5274,7 +4914,7 @@ impl Solution {
 
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), specifies the recipe that best optimized the specified metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoMlResult {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
     #[doc(hidden)]
@@ -5284,13 +4924,6 @@ impl AutoMlResult {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
     pub fn best_recipe_arn(&self) -> std::option::Option<&str> {
         self.best_recipe_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoMlResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoMlResult");
-        formatter.field("best_recipe_arn", &self.best_recipe_arn);
-        formatter.finish()
     }
 }
 /// See [`AutoMlResult`](crate::model::AutoMlResult).
@@ -5332,7 +4965,7 @@ impl AutoMlResult {
 
 /// <p>Describes the schema for a dataset. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSchema {
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
@@ -5377,18 +5010,6 @@ impl DatasetSchema {
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSchema");
-        formatter.field("name", &self.name);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("schema", &self.schema);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 /// See [`DatasetSchema`](crate::model::DatasetSchema).
@@ -5493,7 +5114,7 @@ impl DatasetSchema {
 
 /// <p>Describes a recommendation generator for a Domain dataset group. You create a recommender in a Domain dataset group for a specific domain use case (domain recipe), and specify the recommender in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recommender {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     #[doc(hidden)]
@@ -5589,23 +5210,6 @@ impl Recommender {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
         self.model_metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for Recommender {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recommender");
-        formatter.field("recommender_arn", &self.recommender_arn);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("name", &self.name);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("recommender_config", &self.recommender_config);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("latest_recommender_update", &self.latest_recommender_update);
-        formatter.field("model_metrics", &self.model_metrics);
-        formatter.finish()
     }
 }
 /// See [`Recommender`](crate::model::Recommender).
@@ -5811,7 +5415,7 @@ impl Recommender {
 
 /// <p>Provides a summary of the properties of a recommender update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommenderUpdateSummary {
     /// <p>The configuration details of the recommender update.</p>
     #[doc(hidden)]
@@ -5861,17 +5465,6 @@ impl RecommenderUpdateSummary {
     /// <p>If a recommender update fails, the reason behind the failure.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for RecommenderUpdateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommenderUpdateSummary");
-        formatter.field("recommender_config", &self.recommender_config);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
@@ -5982,7 +5575,7 @@ impl RecommenderUpdateSummary {
 
 /// <p>Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recipe {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
@@ -6058,24 +5651,6 @@ impl Recipe {
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Recipe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recipe");
-        formatter.field("name", &self.name);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("algorithm_arn", &self.algorithm_arn);
-        formatter.field(
-            "feature_transformation_arn",
-            &self.feature_transformation_arn,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("recipe_type", &self.recipe_type);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`Recipe`](crate::model::Recipe).
@@ -6311,7 +5886,7 @@ impl std::fmt::Debug for Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) filter_arn: std::option::Option<std::string::String>,
@@ -6432,6 +6007,20 @@ pub mod filter {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("filter_arn", &self.filter_arn);
+            formatter.field("creation_date_time", &self.creation_date_time);
+            formatter.field("last_updated_date_time", &self.last_updated_date_time);
+            formatter.field("dataset_group_arn", &self.dataset_group_arn);
+            formatter.field("failure_reason", &self.failure_reason);
+            formatter.field("filter_expression", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.finish()
+        }
+    }
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -6442,7 +6031,7 @@ impl Filter {
 
 /// <p>Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeatureTransformation {
     /// <p>The name of the feature transformation.</p>
     #[doc(hidden)]
@@ -6499,21 +6088,6 @@ impl FeatureTransformation {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for FeatureTransformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureTransformation");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "feature_transformation_arn",
-            &self.feature_transformation_arn,
-        );
-        formatter.field("default_parameters", &self.default_parameters);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`FeatureTransformation`](crate::model::FeatureTransformation).
@@ -6646,7 +6220,7 @@ impl FeatureTransformation {
 
 /// <p>Provides information about an event tracker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTracker {
     /// <p>The name of the event tracker.</p>
     #[doc(hidden)]
@@ -6715,20 +6289,6 @@ impl EventTracker {
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for EventTracker {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTracker");
-        formatter.field("name", &self.name);
-        formatter.field("event_tracker_arn", &self.event_tracker_arn);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("tracking_id", &self.tracking_id);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`EventTracker`](crate::model::EventTracker).
@@ -6877,7 +6437,7 @@ impl EventTracker {
 /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetImportJob {
     /// <p>The name of the import job.</p>
     #[doc(hidden)]
@@ -6958,22 +6518,6 @@ impl DatasetImportJob {
     /// <p>The import mode used by the dataset import job to import new records.</p>
     pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
         self.import_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetImportJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetImportJob");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.finish()
     }
 }
 /// See [`DatasetImportJob`](crate::model::DatasetImportJob).
@@ -7146,7 +6690,7 @@ impl DatasetImportJob {
 
 /// <p>Describes the data source that contains the data to upload to a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
@@ -7158,13 +6702,6 @@ impl DataSource {
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub fn data_location(&self) -> std::option::Option<&str> {
         self.data_location.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("data_location", &self.data_location);
-        formatter.finish()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
@@ -7209,7 +6746,7 @@ impl DataSource {
 /// <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>. The dataset group is used to create and train a solution by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p>
 /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetGroup {
     /// <p>The name of the dataset group.</p>
     #[doc(hidden)]
@@ -7285,21 +6822,6 @@ impl DatasetGroup {
     /// <p>The domain of a Domain dataset group.</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetGroup");
-        formatter.field("name", &self.name);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 /// See [`DatasetGroup`](crate::model::DatasetGroup).
@@ -7460,7 +6982,7 @@ impl DatasetGroup {
 /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetExportJob {
     /// <p>The name of the export job.</p>
     #[doc(hidden)]
@@ -7543,22 +7065,6 @@ impl DatasetExportJob {
     /// <p>If a dataset export job fails, provides the reason why.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for DatasetExportJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetExportJob");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("dataset_export_job_arn", &self.dataset_export_job_arn);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("ingestion_mode", &self.ingestion_mode);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("job_output", &self.job_output);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`DatasetExportJob`](crate::model::DatasetExportJob).
@@ -7733,7 +7239,7 @@ impl DatasetExportJob {
 
 /// <p>The output configuration parameters of a dataset export job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetExportJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
@@ -7743,13 +7249,6 @@ impl DatasetExportJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
         self.s3_data_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetExportJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetExportJobOutput");
-        formatter.field("s3_data_destination", &self.s3_data_destination);
-        formatter.finish()
     }
 }
 /// See [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
@@ -7791,7 +7290,7 @@ impl DatasetExportJobOutput {
 
 /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -7808,14 +7307,6 @@ impl S3DataConfig {
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DataConfig");
-        formatter.field("path", &self.path);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`S3DataConfig`](crate::model::S3DataConfig).
@@ -7961,7 +7452,7 @@ impl AsRef<str> for IngestionMode {
 
 /// <p>Provides metadata for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -8040,20 +7531,6 @@ impl Dataset {
     /// <p>A time stamp that shows when the dataset was updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Dataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dataset");
-        formatter.field("name", &self.name);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`Dataset`](crate::model::Dataset).
@@ -8205,7 +7682,7 @@ impl Dataset {
 
 /// <p>An object that describes the deployment of a solution version. For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Campaign {
     /// <p>The name of the campaign.</p>
     #[doc(hidden)]
@@ -8290,22 +7767,6 @@ impl Campaign {
         &self,
     ) -> std::option::Option<&crate::model::CampaignUpdateSummary> {
         self.latest_campaign_update.as_ref()
-    }
-}
-impl std::fmt::Debug for Campaign {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Campaign");
-        formatter.field("name", &self.name);
-        formatter.field("campaign_arn", &self.campaign_arn);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("min_provisioned_tps", &self.min_provisioned_tps);
-        formatter.field("campaign_config", &self.campaign_config);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("latest_campaign_update", &self.latest_campaign_update);
-        formatter.finish()
     }
 }
 /// See [`Campaign`](crate::model::Campaign).
@@ -8483,7 +7944,7 @@ impl Campaign {
 
 /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignUpdateSummary {
     /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
     #[doc(hidden)]
@@ -8545,19 +8006,6 @@ impl CampaignUpdateSummary {
     /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for CampaignUpdateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignUpdateSummary");
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("min_provisioned_tps", &self.min_provisioned_tps);
-        formatter.field("campaign_config", &self.campaign_config);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
@@ -8693,7 +8141,7 @@ impl CampaignUpdateSummary {
 
 /// <p>Contains information on a batch segment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSegmentJob {
     /// <p>The name of the batch segment job.</p>
     #[doc(hidden)]
@@ -8792,24 +8240,6 @@ impl BatchSegmentJob {
     /// <p>The time at which the batch segment job last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchSegmentJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSegmentJob");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("batch_segment_job_arn", &self.batch_segment_job_arn);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("num_results", &self.num_results);
-        formatter.field("job_input", &self.job_input);
-        formatter.field("job_output", &self.job_output);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`BatchSegmentJob`](crate::model::BatchSegmentJob).
@@ -9013,7 +8443,7 @@ impl BatchSegmentJob {
 
 /// <p>The output configuration parameters of a batch segment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSegmentJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
@@ -9023,13 +8453,6 @@ impl BatchSegmentJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
         self.s3_data_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchSegmentJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSegmentJobOutput");
-        formatter.field("s3_data_destination", &self.s3_data_destination);
-        formatter.finish()
     }
 }
 /// See [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
@@ -9071,7 +8494,7 @@ impl BatchSegmentJobOutput {
 
 /// <p>The input configuration of a batch segment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSegmentJobInput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
@@ -9081,13 +8504,6 @@ impl BatchSegmentJobInput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataConfig> {
         self.s3_data_source.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchSegmentJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSegmentJobInput");
-        formatter.field("s3_data_source", &self.s3_data_source);
-        formatter.finish()
     }
 }
 /// See [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
@@ -9129,7 +8545,7 @@ impl BatchSegmentJobInput {
 
 /// <p>Contains information on a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJob {
     /// <p>The name of the batch inference job.</p>
     #[doc(hidden)]
@@ -9237,28 +8653,6 @@ impl BatchInferenceJob {
     /// <p>The time at which the batch inference job was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchInferenceJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJob");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("batch_inference_job_arn", &self.batch_inference_job_arn);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("num_results", &self.num_results);
-        formatter.field("job_input", &self.job_input);
-        formatter.field("job_output", &self.job_output);
-        formatter.field(
-            "batch_inference_job_config",
-            &self.batch_inference_job_config,
-        );
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`BatchInferenceJob`](crate::model::BatchInferenceJob).
@@ -9481,7 +8875,7 @@ impl BatchInferenceJob {
 
 /// <p>The configuration details of a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJobConfig {
     /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
     #[doc(hidden)]
@@ -9495,13 +8889,6 @@ impl BatchInferenceJobConfig {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.item_exploration_config.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchInferenceJobConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJobConfig");
-        formatter.field("item_exploration_config", &self.item_exploration_config);
-        formatter.finish()
     }
 }
 /// See [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
@@ -9557,7 +8944,7 @@ impl BatchInferenceJobConfig {
 
 /// <p>The output configuration parameters of a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJobOutput {
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
     #[doc(hidden)]
@@ -9567,13 +8954,6 @@ impl BatchInferenceJobOutput {
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
     pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
         self.s3_data_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchInferenceJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJobOutput");
-        formatter.field("s3_data_destination", &self.s3_data_destination);
-        formatter.finish()
     }
 }
 /// See [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
@@ -9615,7 +8995,7 @@ impl BatchInferenceJobOutput {
 
 /// <p>The input configuration of a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
     #[doc(hidden)]
@@ -9625,13 +9005,6 @@ impl BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
     pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataConfig> {
         self.s3_data_source.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJobInput");
-        formatter.field("s3_data_source", &self.s3_data_source);
-        formatter.finish()
     }
 }
 /// See [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
@@ -9673,7 +9046,7 @@ impl BatchInferenceJobInput {
 
 /// <p>Describes a custom algorithm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Algorithm {
     /// <p>The name of the algorithm.</p>
     #[doc(hidden)]
@@ -9757,25 +9130,6 @@ impl Algorithm {
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Algorithm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Algorithm");
-        formatter.field("name", &self.name);
-        formatter.field("algorithm_arn", &self.algorithm_arn);
-        formatter.field("algorithm_image", &self.algorithm_image);
-        formatter.field("default_hyper_parameters", &self.default_hyper_parameters);
-        formatter.field(
-            "default_hyper_parameter_ranges",
-            &self.default_hyper_parameter_ranges,
-        );
-        formatter.field("default_resource_config", &self.default_resource_config);
-        formatter.field("training_input_mode", &self.training_input_mode);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`Algorithm`](crate::model::Algorithm).
@@ -9978,7 +9332,7 @@ impl Algorithm {
 
 /// <p>Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultHyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
     #[doc(hidden)]
@@ -10011,24 +9365,6 @@ impl DefaultHyperParameterRanges {
         &self,
     ) -> std::option::Option<&[crate::model::DefaultCategoricalHyperParameterRange]> {
         self.categorical_hyper_parameter_ranges.as_deref()
-    }
-}
-impl std::fmt::Debug for DefaultHyperParameterRanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultHyperParameterRanges");
-        formatter.field(
-            "integer_hyper_parameter_ranges",
-            &self.integer_hyper_parameter_ranges,
-        );
-        formatter.field(
-            "continuous_hyper_parameter_ranges",
-            &self.continuous_hyper_parameter_ranges,
-        );
-        formatter.field(
-            "categorical_hyper_parameter_ranges",
-            &self.categorical_hyper_parameter_ranges,
-        );
-        formatter.finish()
     }
 }
 /// See [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
@@ -10136,7 +9472,7 @@ impl DefaultHyperParameterRanges {
 
 /// <p>Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultCategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -10160,15 +9496,6 @@ impl DefaultCategoricalHyperParameterRange {
     /// <p>Whether the hyperparameter is tunable.</p>
     pub fn is_tunable(&self) -> bool {
         self.is_tunable
-    }
-}
-impl std::fmt::Debug for DefaultCategoricalHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultCategoricalHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("is_tunable", &self.is_tunable);
-        formatter.finish()
     }
 }
 /// See [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
@@ -10240,7 +9567,7 @@ impl DefaultCategoricalHyperParameterRange {
 
 /// <p>Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -10271,16 +9598,6 @@ impl DefaultContinuousHyperParameterRange {
     /// <p>Whether the hyperparameter is tunable.</p>
     pub fn is_tunable(&self) -> bool {
         self.is_tunable
-    }
-}
-impl std::fmt::Debug for DefaultContinuousHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultContinuousHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("is_tunable", &self.is_tunable);
-        formatter.finish()
     }
 }
 /// See [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
@@ -10355,7 +9672,7 @@ impl DefaultContinuousHyperParameterRange {
 
 /// <p>Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultIntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -10386,16 +9703,6 @@ impl DefaultIntegerHyperParameterRange {
     /// <p>Indicates whether the hyperparameter is tunable.</p>
     pub fn is_tunable(&self) -> bool {
         self.is_tunable
-    }
-}
-impl std::fmt::Debug for DefaultIntegerHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultIntegerHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("is_tunable", &self.is_tunable);
-        formatter.finish()
     }
 }
 /// See [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
@@ -10470,7 +9777,7 @@ impl DefaultIntegerHyperParameterRange {
 
 /// <p>Describes an algorithm image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlgorithmImage {
     /// <p>The name of the algorithm image.</p>
     #[doc(hidden)]
@@ -10487,14 +9794,6 @@ impl AlgorithmImage {
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub fn docker_uri(&self) -> std::option::Option<&str> {
         self.docker_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for AlgorithmImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlgorithmImage");
-        formatter.field("name", &self.name);
-        formatter.field("docker_uri", &self.docker_uri);
-        formatter.finish()
     }
 }
 /// See [`AlgorithmImage`](crate::model::AlgorithmImage).

@@ -3117,7 +3117,7 @@ impl UpdateApplicationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3185,23 +3185,10 @@ impl UpdateApplicationInput {
         self.readme_url.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("author", &self.author);
-        formatter.field("description", &self.description);
-        formatter.field("home_page_url", &self.home_page_url);
-        formatter.field("labels", &self.labels);
-        formatter.field("readme_body", &self.readme_body);
-        formatter.field("readme_url", &self.readme_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnshareApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3220,18 +3207,10 @@ impl UnshareApplicationInput {
         self.organization_id.as_deref()
     }
 }
-impl std::fmt::Debug for UnshareApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnshareApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3250,18 +3229,10 @@ impl PutApplicationPolicyInput {
         self.statements.as_deref()
     }
 }
-impl std::fmt::Debug for PutApplicationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutApplicationPolicyInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("statements", &self.statements);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3287,19 +3258,10 @@ impl ListApplicationVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationVersionsInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>The total number of items to return.</p>
     #[doc(hidden)]
@@ -3318,18 +3280,10 @@ impl ListApplicationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("max_items", &self.max_items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationDependenciesInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3362,20 +3316,10 @@ impl ListApplicationDependenciesInput {
         self.semantic_version.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationDependenciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationDependenciesInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCloudFormationTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3396,18 +3340,10 @@ impl GetCloudFormationTemplateInput {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCloudFormationTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCloudFormationTemplateInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3419,17 +3355,10 @@ impl GetApplicationPolicyInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationPolicyInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3448,18 +3377,10 @@ impl GetApplicationInput {
         self.semantic_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3471,17 +3392,10 @@ impl DeleteApplicationInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCloudFormationTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3502,18 +3416,10 @@ impl CreateCloudFormationTemplateInput {
         self.semantic_version.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCloudFormationTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCloudFormationTemplateInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCloudFormationChangeSetInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3625,29 +3531,10 @@ impl CreateCloudFormationChangeSetInput {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCloudFormationChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCloudFormationChangeSetInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.field("notification_arns", &self.notification_arns);
-        formatter.field("parameter_overrides", &self.parameter_overrides);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("rollback_configuration", &self.rollback_configuration);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -3696,22 +3583,10 @@ impl CreateApplicationVersionInput {
         self.template_url.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationVersionInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("source_code_archive_url", &self.source_code_archive_url);
-        formatter.field("source_code_url", &self.source_code_url);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
@@ -3857,26 +3732,5 @@ impl CreateApplicationInput {
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
     pub fn template_url(&self) -> std::option::Option<&str> {
         self.template_url.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("author", &self.author);
-        formatter.field("description", &self.description);
-        formatter.field("home_page_url", &self.home_page_url);
-        formatter.field("labels", &self.labels);
-        formatter.field("license_body", &self.license_body);
-        formatter.field("license_url", &self.license_url);
-        formatter.field("name", &self.name);
-        formatter.field("readme_body", &self.readme_body);
-        formatter.field("readme_url", &self.readme_url);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("source_code_archive_url", &self.source_code_archive_url);
-        formatter.field("source_code_url", &self.source_code_url);
-        formatter.field("spdx_license_id", &self.spdx_license_id);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_url", &self.template_url);
-        formatter.finish()
     }
 }

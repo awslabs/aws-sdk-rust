@@ -581,7 +581,7 @@ impl StartSupportDataExportInput {
 
 /// Container for the parameters to the StartSupportDataExport operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSupportDataExportInput {
     /// <p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
     /// <p> </p>
@@ -651,26 +651,10 @@ impl StartSupportDataExportInput {
         self.customer_defined_values.as_ref()
     }
 }
-impl std::fmt::Debug for StartSupportDataExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSupportDataExportInput");
-        formatter.field("data_set_type", &self.data_set_type);
-        formatter.field("from_date", &self.from_date);
-        formatter.field("role_name_arn", &self.role_name_arn);
-        formatter.field(
-            "destination_s3_bucket_name",
-            &self.destination_s3_bucket_name,
-        );
-        formatter.field("destination_s3_prefix", &self.destination_s3_prefix);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("customer_defined_values", &self.customer_defined_values);
-        formatter.finish()
-    }
-}
 
 /// Container for the parameters to the GenerateDataSet operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataSetInput {
     /// <p>The desired data set type.</p>
     /// <p> </p>
@@ -784,21 +768,5 @@ impl GenerateDataSetInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.customer_defined_values.as_ref()
-    }
-}
-impl std::fmt::Debug for GenerateDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataSetInput");
-        formatter.field("data_set_type", &self.data_set_type);
-        formatter.field("data_set_publication_date", &self.data_set_publication_date);
-        formatter.field("role_name_arn", &self.role_name_arn);
-        formatter.field(
-            "destination_s3_bucket_name",
-            &self.destination_s3_bucket_name,
-        );
-        formatter.field("destination_s3_prefix", &self.destination_s3_prefix);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("customer_defined_values", &self.customer_defined_values);
-        formatter.finish()
     }
 }

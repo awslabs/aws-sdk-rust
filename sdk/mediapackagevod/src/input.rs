@@ -2941,7 +2941,7 @@ impl UpdatePackagingGroupInput {
 
 /// A MediaPackage VOD PackagingGroup resource configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePackagingGroupInput {
     /// CDN Authorization credentials
     #[doc(hidden)]
@@ -2960,18 +2960,10 @@ impl UpdatePackagingGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePackagingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePackagingGroupInput");
-        formatter.field("authorization", &self.authorization);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
     #[doc(hidden)]
@@ -2990,18 +2982,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
     #[doc(hidden)]
@@ -3024,18 +3008,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
     #[doc(hidden)]
@@ -3047,17 +3023,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagingGroupsInput {
     /// Upper bound on number of records to return.
     #[doc(hidden)]
@@ -3076,18 +3045,10 @@ impl ListPackagingGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackagingGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagingGroupsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagingConfigurationsInput {
     /// Upper bound on number of records to return.
     #[doc(hidden)]
@@ -3113,19 +3074,10 @@ impl ListPackagingConfigurationsInput {
         self.packaging_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackagingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagingConfigurationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("packaging_group_id", &self.packaging_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetsInput {
     /// Upper bound on number of records to return.
     #[doc(hidden)]
@@ -3151,19 +3103,10 @@ impl ListAssetsInput {
         self.packaging_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssetsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("packaging_group_id", &self.packaging_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackagingGroupInput {
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     #[doc(hidden)]
@@ -3175,17 +3118,10 @@ impl DescribePackagingGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackagingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackagingGroupInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackagingConfigurationInput {
     /// The ID of a MediaPackage VOD PackagingConfiguration resource.
     #[doc(hidden)]
@@ -3197,17 +3133,10 @@ impl DescribePackagingConfigurationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackagingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackagingConfigurationInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssetInput {
     /// The ID of an MediaPackage VOD Asset resource.
     #[doc(hidden)]
@@ -3219,17 +3148,10 @@ impl DescribeAssetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssetInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackagingGroupInput {
     /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
     #[doc(hidden)]
@@ -3241,17 +3163,10 @@ impl DeletePackagingGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePackagingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackagingGroupInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackagingConfigurationInput {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
     #[doc(hidden)]
@@ -3263,17 +3178,10 @@ impl DeletePackagingConfigurationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePackagingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackagingConfigurationInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssetInput {
     /// The ID of the MediaPackage VOD Asset resource to delete.
     #[doc(hidden)]
@@ -3285,17 +3193,10 @@ impl DeleteAssetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssetInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// A new MediaPackage VOD PackagingGroup resource configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePackagingGroupInput {
     /// CDN Authorization credentials
     #[doc(hidden)]
@@ -3332,20 +3233,10 @@ impl CreatePackagingGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePackagingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePackagingGroupInput");
-        formatter.field("authorization", &self.authorization);
-        formatter.field("egress_access_logs", &self.egress_access_logs);
-        formatter.field("id", &self.id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// A new MediaPackage VOD PackagingConfiguration resource configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePackagingConfigurationInput {
     /// A CMAF packaging configuration.
     #[doc(hidden)]
@@ -3403,23 +3294,10 @@ impl CreatePackagingConfigurationInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePackagingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePackagingConfigurationInput");
-        formatter.field("cmaf_package", &self.cmaf_package);
-        formatter.field("dash_package", &self.dash_package);
-        formatter.field("hls_package", &self.hls_package);
-        formatter.field("id", &self.id);
-        formatter.field("mss_package", &self.mss_package);
-        formatter.field("packaging_group_id", &self.packaging_group_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// A new MediaPackage VOD Asset configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssetInput {
     /// The unique identifier for the Asset.
     #[doc(hidden)]
@@ -3470,22 +3348,10 @@ impl CreateAssetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssetInput");
-        formatter.field("id", &self.id);
-        formatter.field("packaging_group_id", &self.packaging_group_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("source_role_arn", &self.source_role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// The option to configure log subscription.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureLogsInput {
     /// Configure egress access logging.
     #[doc(hidden)]
@@ -3502,13 +3368,5 @@ impl ConfigureLogsInput {
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigureLogsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureLogsInput");
-        formatter.field("egress_access_logs", &self.egress_access_logs);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }

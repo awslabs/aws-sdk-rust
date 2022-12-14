@@ -2,7 +2,7 @@
 
 /// <p>The summary of a step group in a workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowStepGroupSummary {
     /// <p>The ID of the step group.</p>
     #[doc(hidden)]
@@ -47,18 +47,6 @@ impl WorkflowStepGroupSummary {
     /// <p>The next step group.</p>
     pub fn next(&self) -> std::option::Option<&[std::string::String]> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowStepGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowStepGroupSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("status", &self.status);
-        formatter.field("previous", &self.previous);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
@@ -397,7 +385,7 @@ impl AsRef<str> for Owner {
 
 /// <p>List of AWS services utilized in a migration workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tool {
     /// <p>The name of an AWS service. </p>
     #[doc(hidden)]
@@ -414,14 +402,6 @@ impl Tool {
     /// <p>The URL of an AWS service.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for Tool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tool");
-        formatter.field("name", &self.name);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`Tool`](crate::model::Tool).
@@ -595,7 +575,7 @@ impl AsRef<str> for StepStatus {
 
 /// <p>The summary of the step in a migration workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowStepSummary {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
@@ -689,25 +669,6 @@ impl WorkflowStepSummary {
     /// <p>The location of the script.</p>
     pub fn script_location(&self) -> std::option::Option<&str> {
         self.script_location.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowStepSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowStepSummary");
-        formatter.field("step_id", &self.step_id);
-        formatter.field("name", &self.name);
-        formatter.field("step_action_type", &self.step_action_type);
-        formatter.field("owner", &self.owner);
-        formatter.field("previous", &self.previous);
-        formatter.field("next", &self.next);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("no_of_srv_completed", &self.no_of_srv_completed);
-        formatter.field("no_of_srv_failed", &self.no_of_srv_failed);
-        formatter.field("total_no_of_srv", &self.total_no_of_srv);
-        formatter.field("description", &self.description);
-        formatter.field("script_location", &self.script_location);
-        formatter.finish()
     }
 }
 /// See [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
@@ -1007,7 +968,7 @@ impl AsRef<str> for StepActionType {
 
 /// <p>The output of a step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowStepOutput {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
@@ -1038,16 +999,6 @@ impl WorkflowStepOutput {
     /// <p>The value of the output.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::WorkflowStepOutputUnion> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowStepOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowStepOutput");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("required", &self.required);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
@@ -1293,7 +1244,7 @@ impl AsRef<str> for DataType {
 
 /// <p>The custom script to run tests on source or target environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowStepAutomationConfiguration {
     /// <p>The Amazon S3 bucket where the script is located.</p>
     #[doc(hidden)]
@@ -1331,17 +1282,6 @@ impl WorkflowStepAutomationConfiguration {
     /// <p>The servers on which to run the script.</p>
     pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
         self.target_type.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowStepAutomationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowStepAutomationConfiguration");
-        formatter.field("script_location_s3_bucket", &self.script_location_s3_bucket);
-        formatter.field("script_location_s3_key", &self.script_location_s3_key);
-        formatter.field("command", &self.command);
-        formatter.field("run_environment", &self.run_environment);
-        formatter.field("target_type", &self.target_type);
-        formatter.finish()
     }
 }
 /// See [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
@@ -1628,7 +1568,7 @@ impl AsRef<str> for RunEnvironment {
 
 /// <p>Command to be run on a particular operating system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformCommand {
     /// <p>Command for Linux.</p>
     #[doc(hidden)]
@@ -1645,14 +1585,6 @@ impl PlatformCommand {
     /// <p>Command for Windows.</p>
     pub fn windows(&self) -> std::option::Option<&str> {
         self.windows.as_deref()
-    }
-}
-impl std::fmt::Debug for PlatformCommand {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformCommand");
-        formatter.field("linux", &self.linux);
-        formatter.field("windows", &self.windows);
-        formatter.finish()
     }
 }
 /// See [`PlatformCommand`](crate::model::PlatformCommand).
@@ -1703,7 +1635,7 @@ impl PlatformCommand {
 
 /// <p>The script location for a particular operating system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformScriptKey {
     /// <p>The script location for Linux.</p>
     #[doc(hidden)]
@@ -1720,14 +1652,6 @@ impl PlatformScriptKey {
     /// <p>The script location for Windows.</p>
     pub fn windows(&self) -> std::option::Option<&str> {
         self.windows.as_deref()
-    }
-}
-impl std::fmt::Debug for PlatformScriptKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformScriptKey");
-        formatter.field("linux", &self.linux);
-        formatter.field("windows", &self.windows);
-        formatter.finish()
     }
 }
 /// See [`PlatformScriptKey`](crate::model::PlatformScriptKey).
@@ -1778,7 +1702,7 @@ impl PlatformScriptKey {
 
 /// <p>The summary of the step group in the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateStepGroupSummary {
     /// <p>The ID of the step group.</p>
     #[doc(hidden)]
@@ -1809,16 +1733,6 @@ impl TemplateStepGroupSummary {
     /// <p>The next step group.</p>
     pub fn next(&self) -> std::option::Option<&[std::string::String]> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateStepGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateStepGroupSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("previous", &self.previous);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
@@ -1911,7 +1825,7 @@ impl TemplateStepGroupSummary {
 
 /// <p>The summary of the step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateStepSummary {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
@@ -1977,21 +1891,6 @@ impl TemplateStepSummary {
     /// <p>The next step.</p>
     pub fn next(&self) -> std::option::Option<&[std::string::String]> {
         self.next.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateStepSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateStepSummary");
-        formatter.field("id", &self.id);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("name", &self.name);
-        formatter.field("step_action_type", &self.step_action_type);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("owner", &self.owner);
-        formatter.field("previous", &self.previous);
-        formatter.field("next", &self.next);
-        formatter.finish()
     }
 }
 /// See [`TemplateStepSummary`](crate::model::TemplateStepSummary).
@@ -2153,7 +2052,7 @@ impl TemplateStepSummary {
 
 /// <p>The custom script to run tests on source or target environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepAutomationConfiguration {
     /// <p>The Amazon S3 bucket where the script is located.</p>
     #[doc(hidden)]
@@ -2191,17 +2090,6 @@ impl StepAutomationConfiguration {
     /// <p>The servers on which to run the script.</p>
     pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
         self.target_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StepAutomationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepAutomationConfiguration");
-        formatter.field("script_location_s3_bucket", &self.script_location_s3_bucket);
-        formatter.field("script_location_s3_key", &self.script_location_s3_key);
-        formatter.field("command", &self.command);
-        formatter.field("run_environment", &self.run_environment);
-        formatter.field("target_type", &self.target_type);
-        formatter.finish()
     }
 }
 /// See [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
@@ -2303,7 +2191,7 @@ impl StepAutomationConfiguration {
 
 /// <p>The output of the step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepOutput {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
@@ -2327,15 +2215,6 @@ impl StepOutput {
     /// <p>Determine if an output is required from a step.</p>
     pub fn required(&self) -> std::option::Option<bool> {
         self.required
-    }
-}
-impl std::fmt::Debug for StepOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepOutput");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("required", &self.required);
-        formatter.finish()
     }
 }
 /// See [`StepOutput`](crate::model::StepOutput).
@@ -2398,7 +2277,7 @@ impl StepOutput {
 
 /// <p>The summary of the Migration Hub Orchestrator plugin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PluginSummary {
     /// <p>The ID of the plugin.</p>
     #[doc(hidden)]
@@ -2443,18 +2322,6 @@ impl PluginSummary {
     /// <p>The time at which the plugin was registered.</p>
     pub fn registered_time(&self) -> std::option::Option<&str> {
         self.registered_time.as_deref()
-    }
-}
-impl std::fmt::Debug for PluginSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PluginSummary");
-        formatter.field("plugin_id", &self.plugin_id);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("status", &self.status);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("version", &self.version);
-        formatter.field("registered_time", &self.registered_time);
-        formatter.finish()
     }
 }
 /// See [`PluginSummary`](crate::model::PluginSummary).
@@ -2649,7 +2516,7 @@ impl AsRef<str> for PluginHealth {
 
 /// <p>The summary of the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSummary {
     /// <p>The ID of the template.</p>
     #[doc(hidden)]
@@ -2680,16 +2547,6 @@ impl TemplateSummary {
     /// <p>The description of the template.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
@@ -2849,7 +2706,7 @@ impl AsRef<str> for TemplateStatus {
 
 /// <p>The input parameters of a template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateInput {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
@@ -2873,15 +2730,6 @@ impl TemplateInput {
     /// <p>Determine if an input is required from the template.</p>
     pub fn required(&self) -> std::option::Option<bool> {
         self.required
-    }
-}
-impl std::fmt::Debug for TemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("required", &self.required);
-        formatter.finish()
     }
 }
 /// See [`TemplateInput`](crate::model::TemplateInput).
@@ -3111,7 +2959,7 @@ impl AsRef<str> for MigrationWorkflowStatusEnum {
 
 /// <p>The summary of a migration workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MigrationWorkflowSummary {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
@@ -3184,25 +3032,6 @@ impl MigrationWorkflowSummary {
     /// <p>All the steps in a migration workflow.</p>
     pub fn total_steps(&self) -> std::option::Option<i32> {
         self.total_steps
-    }
-}
-impl std::fmt::Debug for MigrationWorkflowSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MigrationWorkflowSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("template_id", &self.template_id);
-        formatter.field(
-            "ads_application_configuration_name",
-            &self.ads_application_configuration_name,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("completed_steps", &self.completed_steps);
-        formatter.field("total_steps", &self.total_steps);
-        formatter.finish()
     }
 }
 /// See [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).

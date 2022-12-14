@@ -2,7 +2,7 @@
 
 /// <p>Describes the API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Operation {
     /// <p>The ID of the operation.</p>
     #[doc(hidden)]
@@ -89,24 +89,6 @@ impl Operation {
     /// <p>The error details.</p>
     pub fn error_details(&self) -> std::option::Option<&str> {
         self.error_details.as_deref()
-    }
-}
-impl std::fmt::Debug for Operation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Operation");
-        formatter.field("id", &self.id);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("is_terminal", &self.is_terminal);
-        formatter.field("operation_details", &self.operation_details);
-        formatter.field("operation_type", &self.operation_type);
-        formatter.field("status", &self.status);
-        formatter.field("status_changed_at", &self.status_changed_at);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_details", &self.error_details);
-        formatter.finish()
     }
 }
 /// See [`Operation`](crate::model::Operation).
@@ -982,7 +964,7 @@ impl AsRef<str> for OperationType {
 
 /// <p>Describes the resource location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceLocation {
     /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     #[doc(hidden)]
@@ -999,14 +981,6 @@ impl ResourceLocation {
     /// <p>The AWS Region name.</p>
     pub fn region_name(&self) -> std::option::Option<&crate::model::RegionName> {
         self.region_name.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLocation");
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("region_name", &self.region_name);
-        formatter.finish()
     }
 }
 /// See [`ResourceLocation`](crate::model::ResourceLocation).
@@ -1435,7 +1409,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>Describes the parameters of a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabaseParameter {
     /// <p>Specifies the valid range of values for the parameter.</p>
     #[doc(hidden)]
@@ -1496,20 +1470,6 @@ impl RelationalDatabaseParameter {
     /// <p>Specifies the value of the parameter.</p>
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
-    }
-}
-impl std::fmt::Debug for RelationalDatabaseParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabaseParameter");
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("apply_method", &self.apply_method);
-        formatter.field("apply_type", &self.apply_type);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("description", &self.description);
-        formatter.field("is_modifiable", &self.is_modifiable);
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabaseParameter`](crate::model::RelationalDatabaseParameter).
@@ -2030,7 +1990,7 @@ impl AsRef<str> for HttpTokens {
 
 /// <p>Describes a domain recordset entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainEntry {
     /// <p>The ID of the domain recordset entry.</p>
     #[doc(hidden)]
@@ -2109,18 +2069,6 @@ impl DomainEntry {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.options.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainEntry");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("target", &self.target);
-        formatter.field("is_alias", &self.is_alias);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`DomainEntry`](crate::model::DomainEntry).
@@ -2267,7 +2215,7 @@ impl DomainEntry {
 /// <p>Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.</p>
 /// <p>A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheBehaviorPerPath {
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
@@ -2308,14 +2256,6 @@ impl CacheBehaviorPerPath {
     /// </ul>
     pub fn behavior(&self) -> std::option::Option<&crate::model::BehaviorEnum> {
         self.behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for CacheBehaviorPerPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheBehaviorPerPath");
-        formatter.field("path", &self.path);
-        formatter.field("behavior", &self.behavior);
-        formatter.finish()
     }
 }
 /// See [`CacheBehaviorPerPath`](crate::model::CacheBehaviorPerPath).
@@ -2484,7 +2424,7 @@ impl AsRef<str> for BehaviorEnum {
 /// <p>Describes the cache settings of an Amazon Lightsail content delivery network (CDN) distribution.</p>
 /// <p>These settings apply only to your distribution's <code>cacheBehaviors</code> (including the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheSettings {
     /// <p>The default amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the content has been updated.</p> <note>
     /// <p>The value specified applies only when the origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
@@ -2575,20 +2515,6 @@ impl CacheSettings {
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
     pub fn forwarded_query_strings(&self) -> std::option::Option<&crate::model::QueryStringObject> {
         self.forwarded_query_strings.as_ref()
-    }
-}
-impl std::fmt::Debug for CacheSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheSettings");
-        formatter.field("default_ttl", &self.default_ttl);
-        formatter.field("minimum_ttl", &self.minimum_ttl);
-        formatter.field("maximum_ttl", &self.maximum_ttl);
-        formatter.field("allowed_http_methods", &self.allowed_http_methods);
-        formatter.field("cached_http_methods", &self.cached_http_methods);
-        formatter.field("forwarded_cookies", &self.forwarded_cookies);
-        formatter.field("forwarded_headers", &self.forwarded_headers);
-        formatter.field("forwarded_query_strings", &self.forwarded_query_strings);
-        formatter.finish()
     }
 }
 /// See [`CacheSettings`](crate::model::CacheSettings).
@@ -2759,7 +2685,7 @@ impl CacheSettings {
 /// <p>Describes the query string parameters that an Amazon Lightsail content delivery network (CDN) distribution to bases caching on.</p>
 /// <p>For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStringObject {
     /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
     #[doc(hidden)]
@@ -2780,14 +2706,6 @@ impl QueryStringObject {
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
     pub fn query_strings_allow_list(&self) -> std::option::Option<&[std::string::String]> {
         self.query_strings_allow_list.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryStringObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStringObject");
-        formatter.field("option", &self.option);
-        formatter.field("query_strings_allow_list", &self.query_strings_allow_list);
-        formatter.finish()
     }
 }
 /// See [`QueryStringObject`](crate::model::QueryStringObject).
@@ -2853,7 +2771,7 @@ impl QueryStringObject {
 /// <p>Describes the request headers that a Lightsail distribution bases caching on.</p>
 /// <p>For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HeaderObject {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
     /// <p>You can configure your distribution to do one of the following:</p>
@@ -2882,14 +2800,6 @@ impl HeaderObject {
     /// <p>The specific headers to forward to your distribution's origin.</p>
     pub fn headers_allow_list(&self) -> std::option::Option<&[crate::model::HeaderEnum]> {
         self.headers_allow_list.as_deref()
-    }
-}
-impl std::fmt::Debug for HeaderObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HeaderObject");
-        formatter.field("option", &self.option);
-        formatter.field("headers_allow_list", &self.headers_allow_list);
-        formatter.finish()
     }
 }
 /// See [`HeaderObject`](crate::model::HeaderObject).
@@ -3231,7 +3141,7 @@ impl AsRef<str> for ForwardValues {
 /// <p>Describes whether an Amazon Lightsail content delivery network (CDN) distribution forwards cookies to the origin and, if so, which ones.</p>
 /// <p>For the cookies that you specify, your distribution caches separate versions of the specified content based on the cookie values in viewer requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CookieObject {
     /// <p>Specifies which cookies to forward to the distribution's origin for a cache behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the cookies specified in the <code>cookiesAllowList</code> parameter.</p>
     #[doc(hidden)]
@@ -3248,14 +3158,6 @@ impl CookieObject {
     /// <p>The specific cookies to forward to your distribution's origin.</p>
     pub fn cookies_allow_list(&self) -> std::option::Option<&[std::string::String]> {
         self.cookies_allow_list.as_deref()
-    }
-}
-impl std::fmt::Debug for CookieObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CookieObject");
-        formatter.field("option", &self.option);
-        formatter.field("cookies_allow_list", &self.cookies_allow_list);
-        formatter.finish()
     }
 }
 /// See [`CookieObject`](crate::model::CookieObject).
@@ -3318,7 +3220,7 @@ impl CookieObject {
 
 /// <p>Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheBehavior {
     /// <p>The cache behavior of the distribution.</p>
     /// <p>The following cache behaviors can be specified:</p>
@@ -3338,13 +3240,6 @@ impl CacheBehavior {
     /// </ul>
     pub fn behavior(&self) -> std::option::Option<&crate::model::BehaviorEnum> {
         self.behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for CacheBehavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheBehavior");
-        formatter.field("behavior", &self.behavior);
-        formatter.finish()
     }
 }
 /// See [`CacheBehavior`](crate::model::CacheBehavior).
@@ -3397,7 +3292,7 @@ impl CacheBehavior {
 /// <p>Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.</p>
 /// <p>An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputOrigin {
     /// <p>The name of the origin resource.</p>
     #[doc(hidden)]
@@ -3421,15 +3316,6 @@ impl InputOrigin {
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
     pub fn protocol_policy(&self) -> std::option::Option<&crate::model::OriginProtocolPolicyEnum> {
         self.protocol_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for InputOrigin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputOrigin");
-        formatter.field("name", &self.name);
-        formatter.field("region_name", &self.region_name);
-        formatter.field("protocol_policy", &self.protocol_policy);
-        formatter.finish()
     }
 }
 /// See [`InputOrigin`](crate::model::InputOrigin).
@@ -3590,7 +3476,7 @@ impl AsRef<str> for OriginProtocolPolicyEnum {
 
 /// <p>Describes an Amazon Lightsail container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerService {
     /// <p>The name of the container service.</p>
     #[doc(hidden)]
@@ -3786,31 +3672,6 @@ impl ContainerService {
         &self,
     ) -> std::option::Option<&crate::model::PrivateRegistryAccess> {
         self.private_registry_access.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerService");
-        formatter.field("container_service_name", &self.container_service_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("power", &self.power);
-        formatter.field("power_id", &self.power_id);
-        formatter.field("state", &self.state);
-        formatter.field("state_detail", &self.state_detail);
-        formatter.field("scale", &self.scale);
-        formatter.field("current_deployment", &self.current_deployment);
-        formatter.field("next_deployment", &self.next_deployment);
-        formatter.field("is_disabled", &self.is_disabled);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("private_domain_name", &self.private_domain_name);
-        formatter.field("public_domain_names", &self.public_domain_names);
-        formatter.field("url", &self.url);
-        formatter.field("private_registry_access", &self.private_registry_access);
-        formatter.finish()
     }
 }
 /// See [`ContainerService`](crate::model::ContainerService).
@@ -4184,7 +4045,7 @@ impl ContainerService {
 /// <p>Describes the configuration for an Amazon Lightsail container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
 /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateRegistryAccess {
     /// <p>An object that describes the activation status of the role that you can use to grant a Lightsail container service access to Amazon ECR private repositories. If the role is activated, the Amazon Resource Name (ARN) of the role is also listed.</p>
     #[doc(hidden)]
@@ -4197,13 +4058,6 @@ impl PrivateRegistryAccess {
         &self,
     ) -> std::option::Option<&crate::model::ContainerServiceEcrImagePullerRole> {
         self.ecr_image_puller_role.as_ref()
-    }
-}
-impl std::fmt::Debug for PrivateRegistryAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateRegistryAccess");
-        formatter.field("ecr_image_puller_role", &self.ecr_image_puller_role);
-        formatter.finish()
     }
 }
 /// See [`PrivateRegistryAccess`](crate::model::PrivateRegistryAccess).
@@ -4250,7 +4104,7 @@ impl PrivateRegistryAccess {
 /// <p>Describes the activation status of the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
 /// <p>When activated, Lightsail creates an Identity and Access Management (IAM) role for the specified Lightsail container service. You can use the ARN of the role to create a trust relationship between your Lightsail container service and an Amazon ECR private repository in your Amazon Web Services account. This allows your container service to pull images from Amazon ECR private repositories. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceEcrImagePullerRole {
     /// <p>A Boolean value that indicates whether the role is activated.</p>
     #[doc(hidden)]
@@ -4267,14 +4121,6 @@ impl ContainerServiceEcrImagePullerRole {
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerServiceEcrImagePullerRole {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceEcrImagePullerRole");
-        formatter.field("is_active", &self.is_active);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceEcrImagePullerRole`](crate::model::ContainerServiceEcrImagePullerRole).
@@ -4329,7 +4175,7 @@ impl ContainerServiceEcrImagePullerRole {
 /// <p>Describes a container deployment configuration of an Amazon Lightsail container service.</p>
 /// <p>A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceDeployment {
     /// <p>The version number of the deployment.</p>
     #[doc(hidden)]
@@ -4386,17 +4232,6 @@ impl ContainerServiceDeployment {
     /// <p>The timestamp when the deployment was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerServiceDeployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceDeployment");
-        formatter.field("version", &self.version);
-        formatter.field("state", &self.state);
-        formatter.field("containers", &self.containers);
-        formatter.field("public_endpoint", &self.public_endpoint);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceDeployment`](crate::model::ContainerServiceDeployment).
@@ -4523,7 +4358,7 @@ impl ContainerServiceDeployment {
 
 /// <p>Describes the public endpoint configuration of a deployment of an Amazon Lightsail container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceEndpoint {
     /// <p>The name of the container entry of the deployment that the endpoint configuration applies to.</p>
     #[doc(hidden)]
@@ -4549,15 +4384,6 @@ impl ContainerServiceEndpoint {
         &self,
     ) -> std::option::Option<&crate::model::ContainerServiceHealthCheckConfig> {
         self.health_check.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerServiceEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceEndpoint");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("container_port", &self.container_port);
-        formatter.field("health_check", &self.health_check);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceEndpoint`](crate::model::ContainerServiceEndpoint).
@@ -4630,7 +4456,7 @@ impl ContainerServiceEndpoint {
 
 /// <p>Describes the health check configuration of an Amazon Lightsail container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceHealthCheckConfig {
     /// <p>The number of consecutive health checks successes required before moving the container to the <code>Healthy</code> state. The default value is <code>2</code>.</p>
     #[doc(hidden)]
@@ -4675,18 +4501,6 @@ impl ContainerServiceHealthCheckConfig {
     /// <p>The HTTP codes to use when checking for a successful response from a container. You can specify values between <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a range of values (for example, <code>200-299</code>).</p>
     pub fn success_codes(&self) -> std::option::Option<&str> {
         self.success_codes.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerServiceHealthCheckConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceHealthCheckConfig");
-        formatter.field("healthy_threshold", &self.healthy_threshold);
-        formatter.field("unhealthy_threshold", &self.unhealthy_threshold);
-        formatter.field("timeout_seconds", &self.timeout_seconds);
-        formatter.field("interval_seconds", &self.interval_seconds);
-        formatter.field("path", &self.path);
-        formatter.field("success_codes", &self.success_codes);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceHealthCheckConfig`](crate::model::ContainerServiceHealthCheckConfig).
@@ -4788,7 +4602,7 @@ impl ContainerServiceHealthCheckConfig {
 
 /// <p>Describes the settings of a container that will be launched, or that is launched, to an Amazon Lightsail container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Container {
     /// <p>The name of the image used for the container.</p>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, if your container service name is <code>container-service-1</code>, the container image label is <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version of the registered container image, then you should specify <code>:container-service-1.mystaticsite.3</code>. To use the latest version of a container image, specify <code>latest</code> instead of a version number (for example, <code>:container-service-1.mystaticsite.latest</code>). Lightsail will automatically use the highest numbered version of the registered container image.</p>
@@ -4833,16 +4647,6 @@ impl Container {
         &std::collections::HashMap<std::string::String, crate::model::ContainerServiceProtocol>,
     > {
         self.ports.as_ref()
-    }
-}
-impl std::fmt::Debug for Container {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Container");
-        formatter.field("image", &self.image);
-        formatter.field("command", &self.command);
-        formatter.field("environment", &self.environment);
-        formatter.field("ports", &self.ports);
-        formatter.finish()
     }
 }
 /// See [`Container`](crate::model::Container).
@@ -5171,7 +4975,7 @@ impl AsRef<str> for ContainerServiceDeploymentState {
 
 /// <p>Describes the current state of a container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceStateDetail {
     /// <p>The state code of the container service.</p>
     /// <p>The following state codes are possible:</p>
@@ -5228,14 +5032,6 @@ impl ContainerServiceStateDetail {
     /// </note>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerServiceStateDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceStateDetail");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceStateDetail`](crate::model::ContainerServiceStateDetail).
@@ -5712,7 +5508,7 @@ impl AsRef<str> for ContainerServicePowerName {
 /// <p>Describes a tag key and optional value assigned to an Amazon Lightsail resource.</p>
 /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     /// <p>Constraints: Tag keys accept a maximum of 128 letters, numbers, spaces in UTF-8, or the following characters: + - = . _ : / @</p>
@@ -5733,14 +5529,6 @@ impl Tag {
     /// <p>Constraints: Tag values accept a maximum of 256 letters, numbers, spaces in UTF-8, or the following characters: + - = . _ : / @</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -5796,7 +5584,7 @@ impl Tag {
 /// <p>Describes a request to configure an Amazon Lightsail container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
 /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateRegistryAccessRequest {
     /// <p>An object to describe a request to activate or deactivate the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     #[doc(hidden)]
@@ -5809,13 +5597,6 @@ impl PrivateRegistryAccessRequest {
         &self,
     ) -> std::option::Option<&crate::model::ContainerServiceEcrImagePullerRoleRequest> {
         self.ecr_image_puller_role.as_ref()
-    }
-}
-impl std::fmt::Debug for PrivateRegistryAccessRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateRegistryAccessRequest");
-        formatter.field("ecr_image_puller_role", &self.ecr_image_puller_role);
-        formatter.finish()
     }
 }
 /// See [`PrivateRegistryAccessRequest`](crate::model::PrivateRegistryAccessRequest).
@@ -5862,7 +5643,7 @@ impl PrivateRegistryAccessRequest {
 /// <p>Describes a request to activate or deactivate the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
 /// <p>When activated, Lightsail creates an Identity and Access Management (IAM) role for the specified Lightsail container service. You can use the ARN of the role to create a trust relationship between your Lightsail container service and an Amazon ECR private repository in your Amazon Web Services account. This allows your container service to pull images from Amazon ECR private repositories. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceEcrImagePullerRoleRequest {
     /// <p>A Boolean value that indicates whether to activate the role.</p>
     #[doc(hidden)]
@@ -5872,13 +5653,6 @@ impl ContainerServiceEcrImagePullerRoleRequest {
     /// <p>A Boolean value that indicates whether to activate the role.</p>
     pub fn is_active(&self) -> std::option::Option<bool> {
         self.is_active
-    }
-}
-impl std::fmt::Debug for ContainerServiceEcrImagePullerRoleRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceEcrImagePullerRoleRequest");
-        formatter.field("is_active", &self.is_active);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceEcrImagePullerRoleRequest`](crate::model::ContainerServiceEcrImagePullerRoleRequest).
@@ -5917,7 +5691,7 @@ impl ContainerServiceEcrImagePullerRoleRequest {
 
 /// <p>Describes an Amazon Lightsail bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
     #[doc(hidden)]
@@ -6057,31 +5831,6 @@ impl Bucket {
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub fn access_log_config(&self) -> std::option::Option<&crate::model::BucketAccessLogConfig> {
         self.access_log_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Bucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Bucket");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("access_rules", &self.access_rules);
-        formatter.field("arn", &self.arn);
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("url", &self.url);
-        formatter.field("location", &self.location);
-        formatter.field("name", &self.name);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("tags", &self.tags);
-        formatter.field("object_versioning", &self.object_versioning);
-        formatter.field("able_to_update_bundle", &self.able_to_update_bundle);
-        formatter.field("readonly_access_accounts", &self.readonly_access_accounts);
-        formatter.field(
-            "resources_receiving_access",
-            &self.resources_receiving_access,
-        );
-        formatter.field("state", &self.state);
-        formatter.field("access_log_config", &self.access_log_config);
-        formatter.finish()
     }
 }
 /// See [`Bucket`](crate::model::Bucket).
@@ -6373,7 +6122,7 @@ impl Bucket {
 /// <p>Describes the access log configuration for a bucket in the Amazon Lightsail object storage service.</p>
 /// <p>For more information about bucket access logs, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-bucket-access-logs">Logging bucket requests using access logging in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketAccessLogConfig {
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
     #[doc(hidden)]
@@ -6407,15 +6156,6 @@ impl BucketAccessLogConfig {
     /// </note>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for BucketAccessLogConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketAccessLogConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("destination", &self.destination);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`BucketAccessLogConfig`](crate::model::BucketAccessLogConfig).
@@ -6488,7 +6228,7 @@ impl BucketAccessLogConfig {
 
 /// <p>Describes the state of an Amazon Lightsail bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketState {
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
@@ -6515,14 +6255,6 @@ impl BucketState {
     /// <p>A message that describes the state of the bucket.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BucketState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketState");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BucketState`](crate::model::BucketState).
@@ -6583,7 +6315,7 @@ impl BucketState {
 
 /// <p>Describes an Amazon Lightsail instance that has access to a Lightsail bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceReceivingAccess {
     /// <p>The name of the Lightsail instance.</p>
     #[doc(hidden)]
@@ -6600,14 +6332,6 @@ impl ResourceReceivingAccess {
     /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceReceivingAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceReceivingAccess");
-        formatter.field("name", &self.name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`ResourceReceivingAccess`](crate::model::ResourceReceivingAccess).
@@ -6663,7 +6387,7 @@ impl ResourceReceivingAccess {
 /// <p>For more information about bucket access permissions, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-understanding-bucket-permissions">Understanding bucket permissions in Amazon Lightsail</a> in the </p>
 /// <p> <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessRules {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
@@ -6692,14 +6416,6 @@ impl AccessRules {
     /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set individual objects to public (read-only) using the <code>public-read</code> ACL, or to private using the <code>private</code> ACL.</p>
     pub fn allow_public_overrides(&self) -> std::option::Option<bool> {
         self.allow_public_overrides
-    }
-}
-impl std::fmt::Debug for AccessRules {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessRules");
-        formatter.field("get_object", &self.get_object);
-        formatter.field("allow_public_overrides", &self.allow_public_overrides);
-        formatter.finish()
     }
 }
 /// See [`AccessRules`](crate::model::AccessRules).
@@ -7219,7 +6935,7 @@ impl AsRef<str> for ContactMethodVerificationProtocol {
 
 /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerImage {
     /// <p>The name of the container image.</p>
     #[doc(hidden)]
@@ -7243,15 +6959,6 @@ impl ContainerImage {
     /// <p>The timestamp when the container image was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerImage");
-        formatter.field("image", &self.image);
-        formatter.field("digest", &self.digest);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`ContainerImage`](crate::model::ContainerImage).
@@ -7317,7 +7024,7 @@ impl ContainerImage {
 
 /// <p>Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortInfo {
     /// <p>The first port in a range of open ports on an instance.</p>
     /// <p>Allowed ports:</p>
@@ -7424,18 +7131,6 @@ impl PortInfo {
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
     pub fn cidr_list_aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.cidr_list_aliases.as_deref()
-    }
-}
-impl std::fmt::Debug for PortInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortInfo");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("cidrs", &self.cidrs);
-        formatter.field("ipv6_cidrs", &self.ipv6_cidrs);
-        formatter.field("cidr_list_aliases", &self.cidr_list_aliases);
-        formatter.finish()
     }
 }
 /// See [`PortInfo`](crate::model::PortInfo).
@@ -8254,7 +7949,7 @@ impl AsRef<str> for MetricName {
 
 /// <p>Describes a static IP.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StaticIp {
     /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
     #[doc(hidden)]
@@ -8320,21 +8015,6 @@ impl StaticIp {
     /// <p>A Boolean value indicating whether the static IP is attached.</p>
     pub fn is_attached(&self) -> std::option::Option<bool> {
         self.is_attached
-    }
-}
-impl std::fmt::Debug for StaticIp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaticIp");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("attached_to", &self.attached_to);
-        formatter.field("is_attached", &self.is_attached);
-        formatter.finish()
     }
 }
 /// See [`StaticIp`](crate::model::StaticIp).
@@ -8478,7 +8158,7 @@ impl StaticIp {
 
 /// <p>Describes a database snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabaseSnapshot {
     /// <p>The name of the database snapshot.</p>
     #[doc(hidden)]
@@ -8586,39 +8266,6 @@ impl RelationalDatabaseSnapshot {
     /// <p>The blueprint ID of the database from which the database snapshot was created. A blueprint describes the major engine version of a database.</p>
     pub fn from_relational_database_blueprint_id(&self) -> std::option::Option<&str> {
         self.from_relational_database_blueprint_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RelationalDatabaseSnapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabaseSnapshot");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("size_in_gb", &self.size_in_gb);
-        formatter.field("state", &self.state);
-        formatter.field(
-            "from_relational_database_name",
-            &self.from_relational_database_name,
-        );
-        formatter.field(
-            "from_relational_database_arn",
-            &self.from_relational_database_arn,
-        );
-        formatter.field(
-            "from_relational_database_bundle_id",
-            &self.from_relational_database_bundle_id,
-        );
-        formatter.field(
-            "from_relational_database_blueprint_id",
-            &self.from_relational_database_blueprint_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabaseSnapshot`](crate::model::RelationalDatabaseSnapshot).
@@ -8870,7 +8517,7 @@ impl RelationalDatabaseSnapshot {
 
 /// <p>Describes a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabase {
     /// <p>The unique name of the database resource in Lightsail.</p>
     #[doc(hidden)]
@@ -9067,53 +8714,6 @@ impl RelationalDatabase {
     /// <p>The certificate associated with the database.</p>
     pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for RelationalDatabase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabase");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "relational_database_blueprint_id",
-            &self.relational_database_blueprint_id,
-        );
-        formatter.field(
-            "relational_database_bundle_id",
-            &self.relational_database_bundle_id,
-        );
-        formatter.field("master_database_name", &self.master_database_name);
-        formatter.field("hardware", &self.hardware);
-        formatter.field("state", &self.state);
-        formatter.field(
-            "secondary_availability_zone",
-            &self.secondary_availability_zone,
-        );
-        formatter.field("backup_retention_enabled", &self.backup_retention_enabled);
-        formatter.field("pending_modified_values", &self.pending_modified_values);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("latest_restorable_time", &self.latest_restorable_time);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("parameter_apply_status", &self.parameter_apply_status);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("master_endpoint", &self.master_endpoint);
-        formatter.field(
-            "pending_maintenance_actions",
-            &self.pending_maintenance_actions,
-        );
-        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabase`](crate::model::RelationalDatabase).
@@ -9545,7 +9145,7 @@ impl RelationalDatabase {
 
 /// <p>Describes a pending database maintenance action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending database maintenance action.</p>
     #[doc(hidden)]
@@ -9569,15 +9169,6 @@ impl PendingMaintenanceAction {
     /// <p>The effective date of the pending database maintenance action.</p>
     pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
-    }
-}
-impl std::fmt::Debug for PendingMaintenanceAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingMaintenanceAction");
-        formatter.field("action", &self.action);
-        formatter.field("description", &self.description);
-        formatter.field("current_apply_date", &self.current_apply_date);
-        formatter.finish()
     }
 }
 /// See [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
@@ -9643,7 +9234,7 @@ impl PendingMaintenanceAction {
 
 /// <p>Describes an endpoint for a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabaseEndpoint {
     /// <p>Specifies the port that the database is listening on.</p>
     #[doc(hidden)]
@@ -9660,14 +9251,6 @@ impl RelationalDatabaseEndpoint {
     /// <p>Specifies the DNS address of the database.</p>
     pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
-    }
-}
-impl std::fmt::Debug for RelationalDatabaseEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabaseEndpoint");
-        formatter.field("port", &self.port);
-        formatter.field("address", &self.address);
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabaseEndpoint`](crate::model::RelationalDatabaseEndpoint).
@@ -9718,7 +9301,7 @@ impl RelationalDatabaseEndpoint {
 
 /// <p>Describes a pending database value modification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingModifiedRelationalDatabaseValues {
     /// <p>The password for the master user of the database.</p>
     #[doc(hidden)]
@@ -9742,15 +9325,6 @@ impl PendingModifiedRelationalDatabaseValues {
     /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
     pub fn backup_retention_enabled(&self) -> std::option::Option<bool> {
         self.backup_retention_enabled
-    }
-}
-impl std::fmt::Debug for PendingModifiedRelationalDatabaseValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingModifiedRelationalDatabaseValues");
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("backup_retention_enabled", &self.backup_retention_enabled);
-        formatter.finish()
     }
 }
 /// See [`PendingModifiedRelationalDatabaseValues`](crate::model::PendingModifiedRelationalDatabaseValues).
@@ -9819,7 +9393,7 @@ impl PendingModifiedRelationalDatabaseValues {
 
 /// <p>Describes the hardware of a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabaseHardware {
     /// <p>The number of vCPUs for the database.</p>
     #[doc(hidden)]
@@ -9843,15 +9417,6 @@ impl RelationalDatabaseHardware {
     /// <p>The amount of RAM in GB for the database.</p>
     pub fn ram_size_in_gb(&self) -> std::option::Option<f32> {
         self.ram_size_in_gb
-    }
-}
-impl std::fmt::Debug for RelationalDatabaseHardware {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabaseHardware");
-        formatter.field("cpu_count", &self.cpu_count);
-        formatter.field("disk_size_in_gb", &self.disk_size_in_gb);
-        formatter.field("ram_size_in_gb", &self.ram_size_in_gb);
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabaseHardware`](crate::model::RelationalDatabaseHardware).
@@ -9914,7 +9479,7 @@ impl RelationalDatabaseHardware {
 
 /// <p>Describes the metric data point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDatapoint {
     /// <p>The average.</p>
     #[doc(hidden)]
@@ -9966,19 +9531,6 @@ impl MetricDatapoint {
     /// <p>The unit. </p>
     pub fn unit(&self) -> std::option::Option<&crate::model::MetricUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricDatapoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDatapoint");
-        formatter.field("average", &self.average);
-        formatter.field("maximum", &self.maximum);
-        formatter.field("minimum", &self.minimum);
-        formatter.field("sample_count", &self.sample_count);
-        formatter.field("sum", &self.sum);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`MetricDatapoint`](crate::model::MetricDatapoint).
@@ -10656,7 +10208,7 @@ impl AsRef<str> for RelationalDatabasePasswordVersion {
 
 /// <p>Describes a database log event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogEvent {
     /// <p>The timestamp when the database log event was created.</p>
     #[doc(hidden)]
@@ -10673,14 +10225,6 @@ impl LogEvent {
     /// <p>The message of the database log event.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for LogEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogEvent");
-        formatter.field("created_at", &self.created_at);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`LogEvent`](crate::model::LogEvent).
@@ -10734,7 +10278,7 @@ impl LogEvent {
 
 /// <p>Describes an event for a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabaseEvent {
     /// <p>The database that the database event relates to.</p>
     #[doc(hidden)]
@@ -10765,16 +10309,6 @@ impl RelationalDatabaseEvent {
     /// <p>The category that the database event belongs to.</p>
     pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories.as_deref()
-    }
-}
-impl std::fmt::Debug for RelationalDatabaseEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabaseEvent");
-        formatter.field("resource", &self.resource);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("message", &self.message);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabaseEvent`](crate::model::RelationalDatabaseEvent).
@@ -10861,7 +10395,7 @@ impl RelationalDatabaseEvent {
 
 /// <p>Describes a database bundle. A bundle describes the performance specifications of the database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabaseBundle {
     /// <p>The ID for the database bundle.</p>
     #[doc(hidden)]
@@ -10927,21 +10461,6 @@ impl RelationalDatabaseBundle {
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
     pub fn is_active(&self) -> std::option::Option<bool> {
         self.is_active
-    }
-}
-impl std::fmt::Debug for RelationalDatabaseBundle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabaseBundle");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("name", &self.name);
-        formatter.field("price", &self.price);
-        formatter.field("ram_size_in_gb", &self.ram_size_in_gb);
-        formatter.field("disk_size_in_gb", &self.disk_size_in_gb);
-        formatter.field("transfer_per_month_in_gb", &self.transfer_per_month_in_gb);
-        formatter.field("cpu_count", &self.cpu_count);
-        formatter.field("is_encrypted", &self.is_encrypted);
-        formatter.field("is_active", &self.is_active);
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabaseBundle`](crate::model::RelationalDatabaseBundle).
@@ -11076,7 +10595,7 @@ impl RelationalDatabaseBundle {
 
 /// <p>Describes a database image, or blueprint. A blueprint describes the major engine version of a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalDatabaseBlueprint {
     /// <p>The ID for the database blueprint.</p>
     #[doc(hidden)]
@@ -11121,21 +10640,6 @@ impl RelationalDatabaseBlueprint {
     /// <p>A Boolean value indicating whether the engine version is the default for the database blueprint.</p>
     pub fn is_engine_default(&self) -> std::option::Option<bool> {
         self.is_engine_default
-    }
-}
-impl std::fmt::Debug for RelationalDatabaseBlueprint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalDatabaseBlueprint");
-        formatter.field("blueprint_id", &self.blueprint_id);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("engine_description", &self.engine_description);
-        formatter.field(
-            "engine_version_description",
-            &self.engine_version_description,
-        );
-        formatter.field("is_engine_default", &self.is_engine_default);
-        formatter.finish()
     }
 }
 /// See [`RelationalDatabaseBlueprint`](crate::model::RelationalDatabaseBlueprint).
@@ -11333,7 +10837,7 @@ impl AsRef<str> for RelationalDatabaseEngine {
 
 /// <p>Describes the AWS Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Region {
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
     #[doc(hidden)]
@@ -11381,21 +10885,6 @@ impl Region {
         &self,
     ) -> std::option::Option<&[crate::model::AvailabilityZone]> {
         self.relational_database_availability_zones.as_deref()
-    }
-}
-impl std::fmt::Debug for Region {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Region");
-        formatter.field("continent_code", &self.continent_code);
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("name", &self.name);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field(
-            "relational_database_availability_zones",
-            &self.relational_database_availability_zones,
-        );
-        formatter.finish()
     }
 }
 /// See [`Region`](crate::model::Region).
@@ -11522,7 +11011,7 @@ impl Region {
 
 /// <p>Describes an Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
     #[doc(hidden)]
@@ -11539,14 +11028,6 @@ impl AvailabilityZone {
     /// <p>The state of the Availability Zone.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZone");
-        formatter.field("zone_name", &self.zone_name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
@@ -11598,7 +11079,7 @@ impl AvailabilityZone {
 /// <p>Describes the TLS security policies that are available for Lightsail load balancers.</p>
 /// <p>For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerTlsPolicy {
     /// <p>The name of the TLS security policy.</p>
     #[doc(hidden)]
@@ -11638,17 +11119,6 @@ impl LoadBalancerTlsPolicy {
     /// <p>The ciphers are listed in order of preference.</p>
     pub fn ciphers(&self) -> std::option::Option<&[std::string::String]> {
         self.ciphers.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerTlsPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerTlsPolicy");
-        formatter.field("name", &self.name);
-        formatter.field("is_default", &self.is_default);
-        formatter.field("description", &self.description);
-        formatter.field("protocols", &self.protocols);
-        formatter.field("ciphers", &self.ciphers);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerTlsPolicy`](crate::model::LoadBalancerTlsPolicy).
@@ -11756,7 +11226,7 @@ impl LoadBalancerTlsPolicy {
 /// <p>Describes a load balancer SSL/TLS certificate.</p>
 /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificate {
     /// <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
     #[doc(hidden)]
@@ -11991,37 +11461,6 @@ impl LoadBalancerTlsCertificate {
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     pub fn subject_alternative_names(&self) -> std::option::Option<&[std::string::String]> {
         self.subject_alternative_names.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerTlsCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerTlsCertificate");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("is_attached", &self.is_attached);
-        formatter.field("status", &self.status);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("domain_validation_records", &self.domain_validation_records);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("issued_at", &self.issued_at);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("key_algorithm", &self.key_algorithm);
-        formatter.field("not_after", &self.not_after);
-        formatter.field("not_before", &self.not_before);
-        formatter.field("renewal_summary", &self.renewal_summary);
-        formatter.field("revocation_reason", &self.revocation_reason);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.field("serial", &self.serial);
-        formatter.field("signature_algorithm", &self.signature_algorithm);
-        formatter.field("subject", &self.subject);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerTlsCertificate`](crate::model::LoadBalancerTlsCertificate).
@@ -12636,7 +12075,7 @@ impl AsRef<str> for LoadBalancerTlsCertificateRevocationReason {
 /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateRenewalSummary {
     /// <p>The renewal status of the certificate.</p>
     /// <p>The following renewal status are possible:</p>
@@ -12674,14 +12113,6 @@ impl LoadBalancerTlsCertificateRenewalSummary {
     ) -> std::option::Option<&[crate::model::LoadBalancerTlsCertificateDomainValidationOption]>
     {
         self.domain_validation_options.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerTlsCertificateRenewalSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerTlsCertificateRenewalSummary");
-        formatter.field("renewal_status", &self.renewal_status);
-        formatter.field("domain_validation_options", &self.domain_validation_options);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerTlsCertificateRenewalSummary`](crate::model::LoadBalancerTlsCertificateRenewalSummary).
@@ -12769,7 +12200,7 @@ impl LoadBalancerTlsCertificateRenewalSummary {
 
 /// <p>Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateDomainValidationOption {
     /// <p>The fully qualified domain name in the certificate request.</p>
     #[doc(hidden)]
@@ -12789,14 +12220,6 @@ impl LoadBalancerTlsCertificateDomainValidationOption {
         &self,
     ) -> std::option::Option<&crate::model::LoadBalancerTlsCertificateDomainStatus> {
         self.validation_status.as_ref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerTlsCertificateDomainValidationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerTlsCertificateDomainValidationOption");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("validation_status", &self.validation_status);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerTlsCertificateDomainValidationOption`](crate::model::LoadBalancerTlsCertificateDomainValidationOption).
@@ -13176,7 +12599,7 @@ impl AsRef<str> for LoadBalancerTlsCertificateFailureReason {
 
 /// <p>Describes the validation record of each domain name in the SSL/TLS certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateDomainValidationRecord {
     /// <p>A fully qualified domain name in the certificate. For example, <code>example.com</code>.</p>
     #[doc(hidden)]
@@ -13217,17 +12640,6 @@ impl LoadBalancerTlsCertificateDomainValidationRecord {
     /// <p>The domain name against which your SSL/TLS certificate was validated.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerTlsCertificateDomainValidationRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerTlsCertificateDomainValidationRecord");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.field("validation_status", &self.validation_status);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerTlsCertificateDomainValidationRecord`](crate::model::LoadBalancerTlsCertificateDomainValidationRecord).
@@ -13453,7 +12865,7 @@ impl AsRef<str> for LoadBalancerTlsCertificateStatus {
 
 /// <p>Describes a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancer {
     /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
     #[doc(hidden)]
@@ -13605,31 +13017,6 @@ impl LoadBalancer {
     /// <p>The name of the TLS security policy for the load balancer.</p>
     pub fn tls_policy_name(&self) -> std::option::Option<&str> {
         self.tls_policy_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancer");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("state", &self.state);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("public_ports", &self.public_ports);
-        formatter.field("health_check_path", &self.health_check_path);
-        formatter.field("instance_port", &self.instance_port);
-        formatter.field("instance_health_summary", &self.instance_health_summary);
-        formatter.field("tls_certificate_summaries", &self.tls_certificate_summaries);
-        formatter.field("configuration_options", &self.configuration_options);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("https_redirection_enabled", &self.https_redirection_enabled);
-        formatter.field("tls_policy_name", &self.tls_policy_name);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancer`](crate::model::LoadBalancer).
@@ -13975,7 +13362,7 @@ impl LoadBalancer {
 
 /// <p>Provides a summary of SSL/TLS certificate metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateSummary {
     /// <p>The name of the SSL/TLS certificate.</p>
     #[doc(hidden)]
@@ -13992,14 +13379,6 @@ impl LoadBalancerTlsCertificateSummary {
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
     pub fn is_attached(&self) -> std::option::Option<bool> {
         self.is_attached
-    }
-}
-impl std::fmt::Debug for LoadBalancerTlsCertificateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerTlsCertificateSummary");
-        formatter.field("name", &self.name);
-        formatter.field("is_attached", &self.is_attached);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerTlsCertificateSummary`](crate::model::LoadBalancerTlsCertificateSummary).
@@ -14050,7 +13429,7 @@ impl LoadBalancerTlsCertificateSummary {
 
 /// <p>Describes information about the health of the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceHealthSummary {
     /// <p>The name of the Lightsail instance for which you are requesting health check data.</p>
     #[doc(hidden)]
@@ -14122,15 +13501,6 @@ impl InstanceHealthSummary {
         &self,
     ) -> std::option::Option<&crate::model::InstanceHealthReason> {
         self.instance_health_reason.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceHealthSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceHealthSummary");
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("instance_health", &self.instance_health);
-        formatter.field("instance_health_reason", &self.instance_health_reason);
-        formatter.finish()
     }
 }
 /// See [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
@@ -14884,7 +14254,7 @@ impl AsRef<str> for LoadBalancerMetricName {
 
 /// <p>Describes an SSH key pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPair {
     /// <p>The friendly name of the SSH key pair.</p>
     #[doc(hidden)]
@@ -14943,20 +14313,6 @@ impl KeyPair {
     /// <p>The RSA fingerprint of the key pair.</p>
     pub fn fingerprint(&self) -> std::option::Option<&str> {
         self.fingerprint.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPair");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("fingerprint", &self.fingerprint);
-        formatter.finish()
     }
 }
 /// See [`KeyPair`](crate::model::KeyPair).
@@ -15097,7 +14453,7 @@ impl KeyPair {
 
 /// <p>Describes the virtual private server (or <i>instance</i>) status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceState {
     /// <p>The status code for the instance.</p>
     #[doc(hidden)]
@@ -15114,14 +14470,6 @@ impl InstanceState {
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceState");
-        formatter.field("code", &self.code);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`InstanceState`](crate::model::InstanceState).
@@ -15172,7 +14520,7 @@ impl InstanceState {
 
 /// <p>Describes an instance snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceSnapshot {
     /// <p>The name of the snapshot.</p>
     #[doc(hidden)]
@@ -15291,28 +14639,6 @@ impl InstanceSnapshot {
     /// <p>The size in GB of the SSD.</p>
     pub fn size_in_gb(&self) -> std::option::Option<i32> {
         self.size_in_gb
-    }
-}
-impl std::fmt::Debug for InstanceSnapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceSnapshot");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("state", &self.state);
-        formatter.field("progress", &self.progress);
-        formatter.field("from_attached_disks", &self.from_attached_disks);
-        formatter.field("from_instance_name", &self.from_instance_name);
-        formatter.field("from_instance_arn", &self.from_instance_arn);
-        formatter.field("from_blueprint_id", &self.from_blueprint_id);
-        formatter.field("from_bundle_id", &self.from_bundle_id);
-        formatter.field("is_from_auto_snapshot", &self.is_from_auto_snapshot);
-        formatter.field("size_in_gb", &self.size_in_gb);
-        formatter.finish()
     }
 }
 /// See [`InstanceSnapshot`](crate::model::InstanceSnapshot).
@@ -15577,7 +14903,7 @@ impl InstanceSnapshot {
 
 /// <p>Describes a block storage disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Disk {
     /// <p>The unique name of the disk.</p>
     #[doc(hidden)]
@@ -15711,29 +15037,6 @@ impl Disk {
     #[deprecated]
     pub fn gb_in_use(&self) -> std::option::Option<i32> {
         self.gb_in_use
-    }
-}
-impl std::fmt::Debug for Disk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Disk");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("add_ons", &self.add_ons);
-        formatter.field("size_in_gb", &self.size_in_gb);
-        formatter.field("is_system_disk", &self.is_system_disk);
-        formatter.field("iops", &self.iops);
-        formatter.field("path", &self.path);
-        formatter.field("state", &self.state);
-        formatter.field("attached_to", &self.attached_to);
-        formatter.field("is_attached", &self.is_attached);
-        formatter.field("attachment_state", &self.attachment_state);
-        formatter.field("gb_in_use", &self.gb_in_use);
-        formatter.finish()
     }
 }
 /// See [`Disk`](crate::model::Disk).
@@ -16111,7 +15414,7 @@ impl AsRef<str> for DiskState {
 
 /// <p>Describes an add-on that is enabled for an Amazon Lightsail resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddOn {
     /// <p>The name of the add-on.</p>
     #[doc(hidden)]
@@ -16150,16 +15453,6 @@ impl AddOn {
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     pub fn next_snapshot_time_of_day(&self) -> std::option::Option<&str> {
         self.next_snapshot_time_of_day.as_deref()
-    }
-}
-impl std::fmt::Debug for AddOn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddOn");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("snapshot_time_of_day", &self.snapshot_time_of_day);
-        formatter.field("next_snapshot_time_of_day", &self.next_snapshot_time_of_day);
-        formatter.finish()
     }
 }
 /// See [`AddOn`](crate::model::AddOn).
@@ -16345,7 +15638,7 @@ impl AsRef<str> for InstanceSnapshotState {
 
 /// <p>Describes an instance (a virtual private server).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     #[doc(hidden)]
@@ -16504,34 +15797,6 @@ impl Instance {
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
     pub fn metadata_options(&self) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
         self.metadata_options.as_ref()
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("blueprint_id", &self.blueprint_id);
-        formatter.field("blueprint_name", &self.blueprint_name);
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("add_ons", &self.add_ons);
-        formatter.field("is_static_ip", &self.is_static_ip);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.field("public_ip_address", &self.public_ip_address);
-        formatter.field("ipv6_addresses", &self.ipv6_addresses);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("hardware", &self.hardware);
-        formatter.field("networking", &self.networking);
-        formatter.field("state", &self.state);
-        formatter.field("username", &self.username);
-        formatter.field("ssh_key_name", &self.ssh_key_name);
-        formatter.field("metadata_options", &self.metadata_options);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -16884,7 +16149,7 @@ impl Instance {
 
 /// <p>The metadata options for the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMetadataOptions {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
@@ -16942,20 +16207,6 @@ impl InstanceMetadataOptions {
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
     pub fn http_protocol_ipv6(&self) -> std::option::Option<&crate::model::HttpProtocolIpv6> {
         self.http_protocol_ipv6.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceMetadataOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMetadataOptions");
-        formatter.field("state", &self.state);
-        formatter.field("http_tokens", &self.http_tokens);
-        formatter.field("http_endpoint", &self.http_endpoint);
-        formatter.field(
-            "http_put_response_hop_limit",
-            &self.http_put_response_hop_limit,
-        );
-        formatter.field("http_protocol_ipv6", &self.http_protocol_ipv6);
-        formatter.finish()
     }
 }
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
@@ -17166,7 +16417,7 @@ impl AsRef<str> for InstanceMetadataState {
 
 /// <p>Describes monthly data transfer rates and port information for an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceNetworking {
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
     #[doc(hidden)]
@@ -17183,14 +16434,6 @@ impl InstanceNetworking {
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
     pub fn ports(&self) -> std::option::Option<&[crate::model::InstancePortInfo]> {
         self.ports.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceNetworking {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceNetworking");
-        formatter.field("monthly_transfer", &self.monthly_transfer);
-        formatter.field("ports", &self.ports);
-        formatter.finish()
     }
 }
 /// See [`InstanceNetworking`](crate::model::InstanceNetworking).
@@ -17253,7 +16496,7 @@ impl InstanceNetworking {
 
 /// <p>Describes information about ports for an Amazon Lightsail instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstancePortInfo {
     /// <p>The first port in a range of open ports on an instance.</p>
     /// <p>Allowed ports:</p>
@@ -17382,22 +16625,6 @@ impl InstancePortInfo {
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
     pub fn cidr_list_aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.cidr_list_aliases.as_deref()
-    }
-}
-impl std::fmt::Debug for InstancePortInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstancePortInfo");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("access_from", &self.access_from);
-        formatter.field("access_type", &self.access_type);
-        formatter.field("common_name", &self.common_name);
-        formatter.field("access_direction", &self.access_direction);
-        formatter.field("cidrs", &self.cidrs);
-        formatter.field("ipv6_cidrs", &self.ipv6_cidrs);
-        formatter.field("cidr_list_aliases", &self.cidr_list_aliases);
-        formatter.finish()
     }
 }
 /// See [`InstancePortInfo`](crate::model::InstancePortInfo).
@@ -17816,7 +17043,7 @@ impl AsRef<str> for PortAccessType {
 
 /// <p>Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonthlyTransfer {
     /// <p>The amount allocated per month (in GB).</p>
     #[doc(hidden)]
@@ -17826,13 +17053,6 @@ impl MonthlyTransfer {
     /// <p>The amount allocated per month (in GB).</p>
     pub fn gb_per_month_allocated(&self) -> std::option::Option<i32> {
         self.gb_per_month_allocated
-    }
-}
-impl std::fmt::Debug for MonthlyTransfer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonthlyTransfer");
-        formatter.field("gb_per_month_allocated", &self.gb_per_month_allocated);
-        formatter.finish()
     }
 }
 /// See [`MonthlyTransfer`](crate::model::MonthlyTransfer).
@@ -17871,7 +17091,7 @@ impl MonthlyTransfer {
 
 /// <p>Describes the hardware for the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceHardware {
     /// <p>The number of vCPUs the instance has.</p>
     #[doc(hidden)]
@@ -17895,15 +17115,6 @@ impl InstanceHardware {
     /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
     pub fn ram_size_in_gb(&self) -> std::option::Option<f32> {
         self.ram_size_in_gb
-    }
-}
-impl std::fmt::Debug for InstanceHardware {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceHardware");
-        formatter.field("cpu_count", &self.cpu_count);
-        formatter.field("disks", &self.disks);
-        formatter.field("ram_size_in_gb", &self.ram_size_in_gb);
-        formatter.finish()
     }
 }
 /// See [`InstanceHardware`](crate::model::InstanceHardware).
@@ -17975,7 +17186,7 @@ impl InstanceHardware {
 
 /// <p>Describes open ports on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstancePortState {
     /// <p>The first port in a range of open ports on an instance.</p>
     /// <p>Allowed ports:</p>
@@ -18083,19 +17294,6 @@ impl InstancePortState {
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
     pub fn cidr_list_aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.cidr_list_aliases.as_deref()
-    }
-}
-impl std::fmt::Debug for InstancePortState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstancePortState");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("state", &self.state);
-        formatter.field("cidrs", &self.cidrs);
-        formatter.field("ipv6_cidrs", &self.ipv6_cidrs);
-        formatter.field("cidr_list_aliases", &self.cidr_list_aliases);
-        formatter.finish()
     }
 }
 /// See [`InstancePortState`](crate::model::InstancePortState).
@@ -18519,7 +17717,7 @@ impl AsRef<str> for InstanceMetricName {
 
 /// <p>The parameters for gaining temporary access to one of your Amazon Lightsail instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceAccessDetails {
     /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     #[doc(hidden)]
@@ -18598,22 +17796,6 @@ impl InstanceAccessDetails {
     /// <p>Describes the public SSH host keys or the RDP certificate.</p>
     pub fn host_keys(&self) -> std::option::Option<&[crate::model::HostKeyAttributes]> {
         self.host_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceAccessDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAccessDetails");
-        formatter.field("cert_key", &self.cert_key);
-        formatter.field("expires_at", &self.expires_at);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("password", &self.password);
-        formatter.field("password_data", &self.password_data);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("username", &self.username);
-        formatter.field("host_keys", &self.host_keys);
-        formatter.finish()
     }
 }
 /// See [`InstanceAccessDetails`](crate::model::InstanceAccessDetails).
@@ -18787,7 +17969,7 @@ impl InstanceAccessDetails {
 
 /// <p>Describes the public SSH host keys or the RDP certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostKeyAttributes {
     /// <p>The SSH host key algorithm or the RDP certificate format.</p>
     /// <p>For SSH host keys, the algorithm may be <code>ssh-rsa</code>, <code>ecdsa-sha2-nistp256</code>, <code>ssh-ed25519</code>, etc. For RDP certificates, the algorithm is always <code>x509-cert</code>.</p>
@@ -18861,19 +18043,6 @@ impl HostKeyAttributes {
     /// <p>This value is listed only for RDP certificates.</p>
     pub fn not_valid_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_valid_after.as_ref()
-    }
-}
-impl std::fmt::Debug for HostKeyAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostKeyAttributes");
-        formatter.field("algorithm", &self.algorithm);
-        formatter.field("public_key", &self.public_key);
-        formatter.field("witnessed_at", &self.witnessed_at);
-        formatter.field("fingerprint_sha1", &self.fingerprint_sha1);
-        formatter.field("fingerprint_sha256", &self.fingerprint_sha256);
-        formatter.field("not_valid_before", &self.not_valid_before);
-        formatter.field("not_valid_after", &self.not_valid_after);
-        formatter.finish()
     }
 }
 /// See [`HostKeyAttributes`](crate::model::HostKeyAttributes).
@@ -19113,7 +18282,7 @@ impl AsRef<str> for InstanceAccessProtocol {
 
 /// <p>The password data for the Windows Server-based instance, including the ciphertext and the key pair name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PasswordData {
     /// <p>The encrypted password. Ciphertext will be an empty string if access to your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p> <note>
     /// <p>If you use the default key pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be available in the password field.</p>
@@ -19140,14 +18309,6 @@ impl PasswordData {
     /// <p>If you are using a custom key pair, you need to use your own means of decrypting your password using the <code>ciphertext</code>. Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.</p>
     pub fn key_pair_name(&self) -> std::option::Option<&str> {
         self.key_pair_name.as_deref()
-    }
-}
-impl std::fmt::Debug for PasswordData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PasswordData");
-        formatter.field("ciphertext", &self.ciphertext);
-        formatter.field("key_pair_name", &self.key_pair_name);
-        formatter.finish()
     }
 }
 /// See [`PasswordData`](crate::model::PasswordData).
@@ -19211,7 +18372,7 @@ impl PasswordData {
 
 /// <p>Describes an export snapshot record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSnapshotRecord {
     /// <p>The export snapshot record name.</p>
     #[doc(hidden)]
@@ -19272,20 +18433,6 @@ impl ExportSnapshotRecord {
     /// <p>A list of objects describing the destination of the export snapshot record.</p>
     pub fn destination_info(&self) -> std::option::Option<&crate::model::DestinationInfo> {
         self.destination_info.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportSnapshotRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSnapshotRecord");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("state", &self.state);
-        formatter.field("source_info", &self.source_info);
-        formatter.field("destination_info", &self.destination_info);
-        formatter.finish()
     }
 }
 /// See [`ExportSnapshotRecord`](crate::model::ExportSnapshotRecord).
@@ -19423,7 +18570,7 @@ impl ExportSnapshotRecord {
 
 /// <p>Describes the destination of a record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationInfo {
     /// <p>The ID of the resource created at the destination.</p>
     #[doc(hidden)]
@@ -19440,14 +18587,6 @@ impl DestinationInfo {
     /// <p>The destination service of the record.</p>
     pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
-    }
-}
-impl std::fmt::Debug for DestinationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationInfo");
-        formatter.field("id", &self.id);
-        formatter.field("service", &self.service);
-        formatter.finish()
     }
 }
 /// See [`DestinationInfo`](crate::model::DestinationInfo).
@@ -19498,7 +18637,7 @@ impl DestinationInfo {
 
 /// <p>Describes the source of an export snapshot record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSnapshotRecordSourceInfo {
     /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
     #[doc(hidden)]
@@ -19561,20 +18700,6 @@ impl ExportSnapshotRecordSourceInfo {
     /// <p>A list of objects describing a disk snapshot.</p>
     pub fn disk_snapshot_info(&self) -> std::option::Option<&crate::model::DiskSnapshotInfo> {
         self.disk_snapshot_info.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportSnapshotRecordSourceInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSnapshotRecordSourceInfo");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("from_resource_name", &self.from_resource_name);
-        formatter.field("from_resource_arn", &self.from_resource_arn);
-        formatter.field("instance_snapshot_info", &self.instance_snapshot_info);
-        formatter.field("disk_snapshot_info", &self.disk_snapshot_info);
-        formatter.finish()
     }
 }
 /// See [`ExportSnapshotRecordSourceInfo`](crate::model::ExportSnapshotRecordSourceInfo).
@@ -19718,7 +18843,7 @@ impl ExportSnapshotRecordSourceInfo {
 
 /// <p>Describes a disk snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiskSnapshotInfo {
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     #[doc(hidden)]
@@ -19728,13 +18853,6 @@ impl DiskSnapshotInfo {
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     pub fn size_in_gb(&self) -> std::option::Option<i32> {
         self.size_in_gb
-    }
-}
-impl std::fmt::Debug for DiskSnapshotInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiskSnapshotInfo");
-        formatter.field("size_in_gb", &self.size_in_gb);
-        formatter.finish()
     }
 }
 /// See [`DiskSnapshotInfo`](crate::model::DiskSnapshotInfo).
@@ -19773,7 +18891,7 @@ impl DiskSnapshotInfo {
 
 /// <p>Describes an instance snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceSnapshotInfo {
     /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
     #[doc(hidden)]
@@ -19797,15 +18915,6 @@ impl InstanceSnapshotInfo {
     /// <p>A list of objects describing the disks that were attached to the source instance.</p>
     pub fn from_disk_info(&self) -> std::option::Option<&[crate::model::DiskInfo]> {
         self.from_disk_info.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceSnapshotInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceSnapshotInfo");
-        formatter.field("from_bundle_id", &self.from_bundle_id);
-        formatter.field("from_blueprint_id", &self.from_blueprint_id);
-        formatter.field("from_disk_info", &self.from_disk_info);
-        formatter.finish()
     }
 }
 /// See [`InstanceSnapshotInfo`](crate::model::InstanceSnapshotInfo).
@@ -19883,7 +18992,7 @@ impl InstanceSnapshotInfo {
 
 /// <p>Describes a disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiskInfo {
     /// <p>The disk name.</p>
     #[doc(hidden)]
@@ -19914,16 +19023,6 @@ impl DiskInfo {
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
     pub fn is_system_disk(&self) -> std::option::Option<bool> {
         self.is_system_disk
-    }
-}
-impl std::fmt::Debug for DiskInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiskInfo");
-        formatter.field("name", &self.name);
-        formatter.field("path", &self.path);
-        formatter.field("size_in_gb", &self.size_in_gb);
-        formatter.field("is_system_disk", &self.is_system_disk);
-        formatter.finish()
     }
 }
 /// See [`DiskInfo`](crate::model::DiskInfo).
@@ -20185,7 +19284,7 @@ impl AsRef<str> for RecordState {
 
 /// <p>Describes a domain where you are storing recordsets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Domain {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
@@ -20244,20 +19343,6 @@ impl Domain {
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
     pub fn domain_entries(&self) -> std::option::Option<&[crate::model::DomainEntry]> {
         self.domain_entries.as_deref()
-    }
-}
-impl std::fmt::Debug for Domain {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Domain");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("domain_entries", &self.domain_entries);
-        formatter.finish()
     }
 }
 /// See [`Domain`](crate::model::Domain).
@@ -20407,7 +19492,7 @@ impl Domain {
 
 /// <p>Describes an Amazon Lightsail content delivery network (CDN) distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LightsailDistribution {
     /// <p>The name of the distribution.</p>
     #[doc(hidden)]
@@ -20560,32 +19645,6 @@ impl LightsailDistribution {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for LightsailDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LightsailDistribution");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("alternative_domain_names", &self.alternative_domain_names);
-        formatter.field("status", &self.status);
-        formatter.field("is_enabled", &self.is_enabled);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("origin", &self.origin);
-        formatter.field("origin_public_dns", &self.origin_public_dns);
-        formatter.field("default_cache_behavior", &self.default_cache_behavior);
-        formatter.field("cache_behavior_settings", &self.cache_behavior_settings);
-        formatter.field("cache_behaviors", &self.cache_behaviors);
-        formatter.field("able_to_update_bundle", &self.able_to_update_bundle);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`LightsailDistribution`](crate::model::LightsailDistribution).
@@ -20916,7 +19975,7 @@ impl LightsailDistribution {
 /// <p>Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.</p>
 /// <p>An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Origin {
     /// <p>The name of the origin resource.</p>
     #[doc(hidden)]
@@ -20947,16 +20006,6 @@ impl Origin {
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
     pub fn protocol_policy(&self) -> std::option::Option<&crate::model::OriginProtocolPolicyEnum> {
         self.protocol_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for Origin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Origin");
-        formatter.field("name", &self.name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("region_name", &self.region_name);
-        formatter.field("protocol_policy", &self.protocol_policy);
-        formatter.finish()
     }
 }
 /// See [`Origin`](crate::model::Origin).
@@ -21159,7 +20208,7 @@ impl AsRef<str> for DistributionMetricName {
 
 /// <p>Describes the specifications of a distribution bundle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionBundle {
     /// <p>The ID of the bundle.</p>
     #[doc(hidden)]
@@ -21197,17 +20246,6 @@ impl DistributionBundle {
     /// <p>Indicates whether the bundle is active, and can be specified for a new or existing distribution.</p>
     pub fn is_active(&self) -> std::option::Option<bool> {
         self.is_active
-    }
-}
-impl std::fmt::Debug for DistributionBundle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionBundle");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("name", &self.name);
-        formatter.field("price", &self.price);
-        formatter.field("transfer_per_month_in_gb", &self.transfer_per_month_in_gb);
-        formatter.field("is_active", &self.is_active);
-        formatter.finish()
     }
 }
 /// See [`DistributionBundle`](crate::model::DistributionBundle).
@@ -21294,7 +20332,7 @@ impl DistributionBundle {
 
 /// <p>Describes a block storage disk snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiskSnapshot {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
     #[doc(hidden)]
@@ -21402,27 +20440,6 @@ impl DiskSnapshot {
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
     pub fn is_from_auto_snapshot(&self) -> std::option::Option<bool> {
         self.is_from_auto_snapshot
-    }
-}
-impl std::fmt::Debug for DiskSnapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiskSnapshot");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("size_in_gb", &self.size_in_gb);
-        formatter.field("state", &self.state);
-        formatter.field("progress", &self.progress);
-        formatter.field("from_disk_name", &self.from_disk_name);
-        formatter.field("from_disk_arn", &self.from_disk_arn);
-        formatter.field("from_instance_name", &self.from_instance_name);
-        formatter.field("from_instance_arn", &self.from_instance_arn);
-        formatter.field("is_from_auto_snapshot", &self.is_from_auto_snapshot);
-        formatter.finish()
     }
 }
 /// See [`DiskSnapshot`](crate::model::DiskSnapshot).
@@ -21765,7 +20782,7 @@ impl AsRef<str> for DiskSnapshotState {
 /// <p>Describes the powers that can be specified for an Amazon Lightsail container service.</p>
 /// <p>The power specifies the amount of RAM, the number of vCPUs, and the base price of the container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServicePower {
     /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
     #[doc(hidden)]
@@ -21810,18 +20827,6 @@ impl ContainerServicePower {
     /// <p>A Boolean value indicating whether the power is active and can be specified for container services.</p>
     pub fn is_active(&self) -> std::option::Option<bool> {
         self.is_active
-    }
-}
-impl std::fmt::Debug for ContainerServicePower {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServicePower");
-        formatter.field("power_id", &self.power_id);
-        formatter.field("price", &self.price);
-        formatter.field("cpu_count", &self.cpu_count);
-        formatter.field("ram_size_in_gb", &self.ram_size_in_gb);
-        formatter.field("name", &self.name);
-        formatter.field("is_active", &self.is_active);
-        formatter.finish()
     }
 }
 /// See [`ContainerServicePower`](crate::model::ContainerServicePower).
@@ -22012,7 +21017,7 @@ impl AsRef<str> for ContainerServiceMetricName {
 
 /// <p>Describes the log events of a container of an Amazon Lightsail container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceLogEvent {
     /// <p>The timestamp when the container service log event was created.</p>
     #[doc(hidden)]
@@ -22029,14 +21034,6 @@ impl ContainerServiceLogEvent {
     /// <p>The message of the container service log event.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerServiceLogEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceLogEvent");
-        formatter.field("created_at", &self.created_at);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceLogEvent`](crate::model::ContainerServiceLogEvent).
@@ -22091,7 +21088,7 @@ impl ContainerServiceLogEvent {
 /// <p>Describes a contact method.</p>
 /// <p>A contact method is a way to send you notifications. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactMethod {
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
     #[doc(hidden)]
@@ -22169,21 +21166,6 @@ impl ContactMethod {
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail contact method. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(&self) -> std::option::Option<&str> {
         self.support_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ContactMethod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactMethod");
-        formatter.field("contact_endpoint", &self.contact_endpoint);
-        formatter.field("status", &self.status);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("support_code", &self.support_code);
-        formatter.finish()
     }
 }
 /// See [`ContactMethod`](crate::model::ContactMethod).
@@ -22446,7 +21428,7 @@ impl AsRef<str> for ContactMethodStatus {
 /// <p>Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> action.</p>
 /// <p>A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFormationStackRecord {
     /// <p>The name of the CloudFormation stack record. It starts with <code>CloudFormationStackRecord</code> followed by a GUID.</p>
     #[doc(hidden)]
@@ -22508,20 +21490,6 @@ impl CloudFormationStackRecord {
     /// <p>A list of objects describing the destination service, which is AWS CloudFormation, and the Amazon Resource Name (ARN) of the AWS CloudFormation stack.</p>
     pub fn destination_info(&self) -> std::option::Option<&crate::model::DestinationInfo> {
         self.destination_info.as_ref()
-    }
-}
-impl std::fmt::Debug for CloudFormationStackRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFormationStackRecord");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("state", &self.state);
-        formatter.field("source_info", &self.source_info);
-        formatter.field("destination_info", &self.destination_info);
-        formatter.finish()
     }
 }
 /// See [`CloudFormationStackRecord`](crate::model::CloudFormationStackRecord).
@@ -22671,7 +21639,7 @@ impl CloudFormationStackRecord {
 
 /// <p>Describes the source of a CloudFormation stack record (i.e., the export snapshot record).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFormationStackRecordSourceInfo {
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
     #[doc(hidden)]
@@ -22697,15 +21665,6 @@ impl CloudFormationStackRecordSourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudFormationStackRecordSourceInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFormationStackRecordSourceInfo");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`CloudFormationStackRecordSourceInfo`](crate::model::CloudFormationStackRecordSourceInfo).
@@ -22862,7 +21821,7 @@ impl AsRef<str> for CloudFormationStackRecordSourceType {
 
 /// <p>Describes an Amazon Lightsail SSL/TLS certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateSummary {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     #[doc(hidden)]
@@ -22900,17 +21859,6 @@ impl CertificateSummary {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CertificateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateSummary");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_detail", &self.certificate_detail);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CertificateSummary`](crate::model::CertificateSummary).
@@ -23017,7 +21965,7 @@ impl CertificateSummary {
 /// <p>To get a summary of a certificate, use the <code>GetCertificates</code> action and ommit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     #[doc(hidden)]
@@ -23190,33 +22138,6 @@ impl Certificate {
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail certificate. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(&self) -> std::option::Option<&str> {
         self.support_code.as_deref()
-    }
-}
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("status", &self.status);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.field("domain_validation_records", &self.domain_validation_records);
-        formatter.field("request_failure_reason", &self.request_failure_reason);
-        formatter.field("in_use_resource_count", &self.in_use_resource_count);
-        formatter.field("key_algorithm", &self.key_algorithm);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("issued_at", &self.issued_at);
-        formatter.field("issuer_ca", &self.issuer_ca);
-        formatter.field("not_before", &self.not_before);
-        formatter.field("not_after", &self.not_after);
-        formatter.field("eligible_to_renew", &self.eligible_to_renew);
-        formatter.field("renewal_summary", &self.renewal_summary);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.field("revocation_reason", &self.revocation_reason);
-        formatter.field("tags", &self.tags);
-        formatter.field("support_code", &self.support_code);
-        formatter.finish()
     }
 }
 /// See [`Certificate`](crate::model::Certificate).
@@ -23583,7 +22504,7 @@ impl Certificate {
 
 /// <p>Describes the status of a SSL/TLS certificate renewal managed by Amazon Lightsail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenewalSummary {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
     #[doc(hidden)]
@@ -23631,16 +22552,6 @@ impl RenewalSummary {
     /// <p>The timestamp when the certificate was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for RenewalSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenewalSummary");
-        formatter.field("domain_validation_records", &self.domain_validation_records);
-        formatter.field("renewal_status", &self.renewal_status);
-        formatter.field("renewal_status_reason", &self.renewal_status_reason);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`RenewalSummary`](crate::model::RenewalSummary).
@@ -23856,7 +22767,7 @@ impl AsRef<str> for RenewalStatus {
 
 /// <p>Describes the domain validation records of an Amazon Lightsail SSL/TLS certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainValidationRecord {
     /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
     #[doc(hidden)]
@@ -23873,14 +22784,6 @@ impl DomainValidationRecord {
     /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
     pub fn resource_record(&self) -> std::option::Option<&crate::model::ResourceRecord> {
         self.resource_record.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainValidationRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainValidationRecord");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("resource_record", &self.resource_record);
-        formatter.finish()
     }
 }
 /// See [`DomainValidationRecord`](crate::model::DomainValidationRecord).
@@ -23934,7 +22837,7 @@ impl DomainValidationRecord {
 
 /// <p>Describes the domain name system (DNS) records to add to your domain's DNS to validate it for an Amazon Lightsail certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceRecord {
     /// <p>The name of the record.</p>
     #[doc(hidden)]
@@ -23958,15 +22861,6 @@ impl ResourceRecord {
     /// <p>The value for the DNS record.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceRecord");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceRecord`](crate::model::ResourceRecord).
@@ -24154,7 +23048,7 @@ impl AsRef<str> for CertificateStatus {
 
 /// <p>Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Bundle {
     /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
     #[doc(hidden)]
@@ -24234,23 +23128,6 @@ impl Bundle {
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
     pub fn supported_platforms(&self) -> std::option::Option<&[crate::model::InstancePlatform]> {
         self.supported_platforms.as_deref()
-    }
-}
-impl std::fmt::Debug for Bundle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Bundle");
-        formatter.field("price", &self.price);
-        formatter.field("cpu_count", &self.cpu_count);
-        formatter.field("disk_size_in_gb", &self.disk_size_in_gb);
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("is_active", &self.is_active);
-        formatter.field("name", &self.name);
-        formatter.field("power", &self.power);
-        formatter.field("ram_size_in_gb", &self.ram_size_in_gb);
-        formatter.field("transfer_per_month_in_gb", &self.transfer_per_month_in_gb);
-        formatter.field("supported_platforms", &self.supported_platforms);
-        formatter.finish()
     }
 }
 /// See [`Bundle`](crate::model::Bundle).
@@ -24513,7 +23390,7 @@ impl AsRef<str> for InstancePlatform {
 /// <p>Describes the synchronization status of the Amazon Simple Storage Service (Amazon S3) account-level block public access (BPA) feature for your Lightsail buckets.</p>
 /// <p>The account-level BPA feature of Amazon S3 provides centralized controls to limit public access to all Amazon S3 buckets in an account. BPA can make all Amazon S3 buckets in an Amazon Web Services account private regardless of the individual bucket and object permissions that are configured. Lightsail buckets take into account the Amazon S3 account-level BPA configuration when allowing or denying public access. To do this, Lightsail periodically fetches the account-level BPA configuration from Amazon S3. When the account-level BPA status is <code>InSync</code>, the Amazon S3 account-level BPA configuration is synchronized and it applies to your Lightsail buckets. For more information about Amazon Simple Storage Service account-level BPA and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountLevelBpaSync {
     /// <p>The status of the account-level BPA synchronization.</p>
     /// <p>The following statuses are possible:</p>
@@ -24576,16 +23453,6 @@ impl AccountLevelBpaSync {
     /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
     pub fn bpa_impacts_lightsail(&self) -> std::option::Option<bool> {
         self.bpa_impacts_lightsail
-    }
-}
-impl std::fmt::Debug for AccountLevelBpaSync {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountLevelBpaSync");
-        formatter.field("status", &self.status);
-        formatter.field("last_synced_at", &self.last_synced_at);
-        formatter.field("message", &self.message);
-        formatter.field("bpa_impacts_lightsail", &self.bpa_impacts_lightsail);
-        formatter.finish()
     }
 }
 /// See [`AccountLevelBpaSync`](crate::model::AccountLevelBpaSync).
@@ -24999,7 +23866,7 @@ impl AsRef<str> for BucketMetricName {
 /// <p>Describes the specifications of a bundle that can be applied to an Amazon Lightsail bucket.</p>
 /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketBundle {
     /// <p>The ID of the bundle.</p>
     #[doc(hidden)]
@@ -25044,18 +23911,6 @@ impl BucketBundle {
     /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
     pub fn is_active(&self) -> std::option::Option<bool> {
         self.is_active
-    }
-}
-impl std::fmt::Debug for BucketBundle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketBundle");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("name", &self.name);
-        formatter.field("price", &self.price);
-        formatter.field("storage_per_month_in_gb", &self.storage_per_month_in_gb);
-        formatter.field("transfer_per_month_in_gb", &self.transfer_per_month_in_gb);
-        formatter.field("is_active", &self.is_active);
-        formatter.finish()
     }
 }
 /// See [`BucketBundle`](crate::model::BucketBundle).
@@ -25220,7 +24075,7 @@ impl std::fmt::Debug for AccessKey {
 pub mod access_key {
 
     /// A builder for [`AccessKey`](crate::model::AccessKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
@@ -25310,6 +24165,17 @@ pub mod access_key {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_access_key", &self.secret_access_key);
+            formatter.field("status", &self.status);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_used", &self.last_used);
+            formatter.finish()
+        }
+    }
 }
 impl AccessKey {
     /// Creates a new builder-style object to manufacture [`AccessKey`](crate::model::AccessKey).
@@ -25322,7 +24188,7 @@ impl AccessKey {
 /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessKeyLastUsed {
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
@@ -25352,15 +24218,6 @@ impl AccessKeyLastUsed {
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessKeyLastUsed {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessKeyLastUsed");
-        formatter.field("last_used_date", &self.last_used_date);
-        formatter.field("region", &self.region);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
     }
 }
 /// See [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed).
@@ -25522,7 +24379,7 @@ impl AsRef<str> for StatusType {
 
 /// <p>Describes a blueprint (a virtual private server image).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Blueprint {
     /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
     #[doc(hidden)]
@@ -25609,24 +24466,6 @@ impl Blueprint {
     /// <p>The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::InstancePlatform> {
         self.platform.as_ref()
-    }
-}
-impl std::fmt::Debug for Blueprint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Blueprint");
-        formatter.field("blueprint_id", &self.blueprint_id);
-        formatter.field("name", &self.name);
-        formatter.field("group", &self.group);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("is_active", &self.is_active);
-        formatter.field("min_power", &self.min_power);
-        formatter.field("version", &self.version);
-        formatter.field("version_code", &self.version_code);
-        formatter.field("product_url", &self.product_url);
-        formatter.field("license_url", &self.license_url);
-        formatter.field("platform", &self.platform);
-        formatter.finish()
     }
 }
 /// See [`Blueprint`](crate::model::Blueprint).
@@ -25890,7 +24729,7 @@ impl AsRef<str> for BlueprintType {
 
 /// <p>Describes an automatic snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoSnapshotDetails {
     /// <p>The date of the automatic snapshot in <code>YYYY-MM-DD</code> format.</p>
     #[doc(hidden)]
@@ -25921,16 +24760,6 @@ impl AutoSnapshotDetails {
     /// <p>An array of objects that describe the block storage disks attached to the instance when the automatic snapshot was created.</p>
     pub fn from_attached_disks(&self) -> std::option::Option<&[crate::model::AttachedDisk]> {
         self.from_attached_disks.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoSnapshotDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoSnapshotDetails");
-        formatter.field("date", &self.date);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("from_attached_disks", &self.from_attached_disks);
-        formatter.finish()
     }
 }
 /// See [`AutoSnapshotDetails`](crate::model::AutoSnapshotDetails).
@@ -26021,7 +24850,7 @@ impl AutoSnapshotDetails {
 
 /// <p>Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachedDisk {
     /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
     #[doc(hidden)]
@@ -26038,14 +24867,6 @@ impl AttachedDisk {
     /// <p>The size of the disk in GB.</p>
     pub fn size_in_gb(&self) -> std::option::Option<i32> {
         self.size_in_gb
-    }
-}
-impl std::fmt::Debug for AttachedDisk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachedDisk");
-        formatter.field("path", &self.path);
-        formatter.field("size_in_gb", &self.size_in_gb);
-        formatter.finish()
     }
 }
 /// See [`AttachedDisk`](crate::model::AttachedDisk).
@@ -26199,7 +25020,7 @@ impl AsRef<str> for AutoSnapshotStatus {
 /// <p>Describes an alarm.</p>
 /// <p>An alarm is a way to monitor your Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
@@ -26386,32 +25207,6 @@ impl Alarm {
     /// <p>Indicates whether the alarm is enabled.</p>
     pub fn notification_enabled(&self) -> std::option::Option<bool> {
         self.notification_enabled
-    }
-}
-impl std::fmt::Debug for Alarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarm");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("location", &self.location);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("support_code", &self.support_code);
-        formatter.field("monitored_resource_info", &self.monitored_resource_info);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("evaluation_periods", &self.evaluation_periods);
-        formatter.field("period", &self.period);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("datapoints_to_alarm", &self.datapoints_to_alarm);
-        formatter.field("treat_missing_data", &self.treat_missing_data);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("state", &self.state);
-        formatter.field("unit", &self.unit);
-        formatter.field("contact_protocols", &self.contact_protocols);
-        formatter.field("notification_triggers", &self.notification_triggers);
-        formatter.field("notification_enabled", &self.notification_enabled);
-        formatter.finish()
     }
 }
 /// See [`Alarm`](crate::model::Alarm).
@@ -26769,7 +25564,7 @@ impl Alarm {
 /// <p>Describes resource being monitored by an alarm.</p>
 /// <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoredResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource being monitored.</p>
     #[doc(hidden)]
@@ -26795,15 +25590,6 @@ impl MonitoredResourceInfo {
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
-    }
-}
-impl std::fmt::Debug for MonitoredResourceInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoredResourceInfo");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`MonitoredResourceInfo`](crate::model::MonitoredResourceInfo).
@@ -26873,7 +25659,7 @@ impl MonitoredResourceInfo {
 /// <p>An additional cost may be associated with enabling add-ons. For more information, see the <a href="https://aws.amazon.com/lightsail/pricing/">Lightsail pricing page</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddOnRequest {
     /// <p>The add-on type.</p>
     #[doc(hidden)]
@@ -26892,17 +25678,6 @@ impl AddOnRequest {
         &self,
     ) -> std::option::Option<&crate::model::AutoSnapshotAddOnRequest> {
         self.auto_snapshot_add_on_request.as_ref()
-    }
-}
-impl std::fmt::Debug for AddOnRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddOnRequest");
-        formatter.field("add_on_type", &self.add_on_type);
-        formatter.field(
-            "auto_snapshot_add_on_request",
-            &self.auto_snapshot_add_on_request,
-        );
-        formatter.finish()
     }
 }
 /// See [`AddOnRequest`](crate::model::AddOnRequest).
@@ -26970,7 +25745,7 @@ impl AddOnRequest {
 /// <li> <p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoSnapshotAddOnRequest {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
@@ -26992,13 +25767,6 @@ impl AutoSnapshotAddOnRequest {
     /// </ul>
     pub fn snapshot_time_of_day(&self) -> std::option::Option<&str> {
         self.snapshot_time_of_day.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoSnapshotAddOnRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoSnapshotAddOnRequest");
-        formatter.field("snapshot_time_of_day", &self.snapshot_time_of_day);
-        formatter.finish()
     }
 }
 /// See [`AutoSnapshotAddOnRequest`](crate::model::AutoSnapshotAddOnRequest).
@@ -27137,7 +25905,7 @@ impl AsRef<str> for AddOnType {
 
 /// <p>Describes a block storage disk mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiskMap {
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
     #[doc(hidden)]
@@ -27154,14 +25922,6 @@ impl DiskMap {
     /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
     pub fn new_disk_name(&self) -> std::option::Option<&str> {
         self.new_disk_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DiskMap {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiskMap");
-        formatter.field("original_disk_path", &self.original_disk_path);
-        formatter.field("new_disk_name", &self.new_disk_name);
-        formatter.finish()
     }
 }
 /// See [`DiskMap`](crate::model::DiskMap).
@@ -27218,7 +25978,7 @@ impl DiskMap {
 
 /// <p>Describes the login information for the container image registry of an Amazon Lightsail account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceRegistryLogin {
     /// <p>The container service registry username to use to push container images to the container image registry of a Lightsail account.</p>
     #[doc(hidden)]
@@ -27251,16 +26011,6 @@ impl ContainerServiceRegistryLogin {
     /// <p>The address to use to push container images to the container image registry of a Lightsail account.</p>
     pub fn registry(&self) -> std::option::Option<&str> {
         self.registry.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerServiceRegistryLogin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceRegistryLogin");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.field("expires_at", &self.expires_at);
-        formatter.field("registry", &self.registry);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceRegistryLogin`](crate::model::ContainerServiceRegistryLogin).
@@ -27340,7 +26090,7 @@ impl ContainerServiceRegistryLogin {
 
 /// <p>Describes the settings of a public endpoint for an Amazon Lightsail container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointRequest {
     /// <p>The name of the container for the endpoint.</p>
     #[doc(hidden)]
@@ -27366,15 +26116,6 @@ impl EndpointRequest {
         &self,
     ) -> std::option::Option<&crate::model::ContainerServiceHealthCheckConfig> {
         self.health_check.as_ref()
-    }
-}
-impl std::fmt::Debug for EndpointRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointRequest");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("container_port", &self.container_port);
-        formatter.field("health_check", &self.health_check);
-        formatter.finish()
     }
 }
 /// See [`EndpointRequest`](crate::model::EndpointRequest).
@@ -27448,7 +26189,7 @@ impl EndpointRequest {
 /// <p>Describes a container deployment configuration of an Amazon Lightsail container service.</p>
 /// <p>A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerServiceDeploymentRequest {
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     #[doc(hidden)]
@@ -27470,14 +26211,6 @@ impl ContainerServiceDeploymentRequest {
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub fn public_endpoint(&self) -> std::option::Option<&crate::model::EndpointRequest> {
         self.public_endpoint.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerServiceDeploymentRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerServiceDeploymentRequest");
-        formatter.field("containers", &self.containers);
-        formatter.field("public_endpoint", &self.public_endpoint);
-        formatter.finish()
     }
 }
 /// See [`ContainerServiceDeploymentRequest`](crate::model::ContainerServiceDeploymentRequest).
@@ -27548,7 +26281,7 @@ impl ContainerServiceDeploymentRequest {
 
 /// <p>Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceEntry {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
@@ -27610,17 +26343,6 @@ impl InstanceEntry {
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceEntry");
-        formatter.field("source_name", &self.source_name);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("port_info_source", &self.port_info_source);
-        formatter.field("user_data", &self.user_data);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.finish()
     }
 }
 /// See [`InstanceEntry`](crate::model::InstanceEntry).

@@ -9711,7 +9711,7 @@ impl UpdateEndpointInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEndpointInput {
     /// <p>The name of the endpoint you want to update.</p>
     #[doc(hidden)]
@@ -9758,22 +9758,10 @@ impl UpdateEndpointInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEndpointInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("routing_config", &self.routing_config);
-        formatter.field("replication_config", &self.replication_config);
-        formatter.field("event_buses", &self.event_buses);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionInput {
     /// <p>The name of the connection to update.</p>
     #[doc(hidden)]
@@ -9810,20 +9798,10 @@ impl UpdateConnectionInput {
         self.auth_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("auth_parameters", &self.auth_parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateArchiveInput {
     /// <p>The name of the archive to update.</p>
     #[doc(hidden)]
@@ -9856,20 +9834,10 @@ impl UpdateArchiveInput {
         self.retention_days
     }
 }
-impl std::fmt::Debug for UpdateArchiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateArchiveInput");
-        formatter.field("archive_name", &self.archive_name);
-        formatter.field("description", &self.description);
-        formatter.field("event_pattern", &self.event_pattern);
-        formatter.field("retention_days", &self.retention_days);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApiDestinationInput {
     /// <p>The name of the API destination to update.</p>
     #[doc(hidden)]
@@ -9916,25 +9884,10 @@ impl UpdateApiDestinationInput {
         self.invocation_rate_limit_per_second
     }
 }
-impl std::fmt::Debug for UpdateApiDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApiDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("invocation_endpoint", &self.invocation_endpoint);
-        formatter.field("http_method", &self.http_method);
-        formatter.field(
-            "invocation_rate_limit_per_second",
-            &self.invocation_rate_limit_per_second,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the EventBridge resource from which you are removing tags.</p>
     #[doc(hidden)]
@@ -9953,18 +9906,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestEventPatternInput {
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     #[doc(hidden)]
@@ -10001,18 +9946,10 @@ impl TestEventPatternInput {
         self.event.as_deref()
     }
 }
-impl std::fmt::Debug for TestEventPatternInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestEventPatternInput");
-        formatter.field("event_pattern", &self.event_pattern);
-        formatter.field("event", &self.event);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the EventBridge resource that you're adding tags to.</p>
     #[doc(hidden)]
@@ -10031,18 +9968,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartReplayInput {
     /// <p>The name of the replay to start.</p>
     #[doc(hidden)]
@@ -10089,22 +10018,10 @@ impl StartReplayInput {
         self.destination.as_ref()
     }
 }
-impl std::fmt::Debug for StartReplayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartReplayInput");
-        formatter.field("replay_name", &self.replay_name);
-        formatter.field("description", &self.description);
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("event_start_time", &self.event_start_time);
-        formatter.field("event_end_time", &self.event_end_time);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTargetsInput {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -10137,20 +10054,10 @@ impl RemoveTargetsInput {
         self.force
     }
 }
-impl std::fmt::Debug for RemoveTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTargetsInput");
-        formatter.field("rule", &self.rule);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.field("ids", &self.ids);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
     #[doc(hidden)]
@@ -10176,19 +10083,10 @@ impl RemovePermissionInput {
         self.event_bus_name.as_deref()
     }
 }
-impl std::fmt::Debug for RemovePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionInput");
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("remove_all_permissions", &self.remove_all_permissions);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutTargetsInput {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -10214,19 +10112,10 @@ impl PutTargetsInput {
         self.targets.as_deref()
     }
 }
-impl std::fmt::Debug for PutTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutTargetsInput");
-        formatter.field("rule", &self.rule);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.field("targets", &self.targets);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRuleInput {
     /// <p>The name of the rule that you are creating or updating.</p>
     #[doc(hidden)]
@@ -10289,24 +10178,10 @@ impl PutRuleInput {
         self.event_bus_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.field("event_pattern", &self.event_pattern);
-        formatter.field("state", &self.state);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPermissionInput {
     /// <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     #[doc(hidden)]
@@ -10363,22 +10238,10 @@ impl PutPermissionInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPermissionInput");
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("condition", &self.condition);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPartnerEventsInput {
     /// <p>The list of events to write to the event bus.</p>
     #[doc(hidden)]
@@ -10390,17 +10253,10 @@ impl PutPartnerEventsInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for PutPartnerEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPartnerEventsInput");
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventsInput {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     #[doc(hidden)]
@@ -10423,18 +10279,10 @@ impl PutEventsInput {
         self.endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventsInput");
-        formatter.field("entries", &self.entries);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTargetsByRuleInput {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -10467,20 +10315,10 @@ impl ListTargetsByRuleInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTargetsByRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTargetsByRuleInput");
-        formatter.field("rule", &self.rule);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the EventBridge resource for which you want to view tags.</p>
     #[doc(hidden)]
@@ -10492,17 +10330,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRulesInput {
     /// <p>The prefix matching the rule name.</p>
     #[doc(hidden)]
@@ -10535,20 +10366,10 @@ impl ListRulesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRulesInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRuleNamesByTargetInput {
     /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
     #[doc(hidden)]
@@ -10581,20 +10402,10 @@ impl ListRuleNamesByTargetInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRuleNamesByTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRuleNamesByTargetInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReplaysInput {
     /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
     #[doc(hidden)]
@@ -10634,21 +10445,10 @@ impl ListReplaysInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListReplaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReplaysInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("state", &self.state);
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPartnerEventSourcesInput {
     /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
     #[doc(hidden)]
@@ -10674,19 +10474,10 @@ impl ListPartnerEventSourcesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListPartnerEventSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPartnerEventSourcesInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPartnerEventSourceAccountsInput {
     /// <p>The name of the partner event source to display account information about.</p>
     #[doc(hidden)]
@@ -10712,19 +10503,10 @@ impl ListPartnerEventSourceAccountsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListPartnerEventSourceAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPartnerEventSourceAccountsInput");
-        formatter.field("event_source_name", &self.event_source_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventSourcesInput {
     /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
     #[doc(hidden)]
@@ -10750,19 +10532,10 @@ impl ListEventSourcesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListEventSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventSourcesInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventBusesInput {
     /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
     #[doc(hidden)]
@@ -10788,19 +10561,10 @@ impl ListEventBusesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListEventBusesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventBusesInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEndpointsInput {
     /// <p>A value that will return a subset of the endpoints associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
     #[doc(hidden)]
@@ -10833,20 +10597,10 @@ impl ListEndpointsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEndpointsInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectionsInput {
     /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
     #[doc(hidden)]
@@ -10879,20 +10633,10 @@ impl ListConnectionsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectionsInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListArchivesInput {
     /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
     #[doc(hidden)]
@@ -10932,21 +10676,10 @@ impl ListArchivesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListArchivesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListArchivesInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("state", &self.state);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApiDestinationsInput {
     /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
     #[doc(hidden)]
@@ -10979,20 +10712,10 @@ impl ListApiDestinationsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListApiDestinationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApiDestinationsInput");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableRuleInput {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -11011,18 +10734,10 @@ impl EnableRuleInput {
         self.event_bus_name.as_deref()
     }
 }
-impl std::fmt::Debug for EnableRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableRuleInput {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -11041,18 +10756,10 @@ impl DisableRuleInput {
         self.event_bus_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisableRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuleInput {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -11071,18 +10778,10 @@ impl DescribeRuleInput {
         self.event_bus_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplayInput {
     /// <p>The name of the replay to retrieve.</p>
     #[doc(hidden)]
@@ -11094,17 +10793,10 @@ impl DescribeReplayInput {
         self.replay_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReplayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplayInput");
-        formatter.field("replay_name", &self.replay_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePartnerEventSourceInput {
     /// <p>The name of the event source to display.</p>
     #[doc(hidden)]
@@ -11116,17 +10808,10 @@ impl DescribePartnerEventSourceInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePartnerEventSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePartnerEventSourceInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventSourceInput {
     /// <p>The name of the partner event source to display the details of.</p>
     #[doc(hidden)]
@@ -11138,17 +10823,10 @@ impl DescribeEventSourceInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventSourceInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventBusInput {
     /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
     #[doc(hidden)]
@@ -11160,17 +10838,10 @@ impl DescribeEventBusInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventBusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventBusInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointInput {
     /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
     #[doc(hidden)]
@@ -11189,18 +10860,10 @@ impl DescribeEndpointInput {
         self.home_region.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointInput");
-        formatter.field("name", &self.name);
-        formatter.field("home_region", &self.home_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionInput {
     /// <p>The name of the connection to retrieve.</p>
     #[doc(hidden)]
@@ -11212,17 +10875,10 @@ impl DescribeConnectionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeArchiveInput {
     /// <p>The name of the archive to retrieve.</p>
     #[doc(hidden)]
@@ -11234,17 +10890,10 @@ impl DescribeArchiveInput {
         self.archive_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeArchiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeArchiveInput");
-        formatter.field("archive_name", &self.archive_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApiDestinationInput {
     /// <p>The name of the API destination to retrieve.</p>
     #[doc(hidden)]
@@ -11256,17 +10905,10 @@ impl DescribeApiDestinationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApiDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApiDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleInput {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -11292,19 +10934,10 @@ impl DeleteRuleInput {
         self.force
     }
 }
-impl std::fmt::Debug for DeleteRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePartnerEventSourceInput {
     /// <p>The name of the event source to delete.</p>
     #[doc(hidden)]
@@ -11323,18 +10956,10 @@ impl DeletePartnerEventSourceInput {
         self.account.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePartnerEventSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePartnerEventSourceInput");
-        formatter.field("name", &self.name);
-        formatter.field("account", &self.account);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventBusInput {
     /// <p>The name of the event bus to delete.</p>
     #[doc(hidden)]
@@ -11346,17 +10971,10 @@ impl DeleteEventBusInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventBusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventBusInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
     #[doc(hidden)]
@@ -11368,17 +10986,10 @@ impl DeleteEndpointInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEndpointInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The name of the connection to delete.</p>
     #[doc(hidden)]
@@ -11390,17 +11001,10 @@ impl DeleteConnectionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteArchiveInput {
     /// <p>The name of the archive to delete.</p>
     #[doc(hidden)]
@@ -11412,17 +11016,10 @@ impl DeleteArchiveInput {
         self.archive_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteArchiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteArchiveInput");
-        formatter.field("archive_name", &self.archive_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApiDestinationInput {
     /// <p>The name of the destination to delete.</p>
     #[doc(hidden)]
@@ -11434,17 +11031,10 @@ impl DeleteApiDestinationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApiDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApiDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeauthorizeConnectionInput {
     /// <p>The name of the connection to remove authorization from.</p>
     #[doc(hidden)]
@@ -11456,17 +11046,10 @@ impl DeauthorizeConnectionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeauthorizeConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeauthorizeConnectionInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateEventSourceInput {
     /// <p>The name of the partner event source to deactivate.</p>
     #[doc(hidden)]
@@ -11478,17 +11061,10 @@ impl DeactivateEventSourceInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeactivateEventSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateEventSourceInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePartnerEventSourceInput {
     /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
     #[doc(hidden)]
@@ -11507,18 +11083,10 @@ impl CreatePartnerEventSourceInput {
         self.account.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePartnerEventSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePartnerEventSourceInput");
-        formatter.field("name", &self.name);
-        formatter.field("account", &self.account);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventBusInput {
     /// <p>The name of the new event bus. </p>
     /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
@@ -11548,19 +11116,10 @@ impl CreateEventBusInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEventBusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventBusInput");
-        formatter.field("name", &self.name);
-        formatter.field("event_source_name", &self.event_source_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEndpointInput {
     /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
     #[doc(hidden)]
@@ -11611,22 +11170,10 @@ impl CreateEndpointInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEndpointInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("routing_config", &self.routing_config);
-        formatter.field("replication_config", &self.replication_config);
-        formatter.field("event_buses", &self.event_buses);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The name for the connection to create.</p>
     #[doc(hidden)]
@@ -11663,20 +11210,10 @@ impl CreateConnectionInput {
         self.auth_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("auth_parameters", &self.auth_parameters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateArchiveInput {
     /// <p>The name for the archive to create.</p>
     #[doc(hidden)]
@@ -11716,21 +11253,10 @@ impl CreateArchiveInput {
         self.retention_days
     }
 }
-impl std::fmt::Debug for CreateArchiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateArchiveInput");
-        formatter.field("archive_name", &self.archive_name);
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("description", &self.description);
-        formatter.field("event_pattern", &self.event_pattern);
-        formatter.field("retention_days", &self.retention_days);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiDestinationInput {
     /// <p>The name for the API destination to create.</p>
     #[doc(hidden)]
@@ -11777,25 +11303,10 @@ impl CreateApiDestinationInput {
         self.invocation_rate_limit_per_second
     }
 }
-impl std::fmt::Debug for CreateApiDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApiDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("invocation_endpoint", &self.invocation_endpoint);
-        formatter.field("http_method", &self.http_method);
-        formatter.field(
-            "invocation_rate_limit_per_second",
-            &self.invocation_rate_limit_per_second,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelReplayInput {
     /// <p>The name of the replay to cancel.</p>
     #[doc(hidden)]
@@ -11807,17 +11318,10 @@ impl CancelReplayInput {
         self.replay_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelReplayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelReplayInput");
-        formatter.field("replay_name", &self.replay_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateEventSourceInput {
     /// <p>The name of the partner event source to activate.</p>
     #[doc(hidden)]
@@ -11827,12 +11331,5 @@ impl ActivateEventSourceInput {
     /// <p>The name of the partner event source to activate.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivateEventSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateEventSourceInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }

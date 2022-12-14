@@ -2,18 +2,11 @@
 
 /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafStaleDataException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafStaleDataException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafStaleDataException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafStaleDataException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl WafStaleDataException {
 
 /// <p>The operation failed because the referenced object doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafNonexistentItemException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafNonexistentItemException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafNonexistentItemException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafNonexistentItemException {
     /// Returns the error message.
@@ -145,18 +131,11 @@ impl WafNonexistentItemException {
 /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafNonexistentContainerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafNonexistentContainerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafNonexistentContainerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafNonexistentContainerException {
     /// Returns the error message.
@@ -215,18 +194,11 @@ impl WafNonexistentContainerException {
 
 /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafLimitsExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafLimitsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafLimitsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafLimitsExceededException {
     /// Returns the error message.
@@ -293,7 +265,7 @@ impl WafLimitsExceededException {
 /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -320,16 +292,6 @@ impl WafInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(&self) -> std::option::Option<&crate::model::ParameterExceptionReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for WafInvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidParameterException");
-        formatter.field("field", &self.field);
-        formatter.field("parameter", &self.parameter);
-        formatter.field("reason", &self.reason);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl WafInvalidParameterException {
@@ -438,18 +400,11 @@ impl WafInvalidParameterException {
 /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInvalidOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInvalidOperationException {
     /// Returns the error message.
@@ -508,18 +463,11 @@ impl WafInvalidOperationException {
 
 /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidAccountException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInvalidAccountException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidAccountException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInvalidAccountException {
     /// Returns the error message.
@@ -575,18 +523,11 @@ impl WafInvalidAccountException {
 
 /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInternalErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInternalErrorException {
     /// Returns the error message.
@@ -642,18 +583,11 @@ impl WafInternalErrorException {
 
 /// <p>The specified subscription does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafSubscriptionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafSubscriptionNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafSubscriptionNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafSubscriptionNotFoundException {
     /// Returns the error message.
@@ -716,18 +650,11 @@ impl WafSubscriptionNotFoundException {
 /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafReferencedItemException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafReferencedItemException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafReferencedItemException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafReferencedItemException {
     /// Returns the error message.
@@ -783,18 +710,11 @@ impl WafReferencedItemException {
 
 /// <p>The regular expression (regex) you specified in <code>RegexPatternString</code> is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidRegexPatternException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInvalidRegexPatternException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidRegexPatternException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInvalidRegexPatternException {
     /// Returns the error message.
@@ -853,18 +773,11 @@ impl WafInvalidRegexPatternException {
 
 /// <p>The name specified is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafDisallowedNameException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafDisallowedNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafDisallowedNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafDisallowedNameException {
     /// Returns the error message.
@@ -920,18 +833,11 @@ impl WafDisallowedNameException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafTagOperationInternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafTagOperationInternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafTagOperationInternalErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafTagOperationInternalErrorException {
     /// Returns the error message.
@@ -990,18 +896,11 @@ impl WafTagOperationInternalErrorException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafTagOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafTagOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafTagOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafTagOperationException {
     /// Returns the error message.
@@ -1057,18 +956,11 @@ impl WafTagOperationException {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafBadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafBadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafBadRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafBadRequestException {
     /// Returns the error message.
@@ -1135,18 +1027,11 @@ impl WafBadRequestException {
 /// <li> <p>Your policy must be composed using IAM Policy version 2012-10-17.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafInvalidPermissionPolicyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafInvalidPermissionPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafInvalidPermissionPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafInvalidPermissionPolicyException {
     /// Returns the error message.
@@ -1205,18 +1090,11 @@ impl WafInvalidPermissionPolicyException {
 
 /// <p>AWS WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafServiceLinkedRoleErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafServiceLinkedRoleErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafServiceLinkedRoleErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafServiceLinkedRoleErrorException {
     /// Returns the error message.
@@ -1275,18 +1153,11 @@ impl WafServiceLinkedRoleErrorException {
 
 /// <p>The operation failed because the entity referenced is temporarily unavailable. Retry your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafUnavailableEntityException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafUnavailableEntityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafUnavailableEntityException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafUnavailableEntityException {
     /// Returns the error message.
@@ -1351,18 +1222,11 @@ impl WafUnavailableEntityException {
 /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafNonEmptyEntityException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WafNonEmptyEntityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafNonEmptyEntityException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WafNonEmptyEntityException {
     /// Returns the error message.
@@ -1427,7 +1291,7 @@ impl WafNonEmptyEntityException {
 /// <li> <p> <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3 bucket for another reason.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WafEntityMigrationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1447,15 +1311,6 @@ impl WafEntityMigrationException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn migration_error_reason(&self) -> std::option::Option<&str> {
         self.migration_error_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for WafEntityMigrationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WafEntityMigrationException");
-        formatter.field("message", &self.message);
-        formatter.field("migration_error_type", &self.migration_error_type);
-        formatter.field("migration_error_reason", &self.migration_error_reason);
-        formatter.finish()
     }
 }
 impl WafEntityMigrationException {

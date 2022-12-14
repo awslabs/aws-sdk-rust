@@ -2,7 +2,7 @@
 
 /// <p>Information about the task assigned to one or many devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskSummary {
     /// <p>The task ID.</p>
     #[doc(hidden)]
@@ -37,16 +37,6 @@ impl TaskSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskSummary");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`TaskSummary`](crate::model::TaskSummary).
@@ -284,14 +274,8 @@ impl Command {
 
 /// <p>A structure used to reboot the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Reboot {}
-impl std::fmt::Debug for Reboot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Reboot");
-        formatter.finish()
-    }
-}
 /// See [`Reboot`](crate::model::Reboot).
 pub mod reboot {
 
@@ -314,14 +298,8 @@ impl Reboot {
 
 /// <p>A structure used to unlock a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Unlock {}
-impl std::fmt::Debug for Unlock {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Unlock");
-        formatter.finish()
-    }
-}
 /// See [`Unlock`](crate::model::Unlock).
 pub mod unlock {
 
@@ -344,7 +322,7 @@ impl Unlock {
 
 /// <p>The summary of a task execution on a specified device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionSummary {
     /// <p>The ID of the task.</p>
     #[doc(hidden)]
@@ -375,16 +353,6 @@ impl ExecutionSummary {
     /// <p>The state of the execution.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ExecutionState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionSummary");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("managed_device_id", &self.managed_device_id);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ExecutionSummary`](crate::model::ExecutionSummary).
@@ -588,7 +556,7 @@ impl AsRef<str> for ExecutionState {
 
 /// <p>A summary of a resource available on the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSummary {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -612,15 +580,6 @@ impl ResourceSummary {
     /// <p>The ID of the resource.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSummary");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`ResourceSummary`](crate::model::ResourceSummary).
@@ -686,7 +645,7 @@ impl ResourceSummary {
 
 /// <p>The details about the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p>A structure containing details about the instance.</p>
     #[doc(hidden)]
@@ -703,14 +662,6 @@ impl InstanceSummary {
     /// <p>When the instance summary was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceSummary");
-        formatter.field("instance", &self.instance);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
@@ -764,7 +715,7 @@ impl InstanceSummary {
 
 /// <p>The description of an instance. Currently, Amazon EC2 instances are the only supported instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The ID of the AMI used to launch the instance.</p>
     #[doc(hidden)]
@@ -861,25 +812,6 @@ impl Instance {
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
     pub fn root_device_name(&self) -> std::option::Option<&str> {
         self.root_device_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("image_id", &self.image_id);
-        formatter.field("ami_launch_index", &self.ami_launch_index);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("state", &self.state);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.field("public_ip_address", &self.public_ip_address);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("cpu_options", &self.cpu_options);
-        formatter.field("root_device_name", &self.root_device_name);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -1109,7 +1041,7 @@ impl Instance {
 
 /// <p>The options for how a device's CPU is configured.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CpuOptions {
     /// <p>The number of cores that the CPU can use.</p>
     #[doc(hidden)]
@@ -1126,14 +1058,6 @@ impl CpuOptions {
     /// <p>The number of threads per core in the CPU.</p>
     pub fn threads_per_core(&self) -> std::option::Option<i32> {
         self.threads_per_core
-    }
-}
-impl std::fmt::Debug for CpuOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CpuOptions");
-        formatter.field("core_count", &self.core_count);
-        formatter.field("threads_per_core", &self.threads_per_core);
-        formatter.finish()
     }
 }
 /// See [`CpuOptions`](crate::model::CpuOptions).
@@ -1184,7 +1108,7 @@ impl CpuOptions {
 
 /// <p>Information about the device's security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupIdentifier {
     /// <p>The security group ID.</p>
     #[doc(hidden)]
@@ -1201,14 +1125,6 @@ impl SecurityGroupIdentifier {
     /// <p>The security group name.</p>
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityGroupIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupIdentifier");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("group_name", &self.group_name);
-        formatter.finish()
     }
 }
 /// See [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
@@ -1259,7 +1175,7 @@ impl SecurityGroupIdentifier {
 
 /// <p>The description of a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceBlockDeviceMapping {
     /// <p>The block device name.</p>
     #[doc(hidden)]
@@ -1276,14 +1192,6 @@ impl InstanceBlockDeviceMapping {
     /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
     pub fn ebs(&self) -> std::option::Option<&crate::model::EbsInstanceBlockDevice> {
         self.ebs.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceBlockDeviceMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceBlockDeviceMapping");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("ebs", &self.ebs);
-        formatter.finish()
     }
 }
 /// See [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
@@ -1337,7 +1245,7 @@ impl InstanceBlockDeviceMapping {
 
 /// <p>Describes a parameter used to set up an Amazon Elastic Block Store (Amazon EBS) volume in a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsInstanceBlockDevice {
     /// <p>When the attachment was initiated.</p>
     #[doc(hidden)]
@@ -1368,16 +1276,6 @@ impl EbsInstanceBlockDevice {
     /// <p>The ID of the Amazon EBS volume.</p>
     pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EbsInstanceBlockDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsInstanceBlockDevice");
-        formatter.field("attach_time", &self.attach_time);
-        formatter.field("delete_on_termination", &self.delete_on_termination);
-        formatter.field("status", &self.status);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.finish()
     }
 }
 /// See [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
@@ -1558,7 +1456,7 @@ impl AsRef<str> for AttachmentStatus {
 
 /// <p>The description of the current state of an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceState {
     /// <p>The state of the instance as a 16-bit unsigned integer. </p>
     /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
@@ -1599,14 +1497,6 @@ impl InstanceState {
     /// <p>The current state of the instance.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::InstanceStateName> {
         self.name.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceState");
-        formatter.field("code", &self.code);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`InstanceState`](crate::model::InstanceState).
@@ -1803,7 +1693,7 @@ impl AsRef<str> for InstanceStateName {
 
 /// <p>Identifying information about the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceSummary {
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
@@ -1838,16 +1728,6 @@ impl DeviceSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceSummary");
-        formatter.field("managed_device_id", &self.managed_device_id);
-        formatter.field("managed_device_arn", &self.managed_device_arn);
-        formatter.field("associated_with_job", &self.associated_with_job);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DeviceSummary`](crate::model::DeviceSummary).
@@ -1948,7 +1828,7 @@ impl DeviceSummary {
 
 /// <p>Information about the software on the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SoftwareInformation {
     /// <p>The version of the software currently installed on the device.</p>
     #[doc(hidden)]
@@ -1972,15 +1852,6 @@ impl SoftwareInformation {
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
     pub fn install_state(&self) -> std::option::Option<&str> {
         self.install_state.as_deref()
-    }
-}
-impl std::fmt::Debug for SoftwareInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SoftwareInformation");
-        formatter.field("installed_version", &self.installed_version);
-        formatter.field("installing_version", &self.installing_version);
-        formatter.field("install_state", &self.install_state);
-        formatter.finish()
     }
 }
 /// See [`SoftwareInformation`](crate::model::SoftwareInformation).
@@ -2052,7 +1923,7 @@ impl SoftwareInformation {
 
 /// <p>The physical capacity of the Amazon Web Services Snow Family device. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Capacity {
     /// <p>The name of the type of capacity, such as memory.</p>
     #[doc(hidden)]
@@ -2090,17 +1961,6 @@ impl Capacity {
     /// <p>The amount of capacity available for use on the device.</p>
     pub fn available(&self) -> std::option::Option<i64> {
         self.available
-    }
-}
-impl std::fmt::Debug for Capacity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Capacity");
-        formatter.field("name", &self.name);
-        formatter.field("unit", &self.unit);
-        formatter.field("total", &self.total);
-        formatter.field("used", &self.used);
-        formatter.field("available", &self.available);
-        formatter.finish()
     }
 }
 /// See [`Capacity`](crate::model::Capacity).
@@ -2187,7 +2047,7 @@ impl Capacity {
 
 /// <p>The details about the physical network interface for the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhysicalNetworkInterface {
     /// <p>The physical network interface ID.</p>
     #[doc(hidden)]
@@ -2241,22 +2101,6 @@ impl PhysicalNetworkInterface {
     /// <p>The MAC address of the device.</p>
     pub fn mac_address(&self) -> std::option::Option<&str> {
         self.mac_address.as_deref()
-    }
-}
-impl std::fmt::Debug for PhysicalNetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhysicalNetworkInterface");
-        formatter.field(
-            "physical_network_interface_id",
-            &self.physical_network_interface_id,
-        );
-        formatter.field("physical_connector_type", &self.physical_connector_type);
-        formatter.field("ip_address_assignment", &self.ip_address_assignment);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("netmask", &self.netmask);
-        formatter.field("default_gateway", &self.default_gateway);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.finish()
     }
 }
 /// See [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).

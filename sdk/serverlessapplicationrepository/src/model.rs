@@ -2,7 +2,7 @@
 
 /// <p>Application version details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Version {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -85,21 +85,6 @@ impl Version {
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub fn template_url(&self) -> std::option::Option<&str> {
         self.template_url.as_deref()
-    }
-}
-impl std::fmt::Debug for Version {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Version");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("parameter_definitions", &self.parameter_definitions);
-        formatter.field("required_capabilities", &self.required_capabilities);
-        formatter.field("resources_supported", &self.resources_supported);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("source_code_archive_url", &self.source_code_archive_url);
-        formatter.field("source_code_url", &self.source_code_url);
-        formatter.field("template_url", &self.template_url);
-        formatter.finish()
     }
 }
 /// See [`Version`](crate::model::Version).
@@ -388,7 +373,7 @@ impl AsRef<str> for Capability {
 
 /// <p>Parameters supported by the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterDefinition {
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
     #[doc(hidden)]
@@ -506,25 +491,6 @@ impl ParameterDefinition {
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterDefinition");
-        formatter.field("allowed_pattern", &self.allowed_pattern);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("constraint_description", &self.constraint_description);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("description", &self.description);
-        formatter.field("max_length", &self.max_length);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("min_length", &self.min_length);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("name", &self.name);
-        formatter.field("no_echo", &self.no_echo);
-        formatter.field("referenced_by_resources", &self.referenced_by_resources);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ParameterDefinition`](crate::model::ParameterDefinition).
@@ -758,7 +724,7 @@ impl ParameterDefinition {
 
 /// <p>Policy statement applied to the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationPolicyStatement {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
     #[doc(hidden)]
@@ -789,16 +755,6 @@ impl ApplicationPolicyStatement {
     /// <p>A unique ID for the statement.</p>
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationPolicyStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationPolicyStatement");
-        formatter.field("actions", &self.actions);
-        formatter.field("principal_org_i_ds", &self.principal_org_i_ds);
-        formatter.field("principals", &self.principals);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.finish()
     }
 }
 /// See [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
@@ -900,7 +856,7 @@ impl ApplicationPolicyStatement {
 
 /// <p>An application version summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersionSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -933,16 +889,6 @@ impl VersionSummary {
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn source_code_url(&self) -> std::option::Option<&str> {
         self.source_code_url.as_deref()
-    }
-}
-impl std::fmt::Debug for VersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersionSummary");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("source_code_url", &self.source_code_url);
-        formatter.finish()
     }
 }
 /// See [`VersionSummary`](crate::model::VersionSummary).
@@ -1031,7 +977,7 @@ impl VersionSummary {
 
 /// <p>Summary of details about the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -1104,20 +1050,6 @@ impl ApplicationSummary {
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
     pub fn spdx_license_id(&self) -> std::option::Option<&str> {
         self.spdx_license_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSummary");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("author", &self.author);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("description", &self.description);
-        formatter.field("home_page_url", &self.home_page_url);
-        formatter.field("labels", &self.labels);
-        formatter.field("name", &self.name);
-        formatter.field("spdx_license_id", &self.spdx_license_id);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
@@ -1275,7 +1207,7 @@ impl ApplicationSummary {
 
 /// <p>A nested application summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationDependencySummary {
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
     #[doc(hidden)]
@@ -1292,14 +1224,6 @@ impl ApplicationDependencySummary {
     /// <p>The semantic version of the nested application.</p>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationDependencySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationDependencySummary");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.finish()
     }
 }
 /// See [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
@@ -1451,7 +1375,7 @@ impl AsRef<str> for Status {
 
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
     #[doc(hidden)]
@@ -1468,14 +1392,6 @@ impl Tag {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1526,7 +1442,7 @@ impl Tag {
 
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackConfiguration {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     #[doc(hidden)]
@@ -1543,17 +1459,6 @@ impl RollbackConfiguration {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn rollback_triggers(&self) -> std::option::Option<&[crate::model::RollbackTrigger]> {
         self.rollback_triggers.as_deref()
-    }
-}
-impl std::fmt::Debug for RollbackConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackConfiguration");
-        formatter.field(
-            "monitoring_time_in_minutes",
-            &self.monitoring_time_in_minutes,
-        );
-        formatter.field("rollback_triggers", &self.rollback_triggers);
-        formatter.finish()
     }
 }
 /// See [`RollbackConfiguration`](crate::model::RollbackConfiguration).
@@ -1614,7 +1519,7 @@ impl RollbackConfiguration {
 
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackTrigger {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
     #[doc(hidden)]
@@ -1631,14 +1536,6 @@ impl RollbackTrigger {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for RollbackTrigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackTrigger");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`RollbackTrigger`](crate::model::RollbackTrigger).
@@ -1689,7 +1586,7 @@ impl RollbackTrigger {
 
 /// <p>Parameter value of the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterValue {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
     #[doc(hidden)]
@@ -1706,14 +1603,6 @@ impl ParameterValue {
     /// <p>The input value associated with the parameter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterValue");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ParameterValue`](crate::model::ParameterValue).

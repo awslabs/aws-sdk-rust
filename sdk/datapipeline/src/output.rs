@@ -2,7 +2,7 @@
 
 /// <p>Contains the output of ValidatePipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionOutput {
     /// <p>Any validation errors that were found.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl ValidatePipelineDefinitionOutput {
     /// <p>Indicates whether there were validation errors.</p>
     pub fn errored(&self) -> bool {
         self.errored
-    }
-}
-impl std::fmt::Debug for ValidatePipelineDefinitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidatePipelineDefinitionOutput");
-        formatter.field("validation_errors", &self.validation_errors);
-        formatter.field("validation_warnings", &self.validation_warnings);
-        formatter.field("errored", &self.errored);
-        formatter.finish()
     }
 }
 /// See [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
@@ -117,14 +108,8 @@ impl ValidatePipelineDefinitionOutput {
 
 /// <p>Contains the output of SetTaskStatus.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTaskStatusOutput {}
-impl std::fmt::Debug for SetTaskStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTaskStatusOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
 pub mod set_task_status_output {
 
@@ -147,14 +132,8 @@ impl SetTaskStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetStatusOutput {}
-impl std::fmt::Debug for SetStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetStatusOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetStatusOutput`](crate::output::SetStatusOutput).
 pub mod set_status_output {
 
@@ -177,7 +156,7 @@ impl SetStatusOutput {
 
 /// <p>Contains the output of ReportTaskRunnerHeartbeat.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeatOutput {
     /// <p>Indicates whether the calling task runner should terminate.</p>
     #[doc(hidden)]
@@ -187,13 +166,6 @@ impl ReportTaskRunnerHeartbeatOutput {
     /// <p>Indicates whether the calling task runner should terminate.</p>
     pub fn terminate(&self) -> bool {
         self.terminate
-    }
-}
-impl std::fmt::Debug for ReportTaskRunnerHeartbeatOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportTaskRunnerHeartbeatOutput");
-        formatter.field("terminate", &self.terminate);
-        formatter.finish()
     }
 }
 /// See [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
@@ -232,7 +204,7 @@ impl ReportTaskRunnerHeartbeatOutput {
 
 /// <p>Contains the output of ReportTaskProgress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportTaskProgressOutput {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     #[doc(hidden)]
@@ -242,13 +214,6 @@ impl ReportTaskProgressOutput {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     pub fn canceled(&self) -> bool {
         self.canceled
-    }
-}
-impl std::fmt::Debug for ReportTaskProgressOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportTaskProgressOutput");
-        formatter.field("canceled", &self.canceled);
-        formatter.finish()
     }
 }
 /// See [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
@@ -287,14 +252,8 @@ impl ReportTaskProgressOutput {
 
 /// <p>Contains the output of RemoveTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsOutput {}
-impl std::fmt::Debug for RemoveTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
@@ -317,7 +276,7 @@ impl RemoveTagsOutput {
 
 /// <p>Contains the output of QueryObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
     #[doc(hidden)]
@@ -341,15 +300,6 @@ impl QueryObjectsOutput {
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub fn has_more_results(&self) -> bool {
         self.has_more_results
-    }
-}
-impl std::fmt::Debug for QueryObjectsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryObjectsOutput");
-        formatter.field("ids", &self.ids);
-        formatter.field("marker", &self.marker);
-        formatter.field("has_more_results", &self.has_more_results);
-        formatter.finish()
     }
 }
 /// See [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
@@ -421,7 +371,7 @@ impl QueryObjectsOutput {
 
 /// <p>Contains the output of PutPipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPipelineDefinitionOutput {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     #[doc(hidden)]
@@ -445,15 +395,6 @@ impl PutPipelineDefinitionOutput {
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     pub fn errored(&self) -> bool {
         self.errored
-    }
-}
-impl std::fmt::Debug for PutPipelineDefinitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPipelineDefinitionOutput");
-        formatter.field("validation_errors", &self.validation_errors);
-        formatter.field("validation_warnings", &self.validation_warnings);
-        formatter.field("errored", &self.errored);
-        formatter.finish()
     }
 }
 /// See [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
@@ -536,7 +477,7 @@ impl PutPipelineDefinitionOutput {
 
 /// <p>Contains the output of PollForTask.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForTaskOutput {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     #[doc(hidden)]
@@ -546,13 +487,6 @@ impl PollForTaskOutput {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     pub fn task_object(&self) -> std::option::Option<&crate::model::TaskObject> {
         self.task_object.as_ref()
-    }
-}
-impl std::fmt::Debug for PollForTaskOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForTaskOutput");
-        formatter.field("task_object", &self.task_object);
-        formatter.finish()
     }
 }
 /// See [`PollForTaskOutput`](crate::output::PollForTaskOutput).
@@ -594,7 +528,7 @@ impl PollForTaskOutput {
 
 /// <p>Contains the output of ListPipelines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
     #[doc(hidden)]
@@ -618,15 +552,6 @@ impl ListPipelinesOutput {
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub fn has_more_results(&self) -> bool {
         self.has_more_results
-    }
-}
-impl std::fmt::Debug for ListPipelinesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesOutput");
-        formatter.field("pipeline_id_list", &self.pipeline_id_list);
-        formatter.field("marker", &self.marker);
-        formatter.field("has_more_results", &self.has_more_results);
-        formatter.finish()
     }
 }
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
@@ -699,7 +624,7 @@ impl ListPipelinesOutput {
 
 /// <p>Contains the output of GetPipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineDefinitionOutput {
     /// <p>The objects defined in the pipeline.</p>
     #[doc(hidden)]
@@ -723,15 +648,6 @@ impl GetPipelineDefinitionOutput {
     /// <p>The parameter values used in the pipeline definition.</p>
     pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
         self.parameter_values.as_deref()
-    }
-}
-impl std::fmt::Debug for GetPipelineDefinitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineDefinitionOutput");
-        formatter.field("pipeline_objects", &self.pipeline_objects);
-        formatter.field("parameter_objects", &self.parameter_objects);
-        formatter.field("parameter_values", &self.parameter_values);
-        formatter.finish()
     }
 }
 /// See [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
@@ -824,7 +740,7 @@ impl GetPipelineDefinitionOutput {
 
 /// <p>Contains the output of EvaluateExpression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
     #[doc(hidden)]
@@ -834,13 +750,6 @@ impl EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
     pub fn evaluated_expression(&self) -> std::option::Option<&str> {
         self.evaluated_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for EvaluateExpressionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluateExpressionOutput");
-        formatter.field("evaluated_expression", &self.evaluated_expression);
-        formatter.finish()
     }
 }
 /// See [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
@@ -882,7 +791,7 @@ impl EvaluateExpressionOutput {
 
 /// <p>Contains the output of DescribePipelines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
     #[doc(hidden)]
@@ -895,13 +804,6 @@ impl DescribePipelinesOutput {
         &self,
     ) -> std::option::Option<&[crate::model::PipelineDescription]> {
         self.pipeline_description_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribePipelinesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePipelinesOutput");
-        formatter.field("pipeline_description_list", &self.pipeline_description_list);
-        formatter.finish()
     }
 }
 /// See [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
@@ -953,7 +855,7 @@ impl DescribePipelinesOutput {
 
 /// <p>Contains the output of DescribeObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
     #[doc(hidden)]
@@ -977,15 +879,6 @@ impl DescribeObjectsOutput {
     /// <p>Indicates whether there are more results to return.</p>
     pub fn has_more_results(&self) -> bool {
         self.has_more_results
-    }
-}
-impl std::fmt::Debug for DescribeObjectsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeObjectsOutput");
-        formatter.field("pipeline_objects", &self.pipeline_objects);
-        formatter.field("marker", &self.marker);
-        formatter.field("has_more_results", &self.has_more_results);
-        formatter.finish()
     }
 }
 /// See [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
@@ -1058,14 +951,8 @@ impl DescribeObjectsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineOutput {}
-impl std::fmt::Debug for DeletePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
 
@@ -1088,14 +975,8 @@ impl DeletePipelineOutput {
 
 /// <p>Contains the output of DeactivatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivatePipelineOutput {}
-impl std::fmt::Debug for DeactivatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivatePipelineOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
 pub mod deactivate_pipeline_output {
 
@@ -1118,7 +999,7 @@ impl DeactivatePipelineOutput {
 
 /// <p>Contains the output of CreatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineOutput {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -1128,13 +1009,6 @@ impl CreatePipelineOutput {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
     pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineOutput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.finish()
     }
 }
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
@@ -1173,14 +1047,8 @@ impl CreatePipelineOutput {
 
 /// <p>Contains the output of AddTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput {}
-impl std::fmt::Debug for AddTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
@@ -1203,14 +1071,8 @@ impl AddTagsOutput {
 
 /// <p>Contains the output of ActivatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivatePipelineOutput {}
-impl std::fmt::Debug for ActivatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivatePipelineOutput");
-        formatter.finish()
-    }
-}
 /// See [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
 pub mod activate_pipeline_output {
 

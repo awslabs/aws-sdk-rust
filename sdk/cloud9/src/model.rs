@@ -2,7 +2,7 @@
 
 /// <p>Information about an environment member for an Cloud9 development environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentMember {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
@@ -50,17 +50,6 @@ impl EnvironmentMember {
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     pub fn last_access(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access.as_ref()
-    }
-}
-impl std::fmt::Debug for EnvironmentMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentMember");
-        formatter.field("permissions", &self.permissions);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("last_access", &self.last_access);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentMember`](crate::model::EnvironmentMember).
@@ -476,7 +465,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -508,6 +497,14 @@ pub mod tag {
                 key: self.key,
                 value: self.value,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key", &"*** Sensitive Data Redacted ***");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -769,7 +766,7 @@ impl std::fmt::Debug for Environment {
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -933,6 +930,24 @@ pub mod environment {
                 lifecycle: self.lifecycle,
                 managed_credentials_status: self.managed_credentials_status,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("connection_type", &self.connection_type);
+            formatter.field("arn", &self.arn);
+            formatter.field("owner_arn", &self.owner_arn);
+            formatter.field("lifecycle", &self.lifecycle);
+            formatter.field(
+                "managed_credentials_status",
+                &self.managed_credentials_status,
+            );
+            formatter.finish()
         }
     }
 }
@@ -1110,7 +1125,7 @@ impl AsRef<str> for ManagedCredentialsStatus {
 
 /// <p>Information about the current creation or deletion lifecycle state of an Cloud9 development environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentLifecycle {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
@@ -1148,15 +1163,6 @@ impl EnvironmentLifecycle {
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
     pub fn failure_resource(&self) -> std::option::Option<&str> {
         self.failure_resource.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentLifecycle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentLifecycle");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.field("failure_resource", &self.failure_resource);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).

@@ -5647,7 +5647,7 @@ impl UpdateApplicationMaintenanceConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationMaintenanceConfigurationInput {
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
     #[doc(hidden)]
@@ -5669,21 +5669,10 @@ impl UpdateApplicationMaintenanceConfigurationInput {
         self.application_maintenance_configuration_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationMaintenanceConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationMaintenanceConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "application_maintenance_configuration_update",
-            &self.application_maintenance_configuration_update,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application to update.</p>
     #[doc(hidden)]
@@ -5745,35 +5734,10 @@ impl UpdateApplicationInput {
         self.conditional_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field(
-            "application_configuration_update",
-            &self.application_configuration_update,
-        );
-        formatter.field(
-            "service_execution_role_update",
-            &self.service_execution_role_update,
-        );
-        formatter.field("run_configuration_update", &self.run_configuration_update);
-        formatter.field(
-            "cloud_watch_logging_option_updates",
-            &self.cloud_watch_logging_option_updates,
-        );
-        formatter.field("conditional_token", &self.conditional_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
     #[doc(hidden)]
@@ -5792,18 +5756,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the application to assign the tags.</p>
     #[doc(hidden)]
@@ -5822,18 +5778,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopApplicationInput {
     /// <p>The name of the running application to stop.</p>
     #[doc(hidden)]
@@ -5860,18 +5808,10 @@ impl StopApplicationInput {
         self.force
     }
 }
-impl std::fmt::Debug for StopApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartApplicationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -5890,18 +5830,10 @@ impl StartApplicationInput {
         self.run_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for StartApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("run_configuration", &self.run_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackApplicationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -5920,21 +5852,10 @@ impl RollbackApplicationInput {
         self.current_application_version_id
     }
 }
-impl std::fmt::Debug for RollbackApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the application for which to retrieve tags.</p>
     #[doc(hidden)]
@@ -5946,17 +5867,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationVersionsInput {
     /// <p>The name of the application for which you want to list all versions.</p>
     #[doc(hidden)]
@@ -5982,19 +5896,10 @@ impl ListApplicationVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationVersionsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationSnapshotsInput {
     /// <p>The name of an existing application.</p>
     #[doc(hidden)]
@@ -6020,19 +5925,10 @@ impl ListApplicationSnapshotsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationSnapshotsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>The maximum number of applications to list.</p>
     #[doc(hidden)]
@@ -6051,18 +5947,10 @@ impl ListApplicationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiscoverInputSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
     #[doc(hidden)]
@@ -6108,27 +5996,10 @@ impl DiscoverInputSchemaInput {
         self.input_processing_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for DiscoverInputSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiscoverInputSchemaInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("service_execution_role", &self.service_execution_role);
-        formatter.field(
-            "input_starting_position_configuration",
-            &self.input_starting_position_configuration,
-        );
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field(
-            "input_processing_configuration",
-            &self.input_processing_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationVersionInput {
     /// <p>The name of the application for which you want to get the version description.</p>
     #[doc(hidden)]
@@ -6147,18 +6018,10 @@ impl DescribeApplicationVersionInput {
         self.application_version_id
     }
 }
-impl std::fmt::Debug for DescribeApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationVersionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("application_version_id", &self.application_version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationSnapshotInput {
     /// <p>The name of an existing application.</p>
     #[doc(hidden)]
@@ -6177,18 +6040,10 @@ impl DescribeApplicationSnapshotInput {
         self.snapshot_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationSnapshotInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -6207,21 +6062,10 @@ impl DescribeApplicationInput {
         self.include_additional_details
     }
 }
-impl std::fmt::Debug for DescribeApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "include_additional_details",
-            &self.include_additional_details,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationVpcConfigurationInput {
     /// <p>The name of an existing application.</p>
     #[doc(hidden)]
@@ -6254,23 +6098,10 @@ impl DeleteApplicationVpcConfigurationInput {
         self.conditional_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationVpcConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationVpcConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("vpc_configuration_id", &self.vpc_configuration_id);
-        formatter.field("conditional_token", &self.conditional_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationSnapshotInput {
     /// <p>The name of an existing application.</p>
     #[doc(hidden)]
@@ -6296,22 +6127,10 @@ impl DeleteApplicationSnapshotInput {
         self.snapshot_creation_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationSnapshotInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.field(
-            "snapshot_creation_timestamp",
-            &self.snapshot_creation_timestamp,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationReferenceDataSourceInput {
     /// <p>The name of an existing application.</p>
     #[doc(hidden)]
@@ -6337,22 +6156,10 @@ impl DeleteApplicationReferenceDataSourceInput {
         self.reference_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationReferenceDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationReferenceDataSourceInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("reference_id", &self.reference_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationOutputInput {
     /// <p>The application name.</p>
     #[doc(hidden)]
@@ -6378,22 +6185,10 @@ impl DeleteApplicationOutputInput {
         self.output_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationOutputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationOutputInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("output_id", &self.output_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -6419,22 +6214,10 @@ impl DeleteApplicationInputProcessingConfigurationInput {
         self.input_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInputProcessingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInputProcessingConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("input_id", &self.input_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     /// <p>The application name.</p>
     #[doc(hidden)]
@@ -6467,26 +6250,10 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
         self.conditional_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationCloudWatchLoggingOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationCloudWatchLoggingOptionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field(
-            "cloud_watch_logging_option_id",
-            &self.cloud_watch_logging_option_id,
-        );
-        formatter.field("conditional_token", &self.conditional_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the application to delete.</p>
     #[doc(hidden)]
@@ -6505,18 +6272,10 @@ impl DeleteApplicationInput {
         self.create_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationSnapshotInput {
     /// <p>The name of an existing application</p>
     #[doc(hidden)]
@@ -6535,18 +6294,10 @@ impl CreateApplicationSnapshotInput {
         self.snapshot_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationSnapshotInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationPresignedUrlInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -6572,22 +6323,10 @@ impl CreateApplicationPresignedUrlInput {
         self.session_expiration_duration_in_seconds
     }
 }
-impl std::fmt::Debug for CreateApplicationPresignedUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationPresignedUrlInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("url_type", &self.url_type);
-        formatter.field(
-            "session_expiration_duration_in_seconds",
-            &self.session_expiration_duration_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
     #[doc(hidden)]
@@ -6653,27 +6392,10 @@ impl CreateApplicationInput {
         self.application_mode.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("application_description", &self.application_description);
-        formatter.field("runtime_environment", &self.runtime_environment);
-        formatter.field("service_execution_role", &self.service_execution_role);
-        formatter.field("application_configuration", &self.application_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("application_mode", &self.application_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationVpcConfigurationInput {
     /// <p>The name of an existing application.</p>
     #[doc(hidden)]
@@ -6706,23 +6428,10 @@ impl AddApplicationVpcConfigurationInput {
         self.conditional_token.as_deref()
     }
 }
-impl std::fmt::Debug for AddApplicationVpcConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationVpcConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("conditional_token", &self.conditional_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationReferenceDataSourceInput {
     /// <p>The name of an existing application.</p>
     #[doc(hidden)]
@@ -6748,22 +6457,10 @@ impl AddApplicationReferenceDataSourceInput {
         self.reference_data_source.as_ref()
     }
 }
-impl std::fmt::Debug for AddApplicationReferenceDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationReferenceDataSourceInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("reference_data_source", &self.reference_data_source);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationOutputInput {
     /// <p>The name of the application to which you want to add the output configuration.</p>
     #[doc(hidden)]
@@ -6789,22 +6486,10 @@ impl AddApplicationOutputInput {
         self.output.as_ref()
     }
 }
-impl std::fmt::Debug for AddApplicationOutputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationOutputInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("output", &self.output);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationInput {
     /// <p>The name of the application to which you want to add the input processing configuration.</p>
     #[doc(hidden)]
@@ -6840,26 +6525,10 @@ impl AddApplicationInputProcessingConfigurationInput {
         self.input_processing_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for AddApplicationInputProcessingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationInputProcessingConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("input_id", &self.input_id);
-        formatter.field(
-            "input_processing_configuration",
-            &self.input_processing_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationInputInput {
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
     #[doc(hidden)]
@@ -6885,22 +6554,10 @@ impl AddApplicationInputInput {
         self.input.as_ref()
     }
 }
-impl std::fmt::Debug for AddApplicationInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationInputInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field("input", &self.input);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Data Analytics application name.</p>
     #[doc(hidden)]
@@ -6933,21 +6590,5 @@ impl AddApplicationCloudWatchLoggingOptionInput {
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(&self) -> std::option::Option<&str> {
         self.conditional_token.as_deref()
-    }
-}
-impl std::fmt::Debug for AddApplicationCloudWatchLoggingOptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddApplicationCloudWatchLoggingOptionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_application_version_id",
-            &self.current_application_version_id,
-        );
-        formatter.field(
-            "cloud_watch_logging_option",
-            &self.cloud_watch_logging_option,
-        );
-        formatter.field("conditional_token", &self.conditional_token);
-        formatter.finish()
     }
 }

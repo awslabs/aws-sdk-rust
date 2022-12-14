@@ -43,7 +43,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -77,6 +77,14 @@ pub mod tag {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key", &"*** Sensitive Data Redacted ***");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -87,7 +95,7 @@ impl Tag {
 
 /// <p>Provides a summary of the what-if forecast properties used in the <code>ListWhatIfForecasts</code> operation. To get the complete set of properties, call the <code>DescribeWhatIfForecast</code> operation, and provide the <code>WhatIfForecastArn</code> that is listed in the summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WhatIfForecastSummary {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
     #[doc(hidden)]
@@ -169,19 +177,6 @@ impl WhatIfForecastSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WhatIfForecastSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WhatIfForecastSummary");
-        formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
-        formatter.field("what_if_forecast_name", &self.what_if_forecast_name);
-        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`WhatIfForecastSummary`](crate::model::WhatIfForecastSummary).
@@ -337,7 +332,7 @@ impl WhatIfForecastSummary {
 
 /// <p>Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the parameter to filter on.</p>
     #[doc(hidden)]
@@ -361,15 +356,6 @@ impl Filter {
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
     pub fn condition(&self) -> std::option::Option<&crate::model::FilterConditionString> {
         self.condition.as_ref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -527,7 +513,7 @@ impl AsRef<str> for FilterConditionString {
 
 /// <p>Provides a summary of the what-if forecast export properties used in the <code>ListWhatIfForecastExports</code> operation. To get the complete set of properties, call the <code>DescribeWhatIfForecastExport</code> operation, and provide the <code>WhatIfForecastExportArn</code> that is listed in the summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WhatIfForecastExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
     #[doc(hidden)]
@@ -616,26 +602,6 @@ impl WhatIfForecastExportSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WhatIfForecastExportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WhatIfForecastExportSummary");
-        formatter.field(
-            "what_if_forecast_export_arn",
-            &self.what_if_forecast_export_arn,
-        );
-        formatter.field("what_if_forecast_arns", &self.what_if_forecast_arns);
-        formatter.field(
-            "what_if_forecast_export_name",
-            &self.what_if_forecast_export_name,
-        );
-        formatter.field("destination", &self.destination);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`WhatIfForecastExportSummary`](crate::model::WhatIfForecastExportSummary).
@@ -818,7 +784,7 @@ impl WhatIfForecastExportSummary {
 
 /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataDestination {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
     #[doc(hidden)]
@@ -828,13 +794,6 @@ impl DataDestination {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
     pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
         self.s3_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DataDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataDestination");
-        formatter.field("s3_config", &self.s3_config);
-        formatter.finish()
     }
 }
 /// See [`DataDestination`](crate::model::DataDestination).
@@ -873,7 +832,7 @@ impl DataDestination {
 
 /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -899,15 +858,6 @@ impl S3Config {
     /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Config {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Config");
-        formatter.field("path", &self.path);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`S3Config`](crate::model::S3Config).
@@ -972,7 +922,7 @@ impl S3Config {
 
 /// <p>Provides a summary of the what-if analysis properties used in the <code>ListWhatIfAnalyses</code> operation. To get the complete set of properties, call the <code>DescribeWhatIfAnalysis</code> operation, and provide the <code>WhatIfAnalysisArn</code> that is listed in the summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WhatIfAnalysisSummary {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
     #[doc(hidden)]
@@ -1054,19 +1004,6 @@ impl WhatIfAnalysisSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WhatIfAnalysisSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WhatIfAnalysisSummary");
-        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
-        formatter.field("what_if_analysis_name", &self.what_if_analysis_name);
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`WhatIfAnalysisSummary`](crate::model::WhatIfAnalysisSummary).
@@ -1219,7 +1156,7 @@ impl WhatIfAnalysisSummary {
 
 /// <p>Provides a summary of the predictor properties that are used in the <code>ListPredictors</code> operation. To get the complete set of properties, call the <code>DescribePredictor</code> operation, and provide the listed <code>PredictorArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictorSummary {
     /// <p>The ARN of the predictor.</p>
     #[doc(hidden)]
@@ -1317,24 +1254,6 @@ impl PredictorSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PredictorSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictorSummary");
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.field("predictor_name", &self.predictor_name);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("is_auto_predictor", &self.is_auto_predictor);
-        formatter.field(
-            "reference_predictor_summary",
-            &self.reference_predictor_summary,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`PredictorSummary`](crate::model::PredictorSummary).
@@ -1521,7 +1440,7 @@ impl PredictorSummary {
 
 /// <p>Provides a summary of the reference predictor used when retraining or upgrading a predictor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferencePredictorSummary {
     /// <p>The ARN of the reference predictor.</p>
     #[doc(hidden)]
@@ -1538,14 +1457,6 @@ impl ReferencePredictorSummary {
     /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ReferencePredictorSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferencePredictorSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ReferencePredictorSummary`](crate::model::ReferencePredictorSummary).
@@ -1686,7 +1597,7 @@ impl AsRef<str> for State {
 
 /// <p>Provides a summary of the predictor backtest export job properties used in the <code>ListPredictorBacktestExportJobs</code> operation. To get a complete set of properties, call the <code>DescribePredictorBacktestExportJob</code> operation, and provide the listed <code>PredictorBacktestExportJobArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictorBacktestExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
     #[doc(hidden)]
@@ -1764,25 +1675,6 @@ impl PredictorBacktestExportJobSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PredictorBacktestExportJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictorBacktestExportJobSummary");
-        formatter.field(
-            "predictor_backtest_export_job_arn",
-            &self.predictor_backtest_export_job_arn,
-        );
-        formatter.field(
-            "predictor_backtest_export_job_name",
-            &self.predictor_backtest_export_job_name,
-        );
-        formatter.field("destination", &self.destination);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`PredictorBacktestExportJobSummary`](crate::model::PredictorBacktestExportJobSummary).
@@ -1940,7 +1832,7 @@ impl PredictorBacktestExportJobSummary {
 
 /// <p>Provides a summary of the monitor properties used in the <code>ListMonitors</code> operation. To get a complete set of properties, call the <code>DescribeMonitor</code> operation, and provide the listed <code>MonitorArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitorSummary {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     #[doc(hidden)]
@@ -2011,18 +1903,6 @@ impl MonitorSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for MonitorSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitorSummary");
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("monitor_name", &self.monitor_name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`MonitorSummary`](crate::model::MonitorSummary).
@@ -2153,7 +2033,7 @@ impl MonitorSummary {
 
 /// <p>Describes the results of a monitor evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictorMonitorEvaluation {
     /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
     #[doc(hidden)]
@@ -2233,23 +2113,6 @@ impl PredictorMonitorEvaluation {
     /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictorMonitorEvaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictorMonitorEvaluation");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("evaluation_time", &self.evaluation_time);
-        formatter.field("evaluation_state", &self.evaluation_state);
-        formatter.field("window_start_datetime", &self.window_start_datetime);
-        formatter.field("window_end_datetime", &self.window_end_datetime);
-        formatter.field("predictor_event", &self.predictor_event);
-        formatter.field("monitor_data_source", &self.monitor_data_source);
-        formatter.field("metric_results", &self.metric_results);
-        formatter.field("num_items_evaluated", &self.num_items_evaluated);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`PredictorMonitorEvaluation`](crate::model::PredictorMonitorEvaluation).
@@ -2436,7 +2299,7 @@ impl PredictorMonitorEvaluation {
 /// <p>An individual metric Forecast calculated when monitoring predictor usage. You can compare the value for this metric to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
 /// <p>For more information about metrics generated by Forecast see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Evaluating Predictor Accuracy</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricResult {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -2453,14 +2316,6 @@ impl MetricResult {
     /// <p>The value for the metric.</p>
     pub fn metric_value(&self) -> std::option::Option<f64> {
         self.metric_value
-    }
-}
-impl std::fmt::Debug for MetricResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricResult");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.finish()
     }
 }
 /// See [`MetricResult`](crate::model::MetricResult).
@@ -2511,7 +2366,7 @@ impl MetricResult {
 
 /// <p>The source of the data the monitor used during the evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitorDataSource {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
     #[doc(hidden)]
@@ -2535,15 +2390,6 @@ impl MonitorDataSource {
     /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
     pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MonitorDataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitorDataSource");
-        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.finish()
     }
 }
 /// See [`MonitorDataSource`](crate::model::MonitorDataSource).
@@ -2612,7 +2458,7 @@ impl MonitorDataSource {
 
 /// <p>Provides details about a predictor event, such as a retraining.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictorEvent {
     /// <p>The type of event. For example, <code>Retrain</code>. A retraining event denotes the timepoint when a predictor was retrained. Any monitor results from before the <code>Datetime</code> are from the previous predictor. Any new metrics are for the newly retrained predictor.</p>
     #[doc(hidden)]
@@ -2629,14 +2475,6 @@ impl PredictorEvent {
     /// <p>The timestamp for when the event occurred.</p>
     pub fn datetime(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.datetime.as_ref()
-    }
-}
-impl std::fmt::Debug for PredictorEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictorEvent");
-        formatter.field("detail", &self.detail);
-        formatter.field("datetime", &self.datetime);
-        formatter.finish()
     }
 }
 /// See [`PredictorEvent`](crate::model::PredictorEvent).
@@ -2690,7 +2528,7 @@ impl PredictorEvent {
 
 /// <p>Provides a summary of the forecast properties used in the <code>ListForecasts</code> operation. To get the complete set of properties, call the <code>DescribeForecast</code> operation, and provide the <code>ForecastArn</code> that is listed in the summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForecastSummary {
     /// <p>The ARN of the forecast.</p>
     #[doc(hidden)]
@@ -2786,24 +2624,6 @@ impl ForecastSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ForecastSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForecastSummary");
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.field("forecast_name", &self.forecast_name);
-        formatter.field("predictor_arn", &self.predictor_arn);
-        formatter.field(
-            "created_using_auto_predictor",
-            &self.created_using_auto_predictor,
-        );
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`ForecastSummary`](crate::model::ForecastSummary).
@@ -2986,7 +2806,7 @@ impl ForecastSummary {
 
 /// <p>Provides a summary of the forecast export job properties used in the <code>ListForecastExportJobs</code> operation. To get the complete set of properties, call the <code>DescribeForecastExportJob</code> operation, and provide the listed <code>ForecastExportJobArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForecastExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
     #[doc(hidden)]
@@ -3068,19 +2888,6 @@ impl ForecastExportJobSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ForecastExportJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForecastExportJobSummary");
-        formatter.field("forecast_export_job_arn", &self.forecast_export_job_arn);
-        formatter.field("forecast_export_job_name", &self.forecast_export_job_name);
-        formatter.field("destination", &self.destination);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`ForecastExportJobSummary`](crate::model::ForecastExportJobSummary).
@@ -3236,7 +3043,7 @@ impl ForecastExportJobSummary {
 
 /// <p>Provides a summary of the Explainability export properties used in the <code>ListExplainabilityExports</code> operation. To get a complete set of properties, call the <code>DescribeExplainabilityExport</code> operation, and provide the <code>ExplainabilityExportArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExplainabilityExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     #[doc(hidden)]
@@ -3314,22 +3121,6 @@ impl ExplainabilityExportSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ExplainabilityExportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExplainabilityExportSummary");
-        formatter.field("explainability_export_arn", &self.explainability_export_arn);
-        formatter.field(
-            "explainability_export_name",
-            &self.explainability_export_name,
-        );
-        formatter.field("destination", &self.destination);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`ExplainabilityExportSummary`](crate::model::ExplainabilityExportSummary).
@@ -3481,7 +3272,7 @@ impl ExplainabilityExportSummary {
 
 /// <p>Provides a summary of the Explainability properties used in the <code>ListExplainabilities</code> operation. To get a complete set of properties, call the <code>DescribeExplainability</code> operation, and provide the listed <code>ExplainabilityArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExplainabilitySummary {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     #[doc(hidden)]
@@ -3568,20 +3359,6 @@ impl ExplainabilitySummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ExplainabilitySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExplainabilitySummary");
-        formatter.field("explainability_arn", &self.explainability_arn);
-        formatter.field("explainability_name", &self.explainability_name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("explainability_config", &self.explainability_config);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`ExplainabilitySummary`](crate::model::ExplainabilitySummary).
@@ -3747,7 +3524,7 @@ impl ExplainabilitySummary {
 /// <p>If you provide a predictor ARN for <code>ResourceArn</code>, you must set both <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to “ALL”. When creating Predictor Explainability, Amazon Forecast considers all time series and time points.</p>
 /// <p>If you provide a forecast ARN for <code>ResourceArn</code>, you can set <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to either “ALL” or “Specific”.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExplainabilityConfig {
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
@@ -3772,14 +3549,6 @@ impl ExplainabilityConfig {
         &self,
     ) -> std::option::Option<&crate::model::TimePointGranularity> {
         self.time_point_granularity.as_ref()
-    }
-}
-impl std::fmt::Debug for ExplainabilityConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExplainabilityConfig");
-        formatter.field("time_series_granularity", &self.time_series_granularity);
-        formatter.field("time_point_granularity", &self.time_point_granularity);
-        formatter.finish()
     }
 }
 /// See [`ExplainabilityConfig`](crate::model::ExplainabilityConfig).
@@ -4028,7 +3797,7 @@ impl AsRef<str> for TimeSeriesGranularity {
 
 /// <p>Provides a summary of the dataset properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a> operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation, and provide the <code>DatasetArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
@@ -4073,18 +3842,6 @@ impl DatasetSummary {
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSummary");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("domain", &self.domain);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
@@ -4410,7 +4167,7 @@ impl AsRef<str> for DatasetType {
 
 /// <p>Provides a summary of the dataset import job properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a> operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> operation, and provide the <code>DatasetImportJobArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     #[doc(hidden)]
@@ -4490,19 +4247,6 @@ impl DatasetImportJobSummary {
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetImportJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetImportJobSummary");
-        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
-        formatter.field("dataset_import_job_name", &self.dataset_import_job_name);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
@@ -4656,7 +4400,7 @@ impl DatasetImportJobSummary {
 
 /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
     #[doc(hidden)]
@@ -4666,13 +4410,6 @@ impl DataSource {
     /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
     pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
         self.s3_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("s3_config", &self.s3_config);
-        formatter.finish()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
@@ -4711,7 +4448,7 @@ impl DataSource {
 
 /// <p>Provides a summary of the dataset group properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a> operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> operation, and provide the <code>DatasetGroupArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetGroupSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
@@ -4742,16 +4479,6 @@ impl DatasetGroupSummary {
     /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DatasetGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetGroupSummary");
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("dataset_group_name", &self.dataset_group_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
@@ -5043,7 +4770,7 @@ impl AsRef<str> for AutoMlOverrideStrategy {
 
 /// <p>The results of evaluating an algorithm. Returned as part of the <code>GetAccuracyMetrics</code> response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
     #[doc(hidden)]
@@ -5060,14 +4787,6 @@ impl EvaluationResult {
     /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
     pub fn test_windows(&self) -> std::option::Option<&[crate::model::WindowSummary]> {
         self.test_windows.as_deref()
-    }
-}
-impl std::fmt::Debug for EvaluationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationResult");
-        formatter.field("algorithm_arn", &self.algorithm_arn);
-        formatter.field("test_windows", &self.test_windows);
-        formatter.finish()
     }
 }
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
@@ -5131,7 +4850,7 @@ impl EvaluationResult {
 /// <p>The metrics for a time range within the evaluation portion of a dataset. This object is part of the <code>EvaluationResult</code> object.</p>
 /// <p>The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <code>EvaluationParameters</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WindowSummary {
     /// <p>The timestamp that defines the start of the window.</p>
     #[doc(hidden)]
@@ -5177,17 +4896,6 @@ impl WindowSummary {
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
     pub fn metrics(&self) -> std::option::Option<&crate::model::Metrics> {
         self.metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for WindowSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WindowSummary");
-        formatter.field("test_window_start", &self.test_window_start);
-        formatter.field("test_window_end", &self.test_window_end);
-        formatter.field("item_count", &self.item_count);
-        formatter.field("evaluation_type", &self.evaluation_type);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
     }
 }
 /// See [`WindowSummary`](crate::model::WindowSummary).
@@ -5291,7 +4999,7 @@ impl WindowSummary {
 
 /// <p>Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <code>WindowSummary</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metrics {
     /// <p>The root-mean-square error (RMSE).</p>
     #[deprecated(
@@ -5331,19 +5039,6 @@ impl Metrics {
     /// <p>The average value of all weighted quantile losses.</p>
     pub fn average_weighted_quantile_loss(&self) -> std::option::Option<f64> {
         self.average_weighted_quantile_loss
-    }
-}
-impl std::fmt::Debug for Metrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metrics");
-        formatter.field("rmse", &self.rmse);
-        formatter.field("weighted_quantile_losses", &self.weighted_quantile_losses);
-        formatter.field("error_metrics", &self.error_metrics);
-        formatter.field(
-            "average_weighted_quantile_loss",
-            &self.average_weighted_quantile_loss,
-        );
-        formatter.finish()
     }
 }
 /// See [`Metrics`](crate::model::Metrics).
@@ -5449,7 +5144,7 @@ impl Metrics {
 
 /// <p> Provides detailed error metrics to evaluate the performance of a predictor. This object is part of the <code>Metrics</code> object. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorMetric {
     /// <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
     #[doc(hidden)]
@@ -5487,17 +5182,6 @@ impl ErrorMetric {
     /// <p>The Mean Absolute Percentage Error (MAPE)</p>
     pub fn mape(&self) -> std::option::Option<f64> {
         self.mape
-    }
-}
-impl std::fmt::Debug for ErrorMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorMetric");
-        formatter.field("forecast_type", &self.forecast_type);
-        formatter.field("wape", &self.wape);
-        formatter.field("rmse", &self.rmse);
-        formatter.field("mase", &self.mase);
-        formatter.field("mape", &self.mape);
-        formatter.finish()
     }
 }
 /// See [`ErrorMetric`](crate::model::ErrorMetric).
@@ -5587,7 +5271,7 @@ impl ErrorMetric {
 
 /// <p>The weighted loss value for a quantile. This object is part of the <code>Metrics</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WeightedQuantileLoss {
     /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
     #[doc(hidden)]
@@ -5604,14 +5288,6 @@ impl WeightedQuantileLoss {
     /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
     pub fn loss_value(&self) -> std::option::Option<f64> {
         self.loss_value
-    }
-}
-impl std::fmt::Debug for WeightedQuantileLoss {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WeightedQuantileLoss");
-        formatter.field("quantile", &self.quantile);
-        formatter.field("loss_value", &self.loss_value);
-        formatter.finish()
     }
 }
 /// See [`WeightedQuantileLoss`](crate::model::WeightedQuantileLoss).
@@ -5752,7 +5428,7 @@ impl AsRef<str> for EvaluationType {
 
 /// <p>A replacement dataset is a modified version of the baseline related time series that contains only the values that you want to include in a what-if forecast. The replacement dataset must contain the forecast dimensions and item identifiers in the baseline related time series as well as at least 1 changed time series. This dataset is merged with the baseline related time series to create a transformed dataset that is used for the what-if forecast.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesReplacementsDataSource {
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
     #[doc(hidden)]
@@ -5783,16 +5459,6 @@ impl TimeSeriesReplacementsDataSource {
     /// <p>The timestamp format of the replacement data.</p>
     pub fn timestamp_format(&self) -> std::option::Option<&str> {
         self.timestamp_format.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesReplacementsDataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesReplacementsDataSource");
-        formatter.field("s3_config", &self.s3_config);
-        formatter.field("schema", &self.schema);
-        formatter.field("format", &self.format);
-        formatter.field("timestamp_format", &self.timestamp_format);
-        formatter.finish()
     }
 }
 /// See [`TimeSeriesReplacementsDataSource`](crate::model::TimeSeriesReplacementsDataSource).
@@ -5870,7 +5536,7 @@ impl TimeSeriesReplacementsDataSource {
 
 /// <p>Defines the fields of a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schema {
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
     #[doc(hidden)]
@@ -5880,13 +5546,6 @@ impl Schema {
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::SchemaAttribute]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for Schema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schema");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`Schema`](crate::model::Schema).
@@ -5934,7 +5593,7 @@ impl Schema {
 
 /// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a> object contains an array of <code>SchemaAttribute</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaAttribute {
     /// <p>The name of the dataset field.</p>
     #[doc(hidden)]
@@ -5953,14 +5612,6 @@ impl SchemaAttribute {
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
     pub fn attribute_type(&self) -> std::option::Option<&crate::model::AttributeType> {
         self.attribute_type.as_ref()
-    }
-}
-impl std::fmt::Debug for SchemaAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaAttribute");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.finish()
     }
 }
 /// See [`SchemaAttribute`](crate::model::SchemaAttribute).
@@ -6124,7 +5775,7 @@ impl AsRef<str> for AttributeType {
 
 /// <p>A transformation function is a pair of operations that select and modify the rows in a related time series. You select the rows that you want with a condition operation and you modify the rows with a transformation operation. All conditions are joined with an AND operation, meaning that all conditions must be true for the transformation to be applied. Transformations are applied in the order that they are listed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesTransformation {
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
     #[doc(hidden)]
@@ -6144,14 +5795,6 @@ impl TimeSeriesTransformation {
         &self,
     ) -> std::option::Option<&[crate::model::TimeSeriesCondition]> {
         self.time_series_conditions.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesTransformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesTransformation");
-        formatter.field("action", &self.action);
-        formatter.field("time_series_conditions", &self.time_series_conditions);
-        formatter.finish()
     }
 }
 /// See [`TimeSeriesTransformation`](crate::model::TimeSeriesTransformation).
@@ -6212,7 +5855,7 @@ impl TimeSeriesTransformation {
 
 /// <p>Creates a subset of items within an attribute that are modified. For example, you can use this operation to create a subset of items that cost $5 or less. To do this, you specify <code>"AttributeName": "price"</code>, <code>"AttributeValue": "5"</code>, and <code>"Condition": "LESS_THAN"</code>. Pair this operation with the <code>Action</code> operation within the <code>CreateWhatIfForecastRequest$TimeSeriesTransformations</code> operation to define how the attribute is modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesCondition {
     /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
     #[doc(hidden)]
@@ -6236,15 +5879,6 @@ impl TimeSeriesCondition {
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
     pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
         self.condition.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesCondition");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`TimeSeriesCondition`](crate::model::TimeSeriesCondition).
@@ -6416,7 +6050,7 @@ impl AsRef<str> for Condition {
 
 /// <p>Defines the modifications that you are making to an attribute for a what-if forecast. For example, you can use this operation to create a what-if forecast that investigates a 10% off sale on all shoes. To do this, you specify <code>"AttributeName": "shoes"</code>, <code>"Operation": "MULTIPLY"</code>, and <code>"Value": "0.90"</code>. Pair this operation with the <code>TimeSeriesCondition</code> operation within the <code>CreateWhatIfForecastRequest$TimeSeriesTransformations</code> operation to define a subset of attribute items that are modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>The related time series that you are modifying. This value is case insensitive.</p>
     #[doc(hidden)]
@@ -6452,15 +6086,6 @@ impl Action {
     /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("operation", &self.operation);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -6647,7 +6272,7 @@ impl AsRef<str> for Operation {
 /// <li> <p> <code>Schema</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesSelector {
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
     #[doc(hidden)]
@@ -6659,13 +6284,6 @@ impl TimeSeriesSelector {
         &self,
     ) -> std::option::Option<&crate::model::TimeSeriesIdentifiers> {
         self.time_series_identifiers.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesSelector");
-        formatter.field("time_series_identifiers", &self.time_series_identifiers);
-        formatter.finish()
     }
 }
 /// See [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
@@ -6711,7 +6329,7 @@ impl TimeSeriesSelector {
 
 /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesIdentifiers {
     /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
     #[doc(hidden)]
@@ -6735,15 +6353,6 @@ impl TimeSeriesIdentifiers {
     /// <p>The format of the data, either CSV or PARQUET.</p>
     pub fn format(&self) -> std::option::Option<&str> {
         self.format.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesIdentifiers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesIdentifiers");
-        formatter.field("data_source", &self.data_source);
-        formatter.field("schema", &self.schema);
-        formatter.field("format", &self.format);
-        formatter.finish()
     }
 }
 /// See [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
@@ -6809,7 +6418,7 @@ impl TimeSeriesIdentifiers {
 
 /// <p>Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictorExecutionDetails {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     #[doc(hidden)]
@@ -6819,13 +6428,6 @@ impl PredictorExecutionDetails {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub fn predictor_executions(&self) -> std::option::Option<&[crate::model::PredictorExecution]> {
         self.predictor_executions.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictorExecutionDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictorExecutionDetails");
-        formatter.field("predictor_executions", &self.predictor_executions);
-        formatter.finish()
     }
 }
 /// See [`PredictorExecutionDetails`](crate::model::PredictorExecutionDetails).
@@ -6874,7 +6476,7 @@ impl PredictorExecutionDetails {
 
 /// <p>The algorithm used to perform a backtest and the status of those tests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictorExecution {
     /// <p>The ARN of the algorithm used to test the predictor.</p>
     #[doc(hidden)]
@@ -6891,14 +6493,6 @@ impl PredictorExecution {
     /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub fn test_windows(&self) -> std::option::Option<&[crate::model::TestWindowSummary]> {
         self.test_windows.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictorExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictorExecution");
-        formatter.field("algorithm_arn", &self.algorithm_arn);
-        formatter.field("test_windows", &self.test_windows);
-        formatter.finish()
     }
 }
 /// See [`PredictorExecution`](crate::model::PredictorExecution).
@@ -6962,7 +6556,7 @@ impl PredictorExecution {
 
 /// <p>The status, start time, and end time of a backtest, as well as a failure reason if applicable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestWindowSummary {
     /// <p>The time at which the test began.</p>
     #[doc(hidden)]
@@ -7003,16 +6597,6 @@ impl TestWindowSummary {
     /// <p>If the test failed, the reason why it failed.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for TestWindowSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestWindowSummary");
-        formatter.field("test_window_start", &self.test_window_start);
-        formatter.field("test_window_end", &self.test_window_end);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`TestWindowSummary`](crate::model::TestWindowSummary).
@@ -7103,7 +6687,7 @@ impl TestWindowSummary {
 
 /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
     /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
@@ -7122,14 +6706,6 @@ impl EncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
@@ -7187,7 +6763,7 @@ impl EncryptionConfig {
 /// <p>You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.</p>
 /// <p>You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeaturizationConfig {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
@@ -7221,15 +6797,6 @@ impl FeaturizationConfig {
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
     pub fn featurizations(&self) -> std::option::Option<&[crate::model::Featurization]> {
         self.featurizations.as_deref()
-    }
-}
-impl std::fmt::Debug for FeaturizationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeaturizationConfig");
-        formatter.field("forecast_frequency", &self.forecast_frequency);
-        formatter.field("forecast_dimensions", &self.forecast_dimensions);
-        formatter.field("featurizations", &self.featurizations);
-        formatter.finish()
     }
 }
 /// See [`FeaturizationConfig`](crate::model::FeaturizationConfig).
@@ -7334,7 +6901,7 @@ impl FeaturizationConfig {
 /// <p> <code>} ]</code> </p>
 /// <p> <code>}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Featurization {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
     #[doc(hidden)]
@@ -7354,14 +6921,6 @@ impl Featurization {
         &self,
     ) -> std::option::Option<&[crate::model::FeaturizationMethod]> {
         self.featurization_pipeline.as_deref()
-    }
-}
-impl std::fmt::Debug for Featurization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Featurization");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("featurization_pipeline", &self.featurization_pipeline);
-        formatter.finish()
     }
 }
 /// See [`Featurization`](crate::model::Featurization).
@@ -7430,7 +6989,7 @@ impl Featurization {
 /// <p> <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code> </p>
 /// <p> <code>}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeaturizationMethod {
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
     #[doc(hidden)]
@@ -7481,17 +7040,6 @@ impl FeaturizationMethod {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.featurization_method_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for FeaturizationMethod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeaturizationMethod");
-        formatter.field("featurization_method_name", &self.featurization_method_name);
-        formatter.field(
-            "featurization_method_parameters",
-            &self.featurization_method_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`FeaturizationMethod`](crate::model::FeaturizationMethod).
@@ -7684,7 +7232,7 @@ impl AsRef<str> for FeaturizationMethodName {
 /// </note>
 /// <p>The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <code>CreatePredictor</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
@@ -7704,14 +7252,6 @@ impl InputDataConfig {
         &self,
     ) -> std::option::Option<&[crate::model::SupplementaryFeature]> {
         self.supplementary_features.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDataConfig");
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("supplementary_features", &self.supplementary_features);
-        formatter.finish()
     }
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
@@ -7782,7 +7322,7 @@ impl InputDataConfig {
 /// <p> <b>Holidays</b> </p>
 /// <p>Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays Featurization</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SupplementaryFeature {
     /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
     #[doc(hidden)]
@@ -7941,14 +7481,6 @@ impl SupplementaryFeature {
     /// </ul>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SupplementaryFeature {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SupplementaryFeature");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SupplementaryFeature`](crate::model::SupplementaryFeature).
@@ -8143,7 +7675,7 @@ impl SupplementaryFeature {
 /// <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p>
 /// <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HyperParameterTuningJobConfig {
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
     #[doc(hidden)]
@@ -8153,13 +7685,6 @@ impl HyperParameterTuningJobConfig {
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
     pub fn parameter_ranges(&self) -> std::option::Option<&crate::model::ParameterRanges> {
         self.parameter_ranges.as_ref()
-    }
-}
-impl std::fmt::Debug for HyperParameterTuningJobConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterTuningJobConfig");
-        formatter.field("parameter_ranges", &self.parameter_ranges);
-        formatter.finish()
     }
 }
 /// See [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
@@ -8201,7 +7726,7 @@ impl HyperParameterTuningJobConfig {
 
 /// <p>Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <code>HyperParameterTuningJobConfig</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterRanges {
     /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
     #[doc(hidden)]
@@ -8234,21 +7759,6 @@ impl ParameterRanges {
         &self,
     ) -> std::option::Option<&[crate::model::IntegerParameterRange]> {
         self.integer_parameter_ranges.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterRanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterRanges");
-        formatter.field(
-            "categorical_parameter_ranges",
-            &self.categorical_parameter_ranges,
-        );
-        formatter.field(
-            "continuous_parameter_ranges",
-            &self.continuous_parameter_ranges,
-        );
-        formatter.field("integer_parameter_ranges", &self.integer_parameter_ranges);
-        formatter.finish()
     }
 }
 /// See [`ParameterRanges`](crate::model::ParameterRanges).
@@ -8350,7 +7860,7 @@ impl ParameterRanges {
 
 /// <p>Specifies an integer hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntegerParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
     #[doc(hidden)]
@@ -8439,16 +7949,6 @@ impl IntegerParameterRange {
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub fn scaling_type(&self) -> std::option::Option<&crate::model::ScalingType> {
         self.scaling_type.as_ref()
-    }
-}
-impl std::fmt::Debug for IntegerParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntegerParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("scaling_type", &self.scaling_type);
-        formatter.finish()
     }
 }
 /// See [`IntegerParameterRange`](crate::model::IntegerParameterRange).
@@ -8684,7 +8184,7 @@ impl AsRef<str> for ScalingType {
 
 /// <p>Specifies a continuous hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinuousParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
     #[doc(hidden)]
@@ -8773,16 +8273,6 @@ impl ContinuousParameterRange {
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub fn scaling_type(&self) -> std::option::Option<&crate::model::ScalingType> {
         self.scaling_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ContinuousParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinuousParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("scaling_type", &self.scaling_type);
-        formatter.finish()
     }
 }
 /// See [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
@@ -8918,7 +8408,7 @@ impl ContinuousParameterRange {
 
 /// <p>Specifies a categorical hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CategoricalParameterRange {
     /// <p>The name of the categorical hyperparameter to tune.</p>
     #[doc(hidden)]
@@ -8935,14 +8425,6 @@ impl CategoricalParameterRange {
     /// <p>A list of the tunable categories for the hyperparameter.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for CategoricalParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CategoricalParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
@@ -9002,7 +8484,7 @@ impl CategoricalParameterRange {
 
 /// <p>Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <code>CreatePredictor</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationParameters {
     /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through 5.</p>
     #[doc(hidden)]
@@ -9021,17 +8503,6 @@ impl EvaluationParameters {
     /// <p> <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES dataset length</p>
     pub fn back_test_window_offset(&self) -> std::option::Option<i32> {
         self.back_test_window_offset
-    }
-}
-impl std::fmt::Debug for EvaluationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationParameters");
-        formatter.field(
-            "number_of_backtest_windows",
-            &self.number_of_backtest_windows,
-        );
-        formatter.field("back_test_window_offset", &self.back_test_window_offset);
-        formatter.finish()
     }
 }
 /// See [`EvaluationParameters`](crate::model::EvaluationParameters).
@@ -9084,7 +8555,7 @@ impl EvaluationParameters {
 
 /// <p>Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Baseline {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
     #[doc(hidden)]
@@ -9094,13 +8565,6 @@ impl Baseline {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
     pub fn predictor_baseline(&self) -> std::option::Option<&crate::model::PredictorBaseline> {
         self.predictor_baseline.as_ref()
-    }
-}
-impl std::fmt::Debug for Baseline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Baseline");
-        formatter.field("predictor_baseline", &self.predictor_baseline);
-        formatter.finish()
     }
 }
 /// See [`Baseline`](crate::model::Baseline).
@@ -9142,7 +8606,7 @@ impl Baseline {
 
 /// <p>Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictorBaseline {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
     #[doc(hidden)]
@@ -9152,13 +8616,6 @@ impl PredictorBaseline {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
     pub fn baseline_metrics(&self) -> std::option::Option<&[crate::model::BaselineMetric]> {
         self.baseline_metrics.as_deref()
-    }
-}
-impl std::fmt::Debug for PredictorBaseline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictorBaseline");
-        formatter.field("baseline_metrics", &self.baseline_metrics);
-        formatter.finish()
     }
 }
 /// See [`PredictorBaseline`](crate::model::PredictorBaseline).
@@ -9207,7 +8664,7 @@ impl PredictorBaseline {
 
 /// <p>An individual metric that you can use for comparison as you evaluate your monitoring results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaselineMetric {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -9224,14 +8681,6 @@ impl BaselineMetric {
     /// <p>The value for the metric.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
-    }
-}
-impl std::fmt::Debug for BaselineMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaselineMetric");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`BaselineMetric`](crate::model::BaselineMetric).
@@ -9282,7 +8731,7 @@ impl BaselineMetric {
 
 /// <p>Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Statistics {
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
     #[doc(hidden)]
@@ -9369,24 +8818,6 @@ impl Statistics {
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_nan_long(&self) -> std::option::Option<i64> {
         self.count_nan_long
-    }
-}
-impl std::fmt::Debug for Statistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Statistics");
-        formatter.field("count", &self.count);
-        formatter.field("count_distinct", &self.count_distinct);
-        formatter.field("count_null", &self.count_null);
-        formatter.field("count_nan", &self.count_nan);
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.field("avg", &self.avg);
-        formatter.field("stddev", &self.stddev);
-        formatter.field("count_long", &self.count_long);
-        formatter.field("count_distinct_long", &self.count_distinct_long);
-        formatter.field("count_null_long", &self.count_null_long);
-        formatter.field("count_nan_long", &self.count_nan_long);
-        formatter.finish()
     }
 }
 /// See [`Statistics`](crate::model::Statistics).
@@ -9558,7 +8989,7 @@ impl Statistics {
 /// <p>The time boundary Forecast uses to align and aggregate your data to match your forecast frequency. Provide the unit of time and the time boundary as a key value pair. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>. </p>
 /// <p>For more information about aggregation, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html">Data Aggregation for Different Forecast Frequencies</a>. For more information setting a custom time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeAlignmentBoundary {
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
     #[doc(hidden)]
@@ -9589,16 +9020,6 @@ impl TimeAlignmentBoundary {
     /// <p>The hour of day to use for time alignment during aggregation.</p>
     pub fn hour(&self) -> std::option::Option<i32> {
         self.hour
-    }
-}
-impl std::fmt::Debug for TimeAlignmentBoundary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeAlignmentBoundary");
-        formatter.field("month", &self.month);
-        formatter.field("day_of_month", &self.day_of_month);
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.field("hour", &self.hour);
-        formatter.finish()
     }
 }
 /// See [`TimeAlignmentBoundary`](crate::model::TimeAlignmentBoundary).
@@ -9952,7 +9373,7 @@ impl AsRef<str> for Month {
 
 /// <p>Provides information about the monitor resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitorInfo {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     #[doc(hidden)]
@@ -9983,14 +9404,6 @@ impl MonitorInfo {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for MonitorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitorInfo");
-        formatter.field("monitor_arn", &self.monitor_arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`MonitorInfo`](crate::model::MonitorInfo).
@@ -10055,7 +9468,7 @@ impl MonitorInfo {
 
 /// <p>Provides information about the Explainability resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExplainabilityInfo {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     #[doc(hidden)]
@@ -10084,14 +9497,6 @@ impl ExplainabilityInfo {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for ExplainabilityInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExplainabilityInfo");
-        formatter.field("explainability_arn", &self.explainability_arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ExplainabilityInfo`](crate::model::ExplainabilityInfo).
@@ -10157,7 +9562,7 @@ impl ExplainabilityInfo {
 
 /// <p>The data configuration for your dataset group and any additional datasets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataConfig {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
     #[doc(hidden)]
@@ -10181,15 +9586,6 @@ impl DataConfig {
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
     pub fn additional_datasets(&self) -> std::option::Option<&[crate::model::AdditionalDataset]> {
         self.additional_datasets.as_deref()
-    }
-}
-impl std::fmt::Debug for DataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataConfig");
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("attribute_configs", &self.attribute_configs);
-        formatter.field("additional_datasets", &self.additional_datasets);
-        formatter.finish()
     }
 }
 /// See [`DataConfig`](crate::model::DataConfig).
@@ -10279,7 +9675,7 @@ impl DataConfig {
 /// <p> <b>Holidays</b> </p>
 /// <p>Holidays is a built-in dataset that incorporates national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays Featurization</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalDataset {
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
     #[doc(hidden)]
@@ -10446,14 +9842,6 @@ impl AdditionalDataset {
         &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     > {
         self.configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AdditionalDataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalDataset");
-        formatter.field("name", &self.name);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
     }
 }
 /// See [`AdditionalDataset`](crate::model::AdditionalDataset).
@@ -10670,7 +10058,7 @@ impl AdditionalDataset {
 /// <p> <code>"Transformations": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code> </p>
 /// <p> <code>}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeConfig {
     /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
     #[doc(hidden)]
@@ -10719,14 +10107,6 @@ impl AttributeConfig {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.transformations.as_ref()
-    }
-}
-impl std::fmt::Debug for AttributeConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeConfig");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("transformations", &self.transformations);
-        formatter.finish()
     }
 }
 /// See [`AttributeConfig`](crate::model::AttributeConfig).
@@ -10825,7 +10205,7 @@ impl AttributeConfig {
 
 /// <p>The configuration details for the predictor monitor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitorConfig {
     /// <p>The name of the monitor resource.</p>
     #[doc(hidden)]
@@ -10835,13 +10215,6 @@ impl MonitorConfig {
     /// <p>The name of the monitor resource.</p>
     pub fn monitor_name(&self) -> std::option::Option<&str> {
         self.monitor_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MonitorConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitorConfig");
-        formatter.field("monitor_name", &self.monitor_name);
-        formatter.finish()
     }
 }
 /// See [`MonitorConfig`](crate::model::MonitorConfig).

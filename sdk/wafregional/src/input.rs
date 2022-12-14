@@ -13347,7 +13347,7 @@ impl UpdateXssMatchSetInput {
 
 /// <p>A request to update an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     #[doc(hidden)]
@@ -13383,19 +13383,10 @@ impl UpdateXssMatchSetInput {
         self.updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateXssMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateXssMatchSetInput");
-        formatter.field("xss_match_set_id", &self.xss_match_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWebAclInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     #[doc(hidden)]
@@ -13440,20 +13431,10 @@ impl UpdateWebAclInput {
         self.default_action.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWebAclInput");
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.field("default_action", &self.default_action);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to update a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     #[doc(hidden)]
@@ -13489,22 +13470,10 @@ impl UpdateSqlInjectionMatchSetInput {
         self.updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSqlInjectionMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSqlInjectionMatchSetInput");
-        formatter.field(
-            "sql_injection_match_set_id",
-            &self.sql_injection_match_set_id,
-        );
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     #[doc(hidden)]
@@ -13540,19 +13509,10 @@ impl UpdateSizeConstraintSetInput {
         self.updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSizeConstraintSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSizeConstraintSetInput");
-        formatter.field("size_constraint_set_id", &self.size_constraint_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     #[doc(hidden)]
@@ -13582,19 +13542,10 @@ impl UpdateRuleGroupInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuleGroupInput");
-        formatter.field("rule_group_id", &self.rule_group_id);
-        formatter.field("updates", &self.updates);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuleInput {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     #[doc(hidden)]
@@ -13630,19 +13581,10 @@ impl UpdateRuleInput {
         self.updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuleInput");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     #[doc(hidden)]
@@ -13668,19 +13610,10 @@ impl UpdateRegexPatternSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRegexPatternSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRegexPatternSetInput");
-        formatter.field("regex_pattern_set_id", &self.regex_pattern_set_id);
-        formatter.field("updates", &self.updates);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     #[doc(hidden)]
@@ -13706,19 +13639,10 @@ impl UpdateRegexMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRegexMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRegexMatchSetInput");
-        formatter.field("regex_match_set_id", &self.regex_match_set_id);
-        formatter.field("updates", &self.updates);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     #[doc(hidden)]
@@ -13751,20 +13675,10 @@ impl UpdateRateBasedRuleInput {
         self.rate_limit
     }
 }
-impl std::fmt::Debug for UpdateRateBasedRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRateBasedRuleInput");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.field("rate_limit", &self.rate_limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     #[doc(hidden)]
@@ -13800,19 +13714,10 @@ impl UpdateIpSetInput {
         self.updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIpSetInput");
-        formatter.field("ip_set_id", &self.ip_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     #[doc(hidden)]
@@ -13846,19 +13751,10 @@ impl UpdateGeoMatchSetInput {
         self.updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGeoMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGeoMatchSetInput");
-        formatter.field("geo_match_set_id", &self.geo_match_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     #[doc(hidden)]
@@ -13894,19 +13790,10 @@ impl UpdateByteMatchSetInput {
         self.updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateByteMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateByteMatchSetInput");
-        formatter.field("byte_match_set_id", &self.byte_match_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p></p>
     #[doc(hidden)]
@@ -13925,18 +13812,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p></p>
     #[doc(hidden)]
@@ -13955,18 +13834,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
     #[doc(hidden)]
@@ -13985,18 +13856,10 @@ impl PutPermissionPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutPermissionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPermissionPolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingConfigurationInput {
     /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
     /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
@@ -14014,17 +13877,10 @@ impl PutLoggingConfigurationInput {
         self.logging_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingConfigurationInput");
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to list the <code>XssMatchSet</code> objects created by the current AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListXssMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
     #[doc(hidden)]
@@ -14043,18 +13899,10 @@ impl ListXssMatchSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListXssMatchSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListXssMatchSetsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebAcLsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
     #[doc(hidden)]
@@ -14073,18 +13921,10 @@ impl ListWebAcLsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListWebAcLsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebAcLsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p></p>
     #[doc(hidden)]
@@ -14110,19 +13950,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubscribedRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
     #[doc(hidden)]
@@ -14141,18 +13972,10 @@ impl ListSubscribedRuleGroupsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListSubscribedRuleGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubscribedRuleGroupsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to list the <code>SqlInjectionMatchSet</code> objects created by the current AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSqlInjectionMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>SqlInjectionMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
     #[doc(hidden)]
@@ -14171,18 +13994,10 @@ impl ListSqlInjectionMatchSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListSqlInjectionMatchSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSqlInjectionMatchSetsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSizeConstraintSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
     #[doc(hidden)]
@@ -14201,18 +14016,10 @@ impl ListSizeConstraintSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListSizeConstraintSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSizeConstraintSetsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRulesInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
     #[doc(hidden)]
@@ -14231,18 +14038,10 @@ impl ListRulesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRulesInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
     #[doc(hidden)]
@@ -14261,18 +14060,10 @@ impl ListRuleGroupsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRuleGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRuleGroupsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesForWebAclInput {
     /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
     #[doc(hidden)]
@@ -14291,18 +14082,10 @@ impl ListResourcesForWebAclInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourcesForWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesForWebAclInput");
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegexPatternSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects. For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
     #[doc(hidden)]
@@ -14321,18 +14104,10 @@ impl ListRegexPatternSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRegexPatternSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegexPatternSetsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegexMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
     #[doc(hidden)]
@@ -14351,18 +14126,10 @@ impl ListRegexMatchSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRegexMatchSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegexMatchSetsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRateBasedRulesInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRateBasedRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
     #[doc(hidden)]
@@ -14381,18 +14148,10 @@ impl ListRateBasedRulesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRateBasedRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRateBasedRulesInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLoggingConfigurationsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
     #[doc(hidden)]
@@ -14411,18 +14170,10 @@ impl ListLoggingConfigurationsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListLoggingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLoggingConfigurationsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIpSetsInput {
     /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>IPSets</code>.</p>
     #[doc(hidden)]
@@ -14441,18 +14192,10 @@ impl ListIpSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListIpSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIpSetsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeoMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects. For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
     #[doc(hidden)]
@@ -14471,18 +14214,10 @@ impl ListGeoMatchSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListGeoMatchSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeoMatchSetsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListByteMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
     #[doc(hidden)]
@@ -14501,18 +14236,10 @@ impl ListByteMatchSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListByteMatchSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListByteMatchSetsInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActivatedRulesInRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
     #[doc(hidden)]
@@ -14538,19 +14265,10 @@ impl ListActivatedRulesInRuleGroupInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListActivatedRulesInRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActivatedRulesInRuleGroupInput");
-        formatter.field("rule_group_id", &self.rule_group_id);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     #[doc(hidden)]
@@ -14562,17 +14280,10 @@ impl GetXssMatchSetInput {
         self.xss_match_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetXssMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetXssMatchSetInput");
-        formatter.field("xss_match_set_id", &self.xss_match_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWebAclForResourceInput {
     /// <p>The ARN (Amazon Resource Name) of the resource for which to get the web ACL, either an application load balancer or Amazon API Gateway stage.</p>
     /// <p>The ARN should be in one of the following formats:</p>
@@ -14594,17 +14305,10 @@ impl GetWebAclForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetWebAclForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWebAclForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWebAclInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     #[doc(hidden)]
@@ -14616,17 +14320,10 @@ impl GetWebAclInput {
         self.web_acl_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWebAclInput");
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     #[doc(hidden)]
@@ -14638,20 +14335,10 @@ impl GetSqlInjectionMatchSetInput {
         self.sql_injection_match_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSqlInjectionMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSqlInjectionMatchSetInput");
-        formatter.field(
-            "sql_injection_match_set_id",
-            &self.sql_injection_match_set_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     #[doc(hidden)]
@@ -14663,17 +14350,10 @@ impl GetSizeConstraintSetInput {
         self.size_constraint_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSizeConstraintSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSizeConstraintSetInput");
-        formatter.field("size_constraint_set_id", &self.size_constraint_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSampledRequestsInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
     #[doc(hidden)]
@@ -14714,20 +14394,10 @@ impl GetSampledRequestsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for GetSampledRequestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSampledRequestsInput");
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("time_window", &self.time_window);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     #[doc(hidden)]
@@ -14739,17 +14409,10 @@ impl GetRuleGroupInput {
         self.rule_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRuleGroupInput");
-        formatter.field("rule_group_id", &self.rule_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRuleInput {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     #[doc(hidden)]
@@ -14761,17 +14424,10 @@ impl GetRuleInput {
         self.rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRuleInput");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     #[doc(hidden)]
@@ -14783,17 +14439,10 @@ impl GetRegexPatternSetInput {
         self.regex_pattern_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRegexPatternSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRegexPatternSetInput");
-        formatter.field("regex_pattern_set_id", &self.regex_pattern_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     #[doc(hidden)]
@@ -14805,17 +14454,10 @@ impl GetRegexMatchSetInput {
         self.regex_match_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRegexMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRegexMatchSetInput");
-        formatter.field("regex_match_set_id", &self.regex_match_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     #[doc(hidden)]
@@ -14834,18 +14476,10 @@ impl GetRateBasedRuleManagedKeysInput {
         self.next_marker.as_deref()
     }
 }
-impl std::fmt::Debug for GetRateBasedRuleManagedKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRateBasedRuleManagedKeysInput");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     #[doc(hidden)]
@@ -14857,17 +14491,10 @@ impl GetRateBasedRuleInput {
         self.rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRateBasedRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRateBasedRuleInput");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
     #[doc(hidden)]
@@ -14879,17 +14506,10 @@ impl GetPermissionPolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetPermissionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPermissionPolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
     #[doc(hidden)]
@@ -14901,17 +14521,10 @@ impl GetLoggingConfigurationInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLoggingConfigurationInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     #[doc(hidden)]
@@ -14923,17 +14536,10 @@ impl GetIpSetInput {
         self.ip_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIpSetInput");
-        formatter.field("ip_set_id", &self.ip_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     #[doc(hidden)]
@@ -14945,17 +14551,10 @@ impl GetGeoMatchSetInput {
         self.geo_match_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGeoMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGeoMatchSetInput");
-        formatter.field("geo_match_set_id", &self.geo_match_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangeTokenStatusInput {
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
     #[doc(hidden)]
@@ -14967,28 +14566,15 @@ impl GetChangeTokenStatusInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetChangeTokenStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangeTokenStatusInput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangeTokenInput {}
-impl std::fmt::Debug for GetChangeTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangeTokenInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     #[doc(hidden)]
@@ -15000,17 +14586,10 @@ impl GetByteMatchSetInput {
         self.byte_match_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetByteMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetByteMatchSetInput");
-        formatter.field("byte_match_set_id", &self.byte_match_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWebAclInput {
     /// <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is being removed, either an application load balancer or Amazon API Gateway stage.</p>
     /// <p>The ARN should be in one of the following formats:</p>
@@ -15032,17 +14611,10 @@ impl DisassociateWebAclInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWebAclInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete an <code>XssMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     #[doc(hidden)]
@@ -15061,18 +14633,10 @@ impl DeleteXssMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteXssMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteXssMatchSetInput");
-        formatter.field("xss_match_set_id", &self.xss_match_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWebAclInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     #[doc(hidden)]
@@ -15091,18 +14655,10 @@ impl DeleteWebAclInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWebAclInput");
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete a <code>SqlInjectionMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     #[doc(hidden)]
@@ -15121,21 +14677,10 @@ impl DeleteSqlInjectionMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSqlInjectionMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSqlInjectionMatchSetInput");
-        formatter.field(
-            "sql_injection_match_set_id",
-            &self.sql_injection_match_set_id,
-        );
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     #[doc(hidden)]
@@ -15154,18 +14699,10 @@ impl DeleteSizeConstraintSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSizeConstraintSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSizeConstraintSetInput");
-        formatter.field("size_constraint_set_id", &self.size_constraint_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     #[doc(hidden)]
@@ -15184,18 +14721,10 @@ impl DeleteRuleGroupInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleGroupInput");
-        formatter.field("rule_group_id", &self.rule_group_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleInput {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     #[doc(hidden)]
@@ -15214,18 +14743,10 @@ impl DeleteRuleInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleInput");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     #[doc(hidden)]
@@ -15244,18 +14765,10 @@ impl DeleteRegexPatternSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRegexPatternSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRegexPatternSetInput");
-        formatter.field("regex_pattern_set_id", &self.regex_pattern_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     #[doc(hidden)]
@@ -15274,18 +14787,10 @@ impl DeleteRegexMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRegexMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRegexMatchSetInput");
-        formatter.field("regex_match_set_id", &self.regex_match_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     #[doc(hidden)]
@@ -15304,18 +14809,10 @@ impl DeleteRateBasedRuleInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRateBasedRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRateBasedRuleInput");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete the policy.</p>
     /// <p>The user making the request must be the owner of the RuleGroup.</p>
@@ -15329,17 +14826,10 @@ impl DeletePermissionPolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePermissionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePermissionPolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     #[doc(hidden)]
@@ -15351,17 +14841,10 @@ impl DeleteLoggingConfigurationInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoggingConfigurationInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     #[doc(hidden)]
@@ -15380,18 +14863,10 @@ impl DeleteIpSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIpSetInput");
-        formatter.field("ip_set_id", &self.ip_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     #[doc(hidden)]
@@ -15410,18 +14885,10 @@ impl DeleteGeoMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGeoMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGeoMatchSetInput");
-        formatter.field("geo_match_set_id", &self.geo_match_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     #[doc(hidden)]
@@ -15440,18 +14907,10 @@ impl DeleteByteMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteByteMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteByteMatchSetInput");
-        formatter.field("byte_match_set_id", &self.byte_match_set_id);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to create an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateXssMatchSetInput {
     /// <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
     #[doc(hidden)]
@@ -15470,18 +14929,10 @@ impl CreateXssMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateXssMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateXssMatchSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebAclMigrationStackInput {
     /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
     #[doc(hidden)]
@@ -15517,19 +14968,10 @@ impl CreateWebAclMigrationStackInput {
         self.ignore_unsupported_type
     }
 }
-impl std::fmt::Debug for CreateWebAclMigrationStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebAclMigrationStackInput");
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("ignore_unsupported_type", &self.ignore_unsupported_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebAclInput {
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
     #[doc(hidden)]
@@ -15569,21 +15011,10 @@ impl CreateWebAclInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebAclInput");
-        formatter.field("name", &self.name);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("default_action", &self.default_action);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to create a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSqlInjectionMatchSetInput {
     /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
     #[doc(hidden)]
@@ -15602,18 +15033,10 @@ impl CreateSqlInjectionMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSqlInjectionMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSqlInjectionMatchSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSizeConstraintSetInput {
     /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
     #[doc(hidden)]
@@ -15632,18 +15055,10 @@ impl CreateSizeConstraintSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSizeConstraintSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSizeConstraintSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleGroupInput {
     /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change <code>Name</code> after you create a <code>RuleGroup</code>.</p>
     #[doc(hidden)]
@@ -15676,20 +15091,10 @@ impl CreateRuleGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleInput {
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     #[doc(hidden)]
@@ -15722,20 +15127,10 @@ impl CreateRuleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRegexPatternSetInput {
     /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
     #[doc(hidden)]
@@ -15754,18 +15149,10 @@ impl CreateRegexPatternSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRegexPatternSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRegexPatternSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRegexMatchSetInput {
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     #[doc(hidden)]
@@ -15784,18 +15171,10 @@ impl CreateRegexMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRegexMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRegexMatchSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRateBasedRuleInput {
     /// <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
     #[doc(hidden)]
@@ -15842,22 +15221,10 @@ impl CreateRateBasedRuleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRateBasedRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRateBasedRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("rate_key", &self.rate_key);
-        formatter.field("rate_limit", &self.rate_limit);
-        formatter.field("change_token", &self.change_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIpSetInput {
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
     #[doc(hidden)]
@@ -15876,18 +15243,10 @@ impl CreateIpSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIpSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGeoMatchSetInput {
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
     #[doc(hidden)]
@@ -15906,18 +15265,10 @@ impl CreateGeoMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGeoMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGeoMatchSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateByteMatchSetInput {
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     #[doc(hidden)]
@@ -15936,18 +15287,10 @@ impl CreateByteMatchSetInput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateByteMatchSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateByteMatchSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWebAclInput {
     /// <p>A unique identifier (ID) for the web ACL. </p>
     #[doc(hidden)]
@@ -15974,13 +15317,5 @@ impl AssociateWebAclInput {
     /// </ul>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWebAclInput");
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

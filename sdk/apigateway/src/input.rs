@@ -25837,7 +25837,7 @@ impl UpdateVpcLinkInput {
 
 /// <p>Updates an existing VpcLink of a specified identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -25856,18 +25856,10 @@ impl UpdateVpcLinkInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVpcLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVpcLinkInput");
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>The PATCH request to update a usage plan of a given plan Id.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUsagePlanInput {
     /// <p>The Id of the to-be-updated usage plan.</p>
     #[doc(hidden)]
@@ -25886,18 +25878,10 @@ impl UpdateUsagePlanInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUsagePlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUsagePlanInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>The PATCH request to grant a temporary extension to the remaining quota of a usage plan associated with a specified API key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUsageInput {
     /// <p>The Id of the usage plan associated with the usage data.</p>
     #[doc(hidden)]
@@ -25923,19 +25907,10 @@ impl UpdateUsageInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUsageInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to change information about a Stage resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -25961,19 +25936,10 @@ impl UpdateStageInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStageInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to update an existing RestApi resource in your collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRestApiInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -25992,18 +25958,10 @@ impl UpdateRestApiInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRestApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRestApiInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to change information about a Resource resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26029,19 +25987,10 @@ impl UpdateResourceInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26067,19 +26016,10 @@ impl UpdateRequestValidatorInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRequestValidatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRequestValidatorInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to update an existing model in an existing RestApi resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26105,19 +26045,10 @@ impl UpdateModelInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateModelInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("model_name", &self.model_name);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to update an existing MethodResponse resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMethodResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26157,21 +26088,10 @@ impl UpdateMethodResponseInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMethodResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMethodResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to update an existing Method resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26204,20 +26124,10 @@ impl UpdateMethodInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMethodInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMethodInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents an update integration response request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26257,21 +26167,10 @@ impl UpdateIntegrationResponseInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateIntegrationResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntegrationResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents an update integration request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26304,20 +26203,10 @@ impl UpdateIntegrationInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntegrationInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates a GatewayResponse of a specified response type on the given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26343,19 +26232,10 @@ impl UpdateGatewayResponseInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewayResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("response_type", &self.response_type);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change information about the DomainName resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainNameInput {
     /// <p>The name of the DomainName resource to be changed.</p>
     #[doc(hidden)]
@@ -26374,18 +26254,10 @@ impl UpdateDomainNameInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates an existing documentation version of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi..</p>
     #[doc(hidden)]
@@ -26411,19 +26283,10 @@ impl UpdateDocumentationVersionInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDocumentationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentationVersionInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates an existing documentation part of a given API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26449,19 +26312,10 @@ impl UpdateDocumentationPartInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDocumentationPartInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentationPartInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("documentation_part_id", &self.documentation_part_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to change information about a Deployment resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26487,19 +26341,10 @@ impl UpdateDeploymentInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeploymentInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change information about an ClientCertificate resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be updated.</p>
     #[doc(hidden)]
@@ -26518,18 +26363,10 @@ impl UpdateClientCertificateInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateClientCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClientCertificateInput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change information about the BasePathMapping resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to change.</p>
     #[doc(hidden)]
@@ -26557,19 +26394,10 @@ impl UpdateBasePathMappingInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBasePathMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBasePathMappingInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("base_path", &self.base_path);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to update an existing Authorizer resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26595,19 +26423,10 @@ impl UpdateAuthorizerInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAuthorizerInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to change information about an ApiKey resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApiKeyInput {
     /// <p>The identifier of the ApiKey resource to be updated.</p>
     #[doc(hidden)]
@@ -26626,18 +26445,10 @@ impl UpdateApiKeyInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApiKeyInput");
-        formatter.field("api_key", &self.api_key);
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to change information about the current Account resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountInput {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     #[doc(hidden)]
@@ -26649,17 +26460,10 @@ impl UpdateAccountInput {
         self.patch_operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountInput");
-        formatter.field("patch_operations", &self.patch_operations);
-        formatter.finish()
-    }
-}
 
 /// <p>Removes a tag from a given resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of a resource that can be tagged.</p>
     #[doc(hidden)]
@@ -26678,18 +26482,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Make a request to simulate the invocation of a Method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestInvokeMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26771,25 +26567,10 @@ impl TestInvokeMethodInput {
         self.stage_variables.as_ref()
     }
 }
-impl std::fmt::Debug for TestInvokeMethodInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestInvokeMethodInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("path_with_query_string", &self.path_with_query_string);
-        formatter.field("body", &self.body);
-        formatter.field("headers", &self.headers);
-        formatter.field("multi_value_headers", &self.multi_value_headers);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("stage_variables", &self.stage_variables);
-        formatter.finish()
-    }
-}
 
 /// <p>Make a request to simulate the invocation of an Authorizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestInvokeAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26868,24 +26649,10 @@ impl TestInvokeAuthorizerInput {
         self.additional_context.as_ref()
     }
 }
-impl std::fmt::Debug for TestInvokeAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestInvokeAuthorizerInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("headers", &self.headers);
-        formatter.field("multi_value_headers", &self.multi_value_headers);
-        formatter.field("path_with_query_string", &self.path_with_query_string);
-        formatter.field("body", &self.body);
-        formatter.field("stage_variables", &self.stage_variables);
-        formatter.field("additional_context", &self.additional_context);
-        formatter.finish()
-    }
-}
 
 /// <p>Adds or updates a tag on a given resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of a resource that can be tagged.</p>
     #[doc(hidden)]
@@ -26908,18 +26675,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>A PUT request to update an existing API, with external API definitions specified as the request body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRestApiInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -26963,21 +26722,10 @@ impl PutRestApiInput {
         self.body.as_ref()
     }
 }
-impl std::fmt::Debug for PutRestApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRestApiInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("mode", &self.mode);
-        formatter.field("fail_on_warnings", &self.fail_on_warnings);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to add a MethodResponse to an existing Method resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMethodResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -27031,22 +26779,10 @@ impl PutMethodResponseInput {
         self.response_models.as_ref()
     }
 }
-impl std::fmt::Debug for PutMethodResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMethodResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_models", &self.response_models);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to add a method to an existing Resource resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -27135,27 +26871,10 @@ impl PutMethodInput {
         self.authorization_scopes.as_deref()
     }
 }
-impl std::fmt::Debug for PutMethodInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMethodInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a put integration response request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -27226,24 +26945,10 @@ impl PutIntegrationResponseInput {
         self.content_handling.as_ref()
     }
 }
-impl std::fmt::Debug for PutIntegrationResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIntegrationResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("selection_pattern", &self.selection_pattern);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.finish()
-    }
-}
 
 /// <p>Sets up a method's integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -27377,33 +27082,10 @@ impl PutIntegrationInput {
         self.tls_config.as_ref()
     }
 }
-impl std::fmt::Debug for PutIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIntegrationInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("integration_http_method", &self.integration_http_method);
-        formatter.field("uri", &self.uri);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("cache_namespace", &self.cache_namespace);
-        formatter.field("cache_key_parameters", &self.cache_key_parameters);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a customization of a GatewayResponse of a specified response type and status code on the given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -27451,21 +27133,10 @@ impl PutGatewayResponseInput {
         self.response_templates.as_ref()
     }
 }
-impl std::fmt::Debug for PutGatewayResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutGatewayResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("response_type", &self.response_type);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.finish()
-    }
-}
 
 /// <p>A POST request to import an API to API Gateway using an input of an API definition file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportRestApiInput {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     #[doc(hidden)]
@@ -27505,19 +27176,10 @@ impl ImportRestApiInput {
         self.body.as_ref()
     }
 }
-impl std::fmt::Debug for ImportRestApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportRestApiInput");
-        formatter.field("fail_on_warnings", &self.fail_on_warnings);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 
 /// <p>Import documentation parts from an external (e.g., OpenAPI) definition file. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportDocumentationPartsInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -27550,20 +27212,10 @@ impl ImportDocumentationPartsInput {
         self.body.as_ref()
     }
 }
-impl std::fmt::Debug for ImportDocumentationPartsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportDocumentationPartsInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("mode", &self.mode);
-        formatter.field("fail_on_warnings", &self.fail_on_warnings);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 
 /// <p>The POST request to import API keys from an external source, such as a CSV-formatted file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportApiKeysInput {
     /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
     #[doc(hidden)]
@@ -27589,19 +27241,10 @@ impl ImportApiKeysInput {
         self.fail_on_warnings
     }
 }
-impl std::fmt::Debug for ImportApiKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportApiKeysInput");
-        formatter.field("body", &self.body);
-        formatter.field("format", &self.format);
-        formatter.field("fail_on_warnings", &self.fail_on_warnings);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets the VpcLinks collection under the caller's account in a selected region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcLinksInput {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
@@ -27620,18 +27263,10 @@ impl GetVpcLinksInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetVpcLinksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcLinksInput");
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets a specified VPC link under the caller's account in a region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -27643,17 +27278,10 @@ impl GetVpcLinkInput {
         self.vpc_link_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVpcLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcLinkInput");
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The GET request to get all the usage plans of the caller's account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlansInput {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
@@ -27679,19 +27307,10 @@ impl GetUsagePlansInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetUsagePlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlansInput");
-        formatter.field("position", &self.position);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>The GET request to get all the usage plan keys representing the API keys added to a specified usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanKeysInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     #[doc(hidden)]
@@ -27724,20 +27343,10 @@ impl GetUsagePlanKeysInput {
         self.name_query.as_deref()
     }
 }
-impl std::fmt::Debug for GetUsagePlanKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanKeysInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.field("name_query", &self.name_query);
-        formatter.finish()
-    }
-}
 
 /// <p>The GET request to get a usage plan key of a given key identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     #[doc(hidden)]
@@ -27756,18 +27365,10 @@ impl GetUsagePlanKeyInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetUsagePlanKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanKeyInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The GET request to get a usage plan of a given plan identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanInput {
     /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
     #[doc(hidden)]
@@ -27779,17 +27380,10 @@ impl GetUsagePlanInput {
         self.usage_plan_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetUsagePlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The GET request to get the usage data of a usage plan in a specified time interval.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsageInput {
     /// <p>The Id of the usage plan associated with the usage data.</p>
     #[doc(hidden)]
@@ -27836,22 +27430,10 @@ impl GetUsageInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsageInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets the Tags collection for a given resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagsInput {
     /// <p>The ARN of a resource that can be tagged.</p>
     #[doc(hidden)]
@@ -27877,19 +27459,10 @@ impl GetTagsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to get information about one or more Stage resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStagesInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -27908,18 +27481,10 @@ impl GetStagesInput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStagesInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to get information about a Stage resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -27938,18 +27503,10 @@ impl GetStageInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStageInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Get the SdkTypes collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkTypesInput {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
@@ -27968,18 +27525,10 @@ impl GetSdkTypesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetSdkTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkTypesInput");
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Get an SdkType instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkTypeInput {
     /// <p>The identifier of the queried SdkType instance.</p>
     #[doc(hidden)]
@@ -27991,17 +27540,10 @@ impl GetSdkTypeInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSdkTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkTypeInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>Request a new generated client SDK for a RestApi and Stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28038,20 +27580,10 @@ impl GetSdkInput {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for GetSdkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("sdk_type", &self.sdk_type);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 
 /// <p>The GET request to list existing RestApis defined for your collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRestApisInput {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
@@ -28070,18 +27602,10 @@ impl GetRestApisInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetRestApisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRestApisInput");
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>The GET request to list an existing RestApi defined for your collection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRestApiInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28093,17 +27617,10 @@ impl GetRestApiInput {
         self.rest_api_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRestApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRestApiInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to list information about a collection of resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcesInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28136,20 +27653,10 @@ impl GetResourcesInput {
         self.embed.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcesInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.field("embed", &self.embed);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to list information about a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28175,19 +27682,10 @@ impl GetResourceInput {
         self.embed.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("embed", &self.embed);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets the RequestValidators collection of a given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRequestValidatorsInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28213,19 +27711,10 @@ impl GetRequestValidatorsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetRequestValidatorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRequestValidatorsInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets a RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28244,18 +27733,10 @@ impl GetRequestValidatorInput {
         self.request_validator_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRequestValidatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRequestValidatorInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to generate a sample mapping template used to transform the payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelTemplateInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28274,18 +27755,10 @@ impl GetModelTemplateInput {
         self.model_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelTemplateInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("model_name", &self.model_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to list existing Models defined for a RestApi resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelsInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28311,19 +27784,10 @@ impl GetModelsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelsInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to list information about a model in an existing RestApi resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelInput {
     /// <p>The RestApi identifier under which the Model exists.</p>
     #[doc(hidden)]
@@ -28349,19 +27813,10 @@ impl GetModelInput {
         self.flatten
     }
 }
-impl std::fmt::Debug for GetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("model_name", &self.model_name);
-        formatter.field("flatten", &self.flatten);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe a MethodResponse resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMethodResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28394,20 +27849,10 @@ impl GetMethodResponseInput {
         self.status_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetMethodResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMethodResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe an existing Method resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28433,19 +27878,10 @@ impl GetMethodInput {
         self.http_method.as_deref()
     }
 }
-impl std::fmt::Debug for GetMethodInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMethodInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a get integration response request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28478,20 +27914,10 @@ impl GetIntegrationResponseInput {
         self.status_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetIntegrationResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to get the integration configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28517,19 +27943,10 @@ impl GetIntegrationInput {
         self.http_method.as_deref()
     }
 }
-impl std::fmt::Debug for GetIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported response types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGatewayResponsesInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28555,19 +27972,10 @@ impl GetGatewayResponsesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetGatewayResponsesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGatewayResponsesInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets a GatewayResponse of a specified response type on the given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28586,18 +27994,10 @@ impl GetGatewayResponseInput {
         self.response_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetGatewayResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGatewayResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("response_type", &self.response_type);
-        formatter.finish()
-    }
-}
 
 /// <p>Request a new export of a RestApi for a particular Stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExportInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28641,21 +28041,10 @@ impl GetExportInput {
         self.accepts.as_deref()
     }
 }
-impl std::fmt::Debug for GetExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExportInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("export_type", &self.export_type);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("accepts", &self.accepts);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe a collection of DomainName resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNamesInput {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
@@ -28674,18 +28063,10 @@ impl GetDomainNamesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetDomainNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNamesInput");
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to get the name of a DomainName resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
     #[doc(hidden)]
@@ -28697,17 +28078,10 @@ impl GetDomainNameInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets the documentation versions of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationVersionsInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28733,19 +28107,10 @@ impl GetDocumentationVersionsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetDocumentationVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationVersionsInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets a documentation snapshot of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28764,18 +28129,10 @@ impl GetDocumentationVersionInput {
         self.documentation_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationVersionInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets the documentation parts of an API. The result may be filtered by the type, name, or path of API entities (targets).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationPartsInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28829,23 +28186,10 @@ impl GetDocumentationPartsInput {
         self.location_status.as_ref()
     }
 }
-impl std::fmt::Debug for GetDocumentationPartsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationPartsInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name_query", &self.name_query);
-        formatter.field("path", &self.path);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.field("location_status", &self.location_status);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets a specified documentation part of a given API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28864,18 +28208,10 @@ impl GetDocumentationPartInput {
         self.documentation_part_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentationPartInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationPartInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("documentation_part_id", &self.documentation_part_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to get information about a Deployments collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentsInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28901,19 +28237,10 @@ impl GetDeploymentsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentsInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to get information about a Deployment resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -28939,19 +28266,10 @@ impl GetDeploymentInput {
         self.embed.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("embed", &self.embed);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about a collection of ClientCertificate resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClientCertificatesInput {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
@@ -28970,18 +28288,10 @@ impl GetClientCertificatesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetClientCertificatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetClientCertificatesInput");
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about the current ClientCertificate resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
     #[doc(hidden)]
@@ -28993,17 +28303,10 @@ impl GetClientCertificateInput {
         self.client_certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetClientCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetClientCertificateInput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about a collection of BasePathMapping resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBasePathMappingsInput {
     /// <p>The domain name of a BasePathMapping resource.</p>
     #[doc(hidden)]
@@ -29029,19 +28332,10 @@ impl GetBasePathMappingsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetBasePathMappingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBasePathMappingsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe a BasePathMapping resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to be described.</p>
     #[doc(hidden)]
@@ -29060,18 +28354,10 @@ impl GetBasePathMappingInput {
         self.base_path.as_deref()
     }
 }
-impl std::fmt::Debug for GetBasePathMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBasePathMappingInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("base_path", &self.base_path);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe an existing Authorizers resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizersInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29097,19 +28383,10 @@ impl GetAuthorizersInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetAuthorizersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizersInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe an existing Authorizer resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29128,18 +28405,10 @@ impl GetAuthorizerInput {
         self.authorizer_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizerInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about the current ApiKeys resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiKeysInput {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
@@ -29179,21 +28448,10 @@ impl GetApiKeysInput {
         self.include_values
     }
 }
-impl std::fmt::Debug for GetApiKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiKeysInput");
-        formatter.field("position", &self.position);
-        formatter.field("limit", &self.limit);
-        formatter.field("name_query", &self.name_query);
-        formatter.field("customer_id", &self.customer_id);
-        formatter.field("include_values", &self.include_values);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about the current ApiKey resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiKeyInput {
     /// <p>The identifier of the ApiKey resource.</p>
     #[doc(hidden)]
@@ -29212,29 +28470,15 @@ impl GetApiKeyInput {
         self.include_value
     }
 }
-impl std::fmt::Debug for GetApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiKeyInput");
-        formatter.field("api_key", &self.api_key);
-        formatter.field("include_value", &self.include_value);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to get information about the current Account resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountInput {}
-impl std::fmt::Debug for GetAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountInput");
-        formatter.finish()
-    }
-}
 
 /// <p>A request to generate a ClientCertificate resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateClientCertificateInput {
     /// <p>The description of the ClientCertificate.</p>
     #[doc(hidden)]
@@ -29257,18 +28501,10 @@ impl GenerateClientCertificateInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GenerateClientCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateClientCertificateInput");
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to flush a stage's cache.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlushStageCacheInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29287,18 +28523,10 @@ impl FlushStageCacheInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for FlushStageCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlushStageCacheInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to flush authorizer cache entries on a specified stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlushStageAuthorizersCacheInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29317,18 +28545,10 @@ impl FlushStageAuthorizersCacheInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for FlushStageAuthorizersCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlushStageAuthorizersCacheInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes an existing VpcLink of a specified identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -29340,17 +28560,10 @@ impl DeleteVpcLinkInput {
         self.vpc_link_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVpcLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcLinkInput");
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The DELETE request to delete a usage plan key and remove the underlying API key from the associated usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
     #[doc(hidden)]
@@ -29369,18 +28582,10 @@ impl DeleteUsagePlanKeyInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUsagePlanKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUsagePlanKeyInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The DELETE request to delete a usage plan of a given plan Id.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUsagePlanInput {
     /// <p>The Id of the to-be-deleted usage plan.</p>
     #[doc(hidden)]
@@ -29392,17 +28597,10 @@ impl DeleteUsagePlanInput {
         self.usage_plan_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUsagePlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUsagePlanInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to delete a Stage resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29421,18 +28619,10 @@ impl DeleteStageInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStageInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete the specified API from your collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRestApiInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29444,17 +28634,10 @@ impl DeleteRestApiInput {
         self.rest_api_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRestApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRestApiInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete a Resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29473,18 +28656,10 @@ impl DeleteResourceInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes a specified RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29503,18 +28678,10 @@ impl DeleteRequestValidatorInput {
         self.request_validator_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRequestValidatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRequestValidatorInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete an existing model in an existing RestApi resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29533,18 +28700,10 @@ impl DeleteModelInput {
         self.model_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteModelInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("model_name", &self.model_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete an existing MethodResponse resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMethodResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29577,20 +28736,10 @@ impl DeleteMethodResponseInput {
         self.status_code.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMethodResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMethodResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete an existing Method resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29616,19 +28765,10 @@ impl DeleteMethodInput {
         self.http_method.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMethodInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMethodInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a delete integration response request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29661,20 +28801,10 @@ impl DeleteIntegrationResponseInput {
         self.status_code.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIntegrationResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a delete integration request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29700,19 +28830,10 @@ impl DeleteIntegrationInput {
         self.http_method.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("http_method", &self.http_method);
-        formatter.finish()
-    }
-}
 
 /// <p>Clears any customization of a GatewayResponse of a specified response type on the given RestApi and resets it with the default settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29731,18 +28852,10 @@ impl DeleteGatewayResponseInput {
         self.response_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteGatewayResponseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayResponseInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("response_type", &self.response_type);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete the DomainName resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainNameInput {
     /// <p>The name of the DomainName resource to be deleted.</p>
     #[doc(hidden)]
@@ -29754,17 +28867,10 @@ impl DeleteDomainNameInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes an existing documentation version of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29783,18 +28889,10 @@ impl DeleteDocumentationVersionInput {
         self.documentation_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDocumentationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDocumentationVersionInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes an existing documentation part of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29813,18 +28911,10 @@ impl DeleteDocumentationPartInput {
         self.documentation_part_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDocumentationPartInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDocumentationPartInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("documentation_part_id", &self.documentation_part_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to delete a Deployment resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29843,18 +28933,10 @@ impl DeleteDeploymentInput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete the ClientCertificate resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
     #[doc(hidden)]
@@ -29866,17 +28948,10 @@ impl DeleteClientCertificateInput {
         self.client_certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteClientCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClientCertificateInput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete the BasePathMapping resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to delete.</p>
     #[doc(hidden)]
@@ -29897,18 +28972,10 @@ impl DeleteBasePathMappingInput {
         self.base_path.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBasePathMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBasePathMappingInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("base_path", &self.base_path);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete an existing Authorizer resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -29927,18 +28994,10 @@ impl DeleteAuthorizerInput {
         self.authorizer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAuthorizerInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete the ApiKey resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApiKeyInput {
     /// <p>The identifier of the ApiKey resource to be deleted.</p>
     #[doc(hidden)]
@@ -29950,17 +29009,10 @@ impl DeleteApiKeyInput {
         self.api_key.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApiKeyInput");
-        formatter.field("api_key", &self.api_key);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that typically takes 2-4 minutes to complete and become operational. The caller must have permissions to create and update VPC Endpoint services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcLinkInput {
     /// <p>The name used to label and identify the VPC link.</p>
     #[doc(hidden)]
@@ -29997,20 +29049,10 @@ impl CreateVpcLinkInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVpcLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcLinkInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_arns", &self.target_arns);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The POST request to create a usage plan key for adding an existing API key to a usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
     #[doc(hidden)]
@@ -30036,19 +29078,10 @@ impl CreateUsagePlanKeyInput {
         self.key_type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUsagePlanKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUsagePlanKeyInput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("key_type", &self.key_type);
-        formatter.finish()
-    }
-}
 
 /// <p>The POST request to create a usage plan with the name, description, throttle limits and quota limits, as well as the associated API stages, specified in the payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUsagePlanInput {
     /// <p>The name of the usage plan.</p>
     #[doc(hidden)]
@@ -30099,22 +29132,10 @@ impl CreateUsagePlanInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUsagePlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUsagePlanInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("api_stages", &self.api_stages);
-        formatter.field("throttle", &self.throttle);
-        formatter.field("quota", &self.quota);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to create a Stage resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -30204,27 +29225,10 @@ impl CreateStageInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStageInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("description", &self.description);
-        formatter.field("cache_cluster_enabled", &self.cache_cluster_enabled);
-        formatter.field("cache_cluster_size", &self.cache_cluster_size);
-        formatter.field("variables", &self.variables);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("canary_settings", &self.canary_settings);
-        formatter.field("tracing_enabled", &self.tracing_enabled);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The POST Request to add a new RestApi resource to your collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRestApiInput {
     /// <p>The name of the RestApi.</p>
     #[doc(hidden)]
@@ -30312,30 +29316,10 @@ impl CreateRestApiInput {
         self.disable_execute_api_endpoint
     }
 }
-impl std::fmt::Debug for CreateRestApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRestApiInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("version", &self.version);
-        formatter.field("clone_from", &self.clone_from);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to create a Resource resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -30361,19 +29345,10 @@ impl CreateResourceInput {
         self.path_part.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("path_part", &self.path_part);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -30406,23 +29381,10 @@ impl CreateRequestValidatorInput {
         self.validate_request_parameters
     }
 }
-impl std::fmt::Debug for CreateRequestValidatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRequestValidatorInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("name", &self.name);
-        formatter.field("validate_request_body", &self.validate_request_body);
-        formatter.field(
-            "validate_request_parameters",
-            &self.validate_request_parameters,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Request to add a new Model to an existing RestApi resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelInput {
     /// <p>The RestApi identifier under which the Model will be created.</p>
     #[doc(hidden)]
@@ -30462,21 +29424,10 @@ impl CreateModelInput {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateModelInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("schema", &self.schema);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to create a new domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
     #[doc(hidden)]
@@ -30580,32 +29531,10 @@ impl CreateDomainNameInput {
         self.ownership_verification_certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainNameInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("certificate_body", &self.certificate_body);
-        formatter.field("certificate_private_key", &self.certificate_private_key);
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("regional_certificate_name", &self.regional_certificate_name);
-        formatter.field("regional_certificate_arn", &self.regional_certificate_arn);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.field("security_policy", &self.security_policy);
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field(
-            "ownership_verification_certificate_arn",
-            &self.ownership_verification_certificate_arn,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new documentation version of a given API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -30638,20 +29567,10 @@ impl CreateDocumentationVersionInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDocumentationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDocumentationVersionInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 /// <p>Creates a new documentation part of a given API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -30677,19 +29596,10 @@ impl CreateDocumentationPartInput {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDocumentationPartInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDocumentationPartInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("location", &self.location);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to create a Deployment resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -30761,25 +29671,10 @@ impl CreateDeploymentInput {
         self.tracing_enabled
     }
 }
-impl std::fmt::Debug for CreateDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("stage_description", &self.stage_description);
-        formatter.field("description", &self.description);
-        formatter.field("cache_cluster_enabled", &self.cache_cluster_enabled);
-        formatter.field("cache_cluster_size", &self.cache_cluster_size);
-        formatter.field("variables", &self.variables);
-        formatter.field("canary_settings", &self.canary_settings);
-        formatter.field("tracing_enabled", &self.tracing_enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests API Gateway to create a new BasePathMapping resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to create.</p>
     #[doc(hidden)]
@@ -30812,20 +29707,10 @@ impl CreateBasePathMappingInput {
         self.stage.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBasePathMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBasePathMappingInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("base_path", &self.base_path);
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to add a new Authorizer to an existing RestApi resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
@@ -30900,32 +29785,10 @@ impl CreateAuthorizerInput {
         self.authorizer_result_ttl_in_seconds
     }
 }
-impl std::fmt::Debug for CreateAuthorizerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAuthorizerInput");
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("provider_ar_ns", &self.provider_ar_ns);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("authorizer_credentials", &self.authorizer_credentials);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create an ApiKey resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiKeyInput {
     /// <p>The name of the ApiKey.</p>
     #[doc(hidden)]
@@ -30988,19 +29851,5 @@ impl CreateApiKeyInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateApiKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApiKeyInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("generate_distinct_id", &self.generate_distinct_id);
-        formatter.field("value", &self.value);
-        formatter.field("stage_keys", &self.stage_keys);
-        formatter.field("customer_id", &self.customer_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

@@ -1396,7 +1396,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -1415,18 +1415,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -1445,18 +1437,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotateTunnelAccessTokenInput {
     /// <p>The tunnel for which you want to rotate the access tokens.</p>
     #[doc(hidden)]
@@ -1482,19 +1466,10 @@ impl RotateTunnelAccessTokenInput {
         self.destination_config.as_ref()
     }
 }
-impl std::fmt::Debug for RotateTunnelAccessTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotateTunnelAccessTokenInput");
-        formatter.field("tunnel_id", &self.tunnel_id);
-        formatter.field("client_mode", &self.client_mode);
-        formatter.field("destination_config", &self.destination_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenTunnelInput {
     /// <p>A short text description of the tunnel. </p>
     #[doc(hidden)]
@@ -1527,20 +1502,10 @@ impl OpenTunnelInput {
         self.timeout_config.as_ref()
     }
 }
-impl std::fmt::Debug for OpenTunnelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenTunnelInput");
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field("timeout_config", &self.timeout_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTunnelsInput {
     /// <p>The name of the IoT thing associated with the destination device.</p>
     #[doc(hidden)]
@@ -1566,19 +1531,10 @@ impl ListTunnelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTunnelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTunnelsInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
@@ -1590,17 +1546,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTunnelInput {
     /// <p>The tunnel to describe.</p>
     #[doc(hidden)]
@@ -1612,17 +1561,10 @@ impl DescribeTunnelInput {
         self.tunnel_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTunnelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTunnelInput");
-        formatter.field("tunnel_id", &self.tunnel_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloseTunnelInput {
     /// <p>The ID of the tunnel to close.</p>
     #[doc(hidden)]
@@ -1639,13 +1581,5 @@ impl CloseTunnelInput {
     /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub fn delete(&self) -> std::option::Option<bool> {
         self.delete
-    }
-}
-impl std::fmt::Debug for CloseTunnelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloseTunnelInput");
-        formatter.field("tunnel_id", &self.tunnel_id);
-        formatter.field("delete", &self.delete);
-        formatter.finish()
     }
 }

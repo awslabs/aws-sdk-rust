@@ -2,7 +2,7 @@
 
 /// <p>Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateOptions {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
     #[doc(hidden)]
@@ -15,16 +15,6 @@ impl CertificateOptions {
         &self,
     ) -> std::option::Option<&crate::model::CertificateTransparencyLoggingPreference> {
         self.certificate_transparency_logging_preference.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateOptions");
-        formatter.field(
-            "certificate_transparency_logging_preference",
-            &self.certificate_transparency_logging_preference,
-        );
-        formatter.finish()
     }
 }
 /// See [`CertificateOptions`](crate::model::CertificateOptions).
@@ -163,7 +153,7 @@ impl AsRef<str> for CertificateTransparencyLoggingPreference {
 
 /// <p>A key-value pair that identifies or specifies metadata about an ACM resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -180,14 +170,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -238,7 +220,7 @@ impl Tag {
 
 /// <p>Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainValidationOption {
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
     #[doc(hidden)]
@@ -269,14 +251,6 @@ impl DomainValidationOption {
     /// </ul>
     pub fn validation_domain(&self) -> std::option::Option<&str> {
         self.validation_domain.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainValidationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainValidationOption");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("validation_domain", &self.validation_domain);
-        formatter.finish()
     }
 }
 /// See [`DomainValidationOption`](crate::model::DomainValidationOption).
@@ -434,7 +408,7 @@ impl AsRef<str> for ValidationMethod {
 
 /// <p>Object containing expiration events options associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpiryEventsConfiguration {
     /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event per day per certificate until the certificate expires. By default, accounts receive events starting 45 days before certificate expiration.</p>
     #[doc(hidden)]
@@ -444,13 +418,6 @@ impl ExpiryEventsConfiguration {
     /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event per day per certificate until the certificate expires. By default, accounts receive events starting 45 days before certificate expiration.</p>
     pub fn days_before_expiry(&self) -> std::option::Option<i32> {
         self.days_before_expiry
-    }
-}
-impl std::fmt::Debug for ExpiryEventsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpiryEventsConfiguration");
-        formatter.field("days_before_expiry", &self.days_before_expiry);
-        formatter.finish()
     }
 }
 /// See [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
@@ -489,7 +456,7 @@ impl ExpiryEventsConfiguration {
 
 /// <p>This structure is returned in the response object of <code>ListCertificates</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateSummary {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -630,36 +597,6 @@ impl CertificateSummary {
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>
     pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateSummary");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field(
-            "subject_alternative_name_summaries",
-            &self.subject_alternative_name_summaries,
-        );
-        formatter.field(
-            "has_additional_subject_alternative_names",
-            &self.has_additional_subject_alternative_names,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("key_algorithm", &self.key_algorithm);
-        formatter.field("key_usages", &self.key_usages);
-        formatter.field("extended_key_usages", &self.extended_key_usages);
-        formatter.field("in_use", &self.in_use);
-        formatter.field("exported", &self.exported);
-        formatter.field("renewal_eligibility", &self.renewal_eligibility);
-        formatter.field("not_before", &self.not_before);
-        formatter.field("not_after", &self.not_after);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("issued_at", &self.issued_at);
-        formatter.field("imported_at", &self.imported_at);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.finish()
     }
 }
 /// See [`CertificateSummary`](crate::model::CertificateSummary).
@@ -1891,7 +1828,7 @@ impl AsRef<str> for SortBy {
 
 /// <p>This structure can be used in the <code>ListCertificates</code> action to filter the output of the certificate list. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filters {
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
     #[doc(hidden)]
@@ -1917,15 +1854,6 @@ impl Filters {
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     pub fn key_types(&self) -> std::option::Option<&[crate::model::KeyAlgorithm]> {
         self.key_types.as_deref()
-    }
-}
-impl std::fmt::Debug for Filters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filters");
-        formatter.field("extended_key_usage", &self.extended_key_usage);
-        formatter.field("key_usage", &self.key_usage);
-        formatter.field("key_types", &self.key_types);
-        formatter.finish()
     }
 }
 /// See [`Filters`](crate::model::Filters).
@@ -2018,7 +1946,7 @@ impl Filters {
 
 /// <p>Contains metadata about an ACM certificate. This structure is returned in the response to a <code>DescribeCertificate</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateDetail {
     /// <p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
@@ -2210,38 +2138,6 @@ impl CertificateDetail {
     /// <p>Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to certificate that has not been logged by showing an error message. The logs are cryptographically secure. </p>
     pub fn options(&self) -> std::option::Option<&crate::model::CertificateOptions> {
         self.options.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateDetail");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.field("domain_validation_options", &self.domain_validation_options);
-        formatter.field("serial", &self.serial);
-        formatter.field("subject", &self.subject);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("issued_at", &self.issued_at);
-        formatter.field("imported_at", &self.imported_at);
-        formatter.field("status", &self.status);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.field("revocation_reason", &self.revocation_reason);
-        formatter.field("not_before", &self.not_before);
-        formatter.field("not_after", &self.not_after);
-        formatter.field("key_algorithm", &self.key_algorithm);
-        formatter.field("signature_algorithm", &self.signature_algorithm);
-        formatter.field("in_use_by", &self.in_use_by);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("renewal_summary", &self.renewal_summary);
-        formatter.field("key_usages", &self.key_usages);
-        formatter.field("extended_key_usages", &self.extended_key_usages);
-        formatter.field("certificate_authority_arn", &self.certificate_authority_arn);
-        formatter.field("renewal_eligibility", &self.renewal_eligibility);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`CertificateDetail`](crate::model::CertificateDetail).
@@ -2683,7 +2579,7 @@ impl CertificateDetail {
 
 /// <p>The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendedKeyUsage {
     /// <p>The name of an Extended Key Usage value.</p>
     #[doc(hidden)]
@@ -2722,14 +2618,6 @@ impl ExtendedKeyUsage {
     /// </ul>
     pub fn oid(&self) -> std::option::Option<&str> {
         self.oid.as_deref()
-    }
-}
-impl std::fmt::Debug for ExtendedKeyUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendedKeyUsage");
-        formatter.field("name", &self.name);
-        formatter.field("oid", &self.oid);
-        formatter.finish()
     }
 }
 /// See [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
@@ -2805,7 +2693,7 @@ impl ExtendedKeyUsage {
 
 /// <p>The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyUsage {
     /// <p>A string value that contains a Key Usage extension name.</p>
     #[doc(hidden)]
@@ -2815,13 +2703,6 @@ impl KeyUsage {
     /// <p>A string value that contains a Key Usage extension name.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::KeyUsageName> {
         self.name.as_ref()
-    }
-}
-impl std::fmt::Debug for KeyUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyUsage");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`KeyUsage`](crate::model::KeyUsage).
@@ -2858,7 +2739,7 @@ impl KeyUsage {
 
 /// <p>Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenewalSummary {
     /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
     #[doc(hidden)]
@@ -2892,16 +2773,6 @@ impl RenewalSummary {
     /// <p>The time at which the renewal summary was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for RenewalSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenewalSummary");
-        formatter.field("renewal_status", &self.renewal_status);
-        formatter.field("domain_validation_options", &self.domain_validation_options);
-        formatter.field("renewal_status_reason", &self.renewal_status_reason);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`RenewalSummary`](crate::model::RenewalSummary).
@@ -3178,7 +3049,7 @@ impl AsRef<str> for FailureReason {
 
 /// <p>Contains information about the validation of each domain name in the certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainValidation {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
     #[doc(hidden)]
@@ -3235,18 +3106,6 @@ impl DomainValidation {
     /// <p>Specifies the domain validation method.</p>
     pub fn validation_method(&self) -> std::option::Option<&crate::model::ValidationMethod> {
         self.validation_method.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainValidation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainValidation");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("validation_emails", &self.validation_emails);
-        formatter.field("validation_domain", &self.validation_domain);
-        formatter.field("validation_status", &self.validation_status);
-        formatter.field("resource_record", &self.resource_record);
-        formatter.field("validation_method", &self.validation_method);
-        formatter.finish()
     }
 }
 /// See [`DomainValidation`](crate::model::DomainValidation).
@@ -3378,7 +3237,7 @@ impl DomainValidation {
 
 /// <p>Contains a DNS record value that you can use to validate ownership or control of a domain. This is used by the <code>DescribeCertificate</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceRecord {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
     #[doc(hidden)]
@@ -3402,15 +3261,6 @@ impl ResourceRecord {
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceRecord");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResourceRecord`](crate::model::ResourceRecord).

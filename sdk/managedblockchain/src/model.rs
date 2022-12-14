@@ -92,7 +92,7 @@ impl AsRef<str> for VoteValue {
 
 /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     #[doc(hidden)]
@@ -104,13 +104,6 @@ impl NodeLogPublishingConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::NodeFabricLogPublishingConfiguration> {
         self.fabric.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeLogPublishingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeLogPublishingConfiguration");
-        formatter.field("fabric", &self.fabric);
-        formatter.finish()
     }
 }
 /// See [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
@@ -152,7 +145,7 @@ impl NodeLogPublishingConfiguration {
 
 /// <p>Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with chaincode execution on a peer node. Chaincode logs contain the results of instantiating, invoking, and querying the chaincode. A peer can run multiple instances of chaincode. When enabled, a log stream is created for all chaincodes, with an individual log stream for each chaincode.</p>
     #[doc(hidden)]
@@ -169,14 +162,6 @@ impl NodeFabricLogPublishingConfiguration {
     /// <p>Configuration properties for a peer node log. Peer node logs contain messages generated when your client submits transaction proposals to peer nodes, requests to join channels, enrolls an admin peer, and lists the chaincode instances on a peer node. </p>
     pub fn peer_logs(&self) -> std::option::Option<&crate::model::LogConfigurations> {
         self.peer_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeFabricLogPublishingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeFabricLogPublishingConfiguration");
-        formatter.field("chaincode_logs", &self.chaincode_logs);
-        formatter.field("peer_logs", &self.peer_logs);
-        formatter.finish()
     }
 }
 /// See [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
@@ -233,7 +218,7 @@ impl NodeFabricLogPublishingConfiguration {
 
 /// <p>A collection of log configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogConfigurations {
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -243,13 +228,6 @@ impl LogConfigurations {
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
     pub fn cloudwatch(&self) -> std::option::Option<&crate::model::LogConfiguration> {
         self.cloudwatch.as_ref()
-    }
-}
-impl std::fmt::Debug for LogConfigurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogConfigurations");
-        formatter.field("cloudwatch", &self.cloudwatch);
-        formatter.finish()
     }
 }
 /// See [`LogConfigurations`](crate::model::LogConfigurations).
@@ -291,7 +269,7 @@ impl LogConfigurations {
 
 /// <p>A configuration for logging events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogConfiguration {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
@@ -301,13 +279,6 @@ impl LogConfiguration {
     /// <p>Indicates whether logging is enabled.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for LogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`LogConfiguration`](crate::model::LogConfiguration).
@@ -346,7 +317,7 @@ impl LogConfiguration {
 
 /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     #[doc(hidden)]
@@ -358,13 +329,6 @@ impl MemberLogPublishingConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::MemberFabricLogPublishingConfiguration> {
         self.fabric.as_ref()
-    }
-}
-impl std::fmt::Debug for MemberLogPublishingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberLogPublishingConfiguration");
-        formatter.field("fabric", &self.fabric);
-        formatter.finish()
     }
 }
 /// See [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
@@ -410,7 +374,7 @@ impl MemberLogPublishingConfiguration {
 
 /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
     #[doc(hidden)]
@@ -420,13 +384,6 @@ impl MemberFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
     pub fn ca_logs(&self) -> std::option::Option<&crate::model::LogConfigurations> {
         self.ca_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for MemberFabricLogPublishingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberFabricLogPublishingConfiguration");
-        formatter.field("ca_logs", &self.ca_logs);
-        formatter.finish()
     }
 }
 /// See [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
@@ -469,7 +426,7 @@ impl MemberFabricLogPublishingConfiguration {
 /// <p> Properties of an individual vote that a member cast for a proposal. </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoteSummary {
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
     #[doc(hidden)]
@@ -493,15 +450,6 @@ impl VoteSummary {
     /// <p> The unique identifier of the member that cast the vote. </p>
     pub fn member_id(&self) -> std::option::Option<&str> {
         self.member_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VoteSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoteSummary");
-        formatter.field("vote", &self.vote);
-        formatter.field("member_name", &self.member_name);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
     }
 }
 /// See [`VoteSummary`](crate::model::VoteSummary).
@@ -565,7 +513,7 @@ impl VoteSummary {
 /// <p>Properties of a proposal.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProposalSummary {
     /// <p> The unique identifier of the proposal. </p>
     #[doc(hidden)]
@@ -638,20 +586,6 @@ impl ProposalSummary {
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ProposalSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProposalSummary");
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field("description", &self.description);
-        formatter.field("proposed_by_member_id", &self.proposed_by_member_id);
-        formatter.field("proposed_by_member_name", &self.proposed_by_member_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`ProposalSummary`](crate::model::ProposalSummary).
@@ -914,7 +848,7 @@ impl AsRef<str> for ProposalStatus {
 
 /// <p>A summary of configuration properties for a node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeSummary {
     /// <p>The unique identifier of the node.</p>
     #[doc(hidden)]
@@ -959,18 +893,6 @@ impl NodeSummary {
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeSummary");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`NodeSummary`](crate::model::NodeSummary).
@@ -1213,7 +1135,7 @@ impl AsRef<str> for NodeStatus {
 
 /// <p>A summary of network configuration properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkSummary {
     /// <p>The unique identifier of the network.</p>
     #[doc(hidden)]
@@ -1272,20 +1194,6 @@ impl NetworkSummary {
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("framework", &self.framework);
-        formatter.field("framework_version", &self.framework_version);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`NetworkSummary`](crate::model::NetworkSummary).
@@ -1622,7 +1530,7 @@ impl AsRef<str> for Framework {
 /// <p>A summary of configuration properties for a member.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberSummary {
     /// <p>The unique identifier of the member.</p>
     #[doc(hidden)]
@@ -1692,19 +1600,6 @@ impl MemberSummary {
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MemberSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("is_owned", &self.is_owned);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`MemberSummary`](crate::model::MemberSummary).
@@ -1963,7 +1858,7 @@ impl AsRef<str> for MemberStatus {
 /// <p>An invitation to an AWS account to create a member and join the network.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Invitation {
     /// <p>The unique identifier for the invitation.</p>
     #[doc(hidden)]
@@ -2022,18 +1917,6 @@ impl Invitation {
     /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Invitation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Invitation");
-        formatter.field("invitation_id", &self.invitation_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("status", &self.status);
-        formatter.field("network_summary", &self.network_summary);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Invitation`](crate::model::Invitation).
@@ -2267,7 +2150,7 @@ impl AsRef<str> for InvitationStatus {
 /// <p>Properties of a proposal on a Managed Blockchain network.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Proposal {
     /// <p>The unique identifier of the proposal.</p>
     #[doc(hidden)]
@@ -2388,26 +2271,6 @@ impl Proposal {
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Proposal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Proposal");
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field("network_id", &self.network_id);
-        formatter.field("description", &self.description);
-        formatter.field("actions", &self.actions);
-        formatter.field("proposed_by_member_id", &self.proposed_by_member_id);
-        formatter.field("proposed_by_member_name", &self.proposed_by_member_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("yes_vote_count", &self.yes_vote_count);
-        formatter.field("no_vote_count", &self.no_vote_count);
-        formatter.field("outstanding_vote_count", &self.outstanding_vote_count);
-        formatter.field("tags", &self.tags);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Proposal`](crate::model::Proposal).
@@ -2654,7 +2517,7 @@ impl Proposal {
 /// <p> The actions to carry out if a proposal is <code>APPROVED</code>. </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProposalActions {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network. </p>
     #[doc(hidden)]
@@ -2671,14 +2534,6 @@ impl ProposalActions {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
     pub fn removals(&self) -> std::option::Option<&[crate::model::RemoveAction]> {
         self.removals.as_deref()
-    }
-}
-impl std::fmt::Debug for ProposalActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProposalActions");
-        formatter.field("invitations", &self.invitations);
-        formatter.field("removals", &self.removals);
-        formatter.finish()
     }
 }
 /// See [`ProposalActions`](crate::model::ProposalActions).
@@ -2748,7 +2603,7 @@ impl ProposalActions {
 /// <p>An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
     #[doc(hidden)]
@@ -2758,13 +2613,6 @@ impl RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
     pub fn member_id(&self) -> std::option::Option<&str> {
         self.member_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RemoveAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveAction");
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
     }
 }
 /// See [`RemoveAction`](crate::model::RemoveAction).
@@ -2804,7 +2652,7 @@ impl RemoveAction {
 /// <p>An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InviteAction {
     /// <p>The AWS account ID to invite.</p>
     #[doc(hidden)]
@@ -2814,13 +2662,6 @@ impl InviteAction {
     /// <p>The AWS account ID to invite.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
-    }
-}
-impl std::fmt::Debug for InviteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InviteAction");
-        formatter.field("principal", &self.principal);
-        formatter.finish()
     }
 }
 /// See [`InviteAction`](crate::model::InviteAction).
@@ -2859,7 +2700,7 @@ impl InviteAction {
 
 /// <p>Configuration properties of a node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Node {
     /// <p>The unique identifier of the network that the node is on.</p>
     #[doc(hidden)]
@@ -2992,28 +2833,6 @@ impl Node {
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Node {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Node");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("id", &self.id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("framework_attributes", &self.framework_attributes);
-        formatter.field(
-            "log_publishing_configuration",
-            &self.log_publishing_configuration,
-        );
-        formatter.field("state_db", &self.state_db);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("arn", &self.arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`Node`](crate::model::Node).
@@ -3358,7 +3177,7 @@ impl AsRef<str> for StateDbType {
 
 /// <p>Attributes relevant to a node on a Managed Blockchain network for the blockchain framework that the network uses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
@@ -3375,14 +3194,6 @@ impl NodeFrameworkAttributes {
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub fn ethereum(&self) -> std::option::Option<&crate::model::NodeEthereumAttributes> {
         self.ethereum.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeFrameworkAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeFrameworkAttributes");
-        formatter.field("fabric", &self.fabric);
-        formatter.field("ethereum", &self.ethereum);
-        formatter.finish()
     }
 }
 /// See [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
@@ -3439,7 +3250,7 @@ impl NodeFrameworkAttributes {
 
 /// <p>Attributes of an Ethereum node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeEthereumAttributes {
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
     #[doc(hidden)]
@@ -3456,14 +3267,6 @@ impl NodeEthereumAttributes {
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets connections from a client. Use this endpoint in client code for smart contracts when using a WebSockets connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
     pub fn web_socket_endpoint(&self) -> std::option::Option<&str> {
         self.web_socket_endpoint.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeEthereumAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeEthereumAttributes");
-        formatter.field("http_endpoint", &self.http_endpoint);
-        formatter.field("web_socket_endpoint", &self.web_socket_endpoint);
-        formatter.finish()
     }
 }
 /// See [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
@@ -3520,7 +3323,7 @@ impl NodeEthereumAttributes {
 
 /// <p>Attributes of Hyperledger Fabric for a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeFabricAttributes {
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
     #[doc(hidden)]
@@ -3537,14 +3340,6 @@ impl NodeFabricAttributes {
     /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
     pub fn peer_event_endpoint(&self) -> std::option::Option<&str> {
         self.peer_event_endpoint.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeFabricAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeFabricAttributes");
-        formatter.field("peer_endpoint", &self.peer_endpoint);
-        formatter.field("peer_event_endpoint", &self.peer_event_endpoint);
-        formatter.finish()
     }
 }
 /// See [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
@@ -3601,7 +3396,7 @@ impl NodeFabricAttributes {
 
 /// <p>Network configuration properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Network {
     /// <p>The unique identifier of the network.</p>
     #[doc(hidden)]
@@ -3696,24 +3491,6 @@ impl Network {
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Network {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Network");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("framework", &self.framework);
-        formatter.field("framework_version", &self.framework_version);
-        formatter.field("framework_attributes", &self.framework_attributes);
-        formatter.field("vpc_endpoint_service_name", &self.vpc_endpoint_service_name);
-        formatter.field("voting_policy", &self.voting_policy);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Network`](crate::model::Network).
@@ -3929,7 +3706,7 @@ impl Network {
 /// <p> The voting rules for the network to decide if a proposal is accepted </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VotingPolicy {
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
     #[doc(hidden)]
@@ -3941,13 +3718,6 @@ impl VotingPolicy {
         &self,
     ) -> std::option::Option<&crate::model::ApprovalThresholdPolicy> {
         self.approval_threshold_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for VotingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VotingPolicy");
-        formatter.field("approval_threshold_policy", &self.approval_threshold_policy);
-        formatter.finish()
     }
 }
 /// See [`VotingPolicy`](crate::model::VotingPolicy).
@@ -3994,7 +3764,7 @@ impl VotingPolicy {
 /// <p>A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalThresholdPolicy {
     /// <p>The percentage of votes among all members that must be <code>YES</code> for a proposal to be approved. For example, a <code>ThresholdPercentage</code> value of <code>50</code> indicates 50%. The <code>ThresholdComparator</code> determines the precise comparison. If a <code>ThresholdPercentage</code> value of <code>50</code> is specified on a network with 10 members, along with a <code>ThresholdComparator</code> value of <code>GREATER_THAN</code>, this indicates that 6 <code>YES</code> votes are required for the proposal to be approved.</p>
     #[doc(hidden)]
@@ -4018,18 +3788,6 @@ impl ApprovalThresholdPolicy {
     /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
     pub fn threshold_comparator(&self) -> std::option::Option<&crate::model::ThresholdComparator> {
         self.threshold_comparator.as_ref()
-    }
-}
-impl std::fmt::Debug for ApprovalThresholdPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalThresholdPolicy");
-        formatter.field("threshold_percentage", &self.threshold_percentage);
-        formatter.field(
-            "proposal_duration_in_hours",
-            &self.proposal_duration_in_hours,
-        );
-        formatter.field("threshold_comparator", &self.threshold_comparator);
-        formatter.finish()
     }
 }
 /// See [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
@@ -4187,7 +3945,7 @@ impl AsRef<str> for ThresholdComparator {
 
 /// <p>Attributes relevant to the network for the blockchain framework that the network uses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
@@ -4204,14 +3962,6 @@ impl NetworkFrameworkAttributes {
     /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
     pub fn ethereum(&self) -> std::option::Option<&crate::model::NetworkEthereumAttributes> {
         self.ethereum.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkFrameworkAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFrameworkAttributes");
-        formatter.field("fabric", &self.fabric);
-        formatter.field("ethereum", &self.ethereum);
-        formatter.finish()
     }
 }
 /// See [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
@@ -4268,7 +4018,7 @@ impl NetworkFrameworkAttributes {
 
 /// <p>Attributes of Ethereum for a network. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkEthereumAttributes {
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
     /// <ul>
@@ -4288,13 +4038,6 @@ impl NetworkEthereumAttributes {
     /// </ul>
     pub fn chain_id(&self) -> std::option::Option<&str> {
         self.chain_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkEthereumAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkEthereumAttributes");
-        formatter.field("chain_id", &self.chain_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
@@ -4343,7 +4086,7 @@ impl NetworkEthereumAttributes {
 
 /// <p>Attributes of Hyperledger Fabric for a network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFabricAttributes {
     /// <p>The endpoint of the ordering service for the network.</p>
     #[doc(hidden)]
@@ -4360,14 +4103,6 @@ impl NetworkFabricAttributes {
     /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     pub fn edition(&self) -> std::option::Option<&crate::model::Edition> {
         self.edition.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkFabricAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFabricAttributes");
-        formatter.field("ordering_service_endpoint", &self.ordering_service_endpoint);
-        formatter.field("edition", &self.edition);
-        formatter.finish()
     }
 }
 /// See [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
@@ -4512,7 +4247,7 @@ impl AsRef<str> for Edition {
 /// <p>Member configuration properties.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Member {
     /// <p>The unique identifier of the network to which the member belongs.</p>
     #[doc(hidden)]
@@ -4619,26 +4354,6 @@ impl Member {
     /// <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an AWS owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Member {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Member");
-        formatter.field("network_id", &self.network_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("framework_attributes", &self.framework_attributes);
-        formatter.field(
-            "log_publishing_configuration",
-            &self.log_publishing_configuration,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("arn", &self.arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`Member`](crate::model::Member).
@@ -4852,7 +4567,7 @@ impl Member {
 
 /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
@@ -4862,13 +4577,6 @@ impl MemberFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fn fabric(&self) -> std::option::Option<&crate::model::MemberFabricAttributes> {
         self.fabric.as_ref()
-    }
-}
-impl std::fmt::Debug for MemberFrameworkAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberFrameworkAttributes");
-        formatter.field("fabric", &self.fabric);
-        formatter.finish()
     }
 }
 /// See [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
@@ -4910,7 +4618,7 @@ impl MemberFrameworkAttributes {
 
 /// <p>Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberFabricAttributes {
     /// <p>The user name for the initial administrator user for the member.</p>
     #[doc(hidden)]
@@ -4927,14 +4635,6 @@ impl MemberFabricAttributes {
     /// <p>The endpoint used to access the member's certificate authority.</p>
     pub fn ca_endpoint(&self) -> std::option::Option<&str> {
         self.ca_endpoint.as_deref()
-    }
-}
-impl std::fmt::Debug for MemberFabricAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberFabricAttributes");
-        formatter.field("admin_username", &self.admin_username);
-        formatter.field("ca_endpoint", &self.ca_endpoint);
-        formatter.finish()
     }
 }
 /// See [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
@@ -4988,7 +4688,7 @@ impl MemberFabricAttributes {
 
 /// <p>Configuration properties of a node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeConfiguration {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
     #[doc(hidden)]
@@ -5024,19 +4724,6 @@ impl NodeConfiguration {
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn state_db(&self) -> std::option::Option<&crate::model::StateDbType> {
         self.state_db.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeConfiguration");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field(
-            "log_publishing_configuration",
-            &self.log_publishing_configuration,
-        );
-        formatter.field("state_db", &self.state_db);
-        formatter.finish()
     }
 }
 /// See [`NodeConfiguration`](crate::model::NodeConfiguration).
@@ -5130,7 +4817,7 @@ impl NodeConfiguration {
 /// <p>Configuration properties of the member.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberConfiguration {
     /// <p>The name of the member.</p>
     #[doc(hidden)]
@@ -5196,21 +4883,6 @@ impl MemberConfiguration {
     /// </ul>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MemberConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("framework_configuration", &self.framework_configuration);
-        formatter.field(
-            "log_publishing_configuration",
-            &self.log_publishing_configuration,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`MemberConfiguration`](crate::model::MemberConfiguration).
@@ -5352,7 +5024,7 @@ impl MemberConfiguration {
 
 /// <p>Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberFrameworkConfiguration {
     /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
@@ -5362,13 +5034,6 @@ impl MemberFrameworkConfiguration {
     /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fn fabric(&self) -> std::option::Option<&crate::model::MemberFabricConfiguration> {
         self.fabric.as_ref()
-    }
-}
-impl std::fmt::Debug for MemberFrameworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberFrameworkConfiguration");
-        formatter.field("fabric", &self.fabric);
-        formatter.finish()
     }
 }
 /// See [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
@@ -5441,7 +5106,7 @@ impl std::fmt::Debug for MemberFabricConfiguration {
 pub mod member_fabric_configuration {
 
     /// A builder for [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) admin_username: std::option::Option<std::string::String>,
         pub(crate) admin_password: std::option::Option<std::string::String>,
@@ -5481,6 +5146,14 @@ pub mod member_fabric_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("admin_username", &self.admin_username);
+            formatter.field("admin_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl MemberFabricConfiguration {
     /// Creates a new builder-style object to manufacture [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
@@ -5491,7 +5164,7 @@ impl MemberFabricConfiguration {
 
 /// <p> Configuration properties relevant to the network for the blockchain framework that the network uses. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFrameworkConfiguration {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
     #[doc(hidden)]
@@ -5501,13 +5174,6 @@ impl NetworkFrameworkConfiguration {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
     pub fn fabric(&self) -> std::option::Option<&crate::model::NetworkFabricConfiguration> {
         self.fabric.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkFrameworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFrameworkConfiguration");
-        formatter.field("fabric", &self.fabric);
-        formatter.finish()
     }
 }
 /// See [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
@@ -5549,7 +5215,7 @@ impl NetworkFrameworkConfiguration {
 
 /// <p>Hyperledger Fabric configuration properties for the network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFabricConfiguration {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     #[doc(hidden)]
@@ -5559,13 +5225,6 @@ impl NetworkFabricConfiguration {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     pub fn edition(&self) -> std::option::Option<&crate::model::Edition> {
         self.edition.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkFabricConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFabricConfiguration");
-        formatter.field("edition", &self.edition);
-        formatter.finish()
     }
 }
 /// See [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).

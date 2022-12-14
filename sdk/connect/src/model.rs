@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the phone configuration settings for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPhoneConfig {
     /// <p>The phone type.</p>
     #[doc(hidden)]
@@ -33,19 +33,6 @@ impl UserPhoneConfig {
     /// <p>The phone number for the user's desk phone.</p>
     pub fn desk_phone_number(&self) -> std::option::Option<&str> {
         self.desk_phone_number.as_deref()
-    }
-}
-impl std::fmt::Debug for UserPhoneConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPhoneConfig");
-        formatter.field("phone_type", &self.phone_type);
-        formatter.field("auto_accept", &self.auto_accept);
-        formatter.field(
-            "after_contact_work_time_limit",
-            &self.after_contact_work_time_limit,
-        );
-        formatter.field("desk_phone_number", &self.desk_phone_number);
-        formatter.finish()
     }
 }
 /// See [`UserPhoneConfig`](crate::model::UserPhoneConfig).
@@ -221,7 +208,7 @@ impl AsRef<str> for PhoneType {
 
 /// <p>Contains information about the identity of a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserIdentityInfo {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     #[doc(hidden)]
@@ -245,15 +232,6 @@ impl UserIdentityInfo {
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
-    }
-}
-impl std::fmt::Debug for UserIdentityInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserIdentityInfo");
-        formatter.field("first_name", &self.first_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("email", &self.email);
-        formatter.finish()
     }
 }
 /// See [`UserIdentityInfo`](crate::model::UserIdentityInfo).
@@ -439,7 +417,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>Contains information about the level hierarchy to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyStructureUpdate {
     /// <p>The update for level one.</p>
     #[doc(hidden)]
@@ -477,17 +455,6 @@ impl HierarchyStructureUpdate {
     /// <p>The update for level five.</p>
     pub fn level_five(&self) -> std::option::Option<&crate::model::HierarchyLevelUpdate> {
         self.level_five.as_ref()
-    }
-}
-impl std::fmt::Debug for HierarchyStructureUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyStructureUpdate");
-        formatter.field("level_one", &self.level_one);
-        formatter.field("level_two", &self.level_two);
-        formatter.field("level_three", &self.level_three);
-        formatter.field("level_four", &self.level_four);
-        formatter.field("level_five", &self.level_five);
-        formatter.finish()
     }
 }
 /// See [`HierarchyStructureUpdate`](crate::model::HierarchyStructureUpdate).
@@ -589,7 +556,7 @@ impl HierarchyStructureUpdate {
 
 /// <p>Contains information about the hierarchy level to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyLevelUpdate {
     /// <p>The name of the user hierarchy level. Must not be more than 50 characters.</p>
     #[doc(hidden)]
@@ -599,13 +566,6 @@ impl HierarchyLevelUpdate {
     /// <p>The name of the user hierarchy level. Must not be more than 50 characters.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for HierarchyLevelUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyLevelUpdate");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`HierarchyLevelUpdate`](crate::model::HierarchyLevelUpdate).
@@ -642,7 +602,7 @@ impl HierarchyLevelUpdate {
 
 /// <p>Contains information about why a property is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyValidationExceptionProperty {
     /// <p>The full property path.</p>
     #[doc(hidden)]
@@ -666,15 +626,6 @@ impl PropertyValidationExceptionProperty {
     /// <p>A message describing why the property is not valid.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for PropertyValidationExceptionProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyValidationExceptionProperty");
-        formatter.field("property_path", &self.property_path);
-        formatter.field("reason", &self.reason);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`PropertyValidationExceptionProperty`](crate::model::PropertyValidationExceptionProperty).
@@ -970,7 +921,7 @@ impl AsRef<str> for TaskTemplateStatus {
 
 /// <p>Describes a single task template field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskTemplateField {
     /// <p>The unique identifier for the field.</p>
     #[doc(hidden)]
@@ -1001,16 +952,6 @@ impl TaskTemplateField {
     /// <p>A list of options for a single select field.</p>
     pub fn single_select_options(&self) -> std::option::Option<&[std::string::String]> {
         self.single_select_options.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskTemplateField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskTemplateField");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("single_select_options", &self.single_select_options);
-        formatter.finish()
     }
 }
 /// See [`TaskTemplateField`](crate::model::TaskTemplateField).
@@ -1255,7 +1196,7 @@ impl AsRef<str> for TaskTemplateFieldType {
 
 /// <p>The identifier of the task template field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskTemplateFieldIdentifier {
     /// <p>The name of the task template field.</p>
     #[doc(hidden)]
@@ -1265,13 +1206,6 @@ impl TaskTemplateFieldIdentifier {
     /// <p>The name of the task template field.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskTemplateFieldIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskTemplateFieldIdentifier");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`TaskTemplateFieldIdentifier`](crate::model::TaskTemplateFieldIdentifier).
@@ -1308,7 +1242,7 @@ impl TaskTemplateFieldIdentifier {
 
 /// <p>Describes default values for fields on a template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskTemplateDefaults {
     /// <p>Default value for the field.</p>
     #[doc(hidden)]
@@ -1321,13 +1255,6 @@ impl TaskTemplateDefaults {
         &self,
     ) -> std::option::Option<&[crate::model::TaskTemplateDefaultFieldValue]> {
         self.default_field_values.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskTemplateDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskTemplateDefaults");
-        formatter.field("default_field_values", &self.default_field_values);
-        formatter.finish()
     }
 }
 /// See [`TaskTemplateDefaults`](crate::model::TaskTemplateDefaults).
@@ -1379,7 +1306,7 @@ impl TaskTemplateDefaults {
 
 /// <p>Describes a default field and its corresponding value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskTemplateDefaultFieldValue {
     /// <p>Identifier of a field. </p>
     #[doc(hidden)]
@@ -1396,14 +1323,6 @@ impl TaskTemplateDefaultFieldValue {
     /// <p>Default value for the field.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskTemplateDefaultFieldValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskTemplateDefaultFieldValue");
-        formatter.field("id", &self.id);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`TaskTemplateDefaultFieldValue`](crate::model::TaskTemplateDefaultFieldValue).
@@ -1460,7 +1379,7 @@ impl TaskTemplateDefaultFieldValue {
 
 /// <p>Describes constraints that apply to the template fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskTemplateConstraints {
     /// <p>Lists the fields that are required to be filled by agents.</p>
     #[doc(hidden)]
@@ -1484,15 +1403,6 @@ impl TaskTemplateConstraints {
     /// <p>Lists the fields that are invisible to agents.</p>
     pub fn invisible_fields(&self) -> std::option::Option<&[crate::model::InvisibleFieldInfo]> {
         self.invisible_fields.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskTemplateConstraints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskTemplateConstraints");
-        formatter.field("required_fields", &self.required_fields);
-        formatter.field("read_only_fields", &self.read_only_fields);
-        formatter.field("invisible_fields", &self.invisible_fields);
-        formatter.finish()
     }
 }
 /// See [`TaskTemplateConstraints`](crate::model::TaskTemplateConstraints).
@@ -1585,7 +1495,7 @@ impl TaskTemplateConstraints {
 
 /// <p>A field that is invisible to an agent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvisibleFieldInfo {
     /// <p>Identifier of the invisible field.</p>
     #[doc(hidden)]
@@ -1595,13 +1505,6 @@ impl InvisibleFieldInfo {
     /// <p>Identifier of the invisible field.</p>
     pub fn id(&self) -> std::option::Option<&crate::model::TaskTemplateFieldIdentifier> {
         self.id.as_ref()
-    }
-}
-impl std::fmt::Debug for InvisibleFieldInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvisibleFieldInfo");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`InvisibleFieldInfo`](crate::model::InvisibleFieldInfo).
@@ -1641,7 +1544,7 @@ impl InvisibleFieldInfo {
 
 /// <p>Indicates a field that is read-only to an agent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadOnlyFieldInfo {
     /// <p>Identifier of the read-only field.</p>
     #[doc(hidden)]
@@ -1651,13 +1554,6 @@ impl ReadOnlyFieldInfo {
     /// <p>Identifier of the read-only field.</p>
     pub fn id(&self) -> std::option::Option<&crate::model::TaskTemplateFieldIdentifier> {
         self.id.as_ref()
-    }
-}
-impl std::fmt::Debug for ReadOnlyFieldInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadOnlyFieldInfo");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`ReadOnlyFieldInfo`](crate::model::ReadOnlyFieldInfo).
@@ -1697,7 +1593,7 @@ impl ReadOnlyFieldInfo {
 
 /// <p>Information about a required field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequiredFieldInfo {
     /// <p>The unique identifier for the field.</p>
     #[doc(hidden)]
@@ -1707,13 +1603,6 @@ impl RequiredFieldInfo {
     /// <p>The unique identifier for the field.</p>
     pub fn id(&self) -> std::option::Option<&crate::model::TaskTemplateFieldIdentifier> {
         self.id.as_ref()
-    }
-}
-impl std::fmt::Debug for RequiredFieldInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequiredFieldInfo");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`RequiredFieldInfo`](crate::model::RequiredFieldInfo).
@@ -1753,7 +1642,7 @@ impl RequiredFieldInfo {
 
 /// <p>Contains information about the queue and channel for which priority and delay can be set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfileQueueConfig {
     /// <p>Contains information about a queue resource.</p>
     #[doc(hidden)]
@@ -1779,15 +1668,6 @@ impl RoutingProfileQueueConfig {
     /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn delay(&self) -> std::option::Option<i32> {
         self.delay
-    }
-}
-impl std::fmt::Debug for RoutingProfileQueueConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfileQueueConfig");
-        formatter.field("queue_reference", &self.queue_reference);
-        formatter.field("priority", &self.priority);
-        formatter.field("delay", &self.delay);
-        formatter.finish()
     }
 }
 /// See [`RoutingProfileQueueConfig`](crate::model::RoutingProfileQueueConfig).
@@ -1856,7 +1736,7 @@ impl RoutingProfileQueueConfig {
 
 /// <p>Contains the channel and queue identifier for a routing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfileQueueReference {
     /// <p>The identifier for the queue.</p>
     #[doc(hidden)]
@@ -1873,14 +1753,6 @@ impl RoutingProfileQueueReference {
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingProfileQueueReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfileQueueReference");
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("channel", &self.channel);
-        formatter.finish()
     }
 }
 /// See [`RoutingProfileQueueReference`](crate::model::RoutingProfileQueueReference).
@@ -2026,7 +1898,7 @@ impl AsRef<str> for Channel {
 
 /// <p>Contains information about which channels are supported, and how many contacts an agent can have on a channel simultaneously.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     #[doc(hidden)]
@@ -2049,14 +1921,6 @@ impl MediaConcurrency {
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     pub fn concurrency(&self) -> i32 {
         self.concurrency
-    }
-}
-impl std::fmt::Debug for MediaConcurrency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaConcurrency");
-        formatter.field("channel", &self.channel);
-        formatter.field("concurrency", &self.concurrency);
-        formatter.finish()
     }
 }
 /// See [`MediaConcurrency`](crate::model::MediaConcurrency).
@@ -2113,7 +1977,7 @@ impl MediaConcurrency {
 
 /// <p>Contains configuration settings for a quick connect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuickConnectConfig {
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
     #[doc(hidden)]
@@ -2146,16 +2010,6 @@ impl QuickConnectConfig {
         &self,
     ) -> std::option::Option<&crate::model::PhoneNumberQuickConnectConfig> {
         self.phone_config.as_ref()
-    }
-}
-impl std::fmt::Debug for QuickConnectConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuickConnectConfig");
-        formatter.field("quick_connect_type", &self.quick_connect_type);
-        formatter.field("user_config", &self.user_config);
-        formatter.field("queue_config", &self.queue_config);
-        formatter.field("phone_config", &self.phone_config);
-        formatter.finish()
     }
 }
 /// See [`QuickConnectConfig`](crate::model::QuickConnectConfig).
@@ -2242,7 +2096,7 @@ impl QuickConnectConfig {
 
 /// <p>Contains information about a phone number for a quick connect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
     #[doc(hidden)]
@@ -2252,13 +2106,6 @@ impl PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
-    }
-}
-impl std::fmt::Debug for PhoneNumberQuickConnectConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhoneNumberQuickConnectConfig");
-        formatter.field("phone_number", &self.phone_number);
-        formatter.finish()
     }
 }
 /// See [`PhoneNumberQuickConnectConfig`](crate::model::PhoneNumberQuickConnectConfig).
@@ -2297,7 +2144,7 @@ impl PhoneNumberQuickConnectConfig {
 
 /// <p>Contains information about a queue for a quick connect. The flow must be of type Transfer to Queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueQuickConnectConfig {
     /// <p>The identifier for the queue.</p>
     #[doc(hidden)]
@@ -2314,14 +2161,6 @@ impl QueueQuickConnectConfig {
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
-    }
-}
-impl std::fmt::Debug for QueueQuickConnectConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueQuickConnectConfig");
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.finish()
     }
 }
 /// See [`QueueQuickConnectConfig`](crate::model::QueueQuickConnectConfig).
@@ -2375,7 +2214,7 @@ impl QueueQuickConnectConfig {
 
 /// <p>Contains information about the quick connect configuration settings for a user. The contact flow must be of type Transfer to Agent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserQuickConnectConfig {
     /// <p>The identifier of the user.</p>
     #[doc(hidden)]
@@ -2392,14 +2231,6 @@ impl UserQuickConnectConfig {
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UserQuickConnectConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserQuickConnectConfig");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("contact_flow_id", &self.contact_flow_id);
-        formatter.finish()
     }
 }
 /// See [`UserQuickConnectConfig`](crate::model::UserQuickConnectConfig).
@@ -2638,7 +2469,7 @@ impl AsRef<str> for QueueStatus {
 
 /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutboundCallerConfig {
     /// <p>The caller ID name.</p>
     #[doc(hidden)]
@@ -2662,18 +2493,6 @@ impl OutboundCallerConfig {
     /// <p>The outbound whisper flow to be used during an outbound call.</p>
     pub fn outbound_flow_id(&self) -> std::option::Option<&str> {
         self.outbound_flow_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OutboundCallerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutboundCallerConfig");
-        formatter.field("outbound_caller_id_name", &self.outbound_caller_id_name);
-        formatter.field(
-            "outbound_caller_id_number_id",
-            &self.outbound_caller_id_number_id,
-        );
-        formatter.field("outbound_flow_id", &self.outbound_flow_id);
-        formatter.finish()
     }
 }
 /// See [`OutboundCallerConfig`](crate::model::OutboundCallerConfig).
@@ -2748,7 +2567,7 @@ impl OutboundCallerConfig {
 
 /// <p>The storage configuration for the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceStorageConfig {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     #[doc(hidden)]
@@ -2797,21 +2616,6 @@ impl InstanceStorageConfig {
         &self,
     ) -> std::option::Option<&crate::model::KinesisFirehoseConfig> {
         self.kinesis_firehose_config.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceStorageConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceStorageConfig");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("s3_config", &self.s3_config);
-        formatter.field(
-            "kinesis_video_stream_config",
-            &self.kinesis_video_stream_config,
-        );
-        formatter.field("kinesis_stream_config", &self.kinesis_stream_config);
-        formatter.field("kinesis_firehose_config", &self.kinesis_firehose_config);
-        formatter.finish()
     }
 }
 /// See [`InstanceStorageConfig`](crate::model::InstanceStorageConfig).
@@ -2933,7 +2737,7 @@ impl InstanceStorageConfig {
 
 /// <p>Configuration information of a Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseConfig {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     #[doc(hidden)]
@@ -2943,13 +2747,6 @@ impl KinesisFirehoseConfig {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub fn firehose_arn(&self) -> std::option::Option<&str> {
         self.firehose_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisFirehoseConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseConfig");
-        formatter.field("firehose_arn", &self.firehose_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisFirehoseConfig`](crate::model::KinesisFirehoseConfig).
@@ -2988,7 +2785,7 @@ impl KinesisFirehoseConfig {
 
 /// <p>Configuration information of a Kinesis data stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     #[doc(hidden)]
@@ -2998,13 +2795,6 @@ impl KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamConfig");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamConfig`](crate::model::KinesisStreamConfig).
@@ -3043,7 +2833,7 @@ impl KinesisStreamConfig {
 
 /// <p>Configuration information of a Kinesis video stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisVideoStreamConfig {
     /// <p>The prefix of the video stream.</p>
     #[doc(hidden)]
@@ -3069,15 +2859,6 @@ impl KinesisVideoStreamConfig {
     /// <p>The encryption configuration.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
-    }
-}
-impl std::fmt::Debug for KinesisVideoStreamConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisVideoStreamConfig");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("retention_period_hours", &self.retention_period_hours);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.finish()
     }
 }
 /// See [`KinesisVideoStreamConfig`](crate::model::KinesisVideoStreamConfig).
@@ -3145,7 +2926,7 @@ impl KinesisVideoStreamConfig {
 
 /// <p>The encryption configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
     #[doc(hidden)]
@@ -3166,14 +2947,6 @@ impl EncryptionConfig {
     /// </note>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfig");
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
@@ -3316,7 +3089,7 @@ impl AsRef<str> for EncryptionType {
 
 /// <p>Information about the Amazon Simple Storage Service (Amazon S3) storage type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The S3 bucket name.</p>
     #[doc(hidden)]
@@ -3340,15 +3113,6 @@ impl S3Config {
     /// <p>The Amazon S3 encryption configuration.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
-    }
-}
-impl std::fmt::Debug for S3Config {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Config");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.finish()
     }
 }
 /// See [`S3Config`](crate::model::S3Config).
@@ -3788,7 +3552,7 @@ impl AsRef<str> for InstanceAttributeType {
 
 /// <p>Contains information about the hours of operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoursOfOperationConfig {
     /// <p>The day that the hours of operation applies to.</p>
     #[doc(hidden)]
@@ -3812,15 +3576,6 @@ impl HoursOfOperationConfig {
     /// <p>The end time that your contact center closes.</p>
     pub fn end_time(&self) -> std::option::Option<&crate::model::HoursOfOperationTimeSlice> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for HoursOfOperationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoursOfOperationConfig");
-        formatter.field("day", &self.day);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig).
@@ -3892,7 +3647,7 @@ impl HoursOfOperationConfig {
 
 /// <p>The start time or end time for an hours of operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoursOfOperationTimeSlice {
     /// <p>The hours.</p>
     #[doc(hidden)]
@@ -3909,14 +3664,6 @@ impl HoursOfOperationTimeSlice {
     /// <p>The minutes.</p>
     pub fn minutes(&self) -> std::option::Option<i32> {
         self.minutes
-    }
-}
-impl std::fmt::Debug for HoursOfOperationTimeSlice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoursOfOperationTimeSlice");
-        formatter.field("hours", &self.hours);
-        formatter.field("minutes", &self.minutes);
-        formatter.finish()
     }
 }
 /// See [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice).
@@ -4184,7 +3931,7 @@ impl AsRef<str> for ContactFlowModuleState {
 
 /// <p>Information about a problem detail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProblemDetail {
     /// <p>The problem detail's message.</p>
     #[doc(hidden)]
@@ -4194,13 +3941,6 @@ impl ProblemDetail {
     /// <p>The problem detail's message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ProblemDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProblemDetail");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ProblemDetail`](crate::model::ProblemDetail).
@@ -4329,7 +4069,7 @@ impl AsRef<str> for ContactFlowState {
 
 /// <p>Well-formed data on a contact, used by agents to complete a contact request. You can have up to 4,096 UTF-8 bytes across all references for a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Reference {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
     #[doc(hidden)]
@@ -4346,14 +4086,6 @@ impl Reference {
     /// <p>The type of the reference.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ReferenceType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Reference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Reference");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Reference`](crate::model::Reference).
@@ -4694,7 +4426,7 @@ impl AsRef<str> for TrafficType {
 
 /// <p>Configuration of the answering machine detection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfig {
     /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
     #[doc(hidden)]
@@ -4711,20 +4443,6 @@ impl AnswerMachineDetectionConfig {
     /// <p>Wait for the answering machine prompt.</p>
     pub fn await_answer_machine_prompt(&self) -> bool {
         self.await_answer_machine_prompt
-    }
-}
-impl std::fmt::Debug for AnswerMachineDetectionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnswerMachineDetectionConfig");
-        formatter.field(
-            "enable_answer_machine_detection",
-            &self.enable_answer_machine_detection,
-        );
-        formatter.field(
-            "await_answer_machine_prompt",
-            &self.await_answer_machine_prompt,
-        );
-        formatter.finish()
     }
 }
 /// See [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
@@ -4780,7 +4498,7 @@ impl AnswerMachineDetectionConfig {
 
 /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChatStreamingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
     #[doc(hidden)]
@@ -4790,13 +4508,6 @@ impl ChatStreamingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
     pub fn streaming_endpoint_arn(&self) -> std::option::Option<&str> {
         self.streaming_endpoint_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ChatStreamingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChatStreamingConfiguration");
-        formatter.field("streaming_endpoint_arn", &self.streaming_endpoint_arn);
-        formatter.finish()
     }
 }
 /// See [`ChatStreamingConfiguration`](crate::model::ChatStreamingConfiguration).
@@ -4838,7 +4549,7 @@ impl ChatStreamingConfiguration {
 
 /// <p>Contains information about the recording configuration settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
     #[doc(hidden)]
@@ -4848,13 +4559,6 @@ impl VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
     pub fn voice_recording_track(&self) -> std::option::Option<&crate::model::VoiceRecordingTrack> {
         self.voice_recording_track.as_ref()
-    }
-}
-impl std::fmt::Debug for VoiceRecordingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceRecordingConfiguration");
-        formatter.field("voice_recording_track", &self.voice_recording_track);
-        formatter.finish()
     }
 }
 /// See [`VoiceRecordingConfiguration`](crate::model::VoiceRecordingConfiguration).
@@ -4993,7 +4697,7 @@ impl AsRef<str> for VoiceRecordingTrack {
 
 /// <p>A chat message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChatMessage {
     /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
     #[doc(hidden)]
@@ -5010,14 +4714,6 @@ impl ChatMessage {
     /// <p>The content of the chat message.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
-    }
-}
-impl std::fmt::Debug for ChatMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChatMessage");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`ChatMessage`](crate::model::ChatMessage).
@@ -5068,7 +4764,7 @@ impl ChatMessage {
 
 /// <p>The customer's details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParticipantDetails {
     /// <p>Display name of the participant.</p>
     #[doc(hidden)]
@@ -5078,13 +4774,6 @@ impl ParticipantDetails {
     /// <p>Display name of the participant.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ParticipantDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParticipantDetails");
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
     }
 }
 /// See [`ParticipantDetails`](crate::model::ParticipantDetails).
@@ -5123,7 +4812,7 @@ impl ParticipantDetails {
 
 /// <p>Contains summary information about the custom vocabulary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VocabularySummary {
     /// <p>A unique name of the custom vocabulary.</p>
     #[doc(hidden)]
@@ -5175,19 +4864,6 @@ impl VocabularySummary {
     /// <p>The reason why the custom vocabulary was not created.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for VocabularySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VocabularySummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("state", &self.state);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`VocabularySummary`](crate::model::VocabularySummary).
@@ -5606,7 +5282,7 @@ impl AsRef<str> for VocabularyLanguageCode {
 
 /// <p>Information about the returned users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSearchSummary {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     #[doc(hidden)]
@@ -5683,22 +5359,6 @@ impl UserSearchSummary {
     /// <p>The name of the user.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for UserSearchSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSearchSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("directory_user_id", &self.directory_user_id);
-        formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
-        formatter.field("id", &self.id);
-        formatter.field("identity_info", &self.identity_info);
-        formatter.field("phone_config", &self.phone_config);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("security_profile_ids", &self.security_profile_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`UserSearchSummary`](crate::model::UserSearchSummary).
@@ -5886,7 +5546,7 @@ impl UserSearchSummary {
 
 /// <p>The user's first name and last name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserIdentityInfoLite {
     /// <p>The user's first name.</p>
     #[doc(hidden)]
@@ -5903,14 +5563,6 @@ impl UserIdentityInfoLite {
     /// <p>The user's last name.</p>
     pub fn last_name(&self) -> std::option::Option<&str> {
         self.last_name.as_deref()
-    }
-}
-impl std::fmt::Debug for UserIdentityInfoLite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserIdentityInfoLite");
-        formatter.field("first_name", &self.first_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.finish()
     }
 }
 /// See [`UserIdentityInfoLite`](crate::model::UserIdentityInfoLite).
@@ -5963,7 +5615,7 @@ impl UserIdentityInfoLite {
 /// <p>The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range result in empty results. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSearchCriteria {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
     #[doc(hidden)]
@@ -5996,16 +5648,6 @@ impl UserSearchCriteria {
         &self,
     ) -> std::option::Option<&crate::model::HierarchyGroupCondition> {
         self.hierarchy_group_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for UserSearchCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSearchCriteria");
-        formatter.field("or_conditions", &self.or_conditions);
-        formatter.field("and_conditions", &self.and_conditions);
-        formatter.field("string_condition", &self.string_condition);
-        formatter.field("hierarchy_group_condition", &self.hierarchy_group_condition);
-        formatter.finish()
     }
 }
 /// See [`UserSearchCriteria`](crate::model::UserSearchCriteria).
@@ -6110,7 +5752,7 @@ impl UserSearchCriteria {
 
 /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyGroupCondition {
     /// <p>The value in the hierarchy group condition.</p>
     #[doc(hidden)]
@@ -6129,17 +5771,6 @@ impl HierarchyGroupCondition {
         &self,
     ) -> std::option::Option<&crate::model::HierarchyGroupMatchType> {
         self.hierarchy_group_match_type.as_ref()
-    }
-}
-impl std::fmt::Debug for HierarchyGroupCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyGroupCondition");
-        formatter.field("value", &self.value);
-        formatter.field(
-            "hierarchy_group_match_type",
-            &self.hierarchy_group_match_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`HierarchyGroupCondition`](crate::model::HierarchyGroupCondition).
@@ -6289,7 +5920,7 @@ impl AsRef<str> for HierarchyGroupMatchType {
 
 /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StringCondition {
     /// <p>The name of the field in the string condition.</p>
     #[doc(hidden)]
@@ -6313,15 +5944,6 @@ impl StringCondition {
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
     pub fn comparison_type(&self) -> std::option::Option<&crate::model::StringComparisonType> {
         self.comparison_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StringCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StringCondition");
-        formatter.field("field_name", &self.field_name);
-        formatter.field("value", &self.value);
-        formatter.field("comparison_type", &self.comparison_type);
-        formatter.finish()
     }
 }
 /// See [`StringCondition`](crate::model::StringCondition).
@@ -6484,7 +6106,7 @@ impl AsRef<str> for StringComparisonType {
 
 /// <p>Filters to be applied to search results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSearchFilter {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
     /// <ul>
@@ -6502,13 +6124,6 @@ impl UserSearchFilter {
     /// </ul>
     pub fn tag_filter(&self) -> std::option::Option<&crate::model::ControlPlaneTagFilter> {
         self.tag_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for UserSearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSearchFilter");
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.finish()
     }
 }
 /// See [`UserSearchFilter`](crate::model::UserSearchFilter).
@@ -6562,7 +6177,7 @@ impl UserSearchFilter {
 /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlPlaneTagFilter {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
     #[doc(hidden)]
@@ -6589,15 +6204,6 @@ impl ControlPlaneTagFilter {
     /// <p>A leaf node condition which can be used to specify a tag condition. </p>
     pub fn tag_condition(&self) -> std::option::Option<&crate::model::TagCondition> {
         self.tag_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for ControlPlaneTagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlPlaneTagFilter");
-        formatter.field("or_conditions", &self.or_conditions);
-        formatter.field("and_conditions", &self.and_conditions);
-        formatter.field("tag_condition", &self.tag_condition);
-        formatter.finish()
     }
 }
 /// See [`ControlPlaneTagFilter`](crate::model::ControlPlaneTagFilter).
@@ -6682,7 +6288,7 @@ impl ControlPlaneTagFilter {
 
 /// <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagCondition {
     /// <p>The tag key in the tag condition.</p>
     #[doc(hidden)]
@@ -6699,14 +6305,6 @@ impl TagCondition {
     /// <p>The tag value in the tag condition.</p>
     pub fn tag_value(&self) -> std::option::Option<&str> {
         self.tag_value.as_deref()
-    }
-}
-impl std::fmt::Debug for TagCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagCondition");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_value", &self.tag_value);
-        formatter.finish()
     }
 }
 /// See [`TagCondition`](crate::model::TagCondition).
@@ -6757,7 +6355,7 @@ impl TagCondition {
 
 /// <p>Information about the returned security profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfileSearchSummary {
     /// <p>The identifier of the security profile.</p>
     #[doc(hidden)]
@@ -6806,18 +6404,6 @@ impl SecurityProfileSearchSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityProfileSearchSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityProfileSearchSummary");
-        formatter.field("id", &self.id);
-        formatter.field("organization_resource_id", &self.organization_resource_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("security_profile_name", &self.security_profile_name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SecurityProfileSearchSummary`](crate::model::SecurityProfileSearchSummary).
@@ -6939,7 +6525,7 @@ impl SecurityProfileSearchSummary {
 
 /// <p>Filters to be applied to search results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfilesSearchFilter {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
     /// <ul>
@@ -6957,13 +6543,6 @@ impl SecurityProfilesSearchFilter {
     /// </ul>
     pub fn tag_filter(&self) -> std::option::Option<&crate::model::ControlPlaneTagFilter> {
         self.tag_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityProfilesSearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityProfilesSearchFilter");
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.finish()
     }
 }
 /// See [`SecurityProfilesSearchFilter`](crate::model::SecurityProfilesSearchFilter).
@@ -7013,7 +6592,7 @@ impl SecurityProfilesSearchFilter {
 
 /// <p>The search criteria to be used to return security profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfileSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     #[doc(hidden)]
@@ -7043,15 +6622,6 @@ impl SecurityProfileSearchCriteria {
     /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
     pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
         self.string_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityProfileSearchCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityProfileSearchCriteria");
-        formatter.field("or_conditions", &self.or_conditions);
-        formatter.field("and_conditions", &self.and_conditions);
-        formatter.field("string_condition", &self.string_condition);
-        formatter.finish()
     }
 }
 /// See [`SecurityProfileSearchCriteria`](crate::model::SecurityProfileSearchCriteria).
@@ -7140,7 +6710,7 @@ impl SecurityProfileSearchCriteria {
 
 /// <p>Contains information about a routing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfile {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -7217,28 +6787,6 @@ impl RoutingProfile {
     /// <p>The number of associated users in routing profile.</p>
     pub fn number_of_associated_users(&self) -> std::option::Option<i64> {
         self.number_of_associated_users
-    }
-}
-impl std::fmt::Debug for RoutingProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfile");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("name", &self.name);
-        formatter.field("routing_profile_arn", &self.routing_profile_arn);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("description", &self.description);
-        formatter.field("media_concurrencies", &self.media_concurrencies);
-        formatter.field("default_outbound_queue_id", &self.default_outbound_queue_id);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "number_of_associated_queues",
-            &self.number_of_associated_queues,
-        );
-        formatter.field(
-            "number_of_associated_users",
-            &self.number_of_associated_users,
-        );
-        formatter.finish()
     }
 }
 /// See [`RoutingProfile`](crate::model::RoutingProfile).
@@ -7421,7 +6969,7 @@ impl RoutingProfile {
 
 /// <p>The search criteria to be used to return routing profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfileSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     #[doc(hidden)]
@@ -7451,15 +6999,6 @@ impl RoutingProfileSearchCriteria {
     /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
     pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
         self.string_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingProfileSearchCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfileSearchCriteria");
-        formatter.field("or_conditions", &self.or_conditions);
-        formatter.field("and_conditions", &self.and_conditions);
-        formatter.field("string_condition", &self.string_condition);
-        formatter.finish()
     }
 }
 /// See [`RoutingProfileSearchCriteria`](crate::model::RoutingProfileSearchCriteria).
@@ -7545,7 +7084,7 @@ impl RoutingProfileSearchCriteria {
 
 /// <p>Filters to be applied to search results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfileSearchFilter {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
     /// <ul>
@@ -7563,13 +7102,6 @@ impl RoutingProfileSearchFilter {
     /// </ul>
     pub fn tag_filter(&self) -> std::option::Option<&crate::model::ControlPlaneTagFilter> {
         self.tag_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingProfileSearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfileSearchFilter");
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.finish()
     }
 }
 /// See [`RoutingProfileSearchFilter`](crate::model::RoutingProfileSearchFilter).
@@ -7619,7 +7151,7 @@ impl RoutingProfileSearchFilter {
 
 /// <p>Contains information about a queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Queue {
     /// <p>The name of the queue.</p>
     #[doc(hidden)]
@@ -7691,21 +7223,6 @@ impl Queue {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Queue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Queue");
-        formatter.field("name", &self.name);
-        formatter.field("queue_arn", &self.queue_arn);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("description", &self.description);
-        formatter.field("outbound_caller_config", &self.outbound_caller_config);
-        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
-        formatter.field("max_contacts", &self.max_contacts);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Queue`](crate::model::Queue).
@@ -7863,7 +7380,7 @@ impl Queue {
 
 /// <p>The search criteria to be used to return queues.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     #[doc(hidden)]
@@ -7894,16 +7411,6 @@ impl QueueSearchCriteria {
     /// <p>The type of queue.</p>
     pub fn queue_type_condition(&self) -> std::option::Option<&crate::model::SearchableQueueType> {
         self.queue_type_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for QueueSearchCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueSearchCriteria");
-        formatter.field("or_conditions", &self.or_conditions);
-        formatter.field("and_conditions", &self.and_conditions);
-        formatter.field("string_condition", &self.string_condition);
-        formatter.field("queue_type_condition", &self.queue_type_condition);
-        formatter.finish()
     }
 }
 /// See [`QueueSearchCriteria`](crate::model::QueueSearchCriteria).
@@ -8091,7 +7598,7 @@ impl AsRef<str> for SearchableQueueType {
 
 /// <p>Filters to be applied to search results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueSearchFilter {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
     /// <ul>
@@ -8109,13 +7616,6 @@ impl QueueSearchFilter {
     /// </ul>
     pub fn tag_filter(&self) -> std::option::Option<&crate::model::ControlPlaneTagFilter> {
         self.tag_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for QueueSearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueSearchFilter");
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.finish()
     }
 }
 /// See [`QueueSearchFilter`](crate::model::QueueSearchFilter).
@@ -8165,7 +7665,7 @@ impl QueueSearchFilter {
 
 /// <p>Information about available phone numbers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailableNumberSummary {
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
     #[doc(hidden)]
@@ -8191,15 +7691,6 @@ impl AvailableNumberSummary {
     /// <p>The type of phone number.</p>
     pub fn phone_number_type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
         self.phone_number_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AvailableNumberSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailableNumberSummary");
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("phone_number_country_code", &self.phone_number_country_code);
-        formatter.field("phone_number_type", &self.phone_number_type);
-        formatter.finish()
     }
 }
 /// See [`AvailableNumberSummary`](crate::model::AvailableNumberSummary).
@@ -9647,7 +9138,7 @@ impl AsRef<str> for PhoneNumberCountryCode {
 
 /// <p>Contains summary information about a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSummary {
     /// <p>The identifier of the user account.</p>
     #[doc(hidden)]
@@ -9671,15 +9162,6 @@ impl UserSummary {
     /// <p>The Amazon Connect user name of the user account.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for UserSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`UserSummary`](crate::model::UserSummary).
@@ -9742,7 +9224,7 @@ impl UserSummary {
 
 /// <p>Contains summary information about a hierarchy group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyGroupSummary {
     /// <p>The identifier of the hierarchy group.</p>
     #[doc(hidden)]
@@ -9766,15 +9248,6 @@ impl HierarchyGroupSummary {
     /// <p>The name of the hierarchy group.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for HierarchyGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyGroupSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`HierarchyGroupSummary`](crate::model::HierarchyGroupSummary).
@@ -9837,7 +9310,7 @@ impl HierarchyGroupSummary {
 
 /// <p>Contains the use case.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UseCase {
     /// <p>The identifier for the use case.</p>
     #[doc(hidden)]
@@ -9861,15 +9334,6 @@ impl UseCase {
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
     pub fn use_case_type(&self) -> std::option::Option<&crate::model::UseCaseType> {
         self.use_case_type.as_ref()
-    }
-}
-impl std::fmt::Debug for UseCase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UseCase");
-        formatter.field("use_case_id", &self.use_case_id);
-        formatter.field("use_case_arn", &self.use_case_arn);
-        formatter.field("use_case_type", &self.use_case_type);
-        formatter.finish()
     }
 }
 /// See [`UseCase`](crate::model::UseCase).
@@ -10025,7 +9489,7 @@ impl AsRef<str> for UseCaseType {
 
 /// <p>Contains summary information about the task template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskTemplateMetadata {
     /// <p>A unique identifier for the task template.</p>
     #[doc(hidden)]
@@ -10077,19 +9541,6 @@ impl TaskTemplateMetadata {
     /// <p>The timestamp when the task template was created.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskTemplateMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskTemplateMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`TaskTemplateMetadata`](crate::model::TaskTemplateMetadata).
@@ -10209,7 +9660,7 @@ impl TaskTemplateMetadata {
 
 /// <p>Contains information about a security profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfileSummary {
     /// <p>The identifier of the security profile.</p>
     #[doc(hidden)]
@@ -10233,15 +9684,6 @@ impl SecurityProfileSummary {
     /// <p>The name of the security profile.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityProfileSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityProfileSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`SecurityProfileSummary`](crate::model::SecurityProfileSummary).
@@ -10304,7 +9746,7 @@ impl SecurityProfileSummary {
 
 /// <p>Configuration information of the security key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityKey {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     #[doc(hidden)]
@@ -10328,15 +9770,6 @@ impl SecurityKey {
     /// <p>When the security key was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityKey");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("key", &self.key);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`SecurityKey`](crate::model::SecurityKey).
@@ -10405,7 +9838,7 @@ impl SecurityKey {
 
 /// <p>Contains summary information about a routing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfileSummary {
     /// <p>The identifier of the routing profile.</p>
     #[doc(hidden)]
@@ -10429,15 +9862,6 @@ impl RoutingProfileSummary {
     /// <p>The name of the routing profile.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for RoutingProfileSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfileSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`RoutingProfileSummary`](crate::model::RoutingProfileSummary).
@@ -10500,7 +9924,7 @@ impl RoutingProfileSummary {
 
 /// <p>Contains summary information about a routing profile queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfileQueueConfigSummary {
     /// <p>The identifier for the queue.</p>
     #[doc(hidden)]
@@ -10545,18 +9969,6 @@ impl RoutingProfileQueueConfigSummary {
     /// <p>The channels this queue supports.</p>
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingProfileQueueConfigSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfileQueueConfigSummary");
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("queue_arn", &self.queue_arn);
-        formatter.field("queue_name", &self.queue_name);
-        formatter.field("priority", &self.priority);
-        formatter.field("delay", &self.delay);
-        formatter.field("channel", &self.channel);
-        formatter.finish()
     }
 }
 /// See [`RoutingProfileQueueConfigSummary`](crate::model::RoutingProfileQueueConfigSummary).
@@ -10655,7 +10067,7 @@ impl RoutingProfileQueueConfigSummary {
 
 /// <p>Contains summary information about a quick connect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuickConnectSummary {
     /// <p>The identifier for the quick connect.</p>
     #[doc(hidden)]
@@ -10686,16 +10098,6 @@ impl QuickConnectSummary {
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn quick_connect_type(&self) -> std::option::Option<&crate::model::QuickConnectType> {
         self.quick_connect_type.as_ref()
-    }
-}
-impl std::fmt::Debug for QuickConnectSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuickConnectSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("quick_connect_type", &self.quick_connect_type);
-        formatter.finish()
     }
 }
 /// See [`QuickConnectSummary`](crate::model::QuickConnectSummary).
@@ -10773,7 +10175,7 @@ impl QuickConnectSummary {
 
 /// <p>Contains summary information about a queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueSummary {
     /// <p>The identifier of the queue.</p>
     #[doc(hidden)]
@@ -10804,16 +10206,6 @@ impl QueueSummary {
     /// <p>The type of queue.</p>
     pub fn queue_type(&self) -> std::option::Option<&crate::model::QueueType> {
         self.queue_type.as_ref()
-    }
-}
-impl std::fmt::Debug for QueueSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("queue_type", &self.queue_type);
-        formatter.finish()
     }
 }
 /// See [`QueueSummary`](crate::model::QueueSummary).
@@ -10981,7 +10373,7 @@ impl AsRef<str> for QueueType {
 
 /// <p>Contains information about the prompt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PromptSummary {
     /// <p>The identifier of the prompt.</p>
     #[doc(hidden)]
@@ -11005,15 +10397,6 @@ impl PromptSummary {
     /// <p>The name of the prompt.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for PromptSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PromptSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`PromptSummary`](crate::model::PromptSummary).
@@ -11076,7 +10459,7 @@ impl PromptSummary {
 
 /// <p>Information about phone numbers that have been claimed to your Amazon Connect instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersSummary {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
@@ -11123,18 +10506,6 @@ impl ListPhoneNumbersSummary {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPhoneNumbersSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhoneNumbersSummary");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.field("phone_number_arn", &self.phone_number_arn);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("phone_number_country_code", &self.phone_number_country_code);
-        formatter.field("phone_number_type", &self.phone_number_type);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.finish()
     }
 }
 /// See [`ListPhoneNumbersSummary`](crate::model::ListPhoneNumbersSummary).
@@ -11249,7 +10620,7 @@ impl ListPhoneNumbersSummary {
 
 /// <p>Contains summary information about a phone number for a contact center.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhoneNumberSummary {
     /// <p>The identifier of the phone number.</p>
     #[doc(hidden)]
@@ -11289,17 +10660,6 @@ impl PhoneNumberSummary {
         &self,
     ) -> std::option::Option<&crate::model::PhoneNumberCountryCode> {
         self.phone_number_country_code.as_ref()
-    }
-}
-impl std::fmt::Debug for PhoneNumberSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhoneNumberSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("phone_number_type", &self.phone_number_type);
-        formatter.field("phone_number_country_code", &self.phone_number_country_code);
-        formatter.finish()
     }
 }
 /// See [`PhoneNumberSummary`](crate::model::PhoneNumberSummary).
@@ -11396,7 +10756,7 @@ impl PhoneNumberSummary {
 
 /// <p>Configuration information of an Amazon Lex bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LexBot {
     /// <p>The name of the Amazon Lex bot.</p>
     #[doc(hidden)]
@@ -11413,14 +10773,6 @@ impl LexBot {
     /// <p>The Region that the Amazon Lex bot was created in.</p>
     pub fn lex_region(&self) -> std::option::Option<&str> {
         self.lex_region.as_deref()
-    }
-}
-impl std::fmt::Debug for LexBot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LexBot");
-        formatter.field("name", &self.name);
-        formatter.field("lex_region", &self.lex_region);
-        formatter.finish()
     }
 }
 /// See [`LexBot`](crate::model::LexBot).
@@ -11471,7 +10823,7 @@ impl LexBot {
 
 /// <p>Contains summary information about the associated AppIntegrations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntegrationAssociationSummary {
     /// <p>The identifier for the AppIntegration association.</p>
     #[doc(hidden)]
@@ -11530,26 +10882,6 @@ impl IntegrationAssociationSummary {
     /// <p>The name of the source.</p>
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
-    }
-}
-impl std::fmt::Debug for IntegrationAssociationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntegrationAssociationSummary");
-        formatter.field(
-            "integration_association_id",
-            &self.integration_association_id,
-        );
-        formatter.field(
-            "integration_association_arn",
-            &self.integration_association_arn,
-        );
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("integration_type", &self.integration_type);
-        formatter.field("integration_arn", &self.integration_arn);
-        formatter.field("source_application_url", &self.source_application_url);
-        formatter.field("source_application_name", &self.source_application_name);
-        formatter.field("source_type", &self.source_type);
-        formatter.finish()
     }
 }
 /// See [`IntegrationAssociationSummary`](crate::model::IntegrationAssociationSummary).
@@ -11990,7 +11322,7 @@ impl std::fmt::Debug for InstanceSummary {
 pub mod instance_summary {
 
     /// A builder for [`InstanceSummary`](crate::model::InstanceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -12118,6 +11450,21 @@ pub mod instance_summary {
                 inbound_calls_enabled: self.inbound_calls_enabled,
                 outbound_calls_enabled: self.outbound_calls_enabled,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("arn", &self.arn);
+            formatter.field("identity_management_type", &self.identity_management_type);
+            formatter.field("instance_alias", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_time", &self.created_time);
+            formatter.field("service_role", &self.service_role);
+            formatter.field("instance_status", &self.instance_status);
+            formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
+            formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+            formatter.finish()
         }
     }
 }
@@ -12320,7 +11667,7 @@ impl AsRef<str> for DirectoryType {
 
 /// <p>A toggle for an individual feature at the instance level.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The type of attribute.</p>
     #[doc(hidden)]
@@ -12337,14 +11684,6 @@ impl Attribute {
     /// <p>The value of the attribute.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Attribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attribute");
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
@@ -12398,7 +11737,7 @@ impl Attribute {
 
 /// <p>Contains summary information about hours of operation for a contact center.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoursOfOperationSummary {
     /// <p>The identifier of the hours of operation.</p>
     #[doc(hidden)]
@@ -12422,15 +11761,6 @@ impl HoursOfOperationSummary {
     /// <p>The name of the hours of operation.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for HoursOfOperationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoursOfOperationSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`HoursOfOperationSummary`](crate::model::HoursOfOperationSummary).
@@ -12493,7 +11823,7 @@ impl HoursOfOperationSummary {
 
 /// <p>Contains information about a default vocabulary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultVocabulary {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
@@ -12524,16 +11854,6 @@ impl DefaultVocabulary {
     /// <p>A unique name of the custom vocabulary.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DefaultVocabulary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultVocabulary");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("vocabulary_id", &self.vocabulary_id);
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.finish()
     }
 }
 /// See [`DefaultVocabulary`](crate::model::DefaultVocabulary).
@@ -12728,7 +12048,7 @@ impl ReferenceSummary {
 
 /// <p>Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailReference {
     /// <p>Identifier of the email reference.</p>
     #[doc(hidden)]
@@ -12745,14 +12065,6 @@ impl EmailReference {
     /// <p>A valid email address.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailReference");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`EmailReference`](crate::model::EmailReference).
@@ -12803,7 +12115,7 @@ impl EmailReference {
 
 /// <p>Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateReference {
     /// <p>Identifier of the date reference.</p>
     #[doc(hidden)]
@@ -12820,14 +12132,6 @@ impl DateReference {
     /// <p>A valid date.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for DateReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateReference");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DateReference`](crate::model::DateReference).
@@ -12878,7 +12182,7 @@ impl DateReference {
 
 /// <p>Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberReference {
     /// <p>Identifier of the number reference.</p>
     #[doc(hidden)]
@@ -12895,14 +12199,6 @@ impl NumberReference {
     /// <p>A valid number.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for NumberReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberReference");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`NumberReference`](crate::model::NumberReference).
@@ -12953,7 +12249,7 @@ impl NumberReference {
 
 /// <p>Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StringReference {
     /// <p>Identifier of the string reference.</p>
     #[doc(hidden)]
@@ -12970,14 +12266,6 @@ impl StringReference {
     /// <p>A valid string.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for StringReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StringReference");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`StringReference`](crate::model::StringReference).
@@ -13028,7 +12316,7 @@ impl StringReference {
 
 /// <p>Information about a reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentReference {
     /// <p>Identifier of the attachment reference.</p>
     #[doc(hidden)]
@@ -13052,15 +12340,6 @@ impl AttachmentReference {
     /// <p>Status of the attachment reference type.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ReferenceStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AttachmentReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentReference");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AttachmentReference`](crate::model::AttachmentReference).
@@ -13216,7 +12495,7 @@ impl AsRef<str> for ReferenceStatus {
 
 /// <p>The URL reference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UrlReference {
     /// <p>Identifier of the URL reference.</p>
     #[doc(hidden)]
@@ -13233,14 +12512,6 @@ impl UrlReference {
     /// <p>A valid URL.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for UrlReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UrlReference");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`UrlReference`](crate::model::UrlReference).
@@ -13292,7 +12563,7 @@ impl UrlReference {
 /// <p>Contains summary information about a flow.</p>
 /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactFlowSummary {
     /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
@@ -13330,17 +12601,6 @@ impl ContactFlowSummary {
     /// <p>The type of flow.</p>
     pub fn contact_flow_state(&self) -> std::option::Option<&crate::model::ContactFlowState> {
         self.contact_flow_state.as_ref()
-    }
-}
-impl std::fmt::Debug for ContactFlowSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactFlowSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("contact_flow_type", &self.contact_flow_type);
-        formatter.field("contact_flow_state", &self.contact_flow_state);
-        formatter.finish()
     }
 }
 /// See [`ContactFlowSummary`](crate::model::ContactFlowSummary).
@@ -13568,7 +12828,7 @@ impl AsRef<str> for ContactFlowType {
 
 /// <p>Contains summary information about a flow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactFlowModuleSummary {
     /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
@@ -13599,16 +12859,6 @@ impl ContactFlowModuleSummary {
     /// <p>The type of flow module.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ContactFlowModuleState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ContactFlowModuleSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactFlowModuleSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ContactFlowModuleSummary`](crate::model::ContactFlowModuleSummary).
@@ -13686,7 +12936,7 @@ impl ContactFlowModuleSummary {
 
 /// <p>Configuration information of an Amazon Lex or Amazon Lex V2 bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LexBotConfig {
     /// <p>Configuration information of an Amazon Lex bot.</p>
     #[doc(hidden)]
@@ -13703,14 +12953,6 @@ impl LexBotConfig {
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
     pub fn lex_v2_bot(&self) -> std::option::Option<&crate::model::LexV2Bot> {
         self.lex_v2_bot.as_ref()
-    }
-}
-impl std::fmt::Debug for LexBotConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LexBotConfig");
-        formatter.field("lex_bot", &self.lex_bot);
-        formatter.field("lex_v2_bot", &self.lex_v2_bot);
-        formatter.finish()
     }
 }
 /// See [`LexBotConfig`](crate::model::LexBotConfig).
@@ -13764,7 +13006,7 @@ impl LexBotConfig {
 
 /// <p>Configuration information of an Amazon Lex V2 bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LexV2Bot {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
     #[doc(hidden)]
@@ -13774,13 +13016,6 @@ impl LexV2Bot {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
     pub fn alias_arn(&self) -> std::option::Option<&str> {
         self.alias_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LexV2Bot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LexV2Bot");
-        formatter.field("alias_arn", &self.alias_arn);
-        formatter.finish()
     }
 }
 /// See [`LexV2Bot`](crate::model::LexV2Bot).
@@ -13909,7 +13144,7 @@ impl AsRef<str> for LexVersion {
 
 /// <p>Summary information for an agent status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentStatusSummary {
     /// <p>The identifier for an agent status.</p>
     #[doc(hidden)]
@@ -13940,16 +13175,6 @@ impl AgentStatusSummary {
     /// <p>The type of the agent status.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::AgentStatusType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for AgentStatusSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentStatusSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`AgentStatusSummary`](crate::model::AgentStatusSummary).
@@ -14122,7 +13347,7 @@ impl AsRef<str> for AgentStatusType {
 
 /// <p>Contains information about the historical metrics retrieved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistoricalMetricResult {
     /// <p>The dimension for the metrics.</p>
     #[doc(hidden)]
@@ -14139,14 +13364,6 @@ impl HistoricalMetricResult {
     /// <p>The set of metrics.</p>
     pub fn collections(&self) -> std::option::Option<&[crate::model::HistoricalMetricData]> {
         self.collections.as_deref()
-    }
-}
-impl std::fmt::Debug for HistoricalMetricResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistoricalMetricResult");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("collections", &self.collections);
-        formatter.finish()
     }
 }
 /// See [`HistoricalMetricResult`](crate::model::HistoricalMetricResult).
@@ -14210,7 +13427,7 @@ impl HistoricalMetricResult {
 
 /// <p>Contains the data for a historical metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistoricalMetricData {
     /// <p>Information about the metric.</p>
     #[doc(hidden)]
@@ -14227,14 +13444,6 @@ impl HistoricalMetricData {
     /// <p>The value of the metric.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
-    }
-}
-impl std::fmt::Debug for HistoricalMetricData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistoricalMetricData");
-        formatter.field("metric", &self.metric);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`HistoricalMetricData`](crate::model::HistoricalMetricData).
@@ -14288,7 +13497,7 @@ impl HistoricalMetricData {
 
 /// <p>Contains information about a historical metric. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistoricalMetric {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -14319,16 +13528,6 @@ impl HistoricalMetric {
     /// <p>The unit for the metric.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for HistoricalMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistoricalMetric");
-        formatter.field("name", &self.name);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`HistoricalMetric`](crate::model::HistoricalMetric).
@@ -14602,7 +13801,7 @@ impl AsRef<str> for Statistic {
 
 /// <p>Contains information about the threshold for service level metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Threshold {
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
     #[doc(hidden)]
@@ -14619,14 +13818,6 @@ impl Threshold {
     /// <p>The threshold value to compare.</p>
     pub fn threshold_value(&self) -> std::option::Option<f64> {
         self.threshold_value
-    }
-}
-impl std::fmt::Debug for Threshold {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Threshold");
-        formatter.field("comparison", &self.comparison);
-        formatter.field("threshold_value", &self.threshold_value);
-        formatter.finish()
     }
 }
 /// See [`Threshold`](crate::model::Threshold).
@@ -15006,7 +14197,7 @@ impl AsRef<str> for HistoricalMetricName {
 
 /// <p>Contains information about the dimensions for a set of metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dimensions {
     /// <p>Information about the queue for which metrics are returned.</p>
     #[doc(hidden)]
@@ -15023,14 +14214,6 @@ impl Dimensions {
     /// <p>The channel used for grouping and filters.</p>
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
-    }
-}
-impl std::fmt::Debug for Dimensions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dimensions");
-        formatter.field("queue", &self.queue);
-        formatter.field("channel", &self.channel);
-        formatter.finish()
     }
 }
 /// See [`Dimensions`](crate::model::Dimensions).
@@ -15084,7 +14267,7 @@ impl Dimensions {
 
 /// <p>Contains information about a queue resource for which metrics are returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueReference {
     /// <p>The identifier of the queue.</p>
     #[doc(hidden)]
@@ -15101,14 +14284,6 @@ impl QueueReference {
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for QueueReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueReference");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`QueueReference`](crate::model::QueueReference).
@@ -15249,7 +14424,7 @@ impl AsRef<str> for Grouping {
 
 /// <p>Contains the filter to apply when retrieving metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     #[doc(hidden)]
@@ -15266,14 +14441,6 @@ impl Filters {
     /// <p>The channel to use to filter the metrics.</p>
     pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.channels.as_deref()
-    }
-}
-impl std::fmt::Debug for Filters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filters");
-        formatter.field("queues", &self.queues);
-        formatter.field("channels", &self.channels);
-        formatter.finish()
     }
 }
 /// See [`Filters`](crate::model::Filters).
@@ -15389,7 +14556,7 @@ impl std::fmt::Debug for Credentials {
 pub mod credentials {
 
     /// A builder for [`Credentials`](crate::model::Credentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) access_token_expiration: std::option::Option<aws_smithy_types::DateTime>,
@@ -15456,6 +14623,16 @@ pub mod credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("access_token_expiration", &self.access_token_expiration);
+            formatter.field("refresh_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("refresh_token_expiration", &self.refresh_token_expiration);
+            formatter.finish()
+        }
+    }
 }
 impl Credentials {
     /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
@@ -15466,7 +14643,7 @@ impl Credentials {
 
 /// <p>Data for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserData {
     /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
     #[doc(hidden)]
@@ -15534,23 +14711,6 @@ impl UserData {
     /// <p>A list of contact reference information.</p>
     pub fn contacts(&self) -> std::option::Option<&[crate::model::AgentContactReference]> {
         self.contacts.as_deref()
-    }
-}
-impl std::fmt::Debug for UserData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserData");
-        formatter.field("user", &self.user);
-        formatter.field("routing_profile", &self.routing_profile);
-        formatter.field("hierarchy_path", &self.hierarchy_path);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "available_slots_by_channel",
-            &self.available_slots_by_channel,
-        );
-        formatter.field("max_slots_by_channel", &self.max_slots_by_channel);
-        formatter.field("active_slots_by_channel", &self.active_slots_by_channel);
-        formatter.field("contacts", &self.contacts);
-        formatter.finish()
     }
 }
 /// See [`UserData`](crate::model::UserData).
@@ -15722,7 +14882,7 @@ impl UserData {
 
 /// <p>Information about the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Contact.html">contact</a> associated to the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentContactReference {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     #[doc(hidden)]
@@ -15774,22 +14934,6 @@ impl AgentContactReference {
     /// <p>Contains information about a queue resource for which metrics are returned.</p>
     pub fn queue(&self) -> std::option::Option<&crate::model::QueueReference> {
         self.queue.as_ref()
-    }
-}
-impl std::fmt::Debug for AgentContactReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentContactReference");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("channel", &self.channel);
-        formatter.field("initiation_method", &self.initiation_method);
-        formatter.field("agent_contact_state", &self.agent_contact_state);
-        formatter.field("state_start_timestamp", &self.state_start_timestamp);
-        formatter.field(
-            "connected_to_agent_timestamp",
-            &self.connected_to_agent_timestamp,
-        );
-        formatter.field("queue", &self.queue);
-        formatter.finish()
     }
 }
 /// See [`AgentContactReference`](crate::model::AgentContactReference).
@@ -16169,7 +15313,7 @@ impl AsRef<str> for ContactInitiationMethod {
 
 /// <p>Information about the agent's status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentStatusReference {
     /// <p>The start timestamp of the agent's status.</p>
     #[doc(hidden)]
@@ -16186,14 +15330,6 @@ impl AgentStatusReference {
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
     pub fn status_arn(&self) -> std::option::Option<&str> {
         self.status_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AgentStatusReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentStatusReference");
-        formatter.field("status_start_timestamp", &self.status_start_timestamp);
-        formatter.field("status_arn", &self.status_arn);
-        formatter.finish()
     }
 }
 /// See [`AgentStatusReference`](crate::model::AgentStatusReference).
@@ -16247,7 +15383,7 @@ impl AgentStatusReference {
 
 /// <p>Information about the levels in the hierarchy group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyPathReference {
     /// <p>Information about level one.</p>
     #[doc(hidden)]
@@ -16287,17 +15423,6 @@ impl HierarchyPathReference {
     /// <p>Information about level five.</p>
     pub fn level_five(&self) -> std::option::Option<&crate::model::HierarchyGroupSummaryReference> {
         self.level_five.as_ref()
-    }
-}
-impl std::fmt::Debug for HierarchyPathReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyPathReference");
-        formatter.field("level_one", &self.level_one);
-        formatter.field("level_two", &self.level_two);
-        formatter.field("level_three", &self.level_three);
-        formatter.field("level_four", &self.level_four);
-        formatter.field("level_five", &self.level_five);
-        formatter.finish()
     }
 }
 /// See [`HierarchyPathReference`](crate::model::HierarchyPathReference).
@@ -16399,7 +15524,7 @@ impl HierarchyPathReference {
 
 /// <p>Information about the hierarchy group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyGroupSummaryReference {
     /// <p>The unique identifier for the hierarchy group.</p>
     #[doc(hidden)]
@@ -16416,14 +15541,6 @@ impl HierarchyGroupSummaryReference {
     /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for HierarchyGroupSummaryReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyGroupSummaryReference");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`HierarchyGroupSummaryReference`](crate::model::HierarchyGroupSummaryReference).
@@ -16474,7 +15591,7 @@ impl HierarchyGroupSummaryReference {
 
 /// <p>Information about the routing profile assigned to the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingProfileReference {
     /// <p>The identifier of the routing profile.</p>
     #[doc(hidden)]
@@ -16491,14 +15608,6 @@ impl RoutingProfileReference {
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RoutingProfileReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingProfileReference");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`RoutingProfileReference`](crate::model::RoutingProfileReference).
@@ -16549,7 +15658,7 @@ impl RoutingProfileReference {
 
 /// <p>Information about the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserReference {
     /// <p>The unique identifier for the user.</p>
     #[doc(hidden)]
@@ -16566,14 +15675,6 @@ impl UserReference {
     /// <p>The Amazon Resource Name (ARN) for the user.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UserReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserReference");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`UserReference`](crate::model::UserReference).
@@ -16624,7 +15725,7 @@ impl UserReference {
 
 /// <p>A filter for the user data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDataFilters {
     /// <p>Contains information about a queue resource for which metrics are returned.</p>
     #[doc(hidden)]
@@ -16641,14 +15742,6 @@ impl UserDataFilters {
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn contact_filter(&self) -> std::option::Option<&crate::model::ContactFilter> {
         self.contact_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for UserDataFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserDataFilters");
-        formatter.field("queues", &self.queues);
-        formatter.field("contact_filter", &self.contact_filter);
-        formatter.finish()
     }
 }
 /// See [`UserDataFilters`](crate::model::UserDataFilters).
@@ -16711,7 +15804,7 @@ impl UserDataFilters {
 
 /// <p>Filters user data based on the contact information that is associated to the users. It contains a list of <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactFilter {
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
     #[doc(hidden)]
@@ -16721,13 +15814,6 @@ impl ContactFilter {
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
     pub fn contact_states(&self) -> std::option::Option<&[crate::model::ContactState]> {
         self.contact_states.as_deref()
-    }
-}
-impl std::fmt::Debug for ContactFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactFilter");
-        formatter.field("contact_states", &self.contact_states);
-        formatter.finish()
     }
 }
 /// See [`ContactFilter`](crate::model::ContactFilter).
@@ -16775,7 +15861,7 @@ impl ContactFilter {
 
 /// <p>Contains information about a set of real-time metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CurrentMetricResult {
     /// <p>The dimensions for the metrics.</p>
     #[doc(hidden)]
@@ -16792,14 +15878,6 @@ impl CurrentMetricResult {
     /// <p>The set of metrics.</p>
     pub fn collections(&self) -> std::option::Option<&[crate::model::CurrentMetricData]> {
         self.collections.as_deref()
-    }
-}
-impl std::fmt::Debug for CurrentMetricResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CurrentMetricResult");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("collections", &self.collections);
-        formatter.finish()
     }
 }
 /// See [`CurrentMetricResult`](crate::model::CurrentMetricResult).
@@ -16862,7 +15940,7 @@ impl CurrentMetricResult {
 
 /// <p>Contains the data for a real-time metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CurrentMetricData {
     /// <p>Information about the metric.</p>
     #[doc(hidden)]
@@ -16879,14 +15957,6 @@ impl CurrentMetricData {
     /// <p>The value of the metric.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
-    }
-}
-impl std::fmt::Debug for CurrentMetricData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CurrentMetricData");
-        formatter.field("metric", &self.metric);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CurrentMetricData`](crate::model::CurrentMetricData).
@@ -16940,7 +16010,7 @@ impl CurrentMetricData {
 
 /// <p>Contains information about a real-time metric. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CurrentMetric {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
@@ -16957,14 +16027,6 @@ impl CurrentMetric {
     /// <p>The unit for the metric.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for CurrentMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CurrentMetric");
-        formatter.field("name", &self.name);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`CurrentMetric`](crate::model::CurrentMetric).
@@ -17179,7 +16241,7 @@ impl AsRef<str> for CurrentMetricName {
 
 /// <p>Contains information about a custom vocabulary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Vocabulary {
     /// <p>A unique name of the custom vocabulary.</p>
     #[doc(hidden)]
@@ -17249,21 +16311,6 @@ impl Vocabulary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Vocabulary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Vocabulary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("state", &self.state);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("content", &self.content);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Vocabulary`](crate::model::Vocabulary).
@@ -17427,7 +16474,7 @@ impl Vocabulary {
 
 /// <p>Contains information about a hierarchy structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyStructure {
     /// <p>Information about level one.</p>
     #[doc(hidden)]
@@ -17465,17 +16512,6 @@ impl HierarchyStructure {
     /// <p>Information about level five.</p>
     pub fn level_five(&self) -> std::option::Option<&crate::model::HierarchyLevel> {
         self.level_five.as_ref()
-    }
-}
-impl std::fmt::Debug for HierarchyStructure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyStructure");
-        formatter.field("level_one", &self.level_one);
-        formatter.field("level_two", &self.level_two);
-        formatter.field("level_three", &self.level_three);
-        formatter.field("level_four", &self.level_four);
-        formatter.field("level_five", &self.level_five);
-        formatter.finish()
     }
 }
 /// See [`HierarchyStructure`](crate::model::HierarchyStructure).
@@ -17577,7 +16613,7 @@ impl HierarchyStructure {
 
 /// <p>Contains information about a hierarchy level.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyLevel {
     /// <p>The identifier of the hierarchy level.</p>
     #[doc(hidden)]
@@ -17601,15 +16637,6 @@ impl HierarchyLevel {
     /// <p>The name of the hierarchy level.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for HierarchyLevel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyLevel");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`HierarchyLevel`](crate::model::HierarchyLevel).
@@ -17672,7 +16699,7 @@ impl HierarchyLevel {
 
 /// <p>Contains information about a hierarchy group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyGroup {
     /// <p>The identifier of the hierarchy group.</p>
     #[doc(hidden)]
@@ -17721,18 +16748,6 @@ impl HierarchyGroup {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for HierarchyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyGroup");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("level_id", &self.level_id);
-        formatter.field("hierarchy_path", &self.hierarchy_path);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`HierarchyGroup`](crate::model::HierarchyGroup).
@@ -17851,7 +16866,7 @@ impl HierarchyGroup {
 
 /// <p>Contains information about the levels of a hierarchy group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchyPath {
     /// <p>Information about level one.</p>
     #[doc(hidden)]
@@ -17889,17 +16904,6 @@ impl HierarchyPath {
     /// <p>Information about level five.</p>
     pub fn level_five(&self) -> std::option::Option<&crate::model::HierarchyGroupSummary> {
         self.level_five.as_ref()
-    }
-}
-impl std::fmt::Debug for HierarchyPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchyPath");
-        formatter.field("level_one", &self.level_one);
-        formatter.field("level_two", &self.level_two);
-        formatter.field("level_three", &self.level_three);
-        formatter.field("level_four", &self.level_four);
-        formatter.field("level_five", &self.level_five);
-        formatter.finish()
     }
 }
 /// See [`HierarchyPath`](crate::model::HierarchyPath).
@@ -18001,7 +17005,7 @@ impl HierarchyPath {
 
 /// <p>Contains information about a user account for a Amazon Connect instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>The identifier of the user account.</p>
     #[doc(hidden)]
@@ -18078,22 +17082,6 @@ impl User {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("username", &self.username);
-        formatter.field("identity_info", &self.identity_info);
-        formatter.field("phone_config", &self.phone_config);
-        formatter.field("directory_user_id", &self.directory_user_id);
-        formatter.field("security_profile_ids", &self.security_profile_ids);
-        formatter.field("routing_profile_id", &self.routing_profile_id);
-        formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`User`](crate::model::User).
@@ -18281,7 +17269,7 @@ impl User {
 
 /// <p>Contains information about a security profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityProfile {
     /// <p>The identifier for the security profile.</p>
     #[doc(hidden)]
@@ -18330,18 +17318,6 @@ impl SecurityProfile {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityProfile");
-        formatter.field("id", &self.id);
-        formatter.field("organization_resource_id", &self.organization_resource_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("security_profile_name", &self.security_profile_name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SecurityProfile`](crate::model::SecurityProfile).
@@ -18463,7 +17439,7 @@ impl SecurityProfile {
 
 /// <p>Contains information about a quick connect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuickConnect {
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
     #[doc(hidden)]
@@ -18512,18 +17488,6 @@ impl QuickConnect {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for QuickConnect {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuickConnect");
-        formatter.field("quick_connect_arn", &self.quick_connect_arn);
-        formatter.field("quick_connect_id", &self.quick_connect_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("quick_connect_config", &self.quick_connect_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`QuickConnect`](crate::model::QuickConnect).
@@ -18648,7 +17612,7 @@ impl QuickConnect {
 
 /// <p>Information about a phone number that has been claimed to your Amazon Connect instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClaimedPhoneNumberSummary {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
@@ -18720,21 +17684,6 @@ impl ClaimedPhoneNumberSummary {
     /// <p>The status of the phone number.</p>
     pub fn phone_number_status(&self) -> std::option::Option<&crate::model::PhoneNumberStatus> {
         self.phone_number_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ClaimedPhoneNumberSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClaimedPhoneNumberSummary");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.field("phone_number_arn", &self.phone_number_arn);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("phone_number_country_code", &self.phone_number_country_code);
-        formatter.field("phone_number_type", &self.phone_number_type);
-        formatter.field("phone_number_description", &self.phone_number_description);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("phone_number_status", &self.phone_number_status);
-        formatter.finish()
     }
 }
 /// See [`ClaimedPhoneNumberSummary`](crate::model::ClaimedPhoneNumberSummary).
@@ -18908,7 +17857,7 @@ impl ClaimedPhoneNumberSummary {
 
 /// <p>The status of the phone number.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhoneNumberStatus {
     /// <p>The status.</p>
     #[doc(hidden)]
@@ -18925,14 +17874,6 @@ impl PhoneNumberStatus {
     /// <p>The status message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for PhoneNumberStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhoneNumberStatus");
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`PhoneNumberStatus`](crate::model::PhoneNumberStatus).
@@ -19178,7 +18119,7 @@ impl std::fmt::Debug for Instance {
 pub mod instance {
 
     /// A builder for [`Instance`](crate::model::Instance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -19323,6 +18264,22 @@ pub mod instance {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("arn", &self.arn);
+            formatter.field("identity_management_type", &self.identity_management_type);
+            formatter.field("instance_alias", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_time", &self.created_time);
+            formatter.field("service_role", &self.service_role);
+            formatter.field("instance_status", &self.instance_status);
+            formatter.field("status_reason", &self.status_reason);
+            formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
+            formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+            formatter.finish()
+        }
+    }
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
@@ -19333,7 +18290,7 @@ impl Instance {
 
 /// <p>Relevant details why the instance was not successfully created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceStatusReason {
     /// <p>The message.</p>
     #[doc(hidden)]
@@ -19343,13 +18300,6 @@ impl InstanceStatusReason {
     /// <p>The message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceStatusReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceStatusReason");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`InstanceStatusReason`](crate::model::InstanceStatusReason).
@@ -19388,7 +18338,7 @@ impl InstanceStatusReason {
 
 /// <p>Information about of the hours of operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoursOfOperation {
     /// <p>The identifier for the hours of operation.</p>
     #[doc(hidden)]
@@ -19444,19 +18394,6 @@ impl HoursOfOperation {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for HoursOfOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoursOfOperation");
-        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
-        formatter.field("hours_of_operation_arn", &self.hours_of_operation_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.field("config", &self.config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`HoursOfOperation`](crate::model::HoursOfOperation).
@@ -19599,7 +18536,7 @@ impl HoursOfOperation {
 
 /// <p>Contains information about a flow module.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactFlowModule {
     /// <p>The Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -19662,20 +18599,6 @@ impl ContactFlowModule {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ContactFlowModule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactFlowModule");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("content", &self.content);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ContactFlowModule`](crate::model::ContactFlowModule).
@@ -19913,7 +18836,7 @@ impl AsRef<str> for ContactFlowModuleStatus {
 
 /// <p>Contains information about a flow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactFlow {
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     #[doc(hidden)]
@@ -19976,20 +18899,6 @@ impl ContactFlow {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ContactFlow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactFlow");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("description", &self.description);
-        formatter.field("content", &self.content);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ContactFlow`](crate::model::ContactFlow).
@@ -20135,7 +19044,7 @@ impl ContactFlow {
 
 /// <p>Contains information about a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
     #[doc(hidden)]
@@ -20236,26 +19145,6 @@ impl Contact {
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
     pub fn scheduled_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for Contact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Contact");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("initial_contact_id", &self.initial_contact_id);
-        formatter.field("previous_contact_id", &self.previous_contact_id);
-        formatter.field("initiation_method", &self.initiation_method);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("channel", &self.channel);
-        formatter.field("queue_info", &self.queue_info);
-        formatter.field("agent_info", &self.agent_info);
-        formatter.field("initiation_timestamp", &self.initiation_timestamp);
-        formatter.field("disconnect_timestamp", &self.disconnect_timestamp);
-        formatter.field("last_update_timestamp", &self.last_update_timestamp);
-        formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
-        formatter.finish()
     }
 }
 /// See [`Contact`](crate::model::Contact).
@@ -20477,7 +19366,7 @@ impl Contact {
 
 /// <p>Information about the agent who accepted the contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
     #[doc(hidden)]
@@ -20494,17 +19383,6 @@ impl AgentInfo {
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub fn connected_to_agent_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.connected_to_agent_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for AgentInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentInfo");
-        formatter.field("id", &self.id);
-        formatter.field(
-            "connected_to_agent_timestamp",
-            &self.connected_to_agent_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`AgentInfo`](crate::model::AgentInfo).
@@ -20558,7 +19436,7 @@ impl AgentInfo {
 
 /// <p>If this contact was queued, this contains information about the queue. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
     #[doc(hidden)]
@@ -20575,14 +19453,6 @@ impl QueueInfo {
     /// <p>The timestamp when the contact was added to the queue.</p>
     pub fn enqueue_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enqueue_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for QueueInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueInfo");
-        formatter.field("id", &self.id);
-        formatter.field("enqueue_timestamp", &self.enqueue_timestamp);
-        formatter.finish()
     }
 }
 /// See [`QueueInfo`](crate::model::QueueInfo).
@@ -20636,7 +19506,7 @@ impl QueueInfo {
 
 /// <p>Contains information about an agent status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentStatus {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
     #[doc(hidden)]
@@ -20699,20 +19569,6 @@ impl AgentStatus {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for AgentStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentStatus");
-        formatter.field("agent_status_arn", &self.agent_status_arn);
-        formatter.field("agent_status_id", &self.agent_status_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("display_order", &self.display_order);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`AgentStatus`](crate::model::AgentStatus).

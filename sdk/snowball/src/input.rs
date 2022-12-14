@@ -4535,7 +4535,7 @@ impl UpdateLongTermPricingInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLongTermPricingInput {
     /// <p>The ID of the long-term pricing type for the device.</p>
     #[doc(hidden)]
@@ -4561,22 +4561,10 @@ impl UpdateLongTermPricingInput {
         self.is_long_term_pricing_auto_renew
     }
 }
-impl std::fmt::Debug for UpdateLongTermPricingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLongTermPricingInput");
-        formatter.field("long_term_pricing_id", &self.long_term_pricing_id);
-        formatter.field("replacement_job", &self.replacement_job);
-        formatter.field(
-            "is_long_term_pricing_auto_renew",
-            &self.is_long_term_pricing_auto_renew,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobShipmentStateInput {
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -4599,18 +4587,10 @@ impl UpdateJobShipmentStateInput {
         self.shipment_state.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateJobShipmentStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobShipmentStateInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("shipment_state", &self.shipment_state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobInput {
     /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -4692,32 +4672,10 @@ impl UpdateJobInput {
         self.forwarding_address_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("notification", &self.notification);
-        formatter.field("resources", &self.resources);
-        formatter.field(
-            "on_device_service_configuration",
-            &self.on_device_service_configuration,
-        );
-        formatter.field("address_id", &self.address_id);
-        formatter.field("shipping_option", &self.shipping_option);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "snowball_capacity_preference",
-            &self.snowball_capacity_preference,
-        );
-        formatter.field("forwarding_address_id", &self.forwarding_address_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClusterInput {
     /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -4788,28 +4746,10 @@ impl UpdateClusterInput {
         self.forwarding_address_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClusterInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("description", &self.description);
-        formatter.field("resources", &self.resources);
-        formatter.field(
-            "on_device_service_configuration",
-            &self.on_device_service_configuration,
-        );
-        formatter.field("address_id", &self.address_id);
-        formatter.field("shipping_option", &self.shipping_option);
-        formatter.field("notification", &self.notification);
-        formatter.field("forwarding_address_id", &self.forwarding_address_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLongTermPricingInput {
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     #[doc(hidden)]
@@ -4828,18 +4768,10 @@ impl ListLongTermPricingInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLongTermPricingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLongTermPricingInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The number of <code>JobListEntry</code> objects to return.</p>
     #[doc(hidden)]
@@ -4858,18 +4790,10 @@ impl ListJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCompatibleImagesInput {
     /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
     #[doc(hidden)]
@@ -4888,18 +4812,10 @@ impl ListCompatibleImagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCompatibleImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCompatibleImagesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClustersInput {
     /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
     #[doc(hidden)]
@@ -4918,18 +4834,10 @@ impl ListClustersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClustersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClusterJobsInput {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -4955,19 +4863,10 @@ impl ListClusterJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListClusterJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClusterJobsInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSoftwareUpdatesInput {
     /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -4979,28 +4878,15 @@ impl GetSoftwareUpdatesInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSoftwareUpdatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSoftwareUpdatesInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSnowballUsageInput {}
-impl std::fmt::Debug for GetSnowballUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSnowballUsageInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobUnlockCodeInput {
     /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -5012,17 +4898,10 @@ impl GetJobUnlockCodeInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobUnlockCodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobUnlockCodeInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobManifestInput {
     /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -5034,17 +4913,10 @@ impl GetJobManifestInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobManifestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobManifestInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReturnShippingLabelInput {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -5056,17 +4928,10 @@ impl DescribeReturnShippingLabelInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReturnShippingLabelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReturnShippingLabelInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobInput {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -5078,17 +4943,10 @@ impl DescribeJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClusterInput {
     /// <p>The automatically generated ID for a cluster.</p>
     #[doc(hidden)]
@@ -5100,17 +4958,10 @@ impl DescribeClusterInput {
         self.cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClusterInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAddressesInput {
     /// <p>The number of <code>ADDRESS</code> objects to return.</p>
     #[doc(hidden)]
@@ -5129,18 +4980,10 @@ impl DescribeAddressesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAddressesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAddressesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAddressInput {
     /// <p>The automatically generated ID for a specific address.</p>
     #[doc(hidden)]
@@ -5152,17 +4995,10 @@ impl DescribeAddressInput {
         self.address_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAddressInput");
-        formatter.field("address_id", &self.address_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReturnShippingLabelInput {
     /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -5181,18 +5017,10 @@ impl CreateReturnShippingLabelInput {
         self.shipping_option.as_ref()
     }
 }
-impl std::fmt::Debug for CreateReturnShippingLabelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReturnShippingLabelInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("shipping_option", &self.shipping_option);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLongTermPricingInput {
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
     #[doc(hidden)]
@@ -5222,22 +5050,10 @@ impl CreateLongTermPricingInput {
         self.snowball_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLongTermPricingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLongTermPricingInput");
-        formatter.field("long_term_pricing_type", &self.long_term_pricing_type);
-        formatter.field(
-            "is_long_term_pricing_auto_renew",
-            &self.is_long_term_pricing_auto_renew,
-        );
-        formatter.field("snowball_type", &self.snowball_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>Defines the type of job that you're creating. </p>
     #[doc(hidden)]
@@ -5396,39 +5212,10 @@ impl CreateJobInput {
         self.long_term_pricing_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobInput");
-        formatter.field("job_type", &self.job_type);
-        formatter.field("resources", &self.resources);
-        formatter.field(
-            "on_device_service_configuration",
-            &self.on_device_service_configuration,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("address_id", &self.address_id);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field(
-            "snowball_capacity_preference",
-            &self.snowball_capacity_preference,
-        );
-        formatter.field("shipping_option", &self.shipping_option);
-        formatter.field("notification", &self.notification);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("snowball_type", &self.snowball_type);
-        formatter.field("forwarding_address_id", &self.forwarding_address_id);
-        formatter.field("tax_documents", &self.tax_documents);
-        formatter.field("device_configuration", &self.device_configuration);
-        formatter.field("remote_management", &self.remote_management);
-        formatter.field("long_term_pricing_id", &self.long_term_pricing_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateClusterInput {
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -5559,32 +5346,10 @@ impl CreateClusterInput {
         self.remote_management.as_ref()
     }
 }
-impl std::fmt::Debug for CreateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateClusterInput");
-        formatter.field("job_type", &self.job_type);
-        formatter.field("resources", &self.resources);
-        formatter.field(
-            "on_device_service_configuration",
-            &self.on_device_service_configuration,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("address_id", &self.address_id);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("snowball_type", &self.snowball_type);
-        formatter.field("shipping_option", &self.shipping_option);
-        formatter.field("notification", &self.notification);
-        formatter.field("forwarding_address_id", &self.forwarding_address_id);
-        formatter.field("tax_documents", &self.tax_documents);
-        formatter.field("remote_management", &self.remote_management);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAddressInput {
     /// <p>The address that you want the Snow device shipped to.</p>
     #[doc(hidden)]
@@ -5596,17 +5361,10 @@ impl CreateAddressInput {
         self.address.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAddressInput");
-        formatter.field("address", &self.address);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -5618,17 +5376,10 @@ impl CancelJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelClusterInput {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -5638,12 +5389,5 @@ impl CancelClusterInput {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelClusterInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
     }
 }

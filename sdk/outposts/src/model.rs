@@ -92,7 +92,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>Information about a site.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Site {
     /// <p> The ID of the site. </p>
     #[doc(hidden)]
@@ -178,29 +178,6 @@ impl Site {
         &self,
     ) -> std::option::Option<&crate::model::RackPhysicalProperties> {
         self.rack_physical_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for Site {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Site");
-        formatter.field("site_id", &self.site_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_arn", &self.site_arn);
-        formatter.field("notes", &self.notes);
-        formatter.field(
-            "operating_address_country_code",
-            &self.operating_address_country_code,
-        );
-        formatter.field(
-            "operating_address_state_or_region",
-            &self.operating_address_state_or_region,
-        );
-        formatter.field("operating_address_city", &self.operating_address_city);
-        formatter.field("rack_physical_properties", &self.rack_physical_properties);
-        formatter.finish()
     }
 }
 /// See [`Site`](crate::model::Site).
@@ -398,7 +375,7 @@ impl Site {
 
 /// <p> Information about the physical and logistical details for racks at sites. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RackPhysicalProperties {
     /// <p>The power draw available at the hardware placement position for the rack. </p>
     #[doc(hidden)]
@@ -468,24 +445,6 @@ impl RackPhysicalProperties {
         &self,
     ) -> std::option::Option<&crate::model::MaximumSupportedWeightLbs> {
         self.maximum_supported_weight_lbs.as_ref()
-    }
-}
-impl std::fmt::Debug for RackPhysicalProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RackPhysicalProperties");
-        formatter.field("power_draw_kva", &self.power_draw_kva);
-        formatter.field("power_phase", &self.power_phase);
-        formatter.field("power_connector", &self.power_connector);
-        formatter.field("power_feed_drop", &self.power_feed_drop);
-        formatter.field("uplink_gbps", &self.uplink_gbps);
-        formatter.field("uplink_count", &self.uplink_count);
-        formatter.field("fiber_optic_cable_type", &self.fiber_optic_cable_type);
-        formatter.field("optical_standard", &self.optical_standard);
-        formatter.field(
-            "maximum_supported_weight_lbs",
-            &self.maximum_supported_weight_lbs,
-        );
-        formatter.finish()
     }
 }
 /// See [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
@@ -1631,7 +1590,7 @@ impl AsRef<str> for PowerDrawKva {
 
 /// <p> Information about an address. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Address {
     /// <p>The name of the contact.</p>
     #[doc(hidden)]
@@ -1711,23 +1670,6 @@ impl Address {
     /// <p>The municipality for the address.</p>
     pub fn municipality(&self) -> std::option::Option<&str> {
         self.municipality.as_deref()
-    }
-}
-impl std::fmt::Debug for Address {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Address");
-        formatter.field("contact_name", &self.contact_name);
-        formatter.field("contact_phone_number", &self.contact_phone_number);
-        formatter.field("address_line1", &self.address_line1);
-        formatter.field("address_line2", &self.address_line2);
-        formatter.field("address_line3", &self.address_line3);
-        formatter.field("city", &self.city);
-        formatter.field("state_or_region", &self.state_or_region);
-        formatter.field("district_or_county", &self.district_or_county);
-        formatter.field("postal_code", &self.postal_code);
-        formatter.field("country_code", &self.country_code);
-        formatter.field("municipality", &self.municipality);
-        formatter.finish()
     }
 }
 /// See [`Address`](crate::model::Address).
@@ -1994,7 +1936,7 @@ impl AsRef<str> for AddressType {
 
 /// <p>Information about an Outpost.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Outpost {
     /// <p> The ID of the Outpost. </p>
     #[doc(hidden)]
@@ -2087,24 +2029,6 @@ impl Outpost {
         &self,
     ) -> std::option::Option<&crate::model::SupportedHardwareType> {
         self.supported_hardware_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Outpost {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Outpost");
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("outpost_arn", &self.outpost_arn);
-        formatter.field("site_id", &self.site_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("life_cycle_status", &self.life_cycle_status);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("availability_zone_id", &self.availability_zone_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_arn", &self.site_arn);
-        formatter.field("supported_hardware_type", &self.supported_hardware_type);
-        formatter.finish()
     }
 }
 /// See [`Outpost`](crate::model::Outpost).
@@ -2400,7 +2324,7 @@ impl AsRef<str> for SupportedHardwareType {
 
 /// <p> A summary of line items in your order. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrderSummary {
     /// <p> The ID of the Outpost. </p>
     #[doc(hidden)]
@@ -2473,22 +2397,6 @@ impl OrderSummary {
     /// <p> Fulfilment date for the order. </p>
     pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
-    }
-}
-impl std::fmt::Debug for OrderSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrderSummary");
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.field("order_id", &self.order_id);
-        formatter.field("order_type", &self.order_type);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "line_item_counts_by_status",
-            &self.line_item_counts_by_status,
-        );
-        formatter.field("order_submission_date", &self.order_submission_date);
-        formatter.field("order_fulfilled_date", &self.order_fulfilled_date);
-        formatter.finish()
     }
 }
 /// See [`OrderSummary`](crate::model::OrderSummary).
@@ -3002,7 +2910,7 @@ impl AsRef<str> for OrderType {
 
 /// <p> Information about a catalog item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogItem {
     /// <p> The ID of the catalog item. </p>
     #[doc(hidden)]
@@ -3054,19 +2962,6 @@ impl CatalogItem {
     /// <p> The supported storage options for the catalog item. </p>
     pub fn supported_storage(&self) -> std::option::Option<&[crate::model::SupportedStorageEnum]> {
         self.supported_storage.as_deref()
-    }
-}
-impl std::fmt::Debug for CatalogItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogItem");
-        formatter.field("catalog_item_id", &self.catalog_item_id);
-        formatter.field("item_status", &self.item_status);
-        formatter.field("ec2_capacities", &self.ec2_capacities);
-        formatter.field("power_kva", &self.power_kva);
-        formatter.field("weight_lbs", &self.weight_lbs);
-        formatter.field("supported_uplink_gbps", &self.supported_uplink_gbps);
-        formatter.field("supported_storage", &self.supported_storage);
-        formatter.finish()
     }
 }
 /// See [`CatalogItem`](crate::model::CatalogItem).
@@ -3303,7 +3198,7 @@ impl AsRef<str> for SupportedStorageEnum {
 
 /// <p> Information about EC2 capacity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2Capacity {
     /// <p> The family of the EC2 capacity. </p>
     #[doc(hidden)]
@@ -3327,15 +3222,6 @@ impl Ec2Capacity {
     /// <p> The quantity of the EC2 capacity. </p>
     pub fn quantity(&self) -> std::option::Option<&str> {
         self.quantity.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2Capacity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2Capacity");
-        formatter.field("family", &self.family);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("quantity", &self.quantity);
-        formatter.finish()
     }
 }
 /// See [`Ec2Capacity`](crate::model::Ec2Capacity).
@@ -3580,7 +3466,7 @@ impl AsRef<str> for CatalogItemClass {
 
 /// <p> Information about hardware assets. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetInfo {
     /// <p> The ID of the asset. </p>
     #[doc(hidden)]
@@ -3618,17 +3504,6 @@ impl AssetInfo {
     /// <p> The position of an asset in a rack. </p>
     pub fn asset_location(&self) -> std::option::Option<&crate::model::AssetLocation> {
         self.asset_location.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetInfo");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("rack_id", &self.rack_id);
-        formatter.field("asset_type", &self.asset_type);
-        formatter.field("compute_attributes", &self.compute_attributes);
-        formatter.field("asset_location", &self.asset_location);
-        formatter.finish()
     }
 }
 /// See [`AssetInfo`](crate::model::AssetInfo).
@@ -3724,7 +3599,7 @@ impl AssetInfo {
 
 /// <p> Information about the position of the asset in a rack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetLocation {
     /// <p> The position of an asset in a rack measured in rack units. </p>
     #[doc(hidden)]
@@ -3734,13 +3609,6 @@ impl AssetLocation {
     /// <p> The position of an asset in a rack measured in rack units. </p>
     pub fn rack_elevation(&self) -> std::option::Option<f32> {
         self.rack_elevation
-    }
-}
-impl std::fmt::Debug for AssetLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetLocation");
-        formatter.field("rack_elevation", &self.rack_elevation);
-        formatter.finish()
     }
 }
 /// See [`AssetLocation`](crate::model::AssetLocation).
@@ -3779,7 +3647,7 @@ impl AssetLocation {
 
 /// <p> Information about compute hardware assets. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeAttributes {
     /// <p> The host ID of any Dedicated Hosts on the asset. </p>
     #[doc(hidden)]
@@ -3789,13 +3657,6 @@ impl ComputeAttributes {
     /// <p> The host ID of any Dedicated Hosts on the asset. </p>
     pub fn host_id(&self) -> std::option::Option<&str> {
         self.host_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ComputeAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeAttributes");
-        formatter.field("host_id", &self.host_id);
-        formatter.finish()
     }
 }
 /// See [`ComputeAttributes`](crate::model::ComputeAttributes).
@@ -3919,7 +3780,7 @@ impl AsRef<str> for AssetType {
 
 /// <p>Information about an instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceTypeItem {
     /// <p>The instance type.</p>
     #[doc(hidden)]
@@ -3929,13 +3790,6 @@ impl InstanceTypeItem {
     /// <p>The instance type.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceTypeItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceTypeItem");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.finish()
     }
 }
 /// See [`InstanceTypeItem`](crate::model::InstanceTypeItem).
@@ -3977,7 +3831,7 @@ impl InstanceTypeItem {
 
 /// <p>Information about an order.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Order {
     /// <p> The ID of the Outpost in the order. </p>
     #[doc(hidden)]
@@ -4047,19 +3901,6 @@ impl Order {
     /// <p>The fulfillment date of the order.</p>
     pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Order {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Order");
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.field("order_id", &self.order_id);
-        formatter.field("status", &self.status);
-        formatter.field("line_items", &self.line_items);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("order_submission_date", &self.order_submission_date);
-        formatter.field("order_fulfilled_date", &self.order_fulfilled_date);
-        formatter.finish()
     }
 }
 /// See [`Order`](crate::model::Order).
@@ -4301,7 +4142,7 @@ impl AsRef<str> for PaymentOption {
 
 /// <p>Information about a line item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LineItem {
     /// <p> The ID of the catalog item. </p>
     #[doc(hidden)]
@@ -4349,18 +4190,6 @@ impl LineItem {
         &self,
     ) -> std::option::Option<&[crate::model::LineItemAssetInformation]> {
         self.asset_information_list.as_deref()
-    }
-}
-impl std::fmt::Debug for LineItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LineItem");
-        formatter.field("catalog_item_id", &self.catalog_item_id);
-        formatter.field("line_item_id", &self.line_item_id);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("status", &self.status);
-        formatter.field("shipment_information", &self.shipment_information);
-        formatter.field("asset_information_list", &self.asset_information_list);
-        formatter.finish()
     }
 }
 /// See [`LineItem`](crate::model::LineItem).
@@ -4481,7 +4310,7 @@ impl LineItem {
 
 /// <p> Information about a line item asset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
     #[doc(hidden)]
@@ -4498,14 +4327,6 @@ impl LineItemAssetInformation {
     /// <p> MAC addresses of the asset. </p>
     pub fn mac_address_list(&self) -> std::option::Option<&[std::string::String]> {
         self.mac_address_list.as_deref()
-    }
-}
-impl std::fmt::Debug for LineItemAssetInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LineItemAssetInformation");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("mac_address_list", &self.mac_address_list);
-        formatter.finish()
     }
 }
 /// See [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
@@ -4565,7 +4386,7 @@ impl LineItemAssetInformation {
 
 /// <p> Information about a line item shipment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShipmentInformation {
     /// <p> The tracking number of the shipment. </p>
     #[doc(hidden)]
@@ -4582,14 +4403,6 @@ impl ShipmentInformation {
     /// <p> The carrier of the shipment. </p>
     pub fn shipment_carrier(&self) -> std::option::Option<&crate::model::ShipmentCarrier> {
         self.shipment_carrier.as_ref()
-    }
-}
-impl std::fmt::Debug for ShipmentInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShipmentInformation");
-        formatter.field("shipment_tracking_number", &self.shipment_tracking_number);
-        formatter.field("shipment_carrier", &self.shipment_carrier);
-        formatter.finish()
     }
 }
 /// See [`ShipmentInformation`](crate::model::ShipmentInformation).
@@ -4746,7 +4559,7 @@ impl AsRef<str> for ShipmentCarrier {
 
 /// <p> Information about a connection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionDetails {
     /// <p> The public key of the client. </p>
     #[doc(hidden)]
@@ -4791,18 +4604,6 @@ impl ConnectionDetails {
     /// <p> The allowed IP addresses. </p>
     pub fn allowed_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_ips.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionDetails");
-        formatter.field("client_public_key", &self.client_public_key);
-        formatter.field("server_public_key", &self.server_public_key);
-        formatter.field("server_endpoint", &self.server_endpoint);
-        formatter.field("client_tunnel_address", &self.client_tunnel_address);
-        formatter.field("server_tunnel_address", &self.server_tunnel_address);
-        formatter.field("allowed_ips", &self.allowed_ips);
-        formatter.finish()
     }
 }
 /// See [`ConnectionDetails`](crate::model::ConnectionDetails).
@@ -5010,7 +4811,7 @@ impl AsRef<str> for PaymentTerm {
 
 /// <p>Information about a line item request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LineItemRequest {
     /// <p>The ID of the catalog item.</p>
     #[doc(hidden)]
@@ -5027,14 +4828,6 @@ impl LineItemRequest {
     /// <p>The quantity of a line item request.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
-    }
-}
-impl std::fmt::Debug for LineItemRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LineItemRequest");
-        formatter.field("catalog_item_id", &self.catalog_item_id);
-        formatter.field("quantity", &self.quantity);
-        formatter.finish()
     }
 }
 /// See [`LineItemRequest`](crate::model::LineItemRequest).

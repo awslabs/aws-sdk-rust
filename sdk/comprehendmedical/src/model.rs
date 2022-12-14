@@ -87,7 +87,7 @@ impl AsRef<str> for LanguageCode {
 
 /// <p>The output properties for a detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output.</p>
     #[doc(hidden)]
@@ -104,14 +104,6 @@ impl OutputDataConfig {
     /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDataConfig");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.finish()
     }
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
@@ -162,7 +154,7 @@ impl OutputDataConfig {
 
 /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
     /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.</p>
@@ -181,14 +173,6 @@ impl InputDataConfig {
     /// <p>The path to the input data files in the S3 bucket.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDataConfig");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.finish()
     }
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
@@ -241,7 +225,7 @@ impl InputDataConfig {
 
 /// <p>Provides information about a detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComprehendMedicalAsyncJobProperties {
     /// <p>The identifier assigned to the detection job.</p>
     #[doc(hidden)]
@@ -342,26 +326,6 @@ impl ComprehendMedicalAsyncJobProperties {
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub fn model_version(&self) -> std::option::Option<&str> {
         self.model_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ComprehendMedicalAsyncJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComprehendMedicalAsyncJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("manifest_file_path", &self.manifest_file_path);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("model_version", &self.model_version);
-        formatter.finish()
     }
 }
 /// See [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
@@ -709,7 +673,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p>Provides information for filtering a list of detection jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComprehendMedicalAsyncJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -740,16 +704,6 @@ impl ComprehendMedicalAsyncJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for ComprehendMedicalAsyncJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComprehendMedicalAsyncJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
@@ -833,7 +787,7 @@ impl ComprehendMedicalAsyncJobFilter {
 
 /// <p> The number of characters in the input text to be analyzed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Characters {
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
     #[doc(hidden)]
@@ -843,13 +797,6 @@ impl Characters {
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
     pub fn original_text_characters(&self) -> std::option::Option<i32> {
         self.original_text_characters
-    }
-}
-impl std::fmt::Debug for Characters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Characters");
-        formatter.field("original_text_characters", &self.original_text_characters);
-        formatter.finish()
     }
 }
 /// See [`Characters`](crate::model::Characters).
@@ -888,7 +835,7 @@ impl Characters {
 
 /// <p> The information about the revision of the SNOMED-CT ontology in the response. Specifically, the details include the SNOMED-CT edition, language, and version date. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnomedctDetails {
     /// <p> The edition of SNOMED-CT used. The edition used for the InferSNOMEDCT editions is the US edition. </p>
     #[doc(hidden)]
@@ -912,15 +859,6 @@ impl SnomedctDetails {
     /// <p> The version date of the SNOMED-CT ontology used. </p>
     pub fn version_date(&self) -> std::option::Option<&str> {
         self.version_date.as_deref()
-    }
-}
-impl std::fmt::Debug for SnomedctDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnomedctDetails");
-        formatter.field("edition", &self.edition);
-        formatter.field("language", &self.language);
-        formatter.field("version_date", &self.version_date);
-        formatter.finish()
     }
 }
 /// See [`SnomedctDetails`](crate::model::SnomedctDetails).
@@ -983,7 +921,7 @@ impl SnomedctDetails {
 
 /// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnomedctEntity {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     #[doc(hidden)]
@@ -1056,22 +994,6 @@ impl SnomedctEntity {
     /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
     pub fn snomedct_concepts(&self) -> std::option::Option<&[crate::model::SnomedctConcept]> {
         self.snomedct_concepts.as_deref()
-    }
-}
-impl std::fmt::Debug for SnomedctEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnomedctEntity");
-        formatter.field("id", &self.id);
-        formatter.field("text", &self.text);
-        formatter.field("category", &self.category);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("score", &self.score);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("traits", &self.traits);
-        formatter.field("snomedct_concepts", &self.snomedct_concepts);
-        formatter.finish()
     }
 }
 /// See [`SnomedctEntity`](crate::model::SnomedctEntity).
@@ -1252,7 +1174,7 @@ impl SnomedctEntity {
 
 /// <p> The SNOMED-CT concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnomedctConcept {
     /// <p> The description of the SNOMED-CT concept. </p>
     #[doc(hidden)]
@@ -1276,15 +1198,6 @@ impl SnomedctConcept {
     /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for SnomedctConcept {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnomedctConcept");
-        formatter.field("description", &self.description);
-        formatter.field("code", &self.code);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`SnomedctConcept`](crate::model::SnomedctConcept).
@@ -1347,7 +1260,7 @@ impl SnomedctConcept {
 
 /// <p> Contextual information for an entity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnomedctTrait {
     /// <p> The name or contextual description of a detected trait. </p>
     #[doc(hidden)]
@@ -1364,14 +1277,6 @@ impl SnomedctTrait {
     /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for SnomedctTrait {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnomedctTrait");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`SnomedctTrait`](crate::model::SnomedctTrait).
@@ -1527,7 +1432,7 @@ impl AsRef<str> for SnomedctTraitName {
 
 /// <p> The extracted attributes that relate to an entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnomedctAttribute {
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
     #[doc(hidden)]
@@ -1609,23 +1514,6 @@ impl SnomedctAttribute {
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
     pub fn snomedct_concepts(&self) -> std::option::Option<&[crate::model::SnomedctConcept]> {
         self.snomedct_concepts.as_deref()
-    }
-}
-impl std::fmt::Debug for SnomedctAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnomedctAttribute");
-        formatter.field("category", &self.category);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("score", &self.score);
-        formatter.field("relationship_score", &self.relationship_score);
-        formatter.field("relationship_type", &self.relationship_type);
-        formatter.field("id", &self.id);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("text", &self.text);
-        formatter.field("traits", &self.traits);
-        formatter.field("snomedct_concepts", &self.snomedct_concepts);
-        formatter.finish()
     }
 }
 /// See [`SnomedctAttribute`](crate::model::SnomedctAttribute).
@@ -2249,7 +2137,7 @@ impl AsRef<str> for SnomedctEntityType {
 
 /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RxNormEntity {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     #[doc(hidden)]
@@ -2322,22 +2210,6 @@ impl RxNormEntity {
     /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn rx_norm_concepts(&self) -> std::option::Option<&[crate::model::RxNormConcept]> {
         self.rx_norm_concepts.as_deref()
-    }
-}
-impl std::fmt::Debug for RxNormEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RxNormEntity");
-        formatter.field("id", &self.id);
-        formatter.field("text", &self.text);
-        formatter.field("category", &self.category);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("score", &self.score);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("traits", &self.traits);
-        formatter.field("rx_norm_concepts", &self.rx_norm_concepts);
-        formatter.finish()
     }
 }
 /// See [`RxNormEntity`](crate::model::RxNormEntity).
@@ -2518,7 +2390,7 @@ impl RxNormEntity {
 
 /// <p>The RxNorm concept that the entity could refer to, along with a score indicating the likelihood of the match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RxNormConcept {
     /// <p>The description of the RxNorm concept.</p>
     #[doc(hidden)]
@@ -2542,15 +2414,6 @@ impl RxNormConcept {
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for RxNormConcept {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RxNormConcept");
-        formatter.field("description", &self.description);
-        formatter.field("code", &self.code);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`RxNormConcept`](crate::model::RxNormConcept).
@@ -2613,7 +2476,7 @@ impl RxNormConcept {
 
 /// <p>The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RxNormTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
     #[doc(hidden)]
@@ -2630,14 +2493,6 @@ impl RxNormTrait {
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for RxNormTrait {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RxNormTrait");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`RxNormTrait`](crate::model::RxNormTrait).
@@ -2776,7 +2631,7 @@ impl AsRef<str> for RxNormTraitName {
 
 /// <p>The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RxNormAttribute {
     /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
     #[doc(hidden)]
@@ -2835,20 +2690,6 @@ impl RxNormAttribute {
     /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
     pub fn traits(&self) -> std::option::Option<&[crate::model::RxNormTrait]> {
         self.traits.as_deref()
-    }
-}
-impl std::fmt::Debug for RxNormAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RxNormAttribute");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("score", &self.score);
-        formatter.field("relationship_score", &self.relationship_score);
-        formatter.field("id", &self.id);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("text", &self.text);
-        formatter.field("traits", &self.traits);
-        formatter.finish()
     }
 }
 /// See [`RxNormAttribute`](crate::model::RxNormAttribute).
@@ -3285,7 +3126,7 @@ impl AsRef<str> for RxNormEntityCategory {
 
 /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Icd10CmEntity {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     #[doc(hidden)]
@@ -3358,22 +3199,6 @@ impl Icd10CmEntity {
     /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn icd10_cm_concepts(&self) -> std::option::Option<&[crate::model::Icd10CmConcept]> {
         self.icd10_cm_concepts.as_deref()
-    }
-}
-impl std::fmt::Debug for Icd10CmEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Icd10CmEntity");
-        formatter.field("id", &self.id);
-        formatter.field("text", &self.text);
-        formatter.field("category", &self.category);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("score", &self.score);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("traits", &self.traits);
-        formatter.field("icd10_cm_concepts", &self.icd10_cm_concepts);
-        formatter.finish()
     }
 }
 /// See [`Icd10CmEntity`](crate::model::Icd10CmEntity).
@@ -3554,7 +3379,7 @@ impl Icd10CmEntity {
 
 /// <p> The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Icd10CmConcept {
     /// <p>The long description of the ICD-10-CM code in the ontology.</p>
     #[doc(hidden)]
@@ -3578,15 +3403,6 @@ impl Icd10CmConcept {
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for Icd10CmConcept {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Icd10CmConcept");
-        formatter.field("description", &self.description);
-        formatter.field("code", &self.code);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`Icd10CmConcept`](crate::model::Icd10CmConcept).
@@ -3649,7 +3465,7 @@ impl Icd10CmConcept {
 
 /// <p>Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Icd10CmTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
     #[doc(hidden)]
@@ -3666,14 +3482,6 @@ impl Icd10CmTrait {
     /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for Icd10CmTrait {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Icd10CmTrait");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`Icd10CmTrait`](crate::model::Icd10CmTrait).
@@ -3827,7 +3635,7 @@ impl AsRef<str> for Icd10CmTraitName {
 
 /// <p>The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Icd10CmAttribute {
     /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
     #[doc(hidden)]
@@ -3900,22 +3708,6 @@ impl Icd10CmAttribute {
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
     pub fn relationship_type(&self) -> std::option::Option<&crate::model::Icd10CmRelationshipType> {
         self.relationship_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Icd10CmAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Icd10CmAttribute");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("score", &self.score);
-        formatter.field("relationship_score", &self.relationship_score);
-        formatter.field("id", &self.id);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("text", &self.text);
-        formatter.field("traits", &self.traits);
-        formatter.field("category", &self.category);
-        formatter.field("relationship_type", &self.relationship_type);
-        formatter.finish()
     }
 }
 /// See [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
@@ -4476,7 +4268,7 @@ impl AsRef<str> for Icd10CmEntityCategory {
 
 /// <p> Provides information about an extracted medical entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entity {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     #[doc(hidden)]
@@ -4542,21 +4334,6 @@ impl Entity {
     /// <p> The extracted attributes that relate to this entity.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for Entity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entity");
-        formatter.field("id", &self.id);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("score", &self.score);
-        formatter.field("text", &self.text);
-        formatter.field("category", &self.category);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("traits", &self.traits);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`Entity`](crate::model::Entity).
@@ -4712,7 +4489,7 @@ impl Entity {
 
 /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attribute {
     /// <p> The type of attribute. </p>
     #[doc(hidden)]
@@ -4785,22 +4562,6 @@ impl Attribute {
     /// <p> Contextual information for this attribute. </p>
     pub fn traits(&self) -> std::option::Option<&[crate::model::Trait]> {
         self.traits.as_deref()
-    }
-}
-impl std::fmt::Debug for Attribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attribute");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("score", &self.score);
-        formatter.field("relationship_score", &self.relationship_score);
-        formatter.field("relationship_type", &self.relationship_type);
-        formatter.field("id", &self.id);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("text", &self.text);
-        formatter.field("category", &self.category);
-        formatter.field("traits", &self.traits);
-        formatter.finish()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
@@ -4962,7 +4723,7 @@ impl Attribute {
 
 /// <p> Provides contextual information about the extracted entity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Trait {
     /// <p> Provides a name or contextual description about the trait. </p>
     #[doc(hidden)]
@@ -4979,14 +4740,6 @@ impl Trait {
     /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for Trait {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Trait");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`Trait`](crate::model::Trait).
@@ -5758,7 +5511,7 @@ impl AsRef<str> for EntitySubType {
 
 /// <p> An attribute that was extracted, but Comprehend Medical; was unable to relate to an entity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnmappedAttribute {
     /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
     #[doc(hidden)]
@@ -5775,14 +5528,6 @@ impl UnmappedAttribute {
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
     pub fn attribute(&self) -> std::option::Option<&crate::model::Attribute> {
         self.attribute.as_ref()
-    }
-}
-impl std::fmt::Debug for UnmappedAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnmappedAttribute");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("attribute", &self.attribute);
-        formatter.finish()
     }
 }
 /// See [`UnmappedAttribute`](crate::model::UnmappedAttribute).

@@ -2,18 +2,11 @@
 
 /// <p> Inspect your request and try again. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ValidationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ValidationError {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl ValidationError {
 
 /// <p> The service is unavailable. Try your call again. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailable {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceUnavailable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailable");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ServiceUnavailable {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl ServiceUnavailable {
 
 /// <p> An internal failure occurred. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalFailure {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalFailure");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalFailure {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl InternalFailure {
 
 /// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelNotReadyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ModelNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelNotReadyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ModelNotReadyException {
     /// Returns the error message.
@@ -270,7 +242,7 @@ impl ModelNotReadyException {
 
 /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -297,16 +269,6 @@ impl ModelError {
     /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
     pub fn log_stream_arn(&self) -> std::option::Option<&str> {
         self.log_stream_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ModelError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelError");
-        formatter.field("message", &self.message);
-        formatter.field("original_status_code", &self.original_status_code);
-        formatter.field("original_message", &self.original_message);
-        formatter.field("log_stream_arn", &self.log_stream_arn);
-        formatter.finish()
     }
 }
 impl ModelError {
@@ -405,18 +367,11 @@ impl ModelError {
 
 /// <p>Your request caused an exception with an internal dependency. Contact customer support. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalDependencyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalDependencyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalDependencyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalDependencyException {
     /// Returns the error message.

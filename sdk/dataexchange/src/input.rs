@@ -5319,7 +5319,7 @@ impl UpdateRevisionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRevisionInput {
     /// <p>An optional comment about the revision.</p>
     #[doc(hidden)]
@@ -5352,20 +5352,10 @@ impl UpdateRevisionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRevisionInput");
-        formatter.field("comment", &self.comment);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("finalized", &self.finalized);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventActionInput {
     /// <p>What occurs after a certain event.</p>
     #[doc(hidden)]
@@ -5384,18 +5374,10 @@ impl UpdateEventActionInput {
         self.event_action_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEventActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventActionInput");
-        formatter.field("action", &self.action);
-        formatter.field("event_action_id", &self.event_action_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSetInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -5421,19 +5403,10 @@ impl UpdateDataSetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSetInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssetInput {
     /// <p>The unique identifier for an asset.</p>
     #[doc(hidden)]
@@ -5466,20 +5439,10 @@ impl UpdateAssetInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
     #[doc(hidden)]
@@ -5498,18 +5461,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
     #[doc(hidden)]
@@ -5532,18 +5487,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartJobInput {
     /// <p>The unique identifier for a job.</p>
     #[doc(hidden)]
@@ -5555,17 +5502,10 @@ impl StartJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendApiAssetInput {
     /// <p>The request body.</p>
     #[doc(hidden)]
@@ -5634,24 +5574,10 @@ impl SendApiAssetInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for SendApiAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendApiAssetInput");
-        formatter.field("body", &self.body);
-        formatter.field("query_string_parameters", &self.query_string_parameters);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("request_headers", &self.request_headers);
-        formatter.field("method", &self.method);
-        formatter.field("path", &self.path);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeRevisionInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -5677,19 +5603,10 @@ impl RevokeRevisionInput {
         self.revocation_comment.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeRevisionInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("revocation_comment", &self.revocation_comment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
     #[doc(hidden)]
@@ -5701,17 +5618,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRevisionAssetsInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -5744,20 +5654,10 @@ impl ListRevisionAssetsInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListRevisionAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRevisionAssetsInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -5790,20 +5690,10 @@ impl ListJobsInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventActionsInput {
     /// <p>The unique identifier for the event source.</p>
     #[doc(hidden)]
@@ -5829,19 +5719,10 @@ impl ListEventActionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEventActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventActionsInput");
-        formatter.field("event_source_id", &self.event_source_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSetsInput {
     /// <p>The maximum number of results returned by a single call.</p>
     #[doc(hidden)]
@@ -5867,19 +5748,10 @@ impl ListDataSetsInput {
         self.origin.as_deref()
     }
 }
-impl std::fmt::Debug for ListDataSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSetsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("origin", &self.origin);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSetRevisionsInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -5905,19 +5777,10 @@ impl ListDataSetRevisionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDataSetRevisionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSetRevisionsInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRevisionInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -5936,18 +5799,10 @@ impl GetRevisionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRevisionInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobInput {
     /// <p>The unique identifier for a job.</p>
     #[doc(hidden)]
@@ -5959,17 +5814,10 @@ impl GetJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventActionInput {
     /// <p>The unique identifier for the event action.</p>
     #[doc(hidden)]
@@ -5981,17 +5829,10 @@ impl GetEventActionInput {
         self.event_action_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventActionInput");
-        formatter.field("event_action_id", &self.event_action_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataSetInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -6003,17 +5844,10 @@ impl GetDataSetInput {
         self.data_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataSetInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssetInput {
     /// <p>The unique identifier for an asset.</p>
     #[doc(hidden)]
@@ -6039,19 +5873,10 @@ impl GetAssetInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRevisionInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -6070,18 +5895,10 @@ impl DeleteRevisionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRevisionInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventActionInput {
     /// <p>The unique identifier for the event action.</p>
     #[doc(hidden)]
@@ -6093,17 +5910,10 @@ impl DeleteEventActionInput {
         self.event_action_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventActionInput");
-        formatter.field("event_action_id", &self.event_action_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSetInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
@@ -6115,17 +5925,10 @@ impl DeleteDataSetInput {
         self.data_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSetInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssetInput {
     /// <p>The unique identifier for an asset.</p>
     #[doc(hidden)]
@@ -6151,19 +5954,10 @@ impl DeleteAssetInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRevisionInput {
     /// <p>An optional comment about the revision.</p>
     #[doc(hidden)]
@@ -6193,19 +5987,10 @@ impl CreateRevisionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRevisionInput");
-        formatter.field("comment", &self.comment);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>The details for the CreateJob request.</p>
     #[doc(hidden)]
@@ -6224,18 +6009,10 @@ impl CreateJobInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobInput");
-        formatter.field("details", &self.details);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventActionInput {
     /// <p>What occurs after a certain event.</p>
     #[doc(hidden)]
@@ -6254,18 +6031,10 @@ impl CreateEventActionInput {
         self.event.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEventActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventActionInput");
-        formatter.field("action", &self.action);
-        formatter.field("event", &self.event);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSetInput {
     /// <p>The type of asset that is added to a data set.</p>
     #[doc(hidden)]
@@ -6302,20 +6071,10 @@ impl CreateDataSetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSetInput");
-        formatter.field("asset_type", &self.asset_type);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The unique identifier for a job.</p>
     #[doc(hidden)]
@@ -6325,12 +6084,5 @@ impl CancelJobInput {
     /// <p>The unique identifier for a job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }

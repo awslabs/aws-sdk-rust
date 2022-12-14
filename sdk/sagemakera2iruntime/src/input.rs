@@ -907,7 +907,7 @@ impl StopHumanLoopInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopHumanLoopInput {
     /// <p>The name of the human loop that you want to stop.</p>
     #[doc(hidden)]
@@ -919,17 +919,10 @@ impl StopHumanLoopInput {
         self.human_loop_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopHumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopHumanLoopInput");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartHumanLoopInput {
     /// <p>The name of the human loop.</p>
     #[doc(hidden)]
@@ -962,20 +955,10 @@ impl StartHumanLoopInput {
         self.data_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for StartHumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartHumanLoopInput");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.field("flow_definition_arn", &self.flow_definition_arn);
-        formatter.field("human_loop_input", &self.human_loop_input);
-        formatter.field("data_attributes", &self.data_attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHumanLoopsInput {
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
     #[doc(hidden)]
@@ -1022,22 +1005,10 @@ impl ListHumanLoopsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListHumanLoopsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHumanLoopsInput");
-        formatter.field("creation_time_after", &self.creation_time_after);
-        formatter.field("creation_time_before", &self.creation_time_before);
-        formatter.field("flow_definition_arn", &self.flow_definition_arn);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHumanLoopInput {
     /// <p>The name of the human loop that you want information about.</p>
     #[doc(hidden)]
@@ -1049,17 +1020,10 @@ impl DescribeHumanLoopInput {
         self.human_loop_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHumanLoopInput");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHumanLoopInput {
     /// <p>The name of the human loop that you want to delete.</p>
     #[doc(hidden)]
@@ -1069,12 +1033,5 @@ impl DeleteHumanLoopInput {
     /// <p>The name of the human loop that you want to delete.</p>
     pub fn human_loop_name(&self) -> std::option::Option<&str> {
         self.human_loop_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteHumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHumanLoopInput");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.finish()
     }
 }

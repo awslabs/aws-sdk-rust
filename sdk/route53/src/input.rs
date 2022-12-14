@@ -13106,7 +13106,7 @@ impl UpdateTrafficPolicyInstanceInput {
 
 /// <p>A complex type that contains information about the resource record sets that you want to update based on a specified traffic policy instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to update.</p>
     #[doc(hidden)]
@@ -13139,20 +13139,10 @@ impl UpdateTrafficPolicyInstanceInput {
         self.traffic_policy_version
     }
 }
-impl std::fmt::Debug for UpdateTrafficPolicyInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrafficPolicyInstanceInput");
-        formatter.field("id", &self.id);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("traffic_policy_id", &self.traffic_policy_id);
-        formatter.field("traffic_policy_version", &self.traffic_policy_version);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the traffic policy that you want to update the comment for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrafficPolicyCommentInput {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
     #[doc(hidden)]
@@ -13178,19 +13168,10 @@ impl UpdateTrafficPolicyCommentInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTrafficPolicyCommentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrafficPolicyCommentInput");
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to update the comment for a hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHostedZoneCommentInput {
     /// <p>The ID for the hosted zone that you want to update the comment for.</p>
     #[doc(hidden)]
@@ -13209,18 +13190,10 @@ impl UpdateHostedZoneCommentInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateHostedZoneCommentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHostedZoneCommentInput");
-        formatter.field("id", &self.id);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about a request to update a health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHealthCheckInput {
     /// <p>The ID for the health check for which you want detailed information. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
     #[doc(hidden)]
@@ -13491,39 +13464,10 @@ impl UpdateHealthCheckInput {
         self.reset_elements.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateHealthCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHealthCheckInput");
-        formatter.field("health_check_id", &self.health_check_id);
-        formatter.field("health_check_version", &self.health_check_version);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("port", &self.port);
-        formatter.field("resource_path", &self.resource_path);
-        formatter.field(
-            "fully_qualified_domain_name",
-            &self.fully_qualified_domain_name,
-        );
-        formatter.field("search_string", &self.search_string);
-        formatter.field("failure_threshold", &self.failure_threshold);
-        formatter.field("inverted", &self.inverted);
-        formatter.field("disabled", &self.disabled);
-        formatter.field("health_threshold", &self.health_threshold);
-        formatter.field("child_health_checks", &self.child_health_checks);
-        formatter.field("enable_sni", &self.enable_sni);
-        formatter.field("regions", &self.regions);
-        formatter.field("alarm_identifier", &self.alarm_identifier);
-        formatter.field(
-            "insufficient_data_health_status",
-            &self.insufficient_data_health_status,
-        );
-        formatter.field("reset_elements", &self.reset_elements);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestDnsAnswerInput {
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
     #[doc(hidden)]
@@ -13580,22 +13524,10 @@ impl TestDnsAnswerInput {
         self.edns0_client_subnet_mask.as_deref()
     }
 }
-impl std::fmt::Debug for TestDnsAnswerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestDnsAnswerInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("record_name", &self.record_name);
-        formatter.field("record_type", &self.record_type);
-        formatter.field("resolver_ip", &self.resolver_ip);
-        formatter.field("edns0_client_subnet_ip", &self.edns0_client_subnet_ip);
-        formatter.field("edns0_client_subnet_mask", &self.edns0_client_subnet_mask);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about that can be associated with your hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVpcAssociationAuthorizationsInput {
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
     #[doc(hidden)]
@@ -13621,19 +13553,10 @@ impl ListVpcAssociationAuthorizationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListVpcAssociationAuthorizationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVpcAssociationAuthorizationsInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains the information about the request to list your traffic policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPolicyVersionsInput {
     /// <p>Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.</p>
     #[doc(hidden)]
@@ -13661,22 +13584,10 @@ impl ListTrafficPolicyVersionsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPolicyVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPolicyVersionsInput");
-        formatter.field("id", &self.id);
-        formatter.field(
-            "traffic_policy_version_marker",
-            &self.traffic_policy_version_marker,
-        );
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains the information about the request to list your traffic policy instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByPolicyInput {
     /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
     #[doc(hidden)]
@@ -13737,28 +13648,10 @@ impl ListTrafficPolicyInstancesByPolicyInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPolicyInstancesByPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPolicyInstancesByPolicyInput");
-        formatter.field("traffic_policy_id", &self.traffic_policy_id);
-        formatter.field("traffic_policy_version", &self.traffic_policy_version);
-        formatter.field("hosted_zone_id_marker", &self.hosted_zone_id_marker);
-        formatter.field(
-            "traffic_policy_instance_name_marker",
-            &self.traffic_policy_instance_name_marker,
-        );
-        formatter.field(
-            "traffic_policy_instance_type_marker",
-            &self.traffic_policy_instance_type_marker,
-        );
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>A request for the traffic policy instances that you created in a specified hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByHostedZoneInput {
     /// <p>The ID of the hosted zone that you want to list traffic policy instances for.</p>
     #[doc(hidden)]
@@ -13797,26 +13690,10 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPolicyInstancesByHostedZoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPolicyInstancesByHostedZoneInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field(
-            "traffic_policy_instance_name_marker",
-            &self.traffic_policy_instance_name_marker,
-        );
-        formatter.field(
-            "traffic_policy_instance_type_marker",
-            &self.traffic_policy_instance_type_marker,
-        );
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about the traffic policy instances that you created by using the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>HostedZoneId</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
@@ -13857,26 +13734,10 @@ impl ListTrafficPolicyInstancesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPolicyInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPolicyInstancesInput");
-        formatter.field("hosted_zone_id_marker", &self.hosted_zone_id_marker);
-        formatter.field(
-            "traffic_policy_instance_name_marker",
-            &self.traffic_policy_instance_name_marker,
-        );
-        formatter.field(
-            "traffic_policy_instance_type_marker",
-            &self.traffic_policy_instance_type_marker,
-        );
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains the information about the request to list the traffic policies that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPoliciesInput {
     /// <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p>
     /// <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
@@ -13897,18 +13758,10 @@ impl ListTrafficPoliciesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPoliciesInput");
-        formatter.field("traffic_policy_id_marker", &self.traffic_policy_id_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the health checks or hosted zones for which you want to list tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourcesInput {
     /// <p>The type of the resources.</p>
     /// <ul>
@@ -13935,18 +13788,10 @@ impl ListTagsForResourcesInput {
         self.resource_ids.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourcesInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type containing information about a request for a list of the tags that are associated with an individual resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The type of the resource.</p>
     /// <ul>
@@ -13973,18 +13818,10 @@ impl ListTagsForResourceInput {
         self.resource_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get a list of the reusable delegation sets that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReusableDelegationSetsInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more reusable delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another request.</p>
@@ -14007,18 +13844,10 @@ impl ListReusableDelegationSetsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListReusableDelegationSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReusableDelegationSetsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>A request for the resource record sets that are associated with a specified hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceRecordSetsInput {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
     #[doc(hidden)]
@@ -14084,21 +13913,10 @@ impl ListResourceRecordSetsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListResourceRecordSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceRecordSetsInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("start_record_name", &self.start_record_name);
-        formatter.field("start_record_type", &self.start_record_type);
-        formatter.field("start_record_identifier", &self.start_record_identifier);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsInput {
     /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
@@ -14132,19 +13950,10 @@ impl ListQueryLoggingConfigsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListQueryLoggingConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueryLoggingConfigsInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Lists all the private hosted zones that a specified VPC is associated with, regardless of which Amazon Web Services account created the hosted zones.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostedZonesByVpcInput {
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
     #[doc(hidden)]
@@ -14181,20 +13990,10 @@ impl ListHostedZonesByVpcInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListHostedZonesByVpcInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedZonesByVpcInput");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("vpc_region", &self.vpc_region);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Retrieves a list of the public and private hosted zones that are associated with the current Amazon Web Services account in ASCII order by domain name. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostedZonesByNameInput {
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code> parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current Amazon Web Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.</p>
     #[doc(hidden)]
@@ -14222,19 +14021,10 @@ impl ListHostedZonesByNameInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListHostedZonesByNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedZonesByNameInput");
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to retrieve a list of the public and private hosted zones that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostedZonesInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
@@ -14264,19 +14054,10 @@ impl ListHostedZonesInput {
         self.delegation_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListHostedZonesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedZonesInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("delegation_set_id", &self.delegation_set_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to retrieve a list of the health checks that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHealthChecksInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>
@@ -14299,18 +14080,10 @@ impl ListHealthChecksInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListHealthChecksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHealthChecksInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get a list of geographic locations that Amazon Route 53 supports for geolocation resource record sets. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeoLocationsInput {
     /// <p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>
     /// <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
@@ -14347,20 +14120,10 @@ impl ListGeoLocationsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListGeoLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeoLocationsInput");
-        formatter.field("start_continent_code", &self.start_continent_code);
-        formatter.field("start_country_code", &self.start_country_code);
-        formatter.field("start_subdivision_code", &self.start_subdivision_code);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCidrLocationsInput {
     /// <p>The CIDR collection ID.</p>
     #[doc(hidden)]
@@ -14388,19 +14151,10 @@ impl ListCidrLocationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCidrLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCidrLocationsInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCidrCollectionsInput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
@@ -14421,18 +14175,10 @@ impl ListCidrCollectionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCidrCollectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCidrCollectionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCidrBlocksInput {
     /// <p>The UUID of the CIDR collection.</p>
     #[doc(hidden)]
@@ -14465,31 +14211,15 @@ impl ListCidrBlocksInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCidrBlocksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCidrBlocksInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("location_name", &self.location_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to get the number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceCountInput {}
-impl std::fmt::Debug for GetTrafficPolicyInstanceCountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrafficPolicyInstanceCountInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Gets information about a specified traffic policy instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to get information about.</p>
     #[doc(hidden)]
@@ -14501,17 +14231,10 @@ impl GetTrafficPolicyInstanceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTrafficPolicyInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrafficPolicyInstanceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>Gets information about a specific traffic policy version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to get information about.</p>
     #[doc(hidden)]
@@ -14530,18 +14253,10 @@ impl GetTrafficPolicyInput {
         self.version
     }
 }
-impl std::fmt::Debug for GetTrafficPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrafficPolicyInput");
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the request to create a hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReusableDelegationSetLimitInput {
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
@@ -14560,18 +14275,10 @@ impl GetReusableDelegationSetLimitInput {
         self.delegation_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetReusableDelegationSetLimitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReusableDelegationSetLimitInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("delegation_set_id", &self.delegation_set_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about a specified reusable delegation set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReusableDelegationSetInput {
     /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
     #[doc(hidden)]
@@ -14583,17 +14290,10 @@ impl GetReusableDelegationSetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetReusableDelegationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReusableDelegationSetInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryLoggingConfigInput {
     /// <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
     #[doc(hidden)]
@@ -14605,17 +14305,10 @@ impl GetQueryLoggingConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueryLoggingConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryLoggingConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the request to create a hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostedZoneLimitInput {
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
@@ -14642,29 +14335,15 @@ impl GetHostedZoneLimitInput {
         self.hosted_zone_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetHostedZoneLimitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostedZoneLimitInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to retrieve a count of all the hosted zones that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostedZoneCountInput {}
-impl std::fmt::Debug for GetHostedZoneCountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostedZoneCountInput");
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about a specified hosted zone. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostedZoneInput {
     /// <p>The ID of the hosted zone that you want to get information about.</p>
     #[doc(hidden)]
@@ -14676,17 +14355,10 @@ impl GetHostedZoneInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetHostedZoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostedZoneInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get the status for a health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHealthCheckStatusInput {
     /// <p>The ID for the health check that you want the current status for. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>
@@ -14702,17 +14374,10 @@ impl GetHealthCheckStatusInput {
         self.health_check_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetHealthCheckStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHealthCheckStatusInput");
-        formatter.field("health_check_id", &self.health_check_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request for the reason that a health check failed most recently.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonInput {
     /// <p>The ID for the health check for which you want the last failure reason. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
@@ -14728,28 +14393,15 @@ impl GetHealthCheckLastFailureReasonInput {
         self.health_check_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetHealthCheckLastFailureReasonInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHealthCheckLastFailureReasonInput");
-        formatter.field("health_check_id", &self.health_check_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request for the number of health checks that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHealthCheckCountInput {}
-impl std::fmt::Debug for GetHealthCheckCountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHealthCheckCountInput");
-        formatter.finish()
-    }
-}
 
 /// <p>A request to get information about a specified health check. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHealthCheckInput {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
     #[doc(hidden)]
@@ -14761,17 +14413,10 @@ impl GetHealthCheckInput {
         self.health_check_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetHealthCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHealthCheckInput");
-        formatter.field("health_check_id", &self.health_check_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request for information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGeoLocationInput {
     /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
@@ -14815,19 +14460,10 @@ impl GetGeoLocationInput {
         self.subdivision_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetGeoLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGeoLocationInput");
-        formatter.field("continent_code", &self.continent_code);
-        formatter.field("country_code", &self.country_code);
-        formatter.field("subdivision_code", &self.subdivision_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
     #[doc(hidden)]
@@ -14839,28 +14475,15 @@ impl GetDnssecInput {
         self.hosted_zone_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDnssecInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDnssecInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Empty request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCheckerIpRangesInput {}
-impl std::fmt::Debug for GetCheckerIpRangesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCheckerIpRangesInput");
-        formatter.finish()
-    }
-}
 
 /// <p>The input for a GetChange request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangeInput {
     /// <p>The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.</p>
     #[doc(hidden)]
@@ -14872,17 +14495,10 @@ impl GetChangeInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetChangeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangeInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the request to create a hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountLimitInput {
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
@@ -14908,17 +14524,10 @@ impl GetAccountLimitInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for GetAccountLimitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountLimitInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableHostedZoneDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
     #[doc(hidden)]
@@ -14930,17 +14539,10 @@ impl EnableHostedZoneDnssecInput {
         self.hosted_zone_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableHostedZoneDnssecInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableHostedZoneDnssecInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the VPC that you want to disassociate from a specified private hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateVpcFromHostedZoneInput {
     /// <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
     #[doc(hidden)]
@@ -14966,19 +14568,10 @@ impl DisassociateVpcFromHostedZoneInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateVpcFromHostedZoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateVpcFromHostedZoneInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableHostedZoneDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
     #[doc(hidden)]
@@ -14990,17 +14583,10 @@ impl DisableHostedZoneDnssecInput {
         self.hosted_zone_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableHostedZoneDnssecInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableHostedZoneDnssecInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the request to remove authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcAssociationAuthorizationInput {
     /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
     #[doc(hidden)]
@@ -15019,18 +14605,10 @@ impl DeleteVpcAssociationAuthorizationInput {
         self.vpc.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteVpcAssociationAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcAssociationAuthorizationInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete a specified traffic policy instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to delete. </p> <important>
     /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
@@ -15046,17 +14624,10 @@ impl DeleteTrafficPolicyInstanceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTrafficPolicyInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrafficPolicyInstanceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete a specified traffic policy version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to delete.</p>
     #[doc(hidden)]
@@ -15075,18 +14646,10 @@ impl DeleteTrafficPolicyInput {
         self.version
     }
 }
-impl std::fmt::Debug for DeleteTrafficPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrafficPolicyInput");
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete a reusable delegation set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReusableDelegationSetInput {
     /// <p>The ID of the reusable delegation set that you want to delete.</p>
     #[doc(hidden)]
@@ -15098,17 +14661,10 @@ impl DeleteReusableDelegationSetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReusableDelegationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReusableDelegationSetInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueryLoggingConfigInput {
     /// <p>The ID of the configuration that you want to delete. </p>
     #[doc(hidden)]
@@ -15120,17 +14676,10 @@ impl DeleteQueryLoggingConfigInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQueryLoggingConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueryLoggingConfigInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
     #[doc(hidden)]
@@ -15149,18 +14698,10 @@ impl DeleteKeySigningKeyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteKeySigningKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteKeySigningKeyInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to delete a hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHostedZoneInput {
     /// <p>The ID of the hosted zone you want to delete.</p>
     #[doc(hidden)]
@@ -15172,17 +14713,10 @@ impl DeleteHostedZoneInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHostedZoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHostedZoneInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// <p>This action deletes a health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHealthCheckInput {
     /// <p>The ID of the health check that you want to delete.</p>
     #[doc(hidden)]
@@ -15194,17 +14728,10 @@ impl DeleteHealthCheckInput {
         self.health_check_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHealthCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHealthCheckInput");
-        formatter.field("health_check_id", &self.health_check_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCidrCollectionInput {
     /// <p>The UUID of the collection to delete.</p>
     #[doc(hidden)]
@@ -15216,17 +14743,10 @@ impl DeleteCidrCollectionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCidrCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCidrCollectionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
     #[doc(hidden)]
@@ -15245,18 +14765,10 @@ impl DeactivateKeySigningKeyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeactivateKeySigningKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateKeySigningKeyInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the request to authorize associating a VPC with your private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by using different accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcAssociationAuthorizationInput {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
     #[doc(hidden)]
@@ -15275,18 +14787,10 @@ impl CreateVpcAssociationAuthorizationInput {
         self.vpc.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVpcAssociationAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcAssociationAuthorizationInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the traffic policy that you want to create a new version for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrafficPolicyVersionInput {
     /// <p>The ID of the traffic policy for which you want to create a new version.</p>
     #[doc(hidden)]
@@ -15312,19 +14816,10 @@ impl CreateTrafficPolicyVersionInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTrafficPolicyVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrafficPolicyVersionInput");
-        formatter.field("id", &self.id);
-        formatter.field("document", &self.document);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the resource record sets that you want to create based on a specified traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrafficPolicyInstanceInput {
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the configuration in a traffic policy.</p>
     #[doc(hidden)]
@@ -15364,21 +14859,10 @@ impl CreateTrafficPolicyInstanceInput {
         self.traffic_policy_version
     }
 }
-impl std::fmt::Debug for CreateTrafficPolicyInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrafficPolicyInstanceInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("name", &self.name);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("traffic_policy_id", &self.traffic_policy_id);
-        formatter.field("traffic_policy_version", &self.traffic_policy_version);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the traffic policy that you want to create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrafficPolicyInput {
     /// <p>The name of the traffic policy.</p>
     #[doc(hidden)]
@@ -15404,19 +14888,10 @@ impl CreateTrafficPolicyInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTrafficPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrafficPolicyInput");
-        formatter.field("name", &self.name);
-        formatter.field("document", &self.document);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReusableDelegationSetInput {
     /// <p>A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.</p>
     #[doc(hidden)]
@@ -15435,18 +14910,10 @@ impl CreateReusableDelegationSetInput {
         self.hosted_zone_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReusableDelegationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReusableDelegationSetInput");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQueryLoggingConfigInput {
     /// <p>The ID of the hosted zone that you want to log queries for. You can log queries only for public hosted zones.</p>
     #[doc(hidden)]
@@ -15469,21 +14936,10 @@ impl CreateQueryLoggingConfigInput {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateQueryLoggingConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQueryLoggingConfigInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKeySigningKeyInput {
     /// <p>A unique string that identifies the request.</p>
     #[doc(hidden)]
@@ -15597,24 +15053,10 @@ impl CreateKeySigningKeyInput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for CreateKeySigningKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKeySigningKeyInput");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field(
-            "key_management_service_arn",
-            &self.key_management_service_arn,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the request to create a public or private hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHostedZoneInput {
     /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
     /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
@@ -15670,21 +15112,10 @@ impl CreateHostedZoneInput {
         self.delegation_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHostedZoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHostedZoneInput");
-        formatter.field("name", &self.name);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("hosted_zone_config", &self.hosted_zone_config);
-        formatter.field("delegation_set_id", &self.delegation_set_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains the health check request information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHealthCheckInput {
     /// <p>A unique string that identifies the request and that allows you to retry a failed <code>CreateHealthCheck</code> request without the risk of creating two identical health checks:</p>
     /// <ul>
@@ -15715,18 +15146,10 @@ impl CreateHealthCheckInput {
         self.health_check_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateHealthCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHealthCheckInput");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("health_check_config", &self.health_check_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCidrCollectionInput {
     /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
     #[doc(hidden)]
@@ -15745,18 +15168,10 @@ impl CreateCidrCollectionInput {
         self.caller_reference.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCidrCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCidrCollectionInput");
-        formatter.field("name", &self.name);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the tags that you want to add, edit, or delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeTagsForResourceInput {
     /// <p>The type of the resource.</p>
     /// <ul>
@@ -15799,20 +15214,10 @@ impl ChangeTagsForResourceInput {
         self.remove_tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for ChangeTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeTagsForResourceInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("add_tags", &self.add_tags);
-        formatter.field("remove_tag_keys", &self.remove_tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains change information for the resource record set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeResourceRecordSetsInput {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
     #[doc(hidden)]
@@ -15831,18 +15236,10 @@ impl ChangeResourceRecordSetsInput {
         self.change_batch.as_ref()
     }
 }
-impl std::fmt::Debug for ChangeResourceRecordSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeResourceRecordSetsInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("change_batch", &self.change_batch);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeCidrCollectionInput {
     /// <p>The UUID of the CIDR collection to update.</p>
     #[doc(hidden)]
@@ -15878,19 +15275,10 @@ impl ChangeCidrCollectionInput {
         self.changes.as_deref()
     }
 }
-impl std::fmt::Debug for ChangeCidrCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeCidrCollectionInput");
-        formatter.field("id", &self.id);
-        formatter.field("collection_version", &self.collection_version);
-        formatter.field("changes", &self.changes);
-        formatter.finish()
-    }
-}
 
 /// <p>A complex type that contains information about the request to associate a VPC with a private hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateVpcWithHostedZoneInput {
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
@@ -15918,19 +15306,10 @@ impl AssociateVpcWithHostedZoneInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateVpcWithHostedZoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateVpcWithHostedZoneInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
     #[doc(hidden)]
@@ -15947,13 +15326,5 @@ impl ActivateKeySigningKeyInput {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivateKeySigningKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateKeySigningKeyInput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }

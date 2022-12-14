@@ -2,7 +2,7 @@
 
 /// <p>The input failed to meet the constraints specified by the AWS service in a specified field. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The field name where the invalid entry was detected.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>A message with the reason for the validation exception error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -173,7 +165,7 @@ impl std::fmt::Debug for ListDevicePositionsResponseEntry {
 pub mod list_device_positions_response_entry {
 
     /// A builder for [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -272,6 +264,17 @@ pub mod list_device_positions_response_entry {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_id", &self.device_id);
+            formatter.field("sample_time", &self.sample_time);
+            formatter.field("position", &"*** Sensitive Data Redacted ***");
+            formatter.field("accuracy", &self.accuracy);
+            formatter.field("position_properties", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ListDevicePositionsResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
@@ -282,7 +285,7 @@ impl ListDevicePositionsResponseEntry {
 
 /// <p>Defines the level of certainty of the position.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PositionalAccuracy {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     #[doc(hidden)]
@@ -292,13 +295,6 @@ impl PositionalAccuracy {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     pub fn horizontal(&self) -> std::option::Option<f64> {
         self.horizontal
-    }
-}
-impl std::fmt::Debug for PositionalAccuracy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PositionalAccuracy");
-        formatter.field("horizontal", &self.horizontal);
-        formatter.finish()
     }
 }
 /// See [`PositionalAccuracy`](crate::model::PositionalAccuracy).
@@ -404,7 +400,7 @@ impl std::fmt::Debug for DevicePosition {
 pub mod device_position {
 
     /// A builder for [`DevicePosition`](crate::model::DevicePosition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -518,6 +514,18 @@ pub mod device_position {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_id", &self.device_id);
+            formatter.field("sample_time", &self.sample_time);
+            formatter.field("received_time", &self.received_time);
+            formatter.field("position", &"*** Sensitive Data Redacted ***");
+            formatter.field("accuracy", &self.accuracy);
+            formatter.field("position_properties", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl DevicePosition {
     /// Creates a new builder-style object to manufacture [`DevicePosition`](crate::model::DevicePosition).
@@ -528,7 +536,7 @@ impl DevicePosition {
 
 /// <p>Contains error details for each device that failed to update its position.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionError {
     /// <p>The device associated with the failed location update.</p>
     #[doc(hidden)]
@@ -552,15 +560,6 @@ impl BatchUpdateDevicePositionError {
     /// <p>Contains details related to the error code such as the error code and error message.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchUpdateDevicePositionError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateDevicePositionError");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("sample_time", &self.sample_time);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
@@ -629,7 +628,7 @@ impl BatchUpdateDevicePositionError {
 
 /// <p>Contains the batch request error details associated with the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchItemError {
     /// <p>The error code associated with the batch request error.</p>
     #[doc(hidden)]
@@ -646,14 +645,6 @@ impl BatchItemError {
     /// <p>A message with the reason for the batch request error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchItemError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchItemError");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchItemError`](crate::model::BatchItemError).
@@ -806,7 +797,7 @@ impl std::fmt::Debug for DevicePositionUpdate {
 pub mod device_position_update {
 
     /// A builder for [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -907,6 +898,17 @@ pub mod device_position_update {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_id", &self.device_id);
+            formatter.field("sample_time", &self.sample_time);
+            formatter.field("position", &"*** Sensitive Data Redacted ***");
+            formatter.field("accuracy", &self.accuracy);
+            formatter.field("position_properties", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl DevicePositionUpdate {
     /// Creates a new builder-style object to manufacture [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
@@ -917,7 +919,7 @@ impl DevicePositionUpdate {
 
 /// <p>Contains error details for each device that didn't return a position.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDevicePositionError {
     /// <p>The ID of the device that didn't return a position.</p>
     #[doc(hidden)]
@@ -934,14 +936,6 @@ impl BatchGetDevicePositionError {
     /// <p>Contains details related to the error code.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchGetDevicePositionError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDevicePositionError");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
@@ -995,7 +989,7 @@ impl BatchGetDevicePositionError {
 
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryError {
     /// <p>The ID of the device for this position.</p>
     #[doc(hidden)]
@@ -1012,14 +1006,6 @@ impl BatchDeleteDevicePositionHistoryError {
     /// <p>Contains the batch request error details associated with the request.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteDevicePositionHistoryError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteDevicePositionHistoryError");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
@@ -1073,7 +1059,7 @@ impl BatchDeleteDevicePositionHistoryError {
 
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrackersResponseEntry {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
@@ -1128,18 +1114,6 @@ impl ListTrackersResponseEntry {
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ListTrackersResponseEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrackersResponseEntry");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("description", &self.description);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
@@ -1326,7 +1300,7 @@ where
 
 /// <p>A summary of the calculated route matrix.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CalculateRouteMatrixSummary {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
@@ -1367,16 +1341,6 @@ impl CalculateRouteMatrixSummary {
     /// <p>The unit of measurement for route distances.</p>
     pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
         self.distance_unit.as_ref()
-    }
-}
-impl std::fmt::Debug for CalculateRouteMatrixSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CalculateRouteMatrixSummary");
-        formatter.field("data_source", &self.data_source);
-        formatter.field("route_count", &self.route_count);
-        formatter.field("error_count", &self.error_count);
-        formatter.field("distance_unit", &self.distance_unit);
-        formatter.finish()
     }
 }
 /// See [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
@@ -1495,7 +1459,7 @@ where
 
 /// <p>The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code> pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteMatrixEntry {
     /// <p>The total distance of travel for the route.</p>
     #[doc(hidden)]
@@ -1519,15 +1483,6 @@ impl RouteMatrixEntry {
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::RouteMatrixEntryError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for RouteMatrixEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteMatrixEntry");
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
@@ -1612,7 +1567,7 @@ impl RouteMatrixEntry {
 /// <li> <p> <code>OtherValidationError</code> - The given inputs were not valid or a route was not found. More information is given in the error <code>Message</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteMatrixEntryError {
     /// <p>The type of error which occurred for the route calculation.</p>
     #[doc(hidden)]
@@ -1629,14 +1584,6 @@ impl RouteMatrixEntryError {
     /// <p>A message about the error that occurred for the route calculation.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for RouteMatrixEntryError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteMatrixEntryError");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
@@ -1728,7 +1675,7 @@ where
 
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CalculateRouteTruckModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
@@ -1767,16 +1714,6 @@ impl CalculateRouteTruckModeOptions {
     /// <p>Specifies the truck's weight specifications including total weight and unit of measurement. Used to avoid roads that can't support the truck's weight.</p>
     pub fn weight(&self) -> std::option::Option<&crate::model::TruckWeight> {
         self.weight.as_ref()
-    }
-}
-impl std::fmt::Debug for CalculateRouteTruckModeOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CalculateRouteTruckModeOptions");
-        formatter.field("avoid_ferries", &self.avoid_ferries);
-        formatter.field("avoid_tolls", &self.avoid_tolls);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("weight", &self.weight);
-        formatter.finish()
     }
 }
 /// See [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
@@ -1862,7 +1799,7 @@ impl CalculateRouteTruckModeOptions {
 
 /// <p>Contains details about the truck's weight specifications. Used to avoid roads that can't support or allow the total weight for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TruckWeight {
     /// <p>The total weight of the truck. </p>
     /// <ul>
@@ -1887,14 +1824,6 @@ impl TruckWeight {
     /// <p>Default Value: <code>Kilograms</code> </p>
     pub fn unit(&self) -> std::option::Option<&crate::model::VehicleWeightUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for TruckWeight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TruckWeight");
-        formatter.field("total", &self.total);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`TruckWeight`](crate::model::TruckWeight).
@@ -1987,7 +1916,7 @@ where
 
 /// <p>Contains details about the truck dimensions in the unit of measurement that you specify. Used to filter out roads that can't support or allow the specified dimensions for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TruckDimensions {
     /// <p>The length of the truck.</p>
     /// <ul>
@@ -2050,16 +1979,6 @@ impl TruckDimensions {
     /// <p>Default Value: <code>Meters</code> </p>
     pub fn unit(&self) -> std::option::Option<&crate::model::DimensionUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for TruckDimensions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TruckDimensions");
-        formatter.field("length", &self.length);
-        formatter.field("height", &self.height);
-        formatter.field("width", &self.width);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`TruckDimensions`](crate::model::TruckDimensions).
@@ -2197,7 +2116,7 @@ where
 
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Car</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CalculateRouteCarModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
@@ -2222,14 +2141,6 @@ impl CalculateRouteCarModeOptions {
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn avoid_tolls(&self) -> std::option::Option<bool> {
         self.avoid_tolls
-    }
-}
-impl std::fmt::Debug for CalculateRouteCarModeOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CalculateRouteCarModeOptions");
-        formatter.field("avoid_ferries", &self.avoid_ferries);
-        formatter.field("avoid_tolls", &self.avoid_tolls);
-        formatter.finish()
     }
 }
 /// See [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
@@ -2408,7 +2319,7 @@ impl std::fmt::Debug for CalculateRouteSummary {
 pub mod calculate_route_summary {
 
     /// A builder for [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) route_b_box: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) data_source: std::option::Option<std::string::String>,
@@ -2521,6 +2432,17 @@ pub mod calculate_route_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("route_b_box", &"*** Sensitive Data Redacted ***");
+            formatter.field("data_source", &self.data_source);
+            formatter.field("distance", &self.distance);
+            formatter.field("duration_seconds", &self.duration_seconds);
+            formatter.field("distance_unit", &self.distance_unit);
+            formatter.finish()
+        }
+    }
 }
 impl CalculateRouteSummary {
     /// Creates a new builder-style object to manufacture [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
@@ -2618,7 +2540,7 @@ impl std::fmt::Debug for Leg {
 pub mod leg {
 
     /// A builder for [`Leg`](crate::model::Leg).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) end_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2741,6 +2663,18 @@ pub mod leg {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("start_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("end_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("distance", &self.distance);
+            formatter.field("duration_seconds", &self.duration_seconds);
+            formatter.field("geometry", &self.geometry);
+            formatter.field("steps", &self.steps);
+            formatter.finish()
+        }
+    }
 }
 impl Leg {
     /// Creates a new builder-style object to manufacture [`Leg`](crate::model::Leg).
@@ -2808,7 +2742,7 @@ impl std::fmt::Debug for Step {
 pub mod step {
 
     /// A builder for [`Step`](crate::model::Step).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) end_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2895,6 +2829,17 @@ pub mod step {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("start_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("end_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("distance", &self.distance);
+            formatter.field("duration_seconds", &self.duration_seconds);
+            formatter.field("geometry_offset", &self.geometry_offset);
+            formatter.finish()
+        }
+    }
 }
 impl Step {
     /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step).
@@ -2905,7 +2850,7 @@ impl Step {
 
 /// <p>Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LegGeometry {
     /// <p>An ordered list of positions used to plot a route on a map. </p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
@@ -2923,13 +2868,6 @@ impl LegGeometry {
     /// </ul>
     pub fn line_string(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
         self.line_string.as_deref()
-    }
-}
-impl std::fmt::Debug for LegGeometry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LegGeometry");
-        formatter.field("line_string", &self.line_string);
-        formatter.finish()
     }
 }
 /// See [`LegGeometry`](crate::model::LegGeometry).
@@ -2985,7 +2923,7 @@ impl LegGeometry {
 
 /// <p>A route calculator resource listed in your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRouteCalculatorsResponseEntry {
     /// <p>The name of the route calculator resource.</p>
     #[doc(hidden)]
@@ -3060,18 +2998,6 @@ impl ListRouteCalculatorsResponseEntry {
     /// </ul>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ListRouteCalculatorsResponseEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRouteCalculatorsResponseEntry");
-        formatter.field("calculator_name", &self.calculator_name);
-        formatter.field("description", &self.description);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
@@ -3212,7 +3138,7 @@ impl ListRouteCalculatorsResponseEntry {
 
 /// <p>Contains a search result from a text search query that is run on a place index resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchForTextResult {
     /// <p>Details about the search result, such as its address and position.</p>
     #[doc(hidden)]
@@ -3253,16 +3179,6 @@ impl SearchForTextResult {
     /// </note>
     pub fn place_id(&self) -> std::option::Option<&str> {
         self.place_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchForTextResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchForTextResult");
-        formatter.field("place", &self.place);
-        formatter.field("distance", &self.distance);
-        formatter.field("relevance", &self.relevance);
-        formatter.field("place_id", &self.place_id);
-        formatter.finish()
     }
 }
 /// See [`SearchForTextResult`](crate::model::SearchForTextResult).
@@ -3348,7 +3264,7 @@ impl SearchForTextResult {
 /// <p>Contains details about addresses or points of interest that match the search criteria.</p>
 /// <p>Not all details are included with all responses. Some details may only be returned by specific data partners.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Place {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
     #[doc(hidden)]
@@ -3459,26 +3375,6 @@ impl Place {
     /// </note>
     pub fn unit_number(&self) -> std::option::Option<&str> {
         self.unit_number.as_deref()
-    }
-}
-impl std::fmt::Debug for Place {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Place");
-        formatter.field("label", &self.label);
-        formatter.field("geometry", &self.geometry);
-        formatter.field("address_number", &self.address_number);
-        formatter.field("street", &self.street);
-        formatter.field("neighborhood", &self.neighborhood);
-        formatter.field("municipality", &self.municipality);
-        formatter.field("sub_region", &self.sub_region);
-        formatter.field("region", &self.region);
-        formatter.field("country", &self.country);
-        formatter.field("postal_code", &self.postal_code);
-        formatter.field("interpolated", &self.interpolated);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.field("unit_type", &self.unit_type);
-        formatter.field("unit_number", &self.unit_number);
-        formatter.finish()
     }
 }
 /// See [`Place`](crate::model::Place).
@@ -3689,7 +3585,7 @@ impl Place {
 
 /// <p>Information about a time zone. Includes the name of the time zone and the offset from UTC in seconds.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeZone {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
     #[doc(hidden)]
@@ -3706,14 +3602,6 @@ impl TimeZone {
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub fn offset(&self) -> std::option::Option<i32> {
         self.offset
-    }
-}
-impl std::fmt::Debug for TimeZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeZone");
-        formatter.field("name", &self.name);
-        formatter.field("offset", &self.offset);
-        formatter.finish()
     }
 }
 /// See [`TimeZone`](crate::model::TimeZone).
@@ -3795,7 +3683,7 @@ impl std::fmt::Debug for PlaceGeometry {
 pub mod place_geometry {
 
     /// A builder for [`PlaceGeometry`](crate::model::PlaceGeometry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) point: std::option::Option<std::vec::Vec<f64>>,
     }
@@ -3827,6 +3715,13 @@ pub mod place_geometry {
         /// Consumes the builder and constructs a [`PlaceGeometry`](crate::model::PlaceGeometry).
         pub fn build(self) -> crate::model::PlaceGeometry {
             crate::model::PlaceGeometry { point: self.point }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("point", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3936,7 +3831,7 @@ impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
 pub mod search_place_index_for_text_summary {
 
     /// A builder for [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) bias_position: std::option::Option<std::vec::Vec<f64>>,
@@ -4087,6 +3982,20 @@ pub mod search_place_index_for_text_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
+            formatter.field("filter_countries", &self.filter_countries);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("result_b_box", &"*** Sensitive Data Redacted ***");
+            formatter.field("data_source", &self.data_source);
+            formatter.field("language", &self.language);
+            formatter.finish()
+        }
+    }
 }
 impl SearchPlaceIndexForTextSummary {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
@@ -4097,7 +4006,7 @@ impl SearchPlaceIndexForTextSummary {
 
 /// <p>Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     #[doc(hidden)]
@@ -4118,14 +4027,6 @@ impl SearchForSuggestionsResult {
     /// </note>
     pub fn place_id(&self) -> std::option::Option<&str> {
         self.place_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchForSuggestionsResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchForSuggestionsResult");
-        formatter.field("text", &self.text);
-        formatter.field("place_id", &self.place_id);
-        formatter.finish()
     }
 }
 /// See [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
@@ -4265,7 +4166,7 @@ impl std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
 pub mod search_place_index_for_suggestions_summary {
 
     /// A builder for [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) bias_position: std::option::Option<std::vec::Vec<f64>>,
@@ -4394,6 +4295,19 @@ pub mod search_place_index_for_suggestions_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
+            formatter.field("filter_countries", &self.filter_countries);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("data_source", &self.data_source);
+            formatter.field("language", &self.language);
+            formatter.finish()
+        }
+    }
 }
 impl SearchPlaceIndexForSuggestionsSummary {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
@@ -4404,7 +4318,7 @@ impl SearchPlaceIndexForSuggestionsSummary {
 
 /// <p>Contains a search result from a position search query that is run on a place index resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchForPositionResult {
     /// <p>Details about the search result, such as its address and position.</p>
     #[doc(hidden)]
@@ -4436,15 +4350,6 @@ impl SearchForPositionResult {
     /// </note>
     pub fn place_id(&self) -> std::option::Option<&str> {
         self.place_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchForPositionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchForPositionResult");
-        formatter.field("place", &self.place);
-        formatter.field("distance", &self.distance);
-        formatter.field("place_id", &self.place_id);
-        formatter.finish()
     }
 }
 /// See [`SearchForPositionResult`](crate::model::SearchForPositionResult).
@@ -4574,7 +4479,7 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
 pub mod search_place_index_for_position_summary {
 
     /// A builder for [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4650,6 +4555,16 @@ pub mod search_place_index_for_position_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("position", &"*** Sensitive Data Redacted ***");
+            formatter.field("max_results", &self.max_results);
+            formatter.field("data_source", &self.data_source);
+            formatter.field("language", &self.language);
+            formatter.finish()
+        }
+    }
 }
 impl SearchPlaceIndexForPositionSummary {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
@@ -4660,7 +4575,7 @@ impl SearchPlaceIndexForPositionSummary {
 
 /// <p>A place index resource listed in your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlaceIndexesResponseEntry {
     /// <p>The name of the place index resource.</p>
     #[doc(hidden)]
@@ -4723,18 +4638,6 @@ impl ListPlaceIndexesResponseEntry {
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ListPlaceIndexesResponseEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlaceIndexesResponseEntry");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("description", &self.description);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
@@ -4867,7 +4770,7 @@ impl ListPlaceIndexesResponseEntry {
 /// <p>For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceConfiguration {
     /// <p>Specifies how the results of an operation will be stored by the caller. </p>
     /// <p>Valid values include:</p>
@@ -4889,13 +4792,6 @@ impl DataSourceConfiguration {
     /// <p>Default value: <code>SingleUse</code> </p>
     pub fn intended_use(&self) -> std::option::Option<&crate::model::IntendedUse> {
         self.intended_use.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceConfiguration");
-        formatter.field("intended_use", &self.intended_use);
-        formatter.finish()
     }
 }
 /// See [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
@@ -4980,7 +4876,7 @@ where
 
 /// <p>Contains details of an existing map resource in your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMapsResponseEntry {
     /// <p>The name of the associated map resource.</p>
     #[doc(hidden)]
@@ -5033,18 +4929,6 @@ impl ListMapsResponseEntry {
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ListMapsResponseEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMapsResponseEntry");
-        formatter.field("map_name", &self.map_name);
-        formatter.field("description", &self.description);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
@@ -5160,7 +5044,7 @@ impl ListMapsResponseEntry {
 
 /// <p>Specifies the map tile style selected from an available provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MapConfiguration {
     /// <p>Specifies the map style selected from an available data provider.</p>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
@@ -5204,13 +5088,6 @@ impl MapConfiguration {
     /// </note>
     pub fn style(&self) -> std::option::Option<&str> {
         self.style.as_deref()
-    }
-}
-impl std::fmt::Debug for MapConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MapConfiguration");
-        formatter.field("style", &self.style);
-        formatter.finish()
     }
 }
 /// See [`MapConfiguration`](crate::model::MapConfiguration).
@@ -5319,7 +5196,7 @@ impl std::fmt::Debug for GeofenceGeometry {
 pub mod geofence_geometry {
 
     /// A builder for [`GeofenceGeometry`](crate::model::GeofenceGeometry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
         pub(crate) circle: std::option::Option<crate::model::Circle>,
@@ -5366,6 +5243,14 @@ pub mod geofence_geometry {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("polygon", &self.polygon);
+            formatter.field("circle", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl GeofenceGeometry {
     /// Creates a new builder-style object to manufacture [`GeofenceGeometry`](crate::model::GeofenceGeometry).
@@ -5407,7 +5292,7 @@ impl std::fmt::Debug for Circle {
 pub mod circle {
 
     /// A builder for [`Circle`](crate::model::Circle).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) center: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) radius: std::option::Option<f64>,
@@ -5447,6 +5332,14 @@ pub mod circle {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("center", &"*** Sensitive Data Redacted ***");
+            formatter.field("radius", &self.radius);
+            formatter.finish()
+        }
+    }
 }
 impl Circle {
     /// Creates a new builder-style object to manufacture [`Circle`](crate::model::Circle).
@@ -5457,7 +5350,7 @@ impl Circle {
 
 /// <p>Contains a list of geofences stored in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
@@ -5509,17 +5402,6 @@ impl ListGeofenceResponseEntry {
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ListGeofenceResponseEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeofenceResponseEntry");
-        formatter.field("geofence_id", &self.geofence_id);
-        formatter.field("geometry", &self.geometry);
-        formatter.field("status", &self.status);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
@@ -5629,7 +5511,7 @@ impl ListGeofenceResponseEntry {
 
 /// <p>Contains error details for each geofence that failed to be stored in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutGeofenceError {
     /// <p>The geofence associated with the error message.</p>
     #[doc(hidden)]
@@ -5646,14 +5528,6 @@ impl BatchPutGeofenceError {
     /// <p>Contains details associated to the batch error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchPutGeofenceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutGeofenceError");
-        formatter.field("geofence_id", &self.geofence_id);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
@@ -5707,7 +5581,7 @@ impl BatchPutGeofenceError {
 
 /// <p>Contains a summary of each geofence that was successfully stored in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutGeofenceSuccess {
     /// <p>The geofence successfully stored in a geofence collection.</p>
     #[doc(hidden)]
@@ -5731,15 +5605,6 @@ impl BatchPutGeofenceSuccess {
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchPutGeofenceSuccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutGeofenceSuccess");
-        formatter.field("geofence_id", &self.geofence_id);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
@@ -5808,7 +5673,7 @@ impl BatchPutGeofenceSuccess {
 
 /// <p>Contains geofence geometry details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutGeofenceRequestEntry {
     /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
     #[doc(hidden)]
@@ -5829,14 +5694,6 @@ impl BatchPutGeofenceRequestEntry {
     /// </note>
     pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
         self.geometry.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchPutGeofenceRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutGeofenceRequestEntry");
-        formatter.field("geofence_id", &self.geofence_id);
-        formatter.field("geometry", &self.geometry);
-        formatter.finish()
     }
 }
 /// See [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
@@ -5894,7 +5751,7 @@ impl BatchPutGeofenceRequestEntry {
 
 /// <p>Contains error details for each device that failed to evaluate its position against the geofences in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesError {
     /// <p>The device associated with the position evaluation error.</p>
     #[doc(hidden)]
@@ -5918,15 +5775,6 @@ impl BatchEvaluateGeofencesError {
     /// <p>Contains details associated to the batch error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchEvaluateGeofencesError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchEvaluateGeofencesError");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("sample_time", &self.sample_time);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
@@ -5995,7 +5843,7 @@ impl BatchEvaluateGeofencesError {
 
 /// <p>Contains error details for each geofence that failed to delete from the geofence collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteGeofenceError {
     /// <p>The geofence associated with the error message.</p>
     #[doc(hidden)]
@@ -6012,14 +5860,6 @@ impl BatchDeleteGeofenceError {
     /// <p>Contains details associated to the batch error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteGeofenceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteGeofenceError");
-        formatter.field("geofence_id", &self.geofence_id);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
@@ -6073,7 +5913,7 @@ impl BatchDeleteGeofenceError {
 
 /// <p>Contains the geofence collection details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeofenceCollectionsResponseEntry {
     /// <p>The name of the geofence collection.</p>
     #[doc(hidden)]
@@ -6128,18 +5968,6 @@ impl ListGeofenceCollectionsResponseEntry {
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ListGeofenceCollectionsResponseEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeofenceCollectionsResponseEntry");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("description", &self.description);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).

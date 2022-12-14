@@ -3351,7 +3351,7 @@ impl ValidatePipelineDefinitionInput {
 
 /// <p>Contains the parameters for ValidatePipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3384,20 +3384,10 @@ impl ValidatePipelineDefinitionInput {
         self.parameter_values.as_deref()
     }
 }
-impl std::fmt::Debug for ValidatePipelineDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidatePipelineDefinitionInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("pipeline_objects", &self.pipeline_objects);
-        formatter.field("parameter_objects", &self.parameter_objects);
-        formatter.field("parameter_values", &self.parameter_values);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for SetTaskStatus.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTaskStatusInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     #[doc(hidden)]
@@ -3437,21 +3427,10 @@ impl SetTaskStatusInput {
         self.error_stack_trace.as_deref()
     }
 }
-impl std::fmt::Debug for SetTaskStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTaskStatusInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("task_status", &self.task_status);
-        formatter.field("error_id", &self.error_id);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_stack_trace", &self.error_stack_trace);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for SetStatus.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetStatusInput {
     /// <p>The ID of the pipeline that contains the objects.</p>
     #[doc(hidden)]
@@ -3477,19 +3456,10 @@ impl SetStatusInput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for SetStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetStatusInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("object_ids", &self.object_ids);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ReportTaskRunnerHeartbeat.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeatInput {
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     #[doc(hidden)]
@@ -3515,19 +3485,10 @@ impl ReportTaskRunnerHeartbeatInput {
         self.hostname.as_deref()
     }
 }
-impl std::fmt::Debug for ReportTaskRunnerHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportTaskRunnerHeartbeatInput");
-        formatter.field("taskrunner_id", &self.taskrunner_id);
-        formatter.field("worker_group", &self.worker_group);
-        formatter.field("hostname", &self.hostname);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ReportTaskProgress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportTaskProgressInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     #[doc(hidden)]
@@ -3546,18 +3507,10 @@ impl ReportTaskProgressInput {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for ReportTaskProgressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportTaskProgressInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for RemoveTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3576,18 +3529,10 @@ impl RemoveTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for QueryObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryObjectsInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3627,21 +3572,10 @@ impl QueryObjectsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for QueryObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryObjectsInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("query", &self.query);
-        formatter.field("sphere", &self.sphere);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for PutPipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3674,20 +3608,10 @@ impl PutPipelineDefinitionInput {
         self.parameter_values.as_deref()
     }
 }
-impl std::fmt::Debug for PutPipelineDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPipelineDefinitionInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("pipeline_objects", &self.pipeline_objects);
-        formatter.field("parameter_objects", &self.parameter_objects);
-        formatter.field("parameter_values", &self.parameter_values);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for PollForTask.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForTaskInput {
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     #[doc(hidden)]
@@ -3713,19 +3637,10 @@ impl PollForTaskInput {
         self.instance_identity.as_ref()
     }
 }
-impl std::fmt::Debug for PollForTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForTaskInput");
-        formatter.field("worker_group", &self.worker_group);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("instance_identity", &self.instance_identity);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ListPipelines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesInput {
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -3737,17 +3652,10 @@ impl ListPipelinesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListPipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesInput");
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for GetPipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3766,18 +3674,10 @@ impl GetPipelineDefinitionInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetPipelineDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineDefinitionInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for EvaluateExpression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3803,19 +3703,10 @@ impl EvaluateExpressionInput {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for EvaluateExpressionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluateExpressionInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("object_id", &self.object_id);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribePipelines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePipelinesInput {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
     #[doc(hidden)]
@@ -3827,17 +3718,10 @@ impl DescribePipelinesInput {
         self.pipeline_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePipelinesInput");
-        formatter.field("pipeline_ids", &self.pipeline_ids);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribeObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeObjectsInput {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
     #[doc(hidden)]
@@ -3870,20 +3754,10 @@ impl DescribeObjectsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeObjectsInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("object_ids", &self.object_ids);
-        formatter.field("evaluate_expressions", &self.evaluate_expressions);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DeletePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3895,17 +3769,10 @@ impl DeletePipelineInput {
         self.pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DeactivatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3924,18 +3791,10 @@ impl DeactivatePipelineInput {
         self.cancel_active
     }
 }
-impl std::fmt::Debug for DeactivatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivatePipelineInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("cancel_active", &self.cancel_active);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for CreatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineInput {
     /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
     #[doc(hidden)]
@@ -3968,20 +3827,10 @@ impl CreatePipelineInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineInput");
-        formatter.field("name", &self.name);
-        formatter.field("unique_id", &self.unique_id);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for AddTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -4000,18 +3849,10 @@ impl AddTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ActivatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -4035,14 +3876,5 @@ impl ActivatePipelineInput {
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ActivatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivatePipelineInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("parameter_values", &self.parameter_values);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.finish()
     }
 }

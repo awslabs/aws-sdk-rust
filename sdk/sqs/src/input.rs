@@ -3959,7 +3959,7 @@ impl UntagQueueInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagQueueInput {
     /// <p>The URL of the queue.</p>
     #[doc(hidden)]
@@ -3978,18 +3978,10 @@ impl UntagQueueInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagQueueInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagQueueInput {
     /// <p>The URL of the queue.</p>
     #[doc(hidden)]
@@ -4012,18 +4004,10 @@ impl TagQueueInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagQueueInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4148,18 +4132,10 @@ impl SetQueueAttributesInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SetQueueAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetQueueAttributesInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4180,18 +4156,10 @@ impl SendMessageBatchInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for SendMessageBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessageBatchInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageInput {
     /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4341,23 +4309,10 @@ impl SendMessageInput {
         self.message_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for SendMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessageInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("message_body", &self.message_body);
-        formatter.field("delay_seconds", &self.delay_seconds);
-        formatter.field("message_attributes", &self.message_attributes);
-        formatter.field("message_system_attributes", &self.message_system_attributes);
-        formatter.field("message_deduplication_id", &self.message_deduplication_id);
-        formatter.field("message_group_id", &self.message_group_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4378,18 +4333,10 @@ impl RemovePermissionInput {
         self.label.as_deref()
     }
 }
-impl std::fmt::Debug for RemovePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("label", &self.label);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceiveMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4527,26 +4474,10 @@ impl ReceiveMessageInput {
         self.receive_request_attempt_id.as_deref()
     }
 }
-impl std::fmt::Debug for ReceiveMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceiveMessageInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.field("message_attribute_names", &self.message_attribute_names);
-        formatter.field("max_number_of_messages", &self.max_number_of_messages);
-        formatter.field("visibility_timeout", &self.visibility_timeout);
-        formatter.field("wait_time_seconds", &self.wait_time_seconds);
-        formatter.field(
-            "receive_request_attempt_id",
-            &self.receive_request_attempt_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurgeQueueInput {
     /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4560,17 +4491,10 @@ impl PurgeQueueInput {
         self.queue_url.as_deref()
     }
 }
-impl std::fmt::Debug for PurgeQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurgeQueueInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueueTagsInput {
     /// <p>The URL of the queue.</p>
     #[doc(hidden)]
@@ -4582,17 +4506,10 @@ impl ListQueueTagsInput {
         self.queue_url.as_deref()
     }
 }
-impl std::fmt::Debug for ListQueueTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueueTagsInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueuesInput {
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4620,19 +4537,10 @@ impl ListQueuesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueuesInput");
-        formatter.field("queue_name_prefix", &self.queue_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeadLetterSourceQueuesInput {
     /// <p>The URL of a dead-letter queue.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4660,19 +4568,10 @@ impl ListDeadLetterSourceQueuesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDeadLetterSourceQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeadLetterSourceQueuesInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueueUrlInput {
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4693,21 +4592,10 @@ impl GetQueueUrlInput {
         self.queue_owner_aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueueUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueueUrlInput");
-        formatter.field("queue_name", &self.queue_name);
-        formatter.field(
-            "queue_owner_aws_account_id",
-            &self.queue_owner_aws_account_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4830,18 +4718,10 @@ impl GetQueueAttributesInput {
         self.attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueueAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueueAttributesInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueueInput {
     /// <p>The URL of the Amazon SQS queue to delete.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4855,17 +4735,10 @@ impl DeleteQueueInput {
         self.queue_url.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueueInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4886,18 +4759,10 @@ impl DeleteMessageBatchInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMessageBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMessageBatchInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4918,18 +4783,10 @@ impl DeleteMessageInput {
         self.receipt_handle.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMessageInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("receipt_handle", &self.receipt_handle);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQueueInput {
     /// <p>The name of the new queue. The following limits apply to this name:</p>
     /// <ul>
@@ -5099,19 +4956,10 @@ impl CreateQueueInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for CreateQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQueueInput");
-        formatter.field("queue_name", &self.queue_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchInput {
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -5135,18 +4983,10 @@ impl ChangeMessageVisibilityBatchInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for ChangeMessageVisibilityBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeMessageVisibilityBatchInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeMessageVisibilityInput {
     /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -5174,19 +5014,10 @@ impl ChangeMessageVisibilityInput {
         self.visibility_timeout
     }
 }
-impl std::fmt::Debug for ChangeMessageVisibilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeMessageVisibilityInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("receipt_handle", &self.receipt_handle);
-        formatter.field("visibility_timeout", &self.visibility_timeout);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddPermissionInput {
     /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -5223,15 +5054,5 @@ impl AddPermissionInput {
     /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
-    }
-}
-impl std::fmt::Debug for AddPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddPermissionInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("label", &self.label);
-        formatter.field("aws_account_ids", &self.aws_account_ids);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }

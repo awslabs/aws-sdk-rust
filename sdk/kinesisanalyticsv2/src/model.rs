@@ -2,7 +2,7 @@
 
 /// <p>The details of the maintenance configuration for the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationMaintenanceConfigurationDescription {
     /// <p>The start time for the maintenance window.</p>
     #[doc(hidden)]
@@ -19,20 +19,6 @@ impl ApplicationMaintenanceConfigurationDescription {
     /// <p>The end time for the maintenance window.</p>
     pub fn application_maintenance_window_end_time(&self) -> std::option::Option<&str> {
         self.application_maintenance_window_end_time.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationMaintenanceConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationMaintenanceConfigurationDescription");
-        formatter.field(
-            "application_maintenance_window_start_time",
-            &self.application_maintenance_window_start_time,
-        );
-        formatter.field(
-            "application_maintenance_window_end_time",
-            &self.application_maintenance_window_end_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`ApplicationMaintenanceConfigurationDescription`](crate::model::ApplicationMaintenanceConfigurationDescription).
@@ -99,7 +85,7 @@ impl ApplicationMaintenanceConfigurationDescription {
 
 /// <p>Describes the updated maintenance configuration for the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationMaintenanceConfigurationUpdate {
     /// <p>The updated start time for the maintenance window.</p>
     #[doc(hidden)]
@@ -110,16 +96,6 @@ impl ApplicationMaintenanceConfigurationUpdate {
     pub fn application_maintenance_window_start_time_update(&self) -> std::option::Option<&str> {
         self.application_maintenance_window_start_time_update
             .as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationMaintenanceConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationMaintenanceConfigurationUpdate");
-        formatter.field(
-            "application_maintenance_window_start_time_update",
-            &self.application_maintenance_window_start_time_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`ApplicationMaintenanceConfigurationUpdate`](crate::model::ApplicationMaintenanceConfigurationUpdate).
@@ -166,7 +142,7 @@ impl ApplicationMaintenanceConfigurationUpdate {
 
 /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationDetail {
     /// <p>The ARN of the application.</p>
     #[doc(hidden)]
@@ -298,47 +274,6 @@ impl ApplicationDetail {
     /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
     pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
         self.application_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationDetail");
-        formatter.field("application_arn", &self.application_arn);
-        formatter.field("application_description", &self.application_description);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("runtime_environment", &self.runtime_environment);
-        formatter.field("service_execution_role", &self.service_execution_role);
-        formatter.field("application_status", &self.application_status);
-        formatter.field("application_version_id", &self.application_version_id);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("last_update_timestamp", &self.last_update_timestamp);
-        formatter.field(
-            "application_configuration_description",
-            &self.application_configuration_description,
-        );
-        formatter.field(
-            "cloud_watch_logging_option_descriptions",
-            &self.cloud_watch_logging_option_descriptions,
-        );
-        formatter.field(
-            "application_maintenance_configuration_description",
-            &self.application_maintenance_configuration_description,
-        );
-        formatter.field(
-            "application_version_updated_from",
-            &self.application_version_updated_from,
-        );
-        formatter.field(
-            "application_version_rolled_back_from",
-            &self.application_version_rolled_back_from,
-        );
-        formatter.field("conditional_token", &self.conditional_token);
-        formatter.field(
-            "application_version_rolled_back_to",
-            &self.application_version_rolled_back_to,
-        );
-        formatter.field("application_mode", &self.application_mode);
-        formatter.finish()
     }
 }
 /// See [`ApplicationDetail`](crate::model::ApplicationDetail).
@@ -733,7 +668,7 @@ impl AsRef<str> for ApplicationMode {
 
 /// <p>Describes the Amazon CloudWatch logging option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionDescription {
     /// <p>The ID of the CloudWatch logging option description.</p>
     #[doc(hidden)]
@@ -761,18 +696,6 @@ impl CloudWatchLoggingOptionDescription {
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLoggingOptionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLoggingOptionDescription");
-        formatter.field(
-            "cloud_watch_logging_option_id",
-            &self.cloud_watch_logging_option_id,
-        );
-        formatter.field("log_stream_arn", &self.log_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLoggingOptionDescription`](crate::model::CloudWatchLoggingOptionDescription).
@@ -848,7 +771,7 @@ impl CloudWatchLoggingOptionDescription {
 
 /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationConfigurationDescription {
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
@@ -931,44 +854,6 @@ impl ApplicationConfigurationDescription {
         &self,
     ) -> std::option::Option<&crate::model::ZeppelinApplicationConfigurationDescription> {
         self.zeppelin_application_configuration_description.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationConfigurationDescription");
-        formatter.field(
-            "sql_application_configuration_description",
-            &self.sql_application_configuration_description,
-        );
-        formatter.field(
-            "application_code_configuration_description",
-            &self.application_code_configuration_description,
-        );
-        formatter.field(
-            "run_configuration_description",
-            &self.run_configuration_description,
-        );
-        formatter.field(
-            "flink_application_configuration_description",
-            &self.flink_application_configuration_description,
-        );
-        formatter.field(
-            "environment_property_descriptions",
-            &self.environment_property_descriptions,
-        );
-        formatter.field(
-            "application_snapshot_configuration_description",
-            &self.application_snapshot_configuration_description,
-        );
-        formatter.field(
-            "vpc_configuration_descriptions",
-            &self.vpc_configuration_descriptions,
-        );
-        formatter.field(
-            "zeppelin_application_configuration_description",
-            &self.zeppelin_application_configuration_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`ApplicationConfigurationDescription`](crate::model::ApplicationConfigurationDescription).
@@ -1158,7 +1043,7 @@ impl ApplicationConfigurationDescription {
 
 /// <p>The configuration of a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZeppelinApplicationConfigurationDescription {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
@@ -1202,28 +1087,6 @@ impl ZeppelinApplicationConfigurationDescription {
         &self,
     ) -> std::option::Option<&[crate::model::CustomArtifactConfigurationDescription]> {
         self.custom_artifacts_configuration_description.as_deref()
-    }
-}
-impl std::fmt::Debug for ZeppelinApplicationConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZeppelinApplicationConfigurationDescription");
-        formatter.field(
-            "monitoring_configuration_description",
-            &self.monitoring_configuration_description,
-        );
-        formatter.field(
-            "catalog_configuration_description",
-            &self.catalog_configuration_description,
-        );
-        formatter.field(
-            "deploy_as_application_configuration_description",
-            &self.deploy_as_application_configuration_description,
-        );
-        formatter.field(
-            "custom_artifacts_configuration_description",
-            &self.custom_artifacts_configuration_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`ZeppelinApplicationConfigurationDescription`](crate::model::ZeppelinApplicationConfigurationDescription).
@@ -1339,7 +1202,7 @@ impl ZeppelinApplicationConfigurationDescription {
 
 /// <p>Specifies a dependency JAR or a JAR of user-defined functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomArtifactConfigurationDescription {
     /// <p> <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
     #[doc(hidden)]
@@ -1367,21 +1230,6 @@ impl CustomArtifactConfigurationDescription {
         &self,
     ) -> std::option::Option<&crate::model::MavenReference> {
         self.maven_reference_description.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomArtifactConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomArtifactConfigurationDescription");
-        formatter.field("artifact_type", &self.artifact_type);
-        formatter.field(
-            "s3_content_location_description",
-            &self.s3_content_location_description,
-        );
-        formatter.field(
-            "maven_reference_description",
-            &self.maven_reference_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`CustomArtifactConfigurationDescription`](crate::model::CustomArtifactConfigurationDescription).
@@ -1457,7 +1305,7 @@ impl CustomArtifactConfigurationDescription {
 
 /// <p>The information required to specify a Maven reference. You can use Maven references to specify dependency JAR files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MavenReference {
     /// <p>The group ID of the Maven reference.</p>
     #[doc(hidden)]
@@ -1481,15 +1329,6 @@ impl MavenReference {
     /// <p>The version of the Maven reference.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for MavenReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MavenReference");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("artifact_id", &self.artifact_id);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`MavenReference`](crate::model::MavenReference).
@@ -1552,7 +1391,7 @@ impl MavenReference {
 
 /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ContentLocation {
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
     #[doc(hidden)]
@@ -1576,15 +1415,6 @@ impl S3ContentLocation {
     /// <p>The version of the object containing the application code.</p>
     pub fn object_version(&self) -> std::option::Option<&str> {
         self.object_version.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ContentLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ContentLocation");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("file_key", &self.file_key);
-        formatter.field("object_version", &self.object_version);
-        formatter.finish()
     }
 }
 /// See [`S3ContentLocation`](crate::model::S3ContentLocation).
@@ -1740,7 +1570,7 @@ impl AsRef<str> for ArtifactType {
 
 /// <p>The configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeployAsApplicationConfigurationDescription {
     /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
     #[doc(hidden)]
@@ -1753,16 +1583,6 @@ impl DeployAsApplicationConfigurationDescription {
         &self,
     ) -> std::option::Option<&crate::model::S3ContentBaseLocationDescription> {
         self.s3_content_location_description.as_ref()
-    }
-}
-impl std::fmt::Debug for DeployAsApplicationConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeployAsApplicationConfigurationDescription");
-        formatter.field(
-            "s3_content_location_description",
-            &self.s3_content_location_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeployAsApplicationConfigurationDescription`](crate::model::DeployAsApplicationConfigurationDescription).
@@ -1808,7 +1628,7 @@ impl DeployAsApplicationConfigurationDescription {
 
 /// <p>The description of the S3 base location that holds the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ContentBaseLocationDescription {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -1825,14 +1645,6 @@ impl S3ContentBaseLocationDescription {
     /// <p>The base path for the S3 bucket.</p>
     pub fn base_path(&self) -> std::option::Option<&str> {
         self.base_path.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ContentBaseLocationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ContentBaseLocationDescription");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("base_path", &self.base_path);
-        formatter.finish()
     }
 }
 /// See [`S3ContentBaseLocationDescription`](crate::model::S3ContentBaseLocationDescription).
@@ -1883,7 +1695,7 @@ impl S3ContentBaseLocationDescription {
 
 /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogConfigurationDescription {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
@@ -1896,16 +1708,6 @@ impl CatalogConfigurationDescription {
         &self,
     ) -> std::option::Option<&crate::model::GlueDataCatalogConfigurationDescription> {
         self.glue_data_catalog_configuration_description.as_ref()
-    }
-}
-impl std::fmt::Debug for CatalogConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogConfigurationDescription");
-        formatter.field(
-            "glue_data_catalog_configuration_description",
-            &self.glue_data_catalog_configuration_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`CatalogConfigurationDescription`](crate::model::CatalogConfigurationDescription).
@@ -1952,7 +1754,7 @@ impl CatalogConfigurationDescription {
 
 /// <p>The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueDataCatalogConfigurationDescription {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     #[doc(hidden)]
@@ -1962,13 +1764,6 @@ impl GlueDataCatalogConfigurationDescription {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn database_arn(&self) -> std::option::Option<&str> {
         self.database_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GlueDataCatalogConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueDataCatalogConfigurationDescription");
-        formatter.field("database_arn", &self.database_arn);
-        formatter.finish()
     }
 }
 /// See [`GlueDataCatalogConfigurationDescription`](crate::model::GlueDataCatalogConfigurationDescription).
@@ -2007,7 +1802,7 @@ impl GlueDataCatalogConfigurationDescription {
 
 /// <p>The monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationDescription {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     #[doc(hidden)]
@@ -2017,13 +1812,6 @@ impl ZeppelinMonitoringConfigurationDescription {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for ZeppelinMonitoringConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZeppelinMonitoringConfigurationDescription");
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`ZeppelinMonitoringConfigurationDescription`](crate::model::ZeppelinMonitoringConfigurationDescription).
@@ -2162,7 +1950,7 @@ impl AsRef<str> for LogLevel {
 
 /// <p>Describes the parameters of a VPC used by the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigurationDescription {
     /// <p>The ID of the VPC configuration.</p>
     #[doc(hidden)]
@@ -2193,16 +1981,6 @@ impl VpcConfigurationDescription {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigurationDescription");
-        formatter.field("vpc_configuration_id", &self.vpc_configuration_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
@@ -2298,7 +2076,7 @@ impl VpcConfigurationDescription {
 
 /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSnapshotConfigurationDescription {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
@@ -2308,13 +2086,6 @@ impl ApplicationSnapshotConfigurationDescription {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     pub fn snapshots_enabled(&self) -> std::option::Option<bool> {
         self.snapshots_enabled
-    }
-}
-impl std::fmt::Debug for ApplicationSnapshotConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSnapshotConfigurationDescription");
-        formatter.field("snapshots_enabled", &self.snapshots_enabled);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSnapshotConfigurationDescription`](crate::model::ApplicationSnapshotConfigurationDescription).
@@ -2353,7 +2124,7 @@ impl ApplicationSnapshotConfigurationDescription {
 
 /// <p>Describes the execution properties for an Apache Flink runtime.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentPropertyDescriptions {
     /// <p>Describes the execution property groups.</p>
     #[doc(hidden)]
@@ -2366,16 +2137,6 @@ impl EnvironmentPropertyDescriptions {
         &self,
     ) -> std::option::Option<&[crate::model::PropertyGroup]> {
         self.property_group_descriptions.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentPropertyDescriptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentPropertyDescriptions");
-        formatter.field(
-            "property_group_descriptions",
-            &self.property_group_descriptions,
-        );
-        formatter.finish()
     }
 }
 /// See [`EnvironmentPropertyDescriptions`](crate::model::EnvironmentPropertyDescriptions).
@@ -2424,7 +2185,7 @@ impl EnvironmentPropertyDescriptions {
 
 /// <p>Property key-value pairs passed into an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyGroup {
     /// <p>Describes the key of an application execution property key-value pair.</p>
     #[doc(hidden)]
@@ -2445,14 +2206,6 @@ impl PropertyGroup {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.property_map.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyGroup");
-        formatter.field("property_group_id", &self.property_group_id);
-        formatter.field("property_map", &self.property_map);
-        formatter.finish()
     }
 }
 /// See [`PropertyGroup`](crate::model::PropertyGroup).
@@ -2523,7 +2276,7 @@ impl PropertyGroup {
 
 /// <p>Describes configuration parameters for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlinkApplicationConfigurationDescription {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
     #[doc(hidden)]
@@ -2563,25 +2316,6 @@ impl FlinkApplicationConfigurationDescription {
     /// <p>The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. To retrieve the job plan for the application, use the <code>DescribeApplicationRequest$IncludeAdditionalDetails</code> parameter of the <code>DescribeApplication</code> operation.</p>
     pub fn job_plan_description(&self) -> std::option::Option<&str> {
         self.job_plan_description.as_deref()
-    }
-}
-impl std::fmt::Debug for FlinkApplicationConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlinkApplicationConfigurationDescription");
-        formatter.field(
-            "checkpoint_configuration_description",
-            &self.checkpoint_configuration_description,
-        );
-        formatter.field(
-            "monitoring_configuration_description",
-            &self.monitoring_configuration_description,
-        );
-        formatter.field(
-            "parallelism_configuration_description",
-            &self.parallelism_configuration_description,
-        );
-        formatter.field("job_plan_description", &self.job_plan_description);
-        formatter.finish()
     }
 }
 /// See [`FlinkApplicationConfigurationDescription`](crate::model::FlinkApplicationConfigurationDescription).
@@ -2680,7 +2414,7 @@ impl FlinkApplicationConfigurationDescription {
 
 /// <p>Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParallelismConfigurationDescription {
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. </p>
     #[doc(hidden)]
@@ -2718,17 +2452,6 @@ impl ParallelismConfigurationDescription {
     /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
     pub fn auto_scaling_enabled(&self) -> std::option::Option<bool> {
         self.auto_scaling_enabled
-    }
-}
-impl std::fmt::Debug for ParallelismConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParallelismConfigurationDescription");
-        formatter.field("configuration_type", &self.configuration_type);
-        formatter.field("parallelism", &self.parallelism);
-        formatter.field("parallelism_per_kpu", &self.parallelism_per_kpu);
-        formatter.field("current_parallelism", &self.current_parallelism);
-        formatter.field("auto_scaling_enabled", &self.auto_scaling_enabled);
-        formatter.finish()
     }
 }
 /// See [`ParallelismConfigurationDescription`](crate::model::ParallelismConfigurationDescription).
@@ -2910,7 +2633,7 @@ impl AsRef<str> for ConfigurationType {
 
 /// <p>Describes configuration parameters for CloudWatch logging for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoringConfigurationDescription {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application.</p>
     #[doc(hidden)]
@@ -2934,15 +2657,6 @@ impl MonitoringConfigurationDescription {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for MonitoringConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoringConfigurationDescription");
-        formatter.field("configuration_type", &self.configuration_type);
-        formatter.field("metrics_level", &self.metrics_level);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`MonitoringConfigurationDescription`](crate::model::MonitoringConfigurationDescription).
@@ -3111,7 +2825,7 @@ impl AsRef<str> for MetricsLevel {
 
 /// <p>Describes checkpointing parameters for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckpointConfigurationDescription {
     /// <p>Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p> <note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
@@ -3168,19 +2882,6 @@ impl CheckpointConfigurationDescription {
     /// </note>
     pub fn min_pause_between_checkpoints(&self) -> std::option::Option<i64> {
         self.min_pause_between_checkpoints
-    }
-}
-impl std::fmt::Debug for CheckpointConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckpointConfigurationDescription");
-        formatter.field("configuration_type", &self.configuration_type);
-        formatter.field("checkpointing_enabled", &self.checkpointing_enabled);
-        formatter.field("checkpoint_interval", &self.checkpoint_interval);
-        formatter.field(
-            "min_pause_between_checkpoints",
-            &self.min_pause_between_checkpoints,
-        );
-        formatter.finish()
     }
 }
 /// See [`CheckpointConfigurationDescription`](crate::model::CheckpointConfigurationDescription).
@@ -3287,7 +2988,7 @@ impl CheckpointConfigurationDescription {
 
 /// <p>Describes the starting properties for a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunConfigurationDescription {
     /// <p>Describes the restore behavior of a restarting application.</p>
     #[doc(hidden)]
@@ -3310,20 +3011,6 @@ impl RunConfigurationDescription {
         &self,
     ) -> std::option::Option<&crate::model::FlinkRunConfiguration> {
         self.flink_run_configuration_description.as_ref()
-    }
-}
-impl std::fmt::Debug for RunConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunConfigurationDescription");
-        formatter.field(
-            "application_restore_configuration_description",
-            &self.application_restore_configuration_description,
-        );
-        formatter.field(
-            "flink_run_configuration_description",
-            &self.flink_run_configuration_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`RunConfigurationDescription`](crate::model::RunConfigurationDescription).
@@ -3389,7 +3076,7 @@ impl RunConfigurationDescription {
 
 /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlinkRunConfiguration {
     /// <p>When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and state data in the snapshot no longer corresponds to valid application data. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"> Allowing Non-Restored State</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.</p> <note>
     /// <p>This value defaults to <code>false</code>. If you update your application without specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it was previously set to <code>true</code>.</p>
@@ -3403,13 +3090,6 @@ impl FlinkRunConfiguration {
     /// </note>
     pub fn allow_non_restored_state(&self) -> std::option::Option<bool> {
         self.allow_non_restored_state
-    }
-}
-impl std::fmt::Debug for FlinkRunConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlinkRunConfiguration");
-        formatter.field("allow_non_restored_state", &self.allow_non_restored_state);
-        formatter.finish()
     }
 }
 /// See [`FlinkRunConfiguration`](crate::model::FlinkRunConfiguration).
@@ -3452,7 +3132,7 @@ impl FlinkRunConfiguration {
 
 /// <p>Specifies the method and snapshot to use when restarting an application using previously saved application state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationRestoreConfiguration {
     /// <p>Specifies how the application should be restored.</p>
     #[doc(hidden)]
@@ -3471,14 +3151,6 @@ impl ApplicationRestoreConfiguration {
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
     pub fn snapshot_name(&self) -> std::option::Option<&str> {
         self.snapshot_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationRestoreConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationRestoreConfiguration");
-        formatter.field("application_restore_type", &self.application_restore_type);
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.finish()
     }
 }
 /// See [`ApplicationRestoreConfiguration`](crate::model::ApplicationRestoreConfiguration).
@@ -3640,7 +3312,7 @@ impl AsRef<str> for ApplicationRestoreType {
 
 /// <p>Describes code configuration for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationCodeConfigurationDescription {
     /// <p>Specifies whether the code content is in text or zip format.</p>
     #[doc(hidden)]
@@ -3659,14 +3331,6 @@ impl ApplicationCodeConfigurationDescription {
         &self,
     ) -> std::option::Option<&crate::model::CodeContentDescription> {
         self.code_content_description.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationCodeConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationCodeConfigurationDescription");
-        formatter.field("code_content_type", &self.code_content_type);
-        formatter.field("code_content_description", &self.code_content_description);
-        formatter.finish()
     }
 }
 /// See [`ApplicationCodeConfigurationDescription`](crate::model::ApplicationCodeConfigurationDescription).
@@ -3727,7 +3391,7 @@ impl ApplicationCodeConfigurationDescription {
 
 /// <p>Describes details about the code of a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeContentDescription {
     /// <p>The text-format code</p>
     #[doc(hidden)]
@@ -3761,19 +3425,6 @@ impl CodeContentDescription {
         &self,
     ) -> std::option::Option<&crate::model::S3ApplicationCodeLocationDescription> {
         self.s3_application_code_location_description.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeContentDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeContentDescription");
-        formatter.field("text_content", &self.text_content);
-        formatter.field("code_md5", &self.code_md5);
-        formatter.field("code_size", &self.code_size);
-        formatter.field(
-            "s3_application_code_location_description",
-            &self.s3_application_code_location_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`CodeContentDescription`](crate::model::CodeContentDescription).
@@ -3856,7 +3507,7 @@ impl CodeContentDescription {
 
 /// <p>Describes the location of an application's code stored in an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ApplicationCodeLocationDescription {
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
     #[doc(hidden)]
@@ -3880,15 +3531,6 @@ impl S3ApplicationCodeLocationDescription {
     /// <p>The version of the object containing the application code.</p>
     pub fn object_version(&self) -> std::option::Option<&str> {
         self.object_version.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ApplicationCodeLocationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ApplicationCodeLocationDescription");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("file_key", &self.file_key);
-        formatter.field("object_version", &self.object_version);
-        formatter.finish()
     }
 }
 /// See [`S3ApplicationCodeLocationDescription`](crate::model::S3ApplicationCodeLocationDescription).
@@ -4044,7 +3686,7 @@ impl AsRef<str> for CodeContentType {
 
 /// <p>Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlApplicationConfigurationDescription {
     /// <p>The array of <code>InputDescription</code> objects describing the input streams used by the application.</p>
     #[doc(hidden)]
@@ -4071,18 +3713,6 @@ impl SqlApplicationConfigurationDescription {
         &self,
     ) -> std::option::Option<&[crate::model::ReferenceDataSourceDescription]> {
         self.reference_data_source_descriptions.as_deref()
-    }
-}
-impl std::fmt::Debug for SqlApplicationConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlApplicationConfigurationDescription");
-        formatter.field("input_descriptions", &self.input_descriptions);
-        formatter.field("output_descriptions", &self.output_descriptions);
-        formatter.field(
-            "reference_data_source_descriptions",
-            &self.reference_data_source_descriptions,
-        );
-        formatter.finish()
     }
 }
 /// See [`SqlApplicationConfigurationDescription`](crate::model::SqlApplicationConfigurationDescription).
@@ -4178,7 +3808,7 @@ impl SqlApplicationConfigurationDescription {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the reference data source configured for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceDataSourceDescription {
     /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns when you add the reference data source to your application using the <code>CreateApplication</code> or <code>UpdateApplication</code> operation.</p>
     #[doc(hidden)]
@@ -4212,19 +3842,6 @@ impl ReferenceDataSourceDescription {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn reference_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
         self.reference_schema.as_ref()
-    }
-}
-impl std::fmt::Debug for ReferenceDataSourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceDataSourceDescription");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("table_name", &self.table_name);
-        formatter.field(
-            "s3_reference_data_source_description",
-            &self.s3_reference_data_source_description,
-        );
-        formatter.field("reference_schema", &self.reference_schema);
-        formatter.finish()
     }
 }
 /// See [`ReferenceDataSourceDescription`](crate::model::ReferenceDataSourceDescription).
@@ -4309,7 +3926,7 @@ impl ReferenceDataSourceDescription {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceSchema {
     /// <p>Specifies the format of the records on the streaming source.</p>
     #[doc(hidden)]
@@ -4333,15 +3950,6 @@ impl SourceSchema {
     /// <p>A list of <code>RecordColumn</code> objects. </p>
     pub fn record_columns(&self) -> std::option::Option<&[crate::model::RecordColumn]> {
         self.record_columns.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceSchema");
-        formatter.field("record_format", &self.record_format);
-        formatter.field("record_encoding", &self.record_encoding);
-        formatter.field("record_columns", &self.record_columns);
-        formatter.finish()
     }
 }
 /// See [`SourceSchema`](crate::model::SourceSchema).
@@ -4420,7 +4028,7 @@ impl SourceSchema {
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p>
 /// <p>Also used to describe the format of the reference data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordColumn {
     /// <p>The name of the column that is created in the in-application input stream or reference table.</p>
     #[doc(hidden)]
@@ -4444,15 +4052,6 @@ impl RecordColumn {
     /// <p>The type of column created in the in-application input stream or reference table.</p>
     pub fn sql_type(&self) -> std::option::Option<&str> {
         self.sql_type.as_deref()
-    }
-}
-impl std::fmt::Debug for RecordColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordColumn");
-        formatter.field("name", &self.name);
-        formatter.field("mapping", &self.mapping);
-        formatter.field("sql_type", &self.sql_type);
-        formatter.finish()
     }
 }
 /// See [`RecordColumn`](crate::model::RecordColumn).
@@ -4515,7 +4114,7 @@ impl RecordColumn {
 
 /// <p> For a SQL-based Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordFormat {
     /// <p>The type of record format.</p>
     #[doc(hidden)]
@@ -4532,14 +4131,6 @@ impl RecordFormat {
     /// <p>When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub fn mapping_parameters(&self) -> std::option::Option<&crate::model::MappingParameters> {
         self.mapping_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for RecordFormat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordFormat");
-        formatter.field("record_format_type", &self.record_format_type);
-        formatter.field("mapping_parameters", &self.mapping_parameters);
-        formatter.finish()
     }
 }
 /// See [`RecordFormat`](crate::model::RecordFormat).
@@ -4596,7 +4187,7 @@ impl RecordFormat {
 
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MappingParameters {
     /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
     #[doc(hidden)]
@@ -4617,14 +4208,6 @@ impl MappingParameters {
         &self,
     ) -> std::option::Option<&crate::model::CsvMappingParameters> {
         self.csv_mapping_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for MappingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MappingParameters");
-        formatter.field("json_mapping_parameters", &self.json_mapping_parameters);
-        formatter.field("csv_mapping_parameters", &self.csv_mapping_parameters);
-        formatter.finish()
     }
 }
 /// See [`MappingParameters`](crate::model::MappingParameters).
@@ -4687,7 +4270,7 @@ impl MappingParameters {
 /// <p> <code>"name1", "address1"</code> </p>
 /// <p> <code>"name2", "address2"</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvMappingParameters {
     /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
     #[doc(hidden)]
@@ -4704,14 +4287,6 @@ impl CsvMappingParameters {
     /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
     pub fn record_column_delimiter(&self) -> std::option::Option<&str> {
         self.record_column_delimiter.as_deref()
-    }
-}
-impl std::fmt::Debug for CsvMappingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvMappingParameters");
-        formatter.field("record_row_delimiter", &self.record_row_delimiter);
-        formatter.field("record_column_delimiter", &self.record_column_delimiter);
-        formatter.finish()
     }
 }
 /// See [`CsvMappingParameters`](crate::model::CsvMappingParameters).
@@ -4768,7 +4343,7 @@ impl CsvMappingParameters {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonMappingParameters {
     /// <p>The path to the top-level parent that contains the records.</p>
     #[doc(hidden)]
@@ -4778,13 +4353,6 @@ impl JsonMappingParameters {
     /// <p>The path to the top-level parent that contains the records.</p>
     pub fn record_row_path(&self) -> std::option::Option<&str> {
         self.record_row_path.as_deref()
-    }
-}
-impl std::fmt::Debug for JsonMappingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonMappingParameters");
-        formatter.field("record_row_path", &self.record_row_path);
-        formatter.finish()
     }
 }
 /// See [`JsonMappingParameters`](crate::model::JsonMappingParameters).
@@ -4916,7 +4484,7 @@ impl AsRef<str> for RecordFormatType {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides the bucket name and object key name that stores the reference data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ReferenceDataSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -4944,15 +4512,6 @@ impl S3ReferenceDataSourceDescription {
     /// </note>
     pub fn reference_role_arn(&self) -> std::option::Option<&str> {
         self.reference_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ReferenceDataSourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ReferenceDataSourceDescription");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("file_key", &self.file_key);
-        formatter.field("reference_role_arn", &self.reference_role_arn);
-        formatter.finish()
     }
 }
 /// See [`S3ReferenceDataSourceDescription`](crate::model::S3ReferenceDataSourceDescription).
@@ -5022,7 +4581,7 @@ impl S3ReferenceDataSourceDescription {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDescription {
     /// <p>A unique identifier for the output configuration.</p>
     #[doc(hidden)]
@@ -5075,24 +4634,6 @@ impl OutputDescription {
     /// <p>The data format used for writing data to the destination.</p>
     pub fn destination_schema(&self) -> std::option::Option<&crate::model::DestinationSchema> {
         self.destination_schema.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDescription");
-        formatter.field("output_id", &self.output_id);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "kinesis_streams_output_description",
-            &self.kinesis_streams_output_description,
-        );
-        formatter.field(
-            "kinesis_firehose_output_description",
-            &self.kinesis_firehose_output_description,
-        );
-        formatter.field("lambda_output_description", &self.lambda_output_description);
-        formatter.field("destination_schema", &self.destination_schema);
-        formatter.finish()
     }
 }
 /// See [`OutputDescription`](crate::model::OutputDescription).
@@ -5215,7 +4756,7 @@ impl OutputDescription {
 
 /// <p>Describes the data format when records are written to the destination in a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
     #[doc(hidden)]
@@ -5225,13 +4766,6 @@ impl DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
     pub fn record_format_type(&self) -> std::option::Option<&crate::model::RecordFormatType> {
         self.record_format_type.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationSchema");
-        formatter.field("record_format_type", &self.record_format_type);
-        formatter.finish()
     }
 }
 /// See [`DestinationSchema`](crate::model::DestinationSchema).
@@ -5273,7 +4807,7 @@ impl DestinationSchema {
 
 /// <p>For a SQL-based Kinesis Data Analytics application's output, describes the Amazon Lambda function that is configured as its destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
     #[doc(hidden)]
@@ -5294,14 +4828,6 @@ impl LambdaOutputDescription {
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaOutputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaOutputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaOutputDescription`](crate::model::LambdaOutputDescription).
@@ -5356,7 +4882,7 @@ impl LambdaOutputDescription {
 
 /// <p>For a SQL-based Kinesis Data Analytics application's output, describes the Kinesis Data Firehose delivery stream that is configured as its destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     #[doc(hidden)]
@@ -5377,14 +4903,6 @@ impl KinesisFirehoseOutputDescription {
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisFirehoseOutputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseOutputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisFirehoseOutputDescription`](crate::model::KinesisFirehoseOutputDescription).
@@ -5439,7 +4957,7 @@ impl KinesisFirehoseOutputDescription {
 
 /// <p>For an SQL-based Kinesis Data Analytics application's output, describes the Kinesis data stream that is configured as its destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
     #[doc(hidden)]
@@ -5460,14 +4978,6 @@ impl KinesisStreamsOutputDescription {
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamsOutputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsOutputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamsOutputDescription`](crate::model::KinesisStreamsOutputDescription).
@@ -5522,7 +5032,7 @@ impl KinesisStreamsOutputDescription {
 
 /// <p>Describes the application input configuration for a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDescription {
     /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application. </p>
     #[doc(hidden)]
@@ -5600,33 +5110,6 @@ impl InputDescription {
         &self,
     ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for InputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDescription");
-        formatter.field("input_id", &self.input_id);
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("in_app_stream_names", &self.in_app_stream_names);
-        formatter.field(
-            "input_processing_configuration_description",
-            &self.input_processing_configuration_description,
-        );
-        formatter.field(
-            "kinesis_streams_input_description",
-            &self.kinesis_streams_input_description,
-        );
-        formatter.field(
-            "kinesis_firehose_input_description",
-            &self.kinesis_firehose_input_description,
-        );
-        formatter.field("input_schema", &self.input_schema);
-        formatter.field("input_parallelism", &self.input_parallelism);
-        formatter.field(
-            "input_starting_position_configuration",
-            &self.input_starting_position_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`InputDescription`](crate::model::InputDescription).
@@ -5805,7 +5288,7 @@ impl InputDescription {
 
 /// <p>Describes the point at which the application reads from the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputStartingPositionConfiguration {
     /// <p>The starting position on the stream.</p>
     /// <ul>
@@ -5827,13 +5310,6 @@ impl InputStartingPositionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::InputStartingPosition> {
         self.input_starting_position.as_ref()
-    }
-}
-impl std::fmt::Debug for InputStartingPositionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputStartingPositionConfiguration");
-        formatter.field("input_starting_position", &self.input_starting_position);
-        formatter.finish()
     }
 }
 /// See [`InputStartingPositionConfiguration`](crate::model::InputStartingPositionConfiguration).
@@ -5986,7 +5462,7 @@ impl AsRef<str> for InputStartingPosition {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputParallelism {
     /// <p>The number of in-application streams to create.</p>
     #[doc(hidden)]
@@ -5996,13 +5472,6 @@ impl InputParallelism {
     /// <p>The number of in-application streams to create.</p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
-    }
-}
-impl std::fmt::Debug for InputParallelism {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputParallelism");
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`InputParallelism`](crate::model::InputParallelism).
@@ -6039,7 +5508,7 @@ impl InputParallelism {
 
 /// <p>Describes the Amazon Kinesis Data Firehose delivery stream that is configured as the streaming source in the application input configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseInputDescription {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     #[doc(hidden)]
@@ -6060,14 +5529,6 @@ impl KinesisFirehoseInputDescription {
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisFirehoseInputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseInputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisFirehoseInputDescription`](crate::model::KinesisFirehoseInputDescription).
@@ -6122,7 +5583,7 @@ impl KinesisFirehoseInputDescription {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the streaming source in the application input configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsInputDescription {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
     #[doc(hidden)]
@@ -6143,14 +5604,6 @@ impl KinesisStreamsInputDescription {
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamsInputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsInputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamsInputDescription`](crate::model::KinesisStreamsInputDescription).
@@ -6205,7 +5658,7 @@ impl KinesisStreamsInputDescription {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputProcessingConfigurationDescription {
     /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
     #[doc(hidden)]
@@ -6218,16 +5671,6 @@ impl InputProcessingConfigurationDescription {
         &self,
     ) -> std::option::Option<&crate::model::InputLambdaProcessorDescription> {
         self.input_lambda_processor_description.as_ref()
-    }
-}
-impl std::fmt::Debug for InputProcessingConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputProcessingConfigurationDescription");
-        formatter.field(
-            "input_lambda_processor_description",
-            &self.input_lambda_processor_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`InputProcessingConfigurationDescription`](crate::model::InputProcessingConfigurationDescription).
@@ -6273,7 +5716,7 @@ impl InputProcessingConfigurationDescription {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLambdaProcessorDescription {
     /// <p>The ARN of the Amazon Lambda function that is used to preprocess the records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
@@ -6298,14 +5741,6 @@ impl InputLambdaProcessorDescription {
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for InputLambdaProcessorDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLambdaProcessorDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`InputLambdaProcessorDescription`](crate::model::InputLambdaProcessorDescription).
@@ -6638,7 +6073,7 @@ impl AsRef<str> for RuntimeEnvironment {
 
 /// <p>Describes the Amazon CloudWatch logging option updates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionUpdate {
     /// <p>The ID of the CloudWatch logging option to update</p>
     #[doc(hidden)]
@@ -6655,17 +6090,6 @@ impl CloudWatchLoggingOptionUpdate {
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
     pub fn log_stream_arn_update(&self) -> std::option::Option<&str> {
         self.log_stream_arn_update.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLoggingOptionUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLoggingOptionUpdate");
-        formatter.field(
-            "cloud_watch_logging_option_id",
-            &self.cloud_watch_logging_option_id,
-        );
-        formatter.field("log_stream_arn_update", &self.log_stream_arn_update);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLoggingOptionUpdate`](crate::model::CloudWatchLoggingOptionUpdate).
@@ -6725,7 +6149,7 @@ impl CloudWatchLoggingOptionUpdate {
 
 /// <p>Describes the updates to the starting parameters for a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunConfigurationUpdate {
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
@@ -6747,17 +6171,6 @@ impl RunConfigurationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::ApplicationRestoreConfiguration> {
         self.application_restore_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for RunConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunConfigurationUpdate");
-        formatter.field("flink_run_configuration", &self.flink_run_configuration);
-        formatter.field(
-            "application_restore_configuration",
-            &self.application_restore_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`RunConfigurationUpdate`](crate::model::RunConfigurationUpdate).
@@ -6822,7 +6235,7 @@ impl RunConfigurationUpdate {
 
 /// <p>Describes updates to an application's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationConfigurationUpdate {
     /// <p>Describes updates to a SQL-based Kinesis Data Analytics application's configuration.</p>
     #[doc(hidden)]
@@ -6894,37 +6307,6 @@ impl ApplicationConfigurationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::ZeppelinApplicationConfigurationUpdate> {
         self.zeppelin_application_configuration_update.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationConfigurationUpdate");
-        formatter.field(
-            "sql_application_configuration_update",
-            &self.sql_application_configuration_update,
-        );
-        formatter.field(
-            "application_code_configuration_update",
-            &self.application_code_configuration_update,
-        );
-        formatter.field(
-            "flink_application_configuration_update",
-            &self.flink_application_configuration_update,
-        );
-        formatter.field(
-            "environment_property_updates",
-            &self.environment_property_updates,
-        );
-        formatter.field(
-            "application_snapshot_configuration_update",
-            &self.application_snapshot_configuration_update,
-        );
-        formatter.field("vpc_configuration_updates", &self.vpc_configuration_updates);
-        formatter.field(
-            "zeppelin_application_configuration_update",
-            &self.zeppelin_application_configuration_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`ApplicationConfigurationUpdate`](crate::model::ApplicationConfigurationUpdate).
@@ -7092,7 +6474,7 @@ impl ApplicationConfigurationUpdate {
 
 /// <p>Updates to the configuration of Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZeppelinApplicationConfigurationUpdate {
     /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
@@ -7134,28 +6516,6 @@ impl ZeppelinApplicationConfigurationUpdate {
         &self,
     ) -> std::option::Option<&[crate::model::CustomArtifactConfiguration]> {
         self.custom_artifacts_configuration_update.as_deref()
-    }
-}
-impl std::fmt::Debug for ZeppelinApplicationConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZeppelinApplicationConfigurationUpdate");
-        formatter.field(
-            "monitoring_configuration_update",
-            &self.monitoring_configuration_update,
-        );
-        formatter.field(
-            "catalog_configuration_update",
-            &self.catalog_configuration_update,
-        );
-        formatter.field(
-            "deploy_as_application_configuration_update",
-            &self.deploy_as_application_configuration_update,
-        );
-        formatter.field(
-            "custom_artifacts_configuration_update",
-            &self.custom_artifacts_configuration_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`ZeppelinApplicationConfigurationUpdate`](crate::model::ZeppelinApplicationConfigurationUpdate).
@@ -7267,7 +6627,7 @@ impl ZeppelinApplicationConfigurationUpdate {
 
 /// <p>Specifies dependency JARs, as well as JAR files that contain user-defined functions (UDF).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomArtifactConfiguration {
     /// <p> <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
     #[doc(hidden)]
@@ -7291,15 +6651,6 @@ impl CustomArtifactConfiguration {
     /// <p>The parameters required to fully specify a Maven reference.</p>
     pub fn maven_reference(&self) -> std::option::Option<&crate::model::MavenReference> {
         self.maven_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomArtifactConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomArtifactConfiguration");
-        formatter.field("artifact_type", &self.artifact_type);
-        formatter.field("s3_content_location", &self.s3_content_location);
-        formatter.field("maven_reference", &self.maven_reference);
-        formatter.finish()
     }
 }
 /// See [`CustomArtifactConfiguration`](crate::model::CustomArtifactConfiguration).
@@ -7371,7 +6722,7 @@ impl CustomArtifactConfiguration {
 
 /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeployAsApplicationConfigurationUpdate {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
     #[doc(hidden)]
@@ -7383,16 +6734,6 @@ impl DeployAsApplicationConfigurationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::S3ContentBaseLocationUpdate> {
         self.s3_content_location_update.as_ref()
-    }
-}
-impl std::fmt::Debug for DeployAsApplicationConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeployAsApplicationConfigurationUpdate");
-        formatter.field(
-            "s3_content_location_update",
-            &self.s3_content_location_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeployAsApplicationConfigurationUpdate`](crate::model::DeployAsApplicationConfigurationUpdate).
@@ -7438,7 +6779,7 @@ impl DeployAsApplicationConfigurationUpdate {
 
 /// <p>The information required to update the S3 base location that holds the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ContentBaseLocationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -7455,14 +6796,6 @@ impl S3ContentBaseLocationUpdate {
     /// <p>The updated S3 bucket path.</p>
     pub fn base_path_update(&self) -> std::option::Option<&str> {
         self.base_path_update.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ContentBaseLocationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ContentBaseLocationUpdate");
-        formatter.field("bucket_arn_update", &self.bucket_arn_update);
-        formatter.field("base_path_update", &self.base_path_update);
-        formatter.finish()
     }
 }
 /// See [`S3ContentBaseLocationUpdate`](crate::model::S3ContentBaseLocationUpdate).
@@ -7519,7 +6852,7 @@ impl S3ContentBaseLocationUpdate {
 
 /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogConfigurationUpdate {
     /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
@@ -7532,16 +6865,6 @@ impl CatalogConfigurationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::GlueDataCatalogConfigurationUpdate> {
         self.glue_data_catalog_configuration_update.as_ref()
-    }
-}
-impl std::fmt::Debug for CatalogConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogConfigurationUpdate");
-        formatter.field(
-            "glue_data_catalog_configuration_update",
-            &self.glue_data_catalog_configuration_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`CatalogConfigurationUpdate`](crate::model::CatalogConfigurationUpdate).
@@ -7587,7 +6910,7 @@ impl CatalogConfigurationUpdate {
 
 /// <p>Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     #[doc(hidden)]
@@ -7597,13 +6920,6 @@ impl GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     pub fn database_arn_update(&self) -> std::option::Option<&str> {
         self.database_arn_update.as_deref()
-    }
-}
-impl std::fmt::Debug for GlueDataCatalogConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueDataCatalogConfigurationUpdate");
-        formatter.field("database_arn_update", &self.database_arn_update);
-        formatter.finish()
     }
 }
 /// See [`GlueDataCatalogConfigurationUpdate`](crate::model::GlueDataCatalogConfigurationUpdate).
@@ -7645,7 +6961,7 @@ impl GlueDataCatalogConfigurationUpdate {
 
 /// <p>Updates to the monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationUpdate {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
@@ -7655,13 +6971,6 @@ impl ZeppelinMonitoringConfigurationUpdate {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
     pub fn log_level_update(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level_update.as_ref()
-    }
-}
-impl std::fmt::Debug for ZeppelinMonitoringConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZeppelinMonitoringConfigurationUpdate");
-        formatter.field("log_level_update", &self.log_level_update);
-        formatter.finish()
     }
 }
 /// See [`ZeppelinMonitoringConfigurationUpdate`](crate::model::ZeppelinMonitoringConfigurationUpdate).
@@ -7703,7 +7012,7 @@ impl ZeppelinMonitoringConfigurationUpdate {
 
 /// <p>Describes updates to the VPC configuration used by the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigurationUpdate {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
     #[doc(hidden)]
@@ -7727,15 +7036,6 @@ impl VpcConfigurationUpdate {
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
     pub fn security_group_id_updates(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_id_updates.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigurationUpdate");
-        formatter.field("vpc_configuration_id", &self.vpc_configuration_id);
-        formatter.field("subnet_id_updates", &self.subnet_id_updates);
-        formatter.field("security_group_id_updates", &self.security_group_id_updates);
-        formatter.finish()
     }
 }
 /// See [`VpcConfigurationUpdate`](crate::model::VpcConfigurationUpdate).
@@ -7820,7 +7120,7 @@ impl VpcConfigurationUpdate {
 
 /// <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     #[doc(hidden)]
@@ -7830,13 +7130,6 @@ impl ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub fn snapshots_enabled_update(&self) -> std::option::Option<bool> {
         self.snapshots_enabled_update
-    }
-}
-impl std::fmt::Debug for ApplicationSnapshotConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSnapshotConfigurationUpdate");
-        formatter.field("snapshots_enabled_update", &self.snapshots_enabled_update);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSnapshotConfigurationUpdate`](crate::model::ApplicationSnapshotConfigurationUpdate).
@@ -7875,7 +7168,7 @@ impl ApplicationSnapshotConfigurationUpdate {
 
 /// <p>Describes updates to the execution property groups for a Flink-based Kinesis Data Analytics application or a Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentPropertyUpdates {
     /// <p>Describes updates to the execution property groups.</p>
     #[doc(hidden)]
@@ -7885,13 +7178,6 @@ impl EnvironmentPropertyUpdates {
     /// <p>Describes updates to the execution property groups.</p>
     pub fn property_groups(&self) -> std::option::Option<&[crate::model::PropertyGroup]> {
         self.property_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentPropertyUpdates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentPropertyUpdates");
-        formatter.field("property_groups", &self.property_groups);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentPropertyUpdates`](crate::model::EnvironmentPropertyUpdates).
@@ -7939,7 +7225,7 @@ impl EnvironmentPropertyUpdates {
 
 /// <p>Describes updates to the configuration parameters for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlinkApplicationConfigurationUpdate {
     /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
     #[doc(hidden)]
@@ -7972,24 +7258,6 @@ impl FlinkApplicationConfigurationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::ParallelismConfigurationUpdate> {
         self.parallelism_configuration_update.as_ref()
-    }
-}
-impl std::fmt::Debug for FlinkApplicationConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlinkApplicationConfigurationUpdate");
-        formatter.field(
-            "checkpoint_configuration_update",
-            &self.checkpoint_configuration_update,
-        );
-        formatter.field(
-            "monitoring_configuration_update",
-            &self.monitoring_configuration_update,
-        );
-        formatter.field(
-            "parallelism_configuration_update",
-            &self.parallelism_configuration_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`FlinkApplicationConfigurationUpdate`](crate::model::FlinkApplicationConfigurationUpdate).
@@ -8073,7 +7341,7 @@ impl FlinkApplicationConfigurationUpdate {
 
 /// <p>Describes updates to parameters for how an application executes multiple tasks simultaneously.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParallelismConfigurationUpdate {
     /// <p>Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
     #[doc(hidden)]
@@ -8106,22 +7374,6 @@ impl ParallelismConfigurationUpdate {
     /// <p>Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based Kinesis Data Analytics application in response to increased throughput.</p>
     pub fn auto_scaling_enabled_update(&self) -> std::option::Option<bool> {
         self.auto_scaling_enabled_update
-    }
-}
-impl std::fmt::Debug for ParallelismConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParallelismConfigurationUpdate");
-        formatter.field("configuration_type_update", &self.configuration_type_update);
-        formatter.field("parallelism_update", &self.parallelism_update);
-        formatter.field(
-            "parallelism_per_kpu_update",
-            &self.parallelism_per_kpu_update,
-        );
-        formatter.field(
-            "auto_scaling_enabled_update",
-            &self.auto_scaling_enabled_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`ParallelismConfigurationUpdate`](crate::model::ParallelismConfigurationUpdate).
@@ -8199,7 +7451,7 @@ impl ParallelismConfigurationUpdate {
 
 /// <p>Describes updates to configuration parameters for Amazon CloudWatch logging for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoringConfigurationUpdate {
     /// <p>Describes updates to whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     #[doc(hidden)]
@@ -8225,15 +7477,6 @@ impl MonitoringConfigurationUpdate {
     /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level_update(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level_update.as_ref()
-    }
-}
-impl std::fmt::Debug for MonitoringConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoringConfigurationUpdate");
-        formatter.field("configuration_type_update", &self.configuration_type_update);
-        formatter.field("metrics_level_update", &self.metrics_level_update);
-        formatter.field("log_level_update", &self.log_level_update);
-        formatter.finish()
     }
 }
 /// See [`MonitoringConfigurationUpdate`](crate::model::MonitoringConfigurationUpdate).
@@ -8305,7 +7548,7 @@ impl MonitoringConfigurationUpdate {
 
 /// <p>Describes updates to the checkpointing parameters for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckpointConfigurationUpdate {
     /// <p>Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
@@ -8364,25 +7607,6 @@ impl CheckpointConfigurationUpdate {
     /// </note>
     pub fn min_pause_between_checkpoints_update(&self) -> std::option::Option<i64> {
         self.min_pause_between_checkpoints_update
-    }
-}
-impl std::fmt::Debug for CheckpointConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckpointConfigurationUpdate");
-        formatter.field("configuration_type_update", &self.configuration_type_update);
-        formatter.field(
-            "checkpointing_enabled_update",
-            &self.checkpointing_enabled_update,
-        );
-        formatter.field(
-            "checkpoint_interval_update",
-            &self.checkpoint_interval_update,
-        );
-        formatter.field(
-            "min_pause_between_checkpoints_update",
-            &self.min_pause_between_checkpoints_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`CheckpointConfigurationUpdate`](crate::model::CheckpointConfigurationUpdate).
@@ -8492,7 +7716,7 @@ impl CheckpointConfigurationUpdate {
 
 /// <p>Describes code configuration updates for an application. This is supported for a Flink-based Kinesis Data Analytics application or a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationCodeConfigurationUpdate {
     /// <p>Describes updates to the code content type.</p>
     #[doc(hidden)]
@@ -8509,14 +7733,6 @@ impl ApplicationCodeConfigurationUpdate {
     /// <p>Describes updates to the code content of an application.</p>
     pub fn code_content_update(&self) -> std::option::Option<&crate::model::CodeContentUpdate> {
         self.code_content_update.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationCodeConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationCodeConfigurationUpdate");
-        formatter.field("code_content_type_update", &self.code_content_type_update);
-        formatter.field("code_content_update", &self.code_content_update);
-        formatter.finish()
     }
 }
 /// See [`ApplicationCodeConfigurationUpdate`](crate::model::ApplicationCodeConfigurationUpdate).
@@ -8573,7 +7789,7 @@ impl ApplicationCodeConfigurationUpdate {
 
 /// <p>Describes an update to the code of an application. Not supported for Apache Zeppelin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeContentUpdate {
     /// <p>Describes an update to the text code for an application.</p>
     #[doc(hidden)]
@@ -8599,18 +7815,6 @@ impl CodeContentUpdate {
         &self,
     ) -> std::option::Option<&crate::model::S3ContentLocationUpdate> {
         self.s3_content_location_update.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeContentUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeContentUpdate");
-        formatter.field("text_content_update", &self.text_content_update);
-        formatter.field("zip_file_content_update", &self.zip_file_content_update);
-        formatter.field(
-            "s3_content_location_update",
-            &self.s3_content_location_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`CodeContentUpdate`](crate::model::CodeContentUpdate).
@@ -8686,7 +7890,7 @@ impl CodeContentUpdate {
 
 /// <p>Describes an update for the Amazon S3 code content location for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ContentLocationUpdate {
     /// <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
     #[doc(hidden)]
@@ -8710,15 +7914,6 @@ impl S3ContentLocationUpdate {
     /// <p>The new version of the object containing the application code.</p>
     pub fn object_version_update(&self) -> std::option::Option<&str> {
         self.object_version_update.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ContentLocationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ContentLocationUpdate");
-        formatter.field("bucket_arn_update", &self.bucket_arn_update);
-        formatter.field("file_key_update", &self.file_key_update);
-        formatter.field("object_version_update", &self.object_version_update);
-        formatter.finish()
     }
 }
 /// See [`S3ContentLocationUpdate`](crate::model::S3ContentLocationUpdate).
@@ -8790,7 +7985,7 @@ impl S3ContentLocationUpdate {
 
 /// <p>Describes updates to the input streams, destination streams, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlApplicationConfigurationUpdate {
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
     #[doc(hidden)]
@@ -8817,18 +8012,6 @@ impl SqlApplicationConfigurationUpdate {
         &self,
     ) -> std::option::Option<&[crate::model::ReferenceDataSourceUpdate]> {
         self.reference_data_source_updates.as_deref()
-    }
-}
-impl std::fmt::Debug for SqlApplicationConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlApplicationConfigurationUpdate");
-        formatter.field("input_updates", &self.input_updates);
-        formatter.field("output_updates", &self.output_updates);
-        formatter.field(
-            "reference_data_source_updates",
-            &self.reference_data_source_updates,
-        );
-        formatter.finish()
     }
 }
 /// See [`SqlApplicationConfigurationUpdate`](crate::model::SqlApplicationConfigurationUpdate).
@@ -8922,7 +8105,7 @@ impl SqlApplicationConfigurationUpdate {
 
 /// <p>When you update a reference data source configuration for a SQL-based Kinesis Data Analytics application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceDataSourceUpdate {
     /// <p>The ID of the reference data source that is being updated. You can use the <code>DescribeApplication</code> operation to get this value.</p>
     #[doc(hidden)]
@@ -8956,19 +8139,6 @@ impl ReferenceDataSourceUpdate {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
     pub fn reference_schema_update(&self) -> std::option::Option<&crate::model::SourceSchema> {
         self.reference_schema_update.as_ref()
-    }
-}
-impl std::fmt::Debug for ReferenceDataSourceUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceDataSourceUpdate");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("table_name_update", &self.table_name_update);
-        formatter.field(
-            "s3_reference_data_source_update",
-            &self.s3_reference_data_source_update,
-        );
-        formatter.field("reference_schema_update", &self.reference_schema_update);
-        formatter.finish()
     }
 }
 /// See [`ReferenceDataSourceUpdate`](crate::model::ReferenceDataSourceUpdate).
@@ -9056,7 +8226,7 @@ impl ReferenceDataSourceUpdate {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the Amazon S3 bucket name and object key name for an in-application reference table. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ReferenceDataSourceUpdate {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -9073,14 +8243,6 @@ impl S3ReferenceDataSourceUpdate {
     /// <p>The object key name.</p>
     pub fn file_key_update(&self) -> std::option::Option<&str> {
         self.file_key_update.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ReferenceDataSourceUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ReferenceDataSourceUpdate");
-        formatter.field("bucket_arn_update", &self.bucket_arn_update);
-        formatter.field("file_key_update", &self.file_key_update);
-        formatter.finish()
     }
 }
 /// See [`S3ReferenceDataSourceUpdate`](crate::model::S3ReferenceDataSourceUpdate).
@@ -9137,7 +8299,7 @@ impl S3ReferenceDataSourceUpdate {
 
 /// <p> For a SQL-based Kinesis Data Analytics application, describes updates to the output configuration identified by the <code>OutputId</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
     #[doc(hidden)]
@@ -9190,24 +8352,6 @@ impl OutputUpdate {
         &self,
     ) -> std::option::Option<&crate::model::DestinationSchema> {
         self.destination_schema_update.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputUpdate");
-        formatter.field("output_id", &self.output_id);
-        formatter.field("name_update", &self.name_update);
-        formatter.field(
-            "kinesis_streams_output_update",
-            &self.kinesis_streams_output_update,
-        );
-        formatter.field(
-            "kinesis_firehose_output_update",
-            &self.kinesis_firehose_output_update,
-        );
-        formatter.field("lambda_output_update", &self.lambda_output_update);
-        formatter.field("destination_schema_update", &self.destination_schema_update);
-        formatter.finish()
     }
 }
 /// See [`OutputUpdate`](crate::model::OutputUpdate).
@@ -9326,7 +8470,7 @@ impl OutputUpdate {
 
 /// <p>When you update an SQL-based Kinesis Data Analytics application's output configuration using the <code>UpdateApplication</code> operation, provides information about an Amazon Lambda function that is configured as the destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
@@ -9340,13 +8484,6 @@ impl LambdaOutputUpdate {
     /// </note>
     pub fn resource_arn_update(&self) -> std::option::Option<&str> {
         self.resource_arn_update.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaOutputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaOutputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.finish()
     }
 }
 /// See [`LambdaOutputUpdate`](crate::model::LambdaOutputUpdate).
@@ -9392,7 +8529,7 @@ impl LambdaOutputUpdate {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, when updating an output configuration using the <code>UpdateApplication</code> operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     #[doc(hidden)]
@@ -9402,13 +8539,6 @@ impl KinesisFirehoseOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     pub fn resource_arn_update(&self) -> std::option::Option<&str> {
         self.resource_arn_update.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisFirehoseOutputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseOutputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.finish()
     }
 }
 /// See [`KinesisFirehoseOutputUpdate`](crate::model::KinesisFirehoseOutputUpdate).
@@ -9450,7 +8580,7 @@ impl KinesisFirehoseOutputUpdate {
 
 /// <p>When you update a SQL-based Kinesis Data Analytics application's output configuration using the <code>UpdateApplication</code> operation, provides information about a Kinesis data stream that is configured as the destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
     #[doc(hidden)]
@@ -9460,13 +8590,6 @@ impl KinesisStreamsOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
     pub fn resource_arn_update(&self) -> std::option::Option<&str> {
         self.resource_arn_update.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamsOutputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsOutputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamsOutputUpdate`](crate::model::KinesisStreamsOutputUpdate).
@@ -9508,7 +8631,7 @@ impl KinesisStreamsOutputUpdate {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes updates to a specific input configuration (identified by the <code>InputId</code> of an application). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputUpdate {
     /// <p>The input ID of the application input to be updated.</p>
     #[doc(hidden)]
@@ -9570,28 +8693,6 @@ impl InputUpdate {
         &self,
     ) -> std::option::Option<&crate::model::InputParallelismUpdate> {
         self.input_parallelism_update.as_ref()
-    }
-}
-impl std::fmt::Debug for InputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputUpdate");
-        formatter.field("input_id", &self.input_id);
-        formatter.field("name_prefix_update", &self.name_prefix_update);
-        formatter.field(
-            "input_processing_configuration_update",
-            &self.input_processing_configuration_update,
-        );
-        formatter.field(
-            "kinesis_streams_input_update",
-            &self.kinesis_streams_input_update,
-        );
-        formatter.field(
-            "kinesis_firehose_input_update",
-            &self.kinesis_firehose_input_update,
-        );
-        formatter.field("input_schema_update", &self.input_schema_update);
-        formatter.field("input_parallelism_update", &self.input_parallelism_update);
-        formatter.finish()
     }
 }
 /// See [`InputUpdate`](crate::model::InputUpdate).
@@ -9736,7 +8837,7 @@ impl InputUpdate {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides updates to the parallelism count.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputParallelismUpdate {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
     #[doc(hidden)]
@@ -9746,13 +8847,6 @@ impl InputParallelismUpdate {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
     pub fn count_update(&self) -> std::option::Option<i32> {
         self.count_update
-    }
-}
-impl std::fmt::Debug for InputParallelismUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputParallelismUpdate");
-        formatter.field("count_update", &self.count_update);
-        formatter.finish()
     }
 }
 /// See [`InputParallelismUpdate`](crate::model::InputParallelismUpdate).
@@ -9791,7 +8885,7 @@ impl InputParallelismUpdate {
 
 /// <p>Describes updates for an SQL-based Kinesis Data Analytics application's input schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSchemaUpdate {
     /// <p>Specifies the format of the records on the streaming source.</p>
     #[doc(hidden)]
@@ -9815,15 +8909,6 @@ impl InputSchemaUpdate {
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
     pub fn record_column_updates(&self) -> std::option::Option<&[crate::model::RecordColumn]> {
         self.record_column_updates.as_deref()
-    }
-}
-impl std::fmt::Debug for InputSchemaUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSchemaUpdate");
-        formatter.field("record_format_update", &self.record_format_update);
-        formatter.field("record_encoding_update", &self.record_encoding_update);
-        formatter.field("record_column_updates", &self.record_column_updates);
-        formatter.finish()
     }
 }
 /// See [`InputSchemaUpdate`](crate::model::InputSchemaUpdate).
@@ -9902,7 +8987,7 @@ impl InputSchemaUpdate {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, when updating application input configuration, provides information about a Kinesis Data Firehose delivery stream as the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input delivery stream to read.</p>
     #[doc(hidden)]
@@ -9912,13 +8997,6 @@ impl KinesisFirehoseInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input delivery stream to read.</p>
     pub fn resource_arn_update(&self) -> std::option::Option<&str> {
         self.resource_arn_update.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisFirehoseInputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseInputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.finish()
     }
 }
 /// See [`KinesisFirehoseInputUpdate`](crate::model::KinesisFirehoseInputUpdate).
@@ -9960,7 +9038,7 @@ impl KinesisFirehoseInputUpdate {
 
 /// <p>When you update the input configuration for a SQL-based Kinesis Data Analytics application, provides information about a Kinesis stream as the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
     #[doc(hidden)]
@@ -9970,13 +9048,6 @@ impl KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
     pub fn resource_arn_update(&self) -> std::option::Option<&str> {
         self.resource_arn_update.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamsInputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsInputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamsInputUpdate`](crate::model::KinesisStreamsInputUpdate).
@@ -10018,7 +9089,7 @@ impl KinesisStreamsInputUpdate {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes updates to an <code>InputProcessingConfiguration</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputProcessingConfigurationUpdate {
     /// <p>Provides update information for an <code>InputLambdaProcessor</code>.</p>
     #[doc(hidden)]
@@ -10031,16 +9102,6 @@ impl InputProcessingConfigurationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::InputLambdaProcessorUpdate> {
         self.input_lambda_processor_update.as_ref()
-    }
-}
-impl std::fmt::Debug for InputProcessingConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputProcessingConfigurationUpdate");
-        formatter.field(
-            "input_lambda_processor_update",
-            &self.input_lambda_processor_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`InputProcessingConfigurationUpdate`](crate::model::InputProcessingConfigurationUpdate).
@@ -10086,7 +9147,7 @@ impl InputProcessingConfigurationUpdate {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, represents an update to the <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLambdaProcessorUpdate {
     /// <p>The Amazon Resource Name (ARN) of the new Amazon Lambda function that is used to preprocess the records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
@@ -10100,13 +9161,6 @@ impl InputLambdaProcessorUpdate {
     /// </note>
     pub fn resource_arn_update(&self) -> std::option::Option<&str> {
         self.resource_arn_update.as_deref()
-    }
-}
-impl std::fmt::Debug for InputLambdaProcessorUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLambdaProcessorUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.finish()
     }
 }
 /// See [`InputLambdaProcessorUpdate`](crate::model::InputLambdaProcessorUpdate).
@@ -10152,7 +9206,7 @@ impl InputLambdaProcessorUpdate {
 
 /// <p>A key-value pair (the value is optional) that you can define and assign to Amazon resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the key-value tag.</p>
     #[doc(hidden)]
@@ -10169,14 +9223,6 @@ impl Tag {
     /// <p>The value of the key-value tag. The value is optional.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -10227,7 +9273,7 @@ impl Tag {
 
 /// <p>Describes the starting parameters for an Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunConfiguration {
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
@@ -10259,18 +9305,6 @@ impl RunConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ApplicationRestoreConfiguration> {
         self.application_restore_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for RunConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunConfiguration");
-        formatter.field("flink_run_configuration", &self.flink_run_configuration);
-        formatter.field("sql_run_configurations", &self.sql_run_configurations);
-        formatter.field(
-            "application_restore_configuration",
-            &self.application_restore_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`RunConfiguration`](crate::model::RunConfiguration).
@@ -10357,7 +9391,7 @@ impl RunConfiguration {
 
 /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlRunConfiguration {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
     #[doc(hidden)]
@@ -10377,17 +9411,6 @@ impl SqlRunConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for SqlRunConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlRunConfiguration");
-        formatter.field("input_id", &self.input_id);
-        formatter.field(
-            "input_starting_position_configuration",
-            &self.input_starting_position_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`SqlRunConfiguration`](crate::model::SqlRunConfiguration).
@@ -10445,7 +9468,7 @@ impl SqlRunConfiguration {
 
 /// <p>The summary of the application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationVersionSummary {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     #[doc(hidden)]
@@ -10462,14 +9485,6 @@ impl ApplicationVersionSummary {
     /// <p>The status of the application.</p>
     pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
         self.application_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationVersionSummary");
-        formatter.field("application_version_id", &self.application_version_id);
-        formatter.field("application_status", &self.application_status);
-        formatter.finish()
     }
 }
 /// See [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
@@ -10523,7 +9538,7 @@ impl ApplicationVersionSummary {
 
 /// <p>Provides details about a snapshot of application state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
     #[doc(hidden)]
@@ -10554,19 +9569,6 @@ impl SnapshotDetails {
     /// <p>The timestamp of the application snapshot.</p>
     pub fn snapshot_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_creation_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for SnapshotDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotDetails");
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.field("snapshot_status", &self.snapshot_status);
-        formatter.field("application_version_id", &self.application_version_id);
-        formatter.field(
-            "snapshot_creation_timestamp",
-            &self.snapshot_creation_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`SnapshotDetails`](crate::model::SnapshotDetails).
@@ -10750,7 +9752,7 @@ impl AsRef<str> for SnapshotStatus {
 
 /// <p>Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -10795,18 +9797,6 @@ impl ApplicationSummary {
     /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
         self.application_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSummary");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.field("application_status", &self.application_status);
-        formatter.field("application_version_id", &self.application_version_id);
-        formatter.field("runtime_environment", &self.runtime_environment);
-        formatter.field("application_mode", &self.application_mode);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
@@ -10920,7 +9910,7 @@ impl ApplicationSummary {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputProcessingConfiguration {
     /// <p>The <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream before being processed by your application code.</p>
     #[doc(hidden)]
@@ -10932,13 +9922,6 @@ impl InputProcessingConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::InputLambdaProcessor> {
         self.input_lambda_processor.as_ref()
-    }
-}
-impl std::fmt::Debug for InputProcessingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputProcessingConfiguration");
-        formatter.field("input_lambda_processor", &self.input_lambda_processor);
-        formatter.finish()
     }
 }
 /// See [`InputProcessingConfiguration`](crate::model::InputProcessingConfiguration).
@@ -10980,7 +9963,7 @@ impl InputProcessingConfiguration {
 
 /// <p>An object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream in a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLambdaProcessor {
     /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
@@ -10994,13 +9977,6 @@ impl InputLambdaProcessor {
     /// </note>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for InputLambdaProcessor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLambdaProcessor");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`InputLambdaProcessor`](crate::model::InputLambdaProcessor).
@@ -11043,7 +10019,7 @@ impl InputLambdaProcessor {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p>The ARN of the S3 bucket that contains the data.</p>
     #[doc(hidden)]
@@ -11060,14 +10036,6 @@ impl S3Configuration {
     /// <p>The name of the object that contains the data.</p>
     pub fn file_key(&self) -> std::option::Option<&str> {
         self.file_key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Configuration");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("file_key", &self.file_key);
-        formatter.finish()
     }
 }
 /// See [`S3Configuration`](crate::model::S3Configuration).
@@ -11208,7 +10176,7 @@ impl AsRef<str> for UrlType {
 
 /// <p>Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLoggingOption {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
     #[doc(hidden)]
@@ -11218,13 +10186,6 @@ impl CloudWatchLoggingOption {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
     pub fn log_stream_arn(&self) -> std::option::Option<&str> {
         self.log_stream_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLoggingOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLoggingOption");
-        formatter.field("log_stream_arn", &self.log_stream_arn);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLoggingOption`](crate::model::CloudWatchLoggingOption).
@@ -11266,7 +10227,7 @@ impl CloudWatchLoggingOption {
 
 /// <p>Specifies the creation parameters for a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationConfiguration {
     /// <p>The creation and update parameters for a SQL-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
@@ -11335,34 +10296,6 @@ impl ApplicationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ZeppelinApplicationConfiguration> {
         self.zeppelin_application_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationConfiguration");
-        formatter.field(
-            "sql_application_configuration",
-            &self.sql_application_configuration,
-        );
-        formatter.field(
-            "flink_application_configuration",
-            &self.flink_application_configuration,
-        );
-        formatter.field("environment_properties", &self.environment_properties);
-        formatter.field(
-            "application_code_configuration",
-            &self.application_code_configuration,
-        );
-        formatter.field(
-            "application_snapshot_configuration",
-            &self.application_snapshot_configuration,
-        );
-        formatter.field("vpc_configurations", &self.vpc_configurations);
-        formatter.field(
-            "zeppelin_application_configuration",
-            &self.zeppelin_application_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ApplicationConfiguration`](crate::model::ApplicationConfiguration).
@@ -11524,7 +10457,7 @@ impl ApplicationConfiguration {
 
 /// <p>The configuration of a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZeppelinApplicationConfiguration {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
@@ -11566,22 +10499,6 @@ impl ZeppelinApplicationConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::CustomArtifactConfiguration]> {
         self.custom_artifacts_configuration.as_deref()
-    }
-}
-impl std::fmt::Debug for ZeppelinApplicationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZeppelinApplicationConfiguration");
-        formatter.field("monitoring_configuration", &self.monitoring_configuration);
-        formatter.field("catalog_configuration", &self.catalog_configuration);
-        formatter.field(
-            "deploy_as_application_configuration",
-            &self.deploy_as_application_configuration,
-        );
-        formatter.field(
-            "custom_artifacts_configuration",
-            &self.custom_artifacts_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ZeppelinApplicationConfiguration`](crate::model::ZeppelinApplicationConfiguration).
@@ -11686,7 +10603,7 @@ impl ZeppelinApplicationConfiguration {
 
 /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeployAsApplicationConfiguration {
     /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     #[doc(hidden)]
@@ -11696,13 +10613,6 @@ impl DeployAsApplicationConfiguration {
     /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     pub fn s3_content_location(&self) -> std::option::Option<&crate::model::S3ContentBaseLocation> {
         self.s3_content_location.as_ref()
-    }
-}
-impl std::fmt::Debug for DeployAsApplicationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeployAsApplicationConfiguration");
-        formatter.field("s3_content_location", &self.s3_content_location);
-        formatter.finish()
     }
 }
 /// See [`DeployAsApplicationConfiguration`](crate::model::DeployAsApplicationConfiguration).
@@ -11744,7 +10654,7 @@ impl DeployAsApplicationConfiguration {
 
 /// <p>The S3 bucket that holds the application information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ContentBaseLocation {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -11761,14 +10671,6 @@ impl S3ContentBaseLocation {
     /// <p>The base path for the S3 bucket.</p>
     pub fn base_path(&self) -> std::option::Option<&str> {
         self.base_path.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ContentBaseLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ContentBaseLocation");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("base_path", &self.base_path);
-        formatter.finish()
     }
 }
 /// See [`S3ContentBaseLocation`](crate::model::S3ContentBaseLocation).
@@ -11819,7 +10721,7 @@ impl S3ContentBaseLocation {
 
 /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogConfiguration {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
@@ -11832,16 +10734,6 @@ impl CatalogConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::GlueDataCatalogConfiguration> {
         self.glue_data_catalog_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CatalogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogConfiguration");
-        formatter.field(
-            "glue_data_catalog_configuration",
-            &self.glue_data_catalog_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`CatalogConfiguration`](crate::model::CatalogConfiguration).
@@ -11887,7 +10779,7 @@ impl CatalogConfiguration {
 
 /// <p>The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueDataCatalogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     #[doc(hidden)]
@@ -11897,13 +10789,6 @@ impl GlueDataCatalogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn database_arn(&self) -> std::option::Option<&str> {
         self.database_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GlueDataCatalogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueDataCatalogConfiguration");
-        formatter.field("database_arn", &self.database_arn);
-        formatter.finish()
     }
 }
 /// See [`GlueDataCatalogConfiguration`](crate::model::GlueDataCatalogConfiguration).
@@ -11942,7 +10827,7 @@ impl GlueDataCatalogConfiguration {
 
 /// <p>Describes configuration parameters for Amazon CloudWatch logging for a Kinesis Data Analytics Studio notebook. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfiguration {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
     #[doc(hidden)]
@@ -11952,13 +10837,6 @@ impl ZeppelinMonitoringConfiguration {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for ZeppelinMonitoringConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZeppelinMonitoringConfiguration");
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`ZeppelinMonitoringConfiguration`](crate::model::ZeppelinMonitoringConfiguration).
@@ -11997,7 +10875,7 @@ impl ZeppelinMonitoringConfiguration {
 
 /// <p>Describes the parameters of a VPC used by the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
     #[doc(hidden)]
@@ -12014,14 +10892,6 @@ impl VpcConfiguration {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -12090,7 +10960,7 @@ impl VpcConfiguration {
 
 /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
@@ -12100,13 +10970,6 @@ impl ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     pub fn snapshots_enabled(&self) -> std::option::Option<bool> {
         self.snapshots_enabled
-    }
-}
-impl std::fmt::Debug for ApplicationSnapshotConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSnapshotConfiguration");
-        formatter.field("snapshots_enabled", &self.snapshots_enabled);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSnapshotConfiguration`](crate::model::ApplicationSnapshotConfiguration).
@@ -12145,7 +11008,7 @@ impl ApplicationSnapshotConfiguration {
 
 /// <p>Describes code configuration for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationCodeConfiguration {
     /// <p>The location and type of the application code.</p>
     #[doc(hidden)]
@@ -12162,14 +11025,6 @@ impl ApplicationCodeConfiguration {
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub fn code_content_type(&self) -> std::option::Option<&crate::model::CodeContentType> {
         self.code_content_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationCodeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationCodeConfiguration");
-        formatter.field("code_content", &self.code_content);
-        formatter.field("code_content_type", &self.code_content_type);
-        formatter.finish()
     }
 }
 /// See [`ApplicationCodeConfiguration`](crate::model::ApplicationCodeConfiguration).
@@ -12226,7 +11081,7 @@ impl ApplicationCodeConfiguration {
 
 /// <p>Specifies either the application code, or the location of the application code, for a Flink-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeContent {
     /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
@@ -12250,15 +11105,6 @@ impl CodeContent {
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
     pub fn s3_content_location(&self) -> std::option::Option<&crate::model::S3ContentLocation> {
         self.s3_content_location.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeContent");
-        formatter.field("text_content", &self.text_content);
-        formatter.field("zip_file_content", &self.zip_file_content);
-        formatter.field("s3_content_location", &self.s3_content_location);
-        formatter.finish()
     }
 }
 /// See [`CodeContent`](crate::model::CodeContent).
@@ -12327,7 +11173,7 @@ impl CodeContent {
 
 /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentProperties {
     /// <p>Describes the execution property groups.</p>
     #[doc(hidden)]
@@ -12337,13 +11183,6 @@ impl EnvironmentProperties {
     /// <p>Describes the execution property groups.</p>
     pub fn property_groups(&self) -> std::option::Option<&[crate::model::PropertyGroup]> {
         self.property_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentProperties");
-        formatter.field("property_groups", &self.property_groups);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentProperties`](crate::model::EnvironmentProperties).
@@ -12391,7 +11230,7 @@ impl EnvironmentProperties {
 
 /// <p>Describes configuration parameters for a Flink-based Kinesis Data Analytics application or a Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlinkApplicationConfiguration {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
     #[doc(hidden)]
@@ -12421,15 +11260,6 @@ impl FlinkApplicationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for FlinkApplicationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlinkApplicationConfiguration");
-        formatter.field("checkpoint_configuration", &self.checkpoint_configuration);
-        formatter.field("monitoring_configuration", &self.monitoring_configuration);
-        formatter.field("parallelism_configuration", &self.parallelism_configuration);
-        formatter.finish()
     }
 }
 /// See [`FlinkApplicationConfiguration`](crate::model::FlinkApplicationConfiguration).
@@ -12513,7 +11343,7 @@ impl FlinkApplicationConfiguration {
 
 /// <p>Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel Execution</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParallelismConfiguration {
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
     #[doc(hidden)]
@@ -12544,16 +11374,6 @@ impl ParallelismConfiguration {
     /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
     pub fn auto_scaling_enabled(&self) -> std::option::Option<bool> {
         self.auto_scaling_enabled
-    }
-}
-impl std::fmt::Debug for ParallelismConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParallelismConfiguration");
-        formatter.field("configuration_type", &self.configuration_type);
-        formatter.field("parallelism", &self.parallelism);
-        formatter.field("parallelism_per_kpu", &self.parallelism_per_kpu);
-        formatter.field("auto_scaling_enabled", &self.auto_scaling_enabled);
-        formatter.finish()
     }
 }
 /// See [`ParallelismConfiguration`](crate::model::ParallelismConfiguration).
@@ -12631,7 +11451,7 @@ impl ParallelismConfiguration {
 
 /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoringConfiguration {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     #[doc(hidden)]
@@ -12655,15 +11475,6 @@ impl MonitoringConfiguration {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for MonitoringConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoringConfiguration");
-        formatter.field("configuration_type", &self.configuration_type);
-        formatter.field("metrics_level", &self.metrics_level);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
@@ -12732,7 +11543,7 @@ impl MonitoringConfiguration {
 
 /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckpointConfiguration {
     /// <p>Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
@@ -12789,19 +11600,6 @@ impl CheckpointConfiguration {
     /// </note>
     pub fn min_pause_between_checkpoints(&self) -> std::option::Option<i64> {
         self.min_pause_between_checkpoints
-    }
-}
-impl std::fmt::Debug for CheckpointConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckpointConfiguration");
-        formatter.field("configuration_type", &self.configuration_type);
-        formatter.field("checkpointing_enabled", &self.checkpointing_enabled);
-        formatter.field("checkpoint_interval", &self.checkpoint_interval);
-        formatter.field(
-            "min_pause_between_checkpoints",
-            &self.min_pause_between_checkpoints,
-        );
-        formatter.finish()
     }
 }
 /// See [`CheckpointConfiguration`](crate::model::CheckpointConfiguration).
@@ -12908,7 +11706,7 @@ impl CheckpointConfiguration {
 
 /// <p>Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlApplicationConfiguration {
     /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
     #[doc(hidden)]
@@ -12935,15 +11733,6 @@ impl SqlApplicationConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ReferenceDataSource]> {
         self.reference_data_sources.as_deref()
-    }
-}
-impl std::fmt::Debug for SqlApplicationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlApplicationConfiguration");
-        formatter.field("inputs", &self.inputs);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("reference_data_sources", &self.reference_data_sources);
-        formatter.finish()
     }
 }
 /// See [`SqlApplicationConfiguration`](crate::model::SqlApplicationConfiguration).
@@ -13034,7 +11823,7 @@ impl SqlApplicationConfiguration {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceDataSource {
     /// <p>The name of the in-application table to create.</p>
     #[doc(hidden)]
@@ -13060,15 +11849,6 @@ impl ReferenceDataSource {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn reference_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
         self.reference_schema.as_ref()
-    }
-}
-impl std::fmt::Debug for ReferenceDataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceDataSource");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("s3_reference_data_source", &self.s3_reference_data_source);
-        formatter.field("reference_schema", &self.reference_schema);
-        formatter.finish()
     }
 }
 /// See [`ReferenceDataSource`](crate::model::ReferenceDataSource).
@@ -13142,7 +11922,7 @@ impl ReferenceDataSource {
 /// <p>For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.</p>
 /// <p>A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ReferenceDataSource {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -13159,14 +11939,6 @@ impl S3ReferenceDataSource {
     /// <p>The object key name containing the reference data.</p>
     pub fn file_key(&self) -> std::option::Option<&str> {
         self.file_key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ReferenceDataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ReferenceDataSource");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("file_key", &self.file_key);
-        formatter.finish()
     }
 }
 /// See [`S3ReferenceDataSource`](crate::model::S3ReferenceDataSource).
@@ -13218,7 +11990,7 @@ impl S3ReferenceDataSource {
 /// <p> Describes a SQL-based Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream. </p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Output {
     /// <p>The name of the in-application stream.</p>
     #[doc(hidden)]
@@ -13260,17 +12032,6 @@ impl Output {
     /// <p>Describes the data format when records are written to the destination. </p>
     pub fn destination_schema(&self) -> std::option::Option<&crate::model::DestinationSchema> {
         self.destination_schema.as_ref()
-    }
-}
-impl std::fmt::Debug for Output {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Output");
-        formatter.field("name", &self.name);
-        formatter.field("kinesis_streams_output", &self.kinesis_streams_output);
-        formatter.field("kinesis_firehose_output", &self.kinesis_firehose_output);
-        formatter.field("lambda_output", &self.lambda_output);
-        formatter.field("destination_schema", &self.destination_schema);
-        formatter.finish()
     }
 }
 /// See [`Output`](crate::model::Output).
@@ -13373,7 +12134,7 @@ impl Output {
 
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's output, identifies an Amazon Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaOutput {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function to write to.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
@@ -13387,13 +12148,6 @@ impl LambdaOutput {
     /// </note>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaOutput`](crate::model::LambdaOutput).
@@ -13436,7 +12190,7 @@ impl LambdaOutput {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, when configuring application output, identifies a Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) of the delivery stream. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseOutput {
     /// <p>The ARN of the destination delivery stream to write to.</p>
     #[doc(hidden)]
@@ -13446,13 +12200,6 @@ impl KinesisFirehoseOutput {
     /// <p>The ARN of the destination delivery stream to write to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisFirehoseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisFirehoseOutput`](crate::model::KinesisFirehoseOutput).
@@ -13491,7 +12238,7 @@ impl KinesisFirehoseOutput {
 
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsOutput {
     /// <p>The ARN of the destination Kinesis data stream to write to.</p>
     #[doc(hidden)]
@@ -13501,13 +12248,6 @@ impl KinesisStreamsOutput {
     /// <p>The ARN of the destination Kinesis data stream to write to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamsOutput`](crate::model::KinesisStreamsOutput).
@@ -13546,7 +12286,7 @@ impl KinesisStreamsOutput {
 
 /// <p>When you configure the application input for a SQL-based Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Input {
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on. </p>
     #[doc(hidden)]
@@ -13598,21 +12338,6 @@ impl Input {
     /// <p>Also used to describe the format of the reference data source.</p>
     pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
         self.input_schema.as_ref()
-    }
-}
-impl std::fmt::Debug for Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Input");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field(
-            "input_processing_configuration",
-            &self.input_processing_configuration,
-        );
-        formatter.field("kinesis_streams_input", &self.kinesis_streams_input);
-        formatter.field("kinesis_firehose_input", &self.kinesis_firehose_input);
-        formatter.field("input_parallelism", &self.input_parallelism);
-        formatter.field("input_schema", &self.input_schema);
-        formatter.finish()
     }
 }
 /// See [`Input`](crate::model::Input).
@@ -13732,7 +12457,7 @@ impl Input {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseInput {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     #[doc(hidden)]
@@ -13742,13 +12467,6 @@ impl KinesisFirehoseInput {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisFirehoseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisFirehoseInput`](crate::model::KinesisFirehoseInput).
@@ -13787,7 +12505,7 @@ impl KinesisFirehoseInput {
 
 /// <p> Identifies a Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsInput {
     /// <p>The ARN of the input Kinesis data stream to read.</p>
     #[doc(hidden)]
@@ -13797,13 +12515,6 @@ impl KinesisStreamsInput {
     /// <p>The ARN of the input Kinesis data stream to read.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamsInput`](crate::model::KinesisStreamsInput).

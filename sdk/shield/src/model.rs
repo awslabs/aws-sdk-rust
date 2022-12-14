@@ -2,7 +2,7 @@
 
 /// <p>Provides information about a particular parameter passed inside a request that resulted in an exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the parameter that failed validation.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The message describing why the parameter failed validation.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -572,7 +564,7 @@ impl AsRef<str> for ProtectionGroupAggregation {
 
 /// <p>Contact information that the SRT can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmergencyContact {
     /// <p>The email address for the contact.</p>
     #[doc(hidden)]
@@ -596,15 +588,6 @@ impl EmergencyContact {
     /// <p>Additional notes regarding the contact. </p>
     pub fn contact_notes(&self) -> std::option::Option<&str> {
         self.contact_notes.as_deref()
-    }
-}
-impl std::fmt::Debug for EmergencyContact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmergencyContact");
-        formatter.field("email_address", &self.email_address);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("contact_notes", &self.contact_notes);
-        formatter.finish()
     }
 }
 /// See [`EmergencyContact`](crate::model::EmergencyContact).
@@ -673,7 +656,7 @@ impl EmergencyContact {
 
 /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseAction {
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
@@ -694,14 +677,6 @@ impl ResponseAction {
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
     pub fn count(&self) -> std::option::Option<&crate::model::CountAction> {
         self.count.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseAction");
-        formatter.field("block", &self.block);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`ResponseAction`](crate::model::ResponseAction).
@@ -758,14 +733,8 @@ impl ResponseAction {
 /// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
 /// <p>JSON specification: <code>"Count": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountAction {}
-impl std::fmt::Debug for CountAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountAction");
-        formatter.finish()
-    }
-}
 /// See [`CountAction`](crate::model::CountAction).
 pub mod count_action {
 
@@ -790,14 +759,8 @@ impl CountAction {
 /// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
 /// <p>JSON specification: <code>"Block": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockAction {}
-impl std::fmt::Debug for BlockAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockAction");
-        formatter.finish()
-    }
-}
 /// See [`BlockAction`](crate::model::BlockAction).
 pub mod block_action {
 
@@ -820,7 +783,7 @@ impl BlockAction {
 
 /// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
@@ -837,14 +800,6 @@ impl Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -895,7 +850,7 @@ impl Tag {
 
 /// <p>An object that represents a resource that is under DDoS protection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Protection {
     /// <p>The unique identifier (ID) of the protection.</p>
     #[doc(hidden)]
@@ -944,21 +899,6 @@ impl Protection {
     ) -> std::option::Option<&crate::model::ApplicationLayerAutomaticResponseConfiguration> {
         self.application_layer_automatic_response_configuration
             .as_ref()
-    }
-}
-impl std::fmt::Debug for Protection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Protection");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("health_check_ids", &self.health_check_ids);
-        formatter.field("protection_arn", &self.protection_arn);
-        formatter.field(
-            "application_layer_automatic_response_configuration",
-            &self.application_layer_automatic_response_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`Protection`](crate::model::Protection).
@@ -1079,7 +1019,7 @@ impl Protection {
 
 /// <p>The automatic application layer DDoS mitigation settings for a <code>Protection</code>. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationLayerAutomaticResponseConfiguration {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
     #[doc(hidden)]
@@ -1098,14 +1038,6 @@ impl ApplicationLayerAutomaticResponseConfiguration {
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::ResponseAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationLayerAutomaticResponseConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationLayerAutomaticResponseConfiguration");
-        formatter.field("status", &self.status);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
@@ -1258,7 +1190,7 @@ impl AsRef<str> for ApplicationLayerAutomaticResponseStatus {
 
 /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InclusionProtectionFilters {
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
     #[doc(hidden)]
@@ -1282,15 +1214,6 @@ impl InclusionProtectionFilters {
     /// <p>The type of protected resource whose protections you want to retrieve. </p>
     pub fn resource_types(&self) -> std::option::Option<&[crate::model::ProtectedResourceType]> {
         self.resource_types.as_deref()
-    }
-}
-impl std::fmt::Debug for InclusionProtectionFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InclusionProtectionFilters");
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("protection_names", &self.protection_names);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.finish()
     }
 }
 /// See [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
@@ -1381,7 +1304,7 @@ impl InclusionProtectionFilters {
 
 /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectionGroup {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     #[doc(hidden)]
@@ -1436,18 +1359,6 @@ impl ProtectionGroup {
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
     pub fn protection_group_arn(&self) -> std::option::Option<&str> {
         self.protection_group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ProtectionGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectionGroup");
-        formatter.field("protection_group_id", &self.protection_group_id);
-        formatter.field("aggregation", &self.aggregation);
-        formatter.field("pattern", &self.pattern);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("members", &self.members);
-        formatter.field("protection_group_arn", &self.protection_group_arn);
-        formatter.finish()
     }
 }
 /// See [`ProtectionGroup`](crate::model::ProtectionGroup).
@@ -1580,7 +1491,7 @@ impl ProtectionGroup {
 
 /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with a specific pattern, aggregation, or resource type. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InclusionProtectionGroupFilters {
     /// <p>The ID of the protection group that you want to retrieve. </p>
     #[doc(hidden)]
@@ -1611,16 +1522,6 @@ impl InclusionProtectionGroupFilters {
     /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
     pub fn aggregations(&self) -> std::option::Option<&[crate::model::ProtectionGroupAggregation]> {
         self.aggregations.as_deref()
-    }
-}
-impl std::fmt::Debug for InclusionProtectionGroupFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InclusionProtectionGroupFilters");
-        formatter.field("protection_group_ids", &self.protection_group_ids);
-        formatter.field("patterns", &self.patterns);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("aggregations", &self.aggregations);
-        formatter.finish()
     }
 }
 /// See [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
@@ -1734,7 +1635,7 @@ impl InclusionProtectionGroupFilters {
 
 /// <p>Summarizes all DDoS attacks for a specified time period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttackSummary {
     /// <p>The unique identifier (ID) of the attack.</p>
     #[doc(hidden)]
@@ -1772,17 +1673,6 @@ impl AttackSummary {
     /// <p>The list of attacks for a specified time period.</p>
     pub fn attack_vectors(&self) -> std::option::Option<&[crate::model::AttackVectorDescription]> {
         self.attack_vectors.as_deref()
-    }
-}
-impl std::fmt::Debug for AttackSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttackSummary");
-        formatter.field("attack_id", &self.attack_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("attack_vectors", &self.attack_vectors);
-        formatter.finish()
     }
 }
 /// See [`AttackSummary`](crate::model::AttackSummary).
@@ -1885,7 +1775,7 @@ impl AttackSummary {
 
 /// <p>Describes the attack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttackVectorDescription {
     /// <p>The attack type. Valid values:</p>
     /// <ul>
@@ -1935,13 +1825,6 @@ impl AttackVectorDescription {
     /// </ul>
     pub fn vector_type(&self) -> std::option::Option<&str> {
         self.vector_type.as_deref()
-    }
-}
-impl std::fmt::Debug for AttackVectorDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttackVectorDescription");
-        formatter.field("vector_type", &self.vector_type);
-        formatter.finish()
     }
 }
 /// See [`AttackVectorDescription`](crate::model::AttackVectorDescription).
@@ -2020,7 +1903,7 @@ impl AttackVectorDescription {
 
 /// <p>The time range. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>The start time, in Unix time in seconds. </p>
     #[doc(hidden)]
@@ -2037,14 +1920,6 @@ impl TimeRange {
     /// <p>The end time, in Unix time in seconds. </p>
     pub fn to_exclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_exclusive.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeRange");
-        formatter.field("from_inclusive", &self.from_inclusive);
-        formatter.field("to_exclusive", &self.to_exclusive);
-        formatter.finish()
     }
 }
 /// See [`TimeRange`](crate::model::TimeRange).
@@ -2193,7 +2068,7 @@ impl AsRef<str> for SubscriptionState {
 
 /// <p>Information about the Shield Advanced subscription for an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The start time of the subscription, in Unix time in seconds. </p>
     #[doc(hidden)]
@@ -2260,26 +2135,6 @@ impl Subscription {
     /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
     pub fn subscription_arn(&self) -> std::option::Option<&str> {
         self.subscription_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Subscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subscription");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field(
-            "time_commitment_in_seconds",
-            &self.time_commitment_in_seconds,
-        );
-        formatter.field("auto_renew", &self.auto_renew);
-        formatter.field("limits", &self.limits);
-        formatter.field(
-            "proactive_engagement_status",
-            &self.proactive_engagement_status,
-        );
-        formatter.field("subscription_limits", &self.subscription_limits);
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.finish()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
@@ -2439,7 +2294,7 @@ impl Subscription {
 
 /// <p>Limits settings for your subscription. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionLimits {
     /// <p>Limits settings on protections for your subscription. </p>
     #[doc(hidden)]
@@ -2458,14 +2313,6 @@ impl SubscriptionLimits {
         &self,
     ) -> std::option::Option<&crate::model::ProtectionGroupLimits> {
         self.protection_group_limits.as_ref()
-    }
-}
-impl std::fmt::Debug for SubscriptionLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionLimits");
-        formatter.field("protection_limits", &self.protection_limits);
-        formatter.field("protection_group_limits", &self.protection_group_limits);
-        formatter.finish()
     }
 }
 /// See [`SubscriptionLimits`](crate::model::SubscriptionLimits).
@@ -2526,7 +2373,7 @@ impl SubscriptionLimits {
 
 /// <p>Limits settings on protection groups for your subscription. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectionGroupLimits {
     /// <p>The maximum number of protection groups that you can have at one time. </p>
     #[doc(hidden)]
@@ -2545,14 +2392,6 @@ impl ProtectionGroupLimits {
         &self,
     ) -> std::option::Option<&crate::model::ProtectionGroupPatternTypeLimits> {
         self.pattern_type_limits.as_ref()
-    }
-}
-impl std::fmt::Debug for ProtectionGroupLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectionGroupLimits");
-        formatter.field("max_protection_groups", &self.max_protection_groups);
-        formatter.field("pattern_type_limits", &self.pattern_type_limits);
-        formatter.finish()
     }
 }
 /// See [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
@@ -2610,7 +2449,7 @@ impl ProtectionGroupLimits {
 
 /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectionGroupPatternTypeLimits {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
     #[doc(hidden)]
@@ -2623,13 +2462,6 @@ impl ProtectionGroupPatternTypeLimits {
         &self,
     ) -> std::option::Option<&crate::model::ProtectionGroupArbitraryPatternLimits> {
         self.arbitrary_pattern_limits.as_ref()
-    }
-}
-impl std::fmt::Debug for ProtectionGroupPatternTypeLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectionGroupPatternTypeLimits");
-        formatter.field("arbitrary_pattern_limits", &self.arbitrary_pattern_limits);
-        formatter.finish()
     }
 }
 /// See [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
@@ -2675,7 +2507,7 @@ impl ProtectionGroupPatternTypeLimits {
 
 /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectionGroupArbitraryPatternLimits {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
     #[doc(hidden)]
@@ -2685,13 +2517,6 @@ impl ProtectionGroupArbitraryPatternLimits {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
     pub fn max_members(&self) -> i64 {
         self.max_members
-    }
-}
-impl std::fmt::Debug for ProtectionGroupArbitraryPatternLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectionGroupArbitraryPatternLimits");
-        formatter.field("max_members", &self.max_members);
-        formatter.finish()
     }
 }
 /// See [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
@@ -2730,7 +2555,7 @@ impl ProtectionGroupArbitraryPatternLimits {
 
 /// <p>Limits settings on protections for your subscription. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
     #[doc(hidden)]
@@ -2740,16 +2565,6 @@ impl ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
     pub fn protected_resource_type_limits(&self) -> std::option::Option<&[crate::model::Limit]> {
         self.protected_resource_type_limits.as_deref()
-    }
-}
-impl std::fmt::Debug for ProtectionLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtectionLimits");
-        formatter.field(
-            "protected_resource_type_limits",
-            &self.protected_resource_type_limits,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProtectionLimits`](crate::model::ProtectionLimits).
@@ -2798,7 +2613,7 @@ impl ProtectionLimits {
 
 /// <p>Specifies how many protections of a given type you can create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Limit {
     /// <p>The type of protection.</p>
     #[doc(hidden)]
@@ -2815,14 +2630,6 @@ impl Limit {
     /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
     pub fn max(&self) -> i64 {
         self.max
-    }
-}
-impl std::fmt::Debug for Limit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Limit");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`Limit`](crate::model::Limit).
@@ -2970,7 +2777,7 @@ impl AsRef<str> for ProactiveEngagementStatus {
 
 /// <p>A single attack statistics data record. This is returned by <code>DescribeAttackStatistics</code> along with a time range indicating the time period that the attack statistics apply to. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttackStatisticsDataItem {
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
     #[doc(hidden)]
@@ -2987,14 +2794,6 @@ impl AttackStatisticsDataItem {
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
     pub fn attack_count(&self) -> i64 {
         self.attack_count
-    }
-}
-impl std::fmt::Debug for AttackStatisticsDataItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttackStatisticsDataItem");
-        formatter.field("attack_volume", &self.attack_volume);
-        formatter.field("attack_count", &self.attack_count);
-        formatter.finish()
     }
 }
 /// See [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
@@ -3048,7 +2847,7 @@ impl AttackStatisticsDataItem {
 
 /// <p>Information about the volume of attacks during the time period, included in an <code>AttackStatisticsDataItem</code>. If the accompanying <code>AttackCount</code> in the statistics object is zero, this setting might be empty.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttackVolume {
     /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
     #[doc(hidden)]
@@ -3074,15 +2873,6 @@ impl AttackVolume {
         &self,
     ) -> std::option::Option<&crate::model::AttackVolumeStatistics> {
         self.requests_per_second.as_ref()
-    }
-}
-impl std::fmt::Debug for AttackVolume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttackVolume");
-        formatter.field("bits_per_second", &self.bits_per_second);
-        formatter.field("packets_per_second", &self.packets_per_second);
-        formatter.field("requests_per_second", &self.requests_per_second);
-        formatter.finish()
     }
 }
 /// See [`AttackVolume`](crate::model::AttackVolume).
@@ -3154,7 +2944,7 @@ impl AttackVolume {
 
 /// <p>Statistics objects for the various data types in <code>AttackVolume</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttackVolumeStatistics {
     /// <p>The maximum attack volume observed for the given unit.</p>
     #[doc(hidden)]
@@ -3164,13 +2954,6 @@ impl AttackVolumeStatistics {
     /// <p>The maximum attack volume observed for the given unit.</p>
     pub fn max(&self) -> f64 {
         self.max
-    }
-}
-impl std::fmt::Debug for AttackVolumeStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttackVolumeStatistics");
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
@@ -3209,7 +2992,7 @@ impl AttackVolumeStatistics {
 
 /// <p>The details of a DDoS attack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttackDetail {
     /// <p>The unique identifier (ID) of the attack.</p>
     #[doc(hidden)]
@@ -3270,20 +3053,6 @@ impl AttackDetail {
     /// <p>List of mitigation actions taken for the attack.</p>
     pub fn mitigations(&self) -> std::option::Option<&[crate::model::Mitigation]> {
         self.mitigations.as_deref()
-    }
-}
-impl std::fmt::Debug for AttackDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttackDetail");
-        formatter.field("attack_id", &self.attack_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("sub_resources", &self.sub_resources);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("attack_counters", &self.attack_counters);
-        formatter.field("attack_properties", &self.attack_properties);
-        formatter.field("mitigations", &self.mitigations);
-        formatter.finish()
     }
 }
 /// See [`AttackDetail`](crate::model::AttackDetail).
@@ -3453,7 +3222,7 @@ impl AttackDetail {
 
 /// <p>The mitigation applied to a DDoS attack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Mitigation {
     /// <p>The name of the mitigation taken for this attack.</p>
     #[doc(hidden)]
@@ -3463,13 +3232,6 @@ impl Mitigation {
     /// <p>The name of the mitigation taken for this attack.</p>
     pub fn mitigation_name(&self) -> std::option::Option<&str> {
         self.mitigation_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Mitigation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Mitigation");
-        formatter.field("mitigation_name", &self.mitigation_name);
-        formatter.finish()
     }
 }
 /// See [`Mitigation`](crate::model::Mitigation).
@@ -3511,7 +3273,7 @@ impl Mitigation {
 
 /// <p>Details of a Shield event. This is provided as part of an <code>AttackDetail</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttackProperty {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
@@ -3553,20 +3315,6 @@ impl AttackProperty {
     /// <p>The total contributions made to this Shield event by all contributors.</p>
     pub fn total(&self) -> i64 {
         self.total
-    }
-}
-impl std::fmt::Debug for AttackProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttackProperty");
-        formatter.field("attack_layer", &self.attack_layer);
-        formatter.field(
-            "attack_property_identifier",
-            &self.attack_property_identifier,
-        );
-        formatter.field("top_contributors", &self.top_contributors);
-        formatter.field("unit", &self.unit);
-        formatter.field("total", &self.total);
-        formatter.finish()
     }
 }
 /// See [`AttackProperty`](crate::model::AttackProperty).
@@ -3774,7 +3522,7 @@ impl AsRef<str> for Unit {
 
 /// <p>A contributor to the attack and their contribution. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Contributor {
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
     #[doc(hidden)]
@@ -3791,14 +3539,6 @@ impl Contributor {
     /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
     pub fn value(&self) -> i64 {
         self.value
-    }
-}
-impl std::fmt::Debug for Contributor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Contributor");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Contributor`](crate::model::Contributor).
@@ -4070,7 +3810,7 @@ impl AsRef<str> for AttackLayer {
 
 /// <p>The counter that describes a DDoS attack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SummarizedCounter {
     /// <p>The counter name.</p>
     #[doc(hidden)]
@@ -4115,18 +3855,6 @@ impl SummarizedCounter {
     /// <p>The unit of the counters.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for SummarizedCounter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SummarizedCounter");
-        formatter.field("name", &self.name);
-        formatter.field("max", &self.max);
-        formatter.field("average", &self.average);
-        formatter.field("sum", &self.sum);
-        formatter.field("n", &self.n);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`SummarizedCounter`](crate::model::SummarizedCounter).
@@ -4225,7 +3953,7 @@ impl SummarizedCounter {
 
 /// <p>The attack information for the specified SubResource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubResourceSummary {
     /// <p>The <code>SubResource</code> type.</p>
     #[doc(hidden)]
@@ -4256,16 +3984,6 @@ impl SubResourceSummary {
     /// <p>The counters that describe the details of the attack.</p>
     pub fn counters(&self) -> std::option::Option<&[crate::model::SummarizedCounter]> {
         self.counters.as_deref()
-    }
-}
-impl std::fmt::Debug for SubResourceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubResourceSummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.field("attack_vectors", &self.attack_vectors);
-        formatter.field("counters", &self.counters);
-        formatter.finish()
     }
 }
 /// See [`SubResourceSummary`](crate::model::SubResourceSummary).
@@ -4362,7 +4080,7 @@ impl SubResourceSummary {
 
 /// <p>A summary of information about the attack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SummarizedAttackVector {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
     #[doc(hidden)]
@@ -4379,14 +4097,6 @@ impl SummarizedAttackVector {
     /// <p>The list of counters that describe the details of the attack.</p>
     pub fn vector_counters(&self) -> std::option::Option<&[crate::model::SummarizedCounter]> {
         self.vector_counters.as_deref()
-    }
-}
-impl std::fmt::Debug for SummarizedAttackVector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SummarizedAttackVector");
-        formatter.field("vector_type", &self.vector_type);
-        formatter.field("vector_counters", &self.vector_counters);
-        formatter.finish()
     }
 }
 /// See [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).

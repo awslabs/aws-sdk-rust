@@ -11054,7 +11054,7 @@ impl UpdateVirtualInterfaceAttributesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
     #[doc(hidden)]
@@ -11087,20 +11087,10 @@ impl UpdateVirtualInterfaceAttributesInput {
         self.virtual_interface_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVirtualInterfaceAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVirtualInterfaceAttributesInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("enable_site_link", &self.enable_site_link);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLagInput {
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
@@ -11135,20 +11125,10 @@ impl UpdateLagInput {
         self.encryption_mode.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLagInput");
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("lag_name", &self.lag_name);
-        formatter.field("minimum_links", &self.minimum_links);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
@@ -11182,25 +11162,10 @@ impl UpdateDirectConnectGatewayAssociationInput {
             .as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDirectConnectGatewayAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDirectConnectGatewayAssociationInput");
-        formatter.field("association_id", &self.association_id);
-        formatter.field(
-            "add_allowed_prefixes_to_direct_connect_gateway",
-            &self.add_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.field(
-            "remove_allowed_prefixes_to_direct_connect_gateway",
-            &self.remove_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway to update.</p>
     #[doc(hidden)]
@@ -11219,21 +11184,10 @@ impl UpdateDirectConnectGatewayInput {
         self.new_direct_connect_gateway_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDirectConnectGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDirectConnectGatewayInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field(
-            "new_direct_connect_gateway_name",
-            &self.new_direct_connect_gateway_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionInput {
     /// <p>The ID of the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
@@ -11263,19 +11217,10 @@ impl UpdateConnectionInput {
         self.encryption_mode.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -11294,18 +11239,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -11324,18 +11261,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopBgpFailoverTestInput {
     /// <p>The ID of the virtual interface you no longer want to test.</p>
     #[doc(hidden)]
@@ -11347,17 +11276,10 @@ impl StopBgpFailoverTestInput {
         self.virtual_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopBgpFailoverTestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopBgpFailoverTestInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBgpFailoverTestInput {
     /// <p>The ID of the virtual interface you want to test.</p>
     #[doc(hidden)]
@@ -11387,19 +11309,10 @@ impl StartBgpFailoverTestInput {
         self.test_duration_in_minutes
     }
 }
-impl std::fmt::Debug for StartBgpFailoverTestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartBgpFailoverTestInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("test_duration_in_minutes", &self.test_duration_in_minutes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualInterfaceTestHistoryInput {
     /// <p>The ID of the virtual interface failover test.</p>
     #[doc(hidden)]
@@ -11448,22 +11361,10 @@ impl ListVirtualInterfaceTestHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualInterfaceTestHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualInterfaceTestHistoryInput");
-        formatter.field("test_id", &self.test_id);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("status", &self.status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
@@ -11486,18 +11387,10 @@ impl DisassociateMacSecKeyInput {
         self.secret_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMacSecKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMacSecKeyInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateConnectionFromLagInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -11516,18 +11409,10 @@ impl DisassociateConnectionFromLagInput {
         self.lag_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateConnectionFromLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateConnectionFromLagInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -11546,29 +11431,15 @@ impl DescribeVirtualInterfacesInput {
         self.virtual_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualInterfacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualInterfacesInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysInput {}
-impl std::fmt::Debug for DescribeVirtualGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualGatewaysInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     #[doc(hidden)]
@@ -11580,17 +11451,10 @@ impl DescribeTagsInput {
         self.resource_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsInput");
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides the details about a virtual interface's router.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRouterConfigurationInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -11609,29 +11473,15 @@ impl DescribeRouterConfigurationInput {
         self.router_type_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRouterConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRouterConfigurationInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("router_type_identifier", &self.router_type_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationsInput {}
-impl std::fmt::Debug for DescribeLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoaInput {
     /// <p>The ID of a connection, LAG, or interconnect.</p>
     #[doc(hidden)]
@@ -11657,19 +11507,10 @@ impl DescribeLoaInput {
         self.loa_content_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeLoaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoaInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("loa_content_type", &self.loa_content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLagsInput {
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
@@ -11681,17 +11522,10 @@ impl DescribeLagsInput {
         self.lag_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLagsInput");
-        formatter.field("lag_id", &self.lag_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInterconnectsInput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -11703,17 +11537,10 @@ impl DescribeInterconnectsInput {
         self.interconnect_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInterconnectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInterconnectsInput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInterconnectLoaInput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -11739,19 +11566,10 @@ impl DescribeInterconnectLoaInput {
         self.loa_content_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeInterconnectLoaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInterconnectLoaInput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("loa_content_type", &self.loa_content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHostedConnectionsInput {
     /// <p>The ID of the interconnect or LAG.</p>
     #[doc(hidden)]
@@ -11763,17 +11581,10 @@ impl DescribeHostedConnectionsInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHostedConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHostedConnectionsInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewaysInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -11801,19 +11612,10 @@ impl DescribeDirectConnectGatewaysInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewaysInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAttachmentsInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -11848,20 +11650,10 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAttachmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAttachmentsInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationsInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
@@ -11910,22 +11702,10 @@ impl DescribeDirectConnectGatewayAssociationsInput {
         self.virtual_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAssociationsInput");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("associated_gateway_id", &self.associated_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -11967,32 +11747,15 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationProposalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAssociationProposalsInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field("associated_gateway_id", &self.associated_gateway_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomerMetadataInput {}
-impl std::fmt::Debug for DescribeCustomerMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomerMetadataInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionsOnInterconnectInput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -12004,17 +11767,10 @@ impl DescribeConnectionsOnInterconnectInput {
         self.interconnect_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionsOnInterconnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionsOnInterconnectInput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionsInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12026,17 +11782,10 @@ impl DescribeConnectionsInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionsInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionLoaInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12062,19 +11811,10 @@ impl DescribeConnectionLoaInput {
         self.loa_content_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionLoaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionLoaInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("loa_content_type", &self.loa_content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12086,17 +11826,10 @@ impl DeleteVirtualInterfaceInput {
         self.virtual_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLagInput {
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
@@ -12108,17 +11841,10 @@ impl DeleteLagInput {
         self.lag_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLagInput");
-        formatter.field("lag_id", &self.lag_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInterconnectInput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -12130,17 +11856,10 @@ impl DeleteInterconnectInput {
         self.interconnect_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInterconnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInterconnectInput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the proposal.</p>
     #[doc(hidden)]
@@ -12152,17 +11871,10 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
         self.proposal_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayAssociationProposalInput");
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
@@ -12188,19 +11900,10 @@ impl DeleteDirectConnectGatewayAssociationInput {
         self.virtual_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayAssociationInput");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -12212,17 +11915,10 @@ impl DeleteDirectConnectGatewayInput {
         self.direct_connect_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12234,17 +11930,10 @@ impl DeleteConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12277,20 +11966,10 @@ impl DeleteBgpPeerInput {
         self.bgp_peer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBgpPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBgpPeerInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("asn", &self.asn);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("bgp_peer_id", &self.bgp_peer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTransitVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12312,21 +11991,10 @@ impl CreateTransitVirtualInterfaceInput {
         self.new_transit_virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTransitVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTransitVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field(
-            "new_transit_virtual_interface",
-            &self.new_transit_virtual_interface,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12347,21 +12015,10 @@ impl CreatePublicVirtualInterfaceInput {
         self.new_public_virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePublicVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePublicVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field(
-            "new_public_virtual_interface",
-            &self.new_public_virtual_interface,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12383,21 +12040,10 @@ impl CreatePrivateVirtualInterfaceInput {
         self.new_private_virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePrivateVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePrivateVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field(
-            "new_private_virtual_interface",
-            &self.new_private_virtual_interface,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLagInput {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
     #[doc(hidden)]
@@ -12469,25 +12115,10 @@ impl CreateLagInput {
         self.request_mac_sec
     }
 }
-impl std::fmt::Debug for CreateLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLagInput");
-        formatter.field("number_of_connections", &self.number_of_connections);
-        formatter.field("location", &self.location);
-        formatter.field("connections_bandwidth", &self.connections_bandwidth);
-        formatter.field("lag_name", &self.lag_name);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("child_connection_tags", &self.child_connection_tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("request_mac_sec", &self.request_mac_sec);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInterconnectInput {
     /// <p>The name of the interconnect.</p>
     #[doc(hidden)]
@@ -12534,22 +12165,10 @@ impl CreateInterconnectInput {
         self.provider_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInterconnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInterconnectInput");
-        formatter.field("interconnect_name", &self.interconnect_name);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("location", &self.location);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -12597,30 +12216,10 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
             .as_deref()
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayAssociationProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayAssociationProposalInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field(
-            "direct_connect_gateway_owner_account",
-            &self.direct_connect_gateway_owner_account,
-        );
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field(
-            "add_allowed_prefixes_to_direct_connect_gateway",
-            &self.add_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.field(
-            "remove_allowed_prefixes_to_direct_connect_gateway",
-            &self.remove_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -12661,23 +12260,10 @@ impl CreateDirectConnectGatewayAssociationInput {
         self.virtual_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayAssociationInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field(
-            "add_allowed_prefixes_to_direct_connect_gateway",
-            &self.add_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayInput {
     /// <p>The name of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -12696,21 +12282,10 @@ impl CreateDirectConnectGatewayInput {
         self.amazon_side_asn
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayInput");
-        formatter.field(
-            "direct_connect_gateway_name",
-            &self.direct_connect_gateway_name,
-        );
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The location of the connection.</p>
     #[doc(hidden)]
@@ -12766,23 +12341,10 @@ impl CreateConnectionInput {
         self.request_mac_sec
     }
 }
-impl std::fmt::Debug for CreateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionInput");
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("request_mac_sec", &self.request_mac_sec);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12801,18 +12363,10 @@ impl CreateBgpPeerInput {
         self.new_bgp_peer.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBgpPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBgpPeerInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("new_bgp_peer", &self.new_bgp_peer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmTransitVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12831,18 +12385,10 @@ impl ConfirmTransitVirtualInterfaceInput {
         self.direct_connect_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmTransitVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmTransitVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmPublicVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12854,17 +12400,10 @@ impl ConfirmPublicVirtualInterfaceInput {
         self.virtual_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmPublicVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmPublicVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmPrivateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12890,19 +12429,10 @@ impl ConfirmPrivateVirtualInterfaceInput {
         self.direct_connect_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmPrivateVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmPrivateVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementInput {
     /// <p> The name of the customer agreement. </p>
     #[doc(hidden)]
@@ -12914,17 +12444,10 @@ impl ConfirmCustomerAgreementInput {
         self.agreement_name.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmCustomerAgreementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmCustomerAgreementInput");
-        formatter.field("agreement_name", &self.agreement_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmConnectionInput {
     /// <p>The ID of the hosted connection.</p>
     #[doc(hidden)]
@@ -12936,17 +12459,10 @@ impl ConfirmConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12965,18 +12481,10 @@ impl AssociateVirtualInterfaceInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
@@ -13027,20 +12535,10 @@ impl AssociateMacSecKeyInput {
         self.cak.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateMacSecKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMacSecKeyInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("ckn", &self.ckn);
-        formatter.field("cak", &self.cak);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateHostedConnectionInput {
     /// <p>The ID of the hosted connection.</p>
     #[doc(hidden)]
@@ -13059,18 +12557,10 @@ impl AssociateHostedConnectionInput {
         self.parent_connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateHostedConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateHostedConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("parent_connection_id", &self.parent_connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateConnectionWithLagInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -13089,18 +12579,10 @@ impl AssociateConnectionWithLagInput {
         self.lag_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateConnectionWithLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateConnectionWithLagInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateTransitVirtualInterfaceInput {
     /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
     #[doc(hidden)]
@@ -13129,22 +12611,10 @@ impl AllocateTransitVirtualInterfaceInput {
         self.new_transit_virtual_interface_allocation.as_ref()
     }
 }
-impl std::fmt::Debug for AllocateTransitVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateTransitVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "new_transit_virtual_interface_allocation",
-            &self.new_transit_virtual_interface_allocation,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
     #[doc(hidden)]
@@ -13173,22 +12643,10 @@ impl AllocatePublicVirtualInterfaceInput {
         self.new_public_virtual_interface_allocation.as_ref()
     }
 }
-impl std::fmt::Debug for AllocatePublicVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocatePublicVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "new_public_virtual_interface_allocation",
-            &self.new_public_virtual_interface_allocation,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocatePrivateVirtualInterfaceInput {
     /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
     #[doc(hidden)]
@@ -13217,22 +12675,10 @@ impl AllocatePrivateVirtualInterfaceInput {
         self.new_private_virtual_interface_allocation.as_ref()
     }
 }
-impl std::fmt::Debug for AllocatePrivateVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocatePrivateVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "new_private_virtual_interface_allocation",
-            &self.new_private_virtual_interface_allocation,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateHostedConnectionInput {
     /// <p>The ID of the interconnect or LAG.</p>
     #[doc(hidden)]
@@ -13279,22 +12725,10 @@ impl AllocateHostedConnectionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for AllocateHostedConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateHostedConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateConnectionOnInterconnectInput {
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     #[doc(hidden)]
@@ -13334,21 +12768,10 @@ impl AllocateConnectionOnInterconnectInput {
         self.vlan
     }
 }
-impl std::fmt::Debug for AllocateConnectionOnInterconnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateConnectionOnInterconnectInput");
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.field("vlan", &self.vlan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -13385,21 +12808,5 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
     ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
         self.override_allowed_prefixes_to_direct_connect_gateway
             .as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptDirectConnectGatewayAssociationProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptDirectConnectGatewayAssociationProposalInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field(
-            "associated_gateway_owner_account",
-            &self.associated_gateway_owner_account,
-        );
-        formatter.field(
-            "override_allowed_prefixes_to_direct_connect_gateway",
-            &self.override_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.finish()
     }
 }

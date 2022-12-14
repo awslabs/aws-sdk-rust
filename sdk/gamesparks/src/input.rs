@@ -6462,7 +6462,7 @@ impl UpdateStageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStageInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6495,20 +6495,10 @@ impl UpdateStageInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStageInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("role", &self.role);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSnapshotInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6534,19 +6524,10 @@ impl UpdateSnapshotInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSnapshotInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameConfigurationInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6565,18 +6546,10 @@ impl UpdateGameConfigurationInput {
         self.modifications.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGameConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameConfigurationInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("modifications", &self.modifications);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6595,18 +6568,10 @@ impl UpdateGameInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     #[doc(hidden)]
@@ -6625,18 +6590,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add the tags to.</p>
     #[doc(hidden)]
@@ -6659,18 +6616,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStageDeploymentInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6703,20 +6652,10 @@ impl StartStageDeploymentInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartStageDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartStageDeploymentInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6742,19 +6681,10 @@ impl StartGeneratedCodeJobInput {
         self.generator.as_ref()
     }
 }
-impl std::fmt::Debug for StartGeneratedCodeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartGeneratedCodeJobInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("generator", &self.generator);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the GameSparks resource.</p>
     #[doc(hidden)]
@@ -6766,17 +6696,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStagesInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6806,19 +6729,10 @@ impl ListStagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListStagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStagesInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStageDeploymentsInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6855,20 +6769,10 @@ impl ListStageDeploymentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListStageDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStageDeploymentsInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSnapshotsInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6898,19 +6802,10 @@ impl ListSnapshotsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSnapshotsInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeneratedCodeJobsInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6947,20 +6842,10 @@ impl ListGeneratedCodeJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGeneratedCodeJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeneratedCodeJobsInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGamesInput {
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
@@ -6983,18 +6868,10 @@ impl ListGamesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGamesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExtensionVersionsInput {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
@@ -7031,20 +6908,10 @@ impl ListExtensionVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListExtensionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExtensionVersionsInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExtensionsInput {
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
@@ -7067,18 +6934,10 @@ impl ListExtensionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListExtensionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExtensionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportGameConfigurationInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7099,18 +6958,10 @@ impl ImportGameConfigurationInput {
         self.import_source.as_ref()
     }
 }
-impl std::fmt::Debug for ImportGameConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportGameConfigurationInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("import_source", &self.import_source);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageDeploymentInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7136,19 +6987,10 @@ impl GetStageDeploymentInput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStageDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStageDeploymentInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7167,18 +7009,10 @@ impl GetStageInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStageInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSnapshotInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7204,19 +7038,10 @@ impl GetSnapshotInput {
         self.sections.as_deref()
     }
 }
-impl std::fmt::Debug for GetSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSnapshotInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("sections", &self.sections);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPlayerConnectionStatusInput {
     /// <p>The unique identifier representing a player.</p>
     #[doc(hidden)]
@@ -7242,19 +7067,10 @@ impl GetPlayerConnectionStatusInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPlayerConnectionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPlayerConnectionStatusInput");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7280,19 +7096,10 @@ impl GetGeneratedCodeJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGeneratedCodeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGeneratedCodeJobInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGameConfigurationInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7311,18 +7118,10 @@ impl GetGameConfigurationInput {
         self.sections.as_deref()
     }
 }
-impl std::fmt::Debug for GetGameConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGameConfigurationInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("sections", &self.sections);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGameInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7334,17 +7133,10 @@ impl GetGameInput {
         self.game_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetGameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGameInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExtensionVersionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
@@ -7370,19 +7162,10 @@ impl GetExtensionVersionInput {
         self.extension_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetExtensionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExtensionVersionInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.field("extension_version", &self.extension_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExtensionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
@@ -7401,18 +7184,10 @@ impl GetExtensionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetExtensionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExtensionInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSnapshotInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7431,18 +7206,10 @@ impl ExportSnapshotInput {
         self.snapshot_id.as_deref()
     }
 }
-impl std::fmt::Debug for ExportSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSnapshotInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectPlayerInput {
     /// <p>The unique identifier representing a player.</p>
     #[doc(hidden)]
@@ -7468,19 +7235,10 @@ impl DisconnectPlayerInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisconnectPlayerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisconnectPlayerInput");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStageInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7499,18 +7257,10 @@ impl DeleteStageInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStageInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGameInput {
     /// <p>The name of the game to delete.</p>
     #[doc(hidden)]
@@ -7522,17 +7272,10 @@ impl DeleteGameInput {
         self.game_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGameInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStageInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7583,22 +7326,10 @@ impl CreateStageInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStageInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("role", &self.role);
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7617,18 +7348,10 @@ impl CreateSnapshotInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGameInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7663,15 +7386,5 @@ impl CreateGameInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateGameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGameInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

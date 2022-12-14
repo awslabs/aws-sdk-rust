@@ -541,7 +541,7 @@ impl AsRef<str> for AccessDeniedExceptionReason {
 
 /// <p>Describes a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -558,14 +558,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -798,7 +790,7 @@ impl AsRef<str> for ChecksumAlgorithm {
 
 /// <p>A block of data in an Amazon Elastic Block Store snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Block {
     /// <p>The block index.</p>
     #[doc(hidden)]
@@ -815,14 +807,6 @@ impl Block {
     /// <p>The block token for the block index.</p>
     pub fn block_token(&self) -> std::option::Option<&str> {
         self.block_token.as_deref()
-    }
-}
-impl std::fmt::Debug for Block {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Block");
-        formatter.field("block_index", &self.block_index);
-        formatter.field("block_token", &self.block_token);
-        formatter.finish()
     }
 }
 /// See [`Block`](crate::model::Block).
@@ -912,7 +896,7 @@ impl std::fmt::Debug for ChangedBlock {
 pub mod changed_block {
 
     /// A builder for [`ChangedBlock`](crate::model::ChangedBlock).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) block_index: std::option::Option<i32>,
         pub(crate) first_block_token: std::option::Option<std::string::String>,
@@ -962,6 +946,15 @@ pub mod changed_block {
                 first_block_token: self.first_block_token,
                 second_block_token: self.second_block_token,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("block_index", &self.block_index);
+            formatter.field("first_block_token", &self.first_block_token);
+            formatter.field("second_block_token", &self.second_block_token);
+            formatter.finish()
         }
     }
 }

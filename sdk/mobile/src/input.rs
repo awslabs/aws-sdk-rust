@@ -1487,7 +1487,7 @@ impl UpdateProjectInput {
 
 /// <p> Request structure used for requests to update project configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
     #[doc(hidden)]
@@ -1506,18 +1506,10 @@ impl UpdateProjectInput {
         self.project_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectInput");
-        formatter.field("contents", &self.contents);
-        formatter.field("project_id", &self.project_id);
-        formatter.finish()
-    }
-}
 
 /// <p> Request structure used to request projects list in AWS Mobile Hub. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p> Maximum number of records to list in a single response. </p>
     #[doc(hidden)]
@@ -1536,18 +1528,10 @@ impl ListProjectsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Request structure to request all available bundles. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBundlesInput {
     /// <p> Maximum number of records to list in a single response. </p>
     #[doc(hidden)]
@@ -1566,18 +1550,10 @@ impl ListBundlesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBundlesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBundlesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Request structure used in requests to export project configuration details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportProjectInput {
     /// <p> Unique project identifier. </p>
     #[doc(hidden)]
@@ -1589,17 +1565,10 @@ impl ExportProjectInput {
         self.project_id.as_deref()
     }
 }
-impl std::fmt::Debug for ExportProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.finish()
-    }
-}
 
 /// <p> Request structure used to request generation of custom SDK and tool packages required to integrate mobile web or app clients with backed AWS resources. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportBundleInput {
     /// <p> Unique bundle identifier. </p>
     #[doc(hidden)]
@@ -1625,19 +1594,10 @@ impl ExportBundleInput {
         self.platform.as_ref()
     }
 }
-impl std::fmt::Debug for ExportBundleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportBundleInput");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("project_id", &self.project_id);
-        formatter.field("platform", &self.platform);
-        formatter.finish()
-    }
-}
 
 /// <p> Request structure used to request details about a project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p> Unique project identifier. </p>
     #[doc(hidden)]
@@ -1656,18 +1616,10 @@ impl DescribeProjectInput {
         self.sync_from_resources
     }
 }
-impl std::fmt::Debug for DescribeProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("sync_from_resources", &self.sync_from_resources);
-        formatter.finish()
-    }
-}
 
 /// <p> Request structure to request the details of a specific bundle. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBundleInput {
     /// <p> Unique bundle identifier. </p>
     #[doc(hidden)]
@@ -1679,17 +1631,10 @@ impl DescribeBundleInput {
         self.bundle_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBundleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBundleInput");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.finish()
-    }
-}
 
 /// <p> Request structure used to request a project be deleted. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p> Unique project identifier. </p>
     #[doc(hidden)]
@@ -1701,17 +1646,10 @@ impl DeleteProjectInput {
         self.project_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.finish()
-    }
-}
 
 /// <p> Request structure used to request a project be created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p> Name of the project. </p>
     #[doc(hidden)]
@@ -1742,15 +1680,5 @@ impl CreateProjectInput {
     /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("name", &self.name);
-        formatter.field("region", &self.region);
-        formatter.field("contents", &self.contents);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
     }
 }

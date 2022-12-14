@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_connector_input {
 
     /// A builder for [`CreateConnectorInput`](crate::input::CreateConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<crate::model::Capacity>,
         pub(crate) connector_configuration: std::option::Option<
@@ -221,6 +221,36 @@ pub mod create_connector_input {
                 service_execution_role_arn: self.service_execution_role_arn,
                 worker_configuration: self.worker_configuration,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("capacity", &self.capacity);
+            formatter.field(
+                "connector_configuration",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("connector_description", &self.connector_description);
+            formatter.field("connector_name", &self.connector_name);
+            formatter.field("kafka_cluster", &self.kafka_cluster);
+            formatter.field(
+                "kafka_cluster_client_authentication",
+                &self.kafka_cluster_client_authentication,
+            );
+            formatter.field(
+                "kafka_cluster_encryption_in_transit",
+                &self.kafka_cluster_encryption_in_transit,
+            );
+            formatter.field("kafka_connect_version", &self.kafka_connect_version);
+            formatter.field("log_delivery", &self.log_delivery);
+            formatter.field("plugins", &self.plugins);
+            formatter.field(
+                "service_execution_role_arn",
+                &self.service_execution_role_arn,
+            );
+            formatter.field("worker_configuration", &self.worker_configuration);
+            formatter.finish()
         }
     }
 }
@@ -522,7 +552,7 @@ impl CreateCustomPluginInput {
 pub mod create_worker_configuration_input {
 
     /// A builder for [`CreateWorkerConfigurationInput`](crate::input::CreateWorkerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -574,6 +604,18 @@ pub mod create_worker_configuration_input {
                 name: self.name,
                 properties_file_content: self.properties_file_content,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("description", &self.description);
+            formatter.field("name", &self.name);
+            formatter.field(
+                "properties_file_content",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
         }
     }
 }
@@ -2217,7 +2259,7 @@ impl UpdateConnectorInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectorInput {
     /// <p>The target capacity.</p>
     #[doc(hidden)]
@@ -2243,19 +2285,10 @@ impl UpdateConnectorInput {
         self.current_version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectorInput");
-        formatter.field("capacity", &self.capacity);
-        formatter.field("connector_arn", &self.connector_arn);
-        formatter.field("current_version", &self.current_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkerConfigurationsInput {
     /// <p>The maximum number of worker configurations to list in one response.</p>
     #[doc(hidden)]
@@ -2274,18 +2307,10 @@ impl ListWorkerConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkerConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkerConfigurationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomPluginsInput {
     /// <p>The maximum number of custom plugins to list in one response.</p>
     #[doc(hidden)]
@@ -2304,18 +2329,10 @@ impl ListCustomPluginsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCustomPluginsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomPluginsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectorsInput {
     /// <p>The name prefix that you want to use to search for and list connectors.</p>
     #[doc(hidden)]
@@ -2341,19 +2358,10 @@ impl ListConnectorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectorsInput");
-        formatter.field("connector_name_prefix", &self.connector_name_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkerConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
     #[doc(hidden)]
@@ -2365,17 +2373,10 @@ impl DescribeWorkerConfigurationInput {
         self.worker_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkerConfigurationInput");
-        formatter.field("worker_configuration_arn", &self.worker_configuration_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomPluginInput {
     /// <p>Returns information about a custom plugin.</p>
     #[doc(hidden)]
@@ -2387,17 +2388,10 @@ impl DescribeCustomPluginInput {
         self.custom_plugin_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCustomPluginInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomPluginInput");
-        formatter.field("custom_plugin_arn", &self.custom_plugin_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
     #[doc(hidden)]
@@ -2409,17 +2403,10 @@ impl DescribeConnectorInput {
         self.connector_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectorInput");
-        formatter.field("connector_arn", &self.connector_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomPluginInput {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
     #[doc(hidden)]
@@ -2431,17 +2418,10 @@ impl DeleteCustomPluginInput {
         self.custom_plugin_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomPluginInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomPluginInput");
-        formatter.field("custom_plugin_arn", &self.custom_plugin_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
     #[doc(hidden)]
@@ -2458,14 +2438,6 @@ impl DeleteConnectorInput {
     /// <p>The current version of the connector that you want to delete.</p>
     pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectorInput");
-        formatter.field("connector_arn", &self.connector_arn);
-        formatter.field("current_version", &self.current_version);
-        formatter.finish()
     }
 }
 
@@ -2512,7 +2484,7 @@ impl std::fmt::Debug for CreateWorkerConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomPluginInput {
     /// <p>The type of the plugin file.</p>
     #[doc(hidden)]
@@ -2543,16 +2515,6 @@ impl CreateCustomPluginInput {
     /// <p>The name of the custom plugin.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateCustomPluginInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomPluginInput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("description", &self.description);
-        formatter.field("location", &self.location);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 

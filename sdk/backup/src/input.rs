@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_backup_plan_input {
 
     /// A builder for [`CreateBackupPlanInput`](crate::input::CreateBackupPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) backup_plan: std::option::Option<crate::model::BackupPlanInput>,
         pub(crate) backup_plan_tags: std::option::Option<
@@ -79,6 +79,15 @@ pub mod create_backup_plan_input {
                 backup_plan_tags: self.backup_plan_tags,
                 creator_request_id: self.creator_request_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("backup_plan", &self.backup_plan);
+            formatter.field("backup_plan_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("creator_request_id", &self.creator_request_id);
+            formatter.finish()
         }
     }
 }
@@ -399,7 +408,7 @@ impl CreateBackupSelectionInput {
 pub mod create_backup_vault_input {
 
     /// A builder for [`CreateBackupVaultInput`](crate::input::CreateBackupVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
         pub(crate) backup_vault_tags: std::option::Option<
@@ -488,6 +497,16 @@ pub mod create_backup_vault_input {
                 encryption_key_arn: self.encryption_key_arn,
                 creator_request_id: self.creator_request_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("backup_vault_name", &self.backup_vault_name);
+            formatter.field("backup_vault_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("encryption_key_arn", &self.encryption_key_arn);
+            formatter.field("creator_request_id", &self.creator_request_id);
+            formatter.finish()
         }
     }
 }
@@ -9896,7 +9915,7 @@ impl PutBackupVaultNotificationsInput {
 pub mod start_backup_job_input {
 
     /// A builder for [`StartBackupJobInput`](crate::input::StartBackupJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10064,6 +10083,21 @@ pub mod start_backup_job_input {
                 recovery_point_tags: self.recovery_point_tags,
                 backup_options: self.backup_options,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("backup_vault_name", &self.backup_vault_name);
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("iam_role_arn", &self.iam_role_arn);
+            formatter.field("idempotency_token", &self.idempotency_token);
+            formatter.field("start_window_minutes", &self.start_window_minutes);
+            formatter.field("complete_window_minutes", &self.complete_window_minutes);
+            formatter.field("lifecycle", &self.lifecycle);
+            formatter.field("recovery_point_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("backup_options", &self.backup_options);
+            formatter.finish()
         }
     }
 }
@@ -10588,7 +10622,7 @@ impl StartReportJobInput {
 pub mod start_restore_job_input {
 
     /// A builder for [`StartRestoreJobInput`](crate::input::StartRestoreJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<
@@ -10735,6 +10769,17 @@ pub mod start_restore_job_input {
                 idempotency_token: self.idempotency_token,
                 resource_type: self.resource_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("recovery_point_arn", &self.recovery_point_arn);
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("iam_role_arn", &self.iam_role_arn);
+            formatter.field("idempotency_token", &self.idempotency_token);
+            formatter.field("resource_type", &self.resource_type);
+            formatter.finish()
         }
     }
 }
@@ -11005,7 +11050,7 @@ impl StopBackupJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -11057,6 +11102,14 @@ pub mod tag_resource_input {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -11194,7 +11247,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11238,6 +11291,14 @@ pub mod untag_resource_input {
                 resource_arn: self.resource_arn,
                 tag_key_list: self.tag_key_list,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("tag_key_list", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12584,7 +12645,7 @@ impl UpdateReportPlanInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReportPlanInput {
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
@@ -12630,21 +12691,10 @@ impl UpdateReportPlanInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateReportPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReportPlanInput");
-        formatter.field("report_plan_name", &self.report_plan_name);
-        formatter.field("report_plan_description", &self.report_plan_description);
-        formatter.field("report_delivery_channel", &self.report_delivery_channel);
-        formatter.field("report_setting", &self.report_setting);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRegionSettingsInput {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
     #[doc(hidden)]
@@ -12669,24 +12719,10 @@ impl UpdateRegionSettingsInput {
         self.resource_type_management_preference.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRegionSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRegionSettingsInput");
-        formatter.field(
-            "resource_type_opt_in_preference",
-            &self.resource_type_opt_in_preference,
-        );
-        formatter.field(
-            "resource_type_management_preference",
-            &self.resource_type_management_preference,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecoveryPointLifecycleInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -12714,19 +12750,10 @@ impl UpdateRecoveryPointLifecycleInput {
         self.lifecycle.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRecoveryPointLifecycleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecoveryPointLifecycleInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
     #[doc(hidden)]
@@ -12742,17 +12769,10 @@ impl UpdateGlobalSettingsInput {
         self.global_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGlobalSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalSettingsInput");
-        formatter.field("global_settings", &self.global_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFrameworkInput {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
@@ -12785,20 +12805,10 @@ impl UpdateFrameworkInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFrameworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFrameworkInput");
-        formatter.field("framework_name", &self.framework_name);
-        formatter.field("framework_description", &self.framework_description);
-        formatter.field("framework_controls", &self.framework_controls);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackupPlanInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -12815,14 +12825,6 @@ impl UpdateBackupPlanInput {
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn backup_plan(&self) -> std::option::Option<&crate::model::BackupPlanInput> {
         self.backup_plan.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateBackupPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackupPlanInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("backup_plan", &self.backup_plan);
-        formatter.finish()
     }
 }
 
@@ -12892,7 +12894,7 @@ impl std::fmt::Debug for TagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopBackupJobInput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     #[doc(hidden)]
@@ -12902,13 +12904,6 @@ impl StopBackupJobInput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub fn backup_job_id(&self) -> std::option::Option<&str> {
         self.backup_job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StopBackupJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopBackupJobInput");
-        formatter.field("backup_job_id", &self.backup_job_id);
-        formatter.finish()
     }
 }
 
@@ -13022,7 +13017,7 @@ impl std::fmt::Debug for StartRestoreJobInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartReportJobInput {
     /// <p>The unique name of a report plan.</p>
     #[doc(hidden)]
@@ -13041,18 +13036,10 @@ impl StartReportJobInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartReportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartReportJobInput");
-        formatter.field("report_plan_name", &self.report_plan_name);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartCopyJobInput {
     /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
     #[doc(hidden)]
@@ -13101,21 +13088,6 @@ impl StartCopyJobInput {
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
-    }
-}
-impl std::fmt::Debug for StartCopyJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartCopyJobInput");
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.field("source_backup_vault_name", &self.source_backup_vault_name);
-        formatter.field(
-            "destination_backup_vault_arn",
-            &self.destination_backup_vault_arn,
-        );
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("lifecycle", &self.lifecycle);
-        formatter.finish()
     }
 }
 
@@ -13221,7 +13193,7 @@ impl std::fmt::Debug for StartBackupJobInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBackupVaultNotificationsInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -13267,19 +13239,10 @@ impl PutBackupVaultNotificationsInput {
         self.backup_vault_events.as_deref()
     }
 }
-impl std::fmt::Debug for PutBackupVaultNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBackupVaultNotificationsInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("backup_vault_events", &self.backup_vault_events);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBackupVaultLockConfigurationInput {
     /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
     #[doc(hidden)]
@@ -13326,20 +13289,10 @@ impl PutBackupVaultLockConfigurationInput {
         self.changeable_for_days
     }
 }
-impl std::fmt::Debug for PutBackupVaultLockConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBackupVaultLockConfigurationInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("min_retention_days", &self.min_retention_days);
-        formatter.field("max_retention_days", &self.max_retention_days);
-        formatter.field("changeable_for_days", &self.changeable_for_days);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBackupVaultAccessPolicyInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -13358,18 +13311,10 @@ impl PutBackupVaultAccessPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutBackupVaultAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBackupVaultAccessPolicyInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
     #[doc(hidden)]
@@ -13395,19 +13340,10 @@ impl ListTagsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRestoreJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
@@ -13468,24 +13404,10 @@ impl ListRestoreJobsInput {
         self.by_complete_after.as_ref()
     }
 }
-impl std::fmt::Debug for ListRestoreJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRestoreJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("by_account_id", &self.by_account_id);
-        formatter.field("by_created_before", &self.by_created_before);
-        formatter.field("by_created_after", &self.by_created_after);
-        formatter.field("by_status", &self.by_status);
-        formatter.field("by_complete_before", &self.by_complete_before);
-        formatter.field("by_complete_after", &self.by_complete_after);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReportPlansInput {
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     #[doc(hidden)]
@@ -13504,18 +13426,10 @@ impl ListReportPlansInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListReportPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReportPlansInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReportJobsInput {
     /// <p>Returns only report jobs with the specified report plan name.</p>
     #[doc(hidden)]
@@ -13564,22 +13478,10 @@ impl ListReportJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListReportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReportJobsInput");
-        formatter.field("by_report_plan_name", &self.by_report_plan_name);
-        formatter.field("by_creation_before", &self.by_creation_before);
-        formatter.field("by_creation_after", &self.by_creation_after);
-        formatter.field("by_status", &self.by_status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecoveryPointsByResourceInput {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     #[doc(hidden)]
@@ -13609,19 +13511,10 @@ impl ListRecoveryPointsByResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRecoveryPointsByResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecoveryPointsByResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
@@ -13686,24 +13579,10 @@ impl ListRecoveryPointsByBackupVaultInput {
         self.by_created_after.as_ref()
     }
 }
-impl std::fmt::Debug for ListRecoveryPointsByBackupVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecoveryPointsByBackupVaultInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("by_resource_arn", &self.by_resource_arn);
-        formatter.field("by_resource_type", &self.by_resource_type);
-        formatter.field("by_backup_plan_id", &self.by_backup_plan_id);
-        formatter.field("by_created_before", &self.by_created_before);
-        formatter.field("by_created_after", &self.by_created_after);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProtectedResourcesInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
@@ -13722,18 +13601,10 @@ impl ListProtectedResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProtectedResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProtectedResourcesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFrameworksInput {
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     #[doc(hidden)]
@@ -13752,18 +13623,10 @@ impl ListFrameworksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFrameworksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFrameworksInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCopyJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
     #[doc(hidden)]
@@ -13873,27 +13736,10 @@ impl ListCopyJobsInput {
         self.by_complete_after.as_ref()
     }
 }
-impl std::fmt::Debug for ListCopyJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCopyJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("by_resource_arn", &self.by_resource_arn);
-        formatter.field("by_state", &self.by_state);
-        formatter.field("by_created_before", &self.by_created_before);
-        formatter.field("by_created_after", &self.by_created_after);
-        formatter.field("by_resource_type", &self.by_resource_type);
-        formatter.field("by_destination_vault_arn", &self.by_destination_vault_arn);
-        formatter.field("by_account_id", &self.by_account_id);
-        formatter.field("by_complete_before", &self.by_complete_before);
-        formatter.field("by_complete_after", &self.by_complete_after);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackupVaultsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
@@ -13912,18 +13758,10 @@ impl ListBackupVaultsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListBackupVaultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackupVaultsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackupSelectionsInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -13949,19 +13787,10 @@ impl ListBackupSelectionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListBackupSelectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackupSelectionsInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackupPlanVersionsInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -13987,19 +13816,10 @@ impl ListBackupPlanVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListBackupPlanVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackupPlanVersionsInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackupPlanTemplatesInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
@@ -14018,18 +13838,10 @@ impl ListBackupPlanTemplatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListBackupPlanTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackupPlanTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackupPlansInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
@@ -14055,19 +13867,10 @@ impl ListBackupPlansInput {
         self.include_deleted
     }
 }
-impl std::fmt::Debug for ListBackupPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackupPlansInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("include_deleted", &self.include_deleted);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackupJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
@@ -14179,38 +13982,15 @@ impl ListBackupJobsInput {
         self.by_complete_before.as_ref()
     }
 }
-impl std::fmt::Debug for ListBackupJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackupJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("by_resource_arn", &self.by_resource_arn);
-        formatter.field("by_state", &self.by_state);
-        formatter.field("by_backup_vault_name", &self.by_backup_vault_name);
-        formatter.field("by_created_before", &self.by_created_before);
-        formatter.field("by_created_after", &self.by_created_after);
-        formatter.field("by_resource_type", &self.by_resource_type);
-        formatter.field("by_account_id", &self.by_account_id);
-        formatter.field("by_complete_after", &self.by_complete_after);
-        formatter.field("by_complete_before", &self.by_complete_before);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSupportedResourceTypesInput {}
-impl std::fmt::Debug for GetSupportedResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSupportedResourceTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecoveryPointRestoreMetadataInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14229,18 +14009,10 @@ impl GetRecoveryPointRestoreMetadataInput {
         self.recovery_point_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecoveryPointRestoreMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecoveryPointRestoreMetadataInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackupVaultNotificationsInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14252,17 +14024,10 @@ impl GetBackupVaultNotificationsInput {
         self.backup_vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackupVaultNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackupVaultNotificationsInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackupVaultAccessPolicyInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14274,17 +14039,10 @@ impl GetBackupVaultAccessPolicyInput {
         self.backup_vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackupVaultAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackupVaultAccessPolicyInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackupSelectionInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -14303,18 +14061,10 @@ impl GetBackupSelectionInput {
         self.selection_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackupSelectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackupSelectionInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("selection_id", &self.selection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackupPlanFromTemplateInput {
     /// <p>Uniquely identifies a stored backup plan template.</p>
     #[doc(hidden)]
@@ -14326,17 +14076,10 @@ impl GetBackupPlanFromTemplateInput {
         self.backup_plan_template_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackupPlanFromTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackupPlanFromTemplateInput");
-        formatter.field("backup_plan_template_id", &self.backup_plan_template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackupPlanFromJsonInput {
     /// <p>A customer-supplied backup plan document in JSON format.</p>
     #[doc(hidden)]
@@ -14348,17 +14091,10 @@ impl GetBackupPlanFromJsonInput {
         self.backup_plan_template_json.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackupPlanFromJsonInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackupPlanFromJsonInput");
-        formatter.field("backup_plan_template_json", &self.backup_plan_template_json);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackupPlanInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -14377,18 +14113,10 @@ impl GetBackupPlanInput {
         self.version_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackupPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackupPlanInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportBackupPlanTemplateInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -14400,17 +14128,10 @@ impl ExportBackupPlanTemplateInput {
         self.backup_plan_id.as_deref()
     }
 }
-impl std::fmt::Debug for ExportBackupPlanTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportBackupPlanTemplateInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateRecoveryPointInput {
     /// <p>The unique name of an Backup vault.</p>
     #[doc(hidden)]
@@ -14429,18 +14150,10 @@ impl DisassociateRecoveryPointInput {
         self.recovery_point_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateRecoveryPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateRecoveryPointInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRestoreJobInput {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
     #[doc(hidden)]
@@ -14452,17 +14165,10 @@ impl DescribeRestoreJobInput {
         self.restore_job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRestoreJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRestoreJobInput");
-        formatter.field("restore_job_id", &self.restore_job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReportPlanInput {
     /// <p>The unique name of a report plan.</p>
     #[doc(hidden)]
@@ -14474,17 +14180,10 @@ impl DescribeReportPlanInput {
         self.report_plan_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReportPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReportPlanInput");
-        formatter.field("report_plan_name", &self.report_plan_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReportJobInput {
     /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
     #[doc(hidden)]
@@ -14496,28 +14195,15 @@ impl DescribeReportJobInput {
         self.report_job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReportJobInput");
-        formatter.field("report_job_id", &self.report_job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRegionSettingsInput {}
-impl std::fmt::Debug for DescribeRegionSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRegionSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecoveryPointInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14536,18 +14222,10 @@ impl DescribeRecoveryPointInput {
         self.recovery_point_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRecoveryPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecoveryPointInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProtectedResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     #[doc(hidden)]
@@ -14559,28 +14237,15 @@ impl DescribeProtectedResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProtectedResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProtectedResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGlobalSettingsInput {}
-impl std::fmt::Debug for DescribeGlobalSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGlobalSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFrameworkInput {
     /// <p>The unique name of a framework.</p>
     #[doc(hidden)]
@@ -14592,17 +14257,10 @@ impl DescribeFrameworkInput {
         self.framework_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFrameworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFrameworkInput");
-        formatter.field("framework_name", &self.framework_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCopyJobInput {
     /// <p>Uniquely identifies a copy job.</p>
     #[doc(hidden)]
@@ -14614,17 +14272,10 @@ impl DescribeCopyJobInput {
         self.copy_job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCopyJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCopyJobInput");
-        formatter.field("copy_job_id", &self.copy_job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBackupVaultInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14636,17 +14287,10 @@ impl DescribeBackupVaultInput {
         self.backup_vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBackupVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBackupVaultInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBackupJobInput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     #[doc(hidden)]
@@ -14658,17 +14302,10 @@ impl DescribeBackupJobInput {
         self.backup_job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBackupJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBackupJobInput");
-        formatter.field("backup_job_id", &self.backup_job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReportPlanInput {
     /// <p>The unique name of a report plan.</p>
     #[doc(hidden)]
@@ -14680,17 +14317,10 @@ impl DeleteReportPlanInput {
         self.report_plan_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReportPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReportPlanInput");
-        formatter.field("report_plan_name", &self.report_plan_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecoveryPointInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14709,18 +14339,10 @@ impl DeleteRecoveryPointInput {
         self.recovery_point_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRecoveryPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecoveryPointInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.field("recovery_point_arn", &self.recovery_point_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFrameworkInput {
     /// <p>The unique name of a framework.</p>
     #[doc(hidden)]
@@ -14732,17 +14354,10 @@ impl DeleteFrameworkInput {
         self.framework_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFrameworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFrameworkInput");
-        formatter.field("framework_name", &self.framework_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupVaultNotificationsInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14754,17 +14369,10 @@ impl DeleteBackupVaultNotificationsInput {
         self.backup_vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupVaultNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupVaultNotificationsInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupVaultLockConfigurationInput {
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
     #[doc(hidden)]
@@ -14776,17 +14384,10 @@ impl DeleteBackupVaultLockConfigurationInput {
         self.backup_vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupVaultLockConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupVaultLockConfigurationInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupVaultAccessPolicyInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14798,17 +14399,10 @@ impl DeleteBackupVaultAccessPolicyInput {
         self.backup_vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupVaultAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupVaultAccessPolicyInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupVaultInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -14820,17 +14414,10 @@ impl DeleteBackupVaultInput {
         self.backup_vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupVaultInput");
-        formatter.field("backup_vault_name", &self.backup_vault_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupSelectionInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -14849,18 +14436,10 @@ impl DeleteBackupSelectionInput {
         self.selection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupSelectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupSelectionInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("selection_id", &self.selection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupPlanInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
@@ -14872,17 +14451,10 @@ impl DeleteBackupPlanInput {
         self.backup_plan_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupPlanInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReportPlanInput {
     /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
@@ -14939,22 +14511,10 @@ impl CreateReportPlanInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReportPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReportPlanInput");
-        formatter.field("report_plan_name", &self.report_plan_name);
-        formatter.field("report_plan_description", &self.report_plan_description);
-        formatter.field("report_delivery_channel", &self.report_delivery_channel);
-        formatter.field("report_setting", &self.report_setting);
-        formatter.field("report_plan_tags", &self.report_plan_tags);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFrameworkInput {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
@@ -14996,17 +14556,6 @@ impl CreateFrameworkInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.framework_tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateFrameworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFrameworkInput");
-        formatter.field("framework_name", &self.framework_name);
-        formatter.field("framework_description", &self.framework_description);
-        formatter.field("framework_controls", &self.framework_controls);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("framework_tags", &self.framework_tags);
-        formatter.finish()
     }
 }
 
@@ -15064,7 +14613,7 @@ impl std::fmt::Debug for CreateBackupVaultInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackupSelectionInput {
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
     #[doc(hidden)]
@@ -15090,15 +14639,6 @@ impl CreateBackupSelectionInput {
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateBackupSelectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackupSelectionInput");
-        formatter.field("backup_plan_id", &self.backup_plan_id);
-        formatter.field("backup_selection", &self.backup_selection);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.finish()
     }
 }
 

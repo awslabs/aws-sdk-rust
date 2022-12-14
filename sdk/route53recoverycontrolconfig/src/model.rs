@@ -3,7 +3,7 @@
 /// <p>A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based on a rule configuration that you specify, which allows a set of routing control state changes to complete.</p>
 /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -62,20 +62,6 @@ impl GatingRule {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(&self) -> i32 {
         self.wait_period_ms
-    }
-}
-impl std::fmt::Debug for GatingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatingRule");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("gating_controls", &self.gating_controls);
-        formatter.field("name", &self.name);
-        formatter.field("rule_config", &self.rule_config);
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.field("status", &self.status);
-        formatter.field("target_controls", &self.target_controls);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
     }
 }
 /// See [`GatingRule`](crate::model::GatingRule).
@@ -320,7 +306,7 @@ impl AsRef<str> for Status {
 
 /// <p>The rule configuration for an assertion rule. That is, the criteria that you set for specific assertion controls (routing controls) that specify how many control states must be ON after a transaction completes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleConfig {
     /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
     #[doc(hidden)]
@@ -344,15 +330,6 @@ impl RuleConfig {
     /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RuleType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleConfig");
-        formatter.field("inverted", &self.inverted);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`RuleConfig`](crate::model::RuleConfig).
@@ -510,7 +487,7 @@ impl AsRef<str> for RuleType {
 
 /// <p>An assertion rule enforces that, when you change a routing control state, that the criteria that you set in the rule configuration is met. Otherwise, the change to the routing control is not accepted. For example, the criteria might be that at least one routing control state is On after the transation so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
     #[doc(hidden)]
@@ -562,19 +539,6 @@ impl AssertionRule {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(&self) -> i32 {
         self.wait_period_ms
-    }
-}
-impl std::fmt::Debug for AssertionRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssertionRule");
-        formatter.field("asserted_controls", &self.asserted_controls);
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("name", &self.name);
-        formatter.field("rule_config", &self.rule_config);
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.field("status", &self.status);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
     }
 }
 /// See [`AssertionRule`](crate::model::AssertionRule).
@@ -703,7 +667,7 @@ impl AssertionRule {
 
 /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatingRuleUpdate {
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
     #[doc(hidden)]
@@ -727,15 +691,6 @@ impl GatingRuleUpdate {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(&self) -> i32 {
         self.wait_period_ms
-    }
-}
-impl std::fmt::Debug for GatingRuleUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatingRuleUpdate");
-        formatter.field("name", &self.name);
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
     }
 }
 /// See [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
@@ -801,7 +756,7 @@ impl GatingRuleUpdate {
 
 /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssertionRuleUpdate {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
     #[doc(hidden)]
@@ -825,15 +780,6 @@ impl AssertionRuleUpdate {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(&self) -> i32 {
         self.wait_period_ms
-    }
-}
-impl std::fmt::Debug for AssertionRuleUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssertionRuleUpdate");
-        formatter.field("name", &self.name);
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
     }
 }
 /// See [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
@@ -899,7 +845,7 @@ impl AssertionRuleUpdate {
 
 /// <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
     #[doc(hidden)]
@@ -930,16 +876,6 @@ impl RoutingControl {
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingControl");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("name", &self.name);
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`RoutingControl`](crate::model::RoutingControl).
@@ -1020,7 +956,7 @@ impl RoutingControl {
 
 /// <p>A control panel represents a group of routing controls that can be changed together in a single transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlPanel {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
     #[doc(hidden)]
@@ -1065,18 +1001,6 @@ impl ControlPanel {
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ControlPanel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlPanel");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("default_control_panel", &self.default_control_panel);
-        formatter.field("name", &self.name);
-        formatter.field("routing_control_count", &self.routing_control_count);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ControlPanel`](crate::model::ControlPanel).
@@ -1178,7 +1102,7 @@ impl ControlPanel {
 
 /// <p>A safety rule. A safety rule can be an assertion rule or a gating rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the criteria might be that at least one routing control state is On after the transation so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
     #[doc(hidden)]
@@ -1197,14 +1121,6 @@ impl Rule {
     /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
     pub fn gating(&self) -> std::option::Option<&crate::model::GatingRule> {
         self.gating.as_ref()
-    }
-}
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("assertion", &self.assertion);
-        formatter.field("gating", &self.gating);
-        formatter.finish()
     }
 }
 /// See [`Rule`](crate::model::Rule).
@@ -1260,7 +1176,7 @@ impl Rule {
 
 /// <p>A set of five redundant Regional endpoints against which you can execute API calls to update or get the state of routing controls. You can host multiple control panels and routing controls on one cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
@@ -1293,16 +1209,6 @@ impl Cluster {
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("cluster_endpoints", &self.cluster_endpoints);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
@@ -1389,7 +1295,7 @@ impl Cluster {
 
 /// <p>A cluster endpoint. Specify an endpoint when you want to set or retrieve a routing control state in the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterEndpoint {
     /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
@@ -1408,14 +1314,6 @@ impl ClusterEndpoint {
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterEndpoint");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`ClusterEndpoint`](crate::model::ClusterEndpoint).
@@ -1468,7 +1366,7 @@ impl ClusterEndpoint {
 
 /// <p>A new gating rule for a control panel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewGatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -1515,18 +1413,6 @@ impl NewGatingRule {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(&self) -> i32 {
         self.wait_period_ms
-    }
-}
-impl std::fmt::Debug for NewGatingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewGatingRule");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("gating_controls", &self.gating_controls);
-        formatter.field("name", &self.name);
-        formatter.field("rule_config", &self.rule_config);
-        formatter.field("target_controls", &self.target_controls);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
     }
 }
 /// See [`NewGatingRule`](crate::model::NewGatingRule).
@@ -1651,7 +1537,7 @@ impl NewGatingRule {
 
 /// <p>A new assertion rule for a control panel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewAssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
     #[doc(hidden)]
@@ -1689,17 +1575,6 @@ impl NewAssertionRule {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(&self) -> i32 {
         self.wait_period_ms
-    }
-}
-impl std::fmt::Debug for NewAssertionRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewAssertionRule");
-        formatter.field("asserted_controls", &self.asserted_controls);
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("name", &self.name);
-        formatter.field("rule_config", &self.rule_config);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
     }
 }
 /// See [`NewAssertionRule`](crate::model::NewAssertionRule).

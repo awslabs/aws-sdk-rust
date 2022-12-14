@@ -92,7 +92,7 @@ impl AsRef<str> for WorkGroupState {
 
 /// <p>The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkGroupConfigurationUpdates {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     #[doc(hidden)]
@@ -146,34 +146,6 @@ impl WorkGroupConfigurationUpdates {
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
         self.engine_version.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkGroupConfigurationUpdates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkGroupConfigurationUpdates");
-        formatter.field(
-            "enforce_work_group_configuration",
-            &self.enforce_work_group_configuration,
-        );
-        formatter.field(
-            "result_configuration_updates",
-            &self.result_configuration_updates,
-        );
-        formatter.field(
-            "publish_cloud_watch_metrics_enabled",
-            &self.publish_cloud_watch_metrics_enabled,
-        );
-        formatter.field(
-            "bytes_scanned_cutoff_per_query",
-            &self.bytes_scanned_cutoff_per_query,
-        );
-        formatter.field(
-            "remove_bytes_scanned_cutoff_per_query",
-            &self.remove_bytes_scanned_cutoff_per_query,
-        );
-        formatter.field("requester_pays_enabled", &self.requester_pays_enabled);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
     }
 }
 /// See [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates).
@@ -306,7 +278,7 @@ impl WorkGroupConfigurationUpdates {
 
 /// <p>The Athena engine version for running queries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineVersion {
     /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including Auto. The default is Auto.</p>
     #[doc(hidden)]
@@ -323,14 +295,6 @@ impl EngineVersion {
     /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
     pub fn effective_engine_version(&self) -> std::option::Option<&str> {
         self.effective_engine_version.as_deref()
-    }
-}
-impl std::fmt::Debug for EngineVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineVersion");
-        formatter.field("selected_engine_version", &self.selected_engine_version);
-        formatter.field("effective_engine_version", &self.effective_engine_version);
-        formatter.finish()
     }
 }
 /// See [`EngineVersion`](crate::model::EngineVersion).
@@ -387,7 +351,7 @@ impl EngineVersion {
 
 /// <p>The information about the updates in the query results, such as output location and encryption configuration for the query results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultConfigurationUpdates {
     /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     #[doc(hidden)]
@@ -450,26 +414,6 @@ impl ResultConfigurationUpdates {
     /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn remove_acl_configuration(&self) -> std::option::Option<bool> {
         self.remove_acl_configuration
-    }
-}
-impl std::fmt::Debug for ResultConfigurationUpdates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultConfigurationUpdates");
-        formatter.field("output_location", &self.output_location);
-        formatter.field("remove_output_location", &self.remove_output_location);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "remove_encryption_configuration",
-            &self.remove_encryption_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field(
-            "remove_expected_bucket_owner",
-            &self.remove_expected_bucket_owner,
-        );
-        formatter.field("acl_configuration", &self.acl_configuration);
-        formatter.field("remove_acl_configuration", &self.remove_acl_configuration);
-        formatter.finish()
     }
 }
 /// See [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates).
@@ -616,7 +560,7 @@ impl ResultConfigurationUpdates {
 
 /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. When Athena stores query results in Amazon S3, the canned ACL is set with the <code>x-amz-acl</code> request header. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html#object-ownership-overview">Object Ownership settings</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AclConfiguration {
     /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -626,13 +570,6 @@ impl AclConfiguration {
     /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn s3_acl_option(&self) -> std::option::Option<&crate::model::S3AclOption> {
         self.s3_acl_option.as_ref()
-    }
-}
-impl std::fmt::Debug for AclConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AclConfiguration");
-        formatter.field("s3_acl_option", &self.s3_acl_option);
-        formatter.finish()
     }
 }
 /// See [`AclConfiguration`](crate::model::AclConfiguration).
@@ -759,7 +696,7 @@ impl AsRef<str> for S3AclOption {
 
 /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE_S3</code>), server-side encryption with KMS-managed keys (<code>SSE_KMS</code>), or client-side encryption with KMS-managed keys (<code>CSE_KMS</code>) is used.</p>
     /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for encryption is used. It specifies whether query results must be encrypted, for all queries that run in this workgroup. </p>
@@ -778,14 +715,6 @@ impl EncryptionConfiguration {
     /// <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key ARN or ID.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("encryption_option", &self.encryption_option);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
@@ -1031,7 +960,7 @@ impl AsRef<str> for DataCatalogType {
 
 /// <p>A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A tag key. The tag key length is from 1 to 128 Unicode characters in UTF-8. You can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys are case-sensitive and must be unique per resource. </p>
     #[doc(hidden)]
@@ -1048,14 +977,6 @@ impl Tag {
     /// <p>A tag value. The tag value length is from 0 to 256 Unicode characters in UTF-8. You can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag values are case-sensitive. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1192,7 +1113,7 @@ impl AsRef<str> for ThrottleReason {
 
 /// <p>The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultConfiguration {
     /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using <code>WorkGroupConfiguration</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If workgroup settings override client-side settings, then the query uses the settings specified for the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     #[doc(hidden)]
@@ -1227,16 +1148,6 @@ impl ResultConfiguration {
     /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the ACL configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. For more information, see <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn acl_configuration(&self) -> std::option::Option<&crate::model::AclConfiguration> {
         self.acl_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ResultConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultConfiguration");
-        formatter.field("output_location", &self.output_location);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("acl_configuration", &self.acl_configuration);
-        formatter.finish()
     }
 }
 /// See [`ResultConfiguration`](crate::model::ResultConfiguration).
@@ -1329,7 +1240,7 @@ impl ResultConfiguration {
 
 /// <p>The database and data catalog context in which the query execution occurs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryExecutionContext {
     /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
     #[doc(hidden)]
@@ -1346,14 +1257,6 @@ impl QueryExecutionContext {
     /// <p>The name of the data catalog used in the query execution.</p>
     pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryExecutionContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryExecutionContext");
-        formatter.field("database", &self.database);
-        formatter.field("catalog", &self.catalog);
-        formatter.finish()
     }
 }
 /// See [`QueryExecutionContext`](crate::model::QueryExecutionContext).
@@ -1404,7 +1307,7 @@ impl QueryExecutionContext {
 
 /// <p>The summary information for the workgroup, which includes its name, state, description, and the date and time it was created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkGroupSummary {
     /// <p>The name of the workgroup.</p>
     #[doc(hidden)]
@@ -1442,17 +1345,6 @@ impl WorkGroupSummary {
     /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
         self.engine_version.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkGroupSummary");
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.field("description", &self.description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
     }
 }
 /// See [`WorkGroupSummary`](crate::model::WorkGroupSummary).
@@ -1548,7 +1440,7 @@ impl WorkGroupSummary {
 
 /// <p>Contains metadata for a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableMetadata {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -1604,19 +1496,6 @@ impl TableMetadata {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for TableMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_access_time", &self.last_access_time);
-        formatter.field("table_type", &self.table_type);
-        formatter.field("columns", &self.columns);
-        formatter.field("partition_keys", &self.partition_keys);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`TableMetadata`](crate::model::TableMetadata).
@@ -1768,7 +1647,7 @@ impl TableMetadata {
 
 /// <p>Contains metadata for a column in a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Column {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
@@ -1792,15 +1671,6 @@ impl Column {
     /// <p>Optional information about the column.</p>
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
-    }
-}
-impl std::fmt::Debug for Column {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Column");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
     }
 }
 /// See [`Column`](crate::model::Column).
@@ -1863,7 +1733,7 @@ impl Column {
 
 /// <p>The name and last modified time of the prepared statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PreparedStatementSummary {
     /// <p>The name of the prepared statement.</p>
     #[doc(hidden)]
@@ -1880,14 +1750,6 @@ impl PreparedStatementSummary {
     /// <p>The last modified time of the prepared statement.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PreparedStatementSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreparedStatementSummary");
-        formatter.field("statement_name", &self.statement_name);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`PreparedStatementSummary`](crate::model::PreparedStatementSummary).
@@ -1944,7 +1806,7 @@ impl PreparedStatementSummary {
 
 /// <p>The summary information for the data catalog, which includes its name and type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataCatalogSummary {
     /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     #[doc(hidden)]
@@ -1961,14 +1823,6 @@ impl DataCatalogSummary {
     /// <p>The data catalog type.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for DataCatalogSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataCatalogSummary");
-        formatter.field("catalog_name", &self.catalog_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`DataCatalogSummary`](crate::model::DataCatalogSummary).
@@ -2022,7 +1876,7 @@ impl DataCatalogSummary {
 
 /// <p>Contains metadata information for a database in a data catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Database {
     /// <p>The name of the database.</p>
     #[doc(hidden)]
@@ -2050,15 +1904,6 @@ impl Database {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for Database {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Database");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`Database`](crate::model::Database).
@@ -2138,7 +1983,7 @@ impl Database {
 
 /// <p>A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <code>WorkGroup$Configuration</code>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkGroup {
     /// <p>The workgroup name.</p>
     #[doc(hidden)]
@@ -2176,17 +2021,6 @@ impl WorkGroup {
     /// <p>The date and time the workgroup was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkGroup");
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("description", &self.description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`WorkGroup`](crate::model::WorkGroup).
@@ -2282,7 +2116,7 @@ impl WorkGroup {
 
 /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.</p>
     #[doc(hidden)]
@@ -2327,27 +2161,6 @@ impl WorkGroupConfiguration {
     /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
         self.engine_version.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkGroupConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkGroupConfiguration");
-        formatter.field("result_configuration", &self.result_configuration);
-        formatter.field(
-            "enforce_work_group_configuration",
-            &self.enforce_work_group_configuration,
-        );
-        formatter.field(
-            "publish_cloud_watch_metrics_enabled",
-            &self.publish_cloud_watch_metrics_enabled,
-        );
-        formatter.field(
-            "bytes_scanned_cutoff_per_query",
-            &self.bytes_scanned_cutoff_per_query,
-        );
-        formatter.field("requester_pays_enabled", &self.requester_pays_enabled);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
     }
 }
 /// See [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration).
@@ -2461,7 +2274,7 @@ impl WorkGroupConfiguration {
 
 /// <p>The query execution timeline, statistics on input and output rows and bytes, and the different query stages that form the query execution plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryRuntimeStatistics {
     /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
     #[doc(hidden)]
@@ -2485,15 +2298,6 @@ impl QueryRuntimeStatistics {
     /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
     pub fn output_stage(&self) -> std::option::Option<&crate::model::QueryStage> {
         self.output_stage.as_ref()
-    }
-}
-impl std::fmt::Debug for QueryRuntimeStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryRuntimeStatistics");
-        formatter.field("timeline", &self.timeline);
-        formatter.field("rows", &self.rows);
-        formatter.field("output_stage", &self.output_stage);
-        formatter.finish()
     }
 }
 /// See [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
@@ -2565,7 +2369,7 @@ impl QueryRuntimeStatistics {
 
 /// <p>Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStage {
     /// <p>The identifier for a stage.</p>
     #[doc(hidden)]
@@ -2631,21 +2435,6 @@ impl QueryStage {
     /// <p>List of sub query stages that form this stage execution plan.</p>
     pub fn sub_stages(&self) -> std::option::Option<&[crate::model::QueryStage]> {
         self.sub_stages.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryStage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStage");
-        formatter.field("stage_id", &self.stage_id);
-        formatter.field("state", &self.state);
-        formatter.field("output_bytes", &self.output_bytes);
-        formatter.field("output_rows", &self.output_rows);
-        formatter.field("input_bytes", &self.input_bytes);
-        formatter.field("input_rows", &self.input_rows);
-        formatter.field("execution_time", &self.execution_time);
-        formatter.field("query_stage_plan", &self.query_stage_plan);
-        formatter.field("sub_stages", &self.sub_stages);
-        formatter.finish()
     }
 }
 /// See [`QueryStage`](crate::model::QueryStage).
@@ -2792,7 +2581,7 @@ impl QueryStage {
 
 /// <p>Stage plan information such as name, identifier, sub plans, and remote sources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStagePlanNode {
     /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
     #[doc(hidden)]
@@ -2823,16 +2612,6 @@ impl QueryStagePlanNode {
     /// <p>Source plan node IDs.</p>
     pub fn remote_sources(&self) -> std::option::Option<&[std::string::String]> {
         self.remote_sources.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryStagePlanNode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStagePlanNode");
-        formatter.field("name", &self.name);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("children", &self.children);
-        formatter.field("remote_sources", &self.remote_sources);
-        formatter.finish()
     }
 }
 /// See [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
@@ -2925,7 +2704,7 @@ impl QueryStagePlanNode {
 
 /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryRuntimeStatisticsRows {
     /// <p>The number of rows read to execute the query.</p>
     #[doc(hidden)]
@@ -2956,16 +2735,6 @@ impl QueryRuntimeStatisticsRows {
     /// <p>The number of rows returned by the query.</p>
     pub fn output_rows(&self) -> std::option::Option<i64> {
         self.output_rows
-    }
-}
-impl std::fmt::Debug for QueryRuntimeStatisticsRows {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryRuntimeStatisticsRows");
-        formatter.field("input_rows", &self.input_rows);
-        formatter.field("input_bytes", &self.input_bytes);
-        formatter.field("output_bytes", &self.output_bytes);
-        formatter.field("output_rows", &self.output_rows);
-        formatter.finish()
     }
 }
 /// See [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
@@ -3040,7 +2809,7 @@ impl QueryRuntimeStatisticsRows {
 
 /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryRuntimeStatisticsTimeline {
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
     #[doc(hidden)]
@@ -3078,32 +2847,6 @@ impl QueryRuntimeStatisticsTimeline {
     /// <p>The number of milliseconds that Athena took to run the query.</p>
     pub fn total_execution_time_in_millis(&self) -> std::option::Option<i64> {
         self.total_execution_time_in_millis
-    }
-}
-impl std::fmt::Debug for QueryRuntimeStatisticsTimeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryRuntimeStatisticsTimeline");
-        formatter.field(
-            "query_queue_time_in_millis",
-            &self.query_queue_time_in_millis,
-        );
-        formatter.field(
-            "query_planning_time_in_millis",
-            &self.query_planning_time_in_millis,
-        );
-        formatter.field(
-            "engine_execution_time_in_millis",
-            &self.engine_execution_time_in_millis,
-        );
-        formatter.field(
-            "service_processing_time_in_millis",
-            &self.service_processing_time_in_millis,
-        );
-        formatter.field(
-            "total_execution_time_in_millis",
-            &self.total_execution_time_in_millis,
-        );
-        formatter.finish()
     }
 }
 /// See [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
@@ -3202,7 +2945,7 @@ impl QueryRuntimeStatisticsTimeline {
 
 /// <p>The metadata and rows that make up a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultSet {
     /// <p>The rows in the table.</p>
     #[doc(hidden)]
@@ -3219,14 +2962,6 @@ impl ResultSet {
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
     pub fn result_set_metadata(&self) -> std::option::Option<&crate::model::ResultSetMetadata> {
         self.result_set_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for ResultSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultSet");
-        formatter.field("rows", &self.rows);
-        formatter.field("result_set_metadata", &self.result_set_metadata);
-        formatter.finish()
     }
 }
 /// See [`ResultSet`](crate::model::ResultSet).
@@ -3289,7 +3024,7 @@ impl ResultSet {
 
 /// <p>The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
     #[doc(hidden)]
@@ -3299,13 +3034,6 @@ impl ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
     pub fn column_info(&self) -> std::option::Option<&[crate::model::ColumnInfo]> {
         self.column_info.as_deref()
-    }
-}
-impl std::fmt::Debug for ResultSetMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultSetMetadata");
-        formatter.field("column_info", &self.column_info);
-        formatter.finish()
     }
 }
 /// See [`ResultSetMetadata`](crate::model::ResultSetMetadata).
@@ -3353,7 +3081,7 @@ impl ResultSetMetadata {
 
 /// <p>Information about the columns in a query execution result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnInfo {
     /// <p>The catalog to which the query results belong.</p>
     #[doc(hidden)]
@@ -3426,22 +3154,6 @@ impl ColumnInfo {
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub fn case_sensitive(&self) -> bool {
         self.case_sensitive
-    }
-}
-impl std::fmt::Debug for ColumnInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnInfo");
-        formatter.field("catalog_name", &self.catalog_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("name", &self.name);
-        formatter.field("label", &self.label);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("precision", &self.precision);
-        formatter.field("scale", &self.scale);
-        formatter.field("nullable", &self.nullable);
-        formatter.field("case_sensitive", &self.case_sensitive);
-        formatter.finish()
     }
 }
 /// See [`ColumnInfo`](crate::model::ColumnInfo).
@@ -3686,7 +3398,7 @@ impl AsRef<str> for ColumnNullable {
 
 /// <p>The rows that make up a query result table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Row {
     /// <p>The data that populates a row in a query result table.</p>
     #[doc(hidden)]
@@ -3696,13 +3408,6 @@ impl Row {
     /// <p>The data that populates a row in a query result table.</p>
     pub fn data(&self) -> std::option::Option<&[crate::model::Datum]> {
         self.data.as_deref()
-    }
-}
-impl std::fmt::Debug for Row {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Row");
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`Row`](crate::model::Row).
@@ -3748,7 +3453,7 @@ impl Row {
 
 /// <p>A piece of data (a field in the table).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Datum {
     /// <p>The value of the datum.</p>
     #[doc(hidden)]
@@ -3758,13 +3463,6 @@ impl Datum {
     /// <p>The value of the datum.</p>
     pub fn var_char_value(&self) -> std::option::Option<&str> {
         self.var_char_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Datum {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Datum");
-        formatter.field("var_char_value", &self.var_char_value);
-        formatter.finish()
     }
 }
 /// See [`Datum`](crate::model::Datum).
@@ -3806,7 +3504,7 @@ impl Datum {
 
 /// <p>Information about a single instance of a query execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryExecution {
     /// <p>The unique identifier for each query execution.</p>
     #[doc(hidden)]
@@ -3881,22 +3579,6 @@ impl QueryExecution {
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
     pub fn execution_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.execution_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryExecution");
-        formatter.field("query_execution_id", &self.query_execution_id);
-        formatter.field("query", &self.query);
-        formatter.field("statement_type", &self.statement_type);
-        formatter.field("result_configuration", &self.result_configuration);
-        formatter.field("query_execution_context", &self.query_execution_context);
-        formatter.field("status", &self.status);
-        formatter.field("statistics", &self.statistics);
-        formatter.field("work_group", &self.work_group);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("execution_parameters", &self.execution_parameters);
-        formatter.finish()
     }
 }
 /// See [`QueryExecution`](crate::model::QueryExecution).
@@ -4077,7 +3759,7 @@ impl QueryExecution {
 
 /// <p>The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryExecutionStatistics {
     /// <p>The number of milliseconds that the query took to execute.</p>
     #[doc(hidden)]
@@ -4129,34 +3811,6 @@ impl QueryExecutionStatistics {
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
     pub fn service_processing_time_in_millis(&self) -> std::option::Option<i64> {
         self.service_processing_time_in_millis
-    }
-}
-impl std::fmt::Debug for QueryExecutionStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryExecutionStatistics");
-        formatter.field(
-            "engine_execution_time_in_millis",
-            &self.engine_execution_time_in_millis,
-        );
-        formatter.field("data_scanned_in_bytes", &self.data_scanned_in_bytes);
-        formatter.field("data_manifest_location", &self.data_manifest_location);
-        formatter.field(
-            "total_execution_time_in_millis",
-            &self.total_execution_time_in_millis,
-        );
-        formatter.field(
-            "query_queue_time_in_millis",
-            &self.query_queue_time_in_millis,
-        );
-        formatter.field(
-            "query_planning_time_in_millis",
-            &self.query_planning_time_in_millis,
-        );
-        formatter.field(
-            "service_processing_time_in_millis",
-            &self.service_processing_time_in_millis,
-        );
-        formatter.finish()
     }
 }
 /// See [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics).
@@ -4282,7 +3936,7 @@ impl QueryExecutionStatistics {
 
 /// <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryExecutionStatus {
     /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.</p> <note>
     /// <p>Athena automatically retries your queries in cases of certain transient errors. As a result, you may see the query state transition from <code>RUNNING</code> or <code>FAILED</code> to <code>QUEUED</code>. </p>
@@ -4324,17 +3978,6 @@ impl QueryExecutionStatus {
     /// <p>Provides information about an Athena query error.</p>
     pub fn athena_error(&self) -> std::option::Option<&crate::model::AthenaError> {
         self.athena_error.as_ref()
-    }
-}
-impl std::fmt::Debug for QueryExecutionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryExecutionStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.field("submission_date_time", &self.submission_date_time);
-        formatter.field("completion_date_time", &self.completion_date_time);
-        formatter.field("athena_error", &self.athena_error);
-        formatter.finish()
     }
 }
 /// See [`QueryExecutionStatus`](crate::model::QueryExecutionStatus).
@@ -4440,7 +4083,7 @@ impl QueryExecutionStatus {
 
 /// <p>Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or other error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AthenaError {
     /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
     /// <p> <b>1</b> - System</p>
@@ -4477,16 +4120,6 @@ impl AthenaError {
     /// <p>Contains a short description of the error that occurred.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for AthenaError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AthenaError");
-        formatter.field("error_category", &self.error_category);
-        formatter.field("error_type", &self.error_type);
-        formatter.field("retryable", &self.retryable);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`AthenaError`](crate::model::AthenaError).
@@ -4772,7 +4405,7 @@ impl AsRef<str> for StatementType {
 
 /// <p>A prepared SQL statement for use with Athena.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PreparedStatement {
     /// <p>The name of the prepared statement.</p>
     #[doc(hidden)]
@@ -4810,17 +4443,6 @@ impl PreparedStatement {
     /// <p>The last modified time of the prepared statement.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PreparedStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreparedStatement");
-        formatter.field("statement_name", &self.statement_name);
-        formatter.field("query_statement", &self.query_statement);
-        formatter.field("work_group_name", &self.work_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`PreparedStatement`](crate::model::PreparedStatement).
@@ -4919,7 +4541,7 @@ impl PreparedStatement {
 
 /// <p>A query, where <code>QueryString</code> contains the SQL statements that make up the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamedQuery {
     /// <p>The query name.</p>
     #[doc(hidden)]
@@ -4964,18 +4586,6 @@ impl NamedQuery {
     /// <p>The name of the workgroup that contains the named query.</p>
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
-    }
-}
-impl std::fmt::Debug for NamedQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NamedQuery");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("database", &self.database);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("named_query_id", &self.named_query_id);
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
     }
 }
 /// See [`NamedQuery`](crate::model::NamedQuery).
@@ -5077,7 +4687,7 @@ impl NamedQuery {
 
 /// <p>Contains information about a data catalog in an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataCatalog {
     /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     #[doc(hidden)]
@@ -5138,16 +4748,6 @@ impl DataCatalog {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for DataCatalog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataCatalog");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`DataCatalog`](crate::model::DataCatalog).
@@ -5268,7 +4868,7 @@ impl DataCatalog {
 
 /// <p>Describes a query execution that failed to process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedQueryExecutionId {
     /// <p>The unique identifier of the query execution.</p>
     #[doc(hidden)]
@@ -5292,15 +4892,6 @@ impl UnprocessedQueryExecutionId {
     /// <p>The error message returned when the query execution failed to process, if applicable.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedQueryExecutionId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedQueryExecutionId");
-        formatter.field("query_execution_id", &self.query_execution_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedQueryExecutionId`](crate::model::UnprocessedQueryExecutionId).
@@ -5369,7 +4960,7 @@ impl UnprocessedQueryExecutionId {
 
 /// <p>The name of a prepared statement that could not be returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedPreparedStatementName {
     /// <p>The name of a prepared statement that could not be returned due to an error.</p>
     #[doc(hidden)]
@@ -5403,15 +4994,6 @@ impl UnprocessedPreparedStatementName {
     /// </ul>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedPreparedStatementName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedPreparedStatementName");
-        formatter.field("statement_name", &self.statement_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
@@ -5490,7 +5072,7 @@ impl UnprocessedPreparedStatementName {
 
 /// <p>Information about a named query ID that could not be processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedNamedQueryId {
     /// <p>The unique identifier of the named query.</p>
     #[doc(hidden)]
@@ -5514,15 +5096,6 @@ impl UnprocessedNamedQueryId {
     /// <p>The error message returned when the processing request for the named query failed, if applicable.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedNamedQueryId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedNamedQueryId");
-        formatter.field("named_query_id", &self.named_query_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedNamedQueryId`](crate::model::UnprocessedNamedQueryId).

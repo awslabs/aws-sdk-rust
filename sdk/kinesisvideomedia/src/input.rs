@@ -168,7 +168,7 @@ impl GetMediaInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaInput {
     /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
     #[doc(hidden)]
@@ -192,14 +192,5 @@ impl GetMediaInput {
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
     pub fn start_selector(&self) -> std::option::Option<&crate::model::StartSelector> {
         self.start_selector.as_ref()
-    }
-}
-impl std::fmt::Debug for GetMediaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("start_selector", &self.start_selector);
-        formatter.finish()
     }
 }

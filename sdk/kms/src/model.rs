@@ -341,7 +341,7 @@ impl AsRef<str> for MessageType {
 /// <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p>
 /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -358,14 +358,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn tag_value(&self) -> std::option::Option<&str> {
         self.tag_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_value", &self.tag_value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -546,7 +538,7 @@ impl AsRef<str> for KeyState {
 /// <p>Contains metadata about a KMS key.</p>
 /// <p>This data type is used as a response element for the <code>CreateKey</code> and <code>DescribeKey</code> operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyMetadata {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
     #[doc(hidden)]
@@ -747,41 +739,6 @@ impl KeyMetadata {
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
     pub fn mac_algorithms(&self) -> std::option::Option<&[crate::model::MacAlgorithmSpec]> {
         self.mac_algorithms.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyMetadata");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("description", &self.description);
-        formatter.field("key_usage", &self.key_usage);
-        formatter.field("key_state", &self.key_state);
-        formatter.field("deletion_date", &self.deletion_date);
-        formatter.field("valid_to", &self.valid_to);
-        formatter.field("origin", &self.origin);
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.field("cloud_hsm_cluster_id", &self.cloud_hsm_cluster_id);
-        formatter.field("expiration_model", &self.expiration_model);
-        formatter.field("key_manager", &self.key_manager);
-        formatter.field("customer_master_key_spec", &self.customer_master_key_spec);
-        formatter.field("key_spec", &self.key_spec);
-        formatter.field("encryption_algorithms", &self.encryption_algorithms);
-        formatter.field("signing_algorithms", &self.signing_algorithms);
-        formatter.field("multi_region", &self.multi_region);
-        formatter.field(
-            "multi_region_configuration",
-            &self.multi_region_configuration,
-        );
-        formatter.field(
-            "pending_deletion_window_in_days",
-            &self.pending_deletion_window_in_days,
-        );
-        formatter.field("mac_algorithms", &self.mac_algorithms);
-        formatter.finish()
     }
 }
 /// See [`KeyMetadata`](crate::model::KeyMetadata).
@@ -1192,7 +1149,7 @@ impl KeyMetadata {
 /// <p>Describes the configuration of this multi-Region key. This field appears only when the KMS key is a primary or replica of a multi-Region key.</p>
 /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiRegionConfiguration {
     /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
     #[doc(hidden)]
@@ -1216,15 +1173,6 @@ impl MultiRegionConfiguration {
     /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
     pub fn replica_keys(&self) -> std::option::Option<&[crate::model::MultiRegionKey]> {
         self.replica_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiRegionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiRegionConfiguration");
-        formatter.field("multi_region_key_type", &self.multi_region_key_type);
-        formatter.field("primary_key", &self.primary_key);
-        formatter.field("replica_keys", &self.replica_keys);
-        formatter.finish()
     }
 }
 /// See [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
@@ -1302,7 +1250,7 @@ impl MultiRegionConfiguration {
 
 /// <p>Describes the primary or replica key in a multi-Region key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiRegionKey {
     /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
     #[doc(hidden)]
@@ -1319,14 +1267,6 @@ impl MultiRegionKey {
     /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiRegionKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiRegionKey");
-        formatter.field("arn", &self.arn);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`MultiRegionKey`](crate::model::MultiRegionKey).
@@ -2269,7 +2209,7 @@ impl AsRef<str> for KeyUsageType {
 
 /// <p>Contains information about a grant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrantListEntry {
     /// <p>The unique identifier for the KMS key to which the grant applies.</p>
     #[doc(hidden)]
@@ -2337,21 +2277,6 @@ impl GrantListEntry {
     /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
     pub fn constraints(&self) -> std::option::Option<&crate::model::GrantConstraints> {
         self.constraints.as_ref()
-    }
-}
-impl std::fmt::Debug for GrantListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrantListEntry");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_id", &self.grant_id);
-        formatter.field("name", &self.name);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("grantee_principal", &self.grantee_principal);
-        formatter.field("retiring_principal", &self.retiring_principal);
-        formatter.field("issuing_account", &self.issuing_account);
-        formatter.field("operations", &self.operations);
-        formatter.field("constraints", &self.constraints);
-        formatter.finish()
     }
 }
 /// See [`GrantListEntry`](crate::model::GrantListEntry).
@@ -2517,7 +2442,7 @@ impl GrantListEntry {
 /// <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrantConstraints {
     /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
     #[doc(hidden)]
@@ -2542,14 +2467,6 @@ impl GrantConstraints {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.encryption_context_equals.as_ref()
-    }
-}
-impl std::fmt::Debug for GrantConstraints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrantConstraints");
-        formatter.field("encryption_context_subset", &self.encryption_context_subset);
-        formatter.field("encryption_context_equals", &self.encryption_context_equals);
-        formatter.finish()
     }
 }
 /// See [`GrantConstraints`](crate::model::GrantConstraints).
@@ -2815,7 +2732,7 @@ impl AsRef<str> for GrantOperation {
 
 /// <p>Contains information about each entry in the key list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyListEntry {
     /// <p>Unique identifier of the key.</p>
     #[doc(hidden)]
@@ -2832,14 +2749,6 @@ impl KeyListEntry {
     /// <p>ARN of the key.</p>
     pub fn key_arn(&self) -> std::option::Option<&str> {
         self.key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyListEntry");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("key_arn", &self.key_arn);
-        formatter.finish()
     }
 }
 /// See [`KeyListEntry`](crate::model::KeyListEntry).
@@ -2890,7 +2799,7 @@ impl KeyListEntry {
 
 /// <p>Contains information about an alias.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AliasListEntry {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
     #[doc(hidden)]
@@ -2928,17 +2837,6 @@ impl AliasListEntry {
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
     pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
-    }
-}
-impl std::fmt::Debug for AliasListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AliasListEntry");
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("alias_arn", &self.alias_arn);
-        formatter.field("target_key_id", &self.target_key_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.finish()
     }
 }
 /// See [`AliasListEntry`](crate::model::AliasListEntry).
@@ -3433,7 +3331,7 @@ impl AsRef<str> for DataKeyPairSpec {
 
 /// <p>Contains information about each custom key store in the custom key store list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomKeyStoresListEntry {
     /// <p>A unique identifier for the custom key store.</p>
     #[doc(hidden)]
@@ -3517,19 +3415,6 @@ impl CustomKeyStoresListEntry {
     /// <p>The date and time when the custom key store was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomKeyStoresListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomKeyStoresListEntry");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.field("custom_key_store_name", &self.custom_key_store_name);
-        formatter.field("cloud_hsm_cluster_id", &self.cloud_hsm_cluster_id);
-        formatter.field("trust_anchor_certificate", &self.trust_anchor_certificate);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("connection_error_code", &self.connection_error_code);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).

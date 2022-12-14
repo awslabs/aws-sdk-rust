@@ -8359,7 +8359,7 @@ impl WithdrawByoipCidrInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WithdrawByoipCidrInput {
     /// <p>The address range, in CIDR notation.</p>
     #[doc(hidden)]
@@ -8371,17 +8371,10 @@ impl WithdrawByoipCidrInput {
         self.cidr.as_deref()
     }
 }
-impl std::fmt::Debug for WithdrawByoipCidrInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WithdrawByoipCidrInput");
-        formatter.field("cidr", &self.cidr);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
     #[doc(hidden)]
@@ -8420,20 +8413,10 @@ impl UpdateListenerInput {
         self.client_affinity.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateListenerInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("port_ranges", &self.port_ranges);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("client_affinity", &self.client_affinity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
@@ -8510,28 +8493,10 @@ impl UpdateEndpointGroupInput {
         self.port_overrides.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEndpointGroupInput");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_configurations", &self.endpoint_configurations);
-        formatter.field("traffic_dial_percentage", &self.traffic_dial_percentage);
-        formatter.field("health_check_port", &self.health_check_port);
-        formatter.field("health_check_protocol", &self.health_check_protocol);
-        formatter.field("health_check_path", &self.health_check_path);
-        formatter.field(
-            "health_check_interval_seconds",
-            &self.health_check_interval_seconds,
-        );
-        formatter.field("threshold_count", &self.threshold_count);
-        formatter.field("port_overrides", &self.port_overrides);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
     #[doc(hidden)]
@@ -8552,18 +8517,10 @@ impl UpdateCustomRoutingListenerInput {
         self.port_ranges.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCustomRoutingListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomRoutingListenerInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("port_ranges", &self.port_ranges);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
     #[doc(hidden)]
@@ -8602,20 +8559,10 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
         self.flow_logs_s3_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCustomRoutingAcceleratorAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomRoutingAcceleratorAttributesInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("flow_logs_enabled", &self.flow_logs_enabled);
-        formatter.field("flow_logs_s3_bucket", &self.flow_logs_s3_bucket);
-        formatter.field("flow_logs_s3_prefix", &self.flow_logs_s3_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
     #[doc(hidden)]
@@ -8650,20 +8597,10 @@ impl UpdateCustomRoutingAcceleratorInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for UpdateCustomRoutingAcceleratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomRoutingAcceleratorInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("name", &self.name);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
     #[doc(hidden)]
@@ -8702,20 +8639,10 @@ impl UpdateAcceleratorAttributesInput {
         self.flow_logs_s3_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAcceleratorAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAcceleratorAttributesInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("flow_logs_enabled", &self.flow_logs_enabled);
-        formatter.field("flow_logs_s3_bucket", &self.flow_logs_s3_bucket);
-        formatter.field("flow_logs_s3_prefix", &self.flow_logs_s3_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
     #[doc(hidden)]
@@ -8750,20 +8677,10 @@ impl UpdateAcceleratorInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for UpdateAcceleratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAcceleratorInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("name", &self.name);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.</p>
     #[doc(hidden)]
@@ -8782,18 +8699,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.</p>
     #[doc(hidden)]
@@ -8812,18 +8721,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsInput {
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
     #[doc(hidden)]
@@ -8842,18 +8743,10 @@ impl RemoveCustomRoutingEndpointsInput {
         self.endpoint_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveCustomRoutingEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveCustomRoutingEndpointsInput");
-        formatter.field("endpoint_ids", &self.endpoint_ids);
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionByoipCidrInput {
     /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     #[doc(hidden)]
@@ -8874,21 +8767,10 @@ impl ProvisionByoipCidrInput {
         self.cidr_authorization_context.as_ref()
     }
 }
-impl std::fmt::Debug for ProvisionByoipCidrInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionByoipCidrInput");
-        formatter.field("cidr", &self.cidr);
-        formatter.field(
-            "cidr_authorization_context",
-            &self.cidr_authorization_context,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
     #[doc(hidden)]
@@ -8900,17 +8782,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListListenersInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
     #[doc(hidden)]
@@ -8936,19 +8811,10 @@ impl ListListenersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListListenersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListListenersInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEndpointGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
@@ -8974,19 +8840,10 @@ impl ListEndpointGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEndpointGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEndpointGroupsInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsByDestinationInput {
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
     #[doc(hidden)]
@@ -9019,20 +8876,10 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCustomRoutingPortMappingsByDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomRoutingPortMappingsByDestinationInput");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("destination_address", &self.destination_address);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
     #[doc(hidden)]
@@ -9065,20 +8912,10 @@ impl ListCustomRoutingPortMappingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCustomRoutingPortMappingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomRoutingPortMappingsInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomRoutingListenersInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
     #[doc(hidden)]
@@ -9104,19 +8941,10 @@ impl ListCustomRoutingListenersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCustomRoutingListenersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomRoutingListenersInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomRoutingEndpointGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
     #[doc(hidden)]
@@ -9142,19 +8970,10 @@ impl ListCustomRoutingEndpointGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCustomRoutingEndpointGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomRoutingEndpointGroupsInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomRoutingAcceleratorsInput {
     /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     #[doc(hidden)]
@@ -9173,18 +8992,10 @@ impl ListCustomRoutingAcceleratorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCustomRoutingAcceleratorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomRoutingAcceleratorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListByoipCidrsInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     #[doc(hidden)]
@@ -9203,18 +9014,10 @@ impl ListByoipCidrsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListByoipCidrsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListByoipCidrsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAcceleratorsInput {
     /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     #[doc(hidden)]
@@ -9233,18 +9036,10 @@ impl ListAcceleratorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAcceleratorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAcceleratorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     #[doc(hidden)]
@@ -9256,17 +9051,10 @@ impl DescribeListenerInput {
         self.listener_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeListenerInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
     #[doc(hidden)]
@@ -9278,17 +9066,10 @@ impl DescribeEndpointGroupInput {
         self.endpoint_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointGroupInput");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     #[doc(hidden)]
@@ -9300,17 +9081,10 @@ impl DescribeCustomRoutingListenerInput {
         self.listener_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCustomRoutingListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomRoutingListenerInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
     #[doc(hidden)]
@@ -9322,17 +9096,10 @@ impl DescribeCustomRoutingEndpointGroupInput {
         self.endpoint_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCustomRoutingEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomRoutingEndpointGroupInput");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomRoutingAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
     #[doc(hidden)]
@@ -9344,17 +9111,10 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
         self.accelerator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCustomRoutingAcceleratorAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomRoutingAcceleratorAttributesInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
     #[doc(hidden)]
@@ -9366,17 +9126,10 @@ impl DescribeCustomRoutingAcceleratorInput {
         self.accelerator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCustomRoutingAcceleratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomRoutingAcceleratorInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
     #[doc(hidden)]
@@ -9388,17 +9141,10 @@ impl DescribeAcceleratorAttributesInput {
         self.accelerator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAcceleratorAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAcceleratorAttributesInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
     #[doc(hidden)]
@@ -9410,17 +9156,10 @@ impl DescribeAcceleratorInput {
         self.accelerator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAcceleratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAcceleratorInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprovisionByoipCidrInput {
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
     #[doc(hidden)]
@@ -9432,17 +9171,10 @@ impl DeprovisionByoipCidrInput {
         self.cidr.as_deref()
     }
 }
-impl std::fmt::Debug for DeprovisionByoipCidrInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeprovisionByoipCidrInput");
-        formatter.field("cidr", &self.cidr);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DenyCustomRoutingTrafficInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
@@ -9488,24 +9220,10 @@ impl DenyCustomRoutingTrafficInput {
         self.deny_all_traffic_to_endpoint
     }
 }
-impl std::fmt::Debug for DenyCustomRoutingTrafficInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DenyCustomRoutingTrafficInput");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("destination_addresses", &self.destination_addresses);
-        formatter.field("destination_ports", &self.destination_ports);
-        formatter.field(
-            "deny_all_traffic_to_endpoint",
-            &self.deny_all_traffic_to_endpoint,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
@@ -9517,17 +9235,10 @@ impl DeleteListenerInput {
         self.listener_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteListenerInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     #[doc(hidden)]
@@ -9539,17 +9250,10 @@ impl DeleteEndpointGroupInput {
         self.endpoint_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEndpointGroupInput");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
     #[doc(hidden)]
@@ -9561,17 +9265,10 @@ impl DeleteCustomRoutingListenerInput {
         self.listener_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomRoutingListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomRoutingListenerInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     #[doc(hidden)]
@@ -9583,17 +9280,10 @@ impl DeleteCustomRoutingEndpointGroupInput {
         self.endpoint_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomRoutingEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomRoutingEndpointGroupInput");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
     #[doc(hidden)]
@@ -9605,17 +9295,10 @@ impl DeleteCustomRoutingAcceleratorInput {
         self.accelerator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomRoutingAcceleratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomRoutingAcceleratorInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
     #[doc(hidden)]
@@ -9627,17 +9310,10 @@ impl DeleteAcceleratorInput {
         self.accelerator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAcceleratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAcceleratorInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateListenerInput {
     /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
     #[doc(hidden)]
@@ -9683,21 +9359,10 @@ impl CreateListenerInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateListenerInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("port_ranges", &self.port_ranges);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("client_affinity", &self.client_affinity);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
@@ -9788,30 +9453,10 @@ impl CreateEndpointGroupInput {
         self.port_overrides.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEndpointGroupInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("endpoint_group_region", &self.endpoint_group_region);
-        formatter.field("endpoint_configurations", &self.endpoint_configurations);
-        formatter.field("traffic_dial_percentage", &self.traffic_dial_percentage);
-        formatter.field("health_check_port", &self.health_check_port);
-        formatter.field("health_check_protocol", &self.health_check_protocol);
-        formatter.field("health_check_path", &self.health_check_path);
-        formatter.field(
-            "health_check_interval_seconds",
-            &self.health_check_interval_seconds,
-        );
-        formatter.field("threshold_count", &self.threshold_count);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("port_overrides", &self.port_overrides);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
     #[doc(hidden)]
@@ -9839,19 +9484,10 @@ impl CreateCustomRoutingListenerInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCustomRoutingListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomRoutingListenerInput");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("port_ranges", &self.port_ranges);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
     #[doc(hidden)]
@@ -9887,23 +9523,10 @@ impl CreateCustomRoutingEndpointGroupInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCustomRoutingEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomRoutingEndpointGroupInput");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("endpoint_group_region", &self.endpoint_group_region);
-        formatter.field(
-            "destination_configurations",
-            &self.destination_configurations,
-        );
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomRoutingAcceleratorInput {
     /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     #[doc(hidden)]
@@ -9962,22 +9585,10 @@ impl CreateCustomRoutingAcceleratorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCustomRoutingAcceleratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomRoutingAcceleratorInput");
-        formatter.field("name", &self.name);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAcceleratorInput {
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
     #[doc(hidden)]
@@ -10036,22 +9647,10 @@ impl CreateAcceleratorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAcceleratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAcceleratorInput");
-        formatter.field("name", &self.name);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowCustomRoutingTrafficInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
@@ -10099,24 +9698,10 @@ impl AllowCustomRoutingTrafficInput {
         self.allow_all_traffic_to_endpoint
     }
 }
-impl std::fmt::Debug for AllowCustomRoutingTrafficInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowCustomRoutingTrafficInput");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("destination_addresses", &self.destination_addresses);
-        formatter.field("destination_ports", &self.destination_ports);
-        formatter.field(
-            "allow_all_traffic_to_endpoint",
-            &self.allow_all_traffic_to_endpoint,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvertiseByoipCidrInput {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     #[doc(hidden)]
@@ -10128,17 +9713,10 @@ impl AdvertiseByoipCidrInput {
         self.cidr.as_deref()
     }
 }
-impl std::fmt::Debug for AdvertiseByoipCidrInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvertiseByoipCidrInput");
-        formatter.field("cidr", &self.cidr);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddCustomRoutingEndpointsInput {
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
     #[doc(hidden)]
@@ -10158,13 +9736,5 @@ impl AddCustomRoutingEndpointsInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
         self.endpoint_group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AddCustomRoutingEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddCustomRoutingEndpointsInput");
-        formatter.field("endpoint_configurations", &self.endpoint_configurations);
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.finish()
     }
 }

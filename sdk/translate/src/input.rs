@@ -3218,7 +3218,7 @@ impl UpdateParallelDataInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateParallelDataInput {
     /// <p>The name of the parallel data resource being updated.</p>
     #[doc(hidden)]
@@ -3251,20 +3251,10 @@ impl UpdateParallelDataInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateParallelDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateParallelDataInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("parallel_data_config", &self.parallel_data_config);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3283,18 +3273,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranslateTextInput {
     /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
     #[doc(hidden)]
@@ -3340,21 +3322,10 @@ impl TranslateTextInput {
         self.settings.as_ref()
     }
 }
-impl std::fmt::Debug for TranslateTextInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranslateTextInput");
-        formatter.field("text", &self.text);
-        formatter.field("terminology_names", &self.terminology_names);
-        formatter.field("source_language_code", &self.source_language_code);
-        formatter.field("target_language_code", &self.target_language_code);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3373,18 +3344,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopTextTranslationJobInput {
     /// <p>The job ID of the job to be stopped.</p>
     #[doc(hidden)]
@@ -3396,17 +3359,10 @@ impl StopTextTranslationJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopTextTranslationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopTextTranslationJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTextTranslationJobInput {
     /// <p>The name of the batch translation job to be performed.</p>
     #[doc(hidden)]
@@ -3499,26 +3455,10 @@ impl StartTextTranslationJobInput {
         self.settings.as_ref()
     }
 }
-impl std::fmt::Debug for StartTextTranslationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTextTranslationJobInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("source_language_code", &self.source_language_code);
-        formatter.field("target_language_codes", &self.target_language_codes);
-        formatter.field("terminology_names", &self.terminology_names);
-        formatter.field("parallel_data_names", &self.parallel_data_names);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTextTranslationJobsInput {
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -3544,19 +3484,10 @@ impl ListTextTranslationJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTextTranslationJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTextTranslationJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTerminologiesInput {
     /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
     #[doc(hidden)]
@@ -3575,18 +3506,10 @@ impl ListTerminologiesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTerminologiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTerminologiesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3598,17 +3521,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListParallelDataInput {
     /// <p>A string that specifies the next page of results to return in a paginated response.</p>
     #[doc(hidden)]
@@ -3627,18 +3543,10 @@ impl ListParallelDataInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListParallelDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListParallelDataInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLanguagesInput {
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
     #[doc(hidden)]
@@ -3664,19 +3572,10 @@ impl ListLanguagesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLanguagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLanguagesInput");
-        formatter.field("display_language_code", &self.display_language_code);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportTerminologyInput {
     /// <p>The name of the custom terminology being imported.</p>
     #[doc(hidden)]
@@ -3723,22 +3622,10 @@ impl ImportTerminologyInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ImportTerminologyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportTerminologyInput");
-        formatter.field("name", &self.name);
-        formatter.field("merge_strategy", &self.merge_strategy);
-        formatter.field("description", &self.description);
-        formatter.field("terminology_data", &self.terminology_data);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTerminologyInput {
     /// <p>The name of the custom terminology being retrieved.</p>
     #[doc(hidden)]
@@ -3763,18 +3650,10 @@ impl GetTerminologyInput {
         self.terminology_data_format.as_ref()
     }
 }
-impl std::fmt::Debug for GetTerminologyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTerminologyInput");
-        formatter.field("name", &self.name);
-        formatter.field("terminology_data_format", &self.terminology_data_format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetParallelDataInput {
     /// <p>The name of the parallel data resource that is being retrieved.</p>
     #[doc(hidden)]
@@ -3786,17 +3665,10 @@ impl GetParallelDataInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetParallelDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetParallelDataInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTextTranslationJobInput {
     /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -3808,17 +3680,10 @@ impl DescribeTextTranslationJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTextTranslationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTextTranslationJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTerminologyInput {
     /// <p>The name of the custom terminology being deleted. </p>
     #[doc(hidden)]
@@ -3830,17 +3695,10 @@ impl DeleteTerminologyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTerminologyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTerminologyInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteParallelDataInput {
     /// <p>The name of the parallel data resource that is being deleted.</p>
     #[doc(hidden)]
@@ -3852,17 +3710,10 @@ impl DeleteParallelDataInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteParallelDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteParallelDataInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateParallelDataInput {
     /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
     #[doc(hidden)]
@@ -3907,17 +3758,5 @@ impl CreateParallelDataInput {
     #[allow(missing_docs)] // documentation missing in model
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateParallelDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateParallelDataInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("parallel_data_config", &self.parallel_data_config);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

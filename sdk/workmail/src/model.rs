@@ -2,7 +2,7 @@
 
 /// <p>At least one delegate must be associated to the resource to disable automatic replies from the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BookingOptions {
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
     #[doc(hidden)]
@@ -26,21 +26,6 @@ impl BookingOptions {
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
     pub fn auto_decline_conflicting_requests(&self) -> bool {
         self.auto_decline_conflicting_requests
-    }
-}
-impl std::fmt::Debug for BookingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BookingOptions");
-        formatter.field("auto_accept_requests", &self.auto_accept_requests);
-        formatter.field(
-            "auto_decline_recurring_requests",
-            &self.auto_decline_recurring_requests,
-        );
-        formatter.field(
-            "auto_decline_conflicting_requests",
-            &self.auto_decline_conflicting_requests,
-        );
-        formatter.finish()
     }
 }
 /// See [`BookingOptions`](crate::model::BookingOptions).
@@ -205,7 +190,7 @@ impl AsRef<str> for MobileDeviceAccessRuleEffect {
 
 /// <p>The rules for the given impersonation role.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImpersonationRule {
     /// <p>The identifier of the rule.</p>
     #[doc(hidden)]
@@ -250,18 +235,6 @@ impl ImpersonationRule {
     /// <p>A list of user IDs that don't match the rule.</p>
     pub fn not_target_users(&self) -> std::option::Option<&[std::string::String]> {
         self.not_target_users.as_deref()
-    }
-}
-impl std::fmt::Debug for ImpersonationRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImpersonationRule");
-        formatter.field("impersonation_rule_id", &self.impersonation_rule_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("effect", &self.effect);
-        formatter.field("target_users", &self.target_users);
-        formatter.field("not_target_users", &self.not_target_users);
-        formatter.finish()
     }
 }
 /// See [`ImpersonationRule`](crate::model::ImpersonationRule).
@@ -566,7 +539,7 @@ impl AsRef<str> for ImpersonationRoleType {
 
 /// <p>Describes a Lambda based availability provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     #[doc(hidden)]
@@ -576,13 +549,6 @@ impl LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     pub fn lambda_arn(&self) -> std::option::Option<&str> {
         self.lambda_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaAvailabilityProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaAvailabilityProvider");
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
@@ -660,7 +626,7 @@ impl std::fmt::Debug for EwsAvailabilityProvider {
 pub mod ews_availability_provider {
 
     /// A builder for [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) ews_endpoint: std::option::Option<std::string::String>,
         pub(crate) ews_username: std::option::Option<std::string::String>,
@@ -706,6 +672,15 @@ pub mod ews_availability_provider {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("ews_endpoint", &self.ews_endpoint);
+            formatter.field("ews_username", &self.ews_username);
+            formatter.field("ews_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl EwsAvailabilityProvider {
     /// Creates a new builder-style object to manufacture [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
@@ -716,7 +691,7 @@ impl EwsAvailabilityProvider {
 
 /// <p>Describes a tag applied to a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -733,14 +708,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -791,7 +758,7 @@ impl Tag {
 
 /// <p>The configuration applied to an organization's folders by its retention policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderConfiguration {
     /// <p>The folder name.</p>
     #[doc(hidden)]
@@ -815,15 +782,6 @@ impl FolderConfiguration {
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub fn period(&self) -> std::option::Option<i32> {
         self.period
-    }
-}
-impl std::fmt::Debug for FolderConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("action", &self.action);
-        formatter.field("period", &self.period);
-        formatter.finish()
     }
 }
 /// See [`FolderConfiguration`](crate::model::FolderConfiguration).
@@ -1282,7 +1240,7 @@ impl AsRef<str> for AccessControlRuleEffect {
 
 /// <p>The representation of an WorkMail user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>The identifier of the user.</p>
     #[doc(hidden)]
@@ -1341,20 +1299,6 @@ impl User {
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
-    }
-}
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("id", &self.id);
-        formatter.field("email", &self.email);
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("state", &self.state);
-        formatter.field("user_role", &self.user_role);
-        formatter.field("enabled_date", &self.enabled_date);
-        formatter.field("disabled_date", &self.disabled_date);
-        formatter.finish()
     }
 }
 /// See [`User`](crate::model::User).
@@ -1673,7 +1617,7 @@ impl AsRef<str> for EntityState {
 
 /// <p>The representation of a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The identifier of the resource.</p>
     #[doc(hidden)]
@@ -1725,19 +1669,6 @@ impl Resource {
     /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("id", &self.id);
-        formatter.field("email", &self.email);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("enabled_date", &self.enabled_date);
-        formatter.field("disabled_date", &self.disabled_date);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -1944,7 +1875,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>The name of the attribute, which is one of the values defined in the UserAttribute enumeration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Delegate {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
     #[doc(hidden)]
@@ -1961,14 +1892,6 @@ impl Delegate {
     /// <p>The type of the delegate: user or group.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::MemberType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Delegate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Delegate");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Delegate`](crate::model::Delegate).
@@ -2109,7 +2032,7 @@ impl AsRef<str> for MemberType {
 
 /// <p>The representation of an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationSummary {
     /// <p>The identifier associated with the organization.</p>
     #[doc(hidden)]
@@ -2147,17 +2070,6 @@ impl OrganizationSummary {
     /// <p>The state associated with the organization.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationSummary");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("default_mail_domain", &self.default_mail_domain);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`OrganizationSummary`](crate::model::OrganizationSummary).
@@ -2253,7 +2165,7 @@ impl OrganizationSummary {
 
 /// <p>A rule that controls access to mobile devices for an WorkMail group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MobileDeviceAccessRule {
     /// <p>The ID assigned to a mobile access rule.</p>
     #[doc(hidden)]
@@ -2354,32 +2266,6 @@ impl MobileDeviceAccessRule {
     /// <p>The date and time at which an access rule was modified.</p>
     pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
-    }
-}
-impl std::fmt::Debug for MobileDeviceAccessRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MobileDeviceAccessRule");
-        formatter.field(
-            "mobile_device_access_rule_id",
-            &self.mobile_device_access_rule_id,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("effect", &self.effect);
-        formatter.field("device_types", &self.device_types);
-        formatter.field("not_device_types", &self.not_device_types);
-        formatter.field("device_models", &self.device_models);
-        formatter.field("not_device_models", &self.not_device_models);
-        formatter.field("device_operating_systems", &self.device_operating_systems);
-        formatter.field(
-            "not_device_operating_systems",
-            &self.not_device_operating_systems,
-        );
-        formatter.field("device_user_agents", &self.device_user_agents);
-        formatter.field("not_device_user_agents", &self.not_device_user_agents);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_modified", &self.date_modified);
-        formatter.finish()
     }
 }
 /// See [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
@@ -2666,7 +2552,7 @@ impl MobileDeviceAccessRule {
 
 /// <p>The override object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MobileDeviceAccessOverride {
     /// <p>The WorkMail user to which the access override applies.</p>
     #[doc(hidden)]
@@ -2711,18 +2597,6 @@ impl MobileDeviceAccessOverride {
     /// <p>The date the override was last modified.</p>
     pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
-    }
-}
-impl std::fmt::Debug for MobileDeviceAccessOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MobileDeviceAccessOverride");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("effect", &self.effect);
-        formatter.field("description", &self.description);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_modified", &self.date_modified);
-        formatter.finish()
     }
 }
 /// See [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
@@ -2830,7 +2704,7 @@ impl MobileDeviceAccessOverride {
 
 /// <p>The data for a given domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MailDomainSummary {
     /// <p>The domain name.</p>
     #[doc(hidden)]
@@ -2847,14 +2721,6 @@ impl MailDomainSummary {
     /// <p>Whether the domain is default or not.</p>
     pub fn default_domain(&self) -> bool {
         self.default_domain
-    }
-}
-impl std::fmt::Debug for MailDomainSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MailDomainSummary");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("default_domain", &self.default_domain);
-        formatter.finish()
     }
 }
 /// See [`MailDomainSummary`](crate::model::MailDomainSummary).
@@ -2905,7 +2771,7 @@ impl MailDomainSummary {
 
 /// <p>Permission granted to a user, group, or resource to access a certain aspect of another user, group, or resource mailbox.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Permission {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
     #[doc(hidden)]
@@ -2929,15 +2795,6 @@ impl Permission {
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
     pub fn permission_values(&self) -> std::option::Option<&[crate::model::PermissionType]> {
         self.permission_values.as_deref()
-    }
-}
-impl std::fmt::Debug for Permission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Permission");
-        formatter.field("grantee_id", &self.grantee_id);
-        formatter.field("grantee_type", &self.grantee_type);
-        formatter.field("permission_values", &self.permission_values);
-        formatter.finish()
     }
 }
 /// See [`Permission`](crate::model::Permission).
@@ -3013,7 +2870,7 @@ impl Permission {
 
 /// <p>The details of a mailbox export job, including the user or resource ID associated with the mailbox and the S3 bucket that the mailbox contents are exported to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MailboxExportJob {
     /// <p>The identifier of the mailbox export job.</p>
     #[doc(hidden)]
@@ -3079,21 +2936,6 @@ impl MailboxExportJob {
     /// <p>The mailbox export job end timestamp.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for MailboxExportJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MailboxExportJob");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("description", &self.description);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_path", &self.s3_path);
-        formatter.field("estimated_progress", &self.estimated_progress);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`MailboxExportJob`](crate::model::MailboxExportJob).
@@ -3342,7 +3184,7 @@ impl AsRef<str> for MailboxExportJobState {
 
 /// <p>An impersonation role for the given WorkMail organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImpersonationRole {
     /// <p>The identifier of the impersonation role.</p>
     #[doc(hidden)]
@@ -3380,17 +3222,6 @@ impl ImpersonationRole {
     /// <p>The date when the impersonation role was last modified.</p>
     pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
-    }
-}
-impl std::fmt::Debug for ImpersonationRole {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImpersonationRole");
-        formatter.field("impersonation_role_id", &self.impersonation_role_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_modified", &self.date_modified);
-        formatter.finish()
     }
 }
 /// See [`ImpersonationRole`](crate::model::ImpersonationRole).
@@ -3489,7 +3320,7 @@ impl ImpersonationRole {
 
 /// <p>The representation of an WorkMail group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Group {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
@@ -3534,18 +3365,6 @@ impl Group {
     /// <p>The date indicating when the group was disabled from WorkMail use.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Group {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Group");
-        formatter.field("id", &self.id);
-        formatter.field("email", &self.email);
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.field("enabled_date", &self.enabled_date);
-        formatter.field("disabled_date", &self.disabled_date);
-        formatter.finish()
     }
 }
 /// See [`Group`](crate::model::Group).
@@ -3650,7 +3469,7 @@ impl Group {
 
 /// <p>The representation of a user or group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Member {
     /// <p>The identifier of the member.</p>
     #[doc(hidden)]
@@ -3695,18 +3514,6 @@ impl Member {
     /// <p>The date indicating when the member was disabled from WorkMail use.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Member {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Member");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("enabled_date", &self.enabled_date);
-        formatter.field("disabled_date", &self.disabled_date);
-        formatter.finish()
     }
 }
 /// See [`Member`](crate::model::Member).
@@ -3811,7 +3618,7 @@ impl Member {
 
 /// <p>List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityConfiguration {
     /// <p>Displays the domain to which the provider applies.</p>
     #[doc(hidden)]
@@ -3860,18 +3667,6 @@ impl AvailabilityConfiguration {
     /// <p>The date and time at which the availability configuration was last modified.</p>
     pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
-    }
-}
-impl std::fmt::Debug for AvailabilityConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityConfiguration");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("ews_provider", &self.ews_provider);
-        formatter.field("lambda_provider", &self.lambda_provider);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_modified", &self.date_modified);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
@@ -3988,7 +3783,7 @@ impl AvailabilityConfiguration {
 
 /// <p>Describes an EWS based availability provider when returned from the service. It does not contain the password of the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedactedEwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
     #[doc(hidden)]
@@ -4005,14 +3800,6 @@ impl RedactedEwsAvailabilityProvider {
     /// <p>The username used to authenticate the remote EWS server.</p>
     pub fn ews_username(&self) -> std::option::Option<&str> {
         self.ews_username.as_deref()
-    }
-}
-impl std::fmt::Debug for RedactedEwsAvailabilityProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedactedEwsAvailabilityProvider");
-        formatter.field("ews_endpoint", &self.ews_endpoint);
-        formatter.field("ews_username", &self.ews_username);
-        formatter.finish()
     }
 }
 /// See [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
@@ -4155,7 +3942,7 @@ impl AsRef<str> for AvailabilityProviderType {
 
 /// <p>A rule that controls access to an WorkMail organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlRule {
     /// <p>The rule name.</p>
     #[doc(hidden)]
@@ -4249,28 +4036,6 @@ impl AccessControlRule {
     /// <p>Impersonation role IDs to exclude from the rule.</p>
     pub fn not_impersonation_role_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.not_impersonation_role_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessControlRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlRule");
-        formatter.field("name", &self.name);
-        formatter.field("effect", &self.effect);
-        formatter.field("description", &self.description);
-        formatter.field("ip_ranges", &self.ip_ranges);
-        formatter.field("not_ip_ranges", &self.not_ip_ranges);
-        formatter.field("actions", &self.actions);
-        formatter.field("not_actions", &self.not_actions);
-        formatter.field("user_ids", &self.user_ids);
-        formatter.field("not_user_ids", &self.not_user_ids);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_modified", &self.date_modified);
-        formatter.field("impersonation_role_ids", &self.impersonation_role_ids);
-        formatter.field(
-            "not_impersonation_role_ids",
-            &self.not_impersonation_role_ids,
-        );
-        formatter.finish()
     }
 }
 /// See [`AccessControlRule`](crate::model::AccessControlRule).
@@ -4535,7 +4300,7 @@ impl AccessControlRule {
 
 /// <p>The rule that a simulated user matches.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MobileDeviceAccessMatchedRule {
     /// <p>Identifier of the rule that a simulated user matches.</p>
     #[doc(hidden)]
@@ -4552,17 +4317,6 @@ impl MobileDeviceAccessMatchedRule {
     /// <p>Name of a rule that a simulated user matches.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for MobileDeviceAccessMatchedRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MobileDeviceAccessMatchedRule");
-        formatter.field(
-            "mobile_device_access_rule_id",
-            &self.mobile_device_access_rule_id,
-        );
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
@@ -4716,7 +4470,7 @@ impl AsRef<str> for DnsRecordVerificationStatus {
 
 /// <p>A DNS record uploaded to your DNS provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsRecord {
     /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
     #[doc(hidden)]
@@ -4740,15 +4494,6 @@ impl DnsRecord {
     /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for DnsRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsRecord");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DnsRecord`](crate::model::DnsRecord).
@@ -4811,7 +4556,7 @@ impl DnsRecord {
 
 /// <p>The impersonation rule that matched the input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImpersonationMatchedRule {
     /// <p>The ID of the rule that matched the input</p>
     #[doc(hidden)]
@@ -4828,14 +4573,6 @@ impl ImpersonationMatchedRule {
     /// <p>The name of the rule that matched the input.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ImpersonationMatchedRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImpersonationMatchedRule");
-        formatter.field("impersonation_rule_id", &self.impersonation_rule_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
@@ -4890,7 +4627,7 @@ impl ImpersonationMatchedRule {
 /// <p>The domain to associate with an WorkMail organization.</p>
 /// <p>When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> in the <i>WorkMail Administrator Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Domain {
     /// <p>The fully qualified domain name.</p>
     #[doc(hidden)]
@@ -4907,14 +4644,6 @@ impl Domain {
     /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
     pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Domain {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Domain");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.finish()
     }
 }
 /// See [`Domain`](crate::model::Domain).

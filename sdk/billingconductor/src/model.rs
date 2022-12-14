@@ -2,7 +2,7 @@
 
 /// <p>The field's information of a request that resulted in an exception. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The field name. </p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The message describing why the field failed validation. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -546,7 +538,7 @@ impl std::fmt::Debug for PricingRuleListElement {
 pub mod pricing_rule_list_element {
 
     /// A builder for [`PricingRuleListElement`](crate::model::PricingRuleListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -685,6 +677,25 @@ pub mod pricing_rule_list_element {
                 creation_time: self.creation_time.unwrap_or_default(),
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("scope", &self.scope);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("modifier_percentage", &self.modifier_percentage);
+            formatter.field("service", &self.service);
+            formatter.field(
+                "associated_pricing_plan_count",
+                &self.associated_pricing_plan_count,
+            );
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.finish()
         }
     }
 }
@@ -877,7 +888,7 @@ impl AsRef<str> for PricingRuleScope {
 
 /// <p> The filter that specifies criteria that the pricing rules returned by the <code>ListPricingRules</code> API will adhere to. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingRulesFilter {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
     #[doc(hidden)]
@@ -887,13 +898,6 @@ impl ListPricingRulesFilter {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
     pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
         self.arns.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPricingRulesFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingRulesFilter");
-        formatter.field("arns", &self.arns);
-        formatter.finish()
     }
 }
 /// See [`ListPricingRulesFilter`](crate::model::ListPricingRulesFilter).
@@ -1002,7 +1006,7 @@ impl std::fmt::Debug for PricingPlanListElement {
 pub mod pricing_plan_list_element {
 
     /// A builder for [`PricingPlanListElement`](crate::model::PricingPlanListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1084,6 +1088,18 @@ pub mod pricing_plan_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("size", &self.size);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.finish()
+        }
+    }
 }
 impl PricingPlanListElement {
     /// Creates a new builder-style object to manufacture [`PricingPlanListElement`](crate::model::PricingPlanListElement).
@@ -1094,7 +1110,7 @@ impl PricingPlanListElement {
 
 /// <p>The filter that specifies the Amazon Resource Names (ARNs) of pricing plans, to retrieve pricing plan information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingPlansFilter {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
@@ -1104,13 +1120,6 @@ impl ListPricingPlansFilter {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
         self.arns.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPricingPlansFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingPlansFilter");
-        formatter.field("arns", &self.arns);
-        formatter.finish()
     }
 }
 /// See [`ListPricingPlansFilter`](crate::model::ListPricingPlansFilter).
@@ -1156,7 +1165,7 @@ impl ListPricingPlansFilter {
 
 /// <p> A representation of a resource association for a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The ARN of the associated resource. </p>
     #[doc(hidden)]
@@ -1173,15 +1182,6 @@ impl ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     pub fn relationship(&self) -> std::option::Option<&crate::model::CustomLineItemRelationship> {
         self.relationship.as_ref()
-    }
-}
-impl std::fmt::Debug for ListResourcesAssociatedToCustomLineItemResponseElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("ListResourcesAssociatedToCustomLineItemResponseElement");
-        formatter.field("arn", &self.arn);
-        formatter.field("relationship", &self.relationship);
-        formatter.finish()
     }
 }
 /// See [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::model::ListResourcesAssociatedToCustomLineItemResponseElement).
@@ -1328,7 +1328,7 @@ impl AsRef<str> for CustomLineItemRelationship {
 
 /// <p> A filter that specifies the type of resource associations that should be retrieved for a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemFilter {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     #[doc(hidden)]
@@ -1338,13 +1338,6 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     pub fn relationship(&self) -> std::option::Option<&crate::model::CustomLineItemRelationship> {
         self.relationship.as_ref()
-    }
-}
-impl std::fmt::Debug for ListResourcesAssociatedToCustomLineItemFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesAssociatedToCustomLineItemFilter");
-        formatter.field("relationship", &self.relationship);
-        formatter.finish()
     }
 }
 /// See [`ListResourcesAssociatedToCustomLineItemFilter`](crate::model::ListResourcesAssociatedToCustomLineItemFilter).
@@ -1387,7 +1380,7 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
 
 /// <p> A resource disassociation result for a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResourceResponseElement {
     /// <p> The resource ARN that was disassociated from the custom line item. </p>
     #[doc(hidden)]
@@ -1404,14 +1397,6 @@ impl DisassociateResourceResponseElement {
     /// <p> An <code>AssociateResourceError</code> shown if the resource disassociation fails. </p>
     pub fn error(&self) -> std::option::Option<&crate::model::AssociateResourceError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for DisassociateResourceResponseElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResourceResponseElement");
-        formatter.field("arn", &self.arn);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`DisassociateResourceResponseElement`](crate::model::DisassociateResourceResponseElement).
@@ -1465,7 +1450,7 @@ impl DisassociateResourceResponseElement {
 
 /// <p> A representation of a resource association error. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceError {
     /// <p> The reason the resource association failed. </p>
     #[doc(hidden)]
@@ -1482,14 +1467,6 @@ impl AssociateResourceError {
     /// <p> A static error code that used to classify the type of failure. </p>
     pub fn reason(&self) -> std::option::Option<&crate::model::AssociateResourceErrorReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for AssociateResourceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceError");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`AssociateResourceError`](crate::model::AssociateResourceError).
@@ -1650,7 +1627,7 @@ impl AsRef<str> for AssociateResourceErrorReason {
 
 /// <p> The billing period range in which the custom line item request will be applied. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLineItemBillingPeriodRange {
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
     #[doc(hidden)]
@@ -1667,20 +1644,6 @@ impl CustomLineItemBillingPeriodRange {
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
     pub fn exclusive_end_billing_period(&self) -> std::option::Option<&str> {
         self.exclusive_end_billing_period.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomLineItemBillingPeriodRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLineItemBillingPeriodRange");
-        formatter.field(
-            "inclusive_start_billing_period",
-            &self.inclusive_start_billing_period,
-        );
-        formatter.field(
-            "exclusive_end_billing_period",
-            &self.exclusive_end_billing_period,
-        );
-        formatter.finish()
     }
 }
 /// See [`CustomLineItemBillingPeriodRange`](crate::model::CustomLineItemBillingPeriodRange).
@@ -1743,7 +1706,7 @@ impl CustomLineItemBillingPeriodRange {
 
 /// <p> A resource association result for a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceResponseElement {
     /// <p> The resource ARN that was associated to the custom line item. </p>
     #[doc(hidden)]
@@ -1760,14 +1723,6 @@ impl AssociateResourceResponseElement {
     /// <p> An <code>AssociateResourceError</code> that will populate if the resource association fails. </p>
     pub fn error(&self) -> std::option::Option<&crate::model::AssociateResourceError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for AssociateResourceResponseElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceResponseElement");
-        formatter.field("arn", &self.arn);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`AssociateResourceResponseElement`](crate::model::AssociateResourceResponseElement).
@@ -1918,7 +1873,7 @@ impl std::fmt::Debug for CustomLineItemListElement {
 pub mod custom_line_item_list_element {
 
     /// A builder for [`CustomLineItemListElement`](crate::model::CustomLineItemListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2061,6 +2016,22 @@ pub mod custom_line_item_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("charge_details", &self.charge_details);
+            formatter.field("currency_code", &self.currency_code);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("product_code", &self.product_code);
+            formatter.field("billing_group_arn", &self.billing_group_arn);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("association_size", &self.association_size);
+            formatter.finish()
+        }
+    }
 }
 impl CustomLineItemListElement {
     /// Creates a new builder-style object to manufacture [`CustomLineItemListElement`](crate::model::CustomLineItemListElement).
@@ -2161,7 +2132,7 @@ impl AsRef<str> for CurrencyCode {
 
 /// <p> A representation of the charge details of a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemChargeDetails {
     /// <p> A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
     #[doc(hidden)]
@@ -2187,15 +2158,6 @@ impl ListCustomLineItemChargeDetails {
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::CustomLineItemType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ListCustomLineItemChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemChargeDetails");
-        formatter.field("flat", &self.flat);
-        formatter.field("percentage", &self.percentage);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ListCustomLineItemChargeDetails`](crate::model::ListCustomLineItemChargeDetails).
@@ -2363,7 +2325,7 @@ impl AsRef<str> for CustomLineItemType {
 
 /// <p> A representation of the charge details associated with a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
@@ -2373,13 +2335,6 @@ impl ListCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     pub fn percentage_value(&self) -> std::option::Option<f64> {
         self.percentage_value
-    }
-}
-impl std::fmt::Debug for ListCustomLineItemPercentageChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemPercentageChargeDetails");
-        formatter.field("percentage_value", &self.percentage_value);
-        formatter.finish()
     }
 }
 /// See [`ListCustomLineItemPercentageChargeDetails`](crate::model::ListCustomLineItemPercentageChargeDetails).
@@ -2418,7 +2373,7 @@ impl ListCustomLineItemPercentageChargeDetails {
 
 /// <p> A representation of the charge details associated with a flat custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
     #[doc(hidden)]
@@ -2428,13 +2383,6 @@ impl ListCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
     pub fn charge_value(&self) -> std::option::Option<f64> {
         self.charge_value
-    }
-}
-impl std::fmt::Debug for ListCustomLineItemFlatChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemFlatChargeDetails");
-        formatter.field("charge_value", &self.charge_value);
-        formatter.finish()
     }
 }
 /// See [`ListCustomLineItemFlatChargeDetails`](crate::model::ListCustomLineItemFlatChargeDetails).
@@ -2473,7 +2421,7 @@ impl ListCustomLineItemFlatChargeDetails {
 
 /// <p> A filter that specifies the custom line items and billing groups to retrieve FFLI information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemsFilter {
     /// <p> A list of custom line items to retrieve information. </p>
     #[doc(hidden)]
@@ -2497,15 +2445,6 @@ impl ListCustomLineItemsFilter {
     /// <p> A list of custom line item ARNs to retrieve information. </p>
     pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
         self.arns.as_deref()
-    }
-}
-impl std::fmt::Debug for ListCustomLineItemsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemsFilter");
-        formatter.field("names", &self.names);
-        formatter.field("billing_groups", &self.billing_groups);
-        formatter.field("arns", &self.arns);
-        formatter.finish()
     }
 }
 /// See [`ListCustomLineItemsFilter`](crate::model::ListCustomLineItemsFilter).
@@ -2595,7 +2534,7 @@ impl ListCustomLineItemsFilter {
 
 /// <p> The charge details of a custom line item. It should contain only one of <code>Flat</code> or <code>Percentage</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLineItemChargeDetails {
     /// <p> A <code>CustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
     #[doc(hidden)]
@@ -2621,15 +2560,6 @@ impl CustomLineItemChargeDetails {
     /// <p> The type of the custom line item that indicates whether the charge is a fee or credit. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::CustomLineItemType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomLineItemChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLineItemChargeDetails");
-        formatter.field("flat", &self.flat);
-        formatter.field("percentage", &self.percentage);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`CustomLineItemChargeDetails`](crate::model::CustomLineItemChargeDetails).
@@ -2705,7 +2635,7 @@ impl CustomLineItemChargeDetails {
 
 /// <p> A representation of the charge details associated with a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
@@ -2722,14 +2652,6 @@ impl CustomLineItemPercentageChargeDetails {
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
     pub fn associated_values(&self) -> std::option::Option<&[std::string::String]> {
         self.associated_values.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomLineItemPercentageChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLineItemPercentageChargeDetails");
-        formatter.field("percentage_value", &self.percentage_value);
-        formatter.field("associated_values", &self.associated_values);
-        formatter.finish()
     }
 }
 /// See [`CustomLineItemPercentageChargeDetails`](crate::model::CustomLineItemPercentageChargeDetails).
@@ -2789,7 +2711,7 @@ impl CustomLineItemPercentageChargeDetails {
 
 /// <p> A representation of the charge details associated with a flat custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
     #[doc(hidden)]
@@ -2799,13 +2721,6 @@ impl CustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
     pub fn charge_value(&self) -> std::option::Option<f64> {
         self.charge_value
-    }
-}
-impl std::fmt::Debug for CustomLineItemFlatChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLineItemFlatChargeDetails");
-        formatter.field("charge_value", &self.charge_value);
-        formatter.finish()
     }
 }
 /// See [`CustomLineItemFlatChargeDetails`](crate::model::CustomLineItemFlatChargeDetails).
@@ -2844,7 +2759,7 @@ impl CustomLineItemFlatChargeDetails {
 
 /// <p> A representation of the new charge details of a custom line item. This should contain only one of <code>Flat</code> or <code>Percentage</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
     #[doc(hidden)]
@@ -2865,14 +2780,6 @@ impl UpdateCustomLineItemChargeDetails {
         &self,
     ) -> std::option::Option<&crate::model::UpdateCustomLineItemPercentageChargeDetails> {
         self.percentage.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateCustomLineItemChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomLineItemChargeDetails");
-        formatter.field("flat", &self.flat);
-        formatter.field("percentage", &self.percentage);
-        formatter.finish()
     }
 }
 /// See [`UpdateCustomLineItemChargeDetails`](crate::model::UpdateCustomLineItemChargeDetails).
@@ -2933,7 +2840,7 @@ impl UpdateCustomLineItemChargeDetails {
 
 /// <p> A representation of the new charge details associated with a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
@@ -2943,13 +2850,6 @@ impl UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     pub fn percentage_value(&self) -> std::option::Option<f64> {
         self.percentage_value
-    }
-}
-impl std::fmt::Debug for UpdateCustomLineItemPercentageChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomLineItemPercentageChargeDetails");
-        formatter.field("percentage_value", &self.percentage_value);
-        formatter.finish()
     }
 }
 /// See [`UpdateCustomLineItemPercentageChargeDetails`](crate::model::UpdateCustomLineItemPercentageChargeDetails).
@@ -2988,7 +2888,7 @@ impl UpdateCustomLineItemPercentageChargeDetails {
 
 /// <p> A representation of the new charge details associated with a flat custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's new fixed charge value in USD. </p>
     #[doc(hidden)]
@@ -2998,13 +2898,6 @@ impl UpdateCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's new fixed charge value in USD. </p>
     pub fn charge_value(&self) -> std::option::Option<f64> {
         self.charge_value
-    }
-}
-impl std::fmt::Debug for UpdateCustomLineItemFlatChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomLineItemFlatChargeDetails");
-        formatter.field("charge_value", &self.charge_value);
-        formatter.finish()
     }
 }
 /// See [`UpdateCustomLineItemFlatChargeDetails`](crate::model::UpdateCustomLineItemFlatChargeDetails).
@@ -3140,7 +3033,7 @@ impl std::fmt::Debug for BillingGroupListElement {
 pub mod billing_group_list_element {
 
     /// A builder for [`BillingGroupListElement`](crate::model::BillingGroupListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3285,6 +3178,22 @@ pub mod billing_group_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("primary_account_id", &self.primary_account_id);
+            formatter.field("computation_preference", &self.computation_preference);
+            formatter.field("size", &self.size);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("status", &self.status);
+            formatter.field("status_reason", &self.status_reason);
+            formatter.finish()
+        }
+    }
 }
 impl BillingGroupListElement {
     /// Creates a new builder-style object to manufacture [`BillingGroupListElement`](crate::model::BillingGroupListElement).
@@ -3387,7 +3296,7 @@ impl AsRef<str> for BillingGroupStatus {
 
 /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a billing group. </p>
     #[doc(hidden)]
@@ -3397,13 +3306,6 @@ impl ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a billing group. </p>
     pub fn pricing_plan_arn(&self) -> std::option::Option<&str> {
         self.pricing_plan_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ComputationPreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputationPreference");
-        formatter.field("pricing_plan_arn", &self.pricing_plan_arn);
-        formatter.finish()
     }
 }
 /// See [`ComputationPreference`](crate::model::ComputationPreference).
@@ -3445,7 +3347,7 @@ impl ComputationPreference {
 
 /// <p>The filter that specifies the billing groups and pricing plans to retrieve billing group information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
@@ -3462,14 +3364,6 @@ impl ListBillingGroupsFilter {
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn pricing_plan(&self) -> std::option::Option<&str> {
         self.pricing_plan.as_deref()
-    }
-}
-impl std::fmt::Debug for ListBillingGroupsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBillingGroupsFilter");
-        formatter.field("arns", &self.arns);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.finish()
     }
 }
 /// See [`ListBillingGroupsFilter`](crate::model::ListBillingGroupsFilter).
@@ -3529,7 +3423,7 @@ impl ListBillingGroupsFilter {
 
 /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountGrouping {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
     #[doc(hidden)]
@@ -3539,13 +3433,6 @@ impl AccountGrouping {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
     pub fn linked_account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.linked_account_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountGrouping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountGrouping");
-        formatter.field("linked_account_ids", &self.linked_account_ids);
-        formatter.finish()
     }
 }
 /// See [`AccountGrouping`](crate::model::AccountGrouping).
@@ -3593,7 +3480,7 @@ impl AccountGrouping {
 
 /// <p>A summary report of actual Amazon Web Services charges and calculated Amazon Web Services charges, based on the associated pricing plan of a billing group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BillingGroupCostReportElement {
     /// <p>The Amazon Resource Name (ARN) of a billing group. </p>
     #[doc(hidden)]
@@ -3638,18 +3525,6 @@ impl BillingGroupCostReportElement {
     /// <p>The displayed currency. </p>
     pub fn currency(&self) -> std::option::Option<&str> {
         self.currency.as_deref()
-    }
-}
-impl std::fmt::Debug for BillingGroupCostReportElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BillingGroupCostReportElement");
-        formatter.field("arn", &self.arn);
-        formatter.field("aws_cost", &self.aws_cost);
-        formatter.field("proforma_cost", &self.proforma_cost);
-        formatter.field("margin", &self.margin);
-        formatter.field("margin_percentage", &self.margin_percentage);
-        formatter.field("currency", &self.currency);
-        formatter.finish()
     }
 }
 /// See [`BillingGroupCostReportElement`](crate::model::BillingGroupCostReportElement).
@@ -3754,7 +3629,7 @@ impl BillingGroupCostReportElement {
 
 /// <p>The filter used to retrieve specific <code>BillingGroupCostReportElements</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsFilter {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
     #[doc(hidden)]
@@ -3764,13 +3639,6 @@ impl ListBillingGroupCostReportsFilter {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
     pub fn billing_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.billing_group_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for ListBillingGroupCostReportsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBillingGroupCostReportsFilter");
-        formatter.field("billing_group_arns", &self.billing_group_arns);
-        formatter.finish()
     }
 }
 /// See [`ListBillingGroupCostReportsFilter`](crate::model::ListBillingGroupCostReportsFilter).
@@ -3866,7 +3734,7 @@ impl std::fmt::Debug for AccountAssociationsListElement {
 pub mod account_associations_list_element {
 
     /// A builder for [`AccountAssociationsListElement`](crate::model::AccountAssociationsListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) billing_group_arn: std::option::Option<std::string::String>,
@@ -3930,6 +3798,16 @@ pub mod account_associations_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("billing_group_arn", &self.billing_group_arn);
+            formatter.field("account_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("account_email", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl AccountAssociationsListElement {
     /// Creates a new builder-style object to manufacture [`AccountAssociationsListElement`](crate::model::AccountAssociationsListElement).
@@ -3943,7 +3821,7 @@ impl AccountAssociationsListElement {
 /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
 /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
@@ -3964,14 +3842,6 @@ impl ListAccountAssociationsFilter {
     /// <p> The Amazon Web Services account ID to filter on. </p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAccountAssociationsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccountAssociationsFilter");
-        formatter.field("association", &self.association);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 /// See [`ListAccountAssociationsFilter`](crate::model::ListAccountAssociationsFilter).

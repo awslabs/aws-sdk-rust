@@ -1186,7 +1186,7 @@ impl AsRef<str> for Engine {
 
 /// <p>SynthesisTask object that provides information about a speech synthesis task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SynthesisTask {
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     #[doc(hidden)]
@@ -1300,27 +1300,6 @@ impl SynthesisTask {
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
-    }
-}
-impl std::fmt::Debug for SynthesisTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SynthesisTask");
-        formatter.field("engine", &self.engine);
-        formatter.field("task_id", &self.task_id);
-        formatter.field("task_status", &self.task_status);
-        formatter.field("task_status_reason", &self.task_status_reason);
-        formatter.field("output_uri", &self.output_uri);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("request_characters", &self.request_characters);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("lexicon_names", &self.lexicon_names);
-        formatter.field("output_format", &self.output_format);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.field("speech_mark_types", &self.speech_mark_types);
-        formatter.field("text_type", &self.text_type);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
     }
 }
 /// See [`SynthesisTask`](crate::model::SynthesisTask).
@@ -1670,7 +1649,7 @@ impl AsRef<str> for TaskStatus {
 
 /// <p>Describes the content of the lexicon.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LexiconDescription {
     /// <p>Name of the lexicon.</p>
     #[doc(hidden)]
@@ -1687,14 +1666,6 @@ impl LexiconDescription {
     /// <p>Provides lexicon metadata.</p>
     pub fn attributes(&self) -> std::option::Option<&crate::model::LexiconAttributes> {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for LexiconDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LexiconDescription");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`LexiconDescription`](crate::model::LexiconDescription).
@@ -1748,7 +1719,7 @@ impl LexiconDescription {
 
 /// <p>Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LexiconAttributes {
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
     #[doc(hidden)]
@@ -1793,18 +1764,6 @@ impl LexiconAttributes {
     /// <p>Total size of the lexicon, in characters.</p>
     pub fn size(&self) -> i32 {
         self.size
-    }
-}
-impl std::fmt::Debug for LexiconAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LexiconAttributes");
-        formatter.field("alphabet", &self.alphabet);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("lexicon_arn", &self.lexicon_arn);
-        formatter.field("lexemes_count", &self.lexemes_count);
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`LexiconAttributes`](crate::model::LexiconAttributes).
@@ -1940,7 +1899,7 @@ impl std::fmt::Debug for Lexicon {
 pub mod lexicon {
 
     /// A builder for [`Lexicon`](crate::model::Lexicon).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1974,6 +1933,14 @@ pub mod lexicon {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.finish()
+        }
+    }
 }
 impl Lexicon {
     /// Creates a new builder-style object to manufacture [`Lexicon`](crate::model::Lexicon).
@@ -1984,7 +1951,7 @@ impl Lexicon {
 
 /// <p>Description of the voice.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Voice {
     /// <p>Gender of the voice.</p>
     #[doc(hidden)]
@@ -2038,19 +2005,6 @@ impl Voice {
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
     pub fn supported_engines(&self) -> std::option::Option<&[crate::model::Engine]> {
         self.supported_engines.as_deref()
-    }
-}
-impl std::fmt::Debug for Voice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Voice");
-        formatter.field("gender", &self.gender);
-        formatter.field("id", &self.id);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("language_name", &self.language_name);
-        formatter.field("name", &self.name);
-        formatter.field("additional_language_codes", &self.additional_language_codes);
-        formatter.field("supported_engines", &self.supported_engines);
-        formatter.finish()
     }
 }
 /// See [`Voice`](crate::model::Voice).

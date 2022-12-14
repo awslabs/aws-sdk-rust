@@ -2,7 +2,7 @@
 
 /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>Error: TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl ThrottlingException {
     /// <p>Error: TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -91,7 +83,7 @@ impl ThrottlingException {
 
 /// <p>The operation did not succeed because a validation error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>A description of what caused the validation error.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl ValidationException {
     /// <p>A description of what caused the validation error.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -180,7 +164,7 @@ impl ValidationException {
 
 /// <p>The operation did not succeed because an internal error occurred. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     /// <p>A description of which internal error occured.</p>
     #[doc(hidden)]
@@ -193,14 +177,6 @@ impl InternalServerException {
     /// <p>A description of which internal error occured.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalServerException {
@@ -269,7 +245,7 @@ impl InternalServerException {
 
 /// <p>A resource that is required for the action wasn't found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>A description of which resource wasn't found.</p>
     #[doc(hidden)]
@@ -282,14 +258,6 @@ impl ResourceNotFoundException {
     /// <p>A description of which resource wasn't found.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -358,7 +326,7 @@ impl ResourceNotFoundException {
 
 /// <p>The operation cannot proceed because you have insufficient permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>A description of why you have insufficient permissions.</p>
     #[doc(hidden)]
@@ -371,14 +339,6 @@ impl AccessDeniedException {
     /// <p>A description of why you have insufficient permissions.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {
@@ -447,7 +407,7 @@ impl AccessDeniedException {
 
 /// <p>The operation cannot proceed because it is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>A description of why the operation is not supported.</p>
     #[doc(hidden)]
@@ -460,14 +420,6 @@ impl ConflictException {
     /// <p>A description of why the operation is not supported.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ConflictException {

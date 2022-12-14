@@ -11486,7 +11486,7 @@ impl UpdateTaskSetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
     #[doc(hidden)]
@@ -11519,20 +11519,10 @@ impl UpdateTaskSetInput {
         self.scale.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTaskSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTaskSetInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("service", &self.service);
-        formatter.field("task_set", &self.task_set);
-        formatter.field("scale", &self.scale);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServicePrimaryTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
     #[doc(hidden)]
@@ -11558,19 +11548,10 @@ impl UpdateServicePrimaryTaskSetInput {
         self.primary_task_set.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServicePrimaryTaskSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServicePrimaryTaskSetInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("service", &self.service);
-        formatter.field("primary_task_set", &self.primary_task_set);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -11740,39 +11721,10 @@ impl UpdateServiceInput {
         self.service_registries.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("service", &self.service);
-        formatter.field("desired_count", &self.desired_count);
-        formatter.field("task_definition", &self.task_definition);
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
-        formatter.field("deployment_configuration", &self.deployment_configuration);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("placement_constraints", &self.placement_constraints);
-        formatter.field("placement_strategy", &self.placement_strategy);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("force_new_deployment", &self.force_new_deployment);
-        formatter.field(
-            "health_check_grace_period_seconds",
-            &self.health_check_grace_period_seconds,
-        );
-        formatter.field("enable_execute_command", &self.enable_execute_command);
-        formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
-        formatter.field("load_balancers", &self.load_balancers);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("service_registries", &self.service_registries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContainerInstancesStateInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -11798,19 +11750,10 @@ impl UpdateContainerInstancesStateInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContainerInstancesStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContainerInstancesStateInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("container_instances", &self.container_instances);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContainerAgentInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -11829,18 +11772,10 @@ impl UpdateContainerAgentInput {
         self.container_instance.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateContainerAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContainerAgentInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("container_instance", &self.container_instance);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClusterSettingsInput {
     /// <p>The name of the cluster to modify the settings for.</p>
     #[doc(hidden)]
@@ -11859,18 +11794,10 @@ impl UpdateClusterSettingsInput {
         self.settings.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateClusterSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClusterSettingsInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClusterInput {
     /// <p>The name of the cluster to modify the settings for.</p>
     #[doc(hidden)]
@@ -11896,19 +11823,10 @@ impl UpdateClusterInput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClusterInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("settings", &self.settings);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCapacityProviderInput {
     /// <p>The name of the capacity provider to update.</p>
     #[doc(hidden)]
@@ -11930,21 +11848,10 @@ impl UpdateCapacityProviderInput {
         self.auto_scaling_group_provider.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCapacityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCapacityProviderInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "auto_scaling_group_provider",
-            &self.auto_scaling_group_provider,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
     #[doc(hidden)]
@@ -11963,18 +11870,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
     #[doc(hidden)]
@@ -12013,18 +11912,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubmitTaskStateChangeInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
     #[doc(hidden)]
@@ -12099,26 +11990,10 @@ impl SubmitTaskStateChangeInput {
         self.execution_stopped_at.as_ref()
     }
 }
-impl std::fmt::Debug for SubmitTaskStateChangeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubmitTaskStateChangeInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("task", &self.task);
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.field("containers", &self.containers);
-        formatter.field("attachments", &self.attachments);
-        formatter.field("managed_agents", &self.managed_agents);
-        formatter.field("pull_started_at", &self.pull_started_at);
-        formatter.field("pull_stopped_at", &self.pull_stopped_at);
-        formatter.field("execution_stopped_at", &self.execution_stopped_at);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubmitContainerStateChangeInput {
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
     #[doc(hidden)]
@@ -12179,24 +12054,10 @@ impl SubmitContainerStateChangeInput {
         self.network_bindings.as_deref()
     }
 }
-impl std::fmt::Debug for SubmitContainerStateChangeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubmitContainerStateChangeInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("task", &self.task);
-        formatter.field("container_name", &self.container_name);
-        formatter.field("runtime_id", &self.runtime_id);
-        formatter.field("status", &self.status);
-        formatter.field("exit_code", &self.exit_code);
-        formatter.field("reason", &self.reason);
-        formatter.field("network_bindings", &self.network_bindings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubmitAttachmentStateChangesInput {
     /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
     #[doc(hidden)]
@@ -12215,18 +12076,10 @@ impl SubmitAttachmentStateChangesInput {
         self.attachments.as_deref()
     }
 }
-impl std::fmt::Debug for SubmitAttachmentStateChangesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubmitAttachmentStateChangesInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("attachments", &self.attachments);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopTaskInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -12252,19 +12105,10 @@ impl StopTaskInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for StopTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopTaskInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("task", &self.task);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTaskInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -12381,28 +12225,10 @@ impl StartTaskInput {
         self.task_definition.as_deref()
     }
 }
-impl std::fmt::Debug for StartTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTaskInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("container_instances", &self.container_instances);
-        formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
-        formatter.field("enable_execute_command", &self.enable_execute_command);
-        formatter.field("group", &self.group);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("started_by", &self.started_by);
-        formatter.field("tags", &self.tags);
-        formatter.field("task_definition", &self.task_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunTaskInput {
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
@@ -12594,36 +12420,10 @@ impl RunTaskInput {
         self.task_definition.as_deref()
     }
 }
-impl std::fmt::Debug for RunTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunTaskInput");
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
-        formatter.field("cluster", &self.cluster);
-        formatter.field("count", &self.count);
-        formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
-        formatter.field("enable_execute_command", &self.enable_execute_command);
-        formatter.field("group", &self.group);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("placement_constraints", &self.placement_constraints);
-        formatter.field("placement_strategy", &self.placement_strategy);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("started_by", &self.started_by);
-        formatter.field("tags", &self.tags);
-        formatter.field("task_definition", &self.task_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterTaskDefinitionInput {
     /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
     #[doc(hidden)]
@@ -12884,33 +12684,10 @@ impl RegisterTaskDefinitionInput {
         self.runtime_platform.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterTaskDefinitionInput");
-        formatter.field("family", &self.family);
-        formatter.field("task_role_arn", &self.task_role_arn);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("network_mode", &self.network_mode);
-        formatter.field("container_definitions", &self.container_definitions);
-        formatter.field("volumes", &self.volumes);
-        formatter.field("placement_constraints", &self.placement_constraints);
-        formatter.field("requires_compatibilities", &self.requires_compatibilities);
-        formatter.field("cpu", &self.cpu);
-        formatter.field("memory", &self.memory);
-        formatter.field("tags", &self.tags);
-        formatter.field("pid_mode", &self.pid_mode);
-        formatter.field("ipc_mode", &self.ipc_mode);
-        formatter.field("proxy_configuration", &self.proxy_configuration);
-        formatter.field("inference_accelerators", &self.inference_accelerators);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.field("runtime_platform", &self.runtime_platform);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterContainerInstanceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -12998,31 +12775,10 @@ impl RegisterContainerInstanceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterContainerInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterContainerInstanceInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field(
-            "instance_identity_document",
-            &self.instance_identity_document,
-        );
-        formatter.field(
-            "instance_identity_document_signature",
-            &self.instance_identity_document_signature,
-        );
-        formatter.field("total_resources", &self.total_resources);
-        formatter.field("version_info", &self.version_info);
-        formatter.field("container_instance_arn", &self.container_instance_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("platform_devices", &self.platform_devices);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutClusterCapacityProvidersInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider settings for. If you don't specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -13063,22 +12819,10 @@ impl PutClusterCapacityProvidersInput {
         self.default_capacity_provider_strategy.as_deref()
     }
 }
-impl std::fmt::Debug for PutClusterCapacityProvidersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutClusterCapacityProvidersInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("capacity_providers", &self.capacity_providers);
-        formatter.field(
-            "default_capacity_provider_strategy",
-            &self.default_capacity_provider_strategy,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAttributesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -13097,18 +12841,10 @@ impl PutAttributesInput {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for PutAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAttributesInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountSettingDefaultInput {
     /// <p>The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for CloudWatch Container Insights for your clusters is affected.</p>
     /// <p>Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can set the name to <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based quotas. For information about the opt in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -13129,18 +12865,10 @@ impl PutAccountSettingDefaultInput {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccountSettingDefaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountSettingDefaultInput");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountSettingInput {
     /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for CloudWatch Container Insights for your clusters is affected.</p>
     #[doc(hidden)]
@@ -13170,19 +12898,10 @@ impl PutAccountSettingInput {
         self.principal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccountSettingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountSettingInput");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTasksInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -13258,25 +12977,10 @@ impl ListTasksInput {
         self.launch_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTasksInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("container_instance", &self.container_instance);
-        formatter.field("family", &self.family);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("started_by", &self.started_by);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("desired_status", &self.desired_status);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTaskDefinitionsInput {
     /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with. Specifying a <code>familyPrefix</code> limits the listed task definitions to task definition revisions that belong to that family.</p>
     #[doc(hidden)]
@@ -13320,21 +13024,10 @@ impl ListTaskDefinitionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTaskDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTaskDefinitionsInput");
-        formatter.field("family_prefix", &self.family_prefix);
-        formatter.field("status", &self.status);
-        formatter.field("sort", &self.sort);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTaskDefinitionFamiliesInput {
     /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>, only task definition family names that begin with the <code>familyPrefix</code> string are returned.</p>
     #[doc(hidden)]
@@ -13371,20 +13064,10 @@ impl ListTaskDefinitionFamiliesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTaskDefinitionFamiliesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTaskDefinitionFamiliesInput");
-        formatter.field("family_prefix", &self.family_prefix);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.</p>
     #[doc(hidden)]
@@ -13396,17 +13079,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -13450,21 +13126,10 @@ impl ListServicesInput {
         self.scheduling_strategy.as_ref()
     }
 }
-impl std::fmt::Debug for ListServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicesInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field("scheduling_strategy", &self.scheduling_strategy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContainerInstancesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to list. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -13508,21 +13173,10 @@ impl ListContainerInstancesInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for ListContainerInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContainerInstancesInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClustersInput {
     /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -13545,18 +13199,10 @@ impl ListClustersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClustersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttributesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -13607,22 +13253,10 @@ impl ListAttributesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttributesInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccountSettingsInput {
     /// <p>The name of the account setting you want to list the settings for.</p>
     #[doc(hidden)]
@@ -13677,22 +13311,10 @@ impl ListAccountSettingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccountSettingsInput");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("effective_settings", &self.effective_settings);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteCommandInput {
     /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -13732,21 +13354,10 @@ impl ExecuteCommandInput {
         self.task.as_deref()
     }
 }
-impl std::fmt::Debug for ExecuteCommandInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteCommandInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("container", &self.container);
-        formatter.field("command", &self.command);
-        formatter.field("interactive", &self.interactive);
-        formatter.field("task", &self.task);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiscoverPollEndpointInput {
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -13765,18 +13376,10 @@ impl DiscoverPollEndpointInput {
         self.cluster.as_deref()
     }
 }
-impl std::fmt::Debug for DiscoverPollEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiscoverPollEndpointInput");
-        formatter.field("container_instance", &self.container_instance);
-        formatter.field("cluster", &self.cluster);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTaskSetsInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
     #[doc(hidden)]
@@ -13809,20 +13412,10 @@ impl DescribeTaskSetsInput {
         self.include.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTaskSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTaskSetsInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("service", &self.service);
-        formatter.field("task_sets", &self.task_sets);
-        formatter.field("include", &self.include);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTasksInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are describing were launched in any cluster other than the default cluster.</p>
     #[doc(hidden)]
@@ -13848,19 +13441,10 @@ impl DescribeTasksInput {
         self.include.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTasksInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("tasks", &self.tasks);
-        formatter.field("include", &self.include);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTaskDefinitionInput {
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
     #[doc(hidden)]
@@ -13879,18 +13463,10 @@ impl DescribeTaskDefinitionInput {
         self.include.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTaskDefinitionInput");
-        formatter.field("task_definition", &self.task_definition);
-        formatter.field("include", &self.include);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServicesInput {
     /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
     #[doc(hidden)]
@@ -13916,19 +13492,10 @@ impl DescribeServicesInput {
         self.include.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServicesInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("services", &self.services);
-        formatter.field("include", &self.include);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContainerInstancesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
     #[doc(hidden)]
@@ -13954,19 +13521,10 @@ impl DescribeContainerInstancesInput {
         self.include.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContainerInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContainerInstancesInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("container_instances", &self.container_instances);
-        formatter.field("include", &self.include);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClustersInput {
     /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -13995,18 +13553,10 @@ impl DescribeClustersInput {
         self.include.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClustersInput");
-        formatter.field("clusters", &self.clusters);
-        formatter.field("include", &self.include);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCapacityProvidersInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
     #[doc(hidden)]
@@ -14043,20 +13593,10 @@ impl DescribeCapacityProvidersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCapacityProvidersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCapacityProvidersInput");
-        formatter.field("capacity_providers", &self.capacity_providers);
-        formatter.field("include", &self.include);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterTaskDefinitionInput {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
     #[doc(hidden)]
@@ -14068,17 +13608,10 @@ impl DeregisterTaskDefinitionInput {
         self.task_definition.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterTaskDefinitionInput");
-        formatter.field("task_definition", &self.task_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterContainerInstanceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to deregister. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -14106,19 +13639,10 @@ impl DeregisterContainerInstanceInput {
         self.force
     }
 }
-impl std::fmt::Debug for DeregisterContainerInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterContainerInstanceInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("container_instance", &self.container_instance);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
     #[doc(hidden)]
@@ -14151,20 +13675,10 @@ impl DeleteTaskSetInput {
         self.force
     }
 }
-impl std::fmt::Debug for DeleteTaskSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTaskSetInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("service", &self.service);
-        formatter.field("task_set", &self.task_set);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -14190,19 +13704,10 @@ impl DeleteServiceInput {
         self.force
     }
 }
-impl std::fmt::Debug for DeleteServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("service", &self.service);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
     #[doc(hidden)]
@@ -14214,17 +13719,10 @@ impl DeleteClusterInput {
         self.cluster.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClusterInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCapacityProviderInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
     #[doc(hidden)]
@@ -14236,17 +13734,10 @@ impl DeleteCapacityProviderInput {
         self.capacity_provider.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCapacityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCapacityProviderInput");
-        formatter.field("capacity_provider", &self.capacity_provider);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAttributesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete attributes. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -14265,18 +13756,10 @@ impl DeleteAttributesInput {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAttributesInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccountSettingInput {
     /// <p>The resource name to disable the account setting for. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected.</p>
     #[doc(hidden)]
@@ -14295,18 +13778,10 @@ impl DeleteAccountSettingInput {
         self.principal_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccountSettingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccountSettingInput");
-        formatter.field("name", &self.name);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
     #[doc(hidden)]
@@ -14439,32 +13914,10 @@ impl CreateTaskSetInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTaskSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTaskSetInput");
-        formatter.field("service", &self.service);
-        formatter.field("cluster", &self.cluster);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("task_definition", &self.task_definition);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("load_balancers", &self.load_balancers);
-        formatter.field("service_registries", &self.service_registries);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("scale", &self.scale);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServiceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
@@ -14715,44 +14168,10 @@ impl CreateServiceInput {
         self.enable_execute_command
     }
 }
-impl std::fmt::Debug for CreateServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServiceInput");
-        formatter.field("cluster", &self.cluster);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("task_definition", &self.task_definition);
-        formatter.field("load_balancers", &self.load_balancers);
-        formatter.field("service_registries", &self.service_registries);
-        formatter.field("desired_count", &self.desired_count);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("role", &self.role);
-        formatter.field("deployment_configuration", &self.deployment_configuration);
-        formatter.field("placement_constraints", &self.placement_constraints);
-        formatter.field("placement_strategy", &self.placement_strategy);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field(
-            "health_check_grace_period_seconds",
-            &self.health_check_grace_period_seconds,
-        );
-        formatter.field("scheduling_strategy", &self.scheduling_strategy);
-        formatter.field("deployment_controller", &self.deployment_controller);
-        formatter.field("tags", &self.tags);
-        formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("enable_execute_command", &self.enable_execute_command);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateClusterInput {
     /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
     #[doc(hidden)]
@@ -14830,25 +14249,10 @@ impl CreateClusterInput {
         self.default_capacity_provider_strategy.as_deref()
     }
 }
-impl std::fmt::Debug for CreateClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateClusterInput");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("settings", &self.settings);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("capacity_providers", &self.capacity_providers);
-        formatter.field(
-            "default_capacity_provider_strategy",
-            &self.default_capacity_provider_strategy,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCapacityProviderInput {
     /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
     #[doc(hidden)]
@@ -14894,17 +14298,5 @@ impl CreateCapacityProviderInput {
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateCapacityProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCapacityProviderInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "auto_scaling_group_provider",
-            &self.auto_scaling_group_provider,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

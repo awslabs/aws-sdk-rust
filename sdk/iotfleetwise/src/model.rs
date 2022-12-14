@@ -2,7 +2,7 @@
 
 /// <p>A validation error due to mismatch between the expected data type, length, or pattern of the parameter and the input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the parameter field with the validation error.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>A message about the validation error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -185,7 +177,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>Information about a vehicle.</p>
 /// <p>To return this information about vehicles in your account, you can use the API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VehicleSummary {
     /// <p>The unique ID of the vehicle.</p>
     #[doc(hidden)]
@@ -230,18 +222,6 @@ impl VehicleSummary {
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for VehicleSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VehicleSummary");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("decoder_manifest_arn", &self.decoder_manifest_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`VehicleSummary`](crate::model::VehicleSummary).
@@ -352,7 +332,7 @@ impl VehicleSummary {
 
 /// <p>A set of key/value pairs that are used to manage the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -369,14 +349,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -698,7 +670,7 @@ impl Node {
 
 /// <p>A signal that represents static information about the vehicle, such as engine type or manufacturing date.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
     #[doc(hidden)]
@@ -764,21 +736,6 @@ impl Attribute {
     /// <p>The default value of the attribute.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Attribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attribute");
-        formatter.field("fully_qualified_name", &self.fully_qualified_name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("description", &self.description);
-        formatter.field("unit", &self.unit);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.field("assigned_value", &self.assigned_value);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
@@ -1179,7 +1136,7 @@ impl AsRef<str> for NodeDataType {
 /// <p> Updating actuator data can change the state of a device. For example, you can turn on or off the heater by updating its actuator data.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Actuator {
     /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
     #[doc(hidden)]
@@ -1238,20 +1195,6 @@ impl Actuator {
     /// <p>A specified value for the actuator.</p>
     pub fn assigned_value(&self) -> std::option::Option<&str> {
         self.assigned_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Actuator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Actuator");
-        formatter.field("fully_qualified_name", &self.fully_qualified_name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("description", &self.description);
-        formatter.field("unit", &self.unit);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.field("assigned_value", &self.assigned_value);
-        formatter.finish()
     }
 }
 /// See [`Actuator`](crate::model::Actuator).
@@ -1394,7 +1337,7 @@ impl Actuator {
 /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sensor {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
     #[doc(hidden)]
@@ -1446,19 +1389,6 @@ impl Sensor {
     /// <p>The specified possible maximum value of the sensor.</p>
     pub fn max(&self) -> std::option::Option<f64> {
         self.max
-    }
-}
-impl std::fmt::Debug for Sensor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sensor");
-        formatter.field("fully_qualified_name", &self.fully_qualified_name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("description", &self.description);
-        formatter.field("unit", &self.unit);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
     }
 }
 /// See [`Sensor`](crate::model::Sensor).
@@ -1584,7 +1514,7 @@ impl Sensor {
 
 /// <p>A group of signals that are defined in a hierarchical structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Branch {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
     #[doc(hidden)]
@@ -1601,14 +1531,6 @@ impl Branch {
     /// <p>A brief description of the branch.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for Branch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Branch");
-        formatter.field("fully_qualified_name", &self.fully_qualified_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`Branch`](crate::model::Branch).
@@ -1662,7 +1584,7 @@ impl Branch {
 
 /// <p>A reason that a signal isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSignal {
     /// <p>The name of the signal that isn't valid.</p>
     #[doc(hidden)]
@@ -1679,14 +1601,6 @@ impl InvalidSignal {
     /// <p>A message about why the signal isn't valid.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidSignal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSignal");
-        formatter.field("name", &self.name);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`InvalidSignal`](crate::model::InvalidSignal).
@@ -1774,7 +1688,7 @@ impl FormattedVss {
 
 /// <p>Information about a collection of standardized signals, which can be attributes, branches, sensors, or actuators.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalCatalogSummary {
     /// <p>The name of the signal catalog.</p>
     #[doc(hidden)]
@@ -1805,16 +1719,6 @@ impl SignalCatalogSummary {
     /// <p>The time the signal catalog was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SignalCatalogSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalCatalogSummary");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
@@ -1895,7 +1799,7 @@ impl SignalCatalogSummary {
 
 /// <p>Information about the number of nodes and node types in a vehicle network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeCounts {
     /// <p>The total number of nodes in a vehicle network.</p>
     #[doc(hidden)]
@@ -1933,17 +1837,6 @@ impl NodeCounts {
     /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
     pub fn total_actuators(&self) -> i32 {
         self.total_actuators
-    }
-}
-impl std::fmt::Debug for NodeCounts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeCounts");
-        formatter.field("total_nodes", &self.total_nodes);
-        formatter.field("total_branches", &self.total_branches);
-        formatter.field("total_sensors", &self.total_sensors);
-        formatter.field("total_attributes", &self.total_attributes);
-        formatter.field("total_actuators", &self.total_actuators);
-        formatter.finish()
     }
 }
 /// See [`NodeCounts`](crate::model::NodeCounts).
@@ -2030,7 +1923,7 @@ impl NodeCounts {
 
 /// <p>Information about a vehicle model (model manifest). You can use the API operation to return this information about multiple vehicle models.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelManifestSummary {
     /// <p>The name of the vehicle model.</p>
     #[doc(hidden)]
@@ -2082,19 +1975,6 @@ impl ModelManifestSummary {
     /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelManifestSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelManifestSummary");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("signal_catalog_arn", &self.signal_catalog_arn);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`ModelManifestSummary`](crate::model::ModelManifestSummary).
@@ -2308,7 +2188,7 @@ impl AsRef<str> for ManifestStatus {
 /// <p>Information about a fleet.</p>
 /// <p>You can use the API operation to return this information about multiple fleets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetSummary {
     /// <p>The unique ID of the fleet.</p>
     #[doc(hidden)]
@@ -2353,18 +2233,6 @@ impl FleetSummary {
     /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for FleetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("signal_catalog_arn", &self.signal_catalog_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`FleetSummary`](crate::model::FleetSummary).
@@ -2472,7 +2340,7 @@ impl FleetSummary {
 
 /// <p>Information about a signal decoder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalDecoder {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
     #[doc(hidden)]
@@ -2510,17 +2378,6 @@ impl SignalDecoder {
     /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
     pub fn obd_signal(&self) -> std::option::Option<&crate::model::ObdSignal> {
         self.obd_signal.as_ref()
-    }
-}
-impl std::fmt::Debug for SignalDecoder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalDecoder");
-        formatter.field("fully_qualified_name", &self.fully_qualified_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("interface_id", &self.interface_id);
-        formatter.field("can_signal", &self.can_signal);
-        formatter.field("obd_signal", &self.obd_signal);
-        formatter.finish()
     }
 }
 /// See [`SignalDecoder`](crate::model::SignalDecoder).
@@ -2619,7 +2476,7 @@ impl SignalDecoder {
 
 /// <p>Information about signal messages using the on-board diagnostics (OBD) II protocol in a vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObdSignal {
     /// <p>The length of the requested data.</p>
     #[doc(hidden)]
@@ -2685,21 +2542,6 @@ impl ObdSignal {
     /// <p>The number of bits to mask in a message.</p>
     pub fn bit_mask_length(&self) -> std::option::Option<i32> {
         self.bit_mask_length
-    }
-}
-impl std::fmt::Debug for ObdSignal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObdSignal");
-        formatter.field("pid_response_length", &self.pid_response_length);
-        formatter.field("service_mode", &self.service_mode);
-        formatter.field("pid", &self.pid);
-        formatter.field("scaling", &self.scaling);
-        formatter.field("offset", &self.offset);
-        formatter.field("start_byte", &self.start_byte);
-        formatter.field("byte_length", &self.byte_length);
-        formatter.field("bit_right_shift", &self.bit_right_shift);
-        formatter.field("bit_mask_length", &self.bit_mask_length);
-        formatter.finish()
     }
 }
 /// See [`ObdSignal`](crate::model::ObdSignal).
@@ -2834,7 +2676,7 @@ impl ObdSignal {
 
 /// <p>Information about a single controller area network (CAN) signal and the messages it receives and transmits.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanSignal {
     /// <p>The ID of the message.</p>
     #[doc(hidden)]
@@ -2893,20 +2735,6 @@ impl CanSignal {
     /// <p>The name of the signal.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CanSignal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanSignal");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("is_big_endian", &self.is_big_endian);
-        formatter.field("is_signed", &self.is_signed);
-        formatter.field("start_bit", &self.start_bit);
-        formatter.field("offset", &self.offset);
-        formatter.field("factor", &self.factor);
-        formatter.field("length", &self.length);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`CanSignal`](crate::model::CanSignal).
@@ -3122,7 +2950,7 @@ impl AsRef<str> for SignalDecoderType {
 /// <p>Represents a node and its specifications in an in-vehicle communication network. All signal decoders must be associated with a network node. </p>
 /// <p> To return this information about all the network interfaces specified in a decoder manifest, use the API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
@@ -3153,16 +2981,6 @@ impl NetworkInterface {
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
     pub fn obd_interface(&self) -> std::option::Option<&crate::model::ObdInterface> {
         self.obd_interface.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("interface_id", &self.interface_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("can_interface", &self.can_interface);
-        formatter.field("obd_interface", &self.obd_interface);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -3246,7 +3064,7 @@ impl NetworkInterface {
 
 /// <p>A network interface that specifies the On-board diagnostic (OBD) II network protocol.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObdInterface {
     /// <p>The name of the interface.</p>
     #[doc(hidden)]
@@ -3298,25 +3116,6 @@ impl ObdInterface {
     /// <p>Whether the vehicle has a transmission control module (TCM).</p>
     pub fn has_transmission_ecu(&self) -> bool {
         self.has_transmission_ecu
-    }
-}
-impl std::fmt::Debug for ObdInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObdInterface");
-        formatter.field("name", &self.name);
-        formatter.field("request_message_id", &self.request_message_id);
-        formatter.field("obd_standard", &self.obd_standard);
-        formatter.field(
-            "pid_request_interval_seconds",
-            &self.pid_request_interval_seconds,
-        );
-        formatter.field(
-            "dtc_request_interval_seconds",
-            &self.dtc_request_interval_seconds,
-        );
-        formatter.field("use_extended_ids", &self.use_extended_ids);
-        formatter.field("has_transmission_ecu", &self.has_transmission_ecu);
-        formatter.finish()
     }
 }
 /// See [`ObdInterface`](crate::model::ObdInterface).
@@ -3427,7 +3226,7 @@ impl ObdInterface {
 
 /// <p>A single controller area network (CAN) device interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanInterface {
     /// <p>The unique name of the interface.</p>
     #[doc(hidden)]
@@ -3451,15 +3250,6 @@ impl CanInterface {
     /// <p>The version of the communication protocol for the interface.</p>
     pub fn protocol_version(&self) -> std::option::Option<&str> {
         self.protocol_version.as_deref()
-    }
-}
-impl std::fmt::Debug for CanInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanInterface");
-        formatter.field("name", &self.name);
-        formatter.field("protocol_name", &self.protocol_name);
-        formatter.field("protocol_version", &self.protocol_version);
-        formatter.finish()
     }
 }
 /// See [`CanInterface`](crate::model::CanInterface).
@@ -3620,7 +3410,7 @@ impl AsRef<str> for NetworkInterfaceType {
 
 /// <p>A reason a vehicle network interface isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNetworkInterface {
     /// <p>The ID of the interface that isn't valid.</p>
     #[doc(hidden)]
@@ -3637,14 +3427,6 @@ impl InvalidNetworkInterface {
     /// <p>A message about why the interface isn't valid. </p>
     pub fn reason(&self) -> std::option::Option<&crate::model::NetworkInterfaceFailureReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for InvalidNetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNetworkInterface");
-        formatter.field("interface_id", &self.interface_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
@@ -3837,7 +3619,7 @@ impl AsRef<str> for NetworkInterfaceFailureReason {
 
 /// <p>A reason that a signal decoder isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSignalDecoder {
     /// <p>The name of a signal decoder that isn't valid.</p>
     #[doc(hidden)]
@@ -3854,14 +3636,6 @@ impl InvalidSignalDecoder {
     /// <p>A message about why the signal decoder isn't valid.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::SignalDecoderFailureReason> {
         self.reason.as_ref()
-    }
-}
-impl std::fmt::Debug for InvalidSignalDecoder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSignalDecoder");
-        formatter.field("name", &self.name);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
@@ -4101,7 +3875,7 @@ impl NetworkFileDefinition {
 
 /// <p>Configurations used to create a decoder manifest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanDbcDefinition {
     /// <p>Contains information about a network interface.</p>
     #[doc(hidden)]
@@ -4129,15 +3903,6 @@ impl CanDbcDefinition {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.signals_map.as_ref()
-    }
-}
-impl std::fmt::Debug for CanDbcDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanDbcDefinition");
-        formatter.field("network_interface", &self.network_interface);
-        formatter.field("can_dbc_files", &self.can_dbc_files);
-        formatter.field("signals_map", &self.signals_map);
-        formatter.finish()
     }
 }
 /// See [`CanDbcDefinition`](crate::model::CanDbcDefinition).
@@ -4229,7 +3994,7 @@ impl CanDbcDefinition {
 
 /// <p>Information about a created decoder manifest. You can use the API operation to return this information about multiple decoder manifests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecoderManifestSummary {
     /// <p>The name of the decoder manifest.</p>
     #[doc(hidden)]
@@ -4281,19 +4046,6 @@ impl DecoderManifestSummary {
     /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DecoderManifestSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecoderManifestSummary");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
@@ -4417,7 +4169,7 @@ impl DecoderManifestSummary {
 /// <p>Information about a campaign. </p>
 /// <p>You can use the API operation to return this information about multiple created campaigns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignSummary {
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
     #[doc(hidden)]
@@ -4488,20 +4240,6 @@ impl CampaignSummary {
     /// <p>The last time the campaign was modified.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
-    }
-}
-impl std::fmt::Debug for CampaignSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("signal_catalog_arn", &self.signal_catalog_arn);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modification_time", &self.last_modification_time);
-        formatter.finish()
     }
 }
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
@@ -4803,7 +4541,7 @@ impl CollectionScheme {
 
 /// <p>Information about a collection scheme that uses a simple logical expression to recognize what data to collect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
     #[doc(hidden)]
@@ -4838,22 +4576,6 @@ impl ConditionBasedCollectionScheme {
     /// <p>Specifies the version of the conditional expression language.</p>
     pub fn condition_language_version(&self) -> std::option::Option<i32> {
         self.condition_language_version
-    }
-}
-impl std::fmt::Debug for ConditionBasedCollectionScheme {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionBasedCollectionScheme");
-        formatter.field("expression", &self.expression);
-        formatter.field(
-            "minimum_trigger_interval_ms",
-            &self.minimum_trigger_interval_ms,
-        );
-        formatter.field("trigger_mode", &self.trigger_mode);
-        formatter.field(
-            "condition_language_version",
-            &self.condition_language_version,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
@@ -5025,7 +4747,7 @@ impl AsRef<str> for TriggerMode {
 
 /// <p>Information about a collection scheme that uses a time period to decide how often to collect data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeBasedCollectionScheme {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     #[doc(hidden)]
@@ -5035,13 +4757,6 @@ impl TimeBasedCollectionScheme {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     pub fn period_ms(&self) -> std::option::Option<i64> {
         self.period_ms
-    }
-}
-impl std::fmt::Debug for TimeBasedCollectionScheme {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeBasedCollectionScheme");
-        formatter.field("period_ms", &self.period_ms);
-        formatter.finish()
     }
 }
 /// See [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
@@ -5080,7 +4795,7 @@ impl TimeBasedCollectionScheme {
 
 /// <p>Information about a signal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalInformation {
     /// <p>The name of the signal.</p>
     #[doc(hidden)]
@@ -5108,18 +4823,6 @@ impl SignalInformation {
     /// </note>
     pub fn minimum_sampling_interval_ms(&self) -> std::option::Option<i64> {
         self.minimum_sampling_interval_ms
-    }
-}
-impl std::fmt::Debug for SignalInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalInformation");
-        formatter.field("name", &self.name);
-        formatter.field("max_sample_count", &self.max_sample_count);
-        formatter.field(
-            "minimum_sampling_interval_ms",
-            &self.minimum_sampling_interval_ms,
-        );
-        formatter.finish()
     }
 }
 /// See [`SignalInformation`](crate::model::SignalInformation).
@@ -5559,7 +5262,7 @@ impl AsRef<str> for UpdateCampaignAction {
 /// <p>The IAM resource that enables Amazon Web Services IoT FleetWise edge agent software to send data to Amazon Timestream. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamResources {
     /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
     #[doc(hidden)]
@@ -5569,13 +5272,6 @@ impl IamResources {
     /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IamResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamResources");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`IamResources`](crate::model::IamResources).
@@ -5614,7 +5310,7 @@ impl IamResources {
 
 /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestreamResources {
     /// <p>The name of the registered Amazon Timestream database.</p>
     #[doc(hidden)]
@@ -5631,14 +5327,6 @@ impl TimestreamResources {
     /// <p>The name of the registered Amazon Timestream database table.</p>
     pub fn timestream_table_name(&self) -> std::option::Option<&str> {
         self.timestream_table_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TimestreamResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestreamResources");
-        formatter.field("timestream_database_name", &self.timestream_database_name);
-        formatter.field("timestream_table_name", &self.timestream_table_name);
-        formatter.finish()
     }
 }
 /// See [`TimestreamResources`](crate::model::TimestreamResources).
@@ -5796,7 +5484,7 @@ impl AsRef<str> for RegistrationStatus {
 
 /// <p>The log delivery option to send data to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogDeliveryOptions {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -5813,14 +5501,6 @@ impl CloudWatchLogDeliveryOptions {
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLogDeliveryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogDeliveryOptions");
-        formatter.field("log_type", &self.log_type);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
@@ -5964,7 +5644,7 @@ impl AsRef<str> for LogType {
 
 /// <p>Information about the state of a vehicle and how it relates to the status of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VehicleStatus {
     /// <p>The name of a campaign.</p>
     #[doc(hidden)]
@@ -6002,15 +5682,6 @@ impl VehicleStatus {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::VehicleState> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VehicleStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VehicleStatus");
-        formatter.field("campaign_name", &self.campaign_name);
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VehicleStatus`](crate::model::VehicleStatus).
@@ -6198,7 +5869,7 @@ impl AsRef<str> for VehicleState {
 
 /// <p>Information about registering an Identity and Access Management (IAM) resource so Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to Amazon Timestream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamRegistrationResponse {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
     #[doc(hidden)]
@@ -6222,15 +5893,6 @@ impl IamRegistrationResponse {
     /// <p>A message associated with a registration error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for IamRegistrationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamRegistrationResponse");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
@@ -6299,7 +5961,7 @@ impl IamRegistrationResponse {
 
 /// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestreamRegistrationResponse {
     /// <p>The name of the Timestream database.</p>
     #[doc(hidden)]
@@ -6344,18 +6006,6 @@ impl TimestreamRegistrationResponse {
     /// <p>A message associated with a registration error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for TimestreamRegistrationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestreamRegistrationResponse");
-        formatter.field("timestream_database_name", &self.timestream_database_name);
-        formatter.field("timestream_table_name", &self.timestream_table_name);
-        formatter.field("timestream_database_arn", &self.timestream_database_arn);
-        formatter.field("timestream_table_arn", &self.timestream_table_arn);
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
@@ -6472,7 +6122,7 @@ impl TimestreamRegistrationResponse {
 
 /// <p>An HTTP error resulting from updating the description for a vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
     #[doc(hidden)]
@@ -6496,15 +6146,6 @@ impl UpdateVehicleError {
     /// <p>A message associated with the error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateVehicleError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVehicleError");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`UpdateVehicleError`](crate::model::UpdateVehicleError).
@@ -6567,7 +6208,7 @@ impl UpdateVehicleError {
 
 /// <p>Information about the updated vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVehicleResponseItem {
     /// <p>The unique ID of the updated vehicle.</p>
     #[doc(hidden)]
@@ -6584,14 +6225,6 @@ impl UpdateVehicleResponseItem {
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateVehicleResponseItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVehicleResponseItem");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
@@ -6642,7 +6275,7 @@ impl UpdateVehicleResponseItem {
 
 /// <p>Information about the vehicle to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to update.</p>
     #[doc(hidden)]
@@ -6688,17 +6321,6 @@ impl UpdateVehicleRequestItem {
     /// <p>This is required if attributes are present in the input.</p>
     pub fn attribute_update_mode(&self) -> std::option::Option<&crate::model::UpdateMode> {
         self.attribute_update_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateVehicleRequestItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVehicleRequestItem");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("decoder_manifest_arn", &self.decoder_manifest_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("attribute_update_mode", &self.attribute_update_mode);
-        formatter.finish()
     }
 }
 /// See [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
@@ -6815,7 +6437,7 @@ impl UpdateVehicleRequestItem {
 
 /// <p>An HTTP error resulting from creating a vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
     #[doc(hidden)]
@@ -6839,15 +6461,6 @@ impl CreateVehicleError {
     /// <p>A description of the HTTP error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateVehicleError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVehicleError");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`CreateVehicleError`](crate::model::CreateVehicleError).
@@ -6910,7 +6523,7 @@ impl CreateVehicleError {
 
 /// <p>Information about a created vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVehicleResponseItem {
     /// <p>The unique ID of the vehicle to create.</p>
     #[doc(hidden)]
@@ -6934,15 +6547,6 @@ impl CreateVehicleResponseItem {
     /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
     pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateVehicleResponseItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVehicleResponseItem");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.finish()
     }
 }
 /// See [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
@@ -7005,7 +6609,7 @@ impl CreateVehicleResponseItem {
 
 /// <p>Information about the vehicle to create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to create.</p>
     #[doc(hidden)]
@@ -7056,18 +6660,6 @@ impl CreateVehicleRequestItem {
     /// <p>Metadata which can be used to manage the vehicle.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateVehicleRequestItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVehicleRequestItem");
-        formatter.field("vehicle_name", &self.vehicle_name);
-        formatter.field("model_manifest_arn", &self.model_manifest_arn);
-        formatter.field("decoder_manifest_arn", &self.decoder_manifest_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("association_behavior", &self.association_behavior);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).

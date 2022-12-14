@@ -2,7 +2,7 @@
 
 /// <p>Information about the configuration of an input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputConfiguration {
     /// <p>The name of the input.</p>
     #[doc(hidden)]
@@ -47,18 +47,6 @@ impl InputConfiguration {
     /// <p>The status of the input.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::InputStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for InputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputConfiguration");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("input_description", &self.input_description);
-        formatter.field("input_arn", &self.input_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`InputConfiguration`](crate::model::InputConfiguration).
@@ -266,7 +254,7 @@ impl AsRef<str> for InputStatus {
 
 /// <p>The definition of the input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDefinition {
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input. </p>
     #[doc(hidden)]
@@ -276,13 +264,6 @@ impl InputDefinition {
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input. </p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for InputDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDefinition");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`InputDefinition`](crate::model::InputDefinition).
@@ -330,7 +311,7 @@ impl InputDefinition {
 
 /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attribute {
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
     /// <p>Syntax: <code>
@@ -354,13 +335,6 @@ impl Attribute {
     /// </field-name></code> </p>
     pub fn json_path(&self) -> std::option::Option<&str> {
         self.json_path.as_deref()
-    }
-}
-impl std::fmt::Debug for Attribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attribute");
-        formatter.field("json_path", &self.json_path);
-        formatter.finish()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
@@ -413,7 +387,7 @@ impl Attribute {
 
 /// <p>Information about how the detector model is configured.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorModelConfiguration {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
@@ -488,25 +462,6 @@ impl DetectorModelConfiguration {
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(&self) -> std::option::Option<&crate::model::EvaluationMethod> {
         self.evaluation_method.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectorModelConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorModelConfiguration");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("detector_model_version", &self.detector_model_version);
-        formatter.field(
-            "detector_model_description",
-            &self.detector_model_description,
-        );
-        formatter.field("detector_model_arn", &self.detector_model_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("status", &self.status);
-        formatter.field("key", &self.key);
-        formatter.field("evaluation_method", &self.evaluation_method);
-        formatter.finish()
     }
 }
 /// See [`DetectorModelConfiguration`](crate::model::DetectorModelConfiguration).
@@ -894,7 +849,7 @@ impl AsRef<str> for DetectorModelVersionStatus {
 
 /// <p>Information that defines how a detector operates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorModelDefinition {
     /// <p>Information about the states of the detector.</p>
     #[doc(hidden)]
@@ -911,14 +866,6 @@ impl DetectorModelDefinition {
     /// <p>The state that is entered at the creation of each detector (instance).</p>
     pub fn initial_state_name(&self) -> std::option::Option<&str> {
         self.initial_state_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DetectorModelDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorModelDefinition");
-        formatter.field("states", &self.states);
-        formatter.field("initial_state_name", &self.initial_state_name);
-        formatter.finish()
     }
 }
 /// See [`DetectorModelDefinition`](crate::model::DetectorModelDefinition).
@@ -981,7 +928,7 @@ impl DetectorModelDefinition {
 
 /// <p>Information that defines a state of a detector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct State {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
@@ -1012,16 +959,6 @@ impl State {
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
     pub fn on_exit(&self) -> std::option::Option<&crate::model::OnExitLifecycle> {
         self.on_exit.as_ref()
-    }
-}
-impl std::fmt::Debug for State {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("State");
-        formatter.field("state_name", &self.state_name);
-        formatter.field("on_input", &self.on_input);
-        formatter.field("on_enter", &self.on_enter);
-        formatter.field("on_exit", &self.on_exit);
-        formatter.finish()
     }
 }
 /// See [`State`](crate::model::State).
@@ -1105,7 +1042,7 @@ impl State {
 
 /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnExitLifecycle {
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
     #[doc(hidden)]
@@ -1115,13 +1052,6 @@ impl OnExitLifecycle {
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for OnExitLifecycle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnExitLifecycle");
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`OnExitLifecycle`](crate::model::OnExitLifecycle).
@@ -1169,7 +1099,7 @@ impl OnExitLifecycle {
 
 /// <p>Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The name of the event.</p>
     #[doc(hidden)]
@@ -1193,15 +1123,6 @@ impl Event {
     /// <p>The actions to be performed.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.actions.as_deref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("event_name", &self.event_name);
-        formatter.field("condition", &self.condition);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -1273,7 +1194,7 @@ impl Event {
 
 /// <p>An action to be performed when the <code>condition</code> is TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>Sets a variable to a specified value.</p>
     #[doc(hidden)]
@@ -1367,25 +1288,6 @@ impl Action {
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
     pub fn iot_site_wise(&self) -> std::option::Option<&crate::model::IotSiteWiseAction> {
         self.iot_site_wise.as_ref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("set_variable", &self.set_variable);
-        formatter.field("sns", &self.sns);
-        formatter.field("iot_topic_publish", &self.iot_topic_publish);
-        formatter.field("set_timer", &self.set_timer);
-        formatter.field("clear_timer", &self.clear_timer);
-        formatter.field("reset_timer", &self.reset_timer);
-        formatter.field("lambda", &self.lambda);
-        formatter.field("iot_events", &self.iot_events);
-        formatter.field("sqs", &self.sqs);
-        formatter.field("firehose", &self.firehose);
-        formatter.field("dynamo_db", &self.dynamo_db);
-        formatter.field("dynamo_d_bv2", &self.dynamo_d_bv2);
-        formatter.field("iot_site_wise", &self.iot_site_wise);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -1613,7 +1515,7 @@ impl Action {
 /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotSiteWiseAction {
     /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of failure. The default is a new unique identifier.</p>
     #[doc(hidden)]
@@ -1651,17 +1553,6 @@ impl IotSiteWiseAction {
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information. </p>
     pub fn property_value(&self) -> std::option::Option<&crate::model::AssetPropertyValue> {
         self.property_value.as_ref()
-    }
-}
-impl std::fmt::Debug for IotSiteWiseAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotSiteWiseAction");
-        formatter.field("entry_id", &self.entry_id);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("property_value", &self.property_value);
-        formatter.finish()
     }
 }
 /// See [`IotSiteWiseAction`](crate::model::IotSiteWiseAction).
@@ -1761,7 +1652,7 @@ impl IotSiteWiseAction {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetPropertyValue {
     /// <p>The value to send to an asset property.</p>
     #[doc(hidden)]
@@ -1785,15 +1676,6 @@ impl AssetPropertyValue {
     /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
     pub fn quality(&self) -> std::option::Option<&str> {
         self.quality.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetPropertyValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetPropertyValue");
-        formatter.field("value", &self.value);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("quality", &self.quality);
-        formatter.finish()
     }
 }
 /// See [`AssetPropertyValue`](crate::model::AssetPropertyValue).
@@ -1870,7 +1752,7 @@ impl AssetPropertyValue {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetPropertyTimestamp {
     /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
     #[doc(hidden)]
@@ -1887,14 +1769,6 @@ impl AssetPropertyTimestamp {
     /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
     pub fn offset_in_nanos(&self) -> std::option::Option<&str> {
         self.offset_in_nanos.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetPropertyTimestamp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetPropertyTimestamp");
-        formatter.field("time_in_seconds", &self.time_in_seconds);
-        formatter.field("offset_in_nanos", &self.offset_in_nanos);
-        formatter.finish()
     }
 }
 /// See [`AssetPropertyTimestamp`](crate::model::AssetPropertyTimestamp).
@@ -1960,7 +1834,7 @@ impl AssetPropertyTimestamp {
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 /// <p>You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html">AssetProperty</a> in the <i>AWS IoT SiteWise API Reference</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetPropertyVariant {
     /// <p>The asset property value is a string. You must use an expression, and the evaluated result should be a string.</p>
     #[doc(hidden)]
@@ -1991,16 +1865,6 @@ impl AssetPropertyVariant {
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
     pub fn boolean_value(&self) -> std::option::Option<&str> {
         self.boolean_value.as_deref()
-    }
-}
-impl std::fmt::Debug for AssetPropertyVariant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetPropertyVariant");
-        formatter.field("string_value", &self.string_value);
-        formatter.field("integer_value", &self.integer_value);
-        formatter.field("double_value", &self.double_value);
-        formatter.field("boolean_value", &self.boolean_value);
-        formatter.finish()
     }
 }
 /// See [`AssetPropertyVariant`](crate::model::AssetPropertyVariant).
@@ -2091,7 +1955,7 @@ impl AssetPropertyVariant {
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamoDBv2Action {
     /// <p>The name of the DynamoDB table.</p>
     #[doc(hidden)]
@@ -2110,14 +1974,6 @@ impl DynamoDBv2Action {
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for DynamoDBv2Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamoDBv2Action");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`DynamoDBv2Action`](crate::model::DynamoDBv2Action).
@@ -2171,7 +2027,7 @@ impl DynamoDBv2Action {
 /// <p>Information needed to configure the payload.</p>
 /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Payload {
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
     /// <string>
@@ -2204,14 +2060,6 @@ impl Payload {
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PayloadType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Payload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Payload");
-        formatter.field("content_expression", &self.content_expression);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Payload`](crate::model::Payload).
@@ -2384,7 +2232,7 @@ impl AsRef<str> for PayloadType {
 /// _raw
 /// </payload-field></code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamoDbAction {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
@@ -2493,22 +2341,6 @@ impl DynamoDbAction {
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for DynamoDbAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamoDbAction");
-        formatter.field("hash_key_type", &self.hash_key_type);
-        formatter.field("hash_key_field", &self.hash_key_field);
-        formatter.field("hash_key_value", &self.hash_key_value);
-        formatter.field("range_key_type", &self.range_key_type);
-        formatter.field("range_key_field", &self.range_key_field);
-        formatter.field("range_key_value", &self.range_key_value);
-        formatter.field("operation", &self.operation);
-        formatter.field("payload_field", &self.payload_field);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`DynamoDbAction`](crate::model::DynamoDbAction).
@@ -2712,7 +2544,7 @@ impl DynamoDbAction {
 
 /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirehoseAction {
     /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
     #[doc(hidden)]
@@ -2736,15 +2568,6 @@ impl FirehoseAction {
     /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for FirehoseAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirehoseAction");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("separator", &self.separator);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`FirehoseAction`](crate::model::FirehoseAction).
@@ -2810,7 +2633,7 @@ impl FirehoseAction {
 
 /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqsAction {
     /// <p>The URL of the SQS queue where the data is written.</p>
     #[doc(hidden)]
@@ -2834,15 +2657,6 @@ impl SqsAction {
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
     pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for SqsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqsAction");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("use_base64", &self.use_base64);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`SqsAction`](crate::model::SqsAction).
@@ -2905,7 +2719,7 @@ impl SqsAction {
 
 /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotEventsAction {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
     #[doc(hidden)]
@@ -2922,14 +2736,6 @@ impl IotEventsAction {
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
     pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for IotEventsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotEventsAction");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`IotEventsAction`](crate::model::IotEventsAction).
@@ -2980,7 +2786,7 @@ impl IotEventsAction {
 
 /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaAction {
     /// <p>The ARN of the Lambda function that is executed.</p>
     #[doc(hidden)]
@@ -2997,14 +2803,6 @@ impl LambdaAction {
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
     pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for LambdaAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaAction");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`LambdaAction`](crate::model::LambdaAction).
@@ -3055,7 +2853,7 @@ impl LambdaAction {
 
 /// <p>Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetTimerAction {
     /// <p>The name of the timer to reset.</p>
     #[doc(hidden)]
@@ -3065,13 +2863,6 @@ impl ResetTimerAction {
     /// <p>The name of the timer to reset.</p>
     pub fn timer_name(&self) -> std::option::Option<&str> {
         self.timer_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResetTimerAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetTimerAction");
-        formatter.field("timer_name", &self.timer_name);
-        formatter.finish()
     }
 }
 /// See [`ResetTimerAction`](crate::model::ResetTimerAction).
@@ -3110,7 +2901,7 @@ impl ResetTimerAction {
 
 /// <p>Information needed to clear the timer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClearTimerAction {
     /// <p>The name of the timer to clear.</p>
     #[doc(hidden)]
@@ -3120,13 +2911,6 @@ impl ClearTimerAction {
     /// <p>The name of the timer to clear.</p>
     pub fn timer_name(&self) -> std::option::Option<&str> {
         self.timer_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ClearTimerAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClearTimerAction");
-        formatter.field("timer_name", &self.timer_name);
-        formatter.finish()
     }
 }
 /// See [`ClearTimerAction`](crate::model::ClearTimerAction).
@@ -3165,7 +2949,7 @@ impl ClearTimerAction {
 
 /// <p>Information needed to set the timer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTimerAction {
     /// <p>The name of the timer.</p>
     #[doc(hidden)]
@@ -3205,15 +2989,6 @@ impl SetTimerAction {
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
     pub fn duration_expression(&self) -> std::option::Option<&str> {
         self.duration_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for SetTimerAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTimerAction");
-        formatter.field("timer_name", &self.timer_name);
-        formatter.field("seconds", &self.seconds);
-        formatter.field("duration_expression", &self.duration_expression);
-        formatter.finish()
     }
 }
 /// See [`SetTimerAction`](crate::model::SetTimerAction).
@@ -3295,7 +3070,7 @@ impl SetTimerAction {
 
 /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotTopicPublishAction {
     /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
     /// <variable-name></variable-name></code>) and input values (<code>$input.
@@ -3322,14 +3097,6 @@ impl IotTopicPublishAction {
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
     pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for IotTopicPublishAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotTopicPublishAction");
-        formatter.field("mqtt_topic", &self.mqtt_topic);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`IotTopicPublishAction`](crate::model::IotTopicPublishAction).
@@ -3390,7 +3157,7 @@ impl IotTopicPublishAction {
 
 /// <p>Information required to publish the Amazon SNS message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsTopicPublishAction {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
     #[doc(hidden)]
@@ -3407,14 +3174,6 @@ impl SnsTopicPublishAction {
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
     pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
         self.payload.as_ref()
-    }
-}
-impl std::fmt::Debug for SnsTopicPublishAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsTopicPublishAction");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
     }
 }
 /// See [`SnsTopicPublishAction`](crate::model::SnsTopicPublishAction).
@@ -3465,7 +3224,7 @@ impl SnsTopicPublishAction {
 
 /// <p>Information about the variable and its new value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetVariableAction {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -3482,14 +3241,6 @@ impl SetVariableAction {
     /// <p>The new value of the variable.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SetVariableAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetVariableAction");
-        formatter.field("variable_name", &self.variable_name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SetVariableAction`](crate::model::SetVariableAction).
@@ -3543,7 +3294,7 @@ impl SetVariableAction {
 
 /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnEnterLifecycle {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
     #[doc(hidden)]
@@ -3553,13 +3304,6 @@ impl OnEnterLifecycle {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for OnEnterLifecycle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnEnterLifecycle");
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`OnEnterLifecycle`](crate::model::OnEnterLifecycle).
@@ -3607,7 +3351,7 @@ impl OnEnterLifecycle {
 
 /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnInputLifecycle {
     /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
     #[doc(hidden)]
@@ -3624,14 +3368,6 @@ impl OnInputLifecycle {
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
     pub fn transition_events(&self) -> std::option::Option<&[crate::model::TransitionEvent]> {
         self.transition_events.as_deref()
-    }
-}
-impl std::fmt::Debug for OnInputLifecycle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnInputLifecycle");
-        formatter.field("events", &self.events);
-        formatter.field("transition_events", &self.transition_events);
-        formatter.finish()
     }
 }
 /// See [`OnInputLifecycle`](crate::model::OnInputLifecycle).
@@ -3701,7 +3437,7 @@ impl OnInputLifecycle {
 
 /// <p>Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransitionEvent {
     /// <p>The name of the transition event.</p>
     #[doc(hidden)]
@@ -3732,16 +3468,6 @@ impl TransitionEvent {
     /// <p>The next state to enter.</p>
     pub fn next_state(&self) -> std::option::Option<&str> {
         self.next_state.as_deref()
-    }
-}
-impl std::fmt::Debug for TransitionEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransitionEvent");
-        formatter.field("event_name", &self.event_name);
-        formatter.field("condition", &self.condition);
-        formatter.field("actions", &self.actions);
-        formatter.field("next_state", &self.next_state);
-        formatter.finish()
     }
 }
 /// See [`TransitionEvent`](crate::model::TransitionEvent).
@@ -3927,7 +3653,7 @@ impl AsRef<str> for AlarmModelVersionStatus {
 
 /// <p>Contains the configuration information of alarm state changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmCapabilities {
     /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
     #[doc(hidden)]
@@ -3947,17 +3673,6 @@ impl AlarmCapabilities {
     /// <p>Specifies whether to get notified for alarm state changes.</p>
     pub fn acknowledge_flow(&self) -> std::option::Option<&crate::model::AcknowledgeFlow> {
         self.acknowledge_flow.as_ref()
-    }
-}
-impl std::fmt::Debug for AlarmCapabilities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmCapabilities");
-        formatter.field(
-            "initialization_configuration",
-            &self.initialization_configuration,
-        );
-        formatter.field("acknowledge_flow", &self.acknowledge_flow);
-        formatter.finish()
     }
 }
 /// See [`AlarmCapabilities`](crate::model::AlarmCapabilities).
@@ -4018,7 +3733,7 @@ impl AlarmCapabilities {
 
 /// <p>Specifies whether to get notified for alarm state changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeFlow {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
     #[doc(hidden)]
@@ -4028,13 +3743,6 @@ impl AcknowledgeFlow {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for AcknowledgeFlow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeFlow");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`AcknowledgeFlow`](crate::model::AcknowledgeFlow).
@@ -4073,7 +3781,7 @@ impl AcknowledgeFlow {
 
 /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitializationConfiguration {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
     #[doc(hidden)]
@@ -4083,16 +3791,6 @@ impl InitializationConfiguration {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
     pub fn disabled_on_initialization(&self) -> std::option::Option<bool> {
         self.disabled_on_initialization
-    }
-}
-impl std::fmt::Debug for InitializationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitializationConfiguration");
-        formatter.field(
-            "disabled_on_initialization",
-            &self.disabled_on_initialization,
-        );
-        formatter.finish()
     }
 }
 /// See [`InitializationConfiguration`](crate::model::InitializationConfiguration).
@@ -4131,7 +3829,7 @@ impl InitializationConfiguration {
 
 /// <p>Contains information about one or more alarm actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmEventActions {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
     #[doc(hidden)]
@@ -4141,13 +3839,6 @@ impl AlarmEventActions {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
     pub fn alarm_actions(&self) -> std::option::Option<&[crate::model::AlarmAction]> {
         self.alarm_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmEventActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmEventActions");
-        formatter.field("alarm_actions", &self.alarm_actions);
-        formatter.finish()
     }
 }
 /// See [`AlarmEventActions`](crate::model::AlarmEventActions).
@@ -4195,7 +3886,7 @@ impl AlarmEventActions {
 
 /// <p>Specifies one of the following actions to receive notifications when the alarm state changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmAction {
     /// <p>Information required to publish the Amazon SNS message.</p>
     #[doc(hidden)]
@@ -4325,21 +4016,6 @@ impl AlarmAction {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     pub fn iot_site_wise(&self) -> std::option::Option<&crate::model::IotSiteWiseAction> {
         self.iot_site_wise.as_ref()
-    }
-}
-impl std::fmt::Debug for AlarmAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmAction");
-        formatter.field("sns", &self.sns);
-        formatter.field("iot_topic_publish", &self.iot_topic_publish);
-        formatter.field("lambda", &self.lambda);
-        formatter.field("iot_events", &self.iot_events);
-        formatter.field("sqs", &self.sqs);
-        formatter.field("firehose", &self.firehose);
-        formatter.field("dynamo_db", &self.dynamo_db);
-        formatter.field("dynamo_d_bv2", &self.dynamo_d_bv2);
-        formatter.field("iot_site_wise", &self.iot_site_wise);
-        formatter.finish()
     }
 }
 /// See [`AlarmAction`](crate::model::AlarmAction).
@@ -4562,7 +4238,7 @@ impl AlarmAction {
 
 /// <p>Contains information about one or more notification actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmNotification {
     /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
     #[doc(hidden)]
@@ -4572,13 +4248,6 @@ impl AlarmNotification {
     /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
     pub fn notification_actions(&self) -> std::option::Option<&[crate::model::NotificationAction]> {
         self.notification_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmNotification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmNotification");
-        formatter.field("notification_actions", &self.notification_actions);
-        formatter.finish()
     }
 }
 /// See [`AlarmNotification`](crate::model::AlarmNotification).
@@ -4627,7 +4296,7 @@ impl AlarmNotification {
 
 /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationAction {
     /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
     #[doc(hidden)]
@@ -4651,15 +4320,6 @@ impl NotificationAction {
     /// <p>Contains the configuration information of email notifications.</p>
     pub fn email_configurations(&self) -> std::option::Option<&[crate::model::EmailConfiguration]> {
         self.email_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationAction");
-        formatter.field("action", &self.action);
-        formatter.field("sms_configurations", &self.sms_configurations);
-        formatter.field("email_configurations", &self.email_configurations);
-        formatter.finish()
     }
 }
 /// See [`NotificationAction`](crate::model::NotificationAction).
@@ -4745,7 +4405,7 @@ impl NotificationAction {
 
 /// <p>Contains the configuration information of email notifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailConfiguration {
     /// <p>The email address that sends emails.</p> <important>
     /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the email address that sends emails in Amazon SES</a>.</p>
@@ -4777,15 +4437,6 @@ impl EmailConfiguration {
     /// </important>
     pub fn recipients(&self) -> std::option::Option<&crate::model::EmailRecipients> {
         self.recipients.as_ref()
-    }
-}
-impl std::fmt::Debug for EmailConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailConfiguration");
-        formatter.field("from", &self.from);
-        formatter.field("content", &self.content);
-        formatter.field("recipients", &self.recipients);
-        formatter.finish()
     }
 }
 /// See [`EmailConfiguration`](crate::model::EmailConfiguration).
@@ -4864,7 +4515,7 @@ impl EmailConfiguration {
 /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailRecipients {
     /// <p>Specifies one or more recipients who receive the email.</p>
     #[doc(hidden)]
@@ -4874,13 +4525,6 @@ impl EmailRecipients {
     /// <p>Specifies one or more recipients who receive the email.</p>
     pub fn to(&self) -> std::option::Option<&[crate::model::RecipientDetail]> {
         self.to.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailRecipients {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailRecipients");
-        formatter.field("to", &self.to);
-        formatter.finish()
     }
 }
 /// See [`EmailRecipients`](crate::model::EmailRecipients).
@@ -4926,7 +4570,7 @@ impl EmailRecipients {
 
 /// <p>The information that identifies the recipient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecipientDetail {
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
     #[doc(hidden)]
@@ -4936,13 +4580,6 @@ impl RecipientDetail {
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
     pub fn sso_identity(&self) -> std::option::Option<&crate::model::SsoIdentity> {
         self.sso_identity.as_ref()
-    }
-}
-impl std::fmt::Debug for RecipientDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecipientDetail");
-        formatter.field("sso_identity", &self.sso_identity);
-        formatter.finish()
     }
 }
 /// See [`RecipientDetail`](crate::model::RecipientDetail).
@@ -4984,7 +4621,7 @@ impl RecipientDetail {
 
 /// <p>Contains information about your identity source in AWS Single Sign-On. For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS Single Sign-On User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SsoIdentity {
     /// <p>The ID of the AWS SSO identity store.</p>
     #[doc(hidden)]
@@ -5001,14 +4638,6 @@ impl SsoIdentity {
     /// <p>The user ID.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SsoIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsoIdentity");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
     }
 }
 /// See [`SsoIdentity`](crate::model::SsoIdentity).
@@ -5062,7 +4691,7 @@ impl SsoIdentity {
 
 /// <p>Contains the subject and message of an email.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailContent {
     /// <p>The subject of the email.</p>
     #[doc(hidden)]
@@ -5079,14 +4708,6 @@ impl EmailContent {
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub fn additional_message(&self) -> std::option::Option<&str> {
         self.additional_message.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailContent");
-        formatter.field("subject", &self.subject);
-        formatter.field("additional_message", &self.additional_message);
-        formatter.finish()
     }
 }
 /// See [`EmailContent`](crate::model::EmailContent).
@@ -5140,7 +4761,7 @@ impl EmailContent {
 
 /// <p>Contains the configuration information of SMS notifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsConfiguration {
     /// <p>The sender ID.</p>
     #[doc(hidden)]
@@ -5168,15 +4789,6 @@ impl SmsConfiguration {
     /// </important>
     pub fn recipients(&self) -> std::option::Option<&[crate::model::RecipientDetail]> {
         self.recipients.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsConfiguration");
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("additional_message", &self.additional_message);
-        formatter.field("recipients", &self.recipients);
-        formatter.finish()
     }
 }
 /// See [`SmsConfiguration`](crate::model::SmsConfiguration).
@@ -5255,7 +4867,7 @@ impl SmsConfiguration {
 
 /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationTargetActions {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     #[doc(hidden)]
@@ -5265,13 +4877,6 @@ impl NotificationTargetActions {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn lambda_action(&self) -> std::option::Option<&crate::model::LambdaAction> {
         self.lambda_action.as_ref()
-    }
-}
-impl std::fmt::Debug for NotificationTargetActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationTargetActions");
-        formatter.field("lambda_action", &self.lambda_action);
-        formatter.finish()
     }
 }
 /// See [`NotificationTargetActions`](crate::model::NotificationTargetActions).
@@ -5313,7 +4918,7 @@ impl NotificationTargetActions {
 
 /// <p>Defines when your alarm is invoked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmRule {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
     #[doc(hidden)]
@@ -5323,13 +4928,6 @@ impl AlarmRule {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
     pub fn simple_rule(&self) -> std::option::Option<&crate::model::SimpleRule> {
         self.simple_rule.as_ref()
-    }
-}
-impl std::fmt::Debug for AlarmRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmRule");
-        formatter.field("simple_rule", &self.simple_rule);
-        formatter.finish()
     }
 }
 /// See [`AlarmRule`](crate::model::AlarmRule).
@@ -5371,7 +4969,7 @@ impl AlarmRule {
 
 /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleRule {
     /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
     #[doc(hidden)]
@@ -5395,15 +4993,6 @@ impl SimpleRule {
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>
     pub fn threshold(&self) -> std::option::Option<&str> {
         self.threshold.as_deref()
-    }
-}
-impl std::fmt::Debug for SimpleRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleRule");
-        formatter.field("input_property", &self.input_property);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("threshold", &self.threshold);
-        formatter.finish()
     }
 }
 /// See [`SimpleRule`](crate::model::SimpleRule).
@@ -5591,7 +5180,7 @@ impl AsRef<str> for ComparisonOperator {
 
 /// <p>Metadata that can be used to manage the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -5608,14 +5197,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -5666,7 +5247,7 @@ impl Tag {
 
 /// <p>The values of the AWS IoT Events logging options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
     #[doc(hidden)]
@@ -5700,16 +5281,6 @@ impl LoggingOptions {
         &self,
     ) -> std::option::Option<&[crate::model::DetectorDebugOption]> {
         self.detector_debug_options.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingOptions");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("level", &self.level);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("detector_debug_options", &self.detector_debug_options);
-        formatter.finish()
     }
 }
 /// See [`LoggingOptions`](crate::model::LoggingOptions).
@@ -5794,7 +5365,7 @@ impl LoggingOptions {
 
 /// <p>The detector model and the specific detectors (instances) for which the logging level is given.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorDebugOption {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
@@ -5811,14 +5382,6 @@ impl DetectorDebugOption {
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
-    }
-}
-impl std::fmt::Debug for DetectorDebugOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorDebugOption");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.finish()
     }
 }
 /// See [`DetectorDebugOption`](crate::model::DetectorDebugOption).
@@ -5967,7 +5530,7 @@ impl AsRef<str> for LoggingLevel {
 
 /// <p>Information about the input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSummary {
     /// <p>The name of the input.</p>
     #[doc(hidden)]
@@ -6012,18 +5575,6 @@ impl InputSummary {
     /// <p>The status of the input.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::InputStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for InputSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSummary");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("input_description", &self.input_description);
-        formatter.field("input_arn", &self.input_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`InputSummary`](crate::model::InputSummary).
@@ -6131,7 +5682,7 @@ impl InputSummary {
 
 /// <p> Contains information about the routed resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutedResource {
     /// <p> The name of the routed resource. </p>
     #[doc(hidden)]
@@ -6148,14 +5699,6 @@ impl RoutedResource {
     /// <p> The ARN of the routed resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RoutedResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutedResource");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`RoutedResource`](crate::model::RoutedResource).
@@ -6206,7 +5749,7 @@ impl RoutedResource {
 
 /// <p> The identifer of the input. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputIdentifier {
     /// <p> The identifier of the input routed to AWS IoT Events. </p>
     #[doc(hidden)]
@@ -6228,20 +5771,6 @@ impl InputIdentifier {
         &self,
     ) -> std::option::Option<&crate::model::IotSiteWiseInputIdentifier> {
         self.iot_site_wise_input_identifier.as_ref()
-    }
-}
-impl std::fmt::Debug for InputIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputIdentifier");
-        formatter.field(
-            "iot_events_input_identifier",
-            &self.iot_events_input_identifier,
-        );
-        formatter.field(
-            "iot_site_wise_input_identifier",
-            &self.iot_site_wise_input_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`InputIdentifier`](crate::model::InputIdentifier).
@@ -6306,7 +5835,7 @@ impl InputIdentifier {
 
 /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotSiteWiseInputIdentifier {
     /// <p> The identifier of the AWS IoT SiteWise asset model property. </p>
     #[doc(hidden)]
@@ -6319,16 +5848,6 @@ impl IotSiteWiseInputIdentifier {
         &self,
     ) -> std::option::Option<&crate::model::IotSiteWiseAssetModelPropertyIdentifier> {
         self.iot_site_wise_asset_model_property_identifier.as_ref()
-    }
-}
-impl std::fmt::Debug for IotSiteWiseInputIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotSiteWiseInputIdentifier");
-        formatter.field(
-            "iot_site_wise_asset_model_property_identifier",
-            &self.iot_site_wise_asset_model_property_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`IotSiteWiseInputIdentifier`](crate::model::IotSiteWiseInputIdentifier).
@@ -6375,7 +5894,7 @@ impl IotSiteWiseInputIdentifier {
 
 /// <p> The asset model property identifer of the input routed from AWS IoT SiteWise. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotSiteWiseAssetModelPropertyIdentifier {
     /// <p> The ID of the AWS IoT SiteWise asset model. </p>
     #[doc(hidden)]
@@ -6392,14 +5911,6 @@ impl IotSiteWiseAssetModelPropertyIdentifier {
     /// <p> The ID of the AWS IoT SiteWise asset property. </p>
     pub fn property_id(&self) -> std::option::Option<&str> {
         self.property_id.as_deref()
-    }
-}
-impl std::fmt::Debug for IotSiteWiseAssetModelPropertyIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotSiteWiseAssetModelPropertyIdentifier");
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.finish()
     }
 }
 /// See [`IotSiteWiseAssetModelPropertyIdentifier`](crate::model::IotSiteWiseAssetModelPropertyIdentifier).
@@ -6453,7 +5964,7 @@ impl IotSiteWiseAssetModelPropertyIdentifier {
 
 /// <p> The identifier of the input routed to AWS IoT Events. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
     #[doc(hidden)]
@@ -6463,13 +5974,6 @@ impl IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
     pub fn input_name(&self) -> std::option::Option<&str> {
         self.input_name.as_deref()
-    }
-}
-impl std::fmt::Debug for IotEventsInputIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotEventsInputIdentifier");
-        formatter.field("input_name", &self.input_name);
-        formatter.finish()
     }
 }
 /// See [`IotEventsInputIdentifier`](crate::model::IotEventsInputIdentifier).
@@ -6508,7 +6012,7 @@ impl IotEventsInputIdentifier {
 
 /// <p>Information about the detector model version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorModelVersionSummary {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
@@ -6567,20 +6071,6 @@ impl DetectorModelVersionSummary {
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(&self) -> std::option::Option<&crate::model::EvaluationMethod> {
         self.evaluation_method.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectorModelVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorModelVersionSummary");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("detector_model_version", &self.detector_model_version);
-        formatter.field("detector_model_arn", &self.detector_model_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("status", &self.status);
-        formatter.field("evaluation_method", &self.evaluation_method);
-        formatter.finish()
     }
 }
 /// See [`DetectorModelVersionSummary`](crate::model::DetectorModelVersionSummary).
@@ -6724,7 +6214,7 @@ impl DetectorModelVersionSummary {
 
 /// <p>Information about the detector model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorModelSummary {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
@@ -6748,18 +6238,6 @@ impl DetectorModelSummary {
     /// <p>The time the detector model was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectorModelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorModelSummary");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field(
-            "detector_model_description",
-            &self.detector_model_description,
-        );
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`DetectorModelSummary`](crate::model::DetectorModelSummary).
@@ -6831,7 +6309,7 @@ impl DetectorModelSummary {
 
 /// <p>Contains a summary of an alarm model version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmModelVersionSummary {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -6902,20 +6380,6 @@ impl AlarmModelVersionSummary {
     /// <p> Contains information about the status of the alarm model version. </p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmModelVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmModelVersionSummary");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_arn", &self.alarm_model_arn);
-        formatter.field("alarm_model_version", &self.alarm_model_version);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`AlarmModelVersionSummary`](crate::model::AlarmModelVersionSummary).
@@ -7071,7 +6535,7 @@ impl AlarmModelVersionSummary {
 
 /// <p>Contains a summary of an alarm model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmModelSummary {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     #[doc(hidden)]
@@ -7095,15 +6559,6 @@ impl AlarmModelSummary {
     /// <p>The name of the alarm model.</p>
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmModelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmModelSummary");
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("alarm_model_description", &self.alarm_model_description);
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.finish()
     }
 }
 /// See [`AlarmModelSummary`](crate::model::AlarmModelSummary).
@@ -7175,7 +6630,7 @@ impl AlarmModelSummary {
 
 /// <p>Contains the result of the analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisResult {
     /// <p>The type of the analysis result. Analyses fall into the following types based on the validators used to generate the analysis result:</p>
     /// <ul>
@@ -7236,16 +6691,6 @@ impl AnalysisResult {
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
     pub fn locations(&self) -> std::option::Option<&[crate::model::AnalysisResultLocation]> {
         self.locations.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalysisResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisResult");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("level", &self.level);
-        formatter.field("message", &self.message);
-        formatter.field("locations", &self.locations);
-        formatter.finish()
     }
 }
 /// See [`AnalysisResult`](crate::model::AnalysisResult).
@@ -7363,7 +6808,7 @@ impl AnalysisResult {
 
 /// <p>Contains information that you can use to locate the field in your detector model that the analysis result references.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisResultLocation {
     /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
     #[doc(hidden)]
@@ -7373,13 +6818,6 @@ impl AnalysisResultLocation {
     /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalysisResultLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisResultLocation");
-        formatter.field("path", &self.path);
-        formatter.finish()
     }
 }
 /// See [`AnalysisResultLocation`](crate::model::AnalysisResultLocation).
@@ -7513,7 +6951,7 @@ impl AsRef<str> for AnalysisResultLevel {
 
 /// <p>Information about the input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Input {
     /// <p>Information about the configuration of an input.</p>
     #[doc(hidden)]
@@ -7530,14 +6968,6 @@ impl Input {
     /// <p>The definition of the input.</p>
     pub fn input_definition(&self) -> std::option::Option<&crate::model::InputDefinition> {
         self.input_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Input");
-        formatter.field("input_configuration", &self.input_configuration);
-        formatter.field("input_definition", &self.input_definition);
-        formatter.finish()
     }
 }
 /// See [`Input`](crate::model::Input).
@@ -7689,7 +7119,7 @@ impl AsRef<str> for AnalysisStatus {
 
 /// <p>Information about the detector model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorModel {
     /// <p>Information that defines how a detector operates.</p>
     #[doc(hidden)]
@@ -7710,17 +7140,6 @@ impl DetectorModel {
         &self,
     ) -> std::option::Option<&crate::model::DetectorModelConfiguration> {
         self.detector_model_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for DetectorModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorModel");
-        formatter.field("detector_model_definition", &self.detector_model_definition);
-        formatter.field(
-            "detector_model_configuration",
-            &self.detector_model_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`DetectorModel`](crate::model::DetectorModel).

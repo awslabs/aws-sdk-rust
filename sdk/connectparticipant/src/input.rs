@@ -1491,7 +1491,7 @@ impl StartAttachmentUploadInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAttachmentUploadInput {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[doc(hidden)]
@@ -1531,21 +1531,10 @@ impl StartAttachmentUploadInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartAttachmentUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAttachmentUploadInput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("attachment_size_in_bytes", &self.attachment_size_in_bytes);
-        formatter.field("attachment_name", &self.attachment_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageInput {
     /// <p>The type of the content. Supported types are text/plain.</p>
     #[doc(hidden)]
@@ -1578,20 +1567,10 @@ impl SendMessageInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for SendMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessageInput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content", &self.content);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendEventInput {
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
@@ -1632,20 +1611,10 @@ impl SendEventInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for SendEventInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendEventInput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content", &self.content);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTranscriptInput {
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
     #[doc(hidden)]
@@ -1699,23 +1668,10 @@ impl GetTranscriptInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTranscriptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTranscriptInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("scan_direction", &self.scan_direction);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("start_position", &self.start_position);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttachmentInput {
     /// <p>A unique identifier for the attachment.</p>
     #[doc(hidden)]
@@ -1734,18 +1690,10 @@ impl GetAttachmentInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectParticipantInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -1764,18 +1712,10 @@ impl DisconnectParticipantInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisconnectParticipantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisconnectParticipantInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateParticipantConnectionInput {
     /// <p>Type of connection information required.</p>
     #[doc(hidden)]
@@ -1803,19 +1743,10 @@ impl CreateParticipantConnectionInput {
         self.connect_participant
     }
 }
-impl std::fmt::Debug for CreateParticipantConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateParticipantConnectionInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("participant_token", &self.participant_token);
-        formatter.field("connect_participant", &self.connect_participant);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteAttachmentUploadInput {
     /// <p>A list of unique identifiers for the attachments.</p>
     #[doc(hidden)]
@@ -1839,14 +1770,5 @@ impl CompleteAttachmentUploadInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(&self) -> std::option::Option<&str> {
         self.connection_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CompleteAttachmentUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteAttachmentUploadInput");
-        formatter.field("attachment_ids", &self.attachment_ids);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
     }
 }

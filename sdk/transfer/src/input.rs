@@ -943,7 +943,7 @@ impl CreateProfileInput {
 pub mod create_server_input {
 
     /// A builder for [`CreateServerInput`](crate::input::CreateServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
         pub(crate) domain: std::option::Option<crate::model::Domain>,
@@ -1303,6 +1303,33 @@ pub mod create_server_input {
                 tags: self.tags,
                 workflow_details: self.workflow_details,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("certificate", &self.certificate);
+            formatter.field("domain", &self.domain);
+            formatter.field("endpoint_details", &self.endpoint_details);
+            formatter.field("endpoint_type", &self.endpoint_type);
+            formatter.field("host_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("identity_provider_details", &self.identity_provider_details);
+            formatter.field("identity_provider_type", &self.identity_provider_type);
+            formatter.field("logging_role", &self.logging_role);
+            formatter.field(
+                "post_authentication_login_banner",
+                &self.post_authentication_login_banner,
+            );
+            formatter.field(
+                "pre_authentication_login_banner",
+                &self.pre_authentication_login_banner,
+            );
+            formatter.field("protocols", &self.protocols);
+            formatter.field("protocol_details", &self.protocol_details);
+            formatter.field("security_policy_name", &self.security_policy_name);
+            formatter.field("tags", &self.tags);
+            formatter.field("workflow_details", &self.workflow_details);
+            formatter.finish()
         }
     }
 }
@@ -5188,7 +5215,7 @@ impl DescribeWorkflowInput {
 pub mod import_certificate_input {
 
     /// A builder for [`ImportCertificateInput`](crate::input::ImportCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) usage: std::option::Option<crate::model::CertificateUsageType>,
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -5320,6 +5347,20 @@ pub mod import_certificate_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("usage", &self.usage);
+            formatter.field("certificate", &"*** Sensitive Data Redacted ***");
+            formatter.field("certificate_chain", &"*** Sensitive Data Redacted ***");
+            formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("active_date", &self.active_date);
+            formatter.field("inactive_date", &self.inactive_date);
+            formatter.field("description", &self.description);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl ImportCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ImportCertificate`](crate::operation::ImportCertificate)>
@@ -5440,7 +5481,7 @@ impl ImportCertificateInput {
 pub mod import_host_key_input {
 
     /// A builder for [`ImportHostKeyInput`](crate::input::ImportHostKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) host_key_body: std::option::Option<std::string::String>,
@@ -5513,6 +5554,16 @@ pub mod import_host_key_input {
                 description: self.description,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("server_id", &self.server_id);
+            formatter.field("host_key_body", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &self.description);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -8612,7 +8663,7 @@ impl TagResourceInput {
 pub mod test_identity_provider_input {
 
     /// A builder for [`TestIdentityProviderInput`](crate::input::TestIdentityProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) server_protocol: std::option::Option<crate::model::Protocol>,
@@ -8703,6 +8754,17 @@ pub mod test_identity_provider_input {
                 user_name: self.user_name,
                 user_password: self.user_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("server_id", &self.server_id);
+            formatter.field("server_protocol", &self.server_protocol);
+            formatter.field("source_ip", &self.source_ip);
+            formatter.field("user_name", &self.user_name);
+            formatter.field("user_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -10238,7 +10300,7 @@ impl UpdateProfileInput {
 pub mod update_server_input {
 
     /// A builder for [`UpdateServerInput`](crate::input::UpdateServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
         pub(crate) protocol_details: std::option::Option<crate::model::ProtocolDetails>,
@@ -10556,6 +10618,31 @@ pub mod update_server_input {
                 server_id: self.server_id,
                 workflow_details: self.workflow_details,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("certificate", &self.certificate);
+            formatter.field("protocol_details", &self.protocol_details);
+            formatter.field("endpoint_details", &self.endpoint_details);
+            formatter.field("endpoint_type", &self.endpoint_type);
+            formatter.field("host_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("identity_provider_details", &self.identity_provider_details);
+            formatter.field("logging_role", &self.logging_role);
+            formatter.field(
+                "post_authentication_login_banner",
+                &self.post_authentication_login_banner,
+            );
+            formatter.field(
+                "pre_authentication_login_banner",
+                &self.pre_authentication_login_banner,
+            );
+            formatter.field("protocols", &self.protocols);
+            formatter.field("security_policy_name", &self.security_policy_name);
+            formatter.field("server_id", &self.server_id);
+            formatter.field("workflow_details", &self.workflow_details);
+            formatter.finish()
         }
     }
 }
@@ -10949,7 +11036,7 @@ impl UpdateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
@@ -11033,20 +11120,6 @@ impl UpdateUserInput {
     /// <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserInput");
-        formatter.field("home_directory", &self.home_directory);
-        formatter.field("home_directory_type", &self.home_directory_type);
-        formatter.field("home_directory_mappings", &self.home_directory_mappings);
-        formatter.field("policy", &self.policy);
-        formatter.field("posix_profile", &self.posix_profile);
-        formatter.field("role", &self.role);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
     }
 }
 
@@ -11286,7 +11359,7 @@ impl std::fmt::Debug for UpdateServerInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProfileInput {
     /// <p>The identifier of the profile object that you are updating.</p>
     #[doc(hidden)]
@@ -11305,18 +11378,10 @@ impl UpdateProfileInput {
         self.certificate_ids.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("certificate_ids", &self.certificate_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHostKeyInput {
     /// <p>Provide the ID of the server that contains the host key that you are updating.</p>
     #[doc(hidden)]
@@ -11342,19 +11407,10 @@ impl UpdateHostKeyInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateHostKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHostKeyInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("host_key_id", &self.host_key_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectorInput {
     /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
@@ -11394,21 +11450,10 @@ impl UpdateConnectorInput {
         self.logging_role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectorInput");
-        formatter.field("connector_id", &self.connector_id);
-        formatter.field("url", &self.url);
-        formatter.field("as2_config", &self.as2_config);
-        formatter.field("access_role", &self.access_role);
-        formatter.field("logging_role", &self.logging_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCertificateInput {
     /// <p>The identifier of the certificate object that you are updating.</p>
     #[doc(hidden)]
@@ -11441,20 +11486,10 @@ impl UpdateCertificateInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCertificateInput");
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.field("active_date", &self.active_date);
-        formatter.field("inactive_date", &self.inactive_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAgreementInput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     #[doc(hidden)]
@@ -11517,24 +11552,10 @@ impl UpdateAgreementInput {
         self.access_role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAgreementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAgreementInput");
-        formatter.field("agreement_id", &self.agreement_id);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("local_profile_id", &self.local_profile_id);
-        formatter.field("partner_profile_id", &self.partner_profile_id);
-        formatter.field("base_directory", &self.base_directory);
-        formatter.field("access_role", &self.access_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccessInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
@@ -11626,24 +11647,10 @@ impl UpdateAccessInput {
         self.external_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccessInput");
-        formatter.field("home_directory", &self.home_directory);
-        formatter.field("home_directory_type", &self.home_directory_type);
-        formatter.field("home_directory_mappings", &self.home_directory_mappings);
-        formatter.field("policy", &self.policy);
-        formatter.field("posix_profile", &self.posix_profile);
-        formatter.field("role", &self.role);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     #[doc(hidden)]
@@ -11660,14 +11667,6 @@ impl UntagResourceInput {
     /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
     }
 }
 
@@ -11739,7 +11738,7 @@ impl std::fmt::Debug for TestIdentityProviderInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     #[doc(hidden)]
@@ -11758,18 +11757,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopServerInput {
     /// <p>A system-assigned unique identifier for a server that you stopped.</p>
     #[doc(hidden)]
@@ -11781,17 +11772,10 @@ impl StopServerInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopServerInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartServerInput {
     /// <p>A system-assigned unique identifier for a server that you start.</p>
     #[doc(hidden)]
@@ -11803,17 +11787,10 @@ impl StartServerInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartServerInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFileTransferInput {
     /// <p>The unique identifier for the connector. </p>
     #[doc(hidden)]
@@ -11832,18 +11809,10 @@ impl StartFileTransferInput {
         self.send_file_paths.as_deref()
     }
 }
-impl std::fmt::Debug for StartFileTransferInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFileTransferInput");
-        formatter.field("connector_id", &self.connector_id);
-        formatter.field("send_file_paths", &self.send_file_paths);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendWorkflowStepStateInput {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
@@ -11876,20 +11845,10 @@ impl SendWorkflowStepStateInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for SendWorkflowStepStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendWorkflowStepStateInput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("token", &self.token);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowsInput {
     /// <p>Specifies the maximum number of workflows to return.</p>
     #[doc(hidden)]
@@ -11908,18 +11867,10 @@ impl ListWorkflowsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkflowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
     #[doc(hidden)]
@@ -11945,19 +11896,10 @@ impl ListUsersInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     #[doc(hidden)]
@@ -11983,19 +11925,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServersInput {
     /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p>
     #[doc(hidden)]
@@ -12014,18 +11947,10 @@ impl ListServersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListServersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecurityPoliciesInput {
     /// <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
     #[doc(hidden)]
@@ -12044,18 +11969,10 @@ impl ListSecurityPoliciesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSecurityPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecurityPoliciesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfilesInput {
     /// <p>The maximum number of profiles to return.</p>
     #[doc(hidden)]
@@ -12081,19 +11998,10 @@ impl ListProfilesInput {
         self.profile_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfilesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("profile_type", &self.profile_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostKeysInput {
     /// <p>The maximum number of host keys to return.</p>
     #[doc(hidden)]
@@ -12119,19 +12027,10 @@ impl ListHostKeysInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListHostKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostKeysInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExecutionsInput {
     /// <p>Specifies the maximum number of executions to return.</p>
     #[doc(hidden)]
@@ -12167,19 +12066,10 @@ impl ListExecutionsInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExecutionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectorsInput {
     /// <p>The maximum number of connectors to return.</p>
     #[doc(hidden)]
@@ -12198,18 +12088,10 @@ impl ListConnectorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCertificatesInput {
     /// <p>The maximum number of certificates to return.</p>
     #[doc(hidden)]
@@ -12228,18 +12110,10 @@ impl ListCertificatesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCertificatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCertificatesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAgreementsInput {
     /// <p>The maximum number of agreements to return.</p>
     #[doc(hidden)]
@@ -12265,19 +12139,10 @@ impl ListAgreementsInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListAgreementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAgreementsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessesInput {
     /// <p>Specifies the maximum number of access SIDs to return.</p>
     #[doc(hidden)]
@@ -12303,19 +12168,10 @@ impl ListAccessesInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListAccessesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportSshPublicKeyInput {
     /// <p>A system-assigned unique identifier for a server.</p>
     #[doc(hidden)]
@@ -12341,15 +12197,6 @@ impl ImportSshPublicKeyInput {
     /// <p>The name of the user account that is assigned to one or more servers.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportSshPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportSshPublicKeyInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("ssh_public_key_body", &self.ssh_public_key_body);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
     }
 }
 
@@ -12481,7 +12328,7 @@ impl std::fmt::Debug for ImportCertificateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkflowInput {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
@@ -12493,17 +12340,10 @@ impl DescribeWorkflowInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkflowInput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserInput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     #[doc(hidden)]
@@ -12522,18 +12362,10 @@ impl DescribeUserInput {
         self.user_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServerInput {
     /// <p>A system-assigned unique identifier for a server.</p>
     #[doc(hidden)]
@@ -12545,17 +12377,10 @@ impl DescribeServerInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServerInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSecurityPolicyInput {
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     #[doc(hidden)]
@@ -12567,17 +12392,10 @@ impl DescribeSecurityPolicyInput {
         self.security_policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSecurityPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSecurityPolicyInput");
-        formatter.field("security_policy_name", &self.security_policy_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProfileInput {
     /// <p>The identifier of the profile that you want described.</p>
     #[doc(hidden)]
@@ -12589,17 +12407,10 @@ impl DescribeProfileInput {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHostKeyInput {
     /// <p>Provide the ID of the server that contains the host key that you want described.</p>
     #[doc(hidden)]
@@ -12618,18 +12429,10 @@ impl DescribeHostKeyInput {
         self.host_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHostKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHostKeyInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("host_key_id", &self.host_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExecutionInput {
     /// <p>A unique identifier for the execution of a workflow.</p>
     #[doc(hidden)]
@@ -12648,18 +12451,10 @@ impl DescribeExecutionInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExecutionInput");
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectorInput {
     /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
@@ -12671,17 +12466,10 @@ impl DescribeConnectorInput {
         self.connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectorInput");
-        formatter.field("connector_id", &self.connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCertificateInput {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     #[doc(hidden)]
@@ -12693,17 +12481,10 @@ impl DescribeCertificateInput {
         self.certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCertificateInput");
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAgreementInput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     #[doc(hidden)]
@@ -12722,18 +12503,10 @@ impl DescribeAgreementInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAgreementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAgreementInput");
-        formatter.field("agreement_id", &self.agreement_id);
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccessInput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     #[doc(hidden)]
@@ -12758,18 +12531,10 @@ impl DescribeAccessInput {
         self.external_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccessInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkflowInput {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
@@ -12781,17 +12546,10 @@ impl DeleteWorkflowInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkflowInput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     #[doc(hidden)]
@@ -12810,18 +12568,10 @@ impl DeleteUserInput {
         self.user_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSshPublicKeyInput {
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
     #[doc(hidden)]
@@ -12847,19 +12597,10 @@ impl DeleteSshPublicKeyInput {
         self.user_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSshPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSshPublicKeyInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("ssh_public_key_id", &self.ssh_public_key_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServerInput {
     /// <p>A unique system-assigned identifier for a server instance.</p>
     #[doc(hidden)]
@@ -12871,17 +12612,10 @@ impl DeleteServerInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServerInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfileInput {
     /// <p>The ID of the profile that you are deleting.</p>
     #[doc(hidden)]
@@ -12893,17 +12627,10 @@ impl DeleteProfileInput {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHostKeyInput {
     /// <p>Provide the ID of the server that contains the host key that you are deleting.</p>
     #[doc(hidden)]
@@ -12922,18 +12649,10 @@ impl DeleteHostKeyInput {
         self.host_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHostKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHostKeyInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("host_key_id", &self.host_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectorInput {
     /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
@@ -12945,17 +12664,10 @@ impl DeleteConnectorInput {
         self.connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectorInput");
-        formatter.field("connector_id", &self.connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCertificateInput {
     /// <p>The ID of the certificate object that you are deleting.</p>
     #[doc(hidden)]
@@ -12967,17 +12679,10 @@ impl DeleteCertificateInput {
         self.certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCertificateInput");
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAgreementInput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     #[doc(hidden)]
@@ -12996,18 +12701,10 @@ impl DeleteAgreementInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAgreementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAgreementInput");
-        formatter.field("agreement_id", &self.agreement_id);
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessInput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     #[doc(hidden)]
@@ -13032,18 +12729,10 @@ impl DeleteAccessInput {
         self.external_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkflowInput {
     /// <p>A textual description for the workflow.</p>
     #[doc(hidden)]
@@ -13100,20 +12789,10 @@ impl CreateWorkflowInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkflowInput");
-        formatter.field("description", &self.description);
-        formatter.field("steps", &self.steps);
-        formatter.field("on_exception_steps", &self.on_exception_steps);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
@@ -13213,22 +12892,6 @@ impl CreateUserInput {
     /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserInput");
-        formatter.field("home_directory", &self.home_directory);
-        formatter.field("home_directory_type", &self.home_directory_type);
-        formatter.field("home_directory_mappings", &self.home_directory_mappings);
-        formatter.field("policy", &self.policy);
-        formatter.field("posix_profile", &self.posix_profile);
-        formatter.field("role", &self.role);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("ssh_public_key_body", &self.ssh_public_key_body);
-        formatter.field("tags", &self.tags);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
     }
 }
 
@@ -13492,7 +13155,7 @@ impl std::fmt::Debug for CreateServerInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProfileInput {
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     #[doc(hidden)]
@@ -13525,20 +13188,10 @@ impl CreateProfileInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProfileInput");
-        formatter.field("as2_id", &self.as2_id);
-        formatter.field("profile_type", &self.profile_type);
-        formatter.field("certificate_ids", &self.certificate_ids);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectorInput {
     /// <p>The URL of the partner's AS2 endpoint.</p>
     #[doc(hidden)]
@@ -13578,21 +13231,10 @@ impl CreateConnectorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectorInput");
-        formatter.field("url", &self.url);
-        formatter.field("as2_config", &self.as2_config);
-        formatter.field("access_role", &self.access_role);
-        formatter.field("logging_role", &self.logging_role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAgreementInput {
     /// <p>A name or short description to identify the agreement. </p>
     #[doc(hidden)]
@@ -13655,24 +13297,10 @@ impl CreateAgreementInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAgreementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAgreementInput");
-        formatter.field("description", &self.description);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("local_profile_id", &self.local_profile_id);
-        formatter.field("partner_profile_id", &self.partner_profile_id);
-        formatter.field("base_directory", &self.base_directory);
-        formatter.field("access_role", &self.access_role);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
@@ -13762,19 +13390,5 @@ impl CreateAccessInput {
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessInput");
-        formatter.field("home_directory", &self.home_directory);
-        formatter.field("home_directory_type", &self.home_directory_type);
-        formatter.field("home_directory_mappings", &self.home_directory_mappings);
-        formatter.field("policy", &self.policy);
-        formatter.field("posix_profile", &self.posix_profile);
-        formatter.field("role", &self.role);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
     }
 }

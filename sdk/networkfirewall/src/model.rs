@@ -2,7 +2,7 @@
 
 /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupResponse {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
@@ -111,26 +111,6 @@ impl RuleGroupResponse {
     /// <p>The last time that the rule group was changed.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleGroupResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupResponse");
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group_id", &self.rule_group_id);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("capacity", &self.capacity);
-        formatter.field("rule_group_status", &self.rule_group_status);
-        formatter.field("tags", &self.tags);
-        formatter.field("consumed_capacity", &self.consumed_capacity);
-        formatter.field("number_of_associations", &self.number_of_associations);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("source_metadata", &self.source_metadata);
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`RuleGroupResponse`](crate::model::RuleGroupResponse).
@@ -365,7 +345,7 @@ impl RuleGroupResponse {
 
 /// <p>High-level information about the managed rule group that your own rule group is copied from. You can use the the metadata to track version updates made to the originating rule group. You can retrieve all objects for a rule group by calling <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html">DescribeRuleGroup</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceMetadata {
     /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
     #[doc(hidden)]
@@ -382,14 +362,6 @@ impl SourceMetadata {
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
     pub fn source_update_token(&self) -> std::option::Option<&str> {
         self.source_update_token.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceMetadata");
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("source_update_token", &self.source_update_token);
-        formatter.finish()
     }
 }
 /// See [`SourceMetadata`](crate::model::SourceMetadata).
@@ -443,7 +415,7 @@ impl SourceMetadata {
 
 /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -460,14 +432,6 @@ impl EncryptionConfiguration {
     /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
@@ -611,7 +575,7 @@ impl AsRef<str> for EncryptionType {
 
 /// <p>A key:value pair associated with an Amazon Web Services resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each Amazon Web Services resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
@@ -628,14 +592,6 @@ impl Tag {
     /// <p>The part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -868,7 +824,7 @@ impl AsRef<str> for RuleGroupType {
 /// <p>Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
 /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroup {
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups. </p>
     #[doc(hidden)]
@@ -899,16 +855,6 @@ impl RuleGroup {
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
     pub fn stateful_rule_options(&self) -> std::option::Option<&crate::model::StatefulRuleOptions> {
         self.stateful_rule_options.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroup");
-        formatter.field("rule_variables", &self.rule_variables);
-        formatter.field("reference_sets", &self.reference_sets);
-        formatter.field("rules_source", &self.rules_source);
-        formatter.field("stateful_rule_options", &self.stateful_rule_options);
-        formatter.finish()
     }
 }
 /// See [`RuleGroup`](crate::model::RuleGroup).
@@ -995,7 +941,7 @@ impl RuleGroup {
 
 /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRuleOptions {
     /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     #[doc(hidden)]
@@ -1005,13 +951,6 @@ impl StatefulRuleOptions {
     /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub fn rule_order(&self) -> std::option::Option<&crate::model::RuleOrder> {
         self.rule_order.as_ref()
-    }
-}
-impl std::fmt::Debug for StatefulRuleOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRuleOptions");
-        formatter.field("rule_order", &self.rule_order);
-        formatter.finish()
     }
 }
 /// See [`StatefulRuleOptions`](crate::model::StatefulRuleOptions).
@@ -1143,7 +1082,7 @@ impl AsRef<str> for RuleOrder {
 
 /// <p>The stateless or stateful rules definitions for use in a single rule group. Each rule group requires a single <code>RulesSource</code>. You can use an instance of this for either stateless rules or stateful rules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RulesSource {
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
     /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
@@ -1179,19 +1118,6 @@ impl RulesSource {
         &self,
     ) -> std::option::Option<&crate::model::StatelessRulesAndCustomActions> {
         self.stateless_rules_and_custom_actions.as_ref()
-    }
-}
-impl std::fmt::Debug for RulesSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RulesSource");
-        formatter.field("rules_string", &self.rules_string);
-        formatter.field("rules_source_list", &self.rules_source_list);
-        formatter.field("stateful_rules", &self.stateful_rules);
-        formatter.field(
-            "stateless_rules_and_custom_actions",
-            &self.stateless_rules_and_custom_actions,
-        );
-        formatter.finish()
     }
 }
 /// See [`RulesSource`](crate::model::RulesSource).
@@ -1287,7 +1213,7 @@ impl RulesSource {
 
 /// <p>Stateless inspection criteria. Each stateless rule group uses exactly one of these data types to define its stateless rules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatelessRulesAndCustomActions {
     /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
     #[doc(hidden)]
@@ -1304,14 +1230,6 @@ impl StatelessRulesAndCustomActions {
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
     pub fn custom_actions(&self) -> std::option::Option<&[crate::model::CustomAction]> {
         self.custom_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for StatelessRulesAndCustomActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatelessRulesAndCustomActions");
-        formatter.field("stateless_rules", &self.stateless_rules);
-        formatter.field("custom_actions", &self.custom_actions);
-        formatter.finish()
     }
 }
 /// See [`StatelessRulesAndCustomActions`](crate::model::StatelessRulesAndCustomActions).
@@ -1386,7 +1304,7 @@ impl StatelessRulesAndCustomActions {
 /// <li> <p>In a <code>FirewallPolicy</code> specification, in <code>StatelessCustomActions</code>. The custom actions are available for use inside the policy where you define them. You can use them for the policy's default stateless actions settings to specify what to do with packets that don't match any of the policy's stateless rules. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomAction {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
     #[doc(hidden)]
@@ -1403,14 +1321,6 @@ impl CustomAction {
     /// <p>The custom action associated with the action name.</p>
     pub fn action_definition(&self) -> std::option::Option<&crate::model::ActionDefinition> {
         self.action_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomAction");
-        formatter.field("action_name", &self.action_name);
-        formatter.field("action_definition", &self.action_definition);
-        formatter.finish()
     }
 }
 /// See [`CustomAction`](crate::model::CustomAction).
@@ -1464,7 +1374,7 @@ impl CustomAction {
 
 /// <p>A custom action to use in stateless rule actions settings. This is used in <code>CustomAction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionDefinition {
     /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. This setting defines a CloudWatch dimension value to be published.</p>
     /// <p>You can pair this custom action with any of the standard stateless rule actions. For example, you could pair this in a rule action with the standard action that forwards the packet for stateful inspection. Then, when a packet matches the rule, Network Firewall publishes metrics for the packet and forwards it. </p>
@@ -1476,13 +1386,6 @@ impl ActionDefinition {
     /// <p>You can pair this custom action with any of the standard stateless rule actions. For example, you could pair this in a rule action with the standard action that forwards the packet for stateful inspection. Then, when a packet matches the rule, Network Firewall publishes metrics for the packet and forwards it. </p>
     pub fn publish_metric_action(&self) -> std::option::Option<&crate::model::PublishMetricAction> {
         self.publish_metric_action.as_ref()
-    }
-}
-impl std::fmt::Debug for ActionDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionDefinition");
-        formatter.field("publish_metric_action", &self.publish_metric_action);
-        formatter.finish()
     }
 }
 /// See [`ActionDefinition`](crate::model::ActionDefinition).
@@ -1526,7 +1429,7 @@ impl ActionDefinition {
 
 /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. This setting defines a CloudWatch dimension value to be published.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishMetricAction {
     /// <p></p>
     #[doc(hidden)]
@@ -1536,13 +1439,6 @@ impl PublishMetricAction {
     /// <p></p>
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
         self.dimensions.as_deref()
-    }
-}
-impl std::fmt::Debug for PublishMetricAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishMetricAction");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
     }
 }
 /// See [`PublishMetricAction`](crate::model::PublishMetricAction).
@@ -1592,7 +1488,7 @@ impl PublishMetricAction {
 /// <p>Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value. </p>
 /// <p>For more information about CloudWatch custom metric dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#usingDimensions">Publishing Custom Metrics</a> in the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dimension {
     /// <p>The value to use in the custom metric dimension.</p>
     #[doc(hidden)]
@@ -1602,13 +1498,6 @@ impl Dimension {
     /// <p>The value to use in the custom metric dimension.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Dimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dimension");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Dimension`](crate::model::Dimension).
@@ -1645,7 +1534,7 @@ impl Dimension {
 
 /// <p>A single stateless rule. This is used in <code>StatelessRulesAndCustomActions</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatelessRule {
     /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. </p>
     #[doc(hidden)]
@@ -1666,14 +1555,6 @@ impl StatelessRule {
     /// <p>You can change the priority settings of your rules at any time. To make it easier to insert rules later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
     pub fn priority(&self) -> i32 {
         self.priority
-    }
-}
-impl std::fmt::Debug for StatelessRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatelessRule");
-        formatter.field("rule_definition", &self.rule_definition);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`StatelessRule`](crate::model::StatelessRule).
@@ -1731,7 +1612,7 @@ impl StatelessRule {
 
 /// <p>The inspection criteria and action for a single stateless rule. Network Firewall inspects each packet for the specified matching criteria. When a packet matches the criteria, Network Firewall performs the rule's actions on the packet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleDefinition {
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
     #[doc(hidden)]
@@ -1768,14 +1649,6 @@ impl RuleDefinition {
     /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>. </p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleDefinition");
-        formatter.field("match_attributes", &self.match_attributes);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }
 /// See [`RuleDefinition`](crate::model::RuleDefinition).
@@ -1858,7 +1731,7 @@ impl RuleDefinition {
 
 /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchAttributes {
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address. </p>
     #[doc(hidden)]
@@ -1907,18 +1780,6 @@ impl MatchAttributes {
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
     pub fn tcp_flags(&self) -> std::option::Option<&[crate::model::TcpFlagField]> {
         self.tcp_flags.as_deref()
-    }
-}
-impl std::fmt::Debug for MatchAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchAttributes");
-        formatter.field("sources", &self.sources);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("source_ports", &self.source_ports);
-        formatter.field("destination_ports", &self.destination_ports);
-        formatter.field("protocols", &self.protocols);
-        formatter.field("tcp_flags", &self.tcp_flags);
-        formatter.finish()
     }
 }
 /// See [`MatchAttributes`](crate::model::MatchAttributes).
@@ -2072,7 +1933,7 @@ impl MatchAttributes {
 
 /// <p>TCP flags and masks to inspect packets for, used in stateless rules <code>MatchAttributes</code> settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpFlagField {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
@@ -2099,14 +1960,6 @@ impl TcpFlagField {
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
     pub fn masks(&self) -> std::option::Option<&[crate::model::TcpFlag]> {
         self.masks.as_deref()
-    }
-}
-impl std::fmt::Debug for TcpFlagField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpFlagField");
-        formatter.field("flags", &self.flags);
-        formatter.field("masks", &self.masks);
-        formatter.finish()
     }
 }
 /// See [`TcpFlagField`](crate::model::TcpFlagField).
@@ -2305,7 +2158,7 @@ impl AsRef<str> for TcpFlag {
 
 /// <p>A single port range specification. This is used for source and destination port ranges in the stateless rule <code>MatchAttributes</code>, <code>SourcePorts</code>, and <code>DestinationPorts</code> settings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The lower limit of the port range. This must be less than or equal to the <code>ToPort</code> specification. </p>
     #[doc(hidden)]
@@ -2322,14 +2175,6 @@ impl PortRange {
     /// <p>The upper limit of the port range. This must be greater than or equal to the <code>FromPort</code> specification. </p>
     pub fn to_port(&self) -> i32 {
         self.to_port
-    }
-}
-impl std::fmt::Debug for PortRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortRange");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.finish()
     }
 }
 /// See [`PortRange`](crate::model::PortRange).
@@ -2380,7 +2225,7 @@ impl PortRange {
 
 /// <p>A single IP address specification. This is used in the <code>MatchAttributes</code> source and destination specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Address {
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
     /// <p>Examples: </p>
@@ -2402,13 +2247,6 @@ impl Address {
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub fn address_definition(&self) -> std::option::Option<&str> {
         self.address_definition.as_deref()
-    }
-}
-impl std::fmt::Debug for Address {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Address");
-        formatter.field("address_definition", &self.address_definition);
-        formatter.finish()
     }
 }
 /// See [`Address`](crate::model::Address).
@@ -2462,7 +2300,7 @@ impl Address {
 
 /// <p>A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRule {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow. </p>
     /// <p>The actions for a stateful rule are defined as follows: </p>
@@ -2498,15 +2336,6 @@ impl StatefulRule {
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
     pub fn rule_options(&self) -> std::option::Option<&[crate::model::RuleOption]> {
         self.rule_options.as_deref()
-    }
-}
-impl std::fmt::Debug for StatefulRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRule");
-        formatter.field("action", &self.action);
-        formatter.field("header", &self.header);
-        formatter.field("rule_options", &self.rule_options);
-        formatter.finish()
     }
 }
 /// See [`StatefulRule`](crate::model::StatefulRule).
@@ -2593,7 +2422,7 @@ impl StatefulRule {
 
 /// <p>Additional settings for a stateful rule. This is part of the <code>StatefulRule</code> configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleOption {
     /// <p></p>
     #[doc(hidden)]
@@ -2610,14 +2439,6 @@ impl RuleOption {
     /// <p></p>
     pub fn settings(&self) -> std::option::Option<&[std::string::String]> {
         self.settings.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleOption");
-        formatter.field("keyword", &self.keyword);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
     }
 }
 /// See [`RuleOption`](crate::model::RuleOption).
@@ -2677,7 +2498,7 @@ impl RuleOption {
 
 /// <p>The basic rule criteria for Network Firewall to use to inspect packet headers in stateful traffic flow inspection. Traffic flows that match the criteria are a match for the corresponding <code>StatefulRule</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Header {
     /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
     #[doc(hidden)]
@@ -2750,18 +2571,6 @@ impl Header {
     /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
     pub fn destination_port(&self) -> std::option::Option<&str> {
         self.destination_port.as_deref()
-    }
-}
-impl std::fmt::Debug for Header {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Header");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("source", &self.source);
-        formatter.field("source_port", &self.source_port);
-        formatter.field("direction", &self.direction);
-        formatter.field("destination", &self.destination);
-        formatter.field("destination_port", &self.destination_port);
-        formatter.finish()
     }
 }
 /// See [`Header`](crate::model::Header).
@@ -3266,7 +3075,7 @@ impl AsRef<str> for StatefulAction {
 /// <p>For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.</p>
 /// <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <code>RuleVariables</code> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful domain list rule groups in Network Firewall</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RulesSourceList {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
@@ -3298,15 +3107,6 @@ impl RulesSourceList {
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub fn generated_rules_type(&self) -> std::option::Option<&crate::model::GeneratedRulesType> {
         self.generated_rules_type.as_ref()
-    }
-}
-impl std::fmt::Debug for RulesSourceList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RulesSourceList");
-        formatter.field("targets", &self.targets);
-        formatter.field("target_types", &self.target_types);
-        formatter.field("generated_rules_type", &self.generated_rules_type);
-        formatter.finish()
     }
 }
 /// See [`RulesSourceList`](crate::model::RulesSourceList).
@@ -3580,7 +3380,7 @@ impl AsRef<str> for TargetType {
 
 /// <p>Contains a set of IP set references.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceSets {
     /// <p>The list of IP set references.</p>
     #[doc(hidden)]
@@ -3596,13 +3396,6 @@ impl ReferenceSets {
         &std::collections::HashMap<std::string::String, crate::model::IpSetReference>,
     > {
         self.ip_set_references.as_ref()
-    }
-}
-impl std::fmt::Debug for ReferenceSets {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceSets");
-        formatter.field("ip_set_references", &self.ip_set_references);
-        formatter.finish()
     }
 }
 /// See [`ReferenceSets`](crate::model::ReferenceSets).
@@ -3659,7 +3452,7 @@ impl ReferenceSets {
 /// <p>Configures one or more IP set references for a Suricata-compatible rule group. This is used in <code>CreateRuleGroup</code> or <code>UpdateRuleGroup</code>. An IP set reference is a rule variable that references a resource that you create and manage in another Amazon Web Services service, such as an Amazon VPC prefix list. Network Firewall IP set references enable you to dynamically update the contents of your rules. When you create, update, or delete the IP set you are referencing in your rule, Network Firewall automatically updates the rule's content with the changes. For more information about IP set references in Network Firewall, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references">Using IP set references</a> in the <i>Network Firewall Developer Guide</i>.</p>
 /// <p> Network Firewall currently supports only <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Amazon VPC prefix lists</a> as IP set references. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSetReference {
     /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
     #[doc(hidden)]
@@ -3669,13 +3462,6 @@ impl IpSetReference {
     /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
     pub fn reference_arn(&self) -> std::option::Option<&str> {
         self.reference_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IpSetReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSetReference");
-        formatter.field("reference_arn", &self.reference_arn);
-        formatter.finish()
     }
 }
 /// See [`IpSetReference`](crate::model::IpSetReference).
@@ -3717,7 +3503,7 @@ impl IpSetReference {
 
 /// <p>Settings that are available for use in the rules in the <code>RuleGroup</code> where this is defined. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleVariables {
     /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
     #[doc(hidden)]
@@ -3742,14 +3528,6 @@ impl RuleVariables {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::PortSet>>
     {
         self.port_sets.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleVariables {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleVariables");
-        formatter.field("ip_sets", &self.ip_sets);
-        formatter.field("port_sets", &self.port_sets);
-        formatter.finish()
     }
 }
 /// See [`RuleVariables`](crate::model::RuleVariables).
@@ -3834,7 +3612,7 @@ impl RuleVariables {
 
 /// <p>A set of port ranges for use in the rules in a rule group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortSet {
     /// <p>The set of port ranges. </p>
     #[doc(hidden)]
@@ -3844,13 +3622,6 @@ impl PortSet {
     /// <p>The set of port ranges. </p>
     pub fn definition(&self) -> std::option::Option<&[std::string::String]> {
         self.definition.as_deref()
-    }
-}
-impl std::fmt::Debug for PortSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortSet");
-        formatter.field("definition", &self.definition);
-        formatter.finish()
     }
 }
 /// See [`PortSet`](crate::model::PortSet).
@@ -3898,7 +3669,7 @@ impl PortSet {
 
 /// <p>A list of IP addresses and address ranges, in CIDR notation. This is part of a <code>RuleVariables</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
     #[doc(hidden)]
@@ -3908,13 +3679,6 @@ impl IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
     pub fn definition(&self) -> std::option::Option<&[std::string::String]> {
         self.definition.as_deref()
-    }
-}
-impl std::fmt::Debug for IpSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSet");
-        formatter.field("definition", &self.definition);
-        formatter.finish()
     }
 }
 /// See [`IpSet`](crate::model::IpSet).
@@ -3962,7 +3726,7 @@ impl IpSet {
 
 /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups. </p>
     #[doc(hidden)]
@@ -3975,13 +3739,6 @@ impl LoggingConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::LogDestinationConfig]> {
         self.log_destination_configs.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfiguration");
-        formatter.field("log_destination_configs", &self.log_destination_configs);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
@@ -4034,7 +3791,7 @@ impl LoggingConfiguration {
 /// <p>Defines where Network Firewall sends logs for the firewall for one log type. This is used in <code>LoggingConfiguration</code>. You can send each type of log to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
 /// <p>Network Firewall generates logs for stateful rule groups. You can save alert and flow log types. The stateful rules engine records flow logs for all network traffic that it receives. It records alert logs for traffic that matches stateful rules that have the rule action set to <code>DROP</code> or <code>ALERT</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogDestinationConfig {
     /// <p>The type of log to send. Alert logs report traffic that matches a <code>StatefulRule</code> with an action setting that sends an alert log message. Flow logs are standard network traffic flow logs. </p>
     #[doc(hidden)]
@@ -4072,15 +3829,6 @@ impl LogDestinationConfig {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.log_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for LogDestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogDestinationConfig");
-        formatter.field("log_type", &self.log_type);
-        formatter.field("log_destination_type", &self.log_destination_type);
-        formatter.field("log_destination", &self.log_destination);
-        formatter.finish()
     }
 }
 /// See [`LogDestinationConfig`](crate::model::LogDestinationConfig).
@@ -4360,7 +4108,7 @@ impl AsRef<str> for LogType {
 
 /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallPolicyResponse {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     #[doc(hidden)]
@@ -4446,29 +4194,6 @@ impl FirewallPolicyResponse {
     /// <p>The last time that the firewall policy was changed.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for FirewallPolicyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallPolicyResponse");
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.field("firewall_policy_id", &self.firewall_policy_id);
-        formatter.field("description", &self.description);
-        formatter.field("firewall_policy_status", &self.firewall_policy_status);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "consumed_stateless_rule_capacity",
-            &self.consumed_stateless_rule_capacity,
-        );
-        formatter.field(
-            "consumed_stateful_rule_capacity",
-            &self.consumed_stateful_rule_capacity,
-        );
-        formatter.field("number_of_associations", &self.number_of_associations);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`FirewallPolicyResponse`](crate::model::FirewallPolicyResponse).
@@ -4669,7 +4394,7 @@ impl FirewallPolicyResponse {
 /// <p>The firewall policy defines the behavior of a firewall using a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. </p>
 /// <p>This, along with <code>FirewallPolicyResponse</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallPolicy {
     /// <p>References to the stateless rule groups that are used in the policy. These define the matching criteria in stateless rules. </p>
     #[doc(hidden)]
@@ -4755,28 +4480,6 @@ impl FirewallPolicy {
         &self,
     ) -> std::option::Option<&crate::model::StatefulEngineOptions> {
         self.stateful_engine_options.as_ref()
-    }
-}
-impl std::fmt::Debug for FirewallPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallPolicy");
-        formatter.field(
-            "stateless_rule_group_references",
-            &self.stateless_rule_group_references,
-        );
-        formatter.field("stateless_default_actions", &self.stateless_default_actions);
-        formatter.field(
-            "stateless_fragment_default_actions",
-            &self.stateless_fragment_default_actions,
-        );
-        formatter.field("stateless_custom_actions", &self.stateless_custom_actions);
-        formatter.field(
-            "stateful_rule_group_references",
-            &self.stateful_rule_group_references,
-        );
-        formatter.field("stateful_default_actions", &self.stateful_default_actions);
-        formatter.field("stateful_engine_options", &self.stateful_engine_options);
-        formatter.finish()
     }
 }
 /// See [`FirewallPolicy`](crate::model::FirewallPolicy).
@@ -4987,7 +4690,7 @@ impl FirewallPolicy {
 
 /// <p>Configuration settings for the handling of the stateful rule groups in a firewall policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     #[doc(hidden)]
@@ -4997,13 +4700,6 @@ impl StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub fn rule_order(&self) -> std::option::Option<&crate::model::RuleOrder> {
         self.rule_order.as_ref()
-    }
-}
-impl std::fmt::Debug for StatefulEngineOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulEngineOptions");
-        formatter.field("rule_order", &self.rule_order);
-        formatter.finish()
     }
 }
 /// See [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
@@ -5045,7 +4741,7 @@ impl StatefulEngineOptions {
 
 /// <p>Identifier for a single stateful rule group, used in a firewall policy to refer to a rule group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
     #[doc(hidden)]
@@ -5073,15 +4769,6 @@ impl StatefulRuleGroupReference {
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub fn r#override(&self) -> std::option::Option<&crate::model::StatefulRuleGroupOverride> {
         self.r#override.as_ref()
-    }
-}
-impl std::fmt::Debug for StatefulRuleGroupReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRuleGroupReference");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("r#override", &self.r#override);
-        formatter.finish()
     }
 }
 /// See [`StatefulRuleGroupReference`](crate::model::StatefulRuleGroupReference).
@@ -5151,7 +4838,7 @@ impl StatefulRuleGroupReference {
 
 /// <p>The setting that allows the policy owner to change the behavior of the rule group within a policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRuleGroupOverride {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
     #[doc(hidden)]
@@ -5161,13 +4848,6 @@ impl StatefulRuleGroupOverride {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::OverrideAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for StatefulRuleGroupOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRuleGroupOverride");
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`StatefulRuleGroupOverride`](crate::model::StatefulRuleGroupOverride).
@@ -5294,7 +4974,7 @@ impl AsRef<str> for OverrideAction {
 
 /// <p>Identifier for a single stateless rule group, used in a firewall policy to refer to the rule group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatelessRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
     #[doc(hidden)]
@@ -5311,14 +4991,6 @@ impl StatelessRuleGroupReference {
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     pub fn priority(&self) -> i32 {
         self.priority
-    }
-}
-impl std::fmt::Debug for StatelessRuleGroupReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatelessRuleGroupReference");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`StatelessRuleGroupReference`](crate::model::StatelessRuleGroupReference).
@@ -5369,7 +5041,7 @@ impl StatelessRuleGroupReference {
 
 /// <p>High-level information about a rule group, returned by <code>ListRuleGroups</code>. You can use the information provided in the metadata to retrieve and manage a rule group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupMetadata {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -5386,14 +5058,6 @@ impl RuleGroupMetadata {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleGroupMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`RuleGroupMetadata`](crate::model::RuleGroupMetadata).
@@ -5628,7 +5292,7 @@ impl AsRef<str> for ResourceManagedStatus {
 
 /// <p>High-level information about a firewall, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallMetadata {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     #[doc(hidden)]
@@ -5645,14 +5309,6 @@ impl FirewallMetadata {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallMetadata");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.finish()
     }
 }
 /// See [`FirewallMetadata`](crate::model::FirewallMetadata).
@@ -5706,7 +5362,7 @@ impl FirewallMetadata {
 
 /// <p>High-level information about a firewall policy, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a firewall policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallPolicyMetadata {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     #[doc(hidden)]
@@ -5723,14 +5379,6 @@ impl FirewallPolicyMetadata {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallPolicyMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallPolicyMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`FirewallPolicyMetadata`](crate::model::FirewallPolicyMetadata).
@@ -5781,7 +5429,7 @@ impl FirewallPolicyMetadata {
 
 /// <p>The ID for a subnet that you want to associate with the firewall. This is used with <code>CreateFirewall</code> and <code>AssociateSubnets</code>. Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetMapping {
     /// <p>The unique identifier for the subnet. </p>
     #[doc(hidden)]
@@ -5791,13 +5439,6 @@ impl SubnetMapping {
     /// <p>The unique identifier for the subnet. </p>
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SubnetMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetMapping");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.finish()
     }
 }
 /// See [`SubnetMapping`](crate::model::SubnetMapping).
@@ -5836,7 +5477,7 @@ impl SubnetMapping {
 
 /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallStatus {
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you've configured it. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>. </p>
     #[doc(hidden)]
@@ -5880,19 +5521,6 @@ impl FirewallStatus {
         &self,
     ) -> std::option::Option<&crate::model::CapacityUsageSummary> {
         self.capacity_usage_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for FirewallStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallStatus");
-        formatter.field("status", &self.status);
-        formatter.field(
-            "configuration_sync_state_summary",
-            &self.configuration_sync_state_summary,
-        );
-        formatter.field("sync_states", &self.sync_states);
-        formatter.field("capacity_usage_summary", &self.capacity_usage_summary);
-        formatter.finish()
     }
 }
 /// See [`FirewallStatus`](crate::model::FirewallStatus).
@@ -6001,7 +5629,7 @@ impl FirewallStatus {
 
 /// <p>The capacity usage summary of the resources used by the <code>ReferenceSets</code> in a firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacityUsageSummary {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
     #[doc(hidden)]
@@ -6011,13 +5639,6 @@ impl CapacityUsageSummary {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
     pub fn cid_rs(&self) -> std::option::Option<&crate::model::CidrSummary> {
         self.cid_rs.as_ref()
-    }
-}
-impl std::fmt::Debug for CapacityUsageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityUsageSummary");
-        formatter.field("cid_rs", &self.cid_rs);
-        formatter.finish()
     }
 }
 /// See [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
@@ -6056,7 +5677,7 @@ impl CapacityUsageSummary {
 
 /// <p>Summarizes the CIDR blocks used by the IP set references in a firewall. Network Firewall calculates the number of CIDRs by taking an aggregated count of all CIDRs used by the IP sets you are referencing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrSummary {
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
     #[doc(hidden)]
@@ -6086,15 +5707,6 @@ impl CidrSummary {
         &std::collections::HashMap<std::string::String, crate::model::IpSetMetadata>,
     > {
         self.ip_set_references.as_ref()
-    }
-}
-impl std::fmt::Debug for CidrSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrSummary");
-        formatter.field("available_cidr_count", &self.available_cidr_count);
-        formatter.field("utilized_cidr_count", &self.utilized_cidr_count);
-        formatter.field("ip_set_references", &self.ip_set_references);
-        formatter.finish()
     }
 }
 /// See [`CidrSummary`](crate::model::CidrSummary).
@@ -6174,7 +5786,7 @@ impl CidrSummary {
 
 /// <p>General information about the IP set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSetMetadata {
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
     #[doc(hidden)]
@@ -6184,13 +5796,6 @@ impl IpSetMetadata {
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
     pub fn resolved_cidr_count(&self) -> std::option::Option<i32> {
         self.resolved_cidr_count
-    }
-}
-impl std::fmt::Debug for IpSetMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSetMetadata");
-        formatter.field("resolved_cidr_count", &self.resolved_cidr_count);
-        formatter.finish()
     }
 }
 /// See [`IpSetMetadata`](crate::model::IpSetMetadata).
@@ -6235,7 +5840,7 @@ impl IpSetMetadata {
 /// </ul>
 /// <p>When you update a firewall, for example to add a subnet association or change a rule group in the firewall policy, the affected sync states reflect out-of-sync or not ready status until the changes are complete. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SyncState {
     /// <p>The attachment status of the firewall's association with a single VPC subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic. This is part of the <code>FirewallStatus</code>.</p>
     #[doc(hidden)]
@@ -6258,14 +5863,6 @@ impl SyncState {
         &std::collections::HashMap<std::string::String, crate::model::PerObjectStatus>,
     > {
         self.config.as_ref()
-    }
-}
-impl std::fmt::Debug for SyncState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SyncState");
-        formatter.field("attachment", &self.attachment);
-        formatter.field("config", &self.config);
-        formatter.finish()
     }
 }
 /// See [`SyncState`](crate::model::SyncState).
@@ -6336,7 +5933,7 @@ impl SyncState {
 
 /// <p>Provides configuration status for a single policy or rule group that is used for a firewall endpoint. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of a <code>SyncState</code> for a firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerObjectStatus {
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
     #[doc(hidden)]
@@ -6353,14 +5950,6 @@ impl PerObjectStatus {
     /// <p>The current version of the object that is either in sync or pending synchronization. </p>
     pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
-    }
-}
-impl std::fmt::Debug for PerObjectStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerObjectStatus");
-        formatter.field("sync_status", &self.sync_status);
-        formatter.field("update_token", &self.update_token);
-        formatter.finish()
     }
 }
 /// See [`PerObjectStatus`](crate::model::PerObjectStatus).
@@ -6511,7 +6100,7 @@ impl AsRef<str> for PerObjectSyncStatus {
 
 /// <p>The configuration and status for a single subnet that you've specified for use by the Network Firewall firewall. This is part of the <code>FirewallStatus</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attachment {
     /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
     #[doc(hidden)]
@@ -6535,15 +6124,6 @@ impl Attachment {
     /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::AttachmentStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for Attachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attachment");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`Attachment`](crate::model::Attachment).
@@ -6904,7 +6484,7 @@ impl AsRef<str> for FirewallStatusValue {
 /// <p>The firewall defines the configuration settings for an Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p>
 /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Firewall {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     #[doc(hidden)]
@@ -6995,27 +6575,6 @@ impl Firewall {
         &self,
     ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Firewall {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Firewall");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_mappings", &self.subnet_mappings);
-        formatter.field("delete_protection", &self.delete_protection);
-        formatter.field("subnet_change_protection", &self.subnet_change_protection);
-        formatter.field(
-            "firewall_policy_change_protection",
-            &self.firewall_policy_change_protection,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("firewall_id", &self.firewall_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
     }
 }
 /// See [`Firewall`](crate::model::Firewall).

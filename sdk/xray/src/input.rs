@@ -4597,7 +4597,7 @@ impl UpdateSamplingRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSamplingRuleInput {
     /// <p>The rule and fields to change.</p>
     #[doc(hidden)]
@@ -4609,17 +4609,10 @@ impl UpdateSamplingRuleInput {
         self.sampling_rule_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSamplingRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSamplingRuleInput");
-        formatter.field("sampling_rule_update", &self.sampling_rule_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupInput {
     /// <p>The case-sensitive name of the group.</p>
     #[doc(hidden)]
@@ -4662,20 +4655,10 @@ impl UpdateGroupInput {
         self.insights_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("insights_configuration", &self.insights_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
     #[doc(hidden)]
@@ -4694,18 +4677,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
     #[doc(hidden)]
@@ -4742,18 +4717,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutTraceSegmentsInput {
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
     #[doc(hidden)]
@@ -4765,17 +4732,10 @@ impl PutTraceSegmentsInput {
         self.trace_segment_documents.as_deref()
     }
 }
-impl std::fmt::Debug for PutTraceSegmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutTraceSegmentsInput");
-        formatter.field("trace_segment_documents", &self.trace_segment_documents);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutTelemetryRecordsInput {
     /// <p></p>
     #[doc(hidden)]
@@ -4808,20 +4768,10 @@ impl PutTelemetryRecordsInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutTelemetryRecordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutTelemetryRecordsInput");
-        formatter.field("telemetry_records", &self.telemetry_records);
-        formatter.field("ec2_instance_id", &self.ec2_instance_id);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEncryptionConfigInput {
     /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
     /// <ul>
@@ -4852,18 +4802,10 @@ impl PutEncryptionConfigInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for PutEncryptionConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEncryptionConfigInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
     #[doc(hidden)]
@@ -4882,18 +4824,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTraceSummariesInput {
     /// <p>The start of the time frame for which to retrieve traces.</p>
     #[doc(hidden)]
@@ -4947,23 +4881,10 @@ impl GetTraceSummariesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTraceSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTraceSummariesInput");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("time_range_type", &self.time_range_type);
-        formatter.field("sampling", &self.sampling);
-        formatter.field("sampling_strategy", &self.sampling_strategy);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTraceGraphInput {
     /// <p>Trace IDs of requests for which to generate a service graph.</p>
     #[doc(hidden)]
@@ -4982,18 +4903,10 @@ impl GetTraceGraphInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTraceGraphInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTraceGraphInput");
-        formatter.field("trace_ids", &self.trace_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTimeSeriesServiceStatisticsInput {
     /// <p>The start of the time frame for which to aggregate statistics.</p>
     #[doc(hidden)]
@@ -5054,27 +4967,10 @@ impl GetTimeSeriesServiceStatisticsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTimeSeriesServiceStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTimeSeriesServiceStatisticsInput");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field(
-            "entity_selector_expression",
-            &self.entity_selector_expression,
-        );
-        formatter.field("period", &self.period);
-        formatter.field("forecast_statistics", &self.forecast_statistics);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceGraphInput {
     /// <p>The start of the time frame for which to generate a graph.</p>
     #[doc(hidden)]
@@ -5114,21 +5010,10 @@ impl GetServiceGraphInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceGraphInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceGraphInput");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSamplingTargetsInput {
     /// <p>Information about rules that the service is using to sample requests.</p>
     #[doc(hidden)]
@@ -5143,20 +5028,10 @@ impl GetSamplingTargetsInput {
         self.sampling_statistics_documents.as_deref()
     }
 }
-impl std::fmt::Debug for GetSamplingTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSamplingTargetsInput");
-        formatter.field(
-            "sampling_statistics_documents",
-            &self.sampling_statistics_documents,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSamplingStatisticSummariesInput {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
@@ -5168,17 +5043,10 @@ impl GetSamplingStatisticSummariesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSamplingStatisticSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSamplingStatisticSummariesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSamplingRulesInput {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
@@ -5190,17 +5058,10 @@ impl GetSamplingRulesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSamplingRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSamplingRulesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightSummariesInput {
     /// <p>The list of insight states. </p>
     #[doc(hidden)]
@@ -5254,23 +5115,10 @@ impl GetInsightSummariesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetInsightSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightSummariesInput");
-        formatter.field("states", &self.states);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightImpactGraphInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     #[doc(hidden)]
@@ -5303,20 +5151,10 @@ impl GetInsightImpactGraphInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetInsightImpactGraphInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightImpactGraphInput");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightEventsInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     #[doc(hidden)]
@@ -5342,19 +5180,10 @@ impl GetInsightEventsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetInsightEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightEventsInput");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     #[doc(hidden)]
@@ -5366,17 +5195,10 @@ impl GetInsightInput {
         self.insight_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetInsightInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightInput");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupsInput {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
@@ -5388,17 +5210,10 @@ impl GetGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupInput {
     /// <p>The case-sensitive name of the group.</p>
     #[doc(hidden)]
@@ -5417,29 +5232,15 @@ impl GetGroupInput {
         self.group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEncryptionConfigInput {}
-impl std::fmt::Debug for GetEncryptionConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEncryptionConfigInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSamplingRuleInput {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     #[doc(hidden)]
@@ -5458,18 +5259,10 @@ impl DeleteSamplingRuleInput {
         self.rule_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSamplingRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSamplingRuleInput");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("rule_arn", &self.rule_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The case-sensitive name of the group.</p>
     #[doc(hidden)]
@@ -5488,18 +5281,10 @@ impl DeleteGroupInput {
         self.group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSamplingRuleInput {
     /// <p>The rule definition.</p>
     #[doc(hidden)]
@@ -5536,18 +5321,10 @@ impl CreateSamplingRuleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSamplingRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSamplingRuleInput");
-        formatter.field("sampling_rule", &self.sampling_rule);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
     #[doc(hidden)]
@@ -5608,20 +5385,10 @@ impl CreateGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("insights_configuration", &self.insights_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetTracesInput {
     /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
     #[doc(hidden)]
@@ -5638,13 +5405,5 @@ impl BatchGetTracesInput {
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetTracesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetTracesInput");
-        formatter.field("trace_ids", &self.trace_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

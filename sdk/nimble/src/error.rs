@@ -2,7 +2,7 @@
 
 /// <p>One of the parameters in the request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>A more specific error code.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl ValidationException {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context.as_ref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("code", &self.code);
-        formatter.field("context", &self.context);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -132,7 +123,7 @@ impl ValidationException {
 
 /// <p>The request throughput limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>A more specific error code.</p>
     #[doc(hidden)]
@@ -156,15 +147,6 @@ impl ThrottlingException {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context.as_ref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("code", &self.code);
-        formatter.field("context", &self.context);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ThrottlingException {
@@ -267,7 +249,7 @@ impl ThrottlingException {
 /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
 /// <p>Please use AWS Service Quotas to request an increase. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     /// <p>A more specific error code.</p>
     #[doc(hidden)]
@@ -291,15 +273,6 @@ impl ServiceQuotaExceededException {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("code", &self.code);
-        formatter.field("context", &self.context);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ServiceQuotaExceededException {
@@ -397,7 +370,7 @@ impl ServiceQuotaExceededException {
 
 /// <p>The specified resource could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>A more specific error code.</p>
     #[doc(hidden)]
@@ -421,15 +394,6 @@ impl ResourceNotFoundException {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("code", &self.code);
-        formatter.field("context", &self.context);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -527,7 +491,7 @@ impl ResourceNotFoundException {
 
 /// <p>An internal error has occurred. Please retry your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerErrorException {
     /// <p>A more specific error code.</p>
     #[doc(hidden)]
@@ -551,15 +515,6 @@ impl InternalServerErrorException {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context.as_ref()
-    }
-}
-impl std::fmt::Debug for InternalServerErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorException");
-        formatter.field("code", &self.code);
-        formatter.field("context", &self.context);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalServerErrorException {
@@ -661,7 +616,7 @@ impl InternalServerErrorException {
 
 /// <p>Another operation is in progress. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>A more specific error code.</p>
     #[doc(hidden)]
@@ -685,15 +640,6 @@ impl ConflictException {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context.as_ref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("code", &self.code);
-        formatter.field("context", &self.context);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ConflictException {
@@ -791,7 +737,7 @@ impl ConflictException {
 
 /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>A more specific error code.</p>
     #[doc(hidden)]
@@ -815,15 +761,6 @@ impl AccessDeniedException {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.context.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("code", &self.code);
-        formatter.field("context", &self.context);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {

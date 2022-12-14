@@ -1032,7 +1032,7 @@ impl CreateDataViewInput {
 pub mod create_permission_group_input {
 
     /// A builder for [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1128,6 +1128,16 @@ pub mod create_permission_group_input {
                 application_permissions: self.application_permissions,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("application_permissions", &self.application_permissions);
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -1250,7 +1260,7 @@ impl CreatePermissionGroupInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
@@ -1370,6 +1380,19 @@ pub mod create_user_input {
                 api_access_principal_arn: self.api_access_principal_arn,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("api_access", &self.api_access);
+            formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -5716,7 +5739,7 @@ impl UpdateDatasetInput {
 pub mod update_permission_group_input {
 
     /// A builder for [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5827,6 +5850,17 @@ pub mod update_permission_group_input {
                 application_permissions: self.application_permissions,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("permission_group_id", &self.permission_group_id);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("application_permissions", &self.application_permissions);
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -5973,7 +6007,7 @@ impl UpdatePermissionGroupInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
@@ -6090,6 +6124,19 @@ pub mod update_user_input {
                 api_access_principal_arn: self.api_access_principal_arn,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("api_access", &self.api_access);
+            formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -6393,7 +6440,7 @@ impl std::fmt::Debug for UpdatePermissionGroupInput {
 
 /// The request for an UpdateDataset operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -6455,23 +6502,10 @@ impl UpdateDatasetInput {
         self.schema_definition.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDatasetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("dataset_title", &self.dataset_title);
-        formatter.field("kind", &self.kind);
-        formatter.field("dataset_description", &self.dataset_description);
-        formatter.field("alias", &self.alias);
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.finish()
-    }
-}
 
 /// Request to update an existing changeset.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -6551,21 +6585,10 @@ impl UpdateChangesetInput {
         self.format_params.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateChangesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChangesetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("changeset_id", &self.changeset_id);
-        formatter.field("source_params", &self.source_params);
-        formatter.field("format_params", &self.format_params);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetUserPasswordInput {
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
     #[doc(hidden)]
@@ -6584,18 +6607,10 @@ impl ResetUserPasswordInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for ResetUserPasswordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetUserPasswordInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersByPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
@@ -6621,19 +6636,10 @@ impl ListUsersByPermissionGroupInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUsersByPermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersByPermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
@@ -6652,18 +6658,10 @@ impl ListUsersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionGroupsByUserInput {
     /// <p>The unique identifier for the user.</p>
     #[doc(hidden)]
@@ -6689,19 +6687,10 @@ impl ListPermissionGroupsByUserInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPermissionGroupsByUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionGroupsByUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionGroupsInput {
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
@@ -6720,18 +6709,10 @@ impl ListPermissionGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPermissionGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Request for a list data views.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataViewsInput {
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
     #[doc(hidden)]
@@ -6757,19 +6738,10 @@ impl ListDataViewsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataViewsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataViewsInput");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Request for the ListDatasets operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetsInput {
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
@@ -6788,18 +6760,10 @@ impl ListDatasetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatasetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Request to ListChangesetsRequest. It exposes minimal query filters.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChangesetsInput {
     /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
     #[doc(hidden)]
@@ -6825,19 +6789,10 @@ impl ListChangesetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChangesetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChangesetsInput");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkingLocationInput {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
@@ -6857,17 +6812,10 @@ impl GetWorkingLocationInput {
         self.location_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetWorkingLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkingLocationInput");
-        formatter.field("location_type", &self.location_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserInput {
     /// <p>The unique identifier of the user to get data for.</p>
     #[doc(hidden)]
@@ -6879,17 +6827,10 @@ impl GetUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 /// Request for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsInput {
     /// <p>The time duration in which the credentials remain valid. </p>
     #[doc(hidden)]
@@ -6908,18 +6849,10 @@ impl GetProgrammaticAccessCredentialsInput {
         self.environment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetProgrammaticAccessCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProgrammaticAccessCredentialsInput");
-        formatter.field("duration_in_minutes", &self.duration_in_minutes);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
@@ -6931,17 +6864,10 @@ impl GetPermissionGroupInput {
         self.permission_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExternalDataViewAccessDetailsInput {
     /// <p>The unique identifier for the Dataview that you want to access.</p>
     #[doc(hidden)]
@@ -6960,18 +6886,10 @@ impl GetExternalDataViewAccessDetailsInput {
         self.dataset_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetExternalDataViewAccessDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExternalDataViewAccessDetailsInput");
-        formatter.field("data_view_id", &self.data_view_id);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.finish()
-    }
-}
 
 /// Request for retrieving a data view detail. Grouped / accessible within a dataset by its dataset id.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataViewInput {
     /// <p>The unique identifier for the Dataview.</p>
     #[doc(hidden)]
@@ -6990,18 +6908,10 @@ impl GetDataViewInput {
         self.dataset_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataViewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataViewInput");
-        formatter.field("data_view_id", &self.data_view_id);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.finish()
-    }
-}
 
 /// Request for the GetDataset operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDatasetInput {
     /// <p>The unique identifier for a Dataset.</p>
     #[doc(hidden)]
@@ -7013,17 +6923,10 @@ impl GetDatasetInput {
         self.dataset_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDatasetInput");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.finish()
-    }
-}
 
 /// Request to describe a changeset.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangesetInput {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     #[doc(hidden)]
@@ -7042,18 +6945,10 @@ impl GetChangesetInput {
         self.changeset_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetChangesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangesetInput");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("changeset_id", &self.changeset_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableUserInput {
     /// <p>The unique identifier for the user account that you want to enable.</p>
     #[doc(hidden)]
@@ -7072,18 +6967,10 @@ impl EnableUserInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for EnableUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateUserFromPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
@@ -7109,19 +6996,10 @@ impl DisassociateUserFromPermissionGroupInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateUserFromPermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateUserFromPermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableUserInput {
     /// <p>The unique identifier for the user account that you want to disable.</p>
     #[doc(hidden)]
@@ -7140,18 +7018,10 @@ impl DisableUserInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisableUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePermissionGroupInput {
     /// <p>The unique identifier for the permission group that you want to delete.</p>
     #[doc(hidden)]
@@ -7170,18 +7040,10 @@ impl DeletePermissionGroupInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// The request for a DeleteDataset operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -7198,14 +7060,6 @@ impl DeleteDatasetInput {
     /// <p>The unique identifier of the Dataset to be deleted.</p>
     pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.finish()
     }
 }
 
@@ -7368,7 +7222,7 @@ impl std::fmt::Debug for CreatePermissionGroupInput {
 
 /// Request for creating a data view.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataViewInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -7424,23 +7278,10 @@ impl CreateDataViewInput {
         self.destination_type_params.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataViewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataViewInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("auto_update", &self.auto_update);
-        formatter.field("sort_columns", &self.sort_columns);
-        formatter.field("partition_columns", &self.partition_columns);
-        formatter.field("as_of_timestamp", &self.as_of_timestamp);
-        formatter.field("destination_type_params", &self.destination_type_params);
-        formatter.finish()
-    }
-}
 
 /// The request for a CreateDataset operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -7511,24 +7352,10 @@ impl CreateDatasetInput {
         self.schema_definition.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_title", &self.dataset_title);
-        formatter.field("kind", &self.kind);
-        formatter.field("dataset_description", &self.dataset_description);
-        formatter.field("owner_info", &self.owner_info);
-        formatter.field("permission_group_params", &self.permission_group_params);
-        formatter.field("alias", &self.alias);
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.finish()
-    }
-}
 
 /// The request for a CreateChangeset operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -7618,21 +7445,10 @@ impl CreateChangesetInput {
         self.format_params.as_ref()
     }
 }
-impl std::fmt::Debug for CreateChangesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChangesetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("change_type", &self.change_type);
-        formatter.field("source_params", &self.source_params);
-        formatter.field("format_params", &self.format_params);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateUserToPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
@@ -7656,14 +7472,5 @@ impl AssociateUserToPermissionGroupInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateUserToPermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateUserToPermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

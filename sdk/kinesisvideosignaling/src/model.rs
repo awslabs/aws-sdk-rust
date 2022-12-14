@@ -2,7 +2,7 @@
 
 /// <p>A structure for the ICE server connection data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IceServer {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
     #[doc(hidden)]
@@ -33,16 +33,6 @@ impl IceServer {
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
     pub fn ttl(&self) -> i32 {
         self.ttl
-    }
-}
-impl std::fmt::Debug for IceServer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IceServer");
-        formatter.field("uris", &self.uris);
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.field("ttl", &self.ttl);
-        formatter.finish()
     }
 }
 /// See [`IceServer`](crate::model::IceServer).

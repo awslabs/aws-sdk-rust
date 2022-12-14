@@ -1938,7 +1938,7 @@ impl CreateDataSetInput {
 pub mod create_data_source_input {
 
     /// A builder for [`CreateDataSourceInput`](crate::input::CreateDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -2117,6 +2117,22 @@ pub mod create_data_source_input {
                 ssl_properties: self.ssl_properties,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("aws_account_id", &self.aws_account_id);
+            formatter.field("data_source_id", &self.data_source_id);
+            formatter.field("name", &self.name);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("data_source_parameters", &self.data_source_parameters);
+            formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("permissions", &self.permissions);
+            formatter.field("vpc_connection_properties", &self.vpc_connection_properties);
+            formatter.field("ssl_properties", &self.ssl_properties);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -24374,7 +24390,7 @@ impl UpdateDataSetPermissionsInput {
 pub mod update_data_source_input {
 
     /// A builder for [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -24493,6 +24509,19 @@ pub mod update_data_source_input {
                 vpc_connection_properties: self.vpc_connection_properties,
                 ssl_properties: self.ssl_properties,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("aws_account_id", &self.aws_account_id);
+            formatter.field("data_source_id", &self.data_source_id);
+            formatter.field("name", &self.name);
+            formatter.field("data_source_parameters", &self.data_source_parameters);
+            formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("vpc_connection_properties", &self.vpc_connection_properties);
+            formatter.field("ssl_properties", &self.ssl_properties);
+            formatter.finish()
         }
     }
 }
@@ -28145,7 +28174,7 @@ impl UpdateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The Amazon QuickSight user name that you want to update.</p>
     #[doc(hidden)]
@@ -28260,35 +28289,10 @@ impl UpdateUserInput {
         self.external_login_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("email", &self.email);
-        formatter.field("role", &self.role);
-        formatter.field("custom_permissions_name", &self.custom_permissions_name);
-        formatter.field(
-            "unapply_custom_permissions",
-            &self.unapply_custom_permissions,
-        );
-        formatter.field(
-            "external_login_federation_provider_type",
-            &self.external_login_federation_provider_type,
-        );
-        formatter.field(
-            "custom_federation_provider_url",
-            &self.custom_federation_provider_url,
-        );
-        formatter.field("external_login_id", &self.external_login_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThemePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
     #[doc(hidden)]
@@ -28321,20 +28325,10 @@ impl UpdateThemePermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateThemePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThemePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
     #[doc(hidden)]
@@ -28367,20 +28361,10 @@ impl UpdateThemeAliasInput {
         self.theme_version_number
     }
 }
-impl std::fmt::Debug for UpdateThemeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThemeAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("theme_version_number", &self.theme_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
     #[doc(hidden)]
@@ -28427,22 +28411,10 @@ impl UpdateThemeInput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThemeInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("name", &self.name);
-        formatter.field("base_theme_id", &self.base_theme_id);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplatePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the template.</p>
     #[doc(hidden)]
@@ -28475,20 +28447,10 @@ impl UpdateTemplatePermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTemplatePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplatePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
     #[doc(hidden)]
@@ -28521,20 +28483,10 @@ impl UpdateTemplateAliasInput {
         self.template_version_number
     }
 }
-impl std::fmt::Debug for UpdateTemplateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("template_version_number", &self.template_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
     #[doc(hidden)]
@@ -28576,21 +28528,10 @@ impl UpdateTemplateInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsInput {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
     #[doc(hidden)]
@@ -28609,18 +28550,10 @@ impl UpdatePublicSharingSettingsInput {
         self.public_sharing_enabled
     }
 }
-impl std::fmt::Debug for UpdatePublicSharingSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePublicSharingSettingsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("public_sharing_enabled", &self.public_sharing_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIpRestrictionInput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     #[doc(hidden)]
@@ -28650,19 +28583,10 @@ impl UpdateIpRestrictionInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for UpdateIpRestrictionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIpRestrictionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("ip_restriction_rule_map", &self.ip_restriction_rule_map);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     #[doc(hidden)]
@@ -28725,22 +28649,10 @@ impl UpdateIamPolicyAssignmentInput {
         self.identities.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIamPolicyAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIamPolicyAssignmentInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("identities", &self.identities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupInput {
     /// <p>The name of the group that you want to update.</p>
     #[doc(hidden)]
@@ -28773,20 +28685,10 @@ impl UpdateGroupInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFolderPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
     #[doc(hidden)]
@@ -28819,20 +28721,10 @@ impl UpdateFolderPermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFolderPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFolderPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
     #[doc(hidden)]
@@ -28858,19 +28750,10 @@ impl UpdateFolderInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFolderInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSourcePermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -28901,16 +28784,6 @@ impl UpdateDataSourcePermissionsInput {
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
     pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.revoke_permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDataSourcePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSourcePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
     }
 }
 
@@ -28990,7 +28863,7 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSetPermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -29023,20 +28896,10 @@ impl UpdateDataSetPermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDataSetPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSetPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -29153,40 +29016,10 @@ impl UpdateDataSetInput {
         self.data_set_usage_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSetInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("physical_table_map", &self.physical_table_map);
-        formatter.field("logical_table_map", &self.logical_table_map);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.field("column_groups", &self.column_groups);
-        formatter.field("field_folders", &self.field_folders);
-        formatter.field(
-            "row_level_permission_data_set",
-            &self.row_level_permission_data_set,
-        );
-        formatter.field(
-            "row_level_permission_tag_configuration",
-            &self.row_level_permission_tag_configuration,
-        );
-        formatter.field(
-            "column_level_permission_rules",
-            &self.column_level_permission_rules,
-        );
-        formatter.field(
-            "data_set_usage_configuration",
-            &self.data_set_usage_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDashboardPublishedVersionInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     #[doc(hidden)]
@@ -29212,19 +29045,10 @@ impl UpdateDashboardPublishedVersionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for UpdateDashboardPublishedVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDashboardPublishedVersionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDashboardPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
     #[doc(hidden)]
@@ -29277,22 +29101,10 @@ impl UpdateDashboardPermissionsInput {
         self.revoke_link_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDashboardPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDashboardPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.field("grant_link_permissions", &self.grant_link_permissions);
-        formatter.field("revoke_link_permissions", &self.revoke_link_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     #[doc(hidden)]
@@ -29367,24 +29179,10 @@ impl UpdateDashboardInput {
         self.theme_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDashboardInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("name", &self.name);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("dashboard_publish_options", &self.dashboard_publish_options);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAnalysisPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
     #[doc(hidden)]
@@ -29417,20 +29215,10 @@ impl UpdateAnalysisPermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAnalysisPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAnalysisPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
     #[doc(hidden)]
@@ -29477,22 +29265,10 @@ impl UpdateAnalysisInput {
         self.theme_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("name", &self.name);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
     #[doc(hidden)]
@@ -29518,19 +29294,10 @@ impl UpdateAccountSettingsInput {
         self.notification_email.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountSettingsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("default_namespace", &self.default_namespace);
-        formatter.field("notification_email", &self.notification_email);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
     #[doc(hidden)]
@@ -29558,19 +29325,10 @@ impl UpdateAccountCustomizationInput {
         self.account_customization.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAccountCustomizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountCustomizationInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("account_customization", &self.account_customization);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     #[doc(hidden)]
@@ -29589,18 +29347,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
     #[doc(hidden)]
@@ -29619,18 +29369,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchGroupsInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -29670,21 +29412,10 @@ impl SearchGroupsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for SearchGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchGroupsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchFoldersInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -29717,20 +29448,10 @@ impl SearchFoldersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for SearchFoldersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchFoldersInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchDashboardsInput {
     /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
     #[doc(hidden)]
@@ -29763,20 +29484,10 @@ impl SearchDashboardsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for SearchDashboardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchDashboardsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchAnalysesInput {
     /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
     #[doc(hidden)]
@@ -29809,20 +29520,10 @@ impl SearchAnalysesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for SearchAnalysesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchAnalysesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
     #[doc(hidden)]
@@ -29841,18 +29542,10 @@ impl RestoreAnalysisInput {
         self.analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterUserInput {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
@@ -29991,34 +29684,10 @@ impl RegisterUserInput {
         self.external_login_id.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterUserInput");
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("email", &self.email);
-        formatter.field("user_role", &self.user_role);
-        formatter.field("iam_arn", &self.iam_arn);
-        formatter.field("session_name", &self.session_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("custom_permissions_name", &self.custom_permissions_name);
-        formatter.field(
-            "external_login_federation_provider_type",
-            &self.external_login_federation_provider_type,
-        );
-        formatter.field(
-            "custom_federation_provider_url",
-            &self.custom_federation_provider_url,
-        );
-        formatter.field("external_login_id", &self.external_login_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -30051,20 +29720,10 @@ impl ListUsersInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserGroupsInput {
     /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
     #[doc(hidden)]
@@ -30104,21 +29763,10 @@ impl ListUserGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUserGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserGroupsInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThemeVersionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
     #[doc(hidden)]
@@ -30151,20 +29799,10 @@ impl ListThemeVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListThemeVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThemeVersionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThemesInput {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
     #[doc(hidden)]
@@ -30207,20 +29845,10 @@ impl ListThemesInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for ListThemesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThemesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThemeAliasesInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
     #[doc(hidden)]
@@ -30253,20 +29881,10 @@ impl ListThemeAliasesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListThemeAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThemeAliasesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplateVersionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
     #[doc(hidden)]
@@ -30299,20 +29917,10 @@ impl ListTemplateVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTemplateVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplateVersionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplatesInput {
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
     #[doc(hidden)]
@@ -30338,19 +29946,10 @@ impl ListTemplatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplatesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplateAliasesInput {
     /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
     #[doc(hidden)]
@@ -30383,20 +29982,10 @@ impl ListTemplateAliasesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTemplateAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplateAliasesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>
     #[doc(hidden)]
@@ -30408,17 +29997,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamespacesInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
     #[doc(hidden)]
@@ -30444,19 +30026,10 @@ impl ListNamespacesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNamespacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNamespacesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIngestionsInput {
     /// <p>The ID of the dataset used in the ingestion.</p>
     #[doc(hidden)]
@@ -30489,20 +30062,10 @@ impl ListIngestionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIngestionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIngestionsInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIamPolicyAssignmentsForUserInput {
     /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
     #[doc(hidden)]
@@ -30542,21 +30105,10 @@ impl ListIamPolicyAssignmentsForUserInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for ListIamPolicyAssignmentsForUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIamPolicyAssignmentsForUserInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIamPolicyAssignmentsInput {
     /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
     #[doc(hidden)]
@@ -30596,21 +30148,10 @@ impl ListIamPolicyAssignmentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIamPolicyAssignmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIamPolicyAssignmentsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -30643,20 +30184,10 @@ impl ListGroupsInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupMembershipsInput {
     /// <p>The name of the group that you want to see a membership list of.</p>
     #[doc(hidden)]
@@ -30696,21 +30227,10 @@ impl ListGroupMembershipsInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupMembershipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupMembershipsInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFoldersInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -30736,19 +30256,10 @@ impl ListFoldersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFoldersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFoldersInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFolderMembersInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -30781,20 +30292,10 @@ impl ListFolderMembersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFolderMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFolderMembersInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSourcesInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -30820,19 +30321,10 @@ impl ListDataSourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSourcesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSetsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -30858,19 +30350,10 @@ impl ListDataSetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSetsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDashboardVersionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
     #[doc(hidden)]
@@ -30903,20 +30386,10 @@ impl ListDashboardVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDashboardVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDashboardVersionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDashboardsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p>
     #[doc(hidden)]
@@ -30942,19 +30415,10 @@ impl ListDashboardsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDashboardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDashboardsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnalysesInput {
     /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
     #[doc(hidden)]
@@ -30980,19 +30444,10 @@ impl ListAnalysesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAnalysesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnalysesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
     #[doc(hidden)]
@@ -31053,23 +30508,10 @@ impl GetSessionEmbedUrlInput {
         self.user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionEmbedUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionEmbedUrlInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("entry_point", &self.entry_point);
-        formatter.field(
-            "session_lifetime_in_minutes",
-            &self.session_lifetime_in_minutes,
-        );
-        formatter.field("user_arn", &self.user_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDashboardEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     #[doc(hidden)]
@@ -31156,29 +30598,10 @@ impl GetDashboardEmbedUrlInput {
         self.additional_dashboard_ids.as_deref()
     }
 }
-impl std::fmt::Debug for GetDashboardEmbedUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDashboardEmbedUrlInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field(
-            "session_lifetime_in_minutes",
-            &self.session_lifetime_in_minutes,
-        );
-        formatter.field("undo_redo_disabled", &self.undo_redo_disabled);
-        formatter.field("reset_disabled", &self.reset_disabled);
-        formatter.field("state_persistence_enabled", &self.state_persistence_enabled);
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("additional_dashboard_ids", &self.additional_dashboard_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateEmbedUrlForRegisteredUserInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     #[doc(hidden)]
@@ -31223,24 +30646,10 @@ impl GenerateEmbedUrlForRegisteredUserInput {
         self.allowed_domains.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateEmbedUrlForRegisteredUserInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field(
-            "session_lifetime_in_minutes",
-            &self.session_lifetime_in_minutes,
-        );
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("experience_configuration", &self.experience_configuration);
-        formatter.field("allowed_domains", &self.allowed_domains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateEmbedUrlForAnonymousUserInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     #[doc(hidden)]
@@ -31301,26 +30710,10 @@ impl GenerateEmbedUrlForAnonymousUserInput {
         self.allowed_domains.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateEmbedUrlForAnonymousUserInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field(
-            "session_lifetime_in_minutes",
-            &self.session_lifetime_in_minutes,
-        );
-        formatter.field("namespace", &self.namespace);
-        formatter.field("session_tags", &self.session_tags);
-        formatter.field("authorized_resource_arns", &self.authorized_resource_arns);
-        formatter.field("experience_configuration", &self.experience_configuration);
-        formatter.field("allowed_domains", &self.allowed_domains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserInput {
     /// <p>The name of the user that you want to describe.</p>
     #[doc(hidden)]
@@ -31346,19 +30739,10 @@ impl DescribeUserInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeThemePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     #[doc(hidden)]
@@ -31377,18 +30761,10 @@ impl DescribeThemePermissionsInput {
         self.theme_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeThemePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeThemePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
     #[doc(hidden)]
@@ -31414,19 +30790,10 @@ impl DescribeThemeAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeThemeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeThemeAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     #[doc(hidden)]
@@ -31459,20 +30826,10 @@ impl DescribeThemeInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeThemeInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTemplatePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
     #[doc(hidden)]
@@ -31491,18 +30848,10 @@ impl DescribeTemplatePermissionsInput {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTemplatePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTemplatePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
     #[doc(hidden)]
@@ -31528,19 +30877,10 @@ impl DescribeTemplateAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTemplateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTemplateAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTemplateInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
     #[doc(hidden)]
@@ -31573,20 +30913,10 @@ impl DescribeTemplateInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTemplateInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
     #[doc(hidden)]
@@ -31605,18 +30935,10 @@ impl DescribeNamespaceInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNamespaceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIpRestrictionInput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     #[doc(hidden)]
@@ -31628,17 +30950,10 @@ impl DescribeIpRestrictionInput {
         self.aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIpRestrictionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIpRestrictionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIngestionInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -31664,19 +30979,10 @@ impl DescribeIngestionInput {
         self.ingestion_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIngestionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIngestionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("ingestion_id", &self.ingestion_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
     #[doc(hidden)]
@@ -31702,19 +31008,10 @@ impl DescribeIamPolicyAssignmentInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIamPolicyAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIamPolicyAssignmentInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupMembershipInput {
     /// <p>The user name of the user that you want to search for.</p>
     #[doc(hidden)]
@@ -31747,20 +31044,10 @@ impl DescribeGroupMembershipInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupMembershipInput");
-        formatter.field("member_name", &self.member_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupInput {
     /// <p>The name of the group that you want to describe.</p>
     #[doc(hidden)]
@@ -31786,19 +31073,10 @@ impl DescribeGroupInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFolderResolvedPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -31817,18 +31095,10 @@ impl DescribeFolderResolvedPermissionsInput {
         self.folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFolderResolvedPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFolderResolvedPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFolderPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -31847,18 +31117,10 @@ impl DescribeFolderPermissionsInput {
         self.folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFolderPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFolderPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -31877,18 +31139,10 @@ impl DescribeFolderInput {
         self.folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFolderInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSourcePermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -31907,18 +31161,10 @@ impl DescribeDataSourcePermissionsInput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSourcePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSourceInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -31937,18 +31183,10 @@ impl DescribeDataSourceInput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSourceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSetPermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -31967,18 +31205,10 @@ impl DescribeDataSetPermissionsInput {
         self.data_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSetPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSetPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -31997,18 +31227,10 @@ impl DescribeDataSetInput {
         self.data_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSetInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDashboardPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
     #[doc(hidden)]
@@ -32027,18 +31249,10 @@ impl DescribeDashboardPermissionsInput {
         self.dashboard_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDashboardPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDashboardPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
     #[doc(hidden)]
@@ -32071,20 +31285,10 @@ impl DescribeDashboardInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDashboardInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnalysisPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
     #[doc(hidden)]
@@ -32103,18 +31307,10 @@ impl DescribeAnalysisPermissionsInput {
         self.analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnalysisPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnalysisPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
     #[doc(hidden)]
@@ -32133,18 +31329,10 @@ impl DescribeAnalysisInput {
         self.analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountSubscriptionInput {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -32156,17 +31344,10 @@ impl DescribeAccountSubscriptionInput {
         self.aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccountSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountSubscriptionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
     #[doc(hidden)]
@@ -32178,17 +31359,10 @@ impl DescribeAccountSettingsInput {
         self.aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountSettingsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
     #[doc(hidden)]
@@ -32214,19 +31388,10 @@ impl DescribeAccountCustomizationInput {
         self.resolved
     }
 }
-impl std::fmt::Debug for DescribeAccountCustomizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountCustomizationInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("resolved", &self.resolved);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserByPrincipalIdInput {
     /// <p>The principal ID of the user.</p>
     #[doc(hidden)]
@@ -32252,19 +31417,10 @@ impl DeleteUserByPrincipalIdInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserByPrincipalIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserByPrincipalIdInput");
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The name of the user that you want to delete.</p>
     #[doc(hidden)]
@@ -32290,19 +31446,10 @@ impl DeleteUserInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
     #[doc(hidden)]
@@ -32328,19 +31475,10 @@ impl DeleteThemeAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteThemeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThemeAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
     #[doc(hidden)]
@@ -32368,19 +31506,10 @@ impl DeleteThemeInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThemeInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
     #[doc(hidden)]
@@ -32406,19 +31535,10 @@ impl DeleteTemplateAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTemplateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTemplateAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTemplateInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
     #[doc(hidden)]
@@ -32444,19 +31564,10 @@ impl DeleteTemplateInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTemplateInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
     #[doc(hidden)]
@@ -32475,18 +31586,10 @@ impl DeleteNamespaceInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNamespaceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIamPolicyAssignmentInput {
     /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
     #[doc(hidden)]
@@ -32512,19 +31615,10 @@ impl DeleteIamPolicyAssignmentInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIamPolicyAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIamPolicyAssignmentInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupMembershipInput {
     /// <p>The name of the user that you want to delete from the group membership.</p>
     #[doc(hidden)]
@@ -32557,20 +31651,10 @@ impl DeleteGroupMembershipInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupMembershipInput");
-        formatter.field("member_name", &self.member_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The name of the group that you want to delete.</p>
     #[doc(hidden)]
@@ -32596,19 +31680,10 @@ impl DeleteGroupInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFolderMembershipInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -32641,20 +31716,10 @@ impl DeleteFolderMembershipInput {
         self.member_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteFolderMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFolderMembershipInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("member_type", &self.member_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -32673,18 +31738,10 @@ impl DeleteFolderInput {
         self.folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFolderInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSourceInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -32703,18 +31760,10 @@ impl DeleteDataSourceInput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSourceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -32733,18 +31782,10 @@ impl DeleteDataSetInput {
         self.data_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSetInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
     #[doc(hidden)]
@@ -32770,19 +31811,10 @@ impl DeleteDashboardInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDashboardInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
     #[doc(hidden)]
@@ -32815,23 +31847,10 @@ impl DeleteAnalysisInput {
         self.force_delete_without_recovery
     }
 }
-impl std::fmt::Debug for DeleteAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("recovery_window_in_days", &self.recovery_window_in_days);
-        formatter.field(
-            "force_delete_without_recovery",
-            &self.force_delete_without_recovery,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -32850,18 +31869,10 @@ impl DeleteAccountCustomizationInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccountCustomizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccountCustomizationInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
     #[doc(hidden)]
@@ -32894,20 +31905,10 @@ impl CreateThemeAliasInput {
         self.theme_version_number
     }
 }
-impl std::fmt::Debug for CreateThemeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateThemeAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("theme_version_number", &self.theme_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThemeInput {
     /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
     #[doc(hidden)]
@@ -32968,24 +31969,10 @@ impl CreateThemeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateThemeInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("name", &self.name);
-        formatter.field("base_theme_id", &self.base_theme_id);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
     #[doc(hidden)]
@@ -33018,20 +32005,10 @@ impl CreateTemplateAliasInput {
         self.template_version_number
     }
 }
-impl std::fmt::Debug for CreateTemplateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("template_version_number", &self.template_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -33087,23 +32064,10 @@ impl CreateTemplateInput {
         self.version_description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("name", &self.name);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("tags", &self.tags);
-        formatter.field("version_description", &self.version_description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
     #[doc(hidden)]
@@ -33136,20 +32100,10 @@ impl CreateNamespaceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNamespaceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("identity_store", &self.identity_store);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIngestionInput {
     /// <p>The ID of the dataset used in the ingestion.</p>
     #[doc(hidden)]
@@ -33182,20 +32136,10 @@ impl CreateIngestionInput {
         self.ingestion_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIngestionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIngestionInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("ingestion_id", &self.ingestion_id);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("ingestion_type", &self.ingestion_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
     #[doc(hidden)]
@@ -33258,22 +32202,10 @@ impl CreateIamPolicyAssignmentInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIamPolicyAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIamPolicyAssignmentInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("identities", &self.identities);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupMembershipInput {
     /// <p>The name of the user that you want to add to the group membership.</p>
     #[doc(hidden)]
@@ -33306,20 +32238,10 @@ impl CreateGroupMembershipInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupMembershipInput");
-        formatter.field("member_name", &self.member_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for this operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// <p>A name for the group that you want to create.</p>
     #[doc(hidden)]
@@ -33352,20 +32274,10 @@ impl CreateGroupInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFolderMembershipInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -33398,20 +32310,10 @@ impl CreateFolderMembershipInput {
         self.member_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFolderMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFolderMembershipInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("member_type", &self.member_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFolderInput {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
     #[doc(hidden)]
@@ -33467,19 +32369,6 @@ impl CreateFolderInput {
     /// <p>Tags for the folder.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFolderInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("name", &self.name);
-        formatter.field("folder_type", &self.folder_type);
-        formatter.field("parent_folder_arn", &self.parent_folder_arn);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -33585,7 +32474,7 @@ impl std::fmt::Debug for CreateDataSourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -33716,42 +32605,10 @@ impl CreateDataSetInput {
         self.data_set_usage_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSetInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("physical_table_map", &self.physical_table_map);
-        formatter.field("logical_table_map", &self.logical_table_map);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.field("column_groups", &self.column_groups);
-        formatter.field("field_folders", &self.field_folders);
-        formatter.field("permissions", &self.permissions);
-        formatter.field(
-            "row_level_permission_data_set",
-            &self.row_level_permission_data_set,
-        );
-        formatter.field(
-            "row_level_permission_tag_configuration",
-            &self.row_level_permission_tag_configuration,
-        );
-        formatter.field(
-            "column_level_permission_rules",
-            &self.column_level_permission_rules,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "data_set_usage_configuration",
-            &self.data_set_usage_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDashboardInput {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
     #[doc(hidden)]
@@ -33842,26 +32699,10 @@ impl CreateDashboardInput {
         self.theme_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDashboardInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("name", &self.name);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("tags", &self.tags);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("dashboard_publish_options", &self.dashboard_publish_options);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
     #[doc(hidden)]
@@ -33924,24 +32765,10 @@ impl CreateAnalysisInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("name", &self.name);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccountSubscriptionInput {
     /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
@@ -34069,31 +32896,10 @@ impl CreateAccountSubscriptionInput {
         self.contact_number.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAccountSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccountSubscriptionInput");
-        formatter.field("edition", &self.edition);
-        formatter.field("authentication_method", &self.authentication_method);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("account_name", &self.account_name);
-        formatter.field("notification_email", &self.notification_email);
-        formatter.field("active_directory_name", &self.active_directory_name);
-        formatter.field("realm", &self.realm);
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("admin_group", &self.admin_group);
-        formatter.field("author_group", &self.author_group);
-        formatter.field("reader_group", &self.reader_group);
-        formatter.field("first_name", &self.first_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("contact_number", &self.contact_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
     #[doc(hidden)]
@@ -34130,20 +32936,10 @@ impl CreateAccountCustomizationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAccountCustomizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccountCustomizationInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("account_customization", &self.account_customization);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelIngestionInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -34167,14 +32963,5 @@ impl CancelIngestionInput {
     /// <p>An ID for the ingestion.</p>
     pub fn ingestion_id(&self) -> std::option::Option<&str> {
         self.ingestion_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelIngestionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelIngestionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("ingestion_id", &self.ingestion_id);
-        formatter.finish()
     }
 }

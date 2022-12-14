@@ -2,7 +2,7 @@
 
 /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Webhook {
     /// <p>The URL to the webhook.</p>
     #[doc(hidden)]
@@ -67,19 +67,6 @@ impl Webhook {
     /// <p>A timestamp that indicates the last time a repository's secret token was modified. </p>
     pub fn last_modified_secret(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_secret.as_ref()
-    }
-}
-impl std::fmt::Debug for Webhook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Webhook");
-        formatter.field("url", &self.url);
-        formatter.field("payload_url", &self.payload_url);
-        formatter.field("secret", &self.secret);
-        formatter.field("branch_filter", &self.branch_filter);
-        formatter.field("filter_groups", &self.filter_groups);
-        formatter.field("build_type", &self.build_type);
-        formatter.field("last_modified_secret", &self.last_modified_secret);
-        formatter.finish()
     }
 }
 /// See [`Webhook`](crate::model::Webhook).
@@ -309,7 +296,7 @@ impl AsRef<str> for WebhookBuildType {
 
 /// <p> A filter used to determine which webhooks trigger a build. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebhookFilter {
     /// <p> The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>. </p>
     /// <dl>
@@ -429,15 +416,6 @@ impl WebhookFilter {
     /// <p> Used to indicate that the <code>pattern</code> determines which webhook events do not trigger a build. If true, then a webhook event that does not match the <code>pattern</code> triggers a build. If false, then a webhook event that matches the <code>pattern</code> triggers a build. </p>
     pub fn exclude_matched_pattern(&self) -> std::option::Option<bool> {
         self.exclude_matched_pattern
-    }
-}
-impl std::fmt::Debug for WebhookFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebhookFilter");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("pattern", &self.pattern);
-        formatter.field("exclude_matched_pattern", &self.exclude_matched_pattern);
-        formatter.finish()
     }
 }
 /// See [`WebhookFilter`](crate::model::WebhookFilter).
@@ -718,7 +696,7 @@ impl AsRef<str> for WebhookFilterType {
 
 /// <p>A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportGroup {
     /// <p>The ARN of the <code>ReportGroup</code>. </p>
     #[doc(hidden)]
@@ -837,20 +815,6 @@ impl ReportGroup {
     /// </dl>
     pub fn status(&self) -> std::option::Option<&crate::model::ReportGroupStatusType> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ReportGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportGroup");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("export_config", &self.export_config);
-        formatter.field("created", &self.created);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("tags", &self.tags);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ReportGroup`](crate::model::ReportGroup).
@@ -1147,7 +1111,7 @@ impl AsRef<str> for ReportGroupStatusType {
 /// <p>A tag, consisting of a key and a value.</p>
 /// <p>This tag is available for use by Amazon Web Services services that support tags in CodeBuild.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -1164,14 +1128,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1222,7 +1178,7 @@ impl Tag {
 
 /// <p> Information about the location where the run of a report is exported. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportExportConfig {
     /// <p> The export configuration type. Valid values are: </p>
     /// <ul>
@@ -1247,14 +1203,6 @@ impl ReportExportConfig {
     /// <p> A <code>S3ReportExportConfig</code> object that contains information about the S3 bucket where the run of a report is exported. </p>
     pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3ReportExportConfig> {
         self.s3_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for ReportExportConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportExportConfig");
-        formatter.field("export_config_type", &self.export_config_type);
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.finish()
     }
 }
 /// See [`ReportExportConfig`](crate::model::ReportExportConfig).
@@ -1319,7 +1267,7 @@ impl ReportExportConfig {
 
 /// <p> Information about the S3 bucket where the raw data of a report are exported. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ReportExportConfig {
     /// <p> The name of the S3 bucket where the raw data of a report are exported. </p>
     #[doc(hidden)]
@@ -1372,18 +1320,6 @@ impl S3ReportExportConfig {
     /// <p> A boolean value that specifies if the results of a report are encrypted. </p>
     pub fn encryption_disabled(&self) -> std::option::Option<bool> {
         self.encryption_disabled
-    }
-}
-impl std::fmt::Debug for S3ReportExportConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ReportExportConfig");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("bucket_owner", &self.bucket_owner);
-        formatter.field("path", &self.path);
-        formatter.field("packaging", &self.packaging);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("encryption_disabled", &self.encryption_disabled);
-        formatter.finish()
     }
 }
 /// See [`S3ReportExportConfig`](crate::model::S3ReportExportConfig).
@@ -1873,7 +1809,7 @@ impl AsRef<str> for ProjectVisibilityType {
 
 /// <p>Information about a build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Project {
     /// <p>The name of the build project.</p>
     #[doc(hidden)]
@@ -2136,40 +2072,6 @@ impl Project {
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
     pub fn resource_access_role(&self) -> std::option::Option<&str> {
         self.resource_access_role.as_deref()
-    }
-}
-impl std::fmt::Debug for Project {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Project");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("source", &self.source);
-        formatter.field("secondary_sources", &self.secondary_sources);
-        formatter.field("source_version", &self.source_version);
-        formatter.field("secondary_source_versions", &self.secondary_source_versions);
-        formatter.field("artifacts", &self.artifacts);
-        formatter.field("secondary_artifacts", &self.secondary_artifacts);
-        formatter.field("cache", &self.cache);
-        formatter.field("environment", &self.environment);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.field("queued_timeout_in_minutes", &self.queued_timeout_in_minutes);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("tags", &self.tags);
-        formatter.field("created", &self.created);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("webhook", &self.webhook);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("badge", &self.badge);
-        formatter.field("logs_config", &self.logs_config);
-        formatter.field("file_system_locations", &self.file_system_locations);
-        formatter.field("build_batch_config", &self.build_batch_config);
-        formatter.field("concurrent_build_limit", &self.concurrent_build_limit);
-        formatter.field("project_visibility", &self.project_visibility);
-        formatter.field("public_project_alias", &self.public_project_alias);
-        formatter.field("resource_access_role", &self.resource_access_role);
-        formatter.finish()
     }
 }
 /// See [`Project`](crate::model::Project).
@@ -2682,7 +2584,7 @@ impl Project {
 
 /// <p>Contains configuration information about a batch build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectBuildBatchConfig {
     /// <p>Specifies the service role ARN for the batch build project.</p>
     #[doc(hidden)]
@@ -2748,17 +2650,6 @@ impl ProjectBuildBatchConfig {
     /// </dl>
     pub fn batch_report_mode(&self) -> std::option::Option<&crate::model::BatchReportModeType> {
         self.batch_report_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectBuildBatchConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectBuildBatchConfig");
-        formatter.field("service_role", &self.service_role);
-        formatter.field("combine_artifacts", &self.combine_artifacts);
-        formatter.field("restrictions", &self.restrictions);
-        formatter.field("timeout_in_mins", &self.timeout_in_mins);
-        formatter.field("batch_report_mode", &self.batch_report_mode);
-        formatter.finish()
     }
 }
 /// See [`ProjectBuildBatchConfig`](crate::model::ProjectBuildBatchConfig).
@@ -2971,7 +2862,7 @@ impl AsRef<str> for BatchReportModeType {
 
 /// <p>Specifies restrictions for the batch build.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRestrictions {
     /// <p>Specifies the maximum number of builds allowed.</p>
     #[doc(hidden)]
@@ -2988,14 +2879,6 @@ impl BatchRestrictions {
     /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values. </p>
     pub fn compute_types_allowed(&self) -> std::option::Option<&[std::string::String]> {
         self.compute_types_allowed.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchRestrictions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRestrictions");
-        formatter.field("maximum_builds_allowed", &self.maximum_builds_allowed);
-        formatter.field("compute_types_allowed", &self.compute_types_allowed);
-        formatter.finish()
     }
 }
 /// See [`BatchRestrictions`](crate::model::BatchRestrictions).
@@ -3055,7 +2938,7 @@ impl BatchRestrictions {
 
 /// <p> Information about a file system created by Amazon Elastic File System (EFS). For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">What Is Amazon Elastic File System?</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectFileSystemLocation {
     /// <p> The type of the file system. The one supported type is <code>EFS</code>. </p>
     #[doc(hidden)]
@@ -3097,17 +2980,6 @@ impl ProjectFileSystemLocation {
     /// <p> The mount options for a file system created by Amazon EFS. The default mount options used by CodeBuild are <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-nfs-mount-settings.html">Recommended NFS Mount Options</a>. </p>
     pub fn mount_options(&self) -> std::option::Option<&str> {
         self.mount_options.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectFileSystemLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectFileSystemLocation");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("location", &self.location);
-        formatter.field("mount_point", &self.mount_point);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("mount_options", &self.mount_options);
-        formatter.finish()
     }
 }
 /// See [`ProjectFileSystemLocation`](crate::model::ProjectFileSystemLocation).
@@ -3289,7 +3161,7 @@ impl AsRef<str> for FileSystemType {
 
 /// <p> Information about logs for a build project. These can be logs in CloudWatch Logs, built in a specified S3 bucket, or both. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogsConfig {
     /// <p> Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default. </p>
     #[doc(hidden)]
@@ -3306,14 +3178,6 @@ impl LogsConfig {
     /// <p> Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. </p>
     pub fn s3_logs(&self) -> std::option::Option<&crate::model::S3LogsConfig> {
         self.s3_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for LogsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogsConfig");
-        formatter.field("cloud_watch_logs", &self.cloud_watch_logs);
-        formatter.field("s3_logs", &self.s3_logs);
-        formatter.finish()
     }
 }
 /// See [`LogsConfig`](crate::model::LogsConfig).
@@ -3370,7 +3234,7 @@ impl LogsConfig {
 
 /// <p> Information about S3 logs for a build project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3LogsConfig {
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
@@ -3465,16 +3329,6 @@ impl S3LogsConfig {
     /// </dl>
     pub fn bucket_owner_access(&self) -> std::option::Option<&crate::model::BucketOwnerAccess> {
         self.bucket_owner_access.as_ref()
-    }
-}
-impl std::fmt::Debug for S3LogsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3LogsConfig");
-        formatter.field("status", &self.status);
-        formatter.field("location", &self.location);
-        formatter.field("encryption_disabled", &self.encryption_disabled);
-        formatter.field("bucket_owner_access", &self.bucket_owner_access);
-        formatter.finish()
     }
 }
 /// See [`S3LogsConfig`](crate::model::S3LogsConfig).
@@ -3849,7 +3703,7 @@ impl AsRef<str> for LogsConfigStatusType {
 
 /// <p> Information about CloudWatch Logs for a build project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsConfig {
     /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
     /// <ul>
@@ -3881,15 +3735,6 @@ impl CloudWatchLogsConfig {
     /// <p> The prefix of the stream name of the CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLogsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsConfig");
-        formatter.field("status", &self.status);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogsConfig`](crate::model::CloudWatchLogsConfig).
@@ -3963,7 +3808,7 @@ impl CloudWatchLogsConfig {
 
 /// <p>Information about the build badge for the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectBadge {
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     #[doc(hidden)]
@@ -3980,14 +3825,6 @@ impl ProjectBadge {
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
     pub fn badge_request_url(&self) -> std::option::Option<&str> {
         self.badge_request_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectBadge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectBadge");
-        formatter.field("badge_enabled", &self.badge_enabled);
-        formatter.field("badge_request_url", &self.badge_request_url);
-        formatter.finish()
     }
 }
 /// See [`ProjectBadge`](crate::model::ProjectBadge).
@@ -4041,7 +3878,7 @@ impl ProjectBadge {
 
 /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The ID of the Amazon VPC.</p>
     #[doc(hidden)]
@@ -4065,15 +3902,6 @@ impl VpcConfig {
     /// <p>A list of one or more security groups IDs in your Amazon VPC.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
@@ -4154,7 +3982,7 @@ impl VpcConfig {
 
 /// <p>Information about the build environment of the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectEnvironment {
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
@@ -4336,23 +4164,6 @@ impl ProjectEnvironment {
         &self,
     ) -> std::option::Option<&crate::model::ImagePullCredentialsType> {
         self.image_pull_credentials_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectEnvironment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectEnvironment");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("image", &self.image);
-        formatter.field("compute_type", &self.compute_type);
-        formatter.field("environment_variables", &self.environment_variables);
-        formatter.field("privileged_mode", &self.privileged_mode);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("registry_credential", &self.registry_credential);
-        formatter.field(
-            "image_pull_credentials_type",
-            &self.image_pull_credentials_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProjectEnvironment`](crate::model::ProjectEnvironment).
@@ -4716,7 +4527,7 @@ impl AsRef<str> for ImagePullCredentialsType {
 /// </ul>
 /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with Secrets Manager Sample for CodeBuild</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistryCredential {
     /// <p> The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager. </p> <note>
     /// <p> The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
@@ -4739,14 +4550,6 @@ impl RegistryCredential {
         &self,
     ) -> std::option::Option<&crate::model::CredentialProviderType> {
         self.credential_provider.as_ref()
-    }
-}
-impl std::fmt::Debug for RegistryCredential {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistryCredential");
-        formatter.field("credential", &self.credential);
-        formatter.field("credential_provider", &self.credential_provider);
-        formatter.finish()
     }
 }
 /// See [`RegistryCredential`](crate::model::RegistryCredential).
@@ -4891,7 +4694,7 @@ impl AsRef<str> for CredentialProviderType {
 
 /// <p>Information about an environment variable for a build project or a build.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentVariable {
     /// <p>The name or key of the environment variable.</p>
     #[doc(hidden)]
@@ -4929,15 +4732,6 @@ impl EnvironmentVariable {
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EnvironmentVariableType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for EnvironmentVariable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentVariable");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentVariable`](crate::model::EnvironmentVariable).
@@ -5330,7 +5124,7 @@ impl AsRef<str> for EnvironmentType {
 
 /// <p>Information about the cache for the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectCache {
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
@@ -5436,15 +5230,6 @@ impl ProjectCache {
     /// </dl>
     pub fn modes(&self) -> std::option::Option<&[crate::model::CacheMode]> {
         self.modes.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectCache {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectCache");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("location", &self.location);
-        formatter.field("modes", &self.modes);
-        formatter.finish()
     }
 }
 /// See [`ProjectCache`](crate::model::ProjectCache).
@@ -5792,7 +5577,7 @@ impl AsRef<str> for CacheType {
 
 /// <p>Information about the build output artifacts for the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectArtifacts {
     /// <p>The type of build output artifact. Valid values include:</p>
     /// <ul>
@@ -6031,22 +5816,6 @@ impl ProjectArtifacts {
     /// </dl>
     pub fn bucket_owner_access(&self) -> std::option::Option<&crate::model::BucketOwnerAccess> {
         self.bucket_owner_access.as_ref()
-    }
-}
-impl std::fmt::Debug for ProjectArtifacts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectArtifacts");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("location", &self.location);
-        formatter.field("path", &self.path);
-        formatter.field("namespace_type", &self.namespace_type);
-        formatter.field("name", &self.name);
-        formatter.field("packaging", &self.packaging);
-        formatter.field("override_artifact_name", &self.override_artifact_name);
-        formatter.field("encryption_disabled", &self.encryption_disabled);
-        formatter.field("artifact_identifier", &self.artifact_identifier);
-        formatter.field("bucket_owner_access", &self.bucket_owner_access);
-        formatter.finish()
     }
 }
 /// See [`ProjectArtifacts`](crate::model::ProjectArtifacts).
@@ -6650,7 +6419,7 @@ impl AsRef<str> for ArtifactsType {
 
 /// <p> A source identifier and its corresponding version. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectSourceVersion {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
     #[doc(hidden)]
@@ -6681,14 +6450,6 @@ impl ProjectSourceVersion {
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
     pub fn source_version(&self) -> std::option::Option<&str> {
         self.source_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectSourceVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectSourceVersion");
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.field("source_version", &self.source_version);
-        formatter.finish()
     }
 }
 /// See [`ProjectSourceVersion`](crate::model::ProjectSourceVersion).
@@ -6759,7 +6520,7 @@ impl ProjectSourceVersion {
 
 /// <p>Information about the build input source code for the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectSource {
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
@@ -6928,22 +6689,6 @@ impl ProjectSource {
     /// <p>An identifier for this project source. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
     pub fn source_identifier(&self) -> std::option::Option<&str> {
         self.source_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectSource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("location", &self.location);
-        formatter.field("git_clone_depth", &self.git_clone_depth);
-        formatter.field("git_submodules_config", &self.git_submodules_config);
-        formatter.field("buildspec", &self.buildspec);
-        formatter.field("auth", &self.auth);
-        formatter.field("report_build_status", &self.report_build_status);
-        formatter.field("build_status_config", &self.build_status_config);
-        formatter.field("insecure_ssl", &self.insecure_ssl);
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.finish()
     }
 }
 /// See [`ProjectSource`](crate::model::ProjectSource).
@@ -7195,7 +6940,7 @@ impl ProjectSource {
 
 /// <p>Contains information that defines how the CodeBuild build project reports the build status to the source provider. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildStatusConfig {
     /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
@@ -7268,14 +7013,6 @@ impl BuildStatusConfig {
     /// </dl>
     pub fn target_url(&self) -> std::option::Option<&str> {
         self.target_url.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildStatusConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildStatusConfig");
-        formatter.field("context", &self.context);
-        formatter.field("target_url", &self.target_url);
-        formatter.finish()
     }
 }
 /// See [`BuildStatusConfig`](crate::model::BuildStatusConfig).
@@ -7383,7 +7120,7 @@ impl BuildStatusConfig {
 /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
 /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceAuth {
     /// <note>
     /// <p> This data type is deprecated and is no longer accurate or used. </p>
@@ -7406,14 +7143,6 @@ impl SourceAuth {
     /// <p>The resource value that applies to the specified authorization type.</p>
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceAuth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceAuth");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("resource", &self.resource);
-        formatter.finish()
     }
 }
 /// See [`SourceAuth`](crate::model::SourceAuth).
@@ -7558,7 +7287,7 @@ impl AsRef<str> for SourceAuthType {
 
 /// <p> Information about the Git submodules configuration for an CodeBuild build project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GitSubmodulesConfig {
     /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
     #[doc(hidden)]
@@ -7568,13 +7297,6 @@ impl GitSubmodulesConfig {
     /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
     pub fn fetch_submodules(&self) -> std::option::Option<bool> {
         self.fetch_submodules
-    }
-}
-impl std::fmt::Debug for GitSubmodulesConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GitSubmodulesConfig");
-        formatter.field("fetch_submodules", &self.fetch_submodules);
-        formatter.finish()
     }
 }
 /// See [`GitSubmodulesConfig`](crate::model::GitSubmodulesConfig).
@@ -7736,7 +7458,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Contains information about a batch build.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildBatch {
     /// <p>The identifier of the batch build.</p>
     #[doc(hidden)]
@@ -7997,42 +7719,6 @@ impl BuildBatch {
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
     pub fn debug_session_enabled(&self) -> std::option::Option<bool> {
         self.debug_session_enabled
-    }
-}
-impl std::fmt::Debug for BuildBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildBatch");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("current_phase", &self.current_phase);
-        formatter.field("build_batch_status", &self.build_batch_status);
-        formatter.field("source_version", &self.source_version);
-        formatter.field("resolved_source_version", &self.resolved_source_version);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("phases", &self.phases);
-        formatter.field("source", &self.source);
-        formatter.field("secondary_sources", &self.secondary_sources);
-        formatter.field("secondary_source_versions", &self.secondary_source_versions);
-        formatter.field("artifacts", &self.artifacts);
-        formatter.field("secondary_artifacts", &self.secondary_artifacts);
-        formatter.field("cache", &self.cache);
-        formatter.field("environment", &self.environment);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("log_config", &self.log_config);
-        formatter.field("build_timeout_in_minutes", &self.build_timeout_in_minutes);
-        formatter.field("queued_timeout_in_minutes", &self.queued_timeout_in_minutes);
-        formatter.field("complete", &self.complete);
-        formatter.field("initiator", &self.initiator);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("build_batch_number", &self.build_batch_number);
-        formatter.field("file_system_locations", &self.file_system_locations);
-        formatter.field("build_batch_config", &self.build_batch_config);
-        formatter.field("build_groups", &self.build_groups);
-        formatter.field("debug_session_enabled", &self.debug_session_enabled);
-        formatter.finish()
     }
 }
 /// See [`BuildBatch`](crate::model::BuildBatch).
@@ -8562,7 +8248,7 @@ impl BuildBatch {
 
 /// <p>Contains information about a batch build build group. Build groups are used to combine builds that can run in parallel, while still being able to set dependencies on other build groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildGroup {
     /// <p>Contains the identifier of the build group.</p>
     #[doc(hidden)]
@@ -8600,17 +8286,6 @@ impl BuildGroup {
     /// <p>An array of <code>BuildSummary</code> objects that contain summaries of previous build groups.</p>
     pub fn prior_build_summary_list(&self) -> std::option::Option<&[crate::model::BuildSummary]> {
         self.prior_build_summary_list.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildGroup");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("depends_on", &self.depends_on);
-        formatter.field("ignore_failure", &self.ignore_failure);
-        formatter.field("current_build_summary", &self.current_build_summary);
-        formatter.field("prior_build_summary_list", &self.prior_build_summary_list);
-        formatter.finish()
     }
 }
 /// See [`BuildGroup`](crate::model::BuildGroup).
@@ -8719,7 +8394,7 @@ impl BuildGroup {
 
 /// <p>Contains summary information about a batch build group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildSummary {
     /// <p>The batch build ARN.</p>
     #[doc(hidden)]
@@ -8833,17 +8508,6 @@ impl BuildSummary {
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
     pub fn secondary_artifacts(&self) -> std::option::Option<&[crate::model::ResolvedArtifact]> {
         self.secondary_artifacts.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("requested_on", &self.requested_on);
-        formatter.field("build_status", &self.build_status);
-        formatter.field("primary_artifact", &self.primary_artifact);
-        formatter.field("secondary_artifacts", &self.secondary_artifacts);
-        formatter.finish()
     }
 }
 /// See [`BuildSummary`](crate::model::BuildSummary).
@@ -9025,7 +8689,7 @@ impl BuildSummary {
 
 /// <p>Represents a resolved build artifact. A resolved artifact is an artifact that is built and deployed to the destination, such as Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolvedArtifact {
     /// <p>Specifies the type of artifact.</p>
     #[doc(hidden)]
@@ -9049,15 +8713,6 @@ impl ResolvedArtifact {
     /// <p>The identifier of the artifact.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for ResolvedArtifact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolvedArtifact");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("location", &self.location);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
     }
 }
 /// See [`ResolvedArtifact`](crate::model::ResolvedArtifact).
@@ -9237,7 +8892,7 @@ impl AsRef<str> for StatusType {
 
 /// <p>Information about build output artifacts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildArtifacts {
     /// <p>Information about the location of the build artifacts.</p>
     #[doc(hidden)]
@@ -9357,19 +9012,6 @@ impl BuildArtifacts {
     /// </dl>
     pub fn bucket_owner_access(&self) -> std::option::Option<&crate::model::BucketOwnerAccess> {
         self.bucket_owner_access.as_ref()
-    }
-}
-impl std::fmt::Debug for BuildArtifacts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildArtifacts");
-        formatter.field("location", &self.location);
-        formatter.field("sha256sum", &self.sha256sum);
-        formatter.field("md5sum", &self.md5sum);
-        formatter.field("override_artifact_name", &self.override_artifact_name);
-        formatter.field("encryption_disabled", &self.encryption_disabled);
-        formatter.field("artifact_identifier", &self.artifact_identifier);
-        formatter.field("bucket_owner_access", &self.bucket_owner_access);
-        formatter.finish()
     }
 }
 /// See [`BuildArtifacts`](crate::model::BuildArtifacts).
@@ -9554,7 +9196,7 @@ impl BuildArtifacts {
 
 /// <p>Contains information about a stage for a batch build.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildBatchPhase {
     /// <p>The name of the batch build phase. Valid values include:</p>
     /// <dl>
@@ -9763,18 +9405,6 @@ impl BuildBatchPhase {
     /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
     pub fn contexts(&self) -> std::option::Option<&[crate::model::PhaseContext]> {
         self.contexts.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildBatchPhase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildBatchPhase");
-        formatter.field("phase_type", &self.phase_type);
-        formatter.field("phase_status", &self.phase_status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.field("contexts", &self.contexts);
-        formatter.finish()
     }
 }
 /// See [`BuildBatchPhase`](crate::model::BuildBatchPhase).
@@ -10058,7 +9688,7 @@ impl BuildBatchPhase {
 
 /// <p>Additional information about a build phase that has an error. You can use this information for troubleshooting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhaseContext {
     /// <p>The status code for the context of the build phase.</p>
     #[doc(hidden)]
@@ -10075,14 +9705,6 @@ impl PhaseContext {
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for PhaseContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhaseContext");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`PhaseContext`](crate::model::PhaseContext).
@@ -10258,7 +9880,7 @@ impl AsRef<str> for BuildBatchPhaseType {
 
 /// <p>Information about a build.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Build {
     /// <p>The unique ID for the build.</p>
     #[doc(hidden)]
@@ -10554,47 +10176,6 @@ impl Build {
     /// <p>The ARN of the batch build that this build is a member of, if applicable.</p>
     pub fn build_batch_arn(&self) -> std::option::Option<&str> {
         self.build_batch_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Build {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Build");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("build_number", &self.build_number);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("current_phase", &self.current_phase);
-        formatter.field("build_status", &self.build_status);
-        formatter.field("source_version", &self.source_version);
-        formatter.field("resolved_source_version", &self.resolved_source_version);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("phases", &self.phases);
-        formatter.field("source", &self.source);
-        formatter.field("secondary_sources", &self.secondary_sources);
-        formatter.field("secondary_source_versions", &self.secondary_source_versions);
-        formatter.field("artifacts", &self.artifacts);
-        formatter.field("secondary_artifacts", &self.secondary_artifacts);
-        formatter.field("cache", &self.cache);
-        formatter.field("environment", &self.environment);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("logs", &self.logs);
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.field("queued_timeout_in_minutes", &self.queued_timeout_in_minutes);
-        formatter.field("build_complete", &self.build_complete);
-        formatter.field("initiator", &self.initiator);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("network_interface", &self.network_interface);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field(
-            "exported_environment_variables",
-            &self.exported_environment_variables,
-        );
-        formatter.field("report_arns", &self.report_arns);
-        formatter.field("file_system_locations", &self.file_system_locations);
-        formatter.field("debug_session", &self.debug_session);
-        formatter.field("build_batch_arn", &self.build_batch_arn);
-        formatter.finish()
     }
 }
 /// See [`Build`](crate::model::Build).
@@ -11184,7 +10765,7 @@ impl Build {
 
 /// <p>Contains information about the debug session for a build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DebugSession {
     /// <p>Specifies if session debugging is enabled for this build.</p>
     #[doc(hidden)]
@@ -11201,14 +10782,6 @@ impl DebugSession {
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
     pub fn session_target(&self) -> std::option::Option<&str> {
         self.session_target.as_deref()
-    }
-}
-impl std::fmt::Debug for DebugSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DebugSession");
-        formatter.field("session_enabled", &self.session_enabled);
-        formatter.field("session_target", &self.session_target);
-        formatter.finish()
     }
 }
 /// See [`DebugSession`](crate::model::DebugSession).
@@ -11265,7 +10838,7 @@ impl DebugSession {
 /// <p> During a build, the value of a variable is available starting with the <code>install</code> phase. It can be updated between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase. After the <code>post_build</code> phase ends, the value of exported variables cannot change.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportedEnvironmentVariable {
     /// <p>The name of the exported environment variable.</p>
     #[doc(hidden)]
@@ -11282,14 +10855,6 @@ impl ExportedEnvironmentVariable {
     /// <p>The value assigned to the exported environment variable.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportedEnvironmentVariable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportedEnvironmentVariable");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ExportedEnvironmentVariable`](crate::model::ExportedEnvironmentVariable).
@@ -11340,7 +10905,7 @@ impl ExportedEnvironmentVariable {
 
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the subnet.</p>
     #[doc(hidden)]
@@ -11357,14 +10922,6 @@ impl NetworkInterface {
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -11418,7 +10975,7 @@ impl NetworkInterface {
 
 /// <p>Information about build logs in CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogsLocation {
     /// <p>The name of the CloudWatch Logs group for the build logs.</p>
     #[doc(hidden)]
@@ -11477,20 +11034,6 @@ impl LogsLocation {
     /// <p> Information about S3 logs for a build project. </p>
     pub fn s3_logs(&self) -> std::option::Option<&crate::model::S3LogsConfig> {
         self.s3_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for LogsLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogsLocation");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("deep_link", &self.deep_link);
-        formatter.field("s3_deep_link", &self.s3_deep_link);
-        formatter.field("cloud_watch_logs_arn", &self.cloud_watch_logs_arn);
-        formatter.field("s3_logs_arn", &self.s3_logs_arn);
-        formatter.field("cloud_watch_logs", &self.cloud_watch_logs);
-        formatter.field("s3_logs", &self.s3_logs);
-        formatter.finish()
     }
 }
 /// See [`LogsLocation`](crate::model::LogsLocation).
@@ -11622,7 +11165,7 @@ impl LogsLocation {
 
 /// <p>Information about a stage for a build.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildPhase {
     /// <p>The name of the build phase. Valid values include:</p>
     /// <dl>
@@ -11879,18 +11422,6 @@ impl BuildPhase {
     /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
     pub fn contexts(&self) -> std::option::Option<&[crate::model::PhaseContext]> {
         self.contexts.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildPhase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildPhase");
-        formatter.field("phase_type", &self.phase_type);
-        formatter.field("phase_status", &self.phase_status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.field("contexts", &self.contexts);
-        formatter.finish()
     }
 }
 /// See [`BuildPhase`](crate::model::BuildPhase).
@@ -12461,7 +11992,7 @@ impl AsRef<str> for RetryBuildBatchType {
 
 /// <p> Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceCredentialsInfo {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
     #[doc(hidden)]
@@ -12485,15 +12016,6 @@ impl SourceCredentialsInfo {
     /// <p> The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
     pub fn auth_type(&self) -> std::option::Option<&crate::model::AuthType> {
         self.auth_type.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceCredentialsInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceCredentialsInfo");
-        formatter.field("arn", &self.arn);
-        formatter.field("server_type", &self.server_type);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.finish()
     }
 }
 /// See [`SourceCredentialsInfo`](crate::model::SourceCredentialsInfo).
@@ -12931,7 +12453,7 @@ impl AsRef<str> for SortOrderType {
 
 /// <p> A filter used to return reports with the status specified by the input <code>status</code> parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportFilter {
     /// <p> The status used to filter reports. You can filter using one status only. </p>
     #[doc(hidden)]
@@ -12941,13 +12463,6 @@ impl ReportFilter {
     /// <p> The status used to filter reports. You can filter using one status only. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::ReportStatusType> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ReportFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportFilter");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ReportFilter`](crate::model::ReportFilter).
@@ -13294,7 +12809,7 @@ impl AsRef<str> for ProjectSortByType {
 
 /// <p>A set of Docker images that are related by platform and are managed by CodeBuild.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentPlatform {
     /// <p>The platform's name.</p>
     #[doc(hidden)]
@@ -13311,14 +12826,6 @@ impl EnvironmentPlatform {
     /// <p>The list of programming languages that are available for the specified platform.</p>
     pub fn languages(&self) -> std::option::Option<&[crate::model::EnvironmentLanguage]> {
         self.languages.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentPlatform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentPlatform");
-        formatter.field("platform", &self.platform);
-        formatter.field("languages", &self.languages);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentPlatform`](crate::model::EnvironmentPlatform).
@@ -13381,7 +12888,7 @@ impl EnvironmentPlatform {
 
 /// <p>A set of Docker images that are related by programming language and are managed by CodeBuild.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentLanguage {
     /// <p>The programming language for the Docker images.</p>
     #[doc(hidden)]
@@ -13398,14 +12905,6 @@ impl EnvironmentLanguage {
     /// <p>The list of Docker images that are related by the specified programming language.</p>
     pub fn images(&self) -> std::option::Option<&[crate::model::EnvironmentImage]> {
         self.images.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentLanguage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentLanguage");
-        formatter.field("language", &self.language);
-        formatter.field("images", &self.images);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentLanguage`](crate::model::EnvironmentLanguage).
@@ -13468,7 +12967,7 @@ impl EnvironmentLanguage {
 
 /// <p>Information about a Docker image that is managed by CodeBuild.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentImage {
     /// <p>The name of the Docker image.</p>
     #[doc(hidden)]
@@ -13492,15 +12991,6 @@ impl EnvironmentImage {
     /// <p>A list of environment image versions.</p>
     pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
         self.versions.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentImage");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("versions", &self.versions);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentImage`](crate::model::EnvironmentImage).
@@ -13805,7 +13295,7 @@ impl AsRef<str> for PlatformType {
 
 /// <p>Specifies filters when retrieving batch builds.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildBatchFilter {
     /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
     #[doc(hidden)]
@@ -13815,13 +13305,6 @@ impl BuildBatchFilter {
     /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for BuildBatchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildBatchFilter");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`BuildBatchFilter`](crate::model::BuildBatchFilter).
@@ -13860,7 +13343,7 @@ impl BuildBatchFilter {
 
 /// <p>Contains the unmodified data for the report. For more information, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportWithRawData {
     /// <p>The ARN of the report.</p>
     #[doc(hidden)]
@@ -13877,14 +13360,6 @@ impl ReportWithRawData {
     /// <p>The value of the requested data field from the report.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
-    }
-}
-impl std::fmt::Debug for ReportWithRawData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportWithRawData");
-        formatter.field("report_arn", &self.report_arn);
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`ReportWithRawData`](crate::model::ReportWithRawData).
@@ -13935,7 +13410,7 @@ impl ReportWithRawData {
 
 /// <p>Contains trend statistics for a set of reports. The actual values depend on the type of trend being collected. For more information, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportGroupTrendStats {
     /// <p>Contains the average of all values analyzed.</p>
     #[doc(hidden)]
@@ -13959,15 +13434,6 @@ impl ReportGroupTrendStats {
     /// <p>Contains the minimum value analyzed.</p>
     pub fn min(&self) -> std::option::Option<&str> {
         self.min.as_deref()
-    }
-}
-impl std::fmt::Debug for ReportGroupTrendStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportGroupTrendStats");
-        formatter.field("average", &self.average);
-        formatter.field("max", &self.max);
-        formatter.field("min", &self.min);
-        formatter.finish()
     }
 }
 /// See [`ReportGroupTrendStats`](crate::model::ReportGroupTrendStats).
@@ -14167,7 +13633,7 @@ impl AsRef<str> for ReportGroupTrendFieldType {
 
 /// <p> Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestCase {
     /// <p> The ARN of the report to which the test case belongs. </p>
     #[doc(hidden)]
@@ -14226,20 +13692,6 @@ impl TestCase {
     /// <p> The date and time a test case expires. A test case expires 30 days after it is created. An expired test case is not available to view in CodeBuild. </p>
     pub fn expired(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expired.as_ref()
-    }
-}
-impl std::fmt::Debug for TestCase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestCase");
-        formatter.field("report_arn", &self.report_arn);
-        formatter.field("test_raw_data_path", &self.test_raw_data_path);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("duration_in_nano_seconds", &self.duration_in_nano_seconds);
-        formatter.field("message", &self.message);
-        formatter.field("expired", &self.expired);
-        formatter.finish()
     }
 }
 /// See [`TestCase`](crate::model::TestCase).
@@ -14368,7 +13820,7 @@ impl TestCase {
 
 /// <p>A filter used to return specific types of test cases. In order to pass the filter, the report must meet all of the filter properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestCaseFilter {
     /// <p>The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values are:</p>
     /// <ul>
@@ -14399,14 +13851,6 @@ impl TestCaseFilter {
     /// <p>A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.</p>
     pub fn keyword(&self) -> std::option::Option<&str> {
         self.keyword.as_deref()
-    }
-}
-impl std::fmt::Debug for TestCaseFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestCaseFilter");
-        formatter.field("status", &self.status);
-        formatter.field("keyword", &self.keyword);
-        formatter.finish()
     }
 }
 /// See [`TestCaseFilter`](crate::model::TestCaseFilter).
@@ -14473,7 +13917,7 @@ impl TestCaseFilter {
 /// <p>Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.</p>
 /// <p>Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeCoverage {
     /// <p>The identifier of the code coverage report.</p>
     #[doc(hidden)]
@@ -14546,25 +13990,6 @@ impl CodeCoverage {
     /// <p>The date and time that the tests were run.</p>
     pub fn expired(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expired.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeCoverage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeCoverage");
-        formatter.field("id", &self.id);
-        formatter.field("report_arn", &self.report_arn);
-        formatter.field("file_path", &self.file_path);
-        formatter.field("line_coverage_percentage", &self.line_coverage_percentage);
-        formatter.field("lines_covered", &self.lines_covered);
-        formatter.field("lines_missed", &self.lines_missed);
-        formatter.field(
-            "branch_coverage_percentage",
-            &self.branch_coverage_percentage,
-        );
-        formatter.field("branches_covered", &self.branches_covered);
-        formatter.field("branches_missed", &self.branches_missed);
-        formatter.field("expired", &self.expired);
-        formatter.finish()
     }
 }
 /// See [`CodeCoverage`](crate::model::CodeCoverage).
@@ -14806,7 +14231,7 @@ impl AsRef<str> for ReportCodeCoverageSortByType {
 
 /// <p>Information about a build that could not be successfully deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildNotDeleted {
     /// <p>The ID of the build that could not be successfully deleted.</p>
     #[doc(hidden)]
@@ -14823,14 +14248,6 @@ impl BuildNotDeleted {
     /// <p>Additional information about the build that could not be successfully deleted.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildNotDeleted {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildNotDeleted");
-        formatter.field("id", &self.id);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
     }
 }
 /// See [`BuildNotDeleted`](crate::model::BuildNotDeleted).
@@ -14881,7 +14298,7 @@ impl BuildNotDeleted {
 
 /// <p>Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Report {
     /// <p> The ARN of the report run. </p>
     #[doc(hidden)]
@@ -14998,24 +14415,6 @@ impl Report {
         &self,
     ) -> std::option::Option<&crate::model::CodeCoverageReportSummary> {
         self.code_coverage_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for Report {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Report");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("report_group_arn", &self.report_group_arn);
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("status", &self.status);
-        formatter.field("created", &self.created);
-        formatter.field("expired", &self.expired);
-        formatter.field("export_config", &self.export_config);
-        formatter.field("truncated", &self.truncated);
-        formatter.field("test_summary", &self.test_summary);
-        formatter.field("code_coverage_summary", &self.code_coverage_summary);
-        formatter.finish()
     }
 }
 /// See [`Report`](crate::model::Report).
@@ -15241,7 +14640,7 @@ impl Report {
 /// <p>Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.</p>
 /// <p>Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeCoverageReportSummary {
     /// <p>The percentage of lines that are covered by your tests.</p>
     #[doc(hidden)]
@@ -15286,21 +14685,6 @@ impl CodeCoverageReportSummary {
     /// <p>The number of conditional branches that are not covered by your tests.</p>
     pub fn branches_missed(&self) -> std::option::Option<i32> {
         self.branches_missed
-    }
-}
-impl std::fmt::Debug for CodeCoverageReportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeCoverageReportSummary");
-        formatter.field("line_coverage_percentage", &self.line_coverage_percentage);
-        formatter.field("lines_covered", &self.lines_covered);
-        formatter.field("lines_missed", &self.lines_missed);
-        formatter.field(
-            "branch_coverage_percentage",
-            &self.branch_coverage_percentage,
-        );
-        formatter.field("branches_covered", &self.branches_covered);
-        formatter.field("branches_missed", &self.branches_missed);
-        formatter.finish()
     }
 }
 /// See [`CodeCoverageReportSummary`](crate::model::CodeCoverageReportSummary).
@@ -15399,7 +14783,7 @@ impl CodeCoverageReportSummary {
 
 /// <p> Information about a test report. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestReportSummary {
     /// <p> The number of test cases in this <code>TestReportSummary</code>. The total includes truncated test cases. </p>
     #[doc(hidden)]
@@ -15425,15 +14809,6 @@ impl TestReportSummary {
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>
     pub fn duration_in_nano_seconds(&self) -> std::option::Option<i64> {
         self.duration_in_nano_seconds
-    }
-}
-impl std::fmt::Debug for TestReportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestReportSummary");
-        formatter.field("total", &self.total);
-        formatter.field("status_counts", &self.status_counts);
-        formatter.field("duration_in_nano_seconds", &self.duration_in_nano_seconds);
-        formatter.finish()
     }
 }
 /// See [`TestReportSummary`](crate::model::TestReportSummary).

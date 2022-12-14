@@ -4699,7 +4699,7 @@ impl UpdateInputInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInputInput {
     /// <p>The name of the input you want to update.</p>
     #[doc(hidden)]
@@ -4725,19 +4725,10 @@ impl UpdateInputInput {
         self.input_definition.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInputInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("input_description", &self.input_description);
-        formatter.field("input_definition", &self.input_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDetectorModelInput {
     /// <p>The name of the detector model that is updated.</p>
     #[doc(hidden)]
@@ -4779,24 +4770,10 @@ impl UpdateDetectorModelInput {
         self.evaluation_method.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDetectorModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDetectorModelInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("detector_model_definition", &self.detector_model_definition);
-        formatter.field(
-            "detector_model_description",
-            &self.detector_model_description,
-        );
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("evaluation_method", &self.evaluation_method);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAlarmModelInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -4857,24 +4834,10 @@ impl UpdateAlarmModelInput {
         self.alarm_capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAlarmModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAlarmModelInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_description", &self.alarm_model_description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("severity", &self.severity);
-        formatter.field("alarm_rule", &self.alarm_rule);
-        formatter.field("alarm_notification", &self.alarm_notification);
-        formatter.field("alarm_event_actions", &self.alarm_event_actions);
-        formatter.field("alarm_capabilities", &self.alarm_capabilities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -4893,18 +4856,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -4923,18 +4878,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDetectorModelAnalysisInput {
     /// <p>Information that defines how a detector operates.</p>
     #[doc(hidden)]
@@ -4948,17 +4895,10 @@ impl StartDetectorModelAnalysisInput {
         self.detector_model_definition.as_ref()
     }
 }
-impl std::fmt::Debug for StartDetectorModelAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDetectorModelAnalysisInput");
-        formatter.field("detector_model_definition", &self.detector_model_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingOptionsInput {
     /// <p>The new values of the AWS IoT Events logging options.</p>
     #[doc(hidden)]
@@ -4970,17 +4910,10 @@ impl PutLoggingOptionsInput {
         self.logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingOptionsInput");
-        formatter.field("logging_options", &self.logging_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -4992,17 +4925,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputsInput {
     /// <p>The token that you can use to return the next set of results.</p>
     #[doc(hidden)]
@@ -5021,18 +4947,10 @@ impl ListInputsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListInputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputRoutingsInput {
     /// <p> The identifer of the routed input. </p>
     #[doc(hidden)]
@@ -5058,19 +4976,10 @@ impl ListInputRoutingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInputRoutingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputRoutingsInput");
-        formatter.field("input_identifier", &self.input_identifier);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDetectorModelVersionsInput {
     /// <p>The name of the detector model whose versions are returned.</p>
     #[doc(hidden)]
@@ -5096,19 +5005,10 @@ impl ListDetectorModelVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDetectorModelVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDetectorModelVersionsInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDetectorModelsInput {
     /// <p>The token that you can use to return the next set of results.</p>
     #[doc(hidden)]
@@ -5127,18 +5027,10 @@ impl ListDetectorModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDetectorModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDetectorModelsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlarmModelVersionsInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -5164,19 +5056,10 @@ impl ListAlarmModelVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAlarmModelVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAlarmModelVersionsInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlarmModelsInput {
     /// <p>The token that you can use to return the next set of results.</p>
     #[doc(hidden)]
@@ -5195,18 +5078,10 @@ impl ListAlarmModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAlarmModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAlarmModelsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDetectorModelAnalysisResultsInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
     #[doc(hidden)]
@@ -5232,30 +5107,15 @@ impl GetDetectorModelAnalysisResultsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetDetectorModelAnalysisResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDetectorModelAnalysisResultsInput");
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingOptionsInput {}
-impl std::fmt::Debug for DescribeLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingOptionsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputInput {
     /// <p>The name of the input.</p>
     #[doc(hidden)]
@@ -5267,17 +5127,10 @@ impl DescribeInputInput {
         self.input_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDetectorModelAnalysisInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
     #[doc(hidden)]
@@ -5289,17 +5142,10 @@ impl DescribeDetectorModelAnalysisInput {
         self.analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDetectorModelAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDetectorModelAnalysisInput");
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDetectorModelInput {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
@@ -5318,18 +5164,10 @@ impl DescribeDetectorModelInput {
         self.detector_model_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDetectorModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDetectorModelInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("detector_model_version", &self.detector_model_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlarmModelInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -5348,18 +5186,10 @@ impl DescribeAlarmModelInput {
         self.alarm_model_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAlarmModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlarmModelInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_version", &self.alarm_model_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInputInput {
     /// <p>The name of the input to delete.</p>
     #[doc(hidden)]
@@ -5371,17 +5201,10 @@ impl DeleteInputInput {
         self.input_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInputInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDetectorModelInput {
     /// <p>The name of the detector model to be deleted.</p>
     #[doc(hidden)]
@@ -5393,17 +5216,10 @@ impl DeleteDetectorModelInput {
         self.detector_model_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDetectorModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDetectorModelInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlarmModelInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -5415,17 +5231,10 @@ impl DeleteAlarmModelInput {
         self.alarm_model_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAlarmModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAlarmModelInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInputInput {
     /// <p>The name you want to give to the input.</p>
     #[doc(hidden)]
@@ -5458,20 +5267,10 @@ impl CreateInputInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInputInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("input_description", &self.input_description);
-        formatter.field("input_definition", &self.input_definition);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDetectorModelInput {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
@@ -5527,26 +5326,10 @@ impl CreateDetectorModelInput {
         self.evaluation_method.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDetectorModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDetectorModelInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("detector_model_definition", &self.detector_model_definition);
-        formatter.field(
-            "detector_model_description",
-            &self.detector_model_description,
-        );
-        formatter.field("key", &self.key);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("evaluation_method", &self.evaluation_method);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAlarmModelInput {
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
     #[doc(hidden)]
@@ -5621,21 +5404,5 @@ impl CreateAlarmModelInput {
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn alarm_capabilities(&self) -> std::option::Option<&crate::model::AlarmCapabilities> {
         self.alarm_capabilities.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAlarmModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAlarmModelInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_description", &self.alarm_model_description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("key", &self.key);
-        formatter.field("severity", &self.severity);
-        formatter.field("alarm_rule", &self.alarm_rule);
-        formatter.field("alarm_notification", &self.alarm_notification);
-        formatter.field("alarm_event_actions", &self.alarm_event_actions);
-        formatter.field("alarm_capabilities", &self.alarm_capabilities);
-        formatter.finish()
     }
 }

@@ -2,18 +2,11 @@
 
 /// <p>The partner integration is not authorized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedPartnerIntegrationFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnauthorizedPartnerIntegrationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedPartnerIntegrationFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnauthorizedPartnerIntegrationFault {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl UnauthorizedPartnerIntegrationFault {
 
 /// <p>The name of the partner was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartnerNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PartnerNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartnerNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PartnerNotFoundFault {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl PartnerNotFoundFault {
 
 /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterNotFoundFault {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl ClusterNotFoundFault {
 
 /// <p>The specified cluster is not in the <code>available</code> state. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClusterStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClusterStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClusterStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClusterStateFault {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl InvalidClusterStateFault {
 
 /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DependentServiceRequestThrottlingFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DependentServiceRequestThrottlingFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependentServiceRequestThrottlingFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DependentServiceRequestThrottlingFault {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl DependentServiceRequestThrottlingFault {
 
 /// <p>The requested operation isn't supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOperationFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperationFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedOperationFault {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl UnsupportedOperationFault {
 
 /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSnapshotNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSnapshotNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSnapshotNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSnapshotNotFoundFault {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl ClusterSnapshotNotFoundFault {
 
 /// <p>The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AuthorizationNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AuthorizationNotFoundFault {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl AuthorizationNotFoundFault {
 
 /// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessToSnapshotDeniedFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessToSnapshotDeniedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessToSnapshotDeniedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessToSnapshotDeniedFault {
     /// Returns the error message.
@@ -605,18 +542,11 @@ impl AccessToSnapshotDeniedFault {
 
 /// <p>The status of the endpoint is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEndpointStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidEndpointStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEndpointStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidEndpointStateFault {
     /// Returns the error message.
@@ -672,18 +602,11 @@ impl InvalidEndpointStateFault {
 
 /// <p>The state of the cluster security group is not <code>available</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClusterSecurityGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClusterSecurityGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClusterSecurityGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClusterSecurityGroupStateFault {
     /// Returns the error message.
@@ -739,18 +662,11 @@ impl InvalidClusterSecurityGroupStateFault {
 
 /// <p>The status of the authorization is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAuthorizationStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAuthorizationStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAuthorizationStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAuthorizationStateFault {
     /// Returns the error message.
@@ -806,18 +722,11 @@ impl InvalidAuthorizationStateFault {
 
 /// <p>The endpoint name doesn't refer to an existing endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EndpointNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EndpointNotFoundFault {
     /// Returns the error message.
@@ -873,18 +782,11 @@ impl EndpointNotFoundFault {
 
 /// <p>The authorization for this endpoint can't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointAuthorizationNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EndpointAuthorizationNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointAuthorizationNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EndpointAuthorizationNotFoundFault {
     /// Returns the error message.
@@ -940,18 +842,11 @@ impl EndpointAuthorizationNotFoundFault {
 
 /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSecurityGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSecurityGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSecurityGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSecurityGroupNotFoundFault {
     /// Returns the error message.
@@ -1007,18 +902,11 @@ impl ClusterSecurityGroupNotFoundFault {
 
 /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientClusterCapacityFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientClusterCapacityFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientClusterCapacityFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientClusterCapacityFault {
     /// Returns the error message.
@@ -1074,18 +962,11 @@ impl InsufficientClusterCapacityFault {
 
 /// <p>The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>, or <code>sourceTableName</code> parameter, or a combination of these, doesn't exist in the snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTableRestoreArgumentFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTableRestoreArgumentFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTableRestoreArgumentFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTableRestoreArgumentFault {
     /// Returns the error message.
@@ -1141,18 +1022,11 @@ impl InvalidTableRestoreArgumentFault {
 
 /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClusterSnapshotStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClusterSnapshotStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClusterSnapshotStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClusterSnapshotStateFault {
     /// Returns the error message.
@@ -1208,18 +1082,11 @@ impl InvalidClusterSnapshotStateFault {
 
 /// <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InProgressTableRestoreQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InProgressTableRestoreQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InProgressTableRestoreQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InProgressTableRestoreQuotaExceededFault {
     /// Returns the error message.
@@ -1275,18 +1142,11 @@ impl InProgressTableRestoreQuotaExceededFault {
 
 /// <p>Your account is not authorized to perform the requested operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedOperation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnauthorizedOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedOperation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnauthorizedOperation {
     /// Returns the error message.
@@ -1342,18 +1202,11 @@ impl UnauthorizedOperation {
 
 /// <p>You have exceeded the number of tags allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagLimitExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TagLimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagLimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TagLimitExceededFault {
     /// Returns the error message.
@@ -1409,18 +1262,11 @@ impl TagLimitExceededFault {
 
 /// <p>We could not find the specified snapshot schedule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotScheduleNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotScheduleNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotScheduleNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotScheduleNotFoundFault {
     /// Returns the error message.
@@ -1476,18 +1322,11 @@ impl SnapshotScheduleNotFoundFault {
 
 /// <p>Specified offering does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeOfferingNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeOfferingNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeOfferingNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReservedNodeOfferingNotFoundFault {
     /// Returns the error message.
@@ -1543,18 +1382,11 @@ impl ReservedNodeOfferingNotFoundFault {
 
 /// <p>The specified reserved compute node not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReservedNodeNotFoundFault {
     /// Returns the error message.
@@ -1610,18 +1442,11 @@ impl ReservedNodeNotFoundFault {
 
 /// <p>Indicates that the reserved node has already been exchanged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeAlreadyMigratedFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeAlreadyMigratedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeAlreadyMigratedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReservedNodeAlreadyMigratedFault {
     /// Returns the error message.
@@ -1677,18 +1502,11 @@ impl ReservedNodeAlreadyMigratedFault {
 
 /// <p>User already has a reservation with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReservedNodeAlreadyExistsFault {
     /// Returns the error message.
@@ -1744,18 +1562,11 @@ impl ReservedNodeAlreadyExistsFault {
 
 /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberOfNodesQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NumberOfNodesQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberOfNodesQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NumberOfNodesQuotaExceededFault {
     /// Returns the error message.
@@ -1811,18 +1622,11 @@ impl NumberOfNodesQuotaExceededFault {
 
 /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberOfNodesPerClusterLimitExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NumberOfNodesPerClusterLimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberOfNodesPerClusterLimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NumberOfNodesPerClusterLimitExceededFault {
     /// Returns the error message.
@@ -1878,18 +1682,11 @@ impl NumberOfNodesPerClusterLimitExceededFault {
 
 /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LimitExceededFault {
     /// Returns the error message.
@@ -1945,18 +1742,11 @@ impl LimitExceededFault {
 
 /// <p>The cluster subnet group does not cover all Availability Zones.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidVpcNetworkStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidVpcNetworkStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidVpcNetworkStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidVpcNetworkStateFault {
     /// Returns the error message.
@@ -2015,18 +1805,11 @@ impl InvalidVpcNetworkStateFault {
 
 /// <p>The tag is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTagFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTagFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTagFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTagFault {
     /// Returns the error message.
@@ -2082,18 +1865,11 @@ impl InvalidTagFault {
 
 /// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSubnet {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSubnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubnet");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSubnet {
     /// Returns the error message.
@@ -2149,18 +1925,11 @@ impl InvalidSubnet {
 
 /// <p>The restore is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRestoreFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRestoreFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRestoreFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRestoreFault {
     /// Returns the error message.
@@ -2216,18 +1985,11 @@ impl InvalidRestoreFault {
 
 /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReservedNodeStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidReservedNodeStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReservedNodeStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidReservedNodeStateFault {
     /// Returns the error message.
@@ -2283,18 +2045,11 @@ impl InvalidReservedNodeStateFault {
 
 /// <p>The Elastic IP (EIP) is invalid or cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidElasticIpFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidElasticIpFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidElasticIpFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidElasticIpFault {
     /// Returns the error message.
@@ -2350,18 +2105,11 @@ impl InvalidElasticIpFault {
 
 /// <p>The provided cluster track name is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClusterTrackFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClusterTrackFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClusterTrackFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClusterTrackFault {
     /// Returns the error message.
@@ -2417,18 +2165,11 @@ impl InvalidClusterTrackFault {
 
 /// <p>The cluster subnet group cannot be deleted because it is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClusterSubnetGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClusterSubnetGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClusterSubnetGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClusterSubnetGroupStateFault {
     /// Returns the error message.
@@ -2484,18 +2225,11 @@ impl InvalidClusterSubnetGroupStateFault {
 
 /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmConfigurationNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HsmConfigurationNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmConfigurationNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HsmConfigurationNotFoundFault {
     /// Returns the error message.
@@ -2551,18 +2285,11 @@ impl HsmConfigurationNotFoundFault {
 
 /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmClientCertificateNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HsmClientCertificateNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmClientCertificateNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HsmClientCertificateNotFoundFault {
     /// Returns the error message.
@@ -2618,18 +2345,11 @@ impl HsmClientCertificateNotFoundFault {
 
 /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DependentServiceUnavailableFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DependentServiceUnavailableFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependentServiceUnavailableFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DependentServiceUnavailableFault {
     /// Returns the error message.
@@ -2685,18 +2405,11 @@ impl DependentServiceUnavailableFault {
 
 /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSubnetGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSubnetGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSubnetGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSubnetGroupNotFoundFault {
     /// Returns the error message.
@@ -2752,18 +2465,11 @@ impl ClusterSubnetGroupNotFoundFault {
 
 /// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterQuotaExceededFault {
     /// Returns the error message.
@@ -2819,18 +2525,11 @@ impl ClusterQuotaExceededFault {
 
 /// <p>The parameter group name does not refer to an existing parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterParameterGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterParameterGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterParameterGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterParameterGroupNotFoundFault {
     /// Returns the error message.
@@ -2886,18 +2585,11 @@ impl ClusterParameterGroupNotFoundFault {
 
 /// <p>The account already has a cluster with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterAlreadyExistsFault {
     /// Returns the error message.
@@ -2953,18 +2645,11 @@ impl ClusterAlreadyExistsFault {
 
 /// <p>A request option was specified that is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOptionFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOptionFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOptionFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedOptionFault {
     /// Returns the error message.
@@ -3020,18 +2705,11 @@ impl UnsupportedOptionFault {
 
 /// <p>The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClusterParameterGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClusterParameterGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClusterParameterGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClusterParameterGroupStateFault {
     /// Returns the error message.
@@ -3087,18 +2765,11 @@ impl InvalidClusterParameterGroupStateFault {
 
 /// <p>There is an error with the datashare.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDataShareFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDataShareFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDataShareFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDataShareFault {
     /// Returns the error message.
@@ -3154,18 +2825,11 @@ impl InvalidDataShareFault {
 
 /// <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReservedNodeQuotaExceededFault {
     /// Returns the error message.
@@ -3221,18 +2885,11 @@ impl ReservedNodeQuotaExceededFault {
 
 /// <p>The usage limit identifier can't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageLimitNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UsageLimitNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageLimitNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UsageLimitNotFoundFault {
     /// Returns the error message.
@@ -3288,18 +2945,11 @@ impl UsageLimitNotFoundFault {
 
 /// <p>The usage limit is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidUsageLimitFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidUsageLimitFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidUsageLimitFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidUsageLimitFault {
     /// Returns the error message.
@@ -3355,18 +3005,11 @@ impl InvalidUsageLimitFault {
 
 /// <p>The specified snapshot schedule is already being updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotScheduleUpdateInProgressFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotScheduleUpdateInProgressFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotScheduleUpdateInProgressFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotScheduleUpdateInProgressFault {
     /// Returns the error message.
@@ -3422,18 +3065,11 @@ impl SnapshotScheduleUpdateInProgressFault {
 
 /// <p>The schedule you submitted isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidScheduleFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidScheduleFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidScheduleFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidScheduleFault {
     /// Returns the error message.
@@ -3489,18 +3125,11 @@ impl InvalidScheduleFault {
 
 /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotCopyDisabledFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotCopyDisabledFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotCopyDisabledFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotCopyDisabledFault {
     /// Returns the error message.
@@ -3557,18 +3186,11 @@ impl SnapshotCopyDisabledFault {
 /// <p>The retention period specified is either in the past or is not a valid value.</p>
 /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRetentionPeriodFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRetentionPeriodFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRetentionPeriodFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRetentionPeriodFault {
     /// Returns the error message.
@@ -3624,18 +3246,11 @@ impl InvalidRetentionPeriodFault {
 
 /// <p>The action type specified for a scheduled action is not supported. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledActionTypeUnsupportedFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ScheduledActionTypeUnsupportedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledActionTypeUnsupportedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ScheduledActionTypeUnsupportedFault {
     /// Returns the error message.
@@ -3691,18 +3306,11 @@ impl ScheduledActionTypeUnsupportedFault {
 
 /// <p>The scheduled action cannot be found. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledActionNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ScheduledActionNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledActionNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ScheduledActionNotFoundFault {
     /// Returns the error message.
@@ -3758,18 +3366,11 @@ impl ScheduledActionNotFoundFault {
 
 /// <p>The scheduled action is not valid. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidScheduledActionFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidScheduledActionFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidScheduledActionFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidScheduledActionFault {
     /// Returns the error message.
@@ -3825,18 +3426,11 @@ impl InvalidScheduledActionFault {
 
 /// <p>The value specified for the event severity was not one of the allowed values, or it specified a severity that does not apply to the specified source type. The allowed values are ERROR and INFO.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionSeverityNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubscriptionSeverityNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionSeverityNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubscriptionSeverityNotFoundFault {
     /// Returns the error message.
@@ -3892,18 +3486,11 @@ impl SubscriptionSeverityNotFoundFault {
 
 /// <p>An Amazon Redshift event notification subscription with the specified name does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubscriptionNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubscriptionNotFoundFault {
     /// Returns the error message.
@@ -3959,18 +3546,11 @@ impl SubscriptionNotFoundFault {
 
 /// <p>An Amazon Redshift event with the specified event ID does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionEventIdNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubscriptionEventIdNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionEventIdNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubscriptionEventIdNotFoundFault {
     /// Returns the error message.
@@ -4026,18 +3606,11 @@ impl SubscriptionEventIdNotFoundFault {
 
 /// <p>The value specified for the event category was not one of the allowed values, or it specified a category that does not apply to the specified source type. The allowed values are Configuration, Management, Monitoring, and Security.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionCategoryNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubscriptionCategoryNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionCategoryNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubscriptionCategoryNotFoundFault {
     /// Returns the error message.
@@ -4093,18 +3666,11 @@ impl SubscriptionCategoryNotFoundFault {
 
 /// <p>The specified Amazon Redshift event source could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SourceNotFoundFault {
     /// Returns the error message.
@@ -4160,18 +3726,11 @@ impl SourceNotFoundFault {
 
 /// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsTopicArnNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnsTopicArnNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsTopicArnNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnsTopicArnNotFoundFault {
     /// Returns the error message.
@@ -4227,18 +3786,11 @@ impl SnsTopicArnNotFoundFault {
 
 /// <p>You do not have permission to publish to the specified Amazon SNS topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsNoAuthorizationFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnsNoAuthorizationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsNoAuthorizationFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnsNoAuthorizationFault {
     /// Returns the error message.
@@ -4294,18 +3846,11 @@ impl SnsNoAuthorizationFault {
 
 /// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsInvalidTopicFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnsInvalidTopicFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsInvalidTopicFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnsInvalidTopicFault {
     /// Returns the error message.
@@ -4361,18 +3906,11 @@ impl SnsInvalidTopicFault {
 
 /// <p>The subscription request is invalid because it is a duplicate request. This subscription request is already in progress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSubscriptionStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSubscriptionStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubscriptionStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSubscriptionStateFault {
     /// Returns the error message.
@@ -4428,18 +3966,11 @@ impl InvalidSubscriptionStateFault {
 
 /// <p>A specified subnet is already in use by another cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetAlreadyInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubnetAlreadyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetAlreadyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubnetAlreadyInUse {
     /// Returns the error message.
@@ -4495,18 +4026,11 @@ impl SubnetAlreadyInUse {
 
 /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSubnetQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSubnetQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSubnetQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSubnetQuotaExceededFault {
     /// Returns the error message.
@@ -4562,18 +4086,11 @@ impl ClusterSubnetQuotaExceededFault {
 
 /// <p>The cluster snapshot schedule state is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClusterSnapshotScheduleStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClusterSnapshotScheduleStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClusterSnapshotScheduleStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClusterSnapshotScheduleStateFault {
     /// Returns the error message.
@@ -4629,18 +4146,11 @@ impl InvalidClusterSnapshotScheduleStateFault {
 
 /// <p>Cluster is already on the latest database revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterOnLatestRevisionFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterOnLatestRevisionFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterOnLatestRevisionFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterOnLatestRevisionFault {
     /// Returns the error message.
@@ -4696,18 +4206,11 @@ impl ClusterOnLatestRevisionFault {
 
 /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableLimitExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TableLimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableLimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TableLimitExceededFault {
     /// Returns the error message.
@@ -4763,18 +4266,11 @@ impl TableLimitExceededFault {
 
 /// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAuthenticationProfileRequestFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAuthenticationProfileRequestFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAuthenticationProfileRequestFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAuthenticationProfileRequestFault {
     /// Returns the error message.
@@ -4830,18 +4326,11 @@ impl InvalidAuthenticationProfileRequestFault {
 
 /// <p>The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationProfileQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AuthenticationProfileQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationProfileQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AuthenticationProfileQuotaExceededFault {
     /// Returns the error message.
@@ -4897,18 +4386,11 @@ impl AuthenticationProfileQuotaExceededFault {
 
 /// <p>The authentication profile can't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationProfileNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AuthenticationProfileNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationProfileNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AuthenticationProfileNotFoundFault {
     /// Returns the error message.
@@ -4964,18 +4446,11 @@ impl AuthenticationProfileNotFoundFault {
 
 /// <p>The specified region is incorrect or does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnknownSnapshotCopyRegionFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnknownSnapshotCopyRegionFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnknownSnapshotCopyRegionFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnknownSnapshotCopyRegionFault {
     /// Returns the error message.
@@ -5031,18 +4506,11 @@ impl UnknownSnapshotCopyRegionFault {
 
 /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotCopyGrantNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotCopyGrantNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotCopyGrantNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotCopyGrantNotFoundFault {
     /// Returns the error message.
@@ -5098,18 +4566,11 @@ impl SnapshotCopyGrantNotFoundFault {
 
 /// <p>The cluster already has cross-region snapshot copy enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotCopyAlreadyEnabledFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotCopyAlreadyEnabledFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotCopyAlreadyEnabledFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotCopyAlreadyEnabledFault {
     /// Returns the error message.
@@ -5165,18 +4626,11 @@ impl SnapshotCopyAlreadyEnabledFault {
 
 /// <p>The specified options are incompatible.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncompatibleOrderableOptions {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IncompatibleOrderableOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatibleOrderableOptions");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IncompatibleOrderableOptions {
     /// Returns the error message.
@@ -5232,18 +4686,11 @@ impl IncompatibleOrderableOptions {
 
 /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyToRegionDisabledFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CopyToRegionDisabledFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyToRegionDisabledFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CopyToRegionDisabledFault {
     /// Returns the error message.
@@ -5299,18 +4746,11 @@ impl CopyToRegionDisabledFault {
 
 /// <p>The string specified for the logging S3 key prefix does not comply with the documented constraints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3KeyPrefixFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidS3KeyPrefixFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3KeyPrefixFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidS3KeyPrefixFault {
     /// Returns the error message.
@@ -5366,18 +4806,11 @@ impl InvalidS3KeyPrefixFault {
 
 /// <p>The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3BucketNameFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidS3BucketNameFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3BucketNameFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidS3BucketNameFault {
     /// Returns the error message.
@@ -5433,18 +4866,11 @@ impl InvalidS3BucketNameFault {
 
 /// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientS3BucketPolicyFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientS3BucketPolicyFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientS3BucketPolicyFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientS3BucketPolicyFault {
     /// Returns the error message.
@@ -5500,18 +4926,11 @@ impl InsufficientS3BucketPolicyFault {
 
 /// <p>Could not find the specified S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BucketNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BucketNotFoundFault {
     /// Returns the error message.
@@ -5567,18 +4986,11 @@ impl BucketNotFoundFault {
 
 /// <p>The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNamespaceFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidNamespaceFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNamespaceFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidNamespaceFault {
     /// Returns the error message.
@@ -5634,18 +5046,11 @@ impl InvalidNamespaceFault {
 
 /// <p>The cluster already has cross-region snapshot copy disabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotCopyAlreadyDisabledFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotCopyAlreadyDisabledFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotCopyAlreadyDisabledFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotCopyAlreadyDisabledFault {
     /// Returns the error message.
@@ -5701,18 +5106,11 @@ impl SnapshotCopyAlreadyDisabledFault {
 
 /// <p>The resource could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundFault {
     /// Returns the error message.
@@ -5768,18 +5166,11 @@ impl ResourceNotFoundFault {
 
 /// <p>The specified <code>TableRestoreRequestId</code> value was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableRestoreNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TableRestoreNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableRestoreNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TableRestoreNotFoundFault {
     /// Returns the error message.
@@ -5835,18 +5226,11 @@ impl TableRestoreNotFoundFault {
 
 /// <p>A resize operation for the specified cluster is not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResizeNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResizeNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResizeNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResizeNotFoundFault {
     /// Returns the error message.
@@ -5902,18 +5286,11 @@ impl ResizeNotFoundFault {
 
 /// <p>The reserved-node exchange status wasn't found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReservedNodeExchangeNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeExchangeNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeExchangeNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReservedNodeExchangeNotFoundFault {
     /// Returns the error message.
@@ -5969,18 +5346,11 @@ impl ReservedNodeExchangeNotFoundFault {
 
 /// <p>The snapshot copy grant can't be deleted because it is used by one or more clusters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSnapshotCopyGrantStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSnapshotCopyGrantStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSnapshotCopyGrantStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSnapshotCopyGrantStateFault {
     /// Returns the error message.
@@ -6036,18 +5406,11 @@ impl InvalidSnapshotCopyGrantStateFault {
 
 /// <p>The specified HSM configuration is not in the <code>available</code> state, or it is still in use by one or more Amazon Redshift clusters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidHsmConfigurationStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidHsmConfigurationStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidHsmConfigurationStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidHsmConfigurationStateFault {
     /// Returns the error message.
@@ -6103,18 +5466,11 @@ impl InvalidHsmConfigurationStateFault {
 
 /// <p>The specified HSM client certificate is not in the <code>available</code> state, or it is still in use by one or more Amazon Redshift clusters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidHsmClientCertificateStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidHsmClientCertificateStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidHsmClientCertificateStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidHsmClientCertificateStateFault {
     /// Returns the error message.
@@ -6170,18 +5526,11 @@ impl InvalidHsmClientCertificateStateFault {
 
 /// <p>The state of the subnet is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClusterSubnetStateFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClusterSubnetStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClusterSubnetStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClusterSubnetStateFault {
     /// Returns the error message.
@@ -6237,18 +5586,11 @@ impl InvalidClusterSubnetStateFault {
 
 /// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSnapshotQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSnapshotQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSnapshotQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSnapshotQuotaExceededFault {
     /// Returns the error message.
@@ -6304,18 +5646,11 @@ impl ClusterSnapshotQuotaExceededFault {
 
 /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSnapshotAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSnapshotAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSnapshotAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSnapshotAlreadyExistsFault {
     /// Returns the error message.
@@ -6371,18 +5706,11 @@ impl ClusterSnapshotAlreadyExistsFault {
 
 /// <p>The usage limit already exists. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageLimitAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UsageLimitAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageLimitAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UsageLimitAlreadyExistsFault {
     /// Returns the error message.
@@ -6438,18 +5766,11 @@ impl UsageLimitAlreadyExistsFault {
 
 /// <p>You have exceeded the quota of snapshot schedules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotScheduleQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotScheduleQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotScheduleQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotScheduleQuotaExceededFault {
     /// Returns the error message.
@@ -6505,18 +5826,11 @@ impl SnapshotScheduleQuotaExceededFault {
 
 /// <p>The specified snapshot schedule already exists. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotScheduleAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotScheduleAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotScheduleAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotScheduleAlreadyExistsFault {
     /// Returns the error message.
@@ -6572,18 +5886,11 @@ impl SnapshotScheduleAlreadyExistsFault {
 
 /// <p>The definition you submitted is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleDefinitionTypeUnsupportedFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ScheduleDefinitionTypeUnsupportedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleDefinitionTypeUnsupportedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ScheduleDefinitionTypeUnsupportedFault {
     /// Returns the error message.
@@ -6639,18 +5946,11 @@ impl ScheduleDefinitionTypeUnsupportedFault {
 
 /// <p>The Amazon Web Services account has exceeded the maximum number of snapshot copy grants in this region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotCopyGrantQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotCopyGrantQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotCopyGrantQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotCopyGrantQuotaExceededFault {
     /// Returns the error message.
@@ -6706,18 +6006,11 @@ impl SnapshotCopyGrantQuotaExceededFault {
 
 /// <p>The snapshot copy grant can't be created because a grant with the same name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotCopyGrantAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotCopyGrantAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotCopyGrantAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotCopyGrantAlreadyExistsFault {
     /// Returns the error message.
@@ -6773,18 +6066,11 @@ impl SnapshotCopyGrantAlreadyExistsFault {
 
 /// <p>The quota for scheduled actions exceeded. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledActionQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ScheduledActionQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledActionQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ScheduledActionQuotaExceededFault {
     /// Returns the error message.
@@ -6840,18 +6126,11 @@ impl ScheduledActionQuotaExceededFault {
 
 /// <p>The scheduled action already exists. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledActionAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ScheduledActionAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledActionAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ScheduledActionAlreadyExistsFault {
     /// Returns the error message.
@@ -6907,18 +6186,11 @@ impl ScheduledActionAlreadyExistsFault {
 
 /// <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmConfigurationQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HsmConfigurationQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmConfigurationQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HsmConfigurationQuotaExceededFault {
     /// Returns the error message.
@@ -6974,18 +6246,11 @@ impl HsmConfigurationQuotaExceededFault {
 
 /// <p>There is already an existing Amazon Redshift HSM configuration with the specified identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmConfigurationAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HsmConfigurationAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmConfigurationAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HsmConfigurationAlreadyExistsFault {
     /// Returns the error message.
@@ -7041,18 +6306,11 @@ impl HsmConfigurationAlreadyExistsFault {
 
 /// <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmClientCertificateQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HsmClientCertificateQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmClientCertificateQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HsmClientCertificateQuotaExceededFault {
     /// Returns the error message.
@@ -7108,18 +6366,11 @@ impl HsmClientCertificateQuotaExceededFault {
 
 /// <p>There is already an existing Amazon Redshift HSM client certificate with the specified identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HsmClientCertificateAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HsmClientCertificateAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HsmClientCertificateAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl HsmClientCertificateAlreadyExistsFault {
     /// Returns the error message.
@@ -7175,18 +6426,11 @@ impl HsmClientCertificateAlreadyExistsFault {
 
 /// <p>There is already an existing event notification subscription with the specified name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionAlreadyExistFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubscriptionAlreadyExistFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionAlreadyExistFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubscriptionAlreadyExistFault {
     /// Returns the error message.
@@ -7242,18 +6486,11 @@ impl SubscriptionAlreadyExistFault {
 
 /// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSubscriptionQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EventSubscriptionQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSubscriptionQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EventSubscriptionQuotaExceededFault {
     /// Returns the error message.
@@ -7309,18 +6546,11 @@ impl EventSubscriptionQuotaExceededFault {
 
 /// <p>The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointsPerClusterLimitExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EndpointsPerClusterLimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointsPerClusterLimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EndpointsPerClusterLimitExceededFault {
     /// Returns the error message.
@@ -7376,18 +6606,11 @@ impl EndpointsPerClusterLimitExceededFault {
 
 /// <p>The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointsPerAuthorizationLimitExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EndpointsPerAuthorizationLimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointsPerAuthorizationLimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EndpointsPerAuthorizationLimitExceededFault {
     /// Returns the error message.
@@ -7443,18 +6666,11 @@ impl EndpointsPerAuthorizationLimitExceededFault {
 
 /// <p>The account already has a Redshift-managed VPC endpoint with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EndpointAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EndpointAlreadyExistsFault {
     /// Returns the error message.
@@ -7510,18 +6726,11 @@ impl EndpointAlreadyExistsFault {
 
 /// <p>You are not authorized to access the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessToClusterDeniedFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessToClusterDeniedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessToClusterDeniedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessToClusterDeniedFault {
     /// Returns the error message.
@@ -7577,18 +6786,11 @@ impl AccessToClusterDeniedFault {
 
 /// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSubnetGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSubnetGroupQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSubnetGroupQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSubnetGroupQuotaExceededFault {
     /// Returns the error message.
@@ -7644,18 +6846,11 @@ impl ClusterSubnetGroupQuotaExceededFault {
 
 /// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSubnetGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSubnetGroupAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSubnetGroupAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSubnetGroupAlreadyExistsFault {
     /// Returns the error message.
@@ -7711,18 +6906,11 @@ impl ClusterSubnetGroupAlreadyExistsFault {
 
 /// <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSecurityGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSecurityGroupQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSecurityGroupQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSecurityGroupQuotaExceededFault {
     /// Returns the error message.
@@ -7778,18 +6966,11 @@ impl ClusterSecurityGroupQuotaExceededFault {
 
 /// <p>A cluster security group with the same name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSecurityGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterSecurityGroupAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSecurityGroupAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterSecurityGroupAlreadyExistsFault {
     /// Returns the error message.
@@ -7845,18 +7026,11 @@ impl ClusterSecurityGroupAlreadyExistsFault {
 
 /// <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterParameterGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterParameterGroupQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterParameterGroupQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterParameterGroupQuotaExceededFault {
     /// Returns the error message.
@@ -7912,18 +7086,11 @@ impl ClusterParameterGroupQuotaExceededFault {
 
 /// <p>A cluster parameter group with the same name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterParameterGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClusterParameterGroupAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterParameterGroupAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClusterParameterGroupAlreadyExistsFault {
     /// Returns the error message.
@@ -7979,18 +7146,11 @@ impl ClusterParameterGroupAlreadyExistsFault {
 
 /// <p>The authentication profile already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationProfileAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AuthenticationProfileAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationProfileAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AuthenticationProfileAlreadyExistsFault {
     /// Returns the error message.
@@ -8046,18 +7206,11 @@ impl AuthenticationProfileAlreadyExistsFault {
 
 /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchModifyClusterSnapshotsLimitExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BatchModifyClusterSnapshotsLimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchModifyClusterSnapshotsLimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BatchModifyClusterSnapshotsLimitExceededFault {
     /// Returns the error message.
@@ -8113,18 +7266,11 @@ impl BatchModifyClusterSnapshotsLimitExceededFault {
 
 /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is 100. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteRequestSizeExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BatchDeleteRequestSizeExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteRequestSizeExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BatchDeleteRequestSizeExceededFault {
     /// Returns the error message.
@@ -8180,18 +7326,11 @@ impl BatchDeleteRequestSizeExceededFault {
 
 /// <p>The authorization quota for the cluster security group has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AuthorizationQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AuthorizationQuotaExceededFault {
     /// Returns the error message.
@@ -8247,18 +7386,11 @@ impl AuthorizationQuotaExceededFault {
 
 /// <p>The specified CIDR block or EC2 security group is already authorized for the specified cluster security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AuthorizationAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AuthorizationAlreadyExistsFault {
     /// Returns the error message.
@@ -8314,18 +7446,11 @@ impl AuthorizationAlreadyExistsFault {
 
 /// <p>The number of endpoint authorizations per cluster has exceeded its limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointAuthorizationsPerClusterLimitExceededFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EndpointAuthorizationsPerClusterLimitExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointAuthorizationsPerClusterLimitExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EndpointAuthorizationsPerClusterLimitExceededFault {
     /// Returns the error message.
@@ -8382,18 +7507,11 @@ impl EndpointAuthorizationsPerClusterLimitExceededFault {
 
 /// <p>The authorization already exists for this endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointAuthorizationAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EndpointAuthorizationAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointAuthorizationAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EndpointAuthorizationAlreadyExistsFault {
     /// Returns the error message.

@@ -2,7 +2,7 @@
 
 /// <p>Contains the response to an <code>UploadDocuments</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadDocumentsOutput {
     /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
     #[doc(hidden)]
@@ -33,16 +33,6 @@ impl UploadDocumentsOutput {
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
     pub fn warnings(&self) -> std::option::Option<&[crate::model::DocumentServiceWarning]> {
         self.warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for UploadDocumentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadDocumentsOutput");
-        formatter.field("status", &self.status);
-        formatter.field("adds", &self.adds);
-        formatter.field("deletes", &self.deletes);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
     }
 }
 /// See [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
@@ -127,7 +117,7 @@ impl UploadDocumentsOutput {
 
 /// <p>Contains the response to a <code>Suggest</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestOutput {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
     #[doc(hidden)]
@@ -144,14 +134,6 @@ impl SuggestOutput {
     /// <p>Container for the matching search suggestion information.</p>
     pub fn suggest(&self) -> std::option::Option<&crate::model::SuggestModel> {
         self.suggest.as_ref()
-    }
-}
-impl std::fmt::Debug for SuggestOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestOutput");
-        formatter.field("status", &self.status);
-        formatter.field("suggest", &self.suggest);
-        formatter.finish()
     }
 }
 /// See [`SuggestOutput`](crate::output::SuggestOutput).
@@ -208,7 +190,7 @@ impl SuggestOutput {
 
 /// <p>The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchOutput {
     /// <p>The status information returned for the search request.</p>
     #[doc(hidden)]
@@ -251,16 +233,6 @@ impl SearchOutput {
         &std::collections::HashMap<std::string::String, crate::model::FieldStats>,
     > {
         self.stats.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchOutput");
-        formatter.field("status", &self.status);
-        formatter.field("hits", &self.hits);
-        formatter.field("facets", &self.facets);
-        formatter.field("stats", &self.stats);
-        formatter.finish()
     }
 }
 /// See [`SearchOutput`](crate::output::SearchOutput).

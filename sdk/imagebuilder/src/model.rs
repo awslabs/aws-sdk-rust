@@ -2,7 +2,7 @@
 
 /// <p>The instance metadata options that apply to the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMetadataOptions {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
@@ -29,17 +29,6 @@ impl InstanceMetadataOptions {
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination.</p>
     pub fn http_put_response_hop_limit(&self) -> std::option::Option<i32> {
         self.http_put_response_hop_limit
-    }
-}
-impl std::fmt::Debug for InstanceMetadataOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMetadataOptions");
-        formatter.field("http_tokens", &self.http_tokens);
-        formatter.field(
-            "http_put_response_hop_limit",
-            &self.http_put_response_hop_limit,
-        );
-        formatter.finish()
     }
 }
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
@@ -100,7 +89,7 @@ impl InstanceMetadataOptions {
 
 /// <p>Logging configuration defines where Image Builder uploads your logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Logging {
     /// <p>The Amazon S3 logging configuration.</p>
     #[doc(hidden)]
@@ -110,13 +99,6 @@ impl Logging {
     /// <p>The Amazon S3 logging configuration.</p>
     pub fn s3_logs(&self) -> std::option::Option<&crate::model::S3Logs> {
         self.s3_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for Logging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Logging");
-        formatter.field("s3_logs", &self.s3_logs);
-        formatter.finish()
     }
 }
 /// See [`Logging`](crate::model::Logging).
@@ -155,7 +137,7 @@ impl Logging {
 
 /// <p>Amazon S3 logging configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Logs {
     /// <p>The S3 bucket in which to store the logs.</p>
     #[doc(hidden)]
@@ -172,14 +154,6 @@ impl S3Logs {
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Logs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Logs");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Logs`](crate::model::S3Logs).
@@ -326,7 +300,7 @@ impl AsRef<str> for PipelineStatus {
 
 /// <p>A schedule configures how often and when a pipeline will automatically create a new image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
@@ -355,18 +329,6 @@ impl Schedule {
         &self,
     ) -> std::option::Option<&crate::model::PipelineExecutionStartCondition> {
         self.pipeline_execution_start_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for Schedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schedule");
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.field("timezone", &self.timezone);
-        formatter.field(
-            "pipeline_execution_start_condition",
-            &self.pipeline_execution_start_condition,
-        );
-        formatter.finish()
     }
 }
 /// See [`Schedule`](crate::model::Schedule).
@@ -540,7 +502,7 @@ impl AsRef<str> for PipelineExecutionStartCondition {
 
 /// <p>Configure image tests for your pipeline build. Tests run after building the image, to verify that the AMI or container image is valid before distributing it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageTestsConfiguration {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     #[doc(hidden)]
@@ -557,14 +519,6 @@ impl ImageTestsConfiguration {
     /// <p>The maximum time in minutes that tests are permitted to run.</p>
     pub fn timeout_minutes(&self) -> std::option::Option<i32> {
         self.timeout_minutes
-    }
-}
-impl std::fmt::Debug for ImageTestsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageTestsConfiguration");
-        formatter.field("image_tests_enabled", &self.image_tests_enabled);
-        formatter.field("timeout_minutes", &self.timeout_minutes);
-        formatter.finish()
     }
 }
 /// See [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
@@ -615,7 +569,7 @@ impl ImageTestsConfiguration {
 
 /// <p> Defines the settings for a specific Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Distribution {
     /// <p>The target Region.</p>
     #[doc(hidden)]
@@ -681,34 +635,6 @@ impl Distribution {
         &self,
     ) -> std::option::Option<&[crate::model::FastLaunchConfiguration]> {
         self.fast_launch_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for Distribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Distribution");
-        formatter.field("region", &self.region);
-        formatter.field(
-            "ami_distribution_configuration",
-            &self.ami_distribution_configuration,
-        );
-        formatter.field(
-            "container_distribution_configuration",
-            &self.container_distribution_configuration,
-        );
-        formatter.field(
-            "license_configuration_arns",
-            &self.license_configuration_arns,
-        );
-        formatter.field(
-            "launch_template_configurations",
-            &self.launch_template_configurations,
-        );
-        formatter.field("s3_export_configuration", &self.s3_export_configuration);
-        formatter.field(
-            "fast_launch_configurations",
-            &self.fast_launch_configurations,
-        );
-        formatter.finish()
     }
 }
 /// See [`Distribution`](crate::model::Distribution).
@@ -876,7 +802,7 @@ impl Distribution {
 
 /// <p>Define and configure faster launching for output Windows AMIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FastLaunchConfiguration {
     /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
     #[doc(hidden)]
@@ -918,17 +844,6 @@ impl FastLaunchConfiguration {
     /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for FastLaunchConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FastLaunchConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("snapshot_configuration", &self.snapshot_configuration);
-        formatter.field("max_parallel_launches", &self.max_parallel_launches);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 /// See [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
@@ -1031,7 +946,7 @@ impl FastLaunchConfiguration {
 /// <p>You can specify either the <code>launchTemplateName</code> or the <code>launchTemplateId</code>, but not both.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FastLaunchLaunchTemplateSpecification {
     /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
     #[doc(hidden)]
@@ -1055,15 +970,6 @@ impl FastLaunchLaunchTemplateSpecification {
     /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
     pub fn launch_template_version(&self) -> std::option::Option<&str> {
         self.launch_template_version.as_deref()
-    }
-}
-impl std::fmt::Debug for FastLaunchLaunchTemplateSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FastLaunchLaunchTemplateSpecification");
-        formatter.field("launch_template_id", &self.launch_template_id);
-        formatter.field("launch_template_name", &self.launch_template_name);
-        formatter.field("launch_template_version", &self.launch_template_version);
-        formatter.finish()
     }
 }
 /// See [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
@@ -1135,7 +1041,7 @@ impl FastLaunchLaunchTemplateSpecification {
 
 /// <p>Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FastLaunchSnapshotConfiguration {
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
     #[doc(hidden)]
@@ -1145,13 +1051,6 @@ impl FastLaunchSnapshotConfiguration {
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
     pub fn target_resource_count(&self) -> std::option::Option<i32> {
         self.target_resource_count
-    }
-}
-impl std::fmt::Debug for FastLaunchSnapshotConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FastLaunchSnapshotConfiguration");
-        formatter.field("target_resource_count", &self.target_resource_count);
-        formatter.finish()
     }
 }
 /// See [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
@@ -1190,7 +1089,7 @@ impl FastLaunchSnapshotConfiguration {
 
 /// <p>Properties that configure export from your build instance to a compatible file format for your VM.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ExportConfiguration {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
     #[doc(hidden)]
@@ -1231,16 +1130,6 @@ impl S3ExportConfiguration {
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
     pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ExportConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ExportConfiguration");
-        formatter.field("role_name", &self.role_name);
-        formatter.field("disk_image_format", &self.disk_image_format);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
@@ -1423,7 +1312,7 @@ impl AsRef<str> for DiskImageFormat {
 
 /// <p>Identifies an Amazon EC2 launch template to use for a specific account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateConfiguration {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
     #[doc(hidden)]
@@ -1447,15 +1336,6 @@ impl LaunchTemplateConfiguration {
     /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
     pub fn set_default_version(&self) -> bool {
         self.set_default_version
-    }
-}
-impl std::fmt::Debug for LaunchTemplateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateConfiguration");
-        formatter.field("launch_template_id", &self.launch_template_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("set_default_version", &self.set_default_version);
-        formatter.finish()
     }
 }
 /// See [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
@@ -1521,7 +1401,7 @@ impl LaunchTemplateConfiguration {
 
 /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerDistributionConfiguration {
     /// <p>The description of the container distribution configuration.</p>
     #[doc(hidden)]
@@ -1547,15 +1427,6 @@ impl ContainerDistributionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::TargetContainerRepository> {
         self.target_repository.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerDistributionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerDistributionConfiguration");
-        formatter.field("description", &self.description);
-        formatter.field("container_tags", &self.container_tags);
-        formatter.field("target_repository", &self.target_repository);
-        formatter.finish()
     }
 }
 /// See [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
@@ -1630,7 +1501,7 @@ impl ContainerDistributionConfiguration {
 
 /// <p>The container repository where the output container image is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
     #[doc(hidden)]
@@ -1647,14 +1518,6 @@ impl TargetContainerRepository {
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TargetContainerRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetContainerRepository");
-        formatter.field("service", &self.service);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
     }
 }
 /// See [`TargetContainerRepository`](crate::model::TargetContainerRepository).
@@ -1798,7 +1661,7 @@ impl AsRef<str> for ContainerRepositoryService {
 
 /// <p> Define and configure the output AMIs of the pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmiDistributionConfiguration {
     /// <p>The name of the output AMI.</p>
     #[doc(hidden)]
@@ -1849,18 +1712,6 @@ impl AmiDistributionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::LaunchPermissionConfiguration> {
         self.launch_permission.as_ref()
-    }
-}
-impl std::fmt::Debug for AmiDistributionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmiDistributionConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_account_ids", &self.target_account_ids);
-        formatter.field("ami_tags", &self.ami_tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("launch_permission", &self.launch_permission);
-        formatter.finish()
     }
 }
 /// See [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
@@ -1992,7 +1843,7 @@ impl AmiDistributionConfiguration {
 
 /// <p>Describes the configuration for a launch permission. The launch permission modification request is sent to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public, set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchPermissionConfiguration {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -2023,16 +1874,6 @@ impl LaunchPermissionConfiguration {
     /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
     pub fn organizational_unit_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchPermissionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchPermissionConfiguration");
-        formatter.field("user_ids", &self.user_ids);
-        formatter.field("user_groups", &self.user_groups);
-        formatter.field("organization_arns", &self.organization_arns);
-        formatter.field("organizational_unit_arns", &self.organizational_unit_arns);
-        formatter.finish()
     }
 }
 /// See [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
@@ -2144,7 +1985,7 @@ impl LaunchPermissionConfiguration {
 
 /// <p>The infrastructure used when building Amazon EC2 AMIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InfrastructureConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     #[doc(hidden)]
@@ -2218,21 +2059,6 @@ impl InfrastructureConfigurationSummary {
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub fn instance_profile_name(&self) -> std::option::Option<&str> {
         self.instance_profile_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InfrastructureConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InfrastructureConfigurationSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("tags", &self.tags);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("instance_profile_name", &self.instance_profile_name);
-        formatter.finish()
     }
 }
 /// See [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
@@ -2413,7 +2239,7 @@ impl InfrastructureConfigurationSummary {
 
 /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
@@ -2430,14 +2256,6 @@ impl Filter {
     /// <p>The filter values. Filter values are case-sensitive.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -2497,7 +2315,7 @@ impl Filter {
 
 /// <p>The defining characteristics of a specific version of an Image Builder image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageVersion {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -2631,21 +2449,6 @@ impl ImageVersion {
     /// </ul>
     pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
         self.build_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageVersion");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("version", &self.version);
-        formatter.field("platform", &self.platform);
-        formatter.field("os_version", &self.os_version);
-        formatter.field("owner", &self.owner);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("build_type", &self.build_type);
-        formatter.finish()
     }
 }
 /// See [`ImageVersion`](crate::model::ImageVersion).
@@ -3221,7 +3024,7 @@ impl AsRef<str> for Ownership {
 
 /// <p>A summary of an image recipe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageRecipeSummary {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     #[doc(hidden)]
@@ -3277,19 +3080,6 @@ impl ImageRecipeSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageRecipeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageRecipeSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("platform", &self.platform);
-        formatter.field("owner", &self.owner);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
@@ -3417,7 +3207,7 @@ impl ImageRecipeSummary {
 
 /// <p>Details of an image pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImagePipeline {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
     #[doc(hidden)]
@@ -3545,38 +3335,6 @@ impl ImagePipeline {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ImagePipeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImagePipeline");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field(
-            "enhanced_image_metadata_enabled",
-            &self.enhanced_image_metadata_enabled,
-        );
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.field(
-            "infrastructure_configuration_arn",
-            &self.infrastructure_configuration_arn,
-        );
-        formatter.field(
-            "distribution_configuration_arn",
-            &self.distribution_configuration_arn,
-        );
-        formatter.field("image_tests_configuration", &self.image_tests_configuration);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("status", &self.status);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("date_last_run", &self.date_last_run);
-        formatter.field("date_next_run", &self.date_next_run);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ImagePipeline`](crate::model::ImagePipeline).
@@ -3861,7 +3619,7 @@ impl ImagePipeline {
 
 /// <p>An image summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
     #[doc(hidden)]
@@ -3962,24 +3720,6 @@ impl ImageSummary {
     /// </ul>
     pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
         self.build_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("version", &self.version);
-        formatter.field("platform", &self.platform);
-        formatter.field("os_version", &self.os_version);
-        formatter.field("state", &self.state);
-        formatter.field("owner", &self.owner);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("output_resources", &self.output_resources);
-        formatter.field("tags", &self.tags);
-        formatter.field("build_type", &self.build_type);
-        formatter.finish()
     }
 }
 /// See [`ImageSummary`](crate::model::ImageSummary).
@@ -4183,7 +3923,7 @@ impl ImageSummary {
 
 /// <p>The resources produced by this image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputResources {
     /// <p>The Amazon EC2 AMIs created by this image.</p>
     #[doc(hidden)]
@@ -4200,14 +3940,6 @@ impl OutputResources {
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
     pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
         self.containers.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputResources");
-        formatter.field("amis", &self.amis);
-        formatter.field("containers", &self.containers);
-        formatter.finish()
     }
 }
 /// See [`OutputResources`](crate::model::OutputResources).
@@ -4276,7 +4008,7 @@ impl OutputResources {
 
 /// <p>A container encapsulates the runtime environment for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Container {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
     #[doc(hidden)]
@@ -4293,14 +4025,6 @@ impl Container {
     /// <p>A list of URIs for containers created in the context Region.</p>
     pub fn image_uris(&self) -> std::option::Option<&[std::string::String]> {
         self.image_uris.as_deref()
-    }
-}
-impl std::fmt::Debug for Container {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Container");
-        formatter.field("region", &self.region);
-        formatter.field("image_uris", &self.image_uris);
-        formatter.finish()
     }
 }
 /// See [`Container`](crate::model::Container).
@@ -4360,7 +4084,7 @@ impl Container {
 
 /// <p> Details of an Amazon EC2 AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ami {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
     #[doc(hidden)]
@@ -4405,18 +4129,6 @@ impl Ami {
     /// <p>The account ID of the owner of the AMI.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Ami {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ami");
-        formatter.field("region", &self.region);
-        formatter.field("image", &self.image);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 /// See [`Ami`](crate::model::Ami).
@@ -4515,7 +4227,7 @@ impl Ami {
 
 /// <p> Image state shows the image status and the reason for that status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageState {
     /// <p>The status of the image.</p>
     #[doc(hidden)]
@@ -4532,14 +4244,6 @@ impl ImageState {
     /// <p>The reason for the image's status.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageState");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`ImageState`](crate::model::ImageState).
@@ -4737,7 +4441,7 @@ impl AsRef<str> for ImageStatus {
 
 /// <p>Represents a package installed on an Image Builder image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImagePackage {
     /// <p>The name of the package as reported to the operating system package manager.</p>
     #[doc(hidden)]
@@ -4754,14 +4458,6 @@ impl ImagePackage {
     /// <p>The version of the package as reported to the operating system package manager.</p>
     pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ImagePackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImagePackage");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_version", &self.package_version);
-        formatter.finish()
     }
 }
 /// See [`ImagePackage`](crate::model::ImagePackage).
@@ -4815,7 +4511,7 @@ impl ImagePackage {
 
 /// <p>A high-level overview of a distribution configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     #[doc(hidden)]
@@ -4871,19 +4567,6 @@ impl DistributionConfigurationSummary {
     /// <p>A list of Regions where the container image is distributed to.</p>
     pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
         self.regions.as_deref()
-    }
-}
-impl std::fmt::Debug for DistributionConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionConfigurationSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("tags", &self.tags);
-        formatter.field("regions", &self.regions);
-        formatter.finish()
     }
 }
 /// See [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
@@ -5020,7 +4703,7 @@ impl DistributionConfigurationSummary {
 
 /// <p>A summary of a container recipe</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerRecipeSummary {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
     #[doc(hidden)]
@@ -5083,20 +4766,6 @@ impl ContainerRecipeSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerRecipeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerRecipeSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("container_type", &self.container_type);
-        formatter.field("name", &self.name);
-        formatter.field("platform", &self.platform);
-        formatter.field("owner", &self.owner);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
@@ -5324,7 +4993,7 @@ impl AsRef<str> for ContainerType {
 
 /// <p>The defining characteristics of a specific version of an Amazon Web Services TOE component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentVersion {
     /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -5448,21 +5117,6 @@ impl ComponentVersion {
     /// <p>The date that the component was created.</p>
     pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentVersion");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field("supported_os_versions", &self.supported_os_versions);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("owner", &self.owner);
-        formatter.field("date_created", &self.date_created);
-        formatter.finish()
     }
 }
 /// See [`ComponentVersion`](crate::model::ComponentVersion).
@@ -5754,7 +5408,7 @@ impl AsRef<str> for ComponentType {
 
 /// <p>A high-level summary of a component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentSummary {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
@@ -5845,24 +5499,6 @@ impl ComponentSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ComponentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("platform", &self.platform);
-        formatter.field("supported_os_versions", &self.supported_os_versions);
-        formatter.field("state", &self.state);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("owner", &self.owner);
-        formatter.field("description", &self.description);
-        formatter.field("change_description", &self.change_description);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
@@ -6065,7 +5701,7 @@ impl ComponentSummary {
 
 /// <p>A group of fields that describe the current status of components that are no longer active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentState {
     /// <p>The current state of the component.</p>
     #[doc(hidden)]
@@ -6082,14 +5718,6 @@ impl ComponentState {
     /// <p>Describes how or why the component changed state.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentState");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`ComponentState`](crate::model::ComponentState).
@@ -6313,7 +5941,7 @@ impl AsRef<str> for ComponentFormat {
 
 /// <p>Details of the infrastructure configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InfrastructureConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     #[doc(hidden)]
@@ -6442,31 +6070,6 @@ impl InfrastructureConfiguration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for InfrastructureConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InfrastructureConfiguration");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("instance_profile_name", &self.instance_profile_name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("logging", &self.logging);
-        formatter.field("key_pair", &self.key_pair);
-        formatter.field(
-            "terminate_instance_on_failure",
-            &self.terminate_instance_on_failure,
-        );
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("instance_metadata_options", &self.instance_metadata_options);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
@@ -6757,7 +6360,7 @@ impl InfrastructureConfiguration {
 
 /// <p>An image recipe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     #[doc(hidden)]
@@ -6868,29 +6471,6 @@ impl ImageRecipe {
         &self,
     ) -> std::option::Option<&crate::model::AdditionalInstanceConfiguration> {
         self.additional_instance_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageRecipe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageRecipe");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field("owner", &self.owner);
-        formatter.field("version", &self.version);
-        formatter.field("components", &self.components);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field(
-            "additional_instance_configuration",
-            &self.additional_instance_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ImageRecipe`](crate::model::ImageRecipe).
@@ -7135,7 +6715,7 @@ impl ImageRecipe {
 
 /// <p>In addition to your infrastruction configuration, these settings provide an extra layer of control over your build instances. For instances where Image Builder installs the Systems Manager agent, you can choose whether to keep it for the AMI that you create. You can also specify commands to run on launch for all of your build instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalInstanceConfiguration {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
     #[doc(hidden)]
@@ -7164,14 +6744,6 @@ impl AdditionalInstanceConfiguration {
     /// </note>
     pub fn user_data_override(&self) -> std::option::Option<&str> {
         self.user_data_override.as_deref()
-    }
-}
-impl std::fmt::Debug for AdditionalInstanceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalInstanceConfiguration");
-        formatter.field("systems_manager_agent", &self.systems_manager_agent);
-        formatter.field("user_data_override", &self.user_data_override);
-        formatter.finish()
     }
 }
 /// See [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
@@ -7240,7 +6812,7 @@ impl AdditionalInstanceConfiguration {
 
 /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemsManagerAgent {
     /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
     #[doc(hidden)]
@@ -7250,13 +6822,6 @@ impl SystemsManagerAgent {
     /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
     pub fn uninstall_after_build(&self) -> std::option::Option<bool> {
         self.uninstall_after_build
-    }
-}
-impl std::fmt::Debug for SystemsManagerAgent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemsManagerAgent");
-        formatter.field("uninstall_after_build", &self.uninstall_after_build);
-        formatter.finish()
     }
 }
 /// See [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
@@ -7295,7 +6860,7 @@ impl SystemsManagerAgent {
 
 /// <p>Defines block device mappings for the instance used to configure your image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceBlockDeviceMapping {
     /// <p>The device to which these mappings apply.</p>
     #[doc(hidden)]
@@ -7326,16 +6891,6 @@ impl InstanceBlockDeviceMapping {
     /// <p>Use to remove a mapping from the base image.</p>
     pub fn no_device(&self) -> std::option::Option<&str> {
         self.no_device.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceBlockDeviceMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceBlockDeviceMapping");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("ebs", &self.ebs);
-        formatter.field("virtual_name", &self.virtual_name);
-        formatter.field("no_device", &self.no_device);
-        formatter.finish()
     }
 }
 /// See [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
@@ -7413,7 +6968,7 @@ impl InstanceBlockDeviceMapping {
 
 /// <p>Amazon EBS-specific block device mapping specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Use to configure device encryption.</p>
     #[doc(hidden)]
@@ -7472,20 +7027,6 @@ impl EbsInstanceBlockDeviceSpecification {
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
     pub fn throughput(&self) -> std::option::Option<i32> {
         self.throughput
-    }
-}
-impl std::fmt::Debug for EbsInstanceBlockDeviceSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsInstanceBlockDeviceSpecification");
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("delete_on_termination", &self.delete_on_termination);
-        formatter.field("iops", &self.iops);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("throughput", &self.throughput);
-        formatter.finish()
     }
 }
 /// See [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
@@ -7726,7 +7267,7 @@ impl AsRef<str> for EbsVolumeType {
 
 /// <p> Configuration details of the component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
@@ -7743,14 +7284,6 @@ impl ComponentConfiguration {
     /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::ComponentParameter]> {
         self.parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentConfiguration");
-        formatter.field("component_arn", &self.component_arn);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`ComponentConfiguration`](crate::model::ComponentConfiguration).
@@ -7813,7 +7346,7 @@ impl ComponentConfiguration {
 
 /// <p>Contains a key/value pair that sets the named component parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
     #[doc(hidden)]
@@ -7830,14 +7363,6 @@ impl ComponentParameter {
     /// <p>Sets the value for the named component parameter.</p>
     pub fn value(&self) -> std::option::Option<&[std::string::String]> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentParameter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ComponentParameter`](crate::model::ComponentParameter).
@@ -7897,7 +7422,7 @@ impl ComponentParameter {
 
 /// <p>An Image Builder image. You must specify exactly one recipe for the image – either a container recipe (<code>containerRecipe</code>), which creates a container image, or an image recipe (<code>imageRecipe</code>), which creates an AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -8112,40 +7637,6 @@ impl Image {
     /// </ul>
     pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
         self.build_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Image {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Image");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("platform", &self.platform);
-        formatter.field(
-            "enhanced_image_metadata_enabled",
-            &self.enhanced_image_metadata_enabled,
-        );
-        formatter.field("os_version", &self.os_version);
-        formatter.field("state", &self.state);
-        formatter.field("image_recipe", &self.image_recipe);
-        formatter.field("container_recipe", &self.container_recipe);
-        formatter.field("source_pipeline_name", &self.source_pipeline_name);
-        formatter.field("source_pipeline_arn", &self.source_pipeline_arn);
-        formatter.field(
-            "infrastructure_configuration",
-            &self.infrastructure_configuration,
-        );
-        formatter.field(
-            "distribution_configuration",
-            &self.distribution_configuration,
-        );
-        formatter.field("image_tests_configuration", &self.image_tests_configuration);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("output_resources", &self.output_resources);
-        formatter.field("tags", &self.tags);
-        formatter.field("build_type", &self.build_type);
-        formatter.finish()
     }
 }
 /// See [`Image`](crate::model::Image).
@@ -8527,7 +8018,7 @@ impl Image {
 
 /// <p>A distribution configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     #[doc(hidden)]
@@ -8590,20 +8081,6 @@ impl DistributionConfiguration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for DistributionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionConfiguration");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("distributions", &self.distributions);
-        formatter.field("timeout_minutes", &self.timeout_minutes);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DistributionConfiguration`](crate::model::DistributionConfiguration).
@@ -8752,7 +8229,7 @@ impl DistributionConfiguration {
 
 /// <p>A container recipe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerRecipe {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -8940,29 +8417,6 @@ impl ContainerRecipe {
         &self,
     ) -> std::option::Option<&crate::model::TargetContainerRepository> {
         self.target_repository.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerRecipe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerRecipe");
-        formatter.field("arn", &self.arn);
-        formatter.field("container_type", &self.container_type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field("owner", &self.owner);
-        formatter.field("version", &self.version);
-        formatter.field("components", &self.components);
-        formatter.field("instance_configuration", &self.instance_configuration);
-        formatter.field("dockerfile_template_data", &self.dockerfile_template_data);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field("target_repository", &self.target_repository);
-        formatter.finish()
     }
 }
 /// See [`ContainerRecipe`](crate::model::ContainerRecipe).
@@ -9296,7 +8750,7 @@ impl ContainerRecipe {
 
 /// <p>Defines a custom base AMI and block device mapping configurations of an instance used for building and testing container images.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceConfiguration {
     /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
     #[doc(hidden)]
@@ -9316,14 +8770,6 @@ impl InstanceConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceConfiguration");
-        formatter.field("image", &self.image);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.finish()
     }
 }
 /// See [`InstanceConfiguration`](crate::model::InstanceConfiguration).
@@ -9387,7 +8833,7 @@ impl InstanceConfiguration {
 
 /// <p>A detailed view of a component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Component {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
@@ -9506,28 +8952,6 @@ impl Component {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Component {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Component");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field("change_description", &self.change_description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("platform", &self.platform);
-        formatter.field("supported_os_versions", &self.supported_os_versions);
-        formatter.field("state", &self.state);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("owner", &self.owner);
-        formatter.field("data", &self.data);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Component`](crate::model::Component).
@@ -9788,7 +9212,7 @@ impl Component {
 
 /// <p>Defines a parameter that is used to provide configuration details for the component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
     #[doc(hidden)]
@@ -9819,16 +9243,6 @@ impl ComponentParameterDetail {
     /// <p>Describes this parameter.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentParameterDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentParameterDetail");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).

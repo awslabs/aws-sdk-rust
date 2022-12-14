@@ -6428,7 +6428,7 @@ impl UpdateBackendStorageInput {
 
 /// <p>The request body for UpdateBackendStorage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendStorageInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6463,20 +6463,10 @@ impl UpdateBackendStorageInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBackendStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendStorageInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for GetBackendJob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendJobInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6516,21 +6506,10 @@ impl UpdateBackendJobInput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBackendJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendJobInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("operation", &self.operation);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for UpdateBackendConfig.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendConfigInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6549,18 +6528,10 @@ impl UpdateBackendConfigInput {
         self.login_auth_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBackendConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendConfigInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("login_auth_config", &self.login_auth_config);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for UpdateBackendAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6595,20 +6566,10 @@ impl UpdateBackendAuthInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for UpdateBackendAPI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendApiInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6641,20 +6602,10 @@ impl UpdateBackendApiInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBackendApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendApiInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveBackendConfigInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6666,17 +6617,10 @@ impl RemoveBackendConfigInput {
         self.app_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveBackendConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveBackendConfigInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for RemoveAllBackends.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveAllBackendsInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6695,18 +6639,10 @@ impl RemoveAllBackendsInput {
         self.clean_amplify_app
     }
 }
-impl std::fmt::Debug for RemoveAllBackendsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveAllBackendsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("clean_amplify_app", &self.clean_amplify_app);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for S3Buckets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListS3BucketsInput {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
@@ -6718,17 +6654,10 @@ impl ListS3BucketsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListS3BucketsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListS3BucketsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for ListBackendJobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackendJobsInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6782,23 +6711,10 @@ impl ListBackendJobsInput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for ListBackendJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackendJobsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("operation", &self.operation);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for ImportBackendStorage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportBackendStorageInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6831,20 +6747,10 @@ impl ImportBackendStorageInput {
         self.service_name.as_ref()
     }
 }
-impl std::fmt::Debug for ImportBackendStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportBackendStorageInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for ImportBackendAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportBackendAuthInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6891,22 +6797,10 @@ impl ImportBackendAuthInput {
         self.web_client_id.as_deref()
     }
 }
-impl std::fmt::Debug for ImportBackendAuthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportBackendAuthInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("native_client_id", &self.native_client_id);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("web_client_id", &self.web_client_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTokenInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6925,18 +6819,10 @@ impl GetTokenInput {
         self.session_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTokenInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for GetBackendStorage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendStorageInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -6962,19 +6848,10 @@ impl GetBackendStorageInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackendStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendStorageInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendJobInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7000,19 +6877,10 @@ impl GetBackendJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackendJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendJobInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for GetBackendAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendAuthInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7038,19 +6906,10 @@ impl GetBackendAuthInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackendAuthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendAuthInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for GetBackendAPIModels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendApiModelsInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7076,19 +6935,10 @@ impl GetBackendApiModelsInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackendApiModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendApiModelsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for GetBackendAPI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendApiInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7121,20 +6971,10 @@ impl GetBackendApiInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackendApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendApiInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for GetBackend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7153,18 +6993,10 @@ impl GetBackendInput {
         self.backend_environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBackendInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for GenerateBackendAPIModels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateBackendApiModelsInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7190,19 +7022,10 @@ impl GenerateBackendApiModelsInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateBackendApiModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateBackendApiModelsInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTokenInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7221,18 +7044,10 @@ impl DeleteTokenInput {
         self.session_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTokenInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for DeleteBackendStorage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackendStorageInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7265,20 +7080,10 @@ impl DeleteBackendStorageInput {
         self.service_name.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteBackendStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackendStorageInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for DeleteBackendAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackendAuthInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7304,19 +7109,10 @@ impl DeleteBackendAuthInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackendAuthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackendAuthInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for DeleteBackendAPI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackendApiInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7349,20 +7145,10 @@ impl DeleteBackendApiInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackendApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackendApiInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackendInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7381,18 +7167,10 @@ impl DeleteBackendInput {
         self.backend_environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackendInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackendInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTokenInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7404,17 +7182,10 @@ impl CreateTokenInput {
         self.app_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTokenInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for CreateBackendStorage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendStorageInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7449,20 +7220,10 @@ impl CreateBackendStorageInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackendStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendStorageInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for CreateBackendConfig.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendConfigInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7481,18 +7242,10 @@ impl CreateBackendConfigInput {
         self.backend_manager_app_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackendConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendConfigInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_manager_app_id", &self.backend_manager_app_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for CreateBackendAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7527,20 +7280,10 @@ impl CreateBackendAuthInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackendAuthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for CreateBackendAPI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendApiInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7573,20 +7316,10 @@ impl CreateBackendApiInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackendApiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendApiInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for CreateBackend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7626,21 +7359,10 @@ impl CreateBackendInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackendInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("app_name", &self.app_name);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("resource_config", &self.resource_config);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The request body for CloneBackend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloneBackendInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -7664,14 +7386,5 @@ impl CloneBackendInput {
     /// <p>The name of the destination backend environment to be created.</p>
     pub fn target_environment_name(&self) -> std::option::Option<&str> {
         self.target_environment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CloneBackendInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloneBackendInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("target_environment_name", &self.target_environment_name);
-        formatter.finish()
     }
 }

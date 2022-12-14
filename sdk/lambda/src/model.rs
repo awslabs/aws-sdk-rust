@@ -129,7 +129,7 @@ impl AsRef<str> for ThrottleReason {
 
 /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your Lambda function URL. Use CORS to grant access to your function URL from any origin. You can also use CORS to control access for specific HTTP headers and methods in requests to your function URL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cors {
     /// <p>Whether to allow cookies or other credentials in requests to your function URL. The default is <code>false</code>.</p>
     #[doc(hidden)]
@@ -176,18 +176,6 @@ impl Cors {
     /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
     pub fn max_age(&self) -> std::option::Option<i32> {
         self.max_age
-    }
-}
-impl std::fmt::Debug for Cors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cors");
-        formatter.field("allow_credentials", &self.allow_credentials);
-        formatter.field("allow_headers", &self.allow_headers);
-        formatter.field("allow_methods", &self.allow_methods);
-        formatter.field("allow_origins", &self.allow_origins);
-        formatter.field("expose_headers", &self.expose_headers);
-        formatter.field("max_age", &self.max_age);
-        formatter.finish()
     }
 }
 /// See [`Cors`](crate::model::Cors).
@@ -416,7 +404,7 @@ impl AsRef<str> for FunctionUrlAuthType {
 
 /// <p>A configuration object that specifies the destination of an event after Lambda processes it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationConfig {
     /// <p>The destination configuration for successful invocations.</p>
     #[doc(hidden)]
@@ -433,14 +421,6 @@ impl DestinationConfig {
     /// <p>The destination configuration for failed invocations.</p>
     pub fn on_failure(&self) -> std::option::Option<&crate::model::OnFailure> {
         self.on_failure.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfig");
-        formatter.field("on_success", &self.on_success);
-        formatter.field("on_failure", &self.on_failure);
-        formatter.finish()
     }
 }
 /// See [`DestinationConfig`](crate::model::DestinationConfig).
@@ -497,7 +477,7 @@ impl DestinationConfig {
 
 /// <p>A destination for events that failed processing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnFailure {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     #[doc(hidden)]
@@ -507,13 +487,6 @@ impl OnFailure {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
-    }
-}
-impl std::fmt::Debug for OnFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnFailure");
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`OnFailure`](crate::model::OnFailure).
@@ -552,7 +525,7 @@ impl OnFailure {
 
 /// <p>A destination for events that were processed successfully.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnSuccess {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     #[doc(hidden)]
@@ -562,13 +535,6 @@ impl OnSuccess {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
-    }
-}
-impl std::fmt::Debug for OnSuccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnSuccess");
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`OnSuccess`](crate::model::OnSuccess).
@@ -607,7 +573,7 @@ impl OnSuccess {
 
 /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EphemeralStorage {
     /// <p>The size of the function’s /tmp directory.</p>
     #[doc(hidden)]
@@ -617,13 +583,6 @@ impl EphemeralStorage {
     /// <p>The size of the function’s /tmp directory.</p>
     pub fn size(&self) -> std::option::Option<i32> {
         self.size
-    }
-}
-impl std::fmt::Debug for EphemeralStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EphemeralStorage");
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`EphemeralStorage`](crate::model::EphemeralStorage).
@@ -750,7 +709,7 @@ impl AsRef<str> for Architecture {
 
 /// <p>Response to GetFunctionConfiguration request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageConfigResponse {
     /// <p>Configuration values that override the container image Dockerfile.</p>
     #[doc(hidden)]
@@ -767,14 +726,6 @@ impl ImageConfigResponse {
     /// <p>Error response to GetFunctionConfiguration.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ImageConfigError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageConfigResponse");
-        formatter.field("image_config", &self.image_config);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`ImageConfigResponse`](crate::model::ImageConfigResponse).
@@ -862,7 +813,7 @@ impl std::fmt::Debug for ImageConfigError {
 pub mod image_config_error {
 
     /// A builder for [`ImageConfigError`](crate::model::ImageConfigError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -896,6 +847,14 @@ pub mod image_config_error {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error_code", &self.error_code);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ImageConfigError {
     /// Creates a new builder-style object to manufacture [`ImageConfigError`](crate::model::ImageConfigError).
@@ -906,7 +865,7 @@ impl ImageConfigError {
 
 /// <p>Configuration values that override the container image Dockerfile settings. See <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container settings</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageConfig {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
     #[doc(hidden)]
@@ -930,15 +889,6 @@ impl ImageConfig {
     /// <p>Specifies the working directory.</p>
     pub fn working_directory(&self) -> std::option::Option<&str> {
         self.working_directory.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageConfig");
-        formatter.field("entry_point", &self.entry_point);
-        formatter.field("command", &self.command);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.finish()
     }
 }
 /// See [`ImageConfig`](crate::model::ImageConfig).
@@ -1112,7 +1062,7 @@ impl AsRef<str> for PackageType {
 
 /// <p>Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
     #[doc(hidden)]
@@ -1129,14 +1079,6 @@ impl FileSystemConfig {
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
     pub fn local_mount_path(&self) -> std::option::Option<&str> {
         self.local_mount_path.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemConfig");
-        formatter.field("arn", &self.arn);
-        formatter.field("local_mount_path", &self.local_mount_path);
-        formatter.finish()
     }
 }
 /// See [`FileSystemConfig`](crate::model::FileSystemConfig).
@@ -1691,7 +1633,7 @@ impl AsRef<str> for State {
 
 /// <p>An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Layer {
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
     #[doc(hidden)]
@@ -1722,19 +1664,6 @@ impl Layer {
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Layer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Layer");
-        formatter.field("arn", &self.arn);
-        formatter.field("code_size", &self.code_size);
-        formatter.field(
-            "signing_profile_version_arn",
-            &self.signing_profile_version_arn,
-        );
-        formatter.field("signing_job_arn", &self.signing_job_arn);
-        formatter.finish()
     }
 }
 /// See [`Layer`](crate::model::Layer).
@@ -1818,7 +1747,7 @@ impl Layer {
 
 /// <p>The function's X-Ray tracing configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TracingConfigResponse {
     /// <p>The tracing mode.</p>
     #[doc(hidden)]
@@ -1828,13 +1757,6 @@ impl TracingConfigResponse {
     /// <p>The tracing mode.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::TracingMode> {
         self.mode.as_ref()
-    }
-}
-impl std::fmt::Debug for TracingConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TracingConfigResponse");
-        formatter.field("mode", &self.mode);
-        formatter.finish()
     }
 }
 /// See [`TracingConfigResponse`](crate::model::TracingConfigResponse).
@@ -1996,7 +1918,7 @@ impl std::fmt::Debug for EnvironmentResponse {
 pub mod environment_response {
 
     /// A builder for [`EnvironmentResponse`](crate::model::EnvironmentResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2050,6 +1972,14 @@ pub mod environment_response {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("variables", &"*** Sensitive Data Redacted ***");
+            formatter.field("error", &self.error);
+            formatter.finish()
+        }
+    }
 }
 impl EnvironmentResponse {
     /// Creates a new builder-style object to manufacture [`EnvironmentResponse`](crate::model::EnvironmentResponse).
@@ -2091,7 +2021,7 @@ impl std::fmt::Debug for EnvironmentError {
 pub mod environment_error {
 
     /// A builder for [`EnvironmentError`](crate::model::EnvironmentError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2125,6 +2055,14 @@ pub mod environment_error {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error_code", &self.error_code);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl EnvironmentError {
     /// Creates a new builder-style object to manufacture [`EnvironmentError`](crate::model::EnvironmentError).
@@ -2135,7 +2073,7 @@ impl EnvironmentError {
 
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeadLetterConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
     #[doc(hidden)]
@@ -2145,13 +2083,6 @@ impl DeadLetterConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeadLetterConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeadLetterConfig");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.finish()
     }
 }
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
@@ -2190,7 +2121,7 @@ impl DeadLetterConfig {
 
 /// <p>The VPC security groups and subnets that are attached to a Lambda function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigResponse {
     /// <p>A list of VPC subnet IDs.</p>
     #[doc(hidden)]
@@ -2214,15 +2145,6 @@ impl VpcConfigResponse {
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigResponse");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse).
@@ -2546,7 +2468,7 @@ impl AsRef<str> for Runtime {
 
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a> tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TracingConfig {
     /// <p>The tracing mode.</p>
     #[doc(hidden)]
@@ -2556,13 +2478,6 @@ impl TracingConfig {
     /// <p>The tracing mode.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::TracingMode> {
         self.mode.as_ref()
-    }
-}
-impl std::fmt::Debug for TracingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TracingConfig");
-        formatter.field("mode", &self.mode);
-        formatter.finish()
     }
 }
 /// See [`TracingConfig`](crate::model::TracingConfig).
@@ -2626,7 +2541,7 @@ impl std::fmt::Debug for Environment {
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2665,6 +2580,13 @@ pub mod environment {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("variables", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Environment {
     /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
@@ -2675,7 +2597,7 @@ impl Environment {
 
 /// <p>The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>A list of VPC subnet IDs.</p>
     #[doc(hidden)]
@@ -2692,14 +2614,6 @@ impl VpcConfig {
     /// <p>A list of VPC security groups IDs.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
@@ -2768,7 +2682,7 @@ impl VpcConfig {
 
 /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelfManagedKafkaEventSourceConfig {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
     #[doc(hidden)]
@@ -2778,13 +2692,6 @@ impl SelfManagedKafkaEventSourceConfig {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
     pub fn consumer_group_id(&self) -> std::option::Option<&str> {
         self.consumer_group_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SelfManagedKafkaEventSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelfManagedKafkaEventSourceConfig");
-        formatter.field("consumer_group_id", &self.consumer_group_id);
-        formatter.finish()
     }
 }
 /// See [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
@@ -2826,7 +2733,7 @@ impl SelfManagedKafkaEventSourceConfig {
 
 /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonManagedKafkaEventSourceConfig {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
     #[doc(hidden)]
@@ -2836,13 +2743,6 @@ impl AmazonManagedKafkaEventSourceConfig {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
     pub fn consumer_group_id(&self) -> std::option::Option<&str> {
         self.consumer_group_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AmazonManagedKafkaEventSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonManagedKafkaEventSourceConfig");
-        formatter.field("consumer_group_id", &self.consumer_group_id);
-        formatter.finish()
     }
 }
 /// See [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
@@ -2971,7 +2871,7 @@ impl AsRef<str> for FunctionResponseType {
 
 /// <p>The self-managed Apache Kafka cluster for your event source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelfManagedEventSource {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
     #[doc(hidden)]
@@ -2987,13 +2887,6 @@ impl SelfManagedEventSource {
         &std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>,
     > {
         self.endpoints.as_ref()
-    }
-}
-impl std::fmt::Debug for SelfManagedEventSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelfManagedEventSource");
-        formatter.field("endpoints", &self.endpoints);
-        formatter.finish()
     }
 }
 /// See [`SelfManagedEventSource`](crate::model::SelfManagedEventSource).
@@ -3140,7 +3033,7 @@ impl AsRef<str> for EndPointType {
 
 /// <p>To secure and define access to your event source, you can specify the authentication protocol, VPC components, or virtual host.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceAccessConfiguration {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
@@ -3179,14 +3072,6 @@ impl SourceAccessConfiguration {
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceAccessConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceAccessConfiguration");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("uri", &self.uri);
-        formatter.finish()
     }
 }
 /// See [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration).
@@ -3391,7 +3276,7 @@ impl AsRef<str> for SourceAccessType {
 
 /// <p> An object that contains the filters for an event source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterCriteria {
     /// <p> A list of filters. </p>
     #[doc(hidden)]
@@ -3401,13 +3286,6 @@ impl FilterCriteria {
     /// <p> A list of filters. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterCriteria");
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 /// See [`FilterCriteria`](crate::model::FilterCriteria).
@@ -3455,7 +3333,7 @@ impl FilterCriteria {
 
 /// <p> A structure within a <code>FilterCriteria</code> object that defines an event filtering pattern. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
     #[doc(hidden)]
@@ -3465,13 +3343,6 @@ impl Filter {
     /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("pattern", &self.pattern);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -3607,7 +3478,7 @@ impl AsRef<str> for EventSourcePosition {
 
 /// <p>Details about a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Code signing configuration</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeSigningConfig {
     /// <p>Unique identifer for the Code signing configuration.</p>
     #[doc(hidden)]
@@ -3652,18 +3523,6 @@ impl CodeSigningConfig {
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
     pub fn last_modified(&self) -> std::option::Option<&str> {
         self.last_modified.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeSigningConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeSigningConfig");
-        formatter.field("code_signing_config_id", &self.code_signing_config_id);
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("description", &self.description);
-        formatter.field("allowed_publishers", &self.allowed_publishers);
-        formatter.field("code_signing_policies", &self.code_signing_policies);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.finish()
     }
 }
 /// See [`CodeSigningConfig`](crate::model::CodeSigningConfig).
@@ -3777,7 +3636,7 @@ impl CodeSigningConfig {
 
 /// <p>Code signing configuration <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html#config-codesigning-policies">policies</a> specify the validation failure action for signature mismatch or expiry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeSigningPolicies {
     /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
     /// <p>Default value: <code>Warn</code> </p>
@@ -3791,16 +3650,6 @@ impl CodeSigningPolicies {
         &self,
     ) -> std::option::Option<&crate::model::CodeSigningPolicy> {
         self.untrusted_artifact_on_deployment.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeSigningPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeSigningPolicies");
-        formatter.field(
-            "untrusted_artifact_on_deployment",
-            &self.untrusted_artifact_on_deployment,
-        );
-        formatter.finish()
     }
 }
 /// See [`CodeSigningPolicies`](crate::model::CodeSigningPolicies).
@@ -3940,7 +3789,7 @@ impl AsRef<str> for CodeSigningPolicy {
 
 /// <p>List of signing profiles that can sign a code package. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowedPublishers {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
     #[doc(hidden)]
@@ -3950,16 +3799,6 @@ impl AllowedPublishers {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
     pub fn signing_profile_version_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.signing_profile_version_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for AllowedPublishers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowedPublishers");
-        formatter.field(
-            "signing_profile_version_arns",
-            &self.signing_profile_version_arns,
-        );
-        formatter.finish()
     }
 }
 /// See [`AllowedPublishers`](crate::model::AllowedPublishers).
@@ -4011,7 +3850,7 @@ impl AllowedPublishers {
 
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AliasRoutingConfiguration {
     /// <p>The second version, and the percentage of traffic that's routed to it.</p>
     #[doc(hidden)]
@@ -4024,16 +3863,6 @@ impl AliasRoutingConfiguration {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
         self.additional_version_weights.as_ref()
-    }
-}
-impl std::fmt::Debug for AliasRoutingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AliasRoutingConfiguration");
-        formatter.field(
-            "additional_version_weights",
-            &self.additional_version_weights,
-        );
-        formatter.finish()
     }
 }
 /// See [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration).
@@ -4183,7 +4012,7 @@ impl AsRef<str> for ProvisionedConcurrencyStatusEnum {
 
 /// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LayerVersionContentOutput {
     /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
     #[doc(hidden)]
@@ -4221,20 +4050,6 @@ impl LayerVersionContentOutput {
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LayerVersionContentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LayerVersionContentOutput");
-        formatter.field("location", &self.location);
-        formatter.field("code_sha256", &self.code_sha256);
-        formatter.field("code_size", &self.code_size);
-        formatter.field(
-            "signing_profile_version_arn",
-            &self.signing_profile_version_arn,
-        );
-        formatter.field("signing_job_arn", &self.signing_job_arn);
-        formatter.finish()
     }
 }
 /// See [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput).
@@ -4377,7 +4192,7 @@ impl std::fmt::Debug for LayerVersionContentInput {
 pub mod layer_version_content_input {
 
     /// A builder for [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_key: std::option::Option<std::string::String>,
@@ -4438,6 +4253,16 @@ pub mod layer_version_content_input {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("s3_bucket", &self.s3_bucket);
+            formatter.field("s3_key", &self.s3_key);
+            formatter.field("s3_object_version", &self.s3_object_version);
+            formatter.field("zip_file", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl LayerVersionContentInput {
     /// Creates a new builder-style object to manufacture [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
@@ -4448,7 +4273,7 @@ impl LayerVersionContentInput {
 
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionConfiguration {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
@@ -4685,51 +4510,6 @@ impl FunctionConfiguration {
     /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionConfiguration");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("runtime", &self.runtime);
-        formatter.field("role", &self.role);
-        formatter.field("handler", &self.handler);
-        formatter.field("code_size", &self.code_size);
-        formatter.field("description", &self.description);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("memory_size", &self.memory_size);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("code_sha256", &self.code_sha256);
-        formatter.field("version", &self.version);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("dead_letter_config", &self.dead_letter_config);
-        formatter.field("environment", &self.environment);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("tracing_config", &self.tracing_config);
-        formatter.field("master_arn", &self.master_arn);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("layers", &self.layers);
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("state_reason_code", &self.state_reason_code);
-        formatter.field("last_update_status", &self.last_update_status);
-        formatter.field("last_update_status_reason", &self.last_update_status_reason);
-        formatter.field(
-            "last_update_status_reason_code",
-            &self.last_update_status_reason_code,
-        );
-        formatter.field("file_system_configs", &self.file_system_configs);
-        formatter.field("package_type", &self.package_type);
-        formatter.field("image_config_response", &self.image_config_response);
-        formatter.field(
-            "signing_profile_version_arn",
-            &self.signing_profile_version_arn,
-        );
-        formatter.field("signing_job_arn", &self.signing_job_arn);
-        formatter.field("architectures", &self.architectures);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.finish()
     }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -5232,7 +5012,7 @@ impl FunctionConfiguration {
 
 /// <p>Details about the provisioned concurrency configuration for a function alias or version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedConcurrencyConfigListItem {
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
     #[doc(hidden)]
@@ -5284,28 +5064,6 @@ impl ProvisionedConcurrencyConfigListItem {
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
     pub fn last_modified(&self) -> std::option::Option<&str> {
         self.last_modified.as_deref()
-    }
-}
-impl std::fmt::Debug for ProvisionedConcurrencyConfigListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedConcurrencyConfigListItem");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field(
-            "requested_provisioned_concurrent_executions",
-            &self.requested_provisioned_concurrent_executions,
-        );
-        formatter.field(
-            "available_provisioned_concurrent_executions",
-            &self.available_provisioned_concurrent_executions,
-        );
-        formatter.field(
-            "allocated_provisioned_concurrent_executions",
-            &self.allocated_provisioned_concurrent_executions,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.finish()
     }
 }
 /// See [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem).
@@ -5437,7 +5195,7 @@ impl ProvisionedConcurrencyConfigListItem {
 
 /// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LayerVersionsListItem {
     /// <p>The ARN of the layer version.</p>
     #[doc(hidden)]
@@ -5489,19 +5247,6 @@ impl LayerVersionsListItem {
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
-    }
-}
-impl std::fmt::Debug for LayerVersionsListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LayerVersionsListItem");
-        formatter.field("layer_version_arn", &self.layer_version_arn);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("compatible_runtimes", &self.compatible_runtimes);
-        formatter.field("license_info", &self.license_info);
-        formatter.field("compatible_architectures", &self.compatible_architectures);
-        formatter.finish()
     }
 }
 /// See [`LayerVersionsListItem`](crate::model::LayerVersionsListItem).
@@ -5634,7 +5379,7 @@ impl LayerVersionsListItem {
 
 /// <p>Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LayersListItem {
     /// <p>The name of the layer.</p>
     #[doc(hidden)]
@@ -5660,15 +5405,6 @@ impl LayersListItem {
         &self,
     ) -> std::option::Option<&crate::model::LayerVersionsListItem> {
         self.latest_matching_version.as_ref()
-    }
-}
-impl std::fmt::Debug for LayersListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LayersListItem");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("layer_arn", &self.layer_arn);
-        formatter.field("latest_matching_version", &self.latest_matching_version);
-        formatter.finish()
     }
 }
 /// See [`LayersListItem`](crate::model::LayersListItem).
@@ -5738,7 +5474,7 @@ impl LayersListItem {
 
 /// <p>Details about a Lambda function URL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionUrlConfig {
     /// <p>The HTTP URL endpoint for your function.</p>
     #[doc(hidden)]
@@ -5783,18 +5519,6 @@ impl FunctionUrlConfig {
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
     pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
         self.auth_type.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionUrlConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionUrlConfig");
-        formatter.field("function_url", &self.function_url);
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("cors", &self.cors);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.finish()
     }
 }
 /// See [`FunctionUrlConfig`](crate::model::FunctionUrlConfig).
@@ -5987,7 +5711,7 @@ impl AsRef<str> for FunctionVersion {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionEventInvokeConfig {
     /// <p>The date and time that the configuration was last updated.</p>
     #[doc(hidden)]
@@ -6039,20 +5763,6 @@ impl FunctionEventInvokeConfig {
     /// </ul>
     pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
         self.destination_config.as_ref()
-    }
-}
-impl std::fmt::Debug for FunctionEventInvokeConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionEventInvokeConfig");
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "maximum_event_age_in_seconds",
-            &self.maximum_event_age_in_seconds,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.finish()
     }
 }
 /// See [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig).
@@ -6159,7 +5869,7 @@ impl FunctionEventInvokeConfig {
 
 /// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSourceMappingConfiguration {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
@@ -6359,61 +6069,6 @@ impl EventSourceMappingConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
-    }
-}
-impl std::fmt::Debug for EventSourceMappingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSourceMappingConfiguration");
-        formatter.field("uuid", &self.uuid);
-        formatter.field("starting_position", &self.starting_position);
-        formatter.field(
-            "starting_position_timestamp",
-            &self.starting_position_timestamp,
-        );
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
-        formatter.field("parallelization_factor", &self.parallelization_factor);
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("last_processing_result", &self.last_processing_result);
-        formatter.field("state", &self.state);
-        formatter.field("state_transition_reason", &self.state_transition_reason);
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field("topics", &self.topics);
-        formatter.field("queues", &self.queues);
-        formatter.field(
-            "source_access_configurations",
-            &self.source_access_configurations,
-        );
-        formatter.field("self_managed_event_source", &self.self_managed_event_source);
-        formatter.field(
-            "maximum_record_age_in_seconds",
-            &self.maximum_record_age_in_seconds,
-        );
-        formatter.field(
-            "bisect_batch_on_function_error",
-            &self.bisect_batch_on_function_error,
-        );
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "tumbling_window_in_seconds",
-            &self.tumbling_window_in_seconds,
-        );
-        formatter.field("function_response_types", &self.function_response_types);
-        formatter.field(
-            "amazon_managed_kafka_event_source_config",
-            &self.amazon_managed_kafka_event_source_config,
-        );
-        formatter.field(
-            "self_managed_kafka_event_source_config",
-            &self.self_managed_kafka_event_source_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
@@ -6847,7 +6502,7 @@ impl EventSourceMappingConfiguration {
 
 /// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AliasConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     #[doc(hidden)]
@@ -6892,18 +6547,6 @@ impl AliasConfiguration {
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AliasConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AliasConfiguration");
-        formatter.field("alias_arn", &self.alias_arn);
-        formatter.field("name", &self.name);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("description", &self.description);
-        formatter.field("routing_config", &self.routing_config);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`AliasConfiguration`](crate::model::AliasConfiguration).
@@ -7193,7 +6836,7 @@ impl AsRef<str> for InvocationType {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Concurrency {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
     #[doc(hidden)]
@@ -7203,16 +6846,6 @@ impl Concurrency {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
     pub fn reserved_concurrent_executions(&self) -> std::option::Option<i32> {
         self.reserved_concurrent_executions
-    }
-}
-impl std::fmt::Debug for Concurrency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Concurrency");
-        formatter.field(
-            "reserved_concurrent_executions",
-            &self.reserved_concurrent_executions,
-        );
-        formatter.finish()
     }
 }
 /// See [`Concurrency`](crate::model::Concurrency).
@@ -7254,7 +6887,7 @@ impl Concurrency {
 
 /// <p>Details about a function's deployment package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionCodeLocation {
     /// <p>The service that's hosting the file.</p>
     #[doc(hidden)]
@@ -7285,16 +6918,6 @@ impl FunctionCodeLocation {
     /// <p>The resolved URI for the image.</p>
     pub fn resolved_image_uri(&self) -> std::option::Option<&str> {
         self.resolved_image_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for FunctionCodeLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionCodeLocation");
-        formatter.field("repository_type", &self.repository_type);
-        formatter.field("location", &self.location);
-        formatter.field("image_uri", &self.image_uri);
-        formatter.field("resolved_image_uri", &self.resolved_image_uri);
-        formatter.finish()
     }
 }
 /// See [`FunctionCodeLocation`](crate::model::FunctionCodeLocation).
@@ -7375,7 +6998,7 @@ impl FunctionCodeLocation {
 
 /// <p>The number of functions and amount of storage in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountUsage {
     /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
     #[doc(hidden)]
@@ -7392,14 +7015,6 @@ impl AccountUsage {
     /// <p>The number of Lambda functions.</p>
     pub fn function_count(&self) -> i64 {
         self.function_count
-    }
-}
-impl std::fmt::Debug for AccountUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountUsage");
-        formatter.field("total_code_size", &self.total_code_size);
-        formatter.field("function_count", &self.function_count);
-        formatter.finish()
     }
 }
 /// See [`AccountUsage`](crate::model::AccountUsage).
@@ -7450,7 +7065,7 @@ impl AccountUsage {
 
 /// <p>Limits that are related to concurrency and storage. All file and storage sizes are in bytes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
     #[doc(hidden)]
@@ -7488,20 +7103,6 @@ impl AccountLimit {
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
     pub fn unreserved_concurrent_executions(&self) -> std::option::Option<i32> {
         self.unreserved_concurrent_executions
-    }
-}
-impl std::fmt::Debug for AccountLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountLimit");
-        formatter.field("total_code_size", &self.total_code_size);
-        formatter.field("code_size_unzipped", &self.code_size_unzipped);
-        formatter.field("code_size_zipped", &self.code_size_zipped);
-        formatter.field("concurrent_executions", &self.concurrent_executions);
-        formatter.field(
-            "unreserved_concurrent_executions",
-            &self.unreserved_concurrent_executions,
-        );
-        formatter.finish()
     }
 }
 /// See [`AccountLimit`](crate::model::AccountLimit).
@@ -7646,7 +7247,7 @@ impl std::fmt::Debug for FunctionCode {
 pub mod function_code {
 
     /// A builder for [`FunctionCode`](crate::model::FunctionCode).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) zip_file: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -7717,6 +7318,17 @@ pub mod function_code {
                 s3_object_version: self.s3_object_version,
                 image_uri: self.image_uri,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("zip_file", &"*** Sensitive Data Redacted ***");
+            formatter.field("s3_bucket", &self.s3_bucket);
+            formatter.field("s3_key", &self.s3_key);
+            formatter.field("s3_object_version", &self.s3_object_version);
+            formatter.field("image_uri", &self.image_uri);
+            formatter.finish()
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /// The settings for the source of the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
@@ -106,32 +106,6 @@ impl Source {
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
         self.whitelist_cidr.as_deref()
-    }
-}
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field(
-            "data_transfer_subscriber_fee_percent",
-            &self.data_transfer_subscriber_fee_percent,
-        );
-        formatter.field("decryption", &self.decryption);
-        formatter.field("description", &self.description);
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("ingest_ip", &self.ingest_ip);
-        formatter.field("ingest_port", &self.ingest_port);
-        formatter.field(
-            "media_stream_source_configurations",
-            &self.media_stream_source_configurations,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("sender_control_port", &self.sender_control_port);
-        formatter.field("sender_ip_address", &self.sender_ip_address);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("transport", &self.transport);
-        formatter.field("vpc_interface_name", &self.vpc_interface_name);
-        formatter.field("whitelist_cidr", &self.whitelist_cidr);
-        formatter.finish()
     }
 }
 /// See [`Source`](crate::model::Source).
@@ -362,7 +336,7 @@ impl Source {
 
 /// Attributes related to the transport stream that are used in a source or output.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transport {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     #[doc(hidden)]
@@ -456,25 +430,6 @@ impl Transport {
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Transport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Transport");
-        formatter.field("cidr_allow_list", &self.cidr_allow_list);
-        formatter.field("max_bitrate", &self.max_bitrate);
-        formatter.field("max_latency", &self.max_latency);
-        formatter.field("max_sync_buffer", &self.max_sync_buffer);
-        formatter.field("min_latency", &self.min_latency);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("remote_id", &self.remote_id);
-        formatter.field("sender_control_port", &self.sender_control_port);
-        formatter.field("sender_ip_address", &self.sender_ip_address);
-        formatter.field("smoothing_latency", &self.smoothing_latency);
-        formatter.field("source_listener_address", &self.source_listener_address);
-        formatter.field("source_listener_port", &self.source_listener_port);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
     }
 }
 /// See [`Transport`](crate::model::Transport).
@@ -813,7 +768,7 @@ impl AsRef<str> for Protocol {
 
 /// The media stream that is associated with the source, and the parameters for that association.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaStreamSourceConfiguration {
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
     #[doc(hidden)]
@@ -837,15 +792,6 @@ impl MediaStreamSourceConfiguration {
     /// The name of the media stream.
     pub fn media_stream_name(&self) -> std::option::Option<&str> {
         self.media_stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaStreamSourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamSourceConfiguration");
-        formatter.field("encoding_name", &self.encoding_name);
-        formatter.field("input_configurations", &self.input_configurations);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.finish()
     }
 }
 /// See [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
@@ -924,7 +870,7 @@ impl MediaStreamSourceConfiguration {
 
 /// The transport parameters that are associated with an incoming media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputConfiguration {
     /// The IP address that the flow listens on for incoming content for a media stream.
     #[doc(hidden)]
@@ -948,15 +894,6 @@ impl InputConfiguration {
     /// The VPC interface where the media stream comes in from.
     pub fn interface(&self) -> std::option::Option<&crate::model::Interface> {
         self.interface.as_ref()
-    }
-}
-impl std::fmt::Debug for InputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputConfiguration");
-        formatter.field("input_ip", &self.input_ip);
-        formatter.field("input_port", &self.input_port);
-        formatter.field("interface", &self.interface);
-        formatter.finish()
     }
 }
 /// See [`InputConfiguration`](crate::model::InputConfiguration).
@@ -1022,7 +959,7 @@ impl InputConfiguration {
 
 /// The VPC interface that is used for the media stream associated with the source or output.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Interface {
     /// The name of the VPC interface.
     #[doc(hidden)]
@@ -1032,13 +969,6 @@ impl Interface {
     /// The name of the VPC interface.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Interface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Interface");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Interface`](crate::model::Interface).
@@ -1175,7 +1105,7 @@ impl AsRef<str> for EncodingName {
 
 /// Information about the encryption of the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Encryption {
     /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
     #[doc(hidden)]
@@ -1241,24 +1171,6 @@ impl Encryption {
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for Encryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Encryption");
-        formatter.field("algorithm", &self.algorithm);
-        formatter.field(
-            "constant_initialization_vector",
-            &self.constant_initialization_vector,
-        );
-        formatter.field("device_id", &self.device_id);
-        formatter.field("key_type", &self.key_type);
-        formatter.field("region", &self.region);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`Encryption`](crate::model::Encryption).
@@ -1592,7 +1504,7 @@ impl AsRef<str> for Algorithm {
 
 /// The definition of a media stream that you want to associate with the source.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaStreamSourceConfigurationRequest {
     /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
     #[doc(hidden)]
@@ -1619,15 +1531,6 @@ impl MediaStreamSourceConfigurationRequest {
     /// The name of the media stream.
     pub fn media_stream_name(&self) -> std::option::Option<&str> {
         self.media_stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaStreamSourceConfigurationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamSourceConfigurationRequest");
-        formatter.field("encoding_name", &self.encoding_name);
-        formatter.field("input_configurations", &self.input_configurations);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.finish()
     }
 }
 /// See [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
@@ -1709,7 +1612,7 @@ impl MediaStreamSourceConfigurationRequest {
 
 /// The transport parameters that you want to associate with an incoming media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputConfigurationRequest {
     /// The port that you want the flow to listen on for an incoming media stream.
     #[doc(hidden)]
@@ -1726,14 +1629,6 @@ impl InputConfigurationRequest {
     /// The VPC interface that you want to use for the incoming media stream.
     pub fn interface(&self) -> std::option::Option<&crate::model::InterfaceRequest> {
         self.interface.as_ref()
-    }
-}
-impl std::fmt::Debug for InputConfigurationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputConfigurationRequest");
-        formatter.field("input_port", &self.input_port);
-        formatter.field("interface", &self.interface);
-        formatter.finish()
     }
 }
 /// See [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
@@ -1787,7 +1682,7 @@ impl InputConfigurationRequest {
 
 /// The VPC interface that you want to designate where the media stream is coming from or going to.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InterfaceRequest {
     /// The name of the VPC interface.
     #[doc(hidden)]
@@ -1797,13 +1692,6 @@ impl InterfaceRequest {
     /// The name of the VPC interface.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for InterfaceRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InterfaceRequest");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`InterfaceRequest`](crate::model::InterfaceRequest).
@@ -1840,7 +1728,7 @@ impl InterfaceRequest {
 
 /// Information about the encryption of the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEncryption {
     /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
     #[doc(hidden)]
@@ -1906,24 +1794,6 @@ impl UpdateEncryption {
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEncryption");
-        formatter.field("algorithm", &self.algorithm);
-        formatter.field(
-            "constant_initialization_vector",
-            &self.constant_initialization_vector,
-        );
-        formatter.field("device_id", &self.device_id);
-        formatter.field("key_type", &self.key_type);
-        formatter.field("region", &self.region);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`UpdateEncryption`](crate::model::UpdateEncryption).
@@ -2067,7 +1937,7 @@ impl UpdateEncryption {
 
 /// The settings for an output.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Output {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
@@ -2166,31 +2036,6 @@ impl Output {
         &self,
     ) -> std::option::Option<&crate::model::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
-    }
-}
-impl std::fmt::Debug for Output {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Output");
-        formatter.field(
-            "data_transfer_subscriber_fee_percent",
-            &self.data_transfer_subscriber_fee_percent,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("destination", &self.destination);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("listener_address", &self.listener_address);
-        formatter.field("media_live_input_arn", &self.media_live_input_arn);
-        formatter.field(
-            "media_stream_output_configurations",
-            &self.media_stream_output_configurations,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("output_arn", &self.output_arn);
-        formatter.field("port", &self.port);
-        formatter.field("transport", &self.transport);
-        formatter.field("vpc_interface_attachment", &self.vpc_interface_attachment);
-        formatter.finish()
     }
 }
 /// See [`Output`](crate::model::Output).
@@ -2413,7 +2258,7 @@ impl Output {
 
 /// The settings for attaching a VPC interface to an output.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this output.
     #[doc(hidden)]
@@ -2423,13 +2268,6 @@ impl VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this output.
     pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
         self.vpc_interface_name.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcInterfaceAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcInterfaceAttachment");
-        formatter.field("vpc_interface_name", &self.vpc_interface_name);
-        formatter.finish()
     }
 }
 /// See [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
@@ -2471,7 +2309,7 @@ impl VpcInterfaceAttachment {
 
 /// The media stream that is associated with the output, and the parameters for that association.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaStreamOutputConfiguration {
     /// The transport parameters that are associated with each outbound media stream.
     #[doc(hidden)]
@@ -2505,19 +2343,6 @@ impl MediaStreamOutputConfiguration {
     /// The name of the media stream.
     pub fn media_stream_name(&self) -> std::option::Option<&str> {
         self.media_stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaStreamOutputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamOutputConfiguration");
-        formatter.field(
-            "destination_configurations",
-            &self.destination_configurations,
-        );
-        formatter.field("encoding_name", &self.encoding_name);
-        formatter.field("encoding_parameters", &self.encoding_parameters);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.finish()
     }
 }
 /// See [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
@@ -2614,7 +2439,7 @@ impl MediaStreamOutputConfiguration {
 
 /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncodingParameters {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
     #[doc(hidden)]
@@ -2631,14 +2456,6 @@ impl EncodingParameters {
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
     pub fn encoder_profile(&self) -> std::option::Option<&crate::model::EncoderProfile> {
         self.encoder_profile.as_ref()
-    }
-}
-impl std::fmt::Debug for EncodingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncodingParameters");
-        formatter.field("compression_factor", &self.compression_factor);
-        formatter.field("encoder_profile", &self.encoder_profile);
-        formatter.finish()
     }
 }
 /// See [`EncodingParameters`](crate::model::EncodingParameters).
@@ -2782,7 +2599,7 @@ impl AsRef<str> for EncoderProfile {
 
 /// The transport parameters that are associated with an outbound media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationConfiguration {
     /// The IP address where contents of the media stream will be sent.
     #[doc(hidden)]
@@ -2813,16 +2630,6 @@ impl DestinationConfiguration {
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
     pub fn outbound_ip(&self) -> std::option::Option<&str> {
         self.outbound_ip.as_deref()
-    }
-}
-impl std::fmt::Debug for DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfiguration");
-        formatter.field("destination_ip", &self.destination_ip);
-        formatter.field("destination_port", &self.destination_port);
-        formatter.field("interface", &self.interface);
-        formatter.field("outbound_ip", &self.outbound_ip);
-        formatter.finish()
     }
 }
 /// See [`DestinationConfiguration`](crate::model::DestinationConfiguration).
@@ -2903,7 +2710,7 @@ impl DestinationConfiguration {
 
 /// The media stream that you want to associate with the output, and the parameters for that association.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaStreamOutputConfigurationRequest {
     /// The transport parameters that you want to associate with the media stream.
     #[doc(hidden)]
@@ -2939,19 +2746,6 @@ impl MediaStreamOutputConfigurationRequest {
     /// The name of the media stream that is associated with the output.
     pub fn media_stream_name(&self) -> std::option::Option<&str> {
         self.media_stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaStreamOutputConfigurationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamOutputConfigurationRequest");
-        formatter.field(
-            "destination_configurations",
-            &self.destination_configurations,
-        );
-        formatter.field("encoding_name", &self.encoding_name);
-        formatter.field("encoding_parameters", &self.encoding_parameters);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.finish()
     }
 }
 /// See [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
@@ -3054,7 +2848,7 @@ impl MediaStreamOutputConfigurationRequest {
 
 /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncodingParametersRequest {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
     #[doc(hidden)]
@@ -3071,14 +2865,6 @@ impl EncodingParametersRequest {
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
     pub fn encoder_profile(&self) -> std::option::Option<&crate::model::EncoderProfile> {
         self.encoder_profile.as_ref()
-    }
-}
-impl std::fmt::Debug for EncodingParametersRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncodingParametersRequest");
-        formatter.field("compression_factor", &self.compression_factor);
-        formatter.field("encoder_profile", &self.encoder_profile);
-        formatter.finish()
     }
 }
 /// See [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
@@ -3132,7 +2918,7 @@ impl EncodingParametersRequest {
 
 /// The transport parameters that you want to associate with an outbound media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationConfigurationRequest {
     /// The IP address where you want MediaConnect to send contents of the media stream.
     #[doc(hidden)]
@@ -3156,15 +2942,6 @@ impl DestinationConfigurationRequest {
     /// The VPC interface that you want to use for the media stream associated with the output.
     pub fn interface(&self) -> std::option::Option<&crate::model::InterfaceRequest> {
         self.interface.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationConfigurationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfigurationRequest");
-        formatter.field("destination_ip", &self.destination_ip);
-        formatter.field("destination_port", &self.destination_port);
-        formatter.field("interface", &self.interface);
-        formatter.finish()
     }
 }
 /// See [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
@@ -3233,7 +3010,7 @@ impl DestinationConfigurationRequest {
 
 /// A single track or stream of media that contains video, audio, or ancillary data. After you add a media stream to a flow, you can associate it with sources and outputs on that flow, as long as they use the CDI protocol or the ST 2110 JPEG XS protocol. Each source or output can consist of one or many media streams.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaStream {
     /// Attributes that are related to the media stream.
     #[doc(hidden)]
@@ -3292,20 +3069,6 @@ impl MediaStream {
     /// The resolution of the video.
     pub fn video_format(&self) -> std::option::Option<&str> {
         self.video_format.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStream");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("clock_rate", &self.clock_rate);
-        formatter.field("description", &self.description);
-        formatter.field("fmt", &self.fmt);
-        formatter.field("media_stream_id", &self.media_stream_id);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.field("media_stream_type", &self.media_stream_type);
-        formatter.field("video_format", &self.video_format);
-        formatter.finish()
     }
 }
 /// See [`MediaStream`](crate::model::MediaStream).
@@ -3532,7 +3295,7 @@ impl AsRef<str> for MediaStreamType {
 
 /// Attributes that are related to the media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaStreamAttributes {
     /// A set of parameters that define the media stream.
     #[doc(hidden)]
@@ -3549,14 +3312,6 @@ impl MediaStreamAttributes {
     /// The audio language, in a format that is recognized by the receiver.
     pub fn lang(&self) -> std::option::Option<&str> {
         self.lang.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaStreamAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamAttributes");
-        formatter.field("fmtp", &self.fmtp);
-        formatter.field("lang", &self.lang);
-        formatter.finish()
     }
 }
 /// See [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
@@ -3607,7 +3362,7 @@ impl MediaStreamAttributes {
 
 /// FMTP
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Fmtp {
     /// The format of the audio channel.
     #[doc(hidden)]
@@ -3659,19 +3414,6 @@ impl Fmtp {
     /// The transfer characteristic system (TCS) that is used in the video.
     pub fn tcs(&self) -> std::option::Option<&crate::model::Tcs> {
         self.tcs.as_ref()
-    }
-}
-impl std::fmt::Debug for Fmtp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Fmtp");
-        formatter.field("channel_order", &self.channel_order);
-        formatter.field("colorimetry", &self.colorimetry);
-        formatter.field("exact_framerate", &self.exact_framerate);
-        formatter.field("par", &self.par);
-        formatter.field("range", &self.range);
-        formatter.field("scan_mode", &self.scan_mode);
-        formatter.field("tcs", &self.tcs);
-        formatter.finish()
     }
 }
 /// See [`Fmtp`](crate::model::Fmtp).
@@ -4233,7 +3975,7 @@ impl AsRef<str> for Colorimetry {
 
 /// Attributes that are related to the media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaStreamAttributesRequest {
     /// The settings that you want to use to define the media stream.
     #[doc(hidden)]
@@ -4250,14 +3992,6 @@ impl MediaStreamAttributesRequest {
     /// The audio language, in a format that is recognized by the receiver.
     pub fn lang(&self) -> std::option::Option<&str> {
         self.lang.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaStreamAttributesRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaStreamAttributesRequest");
-        formatter.field("fmtp", &self.fmtp);
-        formatter.field("lang", &self.lang);
-        formatter.finish()
     }
 }
 /// See [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
@@ -4308,7 +4042,7 @@ impl MediaStreamAttributesRequest {
 
 /// The settings that you want to use to define the media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FmtpRequest {
     /// The format of the audio channel.
     #[doc(hidden)]
@@ -4360,19 +4094,6 @@ impl FmtpRequest {
     /// The transfer characteristic system (TCS) that is used in the video.
     pub fn tcs(&self) -> std::option::Option<&crate::model::Tcs> {
         self.tcs.as_ref()
-    }
-}
-impl std::fmt::Debug for FmtpRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FmtpRequest");
-        formatter.field("channel_order", &self.channel_order);
-        formatter.field("colorimetry", &self.colorimetry);
-        formatter.field("exact_framerate", &self.exact_framerate);
-        formatter.field("par", &self.par);
-        formatter.field("range", &self.range);
-        formatter.field("scan_mode", &self.scan_mode);
-        formatter.field("tcs", &self.tcs);
-        formatter.finish()
     }
 }
 /// See [`FmtpRequest`](crate::model::FmtpRequest).
@@ -4492,7 +4213,7 @@ impl FmtpRequest {
 
 /// The settings for a flow entitlement.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
@@ -4544,22 +4265,6 @@ impl Entitlement {
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
         self.subscribers.as_deref()
-    }
-}
-impl std::fmt::Debug for Entitlement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entitlement");
-        formatter.field(
-            "data_transfer_subscriber_fee_percent",
-            &self.data_transfer_subscriber_fee_percent,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("entitlement_status", &self.entitlement_status);
-        formatter.field("name", &self.name);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
     }
 }
 /// See [`Entitlement`](crate::model::Entitlement).
@@ -4785,7 +4490,7 @@ impl AsRef<str> for EntitlementStatus {
 
 /// The settings for a flow, including its source, outputs, and entitlements.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Flow {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
     #[doc(hidden)]
@@ -4886,26 +4591,6 @@ impl Flow {
     /// The maintenance setting of a flow
     pub fn maintenance(&self) -> std::option::Option<&crate::model::Maintenance> {
         self.maintenance.as_ref()
-    }
-}
-impl std::fmt::Debug for Flow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Flow");
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("description", &self.description);
-        formatter.field("egress_ip", &self.egress_ip);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("media_streams", &self.media_streams);
-        formatter.field("name", &self.name);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("source", &self.source);
-        formatter.field("source_failover_config", &self.source_failover_config);
-        formatter.field("sources", &self.sources);
-        formatter.field("status", &self.status);
-        formatter.field("vpc_interfaces", &self.vpc_interfaces);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.finish()
     }
 }
 /// See [`Flow`](crate::model::Flow).
@@ -5153,7 +4838,7 @@ impl Flow {
 
 /// The maintenance setting of a flow
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Maintenance {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
     #[doc(hidden)]
@@ -5184,19 +4869,6 @@ impl Maintenance {
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
     pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
         self.maintenance_start_hour.as_deref()
-    }
-}
-impl std::fmt::Debug for Maintenance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Maintenance");
-        formatter.field("maintenance_day", &self.maintenance_day);
-        formatter.field("maintenance_deadline", &self.maintenance_deadline);
-        formatter.field(
-            "maintenance_scheduled_date",
-            &self.maintenance_scheduled_date,
-        );
-        formatter.field("maintenance_start_hour", &self.maintenance_start_hour);
-        formatter.finish()
     }
 }
 /// See [`Maintenance`](crate::model::Maintenance).
@@ -5406,7 +5078,7 @@ impl AsRef<str> for MaintenanceDay {
 
 /// The settings for a VPC Source.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcInterface {
     /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
     #[doc(hidden)]
@@ -5453,18 +5125,6 @@ impl VpcInterface {
     /// Subnet must be in the AZ of the Flow
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcInterface");
-        formatter.field("name", &self.name);
-        formatter.field("network_interface_ids", &self.network_interface_ids);
-        formatter.field("network_interface_type", &self.network_interface_type);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.finish()
     }
 }
 /// See [`VpcInterface`](crate::model::VpcInterface).
@@ -5793,7 +5453,7 @@ impl AsRef<str> for Status {
 
 /// The settings for source failover.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
     #[doc(hidden)]
@@ -5824,16 +5484,6 @@ impl FailoverConfig {
     #[allow(missing_docs)] // documentation missing in model
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for FailoverConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailoverConfig");
-        formatter.field("failover_mode", &self.failover_mode);
-        formatter.field("recovery_window", &self.recovery_window);
-        formatter.field("source_priority", &self.source_priority);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`FailoverConfig`](crate::model::FailoverConfig).
@@ -6004,7 +5654,7 @@ impl AsRef<str> for State {
 
 /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourcePriority {
     /// The name of the source you choose as the primary source for this flow.
     #[doc(hidden)]
@@ -6014,13 +5664,6 @@ impl SourcePriority {
     /// The name of the source you choose as the primary source for this flow.
     pub fn primary_source(&self) -> std::option::Option<&str> {
         self.primary_source.as_deref()
-    }
-}
-impl std::fmt::Debug for SourcePriority {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourcePriority");
-        formatter.field("primary_source", &self.primary_source);
-        formatter.finish()
     }
 }
 /// See [`SourcePriority`](crate::model::SourcePriority).
@@ -6152,7 +5795,7 @@ impl AsRef<str> for FailoverMode {
 
 /// Update maintenance setting for a flow
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMaintenance {
     /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
     #[doc(hidden)]
@@ -6176,18 +5819,6 @@ impl UpdateMaintenance {
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
     pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
         self.maintenance_start_hour.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateMaintenance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMaintenance");
-        formatter.field("maintenance_day", &self.maintenance_day);
-        formatter.field(
-            "maintenance_scheduled_date",
-            &self.maintenance_scheduled_date,
-        );
-        formatter.field("maintenance_start_hour", &self.maintenance_start_hour);
-        formatter.finish()
     }
 }
 /// See [`UpdateMaintenance`](crate::model::UpdateMaintenance).
@@ -6259,7 +5890,7 @@ impl UpdateMaintenance {
 
 /// The settings for source failover.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
     #[doc(hidden)]
@@ -6290,16 +5921,6 @@ impl UpdateFailoverConfig {
     #[allow(missing_docs)] // documentation missing in model
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateFailoverConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFailoverConfig");
-        formatter.field("failover_mode", &self.failover_mode);
-        formatter.field("recovery_window", &self.recovery_window);
-        formatter.field("source_priority", &self.source_priority);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
@@ -6380,7 +6001,7 @@ impl UpdateFailoverConfig {
 
 /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Reservation {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
     #[doc(hidden)]
@@ -6476,25 +6097,6 @@ impl Reservation {
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
     pub fn start(&self) -> std::option::Option<&str> {
         self.start.as_deref()
-    }
-}
-impl std::fmt::Debug for Reservation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Reservation");
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("duration", &self.duration);
-        formatter.field("duration_units", &self.duration_units);
-        formatter.field("end", &self.end);
-        formatter.field("offering_arn", &self.offering_arn);
-        formatter.field("offering_description", &self.offering_description);
-        formatter.field("price_per_unit", &self.price_per_unit);
-        formatter.field("price_units", &self.price_units);
-        formatter.field("reservation_arn", &self.reservation_arn);
-        formatter.field("reservation_name", &self.reservation_name);
-        formatter.field("reservation_state", &self.reservation_state);
-        formatter.field("resource_specification", &self.resource_specification);
-        formatter.field("start", &self.start);
-        formatter.finish()
     }
 }
 /// See [`Reservation`](crate::model::Reservation).
@@ -6707,7 +6309,7 @@ impl Reservation {
 
 /// A definition of what is being billed for, including the type and amount.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSpecification {
     /// The amount of outbound bandwidth that is discounted in the offering.
     #[doc(hidden)]
@@ -6724,14 +6326,6 @@ impl ResourceSpecification {
     /// The type of resource and the unit that is being billed for.
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSpecification");
-        formatter.field("reserved_bitrate", &self.reserved_bitrate);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`ResourceSpecification`](crate::model::ResourceSpecification).
@@ -7140,7 +6734,7 @@ impl AsRef<str> for DurationUnits {
 
 /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Offering {
     /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
     #[doc(hidden)]
@@ -7201,20 +6795,6 @@ impl Offering {
         &self,
     ) -> std::option::Option<&crate::model::ResourceSpecification> {
         self.resource_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for Offering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Offering");
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("duration", &self.duration);
-        formatter.field("duration_units", &self.duration_units);
-        formatter.field("offering_arn", &self.offering_arn);
-        formatter.field("offering_description", &self.offering_description);
-        formatter.field("price_per_unit", &self.price_per_unit);
-        formatter.field("price_units", &self.price_units);
-        formatter.field("resource_specification", &self.resource_specification);
-        formatter.finish()
     }
 }
 /// See [`Offering`](crate::model::Offering).
@@ -7358,7 +6938,7 @@ impl Offering {
 
 /// Provides a summary of a flow, including its ARN, Availability Zone, and source type.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedFlow {
     /// The Availability Zone that the flow was created in.
     #[doc(hidden)]
@@ -7410,19 +6990,6 @@ impl ListedFlow {
     /// The maintenance setting of a flow
     pub fn maintenance(&self) -> std::option::Option<&crate::model::Maintenance> {
         self.maintenance.as_ref()
-    }
-}
-impl std::fmt::Debug for ListedFlow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedFlow");
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("description", &self.description);
-        formatter.field("flow_arn", &self.flow_arn);
-        formatter.field("name", &self.name);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("status", &self.status);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.finish()
     }
 }
 /// See [`ListedFlow`](crate::model::ListedFlow).
@@ -7632,7 +7199,7 @@ impl AsRef<str> for SourceType {
 
 /// An entitlement that has been granted to you from other AWS accounts.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListedEntitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
@@ -7656,18 +7223,6 @@ impl ListedEntitlement {
     /// The name of the entitlement.
     pub fn entitlement_name(&self) -> std::option::Option<&str> {
         self.entitlement_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ListedEntitlement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListedEntitlement");
-        formatter.field(
-            "data_transfer_subscriber_fee_percent",
-            &self.data_transfer_subscriber_fee_percent,
-        );
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("entitlement_name", &self.entitlement_name);
-        formatter.finish()
     }
 }
 /// See [`ListedEntitlement`](crate::model::ListedEntitlement).
@@ -7741,7 +7296,7 @@ impl ListedEntitlement {
 
 /// The entitlements that you want to grant on a flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrantEntitlementRequest {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
@@ -7786,21 +7341,6 @@ impl GrantEntitlementRequest {
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
     pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
         self.subscribers.as_deref()
-    }
-}
-impl std::fmt::Debug for GrantEntitlementRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrantEntitlementRequest");
-        formatter.field(
-            "data_transfer_subscriber_fee_percent",
-            &self.data_transfer_subscriber_fee_percent,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("entitlement_status", &self.entitlement_status);
-        formatter.field("name", &self.name);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
     }
 }
 /// See [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
@@ -7919,7 +7459,7 @@ impl GrantEntitlementRequest {
 
 /// Messages that provide the state of the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Messages {
     /// A list of errors that might have been generated from processes on this flow.
     #[doc(hidden)]
@@ -7929,13 +7469,6 @@ impl Messages {
     /// A list of errors that might have been generated from processes on this flow.
     pub fn errors(&self) -> std::option::Option<&[std::string::String]> {
         self.errors.as_deref()
-    }
-}
-impl std::fmt::Debug for Messages {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Messages");
-        formatter.field("errors", &self.errors);
-        formatter.finish()
     }
 }
 /// See [`Messages`](crate::model::Messages).
@@ -7983,7 +7516,7 @@ impl Messages {
 
 /// Create maintenance setting for a flow
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddMaintenance {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
     #[doc(hidden)]
@@ -8000,14 +7533,6 @@ impl AddMaintenance {
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
     pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
         self.maintenance_start_hour.as_deref()
-    }
-}
-impl std::fmt::Debug for AddMaintenance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddMaintenance");
-        formatter.field("maintenance_day", &self.maintenance_day);
-        formatter.field("maintenance_start_hour", &self.maintenance_start_hour);
-        formatter.finish()
     }
 }
 /// See [`AddMaintenance`](crate::model::AddMaintenance).
@@ -8064,7 +7589,7 @@ impl AddMaintenance {
 
 /// Desired VPC Interface for a Flow
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcInterfaceRequest {
     /// The name of the VPC Interface. This value must be unique within the current flow.
     #[doc(hidden)]
@@ -8104,17 +7629,6 @@ impl VpcInterfaceRequest {
     /// Subnet must be in the AZ of the Flow
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcInterfaceRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcInterfaceRequest");
-        formatter.field("name", &self.name);
-        formatter.field("network_interface_type", &self.network_interface_type);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.finish()
     }
 }
 /// See [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
@@ -8213,7 +7727,7 @@ impl VpcInterfaceRequest {
 
 /// The settings for the source of the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetSourceRequest {
     /// The type of encryption that is used on the content ingested from this source.
     #[doc(hidden)]
@@ -8345,33 +7859,6 @@ impl SetSourceRequest {
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
         self.whitelist_cidr.as_deref()
-    }
-}
-impl std::fmt::Debug for SetSourceRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSourceRequest");
-        formatter.field("decryption", &self.decryption);
-        formatter.field("description", &self.description);
-        formatter.field("entitlement_arn", &self.entitlement_arn);
-        formatter.field("ingest_port", &self.ingest_port);
-        formatter.field("max_bitrate", &self.max_bitrate);
-        formatter.field("max_latency", &self.max_latency);
-        formatter.field("max_sync_buffer", &self.max_sync_buffer);
-        formatter.field(
-            "media_stream_source_configurations",
-            &self.media_stream_source_configurations,
-        );
-        formatter.field("min_latency", &self.min_latency);
-        formatter.field("name", &self.name);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("sender_control_port", &self.sender_control_port);
-        formatter.field("sender_ip_address", &self.sender_ip_address);
-        formatter.field("source_listener_address", &self.source_listener_address);
-        formatter.field("source_listener_port", &self.source_listener_port);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("vpc_interface_name", &self.vpc_interface_name);
-        formatter.field("whitelist_cidr", &self.whitelist_cidr);
-        formatter.finish()
     }
 }
 /// See [`SetSourceRequest`](crate::model::SetSourceRequest).
@@ -8647,7 +8134,7 @@ impl SetSourceRequest {
 
 /// The output that you want to add to this flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddOutputRequest {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     #[doc(hidden)]
@@ -8760,30 +8247,6 @@ impl AddOutputRequest {
         &self,
     ) -> std::option::Option<&crate::model::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
-    }
-}
-impl std::fmt::Debug for AddOutputRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddOutputRequest");
-        formatter.field("cidr_allow_list", &self.cidr_allow_list);
-        formatter.field("description", &self.description);
-        formatter.field("destination", &self.destination);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("max_latency", &self.max_latency);
-        formatter.field(
-            "media_stream_output_configurations",
-            &self.media_stream_output_configurations,
-        );
-        formatter.field("min_latency", &self.min_latency);
-        formatter.field("name", &self.name);
-        formatter.field("port", &self.port);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("remote_id", &self.remote_id);
-        formatter.field("sender_control_port", &self.sender_control_port);
-        formatter.field("smoothing_latency", &self.smoothing_latency);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("vpc_interface_attachment", &self.vpc_interface_attachment);
-        formatter.finish()
     }
 }
 /// See [`AddOutputRequest`](crate::model::AddOutputRequest).
@@ -9024,7 +8487,7 @@ impl AddOutputRequest {
 
 /// The media stream that you want to add to the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddMediaStreamRequest {
     /// The attributes that you want to assign to the new media stream.
     #[doc(hidden)]
@@ -9076,19 +8539,6 @@ impl AddMediaStreamRequest {
     /// The resolution of the video.
     pub fn video_format(&self) -> std::option::Option<&str> {
         self.video_format.as_deref()
-    }
-}
-impl std::fmt::Debug for AddMediaStreamRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddMediaStreamRequest");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("clock_rate", &self.clock_rate);
-        formatter.field("description", &self.description);
-        formatter.field("media_stream_id", &self.media_stream_id);
-        formatter.field("media_stream_name", &self.media_stream_name);
-        formatter.field("media_stream_type", &self.media_stream_type);
-        formatter.field("video_format", &self.video_format);
-        formatter.finish()
     }
 }
 /// See [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).

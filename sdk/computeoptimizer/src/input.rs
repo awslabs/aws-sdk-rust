@@ -3899,7 +3899,7 @@ impl UpdateEnrollmentStatusInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEnrollmentStatusInput {
     /// <p>The new enrollment status of the account.</p>
     /// <p>The following status options are available:</p>
@@ -3932,18 +3932,10 @@ impl UpdateEnrollmentStatusInput {
         self.include_member_accounts
     }
 }
-impl std::fmt::Debug for UpdateEnrollmentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEnrollmentStatusInput");
-        formatter.field("status", &self.status);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference to create.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
@@ -4005,23 +3997,10 @@ impl PutRecommendationPreferencesInput {
         self.inferred_workload_types.as_ref()
     }
 }
-impl std::fmt::Debug for PutRecommendationPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecommendationPreferencesInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("scope", &self.scope);
-        formatter.field(
-            "enhanced_infrastructure_metrics",
-            &self.enhanced_infrastructure_metrics,
-        );
-        formatter.field("inferred_workload_types", &self.inferred_workload_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationSummariesInput {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
@@ -4053,19 +4032,10 @@ impl GetRecommendationSummariesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetRecommendationSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationSummariesInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
@@ -4108,20 +4078,10 @@ impl GetRecommendationPreferencesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetRecommendationPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationPreferencesInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("scope", &self.scope);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
@@ -4172,21 +4132,10 @@ impl GetLambdaFunctionRecommendationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetLambdaFunctionRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLambdaFunctionRecommendationsInput");
-        formatter.field("function_arns", &self.function_arns);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationInput {
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
     #[doc(hidden)]
@@ -4214,30 +4163,15 @@ impl GetEnrollmentStatusesForOrganizationInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetEnrollmentStatusesForOrganizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnrollmentStatusesForOrganizationInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnrollmentStatusInput {}
-impl std::fmt::Debug for GetEnrollmentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnrollmentStatusInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEffectiveRecommendationPreferencesInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     #[doc(hidden)]
@@ -4249,17 +4183,10 @@ impl GetEffectiveRecommendationPreferencesInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetEffectiveRecommendationPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEffectiveRecommendationPreferencesInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEc2RecommendationProjectedMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
     #[doc(hidden)]
@@ -4308,25 +4235,10 @@ impl GetEc2RecommendationProjectedMetricsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for GetEc2RecommendationProjectedMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEc2RecommendationProjectedMetricsInput");
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("stat", &self.stat);
-        formatter.field("period", &self.period);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEc2InstanceRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
     #[doc(hidden)]
@@ -4381,25 +4293,10 @@ impl GetEc2InstanceRecommendationsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for GetEc2InstanceRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEc2InstanceRecommendationsInput");
-        formatter.field("instance_arns", &self.instance_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEbsVolumeRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
     #[doc(hidden)]
@@ -4445,21 +4342,10 @@ impl GetEbsVolumeRecommendationsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for GetEbsVolumeRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEbsVolumeRecommendationsInput");
-        formatter.field("volume_arns", &self.volume_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendationsInput {
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
@@ -4514,25 +4400,10 @@ impl GetAutoScalingGroupRecommendationsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for GetAutoScalingGroupRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAutoScalingGroupRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("auto_scaling_group_arns", &self.auto_scaling_group_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportLambdaFunctionRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Lambda function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4605,22 +4476,10 @@ impl ExportLambdaFunctionRecommendationsInput {
         self.include_member_accounts
     }
 }
-impl std::fmt::Debug for ExportLambdaFunctionRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportLambdaFunctionRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("fields_to_export", &self.fields_to_export);
-        formatter.field("s3_destination_config", &self.s3_destination_config);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportEc2InstanceRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export instance recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4696,26 +4555,10 @@ impl ExportEc2InstanceRecommendationsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for ExportEc2InstanceRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportEc2InstanceRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("fields_to_export", &self.fields_to_export);
-        formatter.field("s3_destination_config", &self.s3_destination_config);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportEbsVolumeRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS volume recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4782,22 +4625,10 @@ impl ExportEbsVolumeRecommendationsInput {
         self.include_member_accounts
     }
 }
-impl std::fmt::Debug for ExportEbsVolumeRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportEbsVolumeRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("fields_to_export", &self.fields_to_export);
-        formatter.field("s3_destination_config", &self.s3_destination_config);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportAutoScalingGroupRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4876,26 +4707,10 @@ impl ExportAutoScalingGroupRecommendationsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for ExportAutoScalingGroupRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportAutoScalingGroupRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("fields_to_export", &self.fields_to_export);
-        formatter.field("s3_destination_config", &self.s3_destination_config);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecommendationExportJobsInput {
     /// <p>The identification numbers of the export jobs to return.</p>
     /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
@@ -4934,20 +4749,10 @@ impl DescribeRecommendationExportJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeRecommendationExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecommendationExportJobsInput");
-        formatter.field("job_ids", &self.job_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference to delete.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
@@ -4984,17 +4789,5 @@ impl DeleteRecommendationPreferencesInput {
         &self,
     ) -> std::option::Option<&[crate::model::RecommendationPreferenceName]> {
         self.recommendation_preference_names.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteRecommendationPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecommendationPreferencesInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("scope", &self.scope);
-        formatter.field(
-            "recommendation_preference_names",
-            &self.recommendation_preference_names,
-        );
-        formatter.finish()
     }
 }

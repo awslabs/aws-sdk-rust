@@ -5383,7 +5383,7 @@ impl UpdateMetricSetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMetricSetInput {
     /// <p>The ARN of the dataset to update.</p>
     #[doc(hidden)]
@@ -5454,25 +5454,10 @@ impl UpdateMetricSetInput {
         self.dimension_filter_list.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMetricSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMetricSetInput");
-        formatter.field("metric_set_arn", &self.metric_set_arn);
-        formatter.field("metric_set_description", &self.metric_set_description);
-        formatter.field("metric_list", &self.metric_list);
-        formatter.field("offset", &self.offset);
-        formatter.field("timestamp_column", &self.timestamp_column);
-        formatter.field("dimension_list", &self.dimension_list);
-        formatter.field("metric_set_frequency", &self.metric_set_frequency);
-        formatter.field("metric_source", &self.metric_source);
-        formatter.field("dimension_filter_list", &self.dimension_filter_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAnomalyDetectorInput {
     /// <p>The ARN of the detector to update.</p>
     #[doc(hidden)]
@@ -5507,23 +5492,10 @@ impl UpdateAnomalyDetectorInput {
         self.anomaly_detector_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAnomalyDetectorInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field(
-            "anomaly_detector_description",
-            &self.anomaly_detector_description,
-        );
-        formatter.field("anomaly_detector_config", &self.anomaly_detector_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAlertInput {
     /// <p>The ARN of the alert to update.</p>
     #[doc(hidden)]
@@ -5563,24 +5535,10 @@ impl UpdateAlertInput {
         self.alert_filters.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAlertInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAlertInput");
-        formatter.field("alert_arn", &self.alert_arn);
-        formatter.field("alert_description", &self.alert_description);
-        formatter.field(
-            "alert_sensitivity_threshold",
-            &self.alert_sensitivity_threshold,
-        );
-        formatter.field("action", &self.action);
-        formatter.field("alert_filters", &self.alert_filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -5599,18 +5557,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -5633,18 +5583,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
@@ -5666,21 +5608,10 @@ impl PutFeedbackInput {
         self.anomaly_group_time_series_feedback.as_ref()
     }
 }
-impl std::fmt::Debug for PutFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFeedbackInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field(
-            "anomaly_group_time_series_feedback",
-            &self.anomaly_group_time_series_feedback,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -5692,17 +5623,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMetricSetsInput {
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
     #[doc(hidden)]
@@ -5728,19 +5652,10 @@ impl ListMetricSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMetricSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMetricSetsInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnomalyGroupTimeSeriesInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
@@ -5780,21 +5695,10 @@ impl ListAnomalyGroupTimeSeriesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAnomalyGroupTimeSeriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnomalyGroupTimeSeriesInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("anomaly_group_id", &self.anomaly_group_id);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnomalyGroupSummariesInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
@@ -5827,20 +5731,10 @@ impl ListAnomalyGroupSummariesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAnomalyGroupSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnomalyGroupSummariesInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("sensitivity_threshold", &self.sensitivity_threshold);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnomalyGroupRelatedMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
@@ -5880,21 +5774,10 @@ impl ListAnomalyGroupRelatedMetricsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAnomalyGroupRelatedMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnomalyGroupRelatedMetricsInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("anomaly_group_id", &self.anomaly_group_id);
-        formatter.field("relationship_type_filter", &self.relationship_type_filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnomalyDetectorsInput {
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
@@ -5913,18 +5796,10 @@ impl ListAnomalyDetectorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAnomalyDetectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnomalyDetectorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlertsInput {
     /// <p>The ARN of the alert's detector.</p>
     #[doc(hidden)]
@@ -5950,19 +5825,10 @@ impl ListAlertsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAlertsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAlertsInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSampleDataInput {
     /// <p>A datasource bucket in Amazon S3.</p>
     #[doc(hidden)]
@@ -5974,17 +5840,10 @@ impl GetSampleDataInput {
         self.s3_source_config.as_ref()
     }
 }
-impl std::fmt::Debug for GetSampleDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSampleDataInput");
-        formatter.field("s3_source_config", &self.s3_source_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
@@ -6020,23 +5879,10 @@ impl GetFeedbackInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFeedbackInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field(
-            "anomaly_group_time_series_feedback",
-            &self.anomaly_group_time_series_feedback,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataQualityMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
     #[doc(hidden)]
@@ -6055,18 +5901,10 @@ impl GetDataQualityMetricsInput {
         self.metric_set_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataQualityMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataQualityMetricsInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("metric_set_arn", &self.metric_set_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAnomalyGroupInput {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
@@ -6085,18 +5923,10 @@ impl GetAnomalyGroupInput {
         self.anomaly_detector_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetAnomalyGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAnomalyGroupInput");
-        formatter.field("anomaly_group_id", &self.anomaly_group_id);
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectMetricSetConfigInput {
     /// <p>An anomaly detector ARN.</p>
     #[doc(hidden)]
@@ -6117,21 +5947,10 @@ impl DetectMetricSetConfigInput {
         self.auto_detection_metric_source.as_ref()
     }
 }
-impl std::fmt::Debug for DetectMetricSetConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectMetricSetConfigInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field(
-            "auto_detection_metric_source",
-            &self.auto_detection_metric_source,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMetricSetInput {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
@@ -6143,17 +5962,10 @@ impl DescribeMetricSetInput {
         self.metric_set_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMetricSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMetricSetInput");
-        formatter.field("metric_set_arn", &self.metric_set_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorInput {
     /// <p>The ARN of the detector to describe.</p>
     #[doc(hidden)]
@@ -6165,17 +5977,10 @@ impl DescribeAnomalyDetectorInput {
         self.anomaly_detector_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnomalyDetectorInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnomalyDetectionExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
@@ -6208,20 +6013,10 @@ impl DescribeAnomalyDetectionExecutionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnomalyDetectionExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnomalyDetectionExecutionsInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlertInput {
     /// <p>The ARN of the alert to describe.</p>
     #[doc(hidden)]
@@ -6233,17 +6028,10 @@ impl DescribeAlertInput {
         self.alert_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAlertInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlertInput");
-        formatter.field("alert_arn", &self.alert_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnomalyDetectorInput {
     /// <p>The ARN of the detector to delete.</p>
     #[doc(hidden)]
@@ -6255,17 +6043,10 @@ impl DeleteAnomalyDetectorInput {
         self.anomaly_detector_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnomalyDetectorInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlertInput {
     /// <p>The ARN of the alert to delete.</p>
     #[doc(hidden)]
@@ -6277,17 +6058,10 @@ impl DeleteAlertInput {
         self.alert_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAlertInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAlertInput");
-        formatter.field("alert_arn", &self.alert_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateAnomalyDetectorInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
@@ -6299,17 +6073,10 @@ impl DeactivateAnomalyDetectorInput {
         self.anomaly_detector_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeactivateAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateAnomalyDetectorInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMetricSetInput {
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
     #[doc(hidden)]
@@ -6405,28 +6172,10 @@ impl CreateMetricSetInput {
         self.dimension_filter_list.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMetricSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMetricSetInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("metric_set_name", &self.metric_set_name);
-        formatter.field("metric_set_description", &self.metric_set_description);
-        formatter.field("metric_list", &self.metric_list);
-        formatter.field("offset", &self.offset);
-        formatter.field("timestamp_column", &self.timestamp_column);
-        formatter.field("dimension_list", &self.dimension_list);
-        formatter.field("metric_set_frequency", &self.metric_set_frequency);
-        formatter.field("metric_source", &self.metric_source);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("tags", &self.tags);
-        formatter.field("dimension_filter_list", &self.dimension_filter_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAnomalyDetectorInput {
     /// <p>The name of the detector.</p>
     #[doc(hidden)]
@@ -6472,24 +6221,10 @@ impl CreateAnomalyDetectorInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAnomalyDetectorInput");
-        formatter.field("anomaly_detector_name", &self.anomaly_detector_name);
-        formatter.field(
-            "anomaly_detector_description",
-            &self.anomaly_detector_description,
-        );
-        formatter.field("anomaly_detector_config", &self.anomaly_detector_config);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAlertInput {
     /// <p>The name of the alert.</p>
     #[doc(hidden)]
@@ -6547,26 +6282,10 @@ impl CreateAlertInput {
         self.alert_filters.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAlertInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAlertInput");
-        formatter.field("alert_name", &self.alert_name);
-        formatter.field(
-            "alert_sensitivity_threshold",
-            &self.alert_sensitivity_threshold,
-        );
-        formatter.field("alert_description", &self.alert_description);
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.field("action", &self.action);
-        formatter.field("tags", &self.tags);
-        formatter.field("alert_filters", &self.alert_filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackTestAnomalyDetectorInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
@@ -6578,17 +6297,10 @@ impl BackTestAnomalyDetectorInput {
         self.anomaly_detector_arn.as_deref()
     }
 }
-impl std::fmt::Debug for BackTestAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackTestAnomalyDetectorInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateAnomalyDetectorInput {
     /// <p>The ARN of the anomaly detector.</p>
     #[doc(hidden)]
@@ -6598,12 +6310,5 @@ impl ActivateAnomalyDetectorInput {
     /// <p>The ARN of the anomaly detector.</p>
     pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
         self.anomaly_detector_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivateAnomalyDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateAnomalyDetectorInput");
-        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
-        formatter.finish()
     }
 }

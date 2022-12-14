@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod abort_document_version_upload_input {
 
     /// A builder for [`AbortDocumentVersionUploadInput`](crate::input::AbortDocumentVersionUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -57,6 +57,15 @@ pub mod abort_document_version_upload_input {
                 document_id: self.document_id,
                 version_id: self.version_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.finish()
         }
     }
 }
@@ -206,7 +215,7 @@ impl AbortDocumentVersionUploadInput {
 pub mod activate_user_input {
 
     /// A builder for [`ActivateUserInput`](crate::input::ActivateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -244,6 +253,14 @@ pub mod activate_user_input {
                 user_id: self.user_id,
                 authentication_token: self.authentication_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -372,7 +389,7 @@ impl ActivateUserInput {
 pub mod add_resource_permissions_input {
 
     /// A builder for [`AddResourcePermissionsInput`](crate::input::AddResourcePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -448,6 +465,16 @@ pub mod add_resource_permissions_input {
                 principals: self.principals,
                 notification_options: self.notification_options,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("resource_id", &self.resource_id);
+            formatter.field("principals", &self.principals);
+            formatter.field("notification_options", &self.notification_options);
+            formatter.finish()
         }
     }
 }
@@ -593,7 +620,7 @@ impl AddResourcePermissionsInput {
 pub mod create_comment_input {
 
     /// A builder for [`CreateCommentInput`](crate::input::CreateCommentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -706,6 +733,20 @@ pub mod create_comment_input {
                 visibility: self.visibility,
                 notify_collaborators: self.notify_collaborators.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("parent_id", &self.parent_id);
+            formatter.field("thread_id", &self.thread_id);
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("visibility", &self.visibility);
+            formatter.field("notify_collaborators", &self.notify_collaborators);
+            formatter.finish()
         }
     }
 }
@@ -868,7 +909,7 @@ impl CreateCommentInput {
 pub mod create_custom_metadata_input {
 
     /// A builder for [`CreateCustomMetadataInput`](crate::input::CreateCustomMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -949,6 +990,16 @@ pub mod create_custom_metadata_input {
                 version_id: self.version_id,
                 custom_metadata: self.custom_metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("resource_id", &self.resource_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("custom_metadata", &self.custom_metadata);
+            formatter.finish()
         }
     }
 }
@@ -1107,7 +1158,7 @@ impl CreateCustomMetadataInput {
 pub mod create_folder_input {
 
     /// A builder for [`CreateFolderInput`](crate::input::CreateFolderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1160,6 +1211,15 @@ pub mod create_folder_input {
                 name: self.name,
                 parent_folder_id: self.parent_folder_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.field("parent_folder_id", &self.parent_folder_id);
+            formatter.finish()
         }
     }
 }
@@ -1278,7 +1338,7 @@ impl CreateFolderInput {
 pub mod create_labels_input {
 
     /// A builder for [`CreateLabelsInput`](crate::input::CreateLabelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1337,6 +1397,15 @@ pub mod create_labels_input {
                 labels: self.labels,
                 authentication_token: self.authentication_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_id", &self.resource_id);
+            formatter.field("labels", &self.labels);
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1689,7 +1758,7 @@ impl CreateNotificationSubscriptionInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1822,6 +1891,21 @@ pub mod create_user_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("organization_id", &self.organization_id);
+            formatter.field("username", &self.username);
+            formatter.field("email_address", &self.email_address);
+            formatter.field("given_name", &self.given_name);
+            formatter.field("surname", &self.surname);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("time_zone_id", &self.time_zone_id);
+            formatter.field("storage_rule", &self.storage_rule);
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
@@ -1938,7 +2022,7 @@ impl CreateUserInput {
 pub mod deactivate_user_input {
 
     /// A builder for [`DeactivateUserInput`](crate::input::DeactivateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -1976,6 +2060,14 @@ pub mod deactivate_user_input {
                 user_id: self.user_id,
                 authentication_token: self.authentication_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2104,7 +2196,7 @@ impl DeactivateUserInput {
 pub mod delete_comment_input {
 
     /// A builder for [`DeleteCommentInput`](crate::input::DeleteCommentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -2166,6 +2258,16 @@ pub mod delete_comment_input {
                 version_id: self.version_id,
                 comment_id: self.comment_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("comment_id", &self.comment_id);
+            formatter.finish()
         }
     }
 }
@@ -2334,7 +2436,7 @@ impl DeleteCommentInput {
 pub mod delete_custom_metadata_input {
 
     /// A builder for [`DeleteCustomMetadataInput`](crate::input::DeleteCustomMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -2419,6 +2521,17 @@ pub mod delete_custom_metadata_input {
                 keys: self.keys,
                 delete_all: self.delete_all.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("resource_id", &self.resource_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("keys", &self.keys);
+            formatter.field("delete_all", &self.delete_all);
+            formatter.finish()
         }
     }
 }
@@ -2574,7 +2687,7 @@ impl DeleteCustomMetadataInput {
 pub mod delete_document_input {
 
     /// A builder for [`DeleteDocumentInput`](crate::input::DeleteDocumentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -2612,6 +2725,14 @@ pub mod delete_document_input {
                 authentication_token: self.authentication_token,
                 document_id: self.document_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.finish()
         }
     }
 }
@@ -2740,7 +2861,7 @@ impl DeleteDocumentInput {
 pub mod delete_folder_input {
 
     /// A builder for [`DeleteFolderInput`](crate::input::DeleteFolderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -2778,6 +2899,14 @@ pub mod delete_folder_input {
                 authentication_token: self.authentication_token,
                 folder_id: self.folder_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("folder_id", &self.folder_id);
+            formatter.finish()
         }
     }
 }
@@ -2902,7 +3031,7 @@ impl DeleteFolderInput {
 pub mod delete_folder_contents_input {
 
     /// A builder for [`DeleteFolderContentsInput`](crate::input::DeleteFolderContentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -2942,6 +3071,14 @@ pub mod delete_folder_contents_input {
                 authentication_token: self.authentication_token,
                 folder_id: self.folder_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("folder_id", &self.folder_id);
+            formatter.finish()
         }
     }
 }
@@ -3071,7 +3208,7 @@ impl DeleteFolderContentsInput {
 pub mod delete_labels_input {
 
     /// A builder for [`DeleteLabelsInput`](crate::input::DeleteLabelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) authentication_token: std::option::Option<std::string::String>,
@@ -3142,6 +3279,16 @@ pub mod delete_labels_input {
                 labels: self.labels,
                 delete_all: self.delete_all.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_id", &self.resource_id);
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("labels", &self.labels);
+            formatter.field("delete_all", &self.delete_all);
+            formatter.finish()
         }
     }
 }
@@ -3481,7 +3628,7 @@ impl DeleteNotificationSubscriptionInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -3519,6 +3666,14 @@ pub mod delete_user_input {
                 authentication_token: self.authentication_token,
                 user_id: self.user_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_id", &self.user_id);
+            formatter.finish()
         }
     }
 }
@@ -3643,7 +3798,7 @@ impl DeleteUserInput {
 pub mod describe_activities_input {
 
     /// A builder for [`DescribeActivitiesInput`](crate::input::DescribeActivitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3791,6 +3946,25 @@ pub mod describe_activities_input {
                 limit: self.limit,
                 marker: self.marker,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("start_time", &self.start_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("organization_id", &self.organization_id);
+            formatter.field("activity_types", &self.activity_types);
+            formatter.field("resource_id", &self.resource_id);
+            formatter.field("user_id", &self.user_id);
+            formatter.field(
+                "include_indirect_activities",
+                &self.include_indirect_activities,
+            );
+            formatter.field("limit", &self.limit);
+            formatter.field("marker", &self.marker);
+            formatter.finish()
         }
     }
 }
@@ -3973,7 +4147,7 @@ impl DescribeActivitiesInput {
 pub mod describe_comments_input {
 
     /// A builder for [`DescribeCommentsInput`](crate::input::DescribeCommentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -4049,6 +4223,17 @@ pub mod describe_comments_input {
                 limit: self.limit,
                 marker: self.marker,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("limit", &self.limit);
+            formatter.field("marker", &self.marker);
+            formatter.finish()
         }
     }
 }
@@ -4218,7 +4403,7 @@ impl DescribeCommentsInput {
 pub mod describe_document_versions_input {
 
     /// A builder for [`DescribeDocumentVersionsInput`](crate::input::DescribeDocumentVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -4306,6 +4491,18 @@ pub mod describe_document_versions_input {
                 include: self.include,
                 fields: self.fields,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("marker", &self.marker);
+            formatter.field("limit", &self.limit);
+            formatter.field("include", &self.include);
+            formatter.field("fields", &self.fields);
+            formatter.finish()
         }
     }
 }
@@ -4466,7 +4663,7 @@ impl DescribeDocumentVersionsInput {
 pub mod describe_folder_contents_input {
 
     /// A builder for [`DescribeFolderContentsInput`](crate::input::DescribeFolderContentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -4584,6 +4781,20 @@ pub mod describe_folder_contents_input {
                 r#type: self.r#type,
                 include: self.include,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("folder_id", &self.folder_id);
+            formatter.field("sort", &self.sort);
+            formatter.field("order", &self.order);
+            formatter.field("limit", &self.limit);
+            formatter.field("marker", &self.marker);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("include", &self.include);
+            formatter.finish()
         }
     }
 }
@@ -4754,7 +4965,7 @@ impl DescribeFolderContentsInput {
 pub mod describe_groups_input {
 
     /// A builder for [`DescribeGroupsInput`](crate::input::DescribeGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) search_query: std::option::Option<std::string::String>,
@@ -4831,6 +5042,17 @@ pub mod describe_groups_input {
                 marker: self.marker,
                 limit: self.limit,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("search_query", &"*** Sensitive Data Redacted ***");
+            formatter.field("organization_id", &self.organization_id);
+            formatter.field("marker", &self.marker);
+            formatter.field("limit", &self.limit);
+            formatter.finish()
         }
     }
 }
@@ -5183,7 +5405,7 @@ impl DescribeNotificationSubscriptionsInput {
 pub mod describe_resource_permissions_input {
 
     /// A builder for [`DescribeResourcePermissionsInput`](crate::input::DescribeResourcePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5259,6 +5481,17 @@ pub mod describe_resource_permissions_input {
                 limit: self.limit,
                 marker: self.marker,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("resource_id", &self.resource_id);
+            formatter.field("principal_id", &self.principal_id);
+            formatter.field("limit", &self.limit);
+            formatter.field("marker", &self.marker);
+            formatter.finish()
         }
     }
 }
@@ -5417,7 +5650,7 @@ impl DescribeResourcePermissionsInput {
 pub mod describe_root_folders_input {
 
     /// A builder for [`DescribeRootFoldersInput`](crate::input::DescribeRootFoldersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -5469,6 +5702,15 @@ pub mod describe_root_folders_input {
                 limit: self.limit,
                 marker: self.marker,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("limit", &self.limit);
+            formatter.field("marker", &self.marker);
+            formatter.finish()
         }
     }
 }
@@ -5594,7 +5836,7 @@ impl DescribeRootFoldersInput {
 pub mod describe_users_input {
 
     /// A builder for [`DescribeUsersInput`](crate::input::DescribeUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -5734,6 +5976,22 @@ pub mod describe_users_input {
                 limit: self.limit,
                 fields: self.fields,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("organization_id", &self.organization_id);
+            formatter.field("user_ids", &self.user_ids);
+            formatter.field("query", &"*** Sensitive Data Redacted ***");
+            formatter.field("include", &self.include);
+            formatter.field("order", &self.order);
+            formatter.field("sort", &self.sort);
+            formatter.field("marker", &self.marker);
+            formatter.field("limit", &self.limit);
+            formatter.field("fields", &self.fields);
+            formatter.finish()
         }
     }
 }
@@ -5897,7 +6155,7 @@ impl DescribeUsersInput {
 pub mod get_current_user_input {
 
     /// A builder for [`GetCurrentUserInput`](crate::input::GetCurrentUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
     }
@@ -5923,6 +6181,13 @@ pub mod get_current_user_input {
             Ok(crate::input::GetCurrentUserInput {
                 authentication_token: self.authentication_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -6027,7 +6292,7 @@ impl GetCurrentUserInput {
 pub mod get_document_input {
 
     /// A builder for [`GetDocumentInput`](crate::input::GetDocumentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -6077,6 +6342,15 @@ pub mod get_document_input {
                 document_id: self.document_id,
                 include_custom_metadata: self.include_custom_metadata.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("include_custom_metadata", &self.include_custom_metadata);
+            formatter.finish()
         }
     }
 }
@@ -6220,7 +6494,7 @@ impl GetDocumentInput {
 pub mod get_document_path_input {
 
     /// A builder for [`GetDocumentPathInput`](crate::input::GetDocumentPathInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -6294,6 +6568,17 @@ pub mod get_document_path_input {
                 fields: self.fields,
                 marker: self.marker,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("limit", &self.limit);
+            formatter.field("fields", &self.fields);
+            formatter.field("marker", &self.marker);
+            formatter.finish()
         }
     }
 }
@@ -6448,7 +6733,7 @@ impl GetDocumentPathInput {
 pub mod get_document_version_input {
 
     /// A builder for [`GetDocumentVersionInput`](crate::input::GetDocumentVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -6524,6 +6809,17 @@ pub mod get_document_version_input {
                 fields: self.fields,
                 include_custom_metadata: self.include_custom_metadata.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("fields", &self.fields);
+            formatter.field("include_custom_metadata", &self.include_custom_metadata);
+            formatter.finish()
         }
     }
 }
@@ -6692,7 +6988,7 @@ impl GetDocumentVersionInput {
 pub mod get_folder_input {
 
     /// A builder for [`GetFolderInput`](crate::input::GetFolderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -6742,6 +7038,15 @@ pub mod get_folder_input {
                 folder_id: self.folder_id,
                 include_custom_metadata: self.include_custom_metadata.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("folder_id", &self.folder_id);
+            formatter.field("include_custom_metadata", &self.include_custom_metadata);
+            formatter.finish()
         }
     }
 }
@@ -6879,7 +7184,7 @@ impl GetFolderInput {
 pub mod get_folder_path_input {
 
     /// A builder for [`GetFolderPathInput`](crate::input::GetFolderPathInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -6953,6 +7258,17 @@ pub mod get_folder_path_input {
                 fields: self.fields,
                 marker: self.marker,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("folder_id", &self.folder_id);
+            formatter.field("limit", &self.limit);
+            formatter.field("fields", &self.fields);
+            formatter.field("marker", &self.marker);
+            formatter.finish()
         }
     }
 }
@@ -7107,7 +7423,7 @@ impl GetFolderPathInput {
 pub mod get_resources_input {
 
     /// A builder for [`GetResourcesInput`](crate::input::GetResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -7184,6 +7500,17 @@ pub mod get_resources_input {
                 limit: self.limit,
                 marker: self.marker,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("collection_type", &self.collection_type);
+            formatter.field("limit", &self.limit);
+            formatter.field("marker", &self.marker);
+            formatter.finish()
         }
     }
 }
@@ -7322,7 +7649,7 @@ impl GetResourcesInput {
 pub mod initiate_document_version_upload_input {
 
     /// A builder for [`InitiateDocumentVersionUploadInput`](crate::input::InitiateDocumentVersionUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7445,6 +7772,23 @@ pub mod initiate_document_version_upload_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("id", &self.id);
+            formatter.field("name", &self.name);
+            formatter.field("content_created_timestamp", &self.content_created_timestamp);
+            formatter.field(
+                "content_modified_timestamp",
+                &self.content_modified_timestamp,
+            );
+            formatter.field("content_type", &self.content_type);
+            formatter.field("document_size_in_bytes", &self.document_size_in_bytes);
+            formatter.field("parent_folder_id", &self.parent_folder_id);
+            formatter.finish()
+        }
+    }
 }
 impl InitiateDocumentVersionUploadInput {
     /// Consumes the builder and constructs an Operation<[`InitiateDocumentVersionUpload`](crate::operation::InitiateDocumentVersionUpload)>
@@ -7562,7 +7906,7 @@ impl InitiateDocumentVersionUploadInput {
 pub mod remove_all_resource_permissions_input {
 
     /// A builder for [`RemoveAllResourcePermissionsInput`](crate::input::RemoveAllResourcePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -7602,6 +7946,14 @@ pub mod remove_all_resource_permissions_input {
                 authentication_token: self.authentication_token,
                 resource_id: self.resource_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("resource_id", &self.resource_id);
+            formatter.finish()
         }
     }
 }
@@ -7731,7 +8083,7 @@ impl RemoveAllResourcePermissionsInput {
 pub mod remove_resource_permission_input {
 
     /// A builder for [`RemoveResourcePermissionInput`](crate::input::RemoveResourcePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -7798,6 +8150,16 @@ pub mod remove_resource_permission_input {
                 principal_id: self.principal_id,
                 principal_type: self.principal_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("resource_id", &self.resource_id);
+            formatter.field("principal_id", &self.principal_id);
+            formatter.field("principal_type", &self.principal_type);
+            formatter.finish()
         }
     }
 }
@@ -7960,7 +8322,7 @@ impl RemoveResourcePermissionInput {
 pub mod update_document_input {
 
     /// A builder for [`UpdateDocumentInput`](crate::input::UpdateDocumentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -8040,6 +8402,17 @@ pub mod update_document_input {
                 parent_folder_id: self.parent_folder_id,
                 resource_state: self.resource_state,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("name", &self.name);
+            formatter.field("parent_folder_id", &self.parent_folder_id);
+            formatter.field("resource_state", &self.resource_state);
+            formatter.finish()
         }
     }
 }
@@ -8182,7 +8555,7 @@ impl UpdateDocumentInput {
 pub mod update_document_version_input {
 
     /// A builder for [`UpdateDocumentVersionInput`](crate::input::UpdateDocumentVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -8249,6 +8622,16 @@ pub mod update_document_version_input {
                 version_id: self.version_id,
                 version_status: self.version_status,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("version_status", &self.version_status);
+            formatter.finish()
         }
     }
 }
@@ -8414,7 +8797,7 @@ impl UpdateDocumentVersionInput {
 pub mod update_folder_input {
 
     /// A builder for [`UpdateFolderInput`](crate::input::UpdateFolderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -8494,6 +8877,17 @@ pub mod update_folder_input {
                 parent_folder_id: self.parent_folder_id,
                 resource_state: self.resource_state,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("folder_id", &self.folder_id);
+            formatter.field("name", &self.name);
+            formatter.field("parent_folder_id", &self.parent_folder_id);
+            formatter.field("resource_state", &self.resource_state);
+            formatter.finish()
         }
     }
 }
@@ -8632,7 +9026,7 @@ impl UpdateFolderInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) authentication_token: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -8760,6 +9154,24 @@ pub mod update_user_input {
                 locale: self.locale,
                 grant_poweruser_privileges: self.grant_poweruser_privileges,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("given_name", &self.given_name);
+            formatter.field("surname", &self.surname);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("storage_rule", &self.storage_rule);
+            formatter.field("time_zone_id", &self.time_zone_id);
+            formatter.field("locale", &self.locale);
+            formatter.field(
+                "grant_poweruser_privileges",
+                &self.grant_poweruser_privileges,
+            );
+            formatter.finish()
         }
     }
 }
@@ -9798,7 +10210,7 @@ impl std::fmt::Debug for DescribeResourcePermissionsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNotificationSubscriptionsInput {
     /// <p>The ID of the organization.</p>
     #[doc(hidden)]
@@ -9822,15 +10234,6 @@ impl DescribeNotificationSubscriptionsInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
-    }
-}
-impl std::fmt::Debug for DescribeNotificationSubscriptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNotificationSubscriptionsInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
     }
 }
 
@@ -10211,7 +10614,7 @@ impl std::fmt::Debug for DeleteUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNotificationSubscriptionInput {
     /// <p>The ID of the subscription.</p>
     #[doc(hidden)]
@@ -10228,14 +10631,6 @@ impl DeleteNotificationSubscriptionInput {
     /// <p>The ID of the organization.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteNotificationSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNotificationSubscriptionInput");
-        formatter.field("subscription_id", &self.subscription_id);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.finish()
     }
 }
 
@@ -10593,7 +10988,7 @@ impl std::fmt::Debug for CreateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNotificationSubscriptionInput {
     /// <p>The ID of the organization.</p>
     #[doc(hidden)]
@@ -10624,16 +11019,6 @@ impl CreateNotificationSubscriptionInput {
     /// <p>The notification type.</p>
     pub fn subscription_type(&self) -> std::option::Option<&crate::model::SubscriptionType> {
         self.subscription_type.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateNotificationSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNotificationSubscriptionInput");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("subscription_type", &self.subscription_type);
-        formatter.finish()
     }
 }
 

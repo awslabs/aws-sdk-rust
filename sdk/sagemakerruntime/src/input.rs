@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod invoke_endpoint_input {
 
     /// A builder for [`InvokeEndpointInput`](crate::input::InvokeEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
@@ -161,6 +161,22 @@ pub mod invoke_endpoint_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("endpoint_name", &self.endpoint_name);
+            formatter.field("body", &"*** Sensitive Data Redacted ***");
+            formatter.field("content_type", &self.content_type);
+            formatter.field("accept", &self.accept);
+            formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("target_model", &self.target_model);
+            formatter.field("target_variant", &self.target_variant);
+            formatter.field("target_container_hostname", &self.target_container_hostname);
+            formatter.field("inference_id", &self.inference_id);
+            formatter.field("enable_explanations", &self.enable_explanations);
+            formatter.finish()
+        }
+    }
 }
 impl InvokeEndpointInput {
     /// Consumes the builder and constructs an Operation<[`InvokeEndpoint`](crate::operation::InvokeEndpoint)>
@@ -301,7 +317,7 @@ impl InvokeEndpointInput {
 pub mod invoke_endpoint_async_input {
 
     /// A builder for [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -411,6 +427,19 @@ pub mod invoke_endpoint_async_input {
                 input_location: self.input_location,
                 request_ttl_seconds: self.request_ttl_seconds,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("endpoint_name", &self.endpoint_name);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("accept", &self.accept);
+            formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("inference_id", &self.inference_id);
+            formatter.field("input_location", &self.input_location);
+            formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
+            formatter.finish()
         }
     }
 }

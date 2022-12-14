@@ -2,7 +2,7 @@
 
 /// <p>Specifies the configuration settings for retrieving occurrences of sensitive data reported by findings, and the status of the configuration for an Amazon Macie account. When you enable the configuration for the first time, your request must specify an Key Management Service (KMS) key. Otherwise, an error occurs. Macie uses the specified key to encrypt the sensitive data that you retrieve.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevealConfiguration {
     /// <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services Region as the Amazon Macie account.</p>
     /// <p>If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of the key's alias.</p>
@@ -21,14 +21,6 @@ impl RevealConfiguration {
     /// <p>The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for the account.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::RevealStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for RevealConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevealConfiguration");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`RevealConfiguration`](crate::model::RevealConfiguration).
@@ -361,7 +353,7 @@ impl AsRef<str> for FindingPublishingFrequency {
 
 /// <p>Specifies, as a map, one or more property-based conditions that filter the results of a query for findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingCriteria {
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
     #[doc(hidden)]
@@ -380,13 +372,6 @@ impl FindingCriteria {
         >,
     > {
         self.criterion.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingCriteria");
-        formatter.field("criterion", &self.criterion);
-        formatter.finish()
     }
 }
 /// See [`FindingCriteria`](crate::model::FindingCriteria).
@@ -448,7 +433,7 @@ impl FindingCriteria {
 
 /// <p>Specifies the operator to use in a property-based condition that filters the results of a query for findings. For detailed information and examples of each operator, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-filter-basics.html">Fundamentals of filtering findings</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CriterionAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
     #[doc(hidden)]
@@ -502,19 +487,6 @@ impl CriterionAdditionalProperties {
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
     pub fn neq(&self) -> std::option::Option<&[std::string::String]> {
         self.neq.as_deref()
-    }
-}
-impl std::fmt::Debug for CriterionAdditionalProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CriterionAdditionalProperties");
-        formatter.field("eq", &self.eq);
-        formatter.field("eq_exact_match", &self.eq_exact_match);
-        formatter.field("gt", &self.gt);
-        formatter.field("gte", &self.gte);
-        formatter.field("lt", &self.lt);
-        formatter.field("lte", &self.lte);
-        formatter.field("neq", &self.neq);
-        formatter.finish()
     }
 }
 /// See [`CriterionAdditionalProperties`](crate::model::CriterionAdditionalProperties).
@@ -863,7 +835,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p>Specifies the criteria for an allow list. The criteria must specify a regular expression (regex) or an S3 object (s3WordsList). It can't specify both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowListCriteria {
     /// <p>The regular expression (<i>regex</i>) that defines the text pattern to ignore. The expression can contain as many as 512 characters.</p>
     #[doc(hidden)]
@@ -880,14 +852,6 @@ impl AllowListCriteria {
     /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
     pub fn s3_words_list(&self) -> std::option::Option<&crate::model::S3WordsList> {
         self.s3_words_list.as_ref()
-    }
-}
-impl std::fmt::Debug for AllowListCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowListCriteria");
-        formatter.field("regex", &self.regex);
-        formatter.field("s3_words_list", &self.s3_words_list);
-        formatter.finish()
     }
 }
 /// See [`AllowListCriteria`](crate::model::AllowListCriteria).
@@ -941,7 +905,7 @@ impl AllowListCriteria {
 
 /// <p>Provides information about an S3 object that lists specific text to ignore.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3WordsList {
     /// <p>The full name of the S3 bucket that contains the object.</p>
     #[doc(hidden)]
@@ -958,14 +922,6 @@ impl S3WordsList {
     /// <p>The full name (key) of the object.</p>
     pub fn object_key(&self) -> std::option::Option<&str> {
         self.object_key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3WordsList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3WordsList");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("object_key", &self.object_key);
-        formatter.finish()
     }
 }
 /// See [`S3WordsList`](crate::model::S3WordsList).
@@ -1016,7 +972,7 @@ impl S3WordsList {
 
 /// <p>Provides statistical data and other information about an Amazon Web Services resource that Amazon Macie monitors and analyzes for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchingResource {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
     #[doc(hidden)]
@@ -1026,13 +982,6 @@ impl MatchingResource {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
     pub fn matching_bucket(&self) -> std::option::Option<&crate::model::MatchingBucket> {
         self.matching_bucket.as_ref()
-    }
-}
-impl std::fmt::Debug for MatchingResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchingResource");
-        formatter.field("matching_bucket", &self.matching_bucket);
-        formatter.finish()
     }
 }
 /// See [`MatchingResource`](crate::model::MatchingResource).
@@ -1074,7 +1023,7 @@ impl MatchingResource {
 
 /// <p>Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for most of these properties is null. Exceptions are accountId and bucketName. To identify the cause of the error, refer to the errorCode and errorMessage values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchingBucket {
     /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
     #[doc(hidden)]
@@ -1182,37 +1131,6 @@ impl MatchingBucket {
         &self,
     ) -> std::option::Option<&crate::model::ObjectLevelStatistics> {
         self.unclassifiable_object_size_in_bytes.as_ref()
-    }
-}
-impl std::fmt::Debug for MatchingBucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchingBucket");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("classifiable_object_count", &self.classifiable_object_count);
-        formatter.field(
-            "classifiable_size_in_bytes",
-            &self.classifiable_size_in_bytes,
-        );
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("job_details", &self.job_details);
-        formatter.field("object_count", &self.object_count);
-        formatter.field(
-            "object_count_by_encryption_type",
-            &self.object_count_by_encryption_type,
-        );
-        formatter.field("size_in_bytes", &self.size_in_bytes);
-        formatter.field("size_in_bytes_compressed", &self.size_in_bytes_compressed);
-        formatter.field(
-            "unclassifiable_object_count",
-            &self.unclassifiable_object_count,
-        );
-        formatter.field(
-            "unclassifiable_object_size_in_bytes",
-            &self.unclassifiable_object_size_in_bytes,
-        );
-        formatter.finish()
     }
 }
 /// See [`MatchingBucket`](crate::model::MatchingBucket).
@@ -1431,7 +1349,7 @@ impl MatchingBucket {
 
 /// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for the buckets in the query results. If versioning is enabled for a bucket, total storage size values are based on the size of the latest version of each applicable object in the bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
@@ -1455,15 +1373,6 @@ impl ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn total(&self) -> i64 {
         self.total
-    }
-}
-impl std::fmt::Debug for ObjectLevelStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectLevelStatistics");
-        formatter.field("file_type", &self.file_type);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("total", &self.total);
-        formatter.finish()
     }
 }
 /// See [`ObjectLevelStatistics`](crate::model::ObjectLevelStatistics).
@@ -1526,7 +1435,7 @@ impl ObjectLevelStatistics {
 
 /// <p>Provides information about the number of objects that are in an S3 bucket and use certain types of server-side encryption, use client-side encryption, or aren't encrypted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectCountByEncryptionType {
     /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
     #[doc(hidden)]
@@ -1564,17 +1473,6 @@ impl ObjectCountByEncryptionType {
     /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
     pub fn unknown(&self) -> i64 {
         self.unknown
-    }
-}
-impl std::fmt::Debug for ObjectCountByEncryptionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectCountByEncryptionType");
-        formatter.field("customer_managed", &self.customer_managed);
-        formatter.field("kms_managed", &self.kms_managed);
-        formatter.field("s3_managed", &self.s3_managed);
-        formatter.field("unencrypted", &self.unencrypted);
-        formatter.field("unknown", &self.unknown);
-        formatter.finish()
     }
 }
 /// See [`ObjectCountByEncryptionType`](crate::model::ObjectCountByEncryptionType).
@@ -1661,7 +1559,7 @@ impl ObjectCountByEncryptionType {
 
 /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in an S3 bucket, and, if so, the details of the job that ran most recently.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDetails {
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
@@ -1716,16 +1614,6 @@ impl JobDetails {
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
     pub fn last_job_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_job_run_time.as_ref()
-    }
-}
-impl std::fmt::Debug for JobDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobDetails");
-        formatter.field("is_defined_in_job", &self.is_defined_in_job);
-        formatter.field("is_monitored_by_job", &self.is_monitored_by_job);
-        formatter.field("last_job_id", &self.last_job_id);
-        formatter.field("last_job_run_time", &self.last_job_run_time);
-        formatter.finish()
     }
 }
 /// See [`JobDetails`](crate::model::JobDetails).
@@ -2110,7 +1998,7 @@ impl AsRef<str> for BucketMetadataErrorCode {
 
 /// <p>Specifies criteria for sorting the results of a query for information about Amazon Web Services resources that Amazon Macie monitors and analyzes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchResourcesSortCriteria {
     /// <p>The property to sort the results by.</p>
     #[doc(hidden)]
@@ -2129,14 +2017,6 @@ impl SearchResourcesSortCriteria {
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchResourcesSortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchResourcesSortCriteria");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
     }
 }
 /// See [`SearchResourcesSortCriteria`](crate::model::SearchResourcesSortCriteria).
@@ -2399,7 +2279,7 @@ impl AsRef<str> for SearchResourcesSortAttributeName {
 
 /// <p>Specifies property- and tag-based conditions that define filter criteria for including or excluding S3 buckets from the query results. Exclude conditions take precedence over include conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchResourcesBucketCriteria {
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the results.</p>
     #[doc(hidden)]
@@ -2416,14 +2296,6 @@ impl SearchResourcesBucketCriteria {
     /// <p>The property- and tag-based conditions that determine which buckets to include in the results.</p>
     pub fn includes(&self) -> std::option::Option<&crate::model::SearchResourcesCriteriaBlock> {
         self.includes.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchResourcesBucketCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchResourcesBucketCriteria");
-        formatter.field("excludes", &self.excludes);
-        formatter.field("includes", &self.includes);
-        formatter.finish()
     }
 }
 /// See [`SearchResourcesBucketCriteria`](crate::model::SearchResourcesBucketCriteria).
@@ -2480,7 +2352,7 @@ impl SearchResourcesBucketCriteria {
 
 /// <p>Specifies property- and tag-based conditions that define filter criteria for including or excluding Amazon Web Services resources from the query results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchResourcesCriteriaBlock {
     /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     #[doc(hidden)]
@@ -2490,13 +2362,6 @@ impl SearchResourcesCriteriaBlock {
     /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     pub fn and(&self) -> std::option::Option<&[crate::model::SearchResourcesCriteria]> {
         self.and.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchResourcesCriteriaBlock {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchResourcesCriteriaBlock");
-        formatter.field("and", &self.and);
-        formatter.finish()
     }
 }
 /// See [`SearchResourcesCriteriaBlock`](crate::model::SearchResourcesCriteriaBlock).
@@ -2542,7 +2407,7 @@ impl SearchResourcesCriteriaBlock {
 
 /// <p>Specifies a property- or tag-based filter condition for including or excluding Amazon Web Services resources from the query results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchResourcesCriteria {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
     #[doc(hidden)]
@@ -2561,14 +2426,6 @@ impl SearchResourcesCriteria {
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
     pub fn tag_criterion(&self) -> std::option::Option<&crate::model::SearchResourcesTagCriterion> {
         self.tag_criterion.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchResourcesCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchResourcesCriteria");
-        formatter.field("simple_criterion", &self.simple_criterion);
-        formatter.field("tag_criterion", &self.tag_criterion);
-        formatter.finish()
     }
 }
 /// See [`SearchResourcesCriteria`](crate::model::SearchResourcesCriteria).
@@ -2629,7 +2486,7 @@ impl SearchResourcesCriteria {
 
 /// <p>Specifies a tag-based filter condition that determines which Amazon Web Services resources are included or excluded from the query results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchResourcesTagCriterion {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     #[doc(hidden)]
@@ -2649,14 +2506,6 @@ impl SearchResourcesTagCriterion {
         &self,
     ) -> std::option::Option<&[crate::model::SearchResourcesTagCriterionPair]> {
         self.tag_values.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchResourcesTagCriterion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchResourcesTagCriterion");
-        formatter.field("comparator", &self.comparator);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
     }
 }
 /// See [`SearchResourcesTagCriterion`](crate::model::SearchResourcesTagCriterion).
@@ -2722,7 +2571,7 @@ impl SearchResourcesTagCriterion {
 
 /// <p>Specifies a tag key, a tag value, or a tag key and value (as a pair) to use in a tag-based filter condition for a query. Tag keys and values are case sensitive. Also, Amazon Macie doesn't support use of partial values or wildcard characters in tag-based filter conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchResourcesTagCriterionPair {
     /// <p>The value for the tag key to use in the condition.</p>
     #[doc(hidden)]
@@ -2739,14 +2588,6 @@ impl SearchResourcesTagCriterionPair {
     /// <p>The tag value to use in the condition.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchResourcesTagCriterionPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchResourcesTagCriterionPair");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SearchResourcesTagCriterionPair`](crate::model::SearchResourcesTagCriterionPair).
@@ -2889,7 +2730,7 @@ impl AsRef<str> for SearchResourcesComparator {
 
 /// <p>Specifies a property-based filter condition that determines which Amazon Web Services resources are included or excluded from the query results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchResourcesSimpleCriterion {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     #[doc(hidden)]
@@ -2927,15 +2768,6 @@ impl SearchResourcesSimpleCriterion {
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchResourcesSimpleCriterion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchResourcesSimpleCriterion");
-        formatter.field("comparator", &self.comparator);
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SearchResourcesSimpleCriterion`](crate::model::SearchResourcesSimpleCriterion).
@@ -3138,7 +2970,7 @@ impl AsRef<str> for SearchResourcesSimpleCriterionKey {
 
 /// <p>Specifies configuration settings that determine which findings are published to Security Hub automatically. For information about how Macie publishes findings to Security Hub, see <a href="https://docs.aws.amazon.com/macie/latest/user/securityhub-integration.html">Amazon Macie integration with Security Hub</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityHubConfiguration {
     /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
     #[doc(hidden)]
@@ -3155,17 +2987,6 @@ impl SecurityHubConfiguration {
     /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
     pub fn publish_policy_findings(&self) -> bool {
         self.publish_policy_findings
-    }
-}
-impl std::fmt::Debug for SecurityHubConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityHubConfiguration");
-        formatter.field(
-            "publish_classification_findings",
-            &self.publish_classification_findings,
-        );
-        formatter.field("publish_policy_findings", &self.publish_policy_findings);
-        formatter.finish()
     }
 }
 /// See [`SecurityHubConfiguration`](crate::model::SecurityHubConfiguration).
@@ -3221,7 +3042,7 @@ impl SecurityHubConfiguration {
 
 /// <p>Specifies where to store data classification results, and the encryption settings to use when storing results in that location. Currently, you can store classification results only in an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassificationExportConfiguration {
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
     #[doc(hidden)]
@@ -3231,13 +3052,6 @@ impl ClassificationExportConfiguration {
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
     pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
         self.s3_destination.as_ref()
-    }
-}
-impl std::fmt::Debug for ClassificationExportConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassificationExportConfiguration");
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.finish()
     }
 }
 /// See [`ClassificationExportConfiguration`](crate::model::ClassificationExportConfiguration).
@@ -3279,7 +3093,7 @@ impl ClassificationExportConfiguration {
 
 /// <p>Specifies an S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Destination {
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
@@ -3303,15 +3117,6 @@ impl S3Destination {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric encryption KMS key that's in the same Amazon Web Services Region as the bucket.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Destination");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`S3Destination`](crate::model::S3Destination).
@@ -3374,7 +3179,7 @@ impl S3Destination {
 
 /// <p>Provides information about the delegated Amazon Macie administrator account for an organization in Organizations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminAccount {
     /// <p>The Amazon Web Services account ID for the account.</p>
     #[doc(hidden)]
@@ -3391,14 +3196,6 @@ impl AdminAccount {
     /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::AdminStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AdminAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminAccount");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AdminAccount`](crate::model::AdminAccount).
@@ -3539,7 +3336,7 @@ impl AsRef<str> for AdminStatus {
 
 /// <p>Provides information about an account that's associated with an Amazon Macie administrator account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID for the account.</p>
     #[doc(hidden)]
@@ -3609,21 +3406,6 @@ impl Member {
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Member {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Member");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("administrator_account_id", &self.administrator_account_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("email", &self.email);
-        formatter.field("invited_at", &self.invited_at);
-        formatter.field("master_account_id", &self.master_account_id);
-        formatter.field("relationship_status", &self.relationship_status);
-        formatter.field("tags", &self.tags);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`Member`](crate::model::Member).
@@ -3933,7 +3715,7 @@ impl AsRef<str> for RelationshipStatus {
 
 /// <p>Provides information about a managed data identifier. For additional information, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedDataIdentifierSummary {
     /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     #[doc(hidden)]
@@ -3950,14 +3732,6 @@ impl ManagedDataIdentifierSummary {
     /// <p>The unique identifier for the managed data identifier. This is a string that describes the type of sensitive data that the managed data identifier detects. For example: OPENSSH_PRIVATE_KEY for OpenSSH private keys, CREDIT_CARD_NUMBER for credit card numbers, or USA_PASSPORT_NUMBER for US passport numbers.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedDataIdentifierSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedDataIdentifierSummary");
-        formatter.field("category", &self.category);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`ManagedDataIdentifierSummary`](crate::model::ManagedDataIdentifierSummary).
@@ -4118,7 +3892,7 @@ impl AsRef<str> for SensitiveDataItemCategory {
 
 /// <p>Provides information about an Amazon Macie membership invitation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Invitation {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
     #[doc(hidden)]
@@ -4149,16 +3923,6 @@ impl Invitation {
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
     pub fn relationship_status(&self) -> std::option::Option<&crate::model::RelationshipStatus> {
         self.relationship_status.as_ref()
-    }
-}
-impl std::fmt::Debug for Invitation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Invitation");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("invitation_id", &self.invitation_id);
-        formatter.field("invited_at", &self.invited_at);
-        formatter.field("relationship_status", &self.relationship_status);
-        formatter.finish()
     }
 }
 /// See [`Invitation`](crate::model::Invitation).
@@ -4242,7 +4006,7 @@ impl Invitation {
 
 /// <p>Provides information about a findings filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingsFilterListItem {
     /// <p>The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     #[doc(hidden)]
@@ -4284,17 +4048,6 @@ impl FindingsFilterListItem {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingsFilterListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingsFilterListItem");
-        formatter.field("action", &self.action);
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`FindingsFilterListItem`](crate::model::FindingsFilterListItem).
@@ -4401,7 +4154,7 @@ impl FindingsFilterListItem {
 
 /// <p>Specifies criteria for sorting the results of a request for findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SortCriteria {
     /// <p>The name of the property to sort the results by. This value can be the name of any property that Amazon Macie defines for a finding.</p>
     #[doc(hidden)]
@@ -4418,14 +4171,6 @@ impl SortCriteria {
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
-    }
-}
-impl std::fmt::Debug for SortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SortCriteria");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
     }
 }
 /// See [`SortCriteria`](crate::model::SortCriteria).
@@ -4479,7 +4224,7 @@ impl SortCriteria {
 
 /// <p>Provides information about a custom data identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     #[doc(hidden)]
@@ -4517,17 +4262,6 @@ impl CustomDataIdentifierSummary {
     /// <p>The custom name of the custom data identifier.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomDataIdentifierSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomDataIdentifierSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`CustomDataIdentifierSummary`](crate::model::CustomDataIdentifierSummary).
@@ -4617,7 +4351,7 @@ impl CustomDataIdentifierSummary {
 
 /// <p>Provides information about a classification job, including the current status of the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
     #[doc(hidden)]
@@ -4710,21 +4444,6 @@ impl JobSummary {
     /// <p>The property- and tag-based conditions that determine which S3 buckets are included or excluded from the job's analysis. Each time the job runs, the job uses these criteria to determine which buckets to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
     pub fn bucket_criteria(&self) -> std::option::Option<&crate::model::S3BucketCriteriaForJob> {
         self.bucket_criteria.as_ref()
-    }
-}
-impl std::fmt::Debug for JobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobSummary");
-        formatter.field("bucket_definitions", &self.bucket_definitions);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("job_type", &self.job_type);
-        formatter.field("last_run_error_status", &self.last_run_error_status);
-        formatter.field("name", &self.name);
-        formatter.field("user_paused_details", &self.user_paused_details);
-        formatter.field("bucket_criteria", &self.bucket_criteria);
-        formatter.finish()
     }
 }
 /// See [`JobSummary`](crate::model::JobSummary).
@@ -4908,7 +4627,7 @@ impl JobSummary {
 
 /// <p>Specifies property- and tag-based conditions that define criteria for including or excluding S3 buckets from a classification job. Exclude conditions take precedence over include conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketCriteriaForJob {
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the job.</p>
     #[doc(hidden)]
@@ -4925,14 +4644,6 @@ impl S3BucketCriteriaForJob {
     /// <p>The property- and tag-based conditions that determine which buckets to include in the job.</p>
     pub fn includes(&self) -> std::option::Option<&crate::model::CriteriaBlockForJob> {
         self.includes.as_ref()
-    }
-}
-impl std::fmt::Debug for S3BucketCriteriaForJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketCriteriaForJob");
-        formatter.field("excludes", &self.excludes);
-        formatter.field("includes", &self.includes);
-        formatter.finish()
     }
 }
 /// See [`S3BucketCriteriaForJob`](crate::model::S3BucketCriteriaForJob).
@@ -4989,7 +4700,7 @@ impl S3BucketCriteriaForJob {
 
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 buckets from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CriteriaBlockForJob {
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     #[doc(hidden)]
@@ -4999,13 +4710,6 @@ impl CriteriaBlockForJob {
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     pub fn and(&self) -> std::option::Option<&[crate::model::CriteriaForJob]> {
         self.and.as_deref()
-    }
-}
-impl std::fmt::Debug for CriteriaBlockForJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CriteriaBlockForJob");
-        formatter.field("and", &self.and);
-        formatter.finish()
     }
 }
 /// See [`CriteriaBlockForJob`](crate::model::CriteriaBlockForJob).
@@ -5051,7 +4755,7 @@ impl CriteriaBlockForJob {
 
 /// <p>Specifies a property- or tag-based condition that defines criteria for including or excluding S3 buckets from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CriteriaForJob {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
     #[doc(hidden)]
@@ -5068,14 +4772,6 @@ impl CriteriaForJob {
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
     pub fn tag_criterion(&self) -> std::option::Option<&crate::model::TagCriterionForJob> {
         self.tag_criterion.as_ref()
-    }
-}
-impl std::fmt::Debug for CriteriaForJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CriteriaForJob");
-        formatter.field("simple_criterion", &self.simple_criterion);
-        formatter.field("tag_criterion", &self.tag_criterion);
-        formatter.finish()
     }
 }
 /// See [`CriteriaForJob`](crate::model::CriteriaForJob).
@@ -5132,7 +4828,7 @@ impl CriteriaForJob {
 
 /// <p>Specifies a tag-based condition that determines whether an S3 bucket is included or excluded from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagCriterionForJob {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     #[doc(hidden)]
@@ -5149,14 +4845,6 @@ impl TagCriterionForJob {
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
     pub fn tag_values(&self) -> std::option::Option<&[crate::model::TagCriterionPairForJob]> {
         self.tag_values.as_deref()
-    }
-}
-impl std::fmt::Debug for TagCriterionForJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagCriterionForJob");
-        formatter.field("comparator", &self.comparator);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
     }
 }
 /// See [`TagCriterionForJob`](crate::model::TagCriterionForJob).
@@ -5220,7 +4908,7 @@ impl TagCriterionForJob {
 
 /// <p>Specifies a tag key, a tag value, or a tag key and value (as a pair) to use in a tag-based condition that determines whether an S3 bucket is included or excluded from a classification job. Tag keys and values are case sensitive. Also, Amazon Macie doesn't support use of partial values or wildcard characters in tag-based conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagCriterionPairForJob {
     /// <p>The value for the tag key to use in the condition.</p>
     #[doc(hidden)]
@@ -5237,14 +4925,6 @@ impl TagCriterionPairForJob {
     /// <p>The tag value to use in the condition.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for TagCriterionPairForJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagCriterionPairForJob");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`TagCriterionPairForJob`](crate::model::TagCriterionPairForJob).
@@ -5424,7 +5104,7 @@ impl AsRef<str> for JobComparator {
 
 /// <p>Specifies a property-based condition that determines whether an S3 bucket is included or excluded from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleCriterionForJob {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     #[doc(hidden)]
@@ -5462,15 +5142,6 @@ impl SimpleCriterionForJob {
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SimpleCriterionForJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleCriterionForJob");
-        formatter.field("comparator", &self.comparator);
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SimpleCriterionForJob`](crate::model::SimpleCriterionForJob).
@@ -5673,7 +5344,7 @@ impl AsRef<str> for SimpleCriterionKeyForJob {
 
 /// <p>Provides information about when a classification job was paused. For a one-time job, this object also specifies when the job will expire and be cancelled if it isn't resumed. For a recurring job, this object also specifies when the paused job run will expire and be cancelled if it isn't resumed. This object is present only if a job's current status (jobStatus) is USER_PAUSED. The information in this object applies only to a job that was paused while it had a status of RUNNING.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPausedDetails {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
     #[doc(hidden)]
@@ -5697,18 +5368,6 @@ impl UserPausedDetails {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
     pub fn job_paused_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.job_paused_at.as_ref()
-    }
-}
-impl std::fmt::Debug for UserPausedDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPausedDetails");
-        formatter.field("job_expires_at", &self.job_expires_at);
-        formatter.field(
-            "job_imminent_expiration_health_event_arn",
-            &self.job_imminent_expiration_health_event_arn,
-        );
-        formatter.field("job_paused_at", &self.job_paused_at);
-        formatter.finish()
     }
 }
 /// See [`UserPausedDetails`](crate::model::UserPausedDetails).
@@ -5785,7 +5444,7 @@ impl UserPausedDetails {
 
 /// <p>Specifies whether any account- or bucket-level access errors occurred when a classification job ran. For information about using logging data to investigate these errors, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-monitor-cw-logs.html">Monitoring sensitive data discovery jobs</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LastRunErrorStatus {
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
@@ -5803,13 +5462,6 @@ impl LastRunErrorStatus {
     /// </ul>
     pub fn code(&self) -> std::option::Option<&crate::model::LastRunErrorStatusCode> {
         self.code.as_ref()
-    }
-}
-impl std::fmt::Debug for LastRunErrorStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastRunErrorStatus");
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 /// See [`LastRunErrorStatus`](crate::model::LastRunErrorStatus).
@@ -6039,7 +5691,7 @@ impl AsRef<str> for JobType {
 
 /// <p>Specifies an Amazon Web Services account that owns S3 buckets for a classification job to analyze, and one or more specific buckets to analyze for that account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketDefinitionForJob {
     /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
     #[doc(hidden)]
@@ -6056,14 +5708,6 @@ impl S3BucketDefinitionForJob {
     /// <p>An array that lists the names of the buckets.</p>
     pub fn buckets(&self) -> std::option::Option<&[std::string::String]> {
         self.buckets.as_deref()
-    }
-}
-impl std::fmt::Debug for S3BucketDefinitionForJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketDefinitionForJob");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("buckets", &self.buckets);
-        formatter.finish()
     }
 }
 /// See [`S3BucketDefinitionForJob`](crate::model::S3BucketDefinitionForJob).
@@ -6123,7 +5767,7 @@ impl S3BucketDefinitionForJob {
 
 /// <p>Specifies criteria for sorting the results of a request for information about classification jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsSortCriteria {
     /// <p>The property to sort the results by.</p>
     #[doc(hidden)]
@@ -6140,14 +5784,6 @@ impl ListJobsSortCriteria {
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
-    }
-}
-impl std::fmt::Debug for ListJobsSortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsSortCriteria");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
     }
 }
 /// See [`ListJobsSortCriteria`](crate::model::ListJobsSortCriteria).
@@ -6303,7 +5939,7 @@ impl AsRef<str> for ListJobsSortAttributeName {
 
 /// <p>Specifies criteria for filtering the results of a request for information about classification jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsFilterCriteria {
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
     #[doc(hidden)]
@@ -6320,14 +5956,6 @@ impl ListJobsFilterCriteria {
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::ListJobsFilterTerm]> {
         self.includes.as_deref()
-    }
-}
-impl std::fmt::Debug for ListJobsFilterCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsFilterCriteria");
-        formatter.field("excludes", &self.excludes);
-        formatter.field("includes", &self.includes);
-        formatter.finish()
     }
 }
 /// See [`ListJobsFilterCriteria`](crate::model::ListJobsFilterCriteria).
@@ -6396,7 +6024,7 @@ impl ListJobsFilterCriteria {
 
 /// <p>Specifies a condition that filters the results of a request for information about classification jobs. Each condition consists of a property, an operator, and one or more values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsFilterTerm {
     /// <p>The operator to use to filter the results.</p>
     #[doc(hidden)]
@@ -6420,15 +6048,6 @@ impl ListJobsFilterTerm {
     /// <p>An array that lists one or more values to use to filter the results.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ListJobsFilterTerm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsFilterTerm");
-        formatter.field("comparator", &self.comparator);
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ListJobsFilterTerm`](crate::model::ListJobsFilterTerm).
@@ -6608,7 +6227,7 @@ impl AsRef<str> for ListJobsFilterKey {
 
 /// <p>Provides a subset of information about an allow list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowListSummary {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
     #[doc(hidden)]
@@ -6653,18 +6272,6 @@ impl AllowListSummary {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AllowListSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowListSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`AllowListSummary`](crate::model::AllowListSummary).
@@ -6769,7 +6376,7 @@ impl AllowListSummary {
 
 /// <p>Provides aggregated data for an Amazon Macie usage metric. The value for the metric reports estimated usage data for an account for the preceding 30 days or the current calendar month to date, depending on the time period (timeRange) specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageTotal {
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
     #[doc(hidden)]
@@ -6793,15 +6400,6 @@ impl UsageTotal {
     /// <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UsageType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for UsageTotal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageTotal");
-        formatter.field("currency", &self.currency);
-        formatter.field("estimated_cost", &self.estimated_cost);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`UsageTotal`](crate::model::UsageTotal).
@@ -7132,7 +6730,7 @@ impl AsRef<str> for TimeRange {
 
 /// <p>Provides quota and aggregated usage data for an Amazon Macie account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageRecord {
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
     #[doc(hidden)]
@@ -7156,15 +6754,6 @@ impl UsageRecord {
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
     pub fn usage(&self) -> std::option::Option<&[crate::model::UsageByAccount]> {
         self.usage.as_deref()
-    }
-}
-impl std::fmt::Debug for UsageRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageRecord");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("free_trial_start_date", &self.free_trial_start_date);
-        formatter.field("usage", &self.usage);
-        formatter.finish()
     }
 }
 /// See [`UsageRecord`](crate::model::UsageRecord).
@@ -7239,7 +6828,7 @@ impl UsageRecord {
 
 /// <p>Provides data for a specific usage metric and the corresponding quota for an Amazon Macie account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageByAccount {
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
     #[doc(hidden)]
@@ -7270,16 +6859,6 @@ impl UsageByAccount {
     /// <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UsageType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for UsageByAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageByAccount");
-        formatter.field("currency", &self.currency);
-        formatter.field("estimated_cost", &self.estimated_cost);
-        formatter.field("service_limit", &self.service_limit);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`UsageByAccount`](crate::model::UsageByAccount).
@@ -7360,7 +6939,7 @@ impl UsageByAccount {
 
 /// <p>Specifies a current quota for an Amazon Macie account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceLimit {
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
     #[doc(hidden)]
@@ -7384,15 +6963,6 @@ impl ServiceLimit {
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
     pub fn value(&self) -> i64 {
         self.value
-    }
-}
-impl std::fmt::Debug for ServiceLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceLimit");
-        formatter.field("is_service_limited", &self.is_service_limited);
-        formatter.field("unit", &self.unit);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ServiceLimit`](crate::model::ServiceLimit).
@@ -7540,7 +7110,7 @@ impl AsRef<str> for Unit {
 
 /// <p>Specifies criteria for sorting the results of a query for Amazon Macie account quotas and usage data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageStatisticsSortBy {
     /// <p>The field to sort the results by.</p>
     #[doc(hidden)]
@@ -7557,14 +7127,6 @@ impl UsageStatisticsSortBy {
     /// <p>The sort order to apply to the results, based on the value for the field specified by the key property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
-    }
-}
-impl std::fmt::Debug for UsageStatisticsSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageStatisticsSortBy");
-        formatter.field("key", &self.key);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
     }
 }
 /// See [`UsageStatisticsSortBy`](crate::model::UsageStatisticsSortBy).
@@ -7725,7 +7287,7 @@ impl AsRef<str> for UsageStatisticsSortKey {
 
 /// <p>Specifies a condition for filtering the results of a query for quota and usage data for one or more Amazon Macie accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageStatisticsFilter {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
     #[doc(hidden)]
@@ -7765,15 +7327,6 @@ impl UsageStatisticsFilter {
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for UsageStatisticsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageStatisticsFilter");
-        formatter.field("comparator", &self.comparator);
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`UsageStatisticsFilter`](crate::model::UsageStatisticsFilter).
@@ -8388,7 +7941,7 @@ impl AsRef<str> for RevealRequestStatus {
 
 /// <p>Specifies 1-10 occurrences of a specific type of sensitive data reported by a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedDataDetails {
     /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
     #[doc(hidden)]
@@ -8398,13 +7951,6 @@ impl DetectedDataDetails {
     /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for DetectedDataDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedDataDetails");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DetectedDataDetails`](crate::model::DetectedDataDetails).
@@ -8441,7 +7987,7 @@ impl DetectedDataDetails {
 
 /// <p>Provides a group of results for a query that retrieved aggregated statistical data about findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupCount {
     /// <p>The total number of findings in the group of query results.</p>
     #[doc(hidden)]
@@ -8458,14 +8004,6 @@ impl GroupCount {
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
     pub fn group_key(&self) -> std::option::Option<&str> {
         self.group_key.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupCount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupCount");
-        formatter.field("count", &self.count);
-        formatter.field("group_key", &self.group_key);
-        formatter.finish()
     }
 }
 /// See [`GroupCount`](crate::model::GroupCount).
@@ -8516,7 +8054,7 @@ impl GroupCount {
 
 /// <p>Specifies criteria for sorting the results of a query that retrieves aggregated statistical data about findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingStatisticsSortCriteria {
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
     #[doc(hidden)]
@@ -8535,14 +8073,6 @@ impl FindingStatisticsSortCriteria {
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingStatisticsSortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingStatisticsSortCriteria");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
     }
 }
 /// See [`FindingStatisticsSortCriteria`](crate::model::FindingStatisticsSortCriteria).
@@ -8797,7 +8327,7 @@ impl AsRef<str> for GroupBy {
 
 /// <p>Provides the details of a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Finding {
     /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
     #[doc(hidden)]
@@ -8928,30 +8458,6 @@ impl Finding {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Finding {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Finding");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("archived", &self.archived);
-        formatter.field("category", &self.category);
-        formatter.field("classification_details", &self.classification_details);
-        formatter.field("count", &self.count);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("partition", &self.partition);
-        formatter.field("policy_details", &self.policy_details);
-        formatter.field("region", &self.region);
-        formatter.field("resources_affected", &self.resources_affected);
-        formatter.field("sample", &self.sample);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("severity", &self.severity);
-        formatter.field("title", &self.title);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`Finding`](crate::model::Finding).
@@ -9379,7 +8885,7 @@ impl AsRef<str> for FindingType {
 
 /// <p>Provides the numerical and qualitative representations of a finding's severity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Severity {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
     #[doc(hidden)]
@@ -9396,14 +8902,6 @@ impl Severity {
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
     pub fn score(&self) -> i64 {
         self.score
-    }
-}
-impl std::fmt::Debug for Severity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Severity");
-        formatter.field("description", &self.description);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`Severity`](crate::model::Severity).
@@ -9554,7 +9052,7 @@ impl AsRef<str> for SeverityDescription {
 
 /// <p>Provides information about the resources that a finding applies to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcesAffected {
     /// <p>The details of the S3 bucket that the finding applies to.</p>
     #[doc(hidden)]
@@ -9571,14 +9069,6 @@ impl ResourcesAffected {
     /// <p>The details of the S3 object that the finding applies to.</p>
     pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
         self.s3_object.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourcesAffected {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcesAffected");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_object", &self.s3_object);
-        formatter.finish()
     }
 }
 /// See [`ResourcesAffected`](crate::model::ResourcesAffected).
@@ -9629,7 +9119,7 @@ impl ResourcesAffected {
 
 /// <p>Provides information about the S3 object that a finding applies to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Object {
     /// <p>The Amazon Resource Name (ARN) of the bucket that contains the object.</p>
     #[doc(hidden)]
@@ -9718,24 +9208,6 @@ impl S3Object {
     /// <p>The identifier for the affected version of the object.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Object {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Object");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("extension", &self.extension);
-        formatter.field("key", &self.key);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("path", &self.path);
-        formatter.field("public_access", &self.public_access);
-        formatter.field("server_side_encryption", &self.server_side_encryption);
-        formatter.field("size", &self.size);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("tags", &self.tags);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
     }
 }
 /// See [`S3Object`](crate::model::S3Object).
@@ -9924,7 +9396,7 @@ impl S3Object {
 
 /// <p>Provides information about the tags that are associated with an S3 bucket or object. Each tag consists of a required tag key and an associated tag value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyValuePair {
     /// <p>One part of a key-value pair that comprises a tag. A tag key is a general label that acts as a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -9941,14 +9413,6 @@ impl KeyValuePair {
     /// <p>One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag value can be an empty string.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyValuePair");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`KeyValuePair`](crate::model::KeyValuePair).
@@ -10122,7 +9586,7 @@ impl AsRef<str> for StorageClass {
 
 /// <p>Provides information about the server-side encryption settings for an S3 bucket or S3 object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerSideEncryption {
     /// <p>The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.</p>
     #[doc(hidden)]
@@ -10139,14 +9603,6 @@ impl ServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
     pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerSideEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerSideEncryption");
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("kms_master_key_id", &self.kms_master_key_id);
-        formatter.finish()
     }
 }
 /// See [`ServerSideEncryption`](crate::model::ServerSideEncryption).
@@ -10305,7 +9761,7 @@ impl AsRef<str> for EncryptionType {
 
 /// <p>Provides information about the S3 bucket that a finding applies to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Bucket {
     /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p>
     /// <ul>
@@ -10379,26 +9835,6 @@ impl S3Bucket {
     /// <p>The tags that are associated with the bucket.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Bucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Bucket");
-        formatter.field(
-            "allows_unencrypted_object_uploads",
-            &self.allows_unencrypted_object_uploads,
-        );
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field(
-            "default_server_side_encryption",
-            &self.default_server_side_encryption,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("public_access", &self.public_access);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`S3Bucket`](crate::model::S3Bucket).
@@ -10563,7 +9999,7 @@ impl S3Bucket {
 
 /// <p>Provides information about the permissions settings that determine whether an S3 bucket is publicly accessible.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketPublicAccess {
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
@@ -10592,14 +10028,6 @@ impl BucketPublicAccess {
         &self,
     ) -> std::option::Option<&crate::model::BucketPermissionConfiguration> {
         self.permission_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for BucketPublicAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketPublicAccess");
-        formatter.field("effective_permission", &self.effective_permission);
-        formatter.field("permission_configuration", &self.permission_configuration);
-        formatter.finish()
     }
 }
 /// See [`BucketPublicAccess`](crate::model::BucketPublicAccess).
@@ -10670,7 +10098,7 @@ impl BucketPublicAccess {
 
 /// <p>Provides information about the account-level and bucket-level permissions settings for an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketPermissionConfiguration {
     /// <p>The account-level permissions settings that apply to the bucket.</p>
     #[doc(hidden)]
@@ -10691,14 +10119,6 @@ impl BucketPermissionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::BucketLevelPermissions> {
         self.bucket_level_permissions.as_ref()
-    }
-}
-impl std::fmt::Debug for BucketPermissionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketPermissionConfiguration");
-        formatter.field("account_level_permissions", &self.account_level_permissions);
-        formatter.field("bucket_level_permissions", &self.bucket_level_permissions);
-        formatter.finish()
     }
 }
 /// See [`BucketPermissionConfiguration`](crate::model::BucketPermissionConfiguration).
@@ -10763,7 +10183,7 @@ impl BucketPermissionConfiguration {
 
 /// <p>Provides information about the bucket-level permissions settings for an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketLevelPermissions {
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
     #[doc(hidden)]
@@ -10787,15 +10207,6 @@ impl BucketLevelPermissions {
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
     pub fn bucket_policy(&self) -> std::option::Option<&crate::model::BucketPolicy> {
         self.bucket_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for BucketLevelPermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketLevelPermissions");
-        formatter.field("access_control_list", &self.access_control_list);
-        formatter.field("block_public_access", &self.block_public_access);
-        formatter.field("bucket_policy", &self.bucket_policy);
-        formatter.finish()
     }
 }
 /// See [`BucketLevelPermissions`](crate::model::BucketLevelPermissions).
@@ -10867,7 +10278,7 @@ impl BucketLevelPermissions {
 
 /// <p>Provides information about the permissions settings of the bucket policy for an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketPolicy {
     /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
     #[doc(hidden)]
@@ -10884,17 +10295,6 @@ impl BucketPolicy {
     /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
     pub fn allows_public_write_access(&self) -> bool {
         self.allows_public_write_access
-    }
-}
-impl std::fmt::Debug for BucketPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketPolicy");
-        formatter.field("allows_public_read_access", &self.allows_public_read_access);
-        formatter.field(
-            "allows_public_write_access",
-            &self.allows_public_write_access,
-        );
-        formatter.finish()
     }
 }
 /// See [`BucketPolicy`](crate::model::BucketPolicy).
@@ -10945,7 +10345,7 @@ impl BucketPolicy {
 
 /// <p>Provides information about the block public access settings for an S3 bucket. These settings can apply to a bucket at the account level or bucket level. For detailed information about each setting, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking public access to your Amazon S3 storage</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockPublicAccess {
     /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
     #[doc(hidden)]
@@ -10976,16 +10376,6 @@ impl BlockPublicAccess {
     /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
     pub fn restrict_public_buckets(&self) -> bool {
         self.restrict_public_buckets
-    }
-}
-impl std::fmt::Debug for BlockPublicAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockPublicAccess");
-        formatter.field("block_public_acls", &self.block_public_acls);
-        formatter.field("block_public_policy", &self.block_public_policy);
-        formatter.field("ignore_public_acls", &self.ignore_public_acls);
-        formatter.field("restrict_public_buckets", &self.restrict_public_buckets);
-        formatter.finish()
     }
 }
 /// See [`BlockPublicAccess`](crate::model::BlockPublicAccess).
@@ -11060,7 +10450,7 @@ impl BlockPublicAccess {
 
 /// <p>Provides information about the permissions settings of the bucket-level access control list (ACL) for an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlList {
     /// <p>Specifies whether the ACL grants the general public with read access permissions for the bucket.</p>
     #[doc(hidden)]
@@ -11077,17 +10467,6 @@ impl AccessControlList {
     /// <p>Specifies whether the ACL grants the general public with write access permissions for the bucket.</p>
     pub fn allows_public_write_access(&self) -> bool {
         self.allows_public_write_access
-    }
-}
-impl std::fmt::Debug for AccessControlList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlList");
-        formatter.field("allows_public_read_access", &self.allows_public_read_access);
-        formatter.field(
-            "allows_public_write_access",
-            &self.allows_public_write_access,
-        );
-        formatter.finish()
     }
 }
 /// See [`AccessControlList`](crate::model::AccessControlList).
@@ -11138,7 +10517,7 @@ impl AccessControlList {
 
 /// <p>Provides information about the account-level permissions settings that apply to an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountLevelPermissions {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
     #[doc(hidden)]
@@ -11148,13 +10527,6 @@ impl AccountLevelPermissions {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
     pub fn block_public_access(&self) -> std::option::Option<&crate::model::BlockPublicAccess> {
         self.block_public_access.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountLevelPermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountLevelPermissions");
-        formatter.field("block_public_access", &self.block_public_access);
-        formatter.finish()
     }
 }
 /// See [`AccountLevelPermissions`](crate::model::AccountLevelPermissions).
@@ -11293,7 +10665,7 @@ impl AsRef<str> for EffectivePermission {
 
 /// <p>Provides information about the Amazon Web Services account that owns an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketOwner {
     /// <p>The display name of the account that owns the bucket.</p>
     #[doc(hidden)]
@@ -11310,14 +10682,6 @@ impl S3BucketOwner {
     /// <p>The canonical user ID for the account that owns the bucket.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for S3BucketOwner {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketOwner");
-        formatter.field("display_name", &self.display_name);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`S3BucketOwner`](crate::model::S3BucketOwner).
@@ -11465,7 +10829,7 @@ impl AsRef<str> for AllowsUnencryptedObjectUploads {
 
 /// <p>Provides the details of a policy finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyDetails {
     /// <p>The action that produced the finding.</p>
     #[doc(hidden)]
@@ -11482,14 +10846,6 @@ impl PolicyDetails {
     /// <p>The entity that performed the action that produced the finding.</p>
     pub fn actor(&self) -> std::option::Option<&crate::model::FindingActor> {
         self.actor.as_ref()
-    }
-}
-impl std::fmt::Debug for PolicyDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyDetails");
-        formatter.field("action", &self.action);
-        formatter.field("actor", &self.actor);
-        formatter.finish()
     }
 }
 /// See [`PolicyDetails`](crate::model::PolicyDetails).
@@ -11543,7 +10899,7 @@ impl PolicyDetails {
 
 /// <p>Provides information about an entity that performed an action that produced a policy finding for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingActor {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
     #[doc(hidden)]
@@ -11567,15 +10923,6 @@ impl FindingActor {
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
     pub fn user_identity(&self) -> std::option::Option<&crate::model::UserIdentity> {
         self.user_identity.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingActor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingActor");
-        formatter.field("domain_details", &self.domain_details);
-        formatter.field("ip_address_details", &self.ip_address_details);
-        formatter.field("user_identity", &self.user_identity);
-        formatter.finish()
     }
 }
 /// See [`FindingActor`](crate::model::FindingActor).
@@ -11647,7 +10994,7 @@ impl FindingActor {
 
 /// <p>Provides information about the type and other characteristics of an entity that performed an action on an affected resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserIdentity {
     /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
     #[doc(hidden)]
@@ -11699,19 +11046,6 @@ impl UserIdentity {
     /// <p>The type of entity that performed the action.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UserIdentityType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for UserIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserIdentity");
-        formatter.field("assumed_role", &self.assumed_role);
-        formatter.field("aws_account", &self.aws_account);
-        formatter.field("aws_service", &self.aws_service);
-        formatter.field("federated_user", &self.federated_user);
-        formatter.field("iam_user", &self.iam_user);
-        formatter.field("root", &self.root);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`UserIdentity`](crate::model::UserIdentity).
@@ -11957,7 +11291,7 @@ impl AsRef<str> for UserIdentityType {
 
 /// <p>Provides information about an Amazon Web Services account and entity that performed an action on an affected resource. The action was performed using the credentials for your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserIdentityRoot {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -11981,15 +11315,6 @@ impl UserIdentityRoot {
     /// <p>The unique identifier for the entity that performed the action.</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UserIdentityRoot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserIdentityRoot");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.finish()
     }
 }
 /// See [`UserIdentityRoot`](crate::model::UserIdentityRoot).
@@ -12052,7 +11377,7 @@ impl UserIdentityRoot {
 
 /// <p>Provides information about an Identity and Access Management (IAM) user who performed an action on an affected resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamUser {
     /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
     #[doc(hidden)]
@@ -12083,16 +11408,6 @@ impl IamUser {
     /// <p>The user name of the IAM user who performed the action.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
-    }
-}
-impl std::fmt::Debug for IamUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamUser");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
     }
 }
 /// See [`IamUser`](crate::model::IamUser).
@@ -12167,7 +11482,7 @@ impl IamUser {
 
 /// <p>Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the GetFederationToken operation of the Security Token Service (STS) API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FederatedUser {
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
     #[doc(hidden)]
@@ -12205,17 +11520,6 @@ impl FederatedUser {
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
     pub fn session_context(&self) -> std::option::Option<&crate::model::SessionContext> {
         self.session_context.as_ref()
-    }
-}
-impl std::fmt::Debug for FederatedUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FederatedUser");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("session_context", &self.session_context);
-        formatter.finish()
     }
 }
 /// See [`FederatedUser`](crate::model::FederatedUser).
@@ -12308,7 +11612,7 @@ impl FederatedUser {
 
 /// <p>Provides information about a session that was created for an entity that performed an action by using temporary security credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionContext {
     /// <p>The date and time when the credentials were issued, and whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     #[doc(hidden)]
@@ -12325,14 +11629,6 @@ impl SessionContext {
     /// <p>The source and type of credentials that were issued to the entity.</p>
     pub fn session_issuer(&self) -> std::option::Option<&crate::model::SessionIssuer> {
         self.session_issuer.as_ref()
-    }
-}
-impl std::fmt::Debug for SessionContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionContext");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("session_issuer", &self.session_issuer);
-        formatter.finish()
     }
 }
 /// See [`SessionContext`](crate::model::SessionContext).
@@ -12389,7 +11685,7 @@ impl SessionContext {
 
 /// <p>Provides information about the source and type of temporary security credentials that were issued to an entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionIssuer {
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     #[doc(hidden)]
@@ -12427,17 +11723,6 @@ impl SessionIssuer {
     /// <p>The name or alias of the user or role that issued the session. This value is null if the credentials were obtained from a root account that doesn't have an alias.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SessionIssuer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionIssuer");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
     }
 }
 /// See [`SessionIssuer`](crate::model::SessionIssuer).
@@ -12524,7 +11809,7 @@ impl SessionIssuer {
 
 /// <p>Provides information about the context in which temporary security credentials were issued to an entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
     #[doc(hidden)]
@@ -12541,14 +11826,6 @@ impl SessionContextAttributes {
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub fn mfa_authenticated(&self) -> bool {
         self.mfa_authenticated
-    }
-}
-impl std::fmt::Debug for SessionContextAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionContextAttributes");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("mfa_authenticated", &self.mfa_authenticated);
-        formatter.finish()
     }
 }
 /// See [`SessionContextAttributes`](crate::model::SessionContextAttributes).
@@ -12602,7 +11879,7 @@ impl SessionContextAttributes {
 
 /// <p>Provides information about an Amazon Web Service that performed an action on an affected resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsService {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
     #[doc(hidden)]
@@ -12612,13 +11889,6 @@ impl AwsService {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
     pub fn invoked_by(&self) -> std::option::Option<&str> {
         self.invoked_by.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsService");
-        formatter.field("invoked_by", &self.invoked_by);
-        formatter.finish()
     }
 }
 /// See [`AwsService`](crate::model::AwsService).
@@ -12657,7 +11927,7 @@ impl AwsService {
 
 /// <p>Provides information about an Amazon Web Services account and entity that performed an action on an affected resource. The action was performed using the credentials for an Amazon Web Services account other than your own account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsAccount {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -12674,14 +11944,6 @@ impl AwsAccount {
     /// <p>The unique identifier for the entity that performed the action.</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsAccount");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.finish()
     }
 }
 /// See [`AwsAccount`](crate::model::AwsAccount).
@@ -12732,7 +11994,7 @@ impl AwsAccount {
 
 /// <p>Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the AssumeRole operation of the Security Token Service (STS) API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumedRole {
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
     #[doc(hidden)]
@@ -12770,17 +12032,6 @@ impl AssumedRole {
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
     pub fn session_context(&self) -> std::option::Option<&crate::model::SessionContext> {
         self.session_context.as_ref()
-    }
-}
-impl std::fmt::Debug for AssumedRole {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumedRole");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("session_context", &self.session_context);
-        formatter.finish()
     }
 }
 /// See [`AssumedRole`](crate::model::AssumedRole).
@@ -12873,7 +12124,7 @@ impl AssumedRole {
 
 /// <p>Provides information about the IP address of the device that an entity used to perform an action on an affected resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpAddressDetails {
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
     #[doc(hidden)]
@@ -12911,17 +12162,6 @@ impl IpAddressDetails {
     /// <p>The registered owner of the IP address.</p>
     pub fn ip_owner(&self) -> std::option::Option<&crate::model::IpOwner> {
         self.ip_owner.as_ref()
-    }
-}
-impl std::fmt::Debug for IpAddressDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpAddressDetails");
-        formatter.field("ip_address_v4", &self.ip_address_v4);
-        formatter.field("ip_city", &self.ip_city);
-        formatter.field("ip_country", &self.ip_country);
-        formatter.field("ip_geo_location", &self.ip_geo_location);
-        formatter.field("ip_owner", &self.ip_owner);
-        formatter.finish()
     }
 }
 /// See [`IpAddressDetails`](crate::model::IpAddressDetails).
@@ -13017,7 +12257,7 @@ impl IpAddressDetails {
 
 /// <p>Provides information about the registered owner of an IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpOwner {
     /// <p>The autonomous system number (ASN) for the autonomous system that included the IP address.</p>
     #[doc(hidden)]
@@ -13048,16 +12288,6 @@ impl IpOwner {
     /// <p>The name of the organization that owned the IP address.</p>
     pub fn org(&self) -> std::option::Option<&str> {
         self.org.as_deref()
-    }
-}
-impl std::fmt::Debug for IpOwner {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpOwner");
-        formatter.field("asn", &self.asn);
-        formatter.field("asn_org", &self.asn_org);
-        formatter.field("isp", &self.isp);
-        formatter.field("org", &self.org);
-        formatter.finish()
     }
 }
 /// See [`IpOwner`](crate::model::IpOwner).
@@ -13132,7 +12362,7 @@ impl IpOwner {
 
 /// <p>Provides geographic coordinates that indicate where a specified IP address originated from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpGeoLocation {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
     #[doc(hidden)]
@@ -13149,14 +12379,6 @@ impl IpGeoLocation {
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
     pub fn lon(&self) -> f64 {
         self.lon
-    }
-}
-impl std::fmt::Debug for IpGeoLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpGeoLocation");
-        formatter.field("lat", &self.lat);
-        formatter.field("lon", &self.lon);
-        formatter.finish()
     }
 }
 /// See [`IpGeoLocation`](crate::model::IpGeoLocation).
@@ -13207,7 +12429,7 @@ impl IpGeoLocation {
 
 /// <p>Provides information about the country that an IP address originated from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpCountry {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For example, US for the United States.</p>
     #[doc(hidden)]
@@ -13224,14 +12446,6 @@ impl IpCountry {
     /// <p>The name of the country that the IP address originated from.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for IpCountry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpCountry");
-        formatter.field("code", &self.code);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`IpCountry`](crate::model::IpCountry).
@@ -13282,7 +12496,7 @@ impl IpCountry {
 
 /// <p>Provides information about the city that an IP address originated from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpCity {
     /// <p>The name of the city.</p>
     #[doc(hidden)]
@@ -13292,13 +12506,6 @@ impl IpCity {
     /// <p>The name of the city.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for IpCity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpCity");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`IpCity`](crate::model::IpCity).
@@ -13335,7 +12542,7 @@ impl IpCity {
 
 /// <p>Provides information about the domain name of the device that an entity used to perform an action on an affected resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainDetails {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
@@ -13345,13 +12552,6 @@ impl DomainDetails {
     /// <p>The name of the domain.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainDetails");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
     }
 }
 /// See [`DomainDetails`](crate::model::DomainDetails).
@@ -13390,7 +12590,7 @@ impl DomainDetails {
 
 /// <p>Provides information about an action that occurred for a resource and produced a policy finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingAction {
     /// <p>The type of action that occurred for the affected resource. This value is typically AWS_API_CALL, which indicates that an entity invoked an API operation for the resource.</p>
     #[doc(hidden)]
@@ -13407,14 +12607,6 @@ impl FindingAction {
     /// <p>The invocation details of the API operation that an entity invoked for the affected resource, if the value for the actionType property is AWS_API_CALL.</p>
     pub fn api_call_details(&self) -> std::option::Option<&crate::model::ApiCallDetails> {
         self.api_call_details.as_ref()
-    }
-}
-impl std::fmt::Debug for FindingAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingAction");
-        formatter.field("action_type", &self.action_type);
-        formatter.field("api_call_details", &self.api_call_details);
-        formatter.finish()
     }
 }
 /// See [`FindingAction`](crate::model::FindingAction).
@@ -13471,7 +12663,7 @@ impl FindingAction {
 
 /// <p>Provides information about an API operation that an entity invoked for an affected resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiCallDetails {
     /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
     #[doc(hidden)]
@@ -13502,16 +12694,6 @@ impl ApiCallDetails {
     /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
     pub fn last_seen(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_seen.as_ref()
-    }
-}
-impl std::fmt::Debug for ApiCallDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiCallDetails");
-        formatter.field("api", &self.api);
-        formatter.field("api_service_name", &self.api_service_name);
-        formatter.field("first_seen", &self.first_seen);
-        formatter.field("last_seen", &self.last_seen);
-        formatter.finish()
     }
 }
 /// See [`ApiCallDetails`](crate::model::ApiCallDetails).
@@ -13682,7 +12864,7 @@ impl AsRef<str> for FindingActionType {
 
 /// <p>Provides information about a sensitive data finding and the details of the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassificationDetails {
     /// <p>The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder. Otherwise, this value is the path to a file.</p>
     #[doc(hidden)]
@@ -13720,17 +12902,6 @@ impl ClassificationDetails {
     /// <p>The status and other details of the finding.</p>
     pub fn result(&self) -> std::option::Option<&crate::model::ClassificationResult> {
         self.result.as_ref()
-    }
-}
-impl std::fmt::Debug for ClassificationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassificationDetails");
-        formatter.field("detailed_results_location", &self.detailed_results_location);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("origin_type", &self.origin_type);
-        formatter.field("result", &self.result);
-        formatter.finish()
     }
 }
 /// See [`ClassificationDetails`](crate::model::ClassificationDetails).
@@ -13826,7 +12997,7 @@ impl ClassificationDetails {
 
 /// <p>Provides the details of a sensitive data finding, including the types, number of occurrences, and locations of the sensitive data that was detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassificationResult {
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p>
@@ -13875,18 +13046,6 @@ impl ClassificationResult {
     /// <p>The status of the finding.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ClassificationResultStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ClassificationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassificationResult");
-        formatter.field("additional_occurrences", &self.additional_occurrences);
-        formatter.field("custom_data_identifiers", &self.custom_data_identifiers);
-        formatter.field("mime_type", &self.mime_type);
-        formatter.field("sensitive_data", &self.sensitive_data);
-        formatter.field("size_classified", &self.size_classified);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ClassificationResult`](crate::model::ClassificationResult).
@@ -14007,7 +13166,7 @@ impl ClassificationResult {
 
 /// <p>Provides information about the status of a sensitive data finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassificationResultStatus {
     /// <p>The status of the finding. Possible values are:</p>
     /// <ul>
@@ -14082,14 +13241,6 @@ impl ClassificationResultStatus {
     /// <p>For information about sensitive data discovery quotas for files, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ClassificationResultStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassificationResultStatus");
-        formatter.field("code", &self.code);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`ClassificationResultStatus`](crate::model::ClassificationResultStatus).
@@ -14198,7 +13349,7 @@ impl ClassificationResultStatus {
 
 /// <p>Provides information about the category, types, and occurrences of sensitive data that produced a sensitive data finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SensitiveDataItem {
     /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     #[doc(hidden)]
@@ -14222,15 +13373,6 @@ impl SensitiveDataItem {
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
     pub fn total_count(&self) -> i64 {
         self.total_count
-    }
-}
-impl std::fmt::Debug for SensitiveDataItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SensitiveDataItem");
-        formatter.field("category", &self.category);
-        formatter.field("detections", &self.detections);
-        formatter.field("total_count", &self.total_count);
-        formatter.finish()
     }
 }
 /// See [`SensitiveDataItem`](crate::model::SensitiveDataItem).
@@ -14305,7 +13447,7 @@ impl SensitiveDataItem {
 
 /// <p>Provides information about a type of sensitive data that was detected by a managed data identifier and produced a sensitive data finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultDetection {
     /// <p>The total number of occurrences of the type of sensitive data that was detected.</p>
     #[doc(hidden)]
@@ -14329,15 +13471,6 @@ impl DefaultDetection {
     /// <p>The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for DefaultDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultDetection");
-        formatter.field("count", &self.count);
-        formatter.field("occurrences", &self.occurrences);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`DefaultDetection`](crate::model::DefaultDetection).
@@ -14403,7 +13536,7 @@ impl DefaultDetection {
 
 /// <p>Specifies the location of 1-15 occurrences of sensitive data that was detected by a managed data identifier or a custom data identifier and produced a sensitive data finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Occurrences {
     /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p>
     /// <p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
@@ -14449,17 +13582,6 @@ impl Occurrences {
     /// <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
     pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
         self.records.as_deref()
-    }
-}
-impl std::fmt::Debug for Occurrences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Occurrences");
-        formatter.field("cells", &self.cells);
-        formatter.field("line_ranges", &self.line_ranges);
-        formatter.field("offset_ranges", &self.offset_ranges);
-        formatter.field("pages", &self.pages);
-        formatter.field("records", &self.records);
-        formatter.finish()
     }
 }
 /// See [`Occurrences`](crate::model::Occurrences).
@@ -14599,7 +13721,7 @@ impl Occurrences {
 
 /// <p>Specifies the location of an occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Record {
     /// <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object container or Parquet file, this is the path to the field in the record (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the path to the field or array that contains the data. If the data is a value in an array, the path also indicates which value contains the data.</p>
     /// <p>If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the first element in the path, until the path contains 250 or fewer characters.</p>
@@ -14618,14 +13740,6 @@ impl Record {
     /// <p>For an Avro object container or Parquet file, the record index, starting from 0, for the record that contains the sensitive data. For a JSON Lines file, the line index, starting from 0, for the line that contains the sensitive data. This value is always 0 for JSON files.</p>
     pub fn record_index(&self) -> i64 {
         self.record_index
-    }
-}
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("json_path", &self.json_path);
-        formatter.field("record_index", &self.record_index);
-        formatter.finish()
     }
 }
 /// See [`Record`](crate::model::Record).
@@ -14678,7 +13792,7 @@ impl Record {
 
 /// <p>Specifies the location of an occurrence of sensitive data in an Adobe Portable Document Format file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Page {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
@@ -14702,15 +13816,6 @@ impl Page {
     /// <p>The page number of the page that contains the sensitive data.</p>
     pub fn page_number(&self) -> i64 {
         self.page_number
-    }
-}
-impl std::fmt::Debug for Page {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Page");
-        formatter.field("line_range", &self.line_range);
-        formatter.field("offset_range", &self.offset_range);
-        formatter.field("page_number", &self.page_number);
-        formatter.finish()
     }
 }
 /// See [`Page`](crate::model::Page).
@@ -14773,7 +13878,7 @@ impl Page {
 
 /// <p>Specifies the location of an occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Range {
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
     #[doc(hidden)]
@@ -14797,15 +13902,6 @@ impl Range {
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
     pub fn start_column(&self) -> i64 {
         self.start_column
-    }
-}
-impl std::fmt::Debug for Range {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Range");
-        formatter.field("end", &self.end);
-        formatter.field("start", &self.start);
-        formatter.field("start_column", &self.start_column);
-        formatter.finish()
     }
 }
 /// See [`Range`](crate::model::Range).
@@ -14868,7 +13964,7 @@ impl Range {
 
 /// <p>Specifies the location of an occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cell {
     /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
     #[doc(hidden)]
@@ -14899,16 +13995,6 @@ impl Cell {
     /// <p>The row number of the row that contains the sensitive data.</p>
     pub fn row(&self) -> i64 {
         self.row
-    }
-}
-impl std::fmt::Debug for Cell {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cell");
-        formatter.field("cell_reference", &self.cell_reference);
-        formatter.field("column", &self.column);
-        formatter.field("column_name", &self.column_name);
-        formatter.field("row", &self.row);
-        formatter.finish()
     }
 }
 /// See [`Cell`](crate::model::Cell).
@@ -14986,7 +14072,7 @@ impl Cell {
 
 /// <p>Provides information about custom data identifiers that produced a sensitive data finding, and the number of occurrences of the data that they detected for the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDataIdentifiers {
     /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
     #[doc(hidden)]
@@ -15003,14 +14089,6 @@ impl CustomDataIdentifiers {
     /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>
     pub fn total_count(&self) -> i64 {
         self.total_count
-    }
-}
-impl std::fmt::Debug for CustomDataIdentifiers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomDataIdentifiers");
-        formatter.field("detections", &self.detections);
-        formatter.field("total_count", &self.total_count);
-        formatter.finish()
     }
 }
 /// See [`CustomDataIdentifiers`](crate::model::CustomDataIdentifiers).
@@ -15070,7 +14148,7 @@ impl CustomDataIdentifiers {
 
 /// <p>Provides information about a custom data identifier that produced a sensitive data finding, and the sensitive data that it detected for the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDetection {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     #[doc(hidden)]
@@ -15101,16 +14179,6 @@ impl CustomDetection {
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     pub fn occurrences(&self) -> std::option::Option<&crate::model::Occurrences> {
         self.occurrences.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomDetection");
-        formatter.field("arn", &self.arn);
-        formatter.field("count", &self.count);
-        formatter.field("name", &self.name);
-        formatter.field("occurrences", &self.occurrences);
-        formatter.finish()
     }
 }
 /// See [`CustomDetection`](crate::model::CustomDetection).
@@ -15363,7 +14431,7 @@ impl AsRef<str> for FindingCategory {
 
 /// <p>Specifies a severity level for findings that a custom data identifier produces. A severity level determines which severity is assigned to the findings, based on the number of occurrences of text that matches the custom data identifier's detection criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SeverityLevel {
     /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
     #[doc(hidden)]
@@ -15380,14 +14448,6 @@ impl SeverityLevel {
     /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
     pub fn severity(&self) -> std::option::Option<&crate::model::DataIdentifierSeverity> {
         self.severity.as_ref()
-    }
-}
-impl std::fmt::Debug for SeverityLevel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SeverityLevel");
-        formatter.field("occurrences_threshold", &self.occurrences_threshold);
-        formatter.field("severity", &self.severity);
-        formatter.finish()
     }
 }
 /// See [`SeverityLevel`](crate::model::SeverityLevel).
@@ -15538,7 +14598,7 @@ impl AsRef<str> for DataIdentifierSeverity {
 
 /// <p>Provides information about the number of S3 buckets that are or aren't shared with other Amazon Web Services accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketCountBySharedAccessType {
     /// <p>The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
     #[doc(hidden)]
@@ -15569,16 +14629,6 @@ impl BucketCountBySharedAccessType {
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other Amazon Web Services accounts.</p>
     pub fn unknown(&self) -> i64 {
         self.unknown
-    }
-}
-impl std::fmt::Debug for BucketCountBySharedAccessType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketCountBySharedAccessType");
-        formatter.field("external", &self.external);
-        formatter.field("internal", &self.internal);
-        formatter.field("not_shared", &self.not_shared);
-        formatter.field("unknown", &self.unknown);
-        formatter.finish()
     }
 }
 /// See [`BucketCountBySharedAccessType`](crate::model::BucketCountBySharedAccessType).
@@ -15653,7 +14703,7 @@ impl BucketCountBySharedAccessType {
 
 /// <p>Provides information about the number of S3 buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketCountPolicyAllowsUnencryptedObjectUploads {
     /// <p>The total number of buckets that don't have a bucket policy or have a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, the policy doesn't require PutObject requests to include the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.</p>
     #[doc(hidden)]
@@ -15677,21 +14727,6 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
     pub fn unknown(&self) -> i64 {
         self.unknown
-    }
-}
-impl std::fmt::Debug for BucketCountPolicyAllowsUnencryptedObjectUploads {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketCountPolicyAllowsUnencryptedObjectUploads");
-        formatter.field(
-            "allows_unencrypted_object_uploads",
-            &self.allows_unencrypted_object_uploads,
-        );
-        formatter.field(
-            "denies_unencrypted_object_uploads",
-            &self.denies_unencrypted_object_uploads,
-        );
-        formatter.field("unknown", &self.unknown);
-        formatter.finish()
     }
 }
 /// See [`BucketCountPolicyAllowsUnencryptedObjectUploads`](crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads).
@@ -15765,7 +14800,7 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
 
 /// <p>Provides information about the number of S3 buckets that use certain types of server-side encryption by default or don't encrypt new objects by default. For detailed information about these settings, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting default server-side encryption behavior for Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketCountByEncryptionType {
     /// <p>The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.</p>
     #[doc(hidden)]
@@ -15796,16 +14831,6 @@ impl BucketCountByEncryptionType {
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
     pub fn unknown(&self) -> i64 {
         self.unknown
-    }
-}
-impl std::fmt::Debug for BucketCountByEncryptionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketCountByEncryptionType");
-        formatter.field("kms_managed", &self.kms_managed);
-        formatter.field("s3_managed", &self.s3_managed);
-        formatter.field("unencrypted", &self.unencrypted);
-        formatter.field("unknown", &self.unknown);
-        formatter.finish()
     }
 }
 /// See [`BucketCountByEncryptionType`](crate::model::BucketCountByEncryptionType).
@@ -15880,7 +14905,7 @@ impl BucketCountByEncryptionType {
 
 /// <p>Provides information about the number of S3 buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketCountByEffectivePermission {
     /// <p>The total number of buckets that allow the general public to have read or write access to the bucket.</p>
     #[doc(hidden)]
@@ -15911,16 +14936,6 @@ impl BucketCountByEffectivePermission {
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
     pub fn unknown(&self) -> i64 {
         self.unknown
-    }
-}
-impl std::fmt::Debug for BucketCountByEffectivePermission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketCountByEffectivePermission");
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("publicly_readable", &self.publicly_readable);
-        formatter.field("publicly_writable", &self.publicly_writable);
-        formatter.field("unknown", &self.unknown);
-        formatter.finish()
     }
 }
 /// See [`BucketCountByEffectivePermission`](crate::model::BucketCountByEffectivePermission).
@@ -15995,7 +15010,7 @@ impl BucketCountByEffectivePermission {
 
 /// <p>Provides information about the current status of an allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowListStatus {
     /// <p>The current status of the allow list. If the list's criteria specify a regular expression (regex), this value is typically OK. Amazon Macie can compile the expression.</p>
     /// <p>If the list's criteria specify an S3 object, possible values are:</p>
@@ -16034,14 +15049,6 @@ impl AllowListStatus {
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for AllowListStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowListStatus");
-        formatter.field("code", &self.code);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`AllowListStatus`](crate::model::AllowListStatus).
@@ -16248,7 +15255,7 @@ impl AsRef<str> for AllowListStatusCode {
 
 /// <p>Provides processing statistics for a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Statistics {
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
     #[doc(hidden)]
@@ -16265,17 +15272,6 @@ impl Statistics {
     /// <p>The number of times that the job has run.</p>
     pub fn number_of_runs(&self) -> f64 {
         self.number_of_runs
-    }
-}
-impl std::fmt::Debug for Statistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Statistics");
-        formatter.field(
-            "approximate_number_of_objects_to_process",
-            &self.approximate_number_of_objects_to_process,
-        );
-        formatter.field("number_of_runs", &self.number_of_runs);
-        formatter.finish()
     }
 }
 /// See [`Statistics`](crate::model::Statistics).
@@ -16331,7 +15327,7 @@ impl Statistics {
 
 /// <p>Specifies the recurrence pattern for running a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobScheduleFrequency {
     /// <p>Specifies a daily recurrence pattern for running the job.</p>
     #[doc(hidden)]
@@ -16355,15 +15351,6 @@ impl JobScheduleFrequency {
     /// <p>Specifies a weekly recurrence pattern for running the job.</p>
     pub fn weekly_schedule(&self) -> std::option::Option<&crate::model::WeeklySchedule> {
         self.weekly_schedule.as_ref()
-    }
-}
-impl std::fmt::Debug for JobScheduleFrequency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobScheduleFrequency");
-        formatter.field("daily_schedule", &self.daily_schedule);
-        formatter.field("monthly_schedule", &self.monthly_schedule);
-        formatter.field("weekly_schedule", &self.weekly_schedule);
-        formatter.finish()
     }
 }
 /// See [`JobScheduleFrequency`](crate::model::JobScheduleFrequency).
@@ -16435,7 +15422,7 @@ impl JobScheduleFrequency {
 
 /// <p>Specifies a weekly recurrence pattern for running a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WeeklySchedule {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
     #[doc(hidden)]
@@ -16445,13 +15432,6 @@ impl WeeklySchedule {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
     pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
-    }
-}
-impl std::fmt::Debug for WeeklySchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WeeklySchedule");
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.finish()
     }
 }
 /// See [`WeeklySchedule`](crate::model::WeeklySchedule).
@@ -16616,7 +15596,7 @@ impl AsRef<str> for DayOfWeek {
 
 /// <p>Specifies a monthly recurrence pattern for running a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonthlySchedule {
     /// <p>The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.</p>
     /// <p>If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the job only during months that have the specified day. For example, if this value is 31 and a month has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.</p>
@@ -16628,13 +15608,6 @@ impl MonthlySchedule {
     /// <p>If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the job only during months that have the specified day. For example, if this value is 31 and a month has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.</p>
     pub fn day_of_month(&self) -> i32 {
         self.day_of_month
-    }
-}
-impl std::fmt::Debug for MonthlySchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonthlySchedule");
-        formatter.field("day_of_month", &self.day_of_month);
-        formatter.finish()
     }
 }
 /// See [`MonthlySchedule`](crate::model::MonthlySchedule).
@@ -16675,14 +15648,8 @@ impl MonthlySchedule {
 
 /// <p>Specifies that a classification job runs once a day, every day. This is an empty object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DailySchedule {}
-impl std::fmt::Debug for DailySchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DailySchedule");
-        formatter.finish()
-    }
-}
 /// See [`DailySchedule`](crate::model::DailySchedule).
 pub mod daily_schedule {
 
@@ -16705,7 +15672,7 @@ impl DailySchedule {
 
 /// <p>Specifies which S3 buckets contain the objects that a classification job analyzes, and the scope of that analysis. The bucket specification can be static (bucketDefinitions) or dynamic (bucketCriteria). If it's static, the job analyzes objects in the same predefined set of buckets each time the job runs. If it's dynamic, the job analyzes objects in any buckets that match the specified criteria each time the job starts to run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3JobDefinition {
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
     #[doc(hidden)]
@@ -16732,15 +15699,6 @@ impl S3JobDefinition {
     /// <p>The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
     pub fn bucket_criteria(&self) -> std::option::Option<&crate::model::S3BucketCriteriaForJob> {
         self.bucket_criteria.as_ref()
-    }
-}
-impl std::fmt::Debug for S3JobDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3JobDefinition");
-        formatter.field("bucket_definitions", &self.bucket_definitions);
-        formatter.field("scoping", &self.scoping);
-        formatter.field("bucket_criteria", &self.bucket_criteria);
-        formatter.finish()
     }
 }
 /// See [`S3JobDefinition`](crate::model::S3JobDefinition).
@@ -16816,7 +15774,7 @@ impl S3JobDefinition {
 
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects from a classification job. Exclude conditions take precedence over include conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scoping {
     /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
     #[doc(hidden)]
@@ -16833,14 +15791,6 @@ impl Scoping {
     /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
     pub fn includes(&self) -> std::option::Option<&crate::model::JobScopingBlock> {
         self.includes.as_ref()
-    }
-}
-impl std::fmt::Debug for Scoping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scoping");
-        formatter.field("excludes", &self.excludes);
-        formatter.field("includes", &self.includes);
-        formatter.finish()
     }
 }
 /// See [`Scoping`](crate::model::Scoping).
@@ -16897,7 +15847,7 @@ impl Scoping {
 
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobScopingBlock {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     #[doc(hidden)]
@@ -16907,13 +15857,6 @@ impl JobScopingBlock {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     pub fn and(&self) -> std::option::Option<&[crate::model::JobScopeTerm]> {
         self.and.as_deref()
-    }
-}
-impl std::fmt::Debug for JobScopingBlock {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobScopingBlock");
-        formatter.field("and", &self.and);
-        formatter.finish()
     }
 }
 /// See [`JobScopingBlock`](crate::model::JobScopingBlock).
@@ -16959,7 +15902,7 @@ impl JobScopingBlock {
 
 /// <p>Specifies a property- or tag-based condition that defines criteria for including or excluding S3 objects from a classification job. A JobScopeTerm object can contain only one simpleScopeTerm object or one tagScopeTerm object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobScopeTerm {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding objects from the job.</p>
     #[doc(hidden)]
@@ -16976,14 +15919,6 @@ impl JobScopeTerm {
     /// <p>A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding objects from the job.</p>
     pub fn tag_scope_term(&self) -> std::option::Option<&crate::model::TagScopeTerm> {
         self.tag_scope_term.as_ref()
-    }
-}
-impl std::fmt::Debug for JobScopeTerm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobScopeTerm");
-        formatter.field("simple_scope_term", &self.simple_scope_term);
-        formatter.field("tag_scope_term", &self.tag_scope_term);
-        formatter.finish()
     }
 }
 /// See [`JobScopeTerm`](crate::model::JobScopeTerm).
@@ -17040,7 +15975,7 @@ impl JobScopeTerm {
 
 /// <p>Specifies a tag-based condition that determines whether an S3 object is included or excluded from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagScopeTerm {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
     #[doc(hidden)]
@@ -17071,16 +16006,6 @@ impl TagScopeTerm {
     /// <p>The type of object to apply the condition to.</p>
     pub fn target(&self) -> std::option::Option<&crate::model::TagTarget> {
         self.target.as_ref()
-    }
-}
-impl std::fmt::Debug for TagScopeTerm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagScopeTerm");
-        formatter.field("comparator", &self.comparator);
-        formatter.field("key", &self.key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.field("target", &self.target);
-        formatter.finish()
     }
 }
 /// See [`TagScopeTerm`](crate::model::TagScopeTerm).
@@ -17252,7 +16177,7 @@ impl AsRef<str> for TagTarget {
 
 /// <p>Specifies a tag key or tag key and value pair to use in a tag-based condition that determines whether an S3 object is included or excluded from a classification job. Tag keys and values are case sensitive. Also, Amazon Macie doesn't support use of partial values or wildcard characters in tag-based conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagValuePair {
     /// <p>The value for the tag key to use in the condition.</p>
     #[doc(hidden)]
@@ -17269,14 +16194,6 @@ impl TagValuePair {
     /// <p>The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key for a condition, specify the tag key for the key property and set this value to an empty string.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for TagValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagValuePair");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`TagValuePair`](crate::model::TagValuePair).
@@ -17327,7 +16244,7 @@ impl TagValuePair {
 
 /// <p>Specifies a property-based condition that determines whether an S3 object is included or excluded from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleScopeTerm {
     /// <p>The operator to use in the condition. Valid values for each supported property (key) are:</p>
     /// <ul>
@@ -17379,15 +16296,6 @@ impl SimpleScopeTerm {
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SimpleScopeTerm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleScopeTerm");
-        formatter.field("comparator", &self.comparator);
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SimpleScopeTerm`](crate::model::SimpleScopeTerm).
@@ -17697,7 +16605,7 @@ impl AsRef<str> for ManagedDataIdentifierSelector {
 
 /// <p>Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for the versioning property is false and the value for most other properties is null. Exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of the error, refer to the errorCode and errorMessage values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketMetadata {
     /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
     #[doc(hidden)]
@@ -17909,51 +16817,6 @@ impl BucketMetadata {
     /// <p>Specifies whether versioning is enabled for the bucket.</p>
     pub fn versioning(&self) -> bool {
         self.versioning
-    }
-}
-impl std::fmt::Debug for BucketMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketMetadata");
-        formatter.field("account_id", &self.account_id);
-        formatter.field(
-            "allows_unencrypted_object_uploads",
-            &self.allows_unencrypted_object_uploads,
-        );
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("bucket_created_at", &self.bucket_created_at);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("classifiable_object_count", &self.classifiable_object_count);
-        formatter.field(
-            "classifiable_size_in_bytes",
-            &self.classifiable_size_in_bytes,
-        );
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("job_details", &self.job_details);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("object_count", &self.object_count);
-        formatter.field(
-            "object_count_by_encryption_type",
-            &self.object_count_by_encryption_type,
-        );
-        formatter.field("public_access", &self.public_access);
-        formatter.field("region", &self.region);
-        formatter.field("replication_details", &self.replication_details);
-        formatter.field("server_side_encryption", &self.server_side_encryption);
-        formatter.field("shared_access", &self.shared_access);
-        formatter.field("size_in_bytes", &self.size_in_bytes);
-        formatter.field("size_in_bytes_compressed", &self.size_in_bytes_compressed);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "unclassifiable_object_count",
-            &self.unclassifiable_object_count,
-        );
-        formatter.field(
-            "unclassifiable_object_size_in_bytes",
-            &self.unclassifiable_object_size_in_bytes,
-        );
-        formatter.field("versioning", &self.versioning);
-        formatter.finish()
     }
 }
 /// See [`BucketMetadata`](crate::model::BucketMetadata).
@@ -18464,7 +17327,7 @@ impl AsRef<str> for SharedAccess {
 
 /// <p>Provides information about the default server-side encryption settings for an S3 bucket. For detailed information about these settings, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting default server-side encryption behavior for Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
     #[doc(hidden)]
@@ -18491,14 +17354,6 @@ impl BucketServerSideEncryption {
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for BucketServerSideEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketServerSideEncryption");
-        formatter.field("kms_master_key_id", &self.kms_master_key_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`BucketServerSideEncryption`](crate::model::BucketServerSideEncryption).
@@ -18657,7 +17512,7 @@ impl AsRef<str> for Type {
 
 /// <p>Provides information about settings that define whether one or more objects in an S3 bucket are replicated to S3 buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationDetails {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
     #[doc(hidden)]
@@ -18681,15 +17536,6 @@ impl ReplicationDetails {
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
     pub fn replication_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.replication_accounts.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationDetails");
-        formatter.field("replicated", &self.replicated);
-        formatter.field("replicated_externally", &self.replicated_externally);
-        formatter.field("replication_accounts", &self.replication_accounts);
-        formatter.finish()
     }
 }
 /// See [`ReplicationDetails`](crate::model::ReplicationDetails).
@@ -18761,7 +17607,7 @@ impl ReplicationDetails {
 
 /// <p>Specifies criteria for sorting the results of a query for information about S3 buckets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketSortCriteria {
     /// <p>The name of the bucket property to sort the results by. This value can be one of the following properties that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes, objectCount, or sizeInBytes.</p>
     #[doc(hidden)]
@@ -18778,14 +17624,6 @@ impl BucketSortCriteria {
     /// <p>The sort order to apply to the results, based on the value specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
-    }
-}
-impl std::fmt::Debug for BucketSortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketSortCriteria");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("order_by", &self.order_by);
-        formatter.finish()
     }
 }
 /// See [`BucketSortCriteria`](crate::model::BucketSortCriteria).
@@ -18839,7 +17677,7 @@ impl BucketSortCriteria {
 
 /// <p>Specifies the operator to use in a property-based condition that filters the results of a query for information about S3 buckets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketCriteriaAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
     #[doc(hidden)]
@@ -18891,19 +17729,6 @@ impl BucketCriteriaAdditionalProperties {
     /// <p>The name of the bucket begins with the specified value.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for BucketCriteriaAdditionalProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketCriteriaAdditionalProperties");
-        formatter.field("eq", &self.eq);
-        formatter.field("gt", &self.gt);
-        formatter.field("gte", &self.gte);
-        formatter.field("lt", &self.lt);
-        formatter.field("lte", &self.lte);
-        formatter.field("neq", &self.neq);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`BucketCriteriaAdditionalProperties`](crate::model::BucketCriteriaAdditionalProperties).
@@ -19032,7 +17857,7 @@ impl BucketCriteriaAdditionalProperties {
 
 /// <p>Provides information about an account-related request that hasn't been processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedAccount {
     /// <p>The Amazon Web Services account ID for the account that the request applies to.</p>
     #[doc(hidden)]
@@ -19056,15 +17881,6 @@ impl UnprocessedAccount {
     /// <p>The reason why the request hasn't been processed.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedAccount");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedAccount`](crate::model::UnprocessedAccount).
@@ -19223,7 +18039,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>Specifies the details of an account to associate with an Amazon Macie administrator account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountDetail {
     /// <p>The Amazon Web Services account ID for the account.</p>
     #[doc(hidden)]
@@ -19240,14 +18056,6 @@ impl AccountDetail {
     /// <p>The email address for the account.</p>
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountDetail");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("email", &self.email);
-        formatter.finish()
     }
 }
 /// See [`AccountDetail`](crate::model::AccountDetail).
@@ -19298,7 +18106,7 @@ impl AccountDetail {
 
 /// <p>Provides information about a custom data identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetCustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     #[doc(hidden)]
@@ -19343,18 +18151,6 @@ impl BatchGetCustomDataIdentifierSummary {
     /// <p>The custom name of the custom data identifier.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetCustomDataIdentifierSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetCustomDataIdentifierSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("deleted", &self.deleted);
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`BatchGetCustomDataIdentifierSummary`](crate::model::BatchGetCustomDataIdentifierSummary).

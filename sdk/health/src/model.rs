@@ -4,7 +4,7 @@
 /// <p>You can use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html">DescribeEventTypes</a> API operation to return this information about an event.</p>
 /// <p>You can also use the Amazon CloudWatch Events console to create a rule so that you can get notified or take action when Health delivers a specific event to your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html">Monitor for Health events with Amazon CloudWatch Events</a> in the <i>Health User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventType {
     /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     #[doc(hidden)]
@@ -28,15 +28,6 @@ impl EventType {
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn category(&self) -> std::option::Option<&crate::model::EventTypeCategory> {
         self.category.as_ref()
-    }
-}
-impl std::fmt::Debug for EventType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventType");
-        formatter.field("service", &self.service);
-        formatter.field("code", &self.code);
-        formatter.field("category", &self.category);
-        formatter.finish()
     }
 }
 /// See [`EventType`](crate::model::EventType).
@@ -209,7 +200,7 @@ impl AsRef<str> for EventTypeCategory {
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html">DescribeEventTypes</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTypeFilter {
     /// <p>A list of event type codes.</p>
     #[doc(hidden)]
@@ -233,15 +224,6 @@ impl EventTypeFilter {
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn event_type_categories(&self) -> std::option::Option<&[crate::model::EventTypeCategory]> {
         self.event_type_categories.as_deref()
-    }
-}
-impl std::fmt::Debug for EventTypeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTypeFilter");
-        formatter.field("event_type_codes", &self.event_type_codes);
-        formatter.field("services", &self.services);
-        formatter.field("event_type_categories", &self.event_type_categories);
-        formatter.finish()
     }
 }
 /// See [`EventTypeFilter`](crate::model::EventTypeFilter).
@@ -332,7 +314,7 @@ impl EventTypeFilter {
 
 /// <p>Summary information about an event, returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationEvent {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -419,22 +401,6 @@ impl OrganizationEvent {
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
     pub fn status_code(&self) -> std::option::Option<&crate::model::EventStatusCode> {
         self.status_code.as_ref()
-    }
-}
-impl std::fmt::Debug for OrganizationEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationEvent");
-        formatter.field("arn", &self.arn);
-        formatter.field("service", &self.service);
-        formatter.field("event_type_code", &self.event_type_code);
-        formatter.field("event_type_category", &self.event_type_category);
-        formatter.field("event_scope_code", &self.event_scope_code);
-        formatter.field("region", &self.region);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
     }
 }
 /// See [`OrganizationEvent`](crate::model::OrganizationEvent).
@@ -806,7 +772,7 @@ impl AsRef<str> for EventScopeCode {
 
 /// <p>The values to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationEventFilter {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code> </p>
     #[doc(hidden)]
@@ -886,23 +852,6 @@ impl OrganizationEventFilter {
     /// <p>A list of event status codes.</p>
     pub fn event_status_codes(&self) -> std::option::Option<&[crate::model::EventStatusCode]> {
         self.event_status_codes.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationEventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationEventFilter");
-        formatter.field("event_type_codes", &self.event_type_codes);
-        formatter.field("aws_account_ids", &self.aws_account_ids);
-        formatter.field("services", &self.services);
-        formatter.field("regions", &self.regions);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("entity_arns", &self.entity_arns);
-        formatter.field("entity_values", &self.entity_values);
-        formatter.field("event_type_categories", &self.event_type_categories);
-        formatter.field("event_status_codes", &self.event_status_codes);
-        formatter.finish()
     }
 }
 /// See [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
@@ -1144,7 +1093,7 @@ impl OrganizationEventFilter {
 
 /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateTimeRange {
     /// <p>The starting date and time of a time range.</p>
     #[doc(hidden)]
@@ -1161,14 +1110,6 @@ impl DateTimeRange {
     /// <p>The ending date and time of a time range.</p>
     pub fn to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to.as_ref()
-    }
-}
-impl std::fmt::Debug for DateTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateTimeRange");
-        formatter.field("from", &self.from);
-        formatter.field("to", &self.to);
-        formatter.finish()
     }
 }
 /// See [`DateTimeRange`](crate::model::DateTimeRange).
@@ -1225,7 +1166,7 @@ impl DateTimeRange {
 /// </ul>
 /// <p>You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -1319,23 +1260,6 @@ impl Event {
     /// </ul>
     pub fn event_scope_code(&self) -> std::option::Option<&crate::model::EventScopeCode> {
         self.event_scope_code.as_ref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("arn", &self.arn);
-        formatter.field("service", &self.service);
-        formatter.field("event_type_code", &self.event_type_code);
-        formatter.field("event_type_category", &self.event_type_category);
-        formatter.field("region", &self.region);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("event_scope_code", &self.event_scope_code);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -1532,7 +1456,7 @@ impl Event {
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     #[doc(hidden)]
@@ -1635,25 +1559,6 @@ impl EventFilter {
     /// <p>A list of event status codes.</p>
     pub fn event_status_codes(&self) -> std::option::Option<&[crate::model::EventStatusCode]> {
         self.event_status_codes.as_deref()
-    }
-}
-impl std::fmt::Debug for EventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventFilter");
-        formatter.field("event_arns", &self.event_arns);
-        formatter.field("event_type_codes", &self.event_type_codes);
-        formatter.field("services", &self.services);
-        formatter.field("regions", &self.regions);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("start_times", &self.start_times);
-        formatter.field("end_times", &self.end_times);
-        formatter.field("last_updated_times", &self.last_updated_times);
-        formatter.field("entity_arns", &self.entity_arns);
-        formatter.field("entity_values", &self.entity_values);
-        formatter.field("event_type_categories", &self.event_type_categories);
-        formatter.field("tags", &self.tags);
-        formatter.field("event_status_codes", &self.event_status_codes);
-        formatter.finish()
     }
 }
 /// See [`EventFilter`](crate::model::EventFilter).
@@ -1967,7 +1872,7 @@ impl EventFilter {
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationEventDetailsErrorItem {
     /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
     #[doc(hidden)]
@@ -2014,16 +1919,6 @@ impl OrganizationEventDetailsErrorItem {
     /// </ul>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationEventDetailsErrorItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationEventDetailsErrorItem");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("error_name", &self.error_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
@@ -2120,7 +2015,7 @@ impl OrganizationEventDetailsErrorItem {
 
 /// <p>Detailed information about an event. A combination of an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object, and additional metadata about the event. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationEventDetails {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     #[doc(hidden)]
@@ -2167,16 +2062,6 @@ impl OrganizationEventDetails {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.event_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for OrganizationEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationEventDetails");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("event", &self.event);
-        formatter.field("event_description", &self.event_description);
-        formatter.field("event_metadata", &self.event_metadata);
-        formatter.finish()
     }
 }
 /// See [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
@@ -2286,7 +2171,7 @@ impl OrganizationEventDetails {
 
 /// <p>The detailed description of the event. Included in the information returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDescription {
     /// <p>The most recent description of the event.</p>
     #[doc(hidden)]
@@ -2296,13 +2181,6 @@ impl EventDescription {
     /// <p>The most recent description of the event.</p>
     pub fn latest_description(&self) -> std::option::Option<&str> {
         self.latest_description.as_deref()
-    }
-}
-impl std::fmt::Debug for EventDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDescription");
-        formatter.field("latest_description", &self.latest_description);
-        formatter.finish()
     }
 }
 /// See [`EventDescription`](crate::model::EventDescription).
@@ -2344,7 +2222,7 @@ impl EventDescription {
 
 /// <p>The values used to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventAccountFilter {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -2365,14 +2243,6 @@ impl EventAccountFilter {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EventAccountFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventAccountFilter");
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
     }
 }
 /// See [`EventAccountFilter`](crate::model::EventAccountFilter).
@@ -2430,7 +2300,7 @@ impl EventAccountFilter {
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation can't find a specified event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDetailsErrorItem {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -2458,15 +2328,6 @@ impl EventDetailsErrorItem {
     /// <p>A message that describes the error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for EventDetailsErrorItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDetailsErrorItem");
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("error_name", &self.error_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
@@ -2536,7 +2397,7 @@ impl EventDetailsErrorItem {
 
 /// <p>Detailed information about an event. A combination of an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object, and additional metadata about the event. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDetails {
     /// <p>Summary information about the event.</p>
     #[doc(hidden)]
@@ -2564,15 +2425,6 @@ impl EventDetails {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.event_metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for EventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDetails");
-        formatter.field("event", &self.event);
-        formatter.field("event_description", &self.event_description);
-        formatter.field("event_metadata", &self.event_metadata);
-        formatter.finish()
     }
 }
 /// See [`EventDetails`](crate::model::EventDetails).
@@ -2655,7 +2507,7 @@ impl EventDetails {
 
 /// <p>The number of events of each issue type. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventAggregate {
     /// <p>The issue type for the associated count.</p>
     #[doc(hidden)]
@@ -2672,14 +2524,6 @@ impl EventAggregate {
     /// <p>The number of events of the associated issue type.</p>
     pub fn count(&self) -> i32 {
         self.count
-    }
-}
-impl std::fmt::Debug for EventAggregate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventAggregate");
-        formatter.field("aggregate_value", &self.aggregate_value);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`EventAggregate`](crate::model::EventAggregate).
@@ -2820,7 +2664,7 @@ impl AsRef<str> for EventAggregateField {
 
 /// <p>The number of entities that are affected by one or more events. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityAggregate {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -2841,14 +2685,6 @@ impl EntityAggregate {
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub fn count(&self) -> i32 {
         self.count
-    }
-}
-impl std::fmt::Debug for EntityAggregate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityAggregate");
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`EntityAggregate`](crate::model::EntityAggregate).
@@ -2903,7 +2739,7 @@ impl EntityAggregate {
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operation can't find or process a specific entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationAffectedEntitiesErrorItem {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     #[doc(hidden)]
@@ -2938,16 +2774,6 @@ impl OrganizationAffectedEntitiesErrorItem {
     /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for OrganizationAffectedEntitiesErrorItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationAffectedEntitiesErrorItem");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("error_name", &self.error_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
@@ -3032,7 +2858,7 @@ impl OrganizationAffectedEntitiesErrorItem {
 
 /// <p>Information about an entity that is affected by a Health event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AffectedEntity {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
     #[doc(hidden)]
@@ -3103,20 +2929,6 @@ impl AffectedEntity {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for AffectedEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AffectedEntity");
-        formatter.field("entity_arn", &self.entity_arn);
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("entity_value", &self.entity_value);
-        formatter.field("entity_url", &self.entity_url);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`AffectedEntity`](crate::model::AffectedEntity).
@@ -3368,7 +3180,7 @@ impl AsRef<str> for EntityStatusCode {
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     #[doc(hidden)]
@@ -3422,18 +3234,6 @@ impl EntityFilter {
     /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
     pub fn status_codes(&self) -> std::option::Option<&[crate::model::EntityStatusCode]> {
         self.status_codes.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityFilter");
-        formatter.field("event_arns", &self.event_arns);
-        formatter.field("entity_arns", &self.entity_arns);
-        formatter.field("entity_values", &self.entity_values);
-        formatter.field("last_updated_times", &self.last_updated_times);
-        formatter.field("tags", &self.tags);
-        formatter.field("status_codes", &self.status_codes);
-        formatter.finish()
     }
 }
 /// See [`EntityFilter`](crate::model::EntityFilter).

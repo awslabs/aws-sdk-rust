@@ -4339,7 +4339,7 @@ impl UpdateSubscriberInput {
 
 /// <p> Request of UpdateSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
     #[doc(hidden)]
@@ -4379,21 +4379,10 @@ impl UpdateSubscriberInput {
         self.new_subscriber.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSubscriberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSubscriberInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("notification", &self.notification);
-        formatter.field("old_subscriber", &self.old_subscriber);
-        formatter.field("new_subscriber", &self.new_subscriber);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of UpdateNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
     #[doc(hidden)]
@@ -4426,20 +4415,10 @@ impl UpdateNotificationInput {
         self.new_notification.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateNotificationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNotificationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("old_notification", &self.old_notification);
-        formatter.field("new_notification", &self.new_notification);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -4507,25 +4486,10 @@ impl UpdateBudgetActionInput {
         self.subscribers.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBudgetActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBudgetActionInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action_id", &self.action_id);
-        formatter.field("notification_type", &self.notification_type);
-        formatter.field("action_threshold", &self.action_threshold);
-        formatter.field("definition", &self.definition);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("approval_model", &self.approval_model);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of UpdateBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
     #[doc(hidden)]
@@ -4544,18 +4508,10 @@ impl UpdateBudgetInput {
         self.new_budget.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBudgetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBudgetInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("new_budget", &self.new_budget);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -4588,20 +4544,10 @@ impl ExecuteBudgetActionInput {
         self.execution_type.as_ref()
     }
 }
-impl std::fmt::Debug for ExecuteBudgetActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteBudgetActionInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action_id", &self.action_id);
-        formatter.field("execution_type", &self.execution_type);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of DescribeSubscribersForNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSubscribersForNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
     #[doc(hidden)]
@@ -4641,21 +4587,10 @@ impl DescribeSubscribersForNotificationInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSubscribersForNotificationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSubscribersForNotificationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("notification", &self.notification);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of DescribeNotificationsForBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNotificationsForBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
     #[doc(hidden)]
@@ -4688,20 +4623,10 @@ impl DescribeNotificationsForBudgetInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNotificationsForBudgetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNotificationsForBudgetInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of DescribeBudgets </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetsInput {
     /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
     #[doc(hidden)]
@@ -4727,19 +4652,10 @@ impl DescribeBudgetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBudgetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistoryInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -4779,21 +4695,10 @@ impl DescribeBudgetPerformanceHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBudgetPerformanceHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetPerformanceHistoryInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("time_period", &self.time_period);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -4819,19 +4724,10 @@ impl DescribeBudgetNotificationsForAccountInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBudgetNotificationsForAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetNotificationsForAccountInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetActionsForBudgetInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -4864,20 +4760,10 @@ impl DescribeBudgetActionsForBudgetInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBudgetActionsForBudgetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetActionsForBudgetInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetActionsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -4903,19 +4789,10 @@ impl DescribeBudgetActionsForAccountInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBudgetActionsForAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetActionsForAccountInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -4962,22 +4839,10 @@ impl DescribeBudgetActionHistoriesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBudgetActionHistoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetActionHistoriesInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action_id", &self.action_id);
-        formatter.field("time_period", &self.time_period);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -5003,19 +4868,10 @@ impl DescribeBudgetActionInput {
         self.action_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBudgetActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetActionInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action_id", &self.action_id);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of DescribeBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
     #[doc(hidden)]
@@ -5034,18 +4890,10 @@ impl DescribeBudgetInput {
         self.budget_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBudgetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBudgetInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of DeleteSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
     #[doc(hidden)]
@@ -5078,20 +4926,10 @@ impl DeleteSubscriberInput {
         self.subscriber.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteSubscriberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSubscriberInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("notification", &self.notification);
-        formatter.field("subscriber", &self.subscriber);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of DeleteNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
     #[doc(hidden)]
@@ -5117,19 +4955,10 @@ impl DeleteNotificationInput {
         self.notification.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteNotificationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNotificationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("notification", &self.notification);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -5155,19 +4984,10 @@ impl DeleteBudgetActionInput {
         self.action_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBudgetActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBudgetActionInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("action_id", &self.action_id);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of DeleteBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
     #[doc(hidden)]
@@ -5186,18 +5006,10 @@ impl DeleteBudgetInput {
         self.budget_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBudgetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBudgetInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of CreateSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
     #[doc(hidden)]
@@ -5230,20 +5042,10 @@ impl CreateSubscriberInput {
         self.subscriber.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSubscriberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSubscriberInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("notification", &self.notification);
-        formatter.field("subscriber", &self.subscriber);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of CreateNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
     #[doc(hidden)]
@@ -5276,20 +5078,10 @@ impl CreateNotificationInput {
         self.subscribers.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNotificationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNotificationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("notification", &self.notification);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
@@ -5357,25 +5149,10 @@ impl CreateBudgetActionInput {
         self.subscribers.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBudgetActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBudgetActionInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget_name", &self.budget_name);
-        formatter.field("notification_type", &self.notification_type);
-        formatter.field("action_type", &self.action_type);
-        formatter.field("action_threshold", &self.action_threshold);
-        formatter.field("definition", &self.definition);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("approval_model", &self.approval_model);
-        formatter.field("subscribers", &self.subscribers);
-        formatter.finish()
-    }
-}
 
 /// <p> Request of CreateBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
     #[doc(hidden)]
@@ -5402,17 +5179,5 @@ impl CreateBudgetInput {
         &self,
     ) -> std::option::Option<&[crate::model::NotificationWithSubscribers]> {
         self.notifications_with_subscribers.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateBudgetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBudgetInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("budget", &self.budget);
-        formatter.field(
-            "notifications_with_subscribers",
-            &self.notifications_with_subscribers,
-        );
-        formatter.finish()
     }
 }

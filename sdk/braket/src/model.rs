@@ -2,7 +2,7 @@
 
 /// <p>Includes information about a quantum task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuantumTaskSummary {
     /// <p>The ARN of the task.</p>
     #[doc(hidden)]
@@ -72,21 +72,6 @@ impl QuantumTaskSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for QuantumTaskSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuantumTaskSummary");
-        formatter.field("quantum_task_arn", &self.quantum_task_arn);
-        formatter.field("status", &self.status);
-        formatter.field("device_arn", &self.device_arn);
-        formatter.field("shots", &self.shots);
-        formatter.field("output_s3_bucket", &self.output_s3_bucket);
-        formatter.field("output_s3_directory", &self.output_s3_directory);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("ended_at", &self.ended_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`QuantumTaskSummary`](crate::model::QuantumTaskSummary).
@@ -381,7 +366,7 @@ impl AsRef<str> for QuantumTaskStatus {
 
 /// <p>A filter to use to search for tasks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchQuantumTasksFilter {
     /// <p>The name of the device used for the task.</p>
     #[doc(hidden)]
@@ -405,15 +390,6 @@ impl SearchQuantumTasksFilter {
     /// <p>An operator to use in the filter.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::SearchQuantumTasksFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchQuantumTasksFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchQuantumTasksFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`SearchQuantumTasksFilter`](crate::model::SearchQuantumTasksFilter).
@@ -692,7 +668,7 @@ impl AsRef<str> for CancellationStatus {
 
 /// <p>Provides summary information about an Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The status of the Amazon Braket job.</p>
     #[doc(hidden)]
@@ -755,20 +731,6 @@ impl JobSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for JobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobSummary");
-        formatter.field("status", &self.status);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("device", &self.device);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("ended_at", &self.ended_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`JobSummary`](crate::model::JobSummary).
@@ -1037,7 +999,7 @@ impl AsRef<str> for JobPrimaryStatus {
 
 /// <p>A filter used to search for Amazon Braket jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchJobsFilter {
     /// <p>The name to use for the jobs filter.</p>
     #[doc(hidden)]
@@ -1061,15 +1023,6 @@ impl SearchJobsFilter {
     /// <p>An operator to use for the jobs filter.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::SearchJobsFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchJobsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchJobsFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`SearchJobsFilter`](crate::model::SearchJobsFilter).
@@ -1261,7 +1214,7 @@ impl AsRef<str> for SearchJobsFilterOperator {
 
 /// <p>Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
     #[doc(hidden)]
@@ -1271,13 +1224,6 @@ impl DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
     pub fn device(&self) -> std::option::Option<&str> {
         self.device.as_deref()
-    }
-}
-impl std::fmt::Debug for DeviceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceConfig");
-        formatter.field("device", &self.device);
-        formatter.finish()
     }
 }
 /// See [`DeviceConfig`](crate::model::DeviceConfig).
@@ -1316,7 +1262,7 @@ impl DeviceConfig {
 
 /// <p>Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon Braket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceConfig {
     /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
     #[doc(hidden)]
@@ -1340,15 +1286,6 @@ impl InstanceConfig {
     /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
     pub fn instance_count(&self) -> std::option::Option<i32> {
         self.instance_count
-    }
-}
-impl std::fmt::Debug for InstanceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceConfig");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.finish()
     }
 }
 /// See [`InstanceConfig`](crate::model::InstanceConfig).
@@ -1729,7 +1666,7 @@ impl AsRef<str> for InstanceType {
 
 /// <p>Specifies limits for how long an Amazon Braket job can run. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobStoppingCondition {
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
     #[doc(hidden)]
@@ -1739,13 +1676,6 @@ impl JobStoppingCondition {
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
     pub fn max_runtime_in_seconds(&self) -> std::option::Option<i32> {
         self.max_runtime_in_seconds
-    }
-}
-impl std::fmt::Debug for JobStoppingCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobStoppingCondition");
-        formatter.field("max_runtime_in_seconds", &self.max_runtime_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`JobStoppingCondition`](crate::model::JobStoppingCondition).
@@ -1784,7 +1714,7 @@ impl JobStoppingCondition {
 
 /// <p>Contains information about the output locations for job checkpoint data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobCheckpointConfig {
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
     #[doc(hidden)]
@@ -1801,14 +1731,6 @@ impl JobCheckpointConfig {
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for JobCheckpointConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobCheckpointConfig");
-        formatter.field("local_path", &self.local_path);
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.finish()
     }
 }
 /// See [`JobCheckpointConfig`](crate::model::JobCheckpointConfig).
@@ -1859,7 +1781,7 @@ impl JobCheckpointConfig {
 
 /// <p>Specifies the path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobOutputDataConfig {
     /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
     #[doc(hidden)]
@@ -1876,14 +1798,6 @@ impl JobOutputDataConfig {
     /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn s3_path(&self) -> std::option::Option<&str> {
         self.s3_path.as_deref()
-    }
-}
-impl std::fmt::Debug for JobOutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobOutputDataConfig");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("s3_path", &self.s3_path);
-        formatter.finish()
     }
 }
 /// See [`JobOutputDataConfig`](crate::model::JobOutputDataConfig).
@@ -1934,7 +1848,7 @@ impl JobOutputDataConfig {
 
 /// <p>A list of parameters that specify the input channels, type of input data, and where it is located.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputFileConfig {
     /// <p>A named input source that an Amazon Braket job can consume.</p>
     #[doc(hidden)]
@@ -1958,15 +1872,6 @@ impl InputFileConfig {
     /// <p>The location of the channel data.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
         self.data_source.as_ref()
-    }
-}
-impl std::fmt::Debug for InputFileConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputFileConfig");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("data_source", &self.data_source);
-        formatter.finish()
     }
 }
 /// See [`InputFileConfig`](crate::model::InputFileConfig).
@@ -2032,7 +1937,7 @@ impl InputFileConfig {
 
 /// <p>Information about the source of the data used by the Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
     #[doc(hidden)]
@@ -2042,13 +1947,6 @@ impl DataSource {
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
     pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataSource> {
         self.s3_data_source.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("s3_data_source", &self.s3_data_source);
-        formatter.finish()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
@@ -2090,7 +1988,7 @@ impl DataSource {
 
 /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DataSource {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
     #[doc(hidden)]
@@ -2100,13 +1998,6 @@ impl S3DataSource {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DataSource");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.finish()
     }
 }
 /// See [`S3DataSource`](crate::model::S3DataSource).
@@ -2145,7 +2036,7 @@ impl S3DataSource {
 
 /// <p>Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to the Python scripts used for entry and training.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlgorithmSpecification {
     /// <p>Configures the paths to the Python scripts used for entry and training.</p>
     #[doc(hidden)]
@@ -2162,14 +2053,6 @@ impl AlgorithmSpecification {
     /// <p>The container image used to create an Amazon Braket job.</p>
     pub fn container_image(&self) -> std::option::Option<&crate::model::ContainerImage> {
         self.container_image.as_ref()
-    }
-}
-impl std::fmt::Debug for AlgorithmSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlgorithmSpecification");
-        formatter.field("script_mode_config", &self.script_mode_config);
-        formatter.field("container_image", &self.container_image);
-        formatter.finish()
     }
 }
 /// See [`AlgorithmSpecification`](crate::model::AlgorithmSpecification).
@@ -2226,7 +2109,7 @@ impl AlgorithmSpecification {
 
 /// <p>The container image used to create an Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerImage {
     /// <p>The URI locating the container image.</p>
     #[doc(hidden)]
@@ -2236,13 +2119,6 @@ impl ContainerImage {
     /// <p>The URI locating the container image.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerImage");
-        formatter.field("uri", &self.uri);
-        formatter.finish()
     }
 }
 /// See [`ContainerImage`](crate::model::ContainerImage).
@@ -2279,7 +2155,7 @@ impl ContainerImage {
 
 /// <p>Contains information about the Python scripts used for entry and by an Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScriptModeConfig {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
     #[doc(hidden)]
@@ -2303,15 +2179,6 @@ impl ScriptModeConfig {
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
     pub fn compression_type(&self) -> std::option::Option<&crate::model::CompressionType> {
         self.compression_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ScriptModeConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScriptModeConfig");
-        formatter.field("entry_point", &self.entry_point);
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("compression_type", &self.compression_type);
-        formatter.finish()
     }
 }
 /// See [`ScriptModeConfig`](crate::model::ScriptModeConfig).
@@ -2467,7 +2334,7 @@ impl AsRef<str> for CompressionType {
 
 /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobEventDetails {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     #[doc(hidden)]
@@ -2491,15 +2358,6 @@ impl JobEventDetails {
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for JobEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobEventDetails");
-        formatter.field("event_type", &self.event_type);
-        formatter.field("time_of_event", &self.time_of_event);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`JobEventDetails`](crate::model::JobEventDetails).
@@ -2715,7 +2573,7 @@ impl AsRef<str> for JobEventType {
 
 /// <p>Includes information about the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceSummary {
     /// <p>The ARN of the device.</p>
     #[doc(hidden)]
@@ -2753,17 +2611,6 @@ impl DeviceSummary {
     /// <p>The status of the device.</p>
     pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
         self.device_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceSummary");
-        formatter.field("device_arn", &self.device_arn);
-        formatter.field("device_name", &self.device_name);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("device_type", &self.device_type);
-        formatter.field("device_status", &self.device_status);
-        formatter.finish()
     }
 }
 /// See [`DeviceSummary`](crate::model::DeviceSummary).
@@ -3044,7 +2891,7 @@ impl AsRef<str> for DeviceType {
 
 /// <p>The filter to use for searching devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchDevicesFilter {
     /// <p>The name to use to filter results.</p>
     #[doc(hidden)]
@@ -3061,14 +2908,6 @@ impl SearchDevicesFilter {
     /// <p>The values to use to filter results.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchDevicesFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchDevicesFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SearchDevicesFilter`](crate::model::SearchDevicesFilter).

@@ -4405,7 +4405,7 @@ impl StopSnomedctInferenceJobInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopSnomedctInferenceJobInput {
     /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
     #[doc(hidden)]
@@ -4417,17 +4417,10 @@ impl StopSnomedctInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopSnomedctInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopSnomedctInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopRxNormInferenceJobInput {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
@@ -4439,17 +4432,10 @@ impl StopRxNormInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopRxNormInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopRxNormInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopPhiDetectionJobInput {
     /// <p>The identifier of the PHI detection job to stop.</p>
     #[doc(hidden)]
@@ -4461,17 +4447,10 @@ impl StopPhiDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopPhiDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopPhiDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopIcd10CmInferenceJobInput {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
@@ -4483,17 +4462,10 @@ impl StopIcd10CmInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopIcd10CmInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopIcd10CmInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopEntitiesDetectionV2JobInput {
     /// <p>The identifier of the medical entities job to stop.</p>
     #[doc(hidden)]
@@ -4505,17 +4477,10 @@ impl StopEntitiesDetectionV2JobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopEntitiesDetectionV2JobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopEntitiesDetectionV2JobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSnomedctInferenceJobInput {
     /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
     #[doc(hidden)]
@@ -4569,23 +4534,10 @@ impl StartSnomedctInferenceJobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartSnomedctInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSnomedctInferenceJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRxNormInferenceJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -4639,23 +4591,10 @@ impl StartRxNormInferenceJobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartRxNormInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartRxNormInferenceJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPhiDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -4709,23 +4648,10 @@ impl StartPhiDetectionJobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartPhiDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPhiDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartIcd10CmInferenceJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -4779,23 +4705,10 @@ impl StartIcd10CmInferenceJobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartIcd10CmInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartIcd10CmInferenceJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartEntitiesDetectionV2JobInput {
     /// <p>The input configuration that specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -4849,23 +4762,10 @@ impl StartEntitiesDetectionV2JobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartEntitiesDetectionV2JobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartEntitiesDetectionV2JobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSnomedctInferenceJobsInput {
     /// <p>Provides information for filtering a list of detection jobs.</p>
     #[doc(hidden)]
@@ -4891,19 +4791,10 @@ impl ListSnomedctInferenceJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSnomedctInferenceJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSnomedctInferenceJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRxNormInferenceJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -4929,19 +4820,10 @@ impl ListRxNormInferenceJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRxNormInferenceJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRxNormInferenceJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhiDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -4967,19 +4849,10 @@ impl ListPhiDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPhiDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhiDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIcd10CmInferenceJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -5005,19 +4878,10 @@ impl ListIcd10CmInferenceJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIcd10CmInferenceJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIcd10CmInferenceJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitiesDetectionV2JobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -5043,19 +4907,10 @@ impl ListEntitiesDetectionV2JobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntitiesDetectionV2JobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitiesDetectionV2JobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferSnomedctInput {
     /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
     #[doc(hidden)]
@@ -5067,17 +4922,10 @@ impl InferSnomedctInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for InferSnomedctInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferSnomedctInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferRxNormInput {
     /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     #[doc(hidden)]
@@ -5089,17 +4937,10 @@ impl InferRxNormInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for InferRxNormInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferRxNormInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferIcd10CmInput {
     /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     #[doc(hidden)]
@@ -5111,17 +4952,10 @@ impl InferIcd10CmInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for InferIcd10CmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferIcd10CmInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectPhiInput {
     /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     #[doc(hidden)]
@@ -5133,17 +4967,10 @@ impl DetectPhiInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for DetectPhiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectPhiInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectEntitiesV2Input {
     /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     #[doc(hidden)]
@@ -5155,17 +4982,10 @@ impl DetectEntitiesV2Input {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for DetectEntitiesV2Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectEntitiesV2Input");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectEntitiesInput {
     /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     #[doc(hidden)]
@@ -5177,17 +4997,10 @@ impl DetectEntitiesInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for DetectEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectEntitiesInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSnomedctInferenceJobInput {
     /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
     #[doc(hidden)]
@@ -5199,17 +5012,10 @@ impl DescribeSnomedctInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSnomedctInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSnomedctInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRxNormInferenceJobInput {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -5221,17 +5027,10 @@ impl DescribeRxNormInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRxNormInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRxNormInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePhiDetectionJobInput {
     /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -5243,17 +5042,10 @@ impl DescribePhiDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePhiDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePhiDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIcd10CmInferenceJobInput {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -5265,17 +5057,10 @@ impl DescribeIcd10CmInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIcd10CmInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIcd10CmInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionV2JobInput {
     /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -5285,12 +5070,5 @@ impl DescribeEntitiesDetectionV2JobInput {
     /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeEntitiesDetectionV2JobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEntitiesDetectionV2JobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }

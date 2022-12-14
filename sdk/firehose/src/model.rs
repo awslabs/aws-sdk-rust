@@ -2,7 +2,7 @@
 
 /// <p>Updates the specified HTTP endpoint destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointDestinationUpdate {
     /// <p>Describes the configuration of the HTTP endpoint destination.</p>
     #[doc(hidden)]
@@ -78,24 +78,6 @@ impl HttpEndpointDestinationUpdate {
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub fn s3_update(&self) -> std::option::Option<&crate::model::S3DestinationUpdate> {
         self.s3_update.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpEndpointDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointDestinationUpdate");
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("request_configuration", &self.request_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_update", &self.s3_update);
-        formatter.finish()
     }
 }
 /// See [`HttpEndpointDestinationUpdate`](crate::model::HttpEndpointDestinationUpdate).
@@ -270,7 +252,7 @@ impl HttpEndpointDestinationUpdate {
 
 /// <p>Describes an update for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -335,23 +317,6 @@ impl S3DestinationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
-    }
-}
-impl std::fmt::Debug for S3DestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationUpdate");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`S3DestinationUpdate`](crate::model::S3DestinationUpdate).
@@ -499,7 +464,7 @@ impl S3DestinationUpdate {
 
 /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLoggingOptions {
     /// <p>Enables or disables CloudWatch logging.</p>
     #[doc(hidden)]
@@ -523,15 +488,6 @@ impl CloudWatchLoggingOptions {
     /// <p>The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.</p>
     pub fn log_stream_name(&self) -> std::option::Option<&str> {
         self.log_stream_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLoggingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLoggingOptions");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLoggingOptions`](crate::model::CloudWatchLoggingOptions).
@@ -600,7 +556,7 @@ impl CloudWatchLoggingOptions {
 
 /// <p>Describes the encryption for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
     #[doc(hidden)]
@@ -617,14 +573,6 @@ impl EncryptionConfiguration {
     /// <p>The encryption key.</p>
     pub fn kms_encryption_config(&self) -> std::option::Option<&crate::model::KmsEncryptionConfig> {
         self.kms_encryption_config.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("no_encryption_config", &self.no_encryption_config);
-        formatter.field("kms_encryption_config", &self.kms_encryption_config);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
@@ -681,7 +629,7 @@ impl EncryptionConfiguration {
 
 /// <p>Describes an encryption key for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -691,13 +639,6 @@ impl KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     pub fn awskms_key_arn(&self) -> std::option::Option<&str> {
         self.awskms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsEncryptionConfig");
-        formatter.field("awskms_key_arn", &self.awskms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
@@ -933,7 +874,7 @@ impl AsRef<str> for CompressionFormat {
 
 /// <p>Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BufferingHints {
     /// <p>Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default value is 5. This parameter is optional but if you specify a value for it, you must also specify a value for <code>IntervalInSeconds</code>, and vice versa.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value should be 10 MiB or higher.</p>
@@ -952,14 +893,6 @@ impl BufferingHints {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300. This parameter is optional but if you specify a value for it, you must also specify a value for <code>SizeInMBs</code>, and vice versa.</p>
     pub fn interval_in_seconds(&self) -> std::option::Option<i32> {
         self.interval_in_seconds
-    }
-}
-impl std::fmt::Debug for BufferingHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BufferingHints");
-        formatter.field("size_in_m_bs", &self.size_in_m_bs);
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`BufferingHints`](crate::model::BufferingHints).
@@ -1104,7 +1037,7 @@ impl AsRef<str> for HttpEndpointS3BackupMode {
 
 /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to the custom destination via HTTPS endpoint fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from the specified destination after each attempt. </p>
     #[doc(hidden)]
@@ -1114,13 +1047,6 @@ impl HttpEndpointRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to the custom destination via HTTPS endpoint fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from the specified destination after each attempt. </p>
     pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
         self.duration_in_seconds
-    }
-}
-impl std::fmt::Debug for HttpEndpointRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`HttpEndpointRetryOptions`](crate::model::HttpEndpointRetryOptions).
@@ -1159,7 +1085,7 @@ impl HttpEndpointRetryOptions {
 
 /// <p>Describes a data processing configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProcessingConfiguration {
     /// <p>Enables or disables data processing.</p>
     #[doc(hidden)]
@@ -1176,14 +1102,6 @@ impl ProcessingConfiguration {
     /// <p>The data processors.</p>
     pub fn processors(&self) -> std::option::Option<&[crate::model::Processor]> {
         self.processors.as_deref()
-    }
-}
-impl std::fmt::Debug for ProcessingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProcessingConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("processors", &self.processors);
-        formatter.finish()
     }
 }
 /// See [`ProcessingConfiguration`](crate::model::ProcessingConfiguration).
@@ -1243,7 +1161,7 @@ impl ProcessingConfiguration {
 
 /// <p>Describes a data processor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Processor {
     /// <p>The type of processor.</p>
     #[doc(hidden)]
@@ -1260,14 +1178,6 @@ impl Processor {
     /// <p>The processor parameters.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::ProcessorParameter]> {
         self.parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for Processor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Processor");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`Processor`](crate::model::Processor).
@@ -1327,7 +1237,7 @@ impl Processor {
 
 /// <p>Describes the processor parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProcessorParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -1344,14 +1254,6 @@ impl ProcessorParameter {
     /// <p>The parameter value.</p>
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ProcessorParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProcessorParameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
     }
 }
 /// See [`ProcessorParameter`](crate::model::ProcessorParameter).
@@ -1650,7 +1552,7 @@ impl AsRef<str> for ProcessorType {
 
 /// <p>The configuration of the HTTP endpoint request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointRequestConfiguration {
     /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
     #[doc(hidden)]
@@ -1670,14 +1572,6 @@ impl HttpEndpointRequestConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::HttpEndpointCommonAttribute]> {
         self.common_attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpEndpointRequestConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointRequestConfiguration");
-        formatter.field("content_encoding", &self.content_encoding);
-        formatter.field("common_attributes", &self.common_attributes);
-        formatter.finish()
     }
 }
 /// See [`HttpEndpointRequestConfiguration`](crate::model::HttpEndpointRequestConfiguration).
@@ -1775,7 +1669,7 @@ impl std::fmt::Debug for HttpEndpointCommonAttribute {
 pub mod http_endpoint_common_attribute {
 
     /// A builder for [`HttpEndpointCommonAttribute`](crate::model::HttpEndpointCommonAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,
@@ -1813,6 +1707,14 @@ pub mod http_endpoint_common_attribute {
                 attribute_name: self.attribute_name,
                 attribute_value: self.attribute_value,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("attribute_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("attribute_value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1915,7 +1817,7 @@ impl AsRef<str> for ContentEncoding {
 
 /// <p>Describes the buffering options that can be applied before data is delivered to the HTTP endpoint destination. Kinesis Data Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointBufferingHints {
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5. </p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher. </p>
@@ -1934,14 +1836,6 @@ impl HttpEndpointBufferingHints {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes). </p>
     pub fn interval_in_seconds(&self) -> std::option::Option<i32> {
         self.interval_in_seconds
-    }
-}
-impl std::fmt::Debug for HttpEndpointBufferingHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointBufferingHints");
-        formatter.field("size_in_m_bs", &self.size_in_m_bs);
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`HttpEndpointBufferingHints`](crate::model::HttpEndpointBufferingHints).
@@ -2037,7 +1931,7 @@ impl std::fmt::Debug for HttpEndpointConfiguration {
 pub mod http_endpoint_configuration {
 
     /// A builder for [`HttpEndpointConfiguration`](crate::model::HttpEndpointConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2087,6 +1981,15 @@ pub mod http_endpoint_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.field("access_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl HttpEndpointConfiguration {
     /// Creates a new builder-style object to manufacture [`HttpEndpointConfiguration`](crate::model::HttpEndpointConfiguration).
@@ -2097,7 +2000,7 @@ impl HttpEndpointConfiguration {
 
 /// <p>Describes an update for a destination in Splunk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplunkDestinationUpdate {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
     #[doc(hidden)]
@@ -2169,27 +2072,6 @@ impl SplunkDestinationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
-    }
-}
-impl std::fmt::Debug for SplunkDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplunkDestinationUpdate");
-        formatter.field("hec_endpoint", &self.hec_endpoint);
-        formatter.field("hec_endpoint_type", &self.hec_endpoint_type);
-        formatter.field("hec_token", &self.hec_token);
-        formatter.field(
-            "hec_acknowledgment_timeout_in_seconds",
-            &self.hec_acknowledgment_timeout_in_seconds,
-        );
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_update", &self.s3_update);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`SplunkDestinationUpdate`](crate::model::SplunkDestinationUpdate).
@@ -2447,7 +2329,7 @@ impl AsRef<str> for SplunkS3BackupMode {
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplunkRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from Splunk after each attempt.</p>
     #[doc(hidden)]
@@ -2457,13 +2339,6 @@ impl SplunkRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from Splunk after each attempt.</p>
     pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
         self.duration_in_seconds
-    }
-}
-impl std::fmt::Debug for SplunkRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplunkRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`SplunkRetryOptions`](crate::model::SplunkRetryOptions).
@@ -2592,7 +2467,7 @@ impl AsRef<str> for HecEndpointType {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationUpdate {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2683,26 +2558,6 @@ impl AmazonopensearchserviceDestinationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
-    }
-}
-impl std::fmt::Debug for AmazonopensearchserviceDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationUpdate");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_update", &self.s3_update);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate).
@@ -2902,7 +2757,7 @@ impl AmazonopensearchserviceDestinationUpdate {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceRetryOptions {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2912,13 +2767,6 @@ impl AmazonopensearchserviceRetryOptions {
     #[allow(missing_docs)] // documentation missing in model
     pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
         self.duration_in_seconds
-    }
-}
-impl std::fmt::Debug for AmazonopensearchserviceRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions).
@@ -2957,7 +2805,7 @@ impl AmazonopensearchserviceRetryOptions {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceBufferingHints {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2974,14 +2822,6 @@ impl AmazonopensearchserviceBufferingHints {
     #[allow(missing_docs)] // documentation missing in model
     pub fn size_in_m_bs(&self) -> std::option::Option<i32> {
         self.size_in_m_bs
-    }
-}
-impl std::fmt::Debug for AmazonopensearchserviceBufferingHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceBufferingHints");
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.field("size_in_m_bs", &self.size_in_m_bs);
-        formatter.finish()
     }
 }
 /// See [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints).
@@ -3139,7 +2979,7 @@ impl AsRef<str> for AmazonopensearchserviceIndexRotationPeriod {
 
 /// <p>Describes an update for a destination in Amazon ES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -3231,26 +3071,6 @@ impl ElasticsearchDestinationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
-    }
-}
-impl std::fmt::Debug for ElasticsearchDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchDestinationUpdate");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_update", &self.s3_update);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`ElasticsearchDestinationUpdate`](crate::model::ElasticsearchDestinationUpdate).
@@ -3446,7 +3266,7 @@ impl ElasticsearchDestinationUpdate {
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchRetryOptions {
     /// <p>After an initial failure to deliver to Amazon ES, the total amount of time during which Kinesis Data Firehose retries delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.</p>
     #[doc(hidden)]
@@ -3456,13 +3276,6 @@ impl ElasticsearchRetryOptions {
     /// <p>After an initial failure to deliver to Amazon ES, the total amount of time during which Kinesis Data Firehose retries delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.</p>
     pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
         self.duration_in_seconds
-    }
-}
-impl std::fmt::Debug for ElasticsearchRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`ElasticsearchRetryOptions`](crate::model::ElasticsearchRetryOptions).
@@ -3501,7 +3314,7 @@ impl ElasticsearchRetryOptions {
 
 /// <p>Describes the buffering to perform before delivering data to the Amazon ES destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchBufferingHints {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes).</p>
     #[doc(hidden)]
@@ -3520,14 +3333,6 @@ impl ElasticsearchBufferingHints {
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher.</p>
     pub fn size_in_m_bs(&self) -> std::option::Option<i32> {
         self.size_in_m_bs
-    }
-}
-impl std::fmt::Debug for ElasticsearchBufferingHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchBufferingHints");
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.field("size_in_m_bs", &self.size_in_m_bs);
-        formatter.finish()
     }
 }
 /// See [`ElasticsearchBufferingHints`](crate::model::ElasticsearchBufferingHints).
@@ -3799,7 +3604,7 @@ impl std::fmt::Debug for RedshiftDestinationUpdate {
 pub mod redshift_destination_update {
 
     /// A builder for [`RedshiftDestinationUpdate`](crate::model::RedshiftDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -3975,6 +3780,26 @@ pub mod redshift_destination_update {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("cluster_jdbcurl", &self.cluster_jdbcurl);
+            formatter.field("copy_command", &self.copy_command);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("retry_options", &self.retry_options);
+            formatter.field("s3_update", &self.s3_update);
+            formatter.field("processing_configuration", &self.processing_configuration);
+            formatter.field("s3_backup_mode", &self.s3_backup_mode);
+            formatter.field("s3_backup_update", &self.s3_backup_update);
+            formatter.field(
+                "cloud_watch_logging_options",
+                &self.cloud_watch_logging_options,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl RedshiftDestinationUpdate {
     /// Creates a new builder-style object to manufacture [`RedshiftDestinationUpdate`](crate::model::RedshiftDestinationUpdate).
@@ -4077,7 +3902,7 @@ impl AsRef<str> for RedshiftS3BackupMode {
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftRetryOptions {
     /// <p>The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current value.</p>
     #[doc(hidden)]
@@ -4087,13 +3912,6 @@ impl RedshiftRetryOptions {
     /// <p>The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current value.</p>
     pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
         self.duration_in_seconds
-    }
-}
-impl std::fmt::Debug for RedshiftRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`RedshiftRetryOptions`](crate::model::RedshiftRetryOptions).
@@ -4132,7 +3950,7 @@ impl RedshiftRetryOptions {
 
 /// <p>Describes a <code>COPY</code> command for Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyCommand {
     /// <p>The name of the target table. The table must already exist in the database.</p>
     #[doc(hidden)]
@@ -4168,15 +3986,6 @@ impl CopyCommand {
     /// <p>For more examples, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon Redshift COPY command examples</a>.</p>
     pub fn copy_options(&self) -> std::option::Option<&str> {
         self.copy_options.as_deref()
-    }
-}
-impl std::fmt::Debug for CopyCommand {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyCommand");
-        formatter.field("data_table_name", &self.data_table_name);
-        formatter.field("data_table_columns", &self.data_table_columns);
-        formatter.field("copy_options", &self.copy_options);
-        formatter.finish()
     }
 }
 /// See [`CopyCommand`](crate::model::CopyCommand).
@@ -4257,7 +4066,7 @@ impl CopyCommand {
 
 /// <p>Describes an update for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendedS3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -4363,34 +4172,6 @@ impl ExtendedS3DestinationUpdate {
         &self,
     ) -> std::option::Option<&crate::model::DynamicPartitioningConfiguration> {
         self.dynamic_partitioning_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ExtendedS3DestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendedS3DestinationUpdate");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_backup_update", &self.s3_backup_update);
-        formatter.field(
-            "data_format_conversion_configuration",
-            &self.data_format_conversion_configuration,
-        );
-        formatter.field(
-            "dynamic_partitioning_configuration",
-            &self.dynamic_partitioning_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ExtendedS3DestinationUpdate`](crate::model::ExtendedS3DestinationUpdate).
@@ -4623,7 +4404,7 @@ impl ExtendedS3DestinationUpdate {
 
 /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamicPartitioningConfiguration {
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
     #[doc(hidden)]
@@ -4640,14 +4421,6 @@ impl DynamicPartitioningConfiguration {
     /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for DynamicPartitioningConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamicPartitioningConfiguration");
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration).
@@ -4701,7 +4474,7 @@ impl DynamicPartitioningConfiguration {
 
 /// <p> The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryOptions {
     /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.</p>
     #[doc(hidden)]
@@ -4711,13 +4484,6 @@ impl RetryOptions {
     /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.</p>
     pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
         self.duration_in_seconds
-    }
-}
-impl std::fmt::Debug for RetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`RetryOptions`](crate::model::RetryOptions).
@@ -4756,7 +4522,7 @@ impl RetryOptions {
 
 /// <p>Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataFormatConversionConfiguration {
     /// <p>Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>
     #[doc(hidden)]
@@ -4791,22 +4557,6 @@ impl DataFormatConversionConfiguration {
     /// <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to disable format conversion while preserving the configuration details.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for DataFormatConversionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataFormatConversionConfiguration");
-        formatter.field("schema_configuration", &self.schema_configuration);
-        formatter.field(
-            "input_format_configuration",
-            &self.input_format_configuration,
-        );
-        formatter.field(
-            "output_format_configuration",
-            &self.output_format_configuration,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`DataFormatConversionConfiguration`](crate::model::DataFormatConversionConfiguration).
@@ -4898,7 +4648,7 @@ impl DataFormatConversionConfiguration {
 
 /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputFormatConfiguration {
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
     #[doc(hidden)]
@@ -4908,13 +4658,6 @@ impl OutputFormatConfiguration {
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
     pub fn serializer(&self) -> std::option::Option<&crate::model::Serializer> {
         self.serializer.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputFormatConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputFormatConfiguration");
-        formatter.field("serializer", &self.serializer);
-        formatter.finish()
     }
 }
 /// See [`OutputFormatConfiguration`](crate::model::OutputFormatConfiguration).
@@ -4956,7 +4699,7 @@ impl OutputFormatConfiguration {
 
 /// <p>The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Serializer {
     /// <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
     #[doc(hidden)]
@@ -4973,14 +4716,6 @@ impl Serializer {
     /// <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
     pub fn orc_ser_de(&self) -> std::option::Option<&crate::model::OrcSerDe> {
         self.orc_ser_de.as_ref()
-    }
-}
-impl std::fmt::Debug for Serializer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Serializer");
-        formatter.field("parquet_ser_de", &self.parquet_ser_de);
-        formatter.field("orc_ser_de", &self.orc_ser_de);
-        formatter.finish()
     }
 }
 /// See [`Serializer`](crate::model::Serializer).
@@ -5037,7 +4772,7 @@ impl Serializer {
 
 /// <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrcSerDe {
     /// <p>The number of bytes in each stripe. The default is 64 MiB and the minimum is 8 MiB.</p>
     #[doc(hidden)]
@@ -5114,25 +4849,6 @@ impl OrcSerDe {
     /// <p>The version of the file to write. The possible values are <code>V0_11</code> and <code>V0_12</code>. The default is <code>V0_12</code>.</p>
     pub fn format_version(&self) -> std::option::Option<&crate::model::OrcFormatVersion> {
         self.format_version.as_ref()
-    }
-}
-impl std::fmt::Debug for OrcSerDe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrcSerDe");
-        formatter.field("stripe_size_bytes", &self.stripe_size_bytes);
-        formatter.field("block_size_bytes", &self.block_size_bytes);
-        formatter.field("row_index_stride", &self.row_index_stride);
-        formatter.field("enable_padding", &self.enable_padding);
-        formatter.field("padding_tolerance", &self.padding_tolerance);
-        formatter.field("compression", &self.compression);
-        formatter.field("bloom_filter_columns", &self.bloom_filter_columns);
-        formatter.field(
-            "bloom_filter_false_positive_probability",
-            &self.bloom_filter_false_positive_probability,
-        );
-        formatter.field("dictionary_key_threshold", &self.dictionary_key_threshold);
-        formatter.field("format_version", &self.format_version);
-        formatter.finish()
     }
 }
 /// See [`OrcSerDe`](crate::model::OrcSerDe).
@@ -5487,7 +5203,7 @@ impl AsRef<str> for OrcCompression {
 
 /// <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParquetSerDe {
     /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
     #[doc(hidden)]
@@ -5532,21 +5248,6 @@ impl ParquetSerDe {
     /// <p>Indicates the version of row format to output. The possible values are <code>V1</code> and <code>V2</code>. The default is <code>V1</code>.</p>
     pub fn writer_version(&self) -> std::option::Option<&crate::model::ParquetWriterVersion> {
         self.writer_version.as_ref()
-    }
-}
-impl std::fmt::Debug for ParquetSerDe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParquetSerDe");
-        formatter.field("block_size_bytes", &self.block_size_bytes);
-        formatter.field("page_size_bytes", &self.page_size_bytes);
-        formatter.field("compression", &self.compression);
-        formatter.field(
-            "enable_dictionary_compression",
-            &self.enable_dictionary_compression,
-        );
-        formatter.field("max_padding_bytes", &self.max_padding_bytes);
-        formatter.field("writer_version", &self.writer_version);
-        formatter.finish()
     }
 }
 /// See [`ParquetSerDe`](crate::model::ParquetSerDe).
@@ -5843,7 +5544,7 @@ impl AsRef<str> for ParquetCompression {
 
 /// <p>Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputFormatConfiguration {
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
     #[doc(hidden)]
@@ -5853,13 +5554,6 @@ impl InputFormatConfiguration {
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
     pub fn deserializer(&self) -> std::option::Option<&crate::model::Deserializer> {
         self.deserializer.as_ref()
-    }
-}
-impl std::fmt::Debug for InputFormatConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputFormatConfiguration");
-        formatter.field("deserializer", &self.deserializer);
-        formatter.finish()
     }
 }
 /// See [`InputFormatConfiguration`](crate::model::InputFormatConfiguration).
@@ -5901,7 +5595,7 @@ impl InputFormatConfiguration {
 
 /// <p>The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <code>Serializer</code>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Deserializer {
     /// <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
     #[doc(hidden)]
@@ -5918,14 +5612,6 @@ impl Deserializer {
     /// <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
     pub fn hive_json_ser_de(&self) -> std::option::Option<&crate::model::HiveJsonSerDe> {
         self.hive_json_ser_de.as_ref()
-    }
-}
-impl std::fmt::Debug for Deserializer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Deserializer");
-        formatter.field("open_x_json_ser_de", &self.open_x_json_ser_de);
-        formatter.field("hive_json_ser_de", &self.hive_json_ser_de);
-        formatter.finish()
     }
 }
 /// See [`Deserializer`](crate::model::Deserializer).
@@ -5982,7 +5668,7 @@ impl Deserializer {
 
 /// <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HiveJsonSerDe {
     /// <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
     #[doc(hidden)]
@@ -5992,13 +5678,6 @@ impl HiveJsonSerDe {
     /// <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
     pub fn timestamp_formats(&self) -> std::option::Option<&[std::string::String]> {
         self.timestamp_formats.as_deref()
-    }
-}
-impl std::fmt::Debug for HiveJsonSerDe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HiveJsonSerDe");
-        formatter.field("timestamp_formats", &self.timestamp_formats);
-        formatter.finish()
     }
 }
 /// See [`HiveJsonSerDe`](crate::model::HiveJsonSerDe).
@@ -6046,7 +5725,7 @@ impl HiveJsonSerDe {
 
 /// <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenXJsonSerDe {
     /// <p>When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using this option.</p>
     /// <p>The default is <code>false</code>.</p>
@@ -6076,21 +5755,6 @@ impl OpenXJsonSerDe {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.column_to_json_key_mappings.as_ref()
-    }
-}
-impl std::fmt::Debug for OpenXJsonSerDe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenXJsonSerDe");
-        formatter.field(
-            "convert_dots_in_json_keys_to_underscores",
-            &self.convert_dots_in_json_keys_to_underscores,
-        );
-        formatter.field("case_insensitive", &self.case_insensitive);
-        formatter.field(
-            "column_to_json_key_mappings",
-            &self.column_to_json_key_mappings,
-        );
-        formatter.finish()
     }
 }
 /// See [`OpenXJsonSerDe`](crate::model::OpenXJsonSerDe).
@@ -6176,7 +5840,7 @@ impl OpenXJsonSerDe {
 
 /// <p>Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaConfiguration {
     /// <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
@@ -6233,18 +5897,6 @@ impl SchemaConfiguration {
     /// <p>Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any updates to the table are automatically picked up.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("region", &self.region);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
     }
 }
 /// See [`SchemaConfiguration`](crate::model::SchemaConfiguration).
@@ -6448,7 +6100,7 @@ impl AsRef<str> for S3BackupMode {
 
 /// <p>Metadata that you can assign to a delivery stream, consisting of a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
     #[doc(hidden)]
@@ -6465,14 +6117,6 @@ impl Tag {
     /// <p>An optional string, which you can use to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -6523,7 +6167,7 @@ impl Tag {
 
 /// <p>Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryStreamEncryptionConfigurationInput {
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a service-account CMK.</p>
     #[doc(hidden)]
@@ -6548,14 +6192,6 @@ impl DeliveryStreamEncryptionConfigurationInput {
     /// </important>
     pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
         self.key_type.as_ref()
-    }
-}
-impl std::fmt::Debug for DeliveryStreamEncryptionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryStreamEncryptionConfigurationInput");
-        formatter.field("key_arn", &self.key_arn);
-        formatter.field("key_type", &self.key_type);
-        formatter.finish()
     }
 }
 /// See [`DeliveryStreamEncryptionConfigurationInput`](crate::model::DeliveryStreamEncryptionConfigurationInput).
@@ -6704,7 +6340,7 @@ impl AsRef<str> for KeyType {
 
 /// <p>Contains the result for an individual record from a <code>PutRecordBatch</code> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordBatchResponseEntry {
     /// <p>The ID of the record.</p>
     #[doc(hidden)]
@@ -6728,15 +6364,6 @@ impl PutRecordBatchResponseEntry {
     /// <p>The error message for an individual record result.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for PutRecordBatchResponseEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordBatchResponseEntry");
-        formatter.field("record_id", &self.record_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`PutRecordBatchResponseEntry`](crate::model::PutRecordBatchResponseEntry).
@@ -6802,7 +6429,7 @@ impl PutRecordBatchResponseEntry {
 
 /// <p>The unit of data in a delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
     #[doc(hidden)]
@@ -6812,13 +6439,6 @@ impl Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
     pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.data.as_ref()
-    }
-}
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`Record`](crate::model::Record).
@@ -6947,7 +6567,7 @@ impl AsRef<str> for DeliveryStreamType {
 
 /// <p>Contains information about a delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryStreamDescription {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -7047,27 +6667,6 @@ impl DeliveryStreamDescription {
     /// <p>Indicates whether there are more destinations available to list.</p>
     pub fn has_more_destinations(&self) -> std::option::Option<bool> {
         self.has_more_destinations
-    }
-}
-impl std::fmt::Debug for DeliveryStreamDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryStreamDescription");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("delivery_stream_arn", &self.delivery_stream_arn);
-        formatter.field("delivery_stream_status", &self.delivery_stream_status);
-        formatter.field("failure_description", &self.failure_description);
-        formatter.field(
-            "delivery_stream_encryption_configuration",
-            &self.delivery_stream_encryption_configuration,
-        );
-        formatter.field("delivery_stream_type", &self.delivery_stream_type);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("last_update_timestamp", &self.last_update_timestamp);
-        formatter.field("source", &self.source);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("has_more_destinations", &self.has_more_destinations);
-        formatter.finish()
     }
 }
 /// See [`DeliveryStreamDescription`](crate::model::DeliveryStreamDescription).
@@ -7288,7 +6887,7 @@ impl DeliveryStreamDescription {
 
 /// <p>Describes the destination for a delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationDescription {
     /// <p>The ID of the destination.</p>
     #[doc(hidden)]
@@ -7368,41 +6967,6 @@ impl DestinationDescription {
         &self,
     ) -> std::option::Option<&crate::model::HttpEndpointDestinationDescription> {
         self.http_endpoint_destination_description.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationDescription");
-        formatter.field("destination_id", &self.destination_id);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.field(
-            "extended_s3_destination_description",
-            &self.extended_s3_destination_description,
-        );
-        formatter.field(
-            "redshift_destination_description",
-            &self.redshift_destination_description,
-        );
-        formatter.field(
-            "elasticsearch_destination_description",
-            &self.elasticsearch_destination_description,
-        );
-        formatter.field(
-            "amazonopensearchservice_destination_description",
-            &self.amazonopensearchservice_destination_description,
-        );
-        formatter.field(
-            "splunk_destination_description",
-            &self.splunk_destination_description,
-        );
-        formatter.field(
-            "http_endpoint_destination_description",
-            &self.http_endpoint_destination_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`DestinationDescription`](crate::model::DestinationDescription).
@@ -7578,7 +7142,7 @@ impl DestinationDescription {
 
 /// <p>Describes the HTTP endpoint destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointDestinationDescription {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
     #[doc(hidden)]
@@ -7656,27 +7220,6 @@ impl HttpEndpointDestinationDescription {
         &self,
     ) -> std::option::Option<&crate::model::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpEndpointDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointDestinationDescription");
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("request_configuration", &self.request_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`HttpEndpointDestinationDescription`](crate::model::HttpEndpointDestinationDescription).
@@ -7855,7 +7398,7 @@ impl HttpEndpointDestinationDescription {
 
 /// <p>Describes a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -7918,23 +7461,6 @@ impl S3DestinationDescription {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
-    }
-}
-impl std::fmt::Debug for S3DestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationDescription");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`S3DestinationDescription`](crate::model::S3DestinationDescription).
@@ -8111,7 +7637,7 @@ impl std::fmt::Debug for HttpEndpointDescription {
 pub mod http_endpoint_description {
 
     /// A builder for [`HttpEndpointDescription`](crate::model::HttpEndpointDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8145,6 +7671,14 @@ pub mod http_endpoint_description {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.finish()
+        }
+    }
 }
 impl HttpEndpointDescription {
     /// Creates a new builder-style object to manufacture [`HttpEndpointDescription`](crate::model::HttpEndpointDescription).
@@ -8155,7 +7689,7 @@ impl HttpEndpointDescription {
 
 /// <p>Describes a destination in Splunk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplunkDestinationDescription {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
     #[doc(hidden)]
@@ -8227,30 +7761,6 @@ impl SplunkDestinationDescription {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
-    }
-}
-impl std::fmt::Debug for SplunkDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplunkDestinationDescription");
-        formatter.field("hec_endpoint", &self.hec_endpoint);
-        formatter.field("hec_endpoint_type", &self.hec_endpoint_type);
-        formatter.field("hec_token", &self.hec_token);
-        formatter.field(
-            "hec_acknowledgment_timeout_in_seconds",
-            &self.hec_acknowledgment_timeout_in_seconds,
-        );
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`SplunkDestinationDescription`](crate::model::SplunkDestinationDescription).
@@ -8418,7 +7928,7 @@ impl SplunkDestinationDescription {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationDescription {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -8530,34 +8040,6 @@ impl AmazonopensearchserviceDestinationDescription {
         &self,
     ) -> std::option::Option<&crate::model::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
-    }
-}
-impl std::fmt::Debug for AmazonopensearchserviceDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationDescription");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field(
-            "vpc_configuration_description",
-            &self.vpc_configuration_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription).
@@ -8799,7 +8281,7 @@ impl AmazonopensearchserviceDestinationDescription {
 
 /// <p>The details of the VPC of the Amazon ES destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigurationDescription {
     /// <p>The IDs of the subnets that Kinesis Data Firehose uses to create ENIs in the VPC of the Amazon ES destination. Make sure that the routing tables and inbound and outbound rules allow traffic to flow from the subnets whose IDs are specified here to the subnets that have the destination Amazon ES endpoints. Kinesis Data Firehose creates at least one ENI in each of the subnets that are specified here. Do not delete or modify these ENIs.</p>
     /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here scales up and down automatically based on throughput. To enable Kinesis Data Firehose to scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To help you calculate the quota you need, assume that Kinesis Data Firehose can create up to three ENIs for this delivery stream for each of the subnets specified here. For more information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces </a> in the Amazon VPC Quotas topic.</p>
@@ -8854,16 +8336,6 @@ impl VpcConfigurationDescription {
     /// <p>The ID of the Amazon ES destination's VPC.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigurationDescription");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
@@ -9072,7 +8544,7 @@ impl AsRef<str> for AmazonopensearchserviceS3BackupMode {
 
 /// <p>The destination description in Amazon ES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -9181,34 +8653,6 @@ impl ElasticsearchDestinationDescription {
         &self,
     ) -> std::option::Option<&crate::model::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
-    }
-}
-impl std::fmt::Debug for ElasticsearchDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchDestinationDescription");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field(
-            "vpc_configuration_description",
-            &self.vpc_configuration_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`ElasticsearchDestinationDescription`](crate::model::ElasticsearchDestinationDescription).
@@ -9641,7 +9085,7 @@ impl std::fmt::Debug for RedshiftDestinationDescription {
 pub mod redshift_destination_description {
 
     /// A builder for [`RedshiftDestinationDescription`](crate::model::RedshiftDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -9811,6 +9255,28 @@ pub mod redshift_destination_description {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("cluster_jdbcurl", &self.cluster_jdbcurl);
+            formatter.field("copy_command", &self.copy_command);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("retry_options", &self.retry_options);
+            formatter.field(
+                "s3_destination_description",
+                &self.s3_destination_description,
+            );
+            formatter.field("processing_configuration", &self.processing_configuration);
+            formatter.field("s3_backup_mode", &self.s3_backup_mode);
+            formatter.field("s3_backup_description", &self.s3_backup_description);
+            formatter.field(
+                "cloud_watch_logging_options",
+                &self.cloud_watch_logging_options,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl RedshiftDestinationDescription {
     /// Creates a new builder-style object to manufacture [`RedshiftDestinationDescription`](crate::model::RedshiftDestinationDescription).
@@ -9821,7 +9287,7 @@ impl RedshiftDestinationDescription {
 
 /// <p>Describes a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendedS3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -9929,34 +9395,6 @@ impl ExtendedS3DestinationDescription {
         &self,
     ) -> std::option::Option<&crate::model::DynamicPartitioningConfiguration> {
         self.dynamic_partitioning_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ExtendedS3DestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendedS3DestinationDescription");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_backup_description", &self.s3_backup_description);
-        formatter.field(
-            "data_format_conversion_configuration",
-            &self.data_format_conversion_configuration,
-        );
-        formatter.field(
-            "dynamic_partitioning_configuration",
-            &self.dynamic_partitioning_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ExtendedS3DestinationDescription`](crate::model::ExtendedS3DestinationDescription).
@@ -10193,7 +9631,7 @@ impl ExtendedS3DestinationDescription {
 
 /// <p>Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceDescription {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
     #[doc(hidden)]
@@ -10206,16 +9644,6 @@ impl SourceDescription {
         &self,
     ) -> std::option::Option<&crate::model::KinesisStreamSourceDescription> {
         self.kinesis_stream_source_description.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceDescription");
-        formatter.field(
-            "kinesis_stream_source_description",
-            &self.kinesis_stream_source_description,
-        );
-        formatter.finish()
     }
 }
 /// See [`SourceDescription`](crate::model::SourceDescription).
@@ -10261,7 +9689,7 @@ impl SourceDescription {
 
 /// <p>Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     #[doc(hidden)]
@@ -10285,15 +9713,6 @@ impl KinesisStreamSourceDescription {
     /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
     pub fn delivery_start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delivery_start_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamSourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamSourceDescription");
-        formatter.field("kinesis_stream_arn", &self.kinesis_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("delivery_start_timestamp", &self.delivery_start_timestamp);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamSourceDescription`](crate::model::KinesisStreamSourceDescription).
@@ -10362,7 +9781,7 @@ impl KinesisStreamSourceDescription {
 
 /// <p>Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <code>DescribeDeliveryStream</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryStreamEncryptionConfiguration {
     /// <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.</p>
     #[doc(hidden)]
@@ -10393,16 +9812,6 @@ impl DeliveryStreamEncryptionConfiguration {
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
     pub fn failure_description(&self) -> std::option::Option<&crate::model::FailureDescription> {
         self.failure_description.as_ref()
-    }
-}
-impl std::fmt::Debug for DeliveryStreamEncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryStreamEncryptionConfiguration");
-        formatter.field("key_arn", &self.key_arn);
-        formatter.field("key_type", &self.key_type);
-        formatter.field("status", &self.status);
-        formatter.field("failure_description", &self.failure_description);
-        formatter.finish()
     }
 }
 /// See [`DeliveryStreamEncryptionConfiguration`](crate::model::DeliveryStreamEncryptionConfiguration).
@@ -10483,7 +9892,7 @@ impl DeliveryStreamEncryptionConfiguration {
 
 /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailureDescription {
     /// <p>The type of error that caused the failure.</p>
     #[doc(hidden)]
@@ -10500,14 +9909,6 @@ impl FailureDescription {
     /// <p>A message providing details about the error that caused the failure.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for FailureDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailureDescription");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`FailureDescription`](crate::model::FailureDescription).
@@ -10966,7 +10367,7 @@ impl AsRef<str> for DeliveryStreamStatus {
 
 /// <p>Describes the configuration of the HTTP endpoint destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointDestinationConfiguration {
     /// <p>The configuration of the HTTP endpoint selected as the destination.</p>
     #[doc(hidden)]
@@ -11044,24 +10445,6 @@ impl HttpEndpointDestinationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::S3DestinationConfiguration> {
         self.s3_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpEndpointDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointDestinationConfiguration");
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("request_configuration", &self.request_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.finish()
     }
 }
 /// See [`HttpEndpointDestinationConfiguration`](crate::model::HttpEndpointDestinationConfiguration).
@@ -11236,7 +10619,7 @@ impl HttpEndpointDestinationConfiguration {
 
 /// <p>Describes the configuration of a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -11301,23 +10684,6 @@ impl S3DestinationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
-    }
-}
-impl std::fmt::Debug for S3DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
@@ -11465,7 +10831,7 @@ impl S3DestinationConfiguration {
 
 /// <p>Describes the configuration of a destination in Splunk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplunkDestinationConfiguration {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
     #[doc(hidden)]
@@ -11539,27 +10905,6 @@ impl SplunkDestinationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
-    }
-}
-impl std::fmt::Debug for SplunkDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplunkDestinationConfiguration");
-        formatter.field("hec_endpoint", &self.hec_endpoint);
-        formatter.field("hec_endpoint_type", &self.hec_endpoint_type);
-        formatter.field("hec_token", &self.hec_token);
-        formatter.field(
-            "hec_acknowledgment_timeout_in_seconds",
-            &self.hec_acknowledgment_timeout_in_seconds,
-        );
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`SplunkDestinationConfiguration`](crate::model::SplunkDestinationConfiguration).
@@ -11725,7 +11070,7 @@ impl SplunkDestinationConfiguration {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -11834,28 +11179,6 @@ impl AmazonopensearchserviceDestinationConfiguration {
     /// <p>The details of the VPC of the Amazon ES destination.</p>
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AmazonopensearchserviceDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration).
@@ -12089,7 +11412,7 @@ impl AmazonopensearchserviceDestinationConfiguration {
 
 /// <p>The details of the VPC of the Amazon ES destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>The IDs of the subnets that you want Kinesis Data Firehose to use to create ENIs in the VPC of the Amazon ES destination. Make sure that the routing tables and inbound and outbound rules allow traffic to flow from the subnets whose IDs are specified here to the subnets that have the destination Amazon ES endpoints. Kinesis Data Firehose creates at least one ENI in each of the subnets that are specified here. Do not delete or modify these ENIs.</p>
     /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here scales up and down automatically based on throughput. To enable Kinesis Data Firehose to scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To help you calculate the quota you need, assume that Kinesis Data Firehose can create up to three ENIs for this delivery stream for each of the subnets specified here. For more information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces </a> in the Amazon VPC Quotas topic.</p>
@@ -12137,15 +11460,6 @@ impl VpcConfiguration {
     /// <p>The IDs of the security groups that you want Kinesis Data Firehose to use when it creates ENIs in the VPC of the Amazon ES destination. You can use the same security group that the Amazon ES domain uses or different ones. If you specify different security groups here, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the security groups specified here. If you use the same security group for both your delivery stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group rules</a> in the Amazon VPC documentation.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -12250,7 +11564,7 @@ impl VpcConfiguration {
 
 /// <p>Describes the configuration of a destination in Amazon ES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -12360,28 +11674,6 @@ impl ElasticsearchDestinationConfiguration {
     /// <p>The details of the VPC of the Amazon ES destination.</p>
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ElasticsearchDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchDestinationConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`ElasticsearchDestinationConfiguration`](crate::model::ElasticsearchDestinationConfiguration).
@@ -12725,7 +12017,7 @@ impl std::fmt::Debug for RedshiftDestinationConfiguration {
 pub mod redshift_destination_configuration {
 
     /// A builder for [`RedshiftDestinationConfiguration`](crate::model::RedshiftDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -12905,6 +12197,26 @@ pub mod redshift_destination_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("cluster_jdbcurl", &self.cluster_jdbcurl);
+            formatter.field("copy_command", &self.copy_command);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("retry_options", &self.retry_options);
+            formatter.field("s3_configuration", &self.s3_configuration);
+            formatter.field("processing_configuration", &self.processing_configuration);
+            formatter.field("s3_backup_mode", &self.s3_backup_mode);
+            formatter.field("s3_backup_configuration", &self.s3_backup_configuration);
+            formatter.field(
+                "cloud_watch_logging_options",
+                &self.cloud_watch_logging_options,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl RedshiftDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`RedshiftDestinationConfiguration`](crate::model::RedshiftDestinationConfiguration).
@@ -12915,7 +12227,7 @@ impl RedshiftDestinationConfiguration {
 
 /// <p>Describes the configuration of a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendedS3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -13023,34 +12335,6 @@ impl ExtendedS3DestinationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DynamicPartitioningConfiguration> {
         self.dynamic_partitioning_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ExtendedS3DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendedS3DestinationConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_backup_configuration", &self.s3_backup_configuration);
-        formatter.field(
-            "data_format_conversion_configuration",
-            &self.data_format_conversion_configuration,
-        );
-        formatter.field(
-            "dynamic_partitioning_configuration",
-            &self.dynamic_partitioning_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ExtendedS3DestinationConfiguration`](crate::model::ExtendedS3DestinationConfiguration).
@@ -13287,7 +12571,7 @@ impl ExtendedS3DestinationConfiguration {
 
 /// <p>The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamSourceConfiguration {
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     #[doc(hidden)]
@@ -13304,14 +12588,6 @@ impl KinesisStreamSourceConfiguration {
     /// <p>The ARN of the role that provides access to the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM) ARN Format</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamSourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamSourceConfiguration");
-        formatter.field("kinesis_stream_arn", &self.kinesis_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamSourceConfiguration`](crate::model::KinesisStreamSourceConfiguration).

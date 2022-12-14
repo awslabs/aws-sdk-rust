@@ -226,7 +226,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p> The details of a repository stored in CodeArtifact. A CodeArtifact repository contains a set of package versions, each of which maps to a set of assets. Repositories are polyglot—a single repository can contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using tools like the <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories per Amazon Web Services account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryDescription {
     /// <p> The name of the repository. </p>
     #[doc(hidden)]
@@ -288,20 +288,6 @@ impl RepositoryDescription {
         &self,
     ) -> std::option::Option<&[crate::model::RepositoryExternalConnectionInfo]> {
         self.external_connections.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryDescription");
-        formatter.field("name", &self.name);
-        formatter.field("administrator_account", &self.administrator_account);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("upstreams", &self.upstreams);
-        formatter.field("external_connections", &self.external_connections);
-        formatter.finish()
     }
 }
 /// See [`RepositoryDescription`](crate::model::RepositoryDescription).
@@ -452,7 +438,7 @@ impl RepositoryDescription {
 
 /// <p> Contains information about the external connection of a repository. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryExternalConnectionInfo {
     /// <p> The name of the external connection associated with a repository. </p>
     #[doc(hidden)]
@@ -488,15 +474,6 @@ impl RepositoryExternalConnectionInfo {
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::ExternalConnectionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for RepositoryExternalConnectionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryExternalConnectionInfo");
-        formatter.field("external_connection_name", &self.external_connection_name);
-        formatter.field("package_format", &self.package_format);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
@@ -767,7 +744,7 @@ impl AsRef<str> for PackageFormat {
 
 /// <p> Information about an upstream repository. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpstreamRepositoryInfo {
     /// <p> The name of an upstream repository. </p>
     #[doc(hidden)]
@@ -777,13 +754,6 @@ impl UpstreamRepositoryInfo {
     /// <p> The name of an upstream repository. </p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
-    }
-}
-impl std::fmt::Debug for UpstreamRepositoryInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpstreamRepositoryInfo");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
     }
 }
 /// See [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
@@ -825,7 +795,7 @@ impl UpstreamRepositoryInfo {
 
 /// <p> Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html">CreateRepository</a> and <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html">UpdateRepository</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpstreamRepository {
     /// <p> The name of an upstream repository. </p>
     #[doc(hidden)]
@@ -835,13 +805,6 @@ impl UpstreamRepository {
     /// <p> The name of an upstream repository. </p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
-    }
-}
-impl std::fmt::Debug for UpstreamRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpstreamRepository");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
     }
 }
 /// See [`UpstreamRepository`](crate::model::UpstreamRepository).
@@ -883,7 +846,7 @@ impl UpstreamRepository {
 
 /// <p>l An error associated with package. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageVersionError {
     /// <p> The error code associated with the error. Valid error codes are: </p>
     /// <ul>
@@ -916,14 +879,6 @@ impl PackageVersionError {
     /// <p> The error message associated with the error. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for PackageVersionError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageVersionError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`PackageVersionError`](crate::model::PackageVersionError).
@@ -1115,7 +1070,7 @@ impl AsRef<str> for PackageVersionErrorCode {
 
 /// <p> Contains the revision and status of a package version. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuccessfulPackageVersionInfo {
     /// <p> The revision of a package version. </p>
     #[doc(hidden)]
@@ -1132,14 +1087,6 @@ impl SuccessfulPackageVersionInfo {
     /// <p> The status of a package version. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for SuccessfulPackageVersionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuccessfulPackageVersionInfo");
-        formatter.field("revision", &self.revision);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
@@ -1312,7 +1259,7 @@ impl AsRef<str> for PackageVersionStatus {
 
 /// <p>A tag is a key-value pair that can be used to manage, search for, or filter resources in CodeArtifact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag key.</p>
     #[doc(hidden)]
@@ -1329,14 +1276,6 @@ impl Tag {
     /// <p>The tag value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1387,7 +1326,7 @@ impl Tag {
 
 /// <p> An CodeArtifact resource policy that contains a resource ARN, document details, and a revision. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p> The ARN of the resource associated with the resource policy </p>
     #[doc(hidden)]
@@ -1411,15 +1350,6 @@ impl ResourcePolicy {
     /// <p> The resource policy formatted in JSON. </p>
     pub fn document(&self) -> std::option::Option<&str> {
         self.document.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourcePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePolicy");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("revision", &self.revision);
-        formatter.field("document", &self.document);
-        formatter.finish()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -1482,7 +1412,7 @@ impl ResourcePolicy {
 
 /// <p>Details about the package origin configuration of a package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
     #[doc(hidden)]
@@ -1492,13 +1422,6 @@ impl PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
     pub fn restrictions(&self) -> std::option::Option<&crate::model::PackageOriginRestrictions> {
         self.restrictions.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageOriginConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageOriginConfiguration");
-        formatter.field("restrictions", &self.restrictions);
-        formatter.finish()
     }
 }
 /// See [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
@@ -1540,7 +1463,7 @@ impl PackageOriginConfiguration {
 
 /// <p>Details about the origin restrictions set on the package. The package origin restrictions determine how new versions of a package can be added to a specific repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageOriginRestrictions {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     #[doc(hidden)]
@@ -1557,14 +1480,6 @@ impl PackageOriginRestrictions {
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
     pub fn upstream(&self) -> std::option::Option<&crate::model::AllowUpstream> {
         self.upstream.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageOriginRestrictions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageOriginRestrictions");
-        formatter.field("publish", &self.publish);
-        formatter.field("upstream", &self.upstream);
-        formatter.finish()
     }
 }
 /// See [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
@@ -1801,7 +1716,7 @@ impl AsRef<str> for AllowPublish {
 
 /// <p> Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html">ListRepositories</a> operation returns a list of <code>RepositorySummary</code> objects. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositorySummary {
     /// <p> The name of the repository. </p>
     #[doc(hidden)]
@@ -1846,18 +1761,6 @@ impl RepositorySummary {
     /// <p> The description of the repository. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositorySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositorySummary");
-        formatter.field("name", &self.name);
-        formatter.field("administrator_account", &self.administrator_account);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`RepositorySummary`](crate::model::RepositorySummary).
@@ -1959,7 +1862,7 @@ impl RepositorySummary {
 
 /// <p> Details about a package version, including its status, version, and revision. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> operation returns a list of <code>PackageVersionSummary</code> objects. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageVersionSummary {
     /// <p> Information about a package version. </p>
     #[doc(hidden)]
@@ -1990,16 +1893,6 @@ impl PackageVersionSummary {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn origin(&self) -> std::option::Option<&crate::model::PackageVersionOrigin> {
         self.origin.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageVersionSummary");
-        formatter.field("version", &self.version);
-        formatter.field("revision", &self.revision);
-        formatter.field("status", &self.status);
-        formatter.field("origin", &self.origin);
-        formatter.finish()
     }
 }
 /// See [`PackageVersionSummary`](crate::model::PackageVersionSummary).
@@ -2080,7 +1973,7 @@ impl PackageVersionSummary {
 
 /// <p>Information about how a package version was added to a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageVersionOrigin {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
     #[doc(hidden)]
@@ -2097,14 +1990,6 @@ impl PackageVersionOrigin {
     /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
     pub fn origin_type(&self) -> std::option::Option<&crate::model::PackageVersionOriginType> {
         self.origin_type.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageVersionOrigin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageVersionOrigin");
-        formatter.field("domain_entry_point", &self.domain_entry_point);
-        formatter.field("origin_type", &self.origin_type);
-        formatter.finish()
     }
 }
 /// See [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
@@ -2258,7 +2143,7 @@ impl AsRef<str> for PackageVersionOriginType {
 
 /// <p>Information about how a package originally entered the CodeArtifact domain. For packages published directly to CodeArtifact, the entry point is the repository it was published to. For packages ingested from an external repository, the entry point is the external connection that it was ingested from. An external connection is a CodeArtifact repository that is connected to an external repository such as the npm registry or NuGet gallery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainEntryPoint {
     /// <p>The name of the repository that a package was originally published to.</p>
     #[doc(hidden)]
@@ -2275,14 +2160,6 @@ impl DomainEntryPoint {
     /// <p>The name of the external connection that a package was ingested from.</p>
     pub fn external_connection_name(&self) -> std::option::Option<&str> {
         self.external_connection_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainEntryPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainEntryPoint");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("external_connection_name", &self.external_connection_name);
-        formatter.finish()
     }
 }
 /// See [`DomainEntryPoint`](crate::model::DomainEntryPoint).
@@ -2426,7 +2303,7 @@ impl AsRef<str> for PackageVersionSortType {
 
 /// <p> Details about a package dependency. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageDependency {
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -2467,16 +2344,6 @@ impl PackageDependency {
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
     pub fn version_requirement(&self) -> std::option::Option<&str> {
         self.version_requirement.as_deref()
-    }
-}
-impl std::fmt::Debug for PackageDependency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageDependency");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("dependency_type", &self.dependency_type);
-        formatter.field("version_requirement", &self.version_requirement);
-        formatter.finish()
     }
 }
 /// See [`PackageDependency`](crate::model::PackageDependency).
@@ -2567,7 +2434,7 @@ impl PackageDependency {
 
 /// <p> Contains details about a package version asset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetSummary {
     /// <p> The name of the asset. </p>
     #[doc(hidden)]
@@ -2597,15 +2464,6 @@ impl AssetSummary {
         &std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>,
     > {
         self.hashes.as_ref()
-    }
-}
-impl std::fmt::Debug for AssetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetSummary");
-        formatter.field("name", &self.name);
-        formatter.field("size", &self.size);
-        formatter.field("hashes", &self.hashes);
-        formatter.finish()
     }
 }
 /// See [`AssetSummary`](crate::model::AssetSummary).
@@ -2785,7 +2643,7 @@ impl AsRef<str> for HashAlgorithm {
 
 /// <p> Details about a package, including its format, namespace, and name. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html">ListPackages</a> operation returns a list of <code>PackageSummary</code> objects. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageSummary {
     /// <p> The format of the package. </p>
     #[doc(hidden)]
@@ -2828,16 +2686,6 @@ impl PackageSummary {
         &self,
     ) -> std::option::Option<&crate::model::PackageOriginConfiguration> {
         self.origin_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageSummary");
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("origin_configuration", &self.origin_configuration);
-        formatter.finish()
     }
 }
 /// See [`PackageSummary`](crate::model::PackageSummary).
@@ -2932,7 +2780,7 @@ impl PackageSummary {
 
 /// <p> Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html">ListDomains</a> operation returns a list of <code>DomainSummary</code> objects. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainSummary {
     /// <p> The name of the domain. </p>
     #[doc(hidden)]
@@ -2977,18 +2825,6 @@ impl DomainSummary {
     /// <p> The key used to encrypt the domain. </p>
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainSummary");
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.finish()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
@@ -3186,7 +3022,7 @@ impl AsRef<str> for DomainStatus {
 
 /// <p> Details about a package version. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageVersionDescription {
     /// <p> The format of the package version. </p>
     #[doc(hidden)]
@@ -3290,25 +3126,6 @@ impl PackageVersionDescription {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn origin(&self) -> std::option::Option<&crate::model::PackageVersionOrigin> {
         self.origin.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageVersionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageVersionDescription");
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package_name", &self.package_name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("version", &self.version);
-        formatter.field("summary", &self.summary);
-        formatter.field("home_page", &self.home_page);
-        formatter.field("source_code_repository", &self.source_code_repository);
-        formatter.field("published_time", &self.published_time);
-        formatter.field("licenses", &self.licenses);
-        formatter.field("revision", &self.revision);
-        formatter.field("status", &self.status);
-        formatter.field("origin", &self.origin);
-        formatter.finish()
     }
 }
 /// See [`PackageVersionDescription`](crate::model::PackageVersionDescription).
@@ -3525,7 +3342,7 @@ impl PackageVersionDescription {
 
 /// <p> Details of the license data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseInfo {
     /// <p> Name of the license. </p>
     #[doc(hidden)]
@@ -3542,14 +3359,6 @@ impl LicenseInfo {
     /// <p> The URL for license data. </p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for LicenseInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseInfo");
-        formatter.field("name", &self.name);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`LicenseInfo`](crate::model::LicenseInfo).
@@ -3600,7 +3409,7 @@ impl LicenseInfo {
 
 /// <p>Details about a package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageDescription {
     /// <p>A format that specifies the type of the package.</p>
     #[doc(hidden)]
@@ -3643,16 +3452,6 @@ impl PackageDescription {
         &self,
     ) -> std::option::Option<&crate::model::PackageOriginConfiguration> {
         self.origin_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageDescription");
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.field("origin_configuration", &self.origin_configuration);
-        formatter.finish()
     }
 }
 /// See [`PackageDescription`](crate::model::PackageDescription).
@@ -3747,7 +3546,7 @@ impl PackageDescription {
 
 /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainDescription {
     /// <p> The name of the domain. </p>
     #[doc(hidden)]
@@ -3813,21 +3612,6 @@ impl DomainDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
     pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
         self.s3_bucket_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainDescription");
-        formatter.field("name", &self.name);
-        formatter.field("owner", &self.owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("repository_count", &self.repository_count);
-        formatter.field("asset_size_bytes", &self.asset_size_bytes);
-        formatter.field("s3_bucket_arn", &self.s3_bucket_arn);
-        formatter.finish()
     }
 }
 /// See [`DomainDescription`](crate::model::DomainDescription).

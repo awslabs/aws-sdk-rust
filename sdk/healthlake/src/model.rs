@@ -2,7 +2,7 @@
 
 /// <p> A tag is a label consisting of a user-defined key and value. The form for tags is {"Key", "Value"} </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p> The value portion of tag. Tag values are case sensitive. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -227,7 +219,7 @@ impl OutputDataConfig {
 
 /// <p> The configuration of the S3 bucket for either an import or export job. This includes assigning permissions for access. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
     #[doc(hidden)]
@@ -244,14 +236,6 @@ impl S3Configuration {
     /// <p> The KMS key ID used to access the S3 bucket. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Configuration");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`S3Configuration`](crate::model::S3Configuration).
@@ -339,7 +323,7 @@ impl InputDataConfig {
 
 /// <p>Displays the properties of the import job, including the ID, Arn, Name, and the status of the Data Store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobProperties {
     /// <p>The AWS-generated id number for the Import job.</p>
     #[doc(hidden)]
@@ -412,22 +396,6 @@ impl ImportJobProperties {
     /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("job_output_data_config", &self.job_output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ImportJobProperties`](crate::model::ImportJobProperties).
@@ -592,7 +560,7 @@ impl ImportJobProperties {
 
 /// <p>The properties of a FHIR export job, including the ID, ARN, name, and the status of the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobProperties {
     /// <p>The AWS generated ID for an export job.</p>
     #[doc(hidden)]
@@ -658,21 +626,6 @@ impl ExportJobProperties {
     /// <p>An explanation of any errors that may have occurred during the export job.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ExportJobProperties`](crate::model::ExportJobProperties).
@@ -822,7 +775,7 @@ impl ExportJobProperties {
 
 /// <p>Displays the properties of the Data Store, including the ID, Arn, name, and the status of the Data Store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreProperties {
     /// <p>The AWS-generated ID number for the Data Store.</p>
     #[doc(hidden)]
@@ -888,21 +841,6 @@ impl DatastoreProperties {
     /// <p>The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.</p>
     pub fn preload_data_config(&self) -> std::option::Option<&crate::model::PreloadDataConfig> {
         self.preload_data_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DatastoreProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreProperties");
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("datastore_arn", &self.datastore_arn);
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.field("datastore_status", &self.datastore_status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("datastore_type_version", &self.datastore_type_version);
-        formatter.field("datastore_endpoint", &self.datastore_endpoint);
-        formatter.field("sse_configuration", &self.sse_configuration);
-        formatter.field("preload_data_config", &self.preload_data_config);
-        formatter.finish()
     }
 }
 /// See [`DatastoreProperties`](crate::model::DatastoreProperties).
@@ -1061,7 +999,7 @@ impl DatastoreProperties {
 
 /// <p> The input properties for the preloaded Data Store. Only data preloaded from Synthea is supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     #[doc(hidden)]
@@ -1071,13 +1009,6 @@ impl PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     pub fn preload_data_type(&self) -> std::option::Option<&crate::model::PreloadDataType> {
         self.preload_data_type.as_ref()
-    }
-}
-impl std::fmt::Debug for PreloadDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreloadDataConfig");
-        formatter.field("preload_data_type", &self.preload_data_type);
-        formatter.finish()
     }
 }
 /// See [`PreloadDataConfig`](crate::model::PreloadDataConfig).
@@ -1204,7 +1135,7 @@ impl AsRef<str> for PreloadDataType {
 
 /// <p> The server-side encryption key configuration for a customer provided encryption key. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SseConfiguration {
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
     #[doc(hidden)]
@@ -1214,13 +1145,6 @@ impl SseConfiguration {
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
     pub fn kms_encryption_config(&self) -> std::option::Option<&crate::model::KmsEncryptionConfig> {
         self.kms_encryption_config.as_ref()
-    }
-}
-impl std::fmt::Debug for SseConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SseConfiguration");
-        formatter.field("kms_encryption_config", &self.kms_encryption_config);
-        formatter.finish()
     }
 }
 /// See [`SseConfiguration`](crate::model::SseConfiguration).
@@ -1262,7 +1186,7 @@ impl SseConfiguration {
 
 /// <p> The customer-managed-key(CMK) used when creating a Data Store. If a customer owned key is not specified, an AWS owned key will be used for encryption. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsEncryptionConfig {
     /// <p> The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs. </p>
     #[doc(hidden)]
@@ -1279,14 +1203,6 @@ impl KmsEncryptionConfig {
     /// <p> The KMS encryption key id/alias used to encrypt the Data Store contents at rest. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for KmsEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsEncryptionConfig");
-        formatter.field("cmk_type", &self.cmk_type);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
@@ -1612,7 +1528,7 @@ impl AsRef<str> for DatastoreStatus {
 
 /// <p>The filters applied to Data Store query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreFilter {
     /// <p>Allows the user to filter Data Store results by name.</p>
     #[doc(hidden)]
@@ -1643,16 +1559,6 @@ impl DatastoreFilter {
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified date will be included in the results.</p>
     pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_after.as_ref()
-    }
-}
-impl std::fmt::Debug for DatastoreFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreFilter");
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.field("datastore_status", &self.datastore_status);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("created_after", &self.created_after);
-        formatter.finish()
     }
 }
 /// See [`DatastoreFilter`](crate::model::DatastoreFilter).

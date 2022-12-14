@@ -2,7 +2,7 @@
 
 /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskSet {
     /// <p>The ID of the task set.</p>
     #[doc(hidden)]
@@ -258,39 +258,6 @@ impl TaskSet {
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskSet");
-        formatter.field("id", &self.id);
-        formatter.field("task_set_arn", &self.task_set_arn);
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("started_by", &self.started_by);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("status", &self.status);
-        formatter.field("task_definition", &self.task_definition);
-        formatter.field("computed_desired_count", &self.computed_desired_count);
-        formatter.field("pending_count", &self.pending_count);
-        formatter.field("running_count", &self.running_count);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("platform_family", &self.platform_family);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("load_balancers", &self.load_balancers);
-        formatter.field("service_registries", &self.service_registries);
-        formatter.field("scale", &self.scale);
-        formatter.field("stability_status", &self.stability_status);
-        formatter.field("stability_status_at", &self.stability_status_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`TaskSet`](crate::model::TaskSet).
@@ -763,7 +730,7 @@ impl TaskSet {
 /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -780,14 +747,6 @@ impl Tag {
     /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -928,7 +887,7 @@ impl AsRef<str> for StabilityStatus {
 
 /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scale {
     /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted values are numbers between 0 and 100.</p>
     #[doc(hidden)]
@@ -945,14 +904,6 @@ impl Scale {
     /// <p>The unit of measure for the scale value.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::ScaleUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for Scale {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scale");
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`Scale`](crate::model::Scale).
@@ -1090,7 +1041,7 @@ impl AsRef<str> for ScaleUnit {
 /// <p>Each service may be associated with one service registry. Multiple service registries for each service are not supported.</p>
 /// <p>When you add, update, or remove the service registries configuration, Amazon ECS starts a new deployment. New tasks are registered and deregistered to the updated service registry configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceRegistry {
     /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
     #[doc(hidden)]
@@ -1121,16 +1072,6 @@ impl ServiceRegistry {
     /// <p>The port value to be used for your service discovery service. It's already specified in the task definition. If the task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value. However, you can't specify both.</p>
     pub fn container_port(&self) -> std::option::Option<i32> {
         self.container_port
-    }
-}
-impl std::fmt::Debug for ServiceRegistry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceRegistry");
-        formatter.field("registry_arn", &self.registry_arn);
-        formatter.field("port", &self.port);
-        formatter.field("container_name", &self.container_name);
-        formatter.field("container_port", &self.container_port);
-        formatter.finish()
     }
 }
 /// See [`ServiceRegistry`](crate::model::ServiceRegistry).
@@ -1212,7 +1153,7 @@ impl ServiceRegistry {
 /// <p>We recommend that you verify this on a test environment before you update the Elastic Load Balancing configuration. </p>
 /// <p>A service-linked role is required for services that use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancer {
     /// <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
     /// <p>A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you're using a Classic Load Balancer, omit the target group ARN.</p>
@@ -1255,16 +1196,6 @@ impl LoadBalancer {
     /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
     pub fn container_port(&self) -> std::option::Option<i32> {
         self.container_port
-    }
-}
-impl std::fmt::Debug for LoadBalancer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancer");
-        formatter.field("target_group_arn", &self.target_group_arn);
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("container_name", &self.container_name);
-        formatter.field("container_port", &self.container_port);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancer`](crate::model::LoadBalancer).
@@ -1360,7 +1291,7 @@ impl LoadBalancer {
 
 /// <p>An object representing the network configuration for a task or service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
@@ -1374,13 +1305,6 @@ impl NetworkConfiguration {
     /// </note>
     pub fn awsvpc_configuration(&self) -> std::option::Option<&crate::model::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkConfiguration");
-        formatter.field("awsvpc_configuration", &self.awsvpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
@@ -1426,7 +1350,7 @@ impl NetworkConfiguration {
 
 /// <p>An object representing the networking details for a task or service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsVpcConfiguration {
     /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified subnets must be from the same VPC.</p>
@@ -1458,15 +1382,6 @@ impl AwsVpcConfiguration {
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
     pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
         self.assign_public_ip.as_ref()
-    }
-}
-impl std::fmt::Debug for AwsVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsVpcConfiguration");
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("assign_public_ip", &self.assign_public_ip);
-        formatter.finish()
     }
 }
 /// See [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
@@ -1652,7 +1567,7 @@ impl AsRef<str> for AssignPublicIp {
 /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used in a capacity provider strategy.</p>
 /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
     #[doc(hidden)]
@@ -1680,15 +1595,6 @@ impl CapacityProviderStrategyItem {
     /// <p>The <i>base</i> value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a <i>base</i> defined. If no value is specified, the default value of <code>0</code> is used.</p>
     pub fn base(&self) -> i32 {
         self.base
-    }
-}
-impl std::fmt::Debug for CapacityProviderStrategyItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityProviderStrategyItem");
-        formatter.field("capacity_provider", &self.capacity_provider);
-        formatter.field("weight", &self.weight);
-        formatter.field("base", &self.base);
-        formatter.finish()
     }
 }
 /// See [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
@@ -1853,7 +1759,7 @@ impl AsRef<str> for LaunchType {
 
 /// <p>Details on a service within a cluster</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Service {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -2121,49 +2027,6 @@ impl Service {
     /// <p>Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the execute command functionality is enabled for all containers in tasks as part of the service.</p>
     pub fn enable_execute_command(&self) -> bool {
         self.enable_execute_command
-    }
-}
-impl std::fmt::Debug for Service {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Service");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("load_balancers", &self.load_balancers);
-        formatter.field("service_registries", &self.service_registries);
-        formatter.field("status", &self.status);
-        formatter.field("desired_count", &self.desired_count);
-        formatter.field("running_count", &self.running_count);
-        formatter.field("pending_count", &self.pending_count);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("platform_family", &self.platform_family);
-        formatter.field("task_definition", &self.task_definition);
-        formatter.field("deployment_configuration", &self.deployment_configuration);
-        formatter.field("task_sets", &self.task_sets);
-        formatter.field("deployments", &self.deployments);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("events", &self.events);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("placement_constraints", &self.placement_constraints);
-        formatter.field("placement_strategy", &self.placement_strategy);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field(
-            "health_check_grace_period_seconds",
-            &self.health_check_grace_period_seconds,
-        );
-        formatter.field("scheduling_strategy", &self.scheduling_strategy);
-        formatter.field("deployment_controller", &self.deployment_controller);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("enable_execute_command", &self.enable_execute_command);
-        formatter.finish()
     }
 }
 /// See [`Service`](crate::model::Service).
@@ -2818,7 +2681,7 @@ impl AsRef<str> for PropagateTags {
 
 /// <p>The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentController {
     /// <p>The deployment controller type to use.</p>
     /// <p>There are three deployment controller types available:</p>
@@ -2870,13 +2733,6 @@ impl DeploymentController {
     /// </dl>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DeploymentControllerType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentController {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentController");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`DeploymentController`](crate::model::DeploymentController).
@@ -3149,7 +3005,7 @@ impl AsRef<str> for SchedulingStrategy {
 
 /// <p>The task placement strategy for a task or service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task placement strategies</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementStrategy {
     /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly places tasks on available candidates. The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the <code>field</code> parameter. The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that's specified with the <code>field</code> parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory but still enough to run the task.</p>
     #[doc(hidden)]
@@ -3166,14 +3022,6 @@ impl PlacementStrategy {
     /// <p>The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that's applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the <code>random</code> placement strategy, this field is not used.</p>
     pub fn field(&self) -> std::option::Option<&str> {
         self.field.as_deref()
-    }
-}
-impl std::fmt::Debug for PlacementStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementStrategy");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("field", &self.field);
-        formatter.finish()
     }
 }
 /// See [`PlacementStrategy`](crate::model::PlacementStrategy).
@@ -3326,7 +3174,7 @@ impl AsRef<str> for PlacementStrategyType {
 /// <p>If you're using the Fargate launch type, task placement constraints aren't supported.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementConstraint {
     /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     #[doc(hidden)]
@@ -3343,14 +3191,6 @@ impl PlacementConstraint {
     /// <p>A cluster query language expression to apply to the constraint. The expression can have a maximum length of 2000 characters. You can't specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
-    }
-}
-impl std::fmt::Debug for PlacementConstraint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementConstraint");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
     }
 }
 /// See [`PlacementConstraint`](crate::model::PlacementConstraint).
@@ -3496,7 +3336,7 @@ impl AsRef<str> for PlacementConstraintType {
 
 /// <p>The details for an event that's associated with a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceEvent {
     /// <p>The ID string for the event.</p>
     #[doc(hidden)]
@@ -3520,15 +3360,6 @@ impl ServiceEvent {
     /// <p>The event message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceEvent");
-        formatter.field("id", &self.id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ServiceEvent`](crate::model::ServiceEvent).
@@ -3594,7 +3425,7 @@ impl ServiceEvent {
 
 /// <p>The details of an Amazon ECS service deployment. This is used only when a service uses the <code>ECS</code> deployment controller type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Deployment {
     /// <p>The ID of the deployment.</p>
     #[doc(hidden)]
@@ -3766,31 +3597,6 @@ impl Deployment {
     /// <p>A description of the rollout state of a deployment.</p>
     pub fn rollout_state_reason(&self) -> std::option::Option<&str> {
         self.rollout_state_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for Deployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Deployment");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("task_definition", &self.task_definition);
-        formatter.field("desired_count", &self.desired_count);
-        formatter.field("pending_count", &self.pending_count);
-        formatter.field("running_count", &self.running_count);
-        formatter.field("failed_tasks", &self.failed_tasks);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("platform_family", &self.platform_family);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("rollout_state", &self.rollout_state);
-        formatter.field("rollout_state_reason", &self.rollout_state_reason);
-        formatter.finish()
     }
 }
 /// See [`Deployment`](crate::model::Deployment).
@@ -4198,7 +4004,7 @@ impl AsRef<str> for DeploymentRolloutState {
 
 /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentConfiguration {
     /// <note>
     /// <p>The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type.</p>
@@ -4256,18 +4062,6 @@ impl DeploymentConfiguration {
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your service.</p>
     pub fn minimum_healthy_percent(&self) -> std::option::Option<i32> {
         self.minimum_healthy_percent
-    }
-}
-impl std::fmt::Debug for DeploymentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentConfiguration");
-        formatter.field(
-            "deployment_circuit_breaker",
-            &self.deployment_circuit_breaker,
-        );
-        formatter.field("maximum_percent", &self.maximum_percent);
-        formatter.field("minimum_healthy_percent", &self.minimum_healthy_percent);
-        formatter.finish()
     }
 }
 /// See [`DeploymentConfiguration`](crate::model::DeploymentConfiguration).
@@ -4372,7 +4166,7 @@ impl DeploymentConfiguration {
 /// </note>
 /// <p>The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't reach a steady state. If enabled, a service deployment will transition to a failed state and stop launching new tasks. You can also configure Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentCircuitBreaker {
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     #[doc(hidden)]
@@ -4389,14 +4183,6 @@ impl DeploymentCircuitBreaker {
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(&self) -> bool {
         self.rollback
-    }
-}
-impl std::fmt::Debug for DeploymentCircuitBreaker {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentCircuitBreaker");
-        formatter.field("enable", &self.enable);
-        formatter.field("rollback", &self.rollback);
-        formatter.finish()
     }
 }
 /// See [`DeploymentCircuitBreaker`](crate::model::DeploymentCircuitBreaker).
@@ -4447,7 +4233,7 @@ impl DeploymentCircuitBreaker {
 
 /// <p>A failed resource. For a list of common causes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Failure {
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
     #[doc(hidden)]
@@ -4471,15 +4257,6 @@ impl Failure {
     /// <p>The details of the failure.</p>
     pub fn detail(&self) -> std::option::Option<&str> {
         self.detail.as_deref()
-    }
-}
-impl std::fmt::Debug for Failure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Failure");
-        formatter.field("arn", &self.arn);
-        formatter.field("reason", &self.reason);
-        formatter.field("detail", &self.detail);
-        formatter.finish()
     }
 }
 /// See [`Failure`](crate::model::Failure).
@@ -4542,7 +4319,7 @@ impl Failure {
 
 /// <p>An Amazon EC2 or External instance that's running the Amazon ECS agent and has been registered with a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerInstance {
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -4697,30 +4474,6 @@ impl ContainerInstance {
         &self,
     ) -> std::option::Option<&crate::model::ContainerInstanceHealthStatus> {
         self.health_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerInstance");
-        formatter.field("container_instance_arn", &self.container_instance_arn);
-        formatter.field("ec2_instance_id", &self.ec2_instance_id);
-        formatter.field("capacity_provider_name", &self.capacity_provider_name);
-        formatter.field("version", &self.version);
-        formatter.field("version_info", &self.version_info);
-        formatter.field("remaining_resources", &self.remaining_resources);
-        formatter.field("registered_resources", &self.registered_resources);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("agent_connected", &self.agent_connected);
-        formatter.field("running_tasks_count", &self.running_tasks_count);
-        formatter.field("pending_tasks_count", &self.pending_tasks_count);
-        formatter.field("agent_update_status", &self.agent_update_status);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("registered_at", &self.registered_at);
-        formatter.field("attachments", &self.attachments);
-        formatter.field("tags", &self.tags);
-        formatter.field("health_status", &self.health_status);
-        formatter.finish()
     }
 }
 /// See [`ContainerInstance`](crate::model::ContainerInstance).
@@ -5056,7 +4809,7 @@ impl ContainerInstance {
 
 /// <p>An object representing the health status of the container instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerInstanceHealthStatus {
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
     #[doc(hidden)]
@@ -5073,14 +4826,6 @@ impl ContainerInstanceHealthStatus {
     /// <p>An array of objects representing the details of the container instance health status.</p>
     pub fn details(&self) -> std::option::Option<&[crate::model::InstanceHealthCheckResult]> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerInstanceHealthStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerInstanceHealthStatus");
-        formatter.field("overall_status", &self.overall_status);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`ContainerInstanceHealthStatus`](crate::model::ContainerInstanceHealthStatus).
@@ -5144,7 +4889,7 @@ impl ContainerInstanceHealthStatus {
 
 /// <p>An object representing the result of a container instance health status check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceHealthCheckResult {
     /// <p>The type of container instance health status that was verified.</p>
     #[doc(hidden)]
@@ -5175,16 +4920,6 @@ impl InstanceHealthCheckResult {
     /// <p>The Unix timestamp for when the container instance health status last changed.</p>
     pub fn last_status_change(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceHealthCheckResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceHealthCheckResult");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("last_status_change", &self.last_status_change);
-        formatter.finish()
     }
 }
 /// See [`InstanceHealthCheckResult`](crate::model::InstanceHealthCheckResult).
@@ -5460,7 +5195,7 @@ impl AsRef<str> for InstanceHealthCheckType {
 
 /// <p>An object representing a container instance or task attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attachment {
     /// <p>The unique identifier for the attachment.</p>
     #[doc(hidden)]
@@ -5491,16 +5226,6 @@ impl Attachment {
     /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     pub fn details(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for Attachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attachment");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`Attachment`](crate::model::Attachment).
@@ -5584,7 +5309,7 @@ impl Attachment {
 
 /// <p>A key-value pair object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyValuePair {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     #[doc(hidden)]
@@ -5601,14 +5326,6 @@ impl KeyValuePair {
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyValuePair");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`KeyValuePair`](crate::model::KeyValuePair).
@@ -5659,7 +5376,7 @@ impl KeyValuePair {
 
 /// <p>An attribute is a name-value pair that's associated with an Amazon ECS object. Use attributes to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The name of the attribute. The <code>name</code> must contain between 1 and 128 characters. The name may contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods (.).</p>
     #[doc(hidden)]
@@ -5690,16 +5407,6 @@ impl Attribute {
     /// <p>The ID of the target. You can specify the short form ID for a resource or the full Amazon Resource Name (ARN).</p>
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Attribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attribute");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("target_id", &self.target_id);
-        formatter.finish()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
@@ -5976,7 +5683,7 @@ impl AsRef<str> for AgentUpdateStatus {
 
 /// <p>Describes the resources available for a container instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
     #[doc(hidden)]
@@ -6021,18 +5728,6 @@ impl Resource {
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
     pub fn string_set_value(&self) -> std::option::Option<&[std::string::String]> {
         self.string_set_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("double_value", &self.double_value);
-        formatter.field("long_value", &self.long_value);
-        formatter.field("integer_value", &self.integer_value);
-        formatter.field("string_set_value", &self.string_set_value);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -6140,7 +5835,7 @@ impl Resource {
 
 /// <p>The Docker and Amazon ECS container agent version information about a container instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersionInfo {
     /// <p>The version number of the Amazon ECS container agent.</p>
     #[doc(hidden)]
@@ -6164,15 +5859,6 @@ impl VersionInfo {
     /// <p>The Docker version that's running on the container instance.</p>
     pub fn docker_version(&self) -> std::option::Option<&str> {
         self.docker_version.as_deref()
-    }
-}
-impl std::fmt::Debug for VersionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersionInfo");
-        formatter.field("agent_version", &self.agent_version);
-        formatter.field("agent_hash", &self.agent_hash);
-        formatter.field("docker_version", &self.docker_version);
-        formatter.finish()
     }
 }
 /// See [`VersionInfo`](crate::model::VersionInfo).
@@ -6354,7 +6040,7 @@ impl AsRef<str> for ContainerInstanceStatus {
 
 /// <p>A regional grouping of one or more container instances where you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -6609,33 +6295,6 @@ impl Cluster {
     /// </dl>
     pub fn attachments_status(&self) -> std::option::Option<&str> {
         self.attachments_status.as_deref()
-    }
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "registered_container_instances_count",
-            &self.registered_container_instances_count,
-        );
-        formatter.field("running_tasks_count", &self.running_tasks_count);
-        formatter.field("pending_tasks_count", &self.pending_tasks_count);
-        formatter.field("active_services_count", &self.active_services_count);
-        formatter.field("statistics", &self.statistics);
-        formatter.field("tags", &self.tags);
-        formatter.field("settings", &self.settings);
-        formatter.field("capacity_providers", &self.capacity_providers);
-        formatter.field(
-            "default_capacity_provider_strategy",
-            &self.default_capacity_provider_strategy,
-        );
-        formatter.field("attachments", &self.attachments);
-        formatter.field("attachments_status", &self.attachments_status);
-        formatter.finish()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
@@ -7055,7 +6714,7 @@ impl Cluster {
 
 /// <p>The settings to use when creating a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSetting {
     /// <p>The name of the cluster setting. The only supported value is <code>containerInsights</code>.</p>
     #[doc(hidden)]
@@ -7072,14 +6731,6 @@ impl ClusterSetting {
     /// <p>The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise it will be disabled unless the <code>containerInsights</code> account setting is enabled. If a cluster value is specified, it will override the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSetting");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ClusterSetting`](crate::model::ClusterSetting).
@@ -7220,7 +6871,7 @@ impl AsRef<str> for ClusterSettingName {
 
 /// <p>The execute command configuration for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterConfiguration {
     /// <p>The details of the execute command configuration.</p>
     #[doc(hidden)]
@@ -7233,16 +6884,6 @@ impl ClusterConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ExecuteCommandConfiguration> {
         self.execute_command_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusterConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterConfiguration");
-        formatter.field(
-            "execute_command_configuration",
-            &self.execute_command_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ClusterConfiguration`](crate::model::ClusterConfiguration).
@@ -7288,7 +6929,7 @@ impl ClusterConfiguration {
 
 /// <p>The details of the execute command configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteCommandConfiguration {
     /// <p>Specify an Key Management Service key ID to encrypt the data between the local client and the container.</p>
     #[doc(hidden)]
@@ -7324,15 +6965,6 @@ impl ExecuteCommandConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ExecuteCommandLogConfiguration> {
         self.log_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ExecuteCommandConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteCommandConfiguration");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("logging", &self.logging);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.finish()
     }
 }
 /// See [`ExecuteCommandConfiguration`](crate::model::ExecuteCommandConfiguration).
@@ -7415,7 +7047,7 @@ impl ExecuteCommandConfiguration {
 
 /// <p>The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteCommandLogConfiguration {
     /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
     /// <p>The CloudWatch log group must already be created.</p>
@@ -7461,23 +7093,6 @@ impl ExecuteCommandLogConfiguration {
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for ExecuteCommandLogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteCommandLogConfiguration");
-        formatter.field(
-            "cloud_watch_log_group_name",
-            &self.cloud_watch_log_group_name,
-        );
-        formatter.field(
-            "cloud_watch_encryption_enabled",
-            &self.cloud_watch_encryption_enabled,
-        );
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_encryption_enabled", &self.s3_encryption_enabled);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.finish()
     }
 }
 /// See [`ExecuteCommandLogConfiguration`](crate::model::ExecuteCommandLogConfiguration).
@@ -7683,7 +7298,7 @@ impl AsRef<str> for ExecuteCommandLogging {
 
 /// <p>The details for a capacity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacityProvider {
     /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
     #[doc(hidden)]
@@ -7799,22 +7414,6 @@ impl CapacityProvider {
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CapacityProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityProvider");
-        formatter.field("capacity_provider_arn", &self.capacity_provider_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "auto_scaling_group_provider",
-            &self.auto_scaling_group_provider,
-        );
-        formatter.field("update_status", &self.update_status);
-        formatter.field("update_status_reason", &self.update_status_reason);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CapacityProvider`](crate::model::CapacityProvider).
@@ -8132,7 +7731,7 @@ impl AsRef<str> for CapacityProviderUpdateStatus {
 
 /// <p>The details of the Auto Scaling group for the capacity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroupProvider {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -8167,18 +7766,6 @@ impl AutoScalingGroupProvider {
         &self,
     ) -> std::option::Option<&crate::model::ManagedTerminationProtection> {
         self.managed_termination_protection.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoScalingGroupProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroupProvider");
-        formatter.field("auto_scaling_group_arn", &self.auto_scaling_group_arn);
-        formatter.field("managed_scaling", &self.managed_scaling);
-        formatter.field(
-            "managed_termination_protection",
-            &self.managed_termination_protection,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroupProvider`](crate::model::AutoScalingGroupProvider).
@@ -8356,7 +7943,7 @@ impl AsRef<str> for ManagedTerminationProtection {
 /// <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using managed scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedScaling {
     /// <p>Determines whether to use managed scaling for the capacity provider.</p>
     #[doc(hidden)]
@@ -8394,17 +7981,6 @@ impl ManagedScaling {
     /// <p>The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.</p>
     pub fn instance_warmup_period(&self) -> std::option::Option<i32> {
         self.instance_warmup_period
-    }
-}
-impl std::fmt::Debug for ManagedScaling {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedScaling");
-        formatter.field("status", &self.status);
-        formatter.field("target_capacity", &self.target_capacity);
-        formatter.field("minimum_scaling_step_size", &self.minimum_scaling_step_size);
-        formatter.field("maximum_scaling_step_size", &self.maximum_scaling_step_size);
-        formatter.field("instance_warmup_period", &self.instance_warmup_period);
-        formatter.finish()
     }
 }
 /// See [`ManagedScaling`](crate::model::ManagedScaling).
@@ -8678,7 +8254,7 @@ impl AsRef<str> for CapacityProviderStatus {
 
 /// <p>The details of the Auto Scaling group capacity provider to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroupProviderUpdate {
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     #[doc(hidden)]
@@ -8706,17 +8282,6 @@ impl AutoScalingGroupProviderUpdate {
         &self,
     ) -> std::option::Option<&crate::model::ManagedTerminationProtection> {
         self.managed_termination_protection.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoScalingGroupProviderUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroupProviderUpdate");
-        formatter.field("managed_scaling", &self.managed_scaling);
-        formatter.field(
-            "managed_termination_protection",
-            &self.managed_termination_protection,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroupProviderUpdate`](crate::model::AutoScalingGroupProviderUpdate).
@@ -8785,7 +8350,7 @@ impl AutoScalingGroupProviderUpdate {
 
 /// <p>An object representing a change in state for a managed agent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedAgentStateChange {
     /// <p>The name of the container that's associated with the managed agent.</p>
     #[doc(hidden)]
@@ -8816,16 +8381,6 @@ impl ManagedAgentStateChange {
     /// <p>The reason for the status of the managed agent.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedAgentStateChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedAgentStateChange");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("managed_agent_name", &self.managed_agent_name);
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`ManagedAgentStateChange`](crate::model::ManagedAgentStateChange).
@@ -8991,7 +8546,7 @@ impl AsRef<str> for ManagedAgentName {
 
 /// <p>An object representing a change in state for a task attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentStateChange {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
     #[doc(hidden)]
@@ -9008,14 +8563,6 @@ impl AttachmentStateChange {
     /// <p>The status of the attachment.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachmentStateChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentStateChange");
-        formatter.field("attachment_arn", &self.attachment_arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AttachmentStateChange`](crate::model::AttachmentStateChange).
@@ -9069,7 +8616,7 @@ impl AttachmentStateChange {
 
 /// <p>An object that represents a change in state for a container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerStateChange {
     /// <p>The name of the container.</p>
     #[doc(hidden)]
@@ -9121,19 +8668,6 @@ impl ContainerStateChange {
     /// <p>The status of the container.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerStateChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerStateChange");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("runtime_id", &self.runtime_id);
-        formatter.field("exit_code", &self.exit_code);
-        formatter.field("network_bindings", &self.network_bindings);
-        formatter.field("reason", &self.reason);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ContainerStateChange`](crate::model::ContainerStateChange).
@@ -9257,7 +8791,7 @@ impl ContainerStateChange {
 
 /// <p>Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <code>DescribeTasks</code> API responses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkBinding {
     /// <p>The IP address that the container is bound to on the container instance.</p>
     #[doc(hidden)]
@@ -9288,16 +8822,6 @@ impl NetworkBinding {
     /// <p>The protocol used for the network binding.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::TransportProtocol> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkBinding {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkBinding");
-        formatter.field("bind_ip", &self.bind_ip);
-        formatter.field("container_port", &self.container_port);
-        formatter.field("host_port", &self.host_port);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`NetworkBinding`](crate::model::NetworkBinding).
@@ -9467,7 +8991,7 @@ impl AsRef<str> for TransportProtocol {
 
 /// <p>Details on a task in a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Task {
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
     #[doc(hidden)]
@@ -9815,48 +9339,6 @@ impl Task {
     /// <p>The ephemeral storage settings for the task.</p>
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for Task {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Task");
-        formatter.field("attachments", &self.attachments);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("capacity_provider_name", &self.capacity_provider_name);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("connectivity", &self.connectivity);
-        formatter.field("connectivity_at", &self.connectivity_at);
-        formatter.field("container_instance_arn", &self.container_instance_arn);
-        formatter.field("containers", &self.containers);
-        formatter.field("cpu", &self.cpu);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("desired_status", &self.desired_status);
-        formatter.field("enable_execute_command", &self.enable_execute_command);
-        formatter.field("execution_stopped_at", &self.execution_stopped_at);
-        formatter.field("group", &self.group);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("inference_accelerators", &self.inference_accelerators);
-        formatter.field("last_status", &self.last_status);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field("memory", &self.memory);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("platform_family", &self.platform_family);
-        formatter.field("pull_started_at", &self.pull_started_at);
-        formatter.field("pull_stopped_at", &self.pull_stopped_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("started_by", &self.started_by);
-        formatter.field("stop_code", &self.stop_code);
-        formatter.field("stopped_at", &self.stopped_at);
-        formatter.field("stopped_reason", &self.stopped_reason);
-        formatter.field("stopping_at", &self.stopping_at);
-        formatter.field("tags", &self.tags);
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("task_definition_arn", &self.task_definition_arn);
-        formatter.field("version", &self.version);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.finish()
     }
 }
 /// See [`Task`](crate::model::Task).
@@ -10519,7 +10001,7 @@ impl Task {
 /// <p>This parameter is only supported for tasks hosted on Fargate using Linux platform version <code>1.4.0</code> or later. This parameter is not supported for Windows containers on Fargate.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EphemeralStorage {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
     #[doc(hidden)]
@@ -10529,13 +10011,6 @@ impl EphemeralStorage {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
     pub fn size_in_gi_b(&self) -> i32 {
         self.size_in_gi_b
-    }
-}
-impl std::fmt::Debug for EphemeralStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EphemeralStorage");
-        formatter.field("size_in_gi_b", &self.size_in_gi_b);
-        formatter.finish()
     }
 }
 /// See [`EphemeralStorage`](crate::model::EphemeralStorage).
@@ -10673,7 +10148,7 @@ impl AsRef<str> for TaskStopCode {
 
 /// <p>The overrides that are associated with a task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
     #[doc(hidden)]
@@ -10740,22 +10215,6 @@ impl TaskOverride {
     /// </note>
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskOverride");
-        formatter.field("container_overrides", &self.container_overrides);
-        formatter.field("cpu", &self.cpu);
-        formatter.field(
-            "inference_accelerator_overrides",
-            &self.inference_accelerator_overrides,
-        );
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("memory", &self.memory);
-        formatter.field("task_role_arn", &self.task_role_arn);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.finish()
     }
 }
 /// See [`TaskOverride`](crate::model::TaskOverride).
@@ -10910,7 +10369,7 @@ impl TaskOverride {
 
 /// <p>Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceAcceleratorOverride {
     /// <p>The Elastic Inference accelerator device name to override for the task. This parameter must match a <code>deviceName</code> specified in the task definition.</p>
     #[doc(hidden)]
@@ -10927,14 +10386,6 @@ impl InferenceAcceleratorOverride {
     /// <p>The Elastic Inference accelerator type to use.</p>
     pub fn device_type(&self) -> std::option::Option<&str> {
         self.device_type.as_deref()
-    }
-}
-impl std::fmt::Debug for InferenceAcceleratorOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceAcceleratorOverride");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_type", &self.device_type);
-        formatter.finish()
     }
 }
 /// See [`InferenceAcceleratorOverride`](crate::model::InferenceAcceleratorOverride).
@@ -10985,7 +10436,7 @@ impl InferenceAcceleratorOverride {
 
 /// <p>The overrides that are sent to a container. An empty container override can be passed in. An example of an empty container override is <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerOverride {
     /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
     #[doc(hidden)]
@@ -11047,20 +10498,6 @@ impl ContainerOverride {
         &self,
     ) -> std::option::Option<&[crate::model::ResourceRequirement]> {
         self.resource_requirements.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerOverride");
-        formatter.field("name", &self.name);
-        formatter.field("command", &self.command);
-        formatter.field("environment", &self.environment);
-        formatter.field("environment_files", &self.environment_files);
-        formatter.field("cpu", &self.cpu);
-        formatter.field("memory", &self.memory);
-        formatter.field("memory_reservation", &self.memory_reservation);
-        formatter.field("resource_requirements", &self.resource_requirements);
-        formatter.finish()
     }
 }
 /// See [`ContainerOverride`](crate::model::ContainerOverride).
@@ -11221,7 +10658,7 @@ impl ContainerOverride {
 
 /// <p>The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceRequirement {
     /// <p>The value for the specified resource type.</p>
     /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p>
@@ -11242,14 +10679,6 @@ impl ResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceRequirement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceRequirement");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ResourceRequirement`](crate::model::ResourceRequirement).
@@ -11400,7 +10829,7 @@ impl AsRef<str> for ResourceType {
 /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentFile {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
     #[doc(hidden)]
@@ -11417,14 +10846,6 @@ impl EnvironmentFile {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EnvironmentFileType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for EnvironmentFile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentFile");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentFile`](crate::model::EnvironmentFile).
@@ -11565,7 +10986,7 @@ impl AsRef<str> for EnvironmentFileType {
 
 /// <p>Details on an Elastic Inference accelerator. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferenceAccelerator {
     /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <code>ResourceRequirement</code>.</p>
     #[doc(hidden)]
@@ -11582,14 +11003,6 @@ impl InferenceAccelerator {
     /// <p>The Elastic Inference accelerator type to use.</p>
     pub fn device_type(&self) -> std::option::Option<&str> {
         self.device_type.as_deref()
-    }
-}
-impl std::fmt::Debug for InferenceAccelerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferenceAccelerator");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_type", &self.device_type);
-        formatter.finish()
     }
 }
 /// See [`InferenceAccelerator`](crate::model::InferenceAccelerator).
@@ -11735,7 +11148,7 @@ impl AsRef<str> for HealthStatus {
 
 /// <p>A Docker container that's part of a task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Container {
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
     #[doc(hidden)]
@@ -11861,29 +11274,6 @@ impl Container {
     /// <p>The IDs of each GPU assigned to the container.</p>
     pub fn gpu_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.gpu_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for Container {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Container");
-        formatter.field("container_arn", &self.container_arn);
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("name", &self.name);
-        formatter.field("image", &self.image);
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("runtime_id", &self.runtime_id);
-        formatter.field("last_status", &self.last_status);
-        formatter.field("exit_code", &self.exit_code);
-        formatter.field("reason", &self.reason);
-        formatter.field("network_bindings", &self.network_bindings);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("managed_agents", &self.managed_agents);
-        formatter.field("cpu", &self.cpu);
-        formatter.field("memory", &self.memory);
-        formatter.field("memory_reservation", &self.memory_reservation);
-        formatter.field("gpu_ids", &self.gpu_ids);
-        formatter.finish()
     }
 }
 /// See [`Container`](crate::model::Container).
@@ -12165,7 +11555,7 @@ impl Container {
 
 /// <p>Details about the managed agent status for the container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedAgent {
     /// <p>The Unix timestamp for the time when the managed agent was last started.</p>
     #[doc(hidden)]
@@ -12196,16 +11586,6 @@ impl ManagedAgent {
     /// <p>The last known status of the managed agent.</p>
     pub fn last_status(&self) -> std::option::Option<&str> {
         self.last_status.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedAgent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedAgent");
-        formatter.field("last_started_at", &self.last_started_at);
-        formatter.field("name", &self.name);
-        formatter.field("reason", &self.reason);
-        formatter.field("last_status", &self.last_status);
-        formatter.finish()
     }
 }
 /// See [`ManagedAgent`](crate::model::ManagedAgent).
@@ -12286,7 +11666,7 @@ impl ManagedAgent {
 
 /// <p>An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The attachment ID for the network interface.</p>
     #[doc(hidden)]
@@ -12310,15 +11690,6 @@ impl NetworkInterface {
     /// <p>The private IPv6 address for the network interface.</p>
     pub fn ipv6_address(&self) -> std::option::Option<&str> {
         self.ipv6_address.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("private_ipv4_address", &self.private_ipv4_address);
-        formatter.field("ipv6_address", &self.ipv6_address);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -12477,7 +11848,7 @@ impl AsRef<str> for Connectivity {
 
 /// <p>The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskDefinition {
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
     #[doc(hidden)]
@@ -12757,36 +12128,6 @@ impl TaskDefinition {
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskDefinition");
-        formatter.field("task_definition_arn", &self.task_definition_arn);
-        formatter.field("container_definitions", &self.container_definitions);
-        formatter.field("family", &self.family);
-        formatter.field("task_role_arn", &self.task_role_arn);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("network_mode", &self.network_mode);
-        formatter.field("revision", &self.revision);
-        formatter.field("volumes", &self.volumes);
-        formatter.field("status", &self.status);
-        formatter.field("requires_attributes", &self.requires_attributes);
-        formatter.field("placement_constraints", &self.placement_constraints);
-        formatter.field("compatibilities", &self.compatibilities);
-        formatter.field("runtime_platform", &self.runtime_platform);
-        formatter.field("requires_compatibilities", &self.requires_compatibilities);
-        formatter.field("cpu", &self.cpu);
-        formatter.field("memory", &self.memory);
-        formatter.field("inference_accelerators", &self.inference_accelerators);
-        formatter.field("pid_mode", &self.pid_mode);
-        formatter.field("ipc_mode", &self.ipc_mode);
-        formatter.field("proxy_configuration", &self.proxy_configuration);
-        formatter.field("registered_at", &self.registered_at);
-        formatter.field("deregistered_at", &self.deregistered_at);
-        formatter.field("registered_by", &self.registered_by);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.finish()
     }
 }
 /// See [`TaskDefinition`](crate::model::TaskDefinition).
@@ -13307,7 +12648,7 @@ impl TaskDefinition {
 /// <p>The configuration details for the App Mesh proxy.</p>
 /// <p>For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProxyConfiguration {
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
     #[doc(hidden)]
@@ -13349,15 +12690,6 @@ impl ProxyConfiguration {
     /// </ul>
     pub fn properties(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for ProxyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProxyConfiguration");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("container_name", &self.container_name);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`ProxyConfiguration`](crate::model::ProxyConfiguration).
@@ -13821,7 +13153,7 @@ impl AsRef<str> for Compatibility {
 /// <p>Information about the platform for the Amazon ECS service or task.</p>
 /// <p>For more information about <code>RuntimePlatform</code>, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform">RuntimePlatform</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimePlatform {
     /// <p>The CPU architecture.</p>
     /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is avaiable for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
@@ -13840,14 +13172,6 @@ impl RuntimePlatform {
     /// <p>The operating system.</p>
     pub fn operating_system_family(&self) -> std::option::Option<&crate::model::OsFamily> {
         self.operating_system_family.as_ref()
-    }
-}
-impl std::fmt::Debug for RuntimePlatform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuntimePlatform");
-        formatter.field("cpu_architecture", &self.cpu_architecture);
-        formatter.field("operating_system_family", &self.operating_system_family);
-        formatter.finish()
     }
 }
 /// See [`RuntimePlatform`](crate::model::RuntimePlatform).
@@ -14127,7 +13451,7 @@ impl AsRef<str> for CpuArchitecture {
 /// <p>Task placement constraints aren't supported for tasks run on Fargate.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskDefinitionPlacementConstraint {
     /// <p>The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid candidates.</p>
     #[doc(hidden)]
@@ -14146,14 +13470,6 @@ impl TaskDefinitionPlacementConstraint {
     /// <p>A cluster query language expression to apply to the constraint. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
-    }
-}
-impl std::fmt::Debug for TaskDefinitionPlacementConstraint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskDefinitionPlacementConstraint");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
     }
 }
 /// See [`TaskDefinitionPlacementConstraint`](crate::model::TaskDefinitionPlacementConstraint).
@@ -14389,7 +13705,7 @@ impl AsRef<str> for TaskDefinitionStatus {
 
 /// <p>A data volume that's used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in Tasks</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Volume {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
     #[doc(hidden)]
@@ -14442,23 +13758,6 @@ impl Volume {
         &self,
     ) -> std::option::Option<&crate::model::FSxWindowsFileServerVolumeConfiguration> {
         self.fsx_windows_file_server_volume_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Volume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Volume");
-        formatter.field("name", &self.name);
-        formatter.field("host", &self.host);
-        formatter.field(
-            "docker_volume_configuration",
-            &self.docker_volume_configuration,
-        );
-        formatter.field("efs_volume_configuration", &self.efs_volume_configuration);
-        formatter.field(
-            "fsx_windows_file_server_volume_configuration",
-            &self.fsx_windows_file_server_volume_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`Volume`](crate::model::Volume).
@@ -14579,7 +13878,7 @@ impl Volume {
 /// <p>This parameter is specified when you're using <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html">Amazon FSx for Windows File Server</a> file system for task storage.</p>
 /// <p>For more information and the input format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File Server volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FSxWindowsFileServerVolumeConfiguration {
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
     #[doc(hidden)]
@@ -14606,15 +13905,6 @@ impl FSxWindowsFileServerVolumeConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::FSxWindowsFileServerAuthorizationConfig> {
         self.authorization_config.as_ref()
-    }
-}
-impl std::fmt::Debug for FSxWindowsFileServerVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FSxWindowsFileServerVolumeConfiguration");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("root_directory", &self.root_directory);
-        formatter.field("authorization_config", &self.authorization_config);
-        formatter.finish()
     }
 }
 /// See [`FSxWindowsFileServerVolumeConfiguration`](crate::model::FSxWindowsFileServerVolumeConfiguration).
@@ -14691,7 +13981,7 @@ impl FSxWindowsFileServerVolumeConfiguration {
 /// <p>The authorization configuration details for Amazon FSx for Windows File Server file system. See <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html">FSxWindowsFileServerVolumeConfiguration</a> in the <i>Amazon ECS API Reference</i>.</p>
 /// <p>For more information and the input format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File Server Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FSxWindowsFileServerAuthorizationConfig {
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
     #[doc(hidden)]
@@ -14708,14 +13998,6 @@ impl FSxWindowsFileServerAuthorizationConfig {
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
-    }
-}
-impl std::fmt::Debug for FSxWindowsFileServerAuthorizationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FSxWindowsFileServerAuthorizationConfig");
-        formatter.field("credentials_parameter", &self.credentials_parameter);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 /// See [`FSxWindowsFileServerAuthorizationConfig`](crate::model::FSxWindowsFileServerAuthorizationConfig).
@@ -14769,7 +14051,7 @@ impl FSxWindowsFileServerAuthorizationConfig {
 
 /// <p>This parameter is specified when you're using an Amazon Elastic File System file system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
     #[doc(hidden)]
@@ -14813,17 +14095,6 @@ impl EfsVolumeConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EfsAuthorizationConfig> {
         self.authorization_config.as_ref()
-    }
-}
-impl std::fmt::Debug for EfsVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsVolumeConfiguration");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("root_directory", &self.root_directory);
-        formatter.field("transit_encryption", &self.transit_encryption);
-        formatter.field("transit_encryption_port", &self.transit_encryption_port);
-        formatter.field("authorization_config", &self.authorization_config);
-        formatter.finish()
     }
 }
 /// See [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration).
@@ -14926,7 +14197,7 @@ impl EfsVolumeConfiguration {
 
 /// <p>The authorization configuration details for the Amazon EFS file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsAuthorizationConfig {
     /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     #[doc(hidden)]
@@ -14943,14 +14214,6 @@ impl EfsAuthorizationConfig {
     /// <p>Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn iam(&self) -> std::option::Option<&crate::model::EfsAuthorizationConfigIam> {
         self.iam.as_ref()
-    }
-}
-impl std::fmt::Debug for EfsAuthorizationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsAuthorizationConfig");
-        formatter.field("access_point_id", &self.access_point_id);
-        formatter.field("iam", &self.iam);
-        formatter.finish()
     }
 }
 /// See [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig).
@@ -15191,7 +14454,7 @@ impl AsRef<str> for EfsTransitEncryption {
 
 /// <p>This parameter is specified when you're using Docker volumes. Docker volumes are only supported when you're using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DockerVolumeConfiguration {
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops. Docker volumes that are scoped as <code>shared</code> persist after the task stops.</p>
     #[doc(hidden)]
@@ -15241,17 +14504,6 @@ impl DockerVolumeConfiguration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.labels.as_ref()
-    }
-}
-impl std::fmt::Debug for DockerVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DockerVolumeConfiguration");
-        formatter.field("scope", &self.scope);
-        formatter.field("autoprovision", &self.autoprovision);
-        formatter.field("driver", &self.driver);
-        formatter.field("driver_opts", &self.driver_opts);
-        formatter.field("labels", &self.labels);
-        formatter.finish()
     }
 }
 /// See [`DockerVolumeConfiguration`](crate::model::DockerVolumeConfiguration).
@@ -15466,7 +14718,7 @@ impl AsRef<str> for Scope {
 
 /// <p>Details on a container instance bind mount host volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostVolumeProperties {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the <code>sourcePath</code> value doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p>
     /// <p>If you're using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
@@ -15478,13 +14730,6 @@ impl HostVolumeProperties {
     /// <p>If you're using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
     pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
-    }
-}
-impl std::fmt::Debug for HostVolumeProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostVolumeProperties");
-        formatter.field("source_path", &self.source_path);
-        formatter.finish()
     }
 }
 /// See [`HostVolumeProperties`](crate::model::HostVolumeProperties).
@@ -15625,7 +14870,7 @@ impl AsRef<str> for NetworkMode {
 
 /// <p>Container definitions are used in task definitions to describe the different containers that are launched as part of a task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerDefinition {
     /// <p>The name of a container. If you're linking multiple containers together in a task definition, the <code>name</code> of one container can be entered in the <code>links</code> of another container to connect the containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This parameter maps to <code>name</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--name</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. </p>
     #[doc(hidden)]
@@ -16160,51 +15405,6 @@ impl ContainerDefinition {
         &self,
     ) -> std::option::Option<&crate::model::FirelensConfiguration> {
         self.firelens_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("image", &self.image);
-        formatter.field("repository_credentials", &self.repository_credentials);
-        formatter.field("cpu", &self.cpu);
-        formatter.field("memory", &self.memory);
-        formatter.field("memory_reservation", &self.memory_reservation);
-        formatter.field("links", &self.links);
-        formatter.field("port_mappings", &self.port_mappings);
-        formatter.field("essential", &self.essential);
-        formatter.field("entry_point", &self.entry_point);
-        formatter.field("command", &self.command);
-        formatter.field("environment", &self.environment);
-        formatter.field("environment_files", &self.environment_files);
-        formatter.field("mount_points", &self.mount_points);
-        formatter.field("volumes_from", &self.volumes_from);
-        formatter.field("linux_parameters", &self.linux_parameters);
-        formatter.field("secrets", &self.secrets);
-        formatter.field("depends_on", &self.depends_on);
-        formatter.field("start_timeout", &self.start_timeout);
-        formatter.field("stop_timeout", &self.stop_timeout);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("user", &self.user);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field("disable_networking", &self.disable_networking);
-        formatter.field("privileged", &self.privileged);
-        formatter.field("readonly_root_filesystem", &self.readonly_root_filesystem);
-        formatter.field("dns_servers", &self.dns_servers);
-        formatter.field("dns_search_domains", &self.dns_search_domains);
-        formatter.field("extra_hosts", &self.extra_hosts);
-        formatter.field("docker_security_options", &self.docker_security_options);
-        formatter.field("interactive", &self.interactive);
-        formatter.field("pseudo_terminal", &self.pseudo_terminal);
-        formatter.field("docker_labels", &self.docker_labels);
-        formatter.field("ulimits", &self.ulimits);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.field("health_check", &self.health_check);
-        formatter.field("system_controls", &self.system_controls);
-        formatter.field("resource_requirements", &self.resource_requirements);
-        formatter.field("firelens_configuration", &self.firelens_configuration);
-        formatter.finish()
     }
 }
 /// See [`ContainerDefinition`](crate::model::ContainerDefinition).
@@ -17144,7 +16344,7 @@ impl ContainerDefinition {
 
 /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirelensConfiguration {
     /// <p>The log router to use. The valid values are <code>fluentd</code> or <code>fluentbit</code>.</p>
     #[doc(hidden)]
@@ -17169,14 +16369,6 @@ impl FirelensConfiguration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.options.as_ref()
-    }
-}
-impl std::fmt::Debug for FirelensConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirelensConfiguration");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`FirelensConfiguration`](crate::model::FirelensConfiguration).
@@ -17348,7 +16540,7 @@ impl AsRef<str> for FirelensConfigurationType {
 /// <li> <p>For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter and that of all containers of any tasks running on that container instance.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemControl {
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     #[doc(hidden)]
@@ -17365,14 +16557,6 @@ impl SystemControl {
     /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SystemControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemControl");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SystemControl`](crate::model::SystemControl).
@@ -17445,7 +16629,7 @@ impl SystemControl {
 /// <li> <p>Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheck {
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
     /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in brackets.</p>
@@ -17497,17 +16681,6 @@ impl HealthCheck {
     /// </note>
     pub fn start_period(&self) -> std::option::Option<i32> {
         self.start_period
-    }
-}
-impl std::fmt::Debug for HealthCheck {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheck");
-        formatter.field("command", &self.command);
-        formatter.field("interval", &self.interval);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("retries", &self.retries);
-        formatter.field("start_period", &self.start_period);
-        formatter.finish()
     }
 }
 /// See [`HealthCheck`](crate::model::HealthCheck).
@@ -17625,7 +16798,7 @@ impl HealthCheck {
 /// <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogConfiguration {
     /// <p>The log driver to use for the container.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
@@ -17665,15 +16838,6 @@ impl LogConfiguration {
     /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn secret_options(&self) -> std::option::Option<&[crate::model::Secret]> {
         self.secret_options.as_deref()
-    }
-}
-impl std::fmt::Debug for LogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogConfiguration");
-        formatter.field("log_driver", &self.log_driver);
-        formatter.field("options", &self.options);
-        formatter.field("secret_options", &self.secret_options);
-        formatter.finish()
     }
 }
 /// See [`LogConfiguration`](crate::model::LogConfiguration).
@@ -17782,7 +16946,7 @@ impl LogConfiguration {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Secret {
     /// <p>The name of the secret.</p>
     #[doc(hidden)]
@@ -17805,14 +16969,6 @@ impl Secret {
     /// </note>
     pub fn value_from(&self) -> std::option::Option<&str> {
         self.value_from.as_deref()
-    }
-}
-impl std::fmt::Debug for Secret {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Secret");
-        formatter.field("name", &self.name);
-        formatter.field("value_from", &self.value_from);
-        formatter.finish()
     }
 }
 /// See [`Secret`](crate::model::Secret).
@@ -17999,7 +17155,7 @@ impl AsRef<str> for LogDriver {
 /// <p>The <code>ulimit</code> settings to pass to the container.</p>
 /// <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ulimit {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     #[doc(hidden)]
@@ -18023,15 +17179,6 @@ impl Ulimit {
     /// <p>The hard limit for the ulimit type.</p>
     pub fn hard_limit(&self) -> i32 {
         self.hard_limit
-    }
-}
-impl std::fmt::Debug for Ulimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ulimit");
-        formatter.field("name", &self.name);
-        formatter.field("soft_limit", &self.soft_limit);
-        formatter.field("hard_limit", &self.hard_limit);
-        formatter.finish()
     }
 }
 /// See [`Ulimit`](crate::model::Ulimit).
@@ -18265,7 +17412,7 @@ impl AsRef<str> for UlimitName {
 
 /// <p>Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <code>ContainerDefinition</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HostEntry {
     /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
     #[doc(hidden)]
@@ -18282,14 +17429,6 @@ impl HostEntry {
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
-    }
-}
-impl std::fmt::Debug for HostEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostEntry");
-        formatter.field("hostname", &self.hostname);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.finish()
     }
 }
 /// See [`HostEntry`](crate::model::HostEntry).
@@ -18347,7 +17486,7 @@ impl HostEntry {
 /// </ul>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerDependency {
     /// <p>The name of a container.</p>
     #[doc(hidden)]
@@ -18376,14 +17515,6 @@ impl ContainerDependency {
     /// </ul>
     pub fn condition(&self) -> std::option::Option<&crate::model::ContainerCondition> {
         self.condition.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerDependency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerDependency");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`ContainerDependency`](crate::model::ContainerDependency).
@@ -18554,7 +17685,7 @@ impl AsRef<str> for ContainerCondition {
 
 /// <p>Linux-specific options that are applied to the container, such as Linux <code>KernelCapabilities</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinuxParameters {
     /// <p>The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker.</p> <note>
     /// <p>For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform versions but the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.</p>
@@ -18632,19 +17763,6 @@ impl LinuxParameters {
     /// </note>
     pub fn swappiness(&self) -> std::option::Option<i32> {
         self.swappiness
-    }
-}
-impl std::fmt::Debug for LinuxParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinuxParameters");
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("devices", &self.devices);
-        formatter.field("init_process_enabled", &self.init_process_enabled);
-        formatter.field("shared_memory_size", &self.shared_memory_size);
-        formatter.field("tmpfs", &self.tmpfs);
-        formatter.field("max_swap", &self.max_swap);
-        formatter.field("swappiness", &self.swappiness);
-        formatter.finish()
     }
 }
 /// See [`LinuxParameters`](crate::model::LinuxParameters).
@@ -18802,7 +17920,7 @@ impl LinuxParameters {
 
 /// <p>The container path, mount options, and size of the tmpfs mount.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tmpfs {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
     #[doc(hidden)]
@@ -18828,15 +17946,6 @@ impl Tmpfs {
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
     pub fn mount_options(&self) -> std::option::Option<&[std::string::String]> {
         self.mount_options.as_deref()
-    }
-}
-impl std::fmt::Debug for Tmpfs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tmpfs");
-        formatter.field("container_path", &self.container_path);
-        formatter.field("size", &self.size);
-        formatter.field("mount_options", &self.mount_options);
-        formatter.finish()
     }
 }
 /// See [`Tmpfs`](crate::model::Tmpfs).
@@ -18913,7 +18022,7 @@ impl Tmpfs {
 
 /// <p>An object representing a container instance host device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Device {
     /// <p>The path for the device on the host container instance.</p>
     #[doc(hidden)]
@@ -18937,15 +18046,6 @@ impl Device {
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::DeviceCgroupPermission]> {
         self.permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for Device {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Device");
-        formatter.field("host_path", &self.host_path);
-        formatter.field("container_path", &self.container_path);
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 /// See [`Device`](crate::model::Device).
@@ -19118,7 +18218,7 @@ impl AsRef<str> for DeviceCgroupPermission {
 
 /// <p>The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information about the default capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more detailed information about these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KernelCapabilities {
     /// <p>The Linux capabilities for the container that have been added to the default configuration provided by Docker. This parameter maps to <code>CapAdd</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>Tasks launched on Fargate only support adding the <code>SYS_PTRACE</code> kernel capability.</p>
@@ -19143,14 +18243,6 @@ impl KernelCapabilities {
     /// <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code> </p>
     pub fn drop(&self) -> std::option::Option<&[std::string::String]> {
         self.drop.as_deref()
-    }
-}
-impl std::fmt::Debug for KernelCapabilities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KernelCapabilities");
-        formatter.field("add", &self.add);
-        formatter.field("drop", &self.drop);
-        formatter.finish()
     }
 }
 /// See [`KernelCapabilities`](crate::model::KernelCapabilities).
@@ -19227,7 +18319,7 @@ impl KernelCapabilities {
 
 /// <p>Details on a data volume from another container in the same task definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeFrom {
     /// <p>The name of another container within the same task definition to mount volumes from.</p>
     #[doc(hidden)]
@@ -19244,14 +18336,6 @@ impl VolumeFrom {
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn read_only(&self) -> std::option::Option<bool> {
         self.read_only
-    }
-}
-impl std::fmt::Debug for VolumeFrom {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeFrom");
-        formatter.field("source_container", &self.source_container);
-        formatter.field("read_only", &self.read_only);
-        formatter.finish()
     }
 }
 /// See [`VolumeFrom`](crate::model::VolumeFrom).
@@ -19305,7 +18389,7 @@ impl VolumeFrom {
 
 /// <p>Details for a volume mount point that's used in a container definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MountPoint {
     /// <p>The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task definition <code>volume</code>.</p>
     #[doc(hidden)]
@@ -19329,15 +18413,6 @@ impl MountPoint {
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn read_only(&self) -> std::option::Option<bool> {
         self.read_only
-    }
-}
-impl std::fmt::Debug for MountPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MountPoint");
-        formatter.field("source_volume", &self.source_volume);
-        formatter.field("container_path", &self.container_path);
-        formatter.field("read_only", &self.read_only);
-        formatter.finish()
     }
 }
 /// See [`MountPoint`](crate::model::MountPoint).
@@ -19410,7 +18485,7 @@ impl MountPoint {
 /// </note>
 /// <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <code>DescribeTasks</code> API responses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The port number on the container that's bound to the user-specified or automatically assigned host port.</p>
     /// <p>If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, specify the exposed ports using <code>containerPort</code>.</p>
@@ -19446,15 +18521,6 @@ impl PortMapping {
     /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>. The default is <code>tcp</code>.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::TransportProtocol> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for PortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortMapping");
-        formatter.field("container_port", &self.container_port);
-        formatter.field("host_port", &self.host_port);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`PortMapping`](crate::model::PortMapping).
@@ -19532,7 +18598,7 @@ impl PortMapping {
 
 /// <p>The repository credentials for private registry authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryCredentials {
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository credentials.</p> <note>
     /// <p>When you use the Amazon ECS API, CLI, or Amazon Web Services SDK, if the secret exists in the same Region as the task that you're launching then you can use either the full ARN or the name of the secret. When you use the Amazon Web Services Management Console, you must specify the full ARN of the secret.</p>
@@ -19546,13 +18612,6 @@ impl RepositoryCredentials {
     /// </note>
     pub fn credentials_parameter(&self) -> std::option::Option<&str> {
         self.credentials_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryCredentials");
-        formatter.field("credentials_parameter", &self.credentials_parameter);
-        formatter.finish()
     }
 }
 /// See [`RepositoryCredentials`](crate::model::RepositoryCredentials).
@@ -19598,7 +18657,7 @@ impl RepositoryCredentials {
 
 /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformDevice {
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
     #[doc(hidden)]
@@ -19615,14 +18674,6 @@ impl PlatformDevice {
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PlatformDeviceType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for PlatformDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformDevice");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`PlatformDevice`](crate::model::PlatformDevice).
@@ -19763,7 +18814,7 @@ impl AsRef<str> for PlatformDeviceType {
 
 /// <p>The current account setting for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Setting {
     /// <p>The Amazon ECS resource name.</p>
     #[doc(hidden)]
@@ -19787,15 +18838,6 @@ impl Setting {
     /// <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Setting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Setting");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.finish()
     }
 }
 /// See [`Setting`](crate::model::Setting).
@@ -20293,7 +19335,7 @@ impl std::fmt::Debug for Session {
 pub mod session {
 
     /// A builder for [`Session`](crate::model::Session).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) stream_url: std::option::Option<std::string::String>,
@@ -20337,6 +19379,15 @@ pub mod session {
                 stream_url: self.stream_url,
                 token_value: self.token_value,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("session_id", &self.session_id);
+            formatter.field("stream_url", &self.stream_url);
+            formatter.field("token_value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }

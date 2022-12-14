@@ -3456,7 +3456,7 @@ impl UpdateRecordsInput {
 
 /// A request to post updates to records or add and delete records for a dataset and user.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecordsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -3510,23 +3510,10 @@ impl UpdateRecordsInput {
         self.client_context.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRecordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecordsInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("record_patches", &self.record_patches);
-        formatter.field("sync_session_token", &self.sync_session_token);
-        formatter.field("client_context", &self.client_context);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to UnsubscribeFromDataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsubscribeFromDatasetInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
     #[doc(hidden)]
@@ -3559,20 +3546,10 @@ impl UnsubscribeFromDatasetInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for UnsubscribeFromDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsubscribeFromDatasetInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to SubscribeToDatasetRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscribeToDatasetInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     #[doc(hidden)]
@@ -3605,20 +3582,10 @@ impl SubscribeToDatasetInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for SubscribeToDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeToDatasetInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the SetIdentityPoolConfiguration operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityPoolConfigurationInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
     #[doc(hidden)]
@@ -3644,19 +3611,10 @@ impl SetIdentityPoolConfigurationInput {
         self.cognito_streams.as_ref()
     }
 }
-impl std::fmt::Debug for SetIdentityPoolConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityPoolConfigurationInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("push_sync", &self.push_sync);
-        formatter.field("cognito_streams", &self.cognito_streams);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to configure Cognito Events"</p>"
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetCognitoEventsInput {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
     #[doc(hidden)]
@@ -3679,18 +3637,10 @@ impl SetCognitoEventsInput {
         self.events.as_ref()
     }
 }
-impl std::fmt::Debug for SetCognitoEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetCognitoEventsInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("events", &self.events);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to RegisterDevice.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDeviceInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     #[doc(hidden)]
@@ -3723,20 +3673,10 @@ impl RegisterDeviceInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterDeviceInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("platform", &self.platform);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 /// A request for a list of records.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecordsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -3790,23 +3730,10 @@ impl ListRecordsInput {
         self.sync_session_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecordsInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("last_sync_count", &self.last_sync_count);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("sync_session_token", &self.sync_session_token);
-        formatter.finish()
-    }
-}
 
 /// A request for usage information on an identity pool.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityPoolUsageInput {
     /// A pagination token for obtaining the next page of results.
     #[doc(hidden)]
@@ -3825,18 +3752,10 @@ impl ListIdentityPoolUsageInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIdentityPoolUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityPoolUsageInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Request for a list of datasets for an identity.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -3869,20 +3788,10 @@ impl ListDatasetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatasetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetsInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the GetIdentityPoolConfiguration operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityPoolConfigurationInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
     #[doc(hidden)]
@@ -3894,17 +3803,10 @@ impl GetIdentityPoolConfigurationInput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityPoolConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityPoolConfigurationInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 
 /// <p>A request for a list of the configured Cognito Events</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCognitoEventsInput {
     /// <p>The Cognito Identity Pool ID for the request</p>
     #[doc(hidden)]
@@ -3916,17 +3818,10 @@ impl GetCognitoEventsInput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCognitoEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCognitoEventsInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 
 /// The input for the GetBulkPublishDetails operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBulkPublishDetailsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -3938,17 +3833,10 @@ impl GetBulkPublishDetailsInput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBulkPublishDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBulkPublishDetailsInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 
 /// A request for information about the usage of an identity pool.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityUsageInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -3967,18 +3855,10 @@ impl DescribeIdentityUsageInput {
         self.identity_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityUsageInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.finish()
-    }
-}
 
 /// A request for usage information about the identity pool.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityPoolUsageInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -3990,17 +3870,10 @@ impl DescribeIdentityPoolUsageInput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityPoolUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityPoolUsageInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 
 /// A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -4026,19 +3899,10 @@ impl DescribeDatasetInput {
         self.dataset_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.finish()
-    }
-}
 
 /// A request to delete the specific dataset.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -4064,19 +3928,10 @@ impl DeleteDatasetInput {
         self.dataset_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.finish()
-    }
-}
 
 /// The input for the BulkPublish operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BulkPublishInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -4086,12 +3941,5 @@ impl BulkPublishInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BulkPublishInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BulkPublishInput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
     }
 }

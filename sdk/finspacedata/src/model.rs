@@ -307,7 +307,7 @@ impl AsRef<str> for ApplicationPermission {
 
 /// <p>A union of schema types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaUnion {
     /// <p>The configuration for a schema on a tabular Dataset.</p>
     #[doc(hidden)]
@@ -317,13 +317,6 @@ impl SchemaUnion {
     /// <p>The configuration for a schema on a tabular Dataset.</p>
     pub fn tabular_schema_config(&self) -> std::option::Option<&crate::model::SchemaDefinition> {
         self.tabular_schema_config.as_ref()
-    }
-}
-impl std::fmt::Debug for SchemaUnion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaUnion");
-        formatter.field("tabular_schema_config", &self.tabular_schema_config);
-        formatter.finish()
     }
 }
 /// See [`SchemaUnion`](crate::model::SchemaUnion).
@@ -365,7 +358,7 @@ impl SchemaUnion {
 
 /// <p>Definition for a schema on a tabular Dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaDefinition {
     /// <p>List of column definitions.</p>
     #[doc(hidden)]
@@ -382,14 +375,6 @@ impl SchemaDefinition {
     /// <p>List of column names used for primary key.</p>
     pub fn primary_key_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.primary_key_columns.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaDefinition");
-        formatter.field("columns", &self.columns);
-        formatter.field("primary_key_columns", &self.primary_key_columns);
-        formatter.finish()
     }
 }
 /// See [`SchemaDefinition`](crate::model::SchemaDefinition).
@@ -458,7 +443,7 @@ impl SchemaDefinition {
 
 /// <p>The definition of a column in a tabular Dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnDefinition {
     /// <p>Data type of a column.</p>
     /// <ul>
@@ -488,15 +473,6 @@ impl ColumnDefinition {
     /// <p>Description for a column.</p>
     pub fn column_description(&self) -> std::option::Option<&str> {
         self.column_description.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnDefinition");
-        formatter.field("data_type", &self.data_type);
-        formatter.field("column_name", &self.column_name);
-        formatter.field("column_description", &self.column_description);
-        formatter.finish()
     }
 }
 /// See [`ColumnDefinition`](crate::model::ColumnDefinition).
@@ -929,7 +905,7 @@ impl std::fmt::Debug for UserByPermissionGroup {
 pub mod user_by_permission_group {
 
     /// A builder for [`UserByPermissionGroup`](crate::model::UserByPermissionGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::UserStatus>,
@@ -1097,6 +1073,21 @@ pub mod user_by_permission_group {
                 api_access_principal_arn: self.api_access_principal_arn,
                 membership_status: self.membership_status,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("status", &self.status);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("api_access", &self.api_access);
+            formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+            formatter.field("membership_status", &self.membership_status);
+            formatter.finish()
         }
     }
 }
@@ -1450,7 +1441,7 @@ impl std::fmt::Debug for User {
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::UserStatus>,
@@ -1651,6 +1642,25 @@ pub mod user {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("status", &self.status);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("api_access", &self.api_access);
+            formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+            formatter.field("create_time", &self.create_time);
+            formatter.field("last_enabled_time", &self.last_enabled_time);
+            formatter.field("last_disabled_time", &self.last_disabled_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("last_login_time", &self.last_login_time);
+            formatter.finish()
+        }
+    }
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -1712,7 +1722,7 @@ impl std::fmt::Debug for PermissionGroupByUser {
 pub mod permission_group_by_user {
 
     /// A builder for [`PermissionGroupByUser`](crate::model::PermissionGroupByUser).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1776,6 +1786,15 @@ pub mod permission_group_by_user {
                 name: self.name,
                 membership_status: self.membership_status,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("permission_group_id", &self.permission_group_id);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("membership_status", &self.membership_status);
+            formatter.finish()
         }
     }
 }
@@ -1896,7 +1915,7 @@ impl std::fmt::Debug for PermissionGroup {
 pub mod permission_group {
 
     /// A builder for [`PermissionGroup`](crate::model::PermissionGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2045,6 +2064,19 @@ pub mod permission_group {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("permission_group_id", &self.permission_group_id);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("application_permissions", &self.application_permissions);
+            formatter.field("create_time", &self.create_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("membership_status", &self.membership_status);
+            formatter.finish()
+        }
+    }
 }
 impl PermissionGroup {
     /// Creates a new builder-style object to manufacture [`PermissionGroup`](crate::model::PermissionGroup).
@@ -2055,7 +2087,7 @@ impl PermissionGroup {
 
 /// <p>Structure for the summary of a Dataview.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataViewSummary {
     /// <p>The unique identifier for the Dataview.</p>
     #[doc(hidden)]
@@ -2165,27 +2197,6 @@ impl DataViewSummary {
     /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
-    }
-}
-impl std::fmt::Debug for DataViewSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataViewSummary");
-        formatter.field("data_view_id", &self.data_view_id);
-        formatter.field("data_view_arn", &self.data_view_arn);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("as_of_timestamp", &self.as_of_timestamp);
-        formatter.field("partition_columns", &self.partition_columns);
-        formatter.field("sort_columns", &self.sort_columns);
-        formatter.field("status", &self.status);
-        formatter.field("error_info", &self.error_info);
-        formatter.field(
-            "destination_type_properties",
-            &self.destination_type_properties,
-        );
-        formatter.field("auto_update", &self.auto_update);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`DataViewSummary`](crate::model::DataViewSummary).
@@ -2410,7 +2421,7 @@ impl DataViewSummary {
 
 /// <p>Structure for the Dataview destination type parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataViewDestinationTypeParams {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
@@ -2460,21 +2471,6 @@ impl DataViewDestinationTypeParams {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.s3_destination_export_file_format_options.as_ref()
-    }
-}
-impl std::fmt::Debug for DataViewDestinationTypeParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataViewDestinationTypeParams");
-        formatter.field("destination_type", &self.destination_type);
-        formatter.field(
-            "s3_destination_export_file_format",
-            &self.s3_destination_export_file_format,
-        );
-        formatter.field(
-            "s3_destination_export_file_format_options",
-            &self.s3_destination_export_file_format_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataViewDestinationTypeParams`](crate::model::DataViewDestinationTypeParams).
@@ -2677,7 +2673,7 @@ impl AsRef<str> for ExportFileFormat {
 
 /// <p>The structure with error messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataViewErrorInfo {
     /// <p>The text of the error message.</p>
     #[doc(hidden)]
@@ -2714,14 +2710,6 @@ impl DataViewErrorInfo {
     /// </ul>
     pub fn error_category(&self) -> std::option::Option<&crate::model::ErrorCategory> {
         self.error_category.as_ref()
-    }
-}
-impl std::fmt::Debug for DataViewErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataViewErrorInfo");
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_category", &self.error_category);
-        formatter.finish()
     }
 }
 /// See [`DataViewErrorInfo`](crate::model::DataViewErrorInfo).
@@ -3056,7 +3044,7 @@ impl AsRef<str> for DataViewStatus {
 
 /// <p>The structure for a Dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dataset {
     /// <p>An identifier for a Dataset.</p>
     #[doc(hidden)]
@@ -3137,22 +3125,6 @@ impl Dataset {
     /// <p>The unique resource identifier for a Dataset.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
-    }
-}
-impl std::fmt::Debug for Dataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dataset");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("dataset_title", &self.dataset_title);
-        formatter.field("kind", &self.kind);
-        formatter.field("dataset_description", &self.dataset_description);
-        formatter.field("owner_info", &self.owner_info);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.field("alias", &self.alias);
-        formatter.finish()
     }
 }
 /// See [`Dataset`](crate::model::Dataset).
@@ -3358,7 +3330,7 @@ impl std::fmt::Debug for DatasetOwnerInfo {
 pub mod dataset_owner_info {
 
     /// A builder for [`DatasetOwnerInfo`](crate::model::DatasetOwnerInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -3404,6 +3376,15 @@ pub mod dataset_owner_info {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("phone_number", &self.phone_number);
+            formatter.field("email", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl DatasetOwnerInfo {
     /// Creates a new builder-style object to manufacture [`DatasetOwnerInfo`](crate::model::DatasetOwnerInfo).
@@ -3414,7 +3395,7 @@ impl DatasetOwnerInfo {
 
 /// <p>A Changeset is unit of data in a Dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangesetSummary {
     /// <p>The unique identifier for a Changeset.</p>
     #[doc(hidden)]
@@ -3540,25 +3521,6 @@ impl ChangesetSummary {
     /// <p>The unique identifier of the updated Changeset.</p>
     pub fn updated_by_changeset_id(&self) -> std::option::Option<&str> {
         self.updated_by_changeset_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangesetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangesetSummary");
-        formatter.field("changeset_id", &self.changeset_id);
-        formatter.field("changeset_arn", &self.changeset_arn);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("change_type", &self.change_type);
-        formatter.field("source_params", &self.source_params);
-        formatter.field("format_params", &self.format_params);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("status", &self.status);
-        formatter.field("error_info", &self.error_info);
-        formatter.field("active_until_timestamp", &self.active_until_timestamp);
-        formatter.field("active_from_timestamp", &self.active_from_timestamp);
-        formatter.field("updates_changeset_id", &self.updates_changeset_id);
-        formatter.field("updated_by_changeset_id", &self.updated_by_changeset_id);
-        formatter.finish()
     }
 }
 /// See [`ChangesetSummary`](crate::model::ChangesetSummary).
@@ -3817,7 +3779,7 @@ impl ChangesetSummary {
 
 /// <p>The structure with error messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangesetErrorInfo {
     /// <p>The text of the error message.</p>
     #[doc(hidden)]
@@ -3854,14 +3816,6 @@ impl ChangesetErrorInfo {
     /// </ul>
     pub fn error_category(&self) -> std::option::Option<&crate::model::ErrorCategory> {
         self.error_category.as_ref()
-    }
-}
-impl std::fmt::Debug for ChangesetErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangesetErrorInfo");
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_category", &self.error_category);
-        formatter.finish()
     }
 }
 /// See [`ChangesetErrorInfo`](crate::model::ChangesetErrorInfo).
@@ -4228,7 +4182,7 @@ impl AsRef<str> for LocationType {
 
 /// <p>Short term API credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Credentials {
     /// <p>The access key identifier.</p>
     #[doc(hidden)]
@@ -4252,15 +4206,6 @@ impl Credentials {
     /// <p>The session token.</p>
     pub fn session_token(&self) -> std::option::Option<&str> {
         self.session_token.as_deref()
-    }
-}
-impl std::fmt::Debug for Credentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Credentials");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.field("secret_access_key", &self.secret_access_key);
-        formatter.field("session_token", &self.session_token);
-        formatter.finish()
     }
 }
 /// See [`Credentials`](crate::model::Credentials).
@@ -4332,7 +4277,7 @@ impl Credentials {
 
 /// <p>The location of an external Dataview in an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p> The name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -4349,14 +4294,6 @@ impl S3Location {
     /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -4454,7 +4391,7 @@ impl std::fmt::Debug for AwsCredentials {
 pub mod aws_credentials {
 
     /// A builder for [`AwsCredentials`](crate::model::AwsCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
@@ -4519,6 +4456,16 @@ pub mod aws_credentials {
                 session_token: self.session_token,
                 expiration: self.expiration.unwrap_or_default(),
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_key_id", &self.access_key_id);
+            formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("session_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("expiration", &self.expiration);
+            formatter.finish()
         }
     }
 }
@@ -4633,7 +4580,7 @@ impl AsRef<str> for DatasetStatus {
 /// <p>Here is an example of how you could specify the <code>PermissionGroupParams</code>:</p>
 /// <p> <code> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [ {"permission": "ViewDatasetDetails"}, {"permission": "AddDatasetData"}, {"permission": "EditDatasetMetadata"}, {"permission": "DeleteDataset"} ] } </code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionGroupParams {
     /// <p>The unique identifier for the <code>PermissionGroup</code>.</p>
     #[doc(hidden)]
@@ -4650,14 +4597,6 @@ impl PermissionGroupParams {
     /// <p>List of resource permissions.</p>
     pub fn dataset_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.dataset_permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for PermissionGroupParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionGroupParams");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("dataset_permissions", &self.dataset_permissions);
-        formatter.finish()
     }
 }
 /// See [`PermissionGroupParams`](crate::model::PermissionGroupParams).
@@ -4731,7 +4670,7 @@ impl PermissionGroupParams {
 /// </ul>
 /// <p>For more information on the dataset permissions, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported Dataset Permissions</a> in the FinSpace User Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePermission {
     /// <p>Permission for a resource.</p>
     #[doc(hidden)]
@@ -4741,13 +4680,6 @@ impl ResourcePermission {
     /// <p>Permission for a resource.</p>
     pub fn permission(&self) -> std::option::Option<&str> {
         self.permission.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourcePermission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePermission");
-        formatter.field("permission", &self.permission);
-        formatter.finish()
     }
 }
 /// See [`ResourcePermission`](crate::model::ResourcePermission).

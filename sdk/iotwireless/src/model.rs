@@ -2,7 +2,7 @@
 
 /// <p>LoRaWAN object for update functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanUpdateDevice {
     /// <p>The ID of the device profile for the wireless device.</p>
     #[doc(hidden)]
@@ -40,17 +40,6 @@ impl LoRaWanUpdateDevice {
     /// <p>FPorts object for the positioning information of the device.</p>
     pub fn f_ports(&self) -> std::option::Option<&crate::model::UpdateFPorts> {
         self.f_ports.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanUpdateDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanUpdateDevice");
-        formatter.field("device_profile_id", &self.device_profile_id);
-        formatter.field("service_profile_id", &self.service_profile_id);
-        formatter.field("abp_v1_1", &self.abp_v1_1);
-        formatter.field("abp_v1_0_x", &self.abp_v1_0_x);
-        formatter.field("f_ports", &self.f_ports);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
@@ -152,7 +141,7 @@ impl LoRaWanUpdateDevice {
 
 /// <p>Object for updating the FPorts information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFPorts {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
     #[doc(hidden)]
@@ -162,13 +151,6 @@ impl UpdateFPorts {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
     pub fn positioning(&self) -> std::option::Option<&crate::model::Positioning> {
         self.positioning.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateFPorts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFPorts");
-        formatter.field("positioning", &self.positioning);
-        formatter.finish()
     }
 }
 /// See [`UpdateFPorts`](crate::model::UpdateFPorts).
@@ -210,7 +192,7 @@ impl UpdateFPorts {
 
 /// <p>The FPorts for the position information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Positioning {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
@@ -234,15 +216,6 @@ impl Positioning {
     /// <p>The Fport value.</p>
     pub fn gnss(&self) -> std::option::Option<i32> {
         self.gnss
-    }
-}
-impl std::fmt::Debug for Positioning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Positioning");
-        formatter.field("clock_sync", &self.clock_sync);
-        formatter.field("stream", &self.stream);
-        formatter.field("gnss", &self.gnss);
-        formatter.finish()
     }
 }
 /// See [`Positioning`](crate::model::Positioning).
@@ -305,7 +278,7 @@ impl Positioning {
 
 /// <p>ABP device object for LoRaWAN specification v1.0.x</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAbpV10X {
     /// <p>The FCnt init value.</p>
     #[doc(hidden)]
@@ -315,13 +288,6 @@ impl UpdateAbpV10X {
     /// <p>The FCnt init value.</p>
     pub fn f_cnt_start(&self) -> std::option::Option<i32> {
         self.f_cnt_start
-    }
-}
-impl std::fmt::Debug for UpdateAbpV10X {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAbpV10X");
-        formatter.field("f_cnt_start", &self.f_cnt_start);
-        formatter.finish()
     }
 }
 /// See [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
@@ -360,7 +326,7 @@ impl UpdateAbpV10X {
 
 /// <p>ABP device object for LoRaWAN specification v1.1</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAbpV11 {
     /// <p>The FCnt init value.</p>
     #[doc(hidden)]
@@ -370,13 +336,6 @@ impl UpdateAbpV11 {
     /// <p>The FCnt init value.</p>
     pub fn f_cnt_start(&self) -> std::option::Option<i32> {
         self.f_cnt_start
-    }
-}
-impl std::fmt::Debug for UpdateAbpV11 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAbpV11");
-        formatter.field("f_cnt_start", &self.f_cnt_start);
-        formatter.finish()
     }
 }
 /// See [`UpdateAbpV11`](crate::model::UpdateAbpV11).
@@ -415,7 +374,7 @@ impl UpdateAbpV11 {
 
 /// <p>Message delivery status event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageDeliveryStatusEventConfiguration {
     /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
     #[doc(hidden)]
@@ -437,17 +396,6 @@ impl MessageDeliveryStatusEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for MessageDeliveryStatusEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageDeliveryStatusEventConfiguration");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.field(
-            "wireless_device_id_event_topic",
-            &self.wireless_device_id_event_topic,
-        );
-        formatter.finish()
     }
 }
 /// See [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
@@ -604,7 +552,7 @@ impl AsRef<str> for EventNotificationTopicStatus {
 
 /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SidewalkEventNotificationConfigurations {
     /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
     #[doc(hidden)]
@@ -616,13 +564,6 @@ impl SidewalkEventNotificationConfigurations {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.amazon_id_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for SidewalkEventNotificationConfigurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SidewalkEventNotificationConfigurations");
-        formatter.field("amazon_id_event_topic", &self.amazon_id_event_topic);
-        formatter.finish()
     }
 }
 /// See [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
@@ -668,7 +609,7 @@ impl SidewalkEventNotificationConfigurations {
 
 /// <p>Connection status event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionStatusEventConfiguration {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
@@ -692,17 +633,6 @@ impl ConnectionStatusEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.wireless_gateway_id_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectionStatusEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionStatusEventConfiguration");
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field(
-            "wireless_gateway_id_event_topic",
-            &self.wireless_gateway_id_event_topic,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
@@ -770,7 +700,7 @@ impl ConnectionStatusEventConfiguration {
 
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanConnectionStatusEventNotificationConfigurations {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
@@ -782,14 +712,6 @@ impl LoRaWanConnectionStatusEventNotificationConfigurations {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.gateway_eui_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanConnectionStatusEventNotificationConfigurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("LoRaWanConnectionStatusEventNotificationConfigurations");
-        formatter.field("gateway_eui_event_topic", &self.gateway_eui_event_topic);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
@@ -836,7 +758,7 @@ impl LoRaWanConnectionStatusEventNotificationConfigurations {
 
 /// <p>Join event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JoinEventConfiguration {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
@@ -858,17 +780,6 @@ impl JoinEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for JoinEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JoinEventConfiguration");
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field(
-            "wireless_device_id_event_topic",
-            &self.wireless_device_id_event_topic,
-        );
-        formatter.finish()
     }
 }
 /// See [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
@@ -933,7 +844,7 @@ impl JoinEventConfiguration {
 
 /// <p>Object for LoRaWAN join resource type event configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanJoinEventNotificationConfigurations {
     /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
     #[doc(hidden)]
@@ -945,13 +856,6 @@ impl LoRaWanJoinEventNotificationConfigurations {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.dev_eui_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanJoinEventNotificationConfigurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanJoinEventNotificationConfigurations");
-        formatter.field("dev_eui_event_topic", &self.dev_eui_event_topic);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
@@ -997,7 +901,7 @@ impl LoRaWanJoinEventNotificationConfigurations {
 
 /// <p>Proximity event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProximityEventConfiguration {
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
     #[doc(hidden)]
@@ -1019,17 +923,6 @@ impl ProximityEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for ProximityEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProximityEventConfiguration");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.field(
-            "wireless_device_id_event_topic",
-            &self.wireless_device_id_event_topic,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
@@ -1094,7 +987,7 @@ impl ProximityEventConfiguration {
 
 /// <p>Device registration state event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceRegistrationStateEventConfiguration {
     /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
     #[doc(hidden)]
@@ -1116,17 +1009,6 @@ impl DeviceRegistrationStateEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceRegistrationStateEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceRegistrationStateEventConfiguration");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.field(
-            "wireless_device_id_event_topic",
-            &self.wireless_device_id_event_topic,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
@@ -1589,7 +1471,7 @@ impl std::fmt::Debug for SidewalkUpdateAccount {
 pub mod sidewalk_update_account {
 
     /// A builder for [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_server_private_key: std::option::Option<std::string::String>,
     }
@@ -1614,6 +1496,13 @@ pub mod sidewalk_update_account {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_server_private_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl SidewalkUpdateAccount {
     /// Creates a new builder-style object to manufacture [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
@@ -1624,7 +1513,7 @@ impl SidewalkUpdateAccount {
 
 /// <p>Trace content for your wireless gateway and wireless device resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TraceContent {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
     #[doc(hidden)]
@@ -1643,17 +1532,6 @@ impl TraceContent {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for TraceContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TraceContent");
-        formatter.field(
-            "wireless_device_frame_info",
-            &self.wireless_device_frame_info,
-        );
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`TraceContent`](crate::model::TraceContent).
@@ -1901,7 +1779,7 @@ impl AsRef<str> for WirelessDeviceFrameInfo {
 
 /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanMulticast {
     /// <p>Supported RfRegions</p>
     #[doc(hidden)]
@@ -1918,14 +1796,6 @@ impl LoRaWanMulticast {
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub fn dl_class(&self) -> std::option::Option<&crate::model::DlClass> {
         self.dl_class.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanMulticast {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanMulticast");
-        formatter.field("rf_region", &self.rf_region);
-        formatter.field("dl_class", &self.dl_class);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
@@ -2171,7 +2041,7 @@ impl AsRef<str> for SupportedRfRegion {
 
 /// <p>The log options for wireless gateways and can be used to set log levels for a specific type of wireless gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WirelessGatewayLogOption {
     /// <p>The wireless gateway type.</p>
     #[doc(hidden)]
@@ -2195,15 +2065,6 @@ impl WirelessGatewayLogOption {
     /// <p>The list of wireless gateway event log options.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::WirelessGatewayEventLogOption]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for WirelessGatewayLogOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WirelessGatewayLogOption");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
@@ -2280,7 +2141,7 @@ impl WirelessGatewayLogOption {
 /// <p>The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event.</p>
 /// <p>For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code> and <code>Certificate</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WirelessGatewayEventLogOption {
     /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
     #[doc(hidden)]
@@ -2297,14 +2158,6 @@ impl WirelessGatewayEventLogOption {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for WirelessGatewayEventLogOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WirelessGatewayEventLogOption");
-        formatter.field("event", &self.event);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
@@ -2537,7 +2390,7 @@ impl AsRef<str> for WirelessGatewayType {
 
 /// <p>The log options for wireless devices and can be used to set log levels for a specific type of wireless device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WirelessDeviceLogOption {
     /// <p>The wireless device type.</p>
     #[doc(hidden)]
@@ -2561,15 +2414,6 @@ impl WirelessDeviceLogOption {
     /// <p>The list of wireless device event log options.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::WirelessDeviceEventLogOption]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for WirelessDeviceLogOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WirelessDeviceLogOption");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
@@ -2646,7 +2490,7 @@ impl WirelessDeviceLogOption {
 /// <p>The log options for a wireless device event and can be used to set log levels for a specific wireless device event.</p>
 /// <p>For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WirelessDeviceEventLogOption {
     /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
     #[doc(hidden)]
@@ -2663,14 +2507,6 @@ impl WirelessDeviceEventLogOption {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
-    }
-}
-impl std::fmt::Debug for WirelessDeviceEventLogOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WirelessDeviceEventLogOption");
-        formatter.field("event", &self.event);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
     }
 }
 /// See [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
@@ -2929,7 +2765,7 @@ impl AsRef<str> for WirelessDeviceType {
 
 /// <p>The LoRaWAN information used with a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanFuotaTask {
     /// <p>Supported RfRegions</p>
     #[doc(hidden)]
@@ -2939,13 +2775,6 @@ impl LoRaWanFuotaTask {
     /// <p>Supported RfRegions</p>
     pub fn rf_region(&self) -> std::option::Option<&crate::model::SupportedRfRegion> {
         self.rf_region.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanFuotaTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanFuotaTask");
-        formatter.field("rf_region", &self.rf_region);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
@@ -2987,7 +2816,7 @@ impl LoRaWanFuotaTask {
 
 /// <p>Message delivery status resource type event configuration object for enabling or disabling relevant topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageDeliveryStatusResourceTypeEventConfiguration {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     #[doc(hidden)]
@@ -2999,13 +2828,6 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
-    }
-}
-impl std::fmt::Debug for MessageDeliveryStatusResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageDeliveryStatusResourceTypeEventConfiguration");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.finish()
     }
 }
 /// See [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
@@ -3052,7 +2874,7 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
 
 /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SidewalkResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     #[doc(hidden)]
@@ -3065,16 +2887,6 @@ impl SidewalkResourceTypeEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.wireless_device_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for SidewalkResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SidewalkResourceTypeEventConfiguration");
-        formatter.field(
-            "wireless_device_event_topic",
-            &self.wireless_device_event_topic,
-        );
-        formatter.finish()
     }
 }
 /// See [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
@@ -3120,7 +2932,7 @@ impl SidewalkResourceTypeEventConfiguration {
 
 /// <p>Connection status resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionStatusResourceTypeEventConfiguration {
     /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
@@ -3134,13 +2946,6 @@ impl ConnectionStatusResourceTypeEventConfiguration {
     ) -> std::option::Option<&crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration>
     {
         self.lo_ra_wan.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectionStatusResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionStatusResourceTypeEventConfiguration");
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
     }
 }
 /// See [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
@@ -3189,7 +2994,7 @@ impl ConnectionStatusResourceTypeEventConfiguration {
 
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
@@ -3202,16 +3007,6 @@ impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.wireless_gateway_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanConnectionStatusResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanConnectionStatusResourceTypeEventConfiguration");
-        formatter.field(
-            "wireless_gateway_event_topic",
-            &self.wireless_gateway_event_topic,
-        );
-        formatter.finish()
     }
 }
 /// See [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
@@ -3258,7 +3053,7 @@ impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
 
 /// <p>Join resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JoinResourceTypeEventConfiguration {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
@@ -3270,13 +3065,6 @@ impl JoinResourceTypeEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::LoRaWanJoinResourceTypeEventConfiguration> {
         self.lo_ra_wan.as_ref()
-    }
-}
-impl std::fmt::Debug for JoinResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JoinResourceTypeEventConfiguration");
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
     }
 }
 /// See [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
@@ -3322,7 +3110,7 @@ impl JoinResourceTypeEventConfiguration {
 
 /// <p>Object for LoRaWAN join resource type event configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanJoinResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     #[doc(hidden)]
@@ -3335,16 +3123,6 @@ impl LoRaWanJoinResourceTypeEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
         self.wireless_device_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanJoinResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanJoinResourceTypeEventConfiguration");
-        formatter.field(
-            "wireless_device_event_topic",
-            &self.wireless_device_event_topic,
-        );
-        formatter.finish()
     }
 }
 /// See [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
@@ -3390,7 +3168,7 @@ impl LoRaWanJoinResourceTypeEventConfiguration {
 
 /// <p>Proximity resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProximityResourceTypeEventConfiguration {
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless device topic.</p>
     #[doc(hidden)]
@@ -3402,13 +3180,6 @@ impl ProximityResourceTypeEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
-    }
-}
-impl std::fmt::Debug for ProximityResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProximityResourceTypeEventConfiguration");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.finish()
     }
 }
 /// See [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
@@ -3454,7 +3225,7 @@ impl ProximityResourceTypeEventConfiguration {
 
 /// <p>Device registration state resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceRegistrationStateResourceTypeEventConfiguration {
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
     #[doc(hidden)]
@@ -3466,13 +3237,6 @@ impl DeviceRegistrationStateResourceTypeEventConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceRegistrationStateResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceRegistrationStateResourceTypeEventConfiguration");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.finish()
     }
 }
 /// See [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
@@ -3610,7 +3374,7 @@ impl AsRef<str> for ExpressionType {
 
 /// <p>A simple label consisting of a customer-defined key-value pair</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key value.</p>
     #[doc(hidden)]
@@ -3627,14 +3391,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -3685,7 +3441,7 @@ impl Tag {
 
 /// <p>The LoRaWAN information used with the multicast session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanMulticastSession {
     /// <p>Downlink data rate.</p>
     #[doc(hidden)]
@@ -3716,16 +3472,6 @@ impl LoRaWanMulticastSession {
     /// <p>How long before a multicast group session is to timeout.</p>
     pub fn session_timeout(&self) -> std::option::Option<i32> {
         self.session_timeout
-    }
-}
-impl std::fmt::Debug for LoRaWanMulticastSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanMulticastSession");
-        formatter.field("dl_dr", &self.dl_dr);
-        formatter.field("dl_freq", &self.dl_freq);
-        formatter.field("session_start_time", &self.session_start_time);
-        formatter.field("session_timeout", &self.session_timeout);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
@@ -3803,7 +3549,7 @@ impl LoRaWanMulticastSession {
 
 /// <p>The LoRaWAN information used to start a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanStartFuotaTask {
     /// <p>Start time of a FUOTA task.</p>
     #[doc(hidden)]
@@ -3813,13 +3559,6 @@ impl LoRaWanStartFuotaTask {
     /// <p>Start time of a FUOTA task.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanStartFuotaTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanStartFuotaTask");
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
@@ -3861,7 +3600,7 @@ impl LoRaWanStartFuotaTask {
 
 /// <p>WirelessMetadata object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WirelessMetadata {
     /// <p>LoRaWAN device info.</p>
     #[doc(hidden)]
@@ -3878,14 +3617,6 @@ impl WirelessMetadata {
     /// <p>The Sidewalk account credentials.</p>
     pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkSendDataToDevice> {
         self.sidewalk.as_ref()
-    }
-}
-impl std::fmt::Debug for WirelessMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WirelessMetadata");
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.finish()
     }
 }
 /// See [`WirelessMetadata`](crate::model::WirelessMetadata).
@@ -3942,7 +3673,7 @@ impl WirelessMetadata {
 
 /// <p>Information about a Sidewalk router.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SidewalkSendDataToDevice {
     /// <p>The sequence number.</p>
     #[doc(hidden)]
@@ -3966,18 +3697,6 @@ impl SidewalkSendDataToDevice {
     /// <p>The duration of time in seconds for which you want to retry sending the ACK.</p>
     pub fn ack_mode_retry_duration_secs(&self) -> std::option::Option<i32> {
         self.ack_mode_retry_duration_secs
-    }
-}
-impl std::fmt::Debug for SidewalkSendDataToDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SidewalkSendDataToDevice");
-        formatter.field("seq", &self.seq);
-        formatter.field("message_type", &self.message_type);
-        formatter.field(
-            "ack_mode_retry_duration_secs",
-            &self.ack_mode_retry_duration_secs,
-        );
-        formatter.finish()
     }
 }
 /// See [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
@@ -4148,7 +3867,7 @@ impl AsRef<str> for MessageType {
 
 /// <p>LoRaWAN router info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanSendDataToDevice {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
@@ -4167,14 +3886,6 @@ impl LoRaWanSendDataToDevice {
         &self,
     ) -> std::option::Option<&crate::model::ParticipatingGateways> {
         self.participating_gateways.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanSendDataToDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanSendDataToDevice");
-        formatter.field("f_port", &self.f_port);
-        formatter.field("participating_gateways", &self.participating_gateways);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
@@ -4231,7 +3942,7 @@ impl LoRaWanSendDataToDevice {
 
 /// <p>Specify the list of gateways to which you want to send downlink data traffic when the wireless device is running in class B or class C mode.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParticipatingGateways {
     /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
     #[doc(hidden)]
@@ -4255,15 +3966,6 @@ impl ParticipatingGateways {
     /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
     pub fn transmission_interval(&self) -> std::option::Option<i32> {
         self.transmission_interval
-    }
-}
-impl std::fmt::Debug for ParticipatingGateways {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParticipatingGateways");
-        formatter.field("downlink_mode", &self.downlink_mode);
-        formatter.field("gateway_list", &self.gateway_list);
-        formatter.field("transmission_interval", &self.transmission_interval);
-        formatter.finish()
     }
 }
 /// See [`ParticipatingGateways`](crate::model::ParticipatingGateways).
@@ -4338,7 +4040,7 @@ impl ParticipatingGateways {
 
 /// <p>Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayListItem {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
     #[doc(hidden)]
@@ -4355,14 +4057,6 @@ impl GatewayListItem {
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
     pub fn downlink_frequency(&self) -> std::option::Option<i32> {
         self.downlink_frequency
-    }
-}
-impl std::fmt::Debug for GatewayListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayListItem");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("downlink_frequency", &self.downlink_frequency);
-        formatter.finish()
     }
 }
 /// See [`GatewayListItem`](crate::model::GatewayListItem).
@@ -4508,7 +4202,7 @@ impl AsRef<str> for DownlinkMode {
 
 /// <p>Wireless metadata that is to be sent to multicast group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MulticastWirelessMetadata {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
     #[doc(hidden)]
@@ -4518,13 +4212,6 @@ impl MulticastWirelessMetadata {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
     pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticastMetadata> {
         self.lo_ra_wan.as_ref()
-    }
-}
-impl std::fmt::Debug for MulticastWirelessMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MulticastWirelessMetadata");
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
     }
 }
 /// See [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
@@ -4566,7 +4253,7 @@ impl MulticastWirelessMetadata {
 
 /// <p>The metadata information of the LoRaWAN multicast group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanMulticastMetadata {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
@@ -4576,13 +4263,6 @@ impl LoRaWanMulticastMetadata {
     /// <p>The Fport value.</p>
     pub fn f_port(&self) -> std::option::Option<i32> {
         self.f_port
-    }
-}
-impl std::fmt::Debug for LoRaWanMulticastMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanMulticastMetadata");
-        formatter.field("f_port", &self.f_port);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
@@ -4621,7 +4301,7 @@ impl LoRaWanMulticastMetadata {
 
 /// <p>The wrapper for position solver configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PositionSolverConfigurations {
     /// <p>The Semtech GNSS solver configuration object.</p>
     #[doc(hidden)]
@@ -4631,13 +4311,6 @@ impl PositionSolverConfigurations {
     /// <p>The Semtech GNSS solver configuration object.</p>
     pub fn semtech_gnss(&self) -> std::option::Option<&crate::model::SemtechGnssConfiguration> {
         self.semtech_gnss.as_ref()
-    }
-}
-impl std::fmt::Debug for PositionSolverConfigurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PositionSolverConfigurations");
-        formatter.field("semtech_gnss", &self.semtech_gnss);
-        formatter.finish()
     }
 }
 /// See [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
@@ -4679,7 +4352,7 @@ impl PositionSolverConfigurations {
 
 /// <p>Information about the Semtech GNSS solver configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
     #[doc(hidden)]
@@ -4696,14 +4369,6 @@ impl SemtechGnssConfiguration {
     /// <p>Whether forward error correction is enabled.</p>
     pub fn fec(&self) -> std::option::Option<&crate::model::PositionConfigurationFec> {
         self.fec.as_ref()
-    }
-}
-impl std::fmt::Debug for SemtechGnssConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SemtechGnssConfiguration");
-        formatter.field("status", &self.status);
-        formatter.field("fec", &self.fec);
-        formatter.finish()
     }
 }
 /// See [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
@@ -4944,7 +4609,7 @@ impl AsRef<str> for PositionConfigurationStatus {
 
 /// <p>UpdateWirelessGatewayTaskEntry object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWirelessGatewayTaskEntry {
     /// <p>The ID of the new wireless gateway task entry.</p>
     #[doc(hidden)]
@@ -4968,15 +4633,6 @@ impl UpdateWirelessGatewayTaskEntry {
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateWirelessGatewayTaskEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWirelessGatewayTaskEntry");
-        formatter.field("id", &self.id);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
@@ -5042,7 +4698,7 @@ impl UpdateWirelessGatewayTaskEntry {
 
 /// <p>LoRaWANUpdateGatewayTaskEntry object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanUpdateGatewayTaskEntry {
     /// <p>The version of the gateways that should receive the update.</p>
     #[doc(hidden)]
@@ -5059,14 +4715,6 @@ impl LoRaWanUpdateGatewayTaskEntry {
     /// <p>The firmware version to update the gateway to.</p>
     pub fn update_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
         self.update_version.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanUpdateGatewayTaskEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanUpdateGatewayTaskEntry");
-        formatter.field("current_version", &self.current_version);
-        formatter.field("update_version", &self.update_version);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
@@ -5123,7 +4771,7 @@ impl LoRaWanUpdateGatewayTaskEntry {
 
 /// <p>LoRaWANGatewayVersion object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanGatewayVersion {
     /// <p>The version of the wireless gateway firmware.</p>
     #[doc(hidden)]
@@ -5147,15 +4795,6 @@ impl LoRaWanGatewayVersion {
     /// <p>The basic station version of the wireless gateway.</p>
     pub fn station(&self) -> std::option::Option<&str> {
         self.station.as_deref()
-    }
-}
-impl std::fmt::Debug for LoRaWanGatewayVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanGatewayVersion");
-        formatter.field("package_version", &self.package_version);
-        formatter.field("model", &self.model);
-        formatter.field("station", &self.station);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
@@ -5308,7 +4947,7 @@ impl AsRef<str> for WirelessGatewayTaskDefinitionType {
 
 /// <p>Information about a wireless gateway's operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WirelessGatewayStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
@@ -5353,18 +4992,6 @@ impl WirelessGatewayStatistics {
     /// <p>The date and time when the most recent uplink was received.</p>
     pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
         self.last_uplink_received_at.as_deref()
-    }
-}
-impl std::fmt::Debug for WirelessGatewayStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WirelessGatewayStatistics");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("last_uplink_received_at", &self.last_uplink_received_at);
-        formatter.finish()
     }
 }
 /// See [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
@@ -5469,7 +5096,7 @@ impl WirelessGatewayStatistics {
 
 /// <p>LoRaWANGateway object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanGateway {
     /// <p>The gateway's EUI value.</p>
     #[doc(hidden)]
@@ -5514,18 +5141,6 @@ impl LoRaWanGateway {
     /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
     pub fn beaconing(&self) -> std::option::Option<&crate::model::Beaconing> {
         self.beaconing.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanGateway {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanGateway");
-        formatter.field("gateway_eui", &self.gateway_eui);
-        formatter.field("rf_region", &self.rf_region);
-        formatter.field("join_eui_filters", &self.join_eui_filters);
-        formatter.field("net_id_filters", &self.net_id_filters);
-        formatter.field("sub_bands", &self.sub_bands);
-        formatter.field("beaconing", &self.beaconing);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanGateway`](crate::model::LoRaWanGateway).
@@ -5652,7 +5267,7 @@ impl LoRaWanGateway {
 
 /// <p>Beaconing parameters for configuring the wireless gateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Beaconing {
     /// <p>The data rate for gateways that are sending the beacons.</p>
     #[doc(hidden)]
@@ -5669,14 +5284,6 @@ impl Beaconing {
     /// <p>The frequency list for the gateways to send the beacons.</p>
     pub fn frequencies(&self) -> std::option::Option<&[i32]> {
         self.frequencies.as_deref()
-    }
-}
-impl std::fmt::Debug for Beaconing {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Beaconing");
-        formatter.field("data_rate", &self.data_rate);
-        formatter.field("frequencies", &self.frequencies);
-        formatter.finish()
     }
 }
 /// See [`Beaconing`](crate::model::Beaconing).
@@ -5733,7 +5340,7 @@ impl Beaconing {
 
 /// <p>Information about a wireless device's operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WirelessDeviceStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
@@ -5813,23 +5420,6 @@ impl WirelessDeviceStatistics {
     /// <p>Id of the multicast group.</p>
     pub fn mc_group_id(&self) -> std::option::Option<i32> {
         self.mc_group_id
-    }
-}
-impl std::fmt::Debug for WirelessDeviceStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WirelessDeviceStatistics");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("last_uplink_received_at", &self.last_uplink_received_at);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.field("fuota_device_status", &self.fuota_device_status);
-        formatter.field("multicast_device_status", &self.multicast_device_status);
-        formatter.field("mc_group_id", &self.mc_group_id);
-        formatter.finish()
     }
 }
 /// See [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
@@ -6158,7 +5748,7 @@ impl AsRef<str> for FuotaDeviceStatus {
 
 /// <p>Sidewalk object used by list functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SidewalkListDevice {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
@@ -6189,16 +5779,6 @@ impl SidewalkListDevice {
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
     pub fn device_certificates(&self) -> std::option::Option<&[crate::model::CertificateList]> {
         self.device_certificates.as_deref()
-    }
-}
-impl std::fmt::Debug for SidewalkListDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SidewalkListDevice");
-        formatter.field("amazon_id", &self.amazon_id);
-        formatter.field("sidewalk_id", &self.sidewalk_id);
-        formatter.field("sidewalk_manufacturing_sn", &self.sidewalk_manufacturing_sn);
-        formatter.field("device_certificates", &self.device_certificates);
-        formatter.finish()
     }
 }
 /// See [`SidewalkListDevice`](crate::model::SidewalkListDevice).
@@ -6286,7 +5866,7 @@ impl SidewalkListDevice {
 
 /// <p>List of sidewalk certificates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateList {
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
     #[doc(hidden)]
@@ -6303,14 +5883,6 @@ impl CertificateList {
     /// <p>The value of the chosen sidewalk certificate.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for CertificateList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateList");
-        formatter.field("signing_alg", &self.signing_alg);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CertificateList`](crate::model::CertificateList).
@@ -6454,7 +6026,7 @@ impl AsRef<str> for SigningAlg {
 
 /// <p>LoRaWAN object for list functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
@@ -6464,13 +6036,6 @@ impl LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
     pub fn dev_eui(&self) -> std::option::Option<&str> {
         self.dev_eui.as_deref()
-    }
-}
-impl std::fmt::Debug for LoRaWanListDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanListDevice");
-        formatter.field("dev_eui", &self.dev_eui);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
@@ -6509,7 +6074,7 @@ impl LoRaWanListDevice {
 
 /// <p>Information about a service profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceProfile {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
@@ -6533,15 +6098,6 @@ impl ServiceProfile {
     /// <p>The ID of the service profile.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceProfile");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`ServiceProfile`](crate::model::ServiceProfile).
@@ -6604,7 +6160,7 @@ impl ServiceProfile {
 
 /// <p>The message in the downlink queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DownlinkQueueMessage {
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     #[doc(hidden)]
@@ -6635,16 +6191,6 @@ impl DownlinkQueueMessage {
     /// <p>LoRaWAN router info.</p>
     pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanSendDataToDevice> {
         self.lo_ra_wan.as_ref()
-    }
-}
-impl std::fmt::Debug for DownlinkQueueMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DownlinkQueueMessage");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("transmit_mode", &self.transmit_mode);
-        formatter.field("received_at", &self.received_at);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
     }
 }
 /// See [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
@@ -6722,7 +6268,7 @@ impl DownlinkQueueMessage {
 
 /// <p>The wrapper for a position configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PositionConfigurationItem {
     /// <p>Resource identifier for the position configuration.</p>
     #[doc(hidden)]
@@ -6753,16 +6299,6 @@ impl PositionConfigurationItem {
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
-    }
-}
-impl std::fmt::Debug for PositionConfigurationItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PositionConfigurationItem");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("solvers", &self.solvers);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
@@ -6846,7 +6382,7 @@ impl PositionConfigurationItem {
 
 /// <p>The wrapper for position solver details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PositionSolverDetails {
     /// <p>The Semtech GNSS solver object details.</p>
     #[doc(hidden)]
@@ -6856,13 +6392,6 @@ impl PositionSolverDetails {
     /// <p>The Semtech GNSS solver object details.</p>
     pub fn semtech_gnss(&self) -> std::option::Option<&crate::model::SemtechGnssDetail> {
         self.semtech_gnss.as_ref()
-    }
-}
-impl std::fmt::Debug for PositionSolverDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PositionSolverDetails");
-        formatter.field("semtech_gnss", &self.semtech_gnss);
-        formatter.finish()
     }
 }
 /// See [`PositionSolverDetails`](crate::model::PositionSolverDetails).
@@ -6904,7 +6433,7 @@ impl PositionSolverDetails {
 
 /// <p>Details of the Semtech GNSS solver object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SemtechGnssDetail {
     /// <p>The vendor of the solver object.</p>
     #[doc(hidden)]
@@ -6935,16 +6464,6 @@ impl SemtechGnssDetail {
     /// <p>Whether forward error correction is enabled.</p>
     pub fn fec(&self) -> std::option::Option<&crate::model::PositionConfigurationFec> {
         self.fec.as_ref()
-    }
-}
-impl std::fmt::Debug for SemtechGnssDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SemtechGnssDetail");
-        formatter.field("provider", &self.provider);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("fec", &self.fec);
-        formatter.finish()
     }
 }
 /// See [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
@@ -7244,7 +6763,7 @@ impl std::fmt::Debug for SidewalkAccountInfoWithFingerprint {
 pub mod sidewalk_account_info_with_fingerprint {
 
     /// A builder for [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) fingerprint: std::option::Option<std::string::String>,
@@ -7290,6 +6809,15 @@ pub mod sidewalk_account_info_with_fingerprint {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("amazon_id", &self.amazon_id);
+            formatter.field("fingerprint", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.finish()
+        }
+    }
 }
 impl SidewalkAccountInfoWithFingerprint {
     /// Creates a new builder-style object to manufacture [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
@@ -7300,7 +6828,7 @@ impl SidewalkAccountInfoWithFingerprint {
 
 /// <p>Network analyzer configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkAnalyzerConfigurations {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
@@ -7317,14 +6845,6 @@ impl NetworkAnalyzerConfigurations {
     /// <p>Name of the network analyzer configuration.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkAnalyzerConfigurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkAnalyzerConfigurations");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
@@ -7375,7 +6895,7 @@ impl NetworkAnalyzerConfigurations {
 
 /// <p>A multicast group that is associated with a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MulticastGroupByFuotaTask {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -7385,13 +6905,6 @@ impl MulticastGroupByFuotaTask {
     /// <p>The ID of the multicast group.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for MulticastGroupByFuotaTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MulticastGroupByFuotaTask");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
@@ -7428,7 +6941,7 @@ impl MulticastGroupByFuotaTask {
 
 /// <p>A multicast group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MulticastGroup {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -7452,15 +6965,6 @@ impl MulticastGroup {
     /// <p>The name of the multicast group.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for MulticastGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MulticastGroup");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`MulticastGroup`](crate::model::MulticastGroup).
@@ -7523,7 +7027,7 @@ impl MulticastGroup {
 
 /// <p>A FUOTA task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FuotaTask {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -7547,15 +7051,6 @@ impl FuotaTask {
     /// <p>The name of a FUOTA task.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for FuotaTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FuotaTask");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`FuotaTask`](crate::model::FuotaTask).
@@ -7618,7 +7113,7 @@ impl FuotaTask {
 
 /// <p>Event configuration object for a single resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventConfigurationItem {
     /// <p>Resource identifier opted in for event messaging.</p>
     #[doc(hidden)]
@@ -7651,16 +7146,6 @@ impl EventConfigurationItem {
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationItemConfigurations> {
         self.events.as_ref()
-    }
-}
-impl std::fmt::Debug for EventConfigurationItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventConfigurationItem");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`EventConfigurationItem`](crate::model::EventConfigurationItem).
@@ -7744,7 +7229,7 @@ impl EventConfigurationItem {
 
 /// <p>Object of all event configurations and the status of the event topics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventNotificationItemConfigurations {
     /// <p>Device registration state event configuration for an event configuration item.</p>
     #[doc(hidden)]
@@ -7790,17 +7275,6 @@ impl EventNotificationItemConfigurations {
         &self,
     ) -> std::option::Option<&crate::model::MessageDeliveryStatusEventConfiguration> {
         self.message_delivery_status.as_ref()
-    }
-}
-impl std::fmt::Debug for EventNotificationItemConfigurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventNotificationItemConfigurations");
-        formatter.field("device_registration_state", &self.device_registration_state);
-        formatter.field("proximity", &self.proximity);
-        formatter.field("join", &self.join);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("message_delivery_status", &self.message_delivery_status);
-        formatter.finish()
     }
 }
 /// See [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
@@ -8011,7 +7485,7 @@ impl AsRef<str> for EventNotificationResourceType {
 
 /// <p>Describes a device profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceProfile {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
@@ -8035,15 +7509,6 @@ impl DeviceProfile {
     /// <p>The ID of the device profile.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeviceProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceProfile");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`DeviceProfile`](crate::model::DeviceProfile).
@@ -8106,7 +7571,7 @@ impl DeviceProfile {
 
 /// <p>Describes a destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destinations {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
@@ -8151,18 +7616,6 @@ impl Destinations {
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Destinations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destinations");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("expression_type", &self.expression_type);
-        formatter.field("expression", &self.expression);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`Destinations`](crate::model::Destinations).
@@ -8264,7 +7717,7 @@ impl Destinations {
 
 /// <p>UpdateWirelessGatewayTaskCreate object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWirelessGatewayTaskCreate {
     /// <p>The link to the S3 bucket.</p>
     #[doc(hidden)]
@@ -8288,15 +7741,6 @@ impl UpdateWirelessGatewayTaskCreate {
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
     pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanUpdateGatewayTaskCreate> {
         self.lo_ra_wan.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateWirelessGatewayTaskCreate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWirelessGatewayTaskCreate");
-        formatter.field("update_data_source", &self.update_data_source);
-        formatter.field("update_data_role", &self.update_data_role);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
     }
 }
 /// See [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
@@ -8368,7 +7812,7 @@ impl UpdateWirelessGatewayTaskCreate {
 
 /// <p>LoRaWANUpdateGatewayTaskCreate object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanUpdateGatewayTaskCreate {
     /// <p>The signature used to verify the update firmware.</p>
     #[doc(hidden)]
@@ -8399,16 +7843,6 @@ impl LoRaWanUpdateGatewayTaskCreate {
     /// <p>The firmware version to update the gateway to.</p>
     pub fn update_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
         self.update_version.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanUpdateGatewayTaskCreate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanUpdateGatewayTaskCreate");
-        formatter.field("update_signature", &self.update_signature);
-        formatter.field("sig_key_crc", &self.sig_key_crc);
-        formatter.field("current_version", &self.current_version);
-        formatter.field("update_version", &self.update_version);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
@@ -8701,7 +8135,7 @@ impl AsRef<str> for ConnectionStatus {
 
 /// <p>LoRaWANGatewayCurrentVersion object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanGatewayCurrentVersion {
     /// <p>The version of the gateways that should receive the update.</p>
     #[doc(hidden)]
@@ -8711,13 +8145,6 @@ impl LoRaWanGatewayCurrentVersion {
     /// <p>The version of the gateways that should receive the update.</p>
     pub fn current_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
         self.current_version.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanGatewayCurrentVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanGatewayCurrentVersion");
-        formatter.field("current_version", &self.current_version);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
@@ -8856,7 +8283,7 @@ impl AsRef<str> for WirelessGatewayIdType {
 
 /// <p>MetaData for Sidewalk device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SidewalkDeviceMetadata {
     /// <p>The RSSI value.</p>
     #[doc(hidden)]
@@ -8887,16 +8314,6 @@ impl SidewalkDeviceMetadata {
     /// <p>Device state defines the device status of sidewalk device.</p>
     pub fn device_state(&self) -> std::option::Option<&crate::model::DeviceState> {
         self.device_state.as_ref()
-    }
-}
-impl std::fmt::Debug for SidewalkDeviceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SidewalkDeviceMetadata");
-        formatter.field("rssi", &self.rssi);
-        formatter.field("battery_level", &self.battery_level);
-        formatter.field("event", &self.event);
-        formatter.field("device_state", &self.device_state);
-        formatter.finish()
     }
 }
 /// See [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
@@ -9282,7 +8699,7 @@ impl AsRef<str> for BatteryLevel {
 
 /// <p>LoRaWAN device metatdata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanDeviceMetadata {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
@@ -9327,18 +8744,6 @@ impl LoRaWanDeviceMetadata {
     /// <p>Information about the gateways accessed by the device.</p>
     pub fn gateways(&self) -> std::option::Option<&[crate::model::LoRaWanGatewayMetadata]> {
         self.gateways.as_deref()
-    }
-}
-impl std::fmt::Debug for LoRaWanDeviceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanDeviceMetadata");
-        formatter.field("dev_eui", &self.dev_eui);
-        formatter.field("f_port", &self.f_port);
-        formatter.field("data_rate", &self.data_rate);
-        formatter.field("frequency", &self.frequency);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("gateways", &self.gateways);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
@@ -9447,7 +8852,7 @@ impl LoRaWanDeviceMetadata {
 
 /// <p>LoRaWAN gateway metatdata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanGatewayMetadata {
     /// <p>The gateway's EUI value.</p>
     #[doc(hidden)]
@@ -9471,15 +8876,6 @@ impl LoRaWanGatewayMetadata {
     /// <p>The RSSI value.</p>
     pub fn rssi(&self) -> std::option::Option<f64> {
         self.rssi
-    }
-}
-impl std::fmt::Debug for LoRaWanGatewayMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanGatewayMetadata");
-        formatter.field("gateway_eui", &self.gateway_eui);
-        formatter.field("snr", &self.snr);
-        formatter.field("rssi", &self.rssi);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
@@ -9542,7 +8938,7 @@ impl LoRaWanGatewayMetadata {
 
 /// <p>Sidewalk device object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SidewalkDevice {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
@@ -9573,16 +8969,6 @@ impl SidewalkDevice {
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
     pub fn device_certificates(&self) -> std::option::Option<&[crate::model::CertificateList]> {
         self.device_certificates.as_deref()
-    }
-}
-impl std::fmt::Debug for SidewalkDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SidewalkDevice");
-        formatter.field("amazon_id", &self.amazon_id);
-        formatter.field("sidewalk_id", &self.sidewalk_id);
-        formatter.field("sidewalk_manufacturing_sn", &self.sidewalk_manufacturing_sn);
-        formatter.field("device_certificates", &self.device_certificates);
-        formatter.finish()
     }
 }
 /// See [`SidewalkDevice`](crate::model::SidewalkDevice).
@@ -9670,7 +9056,7 @@ impl SidewalkDevice {
 
 /// <p>LoRaWAN object for create functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanDevice {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
@@ -9729,20 +9115,6 @@ impl LoRaWanDevice {
     /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
     pub fn f_ports(&self) -> std::option::Option<&crate::model::FPorts> {
         self.f_ports.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanDevice");
-        formatter.field("dev_eui", &self.dev_eui);
-        formatter.field("device_profile_id", &self.device_profile_id);
-        formatter.field("service_profile_id", &self.service_profile_id);
-        formatter.field("otaa_v1_1", &self.otaa_v1_1);
-        formatter.field("otaa_v1_0_x", &self.otaa_v1_0_x);
-        formatter.field("abp_v1_1", &self.abp_v1_1);
-        formatter.field("abp_v1_0_x", &self.abp_v1_0_x);
-        formatter.field("f_ports", &self.f_ports);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanDevice`](crate::model::LoRaWanDevice).
@@ -9874,7 +9246,7 @@ impl LoRaWanDevice {
 
 /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FPorts {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
@@ -9905,16 +9277,6 @@ impl FPorts {
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn positioning(&self) -> std::option::Option<&crate::model::Positioning> {
         self.positioning.as_ref()
-    }
-}
-impl std::fmt::Debug for FPorts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FPorts");
-        formatter.field("fuota", &self.fuota);
-        formatter.field("multicast", &self.multicast);
-        formatter.field("clock_sync", &self.clock_sync);
-        formatter.field("positioning", &self.positioning);
-        formatter.finish()
     }
 }
 /// See [`FPorts`](crate::model::FPorts).
@@ -9992,7 +9354,7 @@ impl FPorts {
 
 /// <p>ABP device object for LoRaWAN specification v1.0.x</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbpV10X {
     /// <p>The DevAddr value.</p>
     #[doc(hidden)]
@@ -10016,15 +9378,6 @@ impl AbpV10X {
     /// <p>The FCnt init value.</p>
     pub fn f_cnt_start(&self) -> std::option::Option<i32> {
         self.f_cnt_start
-    }
-}
-impl std::fmt::Debug for AbpV10X {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbpV10X");
-        formatter.field("dev_addr", &self.dev_addr);
-        formatter.field("session_keys", &self.session_keys);
-        formatter.field("f_cnt_start", &self.f_cnt_start);
-        formatter.finish()
     }
 }
 /// See [`AbpV10X`](crate::model::AbpV10X).
@@ -10090,7 +9443,7 @@ impl AbpV10X {
 
 /// <p>Session keys for ABP v1.1</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionKeysAbpV10X {
     /// <p>The NwkSKey value.</p>
     #[doc(hidden)]
@@ -10107,14 +9460,6 @@ impl SessionKeysAbpV10X {
     /// <p>The AppSKey value.</p>
     pub fn app_s_key(&self) -> std::option::Option<&str> {
         self.app_s_key.as_deref()
-    }
-}
-impl std::fmt::Debug for SessionKeysAbpV10X {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionKeysAbpV10X");
-        formatter.field("nwk_s_key", &self.nwk_s_key);
-        formatter.field("app_s_key", &self.app_s_key);
-        formatter.finish()
     }
 }
 /// See [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
@@ -10165,7 +9510,7 @@ impl SessionKeysAbpV10X {
 
 /// <p>ABP device object for LoRaWAN specification v1.1</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbpV11 {
     /// <p>The DevAddr value.</p>
     #[doc(hidden)]
@@ -10189,15 +9534,6 @@ impl AbpV11 {
     /// <p>The FCnt init value.</p>
     pub fn f_cnt_start(&self) -> std::option::Option<i32> {
         self.f_cnt_start
-    }
-}
-impl std::fmt::Debug for AbpV11 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbpV11");
-        formatter.field("dev_addr", &self.dev_addr);
-        formatter.field("session_keys", &self.session_keys);
-        formatter.field("f_cnt_start", &self.f_cnt_start);
-        formatter.finish()
     }
 }
 /// See [`AbpV11`](crate::model::AbpV11).
@@ -10263,7 +9599,7 @@ impl AbpV11 {
 
 /// <p>Session keys for ABP v1.1</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionKeysAbpV11 {
     /// <p>The FNwkSIntKey value.</p>
     #[doc(hidden)]
@@ -10294,16 +9630,6 @@ impl SessionKeysAbpV11 {
     /// <p>The AppSKey value.</p>
     pub fn app_s_key(&self) -> std::option::Option<&str> {
         self.app_s_key.as_deref()
-    }
-}
-impl std::fmt::Debug for SessionKeysAbpV11 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionKeysAbpV11");
-        formatter.field("f_nwk_s_int_key", &self.f_nwk_s_int_key);
-        formatter.field("s_nwk_s_int_key", &self.s_nwk_s_int_key);
-        formatter.field("nwk_s_enc_key", &self.nwk_s_enc_key);
-        formatter.field("app_s_key", &self.app_s_key);
-        formatter.finish()
     }
 }
 /// See [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
@@ -10387,7 +9713,7 @@ impl SessionKeysAbpV11 {
 
 /// <p>OTAA device object for v1.0.x</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OtaaV10X {
     /// <p>The AppKey value.</p>
     #[doc(hidden)]
@@ -10411,15 +9737,6 @@ impl OtaaV10X {
     /// <p>The GenAppKey value.</p>
     pub fn gen_app_key(&self) -> std::option::Option<&str> {
         self.gen_app_key.as_deref()
-    }
-}
-impl std::fmt::Debug for OtaaV10X {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OtaaV10X");
-        formatter.field("app_key", &self.app_key);
-        formatter.field("app_eui", &self.app_eui);
-        formatter.field("gen_app_key", &self.gen_app_key);
-        formatter.finish()
     }
 }
 /// See [`OtaaV10X`](crate::model::OtaaV10X).
@@ -10482,7 +9799,7 @@ impl OtaaV10X {
 
 /// <p>OTAA device object for v1.1</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OtaaV11 {
     /// <p>The AppKey value.</p>
     #[doc(hidden)]
@@ -10506,15 +9823,6 @@ impl OtaaV11 {
     /// <p>The JoinEUI value.</p>
     pub fn join_eui(&self) -> std::option::Option<&str> {
         self.join_eui.as_deref()
-    }
-}
-impl std::fmt::Debug for OtaaV11 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OtaaV11");
-        formatter.field("app_key", &self.app_key);
-        formatter.field("nwk_key", &self.nwk_key);
-        formatter.field("join_eui", &self.join_eui);
-        formatter.finish()
     }
 }
 /// See [`OtaaV11`](crate::model::OtaaV11).
@@ -10684,7 +9992,7 @@ impl AsRef<str> for WirelessDeviceIdType {
 
 /// <p>LoRaWANGetServiceProfileInfo object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanGetServiceProfileInfo {
     /// <p>The ULRate value.</p>
     #[doc(hidden)]
@@ -10820,31 +10128,6 @@ impl LoRaWanGetServiceProfileInfo {
     /// <p>The MinGwDiversity value.</p>
     pub fn min_gw_diversity(&self) -> std::option::Option<i32> {
         self.min_gw_diversity
-    }
-}
-impl std::fmt::Debug for LoRaWanGetServiceProfileInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanGetServiceProfileInfo");
-        formatter.field("ul_rate", &self.ul_rate);
-        formatter.field("ul_bucket_size", &self.ul_bucket_size);
-        formatter.field("ul_rate_policy", &self.ul_rate_policy);
-        formatter.field("dl_rate", &self.dl_rate);
-        formatter.field("dl_bucket_size", &self.dl_bucket_size);
-        formatter.field("dl_rate_policy", &self.dl_rate_policy);
-        formatter.field("add_gw_metadata", &self.add_gw_metadata);
-        formatter.field("dev_status_req_freq", &self.dev_status_req_freq);
-        formatter.field("report_dev_status_battery", &self.report_dev_status_battery);
-        formatter.field("report_dev_status_margin", &self.report_dev_status_margin);
-        formatter.field("dr_min", &self.dr_min);
-        formatter.field("dr_max", &self.dr_max);
-        formatter.field("channel_mask", &self.channel_mask);
-        formatter.field("pr_allowed", &self.pr_allowed);
-        formatter.field("hr_allowed", &self.hr_allowed);
-        formatter.field("ra_allowed", &self.ra_allowed);
-        formatter.field("nwk_geo_loc", &self.nwk_geo_loc);
-        formatter.field("target_per", &self.target_per);
-        formatter.field("min_gw_diversity", &self.min_gw_diversity);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
@@ -11197,7 +10480,7 @@ impl AsRef<str> for WirelessGatewayServiceType {
 
 /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Accuracy {
     /// <p>The horizontal accuracy of the estimated position in meters.</p>
     #[doc(hidden)]
@@ -11214,14 +10497,6 @@ impl Accuracy {
     /// <p>The vertical accuracy of the estimated position in meters.</p>
     pub fn vertical_accuracy(&self) -> std::option::Option<f32> {
         self.vertical_accuracy
-    }
-}
-impl std::fmt::Debug for Accuracy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Accuracy");
-        formatter.field("horizontal_accuracy", &self.horizontal_accuracy);
-        formatter.field("vertical_accuracy", &self.vertical_accuracy);
-        formatter.finish()
     }
 }
 /// See [`Accuracy`](crate::model::Accuracy).
@@ -11272,7 +10547,7 @@ impl Accuracy {
 
 /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanMulticastGet {
     /// <p>Supported RfRegions</p>
     #[doc(hidden)]
@@ -11303,22 +10578,6 @@ impl LoRaWanMulticastGet {
     /// <p>Number of devices that are associated to the multicast group.</p>
     pub fn number_of_devices_in_group(&self) -> std::option::Option<i32> {
         self.number_of_devices_in_group
-    }
-}
-impl std::fmt::Debug for LoRaWanMulticastGet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanMulticastGet");
-        formatter.field("rf_region", &self.rf_region);
-        formatter.field("dl_class", &self.dl_class);
-        formatter.field(
-            "number_of_devices_requested",
-            &self.number_of_devices_requested,
-        );
-        formatter.field(
-            "number_of_devices_in_group",
-            &self.number_of_devices_in_group,
-        );
-        formatter.finish()
     }
 }
 /// See [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
@@ -11396,7 +10655,7 @@ impl LoRaWanMulticastGet {
 
 /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanFuotaTaskGetInfo {
     /// <p>The frequency band (RFRegion) value.</p>
     #[doc(hidden)]
@@ -11413,14 +10672,6 @@ impl LoRaWanFuotaTaskGetInfo {
     /// <p>Start time of a FUOTA task.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LoRaWanFuotaTaskGetInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanFuotaTaskGetInfo");
-        formatter.field("rf_region", &self.rf_region);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
@@ -11585,7 +10836,7 @@ impl AsRef<str> for FuotaTaskStatus {
 
 /// <p>LoRaWANDeviceProfile object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanDeviceProfile {
     /// <p>The SupportsClassB value.</p>
     #[doc(hidden)]
@@ -11721,31 +10972,6 @@ impl LoRaWanDeviceProfile {
     /// <p>The Supports32BitFCnt value.</p>
     pub fn supports32_bit_f_cnt(&self) -> bool {
         self.supports32_bit_f_cnt
-    }
-}
-impl std::fmt::Debug for LoRaWanDeviceProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanDeviceProfile");
-        formatter.field("supports_class_b", &self.supports_class_b);
-        formatter.field("class_b_timeout", &self.class_b_timeout);
-        formatter.field("ping_slot_period", &self.ping_slot_period);
-        formatter.field("ping_slot_dr", &self.ping_slot_dr);
-        formatter.field("ping_slot_freq", &self.ping_slot_freq);
-        formatter.field("supports_class_c", &self.supports_class_c);
-        formatter.field("class_c_timeout", &self.class_c_timeout);
-        formatter.field("mac_version", &self.mac_version);
-        formatter.field("reg_params_revision", &self.reg_params_revision);
-        formatter.field("rx_delay1", &self.rx_delay1);
-        formatter.field("rx_dr_offset1", &self.rx_dr_offset1);
-        formatter.field("rx_data_rate2", &self.rx_data_rate2);
-        formatter.field("rx_freq2", &self.rx_freq2);
-        formatter.field("factory_preset_freqs_list", &self.factory_preset_freqs_list);
-        formatter.field("max_eirp", &self.max_eirp);
-        formatter.field("max_duty_cycle", &self.max_duty_cycle);
-        formatter.field("rf_region", &self.rf_region);
-        formatter.field("supports_join", &self.supports_join);
-        formatter.field("supports32_bit_f_cnt", &self.supports32_bit_f_cnt);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
@@ -12012,7 +11238,7 @@ impl LoRaWanDeviceProfile {
 
 /// <p>LoRaWANServiceProfile object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
     #[doc(hidden)]
@@ -12036,15 +11262,6 @@ impl LoRaWanServiceProfile {
     /// <p>The DrMax value.</p>
     pub fn dr_max(&self) -> std::option::Option<i32> {
         self.dr_max
-    }
-}
-impl std::fmt::Debug for LoRaWanServiceProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoRaWanServiceProfile");
-        formatter.field("add_gw_metadata", &self.add_gw_metadata);
-        formatter.field("dr_min", &self.dr_min);
-        formatter.field("dr_max", &self.dr_max);
-        formatter.finish()
     }
 }
 /// See [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
@@ -12138,7 +11355,7 @@ impl std::fmt::Debug for SidewalkAccountInfo {
 pub mod sidewalk_account_info {
 
     /// A builder for [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) app_server_private_key: std::option::Option<std::string::String>,
@@ -12173,6 +11390,14 @@ pub mod sidewalk_account_info {
                 amazon_id: self.amazon_id,
                 app_server_private_key: self.app_server_private_key,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("amazon_id", &self.amazon_id);
+            formatter.field("app_server_private_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }

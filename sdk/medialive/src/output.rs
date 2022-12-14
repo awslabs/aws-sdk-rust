@@ -2,7 +2,7 @@
 
 /// Placeholder documentation for UpdateReservationResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReservationOutput {
     /// Reserved resources available to use
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl UpdateReservationOutput {
     /// Reserved resources available to use
     pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
         self.reservation.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateReservationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReservationOutput");
-        formatter.field("reservation", &self.reservation);
-        formatter.finish()
     }
 }
 /// See [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
@@ -60,7 +53,7 @@ impl UpdateReservationOutput {
 
 /// Placeholder documentation for UpdateMultiplexProgramResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMultiplexProgramOutput {
     /// The updated multiplex program.
     #[doc(hidden)]
@@ -70,13 +63,6 @@ impl UpdateMultiplexProgramOutput {
     /// The updated multiplex program.
     pub fn multiplex_program(&self) -> std::option::Option<&crate::model::MultiplexProgram> {
         self.multiplex_program.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateMultiplexProgramOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMultiplexProgramOutput");
-        formatter.field("multiplex_program", &self.multiplex_program);
-        formatter.finish()
     }
 }
 /// See [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
@@ -118,7 +104,7 @@ impl UpdateMultiplexProgramOutput {
 
 /// Placeholder documentation for UpdateMultiplexResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMultiplexOutput {
     /// The updated multiplex.
     #[doc(hidden)]
@@ -128,13 +114,6 @@ impl UpdateMultiplexOutput {
     /// The updated multiplex.
     pub fn multiplex(&self) -> std::option::Option<&crate::model::Multiplex> {
         self.multiplex.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateMultiplexOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMultiplexOutput");
-        formatter.field("multiplex", &self.multiplex);
-        formatter.finish()
     }
 }
 /// See [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
@@ -176,7 +155,7 @@ impl UpdateMultiplexOutput {
 
 /// Placeholder documentation for UpdateInputSecurityGroupResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInputSecurityGroupOutput {
     /// An Input Security Group
     #[doc(hidden)]
@@ -186,13 +165,6 @@ impl UpdateInputSecurityGroupOutput {
     /// An Input Security Group
     pub fn security_group(&self) -> std::option::Option<&crate::model::InputSecurityGroup> {
         self.security_group.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateInputSecurityGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInputSecurityGroupOutput");
-        formatter.field("security_group", &self.security_group);
-        formatter.finish()
     }
 }
 /// See [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
@@ -234,7 +206,7 @@ impl UpdateInputSecurityGroupOutput {
 
 /// Placeholder documentation for UpdateInputDeviceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInputDeviceOutput {
     /// The unique ARN of the input device.
     #[doc(hidden)]
@@ -329,27 +301,6 @@ impl UpdateInputDeviceOutput {
         &self,
     ) -> std::option::Option<&crate::model::InputDeviceUhdSettings> {
         self.uhd_device_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateInputDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInputDeviceOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field(
-            "device_settings_sync_state",
-            &self.device_settings_sync_state,
-        );
-        formatter.field("device_update_status", &self.device_update_status);
-        formatter.field("hd_device_settings", &self.hd_device_settings);
-        formatter.field("id", &self.id);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("name", &self.name);
-        formatter.field("network_settings", &self.network_settings);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("uhd_device_settings", &self.uhd_device_settings);
-        formatter.finish()
     }
 }
 /// See [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
@@ -548,7 +499,7 @@ impl UpdateInputDeviceOutput {
 
 /// Placeholder documentation for UpdateInputResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInputOutput {
     /// Placeholder documentation for Input
     #[doc(hidden)]
@@ -558,13 +509,6 @@ impl UpdateInputOutput {
     /// Placeholder documentation for Input
     pub fn input(&self) -> std::option::Option<&crate::model::Input> {
         self.input.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateInputOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInputOutput");
-        formatter.field("input", &self.input);
-        formatter.finish()
     }
 }
 /// See [`UpdateInputOutput`](crate::output::UpdateInputOutput).
@@ -601,7 +545,7 @@ impl UpdateInputOutput {
 
 /// Placeholder documentation for UpdateChannelClassResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelClassOutput {
     /// Placeholder documentation for Channel
     #[doc(hidden)]
@@ -611,13 +555,6 @@ impl UpdateChannelClassOutput {
     /// Placeholder documentation for Channel
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateChannelClassOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelClassOutput");
-        formatter.field("channel", &self.channel);
-        formatter.finish()
     }
 }
 /// See [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
@@ -656,7 +593,7 @@ impl UpdateChannelClassOutput {
 
 /// Placeholder documentation for UpdateChannelResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelOutput {
     /// Placeholder documentation for Channel
     #[doc(hidden)]
@@ -666,13 +603,6 @@ impl UpdateChannelOutput {
     /// Placeholder documentation for Channel
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelOutput");
-        formatter.field("channel", &self.channel);
-        formatter.finish()
     }
 }
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
@@ -711,14 +641,8 @@ impl UpdateChannelOutput {
 
 /// Placeholder documentation for TransferInputDeviceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransferInputDeviceOutput {}
-impl std::fmt::Debug for TransferInputDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransferInputDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
 pub mod transfer_input_device_output {
 
@@ -741,7 +665,7 @@ impl TransferInputDeviceOutput {
 
 /// Placeholder documentation for StopMultiplexResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMultiplexOutput {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
@@ -818,22 +742,6 @@ impl StopMultiplexOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for StopMultiplexOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMultiplexOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("id", &self.id);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("name", &self.name);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("program_count", &self.program_count);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
@@ -1022,7 +930,7 @@ impl StopMultiplexOutput {
 
 /// Placeholder documentation for StopChannelResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopChannelOutput {
     /// The unique arn of the channel.
     #[doc(hidden)]
@@ -1157,30 +1065,6 @@ impl StopChannelOutput {
     /// Settings for VPC output
     pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
-    }
-}
-impl std::fmt::Debug for StopChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopChannelOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("cdi_input_specification", &self.cdi_input_specification);
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("egress_endpoints", &self.egress_endpoints);
-        formatter.field("encoder_settings", &self.encoder_settings);
-        formatter.field("id", &self.id);
-        formatter.field("input_attachments", &self.input_attachments);
-        formatter.field("input_specification", &self.input_specification);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.field("name", &self.name);
-        formatter.field("pipeline_details", &self.pipeline_details);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
     }
 }
 /// See [`StopChannelOutput`](crate::output::StopChannelOutput).
@@ -1502,7 +1386,7 @@ impl StopChannelOutput {
 
 /// Placeholder documentation for StartMultiplexResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMultiplexOutput {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
@@ -1579,22 +1463,6 @@ impl StartMultiplexOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for StartMultiplexOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMultiplexOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("id", &self.id);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("name", &self.name);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("program_count", &self.program_count);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
@@ -1783,14 +1651,8 @@ impl StartMultiplexOutput {
 
 /// Placeholder documentation for StartInputDeviceMaintenanceWindowResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartInputDeviceMaintenanceWindowOutput {}
-impl std::fmt::Debug for StartInputDeviceMaintenanceWindowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartInputDeviceMaintenanceWindowOutput");
-        formatter.finish()
-    }
-}
 /// See [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
 pub mod start_input_device_maintenance_window_output {
 
@@ -1813,7 +1675,7 @@ impl StartInputDeviceMaintenanceWindowOutput {
 
 /// Placeholder documentation for StartChannelResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChannelOutput {
     /// The unique arn of the channel.
     #[doc(hidden)]
@@ -1948,30 +1810,6 @@ impl StartChannelOutput {
     /// Settings for VPC output
     pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
-    }
-}
-impl std::fmt::Debug for StartChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChannelOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("cdi_input_specification", &self.cdi_input_specification);
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("egress_endpoints", &self.egress_endpoints);
-        formatter.field("encoder_settings", &self.encoder_settings);
-        formatter.field("id", &self.id);
-        formatter.field("input_attachments", &self.input_attachments);
-        formatter.field("input_specification", &self.input_specification);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.field("name", &self.name);
-        formatter.field("pipeline_details", &self.pipeline_details);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
     }
 }
 /// See [`StartChannelOutput`](crate::output::StartChannelOutput).
@@ -2293,14 +2131,8 @@ impl StartChannelOutput {
 
 /// Placeholder documentation for RejectInputDeviceTransferResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectInputDeviceTransferOutput {}
-impl std::fmt::Debug for RejectInputDeviceTransferOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectInputDeviceTransferOutput");
-        formatter.finish()
-    }
-}
 /// See [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
 pub mod reject_input_device_transfer_output {
 
@@ -2323,14 +2155,8 @@ impl RejectInputDeviceTransferOutput {
 
 /// Placeholder documentation for RebootInputDeviceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootInputDeviceOutput {}
-impl std::fmt::Debug for RebootInputDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootInputDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
 pub mod reboot_input_device_output {
 
@@ -2353,7 +2179,7 @@ impl RebootInputDeviceOutput {
 
 /// Placeholder documentation for PurchaseOfferingResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseOfferingOutput {
     /// Reserved resources available to use
     #[doc(hidden)]
@@ -2363,13 +2189,6 @@ impl PurchaseOfferingOutput {
     /// Reserved resources available to use
     pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
         self.reservation.as_ref()
-    }
-}
-impl std::fmt::Debug for PurchaseOfferingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseOfferingOutput");
-        formatter.field("reservation", &self.reservation);
-        formatter.finish()
     }
 }
 /// See [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
@@ -2411,7 +2230,7 @@ impl PurchaseOfferingOutput {
 
 /// Placeholder documentation for ListTagsForResourceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// Placeholder documentation for Tags
     #[doc(hidden)]
@@ -2425,13 +2244,6 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2485,7 +2297,7 @@ impl ListTagsForResourceOutput {
 
 /// Placeholder documentation for ListReservationsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReservationsOutput {
     /// Token to retrieve the next page of results
     #[doc(hidden)]
@@ -2502,14 +2314,6 @@ impl ListReservationsOutput {
     /// List of reservations
     pub fn reservations(&self) -> std::option::Option<&[crate::model::Reservation]> {
         self.reservations.as_deref()
-    }
-}
-impl std::fmt::Debug for ListReservationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReservationsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("reservations", &self.reservations);
-        formatter.finish()
     }
 }
 /// See [`ListReservationsOutput`](crate::output::ListReservationsOutput).
@@ -2569,7 +2373,7 @@ impl ListReservationsOutput {
 
 /// Placeholder documentation for ListOfferingsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOfferingsOutput {
     /// Token to retrieve the next page of results
     #[doc(hidden)]
@@ -2586,14 +2390,6 @@ impl ListOfferingsOutput {
     /// List of offerings
     pub fn offerings(&self) -> std::option::Option<&[crate::model::Offering]> {
         self.offerings.as_deref()
-    }
-}
-impl std::fmt::Debug for ListOfferingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOfferingsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("offerings", &self.offerings);
-        formatter.finish()
     }
 }
 /// See [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
@@ -2653,7 +2449,7 @@ impl ListOfferingsOutput {
 
 /// Placeholder documentation for ListMultiplexProgramsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultiplexProgramsOutput {
     /// List of multiplex programs.
     #[doc(hidden)]
@@ -2673,14 +2469,6 @@ impl ListMultiplexProgramsOutput {
     /// Token for the next ListMultiplexProgram request.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListMultiplexProgramsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultiplexProgramsOutput");
-        formatter.field("multiplex_programs", &self.multiplex_programs);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
@@ -2741,7 +2529,7 @@ impl ListMultiplexProgramsOutput {
 
 /// Placeholder documentation for ListMultiplexesResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultiplexesOutput {
     /// List of multiplexes.
     #[doc(hidden)]
@@ -2758,14 +2546,6 @@ impl ListMultiplexesOutput {
     /// Token for the next ListMultiplexes request.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListMultiplexesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultiplexesOutput");
-        formatter.field("multiplexes", &self.multiplexes);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
@@ -2825,7 +2605,7 @@ impl ListMultiplexesOutput {
 
 /// Placeholder documentation for ListInputSecurityGroupsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputSecurityGroupsOutput {
     /// List of input security groups
     #[doc(hidden)]
@@ -2844,14 +2624,6 @@ impl ListInputSecurityGroupsOutput {
     /// Placeholder documentation for __string
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInputSecurityGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputSecurityGroupsOutput");
-        formatter.field("input_security_groups", &self.input_security_groups);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
@@ -2912,7 +2684,7 @@ impl ListInputSecurityGroupsOutput {
 
 /// Placeholder documentation for ListInputsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputsOutput {
     /// Placeholder documentation for __listOfInput
     #[doc(hidden)]
@@ -2929,14 +2701,6 @@ impl ListInputsOutput {
     /// Placeholder documentation for __string
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInputsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputsOutput");
-        formatter.field("inputs", &self.inputs);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListInputsOutput`](crate::output::ListInputsOutput).
@@ -2996,7 +2760,7 @@ impl ListInputsOutput {
 
 /// Placeholder documentation for ListInputDeviceTransfersResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputDeviceTransfersOutput {
     /// The list of devices that you are transferring or are being transferred to you.
     #[doc(hidden)]
@@ -3016,14 +2780,6 @@ impl ListInputDeviceTransfersOutput {
     /// A token to get additional list results.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInputDeviceTransfersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputDeviceTransfersOutput");
-        formatter.field("input_device_transfers", &self.input_device_transfers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
@@ -3087,7 +2843,7 @@ impl ListInputDeviceTransfersOutput {
 
 /// Placeholder documentation for ListInputDevicesResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputDevicesOutput {
     /// The list of input devices.
     #[doc(hidden)]
@@ -3104,14 +2860,6 @@ impl ListInputDevicesOutput {
     /// A token to get additional list results.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInputDevicesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputDevicesOutput");
-        formatter.field("input_devices", &self.input_devices);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
@@ -3172,7 +2920,7 @@ impl ListInputDevicesOutput {
 
 /// Placeholder documentation for ListChannelsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsOutput {
     /// Placeholder documentation for __listOfChannelSummary
     #[doc(hidden)]
@@ -3189,14 +2937,6 @@ impl ListChannelsOutput {
     /// Placeholder documentation for __string
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListChannelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsOutput");
-        formatter.field("channels", &self.channels);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
@@ -3256,7 +2996,7 @@ impl ListChannelsOutput {
 
 /// Placeholder documentation for DescribeScheduleResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScheduleOutput {
     /// The next token; for use in pagination.
     #[doc(hidden)]
@@ -3273,14 +3013,6 @@ impl DescribeScheduleOutput {
     /// The list of actions in the schedule.
     pub fn schedule_actions(&self) -> std::option::Option<&[crate::model::ScheduleAction]> {
         self.schedule_actions.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScheduleOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("schedule_actions", &self.schedule_actions);
-        formatter.finish()
     }
 }
 /// See [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
@@ -3341,7 +3073,7 @@ impl DescribeScheduleOutput {
 
 /// Placeholder documentation for DescribeReservationResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservationOutput {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     #[doc(hidden)]
@@ -3483,31 +3215,6 @@ impl DescribeReservationOutput {
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn usage_price(&self) -> f64 {
         self.usage_price
-    }
-}
-impl std::fmt::Debug for DescribeReservationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservationOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("count", &self.count);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("duration", &self.duration);
-        formatter.field("duration_units", &self.duration_units);
-        formatter.field("end", &self.end);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("name", &self.name);
-        formatter.field("offering_description", &self.offering_description);
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("region", &self.region);
-        formatter.field("renewal_settings", &self.renewal_settings);
-        formatter.field("reservation_id", &self.reservation_id);
-        formatter.field("resource_specification", &self.resource_specification);
-        formatter.field("start", &self.start);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.finish()
     }
 }
 /// See [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
@@ -3807,7 +3514,7 @@ impl DescribeReservationOutput {
 
 /// Placeholder documentation for DescribeOfferingResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOfferingOutput {
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
     #[doc(hidden)]
@@ -3889,23 +3596,6 @@ impl DescribeOfferingOutput {
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn usage_price(&self) -> f64 {
         self.usage_price
-    }
-}
-impl std::fmt::Debug for DescribeOfferingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOfferingOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("duration", &self.duration);
-        formatter.field("duration_units", &self.duration_units);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("offering_description", &self.offering_description);
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("region", &self.region);
-        formatter.field("resource_specification", &self.resource_specification);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.finish()
     }
 }
 /// See [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
@@ -4083,7 +3773,7 @@ impl DescribeOfferingOutput {
 
 /// Placeholder documentation for DescribeMultiplexProgramResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMultiplexProgramOutput {
     /// The MediaLive channel associated with the program.
     #[doc(hidden)]
@@ -4129,20 +3819,6 @@ impl DescribeMultiplexProgramOutput {
     /// The name of the multiplex program.
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeMultiplexProgramOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMultiplexProgramOutput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field(
-            "multiplex_program_settings",
-            &self.multiplex_program_settings,
-        );
-        formatter.field("packet_identifiers_map", &self.packet_identifiers_map);
-        formatter.field("pipeline_details", &self.pipeline_details);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
     }
 }
 /// See [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
@@ -4256,7 +3932,7 @@ impl DescribeMultiplexProgramOutput {
 
 /// Placeholder documentation for DescribeMultiplexResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMultiplexOutput {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
@@ -4333,22 +4009,6 @@ impl DescribeMultiplexOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeMultiplexOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMultiplexOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("id", &self.id);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("name", &self.name);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("program_count", &self.program_count);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
@@ -4537,7 +4197,7 @@ impl DescribeMultiplexOutput {
 
 /// Placeholder documentation for DescribeInputSecurityGroupResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputSecurityGroupOutput {
     /// Unique ARN of Input Security Group
     #[doc(hidden)]
@@ -4586,18 +4246,6 @@ impl DescribeInputSecurityGroupOutput {
     /// Whitelist rules and their sync status
     pub fn whitelist_rules(&self) -> std::option::Option<&[crate::model::InputWhitelistRule]> {
         self.whitelist_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInputSecurityGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputSecurityGroupOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("whitelist_rules", &self.whitelist_rules);
-        formatter.finish()
     }
 }
 /// See [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
@@ -4735,6 +4383,7 @@ impl DescribeInputSecurityGroupOutput {
 
 /// Placeholder documentation for DescribeInputDeviceThumbnailResponse
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeInputDeviceThumbnailOutput {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     pub body: aws_smithy_http::byte_stream::ByteStream,
@@ -4771,17 +4420,6 @@ impl DescribeInputDeviceThumbnailOutput {
     /// The date and time the thumbnail was last updated at the device.
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeInputDeviceThumbnailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputDeviceThumbnailOutput");
-        formatter.field("body", &self.body);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_length", &self.content_length);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.finish()
     }
 }
 /// See [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
@@ -4877,7 +4515,7 @@ impl DescribeInputDeviceThumbnailOutput {
 
 /// Placeholder documentation for DescribeInputDeviceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputDeviceOutput {
     /// The unique ARN of the input device.
     #[doc(hidden)]
@@ -4972,27 +4610,6 @@ impl DescribeInputDeviceOutput {
         &self,
     ) -> std::option::Option<&crate::model::InputDeviceUhdSettings> {
         self.uhd_device_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeInputDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputDeviceOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field(
-            "device_settings_sync_state",
-            &self.device_settings_sync_state,
-        );
-        formatter.field("device_update_status", &self.device_update_status);
-        formatter.field("hd_device_settings", &self.hd_device_settings);
-        formatter.field("id", &self.id);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("name", &self.name);
-        formatter.field("network_settings", &self.network_settings);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("uhd_device_settings", &self.uhd_device_settings);
-        formatter.finish()
     }
 }
 /// See [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
@@ -5191,7 +4808,7 @@ impl DescribeInputDeviceOutput {
 
 /// Placeholder documentation for DescribeInputResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputOutput {
     /// The Unique ARN of the input (generated, immutable).
     #[doc(hidden)]
@@ -5310,28 +4927,6 @@ impl DescribeInputOutput {
     /// The different types of inputs that AWS Elemental MediaLive supports.
     pub fn r#type(&self) -> std::option::Option<&crate::model::InputType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeInputOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("attached_channels", &self.attached_channels);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("id", &self.id);
-        formatter.field("input_class", &self.input_class);
-        formatter.field("input_devices", &self.input_devices);
-        formatter.field("input_partner_ids", &self.input_partner_ids);
-        formatter.field("input_source_type", &self.input_source_type);
-        formatter.field("media_connect_flows", &self.media_connect_flows);
-        formatter.field("name", &self.name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("sources", &self.sources);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`DescribeInputOutput`](crate::output::DescribeInputOutput).
@@ -5638,7 +5233,7 @@ impl DescribeInputOutput {
 
 /// Placeholder documentation for DescribeChannelResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelOutput {
     /// The unique arn of the channel.
     #[doc(hidden)]
@@ -5773,30 +5368,6 @@ impl DescribeChannelOutput {
     /// Settings for VPC output
     pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("cdi_input_specification", &self.cdi_input_specification);
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("egress_endpoints", &self.egress_endpoints);
-        formatter.field("encoder_settings", &self.encoder_settings);
-        formatter.field("id", &self.id);
-        formatter.field("input_attachments", &self.input_attachments);
-        formatter.field("input_specification", &self.input_specification);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.field("name", &self.name);
-        formatter.field("pipeline_details", &self.pipeline_details);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
     }
 }
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
@@ -6118,14 +5689,8 @@ impl DescribeChannelOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsOutput {}
-impl std::fmt::Debug for DeleteTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
 pub mod delete_tags_output {
 
@@ -6148,14 +5713,8 @@ impl DeleteTagsOutput {
 
 /// Placeholder documentation for DeleteScheduleResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduleOutput {}
-impl std::fmt::Debug for DeleteScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScheduleOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
 pub mod delete_schedule_output {
 
@@ -6178,7 +5737,7 @@ impl DeleteScheduleOutput {
 
 /// Placeholder documentation for DeleteReservationResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReservationOutput {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     #[doc(hidden)]
@@ -6320,31 +5879,6 @@ impl DeleteReservationOutput {
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn usage_price(&self) -> f64 {
         self.usage_price
-    }
-}
-impl std::fmt::Debug for DeleteReservationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReservationOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("count", &self.count);
-        formatter.field("currency_code", &self.currency_code);
-        formatter.field("duration", &self.duration);
-        formatter.field("duration_units", &self.duration_units);
-        formatter.field("end", &self.end);
-        formatter.field("fixed_price", &self.fixed_price);
-        formatter.field("name", &self.name);
-        formatter.field("offering_description", &self.offering_description);
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("offering_type", &self.offering_type);
-        formatter.field("region", &self.region);
-        formatter.field("renewal_settings", &self.renewal_settings);
-        formatter.field("reservation_id", &self.reservation_id);
-        formatter.field("resource_specification", &self.resource_specification);
-        formatter.field("start", &self.start);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("usage_price", &self.usage_price);
-        formatter.finish()
     }
 }
 /// See [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
@@ -6644,7 +6178,7 @@ impl DeleteReservationOutput {
 
 /// Placeholder documentation for DeleteMultiplexProgramResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMultiplexProgramOutput {
     /// The MediaLive channel associated with the program.
     #[doc(hidden)]
@@ -6690,20 +6224,6 @@ impl DeleteMultiplexProgramOutput {
     /// The name of the multiplex program.
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteMultiplexProgramOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMultiplexProgramOutput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field(
-            "multiplex_program_settings",
-            &self.multiplex_program_settings,
-        );
-        formatter.field("packet_identifiers_map", &self.packet_identifiers_map);
-        formatter.field("pipeline_details", &self.pipeline_details);
-        formatter.field("program_name", &self.program_name);
-        formatter.finish()
     }
 }
 /// See [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
@@ -6817,7 +6337,7 @@ impl DeleteMultiplexProgramOutput {
 
 /// Placeholder documentation for DeleteMultiplexResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMultiplexOutput {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
@@ -6894,22 +6414,6 @@ impl DeleteMultiplexOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteMultiplexOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMultiplexOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("id", &self.id);
-        formatter.field("multiplex_settings", &self.multiplex_settings);
-        formatter.field("name", &self.name);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("program_count", &self.program_count);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
@@ -7098,14 +6602,8 @@ impl DeleteMultiplexOutput {
 
 /// Placeholder documentation for DeleteInputSecurityGroupResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupOutput {}
-impl std::fmt::Debug for DeleteInputSecurityGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInputSecurityGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
 pub mod delete_input_security_group_output {
 
@@ -7128,14 +6626,8 @@ impl DeleteInputSecurityGroupOutput {
 
 /// Placeholder documentation for DeleteInputResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInputOutput {}
-impl std::fmt::Debug for DeleteInputOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInputOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteInputOutput`](crate::output::DeleteInputOutput).
 pub mod delete_input_output {
 
@@ -7158,7 +6650,7 @@ impl DeleteInputOutput {
 
 /// Placeholder documentation for DeleteChannelResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelOutput {
     /// The unique arn of the channel.
     #[doc(hidden)]
@@ -7293,30 +6785,6 @@ impl DeleteChannelOutput {
     /// Settings for VPC output
     pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("cdi_input_specification", &self.cdi_input_specification);
-        formatter.field("channel_class", &self.channel_class);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("egress_endpoints", &self.egress_endpoints);
-        formatter.field("encoder_settings", &self.encoder_settings);
-        formatter.field("id", &self.id);
-        formatter.field("input_attachments", &self.input_attachments);
-        formatter.field("input_specification", &self.input_specification);
-        formatter.field("log_level", &self.log_level);
-        formatter.field("maintenance", &self.maintenance);
-        formatter.field("name", &self.name);
-        formatter.field("pipeline_details", &self.pipeline_details);
-        formatter.field("pipelines_running_count", &self.pipelines_running_count);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
     }
 }
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
@@ -7638,14 +7106,8 @@ impl DeleteChannelOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTagsOutput {}
-impl std::fmt::Debug for CreateTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateTagsOutput`](crate::output::CreateTagsOutput).
 pub mod create_tags_output {
 
@@ -7668,7 +7130,7 @@ impl CreateTagsOutput {
 
 /// Placeholder documentation for CreatePartnerInputResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePartnerInputOutput {
     /// Placeholder documentation for Input
     #[doc(hidden)]
@@ -7678,13 +7140,6 @@ impl CreatePartnerInputOutput {
     /// Placeholder documentation for Input
     pub fn input(&self) -> std::option::Option<&crate::model::Input> {
         self.input.as_ref()
-    }
-}
-impl std::fmt::Debug for CreatePartnerInputOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePartnerInputOutput");
-        formatter.field("input", &self.input);
-        formatter.finish()
     }
 }
 /// See [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
@@ -7721,7 +7176,7 @@ impl CreatePartnerInputOutput {
 
 /// Placeholder documentation for CreateMultiplexProgramResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMultiplexProgramOutput {
     /// The newly created multiplex program.
     #[doc(hidden)]
@@ -7731,13 +7186,6 @@ impl CreateMultiplexProgramOutput {
     /// The newly created multiplex program.
     pub fn multiplex_program(&self) -> std::option::Option<&crate::model::MultiplexProgram> {
         self.multiplex_program.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateMultiplexProgramOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMultiplexProgramOutput");
-        formatter.field("multiplex_program", &self.multiplex_program);
-        formatter.finish()
     }
 }
 /// See [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
@@ -7779,7 +7227,7 @@ impl CreateMultiplexProgramOutput {
 
 /// Placeholder documentation for CreateMultiplexResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMultiplexOutput {
     /// The newly created multiplex.
     #[doc(hidden)]
@@ -7789,13 +7237,6 @@ impl CreateMultiplexOutput {
     /// The newly created multiplex.
     pub fn multiplex(&self) -> std::option::Option<&crate::model::Multiplex> {
         self.multiplex.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateMultiplexOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMultiplexOutput");
-        formatter.field("multiplex", &self.multiplex);
-        formatter.finish()
     }
 }
 /// See [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
@@ -7837,7 +7278,7 @@ impl CreateMultiplexOutput {
 
 /// Placeholder documentation for CreateInputSecurityGroupResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInputSecurityGroupOutput {
     /// An Input Security Group
     #[doc(hidden)]
@@ -7847,13 +7288,6 @@ impl CreateInputSecurityGroupOutput {
     /// An Input Security Group
     pub fn security_group(&self) -> std::option::Option<&crate::model::InputSecurityGroup> {
         self.security_group.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateInputSecurityGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInputSecurityGroupOutput");
-        formatter.field("security_group", &self.security_group);
-        formatter.finish()
     }
 }
 /// See [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
@@ -7895,7 +7329,7 @@ impl CreateInputSecurityGroupOutput {
 
 /// Placeholder documentation for CreateInputResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInputOutput {
     /// Placeholder documentation for Input
     #[doc(hidden)]
@@ -7905,13 +7339,6 @@ impl CreateInputOutput {
     /// Placeholder documentation for Input
     pub fn input(&self) -> std::option::Option<&crate::model::Input> {
         self.input.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateInputOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInputOutput");
-        formatter.field("input", &self.input);
-        formatter.finish()
     }
 }
 /// See [`CreateInputOutput`](crate::output::CreateInputOutput).
@@ -7948,7 +7375,7 @@ impl CreateInputOutput {
 
 /// Placeholder documentation for CreateChannelResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelOutput {
     /// Placeholder documentation for Channel
     #[doc(hidden)]
@@ -7958,13 +7385,6 @@ impl CreateChannelOutput {
     /// Placeholder documentation for Channel
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelOutput");
-        formatter.field("channel", &self.channel);
-        formatter.finish()
     }
 }
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
@@ -8003,14 +7423,8 @@ impl CreateChannelOutput {
 
 /// Placeholder documentation for ClaimDeviceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClaimDeviceOutput {}
-impl std::fmt::Debug for ClaimDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClaimDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
 pub mod claim_device_output {
 
@@ -8033,14 +7447,8 @@ impl ClaimDeviceOutput {
 
 /// Placeholder documentation for CancelInputDeviceTransferResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelInputDeviceTransferOutput {}
-impl std::fmt::Debug for CancelInputDeviceTransferOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelInputDeviceTransferOutput");
-        formatter.finish()
-    }
-}
 /// See [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
 pub mod cancel_input_device_transfer_output {
 
@@ -8063,7 +7471,7 @@ impl CancelInputDeviceTransferOutput {
 
 /// Placeholder documentation for BatchUpdateScheduleResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateScheduleOutput {
     /// Schedule actions created in the schedule.
     #[doc(hidden)]
@@ -8080,14 +7488,6 @@ impl BatchUpdateScheduleOutput {
     /// Schedule actions deleted from the schedule.
     pub fn deletes(&self) -> std::option::Option<&crate::model::BatchScheduleActionDeleteResult> {
         self.deletes.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchUpdateScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateScheduleOutput");
-        formatter.field("creates", &self.creates);
-        formatter.field("deletes", &self.deletes);
-        formatter.finish()
     }
 }
 /// See [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
@@ -8144,7 +7544,7 @@ impl BatchUpdateScheduleOutput {
 
 /// Placeholder documentation for BatchStopResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStopOutput {
     /// List of failed operations
     #[doc(hidden)]
@@ -8161,14 +7561,6 @@ impl BatchStopOutput {
     /// List of successful operations
     pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
         self.successful.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchStopOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStopOutput");
-        formatter.field("failed", &self.failed);
-        formatter.field("successful", &self.successful);
-        formatter.finish()
     }
 }
 /// See [`BatchStopOutput`](crate::output::BatchStopOutput).
@@ -8238,7 +7630,7 @@ impl BatchStopOutput {
 
 /// Placeholder documentation for BatchStartResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStartOutput {
     /// List of failed operations
     #[doc(hidden)]
@@ -8255,14 +7647,6 @@ impl BatchStartOutput {
     /// List of successful operations
     pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
         self.successful.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchStartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStartOutput");
-        formatter.field("failed", &self.failed);
-        formatter.field("successful", &self.successful);
-        formatter.finish()
     }
 }
 /// See [`BatchStartOutput`](crate::output::BatchStartOutput).
@@ -8332,7 +7716,7 @@ impl BatchStartOutput {
 
 /// Placeholder documentation for BatchDeleteResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteOutput {
     /// List of failed operations
     #[doc(hidden)]
@@ -8349,14 +7733,6 @@ impl BatchDeleteOutput {
     /// List of successful operations
     pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
         self.successful.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteOutput");
-        formatter.field("failed", &self.failed);
-        formatter.field("successful", &self.successful);
-        formatter.finish()
     }
 }
 /// See [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
@@ -8426,14 +7802,8 @@ impl BatchDeleteOutput {
 
 /// Placeholder documentation for AcceptInputDeviceTransferResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptInputDeviceTransferOutput {}
-impl std::fmt::Debug for AcceptInputDeviceTransferOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptInputDeviceTransferOutput");
-        formatter.finish()
-    }
-}
 /// See [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
 pub mod accept_input_device_transfer_output {
 

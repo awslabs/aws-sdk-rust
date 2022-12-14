@@ -1325,7 +1325,7 @@ impl CreateLocationFsxOpenZfsInput {
 pub mod create_location_fsx_windows_input {
 
     /// A builder for [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
@@ -1457,6 +1457,19 @@ pub mod create_location_fsx_windows_input {
                 domain: self.domain,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
+            formatter.field("security_group_arns", &self.security_group_arns);
+            formatter.field("tags", &self.tags);
+            formatter.field("user", &self.user);
+            formatter.field("domain", &self.domain);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2162,7 +2175,7 @@ impl CreateLocationNfsInput {
 pub mod create_location_object_storage_input {
 
     /// A builder for [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) server_hostname: std::option::Option<std::string::String>,
         pub(crate) server_port: std::option::Option<i32>,
@@ -2307,6 +2320,21 @@ pub mod create_location_object_storage_input {
                 agent_arns: self.agent_arns,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("server_hostname", &self.server_hostname);
+            formatter.field("server_port", &self.server_port);
+            formatter.field("server_protocol", &self.server_protocol);
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("bucket_name", &self.bucket_name);
+            formatter.field("access_key", &self.access_key);
+            formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("agent_arns", &self.agent_arns);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2663,7 +2691,7 @@ impl CreateLocationS3Input {
 pub mod create_location_smb_input {
 
     /// A builder for [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) server_hostname: std::option::Option<std::string::String>,
@@ -2808,6 +2836,20 @@ pub mod create_location_smb_input {
                 mount_options: self.mount_options,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("server_hostname", &self.server_hostname);
+            formatter.field("user", &self.user);
+            formatter.field("domain", &self.domain);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("agent_arns", &self.agent_arns);
+            formatter.field("mount_options", &self.mount_options);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -7640,7 +7682,7 @@ impl UpdateLocationNfsInput {
 pub mod update_location_object_storage_input {
 
     /// A builder for [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) server_port: std::option::Option<i32>,
@@ -7749,6 +7791,19 @@ pub mod update_location_object_storage_input {
                 secret_key: self.secret_key,
                 agent_arns: self.agent_arns,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("location_arn", &self.location_arn);
+            formatter.field("server_port", &self.server_port);
+            formatter.field("server_protocol", &self.server_protocol);
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("access_key", &self.access_key);
+            formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("agent_arns", &self.agent_arns);
+            formatter.finish()
         }
     }
 }
@@ -7870,7 +7925,7 @@ impl UpdateLocationObjectStorageInput {
 pub mod update_location_smb_input {
 
     /// A builder for [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -7995,6 +8050,19 @@ pub mod update_location_smb_input {
                 agent_arns: self.agent_arns,
                 mount_options: self.mount_options,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("location_arn", &self.location_arn);
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("user", &self.user);
+            formatter.field("domain", &self.domain);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("agent_arns", &self.agent_arns);
+            formatter.field("mount_options", &self.mount_options);
+            formatter.finish()
         }
     }
 }
@@ -8524,7 +8592,7 @@ impl UpdateTaskExecutionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
     #[doc(hidden)]
@@ -8545,18 +8613,10 @@ impl UpdateTaskExecutionInput {
         self.options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTaskExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTaskExecutionInput");
-        formatter.field("task_execution_arn", &self.task_execution_arn);
-        formatter.field("options", &self.options);
-        formatter.finish()
-    }
-}
 
 /// <p>UpdateTaskResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
     #[doc(hidden)]
@@ -8612,19 +8672,6 @@ impl UpdateTaskInput {
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTaskInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("options", &self.options);
-        formatter.field("excludes", &self.excludes);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("name", &self.name);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("includes", &self.includes);
-        formatter.finish()
     }
 }
 
@@ -8788,7 +8835,7 @@ impl std::fmt::Debug for UpdateLocationObjectStorageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
     #[doc(hidden)]
@@ -8829,20 +8876,10 @@ impl UpdateLocationNfsInput {
         self.mount_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLocationNfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLocationNfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("on_prem_config", &self.on_prem_config);
-        formatter.field("mount_options", &self.mount_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLocationHdfsInput {
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
     #[doc(hidden)]
@@ -8940,29 +8977,10 @@ impl UpdateLocationHdfsInput {
         self.agent_arns.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLocationHdfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLocationHdfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("name_nodes", &self.name_nodes);
-        formatter.field("block_size", &self.block_size);
-        formatter.field("replication_factor", &self.replication_factor);
-        formatter.field("kms_key_provider_uri", &self.kms_key_provider_uri);
-        formatter.field("qop_configuration", &self.qop_configuration);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("simple_user", &self.simple_user);
-        formatter.field("kerberos_principal", &self.kerberos_principal);
-        formatter.field("kerberos_keytab", &self.kerberos_keytab);
-        formatter.field("kerberos_krb5_conf", &self.kerberos_krb5_conf);
-        formatter.field("agent_arns", &self.agent_arns);
-        formatter.finish()
-    }
-}
 
 /// <p>UpdateAgentRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
     #[doc(hidden)]
@@ -8981,18 +8999,10 @@ impl UpdateAgentInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAgentInput");
-        formatter.field("agent_arn", &self.agent_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>UntagResourceRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
     #[doc(hidden)]
@@ -9011,18 +9021,10 @@ impl UntagResourceInput {
         self.keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("keys", &self.keys);
-        formatter.finish()
-    }
-}
 
 /// <p>TagResourceRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
     #[doc(hidden)]
@@ -9041,18 +9043,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>StartTaskExecutionRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
     #[doc(hidden)]
@@ -9089,20 +9083,10 @@ impl StartTaskExecutionInput {
         self.excludes.as_deref()
     }
 }
-impl std::fmt::Debug for StartTaskExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTaskExecutionInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("override_options", &self.override_options);
-        formatter.field("includes", &self.includes);
-        formatter.field("excludes", &self.excludes);
-        formatter.finish()
-    }
-}
 
 /// <p>ListTasksRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTasksInput {
     /// <p>The maximum number of tasks to return.</p>
     #[doc(hidden)]
@@ -9128,19 +9112,10 @@ impl ListTasksInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTasksInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p>ListTaskExecutions</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTaskExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
     #[doc(hidden)]
@@ -9166,19 +9141,10 @@ impl ListTaskExecutionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTaskExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTaskExecutionsInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>ListTagsForResourceRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
     #[doc(hidden)]
@@ -9204,19 +9170,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>ListLocationsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLocationsInput {
     /// <p>The maximum number of locations to return.</p>
     #[doc(hidden)]
@@ -9242,19 +9199,10 @@ impl ListLocationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLocationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p>ListAgentsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAgentsInput {
     /// <p>The maximum number of agents to list.</p>
     #[doc(hidden)]
@@ -9273,18 +9221,10 @@ impl ListAgentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAgentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAgentsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeTaskExecutionRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
     #[doc(hidden)]
@@ -9296,17 +9236,10 @@ impl DescribeTaskExecutionInput {
         self.task_execution_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTaskExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTaskExecutionInput");
-        formatter.field("task_execution_arn", &self.task_execution_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeTaskRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
     #[doc(hidden)]
@@ -9318,17 +9251,10 @@ impl DescribeTaskInput {
         self.task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTaskInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationSmbRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
     #[doc(hidden)]
@@ -9340,17 +9266,10 @@ impl DescribeLocationSmbInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationSmbInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationSmbInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationS3Request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationS3Input {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
     #[doc(hidden)]
@@ -9362,17 +9281,10 @@ impl DescribeLocationS3Input {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationS3Input");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationObjectStorageRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
     #[doc(hidden)]
@@ -9384,17 +9296,10 @@ impl DescribeLocationObjectStorageInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationObjectStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationObjectStorageInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationNfsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
     #[doc(hidden)]
@@ -9406,17 +9311,10 @@ impl DescribeLocationNfsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationNfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationNfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationHdfsInput {
     /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
     #[doc(hidden)]
@@ -9428,17 +9326,10 @@ impl DescribeLocationHdfsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationHdfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationHdfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationFsxWindowsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
     #[doc(hidden)]
@@ -9450,17 +9341,10 @@ impl DescribeLocationFsxWindowsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxWindowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationFsxWindowsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
     #[doc(hidden)]
@@ -9472,17 +9356,10 @@ impl DescribeLocationFsxOpenZfsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxOpenZfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationFsxOpenZfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationFsxOntapInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
     #[doc(hidden)]
@@ -9494,17 +9371,10 @@ impl DescribeLocationFsxOntapInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxOntapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationFsxOntapInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
     #[doc(hidden)]
@@ -9516,17 +9386,10 @@ impl DescribeLocationFsxLustreInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxLustreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationFsxLustreInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationEfsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationEfsInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
     #[doc(hidden)]
@@ -9538,17 +9401,10 @@ impl DescribeLocationEfsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationEfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationEfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeAgent</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
     #[doc(hidden)]
@@ -9560,17 +9416,10 @@ impl DescribeAgentInput {
         self.agent_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAgentInput");
-        formatter.field("agent_arn", &self.agent_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteTask</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
     #[doc(hidden)]
@@ -9582,17 +9431,10 @@ impl DeleteTaskInput {
         self.task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTaskInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteLocation</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLocationInput {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
     #[doc(hidden)]
@@ -9604,17 +9446,10 @@ impl DeleteLocationInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLocationInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteAgentRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9626,17 +9461,10 @@ impl DeleteAgentInput {
         self.agent_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAgentInput");
-        formatter.field("agent_arn", &self.agent_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateTaskRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
     #[doc(hidden)]
@@ -9706,21 +9534,6 @@ impl CreateTaskInput {
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTaskInput");
-        formatter.field("source_location_arn", &self.source_location_arn);
-        formatter.field("destination_location_arn", &self.destination_location_arn);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("name", &self.name);
-        formatter.field("options", &self.options);
-        formatter.field("excludes", &self.excludes);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("tags", &self.tags);
-        formatter.field("includes", &self.includes);
-        formatter.finish()
     }
 }
 
@@ -9816,7 +9629,7 @@ impl std::fmt::Debug for CreateLocationSmbInput {
 
 /// <p>CreateLocationS3Request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationS3Input {
     /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
     #[doc(hidden)]
@@ -9865,18 +9678,6 @@ impl CreateLocationS3Input {
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateLocationS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationS3Input");
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("s3_bucket_arn", &self.s3_bucket_arn);
-        formatter.field("s3_storage_class", &self.s3_storage_class);
-        formatter.field("s3_config", &self.s3_config);
-        formatter.field("agent_arns", &self.agent_arns);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -9970,7 +9771,7 @@ impl std::fmt::Debug for CreateLocationObjectStorageInput {
 
 /// <p>CreateLocationNfsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationNfsInput {
     /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
     /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
@@ -10026,21 +9827,10 @@ impl CreateLocationNfsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationNfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationNfsInput");
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("server_hostname", &self.server_hostname);
-        formatter.field("on_prem_config", &self.on_prem_config);
-        formatter.field("mount_options", &self.mount_options);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationHdfsInput {
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
     #[doc(hidden)]
@@ -10154,25 +9944,6 @@ impl CreateLocationHdfsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationHdfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationHdfsInput");
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("name_nodes", &self.name_nodes);
-        formatter.field("block_size", &self.block_size);
-        formatter.field("replication_factor", &self.replication_factor);
-        formatter.field("kms_key_provider_uri", &self.kms_key_provider_uri);
-        formatter.field("qop_configuration", &self.qop_configuration);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("simple_user", &self.simple_user);
-        formatter.field("kerberos_principal", &self.kerberos_principal);
-        formatter.field("kerberos_keytab", &self.kerberos_keytab);
-        formatter.field("kerberos_krb5_conf", &self.kerberos_krb5_conf);
-        formatter.field("agent_arns", &self.agent_arns);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10260,7 +10031,7 @@ impl std::fmt::Debug for CreateLocationFsxWindowsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
     #[doc(hidden)]
@@ -10300,21 +10071,10 @@ impl CreateLocationFsxOpenZfsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxOpenZfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationFsxOpenZfsInput");
-        formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationFsxOntapInput {
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
     #[doc(hidden)]
@@ -10370,24 +10130,10 @@ impl CreateLocationFsxOntapInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxOntapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationFsxOntapInput");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.field(
-            "storage_virtual_machine_arn",
-            &self.storage_virtual_machine_arn,
-        );
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
     #[doc(hidden)]
@@ -10420,20 +10166,10 @@ impl CreateLocationFsxLustreInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxLustreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationFsxLustreInput");
-        formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateLocationEfsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationEfsInput {
     /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
     /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
@@ -10495,26 +10231,10 @@ impl CreateLocationEfsInput {
         self.in_transit_encryption.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLocationEfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationEfsInput");
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("efs_filesystem_arn", &self.efs_filesystem_arn);
-        formatter.field("ec2_config", &self.ec2_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("access_point_arn", &self.access_point_arn);
-        formatter.field(
-            "file_system_access_role_arn",
-            &self.file_system_access_role_arn,
-        );
-        formatter.field("in_transit_encryption", &self.in_transit_encryption);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateAgentRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAgentInput {
     /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
     /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
@@ -10571,22 +10291,10 @@ impl CreateAgentInput {
         self.security_group_arns.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAgentInput");
-        formatter.field("activation_key", &self.activation_key);
-        formatter.field("agent_name", &self.agent_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.field("subnet_arns", &self.subnet_arns);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.finish()
-    }
-}
 
 /// <p>CancelTaskExecutionRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
     #[doc(hidden)]
@@ -10596,12 +10304,5 @@ impl CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
     pub fn task_execution_arn(&self) -> std::option::Option<&str> {
         self.task_execution_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelTaskExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelTaskExecutionInput");
-        formatter.field("task_execution_arn", &self.task_execution_arn);
-        formatter.finish()
     }
 }

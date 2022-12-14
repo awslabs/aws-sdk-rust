@@ -2,7 +2,7 @@
 
 /// <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPoliciesStatus {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl AccessPoliciesStatus {
     /// <p>The status of domain configuration option.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessPoliciesStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPoliciesStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
@@ -80,7 +72,7 @@ impl AccessPoliciesStatus {
 
 /// <p>The status of domain configuration option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
     #[doc(hidden)]
@@ -130,17 +122,6 @@ impl OptionStatus {
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
     pub fn pending_deletion(&self) -> std::option::Option<bool> {
         self.pending_deletion
-    }
-}
-impl std::fmt::Debug for OptionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptionStatus");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("update_date", &self.update_date);
-        formatter.field("update_version", &self.update_version);
-        formatter.field("state", &self.state);
-        formatter.field("pending_deletion", &self.pending_deletion);
-        formatter.finish()
     }
 }
 /// See [`OptionStatus`](crate::model::OptionStatus).
@@ -356,7 +337,7 @@ impl AsRef<str> for OptionState {
 
 /// <p>The status and configuration of a search domain's scaling parameters. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingParametersStatus {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     #[doc(hidden)]
@@ -373,14 +354,6 @@ impl ScalingParametersStatus {
     /// <p>The status of domain configuration option.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalingParametersStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingParametersStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
@@ -437,7 +410,7 @@ impl ScalingParametersStatus {
 
 /// <p>The desired instance type and desired number of replicas of each index partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingParameters {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
     #[doc(hidden)]
@@ -463,15 +436,6 @@ impl ScalingParameters {
     /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
     pub fn desired_partition_count(&self) -> i32 {
         self.desired_partition_count
-    }
-}
-impl std::fmt::Debug for ScalingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingParameters");
-        formatter.field("desired_instance_type", &self.desired_instance_type);
-        formatter.field("desired_replication_count", &self.desired_replication_count);
-        formatter.field("desired_partition_count", &self.desired_partition_count);
-        formatter.finish()
     }
 }
 /// See [`ScalingParameters`](crate::model::ScalingParameters).
@@ -738,7 +702,7 @@ impl AsRef<str> for PartitionInstanceType {
 
 /// <p>The configuration and status of the domain's endpoint options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainEndpointOptionsStatus {
     /// <p>The domain endpoint options configured for the domain.</p>
     #[doc(hidden)]
@@ -755,14 +719,6 @@ impl DomainEndpointOptionsStatus {
     /// <p>The status of the configured domain endpoint options.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainEndpointOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainEndpointOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
@@ -819,7 +775,7 @@ impl DomainEndpointOptionsStatus {
 
 /// <p>The domain's endpoint options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainEndpointOptions {
     /// <p>Whether the domain is HTTPS only enabled.</p>
     #[doc(hidden)]
@@ -836,14 +792,6 @@ impl DomainEndpointOptions {
     /// <p>The minimum required TLS version</p>
     pub fn tls_security_policy(&self) -> std::option::Option<&crate::model::TlsSecurityPolicy> {
         self.tls_security_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainEndpointOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainEndpointOptions");
-        formatter.field("enforce_https", &self.enforce_https);
-        formatter.field("tls_security_policy", &self.tls_security_policy);
-        formatter.finish()
     }
 }
 /// See [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
@@ -989,7 +937,7 @@ impl AsRef<str> for TlsSecurityPolicy {
 
 /// <p>The status and configuration of the domain's availability options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityOptionsStatus {
     /// <p>The availability options configured for the domain.</p>
     #[doc(hidden)]
@@ -1006,14 +954,6 @@ impl AvailabilityOptionsStatus {
     /// <p>The status of domain configuration option.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AvailabilityOptionsStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityOptionsStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
@@ -1067,7 +1007,7 @@ impl AvailabilityOptionsStatus {
 
 /// <p>The value of a <code>Suggester</code> and its current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggesterStatus {
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
     #[doc(hidden)]
@@ -1084,14 +1024,6 @@ impl SuggesterStatus {
     /// <p>The status of domain configuration option.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for SuggesterStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggesterStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SuggesterStatus`](crate::model::SuggesterStatus).
@@ -1145,7 +1077,7 @@ impl SuggesterStatus {
 
 /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Suggester {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     #[doc(hidden)]
@@ -1164,17 +1096,6 @@ impl Suggester {
         &self,
     ) -> std::option::Option<&crate::model::DocumentSuggesterOptions> {
         self.document_suggester_options.as_ref()
-    }
-}
-impl std::fmt::Debug for Suggester {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Suggester");
-        formatter.field("suggester_name", &self.suggester_name);
-        formatter.field(
-            "document_suggester_options",
-            &self.document_suggester_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`Suggester`](crate::model::Suggester).
@@ -1235,7 +1156,7 @@ impl Suggester {
 
 /// <p>Options for a search suggester.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentSuggesterOptions {
     /// <p>The name of the index field you want to use for suggestions. </p>
     #[doc(hidden)]
@@ -1259,15 +1180,6 @@ impl DocumentSuggesterOptions {
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
     pub fn sort_expression(&self) -> std::option::Option<&str> {
         self.sort_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentSuggesterOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentSuggesterOptions");
-        formatter.field("source_field", &self.source_field);
-        formatter.field("fuzzy_matching", &self.fuzzy_matching);
-        formatter.field("sort_expression", &self.sort_expression);
-        formatter.finish()
     }
 }
 /// See [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
@@ -1433,7 +1345,7 @@ impl AsRef<str> for SuggesterFuzzyMatching {
 
 /// <p>The value of an <code>IndexField</code> and its current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexFieldStatus {
     /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
     #[doc(hidden)]
@@ -1450,14 +1362,6 @@ impl IndexFieldStatus {
     /// <p>The status of domain configuration option.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for IndexFieldStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexFieldStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`IndexFieldStatus`](crate::model::IndexFieldStatus).
@@ -1511,7 +1415,7 @@ impl IndexFieldStatus {
 
 /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexField {
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
@@ -1609,25 +1513,6 @@ impl IndexField {
     /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
     pub fn date_array_options(&self) -> std::option::Option<&crate::model::DateArrayOptions> {
         self.date_array_options.as_ref()
-    }
-}
-impl std::fmt::Debug for IndexField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexField");
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.field("index_field_type", &self.index_field_type);
-        formatter.field("int_options", &self.int_options);
-        formatter.field("double_options", &self.double_options);
-        formatter.field("literal_options", &self.literal_options);
-        formatter.field("text_options", &self.text_options);
-        formatter.field("date_options", &self.date_options);
-        formatter.field("lat_lon_options", &self.lat_lon_options);
-        formatter.field("int_array_options", &self.int_array_options);
-        formatter.field("double_array_options", &self.double_array_options);
-        formatter.field("literal_array_options", &self.literal_array_options);
-        formatter.field("text_array_options", &self.text_array_options);
-        formatter.field("date_array_options", &self.date_array_options);
-        formatter.finish()
     }
 }
 /// See [`IndexField`](crate::model::IndexField).
@@ -1853,7 +1738,7 @@ impl IndexField {
 
 /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -1891,17 +1776,6 @@ impl DateArrayOptions {
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(&self) -> std::option::Option<bool> {
         self.return_enabled
-    }
-}
-impl std::fmt::Debug for DateArrayOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateArrayOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_fields", &self.source_fields);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.finish()
     }
 }
 /// See [`DateArrayOptions`](crate::model::DateArrayOptions).
@@ -1994,7 +1868,7 @@ impl DateArrayOptions {
 
 /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -2032,17 +1906,6 @@ impl TextArrayOptions {
     /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
     pub fn analysis_scheme(&self) -> std::option::Option<&str> {
         self.analysis_scheme.as_deref()
-    }
-}
-impl std::fmt::Debug for TextArrayOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextArrayOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_fields", &self.source_fields);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.field("highlight_enabled", &self.highlight_enabled);
-        formatter.field("analysis_scheme", &self.analysis_scheme);
-        formatter.finish()
     }
 }
 /// See [`TextArrayOptions`](crate::model::TextArrayOptions).
@@ -2138,7 +2001,7 @@ impl TextArrayOptions {
 
 /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LiteralArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -2176,17 +2039,6 @@ impl LiteralArrayOptions {
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(&self) -> std::option::Option<bool> {
         self.return_enabled
-    }
-}
-impl std::fmt::Debug for LiteralArrayOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LiteralArrayOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_fields", &self.source_fields);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.finish()
     }
 }
 /// See [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
@@ -2279,7 +2131,7 @@ impl LiteralArrayOptions {
 
 /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DoubleArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -2317,17 +2169,6 @@ impl DoubleArrayOptions {
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(&self) -> std::option::Option<bool> {
         self.return_enabled
-    }
-}
-impl std::fmt::Debug for DoubleArrayOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DoubleArrayOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_fields", &self.source_fields);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.finish()
     }
 }
 /// See [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
@@ -2417,7 +2258,7 @@ impl DoubleArrayOptions {
 
 /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -2455,17 +2296,6 @@ impl IntArrayOptions {
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(&self) -> std::option::Option<bool> {
         self.return_enabled
-    }
-}
-impl std::fmt::Debug for IntArrayOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntArrayOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_fields", &self.source_fields);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.finish()
     }
 }
 /// See [`IntArrayOptions`](crate::model::IntArrayOptions).
@@ -2555,7 +2385,7 @@ impl IntArrayOptions {
 
 /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LatLonOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -2604,18 +2434,6 @@ impl LatLonOptions {
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(&self) -> std::option::Option<bool> {
         self.sort_enabled
-    }
-}
-impl std::fmt::Debug for LatLonOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LatLonOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_field", &self.source_field);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.field("sort_enabled", &self.sort_enabled);
-        formatter.finish()
     }
 }
 /// See [`LatLonOptions`](crate::model::LatLonOptions).
@@ -2721,7 +2539,7 @@ impl LatLonOptions {
 
 /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -2770,18 +2588,6 @@ impl DateOptions {
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(&self) -> std::option::Option<bool> {
         self.sort_enabled
-    }
-}
-impl std::fmt::Debug for DateOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_field", &self.source_field);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.field("sort_enabled", &self.sort_enabled);
-        formatter.finish()
     }
 }
 /// See [`DateOptions`](crate::model::DateOptions).
@@ -2887,7 +2693,7 @@ impl DateOptions {
 
 /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -2936,18 +2742,6 @@ impl TextOptions {
     /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
     pub fn analysis_scheme(&self) -> std::option::Option<&str> {
         self.analysis_scheme.as_deref()
-    }
-}
-impl std::fmt::Debug for TextOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_field", &self.source_field);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.field("sort_enabled", &self.sort_enabled);
-        formatter.field("highlight_enabled", &self.highlight_enabled);
-        formatter.field("analysis_scheme", &self.analysis_scheme);
-        formatter.finish()
     }
 }
 /// See [`TextOptions`](crate::model::TextOptions).
@@ -3056,7 +2850,7 @@ impl TextOptions {
 
 /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LiteralOptions {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
@@ -3105,18 +2899,6 @@ impl LiteralOptions {
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(&self) -> std::option::Option<bool> {
         self.sort_enabled
-    }
-}
-impl std::fmt::Debug for LiteralOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LiteralOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_field", &self.source_field);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.field("sort_enabled", &self.sort_enabled);
-        formatter.finish()
     }
 }
 /// See [`LiteralOptions`](crate::model::LiteralOptions).
@@ -3222,7 +3004,7 @@ impl LiteralOptions {
 
 /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DoubleOptions {
     /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
     #[doc(hidden)]
@@ -3267,18 +3049,6 @@ impl DoubleOptions {
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(&self) -> std::option::Option<bool> {
         self.sort_enabled
-    }
-}
-impl std::fmt::Debug for DoubleOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DoubleOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_field", &self.source_field);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.field("sort_enabled", &self.sort_enabled);
-        formatter.finish()
     }
 }
 /// See [`DoubleOptions`](crate::model::DoubleOptions).
@@ -3377,7 +3147,7 @@ impl DoubleOptions {
 
 /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntOptions {
     /// A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.
     #[doc(hidden)]
@@ -3422,18 +3192,6 @@ impl IntOptions {
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(&self) -> std::option::Option<bool> {
         self.sort_enabled
-    }
-}
-impl std::fmt::Debug for IntOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntOptions");
-        formatter.field("default_value", &self.default_value);
-        formatter.field("source_field", &self.source_field);
-        formatter.field("facet_enabled", &self.facet_enabled);
-        formatter.field("search_enabled", &self.search_enabled);
-        formatter.field("return_enabled", &self.return_enabled);
-        formatter.field("sort_enabled", &self.sort_enabled);
-        formatter.finish()
     }
 }
 /// See [`IntOptions`](crate::model::IntOptions).
@@ -3679,7 +3437,7 @@ impl AsRef<str> for IndexFieldType {
 
 /// <p>The value of an <code>Expression</code> and its current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpressionStatus {
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
     #[doc(hidden)]
@@ -3696,14 +3454,6 @@ impl ExpressionStatus {
     /// <p>The status of domain configuration option.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ExpressionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpressionStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ExpressionStatus`](crate::model::ExpressionStatus).
@@ -3757,7 +3507,7 @@ impl ExpressionStatus {
 
 /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Expression {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     #[doc(hidden)]
@@ -3774,14 +3524,6 @@ impl Expression {
     /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub fn expression_value(&self) -> std::option::Option<&str> {
         self.expression_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Expression {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Expression");
-        formatter.field("expression_name", &self.expression_name);
-        formatter.field("expression_value", &self.expression_value);
-        formatter.finish()
     }
 }
 /// See [`Expression`](crate::model::Expression).
@@ -3838,7 +3580,7 @@ impl Expression {
 
 /// <p>The current status of the search domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainStatus {
     /// <p>An internally generated unique identifier for a domain.</p>
     #[doc(hidden)]
@@ -3932,25 +3674,6 @@ impl DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     pub fn limits(&self) -> std::option::Option<&crate::model::Limits> {
         self.limits.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainStatus");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created", &self.created);
-        formatter.field("deleted", &self.deleted);
-        formatter.field("doc_service", &self.doc_service);
-        formatter.field("search_service", &self.search_service);
-        formatter.field("requires_index_documents", &self.requires_index_documents);
-        formatter.field("processing", &self.processing);
-        formatter.field("search_instance_type", &self.search_instance_type);
-        formatter.field("search_partition_count", &self.search_partition_count);
-        formatter.field("search_instance_count", &self.search_instance_count);
-        formatter.field("limits", &self.limits);
-        formatter.finish()
     }
 }
 /// See [`DomainStatus`](crate::model::DomainStatus).
@@ -4142,7 +3865,7 @@ impl DomainStatus {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Limits {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -4159,14 +3882,6 @@ impl Limits {
     #[allow(missing_docs)] // documentation missing in model
     pub fn maximum_partition_count(&self) -> i32 {
         self.maximum_partition_count
-    }
-}
-impl std::fmt::Debug for Limits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Limits");
-        formatter.field("maximum_replication_count", &self.maximum_replication_count);
-        formatter.field("maximum_partition_count", &self.maximum_partition_count);
-        formatter.finish()
     }
 }
 /// See [`Limits`](crate::model::Limits).
@@ -4217,7 +3932,7 @@ impl Limits {
 
 /// <p>The endpoint to which service requests can be submitted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceEndpoint {
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
     #[doc(hidden)]
@@ -4227,13 +3942,6 @@ impl ServiceEndpoint {
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceEndpoint");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.finish()
     }
 }
 /// See [`ServiceEndpoint`](crate::model::ServiceEndpoint).
@@ -4272,7 +3980,7 @@ impl ServiceEndpoint {
 
 /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisSchemeStatus {
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     #[doc(hidden)]
@@ -4289,14 +3997,6 @@ impl AnalysisSchemeStatus {
     /// <p>The status of domain configuration option.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalysisSchemeStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisSchemeStatus");
-        formatter.field("options", &self.options);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
@@ -4353,7 +4053,7 @@ impl AnalysisSchemeStatus {
 
 /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisScheme {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     #[doc(hidden)]
@@ -4379,15 +4079,6 @@ impl AnalysisScheme {
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub fn analysis_options(&self) -> std::option::Option<&crate::model::AnalysisOptions> {
         self.analysis_options.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalysisScheme {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisScheme");
-        formatter.field("analysis_scheme_name", &self.analysis_scheme_name);
-        formatter.field("analysis_scheme_language", &self.analysis_scheme_language);
-        formatter.field("analysis_options", &self.analysis_options);
-        formatter.finish()
     }
 }
 /// See [`AnalysisScheme`](crate::model::AnalysisScheme).
@@ -4463,7 +4154,7 @@ impl AnalysisScheme {
 
 /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisOptions {
     /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -4501,20 +4192,6 @@ impl AnalysisOptions {
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
     pub fn algorithmic_stemming(&self) -> std::option::Option<&crate::model::AlgorithmicStemming> {
         self.algorithmic_stemming.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalysisOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisOptions");
-        formatter.field("synonyms", &self.synonyms);
-        formatter.field("stopwords", &self.stopwords);
-        formatter.field("stemming_dictionary", &self.stemming_dictionary);
-        formatter.field(
-            "japanese_tokenization_dictionary",
-            &self.japanese_tokenization_dictionary,
-        );
-        formatter.field("algorithmic_stemming", &self.algorithmic_stemming);
-        formatter.finish()
     }
 }
 /// See [`AnalysisOptions`](crate::model::AnalysisOptions).

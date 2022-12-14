@@ -2,7 +2,7 @@
 
 /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/WorkingWithS3Outposts.html"> Accessing S3 on Outposts using VPC-only access points</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     #[doc(hidden)]
@@ -82,23 +82,6 @@ impl Endpoint {
     /// <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
     pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("outposts_id", &self.outposts_id);
-        formatter.field("cidr_block", &self.cidr_block);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("security_group_id", &self.security_group_id);
-        formatter.field("access_type", &self.access_type);
-        formatter.field("customer_owned_ipv4_pool", &self.customer_owned_ipv4_pool);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
@@ -374,7 +357,7 @@ impl AsRef<str> for EndpointAccessType {
 
 /// <p>The container for the network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID for the network interface.</p>
     #[doc(hidden)]
@@ -384,13 +367,6 @@ impl NetworkInterface {
     /// <p>The ID for the network interface.</p>
     pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).

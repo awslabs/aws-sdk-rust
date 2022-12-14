@@ -2,7 +2,7 @@
 
 /// <p>A key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The initial part of a key-value pair that forms a tag associated with a given resource. For instance, if you want to show which resources are used by which departments, you might use “Department” as the key portion of the pair, with multiple possible values such as “sales,” “legal,” and “administration.” </p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p> The second part of a key-value pair that forms a tag associated with a given resource. For instance, if you want to show which resources are used by which departments, you might use “Department” as the initial (key) portion of the pair, with a value of “sales” to indicate the sales department. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -194,7 +186,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The ID number for a security group on an instance of your private VPC. Security groups on your VPC function serve as a virtual firewall to control inbound and outbound traffic and provides security for the resources that you’ll be accessing on the VPC. This ID number is preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for your VPC</a>. </p>
     #[doc(hidden)]
@@ -211,14 +203,6 @@ impl VpcConfig {
     /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a range of IPv4 addresses used by the VPC and is specific to a given availability zone in the VPC’s region. This ID number is preceded by "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a>. </p>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnets", &self.subnets);
-        formatter.finish()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
@@ -288,7 +272,7 @@ impl VpcConfig {
 /// <p>Provides configuration parameters for the output of inference jobs.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output file.</p>
     /// <p>When the topic detection job is finished, the service creates an output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.</p>
@@ -321,14 +305,6 @@ impl OutputDataConfig {
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for OutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
@@ -395,7 +371,7 @@ impl OutputDataConfig {
 
 /// <p>The input properties for an inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
@@ -433,15 +409,6 @@ impl InputDataConfig {
         &self,
     ) -> std::option::Option<&crate::model::DocumentReaderConfig> {
         self.document_reader_config.as_ref()
-    }
-}
-impl std::fmt::Debug for InputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("input_format", &self.input_format);
-        formatter.field("document_reader_config", &self.document_reader_config);
-        formatter.finish()
     }
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
@@ -522,7 +489,7 @@ impl InputDataConfig {
 
 /// <p>The input properties for a topic detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentReaderConfig {
     /// <p>This enum field will start with two values which will apply to PDFs:</p>
     /// <ul>
@@ -562,15 +529,6 @@ impl DocumentReaderConfig {
     /// <p>Specifies how the text in an input file should be processed:</p>
     pub fn feature_types(&self) -> std::option::Option<&[crate::model::DocumentReadFeatureTypes]> {
         self.feature_types.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentReaderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentReaderConfig");
-        formatter.field("document_read_action", &self.document_read_action);
-        formatter.field("document_read_mode", &self.document_read_mode);
-        formatter.field("feature_types", &self.feature_types);
-        formatter.finish()
     }
 }
 /// See [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
@@ -1184,7 +1142,7 @@ impl AsRef<str> for LanguageCode {
 
 /// <p>Provides configuration parameters for PII entity redaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedactionConfig {
     /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for your request.</p>
     #[doc(hidden)]
@@ -1208,15 +1166,6 @@ impl RedactionConfig {
     /// <p>A character that replaces each character in the redacted PII entity.</p>
     pub fn mask_character(&self) -> std::option::Option<&str> {
         self.mask_character.as_deref()
-    }
-}
-impl std::fmt::Debug for RedactionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedactionConfig");
-        formatter.field("pii_entity_types", &self.pii_entity_types);
-        formatter.field("mask_mode", &self.mask_mode);
-        formatter.field("mask_character", &self.mask_character);
-        formatter.finish()
     }
 }
 /// See [`RedactionConfig`](crate::model::RedactionConfig).
@@ -1790,7 +1739,7 @@ impl AsRef<str> for PiiEntitiesDetectionMode {
 
 /// <p>Provides information about a topic detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicsDetectionJobProperties {
     /// <p>The identifier assigned to the topic detection job.</p>
     #[doc(hidden)]
@@ -1918,25 +1867,6 @@ impl TopicsDetectionJobProperties {
     /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for TopicsDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicsDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("number_of_topics", &self.number_of_topics);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
@@ -2177,7 +2107,7 @@ impl TopicsDetectionJobProperties {
 
 /// <p>Provides information for filtering topic detection jobs. For more information, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicsDetectionJobFilter {
     /// <p></p>
     #[doc(hidden)]
@@ -2208,16 +2138,6 @@ impl TopicsDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Only returns jobs submitted after the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for TopicsDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicsDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
@@ -2301,7 +2221,7 @@ impl TopicsDetectionJobFilter {
 
 /// <p>Provides information about a targeted sentiment detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetedSentimentDetectionJobProperties {
     /// <p>The identifier assigned to the targeted sentiment detection job.</p>
     #[doc(hidden)]
@@ -2431,25 +2351,6 @@ impl TargetedSentimentDetectionJobProperties {
     /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetedSentimentDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetedSentimentDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
@@ -2695,7 +2596,7 @@ impl TargetedSentimentDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetedSentimentDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -2726,16 +2627,6 @@ impl TargetedSentimentDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetedSentimentDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetedSentimentDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
@@ -2819,7 +2710,7 @@ impl TargetedSentimentDetectionJobFilter {
 
 /// <p>Provides information about a sentiment detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentDetectionJobProperties {
     /// <p>The identifier assigned to the sentiment detection job.</p>
     #[doc(hidden)]
@@ -2947,25 +2838,6 @@ impl SentimentDetectionJobProperties {
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for SentimentDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
@@ -3209,7 +3081,7 @@ impl SentimentDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -3240,16 +3112,6 @@ impl SentimentDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for SentimentDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
@@ -3333,7 +3195,7 @@ impl SentimentDetectionJobFilter {
 
 /// <p>Provides information about a PII entities detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiEntitiesDetectionJobProperties {
     /// <p>The identifier assigned to the PII entities detection job.</p>
     #[doc(hidden)]
@@ -3455,25 +3317,6 @@ impl PiiEntitiesDetectionJobProperties {
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::PiiEntitiesDetectionMode> {
         self.mode.as_ref()
-    }
-}
-impl std::fmt::Debug for PiiEntitiesDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiEntitiesDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("redaction_config", &self.redaction_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("mode", &self.mode);
-        formatter.finish()
     }
 }
 /// See [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
@@ -3711,7 +3554,7 @@ impl PiiEntitiesDetectionJobProperties {
 
 /// <p>Provides configuration parameters for the output of PII entity detection jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiOutputDataConfig {
     /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
     /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
@@ -3730,14 +3573,6 @@ impl PiiOutputDataConfig {
     /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PiiOutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiOutputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
@@ -3790,7 +3625,7 @@ impl PiiOutputDataConfig {
 
 /// <p>Provides information for filtering a list of PII entity detection jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiEntitiesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -3821,16 +3656,6 @@ impl PiiEntitiesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for PiiEntitiesDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiEntitiesDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
@@ -3914,7 +3739,7 @@ impl PiiEntitiesDetectionJobFilter {
 
 /// <p>Provides information about a key phrases detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPhrasesDetectionJobProperties {
     /// <p>The identifier assigned to the key phrases detection job.</p>
     #[doc(hidden)]
@@ -4042,25 +3867,6 @@ impl KeyPhrasesDetectionJobProperties {
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for KeyPhrasesDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPhrasesDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
@@ -4304,7 +4110,7 @@ impl KeyPhrasesDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPhrasesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -4335,16 +4141,6 @@ impl KeyPhrasesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for KeyPhrasesDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPhrasesDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
@@ -4428,7 +4224,7 @@ impl KeyPhrasesDetectionJobFilter {
 
 /// <p>Provides information about an events detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsDetectionJobProperties {
     /// <p>The identifier assigned to the events detection job.</p>
     #[doc(hidden)]
@@ -4541,24 +4337,6 @@ impl EventsDetectionJobProperties {
     /// <p>The types of events that are detected by the job.</p>
     pub fn target_event_types(&self) -> std::option::Option<&[std::string::String]> {
         self.target_event_types.as_deref()
-    }
-}
-impl std::fmt::Debug for EventsDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("target_event_types", &self.target_event_types);
-        formatter.finish()
     }
 }
 /// See [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
@@ -4785,7 +4563,7 @@ impl EventsDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of event detection jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsDetectionJobFilter {
     /// <p>Filters on the name of the events detection job.</p>
     #[doc(hidden)]
@@ -4816,16 +4594,6 @@ impl EventsDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for EventsDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
@@ -4909,7 +4677,7 @@ impl EventsDetectionJobFilter {
 
 /// <p> Describes the information about an entity recognizer and its versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerSummary {
     /// <p> The name that you assigned the entity recognizer.</p>
     #[doc(hidden)]
@@ -4947,17 +4715,6 @@ impl EntityRecognizerSummary {
     /// <p> Provides the status of the latest entity recognizer version.</p>
     pub fn latest_version_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
         self.latest_version_status.as_ref()
-    }
-}
-impl std::fmt::Debug for EntityRecognizerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerSummary");
-        formatter.field("recognizer_name", &self.recognizer_name);
-        formatter.field("number_of_versions", &self.number_of_versions);
-        formatter.field("latest_version_created_at", &self.latest_version_created_at);
-        formatter.field("latest_version_name", &self.latest_version_name);
-        formatter.field("latest_version_status", &self.latest_version_status);
-        formatter.finish()
     }
 }
 /// See [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
@@ -5342,7 +5099,7 @@ impl std::fmt::Debug for EntityRecognizerProperties {
 pub mod entity_recognizer_properties {
 
     /// A builder for [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5606,6 +5363,28 @@ pub mod entity_recognizer_properties {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("entity_recognizer_arn", &self.entity_recognizer_arn);
+            formatter.field("language_code", &self.language_code);
+            formatter.field("status", &self.status);
+            formatter.field("message", &self.message);
+            formatter.field("submit_time", &self.submit_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("training_start_time", &self.training_start_time);
+            formatter.field("training_end_time", &self.training_end_time);
+            formatter.field("input_data_config", &self.input_data_config);
+            formatter.field("recognizer_metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("data_access_role_arn", &self.data_access_role_arn);
+            formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+            formatter.field("vpc_config", &self.vpc_config);
+            formatter.field("model_kms_key_id", &self.model_kms_key_id);
+            formatter.field("version_name", &self.version_name);
+            formatter.field("source_model_arn", &self.source_model_arn);
+            formatter.finish()
+        }
+    }
 }
 impl EntityRecognizerProperties {
     /// Creates a new builder-style object to manufacture [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
@@ -5672,7 +5451,7 @@ impl std::fmt::Debug for EntityRecognizerMetadata {
 pub mod entity_recognizer_metadata {
 
     /// A builder for [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) number_of_trained_documents: std::option::Option<i32>,
         pub(crate) number_of_test_documents: std::option::Option<i32>,
@@ -5753,6 +5532,19 @@ pub mod entity_recognizer_metadata {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "number_of_trained_documents",
+                &self.number_of_trained_documents,
+            );
+            formatter.field("number_of_test_documents", &self.number_of_test_documents);
+            formatter.field("evaluation_metrics", &self.evaluation_metrics);
+            formatter.field("entity_types", &self.entity_types);
+            formatter.finish()
+        }
+    }
 }
 impl EntityRecognizerMetadata {
     /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
@@ -5763,7 +5555,7 @@ impl EntityRecognizerMetadata {
 
 /// <p>Individual item from the list of entity types in the metadata of an entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerMetadataEntityTypesListItem {
     /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer. </p>
     #[doc(hidden)]
@@ -5789,15 +5581,6 @@ impl EntityRecognizerMetadataEntityTypesListItem {
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
     pub fn number_of_train_mentions(&self) -> std::option::Option<i32> {
         self.number_of_train_mentions
-    }
-}
-impl std::fmt::Debug for EntityRecognizerMetadataEntityTypesListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerMetadataEntityTypesListItem");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("evaluation_metrics", &self.evaluation_metrics);
-        formatter.field("number_of_train_mentions", &self.number_of_train_mentions);
-        formatter.finish()
     }
 }
 /// See [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
@@ -5867,7 +5650,7 @@ impl EntityRecognizerMetadataEntityTypesListItem {
 
 /// <p>Detailed information about the accuracy of an entity recognizer for a specific entity type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityTypesEvaluationMetrics {
     /// <p>A measure of the usefulness of the recognizer results for a specific entity type in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. </p>
     #[doc(hidden)]
@@ -5891,15 +5674,6 @@ impl EntityTypesEvaluationMetrics {
     /// <p>A measure of how accurate the recognizer results are for a specific entity type in the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
     pub fn f1_score(&self) -> std::option::Option<f64> {
         self.f1_score
-    }
-}
-impl std::fmt::Debug for EntityTypesEvaluationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityTypesEvaluationMetrics");
-        formatter.field("precision", &self.precision);
-        formatter.field("recall", &self.recall);
-        formatter.field("f1_score", &self.f1_score);
-        formatter.finish()
     }
 }
 /// See [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
@@ -5962,7 +5736,7 @@ impl EntityTypesEvaluationMetrics {
 
 /// <p>Detailed information about the accuracy of an entity recognizer. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerEvaluationMetrics {
     /// <p>A measure of the usefulness of the recognizer results in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. </p>
     #[doc(hidden)]
@@ -5986,15 +5760,6 @@ impl EntityRecognizerEvaluationMetrics {
     /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. For plain text entity recognizer models, the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best score. </p>
     pub fn f1_score(&self) -> std::option::Option<f64> {
         self.f1_score
-    }
-}
-impl std::fmt::Debug for EntityRecognizerEvaluationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerEvaluationMetrics");
-        formatter.field("precision", &self.precision);
-        formatter.field("recall", &self.recall);
-        formatter.field("f1_score", &self.f1_score);
-        formatter.finish()
     }
 }
 /// See [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
@@ -6057,7 +5822,7 @@ impl EntityRecognizerEvaluationMetrics {
 
 /// <p>Specifies the format and location of the input data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerInputDataConfig {
     /// <p>The format of your training data:</p>
     /// <ul>
@@ -6121,18 +5886,6 @@ impl EntityRecognizerInputDataConfig {
         &self,
     ) -> std::option::Option<&[crate::model::AugmentedManifestsListItem]> {
         self.augmented_manifests.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityRecognizerInputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerInputDataConfig");
-        formatter.field("data_format", &self.data_format);
-        formatter.field("entity_types", &self.entity_types);
-        formatter.field("documents", &self.documents);
-        formatter.field("annotations", &self.annotations);
-        formatter.field("entity_list", &self.entity_list);
-        formatter.field("augmented_manifests", &self.augmented_manifests);
-        formatter.finish()
     }
 }
 /// See [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
@@ -6282,7 +6035,7 @@ impl EntityRecognizerInputDataConfig {
 
 /// <p>An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AugmentedManifestsListItem {
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
     #[doc(hidden)]
@@ -6345,18 +6098,6 @@ impl AugmentedManifestsListItem {
         &self,
     ) -> std::option::Option<&crate::model::AugmentedManifestsDocumentTypeFormat> {
         self.document_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AugmentedManifestsListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AugmentedManifestsListItem");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("split", &self.split);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.field("annotation_data_s3_uri", &self.annotation_data_s3_uri);
-        formatter.field("source_documents_s3_uri", &self.source_documents_s3_uri);
-        formatter.field("document_type", &self.document_type);
-        formatter.finish()
     }
 }
 /// See [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
@@ -6679,7 +6420,7 @@ impl AsRef<str> for Split {
 
 /// <p>Describes the entity recognizer submitted with an entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
@@ -6689,13 +6430,6 @@ impl EntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as the API endpoint that you are calling.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityRecognizerEntityList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerEntityList");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.finish()
     }
 }
 /// See [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
@@ -6734,7 +6468,7 @@ impl EntityRecognizerEntityList {
 
 /// <p>Describes the annotations associated with a entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
@@ -6751,14 +6485,6 @@ impl EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
     pub fn test_s3_uri(&self) -> std::option::Option<&str> {
         self.test_s3_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityRecognizerAnnotations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerAnnotations");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("test_s3_uri", &self.test_s3_uri);
-        formatter.finish()
     }
 }
 /// See [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
@@ -6809,7 +6535,7 @@ impl EntityRecognizerAnnotations {
 
 /// <p>Describes the training documents submitted with an entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerDocuments {
     /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
@@ -6833,15 +6559,6 @@ impl EntityRecognizerDocuments {
     /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
     pub fn input_format(&self) -> std::option::Option<&crate::model::InputFormat> {
         self.input_format.as_ref()
-    }
-}
-impl std::fmt::Debug for EntityRecognizerDocuments {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerDocuments");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("test_s3_uri", &self.test_s3_uri);
-        formatter.field("input_format", &self.input_format);
-        formatter.finish()
     }
 }
 /// See [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
@@ -6907,7 +6624,7 @@ impl EntityRecognizerDocuments {
 
 /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityTypesListItem {
     /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
     /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
@@ -6919,13 +6636,6 @@ impl EntityTypesListItem {
     /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for EntityTypesListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityTypesListItem");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`EntityTypesListItem`](crate::model::EntityTypesListItem).
@@ -7058,7 +6768,7 @@ impl AsRef<str> for EntityRecognizerDataFormat {
 
 /// <p>Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerFilter {
     /// <p>The status of an entity recognizer.</p>
     #[doc(hidden)]
@@ -7089,16 +6799,6 @@ impl EntityRecognizerFilter {
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for EntityRecognizerFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerFilter");
-        formatter.field("status", &self.status);
-        formatter.field("recognizer_name", &self.recognizer_name);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
@@ -7182,7 +6882,7 @@ impl EntityRecognizerFilter {
 
 /// <p>Provides information about an entities detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitiesDetectionJobProperties {
     /// <p>The identifier assigned to the entities detection job.</p>
     #[doc(hidden)]
@@ -7317,26 +7017,6 @@ impl EntitiesDetectionJobProperties {
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for EntitiesDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitiesDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("entity_recognizer_arn", &self.entity_recognizer_arn);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
@@ -7595,7 +7275,7 @@ impl EntitiesDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitiesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -7626,16 +7306,6 @@ impl EntitiesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for EntitiesDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitiesDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
@@ -7719,7 +7389,7 @@ impl EntitiesDetectionJobFilter {
 
 /// <p>Specifies information about the specified endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointProperties {
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
     #[doc(hidden)]
@@ -7799,26 +7469,6 @@ impl EndpointProperties {
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
     pub fn desired_data_access_role_arn(&self) -> std::option::Option<&str> {
         self.desired_data_access_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointProperties");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("desired_model_arn", &self.desired_model_arn);
-        formatter.field("desired_inference_units", &self.desired_inference_units);
-        formatter.field("current_inference_units", &self.current_inference_units);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field(
-            "desired_data_access_role_arn",
-            &self.desired_data_access_role_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`EndpointProperties`](crate::model::EndpointProperties).
@@ -8103,7 +7753,7 @@ impl AsRef<str> for EndpointStatus {
 
 /// <p>The filter used to determine which endpoints are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointFilter {
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
     #[doc(hidden)]
@@ -8134,16 +7784,6 @@ impl EndpointFilter {
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
     pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for EndpointFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointFilter");
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time_before", &self.creation_time_before);
-        formatter.field("creation_time_after", &self.creation_time_after);
-        formatter.finish()
     }
 }
 /// See [`EndpointFilter`](crate::model::EndpointFilter).
@@ -8227,7 +7867,7 @@ impl EndpointFilter {
 
 /// <p>Provides information about a dominant language detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DominantLanguageDetectionJobProperties {
     /// <p>The identifier assigned to the dominant language detection job.</p>
     #[doc(hidden)]
@@ -8348,24 +7988,6 @@ impl DominantLanguageDetectionJobProperties {
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DominantLanguageDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DominantLanguageDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
@@ -8594,7 +8216,7 @@ impl DominantLanguageDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DominantLanguageDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -8625,16 +8247,6 @@ impl DominantLanguageDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for DominantLanguageDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DominantLanguageDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
@@ -8718,7 +8330,7 @@ impl DominantLanguageDetectionJobFilter {
 
 /// <p>Describes information about a document classifier and its versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassifierSummary {
     /// <p>The name that you assigned the document classifier.</p>
     #[doc(hidden)]
@@ -8756,17 +8368,6 @@ impl DocumentClassifierSummary {
     /// <p>Provides the status of the latest document classifier version.</p>
     pub fn latest_version_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
         self.latest_version_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentClassifierSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassifierSummary");
-        formatter.field("document_classifier_name", &self.document_classifier_name);
-        formatter.field("number_of_versions", &self.number_of_versions);
-        formatter.field("latest_version_created_at", &self.latest_version_created_at);
-        formatter.field("latest_version_name", &self.latest_version_name);
-        formatter.field("latest_version_status", &self.latest_version_status);
-        formatter.finish()
     }
 }
 /// See [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
@@ -9044,7 +8645,7 @@ impl std::fmt::Debug for DocumentClassifierProperties {
 pub mod document_classifier_properties {
 
     /// A builder for [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -9339,6 +8940,30 @@ pub mod document_classifier_properties {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("document_classifier_arn", &self.document_classifier_arn);
+            formatter.field("language_code", &self.language_code);
+            formatter.field("status", &self.status);
+            formatter.field("message", &self.message);
+            formatter.field("submit_time", &self.submit_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("training_start_time", &self.training_start_time);
+            formatter.field("training_end_time", &self.training_end_time);
+            formatter.field("input_data_config", &self.input_data_config);
+            formatter.field("output_data_config", &self.output_data_config);
+            formatter.field("classifier_metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("data_access_role_arn", &self.data_access_role_arn);
+            formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+            formatter.field("vpc_config", &self.vpc_config);
+            formatter.field("mode", &self.mode);
+            formatter.field("model_kms_key_id", &self.model_kms_key_id);
+            formatter.field("version_name", &self.version_name);
+            formatter.field("source_model_arn", &self.source_model_arn);
+            formatter.finish()
+        }
+    }
 }
 impl DocumentClassifierProperties {
     /// Creates a new builder-style object to manufacture [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
@@ -9493,7 +9118,7 @@ impl std::fmt::Debug for ClassifierMetadata {
 pub mod classifier_metadata {
 
     /// A builder for [`ClassifierMetadata`](crate::model::ClassifierMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) number_of_labels: std::option::Option<i32>,
         pub(crate) number_of_trained_documents: std::option::Option<i32>,
@@ -9558,6 +9183,19 @@ pub mod classifier_metadata {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("number_of_labels", &self.number_of_labels);
+            formatter.field(
+                "number_of_trained_documents",
+                &self.number_of_trained_documents,
+            );
+            formatter.field("number_of_test_documents", &self.number_of_test_documents);
+            formatter.field("evaluation_metrics", &self.evaluation_metrics);
+            formatter.finish()
+        }
+    }
 }
 impl ClassifierMetadata {
     /// Creates a new builder-style object to manufacture [`ClassifierMetadata`](crate::model::ClassifierMetadata).
@@ -9568,7 +9206,7 @@ impl ClassifierMetadata {
 
 /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassifierEvaluationMetrics {
     /// <p>The fraction of the labels that were correct recognized. It is computed by dividing the number of labels in the test documents that were correctly recognized by the total number of labels in the test documents.</p>
     #[doc(hidden)]
@@ -9627,20 +9265,6 @@ impl ClassifierEvaluationMetrics {
     /// <p>Indicates the fraction of labels that are incorrectly predicted. Also seen as the fraction of wrong labels compared to the total number of labels. Scores closer to zero are better.</p>
     pub fn hamming_loss(&self) -> std::option::Option<f64> {
         self.hamming_loss
-    }
-}
-impl std::fmt::Debug for ClassifierEvaluationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassifierEvaluationMetrics");
-        formatter.field("accuracy", &self.accuracy);
-        formatter.field("precision", &self.precision);
-        formatter.field("recall", &self.recall);
-        formatter.field("f1_score", &self.f1_score);
-        formatter.field("micro_precision", &self.micro_precision);
-        formatter.field("micro_recall", &self.micro_recall);
-        formatter.field("micro_f1_score", &self.micro_f1_score);
-        formatter.field("hamming_loss", &self.hamming_loss);
-        formatter.finish()
     }
 }
 /// See [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
@@ -9763,7 +9387,7 @@ impl ClassifierEvaluationMetrics {
 
 /// <p>Provides output results configuration parameters for custom classifier jobs. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassifierOutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon S3 location where you want to write the confusion matrix. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of this output file.</p>
     /// <p>When the custom classifier job is finished, the service creates the output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the confusion matrix.</p>
@@ -9794,14 +9418,6 @@ impl DocumentClassifierOutputDataConfig {
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentClassifierOutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassifierOutputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
@@ -9867,7 +9483,7 @@ impl DocumentClassifierOutputDataConfig {
 /// <p>The input properties for training a document classifier. </p>
 /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassifierInputDataConfig {
     /// <p>The format of your training data:</p>
     /// <ul>
@@ -9924,17 +9540,6 @@ impl DocumentClassifierInputDataConfig {
         &self,
     ) -> std::option::Option<&[crate::model::AugmentedManifestsListItem]> {
         self.augmented_manifests.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentClassifierInputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassifierInputDataConfig");
-        formatter.field("data_format", &self.data_format);
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("test_s3_uri", &self.test_s3_uri);
-        formatter.field("label_delimiter", &self.label_delimiter);
-        formatter.field("augmented_manifests", &self.augmented_manifests);
-        formatter.finish()
     }
 }
 /// See [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
@@ -10148,7 +9753,7 @@ impl AsRef<str> for DocumentClassifierDataFormat {
 
 /// <p>Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassifierFilter {
     /// <p>Filters the list of classifiers based on status.</p>
     #[doc(hidden)]
@@ -10179,16 +9784,6 @@ impl DocumentClassifierFilter {
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for processing. Returns only classifiers submitted after the specified time. Classifiers are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentClassifierFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassifierFilter");
-        formatter.field("status", &self.status);
-        formatter.field("document_classifier_name", &self.document_classifier_name);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
@@ -10272,7 +9867,7 @@ impl DocumentClassifierFilter {
 
 /// <p>Provides information about a document classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassificationJobProperties {
     /// <p>The identifier assigned to the document classification job.</p>
     #[doc(hidden)]
@@ -10400,25 +9995,6 @@ impl DocumentClassificationJobProperties {
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentClassificationJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassificationJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("document_classifier_arn", &self.document_classifier_arn);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
     }
 }
 /// See [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
@@ -10662,7 +10238,7 @@ impl DocumentClassificationJobProperties {
 
 /// <p>Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassificationJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -10693,16 +10269,6 @@ impl DocumentClassificationJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentClassificationJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassificationJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
     }
 }
 /// See [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
@@ -10787,7 +10353,7 @@ impl DocumentClassificationJobFilter {
 /// <p>Information about one of the entities found by targeted sentiment analysis.</p>
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetedSentimentEntity {
     /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
     #[doc(hidden)]
@@ -10804,14 +10370,6 @@ impl TargetedSentimentEntity {
     /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
     pub fn mentions(&self) -> std::option::Option<&[crate::model::TargetedSentimentMention]> {
         self.mentions.as_deref()
-    }
-}
-impl std::fmt::Debug for TargetedSentimentEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetedSentimentEntity");
-        formatter.field("descriptive_mention_index", &self.descriptive_mention_index);
-        formatter.field("mentions", &self.mentions);
-        formatter.finish()
     }
 }
 /// See [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
@@ -10882,7 +10440,7 @@ impl TargetedSentimentEntity {
 /// <p>Information about one mention of an entity. The mention information includes the location of the mention in the text and the sentiment of the mention.</p>
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetedSentimentMention {
     /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
     #[doc(hidden)]
@@ -10934,19 +10492,6 @@ impl TargetedSentimentMention {
     /// <p>The offset into the document text where the mention ends.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
-    }
-}
-impl std::fmt::Debug for TargetedSentimentMention {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetedSentimentMention");
-        formatter.field("score", &self.score);
-        formatter.field("group_score", &self.group_score);
-        formatter.field("text", &self.text);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("mention_sentiment", &self.mention_sentiment);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
     }
 }
 /// See [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
@@ -11064,7 +10609,7 @@ impl TargetedSentimentMention {
 /// <p>Contains the sentiment and sentiment score for one mention of an entity.</p>
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MentionSentiment {
     /// <p>The sentiment of the mention. </p>
     #[doc(hidden)]
@@ -11081,14 +10626,6 @@ impl MentionSentiment {
     /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
     pub fn sentiment_score(&self) -> std::option::Option<&crate::model::SentimentScore> {
         self.sentiment_score.as_ref()
-    }
-}
-impl std::fmt::Debug for MentionSentiment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MentionSentiment");
-        formatter.field("sentiment", &self.sentiment);
-        formatter.field("sentiment_score", &self.sentiment_score);
-        formatter.finish()
     }
 }
 /// See [`MentionSentiment`](crate::model::MentionSentiment).
@@ -11145,7 +10682,7 @@ impl MentionSentiment {
 
 /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     #[doc(hidden)]
@@ -11176,16 +10713,6 @@ impl SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub fn mixed(&self) -> std::option::Option<f32> {
         self.mixed
-    }
-}
-impl std::fmt::Debug for SentimentScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentScore");
-        formatter.field("positive", &self.positive);
-        formatter.field("negative", &self.negative);
-        formatter.field("neutral", &self.neutral);
-        formatter.field("mixed", &self.mixed);
-        formatter.finish()
     }
 }
 /// See [`SentimentScore`](crate::model::SentimentScore).
@@ -11545,7 +11072,7 @@ impl AsRef<str> for TargetedSentimentEntityType {
 
 /// <p>Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SyntaxToken {
     /// <p>A unique identifier for a token.</p>
     #[doc(hidden)]
@@ -11583,17 +11110,6 @@ impl SyntaxToken {
     /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     pub fn part_of_speech(&self) -> std::option::Option<&crate::model::PartOfSpeechTag> {
         self.part_of_speech.as_ref()
-    }
-}
-impl std::fmt::Debug for SyntaxToken {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SyntaxToken");
-        formatter.field("token_id", &self.token_id);
-        formatter.field("text", &self.text);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("part_of_speech", &self.part_of_speech);
-        formatter.finish()
     }
 }
 /// See [`SyntaxToken`](crate::model::SyntaxToken).
@@ -11683,7 +11199,7 @@ impl SyntaxToken {
 
 /// <p>Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartOfSpeechTag {
     /// <p>Identifies the part of speech that the token represents.</p>
     #[doc(hidden)]
@@ -11700,14 +11216,6 @@ impl PartOfSpeechTag {
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for PartOfSpeechTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartOfSpeechTag");
-        formatter.field("tag", &self.tag);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
@@ -12048,7 +11556,7 @@ impl AsRef<str> for SyntaxLanguageCode {
 
 /// <p>Provides information about a PII entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiEntity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
@@ -12079,16 +11587,6 @@ impl PiiEntity {
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
-    }
-}
-impl std::fmt::Debug for PiiEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiEntity");
-        formatter.field("score", &self.score);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
     }
 }
 /// See [`PiiEntity`](crate::model::PiiEntity).
@@ -12163,7 +11661,7 @@ impl PiiEntity {
 
 /// <p>Describes a key noun phrase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPhrase {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
@@ -12194,16 +11692,6 @@ impl KeyPhrase {
     /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
-    }
-}
-impl std::fmt::Debug for KeyPhrase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPhrase");
-        formatter.field("score", &self.score);
-        formatter.field("text", &self.text);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
     }
 }
 /// See [`KeyPhrase`](crate::model::KeyPhrase).
@@ -12279,7 +11767,7 @@ impl KeyPhrase {
 /// <p>Provides information about an entity. </p>
 /// <p> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
@@ -12317,17 +11805,6 @@ impl Entity {
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
-    }
-}
-impl std::fmt::Debug for Entity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entity");
-        formatter.field("score", &self.score);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("text", &self.text);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
     }
 }
 /// See [`Entity`](crate::model::Entity).
@@ -12549,7 +12026,7 @@ impl AsRef<str> for EntityType {
 
 /// <p>Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DominantLanguage {
     /// <p>The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
     #[doc(hidden)]
@@ -12566,14 +12043,6 @@ impl DominantLanguage {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for DominantLanguage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DominantLanguage");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`DominantLanguage`](crate::model::DominantLanguage).
@@ -12627,7 +12096,7 @@ impl DominantLanguage {
 
 /// <p>Specifies one of the label or labels that categorize the personally identifiable information (PII) entity being analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityLabel {
     /// <p>The name of the label.</p>
     #[doc(hidden)]
@@ -12644,14 +12113,6 @@ impl EntityLabel {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for EntityLabel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityLabel");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`EntityLabel`](crate::model::EntityLabel).
@@ -12702,7 +12163,7 @@ impl EntityLabel {
 
 /// <p>Specifies one of the label or labels that categorize the document being analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentLabel {
     /// <p>The name of the label.</p>
     #[doc(hidden)]
@@ -12719,14 +12180,6 @@ impl DocumentLabel {
     /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for DocumentLabel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentLabel");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`DocumentLabel`](crate::model::DocumentLabel).
@@ -12777,7 +12230,7 @@ impl DocumentLabel {
 
 /// <p>Specifies the class that categorizes the document being analyzed</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClass {
     /// <p>The name of the class.</p>
     #[doc(hidden)]
@@ -12794,14 +12247,6 @@ impl DocumentClass {
     /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
-    }
-}
-impl std::fmt::Debug for DocumentClass {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClass");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
     }
 }
 /// See [`DocumentClass`](crate::model::DocumentClass).
@@ -12852,7 +12297,7 @@ impl DocumentClass {
 
 /// <p>Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchItemError {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -12876,15 +12321,6 @@ impl BatchItemError {
     /// <p>A text description of the error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchItemError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchItemError");
-        formatter.field("index", &self.index);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchItemError`](crate::model::BatchItemError).
@@ -12950,7 +12386,7 @@ impl BatchItemError {
 
 /// <p>Analysis results for one of the documents in the batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectTargetedSentimentItemResult {
     /// <p>The zero-based index of this result in the input list.</p>
     #[doc(hidden)]
@@ -12967,14 +12403,6 @@ impl BatchDetectTargetedSentimentItemResult {
     /// <p>An array of targeted sentiment entities.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::TargetedSentimentEntity]> {
         self.entities.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDetectTargetedSentimentItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectTargetedSentimentItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("entities", &self.entities);
-        formatter.finish()
     }
 }
 /// See [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
@@ -13035,7 +12463,7 @@ impl BatchDetectTargetedSentimentItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectSyntaxItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -13052,14 +12480,6 @@ impl BatchDetectSyntaxItemResult {
     /// <p>The syntax tokens for the words in the document, one token for each word.</p>
     pub fn syntax_tokens(&self) -> std::option::Option<&[crate::model::SyntaxToken]> {
         self.syntax_tokens.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDetectSyntaxItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectSyntaxItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("syntax_tokens", &self.syntax_tokens);
-        formatter.finish()
     }
 }
 /// See [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
@@ -13119,7 +12539,7 @@ impl BatchDetectSyntaxItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectSentimentItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -13143,15 +12563,6 @@ impl BatchDetectSentimentItemResult {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its sentiment detection.</p>
     pub fn sentiment_score(&self) -> std::option::Option<&crate::model::SentimentScore> {
         self.sentiment_score.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchDetectSentimentItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectSentimentItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("sentiment", &self.sentiment);
-        formatter.field("sentiment_score", &self.sentiment_score);
-        formatter.finish()
     }
 }
 /// See [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
@@ -13220,7 +12631,7 @@ impl BatchDetectSentimentItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectKeyPhrasesItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -13237,14 +12648,6 @@ impl BatchDetectKeyPhrasesItemResult {
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
     pub fn key_phrases(&self) -> std::option::Option<&[crate::model::KeyPhrase]> {
         self.key_phrases.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDetectKeyPhrasesItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectKeyPhrasesItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("key_phrases", &self.key_phrases);
-        formatter.finish()
     }
 }
 /// See [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
@@ -13304,7 +12707,7 @@ impl BatchDetectKeyPhrasesItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectEntitiesItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -13321,14 +12724,6 @@ impl BatchDetectEntitiesItemResult {
     /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
         self.entities.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDetectEntitiesItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectEntitiesItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("entities", &self.entities);
-        formatter.finish()
     }
 }
 /// See [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
@@ -13388,7 +12783,7 @@ impl BatchDetectEntitiesItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectDominantLanguageItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -13405,14 +12800,6 @@ impl BatchDetectDominantLanguageItemResult {
     /// <p>One or more <code>DominantLanguage</code> objects describing the dominant languages in the document.</p>
     pub fn languages(&self) -> std::option::Option<&[crate::model::DominantLanguage]> {
         self.languages.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDetectDominantLanguageItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectDominantLanguageItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("languages", &self.languages);
-        formatter.finish()
     }
 }
 /// See [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).

@@ -5316,7 +5316,7 @@ impl UpdateIdentityProviderConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIdentityProviderConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5344,22 +5344,10 @@ impl UpdateIdentityProviderConfigurationInput {
         self.identity_provider_saml_metadata.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateIdentityProviderConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIdentityProviderConfigurationInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("identity_provider_type", &self.identity_provider_type);
-        formatter.field(
-            "identity_provider_saml_metadata",
-            &self.identity_provider_saml_metadata,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetMetadataInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5385,22 +5373,10 @@ impl UpdateFleetMetadataInput {
         self.optimize_for_end_user_location
     }
 }
-impl std::fmt::Debug for UpdateFleetMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetMetadataInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "optimize_for_end_user_location",
-            &self.optimize_for_end_user_location,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainMetadataInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5426,19 +5402,10 @@ impl UpdateDomainMetadataInput {
         self.display_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDomainMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainMetadataInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDevicePolicyConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5457,18 +5424,10 @@ impl UpdateDevicePolicyConfigurationInput {
         self.device_ca_certificate.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDevicePolicyConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDevicePolicyConfigurationInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("device_ca_certificate", &self.device_ca_certificate);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCompanyNetworkConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5501,20 +5460,10 @@ impl UpdateCompanyNetworkConfigurationInput {
         self.security_group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCompanyNetworkConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCompanyNetworkConfigurationInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAuditStreamConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5533,18 +5482,10 @@ impl UpdateAuditStreamConfigurationInput {
         self.audit_stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAuditStreamConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAuditStreamConfigurationInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("audit_stream_arn", &self.audit_stream_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -5563,18 +5504,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -5597,18 +5530,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignOutUserInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5627,18 +5552,10 @@ impl SignOutUserInput {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for SignOutUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignOutUserInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("username", &self.username);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeDomainAccessInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5657,18 +5574,10 @@ impl RevokeDomainAccessInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeDomainAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeDomainAccessInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreDomainAccessInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5687,18 +5596,10 @@ impl RestoreDomainAccessInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreDomainAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreDomainAccessInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebsiteCertificateAuthoritiesInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5724,19 +5625,10 @@ impl ListWebsiteCertificateAuthoritiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListWebsiteCertificateAuthoritiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebsiteCertificateAuthoritiesInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebsiteAuthorizationProvidersInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5762,19 +5654,10 @@ impl ListWebsiteAuthorizationProvidersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWebsiteAuthorizationProvidersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebsiteAuthorizationProvidersInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -5786,17 +5669,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFleetsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     #[doc(hidden)]
@@ -5815,18 +5691,10 @@ impl ListFleetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFleetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFleetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5852,19 +5720,10 @@ impl ListDomainsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDevicesInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5890,19 +5749,10 @@ impl ListDevicesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDevicesInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWebsiteCertificateAuthorityInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5921,18 +5771,10 @@ impl DisassociateWebsiteCertificateAuthorityInput {
         self.website_ca_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWebsiteCertificateAuthorityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWebsiteCertificateAuthorityInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("website_ca_id", &self.website_ca_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWebsiteAuthorizationProviderInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5951,18 +5793,10 @@ impl DisassociateWebsiteAuthorizationProviderInput {
         self.authorization_provider_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWebsiteAuthorizationProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWebsiteAuthorizationProviderInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("authorization_provider_id", &self.authorization_provider_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateDomainInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -5981,18 +5815,10 @@ impl DisassociateDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateDomainInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWebsiteCertificateAuthorityInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6011,18 +5837,10 @@ impl DescribeWebsiteCertificateAuthorityInput {
         self.website_ca_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWebsiteCertificateAuthorityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWebsiteCertificateAuthorityInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("website_ca_id", &self.website_ca_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6034,17 +5852,10 @@ impl DescribeIdentityProviderConfigurationInput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityProviderConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityProviderConfigurationInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -6056,17 +5867,10 @@ impl DescribeFleetMetadataInput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetMetadataInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6085,18 +5889,10 @@ impl DescribeDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDevicePolicyConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6108,17 +5904,10 @@ impl DescribeDevicePolicyConfigurationInput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDevicePolicyConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDevicePolicyConfigurationInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeviceInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6137,18 +5926,10 @@ impl DescribeDeviceInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeviceInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCompanyNetworkConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6160,17 +5941,10 @@ impl DescribeCompanyNetworkConfigurationInput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCompanyNetworkConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCompanyNetworkConfigurationInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAuditStreamConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6182,17 +5956,10 @@ impl DescribeAuditStreamConfigurationInput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAuditStreamConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAuditStreamConfigurationInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6204,17 +5971,10 @@ impl DeleteFleetInput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
     #[doc(hidden)]
@@ -6251,23 +6011,10 @@ impl CreateFleetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetInput");
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "optimize_for_end_user_location",
-            &self.optimize_for_end_user_location,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWebsiteCertificateAuthorityInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6293,19 +6040,10 @@ impl AssociateWebsiteCertificateAuthorityInput {
         self.display_name.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWebsiteCertificateAuthorityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWebsiteCertificateAuthorityInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWebsiteAuthorizationProviderInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
@@ -6333,22 +6071,10 @@ impl AssociateWebsiteAuthorizationProviderInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWebsiteAuthorizationProviderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWebsiteAuthorizationProviderInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field(
-            "authorization_provider_type",
-            &self.authorization_provider_type,
-        );
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -6379,15 +6105,5 @@ impl AssociateDomainInput {
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub fn acm_certificate_arn(&self) -> std::option::Option<&str> {
         self.acm_certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateDomainInput");
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("acm_certificate_arn", &self.acm_certificate_arn);
-        formatter.finish()
     }
 }

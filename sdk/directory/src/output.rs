@@ -2,7 +2,7 @@
 
 /// <p>Result of a VerifyTrust request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyTrustOutput {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl VerifyTrustOutput {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
     pub fn trust_id(&self) -> std::option::Option<&str> {
         self.trust_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VerifyTrustOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyTrustOutput");
-        formatter.field("trust_id", &self.trust_id);
-        formatter.finish()
     }
 }
 /// See [`VerifyTrustOutput`](crate::output::VerifyTrustOutput).
@@ -57,7 +50,7 @@ impl VerifyTrustOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrustOutput {
     /// <p>The Amazon Web Services request identifier.</p>
     #[doc(hidden)]
@@ -74,14 +67,6 @@ impl UpdateTrustOutput {
     /// <p>Identifier of the trust relationship.</p>
     pub fn trust_id(&self) -> std::option::Option<&str> {
         self.trust_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateTrustOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrustOutput");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("trust_id", &self.trust_id);
-        formatter.finish()
     }
 }
 /// See [`UpdateTrustOutput`](crate::output::UpdateTrustOutput).
@@ -132,7 +117,7 @@ impl UpdateTrustOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSettingsOutput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -142,13 +127,6 @@ impl UpdateSettingsOutput {
     /// <p>The identifier of the directory.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSettingsOutput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
     }
 }
 /// See [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput).
@@ -187,14 +165,8 @@ impl UpdateSettingsOutput {
 
 /// <p>Contains the results of the <code>UpdateRadius</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRadiusOutput {}
-impl std::fmt::Debug for UpdateRadiusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRadiusOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateRadiusOutput`](crate::output::UpdateRadiusOutput).
 pub mod update_radius_output {
 
@@ -217,14 +189,8 @@ impl UpdateRadiusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNumberOfDomainControllersOutput {}
-impl std::fmt::Debug for UpdateNumberOfDomainControllersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNumberOfDomainControllersOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateNumberOfDomainControllersOutput`](crate::output::UpdateNumberOfDomainControllersOutput).
 pub mod update_number_of_domain_controllers_output {
 
@@ -247,14 +213,8 @@ impl UpdateNumberOfDomainControllersOutput {
 
 /// <p>The result of an UpdateConditionalForwarder request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConditionalForwarderOutput {}
-impl std::fmt::Debug for UpdateConditionalForwarderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConditionalForwarderOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateConditionalForwarderOutput`](crate::output::UpdateConditionalForwarderOutput).
 pub mod update_conditional_forwarder_output {
 
@@ -277,7 +237,7 @@ impl UpdateConditionalForwarderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnshareDirectoryOutput {
     /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     #[doc(hidden)]
@@ -287,13 +247,6 @@ impl UnshareDirectoryOutput {
     /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UnshareDirectoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnshareDirectoryOutput");
-        formatter.field("shared_directory_id", &self.shared_directory_id);
-        formatter.finish()
     }
 }
 /// See [`UnshareDirectoryOutput`](crate::output::UnshareDirectoryOutput).
@@ -335,7 +288,7 @@ impl UnshareDirectoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSchemaExtensionOutput {
     /// <p>The identifier of the schema extension that will be applied.</p>
     #[doc(hidden)]
@@ -345,13 +298,6 @@ impl StartSchemaExtensionOutput {
     /// <p>The identifier of the schema extension that will be applied.</p>
     pub fn schema_extension_id(&self) -> std::option::Option<&str> {
         self.schema_extension_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartSchemaExtensionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSchemaExtensionOutput");
-        formatter.field("schema_extension_id", &self.schema_extension_id);
-        formatter.finish()
     }
 }
 /// See [`StartSchemaExtensionOutput`](crate::output::StartSchemaExtensionOutput).
@@ -393,7 +339,7 @@ impl StartSchemaExtensionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShareDirectoryOutput {
     /// <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
     #[doc(hidden)]
@@ -403,13 +349,6 @@ impl ShareDirectoryOutput {
     /// <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ShareDirectoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShareDirectoryOutput");
-        formatter.field("shared_directory_id", &self.shared_directory_id);
-        formatter.finish()
     }
 }
 /// See [`ShareDirectoryOutput`](crate::output::ShareDirectoryOutput).
@@ -451,14 +390,8 @@ impl ShareDirectoryOutput {
 
 /// <p>Contains the results of the <code>RestoreFromSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreFromSnapshotOutput {}
-impl std::fmt::Debug for RestoreFromSnapshotOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreFromSnapshotOutput");
-        formatter.finish()
-    }
-}
 /// See [`RestoreFromSnapshotOutput`](crate::output::RestoreFromSnapshotOutput).
 pub mod restore_from_snapshot_output {
 
@@ -481,14 +414,8 @@ impl RestoreFromSnapshotOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetUserPasswordOutput {}
-impl std::fmt::Debug for ResetUserPasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetUserPasswordOutput");
-        formatter.finish()
-    }
-}
 /// See [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput).
 pub mod reset_user_password_output {
 
@@ -511,14 +438,8 @@ impl ResetUserPasswordOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceOutput {}
-impl std::fmt::Debug for RemoveTagsFromResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
 
@@ -541,14 +462,8 @@ impl RemoveTagsFromResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveRegionOutput {}
-impl std::fmt::Debug for RemoveRegionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveRegionOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveRegionOutput`](crate::output::RemoveRegionOutput).
 pub mod remove_region_output {
 
@@ -571,14 +486,8 @@ impl RemoveRegionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveIpRoutesOutput {}
-impl std::fmt::Debug for RemoveIpRoutesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveIpRoutesOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveIpRoutesOutput`](crate::output::RemoveIpRoutesOutput).
 pub mod remove_ip_routes_output {
 
@@ -601,7 +510,7 @@ impl RemoveIpRoutesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectSharedDirectoryOutput {
     /// <p>Identifier of the shared directory in the directory consumer account.</p>
     #[doc(hidden)]
@@ -611,13 +520,6 @@ impl RejectSharedDirectoryOutput {
     /// <p>Identifier of the shared directory in the directory consumer account.</p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RejectSharedDirectoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectSharedDirectoryOutput");
-        formatter.field("shared_directory_id", &self.shared_directory_id);
-        formatter.finish()
     }
 }
 /// See [`RejectSharedDirectoryOutput`](crate::output::RejectSharedDirectoryOutput).
@@ -659,14 +561,8 @@ impl RejectSharedDirectoryOutput {
 
 /// <p>The result of a RegisterEventTopic request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterEventTopicOutput {}
-impl std::fmt::Debug for RegisterEventTopicOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterEventTopicOutput");
-        formatter.finish()
-    }
-}
 /// See [`RegisterEventTopicOutput`](crate::output::RegisterEventTopicOutput).
 pub mod register_event_topic_output {
 
@@ -689,7 +585,7 @@ impl RegisterEventTopicOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterCertificateOutput {
     /// <p>The identifier of the certificate.</p>
     #[doc(hidden)]
@@ -699,13 +595,6 @@ impl RegisterCertificateOutput {
     /// <p>The identifier of the certificate.</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisterCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterCertificateOutput");
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.finish()
     }
 }
 /// See [`RegisterCertificateOutput`](crate::output::RegisterCertificateOutput).
@@ -747,7 +636,7 @@ impl RegisterCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>List of tags returned by the ListTagsForResource operation.</p>
     #[doc(hidden)]
@@ -764,14 +653,6 @@ impl ListTagsForResourceOutput {
     /// <p>Reserved for future use.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -831,7 +712,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSchemaExtensionsOutput {
     /// <p>Information about the schema extensions applied to the directory.</p>
     #[doc(hidden)]
@@ -851,14 +732,6 @@ impl ListSchemaExtensionsOutput {
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListSchemaExtensionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSchemaExtensionsOutput");
-        formatter.field("schema_extensions_info", &self.schema_extensions_info);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListSchemaExtensionsOutput`](crate::output::ListSchemaExtensionsOutput).
@@ -919,7 +792,7 @@ impl ListSchemaExtensionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLogSubscriptionsOutput {
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -936,14 +809,6 @@ impl ListLogSubscriptionsOutput {
     /// <p>The token for the next set of items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListLogSubscriptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLogSubscriptionsOutput");
-        formatter.field("log_subscriptions", &self.log_subscriptions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListLogSubscriptionsOutput`](crate::output::ListLogSubscriptionsOutput).
@@ -1004,7 +869,7 @@ impl ListLogSubscriptionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIpRoutesOutput {
     /// <p>A list of <code>IpRoute</code>s.</p>
     #[doc(hidden)]
@@ -1021,14 +886,6 @@ impl ListIpRoutesOutput {
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListIpRoutesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIpRoutesOutput");
-        formatter.field("ip_routes_info", &self.ip_routes_info);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListIpRoutesOutput`](crate::output::ListIpRoutesOutput).
@@ -1088,7 +945,7 @@ impl ListIpRoutesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCertificatesOutput {
     /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
     #[doc(hidden)]
@@ -1105,14 +962,6 @@ impl ListCertificatesOutput {
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
     pub fn certificates_info(&self) -> std::option::Option<&[crate::model::CertificateInfo]> {
         self.certificates_info.as_deref()
-    }
-}
-impl std::fmt::Debug for ListCertificatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCertificatesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("certificates_info", &self.certificates_info);
-        formatter.finish()
     }
 }
 /// See [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
@@ -1173,7 +1022,7 @@ impl ListCertificatesOutput {
 
 /// <p>Contains the results of the <code>GetSnapshotLimits</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSnapshotLimitsOutput {
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     #[doc(hidden)]
@@ -1183,13 +1032,6 @@ impl GetSnapshotLimitsOutput {
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     pub fn snapshot_limits(&self) -> std::option::Option<&crate::model::SnapshotLimits> {
         self.snapshot_limits.as_ref()
-    }
-}
-impl std::fmt::Debug for GetSnapshotLimitsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSnapshotLimitsOutput");
-        formatter.field("snapshot_limits", &self.snapshot_limits);
-        formatter.finish()
     }
 }
 /// See [`GetSnapshotLimitsOutput`](crate::output::GetSnapshotLimitsOutput).
@@ -1231,7 +1073,7 @@ impl GetSnapshotLimitsOutput {
 
 /// <p>Contains the results of the <code>GetDirectoryLimits</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDirectoryLimitsOutput {
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
     #[doc(hidden)]
@@ -1241,13 +1083,6 @@ impl GetDirectoryLimitsOutput {
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
     pub fn directory_limits(&self) -> std::option::Option<&crate::model::DirectoryLimits> {
         self.directory_limits.as_ref()
-    }
-}
-impl std::fmt::Debug for GetDirectoryLimitsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDirectoryLimitsOutput");
-        formatter.field("directory_limits", &self.directory_limits);
-        formatter.finish()
     }
 }
 /// See [`GetDirectoryLimitsOutput`](crate::output::GetDirectoryLimitsOutput).
@@ -1289,14 +1124,8 @@ impl GetDirectoryLimitsOutput {
 
 /// <p>Contains the results of the <code>EnableSso</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableSsoOutput {}
-impl std::fmt::Debug for EnableSsoOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableSsoOutput");
-        formatter.finish()
-    }
-}
 /// See [`EnableSsoOutput`](crate::output::EnableSsoOutput).
 pub mod enable_sso_output {
 
@@ -1319,14 +1148,8 @@ impl EnableSsoOutput {
 
 /// <p>Contains the results of the <code>EnableRadius</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableRadiusOutput {}
-impl std::fmt::Debug for EnableRadiusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableRadiusOutput");
-        formatter.finish()
-    }
-}
 /// See [`EnableRadiusOutput`](crate::output::EnableRadiusOutput).
 pub mod enable_radius_output {
 
@@ -1349,14 +1172,8 @@ impl EnableRadiusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableLdapsOutput {}
-impl std::fmt::Debug for EnableLdapsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableLdapsOutput");
-        formatter.finish()
-    }
-}
 /// See [`EnableLdapsOutput`](crate::output::EnableLdapsOutput).
 pub mod enable_ldaps_output {
 
@@ -1379,14 +1196,8 @@ impl EnableLdapsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableClientAuthenticationOutput {}
-impl std::fmt::Debug for EnableClientAuthenticationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableClientAuthenticationOutput");
-        formatter.finish()
-    }
-}
 /// See [`EnableClientAuthenticationOutput`](crate::output::EnableClientAuthenticationOutput).
 pub mod enable_client_authentication_output {
 
@@ -1409,14 +1220,8 @@ impl EnableClientAuthenticationOutput {
 
 /// <p>Contains the results of the <code>DisableSso</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableSsoOutput {}
-impl std::fmt::Debug for DisableSsoOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableSsoOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisableSsoOutput`](crate::output::DisableSsoOutput).
 pub mod disable_sso_output {
 
@@ -1439,14 +1244,8 @@ impl DisableSsoOutput {
 
 /// <p>Contains the results of the <code>DisableRadius</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableRadiusOutput {}
-impl std::fmt::Debug for DisableRadiusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableRadiusOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisableRadiusOutput`](crate::output::DisableRadiusOutput).
 pub mod disable_radius_output {
 
@@ -1469,14 +1268,8 @@ impl DisableRadiusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableLdapsOutput {}
-impl std::fmt::Debug for DisableLdapsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableLdapsOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisableLdapsOutput`](crate::output::DisableLdapsOutput).
 pub mod disable_ldaps_output {
 
@@ -1499,14 +1292,8 @@ impl DisableLdapsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableClientAuthenticationOutput {}
-impl std::fmt::Debug for DisableClientAuthenticationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableClientAuthenticationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisableClientAuthenticationOutput`](crate::output::DisableClientAuthenticationOutput).
 pub mod disable_client_authentication_output {
 
@@ -1529,7 +1316,7 @@ impl DisableClientAuthenticationOutput {
 
 /// <p>The result of a DescribeTrust request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustsOutput {
     /// <p>The list of Trust objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
@@ -1548,14 +1335,6 @@ impl DescribeTrustsOutput {
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeTrustsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustsOutput");
-        formatter.field("trusts", &self.trusts);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeTrustsOutput`](crate::output::DescribeTrustsOutput).
@@ -1617,7 +1396,7 @@ impl DescribeTrustsOutput {
 
 /// <p>Contains the results of the <code>DescribeSnapshots</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSnapshotsOutput {
     /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
@@ -1636,14 +1415,6 @@ impl DescribeSnapshotsOutput {
     /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeSnapshotsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSnapshotsOutput");
-        formatter.field("snapshots", &self.snapshots);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
@@ -1705,7 +1476,7 @@ impl DescribeSnapshotsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesOutput {
     /// <p>A list of all shared directories in your account.</p>
     #[doc(hidden)]
@@ -1722,14 +1493,6 @@ impl DescribeSharedDirectoriesOutput {
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeSharedDirectoriesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSharedDirectoriesOutput");
-        formatter.field("shared_directories", &self.shared_directories);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeSharedDirectoriesOutput`](crate::output::DescribeSharedDirectoriesOutput).
@@ -1790,7 +1553,7 @@ impl DescribeSharedDirectoriesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSettingsOutput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -1816,15 +1579,6 @@ impl DescribeSettingsOutput {
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSettingsOutput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("setting_entries", &self.setting_entries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeSettingsOutput`](crate::output::DescribeSettingsOutput).
@@ -1898,7 +1652,7 @@ impl DescribeSettingsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRegionsOutput {
     /// <p>List of Region information related to the directory for each replicated Region.</p>
     #[doc(hidden)]
@@ -1915,14 +1669,6 @@ impl DescribeRegionsOutput {
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeRegionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRegionsOutput");
-        formatter.field("regions_description", &self.regions_description);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeRegionsOutput`](crate::output::DescribeRegionsOutput).
@@ -1983,7 +1729,7 @@ impl DescribeRegionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLdapsSettingsOutput {
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
     #[doc(hidden)]
@@ -2000,14 +1746,6 @@ impl DescribeLdapsSettingsOutput {
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeLdapsSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLdapsSettingsOutput");
-        formatter.field("ldaps_settings_info", &self.ldaps_settings_info);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeLdapsSettingsOutput`](crate::output::DescribeLdapsSettingsOutput).
@@ -2068,7 +1806,7 @@ impl DescribeLdapsSettingsOutput {
 
 /// <p>The result of a DescribeEventTopic request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventTopicsOutput {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     #[doc(hidden)]
@@ -2078,13 +1816,6 @@ impl DescribeEventTopicsOutput {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     pub fn event_topics(&self) -> std::option::Option<&[crate::model::EventTopic]> {
         self.event_topics.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeEventTopicsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventTopicsOutput");
-        formatter.field("event_topics", &self.event_topics);
-        formatter.finish()
     }
 }
 /// See [`DescribeEventTopicsOutput`](crate::output::DescribeEventTopicsOutput).
@@ -2132,7 +1863,7 @@ impl DescribeEventTopicsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainControllersOutput {
     /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
     #[doc(hidden)]
@@ -2149,14 +1880,6 @@ impl DescribeDomainControllersOutput {
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainControllersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainControllersOutput");
-        formatter.field("domain_controllers", &self.domain_controllers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeDomainControllersOutput`](crate::output::DescribeDomainControllersOutput).
@@ -2217,7 +1940,7 @@ impl DescribeDomainControllersOutput {
 
 /// <p>Contains the results of the <code>DescribeDirectories</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectoriesOutput {
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
@@ -2239,14 +1962,6 @@ impl DescribeDirectoriesOutput {
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDirectoriesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectoriesOutput");
-        formatter.field("directory_descriptions", &self.directory_descriptions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeDirectoriesOutput`](crate::output::DescribeDirectoriesOutput).
@@ -2309,7 +2024,7 @@ impl DescribeDirectoriesOutput {
 
 /// <p>The result of a DescribeConditionalForwarder request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConditionalForwardersOutput {
     /// <p>The list of conditional forwarders that have been created.</p>
     #[doc(hidden)]
@@ -2322,13 +2037,6 @@ impl DescribeConditionalForwardersOutput {
         &self,
     ) -> std::option::Option<&[crate::model::ConditionalForwarder]> {
         self.conditional_forwarders.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeConditionalForwardersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConditionalForwardersOutput");
-        formatter.field("conditional_forwarders", &self.conditional_forwarders);
-        formatter.finish()
     }
 }
 /// See [`DescribeConditionalForwardersOutput`](crate::output::DescribeConditionalForwardersOutput).
@@ -2377,7 +2085,7 @@ impl DescribeConditionalForwardersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClientAuthenticationSettingsOutput {
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
     #[doc(hidden)]
@@ -2397,17 +2105,6 @@ impl DescribeClientAuthenticationSettingsOutput {
     /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeClientAuthenticationSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClientAuthenticationSettingsOutput");
-        formatter.field(
-            "client_authentication_settings_info",
-            &self.client_authentication_settings_info,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeClientAuthenticationSettingsOutput`](crate::output::DescribeClientAuthenticationSettingsOutput).
@@ -2473,7 +2170,7 @@ impl DescribeClientAuthenticationSettingsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCertificateOutput {
     /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
     #[doc(hidden)]
@@ -2483,13 +2180,6 @@ impl DescribeCertificateOutput {
     /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
     pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
         self.certificate.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCertificateOutput");
-        formatter.field("certificate", &self.certificate);
-        formatter.finish()
     }
 }
 /// See [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
@@ -2531,14 +2221,8 @@ impl DescribeCertificateOutput {
 
 /// <p>The result of a DeregisterEventTopic request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterEventTopicOutput {}
-impl std::fmt::Debug for DeregisterEventTopicOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterEventTopicOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeregisterEventTopicOutput`](crate::output::DeregisterEventTopicOutput).
 pub mod deregister_event_topic_output {
 
@@ -2561,14 +2245,8 @@ impl DeregisterEventTopicOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterCertificateOutput {}
-impl std::fmt::Debug for DeregisterCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeregisterCertificateOutput`](crate::output::DeregisterCertificateOutput).
 pub mod deregister_certificate_output {
 
@@ -2591,7 +2269,7 @@ impl DeregisterCertificateOutput {
 
 /// <p>The result of a DeleteTrust request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrustOutput {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
     #[doc(hidden)]
@@ -2601,13 +2279,6 @@ impl DeleteTrustOutput {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
     pub fn trust_id(&self) -> std::option::Option<&str> {
         self.trust_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteTrustOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrustOutput");
-        formatter.field("trust_id", &self.trust_id);
-        formatter.finish()
     }
 }
 /// See [`DeleteTrustOutput`](crate::output::DeleteTrustOutput).
@@ -2646,7 +2317,7 @@ impl DeleteTrustOutput {
 
 /// <p>Contains the results of the <code>DeleteSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSnapshotOutput {
     /// <p>The identifier of the directory snapshot that was deleted.</p>
     #[doc(hidden)]
@@ -2656,13 +2327,6 @@ impl DeleteSnapshotOutput {
     /// <p>The identifier of the directory snapshot that was deleted.</p>
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteSnapshotOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSnapshotOutput");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
     }
 }
 /// See [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
@@ -2701,14 +2365,8 @@ impl DeleteSnapshotOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLogSubscriptionOutput {}
-impl std::fmt::Debug for DeleteLogSubscriptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLogSubscriptionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteLogSubscriptionOutput`](crate::output::DeleteLogSubscriptionOutput).
 pub mod delete_log_subscription_output {
 
@@ -2731,7 +2389,7 @@ impl DeleteLogSubscriptionOutput {
 
 /// <p>Contains the results of the <code>DeleteDirectory</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectoryOutput {
     /// <p>The directory identifier.</p>
     #[doc(hidden)]
@@ -2741,13 +2399,6 @@ impl DeleteDirectoryOutput {
     /// <p>The directory identifier.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteDirectoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectoryOutput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
     }
 }
 /// See [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput).
@@ -2786,14 +2437,8 @@ impl DeleteDirectoryOutput {
 
 /// <p>The result of a DeleteConditionalForwarder request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConditionalForwarderOutput {}
-impl std::fmt::Debug for DeleteConditionalForwarderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConditionalForwarderOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConditionalForwarderOutput`](crate::output::DeleteConditionalForwarderOutput).
 pub mod delete_conditional_forwarder_output {
 
@@ -2816,7 +2461,7 @@ impl DeleteConditionalForwarderOutput {
 
 /// <p>The result of a CreateTrust request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrustOutput {
     /// <p>A unique identifier for the trust relationship that was created.</p>
     #[doc(hidden)]
@@ -2826,13 +2471,6 @@ impl CreateTrustOutput {
     /// <p>A unique identifier for the trust relationship that was created.</p>
     pub fn trust_id(&self) -> std::option::Option<&str> {
         self.trust_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateTrustOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrustOutput");
-        formatter.field("trust_id", &self.trust_id);
-        formatter.finish()
     }
 }
 /// See [`CreateTrustOutput`](crate::output::CreateTrustOutput).
@@ -2871,7 +2509,7 @@ impl CreateTrustOutput {
 
 /// <p>Contains the results of the <code>CreateSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotOutput {
     /// <p>The identifier of the snapshot that was created.</p>
     #[doc(hidden)]
@@ -2881,13 +2519,6 @@ impl CreateSnapshotOutput {
     /// <p>The identifier of the snapshot that was created.</p>
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateSnapshotOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotOutput");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
     }
 }
 /// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
@@ -2926,7 +2557,7 @@ impl CreateSnapshotOutput {
 
 /// <p>Result of a CreateMicrosoftAD request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMicrosoftAdOutput {
     /// <p>The identifier of the directory that was created.</p>
     #[doc(hidden)]
@@ -2936,13 +2567,6 @@ impl CreateMicrosoftAdOutput {
     /// <p>The identifier of the directory that was created.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateMicrosoftAdOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMicrosoftAdOutput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
     }
 }
 /// See [`CreateMicrosoftAdOutput`](crate::output::CreateMicrosoftAdOutput).
@@ -2981,14 +2605,8 @@ impl CreateMicrosoftAdOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLogSubscriptionOutput {}
-impl std::fmt::Debug for CreateLogSubscriptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLogSubscriptionOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateLogSubscriptionOutput`](crate::output::CreateLogSubscriptionOutput).
 pub mod create_log_subscription_output {
 
@@ -3011,7 +2629,7 @@ impl CreateLogSubscriptionOutput {
 
 /// <p>Contains the results of the <code>CreateDirectory</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectoryOutput {
     /// <p>The identifier of the directory that was created.</p>
     #[doc(hidden)]
@@ -3021,13 +2639,6 @@ impl CreateDirectoryOutput {
     /// <p>The identifier of the directory that was created.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDirectoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectoryOutput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
     }
 }
 /// See [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput).
@@ -3066,14 +2677,8 @@ impl CreateDirectoryOutput {
 
 /// <p>The result of a CreateConditinalForwarder request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConditionalForwarderOutput {}
-impl std::fmt::Debug for CreateConditionalForwarderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConditionalForwarderOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateConditionalForwarderOutput`](crate::output::CreateConditionalForwarderOutput).
 pub mod create_conditional_forwarder_output {
 
@@ -3096,7 +2701,7 @@ impl CreateConditionalForwarderOutput {
 
 /// <p>Contains the results for the <code>CreateComputer</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateComputerOutput {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
     #[doc(hidden)]
@@ -3106,13 +2711,6 @@ impl CreateComputerOutput {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
     pub fn computer(&self) -> std::option::Option<&crate::model::Computer> {
         self.computer.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateComputerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateComputerOutput");
-        formatter.field("computer", &self.computer);
-        formatter.finish()
     }
 }
 /// See [`CreateComputerOutput`](crate::output::CreateComputerOutput).
@@ -3151,7 +2749,7 @@ impl CreateComputerOutput {
 
 /// <p>Contains the results of the <code>CreateAlias</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasOutput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
@@ -3168,14 +2766,6 @@ impl CreateAliasOutput {
     /// <p>The alias for the directory.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasOutput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("alias", &self.alias);
-        formatter.finish()
     }
 }
 /// See [`CreateAliasOutput`](crate::output::CreateAliasOutput).
@@ -3226,7 +2816,7 @@ impl CreateAliasOutput {
 
 /// <p>Contains the results of the <code>ConnectDirectory</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectDirectoryOutput {
     /// <p>The identifier of the new directory.</p>
     #[doc(hidden)]
@@ -3236,13 +2826,6 @@ impl ConnectDirectoryOutput {
     /// <p>The identifier of the new directory.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectDirectoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectDirectoryOutput");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
     }
 }
 /// See [`ConnectDirectoryOutput`](crate::output::ConnectDirectoryOutput).
@@ -3281,14 +2864,8 @@ impl ConnectDirectoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelSchemaExtensionOutput {}
-impl std::fmt::Debug for CancelSchemaExtensionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelSchemaExtensionOutput");
-        formatter.finish()
-    }
-}
 /// See [`CancelSchemaExtensionOutput`](crate::output::CancelSchemaExtensionOutput).
 pub mod cancel_schema_extension_output {
 
@@ -3311,14 +2888,8 @@ impl CancelSchemaExtensionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceOutput {}
-impl std::fmt::Debug for AddTagsToResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
 
@@ -3341,14 +2912,8 @@ impl AddTagsToResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddRegionOutput {}
-impl std::fmt::Debug for AddRegionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddRegionOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddRegionOutput`](crate::output::AddRegionOutput).
 pub mod add_region_output {
 
@@ -3371,14 +2936,8 @@ impl AddRegionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddIpRoutesOutput {}
-impl std::fmt::Debug for AddIpRoutesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddIpRoutesOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddIpRoutesOutput`](crate::output::AddIpRoutesOutput).
 pub mod add_ip_routes_output {
 
@@ -3401,7 +2960,7 @@ impl AddIpRoutesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptSharedDirectoryOutput {
     /// <p>The shared directory in the directory consumer account.</p>
     #[doc(hidden)]
@@ -3411,13 +2970,6 @@ impl AcceptSharedDirectoryOutput {
     /// <p>The shared directory in the directory consumer account.</p>
     pub fn shared_directory(&self) -> std::option::Option<&crate::model::SharedDirectory> {
         self.shared_directory.as_ref()
-    }
-}
-impl std::fmt::Debug for AcceptSharedDirectoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptSharedDirectoryOutput");
-        formatter.field("shared_directory", &self.shared_directory);
-        formatter.finish()
     }
 }
 /// See [`AcceptSharedDirectoryOutput`](crate::output::AcceptSharedDirectoryOutput).

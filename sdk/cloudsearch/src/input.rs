@@ -4023,7 +4023,7 @@ impl UpdateServiceAccessPoliciesInput {
 
 /// <p>Container for the parameters to the <code><code>UpdateServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceAccessPoliciesInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4042,18 +4042,10 @@ impl UpdateServiceAccessPoliciesInput {
         self.access_policies.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServiceAccessPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceAccessPoliciesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("access_policies", &self.access_policies);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>UpdateScalingParameters</code></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateScalingParametersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4072,18 +4064,10 @@ impl UpdateScalingParametersInput {
         self.scaling_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateScalingParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateScalingParametersInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("scaling_parameters", &self.scaling_parameters);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>UpdateDomainEndpointOptions</code></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
     #[doc(hidden)]
@@ -4104,18 +4088,10 @@ impl UpdateDomainEndpointOptionsInput {
         self.domain_endpoint_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDomainEndpointOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainEndpointOptionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>UpdateAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAvailabilityOptionsInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4134,29 +4110,15 @@ impl UpdateAvailabilityOptionsInput {
         self.multi_az
     }
 }
-impl std::fmt::Debug for UpdateAvailabilityOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAvailabilityOptionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainNamesInput {}
-impl std::fmt::Debug for ListDomainNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainNamesInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>IndexDocuments</code></code> operation. Specifies the name of the domain you want to re-index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexDocumentsInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4168,17 +4130,10 @@ impl IndexDocumentsInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for IndexDocumentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexDocumentsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeSuggester</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSuggestersInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4204,19 +4159,10 @@ impl DescribeSuggestersInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeSuggestersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSuggestersInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("suggester_names", &self.suggester_names);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceAccessPoliciesInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4235,18 +4181,10 @@ impl DescribeServiceAccessPoliciesInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeServiceAccessPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceAccessPoliciesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeScalingParameters</code></code> operation. Specifies the name of the domain you want to describe. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingParametersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4258,17 +4196,10 @@ impl DescribeScalingParametersInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingParametersInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeIndexFields</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIndexFieldsInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4294,19 +4225,10 @@ impl DescribeIndexFieldsInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeIndexFieldsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIndexFieldsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("field_names", &self.field_names);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExpressionsInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4332,19 +4254,10 @@ impl DescribeExpressionsInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeExpressionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExpressionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("expression_names", &self.expression_names);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainsInput {
     /// <p>The names of the domains you want to include in the response.</p>
     #[doc(hidden)]
@@ -4356,17 +4269,10 @@ impl DescribeDomainsInput {
         self.domain_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainsInput");
-        formatter.field("domain_names", &self.domain_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeDomainEndpointOptions</code></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
     #[doc(hidden)]
@@ -4385,18 +4291,10 @@ impl DescribeDomainEndpointOptionsInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeDomainEndpointOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainEndpointOptionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAvailabilityOptionsInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4415,18 +4313,10 @@ impl DescribeAvailabilityOptionsInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeAvailabilityOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAvailabilityOptionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeAnalysisSchemes</code></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4452,19 +4342,10 @@ impl DescribeAnalysisSchemesInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeAnalysisSchemesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnalysisSchemesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("analysis_scheme_names", &self.analysis_scheme_names);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteSuggester</code></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSuggesterInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4483,18 +4364,10 @@ impl DeleteSuggesterInput {
         self.suggester_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSuggesterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSuggesterInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("suggester_name", &self.suggester_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteIndexField</code></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4513,18 +4386,10 @@ impl DeleteIndexFieldInput {
         self.index_field_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIndexFieldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIndexFieldInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteExpression</code></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4543,18 +4408,10 @@ impl DeleteExpressionInput {
         self.expression_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteExpressionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExpressionInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("expression_name", &self.expression_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteDomain</code></code> operation. Specifies the name of the domain you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p>The name of the domain you want to permanently delete.</p>
     #[doc(hidden)]
@@ -4566,17 +4423,10 @@ impl DeleteDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4595,18 +4445,10 @@ impl DeleteAnalysisSchemeInput {
         self.analysis_scheme_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAnalysisSchemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnalysisSchemeInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("analysis_scheme_name", &self.analysis_scheme_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DefineSuggester</code></code> operation. Specifies the name of the domain you want to update and the suggester configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineSuggesterInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4625,18 +4467,10 @@ impl DefineSuggesterInput {
         self.suggester.as_ref()
     }
 }
-impl std::fmt::Debug for DefineSuggesterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineSuggesterInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("suggester", &self.suggester);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DefineIndexField</code></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4655,18 +4489,10 @@ impl DefineIndexFieldInput {
         self.index_field.as_ref()
     }
 }
-impl std::fmt::Debug for DefineIndexFieldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineIndexFieldInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("index_field", &self.index_field);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DefineExpression</code></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4685,18 +4511,10 @@ impl DefineExpressionInput {
         self.expression.as_ref()
     }
 }
-impl std::fmt::Debug for DefineExpressionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineExpressionInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DefineAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4715,18 +4533,10 @@ impl DefineAnalysisSchemeInput {
         self.analysis_scheme.as_ref()
     }
 }
-impl std::fmt::Debug for DefineAnalysisSchemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineAnalysisSchemeInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("analysis_scheme", &self.analysis_scheme);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>CreateDomain</code></code> operation. Specifies a name for the new search domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
     #[doc(hidden)]
@@ -4738,17 +4548,10 @@ impl CreateDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>BuildSuggester</code></code> operation. Specifies the name of the domain you want to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildSuggestersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4758,12 +4561,5 @@ impl BuildSuggestersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildSuggestersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildSuggestersInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
     }
 }

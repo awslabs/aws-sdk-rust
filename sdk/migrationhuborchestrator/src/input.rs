@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_workflow_input {
 
     /// A builder for [`CreateWorkflowInput`](crate::input::CreateWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -149,6 +149,22 @@ pub mod create_workflow_input {
                 step_targets: self.step_targets,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("template_id", &self.template_id);
+            formatter.field(
+                "application_configuration_id",
+                &self.application_configuration_id,
+            );
+            formatter.field("input_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("step_targets", &self.step_targets);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -4832,7 +4848,7 @@ impl UntagResourceInput {
 pub mod update_workflow_input {
 
     /// A builder for [`UpdateWorkflowInput`](crate::input::UpdateWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4929,6 +4945,17 @@ pub mod update_workflow_input {
                 input_parameters: self.input_parameters,
                 step_targets: self.step_targets,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("id", &self.id);
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("input_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("step_targets", &self.step_targets);
+            formatter.finish()
         }
     }
 }
@@ -5672,7 +5699,7 @@ impl UpdateWorkflowStepGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowStepGroupsInput {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
@@ -5698,19 +5725,10 @@ impl ListWorkflowStepGroupsInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkflowStepGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowStepGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow that will contain the step group.</p>
     #[doc(hidden)]
@@ -5750,21 +5768,10 @@ impl CreateWorkflowStepGroupInput {
         self.previous.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkflowStepGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkflowStepGroupInput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("next", &self.next);
-        formatter.field("previous", &self.previous);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
@@ -5783,18 +5790,10 @@ impl DeleteWorkflowStepGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkflowStepGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkflowStepGroupInput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
@@ -5841,22 +5840,10 @@ impl UpdateWorkflowStepGroupInput {
         self.previous.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWorkflowStepGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkflowStepGroupInput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("next", &self.next);
-        formatter.field("previous", &self.previous);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkflowStepGroupInput {
     /// <p>The ID of the step group.</p>
     #[doc(hidden)]
@@ -5875,18 +5862,10 @@ impl GetWorkflowStepGroupInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkflowStepGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkflowStepGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryWorkflowStepInput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
@@ -5912,19 +5891,10 @@ impl RetryWorkflowStepInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for RetryWorkflowStepInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryWorkflowStepInput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowStepsInput {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
@@ -5957,20 +5927,10 @@ impl ListWorkflowStepsInput {
         self.step_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkflowStepsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowStepsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkflowStepInput {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
@@ -6048,29 +6008,10 @@ impl CreateWorkflowStepInput {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkflowStepInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkflowStepInput");
-        formatter.field("name", &self.name);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("step_action_type", &self.step_action_type);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "workflow_step_automation_configuration",
-            &self.workflow_step_automation_configuration,
-        );
-        formatter.field("step_target", &self.step_target);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("previous", &self.previous);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkflowStepInput {
     /// <p>The ID of the step you want to delete.</p>
     #[doc(hidden)]
@@ -6096,19 +6037,10 @@ impl DeleteWorkflowStepInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkflowStepInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkflowStepInput");
-        formatter.field("id", &self.id);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkflowStepInput {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
@@ -6200,31 +6132,10 @@ impl UpdateWorkflowStepInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWorkflowStepInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkflowStepInput");
-        formatter.field("id", &self.id);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("step_action_type", &self.step_action_type);
-        formatter.field(
-            "workflow_step_automation_configuration",
-            &self.workflow_step_automation_configuration,
-        );
-        formatter.field("step_target", &self.step_target);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("previous", &self.previous);
-        formatter.field("next", &self.next);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkflowStepInput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
@@ -6250,19 +6161,10 @@ impl GetWorkflowStepInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkflowStepInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkflowStepInput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplateStepGroupsInput {
     /// <p>The maximum number of results that can be returned.</p>
     #[doc(hidden)]
@@ -6288,19 +6190,10 @@ impl ListTemplateStepGroupsInput {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplateStepGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplateStepGroupsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateStepGroupInput {
     /// <p>The ID of the template.</p>
     #[doc(hidden)]
@@ -6319,18 +6212,10 @@ impl GetTemplateStepGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateStepGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateStepGroupInput");
-        formatter.field("template_id", &self.template_id);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplateStepsInput {
     /// <p>The maximum number of results that can be returned.</p>
     #[doc(hidden)]
@@ -6363,20 +6248,10 @@ impl ListTemplateStepsInput {
         self.step_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplateStepsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplateStepsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateStepInput {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
@@ -6402,19 +6277,10 @@ impl GetTemplateStepInput {
         self.step_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateStepInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateStepInput");
-        formatter.field("id", &self.id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("step_group_id", &self.step_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPluginsInput {
     /// <p>The maximum number of plugins that can be returned.</p>
     #[doc(hidden)]
@@ -6433,18 +6299,10 @@ impl ListPluginsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPluginsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPluginsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplatesInput {
     /// <p>The maximum number of results that can be returned.</p>
     #[doc(hidden)]
@@ -6470,19 +6328,10 @@ impl ListTemplatesInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplatesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateInput {
     /// <p>The ID of the template.</p>
     #[doc(hidden)]
@@ -6494,17 +6343,10 @@ impl GetTemplateInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
@@ -6516,17 +6358,10 @@ impl StopWorkflowInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StopWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopWorkflowInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
@@ -6538,17 +6373,10 @@ impl StartWorkflowInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StartWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartWorkflowInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowsInput {
     /// <p>The maximum number of results that can be returned.</p>
     #[doc(hidden)]
@@ -6593,21 +6421,6 @@ impl ListWorkflowsInput {
     /// <p>The name of the migration workflow.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ListWorkflowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("template_id", &self.template_id);
-        formatter.field(
-            "ads_application_configuration_name",
-            &self.ads_application_configuration_name,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -6695,7 +6508,7 @@ impl std::fmt::Debug for CreateWorkflowInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkflowInput {
     /// <p>The ID of the migration workflow you want to delete.</p>
     #[doc(hidden)]
@@ -6705,13 +6518,6 @@ impl DeleteWorkflowInput {
     /// <p>The ID of the migration workflow you want to delete.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkflowInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 
@@ -6776,7 +6582,7 @@ impl std::fmt::Debug for UpdateWorkflowInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
@@ -6788,17 +6594,10 @@ impl GetWorkflowInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkflowInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     #[doc(hidden)]
@@ -6817,18 +6616,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add tags.</p>
     #[doc(hidden)]
@@ -6851,18 +6642,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -6872,12 +6655,5 @@ impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

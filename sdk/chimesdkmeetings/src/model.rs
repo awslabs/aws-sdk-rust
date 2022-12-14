@@ -66,7 +66,7 @@ impl std::fmt::Debug for Attendee {
 pub mod attendee {
 
     /// A builder for [`Attendee`](crate::model::Attendee).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -146,6 +146,16 @@ pub mod attendee {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("attendee_id", &self.attendee_id);
+            formatter.field("join_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("capabilities", &self.capabilities);
+            formatter.finish()
+        }
+    }
 }
 impl Attendee {
     /// Creates a new builder-style object to manufacture [`Attendee`](crate::model::Attendee).
@@ -164,7 +174,7 @@ impl Attendee {
 /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttendeeCapabilities {
     /// <p>The audio capability assigned to an attendee.</p>
     #[doc(hidden)]
@@ -188,15 +198,6 @@ impl AttendeeCapabilities {
     /// <p>The content capability assigned to an attendee.</p>
     pub fn content(&self) -> std::option::Option<&crate::model::MediaCapabilities> {
         self.content.as_ref()
-    }
-}
-impl std::fmt::Debug for AttendeeCapabilities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttendeeCapabilities");
-        formatter.field("audio", &self.audio);
-        formatter.field("video", &self.video);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
@@ -370,7 +371,7 @@ impl AsRef<str> for MediaCapabilities {
 
 /// <p>A key-value pair that you define.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -387,14 +388,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -445,7 +438,7 @@ impl Tag {
 
 /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptionConfiguration {
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
     #[doc(hidden)]
@@ -467,20 +460,6 @@ impl TranscriptionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EngineTranscribeMedicalSettings> {
         self.engine_transcribe_medical_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for TranscriptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranscriptionConfiguration");
-        formatter.field(
-            "engine_transcribe_settings",
-            &self.engine_transcribe_settings,
-        );
-        formatter.field(
-            "engine_transcribe_medical_settings",
-            &self.engine_transcribe_medical_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
@@ -545,7 +524,7 @@ impl TranscriptionConfiguration {
 
 /// <p>Settings specific to the Amazon Transcribe Medical engine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineTranscribeMedicalSettings {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
     #[doc(hidden)]
@@ -595,21 +574,6 @@ impl EngineTranscribeMedicalSettings {
         &self,
     ) -> std::option::Option<&crate::model::TranscribeMedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
-    }
-}
-impl std::fmt::Debug for EngineTranscribeMedicalSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineTranscribeMedicalSettings");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("specialty", &self.specialty);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("region", &self.region);
-        formatter.field(
-            "content_identification_type",
-            &self.content_identification_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
@@ -1240,7 +1204,7 @@ impl AsRef<str> for TranscribeMedicalLanguageCode {
 
 /// <p>Settings specific to the Amazon Transcribe engine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineTranscribeSettings {
     /// <p>The language code specified for the Amazon Transcribe engine.</p>
     #[doc(hidden)]
@@ -1358,32 +1322,6 @@ impl EngineTranscribeSettings {
     /// <p>Language code for the preferred language.</p>
     pub fn preferred_language(&self) -> std::option::Option<&crate::model::TranscribeLanguageCode> {
         self.preferred_language.as_ref()
-    }
-}
-impl std::fmt::Debug for EngineTranscribeSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineTranscribeSettings");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("vocabulary_filter_method", &self.vocabulary_filter_method);
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("region", &self.region);
-        formatter.field(
-            "enable_partial_results_stabilization",
-            &self.enable_partial_results_stabilization,
-        );
-        formatter.field("partial_results_stability", &self.partial_results_stability);
-        formatter.field(
-            "content_identification_type",
-            &self.content_identification_type,
-        );
-        formatter.field("content_redaction_type", &self.content_redaction_type);
-        formatter.field("pii_entity_types", &self.pii_entity_types);
-        formatter.field("language_model_name", &self.language_model_name);
-        formatter.field("identify_language", &self.identify_language);
-        formatter.field("language_options", &self.language_options);
-        formatter.field("preferred_language", &self.preferred_language);
-        formatter.finish()
     }
 }
 /// See [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
@@ -2404,7 +2342,7 @@ impl std::fmt::Debug for Meeting {
 pub mod meeting {
 
     /// A builder for [`Meeting`](crate::model::Meeting).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) meeting_host_id: std::option::Option<std::string::String>,
@@ -2552,6 +2490,21 @@ pub mod meeting {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("meeting_id", &self.meeting_id);
+            formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("media_region", &self.media_region);
+            formatter.field("media_placement", &self.media_placement);
+            formatter.field("meeting_features", &self.meeting_features);
+            formatter.field("primary_meeting_id", &self.primary_meeting_id);
+            formatter.field("tenant_ids", &self.tenant_ids);
+            formatter.field("meeting_arn", &self.meeting_arn);
+            formatter.finish()
+        }
+    }
 }
 impl Meeting {
     /// Creates a new builder-style object to manufacture [`Meeting`](crate::model::Meeting).
@@ -2562,7 +2515,7 @@ impl Meeting {
 
 /// <p>The configuration settings of the features available to a meeting.&gt;</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeetingFeaturesConfiguration {
     /// <p>The configuration settings for the audio features available to a meeting. </p>
     #[doc(hidden)]
@@ -2572,13 +2525,6 @@ impl MeetingFeaturesConfiguration {
     /// <p>The configuration settings for the audio features available to a meeting. </p>
     pub fn audio(&self) -> std::option::Option<&crate::model::AudioFeatures> {
         self.audio.as_ref()
-    }
-}
-impl std::fmt::Debug for MeetingFeaturesConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeetingFeaturesConfiguration");
-        formatter.field("audio", &self.audio);
-        formatter.finish()
     }
 }
 /// See [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
@@ -2618,7 +2564,7 @@ impl MeetingFeaturesConfiguration {
 
 /// <p>An optional category of meeting features that contains audio-specific configurations, such as operating parameters for Amazon Voice Focus. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioFeatures {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
     #[doc(hidden)]
@@ -2628,13 +2574,6 @@ impl AudioFeatures {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
     pub fn echo_reduction(&self) -> std::option::Option<&crate::model::MeetingFeatureStatus> {
         self.echo_reduction.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioFeatures {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioFeatures");
-        formatter.field("echo_reduction", &self.echo_reduction);
-        formatter.finish()
     }
 }
 /// See [`AudioFeatures`](crate::model::AudioFeatures).
@@ -2768,7 +2707,7 @@ impl AsRef<str> for MeetingFeatureStatus {
 
 /// <p>A set of endpoints used by clients to connect to the media service group for an Amazon Chime SDK meeting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaPlacement {
     /// <p>The audio host URL.</p>
     #[doc(hidden)]
@@ -2827,20 +2766,6 @@ impl MediaPlacement {
     /// <p>The event ingestion URL.</p>
     pub fn event_ingestion_url(&self) -> std::option::Option<&str> {
         self.event_ingestion_url.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaPlacement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaPlacement");
-        formatter.field("audio_host_url", &self.audio_host_url);
-        formatter.field("audio_fallback_url", &self.audio_fallback_url);
-        formatter.field("signaling_url", &self.signaling_url);
-        formatter.field("turn_control_url", &self.turn_control_url);
-        formatter.field("screen_data_url", &self.screen_data_url);
-        formatter.field("screen_viewing_url", &self.screen_viewing_url);
-        formatter.field("screen_sharing_url", &self.screen_sharing_url);
-        formatter.field("event_ingestion_url", &self.event_ingestion_url);
-        formatter.finish()
     }
 }
 /// See [`MediaPlacement`](crate::model::MediaPlacement).
@@ -3026,7 +2951,7 @@ impl std::fmt::Debug for CreateAttendeeError {
 pub mod create_attendee_error {
 
     /// A builder for [`CreateAttendeeError`](crate::model::CreateAttendeeError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -3078,6 +3003,15 @@ pub mod create_attendee_error {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("error_code", &self.error_code);
+            formatter.field("error_message", &self.error_message);
+            formatter.finish()
+        }
+    }
 }
 impl CreateAttendeeError {
     /// Creates a new builder-style object to manufacture [`CreateAttendeeError`](crate::model::CreateAttendeeError).
@@ -3119,7 +3053,7 @@ impl std::fmt::Debug for CreateAttendeeRequestItem {
 pub mod create_attendee_request_item {
 
     /// A builder for [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
         pub(crate) capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
@@ -3157,6 +3091,14 @@ pub mod create_attendee_request_item {
                 external_user_id: self.external_user_id,
                 capabilities: self.capabilities,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("capabilities", &self.capabilities);
+            formatter.finish()
         }
     }
 }
@@ -3208,7 +3150,7 @@ impl std::fmt::Debug for NotificationsConfiguration {
 pub mod notifications_configuration {
 
     /// A builder for [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) lambda_function_arn: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -3263,6 +3205,15 @@ pub mod notifications_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("lambda_function_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("sns_topic_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("sqs_queue_arn", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl NotificationsConfiguration {
     /// Creates a new builder-style object to manufacture [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
@@ -3273,7 +3224,7 @@ impl NotificationsConfiguration {
 
 /// <p>A structure that contains one or more attendee IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
     #[doc(hidden)]
@@ -3283,13 +3234,6 @@ impl AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
     pub fn attendee_id(&self) -> std::option::Option<&str> {
         self.attendee_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AttendeeIdItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttendeeIdItem");
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.finish()
     }
 }
 /// See [`AttendeeIdItem`](crate::model::AttendeeIdItem).

@@ -2421,7 +2421,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchQuantumTasksInput {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
     #[doc(hidden)]
@@ -2447,19 +2447,10 @@ impl SearchQuantumTasksInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for SearchQuantumTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchQuantumTasksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQuantumTaskInput {
     /// <p>The client token associated with the request.</p>
     #[doc(hidden)]
@@ -2531,25 +2522,10 @@ impl CreateQuantumTaskInput {
         self.job_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateQuantumTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQuantumTaskInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("device_arn", &self.device_arn);
-        formatter.field("device_parameters", &self.device_parameters);
-        formatter.field("shots", &self.shots);
-        formatter.field("output_s3_bucket", &self.output_s3_bucket);
-        formatter.field("output_s3_key_prefix", &self.output_s3_key_prefix);
-        formatter.field("action", &self.action);
-        formatter.field("tags", &self.tags);
-        formatter.field("job_token", &self.job_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelQuantumTaskInput {
     /// <p>The ARN of the task to cancel.</p>
     #[doc(hidden)]
@@ -2568,18 +2544,10 @@ impl CancelQuantumTaskInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CancelQuantumTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelQuantumTaskInput");
-        formatter.field("quantum_task_arn", &self.quantum_task_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
     #[doc(hidden)]
@@ -2591,17 +2559,10 @@ impl GetQuantumTaskInput {
         self.quantum_task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetQuantumTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQuantumTaskInput");
-        formatter.field("quantum_task_arn", &self.quantum_task_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchJobsInput {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     #[doc(hidden)]
@@ -2627,19 +2588,10 @@ impl SearchJobsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for SearchJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     #[doc(hidden)]
@@ -2738,28 +2690,10 @@ impl CreateJobInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("algorithm_specification", &self.algorithm_specification);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("checkpoint_config", &self.checkpoint_config);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("stopping_condition", &self.stopping_condition);
-        formatter.field("instance_config", &self.instance_config);
-        formatter.field("hyper_parameters", &self.hyper_parameters);
-        formatter.field("device_config", &self.device_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The ARN of the Amazon Braket job to cancel.</p>
     #[doc(hidden)]
@@ -2771,17 +2705,10 @@ impl CancelJobInput {
         self.job_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CancelJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobInput");
-        formatter.field("job_arn", &self.job_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
     #[doc(hidden)]
@@ -2793,17 +2720,10 @@ impl GetJobInput {
         self.job_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobInput");
-        formatter.field("job_arn", &self.job_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchDevicesInput {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
     #[doc(hidden)]
@@ -2829,19 +2749,10 @@ impl SearchDevicesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for SearchDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchDevicesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceInput {
     /// <p>The ARN of the device to retrieve.</p>
     #[doc(hidden)]
@@ -2853,17 +2764,10 @@ impl GetDeviceInput {
         self.device_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceInput");
-        formatter.field("device_arn", &self.device_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>
     #[doc(hidden)]
@@ -2882,18 +2786,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
     #[doc(hidden)]
@@ -2916,18 +2812,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
     #[doc(hidden)]
@@ -2937,12 +2825,5 @@ impl ListTagsForResourceInput {
     /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

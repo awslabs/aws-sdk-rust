@@ -490,7 +490,7 @@ impl DescribeCertificateInput {
 pub mod export_certificate_input {
 
     /// A builder for [`ExportCertificateInput`](crate::input::ExportCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) passphrase: std::option::Option<aws_smithy_types::Blob>,
@@ -543,6 +543,14 @@ pub mod export_certificate_input {
                 certificate_arn: self.certificate_arn,
                 passphrase: self.passphrase,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("certificate_arn", &self.certificate_arn);
+            formatter.field("passphrase", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -945,7 +953,7 @@ impl GetCertificateInput {
 pub mod import_certificate_input {
 
     /// A builder for [`ImportCertificateInput`](crate::input::ImportCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) certificate: std::option::Option<aws_smithy_types::Blob>,
@@ -1041,6 +1049,17 @@ pub mod import_certificate_input {
                 certificate_chain: self.certificate_chain,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("certificate_arn", &self.certificate_arn);
+            formatter.field("certificate", &self.certificate);
+            formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("certificate_chain", &self.certificate_chain);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2690,7 +2709,7 @@ impl UpdateCertificateOptionsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCertificateOptionsInput {
     /// <p>ARN of the requested certificate to update. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
@@ -2711,18 +2730,10 @@ impl UpdateCertificateOptionsInput {
         self.options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCertificateOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCertificateOptionsInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("options", &self.options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResendValidationEmailInput {
     /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -2764,19 +2775,10 @@ impl ResendValidationEmailInput {
         self.validation_domain.as_deref()
     }
 }
-impl std::fmt::Debug for ResendValidationEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResendValidationEmailInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("domain", &self.domain);
-        formatter.field("validation_domain", &self.validation_domain);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCertificateInput {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
     /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
@@ -2856,24 +2858,10 @@ impl RequestCertificateInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for RequestCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestCertificateInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("validation_method", &self.validation_method);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("domain_validation_options", &self.domain_validation_options);
-        formatter.field("options", &self.options);
-        formatter.field("certificate_authority_arn", &self.certificate_authority_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenewCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -2889,17 +2877,10 @@ impl RenewCertificateInput {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RenewCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenewCertificateInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromCertificateInput {
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -2922,18 +2903,10 @@ impl RemoveTagsFromCertificateInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromCertificateInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountConfigurationInput {
     /// <p>Specifies expiration events associated with an account.</p>
     #[doc(hidden)]
@@ -2952,18 +2925,10 @@ impl PutAccountConfigurationInput {
         self.idempotency_token.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccountConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountConfigurationInput");
-        formatter.field("expiry_events", &self.expiry_events);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -2979,17 +2944,10 @@ impl ListTagsForCertificateInput {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForCertificateInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCertificatesInput {
     /// <p>Filter the certificate list by status value.</p>
     #[doc(hidden)]
@@ -3034,18 +2992,6 @@ impl ListCertificatesInput {
     /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for ListCertificatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCertificatesInput");
-        formatter.field("certificate_statuses", &self.certificate_statuses);
-        formatter.field("includes", &self.includes);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 
@@ -3107,7 +3053,7 @@ impl std::fmt::Debug for ImportCertificateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCertificateInput {
     /// <p>String that contains a certificate ARN in the following format:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -3123,24 +3069,11 @@ impl GetCertificateInput {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCertificateInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountConfigurationInput {}
-impl std::fmt::Debug for GetAccountConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountConfigurationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3184,7 +3117,7 @@ impl std::fmt::Debug for ExportCertificateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -3200,17 +3133,10 @@ impl DescribeCertificateInput {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCertificateInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -3226,17 +3152,10 @@ impl DeleteCertificateInput {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCertificateInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
@@ -3257,13 +3176,5 @@ impl AddTagsToCertificateInput {
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for AddTagsToCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToCertificateInput");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

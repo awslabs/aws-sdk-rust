@@ -2,7 +2,7 @@
 
 /// <p>The collection of computing resources from which an endpoint is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
     #[doc(hidden)]
@@ -96,25 +96,6 @@ impl Workgroup {
     /// <p>The creation date of the workgroup.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Workgroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Workgroup");
-        formatter.field("workgroup_id", &self.workgroup_id);
-        formatter.field("workgroup_arn", &self.workgroup_arn);
-        formatter.field("workgroup_name", &self.workgroup_name);
-        formatter.field("namespace_name", &self.namespace_name);
-        formatter.field("base_capacity", &self.base_capacity);
-        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
-        formatter.field("config_parameters", &self.config_parameters);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("status", &self.status);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`Workgroup`](crate::model::Workgroup).
@@ -340,7 +321,7 @@ impl Workgroup {
 
 /// <p>The VPC endpoint object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The DNS address of the VPC endpoint.</p>
     #[doc(hidden)]
@@ -364,15 +345,6 @@ impl Endpoint {
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
     pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::model::VpcEndpoint]> {
         self.vpc_endpoints.as_deref()
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("address", &self.address);
-        formatter.field("port", &self.port);
-        formatter.field("vpc_endpoints", &self.vpc_endpoints);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
@@ -444,7 +416,7 @@ impl Endpoint {
 
 /// <p>The connection endpoint for connecting to Amazon Redshift Serverless through the proxy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcEndpoint {
     /// <p>The connection endpoint ID for connecting to Amazon Redshift Serverless.</p>
     #[doc(hidden)]
@@ -468,15 +440,6 @@ impl VpcEndpoint {
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
     pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcEndpoint");
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.finish()
     }
 }
 /// See [`VpcEndpoint`](crate::model::VpcEndpoint).
@@ -552,7 +515,7 @@ impl VpcEndpoint {
 
 /// <p>Contains information about a network interface in an Amazon Redshift Serverless managed VPC endpoint. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The unique identifier of the network interface.</p>
     #[doc(hidden)]
@@ -583,16 +546,6 @@ impl NetworkInterface {
     /// <p>The availability Zone.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -776,7 +729,7 @@ impl AsRef<str> for WorkgroupStatus {
 
 /// <p>An array of key-value pairs to set for advanced control over Amazon Redshift Serverless.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigParameter {
     /// <p>The key of the parameter. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
     #[doc(hidden)]
@@ -793,14 +746,6 @@ impl ConfigParameter {
     /// <p>The value of the parameter to set.</p>
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigParameter");
-        formatter.field("parameter_key", &self.parameter_key);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
     }
 }
 /// See [`ConfigParameter`](crate::model::ConfigParameter).
@@ -857,7 +802,7 @@ impl ConfigParameter {
 
 /// <p>A map of key-value pairs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key to use in the tag.</p>
     #[doc(hidden)]
@@ -874,14 +819,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -932,7 +869,7 @@ impl Tag {
 
 /// <p>The usage limit object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageLimit {
     /// <p>The identifier of the usage limit.</p>
     #[doc(hidden)]
@@ -984,19 +921,6 @@ impl UsageLimit {
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
     pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
         self.breach_action.as_ref()
-    }
-}
-impl std::fmt::Debug for UsageLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageLimit");
-        formatter.field("usage_limit_id", &self.usage_limit_id);
-        formatter.field("usage_limit_arn", &self.usage_limit_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("usage_type", &self.usage_type);
-        formatter.field("amount", &self.amount);
-        formatter.field("period", &self.period);
-        formatter.field("breach_action", &self.breach_action);
-        formatter.finish()
     }
 }
 /// See [`UsageLimit`](crate::model::UsageLimit).
@@ -1406,7 +1330,7 @@ impl AsRef<str> for UsageLimitUsageType {
 
 /// <p>A snapshot object that contains databases.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The name of the namepsace.</p>
     #[doc(hidden)]
@@ -1554,56 +1478,6 @@ impl Snapshot {
         &self,
     ) -> std::option::Option<&[std::string::String]> {
         self.accounts_with_provisioned_restore_access.as_deref()
-    }
-}
-impl std::fmt::Debug for Snapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Snapshot");
-        formatter.field("namespace_name", &self.namespace_name);
-        formatter.field("namespace_arn", &self.namespace_arn);
-        formatter.field("snapshot_name", &self.snapshot_name);
-        formatter.field("snapshot_create_time", &self.snapshot_create_time);
-        formatter.field("admin_username", &self.admin_username);
-        formatter.field("status", &self.status);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "total_backup_size_in_mega_bytes",
-            &self.total_backup_size_in_mega_bytes,
-        );
-        formatter.field(
-            "actual_incremental_backup_size_in_mega_bytes",
-            &self.actual_incremental_backup_size_in_mega_bytes,
-        );
-        formatter.field(
-            "backup_progress_in_mega_bytes",
-            &self.backup_progress_in_mega_bytes,
-        );
-        formatter.field(
-            "current_backup_rate_in_mega_bytes_per_second",
-            &self.current_backup_rate_in_mega_bytes_per_second,
-        );
-        formatter.field(
-            "estimated_seconds_to_completion",
-            &self.estimated_seconds_to_completion,
-        );
-        formatter.field("elapsed_time_in_seconds", &self.elapsed_time_in_seconds);
-        formatter.field("snapshot_retention_period", &self.snapshot_retention_period);
-        formatter.field("snapshot_remaining_days", &self.snapshot_remaining_days);
-        formatter.field(
-            "snapshot_retention_start_time",
-            &self.snapshot_retention_start_time,
-        );
-        formatter.field("snapshot_arn", &self.snapshot_arn);
-        formatter.field(
-            "accounts_with_restore_access",
-            &self.accounts_with_restore_access,
-        );
-        formatter.field(
-            "accounts_with_provisioned_restore_access",
-            &self.accounts_with_provisioned_restore_access,
-        );
-        formatter.finish()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
@@ -2160,7 +2034,7 @@ impl std::fmt::Debug for Namespace {
 pub mod namespace {
 
     /// A builder for [`Namespace`](crate::model::Namespace).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) namespace_arn: std::option::Option<std::string::String>,
         pub(crate) namespace_id: std::option::Option<std::string::String>,
@@ -2336,6 +2210,23 @@ pub mod namespace {
                 status: self.status,
                 creation_date: self.creation_date,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("namespace_arn", &self.namespace_arn);
+            formatter.field("namespace_id", &self.namespace_id);
+            formatter.field("namespace_name", &self.namespace_name);
+            formatter.field("admin_username", &"*** Sensitive Data Redacted ***");
+            formatter.field("db_name", &self.db_name);
+            formatter.field("kms_key_id", &self.kms_key_id);
+            formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
+            formatter.field("iam_roles", &self.iam_roles);
+            formatter.field("log_exports", &self.log_exports);
+            formatter.field("status", &self.status);
+            formatter.field("creation_date", &self.creation_date);
+            formatter.finish()
         }
     }
 }
@@ -2538,7 +2429,7 @@ impl AsRef<str> for LogExport {
 
 /// <p>The automatically created recovery point of a namespace. Recovery points are created every 30 minutes and kept for 24 hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryPoint {
     /// <p>The unique identifier of the recovery point.</p>
     #[doc(hidden)]
@@ -2576,20 +2467,6 @@ impl RecoveryPoint {
     /// <p>The name of the workgroup the recovery point is associated with.</p>
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RecoveryPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryPoint");
-        formatter.field("recovery_point_id", &self.recovery_point_id);
-        formatter.field(
-            "recovery_point_create_time",
-            &self.recovery_point_create_time,
-        );
-        formatter.field("total_size_in_mega_bytes", &self.total_size_in_mega_bytes);
-        formatter.field("namespace_name", &self.namespace_name);
-        formatter.field("workgroup_name", &self.workgroup_name);
-        formatter.finish()
     }
 }
 /// See [`RecoveryPoint`](crate::model::RecoveryPoint).
@@ -2688,7 +2565,7 @@ impl RecoveryPoint {
 
 /// <p>Information about an Amazon Redshift Serverless VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointAccess {
     /// <p>The name of the VPC endpoint.</p>
     #[doc(hidden)]
@@ -2764,22 +2641,6 @@ impl EndpointAccess {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint.</p>
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointAccess");
-        formatter.field("endpoint_name", &self.endpoint_name);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("workgroup_name", &self.workgroup_name);
-        formatter.field("endpoint_create_time", &self.endpoint_create_time);
-        formatter.field("port", &self.port);
-        formatter.field("address", &self.address);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("vpc_security_groups", &self.vpc_security_groups);
-        formatter.field("vpc_endpoint", &self.vpc_endpoint);
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
     }
 }
 /// See [`EndpointAccess`](crate::model::EndpointAccess).
@@ -2963,7 +2824,7 @@ impl EndpointAccess {
 
 /// <p>Describes the members of a VPC security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcSecurityGroupMembership {
     /// <p>The unique identifier of the VPC security group.</p>
     #[doc(hidden)]
@@ -2980,14 +2841,6 @@ impl VpcSecurityGroupMembership {
     /// <p>The status of the VPC security group.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcSecurityGroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcSecurityGroupMembership");
-        formatter.field("vpc_security_group_id", &self.vpc_security_group_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
@@ -3041,7 +2894,7 @@ impl VpcSecurityGroupMembership {
 
 /// <p>The resource policy object. Currently, you can use policies to share snapshots across Amazon Web Services accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     #[doc(hidden)]
@@ -3058,14 +2911,6 @@ impl ResourcePolicy {
     /// <p>The resource policy.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourcePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePolicy");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).

@@ -2,7 +2,7 @@
 
 /// <p>An error or warning for a desired configuration option value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationMessage {
     /// <p>A message describing the error or warning.</p>
     #[doc(hidden)]
@@ -41,16 +41,6 @@ impl ValidationMessage {
     /// <p>The name of the option.</p>
     pub fn option_name(&self) -> std::option::Option<&str> {
         self.option_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationMessage");
-        formatter.field("message", &self.message);
-        formatter.field("severity", &self.severity);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("option_name", &self.option_name);
-        formatter.finish()
     }
 }
 /// See [`ValidationMessage`](crate::model::ValidationMessage).
@@ -228,7 +218,7 @@ impl AsRef<str> for ValidationSeverity {
 
 /// <p>A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationOptionSetting {
     /// <p>A unique resource name for the option setting. Use it for a time–based scaling configuration option.</p>
     #[doc(hidden)]
@@ -259,16 +249,6 @@ impl ConfigurationOptionSetting {
     /// <p>The current value for the configuration option.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationOptionSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationOptionSetting");
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("option_name", &self.option_name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationOptionSetting`](crate::model::ConfigurationOptionSetting).
@@ -346,7 +326,7 @@ impl ConfigurationOptionSetting {
 
 /// <p>Describes a tag applied to a resource in an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -363,14 +343,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -421,7 +393,7 @@ impl Tag {
 
 /// <p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentLink {
     /// <p>The name of the link.</p>
     #[doc(hidden)]
@@ -438,14 +410,6 @@ impl EnvironmentLink {
     /// <p>The name of the linked environment (the dependency).</p>
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentLink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentLink");
-        formatter.field("link_name", &self.link_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentLink`](crate::model::EnvironmentLink).
@@ -499,7 +463,7 @@ impl EnvironmentLink {
 
 /// <p>Describes the properties of an environment tier</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentTier {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
@@ -547,15 +511,6 @@ impl EnvironmentTier {
     /// </note>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentTier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentTier");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentTier`](crate::model::EnvironmentTier).
@@ -642,7 +597,7 @@ impl EnvironmentTier {
 
 /// <p>Describes the AWS resources in use by this environment. This data is not live data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentResourcesDescription {
     /// <p>Describes the LoadBalancer.</p>
     #[doc(hidden)]
@@ -652,13 +607,6 @@ impl EnvironmentResourcesDescription {
     /// <p>Describes the LoadBalancer.</p>
     pub fn load_balancer(&self) -> std::option::Option<&crate::model::LoadBalancerDescription> {
         self.load_balancer.as_ref()
-    }
-}
-impl std::fmt::Debug for EnvironmentResourcesDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentResourcesDescription");
-        formatter.field("load_balancer", &self.load_balancer);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentResourcesDescription`](crate::model::EnvironmentResourcesDescription).
@@ -700,7 +648,7 @@ impl EnvironmentResourcesDescription {
 
 /// <p>Describes the details of a LoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerDescription {
     /// <p>The name of the LoadBalancer.</p>
     #[doc(hidden)]
@@ -724,15 +672,6 @@ impl LoadBalancerDescription {
     /// <p>A list of Listeners used by the LoadBalancer.</p>
     pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
         self.listeners.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerDescription");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("domain", &self.domain);
-        formatter.field("listeners", &self.listeners);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
@@ -807,7 +746,7 @@ impl LoadBalancerDescription {
 
 /// <p>Describes the properties of a Listener for the LoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Listener {
     /// <p>The protocol that is used by the Listener.</p>
     #[doc(hidden)]
@@ -824,14 +763,6 @@ impl Listener {
     /// <p>The port that is used by the Listener.</p>
     pub fn port(&self) -> i32 {
         self.port
-    }
-}
-impl std::fmt::Debug for Listener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Listener");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`Listener`](crate::model::Listener).
@@ -1252,7 +1183,7 @@ impl AsRef<str> for EnvironmentStatus {
 
 /// <p>A specification identifying an individual configuration option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptionSpecification {
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
     #[doc(hidden)]
@@ -1276,15 +1207,6 @@ impl OptionSpecification {
     /// <p>The name of the configuration option.</p>
     pub fn option_name(&self) -> std::option::Option<&str> {
         self.option_name.as_deref()
-    }
-}
-impl std::fmt::Debug for OptionSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptionSpecification");
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("option_name", &self.option_name);
-        formatter.finish()
     }
 }
 /// See [`OptionSpecification`](crate::model::OptionSpecification).
@@ -1447,7 +1369,7 @@ impl AsRef<str> for ConfigurationDeploymentStatus {
 
 /// <p>Describes the properties of an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the application version.</p>
     #[doc(hidden)]
@@ -1536,22 +1458,6 @@ impl ApplicationVersionDescription {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ApplicationVersionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationVersionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationVersionDescription");
-        formatter.field("application_version_arn", &self.application_version_arn);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("description", &self.description);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("source_build_information", &self.source_build_information);
-        formatter.field("build_arn", &self.build_arn);
-        formatter.field("source_bundle", &self.source_bundle);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ApplicationVersionDescription`](crate::model::ApplicationVersionDescription).
@@ -1853,7 +1759,7 @@ impl AsRef<str> for ApplicationVersionStatus {
 
 /// <p>The bucket and key of an item stored in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The Amazon S3 bucket where the data is located.</p>
     #[doc(hidden)]
@@ -1870,14 +1776,6 @@ impl S3Location {
     /// <p>The Amazon S3 key where the data is located.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -1928,7 +1826,7 @@ impl S3Location {
 
 /// <p>Location of the source code for an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceBuildInformation {
     /// <p>The type of repository.</p>
     /// <ul>
@@ -1976,15 +1874,6 @@ impl SourceBuildInformation {
     /// </ul>
     pub fn source_location(&self) -> std::option::Option<&str> {
         self.source_location.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceBuildInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceBuildInformation");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("source_repository", &self.source_repository);
-        formatter.field("source_location", &self.source_location);
-        formatter.finish()
     }
 }
 /// See [`SourceBuildInformation`](crate::model::SourceBuildInformation).
@@ -2260,7 +2149,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationResourceLifecycleConfig {
     /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
     /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
@@ -2282,14 +2171,6 @@ impl ApplicationResourceLifecycleConfig {
         &self,
     ) -> std::option::Option<&crate::model::ApplicationVersionLifecycleConfig> {
         self.version_lifecycle_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationResourceLifecycleConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationResourceLifecycleConfig");
-        formatter.field("service_role", &self.service_role);
-        formatter.field("version_lifecycle_config", &self.version_lifecycle_config);
-        formatter.finish()
     }
 }
 /// See [`ApplicationResourceLifecycleConfig`](crate::model::ApplicationResourceLifecycleConfig).
@@ -2350,7 +2231,7 @@ impl ApplicationResourceLifecycleConfig {
 /// <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p>
 /// <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationVersionLifecycleConfig {
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
     #[doc(hidden)]
@@ -2367,14 +2248,6 @@ impl ApplicationVersionLifecycleConfig {
     /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
     pub fn max_age_rule(&self) -> std::option::Option<&crate::model::MaxAgeRule> {
         self.max_age_rule.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationVersionLifecycleConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationVersionLifecycleConfig");
-        formatter.field("max_count_rule", &self.max_count_rule);
-        formatter.field("max_age_rule", &self.max_age_rule);
-        formatter.finish()
     }
 }
 /// See [`ApplicationVersionLifecycleConfig`](crate::model::ApplicationVersionLifecycleConfig).
@@ -2431,7 +2304,7 @@ impl ApplicationVersionLifecycleConfig {
 
 /// <p>A lifecycle rule that deletes application versions after the specified number of days.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxAgeRule {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     #[doc(hidden)]
@@ -2455,15 +2328,6 @@ impl MaxAgeRule {
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn delete_source_from_s3(&self) -> std::option::Option<bool> {
         self.delete_source_from_s3
-    }
-}
-impl std::fmt::Debug for MaxAgeRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxAgeRule");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("max_age_in_days", &self.max_age_in_days);
-        formatter.field("delete_source_from_s3", &self.delete_source_from_s3);
-        formatter.finish()
     }
 }
 /// See [`MaxAgeRule`](crate::model::MaxAgeRule).
@@ -2526,7 +2390,7 @@ impl MaxAgeRule {
 
 /// <p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxCountRule {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     #[doc(hidden)]
@@ -2550,15 +2414,6 @@ impl MaxCountRule {
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn delete_source_from_s3(&self) -> std::option::Option<bool> {
         self.delete_source_from_s3
-    }
-}
-impl std::fmt::Debug for MaxCountRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxCountRule");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("max_count", &self.max_count);
-        formatter.field("delete_source_from_s3", &self.delete_source_from_s3);
-        formatter.finish()
     }
 }
 /// See [`MaxCountRule`](crate::model::MaxCountRule).
@@ -2621,7 +2476,7 @@ impl MaxCountRule {
 
 /// <p>Describes the properties of an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationDescription {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -2683,20 +2538,6 @@ impl ApplicationDescription {
         &self,
     ) -> std::option::Option<&crate::model::ApplicationResourceLifecycleConfig> {
         self.resource_lifecycle_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationDescription");
-        formatter.field("application_arn", &self.application_arn);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("description", &self.description);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("versions", &self.versions);
-        formatter.field("configuration_templates", &self.configuration_templates);
-        formatter.field("resource_lifecycle_config", &self.resource_lifecycle_config);
-        formatter.finish()
     }
 }
 /// See [`ApplicationDescription`](crate::model::ApplicationDescription).
@@ -2856,7 +2697,7 @@ impl ApplicationDescription {
 
 /// <p>The information retrieved from the Amazon EC2 instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentInfoDescription {
     /// <p>The type of information retrieved.</p>
     #[doc(hidden)]
@@ -2889,16 +2730,6 @@ impl EnvironmentInfoDescription {
     /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentInfoDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentInfoDescription");
-        formatter.field("info_type", &self.info_type);
-        formatter.field("ec2_instance_id", &self.ec2_instance_id);
-        formatter.field("sample_timestamp", &self.sample_timestamp);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentInfoDescription`](crate::model::EnvironmentInfoDescription).
@@ -3076,7 +2907,7 @@ impl AsRef<str> for EnvironmentInfoType {
 
 /// <p>Summary information about a platform version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformSummary {
     /// <p>The ARN of the platform version.</p>
     #[doc(hidden)]
@@ -3169,27 +3000,6 @@ impl PlatformSummary {
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn platform_branch_lifecycle_state(&self) -> std::option::Option<&str> {
         self.platform_branch_lifecycle_state.as_deref()
-    }
-}
-impl std::fmt::Debug for PlatformSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformSummary");
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("platform_owner", &self.platform_owner);
-        formatter.field("platform_status", &self.platform_status);
-        formatter.field("platform_category", &self.platform_category);
-        formatter.field("operating_system_name", &self.operating_system_name);
-        formatter.field("operating_system_version", &self.operating_system_version);
-        formatter.field("supported_tier_list", &self.supported_tier_list);
-        formatter.field("supported_addon_list", &self.supported_addon_list);
-        formatter.field("platform_lifecycle_state", &self.platform_lifecycle_state);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("platform_branch_name", &self.platform_branch_name);
-        formatter.field(
-            "platform_branch_lifecycle_state",
-            &self.platform_branch_lifecycle_state,
-        );
-        formatter.finish()
     }
 }
 /// See [`PlatformSummary`](crate::model::PlatformSummary).
@@ -3520,7 +3330,7 @@ impl AsRef<str> for PlatformStatus {
 /// <p>Describes criteria to restrict the results when listing platform versions.</p>
 /// <p>The filter is evaluated as follows: <code>Type Operator Values[1]</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformFilter {
     /// <p>The platform version attribute to which the filter values are applied.</p>
     /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
@@ -3562,15 +3372,6 @@ impl PlatformFilter {
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for PlatformFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformFilter");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("operator", &self.operator);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`PlatformFilter`](crate::model::PlatformFilter).
@@ -3660,7 +3461,7 @@ impl PlatformFilter {
 
 /// <p>Summary information about a platform branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformBranchSummary {
     /// <p>The name of the platform to which this platform branch belongs.</p>
     #[doc(hidden)]
@@ -3704,17 +3505,6 @@ impl PlatformBranchSummary {
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     pub fn supported_tier_list(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_tier_list.as_deref()
-    }
-}
-impl std::fmt::Debug for PlatformBranchSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformBranchSummary");
-        formatter.field("platform_name", &self.platform_name);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("lifecycle_state", &self.lifecycle_state);
-        formatter.field("branch_order", &self.branch_order);
-        formatter.field("supported_tier_list", &self.supported_tier_list);
-        formatter.finish()
     }
 }
 /// See [`PlatformBranchSummary`](crate::model::PlatformBranchSummary).
@@ -3825,7 +3615,7 @@ impl PlatformBranchSummary {
 /// <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> </p>
 /// <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchFilter {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
     #[doc(hidden)]
@@ -3849,15 +3639,6 @@ impl SearchFilter {
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchFilter");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("operator", &self.operator);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SearchFilter`](crate::model::SearchFilter).
@@ -3929,7 +3710,7 @@ impl SearchFilter {
 
 /// <p>Describes the solution stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionStackDescription {
     /// <p>The name of the solution stack.</p>
     #[doc(hidden)]
@@ -3946,14 +3727,6 @@ impl SolutionStackDescription {
     /// <p>The permitted file types allowed for a solution stack.</p>
     pub fn permitted_file_types(&self) -> std::option::Option<&[std::string::String]> {
         self.permitted_file_types.as_deref()
-    }
-}
-impl std::fmt::Debug for SolutionStackDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionStackDescription");
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("permitted_file_types", &self.permitted_file_types);
-        formatter.finish()
     }
 }
 /// See [`SolutionStackDescription`](crate::model::SolutionStackDescription).
@@ -4016,7 +3789,7 @@ impl SolutionStackDescription {
 
 /// <p>Detailed information about a platform version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformDescription {
     /// <p>The ARN of the platform version.</p>
     #[doc(hidden)]
@@ -4175,36 +3948,6 @@ impl PlatformDescription {
     /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
     pub fn platform_branch_lifecycle_state(&self) -> std::option::Option<&str> {
         self.platform_branch_lifecycle_state.as_deref()
-    }
-}
-impl std::fmt::Debug for PlatformDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformDescription");
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("platform_owner", &self.platform_owner);
-        formatter.field("platform_name", &self.platform_name);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_status", &self.platform_status);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("platform_category", &self.platform_category);
-        formatter.field("description", &self.description);
-        formatter.field("maintainer", &self.maintainer);
-        formatter.field("operating_system_name", &self.operating_system_name);
-        formatter.field("operating_system_version", &self.operating_system_version);
-        formatter.field("programming_languages", &self.programming_languages);
-        formatter.field("frameworks", &self.frameworks);
-        formatter.field("custom_ami_list", &self.custom_ami_list);
-        formatter.field("supported_tier_list", &self.supported_tier_list);
-        formatter.field("supported_addon_list", &self.supported_addon_list);
-        formatter.field("platform_lifecycle_state", &self.platform_lifecycle_state);
-        formatter.field("platform_branch_name", &self.platform_branch_name);
-        formatter.field(
-            "platform_branch_lifecycle_state",
-            &self.platform_branch_lifecycle_state,
-        );
-        formatter.finish()
     }
 }
 /// See [`PlatformDescription`](crate::model::PlatformDescription).
@@ -4580,7 +4323,7 @@ impl PlatformDescription {
 
 /// <p>A custom AMI available to platforms.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomAmi {
     /// <p>The type of virtualization used to create the custom AMI.</p>
     #[doc(hidden)]
@@ -4597,14 +4340,6 @@ impl CustomAmi {
     /// <p>THe ID of the image used to create the custom AMI.</p>
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomAmi {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomAmi");
-        formatter.field("virtualization_type", &self.virtualization_type);
-        formatter.field("image_id", &self.image_id);
-        formatter.finish()
     }
 }
 /// See [`CustomAmi`](crate::model::CustomAmi).
@@ -4658,7 +4393,7 @@ impl CustomAmi {
 
 /// <p>A framework supported by the platform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformFramework {
     /// <p>The name of the framework.</p>
     #[doc(hidden)]
@@ -4675,14 +4410,6 @@ impl PlatformFramework {
     /// <p>The version of the framework.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for PlatformFramework {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformFramework");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`PlatformFramework`](crate::model::PlatformFramework).
@@ -4733,7 +4460,7 @@ impl PlatformFramework {
 
 /// <p>A programming language supported by the platform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformProgrammingLanguage {
     /// <p>The name of the programming language.</p>
     #[doc(hidden)]
@@ -4750,14 +4477,6 @@ impl PlatformProgrammingLanguage {
     /// <p>The version of the programming language.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for PlatformProgrammingLanguage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformProgrammingLanguage");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`PlatformProgrammingLanguage`](crate::model::PlatformProgrammingLanguage).
@@ -4808,7 +4527,7 @@ impl PlatformProgrammingLanguage {
 
 /// <p>Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingleInstanceHealth {
     /// <p>The ID of the Amazon EC2 instance.</p>
     #[doc(hidden)]
@@ -4881,22 +4600,6 @@ impl SingleInstanceHealth {
     /// <p>The instance's type.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
-    }
-}
-impl std::fmt::Debug for SingleInstanceHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingleInstanceHealth");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("color", &self.color);
-        formatter.field("causes", &self.causes);
-        formatter.field("launched_at", &self.launched_at);
-        formatter.field("application_metrics", &self.application_metrics);
-        formatter.field("system", &self.system);
-        formatter.field("deployment", &self.deployment);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.finish()
     }
 }
 /// See [`SingleInstanceHealth`](crate::model::SingleInstanceHealth).
@@ -5073,7 +4776,7 @@ impl SingleInstanceHealth {
 
 /// <p>Information about an application version deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Deployment {
     /// <p>The version label of the application version in the deployment.</p>
     #[doc(hidden)]
@@ -5116,16 +4819,6 @@ impl Deployment {
     /// <p>For completed deployments, the time that the deployment ended.</p>
     pub fn deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deployment_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Deployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Deployment");
-        formatter.field("version_label", &self.version_label);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("status", &self.status);
-        formatter.field("deployment_time", &self.deployment_time);
-        formatter.finish()
     }
 }
 /// See [`Deployment`](crate::model::Deployment).
@@ -5218,7 +4911,7 @@ impl Deployment {
 
 /// <p>CPU utilization and load average metrics for an Amazon EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemStatus {
     /// <p>CPU utilization metrics for the instance.</p>
     #[doc(hidden)]
@@ -5235,14 +4928,6 @@ impl SystemStatus {
     /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
     pub fn load_average(&self) -> std::option::Option<&[f64]> {
         self.load_average.as_deref()
-    }
-}
-impl std::fmt::Debug for SystemStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemStatus");
-        formatter.field("cpu_utilization", &self.cpu_utilization);
-        formatter.field("load_average", &self.load_average);
-        formatter.finish()
     }
 }
 /// See [`SystemStatus`](crate::model::SystemStatus).
@@ -5302,7 +4987,7 @@ impl SystemStatus {
 
 /// <p>CPU utilization metrics for an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CpuUtilization {
     /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
@@ -5373,20 +5058,6 @@ impl CpuUtilization {
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
     pub fn privileged(&self) -> std::option::Option<f64> {
         self.privileged
-    }
-}
-impl std::fmt::Debug for CpuUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CpuUtilization");
-        formatter.field("user", &self.user);
-        formatter.field("nice", &self.nice);
-        formatter.field("system", &self.system);
-        formatter.field("idle", &self.idle);
-        formatter.field("io_wait", &self.io_wait);
-        formatter.field("irq", &self.irq);
-        formatter.field("soft_irq", &self.soft_irq);
-        formatter.field("privileged", &self.privileged);
-        formatter.finish()
     }
 }
 /// See [`CpuUtilization`](crate::model::CpuUtilization).
@@ -5521,7 +5192,7 @@ impl CpuUtilization {
 
 /// <p>Application request metrics for an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationMetrics {
     /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
     #[doc(hidden)]
@@ -5552,16 +5223,6 @@ impl ApplicationMetrics {
     /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
     pub fn latency(&self) -> std::option::Option<&crate::model::Latency> {
         self.latency.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationMetrics");
-        formatter.field("duration", &self.duration);
-        formatter.field("request_count", &self.request_count);
-        formatter.field("status_codes", &self.status_codes);
-        formatter.field("latency", &self.latency);
-        formatter.finish()
     }
 }
 /// See [`ApplicationMetrics`](crate::model::ApplicationMetrics).
@@ -5639,7 +5300,7 @@ impl ApplicationMetrics {
 
 /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Latency {
     /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     #[doc(hidden)]
@@ -5698,20 +5359,6 @@ impl Latency {
     /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
     pub fn p10(&self) -> std::option::Option<f64> {
         self.p10
-    }
-}
-impl std::fmt::Debug for Latency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Latency");
-        formatter.field("p999", &self.p999);
-        formatter.field("p99", &self.p99);
-        formatter.field("p95", &self.p95);
-        formatter.field("p90", &self.p90);
-        formatter.field("p85", &self.p85);
-        formatter.field("p75", &self.p75);
-        formatter.field("p50", &self.p50);
-        formatter.field("p10", &self.p10);
-        formatter.finish()
     }
 }
 /// See [`Latency`](crate::model::Latency).
@@ -5834,7 +5481,7 @@ impl Latency {
 
 /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatusCodes {
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     #[doc(hidden)]
@@ -5865,16 +5512,6 @@ impl StatusCodes {
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     pub fn status5xx(&self) -> std::option::Option<i32> {
         self.status5xx
-    }
-}
-impl std::fmt::Debug for StatusCodes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatusCodes");
-        formatter.field("status2xx", &self.status2xx);
-        formatter.field("status3xx", &self.status3xx);
-        formatter.field("status4xx", &self.status4xx);
-        formatter.field("status5xx", &self.status5xx);
-        formatter.finish()
     }
 }
 /// See [`StatusCodes`](crate::model::StatusCodes).
@@ -6098,7 +5735,7 @@ impl AsRef<str> for InstancesHealthAttribute {
 
 /// <p>Describes an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDescription {
     /// <p>The date when the event occurred.</p>
     #[doc(hidden)]
@@ -6164,21 +5801,6 @@ impl EventDescription {
     /// <p>The severity level of this event.</p>
     pub fn severity(&self) -> std::option::Option<&crate::model::EventSeverity> {
         self.severity.as_ref()
-    }
-}
-impl std::fmt::Debug for EventDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDescription");
-        formatter.field("event_date", &self.event_date);
-        formatter.field("message", &self.message);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("severity", &self.severity);
-        formatter.finish()
     }
 }
 /// See [`EventDescription`](crate::model::EventDescription).
@@ -6441,7 +6063,7 @@ impl AsRef<str> for EventSeverity {
 
 /// <p>Describes the properties of an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentDescription {
     /// <p>The name of this environment.</p>
     #[doc(hidden)]
@@ -6623,36 +6245,6 @@ impl EnvironmentDescription {
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn operations_role(&self) -> std::option::Option<&str> {
         self.operations_role.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentDescription");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("endpoint_url", &self.endpoint_url);
-        formatter.field("cname", &self.cname);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "abortable_operation_in_progress",
-            &self.abortable_operation_in_progress,
-        );
-        formatter.field("health", &self.health);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("resources", &self.resources);
-        formatter.field("tier", &self.tier);
-        formatter.field("environment_links", &self.environment_links);
-        formatter.field("environment_arn", &self.environment_arn);
-        formatter.field("operations_role", &self.operations_role);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentDescription`](crate::model::EnvironmentDescription).
@@ -7021,7 +6613,7 @@ impl EnvironmentDescription {
 
 /// <p>Describes the AWS resources in use by this environment. This data is live.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentResourceDescription {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
@@ -7083,20 +6675,6 @@ impl EnvironmentResourceDescription {
     /// <p>The queues used by this environment.</p>
     pub fn queues(&self) -> std::option::Option<&[crate::model::Queue]> {
         self.queues.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentResourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentResourceDescription");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("auto_scaling_groups", &self.auto_scaling_groups);
-        formatter.field("instances", &self.instances);
-        formatter.field("launch_configurations", &self.launch_configurations);
-        formatter.field("launch_templates", &self.launch_templates);
-        formatter.field("load_balancers", &self.load_balancers);
-        formatter.field("triggers", &self.triggers);
-        formatter.field("queues", &self.queues);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentResourceDescription`](crate::model::EnvironmentResourceDescription).
@@ -7288,7 +6866,7 @@ impl EnvironmentResourceDescription {
 
 /// <p>Describes a queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Queue {
     /// <p>The name of the queue.</p>
     #[doc(hidden)]
@@ -7305,14 +6883,6 @@ impl Queue {
     /// <p>The URL of the queue.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for Queue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Queue");
-        formatter.field("name", &self.name);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`Queue`](crate::model::Queue).
@@ -7363,7 +6933,7 @@ impl Queue {
 
 /// <p>Describes a trigger.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Trigger {
     /// <p>The name of the trigger.</p>
     #[doc(hidden)]
@@ -7373,13 +6943,6 @@ impl Trigger {
     /// <p>The name of the trigger.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Trigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Trigger");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Trigger`](crate::model::Trigger).
@@ -7416,7 +6979,7 @@ impl Trigger {
 
 /// <p>Describes a LoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancer {
     /// <p>The name of the LoadBalancer.</p>
     #[doc(hidden)]
@@ -7426,13 +6989,6 @@ impl LoadBalancer {
     /// <p>The name of the LoadBalancer.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancer");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`LoadBalancer`](crate::model::LoadBalancer).
@@ -7469,7 +7025,7 @@ impl LoadBalancer {
 
 /// <p>Describes an Amazon EC2 launch template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplate {
     /// <p>The ID of the launch template.</p>
     #[doc(hidden)]
@@ -7479,13 +7035,6 @@ impl LaunchTemplate {
     /// <p>The ID of the launch template.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplate");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`LaunchTemplate`](crate::model::LaunchTemplate).
@@ -7522,7 +7071,7 @@ impl LaunchTemplate {
 
 /// <p>Describes an Auto Scaling launch configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchConfiguration {
     /// <p>The name of the launch configuration.</p>
     #[doc(hidden)]
@@ -7532,13 +7081,6 @@ impl LaunchConfiguration {
     /// <p>The name of the launch configuration.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchConfiguration");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`LaunchConfiguration`](crate::model::LaunchConfiguration).
@@ -7575,7 +7117,7 @@ impl LaunchConfiguration {
 
 /// <p>The description of an Amazon EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The ID of the Amazon EC2 instance.</p>
     #[doc(hidden)]
@@ -7585,13 +7127,6 @@ impl Instance {
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -7628,7 +7163,7 @@ impl Instance {
 
 /// <p>Describes an Auto Scaling launch configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroup {
     /// <p>The name of the <code>AutoScalingGroup</code> . </p>
     #[doc(hidden)]
@@ -7638,13 +7173,6 @@ impl AutoScalingGroup {
     /// <p>The name of the <code>AutoScalingGroup</code> . </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroup");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
@@ -7681,7 +7209,7 @@ impl AutoScalingGroup {
 
 /// <p>The record of an upcoming or in-progress managed action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedAction {
     /// <p>A unique identifier for the managed action.</p>
     #[doc(hidden)]
@@ -7719,17 +7247,6 @@ impl ManagedAction {
     /// <p>The start time of the maintenance window in which the managed action will execute.</p>
     pub fn window_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.window_start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ManagedAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedAction");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("action_description", &self.action_description);
-        formatter.field("action_type", &self.action_type);
-        formatter.field("status", &self.status);
-        formatter.field("window_start_time", &self.window_start_time);
-        formatter.finish()
     }
 }
 /// See [`ManagedAction`](crate::model::ManagedAction).
@@ -8023,7 +7540,7 @@ impl AsRef<str> for ActionType {
 
 /// <p>The record of a completed or failed managed action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedActionHistoryItem {
     /// <p>A unique identifier for the managed action.</p>
     #[doc(hidden)]
@@ -8082,20 +7599,6 @@ impl ManagedActionHistoryItem {
     /// <p>The date and time that the action finished executing.</p>
     pub fn finished_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.finished_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ManagedActionHistoryItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedActionHistoryItem");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("action_type", &self.action_type);
-        formatter.field("action_description", &self.action_description);
-        formatter.field("failure_type", &self.failure_type);
-        formatter.field("status", &self.status);
-        formatter.field("failure_description", &self.failure_description);
-        formatter.field("executed_time", &self.executed_time);
-        formatter.field("finished_time", &self.finished_time);
-        formatter.finish()
     }
 }
 /// See [`ManagedActionHistoryItem`](crate::model::ManagedActionHistoryItem).
@@ -8459,7 +7962,7 @@ impl AsRef<str> for FailureType {
 
 /// <p>Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceHealthSummary {
     /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     #[doc(hidden)]
@@ -8518,20 +8021,6 @@ impl InstanceHealthSummary {
     /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
     pub fn severe(&self) -> std::option::Option<i32> {
         self.severe
-    }
-}
-impl std::fmt::Debug for InstanceHealthSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceHealthSummary");
-        formatter.field("no_data", &self.no_data);
-        formatter.field("unknown", &self.unknown);
-        formatter.field("pending", &self.pending);
-        formatter.field("ok", &self.ok);
-        formatter.field("info", &self.info);
-        formatter.field("warning", &self.warning);
-        formatter.field("degraded", &self.degraded);
-        formatter.field("severe", &self.severe);
-        formatter.finish()
     }
 }
 /// See [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
@@ -8785,7 +8274,7 @@ impl AsRef<str> for EnvironmentHealthAttribute {
 
 /// <p>Describes the settings for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationSettingsDescription {
     /// <p>The name of the solution stack this configuration set uses.</p>
     #[doc(hidden)]
@@ -8875,22 +8364,6 @@ impl ConfigurationSettingsDescription {
         &self,
     ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
         self.option_settings.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigurationSettingsDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationSettingsDescription");
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationSettingsDescription`](crate::model::ConfigurationSettingsDescription).
@@ -9084,7 +8557,7 @@ impl ConfigurationSettingsDescription {
 
 /// <p>Describes the possible values for a configuration option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationOptionDescription {
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
     #[doc(hidden)]
@@ -9198,23 +8671,6 @@ impl ConfigurationOptionDescription {
     /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
     pub fn regex(&self) -> std::option::Option<&crate::model::OptionRestrictionRegex> {
         self.regex.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigurationOptionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationOptionDescription");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("change_severity", &self.change_severity);
-        formatter.field("user_defined", &self.user_defined);
-        formatter.field("value_type", &self.value_type);
-        formatter.field("value_options", &self.value_options);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("max_length", &self.max_length);
-        formatter.field("regex", &self.regex);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationOptionDescription`](crate::model::ConfigurationOptionDescription).
@@ -9428,7 +8884,7 @@ impl ConfigurationOptionDescription {
 
 /// <p>A regular expression representing a restriction on a string configuration option value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptionRestrictionRegex {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
     #[doc(hidden)]
@@ -9445,14 +8901,6 @@ impl OptionRestrictionRegex {
     /// <p>A unique name representing this regular expression.</p>
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
-    }
-}
-impl std::fmt::Debug for OptionRestrictionRegex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptionRestrictionRegex");
-        formatter.field("pattern", &self.pattern);
-        formatter.field("label", &self.label);
-        formatter.finish()
     }
 }
 /// See [`OptionRestrictionRegex`](crate::model::OptionRestrictionRegex).
@@ -9595,7 +9043,7 @@ impl AsRef<str> for ConfigurationOptionValueType {
 
 /// <p>A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceQuotas {
     /// <p>The quota for applications in the AWS account.</p>
     #[doc(hidden)]
@@ -9635,20 +9083,6 @@ impl ResourceQuotas {
     /// <p>The quota for custom platforms in the AWS account.</p>
     pub fn custom_platform_quota(&self) -> std::option::Option<&crate::model::ResourceQuota> {
         self.custom_platform_quota.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceQuotas {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceQuotas");
-        formatter.field("application_quota", &self.application_quota);
-        formatter.field("application_version_quota", &self.application_version_quota);
-        formatter.field("environment_quota", &self.environment_quota);
-        formatter.field(
-            "configuration_template_quota",
-            &self.configuration_template_quota,
-        );
-        formatter.field("custom_platform_quota", &self.custom_platform_quota);
-        formatter.finish()
     }
 }
 /// See [`ResourceQuotas`](crate::model::ResourceQuotas).
@@ -9750,7 +9184,7 @@ impl ResourceQuotas {
 
 /// <p>The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceQuota {
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     #[doc(hidden)]
@@ -9760,13 +9194,6 @@ impl ResourceQuota {
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     pub fn maximum(&self) -> std::option::Option<i32> {
         self.maximum
-    }
-}
-impl std::fmt::Debug for ResourceQuota {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceQuota");
-        formatter.field("maximum", &self.maximum);
-        formatter.finish()
     }
 }
 /// See [`ResourceQuota`](crate::model::ResourceQuota).
@@ -9805,7 +9232,7 @@ impl ResourceQuota {
 
 /// <p>The builder used to build the custom platform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Builder {
     /// <p>The ARN of the builder.</p>
     #[doc(hidden)]
@@ -9815,13 +9242,6 @@ impl Builder {
     /// <p>The ARN of the builder.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Builder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Builder");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Builder`](crate::model::Builder).
@@ -9858,7 +9278,7 @@ impl Builder {
 
 /// <p>A specification for an environment configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceConfiguration {
     /// <p>The name of the application associated with the configuration.</p>
     #[doc(hidden)]
@@ -9875,14 +9295,6 @@ impl SourceConfiguration {
     /// <p>The name of the configuration template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceConfiguration");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
     }
 }
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration).
@@ -9939,7 +9351,7 @@ impl SourceConfiguration {
 
 /// <p>Settings for an AWS CodeBuild build.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildConfiguration {
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
     #[doc(hidden)]
@@ -9987,17 +9399,6 @@ impl BuildConfiguration {
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
     pub fn timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.timeout_in_minutes
-    }
-}
-impl std::fmt::Debug for BuildConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildConfiguration");
-        formatter.field("artifact_name", &self.artifact_name);
-        formatter.field("code_build_service_role", &self.code_build_service_role);
-        formatter.field("compute_type", &self.compute_type);
-        formatter.field("image", &self.image);
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.finish()
     }
 }
 /// See [`BuildConfiguration`](crate::model::BuildConfiguration).

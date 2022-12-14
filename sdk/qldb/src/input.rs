@@ -1361,7 +1361,7 @@ impl ExportJournalToS3Input {
 pub mod get_block_input {
 
     /// A builder for [`GetBlockInput`](crate::input::GetBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) block_address: std::option::Option<crate::model::ValueHolder>,
@@ -1418,6 +1418,15 @@ pub mod get_block_input {
                 block_address: self.block_address,
                 digest_tip_address: self.digest_tip_address,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("block_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("digest_tip_address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1694,7 +1703,7 @@ impl GetDigestInput {
 pub mod get_revision_input {
 
     /// A builder for [`GetRevisionInput`](crate::input::GetRevisionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) block_address: std::option::Option<crate::model::ValueHolder>,
@@ -1763,6 +1772,16 @@ pub mod get_revision_input {
                 document_id: self.document_id,
                 digest_tip_address: self.digest_tip_address,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("block_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("digest_tip_address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3827,7 +3846,7 @@ impl UpdateLedgerPermissionsModeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLedgerPermissionsModeInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -3858,18 +3877,10 @@ impl UpdateLedgerPermissionsModeInput {
         self.permissions_mode.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLedgerPermissionsModeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLedgerPermissionsModeInput");
-        formatter.field("name", &self.name);
-        formatter.field("permissions_mode", &self.permissions_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLedgerInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -3927,19 +3938,10 @@ impl UpdateLedgerInput {
         self.kms_key.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
@@ -3960,18 +3962,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
@@ -3998,18 +3992,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamJournalToKinesisInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4081,23 +4067,10 @@ impl StreamJournalToKinesisInput {
         self.stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for StreamJournalToKinesisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamJournalToKinesisInput");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("inclusive_start_time", &self.inclusive_start_time);
-        formatter.field("exclusive_end_time", &self.exclusive_end_time);
-        formatter.field("kinesis_configuration", &self.kinesis_configuration);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
@@ -4111,17 +4084,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLedgersInput {
     /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p>
     #[doc(hidden)]
@@ -4140,18 +4106,10 @@ impl ListLedgersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLedgersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLedgersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJournalS3ExportsForLedgerInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4177,19 +4135,10 @@ impl ListJournalS3ExportsForLedgerInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJournalS3ExportsForLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJournalS3ExportsForLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJournalS3ExportsInput {
     /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
     #[doc(hidden)]
@@ -4208,18 +4157,10 @@ impl ListJournalS3ExportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJournalS3ExportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJournalS3ExportsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJournalKinesisStreamsForLedgerInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4243,15 +4184,6 @@ impl ListJournalKinesisStreamsForLedgerInput {
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJournalKinesisStreamsForLedgerInput");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -4307,7 +4239,7 @@ impl std::fmt::Debug for GetRevisionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDigestInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4317,13 +4249,6 @@ impl GetDigestInput {
     /// <p>The name of the ledger.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDigestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDigestInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -4371,7 +4296,7 @@ impl std::fmt::Debug for GetBlockInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJournalToS3Input {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4440,22 +4365,10 @@ impl ExportJournalToS3Input {
         self.output_format.as_ref()
     }
 }
-impl std::fmt::Debug for ExportJournalToS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJournalToS3Input");
-        formatter.field("name", &self.name);
-        formatter.field("inclusive_start_time", &self.inclusive_start_time);
-        formatter.field("exclusive_end_time", &self.exclusive_end_time);
-        formatter.field("s3_export_configuration", &self.s3_export_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("output_format", &self.output_format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLedgerInput {
     /// <p>The name of the ledger that you want to describe.</p>
     #[doc(hidden)]
@@ -4467,17 +4380,10 @@ impl DescribeLedgerInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4496,18 +4402,10 @@ impl DescribeJournalS3ExportInput {
         self.export_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJournalS3ExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJournalS3ExportInput");
-        formatter.field("name", &self.name);
-        formatter.field("export_id", &self.export_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4526,18 +4424,10 @@ impl DescribeJournalKinesisStreamInput {
         self.stream_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJournalKinesisStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJournalKinesisStreamInput");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLedgerInput {
     /// <p>The name of the ledger that you want to delete.</p>
     #[doc(hidden)]
@@ -4549,17 +4439,10 @@ impl DeleteLedgerInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLedgerInput {
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
@@ -4651,21 +4534,10 @@ impl CreateLedgerInput {
         self.kms_key.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.field("permissions_mode", &self.permissions_mode);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4682,13 +4554,5 @@ impl CancelJournalKinesisStreamInput {
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelJournalKinesisStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJournalKinesisStreamInput");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
     }
 }

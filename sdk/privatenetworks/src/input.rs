@@ -481,7 +481,7 @@ impl ActivateNetworkSiteInput {
 pub mod configure_access_point_input {
 
     /// A builder for [`ConfigureAccessPointInput`](crate::input::ConfigureAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
         pub(crate) position: std::option::Option<crate::model::Position>,
@@ -575,6 +575,18 @@ pub mod configure_access_point_input {
                 cpi_user_password: self.cpi_user_password,
                 cpi_secret_key: self.cpi_secret_key,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_point_arn", &self.access_point_arn);
+            formatter.field("position", &self.position);
+            formatter.field("cpi_username", &"*** Sensitive Data Redacted ***");
+            formatter.field("cpi_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("cpi_user_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("cpi_secret_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -695,7 +707,7 @@ impl ConfigureAccessPointInput {
 pub mod create_network_input {
 
     /// A builder for [`CreateNetworkInput`](crate::input::CreateNetworkInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) network_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -771,6 +783,16 @@ pub mod create_network_input {
                 client_token: self.client_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network_name", &self.network_name);
+            formatter.field("description", &self.description);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -888,7 +910,7 @@ impl CreateNetworkInput {
 pub mod create_network_site_input {
 
     /// A builder for [`CreateNetworkSiteInput`](crate::input::CreateNetworkSiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) network_site_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1026,6 +1048,20 @@ pub mod create_network_site_input {
                 availability_zone_id: self.availability_zone_id,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network_site_name", &self.network_site_name);
+            formatter.field("description", &self.description);
+            formatter.field("network_arn", &self.network_arn);
+            formatter.field("pending_plan", &self.pending_plan);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("availability_zone", &self.availability_zone);
+            formatter.field("availability_zone_id", &self.availability_zone_id);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3713,7 +3749,7 @@ impl PingInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3765,6 +3801,14 @@ pub mod tag_resource_input {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3902,7 +3946,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3946,6 +3990,14 @@ pub mod untag_resource_input {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &self.resource_arn);
+            formatter.field("tag_keys", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4428,7 +4480,7 @@ impl UpdateNetworkSitePlanInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNetworkSitePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
@@ -4454,19 +4506,10 @@ impl UpdateNetworkSitePlanInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateNetworkSitePlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNetworkSitePlanInput");
-        formatter.field("network_site_arn", &self.network_site_arn);
-        formatter.field("pending_plan", &self.pending_plan);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
@@ -4490,15 +4533,6 @@ impl UpdateNetworkSiteInput {
     /// <p>The description.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateNetworkSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNetworkSiteInput");
-        formatter.field("network_site_arn", &self.network_site_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 
@@ -4568,18 +4602,12 @@ impl std::fmt::Debug for TagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PingInput {}
-impl std::fmt::Debug for PingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PingInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -4591,17 +4619,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrdersInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     #[doc(hidden)]
@@ -4656,20 +4677,10 @@ impl ListOrdersInput {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for ListOrdersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOrdersInput");
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("start_token", &self.start_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworkSitesInput {
     /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p>
     /// <ul>
@@ -4722,20 +4733,10 @@ impl ListNetworkSitesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNetworkSitesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworkSitesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("start_token", &self.start_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworksInput {
     /// <p>The filters.</p>
     /// <ul>
@@ -4781,19 +4782,10 @@ impl ListNetworksInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNetworksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworksInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("start_token", &self.start_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworkResourcesInput {
     /// <p>The filters.</p>
     /// <ul>
@@ -4848,20 +4840,10 @@ impl ListNetworkResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNetworkResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworkResourcesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("start_token", &self.start_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeviceIdentifiersInput {
     /// <p>The filters.</p>
     /// <ul>
@@ -4918,20 +4900,10 @@ impl ListDeviceIdentifiersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDeviceIdentifiersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeviceIdentifiersInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("start_token", &self.start_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOrderInput {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     #[doc(hidden)]
@@ -4943,17 +4915,10 @@ impl GetOrderInput {
         self.order_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetOrderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOrderInput");
-        formatter.field("order_arn", &self.order_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
@@ -4965,17 +4930,10 @@ impl GetNetworkSiteInput {
         self.network_site_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkSiteInput");
-        formatter.field("network_site_arn", &self.network_site_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     #[doc(hidden)]
@@ -4987,17 +4945,10 @@ impl GetNetworkResourceInput {
         self.network_resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkResourceInput");
-        formatter.field("network_resource_arn", &self.network_resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     #[doc(hidden)]
@@ -5009,17 +4960,10 @@ impl GetNetworkInput {
         self.network_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkInput");
-        formatter.field("network_arn", &self.network_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     #[doc(hidden)]
@@ -5031,17 +4975,10 @@ impl GetDeviceIdentifierInput {
         self.device_identifier_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceIdentifierInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceIdentifierInput");
-        formatter.field("device_identifier_arn", &self.device_identifier_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
@@ -5060,18 +4997,10 @@ impl DeleteNetworkSiteInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNetworkSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNetworkSiteInput");
-        formatter.field("network_site_arn", &self.network_site_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNetworkInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     #[doc(hidden)]
@@ -5090,18 +5019,10 @@ impl DeleteNetworkInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNetworkInput");
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     #[doc(hidden)]
@@ -5118,14 +5039,6 @@ impl DeactivateDeviceIdentifierInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DeactivateDeviceIdentifierInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateDeviceIdentifierInput");
-        formatter.field("device_identifier_arn", &self.device_identifier_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }
 
@@ -5325,7 +5238,7 @@ impl std::fmt::Debug for ConfigureAccessPointInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
@@ -5351,19 +5264,10 @@ impl ActivateNetworkSiteInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for ActivateNetworkSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateNetworkSiteInput");
-        formatter.field("network_site_arn", &self.network_site_arn);
-        formatter.field("shipping_address", &self.shipping_address);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     #[doc(hidden)]
@@ -5382,18 +5286,10 @@ impl ActivateDeviceIdentifierInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for ActivateDeviceIdentifierInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateDeviceIdentifierInput");
-        formatter.field("device_identifier_arn", &self.device_identifier_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeOrderReceiptInput {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     #[doc(hidden)]
@@ -5403,12 +5299,5 @@ impl AcknowledgeOrderReceiptInput {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     pub fn order_arn(&self) -> std::option::Option<&str> {
         self.order_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AcknowledgeOrderReceiptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeOrderReceiptInput");
-        formatter.field("order_arn", &self.order_arn);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamModeDetails {
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl StreamModeDetails {
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
     pub fn stream_mode(&self) -> std::option::Option<&crate::model::StreamMode> {
         self.stream_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamModeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamModeDetails");
-        formatter.field("stream_mode", &self.stream_mode);
-        formatter.finish()
     }
 }
 /// See [`StreamModeDetails`](crate::model::StreamModeDetails).
@@ -325,7 +318,7 @@ impl AsRef<str> for EncryptionType {
 
 /// <p>An object that represents the details of the consumer you registered. This type of object is returned by <code>RegisterStreamConsumer</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Consumer {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
     #[doc(hidden)]
@@ -358,19 +351,6 @@ impl Consumer {
     /// <p></p>
     pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.consumer_creation_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for Consumer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Consumer");
-        formatter.field("consumer_name", &self.consumer_name);
-        formatter.field("consumer_arn", &self.consumer_arn);
-        formatter.field("consumer_status", &self.consumer_status);
-        formatter.field(
-            "consumer_creation_timestamp",
-            &self.consumer_creation_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`Consumer`](crate::model::Consumer).
@@ -551,7 +531,7 @@ impl AsRef<str> for ConsumerStatus {
 
 /// <p>Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordsResultEntry {
     /// <p>The sequence number for an individual record result.</p>
     #[doc(hidden)]
@@ -582,16 +562,6 @@ impl PutRecordsResultEntry {
     /// <p>The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>"Internal Service Failure"</code>.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for PutRecordsResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordsResultEntry");
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
@@ -672,7 +642,7 @@ impl PutRecordsResultEntry {
 
 /// <p>Represents the output for <code>PutRecords</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordsRequestEntry {
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
     #[doc(hidden)]
@@ -696,15 +666,6 @@ impl PutRecordsRequestEntry {
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     pub fn partition_key(&self) -> std::option::Option<&str> {
         self.partition_key.as_deref()
-    }
-}
-impl std::fmt::Debug for PutRecordsRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordsRequestEntry");
-        formatter.field("data", &self.data);
-        formatter.field("explicit_hash_key", &self.explicit_hash_key);
-        formatter.field("partition_key", &self.partition_key);
-        formatter.finish()
     }
 }
 /// See [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
@@ -773,7 +734,7 @@ impl PutRecordsRequestEntry {
 
 /// <p>Metadata assigned to the stream, consisting of a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
     #[doc(hidden)]
@@ -790,14 +751,6 @@ impl Tag {
     /// <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -848,7 +801,7 @@ impl Tag {
 
 /// <p>A uniquely identified group of data records in a Kinesis data stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Shard {
     /// <p>The unique identifier of the shard within the stream.</p>
     #[doc(hidden)]
@@ -886,17 +839,6 @@ impl Shard {
     /// <p>The range of possible sequence numbers for the shard.</p>
     pub fn sequence_number_range(&self) -> std::option::Option<&crate::model::SequenceNumberRange> {
         self.sequence_number_range.as_ref()
-    }
-}
-impl std::fmt::Debug for Shard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Shard");
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("parent_shard_id", &self.parent_shard_id);
-        formatter.field("adjacent_parent_shard_id", &self.adjacent_parent_shard_id);
-        formatter.field("hash_key_range", &self.hash_key_range);
-        formatter.field("sequence_number_range", &self.sequence_number_range);
-        formatter.finish()
     }
 }
 /// See [`Shard`](crate::model::Shard).
@@ -995,7 +937,7 @@ impl Shard {
 
 /// <p>The range of possible sequence numbers for the shard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SequenceNumberRange {
     /// <p>The starting sequence number for the range.</p>
     #[doc(hidden)]
@@ -1012,14 +954,6 @@ impl SequenceNumberRange {
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
     pub fn ending_sequence_number(&self) -> std::option::Option<&str> {
         self.ending_sequence_number.as_deref()
-    }
-}
-impl std::fmt::Debug for SequenceNumberRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SequenceNumberRange");
-        formatter.field("starting_sequence_number", &self.starting_sequence_number);
-        formatter.field("ending_sequence_number", &self.ending_sequence_number);
-        formatter.finish()
     }
 }
 /// See [`SequenceNumberRange`](crate::model::SequenceNumberRange).
@@ -1076,7 +1010,7 @@ impl SequenceNumberRange {
 
 /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HashKeyRange {
     /// <p>The starting hash key of the hash key range.</p>
     #[doc(hidden)]
@@ -1093,14 +1027,6 @@ impl HashKeyRange {
     /// <p>The ending hash key of the hash key range.</p>
     pub fn ending_hash_key(&self) -> std::option::Option<&str> {
         self.ending_hash_key.as_deref()
-    }
-}
-impl std::fmt::Debug for HashKeyRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HashKeyRange");
-        formatter.field("starting_hash_key", &self.starting_hash_key);
-        formatter.field("ending_hash_key", &self.ending_hash_key);
-        formatter.finish()
     }
 }
 /// See [`HashKeyRange`](crate::model::HashKeyRange).
@@ -1157,7 +1083,7 @@ impl HashKeyRange {
 
 /// <p>The request parameter used to filter out the response of the <code>ListShards</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShardFilter {
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values: </p>
@@ -1199,15 +1125,6 @@ impl ShardFilter {
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ShardFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShardFilter");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`ShardFilter`](crate::model::ShardFilter).
@@ -1524,7 +1441,7 @@ impl AsRef<str> for ShardIteratorType {
 
 /// <p>Output parameter of the GetRecords API. The existing child shard of the current shard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildShard {
     /// <p>The shard ID of the existing child shard of the current shard.</p>
     #[doc(hidden)]
@@ -1548,15 +1465,6 @@ impl ChildShard {
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
     pub fn hash_key_range(&self) -> std::option::Option<&crate::model::HashKeyRange> {
         self.hash_key_range.as_ref()
-    }
-}
-impl std::fmt::Debug for ChildShard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildShard");
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("parent_shards", &self.parent_shards);
-        formatter.field("hash_key_range", &self.hash_key_range);
-        formatter.finish()
     }
 }
 /// See [`ChildShard`](crate::model::ChildShard).
@@ -1631,7 +1539,7 @@ impl ChildShard {
 
 /// <p>The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Record {
     /// <p>The unique identifier of the record within its shard.</p>
     #[doc(hidden)]
@@ -1679,20 +1587,6 @@ impl Record {
     /// </ul>
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.field(
-            "approximate_arrival_timestamp",
-            &self.approximate_arrival_timestamp,
-        );
-        formatter.field("data", &self.data);
-        formatter.field("partition_key", &self.partition_key);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.finish()
     }
 }
 /// See [`Record`](crate::model::Record).
@@ -1928,7 +1822,7 @@ impl AsRef<str> for MetricsName {
 
 /// <p>Represents the output for <code>DescribeStreamSummary</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamDescriptionSummary {
     /// <p>The name of the stream being described.</p>
     #[doc(hidden)]
@@ -2042,23 +1936,6 @@ impl StreamDescriptionSummary {
     /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
     pub fn consumer_count(&self) -> std::option::Option<i32> {
         self.consumer_count
-    }
-}
-impl std::fmt::Debug for StreamDescriptionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamDescriptionSummary");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("stream_status", &self.stream_status);
-        formatter.field("stream_mode_details", &self.stream_mode_details);
-        formatter.field("retention_period_hours", &self.retention_period_hours);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("open_shard_count", &self.open_shard_count);
-        formatter.field("consumer_count", &self.consumer_count);
-        formatter.finish()
     }
 }
 /// See [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
@@ -2273,7 +2150,7 @@ impl StreamDescriptionSummary {
 
 /// <p>Represents enhanced metrics types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnhancedMetrics {
     /// <p>List of shard-level metrics.</p>
     /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p>
@@ -2307,13 +2184,6 @@ impl EnhancedMetrics {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
         self.shard_level_metrics.as_deref()
-    }
-}
-impl std::fmt::Debug for EnhancedMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnhancedMetrics");
-        formatter.field("shard_level_metrics", &self.shard_level_metrics);
-        formatter.finish()
     }
 }
 /// See [`EnhancedMetrics`](crate::model::EnhancedMetrics).
@@ -2486,7 +2356,7 @@ impl AsRef<str> for StreamStatus {
 
 /// <p>An object that represents the details of a registered consumer. This type of object is returned by <code>DescribeStreamConsumer</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConsumerDescription {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
     #[doc(hidden)]
@@ -2526,20 +2396,6 @@ impl ConsumerDescription {
     /// <p>The ARN of the stream with which you registered the consumer.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ConsumerDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConsumerDescription");
-        formatter.field("consumer_name", &self.consumer_name);
-        formatter.field("consumer_arn", &self.consumer_arn);
-        formatter.field("consumer_status", &self.consumer_status);
-        formatter.field(
-            "consumer_creation_timestamp",
-            &self.consumer_creation_timestamp,
-        );
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.finish()
     }
 }
 /// See [`ConsumerDescription`](crate::model::ConsumerDescription).
@@ -2637,7 +2493,7 @@ impl ConsumerDescription {
 
 /// <p>Represents the output for <code>DescribeStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamDescription {
     /// <p>The name of the stream being described.</p>
     #[doc(hidden)]
@@ -2751,23 +2607,6 @@ impl StreamDescription {
     /// </ul>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamDescription");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("stream_status", &self.stream_status);
-        formatter.field("stream_mode_details", &self.stream_mode_details);
-        formatter.field("shards", &self.shards);
-        formatter.field("has_more_shards", &self.has_more_shards);
-        formatter.field("retention_period_hours", &self.retention_period_hours);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
     }
 }
 /// See [`StreamDescription`](crate::model::StreamDescription).

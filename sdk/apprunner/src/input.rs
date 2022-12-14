@@ -5229,7 +5229,7 @@ impl UpdateServiceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
     #[doc(hidden)]
@@ -5294,32 +5294,10 @@ impl UpdateServiceInput {
         self.observability_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("instance_configuration", &self.instance_configuration);
-        formatter.field(
-            "auto_scaling_configuration_arn",
-            &self.auto_scaling_configuration_arn,
-        );
-        formatter.field(
-            "health_check_configuration",
-            &self.health_check_configuration,
-        );
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field(
-            "observability_configuration",
-            &self.observability_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
@@ -5340,18 +5318,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
@@ -5372,18 +5342,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDeploymentInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
     #[doc(hidden)]
@@ -5395,17 +5357,10 @@ impl StartDeploymentInput {
         self.service_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDeploymentInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
     #[doc(hidden)]
@@ -5417,17 +5372,10 @@ impl ResumeServiceInput {
         self.service_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResumeServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeServiceInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PauseServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
     #[doc(hidden)]
@@ -5439,17 +5387,10 @@ impl PauseServiceInput {
         self.service_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PauseServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PauseServiceInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVpcConnectorsInput {
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
@@ -5472,18 +5413,10 @@ impl ListVpcConnectorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVpcConnectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVpcConnectorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
@@ -5497,17 +5430,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicesInput {
     /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
@@ -5530,18 +5456,10 @@ impl ListServicesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOperationsInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
     #[doc(hidden)]
@@ -5571,19 +5489,10 @@ impl ListOperationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListOperationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOperationsInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObservabilityConfigurationsInput {
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     #[doc(hidden)]
@@ -5624,23 +5533,10 @@ impl ListObservabilityConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListObservabilityConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObservabilityConfigurationsInput");
-        formatter.field(
-            "observability_configuration_name",
-            &self.observability_configuration_name,
-        );
-        formatter.field("latest_only", &self.latest_only);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectionsInput {
     /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
     #[doc(hidden)]
@@ -5670,19 +5566,10 @@ impl ListConnectionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectionsInput");
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAutoScalingConfigurationsInput {
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     #[doc(hidden)]
@@ -5723,23 +5610,10 @@ impl ListAutoScalingConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAutoScalingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAutoScalingConfigurationsInput");
-        formatter.field(
-            "auto_scaling_configuration_name",
-            &self.auto_scaling_configuration_name,
-        );
-        formatter.field("latest_only", &self.latest_only);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateCustomDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
     #[doc(hidden)]
@@ -5758,18 +5632,10 @@ impl DisassociateCustomDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateCustomDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateCustomDomainInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
@@ -5783,17 +5649,10 @@ impl DescribeVpcConnectorInput {
         self.vpc_connector_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVpcConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVpcConnectorInput");
-        formatter.field("vpc_connector_arn", &self.vpc_connector_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
     #[doc(hidden)]
@@ -5805,17 +5664,10 @@ impl DescribeServiceInput {
         self.service_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeObservabilityConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
@@ -5829,20 +5681,10 @@ impl DescribeObservabilityConfigurationInput {
         self.observability_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeObservabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeObservabilityConfigurationInput");
-        formatter.field(
-            "observability_configuration_arn",
-            &self.observability_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomDomainsInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
     #[doc(hidden)]
@@ -5872,19 +5714,10 @@ impl DescribeCustomDomainsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeCustomDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomDomainsInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
@@ -5898,20 +5731,10 @@ impl DescribeAutoScalingConfigurationInput {
         self.auto_scaling_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAutoScalingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoScalingConfigurationInput");
-        formatter.field(
-            "auto_scaling_configuration_arn",
-            &self.auto_scaling_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
@@ -5925,17 +5748,10 @@ impl DeleteVpcConnectorInput {
         self.vpc_connector_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVpcConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcConnectorInput");
-        formatter.field("vpc_connector_arn", &self.vpc_connector_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
     #[doc(hidden)]
@@ -5947,17 +5763,10 @@ impl DeleteServiceInput {
         self.service_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObservabilityConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
@@ -5971,20 +5780,10 @@ impl DeleteObservabilityConfigurationInput {
         self.observability_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteObservabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObservabilityConfigurationInput");
-        formatter.field(
-            "observability_configuration_arn",
-            &self.observability_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
     #[doc(hidden)]
@@ -5996,17 +5795,10 @@ impl DeleteConnectionInput {
         self.connection_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionInput");
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
@@ -6020,20 +5812,10 @@ impl DeleteAutoScalingConfigurationInput {
         self.auto_scaling_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAutoScalingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAutoScalingConfigurationInput");
-        formatter.field(
-            "auto_scaling_configuration_arn",
-            &self.auto_scaling_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcConnectorInput {
     /// <p>A name for the VPC connector.</p>
     #[doc(hidden)]
@@ -6070,20 +5852,10 @@ impl CreateVpcConnectorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVpcConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcConnectorInput");
-        formatter.field("vpc_connector_name", &self.vpc_connector_name);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServiceInput {
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -6166,34 +5938,10 @@ impl CreateServiceInput {
         self.observability_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateServiceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServiceInput");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("instance_configuration", &self.instance_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "health_check_configuration",
-            &self.health_check_configuration,
-        );
-        formatter.field(
-            "auto_scaling_configuration_arn",
-            &self.auto_scaling_configuration_arn,
-        );
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field(
-            "observability_configuration",
-            &self.observability_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateObservabilityConfigurationInput {
     /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
@@ -6225,22 +5973,10 @@ impl CreateObservabilityConfigurationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateObservabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateObservabilityConfigurationInput");
-        formatter.field(
-            "observability_configuration_name",
-            &self.observability_configuration_name,
-        );
-        formatter.field("trace_configuration", &self.trace_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -6266,19 +6002,10 @@ impl CreateConnectionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionInput");
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAutoScalingConfigurationInput {
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
     /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
@@ -6332,24 +6059,10 @@ impl CreateAutoScalingConfigurationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAutoScalingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAutoScalingConfigurationInput");
-        formatter.field(
-            "auto_scaling_configuration_name",
-            &self.auto_scaling_configuration_name,
-        );
-        formatter.field("max_concurrency", &self.max_concurrency);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateCustomDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
     #[doc(hidden)]
@@ -6375,14 +6088,5 @@ impl AssociateCustomDomainInput {
     /// <p>Default: <code>true</code> </p>
     pub fn enable_www_subdomain(&self) -> std::option::Option<bool> {
         self.enable_www_subdomain
-    }
-}
-impl std::fmt::Debug for AssociateCustomDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateCustomDomainInput");
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("enable_www_subdomain", &self.enable_www_subdomain);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Validate exception field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>Validate exception field name.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>Validate exception field message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>A rule in the Point in Time (PIT) policy representing when to take snapshots and how long to retain them for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PitPolicyRule {
     /// <p>The ID of the rule.</p>
     #[doc(hidden)]
@@ -222,17 +214,6 @@ impl PitPolicyRule {
     /// <p>Whether this rule is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for PitPolicyRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PitPolicyRule");
-        formatter.field("rule_id", &self.rule_id);
-        formatter.field("units", &self.units);
-        formatter.field("interval", &self.interval);
-        formatter.field("retention_duration", &self.retention_duration);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`PitPolicyRule`](crate::model::PitPolicyRule).
@@ -603,7 +584,7 @@ impl AsRef<str> for ReplicationConfigurationEbsEncryption {
 
 /// <p>The configuration of a disk of the Source Server to be replicated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>The name of the device.</p>
     #[doc(hidden)]
@@ -656,21 +637,6 @@ impl ReplicationConfigurationReplicatedDisk {
     ) -> std::option::Option<&crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>
     {
         self.optimized_staging_disk_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicationConfigurationReplicatedDisk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationConfigurationReplicatedDisk");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("is_boot_disk", &self.is_boot_disk);
-        formatter.field("staging_disk_type", &self.staging_disk_type);
-        formatter.field("iops", &self.iops);
-        formatter.field("throughput", &self.throughput);
-        formatter.field(
-            "optimized_staging_disk_type",
-            &self.optimized_staging_disk_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
@@ -1010,7 +976,7 @@ impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
 
 /// <p>Configuration of a machine's license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Licensing {
     /// <p>Whether to enable "Bring your own license" or not.</p>
     #[doc(hidden)]
@@ -1020,13 +986,6 @@ impl Licensing {
     /// <p>Whether to enable "Bring your own license" or not.</p>
     pub fn os_byol(&self) -> std::option::Option<bool> {
         self.os_byol
-    }
-}
-impl std::fmt::Debug for Licensing {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Licensing");
-        formatter.field("os_byol", &self.os_byol);
-        formatter.finish()
     }
 }
 /// See [`Licensing`](crate::model::Licensing).
@@ -1249,7 +1208,7 @@ impl AsRef<str> for LaunchDisposition {
 
 /// <p>Staging information related to source server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StagingArea {
     /// <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This is a source server that is replicating in the current account. (b) EXTENDED - Source server is extended from a staging source server. In this case, the value of stagingSourceServerArn is pointing to the Arn of the source server in the staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing staging source server. In this case, errorMessage field will contain an error message that explains what happened.</p>
     #[doc(hidden)]
@@ -1280,16 +1239,6 @@ impl StagingArea {
     /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for StagingArea {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StagingArea");
-        formatter.field("status", &self.status);
-        formatter.field("staging_account_id", &self.staging_account_id);
-        formatter.field("staging_source_server_arn", &self.staging_source_server_arn);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`StagingArea`](crate::model::StagingArea).
@@ -1471,7 +1420,7 @@ impl AsRef<str> for ExtensionStatus {
 
 /// <p>Properties of the Source Server machine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceProperties {
     /// <p>The date and time the Source Properties were last updated on.</p>
     #[doc(hidden)]
@@ -1530,20 +1479,6 @@ impl SourceProperties {
     /// <p>Operating system.</p>
     pub fn os(&self) -> std::option::Option<&crate::model::Os> {
         self.os.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceProperties");
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("recommended_instance_type", &self.recommended_instance_type);
-        formatter.field("identification_hints", &self.identification_hints);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.field("disks", &self.disks);
-        formatter.field("cpus", &self.cpus);
-        formatter.field("ram_bytes", &self.ram_bytes);
-        formatter.field("os", &self.os);
-        formatter.finish()
     }
 }
 /// See [`SourceProperties`](crate::model::SourceProperties).
@@ -1703,7 +1638,7 @@ impl SourceProperties {
 
 /// <p>Operating System.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Os {
     /// <p>The long name of the Operating System.</p>
     #[doc(hidden)]
@@ -1713,13 +1648,6 @@ impl Os {
     /// <p>The long name of the Operating System.</p>
     pub fn full_string(&self) -> std::option::Option<&str> {
         self.full_string.as_deref()
-    }
-}
-impl std::fmt::Debug for Os {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Os");
-        formatter.field("full_string", &self.full_string);
-        formatter.finish()
     }
 }
 /// See [`Os`](crate::model::Os).
@@ -1758,7 +1686,7 @@ impl Os {
 
 /// <p>Information about a server's CPU.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cpu {
     /// <p>The number of CPU cores.</p>
     #[doc(hidden)]
@@ -1775,14 +1703,6 @@ impl Cpu {
     /// <p>The model name of the CPU.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Cpu {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cpu");
-        formatter.field("cores", &self.cores);
-        formatter.field("model_name", &self.model_name);
-        formatter.finish()
     }
 }
 /// See [`Cpu`](crate::model::Cpu).
@@ -1833,7 +1753,7 @@ impl Cpu {
 
 /// <p>An object representing a data storage device on a server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Disk {
     /// <p>The disk or device name.</p>
     #[doc(hidden)]
@@ -1850,14 +1770,6 @@ impl Disk {
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn bytes(&self) -> i64 {
         self.bytes
-    }
-}
-impl std::fmt::Debug for Disk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Disk");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("bytes", &self.bytes);
-        formatter.finish()
     }
 }
 /// See [`Disk`](crate::model::Disk).
@@ -1908,7 +1820,7 @@ impl Disk {
 
 /// <p>Network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The MAC address of the network interface.</p>
     #[doc(hidden)]
@@ -1932,15 +1844,6 @@ impl NetworkInterface {
     /// <p>Whether this is the primary network interface.</p>
     pub fn is_primary(&self) -> std::option::Option<bool> {
         self.is_primary
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("ips", &self.ips);
-        formatter.field("is_primary", &self.is_primary);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -2012,7 +1915,7 @@ impl NetworkInterface {
 
 /// <p>Hints used to uniquely identify a machine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentificationHints {
     /// <p>Fully Qualified Domain Name identification hint.</p>
     #[doc(hidden)]
@@ -2043,16 +1946,6 @@ impl IdentificationHints {
     /// <p>AWS Instance ID identification hint.</p>
     pub fn aws_instance_id(&self) -> std::option::Option<&str> {
         self.aws_instance_id.as_deref()
-    }
-}
-impl std::fmt::Debug for IdentificationHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentificationHints");
-        formatter.field("fqdn", &self.fqdn);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("vm_ware_uuid", &self.vm_ware_uuid);
-        formatter.field("aws_instance_id", &self.aws_instance_id);
-        formatter.finish()
     }
 }
 /// See [`IdentificationHints`](crate::model::IdentificationHints).
@@ -2130,7 +2023,7 @@ impl IdentificationHints {
 
 /// <p>An object representing the Source Server Lifecycle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifeCycle {
     /// <p>The date and time of when the Source Server was added to the service.</p>
     #[doc(hidden)]
@@ -2168,26 +2061,6 @@ impl LifeCycle {
     /// <p>An object containing information regarding the last launch of the Source Server.</p>
     pub fn last_launch(&self) -> std::option::Option<&crate::model::LifeCycleLastLaunch> {
         self.last_launch.as_ref()
-    }
-}
-impl std::fmt::Debug for LifeCycle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifeCycle");
-        formatter.field(
-            "added_to_service_date_time",
-            &self.added_to_service_date_time,
-        );
-        formatter.field("first_byte_date_time", &self.first_byte_date_time);
-        formatter.field(
-            "elapsed_replication_duration",
-            &self.elapsed_replication_duration,
-        );
-        formatter.field(
-            "last_seen_by_service_date_time",
-            &self.last_seen_by_service_date_time,
-        );
-        formatter.field("last_launch", &self.last_launch);
-        formatter.finish()
     }
 }
 /// See [`LifeCycle`](crate::model::LifeCycle).
@@ -2295,7 +2168,7 @@ impl LifeCycle {
 
 /// <p>An object containing information regarding the last launch of a Source Server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifeCycleLastLaunch {
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
     #[doc(hidden)]
@@ -2305,13 +2178,6 @@ impl LifeCycleLastLaunch {
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
     pub fn initiated(&self) -> std::option::Option<&crate::model::LifeCycleLastLaunchInitiated> {
         self.initiated.as_ref()
-    }
-}
-impl std::fmt::Debug for LifeCycleLastLaunch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifeCycleLastLaunch");
-        formatter.field("initiated", &self.initiated);
-        formatter.finish()
     }
 }
 /// See [`LifeCycleLastLaunch`](crate::model::LifeCycleLastLaunch).
@@ -2353,7 +2219,7 @@ impl LifeCycleLastLaunch {
 
 /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifeCycleLastLaunchInitiated {
     /// <p>The date and time the last Source Server launch was initiated.</p>
     #[doc(hidden)]
@@ -2377,15 +2243,6 @@ impl LifeCycleLastLaunchInitiated {
     /// <p>The Job type that was used to last launch the Source Server.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::LastLaunchType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for LifeCycleLastLaunchInitiated {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifeCycleLastLaunchInitiated");
-        formatter.field("api_call_date_time", &self.api_call_date_time);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`LifeCycleLastLaunchInitiated`](crate::model::LifeCycleLastLaunchInitiated).
@@ -2544,7 +2401,7 @@ impl AsRef<str> for LastLaunchType {
 
 /// <p>Information about Data Replication</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataReplicationInfo {
     /// <p>Data replication lag duration.</p>
     #[doc(hidden)]
@@ -2598,21 +2455,6 @@ impl DataReplicationInfo {
         &self,
     ) -> std::option::Option<&crate::model::DataReplicationError> {
         self.data_replication_error.as_ref()
-    }
-}
-impl std::fmt::Debug for DataReplicationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataReplicationInfo");
-        formatter.field("lag_duration", &self.lag_duration);
-        formatter.field("eta_date_time", &self.eta_date_time);
-        formatter.field("replicated_disks", &self.replicated_disks);
-        formatter.field("data_replication_state", &self.data_replication_state);
-        formatter.field(
-            "data_replication_initiation",
-            &self.data_replication_initiation,
-        );
-        formatter.field("data_replication_error", &self.data_replication_error);
-        formatter.finish()
     }
 }
 /// See [`DataReplicationInfo`](crate::model::DataReplicationInfo).
@@ -2742,7 +2584,7 @@ impl DataReplicationInfo {
 
 /// <p>Error in data replication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataReplicationError {
     /// <p>Error in data replication.</p>
     #[doc(hidden)]
@@ -2759,14 +2601,6 @@ impl DataReplicationError {
     /// <p>Error in data replication.</p>
     pub fn raw_error(&self) -> std::option::Option<&str> {
         self.raw_error.as_deref()
-    }
-}
-impl std::fmt::Debug for DataReplicationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataReplicationError");
-        formatter.field("error", &self.error);
-        formatter.field("raw_error", &self.raw_error);
-        formatter.finish()
     }
 }
 /// See [`DataReplicationError`](crate::model::DataReplicationError).
@@ -3027,7 +2861,7 @@ impl AsRef<str> for DataReplicationErrorString {
 
 /// <p>Data replication initiation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
     #[doc(hidden)]
@@ -3051,15 +2885,6 @@ impl DataReplicationInitiation {
     /// <p>The steps of the current attempt to initiate data replication.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::DataReplicationInitiationStep]> {
         self.steps.as_deref()
-    }
-}
-impl std::fmt::Debug for DataReplicationInitiation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataReplicationInitiation");
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("next_attempt_date_time", &self.next_attempt_date_time);
-        formatter.field("steps", &self.steps);
-        formatter.finish()
     }
 }
 /// See [`DataReplicationInitiation`](crate::model::DataReplicationInitiation).
@@ -3138,7 +2963,7 @@ impl DataReplicationInitiation {
 
 /// <p>Data replication initiation step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataReplicationInitiationStep {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
@@ -3157,14 +2982,6 @@ impl DataReplicationInitiationStep {
         &self,
     ) -> std::option::Option<&crate::model::DataReplicationInitiationStepStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for DataReplicationInitiationStep {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataReplicationInitiationStep");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`DataReplicationInitiationStep`](crate::model::DataReplicationInitiationStep).
@@ -3646,7 +3463,7 @@ impl AsRef<str> for DataReplicationState {
 
 /// <p>A disk that should be replicated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataReplicationInfoReplicatedDisk {
     /// <p>The name of the device.</p>
     #[doc(hidden)]
@@ -3684,17 +3501,6 @@ impl DataReplicationInfoReplicatedDisk {
     /// <p>The size of the replication backlog in bytes.</p>
     pub fn backlogged_storage_bytes(&self) -> i64 {
         self.backlogged_storage_bytes
-    }
-}
-impl std::fmt::Debug for DataReplicationInfoReplicatedDisk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataReplicationInfoReplicatedDisk");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("total_storage_bytes", &self.total_storage_bytes);
-        formatter.field("replicated_storage_bytes", &self.replicated_storage_bytes);
-        formatter.field("rescanned_storage_bytes", &self.rescanned_storage_bytes);
-        formatter.field("backlogged_storage_bytes", &self.backlogged_storage_bytes);
-        formatter.finish()
     }
 }
 /// See [`DataReplicationInfoReplicatedDisk`](crate::model::DataReplicationInfoReplicatedDisk).
@@ -3881,7 +3687,7 @@ impl AsRef<str> for LastLaunchResult {
 
 /// <p>A snapshot of a Source Server used during recovery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoverySnapshot {
     /// <p>The ID of the Recovery Snapshot.</p>
     #[doc(hidden)]
@@ -3919,17 +3725,6 @@ impl RecoverySnapshot {
     /// <p>A list of EBS snapshots.</p>
     pub fn ebs_snapshots(&self) -> std::option::Option<&[std::string::String]> {
         self.ebs_snapshots.as_deref()
-    }
-}
-impl std::fmt::Debug for RecoverySnapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoverySnapshot");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("source_server_id", &self.source_server_id);
-        formatter.field("expected_timestamp", &self.expected_timestamp);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("ebs_snapshots", &self.ebs_snapshots);
-        formatter.finish()
     }
 }
 /// See [`RecoverySnapshot`](crate::model::RecoverySnapshot).
@@ -4123,7 +3918,7 @@ impl AsRef<str> for RecoverySnapshotsOrder {
 
 /// <p>A set of filters by which to return Recovery Snapshots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsRequestFilters {
     /// <p>The start date in a date range query.</p>
     #[doc(hidden)]
@@ -4140,14 +3935,6 @@ impl DescribeRecoverySnapshotsRequestFilters {
     /// <p>The end date in a date range query.</p>
     pub fn to_date_time(&self) -> std::option::Option<&str> {
         self.to_date_time.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeRecoverySnapshotsRequestFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecoverySnapshotsRequestFilters");
-        formatter.field("from_date_time", &self.from_date_time);
-        formatter.field("to_date_time", &self.to_date_time);
-        formatter.finish()
     }
 }
 /// See [`DescribeRecoverySnapshotsRequestFilters`](crate::model::DescribeRecoverySnapshotsRequestFilters).
@@ -4295,7 +4082,7 @@ impl std::fmt::Debug for Job {
 pub mod job {
 
     /// A builder for [`Job`](crate::model::Job).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4449,6 +4236,21 @@ pub mod job {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("job_id", &self.job_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("initiated_by", &self.initiated_by);
+            formatter.field("creation_date_time", &self.creation_date_time);
+            formatter.field("end_date_time", &self.end_date_time);
+            formatter.field("status", &self.status);
+            formatter.field("participating_servers", &self.participating_servers);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
@@ -4459,7 +4261,7 @@ impl Job {
 
 /// <p>Represents a server participating in an asynchronous Job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParticipatingServer {
     /// <p>The Source Server ID of a participating server.</p>
     #[doc(hidden)]
@@ -4483,15 +4285,6 @@ impl ParticipatingServer {
     /// <p>The launch status of a participating server.</p>
     pub fn launch_status(&self) -> std::option::Option<&crate::model::LaunchStatus> {
         self.launch_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ParticipatingServer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParticipatingServer");
-        formatter.field("source_server_id", &self.source_server_id);
-        formatter.field("recovery_instance_id", &self.recovery_instance_id);
-        formatter.field("launch_status", &self.launch_status);
-        formatter.finish()
     }
 }
 /// See [`ParticipatingServer`](crate::model::ParticipatingServer).
@@ -4975,7 +4768,7 @@ impl AsRef<str> for JobType {
 
 /// <p>An object representing the Source Server to recover.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRecoveryRequestSourceServer {
     /// <p>The ID of the Source Server you want to recover.</p>
     #[doc(hidden)]
@@ -4992,14 +4785,6 @@ impl StartRecoveryRequestSourceServer {
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
     pub fn recovery_snapshot_id(&self) -> std::option::Option<&str> {
         self.recovery_snapshot_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartRecoveryRequestSourceServer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartRecoveryRequestSourceServer");
-        formatter.field("source_server_id", &self.source_server_id);
-        formatter.field("recovery_snapshot_id", &self.recovery_snapshot_id);
-        formatter.finish()
     }
 }
 /// See [`StartRecoveryRequestSourceServer`](crate::model::StartRecoveryRequestSourceServer).
@@ -5147,7 +4932,7 @@ impl std::fmt::Debug for SourceServer {
 pub mod source_server {
 
     /// A builder for [`SourceServer`](crate::model::SourceServer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5303,6 +5088,21 @@ pub mod source_server {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_server_id", &self.source_server_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("recovery_instance_id", &self.recovery_instance_id);
+            formatter.field("last_launch_result", &self.last_launch_result);
+            formatter.field("data_replication_info", &self.data_replication_info);
+            formatter.field("life_cycle", &self.life_cycle);
+            formatter.field("source_properties", &self.source_properties);
+            formatter.field("staging_area", &self.staging_area);
+            formatter.finish()
+        }
+    }
 }
 impl SourceServer {
     /// Creates a new builder-style object to manufacture [`SourceServer`](crate::model::SourceServer).
@@ -5313,7 +5113,7 @@ impl SourceServer {
 
 /// <p>A set of filters by which to return Source Servers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
     #[doc(hidden)]
@@ -5337,15 +5137,6 @@ impl DescribeSourceServersRequestFilters {
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
     pub fn staging_account_i_ds(&self) -> std::option::Option<&[std::string::String]> {
         self.staging_account_i_ds.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeSourceServersRequestFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSourceServersRequestFilters");
-        formatter.field("source_server_i_ds", &self.source_server_i_ds);
-        formatter.field("hardware_id", &self.hardware_id);
-        formatter.field("staging_account_i_ds", &self.staging_account_i_ds);
-        formatter.finish()
     }
 }
 /// See [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters).
@@ -5607,7 +5398,7 @@ impl std::fmt::Debug for ReplicationConfigurationTemplate {
 pub mod replication_configuration_template {
 
     /// A builder for [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5915,6 +5706,46 @@ pub mod replication_configuration_template {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "replication_configuration_template_id",
+                &self.replication_configuration_template_id,
+            );
+            formatter.field("arn", &self.arn);
+            formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
+            formatter.field(
+                "associate_default_security_group",
+                &self.associate_default_security_group,
+            );
+            formatter.field(
+                "replication_servers_security_groups_i_ds",
+                &self.replication_servers_security_groups_i_ds,
+            );
+            formatter.field(
+                "replication_server_instance_type",
+                &self.replication_server_instance_type,
+            );
+            formatter.field(
+                "use_dedicated_replication_server",
+                &self.use_dedicated_replication_server,
+            );
+            formatter.field(
+                "default_large_staging_disk_type",
+                &self.default_large_staging_disk_type,
+            );
+            formatter.field("ebs_encryption", &self.ebs_encryption);
+            formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
+            formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
+            formatter.field("data_plane_routing", &self.data_plane_routing);
+            formatter.field("create_public_ip", &self.create_public_ip);
+            formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("pit_policy", &self.pit_policy);
+            formatter.finish()
+        }
+    }
 }
 impl ReplicationConfigurationTemplate {
     /// Creates a new builder-style object to manufacture [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
@@ -6051,7 +5882,7 @@ impl std::fmt::Debug for RecoveryInstance {
 pub mod recovery_instance {
 
     /// A builder for [`RecoveryInstance`](crate::model::RecoveryInstance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) ec2_instance_id: std::option::Option<std::string::String>,
         pub(crate) ec2_instance_state: std::option::Option<crate::model::Ec2InstanceState>,
@@ -6257,6 +6088,30 @@ pub mod recovery_instance {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("ec2_instance_id", &self.ec2_instance_id);
+            formatter.field("ec2_instance_state", &self.ec2_instance_state);
+            formatter.field("job_id", &self.job_id);
+            formatter.field("recovery_instance_id", &self.recovery_instance_id);
+            formatter.field("source_server_id", &self.source_server_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("failback", &self.failback);
+            formatter.field("data_replication_info", &self.data_replication_info);
+            formatter.field(
+                "recovery_instance_properties",
+                &self.recovery_instance_properties,
+            );
+            formatter.field(
+                "point_in_time_snapshot_date_time",
+                &self.point_in_time_snapshot_date_time,
+            );
+            formatter.field("is_drill", &self.is_drill);
+            formatter.finish()
+        }
+    }
 }
 impl RecoveryInstance {
     /// Creates a new builder-style object to manufacture [`RecoveryInstance`](crate::model::RecoveryInstance).
@@ -6267,7 +6122,7 @@ impl RecoveryInstance {
 
 /// <p>Properties of the Recovery Instance machine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryInstanceProperties {
     /// <p>The date and time the Recovery Instance properties were last updated on.</p>
     #[doc(hidden)]
@@ -6319,19 +6174,6 @@ impl RecoveryInstanceProperties {
     /// <p>Operating system.</p>
     pub fn os(&self) -> std::option::Option<&crate::model::Os> {
         self.os.as_ref()
-    }
-}
-impl std::fmt::Debug for RecoveryInstanceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryInstanceProperties");
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("identification_hints", &self.identification_hints);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.field("disks", &self.disks);
-        formatter.field("cpus", &self.cpus);
-        formatter.field("ram_bytes", &self.ram_bytes);
-        formatter.field("os", &self.os);
-        formatter.finish()
     }
 }
 /// See [`RecoveryInstanceProperties`](crate::model::RecoveryInstanceProperties).
@@ -6476,7 +6318,7 @@ impl RecoveryInstanceProperties {
 
 /// <p>An object representing a block storage device on the Recovery Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryInstanceDisk {
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
     #[doc(hidden)]
@@ -6500,15 +6342,6 @@ impl RecoveryInstanceDisk {
     /// <p>The EBS Volume ID of this disk.</p>
     pub fn ebs_volume_id(&self) -> std::option::Option<&str> {
         self.ebs_volume_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RecoveryInstanceDisk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryInstanceDisk");
-        formatter.field("internal_device_name", &self.internal_device_name);
-        formatter.field("bytes", &self.bytes);
-        formatter.field("ebs_volume_id", &self.ebs_volume_id);
-        formatter.finish()
     }
 }
 /// See [`RecoveryInstanceDisk`](crate::model::RecoveryInstanceDisk).
@@ -6577,7 +6410,7 @@ impl RecoveryInstanceDisk {
 
 /// <p>Information about Data Replication</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInfo {
     /// <p>Data replication lag duration.</p>
     #[doc(hidden)]
@@ -6636,21 +6469,6 @@ impl RecoveryInstanceDataReplicationInfo {
         &self,
     ) -> std::option::Option<&crate::model::RecoveryInstanceDataReplicationError> {
         self.data_replication_error.as_ref()
-    }
-}
-impl std::fmt::Debug for RecoveryInstanceDataReplicationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryInstanceDataReplicationInfo");
-        formatter.field("lag_duration", &self.lag_duration);
-        formatter.field("eta_date_time", &self.eta_date_time);
-        formatter.field("replicated_disks", &self.replicated_disks);
-        formatter.field("data_replication_state", &self.data_replication_state);
-        formatter.field(
-            "data_replication_initiation",
-            &self.data_replication_initiation,
-        );
-        formatter.field("data_replication_error", &self.data_replication_error);
-        formatter.finish()
     }
 }
 /// See [`RecoveryInstanceDataReplicationInfo`](crate::model::RecoveryInstanceDataReplicationInfo).
@@ -6789,7 +6607,7 @@ impl RecoveryInstanceDataReplicationInfo {
 
 /// <p>Error in data replication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationError {
     /// <p>Error in data replication.</p>
     #[doc(hidden)]
@@ -6806,14 +6624,6 @@ impl RecoveryInstanceDataReplicationError {
     /// <p>Error in data replication.</p>
     pub fn raw_error(&self) -> std::option::Option<&str> {
         self.raw_error.as_deref()
-    }
-}
-impl std::fmt::Debug for RecoveryInstanceDataReplicationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryInstanceDataReplicationError");
-        formatter.field("error", &self.error);
-        formatter.field("raw_error", &self.raw_error);
-        formatter.finish()
     }
 }
 /// See [`RecoveryInstanceDataReplicationError`](crate::model::RecoveryInstanceDataReplicationError).
@@ -7024,7 +6834,7 @@ impl AsRef<str> for FailbackReplicationError {
 
 /// <p>Data replication initiation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
     #[doc(hidden)]
@@ -7045,14 +6855,6 @@ impl RecoveryInstanceDataReplicationInitiation {
         &self,
     ) -> std::option::Option<&[crate::model::RecoveryInstanceDataReplicationInitiationStep]> {
         self.steps.as_deref()
-    }
-}
-impl std::fmt::Debug for RecoveryInstanceDataReplicationInitiation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryInstanceDataReplicationInitiation");
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("steps", &self.steps);
-        formatter.finish()
     }
 }
 /// See [`RecoveryInstanceDataReplicationInitiation`](crate::model::RecoveryInstanceDataReplicationInitiation).
@@ -7122,7 +6924,7 @@ impl RecoveryInstanceDataReplicationInitiation {
 
 /// <p>Data replication initiation step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInitiationStep {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
@@ -7145,14 +6947,6 @@ impl RecoveryInstanceDataReplicationInitiationStep {
     ) -> std::option::Option<&crate::model::RecoveryInstanceDataReplicationInitiationStepStatus>
     {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for RecoveryInstanceDataReplicationInitiationStep {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryInstanceDataReplicationInitiationStep");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`RecoveryInstanceDataReplicationInitiationStep`](crate::model::RecoveryInstanceDataReplicationInitiationStep).
@@ -7600,7 +7394,7 @@ impl AsRef<str> for RecoveryInstanceDataReplicationState {
 
 /// <p>A disk that should be replicated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInfoReplicatedDisk {
     /// <p>The name of the device.</p>
     #[doc(hidden)]
@@ -7638,17 +7432,6 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDisk {
     /// <p>The size of the replication backlog in bytes.</p>
     pub fn backlogged_storage_bytes(&self) -> i64 {
         self.backlogged_storage_bytes
-    }
-}
-impl std::fmt::Debug for RecoveryInstanceDataReplicationInfoReplicatedDisk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryInstanceDataReplicationInfoReplicatedDisk");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("total_storage_bytes", &self.total_storage_bytes);
-        formatter.field("replicated_storage_bytes", &self.replicated_storage_bytes);
-        formatter.field("rescanned_storage_bytes", &self.rescanned_storage_bytes);
-        formatter.field("backlogged_storage_bytes", &self.backlogged_storage_bytes);
-        formatter.finish()
     }
 }
 /// See [`RecoveryInstanceDataReplicationInfoReplicatedDisk`](crate::model::RecoveryInstanceDataReplicationInfoReplicatedDisk).
@@ -7736,7 +7519,7 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDisk {
 
 /// <p>An object representing failback related information of the Recovery Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryInstanceFailback {
     /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
     #[doc(hidden)]
@@ -7803,33 +7586,6 @@ impl RecoveryInstanceFailback {
     /// <p>The amount of time that the Recovery Instance has been replicating for.</p>
     pub fn elapsed_replication_duration(&self) -> std::option::Option<&str> {
         self.elapsed_replication_duration.as_deref()
-    }
-}
-impl std::fmt::Debug for RecoveryInstanceFailback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryInstanceFailback");
-        formatter.field("failback_client_id", &self.failback_client_id);
-        formatter.field("failback_job_id", &self.failback_job_id);
-        formatter.field("failback_initiation_time", &self.failback_initiation_time);
-        formatter.field("state", &self.state);
-        formatter.field(
-            "agent_last_seen_by_service_date_time",
-            &self.agent_last_seen_by_service_date_time,
-        );
-        formatter.field(
-            "failback_client_last_seen_by_service_date_time",
-            &self.failback_client_last_seen_by_service_date_time,
-        );
-        formatter.field(
-            "failback_to_original_server",
-            &self.failback_to_original_server,
-        );
-        formatter.field("first_byte_date_time", &self.first_byte_date_time);
-        formatter.field(
-            "elapsed_replication_duration",
-            &self.elapsed_replication_duration,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecoveryInstanceFailback`](crate::model::RecoveryInstanceFailback).
@@ -8233,7 +7989,7 @@ impl AsRef<str> for Ec2InstanceState {
 
 /// <p>A set of filters by which to return Recovery Instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesRequestFilters {
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
     #[doc(hidden)]
@@ -8250,14 +8006,6 @@ impl DescribeRecoveryInstancesRequestFilters {
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
     pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
         self.source_server_i_ds.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeRecoveryInstancesRequestFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecoveryInstancesRequestFilters");
-        formatter.field("recovery_instance_i_ds", &self.recovery_instance_i_ds);
-        formatter.field("source_server_i_ds", &self.source_server_i_ds);
-        formatter.finish()
     }
 }
 /// See [`DescribeRecoveryInstancesRequestFilters`](crate::model::DescribeRecoveryInstancesRequestFilters).
@@ -8326,7 +8074,7 @@ impl DescribeRecoveryInstancesRequestFilters {
 
 /// <p>A log outputted by a Job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobLog {
     /// <p>The date and time the log was taken.</p>
     #[doc(hidden)]
@@ -8350,15 +8098,6 @@ impl JobLog {
     /// <p>Metadata associated with a Job log.</p>
     pub fn event_data(&self) -> std::option::Option<&crate::model::JobLogEventData> {
         self.event_data.as_ref()
-    }
-}
-impl std::fmt::Debug for JobLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobLog");
-        formatter.field("log_date_time", &self.log_date_time);
-        formatter.field("event", &self.event);
-        formatter.field("event_data", &self.event_data);
-        formatter.finish()
     }
 }
 /// See [`JobLog`](crate::model::JobLog).
@@ -8427,7 +8166,7 @@ impl JobLog {
 
 /// <p>Metadata associated with a Job log.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobLogEventData {
     /// <p>The ID of a Source Server.</p>
     #[doc(hidden)]
@@ -8467,17 +8206,6 @@ impl JobLogEventData {
         &self,
     ) -> std::option::Option<&crate::model::ConversionProperties> {
         self.conversion_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for JobLogEventData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobLogEventData");
-        formatter.field("source_server_id", &self.source_server_id);
-        formatter.field("conversion_server_id", &self.conversion_server_id);
-        formatter.field("target_instance_id", &self.target_instance_id);
-        formatter.field("raw_error", &self.raw_error);
-        formatter.field("conversion_properties", &self.conversion_properties);
-        formatter.finish()
     }
 }
 /// See [`JobLogEventData`](crate::model::JobLogEventData).
@@ -8576,7 +8304,7 @@ impl JobLogEventData {
 
 /// <p>Properties of a conversion job</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConversionProperties {
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
     #[doc(hidden)]
@@ -8629,17 +8357,6 @@ impl ConversionProperties {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
         self.volume_to_volume_size.as_ref()
-    }
-}
-impl std::fmt::Debug for ConversionProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConversionProperties");
-        formatter.field("volume_to_conversion_map", &self.volume_to_conversion_map);
-        formatter.field("root_volume_name", &self.root_volume_name);
-        formatter.field("force_uefi", &self.force_uefi);
-        formatter.field("data_timestamp", &self.data_timestamp);
-        formatter.field("volume_to_volume_size", &self.volume_to_volume_size);
-        formatter.finish()
     }
 }
 /// See [`ConversionProperties`](crate::model::ConversionProperties).
@@ -8948,7 +8665,7 @@ impl AsRef<str> for JobLogEvent {
 
 /// <p>A set of filters by which to return Jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobsRequestFilters {
     /// <p>An array of Job IDs that should be returned. An empty array means all jobs.</p>
     #[doc(hidden)]
@@ -8972,15 +8689,6 @@ impl DescribeJobsRequestFilters {
     /// <p>The end date in a date range query.</p>
     pub fn to_date(&self) -> std::option::Option<&str> {
         self.to_date.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeJobsRequestFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobsRequestFilters");
-        formatter.field("job_i_ds", &self.job_i_ds);
-        formatter.field("from_date", &self.from_date);
-        formatter.field("to_date", &self.to_date);
-        formatter.finish()
     }
 }
 /// See [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters).
@@ -9052,7 +8760,7 @@ impl DescribeJobsRequestFilters {
 
 /// <p>AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Account {
     /// <p>Account ID of AWS account.</p>
     #[doc(hidden)]
@@ -9062,13 +8770,6 @@ impl Account {
     /// <p>Account ID of AWS account.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Account {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Account");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 /// See [`Account`](crate::model::Account).
@@ -9150,7 +8851,7 @@ impl std::fmt::Debug for StagingSourceServer {
 pub mod staging_source_server {
 
     /// A builder for [`StagingSourceServer`](crate::model::StagingSourceServer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -9211,6 +8912,15 @@ pub mod staging_source_server {
                 arn: self.arn,
                 tags: self.tags,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("hostname", &self.hostname);
+            formatter.field("arn", &self.arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }

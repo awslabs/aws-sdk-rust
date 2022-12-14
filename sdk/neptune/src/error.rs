@@ -2,18 +2,11 @@
 
 /// <p>The specified DB instance is not in the <i>available</i> state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbInstanceStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbInstanceStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbInstanceStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbInstanceStateFault {
     /// Returns the error message.
@@ -72,18 +65,11 @@ impl InvalidDbInstanceStateFault {
 
 /// <p>The DB cluster is not in a valid state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbClusterStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbClusterStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbClusterStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbClusterStateFault {
     /// Returns the error message.
@@ -139,18 +125,11 @@ impl InvalidDbClusterStateFault {
 
 /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterNotFoundFault {
     /// Returns the error message.
@@ -206,18 +185,11 @@ impl DbClusterNotFoundFault {
 
 /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StorageQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StorageQuotaExceededFault {
     /// Returns the error message.
@@ -273,18 +245,11 @@ impl StorageQuotaExceededFault {
 
 /// <p>The designated option group could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptionGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OptionGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptionGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OptionGroupNotFoundFault {
     /// Returns the error message.
@@ -340,18 +305,11 @@ impl OptionGroupNotFoundFault {
 
 /// <p>Error accessing KMS key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsKeyNotAccessibleFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsKeyNotAccessibleFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKeyNotAccessibleFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KmsKeyNotAccessibleFault {
     /// Returns the error message.
@@ -407,18 +365,11 @@ impl KmsKeyNotAccessibleFault {
 
 /// <p>DB subnet group does not cover all Availability Zones after it is created because users' change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidVpcNetworkStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidVpcNetworkStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidVpcNetworkStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidVpcNetworkStateFault {
     /// Returns the error message.
@@ -477,18 +428,11 @@ impl InvalidVpcNetworkStateFault {
 
 /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSubnet {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSubnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubnet");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSubnet {
     /// Returns the error message.
@@ -544,18 +488,11 @@ impl InvalidSubnet {
 
 /// <p>Cannot restore from vpc backup to non-vpc DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRestoreFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRestoreFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRestoreFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRestoreFault {
     /// Returns the error message.
@@ -611,18 +548,11 @@ impl InvalidRestoreFault {
 
 /// <p>The state of the DB snapshot does not allow deletion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbSnapshotStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbSnapshotStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbSnapshotStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbSnapshotStateFault {
     /// Returns the error message.
@@ -681,18 +611,11 @@ impl InvalidDbSnapshotStateFault {
 
 /// <p>The supplied value is not a valid DB cluster snapshot state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbClusterSnapshotStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbClusterSnapshotStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbClusterSnapshotStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbClusterSnapshotStateFault {
     /// Returns the error message.
@@ -751,18 +674,11 @@ impl InvalidDbClusterSnapshotStateFault {
 
 /// <p>There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientStorageClusterCapacityFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientStorageClusterCapacityFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientStorageClusterCapacityFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientStorageClusterCapacityFault {
     /// Returns the error message.
@@ -818,18 +734,11 @@ impl InsufficientStorageClusterCapacityFault {
 
 /// <p>The DB cluster does not have enough capacity for the current operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientDbClusterCapacityFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientDbClusterCapacityFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientDbClusterCapacityFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientDbClusterCapacityFault {
     /// Returns the error message.
@@ -888,18 +797,11 @@ impl InsufficientDbClusterCapacityFault {
 
 /// <p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbSubnetGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbSubnetGroupNotFoundFault {
     /// Returns the error message.
@@ -955,18 +857,11 @@ impl DbSubnetGroupNotFoundFault {
 
 /// <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterSnapshotNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterSnapshotNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterSnapshotNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterSnapshotNotFoundFault {
     /// Returns the error message.
@@ -1025,18 +920,11 @@ impl DbClusterSnapshotNotFoundFault {
 
 /// <p>User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterQuotaExceededFault {
     /// Returns the error message.
@@ -1095,18 +983,11 @@ impl DbClusterQuotaExceededFault {
 
 /// <p> <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterParameterGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterParameterGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterParameterGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterParameterGroupNotFoundFault {
     /// Returns the error message.
@@ -1165,18 +1046,11 @@ impl DbClusterParameterGroupNotFoundFault {
 
 /// <p>User already has a DB cluster with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterAlreadyExistsFault {
     /// Returns the error message.
@@ -1235,18 +1109,11 @@ impl DbClusterAlreadyExistsFault {
 
 /// <p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSnapshotNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbSnapshotNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSnapshotNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbSnapshotNotFoundFault {
     /// Returns the error message.
@@ -1302,18 +1169,11 @@ impl DbSnapshotNotFoundFault {
 
 /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbParameterGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbParameterGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbParameterGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbParameterGroupStateFault {
     /// Returns the error message.
@@ -1372,18 +1232,11 @@ impl InvalidDbParameterGroupStateFault {
 
 /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbParameterGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbParameterGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbParameterGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbParameterGroupNotFoundFault {
     /// Returns the error message.
@@ -1442,18 +1295,11 @@ impl DbParameterGroupNotFoundFault {
 
 /// <p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbInstanceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbInstanceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbInstanceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbInstanceNotFoundFault {
     /// Returns the error message.
@@ -1509,18 +1355,11 @@ impl DbInstanceNotFoundFault {
 
 /// <p>The designated subscription could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubscriptionNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubscriptionNotFoundFault {
     /// Returns the error message.
@@ -1576,18 +1415,11 @@ impl SubscriptionNotFoundFault {
 
 /// <p>The source could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SourceNotFoundFault {
     /// Returns the error message.
@@ -1643,18 +1475,11 @@ impl SourceNotFoundFault {
 
 /// <p>The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterRoleNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterRoleNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterRoleNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterRoleNotFoundFault {
     /// Returns the error message.
@@ -1710,18 +1535,11 @@ impl DbClusterRoleNotFoundFault {
 
 /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidGlobalClusterStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidGlobalClusterStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGlobalClusterStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidGlobalClusterStateFault {
     /// Returns the error message.
@@ -1777,18 +1595,11 @@ impl InvalidGlobalClusterStateFault {
 
 /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalClusterNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GlobalClusterNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalClusterNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl GlobalClusterNotFoundFault {
     /// Returns the error message.
@@ -1844,18 +1655,11 @@ impl GlobalClusterNotFoundFault {
 
 /// <p>The designated subscription category could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionCategoryNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubscriptionCategoryNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionCategoryNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubscriptionCategoryNotFoundFault {
     /// Returns the error message.
@@ -1911,18 +1715,11 @@ impl SubscriptionCategoryNotFoundFault {
 
 /// <p>The ARN of the SNS topic could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsTopicArnNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnsTopicArnNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsTopicArnNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnsTopicArnNotFoundFault {
     /// Returns the error message.
@@ -1978,18 +1775,11 @@ impl SnsTopicArnNotFoundFault {
 
 /// <p>There is no SNS authorization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsNoAuthorizationFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnsNoAuthorizationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsNoAuthorizationFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnsNoAuthorizationFault {
     /// Returns the error message.
@@ -2045,18 +1835,11 @@ impl SnsNoAuthorizationFault {
 
 /// <p>The SNS topic is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsInvalidTopicFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnsInvalidTopicFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsInvalidTopicFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnsInvalidTopicFault {
     /// Returns the error message.
@@ -2112,18 +1895,11 @@ impl SnsInvalidTopicFault {
 
 /// <p>You have exceeded the number of events you can subscribe to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSubscriptionQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EventSubscriptionQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSubscriptionQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EventSubscriptionQuotaExceededFault {
     /// Returns the error message.
@@ -2179,18 +1955,11 @@ impl EventSubscriptionQuotaExceededFault {
 
 /// <p>The DB subnet is already in use in the Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetAlreadyInUse {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubnetAlreadyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetAlreadyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubnetAlreadyInUse {
     /// Returns the error message.
@@ -2246,18 +2015,11 @@ impl SubnetAlreadyInUse {
 
 /// <p>Request would result in user exceeding the allowed number of subnets in a DB subnet groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbSubnetQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbSubnetQuotaExceededFault {
     /// Returns the error message.
@@ -2313,18 +2075,11 @@ impl DbSubnetQuotaExceededFault {
 
 /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroupDoesNotCoverEnoughAZs {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbSubnetGroupDoesNotCoverEnoughAZs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroupDoesNotCoverEnoughAZs");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbSubnetGroupDoesNotCoverEnoughAZs {
     /// Returns the error message.
@@ -2383,18 +2138,11 @@ impl DbSubnetGroupDoesNotCoverEnoughAZs {
 
 /// <p> <i>StorageType</i> specified cannot be associated with the DB Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageTypeNotSupportedFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StorageTypeNotSupportedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageTypeNotSupportedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StorageTypeNotSupportedFault {
     /// Returns the error message.
@@ -2450,18 +2198,11 @@ impl StorageTypeNotSupportedFault {
 
 /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedIopsNotAvailableInAzFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ProvisionedIopsNotAvailableInAzFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedIopsNotAvailableInAzFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ProvisionedIopsNotAvailableInAzFault {
     /// Returns the error message.
@@ -2520,18 +2261,11 @@ impl ProvisionedIopsNotAvailableInAzFault {
 
 /// <p>The state of the DB security group does not allow deletion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbSecurityGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbSecurityGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbSecurityGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbSecurityGroupStateFault {
     /// Returns the error message.
@@ -2590,18 +2324,11 @@ impl InvalidDbSecurityGroupStateFault {
 
 /// <p>Specified DB instance class is not available in the specified Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientDbInstanceCapacityFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientDbInstanceCapacityFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientDbInstanceCapacityFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientDbInstanceCapacityFault {
     /// Returns the error message.
@@ -2660,18 +2387,11 @@ impl InsufficientDbInstanceCapacityFault {
 
 /// <p> <i>Domain</i> does not refer to an existing Active Directory Domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DomainNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DomainNotFoundFault {
     /// Returns the error message.
@@ -2727,18 +2447,11 @@ impl DomainNotFoundFault {
 
 /// <p>The DB upgrade failed because a resource the DB depends on could not be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbUpgradeDependencyFailureFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbUpgradeDependencyFailureFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbUpgradeDependencyFailureFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbUpgradeDependencyFailureFault {
     /// Returns the error message.
@@ -2797,18 +2510,11 @@ impl DbUpgradeDependencyFailureFault {
 
 /// <p> <i>DBSecurityGroupName</i> does not refer to an existing DB security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSecurityGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbSecurityGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSecurityGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbSecurityGroupNotFoundFault {
     /// Returns the error message.
@@ -2867,18 +2573,11 @@ impl DbSecurityGroupNotFoundFault {
 
 /// <p>User already has a DB instance with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbInstanceAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbInstanceAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbInstanceAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbInstanceAlreadyExistsFault {
     /// Returns the error message.
@@ -2937,18 +2636,11 @@ impl DbInstanceAlreadyExistsFault {
 
 /// <p> <i>CertificateIdentifier</i> does not refer to an existing certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CertificateNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CertificateNotFoundFault {
     /// Returns the error message.
@@ -3005,18 +2697,11 @@ impl CertificateNotFoundFault {
 /// <p>Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
 /// <p>Neptune may not also be authorized via IAM to perform necessary actions on your behalf.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AuthorizationNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AuthorizationNotFoundFault {
     /// Returns the error message.
@@ -3072,18 +2757,11 @@ impl AuthorizationNotFoundFault {
 
 /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SharedSnapshotQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SharedSnapshotQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SharedSnapshotQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SharedSnapshotQuotaExceededFault {
     /// Returns the error message.
@@ -3139,18 +2817,11 @@ impl SharedSnapshotQuotaExceededFault {
 
 /// <p>The requested operation cannot be performed on the endpoint while the endpoint is in this state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbClusterEndpointStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbClusterEndpointStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbClusterEndpointStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbClusterEndpointStateFault {
     /// Returns the error message.
@@ -3209,18 +2880,11 @@ impl InvalidDbClusterEndpointStateFault {
 
 /// <p>The specified custom endpoint doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterEndpointNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterEndpointNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterEndpointNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterEndpointNotFoundFault {
     /// Returns the error message.
@@ -3279,18 +2943,11 @@ impl DbClusterEndpointNotFoundFault {
 
 /// <p>The DB subnet group cannot be deleted because it is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbSubnetGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbSubnetGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbSubnetGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbSubnetGroupStateFault {
     /// Returns the error message.
@@ -3349,18 +3006,11 @@ impl InvalidDbSubnetGroupStateFault {
 
 /// <p>The specified resource ID was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundFault {
     /// Returns the error message.
@@ -3416,18 +3066,11 @@ impl ResourceNotFoundFault {
 
 /// <p>The event subscription is in an invalid state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEventSubscriptionStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidEventSubscriptionStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEventSubscriptionStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidEventSubscriptionStateFault {
     /// Returns the error message.
@@ -3483,18 +3126,11 @@ impl InvalidEventSubscriptionStateFault {
 
 /// <p>The DB subnet is not in the <i>available</i> state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbSubnetStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDbSubnetStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbSubnetStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDbSubnetStateFault {
     /// Returns the error message.
@@ -3550,18 +3186,11 @@ impl InvalidDbSubnetStateFault {
 
 /// <p>Request would result in user exceeding the allowed number of DB snapshots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SnapshotQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SnapshotQuotaExceededFault {
     /// Returns the error message.
@@ -3617,18 +3246,11 @@ impl SnapshotQuotaExceededFault {
 
 /// <p> <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSnapshotAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbSnapshotAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSnapshotAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbSnapshotAlreadyExistsFault {
     /// Returns the error message.
@@ -3687,18 +3309,11 @@ impl DbSnapshotAlreadyExistsFault {
 
 /// <p>User already has a DB cluster snapshot with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterSnapshotAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterSnapshotAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterSnapshotAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterSnapshotAlreadyExistsFault {
     /// Returns the error message.
@@ -3757,18 +3372,11 @@ impl DbClusterSnapshotAlreadyExistsFault {
 
 /// <p>The number of global database clusters for this account is already at the maximum allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalClusterQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GlobalClusterQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalClusterQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl GlobalClusterQuotaExceededFault {
     /// Returns the error message.
@@ -3824,18 +3432,11 @@ impl GlobalClusterQuotaExceededFault {
 
 /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to create a new global database cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalClusterAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GlobalClusterAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalClusterAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl GlobalClusterAlreadyExistsFault {
     /// Returns the error message.
@@ -3891,18 +3492,11 @@ impl GlobalClusterAlreadyExistsFault {
 
 /// <p>This subscription already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionAlreadyExistFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SubscriptionAlreadyExistFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionAlreadyExistFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SubscriptionAlreadyExistFault {
     /// Returns the error message.
@@ -3958,18 +3552,11 @@ impl SubscriptionAlreadyExistFault {
 
 /// <p>Request would result in user exceeding the allowed number of DB subnet groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroupQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbSubnetGroupQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroupQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbSubnetGroupQuotaExceededFault {
     /// Returns the error message.
@@ -4028,18 +3615,11 @@ impl DbSubnetGroupQuotaExceededFault {
 
 /// <p> <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroupAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbSubnetGroupAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroupAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbSubnetGroupAlreadyExistsFault {
     /// Returns the error message.
@@ -4098,18 +3678,11 @@ impl DbSubnetGroupAlreadyExistsFault {
 
 /// <p>Request would result in user exceeding the allowed number of DB parameter groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbParameterGroupQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbParameterGroupQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbParameterGroupQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbParameterGroupQuotaExceededFault {
     /// Returns the error message.
@@ -4168,18 +3741,11 @@ impl DbParameterGroupQuotaExceededFault {
 
 /// <p>A DB parameter group with the same name exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbParameterGroupAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbParameterGroupAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbParameterGroupAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbParameterGroupAlreadyExistsFault {
     /// Returns the error message.
@@ -4238,18 +3804,11 @@ impl DbParameterGroupAlreadyExistsFault {
 
 /// <p>Request would result in user exceeding the allowed number of DB instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InstanceQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InstanceQuotaExceededFault {
     /// Returns the error message.
@@ -4305,18 +3864,11 @@ impl InstanceQuotaExceededFault {
 
 /// <p>The cluster already has the maximum number of custom endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterEndpointQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterEndpointQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterEndpointQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterEndpointQuotaExceededFault {
     /// Returns the error message.
@@ -4375,18 +3927,11 @@ impl DbClusterEndpointQuotaExceededFault {
 
 /// <p>The specified custom endpoint cannot be created because it already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterEndpointAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterEndpointAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterEndpointAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterEndpointAlreadyExistsFault {
     /// Returns the error message.
@@ -4445,18 +3990,11 @@ impl DbClusterEndpointAlreadyExistsFault {
 
 /// <p>You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterRoleQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterRoleQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterRoleQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterRoleQuotaExceededFault {
     /// Returns the error message.
@@ -4515,18 +4053,11 @@ impl DbClusterRoleQuotaExceededFault {
 
 /// <p>The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterRoleAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DbClusterRoleAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterRoleAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DbClusterRoleAlreadyExistsFault {
     /// Returns the error message.

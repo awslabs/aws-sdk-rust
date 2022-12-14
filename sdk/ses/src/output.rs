@@ -2,14 +2,8 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyEmailIdentityOutput {}
-impl std::fmt::Debug for VerifyEmailIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyEmailIdentityOutput");
-        formatter.finish()
-    }
-}
 /// See [`VerifyEmailIdentityOutput`](crate::output::VerifyEmailIdentityOutput).
 pub mod verify_email_identity_output {
 
@@ -32,14 +26,8 @@ impl VerifyEmailIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyEmailAddressOutput {}
-impl std::fmt::Debug for VerifyEmailAddressOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyEmailAddressOutput");
-        formatter.finish()
-    }
-}
 /// See [`VerifyEmailAddressOutput`](crate::output::VerifyEmailAddressOutput).
 pub mod verify_email_address_output {
 
@@ -62,7 +50,7 @@ impl VerifyEmailAddressOutput {
 
 /// <p>Returns a TXT record that you must publish to the DNS server of your domain to complete domain verification with Amazon SES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyDomainIdentityOutput {
     /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
@@ -74,13 +62,6 @@ impl VerifyDomainIdentityOutput {
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
     pub fn verification_token(&self) -> std::option::Option<&str> {
         self.verification_token.as_deref()
-    }
-}
-impl std::fmt::Debug for VerifyDomainIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyDomainIdentityOutput");
-        formatter.field("verification_token", &self.verification_token);
-        formatter.finish()
     }
 }
 /// See [`VerifyDomainIdentityOutput`](crate::output::VerifyDomainIdentityOutput).
@@ -124,7 +105,7 @@ impl VerifyDomainIdentityOutput {
 
 /// <p>Returns CNAME records that you must publish to the DNS server of your domain to set up Easy DKIM with Amazon SES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyDomainDkimOutput {
     /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
     /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
@@ -138,13 +119,6 @@ impl VerifyDomainDkimOutput {
     /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
     pub fn dkim_tokens(&self) -> std::option::Option<&[std::string::String]> {
         self.dkim_tokens.as_deref()
-    }
-}
-impl std::fmt::Debug for VerifyDomainDkimOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyDomainDkimOutput");
-        formatter.field("dkim_tokens", &self.dkim_tokens);
-        formatter.finish()
     }
 }
 /// See [`VerifyDomainDkimOutput`](crate::output::VerifyDomainDkimOutput).
@@ -196,14 +170,8 @@ impl VerifyDomainDkimOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateOutput {}
-impl std::fmt::Debug for UpdateTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
 pub mod update_template_output {
 
@@ -226,14 +194,8 @@ impl UpdateTemplateOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReceiptRuleOutput {}
-impl std::fmt::Debug for UpdateReceiptRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReceiptRuleOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateReceiptRuleOutput`](crate::output::UpdateReceiptRuleOutput).
 pub mod update_receipt_rule_output {
 
@@ -256,14 +218,8 @@ impl UpdateReceiptRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomVerificationEmailTemplateOutput {}
-impl std::fmt::Debug for UpdateCustomVerificationEmailTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomVerificationEmailTemplateOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput).
 pub mod update_custom_verification_email_template_output {
 
@@ -286,14 +242,8 @@ impl UpdateCustomVerificationEmailTemplateOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetTrackingOptionsOutput {}
-impl std::fmt::Debug for UpdateConfigurationSetTrackingOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetTrackingOptionsOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateConfigurationSetTrackingOptionsOutput`](crate::output::UpdateConfigurationSetTrackingOptionsOutput).
 pub mod update_configuration_set_tracking_options_output {
 
@@ -316,14 +266,8 @@ impl UpdateConfigurationSetTrackingOptionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetSendingEnabledOutput {}
-impl std::fmt::Debug for UpdateConfigurationSetSendingEnabledOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetSendingEnabledOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateConfigurationSetSendingEnabledOutput`](crate::output::UpdateConfigurationSetSendingEnabledOutput).
 pub mod update_configuration_set_sending_enabled_output {
 
@@ -346,14 +290,8 @@ impl UpdateConfigurationSetSendingEnabledOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetReputationMetricsEnabledOutput {}
-impl std::fmt::Debug for UpdateConfigurationSetReputationMetricsEnabledOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetReputationMetricsEnabledOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateConfigurationSetReputationMetricsEnabledOutput`](crate::output::UpdateConfigurationSetReputationMetricsEnabledOutput).
 pub mod update_configuration_set_reputation_metrics_enabled_output {
 
@@ -378,14 +316,8 @@ impl UpdateConfigurationSetReputationMetricsEnabledOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for UpdateConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
 pub mod update_configuration_set_event_destination_output {
 
@@ -408,14 +340,8 @@ impl UpdateConfigurationSetEventDestinationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountSendingEnabledOutput {}
-impl std::fmt::Debug for UpdateAccountSendingEnabledOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountSendingEnabledOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateAccountSendingEnabledOutput`](crate::output::UpdateAccountSendingEnabledOutput).
 pub mod update_account_sending_enabled_output {
 
@@ -438,7 +364,7 @@ impl UpdateAccountSendingEnabledOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestRenderTemplateOutput {
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
     #[doc(hidden)]
@@ -448,13 +374,6 @@ impl TestRenderTemplateOutput {
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
     pub fn rendered_template(&self) -> std::option::Option<&str> {
         self.rendered_template.as_deref()
-    }
-}
-impl std::fmt::Debug for TestRenderTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestRenderTemplateOutput");
-        formatter.field("rendered_template", &self.rendered_template);
-        formatter.finish()
     }
 }
 /// See [`TestRenderTemplateOutput`](crate::output::TestRenderTemplateOutput).
@@ -496,14 +415,8 @@ impl TestRenderTemplateOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetReceiptRulePositionOutput {}
-impl std::fmt::Debug for SetReceiptRulePositionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetReceiptRulePositionOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetReceiptRulePositionOutput`](crate::output::SetReceiptRulePositionOutput).
 pub mod set_receipt_rule_position_output {
 
@@ -526,14 +439,8 @@ impl SetReceiptRulePositionOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicOutput {}
-impl std::fmt::Debug for SetIdentityNotificationTopicOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityNotificationTopicOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetIdentityNotificationTopicOutput`](crate::output::SetIdentityNotificationTopicOutput).
 pub mod set_identity_notification_topic_output {
 
@@ -556,14 +463,8 @@ impl SetIdentityNotificationTopicOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityMailFromDomainOutput {}
-impl std::fmt::Debug for SetIdentityMailFromDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityMailFromDomainOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetIdentityMailFromDomainOutput`](crate::output::SetIdentityMailFromDomainOutput).
 pub mod set_identity_mail_from_domain_output {
 
@@ -586,14 +487,8 @@ impl SetIdentityMailFromDomainOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabledOutput {}
-impl std::fmt::Debug for SetIdentityHeadersInNotificationsEnabledOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityHeadersInNotificationsEnabledOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetIdentityHeadersInNotificationsEnabledOutput`](crate::output::SetIdentityHeadersInNotificationsEnabledOutput).
 pub mod set_identity_headers_in_notifications_enabled_output {
 
@@ -617,14 +512,8 @@ impl SetIdentityHeadersInNotificationsEnabledOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityFeedbackForwardingEnabledOutput {}
-impl std::fmt::Debug for SetIdentityFeedbackForwardingEnabledOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityFeedbackForwardingEnabledOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetIdentityFeedbackForwardingEnabledOutput`](crate::output::SetIdentityFeedbackForwardingEnabledOutput).
 pub mod set_identity_feedback_forwarding_enabled_output {
 
@@ -647,14 +536,8 @@ impl SetIdentityFeedbackForwardingEnabledOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledOutput {}
-impl std::fmt::Debug for SetIdentityDkimEnabledOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityDkimEnabledOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetIdentityDkimEnabledOutput`](crate::output::SetIdentityDkimEnabledOutput).
 pub mod set_identity_dkim_enabled_output {
 
@@ -677,14 +560,8 @@ impl SetIdentityDkimEnabledOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetActiveReceiptRuleSetOutput {}
-impl std::fmt::Debug for SetActiveReceiptRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetActiveReceiptRuleSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetActiveReceiptRuleSetOutput`](crate::output::SetActiveReceiptRuleSetOutput).
 pub mod set_active_receipt_rule_set_output {
 
@@ -707,7 +584,7 @@ impl SetActiveReceiptRuleSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
     #[doc(hidden)]
@@ -717,13 +594,6 @@ impl SendTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SendTemplatedEmailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendTemplatedEmailOutput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }
 /// See [`SendTemplatedEmailOutput`](crate::output::SendTemplatedEmailOutput).
@@ -762,7 +632,7 @@ impl SendTemplatedEmailOutput {
 
 /// <p>Represents a unique message ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendRawEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
     #[doc(hidden)]
@@ -772,13 +642,6 @@ impl SendRawEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SendRawEmailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendRawEmailOutput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }
 /// See [`SendRawEmailOutput`](crate::output::SendRawEmailOutput).
@@ -817,7 +680,7 @@ impl SendRawEmailOutput {
 
 /// <p>Represents a unique message ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendEmail</code> action. </p>
     #[doc(hidden)]
@@ -827,13 +690,6 @@ impl SendEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendEmail</code> action. </p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SendEmailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendEmailOutput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }
 /// See [`SendEmailOutput`](crate::output::SendEmailOutput).
@@ -872,7 +728,7 @@ impl SendEmailOutput {
 
 /// <p>The response received when attempting to send the custom verification email.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
     #[doc(hidden)]
@@ -882,13 +738,6 @@ impl SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SendCustomVerificationEmailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendCustomVerificationEmailOutput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }
 /// See [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput).
@@ -927,7 +776,7 @@ impl SendCustomVerificationEmailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendBulkTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
     #[doc(hidden)]
@@ -937,13 +786,6 @@ impl SendBulkTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
     pub fn status(&self) -> std::option::Option<&[crate::model::BulkEmailDestinationStatus]> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for SendBulkTemplatedEmailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendBulkTemplatedEmailOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`SendBulkTemplatedEmailOutput`](crate::output::SendBulkTemplatedEmailOutput).
@@ -992,7 +834,7 @@ impl SendBulkTemplatedEmailOutput {
 
 /// <p>Represents a unique message ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendBounceOutput {
     /// <p>The message ID of the bounce message.</p>
     #[doc(hidden)]
@@ -1002,13 +844,6 @@ impl SendBounceOutput {
     /// <p>The message ID of the bounce message.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SendBounceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendBounceOutput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }
 /// See [`SendBounceOutput`](crate::output::SendBounceOutput).
@@ -1047,14 +882,8 @@ impl SendBounceOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReorderReceiptRuleSetOutput {}
-impl std::fmt::Debug for ReorderReceiptRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReorderReceiptRuleSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`ReorderReceiptRuleSetOutput`](crate::output::ReorderReceiptRuleSetOutput).
 pub mod reorder_receipt_rule_set_output {
 
@@ -1077,14 +906,8 @@ impl ReorderReceiptRuleSetOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIdentityPolicyOutput {}
-impl std::fmt::Debug for PutIdentityPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIdentityPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutIdentityPolicyOutput`](crate::output::PutIdentityPolicyOutput).
 pub mod put_identity_policy_output {
 
@@ -1107,14 +930,8 @@ impl PutIdentityPolicyOutput {
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptionsOutput {}
-impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetDeliveryOptionsOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
 pub mod put_configuration_set_delivery_options_output {
 
@@ -1137,7 +954,7 @@ impl PutConfigurationSetDeliveryOptionsOutput {
 
 /// <p>A list of email addresses that you have verified with Amazon SES under your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVerifiedEmailAddressesOutput {
     /// <p>A list of email addresses that have been verified.</p>
     #[doc(hidden)]
@@ -1147,13 +964,6 @@ impl ListVerifiedEmailAddressesOutput {
     /// <p>A list of email addresses that have been verified.</p>
     pub fn verified_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.verified_email_addresses.as_deref()
-    }
-}
-impl std::fmt::Debug for ListVerifiedEmailAddressesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVerifiedEmailAddressesOutput");
-        formatter.field("verified_email_addresses", &self.verified_email_addresses);
-        formatter.finish()
     }
 }
 /// See [`ListVerifiedEmailAddressesOutput`](crate::output::ListVerifiedEmailAddressesOutput).
@@ -1202,7 +1012,7 @@ impl ListVerifiedEmailAddressesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplatesOutput {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     #[doc(hidden)]
@@ -1219,14 +1029,6 @@ impl ListTemplatesOutput {
     /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTemplatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplatesOutput");
-        formatter.field("templates_metadata", &self.templates_metadata);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
@@ -1287,7 +1089,7 @@ impl ListTemplatesOutput {
 
 /// <p>A list of receipt rule sets that exist under your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceiptRuleSetsOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
     #[doc(hidden)]
@@ -1304,14 +1106,6 @@ impl ListReceiptRuleSetsOutput {
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListReceiptRuleSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReceiptRuleSetsOutput");
-        formatter.field("rule_sets", &self.rule_sets);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListReceiptRuleSetsOutput`](crate::output::ListReceiptRuleSetsOutput).
@@ -1372,7 +1166,7 @@ impl ListReceiptRuleSetsOutput {
 
 /// <p>A list of IP address filters that exist under your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceiptFiltersOutput {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     #[doc(hidden)]
@@ -1382,13 +1176,6 @@ impl ListReceiptFiltersOutput {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ReceiptFilter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for ListReceiptFiltersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReceiptFiltersOutput");
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 /// See [`ListReceiptFiltersOutput`](crate::output::ListReceiptFiltersOutput).
@@ -1436,7 +1223,7 @@ impl ListReceiptFiltersOutput {
 
 /// <p>A list of names of sending authorization policies that apply to an identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityPoliciesOutput {
     /// <p>A list of names of policies that apply to the specified identity.</p>
     #[doc(hidden)]
@@ -1446,13 +1233,6 @@ impl ListIdentityPoliciesOutput {
     /// <p>A list of names of policies that apply to the specified identity.</p>
     pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names.as_deref()
-    }
-}
-impl std::fmt::Debug for ListIdentityPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityPoliciesOutput");
-        formatter.field("policy_names", &self.policy_names);
-        formatter.finish()
     }
 }
 /// See [`ListIdentityPoliciesOutput`](crate::output::ListIdentityPoliciesOutput).
@@ -1500,7 +1280,7 @@ impl ListIdentityPoliciesOutput {
 
 /// <p>A list of all identities that you have attempted to verify under your AWS account, regardless of verification status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentitiesOutput {
     /// <p>A list of identities.</p>
     #[doc(hidden)]
@@ -1517,14 +1297,6 @@ impl ListIdentitiesOutput {
     /// <p>The token used for pagination.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListIdentitiesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentitiesOutput");
-        formatter.field("identities", &self.identities);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListIdentitiesOutput`](crate::output::ListIdentitiesOutput).
@@ -1584,7 +1356,7 @@ impl ListIdentitiesOutput {
 
 /// <p>A paginated list of custom verification email templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
     #[doc(hidden)]
@@ -1604,17 +1376,6 @@ impl ListCustomVerificationEmailTemplatesOutput {
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListCustomVerificationEmailTemplatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomVerificationEmailTemplatesOutput");
-        formatter.field(
-            "custom_verification_email_templates",
-            &self.custom_verification_email_templates,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput).
@@ -1680,7 +1441,7 @@ impl ListCustomVerificationEmailTemplatesOutput {
 
 /// <p>A list of configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationSetsOutput {
     /// <p>A list of configuration sets.</p>
     #[doc(hidden)]
@@ -1697,14 +1458,6 @@ impl ListConfigurationSetsOutput {
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListConfigurationSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationSetsOutput");
-        formatter.field("configuration_sets", &self.configuration_sets);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
@@ -1765,7 +1518,7 @@ impl ListConfigurationSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateOutput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     #[doc(hidden)]
@@ -1775,13 +1528,6 @@ impl GetTemplateOutput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template(&self) -> std::option::Option<&crate::model::Template> {
         self.template.as_ref()
-    }
-}
-impl std::fmt::Debug for GetTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateOutput");
-        formatter.field("template", &self.template);
-        formatter.finish()
     }
 }
 /// See [`GetTemplateOutput`](crate::output::GetTemplateOutput).
@@ -1820,7 +1566,7 @@ impl GetTemplateOutput {
 
 /// <p>Represents a list of data points. This list contains aggregated data from the previous two weeks of your sending activity with Amazon SES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSendStatisticsOutput {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
     #[doc(hidden)]
@@ -1830,13 +1576,6 @@ impl GetSendStatisticsOutput {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
     pub fn send_data_points(&self) -> std::option::Option<&[crate::model::SendDataPoint]> {
         self.send_data_points.as_deref()
-    }
-}
-impl std::fmt::Debug for GetSendStatisticsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSendStatisticsOutput");
-        formatter.field("send_data_points", &self.send_data_points);
-        formatter.finish()
     }
 }
 /// See [`GetSendStatisticsOutput`](crate::output::GetSendStatisticsOutput).
@@ -1885,7 +1624,7 @@ impl GetSendStatisticsOutput {
 
 /// <p>Represents your Amazon SES daily sending quota, maximum send rate, and the number of emails you have sent in the last 24 hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSendQuotaOutput {
     /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
     #[doc(hidden)]
@@ -1913,15 +1652,6 @@ impl GetSendQuotaOutput {
     /// <p>The number of emails sent during the previous 24 hours.</p>
     pub fn sent_last24_hours(&self) -> f64 {
         self.sent_last24_hours
-    }
-}
-impl std::fmt::Debug for GetSendQuotaOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSendQuotaOutput");
-        formatter.field("max24_hour_send", &self.max24_hour_send);
-        formatter.field("max_send_rate", &self.max_send_rate);
-        formatter.field("sent_last24_hours", &self.sent_last24_hours);
-        formatter.finish()
     }
 }
 /// See [`GetSendQuotaOutput`](crate::output::GetSendQuotaOutput).
@@ -1988,7 +1718,7 @@ impl GetSendQuotaOutput {
 
 /// <p>The Amazon SES verification status of a list of identities. For domain identities, this response also contains the verification token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     #[doc(hidden)]
@@ -2010,13 +1740,6 @@ impl GetIdentityVerificationAttributesOutput {
         >,
     > {
         self.verification_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for GetIdentityVerificationAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityVerificationAttributesOutput");
-        formatter.field("verification_attributes", &self.verification_attributes);
-        formatter.finish()
     }
 }
 /// See [`GetIdentityVerificationAttributesOutput`](crate::output::GetIdentityVerificationAttributesOutput).
@@ -2078,7 +1801,7 @@ impl GetIdentityVerificationAttributesOutput {
 
 /// <p>Represents the requested sending authorization policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
     #[doc(hidden)]
@@ -2092,13 +1815,6 @@ impl GetIdentityPoliciesOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.policies.as_ref()
-    }
-}
-impl std::fmt::Debug for GetIdentityPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityPoliciesOutput");
-        formatter.field("policies", &self.policies);
-        formatter.finish()
     }
 }
 /// See [`GetIdentityPoliciesOutput`](crate::output::GetIdentityPoliciesOutput).
@@ -2154,7 +1870,7 @@ impl GetIdentityPoliciesOutput {
 
 /// <p>Represents the notification attributes for a list of identities.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     #[doc(hidden)]
@@ -2176,13 +1892,6 @@ impl GetIdentityNotificationAttributesOutput {
         >,
     > {
         self.notification_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for GetIdentityNotificationAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityNotificationAttributesOutput");
-        formatter.field("notification_attributes", &self.notification_attributes);
-        formatter.finish()
     }
 }
 /// See [`GetIdentityNotificationAttributesOutput`](crate::output::GetIdentityNotificationAttributesOutput).
@@ -2244,7 +1953,7 @@ impl GetIdentityNotificationAttributesOutput {
 
 /// <p>Represents the custom MAIL FROM attributes for a list of identities.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributesOutput {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
     #[doc(hidden)]
@@ -2266,16 +1975,6 @@ impl GetIdentityMailFromDomainAttributesOutput {
         >,
     > {
         self.mail_from_domain_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for GetIdentityMailFromDomainAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityMailFromDomainAttributesOutput");
-        formatter.field(
-            "mail_from_domain_attributes",
-            &self.mail_from_domain_attributes,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetIdentityMailFromDomainAttributesOutput`](crate::output::GetIdentityMailFromDomainAttributesOutput).
@@ -2337,7 +2036,7 @@ impl GetIdentityMailFromDomainAttributesOutput {
 
 /// <p>Represents the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this response also contains the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
     #[doc(hidden)]
@@ -2353,13 +2052,6 @@ impl GetIdentityDkimAttributesOutput {
         &std::collections::HashMap<std::string::String, crate::model::IdentityDkimAttributes>,
     > {
         self.dkim_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for GetIdentityDkimAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityDkimAttributesOutput");
-        formatter.field("dkim_attributes", &self.dkim_attributes);
-        formatter.finish()
     }
 }
 /// See [`GetIdentityDkimAttributesOutput`](crate::output::GetIdentityDkimAttributesOutput).
@@ -2418,7 +2110,7 @@ impl GetIdentityDkimAttributesOutput {
 
 /// <p>The content of the custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCustomVerificationEmailTemplateOutput {
     /// <p>The name of the custom verification email template.</p>
     #[doc(hidden)]
@@ -2463,18 +2155,6 @@ impl GetCustomVerificationEmailTemplateOutput {
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
         self.failure_redirection_url.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCustomVerificationEmailTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCustomVerificationEmailTemplateOutput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field("template_subject", &self.template_subject);
-        formatter.field("template_content", &self.template_content);
-        formatter.field("success_redirection_url", &self.success_redirection_url);
-        formatter.field("failure_redirection_url", &self.failure_redirection_url);
-        formatter.finish()
     }
 }
 /// See [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput).
@@ -2591,7 +2271,7 @@ impl GetCustomVerificationEmailTemplateOutput {
 
 /// <p>Represents a request to return the email sending status for your Amazon SES account in the current AWS Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountSendingEnabledOutput {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     #[doc(hidden)]
@@ -2601,13 +2281,6 @@ impl GetAccountSendingEnabledOutput {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for GetAccountSendingEnabledOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountSendingEnabledOutput");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`GetAccountSendingEnabledOutput`](crate::output::GetAccountSendingEnabledOutput).
@@ -2646,7 +2319,7 @@ impl GetAccountSendingEnabledOutput {
 
 /// <p>Represents the details of the specified receipt rule set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReceiptRuleSetOutput {
     /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
     #[doc(hidden)]
@@ -2663,14 +2336,6 @@ impl DescribeReceiptRuleSetOutput {
     /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::ReceiptRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeReceiptRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReceiptRuleSetOutput");
-        formatter.field("metadata", &self.metadata);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`DescribeReceiptRuleSetOutput`](crate::output::DescribeReceiptRuleSetOutput).
@@ -2733,7 +2398,7 @@ impl DescribeReceiptRuleSetOutput {
 
 /// <p>Represents the details of a receipt rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReceiptRuleOutput {
     /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
     #[doc(hidden)]
@@ -2743,13 +2408,6 @@ impl DescribeReceiptRuleOutput {
     /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
     pub fn rule(&self) -> std::option::Option<&crate::model::ReceiptRule> {
         self.rule.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeReceiptRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReceiptRuleOutput");
-        formatter.field("rule", &self.rule);
-        formatter.finish()
     }
 }
 /// See [`DescribeReceiptRuleOutput`](crate::output::DescribeReceiptRuleOutput).
@@ -2786,7 +2444,7 @@ impl DescribeReceiptRuleOutput {
 
 /// <p>Represents the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationSetOutput {
     /// <p>The configuration set object associated with the specified configuration set.</p>
     #[doc(hidden)]
@@ -2824,17 +2482,6 @@ impl DescribeConfigurationSetOutput {
     /// <p>An object that represents the reputation settings for the configuration set. </p>
     pub fn reputation_options(&self) -> std::option::Option<&crate::model::ReputationOptions> {
         self.reputation_options.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeConfigurationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationSetOutput");
-        formatter.field("configuration_set", &self.configuration_set);
-        formatter.field("event_destinations", &self.event_destinations);
-        formatter.field("tracking_options", &self.tracking_options);
-        formatter.field("delivery_options", &self.delivery_options);
-        formatter.field("reputation_options", &self.reputation_options);
-        formatter.finish()
     }
 }
 /// See [`DescribeConfigurationSetOutput`](crate::output::DescribeConfigurationSetOutput).
@@ -2943,7 +2590,7 @@ impl DescribeConfigurationSetOutput {
 
 /// <p>Represents the metadata and receipt rules for the receipt rule set that is currently active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSetOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     #[doc(hidden)]
@@ -2960,14 +2607,6 @@ impl DescribeActiveReceiptRuleSetOutput {
     /// <p>The receipt rules that belong to the active rule set.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::ReceiptRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeActiveReceiptRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeActiveReceiptRuleSetOutput");
-        formatter.field("metadata", &self.metadata);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`DescribeActiveReceiptRuleSetOutput`](crate::output::DescribeActiveReceiptRuleSetOutput).
@@ -3030,14 +2669,8 @@ impl DescribeActiveReceiptRuleSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVerifiedEmailAddressOutput {}
-impl std::fmt::Debug for DeleteVerifiedEmailAddressOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVerifiedEmailAddressOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVerifiedEmailAddressOutput`](crate::output::DeleteVerifiedEmailAddressOutput).
 pub mod delete_verified_email_address_output {
 
@@ -3060,14 +2693,8 @@ impl DeleteVerifiedEmailAddressOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTemplateOutput {}
-impl std::fmt::Debug for DeleteTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTemplateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteTemplateOutput`](crate::output::DeleteTemplateOutput).
 pub mod delete_template_output {
 
@@ -3090,14 +2717,8 @@ impl DeleteTemplateOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReceiptRuleSetOutput {}
-impl std::fmt::Debug for DeleteReceiptRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReceiptRuleSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteReceiptRuleSetOutput`](crate::output::DeleteReceiptRuleSetOutput).
 pub mod delete_receipt_rule_set_output {
 
@@ -3120,14 +2741,8 @@ impl DeleteReceiptRuleSetOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReceiptRuleOutput {}
-impl std::fmt::Debug for DeleteReceiptRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReceiptRuleOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteReceiptRuleOutput`](crate::output::DeleteReceiptRuleOutput).
 pub mod delete_receipt_rule_output {
 
@@ -3150,14 +2765,8 @@ impl DeleteReceiptRuleOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReceiptFilterOutput {}
-impl std::fmt::Debug for DeleteReceiptFilterOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReceiptFilterOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteReceiptFilterOutput`](crate::output::DeleteReceiptFilterOutput).
 pub mod delete_receipt_filter_output {
 
@@ -3180,14 +2789,8 @@ impl DeleteReceiptFilterOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityPolicyOutput {}
-impl std::fmt::Debug for DeleteIdentityPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteIdentityPolicyOutput`](crate::output::DeleteIdentityPolicyOutput).
 pub mod delete_identity_policy_output {
 
@@ -3210,14 +2813,8 @@ impl DeleteIdentityPolicyOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityOutput {}
-impl std::fmt::Debug for DeleteIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteIdentityOutput`](crate::output::DeleteIdentityOutput).
 pub mod delete_identity_output {
 
@@ -3240,14 +2837,8 @@ impl DeleteIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplateOutput {}
-impl std::fmt::Debug for DeleteCustomVerificationEmailTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomVerificationEmailTemplateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput).
 pub mod delete_custom_verification_email_template_output {
 
@@ -3270,14 +2861,8 @@ impl DeleteCustomVerificationEmailTemplateOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetTrackingOptionsOutput {}
-impl std::fmt::Debug for DeleteConfigurationSetTrackingOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetTrackingOptionsOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigurationSetTrackingOptionsOutput`](crate::output::DeleteConfigurationSetTrackingOptionsOutput).
 pub mod delete_configuration_set_tracking_options_output {
 
@@ -3300,14 +2885,8 @@ impl DeleteConfigurationSetTrackingOptionsOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for DeleteConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
 pub mod delete_configuration_set_event_destination_output {
 
@@ -3330,14 +2909,8 @@ impl DeleteConfigurationSetEventDestinationOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetOutput {}
-impl std::fmt::Debug for DeleteConfigurationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
 
@@ -3360,14 +2933,8 @@ impl DeleteConfigurationSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateOutput {}
-impl std::fmt::Debug for CreateTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
 pub mod create_template_output {
 
@@ -3390,14 +2957,8 @@ impl CreateTemplateOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReceiptRuleSetOutput {}
-impl std::fmt::Debug for CreateReceiptRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReceiptRuleSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateReceiptRuleSetOutput`](crate::output::CreateReceiptRuleSetOutput).
 pub mod create_receipt_rule_set_output {
 
@@ -3420,14 +2981,8 @@ impl CreateReceiptRuleSetOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReceiptRuleOutput {}
-impl std::fmt::Debug for CreateReceiptRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReceiptRuleOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateReceiptRuleOutput`](crate::output::CreateReceiptRuleOutput).
 pub mod create_receipt_rule_output {
 
@@ -3450,14 +3005,8 @@ impl CreateReceiptRuleOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReceiptFilterOutput {}
-impl std::fmt::Debug for CreateReceiptFilterOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReceiptFilterOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateReceiptFilterOutput`](crate::output::CreateReceiptFilterOutput).
 pub mod create_receipt_filter_output {
 
@@ -3480,14 +3029,8 @@ impl CreateReceiptFilterOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomVerificationEmailTemplateOutput {}
-impl std::fmt::Debug for CreateCustomVerificationEmailTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomVerificationEmailTemplateOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput).
 pub mod create_custom_verification_email_template_output {
 
@@ -3510,14 +3053,8 @@ impl CreateCustomVerificationEmailTemplateOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetTrackingOptionsOutput {}
-impl std::fmt::Debug for CreateConfigurationSetTrackingOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetTrackingOptionsOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigurationSetTrackingOptionsOutput`](crate::output::CreateConfigurationSetTrackingOptionsOutput).
 pub mod create_configuration_set_tracking_options_output {
 
@@ -3540,14 +3077,8 @@ impl CreateConfigurationSetTrackingOptionsOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestinationOutput {}
-impl std::fmt::Debug for CreateConfigurationSetEventDestinationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
 pub mod create_configuration_set_event_destination_output {
 
@@ -3570,14 +3101,8 @@ impl CreateConfigurationSetEventDestinationOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetOutput {}
-impl std::fmt::Debug for CreateConfigurationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
 
@@ -3600,14 +3125,8 @@ impl CreateConfigurationSetOutput {
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloneReceiptRuleSetOutput {}
-impl std::fmt::Debug for CloneReceiptRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloneReceiptRuleSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`CloneReceiptRuleSetOutput`](crate::output::CloneReceiptRuleSetOutput).
 pub mod clone_receipt_rule_set_output {
 

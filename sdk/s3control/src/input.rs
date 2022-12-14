@@ -11874,7 +11874,7 @@ impl UpdateJobStatusInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobStatusInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -11907,20 +11907,10 @@ impl UpdateJobStatusInput {
         self.status_update_reason.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateJobStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobStatusInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("requested_job_status", &self.requested_job_status);
-        formatter.field("status_update_reason", &self.status_update_reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobPriorityInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -11946,19 +11936,10 @@ impl UpdateJobPriorityInput {
         self.priority
     }
 }
-impl std::fmt::Debug for UpdateJobPriorityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobPriorityInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -11988,19 +11969,10 @@ impl PutStorageLensConfigurationTaggingInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutStorageLensConfigurationTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutStorageLensConfigurationTaggingInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStorageLensConfigurationInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -12039,23 +12011,10 @@ impl PutStorageLensConfigurationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutStorageLensConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutStorageLensConfigurationInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field(
-            "storage_lens_configuration",
-            &self.storage_lens_configuration,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPublicAccessBlockInput {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -12077,21 +12036,10 @@ impl PutPublicAccessBlockInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutPublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPublicAccessBlockInput");
-        formatter.field(
-            "public_access_block_configuration",
-            &self.public_access_block_configuration,
-        );
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12119,19 +12067,10 @@ impl PutMultiRegionAccessPointPolicyInput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for PutMultiRegionAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMultiRegionAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -12157,19 +12096,10 @@ impl PutJobTaggingInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutJobTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutJobTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketVersioningInput {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     #[doc(hidden)]
@@ -12204,20 +12134,10 @@ impl PutBucketVersioningInput {
         self.versioning_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketVersioningInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketVersioningInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("versioning_configuration", &self.versioning_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12267,19 +12187,10 @@ impl PutBucketTaggingInput {
         self.tagging.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("tagging", &self.tagging);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketPolicyInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12340,23 +12251,10 @@ impl PutBucketPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field(
-            "confirm_remove_self_bucket_access",
-            &self.confirm_remove_self_bucket_access,
-        );
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12384,19 +12282,10 @@ impl PutBucketLifecycleConfigurationInput {
         self.lifecycle_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketLifecycleConfigurationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -12422,19 +12311,10 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccessPointPolicyForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccessPointPolicyForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
     #[doc(hidden)]
@@ -12484,19 +12364,10 @@ impl PutAccessPointPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccessPointConfigurationForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -12522,19 +12393,10 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutAccessPointConfigurationForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccessPointConfigurationForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStorageLensConfigurationsInput {
     /// <p>The account ID of the requester.</p>
     #[doc(hidden)]
@@ -12553,18 +12415,10 @@ impl ListStorageLensConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListStorageLensConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStorageLensConfigurationsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegionalBucketsInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12601,20 +12455,10 @@ impl ListRegionalBucketsInput {
         self.outpost_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListRegionalBucketsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegionalBucketsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultiRegionAccessPointsInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12640,19 +12484,10 @@ impl ListMultiRegionAccessPointsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMultiRegionAccessPointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultiRegionAccessPointsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -12685,20 +12520,10 @@ impl ListJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_statuses", &self.job_statuses);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPointsForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -12724,19 +12549,10 @@ impl ListAccessPointsForObjectLambdaInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessPointsForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessPointsForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPointsInput {
     /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
     #[doc(hidden)]
@@ -12793,20 +12609,10 @@ impl ListAccessPointsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessPointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessPointsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStorageLensConfigurationTaggingInput {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -12825,18 +12631,10 @@ impl GetStorageLensConfigurationTaggingInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStorageLensConfigurationTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStorageLensConfigurationTaggingInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStorageLensConfigurationInput {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -12855,18 +12653,10 @@ impl GetStorageLensConfigurationInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStorageLensConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStorageLensConfigurationInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
     #[doc(hidden)]
@@ -12878,17 +12668,10 @@ impl GetPublicAccessBlockInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicAccessBlockInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyStatusInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12907,18 +12690,10 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyStatusInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12937,18 +12712,10 @@ impl GetMultiRegionAccessPointPolicyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMultiRegionAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12967,18 +12734,10 @@ impl GetMultiRegionAccessPointInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMultiRegionAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMultiRegionAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -12997,18 +12756,10 @@ impl GetJobTaggingInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketVersioningInput {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     #[doc(hidden)]
@@ -13027,18 +12778,10 @@ impl GetBucketVersioningInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketVersioningInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketVersioningInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -13081,18 +12824,10 @@ impl GetBucketTaggingInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketPolicyInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -13135,18 +12870,10 @@ impl GetBucketPolicyInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketLifecycleConfigurationInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -13189,18 +12916,10 @@ impl GetBucketLifecycleConfigurationInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketLifecycleConfigurationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -13243,18 +12962,10 @@ impl GetBucketInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointPolicyStatusForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13273,18 +12984,10 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointPolicyStatusForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointPolicyStatusForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointPolicyStatusInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -13303,18 +13006,10 @@ impl GetAccessPointPolicyStatusInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointPolicyStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointPolicyStatusInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13333,18 +13028,10 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointPolicyForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointPolicyForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointPolicyInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -13387,18 +13074,10 @@ impl GetAccessPointPolicyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13417,18 +13096,10 @@ impl GetAccessPointForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointConfigurationForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13447,18 +13118,10 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointConfigurationForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointConfigurationForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -13501,18 +13164,10 @@ impl GetAccessPointInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMultiRegionAccessPointOperationInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -13531,18 +13186,10 @@ impl DescribeMultiRegionAccessPointOperationInput {
         self.request_token_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMultiRegionAccessPointOperationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("request_token_arn", &self.request_token_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -13561,18 +13208,10 @@ impl DescribeJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -13591,18 +13230,10 @@ impl DeleteStorageLensConfigurationTaggingInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStorageLensConfigurationTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStorageLensConfigurationTaggingInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStorageLensConfigurationInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -13621,18 +13252,10 @@ impl DeleteStorageLensConfigurationInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStorageLensConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStorageLensConfigurationInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
     #[doc(hidden)]
@@ -13644,17 +13267,10 @@ impl DeletePublicAccessBlockInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePublicAccessBlockInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -13680,19 +13296,10 @@ impl DeleteMultiRegionAccessPointInput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteMultiRegionAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMultiRegionAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -13711,18 +13318,10 @@ impl DeleteJobTaggingInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteJobTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJobTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
     #[doc(hidden)]
@@ -13765,18 +13364,10 @@ impl DeleteBucketTaggingInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketPolicyInput {
     /// <p>The account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -13819,18 +13410,10 @@ impl DeleteBucketPolicyInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketLifecycleConfigurationInput {
     /// <p>The account ID of the lifecycle configuration to delete.</p>
     #[doc(hidden)]
@@ -13873,18 +13456,10 @@ impl DeleteBucketLifecycleConfigurationInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketLifecycleConfigurationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketInput {
     /// <p>The account ID that owns the Outposts bucket.</p>
     #[doc(hidden)]
@@ -13927,18 +13502,10 @@ impl DeleteBucketInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13957,18 +13524,10 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointPolicyForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointPolicyForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointPolicyInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -14011,18 +13570,10 @@ impl DeleteAccessPointPolicyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -14041,18 +13592,10 @@ impl DeleteAccessPointForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -14095,18 +13638,10 @@ impl DeleteAccessPointInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
     #[doc(hidden)]
@@ -14132,19 +13667,10 @@ impl CreateMultiRegionAccessPointInput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMultiRegionAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMultiRegionAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>The Amazon Web Services account ID that creates the job.</p>
     #[doc(hidden)]
@@ -14226,27 +13752,10 @@ impl CreateJobInput {
         self.manifest_generator.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("confirmation_required", &self.confirmation_required);
-        formatter.field("operation", &self.operation);
-        formatter.field("report", &self.report);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("manifest", &self.manifest);
-        formatter.field("description", &self.description);
-        formatter.field("priority", &self.priority);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("manifest_generator", &self.manifest_generator);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
@@ -14359,32 +13868,10 @@ impl CreateBucketInput {
         self.outpost_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBucketInput");
-        formatter.field("acl", &self.acl);
-        formatter.field("bucket", &self.bucket);
-        formatter.field(
-            "create_bucket_configuration",
-            &self.create_bucket_configuration,
-        );
-        formatter.field("grant_full_control", &self.grant_full_control);
-        formatter.field("grant_read", &self.grant_read);
-        formatter.field("grant_read_acp", &self.grant_read_acp);
-        formatter.field("grant_write", &self.grant_write);
-        formatter.field("grant_write_acp", &self.grant_write_acp);
-        formatter.field(
-            "object_lock_enabled_for_bucket",
-            &self.object_lock_enabled_for_bucket,
-        );
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPointForObjectLambdaInput {
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -14410,19 +13897,10 @@ impl CreateAccessPointForObjectLambdaInput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAccessPointForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessPointForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
     #[doc(hidden)]
@@ -14491,19 +13969,5 @@ impl CreateAccessPointInput {
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field(
-            "public_access_block_configuration",
-            &self.public_access_block_configuration,
-        );
-        formatter.finish()
     }
 }

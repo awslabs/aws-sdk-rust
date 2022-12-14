@@ -2386,7 +2386,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
     #[doc(hidden)]
@@ -2405,18 +2405,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
     #[doc(hidden)]
@@ -2435,18 +2427,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFhirImportJobInput {
     /// <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
     #[doc(hidden)]
@@ -2493,22 +2477,10 @@ impl StartFhirImportJobInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartFhirImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFhirImportJobInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("job_output_data_config", &self.job_output_data_config);
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFhirExportJobInput {
     /// <p>The user generated name for an export job.</p>
     #[doc(hidden)]
@@ -2548,21 +2520,10 @@ impl StartFhirExportJobInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartFhirExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFhirExportJobInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
     #[doc(hidden)]
@@ -2574,17 +2535,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFhirImportJobsInput {
     /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
     #[doc(hidden)]
@@ -2638,23 +2592,10 @@ impl ListFhirImportJobsInput {
         self.submitted_after.as_ref()
     }
 }
-impl std::fmt::Debug for ListFhirImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFhirImportJobsInput");
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submitted_before", &self.submitted_before);
-        formatter.field("submitted_after", &self.submitted_after);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFhirExportJobsInput {
     /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
     #[doc(hidden)]
@@ -2708,23 +2649,10 @@ impl ListFhirExportJobsInput {
         self.submitted_after.as_ref()
     }
 }
-impl std::fmt::Debug for ListFhirExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFhirExportJobsInput");
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submitted_before", &self.submitted_before);
-        formatter.field("submitted_after", &self.submitted_after);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFhirDatastoresInput {
     /// <p>Lists all filters associated with a FHIR Data Store request.</p>
     #[doc(hidden)]
@@ -2750,19 +2678,10 @@ impl ListFhirDatastoresInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFhirDatastoresInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFhirDatastoresInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFhirImportJobInput {
     /// <p>The AWS-generated ID of the Data Store.</p>
     #[doc(hidden)]
@@ -2781,18 +2700,10 @@ impl DescribeFhirImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFhirImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFhirImportJobInput");
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFhirExportJobInput {
     /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
     #[doc(hidden)]
@@ -2811,18 +2722,10 @@ impl DescribeFhirExportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFhirExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFhirExportJobInput");
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFhirDatastoreInput {
     /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
     #[doc(hidden)]
@@ -2834,17 +2737,10 @@ impl DescribeFhirDatastoreInput {
         self.datastore_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFhirDatastoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFhirDatastoreInput");
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFhirDatastoreInput {
     /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
     #[doc(hidden)]
@@ -2856,17 +2752,10 @@ impl DeleteFhirDatastoreInput {
         self.datastore_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFhirDatastoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFhirDatastoreInput");
-        formatter.field("datastore_id", &self.datastore_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFhirDatastoreInput {
     /// <p>The user generated name for the Data Store.</p>
     #[doc(hidden)]
@@ -2911,17 +2800,5 @@ impl CreateFhirDatastoreInput {
     /// <p> Resource tags that are applied to a Data Store when it is created. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateFhirDatastoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFhirDatastoreInput");
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.field("datastore_type_version", &self.datastore_type_version);
-        formatter.field("sse_configuration", &self.sse_configuration);
-        formatter.field("preload_data_config", &self.preload_data_config);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Describes a stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stack {
     /// <p>The ARN of the stack.</p>
     #[doc(hidden)]
@@ -108,29 +108,6 @@ impl Stack {
         &self,
     ) -> std::option::Option<&crate::model::StreamingExperienceSettings> {
         self.streaming_experience_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for Stack {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stack");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("storage_connectors", &self.storage_connectors);
-        formatter.field("redirect_url", &self.redirect_url);
-        formatter.field("feedback_url", &self.feedback_url);
-        formatter.field("stack_errors", &self.stack_errors);
-        formatter.field("user_settings", &self.user_settings);
-        formatter.field("application_settings", &self.application_settings);
-        formatter.field("access_endpoints", &self.access_endpoints);
-        formatter.field("embed_host_domains", &self.embed_host_domains);
-        formatter.field(
-            "streaming_experience_settings",
-            &self.streaming_experience_settings,
-        );
-        formatter.finish()
     }
 }
 /// See [`Stack`](crate::model::Stack).
@@ -389,7 +366,7 @@ impl Stack {
 
 /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingExperienceSettings {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     #[doc(hidden)]
@@ -399,13 +376,6 @@ impl StreamingExperienceSettings {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     pub fn preferred_protocol(&self) -> std::option::Option<&crate::model::PreferredProtocol> {
         self.preferred_protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamingExperienceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingExperienceSettings");
-        formatter.field("preferred_protocol", &self.preferred_protocol);
-        formatter.finish()
     }
 }
 /// See [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
@@ -539,7 +509,7 @@ impl AsRef<str> for PreferredProtocol {
 
 /// <p>Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessEndpoint {
     /// <p>The type of interface endpoint.</p>
     #[doc(hidden)]
@@ -556,14 +526,6 @@ impl AccessEndpoint {
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
     pub fn vpce_id(&self) -> std::option::Option<&str> {
         self.vpce_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessEndpoint");
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("vpce_id", &self.vpce_id);
-        formatter.finish()
     }
 }
 /// See [`AccessEndpoint`](crate::model::AccessEndpoint).
@@ -704,7 +666,7 @@ impl AsRef<str> for AccessEndpointType {
 
 /// <p>Describes the persistent application settings for users of a stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSettingsResponse {
     /// <p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>
     #[doc(hidden)]
@@ -728,15 +690,6 @@ impl ApplicationSettingsResponse {
     /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationSettingsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSettingsResponse");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("settings_group", &self.settings_group);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSettingsResponse`](crate::model::ApplicationSettingsResponse).
@@ -805,7 +758,7 @@ impl ApplicationSettingsResponse {
 
 /// <p>Describes an action and whether the action is enabled or disabled for users during their streaming sessions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSetting {
     /// <p>The action that is enabled or disabled.</p>
     #[doc(hidden)]
@@ -822,14 +775,6 @@ impl UserSetting {
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
         self.permission.as_ref()
-    }
-}
-impl std::fmt::Debug for UserSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSetting");
-        formatter.field("action", &self.action);
-        formatter.field("permission", &self.permission);
-        formatter.finish()
     }
 }
 /// See [`UserSetting`](crate::model::UserSetting).
@@ -1096,7 +1041,7 @@ impl AsRef<str> for Action {
 
 /// <p>Describes a stack error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackError {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -1113,14 +1058,6 @@ impl StackError {
     /// <p>The error message.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for StackError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`StackError`](crate::model::StackError).
@@ -1267,7 +1204,7 @@ impl AsRef<str> for StackErrorCode {
 
 /// <p>Describes a connector that enables persistent storage for users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageConnector {
     /// <p>The type of storage connector.</p>
     #[doc(hidden)]
@@ -1291,15 +1228,6 @@ impl StorageConnector {
     /// <p>The names of the domains for the account.</p>
     pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
         self.domains.as_deref()
-    }
-}
-impl std::fmt::Debug for StorageConnector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageConnector");
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("domains", &self.domains);
-        formatter.finish()
     }
 }
 /// See [`StorageConnector`](crate::model::StorageConnector).
@@ -1474,7 +1402,7 @@ impl AsRef<str> for StorageConnectorType {
 
 /// <p>The persistent application settings for users of a stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSettings {
     /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
     #[doc(hidden)]
@@ -1491,14 +1419,6 @@ impl ApplicationSettings {
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
     pub fn settings_group(&self) -> std::option::Option<&str> {
         self.settings_group.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSettings");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("settings_group", &self.settings_group);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSettings`](crate::model::ApplicationSettings).
@@ -1705,7 +1625,7 @@ impl AsRef<str> for StackAttribute {
 
 /// <p>Describes the permissions for an image. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImagePermissions {
     /// <p>Indicates whether the image can be used for a fleet.</p>
     #[doc(hidden)]
@@ -1722,14 +1642,6 @@ impl ImagePermissions {
     /// <p>Indicates whether the image can be used for an image builder.</p>
     pub fn allow_image_builder(&self) -> std::option::Option<bool> {
         self.allow_image_builder
-    }
-}
-impl std::fmt::Debug for ImagePermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImagePermissions");
-        formatter.field("allow_fleet", &self.allow_fleet);
-        formatter.field("allow_image_builder", &self.allow_image_builder);
-        formatter.finish()
     }
 }
 /// See [`ImagePermissions`](crate::model::ImagePermissions).
@@ -1780,7 +1692,7 @@ impl ImagePermissions {
 
 /// <p>Describes a fleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Fleet {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
     #[doc(hidden)]
@@ -2065,51 +1977,6 @@ impl Fleet {
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     pub fn session_script_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.session_script_s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for Fleet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Fleet");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
-        formatter.field("image_name", &self.image_name);
-        formatter.field("image_arn", &self.image_arn);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("fleet_type", &self.fleet_type);
-        formatter.field("compute_capacity_status", &self.compute_capacity_status);
-        formatter.field(
-            "max_user_duration_in_seconds",
-            &self.max_user_duration_in_seconds,
-        );
-        formatter.field(
-            "disconnect_timeout_in_seconds",
-            &self.disconnect_timeout_in_seconds,
-        );
-        formatter.field("state", &self.state);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("fleet_errors", &self.fleet_errors);
-        formatter.field(
-            "enable_default_internet_access",
-            &self.enable_default_internet_access,
-        );
-        formatter.field("domain_join_info", &self.domain_join_info);
-        formatter.field(
-            "idle_disconnect_timeout_in_seconds",
-            &self.idle_disconnect_timeout_in_seconds,
-        );
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("stream_view", &self.stream_view);
-        formatter.field("platform", &self.platform);
-        formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
-        formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
-        formatter.field(
-            "session_script_s3_location",
-            &self.session_script_s3_location,
-        );
-        formatter.finish()
     }
 }
 /// See [`Fleet`](crate::model::Fleet).
@@ -2595,7 +2462,7 @@ impl Fleet {
 
 /// <p>Describes the S3 location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The S3 bucket of the S3 object.</p>
     #[doc(hidden)]
@@ -2612,14 +2479,6 @@ impl S3Location {
     /// <p>The S3 key of the S3 object.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -2865,7 +2724,7 @@ impl AsRef<str> for StreamView {
 
 /// <p>Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainJoinInfo {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
     #[doc(hidden)]
@@ -2882,17 +2741,6 @@ impl DomainJoinInfo {
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
     pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
         self.organizational_unit_distinguished_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainJoinInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainJoinInfo");
-        formatter.field("directory_name", &self.directory_name);
-        formatter.field(
-            "organizational_unit_distinguished_name",
-            &self.organizational_unit_distinguished_name,
-        );
-        formatter.finish()
     }
 }
 /// See [`DomainJoinInfo`](crate::model::DomainJoinInfo).
@@ -2952,7 +2800,7 @@ impl DomainJoinInfo {
 
 /// <p>Describes a fleet error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetError {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -2969,14 +2817,6 @@ impl FleetError {
     /// <p>The error message.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FleetError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`FleetError`](crate::model::FleetError).
@@ -3338,7 +3178,7 @@ impl AsRef<str> for FleetErrorCode {
 
 /// <p>Describes VPC configuration information for fleets and image builders.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
     #[doc(hidden)]
@@ -3355,14 +3195,6 @@ impl VpcConfig {
     /// <p>The identifiers of the security groups for the fleet or image builder.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
@@ -3531,7 +3363,7 @@ impl AsRef<str> for FleetState {
 
 /// <p>Describes the capacity status for a fleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeCapacityStatus {
     /// <p>The desired number of streaming instances.</p>
     #[doc(hidden)]
@@ -3562,16 +3394,6 @@ impl ComputeCapacityStatus {
     /// <p>The number of currently available instances that can be used to stream sessions.</p>
     pub fn available(&self) -> std::option::Option<i32> {
         self.available
-    }
-}
-impl std::fmt::Debug for ComputeCapacityStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeCapacityStatus");
-        formatter.field("desired", &self.desired);
-        formatter.field("running", &self.running);
-        formatter.field("in_use", &self.in_use);
-        formatter.field("available", &self.available);
-        formatter.finish()
     }
 }
 /// See [`ComputeCapacityStatus`](crate::model::ComputeCapacityStatus).
@@ -3862,7 +3684,7 @@ impl AsRef<str> for FleetAttribute {
 
 /// <p>Describes the capacity for a fleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeCapacity {
     /// <p>The desired number of streaming instances.</p>
     #[doc(hidden)]
@@ -3872,13 +3694,6 @@ impl ComputeCapacity {
     /// <p>The desired number of streaming instances.</p>
     pub fn desired_instances(&self) -> std::option::Option<i32> {
         self.desired_instances
-    }
-}
-impl std::fmt::Debug for ComputeCapacity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeCapacity");
-        formatter.field("desired_instances", &self.desired_instances);
-        formatter.finish()
     }
 }
 /// See [`ComputeCapacity`](crate::model::ComputeCapacity).
@@ -3917,7 +3732,7 @@ impl ComputeCapacity {
 
 /// <p>Specifies an entitlement. Entitlements control access to specific applications within a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications in a stack. Entitlements don't apply to the desktop stream view application, or to applications managed by a dynamic app provider using the Dynamic Application Framework.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entitlement {
     /// <p>The name of the entitlement.</p>
     #[doc(hidden)]
@@ -3969,19 +3784,6 @@ impl Entitlement {
     /// <p>The time when the entitlement was last modified.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Entitlement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entitlement");
-        formatter.field("name", &self.name);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("description", &self.description);
-        formatter.field("app_visibility", &self.app_visibility);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`Entitlement`](crate::model::Entitlement).
@@ -4111,7 +3913,7 @@ impl Entitlement {
 
 /// <p>An attribute associated with an entitlement. Application entitlements work by matching a supported SAML 2.0 attribute name to a value when a user identity federates to an Amazon AppStream 2.0 SAML application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitlementAttribute {
     /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
     /// <p>The following are valid values:</p>
@@ -4150,14 +3952,6 @@ impl EntitlementAttribute {
     /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for EntitlementAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitlementAttribute");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`EntitlementAttribute`](crate::model::EntitlementAttribute).
@@ -4320,7 +4114,7 @@ impl AsRef<str> for AppVisibility {
 
 /// <p>Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryConfig {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
     #[doc(hidden)]
@@ -4356,22 +4150,6 @@ impl DirectoryConfig {
     /// <p>The time the directory configuration was created.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DirectoryConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryConfig");
-        formatter.field("directory_name", &self.directory_name);
-        formatter.field(
-            "organizational_unit_distinguished_names",
-            &self.organizational_unit_distinguished_names,
-        );
-        formatter.field(
-            "service_account_credentials",
-            &self.service_account_credentials,
-        );
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`DirectoryConfig`](crate::model::DirectoryConfig).
@@ -4506,7 +4284,7 @@ impl std::fmt::Debug for ServiceAccountCredentials {
 pub mod service_account_credentials {
 
     /// A builder for [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_name: std::option::Option<std::string::String>,
         pub(crate) account_password: std::option::Option<std::string::String>,
@@ -4543,6 +4321,14 @@ pub mod service_account_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("account_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ServiceAccountCredentials {
     /// Creates a new builder-style object to manufacture [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
@@ -4553,7 +4339,7 @@ impl ServiceAccountCredentials {
 
 /// <p>Describes an application in the application catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Application {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -4665,27 +4451,6 @@ impl Application {
     /// <p>The time at which the application was created within the app block.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Application {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Application");
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("icon_url", &self.icon_url);
-        formatter.field("launch_path", &self.launch_path);
-        formatter.field("launch_parameters", &self.launch_parameters);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field("description", &self.description);
-        formatter.field("arn", &self.arn);
-        formatter.field("app_block_arn", &self.app_block_arn);
-        formatter.field("icon_s3_location", &self.icon_s3_location);
-        formatter.field("platforms", &self.platforms);
-        formatter.field("instance_families", &self.instance_families);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`Application`](crate::model::Application).
@@ -5034,7 +4799,7 @@ impl AsRef<str> for ApplicationAttribute {
 
 /// <p>Describes a virtual machine that is used to create an image. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageBuilder {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
@@ -5239,36 +5004,6 @@ impl ImageBuilder {
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     pub fn access_endpoints(&self) -> std::option::Option<&[crate::model::AccessEndpoint]> {
         self.access_endpoints.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageBuilder");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("image_arn", &self.image_arn);
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("platform", &self.platform);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.field("created_time", &self.created_time);
-        formatter.field(
-            "enable_default_internet_access",
-            &self.enable_default_internet_access,
-        );
-        formatter.field("domain_join_info", &self.domain_join_info);
-        formatter.field(
-            "network_access_configuration",
-            &self.network_access_configuration,
-        );
-        formatter.field("image_builder_errors", &self.image_builder_errors);
-        formatter.field("appstream_agent_version", &self.appstream_agent_version);
-        formatter.field("access_endpoints", &self.access_endpoints);
-        formatter.finish()
     }
 }
 /// See [`ImageBuilder`](crate::model::ImageBuilder).
@@ -5641,7 +5376,7 @@ impl ImageBuilder {
 
 /// <p>Describes a resource error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceError {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -5665,15 +5400,6 @@ impl ResourceError {
     /// <p>The time the error occurred.</p>
     pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_timestamp", &self.error_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ResourceError`](crate::model::ResourceError).
@@ -5745,7 +5471,7 @@ impl ResourceError {
 
 /// <p>Describes the network details of the fleet or image builder instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkAccessConfiguration {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
     #[doc(hidden)]
@@ -5762,14 +5488,6 @@ impl NetworkAccessConfiguration {
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
     pub fn eni_id(&self) -> std::option::Option<&str> {
         self.eni_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkAccessConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkAccessConfiguration");
-        formatter.field("eni_private_ip_address", &self.eni_private_ip_address);
-        formatter.field("eni_id", &self.eni_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkAccessConfiguration`](crate::model::NetworkAccessConfiguration).
@@ -5823,7 +5541,7 @@ impl NetworkAccessConfiguration {
 
 /// <p>Describes the reason why the last image builder state change occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageBuilderStateChangeReason {
     /// <p>The state change reason code.</p>
     #[doc(hidden)]
@@ -5840,14 +5558,6 @@ impl ImageBuilderStateChangeReason {
     /// <p>The state change reason message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageBuilderStateChangeReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageBuilderStateChangeReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ImageBuilderStateChangeReason`](crate::model::ImageBuilderStateChangeReason).
@@ -6142,7 +5852,7 @@ impl AsRef<str> for ImageBuilderState {
 
 /// <p>The application associated to an entitlement. Access is controlled based on user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitledApplication {
     /// <p>The identifier of the application.</p>
     #[doc(hidden)]
@@ -6152,13 +5862,6 @@ impl EntitledApplication {
     /// <p>The identifier of the application.</p>
     pub fn application_identifier(&self) -> std::option::Option<&str> {
         self.application_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for EntitledApplication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitledApplication");
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.finish()
     }
 }
 /// See [`EntitledApplication`](crate::model::EntitledApplication).
@@ -6348,7 +6051,7 @@ impl std::fmt::Debug for UserStackAssociation {
 pub mod user_stack_association {
 
     /// A builder for [`UserStackAssociation`](crate::model::UserStackAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -6411,6 +6114,16 @@ pub mod user_stack_association {
                 authentication_type: self.authentication_type,
                 send_email_notification: self.send_email_notification.unwrap_or_default(),
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("stack_name", &self.stack_name);
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("authentication_type", &self.authentication_type);
+            formatter.field("send_email_notification", &self.send_email_notification);
+            formatter.finish()
         }
     }
 }
@@ -6520,7 +6233,7 @@ impl std::fmt::Debug for User {
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -6650,6 +6363,20 @@ pub mod user {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("enabled", &self.enabled);
+            formatter.field("status", &self.status);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_time", &self.created_time);
+            formatter.field("authentication_type", &self.authentication_type);
+            formatter.finish()
+        }
+    }
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -6660,7 +6387,7 @@ impl User {
 
 /// <p>Describes information about the usage report subscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageReportSubscription {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
@@ -6696,19 +6423,6 @@ impl UsageReportSubscription {
         &self,
     ) -> std::option::Option<&[crate::model::LastReportGenerationExecutionError]> {
         self.subscription_errors.as_deref()
-    }
-}
-impl std::fmt::Debug for UsageReportSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageReportSubscription");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("schedule", &self.schedule);
-        formatter.field(
-            "last_generated_report_date",
-            &self.last_generated_report_date,
-        );
-        formatter.field("subscription_errors", &self.subscription_errors);
-        formatter.finish()
     }
 }
 /// See [`UsageReportSubscription`](crate::model::UsageReportSubscription).
@@ -6809,7 +6523,7 @@ impl UsageReportSubscription {
 
 /// <p>Describes the error that is returned when a usage report can't be generated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LastReportGenerationExecutionError {
     /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
     #[doc(hidden)]
@@ -6826,14 +6540,6 @@ impl LastReportGenerationExecutionError {
     /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for LastReportGenerationExecutionError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastReportGenerationExecutionError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`LastReportGenerationExecutionError`](crate::model::LastReportGenerationExecutionError).
@@ -7078,7 +6784,7 @@ impl AsRef<str> for UsageReportSchedule {
 
 /// <p>Describes a streaming session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Session {
     /// <p>The identifier of the streaming session.</p>
     #[doc(hidden)]
@@ -7153,25 +6859,6 @@ impl Session {
         &self,
     ) -> std::option::Option<&crate::model::NetworkAccessConfiguration> {
         self.network_access_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Session {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Session");
-        formatter.field("id", &self.id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("state", &self.state);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("max_expiration_time", &self.max_expiration_time);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field(
-            "network_access_configuration",
-            &self.network_access_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`Session`](crate::model::Session).
@@ -7524,7 +7211,7 @@ impl AsRef<str> for SessionState {
 
 /// <p>Describes an image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
@@ -7650,32 +7337,6 @@ impl Image {
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
     pub fn image_errors(&self) -> std::option::Option<&[crate::model::ResourceError]> {
         self.image_errors.as_deref()
-    }
-}
-impl std::fmt::Debug for Image {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Image");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("base_image_arn", &self.base_image_arn);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("state", &self.state);
-        formatter.field("visibility", &self.visibility);
-        formatter.field("image_builder_supported", &self.image_builder_supported);
-        formatter.field("image_builder_name", &self.image_builder_name);
-        formatter.field("platform", &self.platform);
-        formatter.field("description", &self.description);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.field("applications", &self.applications);
-        formatter.field("created_time", &self.created_time);
-        formatter.field(
-            "public_base_image_released_date",
-            &self.public_base_image_released_date,
-        );
-        formatter.field("appstream_agent_version", &self.appstream_agent_version);
-        formatter.field("image_permissions", &self.image_permissions);
-        formatter.field("image_errors", &self.image_errors);
-        formatter.finish()
     }
 }
 /// See [`Image`](crate::model::Image).
@@ -7954,7 +7615,7 @@ impl Image {
 
 /// <p>Describes the reason why the last image state change occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageStateChangeReason {
     /// <p>The state change reason code.</p>
     #[doc(hidden)]
@@ -7971,14 +7632,6 @@ impl ImageStateChangeReason {
     /// <p>The state change reason message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageStateChangeReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageStateChangeReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ImageStateChangeReason`](crate::model::ImageStateChangeReason).
@@ -8351,7 +8004,7 @@ impl AsRef<str> for ImageState {
 
 /// <p>Describes the permissions that are available to the specified AWS account for a shared image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SharedImagePermissions {
     /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
     #[doc(hidden)]
@@ -8368,14 +8021,6 @@ impl SharedImagePermissions {
     /// <p>Describes the permissions for a shared image.</p>
     pub fn image_permissions(&self) -> std::option::Option<&crate::model::ImagePermissions> {
         self.image_permissions.as_ref()
-    }
-}
-impl std::fmt::Debug for SharedImagePermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SharedImagePermissions");
-        formatter.field("shared_account_id", &self.shared_account_id);
-        formatter.field("image_permissions", &self.image_permissions);
-        formatter.finish()
     }
 }
 /// See [`SharedImagePermissions`](crate::model::SharedImagePermissions).
@@ -8432,7 +8077,7 @@ impl SharedImagePermissions {
 
 /// <p>Describes the application fleet association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationFleetAssociation {
     /// <p>The name of the fleet associated with the application.</p>
     #[doc(hidden)]
@@ -8449,14 +8094,6 @@ impl ApplicationFleetAssociation {
     /// <p>The ARN of the application associated with the fleet.</p>
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationFleetAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationFleetAssociation");
-        formatter.field("fleet_name", &self.fleet_name);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.finish()
     }
 }
 /// See [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation).
@@ -8512,7 +8149,7 @@ impl ApplicationFleetAssociation {
 /// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard disk includes the application binaries and other files necessary to launch your applications. Multiple applications can be assigned to a single app block.</p>
 /// <p>This is only supported for Elastic fleets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppBlock {
     /// <p>The name of the app block.</p>
     #[doc(hidden)]
@@ -8564,19 +8201,6 @@ impl AppBlock {
     /// <p>The created time of the app block.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for AppBlock {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppBlock");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("source_s3_location", &self.source_s3_location);
-        formatter.field("setup_script_details", &self.setup_script_details);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`AppBlock`](crate::model::AppBlock).
@@ -8696,7 +8320,7 @@ impl AppBlock {
 
 /// <p>Describes the details of the script.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScriptDetails {
     /// <p>The S3 object location for the script.</p>
     #[doc(hidden)]
@@ -8727,16 +8351,6 @@ impl ScriptDetails {
     /// <p>The run timeout, in seconds, for the script.</p>
     pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.timeout_in_seconds
-    }
-}
-impl std::fmt::Debug for ScriptDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScriptDetails");
-        formatter.field("script_s3_location", &self.script_s3_location);
-        formatter.field("executable_path", &self.executable_path);
-        formatter.field("executable_parameters", &self.executable_parameters);
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`ScriptDetails`](crate::model::ScriptDetails).
@@ -8910,7 +8524,7 @@ impl AsRef<str> for MessageAction {
 
 /// <p>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserStackAssociationError {
     /// <p>Information about the user and associated stack.</p>
     #[doc(hidden)]
@@ -8936,15 +8550,6 @@ impl UserStackAssociationError {
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for UserStackAssociationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserStackAssociationError");
-        formatter.field("user_stack_association", &self.user_stack_association);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`UserStackAssociationError`](crate::model::UserStackAssociationError).

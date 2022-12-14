@@ -2,7 +2,7 @@
 
 /// <p>The detail data for a template sync configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSyncConfig {
     /// <p>The template name.</p>
     #[doc(hidden)]
@@ -47,18 +47,6 @@ impl TemplateSyncConfig {
     /// <p>A subdirectory path to your template bundle version.</p>
     pub fn subdirectory(&self) -> std::option::Option<&str> {
         self.subdirectory.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateSyncConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSyncConfig");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("repository_provider", &self.repository_provider);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch", &self.branch);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.finish()
     }
 }
 /// See [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
@@ -451,7 +439,7 @@ impl std::fmt::Debug for ServiceTemplateVersionSummary {
 pub mod service_template_version_summary {
 
     /// A builder for [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) major_version: std::option::Option<std::string::String>,
@@ -603,6 +591,22 @@ pub mod service_template_version_summary {
                 created_at: self.created_at,
                 last_modified_at: self.last_modified_at,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("template_name", &self.template_name);
+            formatter.field("major_version", &self.major_version);
+            formatter.field("minor_version", &self.minor_version);
+            formatter.field("recommended_minor_version", &self.recommended_minor_version);
+            formatter.field("status", &self.status);
+            formatter.field("status_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.finish()
         }
     }
 }
@@ -856,7 +860,7 @@ impl std::fmt::Debug for ServiceTemplateVersion {
 pub mod service_template_version {
 
     /// A builder for [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) major_version: std::option::Option<std::string::String>,
@@ -1077,6 +1081,31 @@ pub mod service_template_version {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("template_name", &self.template_name);
+            formatter.field("major_version", &self.major_version);
+            formatter.field("minor_version", &self.minor_version);
+            formatter.field("recommended_minor_version", &self.recommended_minor_version);
+            formatter.field("status", &self.status);
+            formatter.field("status_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field(
+                "compatible_environment_templates",
+                &self.compatible_environment_templates,
+            );
+            formatter.field("schema", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "supported_component_sources",
+                &self.supported_component_sources,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl ServiceTemplateVersion {
     /// Creates a new builder-style object to manufacture [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
@@ -1174,7 +1203,7 @@ impl AsRef<str> for ServiceTemplateSupportedComponentSourceType {
 
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompatibleEnvironmentTemplate {
     /// <p>The compatible environment template name.</p>
     #[doc(hidden)]
@@ -1191,14 +1220,6 @@ impl CompatibleEnvironmentTemplate {
     /// <p>The major version of the compatible environment template.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
-    }
-}
-impl std::fmt::Debug for CompatibleEnvironmentTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompatibleEnvironmentTemplate");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.finish()
     }
 }
 /// See [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
@@ -1255,7 +1276,7 @@ impl CompatibleEnvironmentTemplate {
 
 /// <p>A description of a resource tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the resource tag.</p>
     #[doc(hidden)]
@@ -1272,14 +1293,6 @@ impl Tag {
     /// <p>The value of the resource tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1330,7 +1343,7 @@ impl Tag {
 
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompatibleEnvironmentTemplateInput {
     /// <p>The compatible environment template name.</p>
     #[doc(hidden)]
@@ -1347,14 +1360,6 @@ impl CompatibleEnvironmentTemplateInput {
     /// <p>The major version of the compatible environment template.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
-    }
-}
-impl std::fmt::Debug for CompatibleEnvironmentTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompatibleEnvironmentTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.finish()
     }
 }
 /// See [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
@@ -1448,7 +1453,7 @@ impl TemplateVersionSourceInput {
 
 /// <p>Template bundle S3 bucket data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ObjectSource {
     /// <p>The name of the S3 bucket that contains a template bundle.</p>
     #[doc(hidden)]
@@ -1465,14 +1470,6 @@ impl S3ObjectSource {
     /// <p>The path to the S3 bucket that contains a template bundle.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ObjectSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ObjectSource");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`S3ObjectSource`](crate::model::S3ObjectSource).
@@ -1602,7 +1599,7 @@ impl std::fmt::Debug for ServiceTemplateSummary {
 pub mod service_template_summary {
 
     /// A builder for [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1718,6 +1715,20 @@ pub mod service_template_summary {
                 recommended_version: self.recommended_version,
                 pipeline_provisioning: self.pipeline_provisioning,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("recommended_version", &self.recommended_version);
+            formatter.field("pipeline_provisioning", &self.pipeline_provisioning);
+            formatter.finish()
         }
     }
 }
@@ -1902,7 +1913,7 @@ impl std::fmt::Debug for ServiceTemplate {
 pub mod service_template {
 
     /// A builder for [`ServiceTemplate`](crate::model::ServiceTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2035,6 +2046,21 @@ pub mod service_template {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("recommended_version", &self.recommended_version);
+            formatter.field("encryption_key", &self.encryption_key);
+            formatter.field("pipeline_provisioning", &self.pipeline_provisioning);
+            formatter.finish()
+        }
+    }
 }
 impl ServiceTemplate {
     /// Creates a new builder-style object to manufacture [`ServiceTemplate`](crate::model::ServiceTemplate).
@@ -2124,7 +2150,7 @@ impl std::fmt::Debug for ServiceSummary {
 pub mod service_summary {
 
     /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2243,6 +2269,20 @@ pub mod service_summary {
                 status: self.status,
                 status_message: self.status_message,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field("status", &self.status);
+            formatter.field("status_message", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2539,7 +2579,7 @@ impl std::fmt::Debug for Service {
 pub mod service {
 
     /// A builder for [`Service`](crate::model::Service).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2729,6 +2769,25 @@ pub mod service {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field("status", &self.status);
+            formatter.field("status_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("pipeline", &self.pipeline);
+            formatter.field("repository_connection_arn", &self.repository_connection_arn);
+            formatter.field("repository_id", &self.repository_id);
+            formatter.field("branch_name", &self.branch_name);
+            formatter.finish()
+        }
+    }
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
@@ -2843,7 +2902,7 @@ impl std::fmt::Debug for ServicePipeline {
 pub mod service_pipeline {
 
     /// A builder for [`ServicePipeline`](crate::model::ServicePipeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2995,6 +3054,31 @@ pub mod service_pipeline {
                 deployment_status_message: self.deployment_status_message,
                 spec: self.spec,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field(
+                "last_deployment_attempted_at",
+                &self.last_deployment_attempted_at,
+            );
+            formatter.field(
+                "last_deployment_succeeded_at",
+                &self.last_deployment_succeeded_at,
+            );
+            formatter.field("template_name", &self.template_name);
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.field("deployment_status", &self.deployment_status);
+            formatter.field(
+                "deployment_status_message",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3238,7 +3322,7 @@ impl AsRef<str> for DeploymentUpdateType {
 
 /// <p>Detail data for a provisioned resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedResource {
     /// <p>The provisioned resource name.</p>
     #[doc(hidden)]
@@ -3266,15 +3350,6 @@ impl ProvisionedResource {
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedResourceEngine> {
         self.provisioning_engine.as_ref()
-    }
-}
-impl std::fmt::Debug for ProvisionedResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedResource");
-        formatter.field("name", &self.name);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("provisioning_engine", &self.provisioning_engine);
-        formatter.finish()
     }
 }
 /// See [`ProvisionedResource`](crate::model::ProvisionedResource).
@@ -3469,7 +3544,7 @@ impl std::fmt::Debug for Output {
 pub mod output {
 
     /// A builder for [`Output`](crate::model::Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value_string: std::option::Option<std::string::String>,
@@ -3501,6 +3576,14 @@ pub mod output {
                 key: self.key,
                 value_string: self.value_string,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key", &self.key);
+            formatter.field("value_string", &self.value_string);
+            formatter.finish()
         }
     }
 }
@@ -3633,7 +3716,7 @@ impl std::fmt::Debug for ServiceInstanceSummary {
 pub mod service_instance_summary {
 
     /// A builder for [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3814,6 +3897,33 @@ pub mod service_instance_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field(
+                "last_deployment_attempted_at",
+                &self.last_deployment_attempted_at,
+            );
+            formatter.field(
+                "last_deployment_succeeded_at",
+                &self.last_deployment_succeeded_at,
+            );
+            formatter.field("service_name", &self.service_name);
+            formatter.field("environment_name", &self.environment_name);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.field("deployment_status", &self.deployment_status);
+            formatter.field(
+                "deployment_status_message",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
+        }
+    }
 }
 impl ServiceInstanceSummary {
     /// Creates a new builder-style object to manufacture [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
@@ -3952,7 +4062,7 @@ impl std::fmt::Debug for ServiceInstance {
 pub mod service_instance {
 
     /// A builder for [`ServiceInstance`](crate::model::ServiceInstance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4145,6 +4255,34 @@ pub mod service_instance {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field(
+                "last_deployment_attempted_at",
+                &self.last_deployment_attempted_at,
+            );
+            formatter.field(
+                "last_deployment_succeeded_at",
+                &self.last_deployment_succeeded_at,
+            );
+            formatter.field("service_name", &self.service_name);
+            formatter.field("environment_name", &self.environment_name);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.field("deployment_status", &self.deployment_status);
+            formatter.field(
+                "deployment_status_message",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ServiceInstance {
     /// Creates a new builder-style object to manufacture [`ServiceInstance`](crate::model::ServiceInstance).
@@ -4155,7 +4293,7 @@ impl ServiceInstance {
 
 /// <p>Summary data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
@@ -4179,15 +4317,6 @@ impl RepositorySummary {
     /// <p>The repository name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositorySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositorySummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("provider", &self.provider);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`RepositorySummary`](crate::model::RepositorySummary).
@@ -4253,7 +4382,7 @@ impl RepositorySummary {
 
 /// <p>Detailed data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
@@ -4291,17 +4420,6 @@ impl Repository {
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
-    }
-}
-impl std::fmt::Debug for Repository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Repository");
-        formatter.field("arn", &self.arn);
-        formatter.field("provider", &self.provider);
-        formatter.field("name", &self.name);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.finish()
     }
 }
 /// See [`Repository`](crate::model::Repository).
@@ -4492,7 +4610,7 @@ impl std::fmt::Debug for EnvironmentTemplateVersionSummary {
 pub mod environment_template_version_summary {
 
     /// A builder for [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) major_version: std::option::Option<std::string::String>,
@@ -4646,6 +4764,22 @@ pub mod environment_template_version_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("template_name", &self.template_name);
+            formatter.field("major_version", &self.major_version);
+            formatter.field("minor_version", &self.minor_version);
+            formatter.field("recommended_minor_version", &self.recommended_minor_version);
+            formatter.field("status", &self.status);
+            formatter.field("status_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.finish()
+        }
+    }
 }
 impl EnvironmentTemplateVersionSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
@@ -4759,7 +4893,7 @@ impl std::fmt::Debug for EnvironmentTemplateVersion {
 pub mod environment_template_version {
 
     /// A builder for [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) major_version: std::option::Option<std::string::String>,
@@ -4925,6 +5059,23 @@ pub mod environment_template_version {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("template_name", &self.template_name);
+            formatter.field("major_version", &self.major_version);
+            formatter.field("minor_version", &self.minor_version);
+            formatter.field("recommended_minor_version", &self.recommended_minor_version);
+            formatter.field("status", &self.status);
+            formatter.field("status_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field("schema", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl EnvironmentTemplateVersion {
     /// Creates a new builder-style object to manufacture [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
@@ -5014,7 +5165,7 @@ impl std::fmt::Debug for EnvironmentTemplateSummary {
 pub mod environment_template_summary {
 
     /// A builder for [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5132,6 +5283,20 @@ pub mod environment_template_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("recommended_version", &self.recommended_version);
+            formatter.field("provisioning", &self.provisioning);
+            formatter.finish()
+        }
+    }
 }
 impl EnvironmentTemplateSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
@@ -5229,7 +5394,7 @@ impl std::fmt::Debug for EnvironmentTemplate {
 pub mod environment_template {
 
     /// A builder for [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5360,6 +5525,21 @@ pub mod environment_template {
                 encryption_key: self.encryption_key,
                 provisioning: self.provisioning,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("recommended_version", &self.recommended_version);
+            formatter.field("encryption_key", &self.encryption_key);
+            formatter.field("provisioning", &self.provisioning);
+            formatter.finish()
         }
     }
 }
@@ -5531,7 +5711,7 @@ impl std::fmt::Debug for EnvironmentSummary {
 pub mod environment_summary {
 
     /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5779,6 +5959,40 @@ pub mod environment_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_at", &self.created_at);
+            formatter.field(
+                "last_deployment_attempted_at",
+                &self.last_deployment_attempted_at,
+            );
+            formatter.field(
+                "last_deployment_succeeded_at",
+                &self.last_deployment_succeeded_at,
+            );
+            formatter.field("arn", &self.arn);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.field("deployment_status", &self.deployment_status);
+            formatter.field(
+                "deployment_status_message",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("proton_service_role_arn", &self.proton_service_role_arn);
+            formatter.field(
+                "environment_account_connection_id",
+                &self.environment_account_connection_id,
+            );
+            formatter.field("environment_account_id", &self.environment_account_id);
+            formatter.field("provisioning", &self.provisioning);
+            formatter.field("component_role_arn", &self.component_role_arn);
+            formatter.finish()
+        }
+    }
 }
 impl EnvironmentSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
@@ -5789,7 +6003,7 @@ impl EnvironmentSummary {
 
 /// <p>A search filter for environment templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentTemplateFilter {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
     #[doc(hidden)]
@@ -5806,14 +6020,6 @@ impl EnvironmentTemplateFilter {
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentTemplateFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentTemplateFilter");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("major_version", &self.major_version);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
@@ -6045,7 +6251,7 @@ impl std::fmt::Debug for Environment {
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6320,6 +6526,42 @@ pub mod environment {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_at", &self.created_at);
+            formatter.field(
+                "last_deployment_attempted_at",
+                &self.last_deployment_attempted_at,
+            );
+            formatter.field(
+                "last_deployment_succeeded_at",
+                &self.last_deployment_succeeded_at,
+            );
+            formatter.field("arn", &self.arn);
+            formatter.field("template_name", &self.template_name);
+            formatter.field("template_major_version", &self.template_major_version);
+            formatter.field("template_minor_version", &self.template_minor_version);
+            formatter.field("deployment_status", &self.deployment_status);
+            formatter.field(
+                "deployment_status_message",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("proton_service_role_arn", &self.proton_service_role_arn);
+            formatter.field(
+                "environment_account_connection_id",
+                &self.environment_account_connection_id,
+            );
+            formatter.field("environment_account_id", &self.environment_account_id);
+            formatter.field("spec", &"*** Sensitive Data Redacted ***");
+            formatter.field("provisioning", &self.provisioning);
+            formatter.field("provisioning_repository", &self.provisioning_repository);
+            formatter.field("component_role_arn", &self.component_role_arn);
+            formatter.finish()
+        }
+    }
 }
 impl Environment {
     /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
@@ -6330,7 +6572,7 @@ impl Environment {
 
 /// <p>Detail data for a linked repository branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryBranch {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
@@ -6361,16 +6603,6 @@ impl RepositoryBranch {
     /// <p>The repository branch.</p>
     pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryBranch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryBranch");
-        formatter.field("arn", &self.arn);
-        formatter.field("provider", &self.provider);
-        formatter.field("name", &self.name);
-        formatter.field("branch", &self.branch);
-        formatter.finish()
     }
 }
 /// See [`RepositoryBranch`](crate::model::RepositoryBranch).
@@ -6448,7 +6680,7 @@ impl RepositoryBranch {
 
 /// <p>Detail input data for a linked repository branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryBranchInput {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
@@ -6472,15 +6704,6 @@ impl RepositoryBranchInput {
     /// <p>The repository branch.</p>
     pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryBranchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryBranchInput");
-        formatter.field("provider", &self.provider);
-        formatter.field("name", &self.name);
-        formatter.field("branch", &self.branch);
-        formatter.finish()
     }
 }
 /// See [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
@@ -6546,7 +6769,7 @@ impl RepositoryBranchInput {
 
 /// <p>Detailed data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentAccountConnection {
     /// <p>The ID of the environment account connection.</p>
     #[doc(hidden)]
@@ -6623,22 +6846,6 @@ impl EnvironmentAccountConnection {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentAccountConnection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentAccountConnection");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("management_account_id", &self.management_account_id);
-        formatter.field("environment_account_id", &self.environment_account_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("requested_at", &self.requested_at);
-        formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field("status", &self.status);
-        formatter.field("component_role_arn", &self.component_role_arn);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
@@ -6907,7 +7114,7 @@ impl AsRef<str> for EnvironmentAccountConnectionStatus {
 
 /// <p>Summary data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentAccountConnectionSummary {
     /// <p>The ID of the environment account connection.</p>
     #[doc(hidden)]
@@ -6984,22 +7191,6 @@ impl EnvironmentAccountConnectionSummary {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EnvironmentAccountConnectionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentAccountConnectionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("management_account_id", &self.management_account_id);
-        formatter.field("environment_account_id", &self.environment_account_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("requested_at", &self.requested_at);
-        formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field("status", &self.status);
-        formatter.field("component_role_arn", &self.component_role_arn);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
@@ -7384,7 +7575,7 @@ impl std::fmt::Debug for ComponentSummary {
 pub mod component_summary {
 
     /// A builder for [`ComponentSummary`](crate::model::ComponentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7550,6 +7741,32 @@ pub mod component_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("environment_name", &self.environment_name);
+            formatter.field("service_name", &self.service_name);
+            formatter.field("service_instance_name", &self.service_instance_name);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field(
+                "last_deployment_attempted_at",
+                &self.last_deployment_attempted_at,
+            );
+            formatter.field(
+                "last_deployment_succeeded_at",
+                &self.last_deployment_succeeded_at,
+            );
+            formatter.field("deployment_status", &self.deployment_status);
+            formatter.field(
+                "deployment_status_message",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
+        }
+    }
 }
 impl ComponentSummary {
     /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
@@ -7689,7 +7906,7 @@ impl std::fmt::Debug for Component {
 pub mod component {
 
     /// A builder for [`Component`](crate::model::Component).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -7879,6 +8096,34 @@ pub mod component {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("environment_name", &self.environment_name);
+            formatter.field("service_name", &self.service_name);
+            formatter.field("service_instance_name", &self.service_instance_name);
+            formatter.field("created_at", &self.created_at);
+            formatter.field("last_modified_at", &self.last_modified_at);
+            formatter.field(
+                "last_deployment_attempted_at",
+                &self.last_deployment_attempted_at,
+            );
+            formatter.field(
+                "last_deployment_succeeded_at",
+                &self.last_deployment_succeeded_at,
+            );
+            formatter.field("deployment_status", &self.deployment_status);
+            formatter.field(
+                "deployment_status_message",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Component {
     /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
@@ -7981,7 +8226,7 @@ impl AsRef<str> for ComponentDeploymentUpdateType {
 
 /// <p>Proton settings that are used for multiple services in the Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     #[doc(hidden)]
@@ -8000,17 +8245,6 @@ impl AccountSettings {
         &self,
     ) -> std::option::Option<&crate::model::RepositoryBranch> {
         self.pipeline_provisioning_repository.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountSettings");
-        formatter.field("pipeline_service_role_arn", &self.pipeline_service_role_arn);
-        formatter.field(
-            "pipeline_provisioning_repository",
-            &self.pipeline_provisioning_repository,
-        );
-        formatter.finish()
     }
 }
 /// See [`AccountSettings`](crate::model::AccountSettings).
@@ -8168,7 +8402,7 @@ impl AsRef<str> for ResourceDeploymentStatus {
 
 /// <p>A repository sync definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositorySyncDefinition {
     /// <p>The resource that is synced to.</p>
     #[doc(hidden)]
@@ -8199,16 +8433,6 @@ impl RepositorySyncDefinition {
     /// <p>The directory in the repository.</p>
     pub fn directory(&self) -> std::option::Option<&str> {
         self.directory.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositorySyncDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositorySyncDefinition");
-        formatter.field("target", &self.target);
-        formatter.field("parent", &self.parent);
-        formatter.field("branch", &self.branch);
-        formatter.field("directory", &self.directory);
-        formatter.finish()
     }
 }
 /// See [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
@@ -8368,7 +8592,7 @@ impl AsRef<str> for SyncType {
 
 /// <p>Revision detail data for a commit and push that activates a sync attempt</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Revision {
     /// <p>The repository name.</p>
     #[doc(hidden)]
@@ -8406,17 +8630,6 @@ impl Revision {
     /// <p>The repository branch.</p>
     pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
-    }
-}
-impl std::fmt::Debug for Revision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Revision");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_provider", &self.repository_provider);
-        formatter.field("sha", &self.sha);
-        formatter.field("directory", &self.directory);
-        formatter.field("branch", &self.branch);
-        formatter.finish()
     }
 }
 /// See [`Revision`](crate::model::Revision).
@@ -8509,7 +8722,7 @@ impl Revision {
 
 /// <p>Detail data for a resource sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSyncAttempt {
     /// <p>Detail data for the initial repository commit, path and push.</p>
     #[doc(hidden)]
@@ -8554,18 +8767,6 @@ impl ResourceSyncAttempt {
     /// <p>An array of events with detail data.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::ResourceSyncEvent]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceSyncAttempt {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSyncAttempt");
-        formatter.field("initial_revision", &self.initial_revision);
-        formatter.field("target_revision", &self.target_revision);
-        formatter.field("target", &self.target);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("status", &self.status);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
@@ -8685,7 +8886,7 @@ impl ResourceSyncAttempt {
 
 /// <p>Detail data for a resource sync event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSyncEvent {
     /// <p>The type of event.</p>
     #[doc(hidden)]
@@ -8716,16 +8917,6 @@ impl ResourceSyncEvent {
     /// <p>A resource sync event.</p>
     pub fn event(&self) -> std::option::Option<&str> {
         self.event.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceSyncEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSyncEvent");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("time", &self.time);
-        formatter.field("event", &self.event);
-        formatter.finish()
     }
 }
 /// See [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
@@ -8906,7 +9097,7 @@ impl AsRef<str> for ResourceSyncStatus {
 
 /// <p>Detail data for a repository sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
     #[doc(hidden)]
@@ -8930,15 +9121,6 @@ impl RepositorySyncAttempt {
     /// <p>Detail data for sync attempt events.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::RepositorySyncEvent]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositorySyncAttempt {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositorySyncAttempt");
-        formatter.field("started_at", &self.started_at);
-        formatter.field("status", &self.status);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
@@ -9016,7 +9198,7 @@ impl RepositorySyncAttempt {
 
 /// <p>Repository sync event detail data for a sync attempt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositorySyncEvent {
     /// <p>The type of event.</p>
     #[doc(hidden)]
@@ -9047,16 +9229,6 @@ impl RepositorySyncEvent {
     /// <p>Event detail for a repository sync attempt.</p>
     pub fn event(&self) -> std::option::Option<&str> {
         self.event.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositorySyncEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositorySyncEvent");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("time", &self.time);
-        formatter.field("event", &self.event);
-        formatter.finish()
     }
 }
 /// See [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).

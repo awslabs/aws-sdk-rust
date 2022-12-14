@@ -327,7 +327,7 @@ impl AsRef<str> for ShippingOption {
 
 /// <p>An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnDeviceServiceConfiguration {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
     #[doc(hidden)]
@@ -348,14 +348,6 @@ impl OnDeviceServiceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::TgwOnDeviceServiceConfiguration> {
         self.tgw_on_device_service.as_ref()
-    }
-}
-impl std::fmt::Debug for OnDeviceServiceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnDeviceServiceConfiguration");
-        formatter.field("nfs_on_device_service", &self.nfs_on_device_service);
-        formatter.field("tgw_on_device_service", &self.tgw_on_device_service);
-        formatter.finish()
     }
 }
 /// See [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
@@ -420,7 +412,7 @@ impl OnDeviceServiceConfiguration {
 
 /// <p>An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TgwOnDeviceServiceConfiguration {
     /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.</p>
     #[doc(hidden)]
@@ -437,14 +429,6 @@ impl TgwOnDeviceServiceConfiguration {
     /// <p>The scale unit of the virtual tapes on the device.</p>
     pub fn storage_unit(&self) -> std::option::Option<&crate::model::StorageUnit> {
         self.storage_unit.as_ref()
-    }
-}
-impl std::fmt::Debug for TgwOnDeviceServiceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TgwOnDeviceServiceConfiguration");
-        formatter.field("storage_limit", &self.storage_limit);
-        formatter.field("storage_unit", &self.storage_unit);
-        formatter.finish()
     }
 }
 /// See [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
@@ -583,7 +567,7 @@ impl AsRef<str> for StorageUnit {
 
 /// <p>An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NfsOnDeviceServiceConfiguration {
     /// <p>The maximum NFS storage for one Snow Family device.</p>
     #[doc(hidden)]
@@ -602,14 +586,6 @@ impl NfsOnDeviceServiceConfiguration {
     /// <p>Valid values: TB.</p>
     pub fn storage_unit(&self) -> std::option::Option<&crate::model::StorageUnit> {
         self.storage_unit.as_ref()
-    }
-}
-impl std::fmt::Debug for NfsOnDeviceServiceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NfsOnDeviceServiceConfiguration");
-        formatter.field("storage_limit", &self.storage_limit);
-        formatter.field("storage_unit", &self.storage_unit);
-        formatter.finish()
     }
 }
 /// See [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
@@ -665,7 +641,7 @@ impl NfsOnDeviceServiceConfiguration {
 
 /// <p>Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobResource {
     /// <p>An array of <code>S3Resource</code> objects.</p>
     #[doc(hidden)]
@@ -689,15 +665,6 @@ impl JobResource {
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
     pub fn ec2_ami_resources(&self) -> std::option::Option<&[crate::model::Ec2AmiResource]> {
         self.ec2_ami_resources.as_deref()
-    }
-}
-impl std::fmt::Debug for JobResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobResource");
-        formatter.field("s3_resources", &self.s3_resources);
-        formatter.field("lambda_resources", &self.lambda_resources);
-        formatter.field("ec2_ami_resources", &self.ec2_ami_resources);
-        formatter.finish()
     }
 }
 /// See [`JobResource`](crate::model::JobResource).
@@ -789,7 +756,7 @@ impl JobResource {
 
 /// <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2AmiResource {
     /// <p>The ID of the AMI in Amazon EC2.</p>
     #[doc(hidden)]
@@ -806,14 +773,6 @@ impl Ec2AmiResource {
     /// <p>The ID of the AMI on the Snow device.</p>
     pub fn snowball_ami_id(&self) -> std::option::Option<&str> {
         self.snowball_ami_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2AmiResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2AmiResource");
-        formatter.field("ami_id", &self.ami_id);
-        formatter.field("snowball_ami_id", &self.snowball_ami_id);
-        formatter.finish()
     }
 }
 /// See [`Ec2AmiResource`](crate::model::Ec2AmiResource).
@@ -867,7 +826,7 @@ impl Ec2AmiResource {
 
 /// <p>Identifies </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaResource {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
     #[doc(hidden)]
@@ -884,14 +843,6 @@ impl LambdaResource {
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
     pub fn event_triggers(&self) -> std::option::Option<&[crate::model::EventTriggerDefinition]> {
         self.event_triggers.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaResource");
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.field("event_triggers", &self.event_triggers);
-        formatter.finish()
     }
 }
 /// See [`LambdaResource`](crate::model::LambdaResource).
@@ -952,7 +903,7 @@ impl LambdaResource {
 
 /// <p>The container for the <code>EventTriggerDefinition$EventResourceARN</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTriggerDefinition {
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
     #[doc(hidden)]
@@ -962,13 +913,6 @@ impl EventTriggerDefinition {
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
     pub fn event_resource_arn(&self) -> std::option::Option<&str> {
         self.event_resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EventTriggerDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTriggerDefinition");
-        formatter.field("event_resource_arn", &self.event_resource_arn);
-        formatter.finish()
     }
 }
 /// See [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
@@ -1010,7 +954,7 @@ impl EventTriggerDefinition {
 
 /// <p>Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Resource {
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -1037,15 +981,6 @@ impl S3Resource {
         &self,
     ) -> std::option::Option<&[crate::model::TargetOnDeviceService]> {
         self.target_on_device_services.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Resource");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("key_range", &self.key_range);
-        formatter.field("target_on_device_services", &self.target_on_device_services);
-        formatter.finish()
     }
 }
 /// See [`S3Resource`](crate::model::S3Resource).
@@ -1121,7 +1056,7 @@ impl S3Resource {
 
 /// <p>An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetOnDeviceService {
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
     #[doc(hidden)]
@@ -1138,14 +1073,6 @@ impl TargetOnDeviceService {
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
     pub fn transfer_option(&self) -> std::option::Option<&crate::model::TransferOption> {
         self.transfer_option.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetOnDeviceService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetOnDeviceService");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("transfer_option", &self.transfer_option);
-        formatter.finish()
     }
 }
 /// See [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
@@ -1389,7 +1316,7 @@ impl AsRef<str> for DeviceServiceName {
 
 /// <p>Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyRange {
     /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
     #[doc(hidden)]
@@ -1406,14 +1333,6 @@ impl KeyRange {
     /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
     pub fn end_marker(&self) -> std::option::Option<&str> {
         self.end_marker.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyRange");
-        formatter.field("begin_marker", &self.begin_marker);
-        formatter.field("end_marker", &self.end_marker);
-        formatter.finish()
     }
 }
 /// See [`KeyRange`](crate::model::KeyRange).
@@ -1465,7 +1384,7 @@ impl KeyRange {
 /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p>
 /// <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Notification {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
@@ -1491,15 +1410,6 @@ impl Notification {
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub fn notify_all(&self) -> bool {
         self.notify_all
-    }
-}
-impl std::fmt::Debug for Notification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Notification");
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("job_states_to_notify", &self.job_states_to_notify);
-        formatter.field("notify_all", &self.notify_all);
-        formatter.finish()
     }
 }
 /// See [`Notification`](crate::model::Notification).
@@ -1735,7 +1645,7 @@ impl AsRef<str> for JobState {
 
 /// <p>Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LongTermPricingListEntry {
     /// <p>The ID of the long-term pricing type for the device.</p>
     #[doc(hidden)]
@@ -1810,31 +1720,6 @@ impl LongTermPricingListEntry {
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
     pub fn job_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.job_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for LongTermPricingListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LongTermPricingListEntry");
-        formatter.field("long_term_pricing_id", &self.long_term_pricing_id);
-        formatter.field(
-            "long_term_pricing_end_date",
-            &self.long_term_pricing_end_date,
-        );
-        formatter.field(
-            "long_term_pricing_start_date",
-            &self.long_term_pricing_start_date,
-        );
-        formatter.field("long_term_pricing_type", &self.long_term_pricing_type);
-        formatter.field("current_active_job", &self.current_active_job);
-        formatter.field("replacement_job", &self.replacement_job);
-        formatter.field(
-            "is_long_term_pricing_auto_renew",
-            &self.is_long_term_pricing_auto_renew,
-        );
-        formatter.field("long_term_pricing_status", &self.long_term_pricing_status);
-        formatter.field("snowball_type", &self.snowball_type);
-        formatter.field("job_ids", &self.job_ids);
-        formatter.finish()
     }
 }
 /// See [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
@@ -2231,7 +2116,7 @@ impl AsRef<str> for LongTermPricingType {
 
 /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobListEntry {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -2283,19 +2168,6 @@ impl JobListEntry {
     /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for JobListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobListEntry");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_state", &self.job_state);
-        formatter.field("is_master", &self.is_master);
-        formatter.field("job_type", &self.job_type);
-        formatter.field("snowball_type", &self.snowball_type);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`JobListEntry`](crate::model::JobListEntry).
@@ -2507,7 +2379,7 @@ impl AsRef<str> for JobType {
 
 /// <p>A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snow device AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompatibleImage {
     /// <p>The unique identifier for an individual Snow device AMI.</p>
     #[doc(hidden)]
@@ -2524,14 +2396,6 @@ impl CompatibleImage {
     /// <p>The optional name of a compatible image.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for CompatibleImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompatibleImage");
-        formatter.field("ami_id", &self.ami_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`CompatibleImage`](crate::model::CompatibleImage).
@@ -2582,7 +2446,7 @@ impl CompatibleImage {
 
 /// <p>Contains a cluster's state, a cluster's ID, and other important information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterListEntry {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -2613,16 +2477,6 @@ impl ClusterListEntry {
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterListEntry");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("cluster_state", &self.cluster_state);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ClusterListEntry`](crate::model::ClusterListEntry).
@@ -2916,7 +2770,7 @@ impl AsRef<str> for ShippingLabelStatus {
 
 /// <p>Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobMetadata {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
@@ -3080,40 +2934,6 @@ impl JobMetadata {
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for JobMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobMetadata");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_state", &self.job_state);
-        formatter.field("job_type", &self.job_type);
-        formatter.field("snowball_type", &self.snowball_type);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("resources", &self.resources);
-        formatter.field("description", &self.description);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("address_id", &self.address_id);
-        formatter.field("shipping_details", &self.shipping_details);
-        formatter.field(
-            "snowball_capacity_preference",
-            &self.snowball_capacity_preference,
-        );
-        formatter.field("notification", &self.notification);
-        formatter.field("data_transfer_progress", &self.data_transfer_progress);
-        formatter.field("job_log_info", &self.job_log_info);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("forwarding_address_id", &self.forwarding_address_id);
-        formatter.field("tax_documents", &self.tax_documents);
-        formatter.field("device_configuration", &self.device_configuration);
-        formatter.field("remote_management", &self.remote_management);
-        formatter.field("long_term_pricing_id", &self.long_term_pricing_id);
-        formatter.field(
-            "on_device_service_configuration",
-            &self.on_device_service_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`JobMetadata`](crate::model::JobMetadata).
@@ -3546,7 +3366,7 @@ impl AsRef<str> for RemoteManagement {
 
 /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceConfiguration {
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
     #[doc(hidden)]
@@ -3559,16 +3379,6 @@ impl DeviceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SnowconeDeviceConfiguration> {
         self.snowcone_device_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceConfiguration");
-        formatter.field(
-            "snowcone_device_configuration",
-            &self.snowcone_device_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeviceConfiguration`](crate::model::DeviceConfiguration).
@@ -3614,7 +3424,7 @@ impl DeviceConfiguration {
 
 /// <p>Specifies the device configuration for an Snowcone job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
     #[doc(hidden)]
@@ -3624,13 +3434,6 @@ impl SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
     pub fn wireless_connection(&self) -> std::option::Option<&crate::model::WirelessConnection> {
         self.wireless_connection.as_ref()
-    }
-}
-impl std::fmt::Debug for SnowconeDeviceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnowconeDeviceConfiguration");
-        formatter.field("wireless_connection", &self.wireless_connection);
-        formatter.finish()
     }
 }
 /// See [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
@@ -3672,7 +3475,7 @@ impl SnowconeDeviceConfiguration {
 
 /// <p>Configures the wireless connection on an Snowcone device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WirelessConnection {
     /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
     #[doc(hidden)]
@@ -3682,13 +3485,6 @@ impl WirelessConnection {
     /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
     pub fn is_wifi_enabled(&self) -> bool {
         self.is_wifi_enabled
-    }
-}
-impl std::fmt::Debug for WirelessConnection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WirelessConnection");
-        formatter.field("is_wifi_enabled", &self.is_wifi_enabled);
-        formatter.finish()
     }
 }
 /// See [`WirelessConnection`](crate::model::WirelessConnection).
@@ -3727,7 +3523,7 @@ impl WirelessConnection {
 
 /// <p>The tax documents required in your Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaxDocuments {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     #[doc(hidden)]
@@ -3737,13 +3533,6 @@ impl TaxDocuments {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     pub fn ind(&self) -> std::option::Option<&crate::model::IndTaxDocuments> {
         self.ind.as_ref()
-    }
-}
-impl std::fmt::Debug for TaxDocuments {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaxDocuments");
-        formatter.field("ind", &self.ind);
-        formatter.finish()
     }
 }
 /// See [`TaxDocuments`](crate::model::TaxDocuments).
@@ -3783,7 +3572,7 @@ impl TaxDocuments {
 
 /// <p>The tax documents required in Amazon Web Services Region in India.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
     #[doc(hidden)]
@@ -3793,13 +3582,6 @@ impl IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
     pub fn gstin(&self) -> std::option::Option<&str> {
         self.gstin.as_deref()
-    }
-}
-impl std::fmt::Debug for IndTaxDocuments {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndTaxDocuments");
-        formatter.field("gstin", &self.gstin);
-        formatter.finish()
     }
 }
 /// See [`IndTaxDocuments`](crate::model::IndTaxDocuments).
@@ -3839,7 +3621,7 @@ impl IndTaxDocuments {
 /// <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p>
 /// <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobLogs {
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
     #[doc(hidden)]
@@ -3863,15 +3645,6 @@ impl JobLogs {
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
     pub fn job_failure_log_uri(&self) -> std::option::Option<&str> {
         self.job_failure_log_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for JobLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobLogs");
-        formatter.field("job_completion_report_uri", &self.job_completion_report_uri);
-        formatter.field("job_success_log_uri", &self.job_success_log_uri);
-        formatter.field("job_failure_log_uri", &self.job_failure_log_uri);
-        formatter.finish()
     }
 }
 /// See [`JobLogs`](crate::model::JobLogs).
@@ -3943,7 +3716,7 @@ impl JobLogs {
 
 /// <p>Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataTransfer {
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
     #[doc(hidden)]
@@ -3974,16 +3747,6 @@ impl DataTransfer {
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn total_objects(&self) -> i64 {
         self.total_objects
-    }
-}
-impl std::fmt::Debug for DataTransfer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataTransfer");
-        formatter.field("bytes_transferred", &self.bytes_transferred);
-        formatter.field("objects_transferred", &self.objects_transferred);
-        formatter.field("total_bytes", &self.total_bytes);
-        formatter.field("total_objects", &self.total_objects);
-        formatter.finish()
     }
 }
 /// See [`DataTransfer`](crate::model::DataTransfer).
@@ -4058,7 +3821,7 @@ impl DataTransfer {
 
 /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShippingDetails {
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
@@ -4094,15 +3857,6 @@ impl ShippingDetails {
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
     pub fn outbound_shipment(&self) -> std::option::Option<&crate::model::Shipment> {
         self.outbound_shipment.as_ref()
-    }
-}
-impl std::fmt::Debug for ShippingDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShippingDetails");
-        formatter.field("shipping_option", &self.shipping_option);
-        formatter.field("inbound_shipment", &self.inbound_shipment);
-        formatter.field("outbound_shipment", &self.outbound_shipment);
-        formatter.finish()
     }
 }
 /// See [`ShippingDetails`](crate::model::ShippingDetails).
@@ -4186,7 +3940,7 @@ impl ShippingDetails {
 
 /// <p>The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Shipment {
     /// <p>Status information for a shipment.</p>
     #[doc(hidden)]
@@ -4205,14 +3959,6 @@ impl Shipment {
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
     pub fn tracking_number(&self) -> std::option::Option<&str> {
         self.tracking_number.as_deref()
-    }
-}
-impl std::fmt::Debug for Shipment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Shipment");
-        formatter.field("status", &self.status);
-        formatter.field("tracking_number", &self.tracking_number);
-        formatter.finish()
     }
 }
 /// See [`Shipment`](crate::model::Shipment).
@@ -4268,7 +4014,7 @@ impl Shipment {
 
 /// <p>Contains metadata about a specific cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
     #[doc(hidden)]
@@ -4395,30 +4141,6 @@ impl ClusterMetadata {
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusterMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterMetadata");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("description", &self.description);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("cluster_state", &self.cluster_state);
-        formatter.field("job_type", &self.job_type);
-        formatter.field("snowball_type", &self.snowball_type);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("resources", &self.resources);
-        formatter.field("address_id", &self.address_id);
-        formatter.field("shipping_option", &self.shipping_option);
-        formatter.field("notification", &self.notification);
-        formatter.field("forwarding_address_id", &self.forwarding_address_id);
-        formatter.field("tax_documents", &self.tax_documents);
-        formatter.field(
-            "on_device_service_configuration",
-            &self.on_device_service_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ClusterMetadata`](crate::model::ClusterMetadata).
@@ -4672,7 +4394,7 @@ impl ClusterMetadata {
 
 /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Address {
     /// <p>The unique ID for an address.</p>
     #[doc(hidden)]
@@ -4773,26 +4495,6 @@ impl Address {
     /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
     pub fn is_restricted(&self) -> bool {
         self.is_restricted
-    }
-}
-impl std::fmt::Debug for Address {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Address");
-        formatter.field("address_id", &self.address_id);
-        formatter.field("name", &self.name);
-        formatter.field("company", &self.company);
-        formatter.field("street1", &self.street1);
-        formatter.field("street2", &self.street2);
-        formatter.field("street3", &self.street3);
-        formatter.field("city", &self.city);
-        formatter.field("state_or_province", &self.state_or_province);
-        formatter.field("prefecture_or_district", &self.prefecture_or_district);
-        formatter.field("landmark", &self.landmark);
-        formatter.field("country", &self.country);
-        formatter.field("postal_code", &self.postal_code);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("is_restricted", &self.is_restricted);
-        formatter.finish()
     }
 }
 /// See [`Address`](crate::model::Address).

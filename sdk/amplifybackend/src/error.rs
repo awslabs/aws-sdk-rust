@@ -2,7 +2,7 @@
 
 /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     /// <p>The type of limit that was exceeded.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl TooManyRequestsException {
     /// <p>The type of limit that was exceeded.</p>
     pub fn limit_type(&self) -> std::option::Option<&str> {
         self.limit_type.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("limit_type", &self.limit_type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl TooManyRequestsException {
@@ -91,7 +83,7 @@ impl TooManyRequestsException {
 
 /// <p>An error returned when a specific resource type is not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     /// <p>An error message to inform that the request has failed.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl NotFoundException {
     /// <p>The type of resource that is not found.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl NotFoundException {
@@ -183,18 +167,11 @@ impl NotFoundException {
 
 /// <p>An error returned if there's a temporary issue with the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayTimeoutException {
     /// <p>An error message to inform that the request failed.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GatewayTimeoutException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayTimeoutException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl GatewayTimeoutException {
     /// Returns the error message.
@@ -250,18 +227,11 @@ impl GatewayTimeoutException {
 
 /// <p>An error returned if a request is not formed properly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     /// <p>An error message to inform that the request failed.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BadRequestException {
     /// Returns the error message.

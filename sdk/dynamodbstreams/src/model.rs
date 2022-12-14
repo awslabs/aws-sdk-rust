@@ -2,7 +2,7 @@
 
 /// <p>Represents all of the data describing a particular stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stream {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
@@ -38,15 +38,6 @@ impl Stream {
     /// </ul>
     pub fn stream_label(&self) -> std::option::Option<&str> {
         self.stream_label.as_deref()
-    }
-}
-impl std::fmt::Debug for Stream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stream");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("stream_label", &self.stream_label);
-        formatter.finish()
     }
 }
 /// See [`Stream`](crate::model::Stream).
@@ -228,7 +219,7 @@ impl AsRef<str> for ShardIteratorType {
 
 /// <p>A description of a unique event within a stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Record {
     /// <p>A globally unique identifier for the event that was recorded in this stream record.</p>
     #[doc(hidden)]
@@ -300,19 +291,6 @@ impl Record {
     /// </ul>
     pub fn user_identity(&self) -> std::option::Option<&crate::model::Identity> {
         self.user_identity.as_ref()
-    }
-}
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_name", &self.event_name);
-        formatter.field("event_version", &self.event_version);
-        formatter.field("event_source", &self.event_source);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("dynamodb", &self.dynamodb);
-        formatter.field("user_identity", &self.user_identity);
-        formatter.finish()
     }
 }
 /// See [`Record`](crate::model::Record).
@@ -455,7 +433,7 @@ impl Record {
 
 /// <p>Contains details about the type of identity that made the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Identity {
     /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
     #[doc(hidden)]
@@ -472,14 +450,6 @@ impl Identity {
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for Identity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Identity");
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Identity`](crate::model::Identity).
@@ -530,7 +500,7 @@ impl Identity {
 
 /// <p>A description of a single data modification that was performed on an item in a DynamoDB table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamRecord {
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     #[doc(hidden)]
@@ -614,22 +584,6 @@ impl StreamRecord {
     /// </ul>
     pub fn stream_view_type(&self) -> std::option::Option<&crate::model::StreamViewType> {
         self.stream_view_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamRecord");
-        formatter.field(
-            "approximate_creation_date_time",
-            &self.approximate_creation_date_time,
-        );
-        formatter.field("keys", &self.keys);
-        formatter.field("new_image", &self.new_image);
-        formatter.field("old_image", &self.old_image);
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.field("size_bytes", &self.size_bytes);
-        formatter.field("stream_view_type", &self.stream_view_type);
-        formatter.finish()
     }
 }
 /// See [`StreamRecord`](crate::model::StreamRecord).
@@ -1197,7 +1151,7 @@ impl AsRef<str> for OperationType {
 
 /// <p>Represents all of the data describing a particular stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamDescription {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
@@ -1303,24 +1257,6 @@ impl StreamDescription {
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
     pub fn last_evaluated_shard_id(&self) -> std::option::Option<&str> {
         self.last_evaluated_shard_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamDescription");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("stream_label", &self.stream_label);
-        formatter.field("stream_status", &self.stream_status);
-        formatter.field("stream_view_type", &self.stream_view_type);
-        formatter.field(
-            "creation_request_date_time",
-            &self.creation_request_date_time,
-        );
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("shards", &self.shards);
-        formatter.field("last_evaluated_shard_id", &self.last_evaluated_shard_id);
-        formatter.finish()
     }
 }
 /// See [`StreamDescription`](crate::model::StreamDescription).
@@ -1525,7 +1461,7 @@ impl StreamDescription {
 
 /// <p>A uniquely identified group of stream records within a stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Shard {
     /// <p>The system-generated identifier for this shard.</p>
     #[doc(hidden)]
@@ -1549,15 +1485,6 @@ impl Shard {
     /// <p>The shard ID of the current shard's parent.</p>
     pub fn parent_shard_id(&self) -> std::option::Option<&str> {
         self.parent_shard_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Shard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Shard");
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("sequence_number_range", &self.sequence_number_range);
-        formatter.field("parent_shard_id", &self.parent_shard_id);
-        formatter.finish()
     }
 }
 /// See [`Shard`](crate::model::Shard).
@@ -1626,7 +1553,7 @@ impl Shard {
 
 /// <p>The beginning and ending sequence numbers for the stream records contained within a shard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SequenceNumberRange {
     /// <p>The first sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
     #[doc(hidden)]
@@ -1643,14 +1570,6 @@ impl SequenceNumberRange {
     /// <p>The last sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
     pub fn ending_sequence_number(&self) -> std::option::Option<&str> {
         self.ending_sequence_number.as_deref()
-    }
-}
-impl std::fmt::Debug for SequenceNumberRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SequenceNumberRange");
-        formatter.field("starting_sequence_number", &self.starting_sequence_number);
-        formatter.field("ending_sequence_number", &self.ending_sequence_number);
-        formatter.finish()
     }
 }
 /// See [`SequenceNumberRange`](crate::model::SequenceNumberRange).
@@ -1709,7 +1628,7 @@ impl SequenceNumberRange {
 /// <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p>
 /// <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeySchemaElement {
     /// <p>The name of a key attribute.</p>
     #[doc(hidden)]
@@ -1740,14 +1659,6 @@ impl KeySchemaElement {
     /// </note>
     pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
         self.key_type.as_ref()
-    }
-}
-impl std::fmt::Debug for KeySchemaElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySchemaElement");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("key_type", &self.key_type);
-        formatter.finish()
     }
 }
 /// See [`KeySchemaElement`](crate::model::KeySchemaElement).

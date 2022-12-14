@@ -3213,7 +3213,7 @@ impl RemoveTagsFromResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     #[doc(hidden)]
@@ -3234,18 +3234,10 @@ impl RemoveTagsFromResourceInput {
         self.tag_key_list.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_key_list", &self.tag_key_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyLunaClientInput {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
@@ -3264,18 +3256,10 @@ impl ModifyLunaClientInput {
         self.certificate.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyLunaClientInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyLunaClientInput");
-        formatter.field("client_arn", &self.client_arn);
-        formatter.field("certificate", &self.certificate);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>ModifyHsm</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyHsmInput {
     /// <p>The ARN of the HSM to modify.</p>
     #[doc(hidden)]
@@ -3324,22 +3308,10 @@ impl ModifyHsmInput {
         self.syslog_ip.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyHsmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyHsmInput");
-        formatter.field("hsm_arn", &self.hsm_arn);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("eni_ip", &self.eni_ip);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("syslog_ip", &self.syslog_ip);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyHapgInput {
     /// <p>The ARN of the high-availability partition group to modify.</p>
     #[doc(hidden)]
@@ -3365,19 +3337,10 @@ impl ModifyHapgInput {
         self.partition_serial_list.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyHapgInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyHapgInput");
-        formatter.field("hapg_arn", &self.hapg_arn);
-        formatter.field("label", &self.label);
-        formatter.field("partition_serial_list", &self.partition_serial_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     #[doc(hidden)]
@@ -3389,17 +3352,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLunaClientsInput {
     /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
     #[doc(hidden)]
@@ -3411,17 +3367,10 @@ impl ListLunaClientsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLunaClientsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLunaClientsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHsmsInput {
     /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
     #[doc(hidden)]
@@ -3433,17 +3382,10 @@ impl ListHsmsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListHsmsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHsmsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHapgsInput {
     /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
     #[doc(hidden)]
@@ -3455,28 +3397,15 @@ impl ListHapgsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListHapgsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHapgsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>ListAvailableZones</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableZonesInput {}
-impl std::fmt::Debug for ListAvailableZonesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableZonesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigInput {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
@@ -3502,19 +3431,10 @@ impl GetConfigInput {
         self.hapg_list.as_deref()
     }
 }
-impl std::fmt::Debug for GetConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigInput");
-        formatter.field("client_arn", &self.client_arn);
-        formatter.field("client_version", &self.client_version);
-        formatter.field("hapg_list", &self.hapg_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLunaClientInput {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
@@ -3533,18 +3453,10 @@ impl DescribeLunaClientInput {
         self.certificate_fingerprint.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLunaClientInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLunaClientInput");
-        formatter.field("client_arn", &self.client_arn);
-        formatter.field("certificate_fingerprint", &self.certificate_fingerprint);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>DescribeHsm</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHsmInput {
     /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
     #[doc(hidden)]
@@ -3563,18 +3475,10 @@ impl DescribeHsmInput {
         self.hsm_serial_number.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHsmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHsmInput");
-        formatter.field("hsm_arn", &self.hsm_arn);
-        formatter.field("hsm_serial_number", &self.hsm_serial_number);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>DescribeHapg</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHapgInput {
     /// <p>The ARN of the high-availability partition group to describe.</p>
     #[doc(hidden)]
@@ -3586,17 +3490,10 @@ impl DescribeHapgInput {
         self.hapg_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHapgInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHapgInput");
-        formatter.field("hapg_arn", &self.hapg_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLunaClientInput {
     /// <p>The ARN of the client to delete.</p>
     #[doc(hidden)]
@@ -3608,17 +3505,10 @@ impl DeleteLunaClientInput {
         self.client_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLunaClientInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLunaClientInput");
-        formatter.field("client_arn", &self.client_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>DeleteHsm</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHsmInput {
     /// <p>The ARN of the HSM to delete.</p>
     #[doc(hidden)]
@@ -3630,17 +3520,10 @@ impl DeleteHsmInput {
         self.hsm_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHsmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHsmInput");
-        formatter.field("hsm_arn", &self.hsm_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>DeleteHapg</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHapgInput {
     /// <p>The ARN of the high-availability partition group to delete.</p>
     #[doc(hidden)]
@@ -3652,17 +3535,10 @@ impl DeleteHapgInput {
         self.hapg_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteHapgInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHapgInput");
-        formatter.field("hapg_arn", &self.hapg_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>CreateLunaClient</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLunaClientInput {
     /// <p>The label for the client.</p>
     #[doc(hidden)]
@@ -3681,18 +3557,10 @@ impl CreateLunaClientInput {
         self.certificate.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLunaClientInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLunaClientInput");
-        formatter.field("label", &self.label);
-        formatter.field("certificate", &self.certificate);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>CreateHsm</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHsmInput {
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
     #[doc(hidden)]
@@ -3763,24 +3631,10 @@ impl CreateHsmInput {
         self.syslog_ip.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHsmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHsmInput");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("ssh_key", &self.ssh_key);
-        formatter.field("eni_ip", &self.eni_ip);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("subscription_type", &self.subscription_type);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("syslog_ip", &self.syslog_ip);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the inputs for the <code>CreateHapgRequest</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHapgInput {
     /// <p>The label of the new high-availability partition group.</p>
     #[doc(hidden)]
@@ -3792,17 +3646,10 @@ impl CreateHapgInput {
         self.label.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHapgInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHapgInput");
-        formatter.field("label", &self.label);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
     #[doc(hidden)]
@@ -3819,13 +3666,5 @@ impl AddTagsToResourceInput {
     /// <p>One or more tags.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AddTagsToResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }

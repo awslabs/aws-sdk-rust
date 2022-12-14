@@ -5587,7 +5587,7 @@ impl UpdateResourceSetInput {
 
 /// <p>Name of a resource set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceSetInput {
     /// <p>Name of a resource set.</p>
     #[doc(hidden)]
@@ -5615,19 +5615,10 @@ impl UpdateResourceSetInput {
         self.resources.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourceSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceSetInput");
-        formatter.field("resource_set_name", &self.resource_set_name);
-        formatter.field("resource_set_type", &self.resource_set_type);
-        formatter.field("resources", &self.resources);
-        formatter.finish()
-    }
-}
 
 /// <p>Name of a recovery group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecoveryGroupInput {
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
     #[doc(hidden)]
@@ -5646,18 +5637,10 @@ impl UpdateRecoveryGroupInput {
         self.recovery_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRecoveryGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecoveryGroupInput");
-        formatter.field("cells", &self.cells);
-        formatter.field("recovery_group_name", &self.recovery_group_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Name of a readiness check to describe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
     #[doc(hidden)]
@@ -5676,18 +5659,10 @@ impl UpdateReadinessCheckInput {
         self.resource_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateReadinessCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReadinessCheckInput");
-        formatter.field("readiness_check_name", &self.readiness_check_name);
-        formatter.field("resource_set_name", &self.resource_set_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCellInput {
     /// <p>The name of the cell.</p>
     #[doc(hidden)]
@@ -5706,18 +5681,10 @@ impl UpdateCellInput {
         self.cells.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCellInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCellInput");
-        formatter.field("cell_name", &self.cell_name);
-        formatter.field("cells", &self.cells);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     #[doc(hidden)]
@@ -5736,18 +5703,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     #[doc(hidden)]
@@ -5770,18 +5729,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourcesInput {
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     #[doc(hidden)]
@@ -5793,17 +5744,10 @@ impl ListTagsForResourcesInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourcesInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRulesInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -5829,19 +5773,10 @@ impl ListRulesInput {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for ListRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRulesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceSetsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -5860,18 +5795,10 @@ impl ListResourceSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceSetsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecoveryGroupsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -5890,18 +5817,10 @@ impl ListRecoveryGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecoveryGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecoveryGroupsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReadinessChecksInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -5920,18 +5839,10 @@ impl ListReadinessChecksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListReadinessChecksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReadinessChecksInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCrossAccountAuthorizationsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -5950,18 +5861,10 @@ impl ListCrossAccountAuthorizationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCrossAccountAuthorizationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCrossAccountAuthorizationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCellsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -5980,18 +5883,10 @@ impl ListCellsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCellsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCellsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceSetInput {
     /// <p>Name of a resource set.</p>
     #[doc(hidden)]
@@ -6003,17 +5898,10 @@ impl GetResourceSetInput {
         self.resource_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceSetInput");
-        formatter.field("resource_set_name", &self.resource_set_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecoveryGroupReadinessSummaryInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -6039,19 +5927,10 @@ impl GetRecoveryGroupReadinessSummaryInput {
         self.recovery_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecoveryGroupReadinessSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecoveryGroupReadinessSummaryInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("recovery_group_name", &self.recovery_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecoveryGroupInput {
     /// <p>The name of a recovery group.</p>
     #[doc(hidden)]
@@ -6063,17 +5942,10 @@ impl GetRecoveryGroupInput {
         self.recovery_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecoveryGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecoveryGroupInput");
-        formatter.field("recovery_group_name", &self.recovery_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReadinessCheckStatusInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -6099,19 +5971,10 @@ impl GetReadinessCheckStatusInput {
         self.readiness_check_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetReadinessCheckStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReadinessCheckStatusInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("readiness_check_name", &self.readiness_check_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReadinessCheckResourceStatusInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -6144,20 +6007,10 @@ impl GetReadinessCheckResourceStatusInput {
         self.resource_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetReadinessCheckResourceStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReadinessCheckResourceStatusInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("readiness_check_name", &self.readiness_check_name);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
     #[doc(hidden)]
@@ -6169,17 +6022,10 @@ impl GetReadinessCheckInput {
         self.readiness_check_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetReadinessCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReadinessCheckInput");
-        formatter.field("readiness_check_name", &self.readiness_check_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCellReadinessSummaryInput {
     /// <p>The name of the cell.</p>
     #[doc(hidden)]
@@ -6205,19 +6051,10 @@ impl GetCellReadinessSummaryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCellReadinessSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCellReadinessSummaryInput");
-        formatter.field("cell_name", &self.cell_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCellInput {
     /// <p>The name of the cell.</p>
     #[doc(hidden)]
@@ -6229,17 +6066,10 @@ impl GetCellInput {
         self.cell_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCellInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCellInput");
-        formatter.field("cell_name", &self.cell_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetArchitectureRecommendationsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
@@ -6265,19 +6095,10 @@ impl GetArchitectureRecommendationsInput {
         self.recovery_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetArchitectureRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetArchitectureRecommendationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("recovery_group_name", &self.recovery_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceSetInput {
     /// <p>Name of a resource set.</p>
     #[doc(hidden)]
@@ -6289,17 +6110,10 @@ impl DeleteResourceSetInput {
         self.resource_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceSetInput");
-        formatter.field("resource_set_name", &self.resource_set_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecoveryGroupInput {
     /// <p>The name of a recovery group.</p>
     #[doc(hidden)]
@@ -6311,17 +6125,10 @@ impl DeleteRecoveryGroupInput {
         self.recovery_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRecoveryGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecoveryGroupInput");
-        formatter.field("recovery_group_name", &self.recovery_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
     #[doc(hidden)]
@@ -6333,17 +6140,10 @@ impl DeleteReadinessCheckInput {
         self.readiness_check_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReadinessCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReadinessCheckInput");
-        formatter.field("readiness_check_name", &self.readiness_check_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCrossAccountAuthorizationInput {
     /// <p>The cross-account authorization.</p>
     #[doc(hidden)]
@@ -6355,20 +6155,10 @@ impl DeleteCrossAccountAuthorizationInput {
         self.cross_account_authorization.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCrossAccountAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCrossAccountAuthorizationInput");
-        formatter.field(
-            "cross_account_authorization",
-            &self.cross_account_authorization,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCellInput {
     /// <p>The name of the cell.</p>
     #[doc(hidden)]
@@ -6380,17 +6170,10 @@ impl DeleteCellInput {
         self.cell_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCellInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCellInput");
-        formatter.field("cell_name", &self.cell_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceSetInput {
     /// <p>The name of the resource set to create.</p>
     #[doc(hidden)]
@@ -6429,20 +6212,10 @@ impl CreateResourceSetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateResourceSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceSetInput");
-        formatter.field("resource_set_name", &self.resource_set_name);
-        formatter.field("resource_set_type", &self.resource_set_type);
-        formatter.field("resources", &self.resources);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRecoveryGroupInput {
     /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
     #[doc(hidden)]
@@ -6472,19 +6245,10 @@ impl CreateRecoveryGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRecoveryGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRecoveryGroupInput");
-        formatter.field("cells", &self.cells);
-        formatter.field("recovery_group_name", &self.recovery_group_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReadinessCheckInput {
     /// <p>The name of the readiness check to create.</p>
     #[doc(hidden)]
@@ -6514,19 +6278,10 @@ impl CreateReadinessCheckInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateReadinessCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReadinessCheckInput");
-        formatter.field("readiness_check_name", &self.readiness_check_name);
-        formatter.field("resource_set_name", &self.resource_set_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCrossAccountAuthorizationInput {
     /// <p>The cross-account authorization.</p>
     #[doc(hidden)]
@@ -6538,20 +6293,10 @@ impl CreateCrossAccountAuthorizationInput {
         self.cross_account_authorization.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCrossAccountAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCrossAccountAuthorizationInput");
-        formatter.field(
-            "cross_account_authorization",
-            &self.cross_account_authorization,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCellInput {
     /// <p>The name of the cell to create.</p>
     #[doc(hidden)]
@@ -6579,14 +6324,5 @@ impl CreateCellInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateCellInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCellInput");
-        formatter.field("cell_name", &self.cell_name);
-        formatter.field("cells", &self.cells);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

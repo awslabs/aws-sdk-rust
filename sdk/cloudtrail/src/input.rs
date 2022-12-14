@@ -6449,7 +6449,7 @@ impl UpdateTrailInput {
 
 /// <p>Specifies settings to update for the trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrailInput {
     /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
@@ -6569,36 +6569,10 @@ impl UpdateTrailInput {
         self.is_organization_trail
     }
 }
-impl std::fmt::Debug for UpdateTrailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrailInput");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("sns_topic_name", &self.sns_topic_name);
-        formatter.field(
-            "include_global_service_events",
-            &self.include_global_service_events,
-        );
-        formatter.field("is_multi_region_trail", &self.is_multi_region_trail);
-        formatter.field(
-            "enable_log_file_validation",
-            &self.enable_log_file_validation,
-        );
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("is_organization_trail", &self.is_organization_trail);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventDataStoreInput {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
     #[doc(hidden)]
@@ -6655,26 +6629,10 @@ impl UpdateEventDataStoreInput {
         self.termination_protection_enabled
     }
 }
-impl std::fmt::Debug for UpdateEventDataStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventDataStoreInput");
-        formatter.field("event_data_store", &self.event_data_store);
-        formatter.field("name", &self.name);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Passes the request to CloudTrail to stop logging Amazon Web Services API calls for the specified account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopLoggingInput {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
@@ -6688,17 +6646,10 @@ impl StopLoggingInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for StopLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopLoggingInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopImportInput {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
@@ -6710,17 +6661,10 @@ impl StopImportInput {
         self.import_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopImportInput");
-        formatter.field("import_id", &self.import_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartQueryInput {
     /// <p>The SQL code of your query.</p>
     #[doc(hidden)]
@@ -6732,17 +6676,10 @@ impl StartQueryInput {
         self.query_statement.as_deref()
     }
 }
-impl std::fmt::Debug for StartQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartQueryInput");
-        formatter.field("query_statement", &self.query_statement);
-        formatter.finish()
-    }
-}
 
 /// <p>The request to CloudTrail to start logging Amazon Web Services API calls for an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartLoggingInput {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
@@ -6756,17 +6693,10 @@ impl StartLoggingInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for StartLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartLoggingInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartImportInput {
     /// <p> The destination event data store. Use this parameter for a new import. </p>
     #[doc(hidden)]
@@ -6806,21 +6736,10 @@ impl StartImportInput {
         self.import_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartImportInput");
-        formatter.field("destinations", &self.destinations);
-        formatter.field("import_source", &self.import_source);
-        formatter.field("start_event_time", &self.start_event_time);
-        formatter.field("end_event_time", &self.end_event_time);
-        formatter.field("import_id", &self.import_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreEventDataStoreInput {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
     #[doc(hidden)]
@@ -6832,17 +6751,10 @@ impl RestoreEventDataStoreInput {
         self.event_data_store.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreEventDataStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreEventDataStoreInput");
-        formatter.field("event_data_store", &self.event_data_store);
-        formatter.finish()
-    }
-}
 
 /// <p>Specifies the tags to remove from a trail or event data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>Specifies the ARN of the trail or event data store from which tags should be removed.</p>
     /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
@@ -6865,18 +6777,10 @@ impl RemoveTagsInput {
         self.tags_list.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tags_list", &self.tags_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutInsightSelectorsInput {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     #[doc(hidden)]
@@ -6895,18 +6799,10 @@ impl PutInsightSelectorsInput {
         self.insight_selectors.as_deref()
     }
 }
-impl std::fmt::Debug for PutInsightSelectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutInsightSelectorsInput");
-        formatter.field("trail_name", &self.trail_name);
-        formatter.field("insight_selectors", &self.insight_selectors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventSelectorsInput {
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
@@ -6953,19 +6849,10 @@ impl PutEventSelectorsInput {
         self.advanced_event_selectors.as_deref()
     }
 }
-impl std::fmt::Debug for PutEventSelectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventSelectorsInput");
-        formatter.field("trail_name", &self.trail_name);
-        formatter.field("event_selectors", &self.event_selectors);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains a request for LookupEvents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookupEventsInput {
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
     #[doc(hidden)]
@@ -7012,22 +6899,10 @@ impl LookupEventsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for LookupEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LookupEventsInput");
-        formatter.field("lookup_attributes", &self.lookup_attributes);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("event_category", &self.event_category);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrailsInput {
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     #[doc(hidden)]
@@ -7039,17 +6914,10 @@ impl ListTrailsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTrailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrailsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Specifies a list of tags to return.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     #[doc(hidden)]
@@ -7068,18 +6936,10 @@ impl ListTagsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("resource_id_list", &self.resource_id_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueriesInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
     #[doc(hidden)]
@@ -7126,22 +6986,10 @@ impl ListQueriesInput {
         self.query_status.as_ref()
     }
 }
-impl std::fmt::Debug for ListQueriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueriesInput");
-        formatter.field("event_data_store", &self.event_data_store);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("query_status", &self.query_status);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests the public keys for a specified time range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPublicKeysInput {
     /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
     #[doc(hidden)]
@@ -7167,19 +7015,10 @@ impl ListPublicKeysInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPublicKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPublicKeysInput");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p> The maximum number of imports to display on a single page. </p>
     #[doc(hidden)]
@@ -7212,20 +7051,10 @@ impl ListImportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("destination", &self.destination);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportFailuresInput {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
@@ -7251,19 +7080,10 @@ impl ListImportFailuresInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImportFailuresInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportFailuresInput");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventDataStoresInput {
     /// <p>A token you can use to get the next page of event data store results.</p>
     #[doc(hidden)]
@@ -7282,18 +7102,10 @@ impl ListEventDataStoresInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEventDataStoresInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventDataStoresInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
     #[doc(hidden)]
@@ -7312,18 +7124,10 @@ impl ListChannelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The name of a trail about which you want the current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrailStatusInput {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
@@ -7337,17 +7141,10 @@ impl GetTrailStatusInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetTrailStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrailStatusInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrailInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
     #[doc(hidden)]
@@ -7359,17 +7156,10 @@ impl GetTrailInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetTrailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrailInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryResultsInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[doc(hidden)]
@@ -7402,20 +7192,10 @@ impl GetQueryResultsInput {
         self.max_query_results
     }
 }
-impl std::fmt::Debug for GetQueryResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryResultsInput");
-        formatter.field("event_data_store", &self.event_data_store);
-        formatter.field("query_id", &self.query_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_query_results", &self.max_query_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightSelectorsInput {
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
@@ -7445,17 +7225,10 @@ impl GetInsightSelectorsInput {
         self.trail_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetInsightSelectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightSelectorsInput");
-        formatter.field("trail_name", &self.trail_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImportInput {
     /// <p> The ID for the import. </p>
     #[doc(hidden)]
@@ -7467,17 +7240,10 @@ impl GetImportInput {
         self.import_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImportInput");
-        formatter.field("import_id", &self.import_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventSelectorsInput {
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
@@ -7507,17 +7273,10 @@ impl GetEventSelectorsInput {
         self.trail_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventSelectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventSelectorsInput");
-        formatter.field("trail_name", &self.trail_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventDataStoreInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
     #[doc(hidden)]
@@ -7529,17 +7288,10 @@ impl GetEventDataStoreInput {
         self.event_data_store.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventDataStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventDataStoreInput");
-        formatter.field("event_data_store", &self.event_data_store);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelInput {
     /// <p> The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. </p>
     #[doc(hidden)]
@@ -7551,17 +7303,10 @@ impl GetChannelInput {
         self.channel.as_deref()
     }
 }
-impl std::fmt::Debug for GetChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChannelInput");
-        formatter.field("channel", &self.channel);
-        formatter.finish()
-    }
-}
 
 /// <p>Returns information about the trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrailsInput {
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
@@ -7596,18 +7341,10 @@ impl DescribeTrailsInput {
         self.include_shadow_trails
     }
 }
-impl std::fmt::Debug for DescribeTrailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrailsInput");
-        formatter.field("trail_name_list", &self.trail_name_list);
-        formatter.field("include_shadow_trails", &self.include_shadow_trails);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[doc(hidden)]
@@ -7626,18 +7363,10 @@ impl DescribeQueryInput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQueryInput");
-        formatter.field("event_data_store", &self.event_data_store);
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request that specifies the name of a trail to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrailInput {
     /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     #[doc(hidden)]
@@ -7649,17 +7378,10 @@ impl DeleteTrailInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTrailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrailInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventDataStoreInput {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
     #[doc(hidden)]
@@ -7671,17 +7393,10 @@ impl DeleteEventDataStoreInput {
         self.event_data_store.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventDataStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventDataStoreInput");
-        formatter.field("event_data_store", &self.event_data_store);
-        formatter.finish()
-    }
-}
 
 /// <p>Specifies the settings for each trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrailInput {
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
     /// <ul>
@@ -7804,37 +7519,10 @@ impl CreateTrailInput {
         self.tags_list.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTrailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrailInput");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("sns_topic_name", &self.sns_topic_name);
-        formatter.field(
-            "include_global_service_events",
-            &self.include_global_service_events,
-        );
-        formatter.field("is_multi_region_trail", &self.is_multi_region_trail);
-        formatter.field(
-            "enable_log_file_validation",
-            &self.enable_log_file_validation,
-        );
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("is_organization_trail", &self.is_organization_trail);
-        formatter.field("tags_list", &self.tags_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventDataStoreInput {
     /// <p>The name of the event data store.</p>
     #[doc(hidden)]
@@ -7891,26 +7579,10 @@ impl CreateEventDataStoreInput {
         self.tags_list.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEventDataStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventDataStoreInput");
-        formatter.field("name", &self.name);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("tags_list", &self.tags_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[doc(hidden)]
@@ -7929,18 +7601,10 @@ impl CancelQueryInput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelQueryInput");
-        formatter.field("event_data_store", &self.event_data_store);
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Specifies the tags to add to a trail or event data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
@@ -7959,13 +7623,5 @@ impl AddTagsInput {
     /// <p>Contains a list of tags, up to a limit of 50</p>
     pub fn tags_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags_list.as_deref()
-    }
-}
-impl std::fmt::Debug for AddTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tags_list", &self.tags_list);
-        formatter.finish()
     }
 }

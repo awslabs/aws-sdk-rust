@@ -1098,7 +1098,7 @@ impl GetVirtualMachineInput {
 pub mod import_hypervisor_configuration_input {
 
     /// A builder for [`ImportHypervisorConfigurationInput`](crate::input::ImportHypervisorConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) host: std::option::Option<std::string::String>,
@@ -1192,6 +1192,18 @@ pub mod import_hypervisor_configuration_input {
                 kms_key_arn: self.kms_key_arn,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("host", &self.host);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("kms_key_arn", &self.kms_key_arn);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2315,7 +2327,7 @@ impl TagResourceInput {
 pub mod test_hypervisor_configuration_input {
 
     /// A builder for [`TestHypervisorConfigurationInput`](crate::input::TestHypervisorConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) host: std::option::Option<std::string::String>,
@@ -2376,6 +2388,16 @@ pub mod test_hypervisor_configuration_input {
                 username: self.username,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("gateway_arn", &self.gateway_arn);
+            formatter.field("host", &self.host);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2976,7 +2998,7 @@ impl UpdateGatewaySoftwareNowInput {
 pub mod update_hypervisor_input {
 
     /// A builder for [`UpdateHypervisorInput`](crate::input::UpdateHypervisorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
         pub(crate) host: std::option::Option<std::string::String>,
@@ -3052,6 +3074,17 @@ pub mod update_hypervisor_input {
                 password: self.password,
                 name: self.name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("hypervisor_arn", &self.hypervisor_arn);
+            formatter.field("host", &self.host);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.finish()
         }
     }
 }
@@ -3172,7 +3205,7 @@ impl UpdateHypervisorInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualMachinesInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
     #[doc(hidden)]
@@ -3198,19 +3231,10 @@ impl ListVirtualMachinesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualMachinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualMachinesInput");
-        formatter.field("hypervisor_arn", &self.hypervisor_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVirtualMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
     #[doc(hidden)]
@@ -3222,17 +3246,10 @@ impl GetVirtualMachineInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetVirtualMachineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVirtualMachineInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHypervisorsInput {
     /// <p>The maximum number of hypervisors to list.</p>
     #[doc(hidden)]
@@ -3249,14 +3266,6 @@ impl ListHypervisorsInput {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListHypervisorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHypervisorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -3324,7 +3333,7 @@ impl std::fmt::Debug for ImportHypervisorConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
     #[doc(hidden)]
@@ -3334,13 +3343,6 @@ impl DeleteHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
     pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteHypervisorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHypervisorInput");
-        formatter.field("hypervisor_arn", &self.hypervisor_arn);
-        formatter.finish()
     }
 }
 
@@ -3400,7 +3402,7 @@ impl std::fmt::Debug for UpdateHypervisorInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
     #[doc(hidden)]
@@ -3410,13 +3412,6 @@ impl UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateGatewaySoftwareNowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewaySoftwareNowInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
     }
 }
 
@@ -3468,7 +3463,7 @@ impl std::fmt::Debug for TestHypervisorConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
     #[doc(hidden)]
@@ -3510,21 +3505,10 @@ impl PutMaintenanceStartTimeInput {
         self.day_of_month
     }
 }
-impl std::fmt::Debug for PutMaintenanceStartTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMaintenanceStartTimeInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("hour_of_day", &self.hour_of_day);
-        formatter.field("minute_of_hour", &self.minute_of_hour);
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.field("day_of_month", &self.day_of_month);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateGatewayFromServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
     #[doc(hidden)]
@@ -3536,17 +3520,10 @@ impl DisassociateGatewayFromServerInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateGatewayFromServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateGatewayFromServerInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateGatewayToServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -3565,18 +3542,10 @@ impl AssociateGatewayToServerInput {
         self.server_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateGatewayToServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateGatewayToServerInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("server_arn", &self.server_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGatewaysInput {
     /// <p>The maximum number of gateways to list.</p>
     #[doc(hidden)]
@@ -3595,18 +3564,10 @@ impl ListGatewaysInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGatewaysInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGatewayInput {
     /// <p>The activation key of the created gateway.</p>
     #[doc(hidden)]
@@ -3639,20 +3600,10 @@ impl CreateGatewayInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGatewayInput");
-        formatter.field("activation_key", &self.activation_key);
-        formatter.field("gateway_display_name", &self.gateway_display_name);
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
     #[doc(hidden)]
@@ -3664,17 +3615,10 @@ impl DeleteGatewayInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
     #[doc(hidden)]
@@ -3693,18 +3637,10 @@ impl UpdateGatewayInformationInput {
         self.gateway_display_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewayInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayInformationInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_display_name", &self.gateway_display_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     #[doc(hidden)]
@@ -3716,17 +3652,10 @@ impl GetGatewayInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGatewayInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags.</p>
     #[doc(hidden)]
@@ -3745,18 +3674,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to tag.</p>
     #[doc(hidden)]
@@ -3775,18 +3696,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource's tags to list.</p>
     #[doc(hidden)]
@@ -3796,12 +3709,5 @@ impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource's tags to list.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

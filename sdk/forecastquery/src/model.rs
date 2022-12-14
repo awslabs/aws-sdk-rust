@@ -2,7 +2,7 @@
 
 /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Forecast {
     /// <p>The forecast.</p>
     /// <p>The <i>string</i> of the string-to-array map is one of the following values:</p>
@@ -32,13 +32,6 @@ impl Forecast {
         &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DataPoint>>,
     > {
         self.predictions.as_ref()
-    }
-}
-impl std::fmt::Debug for Forecast {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Forecast");
-        formatter.field("predictions", &self.predictions);
-        formatter.finish()
     }
 }
 /// See [`Forecast`](crate::model::Forecast).
@@ -111,7 +104,7 @@ impl Forecast {
 
 /// <p>The forecast value for a specific date. Part of the <code>Forecast</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataPoint {
     /// <p>The timestamp of the specific forecast.</p>
     #[doc(hidden)]
@@ -128,14 +121,6 @@ impl DataPoint {
     /// <p>The forecast value.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
-    }
-}
-impl std::fmt::Debug for DataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataPoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DataPoint`](crate::model::DataPoint).

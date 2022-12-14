@@ -2,7 +2,7 @@
 
 /// <p>Properties that provide details of a stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StageDetails {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
@@ -81,22 +81,6 @@ impl StageDetails {
     /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
     pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
-    }
-}
-impl std::fmt::Debug for StageDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StageDetails");
-        formatter.field("name", &self.name);
-        formatter.field("game_key", &self.game_key);
-        formatter.field("arn", &self.arn);
-        formatter.field("role", &self.role);
-        formatter.field("description", &self.description);
-        formatter.field("created", &self.created);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("log_group", &self.log_group);
-        formatter.finish()
     }
 }
 /// See [`StageDetails`](crate::model::StageDetails).
@@ -358,7 +342,7 @@ impl AsRef<str> for StageState {
 
 /// <p>Properties that provide details of a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotDetails {
     /// <p>The identifier of the snapshot.</p>
     #[doc(hidden)]
@@ -400,17 +384,6 @@ impl SnapshotDetails {
     /// <p>The timestamp of when the snapshot was last updated.</p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for SnapshotDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotDetails");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("sections", &self.sections);
-        formatter.field("created", &self.created);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`SnapshotDetails`](crate::model::SnapshotDetails).
@@ -520,7 +493,7 @@ impl SnapshotDetails {
 
 /// <p>The configuration section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Section {
     /// <p>The name of the section.</p>
     #[doc(hidden)]
@@ -544,15 +517,6 @@ impl Section {
     /// <p>The content of a configuration section.</p>
     pub fn attributes(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for Section {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Section");
-        formatter.field("name", &self.name);
-        formatter.field("size", &self.size);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`Section`](crate::model::Section).
@@ -619,7 +583,7 @@ impl Section {
 /// <p>Details about the game configuration.</p>
 /// <p> The game configuration is organized into named sections, where the schema of each section is defined by an extension. The schema for these sections can be retrieved using the <code>GetExtensionVersion</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameConfigurationDetails {
     /// <p>Configuration data, organized by section name.</p>
     #[doc(hidden)]
@@ -647,15 +611,6 @@ impl GameConfigurationDetails {
     /// <p>The date when the game was last modified.</p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for GameConfigurationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameConfigurationDetails");
-        formatter.field("sections", &self.sections);
-        formatter.field("created", &self.created);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
@@ -741,7 +696,7 @@ impl GameConfigurationDetails {
 
 /// <p>A single modification to the configuration section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SectionModification {
     /// <p>The name of the section to be modified.</p>
     #[doc(hidden)]
@@ -776,16 +731,6 @@ impl SectionModification {
     /// <p> This field should be omitted for delete operations. </p>
     pub fn value(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for SectionModification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SectionModification");
-        formatter.field("section", &self.section);
-        formatter.field("path", &self.path);
-        formatter.field("operation", &self.operation);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SectionModification`](crate::model::SectionModification).
@@ -962,7 +907,7 @@ impl AsRef<str> for Operation {
 
 /// <p>Details about a game.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameDetails {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -1025,23 +970,6 @@ impl GameDetails {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GameDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameDetails");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("created", &self.created);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("state", &self.state);
-        formatter.field(
-            "enable_termination_protection",
-            &self.enable_termination_protection,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GameDetails`](crate::model::GameDetails).
@@ -1282,7 +1210,7 @@ impl AsRef<str> for GameState {
 
 /// <p>Properties that provide details of a stage deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StageDeploymentDetails {
     /// <p>The identifier of the deployment.</p>
     #[doc(hidden)]
@@ -1334,19 +1262,6 @@ impl StageDeploymentDetails {
     /// <p>The result of the deployment.</p>
     pub fn deployment_result(&self) -> std::option::Option<&crate::model::DeploymentResult> {
         self.deployment_result.as_ref()
-    }
-}
-impl std::fmt::Debug for StageDeploymentDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StageDeploymentDetails");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("deployment_action", &self.deployment_action);
-        formatter.field("deployment_state", &self.deployment_state);
-        formatter.field("created", &self.created);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("deployment_result", &self.deployment_result);
-        formatter.finish()
     }
 }
 /// See [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
@@ -1475,7 +1390,7 @@ impl StageDeploymentDetails {
 
 /// <p>The result of the deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentResult {
     /// <p>The type of deployment result.</p>
     #[doc(hidden)]
@@ -1492,14 +1407,6 @@ impl DeploymentResult {
     /// <p>Details about the deployment result.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DeploymentResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentResult");
-        formatter.field("result_code", &self.result_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DeploymentResult`](crate::model::DeploymentResult).
@@ -1838,7 +1745,7 @@ impl AsRef<str> for DeploymentAction {
 
 /// <p>Properties that specify the code generator for a generated code job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Generator {
     /// <p>The platform that will be used to run the generated code.</p>
     #[doc(hidden)]
@@ -1864,15 +1771,6 @@ impl Generator {
     /// <p>The target version of the GameSparks Game SDK.</p>
     pub fn game_sdk_version(&self) -> std::option::Option<&str> {
         self.game_sdk_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Generator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Generator");
-        formatter.field("target_platform", &self.target_platform);
-        formatter.field("language", &self.language);
-        formatter.field("game_sdk_version", &self.game_sdk_version);
-        formatter.finish()
     }
 }
 /// See [`Generator`](crate::model::Generator).
@@ -1943,7 +1841,7 @@ impl Generator {
 
 /// <p>The summary of the properties of a stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StageSummary {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
@@ -1987,17 +1885,6 @@ impl StageSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for StageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StageSummary");
-        formatter.field("name", &self.name);
-        formatter.field("game_key", &self.game_key);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`StageSummary`](crate::model::StageSummary).
@@ -2103,7 +1990,7 @@ impl StageSummary {
 
 /// <p>The summary of the properties of a stage deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StageDeploymentSummary {
     /// <p>The identifier of the deployment.</p>
     #[doc(hidden)]
@@ -2148,18 +2035,6 @@ impl StageDeploymentSummary {
     /// <p>The result of the deployment.</p>
     pub fn deployment_result(&self) -> std::option::Option<&crate::model::DeploymentResult> {
         self.deployment_result.as_ref()
-    }
-}
-impl std::fmt::Debug for StageDeploymentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StageDeploymentSummary");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("deployment_action", &self.deployment_action);
-        formatter.field("deployment_state", &self.deployment_state);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("deployment_result", &self.deployment_result);
-        formatter.finish()
     }
 }
 /// See [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
@@ -2273,7 +2148,7 @@ impl StageDeploymentSummary {
 
 /// <p>The summary of the properties of a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotSummary {
     /// <p>The identifier of the snapshot.</p>
     #[doc(hidden)]
@@ -2304,16 +2179,6 @@ impl SnapshotSummary {
     /// <p>Then timestamp of when the snapshot was last updated.</p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for SnapshotSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotSummary");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("created", &self.created);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`SnapshotSummary`](crate::model::SnapshotSummary).
@@ -2394,7 +2259,7 @@ impl SnapshotSummary {
 
 /// <p>Details about a generated code job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeneratedCodeJobDetails {
     /// <p>A presigned URL that can be used to download the generated code.</p>
     #[doc(hidden)]
@@ -2434,17 +2299,6 @@ impl GeneratedCodeJobDetails {
     /// <p>The identifier for the generated code job.</p>
     pub fn generated_code_job_id(&self) -> std::option::Option<&str> {
         self.generated_code_job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GeneratedCodeJobDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeneratedCodeJobDetails");
-        formatter.field("s3_url", &self.s3_url);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("generated_code_job_id", &self.generated_code_job_id);
-        formatter.finish()
     }
 }
 /// See [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
@@ -2644,7 +2498,7 @@ impl AsRef<str> for GeneratedCodeJobState {
 
 /// <p>The summary of the properties of a game.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSummary {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -2679,16 +2533,6 @@ impl GameSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for GameSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameSummary");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`GameSummary`](crate::model::GameSummary).
@@ -2780,7 +2624,7 @@ impl GameSummary {
 
 /// <p>Details about the extension version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtensionVersionDetails {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
@@ -2811,16 +2655,6 @@ impl ExtensionVersionDetails {
     /// <p>The version of the extension.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for ExtensionVersionDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtensionVersionDetails");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.field("schema", &self.schema);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
@@ -2895,7 +2729,7 @@ impl ExtensionVersionDetails {
 
 /// <p>Details about the extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtensionDetails {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
@@ -2919,15 +2753,6 @@ impl ExtensionDetails {
     /// <p>The description of the extension.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ExtensionDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtensionDetails");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ExtensionDetails`](crate::model::ExtensionDetails).
@@ -2990,7 +2815,7 @@ impl ExtensionDetails {
 
 /// <p>The source used to import configuration sections.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportGameConfigurationSource {
     /// <p>The JSON string containing the configuration sections.</p>
     #[doc(hidden)]
@@ -3000,13 +2825,6 @@ impl ImportGameConfigurationSource {
     /// <p>The JSON string containing the configuration sections.</p>
     pub fn file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.file.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportGameConfigurationSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportGameConfigurationSource");
-        formatter.field("file", &self.file);
-        formatter.finish()
     }
 }
 /// See [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
@@ -3043,7 +2861,7 @@ impl ImportGameConfigurationSource {
 
 /// <p>Details about a WebSocket connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The identifier used to indicate a specific WebSocket connection.</p>
     #[doc(hidden)]
@@ -3060,14 +2878,6 @@ impl Connection {
     /// <p>The date and time when the connection was created.</p>
     pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
-    }
-}
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("id", &self.id);
-        formatter.field("created", &self.created);
-        formatter.finish()
     }
 }
 /// See [`Connection`](crate::model::Connection).

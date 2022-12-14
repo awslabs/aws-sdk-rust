@@ -2,7 +2,7 @@
 
 /// <p>Represents a vault's notification configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VaultNotificationConfig {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl VaultNotificationConfig {
     /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
     pub fn events(&self) -> std::option::Option<&[std::string::String]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for VaultNotificationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VaultNotificationConfig");
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
@@ -86,7 +78,7 @@ impl VaultNotificationConfig {
 
 /// <p>Contains the vault access policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VaultAccessPolicy {
     /// <p>The vault access policy.</p>
     #[doc(hidden)]
@@ -96,13 +88,6 @@ impl VaultAccessPolicy {
     /// <p>The vault access policy.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
-    }
-}
-impl std::fmt::Debug for VaultAccessPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VaultAccessPolicy");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
     }
 }
 /// See [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
@@ -141,7 +126,7 @@ impl VaultAccessPolicy {
 
 /// <p>Data retrieval policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRetrievalPolicy {
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     #[doc(hidden)]
@@ -151,13 +136,6 @@ impl DataRetrievalPolicy {
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::DataRetrievalRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for DataRetrievalPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRetrievalPolicy");
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
@@ -203,7 +181,7 @@ impl DataRetrievalPolicy {
 
 /// <p>Data retrieval policy rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataRetrievalRule {
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
@@ -224,14 +202,6 @@ impl DataRetrievalRule {
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     pub fn bytes_per_hour(&self) -> std::option::Option<i64> {
         self.bytes_per_hour
-    }
-}
-impl std::fmt::Debug for DataRetrievalRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataRetrievalRule");
-        formatter.field("strategy", &self.strategy);
-        formatter.field("bytes_per_hour", &self.bytes_per_hour);
-        formatter.finish()
     }
 }
 /// See [`DataRetrievalRule`](crate::model::DataRetrievalRule).
@@ -286,7 +256,7 @@ impl DataRetrievalRule {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVaultOutput {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
     #[doc(hidden)]
@@ -331,18 +301,6 @@ impl DescribeVaultOutput {
     /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn size_in_bytes(&self) -> i64 {
         self.size_in_bytes
-    }
-}
-impl std::fmt::Debug for DescribeVaultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVaultOutput");
-        formatter.field("vault_arn", &self.vault_arn);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_inventory_date", &self.last_inventory_date);
-        formatter.field("number_of_archives", &self.number_of_archives);
-        formatter.field("size_in_bytes", &self.size_in_bytes);
-        formatter.finish()
     }
 }
 /// See [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
@@ -447,7 +405,7 @@ impl DescribeVaultOutput {
 
 /// <p>The definition for a provisioned capacity unit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedCapacityDescription {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
     #[doc(hidden)]
@@ -471,15 +429,6 @@ impl ProvisionedCapacityDescription {
     /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
     pub fn expiration_date(&self) -> std::option::Option<&str> {
         self.expiration_date.as_deref()
-    }
-}
-impl std::fmt::Debug for ProvisionedCapacityDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedCapacityDescription");
-        formatter.field("capacity_id", &self.capacity_id);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.finish()
     }
 }
 /// See [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
@@ -545,7 +494,7 @@ impl ProvisionedCapacityDescription {
 
 /// <p>A list of the part sizes of the multipart upload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartListElement {
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
     #[doc(hidden)]
@@ -562,14 +511,6 @@ impl PartListElement {
     /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub fn sha256_tree_hash(&self) -> std::option::Option<&str> {
         self.sha256_tree_hash.as_deref()
-    }
-}
-impl std::fmt::Debug for PartListElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartListElement");
-        formatter.field("range_in_bytes", &self.range_in_bytes);
-        formatter.field("sha256_tree_hash", &self.sha256_tree_hash);
-        formatter.finish()
     }
 }
 /// See [`PartListElement`](crate::model::PartListElement).
@@ -626,7 +567,7 @@ impl PartListElement {
 
 /// <p>A list of in-progress multipart uploads for a vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadListElement {
     /// <p>The ID of a multipart upload.</p>
     #[doc(hidden)]
@@ -664,17 +605,6 @@ impl UploadListElement {
     /// <p>The UTC time at which the multipart upload was initiated.</p>
     pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
-    }
-}
-impl std::fmt::Debug for UploadListElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadListElement");
-        formatter.field("multipart_upload_id", &self.multipart_upload_id);
-        formatter.field("vault_arn", &self.vault_arn);
-        formatter.field("archive_description", &self.archive_description);
-        formatter.field("part_size_in_bytes", &self.part_size_in_bytes);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`UploadListElement`](crate::model::UploadListElement).
@@ -770,7 +700,7 @@ impl UploadListElement {
 
 /// <p>Contains the description of an Amazon S3 Glacier job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlacierJobDescription {
     /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
     #[doc(hidden)]
@@ -949,36 +879,6 @@ impl GlacierJobDescription {
     /// <p>Contains the location where the data from the select job is stored.</p>
     pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
-    }
-}
-impl std::fmt::Debug for GlacierJobDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlacierJobDescription");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_description", &self.job_description);
-        formatter.field("action", &self.action);
-        formatter.field("archive_id", &self.archive_id);
-        formatter.field("vault_arn", &self.vault_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("completed", &self.completed);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("archive_size_in_bytes", &self.archive_size_in_bytes);
-        formatter.field("inventory_size_in_bytes", &self.inventory_size_in_bytes);
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("sha256_tree_hash", &self.sha256_tree_hash);
-        formatter.field("archive_sha256_tree_hash", &self.archive_sha256_tree_hash);
-        formatter.field("retrieval_byte_range", &self.retrieval_byte_range);
-        formatter.field("tier", &self.tier);
-        formatter.field(
-            "inventory_retrieval_parameters",
-            &self.inventory_retrieval_parameters,
-        );
-        formatter.field("job_output_path", &self.job_output_path);
-        formatter.field("select_parameters", &self.select_parameters);
-        formatter.field("output_location", &self.output_location);
-        formatter.finish()
     }
 }
 /// See [`GlacierJobDescription`](crate::model::GlacierJobDescription).
@@ -1323,7 +1223,7 @@ impl GlacierJobDescription {
 
 /// <p>Contains information about the location where the select job results are stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the job request.</p>
     #[doc(hidden)]
@@ -1333,13 +1233,6 @@ impl OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the job request.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputLocation");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`OutputLocation`](crate::model::OutputLocation).
@@ -1376,7 +1269,7 @@ impl OutputLocation {
 
 /// <p>Contains information about the location in Amazon S3 where the select job results are stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
     #[doc(hidden)]
@@ -1443,20 +1336,6 @@ impl S3Location {
     /// <p>The storage class used to store the job results.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("canned_acl", &self.canned_acl);
-        formatter.field("access_control_list", &self.access_control_list);
-        formatter.field("tagging", &self.tagging);
-        formatter.field("user_metadata", &self.user_metadata);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -1726,7 +1605,7 @@ impl AsRef<str> for StorageClass {
 
 /// <p>Contains information about a grant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Grant {
     /// <p>The grantee.</p>
     #[doc(hidden)]
@@ -1743,14 +1622,6 @@ impl Grant {
     /// <p>Specifies the permission given to the grantee. </p>
     pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
         self.permission.as_ref()
-    }
-}
-impl std::fmt::Debug for Grant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Grant");
-        formatter.field("grantee", &self.grantee);
-        formatter.field("permission", &self.permission);
-        formatter.finish()
     }
 }
 /// See [`Grant`](crate::model::Grant).
@@ -1909,7 +1780,7 @@ impl AsRef<str> for Permission {
 
 /// <p>Contains information about the grantee.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Grantee {
     /// <p>Type of grantee</p>
     #[doc(hidden)]
@@ -1947,17 +1818,6 @@ impl Grantee {
     /// <p>Email address of the grantee.</p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
-    }
-}
-impl std::fmt::Debug for Grantee {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Grantee");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("uri", &self.uri);
-        formatter.field("id", &self.id);
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
     }
 }
 /// See [`Grantee`](crate::model::Grantee).
@@ -2265,7 +2125,7 @@ impl AsRef<str> for CannedAcl {
 
 /// <p>Contains information about the encryption used to store the job results in Amazon S3. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Encryption {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
     #[doc(hidden)]
@@ -2289,15 +2149,6 @@ impl Encryption {
     /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
     pub fn kms_context(&self) -> std::option::Option<&str> {
         self.kms_context.as_deref()
-    }
-}
-impl std::fmt::Debug for Encryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Encryption");
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("kms_context", &self.kms_context);
-        formatter.finish()
     }
 }
 /// See [`Encryption`](crate::model::Encryption).
@@ -2453,7 +2304,7 @@ impl AsRef<str> for EncryptionType {
 
 /// <p>Contains information about the parameters used for a select.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectParameters {
     /// <p>Describes the serialization format of the object.</p>
     #[doc(hidden)]
@@ -2484,16 +2335,6 @@ impl SelectParameters {
     /// <p>Describes how the results of the select job are serialized.</p>
     pub fn output_serialization(&self) -> std::option::Option<&crate::model::OutputSerialization> {
         self.output_serialization.as_ref()
-    }
-}
-impl std::fmt::Debug for SelectParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectParameters");
-        formatter.field("input_serialization", &self.input_serialization);
-        formatter.field("expression_type", &self.expression_type);
-        formatter.field("expression", &self.expression);
-        formatter.field("output_serialization", &self.output_serialization);
-        formatter.finish()
     }
 }
 /// See [`SelectParameters`](crate::model::SelectParameters).
@@ -2577,7 +2418,7 @@ impl SelectParameters {
 
 /// <p>Describes how the select output is serialized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded query results.</p>
     #[doc(hidden)]
@@ -2587,13 +2428,6 @@ impl OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded query results.</p>
     pub fn csv(&self) -> std::option::Option<&crate::model::CsvOutput> {
         self.csv.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputSerialization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputSerialization");
-        formatter.field("csv", &self.csv);
-        formatter.finish()
     }
 }
 /// See [`OutputSerialization`](crate::model::OutputSerialization).
@@ -2630,7 +2464,7 @@ impl OutputSerialization {
 
 /// <p>Contains information about the comma-separated value (CSV) file that the job results are stored in.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvOutput {
     /// <p>A value that indicates whether all output fields should be contained within quotation marks.</p>
     #[doc(hidden)]
@@ -2668,17 +2502,6 @@ impl CsvOutput {
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
     pub fn quote_character(&self) -> std::option::Option<&str> {
         self.quote_character.as_deref()
-    }
-}
-impl std::fmt::Debug for CsvOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvOutput");
-        formatter.field("quote_fields", &self.quote_fields);
-        formatter.field("quote_escape_character", &self.quote_escape_character);
-        formatter.field("record_delimiter", &self.record_delimiter);
-        formatter.field("field_delimiter", &self.field_delimiter);
-        formatter.field("quote_character", &self.quote_character);
-        formatter.finish()
     }
 }
 /// See [`CsvOutput`](crate::model::CsvOutput).
@@ -2955,7 +2778,7 @@ impl AsRef<str> for ExpressionType {
 
 /// <p>Describes how the archive is serialized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     #[doc(hidden)]
@@ -2965,13 +2788,6 @@ impl InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     pub fn csv(&self) -> std::option::Option<&crate::model::CsvInput> {
         self.csv.as_ref()
-    }
-}
-impl std::fmt::Debug for InputSerialization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSerialization");
-        formatter.field("csv", &self.csv);
-        formatter.finish()
     }
 }
 /// See [`InputSerialization`](crate::model::InputSerialization).
@@ -3008,7 +2824,7 @@ impl InputSerialization {
 
 /// <p>Contains information about the comma-separated value (CSV) file to select from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvInput {
     /// <p>Describes the first line of input. Valid values are <code>None</code>, <code>Ignore</code>, and <code>Use</code>.</p>
     #[doc(hidden)]
@@ -3053,18 +2869,6 @@ impl CsvInput {
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
     pub fn quote_character(&self) -> std::option::Option<&str> {
         self.quote_character.as_deref()
-    }
-}
-impl std::fmt::Debug for CsvInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvInput");
-        formatter.field("file_header_info", &self.file_header_info);
-        formatter.field("comments", &self.comments);
-        formatter.field("quote_escape_character", &self.quote_escape_character);
-        formatter.field("record_delimiter", &self.record_delimiter);
-        formatter.field("field_delimiter", &self.field_delimiter);
-        formatter.field("quote_character", &self.quote_character);
-        formatter.finish()
     }
 }
 /// See [`CsvInput`](crate::model::CsvInput).
@@ -3273,7 +3077,7 @@ impl AsRef<str> for FileHeaderInfo {
 
 /// <p>Describes the options for a range inventory retrieval job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryRetrievalJobDescription {
     /// <p>The output format for the vault inventory list, which is set by the <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory. Valid values are <code>CSV</code> and <code>JSON</code>.</p>
     #[doc(hidden)]
@@ -3311,17 +3115,6 @@ impl InventoryRetrievalJobDescription {
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryRetrievalJobDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryRetrievalJobDescription");
-        formatter.field("format", &self.format);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
@@ -3598,7 +3391,7 @@ impl AsRef<str> for ActionCode {
 
 /// <p>Contains the vault lock policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VaultLockPolicy {
     /// <p>The vault lock policy.</p>
     #[doc(hidden)]
@@ -3608,13 +3401,6 @@ impl VaultLockPolicy {
     /// <p>The vault lock policy.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
-    }
-}
-impl std::fmt::Debug for VaultLockPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VaultLockPolicy");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
     }
 }
 /// See [`VaultLockPolicy`](crate::model::VaultLockPolicy).
@@ -3653,7 +3439,7 @@ impl VaultLockPolicy {
 
 /// <p>Provides options for defining a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobParameters {
     /// <p>When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".</p>
     #[doc(hidden)]
@@ -3731,25 +3517,6 @@ impl JobParameters {
     /// <p>Contains information about the location where the select job results are stored.</p>
     pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
-    }
-}
-impl std::fmt::Debug for JobParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobParameters");
-        formatter.field("format", &self.format);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("archive_id", &self.archive_id);
-        formatter.field("description", &self.description);
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.field("retrieval_byte_range", &self.retrieval_byte_range);
-        formatter.field("tier", &self.tier);
-        formatter.field(
-            "inventory_retrieval_parameters",
-            &self.inventory_retrieval_parameters,
-        );
-        formatter.field("select_parameters", &self.select_parameters);
-        formatter.field("output_location", &self.output_location);
-        formatter.finish()
     }
 }
 /// See [`JobParameters`](crate::model::JobParameters).
@@ -3914,7 +3681,7 @@ impl JobParameters {
 
 /// <p>Provides options for specifying a range inventory retrieval job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryRetrievalJobInput {
     /// <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     #[doc(hidden)]
@@ -3945,16 +3712,6 @@ impl InventoryRetrievalJobInput {
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
-    }
-}
-impl std::fmt::Debug for InventoryRetrievalJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryRetrievalJobInput");
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
     }
 }
 /// See [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).

@@ -2,7 +2,7 @@
 
 /// <p>Indicates that one or more of the request parameters are not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl InvalidRequestException {
     /// <p>Indicates if the action can be retried.</p>
     pub fn retryable(&self) -> bool {
         self.retryable
-    }
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("retryable", &self.retryable);
-        formatter.finish()
     }
 }
 impl InvalidRequestException {
@@ -91,7 +83,7 @@ impl InvalidRequestException {
 
 /// <p>Indicates that an exception occurred in the AWS CloudHSM service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudHsmServiceException {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl CloudHsmServiceException {
     /// <p>Indicates if the action can be retried.</p>
     pub fn retryable(&self) -> bool {
         self.retryable
-    }
-}
-impl std::fmt::Debug for CloudHsmServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmServiceException");
-        formatter.field("message", &self.message);
-        formatter.field("retryable", &self.retryable);
-        formatter.finish()
     }
 }
 impl CloudHsmServiceException {
@@ -180,7 +164,7 @@ impl CloudHsmServiceException {
 
 /// <p>Indicates that an internal error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudHsmInternalException {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
@@ -193,14 +177,6 @@ impl CloudHsmInternalException {
     /// <p>Indicates if the action can be retried.</p>
     pub fn retryable(&self) -> bool {
         self.retryable
-    }
-}
-impl std::fmt::Debug for CloudHsmInternalException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmInternalException");
-        formatter.field("message", &self.message);
-        formatter.field("retryable", &self.retryable);
-        formatter.finish()
     }
 }
 impl CloudHsmInternalException {

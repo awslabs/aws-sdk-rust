@@ -2,7 +2,7 @@
 
 /// <p>Information about a Savings Plan offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanOffering {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
@@ -82,23 +82,6 @@ impl SavingsPlanOffering {
     /// <p>The properties.</p>
     pub fn properties(&self) -> std::option::Option<&[crate::model::SavingsPlanOfferingProperty]> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanOffering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanOffering");
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("product_types", &self.product_types);
-        formatter.field("plan_type", &self.plan_type);
-        formatter.field("description", &self.description);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("currency", &self.currency);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("usage_type", &self.usage_type);
-        formatter.field("operation", &self.operation);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
@@ -286,7 +269,7 @@ impl SavingsPlanOffering {
 
 /// <p>Information about a property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanOfferingProperty {
     /// <p>The property name.</p>
     #[doc(hidden)]
@@ -303,14 +286,6 @@ impl SavingsPlanOfferingProperty {
     /// <p>The property value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanOfferingProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanOfferingProperty");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
@@ -840,7 +815,7 @@ impl AsRef<str> for SavingsPlanProductType {
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanOfferingFilterElement {
     /// <p>The filter name.</p>
     #[doc(hidden)]
@@ -857,14 +832,6 @@ impl SavingsPlanOfferingFilterElement {
     /// <p>The filter values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanOfferingFilterElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanOfferingFilterElement");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
@@ -1019,7 +986,7 @@ impl AsRef<str> for SavingsPlanOfferingFilterAttribute {
 
 /// <p>Information about a Savings Plan offering rate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanOfferingRate {
     /// <p>The Savings Plan offering.</p>
     #[doc(hidden)]
@@ -1083,20 +1050,6 @@ impl SavingsPlanOfferingRate {
         &self,
     ) -> std::option::Option<&[crate::model::SavingsPlanOfferingRateProperty]> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanOfferingRate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanOfferingRate");
-        formatter.field("savings_plan_offering", &self.savings_plan_offering);
-        formatter.field("rate", &self.rate);
-        formatter.field("unit", &self.unit);
-        formatter.field("product_type", &self.product_type);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("usage_type", &self.usage_type);
-        formatter.field("operation", &self.operation);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
@@ -1247,7 +1200,7 @@ impl SavingsPlanOfferingRate {
 
 /// <p>Information about a property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanOfferingRateProperty {
     /// <p>The property name.</p>
     #[doc(hidden)]
@@ -1264,14 +1217,6 @@ impl SavingsPlanOfferingRateProperty {
     /// <p>The property value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanOfferingRateProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanOfferingRateProperty");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
@@ -1532,7 +1477,7 @@ impl AsRef<str> for SavingsPlanRateUnit {
 
 /// <p>Information about a Savings Plan offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentSavingsPlanOffering {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
@@ -1577,18 +1522,6 @@ impl ParentSavingsPlanOffering {
     /// <p>The description.</p>
     pub fn plan_description(&self) -> std::option::Option<&str> {
         self.plan_description.as_deref()
-    }
-}
-impl std::fmt::Debug for ParentSavingsPlanOffering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentSavingsPlanOffering");
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("plan_type", &self.plan_type);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("currency", &self.currency);
-        formatter.field("plan_description", &self.plan_description);
-        formatter.finish()
     }
 }
 /// See [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
@@ -1699,7 +1632,7 @@ impl ParentSavingsPlanOffering {
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanOfferingRateFilterElement {
     /// <p>The filter name.</p>
     #[doc(hidden)]
@@ -1716,14 +1649,6 @@ impl SavingsPlanOfferingRateFilterElement {
     /// <p>The filter values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanOfferingRateFilterElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanOfferingRateFilterElement");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
@@ -1905,7 +1830,7 @@ impl AsRef<str> for SavingsPlanRateFilterAttribute {
 
 /// <p>Information about a Savings Plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlan {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
@@ -2038,30 +1963,6 @@ impl SavingsPlan {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SavingsPlan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlan");
-        formatter.field("offering_id", &self.offering_id);
-        formatter.field("savings_plan_id", &self.savings_plan_id);
-        formatter.field("savings_plan_arn", &self.savings_plan_arn);
-        formatter.field("description", &self.description);
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.field("state", &self.state);
-        formatter.field("region", &self.region);
-        formatter.field("ec2_instance_family", &self.ec2_instance_family);
-        formatter.field("savings_plan_type", &self.savings_plan_type);
-        formatter.field("payment_option", &self.payment_option);
-        formatter.field("product_types", &self.product_types);
-        formatter.field("currency", &self.currency);
-        formatter.field("commitment", &self.commitment);
-        formatter.field("upfront_payment_amount", &self.upfront_payment_amount);
-        formatter.field("recurring_payment_amount", &self.recurring_payment_amount);
-        formatter.field("term_duration_in_seconds", &self.term_duration_in_seconds);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlan`](crate::model::SavingsPlan).
@@ -2475,7 +2376,7 @@ impl AsRef<str> for SavingsPlanState {
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanFilter {
     /// <p>The filter name.</p>
     #[doc(hidden)]
@@ -2492,14 +2393,6 @@ impl SavingsPlanFilter {
     /// <p>The filter value.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
@@ -2699,7 +2592,7 @@ impl AsRef<str> for SavingsPlansFilterName {
 
 /// <p>Information about a Savings Plan rate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanRate {
     /// <p>The rate.</p>
     #[doc(hidden)]
@@ -2758,20 +2651,6 @@ impl SavingsPlanRate {
     /// <p>The properties.</p>
     pub fn properties(&self) -> std::option::Option<&[crate::model::SavingsPlanRateProperty]> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanRate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanRate");
-        formatter.field("rate", &self.rate);
-        formatter.field("currency", &self.currency);
-        formatter.field("unit", &self.unit);
-        formatter.field("product_type", &self.product_type);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("usage_type", &self.usage_type);
-        formatter.field("operation", &self.operation);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanRate`](crate::model::SavingsPlanRate).
@@ -2916,7 +2795,7 @@ impl SavingsPlanRate {
 
 /// <p>Information about a property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanRateProperty {
     /// <p>The property name.</p>
     #[doc(hidden)]
@@ -2933,14 +2812,6 @@ impl SavingsPlanRateProperty {
     /// <p>The property value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanRateProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanRateProperty");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
@@ -3107,7 +2978,7 @@ impl AsRef<str> for SavingsPlanRatePropertyKey {
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SavingsPlanRateFilter {
     /// <p>The filter name.</p>
     #[doc(hidden)]
@@ -3124,14 +2995,6 @@ impl SavingsPlanRateFilter {
     /// <p>The filter values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SavingsPlanRateFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SavingsPlanRateFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).

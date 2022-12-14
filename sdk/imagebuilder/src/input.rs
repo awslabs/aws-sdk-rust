@@ -10162,7 +10162,7 @@ impl UpdateInfrastructureConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
     #[doc(hidden)]
@@ -10276,35 +10276,10 @@ impl UpdateInfrastructureConfigurationInput {
         self.instance_metadata_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateInfrastructureConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInfrastructureConfigurationInput");
-        formatter.field(
-            "infrastructure_configuration_arn",
-            &self.infrastructure_configuration_arn,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("instance_profile_name", &self.instance_profile_name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("logging", &self.logging);
-        formatter.field("key_pair", &self.key_pair);
-        formatter.field(
-            "terminate_instance_on_failure",
-            &self.terminate_instance_on_failure,
-        );
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("instance_metadata_options", &self.instance_metadata_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
     #[doc(hidden)]
@@ -10388,36 +10363,10 @@ impl UpdateImagePipelineInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateImagePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateImagePipelineInput");
-        formatter.field("image_pipeline_arn", &self.image_pipeline_arn);
-        formatter.field("description", &self.description);
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.field(
-            "infrastructure_configuration_arn",
-            &self.infrastructure_configuration_arn,
-        );
-        formatter.field(
-            "distribution_configuration_arn",
-            &self.distribution_configuration_arn,
-        );
-        formatter.field("image_tests_configuration", &self.image_tests_configuration);
-        formatter.field(
-            "enhanced_image_metadata_enabled",
-            &self.enhanced_image_metadata_enabled,
-        );
-        formatter.field("schedule", &self.schedule);
-        formatter.field("status", &self.status);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
     #[doc(hidden)]
@@ -10450,23 +10399,10 @@ impl UpdateDistributionConfigurationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDistributionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDistributionConfigurationInput");
-        formatter.field(
-            "distribution_configuration_arn",
-            &self.distribution_configuration_arn,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("distributions", &self.distributions);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     #[doc(hidden)]
@@ -10485,18 +10421,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
     #[doc(hidden)]
@@ -10519,18 +10447,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartImagePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
     #[doc(hidden)]
@@ -10549,18 +10469,10 @@ impl StartImagePipelineExecutionInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartImagePipelineExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartImagePipelineExecutionInput");
-        formatter.field("image_pipeline_arn", &self.image_pipeline_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
     #[doc(hidden)]
@@ -10579,18 +10491,10 @@ impl PutImageRecipePolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutImageRecipePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutImageRecipePolicyInput");
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
     #[doc(hidden)]
@@ -10609,18 +10513,10 @@ impl PutImagePolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutImagePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutImagePolicyInput");
-        formatter.field("image_arn", &self.image_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
     #[doc(hidden)]
@@ -10639,18 +10535,10 @@ impl PutContainerRecipePolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutContainerRecipePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutContainerRecipePolicyInput");
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
     #[doc(hidden)]
@@ -10669,18 +10557,10 @@ impl PutComponentPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutComponentPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutComponentPolicyInput");
-        formatter.field("component_arn", &self.component_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     #[doc(hidden)]
@@ -10692,17 +10572,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInfrastructureConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
     #[doc(hidden)]
@@ -10728,19 +10601,10 @@ impl ListInfrastructureConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInfrastructureConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInfrastructureConfigurationsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImagesInput {
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
     #[doc(hidden)]
@@ -10801,22 +10665,10 @@ impl ListImagesInput {
         self.include_deprecated
     }
 }
-impl std::fmt::Debug for ListImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImagesInput");
-        formatter.field("owner", &self.owner);
-        formatter.field("filters", &self.filters);
-        formatter.field("by_name", &self.by_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("include_deprecated", &self.include_deprecated);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImageRecipesInput {
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
     #[doc(hidden)]
@@ -10859,20 +10711,10 @@ impl ListImageRecipesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImageRecipesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImageRecipesInput");
-        formatter.field("owner", &self.owner);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImagePipelinesInput {
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -10914,19 +10756,10 @@ impl ListImagePipelinesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImagePipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImagePipelinesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImagePipelineImagesInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
     #[doc(hidden)]
@@ -10967,20 +10800,10 @@ impl ListImagePipelineImagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImagePipelineImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImagePipelineImagesInput");
-        formatter.field("image_pipeline_arn", &self.image_pipeline_arn);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImagePackagesInput {
     /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
     #[doc(hidden)]
@@ -11006,19 +10829,10 @@ impl ListImagePackagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImagePackagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImagePackagesInput");
-        formatter.field("image_build_version_arn", &self.image_build_version_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImageBuildVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
     #[doc(hidden)]
@@ -11065,20 +10879,10 @@ impl ListImageBuildVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImageBuildVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImageBuildVersionsInput");
-        formatter.field("image_version_arn", &self.image_version_arn);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
     #[doc(hidden)]
@@ -11104,19 +10908,10 @@ impl ListDistributionConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDistributionConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributionConfigurationsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContainerRecipesInput {
     /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
     #[doc(hidden)]
@@ -11161,20 +10956,10 @@ impl ListContainerRecipesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListContainerRecipesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContainerRecipesInput");
-        formatter.field("owner", &self.owner);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentsInput {
     /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
     #[doc(hidden)]
@@ -11230,21 +11015,10 @@ impl ListComponentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListComponentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentsInput");
-        formatter.field("owner", &self.owner);
-        formatter.field("filters", &self.filters);
-        formatter.field("by_name", &self.by_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentBuildVersionsInput {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
     #[doc(hidden)]
@@ -11270,19 +11044,10 @@ impl ListComponentBuildVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListComponentBuildVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentBuildVersionsInput");
-        formatter.field("component_version_arn", &self.component_version_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportVmImageInput {
     /// <p>The name of the base image that is created by the import process.</p>
     #[doc(hidden)]
@@ -11377,24 +11142,10 @@ impl ImportVmImageInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for ImportVmImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportVmImageInput");
-        formatter.field("name", &self.name);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field("os_version", &self.os_version);
-        formatter.field("vm_import_task_id", &self.vm_import_task_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportComponentInput {
     /// <p> The name of the component.</p>
     #[doc(hidden)]
@@ -11515,28 +11266,10 @@ impl ImportComponentInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for ImportComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportComponentInput");
-        formatter.field("name", &self.name);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("description", &self.description);
-        formatter.field("change_description", &self.change_description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("format", &self.format);
-        formatter.field("platform", &self.platform);
-        formatter.field("data", &self.data);
-        formatter.field("uri", &self.uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p> GetInfrastructureConfiguration request object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
     #[doc(hidden)]
@@ -11548,20 +11281,10 @@ impl GetInfrastructureConfigurationInput {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetInfrastructureConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInfrastructureConfigurationInput");
-        formatter.field(
-            "infrastructure_configuration_arn",
-            &self.infrastructure_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
     #[doc(hidden)]
@@ -11573,17 +11296,10 @@ impl GetImageRecipePolicyInput {
         self.image_recipe_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetImageRecipePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImageRecipePolicyInput");
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
     #[doc(hidden)]
@@ -11595,17 +11311,10 @@ impl GetImageRecipeInput {
         self.image_recipe_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetImageRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImageRecipeInput");
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
     #[doc(hidden)]
@@ -11617,17 +11326,10 @@ impl GetImagePolicyInput {
         self.image_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetImagePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImagePolicyInput");
-        formatter.field("image_arn", &self.image_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
     #[doc(hidden)]
@@ -11639,17 +11341,10 @@ impl GetImagePipelineInput {
         self.image_pipeline_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetImagePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImagePipelineInput");
-        formatter.field("image_pipeline_arn", &self.image_pipeline_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImageInput {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
     #[doc(hidden)]
@@ -11661,17 +11356,10 @@ impl GetImageInput {
         self.image_build_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImageInput");
-        formatter.field("image_build_version_arn", &self.image_build_version_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
     #[doc(hidden)]
@@ -11683,20 +11371,10 @@ impl GetDistributionConfigurationInput {
         self.distribution_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDistributionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDistributionConfigurationInput");
-        formatter.field(
-            "distribution_configuration_arn",
-            &self.distribution_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
     #[doc(hidden)]
@@ -11708,17 +11386,10 @@ impl GetContainerRecipePolicyInput {
         self.container_recipe_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetContainerRecipePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContainerRecipePolicyInput");
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
     #[doc(hidden)]
@@ -11730,17 +11401,10 @@ impl GetContainerRecipeInput {
         self.container_recipe_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetContainerRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContainerRecipeInput");
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
     #[doc(hidden)]
@@ -11752,17 +11416,10 @@ impl GetComponentPolicyInput {
         self.component_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetComponentPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComponentPolicyInput");
-        formatter.field("component_arn", &self.component_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
     #[doc(hidden)]
@@ -11774,20 +11431,10 @@ impl GetComponentInput {
         self.component_build_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComponentInput");
-        formatter.field(
-            "component_build_version_arn",
-            &self.component_build_version_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
     #[doc(hidden)]
@@ -11799,20 +11446,10 @@ impl DeleteInfrastructureConfigurationInput {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInfrastructureConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInfrastructureConfigurationInput");
-        formatter.field(
-            "infrastructure_configuration_arn",
-            &self.infrastructure_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
     #[doc(hidden)]
@@ -11824,17 +11461,10 @@ impl DeleteImageRecipeInput {
         self.image_recipe_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImageRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImageRecipeInput");
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
     #[doc(hidden)]
@@ -11846,17 +11476,10 @@ impl DeleteImagePipelineInput {
         self.image_pipeline_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImagePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImagePipelineInput");
-        formatter.field("image_pipeline_arn", &self.image_pipeline_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImageInput {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
     #[doc(hidden)]
@@ -11868,17 +11491,10 @@ impl DeleteImageInput {
         self.image_build_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImageInput");
-        formatter.field("image_build_version_arn", &self.image_build_version_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
     #[doc(hidden)]
@@ -11890,20 +11506,10 @@ impl DeleteDistributionConfigurationInput {
         self.distribution_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDistributionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDistributionConfigurationInput");
-        formatter.field(
-            "distribution_configuration_arn",
-            &self.distribution_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
     #[doc(hidden)]
@@ -11915,17 +11521,10 @@ impl DeleteContainerRecipeInput {
         self.container_recipe_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContainerRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContainerRecipeInput");
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
     #[doc(hidden)]
@@ -11937,20 +11536,10 @@ impl DeleteComponentInput {
         self.component_build_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteComponentInput");
-        formatter.field(
-            "component_build_version_arn",
-            &self.component_build_version_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInfrastructureConfigurationInput {
     /// <p>The name of the infrastructure configuration.</p>
     #[doc(hidden)]
@@ -12067,33 +11656,10 @@ impl CreateInfrastructureConfigurationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInfrastructureConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInfrastructureConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("instance_profile_name", &self.instance_profile_name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("logging", &self.logging);
-        formatter.field("key_pair", &self.key_pair);
-        formatter.field(
-            "terminate_instance_on_failure",
-            &self.terminate_instance_on_failure,
-        );
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("instance_metadata_options", &self.instance_metadata_options);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImageRecipeInput {
     /// <p> The name of the image recipe.</p>
     #[doc(hidden)]
@@ -12208,29 +11774,10 @@ impl CreateImageRecipeInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateImageRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateImageRecipeInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("components", &self.components);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("tags", &self.tags);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field(
-            "additional_instance_configuration",
-            &self.additional_instance_configuration,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImagePipelineInput {
     /// <p> The name of the image pipeline.</p>
     #[doc(hidden)]
@@ -12325,37 +11872,10 @@ impl CreateImagePipelineInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateImagePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateImagePipelineInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.field(
-            "infrastructure_configuration_arn",
-            &self.infrastructure_configuration_arn,
-        );
-        formatter.field(
-            "distribution_configuration_arn",
-            &self.distribution_configuration_arn,
-        );
-        formatter.field("image_tests_configuration", &self.image_tests_configuration);
-        formatter.field(
-            "enhanced_image_metadata_enabled",
-            &self.enhanced_image_metadata_enabled,
-        );
-        formatter.field("schedule", &self.schedule);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImageInput {
     /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
     #[doc(hidden)]
@@ -12422,33 +11942,10 @@ impl CreateImageInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateImageInput");
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.field(
-            "distribution_configuration_arn",
-            &self.distribution_configuration_arn,
-        );
-        formatter.field(
-            "infrastructure_configuration_arn",
-            &self.infrastructure_configuration_arn,
-        );
-        formatter.field("image_tests_configuration", &self.image_tests_configuration);
-        formatter.field(
-            "enhanced_image_metadata_enabled",
-            &self.enhanced_image_metadata_enabled,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDistributionConfigurationInput {
     /// <p> The name of the distribution configuration.</p>
     #[doc(hidden)]
@@ -12492,21 +11989,10 @@ impl CreateDistributionConfigurationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDistributionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDistributionConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("distributions", &self.distributions);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContainerRecipeInput {
     /// <p>The type of container to create.</p>
     #[doc(hidden)]
@@ -12661,32 +12147,10 @@ impl CreateContainerRecipeInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateContainerRecipeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContainerRecipeInput");
-        formatter.field("container_type", &self.container_type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("components", &self.components);
-        formatter.field("instance_configuration", &self.instance_configuration);
-        formatter.field("dockerfile_template_data", &self.dockerfile_template_data);
-        formatter.field("dockerfile_template_uri", &self.dockerfile_template_uri);
-        formatter.field("platform_override", &self.platform_override);
-        formatter.field("image_os_version_override", &self.image_os_version_override);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("tags", &self.tags);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field("target_repository", &self.target_repository);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateComponentInput {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
@@ -12804,27 +12268,10 @@ impl CreateComponentInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateComponentInput");
-        formatter.field("name", &self.name);
-        formatter.field("semantic_version", &self.semantic_version);
-        formatter.field("description", &self.description);
-        formatter.field("change_description", &self.change_description);
-        formatter.field("platform", &self.platform);
-        formatter.field("supported_os_versions", &self.supported_os_versions);
-        formatter.field("data", &self.data);
-        formatter.field("uri", &self.uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelImageCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
     #[doc(hidden)]
@@ -12841,13 +12288,5 @@ impl CancelImageCreationInput {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelImageCreationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelImageCreationInput");
-        formatter.field("image_build_version_arn", &self.image_build_version_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

@@ -2,18 +2,11 @@
 
 /// <p>This exception is thrown when a user isn't found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserNotFoundException {
     /// <p>The message returned when a user isn't found.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UserNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UserNotFoundException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl UserNotFoundException {
 
 /// <p>This exception is thrown when a user isn't confirmed successfully.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserNotConfirmedException {
     /// <p>The message returned when a user isn't confirmed successfully.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UserNotConfirmedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserNotConfirmedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UserNotConfirmedException {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl UserNotConfirmedException {
 
 /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     /// <p>The message returned when the Amazon Cognito service returns a too many requests exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyRequestsException {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl TooManyRequestsException {
 
 /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The message returned when the Amazon Cognito service returns a resource not found exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl ResourceNotFoundException {
 
 /// <p>This exception is thrown when a password reset is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PasswordResetRequiredException {
     /// <p>The message returned when a password reset is required.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PasswordResetRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PasswordResetRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PasswordResetRequiredException {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl PasswordResetRequiredException {
 
 /// <p>This exception is thrown when a user isn't authorized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotAuthorizedException {
     /// <p>The message returned when the Amazon Cognito service returns a not authorized exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NotAuthorizedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotAuthorizedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NotAuthorizedException {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl NotAuthorizedException {
 
 /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     /// <p>The message returned when Amazon Cognito throws a limit exceeded exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LimitExceededException {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl LimitExceededException {
 
 /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     /// <p>The message returned when the Amazon Cognito service throws an invalid parameter exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidParameterException {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl InvalidParameterException {
 
 /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalErrorException {
     /// <p>The message returned when Amazon Cognito throws an internal error exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InternalErrorException {
     /// Returns the error message.
@@ -605,18 +542,11 @@ impl InternalErrorException {
 
 /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForbiddenException {
     /// <p>The message returned when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ForbiddenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ForbiddenException {
     /// Returns the error message.
@@ -672,18 +602,11 @@ impl ForbiddenException {
 
 /// <p>This exception is thrown if a code has expired.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpiredCodeException {
     /// <p>The message returned when the expired code exception is thrown.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ExpiredCodeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpiredCodeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ExpiredCodeException {
     /// Returns the error message.
@@ -739,18 +662,11 @@ impl ExpiredCodeException {
 
 /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeMismatchException {
     /// <p>The message provided when the code mismatch exception is thrown.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CodeMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CodeMismatchException {
     /// Returns the error message.
@@ -806,18 +722,11 @@ impl CodeMismatchException {
 
 /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AliasExistsException {
     /// <p>The message that Amazon Cognito sends to the user when the value of an alias attribute is already linked to another user profile.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AliasExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AliasExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AliasExistsException {
     /// Returns the error message.
@@ -873,18 +782,11 @@ impl AliasExistsException {
 
 /// <p>This exception is thrown when the software token time-based one-time password (TOTP) multi-factor authentication (MFA) isn't activated for the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SoftwareTokenMfaNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SoftwareTokenMfaNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SoftwareTokenMfaNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SoftwareTokenMfaNotFoundException {
     /// Returns the error message.
@@ -943,18 +845,11 @@ impl SoftwareTokenMfaNotFoundException {
 
 /// <p>This exception is thrown when the user pool configuration is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidUserPoolConfigurationException {
     /// <p>The message returned when the user pool configuration is not valid.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidUserPoolConfigurationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidUserPoolConfigurationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidUserPoolConfigurationException {
     /// Returns the error message.
@@ -1010,18 +905,11 @@ impl InvalidUserPoolConfigurationException {
 
 /// <p>This exception is thrown when there is a code mismatch and the service fails to configure the software token TOTP multi-factor authentication (MFA).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableSoftwareTokenMfaException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EnableSoftwareTokenMfaException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableSoftwareTokenMfaException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EnableSoftwareTokenMfaException {
     /// Returns the error message.
@@ -1080,18 +968,11 @@ impl EnableSoftwareTokenMfaException {
 
 /// <p>This exception is thrown when the specified scope doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScopeDoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ScopeDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScopeDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ScopeDoesNotExistException {
     /// Returns the error message.
@@ -1147,18 +1028,11 @@ impl ScopeDoesNotExistException {
 
 /// <p>This exception is thrown when the specified OAuth flow is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOAuthFlowException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOAuthFlowException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOAuthFlowException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOAuthFlowException {
     /// Returns the error message.
@@ -1214,18 +1088,11 @@ impl InvalidOAuthFlowException {
 
 /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentModificationException {
     /// <p>The message provided when the concurrent exception is thrown.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModificationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
@@ -1281,18 +1148,11 @@ impl ConcurrentModificationException {
 
 /// <p>This exception is thrown when a user pool tag can't be set or updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPoolTaggingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UserPoolTaggingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPoolTaggingException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UserPoolTaggingException {
     /// Returns the error message.
@@ -1348,18 +1208,11 @@ impl UserPoolTaggingException {
 
 /// <p>This exception is thrown when you're trying to modify a user pool while a user import job is in progress for that pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserImportInProgressException {
     /// <p>The message returned when the user pool has an import job running.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UserImportInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserImportInProgressException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UserImportInProgressException {
     /// Returns the error message.
@@ -1415,18 +1268,11 @@ impl UserImportInProgressException {
 
 /// <p>This exception is thrown when the trust relationship is not valid for the role provided for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSmsRoleTrustRelationshipException {
     /// <p>The message returned when the role trust relationship for the SMS message is not valid.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSmsRoleTrustRelationshipException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSmsRoleTrustRelationshipException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSmsRoleTrustRelationshipException {
     /// Returns the error message.
@@ -1482,18 +1328,11 @@ impl InvalidSmsRoleTrustRelationshipException {
 
 /// <p>This exception is returned when the role provided for SMS configuration doesn't have permission to publish using Amazon SNS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSmsRoleAccessPolicyException {
     /// <p>The message returned when the invalid SMS role access policy exception is thrown.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSmsRoleAccessPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSmsRoleAccessPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSmsRoleAccessPolicyException {
     /// Returns the error message.
@@ -1549,18 +1388,11 @@ impl InvalidSmsRoleAccessPolicyException {
 
 /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEmailRoleAccessPolicyException {
     /// <p>The message returned when you have an unverified email address or the identity policy isn't set on an email address that Amazon Cognito can access.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidEmailRoleAccessPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEmailRoleAccessPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidEmailRoleAccessPolicyException {
     /// Returns the error message.
@@ -1616,18 +1448,11 @@ impl InvalidEmailRoleAccessPolicyException {
 
 /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserLambdaValidationException {
     /// <p>The message returned when the Amazon Cognito service returns a user validation exception with the Lambda service.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UserLambdaValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserLambdaValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UserLambdaValidationException {
     /// Returns the error message.
@@ -1683,18 +1508,11 @@ impl UserLambdaValidationException {
 
 /// <p>This exception is thrown when Amazon Cognito encounters an unexpected exception with Lambda.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnexpectedLambdaException {
     /// <p>The message returned when Amazon Cognito returns an unexpected Lambda exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnexpectedLambdaException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnexpectedLambdaException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnexpectedLambdaException {
     /// Returns the error message.
@@ -1750,18 +1568,11 @@ impl UnexpectedLambdaException {
 
 /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLambdaResponseException {
     /// <p>The message returned when Amazon Cognito throws an invalid Lambda response exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidLambdaResponseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLambdaResponseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidLambdaResponseException {
     /// Returns the error message.
@@ -1817,18 +1628,11 @@ impl InvalidLambdaResponseException {
 
 /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeDeliveryFailureException {
     /// <p>The message sent when a verification code fails to deliver successfully.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CodeDeliveryFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeDeliveryFailureException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CodeDeliveryFailureException {
     /// Returns the error message.
@@ -1884,18 +1688,11 @@ impl CodeDeliveryFailureException {
 
 /// <p>This exception is thrown when the specified identifier isn't supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedIdentityProviderException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedIdentityProviderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedIdentityProviderException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedIdentityProviderException {
     /// Returns the error message.
@@ -1951,18 +1748,11 @@ impl UnsupportedIdentityProviderException {
 
 /// <p>This exception is thrown when user pool add-ons aren't enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPoolAddOnNotEnabledException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UserPoolAddOnNotEnabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPoolAddOnNotEnabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UserPoolAddOnNotEnabledException {
     /// Returns the error message.
@@ -2018,18 +1808,11 @@ impl UserPoolAddOnNotEnabledException {
 
 /// <p>This exception is thrown when a precondition is not met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PreconditionNotMetException {
     /// <p>The message returned when a precondition is not met.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PreconditionNotMetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreconditionNotMetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PreconditionNotMetException {
     /// Returns the error message.
@@ -2085,18 +1868,11 @@ impl PreconditionNotMetException {
 
 /// <p>This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsernameExistsException {
     /// <p>The message returned when Amazon Cognito throws a user name exists exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UsernameExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsernameExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UsernameExistsException {
     /// Returns the error message.
@@ -2152,18 +1928,11 @@ impl UsernameExistsException {
 
 /// <p>This exception is thrown when Amazon Cognito encounters an invalid password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPasswordException {
     /// <p>The message returned when Amazon Cognito throws an invalid user password exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPasswordException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPasswordException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPasswordException {
     /// Returns the error message.
@@ -2219,18 +1988,11 @@ impl InvalidPasswordException {
 
 /// <p>Exception that is thrown when an unsupported token is passed to an operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedTokenTypeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedTokenTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedTokenTypeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedTokenTypeException {
     /// Returns the error message.
@@ -2286,18 +2048,11 @@ impl UnsupportedTokenTypeException {
 
 /// <p>Exception that is thrown when you attempt to perform an operation that isn't enabled for the user pool client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedOperationException {
     /// Returns the error message.
@@ -2353,18 +2108,11 @@ impl UnsupportedOperationException {
 
 /// <p>Exception that is thrown when the request isn't authorized. This can happen due to an invalid access token in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnauthorizedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnauthorizedException {
     /// Returns the error message.
@@ -2420,18 +2168,11 @@ impl UnauthorizedException {
 
 /// <p>This exception is thrown when Amazon Cognito can't find a multi-factor authentication (MFA) method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MfaMethodNotFoundException {
     /// <p>The message returned when Amazon Cognito throws an MFA method not found exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MfaMethodNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MfaMethodNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MfaMethodNotFoundException {
     /// Returns the error message.
@@ -2487,18 +2228,11 @@ impl MfaMethodNotFoundException {
 
 /// <p>This exception is thrown when the provider is already supported by the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateProviderException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateProviderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateProviderException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateProviderException {
     /// Returns the error message.
@@ -2554,18 +2288,11 @@ impl DuplicateProviderException {
 
 /// <p>This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GroupExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl GroupExistsException {
     /// Returns the error message.
@@ -2621,18 +2348,11 @@ impl GroupExistsException {
 
 /// <p>This exception is thrown when the user has made too many failed attempts for a given action, such as sign-in.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFailedAttemptsException {
     /// <p>The message returned when Amazon Cognito returns a <code>TooManyFailedAttempts</code> exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFailedAttemptsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFailedAttemptsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFailedAttemptsException {
     /// Returns the error message.
@@ -2688,18 +2408,11 @@ impl TooManyFailedAttemptsException {
 
 /// <p>The request failed because the user is in an unsupported state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedUserStateException {
     /// <p>The message returned when the user is in an unsupported state.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedUserStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedUserStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedUserStateException {
     /// Returns the error message.

@@ -4844,7 +4844,7 @@ impl UpdateLogPatternInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLogPatternInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -4884,21 +4884,10 @@ impl UpdateLogPatternInput {
         self.rank
     }
 }
-impl std::fmt::Debug for UpdateLogPatternInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLogPatternInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("pattern_set_name", &self.pattern_set_name);
-        formatter.field("pattern_name", &self.pattern_name);
-        formatter.field("pattern", &self.pattern);
-        formatter.field("rank", &self.rank);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -4945,22 +4934,10 @@ impl UpdateComponentConfigurationInput {
         self.auto_config_enabled
     }
 }
-impl std::fmt::Debug for UpdateComponentConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateComponentConfigurationInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("monitor", &self.monitor);
-        formatter.field("tier", &self.tier);
-        formatter.field("component_configuration", &self.component_configuration);
-        formatter.field("auto_config_enabled", &self.auto_config_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateComponentInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -4993,20 +4970,10 @@ impl UpdateComponentInput {
         self.resource_list.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateComponentInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("new_component_name", &self.new_component_name);
-        formatter.field("resource_list", &self.resource_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5053,22 +5020,10 @@ impl UpdateApplicationInput {
         self.auto_config_enabled
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("ops_center_enabled", &self.ops_center_enabled);
-        formatter.field("cwe_monitor_enabled", &self.cwe_monitor_enabled);
-        formatter.field("ops_item_sns_topic_arn", &self.ops_item_sns_topic_arn);
-        formatter.field("remove_sns_topic", &self.remove_sns_topic);
-        formatter.field("auto_config_enabled", &self.auto_config_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from.</p>
     #[doc(hidden)]
@@ -5089,18 +5044,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to add one or more tags to.</p>
     #[doc(hidden)]
@@ -5119,18 +5066,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
     #[doc(hidden)]
@@ -5142,17 +5081,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProblemsInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5199,22 +5131,10 @@ impl ListProblemsInput {
         self.component_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListProblemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProblemsInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("component_name", &self.component_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLogPatternSetsInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5240,19 +5160,10 @@ impl ListLogPatternSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLogPatternSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLogPatternSetsInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLogPatternsInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5285,20 +5196,10 @@ impl ListLogPatternsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLogPatternsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLogPatternsInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("pattern_set_name", &self.pattern_set_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationHistoryInput {
     /// <p>Resource group to which the application belongs. </p>
     #[doc(hidden)]
@@ -5345,22 +5246,10 @@ impl ListConfigurationHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConfigurationHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationHistoryInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("event_status", &self.event_status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentsInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5386,19 +5275,10 @@ impl ListComponentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListComponentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentsInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     #[doc(hidden)]
@@ -5417,18 +5297,10 @@ impl ListApplicationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProblemObservationsInput {
     /// <p>The ID of the problem.</p>
     #[doc(hidden)]
@@ -5440,17 +5312,10 @@ impl DescribeProblemObservationsInput {
         self.problem_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProblemObservationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProblemObservationsInput");
-        formatter.field("problem_id", &self.problem_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProblemInput {
     /// <p>The ID of the problem.</p>
     #[doc(hidden)]
@@ -5462,17 +5327,10 @@ impl DescribeProblemInput {
         self.problem_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProblemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProblemInput");
-        formatter.field("problem_id", &self.problem_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeObservationInput {
     /// <p>The ID of the observation.</p>
     #[doc(hidden)]
@@ -5484,17 +5342,10 @@ impl DescribeObservationInput {
         self.observation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeObservationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeObservationInput");
-        formatter.field("observation_id", &self.observation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLogPatternInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5520,19 +5371,10 @@ impl DescribeLogPatternInput {
         self.pattern_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLogPatternInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLogPatternInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("pattern_set_name", &self.pattern_set_name);
-        formatter.field("pattern_name", &self.pattern_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeComponentConfigurationRecommendationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5558,19 +5400,10 @@ impl DescribeComponentConfigurationRecommendationInput {
         self.tier.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeComponentConfigurationRecommendationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeComponentConfigurationRecommendationInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("tier", &self.tier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5589,18 +5422,10 @@ impl DescribeComponentConfigurationInput {
         self.component_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeComponentConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeComponentConfigurationInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("component_name", &self.component_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeComponentInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5619,18 +5444,10 @@ impl DescribeComponentInput {
         self.component_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeComponentInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("component_name", &self.component_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5642,17 +5459,10 @@ impl DescribeApplicationInput {
         self.resource_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLogPatternInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5678,19 +5488,10 @@ impl DeleteLogPatternInput {
         self.pattern_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLogPatternInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLogPatternInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("pattern_set_name", &self.pattern_set_name);
-        formatter.field("pattern_name", &self.pattern_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteComponentInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5709,18 +5510,10 @@ impl DeleteComponentInput {
         self.component_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteComponentInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("component_name", &self.component_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5732,17 +5525,10 @@ impl DeleteApplicationInput {
         self.resource_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLogPatternInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5782,21 +5568,10 @@ impl CreateLogPatternInput {
         self.rank
     }
 }
-impl std::fmt::Debug for CreateLogPatternInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLogPatternInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("pattern_set_name", &self.pattern_set_name);
-        formatter.field("pattern_name", &self.pattern_name);
-        formatter.field("pattern", &self.pattern);
-        formatter.field("rank", &self.rank);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateComponentInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5822,19 +5597,10 @@ impl CreateComponentInput {
         self.resource_list.as_deref()
     }
 }
-impl std::fmt::Debug for CreateComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateComponentInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("resource_list", &self.resource_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -5893,19 +5659,5 @@ impl CreateApplicationInput {
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
     pub fn grouping_type(&self) -> std::option::Option<&crate::model::GroupingType> {
         self.grouping_type.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("ops_center_enabled", &self.ops_center_enabled);
-        formatter.field("cwe_monitor_enabled", &self.cwe_monitor_enabled);
-        formatter.field("ops_item_sns_topic_arn", &self.ops_item_sns_topic_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("auto_config_enabled", &self.auto_config_enabled);
-        formatter.field("auto_create", &self.auto_create);
-        formatter.field("grouping_type", &self.grouping_type);
-        formatter.finish()
     }
 }

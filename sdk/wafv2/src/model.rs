@@ -475,7 +475,7 @@ impl AsRef<str> for ParameterExceptionField {
 
 /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available at the web ACL level and in each rule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptchaConfig {
     /// <p>Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
     #[doc(hidden)]
@@ -487,13 +487,6 @@ impl CaptchaConfig {
         &self,
     ) -> std::option::Option<&crate::model::ImmunityTimeProperty> {
         self.immunity_time_property.as_ref()
-    }
-}
-impl std::fmt::Debug for CaptchaConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptchaConfig");
-        formatter.field("immunity_time_property", &self.immunity_time_property);
-        formatter.finish()
     }
 }
 /// See [`CaptchaConfig`](crate::model::CaptchaConfig).
@@ -535,7 +528,7 @@ impl CaptchaConfig {
 
 /// <p>Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImmunityTimeProperty {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.</p>
     #[doc(hidden)]
@@ -545,13 +538,6 @@ impl ImmunityTimeProperty {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default setting is 300.</p>
     pub fn immunity_time(&self) -> std::option::Option<i64> {
         self.immunity_time
-    }
-}
-impl std::fmt::Debug for ImmunityTimeProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImmunityTimeProperty");
-        formatter.field("immunity_time", &self.immunity_time);
-        formatter.finish()
     }
 }
 /// See [`ImmunityTimeProperty`](crate::model::ImmunityTimeProperty).
@@ -590,7 +576,7 @@ impl ImmunityTimeProperty {
 
 /// <p>The response body to use in a custom response to a web request. This is referenced by key from <code>CustomResponse</code> <code>CustomResponseBodyKey</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomResponseBody {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
     #[doc(hidden)]
@@ -611,14 +597,6 @@ impl CustomResponseBody {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomResponseBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomResponseBody");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content", &self.content);
-        formatter.finish()
     }
 }
 /// See [`CustomResponseBody`](crate::model::CustomResponseBody).
@@ -773,7 +751,7 @@ impl AsRef<str> for ResponseContentType {
 
 /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VisibilityConfig {
     /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
     #[doc(hidden)]
@@ -797,18 +775,6 @@ impl VisibilityConfig {
     /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
-    }
-}
-impl std::fmt::Debug for VisibilityConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VisibilityConfig");
-        formatter.field("sampled_requests_enabled", &self.sampled_requests_enabled);
-        formatter.field(
-            "cloud_watch_metrics_enabled",
-            &self.cloud_watch_metrics_enabled,
-        );
-        formatter.field("metric_name", &self.metric_name);
-        formatter.finish()
     }
 }
 /// See [`VisibilityConfig`](crate::model::VisibilityConfig).
@@ -871,7 +837,7 @@ impl VisibilityConfig {
 
 /// <p>A single rule, which you can use in a <code>WebACL</code> or <code>RuleGroup</code> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <code>Statement</code> that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
     #[doc(hidden)]
@@ -966,20 +932,6 @@ impl Rule {
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
     pub fn captcha_config(&self) -> std::option::Option<&crate::model::CaptchaConfig> {
         self.captcha_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("name", &self.name);
-        formatter.field("priority", &self.priority);
-        formatter.field("statement", &self.statement);
-        formatter.field("action", &self.action);
-        formatter.field("override_action", &self.override_action);
-        formatter.field("rule_labels", &self.rule_labels);
-        formatter.field("visibility_config", &self.visibility_config);
-        formatter.field("captcha_config", &self.captcha_config);
-        formatter.finish()
     }
 }
 /// See [`Rule`](crate::model::Rule).
@@ -1159,7 +1111,7 @@ impl Rule {
 
 /// <p>A single label container. This is used as an element of a label array in multiple contexts, for example, in <code>RuleLabels</code> inside a <code>Rule</code> and in <code>Labels</code> inside a <code>SampledHTTPRequest</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Label {
     /// <p>The label string. </p>
     #[doc(hidden)]
@@ -1169,13 +1121,6 @@ impl Label {
     /// <p>The label string. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Label {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Label");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Label`](crate::model::Label).
@@ -1215,7 +1160,7 @@ impl Label {
 /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverrideAction {
     /// <p>Override the rule group evaluation result to count only. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
@@ -1236,14 +1181,6 @@ impl OverrideAction {
     /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
     pub fn none(&self) -> std::option::Option<&crate::model::NoneAction> {
         self.none.as_ref()
-    }
-}
-impl std::fmt::Debug for OverrideAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverrideAction");
-        formatter.field("count", &self.count);
-        formatter.field("none", &self.none);
-        formatter.finish()
     }
 }
 /// See [`OverrideAction`](crate::model::OverrideAction).
@@ -1300,14 +1237,8 @@ impl OverrideAction {
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 /// <p>JSON specification: <code>"None": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoneAction {}
-impl std::fmt::Debug for NoneAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoneAction");
-        formatter.finish()
-    }
-}
 /// See [`NoneAction`](crate::model::NoneAction).
 pub mod none_action {
 
@@ -1331,7 +1262,7 @@ impl NoneAction {
 /// <p>Specifies that WAF should count the request. Optionally defines additional custom handling for the request.</p>
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountAction {
     /// <p>Defines custom handling for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
@@ -1345,13 +1276,6 @@ impl CountAction {
         &self,
     ) -> std::option::Option<&crate::model::CustomRequestHandling> {
         self.custom_request_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for CountAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountAction");
-        formatter.field("custom_request_handling", &self.custom_request_handling);
-        formatter.finish()
     }
 }
 /// See [`CountAction`](crate::model::CountAction).
@@ -1400,7 +1324,7 @@ impl CountAction {
 /// <p>Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for the rule actions allow and count. </p>
 /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRequestHandling {
     /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
@@ -1412,13 +1336,6 @@ impl CustomRequestHandling {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn insert_headers(&self) -> std::option::Option<&[crate::model::CustomHttpHeader]> {
         self.insert_headers.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomRequestHandling {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRequestHandling");
-        formatter.field("insert_headers", &self.insert_headers);
-        formatter.finish()
     }
 }
 /// See [`CustomRequestHandling`](crate::model::CustomRequestHandling).
@@ -1469,7 +1386,7 @@ impl CustomRequestHandling {
 
 /// <p>A custom header for custom request and response handling. This is used in <code>CustomResponse</code> and <code>CustomRequestHandling</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomHttpHeader {
     /// <p>The name of the custom header. </p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
@@ -1488,14 +1405,6 @@ impl CustomHttpHeader {
     /// <p>The value of the custom header.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomHttpHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomHttpHeader");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CustomHttpHeader`](crate::model::CustomHttpHeader).
@@ -1548,7 +1457,7 @@ impl CustomHttpHeader {
 
 /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleAction {
     /// <p>Instructs WAF to block the web request.</p>
     #[doc(hidden)]
@@ -1579,16 +1488,6 @@ impl RuleAction {
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
     pub fn captcha(&self) -> std::option::Option<&crate::model::CaptchaAction> {
         self.captcha.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleAction");
-        formatter.field("block", &self.block);
-        formatter.field("allow", &self.allow);
-        formatter.field("count", &self.count);
-        formatter.field("captcha", &self.captcha);
-        formatter.finish()
     }
 }
 /// See [`RuleAction`](crate::model::RuleAction).
@@ -1677,7 +1576,7 @@ impl RuleAction {
 /// <p>You can configure the expiration time in the <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting. </p>
 /// <p>This action option is available for rules. It isn't available for web ACL default actions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptchaAction {
     /// <p>Defines custom handling for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
@@ -1691,13 +1590,6 @@ impl CaptchaAction {
         &self,
     ) -> std::option::Option<&crate::model::CustomRequestHandling> {
         self.custom_request_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for CaptchaAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptchaAction");
-        formatter.field("custom_request_handling", &self.custom_request_handling);
-        formatter.finish()
     }
 }
 /// See [`CaptchaAction`](crate::model::CaptchaAction).
@@ -1746,7 +1638,7 @@ impl CaptchaAction {
 /// <p>Specifies that WAF should allow the request and optionally defines additional custom handling for the request.</p>
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowAction {
     /// <p>Defines custom handling for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
@@ -1760,13 +1652,6 @@ impl AllowAction {
         &self,
     ) -> std::option::Option<&crate::model::CustomRequestHandling> {
         self.custom_request_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for AllowAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowAction");
-        formatter.field("custom_request_handling", &self.custom_request_handling);
-        formatter.finish()
     }
 }
 /// See [`AllowAction`](crate::model::AllowAction).
@@ -1815,7 +1700,7 @@ impl AllowAction {
 /// <p>Specifies that WAF should block the request and optionally defines additional custom handling for the response to the web request.</p>
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockAction {
     /// <p>Defines a custom response for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
@@ -1827,13 +1712,6 @@ impl BlockAction {
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn custom_response(&self) -> std::option::Option<&crate::model::CustomResponse> {
         self.custom_response.as_ref()
-    }
-}
-impl std::fmt::Debug for BlockAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockAction");
-        formatter.field("custom_response", &self.custom_response);
-        formatter.finish()
     }
 }
 /// See [`BlockAction`](crate::model::BlockAction).
@@ -1878,7 +1756,7 @@ impl BlockAction {
 /// <p>A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to <code>BlockAction</code>. </p>
 /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomResponse {
     /// <p>The HTTP status code to return to the client. </p>
     /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
@@ -1906,15 +1784,6 @@ impl CustomResponse {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn response_headers(&self) -> std::option::Option<&[crate::model::CustomHttpHeader]> {
         self.response_headers.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomResponse");
-        formatter.field("response_code", &self.response_code);
-        formatter.field("custom_response_body_key", &self.custom_response_body_key);
-        formatter.field("response_headers", &self.response_headers);
-        formatter.finish()
     }
 }
 /// See [`CustomResponse`](crate::model::CustomResponse).
@@ -1995,7 +1864,7 @@ impl CustomResponse {
 /// <p>The processing guidance for a <code>Rule</code>, used by WAF to determine whether a web request matches the rule. </p>
 /// <p>For example specifications, see the examples section of <code>CreateWebACL</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Statement {
     /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
     #[doc(hidden)]
@@ -2151,39 +2020,6 @@ impl Statement {
     /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
     pub fn regex_match_statement(&self) -> std::option::Option<&crate::model::RegexMatchStatement> {
         self.regex_match_statement.as_ref()
-    }
-}
-impl std::fmt::Debug for Statement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Statement");
-        formatter.field("byte_match_statement", &self.byte_match_statement);
-        formatter.field("sqli_match_statement", &self.sqli_match_statement);
-        formatter.field("xss_match_statement", &self.xss_match_statement);
-        formatter.field("size_constraint_statement", &self.size_constraint_statement);
-        formatter.field("geo_match_statement", &self.geo_match_statement);
-        formatter.field(
-            "rule_group_reference_statement",
-            &self.rule_group_reference_statement,
-        );
-        formatter.field(
-            "ip_set_reference_statement",
-            &self.ip_set_reference_statement,
-        );
-        formatter.field(
-            "regex_pattern_set_reference_statement",
-            &self.regex_pattern_set_reference_statement,
-        );
-        formatter.field("rate_based_statement", &self.rate_based_statement);
-        formatter.field("and_statement", &self.and_statement);
-        formatter.field("or_statement", &self.or_statement);
-        formatter.field("not_statement", &self.not_statement);
-        formatter.field(
-            "managed_rule_group_statement",
-            &self.managed_rule_group_statement,
-        );
-        formatter.field("label_match_statement", &self.label_match_statement);
-        formatter.field("regex_match_statement", &self.regex_match_statement);
-        formatter.finish()
     }
 }
 /// See [`Statement`](crate::model::Statement).
@@ -2491,7 +2327,7 @@ impl Statement {
 
 /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegexMatchStatement {
     /// <p>The string representing the regular expression.</p>
     #[doc(hidden)]
@@ -2515,15 +2351,6 @@ impl RegexMatchStatement {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
-    }
-}
-impl std::fmt::Debug for RegexMatchStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegexMatchStatement");
-        formatter.field("regex_string", &self.regex_string);
-        formatter.field("field_to_match", &self.field_to_match);
-        formatter.field("text_transformations", &self.text_transformations);
-        formatter.finish()
     }
 }
 /// See [`RegexMatchStatement`](crate::model::RegexMatchStatement).
@@ -2599,7 +2426,7 @@ impl RegexMatchStatement {
 
 /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextTransformation {
     /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     #[doc(hidden)]
@@ -2706,14 +2533,6 @@ impl TextTransformation {
     /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TextTransformationType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for TextTransformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextTransformation");
-        formatter.field("priority", &self.priority);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`TextTransformation`](crate::model::TextTransformation).
@@ -3070,7 +2889,7 @@ impl AsRef<str> for TextTransformationType {
 /// <p>Example JSON for a <code>Method</code> field to match specification:</p>
 /// <p> <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldToMatch {
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
     /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
@@ -3157,22 +2976,6 @@ impl FieldToMatch {
     /// <p>Only the first 8 KB (8192 bytes) of a request's cookies and only the first 200 cookies are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize cookie content in the <code>Cookies</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service. </p>
     pub fn cookies(&self) -> std::option::Option<&crate::model::Cookies> {
         self.cookies.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldToMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldToMatch");
-        formatter.field("single_header", &self.single_header);
-        formatter.field("single_query_argument", &self.single_query_argument);
-        formatter.field("all_query_arguments", &self.all_query_arguments);
-        formatter.field("uri_path", &self.uri_path);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("body", &self.body);
-        formatter.field("method", &self.method);
-        formatter.field("json_body", &self.json_body);
-        formatter.field("headers", &self.headers);
-        formatter.field("cookies", &self.cookies);
-        formatter.finish()
     }
 }
 /// See [`FieldToMatch`](crate::model::FieldToMatch).
@@ -3347,7 +3150,7 @@ impl FieldToMatch {
 /// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 /// <p>Example JSON: <code>"Cookies": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cookies {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
@@ -3387,15 +3190,6 @@ impl Cookies {
     /// </ul>
     pub fn oversize_handling(&self) -> std::option::Option<&crate::model::OversizeHandling> {
         self.oversize_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for Cookies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cookies");
-        formatter.field("match_pattern", &self.match_pattern);
-        formatter.field("match_scope", &self.match_scope);
-        formatter.field("oversize_handling", &self.oversize_handling);
-        formatter.finish()
     }
 }
 /// See [`Cookies`](crate::model::Cookies).
@@ -3675,7 +3469,7 @@ impl AsRef<str> for MapMatchScope {
 /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
 /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CookieMatchPattern {
     /// <p>Inspect all cookies. </p>
     #[doc(hidden)]
@@ -3699,15 +3493,6 @@ impl CookieMatchPattern {
     /// <p>Inspect only the cookies whose keys don't match any of the strings specified here. </p>
     pub fn excluded_cookies(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_cookies.as_deref()
-    }
-}
-impl std::fmt::Debug for CookieMatchPattern {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CookieMatchPattern");
-        formatter.field("all", &self.all);
-        formatter.field("included_cookies", &self.included_cookies);
-        formatter.field("excluded_cookies", &self.excluded_cookies);
-        formatter.finish()
     }
 }
 /// See [`CookieMatchPattern`](crate::model::CookieMatchPattern).
@@ -3790,14 +3575,8 @@ impl CookieMatchPattern {
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"All": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct All {}
-impl std::fmt::Debug for All {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("All");
-        formatter.finish()
-    }
-}
 /// See [`All`](crate::model::All).
 pub mod all {
 
@@ -3823,7 +3602,7 @@ impl All {
 /// <p>If you want to inspect just the value of a single header, use the <code>SingleHeader</code> <code>FieldToMatch</code> setting instead.</p>
 /// <p>Example JSON: <code>"Headers": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Headers {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
@@ -3863,15 +3642,6 @@ impl Headers {
     /// </ul>
     pub fn oversize_handling(&self) -> std::option::Option<&crate::model::OversizeHandling> {
         self.oversize_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for Headers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Headers");
-        formatter.field("match_pattern", &self.match_pattern);
-        formatter.field("match_scope", &self.match_scope);
-        formatter.field("oversize_handling", &self.oversize_handling);
-        formatter.finish()
     }
 }
 /// See [`Headers`](crate::model::Headers).
@@ -3961,7 +3731,7 @@ impl Headers {
 /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
 /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HeaderMatchPattern {
     /// <p>Inspect all headers. </p>
     #[doc(hidden)]
@@ -3985,15 +3755,6 @@ impl HeaderMatchPattern {
     /// <p>Inspect only the headers whose keys don't match any of the strings specified here. </p>
     pub fn excluded_headers(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_headers.as_deref()
-    }
-}
-impl std::fmt::Debug for HeaderMatchPattern {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HeaderMatchPattern");
-        formatter.field("all", &self.all);
-        formatter.field("included_headers", &self.included_headers);
-        formatter.field("excluded_headers", &self.excluded_headers);
-        formatter.finish()
     }
 }
 /// See [`HeaderMatchPattern`](crate::model::HeaderMatchPattern).
@@ -4077,7 +3838,7 @@ impl HeaderMatchPattern {
 /// <p>Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON that result from the matches that you indicate. </p>
 /// <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonBody {
     /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
     #[doc(hidden)]
@@ -4152,16 +3913,6 @@ impl JsonBody {
     /// <p>Default: <code>CONTINUE</code> </p>
     pub fn oversize_handling(&self) -> std::option::Option<&crate::model::OversizeHandling> {
         self.oversize_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for JsonBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonBody");
-        formatter.field("match_pattern", &self.match_pattern);
-        formatter.field("match_scope", &self.match_scope);
-        formatter.field("invalid_fallback_behavior", &self.invalid_fallback_behavior);
-        formatter.field("oversize_handling", &self.oversize_handling);
-        formatter.finish()
     }
 }
 /// See [`JsonBody`](crate::model::JsonBody).
@@ -4486,7 +4237,7 @@ impl AsRef<str> for JsonMatchScope {
 
 /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. This is used with the <code>FieldToMatch</code> option <code>JsonBody</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonMatchPattern {
     /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
     /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
@@ -4513,14 +4264,6 @@ impl JsonMatchPattern {
     /// </note>
     pub fn included_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.included_paths.as_deref()
-    }
-}
-impl std::fmt::Debug for JsonMatchPattern {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonMatchPattern");
-        formatter.field("all", &self.all);
-        formatter.field("included_paths", &self.included_paths);
-        formatter.finish()
     }
 }
 /// See [`JsonMatchPattern`](crate::model::JsonMatchPattern).
@@ -4592,14 +4335,8 @@ impl JsonMatchPattern {
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"Method": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Method {}
-impl std::fmt::Debug for Method {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Method");
-        formatter.finish()
-    }
-}
 /// See [`Method`](crate::model::Method).
 pub mod method {
 
@@ -4623,7 +4360,7 @@ impl Method {
 /// <p>Inspect the body of the web request. The body immediately follows the request headers.</p>
 /// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Body {
     /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request body are forwarded to WAF by the underlying host service. </p>
     /// <p>The options for oversize handling are the following:</p>
@@ -4649,13 +4386,6 @@ impl Body {
     /// <p>Default: <code>CONTINUE</code> </p>
     pub fn oversize_handling(&self) -> std::option::Option<&crate::model::OversizeHandling> {
         self.oversize_handling.as_ref()
-    }
-}
-impl std::fmt::Debug for Body {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Body");
-        formatter.field("oversize_handling", &self.oversize_handling);
-        formatter.finish()
     }
 }
 /// See [`Body`](crate::model::Body).
@@ -4715,14 +4445,8 @@ impl Body {
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"QueryString": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryString {}
-impl std::fmt::Debug for QueryString {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryString");
-        formatter.finish()
-    }
-}
 /// See [`QueryString`](crate::model::QueryString).
 pub mod query_string {
 
@@ -4747,14 +4471,8 @@ impl QueryString {
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"UriPath": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UriPath {}
-impl std::fmt::Debug for UriPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UriPath");
-        formatter.finish()
-    }
-}
 /// See [`UriPath`](crate::model::UriPath).
 pub mod uri_path {
 
@@ -4779,14 +4497,8 @@ impl UriPath {
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"AllQueryArguments": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllQueryArguments {}
-impl std::fmt::Debug for AllQueryArguments {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllQueryArguments");
-        formatter.finish()
-    }
-}
 /// See [`AllQueryArguments`](crate::model::AllQueryArguments).
 pub mod all_query_arguments {
 
@@ -4811,7 +4523,7 @@ impl AllQueryArguments {
 /// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingleQueryArgument {
     /// <p>The name of the query argument to inspect.</p>
     #[doc(hidden)]
@@ -4821,13 +4533,6 @@ impl SingleQueryArgument {
     /// <p>The name of the query argument to inspect.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for SingleQueryArgument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingleQueryArgument");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`SingleQueryArgument`](crate::model::SingleQueryArgument).
@@ -4867,7 +4572,7 @@ impl SingleQueryArgument {
 /// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingleHeader {
     /// <p>The name of the query header to inspect.</p>
     #[doc(hidden)]
@@ -4877,13 +4582,6 @@ impl SingleHeader {
     /// <p>The name of the query header to inspect.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for SingleHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SingleHeader");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`SingleHeader`](crate::model::SingleHeader).
@@ -4921,7 +4619,7 @@ impl SingleHeader {
 /// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
 /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelMatchStatement {
     /// <p>Specify whether you want to match using the label name or just the namespace. </p>
     #[doc(hidden)]
@@ -4948,14 +4646,6 @@ impl LabelMatchStatement {
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for LabelMatchStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelMatchStatement");
-        formatter.field("scope", &self.scope);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`LabelMatchStatement`](crate::model::LabelMatchStatement).
@@ -5112,7 +4802,7 @@ impl AsRef<str> for LabelMatchScope {
 /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleGroupStatement {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
     #[doc(hidden)]
@@ -5164,21 +4854,6 @@ impl ManagedRuleGroupStatement {
         &self,
     ) -> std::option::Option<&[crate::model::ManagedRuleGroupConfig]> {
         self.managed_rule_group_configs.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleGroupStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleGroupStatement");
-        formatter.field("vendor_name", &self.vendor_name);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("excluded_rules", &self.excluded_rules);
-        formatter.field("scope_down_statement", &self.scope_down_statement);
-        formatter.field(
-            "managed_rule_group_configs",
-            &self.managed_rule_group_configs,
-        );
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement).
@@ -5313,7 +4988,7 @@ impl ManagedRuleGroupStatement {
 /// <p>You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.</p>
 /// <p>For example specifications, see the examples section of <code>CreateWebACL</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleGroupConfig {
     /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
     #[doc(hidden)]
@@ -5344,16 +5019,6 @@ impl ManagedRuleGroupConfig {
     /// <p>Details about your login page password field. </p>
     pub fn password_field(&self) -> std::option::Option<&crate::model::PasswordField> {
         self.password_field.as_ref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleGroupConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleGroupConfig");
-        formatter.field("login_path", &self.login_path);
-        formatter.field("payload_type", &self.payload_type);
-        formatter.field("username_field", &self.username_field);
-        formatter.field("password_field", &self.password_field);
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleGroupConfig`](crate::model::ManagedRuleGroupConfig).
@@ -5437,7 +5102,7 @@ impl ManagedRuleGroupConfig {
 
 /// <p>Details about your login page password field, used in a <code>ManagedRuleGroupConfig</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PasswordField {
     /// <p>The name of the password field. For example <code>/form/password</code>.</p>
     #[doc(hidden)]
@@ -5447,13 +5112,6 @@ impl PasswordField {
     /// <p>The name of the password field. For example <code>/form/password</code>.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for PasswordField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PasswordField");
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
     }
 }
 /// See [`PasswordField`](crate::model::PasswordField).
@@ -5492,7 +5150,7 @@ impl PasswordField {
 
 /// <p>Details about your login page username field, used in a <code>ManagedRuleGroupConfig</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsernameField {
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
     #[doc(hidden)]
@@ -5502,13 +5160,6 @@ impl UsernameField {
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for UsernameField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsernameField");
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
     }
 }
 /// See [`UsernameField`](crate::model::UsernameField).
@@ -5637,7 +5288,7 @@ impl AsRef<str> for PayloadType {
 
 /// <p>Specifies a single rule in a rule group whose action you want to override to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExcludedRule {
     /// <p>The name of the rule whose action you want to override to <code>Count</code>.</p>
     #[doc(hidden)]
@@ -5647,13 +5298,6 @@ impl ExcludedRule {
     /// <p>The name of the rule whose action you want to override to <code>Count</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ExcludedRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExcludedRule");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ExcludedRule`](crate::model::ExcludedRule).
@@ -5690,7 +5334,7 @@ impl ExcludedRule {
 
 /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotStatement {
     /// <p>The statement to negate. You can use any statement that can be nested.</p>
     #[doc(hidden)]
@@ -5700,13 +5344,6 @@ impl NotStatement {
     /// <p>The statement to negate. You can use any statement that can be nested.</p>
     pub fn statement(&self) -> std::option::Option<&crate::model::Statement> {
         self.statement.as_deref()
-    }
-}
-impl std::fmt::Debug for NotStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotStatement");
-        formatter.field("statement", &self.statement);
-        formatter.finish()
     }
 }
 /// See [`NotStatement`](crate::model::NotStatement).
@@ -5751,7 +5388,7 @@ impl NotStatement {
 
 /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrStatement {
     /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
     #[doc(hidden)]
@@ -5761,13 +5398,6 @@ impl OrStatement {
     /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
     pub fn statements(&self) -> std::option::Option<&[crate::model::Statement]> {
         self.statements.as_deref()
-    }
-}
-impl std::fmt::Debug for OrStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrStatement");
-        formatter.field("statements", &self.statements);
-        formatter.finish()
     }
 }
 /// See [`OrStatement`](crate::model::OrStatement).
@@ -5815,7 +5445,7 @@ impl OrStatement {
 
 /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AndStatement {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
     #[doc(hidden)]
@@ -5825,13 +5455,6 @@ impl AndStatement {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
     pub fn statements(&self) -> std::option::Option<&[crate::model::Statement]> {
         self.statements.as_deref()
-    }
-}
-impl std::fmt::Debug for AndStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AndStatement");
-        formatter.field("statements", &self.statements);
-        formatter.finish()
     }
 }
 /// See [`AndStatement`](crate::model::AndStatement).
@@ -5888,7 +5511,7 @@ impl AndStatement {
 /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are not counted towards the rate limit and are not affected by this rule.</p>
 /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RateBasedStatement {
     /// <p>The limit on requests per 5-minute period for a single originating IP address. If the statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     #[doc(hidden)]
@@ -5935,16 +5558,6 @@ impl RateBasedStatement {
     /// <p>This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.</p>
     pub fn forwarded_ip_config(&self) -> std::option::Option<&crate::model::ForwardedIpConfig> {
         self.forwarded_ip_config.as_ref()
-    }
-}
-impl std::fmt::Debug for RateBasedStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RateBasedStatement");
-        formatter.field("limit", &self.limit);
-        formatter.field("aggregate_key_type", &self.aggregate_key_type);
-        formatter.field("scope_down_statement", &self.scope_down_statement);
-        formatter.field("forwarded_ip_config", &self.forwarded_ip_config);
-        formatter.finish()
     }
 }
 /// See [`RateBasedStatement`](crate::model::RateBasedStatement).
@@ -6054,7 +5667,7 @@ impl RateBasedStatement {
 /// <p>This configuration is used for <code>GeoMatchStatement</code> and <code>RateBasedStatement</code>. For <code>IPSetReferenceStatement</code>, use <code>IPSetForwardedIPConfig</code> instead. </p>
 /// <p>WAF only evaluates the first IP address found in the specified HTTP header. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForwardedIpConfig {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -6089,14 +5702,6 @@ impl ForwardedIpConfig {
     /// </ul>
     pub fn fallback_behavior(&self) -> std::option::Option<&crate::model::FallbackBehavior> {
         self.fallback_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for ForwardedIpConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForwardedIpConfig");
-        formatter.field("header_name", &self.header_name);
-        formatter.field("fallback_behavior", &self.fallback_behavior);
-        formatter.finish()
     }
 }
 /// See [`ForwardedIpConfig`](crate::model::ForwardedIpConfig).
@@ -6351,7 +5956,7 @@ impl AsRef<str> for RateBasedStatementAggregateKeyType {
 /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
 /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegexPatternSetReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
     #[doc(hidden)]
@@ -6375,15 +5980,6 @@ impl RegexPatternSetReferenceStatement {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
-    }
-}
-impl std::fmt::Debug for RegexPatternSetReferenceStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegexPatternSetReferenceStatement");
-        formatter.field("arn", &self.arn);
-        formatter.field("field_to_match", &self.field_to_match);
-        formatter.field("text_transformations", &self.text_transformations);
-        formatter.finish()
     }
 }
 /// See [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement).
@@ -6460,7 +6056,7 @@ impl RegexPatternSetReferenceStatement {
 /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
 /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSetReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
     #[doc(hidden)]
@@ -6483,17 +6079,6 @@ impl IpSetReferenceStatement {
         &self,
     ) -> std::option::Option<&crate::model::IpSetForwardedIpConfig> {
         self.ip_set_forwarded_ip_config.as_ref()
-    }
-}
-impl std::fmt::Debug for IpSetReferenceStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSetReferenceStatement");
-        formatter.field("arn", &self.arn);
-        formatter.field(
-            "ip_set_forwarded_ip_config",
-            &self.ip_set_forwarded_ip_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`IpSetReferenceStatement`](crate::model::IpSetReferenceStatement).
@@ -6558,7 +6143,7 @@ impl IpSetReferenceStatement {
 /// </note>
 /// <p>This configuration is used only for <code>IPSetReferenceStatement</code>. For <code>GeoMatchStatement</code> and <code>RateBasedStatement</code>, use <code>ForwardedIPConfig</code> instead. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSetForwardedIpConfig {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -6612,15 +6197,6 @@ impl IpSetForwardedIpConfig {
     /// </ul>
     pub fn position(&self) -> std::option::Option<&crate::model::ForwardedIpPosition> {
         self.position.as_ref()
-    }
-}
-impl std::fmt::Debug for IpSetForwardedIpConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSetForwardedIpConfig");
-        formatter.field("header_name", &self.header_name);
-        formatter.field("fallback_behavior", &self.fallback_behavior);
-        formatter.field("position", &self.position);
-        formatter.finish()
     }
 }
 /// See [`IpSetForwardedIpConfig`](crate::model::IpSetForwardedIpConfig).
@@ -6817,7 +6393,7 @@ impl AsRef<str> for ForwardedIpPosition {
 /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
 /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     #[doc(hidden)]
@@ -6834,14 +6410,6 @@ impl RuleGroupReferenceStatement {
     /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub fn excluded_rules(&self) -> std::option::Option<&[crate::model::ExcludedRule]> {
         self.excluded_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleGroupReferenceStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupReferenceStatement");
-        formatter.field("arn", &self.arn);
-        formatter.field("excluded_rules", &self.excluded_rules);
-        formatter.finish()
     }
 }
 /// See [`RuleGroupReferenceStatement`](crate::model::RuleGroupReferenceStatement).
@@ -6901,7 +6469,7 @@ impl RuleGroupReferenceStatement {
 
 /// <p>A rule statement used to identify web requests based on country of origin. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeoMatchStatement {
     /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
     #[doc(hidden)]
@@ -6922,14 +6490,6 @@ impl GeoMatchStatement {
     /// </note>
     pub fn forwarded_ip_config(&self) -> std::option::Option<&crate::model::ForwardedIpConfig> {
         self.forwarded_ip_config.as_ref()
-    }
-}
-impl std::fmt::Debug for GeoMatchStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeoMatchStatement");
-        formatter.field("country_codes", &self.country_codes);
-        formatter.field("forwarded_ip_config", &self.forwarded_ip_config);
-        formatter.finish()
     }
 }
 /// See [`GeoMatchStatement`](crate::model::GeoMatchStatement).
@@ -8347,7 +7907,7 @@ impl AsRef<str> for CountryCode {
 /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests that have a request body greater than 8192 bytes.</p>
 /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SizeConstraintStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     #[doc(hidden)]
@@ -8378,16 +7938,6 @@ impl SizeConstraintStatement {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
-    }
-}
-impl std::fmt::Debug for SizeConstraintStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SizeConstraintStatement");
-        formatter.field("field_to_match", &self.field_to_match);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("size", &self.size);
-        formatter.field("text_transformations", &self.text_transformations);
-        formatter.finish()
     }
 }
 /// See [`SizeConstraintStatement`](crate::model::SizeConstraintStatement).
@@ -8590,7 +8140,7 @@ impl AsRef<str> for ComparisonOperator {
 
 /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct XssMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     #[doc(hidden)]
@@ -8607,14 +8157,6 @@ impl XssMatchStatement {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
-    }
-}
-impl std::fmt::Debug for XssMatchStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("XssMatchStatement");
-        formatter.field("field_to_match", &self.field_to_match);
-        formatter.field("text_transformations", &self.text_transformations);
-        formatter.finish()
     }
 }
 /// See [`XssMatchStatement`](crate::model::XssMatchStatement).
@@ -8678,7 +8220,7 @@ impl XssMatchStatement {
 
 /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqliMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     #[doc(hidden)]
@@ -8708,15 +8250,6 @@ impl SqliMatchStatement {
     /// <p>Default: <code>LOW</code> </p>
     pub fn sensitivity_level(&self) -> std::option::Option<&crate::model::SensitivityLevel> {
         self.sensitivity_level.as_ref()
-    }
-}
-impl std::fmt::Debug for SqliMatchStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqliMatchStatement");
-        formatter.field("field_to_match", &self.field_to_match);
-        formatter.field("text_transformations", &self.text_transformations);
-        formatter.field("sensitivity_level", &self.sensitivity_level);
-        formatter.finish()
     }
 }
 /// See [`SqliMatchStatement`](crate::model::SqliMatchStatement).
@@ -8891,7 +8424,7 @@ impl AsRef<str> for SensitivityLevel {
 
 /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ByteMatchStatement {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
@@ -8974,16 +8507,6 @@ impl ByteMatchStatement {
         &self,
     ) -> std::option::Option<&crate::model::PositionalConstraint> {
         self.positional_constraint.as_ref()
-    }
-}
-impl std::fmt::Debug for ByteMatchStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ByteMatchStatement");
-        formatter.field("search_string", &self.search_string);
-        formatter.field("field_to_match", &self.field_to_match);
-        formatter.field("text_transformations", &self.text_transformations);
-        formatter.field("positional_constraint", &self.positional_constraint);
-        formatter.finish()
     }
 }
 /// See [`ByteMatchStatement`](crate::model::ByteMatchStatement).
@@ -9240,7 +8763,7 @@ impl AsRef<str> for PositionalConstraint {
 
 /// <p>In a <code>WebACL</code>, this is the action that you want WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultAction {
     /// <p>Specifies that WAF should block requests by default. </p>
     #[doc(hidden)]
@@ -9257,14 +8780,6 @@ impl DefaultAction {
     /// <p>Specifies that WAF should allow requests by default.</p>
     pub fn allow(&self) -> std::option::Option<&crate::model::AllowAction> {
         self.allow.as_ref()
-    }
-}
-impl std::fmt::Debug for DefaultAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultAction");
-        formatter.field("block", &self.block);
-        formatter.field("allow", &self.allow);
-        formatter.finish()
     }
 }
 /// See [`DefaultAction`](crate::model::DefaultAction).
@@ -9405,7 +8920,7 @@ impl AsRef<str> for Scope {
 
 /// <p>A single regular expression. This is used in a <code>RegexPatternSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Regex {
     /// <p>The string representing the regular expression.</p>
     #[doc(hidden)]
@@ -9415,13 +8930,6 @@ impl Regex {
     /// <p>The string representing the regular expression.</p>
     pub fn regex_string(&self) -> std::option::Option<&str> {
         self.regex_string.as_deref()
-    }
-}
-impl std::fmt::Debug for Regex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Regex");
-        formatter.field("regex_string", &self.regex_string);
-        formatter.finish()
     }
 }
 /// See [`Regex`](crate::model::Regex).
@@ -9461,7 +8969,7 @@ impl Regex {
 /// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
 /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
@@ -9478,14 +8986,6 @@ impl Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -9539,7 +9039,7 @@ impl Tag {
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersionToPublish {
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
     #[doc(hidden)]
@@ -9556,14 +9056,6 @@ impl VersionToPublish {
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
     pub fn forecasted_lifetime(&self) -> std::option::Option<i32> {
         self.forecasted_lifetime
-    }
-}
-impl std::fmt::Debug for VersionToPublish {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersionToPublish");
-        formatter.field("associated_rule_group_arn", &self.associated_rule_group_arn);
-        formatter.field("forecasted_lifetime", &self.forecasted_lifetime);
-        formatter.finish()
     }
 }
 /// See [`VersionToPublish`](crate::model::VersionToPublish).
@@ -9626,7 +9118,7 @@ impl VersionToPublish {
 /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p>
 /// <p>For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     #[doc(hidden)]
@@ -9672,20 +9164,6 @@ impl LoggingConfiguration {
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
     pub fn logging_filter(&self) -> std::option::Option<&crate::model::LoggingFilter> {
         self.logging_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for LoggingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfiguration");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("log_destination_configs", &self.log_destination_configs);
-        formatter.field("redacted_fields", &self.redacted_fields);
-        formatter.field(
-            "managed_by_firewall_manager",
-            &self.managed_by_firewall_manager,
-        );
-        formatter.field("logging_filter", &self.logging_filter);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
@@ -9802,7 +9280,7 @@ impl LoggingConfiguration {
 /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped, defined for a web ACL's <code>LoggingConfiguration</code>. </p>
 /// <p>You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingFilter {
     /// <p>The filters that you want to apply to the logs. </p>
     #[doc(hidden)]
@@ -9819,14 +9297,6 @@ impl LoggingFilter {
     /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
     pub fn default_behavior(&self) -> std::option::Option<&crate::model::FilterBehavior> {
         self.default_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for LoggingFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingFilter");
-        formatter.field("filters", &self.filters);
-        formatter.field("default_behavior", &self.default_behavior);
-        formatter.finish()
     }
 }
 /// See [`LoggingFilter`](crate::model::LoggingFilter).
@@ -9979,7 +9449,7 @@ impl AsRef<str> for FilterBehavior {
 
 /// <p>A single logging filter, used in <code>LoggingFilter</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
     #[doc(hidden)]
@@ -10003,15 +9473,6 @@ impl Filter {
     /// <p>Match conditions for the filter.</p>
     pub fn conditions(&self) -> std::option::Option<&[crate::model::Condition]> {
         self.conditions.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("behavior", &self.behavior);
-        formatter.field("requirement", &self.requirement);
-        formatter.field("conditions", &self.conditions);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -10089,7 +9550,7 @@ impl Filter {
 
 /// <p>A single match condition for a <code>Filter</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
     #[doc(hidden)]
@@ -10106,14 +9567,6 @@ impl Condition {
     /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
     pub fn label_name_condition(&self) -> std::option::Option<&crate::model::LabelNameCondition> {
         self.label_name_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field("action_condition", &self.action_condition);
-        formatter.field("label_name_condition", &self.label_name_condition);
-        formatter.finish()
     }
 }
 /// See [`Condition`](crate::model::Condition).
@@ -10170,7 +9623,7 @@ impl Condition {
 
 /// <p>A single label name condition for a <code>Condition</code> in a logging filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelNameCondition {
     /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
     #[doc(hidden)]
@@ -10180,13 +9633,6 @@ impl LabelNameCondition {
     /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
     pub fn label_name(&self) -> std::option::Option<&str> {
         self.label_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LabelNameCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelNameCondition");
-        formatter.field("label_name", &self.label_name);
-        formatter.finish()
     }
 }
 /// See [`LabelNameCondition`](crate::model::LabelNameCondition).
@@ -10225,7 +9671,7 @@ impl LabelNameCondition {
 
 /// <p>A single action condition for a <code>Condition</code> in a logging filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionCondition {
     /// <p>The action setting that a log record must contain in order to meet the condition. </p>
     #[doc(hidden)]
@@ -10235,13 +9681,6 @@ impl ActionCondition {
     /// <p>The action setting that a log record must contain in order to meet the condition. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::ActionValue> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for ActionCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionCondition");
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`ActionCondition`](crate::model::ActionCondition).
@@ -10477,7 +9916,7 @@ impl AsRef<str> for FilterRequirement {
 
 /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebAclSummary {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     #[doc(hidden)]
@@ -10515,17 +9954,6 @@ impl WebAclSummary {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for WebAclSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebAclSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`WebAclSummary`](crate::model::WebAclSummary).
@@ -10613,7 +10041,7 @@ impl WebAclSummary {
 /// <p>The collection of tagging definitions for an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
 /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagInfoForResource {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -10630,14 +10058,6 @@ impl TagInfoForResource {
     /// <p>The array of <code>Tag</code> objects defined for the resource. </p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for TagInfoForResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagInfoForResource");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }
 /// See [`TagInfoForResource`](crate::model::TagInfoForResource).
@@ -10697,7 +10117,7 @@ impl TagInfoForResource {
 
 /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupSummary {
     /// <p>The name of the data type instance. You cannot change the name after you create the instance.</p>
     #[doc(hidden)]
@@ -10735,17 +10155,6 @@ impl RuleGroupSummary {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`RuleGroupSummary`](crate::model::RuleGroupSummary).
@@ -10937,7 +10346,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegexPatternSetSummary {
     /// <p>The name of the data type instance. You cannot change the name after you create the instance.</p>
     #[doc(hidden)]
@@ -10975,17 +10384,6 @@ impl RegexPatternSetSummary {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RegexPatternSetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegexPatternSetSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
@@ -11072,7 +10470,7 @@ impl RegexPatternSetSummary {
 
 /// <p>High level information for an SDK release. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReleaseSummary {
     /// <p>The release version. </p>
     #[doc(hidden)]
@@ -11089,14 +10487,6 @@ impl ReleaseSummary {
     /// <p>The timestamp of the release. </p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ReleaseSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReleaseSummary");
-        formatter.field("release_version", &self.release_version);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`ReleaseSummary`](crate::model::ReleaseSummary).
@@ -11246,7 +10636,7 @@ impl AsRef<str> for Platform {
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleSetSummary {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
@@ -11309,18 +10699,6 @@ impl ManagedRuleSetSummary {
     /// </ul>
     pub fn label_namespace(&self) -> std::option::Option<&str> {
         self.label_namespace.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleSetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleSetSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("arn", &self.arn);
-        formatter.field("label_namespace", &self.label_namespace);
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleSetSummary`](crate::model::ManagedRuleSetSummary).
@@ -11440,7 +10818,7 @@ impl ManagedRuleSetSummary {
 
 /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSetSummary {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     #[doc(hidden)]
@@ -11478,17 +10856,6 @@ impl IpSetSummary {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for IpSetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSetSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`IpSetSummary`](crate::model::IpSetSummary).
@@ -11575,7 +10942,7 @@ impl IpSetSummary {
 
 /// <p>Describes a single version of a managed rule group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleGroupVersion {
     /// <p>The version name. </p>
     #[doc(hidden)]
@@ -11592,14 +10959,6 @@ impl ManagedRuleGroupVersion {
     /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
     pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleGroupVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleGroupVersion");
-        formatter.field("name", &self.name);
-        formatter.field("last_update_timestamp", &self.last_update_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleGroupVersion`](crate::model::ManagedRuleGroupVersion).
@@ -11653,7 +11012,7 @@ impl ManagedRuleGroupVersion {
 
 /// <p>High-level information about a managed rule group, returned by <code>ListAvailableManagedRuleGroups</code>. This provides information like the name and vendor name, that you provide when you add a <code>ManagedRuleGroupStatement</code> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF customers, and Amazon Web Services Marketplace managed rule groups, which you can subscribe to through Amazon Web Services Marketplace. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleGroupSummary {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
     #[doc(hidden)]
@@ -11684,16 +11043,6 @@ impl ManagedRuleGroupSummary {
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleGroupSummary");
-        formatter.field("vendor_name", &self.vendor_name);
-        formatter.field("name", &self.name);
-        formatter.field("versioning_supported", &self.versioning_supported);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleGroupSummary`](crate::model::ManagedRuleGroupSummary).
@@ -11768,7 +11117,7 @@ impl ManagedRuleGroupSummary {
 
 /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     #[doc(hidden)]
@@ -11911,35 +11260,6 @@ impl WebAcl {
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
     pub fn captcha_config(&self) -> std::option::Option<&crate::model::CaptchaConfig> {
         self.captcha_config.as_ref()
-    }
-}
-impl std::fmt::Debug for WebAcl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebAcl");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("default_action", &self.default_action);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.field("visibility_config", &self.visibility_config);
-        formatter.field("capacity", &self.capacity);
-        formatter.field(
-            "pre_process_firewall_manager_rule_groups",
-            &self.pre_process_firewall_manager_rule_groups,
-        );
-        formatter.field(
-            "post_process_firewall_manager_rule_groups",
-            &self.post_process_firewall_manager_rule_groups,
-        );
-        formatter.field(
-            "managed_by_firewall_manager",
-            &self.managed_by_firewall_manager,
-        );
-        formatter.field("label_namespace", &self.label_namespace);
-        formatter.field("custom_response_bodies", &self.custom_response_bodies);
-        formatter.field("captcha_config", &self.captcha_config);
-        formatter.finish()
     }
 }
 /// See [`WebAcl`](crate::model::WebAcl).
@@ -12234,7 +11554,7 @@ impl WebAcl {
 
 /// <p>A rule group that's defined for an Firewall Manager WAF policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallManagerRuleGroup {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -12280,20 +11600,6 @@ impl FirewallManagerRuleGroup {
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(&self) -> std::option::Option<&crate::model::VisibilityConfig> {
         self.visibility_config.as_ref()
-    }
-}
-impl std::fmt::Debug for FirewallManagerRuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallManagerRuleGroup");
-        formatter.field("name", &self.name);
-        formatter.field("priority", &self.priority);
-        formatter.field(
-            "firewall_manager_statement",
-            &self.firewall_manager_statement,
-        );
-        formatter.field("override_action", &self.override_action);
-        formatter.field("visibility_config", &self.visibility_config);
-        formatter.finish()
     }
 }
 /// See [`FirewallManagerRuleGroup`](crate::model::FirewallManagerRuleGroup).
@@ -12399,7 +11705,7 @@ impl FirewallManagerRuleGroup {
 
 /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallManagerStatement {
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
     /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
@@ -12429,20 +11735,6 @@ impl FirewallManagerStatement {
         &self,
     ) -> std::option::Option<&crate::model::RuleGroupReferenceStatement> {
         self.rule_group_reference_statement.as_ref()
-    }
-}
-impl std::fmt::Debug for FirewallManagerStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallManagerStatement");
-        formatter.field(
-            "managed_rule_group_statement",
-            &self.managed_rule_group_statement,
-        );
-        formatter.field(
-            "rule_group_reference_statement",
-            &self.rule_group_reference_statement,
-        );
-        formatter.finish()
     }
 }
 /// See [`FirewallManagerStatement`](crate::model::FirewallManagerStatement).
@@ -12517,7 +11809,7 @@ impl FirewallManagerStatement {
 /// <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
 /// <p>In a <code>GetSampledRequests</code> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which WAF actually returned a sample of web requests. WAF gets the specified number of requests from among the first 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the 5,000th request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeWindow {
     /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     #[doc(hidden)]
@@ -12534,14 +11826,6 @@ impl TimeWindow {
     /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeWindow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeWindow");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`TimeWindow`](crate::model::TimeWindow).
@@ -12598,7 +11882,7 @@ impl TimeWindow {
 
 /// <p>Represents a single sampled web request. The response from <code>GetSampledRequests</code> includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains an array of <code>SampledHTTPRequest</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SampledHttpRequest {
     /// <p>A complex type that contains detailed information about the request.</p>
     #[doc(hidden)]
@@ -12688,24 +11972,6 @@ impl SampledHttpRequest {
     /// <p>The <code>CAPTCHA</code> response for the request.</p>
     pub fn captcha_response(&self) -> std::option::Option<&crate::model::CaptchaResponse> {
         self.captcha_response.as_ref()
-    }
-}
-impl std::fmt::Debug for SampledHttpRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SampledHttpRequest");
-        formatter.field("request", &self.request);
-        formatter.field("weight", &self.weight);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("action", &self.action);
-        formatter.field(
-            "rule_name_within_rule_group",
-            &self.rule_name_within_rule_group,
-        );
-        formatter.field("request_headers_inserted", &self.request_headers_inserted);
-        formatter.field("response_code_sent", &self.response_code_sent);
-        formatter.field("labels", &self.labels);
-        formatter.field("captcha_response", &self.captcha_response);
-        formatter.finish()
     }
 }
 /// See [`SampledHttpRequest`](crate::model::SampledHttpRequest).
@@ -12898,7 +12164,7 @@ impl SampledHttpRequest {
 
 /// <p>The result from the inspection of the web request for a valid <code>CAPTCHA</code> token. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptchaResponse {
     /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
     #[doc(hidden)]
@@ -12922,15 +12188,6 @@ impl CaptchaResponse {
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
     pub fn failure_reason(&self) -> std::option::Option<&crate::model::FailureReason> {
         self.failure_reason.as_ref()
-    }
-}
-impl std::fmt::Debug for CaptchaResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptchaResponse");
-        formatter.field("response_code", &self.response_code);
-        formatter.field("solve_timestamp", &self.solve_timestamp);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`CaptchaResponse`](crate::model::CaptchaResponse).
@@ -13086,7 +12343,7 @@ impl AsRef<str> for FailureReason {
 
 /// <p>Part of the response from <code>GetSampledRequests</code>. This is a complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpHeader {
     /// <p>The name of the HTTP header.</p>
     #[doc(hidden)]
@@ -13103,14 +12360,6 @@ impl HttpHeader {
     /// <p>The value of the HTTP header.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpHeader");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`HttpHeader`](crate::model::HttpHeader).
@@ -13161,7 +12410,7 @@ impl HttpHeader {
 
 /// <p>Part of the response from <code>GetSampledRequests</code>. This is a complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRequest {
     /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
@@ -13214,18 +12463,6 @@ impl HttpRequest {
     /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
     pub fn headers(&self) -> std::option::Option<&[crate::model::HttpHeader]> {
         self.headers.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRequest");
-        formatter.field("client_ip", &self.client_ip);
-        formatter.field("country", &self.country);
-        formatter.field("uri", &self.uri);
-        formatter.field("method", &self.method);
-        formatter.field("http_version", &self.http_version);
-        formatter.field("headers", &self.headers);
-        formatter.finish()
     }
 }
 /// See [`HttpRequest`](crate::model::HttpRequest).
@@ -13341,7 +12578,7 @@ impl HttpRequest {
 
 /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <code>WebACL</code>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroup {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -13455,23 +12692,6 @@ impl RuleGroup {
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
     pub fn consumed_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
         self.consumed_labels.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroup");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("capacity", &self.capacity);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.field("visibility_config", &self.visibility_config);
-        formatter.field("label_namespace", &self.label_namespace);
-        formatter.field("custom_response_bodies", &self.custom_response_bodies);
-        formatter.field("available_labels", &self.available_labels);
-        formatter.field("consumed_labels", &self.consumed_labels);
-        formatter.finish()
     }
 }
 /// See [`RuleGroup`](crate::model::RuleGroup).
@@ -13712,7 +12932,7 @@ impl RuleGroup {
 /// <li> <p> <code>ConsumedLabels</code> - Labels that rules match against. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelSummary {
     /// <p>An individual label specification.</p>
     #[doc(hidden)]
@@ -13722,13 +12942,6 @@ impl LabelSummary {
     /// <p>An individual label specification.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for LabelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelSummary");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`LabelSummary`](crate::model::LabelSummary).
@@ -13766,7 +12979,7 @@ impl LabelSummary {
 /// <p>Contains one or more regular expressions. </p>
 /// <p>WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <code>Rule</code> statement <code>RegexPatternSetReferenceStatement</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegexPatternSet {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     #[doc(hidden)]
@@ -13804,17 +13017,6 @@ impl RegexPatternSet {
     /// <p>The regular expression patterns in the set.</p>
     pub fn regular_expression_list(&self) -> std::option::Option<&[crate::model::Regex]> {
         self.regular_expression_list.as_deref()
-    }
-}
-impl std::fmt::Debug for RegexPatternSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegexPatternSet");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("regular_expression_list", &self.regular_expression_list);
-        formatter.finish()
     }
 }
 /// See [`RegexPatternSet`](crate::model::RegexPatternSet).
@@ -13910,7 +13112,7 @@ impl RegexPatternSet {
 
 /// <p>The set of IP addresses that are currently blocked for a <code>RateBasedStatement</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RateBasedStatementManagedKeysIpSet {
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     #[doc(hidden)]
@@ -13927,14 +13129,6 @@ impl RateBasedStatementManagedKeysIpSet {
     /// <p>The IP addresses that are currently blocked.</p>
     pub fn addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.addresses.as_deref()
-    }
-}
-impl std::fmt::Debug for RateBasedStatementManagedKeysIpSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RateBasedStatementManagedKeysIpSet");
-        formatter.field("ip_address_version", &self.ip_address_version);
-        formatter.field("addresses", &self.addresses);
-        formatter.finish()
     }
 }
 /// See [`RateBasedStatementManagedKeysIpSet`](crate::model::RateBasedStatementManagedKeysIpSet).
@@ -14088,7 +13282,7 @@ impl AsRef<str> for IpAddressVersion {
 /// <p>Information for a release of the mobile SDK, including release notes and tags.</p>
 /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MobileSdkRelease {
     /// <p>The release version. </p>
     #[doc(hidden)]
@@ -14119,16 +13313,6 @@ impl MobileSdkRelease {
     /// <p>Tags that are associated with the release. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for MobileSdkRelease {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MobileSdkRelease");
-        formatter.field("release_version", &self.release_version);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("release_notes", &self.release_notes);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`MobileSdkRelease`](crate::model::MobileSdkRelease).
@@ -14224,7 +13408,7 @@ impl MobileSdkRelease {
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleSet {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
@@ -14300,19 +13484,6 @@ impl ManagedRuleSet {
     /// </ul>
     pub fn label_namespace(&self) -> std::option::Option<&str> {
         self.label_namespace.as_deref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleSet");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("published_versions", &self.published_versions);
-        formatter.field("recommended_version", &self.recommended_version);
-        formatter.field("label_namespace", &self.label_namespace);
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleSet`](crate::model::ManagedRuleSet).
@@ -14467,7 +13638,7 @@ impl ManagedRuleSet {
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedRuleSetVersion {
     /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the published version of your managed rule group. </p>
     #[doc(hidden)]
@@ -14520,18 +13691,6 @@ impl ManagedRuleSetVersion {
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     pub fn expiry_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ManagedRuleSetVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleSetVersion");
-        formatter.field("associated_rule_group_arn", &self.associated_rule_group_arn);
-        formatter.field("capacity", &self.capacity);
-        formatter.field("forecasted_lifetime", &self.forecasted_lifetime);
-        formatter.field("publish_timestamp", &self.publish_timestamp);
-        formatter.field("last_update_timestamp", &self.last_update_timestamp);
-        formatter.field("expiry_timestamp", &self.expiry_timestamp);
-        formatter.finish()
     }
 }
 /// See [`ManagedRuleSetVersion`](crate::model::ManagedRuleSetVersion).
@@ -14651,7 +13810,7 @@ impl ManagedRuleSetVersion {
 /// <p>Contains zero or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p>
 /// <p>WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <code>Rule</code> statement <code>IPSetReferenceStatement</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSet {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     #[doc(hidden)]
@@ -14726,18 +13885,6 @@ impl IpSet {
     /// </ul>
     pub fn addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.addresses.as_deref()
-    }
-}
-impl std::fmt::Debug for IpSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSet");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("ip_address_version", &self.ip_address_version);
-        formatter.field("addresses", &self.addresses);
-        formatter.finish()
     }
 }
 /// See [`IpSet`](crate::model::IpSet).
@@ -14878,7 +14025,7 @@ impl IpSet {
 
 /// <p>High-level information about a <code>Rule</code>, returned by operations like <code>DescribeManagedRuleGroup</code>. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleSummary {
     /// <p>The name of the rule. </p>
     #[doc(hidden)]
@@ -14895,14 +14042,6 @@ impl RuleSummary {
     /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::RuleAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleSummary");
-        formatter.field("name", &self.name);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`RuleSummary`](crate::model::RuleSummary).

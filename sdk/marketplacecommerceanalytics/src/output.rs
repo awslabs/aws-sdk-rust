@@ -2,7 +2,7 @@
 
 /// Container for the result of the StartSupportDataExport operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSupportDataExportOutput {
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl StartSupportDataExportOutput {
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub fn data_set_request_id(&self) -> std::option::Option<&str> {
         self.data_set_request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartSupportDataExportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSupportDataExportOutput");
-        formatter.field("data_set_request_id", &self.data_set_request_id);
-        formatter.finish()
     }
 }
 /// See [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
@@ -60,7 +53,7 @@ impl StartSupportDataExportOutput {
 
 /// Container for the result of the GenerateDataSet operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataSetOutput {
     /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     #[doc(hidden)]
@@ -70,13 +63,6 @@ impl GenerateDataSetOutput {
     /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub fn data_set_request_id(&self) -> std::option::Option<&str> {
         self.data_set_request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateDataSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataSetOutput");
-        formatter.field("data_set_request_id", &self.data_set_request_id);
-        formatter.finish()
     }
 }
 /// See [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).

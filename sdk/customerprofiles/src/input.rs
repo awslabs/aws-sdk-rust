@@ -8345,7 +8345,7 @@ impl UpdateProfileInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProfileInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -8515,39 +8515,10 @@ impl UpdateProfileInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProfileInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("additional_information", &self.additional_information);
-        formatter.field("account_number", &self.account_number);
-        formatter.field("party_type", &self.party_type);
-        formatter.field("business_name", &self.business_name);
-        formatter.field("first_name", &self.first_name);
-        formatter.field("middle_name", &self.middle_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("birth_date", &self.birth_date);
-        formatter.field("gender", &self.gender);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("mobile_phone_number", &self.mobile_phone_number);
-        formatter.field("home_phone_number", &self.home_phone_number);
-        formatter.field("business_phone_number", &self.business_phone_number);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("personal_email_address", &self.personal_email_address);
-        formatter.field("business_email_address", &self.business_email_address);
-        formatter.field("address", &self.address);
-        formatter.field("shipping_address", &self.shipping_address);
-        formatter.field("mailing_address", &self.mailing_address);
-        formatter.field("billing_address", &self.billing_address);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -8600,22 +8571,10 @@ impl UpdateDomainInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("default_expiration_days", &self.default_expiration_days);
-        formatter.field("default_encryption_key", &self.default_encryption_key);
-        formatter.field("dead_letter_queue_url", &self.dead_letter_queue_url);
-        formatter.field("matching", &self.matching);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource from which you are removing tags.</p>
     #[doc(hidden)]
@@ -8634,18 +8593,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource that you're adding tags to.</p>
     #[doc(hidden)]
@@ -8668,18 +8619,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchProfilesInput {
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
     #[doc(hidden)]
@@ -8719,21 +8662,10 @@ impl SearchProfilesInput {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for SearchProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchProfilesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("key_name", &self.key_name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutProfileObjectTypeInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -8831,30 +8763,10 @@ impl PutProfileObjectTypeInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PutProfileObjectTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutProfileObjectTypeInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("description", &self.description);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("expiration_days", &self.expiration_days);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("allow_profile_creation", &self.allow_profile_creation);
-        formatter.field(
-            "source_last_updated_timestamp_format",
-            &self.source_last_updated_timestamp_format,
-        );
-        formatter.field("fields", &self.fields);
-        formatter.field("keys", &self.keys);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutProfileObjectInput {
     /// <p>The name of the profile object type.</p>
     #[doc(hidden)]
@@ -8880,19 +8792,10 @@ impl PutProfileObjectInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutProfileObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutProfileObjectInput");
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("object", &self.object);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIntegrationInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -8947,22 +8850,10 @@ impl PutIntegrationInput {
         self.object_type_names.as_ref()
     }
 }
-impl std::fmt::Debug for PutIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIntegrationInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("uri", &self.uri);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("flow_definition", &self.flow_definition);
-        formatter.field("object_type_names", &self.object_type_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeProfilesInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -8997,20 +8888,10 @@ impl MergeProfilesInput {
         self.field_source_profile_ids.as_ref()
     }
 }
-impl std::fmt::Debug for MergeProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeProfilesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("main_profile_id", &self.main_profile_id);
-        formatter.field("profile_ids_to_be_merged", &self.profile_ids_to_be_merged);
-        formatter.field("field_source_profile_ids", &self.field_source_profile_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowsInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9064,23 +8945,10 @@ impl ListWorkflowsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWorkflowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("status", &self.status);
-        formatter.field("query_start_date", &self.query_start_date);
-        formatter.field("query_end_date", &self.query_end_date);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource for which you want to view tags.</p>
     #[doc(hidden)]
@@ -9092,17 +8960,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileObjectTypeTemplatesInput {
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
     #[doc(hidden)]
@@ -9121,18 +8982,10 @@ impl ListProfileObjectTypeTemplatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProfileObjectTypeTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileObjectTypeTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileObjectTypesInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9158,19 +9011,10 @@ impl ListProfileObjectTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProfileObjectTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileObjectTypesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileObjectsInput {
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
     #[doc(hidden)]
@@ -9217,22 +9061,10 @@ impl ListProfileObjectsInput {
         self.object_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListProfileObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileObjectsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("object_filter", &self.object_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIntegrationsInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9265,20 +9097,10 @@ impl ListIntegrationsInput {
         self.include_hidden
     }
 }
-impl std::fmt::Debug for ListIntegrationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIntegrationsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("include_hidden", &self.include_hidden);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityResolutionJobsInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9304,19 +9126,10 @@ impl ListIdentityResolutionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIdentityResolutionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityResolutionJobsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>The pagination token from the previous ListDomain API call.</p>
     #[doc(hidden)]
@@ -9335,18 +9148,10 @@ impl ListDomainsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccountIntegrationsInput {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     #[doc(hidden)]
@@ -9379,20 +9184,10 @@ impl ListAccountIntegrationsInput {
         self.include_hidden
     }
 }
-impl std::fmt::Debug for ListAccountIntegrationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccountIntegrationsInput");
-        formatter.field("uri", &self.uri);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("include_hidden", &self.include_hidden);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkflowStepsInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9425,20 +9220,10 @@ impl GetWorkflowStepsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetWorkflowStepsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkflowStepsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkflowInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9457,18 +9242,10 @@ impl GetWorkflowInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkflowInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProfileObjectTypeTemplateInput {
     /// <p>A unique identifier for the object template.</p>
     #[doc(hidden)]
@@ -9480,17 +9257,10 @@ impl GetProfileObjectTypeTemplateInput {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetProfileObjectTypeTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProfileObjectTypeTemplateInput");
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProfileObjectTypeInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9509,18 +9279,10 @@ impl GetProfileObjectTypeInput {
         self.object_type_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetProfileObjectTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProfileObjectTypeInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMatchesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -9546,19 +9308,10 @@ impl GetMatchesInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMatchesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMatchesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9577,18 +9330,10 @@ impl GetIntegrationInput {
         self.uri.as_deref()
     }
 }
-impl std::fmt::Debug for GetIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("uri", &self.uri);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityResolutionJobInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9607,18 +9352,10 @@ impl GetIdentityResolutionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityResolutionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityResolutionJobInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9630,17 +9367,10 @@ impl GetDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAutoMergingPreviewInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9673,23 +9403,10 @@ impl GetAutoMergingPreviewInput {
         self.min_allowed_confidence_score_for_merging
     }
 }
-impl std::fmt::Debug for GetAutoMergingPreviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAutoMergingPreviewInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("consolidation", &self.consolidation);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.field(
-            "min_allowed_confidence_score_for_merging",
-            &self.min_allowed_confidence_score_for_merging,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkflowInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9708,18 +9425,10 @@ impl DeleteWorkflowInput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkflowInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfileObjectTypeInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9738,18 +9447,10 @@ impl DeleteProfileObjectTypeInput {
         self.object_type_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProfileObjectTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfileObjectTypeInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfileObjectInput {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
@@ -9782,20 +9483,10 @@ impl DeleteProfileObjectInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProfileObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfileObjectInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("profile_object_unique_key", &self.profile_object_unique_key);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfileKeyInput {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
@@ -9828,20 +9519,10 @@ impl DeleteProfileKeyInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProfileKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfileKeyInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("key_name", &self.key_name);
-        formatter.field("values", &self.values);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfileInput {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
@@ -9860,18 +9541,10 @@ impl DeleteProfileInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9890,18 +9563,10 @@ impl DeleteIntegrationInput {
         self.uri.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIntegrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("uri", &self.uri);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -9913,17 +9578,10 @@ impl DeleteDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProfileInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -10086,38 +9744,10 @@ impl CreateProfileInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProfileInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("account_number", &self.account_number);
-        formatter.field("additional_information", &self.additional_information);
-        formatter.field("party_type", &self.party_type);
-        formatter.field("business_name", &self.business_name);
-        formatter.field("first_name", &self.first_name);
-        formatter.field("middle_name", &self.middle_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("birth_date", &self.birth_date);
-        formatter.field("gender", &self.gender);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("mobile_phone_number", &self.mobile_phone_number);
-        formatter.field("home_phone_number", &self.home_phone_number);
-        formatter.field("business_phone_number", &self.business_phone_number);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("personal_email_address", &self.personal_email_address);
-        formatter.field("business_email_address", &self.business_email_address);
-        formatter.field("address", &self.address);
-        formatter.field("shipping_address", &self.shipping_address);
-        formatter.field("mailing_address", &self.mailing_address);
-        formatter.field("billing_address", &self.billing_address);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIntegrationWorkflowInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -10168,22 +9798,10 @@ impl CreateIntegrationWorkflowInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIntegrationWorkflowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIntegrationWorkflowInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("integration_config", &self.integration_config);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -10236,22 +9854,10 @@ impl CreateDomainInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("default_expiration_days", &self.default_expiration_days);
-        formatter.field("default_encryption_key", &self.default_encryption_key);
-        formatter.field("dead_letter_queue_url", &self.dead_letter_queue_url);
-        formatter.field("matching", &self.matching);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddProfileKeyInput {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
@@ -10282,15 +9888,5 @@ impl AddProfileKeyInput {
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AddProfileKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddProfileKeyInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("key_name", &self.key_name);
-        formatter.field("values", &self.values);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
     }
 }

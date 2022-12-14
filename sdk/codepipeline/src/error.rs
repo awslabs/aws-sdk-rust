@@ -2,18 +2,11 @@
 
 /// <p>The validation was specified in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ValidationException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl ValidationException {
 
 /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LimitExceededException {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl LimitExceededException {
 
 /// <p>The structure was specified in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidStructureException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidStructureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidStructureException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidStructureException {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl InvalidStructureException {
 
 /// <p>The stage declaration was specified in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidStageDeclarationException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidStageDeclarationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidStageDeclarationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidStageDeclarationException {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl InvalidStageDeclarationException {
 
 /// <p>Reserved for future use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidBlockerDeclarationException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidBlockerDeclarationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidBlockerDeclarationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidBlockerDeclarationException {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl InvalidBlockerDeclarationException {
 
 /// <p>The action declaration was specified in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidActionDeclarationException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidActionDeclarationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidActionDeclarationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidActionDeclarationException {
     /// Returns the error message.
@@ -404,18 +362,11 @@ impl InvalidActionDeclarationException {
 
 /// <p>The request failed because of an unknown error, exception, or failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestFailedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RequestFailedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestFailedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RequestFailedException {
     /// Returns the error message.
@@ -471,18 +422,11 @@ impl RequestFailedException {
 
 /// <p>The specified action type cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionTypeNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ActionTypeNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionTypeNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ActionTypeNotFoundException {
     /// Returns the error message.
@@ -538,18 +482,11 @@ impl ActionTypeNotFoundException {
 
 /// <p>The resource was specified in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -605,18 +542,11 @@ impl ResourceNotFoundException {
 
 /// <p>The specified resource tags are invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTagsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTagsException {
     /// Returns the error message.
@@ -672,18 +602,11 @@ impl InvalidTagsException {
 
 /// <p>The specified resource ARN is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidArnException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidArnException {
     /// Returns the error message.
@@ -739,18 +662,11 @@ impl InvalidArnException {
 
 /// <p>Unable to modify the tag due to a simultaneous update request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModificationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
@@ -806,18 +722,11 @@ impl ConcurrentModificationException {
 
 /// <p>The tags limit for a resource has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTagsException {
     /// Returns the error message.
@@ -873,18 +782,11 @@ impl TooManyTagsException {
 
 /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PipelineNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PipelineNotFoundException {
     /// Returns the error message.
@@ -940,18 +842,11 @@ impl PipelineNotFoundException {
 
 /// <p>Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code> state, or it might no longer be in progress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineExecutionNotStoppableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PipelineExecutionNotStoppableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineExecutionNotStoppableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PipelineExecutionNotStoppableException {
     /// Returns the error message.
@@ -1007,18 +902,11 @@ impl PipelineExecutionNotStoppableException {
 
 /// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already chose to stop and wait, you cannot make that request again. You can choose to stop and abandon now, but be aware that this option can lead to failed tasks or out of sequence tasks. If you already chose to stop and abandon, you cannot make that request again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicatedStopRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicatedStopRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicatedStopRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicatedStopRequestException {
     /// Returns the error message.
@@ -1074,18 +962,11 @@ impl DuplicatedStopRequestException {
 
 /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConflictException {
     /// Returns the error message.
@@ -1141,18 +1022,11 @@ impl ConflictException {
 
 /// <p>Unable to retry. The pipeline structure or stage state might have changed while actions awaited retry, or the stage contains no failed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StageNotRetryableException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StageNotRetryableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StageNotRetryableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StageNotRetryableException {
     /// Returns the error message.
@@ -1208,18 +1082,11 @@ impl StageNotRetryableException {
 
 /// <p>The stage was specified in an invalid format or cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StageNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StageNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StageNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StageNotFoundException {
     /// Returns the error message.
@@ -1275,18 +1142,11 @@ impl StageNotFoundException {
 
 /// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of date.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotLatestPipelineExecutionException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NotLatestPipelineExecutionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotLatestPipelineExecutionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NotLatestPipelineExecutionException {
     /// Returns the error message.
@@ -1342,18 +1202,11 @@ impl NotLatestPipelineExecutionException {
 
 /// <p>The specified webhook was entered in an invalid format or cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebhookNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for WebhookNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebhookNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl WebhookNotFoundException {
     /// Returns the error message.
@@ -1409,18 +1262,11 @@ impl WebhookNotFoundException {
 
 /// <p>The specified event filter rule is in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidWebhookFilterPatternException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidWebhookFilterPatternException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidWebhookFilterPatternException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidWebhookFilterPatternException {
     /// Returns the error message.
@@ -1476,18 +1322,11 @@ impl InvalidWebhookFilterPatternException {
 
 /// <p>The specified authentication type is in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidWebhookAuthenticationParametersException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidWebhookAuthenticationParametersException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidWebhookAuthenticationParametersException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidWebhookAuthenticationParametersException {
     /// Returns the error message.
@@ -1543,18 +1382,11 @@ impl InvalidWebhookAuthenticationParametersException {
 
 /// <p>The job was specified in an invalid format or cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for JobNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl JobNotFoundException {
     /// Returns the error message.
@@ -1610,18 +1442,11 @@ impl JobNotFoundException {
 
 /// <p>The job state was specified in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidJobStateException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidJobStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidJobStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidJobStateException {
     /// Returns the error message.
@@ -1677,18 +1502,11 @@ impl InvalidJobStateException {
 
 /// <p>The client token was specified in an invalid format</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClientTokenException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClientTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClientTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClientTokenException {
     /// Returns the error message.
@@ -1744,18 +1562,11 @@ impl InvalidClientTokenException {
 
 /// <p>Exceeded the total size limit for all variables in the pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputVariablesSizeExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OutputVariablesSizeExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputVariablesSizeExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OutputVariablesSizeExceededException {
     /// Returns the error message.
@@ -1811,18 +1622,11 @@ impl OutputVariablesSizeExceededException {
 
 /// <p>The approval request already received a response or has expired.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalTokenException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidApprovalTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidApprovalTokenException {
     /// Returns the error message.
@@ -1878,18 +1682,11 @@ impl InvalidApprovalTokenException {
 
 /// <p>The approval action has already been approved or rejected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalAlreadyCompletedException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalAlreadyCompletedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalAlreadyCompletedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalAlreadyCompletedException {
     /// Returns the error message.
@@ -1945,18 +1742,11 @@ impl ApprovalAlreadyCompletedException {
 
 /// <p>The specified action cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ActionNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ActionNotFoundException {
     /// Returns the error message.
@@ -2012,18 +1802,11 @@ impl ActionNotFoundException {
 
 /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNextTokenException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidNextTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
@@ -2079,18 +1862,11 @@ impl InvalidNextTokenException {
 
 /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineExecutionNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PipelineExecutionNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineExecutionNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PipelineExecutionNotFoundException {
     /// Returns the error message.
@@ -2146,18 +1922,11 @@ impl PipelineExecutionNotFoundException {
 
 /// <p>The job was specified in an invalid format or cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidJobException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidJobException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidJobException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidJobException {
     /// Returns the error message.
@@ -2213,18 +1982,11 @@ impl InvalidJobException {
 
 /// <p>The pipeline version was specified in an invalid format or cannot be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineVersionNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PipelineVersionNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineVersionNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PipelineVersionNotFoundException {
     /// Returns the error message.
@@ -2280,18 +2042,11 @@ impl PipelineVersionNotFoundException {
 
 /// <p>The specified pipeline name is already in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineNameInUseException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PipelineNameInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineNameInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PipelineNameInUseException {
     /// Returns the error message.
@@ -2347,18 +2102,11 @@ impl PipelineNameInUseException {
 
 /// <p>The nonce was specified in an invalid format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNonceException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidNonceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNonceException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidNonceException {
     /// Returns the error message.

@@ -2376,7 +2376,7 @@ impl StartObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartObjectInput {
     /// Backup job Id for the in-progress backup
     #[doc(hidden)]
@@ -2402,18 +2402,10 @@ impl StartObjectInput {
         self.throw_on_duplicate
     }
 }
-impl std::fmt::Debug for StartObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartObjectInput");
-        formatter.field("backup_job_id", &self.backup_job_id);
-        formatter.field("object_name", &self.object_name);
-        formatter.field("throw_on_duplicate", &self.throw_on_duplicate);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct PutObjectInput {
     /// Backup job Id for the in-progress backup.
     #[doc(hidden)]
@@ -2489,28 +2481,10 @@ impl PutObjectInput {
         self.throw_on_duplicate
     }
 }
-impl std::fmt::Debug for PutObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectInput");
-        formatter.field("backup_job_id", &self.backup_job_id);
-        formatter.field("object_name", &self.object_name);
-        formatter.field("metadata_string", &self.metadata_string);
-        formatter.field("inline_chunk", &self.inline_chunk);
-        formatter.field("inline_chunk_length", &self.inline_chunk_length);
-        formatter.field("inline_chunk_checksum", &self.inline_chunk_checksum);
-        formatter.field(
-            "inline_chunk_checksum_algorithm",
-            &self.inline_chunk_checksum_algorithm,
-        );
-        formatter.field("object_checksum", &self.object_checksum);
-        formatter.field("object_checksum_algorithm", &self.object_checksum_algorithm);
-        formatter.field("throw_on_duplicate", &self.throw_on_duplicate);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct PutChunkInput {
     /// Backup job Id for the in-progress backup.
     #[doc(hidden)]
@@ -2563,22 +2537,10 @@ impl PutChunkInput {
         self.checksum_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for PutChunkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutChunkInput");
-        formatter.field("backup_job_id", &self.backup_job_id);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("chunk_index", &self.chunk_index);
-        formatter.field("data", &self.data);
-        formatter.field("length", &self.length);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct NotifyObjectCompleteInput {
     /// Backup job Id for the in-progress backup
     #[doc(hidden)]
@@ -2649,28 +2611,10 @@ impl NotifyObjectCompleteInput {
         self.metadata_blob_checksum_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for NotifyObjectCompleteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyObjectCompleteInput");
-        formatter.field("backup_job_id", &self.backup_job_id);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("object_checksum", &self.object_checksum);
-        formatter.field("object_checksum_algorithm", &self.object_checksum_algorithm);
-        formatter.field("metadata_string", &self.metadata_string);
-        formatter.field("metadata_blob", &self.metadata_blob);
-        formatter.field("metadata_blob_length", &self.metadata_blob_length);
-        formatter.field("metadata_blob_checksum", &self.metadata_blob_checksum);
-        formatter.field(
-            "metadata_blob_checksum_algorithm",
-            &self.metadata_blob_checksum_algorithm,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectsInput {
     /// Storage job id
     #[doc(hidden)]
@@ -2724,23 +2668,10 @@ impl ListObjectsInput {
         self.created_after.as_ref()
     }
 }
-impl std::fmt::Debug for ListObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectsInput");
-        formatter.field("storage_job_id", &self.storage_job_id);
-        formatter.field("starting_object_name", &self.starting_object_name);
-        formatter.field("starting_object_prefix", &self.starting_object_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("created_after", &self.created_after);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChunksInput {
     /// Storage job id
     #[doc(hidden)]
@@ -2773,20 +2704,10 @@ impl ListChunksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChunksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChunksInput");
-        formatter.field("storage_job_id", &self.storage_job_id);
-        formatter.field("object_token", &self.object_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectMetadataInput {
     /// Backup job id for the in-progress backup.
     #[doc(hidden)]
@@ -2805,18 +2726,10 @@ impl GetObjectMetadataInput {
         self.object_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectMetadataInput");
-        formatter.field("storage_job_id", &self.storage_job_id);
-        formatter.field("object_token", &self.object_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChunkInput {
     /// Storage job id
     #[doc(hidden)]
@@ -2835,18 +2748,10 @@ impl GetChunkInput {
         self.chunk_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetChunkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChunkInput");
-        formatter.field("storage_job_id", &self.storage_job_id);
-        formatter.field("chunk_token", &self.chunk_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// Backup job Id for the in-progress backup.
     #[doc(hidden)]
@@ -2863,13 +2768,5 @@ impl DeleteObjectInput {
     /// The name of the Object.
     pub fn object_name(&self) -> std::option::Option<&str> {
         self.object_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectInput");
-        formatter.field("backup_job_id", &self.backup_job_id);
-        formatter.field("object_name", &self.object_name);
-        formatter.finish()
     }
 }

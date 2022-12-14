@@ -2547,7 +2547,7 @@ impl UpdateSuiteDefinitionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to be updated.</p>
     #[doc(hidden)]
@@ -2569,21 +2569,10 @@ impl UpdateSuiteDefinitionInput {
         self.suite_definition_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSuiteDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSuiteDefinitionInput");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field(
-            "suite_definition_configuration",
-            &self.suite_definition_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN of an IoT Device Advisor resource.</p>
     #[doc(hidden)]
@@ -2602,18 +2591,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The resource ARN of an IoT Device Advisor resource.</p>
     #[doc(hidden)]
@@ -2636,18 +2617,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopSuiteRunInput {
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
     #[doc(hidden)]
@@ -2666,18 +2639,10 @@ impl StopSuiteRunInput {
         self.suite_run_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopSuiteRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopSuiteRunInput");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field("suite_run_id", &self.suite_run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSuiteRunInput {
     /// <p>Suite definition ID of the test suite.</p>
     #[doc(hidden)]
@@ -2716,20 +2681,10 @@ impl StartSuiteRunInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StartSuiteRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSuiteRunInput");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field("suite_definition_version", &self.suite_definition_version);
-        formatter.field("suite_run_configuration", &self.suite_run_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the IoT Device Advisor resource.</p>
     #[doc(hidden)]
@@ -2741,17 +2696,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSuiteRunsInput {
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
     #[doc(hidden)]
@@ -2784,20 +2732,10 @@ impl ListSuiteRunsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSuiteRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSuiteRunsInput");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field("suite_definition_version", &self.suite_definition_version);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSuiteDefinitionsInput {
     /// <p>The maximum number of results to return at once.</p>
     #[doc(hidden)]
@@ -2816,18 +2754,10 @@ impl ListSuiteDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSuiteDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSuiteDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSuiteRunReportInput {
     /// <p>Suite definition ID of the test suite.</p>
     #[doc(hidden)]
@@ -2846,18 +2776,10 @@ impl GetSuiteRunReportInput {
         self.suite_run_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSuiteRunReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSuiteRunReportInput");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field("suite_run_id", &self.suite_run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSuiteRunInput {
     /// <p>Suite definition ID for the test suite run.</p>
     #[doc(hidden)]
@@ -2876,18 +2798,10 @@ impl GetSuiteRunInput {
         self.suite_run_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSuiteRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSuiteRunInput");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field("suite_run_id", &self.suite_run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to get.</p>
     #[doc(hidden)]
@@ -2906,18 +2820,10 @@ impl GetSuiteDefinitionInput {
         self.suite_definition_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetSuiteDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSuiteDefinitionInput");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.field("suite_definition_version", &self.suite_definition_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEndpointInput {
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
     #[doc(hidden)]
@@ -2936,18 +2842,10 @@ impl GetEndpointInput {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEndpointInput");
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
     #[doc(hidden)]
@@ -2959,17 +2857,10 @@ impl DeleteSuiteDefinitionInput {
         self.suite_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSuiteDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSuiteDefinitionInput");
-        formatter.field("suite_definition_id", &self.suite_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSuiteDefinitionInput {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
     #[doc(hidden)]
@@ -2993,16 +2884,5 @@ impl CreateSuiteDefinitionInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateSuiteDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSuiteDefinitionInput");
-        formatter.field(
-            "suite_definition_configuration",
-            &self.suite_definition_configuration,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

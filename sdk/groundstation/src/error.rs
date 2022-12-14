@@ -2,18 +2,11 @@
 
 /// <p>Resource was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -69,7 +62,7 @@ impl ResourceNotFoundException {
 
 /// <p>One or more parameters are not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -82,14 +75,6 @@ impl InvalidParameterException {
     /// <p></p>
     pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.finish()
     }
 }
 impl InvalidParameterException {
@@ -161,7 +146,7 @@ impl InvalidParameterException {
 
 /// <p>Dependency encountered an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DependencyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -174,14 +159,6 @@ impl DependencyException {
     /// <p></p>
     pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DependencyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependencyException");
-        formatter.field("message", &self.message);
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.finish()
     }
 }
 impl DependencyException {
@@ -253,7 +230,7 @@ impl DependencyException {
 
 /// <p>Account limits for this resource have been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -266,14 +243,6 @@ impl ResourceLimitExceededException {
     /// <p></p>
     pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.finish()
     }
 }
 impl ResourceLimitExceededException {

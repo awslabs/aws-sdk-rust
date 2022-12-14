@@ -2,7 +2,7 @@
 
 /// <p>Object specifying a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
@@ -80,24 +80,6 @@ impl Channel {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("latency_mode", &self.latency_mode);
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "recording_configuration_arn",
-            &self.recording_configuration_arn,
-        );
-        formatter.field("ingest_endpoint", &self.ingest_endpoint);
-        formatter.field("playback_url", &self.playback_url);
-        formatter.field("authorized", &self.authorized);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Channel`](crate::model::Channel).
@@ -451,7 +433,7 @@ impl AsRef<str> for ChannelLatencyMode {
 
 /// <p>Summary information about a stream session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSessionSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
@@ -482,16 +464,6 @@ impl StreamSessionSummary {
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
     pub fn has_error_event(&self) -> bool {
         self.has_error_event
-    }
-}
-impl std::fmt::Debug for StreamSessionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSessionSummary");
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("has_error_event", &self.has_error_event);
-        formatter.finish()
     }
 }
 /// See [`StreamSessionSummary`](crate::model::StreamSessionSummary).
@@ -572,7 +544,7 @@ impl StreamSessionSummary {
 
 /// <p>Summary information about a stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSummary {
     /// <p>Channel ARN for the stream.</p>
     #[doc(hidden)]
@@ -617,18 +589,6 @@ impl StreamSummary {
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSummary");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("state", &self.state);
-        formatter.field("health", &self.health);
-        formatter.field("viewer_count", &self.viewer_count);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`StreamSummary`](crate::model::StreamSummary).
@@ -918,7 +878,7 @@ impl AsRef<str> for StreamState {
 
 /// <p>Object specifying the stream attribute on which to filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamFilters {
     /// <p>The stream’s health.</p>
     #[doc(hidden)]
@@ -928,13 +888,6 @@ impl StreamFilters {
     /// <p>The stream’s health.</p>
     pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
         self.health.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamFilters");
-        formatter.field("health", &self.health);
-        formatter.finish()
     }
 }
 /// See [`StreamFilters`](crate::model::StreamFilters).
@@ -976,7 +929,7 @@ impl StreamFilters {
 
 /// <p>Summary information about a stream key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamKeySummary {
     /// <p>Stream-key ARN.</p>
     #[doc(hidden)]
@@ -1004,15 +957,6 @@ impl StreamKeySummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamKeySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamKeySummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`StreamKeySummary`](crate::model::StreamKeySummary).
@@ -1092,7 +1036,7 @@ impl StreamKeySummary {
 
 /// <p>Summary information about a RecordingConfiguration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordingConfigurationSummary {
     /// <p>Recording-configuration ARN.</p>
     #[doc(hidden)]
@@ -1136,17 +1080,6 @@ impl RecordingConfigurationSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for RecordingConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordingConfigurationSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("destination_configuration", &self.destination_configuration);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
@@ -1357,7 +1290,7 @@ impl AsRef<str> for RecordingConfigurationState {
 
 /// <p>A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationConfiguration {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
     #[doc(hidden)]
@@ -1367,13 +1300,6 @@ impl DestinationConfiguration {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3DestinationConfiguration> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfiguration");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`DestinationConfiguration`](crate::model::DestinationConfiguration).
@@ -1413,7 +1339,7 @@ impl DestinationConfiguration {
 
 /// <p>A complex type that describes an S3 location where recorded videos will be stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     #[doc(hidden)]
@@ -1423,13 +1349,6 @@ impl S3DestinationConfiguration {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationConfiguration");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.finish()
     }
 }
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
@@ -1468,7 +1387,7 @@ impl S3DestinationConfiguration {
 
 /// <p>Summary information about a playback key pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlaybackKeyPairSummary {
     /// <p>Key-pair ARN.</p>
     #[doc(hidden)]
@@ -1496,15 +1415,6 @@ impl PlaybackKeyPairSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for PlaybackKeyPairSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlaybackKeyPairSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
@@ -1584,7 +1494,7 @@ impl PlaybackKeyPairSummary {
 
 /// <p>Summary information about a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelSummary {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
@@ -1633,21 +1543,6 @@ impl ChannelSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("latency_mode", &self.latency_mode);
-        formatter.field("authorized", &self.authorized);
-        formatter.field(
-            "recording_configuration_arn",
-            &self.recording_configuration_arn,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
@@ -1772,7 +1667,7 @@ impl ChannelSummary {
 
 /// <p>A key pair used to sign and validate a playback authorization token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlaybackKeyPair {
     /// <p>Key-pair ARN.</p>
     #[doc(hidden)]
@@ -1807,16 +1702,6 @@ impl PlaybackKeyPair {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for PlaybackKeyPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlaybackKeyPair");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("fingerprint", &self.fingerprint);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
@@ -1908,7 +1793,7 @@ impl PlaybackKeyPair {
 
 /// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSession {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
@@ -1962,19 +1847,6 @@ impl StreamSession {
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
     pub fn truncated_events(&self) -> std::option::Option<&[crate::model::StreamEvent]> {
         self.truncated_events.as_deref()
-    }
-}
-impl std::fmt::Debug for StreamSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSession");
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("channel", &self.channel);
-        formatter.field("ingest_configuration", &self.ingest_configuration);
-        formatter.field("recording_configuration", &self.recording_configuration);
-        formatter.field("truncated_events", &self.truncated_events);
-        formatter.finish()
     }
 }
 /// See [`StreamSession`](crate::model::StreamSession).
@@ -2110,7 +1982,7 @@ impl StreamSession {
 
 /// <p>Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamEvent {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
     #[doc(hidden)]
@@ -2134,15 +2006,6 @@ impl StreamEvent {
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamEvent");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("event_time", &self.event_time);
-        formatter.finish()
     }
 }
 /// See [`StreamEvent`](crate::model::StreamEvent).
@@ -2208,7 +2071,7 @@ impl StreamEvent {
 
 /// <p>An object representing a configuration to record a channel stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordingConfiguration {
     /// <p>Recording-configuration ARN.</p>
     #[doc(hidden)]
@@ -2268,22 +2131,6 @@ impl RecordingConfiguration {
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
     pub fn recording_reconnect_window_seconds(&self) -> i32 {
         self.recording_reconnect_window_seconds
-    }
-}
-impl std::fmt::Debug for RecordingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordingConfiguration");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("destination_configuration", &self.destination_configuration);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("thumbnail_configuration", &self.thumbnail_configuration);
-        formatter.field(
-            "recording_reconnect_window_seconds",
-            &self.recording_reconnect_window_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecordingConfiguration`](crate::model::RecordingConfiguration).
@@ -2433,7 +2280,7 @@ impl RecordingConfiguration {
 
 /// <p>An object representing a configuration of thumbnails for recorded video.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThumbnailConfiguration {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     #[doc(hidden)]
@@ -2452,14 +2299,6 @@ impl ThumbnailConfiguration {
     /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
     pub fn target_interval_seconds(&self) -> i64 {
         self.target_interval_seconds
-    }
-}
-impl std::fmt::Debug for ThumbnailConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThumbnailConfiguration");
-        formatter.field("recording_mode", &self.recording_mode);
-        formatter.field("target_interval_seconds", &self.target_interval_seconds);
-        formatter.finish()
     }
 }
 /// See [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
@@ -2605,7 +2444,7 @@ impl AsRef<str> for RecordingMode {
 
 /// <p>Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestConfiguration {
     /// <p>Encoder settings for video.</p>
     #[doc(hidden)]
@@ -2622,14 +2461,6 @@ impl IngestConfiguration {
     /// <p>Encoder settings for audio.</p>
     pub fn audio(&self) -> std::option::Option<&crate::model::AudioConfiguration> {
         self.audio.as_ref()
-    }
-}
-impl std::fmt::Debug for IngestConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestConfiguration");
-        formatter.field("video", &self.video);
-        formatter.field("audio", &self.audio);
-        formatter.finish()
     }
 }
 /// See [`IngestConfiguration`](crate::model::IngestConfiguration).
@@ -2686,7 +2517,7 @@ impl IngestConfiguration {
 
 /// <p>Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioConfiguration {
     /// <p>Codec used for the audio encoding.</p>
     #[doc(hidden)]
@@ -2717,16 +2548,6 @@ impl AudioConfiguration {
     /// <p>Number of audio channels.</p>
     pub fn channels(&self) -> i64 {
         self.channels
-    }
-}
-impl std::fmt::Debug for AudioConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioConfiguration");
-        formatter.field("codec", &self.codec);
-        formatter.field("target_bitrate", &self.target_bitrate);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.field("channels", &self.channels);
-        formatter.finish()
     }
 }
 /// See [`AudioConfiguration`](crate::model::AudioConfiguration).
@@ -2801,7 +2622,7 @@ impl AudioConfiguration {
 
 /// <p>Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoConfiguration {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
     #[doc(hidden)]
@@ -2860,20 +2681,6 @@ impl VideoConfiguration {
     /// <p>Video-resolution width in pixels.</p>
     pub fn video_width(&self) -> i64 {
         self.video_width
-    }
-}
-impl std::fmt::Debug for VideoConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoConfiguration");
-        formatter.field("avc_profile", &self.avc_profile);
-        formatter.field("avc_level", &self.avc_level);
-        formatter.field("codec", &self.codec);
-        formatter.field("encoder", &self.encoder);
-        formatter.field("target_bitrate", &self.target_bitrate);
-        formatter.field("target_framerate", &self.target_framerate);
-        formatter.field("video_height", &self.video_height);
-        formatter.field("video_width", &self.video_width);
-        formatter.finish()
     }
 }
 /// See [`VideoConfiguration`](crate::model::VideoConfiguration).
@@ -3047,7 +2854,7 @@ impl std::fmt::Debug for StreamKey {
 pub mod stream_key {
 
     /// A builder for [`StreamKey`](crate::model::StreamKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3122,6 +2929,16 @@ pub mod stream_key {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl StreamKey {
     /// Creates a new builder-style object to manufacture [`StreamKey`](crate::model::StreamKey).
@@ -3132,7 +2949,7 @@ impl StreamKey {
 
 /// <p>Specifies a live video stream that has been ingested and distributed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stream {
     /// <p>Channel ARN for the stream.</p>
     #[doc(hidden)]
@@ -3184,19 +3001,6 @@ impl Stream {
     /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
     pub fn viewer_count(&self) -> i64 {
         self.viewer_count
-    }
-}
-impl std::fmt::Debug for Stream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stream");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("playback_url", &self.playback_url);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("state", &self.state);
-        formatter.field("health", &self.health);
-        formatter.field("viewer_count", &self.viewer_count);
-        formatter.finish()
     }
 }
 /// See [`Stream`](crate::model::Stream).
@@ -3313,7 +3117,7 @@ impl Stream {
 
 /// <p>Error related to a specific channel, specified by its ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchError {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
@@ -3337,15 +3141,6 @@ impl BatchError {
     /// <p>Error message, determined by the application.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchError");
-        formatter.field("arn", &self.arn);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`BatchError`](crate::model::BatchError).

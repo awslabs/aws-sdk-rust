@@ -2,7 +2,7 @@
 
 /// <p>A requested resource was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -29,16 +29,6 @@ impl ResourceNotFoundException {
     /// <p>Value is a list of resource IDs that were not found.</p>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -143,7 +133,7 @@ impl ResourceNotFoundException {
 
 /// <p>The request failed because a limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -163,15 +153,6 @@ impl LimitExceededException {
     /// <p>Value is the type of resource for which a limit was exceeded.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 impl LimitExceededException {
@@ -255,7 +236,7 @@ impl LimitExceededException {
 
 /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -282,19 +263,6 @@ impl InvalidRequestException {
     /// <p>The request included parameters that cannot be provided together.</p>
     pub fn mutually_exclusive_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.mutually_exclusive_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("required_parameters", &self.required_parameters);
-        formatter.field(
-            "mutually_exclusive_parameters",
-            &self.mutually_exclusive_parameters,
-        );
-        formatter.finish()
     }
 }
 impl InvalidRequestException {
@@ -409,7 +377,7 @@ impl InvalidRequestException {
 
 /// <p>The service failed in an unexpected way.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -422,14 +390,6 @@ impl InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 impl InternalServerException {

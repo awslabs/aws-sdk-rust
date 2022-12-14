@@ -2,7 +2,7 @@
 
 /// <p>For queries that originate in your VPC, detailed information about a Resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverRule.html">DeleteResolverRule</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html">UpdateResolverRule</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolverRule {
     /// <p>The ID that Resolver assigned to the Resolver rule when you created it.</p>
     #[doc(hidden)]
@@ -109,26 +109,6 @@ impl ResolverRule {
     /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(&self) -> std::option::Option<&str> {
         self.modification_time.as_deref()
-    }
-}
-impl std::fmt::Debug for ResolverRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolverRule");
-        formatter.field("id", &self.id);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("rule_type", &self.rule_type);
-        formatter.field("name", &self.name);
-        formatter.field("target_ips", &self.target_ips);
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("share_status", &self.share_status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("modification_time", &self.modification_time);
-        formatter.finish()
     }
 }
 /// See [`ResolverRule`](crate::model::ResolverRule).
@@ -457,7 +437,7 @@ impl AsRef<str> for ShareStatus {
 
 /// <p>In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetAddress {
     /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
     #[doc(hidden)]
@@ -474,14 +454,6 @@ impl TargetAddress {
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for TargetAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetAddress");
-        formatter.field("ip", &self.ip);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`TargetAddress`](crate::model::TargetAddress).
@@ -729,7 +701,7 @@ impl AsRef<str> for ResolverRuleStatus {
 
 /// <p>In an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html">UpdateResolverRule</a> request, information about the changes that you want to make.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolverRuleConfig {
     /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
     #[doc(hidden)]
@@ -753,15 +725,6 @@ impl ResolverRuleConfig {
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
         self.resolver_endpoint_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResolverRuleConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolverRuleConfig");
-        formatter.field("name", &self.name);
-        formatter.field("target_ips", &self.target_ips);
-        formatter.field("resolver_endpoint_id", &self.resolver_endpoint_id);
-        formatter.finish()
     }
 }
 /// See [`ResolverRuleConfig`](crate::model::ResolverRuleConfig).
@@ -836,7 +799,7 @@ impl ResolverRuleConfig {
 
 /// <p>In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html">DeleteResolverEndpoint</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound Resolver endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolverEndpoint {
     /// <p>The ID of the Resolver endpoint.</p>
     #[doc(hidden)]
@@ -955,24 +918,6 @@ impl ResolverEndpoint {
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(&self) -> std::option::Option<&str> {
         self.modification_time.as_deref()
-    }
-}
-impl std::fmt::Debug for ResolverEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolverEndpoint");
-        formatter.field("id", &self.id);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("direction", &self.direction);
-        formatter.field("ip_address_count", &self.ip_address_count);
-        formatter.field("host_vpc_id", &self.host_vpc_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("modification_time", &self.modification_time);
-        formatter.finish()
     }
 }
 /// See [`ResolverEndpoint`](crate::model::ResolverEndpoint).
@@ -1413,7 +1358,7 @@ impl AsRef<str> for ResolverEndpointDirection {
 
 /// <p>A complex type that contains information about a configuration for DNSSEC validation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolverDnssecConfig {
     /// <p>The ID for a configuration for DNSSEC validation.</p>
     #[doc(hidden)]
@@ -1458,16 +1403,6 @@ impl ResolverDnssecConfig {
         &self,
     ) -> std::option::Option<&crate::model::ResolverDnssecValidationStatus> {
         self.validation_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ResolverDnssecConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolverDnssecConfig");
-        formatter.field("id", &self.id);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("validation_status", &self.validation_status);
-        formatter.finish()
     }
 }
 /// See [`ResolverDnssecConfig`](crate::model::ResolverDnssecConfig).
@@ -1753,7 +1688,7 @@ impl AsRef<str> for Validation {
 
 /// <p>A complex type that contains information about a Resolver configuration for a VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolverConfig {
     /// <p>ID for the Resolver configuration.</p>
     #[doc(hidden)]
@@ -1800,16 +1735,6 @@ impl ResolverConfig {
         &self,
     ) -> std::option::Option<&crate::model::ResolverAutodefinedReverseStatus> {
         self.autodefined_reverse.as_ref()
-    }
-}
-impl std::fmt::Debug for ResolverConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolverConfig");
-        formatter.field("id", &self.id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("autodefined_reverse", &self.autodefined_reverse);
-        formatter.finish()
     }
 }
 /// See [`ResolverConfig`](crate::model::ResolverConfig).
@@ -2099,7 +2024,7 @@ impl AsRef<str> for AutodefinedReverseFlag {
 
 /// <p>An association between a firewall rule group and a VPC, which enables DNS filtering for the VPC. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallRuleGroupAssociation {
     /// <p>The identifier for the association.</p>
     #[doc(hidden)]
@@ -2195,25 +2120,6 @@ impl FirewallRuleGroupAssociation {
     /// <p>The date and time that the association was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(&self) -> std::option::Option<&str> {
         self.modification_time.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallRuleGroupAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallRuleGroupAssociation");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("name", &self.name);
-        formatter.field("priority", &self.priority);
-        formatter.field("mutation_protection", &self.mutation_protection);
-        formatter.field("managed_owner_name", &self.managed_owner_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("modification_time", &self.modification_time);
-        formatter.finish()
     }
 }
 /// See [`FirewallRuleGroupAssociation`](crate::model::FirewallRuleGroupAssociation).
@@ -2612,7 +2518,7 @@ impl AsRef<str> for MutationProtectionStatus {
 
 /// <p>A single firewall rule in a rule group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallRule {
     /// <p>The unique identifier of the firewall rule group of the rule. </p>
     #[doc(hidden)]
@@ -2721,24 +2627,6 @@ impl FirewallRule {
     /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(&self) -> std::option::Option<&str> {
         self.modification_time.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallRule");
-        formatter.field("firewall_rule_group_id", &self.firewall_rule_group_id);
-        formatter.field("firewall_domain_list_id", &self.firewall_domain_list_id);
-        formatter.field("name", &self.name);
-        formatter.field("priority", &self.priority);
-        formatter.field("action", &self.action);
-        formatter.field("block_response", &self.block_response);
-        formatter.field("block_override_domain", &self.block_override_domain);
-        formatter.field("block_override_dns_type", &self.block_override_dns_type);
-        formatter.field("block_override_ttl", &self.block_override_ttl);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("modification_time", &self.modification_time);
-        formatter.finish()
     }
 }
 /// See [`FirewallRule`](crate::model::FirewallRule).
@@ -3443,7 +3331,7 @@ impl AsRef<str> for FirewallDomainUpdateOperation {
 
 /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallConfig {
     /// <p>The ID of the firewall configuration.</p>
     #[doc(hidden)]
@@ -3484,16 +3372,6 @@ impl FirewallConfig {
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
     pub fn firewall_fail_open(&self) -> std::option::Option<&crate::model::FirewallFailOpenStatus> {
         self.firewall_fail_open.as_ref()
-    }
-}
-impl std::fmt::Debug for FirewallConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallConfig");
-        formatter.field("id", &self.id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("firewall_fail_open", &self.firewall_fail_open);
-        formatter.finish()
     }
 }
 /// See [`FirewallConfig`](crate::model::FirewallConfig).
@@ -3673,7 +3551,7 @@ impl AsRef<str> for FirewallFailOpenStatus {
 
 /// <p>One tag that you want to add to the specified resource. A tag consists of a <code>Key</code> (a name for the tag) and a <code>Value</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The name for the tag. For example, if you want to associate Resolver resources with the account IDs of your customers for billing purposes, the value of <code>Key</code> might be <code>account-id</code>.</p>
     #[doc(hidden)]
@@ -3690,14 +3568,6 @@ impl Tag {
     /// <p>The value for the tag. For example, if <code>Key</code> is <code>account-id</code>, then <code>Value</code> might be the ID of the customer account that you're creating the resource for.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -3749,7 +3619,7 @@ impl Tag {
 /// <p>For Resolver list operations (<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html">ListResolverQueryLogConfigs</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html">ListResolverQueryLogConfigAssociations</a>), and <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>), an optional specification to return a subset of objects.</p>
 /// <p>To filter objects, such as Resolver endpoints or Resolver rules, you specify <code>Name</code> and <code>Values</code>. For example, to list only inbound Resolver endpoints, specify <code>Direction</code> for <code>Name</code> and specify <code>INBOUND</code> for <code>Values</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the parameter that you want to use to filter objects.</p>
     /// <p>The valid values for <code>Name</code> depend on the action that you're including the filter in, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html">ListResolverQueryLogConfigs</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html">ListResolverQueryLogConfigAssociations</a>.</p> <note>
@@ -3894,14 +3764,6 @@ impl Filter {
     /// <p>When you're using a <code>List</code> operation and you want the operation to return a subset of objects, such as Resolver endpoints or Resolver rules, the value of the parameter that you want to use to filter objects. For example, to list only inbound Resolver endpoints, specify <code>Direction</code> for <code>Name</code> and specify <code>INBOUND</code> for <code>Values</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -4089,7 +3951,7 @@ impl Filter {
 
 /// <p>In the response to an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> request, provides information about an association between a Resolver rule and a VPC. The association determines which DNS queries that originate in the VPC are forwarded to your network. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolverRuleAssociation {
     /// <p>The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a> request.</p>
     #[doc(hidden)]
@@ -4134,18 +3996,6 @@ impl ResolverRuleAssociation {
     /// <p>A detailed description of the status of the association between a Resolver rule and a VPC.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ResolverRuleAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolverRuleAssociation");
-        formatter.field("id", &self.id);
-        formatter.field("resolver_rule_id", &self.resolver_rule_id);
-        formatter.field("name", &self.name);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`ResolverRuleAssociation`](crate::model::ResolverRuleAssociation).
@@ -4360,7 +4210,7 @@ impl AsRef<str> for ResolverRuleAssociationStatus {
 
 /// <p>In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverQueryLogConfig.html">CreateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverQueryLogConfig.html">DeleteResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfig.html">GetResolverQueryLogConfig</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html">ListResolverQueryLogConfigs</a> request, a complex type that contains settings for one query logging configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolverQueryLogConfig {
     /// <p>The ID for the query logging configuration.</p>
     #[doc(hidden)]
@@ -4453,22 +4303,6 @@ impl ResolverQueryLogConfig {
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
-    }
-}
-impl std::fmt::Debug for ResolverQueryLogConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolverQueryLogConfig");
-        formatter.field("id", &self.id);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("status", &self.status);
-        formatter.field("share_status", &self.share_status);
-        formatter.field("association_count", &self.association_count);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`ResolverQueryLogConfig`](crate::model::ResolverQueryLogConfig).
@@ -4842,7 +4676,7 @@ impl AsRef<str> for SortOrder {
 
 /// <p>In the response to an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfigAssociation.html">GetResolverQueryLogConfigAssociation</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html">ListResolverQueryLogConfigAssociations</a>, request, a complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolverQueryLogConfigAssociation {
     /// <p>The ID of the query logging association.</p>
     #[doc(hidden)]
@@ -4920,22 +4754,6 @@ impl ResolverQueryLogConfigAssociation {
     /// <p>The date and time that the VPC was associated with the query logging configuration, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
-    }
-}
-impl std::fmt::Debug for ResolverQueryLogConfigAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolverQueryLogConfigAssociation");
-        formatter.field("id", &self.id);
-        formatter.field(
-            "resolver_query_log_config_id",
-            &self.resolver_query_log_config_id,
-        );
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("status", &self.status);
-        formatter.field("error", &self.error);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`ResolverQueryLogConfigAssociation`](crate::model::ResolverQueryLogConfigAssociation).
@@ -5311,7 +5129,7 @@ impl AsRef<str> for ResolverQueryLogConfigAssociationStatus {
 
 /// <p>In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a> request, information about the IP addresses that the Resolver endpoint uses for DNS queries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpAddressResponse {
     /// <p>The ID of one IP address.</p>
     #[doc(hidden)]
@@ -5363,19 +5181,6 @@ impl IpAddressResponse {
     /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(&self) -> std::option::Option<&str> {
         self.modification_time.as_deref()
-    }
-}
-impl std::fmt::Debug for IpAddressResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpAddressResponse");
-        formatter.field("ip_id", &self.ip_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("ip", &self.ip);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("modification_time", &self.modification_time);
-        formatter.finish()
     }
 }
 /// See [`IpAddressResponse`](crate::model::IpAddressResponse).
@@ -5640,7 +5445,7 @@ impl AsRef<str> for IpAddressStatus {
 /// <p>Minimal high-level information for a firewall rule group. The action <code>ListFirewallRuleGroups</code> returns an array of these objects. </p>
 /// <p>To retrieve full information for a firewall rule group, call <code>GetFirewallRuleGroup</code> and <code>ListFirewallRules</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallRuleGroupMetadata {
     /// <p>The ID of the rule group. </p>
     #[doc(hidden)]
@@ -5685,18 +5490,6 @@ impl FirewallRuleGroupMetadata {
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
         self.share_status.as_ref()
-    }
-}
-impl std::fmt::Debug for FirewallRuleGroupMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallRuleGroupMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("share_status", &self.share_status);
-        formatter.finish()
     }
 }
 /// See [`FirewallRuleGroupMetadata`](crate::model::FirewallRuleGroupMetadata).
@@ -5802,7 +5595,7 @@ impl FirewallRuleGroupMetadata {
 /// <p>Minimal high-level information for a firewall domain list. The action <code>ListFirewallDomainLists</code> returns an array of these objects. </p>
 /// <p>To retrieve full information for a firewall domain list, call <code>GetFirewallDomainList</code> and <code>ListFirewallDomains</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallDomainListMetadata {
     /// <p>The ID of the domain list. </p>
     #[doc(hidden)]
@@ -5840,17 +5633,6 @@ impl FirewallDomainListMetadata {
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub fn managed_owner_name(&self) -> std::option::Option<&str> {
         self.managed_owner_name.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallDomainListMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallDomainListMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("managed_owner_name", &self.managed_owner_name);
-        formatter.finish()
     }
 }
 /// See [`FirewallDomainListMetadata`](crate::model::FirewallDomainListMetadata).
@@ -6030,7 +5812,7 @@ impl AsRef<str> for FirewallDomainImportOperation {
 
 /// <p>High-level information for a firewall rule group. A firewall rule group is a collection of rules that DNS Firewall uses to filter DNS network traffic for a VPC. To retrieve the rules for the rule group, call <code>ListFirewallRules</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallRuleGroup {
     /// <p>The ID of the rule group. </p>
     #[doc(hidden)]
@@ -6110,23 +5892,6 @@ impl FirewallRuleGroup {
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(&self) -> std::option::Option<&str> {
         self.modification_time.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallRuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallRuleGroup");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("rule_count", &self.rule_count);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("share_status", &self.share_status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("modification_time", &self.modification_time);
-        formatter.finish()
     }
 }
 /// See [`FirewallRuleGroup`](crate::model::FirewallRuleGroup).
@@ -6401,7 +6166,7 @@ impl AsRef<str> for FirewallRuleGroupStatus {
 /// <p>High-level information about a list of firewall domains for use in a <code>FirewallRule</code>. This is returned by <code>GetFirewallDomainList</code>.</p>
 /// <p>To retrieve the domains that are defined for this domain list, call <code>ListFirewallDomains</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallDomainList {
     /// <p>The ID of the domain list. </p>
     #[doc(hidden)]
@@ -6474,22 +6239,6 @@ impl FirewallDomainList {
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn modification_time(&self) -> std::option::Option<&str> {
         self.modification_time.as_deref()
-    }
-}
-impl std::fmt::Debug for FirewallDomainList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallDomainList");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("domain_count", &self.domain_count);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("managed_owner_name", &self.managed_owner_name);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("modification_time", &self.modification_time);
-        formatter.finish()
     }
 }
 /// See [`FirewallDomainList`](crate::model::FirewallDomainList).
@@ -6654,7 +6403,7 @@ impl FirewallDomainList {
 
 /// <p>In an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a> request, information about an IP address to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpAddressUpdate {
     /// <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
     #[doc(hidden)]
@@ -6678,15 +6427,6 @@ impl IpAddressUpdate {
     /// <p>The new IP address.</p>
     pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
-    }
-}
-impl std::fmt::Debug for IpAddressUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpAddressUpdate");
-        formatter.field("ip_id", &self.ip_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("ip", &self.ip);
-        formatter.finish()
     }
 }
 /// See [`IpAddressUpdate`](crate::model::IpAddressUpdate).
@@ -6749,7 +6489,7 @@ impl IpAddressUpdate {
 
 /// <p>In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request, the IP address that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). <code>IpAddressRequest</code> also includes the ID of the subnet that contains the IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpAddressRequest {
     /// <p>The ID of the subnet that contains the IP address. </p>
     #[doc(hidden)]
@@ -6766,14 +6506,6 @@ impl IpAddressRequest {
     /// <p>The IP address that you want to use for DNS queries.</p>
     pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
-    }
-}
-impl std::fmt::Debug for IpAddressRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpAddressRequest");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("ip", &self.ip);
-        formatter.finish()
     }
 }
 /// See [`IpAddressRequest`](crate::model::IpAddressRequest).

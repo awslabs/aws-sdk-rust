@@ -6764,7 +6764,7 @@ impl UpdatePipelineInput {
 
 /// <p>Represents the input of an <code>UpdatePipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to be updated.</p>
     #[doc(hidden)]
@@ -6776,17 +6776,10 @@ impl UpdatePipelineInput {
         self.pipeline.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineInput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateActionTypeInput {
     /// <p>The action type definition for the action type to be updated.</p>
     #[doc(hidden)]
@@ -6798,17 +6791,10 @@ impl UpdateActionTypeInput {
         self.action_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateActionTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateActionTypeInput");
-        formatter.field("action_type", &self.action_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
     #[doc(hidden)]
@@ -6827,18 +6813,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
     #[doc(hidden)]
@@ -6857,18 +6835,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopPipelineExecutionInput {
     /// <p>The name of the pipeline to stop.</p>
     #[doc(hidden)]
@@ -6905,20 +6875,10 @@ impl StopPipelineExecutionInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for StopPipelineExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopPipelineExecutionInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("pipeline_execution_id", &self.pipeline_execution_id);
-        formatter.field("abandon", &self.abandon);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>StartPipelineExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPipelineExecutionInput {
     /// <p>The name of the pipeline to start.</p>
     #[doc(hidden)]
@@ -6937,18 +6897,10 @@ impl StartPipelineExecutionInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartPipelineExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPipelineExecutionInput");
-        formatter.field("name", &self.name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>RetryStageExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryStageExecutionInput {
     /// <p>The name of the pipeline that contains the failed stage.</p>
     #[doc(hidden)]
@@ -6981,20 +6933,10 @@ impl RetryStageExecutionInput {
         self.retry_mode.as_ref()
     }
 }
-impl std::fmt::Debug for RetryStageExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryStageExecutionInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("pipeline_execution_id", &self.pipeline_execution_id);
-        formatter.field("retry_mode", &self.retry_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdPartyInput {
     /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     #[doc(hidden)]
@@ -7006,17 +6948,10 @@ impl RegisterWebhookWithThirdPartyInput {
         self.webhook_name.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterWebhookWithThirdPartyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterWebhookWithThirdPartyInput");
-        formatter.field("webhook_name", &self.webhook_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutWebhookInput {
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
     #[doc(hidden)]
@@ -7035,18 +6970,10 @@ impl PutWebhookInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutWebhookInput");
-        formatter.field("webhook", &self.webhook);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutThirdPartyJobSuccessResultInput {
     /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
     #[doc(hidden)]
@@ -7086,21 +7013,10 @@ impl PutThirdPartyJobSuccessResultInput {
         self.execution_details.as_ref()
     }
 }
-impl std::fmt::Debug for PutThirdPartyJobSuccessResultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutThirdPartyJobSuccessResultInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("current_revision", &self.current_revision);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("execution_details", &self.execution_details);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutThirdPartyJobFailureResultInput {
     /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
     #[doc(hidden)]
@@ -7126,19 +7042,10 @@ impl PutThirdPartyJobFailureResultInput {
         self.failure_details.as_ref()
     }
 }
-impl std::fmt::Debug for PutThirdPartyJobFailureResultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutThirdPartyJobFailureResultInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PutJobSuccessResult</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutJobSuccessResultInput {
     /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
     #[doc(hidden)]
@@ -7182,21 +7089,10 @@ impl PutJobSuccessResultInput {
         self.output_variables.as_ref()
     }
 }
-impl std::fmt::Debug for PutJobSuccessResultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutJobSuccessResultInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("current_revision", &self.current_revision);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("execution_details", &self.execution_details);
-        formatter.field("output_variables", &self.output_variables);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PutJobFailureResult</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutJobFailureResultInput {
     /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
     #[doc(hidden)]
@@ -7215,18 +7111,10 @@ impl PutJobFailureResultInput {
         self.failure_details.as_ref()
     }
 }
-impl std::fmt::Debug for PutJobFailureResultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutJobFailureResultInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PutApprovalResult</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutApprovalResultInput {
     /// <p>The name of the pipeline that contains the action. </p>
     #[doc(hidden)]
@@ -7266,21 +7154,10 @@ impl PutApprovalResultInput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for PutApprovalResultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutApprovalResultInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("action_name", &self.action_name);
-        formatter.field("result", &self.result);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PutActionRevision</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutActionRevisionInput {
     /// <p>The name of the pipeline that starts processing the revision to the source.</p>
     #[doc(hidden)]
@@ -7313,20 +7190,10 @@ impl PutActionRevisionInput {
         self.action_revision.as_ref()
     }
 }
-impl std::fmt::Debug for PutActionRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutActionRevisionInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("action_name", &self.action_name);
-        formatter.field("action_revision", &self.action_revision);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PollForThirdPartyJobs</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForThirdPartyJobsInput {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
@@ -7345,18 +7212,10 @@ impl PollForThirdPartyJobsInput {
         self.max_batch_size
     }
 }
-impl std::fmt::Debug for PollForThirdPartyJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForThirdPartyJobsInput");
-        formatter.field("action_type_id", &self.action_type_id);
-        formatter.field("max_batch_size", &self.max_batch_size);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PollForJobs</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForJobsInput {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
@@ -7386,19 +7245,10 @@ impl PollForJobsInput {
         self.query_param.as_ref()
     }
 }
-impl std::fmt::Debug for PollForJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForJobsInput");
-        formatter.field("action_type_id", &self.action_type_id);
-        formatter.field("max_batch_size", &self.max_batch_size);
-        formatter.field("query_param", &self.query_param);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebhooksInput {
     /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
     #[doc(hidden)]
@@ -7417,18 +7267,10 @@ impl ListWebhooksInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWebhooksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebhooksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
     #[doc(hidden)]
@@ -7454,19 +7296,10 @@ impl ListTagsForResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListPipelines</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesInput {
     /// <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
     #[doc(hidden)]
@@ -7485,18 +7318,10 @@ impl ListPipelinesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListPipelineExecutions</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelineExecutionsInput {
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
     #[doc(hidden)]
@@ -7522,19 +7347,10 @@ impl ListPipelineExecutionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPipelineExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelineExecutionsInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListActionTypes</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActionTypesInput {
     /// <p>Filters the list of action types to those created by a specified entity.</p>
     #[doc(hidden)]
@@ -7560,19 +7376,10 @@ impl ListActionTypesInput {
         self.region_filter.as_deref()
     }
 }
-impl std::fmt::Debug for ListActionTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActionTypesInput");
-        formatter.field("action_owner_filter", &self.action_owner_filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("region_filter", &self.region_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActionExecutionsInput {
     /// <p> The name of the pipeline for which you want to list action execution history.</p>
     #[doc(hidden)]
@@ -7609,20 +7416,10 @@ impl ListActionExecutionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListActionExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActionExecutionsInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("filter", &self.filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetThirdPartyJobDetails</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThirdPartyJobDetailsInput {
     /// <p>The unique system-generated ID used for identifying the job.</p>
     #[doc(hidden)]
@@ -7641,18 +7438,10 @@ impl GetThirdPartyJobDetailsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetThirdPartyJobDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThirdPartyJobDetailsInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetPipelineState</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineStateInput {
     /// <p>The name of the pipeline about which you want to get information.</p>
     #[doc(hidden)]
@@ -7664,17 +7453,10 @@ impl GetPipelineStateInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPipelineStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineStateInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetPipelineExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineExecutionInput {
     /// <p>The name of the pipeline about which you want to get execution details.</p>
     #[doc(hidden)]
@@ -7693,18 +7475,10 @@ impl GetPipelineExecutionInput {
         self.pipeline_execution_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPipelineExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineExecutionInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("pipeline_execution_id", &self.pipeline_execution_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetPipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineInput {
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
     #[doc(hidden)]
@@ -7723,18 +7497,10 @@ impl GetPipelineInput {
         self.version
     }
 }
-impl std::fmt::Debug for GetPipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineInput");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetJobDetails</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobDetailsInput {
     /// <p>The unique system-generated ID for the job.</p>
     #[doc(hidden)]
@@ -7746,17 +7512,10 @@ impl GetJobDetailsInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobDetailsInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetActionTypeInput {
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
@@ -7805,20 +7564,10 @@ impl GetActionTypeInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetActionTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetActionTypeInput");
-        formatter.field("category", &self.category);
-        formatter.field("owner", &self.owner);
-        formatter.field("provider", &self.provider);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an <code>EnableStageTransition</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableStageTransitionInput {
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
     #[doc(hidden)]
@@ -7844,19 +7593,10 @@ impl EnableStageTransitionInput {
         self.transition_type.as_ref()
     }
 }
-impl std::fmt::Debug for EnableStageTransitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableStageTransitionInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("transition_type", &self.transition_type);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DisableStageTransition</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableStageTransitionInput {
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
     #[doc(hidden)]
@@ -7889,20 +7629,10 @@ impl DisableStageTransitionInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for DisableStageTransitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableStageTransitionInput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("transition_type", &self.transition_type);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterWebhookWithThirdPartyInput {
     /// <p>The name of the webhook you want to deregister.</p>
     #[doc(hidden)]
@@ -7914,17 +7644,10 @@ impl DeregisterWebhookWithThirdPartyInput {
         self.webhook_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterWebhookWithThirdPartyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterWebhookWithThirdPartyInput");
-        formatter.field("webhook_name", &self.webhook_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWebhookInput {
     /// <p>The name of the webhook you want to delete.</p>
     #[doc(hidden)]
@@ -7936,17 +7659,10 @@ impl DeleteWebhookInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWebhookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWebhookInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeletePipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineInput {
     /// <p>The name of the pipeline to be deleted.</p>
     #[doc(hidden)]
@@ -7958,17 +7674,10 @@ impl DeletePipelineInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked as deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomActionTypeInput {
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
     #[doc(hidden)]
@@ -7994,19 +7703,10 @@ impl DeleteCustomActionTypeInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomActionTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomActionTypeInput");
-        formatter.field("category", &self.category);
-        formatter.field("provider", &self.provider);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>CreatePipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineInput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     #[doc(hidden)]
@@ -8025,18 +7725,10 @@ impl CreatePipelineInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineInput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a CreateCustomActionType operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomActionTypeInput {
     /// <p>The category of the custom action, such as a build action or a test action.</p>
     #[doc(hidden)]
@@ -8104,24 +7796,10 @@ impl CreateCustomActionTypeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCustomActionTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomActionTypeInput");
-        formatter.field("category", &self.category);
-        formatter.field("provider", &self.provider);
-        formatter.field("version", &self.version);
-        formatter.field("settings", &self.settings);
-        formatter.field("configuration_properties", &self.configuration_properties);
-        formatter.field("input_artifact_details", &self.input_artifact_details);
-        formatter.field("output_artifact_details", &self.output_artifact_details);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an AcknowledgeThirdPartyJob action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJobInput {
     /// <p>The unique system-generated ID of the job.</p>
     #[doc(hidden)]
@@ -8147,19 +7825,10 @@ impl AcknowledgeThirdPartyJobInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for AcknowledgeThirdPartyJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeThirdPartyJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("nonce", &self.nonce);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an AcknowledgeJob action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeJobInput {
     /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
     #[doc(hidden)]
@@ -8176,13 +7845,5 @@ impl AcknowledgeJobInput {
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
     pub fn nonce(&self) -> std::option::Option<&str> {
         self.nonce.as_deref()
-    }
-}
-impl std::fmt::Debug for AcknowledgeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("nonce", &self.nonce);
-        formatter.finish()
     }
 }

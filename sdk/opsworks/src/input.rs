@@ -14513,7 +14513,7 @@ impl UpdateVolumeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVolumeInput {
     /// <p>The volume ID.</p>
     #[doc(hidden)]
@@ -14539,19 +14539,10 @@ impl UpdateVolumeInput {
         self.mount_point.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVolumeInput");
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("name", &self.name);
-        formatter.field("mount_point", &self.mount_point);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserProfileInput {
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
     #[doc(hidden)]
@@ -14584,20 +14575,10 @@ impl UpdateUserProfileInput {
         self.allow_self_management
     }
 }
-impl std::fmt::Debug for UpdateUserProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserProfileInput");
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("ssh_username", &self.ssh_username);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.field("allow_self_management", &self.allow_self_management);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStackInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -14812,40 +14793,10 @@ impl UpdateStackInput {
         self.agent_version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStackInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field(
-            "default_instance_profile_arn",
-            &self.default_instance_profile_arn,
-        );
-        formatter.field("default_os", &self.default_os);
-        formatter.field("hostname_theme", &self.hostname_theme);
-        formatter.field("default_availability_zone", &self.default_availability_zone);
-        formatter.field("default_subnet_id", &self.default_subnet_id);
-        formatter.field("custom_json", &self.custom_json);
-        formatter.field("configuration_manager", &self.configuration_manager);
-        formatter.field("chef_configuration", &self.chef_configuration);
-        formatter.field("use_custom_cookbooks", &self.use_custom_cookbooks);
-        formatter.field("custom_cookbooks_source", &self.custom_cookbooks_source);
-        formatter.field("default_ssh_key_name", &self.default_ssh_key_name);
-        formatter.field("default_root_device_type", &self.default_root_device_type);
-        formatter.field(
-            "use_opsworks_security_groups",
-            &self.use_opsworks_security_groups,
-        );
-        formatter.field("agent_version", &self.agent_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
     #[doc(hidden)]
@@ -14871,19 +14822,10 @@ impl UpdateRdsDbInstanceInput {
         self.db_password.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRdsDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRdsDbInstanceInput");
-        formatter.field("rds_db_instance_arn", &self.rds_db_instance_arn);
-        formatter.field("db_user", &self.db_user);
-        formatter.field("db_password", &self.db_password);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMyUserProfileInput {
     /// <p>The user's SSH public key.</p>
     #[doc(hidden)]
@@ -14895,17 +14837,10 @@ impl UpdateMyUserProfileInput {
         self.ssh_public_key.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMyUserProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMyUserProfileInput");
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLayerInput {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
@@ -15050,45 +14985,10 @@ impl UpdateLayerInput {
         self.lifecycle_event_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLayerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLayerInput");
-        formatter.field("layer_id", &self.layer_id);
-        formatter.field("name", &self.name);
-        formatter.field("shortname", &self.shortname);
-        formatter.field("attributes", &self.attributes);
-        formatter.field(
-            "cloud_watch_logs_configuration",
-            &self.cloud_watch_logs_configuration,
-        );
-        formatter.field(
-            "custom_instance_profile_arn",
-            &self.custom_instance_profile_arn,
-        );
-        formatter.field("custom_json", &self.custom_json);
-        formatter.field("custom_security_group_ids", &self.custom_security_group_ids);
-        formatter.field("packages", &self.packages);
-        formatter.field("volume_configurations", &self.volume_configurations);
-        formatter.field("enable_auto_healing", &self.enable_auto_healing);
-        formatter.field("auto_assign_elastic_ips", &self.auto_assign_elastic_ips);
-        formatter.field("auto_assign_public_ips", &self.auto_assign_public_ips);
-        formatter.field("custom_recipes", &self.custom_recipes);
-        formatter.field("install_updates_on_boot", &self.install_updates_on_boot);
-        formatter.field(
-            "use_ebs_optimized_instances",
-            &self.use_ebs_optimized_instances,
-        );
-        formatter.field(
-            "lifecycle_event_configuration",
-            &self.lifecycle_event_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -15215,28 +15115,10 @@ impl UpdateInstanceInput {
         self.agent_version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("layer_ids", &self.layer_ids);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("auto_scaling_type", &self.auto_scaling_type);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("os", &self.os);
-        formatter.field("ami_id", &self.ami_id);
-        formatter.field("ssh_key_name", &self.ssh_key_name);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("install_updates_on_boot", &self.install_updates_on_boot);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateElasticIpInput {
     /// <p>The IP address for which you want to update the name.</p>
     #[doc(hidden)]
@@ -15255,18 +15137,10 @@ impl UpdateElasticIpInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateElasticIpInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateElasticIpInput");
-        formatter.field("elastic_ip", &self.elastic_ip);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAppInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -15360,27 +15234,10 @@ impl UpdateAppInput {
         self.environment.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAppInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("data_sources", &self.data_sources);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("app_source", &self.app_source);
-        formatter.field("domains", &self.domains);
-        formatter.field("enable_ssl", &self.enable_ssl);
-        formatter.field("ssl_configuration", &self.ssl_configuration);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("environment", &self.environment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
     #[doc(hidden)]
@@ -15399,18 +15256,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnassignVolumeInput {
     /// <p>The volume ID.</p>
     #[doc(hidden)]
@@ -15422,17 +15271,10 @@ impl UnassignVolumeInput {
         self.volume_id.as_deref()
     }
 }
-impl std::fmt::Debug for UnassignVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnassignVolumeInput");
-        formatter.field("volume_id", &self.volume_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnassignInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -15444,17 +15286,10 @@ impl UnassignInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for UnassignInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnassignInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
     #[doc(hidden)]
@@ -15491,18 +15326,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopStackInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -15514,17 +15341,10 @@ impl StopStackInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopStackInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -15543,18 +15363,10 @@ impl StopInstanceInput {
         self.force
     }
 }
-impl std::fmt::Debug for StopInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStackInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -15566,17 +15378,10 @@ impl StartStackInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartStackInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -15588,17 +15393,10 @@ impl StartInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTimeBasedAutoScalingInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -15619,18 +15417,10 @@ impl SetTimeBasedAutoScalingInput {
         self.auto_scaling_schedule.as_ref()
     }
 }
-impl std::fmt::Debug for SetTimeBasedAutoScalingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTimeBasedAutoScalingInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("auto_scaling_schedule", &self.auto_scaling_schedule);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetPermissionInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -15686,21 +15476,10 @@ impl SetPermissionInput {
         self.level.as_deref()
     }
 }
-impl std::fmt::Debug for SetPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetPermissionInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("allow_ssh", &self.allow_ssh);
-        formatter.field("allow_sudo", &self.allow_sudo);
-        formatter.field("level", &self.level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBasedAutoScalingInput {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
@@ -15733,20 +15512,10 @@ impl SetLoadBasedAutoScalingInput {
         self.down_scaling.as_ref()
     }
 }
-impl std::fmt::Debug for SetLoadBasedAutoScalingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetLoadBasedAutoScalingInput");
-        formatter.field("layer_id", &self.layer_id);
-        formatter.field("enable", &self.enable);
-        formatter.field("up_scaling", &self.up_scaling);
-        formatter.field("down_scaling", &self.down_scaling);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterVolumeInput {
     /// <p>The Amazon EBS volume ID.</p>
     #[doc(hidden)]
@@ -15765,18 +15534,10 @@ impl RegisterVolumeInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterVolumeInput");
-        formatter.field("ec2_volume_id", &self.ec2_volume_id);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterRdsDbInstanceInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -15809,20 +15570,10 @@ impl RegisterRdsDbInstanceInput {
         self.db_password.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterRdsDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterRdsDbInstanceInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("rds_db_instance_arn", &self.rds_db_instance_arn);
-        formatter.field("db_user", &self.db_user);
-        formatter.field("db_password", &self.db_password);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterInstanceInput {
     /// <p>The ID of the stack that the instance is to be registered with.</p>
     #[doc(hidden)]
@@ -15876,26 +15627,10 @@ impl RegisterInstanceInput {
         self.instance_identity.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterInstanceInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("public_ip", &self.public_ip);
-        formatter.field("private_ip", &self.private_ip);
-        formatter.field("rsa_public_key", &self.rsa_public_key);
-        formatter.field(
-            "rsa_public_key_fingerprint",
-            &self.rsa_public_key_fingerprint,
-        );
-        formatter.field("instance_identity", &self.instance_identity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterElasticIpInput {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
@@ -15914,18 +15649,10 @@ impl RegisterElasticIpInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterElasticIpInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterElasticIpInput");
-        formatter.field("elastic_ip", &self.elastic_ip);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterEcsClusterInput {
     /// <p>The cluster's ARN.</p>
     #[doc(hidden)]
@@ -15944,18 +15671,10 @@ impl RegisterEcsClusterInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterEcsClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterEcsClusterInput");
-        formatter.field("ecs_cluster_arn", &self.ecs_cluster_arn);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -15967,17 +15686,10 @@ impl RebootInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for RebootInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebootInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
     #[doc(hidden)]
@@ -16003,19 +15715,10 @@ impl ListTagsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrantAccessInput {
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     #[doc(hidden)]
@@ -16034,18 +15737,10 @@ impl GrantAccessInput {
         self.valid_for_in_minutes
     }
 }
-impl std::fmt::Debug for GrantAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrantAccessInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("valid_for_in_minutes", &self.valid_for_in_minutes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostnameSuggestionInput {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
@@ -16057,17 +15752,10 @@ impl GetHostnameSuggestionInput {
         self.layer_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetHostnameSuggestionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostnameSuggestionInput");
-        formatter.field("layer_id", &self.layer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateElasticIpInput {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
@@ -16079,17 +15767,10 @@ impl DisassociateElasticIpInput {
         self.elastic_ip.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateElasticIpInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateElasticIpInput");
-        formatter.field("elastic_ip", &self.elastic_ip);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachElasticLoadBalancerInput {
     /// <p>The Elastic Load Balancing instance's name.</p>
     #[doc(hidden)]
@@ -16108,21 +15789,10 @@ impl DetachElasticLoadBalancerInput {
         self.layer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DetachElasticLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachElasticLoadBalancerInput");
-        formatter.field(
-            "elastic_load_balancer_name",
-            &self.elastic_load_balancer_name,
-        );
-        formatter.field("layer_id", &self.layer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVolumesInput {
     /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
     #[doc(hidden)]
@@ -16155,20 +15825,10 @@ impl DescribeVolumesInput {
         self.volume_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVolumesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVolumesInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("raid_array_id", &self.raid_array_id);
-        formatter.field("volume_ids", &self.volume_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserProfilesInput {
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
     #[doc(hidden)]
@@ -16180,17 +15840,10 @@ impl DescribeUserProfilesInput {
         self.iam_user_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserProfilesInput");
-        formatter.field("iam_user_arns", &self.iam_user_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTimeBasedAutoScalingInput {
     /// <p>An array of instance IDs.</p>
     #[doc(hidden)]
@@ -16202,17 +15855,10 @@ impl DescribeTimeBasedAutoScalingInput {
         self.instance_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTimeBasedAutoScalingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTimeBasedAutoScalingInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackSummaryInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -16224,17 +15870,10 @@ impl DescribeStackSummaryInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStackSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackSummaryInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStacksInput {
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
     #[doc(hidden)]
@@ -16246,17 +15885,10 @@ impl DescribeStacksInput {
         self.stack_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStacksInput");
-        formatter.field("stack_ids", &self.stack_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStackProvisioningParametersInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -16268,17 +15900,10 @@ impl DescribeStackProvisioningParametersInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStackProvisioningParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStackProvisioningParametersInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceErrorsInput {
     /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
     #[doc(hidden)]
@@ -16304,19 +15929,10 @@ impl DescribeServiceErrorsInput {
         self.service_error_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServiceErrorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceErrorsInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("service_error_ids", &self.service_error_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRdsDbInstancesInput {
     /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
     #[doc(hidden)]
@@ -16335,18 +15951,10 @@ impl DescribeRdsDbInstancesInput {
         self.rds_db_instance_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRdsDbInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRdsDbInstancesInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("rds_db_instance_arns", &self.rds_db_instance_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRaidArraysInput {
     /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
     #[doc(hidden)]
@@ -16372,19 +15980,10 @@ impl DescribeRaidArraysInput {
         self.raid_array_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRaidArraysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRaidArraysInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("raid_array_ids", &self.raid_array_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePermissionsInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     #[doc(hidden)]
@@ -16403,40 +16002,20 @@ impl DescribePermissionsInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePermissionsInput");
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOperatingSystemsInput {}
-impl std::fmt::Debug for DescribeOperatingSystemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOperatingSystemsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMyUserProfileInput {}
-impl std::fmt::Debug for DescribeMyUserProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMyUserProfileInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBasedAutoScalingInput {
     /// <p>An array of layer IDs.</p>
     #[doc(hidden)]
@@ -16448,17 +16027,10 @@ impl DescribeLoadBasedAutoScalingInput {
         self.layer_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoadBasedAutoScalingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBasedAutoScalingInput");
-        formatter.field("layer_ids", &self.layer_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLayersInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -16477,18 +16049,10 @@ impl DescribeLayersInput {
         self.layer_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLayersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLayersInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("layer_ids", &self.layer_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancesInput {
     /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
     #[doc(hidden)]
@@ -16514,19 +16078,10 @@ impl DescribeInstancesInput {
         self.instance_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancesInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("layer_id", &self.layer_id);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticLoadBalancersInput {
     /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
     #[doc(hidden)]
@@ -16545,18 +16100,10 @@ impl DescribeElasticLoadBalancersInput {
         self.layer_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeElasticLoadBalancersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticLoadBalancersInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("layer_ids", &self.layer_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeElasticIpsInput {
     /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
     #[doc(hidden)]
@@ -16582,19 +16129,10 @@ impl DescribeElasticIpsInput {
         self.ips.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeElasticIpsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeElasticIpsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("ips", &self.ips);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEcsClustersInput {
     /// <p>A list of ARNs, one for each cluster to be described.</p>
     #[doc(hidden)]
@@ -16627,20 +16165,10 @@ impl DescribeEcsClustersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeEcsClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEcsClustersInput");
-        formatter.field("ecs_cluster_arns", &self.ecs_cluster_arns);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeploymentsInput {
     /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
     #[doc(hidden)]
@@ -16666,19 +16194,10 @@ impl DescribeDeploymentsInput {
         self.deployment_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeploymentsInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("app_id", &self.app_id);
-        formatter.field("deployment_ids", &self.deployment_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCommandsInput {
     /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
     #[doc(hidden)]
@@ -16704,19 +16223,10 @@ impl DescribeCommandsInput {
         self.command_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCommandsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCommandsInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("command_ids", &self.command_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppsInput {
     /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
     #[doc(hidden)]
@@ -16735,18 +16245,10 @@ impl DescribeAppsInput {
         self.app_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAppsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppsInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("app_ids", &self.app_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAgentVersionsInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -16767,18 +16269,10 @@ impl DescribeAgentVersionsInput {
         self.configuration_manager.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAgentVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAgentVersionsInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("configuration_manager", &self.configuration_manager);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterVolumeInput {
     /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
     #[doc(hidden)]
@@ -16790,17 +16284,10 @@ impl DeregisterVolumeInput {
         self.volume_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterVolumeInput");
-        formatter.field("volume_id", &self.volume_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
     #[doc(hidden)]
@@ -16812,17 +16299,10 @@ impl DeregisterRdsDbInstanceInput {
         self.rds_db_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterRdsDbInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterRdsDbInstanceInput");
-        formatter.field("rds_db_instance_arn", &self.rds_db_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -16834,17 +16314,10 @@ impl DeregisterInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterElasticIpInput {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
@@ -16856,17 +16329,10 @@ impl DeregisterElasticIpInput {
         self.elastic_ip.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterElasticIpInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterElasticIpInput");
-        formatter.field("elastic_ip", &self.elastic_ip);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterEcsClusterInput {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
     #[doc(hidden)]
@@ -16878,17 +16344,10 @@ impl DeregisterEcsClusterInput {
         self.ecs_cluster_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterEcsClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterEcsClusterInput");
-        formatter.field("ecs_cluster_arn", &self.ecs_cluster_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserProfileInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     #[doc(hidden)]
@@ -16900,17 +16359,10 @@ impl DeleteUserProfileInput {
         self.iam_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserProfileInput");
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStackInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -16922,17 +16374,10 @@ impl DeleteStackInput {
         self.stack_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStackInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLayerInput {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
@@ -16944,17 +16389,10 @@ impl DeleteLayerInput {
         self.layer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLayerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLayerInput");
-        formatter.field("layer_id", &self.layer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -16980,19 +16418,10 @@ impl DeleteInstanceInput {
         self.delete_volumes
     }
 }
-impl std::fmt::Debug for DeleteInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("delete_elastic_ip", &self.delete_elastic_ip);
-        formatter.field("delete_volumes", &self.delete_volumes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -17004,17 +16433,10 @@ impl DeleteAppInput {
         self.app_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInput");
-        formatter.field("app_id", &self.app_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserProfileInput {
     /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
     #[doc(hidden)]
@@ -17047,20 +16469,10 @@ impl CreateUserProfileInput {
         self.allow_self_management
     }
 }
-impl std::fmt::Debug for CreateUserProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserProfileInput");
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("ssh_username", &self.ssh_username);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.field("allow_self_management", &self.allow_self_management);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStackInput {
     /// <p>The stack name.</p>
     #[doc(hidden)]
@@ -17308,41 +16720,10 @@ impl CreateStackInput {
         self.agent_version.as_deref()
     }
 }
-impl std::fmt::Debug for CreateStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStackInput");
-        formatter.field("name", &self.name);
-        formatter.field("region", &self.region);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field(
-            "default_instance_profile_arn",
-            &self.default_instance_profile_arn,
-        );
-        formatter.field("default_os", &self.default_os);
-        formatter.field("hostname_theme", &self.hostname_theme);
-        formatter.field("default_availability_zone", &self.default_availability_zone);
-        formatter.field("default_subnet_id", &self.default_subnet_id);
-        formatter.field("custom_json", &self.custom_json);
-        formatter.field("configuration_manager", &self.configuration_manager);
-        formatter.field("chef_configuration", &self.chef_configuration);
-        formatter.field("use_custom_cookbooks", &self.use_custom_cookbooks);
-        formatter.field(
-            "use_opsworks_security_groups",
-            &self.use_opsworks_security_groups,
-        );
-        formatter.field("custom_cookbooks_source", &self.custom_cookbooks_source);
-        formatter.field("default_ssh_key_name", &self.default_ssh_key_name);
-        formatter.field("default_root_device_type", &self.default_root_device_type);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLayerInput {
     /// <p>The layer stack ID.</p>
     #[doc(hidden)]
@@ -17496,46 +16877,10 @@ impl CreateLayerInput {
         self.lifecycle_event_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLayerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLayerInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("shortname", &self.shortname);
-        formatter.field("attributes", &self.attributes);
-        formatter.field(
-            "cloud_watch_logs_configuration",
-            &self.cloud_watch_logs_configuration,
-        );
-        formatter.field(
-            "custom_instance_profile_arn",
-            &self.custom_instance_profile_arn,
-        );
-        formatter.field("custom_json", &self.custom_json);
-        formatter.field("custom_security_group_ids", &self.custom_security_group_ids);
-        formatter.field("packages", &self.packages);
-        formatter.field("volume_configurations", &self.volume_configurations);
-        formatter.field("enable_auto_healing", &self.enable_auto_healing);
-        formatter.field("auto_assign_elastic_ips", &self.auto_assign_elastic_ips);
-        formatter.field("auto_assign_public_ips", &self.auto_assign_public_ips);
-        formatter.field("custom_recipes", &self.custom_recipes);
-        formatter.field("install_updates_on_boot", &self.install_updates_on_boot);
-        formatter.field(
-            "use_ebs_optimized_instances",
-            &self.use_ebs_optimized_instances,
-        );
-        formatter.field(
-            "lifecycle_event_configuration",
-            &self.lifecycle_event_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInstanceInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -17706,34 +17051,10 @@ impl CreateInstanceInput {
         self.tenancy.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInstanceInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("layer_ids", &self.layer_ids);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("auto_scaling_type", &self.auto_scaling_type);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("os", &self.os);
-        formatter.field("ami_id", &self.ami_id);
-        formatter.field("ssh_key_name", &self.ssh_key_name);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("virtualization_type", &self.virtualization_type);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("root_device_type", &self.root_device_type);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("install_updates_on_boot", &self.install_updates_on_boot);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.field("tenancy", &self.tenancy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -17791,23 +17112,10 @@ impl CreateDeploymentInput {
         self.custom_json.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("app_id", &self.app_id);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("layer_ids", &self.layer_ids);
-        formatter.field("command", &self.command);
-        formatter.field("comment", &self.comment);
-        formatter.field("custom_json", &self.custom_json);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
@@ -17908,28 +17216,10 @@ impl CreateAppInput {
         self.environment.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppInput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("shortname", &self.shortname);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("data_sources", &self.data_sources);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("app_source", &self.app_source);
-        formatter.field("domains", &self.domains);
-        formatter.field("enable_ssl", &self.enable_ssl);
-        formatter.field("ssl_configuration", &self.ssl_configuration);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("environment", &self.environment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloneStackInput {
     /// <p>The source stack ID.</p>
     #[doc(hidden)]
@@ -18202,44 +17492,10 @@ impl CloneStackInput {
         self.agent_version.as_deref()
     }
 }
-impl std::fmt::Debug for CloneStackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloneStackInput");
-        formatter.field("source_stack_id", &self.source_stack_id);
-        formatter.field("name", &self.name);
-        formatter.field("region", &self.region);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field(
-            "default_instance_profile_arn",
-            &self.default_instance_profile_arn,
-        );
-        formatter.field("default_os", &self.default_os);
-        formatter.field("hostname_theme", &self.hostname_theme);
-        formatter.field("default_availability_zone", &self.default_availability_zone);
-        formatter.field("default_subnet_id", &self.default_subnet_id);
-        formatter.field("custom_json", &self.custom_json);
-        formatter.field("configuration_manager", &self.configuration_manager);
-        formatter.field("chef_configuration", &self.chef_configuration);
-        formatter.field("use_custom_cookbooks", &self.use_custom_cookbooks);
-        formatter.field(
-            "use_opsworks_security_groups",
-            &self.use_opsworks_security_groups,
-        );
-        formatter.field("custom_cookbooks_source", &self.custom_cookbooks_source);
-        formatter.field("default_ssh_key_name", &self.default_ssh_key_name);
-        formatter.field("clone_permissions", &self.clone_permissions);
-        formatter.field("clone_app_ids", &self.clone_app_ids);
-        formatter.field("default_root_device_type", &self.default_root_device_type);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachElasticLoadBalancerInput {
     /// <p>The Elastic Load Balancing instance's name.</p>
     #[doc(hidden)]
@@ -18258,21 +17514,10 @@ impl AttachElasticLoadBalancerInput {
         self.layer_id.as_deref()
     }
 }
-impl std::fmt::Debug for AttachElasticLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachElasticLoadBalancerInput");
-        formatter.field(
-            "elastic_load_balancer_name",
-            &self.elastic_load_balancer_name,
-        );
-        formatter.field("layer_id", &self.layer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateElasticIpInput {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
@@ -18291,18 +17536,10 @@ impl AssociateElasticIpInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateElasticIpInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateElasticIpInput");
-        formatter.field("elastic_ip", &self.elastic_ip);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssignVolumeInput {
     /// <p>The volume ID.</p>
     #[doc(hidden)]
@@ -18321,18 +17558,10 @@ impl AssignVolumeInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssignVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssignVolumeInput");
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssignInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -18349,13 +17578,5 @@ impl AssignInstanceInput {
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
     pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.layer_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for AssignInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssignInstanceInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("layer_ids", &self.layer_ids);
-        formatter.finish()
     }
 }

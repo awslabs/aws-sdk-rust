@@ -2573,7 +2573,7 @@ impl UpdateTableInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
     #[doc(hidden)]
@@ -2678,24 +2678,10 @@ impl UpdateTableInput {
         self.default_time_to_live
     }
 }
-impl std::fmt::Debug for UpdateTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTableInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("add_columns", &self.add_columns);
-        formatter.field("capacity_specification", &self.capacity_specification);
-        formatter.field("encryption_specification", &self.encryption_specification);
-        formatter.field("point_in_time_recovery", &self.point_in_time_recovery);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("default_time_to_live", &self.default_time_to_live);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -2714,18 +2700,10 @@ impl UntagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.</p>
     #[doc(hidden)]
@@ -2744,18 +2722,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreTableInput {
     /// <p>The keyspace name of the source table.</p>
     #[doc(hidden)]
@@ -2856,34 +2826,10 @@ impl RestoreTableInput {
         self.tags_override.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreTableInput");
-        formatter.field("source_keyspace_name", &self.source_keyspace_name);
-        formatter.field("source_table_name", &self.source_table_name);
-        formatter.field("target_keyspace_name", &self.target_keyspace_name);
-        formatter.field("target_table_name", &self.target_table_name);
-        formatter.field("restore_timestamp", &self.restore_timestamp);
-        formatter.field(
-            "capacity_specification_override",
-            &self.capacity_specification_override,
-        );
-        formatter.field(
-            "encryption_specification_override",
-            &self.encryption_specification_override,
-        );
-        formatter.field(
-            "point_in_time_recovery_override",
-            &self.point_in_time_recovery_override,
-        );
-        formatter.field("tags_override", &self.tags_override);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.</p>
     #[doc(hidden)]
@@ -2909,19 +2855,10 @@ impl ListTagsForResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTablesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
     #[doc(hidden)]
@@ -2947,19 +2884,10 @@ impl ListTablesInput {
         self.keyspace_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTablesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeyspacesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
     #[doc(hidden)]
@@ -2978,18 +2906,10 @@ impl ListKeyspacesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListKeyspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeyspacesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTableInput {
     /// <p>The name of the keyspace that the table is stored in.</p>
     #[doc(hidden)]
@@ -3008,18 +2928,10 @@ impl GetTableInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTableInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyspaceInput {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
@@ -3031,17 +2943,10 @@ impl GetKeyspaceInput {
         self.keyspace_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetKeyspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyspaceInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTableInput {
     /// <p>The name of the keyspace of the to be deleted table.</p>
     #[doc(hidden)]
@@ -3060,18 +2965,10 @@ impl DeleteTableInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTableInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKeyspaceInput {
     /// <p>The name of the keyspace to be deleted.</p>
     #[doc(hidden)]
@@ -3083,17 +2980,10 @@ impl DeleteKeyspaceInput {
         self.keyspace_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteKeyspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteKeyspaceInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
     #[doc(hidden)]
@@ -3234,26 +3124,10 @@ impl CreateTableInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTableInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.field("comment", &self.comment);
-        formatter.field("capacity_specification", &self.capacity_specification);
-        formatter.field("encryption_specification", &self.encryption_specification);
-        formatter.field("point_in_time_recovery", &self.point_in_time_recovery);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("default_time_to_live", &self.default_time_to_live);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
     #[doc(hidden)]
@@ -3272,13 +3146,5 @@ impl CreateKeyspaceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateKeyspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKeyspaceInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

@@ -5516,7 +5516,7 @@ impl UpdateMlModelInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     #[doc(hidden)]
@@ -5544,19 +5544,10 @@ impl UpdateMlModelInput {
         self.score_threshold
     }
 }
-impl std::fmt::Debug for UpdateMlModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMlModelInput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("ml_model_name", &self.ml_model_name);
-        formatter.field("score_threshold", &self.score_threshold);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEvaluationInput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
     #[doc(hidden)]
@@ -5575,18 +5566,10 @@ impl UpdateEvaluationInput {
         self.evaluation_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEvaluationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEvaluationInput");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.field("evaluation_name", &self.evaluation_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
     #[doc(hidden)]
@@ -5605,18 +5588,10 @@ impl UpdateDataSourceInput {
         self.data_source_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSourceInput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBatchPredictionInput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
     #[doc(hidden)]
@@ -5635,18 +5610,10 @@ impl UpdateBatchPredictionInput {
         self.batch_prediction_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBatchPredictionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBatchPredictionInput");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.field("batch_prediction_name", &self.batch_prediction_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictInput {
     /// <p>A unique identifier of the <code>MLModel</code>.</p>
     #[doc(hidden)]
@@ -5676,19 +5643,10 @@ impl PredictInput {
         self.predict_endpoint.as_deref()
     }
 }
-impl std::fmt::Debug for PredictInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictInput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("record", &self.record);
-        formatter.field("predict_endpoint", &self.predict_endpoint);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
     #[doc(hidden)]
@@ -5711,18 +5669,10 @@ impl GetMlModelInput {
         self.verbose
     }
 }
-impl std::fmt::Debug for GetMlModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMlModelInput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("verbose", &self.verbose);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEvaluationInput {
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
     #[doc(hidden)]
@@ -5734,17 +5684,10 @@ impl GetEvaluationInput {
         self.evaluation_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEvaluationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEvaluationInput");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
     #[doc(hidden)]
@@ -5767,18 +5710,10 @@ impl GetDataSourceInput {
         self.verbose
     }
 }
-impl std::fmt::Debug for GetDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataSourceInput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("verbose", &self.verbose);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBatchPredictionInput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
     #[doc(hidden)]
@@ -5790,17 +5725,10 @@ impl GetBatchPredictionInput {
         self.batch_prediction_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBatchPredictionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBatchPredictionInput");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
     #[doc(hidden)]
@@ -5819,18 +5747,10 @@ impl DescribeTagsInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMlModelsInput {
     /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
     /// <ul>
@@ -5956,27 +5876,10 @@ impl DescribeMlModelsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeMlModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMlModelsInput");
-        formatter.field("filter_variable", &self.filter_variable);
-        formatter.field("eq", &self.eq);
-        formatter.field("gt", &self.gt);
-        formatter.field("lt", &self.lt);
-        formatter.field("ge", &self.ge);
-        formatter.field("le", &self.le);
-        formatter.field("ne", &self.ne);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEvaluationsInput {
     /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
     /// <ul>
@@ -6098,27 +6001,10 @@ impl DescribeEvaluationsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeEvaluationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEvaluationsInput");
-        formatter.field("filter_variable", &self.filter_variable);
-        formatter.field("eq", &self.eq);
-        formatter.field("gt", &self.gt);
-        formatter.field("lt", &self.lt);
-        formatter.field("ge", &self.ge);
-        formatter.field("le", &self.le);
-        formatter.field("ne", &self.ne);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSourcesInput {
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
@@ -6236,27 +6122,10 @@ impl DescribeDataSourcesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeDataSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSourcesInput");
-        formatter.field("filter_variable", &self.filter_variable);
-        formatter.field("eq", &self.eq);
-        formatter.field("gt", &self.gt);
-        formatter.field("lt", &self.lt);
-        formatter.field("ge", &self.ge);
-        formatter.field("le", &self.le);
-        formatter.field("ne", &self.ne);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBatchPredictionsInput {
     /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
     /// <ul>
@@ -6380,27 +6249,10 @@ impl DescribeBatchPredictionsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeBatchPredictionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBatchPredictionsInput");
-        formatter.field("filter_variable", &self.filter_variable);
-        formatter.field("eq", &self.eq);
-        formatter.field("gt", &self.gt);
-        formatter.field("lt", &self.lt);
-        formatter.field("ge", &self.ge);
-        formatter.field("le", &self.le);
-        formatter.field("ne", &self.ne);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsInput {
     /// <p>One or more tags to delete.</p>
     #[doc(hidden)]
@@ -6426,19 +6278,10 @@ impl DeleteTagsInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsInput");
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     #[doc(hidden)]
@@ -6450,17 +6293,10 @@ impl DeleteRealtimeEndpointInput {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRealtimeEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRealtimeEndpointInput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
     #[doc(hidden)]
@@ -6472,17 +6308,10 @@ impl DeleteMlModelInput {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMlModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMlModelInput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
     #[doc(hidden)]
@@ -6494,17 +6323,10 @@ impl DeleteEvaluationInput {
         self.evaluation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEvaluationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEvaluationInput");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSourceInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     #[doc(hidden)]
@@ -6516,17 +6338,10 @@ impl DeleteDataSourceInput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSourceInput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     #[doc(hidden)]
@@ -6538,17 +6353,10 @@ impl DeleteBatchPredictionInput {
         self.batch_prediction_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBatchPredictionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBatchPredictionInput");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     #[doc(hidden)]
@@ -6560,17 +6368,10 @@ impl CreateRealtimeEndpointInput {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRealtimeEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRealtimeEndpointInput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
     #[doc(hidden)]
@@ -6656,23 +6457,10 @@ impl CreateMlModelInput {
         self.recipe_uri.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMlModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMlModelInput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("ml_model_name", &self.ml_model_name);
-        formatter.field("ml_model_type", &self.ml_model_type);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("training_data_source_id", &self.training_data_source_id);
-        formatter.field("recipe", &self.recipe);
-        formatter.field("recipe_uri", &self.recipe_uri);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
     #[doc(hidden)]
@@ -6707,20 +6495,10 @@ impl CreateEvaluationInput {
         self.evaluation_data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEvaluationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEvaluationInput");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.field("evaluation_name", &self.evaluation_name);
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("evaluation_data_source_id", &self.evaluation_data_source_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSourceFromS3Input {
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
     #[doc(hidden)]
@@ -6765,20 +6543,10 @@ impl CreateDataSourceFromS3Input {
         self.compute_statistics
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSourceFromS3Input");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("data_spec", &self.data_spec);
-        formatter.field("compute_statistics", &self.compute_statistics);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSourceFromRedshiftInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     #[doc(hidden)]
@@ -6852,21 +6620,10 @@ impl CreateDataSourceFromRedshiftInput {
         self.compute_statistics
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromRedshiftInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSourceFromRedshiftInput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("data_spec", &self.data_spec);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("compute_statistics", &self.compute_statistics);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSourceFromRdsInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
     #[doc(hidden)]
@@ -6940,21 +6697,10 @@ impl CreateDataSourceFromRdsInput {
         self.compute_statistics
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromRdsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSourceFromRdsInput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("data_source_name", &self.data_source_name);
-        formatter.field("rds_data", &self.rds_data);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("compute_statistics", &self.compute_statistics);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     #[doc(hidden)]
@@ -6996,24 +6742,10 @@ impl CreateBatchPredictionInput {
         self.output_uri.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBatchPredictionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBatchPredictionInput");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.field("batch_prediction_name", &self.batch_prediction_name);
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field(
-            "batch_prediction_data_source_id",
-            &self.batch_prediction_data_source_id,
-        );
-        formatter.field("output_uri", &self.output_uri);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
     #[doc(hidden)]
@@ -7037,14 +6769,5 @@ impl AddTagsInput {
     /// <p>The type of the ML object to tag.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
         self.resource_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AddTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsInput");
-        formatter.field("tags", &self.tags);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }

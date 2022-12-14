@@ -8794,7 +8794,7 @@ impl UpdateDeploymentGroupInput {
 
 /// <p>Represents the input of an <code>UpdateDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeploymentGroupInput {
     /// <p>The application name that corresponds to the deployment group to update.</p>
     #[doc(hidden)]
@@ -8955,49 +8955,10 @@ impl UpdateDeploymentGroupInput {
         self.on_premises_tag_set.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDeploymentGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeploymentGroupInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field(
-            "current_deployment_group_name",
-            &self.current_deployment_group_name,
-        );
-        formatter.field("new_deployment_group_name", &self.new_deployment_group_name);
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.field("ec2_tag_filters", &self.ec2_tag_filters);
-        formatter.field(
-            "on_premises_instance_tag_filters",
-            &self.on_premises_instance_tag_filters,
-        );
-        formatter.field("auto_scaling_groups", &self.auto_scaling_groups);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field("trigger_configurations", &self.trigger_configurations);
-        formatter.field("alarm_configuration", &self.alarm_configuration);
-        formatter.field(
-            "auto_rollback_configuration",
-            &self.auto_rollback_configuration,
-        );
-        formatter.field(
-            "outdated_instances_strategy",
-            &self.outdated_instances_strategy,
-        );
-        formatter.field("deployment_style", &self.deployment_style);
-        formatter.field(
-            "blue_green_deployment_configuration",
-            &self.blue_green_deployment_configuration,
-        );
-        formatter.field("load_balancer_info", &self.load_balancer_info);
-        formatter.field("ec2_tag_set", &self.ec2_tag_set);
-        formatter.field("ecs_services", &self.ecs_services);
-        formatter.field("on_premises_tag_set", &self.on_premises_tag_set);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an <code>UpdateApplication</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The current name of the application you want to change.</p>
     #[doc(hidden)]
@@ -9016,18 +8977,10 @@ impl UpdateApplicationInput {
         self.new_application_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("new_application_name", &self.new_application_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
     #[doc(hidden)]
@@ -9046,18 +8999,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
     #[doc(hidden)]
@@ -9076,18 +9021,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p> Represents the input of a <code>StopDeployment</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDeploymentInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -9106,18 +9043,10 @@ impl StopDeploymentInput {
         self.auto_rollback_enabled
     }
 }
-impl std::fmt::Debug for StopDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDeploymentInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("auto_rollback_enabled", &self.auto_rollback_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SkipWaitTimeForInstanceTerminationInput {
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     #[doc(hidden)]
@@ -9129,17 +9058,10 @@ impl SkipWaitTimeForInstanceTerminationInput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for SkipWaitTimeForInstanceTerminationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SkipWaitTimeForInstanceTerminationInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
     #[doc(hidden)]
@@ -9158,18 +9080,10 @@ impl RemoveTagsFromOnPremisesInstancesInput {
         self.instance_names.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromOnPremisesInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromOnPremisesInstancesInput");
-        formatter.field("tags", &self.tags);
-        formatter.field("instance_names", &self.instance_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of the register on-premises instance operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterOnPremisesInstanceInput {
     /// <p>The name of the on-premises instance to register.</p>
     #[doc(hidden)]
@@ -9195,19 +9109,10 @@ impl RegisterOnPremisesInstanceInput {
         self.iam_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterOnPremisesInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterOnPremisesInstanceInput");
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("iam_session_arn", &self.iam_session_arn);
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a RegisterApplicationRevision operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterApplicationRevisionInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -9233,19 +9138,10 @@ impl RegisterApplicationRevisionInput {
         self.revision.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterApplicationRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterApplicationRevisionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("description", &self.description);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLifecycleEventHookExecutionStatusInput {
     /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     #[doc(hidden)]
@@ -9271,22 +9167,10 @@ impl PutLifecycleEventHookExecutionStatusInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for PutLifecycleEventHookExecutionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLifecycleEventHookExecutionStatusInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field(
-            "lifecycle_event_hook_execution_id",
-            &self.lifecycle_event_hook_execution_id,
-        );
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
     #[doc(hidden)]
@@ -9305,18 +9189,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOnPremisesInstancesInput {
     /// <p>The registration status of the on-premises instances:</p>
     /// <ul>
@@ -9350,19 +9226,10 @@ impl ListOnPremisesInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOnPremisesInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOnPremisesInstancesInput");
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("tag_filters", &self.tag_filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListGitHubAccountTokenNames</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGitHubAccountTokenNamesInput {
     /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
     #[doc(hidden)]
@@ -9374,17 +9241,10 @@ impl ListGitHubAccountTokenNamesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGitHubAccountTokenNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGitHubAccountTokenNamesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentTargetsInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -9430,19 +9290,10 @@ impl ListDeploymentTargetsInput {
         self.target_filters.as_ref()
     }
 }
-impl std::fmt::Debug for ListDeploymentTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentTargetsInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("target_filters", &self.target_filters);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListDeployments</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentsInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
@@ -9513,22 +9364,10 @@ impl ListDeploymentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_group_name", &self.deployment_group_name);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("include_only_statuses", &self.include_only_statuses);
-        formatter.field("create_time_range", &self.create_time_range);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Represents the input of a <code>ListDeploymentInstances</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -9577,20 +9416,10 @@ impl ListDeploymentInstancesInput {
         self.instance_type_filter.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentInstancesInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("instance_status_filter", &self.instance_status_filter);
-        formatter.field("instance_type_filter", &self.instance_type_filter);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentGroupsInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -9609,18 +9438,10 @@ impl ListDeploymentGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentGroupsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListDeploymentConfigs</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentConfigsInput {
     /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
     #[doc(hidden)]
@@ -9632,17 +9453,10 @@ impl ListDeploymentConfigsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentConfigsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListApplications</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
     #[doc(hidden)]
@@ -9654,17 +9468,10 @@ impl ListApplicationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Represents the input of a <code>ListApplicationRevisions</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationRevisionsInput {
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -9754,23 +9561,10 @@ impl ListApplicationRevisionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationRevisionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationRevisionsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("deployed", &self.deployed);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Represents the input of a <code>GetOnPremisesInstance</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOnPremisesInstanceInput {
     /// <p> The name of the on-premises instance about which to get information. </p>
     #[doc(hidden)]
@@ -9782,17 +9576,10 @@ impl GetOnPremisesInstanceInput {
         self.instance_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetOnPremisesInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOnPremisesInstanceInput");
-        formatter.field("instance_name", &self.instance_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentTargetInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -9811,18 +9598,10 @@ impl GetDeploymentTargetInput {
         self.target_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentTargetInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("target_id", &self.target_id);
-        formatter.finish()
-    }
-}
 
 /// <p> Represents the input of a <code>GetDeploymentInstance</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentInstanceInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -9841,18 +9620,10 @@ impl GetDeploymentInstanceInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentInstanceInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentGroupInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -9871,18 +9642,10 @@ impl GetDeploymentGroupInput {
         self.deployment_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentGroupInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_group_name", &self.deployment_group_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentConfigInput {
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -9894,17 +9657,10 @@ impl GetDeploymentConfigInput {
         self.deployment_config_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentConfigInput");
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetDeployment</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentInput {
     /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -9916,17 +9672,10 @@ impl GetDeploymentInput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetApplicationRevision</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationRevisionInput {
     /// <p>The name of the application that corresponds to the revision.</p>
     #[doc(hidden)]
@@ -9945,18 +9694,10 @@ impl GetApplicationRevisionInput {
         self.revision.as_ref()
     }
 }
-impl std::fmt::Debug for GetApplicationRevisionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationRevisionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetApplication</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -9968,17 +9709,10 @@ impl GetApplicationInput {
         self.application_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeregisterOnPremisesInstance</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterOnPremisesInstanceInput {
     /// <p>The name of the on-premises instance to deregister.</p>
     #[doc(hidden)]
@@ -9990,17 +9724,10 @@ impl DeregisterOnPremisesInstanceInput {
         self.instance_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterOnPremisesInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterOnPremisesInstanceInput");
-        formatter.field("instance_name", &self.instance_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcesByExternalIdInput {
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     #[doc(hidden)]
@@ -10012,17 +9739,10 @@ impl DeleteResourcesByExternalIdInput {
         self.external_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcesByExternalIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcesByExternalIdInput");
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteGitHubAccount</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenInput {
     /// <p>The name of the GitHub account connection to delete.</p>
     #[doc(hidden)]
@@ -10034,17 +9754,10 @@ impl DeleteGitHubAccountTokenInput {
         self.token_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGitHubAccountTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGitHubAccountTokenInput");
-        formatter.field("token_name", &self.token_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentGroupInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -10063,18 +9776,10 @@ impl DeleteDeploymentGroupInput {
         self.deployment_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeploymentGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentGroupInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_group_name", &self.deployment_group_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentConfigInput {
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -10086,17 +9791,10 @@ impl DeleteDeploymentConfigInput {
         self.deployment_config_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeploymentConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentConfigInput");
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteApplication</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -10108,17 +9806,10 @@ impl DeleteApplicationInput {
         self.application_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>CreateDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentGroupInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -10275,46 +9966,10 @@ impl CreateDeploymentGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentGroupInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_group_name", &self.deployment_group_name);
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.field("ec2_tag_filters", &self.ec2_tag_filters);
-        formatter.field(
-            "on_premises_instance_tag_filters",
-            &self.on_premises_instance_tag_filters,
-        );
-        formatter.field("auto_scaling_groups", &self.auto_scaling_groups);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field("trigger_configurations", &self.trigger_configurations);
-        formatter.field("alarm_configuration", &self.alarm_configuration);
-        formatter.field(
-            "auto_rollback_configuration",
-            &self.auto_rollback_configuration,
-        );
-        formatter.field(
-            "outdated_instances_strategy",
-            &self.outdated_instances_strategy,
-        );
-        formatter.field("deployment_style", &self.deployment_style);
-        formatter.field(
-            "blue_green_deployment_configuration",
-            &self.blue_green_deployment_configuration,
-        );
-        formatter.field("load_balancer_info", &self.load_balancer_info);
-        formatter.field("ec2_tag_set", &self.ec2_tag_set);
-        formatter.field("ecs_services", &self.ecs_services);
-        formatter.field("on_premises_tag_set", &self.on_premises_tag_set);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>CreateDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentConfigInput {
     /// <p>The name of the deployment configuration to create.</p>
     #[doc(hidden)]
@@ -10363,20 +10018,10 @@ impl CreateDeploymentConfigInput {
         self.compute_platform.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentConfigInput");
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.field("minimum_healthy_hosts", &self.minimum_healthy_hosts);
-        formatter.field("traffic_routing_config", &self.traffic_routing_config);
-        formatter.field("compute_platform", &self.compute_platform);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>CreateDeployment</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -10486,39 +10131,10 @@ impl CreateDeploymentInput {
         self.override_alarm_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_group_name", &self.deployment_group_name);
-        formatter.field("revision", &self.revision);
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "ignore_application_stop_failures",
-            &self.ignore_application_stop_failures,
-        );
-        formatter.field("target_instances", &self.target_instances);
-        formatter.field(
-            "auto_rollback_configuration",
-            &self.auto_rollback_configuration,
-        );
-        formatter.field(
-            "update_outdated_instances_only",
-            &self.update_outdated_instances_only,
-        );
-        formatter.field("file_exists_behavior", &self.file_exists_behavior);
-        formatter.field(
-            "override_alarm_configuration",
-            &self.override_alarm_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>CreateApplication</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -10544,19 +10160,10 @@ impl CreateApplicationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("compute_platform", &self.compute_platform);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinueDeploymentInput {
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
     #[doc(hidden)]
@@ -10575,18 +10182,10 @@ impl ContinueDeploymentInput {
         self.deployment_wait_type.as_ref()
     }
 }
-impl std::fmt::Debug for ContinueDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinueDeploymentInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("deployment_wait_type", &self.deployment_wait_type);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>BatchGetOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesInput {
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
     #[doc(hidden)]
@@ -10598,17 +10197,10 @@ impl BatchGetOnPremisesInstancesInput {
         self.instance_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetOnPremisesInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetOnPremisesInstancesInput");
-        formatter.field("instance_names", &self.instance_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -10647,18 +10239,10 @@ impl BatchGetDeploymentTargetsInput {
         self.target_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDeploymentTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDeploymentTargetsInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("target_ids", &self.target_ids);
-        formatter.finish()
-    }
-}
 
 /// <p> Represents the input of a <code>BatchGetDeployments</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDeploymentsInput {
     /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
     #[doc(hidden)]
@@ -10670,17 +10254,10 @@ impl BatchGetDeploymentsInput {
         self.deployment_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDeploymentsInput");
-        formatter.field("deployment_ids", &self.deployment_ids);
-        formatter.finish()
-    }
-}
 
 /// <p> Represents the input of a <code>BatchGetDeploymentInstances</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -10699,18 +10276,10 @@ impl BatchGetDeploymentInstancesInput {
         self.instance_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDeploymentInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDeploymentInstancesInput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>BatchGetDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsInput {
     /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -10729,18 +10298,10 @@ impl BatchGetDeploymentGroupsInput {
         self.deployment_group_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDeploymentGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDeploymentGroupsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_group_names", &self.deployment_group_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>BatchGetApplications</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetApplicationsInput {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
     #[doc(hidden)]
@@ -10752,17 +10313,10 @@ impl BatchGetApplicationsInput {
         self.application_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetApplicationsInput");
-        formatter.field("application_names", &self.application_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>BatchGetApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsInput {
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
     #[doc(hidden)]
@@ -10781,18 +10335,10 @@ impl BatchGetApplicationRevisionsInput {
         self.revisions.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetApplicationRevisionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetApplicationRevisionsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("revisions", &self.revisions);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of, and adds tags to, an on-premises instance operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
     /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
@@ -10811,13 +10357,5 @@ impl AddTagsToOnPremisesInstancesInput {
     /// <p>The names of the on-premises instances to which to add tags.</p>
     pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_names.as_deref()
-    }
-}
-impl std::fmt::Debug for AddTagsToOnPremisesInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToOnPremisesInstancesInput");
-        formatter.field("tags", &self.tags);
-        formatter.field("instance_names", &self.instance_names);
-        formatter.finish()
     }
 }

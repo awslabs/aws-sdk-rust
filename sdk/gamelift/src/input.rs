@@ -18085,7 +18085,7 @@ impl ValidateMatchmakingRuleSetInput {
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetInput {
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
     #[doc(hidden)]
@@ -18097,17 +18097,10 @@ impl ValidateMatchmakingRuleSetInput {
         self.rule_set_body.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateMatchmakingRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateMatchmakingRuleSetInput");
-        formatter.field("rule_set_body", &self.rule_set_body);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateScriptInput {
     /// <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
     #[doc(hidden)]
@@ -18149,21 +18142,10 @@ impl UpdateScriptInput {
         self.zip_file.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateScriptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateScriptInput");
-        formatter.field("script_id", &self.script_id);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("storage_location", &self.storage_location);
-        formatter.field("zip_file", &self.zip_file);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationInput {
     /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -18184,18 +18166,10 @@ impl UpdateRuntimeConfigurationInput {
         self.runtime_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRuntimeConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuntimeConfigurationInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("runtime_configuration", &self.runtime_configuration);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMatchmakingConfigurationInput {
     /// <p>A unique identifier for the matchmaking configuration to update. You can use either the configuration name or ARN value. </p>
     #[doc(hidden)]
@@ -18314,33 +18288,10 @@ impl UpdateMatchmakingConfigurationInput {
         self.flex_match_mode.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMatchmakingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMatchmakingConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("game_session_queue_arns", &self.game_session_queue_arns);
-        formatter.field("request_timeout_seconds", &self.request_timeout_seconds);
-        formatter.field(
-            "acceptance_timeout_seconds",
-            &self.acceptance_timeout_seconds,
-        );
-        formatter.field("acceptance_required", &self.acceptance_required);
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("notification_target", &self.notification_target);
-        formatter.field("additional_player_count", &self.additional_player_count);
-        formatter.field("custom_event_data", &self.custom_event_data);
-        formatter.field("game_properties", &self.game_properties);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("backfill_mode", &self.backfill_mode);
-        formatter.field("flex_match_mode", &self.flex_match_mode);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameSessionQueueInput {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
     #[doc(hidden)]
@@ -18408,24 +18359,10 @@ impl UpdateGameSessionQueueInput {
         self.notification_target.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGameSessionQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameSessionQueueInput");
-        formatter.field("name", &self.name);
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.field("player_latency_policies", &self.player_latency_policies);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("filter_configuration", &self.filter_configuration);
-        formatter.field("priority_configuration", &self.priority_configuration);
-        formatter.field("custom_event_data", &self.custom_event_data);
-        formatter.field("notification_target", &self.notification_target);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameSessionInput {
     /// <p>A unique identifier for the game session to update. </p>
     #[doc(hidden)]
@@ -18476,27 +18413,10 @@ impl UpdateGameSessionInput {
         self.protection_policy.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGameSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameSessionInput");
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field(
-            "maximum_player_session_count",
-            &self.maximum_player_session_count,
-        );
-        formatter.field("name", &self.name);
-        formatter.field(
-            "player_session_creation_policy",
-            &self.player_session_creation_policy,
-        );
-        formatter.field("protection_policy", &self.protection_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -18549,24 +18469,10 @@ impl UpdateGameServerGroupInput {
         self.balancing_strategy.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGameServerGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameServerGroupInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("instance_definitions", &self.instance_definitions);
-        formatter.field(
-            "game_server_protection_policy",
-            &self.game_server_protection_policy,
-        );
-        formatter.field("balancing_strategy", &self.balancing_strategy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -18608,21 +18514,10 @@ impl UpdateGameServerInput {
         self.health_check.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGameServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameServerInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("game_server_id", &self.game_server_id);
-        formatter.field("game_server_data", &self.game_server_data);
-        formatter.field("utilization_status", &self.utilization_status);
-        formatter.field("health_check", &self.health_check);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetPortSettingsInput {
     /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -18654,25 +18549,10 @@ impl UpdateFleetPortSettingsInput {
         self.inbound_permission_revocations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFleetPortSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetPortSettingsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field(
-            "inbound_permission_authorizations",
-            &self.inbound_permission_authorizations,
-        );
-        formatter.field(
-            "inbound_permission_revocations",
-            &self.inbound_permission_revocations,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetCapacityInput {
     /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -18712,21 +18592,10 @@ impl UpdateFleetCapacityInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFleetCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetCapacityInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("desired_instances", &self.desired_instances);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetAttributesInput {
     /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -18786,28 +18655,10 @@ impl UpdateFleetAttributesInput {
         self.metric_groups.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFleetAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetAttributesInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "new_game_session_protection_policy",
-            &self.new_game_session_protection_policy,
-        );
-        formatter.field(
-            "resource_creation_limit_policy",
-            &self.resource_creation_limit_policy,
-        );
-        formatter.field("metric_groups", &self.metric_groups);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBuildInput {
     /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
     #[doc(hidden)]
@@ -18833,19 +18684,10 @@ impl UpdateBuildInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBuildInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBuildInput");
-        formatter.field("build_id", &self.build_id);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAliasInput {
     /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
     #[doc(hidden)]
@@ -18878,20 +18720,10 @@ impl UpdateAliasInput {
         self.routing_strategy.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAliasInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("routing_strategy", &self.routing_strategy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     #[doc(hidden)]
@@ -18910,18 +18742,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     #[doc(hidden)]
@@ -18940,18 +18764,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -18970,18 +18786,10 @@ impl SuspendGameServerGroupInput {
         self.suspend_actions.as_deref()
     }
 }
-impl std::fmt::Debug for SuspendGameServerGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendGameServerGroupInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("suspend_actions", &self.suspend_actions);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMatchmakingInput {
     /// <p>A unique identifier for a matchmaking ticket.</p>
     #[doc(hidden)]
@@ -18993,17 +18801,10 @@ impl StopMatchmakingInput {
         self.ticket_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopMatchmakingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMatchmakingInput");
-        formatter.field("ticket_id", &self.ticket_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopGameSessionPlacementInput {
     /// <p>A unique identifier for a game session placement to cancel.</p>
     #[doc(hidden)]
@@ -19015,17 +18816,10 @@ impl StopGameSessionPlacementInput {
         self.placement_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopGameSessionPlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopGameSessionPlacementInput");
-        formatter.field("placement_id", &self.placement_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopFleetActionsInput {
     /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -19051,19 +18845,10 @@ impl StopFleetActionsInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for StopFleetActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopFleetActionsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("actions", &self.actions);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMatchmakingInput {
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     #[doc(hidden)]
@@ -19089,19 +18874,10 @@ impl StartMatchmakingInput {
         self.players.as_deref()
     }
 }
-impl std::fmt::Debug for StartMatchmakingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMatchmakingInput");
-        formatter.field("ticket_id", &self.ticket_id);
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.field("players", &self.players);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMatchBackfillInput {
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     #[doc(hidden)]
@@ -19142,20 +18918,10 @@ impl StartMatchBackfillInput {
         self.players.as_deref()
     }
 }
-impl std::fmt::Debug for StartMatchBackfillInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMatchBackfillInput");
-        formatter.field("ticket_id", &self.ticket_id);
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.field("game_session_arn", &self.game_session_arn);
-        formatter.field("players", &self.players);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartGameSessionPlacementInput {
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</p>
     #[doc(hidden)]
@@ -19219,27 +18985,10 @@ impl StartGameSessionPlacementInput {
         self.game_session_data.as_deref()
     }
 }
-impl std::fmt::Debug for StartGameSessionPlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartGameSessionPlacementInput");
-        formatter.field("placement_id", &self.placement_id);
-        formatter.field("game_session_queue_name", &self.game_session_queue_name);
-        formatter.field("game_properties", &self.game_properties);
-        formatter.field(
-            "maximum_player_session_count",
-            &self.maximum_player_session_count,
-        );
-        formatter.field("game_session_name", &self.game_session_name);
-        formatter.field("player_latencies", &self.player_latencies);
-        formatter.field("desired_player_sessions", &self.desired_player_sessions);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFleetActionsInput {
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -19265,19 +19014,10 @@ impl StartFleetActionsInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for StartFleetActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFleetActionsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("actions", &self.actions);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchGameSessionsInput {
     /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     #[doc(hidden)]
@@ -19375,23 +19115,10 @@ impl SearchGameSessionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SearchGameSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchGameSessionsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field("location", &self.location);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("sort_expression", &self.sort_expression);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -19410,18 +19137,10 @@ impl ResumeGameServerGroupInput {
         self.resume_actions.as_deref()
     }
 }
-impl std::fmt::Debug for ResumeGameServerGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeGameServerGroupInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("resume_actions", &self.resume_actions);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolveAliasInput {
     /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
     #[doc(hidden)]
@@ -19433,17 +19152,10 @@ impl ResolveAliasInput {
         self.alias_id.as_deref()
     }
 }
-impl std::fmt::Debug for ResolveAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolveAliasInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestUploadCredentialsInput {
     /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
     #[doc(hidden)]
@@ -19455,17 +19167,10 @@ impl RequestUploadCredentialsInput {
         self.build_id.as_deref()
     }
 }
-impl std::fmt::Debug for RequestUploadCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestUploadCredentialsInput");
-        formatter.field("build_id", &self.build_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -19505,21 +19210,10 @@ impl RegisterGameServerInput {
         self.game_server_data.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterGameServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterGameServerInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("game_server_id", &self.game_server_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("connection_info", &self.connection_info);
-        formatter.field("game_server_data", &self.game_server_data);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScalingPolicyInput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
     #[doc(hidden)]
@@ -19634,26 +19328,10 @@ impl PutScalingPolicyInput {
         self.target_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutScalingPolicyInput");
-        formatter.field("name", &self.name);
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.field("scaling_adjustment_type", &self.scaling_adjustment_type);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("evaluation_periods", &self.evaluation_periods);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field("target_configuration", &self.target_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to retrieve tags for. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     #[doc(hidden)]
@@ -19665,17 +19343,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListScriptsInput {
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     #[doc(hidden)]
@@ -19694,18 +19365,10 @@ impl ListScriptsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListScriptsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListScriptsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGameServersInput {
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -19738,20 +19401,10 @@ impl ListGameServersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGameServersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGameServersInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGameServerGroupsInput {
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     #[doc(hidden)]
@@ -19770,18 +19423,10 @@ impl ListGameServerGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGameServerGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGameServerGroupsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFleetsInput {
     /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
     #[doc(hidden)]
@@ -19814,20 +19459,10 @@ impl ListFleetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFleetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFleetsInput");
-        formatter.field("build_id", &self.build_id);
-        formatter.field("script_id", &self.script_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuildsInput {
     /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
     /// <p>Possible build statuses include the following:</p>
@@ -19865,19 +19500,10 @@ impl ListBuildsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBuildsInput");
-        formatter.field("status", &self.status);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAliasesInput {
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
@@ -19920,20 +19546,10 @@ impl ListAliasesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAliasesInput");
-        formatter.field("routing_strategy_type", &self.routing_strategy_type);
-        formatter.field("name", &self.name);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInstanceAccessInput {
     /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
     #[doc(hidden)]
@@ -19952,18 +19568,10 @@ impl GetInstanceAccessInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetInstanceAccessInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInstanceAccessInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGameSessionLogUrlInput {
     /// <p>A unique identifier for the game session to get logs for. </p>
     #[doc(hidden)]
@@ -19975,17 +19583,10 @@ impl GetGameSessionLogUrlInput {
         self.game_session_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGameSessionLogUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGameSessionLogUrlInput");
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsInput {
     /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -19997,28 +19598,15 @@ impl DescribeVpcPeeringConnectionsInput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVpcPeeringConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVpcPeeringConnectionsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcPeeringAuthorizationsInput {}
-impl std::fmt::Debug for DescribeVpcPeeringAuthorizationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVpcPeeringAuthorizationsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScriptInput {
     /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
     #[doc(hidden)]
@@ -20030,17 +19618,10 @@ impl DescribeScriptInput {
         self.script_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScriptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScriptInput");
-        formatter.field("script_id", &self.script_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingPoliciesInput {
     /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20098,21 +19679,10 @@ impl DescribeScalingPoliciesInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingPoliciesInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("status_filter", &self.status_filter);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuntimeConfigurationInput {
     /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20124,17 +19694,10 @@ impl DescribeRuntimeConfigurationInput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRuntimeConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuntimeConfigurationInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePlayerSessionsInput {
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
     #[doc(hidden)]
@@ -20195,25 +19758,10 @@ impl DescribePlayerSessionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePlayerSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePlayerSessionsInput");
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("player_id", &self.player_id);
-        formatter.field("player_session_id", &self.player_session_id);
-        formatter.field(
-            "player_session_status_filter",
-            &self.player_session_status_filter,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMatchmakingRuleSetsInput {
     /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
     #[doc(hidden)]
@@ -20239,19 +19787,10 @@ impl DescribeMatchmakingRuleSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMatchmakingRuleSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMatchmakingRuleSetsInput");
-        formatter.field("names", &self.names);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMatchmakingConfigurationsInput {
     /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
     #[doc(hidden)]
@@ -20284,20 +19823,10 @@ impl DescribeMatchmakingConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMatchmakingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMatchmakingConfigurationsInput");
-        formatter.field("names", &self.names);
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMatchmakingInput {
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
     #[doc(hidden)]
@@ -20309,17 +19838,10 @@ impl DescribeMatchmakingInput {
         self.ticket_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMatchmakingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMatchmakingInput");
-        formatter.field("ticket_ids", &self.ticket_ids);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancesInput {
     /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20359,21 +19881,10 @@ impl DescribeInstancesInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancesInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameSessionsInput {
     /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
     #[doc(hidden)]
@@ -20427,23 +19938,10 @@ impl DescribeGameSessionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameSessionsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field("location", &self.location);
-        formatter.field("status_filter", &self.status_filter);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesInput {
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
     #[doc(hidden)]
@@ -20469,19 +19967,10 @@ impl DescribeGameSessionQueuesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameSessionQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameSessionQueuesInput");
-        formatter.field("names", &self.names);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameSessionPlacementInput {
     /// <p>A unique identifier for a game session placement to retrieve.</p>
     #[doc(hidden)]
@@ -20493,17 +19982,10 @@ impl DescribeGameSessionPlacementInput {
         self.placement_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameSessionPlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameSessionPlacementInput");
-        formatter.field("placement_id", &self.placement_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameSessionDetailsInput {
     /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20557,23 +20039,10 @@ impl DescribeGameSessionDetailsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameSessionDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameSessionDetailsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field("location", &self.location);
-        formatter.field("status_filter", &self.status_filter);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameServerInstancesInput {
     /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -20606,20 +20075,10 @@ impl DescribeGameServerInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameServerInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameServerInstancesInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -20631,17 +20090,10 @@ impl DescribeGameServerGroupInput {
         self.game_server_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameServerGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameServerGroupInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -20660,18 +20112,10 @@ impl DescribeGameServerInput {
         self.game_server_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameServerInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("game_server_id", &self.game_server_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetUtilizationInput {
     /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     #[doc(hidden)]
@@ -20697,19 +20141,10 @@ impl DescribeFleetUtilizationInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetUtilizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetUtilizationInput");
-        formatter.field("fleet_ids", &self.fleet_ids);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsInput {
     /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20728,18 +20163,10 @@ impl DescribeFleetPortSettingsInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetPortSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetPortSettingsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetLocationUtilizationInput {
     /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20758,18 +20185,10 @@ impl DescribeFleetLocationUtilizationInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetLocationUtilizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetLocationUtilizationInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetLocationCapacityInput {
     /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20788,18 +20207,10 @@ impl DescribeFleetLocationCapacityInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetLocationCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetLocationCapacityInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetLocationAttributesInput {
     /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20832,20 +20243,10 @@ impl DescribeFleetLocationAttributesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetLocationAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetLocationAttributesInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("locations", &self.locations);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetEventsInput {
     /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -20885,21 +20286,10 @@ impl DescribeFleetEventsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetEventsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetCapacityInput {
     /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
     #[doc(hidden)]
@@ -20925,19 +20315,10 @@ impl DescribeFleetCapacityInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetCapacityInput");
-        formatter.field("fleet_ids", &self.fleet_ids);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetAttributesInput {
     /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     #[doc(hidden)]
@@ -20963,19 +20344,10 @@ impl DescribeFleetAttributesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetAttributesInput");
-        formatter.field("fleet_ids", &self.fleet_ids);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEc2InstanceLimitsInput {
     /// <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
     #[doc(hidden)]
@@ -20994,18 +20366,10 @@ impl DescribeEc2InstanceLimitsInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEc2InstanceLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEc2InstanceLimitsInput");
-        formatter.field("ec2_instance_type", &self.ec2_instance_type);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBuildInput {
     /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
     #[doc(hidden)]
@@ -21017,17 +20381,10 @@ impl DescribeBuildInput {
         self.build_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBuildInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBuildInput");
-        formatter.field("build_id", &self.build_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAliasInput {
     /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     #[doc(hidden)]
@@ -21039,17 +20396,10 @@ impl DescribeAliasInput {
         self.alias_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAliasInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -21068,18 +20418,10 @@ impl DeregisterGameServerInput {
         self.game_server_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterGameServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterGameServerInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("game_server_id", &self.game_server_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcPeeringConnectionInput {
     /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -21098,18 +20440,10 @@ impl DeleteVpcPeeringConnectionInput {
         self.vpc_peering_connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVpcPeeringConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcPeeringConnectionInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("vpc_peering_connection_id", &self.vpc_peering_connection_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcPeeringAuthorizationInput {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     #[doc(hidden)]
@@ -21128,18 +20462,10 @@ impl DeleteVpcPeeringAuthorizationInput {
         self.peer_vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVpcPeeringAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcPeeringAuthorizationInput");
-        formatter.field("game_lift_aws_account_id", &self.game_lift_aws_account_id);
-        formatter.field("peer_vpc_id", &self.peer_vpc_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScriptInput {
     /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
     #[doc(hidden)]
@@ -21151,17 +20477,10 @@ impl DeleteScriptInput {
         self.script_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteScriptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScriptInput");
-        formatter.field("script_id", &self.script_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScalingPolicyInput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
     #[doc(hidden)]
@@ -21180,18 +20499,10 @@ impl DeleteScalingPolicyInput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScalingPolicyInput");
-        formatter.field("name", &self.name);
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMatchmakingRuleSetInput {
     /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
     #[doc(hidden)]
@@ -21203,17 +20514,10 @@ impl DeleteMatchmakingRuleSetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMatchmakingRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMatchmakingRuleSetInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMatchmakingConfigurationInput {
     /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
     #[doc(hidden)]
@@ -21225,17 +20529,10 @@ impl DeleteMatchmakingConfigurationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMatchmakingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMatchmakingConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGameSessionQueueInput {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
     #[doc(hidden)]
@@ -21247,17 +20544,10 @@ impl DeleteGameSessionQueueInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGameSessionQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGameSessionQueueInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -21286,18 +20576,10 @@ impl DeleteGameServerGroupInput {
         self.delete_option.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteGameServerGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGameServerGroupInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("delete_option", &self.delete_option);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetLocationsInput {
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -21316,18 +20598,10 @@ impl DeleteFleetLocationsInput {
         self.locations.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetLocationsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("locations", &self.locations);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetInput {
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -21339,17 +20613,10 @@ impl DeleteFleetInput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBuildInput {
     /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
     #[doc(hidden)]
@@ -21361,17 +20628,10 @@ impl DeleteBuildInput {
         self.build_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBuildInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBuildInput");
-        formatter.field("build_id", &self.build_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAliasInput {
     /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
     #[doc(hidden)]
@@ -21383,17 +20643,10 @@ impl DeleteAliasInput {
         self.alias_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAliasInput");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcPeeringConnectionInput {
     /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
     #[doc(hidden)]
@@ -21419,19 +20672,10 @@ impl CreateVpcPeeringConnectionInput {
         self.peer_vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVpcPeeringConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcPeeringConnectionInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("peer_vpc_aws_account_id", &self.peer_vpc_aws_account_id);
-        formatter.field("peer_vpc_id", &self.peer_vpc_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcPeeringAuthorizationInput {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     #[doc(hidden)]
@@ -21450,18 +20694,10 @@ impl CreateVpcPeeringAuthorizationInput {
         self.peer_vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVpcPeeringAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcPeeringAuthorizationInput");
-        formatter.field("game_lift_aws_account_id", &self.game_lift_aws_account_id);
-        formatter.field("peer_vpc_id", &self.peer_vpc_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateScriptInput {
     /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
     #[doc(hidden)]
@@ -21503,21 +20739,10 @@ impl CreateScriptInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateScriptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateScriptInput");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("storage_location", &self.storage_location);
-        formatter.field("zip_file", &self.zip_file);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlayerSessionsInput {
     /// <p>A unique identifier for the game session to add players to.</p>
     #[doc(hidden)]
@@ -21547,19 +20772,10 @@ impl CreatePlayerSessionsInput {
         self.player_data_map.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePlayerSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlayerSessionsInput");
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("player_ids", &self.player_ids);
-        formatter.field("player_data_map", &self.player_data_map);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlayerSessionInput {
     /// <p>A unique identifier for the game session to add a player to.</p>
     #[doc(hidden)]
@@ -21585,19 +20801,10 @@ impl CreatePlayerSessionInput {
         self.player_data.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePlayerSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlayerSessionInput");
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("player_id", &self.player_id);
-        formatter.field("player_data", &self.player_data);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMatchmakingRuleSetInput {
     /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
     #[doc(hidden)]
@@ -21623,19 +20830,10 @@ impl CreateMatchmakingRuleSetInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMatchmakingRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMatchmakingRuleSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("rule_set_body", &self.rule_set_body);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMatchmakingConfigurationInput {
     /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
     #[doc(hidden)]
@@ -21761,34 +20959,10 @@ impl CreateMatchmakingConfigurationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMatchmakingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMatchmakingConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("game_session_queue_arns", &self.game_session_queue_arns);
-        formatter.field("request_timeout_seconds", &self.request_timeout_seconds);
-        formatter.field(
-            "acceptance_timeout_seconds",
-            &self.acceptance_timeout_seconds,
-        );
-        formatter.field("acceptance_required", &self.acceptance_required);
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("notification_target", &self.notification_target);
-        formatter.field("additional_player_count", &self.additional_player_count);
-        formatter.field("custom_event_data", &self.custom_event_data);
-        formatter.field("game_properties", &self.game_properties);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("backfill_mode", &self.backfill_mode);
-        formatter.field("flex_match_mode", &self.flex_match_mode);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGameSessionQueueInput {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
     #[doc(hidden)]
@@ -21863,25 +21037,10 @@ impl CreateGameSessionQueueInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGameSessionQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGameSessionQueueInput");
-        formatter.field("name", &self.name);
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.field("player_latency_policies", &self.player_latency_policies);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("filter_configuration", &self.filter_configuration);
-        formatter.field("priority_configuration", &self.priority_configuration);
-        formatter.field("custom_event_data", &self.custom_event_data);
-        formatter.field("notification_target", &self.notification_target);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGameSessionInput {
     /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     #[doc(hidden)]
@@ -21970,29 +21129,10 @@ impl CreateGameSessionInput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGameSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGameSessionInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field(
-            "maximum_player_session_count",
-            &self.maximum_player_session_count,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("game_properties", &self.game_properties);
-        formatter.field("creator_id", &self.creator_id);
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("idempotency_token", &self.idempotency_token);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGameServerGroupInput {
     /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -22095,30 +21235,10 @@ impl CreateGameServerGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGameServerGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGameServerGroupInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("instance_definitions", &self.instance_definitions);
-        formatter.field("auto_scaling_policy", &self.auto_scaling_policy);
-        formatter.field("balancing_strategy", &self.balancing_strategy);
-        formatter.field(
-            "game_server_protection_policy",
-            &self.game_server_protection_policy,
-        );
-        formatter.field("vpc_subnets", &self.vpc_subnets);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetLocationsInput {
     /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
@@ -22137,18 +21257,10 @@ impl CreateFleetLocationsInput {
         self.locations.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFleetLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetLocationsInput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("locations", &self.locations);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetInput {
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
     #[doc(hidden)]
@@ -22316,42 +21428,10 @@ impl CreateFleetInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("build_id", &self.build_id);
-        formatter.field("script_id", &self.script_id);
-        formatter.field("server_launch_path", &self.server_launch_path);
-        formatter.field("server_launch_parameters", &self.server_launch_parameters);
-        formatter.field("log_paths", &self.log_paths);
-        formatter.field("ec2_instance_type", &self.ec2_instance_type);
-        formatter.field("ec2_inbound_permissions", &self.ec2_inbound_permissions);
-        formatter.field(
-            "new_game_session_protection_policy",
-            &self.new_game_session_protection_policy,
-        );
-        formatter.field("runtime_configuration", &self.runtime_configuration);
-        formatter.field(
-            "resource_creation_limit_policy",
-            &self.resource_creation_limit_policy,
-        );
-        formatter.field("metric_groups", &self.metric_groups);
-        formatter.field("peer_vpc_aws_account_id", &self.peer_vpc_aws_account_id);
-        formatter.field("peer_vpc_id", &self.peer_vpc_id);
-        formatter.field("fleet_type", &self.fleet_type);
-        formatter.field("instance_role_arn", &self.instance_role_arn);
-        formatter.field("certificate_configuration", &self.certificate_configuration);
-        formatter.field("locations", &self.locations);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBuildInput {
     /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
     #[doc(hidden)]
@@ -22393,21 +21473,10 @@ impl CreateBuildInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBuildInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBuildInput");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("storage_location", &self.storage_location);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     #[doc(hidden)]
@@ -22440,20 +21509,10 @@ impl CreateAliasInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("routing_strategy", &self.routing_strategy);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClaimGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
     #[doc(hidden)]
@@ -22479,19 +21538,10 @@ impl ClaimGameServerInput {
         self.game_server_data.as_deref()
     }
 }
-impl std::fmt::Debug for ClaimGameServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClaimGameServerInput");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("game_server_id", &self.game_server_id);
-        formatter.field("game_server_data", &self.game_server_data);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptMatchInput {
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
     #[doc(hidden)]
@@ -22515,14 +21565,5 @@ impl AcceptMatchInput {
     /// <p>Player response to the proposed match.</p>
     pub fn acceptance_type(&self) -> std::option::Option<&crate::model::AcceptanceType> {
         self.acceptance_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AcceptMatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptMatchInput");
-        formatter.field("ticket_id", &self.ticket_id);
-        formatter.field("player_ids", &self.player_ids);
-        formatter.field("acceptance_type", &self.acceptance_type);
-        formatter.finish()
     }
 }

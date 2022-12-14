@@ -177,7 +177,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>Stores information about a message status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelMessageStatusStructure {
     /// <p>The message status value.</p>
     #[doc(hidden)]
@@ -194,14 +194,6 @@ impl ChannelMessageStatusStructure {
     /// <p>Contains more details about the messasge status.</p>
     pub fn detail(&self) -> std::option::Option<&str> {
         self.detail.as_deref()
-    }
-}
-impl std::fmt::Debug for ChannelMessageStatusStructure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelMessageStatusStructure");
-        formatter.field("value", &self.value);
-        formatter.field("detail", &self.detail);
-        formatter.finish()
     }
 }
 /// See [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure).
@@ -404,7 +396,7 @@ impl std::fmt::Debug for Processor {
 pub mod processor {
 
     /// A builder for [`Processor`](crate::model::Processor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::ProcessorConfiguration>,
@@ -466,6 +458,16 @@ pub mod processor {
                 execution_order: self.execution_order,
                 fallback_action: self.fallback_action,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("configuration", &self.configuration);
+            formatter.field("execution_order", &self.execution_order);
+            formatter.field("fallback_action", &self.fallback_action);
+            formatter.finish()
         }
     }
 }
@@ -568,7 +570,7 @@ impl AsRef<str> for FallbackAction {
 
 /// <p>A processor's metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProcessorConfiguration {
     /// <p>Indicates that the processor is of type Lambda.</p>
     #[doc(hidden)]
@@ -578,13 +580,6 @@ impl ProcessorConfiguration {
     /// <p>Indicates that the processor is of type Lambda.</p>
     pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaConfiguration> {
         self.lambda.as_ref()
-    }
-}
-impl std::fmt::Debug for ProcessorConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProcessorConfiguration");
-        formatter.field("lambda", &self.lambda);
-        formatter.finish()
     }
 }
 /// See [`ProcessorConfiguration`](crate::model::ProcessorConfiguration).
@@ -626,7 +621,7 @@ impl ProcessorConfiguration {
 
 /// <p>Stores metadata about a Lambda processor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
     #[doc(hidden)]
@@ -643,14 +638,6 @@ impl LambdaConfiguration {
     /// <p>Controls how the Lambda function is invoked.</p>
     pub fn invocation_type(&self) -> std::option::Option<&crate::model::InvocationType> {
         self.invocation_type.as_ref()
-    }
-}
-impl std::fmt::Debug for LambdaConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaConfiguration");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("invocation_type", &self.invocation_type);
-        formatter.finish()
     }
 }
 /// See [`LambdaConfiguration`](crate::model::LambdaConfiguration).
@@ -910,7 +897,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -944,6 +931,14 @@ pub mod tag {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key", &"*** Sensitive Data Redacted ***");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -954,7 +949,7 @@ impl Tag {
 
 /// <p>A list of message attribute values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageAttributeValue {
     /// <p>The strings in a message attribute value.</p>
     #[doc(hidden)]
@@ -964,13 +959,6 @@ impl MessageAttributeValue {
     /// <p>The strings in a message attribute value.</p>
     pub fn string_values(&self) -> std::option::Option<&[std::string::String]> {
         self.string_values.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageAttributeValue");
-        formatter.field("string_values", &self.string_values);
-        formatter.finish()
     }
 }
 /// See [`MessageAttributeValue`](crate::model::MessageAttributeValue).
@@ -1057,7 +1045,7 @@ impl std::fmt::Debug for PushNotificationConfiguration {
 pub mod push_notification_configuration {
 
     /// A builder for [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -1104,6 +1092,15 @@ pub mod push_notification_configuration {
                 body: self.body,
                 r#type: self.r#type,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("title", &"*** Sensitive Data Redacted ***");
+            formatter.field("body", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.finish()
         }
     }
 }
@@ -1455,7 +1452,7 @@ impl std::fmt::Debug for ChannelSummary {
 pub mod channel_summary {
 
     /// A builder for [`ChannelSummary`](crate::model::ChannelSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1541,6 +1538,18 @@ pub mod channel_summary {
                 metadata: self.metadata,
                 last_message_timestamp: self.last_message_timestamp,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("mode", &self.mode);
+            formatter.field("privacy", &self.privacy);
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_message_timestamp", &self.last_message_timestamp);
+            formatter.finish()
         }
     }
 }
@@ -1643,7 +1652,7 @@ impl AsRef<str> for ChannelPrivacy {
 
 /// <p>A <code>Field</code> of the channel that you want to search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchField {
     /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
     #[doc(hidden)]
@@ -1671,15 +1680,6 @@ impl SearchField {
     /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::SearchFieldOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchField");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`SearchField`](crate::model::SearchField).
@@ -1935,7 +1935,7 @@ impl AsRef<str> for SearchFieldKey {
 
 /// <p>The channel membership preferences for an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelMembershipPreferences {
     /// <p>The push notification configuration of a message.</p>
     #[doc(hidden)]
@@ -1947,13 +1947,6 @@ impl ChannelMembershipPreferences {
         &self,
     ) -> std::option::Option<&crate::model::PushNotificationPreferences> {
         self.push_notifications.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelMembershipPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelMembershipPreferences");
-        formatter.field("push_notifications", &self.push_notifications);
-        formatter.finish()
     }
 }
 /// See [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences).
@@ -2030,7 +2023,7 @@ impl std::fmt::Debug for PushNotificationPreferences {
 pub mod push_notification_preferences {
 
     /// A builder for [`PushNotificationPreferences`](crate::model::PushNotificationPreferences).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) allow_notifications: std::option::Option<crate::model::AllowNotifications>,
         pub(crate) filter_rule: std::option::Option<std::string::String>,
@@ -2065,6 +2058,14 @@ pub mod push_notification_preferences {
                 allow_notifications: self.allow_notifications,
                 filter_rule: self.filter_rule,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("allow_notifications", &self.allow_notifications);
+            formatter.field("filter_rule", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2205,7 +2206,7 @@ impl std::fmt::Debug for Identity {
 pub mod identity {
 
     /// A builder for [`Identity`](crate::model::Identity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2239,6 +2240,14 @@ pub mod identity {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Identity {
     /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
@@ -2249,7 +2258,7 @@ impl Identity {
 
 /// <p>Summary of the sub-channels associated with the elastic channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubChannelSummary {
     /// <p>The unique ID of a SubChannel.</p>
     #[doc(hidden)]
@@ -2266,14 +2275,6 @@ impl SubChannelSummary {
     /// <p>The number of members in a SubChannel.</p>
     pub fn membership_count(&self) -> std::option::Option<i32> {
         self.membership_count
-    }
-}
-impl std::fmt::Debug for SubChannelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubChannelSummary");
-        formatter.field("sub_channel_id", &self.sub_channel_id);
-        formatter.field("membership_count", &self.membership_count);
-        formatter.finish()
     }
 }
 /// See [`SubChannelSummary`](crate::model::SubChannelSummary).
@@ -2327,7 +2328,7 @@ impl SubChannelSummary {
 
 /// <p>Summary of the details of a moderated channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     #[doc(hidden)]
@@ -2337,13 +2338,6 @@ impl ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub fn channel_summary(&self) -> std::option::Option<&crate::model::ChannelSummary> {
         self.channel_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelModeratedByAppInstanceUserSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelModeratedByAppInstanceUserSummary");
-        formatter.field("channel_summary", &self.channel_summary);
-        formatter.finish()
     }
 }
 /// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
@@ -2440,7 +2434,7 @@ impl std::fmt::Debug for ChannelAssociatedWithFlowSummary {
 pub mod channel_associated_with_flow_summary {
 
     /// A builder for [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -2513,6 +2507,17 @@ pub mod channel_associated_with_flow_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("mode", &self.mode);
+            formatter.field("privacy", &self.privacy);
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ChannelAssociatedWithFlowSummary {
     /// Creates a new builder-style object to manufacture [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
@@ -2523,7 +2528,7 @@ impl ChannelAssociatedWithFlowSummary {
 
 /// <p>Summary of the details of a <code>ChannelModerator</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
     #[doc(hidden)]
@@ -2533,13 +2538,6 @@ impl ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
     pub fn moderator(&self) -> std::option::Option<&crate::model::Identity> {
         self.moderator.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelModeratorSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelModeratorSummary");
-        formatter.field("moderator", &self.moderator);
-        formatter.finish()
     }
 }
 /// See [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
@@ -2687,7 +2685,7 @@ impl std::fmt::Debug for ChannelMessageSummary {
 pub mod channel_message_summary {
 
     /// A builder for [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -2861,6 +2859,23 @@ pub mod channel_message_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("message_id", &self.message_id);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+            formatter.field("last_edited_timestamp", &self.last_edited_timestamp);
+            formatter.field("sender", &self.sender);
+            formatter.field("redacted", &self.redacted);
+            formatter.field("status", &self.status);
+            formatter.field("message_attributes", &self.message_attributes);
+            formatter.finish()
+        }
+    }
 }
 impl ChannelMessageSummary {
     /// Creates a new builder-style object to manufacture [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
@@ -2961,7 +2976,7 @@ impl AsRef<str> for SortOrder {
 
 /// <p>Summary of the channel membership details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelMembershipForAppInstanceUserSummary {
     /// <p>Returns the channel data for an <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -2981,17 +2996,6 @@ impl ChannelMembershipForAppInstanceUserSummary {
         &self,
     ) -> std::option::Option<&crate::model::AppInstanceUserMembershipSummary> {
         self.app_instance_user_membership_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelMembershipForAppInstanceUserSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelMembershipForAppInstanceUserSummary");
-        formatter.field("channel_summary", &self.channel_summary);
-        formatter.field(
-            "app_instance_user_membership_summary",
-            &self.app_instance_user_membership_summary,
-        );
-        formatter.finish()
     }
 }
 /// See [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
@@ -3052,7 +3056,7 @@ impl ChannelMembershipForAppInstanceUserSummary {
 
 /// <p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
     #[doc(hidden)]
@@ -3076,15 +3080,6 @@ impl AppInstanceUserMembershipSummary {
     /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
     pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AppInstanceUserMembershipSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppInstanceUserMembershipSummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("read_marker_timestamp", &self.read_marker_timestamp);
-        formatter.field("sub_channel_id", &self.sub_channel_id);
-        formatter.finish()
     }
 }
 /// See [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
@@ -3248,7 +3243,7 @@ impl AsRef<str> for ChannelMembershipType {
 
 /// <p>Summary of the details of a <code>ChannelMembership</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelMembershipSummary {
     /// <p>A member's summary data.</p>
     #[doc(hidden)]
@@ -3258,13 +3253,6 @@ impl ChannelMembershipSummary {
     /// <p>A member's summary data.</p>
     pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
         self.member.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelMembershipSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelMembershipSummary");
-        formatter.field("member", &self.member);
-        formatter.finish()
     }
 }
 /// See [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
@@ -3342,7 +3330,7 @@ impl std::fmt::Debug for ChannelFlowSummary {
 pub mod channel_flow_summary {
 
     /// A builder for [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3400,6 +3388,15 @@ pub mod channel_flow_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_flow_arn", &self.channel_flow_arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("processors", &self.processors);
+            formatter.finish()
+        }
+    }
 }
 impl ChannelFlowSummary {
     /// Creates a new builder-style object to manufacture [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
@@ -3410,7 +3407,7 @@ impl ChannelFlowSummary {
 
 /// <p>Summary of the details of a <code>ChannelBan</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelBanSummary {
     /// <p>The member being banned from a channel.</p>
     #[doc(hidden)]
@@ -3420,13 +3417,6 @@ impl ChannelBanSummary {
     /// <p>The member being banned from a channel.</p>
     pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
         self.member.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelBanSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelBanSummary");
-        formatter.field("member", &self.member);
-        formatter.finish()
     }
 }
 /// See [`ChannelBanSummary`](crate::model::ChannelBanSummary).
@@ -3465,7 +3455,7 @@ impl ChannelBanSummary {
 
 /// <p>The websocket endpoint used to connect to Amazon Chime SDK messaging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessagingSessionEndpoint {
     /// <p>The endpoint to which you establish a websocket connection.</p>
     #[doc(hidden)]
@@ -3475,13 +3465,6 @@ impl MessagingSessionEndpoint {
     /// <p>The endpoint to which you establish a websocket connection.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for MessagingSessionEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessagingSessionEndpoint");
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
@@ -3651,7 +3634,7 @@ impl std::fmt::Debug for ChannelMessage {
 pub mod channel_message {
 
     /// A builder for [`ChannelMessage`](crate::model::ChannelMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -3867,6 +3850,26 @@ pub mod channel_message {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("message_id", &self.message_id);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("last_edited_timestamp", &self.last_edited_timestamp);
+            formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+            formatter.field("sender", &self.sender);
+            formatter.field("redacted", &self.redacted);
+            formatter.field("persistence", &self.persistence);
+            formatter.field("status", &self.status);
+            formatter.field("message_attributes", &self.message_attributes);
+            formatter.field("sub_channel_id", &self.sub_channel_id);
+            formatter.finish()
+        }
+    }
 }
 impl ChannelMessage {
     /// Creates a new builder-style object to manufacture [`ChannelMessage`](crate::model::ChannelMessage).
@@ -3877,7 +3880,7 @@ impl ChannelMessage {
 
 /// <p>The details of a channel moderator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelModerator {
     /// <p>The moderator's data.</p>
     #[doc(hidden)]
@@ -3908,16 +3911,6 @@ impl ChannelModerator {
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::Identity> {
         self.created_by.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelModerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelModerator");
-        formatter.field("moderator", &self.moderator);
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("created_by", &self.created_by);
-        formatter.finish()
     }
 }
 /// See [`ChannelModerator`](crate::model::ChannelModerator).
@@ -3998,7 +3991,7 @@ impl ChannelModerator {
 
 /// <p>The details of a channel member.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelMembership {
     /// <p>The identifier of the member who invited another member.</p>
     #[doc(hidden)]
@@ -4050,19 +4043,6 @@ impl ChannelMembership {
     /// <p>The ID of the SubChannel that a user belongs to.</p>
     pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ChannelMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelMembership");
-        formatter.field("invited_by", &self.invited_by);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("member", &self.member);
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("sub_channel_id", &self.sub_channel_id);
-        formatter.finish()
     }
 }
 /// See [`ChannelMembership`](crate::model::ChannelMembership).
@@ -4243,7 +4223,7 @@ impl std::fmt::Debug for ChannelFlow {
 pub mod channel_flow {
 
     /// A builder for [`ChannelFlow`](crate::model::ChannelFlow).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
         pub(crate) processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
@@ -4331,6 +4311,17 @@ pub mod channel_flow {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_flow_arn", &self.channel_flow_arn);
+            formatter.field("processors", &self.processors);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+            formatter.finish()
+        }
+    }
 }
 impl ChannelFlow {
     /// Creates a new builder-style object to manufacture [`ChannelFlow`](crate::model::ChannelFlow).
@@ -4341,7 +4332,7 @@ impl ChannelFlow {
 
 /// <p>The details of a channel ban.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelBan {
     /// <p>The member being banned from the channel.</p>
     #[doc(hidden)]
@@ -4372,16 +4363,6 @@ impl ChannelBan {
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::Identity> {
         self.created_by.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelBan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelBan");
-        formatter.field("member", &self.member);
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("created_by", &self.created_by);
-        formatter.finish()
     }
 }
 /// See [`ChannelBan`](crate::model::ChannelBan).
@@ -4571,7 +4552,7 @@ impl std::fmt::Debug for Channel {
 pub mod channel {
 
     /// A builder for [`Channel`](crate::model::Channel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -4738,6 +4719,26 @@ pub mod channel {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("mode", &self.mode);
+            formatter.field("privacy", &self.privacy);
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_by", &self.created_by);
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("last_message_timestamp", &self.last_message_timestamp);
+            formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+            formatter.field("channel_flow_arn", &self.channel_flow_arn);
+            formatter.field(
+                "elastic_channel_configuration",
+                &self.elastic_channel_configuration,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
@@ -4748,7 +4749,7 @@ impl Channel {
 
 /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticChannelConfiguration {
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
     #[doc(hidden)]
@@ -4772,21 +4773,6 @@ impl ElasticChannelConfiguration {
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
     pub fn minimum_membership_percentage(&self) -> std::option::Option<i32> {
         self.minimum_membership_percentage
-    }
-}
-impl std::fmt::Debug for ElasticChannelConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticChannelConfiguration");
-        formatter.field("maximum_sub_channels", &self.maximum_sub_channels);
-        formatter.field(
-            "target_memberships_per_sub_channel",
-            &self.target_memberships_per_sub_channel,
-        );
-        formatter.field(
-            "minimum_membership_percentage",
-            &self.minimum_membership_percentage,
-        );
-        formatter.finish()
     }
 }
 /// See [`ElasticChannelConfiguration`](crate::model::ElasticChannelConfiguration).
@@ -4926,7 +4912,7 @@ impl std::fmt::Debug for ChannelMessageCallback {
 pub mod channel_message_callback {
 
     /// A builder for [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -5035,6 +5021,18 @@ pub mod channel_message_callback {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("message_id", &self.message_id);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("push_notification", &self.push_notification);
+            formatter.field("message_attributes", &self.message_attributes);
+            formatter.field("sub_channel_id", &self.sub_channel_id);
+            formatter.finish()
+        }
+    }
 }
 impl ChannelMessageCallback {
     /// Creates a new builder-style object to manufacture [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
@@ -5045,7 +5043,7 @@ impl ChannelMessageCallback {
 
 /// <p>A list of failed member ARNs, error codes, and error messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipError {
     /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
     #[doc(hidden)]
@@ -5069,15 +5067,6 @@ impl BatchCreateChannelMembershipError {
     /// <p>The error message.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateChannelMembershipError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateChannelMembershipError");
-        formatter.field("member_arn", &self.member_arn);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
@@ -5146,7 +5135,7 @@ impl BatchCreateChannelMembershipError {
 
 /// <p>The membership information, including member ARNs, the channel ARN, and membership types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchChannelMemberships {
     /// <p>The identifier of the member who invited another member.</p>
     #[doc(hidden)]
@@ -5184,17 +5173,6 @@ impl BatchChannelMemberships {
     /// <p>The ID of the SubChannel.</p>
     pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchChannelMemberships {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchChannelMemberships");
-        formatter.field("invited_by", &self.invited_by);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("members", &self.members);
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("sub_channel_id", &self.sub_channel_id);
-        formatter.finish()
     }
 }
 /// See [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).

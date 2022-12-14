@@ -101,7 +101,7 @@ impl AsRef<str> for Capability {
 
 /// <p>The TemplateParameter data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateParameter {
     /// <p>The name associated with the parameter.</p>
     #[doc(hidden)]
@@ -132,16 +132,6 @@ impl TemplateParameter {
     /// <p>User defined description associated with the parameter.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateParameter");
-        formatter.field("parameter_key", &self.parameter_key);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("no_echo", &self.no_echo);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`TemplateParameter`](crate::model::TemplateParameter).
@@ -222,7 +212,7 @@ impl TemplateParameter {
 
 /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedExecution {
     /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
     /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
@@ -240,13 +230,6 @@ impl ManagedExecution {
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
-    }
-}
-impl std::fmt::Debug for ManagedExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedExecution");
-        formatter.field("active", &self.active);
-        formatter.finish()
     }
 }
 /// See [`ManagedExecution`](crate::model::ManagedExecution).
@@ -383,7 +366,7 @@ impl AsRef<str> for CallAs {
 
 /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoDeployment {
     /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances to Organizations accounts that are added to a target organization or organizational unit (OU) in the specified Regions. If an account is removed from a target organization or OU, StackSets deletes stack instances from the account in the specified Regions.</p>
     #[doc(hidden)]
@@ -400,17 +383,6 @@ impl AutoDeployment {
     /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
     pub fn retain_stacks_on_account_removal(&self) -> std::option::Option<bool> {
         self.retain_stacks_on_account_removal
-    }
-}
-impl std::fmt::Debug for AutoDeployment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoDeployment");
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "retain_stacks_on_account_removal",
-            &self.retain_stacks_on_account_removal,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoDeployment`](crate::model::AutoDeployment).
@@ -555,7 +527,7 @@ impl AsRef<str> for PermissionModels {
 /// <p>[Service-managed permissions] The Organizations accounts to which StackSets deploys. StackSets doesn't deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization.</p>
 /// <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentTargets {
     /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
     #[doc(hidden)]
@@ -600,16 +572,6 @@ impl DeploymentTargets {
     /// </ul>
     pub fn account_filter_type(&self) -> std::option::Option<&crate::model::AccountFilterType> {
         self.account_filter_type.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentTargets {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentTargets");
-        formatter.field("accounts", &self.accounts);
-        formatter.field("accounts_url", &self.accounts_url);
-        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
-        formatter.field("account_filter_type", &self.account_filter_type);
-        formatter.finish()
     }
 }
 /// See [`DeploymentTargets`](crate::model::DeploymentTargets).
@@ -822,7 +784,7 @@ impl AsRef<str> for AccountFilterType {
 /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
 /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSetOperationPreferences {
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
     #[doc(hidden)]
@@ -893,21 +855,6 @@ impl StackSetOperationPreferences {
     /// <p>By default, <code>1</code> is specified.</p>
     pub fn max_concurrent_percentage(&self) -> std::option::Option<i32> {
         self.max_concurrent_percentage
-    }
-}
-impl std::fmt::Debug for StackSetOperationPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSetOperationPreferences");
-        formatter.field("region_concurrency_type", &self.region_concurrency_type);
-        formatter.field("region_order", &self.region_order);
-        formatter.field("failure_tolerance_count", &self.failure_tolerance_count);
-        formatter.field(
-            "failure_tolerance_percentage",
-            &self.failure_tolerance_percentage,
-        );
-        formatter.field("max_concurrent_count", &self.max_concurrent_count);
-        formatter.field("max_concurrent_percentage", &self.max_concurrent_percentage);
-        formatter.finish()
     }
 }
 /// See [`StackSetOperationPreferences`](crate::model::StackSetOperationPreferences).
@@ -1138,7 +1085,7 @@ impl AsRef<str> for RegionConcurrencyType {
 
 /// <p>The Tag type enables you to specify a key-value pair that can be used to store information about an CloudFormation stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p> <i>Required</i>. A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
     #[doc(hidden)]
@@ -1155,14 +1102,6 @@ impl Tag {
     /// <p> <i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1213,7 +1152,7 @@ impl Tag {
 
 /// <p>The Parameter data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parameter {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that's specified in your template.</p>
     #[doc(hidden)]
@@ -1244,16 +1183,6 @@ impl Parameter {
     /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
     pub fn resolved_value(&self) -> std::option::Option<&str> {
         self.resolved_value.as_deref()
-    }
-}
-impl std::fmt::Debug for Parameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parameter");
-        formatter.field("parameter_key", &self.parameter_key);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.field("use_previous_value", &self.use_previous_value);
-        formatter.field("resolved_value", &self.resolved_value);
-        formatter.finish()
     }
 }
 /// See [`Parameter`](crate::model::Parameter).
@@ -1338,7 +1267,7 @@ impl Parameter {
 /// <p>Structure containing the rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
 /// <p>Rollback triggers enable you to have CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackConfiguration {
     /// <p>The triggers to monitor during stack creation or update actions.</p>
     /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
@@ -1375,17 +1304,6 @@ impl RollbackConfiguration {
     /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
     pub fn monitoring_time_in_minutes(&self) -> std::option::Option<i32> {
         self.monitoring_time_in_minutes
-    }
-}
-impl std::fmt::Debug for RollbackConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackConfiguration");
-        formatter.field("rollback_triggers", &self.rollback_triggers);
-        formatter.field(
-            "monitoring_time_in_minutes",
-            &self.monitoring_time_in_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`RollbackConfiguration`](crate::model::RollbackConfiguration).
@@ -1466,7 +1384,7 @@ impl RollbackConfiguration {
 
 /// <p>A rollback trigger CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackTrigger {
     /// <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
@@ -1485,14 +1403,6 @@ impl RollbackTrigger {
     /// <p>The resource type of the rollback trigger. Specify either <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html">AWS::CloudWatch::Alarm</a> or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html">AWS::CloudWatch::CompositeAlarm</a> resource types.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for RollbackTrigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackTrigger");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`RollbackTrigger`](crate::model::RollbackTrigger).
@@ -1827,7 +1737,7 @@ impl AsRef<str> for RegistryType {
 
 /// <p>Contains logging configuration information for an extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfig {
     /// <p>The Amazon Resource Name (ARN) of the role that CloudFormation should assume when sending log entries to CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -1844,14 +1754,6 @@ impl LoggingConfig {
     /// <p>The Amazon CloudWatch Logs group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfig");
-        formatter.field("log_role_arn", &self.log_role_arn);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfig`](crate::model::LoggingConfig).
@@ -2194,7 +2096,7 @@ impl AsRef<str> for OperationStatus {
 
 /// <p>Contains summary information about a specific version of a CloudFormation extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypeVersionSummary {
     /// <p>The kind of extension.</p>
     #[doc(hidden)]
@@ -2257,20 +2159,6 @@ impl TypeVersionSummary {
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn public_version_number(&self) -> std::option::Option<&str> {
         self.public_version_number.as_deref()
-    }
-}
-impl std::fmt::Debug for TypeVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypeVersionSummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("is_default_version", &self.is_default_version);
-        formatter.field("arn", &self.arn);
-        formatter.field("time_created", &self.time_created);
-        formatter.field("description", &self.description);
-        formatter.field("public_version_number", &self.public_version_number);
-        formatter.finish()
     }
 }
 /// See [`TypeVersionSummary`](crate::model::TypeVersionSummary).
@@ -2493,7 +2381,7 @@ impl AsRef<str> for DeprecatedStatus {
 
 /// <p>Contains summary information about the specified CloudFormation extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypeSummary {
     /// <p>The kind of extension.</p>
     #[doc(hidden)]
@@ -2613,25 +2501,6 @@ impl TypeSummary {
     /// <p>This applies only to third-party public extensions. Extensions published by Amazon are activated by default.</p>
     pub fn is_activated(&self) -> std::option::Option<bool> {
         self.is_activated
-    }
-}
-impl std::fmt::Debug for TypeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypeSummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("default_version_id", &self.default_version_id);
-        formatter.field("type_arn", &self.type_arn);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("description", &self.description);
-        formatter.field("publisher_id", &self.publisher_id);
-        formatter.field("original_type_name", &self.original_type_name);
-        formatter.field("public_version_number", &self.public_version_number);
-        formatter.field("latest_public_version", &self.latest_public_version);
-        formatter.field("publisher_identity", &self.publisher_identity);
-        formatter.field("publisher_name", &self.publisher_name);
-        formatter.field("is_activated", &self.is_activated);
-        formatter.finish()
     }
 }
 /// See [`TypeSummary`](crate::model::TypeSummary).
@@ -2956,7 +2825,7 @@ impl AsRef<str> for IdentityProvider {
 
 /// <p>Filter criteria to use in determining which extensions to return.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypeFilters {
     /// <p>The category of extensions to return.</p>
     /// <ul>
@@ -3002,15 +2871,6 @@ impl TypeFilters {
     /// <p>A prefix to use as a filter for results.</p>
     pub fn type_name_prefix(&self) -> std::option::Option<&str> {
         self.type_name_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for TypeFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypeFilters");
-        formatter.field("category", &self.category);
-        formatter.field("publisher_id", &self.publisher_id);
-        formatter.field("type_name_prefix", &self.type_name_prefix);
-        formatter.finish()
     }
 }
 /// See [`TypeFilters`](crate::model::TypeFilters).
@@ -3480,7 +3340,7 @@ impl AsRef<str> for RegistrationStatus {
 
 /// <p>The structures that contain summary information about the specified stack set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSetSummary {
     /// <p>The name of the stack set.</p>
     #[doc(hidden)]
@@ -3566,24 +3426,6 @@ impl StackSetSummary {
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn managed_execution(&self) -> std::option::Option<&crate::model::ManagedExecution> {
         self.managed_execution.as_ref()
-    }
-}
-impl std::fmt::Debug for StackSetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSetSummary");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("stack_set_id", &self.stack_set_id);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("auto_deployment", &self.auto_deployment);
-        formatter.field("permission_model", &self.permission_model);
-        formatter.field("drift_status", &self.drift_status);
-        formatter.field(
-            "last_drift_check_timestamp",
-            &self.last_drift_check_timestamp,
-        );
-        formatter.field("managed_execution", &self.managed_execution);
-        formatter.finish()
     }
 }
 /// See [`StackSetSummary`](crate::model::StackSetSummary).
@@ -3949,7 +3791,7 @@ impl AsRef<str> for StackSetStatus {
 
 /// <p>The structures that contain summary information about the specified operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSetOperationSummary {
     /// <p>The unique ID of the stack set operation.</p>
     #[doc(hidden)]
@@ -4010,18 +3852,6 @@ impl StackSetOperationSummary {
     /// <p>The status of the operation in details.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for StackSetOperationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSetOperationSummary");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("action", &self.action);
-        formatter.field("status", &self.status);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("end_timestamp", &self.end_timestamp);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`StackSetOperationSummary`](crate::model::StackSetOperationSummary).
@@ -4372,7 +4202,7 @@ impl AsRef<str> for StackSetOperationAction {
 
 /// <p>The structure that contains information about a specified operation's results for a given account in a given Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSetOperationResultSummary {
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
     #[doc(hidden)]
@@ -4431,18 +4261,6 @@ impl StackSetOperationResultSummary {
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StackSetOperationResultSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSetOperationResultSummary");
-        formatter.field("account", &self.account);
-        formatter.field("region", &self.region);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("account_gate_result", &self.account_gate_result);
-        formatter.field("organizational_unit_id", &self.organizational_unit_id);
-        formatter.finish()
     }
 }
 /// See [`StackSetOperationResultSummary`](crate::model::StackSetOperationResultSummary).
@@ -4569,7 +4387,7 @@ impl StackSetOperationResultSummary {
 /// <p>For each account and Region, CloudFormation lets you specify a Lambda function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountGateResult {
     /// <p>The status of the account gate function.</p>
     /// <ul>
@@ -4606,14 +4424,6 @@ impl AccountGateResult {
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountGateResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountGateResult");
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`AccountGateResult`](crate::model::AccountGateResult).
@@ -4894,7 +4704,7 @@ impl AsRef<str> for StackSetOperationResultStatus {
 
 /// <p>The StackSummary Data Type</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSummary {
     /// <p>Unique stack identifier.</p>
     #[doc(hidden)]
@@ -4980,23 +4790,6 @@ impl StackSummary {
         &self,
     ) -> std::option::Option<&crate::model::StackDriftInformationSummary> {
         self.drift_information.as_ref()
-    }
-}
-impl std::fmt::Debug for StackSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSummary");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("deletion_time", &self.deletion_time);
-        formatter.field("stack_status", &self.stack_status);
-        formatter.field("stack_status_reason", &self.stack_status_reason);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("root_id", &self.root_id);
-        formatter.field("drift_information", &self.drift_information);
-        formatter.finish()
     }
 }
 /// See [`StackSummary`](crate::model::StackSummary).
@@ -5184,7 +4977,7 @@ impl StackSummary {
 
 /// <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackDriftInformationSummary {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration.</p>
     /// <ul>
@@ -5213,14 +5006,6 @@ impl StackDriftInformationSummary {
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
     pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for StackDriftInformationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackDriftInformationSummary");
-        formatter.field("stack_drift_status", &self.stack_drift_status);
-        formatter.field("last_check_timestamp", &self.last_check_timestamp);
-        formatter.finish()
     }
 }
 /// See [`StackDriftInformationSummary`](crate::model::StackDriftInformationSummary).
@@ -5512,7 +5297,7 @@ impl AsRef<str> for StackStatus {
 
 /// <p>Contains high-level information about the specified stack resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackResourceSummary {
     /// <p>The logical name of the resource specified in the template.</p>
     #[doc(hidden)]
@@ -5573,20 +5358,6 @@ impl StackResourceSummary {
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
-    }
-}
-impl std::fmt::Debug for StackResourceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackResourceSummary");
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("resource_status", &self.resource_status);
-        formatter.field("resource_status_reason", &self.resource_status_reason);
-        formatter.field("drift_information", &self.drift_information);
-        formatter.field("module_info", &self.module_info);
-        formatter.finish()
     }
 }
 /// See [`StackResourceSummary`](crate::model::StackResourceSummary).
@@ -5738,7 +5509,7 @@ impl StackResourceSummary {
 /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
 /// <p>For more information about modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using modules to encapsulate and reuse resource configurations</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModuleInfo {
     /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
@@ -5765,14 +5536,6 @@ impl ModuleInfo {
     /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn logical_id_hierarchy(&self) -> std::option::Option<&str> {
         self.logical_id_hierarchy.as_deref()
-    }
-}
-impl std::fmt::Debug for ModuleInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModuleInfo");
-        formatter.field("type_hierarchy", &self.type_hierarchy);
-        formatter.field("logical_id_hierarchy", &self.logical_id_hierarchy);
-        formatter.finish()
     }
 }
 /// See [`ModuleInfo`](crate::model::ModuleInfo).
@@ -5839,7 +5602,7 @@ impl ModuleInfo {
 
 /// <p>Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackResourceDriftInformationSummary {
     /// <p>Status of the resource's actual configuration compared to its expected configuration.</p>
     /// <ul>
@@ -5870,17 +5633,6 @@ impl StackResourceDriftInformationSummary {
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for StackResourceDriftInformationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackResourceDriftInformationSummary");
-        formatter.field(
-            "stack_resource_drift_status",
-            &self.stack_resource_drift_status,
-        );
-        formatter.field("last_check_timestamp", &self.last_check_timestamp);
-        formatter.finish()
     }
 }
 /// See [`StackResourceDriftInformationSummary`](crate::model::StackResourceDriftInformationSummary).
@@ -6268,7 +6020,7 @@ impl AsRef<str> for ResourceStatus {
 
 /// <p>The structure that contains summary information about a stack instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackInstanceSummary {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     #[doc(hidden)]
@@ -6373,25 +6125,6 @@ impl StackInstanceSummary {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
     pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for StackInstanceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackInstanceSummary");
-        formatter.field("stack_set_id", &self.stack_set_id);
-        formatter.field("region", &self.region);
-        formatter.field("account", &self.account);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("stack_instance_status", &self.stack_instance_status);
-        formatter.field("organizational_unit_id", &self.organizational_unit_id);
-        formatter.field("drift_status", &self.drift_status);
-        formatter.field(
-            "last_drift_check_timestamp",
-            &self.last_drift_check_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`StackInstanceSummary`](crate::model::StackInstanceSummary).
@@ -6590,7 +6323,7 @@ impl StackInstanceSummary {
 
 /// <p>The detailed status of the stack instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackInstanceComprehensiveStatus {
     /// <ul>
     /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
@@ -6616,13 +6349,6 @@ impl StackInstanceComprehensiveStatus {
         &self,
     ) -> std::option::Option<&crate::model::StackInstanceDetailedStatus> {
         self.detailed_status.as_ref()
-    }
-}
-impl std::fmt::Debug for StackInstanceComprehensiveStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackInstanceComprehensiveStatus");
-        formatter.field("detailed_status", &self.detailed_status);
-        formatter.finish()
     }
 }
 /// See [`StackInstanceComprehensiveStatus`](crate::model::StackInstanceComprehensiveStatus).
@@ -6894,7 +6620,7 @@ impl AsRef<str> for StackInstanceStatus {
 
 /// <p>The status that stack instances are filtered by.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackInstanceFilter {
     /// <p>The type of filter to apply.</p>
     #[doc(hidden)]
@@ -6911,14 +6637,6 @@ impl StackInstanceFilter {
     /// <p>The status to filter by.</p>
     pub fn values(&self) -> std::option::Option<&str> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for StackInstanceFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackInstanceFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`StackInstanceFilter`](crate::model::StackInstanceFilter).
@@ -7059,7 +6777,7 @@ impl AsRef<str> for StackInstanceFilterName {
 
 /// <p>The <code>Export</code> structure describes the exported output values for a stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Export {
     /// <p>The stack that contains the exported output name and value.</p>
     #[doc(hidden)]
@@ -7083,15 +6801,6 @@ impl Export {
     /// <p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Export {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Export");
-        formatter.field("exporting_stack_id", &self.exporting_stack_id);
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Export`](crate::model::Export).
@@ -7157,7 +6866,7 @@ impl Export {
 
 /// <p>The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeSetSummary {
     /// <p>The ID of the stack with which the change set is associated.</p>
     #[doc(hidden)]
@@ -7244,24 +6953,6 @@ impl ChangeSetSummary {
     /// <p>The root change set ID.</p>
     pub fn root_change_set_id(&self) -> std::option::Option<&str> {
         self.root_change_set_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangeSetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeSetSummary");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("change_set_id", &self.change_set_id);
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("execution_status", &self.execution_status);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("description", &self.description);
-        formatter.field("include_nested_stacks", &self.include_nested_stacks);
-        formatter.field("parent_change_set_id", &self.parent_change_set_id);
-        formatter.field("root_change_set_id", &self.root_change_set_id);
-        formatter.finish()
     }
 }
 /// See [`ChangeSetSummary`](crate::model::ChangeSetSummary).
@@ -7702,7 +7393,7 @@ impl AsRef<str> for ExecutionStatus {
 
 /// <p>Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceIdentifierSummary {
     /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
     #[doc(hidden)]
@@ -7726,15 +7417,6 @@ impl ResourceIdentifierSummary {
     /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
     pub fn resource_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_identifiers.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceIdentifierSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceIdentifierSummary");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("logical_resource_ids", &self.logical_resource_ids);
-        formatter.field("resource_identifiers", &self.resource_identifiers);
-        formatter.finish()
     }
 }
 /// See [`ResourceIdentifierSummary`](crate::model::ResourceIdentifierSummary).
@@ -7818,7 +7500,7 @@ impl ResourceIdentifierSummary {
 
 /// <p>The ParameterDeclaration data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterDeclaration {
     /// <p>The name that's associated with the parameter.</p>
     #[doc(hidden)]
@@ -7865,18 +7547,6 @@ impl ParameterDeclaration {
         &self,
     ) -> std::option::Option<&crate::model::ParameterConstraints> {
         self.parameter_constraints.as_ref()
-    }
-}
-impl std::fmt::Debug for ParameterDeclaration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterDeclaration");
-        formatter.field("parameter_key", &self.parameter_key);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("parameter_type", &self.parameter_type);
-        formatter.field("no_echo", &self.no_echo);
-        formatter.field("description", &self.description);
-        formatter.field("parameter_constraints", &self.parameter_constraints);
-        formatter.finish()
     }
 }
 /// See [`ParameterDeclaration`](crate::model::ParameterDeclaration).
@@ -7987,7 +7657,7 @@ impl ParameterDeclaration {
 
 /// <p>A set of criteria that CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, CloudFormation returns only the <code>AllowedValues</code> property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterConstraints {
     /// <p>A list of values that are permitted for a parameter.</p>
     #[doc(hidden)]
@@ -7997,13 +7667,6 @@ impl ParameterConstraints {
     /// <p>A list of values that are permitted for a parameter.</p>
     pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_values.as_deref()
-    }
-}
-impl std::fmt::Debug for ParameterConstraints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterConstraints");
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.finish()
     }
 }
 /// See [`ParameterConstraints`](crate::model::ParameterConstraints).
@@ -8143,7 +7806,7 @@ impl AsRef<str> for TemplateStage {
 /// <p>Resources that don't currently support drift detection can't be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
 /// <p>Use <code>DetectStackResourceDrift</code> to detect drift on individual resources, or <code>DetectStackDrift</code> to detect drift on all resources in a given stack that support drift detection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackResourceDrift {
     /// <p>The ID of the stack.</p>
     #[doc(hidden)]
@@ -8244,29 +7907,6 @@ impl StackResourceDrift {
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
-    }
-}
-impl std::fmt::Debug for StackResourceDrift {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackResourceDrift");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field(
-            "physical_resource_id_context",
-            &self.physical_resource_id_context,
-        );
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("expected_properties", &self.expected_properties);
-        formatter.field("actual_properties", &self.actual_properties);
-        formatter.field("property_differences", &self.property_differences);
-        formatter.field(
-            "stack_resource_drift_status",
-            &self.stack_resource_drift_status,
-        );
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("module_info", &self.module_info);
-        formatter.finish()
     }
 }
 /// See [`StackResourceDrift`](crate::model::StackResourceDrift).
@@ -8494,7 +8134,7 @@ impl StackResourceDrift {
 
 /// <p>Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyDifference {
     /// <p>The fully-qualified path to the resource property.</p>
     #[doc(hidden)]
@@ -8535,16 +8175,6 @@ impl PropertyDifference {
     /// </ul>
     pub fn difference_type(&self) -> std::option::Option<&crate::model::DifferenceType> {
         self.difference_type.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyDifference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyDifference");
-        formatter.field("property_path", &self.property_path);
-        formatter.field("expected_value", &self.expected_value);
-        formatter.field("actual_value", &self.actual_value);
-        formatter.field("difference_type", &self.difference_type);
-        formatter.finish()
     }
 }
 /// See [`PropertyDifference`](crate::model::PropertyDifference).
@@ -8733,7 +8363,7 @@ impl AsRef<str> for DifferenceType {
 
 /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhysicalResourceIdContextKeyValuePair {
     /// <p>The resource context key.</p>
     #[doc(hidden)]
@@ -8750,14 +8380,6 @@ impl PhysicalResourceIdContextKeyValuePair {
     /// <p>The resource context value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for PhysicalResourceIdContextKeyValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhysicalResourceIdContextKeyValuePair");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`PhysicalResourceIdContextKeyValuePair`](crate::model::PhysicalResourceIdContextKeyValuePair).
@@ -8809,7 +8431,7 @@ impl PhysicalResourceIdContextKeyValuePair {
 /// <p>For extensions that are modules, a public third-party extension that must be activated in your account in order for the module itself to be activated.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating public modules for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequiredActivatedType {
     /// <p>An alias assigned to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     #[doc(hidden)]
@@ -8842,16 +8464,6 @@ impl RequiredActivatedType {
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
     pub fn supported_major_versions(&self) -> std::option::Option<&[i32]> {
         self.supported_major_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for RequiredActivatedType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequiredActivatedType");
-        formatter.field("type_name_alias", &self.type_name_alias);
-        formatter.field("original_type_name", &self.original_type_name);
-        formatter.field("publisher_id", &self.publisher_id);
-        formatter.field("supported_major_versions", &self.supported_major_versions);
-        formatter.finish()
     }
 }
 /// See [`RequiredActivatedType`](crate::model::RequiredActivatedType).
@@ -9043,7 +8655,7 @@ impl AsRef<str> for TypeTestsStatus {
 
 /// <p>The structure that contains information about a stack set operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSetOperation {
     /// <p>The unique ID of a stack set operation.</p>
     #[doc(hidden)]
@@ -9166,28 +8778,6 @@ impl StackSetOperation {
     /// <p>The status of the operation in details.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for StackSetOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSetOperation");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("stack_set_id", &self.stack_set_id);
-        formatter.field("action", &self.action);
-        formatter.field("status", &self.status);
-        formatter.field("operation_preferences", &self.operation_preferences);
-        formatter.field("retain_stacks", &self.retain_stacks);
-        formatter.field("administration_role_arn", &self.administration_role_arn);
-        formatter.field("execution_role_name", &self.execution_role_name);
-        formatter.field("creation_timestamp", &self.creation_timestamp);
-        formatter.field("end_timestamp", &self.end_timestamp);
-        formatter.field("deployment_targets", &self.deployment_targets);
-        formatter.field(
-            "stack_set_drift_detection_details",
-            &self.stack_set_drift_detection_details,
-        );
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`StackSetOperation`](crate::model::StackSetOperation).
@@ -9435,7 +9025,7 @@ impl StackSetOperation {
 /// <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting unmanaged changes in stack sets</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSetDriftDetectionDetails {
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
@@ -9534,38 +9124,6 @@ impl StackSetDriftDetectionDetails {
     /// <p>The number of stack instances for which the drift detection operation failed.</p>
     pub fn failed_stack_instances_count(&self) -> i32 {
         self.failed_stack_instances_count
-    }
-}
-impl std::fmt::Debug for StackSetDriftDetectionDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSetDriftDetectionDetails");
-        formatter.field("drift_status", &self.drift_status);
-        formatter.field("drift_detection_status", &self.drift_detection_status);
-        formatter.field(
-            "last_drift_check_timestamp",
-            &self.last_drift_check_timestamp,
-        );
-        formatter.field(
-            "total_stack_instances_count",
-            &self.total_stack_instances_count,
-        );
-        formatter.field(
-            "drifted_stack_instances_count",
-            &self.drifted_stack_instances_count,
-        );
-        formatter.field(
-            "in_sync_stack_instances_count",
-            &self.in_sync_stack_instances_count,
-        );
-        formatter.field(
-            "in_progress_stack_instances_count",
-            &self.in_progress_stack_instances_count,
-        );
-        formatter.field(
-            "failed_stack_instances_count",
-            &self.failed_stack_instances_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`StackSetDriftDetectionDetails`](crate::model::StackSetDriftDetectionDetails).
@@ -9964,7 +9522,7 @@ impl AsRef<str> for StackSetDriftStatus {
 
 /// <p>A structure that contains information about a stack set. A stack set enables you to provision stacks into Amazon Web Services accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, in addition to any parameters and capabilities that the template requires.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackSet {
     /// <p>The name that's associated with the stack set.</p>
     #[doc(hidden)]
@@ -10096,31 +9654,6 @@ impl StackSet {
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn managed_execution(&self) -> std::option::Option<&crate::model::ManagedExecution> {
         self.managed_execution.as_ref()
-    }
-}
-impl std::fmt::Debug for StackSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSet");
-        formatter.field("stack_set_name", &self.stack_set_name);
-        formatter.field("stack_set_id", &self.stack_set_id);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("tags", &self.tags);
-        formatter.field("stack_set_arn", &self.stack_set_arn);
-        formatter.field("administration_role_arn", &self.administration_role_arn);
-        formatter.field("execution_role_name", &self.execution_role_name);
-        formatter.field(
-            "stack_set_drift_detection_details",
-            &self.stack_set_drift_detection_details,
-        );
-        formatter.field("auto_deployment", &self.auto_deployment);
-        formatter.field("permission_model", &self.permission_model);
-        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
-        formatter.field("managed_execution", &self.managed_execution);
-        formatter.finish()
     }
 }
 /// See [`StackSet`](crate::model::StackSet).
@@ -10423,7 +9956,7 @@ impl StackSet {
 
 /// <p>The Stack data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stack {
     /// <p>Unique identifier of the stack.</p>
     #[doc(hidden)]
@@ -10596,37 +10129,6 @@ impl Stack {
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn drift_information(&self) -> std::option::Option<&crate::model::StackDriftInformation> {
         self.drift_information.as_ref()
-    }
-}
-impl std::fmt::Debug for Stack {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stack");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("change_set_id", &self.change_set_id);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("deletion_time", &self.deletion_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("rollback_configuration", &self.rollback_configuration);
-        formatter.field("stack_status", &self.stack_status);
-        formatter.field("stack_status_reason", &self.stack_status_reason);
-        formatter.field("disable_rollback", &self.disable_rollback);
-        formatter.field("notification_ar_ns", &self.notification_ar_ns);
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "enable_termination_protection",
-            &self.enable_termination_protection,
-        );
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("root_id", &self.root_id);
-        formatter.field("drift_information", &self.drift_information);
-        formatter.finish()
     }
 }
 /// See [`Stack`](crate::model::Stack).
@@ -11006,7 +10508,7 @@ impl Stack {
 
 /// <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackDriftInformation {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration.</p>
     /// <ul>
@@ -11035,14 +10537,6 @@ impl StackDriftInformation {
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
     pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for StackDriftInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackDriftInformation");
-        formatter.field("stack_drift_status", &self.stack_drift_status);
-        formatter.field("last_check_timestamp", &self.last_check_timestamp);
-        formatter.finish()
     }
 }
 /// See [`StackDriftInformation`](crate::model::StackDriftInformation).
@@ -11111,7 +10605,7 @@ impl StackDriftInformation {
 
 /// <p>The Output data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Output {
     /// <p>The key associated with the output.</p>
     #[doc(hidden)]
@@ -11142,16 +10636,6 @@ impl Output {
     /// <p>The name of the export associated with the output.</p>
     pub fn export_name(&self) -> std::option::Option<&str> {
         self.export_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Output {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Output");
-        formatter.field("output_key", &self.output_key);
-        formatter.field("output_value", &self.output_value);
-        formatter.field("description", &self.description);
-        formatter.field("export_name", &self.export_name);
-        formatter.finish()
     }
 }
 /// See [`Output`](crate::model::Output).
@@ -11226,7 +10710,7 @@ impl Output {
 
 /// <p>The StackResource data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackResource {
     /// <p>The name associated with the stack.</p>
     #[doc(hidden)]
@@ -11308,23 +10792,6 @@ impl StackResource {
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
-    }
-}
-impl std::fmt::Debug for StackResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackResource");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("resource_status", &self.resource_status);
-        formatter.field("resource_status_reason", &self.resource_status_reason);
-        formatter.field("description", &self.description);
-        formatter.field("drift_information", &self.drift_information);
-        formatter.field("module_info", &self.module_info);
-        formatter.finish()
     }
 }
 /// See [`StackResource`](crate::model::StackResource).
@@ -11511,7 +10978,7 @@ impl StackResource {
 
 /// <p>Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackResourceDriftInformation {
     /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
     /// <ul>
@@ -11542,17 +11009,6 @@ impl StackResourceDriftInformation {
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for StackResourceDriftInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackResourceDriftInformation");
-        formatter.field(
-            "stack_resource_drift_status",
-            &self.stack_resource_drift_status,
-        );
-        formatter.field("last_check_timestamp", &self.last_check_timestamp);
-        formatter.finish()
     }
 }
 /// See [`StackResourceDriftInformation`](crate::model::StackResourceDriftInformation).
@@ -11625,7 +11081,7 @@ impl StackResourceDriftInformation {
 
 /// <p>Contains detailed information about the specified stack resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackResourceDetail {
     /// <p>The name associated with the stack.</p>
     #[doc(hidden)]
@@ -11714,24 +11170,6 @@ impl StackResourceDetail {
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
-    }
-}
-impl std::fmt::Debug for StackResourceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackResourceDetail");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
-        formatter.field("resource_status", &self.resource_status);
-        formatter.field("resource_status_reason", &self.resource_status_reason);
-        formatter.field("description", &self.description);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("drift_information", &self.drift_information);
-        formatter.field("module_info", &self.module_info);
-        formatter.finish()
     }
 }
 /// See [`StackResourceDetail`](crate::model::StackResourceDetail).
@@ -11930,7 +11368,7 @@ impl StackResourceDetail {
 
 /// <p>An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, in addition to the ID of the actual stack and the stack status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackInstance {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     #[doc(hidden)]
@@ -12042,26 +11480,6 @@ impl StackInstance {
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
     pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for StackInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackInstance");
-        formatter.field("stack_set_id", &self.stack_set_id);
-        formatter.field("region", &self.region);
-        formatter.field("account", &self.account);
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("parameter_overrides", &self.parameter_overrides);
-        formatter.field("status", &self.status);
-        formatter.field("stack_instance_status", &self.stack_instance_status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("organizational_unit_id", &self.organizational_unit_id);
-        formatter.field("drift_status", &self.drift_status);
-        formatter.field(
-            "last_drift_check_timestamp",
-            &self.last_drift_check_timestamp,
-        );
-        formatter.finish()
     }
 }
 /// See [`StackInstance`](crate::model::StackInstance).
@@ -12281,7 +11699,7 @@ impl StackInstance {
 
 /// <p>The StackEvent data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StackEvent {
     /// <p>The unique ID name of the instance of the stack.</p>
     #[doc(hidden)]
@@ -12408,28 +11826,6 @@ impl StackEvent {
     /// </ul>
     pub fn hook_failure_mode(&self) -> std::option::Option<&crate::model::HookFailureMode> {
         self.hook_failure_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for StackEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackEvent");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("event_id", &self.event_id);
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("resource_status", &self.resource_status);
-        formatter.field("resource_status_reason", &self.resource_status_reason);
-        formatter.field("resource_properties", &self.resource_properties);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("hook_type", &self.hook_type);
-        formatter.field("hook_status", &self.hook_status);
-        formatter.field("hook_status_reason", &self.hook_status_reason);
-        formatter.field("hook_invocation_point", &self.hook_invocation_point);
-        formatter.field("hook_failure_mode", &self.hook_failure_mode);
-        formatter.finish()
     }
 }
 /// See [`StackEvent`](crate::model::StackEvent).
@@ -13266,7 +12662,7 @@ impl AsRef<str> for ChangeSetHooksStatus {
 
 /// <p>Specifies the resource, the hook, and the hook version to be invoked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeSetHook {
     /// <p>Specifies the points in provisioning logic where a hook is invoked.</p>
     #[doc(hidden)]
@@ -13341,21 +12737,6 @@ impl ChangeSetHook {
     /// <p>Specifies details about the target that the hook will run against.</p>
     pub fn target_details(&self) -> std::option::Option<&crate::model::ChangeSetHookTargetDetails> {
         self.target_details.as_ref()
-    }
-}
-impl std::fmt::Debug for ChangeSetHook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeSetHook");
-        formatter.field("invocation_point", &self.invocation_point);
-        formatter.field("failure_mode", &self.failure_mode);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("type_version_id", &self.type_version_id);
-        formatter.field(
-            "type_configuration_version_id",
-            &self.type_configuration_version_id,
-        );
-        formatter.field("target_details", &self.target_details);
-        formatter.finish()
     }
 }
 /// See [`ChangeSetHook`](crate::model::ChangeSetHook).
@@ -13502,7 +12883,7 @@ impl ChangeSetHook {
 
 /// <p>Specifies target details for an activated hook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeSetHookTargetDetails {
     /// <p>The name of the type.</p>
     #[doc(hidden)]
@@ -13522,14 +12903,6 @@ impl ChangeSetHookTargetDetails {
         &self,
     ) -> std::option::Option<&crate::model::ChangeSetHookResourceTargetDetails> {
         self.resource_target_details.as_ref()
-    }
-}
-impl std::fmt::Debug for ChangeSetHookTargetDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeSetHookTargetDetails");
-        formatter.field("target_type", &self.target_type);
-        formatter.field("resource_target_details", &self.resource_target_details);
-        formatter.finish()
     }
 }
 /// See [`ChangeSetHookTargetDetails`](crate::model::ChangeSetHookTargetDetails).
@@ -13590,7 +12963,7 @@ impl ChangeSetHookTargetDetails {
 
 /// <p>Specifies <code>RESOURCE</code> type target details for activated hooks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeSetHookResourceTargetDetails {
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
     #[doc(hidden)]
@@ -13614,15 +12987,6 @@ impl ChangeSetHookResourceTargetDetails {
     /// <p>Specifies the action of the resource.</p>
     pub fn resource_action(&self) -> std::option::Option<&crate::model::ChangeAction> {
         self.resource_action.as_ref()
-    }
-}
-impl std::fmt::Debug for ChangeSetHookResourceTargetDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeSetHookResourceTargetDetails");
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_action", &self.resource_action);
-        formatter.finish()
     }
 }
 /// See [`ChangeSetHookResourceTargetDetails`](crate::model::ChangeSetHookResourceTargetDetails).
@@ -13884,7 +13248,7 @@ impl AsRef<str> for HookTargetType {
 
 /// <p>The <code>Change</code> structure describes the changes CloudFormation will perform if you execute the change set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Change {
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
     #[doc(hidden)]
@@ -13908,15 +13272,6 @@ impl Change {
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub fn resource_change(&self) -> std::option::Option<&crate::model::ResourceChange> {
         self.resource_change.as_ref()
-    }
-}
-impl std::fmt::Debug for Change {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Change");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("hook_invocation_count", &self.hook_invocation_count);
-        formatter.field("resource_change", &self.resource_change);
-        formatter.finish()
     }
 }
 /// See [`Change`](crate::model::Change).
@@ -13982,7 +13337,7 @@ impl Change {
 
 /// <p>The <code>ResourceChange</code> structure describes the resource and the action that CloudFormation will perform on it if you execute this change set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceChange {
     /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
     #[doc(hidden)]
@@ -14050,21 +13405,6 @@ impl ResourceChange {
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceChange");
-        formatter.field("action", &self.action);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("replacement", &self.replacement);
-        formatter.field("scope", &self.scope);
-        formatter.field("details", &self.details);
-        formatter.field("change_set_id", &self.change_set_id);
-        formatter.field("module_info", &self.module_info);
-        formatter.finish()
     }
 }
 /// See [`ResourceChange`](crate::model::ResourceChange).
@@ -14240,7 +13580,7 @@ impl ResourceChange {
 
 /// <p>For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes CloudFormation will make to that resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceChangeDetail {
     /// <p>A <code>ResourceTargetDefinition</code> structure that describes the field that CloudFormation will change and whether the resource will be recreated.</p>
     #[doc(hidden)]
@@ -14291,16 +13631,6 @@ impl ResourceChangeDetail {
     /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is given for <code>CausingEntity</code>.</p>
     pub fn causing_entity(&self) -> std::option::Option<&str> {
         self.causing_entity.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceChangeDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceChangeDetail");
-        formatter.field("target", &self.target);
-        formatter.field("evaluation", &self.evaluation);
-        formatter.field("change_source", &self.change_source);
-        formatter.field("causing_entity", &self.causing_entity);
-        formatter.finish()
     }
 }
 /// See [`ResourceChangeDetail`](crate::model::ResourceChangeDetail).
@@ -14608,7 +13938,7 @@ impl AsRef<str> for EvaluationType {
 
 /// <p>The field that CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTargetDefinition {
     /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     #[doc(hidden)]
@@ -14632,15 +13962,6 @@ impl ResourceTargetDefinition {
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
     pub fn requires_recreation(&self) -> std::option::Option<&crate::model::RequiresRecreation> {
         self.requires_recreation.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceTargetDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTargetDefinition");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("name", &self.name);
-        formatter.field("requires_recreation", &self.requires_recreation);
-        formatter.finish()
     }
 }
 /// See [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition).
@@ -15112,7 +14433,7 @@ impl AsRef<str> for ChangeType {
 /// </ul>
 /// <p>For more information about these account limits, and other CloudFormation limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The name of the account limit.</p>
     /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code> </p>
@@ -15131,14 +14452,6 @@ impl AccountLimit {
     /// <p>The value that's associated with the account limit name.</p>
     pub fn value(&self) -> std::option::Option<i32> {
         self.value
-    }
-}
-impl std::fmt::Debug for AccountLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountLimit");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AccountLimit`](crate::model::AccountLimit).
@@ -15286,7 +14599,7 @@ impl AsRef<str> for OnFailure {
 
 /// <p>Describes the target resource of an import operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceToImport {
     /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
     #[doc(hidden)]
@@ -15314,15 +14627,6 @@ impl ResourceToImport {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.resource_identifier.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceToImport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceToImport");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.finish()
     }
 }
 /// See [`ResourceToImport`](crate::model::ResourceToImport).
@@ -15504,7 +14808,7 @@ impl AsRef<str> for ChangeSetType {
 /// <p>Detailed information concerning the specification of a CloudFormation extension in a given account and region.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypeConfigurationDetails {
     /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
     #[doc(hidden)]
@@ -15562,19 +14866,6 @@ impl TypeConfigurationDetails {
     /// <p>Whether this configuration data is the default configuration for the extension.</p>
     pub fn is_default_configuration(&self) -> std::option::Option<bool> {
         self.is_default_configuration
-    }
-}
-impl std::fmt::Debug for TypeConfigurationDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypeConfigurationDetails");
-        formatter.field("arn", &self.arn);
-        formatter.field("alias", &self.alias);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("type_arn", &self.type_arn);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("is_default_configuration", &self.is_default_configuration);
-        formatter.finish()
     }
 }
 /// See [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails).
@@ -15697,7 +14988,7 @@ impl TypeConfigurationDetails {
 
 /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypeConfigurationIdentifier {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region.</p>
@@ -15737,17 +15028,6 @@ impl TypeConfigurationIdentifier {
     /// <p>The name of the extension type to which this configuration applies.</p>
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TypeConfigurationIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypeConfigurationIdentifier");
-        formatter.field("type_arn", &self.type_arn);
-        formatter.field("type_configuration_alias", &self.type_configuration_alias);
-        formatter.field("type_configuration_arn", &self.type_configuration_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.finish()
     }
 }
 /// See [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier).
@@ -15845,7 +15125,7 @@ impl TypeConfigurationIdentifier {
 
 /// <p>Detailed information concerning an error generated during the setting of configuration data for a CloudFormation extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsError {
     /// <p>The error code.</p>
     #[doc(hidden)]
@@ -15872,18 +15152,6 @@ impl BatchDescribeTypeConfigurationsError {
         &self,
     ) -> std::option::Option<&crate::model::TypeConfigurationIdentifier> {
         self.type_configuration_identifier.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchDescribeTypeConfigurationsError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDescribeTypeConfigurationsError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field(
-            "type_configuration_identifier",
-            &self.type_configuration_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError).

@@ -2,7 +2,7 @@
 
 /// <p>An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Change {
     /// <p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.</p>
     #[doc(hidden)]
@@ -33,16 +33,6 @@ impl Change {
     /// <p>Optional name for the change.</p>
     pub fn change_name(&self) -> std::option::Option<&str> {
         self.change_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Change {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Change");
-        formatter.field("change_type", &self.change_type);
-        formatter.field("entity", &self.entity);
-        formatter.field("details", &self.details);
-        formatter.field("change_name", &self.change_name);
-        formatter.finish()
     }
 }
 /// See [`Change`](crate::model::Change).
@@ -117,7 +107,7 @@ impl Change {
 
 /// <p>An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entity {
     /// <p>The type of entity.</p>
     #[doc(hidden)]
@@ -134,14 +124,6 @@ impl Entity {
     /// <p>The identifier for the entity.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for Entity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entity");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
     }
 }
 /// See [`Entity`](crate::model::Entity).
@@ -192,7 +174,7 @@ impl Entity {
 
 /// <p>This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
     #[doc(hidden)]
@@ -237,18 +219,6 @@ impl EntitySummary {
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub fn visibility(&self) -> std::option::Option<&str> {
         self.visibility.as_deref()
-    }
-}
-impl std::fmt::Debug for EntitySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitySummary");
-        formatter.field("name", &self.name);
-        formatter.field("entity_type", &self.entity_type);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("entity_arn", &self.entity_arn);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("visibility", &self.visibility);
-        formatter.finish()
     }
 }
 /// See [`EntitySummary`](crate::model::EntitySummary).
@@ -350,7 +320,7 @@ impl EntitySummary {
 
 /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sort {
     /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
     /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>
@@ -369,14 +339,6 @@ impl Sort {
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for Sort {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sort");
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`Sort`](crate::model::Sort).
@@ -522,7 +484,7 @@ impl AsRef<str> for SortOrder {
 
 /// <p>A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
     /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
@@ -561,14 +523,6 @@ impl Filter {
     /// </ul>
     pub fn value_list(&self) -> std::option::Option<&[std::string::String]> {
         self.value_list.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("value_list", &self.value_list);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -650,7 +604,7 @@ impl Filter {
 
 /// <p>A summary of a change set returned in a list of change sets when the <code>ListChangeSets</code> action is called.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeSetSummaryListItem {
     /// <p>The unique identifier for a change set.</p>
     #[doc(hidden)]
@@ -709,20 +663,6 @@ impl ChangeSetSummaryListItem {
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub fn failure_code(&self) -> std::option::Option<&crate::model::FailureCode> {
         self.failure_code.as_ref()
-    }
-}
-impl std::fmt::Debug for ChangeSetSummaryListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeSetSummaryListItem");
-        formatter.field("change_set_id", &self.change_set_id);
-        formatter.field("change_set_arn", &self.change_set_arn);
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status", &self.status);
-        formatter.field("entity_id_list", &self.entity_id_list);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.finish()
     }
 }
 /// See [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
@@ -1064,7 +1004,7 @@ impl AsRef<str> for ChangeStatus {
 
 /// <p>This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeSummary {
     /// <p>The type of the change.</p>
     #[doc(hidden)]
@@ -1102,17 +1042,6 @@ impl ChangeSummary {
     /// <p>Optional name for the change.</p>
     pub fn change_name(&self) -> std::option::Option<&str> {
         self.change_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeSummary");
-        formatter.field("change_type", &self.change_type);
-        formatter.field("entity", &self.entity);
-        formatter.field("details", &self.details);
-        formatter.field("error_detail_list", &self.error_detail_list);
-        formatter.field("change_name", &self.change_name);
-        formatter.finish()
     }
 }
 /// See [`ChangeSummary`](crate::model::ChangeSummary).
@@ -1208,7 +1137,7 @@ impl ChangeSummary {
 
 /// <p>Details about the error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetail {
     /// <p>The error code that identifies the type of error.</p>
     #[doc(hidden)]
@@ -1225,14 +1154,6 @@ impl ErrorDetail {
     /// <p>The message for the error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetail");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).

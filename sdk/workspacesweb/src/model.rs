@@ -2,7 +2,7 @@
 
 /// <p>Information about a field passed inside a request that resulted in an exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field that failed validation.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The message describing why the field failed validation.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>A user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSettings {
     /// <p>The ARN of the user settings.</p>
     #[doc(hidden)]
@@ -250,27 +242,6 @@ impl UserSettings {
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     pub fn idle_disconnect_timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.idle_disconnect_timeout_in_minutes
-    }
-}
-impl std::fmt::Debug for UserSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSettings");
-        formatter.field("user_settings_arn", &self.user_settings_arn);
-        formatter.field("associated_portal_arns", &self.associated_portal_arns);
-        formatter.field("copy_allowed", &self.copy_allowed);
-        formatter.field("paste_allowed", &self.paste_allowed);
-        formatter.field("download_allowed", &self.download_allowed);
-        formatter.field("upload_allowed", &self.upload_allowed);
-        formatter.field("print_allowed", &self.print_allowed);
-        formatter.field(
-            "disconnect_timeout_in_minutes",
-            &self.disconnect_timeout_in_minutes,
-        );
-        formatter.field(
-            "idle_disconnect_timeout_in_minutes",
-            &self.idle_disconnect_timeout_in_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`UserSettings`](crate::model::UserSettings).
@@ -639,7 +610,7 @@ impl std::fmt::Debug for Portal {
 pub mod portal {
 
     /// A builder for [`Portal`](crate::model::Portal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) renderer_type: std::option::Option<crate::model::RendererType>,
@@ -821,6 +792,24 @@ pub mod portal {
                 trust_store_arn: self.trust_store_arn,
                 status_reason: self.status_reason,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("portal_arn", &self.portal_arn);
+            formatter.field("renderer_type", &self.renderer_type);
+            formatter.field("browser_type", &self.browser_type);
+            formatter.field("portal_status", &self.portal_status);
+            formatter.field("portal_endpoint", &self.portal_endpoint);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("creation_date", &self.creation_date);
+            formatter.field("browser_settings_arn", &self.browser_settings_arn);
+            formatter.field("user_settings_arn", &self.user_settings_arn);
+            formatter.field("network_settings_arn", &self.network_settings_arn);
+            formatter.field("trust_store_arn", &self.trust_store_arn);
+            formatter.field("status_reason", &self.status_reason);
+            formatter.finish()
         }
     }
 }
@@ -1098,7 +1087,7 @@ impl AsRef<str> for RendererType {
 
 /// <p>A network settings resource that can be associated with a web portal. Once associated with a web portal, network settings define how streaming instances will connect with your specified VPC. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkSettings {
     /// <p>The ARN of the network settings.</p>
     #[doc(hidden)]
@@ -1136,17 +1125,6 @@ impl NetworkSettings {
     /// <p>One or more security groups used to control access from streaming instances to your VPC. </p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkSettings");
-        formatter.field("network_settings_arn", &self.network_settings_arn);
-        formatter.field("associated_portal_arns", &self.associated_portal_arns);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`NetworkSettings`](crate::model::NetworkSettings).
@@ -1399,7 +1377,7 @@ impl std::fmt::Debug for IdentityProvider {
 pub mod identity_provider {
 
     /// A builder for [`IdentityProvider`](crate::model::IdentityProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -1561,6 +1539,19 @@ pub mod identity_provider {
                 identity_provider_type: self.identity_provider_type,
                 identity_provider_details: self.identity_provider_details,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("identity_provider_arn", &self.identity_provider_arn);
+            formatter.field("identity_provider_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("identity_provider_type", &self.identity_provider_type);
+            formatter.field(
+                "identity_provider_details",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
         }
     }
 }
@@ -1731,7 +1722,7 @@ impl std::fmt::Debug for BrowserSettings {
 pub mod browser_settings {
 
     /// A builder for [`BrowserSettings`](crate::model::BrowserSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
         pub(crate) associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1792,6 +1783,15 @@ pub mod browser_settings {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("browser_settings_arn", &self.browser_settings_arn);
+            formatter.field("associated_portal_arns", &self.associated_portal_arns);
+            formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl BrowserSettings {
     /// Creates a new builder-style object to manufacture [`BrowserSettings`](crate::model::BrowserSettings).
@@ -1833,7 +1833,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1867,6 +1867,14 @@ pub mod tag {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key", &"*** Sensitive Data Redacted ***");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1877,7 +1885,7 @@ impl Tag {
 
 /// <p>The summary of user settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSettingsSummary {
     /// <p>The ARN of the user settings.</p>
     #[doc(hidden)]
@@ -1936,26 +1944,6 @@ impl UserSettingsSummary {
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     pub fn idle_disconnect_timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.idle_disconnect_timeout_in_minutes
-    }
-}
-impl std::fmt::Debug for UserSettingsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSettingsSummary");
-        formatter.field("user_settings_arn", &self.user_settings_arn);
-        formatter.field("copy_allowed", &self.copy_allowed);
-        formatter.field("paste_allowed", &self.paste_allowed);
-        formatter.field("download_allowed", &self.download_allowed);
-        formatter.field("upload_allowed", &self.upload_allowed);
-        formatter.field("print_allowed", &self.print_allowed);
-        formatter.field(
-            "disconnect_timeout_in_minutes",
-            &self.disconnect_timeout_in_minutes,
-        );
-        formatter.field(
-            "idle_disconnect_timeout_in_minutes",
-            &self.idle_disconnect_timeout_in_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`UserSettingsSummary`](crate::model::UserSettingsSummary).
@@ -2102,7 +2090,7 @@ impl UserSettingsSummary {
 
 /// <p>The summary of the trust store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustStoreSummary {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
@@ -2112,13 +2100,6 @@ impl TrustStoreSummary {
     /// <p>The ARN of the trust store.</p>
     pub fn trust_store_arn(&self) -> std::option::Option<&str> {
         self.trust_store_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for TrustStoreSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustStoreSummary");
-        formatter.field("trust_store_arn", &self.trust_store_arn);
-        formatter.finish()
     }
 }
 /// See [`TrustStoreSummary`](crate::model::TrustStoreSummary).
@@ -2160,7 +2141,7 @@ impl TrustStoreSummary {
 
 /// <p>The summary of the certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateSummary {
     /// <p>A hexadecimal identifier for the certificate.</p>
     #[doc(hidden)]
@@ -2198,17 +2179,6 @@ impl CertificateSummary {
     /// <p>The certificate is not valid after this date.</p>
     pub fn not_valid_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.not_valid_after.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateSummary");
-        formatter.field("thumbprint", &self.thumbprint);
-        formatter.field("subject", &self.subject);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("not_valid_before", &self.not_valid_before);
-        formatter.field("not_valid_after", &self.not_valid_after);
-        formatter.finish()
     }
 }
 /// See [`CertificateSummary`](crate::model::CertificateSummary).
@@ -2404,7 +2374,7 @@ impl std::fmt::Debug for PortalSummary {
 pub mod portal_summary {
 
     /// A builder for [`PortalSummary`](crate::model::PortalSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) renderer_type: std::option::Option<crate::model::RendererType>,
@@ -2573,6 +2543,23 @@ pub mod portal_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("portal_arn", &self.portal_arn);
+            formatter.field("renderer_type", &self.renderer_type);
+            formatter.field("browser_type", &self.browser_type);
+            formatter.field("portal_status", &self.portal_status);
+            formatter.field("portal_endpoint", &self.portal_endpoint);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("creation_date", &self.creation_date);
+            formatter.field("browser_settings_arn", &self.browser_settings_arn);
+            formatter.field("user_settings_arn", &self.user_settings_arn);
+            formatter.field("network_settings_arn", &self.network_settings_arn);
+            formatter.field("trust_store_arn", &self.trust_store_arn);
+            formatter.finish()
+        }
+    }
 }
 impl PortalSummary {
     /// Creates a new builder-style object to manufacture [`PortalSummary`](crate::model::PortalSummary).
@@ -2583,7 +2570,7 @@ impl PortalSummary {
 
 /// <p>The summary of network settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkSettingsSummary {
     /// <p>The ARN of the network settings.</p>
     #[doc(hidden)]
@@ -2600,14 +2587,6 @@ impl NetworkSettingsSummary {
     /// <p>The VPC ID of the network settings.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkSettingsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkSettingsSummary");
-        formatter.field("network_settings_arn", &self.network_settings_arn);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkSettingsSummary`](crate::model::NetworkSettingsSummary).
@@ -2702,7 +2681,7 @@ impl std::fmt::Debug for IdentityProviderSummary {
 pub mod identity_provider_summary {
 
     /// A builder for [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -2757,6 +2736,15 @@ pub mod identity_provider_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("identity_provider_arn", &self.identity_provider_arn);
+            formatter.field("identity_provider_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("identity_provider_type", &self.identity_provider_type);
+            formatter.finish()
+        }
+    }
 }
 impl IdentityProviderSummary {
     /// Creates a new builder-style object to manufacture [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
@@ -2767,7 +2755,7 @@ impl IdentityProviderSummary {
 
 /// <p>The summary for browser settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrowserSettingsSummary {
     /// <p>The ARN of the browser settings.</p>
     #[doc(hidden)]
@@ -2777,13 +2765,6 @@ impl BrowserSettingsSummary {
     /// <p>The ARN of the browser settings.</p>
     pub fn browser_settings_arn(&self) -> std::option::Option<&str> {
         self.browser_settings_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for BrowserSettingsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrowserSettingsSummary");
-        formatter.field("browser_settings_arn", &self.browser_settings_arn);
-        formatter.finish()
     }
 }
 /// See [`BrowserSettingsSummary`](crate::model::BrowserSettingsSummary).
@@ -2825,7 +2806,7 @@ impl BrowserSettingsSummary {
 
 /// <p>The certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
     /// <p>A hexadecimal identifier for the certificate.</p>
     #[doc(hidden)]
@@ -2870,18 +2851,6 @@ impl Certificate {
     /// <p>The body of the certificate.</p>
     pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.body.as_ref()
-    }
-}
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("thumbprint", &self.thumbprint);
-        formatter.field("subject", &self.subject);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("not_valid_before", &self.not_valid_before);
-        formatter.field("not_valid_after", &self.not_valid_after);
-        formatter.field("body", &self.body);
-        formatter.finish()
     }
 }
 /// See [`Certificate`](crate::model::Certificate).
@@ -2986,7 +2955,7 @@ impl Certificate {
 
 /// <p>A trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustStore {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
     #[doc(hidden)]
@@ -3003,14 +2972,6 @@ impl TrustStore {
     /// <p>The ARN of the trust store.</p>
     pub fn trust_store_arn(&self) -> std::option::Option<&str> {
         self.trust_store_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for TrustStore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustStore");
-        formatter.field("associated_portal_arns", &self.associated_portal_arns);
-        formatter.field("trust_store_arn", &self.trust_store_arn);
-        formatter.finish()
     }
 }
 /// See [`TrustStore`](crate::model::TrustStore).

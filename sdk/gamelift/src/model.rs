@@ -4,7 +4,7 @@
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Script {
     /// <p>A unique identifier for the Realtime script</p>
     #[doc(hidden)]
@@ -56,19 +56,6 @@ impl Script {
     /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
-    }
-}
-impl std::fmt::Debug for Script {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Script");
-        formatter.field("script_id", &self.script_id);
-        formatter.field("script_arn", &self.script_arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("size_on_disk", &self.size_on_disk);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("storage_location", &self.storage_location);
-        formatter.finish()
     }
 }
 /// See [`Script`](crate::model::Script).
@@ -185,7 +172,7 @@ impl Script {
 
 /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>An Amazon S3 bucket identifier. This is the name of the S3 bucket.</p> <note>
     /// <p>GameLift currently does not support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
@@ -220,16 +207,6 @@ impl S3Location {
     /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
     pub fn object_version(&self) -> std::option::Option<&str> {
         self.object_version.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("object_version", &self.object_version);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -314,7 +291,7 @@ impl S3Location {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeRuntimeConfiguration</code> | <code>UpdateRuntimeConfiguration</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimeConfiguration {
     /// <p>A collection of server process configurations that identify what server processes to run on each instance in a fleet.</p>
     #[doc(hidden)]
@@ -338,21 +315,6 @@ impl RuntimeConfiguration {
     /// <p>The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.</p>
     pub fn game_session_activation_timeout_seconds(&self) -> std::option::Option<i32> {
         self.game_session_activation_timeout_seconds
-    }
-}
-impl std::fmt::Debug for RuntimeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuntimeConfiguration");
-        formatter.field("server_processes", &self.server_processes);
-        formatter.field(
-            "max_concurrent_game_session_activations",
-            &self.max_concurrent_game_session_activations,
-        );
-        formatter.field(
-            "game_session_activation_timeout_seconds",
-            &self.game_session_activation_timeout_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
@@ -433,7 +395,7 @@ impl RuntimeConfiguration {
 
 /// <p>A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's <code>RuntimeConfiguration</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerProcess {
     /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
     /// <ul>
@@ -465,15 +427,6 @@ impl ServerProcess {
     /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
     pub fn concurrent_executions(&self) -> std::option::Option<i32> {
         self.concurrent_executions
-    }
-}
-impl std::fmt::Debug for ServerProcess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerProcess");
-        formatter.field("launch_path", &self.launch_path);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("concurrent_executions", &self.concurrent_executions);
-        formatter.finish()
     }
 }
 /// See [`ServerProcess`](crate::model::ServerProcess).
@@ -544,7 +497,7 @@ impl ServerProcess {
 
 /// <p>Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchmakingConfiguration {
     /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
     #[doc(hidden)]
@@ -690,32 +643,6 @@ impl MatchmakingConfiguration {
     /// </ul>
     pub fn flex_match_mode(&self) -> std::option::Option<&crate::model::FlexMatchMode> {
         self.flex_match_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for MatchmakingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchmakingConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("configuration_arn", &self.configuration_arn);
-        formatter.field("description", &self.description);
-        formatter.field("game_session_queue_arns", &self.game_session_queue_arns);
-        formatter.field("request_timeout_seconds", &self.request_timeout_seconds);
-        formatter.field(
-            "acceptance_timeout_seconds",
-            &self.acceptance_timeout_seconds,
-        );
-        formatter.field("acceptance_required", &self.acceptance_required);
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("rule_set_arn", &self.rule_set_arn);
-        formatter.field("notification_target", &self.notification_target);
-        formatter.field("additional_player_count", &self.additional_player_count);
-        formatter.field("custom_event_data", &self.custom_event_data);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("game_properties", &self.game_properties);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("backfill_mode", &self.backfill_mode);
-        formatter.field("flex_match_mode", &self.flex_match_mode);
-        formatter.finish()
     }
 }
 /// See [`MatchmakingConfiguration`](crate::model::MatchmakingConfiguration).
@@ -1192,7 +1119,7 @@ impl AsRef<str> for BackfillMode {
 
 /// <p>Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> GameLift Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameProperty {
     /// <p>The game property identifier.</p>
     #[doc(hidden)]
@@ -1209,14 +1136,6 @@ impl GameProperty {
     /// <p>The game property value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for GameProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameProperty");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`GameProperty`](crate::model::GameProperty).
@@ -1269,7 +1188,7 @@ impl GameProperty {
 /// <p> <b>Related actions</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionQueue {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
     #[doc(hidden)]
@@ -1350,21 +1269,6 @@ impl GameSessionQueue {
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub fn notification_target(&self) -> std::option::Option<&str> {
         self.notification_target.as_deref()
-    }
-}
-impl std::fmt::Debug for GameSessionQueue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameSessionQueue");
-        formatter.field("name", &self.name);
-        formatter.field("game_session_queue_arn", &self.game_session_queue_arn);
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.field("player_latency_policies", &self.player_latency_policies);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("filter_configuration", &self.filter_configuration);
-        formatter.field("priority_configuration", &self.priority_configuration);
-        formatter.field("custom_event_data", &self.custom_event_data);
-        formatter.field("notification_target", &self.notification_target);
-        formatter.finish()
     }
 }
 /// See [`GameSessionQueue`](crate::model::GameSessionQueue).
@@ -1551,7 +1455,7 @@ impl GameSessionQueue {
 /// <p>Changing the priority order will affect how game sessions are placed.</p>
 /// <p>Priority configurations are part of a <code>GameSessionQueue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PriorityConfiguration {
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
@@ -1580,14 +1484,6 @@ impl PriorityConfiguration {
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
     pub fn location_order(&self) -> std::option::Option<&[std::string::String]> {
         self.location_order.as_deref()
-    }
-}
-impl std::fmt::Debug for PriorityConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PriorityConfiguration");
-        formatter.field("priority_order", &self.priority_order);
-        formatter.field("location_order", &self.location_order);
-        formatter.finish()
     }
 }
 /// See [`PriorityConfiguration`](crate::model::PriorityConfiguration).
@@ -1769,7 +1665,7 @@ impl AsRef<str> for PriorityType {
 /// <p>A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.</p>
 /// <p>Filter configurations are part of a <code>GameSessionQueue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterConfiguration {
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
     #[doc(hidden)]
@@ -1779,13 +1675,6 @@ impl FilterConfiguration {
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
     pub fn allowed_locations(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_locations.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterConfiguration");
-        formatter.field("allowed_locations", &self.allowed_locations);
-        formatter.finish()
     }
 }
 /// See [`FilterConfiguration`](crate::model::FilterConfiguration).
@@ -1834,7 +1723,7 @@ impl FilterConfiguration {
 /// <p>A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue's destinations. </p>
 /// <p>Destinations are part of a <code>GameSessionQueue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionQueueDestination {
     /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions. </p>
     #[doc(hidden)]
@@ -1844,13 +1733,6 @@ impl GameSessionQueueDestination {
     /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions. </p>
     pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GameSessionQueueDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameSessionQueueDestination");
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.finish()
     }
 }
 /// See [`GameSessionQueueDestination`](crate::model::GameSessionQueueDestination).
@@ -1893,7 +1775,7 @@ impl GameSessionQueueDestination {
 /// <p>Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time. </p>
 /// <p>Latency policies are part of a <code>GameSessionQueue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlayerLatencyPolicy {
     /// <p>The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.</p>
     #[doc(hidden)]
@@ -1910,17 +1792,6 @@ impl PlayerLatencyPolicy {
     /// <p>The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.</p>
     pub fn policy_duration_seconds(&self) -> std::option::Option<i32> {
         self.policy_duration_seconds
-    }
-}
-impl std::fmt::Debug for PlayerLatencyPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlayerLatencyPolicy");
-        formatter.field(
-            "maximum_individual_player_latency_milliseconds",
-            &self.maximum_individual_player_latency_milliseconds,
-        );
-        formatter.field("policy_duration_seconds", &self.policy_duration_seconds);
-        formatter.finish()
     }
 }
 /// See [`PlayerLatencyPolicy`](crate::model::PlayerLatencyPolicy).
@@ -1979,7 +1850,7 @@ impl PlayerLatencyPolicy {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSession {
     /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
     /// <region>
@@ -2160,40 +2031,6 @@ impl GameSession {
     /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for GameSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameSession");
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("name", &self.name);
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("termination_time", &self.termination_time);
-        formatter.field(
-            "current_player_session_count",
-            &self.current_player_session_count,
-        );
-        formatter.field(
-            "maximum_player_session_count",
-            &self.maximum_player_session_count,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("game_properties", &self.game_properties);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("port", &self.port);
-        formatter.field(
-            "player_session_creation_policy",
-            &self.player_session_creation_policy,
-        );
-        formatter.field("creator_id", &self.creator_id);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("matchmaker_data", &self.matchmaker_data);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`GameSession`](crate::model::GameSession).
@@ -2907,7 +2744,7 @@ impl AsRef<str> for ProtectionPolicy {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameServerGroup {
     /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -3025,27 +2862,6 @@ impl GameServerGroup {
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for GameServerGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameServerGroup");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("game_server_group_arn", &self.game_server_group_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("instance_definitions", &self.instance_definitions);
-        formatter.field("balancing_strategy", &self.balancing_strategy);
-        formatter.field(
-            "game_server_protection_policy",
-            &self.game_server_protection_policy,
-        );
-        formatter.field("auto_scaling_group_arn", &self.auto_scaling_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("suspended_actions", &self.suspended_actions);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`GameServerGroup`](crate::model::GameServerGroup).
@@ -3697,7 +3513,7 @@ impl AsRef<str> for BalancingStrategy {
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
 /// <p>An allowed instance type for a <code>GameServerGroup</code>. All game server groups must have at least two instance types defined for it. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceDefinition {
     /// <p>An Amazon EC2 instance type designation.</p>
     #[doc(hidden)]
@@ -3714,14 +3530,6 @@ impl InstanceDefinition {
     /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
     pub fn weighted_capacity(&self) -> std::option::Option<&str> {
         self.weighted_capacity.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceDefinition");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.finish()
     }
 }
 /// See [`InstanceDefinition`](crate::model::InstanceDefinition).
@@ -4393,7 +4201,7 @@ impl AsRef<str> for GameServerGroupInstanceType {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>RegisterGameServer</code> | <code>ListGameServers</code> | <code>ClaimGameServer</code> | <code>DescribeGameServer</code> | <code>UpdateGameServer</code> | <code>DeregisterGameServer</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameServer {
     /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     #[doc(hidden)]
@@ -4483,23 +4291,6 @@ impl GameServer {
     /// <p>Timestamp that indicates the last time the game server was updated with health status using an <code>UpdateGameServer</code> request. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
     pub fn last_health_check_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_health_check_time.as_ref()
-    }
-}
-impl std::fmt::Debug for GameServer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameServer");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("game_server_group_arn", &self.game_server_group_arn);
-        formatter.field("game_server_id", &self.game_server_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("connection_info", &self.connection_info);
-        formatter.field("game_server_data", &self.game_server_data);
-        formatter.field("claim_status", &self.claim_status);
-        formatter.field("utilization_status", &self.utilization_status);
-        formatter.field("registration_time", &self.registration_time);
-        formatter.field("last_claim_time", &self.last_claim_time);
-        formatter.field("last_health_check_time", &self.last_health_check_time);
-        formatter.finish()
     }
 }
 /// See [`GameServer`](crate::model::GameServer).
@@ -4968,7 +4759,7 @@ impl AsRef<str> for GameServerHealthCheck {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeFleetPortSettings</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpPermission {
     /// <p>A starting value for a range of allowed port numbers.</p>
     /// <p>For fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
@@ -5003,16 +4794,6 @@ impl IpPermission {
     /// <p>The network communication protocol used by the fleet.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::IpProtocol> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for IpPermission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpPermission");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.field("ip_range", &self.ip_range);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`IpPermission`](crate::model::IpPermission).
@@ -5186,7 +4967,7 @@ impl AsRef<str> for IpProtocol {
 /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
 /// <p>The resource creation limit policy is included in <code>FleetAttributes</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceCreationLimitPolicy {
     /// <p>The maximum number of game sessions that an individual can create during the policy period. </p>
     #[doc(hidden)]
@@ -5203,17 +4984,6 @@ impl ResourceCreationLimitPolicy {
     /// <p>The time span used in evaluating the resource creation limit policy. </p>
     pub fn policy_period_in_minutes(&self) -> std::option::Option<i32> {
         self.policy_period_in_minutes
-    }
-}
-impl std::fmt::Debug for ResourceCreationLimitPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceCreationLimitPolicy");
-        formatter.field(
-            "new_game_sessions_per_creator",
-            &self.new_game_sessions_per_creator,
-        );
-        formatter.field("policy_period_in_minutes", &self.policy_period_in_minutes);
-        formatter.finish()
     }
 }
 /// See [`ResourceCreationLimitPolicy`](crate::model::ResourceCreationLimitPolicy).
@@ -5269,7 +5039,7 @@ impl ResourceCreationLimitPolicy {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateBuild</code> | <code>ListBuilds</code> | <code>DescribeBuild</code> | <code>UpdateBuild</code> | <code>DeleteBuild</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Build {
     /// <p>A unique identifier for the build.</p>
     #[doc(hidden)]
@@ -5346,20 +5116,6 @@ impl Build {
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Build {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Build");
-        formatter.field("build_id", &self.build_id);
-        formatter.field("build_arn", &self.build_arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("status", &self.status);
-        formatter.field("size_on_disk", &self.size_on_disk);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`Build`](crate::model::Build).
@@ -5698,7 +5454,7 @@ impl AsRef<str> for BuildStatus {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alias {
     /// <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
     #[doc(hidden)]
@@ -5756,19 +5512,6 @@ impl Alias {
     /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Alias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alias");
-        formatter.field("alias_id", &self.alias_id);
-        formatter.field("name", &self.name);
-        formatter.field("alias_arn", &self.alias_arn);
-        formatter.field("description", &self.description);
-        formatter.field("routing_strategy", &self.routing_strategy);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`Alias`](crate::model::Alias).
@@ -5896,7 +5639,7 @@ impl Alias {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingStrategy {
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
@@ -5930,15 +5673,6 @@ impl RoutingStrategy {
     /// <p>The message text to be used with a terminal routing strategy.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for RoutingStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingStrategy");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`RoutingStrategy`](crate::model::RoutingStrategy).
@@ -6111,7 +5845,7 @@ impl AsRef<str> for RoutingStrategyType {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     #[doc(hidden)]
@@ -6128,14 +5862,6 @@ impl Tag {
     /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -6192,7 +5918,7 @@ impl Tag {
 /// <li> <p> <code>StopGameSessionPlacement</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionPlacement {
     /// <p>A unique identifier for a game session placement.</p>
     #[doc(hidden)]
@@ -6366,33 +6092,6 @@ impl GameSessionPlacement {
     /// <p>Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It identifies the matchmaking configuration used to create the match, and contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>.</p>
     pub fn matchmaker_data(&self) -> std::option::Option<&str> {
         self.matchmaker_data.as_deref()
-    }
-}
-impl std::fmt::Debug for GameSessionPlacement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameSessionPlacement");
-        formatter.field("placement_id", &self.placement_id);
-        formatter.field("game_session_queue_name", &self.game_session_queue_name);
-        formatter.field("status", &self.status);
-        formatter.field("game_properties", &self.game_properties);
-        formatter.field(
-            "maximum_player_session_count",
-            &self.maximum_player_session_count,
-        );
-        formatter.field("game_session_name", &self.game_session_name);
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("game_session_arn", &self.game_session_arn);
-        formatter.field("game_session_region", &self.game_session_region);
-        formatter.field("player_latencies", &self.player_latencies);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("port", &self.port);
-        formatter.field("placed_player_sessions", &self.placed_player_sessions);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("matchmaker_data", &self.matchmaker_data);
-        formatter.finish()
     }
 }
 /// See [`GameSessionPlacement`](crate::model::GameSessionPlacement).
@@ -6738,7 +6437,7 @@ impl GameSessionPlacement {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacedPlayerSession {
     /// <p>A unique identifier for a player that is associated with this player session.</p>
     #[doc(hidden)]
@@ -6755,14 +6454,6 @@ impl PlacedPlayerSession {
     /// <p>A unique identifier for a player session.</p>
     pub fn player_session_id(&self) -> std::option::Option<&str> {
         self.player_session_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PlacedPlayerSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacedPlayerSession");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("player_session_id", &self.player_session_id);
-        formatter.finish()
     }
 }
 /// See [`PlacedPlayerSession`](crate::model::PlacedPlayerSession).
@@ -6816,7 +6507,7 @@ impl PlacedPlayerSession {
 
 /// <p>Regional latency information for a player, used when requesting a new game session with <code>StartGameSessionPlacement</code>. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlayerLatency {
     /// <p>A unique identifier for a player associated with the latency data.</p>
     #[doc(hidden)]
@@ -6840,15 +6531,6 @@ impl PlayerLatency {
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
     pub fn latency_in_milliseconds(&self) -> f32 {
         self.latency_in_milliseconds
-    }
-}
-impl std::fmt::Debug for PlayerLatency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlayerLatency");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("region_identifier", &self.region_identifier);
-        formatter.field("latency_in_milliseconds", &self.latency_in_milliseconds);
-        formatter.finish()
     }
 }
 /// See [`PlayerLatency`](crate::model::PlayerLatency).
@@ -7106,7 +6788,7 @@ impl AsRef<str> for FleetAction {
 
 /// <p>Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <code>StartMatchmaking</code>. Tickets can be retrieved by calling <code>DescribeMatchmaking</code> with the ticket ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchmakingTicket {
     /// <p>A unique identifier for a matchmaking ticket.</p>
     #[doc(hidden)]
@@ -7212,26 +6894,6 @@ impl MatchmakingTicket {
     /// <p>Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent data, this property may be empty.</p>
     pub fn estimated_wait_time(&self) -> std::option::Option<i32> {
         self.estimated_wait_time
-    }
-}
-impl std::fmt::Debug for MatchmakingTicket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchmakingTicket");
-        formatter.field("ticket_id", &self.ticket_id);
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.field("configuration_arn", &self.configuration_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("players", &self.players);
-        formatter.field(
-            "game_session_connection_info",
-            &self.game_session_connection_info,
-        );
-        formatter.field("estimated_wait_time", &self.estimated_wait_time);
-        formatter.finish()
     }
 }
 /// See [`MatchmakingTicket`](crate::model::MatchmakingTicket).
@@ -7451,7 +7113,7 @@ impl MatchmakingTicket {
 
 /// <p>Connection information for a new game session that is created in response to a <code>StartMatchmaking</code> request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the <code>MatchmakingTicket</code>, which can be retrieved by calling <code>DescribeMatchmaking</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionConnectionInfo {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
     #[doc(hidden)]
@@ -7520,17 +7182,6 @@ impl GameSessionConnectionInfo {
         &self,
     ) -> std::option::Option<&[crate::model::MatchedPlayerSession]> {
         self.matched_player_sessions.as_deref()
-    }
-}
-impl std::fmt::Debug for GameSessionConnectionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameSessionConnectionInfo");
-        formatter.field("game_session_arn", &self.game_session_arn);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("port", &self.port);
-        formatter.field("matched_player_sessions", &self.matched_player_sessions);
-        formatter.finish()
     }
 }
 /// See [`GameSessionConnectionInfo`](crate::model::GameSessionConnectionInfo).
@@ -7662,7 +7313,7 @@ impl GameSessionConnectionInfo {
 /// <p>Represents a new player session that is created as a result of a successful FlexMatch match. A successful match automatically creates new player sessions for every player ID in the original matchmaking request. </p>
 /// <p>When players connect to the match's game session, they must include both player ID and player session ID in order to claim their assigned player slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchedPlayerSession {
     /// <p>A unique identifier for a player </p>
     #[doc(hidden)]
@@ -7679,14 +7330,6 @@ impl MatchedPlayerSession {
     /// <p>A unique identifier for a player session</p>
     pub fn player_session_id(&self) -> std::option::Option<&str> {
         self.player_session_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MatchedPlayerSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchedPlayerSession");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("player_session_id", &self.player_session_id);
-        formatter.finish()
     }
 }
 /// See [`MatchedPlayerSession`](crate::model::MatchedPlayerSession).
@@ -7740,7 +7383,7 @@ impl MatchedPlayerSession {
 
 /// <p>Represents a player in matchmaking. When starting a matchmaking request, a player has a player ID, attributes, and may have latency data. Team information is added after a match has been successfully completed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Player {
     /// <p>A unique identifier for a player</p>
     #[doc(hidden)]
@@ -7781,16 +7424,6 @@ impl Player {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
         self.latency_in_ms.as_ref()
-    }
-}
-impl std::fmt::Debug for Player {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Player");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("player_attributes", &self.player_attributes);
-        formatter.field("team", &self.team);
-        formatter.field("latency_in_ms", &self.latency_in_ms);
-        formatter.finish()
     }
 }
 /// See [`Player`](crate::model::Player).
@@ -7894,7 +7527,7 @@ impl Player {
 
 /// <p>Values for use in <code>Player</code> attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeValue {
     /// <p>For single string values. Maximum string length is 100 characters.</p>
     #[doc(hidden)]
@@ -7925,16 +7558,6 @@ impl AttributeValue {
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub fn sdm(&self) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
         self.sdm.as_ref()
-    }
-}
-impl std::fmt::Debug for AttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeValue");
-        formatter.field("s", &self.s);
-        formatter.field("n", &self.n);
-        formatter.field("sl", &self.sl);
-        formatter.field("sdm", &self.sdm);
-        formatter.finish()
     }
 }
 /// See [`AttributeValue`](crate::model::AttributeValue).
@@ -8158,7 +7781,7 @@ impl AsRef<str> for MatchmakingConfigurationStatus {
 
 /// <p>Player information for use when creating player sessions using a game session placement request with <code>StartGameSessionPlacement</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DesiredPlayerSession {
     /// <p>A unique identifier for a player to associate with the player session.</p>
     #[doc(hidden)]
@@ -8175,14 +7798,6 @@ impl DesiredPlayerSession {
     /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn player_data(&self) -> std::option::Option<&str> {
         self.player_data.as_deref()
-    }
-}
-impl std::fmt::Debug for DesiredPlayerSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DesiredPlayerSession");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("player_data", &self.player_data);
-        formatter.finish()
     }
 }
 /// See [`DesiredPlayerSession`](crate::model::DesiredPlayerSession).
@@ -8272,7 +7887,7 @@ impl std::fmt::Debug for AwsCredentials {
 pub mod aws_credentials {
 
     /// A builder for [`AwsCredentials`](crate::model::AwsCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
@@ -8327,6 +7942,15 @@ pub mod aws_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_key_id", &self.access_key_id);
+            formatter.field("secret_access_key", &self.secret_access_key);
+            formatter.field("session_token", &self.session_token);
+            formatter.finish()
+        }
+    }
 }
 impl AwsCredentials {
     /// Creates a new builder-style object to manufacture [`AwsCredentials`](crate::model::AwsCredentials).
@@ -8339,7 +7963,7 @@ impl AwsCredentials {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetConfiguration {
     /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
     #[doc(hidden)]
@@ -8349,13 +7973,6 @@ impl TargetConfiguration {
     /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
     pub fn target_value(&self) -> f64 {
         self.target_value
-    }
-}
-impl std::fmt::Debug for TargetConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetConfiguration");
-        formatter.field("target_value", &self.target_value);
-        formatter.finish()
     }
 }
 /// See [`TargetConfiguration`](crate::model::TargetConfiguration).
@@ -8988,7 +8605,7 @@ impl std::fmt::Debug for InstanceAccess {
 pub mod instance_access {
 
     /// A builder for [`InstanceAccess`](crate::model::InstanceAccess).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -9064,6 +8681,17 @@ pub mod instance_access {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("fleet_id", &self.fleet_id);
+            formatter.field("instance_id", &self.instance_id);
+            formatter.field("ip_address", &self.ip_address);
+            formatter.field("operating_system", &self.operating_system);
+            formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl InstanceAccess {
     /// Creates a new builder-style object to manufacture [`InstanceAccess`](crate::model::InstanceAccess).
@@ -9105,7 +8733,7 @@ impl std::fmt::Debug for InstanceCredentials {
 pub mod instance_credentials {
 
     /// A builder for [`InstanceCredentials`](crate::model::InstanceCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) secret: std::option::Option<std::string::String>,
@@ -9139,6 +8767,14 @@ pub mod instance_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &self.user_name);
+            formatter.field("secret", &self.secret);
+            formatter.finish()
+        }
+    }
 }
 impl InstanceCredentials {
     /// Creates a new builder-style object to manufacture [`InstanceCredentials`](crate::model::InstanceCredentials).
@@ -9151,7 +8787,7 @@ impl InstanceCredentials {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcPeeringConnection {
     /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
     #[doc(hidden)]
@@ -9203,19 +8839,6 @@ impl VpcPeeringConnection {
     /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
     pub fn game_lift_vpc_id(&self) -> std::option::Option<&str> {
         self.game_lift_vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcPeeringConnection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcPeeringConnection");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("ip_v4_cidr_block", &self.ip_v4_cidr_block);
-        formatter.field("vpc_peering_connection_id", &self.vpc_peering_connection_id);
-        formatter.field("status", &self.status);
-        formatter.field("peer_vpc_id", &self.peer_vpc_id);
-        formatter.field("game_lift_vpc_id", &self.game_lift_vpc_id);
-        formatter.finish()
     }
 }
 /// See [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
@@ -9338,7 +8961,7 @@ impl VpcPeeringConnection {
 
 /// <p>Represents status information for a VPC peering connection. Status is associated with a <code>VpcPeeringConnection</code> object. Status codes and messages are provided from EC2 (see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet <code>Event</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcPeeringConnectionStatus {
     /// <p>Code indicating the status of a VPC peering connection.</p>
     #[doc(hidden)]
@@ -9355,14 +8978,6 @@ impl VpcPeeringConnectionStatus {
     /// <p>Additional messaging associated with the connection status. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcPeeringConnectionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcPeeringConnectionStatus");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
@@ -9415,7 +9030,7 @@ impl VpcPeeringConnectionStatus {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcPeeringAuthorization {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     #[doc(hidden)]
@@ -9453,17 +9068,6 @@ impl VpcPeeringAuthorization {
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
-    }
-}
-impl std::fmt::Debug for VpcPeeringAuthorization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcPeeringAuthorization");
-        formatter.field("game_lift_aws_account_id", &self.game_lift_aws_account_id);
-        formatter.field("peer_vpc_aws_account_id", &self.peer_vpc_aws_account_id);
-        formatter.field("peer_vpc_id", &self.peer_vpc_id);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.finish()
     }
 }
 /// See [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
@@ -9564,7 +9168,7 @@ impl VpcPeeringAuthorization {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
     #[doc(hidden)]
@@ -9729,26 +9333,6 @@ impl ScalingPolicy {
     /// <p> The fleet location. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for ScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingPolicy");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.field("scaling_adjustment_type", &self.scaling_adjustment_type);
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("evaluation_periods", &self.evaluation_periods);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field("target_configuration", &self.target_configuration);
-        formatter.field("update_status", &self.update_status);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
@@ -10242,7 +9826,7 @@ impl AsRef<str> for ScalingStatusType {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlayerSession {
     /// <p>A unique identifier for a player session.</p>
     #[doc(hidden)]
@@ -10371,24 +9955,6 @@ impl PlayerSession {
     /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
     pub fn player_data(&self) -> std::option::Option<&str> {
         self.player_data.as_deref()
-    }
-}
-impl std::fmt::Debug for PlayerSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlayerSession");
-        formatter.field("player_session_id", &self.player_session_id);
-        formatter.field("player_id", &self.player_id);
-        formatter.field("game_session_id", &self.game_session_id);
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("termination_time", &self.termination_time);
-        formatter.field("status", &self.status);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("port", &self.port);
-        formatter.field("player_data", &self.player_data);
-        formatter.finish()
     }
 }
 /// See [`PlayerSession`](crate::model::PlayerSession).
@@ -10725,7 +10291,7 @@ impl AsRef<str> for PlayerSessionStatus {
 /// <li> <p>Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchmakingRuleSet {
     /// <p>A unique identifier for the matchmaking rule set</p>
     #[doc(hidden)]
@@ -10764,16 +10330,6 @@ impl MatchmakingRuleSet {
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for MatchmakingRuleSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchmakingRuleSet");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("rule_set_arn", &self.rule_set_arn);
-        formatter.field("rule_set_body", &self.rule_set_body);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
@@ -10867,7 +10423,7 @@ impl MatchmakingRuleSet {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeInstances</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>A unique identifier for the fleet that the instance is in.</p>
     #[doc(hidden)]
@@ -10984,22 +10540,6 @@ impl Instance {
     /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -12062,7 +11602,7 @@ impl AsRef<str> for Ec2InstanceType {
 
 /// <p>A game session's properties plus the protection policy currently in force.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameSessionDetail {
     /// <p>Object that describes a game session.</p>
     #[doc(hidden)]
@@ -12087,14 +11627,6 @@ impl GameSessionDetail {
     /// </ul>
     pub fn protection_policy(&self) -> std::option::Option<&crate::model::ProtectionPolicy> {
         self.protection_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for GameSessionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameSessionDetail");
-        formatter.field("game_session", &self.game_session);
-        formatter.field("protection_policy", &self.protection_policy);
-        formatter.finish()
     }
 }
 /// See [`GameSessionDetail`](crate::model::GameSessionDetail).
@@ -12163,7 +11695,7 @@ impl GameSessionDetail {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameServerInstance {
     /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -12204,16 +11736,6 @@ impl GameServerInstance {
     /// </ul>
     pub fn instance_status(&self) -> std::option::Option<&crate::model::GameServerInstanceStatus> {
         self.instance_status.as_ref()
-    }
-}
-impl std::fmt::Debug for GameServerInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameServerInstance");
-        formatter.field("game_server_group_name", &self.game_server_group_name);
-        formatter.field("game_server_group_arn", &self.game_server_group_arn);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_status", &self.instance_status);
-        formatter.finish()
     }
 }
 /// See [`GameServerInstance`](crate::model::GameServerInstance).
@@ -12406,7 +11928,7 @@ impl AsRef<str> for GameServerInstanceStatus {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeFleetUtilization</code> | <code>DescribeFleetLocationUtilization</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetUtilization {
     /// <p>A unique identifier for the fleet associated with the location.</p>
     #[doc(hidden)]
@@ -12464,28 +11986,6 @@ impl FleetUtilization {
     /// <p>The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for FleetUtilization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetUtilization");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field(
-            "active_server_process_count",
-            &self.active_server_process_count,
-        );
-        formatter.field("active_game_session_count", &self.active_game_session_count);
-        formatter.field(
-            "current_player_session_count",
-            &self.current_player_session_count,
-        );
-        formatter.field(
-            "maximum_player_session_count",
-            &self.maximum_player_session_count,
-        );
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`FleetUtilization`](crate::model::FleetUtilization).
@@ -12604,7 +12104,7 @@ impl FleetUtilization {
 /// <p> <b>Related actions</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetCapacity {
     /// <p>A unique identifier for the fleet associated with the location.</p>
     #[doc(hidden)]
@@ -12648,17 +12148,6 @@ impl FleetCapacity {
     /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for FleetCapacity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetCapacity");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("instance_counts", &self.instance_counts);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`FleetCapacity`](crate::model::FleetCapacity).
@@ -12758,7 +12247,7 @@ impl FleetCapacity {
 /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
 /// <p>EC2 instance counts are part of <code>FleetCapacity</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2InstanceCounts {
     /// <p>Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity is scaled up or down by changing the desired instances. </p>
     #[doc(hidden)]
@@ -12810,19 +12299,6 @@ impl Ec2InstanceCounts {
     /// <p>Number of instances that are no longer active but haven't yet been terminated.</p>
     pub fn terminating(&self) -> std::option::Option<i32> {
         self.terminating
-    }
-}
-impl std::fmt::Debug for Ec2InstanceCounts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2InstanceCounts");
-        formatter.field("desired", &self.desired);
-        formatter.field("minimum", &self.minimum);
-        formatter.field("maximum", &self.maximum);
-        formatter.field("pending", &self.pending);
-        formatter.field("active", &self.active);
-        formatter.field("idle", &self.idle);
-        formatter.field("terminating", &self.terminating);
-        formatter.finish()
     }
 }
 /// See [`Ec2InstanceCounts`](crate::model::Ec2InstanceCounts).
@@ -12935,7 +12411,7 @@ impl Ec2InstanceCounts {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeFleetLocationAttributes</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationAttributes {
     /// <p>A fleet location and its current life-cycle state.</p>
     #[doc(hidden)]
@@ -12959,15 +12435,6 @@ impl LocationAttributes {
     /// <p>The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location.</p>
     pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
         self.update_status.as_ref()
-    }
-}
-impl std::fmt::Debug for LocationAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocationAttributes");
-        formatter.field("location_state", &self.location_state);
-        formatter.field("stopped_actions", &self.stopped_actions);
-        formatter.field("update_status", &self.update_status);
-        formatter.finish()
     }
 }
 /// See [`LocationAttributes`](crate::model::LocationAttributes).
@@ -13047,7 +12514,7 @@ impl LocationAttributes {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateFleet</code> | <code>CreateFleetLocations</code> | <code>DeleteFleetLocations</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationState {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     #[doc(hidden)]
@@ -13064,14 +12531,6 @@ impl LocationState {
     /// <p>The life-cycle status of a fleet location. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::FleetStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for LocationState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocationState");
-        formatter.field("location", &self.location);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`LocationState`](crate::model::LocationState).
@@ -13259,7 +12718,7 @@ impl AsRef<str> for FleetStatus {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeFleetEvents</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>A unique identifier for a fleet event.</p>
     #[doc(hidden)]
@@ -13412,18 +12871,6 @@ impl Event {
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.</p>
     pub fn pre_signed_log_url(&self) -> std::option::Option<&str> {
         self.pre_signed_log_url.as_deref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("event_code", &self.event_code);
-        formatter.field("message", &self.message);
-        formatter.field("event_time", &self.event_time);
-        formatter.field("pre_signed_log_url", &self.pre_signed_log_url);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -13940,7 +13387,7 @@ impl AsRef<str> for EventCode {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateFleet</code> | <code>DescribeFleetAttributes</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FleetAttributes {
     /// <p>A unique identifier for the fleet.</p>
     #[doc(hidden)]
@@ -14141,41 +13588,6 @@ impl FleetAttributes {
         &self,
     ) -> std::option::Option<&crate::model::CertificateConfiguration> {
         self.certificate_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for FleetAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FleetAttributes");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("fleet_type", &self.fleet_type);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("termination_time", &self.termination_time);
-        formatter.field("status", &self.status);
-        formatter.field("build_id", &self.build_id);
-        formatter.field("build_arn", &self.build_arn);
-        formatter.field("script_id", &self.script_id);
-        formatter.field("script_arn", &self.script_arn);
-        formatter.field("server_launch_path", &self.server_launch_path);
-        formatter.field("server_launch_parameters", &self.server_launch_parameters);
-        formatter.field("log_paths", &self.log_paths);
-        formatter.field(
-            "new_game_session_protection_policy",
-            &self.new_game_session_protection_policy,
-        );
-        formatter.field("operating_system", &self.operating_system);
-        formatter.field(
-            "resource_creation_limit_policy",
-            &self.resource_creation_limit_policy,
-        );
-        formatter.field("metric_groups", &self.metric_groups);
-        formatter.field("stopped_actions", &self.stopped_actions);
-        formatter.field("instance_role_arn", &self.instance_role_arn);
-        formatter.field("certificate_configuration", &self.certificate_configuration);
-        formatter.finish()
     }
 }
 /// See [`FleetAttributes`](crate::model::FleetAttributes).
@@ -14581,7 +13993,7 @@ impl FleetAttributes {
 /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
 /// <p>A fleet's certificate configuration is part of <code>FleetAttributes</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateConfiguration {
     /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
     /// <p>Valid values include: </p>
@@ -14601,13 +14013,6 @@ impl CertificateConfiguration {
     /// </ul>
     pub fn certificate_type(&self) -> std::option::Option<&crate::model::CertificateType> {
         self.certificate_type.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateConfiguration");
-        formatter.field("certificate_type", &self.certificate_type);
-        formatter.finish()
     }
 }
 /// See [`CertificateConfiguration`](crate::model::CertificateConfiguration).
@@ -14841,7 +14246,7 @@ impl AsRef<str> for FleetType {
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeEC2InstanceLimits</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2InstanceLimit {
     /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
     #[doc(hidden)]
@@ -14872,16 +14277,6 @@ impl Ec2InstanceLimit {
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2InstanceLimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2InstanceLimit");
-        formatter.field("ec2_instance_type", &self.ec2_instance_type);
-        formatter.field("current_instances", &self.current_instances);
-        formatter.field("instance_limit", &self.instance_limit);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`Ec2InstanceLimit`](crate::model::Ec2InstanceLimit).
@@ -15057,7 +14452,7 @@ impl AsRef<str> for GameServerGroupDeleteOption {
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
 /// <p>Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group with <code>CreateGameServerGroup</code>. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GameServerGroupAutoScalingPolicy {
     /// <p>Length of time, in seconds, it takes for a new instance to start new game server processes and register with GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take a long time to start up, because it avoids prematurely starting new instances. </p>
     #[doc(hidden)]
@@ -15077,17 +14472,6 @@ impl GameServerGroupAutoScalingPolicy {
         &self,
     ) -> std::option::Option<&crate::model::TargetTrackingConfiguration> {
         self.target_tracking_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for GameServerGroupAutoScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GameServerGroupAutoScalingPolicy");
-        formatter.field("estimated_instance_warmup", &self.estimated_instance_warmup);
-        formatter.field(
-            "target_tracking_configuration",
-            &self.target_tracking_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`GameServerGroupAutoScalingPolicy`](crate::model::GameServerGroupAutoScalingPolicy).
@@ -15146,7 +14530,7 @@ impl GameServerGroupAutoScalingPolicy {
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
 /// <p>Settings for a target-based scaling policy as part of a <code>GameServerGroupAutoScalingPolicy</code>. These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>Desired value to use with a game server group target-based scaling policy. </p>
     #[doc(hidden)]
@@ -15156,13 +14540,6 @@ impl TargetTrackingConfiguration {
     /// <p>Desired value to use with a game server group target-based scaling policy. </p>
     pub fn target_value(&self) -> std::option::Option<f64> {
         self.target_value
-    }
-}
-impl std::fmt::Debug for TargetTrackingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetTrackingConfiguration");
-        formatter.field("target_value", &self.target_value);
-        formatter.finish()
     }
 }
 /// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
@@ -15202,7 +14579,7 @@ impl TargetTrackingConfiguration {
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
 /// <p>An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <code>CreateGameServerGroup</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateSpecification {
     /// <p>A unique identifier for an existing Amazon EC2 launch template.</p>
     #[doc(hidden)]
@@ -15226,15 +14603,6 @@ impl LaunchTemplateSpecification {
     /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchTemplateSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateSpecification");
-        formatter.field("launch_template_id", &self.launch_template_id);
-        formatter.field("launch_template_name", &self.launch_template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
@@ -15305,7 +14673,7 @@ impl LaunchTemplateSpecification {
 /// <p> <b>Related actions</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LocationConfiguration {
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     #[doc(hidden)]
@@ -15315,13 +14683,6 @@ impl LocationConfiguration {
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for LocationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LocationConfiguration");
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`LocationConfiguration`](crate::model::LocationConfiguration).

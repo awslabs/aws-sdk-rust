@@ -125,7 +125,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>A key/value pair that grants users access to meeting resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key half of a tag.</p>
     #[doc(hidden)]
@@ -142,14 +142,6 @@ impl Tag {
     /// <p>The value half of a tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -200,7 +192,7 @@ impl Tag {
 
 /// <p>The summary of the media pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaPipelineSummary {
     /// <p>The ID of the media pipeline in the summary.</p>
     #[doc(hidden)]
@@ -217,14 +209,6 @@ impl MediaPipelineSummary {
     /// <p>The ARN of the media pipeline in the summary.</p>
     pub fn media_pipeline_arn(&self) -> std::option::Option<&str> {
         self.media_pipeline_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaPipelineSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaPipelineSummary");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.field("media_pipeline_arn", &self.media_pipeline_arn);
-        formatter.finish()
     }
 }
 /// See [`MediaPipelineSummary`](crate::model::MediaPipelineSummary).
@@ -281,7 +265,7 @@ impl MediaPipelineSummary {
 
 /// <p>The summary data of a media capture pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaCapturePipelineSummary {
     /// <p>The ID of the media pipeline in the summary.</p>
     #[doc(hidden)]
@@ -298,14 +282,6 @@ impl MediaCapturePipelineSummary {
     /// <p>The ARN of the media pipeline in the summary.</p>
     pub fn media_pipeline_arn(&self) -> std::option::Option<&str> {
         self.media_pipeline_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MediaCapturePipelineSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaCapturePipelineSummary");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.field("media_pipeline_arn", &self.media_pipeline_arn);
-        formatter.finish()
     }
 }
 /// See [`MediaCapturePipelineSummary`](crate::model::MediaCapturePipelineSummary).
@@ -362,7 +338,7 @@ impl MediaCapturePipelineSummary {
 
 /// <p>A pipeline consisting of a media capture, media concatenation, or live-streaming pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaPipeline {
     /// <p>A pipeline that enables users to capture audio and video.</p>
     #[doc(hidden)]
@@ -393,21 +369,6 @@ impl MediaPipeline {
         &self,
     ) -> std::option::Option<&crate::model::MediaConcatenationPipeline> {
         self.media_concatenation_pipeline.as_ref()
-    }
-}
-impl std::fmt::Debug for MediaPipeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaPipeline");
-        formatter.field("media_capture_pipeline", &self.media_capture_pipeline);
-        formatter.field(
-            "media_live_connector_pipeline",
-            &self.media_live_connector_pipeline,
-        );
-        formatter.field(
-            "media_concatenation_pipeline",
-            &self.media_concatenation_pipeline,
-        );
-        formatter.finish()
     }
 }
 /// See [`MediaPipeline`](crate::model::MediaPipeline).
@@ -487,7 +448,7 @@ impl MediaPipeline {
 
 /// <p>Concatenates audio and video data from one or more data streams.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaConcatenationPipeline {
     /// <p>The ID of the media pipeline being concatenated.</p>
     #[doc(hidden)]
@@ -539,19 +500,6 @@ impl MediaConcatenationPipeline {
     /// <p>The time at which the concatenation pipeline was last updated.</p>
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for MediaConcatenationPipeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaConcatenationPipeline");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.field("media_pipeline_arn", &self.media_pipeline_arn);
-        formatter.field("sources", &self.sources);
-        formatter.field("sinks", &self.sinks);
-        formatter.field("status", &self.status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`MediaConcatenationPipeline`](crate::model::MediaConcatenationPipeline).
@@ -808,7 +756,7 @@ impl AsRef<str> for MediaPipelineStatus {
 
 /// <p>The data sink of the configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcatenationSink {
     /// <p>The type of data sink in the configuration object.</p>
     #[doc(hidden)]
@@ -827,17 +775,6 @@ impl ConcatenationSink {
         &self,
     ) -> std::option::Option<&crate::model::S3BucketSinkConfiguration> {
         self.s3_bucket_sink_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ConcatenationSink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcatenationSink");
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "s3_bucket_sink_configuration",
-            &self.s3_bucket_sink_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConcatenationSink`](crate::model::ConcatenationSink).
@@ -921,7 +858,7 @@ impl std::fmt::Debug for S3BucketSinkConfiguration {
 pub mod s3_bucket_sink_configuration {
 
     /// A builder for [`S3BucketSinkConfiguration`](crate::model::S3BucketSinkConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<std::string::String>,
     }
@@ -941,6 +878,13 @@ pub mod s3_bucket_sink_configuration {
             crate::model::S3BucketSinkConfiguration {
                 destination: self.destination,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("destination", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1040,7 +984,7 @@ impl AsRef<str> for ConcatenationSinkType {
 
 /// <p>The source type and media pipeline configuration settings in a configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcatenationSource {
     /// <p>The type of concatenation source in a configuration object.</p>
     #[doc(hidden)]
@@ -1060,17 +1004,6 @@ impl ConcatenationSource {
         &self,
     ) -> std::option::Option<&crate::model::MediaCapturePipelineSourceConfiguration> {
         self.media_capture_pipeline_source_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ConcatenationSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcatenationSource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "media_capture_pipeline_source_configuration",
-            &self.media_capture_pipeline_source_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConcatenationSource`](crate::model::ConcatenationSource).
@@ -1169,7 +1102,7 @@ impl std::fmt::Debug for MediaCapturePipelineSourceConfiguration {
 pub mod media_capture_pipeline_source_configuration {
 
     /// A builder for [`MediaCapturePipelineSourceConfiguration`](crate::model::MediaCapturePipelineSourceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) media_pipeline_arn: std::option::Option<std::string::String>,
         pub(crate) chime_sdk_meeting_configuration:
@@ -1213,6 +1146,17 @@ pub mod media_capture_pipeline_source_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("media_pipeline_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "chime_sdk_meeting_configuration",
+                &self.chime_sdk_meeting_configuration,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl MediaCapturePipelineSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`MediaCapturePipelineSourceConfiguration`](crate::model::MediaCapturePipelineSourceConfiguration).
@@ -1223,7 +1167,7 @@ impl MediaCapturePipelineSourceConfiguration {
 
 /// <p>The configuration object of the Amazon Chime SDK meeting concatenation for a specified media pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChimeSdkMeetingConcatenationConfiguration {
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting concatenation.</p>
     #[doc(hidden)]
@@ -1236,13 +1180,6 @@ impl ChimeSdkMeetingConcatenationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ArtifactsConcatenationConfiguration> {
         self.artifacts_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ChimeSdkMeetingConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChimeSdkMeetingConcatenationConfiguration");
-        formatter.field("artifacts_configuration", &self.artifacts_configuration);
-        formatter.finish()
     }
 }
 /// See [`ChimeSdkMeetingConcatenationConfiguration`](crate::model::ChimeSdkMeetingConcatenationConfiguration).
@@ -1288,7 +1225,7 @@ impl ChimeSdkMeetingConcatenationConfiguration {
 
 /// <p>The configuration for the artifacts concatenation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArtifactsConcatenationConfiguration {
     /// <p>The configuration for the audio artifacts concatenation.</p>
     #[doc(hidden)]
@@ -1350,19 +1287,6 @@ impl ArtifactsConcatenationConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::CompositedVideoConcatenationConfiguration> {
         self.composited_video.as_ref()
-    }
-}
-impl std::fmt::Debug for ArtifactsConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArtifactsConcatenationConfiguration");
-        formatter.field("audio", &self.audio);
-        formatter.field("video", &self.video);
-        formatter.field("content", &self.content);
-        formatter.field("data_channel", &self.data_channel);
-        formatter.field("transcription_messages", &self.transcription_messages);
-        formatter.field("meeting_events", &self.meeting_events);
-        formatter.field("composited_video", &self.composited_video);
-        formatter.finish()
     }
 }
 /// See [`ArtifactsConcatenationConfiguration`](crate::model::ArtifactsConcatenationConfiguration).
@@ -1512,7 +1436,7 @@ impl ArtifactsConcatenationConfiguration {
 
 /// <p>The composited video configuration object for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompositedVideoConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
@@ -1522,13 +1446,6 @@ impl CompositedVideoConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ArtifactsConcatenationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for CompositedVideoConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompositedVideoConcatenationConfiguration");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`CompositedVideoConcatenationConfiguration`](crate::model::CompositedVideoConcatenationConfiguration).
@@ -1660,7 +1577,7 @@ impl AsRef<str> for ArtifactsConcatenationState {
 
 /// <p>The configuration object for an event concatenation pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeetingEventsConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
@@ -1670,13 +1587,6 @@ impl MeetingEventsConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ArtifactsConcatenationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for MeetingEventsConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeetingEventsConcatenationConfiguration");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`MeetingEventsConcatenationConfiguration`](crate::model::MeetingEventsConcatenationConfiguration).
@@ -1716,7 +1626,7 @@ impl MeetingEventsConcatenationConfiguration {
 
 /// <p>The configuration object for concatenating transcription messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptionMessagesConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
@@ -1726,13 +1636,6 @@ impl TranscriptionMessagesConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ArtifactsConcatenationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for TranscriptionMessagesConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranscriptionMessagesConcatenationConfiguration");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`TranscriptionMessagesConcatenationConfiguration`](crate::model::TranscriptionMessagesConcatenationConfiguration).
@@ -1772,7 +1675,7 @@ impl TranscriptionMessagesConcatenationConfiguration {
 
 /// <p>The content configuration object's data channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataChannelConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
@@ -1782,13 +1685,6 @@ impl DataChannelConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ArtifactsConcatenationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for DataChannelConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataChannelConcatenationConfiguration");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`DataChannelConcatenationConfiguration`](crate::model::DataChannelConcatenationConfiguration).
@@ -1828,7 +1724,7 @@ impl DataChannelConcatenationConfiguration {
 
 /// <p>The composited content configuration object for a specified media pipeline. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
@@ -1838,13 +1734,6 @@ impl ContentConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ArtifactsConcatenationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ContentConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentConcatenationConfiguration");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ContentConcatenationConfiguration`](crate::model::ContentConcatenationConfiguration).
@@ -1884,7 +1773,7 @@ impl ContentConcatenationConfiguration {
 
 /// <p>The configuration object of a video contacatentation pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
@@ -1894,13 +1783,6 @@ impl VideoConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ArtifactsConcatenationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for VideoConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoConcatenationConfiguration");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`VideoConcatenationConfiguration`](crate::model::VideoConcatenationConfiguration).
@@ -1940,7 +1822,7 @@ impl VideoConcatenationConfiguration {
 
 /// <p>The audio artifact concatenation configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioConcatenationConfiguration {
     /// <p>Enables the <i>name</i> object, where <i>name</i> is the name of the configuration object, such as <code>AudioConcatenation</code>.</p>
     #[doc(hidden)]
@@ -1950,13 +1832,6 @@ impl AudioConcatenationConfiguration {
     /// <p>Enables the <i>name</i> object, where <i>name</i> is the name of the configuration object, such as <code>AudioConcatenation</code>.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::AudioArtifactsConcatenationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioConcatenationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioConcatenationConfiguration");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`AudioConcatenationConfiguration`](crate::model::AudioConcatenationConfiguration).
@@ -2170,7 +2045,7 @@ impl AsRef<str> for ConcatenationSourceType {
 
 /// <p>The connector pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaLiveConnectorPipeline {
     /// <p>The connector pipeline's data sources.</p>
     #[doc(hidden)]
@@ -2224,19 +2099,6 @@ impl MediaLiveConnectorPipeline {
     /// <p>The time at which the connector pipeline was last updated.</p>
     pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for MediaLiveConnectorPipeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MediaLiveConnectorPipeline");
-        formatter.field("sources", &self.sources);
-        formatter.field("sinks", &self.sinks);
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.field("media_pipeline_arn", &self.media_pipeline_arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`MediaLiveConnectorPipeline`](crate::model::MediaLiveConnectorPipeline).
@@ -2384,7 +2246,7 @@ impl MediaLiveConnectorPipeline {
 
 /// <p>The media pipeline's sink configuration settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LiveConnectorSinkConfiguration {
     /// <p>The sink configuration's sink type.</p>
     #[doc(hidden)]
@@ -2403,14 +2265,6 @@ impl LiveConnectorSinkConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::LiveConnectorRtmpConfiguration> {
         self.rtmp_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for LiveConnectorSinkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LiveConnectorSinkConfiguration");
-        formatter.field("sink_type", &self.sink_type);
-        formatter.field("rtmp_configuration", &self.rtmp_configuration);
-        formatter.finish()
     }
 }
 /// See [`LiveConnectorSinkConfiguration`](crate::model::LiveConnectorSinkConfiguration).
@@ -2510,7 +2364,7 @@ impl std::fmt::Debug for LiveConnectorRtmpConfiguration {
 pub mod live_connector_rtmp_configuration {
 
     /// A builder for [`LiveConnectorRtmpConfiguration`](crate::model::LiveConnectorRtmpConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) audio_channels: std::option::Option<crate::model::AudioChannelsOption>,
@@ -2560,6 +2414,15 @@ pub mod live_connector_rtmp_configuration {
                 audio_channels: self.audio_channels,
                 audio_sample_rate: self.audio_sample_rate,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.field("audio_channels", &self.audio_channels);
+            formatter.field("audio_sample_rate", &self.audio_sample_rate);
+            formatter.finish()
         }
     }
 }
@@ -2751,7 +2614,7 @@ impl AsRef<str> for LiveConnectorSinkType {
 
 /// <p>The data source configuration object of a streaming media pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LiveConnectorSourceConfiguration {
     /// <p>The source configuration's media source type.</p>
     #[doc(hidden)]
@@ -2771,17 +2634,6 @@ impl LiveConnectorSourceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ChimeSdkMeetingLiveConnectorConfiguration> {
         self.chime_sdk_meeting_live_connector_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for LiveConnectorSourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LiveConnectorSourceConfiguration");
-        formatter.field("source_type", &self.source_type);
-        formatter.field(
-            "chime_sdk_meeting_live_connector_configuration",
-            &self.chime_sdk_meeting_live_connector_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`LiveConnectorSourceConfiguration`](crate::model::LiveConnectorSourceConfiguration).
@@ -2892,7 +2744,7 @@ impl std::fmt::Debug for ChimeSdkMeetingLiveConnectorConfiguration {
 pub mod chime_sdk_meeting_live_connector_configuration {
 
     /// A builder for [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::model::ChimeSdkMeetingLiveConnectorConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) mux_type: std::option::Option<crate::model::LiveConnectorMuxType>,
@@ -2963,6 +2815,16 @@ pub mod chime_sdk_meeting_live_connector_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("mux_type", &self.mux_type);
+            formatter.field("composited_video", &self.composited_video);
+            formatter.field("source_configuration", &self.source_configuration);
+            formatter.finish()
+        }
+    }
 }
 impl ChimeSdkMeetingLiveConnectorConfiguration {
     /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::model::ChimeSdkMeetingLiveConnectorConfiguration).
@@ -2973,7 +2835,7 @@ impl ChimeSdkMeetingLiveConnectorConfiguration {
 
 /// <p>Source configuration for a specified media pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceConfiguration {
     /// <p>The selected video streams for a specified media pipeline. The number of video streams can't exceed 25.</p>
     #[doc(hidden)]
@@ -2985,13 +2847,6 @@ impl SourceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SelectedVideoStreams> {
         self.selected_video_streams.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceConfiguration");
-        formatter.field("selected_video_streams", &self.selected_video_streams);
-        formatter.finish()
     }
 }
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration).
@@ -3033,7 +2888,7 @@ impl SourceConfiguration {
 
 /// <p>The video streams for a specified media pipeline. The total number of video streams can't exceed 25.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectedVideoStreams {
     /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
     #[doc(hidden)]
@@ -3050,14 +2905,6 @@ impl SelectedVideoStreams {
     /// <p>The external user IDs of the streams selected for a media pipeline.</p>
     pub fn external_user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.external_user_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for SelectedVideoStreams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectedVideoStreams");
-        formatter.field("attendee_ids", &self.attendee_ids);
-        formatter.field("external_user_ids", &self.external_user_ids);
-        formatter.finish()
     }
 }
 /// See [`SelectedVideoStreams`](crate::model::SelectedVideoStreams).
@@ -3126,7 +2973,7 @@ impl SelectedVideoStreams {
 
 /// <p>Describes the configuration for the composited video artifacts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompositedVideoArtifactsConfiguration {
     /// <p>The layout setting, such as <code>GridView</code> in the configuration object.</p>
     #[doc(hidden)]
@@ -3152,15 +2999,6 @@ impl CompositedVideoArtifactsConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::GridViewConfiguration> {
         self.grid_view_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CompositedVideoArtifactsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompositedVideoArtifactsConfiguration");
-        formatter.field("layout", &self.layout);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("grid_view_configuration", &self.grid_view_configuration);
-        formatter.finish()
     }
 }
 /// See [`CompositedVideoArtifactsConfiguration`](crate::model::CompositedVideoArtifactsConfiguration).
@@ -3236,7 +3074,7 @@ impl CompositedVideoArtifactsConfiguration {
 
 /// <p>Specifies the type of grid layout.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GridViewConfiguration {
     /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
     #[doc(hidden)]
@@ -3257,17 +3095,6 @@ impl GridViewConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::PresenterOnlyConfiguration> {
         self.presenter_only_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for GridViewConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GridViewConfiguration");
-        formatter.field("content_share_layout", &self.content_share_layout);
-        formatter.field(
-            "presenter_only_configuration",
-            &self.presenter_only_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`GridViewConfiguration`](crate::model::GridViewConfiguration).
@@ -3332,7 +3159,7 @@ impl GridViewConfiguration {
 
 /// <p>Defines the configuration for a presenter only video tile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PresenterOnlyConfiguration {
     /// <p>Defines the position of the presenter video tile. Default: <code>TopRight</code>.</p>
     #[doc(hidden)]
@@ -3342,13 +3169,6 @@ impl PresenterOnlyConfiguration {
     /// <p>Defines the position of the presenter video tile. Default: <code>TopRight</code>.</p>
     pub fn presenter_position(&self) -> std::option::Option<&crate::model::PresenterPosition> {
         self.presenter_position.as_ref()
-    }
-}
-impl std::fmt::Debug for PresenterOnlyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PresenterOnlyConfiguration");
-        formatter.field("presenter_position", &self.presenter_position);
-        formatter.finish()
     }
 }
 /// See [`PresenterOnlyConfiguration`](crate::model::PresenterOnlyConfiguration).
@@ -4044,7 +3864,7 @@ impl std::fmt::Debug for MediaCapturePipeline {
 pub mod media_capture_pipeline {
 
     /// A builder for [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
         pub(crate) media_pipeline_arn: std::option::Option<std::string::String>,
@@ -4202,6 +4022,25 @@ pub mod media_capture_pipeline {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("media_pipeline_id", &self.media_pipeline_id);
+            formatter.field("media_pipeline_arn", &self.media_pipeline_arn);
+            formatter.field("source_type", &self.source_type);
+            formatter.field("source_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("sink_type", &self.sink_type);
+            formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("updated_timestamp", &self.updated_timestamp);
+            formatter.field(
+                "chime_sdk_meeting_configuration",
+                &self.chime_sdk_meeting_configuration,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl MediaCapturePipeline {
     /// Creates a new builder-style object to manufacture [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
@@ -4212,7 +4051,7 @@ impl MediaCapturePipeline {
 
 /// <p>The configuration object of the Amazon Chime SDK meeting for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChimeSdkMeetingConfiguration {
     /// <p>The source configuration for a specified media pipline.</p>
     #[doc(hidden)]
@@ -4231,14 +4070,6 @@ impl ChimeSdkMeetingConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ArtifactsConfiguration> {
         self.artifacts_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ChimeSdkMeetingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChimeSdkMeetingConfiguration");
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("artifacts_configuration", &self.artifacts_configuration);
-        formatter.finish()
     }
 }
 /// See [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration).
@@ -4299,7 +4130,7 @@ impl ChimeSdkMeetingConfiguration {
 
 /// <p>The configuration for the artifacts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArtifactsConfiguration {
     /// <p>The configuration for the audio artifacts.</p>
     #[doc(hidden)]
@@ -4332,16 +4163,6 @@ impl ArtifactsConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::CompositedVideoArtifactsConfiguration> {
         self.composited_video.as_ref()
-    }
-}
-impl std::fmt::Debug for ArtifactsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArtifactsConfiguration");
-        formatter.field("audio", &self.audio);
-        formatter.field("video", &self.video);
-        formatter.field("content", &self.content);
-        formatter.field("composited_video", &self.composited_video);
-        formatter.finish()
     }
 }
 /// See [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration).
@@ -4432,7 +4253,7 @@ impl ArtifactsConfiguration {
 
 /// <p>The content artifact object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentArtifactsConfiguration {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
     #[doc(hidden)]
@@ -4449,14 +4270,6 @@ impl ContentArtifactsConfiguration {
     /// <p>The MUX type of the artifact configuration.</p>
     pub fn mux_type(&self) -> std::option::Option<&crate::model::ContentMuxType> {
         self.mux_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ContentArtifactsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentArtifactsConfiguration");
-        formatter.field("state", &self.state);
-        formatter.field("mux_type", &self.mux_type);
-        formatter.finish()
     }
 }
 /// See [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration).
@@ -4688,7 +4501,7 @@ impl AsRef<str> for ArtifactsState {
 
 /// <p>The video artifact configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoArtifactsConfiguration {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
     #[doc(hidden)]
@@ -4705,14 +4518,6 @@ impl VideoArtifactsConfiguration {
     /// <p>The MUX type of the video artifact configuration object.</p>
     pub fn mux_type(&self) -> std::option::Option<&crate::model::VideoMuxType> {
         self.mux_type.as_ref()
-    }
-}
-impl std::fmt::Debug for VideoArtifactsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoArtifactsConfiguration");
-        formatter.field("state", &self.state);
-        formatter.field("mux_type", &self.mux_type);
-        formatter.finish()
     }
 }
 /// See [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration).
@@ -4854,7 +4659,7 @@ impl AsRef<str> for VideoMuxType {
 
 /// <p>The audio artifact configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
     #[doc(hidden)]
@@ -4864,13 +4669,6 @@ impl AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
     pub fn mux_type(&self) -> std::option::Option<&crate::model::AudioMuxType> {
         self.mux_type.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioArtifactsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioArtifactsConfiguration");
-        formatter.field("mux_type", &self.mux_type);
-        formatter.finish()
     }
 }
 /// See [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration).

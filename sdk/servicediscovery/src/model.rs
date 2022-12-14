@@ -2,7 +2,7 @@
 
 /// <p>A complex type that contains changes to an existing service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceChange {
     /// <p>A description for the service.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl ServiceChange {
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn health_check_config(&self) -> std::option::Option<&crate::model::HealthCheckConfig> {
         self.health_check_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceChange");
-        formatter.field("description", &self.description);
-        formatter.field("dns_config", &self.dns_config);
-        formatter.field("health_check_config", &self.health_check_config);
-        formatter.finish()
     }
 }
 /// See [`ServiceChange`](crate::model::ServiceChange).
@@ -149,7 +140,7 @@ impl ServiceChange {
 /// </dd>
 /// </dl>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckConfig {
     /// <p>The type of health check that you want to create, which indicates how Route 53 determines whether an endpoint is healthy.</p> <important>
     /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
@@ -197,15 +188,6 @@ impl HealthCheckConfig {
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
     pub fn failure_threshold(&self) -> std::option::Option<i32> {
         self.failure_threshold
-    }
-}
-impl std::fmt::Debug for HealthCheckConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckConfig");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("resource_path", &self.resource_path);
-        formatter.field("failure_threshold", &self.failure_threshold);
-        formatter.finish()
     }
 }
 /// See [`HealthCheckConfig`](crate::model::HealthCheckConfig).
@@ -393,7 +375,7 @@ impl AsRef<str> for HealthCheckType {
 
 /// <p>A complex type that contains information about changes to the Route 53 DNS records that Cloud Map creates when you register an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to create when you register an instance.</p>
     #[doc(hidden)]
@@ -403,13 +385,6 @@ impl DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_records(&self) -> std::option::Option<&[crate::model::DnsRecord]> {
         self.dns_records.as_deref()
-    }
-}
-impl std::fmt::Debug for DnsConfigChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsConfigChange");
-        formatter.field("dns_records", &self.dns_records);
-        formatter.finish()
     }
 }
 /// See [`DnsConfigChange`](crate::model::DnsConfigChange).
@@ -457,7 +432,7 @@ impl DnsConfigChange {
 
 /// <p>A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsRecord {
     /// <p>The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
     /// <ul>
@@ -594,14 +569,6 @@ impl DnsRecord {
     /// </note>
     pub fn ttl(&self) -> std::option::Option<i64> {
         self.ttl
-    }
-}
-impl std::fmt::Debug for DnsRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsRecord");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("ttl", &self.ttl);
-        formatter.finish()
     }
 }
 /// See [`DnsRecord`](crate::model::DnsRecord).
@@ -872,7 +839,7 @@ impl AsRef<str> for RecordType {
 
 /// <p>Updated properties for the public DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicDnsNamespaceChange {
     /// <p>An updated description for the public DNS namespace.</p>
     #[doc(hidden)]
@@ -891,14 +858,6 @@ impl PublicDnsNamespaceChange {
         &self,
     ) -> std::option::Option<&crate::model::PublicDnsNamespacePropertiesChange> {
         self.properties.as_ref()
-    }
-}
-impl std::fmt::Debug for PublicDnsNamespaceChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicDnsNamespaceChange");
-        formatter.field("description", &self.description);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
@@ -956,7 +915,7 @@ impl PublicDnsNamespaceChange {
 
 /// <p>Updated properties for the public DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicDnsNamespacePropertiesChange {
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
     #[doc(hidden)]
@@ -968,13 +927,6 @@ impl PublicDnsNamespacePropertiesChange {
         &self,
     ) -> std::option::Option<&crate::model::PublicDnsPropertiesMutableChange> {
         self.dns_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for PublicDnsNamespacePropertiesChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicDnsNamespacePropertiesChange");
-        formatter.field("dns_properties", &self.dns_properties);
-        formatter.finish()
     }
 }
 /// See [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
@@ -1020,7 +972,7 @@ impl PublicDnsNamespacePropertiesChange {
 
 /// <p>Updated DNS properties for the public DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicDnsPropertiesMutableChange {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
     #[doc(hidden)]
@@ -1030,13 +982,6 @@ impl PublicDnsPropertiesMutableChange {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
     pub fn soa(&self) -> std::option::Option<&crate::model::SoaChange> {
         self.soa.as_ref()
-    }
-}
-impl std::fmt::Debug for PublicDnsPropertiesMutableChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicDnsPropertiesMutableChange");
-        formatter.field("soa", &self.soa);
-        formatter.finish()
     }
 }
 /// See [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
@@ -1073,7 +1018,7 @@ impl PublicDnsPropertiesMutableChange {
 
 /// <p>Updated Start of Authority (SOA) properties for a public or private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SoaChange {
     /// <p>The updated time to live (TTL) for purposes of negative caching.</p>
     #[doc(hidden)]
@@ -1083,13 +1028,6 @@ impl SoaChange {
     /// <p>The updated time to live (TTL) for purposes of negative caching.</p>
     pub fn ttl(&self) -> std::option::Option<i64> {
         self.ttl
-    }
-}
-impl std::fmt::Debug for SoaChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SoaChange");
-        formatter.field("ttl", &self.ttl);
-        formatter.finish()
     }
 }
 /// See [`SoaChange`](crate::model::SoaChange).
@@ -1126,7 +1064,7 @@ impl SoaChange {
 
 /// <p>Updated properties for the private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateDnsNamespaceChange {
     /// <p>An updated description for the private DNS namespace.</p>
     #[doc(hidden)]
@@ -1145,14 +1083,6 @@ impl PrivateDnsNamespaceChange {
         &self,
     ) -> std::option::Option<&crate::model::PrivateDnsNamespacePropertiesChange> {
         self.properties.as_ref()
-    }
-}
-impl std::fmt::Debug for PrivateDnsNamespaceChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateDnsNamespaceChange");
-        formatter.field("description", &self.description);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
@@ -1210,7 +1140,7 @@ impl PrivateDnsNamespaceChange {
 
 /// <p>Updated properties for the private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateDnsNamespacePropertiesChange {
     /// <p>Updated DNS properties for the private DNS namespace.</p>
     #[doc(hidden)]
@@ -1222,13 +1152,6 @@ impl PrivateDnsNamespacePropertiesChange {
         &self,
     ) -> std::option::Option<&crate::model::PrivateDnsPropertiesMutableChange> {
         self.dns_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for PrivateDnsNamespacePropertiesChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateDnsNamespacePropertiesChange");
-        formatter.field("dns_properties", &self.dns_properties);
-        formatter.finish()
     }
 }
 /// See [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
@@ -1274,7 +1197,7 @@ impl PrivateDnsNamespacePropertiesChange {
 
 /// <p>Updated DNS properties for the private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateDnsPropertiesMutableChange {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
     #[doc(hidden)]
@@ -1284,13 +1207,6 @@ impl PrivateDnsPropertiesMutableChange {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
     pub fn soa(&self) -> std::option::Option<&crate::model::SoaChange> {
         self.soa.as_ref()
-    }
-}
-impl std::fmt::Debug for PrivateDnsPropertiesMutableChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateDnsPropertiesMutableChange");
-        formatter.field("soa", &self.soa);
-        formatter.finish()
     }
 }
 /// See [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
@@ -1419,7 +1335,7 @@ impl AsRef<str> for CustomHealthStatus {
 
 /// <p>Updated properties for the HTTP namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpNamespaceChange {
     /// <p>An updated description for the HTTP namespace.</p>
     #[doc(hidden)]
@@ -1429,13 +1345,6 @@ impl HttpNamespaceChange {
     /// <p>An updated description for the HTTP namespace.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpNamespaceChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpNamespaceChange");
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
@@ -1474,7 +1383,7 @@ impl HttpNamespaceChange {
 
 /// <p>A custom key-value pair that's associated with a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key identifier, or name, of the tag.</p>
     #[doc(hidden)]
@@ -1491,14 +1400,6 @@ impl Tag {
     /// <p>The string value that's associated with the key of the tag. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1549,7 +1450,7 @@ impl Tag {
 
 /// <p>A complex type that contains information about a specified service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceSummary {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
     #[doc(hidden)]
@@ -1676,25 +1577,6 @@ impl ServiceSummary {
     /// <p>The date and time that the service was created.</p>
     pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("dns_config", &self.dns_config);
-        formatter.field("health_check_config", &self.health_check_config);
-        formatter.field(
-            "health_check_custom_config",
-            &self.health_check_custom_config,
-        );
-        formatter.field("create_date", &self.create_date);
-        formatter.finish()
     }
 }
 /// See [`ServiceSummary`](crate::model::ServiceSummary).
@@ -1928,7 +1810,7 @@ impl ServiceSummary {
 /// <li> <p>If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, Cloud Map stops routing traffic to the resource.</p> </li>
 /// </ol>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckCustomConfig {
     /// <important>
     /// <p>This parameter is no longer supported and is always set to 1. Cloud Map waits for approximately 30 seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service instance.</p>
@@ -1952,13 +1834,6 @@ impl HealthCheckCustomConfig {
     )]
     pub fn failure_threshold(&self) -> std::option::Option<i32> {
         self.failure_threshold
-    }
-}
-impl std::fmt::Debug for HealthCheckCustomConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckCustomConfig");
-        formatter.field("failure_threshold", &self.failure_threshold);
-        formatter.finish()
     }
 }
 /// See [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
@@ -2011,7 +1886,7 @@ impl HealthCheckCustomConfig {
 
 /// <p>A complex type that contains information about the Amazon Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsConfig {
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
@@ -2083,15 +1958,6 @@ impl DnsConfig {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_records(&self) -> std::option::Option<&[crate::model::DnsRecord]> {
         self.dns_records.as_deref()
-    }
-}
-impl std::fmt::Debug for DnsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsConfig");
-        formatter.field("namespace_id", &self.namespace_id);
-        formatter.field("routing_policy", &self.routing_policy);
-        formatter.field("dns_records", &self.dns_records);
-        formatter.finish()
     }
 }
 /// See [`DnsConfig`](crate::model::DnsConfig).
@@ -2403,7 +2269,7 @@ impl AsRef<str> for ServiceType {
 
 /// <p>A complex type that lets you specify the namespaces that you want to list services for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceFilter {
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
     #[doc(hidden)]
@@ -2437,15 +2303,6 @@ impl ServiceFilter {
     /// </ul>
     pub fn condition(&self) -> std::option::Option<&crate::model::FilterCondition> {
         self.condition.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`ServiceFilter`](crate::model::ServiceFilter).
@@ -2715,7 +2572,7 @@ impl AsRef<str> for ServiceFilterName {
 
 /// <p>A complex type that contains information about an operation that matches the criteria that you specified in a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationSummary {
     /// <p>The ID for an operation.</p>
     #[doc(hidden)]
@@ -2744,14 +2601,6 @@ impl OperationSummary {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::OperationStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for OperationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationSummary");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`OperationSummary`](crate::model::OperationSummary).
@@ -2917,7 +2766,7 @@ impl AsRef<str> for OperationStatus {
 
 /// <p>A complex type that lets you select the operations that you want to list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationFilter {
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
@@ -2979,15 +2828,6 @@ impl OperationFilter {
     /// </ul>
     pub fn condition(&self) -> std::option::Option<&crate::model::FilterCondition> {
         self.condition.as_ref()
-    }
-}
-impl std::fmt::Debug for OperationFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`OperationFilter`](crate::model::OperationFilter).
@@ -3216,7 +3056,7 @@ impl AsRef<str> for OperationFilterName {
 
 /// <p>A complex type that contains information about a namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceSummary {
     /// <p>The ID of the namespace.</p>
     #[doc(hidden)]
@@ -3275,20 +3115,6 @@ impl NamespaceSummary {
     /// <p>The date and time that the namespace was created.</p>
     pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
-    }
-}
-impl std::fmt::Debug for NamespaceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NamespaceSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("service_count", &self.service_count);
-        formatter.field("properties", &self.properties);
-        formatter.field("create_date", &self.create_date);
-        formatter.finish()
     }
 }
 /// See [`NamespaceSummary`](crate::model::NamespaceSummary).
@@ -3417,7 +3243,7 @@ impl NamespaceSummary {
 
 /// <p>A complex type that contains information that's specific to the namespace type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceProperties {
     /// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
     #[doc(hidden)]
@@ -3434,14 +3260,6 @@ impl NamespaceProperties {
     /// <p>A complex type that contains the name of an HTTP namespace.</p>
     pub fn http_properties(&self) -> std::option::Option<&crate::model::HttpProperties> {
         self.http_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for NamespaceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NamespaceProperties");
-        formatter.field("dns_properties", &self.dns_properties);
-        formatter.field("http_properties", &self.http_properties);
-        formatter.finish()
     }
 }
 /// See [`NamespaceProperties`](crate::model::NamespaceProperties).
@@ -3498,7 +3316,7 @@ impl NamespaceProperties {
 
 /// <p>A complex type that contains the name of an HTTP namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpProperties {
     /// <p>The name of an HTTP namespace.</p>
     #[doc(hidden)]
@@ -3508,13 +3326,6 @@ impl HttpProperties {
     /// <p>The name of an HTTP namespace.</p>
     pub fn http_name(&self) -> std::option::Option<&str> {
         self.http_name.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpProperties");
-        formatter.field("http_name", &self.http_name);
-        formatter.finish()
     }
 }
 /// See [`HttpProperties`](crate::model::HttpProperties).
@@ -3553,7 +3364,7 @@ impl HttpProperties {
 
 /// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsProperties {
     /// <p>The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
     #[doc(hidden)]
@@ -3570,14 +3381,6 @@ impl DnsProperties {
     /// <p>Start of Authority (SOA) record for the hosted zone.</p>
     pub fn soa(&self) -> std::option::Option<&crate::model::Soa> {
         self.soa.as_ref()
-    }
-}
-impl std::fmt::Debug for DnsProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsProperties");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("soa", &self.soa);
-        formatter.finish()
     }
 }
 /// See [`DnsProperties`](crate::model::DnsProperties).
@@ -3631,7 +3434,7 @@ impl DnsProperties {
 
 /// <p>Start of Authority (SOA) properties for a public or private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     #[doc(hidden)]
@@ -3641,13 +3444,6 @@ impl Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     pub fn ttl(&self) -> std::option::Option<i64> {
         self.ttl
-    }
-}
-impl std::fmt::Debug for Soa {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Soa");
-        formatter.field("ttl", &self.ttl);
-        formatter.finish()
     }
 }
 /// See [`Soa`](crate::model::Soa).
@@ -3779,7 +3575,7 @@ impl AsRef<str> for NamespaceType {
 
 /// <p>A complex type that identifies the namespaces that you want to list. You can choose to list public or private namespaces.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceFilter {
     /// <p>Specify <code>TYPE</code>.</p>
     #[doc(hidden)]
@@ -3845,15 +3641,6 @@ impl NamespaceFilter {
     /// </dl>
     pub fn condition(&self) -> std::option::Option<&crate::model::FilterCondition> {
         self.condition.as_ref()
-    }
-}
-impl std::fmt::Debug for NamespaceFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NamespaceFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`NamespaceFilter`](crate::model::NamespaceFilter).
@@ -4060,7 +3847,7 @@ impl AsRef<str> for NamespaceFilterName {
 
 /// <p>A complex type that contains information about the instances that you registered by using a specified service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p>The ID for an instance that you created by using a specified service.</p>
     #[doc(hidden)]
@@ -4179,14 +3966,6 @@ impl InstanceSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceSummary");
-        formatter.field("id", &self.id);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
@@ -4352,7 +4131,7 @@ impl InstanceSummary {
 
 /// <p>A complex type that contains information about the specified service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Service {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
     #[doc(hidden)]
@@ -4487,27 +4266,6 @@ impl Service {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Service {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Service");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("namespace_id", &self.namespace_id);
-        formatter.field("description", &self.description);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("dns_config", &self.dns_config);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("health_check_config", &self.health_check_config);
-        formatter.field(
-            "health_check_custom_config",
-            &self.health_check_custom_config,
-        );
-        formatter.field("create_date", &self.create_date);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.finish()
     }
 }
 /// See [`Service`](crate::model::Service).
@@ -4743,7 +4501,7 @@ impl Service {
 
 /// <p>A complex type that contains information about a specified operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Operation {
     /// <p>The ID of the operation that you want to get information about.</p>
     #[doc(hidden)]
@@ -4918,20 +4676,6 @@ impl Operation {
         &std::collections::HashMap<crate::model::OperationTargetType, std::string::String>,
     > {
         self.targets.as_ref()
-    }
-}
-impl std::fmt::Debug for Operation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Operation");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("create_date", &self.create_date);
-        formatter.field("update_date", &self.update_date);
-        formatter.field("targets", &self.targets);
-        formatter.finish()
     }
 }
 /// See [`Operation`](crate::model::Operation).
@@ -5407,7 +5151,7 @@ impl AsRef<str> for OperationType {
 
 /// <p>A complex type that contains information about a specified namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Namespace {
     /// <p>The ID of a namespace.</p>
     #[doc(hidden)]
@@ -5513,21 +5257,6 @@ impl Namespace {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Namespace {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Namespace");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("service_count", &self.service_count);
-        formatter.field("properties", &self.properties);
-        formatter.field("create_date", &self.create_date);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.finish()
     }
 }
 /// See [`Namespace`](crate::model::Namespace).
@@ -5806,7 +5535,7 @@ impl AsRef<str> for HealthStatus {
 
 /// <p>A complex type that contains information about an instance that Cloud Map creates when you submit a <code>RegisterInstance</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
@@ -5974,15 +5703,6 @@ impl Instance {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("id", &self.id);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -6205,7 +5925,7 @@ impl Instance {
 
 /// <p>In a response to a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpInstanceSummary {
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
     #[doc(hidden)]
@@ -6249,17 +5969,6 @@ impl HttpInstanceSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpInstanceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpInstanceSummary");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("namespace_name", &self.namespace_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
@@ -6560,7 +6269,7 @@ impl AsRef<str> for ServiceTypeOption {
 
 /// <p>DNS properties for the public DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicDnsNamespaceProperties {
     /// <p>DNS properties for the public DNS namespace.</p>
     #[doc(hidden)]
@@ -6570,13 +6279,6 @@ impl PublicDnsNamespaceProperties {
     /// <p>DNS properties for the public DNS namespace.</p>
     pub fn dns_properties(&self) -> std::option::Option<&crate::model::PublicDnsPropertiesMutable> {
         self.dns_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for PublicDnsNamespaceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicDnsNamespaceProperties");
-        formatter.field("dns_properties", &self.dns_properties);
-        formatter.finish()
     }
 }
 /// See [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
@@ -6618,7 +6320,7 @@ impl PublicDnsNamespaceProperties {
 
 /// <p>DNS properties for the public DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicDnsPropertiesMutable {
     /// <p>Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
     #[doc(hidden)]
@@ -6628,13 +6330,6 @@ impl PublicDnsPropertiesMutable {
     /// <p>Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
     pub fn soa(&self) -> std::option::Option<&crate::model::Soa> {
         self.soa.as_ref()
-    }
-}
-impl std::fmt::Debug for PublicDnsPropertiesMutable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicDnsPropertiesMutable");
-        formatter.field("soa", &self.soa);
-        formatter.finish()
     }
 }
 /// See [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
@@ -6671,7 +6366,7 @@ impl PublicDnsPropertiesMutable {
 
 /// <p>DNS properties for the private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateDnsNamespaceProperties {
     /// <p>DNS properties for the private DNS namespace.</p>
     #[doc(hidden)]
@@ -6683,13 +6378,6 @@ impl PrivateDnsNamespaceProperties {
         &self,
     ) -> std::option::Option<&crate::model::PrivateDnsPropertiesMutable> {
         self.dns_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for PrivateDnsNamespaceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateDnsNamespaceProperties");
-        formatter.field("dns_properties", &self.dns_properties);
-        formatter.finish()
     }
 }
 /// See [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
@@ -6731,7 +6419,7 @@ impl PrivateDnsNamespaceProperties {
 
 /// <p>DNS properties for the private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrivateDnsPropertiesMutable {
     /// <p>Fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
     #[doc(hidden)]
@@ -6741,13 +6429,6 @@ impl PrivateDnsPropertiesMutable {
     /// <p>Fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
     pub fn soa(&self) -> std::option::Option<&crate::model::Soa> {
         self.soa.as_ref()
-    }
-}
-impl std::fmt::Debug for PrivateDnsPropertiesMutable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrivateDnsPropertiesMutable");
-        formatter.field("soa", &self.soa);
-        formatter.finish()
     }
 }
 /// See [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).

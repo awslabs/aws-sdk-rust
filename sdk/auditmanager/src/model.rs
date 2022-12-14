@@ -2,7 +2,7 @@
 
 /// <p> Indicates that the request has invalid or missing parameters for the field. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p> The name of the validation error. </p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p> The body of the error message. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p> The settings object that holds all supported Audit Manager settings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Settings {
     /// <p> Specifies whether Organizations is enabled. </p>
     #[doc(hidden)]
@@ -225,20 +217,6 @@ impl Settings {
     /// <p> The KMS key details. </p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
-    }
-}
-impl std::fmt::Debug for Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Settings");
-        formatter.field("is_aws_org_enabled", &self.is_aws_org_enabled);
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.field(
-            "default_assessment_reports_destination",
-            &self.default_assessment_reports_destination,
-        );
-        formatter.field("default_process_owners", &self.default_process_owners);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.finish()
     }
 }
 /// See [`Settings`](crate::model::Settings).
@@ -341,7 +319,7 @@ impl Settings {
 
 /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Role {
     /// <p> The type of customer persona. </p> <note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
@@ -366,14 +344,6 @@ impl Role {
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Role {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Role");
-        formatter.field("role_type", &self.role_type);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`Role`](crate::model::Role).
@@ -522,7 +492,7 @@ impl AsRef<str> for RoleType {
 
 /// <p> The location where Audit Manager saves assessment reports for the given assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentReportsDestination {
     /// <p> The destination type, such as Amazon S3. </p>
     #[doc(hidden)]
@@ -541,14 +511,6 @@ impl AssessmentReportsDestination {
     /// <p> The destination of the assessment report. </p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
-    }
-}
-impl std::fmt::Debug for AssessmentReportsDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentReportsDestination");
-        formatter.field("destination_type", &self.destination_type);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`AssessmentReportsDestination`](crate::model::AssessmentReportsDestination).
@@ -693,7 +655,7 @@ impl AsRef<str> for AssessmentReportDestinationType {
 
 /// <p> A control in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Control {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
     #[doc(hidden)]
@@ -808,27 +770,6 @@ impl Control {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Control {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Control");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("testing_information", &self.testing_information);
-        formatter.field("action_plan_title", &self.action_plan_title);
-        formatter.field("action_plan_instructions", &self.action_plan_instructions);
-        formatter.field("control_sources", &self.control_sources);
-        formatter.field("control_mapping_sources", &self.control_mapping_sources);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("last_updated_by", &self.last_updated_by);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Control`](crate::model::Control).
@@ -1086,7 +1027,7 @@ impl Control {
 
 /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlMappingSource {
     /// <p> The unique identifier for the source. </p>
     #[doc(hidden)]
@@ -1159,20 +1100,6 @@ impl ControlMappingSource {
     /// <p> The instructions for troubleshooting the control. </p>
     pub fn troubleshooting_text(&self) -> std::option::Option<&str> {
         self.troubleshooting_text.as_deref()
-    }
-}
-impl std::fmt::Debug for ControlMappingSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlMappingSource");
-        formatter.field("source_id", &self.source_id);
-        formatter.field("source_name", &self.source_name);
-        formatter.field("source_description", &self.source_description);
-        formatter.field("source_set_up_option", &self.source_set_up_option);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("source_keyword", &self.source_keyword);
-        formatter.field("source_frequency", &self.source_frequency);
-        formatter.field("troubleshooting_text", &self.troubleshooting_text);
-        formatter.finish()
     }
 }
 /// See [`ControlMappingSource`](crate::model::ControlMappingSource).
@@ -1429,7 +1356,7 @@ impl AsRef<str> for SourceFrequency {
 /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceKeyword {
     /// <p> The input method for the keyword. </p>
     #[doc(hidden)]
@@ -1480,14 +1407,6 @@ impl SourceKeyword {
     /// </ul>
     pub fn keyword_value(&self) -> std::option::Option<&str> {
         self.keyword_value.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceKeyword {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceKeyword");
-        formatter.field("keyword_input_type", &self.keyword_input_type);
-        formatter.field("keyword_value", &self.keyword_value);
-        formatter.finish()
     }
 }
 /// See [`SourceKeyword`](crate::model::SourceKeyword).
@@ -1956,7 +1875,7 @@ impl AsRef<str> for ControlType {
 
 /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Assessment {
     /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
     #[doc(hidden)]
@@ -1998,17 +1917,6 @@ impl Assessment {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Assessment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Assessment");
-        formatter.field("arn", &self.arn);
-        formatter.field("aws_account", &self.aws_account);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("framework", &self.framework);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Assessment`](crate::model::Assessment).
@@ -2121,7 +2029,7 @@ impl Assessment {
 
 /// <p> The file used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentFramework {
     /// <p> The unique identifier for the framework. </p>
     #[doc(hidden)]
@@ -2152,16 +2060,6 @@ impl AssessmentFramework {
     /// <p> The control sets that are associated with the framework. </p>
     pub fn control_sets(&self) -> std::option::Option<&[crate::model::AssessmentControlSet]> {
         self.control_sets.as_deref()
-    }
-}
-impl std::fmt::Debug for AssessmentFramework {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentFramework");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("control_sets", &self.control_sets);
-        formatter.finish()
     }
 }
 /// See [`AssessmentFramework`](crate::model::AssessmentFramework).
@@ -2249,7 +2147,7 @@ impl AssessmentFramework {
 
 /// <p> Represents a set of controls in an Audit Manager assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentControlSet {
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     #[doc(hidden)]
@@ -2308,20 +2206,6 @@ impl AssessmentControlSet {
     /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
     pub fn manual_evidence_count(&self) -> i32 {
         self.manual_evidence_count
-    }
-}
-impl std::fmt::Debug for AssessmentControlSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentControlSet");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("roles", &self.roles);
-        formatter.field("controls", &self.controls);
-        formatter.field("delegations", &self.delegations);
-        formatter.field("system_evidence_count", &self.system_evidence_count);
-        formatter.field("manual_evidence_count", &self.manual_evidence_count);
-        formatter.finish()
     }
 }
 /// See [`AssessmentControlSet`](crate::model::AssessmentControlSet).
@@ -2474,7 +2358,7 @@ impl AssessmentControlSet {
 
 /// <p> The assignment of a control set to a delegate for review. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Delegation {
     /// <p> The unique identifier for the delegation. </p>
     #[doc(hidden)]
@@ -2562,23 +2446,6 @@ impl Delegation {
     /// <p> The IAM user or role that created the delegation. </p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
-    }
-}
-impl std::fmt::Debug for Delegation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Delegation");
-        formatter.field("id", &self.id);
-        formatter.field("assessment_name", &self.assessment_name);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("status", &self.status);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("role_type", &self.role_type);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("comment", &self.comment);
-        formatter.field("created_by", &self.created_by);
-        formatter.finish()
     }
 }
 /// See [`Delegation`](crate::model::Delegation).
@@ -2858,7 +2725,7 @@ impl AsRef<str> for DelegationStatus {
 
 /// <p> The control entity that represents a standard control or a custom control in an Audit Manager assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentControl {
     /// <p> The identifier for the control. </p>
     #[doc(hidden)]
@@ -2924,24 +2791,6 @@ impl AssessmentControl {
     /// <p> The amount of evidence in the assessment report. </p>
     pub fn assessment_report_evidence_count(&self) -> i32 {
         self.assessment_report_evidence_count
-    }
-}
-impl std::fmt::Debug for AssessmentControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentControl");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("response", &self.response);
-        formatter.field("comments", &self.comments);
-        formatter.field("evidence_sources", &self.evidence_sources);
-        formatter.field("evidence_count", &self.evidence_count);
-        formatter.field(
-            "assessment_report_evidence_count",
-            &self.assessment_report_evidence_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`AssessmentControl`](crate::model::AssessmentControl).
@@ -3105,7 +2954,7 @@ impl AssessmentControl {
 
 /// <p> A comment that's posted by a user on a control. This includes the author's name, the comment text, and a timestamp. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlComment {
     /// <p> The name of the user who authored the comment. </p>
     #[doc(hidden)]
@@ -3129,15 +2978,6 @@ impl ControlComment {
     /// <p> The time when the comment was posted. </p>
     pub fn posted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.posted_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ControlComment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlComment");
-        formatter.field("author_name", &self.author_name);
-        formatter.field("comment_body", &self.comment_body);
-        formatter.field("posted_date", &self.posted_date);
-        formatter.finish()
     }
 }
 /// See [`ControlComment`](crate::model::ControlComment).
@@ -3493,7 +3333,7 @@ impl AsRef<str> for ControlSetStatus {
 
 /// <p> The metadata of a framework, such as the name, ID, or description. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameworkMetadata {
     /// <p> The name of the framework. </p>
     #[doc(hidden)]
@@ -3524,16 +3364,6 @@ impl FrameworkMetadata {
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
-    }
-}
-impl std::fmt::Debug for FrameworkMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameworkMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("logo", &self.logo);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.finish()
     }
 }
 /// See [`FrameworkMetadata`](crate::model::FrameworkMetadata).
@@ -3611,7 +3441,7 @@ impl FrameworkMetadata {
 
 /// <p> The metadata that's associated with the specified assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentMetadata {
     /// <p> The name of the assessment. </p>
     #[doc(hidden)]
@@ -3694,26 +3524,6 @@ impl AssessmentMetadata {
     /// <p> The time of the most recent update. </p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "assessment_reports_destination",
-            &self.assessment_reports_destination,
-        );
-        formatter.field("scope", &self.scope);
-        formatter.field("roles", &self.roles);
-        formatter.field("delegations", &self.delegations);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`AssessmentMetadata`](crate::model::AssessmentMetadata).
@@ -3909,7 +3719,7 @@ impl AssessmentMetadata {
 
 /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scope {
     /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
     #[doc(hidden)]
@@ -3926,14 +3736,6 @@ impl Scope {
     /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
     pub fn aws_services(&self) -> std::option::Option<&[crate::model::AwsService]> {
         self.aws_services.as_deref()
-    }
-}
-impl std::fmt::Debug for Scope {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scope");
-        formatter.field("aws_accounts", &self.aws_accounts);
-        formatter.field("aws_services", &self.aws_services);
-        formatter.finish()
     }
 }
 /// See [`Scope`](crate::model::Scope).
@@ -4002,7 +3804,7 @@ impl Scope {
 
 /// <p> An Amazon Web Service such as Amazon S3 or CloudTrail. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsService {
     /// <p> The name of the Amazon Web Service. </p>
     #[doc(hidden)]
@@ -4012,13 +3814,6 @@ impl AwsService {
     /// <p> The name of the Amazon Web Service. </p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsService");
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
     }
 }
 /// See [`AwsService`](crate::model::AwsService).
@@ -4057,7 +3852,7 @@ impl AwsService {
 
 /// <p> The wrapper of Amazon Web Services account details, such as account ID or email address. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsAccount {
     /// <p> The identifier for the Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -4081,15 +3876,6 @@ impl AwsAccount {
     /// <p> The name of the Amazon Web Services account. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsAccount");
-        formatter.field("id", &self.id);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AwsAccount`](crate::model::AwsAccount).
@@ -4245,7 +4031,7 @@ impl AsRef<str> for AssessmentStatus {
 
 /// <p> Represents a share request for a custom framework in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentFrameworkShareRequest {
     /// <p> The unique identifier for the share request. </p>
     #[doc(hidden)]
@@ -4353,27 +4139,6 @@ impl AssessmentFrameworkShareRequest {
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
-    }
-}
-impl std::fmt::Debug for AssessmentFrameworkShareRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentFrameworkShareRequest");
-        formatter.field("id", &self.id);
-        formatter.field("framework_id", &self.framework_id);
-        formatter.field("framework_name", &self.framework_name);
-        formatter.field("framework_description", &self.framework_description);
-        formatter.field("status", &self.status);
-        formatter.field("source_account", &self.source_account);
-        formatter.field("destination_account", &self.destination_account);
-        formatter.field("destination_region", &self.destination_region);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("comment", &self.comment);
-        formatter.field("standard_controls_count", &self.standard_controls_count);
-        formatter.field("custom_controls_count", &self.custom_controls_count);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.finish()
     }
 }
 /// See [`AssessmentFrameworkShareRequest`](crate::model::AssessmentFrameworkShareRequest).
@@ -4928,7 +4693,7 @@ impl AsRef<str> for ShareRequestType {
 
 /// <p> The file that's used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Framework {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     #[doc(hidden)]
@@ -5033,26 +4798,6 @@ impl Framework {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Framework {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Framework");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("description", &self.description);
-        formatter.field("logo", &self.logo);
-        formatter.field("control_sources", &self.control_sources);
-        formatter.field("control_sets", &self.control_sets);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("last_updated_by", &self.last_updated_by);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Framework`](crate::model::Framework).
@@ -5288,7 +5033,7 @@ impl Framework {
 
 /// <p> A set of controls in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlSet {
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     #[doc(hidden)]
@@ -5312,15 +5057,6 @@ impl ControlSet {
     /// <p> The list of controls within the control set. </p>
     pub fn controls(&self) -> std::option::Option<&[crate::model::Control]> {
         self.controls.as_deref()
-    }
-}
-impl std::fmt::Debug for ControlSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlSet");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("controls", &self.controls);
-        formatter.finish()
     }
 }
 /// See [`ControlSet`](crate::model::ControlSet).
@@ -5482,7 +5218,7 @@ impl AsRef<str> for FrameworkType {
 
 /// <p> A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkControlSet {
     /// <p> The unique identifier for the control set. </p>
     #[doc(hidden)]
@@ -5509,15 +5245,6 @@ impl UpdateAssessmentFrameworkControlSet {
         &self,
     ) -> std::option::Option<&[crate::model::CreateAssessmentFrameworkControl]> {
         self.controls.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateAssessmentFrameworkControlSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssessmentFrameworkControlSet");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("controls", &self.controls);
-        formatter.finish()
     }
 }
 /// See [`UpdateAssessmentFrameworkControlSet`](crate::model::UpdateAssessmentFrameworkControlSet).
@@ -5592,7 +5319,7 @@ impl UpdateAssessmentFrameworkControlSet {
 
 /// <p> The control entity attributes that uniquely identify an existing control to be added to a framework in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkControl {
     /// <p> The unique identifier of the control. </p>
     #[doc(hidden)]
@@ -5602,13 +5329,6 @@ impl CreateAssessmentFrameworkControl {
     /// <p> The unique identifier of the control. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAssessmentFrameworkControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssessmentFrameworkControl");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`CreateAssessmentFrameworkControl`](crate::model::CreateAssessmentFrameworkControl).
@@ -5740,7 +5460,7 @@ impl AsRef<str> for AccountStatus {
 
 /// <p> The notification that informs a user of an update in Audit Manager. For example, this includes the notification that's sent when a control set is delegated for review. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Notification {
     /// <p> The unique identifier for the notification. </p>
     #[doc(hidden)]
@@ -5799,20 +5519,6 @@ impl Notification {
     /// <p> The sender of the notification. </p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
-    }
-}
-impl std::fmt::Debug for Notification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Notification");
-        formatter.field("id", &self.id);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("assessment_name", &self.assessment_name);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("control_set_name", &self.control_set_name);
-        formatter.field("description", &self.description);
-        formatter.field("event_time", &self.event_time);
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`Notification`](crate::model::Notification).
@@ -5950,7 +5656,7 @@ impl Notification {
 
 /// <p> The metadata that's associated with the standard control or custom control. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlMetadata {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
     #[doc(hidden)]
@@ -5995,18 +5701,6 @@ impl ControlMetadata {
     /// <p> Specifies when the control was most recently updated. </p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ControlMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlMetadata");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("control_sources", &self.control_sources);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`ControlMetadata`](crate::model::ControlMetadata).
@@ -6115,7 +5809,7 @@ impl ControlMetadata {
 /// <p>A summary of the latest analytics data for a specific control. </p>
 /// <p>This data reflects the total counts for the specified control across all active assessments. Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlInsightsMetadataItem {
     /// <p>The name of the control. </p>
     #[doc(hidden)]
@@ -6146,16 +5840,6 @@ impl ControlInsightsMetadataItem {
     /// <p>The time when the control insights were last updated. </p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for ControlInsightsMetadataItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlInsightsMetadataItem");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("evidence_insights", &self.evidence_insights);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`ControlInsightsMetadataItem`](crate::model::ControlInsightsMetadataItem).
@@ -6236,7 +5920,7 @@ impl ControlInsightsMetadataItem {
 
 /// <p>A breakdown of the latest compliance check status for the evidence in your Audit Manager assessments. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvidenceInsights {
     /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     #[doc(hidden)]
@@ -6264,21 +5948,6 @@ impl EvidenceInsights {
     /// </note>
     pub fn inconclusive_evidence_count(&self) -> std::option::Option<i32> {
         self.inconclusive_evidence_count
-    }
-}
-impl std::fmt::Debug for EvidenceInsights {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvidenceInsights");
-        formatter.field(
-            "noncompliant_evidence_count",
-            &self.noncompliant_evidence_count,
-        );
-        formatter.field("compliant_evidence_count", &self.compliant_evidence_count);
-        formatter.field(
-            "inconclusive_evidence_count",
-            &self.inconclusive_evidence_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`EvidenceInsights`](crate::model::EvidenceInsights).
@@ -6346,7 +6015,7 @@ impl EvidenceInsights {
 /// <p>A summary of the latest analytics data for a specific control domain.</p>
 /// <p>Control domain insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlDomainInsights {
     /// <p>The name of the control domain. </p>
     #[doc(hidden)]
@@ -6391,21 +6060,6 @@ impl ControlDomainInsights {
     /// <p>The time when the control domain insights were last updated. </p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for ControlDomainInsights {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlDomainInsights");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field(
-            "controls_count_by_noncompliant_evidence",
-            &self.controls_count_by_noncompliant_evidence,
-        );
-        formatter.field("total_controls_count", &self.total_controls_count);
-        formatter.field("evidence_insights", &self.evidence_insights);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`ControlDomainInsights`](crate::model::ControlDomainInsights).
@@ -6514,7 +6168,7 @@ impl ControlDomainInsights {
 
 /// <p> A metadata object that's associated with an assessment in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentMetadataItem {
     /// <p> The name of the assessment. </p>
     #[doc(hidden)]
@@ -6573,20 +6227,6 @@ impl AssessmentMetadataItem {
     /// <p> The time of the most recent update. </p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentMetadataItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentMetadataItem");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("status", &self.status);
-        formatter.field("roles", &self.roles);
-        formatter.field("delegations", &self.delegations);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`AssessmentMetadataItem`](crate::model::AssessmentMetadataItem).
@@ -6739,7 +6379,7 @@ impl AssessmentMetadataItem {
 
 /// <p> The metadata objects that are associated with the specified assessment report. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentReportMetadata {
     /// <p> The unique identifier for the assessment report. </p>
     #[doc(hidden)]
@@ -6798,20 +6438,6 @@ impl AssessmentReportMetadata {
     /// <p> Specifies when the assessment report was created. </p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentReportMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentReportMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("assessment_name", &self.assessment_name);
-        formatter.field("author", &self.author);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`AssessmentReportMetadata`](crate::model::AssessmentReportMetadata).
@@ -7043,7 +6669,7 @@ impl AsRef<str> for AssessmentReportStatus {
 
 /// <p> The metadata that's associated with a standard framework or a custom framework. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentFrameworkMetadata {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     #[doc(hidden)]
@@ -7123,23 +6749,6 @@ impl AssessmentFrameworkMetadata {
     /// <p> Specifies when the framework was most recently updated. </p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentFrameworkMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentFrameworkMetadata");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("logo", &self.logo);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("controls_count", &self.controls_count);
-        formatter.field("control_sets_count", &self.control_sets_count);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`AssessmentFrameworkMetadata`](crate::model::AssessmentFrameworkMetadata).
@@ -7308,7 +6917,7 @@ impl AssessmentFrameworkMetadata {
 /// <p>A summary of the latest analytics data for a specific control in a specific active assessment.</p>
 /// <p>Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlInsightsMetadataByAssessmentItem {
     /// <p>The name of the assessment control. </p>
     #[doc(hidden)]
@@ -7346,17 +6955,6 @@ impl ControlInsightsMetadataByAssessmentItem {
     /// <p>The time when the assessment control insights were last updated. </p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for ControlInsightsMetadataByAssessmentItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlInsightsMetadataByAssessmentItem");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("evidence_insights", &self.evidence_insights);
-        formatter.field("control_set_name", &self.control_set_name);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`ControlInsightsMetadataByAssessmentItem`](crate::model::ControlInsightsMetadataByAssessmentItem).
@@ -7567,7 +7165,7 @@ impl AsRef<str> for SettingAttribute {
 
 /// <p> The metadata that's associated with the Amazon Web Service. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceMetadata {
     /// <p> The name of the Amazon Web Service. </p>
     #[doc(hidden)]
@@ -7598,16 +7196,6 @@ impl ServiceMetadata {
     /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
     pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
-        formatter.field("category", &self.category);
-        formatter.finish()
     }
 }
 /// See [`ServiceMetadata`](crate::model::ServiceMetadata).
@@ -7690,7 +7278,7 @@ impl ServiceMetadata {
 /// </ul>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightsByAssessment {
     /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     #[doc(hidden)]
@@ -7739,30 +7327,6 @@ impl InsightsByAssessment {
     /// <p>The time when the assessment insights were last updated.</p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for InsightsByAssessment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightsByAssessment");
-        formatter.field(
-            "noncompliant_evidence_count",
-            &self.noncompliant_evidence_count,
-        );
-        formatter.field("compliant_evidence_count", &self.compliant_evidence_count);
-        formatter.field(
-            "inconclusive_evidence_count",
-            &self.inconclusive_evidence_count,
-        );
-        formatter.field(
-            "assessment_controls_count_by_noncompliant_evidence",
-            &self.assessment_controls_count_by_noncompliant_evidence,
-        );
-        formatter.field(
-            "total_assessment_controls_count",
-            &self.total_assessment_controls_count,
-        );
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`InsightsByAssessment`](crate::model::InsightsByAssessment).
@@ -7883,7 +7447,7 @@ impl InsightsByAssessment {
 /// </ul>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Insights {
     /// <p>The number of active assessments in Audit Manager. </p>
     #[doc(hidden)]
@@ -7939,31 +7503,6 @@ impl Insights {
     /// <p>The time when the cross-assessment insights were last updated. </p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
-    }
-}
-impl std::fmt::Debug for Insights {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Insights");
-        formatter.field("active_assessments_count", &self.active_assessments_count);
-        formatter.field(
-            "noncompliant_evidence_count",
-            &self.noncompliant_evidence_count,
-        );
-        formatter.field("compliant_evidence_count", &self.compliant_evidence_count);
-        formatter.field(
-            "inconclusive_evidence_count",
-            &self.inconclusive_evidence_count,
-        );
-        formatter.field(
-            "assessment_controls_count_by_noncompliant_evidence",
-            &self.assessment_controls_count_by_noncompliant_evidence,
-        );
-        formatter.field(
-            "total_assessment_controls_count",
-            &self.total_assessment_controls_count,
-        );
-        formatter.field("last_updated", &self.last_updated);
-        formatter.finish()
     }
 }
 /// See [`Insights`](crate::model::Insights).
@@ -8088,7 +7627,7 @@ impl Insights {
 
 /// <p> The folder where Audit Manager stores evidence for an assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentEvidenceFolder {
     /// <p> The name of the evidence folder. </p>
     #[doc(hidden)]
@@ -8217,54 +7756,6 @@ impl AssessmentEvidenceFolder {
     /// <p> The total number of Amazon Web Services resources that were assessed to generate the evidence. </p>
     pub fn evidence_aws_service_source_count(&self) -> i32 {
         self.evidence_aws_service_source_count
-    }
-}
-impl std::fmt::Debug for AssessmentEvidenceFolder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentEvidenceFolder");
-        formatter.field("name", &self.name);
-        formatter.field("date", &self.date);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("control_id", &self.control_id);
-        formatter.field("id", &self.id);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("author", &self.author);
-        formatter.field("total_evidence", &self.total_evidence);
-        formatter.field(
-            "assessment_report_selection_count",
-            &self.assessment_report_selection_count,
-        );
-        formatter.field("control_name", &self.control_name);
-        formatter.field(
-            "evidence_resources_included_count",
-            &self.evidence_resources_included_count,
-        );
-        formatter.field(
-            "evidence_by_type_configuration_data_count",
-            &self.evidence_by_type_configuration_data_count,
-        );
-        formatter.field(
-            "evidence_by_type_manual_count",
-            &self.evidence_by_type_manual_count,
-        );
-        formatter.field(
-            "evidence_by_type_compliance_check_count",
-            &self.evidence_by_type_compliance_check_count,
-        );
-        formatter.field(
-            "evidence_by_type_compliance_check_issues_count",
-            &self.evidence_by_type_compliance_check_issues_count,
-        );
-        formatter.field(
-            "evidence_by_type_user_activity_count",
-            &self.evidence_by_type_user_activity_count,
-        );
-        formatter.field(
-            "evidence_aws_service_source_count",
-            &self.evidence_aws_service_source_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`AssessmentEvidenceFolder`](crate::model::AssessmentEvidenceFolder).
@@ -8553,7 +8044,7 @@ impl AssessmentEvidenceFolder {
 
 /// <p> A record that contains the information needed to demonstrate compliance with the requirements specified by a control. Examples of evidence include change activity triggered by a user, or a system configuration snapshot. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Evidence {
     /// <p> The data source where the evidence was collected from. </p>
     #[doc(hidden)]
@@ -8665,30 +8156,6 @@ impl Evidence {
     /// <p> Specifies whether the evidence is included in the assessment report. </p>
     pub fn assessment_report_selection(&self) -> std::option::Option<&str> {
         self.assessment_report_selection.as_deref()
-    }
-}
-impl std::fmt::Debug for Evidence {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Evidence");
-        formatter.field("data_source", &self.data_source);
-        formatter.field("evidence_aws_account_id", &self.evidence_aws_account_id);
-        formatter.field("time", &self.time);
-        formatter.field("event_source", &self.event_source);
-        formatter.field("event_name", &self.event_name);
-        formatter.field("evidence_by_type", &self.evidence_by_type);
-        formatter.field("resources_included", &self.resources_included);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("iam_id", &self.iam_id);
-        formatter.field("compliance_check", &self.compliance_check);
-        formatter.field("aws_organization", &self.aws_organization);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("evidence_folder_id", &self.evidence_folder_id);
-        formatter.field("id", &self.id);
-        formatter.field(
-            "assessment_report_selection",
-            &self.assessment_report_selection,
-        );
-        formatter.finish()
     }
 }
 /// See [`Evidence`](crate::model::Evidence).
@@ -8945,7 +8412,7 @@ impl Evidence {
 
 /// <p> A system asset that's evaluated in an Audit Manager assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p> The Amazon Resource Name (ARN) for the resource. </p>
     #[doc(hidden)]
@@ -8962,14 +8429,6 @@ impl Resource {
     /// <p> The value of the resource. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("arn", &self.arn);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -9020,7 +8479,7 @@ impl Resource {
 
 /// <p> The metadata that's associated with the delegation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DelegationMetadata {
     /// <p> The unique identifier for the delegation. </p>
     #[doc(hidden)]
@@ -9072,19 +8531,6 @@ impl DelegationMetadata {
     /// <p> Specifies the name of the control set that was delegated for review. </p>
     pub fn control_set_name(&self) -> std::option::Option<&str> {
         self.control_set_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DelegationMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DelegationMetadata");
-        formatter.field("id", &self.id);
-        formatter.field("assessment_name", &self.assessment_name);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("status", &self.status);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("control_set_name", &self.control_set_name);
-        formatter.finish()
     }
 }
 /// See [`DelegationMetadata`](crate::model::DelegationMetadata).
@@ -9210,7 +8656,7 @@ impl DelegationMetadata {
 
 /// <p> The record of a change within Audit Manager. For example, this could be the status change of an assessment or the delegation of a control set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeLog {
     /// <p> The object that was changed, such as an assessment, control, or control set. </p>
     #[doc(hidden)]
@@ -9248,17 +8694,6 @@ impl ChangeLog {
     /// <p> The IAM user or role that performed the action. </p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
-    }
-}
-impl std::fmt::Debug for ChangeLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeLog");
-        formatter.field("object_type", &self.object_type);
-        formatter.field("object_name", &self.object_name);
-        formatter.field("action", &self.action);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("created_by", &self.created_by);
-        formatter.finish()
     }
 }
 /// See [`ChangeLog`](crate::model::ChangeLog).
@@ -9591,7 +9026,7 @@ impl AsRef<str> for ObjectTypeEnum {
 
 /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Url {
     /// <p> The name or word that's used as a hyperlink to the URL. </p>
     #[doc(hidden)]
@@ -9608,14 +9043,6 @@ impl Url {
     /// <p> The unique identifier for the internet resource. </p>
     pub fn link(&self) -> std::option::Option<&str> {
         self.link.as_deref()
-    }
-}
-impl std::fmt::Debug for Url {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Url");
-        formatter.field("hyperlink_name", &self.hyperlink_name);
-        formatter.field("link", &self.link);
-        formatter.finish()
     }
 }
 /// See [`Url`](crate::model::Url).
@@ -9669,7 +9096,7 @@ impl Url {
 
 /// <p> The control mapping fields that represent the source for evidence collection, along with related parameters and metadata. This doesn't contain <code>mappingID</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateControlMappingSource {
     /// <p> The name of the control mapping data source. </p>
     #[doc(hidden)]
@@ -9735,19 +9162,6 @@ impl CreateControlMappingSource {
     /// <p> The instructions for troubleshooting the control. </p>
     pub fn troubleshooting_text(&self) -> std::option::Option<&str> {
         self.troubleshooting_text.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateControlMappingSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateControlMappingSource");
-        formatter.field("source_name", &self.source_name);
-        formatter.field("source_description", &self.source_description);
-        formatter.field("source_set_up_option", &self.source_set_up_option);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("source_keyword", &self.source_keyword);
-        formatter.field("source_frequency", &self.source_frequency);
-        formatter.field("troubleshooting_text", &self.troubleshooting_text);
-        formatter.finish()
     }
 }
 /// See [`CreateControlMappingSource`](crate::model::CreateControlMappingSource).
@@ -9890,7 +9304,7 @@ impl CreateControlMappingSource {
 
 /// <p> A finalized document that's generated from an Audit Manager assessment. These reports summarize the relevant evidence that was collected for your audit, and link to the relevant evidence folders. These evidence folders are named and organized according to the controls that are specified in your assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentReport {
     /// <p> The unique identifier for the assessment report. </p>
     #[doc(hidden)]
@@ -9956,21 +9370,6 @@ impl AssessmentReport {
     /// <p> Specifies when the assessment report was created. </p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for AssessmentReport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentReport");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("assessment_name", &self.assessment_name);
-        formatter.field("author", &self.author);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`AssessmentReport`](crate::model::AssessmentReport).
@@ -10120,7 +9519,7 @@ impl AssessmentReport {
 
 /// <p> A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkControlSet {
     /// <p> The name of the control set. </p>
     #[doc(hidden)]
@@ -10140,14 +9539,6 @@ impl CreateAssessmentFrameworkControlSet {
         &self,
     ) -> std::option::Option<&[crate::model::CreateAssessmentFrameworkControl]> {
         self.controls.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAssessmentFrameworkControlSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssessmentFrameworkControlSet");
-        formatter.field("name", &self.name);
-        formatter.field("controls", &self.controls);
-        formatter.finish()
     }
 }
 /// See [`CreateAssessmentFrameworkControlSet`](crate::model::CreateAssessmentFrameworkControlSet).
@@ -10210,7 +9601,7 @@ impl CreateAssessmentFrameworkControlSet {
 
 /// <p> An error entity for the <code>BatchImportEvidenceToAssessmentControl</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlError {
     /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
     #[doc(hidden)]
@@ -10234,15 +9625,6 @@ impl BatchImportEvidenceToAssessmentControlError {
     /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchImportEvidenceToAssessmentControlError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchImportEvidenceToAssessmentControlError");
-        formatter.field("manual_evidence", &self.manual_evidence);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchImportEvidenceToAssessmentControlError`](crate::model::BatchImportEvidenceToAssessmentControlError).
@@ -10311,7 +9693,7 @@ impl BatchImportEvidenceToAssessmentControlError {
 
 /// <p> Evidence that's uploaded to Audit Manager manually. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManualEvidence {
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
     #[doc(hidden)]
@@ -10321,13 +9703,6 @@ impl ManualEvidence {
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
     pub fn s3_resource_path(&self) -> std::option::Option<&str> {
         self.s3_resource_path.as_deref()
-    }
-}
-impl std::fmt::Debug for ManualEvidence {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManualEvidence");
-        formatter.field("s3_resource_path", &self.s3_resource_path);
-        formatter.finish()
     }
 }
 /// See [`ManualEvidence`](crate::model::ManualEvidence).
@@ -10369,7 +9744,7 @@ impl ManualEvidence {
 
 /// <p> An error entity for the <code>AssessmentReportEvidence</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssessmentReportEvidenceError {
     /// <p> The identifier for the evidence. </p>
     #[doc(hidden)]
@@ -10393,15 +9768,6 @@ impl AssessmentReportEvidenceError {
     /// <p> The error message that the <code>AssessmentReportEvidence</code> API returned. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for AssessmentReportEvidenceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssessmentReportEvidenceError");
-        formatter.field("evidence_id", &self.evidence_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`AssessmentReportEvidenceError`](crate::model::AssessmentReportEvidenceError).
@@ -10467,7 +9833,7 @@ impl AssessmentReportEvidenceError {
 
 /// <p> An error entity for the <code>BatchDeleteDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentError {
     /// <p> The identifier for the delegation. </p>
     #[doc(hidden)]
@@ -10491,15 +9857,6 @@ impl BatchDeleteDelegationByAssessmentError {
     /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteDelegationByAssessmentError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteDelegationByAssessmentError");
-        formatter.field("delegation_id", &self.delegation_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchDeleteDelegationByAssessmentError`](crate::model::BatchDeleteDelegationByAssessmentError).
@@ -10568,7 +9925,7 @@ impl BatchDeleteDelegationByAssessmentError {
 
 /// <p> An error entity for the <code>BatchCreateDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateDelegationByAssessmentError {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
     #[doc(hidden)]
@@ -10594,15 +9951,6 @@ impl BatchCreateDelegationByAssessmentError {
     /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateDelegationByAssessmentError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateDelegationByAssessmentError");
-        formatter.field("create_delegation_request", &self.create_delegation_request);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchCreateDelegationByAssessmentError`](crate::model::BatchCreateDelegationByAssessmentError).
@@ -10675,7 +10023,7 @@ impl BatchCreateDelegationByAssessmentError {
 
 /// <p> A collection of attributes that's used to create a delegation for an assessment in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDelegationRequest {
     /// <p> A comment that's related to the delegation request. </p>
     #[doc(hidden)]
@@ -10714,16 +10062,6 @@ impl CreateDelegationRequest {
     /// </note>
     pub fn role_type(&self) -> std::option::Option<&crate::model::RoleType> {
         self.role_type.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDelegationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDelegationRequest");
-        formatter.field("comment", &self.comment);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("role_type", &self.role_type);
-        formatter.finish()
     }
 }
 /// See [`CreateDelegationRequest`](crate::model::CreateDelegationRequest).

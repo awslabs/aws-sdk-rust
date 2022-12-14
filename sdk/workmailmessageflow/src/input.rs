@@ -330,7 +330,7 @@ impl PutRawMessageContentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRawMessageContentInput {
     /// <p>The identifier of the email message being updated.</p>
     #[doc(hidden)]
@@ -349,18 +349,10 @@ impl PutRawMessageContentInput {
         self.content.as_ref()
     }
 }
-impl std::fmt::Debug for PutRawMessageContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRawMessageContentInput");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRawMessageContentInput {
     /// <p>The identifier of the email message to retrieve.</p>
     #[doc(hidden)]
@@ -370,12 +362,5 @@ impl GetRawMessageContentInput {
     /// <p>The identifier of the email message to retrieve.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRawMessageContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRawMessageContentInput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }

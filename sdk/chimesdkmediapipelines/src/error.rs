@@ -2,7 +2,7 @@
 
 /// <p>The client is not currently authorized to make the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -22,15 +22,6 @@ impl UnauthorizedClientException {
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UnauthorizedClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedClientException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl UnauthorizedClientException {
@@ -111,7 +102,7 @@ impl UnauthorizedClientException {
 
 /// <p>The client exceeded its request rate limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottledClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -131,15 +122,6 @@ impl ThrottledClientException {
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottledClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottledClientException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ThrottledClientException {
@@ -220,7 +202,7 @@ impl ThrottledClientException {
 
 /// <p>The service is currently unavailable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -240,15 +222,6 @@ impl ServiceUnavailableException {
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ServiceUnavailableException {
@@ -329,7 +302,7 @@ impl ServiceUnavailableException {
 
 /// <p>The service encountered an unexpected error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -349,15 +322,6 @@ impl ServiceFailureException {
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceFailureException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ServiceFailureException {
@@ -438,7 +402,7 @@ impl ServiceFailureException {
 
 /// <p>One or more of the resources in the request does not exist in the system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -458,15 +422,6 @@ impl NotFoundException {
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl NotFoundException {
@@ -547,7 +502,7 @@ impl NotFoundException {
 
 /// <p>The client is permanently forbidden from making the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -567,15 +522,6 @@ impl ForbiddenException {
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ForbiddenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ForbiddenException {
@@ -656,7 +602,7 @@ impl ForbiddenException {
 
 /// <p>The input parameters don't match the service's restrictions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -676,15 +622,6 @@ impl BadRequestException {
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl BadRequestException {
@@ -765,7 +702,7 @@ impl BadRequestException {
 
 /// <p>The request exceeds the resource limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -785,15 +722,6 @@ impl ResourceLimitExceededException {
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLimitExceededException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 impl ResourceLimitExceededException {

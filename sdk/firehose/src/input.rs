@@ -2396,7 +2396,7 @@ impl UpdateDestinationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDestinationInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2489,44 +2489,10 @@ impl UpdateDestinationInput {
         self.http_endpoint_destination_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDestinationInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field(
-            "current_delivery_stream_version_id",
-            &self.current_delivery_stream_version_id,
-        );
-        formatter.field("destination_id", &self.destination_id);
-        formatter.field("s3_destination_update", &self.s3_destination_update);
-        formatter.field(
-            "extended_s3_destination_update",
-            &self.extended_s3_destination_update,
-        );
-        formatter.field(
-            "redshift_destination_update",
-            &self.redshift_destination_update,
-        );
-        formatter.field(
-            "elasticsearch_destination_update",
-            &self.elasticsearch_destination_update,
-        );
-        formatter.field(
-            "amazonopensearchservice_destination_update",
-            &self.amazonopensearchservice_destination_update,
-        );
-        formatter.field("splunk_destination_update", &self.splunk_destination_update);
-        formatter.field(
-            "http_endpoint_destination_update",
-            &self.http_endpoint_destination_update,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2545,18 +2511,10 @@ impl UntagDeliveryStreamInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagDeliveryStreamInput {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
     #[doc(hidden)]
@@ -2575,18 +2533,10 @@ impl TagDeliveryStreamInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
     #[doc(hidden)]
@@ -2598,17 +2548,10 @@ impl StopDeliveryStreamEncryptionInput {
         self.delivery_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopDeliveryStreamEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDeliveryStreamEncryptionInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
     #[doc(hidden)]
@@ -2630,21 +2573,10 @@ impl StartDeliveryStreamEncryptionInput {
         self.delivery_stream_encryption_configuration_input.as_ref()
     }
 }
-impl std::fmt::Debug for StartDeliveryStreamEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDeliveryStreamEncryptionInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field(
-            "delivery_stream_encryption_configuration_input",
-            &self.delivery_stream_encryption_configuration_input,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordBatchInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2663,18 +2595,10 @@ impl PutRecordBatchInput {
         self.records.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecordBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordBatchInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("records", &self.records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2693,18 +2617,10 @@ impl PutRecordInput {
         self.record.as_ref()
     }
 }
-impl std::fmt::Debug for PutRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("record", &self.record);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForDeliveryStreamInput {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
     #[doc(hidden)]
@@ -2730,19 +2646,10 @@ impl ListTagsForDeliveryStreamInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTagsForDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("exclusive_start_tag_key", &self.exclusive_start_tag_key);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeliveryStreamsInput {
     /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
     #[doc(hidden)]
@@ -2778,22 +2685,10 @@ impl ListDeliveryStreamsInput {
         self.exclusive_start_delivery_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeliveryStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeliveryStreamsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("delivery_stream_type", &self.delivery_stream_type);
-        formatter.field(
-            "exclusive_start_delivery_stream_name",
-            &self.exclusive_start_delivery_stream_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2819,22 +2714,10 @@ impl DescribeDeliveryStreamInput {
         self.exclusive_start_destination_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("limit", &self.limit);
-        formatter.field(
-            "exclusive_start_destination_id",
-            &self.exclusive_start_destination_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2855,18 +2738,10 @@ impl DeleteDeliveryStreamInput {
         self.allow_force_delete
     }
 }
-impl std::fmt::Debug for DeleteDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("allow_force_delete", &self.allow_force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeliveryStreamInput {
     /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
     #[doc(hidden)]
@@ -2992,50 +2867,5 @@ impl CreateDeliveryStreamInput {
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("delivery_stream_type", &self.delivery_stream_type);
-        formatter.field(
-            "kinesis_stream_source_configuration",
-            &self.kinesis_stream_source_configuration,
-        );
-        formatter.field(
-            "delivery_stream_encryption_configuration_input",
-            &self.delivery_stream_encryption_configuration_input,
-        );
-        formatter.field(
-            "s3_destination_configuration",
-            &self.s3_destination_configuration,
-        );
-        formatter.field(
-            "extended_s3_destination_configuration",
-            &self.extended_s3_destination_configuration,
-        );
-        formatter.field(
-            "redshift_destination_configuration",
-            &self.redshift_destination_configuration,
-        );
-        formatter.field(
-            "elasticsearch_destination_configuration",
-            &self.elasticsearch_destination_configuration,
-        );
-        formatter.field(
-            "amazonopensearchservice_destination_configuration",
-            &self.amazonopensearchservice_destination_configuration,
-        );
-        formatter.field(
-            "splunk_destination_configuration",
-            &self.splunk_destination_configuration,
-        );
-        formatter.field(
-            "http_endpoint_destination_configuration",
-            &self.http_endpoint_destination_configuration,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

@@ -633,7 +633,7 @@ impl ListEnabledControlsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit.</p>
     #[doc(hidden)]
@@ -659,19 +659,10 @@ impl ListEnabledControlsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEnabledControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnabledControlsInput");
-        formatter.field("target_identifier", &self.target_identifier);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetControlOperationInput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     #[doc(hidden)]
@@ -683,17 +674,10 @@ impl GetControlOperationInput {
         self.operation_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetControlOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetControlOperationInput");
-        formatter.field("operation_identifier", &self.operation_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     #[doc(hidden)]
@@ -712,18 +696,10 @@ impl EnableControlInput {
         self.target_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for EnableControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableControlInput");
-        formatter.field("control_identifier", &self.control_identifier);
-        formatter.field("target_identifier", &self.target_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     #[doc(hidden)]
@@ -740,13 +716,5 @@ impl DisableControlInput {
     /// <p>The ARN of the organizational unit.</p>
     pub fn target_identifier(&self) -> std::option::Option<&str> {
         self.target_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DisableControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableControlInput");
-        formatter.field("control_identifier", &self.control_identifier);
-        formatter.field("target_identifier", &self.target_identifier);
-        formatter.finish()
     }
 }

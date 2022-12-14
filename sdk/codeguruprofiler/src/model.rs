@@ -177,7 +177,7 @@ impl AsRef<str> for ActionGroup {
 
 /// <p>The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
     #[doc(hidden)]
@@ -187,13 +187,6 @@ impl NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
     pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.channels.as_deref()
-    }
-}
-impl std::fmt::Debug for NotificationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfiguration");
-        formatter.field("channels", &self.channels);
-        formatter.finish()
     }
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
@@ -241,7 +234,7 @@ impl NotificationConfiguration {
 
 /// <p>Notification medium for users to get alerted for events that occur in application profile. We support SNS topic as a notification channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
     #[doc(hidden)]
@@ -267,15 +260,6 @@ impl Channel {
         &self,
     ) -> std::option::Option<&std::vec::Vec<crate::model::EventPublisher>> {
         self.event_publishers.as_ref()
-    }
-}
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("id", &self.id);
-        formatter.field("uri", &self.uri);
-        formatter.field("event_publishers", &self.event_publishers);
-        formatter.finish()
     }
 }
 /// See [`Channel`](crate::model::Channel).
@@ -430,7 +414,7 @@ impl AsRef<str> for EventPublisher {
 
 /// <p> Contains the start time of a profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProfileTime {
     /// <p>The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     #[doc(hidden)]
@@ -440,13 +424,6 @@ impl ProfileTime {
     /// <p>The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start.as_ref()
-    }
-}
-impl std::fmt::Debug for ProfileTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProfileTime");
-        formatter.field("start", &self.start);
-        formatter.finish()
     }
 }
 /// See [`ProfileTime`](crate::model::ProfileTime).
@@ -670,7 +647,7 @@ impl AsRef<str> for AggregationPeriod {
 
 /// <p> Information about potential recommendations that might be created from the analysis of profiling data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindingsReportSummary {
     /// <p>The universally unique identifier (UUID) of the recommendation report.</p>
     #[doc(hidden)]
@@ -708,17 +685,6 @@ impl FindingsReportSummary {
     /// <p>The total number of different recommendations that were found by the analysis.</p>
     pub fn total_number_of_findings(&self) -> std::option::Option<i32> {
         self.total_number_of_findings
-    }
-}
-impl std::fmt::Debug for FindingsReportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindingsReportSummary");
-        formatter.field("id", &self.id);
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("profile_start_time", &self.profile_start_time);
-        formatter.field("profile_end_time", &self.profile_end_time);
-        formatter.field("total_number_of_findings", &self.total_number_of_findings);
-        formatter.finish()
     }
 }
 /// See [`FindingsReportSummary`](crate::model::FindingsReportSummary).
@@ -814,7 +780,7 @@ impl FindingsReportSummary {
 
 /// <p> Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Anomaly {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
     #[doc(hidden)]
@@ -838,15 +804,6 @@ impl Anomaly {
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
     pub fn instances(&self) -> std::option::Option<&[crate::model::AnomalyInstance]> {
         self.instances.as_deref()
-    }
-}
-impl std::fmt::Debug for Anomaly {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Anomaly");
-        formatter.field("metric", &self.metric);
-        formatter.field("reason", &self.reason);
-        formatter.field("instances", &self.instances);
-        formatter.finish()
     }
 }
 /// See [`Anomaly`](crate::model::Anomaly).
@@ -918,7 +875,7 @@ impl Anomaly {
 
 /// <p>The specific duration in which the metric is flagged as anomalous.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyInstance {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
     #[doc(hidden)]
@@ -949,16 +906,6 @@ impl AnomalyInstance {
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
     pub fn user_feedback(&self) -> std::option::Option<&crate::model::UserFeedback> {
         self.user_feedback.as_ref()
-    }
-}
-impl std::fmt::Debug for AnomalyInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyInstance");
-        formatter.field("id", &self.id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("user_feedback", &self.user_feedback);
-        formatter.finish()
     }
 }
 /// See [`AnomalyInstance`](crate::model::AnomalyInstance).
@@ -1042,7 +989,7 @@ impl AnomalyInstance {
 
 /// <p>Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     #[doc(hidden)]
@@ -1052,13 +999,6 @@ impl UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::FeedbackType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for UserFeedback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserFeedback");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`UserFeedback`](crate::model::UserFeedback).
@@ -1097,7 +1037,7 @@ impl UserFeedback {
 
 /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metric {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
     #[doc(hidden)]
@@ -1121,15 +1061,6 @@ impl Metric {
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
     pub fn thread_states(&self) -> std::option::Option<&[std::string::String]> {
         self.thread_states.as_deref()
-    }
-}
-impl std::fmt::Debug for Metric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metric");
-        formatter.field("frame_name", &self.frame_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("thread_states", &self.thread_states);
-        formatter.finish()
     }
 }
 /// See [`Metric`](crate::model::Metric).
@@ -1286,7 +1217,7 @@ impl AsRef<str> for MetricType {
 
 /// <p>A potential improvement that was found from analyzing the profiling data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>How many different places in the profile graph triggered a match.</p>
     #[doc(hidden)]
@@ -1331,18 +1262,6 @@ impl Recommendation {
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Recommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recommendation");
-        formatter.field("all_matches_count", &self.all_matches_count);
-        formatter.field("all_matches_sum", &self.all_matches_sum);
-        formatter.field("pattern", &self.pattern);
-        formatter.field("top_matches", &self.top_matches);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`Recommendation`](crate::model::Recommendation).
@@ -1456,7 +1375,7 @@ impl Recommendation {
 
 /// <p>The part of a profile that contains a recommendation found during analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Match {
     /// <p>The target frame that triggered a match.</p>
     #[doc(hidden)]
@@ -1480,15 +1399,6 @@ impl Match {
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
     pub fn threshold_breach_value(&self) -> std::option::Option<f64> {
         self.threshold_breach_value
-    }
-}
-impl std::fmt::Debug for Match {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Match");
-        formatter.field("target_frames_index", &self.target_frames_index);
-        formatter.field("frame_address", &self.frame_address);
-        formatter.field("threshold_breach_value", &self.threshold_breach_value);
-        formatter.finish()
     }
 }
 /// See [`Match`](crate::model::Match).
@@ -1554,7 +1464,7 @@ impl Match {
 
 /// <p> A set of rules used to make a recommendation during an analysis. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Pattern {
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
     #[doc(hidden)]
@@ -1606,19 +1516,6 @@ impl Pattern {
     /// <p> A list of the different counters used to determine if there is a match. </p>
     pub fn counters_to_aggregate(&self) -> std::option::Option<&[std::string::String]> {
         self.counters_to_aggregate.as_deref()
-    }
-}
-impl std::fmt::Debug for Pattern {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Pattern");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("resolution_steps", &self.resolution_steps);
-        formatter.field("target_frames", &self.target_frames);
-        formatter.field("threshold_percent", &self.threshold_percent);
-        formatter.field("counters_to_aggregate", &self.counters_to_aggregate);
-        formatter.finish()
     }
 }
 /// See [`Pattern`](crate::model::Pattern).
@@ -1751,7 +1648,7 @@ impl Pattern {
 
 /// <p> The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for how long to return profiling data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     #[doc(hidden)]
@@ -1795,15 +1692,6 @@ impl AgentConfiguration {
         &std::collections::HashMap<crate::model::AgentParameterField, std::string::String>,
     > {
         self.agent_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for AgentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentConfiguration");
-        formatter.field("should_profile", &self.should_profile);
-        formatter.field("period_in_seconds", &self.period_in_seconds);
-        formatter.field("agent_parameters", &self.agent_parameters);
-        formatter.finish()
     }
 }
 /// See [`AgentConfiguration`](crate::model::AgentConfiguration).
@@ -2161,7 +2049,7 @@ impl AsRef<str> for MetadataField {
 
 /// <p> Information about a frame metric and its values. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameMetricDatum {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
     #[doc(hidden)]
@@ -2178,14 +2066,6 @@ impl FrameMetricDatum {
     /// <p> A list of values that are associated with a frame metric. </p>
     pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for FrameMetricDatum {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameMetricDatum");
-        formatter.field("frame_metric", &self.frame_metric);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`FrameMetricDatum`](crate::model::FrameMetricDatum).
@@ -2245,7 +2125,7 @@ impl FrameMetricDatum {
 
 /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
     #[doc(hidden)]
@@ -2269,15 +2149,6 @@ impl FrameMetric {
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
     pub fn thread_states(&self) -> std::option::Option<&[std::string::String]> {
         self.thread_states.as_deref()
-    }
-}
-impl std::fmt::Debug for FrameMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrameMetric");
-        formatter.field("frame_name", &self.frame_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("thread_states", &self.thread_states);
-        formatter.finish()
     }
 }
 /// See [`FrameMetric`](crate::model::FrameMetric).
@@ -2349,7 +2220,7 @@ impl FrameMetric {
 
 /// <p> A data type that contains a <code>Timestamp</code> object. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampStructure {
     /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
@@ -2359,13 +2230,6 @@ impl TimestampStructure {
     /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for TimestampStructure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampStructure");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`TimestampStructure`](crate::model::TimestampStructure).
@@ -2402,7 +2266,7 @@ impl TimestampStructure {
 
 /// <p> Contains information about a profiling group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProfilingGroupDescription {
     /// <p>The name of the profiling group.</p>
     #[doc(hidden)]
@@ -2467,23 +2331,6 @@ impl ProfilingGroupDescription {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ProfilingGroupDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProfilingGroupDescription");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "agent_orchestration_config",
-            &self.agent_orchestration_config,
-        );
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("profiling_status", &self.profiling_status);
-        formatter.field("compute_platform", &self.compute_platform);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
@@ -2732,7 +2579,7 @@ impl AsRef<str> for ComputePlatform {
 
 /// <p> Profiling status includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProfilingStatus {
     /// <p>The date and time when the most recent profile was received. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     #[doc(hidden)]
@@ -2760,21 +2607,6 @@ impl ProfilingStatus {
     /// <p>The date and time when the profiling agent most recently pinged back. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn latest_agent_orchestrated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_agent_orchestrated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ProfilingStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProfilingStatus");
-        formatter.field(
-            "latest_agent_profile_reported_at",
-            &self.latest_agent_profile_reported_at,
-        );
-        formatter.field("latest_aggregated_profile", &self.latest_aggregated_profile);
-        formatter.field(
-            "latest_agent_orchestrated_at",
-            &self.latest_agent_orchestrated_at,
-        );
-        formatter.finish()
     }
 }
 /// See [`ProfilingStatus`](crate::model::ProfilingStatus).
@@ -2854,7 +2686,7 @@ impl ProfilingStatus {
 
 /// <p> Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedProfileTime {
     /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
     /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
@@ -2883,14 +2715,6 @@ impl AggregatedProfileTime {
     /// </ul>
     pub fn period(&self) -> std::option::Option<&crate::model::AggregationPeriod> {
         self.period.as_ref()
-    }
-}
-impl std::fmt::Debug for AggregatedProfileTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedProfileTime");
-        formatter.field("start", &self.start);
-        formatter.field("period", &self.period);
-        formatter.finish()
     }
 }
 /// See [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
@@ -2956,7 +2780,7 @@ impl AggregatedProfileTime {
 
 /// <p> Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentOrchestrationConfig {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     #[doc(hidden)]
@@ -2966,13 +2790,6 @@ impl AgentOrchestrationConfig {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     pub fn profiling_enabled(&self) -> std::option::Option<bool> {
         self.profiling_enabled
-    }
-}
-impl std::fmt::Debug for AgentOrchestrationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentOrchestrationConfig");
-        formatter.field("profiling_enabled", &self.profiling_enabled);
-        formatter.finish()
     }
 }
 /// See [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).

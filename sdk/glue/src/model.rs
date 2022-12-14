@@ -2,7 +2,7 @@
 
 /// <p>A structure used to create or update a user-defined function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDefinedFunctionInput {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
@@ -40,17 +40,6 @@ impl UserDefinedFunctionInput {
     /// <p>The resource URIs for the function.</p>
     pub fn resource_uris(&self) -> std::option::Option<&[crate::model::ResourceUri]> {
         self.resource_uris.as_deref()
-    }
-}
-impl std::fmt::Debug for UserDefinedFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserDefinedFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("owner_name", &self.owner_name);
-        formatter.field("owner_type", &self.owner_type);
-        formatter.field("resource_uris", &self.resource_uris);
-        formatter.finish()
     }
 }
 /// See [`UserDefinedFunctionInput`](crate::model::UserDefinedFunctionInput).
@@ -152,7 +141,7 @@ impl UserDefinedFunctionInput {
 
 /// <p>The URIs for function resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceUri {
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
@@ -169,14 +158,6 @@ impl ResourceUri {
     /// <p>The URI for accessing the resource.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceUri {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceUri");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("uri", &self.uri);
-        formatter.finish()
     }
 }
 /// See [`ResourceUri`](crate::model::ResourceUri).
@@ -420,7 +401,7 @@ impl AsRef<str> for PrincipalType {
 
 /// <p>Information about a specific trigger.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Trigger {
     /// <p>The name of the trigger.</p>
     #[doc(hidden)]
@@ -495,22 +476,6 @@ impl Trigger {
         &self,
     ) -> std::option::Option<&crate::model::EventBatchingCondition> {
         self.event_batching_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for Trigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Trigger");
-        formatter.field("name", &self.name);
-        formatter.field("workflow_name", &self.workflow_name);
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("description", &self.description);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("actions", &self.actions);
-        formatter.field("predicate", &self.predicate);
-        formatter.field("event_batching_condition", &self.event_batching_condition);
-        formatter.finish()
     }
 }
 /// See [`Trigger`](crate::model::Trigger).
@@ -679,7 +644,7 @@ impl Trigger {
 
 /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     #[doc(hidden)]
@@ -696,14 +661,6 @@ impl EventBatchingCondition {
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub fn batch_window(&self) -> std::option::Option<i32> {
         self.batch_window
-    }
-}
-impl std::fmt::Debug for EventBatchingCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventBatchingCondition");
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field("batch_window", &self.batch_window);
-        formatter.finish()
     }
 }
 /// See [`EventBatchingCondition`](crate::model::EventBatchingCondition).
@@ -754,7 +711,7 @@ impl EventBatchingCondition {
 
 /// <p>Defines the predicate of the trigger, which determines when it fires.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Predicate {
     /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
     #[doc(hidden)]
@@ -771,14 +728,6 @@ impl Predicate {
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
     pub fn conditions(&self) -> std::option::Option<&[crate::model::Condition]> {
         self.conditions.as_deref()
-    }
-}
-impl std::fmt::Debug for Predicate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Predicate");
-        formatter.field("logical", &self.logical);
-        formatter.field("conditions", &self.conditions);
-        formatter.finish()
     }
 }
 /// See [`Predicate`](crate::model::Predicate).
@@ -838,7 +787,7 @@ impl Predicate {
 
 /// <p>Defines a condition under which a trigger fires.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>A logical operator.</p>
     #[doc(hidden)]
@@ -876,17 +825,6 @@ impl Condition {
     /// <p>The state of the crawler to which this condition applies.</p>
     pub fn crawl_state(&self) -> std::option::Option<&crate::model::CrawlState> {
         self.crawl_state.as_ref()
-    }
-}
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field("logical_operator", &self.logical_operator);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("state", &self.state);
-        formatter.field("crawler_name", &self.crawler_name);
-        formatter.field("crawl_state", &self.crawl_state);
-        formatter.finish()
     }
 }
 /// See [`Condition`](crate::model::Condition).
@@ -1406,7 +1344,7 @@ impl AsRef<str> for Logical {
 
 /// <p>Defines an action to be initiated by a trigger.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>The name of a job to be run.</p>
     #[doc(hidden)]
@@ -1463,18 +1401,6 @@ impl Action {
     /// <p>The name of the crawler to be used with this action.</p>
     pub fn crawler_name(&self) -> std::option::Option<&str> {
         self.crawler_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("arguments", &self.arguments);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("security_configuration", &self.security_configuration);
-        formatter.field("notification_property", &self.notification_property);
-        formatter.field("crawler_name", &self.crawler_name);
-        formatter.finish()
     }
 }
 /// See [`Action`](crate::model::Action).
@@ -1602,7 +1528,7 @@ impl Action {
 
 /// <p>Specifies configuration properties of a notification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationProperty {
     /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
     #[doc(hidden)]
@@ -1612,13 +1538,6 @@ impl NotificationProperty {
     /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
     pub fn notify_delay_after(&self) -> std::option::Option<i32> {
         self.notify_delay_after
-    }
-}
-impl std::fmt::Debug for NotificationProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationProperty");
-        formatter.field("notify_delay_after", &self.notify_delay_after);
-        formatter.finish()
     }
 }
 /// See [`NotificationProperty`](crate::model::NotificationProperty).
@@ -1886,7 +1805,7 @@ impl AsRef<str> for TriggerType {
 
 /// <p>A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerUpdate {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
@@ -1933,18 +1852,6 @@ impl TriggerUpdate {
         &self,
     ) -> std::option::Option<&crate::model::EventBatchingCondition> {
         self.event_batching_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for TriggerUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggerUpdate");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("actions", &self.actions);
-        formatter.field("predicate", &self.predicate);
-        formatter.field("event_batching_condition", &self.event_batching_condition);
-        formatter.finish()
     }
 }
 /// See [`TriggerUpdate`](crate::model::TriggerUpdate).
@@ -2062,7 +1969,7 @@ impl TriggerUpdate {
 
 /// <p>A structure used to define a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableInput {
     /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     #[doc(hidden)]
@@ -2164,25 +2071,6 @@ impl TableInput {
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
     pub fn target_table(&self) -> std::option::Option<&crate::model::TableIdentifier> {
         self.target_table.as_ref()
-    }
-}
-impl std::fmt::Debug for TableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("owner", &self.owner);
-        formatter.field("last_access_time", &self.last_access_time);
-        formatter.field("last_analyzed_time", &self.last_analyzed_time);
-        formatter.field("retention", &self.retention);
-        formatter.field("storage_descriptor", &self.storage_descriptor);
-        formatter.field("partition_keys", &self.partition_keys);
-        formatter.field("view_original_text", &self.view_original_text);
-        formatter.field("view_expanded_text", &self.view_expanded_text);
-        formatter.field("table_type", &self.table_type);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("target_table", &self.target_table);
-        formatter.finish()
     }
 }
 /// See [`TableInput`](crate::model::TableInput).
@@ -2413,7 +2301,7 @@ impl TableInput {
 
 /// <p>A structure that describes a target table for resource linking.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableIdentifier {
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     #[doc(hidden)]
@@ -2437,15 +2325,6 @@ impl TableIdentifier {
     /// <p>The name of the target table.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for TableIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableIdentifier");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`TableIdentifier`](crate::model::TableIdentifier).
@@ -2511,7 +2390,7 @@ impl TableIdentifier {
 
 /// <p>A column in a <code>Table</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Column {
     /// <p>The name of the <code>Column</code>.</p>
     #[doc(hidden)]
@@ -2546,16 +2425,6 @@ impl Column {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for Column {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Column");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("comment", &self.comment);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`Column`](crate::model::Column).
@@ -2647,7 +2516,7 @@ impl Column {
 
 /// <p>Describes the physical storage of table data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageDescriptor {
     /// <p>A list of the <code>Columns</code> in the table.</p>
     #[doc(hidden)]
@@ -2754,26 +2623,6 @@ impl StorageDescriptor {
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
     pub fn schema_reference(&self) -> std::option::Option<&crate::model::SchemaReference> {
         self.schema_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for StorageDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageDescriptor");
-        formatter.field("columns", &self.columns);
-        formatter.field("location", &self.location);
-        formatter.field("additional_locations", &self.additional_locations);
-        formatter.field("input_format", &self.input_format);
-        formatter.field("output_format", &self.output_format);
-        formatter.field("compressed", &self.compressed);
-        formatter.field("number_of_buckets", &self.number_of_buckets);
-        formatter.field("serde_info", &self.serde_info);
-        formatter.field("bucket_columns", &self.bucket_columns);
-        formatter.field("sort_columns", &self.sort_columns);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("skewed_info", &self.skewed_info);
-        formatter.field("stored_as_sub_directories", &self.stored_as_sub_directories);
-        formatter.field("schema_reference", &self.schema_reference);
-        formatter.finish()
     }
 }
 /// See [`StorageDescriptor`](crate::model::StorageDescriptor).
@@ -3035,7 +2884,7 @@ impl StorageDescriptor {
 
 /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaReference {
     /// <p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>
     #[doc(hidden)]
@@ -3059,15 +2908,6 @@ impl SchemaReference {
     /// <p>The version number of the schema.</p>
     pub fn schema_version_number(&self) -> std::option::Option<i64> {
         self.schema_version_number
-    }
-}
-impl std::fmt::Debug for SchemaReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaReference");
-        formatter.field("schema_id", &self.schema_id);
-        formatter.field("schema_version_id", &self.schema_version_id);
-        formatter.field("schema_version_number", &self.schema_version_number);
-        formatter.finish()
     }
 }
 /// See [`SchemaReference`](crate::model::SchemaReference).
@@ -3133,7 +2973,7 @@ impl SchemaReference {
 
 /// <p>The unique ID of the schema in the Glue schema registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaId {
     /// <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
     #[doc(hidden)]
@@ -3157,15 +2997,6 @@ impl SchemaId {
     /// <p>The name of the schema registry that contains the schema.</p>
     pub fn registry_name(&self) -> std::option::Option<&str> {
         self.registry_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaId");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
     }
 }
 /// See [`SchemaId`](crate::model::SchemaId).
@@ -3231,7 +3062,7 @@ impl SchemaId {
 
 /// <p>Specifies skewed values in a table. Skewed values are those that occur with very high frequency.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SkewedInfo {
     /// <p>A list of names of columns that contain skewed values.</p>
     #[doc(hidden)]
@@ -3259,18 +3090,6 @@ impl SkewedInfo {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.skewed_column_value_location_maps.as_ref()
-    }
-}
-impl std::fmt::Debug for SkewedInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SkewedInfo");
-        formatter.field("skewed_column_names", &self.skewed_column_names);
-        formatter.field("skewed_column_values", &self.skewed_column_values);
-        formatter.field(
-            "skewed_column_value_location_maps",
-            &self.skewed_column_value_location_maps,
-        );
-        formatter.finish()
     }
 }
 /// See [`SkewedInfo`](crate::model::SkewedInfo).
@@ -3368,7 +3187,7 @@ impl SkewedInfo {
 
 /// <p>Specifies the sort order of a sorted column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Order {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
@@ -3385,14 +3204,6 @@ impl Order {
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub fn sort_order(&self) -> i32 {
         self.sort_order
-    }
-}
-impl std::fmt::Debug for Order {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Order");
-        formatter.field("column", &self.column);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`Order`](crate::model::Order).
@@ -3443,7 +3254,7 @@ impl Order {
 
 /// <p>Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SerDeInfo {
     /// <p>Name of the SerDe.</p>
     #[doc(hidden)]
@@ -3471,15 +3282,6 @@ impl SerDeInfo {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for SerDeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SerDeInfo");
-        formatter.field("name", &self.name);
-        formatter.field("serialization_library", &self.serialization_library);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`SerDeInfo`](crate::model::SerDeInfo).
@@ -3691,7 +3493,7 @@ impl AsRef<str> for Compatibility {
 
 /// <p>A structure containing the schema version information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaVersionNumber {
     /// <p>The latest version available for the schema.</p>
     #[doc(hidden)]
@@ -3708,14 +3510,6 @@ impl SchemaVersionNumber {
     /// <p>The version number of the schema.</p>
     pub fn version_number(&self) -> i64 {
         self.version_number
-    }
-}
-impl std::fmt::Debug for SchemaVersionNumber {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaVersionNumber");
-        formatter.field("latest_version", &self.latest_version);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
     }
 }
 /// See [`SchemaVersionNumber`](crate::model::SchemaVersionNumber).
@@ -3766,7 +3560,7 @@ impl SchemaVersionNumber {
 
 /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistryId {
     /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided. </p>
     #[doc(hidden)]
@@ -3783,14 +3577,6 @@ impl RegistryId {
     /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
     pub fn registry_arn(&self) -> std::option::Option<&str> {
         self.registry_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for RegistryId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistryId");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("registry_arn", &self.registry_arn);
-        formatter.finish()
     }
 }
 /// See [`RegistryId`](crate::model::RegistryId).
@@ -3844,7 +3630,7 @@ impl RegistryId {
 
 /// <p>The structure used to create and update a partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartitionInput {
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
@@ -3888,17 +3674,6 @@ impl PartitionInput {
     /// <p>The last time at which column statistics were computed for this partition.</p>
     pub fn last_analyzed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_analyzed_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PartitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartitionInput");
-        formatter.field("values", &self.values);
-        formatter.field("last_access_time", &self.last_access_time);
-        formatter.field("storage_descriptor", &self.storage_descriptor);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("last_analyzed_time", &self.last_analyzed_time);
-        formatter.finish()
     }
 }
 /// See [`PartitionInput`](crate::model::PartitionInput).
@@ -4122,7 +3897,7 @@ impl AsRef<str> for WorkerType {
 
 /// <p>The algorithm-specific parameters that are associated with the machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransformParameters {
     /// <p>The type of machine learning transform.</p>
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
@@ -4143,14 +3918,6 @@ impl TransformParameters {
         &self,
     ) -> std::option::Option<&crate::model::FindMatchesParameters> {
         self.find_matches_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for TransformParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransformParameters");
-        formatter.field("transform_type", &self.transform_type);
-        formatter.field("find_matches_parameters", &self.find_matches_parameters);
-        formatter.finish()
     }
 }
 /// See [`TransformParameters`](crate::model::TransformParameters).
@@ -4213,7 +3980,7 @@ impl TransformParameters {
 
 /// <p>The parameters to configure the find matches transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindMatchesParameters {
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
     #[doc(hidden)]
@@ -4254,16 +4021,6 @@ impl FindMatchesParameters {
     /// <p>Note that setting this value to true may increase the conflation execution time.</p>
     pub fn enforce_provided_labels(&self) -> std::option::Option<bool> {
         self.enforce_provided_labels
-    }
-}
-impl std::fmt::Debug for FindMatchesParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindMatchesParameters");
-        formatter.field("primary_key_column_name", &self.primary_key_column_name);
-        formatter.field("precision_recall_tradeoff", &self.precision_recall_tradeoff);
-        formatter.field("accuracy_cost_tradeoff", &self.accuracy_cost_tradeoff);
-        formatter.field("enforce_provided_labels", &self.enforce_provided_labels);
-        formatter.finish()
     }
 }
 /// See [`FindMatchesParameters`](crate::model::FindMatchesParameters).
@@ -4664,7 +4421,7 @@ impl std::fmt::Debug for JobUpdate {
 pub mod job_update {
 
     /// A builder for [`JobUpdate`](crate::model::JobUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
@@ -5016,6 +4773,34 @@ pub mod job_update {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("description", &self.description);
+            formatter.field("log_uri", &self.log_uri);
+            formatter.field("role", &self.role);
+            formatter.field("execution_property", &self.execution_property);
+            formatter.field("command", &self.command);
+            formatter.field("default_arguments", &self.default_arguments);
+            formatter.field("non_overridable_arguments", &self.non_overridable_arguments);
+            formatter.field("connections", &self.connections);
+            formatter.field("max_retries", &self.max_retries);
+            formatter.field("allocated_capacity", &self.allocated_capacity);
+            formatter.field("timeout", &self.timeout);
+            formatter.field("max_capacity", &self.max_capacity);
+            formatter.field("worker_type", &self.worker_type);
+            formatter.field("number_of_workers", &self.number_of_workers);
+            formatter.field("security_configuration", &self.security_configuration);
+            formatter.field("notification_property", &self.notification_property);
+            formatter.field("glue_version", &self.glue_version);
+            formatter.field(
+                "code_gen_configuration_nodes",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("execution_class", &self.execution_class);
+            formatter.finish()
+        }
+    }
 }
 impl JobUpdate {
     /// Creates a new builder-style object to manufacture [`JobUpdate`](crate::model::JobUpdate).
@@ -5116,7 +4901,7 @@ impl AsRef<str> for ExecutionClass {
 
 /// <p> <code>CodeGenConfigurationNode</code> enumerates all valid Node types. One and only one of its member variables can be populated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
     #[doc(hidden)]
@@ -5503,74 +5288,6 @@ impl CodeGenConfigurationNode {
         &self,
     ) -> std::option::Option<&crate::model::PostgreSqlCatalogTarget> {
         self.postgre_sql_catalog_target.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeGenConfigurationNode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeGenConfigurationNode");
-        formatter.field("athena_connector_source", &self.athena_connector_source);
-        formatter.field("jdbc_connector_source", &self.jdbc_connector_source);
-        formatter.field("spark_connector_source", &self.spark_connector_source);
-        formatter.field("catalog_source", &self.catalog_source);
-        formatter.field("redshift_source", &self.redshift_source);
-        formatter.field("s3_catalog_source", &self.s3_catalog_source);
-        formatter.field("s3_csv_source", &self.s3_csv_source);
-        formatter.field("s3_json_source", &self.s3_json_source);
-        formatter.field("s3_parquet_source", &self.s3_parquet_source);
-        formatter.field("relational_catalog_source", &self.relational_catalog_source);
-        formatter.field("dynamo_db_catalog_source", &self.dynamo_db_catalog_source);
-        formatter.field("jdbc_connector_target", &self.jdbc_connector_target);
-        formatter.field("spark_connector_target", &self.spark_connector_target);
-        formatter.field("catalog_target", &self.catalog_target);
-        formatter.field("redshift_target", &self.redshift_target);
-        formatter.field("s3_catalog_target", &self.s3_catalog_target);
-        formatter.field("s3_glue_parquet_target", &self.s3_glue_parquet_target);
-        formatter.field("s3_direct_target", &self.s3_direct_target);
-        formatter.field("apply_mapping", &self.apply_mapping);
-        formatter.field("select_fields", &self.select_fields);
-        formatter.field("drop_fields", &self.drop_fields);
-        formatter.field("rename_field", &self.rename_field);
-        formatter.field("spigot", &self.spigot);
-        formatter.field("join", &self.join);
-        formatter.field("split_fields", &self.split_fields);
-        formatter.field("select_from_collection", &self.select_from_collection);
-        formatter.field("fill_missing_values", &self.fill_missing_values);
-        formatter.field("filter", &self.filter);
-        formatter.field("custom_code", &self.custom_code);
-        formatter.field("spark_sql", &self.spark_sql);
-        formatter.field("direct_kinesis_source", &self.direct_kinesis_source);
-        formatter.field("direct_kafka_source", &self.direct_kafka_source);
-        formatter.field("catalog_kinesis_source", &self.catalog_kinesis_source);
-        formatter.field("catalog_kafka_source", &self.catalog_kafka_source);
-        formatter.field("drop_null_fields", &self.drop_null_fields);
-        formatter.field("merge", &self.merge);
-        formatter.field("union", &self.union);
-        formatter.field("pii_detection", &self.pii_detection);
-        formatter.field("aggregate", &self.aggregate);
-        formatter.field("drop_duplicates", &self.drop_duplicates);
-        formatter.field("governed_catalog_target", &self.governed_catalog_target);
-        formatter.field("governed_catalog_source", &self.governed_catalog_source);
-        formatter.field(
-            "microsoft_sql_server_catalog_source",
-            &self.microsoft_sql_server_catalog_source,
-        );
-        formatter.field("my_sql_catalog_source", &self.my_sql_catalog_source);
-        formatter.field("oracle_sql_catalog_source", &self.oracle_sql_catalog_source);
-        formatter.field(
-            "postgre_sql_catalog_source",
-            &self.postgre_sql_catalog_source,
-        );
-        formatter.field(
-            "microsoft_sql_server_catalog_target",
-            &self.microsoft_sql_server_catalog_target,
-        );
-        formatter.field("my_sql_catalog_target", &self.my_sql_catalog_target);
-        formatter.field("oracle_sql_catalog_target", &self.oracle_sql_catalog_target);
-        formatter.field(
-            "postgre_sql_catalog_target",
-            &self.postgre_sql_catalog_target,
-        );
-        formatter.finish()
     }
 }
 /// See [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode).
@@ -6373,7 +6090,7 @@ impl CodeGenConfigurationNode {
 
 /// <p>Specifies a target that uses Postgres SQL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostgreSqlCatalogTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -6404,16 +6121,6 @@ impl PostgreSqlCatalogTarget {
     /// <p>The name of the table in the database to write to.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for PostgreSqlCatalogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostgreSqlCatalogTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`PostgreSqlCatalogTarget`](crate::model::PostgreSqlCatalogTarget).
@@ -6497,7 +6204,7 @@ impl PostgreSqlCatalogTarget {
 
 /// <p>Specifies a target that uses Oracle SQL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OracleSqlCatalogTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -6528,16 +6235,6 @@ impl OracleSqlCatalogTarget {
     /// <p>The name of the table in the database to write to.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for OracleSqlCatalogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OracleSqlCatalogTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`OracleSqlCatalogTarget`](crate::model::OracleSqlCatalogTarget).
@@ -6621,7 +6318,7 @@ impl OracleSqlCatalogTarget {
 
 /// <p>Specifies a target that uses MySQL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MySqlCatalogTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -6652,16 +6349,6 @@ impl MySqlCatalogTarget {
     /// <p>The name of the table in the database to write to.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for MySqlCatalogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MySqlCatalogTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`MySqlCatalogTarget`](crate::model::MySqlCatalogTarget).
@@ -6745,7 +6432,7 @@ impl MySqlCatalogTarget {
 
 /// <p>Specifies a target that uses Microsoft SQL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MicrosoftSqlServerCatalogTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -6776,16 +6463,6 @@ impl MicrosoftSqlServerCatalogTarget {
     /// <p>The name of the table in the database to write to.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for MicrosoftSqlServerCatalogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MicrosoftSqlServerCatalogTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`MicrosoftSqlServerCatalogTarget`](crate::model::MicrosoftSqlServerCatalogTarget).
@@ -6869,7 +6546,7 @@ impl MicrosoftSqlServerCatalogTarget {
 
 /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostgreSqlCatalogSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -6893,15 +6570,6 @@ impl PostgreSqlCatalogSource {
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for PostgreSqlCatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostgreSqlCatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`PostgreSqlCatalogSource`](crate::model::PostgreSqlCatalogSource).
@@ -6964,7 +6632,7 @@ impl PostgreSqlCatalogSource {
 
 /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OracleSqlCatalogSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -6988,15 +6656,6 @@ impl OracleSqlCatalogSource {
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for OracleSqlCatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OracleSqlCatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`OracleSqlCatalogSource`](crate::model::OracleSqlCatalogSource).
@@ -7059,7 +6718,7 @@ impl OracleSqlCatalogSource {
 
 /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MySqlCatalogSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -7083,15 +6742,6 @@ impl MySqlCatalogSource {
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for MySqlCatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MySqlCatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`MySqlCatalogSource`](crate::model::MySqlCatalogSource).
@@ -7154,7 +6804,7 @@ impl MySqlCatalogSource {
 
 /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MicrosoftSqlServerCatalogSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -7178,15 +6828,6 @@ impl MicrosoftSqlServerCatalogSource {
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for MicrosoftSqlServerCatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MicrosoftSqlServerCatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`MicrosoftSqlServerCatalogSource`](crate::model::MicrosoftSqlServerCatalogSource).
@@ -7249,7 +6890,7 @@ impl MicrosoftSqlServerCatalogSource {
 
 /// <p>Specifies the data store in the governed Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GovernedCatalogSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -7289,17 +6930,6 @@ impl GovernedCatalogSource {
         &self,
     ) -> std::option::Option<&crate::model::S3SourceAdditionalOptions> {
         self.additional_options.as_ref()
-    }
-}
-impl std::fmt::Debug for GovernedCatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GovernedCatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.field("partition_predicate", &self.partition_predicate);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.finish()
     }
 }
 /// See [`GovernedCatalogSource`](crate::model::GovernedCatalogSource).
@@ -7395,7 +7025,7 @@ impl GovernedCatalogSource {
 
 /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
     #[doc(hidden)]
@@ -7412,14 +7042,6 @@ impl S3SourceAdditionalOptions {
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
     pub fn bounded_files(&self) -> std::option::Option<i64> {
         self.bounded_files
-    }
-}
-impl std::fmt::Debug for S3SourceAdditionalOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3SourceAdditionalOptions");
-        formatter.field("bounded_size", &self.bounded_size);
-        formatter.field("bounded_files", &self.bounded_files);
-        formatter.finish()
     }
 }
 /// See [`S3SourceAdditionalOptions`](crate::model::S3SourceAdditionalOptions).
@@ -7470,7 +7092,7 @@ impl S3SourceAdditionalOptions {
 
 /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GovernedCatalogTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -7517,18 +7139,6 @@ impl GovernedCatalogTarget {
         &self,
     ) -> std::option::Option<&crate::model::CatalogSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for GovernedCatalogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GovernedCatalogTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("partition_keys", &self.partition_keys);
-        formatter.field("table", &self.table);
-        formatter.field("database", &self.database);
-        formatter.field("schema_change_policy", &self.schema_change_policy);
-        formatter.finish()
     }
 }
 /// See [`GovernedCatalogTarget`](crate::model::GovernedCatalogTarget).
@@ -7653,7 +7263,7 @@ impl GovernedCatalogTarget {
 
 /// <p>A policy that specifies update behavior for the crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogSchemaChangePolicy {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
     #[doc(hidden)]
@@ -7670,14 +7280,6 @@ impl CatalogSchemaChangePolicy {
     /// <p>The update behavior when the crawler finds a changed schema.</p>
     pub fn update_behavior(&self) -> std::option::Option<&crate::model::UpdateCatalogBehavior> {
         self.update_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for CatalogSchemaChangePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogSchemaChangePolicy");
-        formatter.field("enable_update_catalog", &self.enable_update_catalog);
-        formatter.field("update_behavior", &self.update_behavior);
-        formatter.finish()
     }
 }
 /// See [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
@@ -7823,7 +7425,7 @@ impl AsRef<str> for UpdateCatalogBehavior {
 
 /// <p>Specifies a transform that removes rows of repeating data from a data set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DropDuplicates {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -7847,15 +7449,6 @@ impl DropDuplicates {
     /// <p>The name of the columns to be merged or removed if repeating.</p>
     pub fn columns(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.columns.as_deref()
-    }
-}
-impl std::fmt::Debug for DropDuplicates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DropDuplicates");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("columns", &self.columns);
-        formatter.finish()
     }
 }
 /// See [`DropDuplicates`](crate::model::DropDuplicates).
@@ -7936,7 +7529,7 @@ impl DropDuplicates {
 
 /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Aggregate {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -7967,16 +7560,6 @@ impl Aggregate {
     /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
     pub fn aggs(&self) -> std::option::Option<&[crate::model::AggregateOperation]> {
         self.aggs.as_deref()
-    }
-}
-impl std::fmt::Debug for Aggregate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Aggregate");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("groups", &self.groups);
-        formatter.field("aggs", &self.aggs);
-        formatter.finish()
     }
 }
 /// See [`Aggregate`](crate::model::Aggregate).
@@ -8078,7 +7661,7 @@ impl Aggregate {
 
 /// <p>Specifies the set of parameters needed to perform aggregation in the aggregate transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregateOperation {
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
     #[doc(hidden)]
@@ -8097,14 +7680,6 @@ impl AggregateOperation {
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
     pub fn agg_func(&self) -> std::option::Option<&crate::model::AggFunction> {
         self.agg_func.as_ref()
-    }
-}
-impl std::fmt::Debug for AggregateOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregateOperation");
-        formatter.field("column", &self.column);
-        formatter.field("agg_func", &self.agg_func);
-        formatter.finish()
     }
 }
 /// See [`AggregateOperation`](crate::model::AggregateOperation).
@@ -8340,7 +7915,7 @@ impl AsRef<str> for AggFunction {
 
 /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiDetection {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -8401,20 +7976,6 @@ impl PiiDetection {
     /// <p>Indicates the value that will replace the detected entity. </p>
     pub fn mask_value(&self) -> std::option::Option<&str> {
         self.mask_value.as_deref()
-    }
-}
-impl std::fmt::Debug for PiiDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiDetection");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("pii_type", &self.pii_type);
-        formatter.field("entity_types_to_detect", &self.entity_types_to_detect);
-        formatter.field("output_column_name", &self.output_column_name);
-        formatter.field("sample_fraction", &self.sample_fraction);
-        formatter.field("threshold_fraction", &self.threshold_fraction);
-        formatter.field("mask_value", &self.mask_value);
-        formatter.finish()
     }
 }
 /// See [`PiiDetection`](crate::model::PiiDetection).
@@ -8660,7 +8221,7 @@ impl AsRef<str> for PiiType {
 
 /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Union {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -8688,15 +8249,6 @@ impl Union {
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
     pub fn union_type(&self) -> std::option::Option<&crate::model::UnionType> {
         self.union_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Union {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Union");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("union_type", &self.union_type);
-        formatter.finish()
     }
 }
 /// See [`Union`](crate::model::Union).
@@ -8865,7 +8417,7 @@ impl AsRef<str> for UnionType {
 
 /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Merge {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -8896,16 +8448,6 @@ impl Merge {
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
     pub fn primary_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.primary_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for Merge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Merge");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("source", &self.source);
-        formatter.field("primary_keys", &self.primary_keys);
-        formatter.finish()
     }
 }
 /// See [`Merge`](crate::model::Merge).
@@ -8999,7 +8541,7 @@ impl Merge {
 
 /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DropNullFields {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -9032,16 +8574,6 @@ impl DropNullFields {
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
     pub fn null_text_list(&self) -> std::option::Option<&[crate::model::NullValueField]> {
         self.null_text_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DropNullFields {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DropNullFields");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("null_check_box_list", &self.null_check_box_list);
-        formatter.field("null_text_list", &self.null_text_list);
-        formatter.finish()
     }
 }
 /// See [`DropNullFields`](crate::model::DropNullFields).
@@ -9139,7 +8671,7 @@ impl DropNullFields {
 
 /// <p>Represents a custom null value such as a zeros or other value being used as a null placeholder unique to the dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NullValueField {
     /// <p>The value of the null placeholder.</p>
     #[doc(hidden)]
@@ -9156,14 +8688,6 @@ impl NullValueField {
     /// <p>The datatype of the value.</p>
     pub fn datatype(&self) -> std::option::Option<&crate::model::Datatype> {
         self.datatype.as_ref()
-    }
-}
-impl std::fmt::Debug for NullValueField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NullValueField");
-        formatter.field("value", &self.value);
-        formatter.field("datatype", &self.datatype);
-        formatter.finish()
     }
 }
 /// See [`NullValueField`](crate::model::NullValueField).
@@ -9214,7 +8738,7 @@ impl NullValueField {
 
 /// <p>A structure representing the datatype of the value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Datatype {
     /// <p>The datatype of the value.</p>
     #[doc(hidden)]
@@ -9231,14 +8755,6 @@ impl Datatype {
     /// <p>A label assigned to the datatype.</p>
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
-    }
-}
-impl std::fmt::Debug for Datatype {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Datatype");
-        formatter.field("id", &self.id);
-        formatter.field("label", &self.label);
-        formatter.finish()
     }
 }
 /// See [`Datatype`](crate::model::Datatype).
@@ -9289,7 +8805,7 @@ impl Datatype {
 
 /// <p>Represents whether certain values are recognized as null values for removal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NullCheckBoxList {
     /// <p>Specifies that an empty string is considered as a null value.</p>
     #[doc(hidden)]
@@ -9313,15 +8829,6 @@ impl NullCheckBoxList {
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
     pub fn is_neg_one(&self) -> std::option::Option<bool> {
         self.is_neg_one
-    }
-}
-impl std::fmt::Debug for NullCheckBoxList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NullCheckBoxList");
-        formatter.field("is_empty", &self.is_empty);
-        formatter.field("is_null_string", &self.is_null_string);
-        formatter.field("is_neg_one", &self.is_neg_one);
-        formatter.finish()
     }
 }
 /// See [`NullCheckBoxList`](crate::model::NullCheckBoxList).
@@ -9384,7 +8891,7 @@ impl NullCheckBoxList {
 
 /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogKafkaSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -9440,19 +8947,6 @@ impl CatalogKafkaSource {
         &self,
     ) -> std::option::Option<&crate::model::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
-    }
-}
-impl std::fmt::Debug for CatalogKafkaSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogKafkaSource");
-        formatter.field("name", &self.name);
-        formatter.field("window_size", &self.window_size);
-        formatter.field("detect_schema", &self.detect_schema);
-        formatter.field("table", &self.table);
-        formatter.field("database", &self.database);
-        formatter.field("streaming_options", &self.streaming_options);
-        formatter.field("data_preview_options", &self.data_preview_options);
-        formatter.finish()
     }
 }
 /// See [`CatalogKafkaSource`](crate::model::CatalogKafkaSource).
@@ -9577,7 +9071,7 @@ impl CatalogKafkaSource {
 
 /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDataPreviewOptions {
     /// <p>The polling time in milliseconds.</p>
     #[doc(hidden)]
@@ -9594,14 +9088,6 @@ impl StreamingDataPreviewOptions {
     /// <p>The limit to the number of records polled.</p>
     pub fn record_polling_limit(&self) -> std::option::Option<i64> {
         self.record_polling_limit
-    }
-}
-impl std::fmt::Debug for StreamingDataPreviewOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDataPreviewOptions");
-        formatter.field("polling_time", &self.polling_time);
-        formatter.field("record_polling_limit", &self.record_polling_limit);
-        formatter.finish()
     }
 }
 /// See [`StreamingDataPreviewOptions`](crate::model::StreamingDataPreviewOptions).
@@ -9652,7 +9138,7 @@ impl StreamingDataPreviewOptions {
 
 /// <p>Additional options for streaming.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KafkaStreamingSourceOptions {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
     #[doc(hidden)]
@@ -9760,27 +9246,6 @@ impl KafkaStreamingSourceOptions {
     /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
     pub fn min_partitions(&self) -> std::option::Option<i32> {
         self.min_partitions
-    }
-}
-impl std::fmt::Debug for KafkaStreamingSourceOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KafkaStreamingSourceOptions");
-        formatter.field("bootstrap_servers", &self.bootstrap_servers);
-        formatter.field("security_protocol", &self.security_protocol);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("topic_name", &self.topic_name);
-        formatter.field("assign", &self.assign);
-        formatter.field("subscribe_pattern", &self.subscribe_pattern);
-        formatter.field("classification", &self.classification);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("starting_offsets", &self.starting_offsets);
-        formatter.field("ending_offsets", &self.ending_offsets);
-        formatter.field("poll_timeout_ms", &self.poll_timeout_ms);
-        formatter.field("num_retries", &self.num_retries);
-        formatter.field("retry_interval_ms", &self.retry_interval_ms);
-        formatter.field("max_offsets_per_trigger", &self.max_offsets_per_trigger);
-        formatter.field("min_partitions", &self.min_partitions);
-        formatter.finish()
     }
 }
 /// See [`KafkaStreamingSourceOptions`](crate::model::KafkaStreamingSourceOptions).
@@ -10008,7 +9473,7 @@ impl KafkaStreamingSourceOptions {
 
 /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogKinesisSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -10064,19 +9529,6 @@ impl CatalogKinesisSource {
         &self,
     ) -> std::option::Option<&crate::model::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
-    }
-}
-impl std::fmt::Debug for CatalogKinesisSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogKinesisSource");
-        formatter.field("name", &self.name);
-        formatter.field("window_size", &self.window_size);
-        formatter.field("detect_schema", &self.detect_schema);
-        formatter.field("table", &self.table);
-        formatter.field("database", &self.database);
-        formatter.field("streaming_options", &self.streaming_options);
-        formatter.field("data_preview_options", &self.data_preview_options);
-        formatter.finish()
     }
 }
 /// See [`CatalogKinesisSource`](crate::model::CatalogKinesisSource).
@@ -10201,7 +9653,7 @@ impl CatalogKinesisSource {
 
 /// <p>Additional options for the Amazon Kinesis streaming data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamingSourceOptions {
     /// <p>The URL of the Kinesis endpoint.</p>
     #[doc(hidden)]
@@ -10330,39 +9782,6 @@ impl KinesisStreamingSourceOptions {
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
     pub fn role_session_name(&self) -> std::option::Option<&str> {
         self.role_session_name.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisStreamingSourceOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamingSourceOptions");
-        formatter.field("endpoint_url", &self.endpoint_url);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("classification", &self.classification);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("starting_position", &self.starting_position);
-        formatter.field("max_fetch_time_in_ms", &self.max_fetch_time_in_ms);
-        formatter.field(
-            "max_fetch_records_per_shard",
-            &self.max_fetch_records_per_shard,
-        );
-        formatter.field("max_record_per_read", &self.max_record_per_read);
-        formatter.field(
-            "add_idle_time_between_reads",
-            &self.add_idle_time_between_reads,
-        );
-        formatter.field(
-            "idle_time_between_reads_in_ms",
-            &self.idle_time_between_reads_in_ms,
-        );
-        formatter.field("describe_shard_interval", &self.describe_shard_interval);
-        formatter.field("num_retries", &self.num_retries);
-        formatter.field("retry_interval_ms", &self.retry_interval_ms);
-        formatter.field("max_retry_interval_ms", &self.max_retry_interval_ms);
-        formatter.field("avoid_empty_batches", &self.avoid_empty_batches);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("role_session_name", &self.role_session_name);
-        formatter.finish()
     }
 }
 /// See [`KinesisStreamingSourceOptions`](crate::model::KinesisStreamingSourceOptions).
@@ -10712,7 +10131,7 @@ impl AsRef<str> for StartingPosition {
 
 /// <p>Specifies an Apache Kafka data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectKafkaSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -10754,17 +10173,6 @@ impl DirectKafkaSource {
         &self,
     ) -> std::option::Option<&crate::model::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
-    }
-}
-impl std::fmt::Debug for DirectKafkaSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectKafkaSource");
-        formatter.field("name", &self.name);
-        formatter.field("streaming_options", &self.streaming_options);
-        formatter.field("window_size", &self.window_size);
-        formatter.field("detect_schema", &self.detect_schema);
-        formatter.field("data_preview_options", &self.data_preview_options);
-        formatter.finish()
     }
 }
 /// See [`DirectKafkaSource`](crate::model::DirectKafkaSource).
@@ -10865,7 +10273,7 @@ impl DirectKafkaSource {
 
 /// <p>Specifies a direct Amazon Kinesis data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectKinesisSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -10907,17 +10315,6 @@ impl DirectKinesisSource {
         &self,
     ) -> std::option::Option<&crate::model::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
-    }
-}
-impl std::fmt::Debug for DirectKinesisSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectKinesisSource");
-        formatter.field("name", &self.name);
-        formatter.field("window_size", &self.window_size);
-        formatter.field("detect_schema", &self.detect_schema);
-        formatter.field("streaming_options", &self.streaming_options);
-        formatter.field("data_preview_options", &self.data_preview_options);
-        formatter.finish()
     }
 }
 /// See [`DirectKinesisSource`](crate::model::DirectKinesisSource).
@@ -11018,7 +10415,7 @@ impl DirectKinesisSource {
 
 /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SparkSql {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -11060,17 +10457,6 @@ impl SparkSql {
     /// <p>Specifies the data schema for the SparkSQL transform.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for SparkSql {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SparkSql");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("sql_query", &self.sql_query);
-        formatter.field("sql_aliases", &self.sql_aliases);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`SparkSql`](crate::model::SparkSql).
@@ -11188,7 +10574,7 @@ impl SparkSql {
 
 /// <p>Specifies a user-defined schema when a schema cannot be determined by AWS Glue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueSchema {
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
     #[doc(hidden)]
@@ -11198,13 +10584,6 @@ impl GlueSchema {
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
     pub fn columns(&self) -> std::option::Option<&[crate::model::GlueStudioSchemaColumn]> {
         self.columns.as_deref()
-    }
-}
-impl std::fmt::Debug for GlueSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueSchema");
-        formatter.field("columns", &self.columns);
-        formatter.finish()
     }
 }
 /// See [`GlueSchema`](crate::model::GlueSchema).
@@ -11253,7 +10632,7 @@ impl GlueSchema {
 
 /// <p>Specifies a single column in a Glue schema definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueStudioSchemaColumn {
     /// <p>The name of the column in the Glue Studio schema.</p>
     #[doc(hidden)]
@@ -11270,14 +10649,6 @@ impl GlueStudioSchemaColumn {
     /// <p>The hive type for this column in the Glue Studio schema.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for GlueStudioSchemaColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueStudioSchemaColumn");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
@@ -11328,7 +10699,7 @@ impl GlueStudioSchemaColumn {
 
 /// <p>Represents a single entry in the list of values for <code>SqlAliases</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlAlias {
     /// <p>A table, or a column in a table.</p>
     #[doc(hidden)]
@@ -11345,14 +10716,6 @@ impl SqlAlias {
     /// <p>A temporary name given to a table, or a column in a table.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
-    }
-}
-impl std::fmt::Debug for SqlAlias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlAlias");
-        formatter.field("from", &self.from);
-        formatter.field("alias", &self.alias);
-        formatter.finish()
     }
 }
 /// See [`SqlAlias`](crate::model::SqlAlias).
@@ -11403,7 +10766,7 @@ impl SqlAlias {
 
 /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomCode {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -11441,17 +10804,6 @@ impl CustomCode {
     /// <p>Specifies the data schema for the custom code transform.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomCode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomCode");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("code", &self.code);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`CustomCode`](crate::model::CustomCode).
@@ -11556,7 +10908,7 @@ impl CustomCode {
 
 /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -11587,16 +10939,6 @@ impl Filter {
     /// <p>Specifies a filter expression.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::FilterExpression]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("logical_operator", &self.logical_operator);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -11692,7 +11034,7 @@ impl Filter {
 
 /// <p>Specifies a filter expression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterExpression {
     /// <p>The type of operation to perform in the expression.</p>
     #[doc(hidden)]
@@ -11716,15 +11058,6 @@ impl FilterExpression {
     /// <p>A list of filter values.</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::FilterValue]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterExpression {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterExpression");
-        formatter.field("operation", &self.operation);
-        formatter.field("negated", &self.negated);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`FilterExpression`](crate::model::FilterExpression).
@@ -11799,7 +11132,7 @@ impl FilterExpression {
 
 /// <p>Represents a single entry in the list of values for a <code>FilterExpression</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterValue {
     /// <p>The type of filter value.</p>
     #[doc(hidden)]
@@ -11816,14 +11149,6 @@ impl FilterValue {
     /// <p>The value to be associated.</p>
     pub fn value(&self) -> std::option::Option<&[std::string::String]> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterValue");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FilterValue`](crate::model::FilterValue).
@@ -12183,7 +11508,7 @@ impl AsRef<str> for FilterLogicalOperator {
 
 /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FillMissingValues {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -12214,16 +11539,6 @@ impl FillMissingValues {
     /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
     pub fn filled_path(&self) -> std::option::Option<&str> {
         self.filled_path.as_deref()
-    }
-}
-impl std::fmt::Debug for FillMissingValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FillMissingValues");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("imputed_path", &self.imputed_path);
-        formatter.field("filled_path", &self.filled_path);
-        formatter.finish()
     }
 }
 /// See [`FillMissingValues`](crate::model::FillMissingValues).
@@ -12307,7 +11622,7 @@ impl FillMissingValues {
 
 /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectFromCollection {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -12331,15 +11646,6 @@ impl SelectFromCollection {
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub fn index(&self) -> i32 {
         self.index
-    }
-}
-impl std::fmt::Debug for SelectFromCollection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectFromCollection");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("index", &self.index);
-        formatter.finish()
     }
 }
 /// See [`SelectFromCollection`](crate::model::SelectFromCollection).
@@ -12411,7 +11717,7 @@ impl SelectFromCollection {
 
 /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplitFields {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -12435,15 +11741,6 @@ impl SplitFields {
     /// <p>A JSON path to a variable in the data structure.</p>
     pub fn paths(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.paths.as_deref()
-    }
-}
-impl std::fmt::Debug for SplitFields {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplitFields");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("paths", &self.paths);
-        formatter.finish()
     }
 }
 /// See [`SplitFields`](crate::model::SplitFields).
@@ -12524,7 +11821,7 @@ impl SplitFields {
 
 /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Join {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -12555,16 +11852,6 @@ impl Join {
     /// <p>A list of the two columns to be joined.</p>
     pub fn columns(&self) -> std::option::Option<&[crate::model::JoinColumn]> {
         self.columns.as_deref()
-    }
-}
-impl std::fmt::Debug for Join {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Join");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("join_type", &self.join_type);
-        formatter.field("columns", &self.columns);
-        formatter.finish()
     }
 }
 /// See [`Join`](crate::model::Join).
@@ -12657,7 +11944,7 @@ impl Join {
 
 /// <p>Specifies a column to be joined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JoinColumn {
     /// <p>The column to be joined.</p>
     #[doc(hidden)]
@@ -12674,14 +11961,6 @@ impl JoinColumn {
     /// <p>The key of the column to be joined.</p>
     pub fn keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.keys.as_deref()
-    }
-}
-impl std::fmt::Debug for JoinColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JoinColumn");
-        formatter.field("from", &self.from);
-        formatter.field("keys", &self.keys);
-        formatter.finish()
     }
 }
 /// See [`JoinColumn`](crate::model::JoinColumn).
@@ -12851,7 +12130,7 @@ impl AsRef<str> for JoinType {
 
 /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Spigot {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -12889,17 +12168,6 @@ impl Spigot {
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
     pub fn prob(&self) -> std::option::Option<f64> {
         self.prob
-    }
-}
-impl std::fmt::Debug for Spigot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Spigot");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("path", &self.path);
-        formatter.field("topk", &self.topk);
-        formatter.field("prob", &self.prob);
-        formatter.finish()
     }
 }
 /// See [`Spigot`](crate::model::Spigot).
@@ -12995,7 +12263,7 @@ impl Spigot {
 
 /// <p>Specifies a transform that renames a single data property key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenameField {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -13026,16 +12294,6 @@ impl RenameField {
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
     pub fn target_path(&self) -> std::option::Option<&[std::string::String]> {
         self.target_path.as_deref()
-    }
-}
-impl std::fmt::Debug for RenameField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenameField");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("source_path", &self.source_path);
-        formatter.field("target_path", &self.target_path);
-        formatter.finish()
     }
 }
 /// See [`RenameField`](crate::model::RenameField).
@@ -13137,7 +12395,7 @@ impl RenameField {
 
 /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DropFields {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -13161,15 +12419,6 @@ impl DropFields {
     /// <p>A JSON path to a variable in the data structure.</p>
     pub fn paths(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.paths.as_deref()
-    }
-}
-impl std::fmt::Debug for DropFields {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DropFields");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("paths", &self.paths);
-        formatter.finish()
     }
 }
 /// See [`DropFields`](crate::model::DropFields).
@@ -13250,7 +12499,7 @@ impl DropFields {
 
 /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectFields {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -13274,15 +12523,6 @@ impl SelectFields {
     /// <p>A JSON path to a variable in the data structure.</p>
     pub fn paths(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.paths.as_deref()
-    }
-}
-impl std::fmt::Debug for SelectFields {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectFields");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("paths", &self.paths);
-        formatter.finish()
     }
 }
 /// See [`SelectFields`](crate::model::SelectFields).
@@ -13363,7 +12603,7 @@ impl SelectFields {
 
 /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplyMapping {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
@@ -13387,15 +12627,6 @@ impl ApplyMapping {
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
     pub fn mapping(&self) -> std::option::Option<&[crate::model::Mapping]> {
         self.mapping.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplyMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplyMapping");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("mapping", &self.mapping);
-        formatter.finish()
     }
 }
 /// See [`ApplyMapping`](crate::model::ApplyMapping).
@@ -13476,7 +12707,7 @@ impl ApplyMapping {
 
 /// <p>Specifies the mapping of data property keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Mapping {
     /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
     #[doc(hidden)]
@@ -13529,18 +12760,6 @@ impl Mapping {
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
     pub fn children(&self) -> std::option::Option<&[crate::model::Mapping]> {
         self.children.as_deref()
-    }
-}
-impl std::fmt::Debug for Mapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Mapping");
-        formatter.field("to_key", &self.to_key);
-        formatter.field("from_path", &self.from_path);
-        formatter.field("from_type", &self.from_type);
-        formatter.field("to_type", &self.to_type);
-        formatter.field("dropped", &self.dropped);
-        formatter.field("children", &self.children);
-        formatter.finish()
     }
 }
 /// See [`Mapping`](crate::model::Mapping).
@@ -13665,7 +12884,7 @@ impl Mapping {
 
 /// <p>Specifies a data target that writes to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DirectTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -13719,19 +12938,6 @@ impl S3DirectTarget {
         &self,
     ) -> std::option::Option<&crate::model::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for S3DirectTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DirectTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("partition_keys", &self.partition_keys);
-        formatter.field("path", &self.path);
-        formatter.field("compression", &self.compression);
-        formatter.field("format", &self.format);
-        formatter.field("schema_change_policy", &self.schema_change_policy);
-        formatter.finish()
     }
 }
 /// See [`S3DirectTarget`](crate::model::S3DirectTarget).
@@ -13871,7 +13077,7 @@ impl S3DirectTarget {
 
 /// <p>A policy that specifies update behavior for the crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectSchemaChangePolicy {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
     #[doc(hidden)]
@@ -13902,16 +13108,6 @@ impl DirectSchemaChangePolicy {
     /// <p>Specifies the database that the schema change policy applies to.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for DirectSchemaChangePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectSchemaChangePolicy");
-        formatter.field("enable_update_catalog", &self.enable_update_catalog);
-        formatter.field("update_behavior", &self.update_behavior);
-        formatter.field("table", &self.table);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
@@ -14094,7 +13290,7 @@ impl AsRef<str> for TargetFormat {
 
 /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3GlueParquetTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -14141,18 +13337,6 @@ impl S3GlueParquetTarget {
         &self,
     ) -> std::option::Option<&crate::model::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for S3GlueParquetTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3GlueParquetTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("partition_keys", &self.partition_keys);
-        formatter.field("path", &self.path);
-        formatter.field("compression", &self.compression);
-        formatter.field("schema_change_policy", &self.schema_change_policy);
-        formatter.finish()
     }
 }
 /// See [`S3GlueParquetTarget`](crate::model::S3GlueParquetTarget).
@@ -14387,7 +13571,7 @@ impl AsRef<str> for ParquetCompressionType {
 
 /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3CatalogTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -14434,18 +13618,6 @@ impl S3CatalogTarget {
         &self,
     ) -> std::option::Option<&crate::model::CatalogSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for S3CatalogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3CatalogTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("partition_keys", &self.partition_keys);
-        formatter.field("table", &self.table);
-        formatter.field("database", &self.database);
-        formatter.field("schema_change_policy", &self.schema_change_policy);
-        formatter.finish()
     }
 }
 /// See [`S3CatalogTarget`](crate::model::S3CatalogTarget).
@@ -14570,7 +13742,7 @@ impl S3CatalogTarget {
 
 /// <p>Specifies a target that uses Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -14624,19 +13796,6 @@ impl RedshiftTarget {
         &self,
     ) -> std::option::Option<&crate::model::UpsertRedshiftTargetOptions> {
         self.upsert_redshift_options.as_ref()
-    }
-}
-impl std::fmt::Debug for RedshiftTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.field("redshift_tmp_dir", &self.redshift_tmp_dir);
-        formatter.field("tmp_dir_iam_role", &self.tmp_dir_iam_role);
-        formatter.field("upsert_redshift_options", &self.upsert_redshift_options);
-        formatter.finish()
     }
 }
 /// See [`RedshiftTarget`](crate::model::RedshiftTarget).
@@ -14769,7 +13928,7 @@ impl RedshiftTarget {
 
 /// <p>The options to configure an upsert operation when writing to a Redshift target .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpsertRedshiftTargetOptions {
     /// <p>The physical location of the Redshift table.</p>
     #[doc(hidden)]
@@ -14793,15 +13952,6 @@ impl UpsertRedshiftTargetOptions {
     /// <p>The keys used to determine whether to perform an update or insert.</p>
     pub fn upsert_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.upsert_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for UpsertRedshiftTargetOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpsertRedshiftTargetOptions");
-        formatter.field("table_location", &self.table_location);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("upsert_keys", &self.upsert_keys);
-        formatter.finish()
     }
 }
 /// See [`UpsertRedshiftTargetOptions`](crate::model::UpsertRedshiftTargetOptions).
@@ -14879,7 +14029,7 @@ impl UpsertRedshiftTargetOptions {
 
 /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BasicCatalogTarget {
     /// <p>The name of your data target.</p>
     #[doc(hidden)]
@@ -14910,16 +14060,6 @@ impl BasicCatalogTarget {
     /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for BasicCatalogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BasicCatalogTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`BasicCatalogTarget`](crate::model::BasicCatalogTarget).
@@ -15003,7 +14143,7 @@ impl BasicCatalogTarget {
 
 /// <p>Specifies a target that uses an Apache Spark connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SparkConnectorTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -15059,19 +14199,6 @@ impl SparkConnectorTarget {
     /// <p>Specifies the data schema for the custom spark target.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for SparkConnectorTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SparkConnectorTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connector_name", &self.connector_name);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`SparkConnectorTarget`](crate::model::SparkConnectorTarget).
@@ -15226,7 +14353,7 @@ impl SparkConnectorTarget {
 
 /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JdbcConnectorTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
@@ -15289,20 +14416,6 @@ impl JdbcConnectorTarget {
     /// <p>Specifies the data schema for the JDBC target.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for JdbcConnectorTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JdbcConnectorTarget");
-        formatter.field("name", &self.name);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_table", &self.connection_table);
-        formatter.field("connector_name", &self.connector_name);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`JdbcConnectorTarget`](crate::model::JdbcConnectorTarget).
@@ -15472,7 +14585,7 @@ impl JdbcConnectorTarget {
 
 /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamoDbCatalogSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -15496,15 +14609,6 @@ impl DynamoDbCatalogSource {
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for DynamoDbCatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamoDbCatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`DynamoDbCatalogSource`](crate::model::DynamoDbCatalogSource).
@@ -15567,7 +14671,7 @@ impl DynamoDbCatalogSource {
 
 /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalCatalogSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -15591,15 +14695,6 @@ impl RelationalCatalogSource {
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for RelationalCatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalCatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`RelationalCatalogSource`](crate::model::RelationalCatalogSource).
@@ -15662,7 +14757,7 @@ impl RelationalCatalogSource {
 
 /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ParquetSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -15744,23 +14839,6 @@ impl S3ParquetSource {
     /// <p>Specifies the data schema for the S3 Parquet source.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ParquetSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ParquetSource");
-        formatter.field("name", &self.name);
-        formatter.field("paths", &self.paths);
-        formatter.field("compression_type", &self.compression_type);
-        formatter.field("exclusions", &self.exclusions);
-        formatter.field("group_size", &self.group_size);
-        formatter.field("group_files", &self.group_files);
-        formatter.field("recurse", &self.recurse);
-        formatter.field("max_band", &self.max_band);
-        formatter.field("max_files_in_band", &self.max_files_in_band);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`S3ParquetSource`](crate::model::S3ParquetSource).
@@ -15956,7 +15034,7 @@ impl S3ParquetSource {
 
 /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DirectSourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
     #[doc(hidden)]
@@ -15987,16 +15065,6 @@ impl S3DirectSourceAdditionalOptions {
     /// <p>If enabled, specifies the sample path.</p>
     pub fn sample_path(&self) -> std::option::Option<&str> {
         self.sample_path.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DirectSourceAdditionalOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DirectSourceAdditionalOptions");
-        formatter.field("bounded_size", &self.bounded_size);
-        formatter.field("bounded_files", &self.bounded_files);
-        formatter.field("enable_sample_path", &self.enable_sample_path);
-        formatter.field("sample_path", &self.sample_path);
-        formatter.finish()
     }
 }
 /// See [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
@@ -16071,7 +15139,7 @@ impl S3DirectSourceAdditionalOptions {
 
 /// <p>Specifies a JSON data store stored in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3JsonSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -16167,25 +15235,6 @@ impl S3JsonSource {
     /// <p>Specifies the data schema for the S3 JSON source.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for S3JsonSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3JsonSource");
-        formatter.field("name", &self.name);
-        formatter.field("paths", &self.paths);
-        formatter.field("compression_type", &self.compression_type);
-        formatter.field("exclusions", &self.exclusions);
-        formatter.field("group_size", &self.group_size);
-        formatter.field("group_files", &self.group_files);
-        formatter.field("recurse", &self.recurse);
-        formatter.field("max_band", &self.max_band);
-        formatter.field("max_files_in_band", &self.max_files_in_band);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.field("json_path", &self.json_path);
-        formatter.field("multiline", &self.multiline);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`S3JsonSource`](crate::model::S3JsonSource).
@@ -16495,7 +15544,7 @@ impl AsRef<str> for CompressionType {
 
 /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3CsvSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -16633,31 +15682,6 @@ impl S3CsvSource {
     /// <p>Specifies the data schema for the S3 CSV source.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for S3CsvSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3CsvSource");
-        formatter.field("name", &self.name);
-        formatter.field("paths", &self.paths);
-        formatter.field("compression_type", &self.compression_type);
-        formatter.field("exclusions", &self.exclusions);
-        formatter.field("group_size", &self.group_size);
-        formatter.field("group_files", &self.group_files);
-        formatter.field("recurse", &self.recurse);
-        formatter.field("max_band", &self.max_band);
-        formatter.field("max_files_in_band", &self.max_files_in_band);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.field("separator", &self.separator);
-        formatter.field("escaper", &self.escaper);
-        formatter.field("quote_char", &self.quote_char);
-        formatter.field("multiline", &self.multiline);
-        formatter.field("with_header", &self.with_header);
-        formatter.field("write_header", &self.write_header);
-        formatter.field("skip_first", &self.skip_first);
-        formatter.field("optimize_performance", &self.optimize_performance);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`S3CsvSource`](crate::model::S3CsvSource).
@@ -17160,7 +16184,7 @@ impl AsRef<str> for Separator {
 
 /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3CatalogSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -17200,17 +16224,6 @@ impl S3CatalogSource {
         &self,
     ) -> std::option::Option<&crate::model::S3SourceAdditionalOptions> {
         self.additional_options.as_ref()
-    }
-}
-impl std::fmt::Debug for S3CatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3CatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.field("partition_predicate", &self.partition_predicate);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.finish()
     }
 }
 /// See [`S3CatalogSource`](crate::model::S3CatalogSource).
@@ -17306,7 +16319,7 @@ impl S3CatalogSource {
 
 /// <p>Specifies an Amazon Redshift data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftSource {
     /// <p>The name of the Amazon Redshift data store.</p>
     #[doc(hidden)]
@@ -17344,17 +16357,6 @@ impl RedshiftSource {
     /// <p>The IAM role with permissions.</p>
     pub fn tmp_dir_iam_role(&self) -> std::option::Option<&str> {
         self.tmp_dir_iam_role.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.field("redshift_tmp_dir", &self.redshift_tmp_dir);
-        formatter.field("tmp_dir_iam_role", &self.tmp_dir_iam_role);
-        formatter.finish()
     }
 }
 /// See [`RedshiftSource`](crate::model::RedshiftSource).
@@ -17447,7 +16449,7 @@ impl RedshiftSource {
 
 /// <p>Specifies a data store in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -17471,15 +16473,6 @@ impl CatalogSource {
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
-    }
-}
-impl std::fmt::Debug for CatalogSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogSource");
-        formatter.field("name", &self.name);
-        formatter.field("database", &self.database);
-        formatter.field("table", &self.table);
-        formatter.finish()
     }
 }
 /// See [`CatalogSource`](crate::model::CatalogSource).
@@ -17542,7 +16535,7 @@ impl CatalogSource {
 
 /// <p>Specifies a connector to an Apache Spark data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SparkConnectorSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -17591,18 +16584,6 @@ impl SparkConnectorSource {
     /// <p>Specifies data schema for the custom spark source.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for SparkConnectorSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SparkConnectorSource");
-        formatter.field("name", &self.name);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connector_name", &self.connector_name);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`SparkConnectorSource`](crate::model::SparkConnectorSource).
@@ -17736,7 +16717,7 @@ impl SparkConnectorSource {
 
 /// <p>Specifies a connector to a JDBC data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JdbcConnectorSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -17795,20 +16776,6 @@ impl JdbcConnectorSource {
     /// <p>Specifies the data schema for the custom JDBC source.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for JdbcConnectorSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JdbcConnectorSource");
-        formatter.field("name", &self.name);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connector_name", &self.connector_name);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("additional_options", &self.additional_options);
-        formatter.field("connection_table", &self.connection_table);
-        formatter.field("query", &self.query);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`JdbcConnectorSource`](crate::model::JdbcConnectorSource).
@@ -17955,7 +16922,7 @@ impl JdbcConnectorSource {
 
 /// <p>Additional connection options for the connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JdbcConnectorOptions {
     /// <p>Extra condition clause to filter data from source. For example:</p>
     /// <p> <code>BillingCity='Mountain View'</code> </p>
@@ -18024,23 +16991,6 @@ impl JdbcConnectorOptions {
         &std::collections::HashMap<crate::model::JdbcDataType, crate::model::GlueRecordType>,
     > {
         self.data_type_mapping.as_ref()
-    }
-}
-impl std::fmt::Debug for JdbcConnectorOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JdbcConnectorOptions");
-        formatter.field("filter_predicate", &self.filter_predicate);
-        formatter.field("partition_column", &self.partition_column);
-        formatter.field("lower_bound", &self.lower_bound);
-        formatter.field("upper_bound", &self.upper_bound);
-        formatter.field("num_partitions", &self.num_partitions);
-        formatter.field("job_bookmark_keys", &self.job_bookmark_keys);
-        formatter.field(
-            "job_bookmark_keys_sort_order",
-            &self.job_bookmark_keys_sort_order,
-        );
-        formatter.field("data_type_mapping", &self.data_type_mapping);
-        formatter.finish()
     }
 }
 /// See [`JdbcConnectorOptions`](crate::model::JdbcConnectorOptions).
@@ -18661,7 +17611,7 @@ impl AsRef<str> for JdbcDataType {
 
 /// <p>Specifies a connector to an Amazon Athena data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AthenaConnectorSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -18713,19 +17663,6 @@ impl AthenaConnectorSource {
     /// <p>Specifies the data schema for the custom Athena source.</p>
     pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
         self.output_schemas.as_deref()
-    }
-}
-impl std::fmt::Debug for AthenaConnectorSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AthenaConnectorSource");
-        formatter.field("name", &self.name);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connector_name", &self.connector_name);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("connection_table", &self.connection_table);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("output_schemas", &self.output_schemas);
-        formatter.finish()
     }
 }
 /// See [`AthenaConnectorSource`](crate::model::AthenaConnectorSource).
@@ -18857,7 +17794,7 @@ impl AthenaConnectorSource {
 
 /// <p>Specifies the connections used by a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionsList {
     /// <p>A list of connections used by the job.</p>
     #[doc(hidden)]
@@ -18867,13 +17804,6 @@ impl ConnectionsList {
     /// <p>A list of connections used by the job.</p>
     pub fn connections(&self) -> std::option::Option<&[std::string::String]> {
         self.connections.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionsList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionsList");
-        formatter.field("connections", &self.connections);
-        formatter.finish()
     }
 }
 /// See [`ConnectionsList`](crate::model::ConnectionsList).
@@ -18921,7 +17851,7 @@ impl ConnectionsList {
 
 /// <p>Specifies code that runs when a job is run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobCommand {
     /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
     #[doc(hidden)]
@@ -18945,15 +17875,6 @@ impl JobCommand {
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
     pub fn python_version(&self) -> std::option::Option<&str> {
         self.python_version.as_deref()
-    }
-}
-impl std::fmt::Debug for JobCommand {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobCommand");
-        formatter.field("name", &self.name);
-        formatter.field("script_location", &self.script_location);
-        formatter.field("python_version", &self.python_version);
-        formatter.finish()
     }
 }
 /// See [`JobCommand`](crate::model::JobCommand).
@@ -19022,7 +17943,7 @@ impl JobCommand {
 
 /// <p>An execution property of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionProperty {
     /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
     #[doc(hidden)]
@@ -19032,13 +17953,6 @@ impl ExecutionProperty {
     /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
     pub fn max_concurrent_runs(&self) -> i32 {
         self.max_concurrent_runs
-    }
-}
-impl std::fmt::Debug for ExecutionProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionProperty");
-        formatter.field("max_concurrent_runs", &self.max_concurrent_runs);
-        formatter.finish()
     }
 }
 /// See [`ExecutionProperty`](crate::model::ExecutionProperty).
@@ -19077,7 +17991,7 @@ impl ExecutionProperty {
 
 /// <p>Custom libraries to be loaded into a development endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DevEndpointCustomLibraries {
     /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
@@ -19102,14 +18016,6 @@ impl DevEndpointCustomLibraries {
     /// </note>
     pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
         self.extra_jars_s3_path.as_deref()
-    }
-}
-impl std::fmt::Debug for DevEndpointCustomLibraries {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DevEndpointCustomLibraries");
-        formatter.field("extra_python_libs_s3_path", &self.extra_python_libs_s3_path);
-        formatter.field("extra_jars_s3_path", &self.extra_jars_s3_path);
-        formatter.finish()
     }
 }
 /// See [`DevEndpointCustomLibraries`](crate::model::DevEndpointCustomLibraries).
@@ -19174,7 +18080,7 @@ impl DevEndpointCustomLibraries {
 
 /// <p>The structure used to create or update a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseInput {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     #[doc(hidden)]
@@ -19228,21 +18134,6 @@ impl DatabaseInput {
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     pub fn target_database(&self) -> std::option::Option<&crate::model::DatabaseIdentifier> {
         self.target_database.as_ref()
-    }
-}
-impl std::fmt::Debug for DatabaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("location_uri", &self.location_uri);
-        formatter.field("parameters", &self.parameters);
-        formatter.field(
-            "create_table_default_permissions",
-            &self.create_table_default_permissions,
-        );
-        formatter.field("target_database", &self.target_database);
-        formatter.finish()
     }
 }
 /// See [`DatabaseInput`](crate::model::DatabaseInput).
@@ -19376,7 +18267,7 @@ impl DatabaseInput {
 
 /// <p>A structure that describes a target database for resource linking.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseIdentifier {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     #[doc(hidden)]
@@ -19393,14 +18284,6 @@ impl DatabaseIdentifier {
     /// <p>The name of the catalog database.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DatabaseIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseIdentifier");
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.finish()
     }
 }
 /// See [`DatabaseIdentifier`](crate::model::DatabaseIdentifier).
@@ -19454,7 +18337,7 @@ impl DatabaseIdentifier {
 
 /// <p>Permissions granted to a principal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrincipalPermissions {
     /// <p>The principal who is granted permissions.</p>
     #[doc(hidden)]
@@ -19471,14 +18354,6 @@ impl PrincipalPermissions {
     /// <p>The permissions that are granted to the principal.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for PrincipalPermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrincipalPermissions");
-        formatter.field("principal", &self.principal);
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 /// See [`PrincipalPermissions`](crate::model::PrincipalPermissions).
@@ -19676,7 +18551,7 @@ impl AsRef<str> for Permission {
 
 /// <p>The Lake Formation principal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
     #[doc(hidden)]
@@ -19686,16 +18561,6 @@ impl DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
     pub fn data_lake_principal_identifier(&self) -> std::option::Option<&str> {
         self.data_lake_principal_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DataLakePrincipal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataLakePrincipal");
-        formatter.field(
-            "data_lake_principal_identifier",
-            &self.data_lake_principal_identifier,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataLakePrincipal`](crate::model::DataLakePrincipal).
@@ -19740,7 +18605,7 @@ impl DataLakePrincipal {
 
 /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LakeFormationConfiguration {
     /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     #[doc(hidden)]
@@ -19757,17 +18622,6 @@ impl LakeFormationConfiguration {
     /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for LakeFormationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LakeFormationConfiguration");
-        formatter.field(
-            "use_lake_formation_credentials",
-            &self.use_lake_formation_credentials,
-        );
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 /// See [`LakeFormationConfiguration`](crate::model::LakeFormationConfiguration).
@@ -19821,7 +18675,7 @@ impl LakeFormationConfiguration {
 
 /// <p>Specifies data lineage configuration settings for the crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LineageConfiguration {
     /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
     /// <ul>
@@ -19841,13 +18695,6 @@ impl LineageConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::CrawlerLineageSettings> {
         self.crawler_lineage_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for LineageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LineageConfiguration");
-        formatter.field("crawler_lineage_settings", &self.crawler_lineage_settings);
-        formatter.finish()
     }
 }
 /// See [`LineageConfiguration`](crate::model::LineageConfiguration).
@@ -19993,7 +18840,7 @@ impl AsRef<str> for CrawlerLineageSettings {
 
 /// <p>When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/incremental-crawls.html">Incremental Crawls in Glue</a> in the developer guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecrawlPolicy {
     /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
     /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
@@ -20009,13 +18856,6 @@ impl RecrawlPolicy {
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
     pub fn recrawl_behavior(&self) -> std::option::Option<&crate::model::RecrawlBehavior> {
         self.recrawl_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for RecrawlPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecrawlPolicy");
-        formatter.field("recrawl_behavior", &self.recrawl_behavior);
-        formatter.finish()
     }
 }
 /// See [`RecrawlPolicy`](crate::model::RecrawlPolicy).
@@ -20162,7 +19002,7 @@ impl AsRef<str> for RecrawlBehavior {
 
 /// <p>A policy that specifies update and deletion behaviors for the crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaChangePolicy {
     /// <p>The update behavior when the crawler finds a changed schema.</p>
     #[doc(hidden)]
@@ -20179,14 +19019,6 @@ impl SchemaChangePolicy {
     /// <p>The deletion behavior when the crawler finds a deleted object.</p>
     pub fn delete_behavior(&self) -> std::option::Option<&crate::model::DeleteBehavior> {
         self.delete_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for SchemaChangePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaChangePolicy");
-        formatter.field("update_behavior", &self.update_behavior);
-        formatter.field("delete_behavior", &self.delete_behavior);
-        formatter.finish()
     }
 }
 /// See [`SchemaChangePolicy`](crate::model::SchemaChangePolicy).
@@ -20428,7 +19260,7 @@ impl AsRef<str> for UpdateBehavior {
 
 /// <p>Specifies data stores to crawl.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrawlerTargets {
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
     #[doc(hidden)]
@@ -20473,18 +19305,6 @@ impl CrawlerTargets {
     /// <p>Specifies Delta data store targets.</p>
     pub fn delta_targets(&self) -> std::option::Option<&[crate::model::DeltaTarget]> {
         self.delta_targets.as_deref()
-    }
-}
-impl std::fmt::Debug for CrawlerTargets {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrawlerTargets");
-        formatter.field("s3_targets", &self.s3_targets);
-        formatter.field("jdbc_targets", &self.jdbc_targets);
-        formatter.field("mongo_db_targets", &self.mongo_db_targets);
-        formatter.field("dynamo_db_targets", &self.dynamo_db_targets);
-        formatter.field("catalog_targets", &self.catalog_targets);
-        formatter.field("delta_targets", &self.delta_targets);
-        formatter.finish()
     }
 }
 /// See [`CrawlerTargets`](crate::model::CrawlerTargets).
@@ -20639,7 +19459,7 @@ impl CrawlerTargets {
 
 /// <p>Specifies a Delta data store to crawl one or more Delta tables.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeltaTarget {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
     #[doc(hidden)]
@@ -20663,15 +19483,6 @@ impl DeltaTarget {
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
     pub fn write_manifest(&self) -> std::option::Option<bool> {
         self.write_manifest
-    }
-}
-impl std::fmt::Debug for DeltaTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeltaTarget");
-        formatter.field("delta_tables", &self.delta_tables);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("write_manifest", &self.write_manifest);
-        formatter.finish()
     }
 }
 /// See [`DeltaTarget`](crate::model::DeltaTarget).
@@ -20746,7 +19557,7 @@ impl DeltaTarget {
 
 /// <p>Specifies an Glue Data Catalog target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogTarget {
     /// <p>The name of the database to be synchronized.</p>
     #[doc(hidden)]
@@ -20784,17 +19595,6 @@ impl CatalogTarget {
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
     pub fn dlq_event_queue_arn(&self) -> std::option::Option<&str> {
         self.dlq_event_queue_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CatalogTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogTarget");
-        formatter.field("database_name", &self.database_name);
-        formatter.field("tables", &self.tables);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("event_queue_arn", &self.event_queue_arn);
-        formatter.field("dlq_event_queue_arn", &self.dlq_event_queue_arn);
-        formatter.finish()
     }
 }
 /// See [`CatalogTarget`](crate::model::CatalogTarget).
@@ -20902,7 +19702,7 @@ impl CatalogTarget {
 
 /// <p>Specifies an Amazon DynamoDB table to crawl.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamoDbTarget {
     /// <p>The name of the DynamoDB table to crawl.</p>
     #[doc(hidden)]
@@ -20930,15 +19730,6 @@ impl DynamoDbTarget {
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
     pub fn scan_rate(&self) -> std::option::Option<f64> {
         self.scan_rate
-    }
-}
-impl std::fmt::Debug for DynamoDbTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamoDbTarget");
-        formatter.field("path", &self.path);
-        formatter.field("scan_all", &self.scan_all);
-        formatter.field("scan_rate", &self.scan_rate);
-        formatter.finish()
     }
 }
 /// See [`DynamoDbTarget`](crate::model::DynamoDbTarget).
@@ -21005,7 +19796,7 @@ impl DynamoDbTarget {
 
 /// <p>Specifies an Amazon DocumentDB or MongoDB data store to crawl.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MongoDbTarget {
     /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
     #[doc(hidden)]
@@ -21031,15 +19822,6 @@ impl MongoDbTarget {
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub fn scan_all(&self) -> std::option::Option<bool> {
         self.scan_all
-    }
-}
-impl std::fmt::Debug for MongoDbTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MongoDbTarget");
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("path", &self.path);
-        formatter.field("scan_all", &self.scan_all);
-        formatter.finish()
     }
 }
 /// See [`MongoDbTarget`](crate::model::MongoDbTarget).
@@ -21107,7 +19889,7 @@ impl MongoDbTarget {
 
 /// <p>Specifies a JDBC data store to crawl.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JdbcTarget {
     /// <p>The name of the connection to use to connect to the JDBC target.</p>
     #[doc(hidden)]
@@ -21131,15 +19913,6 @@ impl JdbcTarget {
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusions.as_deref()
-    }
-}
-impl std::fmt::Debug for JdbcTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JdbcTarget");
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("path", &self.path);
-        formatter.field("exclusions", &self.exclusions);
-        formatter.finish()
     }
 }
 /// See [`JdbcTarget`](crate::model::JdbcTarget).
@@ -21214,7 +19987,7 @@ impl JdbcTarget {
 
 /// <p>Specifies a data store in Amazon Simple Storage Service (Amazon S3).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Target {
     /// <p>The path to the Amazon S3 target.</p>
     #[doc(hidden)]
@@ -21259,18 +20032,6 @@ impl S3Target {
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
     pub fn dlq_event_queue_arn(&self) -> std::option::Option<&str> {
         self.dlq_event_queue_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Target {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Target");
-        formatter.field("path", &self.path);
-        formatter.field("exclusions", &self.exclusions);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("sample_size", &self.sample_size);
-        formatter.field("event_queue_arn", &self.event_queue_arn);
-        formatter.field("dlq_event_queue_arn", &self.dlq_event_queue_arn);
-        formatter.finish()
     }
 }
 /// See [`S3Target`](crate::model::S3Target).
@@ -21387,7 +20148,7 @@ impl S3Target {
 
 /// <p>A structure that is used to specify a connection to create or update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionInput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
@@ -21459,21 +20220,6 @@ impl ConnectionInput {
         &self,
     ) -> std::option::Option<&crate::model::PhysicalConnectionRequirements> {
         self.physical_connection_requirements.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("match_criteria", &self.match_criteria);
-        formatter.field("connection_properties", &self.connection_properties);
-        formatter.field(
-            "physical_connection_requirements",
-            &self.physical_connection_requirements,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConnectionInput`](crate::model::ConnectionInput).
@@ -21626,7 +20372,7 @@ impl ConnectionInput {
 
 /// <p>Specifies the physical requirements for a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhysicalConnectionRequirements {
     /// <p>The subnet ID used by the connection.</p>
     #[doc(hidden)]
@@ -21650,15 +20396,6 @@ impl PhysicalConnectionRequirements {
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
-    }
-}
-impl std::fmt::Debug for PhysicalConnectionRequirements {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhysicalConnectionRequirements");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("security_group_id_list", &self.security_group_id_list);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.finish()
     }
 }
 /// See [`PhysicalConnectionRequirements`](crate::model::PhysicalConnectionRequirements).
@@ -22135,7 +20872,7 @@ impl AsRef<str> for ConnectionType {
 
 /// <p>Encapsulates a <code>ColumnStatistics</code> object that failed and the reason for failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnStatisticsError {
     /// <p>The <code>ColumnStatistics</code> of the column.</p>
     #[doc(hidden)]
@@ -22152,14 +20889,6 @@ impl ColumnStatisticsError {
     /// <p>An error message with the reason for the failure of an operation.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for ColumnStatisticsError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnStatisticsError");
-        formatter.field("column_statistics", &self.column_statistics);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`ColumnStatisticsError`](crate::model::ColumnStatisticsError).
@@ -22213,7 +20942,7 @@ impl ColumnStatisticsError {
 
 /// <p>Contains details about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetail {
     /// <p>The code associated with this error.</p>
     #[doc(hidden)]
@@ -22230,14 +20959,6 @@ impl ErrorDetail {
     /// <p>A message describing the error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetail");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
@@ -22291,7 +21012,7 @@ impl ErrorDetail {
 
 /// <p>Represents the generated column-level statistics for a table or partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnStatistics {
     /// <p>Name of column which statistics belong to.</p>
     #[doc(hidden)]
@@ -22322,16 +21043,6 @@ impl ColumnStatistics {
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
     pub fn statistics_data(&self) -> std::option::Option<&crate::model::ColumnStatisticsData> {
         self.statistics_data.as_ref()
-    }
-}
-impl std::fmt::Debug for ColumnStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnStatistics");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("column_type", &self.column_type);
-        formatter.field("analyzed_time", &self.analyzed_time);
-        formatter.field("statistics_data", &self.statistics_data);
-        formatter.finish()
     }
 }
 /// See [`ColumnStatistics`](crate::model::ColumnStatistics).
@@ -22412,7 +21123,7 @@ impl ColumnStatistics {
 
 /// <p>Contains the individual types of column statistics data. Only one data object should be set and indicated by the <code>Type</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnStatisticsData {
     /// <p>The type of column statistics data.</p>
     #[doc(hidden)]
@@ -22490,41 +21201,6 @@ impl ColumnStatisticsData {
         &self,
     ) -> std::option::Option<&crate::model::BinaryColumnStatisticsData> {
         self.binary_column_statistics_data.as_ref()
-    }
-}
-impl std::fmt::Debug for ColumnStatisticsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnStatisticsData");
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "boolean_column_statistics_data",
-            &self.boolean_column_statistics_data,
-        );
-        formatter.field(
-            "date_column_statistics_data",
-            &self.date_column_statistics_data,
-        );
-        formatter.field(
-            "decimal_column_statistics_data",
-            &self.decimal_column_statistics_data,
-        );
-        formatter.field(
-            "double_column_statistics_data",
-            &self.double_column_statistics_data,
-        );
-        formatter.field(
-            "long_column_statistics_data",
-            &self.long_column_statistics_data,
-        );
-        formatter.field(
-            "string_column_statistics_data",
-            &self.string_column_statistics_data,
-        );
-        formatter.field(
-            "binary_column_statistics_data",
-            &self.binary_column_statistics_data,
-        );
-        formatter.finish()
     }
 }
 /// See [`ColumnStatisticsData`](crate::model::ColumnStatisticsData).
@@ -22699,7 +21375,7 @@ impl ColumnStatisticsData {
 
 /// <p>Defines column statistics supported for bit sequence data values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BinaryColumnStatisticsData {
     /// <p>The size of the longest bit sequence in the column.</p>
     #[doc(hidden)]
@@ -22723,15 +21399,6 @@ impl BinaryColumnStatisticsData {
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(&self) -> i64 {
         self.number_of_nulls
-    }
-}
-impl std::fmt::Debug for BinaryColumnStatisticsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BinaryColumnStatisticsData");
-        formatter.field("maximum_length", &self.maximum_length);
-        formatter.field("average_length", &self.average_length);
-        formatter.field("number_of_nulls", &self.number_of_nulls);
-        formatter.finish()
     }
 }
 /// See [`BinaryColumnStatisticsData`](crate::model::BinaryColumnStatisticsData).
@@ -22794,7 +21461,7 @@ impl BinaryColumnStatisticsData {
 
 /// <p>Defines column statistics supported for character sequence data values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StringColumnStatisticsData {
     /// <p>The size of the longest string in the column.</p>
     #[doc(hidden)]
@@ -22825,16 +21492,6 @@ impl StringColumnStatisticsData {
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(&self) -> i64 {
         self.number_of_distinct_values
-    }
-}
-impl std::fmt::Debug for StringColumnStatisticsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StringColumnStatisticsData");
-        formatter.field("maximum_length", &self.maximum_length);
-        formatter.field("average_length", &self.average_length);
-        formatter.field("number_of_nulls", &self.number_of_nulls);
-        formatter.field("number_of_distinct_values", &self.number_of_distinct_values);
-        formatter.finish()
     }
 }
 /// See [`StringColumnStatisticsData`](crate::model::StringColumnStatisticsData).
@@ -22909,7 +21566,7 @@ impl StringColumnStatisticsData {
 
 /// <p>Defines column statistics supported for integer data columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LongColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
     #[doc(hidden)]
@@ -22940,16 +21597,6 @@ impl LongColumnStatisticsData {
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(&self) -> i64 {
         self.number_of_distinct_values
-    }
-}
-impl std::fmt::Debug for LongColumnStatisticsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LongColumnStatisticsData");
-        formatter.field("minimum_value", &self.minimum_value);
-        formatter.field("maximum_value", &self.maximum_value);
-        formatter.field("number_of_nulls", &self.number_of_nulls);
-        formatter.field("number_of_distinct_values", &self.number_of_distinct_values);
-        formatter.finish()
     }
 }
 /// See [`LongColumnStatisticsData`](crate::model::LongColumnStatisticsData).
@@ -23024,7 +21671,7 @@ impl LongColumnStatisticsData {
 
 /// <p>Defines column statistics supported for floating-point number data columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DoubleColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
     #[doc(hidden)]
@@ -23055,16 +21702,6 @@ impl DoubleColumnStatisticsData {
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(&self) -> i64 {
         self.number_of_distinct_values
-    }
-}
-impl std::fmt::Debug for DoubleColumnStatisticsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DoubleColumnStatisticsData");
-        formatter.field("minimum_value", &self.minimum_value);
-        formatter.field("maximum_value", &self.maximum_value);
-        formatter.field("number_of_nulls", &self.number_of_nulls);
-        formatter.field("number_of_distinct_values", &self.number_of_distinct_values);
-        formatter.finish()
     }
 }
 /// See [`DoubleColumnStatisticsData`](crate::model::DoubleColumnStatisticsData).
@@ -23139,7 +21776,7 @@ impl DoubleColumnStatisticsData {
 
 /// <p>Defines column statistics supported for fixed-point number data columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecimalColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
     #[doc(hidden)]
@@ -23170,16 +21807,6 @@ impl DecimalColumnStatisticsData {
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(&self) -> i64 {
         self.number_of_distinct_values
-    }
-}
-impl std::fmt::Debug for DecimalColumnStatisticsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecimalColumnStatisticsData");
-        formatter.field("minimum_value", &self.minimum_value);
-        formatter.field("maximum_value", &self.maximum_value);
-        formatter.field("number_of_nulls", &self.number_of_nulls);
-        formatter.field("number_of_distinct_values", &self.number_of_distinct_values);
-        formatter.finish()
     }
 }
 /// See [`DecimalColumnStatisticsData`](crate::model::DecimalColumnStatisticsData).
@@ -23260,7 +21887,7 @@ impl DecimalColumnStatisticsData {
 
 /// <p>Contains a numeric value in decimal format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecimalNumber {
     /// <p>The unscaled numeric value.</p>
     #[doc(hidden)]
@@ -23277,14 +21904,6 @@ impl DecimalNumber {
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub fn scale(&self) -> i32 {
         self.scale
-    }
-}
-impl std::fmt::Debug for DecimalNumber {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecimalNumber");
-        formatter.field("unscaled_value", &self.unscaled_value);
-        formatter.field("scale", &self.scale);
-        formatter.finish()
     }
 }
 /// See [`DecimalNumber`](crate::model::DecimalNumber).
@@ -23338,7 +21957,7 @@ impl DecimalNumber {
 
 /// <p>Defines column statistics supported for timestamp data columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
     #[doc(hidden)]
@@ -23369,16 +21988,6 @@ impl DateColumnStatisticsData {
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(&self) -> i64 {
         self.number_of_distinct_values
-    }
-}
-impl std::fmt::Debug for DateColumnStatisticsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateColumnStatisticsData");
-        formatter.field("minimum_value", &self.minimum_value);
-        formatter.field("maximum_value", &self.maximum_value);
-        formatter.field("number_of_nulls", &self.number_of_nulls);
-        formatter.field("number_of_distinct_values", &self.number_of_distinct_values);
-        formatter.finish()
     }
 }
 /// See [`DateColumnStatisticsData`](crate::model::DateColumnStatisticsData).
@@ -23459,7 +22068,7 @@ impl DateColumnStatisticsData {
 
 /// <p>Defines column statistics supported for Boolean data columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BooleanColumnStatisticsData {
     /// <p>The number of true values in the column.</p>
     #[doc(hidden)]
@@ -23483,15 +22092,6 @@ impl BooleanColumnStatisticsData {
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(&self) -> i64 {
         self.number_of_nulls
-    }
-}
-impl std::fmt::Debug for BooleanColumnStatisticsData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BooleanColumnStatisticsData");
-        formatter.field("number_of_trues", &self.number_of_trues);
-        formatter.field("number_of_falses", &self.number_of_falses);
-        formatter.field("number_of_nulls", &self.number_of_nulls);
-        formatter.finish()
     }
 }
 /// See [`BooleanColumnStatisticsData`](crate::model::BooleanColumnStatisticsData).
@@ -23673,7 +22273,7 @@ impl AsRef<str> for ColumnStatisticsType {
 
 /// <p>Specifies a custom CSV classifier to be updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -23725,19 +22325,6 @@ impl UpdateCsvClassifierRequest {
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn allow_single_column(&self) -> std::option::Option<bool> {
         self.allow_single_column
-    }
-}
-impl std::fmt::Debug for UpdateCsvClassifierRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCsvClassifierRequest");
-        formatter.field("name", &self.name);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("quote_symbol", &self.quote_symbol);
-        formatter.field("contains_header", &self.contains_header);
-        formatter.field("header", &self.header);
-        formatter.field("disable_value_trimming", &self.disable_value_trimming);
-        formatter.field("allow_single_column", &self.allow_single_column);
-        formatter.finish()
     }
 }
 /// See [`UpdateCsvClassifierRequest`](crate::model::UpdateCsvClassifierRequest).
@@ -23955,7 +22542,7 @@ impl AsRef<str> for CsvHeaderOption {
 
 /// <p>Specifies a JSON classifier to be updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJsonClassifierRequest {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -23972,14 +22559,6 @@ impl UpdateJsonClassifierRequest {
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn json_path(&self) -> std::option::Option<&str> {
         self.json_path.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateJsonClassifierRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJsonClassifierRequest");
-        formatter.field("name", &self.name);
-        formatter.field("json_path", &self.json_path);
-        formatter.finish()
     }
 }
 /// See [`UpdateJsonClassifierRequest`](crate::model::UpdateJsonClassifierRequest).
@@ -24030,7 +22609,7 @@ impl UpdateJsonClassifierRequest {
 
 /// <p>Specifies an XML classifier to be updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateXmlClassifierRequest {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -24058,15 +22637,6 @@ impl UpdateXmlClassifierRequest {
     /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub fn row_tag(&self) -> std::option::Option<&str> {
         self.row_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateXmlClassifierRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateXmlClassifierRequest");
-        formatter.field("name", &self.name);
-        formatter.field("classification", &self.classification);
-        formatter.field("row_tag", &self.row_tag);
-        formatter.finish()
     }
 }
 /// See [`UpdateXmlClassifierRequest`](crate::model::UpdateXmlClassifierRequest).
@@ -24136,7 +22706,7 @@ impl UpdateXmlClassifierRequest {
 
 /// <p>Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGrokClassifierRequest {
     /// <p>The name of the <code>GrokClassifier</code>.</p>
     #[doc(hidden)]
@@ -24167,16 +22737,6 @@ impl UpdateGrokClassifierRequest {
     /// <p>Optional custom grok patterns used by this classifier.</p>
     pub fn custom_patterns(&self) -> std::option::Option<&str> {
         self.custom_patterns.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateGrokClassifierRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGrokClassifierRequest");
-        formatter.field("name", &self.name);
-        formatter.field("classification", &self.classification);
-        formatter.field("grok_pattern", &self.grok_pattern);
-        formatter.field("custom_patterns", &self.custom_patterns);
-        formatter.finish()
     }
 }
 /// See [`UpdateGrokClassifierRequest`](crate::model::UpdateGrokClassifierRequest).
@@ -24257,7 +22817,7 @@ impl UpdateGrokClassifierRequest {
 
 /// <p>Represents a collection of related data organized in columns and rows.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
     #[doc(hidden)]
@@ -24408,35 +22968,6 @@ impl Table {
     /// <p>The ID of the table version.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Table {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Table");
-        formatter.field("name", &self.name);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("description", &self.description);
-        formatter.field("owner", &self.owner);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.field("last_access_time", &self.last_access_time);
-        formatter.field("last_analyzed_time", &self.last_analyzed_time);
-        formatter.field("retention", &self.retention);
-        formatter.field("storage_descriptor", &self.storage_descriptor);
-        formatter.field("partition_keys", &self.partition_keys);
-        formatter.field("view_original_text", &self.view_original_text);
-        formatter.field("view_expanded_text", &self.view_expanded_text);
-        formatter.field("table_type", &self.table_type);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("created_by", &self.created_by);
-        formatter.field(
-            "is_registered_with_lake_formation",
-            &self.is_registered_with_lake_formation,
-        );
-        formatter.field("target_table", &self.target_table);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
     }
 }
 /// See [`Table`](crate::model::Table).
@@ -24857,7 +23388,7 @@ impl AsRef<str> for ResourceShareType {
 
 /// <p>Specifies a field to sort by and a sort order.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SortCriterion {
     /// <p>The name of the field on which to sort.</p>
     #[doc(hidden)]
@@ -24874,14 +23405,6 @@ impl SortCriterion {
     /// <p>An ascending or descending sort.</p>
     pub fn sort(&self) -> std::option::Option<&crate::model::Sort> {
         self.sort.as_ref()
-    }
-}
-impl std::fmt::Debug for SortCriterion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SortCriterion");
-        formatter.field("field_name", &self.field_name);
-        formatter.field("sort", &self.sort);
-        formatter.finish()
     }
 }
 /// See [`SortCriterion`](crate::model::SortCriterion).
@@ -25022,7 +23545,7 @@ impl AsRef<str> for Sort {
 
 /// <p>Defines a property predicate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PropertyPredicate {
     /// <p>The key of the property.</p>
     #[doc(hidden)]
@@ -25046,15 +23569,6 @@ impl PropertyPredicate {
     /// <p>The comparator used to compare this property to others.</p>
     pub fn comparator(&self) -> std::option::Option<&crate::model::Comparator> {
         self.comparator.as_ref()
-    }
-}
-impl std::fmt::Debug for PropertyPredicate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PropertyPredicate");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("comparator", &self.comparator);
-        formatter.finish()
     }
 }
 /// See [`PropertyPredicate`](crate::model::PropertyPredicate).
@@ -25231,7 +23745,7 @@ impl AsRef<str> for Comparator {
 
 /// <p>Defines a point that a job can resume processing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobBookmarkEntry {
     /// <p>The name of the job in question.</p>
     #[doc(hidden)]
@@ -25283,19 +23797,6 @@ impl JobBookmarkEntry {
     /// <p>The bookmark itself.</p>
     pub fn job_bookmark(&self) -> std::option::Option<&str> {
         self.job_bookmark.as_deref()
-    }
-}
-impl std::fmt::Debug for JobBookmarkEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobBookmarkEntry");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("version", &self.version);
-        formatter.field("run", &self.run);
-        formatter.field("attempt", &self.attempt);
-        formatter.field("previous_run_id", &self.previous_run_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("job_bookmark", &self.job_bookmark);
-        formatter.finish()
     }
 }
 /// See [`JobBookmarkEntry`](crate::model::JobBookmarkEntry).
@@ -25409,7 +23910,7 @@ impl JobBookmarkEntry {
 
 /// <p>A structure containing a key value pair for metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetadataKeyValuePair {
     /// <p>A metadata key.</p>
     #[doc(hidden)]
@@ -25426,14 +23927,6 @@ impl MetadataKeyValuePair {
     /// <p>A metadata key’s corresponding value.</p>
     pub fn metadata_value(&self) -> std::option::Option<&str> {
         self.metadata_value.as_deref()
-    }
-}
-impl std::fmt::Debug for MetadataKeyValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetadataKeyValuePair");
-        formatter.field("metadata_key", &self.metadata_key);
-        formatter.field("metadata_value", &self.metadata_value);
-        formatter.finish()
     }
 }
 /// See [`MetadataKeyValuePair`](crate::model::MetadataKeyValuePair).
@@ -25589,7 +24082,7 @@ impl AsRef<str> for SchemaVersionStatus {
 
 /// <p>A structure containing metadata information for a schema version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetadataInfo {
     /// <p>The metadata key’s corresponding value.</p>
     #[doc(hidden)]
@@ -25616,15 +24109,6 @@ impl MetadataInfo {
         &self,
     ) -> std::option::Option<&[crate::model::OtherMetadataValueListItem]> {
         self.other_metadata_value_list.as_deref()
-    }
-}
-impl std::fmt::Debug for MetadataInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetadataInfo");
-        formatter.field("metadata_value", &self.metadata_value);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("other_metadata_value_list", &self.other_metadata_value_list);
-        formatter.finish()
     }
 }
 /// See [`MetadataInfo`](crate::model::MetadataInfo).
@@ -25703,7 +24187,7 @@ impl MetadataInfo {
 
 /// <p>A structure containing other metadata for a schema version belonging to the same metadata key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OtherMetadataValueListItem {
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
     #[doc(hidden)]
@@ -25720,14 +24204,6 @@ impl OtherMetadataValueListItem {
     /// <p>The time at which the entry was created.</p>
     pub fn created_time(&self) -> std::option::Option<&str> {
         self.created_time.as_deref()
-    }
-}
-impl std::fmt::Debug for OtherMetadataValueListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OtherMetadataValueListItem");
-        formatter.field("metadata_value", &self.metadata_value);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`OtherMetadataValueListItem`](crate::model::OtherMetadataValueListItem).
@@ -25968,7 +24444,7 @@ impl AsRef<str> for ExistCondition {
 
 /// <p>Contains configuration information for maintaining Data Catalog security.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataCatalogEncryptionSettings {
     /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
     #[doc(hidden)]
@@ -25988,17 +24464,6 @@ impl DataCatalogEncryptionSettings {
         &self,
     ) -> std::option::Option<&crate::model::ConnectionPasswordEncryption> {
         self.connection_password_encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for DataCatalogEncryptionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataCatalogEncryptionSettings");
-        formatter.field("encryption_at_rest", &self.encryption_at_rest);
-        formatter.field(
-            "connection_password_encryption",
-            &self.connection_password_encryption,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataCatalogEncryptionSettings`](crate::model::DataCatalogEncryptionSettings).
@@ -26061,7 +24526,7 @@ impl DataCatalogEncryptionSettings {
 /// <p>When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.</p>
 /// <p>This encryption requires that you set KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionPasswordEncryption {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
     #[doc(hidden)]
@@ -26082,17 +24547,6 @@ impl ConnectionPasswordEncryption {
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
     pub fn aws_kms_key_id(&self) -> std::option::Option<&str> {
         self.aws_kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionPasswordEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionPasswordEncryption");
-        formatter.field(
-            "return_connection_password_encrypted",
-            &self.return_connection_password_encrypted,
-        );
-        formatter.field("aws_kms_key_id", &self.aws_kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`ConnectionPasswordEncryption`](crate::model::ConnectionPasswordEncryption).
@@ -26155,7 +24609,7 @@ impl ConnectionPasswordEncryption {
 
 /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionAtRest {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
     #[doc(hidden)]
@@ -26174,14 +24628,6 @@ impl EncryptionAtRest {
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
     pub fn sse_aws_kms_key_id(&self) -> std::option::Option<&str> {
         self.sse_aws_kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionAtRest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionAtRest");
-        formatter.field("catalog_encryption_mode", &self.catalog_encryption_mode);
-        formatter.field("sse_aws_kms_key_id", &self.sse_aws_kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`EncryptionAtRest`](crate::model::EncryptionAtRest).
@@ -26334,7 +24780,7 @@ impl AsRef<str> for CatalogEncryptionMode {
 
 /// <p>The statement or request for a particular action to occur in a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Statement {
     /// <p>The ID of the statement.</p>
     #[doc(hidden)]
@@ -26386,19 +24832,6 @@ impl Statement {
     /// <p>The unix time and date that the job definition was completed.</p>
     pub fn completed_on(&self) -> i64 {
         self.completed_on
-    }
-}
-impl std::fmt::Debug for Statement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Statement");
-        formatter.field("id", &self.id);
-        formatter.field("code", &self.code);
-        formatter.field("state", &self.state);
-        formatter.field("output", &self.output);
-        formatter.field("progress", &self.progress);
-        formatter.field("started_on", &self.started_on);
-        formatter.field("completed_on", &self.completed_on);
-        formatter.finish()
     }
 }
 /// See [`Statement`](crate::model::Statement).
@@ -26515,7 +24948,7 @@ impl Statement {
 
 /// <p>The code execution output in JSON format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatementOutput {
     /// <p>The code execution output.</p>
     #[doc(hidden)]
@@ -26560,18 +24993,6 @@ impl StatementOutput {
     /// <p>The traceback of the output.</p>
     pub fn traceback(&self) -> std::option::Option<&[std::string::String]> {
         self.traceback.as_deref()
-    }
-}
-impl std::fmt::Debug for StatementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatementOutput");
-        formatter.field("data", &self.data);
-        formatter.field("execution_count", &self.execution_count);
-        formatter.field("status", &self.status);
-        formatter.field("error_name", &self.error_name);
-        formatter.field("error_value", &self.error_value);
-        formatter.field("traceback", &self.traceback);
-        formatter.finish()
     }
 }
 /// See [`StatementOutput`](crate::model::StatementOutput).
@@ -26802,7 +25223,7 @@ impl AsRef<str> for StatementState {
 
 /// <p>The code execution output in JSON format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatementOutputData {
     /// <p>The code execution output in text format.</p>
     #[doc(hidden)]
@@ -26812,13 +25233,6 @@ impl StatementOutputData {
     /// <p>The code execution output in text format.</p>
     pub fn text_plain(&self) -> std::option::Option<&str> {
         self.text_plain.as_deref()
-    }
-}
-impl std::fmt::Debug for StatementOutputData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatementOutputData");
-        formatter.field("text_plain", &self.text_plain);
-        formatter.finish()
     }
 }
 /// See [`StatementOutputData`](crate::model::StatementOutputData).
@@ -26857,7 +25271,7 @@ impl StatementOutputData {
 
 /// <p>The period in which a remote Spark runtime environment is running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Session {
     /// <p>The ID of the session.</p>
     #[doc(hidden)]
@@ -26955,25 +25369,6 @@ impl Session {
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Session {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Session");
-        formatter.field("id", &self.id);
-        formatter.field("created_on", &self.created_on);
-        formatter.field("status", &self.status);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("description", &self.description);
-        formatter.field("role", &self.role);
-        formatter.field("command", &self.command);
-        formatter.field("default_arguments", &self.default_arguments);
-        formatter.field("connections", &self.connections);
-        formatter.field("progress", &self.progress);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("security_configuration", &self.security_configuration);
-        formatter.field("glue_version", &self.glue_version);
-        formatter.finish()
     }
 }
 /// See [`Session`](crate::model::Session).
@@ -27191,7 +25586,7 @@ impl Session {
 
 /// <p>The <code>SessionCommand</code> that runs the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionCommand {
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
     #[doc(hidden)]
@@ -27208,14 +25603,6 @@ impl SessionCommand {
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
     pub fn python_version(&self) -> std::option::Option<&str> {
         self.python_version.as_deref()
-    }
-}
-impl std::fmt::Debug for SessionCommand {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionCommand");
-        formatter.field("name", &self.name);
-        formatter.field("python_version", &self.python_version);
-        formatter.finish()
     }
 }
 /// See [`SessionCommand`](crate::model::SessionCommand).
@@ -27386,7 +25773,7 @@ impl AsRef<str> for SessionStatus {
 
 /// <p>An object containing the details about a schema version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaVersionListItem {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     #[doc(hidden)]
@@ -27424,17 +25811,6 @@ impl SchemaVersionListItem {
     /// <p>The date and time the schema version was created.</p>
     pub fn created_time(&self) -> std::option::Option<&str> {
         self.created_time.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaVersionListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaVersionListItem");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("schema_version_id", &self.schema_version_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`SchemaVersionListItem`](crate::model::SchemaVersionListItem).
@@ -27527,7 +25903,7 @@ impl SchemaVersionListItem {
 
 /// <p>An object that contains minimal details for a schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaListItem {
     /// <p>the name of the registry where the schema resides.</p>
     #[doc(hidden)]
@@ -27579,19 +25955,6 @@ impl SchemaListItem {
     /// <p>The date and time that a schema was updated.</p>
     pub fn updated_time(&self) -> std::option::Option<&str> {
         self.updated_time.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaListItem");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("description", &self.description);
-        formatter.field("schema_status", &self.schema_status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("updated_time", &self.updated_time);
-        formatter.finish()
     }
 }
 /// See [`SchemaListItem`](crate::model::SchemaListItem).
@@ -27803,7 +26166,7 @@ impl AsRef<str> for SchemaStatus {
 
 /// <p>A structure containing the details for a registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistryListItem {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -27848,18 +26211,6 @@ impl RegistryListItem {
     /// <p>The date the registry was updated.</p>
     pub fn updated_time(&self) -> std::option::Option<&str> {
         self.updated_time.as_deref()
-    }
-}
-impl std::fmt::Debug for RegistryListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistryListItem");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("registry_arn", &self.registry_arn);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("updated_time", &self.updated_time);
-        formatter.finish()
     }
 }
 /// See [`RegistryListItem`](crate::model::RegistryListItem).
@@ -28054,7 +26405,7 @@ impl AsRef<str> for RegistryStatus {
 
 /// <p>The sorting criteria that are associated with the machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransformSortCriteria {
     /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
     #[doc(hidden)]
@@ -28071,14 +26422,6 @@ impl TransformSortCriteria {
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
     pub fn sort_direction(&self) -> std::option::Option<&crate::model::SortDirectionType> {
         self.sort_direction.as_ref()
-    }
-}
-impl std::fmt::Debug for TransformSortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransformSortCriteria");
-        formatter.field("column", &self.column);
-        formatter.field("sort_direction", &self.sort_direction);
-        formatter.finish()
     }
 }
 /// See [`TransformSortCriteria`](crate::model::TransformSortCriteria).
@@ -28340,7 +26683,7 @@ impl AsRef<str> for TransformSortColumnType {
 
 /// <p>The criteria used to filter the machine learning transforms.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransformFilterCriteria {
     /// <p>A unique transform name that is used to filter the machine learning transforms.</p>
     #[doc(hidden)]
@@ -28408,21 +26751,6 @@ impl TransformFilterCriteria {
     /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
     pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaColumn]> {
         self.schema.as_deref()
-    }
-}
-impl std::fmt::Debug for TransformFilterCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransformFilterCriteria");
-        formatter.field("name", &self.name);
-        formatter.field("transform_type", &self.transform_type);
-        formatter.field("status", &self.status);
-        formatter.field("glue_version", &self.glue_version);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("created_after", &self.created_after);
-        formatter.field("last_modified_before", &self.last_modified_before);
-        formatter.field("last_modified_after", &self.last_modified_after);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
     }
 }
 /// See [`TransformFilterCriteria`](crate::model::TransformFilterCriteria).
@@ -28586,7 +26914,7 @@ impl TransformFilterCriteria {
 
 /// <p>A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaColumn {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
@@ -28603,14 +26931,6 @@ impl SchemaColumn {
     /// <p>The type of data in the column.</p>
     pub fn data_type(&self) -> std::option::Option<&str> {
         self.data_type.as_deref()
-    }
-}
-impl std::fmt::Debug for SchemaColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaColumn");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.finish()
     }
 }
 /// See [`SchemaColumn`](crate::model::SchemaColumn).
@@ -28758,7 +27078,7 @@ impl AsRef<str> for TransformStatusType {
 
 /// <p>An object representing a custom pattern for detecting sensitive data across the columns and rows of your structured data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomEntityType {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -28784,15 +27104,6 @@ impl CustomEntityType {
     /// <p>If no context words are passed only a regular expression is checked.</p>
     pub fn context_words(&self) -> std::option::Option<&[std::string::String]> {
         self.context_words.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomEntityType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomEntityType");
-        formatter.field("name", &self.name);
-        formatter.field("regex_string", &self.regex_string);
-        formatter.field("context_words", &self.context_words);
-        formatter.finish()
     }
 }
 /// See [`CustomEntityType`](crate::model::CustomEntityType).
@@ -28866,7 +27177,7 @@ impl CustomEntityType {
 
 /// <p>Contains the information for a run of a crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrawlerHistory {
     /// <p>A UUID identifier for each crawl.</p>
     #[doc(hidden)]
@@ -28939,22 +27250,6 @@ impl CrawlerHistory {
     /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
     pub fn dpu_hour(&self) -> f64 {
         self.dpu_hour
-    }
-}
-impl std::fmt::Debug for CrawlerHistory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrawlerHistory");
-        formatter.field("crawl_id", &self.crawl_id);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("summary", &self.summary);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("log_group", &self.log_group);
-        formatter.field("log_stream", &self.log_stream);
-        formatter.field("message_prefix", &self.message_prefix);
-        formatter.field("dpu_hour", &self.dpu_hour);
-        formatter.finish()
     }
 }
 /// See [`CrawlerHistory`](crate::model::CrawlerHistory).
@@ -29218,7 +27513,7 @@ impl AsRef<str> for CrawlerHistoryState {
 
 /// <p>A list of fields, comparators and value that you can use to filter the crawler runs for a specified crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrawlsFilter {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
@@ -29270,15 +27565,6 @@ impl CrawlsFilter {
     /// <p>The value provided for comparison on the crawl field. </p>
     pub fn field_value(&self) -> std::option::Option<&str> {
         self.field_value.as_deref()
-    }
-}
-impl std::fmt::Debug for CrawlsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrawlsFilter");
-        formatter.field("field_name", &self.field_name);
-        formatter.field("filter_operator", &self.filter_operator);
-        formatter.field("field_value", &self.field_value);
-        formatter.finish()
     }
 }
 /// See [`CrawlsFilter`](crate::model::CrawlsFilter).
@@ -29590,7 +27876,7 @@ impl AsRef<str> for FieldName {
 
 /// <p>A workflow run is an execution of a workflow providing all the runtime information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowRun {
     /// <p>Name of the workflow that was run.</p>
     #[doc(hidden)]
@@ -29677,26 +27963,6 @@ impl WorkflowRun {
         &self,
     ) -> std::option::Option<&crate::model::StartingEventBatchCondition> {
         self.starting_event_batch_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowRun");
-        formatter.field("name", &self.name);
-        formatter.field("workflow_run_id", &self.workflow_run_id);
-        formatter.field("previous_run_id", &self.previous_run_id);
-        formatter.field("workflow_run_properties", &self.workflow_run_properties);
-        formatter.field("started_on", &self.started_on);
-        formatter.field("completed_on", &self.completed_on);
-        formatter.field("status", &self.status);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("statistics", &self.statistics);
-        formatter.field("graph", &self.graph);
-        formatter.field(
-            "starting_event_batch_condition",
-            &self.starting_event_batch_condition,
-        );
-        formatter.finish()
     }
 }
 /// See [`WorkflowRun`](crate::model::WorkflowRun).
@@ -29903,7 +28169,7 @@ impl WorkflowRun {
 
 /// <p>The batch condition that started the workflow run. Either the number of events in the batch size arrived, in which case the BatchSize member is non-zero, or the batch window expired, in which case the BatchWindow member is non-zero.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartingEventBatchCondition {
     /// <p>Number of events in the batch.</p>
     #[doc(hidden)]
@@ -29920,14 +28186,6 @@ impl StartingEventBatchCondition {
     /// <p>Duration of the batch window in seconds.</p>
     pub fn batch_window(&self) -> std::option::Option<i32> {
         self.batch_window
-    }
-}
-impl std::fmt::Debug for StartingEventBatchCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartingEventBatchCondition");
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field("batch_window", &self.batch_window);
-        formatter.finish()
     }
 }
 /// See [`StartingEventBatchCondition`](crate::model::StartingEventBatchCondition).
@@ -29978,7 +28236,7 @@ impl StartingEventBatchCondition {
 
 /// <p>A workflow graph represents the complete workflow containing all the Glue components present in the workflow and all the directed connections between them.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowGraph {
     /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
     #[doc(hidden)]
@@ -29995,14 +28253,6 @@ impl WorkflowGraph {
     /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
     pub fn edges(&self) -> std::option::Option<&[crate::model::Edge]> {
         self.edges.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkflowGraph {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowGraph");
-        formatter.field("nodes", &self.nodes);
-        formatter.field("edges", &self.edges);
-        formatter.finish()
     }
 }
 /// See [`WorkflowGraph`](crate::model::WorkflowGraph).
@@ -30071,7 +28321,7 @@ impl WorkflowGraph {
 
 /// <p>An edge represents a directed connection between two Glue components that are part of the workflow the edge belongs to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Edge {
     /// <p>The unique of the node within the workflow where the edge starts.</p>
     #[doc(hidden)]
@@ -30088,14 +28338,6 @@ impl Edge {
     /// <p>The unique of the node within the workflow where the edge ends.</p>
     pub fn destination_id(&self) -> std::option::Option<&str> {
         self.destination_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Edge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Edge");
-        formatter.field("source_id", &self.source_id);
-        formatter.field("destination_id", &self.destination_id);
-        formatter.finish()
     }
 }
 /// See [`Edge`](crate::model::Edge).
@@ -30149,7 +28391,7 @@ impl Edge {
 
 /// <p>A node represents an Glue component (trigger, crawler, or job) on a workflow graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Node {
     /// <p>The type of Glue component represented by the node.</p>
     #[doc(hidden)]
@@ -30194,18 +28436,6 @@ impl Node {
     /// <p>Details of the crawler when the node represents a crawler.</p>
     pub fn crawler_details(&self) -> std::option::Option<&crate::model::CrawlerNodeDetails> {
         self.crawler_details.as_ref()
-    }
-}
-impl std::fmt::Debug for Node {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Node");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("unique_id", &self.unique_id);
-        formatter.field("trigger_details", &self.trigger_details);
-        formatter.field("job_details", &self.job_details);
-        formatter.field("crawler_details", &self.crawler_details);
-        formatter.finish()
     }
 }
 /// See [`Node`](crate::model::Node).
@@ -30313,7 +28543,7 @@ impl Node {
 
 /// <p>The details of a Crawler node present in the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrawlerNodeDetails {
     /// <p>A list of crawls represented by the crawl node.</p>
     #[doc(hidden)]
@@ -30323,13 +28553,6 @@ impl CrawlerNodeDetails {
     /// <p>A list of crawls represented by the crawl node.</p>
     pub fn crawls(&self) -> std::option::Option<&[crate::model::Crawl]> {
         self.crawls.as_deref()
-    }
-}
-impl std::fmt::Debug for CrawlerNodeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrawlerNodeDetails");
-        formatter.field("crawls", &self.crawls);
-        formatter.finish()
     }
 }
 /// See [`CrawlerNodeDetails`](crate::model::CrawlerNodeDetails).
@@ -30377,7 +28600,7 @@ impl CrawlerNodeDetails {
 
 /// <p>The details of a crawl in the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Crawl {
     /// <p>The state of the crawler.</p>
     #[doc(hidden)]
@@ -30422,18 +28645,6 @@ impl Crawl {
     /// <p>The log stream associated with the crawl.</p>
     pub fn log_stream(&self) -> std::option::Option<&str> {
         self.log_stream.as_deref()
-    }
-}
-impl std::fmt::Debug for Crawl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Crawl");
-        formatter.field("state", &self.state);
-        formatter.field("started_on", &self.started_on);
-        formatter.field("completed_on", &self.completed_on);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("log_group", &self.log_group);
-        formatter.field("log_stream", &self.log_stream);
-        formatter.finish()
     }
 }
 /// See [`Crawl`](crate::model::Crawl).
@@ -30541,7 +28752,7 @@ impl Crawl {
 
 /// <p>The details of a Job node present in the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobNodeDetails {
     /// <p>The information for the job runs represented by the job node.</p>
     #[doc(hidden)]
@@ -30551,13 +28762,6 @@ impl JobNodeDetails {
     /// <p>The information for the job runs represented by the job node.</p>
     pub fn job_runs(&self) -> std::option::Option<&[crate::model::JobRun]> {
         self.job_runs.as_deref()
-    }
-}
-impl std::fmt::Debug for JobNodeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobNodeDetails");
-        formatter.field("job_runs", &self.job_runs);
-        formatter.finish()
     }
 }
 /// See [`JobNodeDetails`](crate::model::JobNodeDetails).
@@ -30605,7 +28809,7 @@ impl JobNodeDetails {
 
 /// <p>Contains information about a job run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobRun {
     /// <p>The ID of this job run.</p>
     #[doc(hidden)]
@@ -30826,36 +29030,6 @@ impl JobRun {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
         self.execution_class.as_ref()
-    }
-}
-impl std::fmt::Debug for JobRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobRun");
-        formatter.field("id", &self.id);
-        formatter.field("attempt", &self.attempt);
-        formatter.field("previous_run_id", &self.previous_run_id);
-        formatter.field("trigger_name", &self.trigger_name);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("started_on", &self.started_on);
-        formatter.field("last_modified_on", &self.last_modified_on);
-        formatter.field("completed_on", &self.completed_on);
-        formatter.field("job_run_state", &self.job_run_state);
-        formatter.field("arguments", &self.arguments);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("predecessor_runs", &self.predecessor_runs);
-        formatter.field("allocated_capacity", &self.allocated_capacity);
-        formatter.field("execution_time", &self.execution_time);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("worker_type", &self.worker_type);
-        formatter.field("number_of_workers", &self.number_of_workers);
-        formatter.field("security_configuration", &self.security_configuration);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("notification_property", &self.notification_property);
-        formatter.field("glue_version", &self.glue_version);
-        formatter.field("dpu_seconds", &self.dpu_seconds);
-        formatter.field("execution_class", &self.execution_class);
-        formatter.finish()
     }
 }
 /// See [`JobRun`](crate::model::JobRun).
@@ -31273,7 +29447,7 @@ impl JobRun {
 
 /// <p>A job run that was used in the predicate of a conditional trigger that triggered this job run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Predecessor {
     /// <p>The name of the job definition used by the predecessor job run.</p>
     #[doc(hidden)]
@@ -31290,14 +29464,6 @@ impl Predecessor {
     /// <p>The job-run ID of the predecessor job run.</p>
     pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Predecessor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Predecessor");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("run_id", &self.run_id);
-        formatter.finish()
     }
 }
 /// See [`Predecessor`](crate::model::Predecessor).
@@ -31348,7 +29514,7 @@ impl Predecessor {
 
 /// <p>The details of a Trigger node present in the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerNodeDetails {
     /// <p>The information of the trigger represented by the trigger node.</p>
     #[doc(hidden)]
@@ -31358,13 +29524,6 @@ impl TriggerNodeDetails {
     /// <p>The information of the trigger represented by the trigger node.</p>
     pub fn trigger(&self) -> std::option::Option<&crate::model::Trigger> {
         self.trigger.as_ref()
-    }
-}
-impl std::fmt::Debug for TriggerNodeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggerNodeDetails");
-        formatter.field("trigger", &self.trigger);
-        formatter.finish()
     }
 }
 /// See [`TriggerNodeDetails`](crate::model::TriggerNodeDetails).
@@ -31498,7 +29657,7 @@ impl AsRef<str> for NodeType {
 
 /// <p>Workflow run statistics provides statistics about the workflow run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowRunStatistics {
     /// <p>Total number of Actions in the workflow run.</p>
     #[doc(hidden)]
@@ -31557,20 +29716,6 @@ impl WorkflowRunStatistics {
     /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
     pub fn waiting_actions(&self) -> i32 {
         self.waiting_actions
-    }
-}
-impl std::fmt::Debug for WorkflowRunStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowRunStatistics");
-        formatter.field("total_actions", &self.total_actions);
-        formatter.field("timeout_actions", &self.timeout_actions);
-        formatter.field("failed_actions", &self.failed_actions);
-        formatter.field("stopped_actions", &self.stopped_actions);
-        formatter.field("succeeded_actions", &self.succeeded_actions);
-        formatter.field("running_actions", &self.running_actions);
-        formatter.field("errored_actions", &self.errored_actions);
-        formatter.field("waiting_actions", &self.waiting_actions);
-        formatter.finish()
     }
 }
 /// See [`WorkflowRunStatistics`](crate::model::WorkflowRunStatistics).
@@ -31800,7 +29945,7 @@ impl AsRef<str> for WorkflowRunStatus {
 
 /// <p>A workflow is a collection of multiple dependent Glue jobs and crawlers that are run to complete a complex ETL task. A workflow manages the execution and monitoring of all its jobs and crawlers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Workflow {
     /// <p>The name of the workflow.</p>
     #[doc(hidden)]
@@ -31870,21 +30015,6 @@ impl Workflow {
     /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
     pub fn blueprint_details(&self) -> std::option::Option<&crate::model::BlueprintDetails> {
         self.blueprint_details.as_ref()
-    }
-}
-impl std::fmt::Debug for Workflow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Workflow");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("default_run_properties", &self.default_run_properties);
-        formatter.field("created_on", &self.created_on);
-        formatter.field("last_modified_on", &self.last_modified_on);
-        formatter.field("last_run", &self.last_run);
-        formatter.field("graph", &self.graph);
-        formatter.field("max_concurrent_runs", &self.max_concurrent_runs);
-        formatter.field("blueprint_details", &self.blueprint_details);
-        formatter.finish()
     }
 }
 /// See [`Workflow`](crate::model::Workflow).
@@ -32051,7 +30181,7 @@ impl Workflow {
 
 /// <p>The details of a blueprint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlueprintDetails {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
@@ -32068,14 +30198,6 @@ impl BlueprintDetails {
     /// <p>The run ID for this blueprint.</p>
     pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BlueprintDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlueprintDetails");
-        formatter.field("blueprint_name", &self.blueprint_name);
-        formatter.field("run_id", &self.run_id);
-        formatter.finish()
     }
 }
 /// See [`BlueprintDetails`](crate::model::BlueprintDetails).
@@ -32129,7 +30251,7 @@ impl BlueprintDetails {
 
 /// <p>Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDefinedFunction {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
@@ -32188,20 +30310,6 @@ impl UserDefinedFunction {
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UserDefinedFunction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserDefinedFunction");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("class_name", &self.class_name);
-        formatter.field("owner_name", &self.owner_name);
-        formatter.field("owner_type", &self.owner_type);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("resource_uris", &self.resource_uris);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.finish()
     }
 }
 /// See [`UserDefinedFunction`](crate::model::UserDefinedFunction).
@@ -32345,7 +30453,7 @@ impl UserDefinedFunction {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnRowFilter {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -32362,14 +30470,6 @@ impl ColumnRowFilter {
     #[allow(missing_docs)] // documentation missing in model
     pub fn row_filter_expression(&self) -> std::option::Option<&str> {
         self.row_filter_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnRowFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnRowFilter");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("row_filter_expression", &self.row_filter_expression);
-        formatter.finish()
     }
 }
 /// See [`ColumnRowFilter`](crate::model::ColumnRowFilter).
@@ -32513,7 +30613,7 @@ impl AsRef<str> for PermissionType {
 
 /// <p>A structure containing information for audit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuditContext {
     /// <p>The context for the audit..</p>
     #[doc(hidden)]
@@ -32537,15 +30637,6 @@ impl AuditContext {
     /// <p>All columns request for audit.</p>
     pub fn all_columns_requested(&self) -> std::option::Option<bool> {
         self.all_columns_requested
-    }
-}
-impl std::fmt::Debug for AuditContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuditContext");
-        formatter.field("additional_audit_context", &self.additional_audit_context);
-        formatter.field("requested_columns", &self.requested_columns);
-        formatter.field("all_columns_requested", &self.all_columns_requested);
-        formatter.finish()
     }
 }
 /// See [`AuditContext`](crate::model::AuditContext).
@@ -32620,7 +30711,7 @@ impl AuditContext {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnfilteredPartition {
     /// <p>Represents a slice of table data.</p>
     #[doc(hidden)]
@@ -32644,18 +30735,6 @@ impl UnfilteredPartition {
     #[allow(missing_docs)] // documentation missing in model
     pub fn is_registered_with_lake_formation(&self) -> bool {
         self.is_registered_with_lake_formation
-    }
-}
-impl std::fmt::Debug for UnfilteredPartition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnfilteredPartition");
-        formatter.field("partition", &self.partition);
-        formatter.field("authorized_columns", &self.authorized_columns);
-        formatter.field(
-            "is_registered_with_lake_formation",
-            &self.is_registered_with_lake_formation,
-        );
-        formatter.finish()
     }
 }
 /// See [`UnfilteredPartition`](crate::model::UnfilteredPartition).
@@ -32734,7 +30813,7 @@ impl UnfilteredPartition {
 
 /// <p>Represents a slice of table data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Partition {
     /// <p>The values of the partition.</p>
     #[doc(hidden)]
@@ -32804,21 +30883,6 @@ impl Partition {
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Partition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Partition");
-        formatter.field("values", &self.values);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_access_time", &self.last_access_time);
-        formatter.field("storage_descriptor", &self.storage_descriptor);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("last_analyzed_time", &self.last_analyzed_time);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.finish()
     }
 }
 /// See [`Partition`](crate::model::Partition).
@@ -32994,7 +31058,7 @@ impl Partition {
 
 /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Segment {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     #[doc(hidden)]
@@ -33011,14 +31075,6 @@ impl Segment {
     /// <p>The total number of segments.</p>
     pub fn total_segments(&self) -> i32 {
         self.total_segments
-    }
-}
-impl std::fmt::Debug for Segment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Segment");
-        formatter.field("segment_number", &self.segment_number);
-        formatter.field("total_segments", &self.total_segments);
-        formatter.finish()
     }
 }
 /// See [`Segment`](crate::model::Segment).
@@ -33069,7 +31125,7 @@ impl Segment {
 
 /// <p>Specifies a version of a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableVersion {
     /// <p>The table in question.</p>
     #[doc(hidden)]
@@ -33086,14 +31142,6 @@ impl TableVersion {
     /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TableVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableVersion");
-        formatter.field("table", &self.table);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
     }
 }
 /// See [`TableVersion`](crate::model::TableVersion).
@@ -33144,7 +31192,7 @@ impl TableVersion {
 
 /// <p>Specifies a security configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityConfiguration {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
@@ -33170,15 +31218,6 @@ impl SecurityConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("created_time_stamp", &self.created_time_stamp);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
     }
 }
 /// See [`SecurityConfiguration`](crate::model::SecurityConfiguration).
@@ -33251,7 +31290,7 @@ impl SecurityConfiguration {
 
 /// <p>Specifies an encryption configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
     #[doc(hidden)]
@@ -33279,15 +31318,6 @@ impl EncryptionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::JobBookmarksEncryption> {
         self.job_bookmarks_encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("s3_encryption", &self.s3_encryption);
-        formatter.field("cloud_watch_encryption", &self.cloud_watch_encryption);
-        formatter.field("job_bookmarks_encryption", &self.job_bookmarks_encryption);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
@@ -33369,7 +31399,7 @@ impl EncryptionConfiguration {
 
 /// <p>Specifies how job bookmark data should be encrypted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobBookmarksEncryption {
     /// <p>The encryption mode to use for job bookmarks data.</p>
     #[doc(hidden)]
@@ -33389,17 +31419,6 @@ impl JobBookmarksEncryption {
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for JobBookmarksEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobBookmarksEncryption");
-        formatter.field(
-            "job_bookmarks_encryption_mode",
-            &self.job_bookmarks_encryption_mode,
-        );
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`JobBookmarksEncryption`](crate::model::JobBookmarksEncryption).
@@ -33549,7 +31568,7 @@ impl AsRef<str> for JobBookmarksEncryptionMode {
 
 /// <p>Specifies how Amazon CloudWatch data should be encrypted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchEncryption {
     /// <p>The encryption mode to use for CloudWatch data.</p>
     #[doc(hidden)]
@@ -33568,17 +31587,6 @@ impl CloudWatchEncryption {
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchEncryption");
-        formatter.field(
-            "cloud_watch_encryption_mode",
-            &self.cloud_watch_encryption_mode,
-        );
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchEncryption`](crate::model::CloudWatchEncryption).
@@ -33728,7 +31736,7 @@ impl AsRef<str> for CloudWatchEncryptionMode {
 
 /// <p>Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Encryption {
     /// <p>The encryption mode to use for Amazon S3 data.</p>
     #[doc(hidden)]
@@ -33745,14 +31753,6 @@ impl S3Encryption {
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Encryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Encryption");
-        formatter.field("s3_encryption_mode", &self.s3_encryption_mode);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`S3Encryption`](crate::model::S3Encryption).
@@ -34081,7 +32081,7 @@ impl AsRef<str> for DataFormat {
 
 /// <p>A structure for returning a resource policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GluePolicy {
     /// <p>Contains the requested policy document, in JSON format.</p>
     #[doc(hidden)]
@@ -34112,16 +32112,6 @@ impl GluePolicy {
     /// <p>The date and time at which the policy was last updated.</p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
-    }
-}
-impl std::fmt::Debug for GluePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GluePolicy");
-        formatter.field("policy_in_json", &self.policy_in_json);
-        formatter.field("policy_hash", &self.policy_hash);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
     }
 }
 /// See [`GluePolicy`](crate::model::GluePolicy).
@@ -34295,7 +32285,7 @@ impl AsRef<str> for Language {
 
 /// <p>The location of resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Location {
     /// <p>A JDBC location.</p>
     #[doc(hidden)]
@@ -34319,15 +32309,6 @@ impl Location {
     /// <p>An Amazon DynamoDB table location.</p>
     pub fn dynamo_db(&self) -> std::option::Option<&[crate::model::CodeGenNodeArg]> {
         self.dynamo_db.as_deref()
-    }
-}
-impl std::fmt::Debug for Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Location");
-        formatter.field("jdbc", &self.jdbc);
-        formatter.field("s3", &self.s3);
-        formatter.field("dynamo_db", &self.dynamo_db);
-        formatter.finish()
     }
 }
 /// See [`Location`](crate::model::Location).
@@ -34417,7 +32398,7 @@ impl Location {
 
 /// <p>An argument or property of a node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeGenNodeArg {
     /// <p>The name of the argument or property.</p>
     #[doc(hidden)]
@@ -34441,15 +32422,6 @@ impl CodeGenNodeArg {
     /// <p>True if the value is used as a parameter.</p>
     pub fn param(&self) -> bool {
         self.param
-    }
-}
-impl std::fmt::Debug for CodeGenNodeArg {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeGenNodeArg");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("param", &self.param);
-        formatter.finish()
     }
 }
 /// See [`CodeGenNodeArg`](crate::model::CodeGenNodeArg).
@@ -34512,7 +32484,7 @@ impl CodeGenNodeArg {
 
 /// <p>Specifies a table definition in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogEntry {
     /// <p>The database in which the table metadata resides.</p>
     #[doc(hidden)]
@@ -34529,14 +32501,6 @@ impl CatalogEntry {
     /// <p>The name of the table in question.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CatalogEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogEntry");
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
     }
 }
 /// See [`CatalogEntry`](crate::model::CatalogEntry).
@@ -34590,7 +32554,7 @@ impl CatalogEntry {
 
 /// <p>Defines a mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MappingEntry {
     /// <p>The name of the source table.</p>
     #[doc(hidden)]
@@ -34635,18 +32599,6 @@ impl MappingEntry {
     /// <p>The target type.</p>
     pub fn target_type(&self) -> std::option::Option<&str> {
         self.target_type.as_deref()
-    }
-}
-impl std::fmt::Debug for MappingEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MappingEntry");
-        formatter.field("source_table", &self.source_table);
-        formatter.field("source_path", &self.source_path);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("target_table", &self.target_table);
-        formatter.field("target_path", &self.target_path);
-        formatter.field("target_type", &self.target_type);
-        formatter.finish()
     }
 }
 /// See [`MappingEntry`](crate::model::MappingEntry).
@@ -34745,7 +32697,7 @@ impl MappingEntry {
 
 /// <p>A descriptor for a partition index in a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartitionIndexDescriptor {
     /// <p>The name of the partition index.</p>
     #[doc(hidden)]
@@ -34790,16 +32742,6 @@ impl PartitionIndexDescriptor {
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
     pub fn backfill_errors(&self) -> std::option::Option<&[crate::model::BackfillError]> {
         self.backfill_errors.as_deref()
-    }
-}
-impl std::fmt::Debug for PartitionIndexDescriptor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartitionIndexDescriptor");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("keys", &self.keys);
-        formatter.field("index_status", &self.index_status);
-        formatter.field("backfill_errors", &self.backfill_errors);
-        formatter.finish()
     }
 }
 /// See [`PartitionIndexDescriptor`](crate::model::PartitionIndexDescriptor).
@@ -34917,7 +32859,7 @@ impl PartitionIndexDescriptor {
 /// <li> <p>InternalError: Any error which does not belong to other error codes.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackfillError {
     /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
     #[doc(hidden)]
@@ -34934,14 +32876,6 @@ impl BackfillError {
     /// <p>A list of a limited number of partitions in the response.</p>
     pub fn partitions(&self) -> std::option::Option<&[crate::model::PartitionValueList]> {
         self.partitions.as_deref()
-    }
-}
-impl std::fmt::Debug for BackfillError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackfillError");
-        formatter.field("code", &self.code);
-        formatter.field("partitions", &self.partitions);
-        formatter.finish()
     }
 }
 /// See [`BackfillError`](crate::model::BackfillError).
@@ -35004,7 +32938,7 @@ impl BackfillError {
 
 /// <p>Contains a list of values defining partitions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartitionValueList {
     /// <p>The list of values.</p>
     #[doc(hidden)]
@@ -35014,13 +32948,6 @@ impl PartitionValueList {
     /// <p>The list of values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for PartitionValueList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartitionValueList");
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`PartitionValueList`](crate::model::PartitionValueList).
@@ -35287,7 +33214,7 @@ impl AsRef<str> for PartitionIndexStatus {
 
 /// <p>A partition key pair consisting of a name and a type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeySchemaElement {
     /// <p>The name of a partition key.</p>
     #[doc(hidden)]
@@ -35304,14 +33231,6 @@ impl KeySchemaElement {
     /// <p>The type of a partition key.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for KeySchemaElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeySchemaElement");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`KeySchemaElement`](crate::model::KeySchemaElement).
@@ -35362,7 +33281,7 @@ impl KeySchemaElement {
 
 /// <p>A structure for a machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MlTransform {
     /// <p>The unique transform ID that is generated for the machine learning transform. The ID is guaranteed to be unique and does not change.</p>
     #[doc(hidden)]
@@ -35548,31 +33467,6 @@ impl MlTransform {
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     pub fn transform_encryption(&self) -> std::option::Option<&crate::model::TransformEncryption> {
         self.transform_encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for MlTransform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MlTransform");
-        formatter.field("transform_id", &self.transform_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("created_on", &self.created_on);
-        formatter.field("last_modified_on", &self.last_modified_on);
-        formatter.field("input_record_tables", &self.input_record_tables);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("evaluation_metrics", &self.evaluation_metrics);
-        formatter.field("label_count", &self.label_count);
-        formatter.field("schema", &self.schema);
-        formatter.field("role", &self.role);
-        formatter.field("glue_version", &self.glue_version);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("worker_type", &self.worker_type);
-        formatter.field("number_of_workers", &self.number_of_workers);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("transform_encryption", &self.transform_encryption);
-        formatter.finish()
     }
 }
 /// See [`MlTransform`](crate::model::MlTransform).
@@ -35917,7 +33811,7 @@ impl MlTransform {
 /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
 /// <p>Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransformEncryption {
     /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
     #[doc(hidden)]
@@ -35936,17 +33830,6 @@ impl TransformEncryption {
     /// <p>The name of the security configuration.</p>
     pub fn task_run_security_configuration_name(&self) -> std::option::Option<&str> {
         self.task_run_security_configuration_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TransformEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransformEncryption");
-        formatter.field("ml_user_data_encryption", &self.ml_user_data_encryption);
-        formatter.field(
-            "task_run_security_configuration_name",
-            &self.task_run_security_configuration_name,
-        );
-        formatter.finish()
     }
 }
 /// See [`TransformEncryption`](crate::model::TransformEncryption).
@@ -36009,7 +33892,7 @@ impl TransformEncryption {
 
 /// <p>The encryption-at-rest settings of the transform that apply to accessing user data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MlUserDataEncryption {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
     /// <ul>
@@ -36037,17 +33920,6 @@ impl MlUserDataEncryption {
     /// <p>The ID for the customer-provided KMS key.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MlUserDataEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MlUserDataEncryption");
-        formatter.field(
-            "ml_user_data_encryption_mode",
-            &self.ml_user_data_encryption_mode,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`MlUserDataEncryption`](crate::model::MlUserDataEncryption).
@@ -36205,7 +34077,7 @@ impl AsRef<str> for MlUserDataEncryptionModeString {
 
 /// <p>Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationMetrics {
     /// <p>The type of machine learning transform.</p>
     #[doc(hidden)]
@@ -36222,14 +34094,6 @@ impl EvaluationMetrics {
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub fn find_matches_metrics(&self) -> std::option::Option<&crate::model::FindMatchesMetrics> {
         self.find_matches_metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for EvaluationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationMetrics");
-        formatter.field("transform_type", &self.transform_type);
-        formatter.field("find_matches_metrics", &self.find_matches_metrics);
-        formatter.finish()
     }
 }
 /// See [`EvaluationMetrics`](crate::model::EvaluationMetrics).
@@ -36286,7 +34150,7 @@ impl EvaluationMetrics {
 
 /// <p>The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindMatchesMetrics {
     /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
@@ -36341,18 +34205,6 @@ impl FindMatchesMetrics {
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
     pub fn column_importances(&self) -> std::option::Option<&[crate::model::ColumnImportance]> {
         self.column_importances.as_deref()
-    }
-}
-impl std::fmt::Debug for FindMatchesMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindMatchesMetrics");
-        formatter.field("area_under_pr_curve", &self.area_under_pr_curve);
-        formatter.field("precision", &self.precision);
-        formatter.field("recall", &self.recall);
-        formatter.field("f1", &self.f1);
-        formatter.field("confusion_matrix", &self.confusion_matrix);
-        formatter.field("column_importances", &self.column_importances);
-        formatter.finish()
     }
 }
 /// See [`FindMatchesMetrics`](crate::model::FindMatchesMetrics).
@@ -36475,7 +34327,7 @@ impl FindMatchesMetrics {
 /// <p>A structure containing the column name and column importance score for a column. </p>
 /// <p>Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnImportance {
     /// <p>The name of a column.</p>
     #[doc(hidden)]
@@ -36492,14 +34344,6 @@ impl ColumnImportance {
     /// <p>The column importance score for the column, as a decimal.</p>
     pub fn importance(&self) -> std::option::Option<f64> {
         self.importance
-    }
-}
-impl std::fmt::Debug for ColumnImportance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnImportance");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("importance", &self.importance);
-        formatter.finish()
     }
 }
 /// See [`ColumnImportance`](crate::model::ColumnImportance).
@@ -36551,7 +34395,7 @@ impl ColumnImportance {
 /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
 /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfusionMatrix {
     /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
     #[doc(hidden)]
@@ -36582,16 +34426,6 @@ impl ConfusionMatrix {
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
     pub fn num_false_negatives(&self) -> std::option::Option<i64> {
         self.num_false_negatives
-    }
-}
-impl std::fmt::Debug for ConfusionMatrix {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfusionMatrix");
-        formatter.field("num_true_positives", &self.num_true_positives);
-        formatter.field("num_false_positives", &self.num_false_positives);
-        formatter.field("num_true_negatives", &self.num_true_negatives);
-        formatter.field("num_false_negatives", &self.num_false_negatives);
-        formatter.finish()
     }
 }
 /// See [`ConfusionMatrix`](crate::model::ConfusionMatrix).
@@ -36666,7 +34500,7 @@ impl ConfusionMatrix {
 
 /// <p>The database and table in the Glue Data Catalog that is used for input or output data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueTable {
     /// <p>A database name in the Glue Data Catalog.</p>
     #[doc(hidden)]
@@ -36697,16 +34531,6 @@ impl GlueTable {
     /// <p>The name of the connection to the Glue Data Catalog.</p>
     pub fn connection_name(&self) -> std::option::Option<&str> {
         self.connection_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GlueTable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueTable");
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.finish()
     }
 }
 /// See [`GlueTable`](crate::model::GlueTable).
@@ -36787,7 +34611,7 @@ impl GlueTable {
 
 /// <p>The sampling parameters that are associated with the machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskRun {
     /// <p>The unique identifier for the transform.</p>
     #[doc(hidden)]
@@ -36860,22 +34684,6 @@ impl TaskRun {
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
     pub fn execution_time(&self) -> i32 {
         self.execution_time
-    }
-}
-impl std::fmt::Debug for TaskRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskRun");
-        formatter.field("transform_id", &self.transform_id);
-        formatter.field("task_run_id", &self.task_run_id);
-        formatter.field("status", &self.status);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("properties", &self.properties);
-        formatter.field("error_string", &self.error_string);
-        formatter.field("started_on", &self.started_on);
-        formatter.field("last_modified_on", &self.last_modified_on);
-        formatter.field("completed_on", &self.completed_on);
-        formatter.field("execution_time", &self.execution_time);
-        formatter.finish()
     }
 }
 /// See [`TaskRun`](crate::model::TaskRun).
@@ -37040,7 +34848,7 @@ impl TaskRun {
 
 /// <p>The configuration properties for the task run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskRunProperties {
     /// <p>The type of task run.</p>
     #[doc(hidden)]
@@ -37090,29 +34898,6 @@ impl TaskRunProperties {
         &self,
     ) -> std::option::Option<&crate::model::FindMatchesTaskRunProperties> {
         self.find_matches_task_run_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskRunProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskRunProperties");
-        formatter.field("task_type", &self.task_type);
-        formatter.field(
-            "import_labels_task_run_properties",
-            &self.import_labels_task_run_properties,
-        );
-        formatter.field(
-            "export_labels_task_run_properties",
-            &self.export_labels_task_run_properties,
-        );
-        formatter.field(
-            "labeling_set_generation_task_run_properties",
-            &self.labeling_set_generation_task_run_properties,
-        );
-        formatter.field(
-            "find_matches_task_run_properties",
-            &self.find_matches_task_run_properties,
-        );
-        formatter.finish()
     }
 }
 /// See [`TaskRunProperties`](crate::model::TaskRunProperties).
@@ -37228,7 +35013,7 @@ impl TaskRunProperties {
 
 /// <p>Specifies configuration properties for a Find Matches task run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FindMatchesTaskRunProperties {
     /// <p>The job ID for the Find Matches task run.</p>
     #[doc(hidden)]
@@ -37252,15 +35037,6 @@ impl FindMatchesTaskRunProperties {
     /// <p>The job run ID for the Find Matches task run.</p>
     pub fn job_run_id(&self) -> std::option::Option<&str> {
         self.job_run_id.as_deref()
-    }
-}
-impl std::fmt::Debug for FindMatchesTaskRunProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FindMatchesTaskRunProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_run_id", &self.job_run_id);
-        formatter.finish()
     }
 }
 /// See [`FindMatchesTaskRunProperties`](crate::model::FindMatchesTaskRunProperties).
@@ -37323,7 +35099,7 @@ impl FindMatchesTaskRunProperties {
 
 /// <p>Specifies configuration properties for a labeling set generation task run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LabelingSetGenerationTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
     #[doc(hidden)]
@@ -37333,13 +35109,6 @@ impl LabelingSetGenerationTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
     pub fn output_s3_path(&self) -> std::option::Option<&str> {
         self.output_s3_path.as_deref()
-    }
-}
-impl std::fmt::Debug for LabelingSetGenerationTaskRunProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelingSetGenerationTaskRunProperties");
-        formatter.field("output_s3_path", &self.output_s3_path);
-        formatter.finish()
     }
 }
 /// See [`LabelingSetGenerationTaskRunProperties`](crate::model::LabelingSetGenerationTaskRunProperties).
@@ -37381,7 +35150,7 @@ impl LabelingSetGenerationTaskRunProperties {
 
 /// <p>Specifies configuration properties for an exporting labels task run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportLabelsTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
     #[doc(hidden)]
@@ -37391,13 +35160,6 @@ impl ExportLabelsTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
     pub fn output_s3_path(&self) -> std::option::Option<&str> {
         self.output_s3_path.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportLabelsTaskRunProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportLabelsTaskRunProperties");
-        formatter.field("output_s3_path", &self.output_s3_path);
-        formatter.finish()
     }
 }
 /// See [`ExportLabelsTaskRunProperties`](crate::model::ExportLabelsTaskRunProperties).
@@ -37439,7 +35201,7 @@ impl ExportLabelsTaskRunProperties {
 
 /// <p>Specifies configuration properties for an importing labels task run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportLabelsTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
     #[doc(hidden)]
@@ -37456,14 +35218,6 @@ impl ImportLabelsTaskRunProperties {
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn replace(&self) -> bool {
         self.replace
-    }
-}
-impl std::fmt::Debug for ImportLabelsTaskRunProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportLabelsTaskRunProperties");
-        formatter.field("input_s3_path", &self.input_s3_path);
-        formatter.field("replace", &self.replace);
-        formatter.finish()
     }
 }
 /// See [`ImportLabelsTaskRunProperties`](crate::model::ImportLabelsTaskRunProperties).
@@ -37751,7 +35505,7 @@ impl AsRef<str> for TaskStatusType {
 
 /// <p>The sorting criteria that are used to sort the list of task runs for the machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskRunSortCriteria {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
     #[doc(hidden)]
@@ -37768,14 +35522,6 @@ impl TaskRunSortCriteria {
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
     pub fn sort_direction(&self) -> std::option::Option<&crate::model::SortDirectionType> {
         self.sort_direction.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskRunSortCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskRunSortCriteria");
-        formatter.field("column", &self.column);
-        formatter.field("sort_direction", &self.sort_direction);
-        formatter.finish()
     }
 }
 /// See [`TaskRunSortCriteria`](crate::model::TaskRunSortCriteria).
@@ -37929,7 +35675,7 @@ impl AsRef<str> for TaskRunSortColumnType {
 
 /// <p>The criteria that are used to filter the task runs for the machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskRunFilterCriteria {
     /// <p>The type of task run.</p>
     #[doc(hidden)]
@@ -37960,16 +35706,6 @@ impl TaskRunFilterCriteria {
     /// <p>Filter on task runs started after this date.</p>
     pub fn started_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_after.as_ref()
-    }
-}
-impl std::fmt::Debug for TaskRunFilterCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskRunFilterCriteria");
-        formatter.field("task_run_type", &self.task_run_type);
-        formatter.field("status", &self.status);
-        formatter.field("started_before", &self.started_before);
-        formatter.field("started_after", &self.started_after);
-        formatter.finish()
     }
 }
 /// See [`TaskRunFilterCriteria`](crate::model::TaskRunFilterCriteria).
@@ -38312,7 +36048,7 @@ impl std::fmt::Debug for Job {
 pub mod job {
 
     /// A builder for [`Job`](crate::model::Job).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -38710,6 +36446,37 @@ pub mod job {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("log_uri", &self.log_uri);
+            formatter.field("role", &self.role);
+            formatter.field("created_on", &self.created_on);
+            formatter.field("last_modified_on", &self.last_modified_on);
+            formatter.field("execution_property", &self.execution_property);
+            formatter.field("command", &self.command);
+            formatter.field("default_arguments", &self.default_arguments);
+            formatter.field("non_overridable_arguments", &self.non_overridable_arguments);
+            formatter.field("connections", &self.connections);
+            formatter.field("max_retries", &self.max_retries);
+            formatter.field("allocated_capacity", &self.allocated_capacity);
+            formatter.field("timeout", &self.timeout);
+            formatter.field("max_capacity", &self.max_capacity);
+            formatter.field("worker_type", &self.worker_type);
+            formatter.field("number_of_workers", &self.number_of_workers);
+            formatter.field("security_configuration", &self.security_configuration);
+            formatter.field("notification_property", &self.notification_property);
+            formatter.field("glue_version", &self.glue_version);
+            formatter.field(
+                "code_gen_configuration_nodes",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("execution_class", &self.execution_class);
+            formatter.finish()
+        }
+    }
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
@@ -38720,7 +36487,7 @@ impl Job {
 
 /// <p>A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DevEndpoint {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
     #[doc(hidden)]
@@ -38944,40 +36711,6 @@ impl DevEndpoint {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.arguments.as_ref()
-    }
-}
-impl std::fmt::Debug for DevEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DevEndpoint");
-        formatter.field("endpoint_name", &self.endpoint_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("yarn_endpoint_address", &self.yarn_endpoint_address);
-        formatter.field("private_address", &self.private_address);
-        formatter.field(
-            "zeppelin_remote_spark_interpreter_port",
-            &self.zeppelin_remote_spark_interpreter_port,
-        );
-        formatter.field("public_address", &self.public_address);
-        formatter.field("status", &self.status);
-        formatter.field("worker_type", &self.worker_type);
-        formatter.field("glue_version", &self.glue_version);
-        formatter.field("number_of_workers", &self.number_of_workers);
-        formatter.field("number_of_nodes", &self.number_of_nodes);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("extra_python_libs_s3_path", &self.extra_python_libs_s3_path);
-        formatter.field("extra_jars_s3_path", &self.extra_jars_s3_path);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("last_update_status", &self.last_update_status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
-        formatter.field("public_key", &self.public_key);
-        formatter.field("public_keys", &self.public_keys);
-        formatter.field("security_configuration", &self.security_configuration);
-        formatter.field("arguments", &self.arguments);
-        formatter.finish()
     }
 }
 /// See [`DevEndpoint`](crate::model::DevEndpoint).
@@ -39425,7 +37158,7 @@ impl DevEndpoint {
 
 /// <p>Represents a directional edge in a directed acyclic graph (DAG).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeGenEdge {
     /// <p>The ID of the node at which the edge starts.</p>
     #[doc(hidden)]
@@ -39449,15 +37182,6 @@ impl CodeGenEdge {
     /// <p>The target of the edge.</p>
     pub fn target_parameter(&self) -> std::option::Option<&str> {
         self.target_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeGenEdge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeGenEdge");
-        formatter.field("source", &self.source);
-        formatter.field("target", &self.target);
-        formatter.field("target_parameter", &self.target_parameter);
-        formatter.finish()
     }
 }
 /// See [`CodeGenEdge`](crate::model::CodeGenEdge).
@@ -39523,7 +37247,7 @@ impl CodeGenEdge {
 
 /// <p>Represents a node in a directed acyclic graph (DAG)</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeGenNode {
     /// <p>A node identifier that is unique within the node's graph.</p>
     #[doc(hidden)]
@@ -39554,16 +37278,6 @@ impl CodeGenNode {
     /// <p>The line number of the node.</p>
     pub fn line_number(&self) -> i32 {
         self.line_number
-    }
-}
-impl std::fmt::Debug for CodeGenNode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeGenNode");
-        formatter.field("id", &self.id);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("args", &self.args);
-        formatter.field("line_number", &self.line_number);
-        formatter.finish()
     }
 }
 /// See [`CodeGenNode`](crate::model::CodeGenNode).
@@ -39647,7 +37361,7 @@ impl CodeGenNode {
 
 /// <p>The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Database {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     #[doc(hidden)]
@@ -39713,23 +37427,6 @@ impl Database {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Database {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Database");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("location_uri", &self.location_uri);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("create_time", &self.create_time);
-        formatter.field(
-            "create_table_default_permissions",
-            &self.create_table_default_permissions,
-        );
-        formatter.field("target_database", &self.target_database);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.finish()
     }
 }
 /// See [`Database`](crate::model::Database).
@@ -39888,7 +37585,7 @@ impl Database {
 
 /// <p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Crawler {
     /// <p>The name of the crawler.</p>
     #[doc(hidden)]
@@ -40035,38 +37732,6 @@ impl Crawler {
         &self,
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
         self.lake_formation_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Crawler {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Crawler");
-        formatter.field("name", &self.name);
-        formatter.field("role", &self.role);
-        formatter.field("targets", &self.targets);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("description", &self.description);
-        formatter.field("classifiers", &self.classifiers);
-        formatter.field("recrawl_policy", &self.recrawl_policy);
-        formatter.field("schema_change_policy", &self.schema_change_policy);
-        formatter.field("lineage_configuration", &self.lineage_configuration);
-        formatter.field("state", &self.state);
-        formatter.field("table_prefix", &self.table_prefix);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("crawl_elapsed_time", &self.crawl_elapsed_time);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("last_crawl", &self.last_crawl);
-        formatter.field("version", &self.version);
-        formatter.field("configuration", &self.configuration);
-        formatter.field(
-            "crawler_security_configuration",
-            &self.crawler_security_configuration,
-        );
-        formatter.field(
-            "lake_formation_configuration",
-            &self.lake_formation_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`Crawler`](crate::model::Crawler).
@@ -40382,7 +38047,7 @@ impl Crawler {
 
 /// <p>Status and error information about the most recent crawl.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LastCrawlInfo {
     /// <p>Status of the last crawl.</p>
     #[doc(hidden)]
@@ -40427,18 +38092,6 @@ impl LastCrawlInfo {
     /// <p>The time at which the crawl started.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LastCrawlInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastCrawlInfo");
-        formatter.field("status", &self.status);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("log_group", &self.log_group);
-        formatter.field("log_stream", &self.log_stream);
-        formatter.field("message_prefix", &self.message_prefix);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`LastCrawlInfo`](crate::model::LastCrawlInfo).
@@ -40644,7 +38297,7 @@ impl AsRef<str> for LastCrawlStatus {
 
 /// <p>A scheduling object using a <code>cron</code> statement to schedule an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schedule {
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     #[doc(hidden)]
@@ -40661,14 +38314,6 @@ impl Schedule {
     /// <p>The state of the schedule.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ScheduleState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for Schedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schedule");
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`Schedule`](crate::model::Schedule).
@@ -40915,7 +38560,7 @@ impl AsRef<str> for CrawlerState {
 
 /// <p>Metrics for a specified crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrawlerMetrics {
     /// <p>The name of the crawler.</p>
     #[doc(hidden)]
@@ -40974,20 +38619,6 @@ impl CrawlerMetrics {
     /// <p>The number of tables deleted by this crawler.</p>
     pub fn tables_deleted(&self) -> i32 {
         self.tables_deleted
-    }
-}
-impl std::fmt::Debug for CrawlerMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrawlerMetrics");
-        formatter.field("crawler_name", &self.crawler_name);
-        formatter.field("time_left_seconds", &self.time_left_seconds);
-        formatter.field("still_estimating", &self.still_estimating);
-        formatter.field("last_runtime_seconds", &self.last_runtime_seconds);
-        formatter.field("median_runtime_seconds", &self.median_runtime_seconds);
-        formatter.field("tables_created", &self.tables_created);
-        formatter.field("tables_updated", &self.tables_updated);
-        formatter.field("tables_deleted", &self.tables_deleted);
-        formatter.finish()
     }
 }
 /// See [`CrawlerMetrics`](crate::model::CrawlerMetrics).
@@ -41110,7 +38741,7 @@ impl CrawlerMetrics {
 
 /// <p>Defines a connection to a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The name of the connection definition.</p>
     #[doc(hidden)]
@@ -41265,24 +38896,6 @@ impl Connection {
     /// <p>The user, group, or role that last updated this connection definition.</p>
     pub fn last_updated_by(&self) -> std::option::Option<&str> {
         self.last_updated_by.as_deref()
-    }
-}
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("match_criteria", &self.match_criteria);
-        formatter.field("connection_properties", &self.connection_properties);
-        formatter.field(
-            "physical_connection_requirements",
-            &self.physical_connection_requirements,
-        );
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("last_updated_by", &self.last_updated_by);
-        formatter.finish()
     }
 }
 /// See [`Connection`](crate::model::Connection).
@@ -41542,7 +39155,7 @@ impl Connection {
 
 /// <p>Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectionsFilter {
     /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
     #[doc(hidden)]
@@ -41559,14 +39172,6 @@ impl GetConnectionsFilter {
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
     pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
         self.connection_type.as_ref()
-    }
-}
-impl std::fmt::Debug for GetConnectionsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectionsFilter");
-        formatter.field("match_criteria", &self.match_criteria);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.finish()
     }
 }
 /// See [`GetConnectionsFilter`](crate::model::GetConnectionsFilter).
@@ -41629,7 +39234,7 @@ impl GetConnectionsFilter {
 
 /// <p>Encapsulates a column name that failed and the reason for failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnError {
     /// <p>The name of the column that failed.</p>
     #[doc(hidden)]
@@ -41646,14 +39251,6 @@ impl ColumnError {
     /// <p>An error message with the reason for the failure of an operation.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for ColumnError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnError");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`ColumnError`](crate::model::ColumnError).
@@ -41705,7 +39302,7 @@ impl ColumnError {
 /// <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p>
 /// <p>You can use the standard classifiers that Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Classifier {
     /// <p>A classifier that uses <code>grok</code>.</p>
     #[doc(hidden)]
@@ -41736,16 +39333,6 @@ impl Classifier {
     /// <p>A classifier for comma-separated values (CSV).</p>
     pub fn csv_classifier(&self) -> std::option::Option<&crate::model::CsvClassifier> {
         self.csv_classifier.as_ref()
-    }
-}
-impl std::fmt::Debug for Classifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Classifier");
-        formatter.field("grok_classifier", &self.grok_classifier);
-        formatter.field("xml_classifier", &self.xml_classifier);
-        formatter.field("json_classifier", &self.json_classifier);
-        formatter.field("csv_classifier", &self.csv_classifier);
-        formatter.finish()
     }
 }
 /// See [`Classifier`](crate::model::Classifier).
@@ -41832,7 +39419,7 @@ impl Classifier {
 
 /// <p>A classifier for custom <code>CSV</code> content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvClassifier {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -41905,22 +39492,6 @@ impl CsvClassifier {
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn allow_single_column(&self) -> std::option::Option<bool> {
         self.allow_single_column
-    }
-}
-impl std::fmt::Debug for CsvClassifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvClassifier");
-        formatter.field("name", &self.name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("version", &self.version);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("quote_symbol", &self.quote_symbol);
-        formatter.field("contains_header", &self.contains_header);
-        formatter.field("header", &self.header);
-        formatter.field("disable_value_trimming", &self.disable_value_trimming);
-        formatter.field("allow_single_column", &self.allow_single_column);
-        formatter.finish()
     }
 }
 /// See [`CsvClassifier`](crate::model::CsvClassifier).
@@ -42085,7 +39656,7 @@ impl CsvClassifier {
 
 /// <p>A classifier for <code>JSON</code> content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonClassifier {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -42123,17 +39694,6 @@ impl JsonClassifier {
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn json_path(&self) -> std::option::Option<&str> {
         self.json_path.as_deref()
-    }
-}
-impl std::fmt::Debug for JsonClassifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonClassifier");
-        formatter.field("name", &self.name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("version", &self.version);
-        formatter.field("json_path", &self.json_path);
-        formatter.finish()
     }
 }
 /// See [`JsonClassifier`](crate::model::JsonClassifier).
@@ -42226,7 +39786,7 @@ impl JsonClassifier {
 
 /// <p>A classifier for <code>XML</code> content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct XmlClassifier {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -42275,18 +39835,6 @@ impl XmlClassifier {
     /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub fn row_tag(&self) -> std::option::Option<&str> {
         self.row_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for XmlClassifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("XmlClassifier");
-        formatter.field("name", &self.name);
-        formatter.field("classification", &self.classification);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("version", &self.version);
-        formatter.field("row_tag", &self.row_tag);
-        formatter.finish()
     }
 }
 /// See [`XmlClassifier`](crate::model::XmlClassifier).
@@ -42398,7 +39946,7 @@ impl XmlClassifier {
 
 /// <p>A classifier that uses <code>grok</code> patterns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrokClassifier {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -42450,19 +39998,6 @@ impl GrokClassifier {
     /// <p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
     pub fn custom_patterns(&self) -> std::option::Option<&str> {
         self.custom_patterns.as_deref()
-    }
-}
-impl std::fmt::Debug for GrokClassifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrokClassifier");
-        formatter.field("name", &self.name);
-        formatter.field("classification", &self.classification);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("version", &self.version);
-        formatter.field("grok_pattern", &self.grok_pattern);
-        formatter.field("custom_patterns", &self.custom_patterns);
-        formatter.finish()
     }
 }
 /// See [`GrokClassifier`](crate::model::GrokClassifier).
@@ -42585,7 +40120,7 @@ impl GrokClassifier {
 
 /// <p>A structure containing migration status information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogImportStatus {
     /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     #[doc(hidden)]
@@ -42609,15 +40144,6 @@ impl CatalogImportStatus {
     /// <p>The name of the person who initiated the migration.</p>
     pub fn imported_by(&self) -> std::option::Option<&str> {
         self.imported_by.as_deref()
-    }
-}
-impl std::fmt::Debug for CatalogImportStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CatalogImportStatus");
-        formatter.field("import_completed", &self.import_completed);
-        formatter.field("import_time", &self.import_time);
-        formatter.field("imported_by", &self.imported_by);
-        formatter.finish()
     }
 }
 /// See [`CatalogImportStatus`](crate::model::CatalogImportStatus).
@@ -42683,7 +40209,7 @@ impl CatalogImportStatus {
 
 /// <p>The details of a blueprint run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlueprintRun {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
@@ -42768,22 +40294,6 @@ impl BlueprintRun {
     /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for BlueprintRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlueprintRun");
-        formatter.field("blueprint_name", &self.blueprint_name);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("workflow_name", &self.workflow_name);
-        formatter.field("state", &self.state);
-        formatter.field("started_on", &self.started_on);
-        formatter.field("completed_on", &self.completed_on);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("rollback_error_message", &self.rollback_error_message);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`BlueprintRun`](crate::model::BlueprintRun).
@@ -43065,7 +40575,7 @@ impl AsRef<str> for BlueprintRunState {
 
 /// <p>The details of a blueprint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Blueprint {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
@@ -43152,25 +40662,6 @@ impl Blueprint {
         &self,
     ) -> std::option::Option<&crate::model::LastActiveDefinition> {
         self.last_active_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for Blueprint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Blueprint");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_on", &self.created_on);
-        formatter.field("last_modified_on", &self.last_modified_on);
-        formatter.field("parameter_spec", &self.parameter_spec);
-        formatter.field("blueprint_location", &self.blueprint_location);
-        formatter.field(
-            "blueprint_service_location",
-            &self.blueprint_service_location,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("last_active_definition", &self.last_active_definition);
-        formatter.finish()
     }
 }
 /// See [`Blueprint`](crate::model::Blueprint).
@@ -43353,7 +40844,7 @@ impl Blueprint {
 
 /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LastActiveDefinition {
     /// <p>The description of the blueprint.</p>
     #[doc(hidden)]
@@ -43391,20 +40882,6 @@ impl LastActiveDefinition {
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
     pub fn blueprint_service_location(&self) -> std::option::Option<&str> {
         self.blueprint_service_location.as_deref()
-    }
-}
-impl std::fmt::Debug for LastActiveDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastActiveDefinition");
-        formatter.field("description", &self.description);
-        formatter.field("last_modified_on", &self.last_modified_on);
-        formatter.field("parameter_spec", &self.parameter_spec);
-        formatter.field("blueprint_location", &self.blueprint_location);
-        formatter.field(
-            "blueprint_service_location",
-            &self.blueprint_service_location,
-        );
-        formatter.finish()
     }
 }
 /// See [`LastActiveDefinition`](crate::model::LastActiveDefinition).
@@ -43603,7 +41080,7 @@ impl AsRef<str> for BlueprintStatus {
 
 /// <p>An object that contains the error details for an operation on a schema version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaVersionErrorItem {
     /// <p>The version number of the schema.</p>
     #[doc(hidden)]
@@ -43620,14 +41097,6 @@ impl SchemaVersionErrorItem {
     /// <p>The details of the error for the schema version.</p>
     pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
         self.error_details.as_ref()
-    }
-}
-impl std::fmt::Debug for SchemaVersionErrorItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaVersionErrorItem");
-        formatter.field("version_number", &self.version_number);
-        formatter.field("error_details", &self.error_details);
-        formatter.finish()
     }
 }
 /// See [`SchemaVersionErrorItem`](crate::model::SchemaVersionErrorItem).
@@ -43681,7 +41150,7 @@ impl SchemaVersionErrorItem {
 
 /// <p>An object containing error details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetails {
     /// <p>The error code for an error.</p>
     #[doc(hidden)]
@@ -43698,14 +41167,6 @@ impl ErrorDetails {
     /// <p>The error message for an error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetails");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
@@ -43759,7 +41220,7 @@ impl ErrorDetails {
 
 /// <p>A structure for a partition index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartitionIndex {
     /// <p>The keys for the partition index.</p>
     #[doc(hidden)]
@@ -43776,14 +41237,6 @@ impl PartitionIndex {
     /// <p>The name of the partition index.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
-    }
-}
-impl std::fmt::Debug for PartitionIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartitionIndex");
-        formatter.field("keys", &self.keys);
-        formatter.field("index_name", &self.index_name);
-        formatter.finish()
     }
 }
 /// See [`PartitionIndex`](crate::model::PartitionIndex).
@@ -43843,7 +41296,7 @@ impl PartitionIndex {
 
 /// <p>Specifies a custom CSV classifier for <code>CreateClassifier</code> to create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -43895,19 +41348,6 @@ impl CreateCsvClassifierRequest {
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn allow_single_column(&self) -> std::option::Option<bool> {
         self.allow_single_column
-    }
-}
-impl std::fmt::Debug for CreateCsvClassifierRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCsvClassifierRequest");
-        formatter.field("name", &self.name);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("quote_symbol", &self.quote_symbol);
-        formatter.field("contains_header", &self.contains_header);
-        formatter.field("header", &self.header);
-        formatter.field("disable_value_trimming", &self.disable_value_trimming);
-        formatter.field("allow_single_column", &self.allow_single_column);
-        formatter.finish()
     }
 }
 /// See [`CreateCsvClassifierRequest`](crate::model::CreateCsvClassifierRequest).
@@ -44030,7 +41470,7 @@ impl CreateCsvClassifierRequest {
 
 /// <p>Specifies a JSON classifier for <code>CreateClassifier</code> to create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJsonClassifierRequest {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
@@ -44047,14 +41487,6 @@ impl CreateJsonClassifierRequest {
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn json_path(&self) -> std::option::Option<&str> {
         self.json_path.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateJsonClassifierRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJsonClassifierRequest");
-        formatter.field("name", &self.name);
-        formatter.field("json_path", &self.json_path);
-        formatter.finish()
     }
 }
 /// See [`CreateJsonClassifierRequest`](crate::model::CreateJsonClassifierRequest).
@@ -44105,7 +41537,7 @@ impl CreateJsonClassifierRequest {
 
 /// <p>Specifies an XML classifier for <code>CreateClassifier</code> to create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateXmlClassifierRequest {
     /// <p>An identifier of the data format that the classifier matches.</p>
     #[doc(hidden)]
@@ -44133,15 +41565,6 @@ impl CreateXmlClassifierRequest {
     /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub fn row_tag(&self) -> std::option::Option<&str> {
         self.row_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateXmlClassifierRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateXmlClassifierRequest");
-        formatter.field("classification", &self.classification);
-        formatter.field("name", &self.name);
-        formatter.field("row_tag", &self.row_tag);
-        formatter.finish()
     }
 }
 /// See [`CreateXmlClassifierRequest`](crate::model::CreateXmlClassifierRequest).
@@ -44211,7 +41634,7 @@ impl CreateXmlClassifierRequest {
 
 /// <p>Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGrokClassifierRequest {
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     #[doc(hidden)]
@@ -44242,16 +41665,6 @@ impl CreateGrokClassifierRequest {
     /// <p>Optional custom grok patterns used by this classifier.</p>
     pub fn custom_patterns(&self) -> std::option::Option<&str> {
         self.custom_patterns.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateGrokClassifierRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGrokClassifierRequest");
-        formatter.field("classification", &self.classification);
-        formatter.field("name", &self.name);
-        formatter.field("grok_pattern", &self.grok_pattern);
-        formatter.field("custom_patterns", &self.custom_patterns);
-        formatter.finish()
     }
 }
 /// See [`CreateGrokClassifierRequest`](crate::model::CreateGrokClassifierRequest).
@@ -44332,7 +41745,7 @@ impl CreateGrokClassifierRequest {
 
 /// <p>Contains information about a batch update partition error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdatePartitionFailureEntry {
     /// <p>A list of values defining the partitions.</p>
     #[doc(hidden)]
@@ -44349,14 +41762,6 @@ impl BatchUpdatePartitionFailureEntry {
     /// <p>The details about the batch update partition error.</p>
     pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchUpdatePartitionFailureEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdatePartitionFailureEntry");
-        formatter.field("partition_value_list", &self.partition_value_list);
-        formatter.field("error_detail", &self.error_detail);
-        formatter.finish()
     }
 }
 /// See [`BatchUpdatePartitionFailureEntry`](crate::model::BatchUpdatePartitionFailureEntry).
@@ -44419,7 +41824,7 @@ impl BatchUpdatePartitionFailureEntry {
 
 /// <p>A structure that contains the values and structure used to update a partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdatePartitionRequestEntry {
     /// <p>A list of values defining the partitions.</p>
     #[doc(hidden)]
@@ -44436,14 +41841,6 @@ impl BatchUpdatePartitionRequestEntry {
     /// <p>The structure used to update a partition.</p>
     pub fn partition_input(&self) -> std::option::Option<&crate::model::PartitionInput> {
         self.partition_input.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchUpdatePartitionRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdatePartitionRequestEntry");
-        formatter.field("partition_value_list", &self.partition_value_list);
-        formatter.field("partition_input", &self.partition_input);
-        formatter.finish()
     }
 }
 /// See [`BatchUpdatePartitionRequestEntry`](crate::model::BatchUpdatePartitionRequestEntry).
@@ -44506,7 +41903,7 @@ impl BatchUpdatePartitionRequestEntry {
 
 /// <p>Records an error that occurred when attempting to stop a specified job run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStopJobRunError {
     /// <p>The name of the job definition that is used in the job run in question.</p>
     #[doc(hidden)]
@@ -44530,15 +41927,6 @@ impl BatchStopJobRunError {
     /// <p>Specifies details about the error that was encountered.</p>
     pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchStopJobRunError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStopJobRunError");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_run_id", &self.job_run_id);
-        formatter.field("error_detail", &self.error_detail);
-        formatter.finish()
     }
 }
 /// See [`BatchStopJobRunError`](crate::model::BatchStopJobRunError).
@@ -44604,7 +41992,7 @@ impl BatchStopJobRunError {
 
 /// <p>Records a successful request to stop a specified <code>JobRun</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchStopJobRunSuccessfulSubmission {
     /// <p>The name of the job definition used in the job run that was stopped.</p>
     #[doc(hidden)]
@@ -44621,14 +42009,6 @@ impl BatchStopJobRunSuccessfulSubmission {
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
     pub fn job_run_id(&self) -> std::option::Option<&str> {
         self.job_run_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchStopJobRunSuccessfulSubmission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchStopJobRunSuccessfulSubmission");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_run_id", &self.job_run_id);
-        formatter.finish()
     }
 }
 /// See [`BatchStopJobRunSuccessfulSubmission`](crate::model::BatchStopJobRunSuccessfulSubmission).
@@ -44679,7 +42059,7 @@ impl BatchStopJobRunSuccessfulSubmission {
 
 /// <p>An error record for table-version operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableVersionError {
     /// <p>The name of the table in question.</p>
     #[doc(hidden)]
@@ -44703,15 +42083,6 @@ impl TableVersionError {
     /// <p>The details about the error.</p>
     pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for TableVersionError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableVersionError");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("error_detail", &self.error_detail);
-        formatter.finish()
     }
 }
 /// See [`TableVersionError`](crate::model::TableVersionError).
@@ -44777,7 +42148,7 @@ impl TableVersionError {
 
 /// <p>An error record for table operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableError {
     /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
     #[doc(hidden)]
@@ -44794,14 +42165,6 @@ impl TableError {
     /// <p>The details about the error.</p>
     pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for TableError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableError");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("error_detail", &self.error_detail);
-        formatter.finish()
     }
 }
 /// See [`TableError`](crate::model::TableError).
@@ -44855,7 +42218,7 @@ impl TableError {
 
 /// <p>Contains information about a partition error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartitionError {
     /// <p>The values that define the partition.</p>
     #[doc(hidden)]
@@ -44872,14 +42235,6 @@ impl PartitionError {
     /// <p>The details about the partition error.</p>
     pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
         self.error_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for PartitionError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartitionError");
-        formatter.field("partition_values", &self.partition_values);
-        formatter.field("error_detail", &self.error_detail);
-        formatter.finish()
     }
 }
 /// See [`PartitionError`](crate::model::PartitionError).

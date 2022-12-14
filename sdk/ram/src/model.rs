@@ -2,7 +2,7 @@
 
 /// <p>Describes a resource share in RAM.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
     #[doc(hidden)]
@@ -85,22 +85,6 @@ impl ResourceShare {
     /// </ul>
     pub fn feature_set(&self) -> std::option::Option<&crate::model::ResourceShareFeatureSet> {
         self.feature_set.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceShare {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceShare");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("name", &self.name);
-        formatter.field("owning_account_id", &self.owning_account_id);
-        formatter.field("allow_external_principals", &self.allow_external_principals);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("tags", &self.tags);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("feature_set", &self.feature_set);
-        formatter.finish()
     }
 }
 /// See [`ResourceShare`](crate::model::ResourceShare).
@@ -385,7 +369,7 @@ impl AsRef<str> for ResourceShareFeatureSet {
 /// <p>A structure containing a tag. A tag is metadata that you can attach to your resources to help organize and categorize them. You can also use them to help you secure your resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
 /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key, or name, attached to the tag. Every tag must have a key. Key names are case sensitive.</p>
     #[doc(hidden)]
@@ -402,14 +386,6 @@ impl Tag {
     /// <p>The string value attached to the tag. The value can be an empty string. Key values are case sensitive.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -567,7 +543,7 @@ impl AsRef<str> for ResourceShareStatus {
 
 /// <p>Describes an invitation for an Amazon Web Services account to join a resource share.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceShareInvitation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation.</p>
     #[doc(hidden)]
@@ -638,27 +614,6 @@ impl ResourceShareInvitation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
     pub fn receiver_arn(&self) -> std::option::Option<&str> {
         self.receiver_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceShareInvitation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceShareInvitation");
-        formatter.field(
-            "resource_share_invitation_arn",
-            &self.resource_share_invitation_arn,
-        );
-        formatter.field("resource_share_name", &self.resource_share_name);
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("sender_account_id", &self.sender_account_id);
-        formatter.field("receiver_account_id", &self.receiver_account_id);
-        formatter.field("invitation_timestamp", &self.invitation_timestamp);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "resource_share_associations",
-            &self.resource_share_associations,
-        );
-        formatter.field("receiver_arn", &self.receiver_arn);
-        formatter.finish()
     }
 }
 /// See [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
@@ -832,7 +787,7 @@ impl ResourceShareInvitation {
 
 /// <p>Describes an association with a resource share and either a principal or a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceShareAssociation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share.</p>
     #[doc(hidden)]
@@ -922,21 +877,6 @@ impl ResourceShareAssociation {
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
     pub fn external(&self) -> std::option::Option<bool> {
         self.external
-    }
-}
-impl std::fmt::Debug for ResourceShareAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceShareAssociation");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("resource_share_name", &self.resource_share_name);
-        formatter.field("associated_entity", &self.associated_entity);
-        formatter.field("association_type", &self.association_type);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("external", &self.external);
-        formatter.finish()
     }
 }
 /// See [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
@@ -1428,7 +1368,7 @@ impl AsRef<str> for ResourceShareInvitationStatus {
 
 /// <p>Information about a shareable resource type and the Amazon Web Services service to which resources of that type belong.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNameAndResourceType {
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
@@ -1460,15 +1400,6 @@ impl ServiceNameAndResourceType {
     /// </ul>
     pub fn resource_region_scope(&self) -> std::option::Option<&crate::model::ResourceRegionScope> {
         self.resource_region_scope.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceNameAndResourceType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNameAndResourceType");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
     }
 }
 /// See [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
@@ -1734,7 +1665,7 @@ impl AsRef<str> for ResourceRegionScopeFilter {
 
 /// <p>Information about an RAM permission that is associated with a resource share and any of its resources of a specified type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSharePermissionSummary {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission you want information about.</p>
     #[doc(hidden)]
@@ -1800,21 +1731,6 @@ impl ResourceSharePermissionSummary {
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
     pub fn is_resource_type_default(&self) -> std::option::Option<bool> {
         self.is_resource_type_default
-    }
-}
-impl std::fmt::Debug for ResourceSharePermissionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSharePermissionSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("default_version", &self.default_version);
-        formatter.field("name", &self.name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("is_resource_type_default", &self.is_resource_type_default);
-        formatter.finish()
     }
 }
 /// See [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
@@ -1958,7 +1874,7 @@ impl ResourceSharePermissionSummary {
 
 /// <p>Describes a resource associated with a resource share in RAM.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p>
     #[doc(hidden)]
@@ -2032,21 +1948,6 @@ impl Resource {
     /// </ul>
     pub fn resource_region_scope(&self) -> std::option::Option<&crate::model::ResourceRegionScope> {
         self.resource_region_scope.as_ref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("resource_group_arn", &self.resource_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -2411,7 +2312,7 @@ impl AsRef<str> for ResourceOwner {
 
 /// <p>Describes a principal for use with Resource Access Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Principal {
     /// <p>The ID of the principal.</p>
     #[doc(hidden)]
@@ -2449,17 +2350,6 @@ impl Principal {
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
     pub fn external(&self) -> std::option::Option<bool> {
         self.external
-    }
-}
-impl std::fmt::Debug for Principal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Principal");
-        formatter.field("id", &self.id);
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("external", &self.external);
-        formatter.finish()
     }
 }
 /// See [`Principal`](crate::model::Principal).
@@ -2555,7 +2445,7 @@ impl Principal {
 
 /// <p>A tag key and optional list of possible values that you can use to filter results for tagged resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
     #[doc(hidden)]
@@ -2572,14 +2462,6 @@ impl TagFilter {
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
     pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values.as_deref()
-    }
-}
-impl std::fmt::Debug for TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagFilter");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
     }
 }
 /// See [`TagFilter`](crate::model::TagFilter).
@@ -2639,7 +2521,7 @@ impl TagFilter {
 
 /// <p>Information about an RAM permission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
     #[doc(hidden)]
@@ -2705,21 +2587,6 @@ impl ResourceSharePermissionDetail {
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
     pub fn is_resource_type_default(&self) -> std::option::Option<bool> {
         self.is_resource_type_default
-    }
-}
-impl std::fmt::Debug for ResourceSharePermissionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSharePermissionDetail");
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("default_version", &self.default_version);
-        formatter.field("name", &self.name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("permission", &self.permission);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("is_resource_type_default", &self.is_resource_type_default);
-        formatter.finish()
     }
 }
 /// See [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).

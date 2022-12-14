@@ -2,7 +2,7 @@
 
 /// <p>Represents user metadata added to a Users dataset using the <code>PutUsers</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>The ID associated with the user.</p>
     #[doc(hidden)]
@@ -21,14 +21,6 @@ impl User {
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
     pub fn properties(&self) -> std::option::Option<&str> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`User`](crate::model::User).
@@ -81,7 +73,7 @@ impl User {
 
 /// <p>Represents item metadata added to an Items dataset using the <code>PutItems</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Item {
     /// <p>The ID associated with the item.</p>
     #[doc(hidden)]
@@ -100,14 +92,6 @@ impl Item {
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
     pub fn properties(&self) -> std::option::Option<&str> {
         self.properties.as_deref()
-    }
-}
-impl std::fmt::Debug for Item {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Item");
-        formatter.field("item_id", &self.item_id);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`Item`](crate::model::Item).
@@ -160,7 +144,7 @@ impl Item {
 
 /// <p>Represents user interaction event information sent using the <code>PutEvents</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>
     #[doc(hidden)]
@@ -225,20 +209,6 @@ impl Event {
     /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
     pub fn impression(&self) -> std::option::Option<&[std::string::String]> {
         self.impression.as_deref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("event_value", &self.event_value);
-        formatter.field("item_id", &self.item_id);
-        formatter.field("properties", &self.properties);
-        formatter.field("sent_at", &self.sent_at);
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("impression", &self.impression);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).

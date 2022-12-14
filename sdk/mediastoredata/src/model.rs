@@ -179,7 +179,7 @@ impl AsRef<str> for UploadAvailability {
 
 /// <p>A metadata entry for a folder or object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Item {
     /// <p>The name of the item.</p>
     #[doc(hidden)]
@@ -224,18 +224,6 @@ impl Item {
     /// <p>The length of the item in bytes.</p>
     pub fn content_length(&self) -> std::option::Option<i64> {
         self.content_length
-    }
-}
-impl std::fmt::Debug for Item {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Item");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_length", &self.content_length);
-        formatter.finish()
     }
 }
 /// See [`Item`](crate::model::Item).

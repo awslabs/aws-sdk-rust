@@ -2,7 +2,7 @@
 
 /// <p>Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentConfigurationStatus {
     /// <p>The agent/connector ID.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl AgentConfigurationStatus {
     /// <p>A description of the operation performed.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for AgentConfigurationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentConfigurationStatus");
-        formatter.field("agent_id", &self.agent_id);
-        formatter.field("operation_succeeded", &self.operation_succeeded);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
@@ -97,7 +88,7 @@ impl AgentConfigurationStatus {
 
 /// <p>An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportTask {
     /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -195,34 +186,6 @@ impl ImportTask {
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
     pub fn errors_and_failed_entries_zip(&self) -> std::option::Option<&str> {
         self.errors_and_failed_entries_zip.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportTask");
-        formatter.field("import_task_id", &self.import_task_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("name", &self.name);
-        formatter.field("import_url", &self.import_url);
-        formatter.field("status", &self.status);
-        formatter.field("import_request_time", &self.import_request_time);
-        formatter.field("import_completion_time", &self.import_completion_time);
-        formatter.field("import_deleted_time", &self.import_deleted_time);
-        formatter.field("server_import_success", &self.server_import_success);
-        formatter.field("server_import_failure", &self.server_import_failure);
-        formatter.field(
-            "application_import_success",
-            &self.application_import_success,
-        );
-        formatter.field(
-            "application_import_failure",
-            &self.application_import_failure,
-        );
-        formatter.field(
-            "errors_and_failed_entries_zip",
-            &self.errors_and_failed_entries_zip,
-        );
-        formatter.finish()
     }
 }
 /// See [`ImportTask`](crate::model::ImportTask).
@@ -580,7 +543,7 @@ impl AsRef<str> for ImportStatus {
 
 /// <p>Used to select which agent's data is to be exported. A single agent ID may be selected for export using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportFilter {
     /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.</p>
     #[doc(hidden)]
@@ -604,15 +567,6 @@ impl ExportFilter {
     /// <p>Supported condition: <code>EQUALS</code> </p>
     pub fn condition(&self) -> std::option::Option<&str> {
         self.condition.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`ExportFilter`](crate::model::ExportFilter).
@@ -859,7 +813,7 @@ impl AsRef<str> for DataSource {
 
 /// <p>Details about neighboring servers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NeighborConnectionDetail {
     /// <p>The ID of the server that opened the network connection.</p>
     #[doc(hidden)]
@@ -897,17 +851,6 @@ impl NeighborConnectionDetail {
     /// <p>The number of open network connections with the neighboring server.</p>
     pub fn connections_count(&self) -> i64 {
         self.connections_count
-    }
-}
-impl std::fmt::Debug for NeighborConnectionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NeighborConnectionDetail");
-        formatter.field("source_server_id", &self.source_server_id);
-        formatter.field("destination_server_id", &self.destination_server_id);
-        formatter.field("destination_port", &self.destination_port);
-        formatter.field("transport_protocol", &self.transport_protocol);
-        formatter.field("connections_count", &self.connections_count);
-        formatter.finish()
     }
 }
 /// See [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
@@ -1003,7 +946,7 @@ impl NeighborConnectionDetail {
 
 /// <p>A field and direction for ordered output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrderByElement {
     /// <p>The field on which to order.</p>
     #[doc(hidden)]
@@ -1020,14 +963,6 @@ impl OrderByElement {
     /// <p>Ordering direction.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::OrderString> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for OrderByElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrderByElement");
-        formatter.field("field_name", &self.field_name);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`OrderByElement`](crate::model::OrderByElement).
@@ -1172,7 +1107,7 @@ impl AsRef<str> for OrderString {
 /// <p>A filter that can use conditional operators.</p>
 /// <p>For more information about filters, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying Discovered Configuration Items</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -1196,15 +1131,6 @@ impl Filter {
     /// <p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.</p>
     pub fn condition(&self) -> std::option::Option<&str> {
         self.condition.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -1378,7 +1304,7 @@ impl AsRef<str> for ConfigurationItemType {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerAgentlessCollectorInfo {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1430,40 +1356,6 @@ impl CustomerAgentlessCollectorInfo {
     #[allow(missing_docs)] // documentation missing in model
     pub fn unknown_agentless_collectors(&self) -> i32 {
         self.unknown_agentless_collectors
-    }
-}
-impl std::fmt::Debug for CustomerAgentlessCollectorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerAgentlessCollectorInfo");
-        formatter.field(
-            "active_agentless_collectors",
-            &self.active_agentless_collectors,
-        );
-        formatter.field(
-            "healthy_agentless_collectors",
-            &self.healthy_agentless_collectors,
-        );
-        formatter.field(
-            "deny_listed_agentless_collectors",
-            &self.deny_listed_agentless_collectors,
-        );
-        formatter.field(
-            "shutdown_agentless_collectors",
-            &self.shutdown_agentless_collectors,
-        );
-        formatter.field(
-            "unhealthy_agentless_collectors",
-            &self.unhealthy_agentless_collectors,
-        );
-        formatter.field(
-            "total_agentless_collectors",
-            &self.total_agentless_collectors,
-        );
-        formatter.field(
-            "unknown_agentless_collectors",
-            &self.unknown_agentless_collectors,
-        );
-        formatter.finish()
     }
 }
 /// See [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
@@ -1589,7 +1481,7 @@ impl CustomerAgentlessCollectorInfo {
 
 /// <p> The inventory data for installed Migration Evaluator collectors. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerMeCollectorInfo {
     /// <p> The number of active Migration Evaluator collectors. </p>
     #[doc(hidden)]
@@ -1641,19 +1533,6 @@ impl CustomerMeCollectorInfo {
     /// <p> The number of unknown Migration Evaluator collectors. </p>
     pub fn unknown_me_collectors(&self) -> i32 {
         self.unknown_me_collectors
-    }
-}
-impl std::fmt::Debug for CustomerMeCollectorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerMeCollectorInfo");
-        formatter.field("active_me_collectors", &self.active_me_collectors);
-        formatter.field("healthy_me_collectors", &self.healthy_me_collectors);
-        formatter.field("deny_listed_me_collectors", &self.deny_listed_me_collectors);
-        formatter.field("shutdown_me_collectors", &self.shutdown_me_collectors);
-        formatter.field("unhealthy_me_collectors", &self.unhealthy_me_collectors);
-        formatter.field("total_me_collectors", &self.total_me_collectors);
-        formatter.field("unknown_me_collectors", &self.unknown_me_collectors);
-        formatter.finish()
     }
 }
 /// See [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
@@ -1764,7 +1643,7 @@ impl CustomerMeCollectorInfo {
 
 /// <p>Inventory data for installed discovery connectors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerConnectorInfo {
     /// <p>Number of active discovery connectors.</p>
     #[doc(hidden)]
@@ -1816,19 +1695,6 @@ impl CustomerConnectorInfo {
     /// <p>Number of unknown discovery connectors.</p>
     pub fn unknown_connectors(&self) -> i32 {
         self.unknown_connectors
-    }
-}
-impl std::fmt::Debug for CustomerConnectorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerConnectorInfo");
-        formatter.field("active_connectors", &self.active_connectors);
-        formatter.field("healthy_connectors", &self.healthy_connectors);
-        formatter.field("black_listed_connectors", &self.black_listed_connectors);
-        formatter.field("shutdown_connectors", &self.shutdown_connectors);
-        formatter.field("unhealthy_connectors", &self.unhealthy_connectors);
-        formatter.field("total_connectors", &self.total_connectors);
-        formatter.field("unknown_connectors", &self.unknown_connectors);
-        formatter.finish()
     }
 }
 /// See [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
@@ -1939,7 +1805,7 @@ impl CustomerConnectorInfo {
 
 /// <p>Inventory data for installed discovery agents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerAgentInfo {
     /// <p>Number of active discovery agents.</p>
     #[doc(hidden)]
@@ -1991,19 +1857,6 @@ impl CustomerAgentInfo {
     /// <p>Number of unknown discovery agents.</p>
     pub fn unknown_agents(&self) -> i32 {
         self.unknown_agents
-    }
-}
-impl std::fmt::Debug for CustomerAgentInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerAgentInfo");
-        formatter.field("active_agents", &self.active_agents);
-        formatter.field("healthy_agents", &self.healthy_agents);
-        formatter.field("black_listed_agents", &self.black_listed_agents);
-        formatter.field("shutdown_agents", &self.shutdown_agents);
-        formatter.field("unhealthy_agents", &self.unhealthy_agents);
-        formatter.field("total_agents", &self.total_agents);
-        formatter.field("unknown_agents", &self.unknown_agents);
-        formatter.finish()
     }
 }
 /// See [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
@@ -2114,7 +1967,7 @@ impl CustomerAgentInfo {
 
 /// <p>Tags for a configuration item. Tags are metadata that help you categorize IT assets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationTag {
     /// <p>A type of IT asset to tag.</p>
     #[doc(hidden)]
@@ -2152,17 +2005,6 @@ impl ConfigurationTag {
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
     pub fn time_of_creation(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_of_creation.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigurationTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationTag");
-        formatter.field("configuration_type", &self.configuration_type);
-        formatter.field("configuration_id", &self.configuration_id);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("time_of_creation", &self.time_of_creation);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationTag`](crate::model::ConfigurationTag).
@@ -2258,7 +2100,7 @@ impl ConfigurationTag {
 
 /// <p>The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>A name of the tag filter.</p>
     #[doc(hidden)]
@@ -2275,14 +2117,6 @@ impl TagFilter {
     /// <p>Values for the tag filter.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`TagFilter`](crate::model::TagFilter).
@@ -2344,7 +2178,7 @@ impl TagFilter {
 /// <p>When filtering by import status, all other filter values are ignored.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportTaskFilter {
     /// <p>The name, status, or import task ID for a specific import task.</p>
     #[doc(hidden)]
@@ -2361,14 +2195,6 @@ impl ImportTaskFilter {
     /// <p>An array of strings that you can provide to match against a specific name, status, or import task ID to filter the results for your import task queries.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportTaskFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportTaskFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ImportTaskFilter`](crate::model::ImportTaskFilter).
@@ -2528,7 +2354,7 @@ impl AsRef<str> for ImportTaskFilterName {
 
 /// <p>Information regarding the export status of discovered data. The value is an array of objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportInfo {
     /// <p>A unique identifier used to query an export.</p>
     #[doc(hidden)]
@@ -2587,23 +2413,6 @@ impl ExportInfo {
     /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
     pub fn requested_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.requested_end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportInfo");
-        formatter.field("export_id", &self.export_id);
-        formatter.field("export_status", &self.export_status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field(
-            "configurations_download_url",
-            &self.configurations_download_url,
-        );
-        formatter.field("export_request_time", &self.export_request_time);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("requested_start_time", &self.requested_start_time);
-        formatter.field("requested_end_time", &self.requested_end_time);
-        formatter.finish()
     }
 }
 /// See [`ExportInfo`](crate::model::ExportInfo).
@@ -2842,7 +2651,7 @@ impl AsRef<str> for ExportStatus {
 
 /// <p>A list of continuous export descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinuousExportDescription {
     /// <p>The unique ID assigned to this export.</p>
     #[doc(hidden)]
@@ -2965,20 +2774,6 @@ impl ContinuousExportDescription {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.schema_storage_config.as_ref()
-    }
-}
-impl std::fmt::Debug for ContinuousExportDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinuousExportDescription");
-        formatter.field("export_id", &self.export_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_detail", &self.status_detail);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("stop_time", &self.stop_time);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("schema_storage_config", &self.schema_storage_config);
-        formatter.finish()
     }
 }
 /// See [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
@@ -3318,7 +3113,7 @@ impl AsRef<str> for ContinuousExportStatus {
 
 /// <p>Information about agents or connectors associated with the user’s Amazon Web Services account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentInfo {
     /// <p>The agent or connector ID.</p>
     #[doc(hidden)]
@@ -3393,22 +3188,6 @@ impl AgentInfo {
     /// <p>Agent's first registration timestamp in UTC.</p>
     pub fn registered_time(&self) -> std::option::Option<&str> {
         self.registered_time.as_deref()
-    }
-}
-impl std::fmt::Debug for AgentInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentInfo");
-        formatter.field("agent_id", &self.agent_id);
-        formatter.field("host_name", &self.host_name);
-        formatter.field("agent_network_info_list", &self.agent_network_info_list);
-        formatter.field("connector_id", &self.connector_id);
-        formatter.field("version", &self.version);
-        formatter.field("health", &self.health);
-        formatter.field("last_health_ping_time", &self.last_health_ping_time);
-        formatter.field("collection_status", &self.collection_status);
-        formatter.field("agent_type", &self.agent_type);
-        formatter.field("registered_time", &self.registered_time);
-        formatter.finish()
     }
 }
 /// See [`AgentInfo`](crate::model::AgentInfo).
@@ -3691,7 +3470,7 @@ impl AsRef<str> for AgentStatus {
 
 /// <p>Network details about the host where the agent/connector resides.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AgentNetworkInfo {
     /// <p>The IP address for the host where the agent/connector resides.</p>
     #[doc(hidden)]
@@ -3708,14 +3487,6 @@ impl AgentNetworkInfo {
     /// <p>The MAC address for the host where the agent/connector resides.</p>
     pub fn mac_address(&self) -> std::option::Option<&str> {
         self.mac_address.as_deref()
-    }
-}
-impl std::fmt::Debug for AgentNetworkInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentNetworkInfo");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.finish()
     }
 }
 /// See [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
@@ -3768,7 +3539,7 @@ impl AgentNetworkInfo {
 /// <p>Do not store sensitive information (like personal data) in tags.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The type of tag on which to filter.</p>
     #[doc(hidden)]
@@ -3785,14 +3556,6 @@ impl Tag {
     /// <p>A value for a tag key on which to filter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -3843,7 +3606,7 @@ impl Tag {
 
 /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteImportDataError {
     /// <p>The unique import ID associated with the error that occurred.</p>
     #[doc(hidden)]
@@ -3867,15 +3630,6 @@ impl BatchDeleteImportDataError {
     /// <p>The description of the error that occurred for a specific import task.</p>
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteImportDataError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteImportDataError");
-        formatter.field("import_task_id", &self.import_task_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_description", &self.error_description);
-        formatter.finish()
     }
 }
 /// See [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).

@@ -4919,7 +4919,7 @@ impl UpdateProfilingGroupInput {
 
 /// <p>The structure representing the SubmitFeedbackRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubmitFeedbackInput {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
     #[doc(hidden)]
@@ -4952,20 +4952,10 @@ impl SubmitFeedbackInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for SubmitFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubmitFeedbackInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("anomaly_instance_id", &self.anomaly_instance_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 /// <p> The structure representing the <code>removePermissionRequest</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The name of the profiling group.</p>
     #[doc(hidden)]
@@ -4991,19 +4981,10 @@ impl RemovePermissionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemovePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("action_group", &self.action_group);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the RemoveNotificationChannelRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveNotificationChannelInput {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
     #[doc(hidden)]
@@ -5022,18 +5003,10 @@ impl RemoveNotificationChannelInput {
         self.channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveNotificationChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveNotificationChannelInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the <code>putPermissionRequest</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPermissionInput {
     /// <p>The name of the profiling group to grant access to.</p>
     #[doc(hidden)]
@@ -5066,20 +5039,10 @@ impl PutPermissionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPermissionInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("action_group", &self.action_group);
-        formatter.field("principals", &self.principals);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the postAgentProfileRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostAgentProfileInput {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
     #[doc(hidden)]
@@ -5120,20 +5083,10 @@ impl PostAgentProfileInput {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for PostAgentProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostAgentProfileInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("agent_profile", &self.agent_profile);
-        formatter.field("profile_token", &self.profile_token);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the listProfileTimesRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileTimesInput {
     /// <p>The name of the profiling group.</p>
     #[doc(hidden)]
@@ -5201,23 +5154,10 @@ impl ListProfileTimesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProfileTimesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileTimesInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("period", &self.period);
-        formatter.field("order_by", &self.order_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the ListFindingsReportsRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingsReportsInput {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
     #[doc(hidden)]
@@ -5268,22 +5208,10 @@ impl ListFindingsReportsInput {
         self.daily_reports_only
     }
 }
-impl std::fmt::Debug for ListFindingsReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFindingsReportsInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("daily_reports_only", &self.daily_reports_only);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the GetRecommendationsRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationsInput {
     /// <p> The name of the profiling group to get analysis data about. </p>
     #[doc(hidden)]
@@ -5342,20 +5270,10 @@ impl GetRecommendationsInput {
         self.locale.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationsInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("locale", &self.locale);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the getProfileRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProfileInput {
     /// <p>The name of the profiling group to get.</p>
     #[doc(hidden)]
@@ -5416,22 +5334,10 @@ impl GetProfileInput {
         self.accept.as_deref()
     }
 }
-impl std::fmt::Debug for GetProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProfileInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("period", &self.period);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("max_depth", &self.max_depth);
-        formatter.field("accept", &self.accept);
-        formatter.finish()
-    }
-}
 
 /// <p> The structure representing the <code>getPolicyRequest</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyInput {
     /// <p>The name of the profiling group.</p>
     #[doc(hidden)]
@@ -5443,17 +5349,10 @@ impl GetPolicyInput {
         self.profiling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the GetNotificationConfigurationRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNotificationConfigurationInput {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
     #[doc(hidden)]
@@ -5465,17 +5364,10 @@ impl GetNotificationConfigurationInput {
         self.profiling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNotificationConfigurationInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the configureAgentRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureAgentInput {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
     #[doc(hidden)]
@@ -5529,19 +5421,10 @@ impl ConfigureAgentInput {
         self.metadata.as_ref()
     }
 }
-impl std::fmt::Debug for ConfigureAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureAgentInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("fleet_instance_id", &self.fleet_instance_id);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the BatchGetFrameMetricDataRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataInput {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
     #[doc(hidden)]
@@ -5598,22 +5481,10 @@ impl BatchGetFrameMetricDataInput {
         self.frame_metrics.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetFrameMetricDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetFrameMetricDataInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("period", &self.period);
-        formatter.field("target_resolution", &self.target_resolution);
-        formatter.field("frame_metrics", &self.frame_metrics);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the AddNotificationChannelsRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddNotificationChannelsInput {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
     #[doc(hidden)]
@@ -5632,18 +5503,10 @@ impl AddNotificationChannelsInput {
         self.channels.as_deref()
     }
 }
-impl std::fmt::Debug for AddNotificationChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddNotificationChannelsInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("channels", &self.channels);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the listProfilingGroupsRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfilingGroupsInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -5673,19 +5536,10 @@ impl ListProfilingGroupsInput {
         self.include_description
     }
 }
-impl std::fmt::Debug for ListProfilingGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfilingGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("include_description", &self.include_description);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the createProfiliingGroupRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProfilingGroupInput {
     /// <p>The name of the profiling group to create.</p>
     #[doc(hidden)]
@@ -5731,24 +5585,10 @@ impl CreateProfilingGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProfilingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProfilingGroupInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("compute_platform", &self.compute_platform);
-        formatter.field("client_token", &self.client_token);
-        formatter.field(
-            "agent_orchestration_config",
-            &self.agent_orchestration_config,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the deleteProfilingGroupRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfilingGroupInput {
     /// <p>The name of the profiling group to delete.</p>
     #[doc(hidden)]
@@ -5760,17 +5600,10 @@ impl DeleteProfilingGroupInput {
         self.profiling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProfilingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfilingGroupInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the updateProfilingGroupRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProfilingGroupInput {
     /// <p>The name of the profiling group to update.</p>
     #[doc(hidden)]
@@ -5791,21 +5624,10 @@ impl UpdateProfilingGroupInput {
         self.agent_orchestration_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateProfilingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProfilingGroupInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field(
-            "agent_orchestration_config",
-            &self.agent_orchestration_config,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the describeProfilingGroupRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProfilingGroupInput {
     /// <p> The name of the profiling group to get information about. </p>
     #[doc(hidden)]
@@ -5817,17 +5639,10 @@ impl DescribeProfilingGroupInput {
         self.profiling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProfilingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProfilingGroupInput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
     #[doc(hidden)]
@@ -5846,18 +5661,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
     #[doc(hidden)]
@@ -5880,18 +5687,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
     #[doc(hidden)]
@@ -5903,17 +5702,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>The structure representing the GetFindingsReportAccountSummaryRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingsReportAccountSummaryInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -5941,14 +5733,5 @@ impl GetFindingsReportAccountSummaryInput {
     /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
     pub fn daily_reports_only(&self) -> std::option::Option<bool> {
         self.daily_reports_only
-    }
-}
-impl std::fmt::Debug for GetFindingsReportAccountSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFindingsReportAccountSummaryInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("daily_reports_only", &self.daily_reports_only);
-        formatter.finish()
     }
 }

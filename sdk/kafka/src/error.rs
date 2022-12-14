@@ -2,7 +2,7 @@
 
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedException {
     /// <p>The parameter that caused the error.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl UnauthorizedException {
     /// <p>The parameter that caused the error.</p>
     pub fn invalid_parameter(&self) -> std::option::Option<&str> {
         self.invalid_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for UnauthorizedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl UnauthorizedException {
@@ -94,7 +86,7 @@ impl UnauthorizedException {
 
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRequestsException {
     /// <p>The parameter that caused the error.</p>
     #[doc(hidden)]
@@ -107,14 +99,6 @@ impl TooManyRequestsException {
     /// <p>The parameter that caused the error.</p>
     pub fn invalid_parameter(&self) -> std::option::Option<&str> {
         self.invalid_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl TooManyRequestsException {
@@ -186,7 +170,7 @@ impl TooManyRequestsException {
 
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     /// <p>The parameter that caused the error.</p>
     #[doc(hidden)]
@@ -199,14 +183,6 @@ impl ServiceUnavailableException {
     /// <p>The parameter that caused the error.</p>
     pub fn invalid_parameter(&self) -> std::option::Option<&str> {
         self.invalid_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ServiceUnavailableException {
@@ -278,7 +254,7 @@ impl ServiceUnavailableException {
 
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     /// <p>The parameter that caused the error.</p>
     #[doc(hidden)]
@@ -291,14 +267,6 @@ impl NotFoundException {
     /// <p>The parameter that caused the error.</p>
     pub fn invalid_parameter(&self) -> std::option::Option<&str> {
         self.invalid_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl NotFoundException {
@@ -370,7 +338,7 @@ impl NotFoundException {
 
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerErrorException {
     /// <p>The parameter that caused the error.</p>
     #[doc(hidden)]
@@ -383,14 +351,6 @@ impl InternalServerErrorException {
     /// <p>The parameter that caused the error.</p>
     pub fn invalid_parameter(&self) -> std::option::Option<&str> {
         self.invalid_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalServerErrorException {
@@ -462,7 +422,7 @@ impl InternalServerErrorException {
 
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForbiddenException {
     /// <p>The parameter that caused the error.</p>
     #[doc(hidden)]
@@ -475,14 +435,6 @@ impl ForbiddenException {
     /// <p>The parameter that caused the error.</p>
     pub fn invalid_parameter(&self) -> std::option::Option<&str> {
         self.invalid_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for ForbiddenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ForbiddenException {
@@ -554,7 +506,7 @@ impl ForbiddenException {
 
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     /// <p>The parameter that caused the error.</p>
     #[doc(hidden)]
@@ -567,14 +519,6 @@ impl BadRequestException {
     /// <p>The parameter that caused the error.</p>
     pub fn invalid_parameter(&self) -> std::option::Option<&str> {
         self.invalid_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl BadRequestException {
@@ -646,7 +590,7 @@ impl BadRequestException {
 
 /// <p>Returns information about an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>The parameter that caused the error.</p>
     #[doc(hidden)]
@@ -659,14 +603,6 @@ impl ConflictException {
     /// <p>The parameter that caused the error.</p>
     pub fn invalid_parameter(&self) -> std::option::Option<&str> {
         self.invalid_parameter.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("invalid_parameter", &self.invalid_parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ConflictException {

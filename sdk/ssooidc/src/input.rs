@@ -595,7 +595,7 @@ impl StartDeviceAuthorizationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDeviceAuthorizationInput {
     /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     #[doc(hidden)]
@@ -621,19 +621,10 @@ impl StartDeviceAuthorizationInput {
         self.start_url.as_deref()
     }
 }
-impl std::fmt::Debug for StartDeviceAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDeviceAuthorizationInput");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.field("start_url", &self.start_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterClientInput {
     /// <p>The friendly name of the client.</p>
     #[doc(hidden)]
@@ -659,19 +650,10 @@ impl RegisterClientInput {
         self.scopes.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterClientInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterClientInput");
-        formatter.field("client_name", &self.client_name);
-        formatter.field("client_type", &self.client_type);
-        formatter.field("scopes", &self.scopes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTokenInput {
     /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     #[doc(hidden)]
@@ -736,19 +718,5 @@ impl CreateTokenInput {
     /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
     pub fn redirect_uri(&self) -> std::option::Option<&str> {
         self.redirect_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTokenInput");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.field("grant_type", &self.grant_type);
-        formatter.field("device_code", &self.device_code);
-        formatter.field("code", &self.code);
-        formatter.field("refresh_token", &self.refresh_token);
-        formatter.field("scope", &self.scope);
-        formatter.field("redirect_uri", &self.redirect_uri);
-        formatter.finish()
     }
 }

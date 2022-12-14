@@ -4302,7 +4302,7 @@ impl UpdateTrustAnchorInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
@@ -4314,17 +4314,10 @@ impl EnableTrustAnchorInput {
         self.trust_anchor_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableTrustAnchorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableTrustAnchorInput");
-        formatter.field("trust_anchor_id", &self.trust_anchor_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
@@ -4336,17 +4329,10 @@ impl DisableTrustAnchorInput {
         self.trust_anchor_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableTrustAnchorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableTrustAnchorInput");
-        formatter.field("trust_anchor_id", &self.trust_anchor_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrustAnchorsInput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     #[doc(hidden)]
@@ -4365,18 +4351,10 @@ impl ListTrustAnchorsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListTrustAnchorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrustAnchorsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrustAnchorInput {
     /// <p>The name of the trust anchor.</p>
     #[doc(hidden)]
@@ -4409,20 +4387,10 @@ impl CreateTrustAnchorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTrustAnchorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrustAnchorInput");
-        formatter.field("name", &self.name);
-        formatter.field("source", &self.source);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
@@ -4434,17 +4402,10 @@ impl DeleteTrustAnchorInput {
         self.trust_anchor_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTrustAnchorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrustAnchorInput");
-        formatter.field("trust_anchor_id", &self.trust_anchor_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
@@ -4470,19 +4431,10 @@ impl UpdateTrustAnchorInput {
         self.source.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTrustAnchorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrustAnchorInput");
-        formatter.field("trust_anchor_id", &self.trust_anchor_id);
-        formatter.field("name", &self.name);
-        formatter.field("source", &self.source);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
@@ -4494,17 +4446,10 @@ impl GetTrustAnchorInput {
         self.trust_anchor_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTrustAnchorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrustAnchorInput");
-        formatter.field("trust_anchor_id", &self.trust_anchor_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubjectsInput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     #[doc(hidden)]
@@ -4523,18 +4468,10 @@ impl ListSubjectsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListSubjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubjectsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSubjectInput {
     /// <p>The unique identifier of the subject. </p>
     #[doc(hidden)]
@@ -4546,17 +4483,10 @@ impl GetSubjectInput {
         self.subject_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSubjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSubjectInput");
-        formatter.field("subject_id", &self.subject_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableProfileInput {
     /// <p>The unique identifier of the profile.</p>
     #[doc(hidden)]
@@ -4568,17 +4498,10 @@ impl EnableProfileInput {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableProfileInput {
     /// <p>The unique identifier of the profile.</p>
     #[doc(hidden)]
@@ -4590,17 +4513,10 @@ impl DisableProfileInput {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfilesInput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     #[doc(hidden)]
@@ -4619,18 +4535,10 @@ impl ListProfilesInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfilesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProfileInput {
     /// <p>The name of the profile.</p>
     #[doc(hidden)]
@@ -4691,27 +4599,10 @@ impl CreateProfileInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProfileInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "require_instance_properties",
-            &self.require_instance_properties,
-        );
-        formatter.field("session_policy", &self.session_policy);
-        formatter.field("role_arns", &self.role_arns);
-        formatter.field("managed_policy_arns", &self.managed_policy_arns);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfileInput {
     /// <p>The unique identifier of the profile.</p>
     #[doc(hidden)]
@@ -4723,17 +4614,10 @@ impl DeleteProfileInput {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProfileInput {
     /// <p>The unique identifier of the profile.</p>
     #[doc(hidden)]
@@ -4780,22 +4664,10 @@ impl UpdateProfileInput {
         self.duration_seconds
     }
 }
-impl std::fmt::Debug for UpdateProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("name", &self.name);
-        formatter.field("session_policy", &self.session_policy);
-        formatter.field("role_arns", &self.role_arns);
-        formatter.field("managed_policy_arns", &self.managed_policy_arns);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProfileInput {
     /// <p>The unique identifier of the profile.</p>
     #[doc(hidden)]
@@ -4807,17 +4679,10 @@ impl GetProfileInput {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProfileInput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
@@ -4829,17 +4694,10 @@ impl EnableCrlInput {
         self.crl_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableCrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableCrlInput");
-        formatter.field("crl_id", &self.crl_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
@@ -4851,17 +4709,10 @@ impl DisableCrlInput {
         self.crl_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableCrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableCrlInput");
-        formatter.field("crl_id", &self.crl_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCrlsInput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     #[doc(hidden)]
@@ -4880,18 +4731,10 @@ impl ListCrlsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListCrlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCrlsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportCrlInput {
     /// <p>The name of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
@@ -4931,21 +4774,10 @@ impl ImportCrlInput {
         self.trust_anchor_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ImportCrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportCrlInput");
-        formatter.field("name", &self.name);
-        formatter.field("crl_data", &self.crl_data);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("tags", &self.tags);
-        formatter.field("trust_anchor_arn", &self.trust_anchor_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
@@ -4957,17 +4789,10 @@ impl DeleteCrlInput {
         self.crl_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCrlInput");
-        formatter.field("crl_id", &self.crl_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
@@ -4993,19 +4818,10 @@ impl UpdateCrlInput {
         self.crl_data.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCrlInput");
-        formatter.field("crl_id", &self.crl_id);
-        formatter.field("name", &self.name);
-        formatter.field("crl_data", &self.crl_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
@@ -5017,17 +4833,10 @@ impl GetCrlInput {
         self.crl_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCrlInput");
-        formatter.field("crl_id", &self.crl_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5046,18 +4855,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5076,18 +4877,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5097,12 +4890,5 @@ impl ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

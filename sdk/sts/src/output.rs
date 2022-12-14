@@ -2,7 +2,7 @@
 
 /// <p>Contains the response to a successful <code>GetSessionToken</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionTokenOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
@@ -16,13 +16,6 @@ impl GetSessionTokenOutput {
     /// </note>
     pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
         self.credentials.as_ref()
-    }
-}
-impl std::fmt::Debug for GetSessionTokenOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionTokenOutput");
-        formatter.field("credentials", &self.credentials);
-        formatter.finish()
     }
 }
 /// See [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
@@ -68,7 +61,7 @@ impl GetSessionTokenOutput {
 
 /// <p>Contains the response to a successful <code>GetFederationToken</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFederationTokenOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
@@ -96,15 +89,6 @@ impl GetFederationTokenOutput {
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
     pub fn packed_policy_size(&self) -> std::option::Option<i32> {
         self.packed_policy_size
-    }
-}
-impl std::fmt::Debug for GetFederationTokenOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFederationTokenOutput");
-        formatter.field("credentials", &self.credentials);
-        formatter.field("federated_user", &self.federated_user);
-        formatter.field("packed_policy_size", &self.packed_policy_size);
-        formatter.finish()
     }
 }
 /// See [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
@@ -177,7 +161,7 @@ impl GetFederationTokenOutput {
 
 /// <p>Contains the response to a successful <code>GetCallerIdentity</code> request, including information about the entity making the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCallerIdentityOutput {
     /// <p>The unique identifier of the calling entity. The exact value depends on the type of entity that is making the call. The values returned are those listed in the <b>aws:userid</b> column in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
@@ -201,15 +185,6 @@ impl GetCallerIdentityOutput {
     /// <p>The Amazon Web Services ARN associated with the calling entity.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCallerIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCallerIdentityOutput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("account", &self.account);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
@@ -272,7 +247,7 @@ impl GetCallerIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessKeyInfoOutput {
     /// <p>The number used to identify the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -282,13 +257,6 @@ impl GetAccessKeyInfoOutput {
     /// <p>The number used to identify the Amazon Web Services account.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
-    }
-}
-impl std::fmt::Debug for GetAccessKeyInfoOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessKeyInfoOutput");
-        formatter.field("account", &self.account);
-        formatter.finish()
     }
 }
 /// See [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
@@ -327,7 +295,7 @@ impl GetAccessKeyInfoOutput {
 
 /// <p>A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an Amazon Web Services request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageOutput {
     /// <p>The API returns a response with the decoded message.</p>
     #[doc(hidden)]
@@ -337,13 +305,6 @@ impl DecodeAuthorizationMessageOutput {
     /// <p>The API returns a response with the decoded message.</p>
     pub fn decoded_message(&self) -> std::option::Option<&str> {
         self.decoded_message.as_deref()
-    }
-}
-impl std::fmt::Debug for DecodeAuthorizationMessageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecodeAuthorizationMessageOutput");
-        formatter.field("decoded_message", &self.decoded_message);
-        formatter.finish()
     }
 }
 /// See [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
@@ -385,7 +346,7 @@ impl DecodeAuthorizationMessageOutput {
 
 /// <p>Contains the response to a successful <code>AssumeRoleWithWebIdentity</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleWithWebIdentityOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
@@ -445,22 +406,6 @@ impl AssumeRoleWithWebIdentityOutput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     pub fn source_identity(&self) -> std::option::Option<&str> {
         self.source_identity.as_deref()
-    }
-}
-impl std::fmt::Debug for AssumeRoleWithWebIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleWithWebIdentityOutput");
-        formatter.field("credentials", &self.credentials);
-        formatter.field(
-            "subject_from_web_identity_token",
-            &self.subject_from_web_identity_token,
-        );
-        formatter.field("assumed_role_user", &self.assumed_role_user);
-        formatter.field("packed_policy_size", &self.packed_policy_size);
-        formatter.field("provider", &self.provider);
-        formatter.field("audience", &self.audience);
-        formatter.field("source_identity", &self.source_identity);
-        formatter.finish()
     }
 }
 /// See [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
@@ -594,7 +539,7 @@ impl AssumeRoleWithWebIdentityOutput {
 
 /// <p>Contains the response to a successful <code>AssumeRoleWithSAML</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleWithSamlOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
@@ -686,21 +631,6 @@ impl AssumeRoleWithSamlOutput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     pub fn source_identity(&self) -> std::option::Option<&str> {
         self.source_identity.as_deref()
-    }
-}
-impl std::fmt::Debug for AssumeRoleWithSamlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleWithSamlOutput");
-        formatter.field("credentials", &self.credentials);
-        formatter.field("assumed_role_user", &self.assumed_role_user);
-        formatter.field("packed_policy_size", &self.packed_policy_size);
-        formatter.field("subject", &self.subject);
-        formatter.field("subject_type", &self.subject_type);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("audience", &self.audience);
-        formatter.field("name_qualifier", &self.name_qualifier);
-        formatter.field("source_identity", &self.source_identity);
-        formatter.finish()
     }
 }
 /// See [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
@@ -873,7 +803,7 @@ impl AssumeRoleWithSamlOutput {
 
 /// <p>Contains the response to a successful <code>AssumeRole</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
@@ -912,16 +842,6 @@ impl AssumeRoleOutput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     pub fn source_identity(&self) -> std::option::Option<&str> {
         self.source_identity.as_deref()
-    }
-}
-impl std::fmt::Debug for AssumeRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleOutput");
-        formatter.field("credentials", &self.credentials);
-        formatter.field("assumed_role_user", &self.assumed_role_user);
-        formatter.field("packed_policy_size", &self.packed_policy_size);
-        formatter.field("source_identity", &self.source_identity);
-        formatter.finish()
     }
 }
 /// See [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).

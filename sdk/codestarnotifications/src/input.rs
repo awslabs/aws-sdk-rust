@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_notification_rule_input {
 
     /// A builder for [`CreateNotificationRuleInput`](crate::input::CreateNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) event_type_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -162,6 +162,20 @@ pub mod create_notification_rule_input {
                 tags: self.tags,
                 status: self.status,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("event_type_ids", &self.event_type_ids);
+            formatter.field("resource", &self.resource);
+            formatter.field("targets", &self.targets);
+            formatter.field("detail_type", &self.detail_type);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("tags", &self.tags);
+            formatter.field("status", &self.status);
+            formatter.finish()
         }
     }
 }
@@ -426,7 +440,7 @@ impl DeleteNotificationRuleInput {
 pub mod delete_target_input {
 
     /// A builder for [`DeleteTargetInput`](crate::input::DeleteTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) target_address: std::option::Option<std::string::String>,
         pub(crate) force_unsubscribe_all: std::option::Option<bool>,
@@ -464,6 +478,14 @@ pub mod delete_target_input {
                 target_address: self.target_address,
                 force_unsubscribe_all: self.force_unsubscribe_all.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("target_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("force_unsubscribe_all", &self.force_unsubscribe_all);
+            formatter.finish()
         }
     }
 }
@@ -1731,7 +1753,7 @@ impl TagResourceInput {
 pub mod unsubscribe_input {
 
     /// A builder for [`UnsubscribeInput`](crate::input::UnsubscribeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) target_address: std::option::Option<std::string::String>,
@@ -1769,6 +1791,14 @@ pub mod unsubscribe_input {
                 arn: self.arn,
                 target_address: self.target_address,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("target_address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2071,7 +2101,7 @@ impl UntagResourceInput {
 pub mod update_notification_rule_input {
 
     /// A builder for [`UpdateNotificationRuleInput`](crate::input::UpdateNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2180,6 +2210,18 @@ pub mod update_notification_rule_input {
                 targets: self.targets,
                 detail_type: self.detail_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("event_type_ids", &self.event_type_ids);
+            formatter.field("targets", &self.targets);
+            formatter.field("detail_type", &self.detail_type);
+            formatter.finish()
         }
     }
 }
@@ -2359,7 +2401,7 @@ impl std::fmt::Debug for UpdateNotificationRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>
     #[doc(hidden)]
@@ -2376,14 +2418,6 @@ impl UntagResourceInput {
     /// <p>The key names of the tags to remove.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
     }
 }
 
@@ -2419,7 +2453,7 @@ impl std::fmt::Debug for UnsubscribeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>
     #[doc(hidden)]
@@ -2442,18 +2476,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscribeInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
     #[doc(hidden)]
@@ -2479,19 +2505,10 @@ impl SubscribeInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for SubscribeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("target", &self.target);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTargetsInput {
     /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
@@ -2521,19 +2538,10 @@ impl ListTargetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTargetsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the notification rule.</p>
     #[doc(hidden)]
@@ -2545,17 +2553,10 @@ impl ListTagsForResourceInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNotificationRulesInput {
     /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
@@ -2585,19 +2586,10 @@ impl ListNotificationRulesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNotificationRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNotificationRulesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventTypesInput {
     /// <p>The filters to use to return information by service or resource type.</p>
     #[doc(hidden)]
@@ -2623,19 +2615,10 @@ impl ListEventTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEventTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventTypesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     #[doc(hidden)]
@@ -2645,13 +2628,6 @@ impl DescribeNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeNotificationRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNotificationRuleInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 
@@ -2687,7 +2663,7 @@ impl std::fmt::Debug for DeleteTargetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
     #[doc(hidden)]
@@ -2697,13 +2673,6 @@ impl DeleteNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteNotificationRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNotificationRuleInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 

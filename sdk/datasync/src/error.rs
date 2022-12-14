@@ -2,7 +2,7 @@
 
 /// <p>This exception is thrown when the client submits a malformed request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -22,15 +22,6 @@ impl InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn datasync_error_code(&self) -> std::option::Option<&str> {
         self.datasync_error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("datasync_error_code", &self.datasync_error_code);
-        formatter.finish()
     }
 }
 impl InvalidRequestException {
@@ -114,7 +105,7 @@ impl InvalidRequestException {
 
 /// <p>This exception is thrown when an error occurs in the DataSync service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -127,14 +118,6 @@ impl InternalException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalException");
-        formatter.field("message", &self.message);
-        formatter.field("error_code", &self.error_code);
-        formatter.finish()
     }
 }
 impl InternalException {

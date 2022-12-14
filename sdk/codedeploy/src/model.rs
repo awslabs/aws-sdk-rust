@@ -2,7 +2,7 @@
 
 /// <p>Information about an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroup {
     /// <p>The Auto Scaling group name.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl AutoScalingGroup {
     /// <p>An Auto Scaling lifecycle event hook name.</p>
     pub fn hook(&self) -> std::option::Option<&str> {
         self.hook.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroup");
-        formatter.field("name", &self.name);
-        formatter.field("hook", &self.hook);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
@@ -77,7 +69,7 @@ impl AutoScalingGroup {
 
 /// <p>Information about groups of on-premises instance tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnPremisesTagSet {
     /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
     #[doc(hidden)]
@@ -90,13 +82,6 @@ impl OnPremisesTagSet {
         &self,
     ) -> std::option::Option<&[std::vec::Vec<crate::model::TagFilter>]> {
         self.on_premises_tag_set_list.as_deref()
-    }
-}
-impl std::fmt::Debug for OnPremisesTagSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnPremisesTagSet");
-        formatter.field("on_premises_tag_set_list", &self.on_premises_tag_set_list);
-        formatter.finish()
     }
 }
 /// See [`OnPremisesTagSet`](crate::model::OnPremisesTagSet).
@@ -148,7 +133,7 @@ impl OnPremisesTagSet {
 
 /// <p>Information about an on-premises instance tag filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>The on-premises instance tag filter key.</p>
     #[doc(hidden)]
@@ -182,15 +167,6 @@ impl TagFilter {
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TagFilterType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`TagFilter`](crate::model::TagFilter).
@@ -358,7 +334,7 @@ impl AsRef<str> for TagFilterType {
 
 /// <p> Contains the service and cluster names used to identify an Amazon ECS deployment's target. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcsService {
     /// <p> The name of the target Amazon ECS service. </p>
     #[doc(hidden)]
@@ -375,14 +351,6 @@ impl EcsService {
     /// <p> The name of the cluster that the Amazon ECS service is associated with. </p>
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
-    }
-}
-impl std::fmt::Debug for EcsService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcsService");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.finish()
     }
 }
 /// See [`EcsService`](crate::model::EcsService).
@@ -433,7 +401,7 @@ impl EcsService {
 
 /// <p>Information about groups of Amazon EC2 instance tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2TagSet {
     /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
     #[doc(hidden)]
@@ -446,13 +414,6 @@ impl Ec2TagSet {
         &self,
     ) -> std::option::Option<&[std::vec::Vec<crate::model::Ec2TagFilter>]> {
         self.ec2_tag_set_list.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2TagSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2TagSet");
-        formatter.field("ec2_tag_set_list", &self.ec2_tag_set_list);
-        formatter.finish()
     }
 }
 /// See [`Ec2TagSet`](crate::model::Ec2TagSet).
@@ -504,7 +465,7 @@ impl Ec2TagSet {
 
 /// <p>Information about an EC2 tag filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2TagFilter {
     /// <p>The tag filter key.</p>
     #[doc(hidden)]
@@ -538,15 +499,6 @@ impl Ec2TagFilter {
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Ec2TagFilterType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Ec2TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2TagFilter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Ec2TagFilter`](crate::model::Ec2TagFilter).
@@ -717,7 +669,7 @@ impl AsRef<str> for Ec2TagFilterType {
 
 /// <p>Information about the Elastic Load Balancing load balancer or target group used in a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerInfo {
     /// <p>An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note>
     /// <p> Adding more than one load balancer to the array is not supported. </p>
@@ -752,18 +704,6 @@ impl LoadBalancerInfo {
         &self,
     ) -> std::option::Option<&[crate::model::TargetGroupPairInfo]> {
         self.target_group_pair_info_list.as_deref()
-    }
-}
-impl std::fmt::Debug for LoadBalancerInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerInfo");
-        formatter.field("elb_info_list", &self.elb_info_list);
-        formatter.field("target_group_info_list", &self.target_group_info_list);
-        formatter.field(
-            "target_group_pair_info_list",
-            &self.target_group_pair_info_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`LoadBalancerInfo`](crate::model::LoadBalancerInfo).
@@ -866,7 +806,7 @@ impl LoadBalancerInfo {
 
 /// <p> Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroupPairInfo {
     /// <p> One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. </p>
     #[doc(hidden)]
@@ -890,15 +830,6 @@ impl TargetGroupPairInfo {
     /// <p> An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. </p>
     pub fn test_traffic_route(&self) -> std::option::Option<&crate::model::TrafficRoute> {
         self.test_traffic_route.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetGroupPairInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGroupPairInfo");
-        formatter.field("target_groups", &self.target_groups);
-        formatter.field("prod_traffic_route", &self.prod_traffic_route);
-        formatter.field("test_traffic_route", &self.test_traffic_route);
-        formatter.finish()
     }
 }
 /// See [`TargetGroupPairInfo`](crate::model::TargetGroupPairInfo).
@@ -976,7 +907,7 @@ impl TargetGroupPairInfo {
 
 /// <p> Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrafficRoute {
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
     #[doc(hidden)]
@@ -986,13 +917,6 @@ impl TrafficRoute {
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
     pub fn listener_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.listener_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for TrafficRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrafficRoute");
-        formatter.field("listener_arns", &self.listener_arns);
-        formatter.finish()
     }
 }
 /// See [`TrafficRoute`](crate::model::TrafficRoute).
@@ -1040,7 +964,7 @@ impl TrafficRoute {
 
 /// <p>Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetGroupInfo {
     /// <p>For blue/green deployments, the name of the target group that instances in the original environment are deregistered from, and instances in the replacement environment are registered with. For in-place deployments, the name of the target group that instances are deregistered from, so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete. </p>
     #[doc(hidden)]
@@ -1050,13 +974,6 @@ impl TargetGroupInfo {
     /// <p>For blue/green deployments, the name of the target group that instances in the original environment are deregistered from, and instances in the replacement environment are registered with. For in-place deployments, the name of the target group that instances are deregistered from, so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for TargetGroupInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetGroupInfo");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`TargetGroupInfo`](crate::model::TargetGroupInfo).
@@ -1093,7 +1010,7 @@ impl TargetGroupInfo {
 
 /// <p>Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElbInfo {
     /// <p>For blue/green deployments, the name of the load balancer that is used to route traffic from original instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load balancer that instances are deregistered from so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete.</p>
     #[doc(hidden)]
@@ -1103,13 +1020,6 @@ impl ElbInfo {
     /// <p>For blue/green deployments, the name of the load balancer that is used to route traffic from original instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load balancer that instances are deregistered from so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ElbInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElbInfo");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ElbInfo`](crate::model::ElbInfo).
@@ -1146,7 +1056,7 @@ impl ElbInfo {
 
 /// <p>Information about blue/green deployment options for a deployment group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlueGreenDeploymentConfiguration {
     /// <p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>
     #[doc(hidden)]
@@ -1178,21 +1088,6 @@ impl BlueGreenDeploymentConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::GreenFleetProvisioningOption> {
         self.green_fleet_provisioning_option.as_ref()
-    }
-}
-impl std::fmt::Debug for BlueGreenDeploymentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlueGreenDeploymentConfiguration");
-        formatter.field(
-            "terminate_blue_instances_on_deployment_success",
-            &self.terminate_blue_instances_on_deployment_success,
-        );
-        formatter.field("deployment_ready_option", &self.deployment_ready_option);
-        formatter.field(
-            "green_fleet_provisioning_option",
-            &self.green_fleet_provisioning_option,
-        );
-        formatter.finish()
     }
 }
 /// See [`BlueGreenDeploymentConfiguration`](crate::model::BlueGreenDeploymentConfiguration).
@@ -1277,7 +1172,7 @@ impl BlueGreenDeploymentConfiguration {
 
 /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GreenFleetProvisioningOption {
     /// <p>The method used to add instances to a replacement environment.</p>
     /// <ul>
@@ -1295,13 +1190,6 @@ impl GreenFleetProvisioningOption {
     /// </ul>
     pub fn action(&self) -> std::option::Option<&crate::model::GreenFleetProvisioningAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for GreenFleetProvisioningOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GreenFleetProvisioningOption");
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`GreenFleetProvisioningOption`](crate::model::GreenFleetProvisioningOption).
@@ -1443,7 +1331,7 @@ impl AsRef<str> for GreenFleetProvisioningAction {
 
 /// <p>Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentReadyOption {
     /// <p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p>
     /// <ul>
@@ -1468,14 +1356,6 @@ impl DeploymentReadyOption {
     /// <p>The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
     pub fn wait_time_in_minutes(&self) -> i32 {
         self.wait_time_in_minutes
-    }
-}
-impl std::fmt::Debug for DeploymentReadyOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentReadyOption");
-        formatter.field("action_on_timeout", &self.action_on_timeout);
-        formatter.field("wait_time_in_minutes", &self.wait_time_in_minutes);
-        formatter.finish()
     }
 }
 /// See [`DeploymentReadyOption`](crate::model::DeploymentReadyOption).
@@ -1629,7 +1509,7 @@ impl AsRef<str> for DeploymentReadyAction {
 
 /// <p>Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlueInstanceTerminationOption {
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
@@ -1658,17 +1538,6 @@ impl BlueInstanceTerminationOption {
     /// <p> The maximum setting is 2880 minutes (2 days). </p>
     pub fn termination_wait_time_in_minutes(&self) -> i32 {
         self.termination_wait_time_in_minutes
-    }
-}
-impl std::fmt::Debug for BlueInstanceTerminationOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlueInstanceTerminationOption");
-        formatter.field("action", &self.action);
-        formatter.field(
-            "termination_wait_time_in_minutes",
-            &self.termination_wait_time_in_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`BlueInstanceTerminationOption`](crate::model::BlueInstanceTerminationOption).
@@ -1829,7 +1698,7 @@ impl AsRef<str> for InstanceAction {
 
 /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentStyle {
     /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
     #[doc(hidden)]
@@ -1846,14 +1715,6 @@ impl DeploymentStyle {
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
     pub fn deployment_option(&self) -> std::option::Option<&crate::model::DeploymentOption> {
         self.deployment_option.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentStyle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentStyle");
-        formatter.field("deployment_type", &self.deployment_type);
-        formatter.field("deployment_option", &self.deployment_option);
-        formatter.finish()
     }
 }
 /// See [`DeploymentStyle`](crate::model::DeploymentStyle).
@@ -2182,7 +2043,7 @@ impl AsRef<str> for OutdatedInstancesStrategy {
 
 /// <p>Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoRollbackConfiguration {
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
     #[doc(hidden)]
@@ -2199,14 +2060,6 @@ impl AutoRollbackConfiguration {
     /// <p>The event type or types that trigger a rollback.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::AutoRollbackEvent]> {
         self.events.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoRollbackConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoRollbackConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`AutoRollbackConfiguration`](crate::model::AutoRollbackConfiguration).
@@ -2367,7 +2220,7 @@ impl AsRef<str> for AutoRollbackEvent {
 
 /// <p>Information about alarms associated with a deployment or deployment group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmConfiguration {
     /// <p>Indicates whether the alarm configuration is enabled.</p>
     #[doc(hidden)]
@@ -2399,15 +2252,6 @@ impl AlarmConfiguration {
     /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
     pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
         self.alarms.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("ignore_poll_alarm_failure", &self.ignore_poll_alarm_failure);
-        formatter.field("alarms", &self.alarms);
-        formatter.finish()
     }
 }
 /// See [`AlarmConfiguration`](crate::model::AlarmConfiguration).
@@ -2487,7 +2331,7 @@ impl AlarmConfiguration {
 
 /// <p>Information about an alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.</p>
     #[doc(hidden)]
@@ -2497,13 +2341,6 @@ impl Alarm {
     /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Alarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarm");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Alarm`](crate::model::Alarm).
@@ -2540,7 +2377,7 @@ impl Alarm {
 
 /// <p>Information about notification triggers for the deployment group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerConfig {
     /// <p>The name of the notification trigger.</p>
     #[doc(hidden)]
@@ -2564,15 +2401,6 @@ impl TriggerConfig {
     /// <p>The event type or types for which notifications are triggered.</p>
     pub fn trigger_events(&self) -> std::option::Option<&[crate::model::TriggerEventType]> {
         self.trigger_events.as_deref()
-    }
-}
-impl std::fmt::Debug for TriggerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggerConfig");
-        formatter.field("trigger_name", &self.trigger_name);
-        formatter.field("trigger_target_arn", &self.trigger_target_arn);
-        formatter.field("trigger_events", &self.trigger_events);
-        formatter.finish()
     }
 }
 /// See [`TriggerConfig`](crate::model::TriggerConfig).
@@ -2789,7 +2617,7 @@ impl AsRef<str> for TriggerEventType {
 
 /// <p>Information about a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -2806,14 +2634,6 @@ impl Tag {
     /// <p>The tag's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -2954,7 +2774,7 @@ impl AsRef<str> for StopStatus {
 
 /// <p>Information about the location of an application revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionLocation {
     /// <p>The type of application revision:</p>
     /// <ul>
@@ -3004,17 +2824,6 @@ impl RevisionLocation {
     /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
     pub fn app_spec_content(&self) -> std::option::Option<&crate::model::AppSpecContent> {
         self.app_spec_content.as_ref()
-    }
-}
-impl std::fmt::Debug for RevisionLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionLocation");
-        formatter.field("revision_type", &self.revision_type);
-        formatter.field("s3_location", &self.s3_location);
-        formatter.field("git_hub_location", &self.git_hub_location);
-        formatter.field("string", &self.string);
-        formatter.field("app_spec_content", &self.app_spec_content);
-        formatter.finish()
     }
 }
 /// See [`RevisionLocation`](crate::model::RevisionLocation).
@@ -3125,7 +2934,7 @@ impl RevisionLocation {
 
 /// <p> A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppSpecContent {
     /// <p> The YAML-formatted or JSON-formatted revision string. </p>
     /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
@@ -3148,14 +2957,6 @@ impl AppSpecContent {
     /// <p> The SHA256 hash value of the revision content. </p>
     pub fn sha256(&self) -> std::option::Option<&str> {
         self.sha256.as_deref()
-    }
-}
-impl std::fmt::Debug for AppSpecContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppSpecContent");
-        formatter.field("content", &self.content);
-        formatter.field("sha256", &self.sha256);
-        formatter.finish()
     }
 }
 /// See [`AppSpecContent`](crate::model::AppSpecContent).
@@ -3215,7 +3016,7 @@ impl AppSpecContent {
     note = "RawString and String revision type are deprecated, use AppSpecContent type instead."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RawString {
     /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.</p>
     #[doc(hidden)]
@@ -3232,14 +3033,6 @@ impl RawString {
     /// <p>The SHA256 hash value of the revision content.</p>
     pub fn sha256(&self) -> std::option::Option<&str> {
         self.sha256.as_deref()
-    }
-}
-impl std::fmt::Debug for RawString {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RawString");
-        formatter.field("content", &self.content);
-        formatter.field("sha256", &self.sha256);
-        formatter.finish()
     }
 }
 /// See [`RawString`](crate::model::RawString).
@@ -3290,7 +3083,7 @@ impl RawString {
 
 /// <p>Information about the location of application artifacts stored in GitHub.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GitHubLocation {
     /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p>
     /// <p>Specified as account/repository.</p>
@@ -3309,14 +3102,6 @@ impl GitHubLocation {
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.</p>
     pub fn commit_id(&self) -> std::option::Option<&str> {
         self.commit_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GitHubLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GitHubLocation");
-        formatter.field("repository", &self.repository);
-        formatter.field("commit_id", &self.commit_id);
-        formatter.finish()
     }
 }
 /// See [`GitHubLocation`](crate::model::GitHubLocation).
@@ -3369,7 +3154,7 @@ impl GitHubLocation {
 
 /// <p>Information about the location of application artifacts stored in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the Amazon S3 bucket where the application revision is stored.</p>
     #[doc(hidden)]
@@ -3421,17 +3206,6 @@ impl S3Location {
     /// <p>If the ETag is not specified as an input parameter, ETag validation of the object is skipped.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("bundle_type", &self.bundle_type);
-        formatter.field("version", &self.version);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -4043,7 +3817,7 @@ impl AsRef<str> for TargetFilterName {
 
 /// <p>Information about a time range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>The start time of the time range.</p> <note>
     /// <p>Specify null to leave the start time open-ended.</p>
@@ -4068,14 +3842,6 @@ impl TimeRange {
     /// </note>
     pub fn end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeRange");
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.finish()
     }
 }
 /// See [`TimeRange`](crate::model::TimeRange).
@@ -4761,7 +4527,7 @@ impl AsRef<str> for ApplicationRevisionSortBy {
 
 /// <p>Information about an on-premises instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceInfo {
     /// <p>The name of the on-premises instance.</p>
     #[doc(hidden)]
@@ -4813,19 +4579,6 @@ impl InstanceInfo {
     /// <p>The tags currently associated with the on-premises instance.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceInfo");
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("iam_session_arn", &self.iam_session_arn);
-        formatter.field("iam_user_arn", &self.iam_user_arn);
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("register_time", &self.register_time);
-        formatter.field("deregister_time", &self.deregister_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`InstanceInfo`](crate::model::InstanceInfo).
@@ -4957,7 +4710,7 @@ impl InstanceInfo {
 
 /// <p> Information about the deployment target. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentTarget {
     /// <p>The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.</p>
     #[doc(hidden)]
@@ -4999,17 +4752,6 @@ impl DeploymentTarget {
         &self,
     ) -> std::option::Option<&crate::model::CloudFormationTarget> {
         self.cloud_formation_target.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentTarget");
-        formatter.field("deployment_target_type", &self.deployment_target_type);
-        formatter.field("instance_target", &self.instance_target);
-        formatter.field("lambda_target", &self.lambda_target);
-        formatter.field("ecs_target", &self.ecs_target);
-        formatter.field("cloud_formation_target", &self.cloud_formation_target);
-        formatter.finish()
     }
 }
 /// See [`DeploymentTarget`](crate::model::DeploymentTarget).
@@ -5111,7 +4853,7 @@ impl DeploymentTarget {
 
 /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFormationTarget {
     /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
     #[doc(hidden)]
@@ -5163,19 +4905,6 @@ impl CloudFormationTarget {
     /// <p>The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.</p>
     pub fn target_version_weight(&self) -> f64 {
         self.target_version_weight
-    }
-}
-impl std::fmt::Debug for CloudFormationTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFormationTarget");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("lifecycle_events", &self.lifecycle_events);
-        formatter.field("status", &self.status);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("target_version_weight", &self.target_version_weight);
-        formatter.finish()
     }
 }
 /// See [`CloudFormationTarget`](crate::model::CloudFormationTarget).
@@ -5431,7 +5160,7 @@ impl AsRef<str> for TargetStatus {
 
 /// <p>Information about a deployment lifecycle event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleEvent {
     /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
     #[doc(hidden)]
@@ -5485,17 +5214,6 @@ impl LifecycleEvent {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::LifecycleEventStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for LifecycleEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleEvent");
-        formatter.field("lifecycle_event_name", &self.lifecycle_event_name);
-        formatter.field("diagnostics", &self.diagnostics);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`LifecycleEvent`](crate::model::LifecycleEvent).
@@ -5613,7 +5331,7 @@ impl LifecycleEvent {
 
 /// <p>Diagnostic information about executable scripts that are part of a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Diagnostics {
     /// <p>The associated error code:</p>
     /// <ul>
@@ -5662,16 +5380,6 @@ impl Diagnostics {
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
     pub fn log_tail(&self) -> std::option::Option<&str> {
         self.log_tail.as_deref()
-    }
-}
-impl std::fmt::Debug for Diagnostics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Diagnostics");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("script_name", &self.script_name);
-        formatter.field("message", &self.message);
-        formatter.field("log_tail", &self.log_tail);
-        formatter.finish()
     }
 }
 /// See [`Diagnostics`](crate::model::Diagnostics).
@@ -5886,7 +5594,7 @@ impl AsRef<str> for LifecycleErrorCode {
 
 /// <p> Information about the target of an Amazon ECS deployment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcsTarget {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -5938,19 +5646,6 @@ impl EcsTarget {
     /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
     pub fn task_sets_info(&self) -> std::option::Option<&[crate::model::EcsTaskSet]> {
         self.task_sets_info.as_deref()
-    }
-}
-impl std::fmt::Debug for EcsTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcsTarget");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("lifecycle_events", &self.lifecycle_events);
-        formatter.field("status", &self.status);
-        formatter.field("task_sets_info", &self.task_sets_info);
-        formatter.finish()
     }
 }
 /// See [`EcsTarget`](crate::model::EcsTarget).
@@ -6089,7 +5784,7 @@ impl EcsTarget {
 
 /// <p> Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcsTaskSet {
     /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
     #[doc(hidden)]
@@ -6158,20 +5853,6 @@ impl EcsTaskSet {
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
     pub fn task_set_label(&self) -> std::option::Option<&crate::model::TargetLabel> {
         self.task_set_label.as_ref()
-    }
-}
-impl std::fmt::Debug for EcsTaskSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcsTaskSet");
-        formatter.field("identifer", &self.identifer);
-        formatter.field("desired_count", &self.desired_count);
-        formatter.field("pending_count", &self.pending_count);
-        formatter.field("running_count", &self.running_count);
-        formatter.field("status", &self.status);
-        formatter.field("traffic_weight", &self.traffic_weight);
-        formatter.field("target_group", &self.target_group);
-        formatter.field("task_set_label", &self.task_set_label);
-        formatter.finish()
     }
 }
 /// See [`EcsTaskSet`](crate::model::EcsTaskSet).
@@ -6400,7 +6081,7 @@ impl AsRef<str> for TargetLabel {
 
 /// <p> Information about the target Lambda function during an Lambda deployment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaTarget {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -6452,19 +6133,6 @@ impl LambdaTarget {
     /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. </p>
     pub fn lambda_function_info(&self) -> std::option::Option<&crate::model::LambdaFunctionInfo> {
         self.lambda_function_info.as_ref()
-    }
-}
-impl std::fmt::Debug for LambdaTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaTarget");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("lifecycle_events", &self.lifecycle_events);
-        formatter.field("lambda_function_info", &self.lambda_function_info);
-        formatter.finish()
     }
 }
 /// See [`LambdaTarget`](crate::model::LambdaTarget).
@@ -6597,7 +6265,7 @@ impl LambdaTarget {
 
 /// <p> Information about a Lambda function specified in a deployment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionInfo {
     /// <p> The name of a Lambda function. </p>
     #[doc(hidden)]
@@ -6635,17 +6303,6 @@ impl LambdaFunctionInfo {
     /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
     pub fn target_version_weight(&self) -> f64 {
         self.target_version_weight
-    }
-}
-impl std::fmt::Debug for LambdaFunctionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionInfo");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("function_alias", &self.function_alias);
-        formatter.field("current_version", &self.current_version);
-        formatter.field("target_version", &self.target_version);
-        formatter.field("target_version_weight", &self.target_version_weight);
-        formatter.finish()
     }
 }
 /// See [`LambdaFunctionInfo`](crate::model::LambdaFunctionInfo).
@@ -6744,7 +6401,7 @@ impl LambdaFunctionInfo {
 
 /// <p> A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceTarget {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -6796,19 +6453,6 @@ impl InstanceTarget {
     /// <p> A label that identifies whether the instance is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
     pub fn instance_label(&self) -> std::option::Option<&crate::model::TargetLabel> {
         self.instance_label.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceTarget");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("lifecycle_events", &self.lifecycle_events);
-        formatter.field("instance_label", &self.instance_label);
-        formatter.finish()
     }
 }
 /// See [`InstanceTarget`](crate::model::InstanceTarget).
@@ -7049,7 +6693,7 @@ impl AsRef<str> for DeploymentTargetType {
 /// <p>Information about an instance in a deployment.</p>
 #[deprecated(note = "InstanceSummary is deprecated, use DeploymentTarget instead.")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -7118,18 +6762,6 @@ impl InstanceSummary {
     /// </ul>
     pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
         self.instance_type.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceSummary");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("status", &self.status);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("lifecycle_events", &self.lifecycle_events);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.finish()
     }
 }
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
@@ -7274,7 +6906,7 @@ impl InstanceSummary {
 
 /// <p>Information about a deployment group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentGroupInfo {
     /// <p>The application name.</p>
     #[doc(hidden)]
@@ -7457,49 +7089,6 @@ impl DeploymentGroupInfo {
     /// </clustername></code>. </p>
     pub fn ecs_services(&self) -> std::option::Option<&[crate::model::EcsService]> {
         self.ecs_services.as_deref()
-    }
-}
-impl std::fmt::Debug for DeploymentGroupInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentGroupInfo");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_group_id", &self.deployment_group_id);
-        formatter.field("deployment_group_name", &self.deployment_group_name);
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.field("ec2_tag_filters", &self.ec2_tag_filters);
-        formatter.field(
-            "on_premises_instance_tag_filters",
-            &self.on_premises_instance_tag_filters,
-        );
-        formatter.field("auto_scaling_groups", &self.auto_scaling_groups);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field("target_revision", &self.target_revision);
-        formatter.field("trigger_configurations", &self.trigger_configurations);
-        formatter.field("alarm_configuration", &self.alarm_configuration);
-        formatter.field(
-            "auto_rollback_configuration",
-            &self.auto_rollback_configuration,
-        );
-        formatter.field("deployment_style", &self.deployment_style);
-        formatter.field(
-            "outdated_instances_strategy",
-            &self.outdated_instances_strategy,
-        );
-        formatter.field(
-            "blue_green_deployment_configuration",
-            &self.blue_green_deployment_configuration,
-        );
-        formatter.field("load_balancer_info", &self.load_balancer_info);
-        formatter.field(
-            "last_successful_deployment",
-            &self.last_successful_deployment,
-        );
-        formatter.field("last_attempted_deployment", &self.last_attempted_deployment);
-        formatter.field("ec2_tag_set", &self.ec2_tag_set);
-        formatter.field("on_premises_tag_set", &self.on_premises_tag_set);
-        formatter.field("compute_platform", &self.compute_platform);
-        formatter.field("ecs_services", &self.ecs_services);
-        formatter.finish()
     }
 }
 /// See [`DeploymentGroupInfo`](crate::model::DeploymentGroupInfo).
@@ -8015,7 +7604,7 @@ impl AsRef<str> for ComputePlatform {
 
 /// <p>Information about the most recent attempted or successful deployment to a deployment group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LastDeploymentInfo {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -8046,16 +7635,6 @@ impl LastDeploymentInfo {
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group started.</p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
-    }
-}
-impl std::fmt::Debug for LastDeploymentInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastDeploymentInfo");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("status", &self.status);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("create_time", &self.create_time);
-        formatter.finish()
     }
 }
 /// See [`LastDeploymentInfo`](crate::model::LastDeploymentInfo).
@@ -8142,7 +7721,7 @@ impl LastDeploymentInfo {
 
 /// <p>Information about a deployment configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentConfigInfo {
     /// <p>The deployment configuration ID.</p>
     #[doc(hidden)]
@@ -8189,18 +7768,6 @@ impl DeploymentConfigInfo {
         &self,
     ) -> std::option::Option<&crate::model::TrafficRoutingConfig> {
         self.traffic_routing_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentConfigInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentConfigInfo");
-        formatter.field("deployment_config_id", &self.deployment_config_id);
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.field("minimum_healthy_hosts", &self.minimum_healthy_hosts);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("compute_platform", &self.compute_platform);
-        formatter.field("traffic_routing_config", &self.traffic_routing_config);
-        formatter.finish()
     }
 }
 /// See [`DeploymentConfigInfo`](crate::model::DeploymentConfigInfo).
@@ -8317,7 +7884,7 @@ impl DeploymentConfigInfo {
 
 /// <p>The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrafficRoutingConfig {
     /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
     #[doc(hidden)]
@@ -8341,15 +7908,6 @@ impl TrafficRoutingConfig {
     /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
     pub fn time_based_linear(&self) -> std::option::Option<&crate::model::TimeBasedLinear> {
         self.time_based_linear.as_ref()
-    }
-}
-impl std::fmt::Debug for TrafficRoutingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrafficRoutingConfig");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("time_based_canary", &self.time_based_canary);
-        formatter.field("time_based_linear", &self.time_based_linear);
-        formatter.finish()
     }
 }
 /// See [`TrafficRoutingConfig`](crate::model::TrafficRoutingConfig).
@@ -8421,7 +7979,7 @@ impl TrafficRoutingConfig {
 
 /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeBasedLinear {
     /// <p>The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.</p>
     #[doc(hidden)]
@@ -8438,14 +7996,6 @@ impl TimeBasedLinear {
     /// <p>The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.</p>
     pub fn linear_interval(&self) -> i32 {
         self.linear_interval
-    }
-}
-impl std::fmt::Debug for TimeBasedLinear {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeBasedLinear");
-        formatter.field("linear_percentage", &self.linear_percentage);
-        formatter.field("linear_interval", &self.linear_interval);
-        formatter.finish()
     }
 }
 /// See [`TimeBasedLinear`](crate::model::TimeBasedLinear).
@@ -8496,7 +8046,7 @@ impl TimeBasedLinear {
 
 /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeBasedCanary {
     /// <p>The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code> deployment.</p>
     #[doc(hidden)]
@@ -8513,14 +8063,6 @@ impl TimeBasedCanary {
     /// <p>The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment.</p>
     pub fn canary_interval(&self) -> i32 {
         self.canary_interval
-    }
-}
-impl std::fmt::Debug for TimeBasedCanary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeBasedCanary");
-        formatter.field("canary_percentage", &self.canary_percentage);
-        formatter.field("canary_interval", &self.canary_interval);
-        formatter.finish()
     }
 }
 /// See [`TimeBasedCanary`](crate::model::TimeBasedCanary).
@@ -8668,7 +8210,7 @@ impl AsRef<str> for TrafficRoutingType {
 
 /// <p>Information about minimum healthy instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MinimumHealthyHosts {
     /// <p>The minimum healthy instance type:</p>
     /// <ul>
@@ -8701,14 +8243,6 @@ impl MinimumHealthyHosts {
     /// <p>The minimum healthy instance value.</p>
     pub fn value(&self) -> i32 {
         self.value
-    }
-}
-impl std::fmt::Debug for MinimumHealthyHosts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MinimumHealthyHosts");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MinimumHealthyHosts`](crate::model::MinimumHealthyHosts).
@@ -8870,7 +8404,7 @@ impl AsRef<str> for MinimumHealthyHostsType {
 
 /// <p>Information about a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentInfo {
     /// <p>The application name.</p>
     #[doc(hidden)]
@@ -9120,66 +8654,6 @@ impl DeploymentInfo {
         &self,
     ) -> std::option::Option<&crate::model::AlarmConfiguration> {
         self.override_alarm_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for DeploymentInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentInfo");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_group_name", &self.deployment_group_name);
-        formatter.field("deployment_config_name", &self.deployment_config_name);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("previous_revision", &self.previous_revision);
-        formatter.field("revision", &self.revision);
-        formatter.field("status", &self.status);
-        formatter.field("error_information", &self.error_information);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("complete_time", &self.complete_time);
-        formatter.field("deployment_overview", &self.deployment_overview);
-        formatter.field("description", &self.description);
-        formatter.field("creator", &self.creator);
-        formatter.field(
-            "ignore_application_stop_failures",
-            &self.ignore_application_stop_failures,
-        );
-        formatter.field(
-            "auto_rollback_configuration",
-            &self.auto_rollback_configuration,
-        );
-        formatter.field(
-            "update_outdated_instances_only",
-            &self.update_outdated_instances_only,
-        );
-        formatter.field("rollback_info", &self.rollback_info);
-        formatter.field("deployment_style", &self.deployment_style);
-        formatter.field("target_instances", &self.target_instances);
-        formatter.field(
-            "instance_termination_wait_time_started",
-            &self.instance_termination_wait_time_started,
-        );
-        formatter.field(
-            "blue_green_deployment_configuration",
-            &self.blue_green_deployment_configuration,
-        );
-        formatter.field("load_balancer_info", &self.load_balancer_info);
-        formatter.field(
-            "additional_deployment_status_info",
-            &self.additional_deployment_status_info,
-        );
-        formatter.field("file_exists_behavior", &self.file_exists_behavior);
-        formatter.field(
-            "deployment_status_messages",
-            &self.deployment_status_messages,
-        );
-        formatter.field("compute_platform", &self.compute_platform);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("related_deployments", &self.related_deployments);
-        formatter.field(
-            "override_alarm_configuration",
-            &self.override_alarm_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeploymentInfo`](crate::model::DeploymentInfo).
@@ -9708,7 +9182,7 @@ impl DeploymentInfo {
 
 /// <p>Information about deployments related to the specified deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelatedDeployments {
     /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
     #[doc(hidden)]
@@ -9730,20 +9204,6 @@ impl RelatedDeployments {
     ) -> std::option::Option<&[std::string::String]> {
         self.auto_update_outdated_instances_deployment_ids
             .as_deref()
-    }
-}
-impl std::fmt::Debug for RelatedDeployments {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelatedDeployments");
-        formatter.field(
-            "auto_update_outdated_instances_root_deployment_id",
-            &self.auto_update_outdated_instances_root_deployment_id,
-        );
-        formatter.field(
-            "auto_update_outdated_instances_deployment_ids",
-            &self.auto_update_outdated_instances_deployment_ids,
-        );
-        formatter.finish()
     }
 }
 /// See [`RelatedDeployments`](crate::model::RelatedDeployments).
@@ -9915,7 +9375,7 @@ impl AsRef<str> for FileExistsBehavior {
 
 /// <p>Information about the instances to be used in the replacement environment in a blue/green deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetInstances {
     /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>.</p>
     #[doc(hidden)]
@@ -9939,15 +9399,6 @@ impl TargetInstances {
     /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
     pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
         self.ec2_tag_set.as_ref()
-    }
-}
-impl std::fmt::Debug for TargetInstances {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetInstances");
-        formatter.field("tag_filters", &self.tag_filters);
-        formatter.field("auto_scaling_groups", &self.auto_scaling_groups);
-        formatter.field("ec2_tag_set", &self.ec2_tag_set);
-        formatter.finish()
     }
 }
 /// See [`TargetInstances`](crate::model::TargetInstances).
@@ -10031,7 +9482,7 @@ impl TargetInstances {
 
 /// <p>Information about a deployment rollback.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackInfo {
     /// <p>The ID of the deployment rollback.</p>
     #[doc(hidden)]
@@ -10055,18 +9506,6 @@ impl RollbackInfo {
     /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
     pub fn rollback_message(&self) -> std::option::Option<&str> {
         self.rollback_message.as_deref()
-    }
-}
-impl std::fmt::Debug for RollbackInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackInfo");
-        formatter.field("rollback_deployment_id", &self.rollback_deployment_id);
-        formatter.field(
-            "rollback_triggering_deployment_id",
-            &self.rollback_triggering_deployment_id,
-        );
-        formatter.field("rollback_message", &self.rollback_message);
-        formatter.finish()
     }
 }
 /// See [`RollbackInfo`](crate::model::RollbackInfo).
@@ -10266,7 +9705,7 @@ impl AsRef<str> for DeploymentCreator {
 
 /// <p>Information about the deployment status of the instances in the deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeploymentOverview {
     /// <p>The number of instances in the deployment in a pending state.</p>
     #[doc(hidden)]
@@ -10311,18 +9750,6 @@ impl DeploymentOverview {
     /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
     pub fn ready(&self) -> i64 {
         self.ready
-    }
-}
-impl std::fmt::Debug for DeploymentOverview {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeploymentOverview");
-        formatter.field("pending", &self.pending);
-        formatter.field("in_progress", &self.in_progress);
-        formatter.field("succeeded", &self.succeeded);
-        formatter.field("failed", &self.failed);
-        formatter.field("skipped", &self.skipped);
-        formatter.field("ready", &self.ready);
-        formatter.finish()
     }
 }
 /// See [`DeploymentOverview`](crate::model::DeploymentOverview).
@@ -10421,7 +9848,7 @@ impl DeploymentOverview {
 
 /// <p>Information about a deployment error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorInformation {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.</p>
     /// <p>The error code:</p>
@@ -10470,14 +9897,6 @@ impl ErrorInformation {
     /// <p>An accompanying error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorInformation");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ErrorInformation`](crate::model::ErrorInformation).
@@ -10849,7 +10268,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>Information about an application revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenericRevisionInfo {
     /// <p>A comment about the revision.</p>
     #[doc(hidden)]
@@ -10887,17 +10306,6 @@ impl GenericRevisionInfo {
     /// <p>When the revision was registered with CodeDeploy.</p>
     pub fn register_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.register_time.as_ref()
-    }
-}
-impl std::fmt::Debug for GenericRevisionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenericRevisionInfo");
-        formatter.field("description", &self.description);
-        formatter.field("deployment_groups", &self.deployment_groups);
-        formatter.field("first_used_time", &self.first_used_time);
-        formatter.field("last_used_time", &self.last_used_time);
-        formatter.field("register_time", &self.register_time);
-        formatter.finish()
     }
 }
 /// See [`GenericRevisionInfo`](crate::model::GenericRevisionInfo).
@@ -11002,7 +10410,7 @@ impl GenericRevisionInfo {
 
 /// <p>Information about an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationInfo {
     /// <p>The application ID.</p>
     #[doc(hidden)]
@@ -11047,18 +10455,6 @@ impl ApplicationInfo {
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
     pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
         self.compute_platform.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationInfo");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("linked_to_git_hub", &self.linked_to_git_hub);
-        formatter.field("git_hub_account_name", &self.git_hub_account_name);
-        formatter.field("compute_platform", &self.compute_platform);
-        formatter.finish()
     }
 }
 /// See [`ApplicationInfo`](crate::model::ApplicationInfo).
@@ -11264,7 +10660,7 @@ impl AsRef<str> for DeploymentWaitType {
 
 /// <p>Information about an application revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionInfo {
     /// <p>Information about the location and type of an application revision.</p>
     #[doc(hidden)]
@@ -11281,14 +10677,6 @@ impl RevisionInfo {
     /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
     pub fn generic_revision_info(&self) -> std::option::Option<&crate::model::GenericRevisionInfo> {
         self.generic_revision_info.as_ref()
-    }
-}
-impl std::fmt::Debug for RevisionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionInfo");
-        formatter.field("revision_location", &self.revision_location);
-        formatter.field("generic_revision_info", &self.generic_revision_info);
-        formatter.finish()
     }
 }
 /// See [`RevisionInfo`](crate::model::RevisionInfo).

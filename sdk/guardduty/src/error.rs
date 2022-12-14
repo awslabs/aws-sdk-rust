@@ -2,7 +2,7 @@
 
 /// <p>An internal server error exception object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerErrorException {
     /// <p>The error message.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl InternalServerErrorException {
     /// <p>The error type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorException");
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 impl InternalServerErrorException {
@@ -91,7 +83,7 @@ impl InternalServerErrorException {
 
 /// <p>A bad request exception object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     /// <p>The error message.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl BadRequestException {
     /// <p>The error type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 impl BadRequestException {

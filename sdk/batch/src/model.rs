@@ -2,7 +2,7 @@
 
 /// <p>The fair share policy for a scheduling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FairsharePolicy {
     /// <p>The time period to use to calculate a fair share percentage for each fair share identifier in use, in seconds. A value of zero (0) indicates that only current usage should be measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
     #[doc(hidden)]
@@ -32,15 +32,6 @@ impl FairsharePolicy {
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
     pub fn share_distribution(&self) -> std::option::Option<&[crate::model::ShareAttributes]> {
         self.share_distribution.as_deref()
-    }
-}
-impl std::fmt::Debug for FairsharePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FairsharePolicy");
-        formatter.field("share_decay_seconds", &self.share_decay_seconds);
-        formatter.field("compute_reservation", &self.compute_reservation);
-        formatter.field("share_distribution", &self.share_distribution);
-        formatter.finish()
     }
 }
 /// See [`FairsharePolicy`](crate::model::FairsharePolicy).
@@ -119,7 +110,7 @@ impl FairsharePolicy {
 
 /// <p>Specifies the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShareAttributes {
     /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
     /// <p>There can be no more than 500 fair share identifiers active in a job queue.</p>
@@ -142,14 +133,6 @@ impl ShareAttributes {
     /// <p>The smallest supported value is 0.0001, and the largest supported value is 999.9999.</p>
     pub fn weight_factor(&self) -> std::option::Option<f32> {
         self.weight_factor
-    }
-}
-impl std::fmt::Debug for ShareAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShareAttributes");
-        formatter.field("share_identifier", &self.share_identifier);
-        formatter.field("weight_factor", &self.weight_factor);
-        formatter.finish()
     }
 }
 /// See [`ShareAttributes`](crate::model::ShareAttributes).
@@ -211,7 +194,7 @@ impl ShareAttributes {
 /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeEnvironmentOrder {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
     #[doc(hidden)]
@@ -228,14 +211,6 @@ impl ComputeEnvironmentOrder {
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub fn compute_environment(&self) -> std::option::Option<&str> {
         self.compute_environment.as_deref()
-    }
-}
-impl std::fmt::Debug for ComputeEnvironmentOrder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeEnvironmentOrder");
-        formatter.field("order", &self.order);
-        formatter.field("compute_environment", &self.compute_environment);
-        formatter.finish()
     }
 }
 /// See [`ComputeEnvironmentOrder`](crate::model::ComputeEnvironmentOrder).
@@ -379,7 +354,7 @@ impl AsRef<str> for JqState {
 
 /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/infrastructure-updates.html">Infrastructure updates</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
     #[doc(hidden)]
@@ -396,17 +371,6 @@ impl UpdatePolicy {
     /// <p>Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value is 30.</p>
     pub fn job_execution_timeout_minutes(&self) -> i64 {
         self.job_execution_timeout_minutes
-    }
-}
-impl std::fmt::Debug for UpdatePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePolicy");
-        formatter.field("terminate_jobs_on_update", &self.terminate_jobs_on_update);
-        formatter.field(
-            "job_execution_timeout_minutes",
-            &self.job_execution_timeout_minutes,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdatePolicy`](crate::model::UpdatePolicy).
@@ -462,7 +426,7 @@ impl UpdatePolicy {
 
 /// <p>An object representing the attributes of a compute environment that can be updated. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeResourceUpdate {
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
@@ -724,32 +688,6 @@ impl ComputeResourceUpdate {
     /// </note>
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ComputeResourceUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeResourceUpdate");
-        formatter.field("minv_cpus", &self.minv_cpus);
-        formatter.field("maxv_cpus", &self.maxv_cpus);
-        formatter.field("desiredv_cpus", &self.desiredv_cpus);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("allocation_strategy", &self.allocation_strategy);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("ec2_key_pair", &self.ec2_key_pair);
-        formatter.field("instance_role", &self.instance_role);
-        formatter.field("tags", &self.tags);
-        formatter.field("placement_group", &self.placement_group);
-        formatter.field("bid_percentage", &self.bid_percentage);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("ec2_configuration", &self.ec2_configuration);
-        formatter.field(
-            "update_to_latest_image_version",
-            &self.update_to_latest_image_version,
-        );
-        formatter.field("r#type", &self.r#type);
-        formatter.field("image_id", &self.image_id);
-        formatter.finish()
     }
 }
 /// See [`ComputeResourceUpdate`](crate::model::ComputeResourceUpdate).
@@ -1287,7 +1225,7 @@ impl AsRef<str> for CrType {
 /// <p>This object isn't applicable to jobs that are running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2Configuration {
     /// <p>The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon ECS optimized AMI for that image type that's supported by Batch is used.</p>
     /// <dl>
@@ -1348,14 +1286,6 @@ impl Ec2Configuration {
     /// </note>
     pub fn image_id_override(&self) -> std::option::Option<&str> {
         self.image_id_override.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2Configuration");
-        formatter.field("image_type", &self.image_type);
-        formatter.field("image_id_override", &self.image_id_override);
-        formatter.finish()
     }
 }
 /// See [`Ec2Configuration`](crate::model::Ec2Configuration).
@@ -1456,7 +1386,7 @@ impl Ec2Configuration {
 /// <p>This object isn't applicable to jobs that are running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateSpecification {
     /// <p>The ID of the launch template.</p>
     #[doc(hidden)]
@@ -1488,15 +1418,6 @@ impl LaunchTemplateSpecification {
     /// <p>Default: <code>$Default</code>.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchTemplateSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateSpecification");
-        formatter.field("launch_template_id", &self.launch_template_id);
-        formatter.field("launch_template_name", &self.launch_template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
@@ -1755,7 +1676,7 @@ impl AsRef<str> for CeState {
 
 /// <p>An object representing a job timeout configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobTimeout {
     /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
     #[doc(hidden)]
@@ -1765,13 +1686,6 @@ impl JobTimeout {
     /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
     pub fn attempt_duration_seconds(&self) -> std::option::Option<i32> {
         self.attempt_duration_seconds
-    }
-}
-impl std::fmt::Debug for JobTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobTimeout");
-        formatter.field("attempt_duration_seconds", &self.attempt_duration_seconds);
-        formatter.finish()
     }
 }
 /// See [`JobTimeout`](crate::model::JobTimeout).
@@ -1810,7 +1724,7 @@ impl JobTimeout {
 
 /// <p>The retry strategy associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
     #[doc(hidden)]
@@ -1827,14 +1741,6 @@ impl RetryStrategy {
     /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
     pub fn evaluate_on_exit(&self) -> std::option::Option<&[crate::model::EvaluateOnExit]> {
         self.evaluate_on_exit.as_deref()
-    }
-}
-impl std::fmt::Debug for RetryStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryStrategy");
-        formatter.field("attempts", &self.attempts);
-        formatter.field("evaluate_on_exit", &self.evaluate_on_exit);
-        formatter.finish()
     }
 }
 /// See [`RetryStrategy`](crate::model::RetryStrategy).
@@ -1895,7 +1801,7 @@ impl RetryStrategy {
 
 /// <p>Specifies a set of conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluateOnExit {
     /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
     /// <p>The string can be between 1 and 512 characters in length.</p>
@@ -1932,16 +1838,6 @@ impl EvaluateOnExit {
     /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>, <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::RetryAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for EvaluateOnExit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluateOnExit");
-        formatter.field("on_status_reason", &self.on_status_reason);
-        formatter.field("on_reason", &self.on_reason);
-        formatter.field("on_exit_code", &self.on_exit_code);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`EvaluateOnExit`](crate::model::EvaluateOnExit).
@@ -2117,7 +2013,7 @@ impl AsRef<str> for RetryAction {
 /// <p>This isn't applicable to jobs that are running on Fargate resources and shouldn't be provided; use <code>containerOverrides</code> instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeOverrides {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override:</p>
     /// <ul>
@@ -2147,14 +2043,6 @@ impl NodeOverrides {
         &self,
     ) -> std::option::Option<&[crate::model::NodePropertyOverride]> {
         self.node_property_overrides.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeOverrides");
-        formatter.field("num_nodes", &self.num_nodes);
-        formatter.field("node_property_overrides", &self.node_property_overrides);
-        formatter.finish()
     }
 }
 /// See [`NodeOverrides`](crate::model::NodeOverrides).
@@ -2228,7 +2116,7 @@ impl NodeOverrides {
 
 /// <p>Object representing any node overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodePropertyOverride {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
     #[doc(hidden)]
@@ -2245,14 +2133,6 @@ impl NodePropertyOverride {
     /// <p>The overrides that should be sent to a node range.</p>
     pub fn container_overrides(&self) -> std::option::Option<&crate::model::ContainerOverrides> {
         self.container_overrides.as_ref()
-    }
-}
-impl std::fmt::Debug for NodePropertyOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodePropertyOverride");
-        formatter.field("target_nodes", &self.target_nodes);
-        formatter.field("container_overrides", &self.container_overrides);
-        formatter.finish()
     }
 }
 /// See [`NodePropertyOverride`](crate::model::NodePropertyOverride).
@@ -2306,7 +2186,7 @@ impl NodePropertyOverride {
 
 /// <p>The overrides that should be sent to a container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerOverrides {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
@@ -2366,18 +2246,6 @@ impl ContainerOverrides {
         &self,
     ) -> std::option::Option<&[crate::model::ResourceRequirement]> {
         self.resource_requirements.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerOverrides");
-        formatter.field("vcpus", &self.vcpus);
-        formatter.field("memory", &self.memory);
-        formatter.field("command", &self.command);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("environment", &self.environment);
-        formatter.field("resource_requirements", &self.resource_requirements);
-        formatter.finish()
     }
 }
 /// See [`ContainerOverrides`](crate::model::ContainerOverrides).
@@ -2519,7 +2387,7 @@ impl ContainerOverrides {
 
 /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceRequirement {
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
     /// <dl>
@@ -2764,14 +2632,6 @@ impl ResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceRequirement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceRequirement");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ResourceRequirement`](crate::model::ResourceRequirement).
@@ -3145,7 +3005,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>A key-value pair object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyValuePair {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     #[doc(hidden)]
@@ -3162,14 +3022,6 @@ impl KeyValuePair {
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyValuePair");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`KeyValuePair`](crate::model::KeyValuePair).
@@ -3220,7 +3072,7 @@ impl KeyValuePair {
 
 /// <p>An object representing an Batch job dependency.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDependency {
     /// <p>The job ID of the Batch job associated with this dependency.</p>
     #[doc(hidden)]
@@ -3237,14 +3089,6 @@ impl JobDependency {
     /// <p>The type of the job dependency.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ArrayJobDependency> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for JobDependency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobDependency");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`JobDependency`](crate::model::JobDependency).
@@ -3390,7 +3234,7 @@ impl AsRef<str> for ArrayJobDependency {
 
 /// <p>An object representing an Batch array job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArrayProperties {
     /// <p>The size of the array job.</p>
     #[doc(hidden)]
@@ -3400,13 +3244,6 @@ impl ArrayProperties {
     /// <p>The size of the array job.</p>
     pub fn size(&self) -> std::option::Option<i32> {
         self.size
-    }
-}
-impl std::fmt::Debug for ArrayProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArrayProperties");
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`ArrayProperties`](crate::model::ArrayProperties).
@@ -3535,7 +3372,7 @@ impl AsRef<str> for PlatformCapability {
 
 /// <p>An object representing the node properties of a multi-node parallel job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeProperties {
     /// <p>The number of nodes associated with a multi-node parallel job.</p>
     #[doc(hidden)]
@@ -3559,15 +3396,6 @@ impl NodeProperties {
     /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
     pub fn node_range_properties(&self) -> std::option::Option<&[crate::model::NodeRangeProperty]> {
         self.node_range_properties.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeProperties");
-        formatter.field("num_nodes", &self.num_nodes);
-        formatter.field("main_node", &self.main_node);
-        formatter.field("node_range_properties", &self.node_range_properties);
-        formatter.finish()
     }
 }
 /// See [`NodeProperties`](crate::model::NodeProperties).
@@ -3640,7 +3468,7 @@ impl NodeProperties {
 
 /// <p>An object representing the properties of the node range for a multi-node parallel job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeRangeProperty {
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
     #[doc(hidden)]
@@ -3657,14 +3485,6 @@ impl NodeRangeProperty {
     /// <p>The container details for the node range.</p>
     pub fn container(&self) -> std::option::Option<&crate::model::ContainerProperties> {
         self.container.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeRangeProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeRangeProperty");
-        formatter.field("target_nodes", &self.target_nodes);
-        formatter.field("container", &self.container);
-        formatter.finish()
     }
 }
 /// See [`NodeRangeProperty`](crate::model::NodeRangeProperty).
@@ -3718,7 +3538,7 @@ impl NodeRangeProperty {
 
 /// <p>Container properties are used in job definitions to describe the container that's launched as part of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerProperties {
     /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
@@ -3933,35 +3753,6 @@ impl ContainerProperties {
         &self,
     ) -> std::option::Option<&crate::model::FargatePlatformConfiguration> {
         self.fargate_platform_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerProperties");
-        formatter.field("image", &self.image);
-        formatter.field("vcpus", &self.vcpus);
-        formatter.field("memory", &self.memory);
-        formatter.field("command", &self.command);
-        formatter.field("job_role_arn", &self.job_role_arn);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("volumes", &self.volumes);
-        formatter.field("environment", &self.environment);
-        formatter.field("mount_points", &self.mount_points);
-        formatter.field("readonly_root_filesystem", &self.readonly_root_filesystem);
-        formatter.field("privileged", &self.privileged);
-        formatter.field("ulimits", &self.ulimits);
-        formatter.field("user", &self.user);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("resource_requirements", &self.resource_requirements);
-        formatter.field("linux_parameters", &self.linux_parameters);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.field("secrets", &self.secrets);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field(
-            "fargate_platform_configuration",
-            &self.fargate_platform_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ContainerProperties`](crate::model::ContainerProperties).
@@ -4378,7 +4169,7 @@ impl ContainerProperties {
 
 /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that run on EC2 resources must not specify this parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FargatePlatformConfiguration {
     /// <p>The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by default. This uses a recent, approved version of the Fargate platform for compute resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -4388,13 +4179,6 @@ impl FargatePlatformConfiguration {
     /// <p>The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by default. This uses a recent, approved version of the Fargate platform for compute resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(&self) -> std::option::Option<&str> {
         self.platform_version.as_deref()
-    }
-}
-impl std::fmt::Debug for FargatePlatformConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FargatePlatformConfiguration");
-        formatter.field("platform_version", &self.platform_version);
-        formatter.finish()
     }
 }
 /// See [`FargatePlatformConfiguration`](crate::model::FargatePlatformConfiguration).
@@ -4436,7 +4220,7 @@ impl FargatePlatformConfiguration {
 
 /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The default value is "DISABLED".</p>
     #[doc(hidden)]
@@ -4446,13 +4230,6 @@ impl NetworkConfiguration {
     /// <p>Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The default value is "DISABLED".</p>
     pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
         self.assign_public_ip.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkConfiguration");
-        formatter.field("assign_public_ip", &self.assign_public_ip);
-        formatter.finish()
     }
 }
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
@@ -4589,7 +4366,7 @@ impl AsRef<str> for AssignPublicIp {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Secret {
     /// <p>The name of the secret.</p>
     #[doc(hidden)]
@@ -4610,14 +4387,6 @@ impl Secret {
     /// </note>
     pub fn value_from(&self) -> std::option::Option<&str> {
         self.value_from.as_deref()
-    }
-}
-impl std::fmt::Debug for Secret {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Secret");
-        formatter.field("name", &self.name);
-        formatter.field("value_from", &self.value_from);
-        formatter.finish()
     }
 }
 /// See [`Secret`](crate::model::Secret).
@@ -4672,7 +4441,7 @@ impl Secret {
 
 /// <p>Log configuration options to send to a custom log driver for the container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogConfiguration {
     /// <p>The log driver to use for the container. The valid values listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
     /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p> <note>
@@ -4800,15 +4569,6 @@ impl LogConfiguration {
     /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Batch User Guide</i>.</p>
     pub fn secret_options(&self) -> std::option::Option<&[crate::model::Secret]> {
         self.secret_options.as_deref()
-    }
-}
-impl std::fmt::Debug for LogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogConfiguration");
-        formatter.field("log_driver", &self.log_driver);
-        formatter.field("options", &self.options);
-        formatter.field("secret_options", &self.secret_options);
-        formatter.finish()
     }
 }
 /// See [`LogConfiguration`](crate::model::LogConfiguration).
@@ -5123,7 +4883,7 @@ impl AsRef<str> for LogDriver {
 
 /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinuxParameters {
     /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
@@ -5206,18 +4966,6 @@ impl LinuxParameters {
     /// </note>
     pub fn swappiness(&self) -> std::option::Option<i32> {
         self.swappiness
-    }
-}
-impl std::fmt::Debug for LinuxParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinuxParameters");
-        formatter.field("devices", &self.devices);
-        formatter.field("init_process_enabled", &self.init_process_enabled);
-        formatter.field("shared_memory_size", &self.shared_memory_size);
-        formatter.field("tmpfs", &self.tmpfs);
-        formatter.field("max_swap", &self.max_swap);
-        formatter.field("swappiness", &self.swappiness);
-        formatter.finish()
     }
 }
 /// See [`LinuxParameters`](crate::model::LinuxParameters).
@@ -5374,7 +5122,7 @@ impl LinuxParameters {
 /// <p>This object isn't applicable to jobs that are running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tmpfs {
     /// <p>The absolute file path in the container where the tmpfs volume is mounted.</p>
     #[doc(hidden)]
@@ -5400,15 +5148,6 @@ impl Tmpfs {
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
     pub fn mount_options(&self) -> std::option::Option<&[std::string::String]> {
         self.mount_options.as_deref()
-    }
-}
-impl std::fmt::Debug for Tmpfs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tmpfs");
-        formatter.field("container_path", &self.container_path);
-        formatter.field("size", &self.size);
-        formatter.field("mount_options", &self.mount_options);
-        formatter.finish()
     }
 }
 /// See [`Tmpfs`](crate::model::Tmpfs).
@@ -5487,7 +5226,7 @@ impl Tmpfs {
 /// <p>This object isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Device {
     /// <p>The path for the device on the host container instance.</p>
     #[doc(hidden)]
@@ -5511,15 +5250,6 @@ impl Device {
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::DeviceCgroupPermission]> {
         self.permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for Device {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Device");
-        formatter.field("host_path", &self.host_path);
-        formatter.field("container_path", &self.container_path);
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 /// See [`Device`](crate::model::Device).
@@ -5694,7 +5424,7 @@ impl AsRef<str> for DeviceCgroupPermission {
 /// <p>This object isn't applicable to jobs that are running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ulimit {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     #[doc(hidden)]
@@ -5718,15 +5448,6 @@ impl Ulimit {
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn soft_limit(&self) -> std::option::Option<i32> {
         self.soft_limit
-    }
-}
-impl std::fmt::Debug for Ulimit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ulimit");
-        formatter.field("hard_limit", &self.hard_limit);
-        formatter.field("name", &self.name);
-        formatter.field("soft_limit", &self.soft_limit);
-        formatter.finish()
     }
 }
 /// See [`Ulimit`](crate::model::Ulimit).
@@ -5789,7 +5510,7 @@ impl Ulimit {
 
 /// <p>Details on a Docker volume mount point that's used in a job's container properties. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create a container</a> section of the Docker Remote API and the <code>--volume</code> option to docker run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MountPoint {
     /// <p>The path on the container where the host volume is mounted.</p>
     #[doc(hidden)]
@@ -5813,15 +5534,6 @@ impl MountPoint {
     /// <p>The name of the volume to mount.</p>
     pub fn source_volume(&self) -> std::option::Option<&str> {
         self.source_volume.as_deref()
-    }
-}
-impl std::fmt::Debug for MountPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MountPoint");
-        formatter.field("container_path", &self.container_path);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("source_volume", &self.source_volume);
-        formatter.finish()
     }
 }
 /// See [`MountPoint`](crate::model::MountPoint).
@@ -5890,7 +5602,7 @@ impl MountPoint {
 
 /// <p>A data volume used in a job's container properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Volume {
     /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
@@ -5920,15 +5632,6 @@ impl Volume {
         &self,
     ) -> std::option::Option<&crate::model::EfsVolumeConfiguration> {
         self.efs_volume_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Volume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Volume");
-        formatter.field("host", &self.host);
-        formatter.field("name", &self.name);
-        formatter.field("efs_volume_configuration", &self.efs_volume_configuration);
-        formatter.finish()
     }
 }
 /// See [`Volume`](crate::model::Volume).
@@ -6002,7 +5705,7 @@ impl Volume {
 
 /// <p>This is used when you're using an Amazon Elastic File System file system for job storage. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
     #[doc(hidden)]
@@ -6046,17 +5749,6 @@ impl EfsVolumeConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::EfsAuthorizationConfig> {
         self.authorization_config.as_ref()
-    }
-}
-impl std::fmt::Debug for EfsVolumeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsVolumeConfiguration");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("root_directory", &self.root_directory);
-        formatter.field("transit_encryption", &self.transit_encryption);
-        formatter.field("transit_encryption_port", &self.transit_encryption_port);
-        formatter.field("authorization_config", &self.authorization_config);
-        formatter.finish()
     }
 }
 /// See [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration).
@@ -6159,7 +5851,7 @@ impl EfsVolumeConfiguration {
 
 /// <p>The authorization configuration details for the Amazon EFS file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EfsAuthorizationConfig {
     /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     #[doc(hidden)]
@@ -6176,14 +5868,6 @@ impl EfsAuthorizationConfig {
     /// <p>Whether or not to use the Batch job IAM role defined in a job definition when mounting the Amazon EFS file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Batch User Guide</i>. EFS IAM authorization requires that <code>TransitEncryption</code> be <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
     pub fn iam(&self) -> std::option::Option<&crate::model::EfsAuthorizationConfigIam> {
         self.iam.as_ref()
-    }
-}
-impl std::fmt::Debug for EfsAuthorizationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EfsAuthorizationConfig");
-        formatter.field("access_point_id", &self.access_point_id);
-        formatter.field("iam", &self.iam);
-        formatter.finish()
     }
 }
 /// See [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig).
@@ -6424,7 +6108,7 @@ impl AsRef<str> for EfsTransitEncryption {
 
 /// <p>Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data isn't guaranteed to persist after the containers associated with it stop running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Host {
     /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
@@ -6438,13 +6122,6 @@ impl Host {
     /// </note>
     pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
-    }
-}
-impl std::fmt::Debug for Host {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Host");
-        formatter.field("source_path", &self.source_path);
-        formatter.finish()
     }
 }
 /// See [`Host`](crate::model::Host).
@@ -6579,7 +6256,7 @@ impl AsRef<str> for JobDefinitionType {
 
 /// <p>An object that contains the details of a scheduling policy that's returned in a <code>ListSchedulingPolicy</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchedulingPolicyListingDetail {
     /// <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
     #[doc(hidden)]
@@ -6589,13 +6266,6 @@ impl SchedulingPolicyListingDetail {
     /// <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SchedulingPolicyListingDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchedulingPolicyListingDetail");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`SchedulingPolicyListingDetail`](crate::model::SchedulingPolicyListingDetail).
@@ -6632,7 +6302,7 @@ impl SchedulingPolicyListingDetail {
 
 /// <p>An object representing summary details of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     #[doc(hidden)]
@@ -6723,24 +6393,6 @@ impl JobSummary {
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
     pub fn job_definition(&self) -> std::option::Option<&str> {
         self.job_definition.as_deref()
-    }
-}
-impl std::fmt::Debug for JobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobSummary");
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("stopped_at", &self.stopped_at);
-        formatter.field("container", &self.container);
-        formatter.field("array_properties", &self.array_properties);
-        formatter.field("node_properties", &self.node_properties);
-        formatter.field("job_definition", &self.job_definition);
-        formatter.finish()
     }
 }
 /// See [`JobSummary`](crate::model::JobSummary).
@@ -6930,7 +6582,7 @@ impl JobSummary {
 
 /// <p>An object representing the properties of a node that's associated with a multi-node parallel job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodePropertiesSummary {
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
     #[doc(hidden)]
@@ -6954,15 +6606,6 @@ impl NodePropertiesSummary {
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
     pub fn node_index(&self) -> std::option::Option<i32> {
         self.node_index
-    }
-}
-impl std::fmt::Debug for NodePropertiesSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodePropertiesSummary");
-        formatter.field("is_main_node", &self.is_main_node);
-        formatter.field("num_nodes", &self.num_nodes);
-        formatter.field("node_index", &self.node_index);
-        formatter.finish()
     }
 }
 /// See [`NodePropertiesSummary`](crate::model::NodePropertiesSummary).
@@ -7025,7 +6668,7 @@ impl NodePropertiesSummary {
 
 /// <p>An object representing the array properties of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArrayPropertiesSummary {
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
     #[doc(hidden)]
@@ -7042,14 +6685,6 @@ impl ArrayPropertiesSummary {
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
     pub fn index(&self) -> std::option::Option<i32> {
         self.index
-    }
-}
-impl std::fmt::Debug for ArrayPropertiesSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArrayPropertiesSummary");
-        formatter.field("size", &self.size);
-        formatter.field("index", &self.index);
-        formatter.finish()
     }
 }
 /// See [`ArrayPropertiesSummary`](crate::model::ArrayPropertiesSummary).
@@ -7100,7 +6735,7 @@ impl ArrayPropertiesSummary {
 
 /// <p>An object representing summary details of a container within a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerSummary {
     /// <p>The exit code to return upon completion.</p>
     #[doc(hidden)]
@@ -7117,14 +6752,6 @@ impl ContainerSummary {
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ContainerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerSummary");
-        formatter.field("exit_code", &self.exit_code);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`ContainerSummary`](crate::model::ContainerSummary).
@@ -7298,7 +6925,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p>A filter name and value pair that's used to return a more specific list of results from a <code>ListJobs</code> API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyValuesPair {
     /// <p>The name of the filter. Filter names are case sensitive.</p>
     #[doc(hidden)]
@@ -7315,14 +6942,6 @@ impl KeyValuesPair {
     /// <p>The filter values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyValuesPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyValuesPair");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`KeyValuesPair`](crate::model::KeyValuesPair).
@@ -7382,7 +7001,7 @@ impl KeyValuesPair {
 
 /// <p>An object that represents a scheduling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchedulingPolicyDetail {
     /// <p>The name of the scheduling policy.</p>
     #[doc(hidden)]
@@ -7417,16 +7036,6 @@ impl SchedulingPolicyDetail {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SchedulingPolicyDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchedulingPolicyDetail");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("fairshare_policy", &self.fairshare_policy);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SchedulingPolicyDetail`](crate::model::SchedulingPolicyDetail).
@@ -7521,7 +7130,7 @@ impl SchedulingPolicyDetail {
 
 /// <p>An object representing an Batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDetail {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     #[doc(hidden)]
@@ -7710,36 +7319,6 @@ impl JobDetail {
         &self,
     ) -> std::option::Option<&[crate::model::PlatformCapability]> {
         self.platform_capabilities.as_deref()
-    }
-}
-impl std::fmt::Debug for JobDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobDetail");
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_queue", &self.job_queue);
-        formatter.field("status", &self.status);
-        formatter.field("share_identifier", &self.share_identifier);
-        formatter.field("scheduling_priority", &self.scheduling_priority);
-        formatter.field("attempts", &self.attempts);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("retry_strategy", &self.retry_strategy);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("stopped_at", &self.stopped_at);
-        formatter.field("depends_on", &self.depends_on);
-        formatter.field("job_definition", &self.job_definition);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("container", &self.container);
-        formatter.field("node_details", &self.node_details);
-        formatter.field("node_properties", &self.node_properties);
-        formatter.field("array_properties", &self.array_properties);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("tags", &self.tags);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("platform_capabilities", &self.platform_capabilities);
-        formatter.finish()
     }
 }
 /// See [`JobDetail`](crate::model::JobDetail).
@@ -8148,7 +7727,7 @@ impl JobDetail {
 
 /// <p>An object representing the array properties of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArrayPropertiesDetail {
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
     #[doc(hidden)]
@@ -8174,15 +7753,6 @@ impl ArrayPropertiesDetail {
     /// <p>The job index within the array that's associated with this job. This parameter is returned for array job children.</p>
     pub fn index(&self) -> std::option::Option<i32> {
         self.index
-    }
-}
-impl std::fmt::Debug for ArrayPropertiesDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArrayPropertiesDetail");
-        formatter.field("status_summary", &self.status_summary);
-        formatter.field("size", &self.size);
-        formatter.field("index", &self.index);
-        formatter.finish()
     }
 }
 /// See [`ArrayPropertiesDetail`](crate::model::ArrayPropertiesDetail).
@@ -8255,7 +7825,7 @@ impl ArrayPropertiesDetail {
 
 /// <p>An object representing the details of a multi-node parallel job node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeDetails {
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
     #[doc(hidden)]
@@ -8272,14 +7842,6 @@ impl NodeDetails {
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
     pub fn is_main_node(&self) -> std::option::Option<bool> {
         self.is_main_node
-    }
-}
-impl std::fmt::Debug for NodeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeDetails");
-        formatter.field("node_index", &self.node_index);
-        formatter.field("is_main_node", &self.is_main_node);
-        formatter.finish()
     }
 }
 /// See [`NodeDetails`](crate::model::NodeDetails).
@@ -8330,7 +7892,7 @@ impl NodeDetails {
 
 /// <p>An object representing the details of a container that's part of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerDetail {
     /// <p>The image used to start the container.</p>
     #[doc(hidden)]
@@ -8555,41 +8117,6 @@ impl ContainerDetail {
         &self,
     ) -> std::option::Option<&crate::model::FargatePlatformConfiguration> {
         self.fargate_platform_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ContainerDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerDetail");
-        formatter.field("image", &self.image);
-        formatter.field("vcpus", &self.vcpus);
-        formatter.field("memory", &self.memory);
-        formatter.field("command", &self.command);
-        formatter.field("job_role_arn", &self.job_role_arn);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("volumes", &self.volumes);
-        formatter.field("environment", &self.environment);
-        formatter.field("mount_points", &self.mount_points);
-        formatter.field("readonly_root_filesystem", &self.readonly_root_filesystem);
-        formatter.field("ulimits", &self.ulimits);
-        formatter.field("privileged", &self.privileged);
-        formatter.field("user", &self.user);
-        formatter.field("exit_code", &self.exit_code);
-        formatter.field("reason", &self.reason);
-        formatter.field("container_instance_arn", &self.container_instance_arn);
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.field("resource_requirements", &self.resource_requirements);
-        formatter.field("linux_parameters", &self.linux_parameters);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.field("secrets", &self.secrets);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field(
-            "fargate_platform_configuration",
-            &self.fargate_platform_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ContainerDetail`](crate::model::ContainerDetail).
@@ -9062,7 +8589,7 @@ impl ContainerDetail {
 
 /// <p>An object representing the elastic network interface for a multi-node parallel job node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The attachment ID for the network interface.</p>
     #[doc(hidden)]
@@ -9086,15 +8613,6 @@ impl NetworkInterface {
     /// <p>The private IPv4 address for the network interface.</p>
     pub fn private_ipv4_address(&self) -> std::option::Option<&str> {
         self.private_ipv4_address.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("ipv6_address", &self.ipv6_address);
-        formatter.field("private_ipv4_address", &self.private_ipv4_address);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -9163,7 +8681,7 @@ impl NetworkInterface {
 
 /// <p>An object representing a job attempt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttemptDetail {
     /// <p>Details about the container in this job attempt.</p>
     #[doc(hidden)]
@@ -9194,16 +8712,6 @@ impl AttemptDetail {
     /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for AttemptDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttemptDetail");
-        formatter.field("container", &self.container);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("stopped_at", &self.stopped_at);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`AttemptDetail`](crate::model::AttemptDetail).
@@ -9284,7 +8792,7 @@ impl AttemptDetail {
 
 /// <p>An object representing the details of a container that's part of a job attempt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttemptContainerDetail {
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that hosts the job attempt.</p>
     #[doc(hidden)]
@@ -9329,18 +8837,6 @@ impl AttemptContainerDetail {
     /// <p>The network interfaces associated with the job attempt.</p>
     pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
-    }
-}
-impl std::fmt::Debug for AttemptContainerDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttemptContainerDetail");
-        formatter.field("container_instance_arn", &self.container_instance_arn);
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("exit_code", &self.exit_code);
-        formatter.field("reason", &self.reason);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.finish()
     }
 }
 /// See [`AttemptContainerDetail`](crate::model::AttemptContainerDetail).
@@ -9455,7 +8951,7 @@ impl AttemptContainerDetail {
 
 /// <p>An object representing the details of an Batch job queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobQueueDetail {
     /// <p>The name of the job queue.</p>
     #[doc(hidden)]
@@ -9528,21 +9024,6 @@ impl JobQueueDetail {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for JobQueueDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobQueueDetail");
-        formatter.field("job_queue_name", &self.job_queue_name);
-        formatter.field("job_queue_arn", &self.job_queue_arn);
-        formatter.field("state", &self.state);
-        formatter.field("scheduling_policy_arn", &self.scheduling_policy_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("priority", &self.priority);
-        formatter.field("compute_environment_order", &self.compute_environment_order);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`JobQueueDetail`](crate::model::JobQueueDetail).
@@ -9831,7 +9312,7 @@ impl AsRef<str> for JqStatus {
 
 /// <p>An object representing an Batch job definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobDefinition {
     /// <p>The name of the job definition.</p>
     #[doc(hidden)]
@@ -9946,26 +9427,6 @@ impl JobDefinition {
         &self,
     ) -> std::option::Option<&[crate::model::PlatformCapability]> {
         self.platform_capabilities.as_deref()
-    }
-}
-impl std::fmt::Debug for JobDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobDefinition");
-        formatter.field("job_definition_name", &self.job_definition_name);
-        formatter.field("job_definition_arn", &self.job_definition_arn);
-        formatter.field("revision", &self.revision);
-        formatter.field("status", &self.status);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("scheduling_priority", &self.scheduling_priority);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("retry_strategy", &self.retry_strategy);
-        formatter.field("container_properties", &self.container_properties);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("node_properties", &self.node_properties);
-        formatter.field("tags", &self.tags);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("platform_capabilities", &self.platform_capabilities);
-        formatter.finish()
     }
 }
 /// See [`JobDefinition`](crate::model::JobDefinition).
@@ -10223,7 +9684,7 @@ impl JobDefinition {
 
 /// <p>An object representing an Batch compute environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeEnvironmentDetail {
     /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
@@ -10318,24 +9779,6 @@ impl ComputeEnvironmentDetail {
     /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn update_policy(&self) -> std::option::Option<&crate::model::UpdatePolicy> {
         self.update_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for ComputeEnvironmentDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeEnvironmentDetail");
-        formatter.field("compute_environment_name", &self.compute_environment_name);
-        formatter.field("compute_environment_arn", &self.compute_environment_arn);
-        formatter.field("unmanagedv_cpus", &self.unmanagedv_cpus);
-        formatter.field("ecs_cluster_arn", &self.ecs_cluster_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("compute_resources", &self.compute_resources);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("update_policy", &self.update_policy);
-        formatter.finish()
     }
 }
 /// See [`ComputeEnvironmentDetail`](crate::model::ComputeEnvironmentDetail).
@@ -10545,7 +9988,7 @@ impl ComputeEnvironmentDetail {
 
 /// <p>An object representing an Batch compute resource. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeResource {
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
@@ -10799,29 +10242,6 @@ impl ComputeResource {
     /// </note>
     pub fn ec2_configuration(&self) -> std::option::Option<&[crate::model::Ec2Configuration]> {
         self.ec2_configuration.as_deref()
-    }
-}
-impl std::fmt::Debug for ComputeResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeResource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("allocation_strategy", &self.allocation_strategy);
-        formatter.field("minv_cpus", &self.minv_cpus);
-        formatter.field("maxv_cpus", &self.maxv_cpus);
-        formatter.field("desiredv_cpus", &self.desiredv_cpus);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("ec2_key_pair", &self.ec2_key_pair);
-        formatter.field("instance_role", &self.instance_role);
-        formatter.field("tags", &self.tags);
-        formatter.field("placement_group", &self.placement_group);
-        formatter.field("bid_percentage", &self.bid_percentage);
-        formatter.field("spot_iam_fleet_role", &self.spot_iam_fleet_role);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("ec2_configuration", &self.ec2_configuration);
-        formatter.finish()
     }
 }
 /// See [`ComputeResource`](crate::model::ComputeResource).

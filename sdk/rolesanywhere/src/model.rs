@@ -2,7 +2,7 @@
 
 /// <p>The state of the trust anchor after a read or write operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustAnchorDetail {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
@@ -54,19 +54,6 @@ impl TrustAnchorDetail {
     /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for TrustAnchorDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustAnchorDetail");
-        formatter.field("trust_anchor_id", &self.trust_anchor_id);
-        formatter.field("trust_anchor_arn", &self.trust_anchor_arn);
-        formatter.field("name", &self.name);
-        formatter.field("source", &self.source);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
@@ -189,7 +176,7 @@ impl TrustAnchorDetail {
 
 /// <p>The trust anchor type and its related certificate data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// <p>The type of the trust anchor. </p>
     #[doc(hidden)]
@@ -206,14 +193,6 @@ impl Source {
     /// <p>The data field of the trust anchor depending on its type. </p>
     pub fn source_data(&self) -> std::option::Option<&crate::model::SourceData> {
         self.source_data.as_ref()
-    }
-}
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("source_data", &self.source_data);
-        formatter.finish()
     }
 }
 /// See [`Source`](crate::model::Source).
@@ -451,7 +430,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -485,6 +464,14 @@ pub mod tag {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key", &"*** Sensitive Data Redacted ***");
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -495,7 +482,7 @@ impl Tag {
 
 /// <p>A summary representation of Subject resources returned in read operations; primarily ListSubjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubjectSummary {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -547,19 +534,6 @@ impl SubjectSummary {
     /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for SubjectSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubjectSummary");
-        formatter.field("subject_arn", &self.subject_arn);
-        formatter.field("subject_id", &self.subject_id);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("x509_subject", &self.x509_subject);
-        formatter.field("last_seen_at", &self.last_seen_at);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`SubjectSummary`](crate::model::SubjectSummary).
@@ -679,7 +653,7 @@ impl SubjectSummary {
 
 /// <p>The state of the subject after a read or write operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubjectDetail {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -745,21 +719,6 @@ impl SubjectDetail {
     /// <p>The specified instance properties associated with the request.</p>
     pub fn instance_properties(&self) -> std::option::Option<&[crate::model::InstanceProperty]> {
         self.instance_properties.as_deref()
-    }
-}
-impl std::fmt::Debug for SubjectDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubjectDetail");
-        formatter.field("subject_arn", &self.subject_arn);
-        formatter.field("subject_id", &self.subject_id);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("x509_subject", &self.x509_subject);
-        formatter.field("last_seen_at", &self.last_seen_at);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("credentials", &self.credentials);
-        formatter.field("instance_properties", &self.instance_properties);
-        formatter.finish()
     }
 }
 /// See [`SubjectDetail`](crate::model::SubjectDetail).
@@ -922,7 +881,7 @@ impl SubjectDetail {
 
 /// <p>A key-value pair you set that identifies a property of the authenticating instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceProperty {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
     #[doc(hidden)]
@@ -950,15 +909,6 @@ impl InstanceProperty {
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
     pub fn failed(&self) -> std::option::Option<bool> {
         self.failed
-    }
-}
-impl std::fmt::Debug for InstanceProperty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceProperty");
-        formatter.field("seen_at", &self.seen_at);
-        formatter.field("properties", &self.properties);
-        formatter.field("failed", &self.failed);
-        formatter.finish()
     }
 }
 /// See [`InstanceProperty`](crate::model::InstanceProperty).
@@ -1041,7 +991,7 @@ impl InstanceProperty {
 
 /// <p>A record of a presented X509 credential to <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CredentialSummary {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
     #[doc(hidden)]
@@ -1086,18 +1036,6 @@ impl CredentialSummary {
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
     pub fn failed(&self) -> std::option::Option<bool> {
         self.failed
-    }
-}
-impl std::fmt::Debug for CredentialSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CredentialSummary");
-        formatter.field("seen_at", &self.seen_at);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("x509_certificate_data", &self.x509_certificate_data);
-        formatter.field("failed", &self.failed);
-        formatter.finish()
     }
 }
 /// See [`CredentialSummary`](crate::model::CredentialSummary).
@@ -1205,7 +1143,7 @@ impl CredentialSummary {
 
 /// <p>The state of the profile after a read or write operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProfileDetail {
     /// <p>The unique identifier of the profile.</p>
     #[doc(hidden)]
@@ -1292,27 +1230,6 @@ impl ProfileDetail {
     /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
         self.duration_seconds
-    }
-}
-impl std::fmt::Debug for ProfileDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProfileDetail");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("profile_arn", &self.profile_arn);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "require_instance_properties",
-            &self.require_instance_properties,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("session_policy", &self.session_policy);
-        formatter.field("role_arns", &self.role_arns);
-        formatter.field("managed_policy_arns", &self.managed_policy_arns);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
     }
 }
 /// See [`ProfileDetail`](crate::model::ProfileDetail).
@@ -1510,7 +1427,7 @@ impl ProfileDetail {
 
 /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrlDetail {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
@@ -1569,20 +1486,6 @@ impl CrlDetail {
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for CrlDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrlDetail");
-        formatter.field("crl_id", &self.crl_id);
-        formatter.field("crl_arn", &self.crl_arn);
-        formatter.field("name", &self.name);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("crl_data", &self.crl_data);
-        formatter.field("trust_anchor_arn", &self.trust_anchor_arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`CrlDetail`](crate::model::CrlDetail).

@@ -6043,7 +6043,7 @@ impl UpdateSchemaInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSchemaInput {
     /// <p>The ID of the client token.</p>
     #[doc(hidden)]
@@ -6090,22 +6090,10 @@ impl UpdateSchemaInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSchemaInput");
-        formatter.field("client_token_id", &self.client_token_id);
-        formatter.field("content", &self.content);
-        formatter.field("description", &self.description);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates the registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRegistryInput {
     /// <p>The description of the registry to update.</p>
     #[doc(hidden)]
@@ -6124,18 +6112,10 @@ impl UpdateRegistryInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRegistryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRegistryInput");
-        formatter.field("description", &self.description);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDiscovererInput {
     /// <p>The description of the discoverer to update.</p>
     #[doc(hidden)]
@@ -6161,19 +6141,10 @@ impl UpdateDiscovererInput {
         self.cross_account
     }
 }
-impl std::fmt::Debug for UpdateDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDiscovererInput");
-        formatter.field("description", &self.description);
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.field("cross_account", &self.cross_account);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -6192,18 +6163,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -6226,18 +6189,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
@@ -6249,17 +6204,10 @@ impl StopDiscovererInput {
         self.discoverer_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDiscovererInput");
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
@@ -6271,17 +6219,10 @@ impl StartDiscovererInput {
         self.discoverer_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDiscovererInput");
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchSchemasInput {
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
     #[doc(hidden)]
@@ -6314,20 +6255,10 @@ impl SearchSchemasInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for SearchSchemasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchSchemasInput");
-        formatter.field("keywords", &self.keywords);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The name of the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The resource-based policy.</p>
     #[doc(hidden)]
@@ -6353,19 +6284,10 @@ impl PutResourcePolicyInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("policy", &self.policy);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutCodeBindingInput {
     /// <p>The language of the code binding.</p>
     #[doc(hidden)]
@@ -6398,20 +6320,10 @@ impl PutCodeBindingInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for PutCodeBindingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutCodeBindingInput");
-        formatter.field("language", &self.language);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -6423,17 +6335,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSchemaVersionsInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -6466,20 +6371,10 @@ impl ListSchemaVersionsInput {
         self.schema_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListSchemaVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSchemaVersionsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSchemasInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -6512,20 +6407,10 @@ impl ListSchemasInput {
         self.schema_name_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for ListSchemasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSchemasInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name_prefix", &self.schema_name_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegistriesInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -6558,20 +6443,10 @@ impl ListRegistriesInput {
         self.scope.as_deref()
     }
 }
-impl std::fmt::Debug for ListRegistriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegistriesInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("registry_name_prefix", &self.registry_name_prefix);
-        formatter.field("scope", &self.scope);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDiscoverersInput {
     /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
     #[doc(hidden)]
@@ -6604,20 +6479,10 @@ impl ListDiscoverersInput {
         self.source_arn_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for ListDiscoverersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDiscoverersInput");
-        formatter.field("discoverer_id_prefix", &self.discoverer_id_prefix);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("source_arn_prefix", &self.source_arn_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6629,17 +6494,10 @@ impl GetResourcePolicyInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePolicyInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDiscoveredSchemaInput {
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
     #[doc(hidden)]
@@ -6658,18 +6516,10 @@ impl GetDiscoveredSchemaInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for GetDiscoveredSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDiscoveredSchemaInput");
-        formatter.field("events", &self.events);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCodeBindingSourceInput {
     /// <p>The language of the code binding.</p>
     #[doc(hidden)]
@@ -6702,20 +6552,10 @@ impl GetCodeBindingSourceInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetCodeBindingSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCodeBindingSourceInput");
-        formatter.field("language", &self.language);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSchemaInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6748,20 +6588,10 @@ impl ExportSchemaInput {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for ExportSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSchemaInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSchemaInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6787,19 +6617,10 @@ impl DescribeSchemaInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSchemaInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRegistryInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6811,17 +6632,10 @@ impl DescribeRegistryInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRegistryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRegistryInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
@@ -6833,17 +6647,10 @@ impl DescribeDiscovererInput {
         self.discoverer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDiscovererInput");
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCodeBindingInput {
     /// <p>The language of the code binding.</p>
     #[doc(hidden)]
@@ -6876,20 +6683,10 @@ impl DescribeCodeBindingInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCodeBindingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCodeBindingInput");
-        formatter.field("language", &self.language);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSchemaVersionInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6915,19 +6712,10 @@ impl DeleteSchemaVersionInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSchemaVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSchemaVersionInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSchemaInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6946,18 +6734,10 @@ impl DeleteSchemaInput {
         self.schema_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSchemaInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6969,17 +6749,10 @@ impl DeleteResourcePolicyInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRegistryInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6991,17 +6764,10 @@ impl DeleteRegistryInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRegistryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRegistryInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
@@ -7013,17 +6779,10 @@ impl DeleteDiscovererInput {
         self.discoverer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDiscovererInput");
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSchemaInput {
     /// <p>The source of the schema definition.</p>
     #[doc(hidden)]
@@ -7074,22 +6833,10 @@ impl CreateSchemaInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSchemaInput");
-        formatter.field("content", &self.content);
-        formatter.field("description", &self.description);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRegistryInput {
     /// <p>A description of the registry to be created.</p>
     #[doc(hidden)]
@@ -7119,19 +6866,10 @@ impl CreateRegistryInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRegistryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRegistryInput");
-        formatter.field("description", &self.description);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDiscovererInput {
     /// <p>A description for the discoverer.</p>
     #[doc(hidden)]
@@ -7166,15 +6904,5 @@ impl CreateDiscovererInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDiscovererInput");
-        formatter.field("description", &self.description);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("cross_account", &self.cross_account);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

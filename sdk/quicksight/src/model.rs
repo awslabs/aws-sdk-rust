@@ -139,7 +139,7 @@ impl AsRef<str> for ExceptionResourceType {
 
 /// <p>A registered user of Amazon QuickSight. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>The Amazon Resource Name (ARN) for the user.</p>
     #[doc(hidden)]
@@ -241,29 +241,6 @@ impl User {
     /// <p>The identity ID for the user in the external login provider.</p>
     pub fn external_login_id(&self) -> std::option::Option<&str> {
         self.external_login_id.as_deref()
-    }
-}
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("arn", &self.arn);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("email", &self.email);
-        formatter.field("role", &self.role);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("active", &self.active);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("custom_permissions_name", &self.custom_permissions_name);
-        formatter.field(
-            "external_login_federation_provider_type",
-            &self.external_login_federation_provider_type,
-        );
-        formatter.field(
-            "external_login_federation_provider_url",
-            &self.external_login_federation_provider_url,
-        );
-        formatter.field("external_login_id", &self.external_login_id);
-        formatter.finish()
     }
 }
 /// See [`User`](crate::model::User).
@@ -668,7 +645,7 @@ impl AsRef<str> for UserRole {
 
 /// <p>Permission for the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePermission {
     /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
     /// <ul>
@@ -695,14 +672,6 @@ impl ResourcePermission {
     /// <p>The IAM action to grant or revoke permissions on.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourcePermission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePermission");
-        formatter.field("principal", &self.principal);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }
 /// See [`ResourcePermission`](crate::model::ResourcePermission).
@@ -772,7 +741,7 @@ impl ResourcePermission {
 
 /// <p>An alias for a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeAlias {
     /// <p>The Amazon Resource Name (ARN) of the theme alias.</p>
     #[doc(hidden)]
@@ -796,15 +765,6 @@ impl ThemeAlias {
     /// <p>The version number of the theme alias.</p>
     pub fn theme_version_number(&self) -> std::option::Option<i64> {
         self.theme_version_number
-    }
-}
-impl std::fmt::Debug for ThemeAlias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeAlias");
-        formatter.field("arn", &self.arn);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("theme_version_number", &self.theme_version_number);
-        formatter.finish()
     }
 }
 /// See [`ThemeAlias`](crate::model::ThemeAlias).
@@ -990,7 +950,7 @@ impl AsRef<str> for ResourceStatus {
 
 /// <p>The theme configuration. This configuration contains all of the display properties for a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeConfiguration {
     /// <p>Color properties that apply to chart data colors.</p>
     #[doc(hidden)]
@@ -1014,15 +974,6 @@ impl ThemeConfiguration {
     /// <p>Display options related to sheets.</p>
     pub fn sheet(&self) -> std::option::Option<&crate::model::SheetStyle> {
         self.sheet.as_ref()
-    }
-}
-impl std::fmt::Debug for ThemeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeConfiguration");
-        formatter.field("data_color_palette", &self.data_color_palette);
-        formatter.field("ui_color_palette", &self.ui_color_palette);
-        formatter.field("sheet", &self.sheet);
-        formatter.finish()
     }
 }
 /// See [`ThemeConfiguration`](crate::model::ThemeConfiguration).
@@ -1091,7 +1042,7 @@ impl ThemeConfiguration {
 
 /// <p>The theme display options for sheets. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SheetStyle {
     /// <p>The display options for tiles.</p>
     #[doc(hidden)]
@@ -1108,14 +1059,6 @@ impl SheetStyle {
     /// <p>The layout options for tiles.</p>
     pub fn tile_layout(&self) -> std::option::Option<&crate::model::TileLayoutStyle> {
         self.tile_layout.as_ref()
-    }
-}
-impl std::fmt::Debug for SheetStyle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SheetStyle");
-        formatter.field("tile", &self.tile);
-        formatter.field("tile_layout", &self.tile_layout);
-        formatter.finish()
     }
 }
 /// See [`SheetStyle`](crate::model::SheetStyle).
@@ -1169,7 +1112,7 @@ impl SheetStyle {
 
 /// <p>The display options for the layout of tiles on a sheet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TileLayoutStyle {
     /// <p>The gutter settings that apply between tiles. </p>
     #[doc(hidden)]
@@ -1186,14 +1129,6 @@ impl TileLayoutStyle {
     /// <p>The margin settings that apply around the outside edge of sheets.</p>
     pub fn margin(&self) -> std::option::Option<&crate::model::MarginStyle> {
         self.margin.as_ref()
-    }
-}
-impl std::fmt::Debug for TileLayoutStyle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TileLayoutStyle");
-        formatter.field("gutter", &self.gutter);
-        formatter.field("margin", &self.margin);
-        formatter.finish()
     }
 }
 /// See [`TileLayoutStyle`](crate::model::TileLayoutStyle).
@@ -1244,7 +1179,7 @@ impl TileLayoutStyle {
 
 /// <p>The display options for margins around the outside edge of sheets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarginStyle {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
     #[doc(hidden)]
@@ -1254,13 +1189,6 @@ impl MarginStyle {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
     pub fn show(&self) -> std::option::Option<bool> {
         self.show
-    }
-}
-impl std::fmt::Debug for MarginStyle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarginStyle");
-        formatter.field("show", &self.show);
-        formatter.finish()
     }
 }
 /// See [`MarginStyle`](crate::model::MarginStyle).
@@ -1297,7 +1225,7 @@ impl MarginStyle {
 
 /// <p>The display options for gutter spacing between tiles on a sheet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GutterStyle {
     /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
     #[doc(hidden)]
@@ -1307,13 +1235,6 @@ impl GutterStyle {
     /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
     pub fn show(&self) -> std::option::Option<bool> {
         self.show
-    }
-}
-impl std::fmt::Debug for GutterStyle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GutterStyle");
-        formatter.field("show", &self.show);
-        formatter.finish()
     }
 }
 /// See [`GutterStyle`](crate::model::GutterStyle).
@@ -1350,7 +1271,7 @@ impl GutterStyle {
 
 /// <p>Display options related to tiles on a sheet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TileStyle {
     /// <p>The border around a tile.</p>
     #[doc(hidden)]
@@ -1360,13 +1281,6 @@ impl TileStyle {
     /// <p>The border around a tile.</p>
     pub fn border(&self) -> std::option::Option<&crate::model::BorderStyle> {
         self.border.as_ref()
-    }
-}
-impl std::fmt::Debug for TileStyle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TileStyle");
-        formatter.field("border", &self.border);
-        formatter.finish()
     }
 }
 /// See [`TileStyle`](crate::model::TileStyle).
@@ -1405,7 +1319,7 @@ impl TileStyle {
 
 /// <p>The display options for tile borders for visuals.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BorderStyle {
     /// <p>The option to enable display of borders for visuals.</p>
     #[doc(hidden)]
@@ -1415,13 +1329,6 @@ impl BorderStyle {
     /// <p>The option to enable display of borders for visuals.</p>
     pub fn show(&self) -> std::option::Option<bool> {
         self.show
-    }
-}
-impl std::fmt::Debug for BorderStyle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BorderStyle");
-        formatter.field("show", &self.show);
-        formatter.finish()
     }
 }
 /// See [`BorderStyle`](crate::model::BorderStyle).
@@ -1458,7 +1365,7 @@ impl BorderStyle {
 
 /// <p>The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UiColorPalette {
     /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
     #[doc(hidden)]
@@ -1573,28 +1480,6 @@ impl UiColorPalette {
     /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
     pub fn measure_foreground(&self) -> std::option::Option<&str> {
         self.measure_foreground.as_deref()
-    }
-}
-impl std::fmt::Debug for UiColorPalette {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UiColorPalette");
-        formatter.field("primary_foreground", &self.primary_foreground);
-        formatter.field("primary_background", &self.primary_background);
-        formatter.field("secondary_foreground", &self.secondary_foreground);
-        formatter.field("secondary_background", &self.secondary_background);
-        formatter.field("accent", &self.accent);
-        formatter.field("accent_foreground", &self.accent_foreground);
-        formatter.field("danger", &self.danger);
-        formatter.field("danger_foreground", &self.danger_foreground);
-        formatter.field("warning", &self.warning);
-        formatter.field("warning_foreground", &self.warning_foreground);
-        formatter.field("success", &self.success);
-        formatter.field("success_foreground", &self.success_foreground);
-        formatter.field("dimension", &self.dimension);
-        formatter.field("dimension_foreground", &self.dimension_foreground);
-        formatter.field("measure", &self.measure);
-        formatter.field("measure_foreground", &self.measure_foreground);
-        formatter.finish()
     }
 }
 /// See [`UiColorPalette`](crate::model::UiColorPalette).
@@ -1843,7 +1728,7 @@ impl UiColorPalette {
 
 /// <p>The theme colors that are used for data colors in charts. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataColorPalette {
     /// <p>The hexadecimal codes for the colors.</p>
     #[doc(hidden)]
@@ -1867,15 +1752,6 @@ impl DataColorPalette {
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
     pub fn empty_fill_color(&self) -> std::option::Option<&str> {
         self.empty_fill_color.as_deref()
-    }
-}
-impl std::fmt::Debug for DataColorPalette {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataColorPalette");
-        formatter.field("colors", &self.colors);
-        formatter.field("min_max_gradient", &self.min_max_gradient);
-        formatter.field("empty_fill_color", &self.empty_fill_color);
-        formatter.finish()
     }
 }
 /// See [`DataColorPalette`](crate::model::DataColorPalette).
@@ -1959,7 +1835,7 @@ impl DataColorPalette {
 
 /// <p>The template alias.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateAlias {
     /// <p>The display name of the template alias.</p>
     #[doc(hidden)]
@@ -1983,15 +1859,6 @@ impl TemplateAlias {
     /// <p>The version number of the template alias.</p>
     pub fn template_version_number(&self) -> std::option::Option<i64> {
         self.template_version_number
-    }
-}
-impl std::fmt::Debug for TemplateAlias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateAlias");
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("template_version_number", &self.template_version_number);
-        formatter.finish()
     }
 }
 /// See [`TemplateAlias`](crate::model::TemplateAlias).
@@ -2054,7 +1921,7 @@ impl TemplateAlias {
 
 /// <p>The source entity of the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSourceEntity {
     /// <p>The source analysis, if it is based on an analysis.</p>
     #[doc(hidden)]
@@ -2071,14 +1938,6 @@ impl TemplateSourceEntity {
     /// <p>The source template, if it is based on an template.</p>
     pub fn source_template(&self) -> std::option::Option<&crate::model::TemplateSourceTemplate> {
         self.source_template.as_ref()
-    }
-}
-impl std::fmt::Debug for TemplateSourceEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSourceEntity");
-        formatter.field("source_analysis", &self.source_analysis);
-        formatter.field("source_template", &self.source_template);
-        formatter.finish()
     }
 }
 /// See [`TemplateSourceEntity`](crate::model::TemplateSourceEntity).
@@ -2135,7 +1994,7 @@ impl TemplateSourceEntity {
 
 /// <p>The source template of the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -2145,13 +2004,6 @@ impl TemplateSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateSourceTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSourceTemplate");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`TemplateSourceTemplate`](crate::model::TemplateSourceTemplate).
@@ -2188,7 +2040,7 @@ impl TemplateSourceTemplate {
 
 /// <p>The source analysis of the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSourceAnalysis {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -2205,14 +2057,6 @@ impl TemplateSourceAnalysis {
     /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
     pub fn data_set_references(&self) -> std::option::Option<&[crate::model::DataSetReference]> {
         self.data_set_references.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateSourceAnalysis {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSourceAnalysis");
-        formatter.field("arn", &self.arn);
-        formatter.field("data_set_references", &self.data_set_references);
-        formatter.finish()
     }
 }
 /// See [`TemplateSourceAnalysis`](crate::model::TemplateSourceAnalysis).
@@ -2273,7 +2117,7 @@ impl TemplateSourceAnalysis {
 
 /// <p>Dataset reference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetReference {
     /// <p>Dataset placeholder.</p>
     #[doc(hidden)]
@@ -2290,14 +2134,6 @@ impl DataSetReference {
     /// <p>Dataset Amazon Resource Name (ARN).</p>
     pub fn data_set_arn(&self) -> std::option::Option<&str> {
         self.data_set_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSetReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetReference");
-        formatter.field("data_set_placeholder", &self.data_set_placeholder);
-        formatter.field("data_set_arn", &self.data_set_arn);
-        formatter.finish()
     }
 }
 /// See [`DataSetReference`](crate::model::DataSetReference).
@@ -2446,7 +2282,7 @@ impl AsRef<str> for AssignmentStatus {
 
 /// <p>A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Group {
     /// <p>The Amazon Resource Name (ARN) for the group.</p>
     #[doc(hidden)]
@@ -2477,16 +2313,6 @@ impl Group {
     /// <p>The principal ID of the group.</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Group {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Group");
-        formatter.field("arn", &self.arn);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.finish()
     }
 }
 /// See [`Group`](crate::model::Group).
@@ -2561,7 +2387,7 @@ impl Group {
 
 /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SslProperties {
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
     #[doc(hidden)]
@@ -2571,13 +2397,6 @@ impl SslProperties {
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
     pub fn disable_ssl(&self) -> bool {
         self.disable_ssl
-    }
-}
-impl std::fmt::Debug for SslProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SslProperties");
-        formatter.field("disable_ssl", &self.disable_ssl);
-        formatter.finish()
     }
 }
 /// See [`SslProperties`](crate::model::SslProperties).
@@ -2616,7 +2435,7 @@ impl SslProperties {
 
 /// <p>VPC connection properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConnectionProperties {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
     #[doc(hidden)]
@@ -2626,13 +2445,6 @@ impl VpcConnectionProperties {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
     pub fn vpc_connection_arn(&self) -> std::option::Option<&str> {
         self.vpc_connection_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConnectionProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConnectionProperties");
-        formatter.field("vpc_connection_arn", &self.vpc_connection_arn);
-        formatter.finish()
     }
 }
 /// See [`VpcConnectionProperties`](crate::model::VpcConnectionProperties).
@@ -2705,7 +2517,7 @@ impl std::fmt::Debug for DataSourceCredentials {
 pub mod data_source_credentials {
 
     /// A builder for [`DataSourceCredentials`](crate::model::DataSourceCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) credential_pair: std::option::Option<crate::model::CredentialPair>,
         pub(crate) copy_source_arn: std::option::Option<std::string::String>,
@@ -2745,6 +2557,14 @@ pub mod data_source_credentials {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("credential_pair", &self.credential_pair);
+            formatter.field("copy_source_arn", &self.copy_source_arn);
+            formatter.finish()
+        }
+    }
 }
 impl DataSourceCredentials {
     /// Creates a new builder-style object to manufacture [`DataSourceCredentials`](crate::model::DataSourceCredentials).
@@ -2755,7 +2575,7 @@ impl DataSourceCredentials {
 
 /// <p>The combination of user name and password that are used as credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CredentialPair {
     /// <p>User name.</p>
     #[doc(hidden)]
@@ -2782,18 +2602,6 @@ impl CredentialPair {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceParameters]> {
         self.alternate_data_source_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for CredentialPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CredentialPair");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.field(
-            "alternate_data_source_parameters",
-            &self.alternate_data_source_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`CredentialPair`](crate::model::CredentialPair).
@@ -3258,7 +3066,7 @@ impl DataSourceParameters {
 
 /// <p>The required parameters for connecting to an Exasol data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExasolParameters {
     /// <p>The hostname or IP address of the Exasol data source.</p>
     #[doc(hidden)]
@@ -3275,14 +3083,6 @@ impl ExasolParameters {
     /// <p>The port for the Exasol data source.</p>
     pub fn port(&self) -> i32 {
         self.port
-    }
-}
-impl std::fmt::Debug for ExasolParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExasolParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`ExasolParameters`](crate::model::ExasolParameters).
@@ -3333,7 +3133,7 @@ impl ExasolParameters {
 
 /// <p>The parameters for OpenSearch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonOpenSearchParameters {
     /// <p>The OpenSearch domain.</p>
     #[doc(hidden)]
@@ -3343,13 +3143,6 @@ impl AmazonOpenSearchParameters {
     /// <p>The OpenSearch domain.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
-    }
-}
-impl std::fmt::Debug for AmazonOpenSearchParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonOpenSearchParameters");
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 /// See [`AmazonOpenSearchParameters`](crate::model::AmazonOpenSearchParameters).
@@ -3388,7 +3181,7 @@ impl AmazonOpenSearchParameters {
 
 /// <p>The parameters for Twitter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TwitterParameters {
     /// <p>Twitter query string.</p>
     #[doc(hidden)]
@@ -3405,14 +3198,6 @@ impl TwitterParameters {
     /// <p>Maximum number of rows to query Twitter.</p>
     pub fn max_rows(&self) -> i32 {
         self.max_rows
-    }
-}
-impl std::fmt::Debug for TwitterParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TwitterParameters");
-        formatter.field("query", &self.query);
-        formatter.field("max_rows", &self.max_rows);
-        formatter.finish()
     }
 }
 /// See [`TwitterParameters`](crate::model::TwitterParameters).
@@ -3463,7 +3248,7 @@ impl TwitterParameters {
 
 /// <p>The parameters for Teradata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TeradataParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -3487,15 +3272,6 @@ impl TeradataParameters {
     /// <p>Database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for TeradataParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TeradataParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`TeradataParameters`](crate::model::TeradataParameters).
@@ -3558,7 +3334,7 @@ impl TeradataParameters {
 
 /// <p>The parameters for SQL Server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlServerParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -3582,15 +3358,6 @@ impl SqlServerParameters {
     /// <p>Database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for SqlServerParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlServerParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`SqlServerParameters`](crate::model::SqlServerParameters).
@@ -3653,7 +3420,7 @@ impl SqlServerParameters {
 
 /// <p>The parameters for Spark.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SparkParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -3670,14 +3437,6 @@ impl SparkParameters {
     /// <p>Port.</p>
     pub fn port(&self) -> i32 {
         self.port
-    }
-}
-impl std::fmt::Debug for SparkParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SparkParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`SparkParameters`](crate::model::SparkParameters).
@@ -3728,7 +3487,7 @@ impl SparkParameters {
 
 /// <p>The parameters for Snowflake.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnowflakeParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -3752,15 +3511,6 @@ impl SnowflakeParameters {
     /// <p>Warehouse.</p>
     pub fn warehouse(&self) -> std::option::Option<&str> {
         self.warehouse.as_deref()
-    }
-}
-impl std::fmt::Debug for SnowflakeParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnowflakeParameters");
-        formatter.field("host", &self.host);
-        formatter.field("database", &self.database);
-        formatter.field("warehouse", &self.warehouse);
-        formatter.finish()
     }
 }
 /// See [`SnowflakeParameters`](crate::model::SnowflakeParameters).
@@ -3823,7 +3573,7 @@ impl SnowflakeParameters {
 
 /// <p>The parameters for ServiceNow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowParameters {
     /// <p>URL of the base site.</p>
     #[doc(hidden)]
@@ -3833,13 +3583,6 @@ impl ServiceNowParameters {
     /// <p>URL of the base site.</p>
     pub fn site_base_url(&self) -> std::option::Option<&str> {
         self.site_base_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceNowParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowParameters");
-        formatter.field("site_base_url", &self.site_base_url);
-        formatter.finish()
     }
 }
 /// See [`ServiceNowParameters`](crate::model::ServiceNowParameters).
@@ -3881,7 +3624,7 @@ impl ServiceNowParameters {
 
 /// <p>The parameters for S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Parameters {
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
     #[doc(hidden)]
@@ -3893,13 +3636,6 @@ impl S3Parameters {
         &self,
     ) -> std::option::Option<&crate::model::ManifestFileLocation> {
         self.manifest_file_location.as_ref()
-    }
-}
-impl std::fmt::Debug for S3Parameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Parameters");
-        formatter.field("manifest_file_location", &self.manifest_file_location);
-        formatter.finish()
     }
 }
 /// See [`S3Parameters`](crate::model::S3Parameters).
@@ -3941,7 +3677,7 @@ impl S3Parameters {
 
 /// <p>Amazon S3 manifest file location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManifestFileLocation {
     /// <p>Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -3958,14 +3694,6 @@ impl ManifestFileLocation {
     /// <p>Amazon S3 key that identifies an object.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for ManifestFileLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManifestFileLocation");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`ManifestFileLocation`](crate::model::ManifestFileLocation).
@@ -4016,7 +3744,7 @@ impl ManifestFileLocation {
 
 /// <p>The parameters for Amazon Redshift. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftParameters {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
     #[doc(hidden)]
@@ -4047,16 +3775,6 @@ impl RedshiftParameters {
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
     }
 }
 /// See [`RedshiftParameters`](crate::model::RedshiftParameters).
@@ -4131,7 +3849,7 @@ impl RedshiftParameters {
 
 /// <p>The parameters for Amazon RDS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsParameters {
     /// <p>Instance ID.</p>
     #[doc(hidden)]
@@ -4148,14 +3866,6 @@ impl RdsParameters {
     /// <p>Database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for RdsParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsParameters");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`RdsParameters`](crate::model::RdsParameters).
@@ -4206,7 +3916,7 @@ impl RdsParameters {
 
 /// <p>The parameters for Presto.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrestoParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -4230,15 +3940,6 @@ impl PrestoParameters {
     /// <p>Catalog.</p>
     pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
-    }
-}
-impl std::fmt::Debug for PrestoParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrestoParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("catalog", &self.catalog);
-        formatter.finish()
     }
 }
 /// See [`PrestoParameters`](crate::model::PrestoParameters).
@@ -4301,7 +4002,7 @@ impl PrestoParameters {
 
 /// <p>The parameters for PostgreSQL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostgreSqlParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -4325,15 +4026,6 @@ impl PostgreSqlParameters {
     /// <p>Database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for PostgreSqlParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostgreSqlParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`PostgreSqlParameters`](crate::model::PostgreSqlParameters).
@@ -4396,7 +4088,7 @@ impl PostgreSqlParameters {
 
 /// <p>The parameters for Oracle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OracleParameters {
     /// <p>An Oracle host.</p>
     #[doc(hidden)]
@@ -4420,15 +4112,6 @@ impl OracleParameters {
     /// <p>Database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for OracleParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OracleParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`OracleParameters`](crate::model::OracleParameters).
@@ -4491,7 +4174,7 @@ impl OracleParameters {
 
 /// <p>The parameters for MySQL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MySqlParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -4515,15 +4198,6 @@ impl MySqlParameters {
     /// <p>Database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for MySqlParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MySqlParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`MySqlParameters`](crate::model::MySqlParameters).
@@ -4586,7 +4260,7 @@ impl MySqlParameters {
 
 /// <p>The parameters for MariaDB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MariaDbParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -4610,15 +4284,6 @@ impl MariaDbParameters {
     /// <p>Database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for MariaDbParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MariaDbParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`MariaDbParameters`](crate::model::MariaDbParameters).
@@ -4681,7 +4346,7 @@ impl MariaDbParameters {
 
 /// <p>The parameters for Jira.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JiraParameters {
     /// <p>The base URL of the Jira site.</p>
     #[doc(hidden)]
@@ -4691,13 +4356,6 @@ impl JiraParameters {
     /// <p>The base URL of the Jira site.</p>
     pub fn site_base_url(&self) -> std::option::Option<&str> {
         self.site_base_url.as_deref()
-    }
-}
-impl std::fmt::Debug for JiraParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JiraParameters");
-        formatter.field("site_base_url", &self.site_base_url);
-        formatter.finish()
     }
 }
 /// See [`JiraParameters`](crate::model::JiraParameters).
@@ -4739,7 +4397,7 @@ impl JiraParameters {
 
 /// <p>The parameters for IoT Analytics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsIotAnalyticsParameters {
     /// <p>Dataset name.</p>
     #[doc(hidden)]
@@ -4749,13 +4407,6 @@ impl AwsIotAnalyticsParameters {
     /// <p>Dataset name.</p>
     pub fn data_set_name(&self) -> std::option::Option<&str> {
         self.data_set_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsIotAnalyticsParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsIotAnalyticsParameters");
-        formatter.field("data_set_name", &self.data_set_name);
-        formatter.finish()
     }
 }
 /// See [`AwsIotAnalyticsParameters`](crate::model::AwsIotAnalyticsParameters).
@@ -4797,7 +4448,7 @@ impl AwsIotAnalyticsParameters {
 
 /// <p>Parameters for Amazon Aurora PostgreSQL-Compatible Edition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuroraPostgreSqlParameters {
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
     #[doc(hidden)]
@@ -4821,15 +4472,6 @@ impl AuroraPostgreSqlParameters {
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for AuroraPostgreSqlParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuroraPostgreSqlParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`AuroraPostgreSqlParameters`](crate::model::AuroraPostgreSqlParameters).
@@ -4892,7 +4534,7 @@ impl AuroraPostgreSqlParameters {
 
 /// <p>Parameters for Amazon Aurora.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuroraParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
@@ -4916,15 +4558,6 @@ impl AuroraParameters {
     /// <p>Database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
-    }
-}
-impl std::fmt::Debug for AuroraParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuroraParameters");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("database", &self.database);
-        formatter.finish()
     }
 }
 /// See [`AuroraParameters`](crate::model::AuroraParameters).
@@ -4987,7 +4620,7 @@ impl AuroraParameters {
 
 /// <p>Parameters for Amazon Athena.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AthenaParameters {
     /// <p>The workgroup that Amazon Athena uses.</p>
     #[doc(hidden)]
@@ -4997,13 +4630,6 @@ impl AthenaParameters {
     /// <p>The workgroup that Amazon Athena uses.</p>
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
-    }
-}
-impl std::fmt::Debug for AthenaParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AthenaParameters");
-        formatter.field("work_group", &self.work_group);
-        formatter.finish()
     }
 }
 /// See [`AthenaParameters`](crate::model::AthenaParameters).
@@ -5042,7 +4668,7 @@ impl AthenaParameters {
 
 /// <p>The parameters for OpenSearch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonElasticsearchParameters {
     /// <p>The OpenSearch domain.</p>
     #[doc(hidden)]
@@ -5052,13 +4678,6 @@ impl AmazonElasticsearchParameters {
     /// <p>The OpenSearch domain.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
-    }
-}
-impl std::fmt::Debug for AmazonElasticsearchParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonElasticsearchParameters");
-        formatter.field("domain", &self.domain);
-        formatter.finish()
     }
 }
 /// See [`AmazonElasticsearchParameters`](crate::model::AmazonElasticsearchParameters).
@@ -5097,7 +4716,7 @@ impl AmazonElasticsearchParameters {
 
 /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetUsageConfiguration {
     /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
     #[doc(hidden)]
@@ -5114,20 +4733,6 @@ impl DataSetUsageConfiguration {
     /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
     pub fn disable_use_as_imported_source(&self) -> bool {
         self.disable_use_as_imported_source
-    }
-}
-impl std::fmt::Debug for DataSetUsageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetUsageConfiguration");
-        formatter.field(
-            "disable_use_as_direct_query_source",
-            &self.disable_use_as_direct_query_source,
-        );
-        formatter.field(
-            "disable_use_as_imported_source",
-            &self.disable_use_as_imported_source,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataSetUsageConfiguration`](crate::model::DataSetUsageConfiguration).
@@ -5188,7 +4793,7 @@ impl DataSetUsageConfiguration {
 
 /// <p>A rule defined to grant access on one or more restricted columns. Each dataset can have multiple rules. To create a restricted column, you add it to one or more rules. Each rule must contain at least one column and at least one user or group. To be able to see a restricted column, a user or group needs to be added to a rule for that column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnLevelPermissionRule {
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
     #[doc(hidden)]
@@ -5205,14 +4810,6 @@ impl ColumnLevelPermissionRule {
     /// <p>An array of column names.</p>
     pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
         self.column_names.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnLevelPermissionRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnLevelPermissionRule");
-        formatter.field("principals", &self.principals);
-        formatter.field("column_names", &self.column_names);
-        formatter.finish()
     }
 }
 /// See [`ColumnLevelPermissionRule`](crate::model::ColumnLevelPermissionRule).
@@ -5281,7 +4878,7 @@ impl ColumnLevelPermissionRule {
 
 /// <p>The configuration of tags on a dataset to set row-level security. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RowLevelPermissionTagConfiguration {
     /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     #[doc(hidden)]
@@ -5298,14 +4895,6 @@ impl RowLevelPermissionTagConfiguration {
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
     pub fn tag_rules(&self) -> std::option::Option<&[crate::model::RowLevelPermissionTagRule]> {
         self.tag_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for RowLevelPermissionTagConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RowLevelPermissionTagConfiguration");
-        formatter.field("status", &self.status);
-        formatter.field("tag_rules", &self.tag_rules);
-        formatter.finish()
     }
 }
 /// See [`RowLevelPermissionTagConfiguration`](crate::model::RowLevelPermissionTagConfiguration).
@@ -5413,7 +5002,7 @@ impl std::fmt::Debug for RowLevelPermissionTagRule {
 pub mod row_level_permission_tag_rule {
 
     /// A builder for [`RowLevelPermissionTagRule`](crate::model::RowLevelPermissionTagRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
         pub(crate) column_name: std::option::Option<std::string::String>,
@@ -5475,6 +5064,16 @@ pub mod row_level_permission_tag_rule {
                 tag_multi_value_delimiter: self.tag_multi_value_delimiter,
                 match_all_value: self.match_all_value,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("tag_key", &self.tag_key);
+            formatter.field("column_name", &self.column_name);
+            formatter.field("tag_multi_value_delimiter", &self.tag_multi_value_delimiter);
+            formatter.field("match_all_value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -5578,7 +5177,7 @@ impl AsRef<str> for Status {
 /// <p>Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps fields to users or groups. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html">Using Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 /// <p>The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported for new RLS datasets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RowLevelPermissionDataSet {
     /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
     #[doc(hidden)]
@@ -5622,17 +5221,6 @@ impl RowLevelPermissionDataSet {
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for RowLevelPermissionDataSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RowLevelPermissionDataSet");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("arn", &self.arn);
-        formatter.field("permission_policy", &self.permission_policy);
-        formatter.field("format_version", &self.format_version);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`RowLevelPermissionDataSet`](crate::model::RowLevelPermissionDataSet).
@@ -5915,7 +5503,7 @@ impl AsRef<str> for RowLevelPermissionPolicy {
 
 /// <p>A FieldFolder element is a folder that contains fields and nested subfolders.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldFolder {
     /// <p>The description for a field folder.</p>
     #[doc(hidden)]
@@ -5932,14 +5520,6 @@ impl FieldFolder {
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
     pub fn columns(&self) -> std::option::Option<&[std::string::String]> {
         self.columns.as_deref()
-    }
-}
-impl std::fmt::Debug for FieldFolder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldFolder");
-        formatter.field("description", &self.description);
-        formatter.field("columns", &self.columns);
-        formatter.finish()
     }
 }
 /// See [`FieldFolder`](crate::model::FieldFolder).
@@ -5999,7 +5579,7 @@ impl FieldFolder {
 
 /// <p>Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnGroup {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     #[doc(hidden)]
@@ -6011,13 +5591,6 @@ impl ColumnGroup {
         &self,
     ) -> std::option::Option<&crate::model::GeoSpatialColumnGroup> {
         self.geo_spatial_column_group.as_ref()
-    }
-}
-impl std::fmt::Debug for ColumnGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnGroup");
-        formatter.field("geo_spatial_column_group", &self.geo_spatial_column_group);
-        formatter.finish()
     }
 }
 /// See [`ColumnGroup`](crate::model::ColumnGroup).
@@ -6063,7 +5636,7 @@ impl ColumnGroup {
 
 /// <p>Geospatial column group that denotes a hierarchy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeoSpatialColumnGroup {
     /// <p>A display name for the hierarchy.</p>
     #[doc(hidden)]
@@ -6087,15 +5660,6 @@ impl GeoSpatialColumnGroup {
     /// <p>Columns in this hierarchy.</p>
     pub fn columns(&self) -> std::option::Option<&[std::string::String]> {
         self.columns.as_deref()
-    }
-}
-impl std::fmt::Debug for GeoSpatialColumnGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeoSpatialColumnGroup");
-        formatter.field("name", &self.name);
-        formatter.field("country_code", &self.country_code);
-        formatter.field("columns", &self.columns);
-        formatter.finish()
     }
 }
 /// See [`GeoSpatialColumnGroup`](crate::model::GeoSpatialColumnGroup).
@@ -6349,7 +5913,7 @@ impl AsRef<str> for DataSetImportMode {
 
 /// <p>A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogicalTable {
     /// <p>A display name for the logical table.</p>
     #[doc(hidden)]
@@ -6373,15 +5937,6 @@ impl LogicalTable {
     /// <p>Source of this logical table.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::LogicalTableSource> {
         self.source.as_ref()
-    }
-}
-impl std::fmt::Debug for LogicalTable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogicalTable");
-        formatter.field("alias", &self.alias);
-        formatter.field("data_transforms", &self.data_transforms);
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`LogicalTable`](crate::model::LogicalTable).
@@ -6457,7 +6012,7 @@ impl LogicalTable {
 
 /// <p>Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogicalTableSource {
     /// <p>Specifies the result of a join of two logical tables.</p>
     #[doc(hidden)]
@@ -6481,15 +6036,6 @@ impl LogicalTableSource {
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
     pub fn data_set_arn(&self) -> std::option::Option<&str> {
         self.data_set_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LogicalTableSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogicalTableSource");
-        formatter.field("join_instruction", &self.join_instruction);
-        formatter.field("physical_table_id", &self.physical_table_id);
-        formatter.field("data_set_arn", &self.data_set_arn);
-        formatter.finish()
     }
 }
 /// See [`LogicalTableSource`](crate::model::LogicalTableSource).
@@ -6558,7 +6104,7 @@ impl LogicalTableSource {
 
 /// <p>The instructions associated with a join. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JoinInstruction {
     /// <p>The operand on the left side of a join.</p>
     #[doc(hidden)]
@@ -6607,18 +6153,6 @@ impl JoinInstruction {
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
     pub fn on_clause(&self) -> std::option::Option<&str> {
         self.on_clause.as_deref()
-    }
-}
-impl std::fmt::Debug for JoinInstruction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JoinInstruction");
-        formatter.field("left_operand", &self.left_operand);
-        formatter.field("right_operand", &self.right_operand);
-        formatter.field("left_join_key_properties", &self.left_join_key_properties);
-        formatter.field("right_join_key_properties", &self.right_join_key_properties);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("on_clause", &self.on_clause);
-        formatter.finish()
     }
 }
 /// See [`JoinInstruction`](crate::model::JoinInstruction).
@@ -6826,7 +6360,7 @@ impl AsRef<str> for JoinType {
 
 /// <p>Properties associated with the columns participating in a join.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JoinKeyProperties {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     #[doc(hidden)]
@@ -6836,13 +6370,6 @@ impl JoinKeyProperties {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub fn unique_key(&self) -> std::option::Option<bool> {
         self.unique_key
-    }
-}
-impl std::fmt::Debug for JoinKeyProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JoinKeyProperties");
-        formatter.field("unique_key", &self.unique_key);
-        formatter.finish()
     }
 }
 /// See [`JoinKeyProperties`](crate::model::JoinKeyProperties).
@@ -7021,7 +6548,7 @@ impl TransformOperation {
 
 /// <p>A transform operation that removes tags associated with a column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagColumnOperation {
     /// <p>The column that this operation acts on.</p>
     #[doc(hidden)]
@@ -7038,14 +6565,6 @@ impl UntagColumnOperation {
     /// <p>The column tags to remove from this column.</p>
     pub fn tag_names(&self) -> std::option::Option<&[crate::model::ColumnTagName]> {
         self.tag_names.as_deref()
-    }
-}
-impl std::fmt::Debug for UntagColumnOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagColumnOperation");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("tag_names", &self.tag_names);
-        formatter.finish()
     }
 }
 /// See [`UntagColumnOperation`](crate::model::UntagColumnOperation).
@@ -7195,7 +6714,7 @@ impl AsRef<str> for ColumnTagName {
 
 /// <p>A transform operation that tags a column with additional information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagColumnOperation {
     /// <p>The column that this operation acts on.</p>
     #[doc(hidden)]
@@ -7216,14 +6735,6 @@ impl TagColumnOperation {
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::ColumnTag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TagColumnOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagColumnOperation");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`TagColumnOperation`](crate::model::TagColumnOperation).
@@ -7287,7 +6798,7 @@ impl TagColumnOperation {
 
 /// <p>A tag for a column in a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html">TagColumnOperation</a> </code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnTag {
     /// <p>A geospatial role for a column.</p>
     #[doc(hidden)]
@@ -7304,14 +6815,6 @@ impl ColumnTag {
     /// <p>A description for a column.</p>
     pub fn column_description(&self) -> std::option::Option<&crate::model::ColumnDescription> {
         self.column_description.as_ref()
-    }
-}
-impl std::fmt::Debug for ColumnTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnTag");
-        formatter.field("column_geographic_role", &self.column_geographic_role);
-        formatter.field("column_description", &self.column_description);
-        formatter.finish()
     }
 }
 /// See [`ColumnTag`](crate::model::ColumnTag).
@@ -7368,7 +6871,7 @@ impl ColumnTag {
 
 /// <p>Metadata that contains a description for a column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnDescription {
     /// <p>The text of a description for a column.</p>
     #[doc(hidden)]
@@ -7378,13 +6881,6 @@ impl ColumnDescription {
     /// <p>The text of a description for a column.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnDescription");
-        formatter.field("text", &self.text);
-        formatter.finish()
     }
 }
 /// See [`ColumnDescription`](crate::model::ColumnDescription).
@@ -7546,7 +7042,7 @@ impl AsRef<str> for GeoSpatialDataRole {
 
 /// <p>A transform operation that casts a column to a different type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CastColumnTypeOperation {
     /// <p>Column name.</p>
     #[doc(hidden)]
@@ -7570,15 +7066,6 @@ impl CastColumnTypeOperation {
     /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
     pub fn format(&self) -> std::option::Option<&str> {
         self.format.as_deref()
-    }
-}
-impl std::fmt::Debug for CastColumnTypeOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CastColumnTypeOperation");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("new_column_type", &self.new_column_type);
-        formatter.field("format", &self.format);
-        formatter.finish()
     }
 }
 /// See [`CastColumnTypeOperation`](crate::model::CastColumnTypeOperation).
@@ -7744,7 +7231,7 @@ impl AsRef<str> for ColumnDataType {
 
 /// <p>A transform operation that renames a column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenameColumnOperation {
     /// <p>The name of the column to be renamed.</p>
     #[doc(hidden)]
@@ -7761,14 +7248,6 @@ impl RenameColumnOperation {
     /// <p>The new name for the column.</p>
     pub fn new_column_name(&self) -> std::option::Option<&str> {
         self.new_column_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RenameColumnOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenameColumnOperation");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("new_column_name", &self.new_column_name);
-        formatter.finish()
     }
 }
 /// See [`RenameColumnOperation`](crate::model::RenameColumnOperation).
@@ -7822,7 +7301,7 @@ impl RenameColumnOperation {
 
 /// <p>A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateColumnsOperation {
     /// <p>Calculated columns to create.</p>
     #[doc(hidden)]
@@ -7832,13 +7311,6 @@ impl CreateColumnsOperation {
     /// <p>Calculated columns to create.</p>
     pub fn columns(&self) -> std::option::Option<&[crate::model::CalculatedColumn]> {
         self.columns.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateColumnsOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateColumnsOperation");
-        formatter.field("columns", &self.columns);
-        formatter.finish()
     }
 }
 /// See [`CreateColumnsOperation`](crate::model::CreateColumnsOperation).
@@ -7886,7 +7358,7 @@ impl CreateColumnsOperation {
 
 /// <p>A calculated column for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CalculatedColumn {
     /// <p>Column name.</p>
     #[doc(hidden)]
@@ -7910,15 +7382,6 @@ impl CalculatedColumn {
     /// <p>An expression that defines the calculated column.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
-    }
-}
-impl std::fmt::Debug for CalculatedColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CalculatedColumn");
-        formatter.field("column_name", &self.column_name);
-        formatter.field("column_id", &self.column_id);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
     }
 }
 /// See [`CalculatedColumn`](crate::model::CalculatedColumn).
@@ -7981,7 +7444,7 @@ impl CalculatedColumn {
 
 /// <p>A transform operation that filters rows based on a condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     #[doc(hidden)]
@@ -7991,13 +7454,6 @@ impl FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterOperation");
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.finish()
     }
 }
 /// See [`FilterOperation`](crate::model::FilterOperation).
@@ -8039,7 +7495,7 @@ impl FilterOperation {
 
 /// <p>A transform operation that projects columns. Operations that come after a projection can only refer to projected columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectOperation {
     /// <p>Projected columns.</p>
     #[doc(hidden)]
@@ -8049,13 +7505,6 @@ impl ProjectOperation {
     /// <p>Projected columns.</p>
     pub fn projected_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.projected_columns.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectOperation");
-        formatter.field("projected_columns", &self.projected_columns);
-        formatter.finish()
     }
 }
 /// See [`ProjectOperation`](crate::model::ProjectOperation).
@@ -8171,7 +7620,7 @@ impl PhysicalTable {
 
 /// <p>A physical table type for an S3 data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Source {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
     #[doc(hidden)]
@@ -8199,15 +7648,6 @@ impl S3Source {
     /// </note>
     pub fn input_columns(&self) -> std::option::Option<&[crate::model::InputColumn]> {
         self.input_columns.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Source");
-        formatter.field("data_source_arn", &self.data_source_arn);
-        formatter.field("upload_settings", &self.upload_settings);
-        formatter.field("input_columns", &self.input_columns);
-        formatter.finish()
     }
 }
 /// See [`S3Source`](crate::model::S3Source).
@@ -8289,7 +7729,7 @@ impl S3Source {
 
 /// <p>Metadata for a column that is used as the input of a transform operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
     #[doc(hidden)]
@@ -8306,14 +7746,6 @@ impl InputColumn {
     /// <p>The data type of the column.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::InputColumnDataType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for InputColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputColumn");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`InputColumn`](crate::model::InputColumn).
@@ -8486,7 +7918,7 @@ impl AsRef<str> for InputColumnDataType {
 
 /// <p>Information about the format for a source file or files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadSettings {
     /// <p>File format.</p>
     #[doc(hidden)]
@@ -8524,17 +7956,6 @@ impl UploadSettings {
     /// <p>The delimiter between values in the file.</p>
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
-    }
-}
-impl std::fmt::Debug for UploadSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadSettings");
-        formatter.field("format", &self.format);
-        formatter.field("start_from_row", &self.start_from_row);
-        formatter.field("contains_header", &self.contains_header);
-        formatter.field("text_qualifier", &self.text_qualifier);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.finish()
     }
 }
 /// See [`UploadSettings`](crate::model::UploadSettings).
@@ -8824,7 +8245,7 @@ impl AsRef<str> for FileFormat {
 
 /// <p>A physical table type built from the results of the custom SQL query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomSql {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     #[doc(hidden)]
@@ -8855,16 +8276,6 @@ impl CustomSql {
     /// <p>The column schema from the SQL query result set.</p>
     pub fn columns(&self) -> std::option::Option<&[crate::model::InputColumn]> {
         self.columns.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomSql {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomSql");
-        formatter.field("data_source_arn", &self.data_source_arn);
-        formatter.field("name", &self.name);
-        formatter.field("sql_query", &self.sql_query);
-        formatter.field("columns", &self.columns);
-        formatter.finish()
     }
 }
 /// See [`CustomSql`](crate::model::CustomSql).
@@ -8951,7 +8362,7 @@ impl CustomSql {
 
 /// <p>A physical table type for relational data sources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelationalTable {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
     #[doc(hidden)]
@@ -8989,17 +8400,6 @@ impl RelationalTable {
     /// <p>The column schema of the table.</p>
     pub fn input_columns(&self) -> std::option::Option<&[crate::model::InputColumn]> {
         self.input_columns.as_deref()
-    }
-}
-impl std::fmt::Debug for RelationalTable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelationalTable");
-        formatter.field("data_source_arn", &self.data_source_arn);
-        formatter.field("catalog", &self.catalog);
-        formatter.field("schema", &self.schema);
-        formatter.field("name", &self.name);
-        formatter.field("input_columns", &self.input_columns);
-        formatter.finish()
     }
 }
 /// See [`RelationalTable`](crate::model::RelationalTable).
@@ -9098,7 +8498,7 @@ impl RelationalTable {
 
 /// <p>A structure that contains the configuration of a shareable link to the dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinkSharingConfiguration {
     /// <p>A structure that contains the permissions of a shareable link.</p>
     #[doc(hidden)]
@@ -9108,13 +8508,6 @@ impl LinkSharingConfiguration {
     /// <p>A structure that contains the permissions of a shareable link.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for LinkSharingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinkSharingConfiguration");
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 /// See [`LinkSharingConfiguration`](crate::model::LinkSharingConfiguration).
@@ -9163,7 +8556,7 @@ impl LinkSharingConfiguration {
 
 /// <p>Dashboard publish options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
     #[doc(hidden)]
@@ -9189,15 +8582,6 @@ impl DashboardPublishOptions {
     /// <p>Sheet controls option.</p>
     pub fn sheet_controls_option(&self) -> std::option::Option<&crate::model::SheetControlsOption> {
         self.sheet_controls_option.as_ref()
-    }
-}
-impl std::fmt::Debug for DashboardPublishOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardPublishOptions");
-        formatter.field("ad_hoc_filtering_option", &self.ad_hoc_filtering_option);
-        formatter.field("export_to_csv_option", &self.export_to_csv_option);
-        formatter.field("sheet_controls_option", &self.sheet_controls_option);
-        formatter.finish()
     }
 }
 /// See [`DashboardPublishOptions`](crate::model::DashboardPublishOptions).
@@ -9272,7 +8656,7 @@ impl DashboardPublishOptions {
 
 /// <p>Sheet controls option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SheetControlsOption {
     /// <p>Visibility state.</p>
     #[doc(hidden)]
@@ -9282,13 +8666,6 @@ impl SheetControlsOption {
     /// <p>Visibility state.</p>
     pub fn visibility_state(&self) -> std::option::Option<&crate::model::DashboardUiState> {
         self.visibility_state.as_ref()
-    }
-}
-impl std::fmt::Debug for SheetControlsOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SheetControlsOption");
-        formatter.field("visibility_state", &self.visibility_state);
-        formatter.finish()
     }
 }
 /// See [`SheetControlsOption`](crate::model::SheetControlsOption).
@@ -9420,7 +8797,7 @@ impl AsRef<str> for DashboardUiState {
 
 /// <p>Export to .csv option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportToCsvOption {
     /// <p>Availability status.</p>
     #[doc(hidden)]
@@ -9430,13 +8807,6 @@ impl ExportToCsvOption {
     /// <p>Availability status.</p>
     pub fn availability_status(&self) -> std::option::Option<&crate::model::DashboardBehavior> {
         self.availability_status.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportToCsvOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportToCsvOption");
-        formatter.field("availability_status", &self.availability_status);
-        formatter.finish()
     }
 }
 /// See [`ExportToCsvOption`](crate::model::ExportToCsvOption).
@@ -9570,7 +8940,7 @@ impl AsRef<str> for DashboardBehavior {
 
 /// <p>An ad hoc (one-time) filtering option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdHocFilteringOption {
     /// <p>Availability status.</p>
     #[doc(hidden)]
@@ -9580,13 +8950,6 @@ impl AdHocFilteringOption {
     /// <p>Availability status.</p>
     pub fn availability_status(&self) -> std::option::Option<&crate::model::DashboardBehavior> {
         self.availability_status.as_ref()
-    }
-}
-impl std::fmt::Debug for AdHocFilteringOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdHocFilteringOption");
-        formatter.field("availability_status", &self.availability_status);
-        formatter.finish()
     }
 }
 /// See [`AdHocFilteringOption`](crate::model::AdHocFilteringOption).
@@ -9628,7 +8991,7 @@ impl AdHocFilteringOption {
 
 /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parameters {
     /// <p>The parameters that have a data type of string.</p>
     #[doc(hidden)]
@@ -9659,16 +9022,6 @@ impl Parameters {
     /// <p>The parameters that have a data type of date-time.</p>
     pub fn date_time_parameters(&self) -> std::option::Option<&[crate::model::DateTimeParameter]> {
         self.date_time_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for Parameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parameters");
-        formatter.field("string_parameters", &self.string_parameters);
-        formatter.field("integer_parameters", &self.integer_parameters);
-        formatter.field("decimal_parameters", &self.decimal_parameters);
-        formatter.field("date_time_parameters", &self.date_time_parameters);
-        formatter.finish()
     }
 }
 /// See [`Parameters`](crate::model::Parameters).
@@ -9783,7 +9136,7 @@ impl Parameters {
 
 /// <p>A date-time parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateTimeParameter {
     /// <p>A display name for the date-time parameter.</p>
     #[doc(hidden)]
@@ -9800,14 +9153,6 @@ impl DateTimeParameter {
     /// <p>The values for the date-time parameter.</p>
     pub fn values(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for DateTimeParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateTimeParameter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`DateTimeParameter`](crate::model::DateTimeParameter).
@@ -9867,7 +9212,7 @@ impl DateTimeParameter {
 
 /// <p>A decimal parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecimalParameter {
     /// <p>A display name for the decimal parameter.</p>
     #[doc(hidden)]
@@ -9884,14 +9229,6 @@ impl DecimalParameter {
     /// <p>The values for the decimal parameter.</p>
     pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for DecimalParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecimalParameter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`DecimalParameter`](crate::model::DecimalParameter).
@@ -9948,7 +9285,7 @@ impl DecimalParameter {
 
 /// <p>An integer parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntegerParameter {
     /// <p>The name of the integer parameter.</p>
     #[doc(hidden)]
@@ -9965,14 +9302,6 @@ impl IntegerParameter {
     /// <p>The values for the integer parameter.</p>
     pub fn values(&self) -> std::option::Option<&[i64]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for IntegerParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntegerParameter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`IntegerParameter`](crate::model::IntegerParameter).
@@ -10029,7 +9358,7 @@ impl IntegerParameter {
 
 /// <p>A string parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StringParameter {
     /// <p>A display name for a string parameter.</p>
     #[doc(hidden)]
@@ -10046,14 +9375,6 @@ impl StringParameter {
     /// <p>The values of a string parameter.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for StringParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StringParameter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`StringParameter`](crate::model::StringParameter).
@@ -10113,7 +9434,7 @@ impl StringParameter {
 
 /// <p>Dashboard source entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardSourceEntity {
     /// <p>Source template.</p>
     #[doc(hidden)]
@@ -10123,13 +9444,6 @@ impl DashboardSourceEntity {
     /// <p>Source template.</p>
     pub fn source_template(&self) -> std::option::Option<&crate::model::DashboardSourceTemplate> {
         self.source_template.as_ref()
-    }
-}
-impl std::fmt::Debug for DashboardSourceEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardSourceEntity");
-        formatter.field("source_template", &self.source_template);
-        formatter.finish()
     }
 }
 /// See [`DashboardSourceEntity`](crate::model::DashboardSourceEntity).
@@ -10171,7 +9485,7 @@ impl DashboardSourceEntity {
 
 /// <p>Dashboard source template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardSourceTemplate {
     /// <p>Dataset references.</p>
     #[doc(hidden)]
@@ -10188,14 +9502,6 @@ impl DashboardSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DashboardSourceTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardSourceTemplate");
-        formatter.field("data_set_references", &self.data_set_references);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`DashboardSourceTemplate`](crate::model::DashboardSourceTemplate).
@@ -10256,7 +9562,7 @@ impl DashboardSourceTemplate {
 
 /// <p>The source entity of an analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisSourceEntity {
     /// <p>The source template for the source entity of the analysis.</p>
     #[doc(hidden)]
@@ -10266,13 +9572,6 @@ impl AnalysisSourceEntity {
     /// <p>The source template for the source entity of the analysis.</p>
     pub fn source_template(&self) -> std::option::Option<&crate::model::AnalysisSourceTemplate> {
         self.source_template.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalysisSourceEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisSourceEntity");
-        formatter.field("source_template", &self.source_template);
-        formatter.finish()
     }
 }
 /// See [`AnalysisSourceEntity`](crate::model::AnalysisSourceEntity).
@@ -10314,7 +9613,7 @@ impl AnalysisSourceEntity {
 
 /// <p>The source template of an analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisSourceTemplate {
     /// <p>The dataset references of the source template of an analysis.</p>
     #[doc(hidden)]
@@ -10331,14 +9630,6 @@ impl AnalysisSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalysisSourceTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisSourceTemplate");
-        formatter.field("data_set_references", &self.data_set_references);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`AnalysisSourceTemplate`](crate::model::AnalysisSourceTemplate).
@@ -10399,7 +9690,7 @@ impl AnalysisSourceTemplate {
 
 /// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account or a QuickSight namespace in a specific Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountCustomization {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
     #[doc(hidden)]
@@ -10416,17 +9707,6 @@ impl AccountCustomization {
     /// <p>The default email customization template.</p>
     pub fn default_email_customization_template(&self) -> std::option::Option<&str> {
         self.default_email_customization_template.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountCustomization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountCustomization");
-        formatter.field("default_theme", &self.default_theme);
-        formatter.field(
-            "default_email_customization_template",
-            &self.default_email_customization_template,
-        );
-        formatter.finish()
     }
 }
 /// See [`AccountCustomization`](crate::model::AccountCustomization).
@@ -10486,7 +9766,7 @@ impl AccountCustomization {
 
 /// <p>The key or keys of the key-value pairs for the resource tag or tags assigned to the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Tag key.</p>
     #[doc(hidden)]
@@ -10503,14 +9783,6 @@ impl Tag {
     /// <p>Tag value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -10561,7 +9833,7 @@ impl Tag {
 
 /// <p>A <code>GroupSearchFilter</code> object that you want to apply to your search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
     #[doc(hidden)]
@@ -10585,15 +9857,6 @@ impl GroupSearchFilter {
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupSearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupSearchFilter");
-        formatter.field("operator", &self.operator);
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`GroupSearchFilter`](crate::model::GroupSearchFilter).
@@ -10836,7 +10099,7 @@ impl AsRef<str> for GroupFilterOperator {
 
 /// <p>A summary of information about an existing Amazon QuickSight folder. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderSummary {
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     #[doc(hidden)]
@@ -10881,18 +10144,6 @@ impl FolderSummary {
     /// <p>The time that the folder was last updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for FolderSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("name", &self.name);
-        formatter.field("folder_type", &self.folder_type);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`FolderSummary`](crate::model::FolderSummary).
@@ -11085,7 +10336,7 @@ impl AsRef<str> for FolderType {
 
 /// <p>A filter to use to search a Amazon QuickSight folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderSearchFilter {
     /// <p>The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.</p>
     #[doc(hidden)]
@@ -11109,15 +10360,6 @@ impl FolderSearchFilter {
     /// <p>The value of the named item (in this example, <code>PARENT_FOLDER_ARN</code>), that you want to use as a filter. For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:folder/folderId"</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for FolderSearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderSearchFilter");
-        formatter.field("operator", &self.operator);
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`FolderSearchFilter`](crate::model::FolderSearchFilter).
@@ -11358,7 +10600,7 @@ impl AsRef<str> for FilterOperator {
 
 /// <p>Dashboard summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -11410,19 +10652,6 @@ impl DashboardSummary {
     /// <p>The last time that this dashboard was published.</p>
     pub fn last_published_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_published_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DashboardSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("name", &self.name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("published_version_number", &self.published_version_number);
-        formatter.field("last_published_time", &self.last_published_time);
-        formatter.finish()
     }
 }
 /// See [`DashboardSummary`](crate::model::DashboardSummary).
@@ -11542,7 +10771,7 @@ impl DashboardSummary {
 
 /// <p>A filter that you apply when searching for dashboards. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.</p>
     #[doc(hidden)]
@@ -11566,15 +10795,6 @@ impl DashboardSearchFilter {
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for DashboardSearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardSearchFilter");
-        formatter.field("operator", &self.operator);
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DashboardSearchFilter`](crate::model::DashboardSearchFilter).
@@ -11730,7 +10950,7 @@ impl AsRef<str> for DashboardFilterAttribute {
 
 /// <p>The summary metadata that describes an analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisSummary {
     /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
     #[doc(hidden)]
@@ -11775,18 +10995,6 @@ impl AnalysisSummary {
     /// <p>The time that the analysis was last updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalysisSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`AnalysisSummary`](crate::model::AnalysisSummary).
@@ -11894,7 +11102,7 @@ impl AnalysisSummary {
 
 /// <p>A filter that you apply when searching for one or more analyses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.</p>
     #[doc(hidden)]
@@ -11918,15 +11126,6 @@ impl AnalysisSearchFilter {
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalysisSearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisSearchFilter");
-        formatter.field("operator", &self.operator);
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AnalysisSearchFilter`](crate::model::AnalysisSearchFilter).
@@ -12082,7 +11281,7 @@ impl AsRef<str> for AnalysisFilterAttribute {
 
 /// <p>The theme version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeVersionSummary {
     /// <p>The version number of the theme version.</p>
     #[doc(hidden)]
@@ -12120,17 +11319,6 @@ impl ThemeVersionSummary {
     /// <p>The status of the theme version.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ThemeVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeVersionSummary");
-        formatter.field("version_number", &self.version_number);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ThemeVersionSummary`](crate::model::ThemeVersionSummary).
@@ -12223,7 +11411,7 @@ impl ThemeVersionSummary {
 
 /// <p>The theme summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -12268,18 +11456,6 @@ impl ThemeSummary {
     /// <p>The last date and time that this theme was updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ThemeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("latest_version_number", &self.latest_version_number);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`ThemeSummary`](crate::model::ThemeSummary).
@@ -12479,7 +11655,7 @@ impl AsRef<str> for ThemeType {
 
 /// <p>The template version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the template version.</p>
     #[doc(hidden)]
@@ -12517,17 +11693,6 @@ impl TemplateVersionSummary {
     /// <p>The description of the template version.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateVersionSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`TemplateVersionSummary`](crate::model::TemplateVersionSummary).
@@ -12620,7 +11785,7 @@ impl TemplateVersionSummary {
 
 /// <p>The template summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateSummary {
     /// <p>A summary of a template.</p>
     #[doc(hidden)]
@@ -12665,18 +11830,6 @@ impl TemplateSummary {
     /// <p>The last time that this template was updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("name", &self.name);
-        formatter.field("latest_version_number", &self.latest_version_number);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
@@ -12781,7 +11934,7 @@ impl TemplateSummary {
 
 /// <p>The error type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceInfoV2 {
     /// <p>The name of the error.</p>
     #[doc(hidden)]
@@ -12826,18 +11979,6 @@ impl NamespaceInfoV2 {
     /// <p>An error that occurred when the namespace was created.</p>
     pub fn namespace_error(&self) -> std::option::Option<&crate::model::NamespaceError> {
         self.namespace_error.as_ref()
-    }
-}
-impl std::fmt::Debug for NamespaceInfoV2 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NamespaceInfoV2");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("capacity_region", &self.capacity_region);
-        formatter.field("creation_status", &self.creation_status);
-        formatter.field("identity_store", &self.identity_store);
-        formatter.field("namespace_error", &self.namespace_error);
-        formatter.finish()
     }
 }
 /// See [`NamespaceInfoV2`](crate::model::NamespaceInfoV2).
@@ -12948,7 +12089,7 @@ impl NamespaceInfoV2 {
 
 /// <p>Errors that occur during namespace creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceError {
     /// <p>The error type.</p>
     #[doc(hidden)]
@@ -12965,14 +12106,6 @@ impl NamespaceError {
     /// <p>The message for the error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for NamespaceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NamespaceError");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`NamespaceError`](crate::model::NamespaceError).
@@ -13314,7 +12447,7 @@ impl AsRef<str> for NamespaceStatus {
 
 /// <p>Information about the SPICE ingestion for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ingestion {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -13394,23 +12527,6 @@ impl Ingestion {
     /// <p>Type of this ingestion.</p>
     pub fn request_type(&self) -> std::option::Option<&crate::model::IngestionRequestType> {
         self.request_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Ingestion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ingestion");
-        formatter.field("arn", &self.arn);
-        formatter.field("ingestion_id", &self.ingestion_id);
-        formatter.field("ingestion_status", &self.ingestion_status);
-        formatter.field("error_info", &self.error_info);
-        formatter.field("row_info", &self.row_info);
-        formatter.field("queue_info", &self.queue_info);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("ingestion_time_in_seconds", &self.ingestion_time_in_seconds);
-        formatter.field("ingestion_size_in_bytes", &self.ingestion_size_in_bytes);
-        formatter.field("request_source", &self.request_source);
-        formatter.field("request_type", &self.request_type);
-        formatter.finish()
     }
 }
 /// See [`Ingestion`](crate::model::Ingestion).
@@ -13786,7 +12902,7 @@ impl AsRef<str> for IngestionRequestSource {
 
 /// <p>Information about a queued dataset SPICE ingestion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueueInfo {
     /// <p>The ID of the queued ingestion.</p>
     #[doc(hidden)]
@@ -13803,14 +12919,6 @@ impl QueueInfo {
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub fn queued_ingestion(&self) -> std::option::Option<&str> {
         self.queued_ingestion.as_deref()
-    }
-}
-impl std::fmt::Debug for QueueInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueueInfo");
-        formatter.field("waiting_on_ingestion", &self.waiting_on_ingestion);
-        formatter.field("queued_ingestion", &self.queued_ingestion);
-        formatter.finish()
     }
 }
 /// See [`QueueInfo`](crate::model::QueueInfo).
@@ -13867,7 +12975,7 @@ impl QueueInfo {
 
 /// <p>Information about rows for a data set SPICE ingestion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RowInfo {
     /// <p>The number of rows that were ingested.</p>
     #[doc(hidden)]
@@ -13891,15 +12999,6 @@ impl RowInfo {
     /// <p>The total number of rows in the dataset.</p>
     pub fn total_rows_in_dataset(&self) -> std::option::Option<i64> {
         self.total_rows_in_dataset
-    }
-}
-impl std::fmt::Debug for RowInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RowInfo");
-        formatter.field("rows_ingested", &self.rows_ingested);
-        formatter.field("rows_dropped", &self.rows_dropped);
-        formatter.field("total_rows_in_dataset", &self.total_rows_in_dataset);
-        formatter.finish()
     }
 }
 /// See [`RowInfo`](crate::model::RowInfo).
@@ -13962,7 +13061,7 @@ impl RowInfo {
 
 /// <p>Error information for the SPICE ingestion of a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p>Error type.</p>
     #[doc(hidden)]
@@ -13979,14 +13078,6 @@ impl ErrorInfo {
     /// <p>Error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorInfo");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ErrorInfo`](crate::model::ErrorInfo).
@@ -14512,7 +13603,7 @@ impl AsRef<str> for IngestionStatus {
 
 /// <p>The active Identity and Access Management (IAM) policy assignment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveIamPolicyAssignment {
     /// <p>A name for the IAM policy assignment.</p>
     #[doc(hidden)]
@@ -14529,14 +13620,6 @@ impl ActiveIamPolicyAssignment {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ActiveIamPolicyAssignment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveIamPolicyAssignment");
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.finish()
     }
 }
 /// See [`ActiveIamPolicyAssignment`](crate::model::ActiveIamPolicyAssignment).
@@ -14590,7 +13673,7 @@ impl ActiveIamPolicyAssignment {
 
 /// <p>IAM policy assignment summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamPolicyAssignmentSummary {
     /// <p>Assignment name.</p>
     #[doc(hidden)]
@@ -14607,14 +13690,6 @@ impl IamPolicyAssignmentSummary {
     /// <p>Assignment status.</p>
     pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
-    }
-}
-impl std::fmt::Debug for IamPolicyAssignmentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamPolicyAssignmentSummary");
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.finish()
     }
 }
 /// See [`IamPolicyAssignmentSummary`](crate::model::IamPolicyAssignmentSummary).
@@ -14671,7 +13746,7 @@ impl IamPolicyAssignmentSummary {
 
 /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupMember {
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
     #[doc(hidden)]
@@ -14688,14 +13763,6 @@ impl GroupMember {
     /// <p>The name of the group member (user).</p>
     pub fn member_name(&self) -> std::option::Option<&str> {
         self.member_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupMember");
-        formatter.field("arn", &self.arn);
-        formatter.field("member_name", &self.member_name);
-        formatter.finish()
     }
 }
 /// See [`GroupMember`](crate::model::GroupMember).
@@ -14746,7 +13813,7 @@ impl GroupMember {
 
 /// <p>An object that consists of a member Amazon Resource Name (ARN) and a member ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberIdArnPair {
     /// <p>The ID of the member.</p>
     #[doc(hidden)]
@@ -14763,14 +13830,6 @@ impl MemberIdArnPair {
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
     pub fn member_arn(&self) -> std::option::Option<&str> {
         self.member_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for MemberIdArnPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberIdArnPair");
-        formatter.field("member_id", &self.member_id);
-        formatter.field("member_arn", &self.member_arn);
-        formatter.finish()
     }
 }
 /// See [`MemberIdArnPair`](crate::model::MemberIdArnPair).
@@ -14821,7 +13880,7 @@ impl MemberIdArnPair {
 
 /// <p>The structure of a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     #[doc(hidden)]
@@ -14915,27 +13974,6 @@ impl DataSource {
     /// <p>Error information from the last update or the creation of the data source.</p>
     pub fn error_info(&self) -> std::option::Option<&crate::model::DataSourceErrorInfo> {
         self.error_info.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("arn", &self.arn);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("data_source_parameters", &self.data_source_parameters);
-        formatter.field(
-            "alternate_data_source_parameters",
-            &self.alternate_data_source_parameters,
-        );
-        formatter.field("vpc_connection_properties", &self.vpc_connection_properties);
-        formatter.field("ssl_properties", &self.ssl_properties);
-        formatter.field("error_info", &self.error_info);
-        formatter.finish()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
@@ -15150,7 +14188,7 @@ impl DataSource {
 
 /// <p>Error information for the data source creation or update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceErrorInfo {
     /// <p>Error type.</p>
     #[doc(hidden)]
@@ -15167,14 +14205,6 @@ impl DataSourceErrorInfo {
     /// <p>Error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceErrorInfo");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DataSourceErrorInfo`](crate::model::DataSourceErrorInfo).
@@ -15590,7 +14620,7 @@ impl AsRef<str> for DataSourceType {
 
 /// <p>Dataset summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
@@ -15658,30 +14688,6 @@ impl DataSetSummary {
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
     pub fn column_level_permission_rules_applied(&self) -> bool {
         self.column_level_permission_rules_applied
-    }
-}
-impl std::fmt::Debug for DataSetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.field(
-            "row_level_permission_data_set",
-            &self.row_level_permission_data_set,
-        );
-        formatter.field(
-            "row_level_permission_tag_configuration_applied",
-            &self.row_level_permission_tag_configuration_applied,
-        );
-        formatter.field(
-            "column_level_permission_rules_applied",
-            &self.column_level_permission_rules_applied,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataSetSummary`](crate::model::DataSetSummary).
@@ -15842,7 +14848,7 @@ impl DataSetSummary {
 
 /// <p>Dashboard version summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -15887,18 +14893,6 @@ impl DashboardVersionSummary {
     /// <p>Description.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for DashboardVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardVersionSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("status", &self.status);
-        formatter.field("source_entity_arn", &self.source_entity_arn);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`DashboardVersionSummary`](crate::model::DashboardVersionSummary).
@@ -16105,7 +15099,7 @@ impl AsRef<str> for EmbeddingIdentityType {
 /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
     #[doc(hidden)]
@@ -16163,16 +15157,6 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
     ) -> std::option::Option<&crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration>
     {
         self.dashboard_visual.as_ref()
-    }
-}
-impl std::fmt::Debug for RegisteredUserEmbeddingExperienceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisteredUserEmbeddingExperienceConfiguration");
-        formatter.field("dashboard", &self.dashboard);
-        formatter.field("quick_sight_console", &self.quick_sight_console);
-        formatter.field("q_search_bar", &self.q_search_bar);
-        formatter.field("dashboard_visual", &self.dashboard_visual);
-        formatter.finish()
     }
 }
 /// See [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration).
@@ -16296,7 +15280,7 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
 
 /// <p>The experience that you are embedding. You can use this object to generate a url that embeds a visual into your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisteredUserDashboardVisualEmbeddingConfiguration {
     /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
@@ -16310,16 +15294,6 @@ impl RegisteredUserDashboardVisualEmbeddingConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DashboardVisualId> {
         self.initial_dashboard_visual_id.as_ref()
-    }
-}
-impl std::fmt::Debug for RegisteredUserDashboardVisualEmbeddingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisteredUserDashboardVisualEmbeddingConfiguration");
-        formatter.field(
-            "initial_dashboard_visual_id",
-            &self.initial_dashboard_visual_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`RegisteredUserDashboardVisualEmbeddingConfiguration`](crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration).
@@ -16374,7 +15348,7 @@ impl RegisteredUserDashboardVisualEmbeddingConfiguration {
 /// </ul>
 /// <p>The <code>DashboardId</code>, <code>SheetId</code>, and <code>VisualId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardVisualId {
     /// <p>The ID of the dashboard that has the visual that you want to embed. The <code>DashboardId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
     #[doc(hidden)]
@@ -16398,15 +15372,6 @@ impl DashboardVisualId {
     /// <p>The ID of the visual that you want to embed. The <code>VisualID</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
     pub fn visual_id(&self) -> std::option::Option<&str> {
         self.visual_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DashboardVisualId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardVisualId");
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("sheet_id", &self.sheet_id);
-        formatter.field("visual_id", &self.visual_id);
-        formatter.finish()
     }
 }
 /// See [`DashboardVisualId`](crate::model::DashboardVisualId).
@@ -16469,7 +15434,7 @@ impl DashboardVisualId {
 
 /// <p>Information about the Q search bar embedding experience.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisteredUserQSearchBarEmbeddingConfiguration {
     /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
     /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
@@ -16481,13 +15446,6 @@ impl RegisteredUserQSearchBarEmbeddingConfiguration {
     /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
     pub fn initial_topic_id(&self) -> std::option::Option<&str> {
         self.initial_topic_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisteredUserQSearchBarEmbeddingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisteredUserQSearchBarEmbeddingConfiguration");
-        formatter.field("initial_topic_id", &self.initial_topic_id);
-        formatter.finish()
     }
 }
 /// See [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::model::RegisteredUserQSearchBarEmbeddingConfiguration).
@@ -16532,7 +15490,7 @@ impl RegisteredUserQSearchBarEmbeddingConfiguration {
 
 /// <p>Information about the Amazon QuickSight console that you want to embed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
@@ -16560,13 +15518,6 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// </ul>
     pub fn initial_path(&self) -> std::option::Option<&str> {
         self.initial_path.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisteredUserQuickSightConsoleEmbeddingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisteredUserQuickSightConsoleEmbeddingConfiguration");
-        formatter.field("initial_path", &self.initial_path);
-        formatter.finish()
     }
 }
 /// See [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration).
@@ -16625,7 +15576,7 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
 
 /// <p>Information about the dashboard you want to embed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisteredUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
@@ -16637,13 +15588,6 @@ impl RegisteredUserDashboardEmbeddingConfiguration {
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
     pub fn initial_dashboard_id(&self) -> std::option::Option<&str> {
         self.initial_dashboard_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegisteredUserDashboardEmbeddingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisteredUserDashboardEmbeddingConfiguration");
-        formatter.field("initial_dashboard_id", &self.initial_dashboard_id);
-        formatter.finish()
     }
 }
 /// See [`RegisteredUserDashboardEmbeddingConfiguration`](crate::model::RegisteredUserDashboardEmbeddingConfiguration).
@@ -16687,7 +15631,7 @@ impl RegisteredUserDashboardEmbeddingConfiguration {
 
 /// <p>The type of experience you want to embed. For anonymous users, you can embed Amazon QuickSight dashboards.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
     #[doc(hidden)]
@@ -16710,14 +15654,6 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
     ) -> std::option::Option<&crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration>
     {
         self.dashboard_visual.as_ref()
-    }
-}
-impl std::fmt::Debug for AnonymousUserEmbeddingExperienceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnonymousUserEmbeddingExperienceConfiguration");
-        formatter.field("dashboard", &self.dashboard);
-        formatter.field("dashboard_visual", &self.dashboard_visual);
-        formatter.finish()
     }
 }
 /// See [`AnonymousUserEmbeddingExperienceConfiguration`](crate::model::AnonymousUserEmbeddingExperienceConfiguration).
@@ -16784,7 +15720,7 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
 
 /// <p>The experience that you are embedding. You can use this object to generate a url that embeds a visual into your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnonymousUserDashboardVisualEmbeddingConfiguration {
     /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
@@ -16798,16 +15734,6 @@ impl AnonymousUserDashboardVisualEmbeddingConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DashboardVisualId> {
         self.initial_dashboard_visual_id.as_ref()
-    }
-}
-impl std::fmt::Debug for AnonymousUserDashboardVisualEmbeddingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnonymousUserDashboardVisualEmbeddingConfiguration");
-        formatter.field(
-            "initial_dashboard_visual_id",
-            &self.initial_dashboard_visual_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration).
@@ -16856,7 +15782,7 @@ impl AnonymousUserDashboardVisualEmbeddingConfiguration {
 
 /// <p>Information about the dashboard that you want to embed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnonymousUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
@@ -16868,13 +15794,6 @@ impl AnonymousUserDashboardEmbeddingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub fn initial_dashboard_id(&self) -> std::option::Option<&str> {
         self.initial_dashboard_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AnonymousUserDashboardEmbeddingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnonymousUserDashboardEmbeddingConfiguration");
-        formatter.field("initial_dashboard_id", &self.initial_dashboard_id);
-        formatter.finish()
     }
 }
 /// See [`AnonymousUserDashboardEmbeddingConfiguration`](crate::model::AnonymousUserDashboardEmbeddingConfiguration).
@@ -16949,7 +15868,7 @@ impl std::fmt::Debug for SessionTag {
 pub mod session_tag {
 
     /// A builder for [`SessionTag`](crate::model::SessionTag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -16983,6 +15902,14 @@ pub mod session_tag {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key", &self.key);
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl SessionTag {
     /// Creates a new builder-style object to manufacture [`SessionTag`](crate::model::SessionTag).
@@ -16993,7 +15920,7 @@ impl SessionTag {
 
 /// <p>Summary information about a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Theme {
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
     #[doc(hidden)]
@@ -17045,19 +15972,6 @@ impl Theme {
     /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ThemeType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Theme {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Theme");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("version", &self.version);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Theme`](crate::model::Theme).
@@ -17177,7 +16091,7 @@ impl Theme {
 
 /// <p>A version of a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeVersion {
     /// <p>The version number of the theme.</p>
     #[doc(hidden)]
@@ -17236,20 +16150,6 @@ impl ThemeVersion {
     /// <p>The status of the theme version.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ThemeVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeVersion");
-        formatter.field("version_number", &self.version_number);
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("base_theme_id", &self.base_theme_id);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("errors", &self.errors);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ThemeVersion`](crate::model::ThemeVersion).
@@ -17393,7 +16293,7 @@ impl ThemeVersion {
 
 /// <p>Theme error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThemeError {
     /// <p>The type of error.</p>
     #[doc(hidden)]
@@ -17410,14 +16310,6 @@ impl ThemeError {
     /// <p>The error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ThemeError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThemeError");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ThemeError`](crate::model::ThemeError).
@@ -17557,7 +16449,7 @@ impl AsRef<str> for ThemeErrorType {
 /// <p>A template object. A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.</p>
 /// <p>You can share templates across Amazon Web Services accounts by allowing users in other Amazon Web Services accounts to create a template or a dashboard from an existing template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Template {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     #[doc(hidden)]
@@ -17602,18 +16494,6 @@ impl Template {
     /// <p>Time when this was created.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Template {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Template");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`Template`](crate::model::Template).
@@ -17721,7 +16601,7 @@ impl Template {
 
 /// <p>A version of a template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateVersion {
     /// <p>The time that this template version was created.</p>
     #[doc(hidden)]
@@ -17790,21 +16670,6 @@ impl TemplateVersion {
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub fn sheets(&self) -> std::option::Option<&[crate::model::Sheet]> {
         self.sheets.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateVersion");
-        formatter.field("created_time", &self.created_time);
-        formatter.field("errors", &self.errors);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("status", &self.status);
-        formatter.field("data_set_configurations", &self.data_set_configurations);
-        formatter.field("description", &self.description);
-        formatter.field("source_entity_arn", &self.source_entity_arn);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.field("sheets", &self.sheets);
-        formatter.finish()
     }
 }
 /// See [`TemplateVersion`](crate::model::TemplateVersion).
@@ -17979,7 +16844,7 @@ impl TemplateVersion {
 
 /// <p>A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in Amazon QuickSight. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such as controls, filters, and so on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
     #[doc(hidden)]
@@ -17996,14 +16861,6 @@ impl Sheet {
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Sheet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sheet");
-        formatter.field("sheet_id", &self.sheet_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`Sheet`](crate::model::Sheet).
@@ -18054,7 +16911,7 @@ impl Sheet {
 
 /// <p>Dataset configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetConfiguration {
     /// <p>Placeholder.</p>
     #[doc(hidden)]
@@ -18081,15 +16938,6 @@ impl DataSetConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ColumnGroupSchema]> {
         self.column_group_schema_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSetConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetConfiguration");
-        formatter.field("placeholder", &self.placeholder);
-        formatter.field("data_set_schema", &self.data_set_schema);
-        formatter.field("column_group_schema_list", &self.column_group_schema_list);
-        formatter.finish()
     }
 }
 /// See [`DataSetConfiguration`](crate::model::DataSetConfiguration).
@@ -18165,7 +17013,7 @@ impl DataSetConfiguration {
 
 /// <p>The column group schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnGroupSchema {
     /// <p>The name of the column group schema.</p>
     #[doc(hidden)]
@@ -18185,17 +17033,6 @@ impl ColumnGroupSchema {
         &self,
     ) -> std::option::Option<&[crate::model::ColumnGroupColumnSchema]> {
         self.column_group_column_schema_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnGroupSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnGroupSchema");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "column_group_column_schema_list",
-            &self.column_group_column_schema_list,
-        );
-        formatter.finish()
     }
 }
 /// See [`ColumnGroupSchema`](crate::model::ColumnGroupSchema).
@@ -18259,7 +17096,7 @@ impl ColumnGroupSchema {
 
 /// <p>A structure describing the name, data type, and geographic role of the columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnGroupColumnSchema {
     /// <p>The name of the column group's column schema.</p>
     #[doc(hidden)]
@@ -18269,13 +17106,6 @@ impl ColumnGroupColumnSchema {
     /// <p>The name of the column group's column schema.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnGroupColumnSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnGroupColumnSchema");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ColumnGroupColumnSchema`](crate::model::ColumnGroupColumnSchema).
@@ -18312,7 +17142,7 @@ impl ColumnGroupColumnSchema {
 
 /// <p>Dataset schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSetSchema {
     /// <p>A structure containing the list of column schemas.</p>
     #[doc(hidden)]
@@ -18322,13 +17152,6 @@ impl DataSetSchema {
     /// <p>A structure containing the list of column schemas.</p>
     pub fn column_schema_list(&self) -> std::option::Option<&[crate::model::ColumnSchema]> {
         self.column_schema_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSetSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSetSchema");
-        formatter.field("column_schema_list", &self.column_schema_list);
-        formatter.finish()
     }
 }
 /// See [`DataSetSchema`](crate::model::DataSetSchema).
@@ -18377,7 +17200,7 @@ impl DataSetSchema {
 
 /// <p>The column schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnSchema {
     /// <p>The name of the column schema.</p>
     #[doc(hidden)]
@@ -18401,15 +17224,6 @@ impl ColumnSchema {
     /// <p>The geographic role of the column schema.</p>
     pub fn geographic_role(&self) -> std::option::Option<&str> {
         self.geographic_role.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnSchema");
-        formatter.field("name", &self.name);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("geographic_role", &self.geographic_role);
-        formatter.finish()
     }
 }
 /// See [`ColumnSchema`](crate::model::ColumnSchema).
@@ -18475,7 +17289,7 @@ impl ColumnSchema {
 
 /// <p>List of errors that occurred when the template version creation failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateError {
     /// <p>Type of error.</p>
     #[doc(hidden)]
@@ -18492,14 +17306,6 @@ impl TemplateError {
     /// <p>Description of the error type.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateError");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`TemplateError`](crate::model::TemplateError).
@@ -18660,7 +17466,7 @@ impl AsRef<str> for TemplateErrorType {
 
 /// <p>An Identity and Access Management (IAM) policy assignment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IamPolicyAssignment {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -18711,18 +17517,6 @@ impl IamPolicyAssignment {
     /// <p>Assignment status.</p>
     pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
-    }
-}
-impl std::fmt::Debug for IamPolicyAssignment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IamPolicyAssignment");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_id", &self.assignment_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("identities", &self.identities);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.finish()
     }
 }
 /// See [`IamPolicyAssignment`](crate::model::IamPolicyAssignment).
@@ -18850,7 +17644,7 @@ impl IamPolicyAssignment {
 
 /// <p>A folder in Amazon QuickSight.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Folder {
     /// <p>The ID of the folder.</p>
     #[doc(hidden)]
@@ -18902,19 +17696,6 @@ impl Folder {
     /// <p>The time that the folder was last updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Folder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Folder");
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("folder_type", &self.folder_type);
-        formatter.field("folder_path", &self.folder_path);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`Folder`](crate::model::Folder).
@@ -19043,7 +17824,7 @@ impl Folder {
 
 /// <p>Dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSet {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -19186,43 +17967,6 @@ impl DataSet {
         &self,
     ) -> std::option::Option<&crate::model::DataSetUsageConfiguration> {
         self.data_set_usage_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSet");
-        formatter.field("arn", &self.arn);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("physical_table_map", &self.physical_table_map);
-        formatter.field("logical_table_map", &self.logical_table_map);
-        formatter.field("output_columns", &self.output_columns);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.field(
-            "consumed_spice_capacity_in_bytes",
-            &self.consumed_spice_capacity_in_bytes,
-        );
-        formatter.field("column_groups", &self.column_groups);
-        formatter.field("field_folders", &self.field_folders);
-        formatter.field(
-            "row_level_permission_data_set",
-            &self.row_level_permission_data_set,
-        );
-        formatter.field(
-            "row_level_permission_tag_configuration",
-            &self.row_level_permission_tag_configuration,
-        );
-        formatter.field(
-            "column_level_permission_rules",
-            &self.column_level_permission_rules,
-        );
-        formatter.field(
-            "data_set_usage_configuration",
-            &self.data_set_usage_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataSet`](crate::model::DataSet).
@@ -19558,7 +18302,7 @@ impl DataSet {
 
 /// <p>Output column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputColumn {
     /// <p>A display name for the dataset.</p>
     #[doc(hidden)]
@@ -19582,15 +18326,6 @@ impl OutputColumn {
     /// <p>Type.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ColumnDataType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for OutputColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputColumn");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`OutputColumn`](crate::model::OutputColumn).
@@ -19656,7 +18391,7 @@ impl OutputColumn {
 
 /// <p>Dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dashboard {
     /// <p>Dashboard ID.</p>
     #[doc(hidden)]
@@ -19708,19 +18443,6 @@ impl Dashboard {
     /// <p>The last time that this dataset was updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Dashboard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dashboard");
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_published_time", &self.last_published_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`Dashboard`](crate::model::Dashboard).
@@ -19843,7 +18565,7 @@ impl Dashboard {
 
 /// <p>Dashboard version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardVersion {
     /// <p>The time that this dashboard version was created.</p>
     #[doc(hidden)]
@@ -19916,22 +18638,6 @@ impl DashboardVersion {
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub fn sheets(&self) -> std::option::Option<&[crate::model::Sheet]> {
         self.sheets.as_deref()
-    }
-}
-impl std::fmt::Debug for DashboardVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardVersion");
-        formatter.field("created_time", &self.created_time);
-        formatter.field("errors", &self.errors);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("status", &self.status);
-        formatter.field("arn", &self.arn);
-        formatter.field("source_entity_arn", &self.source_entity_arn);
-        formatter.field("data_set_arns", &self.data_set_arns);
-        formatter.field("description", &self.description);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.field("sheets", &self.sheets);
-        formatter.finish()
     }
 }
 /// See [`DashboardVersion`](crate::model::DashboardVersion).
@@ -20114,7 +18820,7 @@ impl DashboardVersion {
 
 /// <p>Dashboard error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashboardError {
     /// <p>Type.</p>
     #[doc(hidden)]
@@ -20131,14 +18837,6 @@ impl DashboardError {
     /// <p>Message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DashboardError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashboardError");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DashboardError`](crate::model::DashboardError).
@@ -20335,7 +19033,7 @@ impl AsRef<str> for DashboardErrorType {
 
 /// <p>Metadata structure for an analysis in Amazon QuickSight</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Analysis {
     /// <p>The ID of the analysis.</p>
     #[doc(hidden)]
@@ -20408,22 +19106,6 @@ impl Analysis {
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub fn sheets(&self) -> std::option::Option<&[crate::model::Sheet]> {
         self.sheets.as_deref()
-    }
-}
-impl std::fmt::Debug for Analysis {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Analysis");
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("errors", &self.errors);
-        formatter.field("data_set_arns", &self.data_set_arns);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("sheets", &self.sheets);
-        formatter.finish()
     }
 }
 /// See [`Analysis`](crate::model::Analysis).
@@ -20606,7 +19288,7 @@ impl Analysis {
 
 /// <p>Analysis error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalysisError {
     /// <p>The type of the analysis error.</p>
     #[doc(hidden)]
@@ -20623,14 +19305,6 @@ impl AnalysisError {
     /// <p>The message associated with the analysis error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalysisError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisError");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`AnalysisError`](crate::model::AnalysisError).
@@ -20834,7 +19508,7 @@ impl AsRef<str> for AnalysisErrorType {
 /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountInfo {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     #[doc(hidden)]
@@ -20872,20 +19546,6 @@ impl AccountInfo {
     /// <p>The status of your account subscription.</p>
     pub fn account_subscription_status(&self) -> std::option::Option<&str> {
         self.account_subscription_status.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountInfo");
-        formatter.field("account_name", &self.account_name);
-        formatter.field("edition", &self.edition);
-        formatter.field("notification_email", &self.notification_email);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field(
-            "account_subscription_status",
-            &self.account_subscription_status,
-        );
-        formatter.finish()
     }
 }
 /// See [`AccountInfo`](crate::model::AccountInfo).
@@ -21079,7 +19739,7 @@ impl AsRef<str> for Edition {
 
 /// <p>The Amazon QuickSight settings associated with your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
     #[doc(hidden)]
@@ -21117,17 +19777,6 @@ impl AccountSettings {
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub fn public_sharing_enabled(&self) -> bool {
         self.public_sharing_enabled
-    }
-}
-impl std::fmt::Debug for AccountSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountSettings");
-        formatter.field("account_name", &self.account_name);
-        formatter.field("edition", &self.edition);
-        formatter.field("default_namespace", &self.default_namespace);
-        formatter.field("notification_email", &self.notification_email);
-        formatter.field("public_sharing_enabled", &self.public_sharing_enabled);
-        formatter.finish()
     }
 }
 /// See [`AccountSettings`](crate::model::AccountSettings).
@@ -21405,7 +20054,7 @@ impl AsRef<str> for IngestionType {
 
 /// <p>An asset in a Amazon QuickSight folder, such as a dashboard, analysis, or dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderMember {
     /// <p>The ID of an asset in the folder.</p>
     #[doc(hidden)]
@@ -21422,14 +20071,6 @@ impl FolderMember {
     /// <p>The type of asset that it is.</p>
     pub fn member_type(&self) -> std::option::Option<&crate::model::MemberType> {
         self.member_type.as_ref()
-    }
-}
-impl std::fmt::Debug for FolderMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderMember");
-        formatter.field("member_id", &self.member_id);
-        formatter.field("member_type", &self.member_type);
-        formatter.finish()
     }
 }
 /// See [`FolderMember`](crate::model::FolderMember).
@@ -21483,7 +20124,7 @@ impl FolderMember {
 
 /// <p>A <code>SignupResponse</code> object that contains a summary of a newly created account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignupResponse {
     /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
     #[doc(hidden)]
@@ -21514,16 +20155,6 @@ impl SignupResponse {
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
     pub fn directory_type(&self) -> std::option::Option<&str> {
         self.directory_type.as_deref()
-    }
-}
-impl std::fmt::Debug for SignupResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignupResponse");
-        formatter.field("iam_user", &self.iam_user);
-        formatter.field("user_login_name", &self.user_login_name);
-        formatter.field("account_name", &self.account_name);
-        formatter.field("directory_type", &self.directory_type);
-        formatter.finish()
     }
 }
 /// See [`SignupResponse`](crate::model::SignupResponse).

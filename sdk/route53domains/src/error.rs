@@ -2,18 +2,11 @@
 
 /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInput {
     /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInput");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidInput {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl InvalidInput {
 
 /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedTld {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedTld {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedTld");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedTld {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl UnsupportedTld {
 
 /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationLimitExceeded {
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OperationLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OperationLimitExceeded {
     /// Returns the error message.
@@ -203,18 +182,11 @@ impl OperationLimitExceeded {
 
 /// <p>The top-level domain does not support this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TldRulesViolation {
     /// <p>The top-level domain does not support this operation.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TldRulesViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TldRulesViolation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TldRulesViolation {
     /// Returns the error message.
@@ -270,18 +242,11 @@ impl TldRulesViolation {
 
 /// <p>The request is already in progress for the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateRequest {
     /// <p>The request is already in progress for the domain.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DuplicateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateRequest");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DuplicateRequest {
     /// Returns the error message.
@@ -337,18 +302,11 @@ impl DuplicateRequest {
 
 /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainLimitExceeded {
     /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DomainLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DomainLimitExceeded {
     /// Returns the error message.

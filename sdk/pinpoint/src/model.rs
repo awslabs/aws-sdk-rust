@@ -2,7 +2,7 @@
 
 /// <p>Verify OTP Message Response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerificationResponse {
     /// <p>Specifies whether the OTP is valid or not.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl VerificationResponse {
     /// <p>Specifies whether the OTP is valid or not.</p>
     pub fn valid(&self) -> bool {
         self.valid
-    }
-}
-impl std::fmt::Debug for VerificationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerificationResponse");
-        formatter.field("valid", &self.valid);
-        formatter.finish()
     }
 }
 /// See [`VerificationResponse`](crate::model::VerificationResponse).
@@ -57,7 +50,7 @@ impl VerificationResponse {
 
 /// <p>Verify OTP message request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyOtpMessageRequestParameters {
     /// <p>The destination identity to send OTP to.</p>
     #[doc(hidden)]
@@ -81,15 +74,6 @@ impl VerifyOtpMessageRequestParameters {
     /// <p>The reference identifier provided when the OTP was previously sent.</p>
     pub fn reference_id(&self) -> std::option::Option<&str> {
         self.reference_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VerifyOtpMessageRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyOtpMessageRequestParameters");
-        formatter.field("destination_identity", &self.destination_identity);
-        formatter.field("otp", &self.otp);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.finish()
     }
 }
 /// See [`VerifyOtpMessageRequestParameters`](crate::model::VerifyOtpMessageRequestParameters).
@@ -155,7 +139,7 @@ impl VerifyOtpMessageRequestParameters {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageBody {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -172,14 +156,6 @@ impl MessageBody {
     /// <p>The unique identifier for the request or response.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageBody");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 /// See [`MessageBody`](crate::model::MessageBody).
@@ -230,7 +206,7 @@ impl MessageBody {
 
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceTemplateRequest {
     /// <p>The text of the script to use in messages that are based on the message template, in plain text format.</p>
     #[doc(hidden)]
@@ -279,18 +255,6 @@ impl VoiceTemplateRequest {
     /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn voice_id(&self) -> std::option::Option<&str> {
         self.voice_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VoiceTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceTemplateRequest");
-        formatter.field("body", &self.body);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
     }
 }
 /// See [`VoiceTemplateRequest`](crate::model::VoiceTemplateRequest).
@@ -415,7 +379,7 @@ impl VoiceTemplateRequest {
 
 /// <p>Provides information about the status and settings of the voice channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceChannelResponse {
     /// <p>The unique identifier for the application that the voice channel applies to.</p>
     #[doc(hidden)]
@@ -488,22 +452,6 @@ impl VoiceChannelResponse {
     /// <p>The current version of the voice channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for VoiceChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`VoiceChannelResponse`](crate::model::VoiceChannelResponse).
@@ -662,7 +610,7 @@ impl VoiceChannelResponse {
 
 /// <p>Specifies the status and settings of the voice channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceChannelRequest {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
     #[doc(hidden)]
@@ -672,13 +620,6 @@ impl VoiceChannelRequest {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for VoiceChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceChannelRequest");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`VoiceChannelRequest`](crate::model::VoiceChannelRequest).
@@ -717,7 +658,7 @@ impl VoiceChannelRequest {
 
 /// <p>Specifies which version of a message template to use as the active version of the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateActiveVersionRequest {
     /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -729,13 +670,6 @@ impl TemplateActiveVersionRequest {
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateActiveVersionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateActiveVersionRequest");
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`TemplateActiveVersionRequest`](crate::model::TemplateActiveVersionRequest).
@@ -776,7 +710,7 @@ impl TemplateActiveVersionRequest {
 
 /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsTemplateRequest {
     /// <p>The message body to use in text messages that are based on the message template.</p>
     #[doc(hidden)]
@@ -818,17 +752,6 @@ impl SmsTemplateRequest {
     /// <p>A custom description of the message template.</p>
     pub fn template_description(&self) -> std::option::Option<&str> {
         self.template_description.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsTemplateRequest");
-        formatter.field("body", &self.body);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.finish()
     }
 }
 /// See [`SmsTemplateRequest`](crate::model::SmsTemplateRequest).
@@ -941,7 +864,7 @@ impl SmsTemplateRequest {
 
 /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsChannelResponse {
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
     #[doc(hidden)]
@@ -1042,32 +965,6 @@ impl SmsChannelResponse {
     /// <p>The current version of the SMS channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for SmsChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field(
-            "promotional_messages_per_second",
-            &self.promotional_messages_per_second,
-        );
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("short_code", &self.short_code);
-        formatter.field(
-            "transactional_messages_per_second",
-            &self.transactional_messages_per_second,
-        );
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`SmsChannelResponse`](crate::model::SmsChannelResponse).
@@ -1284,7 +1181,7 @@ impl SmsChannelResponse {
 
 /// <p>Specifies the status and settings of the SMS channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsChannelRequest {
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
     #[doc(hidden)]
@@ -1308,15 +1205,6 @@ impl SmsChannelRequest {
     /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
     pub fn short_code(&self) -> std::option::Option<&str> {
         self.short_code.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsChannelRequest");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("short_code", &self.short_code);
-        formatter.finish()
     }
 }
 /// See [`SmsChannelRequest`](crate::model::SmsChannelRequest).
@@ -1379,7 +1267,7 @@ impl SmsChannelRequest {
 
 /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentResponse {
     /// <p>The unique identifier for the application that the segment is associated with.</p>
     #[doc(hidden)]
@@ -1478,24 +1366,6 @@ impl SegmentResponse {
     /// <p>The version number of the segment.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for SegmentResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("id", &self.id);
-        formatter.field("import_definition", &self.import_definition);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("name", &self.name);
-        formatter.field("segment_groups", &self.segment_groups);
-        formatter.field("segment_type", &self.segment_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`SegmentResponse`](crate::model::SegmentResponse).
@@ -1802,7 +1672,7 @@ impl AsRef<str> for SegmentType {
 
 /// <p>Specifies the settings that define the relationships between segment groups for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentGroupList {
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
     #[doc(hidden)]
@@ -1819,14 +1689,6 @@ impl SegmentGroupList {
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
     pub fn include(&self) -> std::option::Option<&crate::model::Include> {
         self.include.as_ref()
-    }
-}
-impl std::fmt::Debug for SegmentGroupList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentGroupList");
-        formatter.field("groups", &self.groups);
-        formatter.field("include", &self.include);
-        formatter.finish()
     }
 }
 /// See [`SegmentGroupList`](crate::model::SegmentGroupList).
@@ -1981,7 +1843,7 @@ impl AsRef<str> for Include {
 
 /// <p>Specifies the base segments and dimensions for a segment, and the relationships between these base segments and dimensions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentGroup {
     /// <p>An array that defines the dimensions for the segment.</p>
     #[doc(hidden)]
@@ -2014,16 +1876,6 @@ impl SegmentGroup {
     /// <p>Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for SegmentGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentGroup");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("source_segments", &self.source_segments);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`SegmentGroup`](crate::model::SegmentGroup).
@@ -2312,7 +2164,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Specifies the segment identifier and version of a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentReference {
     /// <p>The unique identifier for the segment.</p>
     #[doc(hidden)]
@@ -2329,14 +2181,6 @@ impl SegmentReference {
     /// <p>The version number of the segment.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for SegmentReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentReference");
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`SegmentReference`](crate::model::SegmentReference).
@@ -2387,7 +2231,7 @@ impl SegmentReference {
 
 /// <p>Specifies the dimension settings for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentDimensions {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
     #[doc(hidden)]
@@ -2450,18 +2294,6 @@ impl SegmentDimensions {
         &std::collections::HashMap<std::string::String, crate::model::AttributeDimension>,
     > {
         self.user_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for SegmentDimensions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentDimensions");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("behavior", &self.behavior);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("user_attributes", &self.user_attributes);
-        formatter.finish()
     }
 }
 /// See [`SegmentDimensions`](crate::model::SegmentDimensions).
@@ -2620,7 +2452,7 @@ impl SegmentDimensions {
 
 /// <p>Specifies attribute-based criteria for including or excluding endpoints from a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeDimension {
     /// <p>The type of segment dimension to use. Valid values are: </p>
     /// <ul>
@@ -2657,14 +2489,6 @@ impl AttributeDimension {
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for AttributeDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeDimension");
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`AttributeDimension`](crate::model::AttributeDimension).
@@ -2870,7 +2694,7 @@ impl AsRef<str> for AttributeType {
 
 /// <p>Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
     #[doc(hidden)]
@@ -2887,14 +2711,6 @@ impl MetricDimension {
     /// <p>The value to compare.</p>
     pub fn value(&self) -> f64 {
         self.value
-    }
-}
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MetricDimension`](crate::model::MetricDimension).
@@ -2948,7 +2764,7 @@ impl MetricDimension {
 
 /// <p>Specifies geographical dimension settings for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentLocation {
     /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
     #[doc(hidden)]
@@ -2965,14 +2781,6 @@ impl SegmentLocation {
     /// <p>The GPS location and range for the segment.</p>
     pub fn gps_point(&self) -> std::option::Option<&crate::model::GpsPointDimension> {
         self.gps_point.as_ref()
-    }
-}
-impl std::fmt::Debug for SegmentLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentLocation");
-        formatter.field("country", &self.country);
-        formatter.field("gps_point", &self.gps_point);
-        formatter.finish()
     }
 }
 /// See [`SegmentLocation`](crate::model::SegmentLocation).
@@ -3029,7 +2837,7 @@ impl SegmentLocation {
 
 /// <p>Specifies GPS-based criteria for including or excluding endpoints from a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GpsPointDimension {
     /// <p>The GPS coordinates to measure distance from.</p>
     #[doc(hidden)]
@@ -3046,14 +2854,6 @@ impl GpsPointDimension {
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
     pub fn range_in_kilometers(&self) -> f64 {
         self.range_in_kilometers
-    }
-}
-impl std::fmt::Debug for GpsPointDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GpsPointDimension");
-        formatter.field("coordinates", &self.coordinates);
-        formatter.field("range_in_kilometers", &self.range_in_kilometers);
-        formatter.finish()
     }
 }
 /// See [`GpsPointDimension`](crate::model::GpsPointDimension).
@@ -3107,7 +2907,7 @@ impl GpsPointDimension {
 
 /// <p>Specifies the GPS coordinates of a location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GpsCoordinates {
     /// <p>The latitude coordinate of the location.</p>
     #[doc(hidden)]
@@ -3124,14 +2924,6 @@ impl GpsCoordinates {
     /// <p>The longitude coordinate of the location.</p>
     pub fn longitude(&self) -> f64 {
         self.longitude
-    }
-}
-impl std::fmt::Debug for GpsCoordinates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GpsCoordinates");
-        formatter.field("latitude", &self.latitude);
-        formatter.field("longitude", &self.longitude);
-        formatter.finish()
     }
 }
 /// See [`GpsCoordinates`](crate::model::GpsCoordinates).
@@ -3182,7 +2974,7 @@ impl GpsCoordinates {
 
 /// <p>Specifies the dimension type and values for a segment dimension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDimension {
     /// <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.</p>
     #[doc(hidden)]
@@ -3199,14 +2991,6 @@ impl SetDimension {
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the DimensionType property, endpoints are included or excluded from the segment if their values match the criteria values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SetDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDimension");
-        formatter.field("dimension_type", &self.dimension_type);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SetDimension`](crate::model::SetDimension).
@@ -3359,7 +3143,7 @@ impl AsRef<str> for DimensionType {
 
 /// <p>Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentDemographics {
     /// <p>The app version criteria for the segment.</p>
     #[doc(hidden)]
@@ -3404,18 +3188,6 @@ impl SegmentDemographics {
     /// <p>The device platform criteria for the segment.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::SetDimension> {
         self.platform.as_ref()
-    }
-}
-impl std::fmt::Debug for SegmentDemographics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentDemographics");
-        formatter.field("app_version", &self.app_version);
-        formatter.field("channel", &self.channel);
-        formatter.field("device_type", &self.device_type);
-        formatter.field("make", &self.make);
-        formatter.field("model", &self.model);
-        formatter.field("platform", &self.platform);
-        formatter.finish()
     }
 }
 /// See [`SegmentDemographics`](crate::model::SegmentDemographics).
@@ -3526,7 +3298,7 @@ impl SegmentDemographics {
 
 /// <p>Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentBehaviors {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
     #[doc(hidden)]
@@ -3536,13 +3308,6 @@ impl SegmentBehaviors {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
     pub fn recency(&self) -> std::option::Option<&crate::model::RecencyDimension> {
         self.recency.as_ref()
-    }
-}
-impl std::fmt::Debug for SegmentBehaviors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentBehaviors");
-        formatter.field("recency", &self.recency);
-        formatter.finish()
     }
 }
 /// See [`SegmentBehaviors`](crate::model::SegmentBehaviors).
@@ -3584,7 +3349,7 @@ impl SegmentBehaviors {
 
 /// <p>Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecencyDimension {
     /// <p>The duration to use when determining whether an endpoint is active or inactive.</p>
     #[doc(hidden)]
@@ -3601,14 +3366,6 @@ impl RecencyDimension {
     /// <p>The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the specified duration are included in the segment.</p>
     pub fn recency_type(&self) -> std::option::Option<&crate::model::RecencyType> {
         self.recency_type.as_ref()
-    }
-}
-impl std::fmt::Debug for RecencyDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecencyDimension");
-        formatter.field("duration", &self.duration);
-        formatter.field("recency_type", &self.recency_type);
-        formatter.finish()
     }
 }
 /// See [`RecencyDimension`](crate::model::RecencyDimension).
@@ -3852,7 +3609,7 @@ impl AsRef<str> for Duration {
 
 /// <p>Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentImportResource {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
     #[doc(hidden)]
@@ -3899,18 +3656,6 @@ impl SegmentImportResource {
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
     pub fn size(&self) -> i32 {
         self.size
-    }
-}
-impl std::fmt::Debug for SegmentImportResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentImportResource");
-        formatter.field("channel_counts", &self.channel_counts);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("format", &self.format);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url", &self.s3_url);
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`SegmentImportResource`](crate::model::SegmentImportResource).
@@ -4109,7 +3854,7 @@ impl AsRef<str> for Format {
 
 /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteSegmentRequest {
     /// <p>The criteria that define the dimensions for the segment.</p>
     #[doc(hidden)]
@@ -4144,16 +3889,6 @@ impl WriteSegmentRequest {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for WriteSegmentRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteSegmentRequest");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("name", &self.name);
-        formatter.field("segment_groups", &self.segment_groups);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`WriteSegmentRequest`](crate::model::WriteSegmentRequest).
@@ -4251,7 +3986,7 @@ impl WriteSegmentRequest {
 
 /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommenderConfigurationResponse {
     /// <p>A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
     /// <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
@@ -4354,42 +4089,6 @@ impl RecommenderConfigurationResponse {
     /// <p>The number of recommended items that are retrieved from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables.</p>
     pub fn recommendations_per_message(&self) -> i32 {
         self.recommendations_per_message
-    }
-}
-impl std::fmt::Debug for RecommenderConfigurationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommenderConfigurationResponse");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "recommendation_provider_id_type",
-            &self.recommendation_provider_id_type,
-        );
-        formatter.field(
-            "recommendation_provider_role_arn",
-            &self.recommendation_provider_role_arn,
-        );
-        formatter.field(
-            "recommendation_provider_uri",
-            &self.recommendation_provider_uri,
-        );
-        formatter.field(
-            "recommendation_transformer_uri",
-            &self.recommendation_transformer_uri,
-        );
-        formatter.field(
-            "recommendations_display_name",
-            &self.recommendations_display_name,
-        );
-        formatter.field(
-            "recommendations_per_message",
-            &self.recommendations_per_message,
-        );
-        formatter.finish()
     }
 }
 /// See [`RecommenderConfigurationResponse`](crate::model::RecommenderConfigurationResponse).
@@ -4625,7 +4324,7 @@ impl RecommenderConfigurationResponse {
 
 /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecommenderConfigurationShape {
     /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
     /// <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p>
@@ -4719,39 +4418,6 @@ impl UpdateRecommenderConfigurationShape {
     /// <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
     pub fn recommendations_per_message(&self) -> i32 {
         self.recommendations_per_message
-    }
-}
-impl std::fmt::Debug for UpdateRecommenderConfigurationShape {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecommenderConfigurationShape");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "recommendation_provider_id_type",
-            &self.recommendation_provider_id_type,
-        );
-        formatter.field(
-            "recommendation_provider_role_arn",
-            &self.recommendation_provider_role_arn,
-        );
-        formatter.field(
-            "recommendation_provider_uri",
-            &self.recommendation_provider_uri,
-        );
-        formatter.field(
-            "recommendation_transformer_uri",
-            &self.recommendation_transformer_uri,
-        );
-        formatter.field(
-            "recommendations_display_name",
-            &self.recommendations_display_name,
-        );
-        formatter.field(
-            "recommendations_per_message",
-            &self.recommendations_per_message,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdateRecommenderConfigurationShape`](crate::model::UpdateRecommenderConfigurationShape).
@@ -4957,7 +4623,7 @@ impl UpdateRecommenderConfigurationShape {
 
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PushNotificationTemplateRequest {
     /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     #[doc(hidden)]
@@ -5033,21 +4699,6 @@ impl PushNotificationTemplateRequest {
     /// <p>A custom description of the message template.</p>
     pub fn template_description(&self) -> std::option::Option<&str> {
         self.template_description.as_deref()
-    }
-}
-impl std::fmt::Debug for PushNotificationTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PushNotificationTemplateRequest");
-        formatter.field("adm", &self.adm);
-        formatter.field("apns", &self.apns);
-        formatter.field("baidu", &self.baidu);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("gcm", &self.gcm);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.finish()
     }
 }
 /// See [`PushNotificationTemplateRequest`](crate::model::PushNotificationTemplateRequest).
@@ -5227,7 +4878,7 @@ impl PushNotificationTemplateRequest {
 
 /// <p>Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AndroidPushNotificationTemplate {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
@@ -5303,21 +4954,6 @@ impl AndroidPushNotificationTemplate {
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for AndroidPushNotificationTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AndroidPushNotificationTemplate");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("small_image_icon_url", &self.small_image_icon_url);
-        formatter.field("sound", &self.sound);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`AndroidPushNotificationTemplate`](crate::model::AndroidPushNotificationTemplate).
@@ -5563,7 +5199,7 @@ impl AsRef<str> for Action {
 
 /// <p>Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultPushNotificationTemplate {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
@@ -5613,17 +5249,6 @@ impl DefaultPushNotificationTemplate {
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for DefaultPushNotificationTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultPushNotificationTemplate");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("sound", &self.sound);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`DefaultPushNotificationTemplate`](crate::model::DefaultPushNotificationTemplate).
@@ -5722,7 +5347,7 @@ impl DefaultPushNotificationTemplate {
 
 /// <p>Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsPushNotificationTemplate {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
@@ -5784,19 +5409,6 @@ impl ApnsPushNotificationTemplate {
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for ApnsPushNotificationTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsPushNotificationTemplate");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("media_url", &self.media_url);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("sound", &self.sound);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`ApnsPushNotificationTemplate`](crate::model::ApnsPushNotificationTemplate).
@@ -5917,7 +5529,7 @@ impl ApnsPushNotificationTemplate {
 
 /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyResponse {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
     #[doc(hidden)]
@@ -6103,33 +5715,6 @@ impl JourneyResponse {
     /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
     pub fn closed_days(&self) -> std::option::Option<&crate::model::ClosedDays> {
         self.closed_days.as_ref()
-    }
-}
-impl std::fmt::Debug for JourneyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyResponse");
-        formatter.field("activities", &self.activities);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("limits", &self.limits);
-        formatter.field("local_time", &self.local_time);
-        formatter.field("name", &self.name);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.field("refresh_frequency", &self.refresh_frequency);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("start_activity", &self.start_activity);
-        formatter.field("start_condition", &self.start_condition);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("wait_for_quiet_time", &self.wait_for_quiet_time);
-        formatter.field("refresh_on_segment_update", &self.refresh_on_segment_update);
-        formatter.field("journey_channel_settings", &self.journey_channel_settings);
-        formatter.field("sending_schedule", &self.sending_schedule);
-        formatter.field("open_hours", &self.open_hours);
-        formatter.field("closed_days", &self.closed_days);
-        formatter.finish()
     }
 }
 /// See [`JourneyResponse`](crate::model::JourneyResponse).
@@ -6508,7 +6093,7 @@ impl JourneyResponse {
 
 /// <p>The time when journey will stop sending messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClosedDays {
     /// <p>Rules for Email Channel.</p>
     #[doc(hidden)]
@@ -6546,17 +6131,6 @@ impl ClosedDays {
     /// <p>Rules for Custom Channel.</p>
     pub fn custom(&self) -> std::option::Option<&[crate::model::ClosedDaysRule]> {
         self.custom.as_deref()
-    }
-}
-impl std::fmt::Debug for ClosedDays {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClosedDays");
-        formatter.field("email", &self.email);
-        formatter.field("sms", &self.sms);
-        formatter.field("push", &self.push);
-        formatter.field("voice", &self.voice);
-        formatter.field("custom", &self.custom);
-        formatter.finish()
     }
 }
 /// See [`ClosedDays`](crate::model::ClosedDays).
@@ -6688,7 +6262,7 @@ impl ClosedDays {
 
 /// <p>Closed Days Rule. Part of Journey sending schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClosedDaysRule {
     /// <p>Name of the rule.</p>
     #[doc(hidden)]
@@ -6712,15 +6286,6 @@ impl ClosedDaysRule {
     /// <p>End Datetime in ISO 8601 format.</p>
     pub fn end_date_time(&self) -> std::option::Option<&str> {
         self.end_date_time.as_deref()
-    }
-}
-impl std::fmt::Debug for ClosedDaysRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClosedDaysRule");
-        formatter.field("name", &self.name);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
     }
 }
 /// See [`ClosedDaysRule`](crate::model::ClosedDaysRule).
@@ -6789,7 +6354,7 @@ impl ClosedDaysRule {
 
 /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenHours {
     /// <p>Rules for Email Channel.</p>
     #[doc(hidden)]
@@ -6887,17 +6452,6 @@ impl OpenHours {
         >,
     > {
         self.custom.as_ref()
-    }
-}
-impl std::fmt::Debug for OpenHours {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenHours");
-        formatter.field("email", &self.email);
-        formatter.field("sms", &self.sms);
-        formatter.field("push", &self.push);
-        formatter.field("voice", &self.voice);
-        formatter.field("custom", &self.custom);
-        formatter.finish()
     }
 }
 /// See [`OpenHours`](crate::model::OpenHours).
@@ -7099,7 +6653,7 @@ impl OpenHours {
 
 /// <p>List of OpenHours Rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenHoursRule {
     /// <p>Local start time in ISO 8601 format.</p>
     #[doc(hidden)]
@@ -7116,14 +6670,6 @@ impl OpenHoursRule {
     /// <p>Local start time in ISO 8601 format.</p>
     pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
-    }
-}
-impl std::fmt::Debug for OpenHoursRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenHoursRule");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`OpenHoursRule`](crate::model::OpenHoursRule).
@@ -7297,7 +6843,7 @@ impl AsRef<str> for DayOfWeek {
 
 /// <p>The channel-specific configurations for the journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyChannelSettings {
     /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
     #[doc(hidden)]
@@ -7314,17 +6860,6 @@ impl JourneyChannelSettings {
     /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
     pub fn connect_campaign_execution_role_arn(&self) -> std::option::Option<&str> {
         self.connect_campaign_execution_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for JourneyChannelSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyChannelSettings");
-        formatter.field("connect_campaign_arn", &self.connect_campaign_arn);
-        formatter.field(
-            "connect_campaign_execution_role_arn",
-            &self.connect_campaign_execution_role_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`JourneyChannelSettings`](crate::model::JourneyChannelSettings).
@@ -7501,7 +7036,7 @@ impl AsRef<str> for State {
 
 /// <p>Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartCondition {
     /// <p>The custom description of the condition.</p>
     #[doc(hidden)]
@@ -7525,15 +7060,6 @@ impl StartCondition {
     /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
     pub fn segment_start_condition(&self) -> std::option::Option<&crate::model::SegmentCondition> {
         self.segment_start_condition.as_ref()
-    }
-}
-impl std::fmt::Debug for StartCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartCondition");
-        formatter.field("description", &self.description);
-        formatter.field("event_start_condition", &self.event_start_condition);
-        formatter.field("segment_start_condition", &self.segment_start_condition);
-        formatter.finish()
     }
 }
 /// See [`StartCondition`](crate::model::StartCondition).
@@ -7602,7 +7128,7 @@ impl StartCondition {
 
 /// <p>Specifies a segment to associate with an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentCondition {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
     #[doc(hidden)]
@@ -7612,13 +7138,6 @@ impl SegmentCondition {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
     pub fn segment_id(&self) -> std::option::Option<&str> {
         self.segment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SegmentCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentCondition");
-        formatter.field("segment_id", &self.segment_id);
-        formatter.finish()
     }
 }
 /// See [`SegmentCondition`](crate::model::SegmentCondition).
@@ -7657,7 +7176,7 @@ impl SegmentCondition {
 
 /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventStartCondition {
     /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
     #[doc(hidden)]
@@ -7674,14 +7193,6 @@ impl EventStartCondition {
     #[allow(missing_docs)] // documentation missing in model
     pub fn segment_id(&self) -> std::option::Option<&str> {
         self.segment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EventStartCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventStartCondition");
-        formatter.field("event_filter", &self.event_filter);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.finish()
     }
 }
 /// See [`EventStartCondition`](crate::model::EventStartCondition).
@@ -7735,7 +7246,7 @@ impl EventStartCondition {
 
 /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventFilter {
     /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
     #[doc(hidden)]
@@ -7754,14 +7265,6 @@ impl EventFilter {
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
     pub fn filter_type(&self) -> std::option::Option<&crate::model::FilterType> {
         self.filter_type.as_ref()
-    }
-}
-impl std::fmt::Debug for EventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventFilter");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("filter_type", &self.filter_type);
-        formatter.finish()
     }
 }
 /// See [`EventFilter`](crate::model::EventFilter).
@@ -7910,7 +7413,7 @@ impl AsRef<str> for FilterType {
 
 /// <p>Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDimensions {
     /// <p>One or more custom attributes that your application reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.</p>
     #[doc(hidden)]
@@ -7946,15 +7449,6 @@ impl EventDimensions {
         &std::collections::HashMap<std::string::String, crate::model::MetricDimension>,
     > {
         self.metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for EventDimensions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDimensions");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
     }
 }
 /// See [`EventDimensions`](crate::model::EventDimensions).
@@ -8054,7 +7548,7 @@ impl EventDimensions {
 
 /// <p>Specifies the schedule settings for a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneySchedule {
     /// <p>The scheduled time, in ISO 8601 format, when the journey ended or will end.</p>
     #[doc(hidden)]
@@ -8078,15 +7572,6 @@ impl JourneySchedule {
     /// <p>The starting UTC offset for the journey schedule, if the value of the journey's LocalTime property is true. Valid values are: UTC, UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30, UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+08:45, UTC+09, UTC+09:30, UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+12:45, UTC+13, UTC+13:45, UTC-02, UTC-02:30, UTC-03, UTC-03:30, UTC-04, UTC-05, UTC-06, UTC-07, UTC-08, UTC-09, UTC-09:30, UTC-10, and UTC-11.</p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
-    }
-}
-impl std::fmt::Debug for JourneySchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneySchedule");
-        formatter.field("end_time", &self.end_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("timezone", &self.timezone);
-        formatter.finish()
     }
 }
 /// See [`JourneySchedule`](crate::model::JourneySchedule).
@@ -8155,7 +7640,7 @@ impl JourneySchedule {
 
 /// <p>Specifies the start and end times that define a time range when messages aren't sent to endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuietTime {
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     #[doc(hidden)]
@@ -8172,14 +7657,6 @@ impl QuietTime {
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub fn start(&self) -> std::option::Option<&str> {
         self.start.as_deref()
-    }
-}
-impl std::fmt::Debug for QuietTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuietTime");
-        formatter.field("end", &self.end);
-        formatter.field("start", &self.start);
-        formatter.finish()
     }
 }
 /// See [`QuietTime`](crate::model::QuietTime).
@@ -8230,7 +7707,7 @@ impl QuietTime {
 
 /// <p>Specifies limits on the messages that a journey can send and the number of times participants can enter a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyLimits {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     #[doc(hidden)]
@@ -8261,16 +7738,6 @@ impl JourneyLimits {
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub fn endpoint_reentry_interval(&self) -> std::option::Option<&str> {
         self.endpoint_reentry_interval.as_deref()
-    }
-}
-impl std::fmt::Debug for JourneyLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyLimits");
-        formatter.field("daily_cap", &self.daily_cap);
-        formatter.field("endpoint_reentry_cap", &self.endpoint_reentry_cap);
-        formatter.field("messages_per_second", &self.messages_per_second);
-        formatter.field("endpoint_reentry_interval", &self.endpoint_reentry_interval);
-        formatter.finish()
     }
 }
 /// See [`JourneyLimits`](crate::model::JourneyLimits).
@@ -8348,7 +7815,7 @@ impl JourneyLimits {
 
 /// <p>Specifies the configuration and other settings for an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Activity {
     /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
     #[doc(hidden)]
@@ -8432,23 +7899,6 @@ impl Activity {
     /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
     pub fn contact_center(&self) -> std::option::Option<&crate::model::ContactCenterActivity> {
         self.contact_center.as_ref()
-    }
-}
-impl std::fmt::Debug for Activity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Activity");
-        formatter.field("custom", &self.custom);
-        formatter.field("conditional_split", &self.conditional_split);
-        formatter.field("description", &self.description);
-        formatter.field("email", &self.email);
-        formatter.field("holdout", &self.holdout);
-        formatter.field("multi_condition", &self.multi_condition);
-        formatter.field("push", &self.push);
-        formatter.field("random_split", &self.random_split);
-        formatter.field("sms", &self.sms);
-        formatter.field("wait", &self.wait);
-        formatter.field("contact_center", &self.contact_center);
-        formatter.finish()
     }
 }
 /// See [`Activity`](crate::model::Activity).
@@ -8638,7 +8088,7 @@ impl Activity {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactCenterActivity {
     /// <p>The unique identifier for the next activity to perform after the this activity.</p>
     #[doc(hidden)]
@@ -8648,13 +8098,6 @@ impl ContactCenterActivity {
     /// <p>The unique identifier for the next activity to perform after the this activity.</p>
     pub fn next_activity(&self) -> std::option::Option<&str> {
         self.next_activity.as_deref()
-    }
-}
-impl std::fmt::Debug for ContactCenterActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactCenterActivity");
-        formatter.field("next_activity", &self.next_activity);
-        formatter.finish()
     }
 }
 /// See [`ContactCenterActivity`](crate::model::ContactCenterActivity).
@@ -8696,7 +8139,7 @@ impl ContactCenterActivity {
 
 /// <p>Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WaitActivity {
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
     #[doc(hidden)]
@@ -8713,14 +8156,6 @@ impl WaitActivity {
     /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
     pub fn wait_time(&self) -> std::option::Option<&crate::model::WaitTime> {
         self.wait_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WaitActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WaitActivity");
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("wait_time", &self.wait_time);
-        formatter.finish()
     }
 }
 /// See [`WaitActivity`](crate::model::WaitActivity).
@@ -8774,7 +8209,7 @@ impl WaitActivity {
 
 /// <p>Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WaitTime {
     /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
     #[doc(hidden)]
@@ -8791,14 +8226,6 @@ impl WaitTime {
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
     pub fn wait_until(&self) -> std::option::Option<&str> {
         self.wait_until.as_deref()
-    }
-}
-impl std::fmt::Debug for WaitTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WaitTime");
-        formatter.field("wait_for", &self.wait_for);
-        formatter.field("wait_until", &self.wait_until);
-        formatter.finish()
     }
 }
 /// See [`WaitTime`](crate::model::WaitTime).
@@ -8849,7 +8276,7 @@ impl WaitTime {
 
 /// <p>Specifies the settings for an SMS activity in a journey. This type of activity sends a text message to participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsMessageActivity {
     /// <p>Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.</p>
     #[doc(hidden)]
@@ -8884,16 +8311,6 @@ impl SmsMessageActivity {
     /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub fn template_version(&self) -> std::option::Option<&str> {
         self.template_version.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsMessageActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsMessageActivity");
-        formatter.field("message_config", &self.message_config);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
     }
 }
 /// See [`SmsMessageActivity`](crate::model::SmsMessageActivity).
@@ -8984,7 +8401,7 @@ impl SmsMessageActivity {
 
 /// <p>Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneySmsMessage {
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
     #[doc(hidden)]
@@ -9022,17 +8439,6 @@ impl JourneySmsMessage {
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
-    }
-}
-impl std::fmt::Debug for JourneySmsMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneySmsMessage");
-        formatter.field("message_type", &self.message_type);
-        formatter.field("origination_number", &self.origination_number);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
     }
 }
 /// See [`JourneySmsMessage`](crate::model::JourneySmsMessage).
@@ -9215,7 +8621,7 @@ impl AsRef<str> for MessageType {
 
 /// <p>Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RandomSplitActivity {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
     #[doc(hidden)]
@@ -9225,13 +8631,6 @@ impl RandomSplitActivity {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
     pub fn branches(&self) -> std::option::Option<&[crate::model::RandomSplitEntry]> {
         self.branches.as_deref()
-    }
-}
-impl std::fmt::Debug for RandomSplitActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RandomSplitActivity");
-        formatter.field("branches", &self.branches);
-        formatter.finish()
     }
 }
 /// See [`RandomSplitActivity`](crate::model::RandomSplitActivity).
@@ -9279,7 +8678,7 @@ impl RandomSplitActivity {
 
 /// <p>Specifies the settings for a path in a random split activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RandomSplitEntry {
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
     #[doc(hidden)]
@@ -9298,14 +8697,6 @@ impl RandomSplitEntry {
     /// <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
     pub fn percentage(&self) -> i32 {
         self.percentage
-    }
-}
-impl std::fmt::Debug for RandomSplitEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RandomSplitEntry");
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("percentage", &self.percentage);
-        formatter.finish()
     }
 }
 /// See [`RandomSplitEntry`](crate::model::RandomSplitEntry).
@@ -9361,7 +8752,7 @@ impl RandomSplitEntry {
 
 /// <p>Specifies the settings for a push notification activity in a journey. This type of activity sends a push notification to participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PushMessageActivity {
     /// <p>Specifies the time to live (TTL) value for push notifications that are sent to participants in a journey.</p>
     #[doc(hidden)]
@@ -9396,16 +8787,6 @@ impl PushMessageActivity {
     /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub fn template_version(&self) -> std::option::Option<&str> {
         self.template_version.as_deref()
-    }
-}
-impl std::fmt::Debug for PushMessageActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PushMessageActivity");
-        formatter.field("message_config", &self.message_config);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
     }
 }
 /// See [`PushMessageActivity`](crate::model::PushMessageActivity).
@@ -9496,7 +8877,7 @@ impl PushMessageActivity {
 
 /// <p>Specifies the message configuration for a push notification that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyPushMessage {
     /// <p>The number of seconds that the push notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
     /// <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
@@ -9508,13 +8889,6 @@ impl JourneyPushMessage {
     /// <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
     pub fn time_to_live(&self) -> std::option::Option<&str> {
         self.time_to_live.as_deref()
-    }
-}
-impl std::fmt::Debug for JourneyPushMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyPushMessage");
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.finish()
     }
 }
 /// See [`JourneyPushMessage`](crate::model::JourneyPushMessage).
@@ -9557,7 +8931,7 @@ impl JourneyPushMessage {
 /// <p>To create multivariate split activities that send participants down different paths based on push notification events (such as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html">Integrating Amazon Pinpoint with your application</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiConditionalSplitActivity {
     /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
     #[doc(hidden)]
@@ -9581,15 +8955,6 @@ impl MultiConditionalSplitActivity {
     /// <p>The amount of time to wait or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
     pub fn evaluation_wait_time(&self) -> std::option::Option<&crate::model::WaitTime> {
         self.evaluation_wait_time.as_ref()
-    }
-}
-impl std::fmt::Debug for MultiConditionalSplitActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiConditionalSplitActivity");
-        formatter.field("branches", &self.branches);
-        formatter.field("default_activity", &self.default_activity);
-        formatter.field("evaluation_wait_time", &self.evaluation_wait_time);
-        formatter.finish()
     }
 }
 /// See [`MultiConditionalSplitActivity`](crate::model::MultiConditionalSplitActivity).
@@ -9668,7 +9033,7 @@ impl MultiConditionalSplitActivity {
 
 /// <p>Specifies a condition to evaluate for an activity path in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiConditionalBranch {
     /// <p>The condition to evaluate for the activity path.</p>
     #[doc(hidden)]
@@ -9685,14 +9050,6 @@ impl MultiConditionalBranch {
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
     pub fn next_activity(&self) -> std::option::Option<&str> {
         self.next_activity.as_deref()
-    }
-}
-impl std::fmt::Debug for MultiConditionalBranch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiConditionalBranch");
-        formatter.field("condition", &self.condition);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.finish()
     }
 }
 /// See [`MultiConditionalBranch`](crate::model::MultiConditionalBranch).
@@ -9749,7 +9106,7 @@ impl MultiConditionalBranch {
 
 /// <p>Specifies a condition to evaluate for an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleCondition {
     /// <p>The dimension settings for the event that's associated with the activity.</p>
     #[doc(hidden)]
@@ -9773,15 +9130,6 @@ impl SimpleCondition {
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
     pub fn segment_dimensions(&self) -> std::option::Option<&crate::model::SegmentDimensions> {
         self.segment_dimensions.as_ref()
-    }
-}
-impl std::fmt::Debug for SimpleCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleCondition");
-        formatter.field("event_condition", &self.event_condition);
-        formatter.field("segment_condition", &self.segment_condition);
-        formatter.field("segment_dimensions", &self.segment_dimensions);
-        formatter.finish()
     }
 }
 /// See [`SimpleCondition`](crate::model::SimpleCondition).
@@ -9853,7 +9201,7 @@ impl SimpleCondition {
 
 /// <p>Specifies the conditions to evaluate for an event that applies to an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventCondition {
     /// <p>The dimensions for the event filter to use for the activity.</p>
     #[doc(hidden)]
@@ -9870,14 +9218,6 @@ impl EventCondition {
     /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
     pub fn message_activity(&self) -> std::option::Option<&str> {
         self.message_activity.as_deref()
-    }
-}
-impl std::fmt::Debug for EventCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventCondition");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("message_activity", &self.message_activity);
-        formatter.finish()
     }
 }
 /// See [`EventCondition`](crate::model::EventCondition).
@@ -9934,7 +9274,7 @@ impl EventCondition {
 
 /// <p>Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoldoutActivity {
     /// <p>The unique identifier for the next activity to perform, after performing the holdout activity.</p>
     #[doc(hidden)]
@@ -9953,14 +9293,6 @@ impl HoldoutActivity {
     /// <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
     pub fn percentage(&self) -> i32 {
         self.percentage
-    }
-}
-impl std::fmt::Debug for HoldoutActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoldoutActivity");
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("percentage", &self.percentage);
-        formatter.finish()
     }
 }
 /// See [`HoldoutActivity`](crate::model::HoldoutActivity).
@@ -10016,7 +9348,7 @@ impl HoldoutActivity {
 
 /// <p>Specifies the settings for an email activity in a journey. This type of activity sends an email message to participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailMessageActivity {
     /// <p>Specifies the sender address for an email message that's sent to participants in the journey.</p>
     #[doc(hidden)]
@@ -10051,16 +9383,6 @@ impl EmailMessageActivity {
     /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub fn template_version(&self) -> std::option::Option<&str> {
         self.template_version.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailMessageActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailMessageActivity");
-        formatter.field("message_config", &self.message_config);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
     }
 }
 /// See [`EmailMessageActivity`](crate::model::EmailMessageActivity).
@@ -10151,7 +9473,7 @@ impl EmailMessageActivity {
 
 /// <p>Specifies the "From" address for an email message that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyEmailMessage {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
     #[doc(hidden)]
@@ -10161,13 +9483,6 @@ impl JourneyEmailMessage {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub fn from_address(&self) -> std::option::Option<&str> {
         self.from_address.as_deref()
-    }
-}
-impl std::fmt::Debug for JourneyEmailMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyEmailMessage");
-        formatter.field("from_address", &self.from_address);
-        formatter.finish()
     }
 }
 /// See [`JourneyEmailMessage`](crate::model::JourneyEmailMessage).
@@ -10208,7 +9523,7 @@ impl JourneyEmailMessage {
 /// <p>To create yes/no split activities that send participants down different paths based on push notification events (such as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html">Integrating Amazon Pinpoint with your application</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionalSplitActivity {
     /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
     #[doc(hidden)]
@@ -10239,16 +9554,6 @@ impl ConditionalSplitActivity {
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
     pub fn true_activity(&self) -> std::option::Option<&str> {
         self.true_activity.as_deref()
-    }
-}
-impl std::fmt::Debug for ConditionalSplitActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionalSplitActivity");
-        formatter.field("condition", &self.condition);
-        formatter.field("evaluation_wait_time", &self.evaluation_wait_time);
-        formatter.field("false_activity", &self.false_activity);
-        formatter.field("true_activity", &self.true_activity);
-        formatter.finish()
     }
 }
 /// See [`ConditionalSplitActivity`](crate::model::ConditionalSplitActivity).
@@ -10335,7 +9640,7 @@ impl ConditionalSplitActivity {
 
 /// <p>Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>The conditions to evaluate for the activity.</p>
     #[doc(hidden)]
@@ -10352,14 +9657,6 @@ impl Condition {
     /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field("conditions", &self.conditions);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`Condition`](crate::model::Condition).
@@ -10509,7 +9806,7 @@ impl AsRef<str> for Operator {
 
 /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomMessageActivity {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
@@ -10566,18 +9863,6 @@ impl CustomMessageActivity {
     /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub fn template_version(&self) -> std::option::Option<&str> {
         self.template_version.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomMessageActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomMessageActivity");
-        formatter.field("delivery_uri", &self.delivery_uri);
-        formatter.field("endpoint_types", &self.endpoint_types);
-        formatter.field("message_config", &self.message_config);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
     }
 }
 /// See [`CustomMessageActivity`](crate::model::CustomMessageActivity).
@@ -10710,7 +9995,7 @@ impl CustomMessageActivity {
 
 /// <p>Specifies the message content for a custom channel message that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyCustomMessage {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
     #[doc(hidden)]
@@ -10720,13 +10005,6 @@ impl JourneyCustomMessage {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
-    }
-}
-impl std::fmt::Debug for JourneyCustomMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyCustomMessage");
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`JourneyCustomMessage`](crate::model::JourneyCustomMessage).
@@ -10924,7 +10202,7 @@ impl AsRef<str> for EndpointTypesElement {
 
 /// <p>Changes the status of a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyStateRequest {
     /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
     /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p>
@@ -10940,13 +10218,6 @@ impl JourneyStateRequest {
     /// <p>When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh interval.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for JourneyStateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyStateRequest");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`JourneyStateRequest`](crate::model::JourneyStateRequest).
@@ -10989,7 +10260,7 @@ impl JourneyStateRequest {
 
 /// <p>Specifies the configuration and other settings for a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteJourneyRequest {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.</p>
     #[doc(hidden)]
@@ -11148,30 +10419,6 @@ impl WriteJourneyRequest {
     /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
     pub fn closed_days(&self) -> std::option::Option<&crate::model::ClosedDays> {
         self.closed_days.as_ref()
-    }
-}
-impl std::fmt::Debug for WriteJourneyRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteJourneyRequest");
-        formatter.field("activities", &self.activities);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("limits", &self.limits);
-        formatter.field("local_time", &self.local_time);
-        formatter.field("name", &self.name);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.field("refresh_frequency", &self.refresh_frequency);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("start_activity", &self.start_activity);
-        formatter.field("start_condition", &self.start_condition);
-        formatter.field("state", &self.state);
-        formatter.field("wait_for_quiet_time", &self.wait_for_quiet_time);
-        formatter.field("refresh_on_segment_update", &self.refresh_on_segment_update);
-        formatter.field("journey_channel_settings", &self.journey_channel_settings);
-        formatter.field("sending_schedule", &self.sending_schedule);
-        formatter.field("open_hours", &self.open_hours);
-        formatter.field("closed_days", &self.closed_days);
-        formatter.finish()
     }
 }
 /// See [`WriteJourneyRequest`](crate::model::WriteJourneyRequest).
@@ -11492,7 +10739,7 @@ impl WriteJourneyRequest {
 
 /// <p>InApp Template Request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppTemplateRequest {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
     #[doc(hidden)]
@@ -11538,17 +10785,6 @@ impl InAppTemplateRequest {
     /// <p>The description of the template.</p>
     pub fn template_description(&self) -> std::option::Option<&str> {
         self.template_description.as_deref()
-    }
-}
-impl std::fmt::Debug for InAppTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppTemplateRequest");
-        formatter.field("content", &self.content);
-        formatter.field("custom_config", &self.custom_config);
-        formatter.field("layout", &self.layout);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.finish()
     }
 }
 /// See [`InAppTemplateRequest`](crate::model::InAppTemplateRequest).
@@ -11798,7 +11034,7 @@ impl AsRef<str> for Layout {
 
 /// <p>The configuration for the message content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageContent {
     /// <p>The background color for the message.</p>
     #[doc(hidden)]
@@ -11843,18 +11079,6 @@ impl InAppMessageContent {
     /// <p>The second button inside message.</p>
     pub fn secondary_btn(&self) -> std::option::Option<&crate::model::InAppMessageButton> {
         self.secondary_btn.as_ref()
-    }
-}
-impl std::fmt::Debug for InAppMessageContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageContent");
-        formatter.field("background_color", &self.background_color);
-        formatter.field("body_config", &self.body_config);
-        formatter.field("header_config", &self.header_config);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("primary_btn", &self.primary_btn);
-        formatter.field("secondary_btn", &self.secondary_btn);
-        formatter.finish()
     }
 }
 /// See [`InAppMessageContent`](crate::model::InAppMessageContent).
@@ -11968,7 +11192,7 @@ impl InAppMessageContent {
 
 /// <p>Button Config for an in-app message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageButton {
     /// <p>Default button content.</p>
     #[doc(hidden)]
@@ -11999,16 +11223,6 @@ impl InAppMessageButton {
     /// <p>Default button content.</p>
     pub fn web(&self) -> std::option::Option<&crate::model::OverrideButtonConfiguration> {
         self.web.as_ref()
-    }
-}
-impl std::fmt::Debug for InAppMessageButton {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageButton");
-        formatter.field("android", &self.android);
-        formatter.field("default_config", &self.default_config);
-        formatter.field("ios", &self.ios);
-        formatter.field("web", &self.web);
-        formatter.finish()
     }
 }
 /// See [`InAppMessageButton`](crate::model::InAppMessageButton).
@@ -12095,7 +11309,7 @@ impl InAppMessageButton {
 
 /// <p>Override button configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverrideButtonConfiguration {
     /// <p>Action triggered by the button.</p>
     #[doc(hidden)]
@@ -12112,14 +11326,6 @@ impl OverrideButtonConfiguration {
     /// <p>Button destination.</p>
     pub fn link(&self) -> std::option::Option<&str> {
         self.link.as_deref()
-    }
-}
-impl std::fmt::Debug for OverrideButtonConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverrideButtonConfiguration");
-        formatter.field("button_action", &self.button_action);
-        formatter.field("link", &self.link);
-        formatter.finish()
     }
 }
 /// See [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration).
@@ -12268,7 +11474,7 @@ impl AsRef<str> for ButtonAction {
 
 /// <p>Default button configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultButtonConfiguration {
     /// <p>The background color of the button.</p>
     #[doc(hidden)]
@@ -12313,18 +11519,6 @@ impl DefaultButtonConfiguration {
     /// <p>The text color of the button.</p>
     pub fn text_color(&self) -> std::option::Option<&str> {
         self.text_color.as_deref()
-    }
-}
-impl std::fmt::Debug for DefaultButtonConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultButtonConfiguration");
-        formatter.field("background_color", &self.background_color);
-        formatter.field("border_radius", &self.border_radius);
-        formatter.field("button_action", &self.button_action);
-        formatter.field("link", &self.link);
-        formatter.field("text", &self.text);
-        formatter.field("text_color", &self.text_color);
-        formatter.finish()
     }
 }
 /// See [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration).
@@ -12429,7 +11623,7 @@ impl DefaultButtonConfiguration {
 
 /// <p>Text config for Message Header.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageHeaderConfig {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     #[doc(hidden)]
@@ -12453,15 +11647,6 @@ impl InAppMessageHeaderConfig {
     /// <p>The text color.</p>
     pub fn text_color(&self) -> std::option::Option<&str> {
         self.text_color.as_deref()
-    }
-}
-impl std::fmt::Debug for InAppMessageHeaderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageHeaderConfig");
-        formatter.field("alignment", &self.alignment);
-        formatter.field("header", &self.header);
-        formatter.field("text_color", &self.text_color);
-        formatter.finish()
     }
 }
 /// See [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig).
@@ -12622,7 +11807,7 @@ impl AsRef<str> for Alignment {
 
 /// <p>Text config for Message Body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageBodyConfig {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     #[doc(hidden)]
@@ -12646,15 +11831,6 @@ impl InAppMessageBodyConfig {
     /// <p>The text color.</p>
     pub fn text_color(&self) -> std::option::Option<&str> {
         self.text_color.as_deref()
-    }
-}
-impl std::fmt::Debug for InAppMessageBodyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageBodyConfig");
-        formatter.field("alignment", &self.alignment);
-        formatter.field("body", &self.body);
-        formatter.field("text_color", &self.text_color);
-        formatter.finish()
     }
 }
 /// See [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig).
@@ -12720,7 +11896,7 @@ impl InAppMessageBodyConfig {
 
 /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GcmChannelResponse {
     /// <p>The unique identifier for the application that the GCM channel applies to.</p>
     #[doc(hidden)]
@@ -12800,23 +11976,6 @@ impl GcmChannelResponse {
     /// <p>The current version of the GCM channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for GcmChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GcmChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("credential", &self.credential);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`GcmChannelResponse`](crate::model::GcmChannelResponse).
@@ -12987,7 +12146,7 @@ impl GcmChannelResponse {
 
 /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GcmChannelRequest {
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     #[doc(hidden)]
@@ -13004,14 +12163,6 @@ impl GcmChannelRequest {
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for GcmChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GcmChannelRequest");
-        formatter.field("api_key", &self.api_key);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`GcmChannelRequest`](crate::model::GcmChannelRequest).
@@ -13062,7 +12213,7 @@ impl GcmChannelRequest {
 
 /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointBatchRequest {
     /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
     #[doc(hidden)]
@@ -13072,13 +12223,6 @@ impl EndpointBatchRequest {
     /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
     pub fn item(&self) -> std::option::Option<&[crate::model::EndpointBatchItem]> {
         self.item.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointBatchRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointBatchRequest");
-        formatter.field("item", &self.item);
-        formatter.finish()
     }
 }
 /// See [`EndpointBatchRequest`](crate::model::EndpointBatchRequest).
@@ -13124,7 +12268,7 @@ impl EndpointBatchRequest {
 
 /// <p>Specifies an endpoint to create or update and the settings and attributes to set or change for the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointBatchItem {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
     #[doc(hidden)]
@@ -13223,24 +12367,6 @@ impl EndpointBatchItem {
     /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
     pub fn user(&self) -> std::option::Option<&crate::model::EndpointUser> {
         self.user.as_ref()
-    }
-}
-impl std::fmt::Debug for EndpointBatchItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointBatchItem");
-        formatter.field("address", &self.address);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("effective_date", &self.effective_date);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("opt_out", &self.opt_out);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
     }
 }
 /// See [`EndpointBatchItem`](crate::model::EndpointBatchItem).
@@ -13457,7 +12583,7 @@ impl EndpointBatchItem {
 
 /// <p>Specifies data for one or more attributes that describe the user who's associated with an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointUser {
     /// <p>One or more custom attributes that describe the user by associating a name with an array of values. For example, the value of an attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p>
     /// <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
@@ -13482,14 +12608,6 @@ impl EndpointUser {
     /// <p>The unique identifier for the user.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointUser");
-        formatter.field("user_attributes", &self.user_attributes);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
     }
 }
 /// See [`EndpointUser`](crate::model::EndpointUser).
@@ -13559,7 +12677,7 @@ impl EndpointUser {
 
 /// <p>Specifies geographic information about an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointLocation {
     /// <p>The name of the city where the endpoint is located.</p>
     #[doc(hidden)]
@@ -13604,18 +12722,6 @@ impl EndpointLocation {
     /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointLocation");
-        formatter.field("city", &self.city);
-        formatter.field("country", &self.country);
-        formatter.field("latitude", &self.latitude);
-        formatter.field("longitude", &self.longitude);
-        formatter.field("postal_code", &self.postal_code);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`EndpointLocation`](crate::model::EndpointLocation).
@@ -13714,7 +12820,7 @@ impl EndpointLocation {
 
 /// <p>Specifies demographic information about an endpoint, such as the applicable time zone and platform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointDemographic {
     /// <p>The version of the app that's associated with the endpoint.</p>
     #[doc(hidden)]
@@ -13773,20 +12879,6 @@ impl EndpointDemographic {
     /// <p>The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.</p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointDemographic {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointDemographic");
-        formatter.field("app_version", &self.app_version);
-        formatter.field("locale", &self.locale);
-        formatter.field("make", &self.make);
-        formatter.field("model", &self.model);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("platform", &self.platform);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("timezone", &self.timezone);
-        formatter.finish()
     }
 }
 /// See [`EndpointDemographic`](crate::model::EndpointDemographic).
@@ -14074,7 +13166,7 @@ impl AsRef<str> for ChannelType {
 
 /// <p>Specifies the channel type and other settings for an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointRequest {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
     #[doc(hidden)]
@@ -14166,23 +13258,6 @@ impl EndpointRequest {
     /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
     pub fn user(&self) -> std::option::Option<&crate::model::EndpointUser> {
         self.user.as_ref()
-    }
-}
-impl std::fmt::Debug for EndpointRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointRequest");
-        formatter.field("address", &self.address);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("effective_date", &self.effective_date);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("opt_out", &self.opt_out);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
     }
 }
 /// See [`EndpointRequest`](crate::model::EndpointRequest).
@@ -14387,7 +13462,7 @@ impl EndpointRequest {
 
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailTemplateRequest {
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
     #[doc(hidden)]
@@ -14443,19 +13518,6 @@ impl EmailTemplateRequest {
     /// <p>The message body, in plain text format, to use in email messages that are based on the message template. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub fn text_part(&self) -> std::option::Option<&str> {
         self.text_part.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailTemplateRequest");
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("html_part", &self.html_part);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("subject", &self.subject);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("text_part", &self.text_part);
-        formatter.finish()
     }
 }
 /// See [`EmailTemplateRequest`](crate::model::EmailTemplateRequest).
@@ -14592,7 +13654,7 @@ impl EmailTemplateRequest {
 
 /// <p>Provides information about the status and settings of the email channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailChannelResponse {
     /// <p>The unique identifier for the application that the email channel applies to.</p>
     #[doc(hidden)]
@@ -14700,27 +13762,6 @@ impl EmailChannelResponse {
     /// <p>The current version of the email channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for EmailChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_set", &self.configuration_set);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("from_address", &self.from_address);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("identity", &self.identity);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("messages_per_second", &self.messages_per_second);
-        formatter.field("platform", &self.platform);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`EmailChannelResponse`](crate::model::EmailChannelResponse).
@@ -14942,7 +13983,7 @@ impl EmailChannelResponse {
 
 /// <p>Specifies the status and settings of the email channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailChannelRequest {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
     #[doc(hidden)]
@@ -14980,17 +14021,6 @@ impl EmailChannelRequest {
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailChannelRequest");
-        formatter.field("configuration_set", &self.configuration_set);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("from_address", &self.from_address);
-        formatter.field("identity", &self.identity);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`EmailChannelRequest`](crate::model::EmailChannelRequest).
@@ -15080,7 +14110,7 @@ impl EmailChannelRequest {
 
 /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignResponse {
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
     #[doc(hidden)]
@@ -15269,40 +14299,6 @@ impl CampaignResponse {
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     pub fn priority(&self) -> i32 {
         self.priority
-    }
-}
-impl std::fmt::Debug for CampaignResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignResponse");
-        formatter.field("additional_treatments", &self.additional_treatments);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "custom_delivery_configuration",
-            &self.custom_delivery_configuration,
-        );
-        formatter.field("default_state", &self.default_state);
-        formatter.field("description", &self.description);
-        formatter.field("holdout_percent", &self.holdout_percent);
-        formatter.field("hook", &self.hook);
-        formatter.field("id", &self.id);
-        formatter.field("is_paused", &self.is_paused);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("limits", &self.limits);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("name", &self.name);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_version", &self.segment_version);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("treatment_description", &self.treatment_description);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.field("version", &self.version);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`CampaignResponse`](crate::model::CampaignResponse).
@@ -15696,7 +14692,7 @@ impl CampaignResponse {
 
 /// <p>Specifies the message template to use for the message, for each type of channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateConfiguration {
     /// <p>The email template to use for the message.</p>
     #[doc(hidden)]
@@ -15727,16 +14723,6 @@ impl TemplateConfiguration {
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
     pub fn voice_template(&self) -> std::option::Option<&crate::model::Template> {
         self.voice_template.as_ref()
-    }
-}
-impl std::fmt::Debug for TemplateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateConfiguration");
-        formatter.field("email_template", &self.email_template);
-        formatter.field("push_template", &self.push_template);
-        formatter.field("sms_template", &self.sms_template);
-        formatter.field("voice_template", &self.voice_template);
-        formatter.finish()
     }
 }
 /// See [`TemplateConfiguration`](crate::model::TemplateConfiguration).
@@ -15823,7 +14809,7 @@ impl TemplateConfiguration {
 
 /// <p>Specifies the name and version of the message template to use for the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Template {
     /// <p>The name of the message template to use for the message. If specified, this value must match the name of an existing message template.</p>
     #[doc(hidden)]
@@ -15844,14 +14830,6 @@ impl Template {
     /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for Template {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Template");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`Template`](crate::model::Template).
@@ -15906,7 +14884,7 @@ impl Template {
 
 /// <p>Provides information about the status of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignState {
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p>
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
@@ -15918,13 +14896,6 @@ impl CampaignState {
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
     pub fn campaign_status(&self) -> std::option::Option<&crate::model::CampaignStatus> {
         self.campaign_status.as_ref()
-    }
-}
-impl std::fmt::Debug for CampaignState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignState");
-        formatter.field("campaign_status", &self.campaign_status);
-        formatter.finish()
     }
 }
 /// See [`CampaignState`](crate::model::CampaignState).
@@ -16091,7 +15062,7 @@ impl AsRef<str> for CampaignStatus {
 
 /// <p>Specifies the schedule settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The scheduled time, in ISO 8601 format, when the campaign ended or will end.</p>
     #[doc(hidden)]
@@ -16155,19 +15126,6 @@ impl Schedule {
     /// <p>The starting UTC offset for the campaign schedule, if the value of the IsLocalTime property is true. Valid values are: UTC, UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30, UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+09, UTC+09:30, UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+13, UTC-02, UTC-03, UTC-04, UTC-05, UTC-06, UTC-07, UTC-08, UTC-09, UTC-10, and UTC-11.</p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
-    }
-}
-impl std::fmt::Debug for Schedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schedule");
-        formatter.field("end_time", &self.end_time);
-        formatter.field("event_filter", &self.event_filter);
-        formatter.field("frequency", &self.frequency);
-        formatter.field("is_local_time", &self.is_local_time);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("timezone", &self.timezone);
-        formatter.finish()
     }
 }
 /// See [`Schedule`](crate::model::Schedule).
@@ -16422,7 +15380,7 @@ impl AsRef<str> for Frequency {
 
 /// <p>Specifies the settings for events that cause a campaign to be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignEventFilter {
     /// <p>The dimension settings of the event filter for the campaign.</p>
     #[doc(hidden)]
@@ -16441,14 +15399,6 @@ impl CampaignEventFilter {
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
     pub fn filter_type(&self) -> std::option::Option<&crate::model::FilterType> {
         self.filter_type.as_ref()
-    }
-}
-impl std::fmt::Debug for CampaignEventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignEventFilter");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("filter_type", &self.filter_type);
-        formatter.finish()
     }
 }
 /// See [`CampaignEventFilter`](crate::model::CampaignEventFilter).
@@ -16507,7 +15457,7 @@ impl CampaignEventFilter {
 
 /// <p>Specifies the message configuration settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageConfiguration {
     /// <p>The message that the campaign sends through the ADM (Amazon Device Messaging) channel. If specified, this message overrides the default message.</p>
     #[doc(hidden)]
@@ -16573,21 +15523,6 @@ impl MessageConfiguration {
     /// <p>The in-app message configuration.</p>
     pub fn in_app_message(&self) -> std::option::Option<&crate::model::CampaignInAppMessage> {
         self.in_app_message.as_ref()
-    }
-}
-impl std::fmt::Debug for MessageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageConfiguration");
-        formatter.field("adm_message", &self.adm_message);
-        formatter.field("apns_message", &self.apns_message);
-        formatter.field("baidu_message", &self.baidu_message);
-        formatter.field("custom_message", &self.custom_message);
-        formatter.field("default_message", &self.default_message);
-        formatter.field("email_message", &self.email_message);
-        formatter.field("gcm_message", &self.gcm_message);
-        formatter.field("sms_message", &self.sms_message);
-        formatter.field("in_app_message", &self.in_app_message);
-        formatter.finish()
     }
 }
 /// See [`MessageConfiguration`](crate::model::MessageConfiguration).
@@ -16749,7 +15684,7 @@ impl MessageConfiguration {
 
 /// <p>In-app message configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignInAppMessage {
     /// <p>The message body of the notification, the email body or the text message.</p>
     #[doc(hidden)]
@@ -16784,16 +15719,6 @@ impl CampaignInAppMessage {
     /// <p>In-app message layout.</p>
     pub fn layout(&self) -> std::option::Option<&crate::model::Layout> {
         self.layout.as_ref()
-    }
-}
-impl std::fmt::Debug for CampaignInAppMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignInAppMessage");
-        formatter.field("body", &self.body);
-        formatter.field("content", &self.content);
-        formatter.field("custom_config", &self.custom_config);
-        formatter.field("layout", &self.layout);
-        formatter.finish()
     }
 }
 /// See [`CampaignInAppMessage`](crate::model::CampaignInAppMessage).
@@ -16894,7 +15819,7 @@ impl CampaignInAppMessage {
 
 /// <p>Specifies the content and settings for an SMS message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignSmsMessage {
     /// <p>The body of the SMS message.</p>
     #[doc(hidden)]
@@ -16939,18 +15864,6 @@ impl CampaignSmsMessage {
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CampaignSmsMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignSmsMessage");
-        formatter.field("body", &self.body);
-        formatter.field("message_type", &self.message_type);
-        formatter.field("origination_number", &self.origination_number);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
     }
 }
 /// See [`CampaignSmsMessage`](crate::model::CampaignSmsMessage).
@@ -17055,7 +15968,7 @@ impl CampaignSmsMessage {
 
 /// <p>Specifies the content and settings for a push notification that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>The action to occur if a recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -17154,24 +16067,6 @@ impl Message {
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_small_icon_url", &self.image_small_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("json_body", &self.json_body);
-        formatter.field("media_url", &self.media_url);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`Message`](crate::model::Message).
@@ -17360,7 +16255,7 @@ impl Message {
 
 /// <p>Specifies the content and "From" address for an email message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignEmailMessage {
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
     #[doc(hidden)]
@@ -17391,16 +16286,6 @@ impl CampaignEmailMessage {
     /// <p>The subject line, or title, of the email.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
-    }
-}
-impl std::fmt::Debug for CampaignEmailMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignEmailMessage");
-        formatter.field("body", &self.body);
-        formatter.field("from_address", &self.from_address);
-        formatter.field("html_body", &self.html_body);
-        formatter.field("title", &self.title);
-        formatter.finish()
     }
 }
 /// See [`CampaignEmailMessage`](crate::model::CampaignEmailMessage).
@@ -17475,7 +16360,7 @@ impl CampaignEmailMessage {
 
 /// <p>Specifies the contents of a message that's sent through a custom channel to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignCustomMessage {
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
     #[doc(hidden)]
@@ -17485,13 +16370,6 @@ impl CampaignCustomMessage {
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
-    }
-}
-impl std::fmt::Debug for CampaignCustomMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignCustomMessage");
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`CampaignCustomMessage`](crate::model::CampaignCustomMessage).
@@ -17528,7 +16406,7 @@ impl CampaignCustomMessage {
 
 /// <p>For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns in the application can send.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignLimits {
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
     #[doc(hidden)]
@@ -17566,17 +16444,6 @@ impl CampaignLimits {
     /// <p>The maximum total number of messages that the campaign can send per user session.</p>
     pub fn session(&self) -> i32 {
         self.session
-    }
-}
-impl std::fmt::Debug for CampaignLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignLimits");
-        formatter.field("daily", &self.daily);
-        formatter.field("maximum_duration", &self.maximum_duration);
-        formatter.field("messages_per_second", &self.messages_per_second);
-        formatter.field("total", &self.total);
-        formatter.field("session", &self.session);
-        formatter.finish()
     }
 }
 /// See [`CampaignLimits`](crate::model::CampaignLimits).
@@ -17663,7 +16530,7 @@ impl CampaignLimits {
 
 /// <p>Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignHook {
     /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
     #[doc(hidden)]
@@ -17695,15 +16562,6 @@ impl CampaignHook {
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
     pub fn web_url(&self) -> std::option::Option<&str> {
         self.web_url.as_deref()
-    }
-}
-impl std::fmt::Debug for CampaignHook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignHook");
-        formatter.field("lambda_function_name", &self.lambda_function_name);
-        formatter.field("mode", &self.mode);
-        formatter.field("web_url", &self.web_url);
-        formatter.finish()
     }
 }
 /// See [`CampaignHook`](crate::model::CampaignHook).
@@ -17867,7 +16725,7 @@ impl AsRef<str> for Mode {
 
 /// <p>Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDeliveryConfiguration {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
@@ -17892,14 +16750,6 @@ impl CustomDeliveryConfiguration {
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
     pub fn endpoint_types(&self) -> std::option::Option<&[crate::model::EndpointTypesElement]> {
         self.endpoint_types.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomDeliveryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomDeliveryConfiguration");
-        formatter.field("delivery_uri", &self.delivery_uri);
-        formatter.field("endpoint_types", &self.endpoint_types);
-        formatter.finish()
     }
 }
 /// See [`CustomDeliveryConfiguration`](crate::model::CustomDeliveryConfiguration).
@@ -17968,7 +16818,7 @@ impl CustomDeliveryConfiguration {
 
 /// <p>Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TreatmentResource {
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
     #[doc(hidden)]
@@ -18041,24 +16891,6 @@ impl TreatmentResource {
     /// <p>The custom name of the treatment.</p>
     pub fn treatment_name(&self) -> std::option::Option<&str> {
         self.treatment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TreatmentResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TreatmentResource");
-        formatter.field(
-            "custom_delivery_configuration",
-            &self.custom_delivery_configuration,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("size_percent", &self.size_percent);
-        formatter.field("state", &self.state);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("treatment_description", &self.treatment_description);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.finish()
     }
 }
 /// See [`TreatmentResource`](crate::model::TreatmentResource).
@@ -18218,7 +17050,7 @@ impl TreatmentResource {
 
 /// <p>Specifies the configuration and other settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteCampaignRequest {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
     #[doc(hidden)]
@@ -18354,32 +17186,6 @@ impl WriteCampaignRequest {
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     pub fn priority(&self) -> i32 {
         self.priority
-    }
-}
-impl std::fmt::Debug for WriteCampaignRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteCampaignRequest");
-        formatter.field("additional_treatments", &self.additional_treatments);
-        formatter.field(
-            "custom_delivery_configuration",
-            &self.custom_delivery_configuration,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("holdout_percent", &self.holdout_percent);
-        formatter.field("hook", &self.hook);
-        formatter.field("is_paused", &self.is_paused);
-        formatter.field("limits", &self.limits);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("name", &self.name);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_version", &self.segment_version);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("treatment_description", &self.treatment_description);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
     }
 }
 /// See [`WriteCampaignRequest`](crate::model::WriteCampaignRequest).
@@ -18665,7 +17471,7 @@ impl WriteCampaignRequest {
 
 /// <p>Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteTreatmentResource {
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
     #[doc(hidden)]
@@ -18724,22 +17530,6 @@ impl WriteTreatmentResource {
     /// <p>A custom name for the treatment.</p>
     pub fn treatment_name(&self) -> std::option::Option<&str> {
         self.treatment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for WriteTreatmentResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteTreatmentResource");
-        formatter.field(
-            "custom_delivery_configuration",
-            &self.custom_delivery_configuration,
-        );
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("size_percent", &self.size_percent);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("treatment_description", &self.treatment_description);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.finish()
     }
 }
 /// See [`WriteTreatmentResource`](crate::model::WriteTreatmentResource).
@@ -18872,7 +17662,7 @@ impl WriteTreatmentResource {
 
 /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaiduChannelResponse {
     /// <p>The unique identifier for the application that the Baidu channel applies to.</p>
     #[doc(hidden)]
@@ -18952,23 +17742,6 @@ impl BaiduChannelResponse {
     /// <p>The current version of the Baidu channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for BaiduChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaiduChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("credential", &self.credential);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`BaiduChannelResponse`](crate::model::BaiduChannelResponse).
@@ -19139,7 +17912,7 @@ impl BaiduChannelResponse {
 
 /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaiduChannelRequest {
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     #[doc(hidden)]
@@ -19163,15 +17936,6 @@ impl BaiduChannelRequest {
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     pub fn secret_key(&self) -> std::option::Option<&str> {
         self.secret_key.as_deref()
-    }
-}
-impl std::fmt::Debug for BaiduChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaiduChannelRequest");
-        formatter.field("api_key", &self.api_key);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("secret_key", &self.secret_key);
-        formatter.finish()
     }
 }
 /// See [`BaiduChannelRequest`](crate::model::BaiduChannelRequest).
@@ -19234,7 +17998,7 @@ impl BaiduChannelRequest {
 
 /// <p>Provides information about an application, including the default settings for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSettingsResource {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -19284,17 +18048,6 @@ impl ApplicationSettingsResource {
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
         self.quiet_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationSettingsResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSettingsResource");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_hook", &self.campaign_hook);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("limits", &self.limits);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.finish()
     }
 }
 /// See [`ApplicationSettingsResource`](crate::model::ApplicationSettingsResource).
@@ -19408,7 +18161,7 @@ impl ApplicationSettingsResource {
 
 /// <p>Specifies the default settings for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteApplicationSettingsRequest {
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
@@ -19472,20 +18225,6 @@ impl WriteApplicationSettingsRequest {
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource to define a custom quiet time for the campaign or journey.</p>
     pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
         self.quiet_time.as_ref()
-    }
-}
-impl std::fmt::Debug for WriteApplicationSettingsRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteApplicationSettingsRequest");
-        formatter.field("campaign_hook", &self.campaign_hook);
-        formatter.field(
-            "cloud_watch_metrics_enabled",
-            &self.cloud_watch_metrics_enabled,
-        );
-        formatter.field("event_tagging_enabled", &self.event_tagging_enabled);
-        formatter.field("limits", &self.limits);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.finish()
     }
 }
 /// See [`WriteApplicationSettingsRequest`](crate::model::WriteApplicationSettingsRequest).
@@ -19607,7 +18346,7 @@ impl WriteApplicationSettingsRequest {
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsVoipSandboxChannelResponse {
     /// <p>The unique identifier for the application that the APNs VoIP sandbox channel applies to.</p>
     #[doc(hidden)]
@@ -19694,27 +18433,6 @@ impl ApnsVoipSandboxChannelResponse {
     /// <p>The current version of the APNs VoIP sandbox channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for ApnsVoipSandboxChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsVoipSandboxChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("has_token_key", &self.has_token_key);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ApnsVoipSandboxChannelResponse`](crate::model::ApnsVoipSandboxChannelResponse).
@@ -19903,7 +18621,7 @@ impl ApnsVoipSandboxChannelResponse {
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsVoipSandboxChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
@@ -19962,23 +18680,6 @@ impl ApnsVoipSandboxChannelRequest {
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
     pub fn token_key_id(&self) -> std::option::Option<&str> {
         self.token_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ApnsVoipSandboxChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsVoipSandboxChannelRequest");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate", &self.certificate);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.field("token_key", &self.token_key);
-        formatter.field("token_key_id", &self.token_key_id);
-        formatter.finish()
     }
 }
 /// See [`ApnsVoipSandboxChannelRequest`](crate::model::ApnsVoipSandboxChannelRequest).
@@ -20107,7 +18808,7 @@ impl ApnsVoipSandboxChannelRequest {
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsVoipChannelResponse {
     /// <p>The unique identifier for the application that the APNs VoIP channel applies to.</p>
     #[doc(hidden)]
@@ -20194,27 +18895,6 @@ impl ApnsVoipChannelResponse {
     /// <p>The current version of the APNs VoIP channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for ApnsVoipChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsVoipChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("has_token_key", &self.has_token_key);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ApnsVoipChannelResponse`](crate::model::ApnsVoipChannelResponse).
@@ -20403,7 +19083,7 @@ impl ApnsVoipChannelResponse {
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsVoipChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
@@ -20462,23 +19142,6 @@ impl ApnsVoipChannelRequest {
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
     pub fn token_key_id(&self) -> std::option::Option<&str> {
         self.token_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ApnsVoipChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsVoipChannelRequest");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate", &self.certificate);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.field("token_key", &self.token_key);
-        formatter.field("token_key_id", &self.token_key_id);
-        formatter.finish()
     }
 }
 /// See [`ApnsVoipChannelRequest`](crate::model::ApnsVoipChannelRequest).
@@ -20607,7 +19270,7 @@ impl ApnsVoipChannelRequest {
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsSandboxChannelResponse {
     /// <p>The unique identifier for the application that the APNs sandbox channel applies to.</p>
     #[doc(hidden)]
@@ -20694,27 +19357,6 @@ impl ApnsSandboxChannelResponse {
     /// <p>The current version of the APNs sandbox channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for ApnsSandboxChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsSandboxChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("has_token_key", &self.has_token_key);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ApnsSandboxChannelResponse`](crate::model::ApnsSandboxChannelResponse).
@@ -20903,7 +19545,7 @@ impl ApnsSandboxChannelResponse {
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsSandboxChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
@@ -20962,23 +19604,6 @@ impl ApnsSandboxChannelRequest {
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
     pub fn token_key_id(&self) -> std::option::Option<&str> {
         self.token_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ApnsSandboxChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsSandboxChannelRequest");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate", &self.certificate);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.field("token_key", &self.token_key);
-        formatter.field("token_key_id", &self.token_key_id);
-        formatter.finish()
     }
 }
 /// See [`ApnsSandboxChannelRequest`](crate::model::ApnsSandboxChannelRequest).
@@ -21107,7 +19732,7 @@ impl ApnsSandboxChannelRequest {
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsChannelResponse {
     /// <p>The unique identifier for the application that the APNs channel applies to.</p>
     #[doc(hidden)]
@@ -21194,27 +19819,6 @@ impl ApnsChannelResponse {
     /// <p>The current version of the APNs channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for ApnsChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("has_token_key", &self.has_token_key);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ApnsChannelResponse`](crate::model::ApnsChannelResponse).
@@ -21403,7 +20007,7 @@ impl ApnsChannelResponse {
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
@@ -21462,23 +20066,6 @@ impl ApnsChannelRequest {
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
     pub fn token_key_id(&self) -> std::option::Option<&str> {
         self.token_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ApnsChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsChannelRequest");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate", &self.certificate);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.field("token_key", &self.token_key);
-        formatter.field("token_key_id", &self.token_key_id);
-        formatter.finish()
     }
 }
 /// See [`ApnsChannelRequest`](crate::model::ApnsChannelRequest).
@@ -21607,7 +20194,7 @@ impl ApnsChannelRequest {
 
 /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdmChannelResponse {
     /// <p>The unique identifier for the application that the ADM channel applies to.</p>
     #[doc(hidden)]
@@ -21680,22 +20267,6 @@ impl AdmChannelResponse {
     /// <p>The current version of the ADM channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for AdmChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdmChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`AdmChannelResponse`](crate::model::AdmChannelResponse).
@@ -21854,7 +20425,7 @@ impl AdmChannelResponse {
 
 /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdmChannelRequest {
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
     #[doc(hidden)]
@@ -21878,15 +20449,6 @@ impl AdmChannelRequest {
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for AdmChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdmChannelRequest");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`AdmChannelRequest`](crate::model::AdmChannelRequest).
@@ -21952,7 +20514,7 @@ impl AdmChannelRequest {
 
 /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagsModel {
     /// <p>A string-to-string map of key-value pairs that defines the tags for an application, campaign, message template, or segment. Each of these resources can have a maximum of 50 tags.</p>
     /// <p>Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -21968,13 +20530,6 @@ impl TagsModel {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for TagsModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagsModel");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`TagsModel`](crate::model::TagsModel).
@@ -22030,7 +20585,7 @@ impl TagsModel {
 
 /// <p>Provides information about which users and endpoints a message was sent to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendUsersMessageResponse {
     /// <p>The unique identifier for the application that was used to send the message.</p>
     #[doc(hidden)]
@@ -22066,15 +20621,6 @@ impl SendUsersMessageResponse {
         >,
     > {
         self.result.as_ref()
-    }
-}
-impl std::fmt::Debug for SendUsersMessageResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendUsersMessageResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("result", &self.result);
-        formatter.finish()
     }
 }
 /// See [`SendUsersMessageResponse`](crate::model::SendUsersMessageResponse).
@@ -22166,7 +20712,7 @@ impl SendUsersMessageResponse {
 
 /// <p>Provides information about the delivery status and results of sending a message directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointMessageResult {
     /// <p>The endpoint address that the message was delivered to.</p>
     #[doc(hidden)]
@@ -22231,18 +20777,6 @@ impl EndpointMessageResult {
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
     pub fn updated_token(&self) -> std::option::Option<&str> {
         self.updated_token.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointMessageResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointMessageResult");
-        formatter.field("address", &self.address);
-        formatter.field("delivery_status", &self.delivery_status);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("updated_token", &self.updated_token);
-        formatter.finish()
     }
 }
 /// See [`EndpointMessageResult`](crate::model::EndpointMessageResult).
@@ -22493,7 +21027,7 @@ impl AsRef<str> for DeliveryStatus {
 
 /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendUsersMessageRequest {
     /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
     #[doc(hidden)]
@@ -22545,17 +21079,6 @@ impl SendUsersMessageRequest {
         &std::collections::HashMap<std::string::String, crate::model::EndpointSendConfiguration>,
     > {
         self.users.as_ref()
-    }
-}
-impl std::fmt::Debug for SendUsersMessageRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendUsersMessageRequest");
-        formatter.field("context", &self.context);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("trace_id", &self.trace_id);
-        formatter.field("users", &self.users);
-        formatter.finish()
     }
 }
 /// See [`SendUsersMessageRequest`](crate::model::SendUsersMessageRequest).
@@ -22692,7 +21215,7 @@ impl SendUsersMessageRequest {
 
 /// <p>Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointSendConfiguration {
     /// <p>The body of the message. If specified, this value overrides the default message body.</p>
     #[doc(hidden)]
@@ -22742,17 +21265,6 @@ impl EndpointSendConfiguration {
     /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
     pub fn title_override(&self) -> std::option::Option<&str> {
         self.title_override.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointSendConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointSendConfiguration");
-        formatter.field("body_override", &self.body_override);
-        formatter.field("context", &self.context);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("title_override", &self.title_override);
-        formatter.finish()
     }
 }
 /// See [`EndpointSendConfiguration`](crate::model::EndpointSendConfiguration).
@@ -22881,7 +21393,7 @@ impl EndpointSendConfiguration {
 
 /// <p>Specifies the settings and content for the default message and any default messages that you tailored for specific channels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectMessageConfiguration {
     /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     #[doc(hidden)]
@@ -22950,24 +21462,6 @@ impl DirectMessageConfiguration {
     /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
     pub fn voice_message(&self) -> std::option::Option<&crate::model::VoiceMessage> {
         self.voice_message.as_ref()
-    }
-}
-impl std::fmt::Debug for DirectMessageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectMessageConfiguration");
-        formatter.field("adm_message", &self.adm_message);
-        formatter.field("apns_message", &self.apns_message);
-        formatter.field("baidu_message", &self.baidu_message);
-        formatter.field("default_message", &self.default_message);
-        formatter.field(
-            "default_push_notification_message",
-            &self.default_push_notification_message,
-        );
-        formatter.field("email_message", &self.email_message);
-        formatter.field("gcm_message", &self.gcm_message);
-        formatter.field("sms_message", &self.sms_message);
-        formatter.field("voice_message", &self.voice_message);
-        formatter.finish()
     }
 }
 /// See [`DirectMessageConfiguration`](crate::model::DirectMessageConfiguration).
@@ -23133,7 +21627,7 @@ impl DirectMessageConfiguration {
 
 /// <p>Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceMessage {
     /// <p>The text of the script to use for the voice message.</p>
     #[doc(hidden)]
@@ -23177,17 +21671,6 @@ impl VoiceMessage {
     /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn voice_id(&self) -> std::option::Option<&str> {
         self.voice_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VoiceMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceMessage");
-        formatter.field("body", &self.body);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("origination_number", &self.origination_number);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
     }
 }
 /// See [`VoiceMessage`](crate::model::VoiceMessage).
@@ -23297,7 +21780,7 @@ impl VoiceMessage {
 
 /// <p>Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsMessage {
     /// <p>The body of the SMS message.</p>
     #[doc(hidden)]
@@ -23369,21 +21852,6 @@ impl SmsMessage {
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsMessage");
-        formatter.field("body", &self.body);
-        formatter.field("keyword", &self.keyword);
-        formatter.field("media_url", &self.media_url);
-        formatter.field("message_type", &self.message_type);
-        formatter.field("origination_number", &self.origination_number);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
     }
 }
 /// See [`SmsMessage`](crate::model::SmsMessage).
@@ -23541,7 +22009,7 @@ impl SmsMessage {
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GcmMessage {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -23693,29 +22161,6 @@ impl GcmMessage {
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for GcmMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GcmMessage");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("collapse_key", &self.collapse_key);
-        formatter.field("data", &self.data);
-        formatter.field("icon_reference", &self.icon_reference);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("priority", &self.priority);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("restricted_package_name", &self.restricted_package_name);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("small_image_icon_url", &self.small_image_icon_url);
-        formatter.field("sound", &self.sound);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`GcmMessage`](crate::model::GcmMessage).
@@ -24012,7 +22457,7 @@ impl GcmMessage {
 
 /// <p>Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailMessage {
     /// <p>The body of the email message.</p>
     #[doc(hidden)]
@@ -24070,22 +22515,6 @@ impl EmailMessage {
         &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     > {
         self.substitutions.as_ref()
-    }
-}
-impl std::fmt::Debug for EmailMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailMessage");
-        formatter.field("body", &self.body);
-        formatter.field(
-            "feedback_forwarding_address",
-            &self.feedback_forwarding_address,
-        );
-        formatter.field("from_address", &self.from_address);
-        formatter.field("raw_email", &self.raw_email);
-        formatter.field("reply_to_addresses", &self.reply_to_addresses);
-        formatter.field("simple_email", &self.simple_email);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.finish()
     }
 }
 /// See [`EmailMessage`](crate::model::EmailMessage).
@@ -24231,7 +22660,7 @@ impl EmailMessage {
 
 /// <p>Specifies the contents of an email message, composed of a subject, a text part, and an HTML part.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleEmail {
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
     #[doc(hidden)]
@@ -24255,15 +22684,6 @@ impl SimpleEmail {
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub fn text_part(&self) -> std::option::Option<&crate::model::SimpleEmailPart> {
         self.text_part.as_ref()
-    }
-}
-impl std::fmt::Debug for SimpleEmail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleEmail");
-        formatter.field("html_part", &self.html_part);
-        formatter.field("subject", &self.subject);
-        formatter.field("text_part", &self.text_part);
-        formatter.finish()
     }
 }
 /// See [`SimpleEmail`](crate::model::SimpleEmail).
@@ -24335,7 +22755,7 @@ impl SimpleEmail {
 
 /// <p>Specifies the subject or body of an email message, represented as textual email data and the applicable character set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleEmailPart {
     /// <p>The applicable character set for the message content.</p>
     #[doc(hidden)]
@@ -24352,14 +22772,6 @@ impl SimpleEmailPart {
     /// <p>The textual data of the message content.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
-    }
-}
-impl std::fmt::Debug for SimpleEmailPart {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleEmailPart");
-        formatter.field("charset", &self.charset);
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`SimpleEmailPart`](crate::model::SimpleEmailPart).
@@ -24410,7 +22822,7 @@ impl SimpleEmailPart {
 
 /// <p>Specifies the contents of an email message, represented as a raw MIME message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RawEmail {
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
     #[doc(hidden)]
@@ -24420,13 +22832,6 @@ impl RawEmail {
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
     pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.data.as_ref()
-    }
-}
-impl std::fmt::Debug for RawEmail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RawEmail");
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`RawEmail`](crate::model::RawEmail).
@@ -24463,7 +22868,7 @@ impl RawEmail {
 
 /// <p>Specifies the default settings and content for a push notification that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultPushNotificationMessage {
     /// <p>The default action to occur if a recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -24535,19 +22940,6 @@ impl DefaultPushNotificationMessage {
     /// <p>The default URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for DefaultPushNotificationMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultPushNotificationMessage");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("data", &self.data);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`DefaultPushNotificationMessage`](crate::model::DefaultPushNotificationMessage).
@@ -24702,7 +23094,7 @@ impl DefaultPushNotificationMessage {
 
 /// <p>Specifies the default message for all channels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultMessage {
     /// <p>The default body of the message.</p>
     #[doc(hidden)]
@@ -24725,14 +23117,6 @@ impl DefaultMessage {
         &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     > {
         self.substitutions.as_ref()
-    }
-}
-impl std::fmt::Debug for DefaultMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultMessage");
-        formatter.field("body", &self.body);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.finish()
     }
 }
 /// See [`DefaultMessage`](crate::model::DefaultMessage).
@@ -24800,7 +23184,7 @@ impl DefaultMessage {
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaiduMessage {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -24921,26 +23305,6 @@ impl BaiduMessage {
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for BaiduMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaiduMessage");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("data", &self.data);
-        formatter.field("icon_reference", &self.icon_reference);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("small_image_icon_url", &self.small_image_icon_url);
-        formatter.field("sound", &self.sound);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`BaiduMessage`](crate::model::BaiduMessage).
@@ -25188,7 +23552,7 @@ impl BaiduMessage {
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsMessage {
     /// <p>The type of push notification to send. Valid values are:</p>
     /// <ul>
@@ -25379,33 +23743,6 @@ impl ApnsMessage {
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for ApnsMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsMessage");
-        formatter.field("apns_push_type", &self.apns_push_type);
-        formatter.field("action", &self.action);
-        formatter.field("badge", &self.badge);
-        formatter.field("body", &self.body);
-        formatter.field("category", &self.category);
-        formatter.field("collapse_id", &self.collapse_id);
-        formatter.field("data", &self.data);
-        formatter.field("media_url", &self.media_url);
-        formatter.field(
-            "preferred_authentication_method",
-            &self.preferred_authentication_method,
-        );
-        formatter.field("priority", &self.priority);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("sound", &self.sound);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("thread_id", &self.thread_id);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`ApnsMessage`](crate::model::ApnsMessage).
@@ -25743,7 +24080,7 @@ impl ApnsMessage {
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdmMessage {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -25878,28 +24215,6 @@ impl AdmMessage {
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for AdmMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdmMessage");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("consolidation_key", &self.consolidation_key);
-        formatter.field("data", &self.data);
-        formatter.field("expires_after", &self.expires_after);
-        formatter.field("icon_reference", &self.icon_reference);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("md5", &self.md5);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("small_image_icon_url", &self.small_image_icon_url);
-        formatter.field("sound", &self.sound);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`AdmMessage`](crate::model::AdmMessage).
@@ -26177,7 +24492,7 @@ impl AdmMessage {
 
 /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageResponse {
     /// <p>The unique identifier for the application that was used to send the message.</p>
     #[doc(hidden)]
@@ -26220,16 +24535,6 @@ impl MessageResponse {
         &std::collections::HashMap<std::string::String, crate::model::MessageResult>,
     > {
         self.result.as_ref()
-    }
-}
-impl std::fmt::Debug for MessageResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("endpoint_result", &self.endpoint_result);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("result", &self.result);
-        formatter.finish()
     }
 }
 /// See [`MessageResponse`](crate::model::MessageResponse).
@@ -26341,7 +24646,7 @@ impl MessageResponse {
 
 /// <p>Provides information about the results of sending a message directly to an endpoint address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageResult {
     /// <p>The delivery status of the message. Possible values are:</p>
     /// <ul>
@@ -26399,17 +24704,6 @@ impl MessageResult {
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
     pub fn updated_token(&self) -> std::option::Option<&str> {
         self.updated_token.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageResult");
-        formatter.field("delivery_status", &self.delivery_status);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("updated_token", &self.updated_token);
-        formatter.finish()
     }
 }
 /// See [`MessageResult`](crate::model::MessageResult).
@@ -26525,7 +24819,7 @@ impl MessageResult {
 
 /// <p>Send OTP message request parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendOtpMessageRequestParameters {
     /// <p>The attempts allowed to validate an OTP.</p>
     #[doc(hidden)]
@@ -26605,23 +24899,6 @@ impl SendOtpMessageRequestParameters {
     /// <p>The time in minutes before the OTP is no longer valid.</p>
     pub fn validity_period(&self) -> i32 {
         self.validity_period
-    }
-}
-impl std::fmt::Debug for SendOtpMessageRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendOtpMessageRequestParameters");
-        formatter.field("allowed_attempts", &self.allowed_attempts);
-        formatter.field("brand_name", &self.brand_name);
-        formatter.field("channel", &self.channel);
-        formatter.field("code_length", &self.code_length);
-        formatter.field("destination_identity", &self.destination_identity);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("language", &self.language);
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("validity_period", &self.validity_period);
-        formatter.finish()
     }
 }
 /// See [`SendOtpMessageRequestParameters`](crate::model::SendOtpMessageRequestParameters).
@@ -26786,7 +25063,7 @@ impl SendOtpMessageRequestParameters {
 
 /// <p>Specifies the configuration and other settings for a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageRequest {
     /// <p>A map of key-value pairs, where each key is an address and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object. An address can be a push notification token, a phone number, or an email address. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object to tailor the message for an address by specifying settings such as content overrides and message variables.</p>
     #[doc(hidden)]
@@ -26851,18 +25128,6 @@ impl MessageRequest {
     /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
     pub fn trace_id(&self) -> std::option::Option<&str> {
         self.trace_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageRequest");
-        formatter.field("addresses", &self.addresses);
-        formatter.field("context", &self.context);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("trace_id", &self.trace_id);
-        formatter.finish()
     }
 }
 /// See [`MessageRequest`](crate::model::MessageRequest).
@@ -27028,7 +25293,7 @@ impl MessageRequest {
 
 /// <p>Specifies address-based configuration settings for a message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddressConfiguration {
     /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
     #[doc(hidden)]
@@ -27085,18 +25350,6 @@ impl AddressConfiguration {
     /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
     pub fn title_override(&self) -> std::option::Option<&str> {
         self.title_override.as_deref()
-    }
-}
-impl std::fmt::Debug for AddressConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddressConfiguration");
-        formatter.field("body_override", &self.body_override);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("context", &self.context);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("title_override", &self.title_override);
-        formatter.finish()
     }
 }
 /// See [`AddressConfiguration`](crate::model::AddressConfiguration).
@@ -27240,7 +25493,7 @@ impl AddressConfiguration {
 
 /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributesResource {
     /// <p>The unique identifier for the application.</p>
     #[doc(hidden)]
@@ -27274,15 +25527,6 @@ impl AttributesResource {
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
     pub fn attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for AttributesResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributesResource");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`AttributesResource`](crate::model::AttributesResource).
@@ -27370,7 +25614,7 @@ impl AttributesResource {
 
 /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAttributesRequest {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
     #[doc(hidden)]
@@ -27380,13 +25624,6 @@ impl UpdateAttributesRequest {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
     pub fn blacklist(&self) -> std::option::Option<&[std::string::String]> {
         self.blacklist.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateAttributesRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAttributesRequest");
-        formatter.field("blacklist", &self.blacklist);
-        formatter.finish()
     }
 }
 /// See [`UpdateAttributesRequest`](crate::model::UpdateAttributesRequest).
@@ -27434,7 +25671,7 @@ impl UpdateAttributesRequest {
 
 /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventStream {
     /// <p>The unique identifier for the application to publish event data for.</p>
     #[doc(hidden)]
@@ -27507,18 +25744,6 @@ impl EventStream {
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EventStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventStream");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("destination_stream_arn", &self.destination_stream_arn);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("last_updated_by", &self.last_updated_by);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`EventStream`](crate::model::EventStream).
@@ -27657,7 +25882,7 @@ impl EventStream {
 
 /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteEventStream {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream that you want to publish event data to.</p>
     /// <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>
@@ -27702,14 +25927,6 @@ impl WriteEventStream {
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for WriteEventStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteEventStream");
-        formatter.field("destination_stream_arn", &self.destination_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`WriteEventStream`](crate::model::WriteEventStream).
@@ -27791,7 +26008,7 @@ impl WriteEventStream {
 
 /// <p>Provides information about endpoints and the events that they're associated with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsResponse {
     /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
     #[doc(hidden)]
@@ -27807,13 +26024,6 @@ impl EventsResponse {
         &std::collections::HashMap<std::string::String, crate::model::ItemResponse>,
     > {
         self.results.as_ref()
-    }
-}
-impl std::fmt::Debug for EventsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsResponse");
-        formatter.field("results", &self.results);
-        formatter.finish()
     }
 }
 /// See [`EventsResponse`](crate::model::EventsResponse).
@@ -27869,7 +26079,7 @@ impl EventsResponse {
 
 /// <p>Provides information about the results of a request to create or update an endpoint that's associated with an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ItemResponse {
     /// <p>The response that was received after the endpoint data was accepted.</p>
     #[doc(hidden)]
@@ -27894,14 +26104,6 @@ impl ItemResponse {
         &std::collections::HashMap<std::string::String, crate::model::EventItemResponse>,
     > {
         self.events_item_response.as_ref()
-    }
-}
-impl std::fmt::Debug for ItemResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemResponse");
-        formatter.field("endpoint_item_response", &self.endpoint_item_response);
-        formatter.field("events_item_response", &self.events_item_response);
-        formatter.finish()
     }
 }
 /// See [`ItemResponse`](crate::model::ItemResponse).
@@ -27972,7 +26174,7 @@ impl ItemResponse {
 
 /// <p>Provides the status code and message that result from processing an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventItemResponse {
     /// <p>A custom message that's returned in the response as a result of processing the event.</p>
     #[doc(hidden)]
@@ -27989,14 +26191,6 @@ impl EventItemResponse {
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
-    }
-}
-impl std::fmt::Debug for EventItemResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventItemResponse");
-        formatter.field("message", &self.message);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
     }
 }
 /// See [`EventItemResponse`](crate::model::EventItemResponse).
@@ -28047,7 +26241,7 @@ impl EventItemResponse {
 
 /// <p>Provides the status code and message that result from processing data for an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointItemResponse {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
     #[doc(hidden)]
@@ -28064,14 +26258,6 @@ impl EndpointItemResponse {
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
-    }
-}
-impl std::fmt::Debug for EndpointItemResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointItemResponse");
-        formatter.field("message", &self.message);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
     }
 }
 /// See [`EndpointItemResponse`](crate::model::EndpointItemResponse).
@@ -28122,7 +26308,7 @@ impl EndpointItemResponse {
 
 /// <p>Specifies a batch of events to process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsRequest {
     /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
     #[doc(hidden)]
@@ -28138,13 +26324,6 @@ impl EventsRequest {
         &std::collections::HashMap<std::string::String, crate::model::EventsBatch>,
     > {
         self.batch_item.as_ref()
-    }
-}
-impl std::fmt::Debug for EventsRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsRequest");
-        formatter.field("batch_item", &self.batch_item);
-        formatter.finish()
     }
 }
 /// See [`EventsRequest`](crate::model::EventsRequest).
@@ -28200,7 +26379,7 @@ impl EventsRequest {
 
 /// <p>Specifies a batch of endpoints and events to process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsBatch {
     /// <p>A set of properties and attributes that are associated with the endpoint.</p>
     #[doc(hidden)]
@@ -28221,14 +26400,6 @@ impl EventsBatch {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Event>>
     {
         self.events.as_ref()
-    }
-}
-impl std::fmt::Debug for EventsBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsBatch");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("events", &self.events);
-        formatter.finish()
     }
 }
 /// See [`EventsBatch`](crate::model::EventsBatch).
@@ -28295,7 +26466,7 @@ impl EventsBatch {
 
 /// <p>Specifies information about an event that reports data to Amazon Pinpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The package name of the app that's recording the event.</p>
     #[doc(hidden)]
@@ -28374,22 +26545,6 @@ impl Event {
     /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
     pub fn timestamp(&self) -> std::option::Option<&str> {
         self.timestamp.as_deref()
-    }
-}
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("app_package_name", &self.app_package_name);
-        formatter.field("app_title", &self.app_title);
-        formatter.field("app_version_code", &self.app_version_code);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("client_sdk_version", &self.client_sdk_version);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("sdk_name", &self.sdk_name);
-        formatter.field("session", &self.session);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`Event`](crate::model::Event).
@@ -28572,7 +26727,7 @@ impl Event {
 
 /// <p>Provides information about a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Session {
     /// <p>The duration of the session, in milliseconds.</p>
     #[doc(hidden)]
@@ -28603,16 +26758,6 @@ impl Session {
     /// <p>The date and time when the session ended.</p>
     pub fn stop_timestamp(&self) -> std::option::Option<&str> {
         self.stop_timestamp.as_deref()
-    }
-}
-impl std::fmt::Debug for Session {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Session");
-        formatter.field("duration", &self.duration);
-        formatter.field("id", &self.id);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("stop_timestamp", &self.stop_timestamp);
-        formatter.finish()
     }
 }
 /// See [`Session`](crate::model::Session).
@@ -28693,7 +26838,7 @@ impl Session {
 
 /// <p>Specifies the properties and attributes of an endpoint that's associated with an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicEndpoint {
     /// <p>The unique identifier for the recipient, such as a device token, email address, or mobile phone number.</p>
     #[doc(hidden)]
@@ -28783,23 +26928,6 @@ impl PublicEndpoint {
     /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
     pub fn user(&self) -> std::option::Option<&crate::model::EndpointUser> {
         self.user.as_ref()
-    }
-}
-impl std::fmt::Debug for PublicEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicEndpoint");
-        formatter.field("address", &self.address);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("effective_date", &self.effective_date);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("opt_out", &self.opt_out);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
     }
 }
 /// See [`PublicEndpoint`](crate::model::PublicEndpoint).
@@ -29002,7 +27130,7 @@ impl PublicEndpoint {
 
 /// <p>Provides information about a phone number.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberValidateResponse {
     /// <p>The carrier or service provider that the phone number is currently registered with. In some countries and regions, this value may be the carrier or service provider that the phone number was originally registered with.</p>
     #[doc(hidden)]
@@ -29103,35 +27231,6 @@ impl NumberValidateResponse {
     /// <p>The postal or ZIP code for the location where the phone number was originally registered.</p>
     pub fn zip_code(&self) -> std::option::Option<&str> {
         self.zip_code.as_deref()
-    }
-}
-impl std::fmt::Debug for NumberValidateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberValidateResponse");
-        formatter.field("carrier", &self.carrier);
-        formatter.field("city", &self.city);
-        formatter.field(
-            "cleansed_phone_number_e164",
-            &self.cleansed_phone_number_e164,
-        );
-        formatter.field(
-            "cleansed_phone_number_national",
-            &self.cleansed_phone_number_national,
-        );
-        formatter.field("country", &self.country);
-        formatter.field("country_code_iso2", &self.country_code_iso2);
-        formatter.field("country_code_numeric", &self.country_code_numeric);
-        formatter.field("county", &self.county);
-        formatter.field(
-            "original_country_code_iso2",
-            &self.original_country_code_iso2,
-        );
-        formatter.field("original_phone_number", &self.original_phone_number);
-        formatter.field("phone_type", &self.phone_type);
-        formatter.field("phone_type_code", &self.phone_type_code);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("zip_code", &self.zip_code);
-        formatter.finish()
     }
 }
 /// See [`NumberValidateResponse`](crate::model::NumberValidateResponse).
@@ -29347,7 +27446,7 @@ impl NumberValidateResponse {
 
 /// <p>Specifies a phone number to validate and retrieve information about.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberValidateRequest {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
     #[doc(hidden)]
@@ -29364,14 +27463,6 @@ impl NumberValidateRequest {
     /// <p>The phone number to retrieve information about. The phone number that you provide should include a valid numeric country code. Otherwise, the operation might result in an error.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
-    }
-}
-impl std::fmt::Debug for NumberValidateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberValidateRequest");
-        formatter.field("iso_country_code", &self.iso_country_code);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.finish()
     }
 }
 /// See [`NumberValidateRequest`](crate::model::NumberValidateRequest).
@@ -29425,7 +27516,7 @@ impl NumberValidateRequest {
 
 /// <p>Provides information about all the versions of a specific message template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateVersionsResponse {
     /// <p>An array of responses, one for each version of the message template.</p>
     #[doc(hidden)]
@@ -29456,16 +27547,6 @@ impl TemplateVersionsResponse {
     /// <p>The unique identifier for the request to retrieve information about all the versions of the message template.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateVersionsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateVersionsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("message", &self.message);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 /// See [`TemplateVersionsResponse`](crate::model::TemplateVersionsResponse).
@@ -29549,7 +27630,7 @@ impl TemplateVersionsResponse {
 
 /// <p>Provides information about a specific version of a message template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateVersionResponse {
     /// <p>The date, in ISO 8601 format, when the version of the message template was created.</p>
     #[doc(hidden)]
@@ -29601,19 +27682,6 @@ impl TemplateVersionResponse {
     /// <p>The unique identifier for the version of the message template. This value is an integer that Amazon Pinpoint automatically increments and assigns to each new version of a template.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateVersionResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateVersionResponse");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`TemplateVersionResponse`](crate::model::TemplateVersionResponse).
@@ -29742,7 +27810,7 @@ impl TemplateVersionResponse {
 
 /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplatesResponse {
     /// <p>An array of responses, one for each message template that's associated with your Amazon Pinpoint account and meets any filter criteria that you specified in the request.</p>
     #[doc(hidden)]
@@ -29759,14 +27827,6 @@ impl TemplatesResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplatesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplatesResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`TemplatesResponse`](crate::model::TemplatesResponse).
@@ -29826,7 +27886,7 @@ impl TemplatesResponse {
 
 /// <p>Provides information about a message template that's associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateResponse {
     /// <p>The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object. To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the ARN for.</p>
     #[doc(hidden)]
@@ -29896,21 +27956,6 @@ impl TemplateResponse {
     /// <p>The unique identifier, as an integer, for the active version of the message template.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`TemplateResponse`](crate::model::TemplateResponse).
@@ -30185,7 +28230,7 @@ impl AsRef<str> for TemplateType {
 
 /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneysResponse {
     /// <p>An array of responses, one for each journey that's associated with the application.</p>
     #[doc(hidden)]
@@ -30202,14 +28247,6 @@ impl JourneysResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for JourneysResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneysResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`JourneysResponse`](crate::model::JourneysResponse).
@@ -30269,7 +28306,7 @@ impl JourneysResponse {
 
 /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceTemplateResponse {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     #[doc(hidden)]
@@ -30360,24 +28397,6 @@ impl VoiceTemplateResponse {
     /// <p>The name of the voice that's used when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn voice_id(&self) -> std::option::Option<&str> {
         self.voice_id.as_deref()
-    }
-}
-impl std::fmt::Debug for VoiceTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceTemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("body", &self.body);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
     }
 }
 /// See [`VoiceTemplateResponse`](crate::model::VoiceTemplateResponse).
@@ -30586,7 +28605,7 @@ impl VoiceTemplateResponse {
 
 /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointsResponse {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
     #[doc(hidden)]
@@ -30596,13 +28615,6 @@ impl EndpointsResponse {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
     pub fn item(&self) -> std::option::Option<&[crate::model::EndpointResponse]> {
         self.item.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointsResponse");
-        formatter.field("item", &self.item);
-        formatter.finish()
     }
 }
 /// See [`EndpointsResponse`](crate::model::EndpointsResponse).
@@ -30648,7 +28660,7 @@ impl EndpointsResponse {
 
 /// <p>Provides information about the channel type and other settings for an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointResponse {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For example, the address for a push-notification channel is typically the token provided by a push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. The address for the SMS channel is a phone number in E.164 format, such as +12065550100. The address for the email channel is an email address.</p>
     #[doc(hidden)]
@@ -30766,27 +28778,6 @@ impl EndpointResponse {
     /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
     pub fn user(&self) -> std::option::Option<&crate::model::EndpointUser> {
         self.user.as_ref()
-    }
-}
-impl std::fmt::Debug for EndpointResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointResponse");
-        formatter.field("address", &self.address);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("cohort_id", &self.cohort_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("effective_date", &self.effective_date);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("opt_out", &self.opt_out);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
     }
 }
 /// See [`EndpointResponse`](crate::model::EndpointResponse).
@@ -31043,7 +29034,7 @@ impl EndpointResponse {
 
 /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsTemplateResponse {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     #[doc(hidden)]
@@ -31127,23 +29118,6 @@ impl SmsTemplateResponse {
     /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsTemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("body", &self.body);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`SmsTemplateResponse`](crate::model::SmsTemplateResponse).
@@ -31340,7 +29314,7 @@ impl SmsTemplateResponse {
 
 /// <p>Provides information about all the segments that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentsResponse {
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
     #[doc(hidden)]
@@ -31357,14 +29331,6 @@ impl SegmentsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for SegmentsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`SegmentsResponse`](crate::model::SegmentsResponse).
@@ -31424,7 +29390,7 @@ impl SegmentsResponse {
 
 /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobsResponse {
     /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
     #[doc(hidden)]
@@ -31441,14 +29407,6 @@ impl ImportJobsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportJobsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ImportJobsResponse`](crate::model::ImportJobsResponse).
@@ -31508,7 +29466,7 @@ impl ImportJobsResponse {
 
 /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobResponse {
     /// <p>The unique identifier for the application that's associated with the import job.</p>
     #[doc(hidden)]
@@ -31602,25 +29560,6 @@ impl ImportJobResponse {
     /// <p>The job type. This value is IMPORT for import jobs.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportJobResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("completed_pieces", &self.completed_pieces);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("definition", &self.definition);
-        formatter.field("failed_pieces", &self.failed_pieces);
-        formatter.field("failures", &self.failures);
-        formatter.field("id", &self.id);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("total_failures", &self.total_failures);
-        formatter.field("total_pieces", &self.total_pieces);
-        formatter.field("total_processed", &self.total_processed);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ImportJobResponse`](crate::model::ImportJobResponse).
@@ -31962,7 +29901,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p>Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobResource {
     /// <p>Specifies whether the import job creates a segment that contains the endpoints, when the endpoint definitions are imported.</p>
     #[doc(hidden)]
@@ -32037,20 +29976,6 @@ impl ImportJobResource {
     /// <p>The custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
     pub fn segment_name(&self) -> std::option::Option<&str> {
         self.segment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportJobResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobResource");
-        formatter.field("define_segment", &self.define_segment);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("format", &self.format);
-        formatter.field("register_endpoints", &self.register_endpoints);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url", &self.s3_url);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_name", &self.segment_name);
-        formatter.finish()
     }
 }
 /// See [`ImportJobResource`](crate::model::ImportJobResource).
@@ -32189,7 +30114,7 @@ impl ImportJobResource {
 
 /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobsResponse {
     /// <p>An array of responses, one for each export job that's associated with the application (Export Jobs resource) or segment (Segment Export Jobs resource).</p>
     #[doc(hidden)]
@@ -32206,14 +30131,6 @@ impl ExportJobsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportJobsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ExportJobsResponse`](crate::model::ExportJobsResponse).
@@ -32273,7 +30190,7 @@ impl ExportJobsResponse {
 
 /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobResponse {
     /// <p>The unique identifier for the application that's associated with the export job.</p>
     #[doc(hidden)]
@@ -32367,25 +30284,6 @@ impl ExportJobResponse {
     /// <p>The job type. This value is EXPORT for export jobs.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for ExportJobResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("completed_pieces", &self.completed_pieces);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("definition", &self.definition);
-        formatter.field("failed_pieces", &self.failed_pieces);
-        formatter.field("failures", &self.failures);
-        formatter.field("id", &self.id);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("total_failures", &self.total_failures);
-        formatter.field("total_pieces", &self.total_pieces);
-        formatter.field("total_processed", &self.total_processed);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ExportJobResponse`](crate::model::ExportJobResponse).
@@ -32592,7 +30490,7 @@ impl ExportJobResponse {
 
 /// <p>Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobResource {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
     #[doc(hidden)]
@@ -32631,16 +30529,6 @@ impl ExportJobResource {
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
     pub fn segment_version(&self) -> i32 {
         self.segment_version
-    }
-}
-impl std::fmt::Debug for ExportJobResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobResource");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url_prefix", &self.s3_url_prefix);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_version", &self.segment_version);
-        formatter.finish()
     }
 }
 /// See [`ExportJobResource`](crate::model::ExportJobResource).
@@ -32726,7 +30614,7 @@ impl ExportJobResource {
 
 /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecommenderConfigurationsResponse {
     /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
@@ -32743,14 +30631,6 @@ impl ListRecommenderConfigurationsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListRecommenderConfigurationsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecommenderConfigurationsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListRecommenderConfigurationsResponse`](crate::model::ListRecommenderConfigurationsResponse).
@@ -32813,7 +30693,7 @@ impl ListRecommenderConfigurationsResponse {
 
 /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PushNotificationTemplateResponse {
     /// <p>The message template that's used for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     #[doc(hidden)]
@@ -32931,27 +30811,6 @@ impl PushNotificationTemplateResponse {
     /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for PushNotificationTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PushNotificationTemplateResponse");
-        formatter.field("adm", &self.adm);
-        formatter.field("apns", &self.apns);
-        formatter.field("arn", &self.arn);
-        formatter.field("baidu", &self.baidu);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("gcm", &self.gcm);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`PushNotificationTemplateResponse`](crate::model::PushNotificationTemplateResponse).
@@ -33215,7 +31074,7 @@ impl PushNotificationTemplateResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyExecutionMetricsResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
@@ -33250,16 +31109,6 @@ impl JourneyExecutionMetricsResponse {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for JourneyExecutionMetricsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyExecutionMetricsResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("last_evaluated_time", &self.last_evaluated_time);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
     }
 }
 /// See [`JourneyExecutionMetricsResponse`](crate::model::JourneyExecutionMetricsResponse).
@@ -33357,7 +31206,7 @@ impl JourneyExecutionMetricsResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyExecutionActivityMetricsResponse {
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
     /// <ul>
@@ -33422,18 +31271,6 @@ impl JourneyExecutionActivityMetricsResponse {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for JourneyExecutionActivityMetricsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyExecutionActivityMetricsResponse");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_activity_id", &self.journey_activity_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("last_evaluated_time", &self.last_evaluated_time);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
     }
 }
 /// See [`JourneyExecutionActivityMetricsResponse`](crate::model::JourneyExecutionActivityMetricsResponse).
@@ -33577,7 +31414,7 @@ impl JourneyExecutionActivityMetricsResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
@@ -33629,19 +31466,6 @@ impl JourneyDateRangeKpiResponse {
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for JourneyDateRangeKpiResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyDateRangeKpiResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("kpi_result", &self.kpi_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`JourneyDateRangeKpiResponse`](crate::model::JourneyDateRangeKpiResponse).
@@ -33764,7 +31588,7 @@ impl JourneyDateRangeKpiResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaseKpiResult {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
     #[doc(hidden)]
@@ -33774,13 +31598,6 @@ impl BaseKpiResult {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
     pub fn rows(&self) -> std::option::Option<&[crate::model::ResultRow]> {
         self.rows.as_deref()
-    }
-}
-impl std::fmt::Debug for BaseKpiResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaseKpiResult");
-        formatter.field("rows", &self.rows);
-        formatter.finish()
     }
 }
 /// See [`BaseKpiResult`](crate::model::BaseKpiResult).
@@ -33826,7 +31643,7 @@ impl BaseKpiResult {
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultRow {
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
     #[doc(hidden)]
@@ -33843,14 +31660,6 @@ impl ResultRow {
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::ResultRowValue]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ResultRow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultRow");
-        formatter.field("grouped_bys", &self.grouped_bys);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ResultRow`](crate::model::ResultRow).
@@ -33919,7 +31728,7 @@ impl ResultRow {
 
 /// <p>Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultRowValue {
     /// <p>The friendly name of the metric whose value is specified by the Value property.</p>
     #[doc(hidden)]
@@ -33943,15 +31752,6 @@ impl ResultRowValue {
     /// <p>In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object, the value for the field that was used to group data in a result set that contains multiple results (Values objects).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ResultRowValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultRowValue");
-        formatter.field("key", &self.key);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ResultRowValue`](crate::model::ResultRowValue).
@@ -34014,7 +31814,7 @@ impl ResultRowValue {
 
 /// <p>In-App Template Response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppTemplateResponse {
     /// <p>The resource arn of the template.</p>
     #[doc(hidden)]
@@ -34102,23 +31902,6 @@ impl InAppTemplateResponse {
     /// <p>The version id of the template.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for InAppTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppTemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("content", &self.content);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("custom_config", &self.custom_config);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("layout", &self.layout);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`InAppTemplateResponse`](crate::model::InAppTemplateResponse).
@@ -34335,7 +32118,7 @@ impl InAppTemplateResponse {
 
 /// <p>Get in-app messages response object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessagesResponse {
     /// <p>List of targeted in-app message campaigns.</p>
     #[doc(hidden)]
@@ -34348,13 +32131,6 @@ impl InAppMessagesResponse {
         &self,
     ) -> std::option::Option<&[crate::model::InAppMessageCampaign]> {
         self.in_app_message_campaigns.as_deref()
-    }
-}
-impl std::fmt::Debug for InAppMessagesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessagesResponse");
-        formatter.field("in_app_message_campaigns", &self.in_app_message_campaigns);
-        formatter.finish()
     }
 }
 /// See [`InAppMessagesResponse`](crate::model::InAppMessagesResponse).
@@ -34406,7 +32182,7 @@ impl InAppMessagesResponse {
 
 /// <p>Targeted in-app message campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageCampaign {
     /// <p>Campaign id of the corresponding campaign.</p>
     #[doc(hidden)]
@@ -34465,20 +32241,6 @@ impl InAppMessageCampaign {
     /// <p>Treatment id of the campaign.</p>
     pub fn treatment_id(&self) -> std::option::Option<&str> {
         self.treatment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InAppMessageCampaign {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageCampaign");
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("daily_cap", &self.daily_cap);
-        formatter.field("in_app_message", &self.in_app_message);
-        formatter.field("priority", &self.priority);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("session_cap", &self.session_cap);
-        formatter.field("total_cap", &self.total_cap);
-        formatter.field("treatment_id", &self.treatment_id);
-        formatter.finish()
     }
 }
 /// See [`InAppMessageCampaign`](crate::model::InAppMessageCampaign).
@@ -34607,7 +32369,7 @@ impl InAppMessageCampaign {
 
 /// <p>Schedule of the campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppCampaignSchedule {
     /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
     #[doc(hidden)]
@@ -34631,15 +32393,6 @@ impl InAppCampaignSchedule {
     /// <p>Time during which the in-app message should not be shown to the user.</p>
     pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
         self.quiet_time.as_ref()
-    }
-}
-impl std::fmt::Debug for InAppCampaignSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppCampaignSchedule");
-        formatter.field("end_date", &self.end_date);
-        formatter.field("event_filter", &self.event_filter);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.finish()
     }
 }
 /// See [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule).
@@ -34708,7 +32461,7 @@ impl InAppCampaignSchedule {
 
 /// <p>Provides all fields required for building an in-app message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessage {
     /// <p>In-app message content.</p>
     #[doc(hidden)]
@@ -34736,15 +32489,6 @@ impl InAppMessage {
     /// <p>The layout of the message.</p>
     pub fn layout(&self) -> std::option::Option<&crate::model::Layout> {
         self.layout.as_ref()
-    }
-}
-impl std::fmt::Debug for InAppMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessage");
-        formatter.field("content", &self.content);
-        formatter.field("custom_config", &self.custom_config);
-        formatter.field("layout", &self.layout);
-        formatter.finish()
     }
 }
 /// See [`InAppMessage`](crate::model::InAppMessage).
@@ -34833,7 +32577,7 @@ impl InAppMessage {
 
 /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailTemplateResponse {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     #[doc(hidden)]
@@ -34931,25 +32675,6 @@ impl EmailTemplateResponse {
     /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailTemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("html_part", &self.html_part);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("subject", &self.subject);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("text_part", &self.text_part);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`EmailTemplateResponse`](crate::model::EmailTemplateResponse).
@@ -35170,7 +32895,7 @@ impl EmailTemplateResponse {
 
 /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelsResponse {
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
     #[doc(hidden)]
@@ -35186,13 +32911,6 @@ impl ChannelsResponse {
         &std::collections::HashMap<std::string::String, crate::model::ChannelResponse>,
     > {
         self.channels.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelsResponse");
-        formatter.field("channels", &self.channels);
-        formatter.finish()
     }
 }
 /// See [`ChannelsResponse`](crate::model::ChannelsResponse).
@@ -35248,7 +32966,7 @@ impl ChannelsResponse {
 
 /// <p>Provides information about the general settings and status of a channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelResponse {
     /// <p>The unique identifier for the application.</p>
     #[doc(hidden)]
@@ -35314,21 +33032,6 @@ impl ChannelResponse {
     /// <p>The current version of the channel.</p>
     pub fn version(&self) -> i32 {
         self.version
-    }
-}
-impl std::fmt::Debug for ChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`ChannelResponse`](crate::model::ChannelResponse).
@@ -35475,7 +33178,7 @@ impl ChannelResponse {
 
 /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignsResponse {
     /// <p>An array of responses, one for each campaign that's associated with the application.</p>
     #[doc(hidden)]
@@ -35492,14 +33195,6 @@ impl CampaignsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CampaignsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`CampaignsResponse`](crate::model::CampaignsResponse).
@@ -35559,7 +33254,7 @@ impl CampaignsResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
@@ -35611,19 +33306,6 @@ impl CampaignDateRangeKpiResponse {
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for CampaignDateRangeKpiResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignDateRangeKpiResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("kpi_result", &self.kpi_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`CampaignDateRangeKpiResponse`](crate::model::CampaignDateRangeKpiResponse).
@@ -35746,7 +33428,7 @@ impl CampaignDateRangeKpiResponse {
 
 /// <p>Provides information about the activities that were performed by a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivitiesResponse {
     /// <p>An array of responses, one for each activity that was performed by the campaign.</p>
     #[doc(hidden)]
@@ -35763,14 +33445,6 @@ impl ActivitiesResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivitiesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivitiesResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ActivitiesResponse`](crate::model::ActivitiesResponse).
@@ -35830,7 +33504,7 @@ impl ActivitiesResponse {
 
 /// <p>Provides information about an activity that was performed by a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityResponse {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
     #[doc(hidden)]
@@ -35924,25 +33598,6 @@ impl ActivityResponse {
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
     pub fn treatment_id(&self) -> std::option::Option<&str> {
         self.treatment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivityResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("end", &self.end);
-        formatter.field("id", &self.id);
-        formatter.field("result", &self.result);
-        formatter.field("scheduled_start", &self.scheduled_start);
-        formatter.field("start", &self.start);
-        formatter.field("state", &self.state);
-        formatter.field("successful_endpoint_count", &self.successful_endpoint_count);
-        formatter.field("timezones_completed_count", &self.timezones_completed_count);
-        formatter.field("timezones_total_count", &self.timezones_total_count);
-        formatter.field("total_endpoint_count", &self.total_endpoint_count);
-        formatter.field("treatment_id", &self.treatment_id);
-        formatter.finish()
     }
 }
 /// See [`ActivityResponse`](crate::model::ActivityResponse).
@@ -36131,7 +33786,7 @@ impl ActivityResponse {
 
 /// <p>Provides information about all of your applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationsResponse {
     /// <p>An array of responses, one for each application that was returned.</p>
     #[doc(hidden)]
@@ -36148,14 +33803,6 @@ impl ApplicationsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ApplicationsResponse`](crate::model::ApplicationsResponse).
@@ -36215,7 +33862,7 @@ impl ApplicationsResponse {
 
 /// <p>Provides information about an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationResponse {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -36257,17 +33904,6 @@ impl ApplicationResponse {
     /// <p>The date and time when the Application was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
-    }
-}
-impl std::fmt::Debug for ApplicationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`ApplicationResponse`](crate::model::ApplicationResponse).
@@ -36374,7 +34010,7 @@ impl ApplicationResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
@@ -36419,18 +34055,6 @@ impl ApplicationDateRangeKpiResponse {
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationDateRangeKpiResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationDateRangeKpiResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("kpi_result", &self.kpi_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`ApplicationDateRangeKpiResponse`](crate::model::ApplicationDateRangeKpiResponse).
@@ -36541,7 +34165,7 @@ impl ApplicationDateRangeKpiResponse {
 
 /// <p>Provides information about a request to create a message template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateMessageBody {
     /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
     #[doc(hidden)]
@@ -36565,15 +34189,6 @@ impl CreateTemplateMessageBody {
     /// <p>The unique identifier for the request to create the message template.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateTemplateMessageBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateMessageBody");
-        formatter.field("arn", &self.arn);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 /// See [`CreateTemplateMessageBody`](crate::model::CreateTemplateMessageBody).
@@ -36636,7 +34251,7 @@ impl CreateTemplateMessageBody {
 
 /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRecommenderConfigurationShape {
     /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
     /// <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p>
@@ -36730,39 +34345,6 @@ impl CreateRecommenderConfigurationShape {
     /// <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
     pub fn recommendations_per_message(&self) -> i32 {
         self.recommendations_per_message
-    }
-}
-impl std::fmt::Debug for CreateRecommenderConfigurationShape {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRecommenderConfigurationShape");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "recommendation_provider_id_type",
-            &self.recommendation_provider_id_type,
-        );
-        formatter.field(
-            "recommendation_provider_role_arn",
-            &self.recommendation_provider_role_arn,
-        );
-        formatter.field(
-            "recommendation_provider_uri",
-            &self.recommendation_provider_uri,
-        );
-        formatter.field(
-            "recommendation_transformer_uri",
-            &self.recommendation_transformer_uri,
-        );
-        formatter.field(
-            "recommendations_display_name",
-            &self.recommendations_display_name,
-        );
-        formatter.field(
-            "recommendations_per_message",
-            &self.recommendations_per_message,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateRecommenderConfigurationShape`](crate::model::CreateRecommenderConfigurationShape).
@@ -36968,7 +34550,7 @@ impl CreateRecommenderConfigurationShape {
 
 /// <p>Provides information about a request to create a message template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateCreateMessageBody {
     /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
     #[doc(hidden)]
@@ -36992,15 +34574,6 @@ impl TemplateCreateMessageBody {
     /// <p>The unique identifier for the request to create the message template.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TemplateCreateMessageBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateCreateMessageBody");
-        formatter.field("arn", &self.arn);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
     }
 }
 /// See [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody).
@@ -37063,7 +34636,7 @@ impl TemplateCreateMessageBody {
 
 /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobRequest {
     /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
     #[doc(hidden)]
@@ -37136,20 +34709,6 @@ impl ImportJobRequest {
     /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
     pub fn segment_name(&self) -> std::option::Option<&str> {
         self.segment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ImportJobRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobRequest");
-        formatter.field("define_segment", &self.define_segment);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("format", &self.format);
-        formatter.field("register_endpoints", &self.register_endpoints);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url", &self.s3_url);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_name", &self.segment_name);
-        formatter.finish()
     }
 }
 /// See [`ImportJobRequest`](crate::model::ImportJobRequest).
@@ -37286,7 +34845,7 @@ impl ImportJobRequest {
 
 /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobRequest {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.</p>
     #[doc(hidden)]
@@ -37325,16 +34884,6 @@ impl ExportJobRequest {
     /// <p>The version of the segment to export endpoint definitions from, if specified.</p>
     pub fn segment_version(&self) -> i32 {
         self.segment_version
-    }
-}
-impl std::fmt::Debug for ExportJobRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobRequest");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url_prefix", &self.s3_url_prefix);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_version", &self.segment_version);
-        formatter.finish()
     }
 }
 /// See [`ExportJobRequest`](crate::model::ExportJobRequest).
@@ -37420,7 +34969,7 @@ impl ExportJobRequest {
 
 /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationRequest {
     /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -37441,14 +34990,6 @@ impl CreateApplicationRequest {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateApplicationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationRequest");
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateApplicationRequest`](crate::model::CreateApplicationRequest).

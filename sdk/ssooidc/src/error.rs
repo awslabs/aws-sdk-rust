@@ -2,7 +2,7 @@
 
 /// <p>Indicates that the client is not currently authorized to make the request. This can happen when a <code>clientId</code> is not issued for a public client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -22,15 +22,6 @@ impl UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for UnauthorizedClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedClientException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl UnauthorizedClientException {
@@ -114,7 +105,7 @@ impl UnauthorizedClientException {
 
 /// <p>Indicates that the client is making the request too frequently and is more than the service can handle. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlowDownException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -134,15 +125,6 @@ impl SlowDownException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for SlowDownException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlowDownException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl SlowDownException {
@@ -226,7 +208,7 @@ impl SlowDownException {
 
 /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter might be missing or out of range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -246,15 +228,6 @@ impl InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidRequestException {
@@ -338,7 +311,7 @@ impl InvalidRequestException {
 
 /// <p>Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code> or an expired <code>clientSecret</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -358,15 +331,6 @@ impl InvalidClientException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClientException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidClientException {
@@ -450,7 +414,7 @@ impl InvalidClientException {
 
 /// <p>Indicates that an error from the service occurred while trying to process a request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -470,15 +434,6 @@ impl InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalServerException {
@@ -562,7 +517,7 @@ impl InternalServerException {
 
 /// <p>Indicates that the scope provided in the request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidScopeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -582,15 +537,6 @@ impl InvalidScopeException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidScopeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidScopeException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidScopeException {
@@ -674,7 +620,7 @@ impl InvalidScopeException {
 
 /// <p>Indicates that the client information sent in the request during registration is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClientMetadataException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -694,15 +640,6 @@ impl InvalidClientMetadataException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidClientMetadataException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClientMetadataException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidClientMetadataException {
@@ -786,7 +723,7 @@ impl InvalidClientMetadataException {
 
 /// <p>Indicates that the grant type in the request is not supported by the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedGrantTypeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -806,15 +743,6 @@ impl UnsupportedGrantTypeException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedGrantTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedGrantTypeException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl UnsupportedGrantTypeException {
@@ -898,7 +826,7 @@ impl UnsupportedGrantTypeException {
 
 /// <p>Indicates that a request contains an invalid grant. This can occur if a client makes a <code>CreateToken</code> request with an invalid grant type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidGrantException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -918,15 +846,6 @@ impl InvalidGrantException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidGrantException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGrantException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidGrantException {
@@ -1010,7 +929,7 @@ impl InvalidGrantException {
 
 /// <p>Indicates that the token issued by the service is expired and is no longer valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpiredTokenException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1030,15 +949,6 @@ impl ExpiredTokenException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for ExpiredTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpiredTokenException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ExpiredTokenException {
@@ -1122,7 +1032,7 @@ impl ExpiredTokenException {
 
 /// <p>Indicates that a request to authorize a client with an access user session token is pending.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationPendingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1142,15 +1052,6 @@ impl AuthorizationPendingException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthorizationPendingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationPendingException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AuthorizationPendingException {
@@ -1234,7 +1135,7 @@ impl AuthorizationPendingException {
 
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1254,15 +1155,6 @@ impl AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(&self) -> std::option::Option<&str> {
         self.error_description.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl AccessDeniedException {

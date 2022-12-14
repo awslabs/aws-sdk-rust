@@ -14721,7 +14721,7 @@ impl UpdateRepositoryNameInput {
 
 /// <p>Represents the input of an update repository description operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRepositoryNameInput {
     /// <p>The current name of the repository.</p>
     #[doc(hidden)]
@@ -14740,18 +14740,10 @@ impl UpdateRepositoryNameInput {
         self.new_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRepositoryNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRepositoryNameInput");
-        formatter.field("old_name", &self.old_name);
-        formatter.field("new_name", &self.new_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an update repository description operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRepositoryDescriptionInput {
     /// <p>The name of the repository to set or change the comment or description for.</p>
     #[doc(hidden)]
@@ -14770,18 +14762,10 @@ impl UpdateRepositoryDescriptionInput {
         self.repository_description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRepositoryDescriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRepositoryDescriptionInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_description", &self.repository_description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePullRequestTitleInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -14800,18 +14784,10 @@ impl UpdatePullRequestTitleInput {
         self.title.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePullRequestTitleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePullRequestTitleInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("title", &self.title);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePullRequestStatusInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -14830,18 +14806,10 @@ impl UpdatePullRequestStatusInput {
         self.pull_request_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePullRequestStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePullRequestStatusInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("pull_request_status", &self.pull_request_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePullRequestDescriptionInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -14860,18 +14828,10 @@ impl UpdatePullRequestDescriptionInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePullRequestDescriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePullRequestDescriptionInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalStateInput {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
@@ -14897,19 +14857,10 @@ impl UpdatePullRequestApprovalStateInput {
         self.approval_state.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePullRequestApprovalStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePullRequestApprovalStateInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("approval_state", &self.approval_state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalRuleContentInput {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
@@ -14964,23 +14915,10 @@ impl UpdatePullRequestApprovalRuleContentInput {
         self.new_rule_content.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePullRequestApprovalRuleContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePullRequestApprovalRuleContentInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("approval_rule_name", &self.approval_rule_name);
-        formatter.field(
-            "existing_rule_content_sha256",
-            &self.existing_rule_content_sha256,
-        );
-        formatter.field("new_rule_content", &self.new_rule_content);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an update default branch operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDefaultBranchInput {
     /// <p>The name of the repository to set or change the default branch for.</p>
     #[doc(hidden)]
@@ -14999,18 +14937,10 @@ impl UpdateDefaultBranchInput {
         self.default_branch_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDefaultBranchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDefaultBranchInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("default_branch_name", &self.default_branch_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCommentInput {
     /// <p>The system-generated ID of the comment you want to update. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     #[doc(hidden)]
@@ -15029,18 +14959,10 @@ impl UpdateCommentInput {
         self.content.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCommentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCommentInput");
-        formatter.field("comment_id", &self.comment_id);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateNameInput {
     /// <p>The current name of the approval rule template.</p>
     #[doc(hidden)]
@@ -15059,24 +14981,10 @@ impl UpdateApprovalRuleTemplateNameInput {
         self.new_approval_rule_template_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApprovalRuleTemplateNameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApprovalRuleTemplateNameInput");
-        formatter.field(
-            "old_approval_rule_template_name",
-            &self.old_approval_rule_template_name,
-        );
-        formatter.field(
-            "new_approval_rule_template_name",
-            &self.new_approval_rule_template_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateDescriptionInput {
     /// <p>The name of the template for which you want to update the description.</p>
     #[doc(hidden)]
@@ -15095,24 +15003,10 @@ impl UpdateApprovalRuleTemplateDescriptionInput {
         self.approval_rule_template_description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApprovalRuleTemplateDescriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApprovalRuleTemplateDescriptionInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field(
-            "approval_rule_template_description",
-            &self.approval_rule_template_description,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateContentInput {
     /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
     #[doc(hidden)]
@@ -15138,25 +15032,10 @@ impl UpdateApprovalRuleTemplateContentInput {
         self.existing_rule_content_sha256.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApprovalRuleTemplateContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApprovalRuleTemplateContentInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field("new_rule_content", &self.new_rule_content);
-        formatter.field(
-            "existing_rule_content_sha256",
-            &self.existing_rule_content_sha256,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to remove tags.</p>
     #[doc(hidden)]
@@ -15175,18 +15054,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a test repository triggers operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestRepositoryTriggersInput {
     /// <p>The name of the repository in which to test the triggers.</p>
     #[doc(hidden)]
@@ -15205,18 +15076,10 @@ impl TestRepositoryTriggersInput {
         self.triggers.as_deref()
     }
 }
-impl std::fmt::Debug for TestRepositoryTriggersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestRepositoryTriggersInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("triggers", &self.triggers);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
     #[doc(hidden)]
@@ -15239,18 +15102,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a put repository triggers operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRepositoryTriggersInput {
     /// <p>The name of the repository where you want to create or update the trigger.</p>
     #[doc(hidden)]
@@ -15269,18 +15124,10 @@ impl PutRepositoryTriggersInput {
         self.triggers.as_deref()
     }
 }
-impl std::fmt::Debug for PutRepositoryTriggersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRepositoryTriggersInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("triggers", &self.triggers);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFileInput {
     /// <p>The name of the repository where you want to add or update the file.</p>
     #[doc(hidden)]
@@ -15354,25 +15201,10 @@ impl PutFileInput {
         self.email.as_deref()
     }
 }
-impl std::fmt::Debug for PutFileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFileInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("file_content", &self.file_content);
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.field("parent_commit_id", &self.parent_commit_id);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("name", &self.name);
-        formatter.field("email", &self.email);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutCommentReactionInput {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
     #[doc(hidden)]
@@ -15391,18 +15223,10 @@ impl PutCommentReactionInput {
         self.reaction_value.as_deref()
     }
 }
-impl std::fmt::Debug for PutCommentReactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutCommentReactionInput");
-        formatter.field("comment_id", &self.comment_id);
-        formatter.field("reaction_value", &self.reaction_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostCommentReplyInput {
     /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     #[doc(hidden)]
@@ -15428,19 +15252,10 @@ impl PostCommentReplyInput {
         self.content.as_deref()
     }
 }
-impl std::fmt::Debug for PostCommentReplyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostCommentReplyInput");
-        formatter.field("in_reply_to", &self.in_reply_to);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostCommentForPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -15494,23 +15309,10 @@ impl PostCommentForPullRequestInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for PostCommentForPullRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostCommentForPullRequestInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("location", &self.location);
-        formatter.field("content", &self.content);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostCommentForComparedCommitInput {
     /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
     #[doc(hidden)]
@@ -15557,22 +15359,10 @@ impl PostCommentForComparedCommitInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for PostCommentForComparedCommitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostCommentForComparedCommitInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("location", &self.location);
-        formatter.field("content", &self.content);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverridePullRequestApprovalRulesInput {
     /// <p>The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use <code>GetPullRequest</code>.</p>
     #[doc(hidden)]
@@ -15598,19 +15388,10 @@ impl OverridePullRequestApprovalRulesInput {
         self.override_status.as_ref()
     }
 }
-impl std::fmt::Debug for OverridePullRequestApprovalRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverridePullRequestApprovalRulesInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("override_status", &self.override_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergePullRequestByThreeWayInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -15690,29 +15471,10 @@ impl MergePullRequestByThreeWayInput {
         self.conflict_resolution.as_ref()
     }
 }
-impl std::fmt::Debug for MergePullRequestByThreeWayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergePullRequestByThreeWayInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_id", &self.source_commit_id);
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("author_name", &self.author_name);
-        formatter.field("email", &self.email);
-        formatter.field("keep_empty_folders", &self.keep_empty_folders);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergePullRequestBySquashInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -15792,29 +15554,10 @@ impl MergePullRequestBySquashInput {
         self.conflict_resolution.as_ref()
     }
 }
-impl std::fmt::Debug for MergePullRequestBySquashInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergePullRequestBySquashInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_id", &self.source_commit_id);
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("author_name", &self.author_name);
-        formatter.field("email", &self.email);
-        formatter.field("keep_empty_folders", &self.keep_empty_folders);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergePullRequestByFastForwardInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -15840,19 +15583,10 @@ impl MergePullRequestByFastForwardInput {
         self.source_commit_id.as_deref()
     }
 }
-impl std::fmt::Debug for MergePullRequestByFastForwardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergePullRequestByFastForwardInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_id", &self.source_commit_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeBranchesByThreeWayInput {
     /// <p>The name of the repository where you want to merge two branches.</p>
     #[doc(hidden)]
@@ -15939,33 +15673,10 @@ impl MergeBranchesByThreeWayInput {
         self.conflict_resolution.as_ref()
     }
 }
-impl std::fmt::Debug for MergeBranchesByThreeWayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeBranchesByThreeWayInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("target_branch", &self.target_branch);
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.field("author_name", &self.author_name);
-        formatter.field("email", &self.email);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("keep_empty_folders", &self.keep_empty_folders);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeBranchesBySquashInput {
     /// <p>The name of the repository where you want to merge two branches.</p>
     #[doc(hidden)]
@@ -16052,33 +15763,10 @@ impl MergeBranchesBySquashInput {
         self.conflict_resolution.as_ref()
     }
 }
-impl std::fmt::Debug for MergeBranchesBySquashInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeBranchesBySquashInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("target_branch", &self.target_branch);
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.field("author_name", &self.author_name);
-        formatter.field("email", &self.email);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("keep_empty_folders", &self.keep_empty_folders);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeBranchesByFastForwardInput {
     /// <p>The name of the repository where you want to merge two branches.</p>
     #[doc(hidden)]
@@ -16111,23 +15799,10 @@ impl MergeBranchesByFastForwardInput {
         self.target_branch.as_deref()
     }
 }
-impl std::fmt::Debug for MergeBranchesByFastForwardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeBranchesByFastForwardInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("target_branch", &self.target_branch);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
     #[doc(hidden)]
@@ -16146,18 +15821,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositoriesForApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
     #[doc(hidden)]
@@ -16183,22 +15850,10 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRepositoriesForApprovalRuleTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositoriesForApprovalRuleTemplateInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a list repositories operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositoriesInput {
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
     #[doc(hidden)]
@@ -16224,19 +15879,10 @@ impl ListRepositoriesInput {
         self.order.as_ref()
     }
 }
-impl std::fmt::Debug for ListRepositoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositoriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("order", &self.order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPullRequestsInput {
     /// <p>The name of the repository for which you want to list pull requests.</p>
     #[doc(hidden)]
@@ -16276,21 +15922,10 @@ impl ListPullRequestsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPullRequestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPullRequestsInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("author_arn", &self.author_arn);
-        formatter.field("pull_request_status", &self.pull_request_status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a list branches operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBranchesInput {
     /// <p>The name of the repository that contains the branches.</p>
     #[doc(hidden)]
@@ -16309,18 +15944,10 @@ impl ListBranchesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBranchesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBranchesInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociatedApprovalRuleTemplatesForRepositoryInput {
     /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
     #[doc(hidden)]
@@ -16346,19 +15973,10 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssociatedApprovalRuleTemplatesForRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociatedApprovalRuleTemplatesForRepositoryInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApprovalRuleTemplatesInput {
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     #[doc(hidden)]
@@ -16377,18 +15995,10 @@ impl ListApprovalRuleTemplatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListApprovalRuleTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApprovalRuleTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a get repository triggers operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryTriggersInput {
     /// <p>The name of the repository for which the trigger is configured.</p>
     #[doc(hidden)]
@@ -16400,17 +16010,10 @@ impl GetRepositoryTriggersInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetRepositoryTriggersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryTriggersInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a get repository operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryInput {
     /// <p>The name of the repository to get information about.</p>
     #[doc(hidden)]
@@ -16422,17 +16025,10 @@ impl GetRepositoryInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPullRequestOverrideStateInput {
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
     #[doc(hidden)]
@@ -16451,18 +16047,10 @@ impl GetPullRequestOverrideStateInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPullRequestOverrideStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPullRequestOverrideStateInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPullRequestApprovalStatesInput {
     /// <p>The system-generated ID for the pull request.</p>
     #[doc(hidden)]
@@ -16481,18 +16069,10 @@ impl GetPullRequestApprovalStatesInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPullRequestApprovalStatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPullRequestApprovalStatesInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -16504,17 +16084,10 @@ impl GetPullRequestInput {
         self.pull_request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPullRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPullRequestInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMergeOptionsInput {
     /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
     #[doc(hidden)]
@@ -16559,27 +16132,10 @@ impl GetMergeOptionsInput {
         self.conflict_resolution_strategy.as_ref()
     }
 }
-impl std::fmt::Debug for GetMergeOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMergeOptionsInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMergeConflictsInput {
     /// <p>The name of the repository where the pull request was created.</p>
     #[doc(hidden)]
@@ -16645,30 +16201,10 @@ impl GetMergeConflictsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetMergeConflictsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMergeConflictsInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field("merge_option", &self.merge_option);
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field("max_conflict_files", &self.max_conflict_files);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMergeCommitInput {
     /// <p>The name of the repository that contains the merge commit about which you want to get information.</p>
     #[doc(hidden)]
@@ -16713,27 +16249,10 @@ impl GetMergeCommitInput {
         self.conflict_resolution_strategy.as_ref()
     }
 }
-impl std::fmt::Debug for GetMergeCommitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMergeCommitInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFolderInput {
     /// <p>The name of the repository.</p>
     #[doc(hidden)]
@@ -16759,19 +16278,10 @@ impl GetFolderInput {
         self.folder_path.as_deref()
     }
 }
-impl std::fmt::Debug for GetFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFolderInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("commit_specifier", &self.commit_specifier);
-        formatter.field("folder_path", &self.folder_path);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFileInput {
     /// <p>The name of the repository that contains the file.</p>
     #[doc(hidden)]
@@ -16797,19 +16307,10 @@ impl GetFileInput {
         self.file_path.as_deref()
     }
 }
-impl std::fmt::Debug for GetFileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFileInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("commit_specifier", &self.commit_specifier);
-        formatter.field("file_path", &self.file_path);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDifferencesInput {
     /// <p>The name of the repository where you want to get differences.</p>
     #[doc(hidden)]
@@ -16863,23 +16364,10 @@ impl GetDifferencesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDifferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDifferencesInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_specifier", &self.before_commit_specifier);
-        formatter.field("after_commit_specifier", &self.after_commit_specifier);
-        formatter.field("before_path", &self.before_path);
-        formatter.field("after_path", &self.after_path);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a get commit operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCommitInput {
     /// <p>The name of the repository to which the commit was made.</p>
     #[doc(hidden)]
@@ -16898,18 +16386,10 @@ impl GetCommitInput {
         self.commit_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCommitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCommitInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("commit_id", &self.commit_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCommentsForPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -16956,22 +16436,10 @@ impl GetCommentsForPullRequestInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetCommentsForPullRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCommentsForPullRequestInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCommentsForComparedCommitInput {
     /// <p>The name of the repository where you want to compare commits.</p>
     #[doc(hidden)]
@@ -17011,21 +16479,10 @@ impl GetCommentsForComparedCommitInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetCommentsForComparedCommitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCommentsForComparedCommitInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCommentReactionsInput {
     /// <p>The ID of the comment for which you want to get reactions information.</p>
     #[doc(hidden)]
@@ -17058,20 +16515,10 @@ impl GetCommentReactionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetCommentReactionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCommentReactionsInput");
-        formatter.field("comment_id", &self.comment_id);
-        formatter.field("reaction_user_arn", &self.reaction_user_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCommentInput {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     #[doc(hidden)]
@@ -17083,17 +16530,10 @@ impl GetCommentInput {
         self.comment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCommentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCommentInput");
-        formatter.field("comment_id", &self.comment_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a get branch operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBranchInput {
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
     #[doc(hidden)]
@@ -17112,18 +16552,10 @@ impl GetBranchInput {
         self.branch_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetBranchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBranchInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a get blob operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBlobInput {
     /// <p>The name of the repository that contains the blob.</p>
     #[doc(hidden)]
@@ -17142,18 +16574,10 @@ impl GetBlobInput {
         self.blob_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBlobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBlobInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("blob_id", &self.blob_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template for which you want to get information.</p>
     #[doc(hidden)]
@@ -17165,20 +16589,10 @@ impl GetApprovalRuleTemplateInput {
         self.approval_rule_template_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetApprovalRuleTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApprovalRuleTemplateInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluatePullRequestApprovalRulesInput {
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
     #[doc(hidden)]
@@ -17197,18 +16611,10 @@ impl EvaluatePullRequestApprovalRulesInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for EvaluatePullRequestApprovalRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluatePullRequestApprovalRulesInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateApprovalRuleTemplateFromRepositoryInput {
     /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
     #[doc(hidden)]
@@ -17227,21 +16633,10 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateApprovalRuleTemplateFromRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateApprovalRuleTemplateFromRepositoryInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePullRequestEventsInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
@@ -17283,21 +16678,10 @@ impl DescribePullRequestEventsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribePullRequestEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePullRequestEventsInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("pull_request_event_type", &self.pull_request_event_type);
-        formatter.field("actor_arn", &self.actor_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMergeConflictsInput {
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
     #[doc(hidden)]
@@ -17370,31 +16754,10 @@ impl DescribeMergeConflictsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMergeConflictsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMergeConflictsInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field("merge_option", &self.merge_option);
-        formatter.field("max_merge_hunks", &self.max_merge_hunks);
-        formatter.field("file_path", &self.file_path);
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a delete repository operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryInput {
     /// <p>The name of the repository to delete.</p>
     #[doc(hidden)]
@@ -17406,17 +16769,10 @@ impl DeleteRepositoryInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRepositoryInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePullRequestApprovalRuleInput {
     /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
     #[doc(hidden)]
@@ -17435,18 +16791,10 @@ impl DeletePullRequestApprovalRuleInput {
         self.approval_rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePullRequestApprovalRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePullRequestApprovalRuleInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("approval_rule_name", &self.approval_rule_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileInput {
     /// <p>The name of the repository that contains the file to delete.</p>
     #[doc(hidden)]
@@ -17507,24 +16855,10 @@ impl DeleteFileInput {
         self.email.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("file_path", &self.file_path);
-        formatter.field("parent_commit_id", &self.parent_commit_id);
-        formatter.field("keep_empty_folders", &self.keep_empty_folders);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("name", &self.name);
-        formatter.field("email", &self.email);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCommentContentInput {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     #[doc(hidden)]
@@ -17536,17 +16870,10 @@ impl DeleteCommentContentInput {
         self.comment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCommentContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCommentContentInput");
-        formatter.field("comment_id", &self.comment_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a delete branch operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBranchInput {
     /// <p>The name of the repository that contains the branch to be deleted.</p>
     #[doc(hidden)]
@@ -17565,18 +16892,10 @@ impl DeleteBranchInput {
         self.branch_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBranchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBranchInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template to delete.</p>
     #[doc(hidden)]
@@ -17588,20 +16907,10 @@ impl DeleteApprovalRuleTemplateInput {
         self.approval_rule_template_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteApprovalRuleTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApprovalRuleTemplateInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUnreferencedMergeCommitInput {
     /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
     #[doc(hidden)]
@@ -17688,33 +16997,10 @@ impl CreateUnreferencedMergeCommitInput {
         self.conflict_resolution.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUnreferencedMergeCommitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUnreferencedMergeCommitInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("merge_option", &self.merge_option);
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.field("author_name", &self.author_name);
-        formatter.field("email", &self.email);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("keep_empty_folders", &self.keep_empty_folders);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a create repository operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRepositoryInput {
     /// <p>The name of the new repository to be created.</p> <note>
     /// <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
@@ -17752,19 +17038,10 @@ impl CreateRepositoryInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRepositoryInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_description", &self.repository_description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePullRequestApprovalRuleInput {
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
     #[doc(hidden)]
@@ -17812,19 +17089,10 @@ impl CreatePullRequestApprovalRuleInput {
         self.approval_rule_content.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePullRequestApprovalRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePullRequestApprovalRuleInput");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("approval_rule_name", &self.approval_rule_name);
-        formatter.field("approval_rule_content", &self.approval_rule_content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePullRequestInput {
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
     #[doc(hidden)]
@@ -17861,20 +17129,10 @@ impl CreatePullRequestInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePullRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePullRequestInput");
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("targets", &self.targets);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCommitInput {
     /// <p>The name of the repository where you create the commit.</p>
     #[doc(hidden)]
@@ -17949,26 +17207,10 @@ impl CreateCommitInput {
         self.set_file_modes.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCommitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCommitInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("parent_commit_id", &self.parent_commit_id);
-        formatter.field("author_name", &self.author_name);
-        formatter.field("email", &self.email);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.field("keep_empty_folders", &self.keep_empty_folders);
-        formatter.field("put_files", &self.put_files);
-        formatter.field("delete_files", &self.delete_files);
-        formatter.field("set_file_modes", &self.set_file_modes);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a create branch operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBranchInput {
     /// <p>The name of the repository in which you want to create the new branch.</p>
     #[doc(hidden)]
@@ -17994,19 +17236,10 @@ impl CreateBranchInput {
         self.commit_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBranchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBranchInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("commit_id", &self.commit_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
     #[doc(hidden)]
@@ -18054,28 +17287,10 @@ impl CreateApprovalRuleTemplateInput {
         self.approval_rule_template_description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApprovalRuleTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApprovalRuleTemplateInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field(
-            "approval_rule_template_content",
-            &self.approval_rule_template_content,
-        );
-        formatter.field(
-            "approval_rule_template_description",
-            &self.approval_rule_template_description,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a batch get repositories operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetRepositoriesInput {
     /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
@@ -18091,17 +17306,10 @@ impl BatchGetRepositoriesInput {
         self.repository_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetRepositoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetRepositoriesInput");
-        formatter.field("repository_names", &self.repository_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetCommitsInput {
     /// <p>The full commit IDs of the commits to get information about.</p> <note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
@@ -18124,18 +17332,10 @@ impl BatchGetCommitsInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetCommitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetCommitsInput");
-        formatter.field("commit_ids", &self.commit_ids);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
     #[doc(hidden)]
@@ -18158,22 +17358,10 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
         self.repository_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("BatchDisassociateApprovalRuleTemplateFromRepositoriesInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field("repository_names", &self.repository_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDescribeMergeConflictsInput {
     /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
     #[doc(hidden)]
@@ -18253,32 +17441,10 @@ impl BatchDescribeMergeConflictsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDescribeMergeConflictsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDescribeMergeConflictsInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field(
-            "destination_commit_specifier",
-            &self.destination_commit_specifier,
-        );
-        formatter.field("source_commit_specifier", &self.source_commit_specifier);
-        formatter.field("merge_option", &self.merge_option);
-        formatter.field("max_merge_hunks", &self.max_merge_hunks);
-        formatter.field("max_conflict_files", &self.max_conflict_files);
-        formatter.field("file_paths", &self.file_paths);
-        formatter.field("conflict_detail_level", &self.conflict_detail_level);
-        formatter.field(
-            "conflict_resolution_strategy",
-            &self.conflict_resolution_strategy,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
     /// <p>The name of the template you want to associate with one or more repositories.</p>
     #[doc(hidden)]
@@ -18301,22 +17467,10 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
         self.repository_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("BatchAssociateApprovalRuleTemplateWithRepositoriesInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field("repository_names", &self.repository_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateApprovalRuleTemplateWithRepositoryInput {
     /// <p>The name for the approval rule template. </p>
     #[doc(hidden)]
@@ -18333,16 +17487,5 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
     /// <p>The name of the repository that you want to associate with the template.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateApprovalRuleTemplateWithRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateApprovalRuleTemplateWithRepositoryInput");
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
     }
 }

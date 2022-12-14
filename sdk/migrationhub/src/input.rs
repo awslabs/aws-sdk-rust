@@ -3120,7 +3120,7 @@ impl PutResourceAttributesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourceAttributesInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3170,20 +3170,10 @@ impl PutResourceAttributesInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for PutResourceAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourceAttributesInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("resource_attribute_list", &self.resource_attribute_list);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyMigrationTaskStateInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3230,22 +3220,10 @@ impl NotifyMigrationTaskStateInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for NotifyMigrationTaskStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyMigrationTaskStateInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("task", &self.task);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.field("next_update_seconds", &self.next_update_seconds);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     #[doc(hidden)]
@@ -3278,20 +3256,10 @@ impl NotifyApplicationStateInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for NotifyApplicationStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyApplicationStateInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("status", &self.status);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProgressUpdateStreamsInput {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     #[doc(hidden)]
@@ -3310,18 +3278,10 @@ impl ListProgressUpdateStreamsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProgressUpdateStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProgressUpdateStreamsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMigrationTasksInput {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     #[doc(hidden)]
@@ -3347,19 +3307,10 @@ impl ListMigrationTasksInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListMigrationTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMigrationTasksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDiscoveredResourcesInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     #[doc(hidden)]
@@ -3392,20 +3343,10 @@ impl ListDiscoveredResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDiscoveredResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDiscoveredResourcesInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCreatedArtifactsInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3438,20 +3379,10 @@ impl ListCreatedArtifactsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCreatedArtifactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCreatedArtifactsInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationStatesInput {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
     #[doc(hidden)]
@@ -3477,19 +3408,10 @@ impl ListApplicationStatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListApplicationStatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationStatesInput");
-        formatter.field("application_ids", &self.application_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
     #[doc(hidden)]
@@ -3515,19 +3437,10 @@ impl ImportMigrationTaskInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for ImportMigrationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportMigrationTaskInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     #[doc(hidden)]
@@ -3560,20 +3473,10 @@ impl DisassociateDiscoveredResourceInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for DisassociateDiscoveredResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateDiscoveredResourceInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("configuration_id", &self.configuration_id);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3606,20 +3509,10 @@ impl DisassociateCreatedArtifactInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for DisassociateCreatedArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateCreatedArtifactInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("created_artifact_name", &self.created_artifact_name);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3638,18 +3531,10 @@ impl DescribeMigrationTaskInput {
         self.migration_task_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMigrationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMigrationTaskInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     #[doc(hidden)]
@@ -3661,17 +3546,10 @@ impl DescribeApplicationStateInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationStateInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     #[doc(hidden)]
@@ -3690,21 +3568,10 @@ impl DeleteProgressUpdateStreamInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for DeleteProgressUpdateStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProgressUpdateStreamInput");
-        formatter.field(
-            "progress_update_stream_name",
-            &self.progress_update_stream_name,
-        );
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     #[doc(hidden)]
@@ -3723,21 +3590,10 @@ impl CreateProgressUpdateStreamInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for CreateProgressUpdateStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProgressUpdateStreamInput");
-        formatter.field(
-            "progress_update_stream_name",
-            &self.progress_update_stream_name,
-        );
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     #[doc(hidden)]
@@ -3770,20 +3626,10 @@ impl AssociateDiscoveredResourceInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for AssociateDiscoveredResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateDiscoveredResourceInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("discovered_resource", &self.discovered_resource);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3814,15 +3660,5 @@ impl AssociateCreatedArtifactInput {
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
-    }
-}
-impl std::fmt::Debug for AssociateCreatedArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateCreatedArtifactInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("created_artifact", &self.created_artifact);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
     }
 }

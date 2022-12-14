@@ -2,7 +2,7 @@
 
 /// <p>Item in a list of satellites.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SatelliteListItem {
     /// <p>UUID of a satellite.</p>
     #[doc(hidden)]
@@ -33,16 +33,6 @@ impl SatelliteListItem {
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
     pub fn ground_stations(&self) -> std::option::Option<&[std::string::String]> {
         self.ground_stations.as_deref()
-    }
-}
-impl std::fmt::Debug for SatelliteListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SatelliteListItem");
-        formatter.field("satellite_id", &self.satellite_id);
-        formatter.field("satellite_arn", &self.satellite_arn);
-        formatter.field("norad_satellite_id", &self.norad_satellite_id);
-        formatter.field("ground_stations", &self.ground_stations);
-        formatter.finish()
     }
 }
 /// See [`SatelliteListItem`](crate::model::SatelliteListItem).
@@ -129,7 +119,7 @@ impl SatelliteListItem {
 
 /// <p>Item in a list of mission profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissionProfileListItem {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
@@ -160,16 +150,6 @@ impl MissionProfileListItem {
     /// <p>Name of a mission profile.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for MissionProfileListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissionProfileListItem");
-        formatter.field("mission_profile_id", &self.mission_profile_id);
-        formatter.field("mission_profile_arn", &self.mission_profile_arn);
-        formatter.field("region", &self.region);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`MissionProfileListItem`](crate::model::MissionProfileListItem).
@@ -250,7 +230,7 @@ impl MissionProfileListItem {
 
 /// <p>Information about the ground station data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroundStationData {
     /// <p>UUID of a ground station.</p>
     #[doc(hidden)]
@@ -274,15 +254,6 @@ impl GroundStationData {
     /// <p>Ground station Region.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
-    }
-}
-impl std::fmt::Debug for GroundStationData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroundStationData");
-        formatter.field("ground_station_id", &self.ground_station_id);
-        formatter.field("ground_station_name", &self.ground_station_name);
-        formatter.field("region", &self.region);
-        formatter.finish()
     }
 }
 /// See [`GroundStationData`](crate::model::GroundStationData).
@@ -351,7 +322,7 @@ impl GroundStationData {
 
 /// <p>Item in a list of <code>DataflowEndpoint</code> groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataflowEndpointListItem {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
@@ -368,20 +339,6 @@ impl DataflowEndpointListItem {
     /// <p>ARN of a dataflow endpoint group.</p>
     pub fn dataflow_endpoint_group_arn(&self) -> std::option::Option<&str> {
         self.dataflow_endpoint_group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DataflowEndpointListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataflowEndpointListItem");
-        formatter.field(
-            "dataflow_endpoint_group_id",
-            &self.dataflow_endpoint_group_id,
-        );
-        formatter.field(
-            "dataflow_endpoint_group_arn",
-            &self.dataflow_endpoint_group_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`DataflowEndpointListItem`](crate::model::DataflowEndpointListItem).
@@ -441,7 +398,7 @@ impl DataflowEndpointListItem {
 
 /// <p>Information about the endpoint details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointDetails {
     /// <p>Endpoint security details.</p>
     #[doc(hidden)]
@@ -458,14 +415,6 @@ impl EndpointDetails {
     /// <p>A dataflow endpoint.</p>
     pub fn endpoint(&self) -> std::option::Option<&crate::model::DataflowEndpoint> {
         self.endpoint.as_ref()
-    }
-}
-impl std::fmt::Debug for EndpointDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointDetails");
-        formatter.field("security_details", &self.security_details);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.finish()
     }
 }
 /// See [`EndpointDetails`](crate::model::EndpointDetails).
@@ -522,7 +471,7 @@ impl EndpointDetails {
 
 /// <p>Information about a dataflow endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataflowEndpoint {
     /// <p>Name of a dataflow endpoint.</p>
     #[doc(hidden)]
@@ -553,16 +502,6 @@ impl DataflowEndpoint {
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     pub fn mtu(&self) -> std::option::Option<i32> {
         self.mtu
-    }
-}
-impl std::fmt::Debug for DataflowEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataflowEndpoint");
-        formatter.field("name", &self.name);
-        formatter.field("address", &self.address);
-        formatter.field("status", &self.status);
-        formatter.field("mtu", &self.mtu);
-        formatter.finish()
     }
 }
 /// See [`DataflowEndpoint`](crate::model::DataflowEndpoint).
@@ -748,7 +687,7 @@ impl AsRef<str> for EndpointStatus {
 
 /// <p>Information about the socket address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SocketAddress {
     /// <p>Name of a socket address.</p>
     #[doc(hidden)]
@@ -765,14 +704,6 @@ impl SocketAddress {
     /// <p>Port of a socket address.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for SocketAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SocketAddress");
-        formatter.field("name", &self.name);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`SocketAddress`](crate::model::SocketAddress).
@@ -823,7 +754,7 @@ impl SocketAddress {
 
 /// <p>Information about endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityDetails {
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
     #[doc(hidden)]
@@ -847,15 +778,6 @@ impl SecurityDetails {
     /// <p>ARN to a role needed for connecting streams to your instances. </p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SecurityDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityDetails");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`SecurityDetails`](crate::model::SecurityDetails).
@@ -936,7 +858,7 @@ impl SecurityDetails {
 
 /// <p>Data describing a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactData {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
@@ -1034,25 +956,6 @@ impl ContactData {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ContactData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactData");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("mission_profile_arn", &self.mission_profile_arn);
-        formatter.field("satellite_arn", &self.satellite_arn);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("pre_pass_start_time", &self.pre_pass_start_time);
-        formatter.field("post_pass_end_time", &self.post_pass_end_time);
-        formatter.field("ground_station", &self.ground_station);
-        formatter.field("contact_status", &self.contact_status);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("maximum_elevation", &self.maximum_elevation);
-        formatter.field("region", &self.region);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ContactData`](crate::model::ContactData).
@@ -1282,7 +1185,7 @@ impl ContactData {
 
 /// <p>Elevation angle of the satellite in the sky during a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Elevation {
     /// <p>Elevation angle value.</p>
     #[doc(hidden)]
@@ -1299,14 +1202,6 @@ impl Elevation {
     /// <p>Elevation angle units.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::AngleUnits> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for Elevation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Elevation");
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`Elevation`](crate::model::Elevation).
@@ -1606,7 +1501,7 @@ impl AsRef<str> for ContactStatus {
 
 /// <p>Information about a dataflow edge used in a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataflowDetail {
     /// <p>Dataflow details for the source side.</p>
     #[doc(hidden)]
@@ -1630,15 +1525,6 @@ impl DataflowDetail {
     /// <p>Error message for a dataflow.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for DataflowDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataflowDetail");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`DataflowDetail`](crate::model::DataflowDetail).
@@ -1707,7 +1593,7 @@ impl DataflowDetail {
 
 /// <p>Dataflow details for the destination side.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>Type of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -1738,19 +1624,6 @@ impl Destination {
     /// <p>Region of a dataflow destination.</p>
     pub fn dataflow_destination_region(&self) -> std::option::Option<&str> {
         self.dataflow_destination_region.as_deref()
-    }
-}
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("config_type", &self.config_type);
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_details", &self.config_details);
-        formatter.field(
-            "dataflow_destination_region",
-            &self.dataflow_destination_region,
-        );
-        formatter.finish()
     }
 }
 /// See [`Destination`](crate::model::Destination).
@@ -1909,7 +1782,7 @@ impl ConfigDetails {
 
 /// <p>Details about an S3 recording <code>Config</code> used in a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3RecordingDetails {
     /// <p>ARN of the bucket used.</p>
     #[doc(hidden)]
@@ -1926,14 +1799,6 @@ impl S3RecordingDetails {
     /// <p>Template of the S3 key used.</p>
     pub fn key_template(&self) -> std::option::Option<&str> {
         self.key_template.as_deref()
-    }
-}
-impl std::fmt::Debug for S3RecordingDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3RecordingDetails");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("key_template", &self.key_template);
-        formatter.finish()
     }
 }
 /// See [`S3RecordingDetails`](crate::model::S3RecordingDetails).
@@ -1984,7 +1849,7 @@ impl S3RecordingDetails {
 
 /// <p>Details about an antenna demod decode <code>Config</code> used in a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AntennaDemodDecodeDetails {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
     #[doc(hidden)]
@@ -1994,13 +1859,6 @@ impl AntennaDemodDecodeDetails {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
     pub fn output_node(&self) -> std::option::Option<&str> {
         self.output_node.as_deref()
-    }
-}
-impl std::fmt::Debug for AntennaDemodDecodeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AntennaDemodDecodeDetails");
-        formatter.field("output_node", &self.output_node);
-        formatter.finish()
     }
 }
 /// See [`AntennaDemodDecodeDetails`](crate::model::AntennaDemodDecodeDetails).
@@ -2164,7 +2022,7 @@ impl AsRef<str> for ConfigCapabilityType {
 
 /// <p>Dataflow details for the source side.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// <p>Type of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -2195,16 +2053,6 @@ impl Source {
     /// <p>Region of a dataflow source.</p>
     pub fn dataflow_source_region(&self) -> std::option::Option<&str> {
         self.dataflow_source_region.as_deref()
-    }
-}
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field("config_type", &self.config_type);
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_details", &self.config_details);
-        formatter.field("dataflow_source_region", &self.dataflow_source_region);
-        formatter.finish()
     }
 }
 /// See [`Source`](crate::model::Source).
@@ -2288,7 +2136,7 @@ impl Source {
 
 /// <p>An item in a list of <code>Config</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigListItem {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -2319,16 +2167,6 @@ impl ConfigListItem {
     /// <p>Name of a <code>Config</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigListItem");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_type", &self.config_type);
-        formatter.field("config_arn", &self.config_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ConfigListItem`](crate::model::ConfigListItem).
@@ -2546,7 +2384,7 @@ impl ConfigTypeData {
 
 /// <p>Information about an S3 recording <code>Config</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3RecordingConfig {
     /// <p>ARN of the bucket to record to.</p>
     #[doc(hidden)]
@@ -2570,15 +2408,6 @@ impl S3RecordingConfig {
     /// <p>S3 Key prefix to prefice data files.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3RecordingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3RecordingConfig");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3RecordingConfig`](crate::model::S3RecordingConfig).
@@ -2642,7 +2471,7 @@ impl S3RecordingConfig {
 /// <p>Information about an uplink echo <code>Config</code>.</p>
 /// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UplinkEchoConfig {
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
     #[doc(hidden)]
@@ -2659,14 +2488,6 @@ impl UplinkEchoConfig {
     /// <p>ARN of an uplink <code>Config</code>.</p>
     pub fn antenna_uplink_config_arn(&self) -> std::option::Option<&str> {
         self.antenna_uplink_config_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UplinkEchoConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UplinkEchoConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("antenna_uplink_config_arn", &self.antenna_uplink_config_arn);
-        formatter.finish()
     }
 }
 /// See [`UplinkEchoConfig`](crate::model::UplinkEchoConfig).
@@ -2720,7 +2541,7 @@ impl UplinkEchoConfig {
 
 /// <p>Information about the uplink <code>Config</code> of an antenna.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AntennaUplinkConfig {
     /// <p>Whether or not uplink transmit is disabled.</p>
     #[doc(hidden)]
@@ -2744,15 +2565,6 @@ impl AntennaUplinkConfig {
     /// <p>EIRP of the target.</p>
     pub fn target_eirp(&self) -> std::option::Option<&crate::model::Eirp> {
         self.target_eirp.as_ref()
-    }
-}
-impl std::fmt::Debug for AntennaUplinkConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AntennaUplinkConfig");
-        formatter.field("transmit_disabled", &self.transmit_disabled);
-        formatter.field("spectrum_config", &self.spectrum_config);
-        formatter.field("target_eirp", &self.target_eirp);
-        formatter.finish()
     }
 }
 /// See [`AntennaUplinkConfig`](crate::model::AntennaUplinkConfig).
@@ -2818,7 +2630,7 @@ impl AntennaUplinkConfig {
 
 /// <p>Object that represents EIRP.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Eirp {
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
     #[doc(hidden)]
@@ -2835,14 +2647,6 @@ impl Eirp {
     /// <p>Units of an EIRP.</p>
     pub fn units(&self) -> std::option::Option<&crate::model::EirpUnits> {
         self.units.as_ref()
-    }
-}
-impl std::fmt::Debug for Eirp {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Eirp");
-        formatter.field("value", &self.value);
-        formatter.field("units", &self.units);
-        formatter.finish()
     }
 }
 /// See [`Eirp`](crate::model::Eirp).
@@ -2978,7 +2782,7 @@ impl AsRef<str> for EirpUnits {
 
 /// <p>Information about the uplink spectral <code>Config</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UplinkSpectrumConfig {
     /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
     #[doc(hidden)]
@@ -2995,14 +2799,6 @@ impl UplinkSpectrumConfig {
     /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub fn polarization(&self) -> std::option::Option<&crate::model::Polarization> {
         self.polarization.as_ref()
-    }
-}
-impl std::fmt::Debug for UplinkSpectrumConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UplinkSpectrumConfig");
-        formatter.field("center_frequency", &self.center_frequency);
-        formatter.field("polarization", &self.polarization);
-        formatter.finish()
     }
 }
 /// See [`UplinkSpectrumConfig`](crate::model::UplinkSpectrumConfig).
@@ -3154,7 +2950,7 @@ impl AsRef<str> for Polarization {
 
 /// <p>Object that describes the frequency.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Frequency {
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     #[doc(hidden)]
@@ -3171,14 +2967,6 @@ impl Frequency {
     /// <p>Frequency units.</p>
     pub fn units(&self) -> std::option::Option<&crate::model::FrequencyUnits> {
         self.units.as_ref()
-    }
-}
-impl std::fmt::Debug for Frequency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Frequency");
-        formatter.field("value", &self.value);
-        formatter.field("units", &self.units);
-        formatter.finish()
     }
 }
 /// See [`Frequency`](crate::model::Frequency).
@@ -3327,7 +3115,7 @@ impl AsRef<str> for FrequencyUnits {
 
 /// <p>Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AntennaDownlinkDemodDecodeConfig {
     /// <p>Information about the spectral <code>Config</code>.</p>
     #[doc(hidden)]
@@ -3351,15 +3139,6 @@ impl AntennaDownlinkDemodDecodeConfig {
     /// <p>Information about the decode <code>Config</code>.</p>
     pub fn decode_config(&self) -> std::option::Option<&crate::model::DecodeConfig> {
         self.decode_config.as_ref()
-    }
-}
-impl std::fmt::Debug for AntennaDownlinkDemodDecodeConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AntennaDownlinkDemodDecodeConfig");
-        formatter.field("spectrum_config", &self.spectrum_config);
-        formatter.field("demodulation_config", &self.demodulation_config);
-        formatter.field("decode_config", &self.decode_config);
-        formatter.finish()
     }
 }
 /// See [`AntennaDownlinkDemodDecodeConfig`](crate::model::AntennaDownlinkDemodDecodeConfig).
@@ -3431,7 +3210,7 @@ impl AntennaDownlinkDemodDecodeConfig {
 
 /// <p>Information about the decode <code>Config</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecodeConfig {
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
     #[doc(hidden)]
@@ -3441,13 +3220,6 @@ impl DecodeConfig {
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
     pub fn unvalidated_json(&self) -> std::option::Option<&str> {
         self.unvalidated_json.as_deref()
-    }
-}
-impl std::fmt::Debug for DecodeConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecodeConfig");
-        formatter.field("unvalidated_json", &self.unvalidated_json);
-        formatter.finish()
     }
 }
 /// See [`DecodeConfig`](crate::model::DecodeConfig).
@@ -3489,7 +3261,7 @@ impl DecodeConfig {
 
 /// <p>Information about the demodulation <code>Config</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
     #[doc(hidden)]
@@ -3499,13 +3271,6 @@ impl DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
     pub fn unvalidated_json(&self) -> std::option::Option<&str> {
         self.unvalidated_json.as_deref()
-    }
-}
-impl std::fmt::Debug for DemodulationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DemodulationConfig");
-        formatter.field("unvalidated_json", &self.unvalidated_json);
-        formatter.finish()
     }
 }
 /// See [`DemodulationConfig`](crate::model::DemodulationConfig).
@@ -3547,7 +3312,7 @@ impl DemodulationConfig {
 
 /// <p>Object that describes a spectral <code>Config</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpectrumConfig {
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     #[doc(hidden)]
@@ -3581,15 +3346,6 @@ impl SpectrumConfig {
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub fn polarization(&self) -> std::option::Option<&crate::model::Polarization> {
         self.polarization.as_ref()
-    }
-}
-impl std::fmt::Debug for SpectrumConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SpectrumConfig");
-        formatter.field("center_frequency", &self.center_frequency);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("polarization", &self.polarization);
-        formatter.finish()
     }
 }
 /// See [`SpectrumConfig`](crate::model::SpectrumConfig).
@@ -3671,7 +3427,7 @@ impl SpectrumConfig {
 
 /// <p>Object that describes the frequency bandwidth. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrequencyBandwidth {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
@@ -3698,14 +3454,6 @@ impl FrequencyBandwidth {
     /// <p>Frequency bandwidth units.</p>
     pub fn units(&self) -> std::option::Option<&crate::model::BandwidthUnits> {
         self.units.as_ref()
-    }
-}
-impl std::fmt::Debug for FrequencyBandwidth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FrequencyBandwidth");
-        formatter.field("value", &self.value);
-        formatter.field("units", &self.units);
-        formatter.finish()
     }
 }
 /// See [`FrequencyBandwidth`](crate::model::FrequencyBandwidth).
@@ -3864,7 +3612,7 @@ impl AsRef<str> for BandwidthUnits {
 
 /// <p>Information about the dataflow endpoint <code>Config</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataflowEndpointConfig {
     /// <p>Name of a dataflow endpoint.</p>
     #[doc(hidden)]
@@ -3881,14 +3629,6 @@ impl DataflowEndpointConfig {
     /// <p>Region of a dataflow endpoint.</p>
     pub fn dataflow_endpoint_region(&self) -> std::option::Option<&str> {
         self.dataflow_endpoint_region.as_deref()
-    }
-}
-impl std::fmt::Debug for DataflowEndpointConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataflowEndpointConfig");
-        formatter.field("dataflow_endpoint_name", &self.dataflow_endpoint_name);
-        formatter.field("dataflow_endpoint_region", &self.dataflow_endpoint_region);
-        formatter.finish()
     }
 }
 /// See [`DataflowEndpointConfig`](crate::model::DataflowEndpointConfig).
@@ -3945,7 +3685,7 @@ impl DataflowEndpointConfig {
 
 /// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrackingConfig {
     /// <p>Current setting for autotrack.</p>
     #[doc(hidden)]
@@ -3955,13 +3695,6 @@ impl TrackingConfig {
     /// <p>Current setting for autotrack.</p>
     pub fn autotrack(&self) -> std::option::Option<&crate::model::Criticality> {
         self.autotrack.as_ref()
-    }
-}
-impl std::fmt::Debug for TrackingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrackingConfig");
-        formatter.field("autotrack", &self.autotrack);
-        formatter.finish()
     }
 }
 /// See [`TrackingConfig`](crate::model::TrackingConfig).
@@ -4098,7 +3831,7 @@ impl AsRef<str> for Criticality {
 
 /// <p>Information about how AWS Ground Station should configure an antenna for downlink during a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
     #[doc(hidden)]
@@ -4108,13 +3841,6 @@ impl AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
     pub fn spectrum_config(&self) -> std::option::Option<&crate::model::SpectrumConfig> {
         self.spectrum_config.as_ref()
-    }
-}
-impl std::fmt::Debug for AntennaDownlinkConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AntennaDownlinkConfig");
-        formatter.field("spectrum_config", &self.spectrum_config);
-        formatter.finish()
     }
 }
 /// See [`AntennaDownlinkConfig`](crate::model::AntennaDownlinkConfig).

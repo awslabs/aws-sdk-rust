@@ -3410,7 +3410,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     #[doc(hidden)]
@@ -3429,18 +3429,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     #[doc(hidden)]
@@ -3463,18 +3455,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSigningJobInput {
     /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
     #[doc(hidden)]
@@ -3514,21 +3498,10 @@ impl StartSigningJobInput {
         self.profile_owner.as_deref()
     }
 }
-impl std::fmt::Debug for StartSigningJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSigningJobInput");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("profile_owner", &self.profile_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeSigningProfileInput {
     /// <p>The name of the signing profile to be revoked.</p>
     #[doc(hidden)]
@@ -3561,20 +3534,10 @@ impl RevokeSigningProfileInput {
         self.effective_time.as_ref()
     }
 }
-impl std::fmt::Debug for RevokeSigningProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeSigningProfileInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.field("reason", &self.reason);
-        formatter.field("effective_time", &self.effective_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeSignatureInput {
     /// <p>ID of the signing job to be revoked.</p>
     #[doc(hidden)]
@@ -3600,19 +3563,10 @@ impl RevokeSignatureInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeSignatureInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeSignatureInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_owner", &self.job_owner);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveProfilePermissionInput {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
     #[doc(hidden)]
@@ -3638,19 +3592,10 @@ impl RemoveProfilePermissionInput {
         self.statement_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveProfilePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveProfilePermissionInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSigningProfileInput {
     /// <p>The name of the signing profile to be created.</p>
     #[doc(hidden)]
@@ -3714,23 +3659,10 @@ impl PutSigningProfileInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PutSigningProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSigningProfileInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("signing_material", &self.signing_material);
-        formatter.field("signature_validity_period", &self.signature_validity_period);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("signing_parameters", &self.signing_parameters);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     #[doc(hidden)]
@@ -3742,17 +3674,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSigningProfilesInput {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     #[doc(hidden)]
@@ -3792,21 +3717,10 @@ impl ListSigningProfilesInput {
         self.statuses.as_deref()
     }
 }
-impl std::fmt::Debug for ListSigningProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSigningProfilesInput");
-        formatter.field("include_canceled", &self.include_canceled);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("statuses", &self.statuses);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSigningPlatformsInput {
     /// <p>The category type of a signing platform.</p>
     #[doc(hidden)]
@@ -3846,21 +3760,10 @@ impl ListSigningPlatformsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSigningPlatformsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSigningPlatformsInput");
-        formatter.field("category", &self.category);
-        formatter.field("partner", &self.partner);
-        formatter.field("target", &self.target);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSigningJobsInput {
     /// <p>A status value with which to filter your results.</p>
     #[doc(hidden)]
@@ -3928,25 +3831,10 @@ impl ListSigningJobsInput {
         self.job_invoker.as_deref()
     }
 }
-impl std::fmt::Debug for ListSigningJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSigningJobsInput");
-        formatter.field("status", &self.status);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("requested_by", &self.requested_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("is_revoked", &self.is_revoked);
-        formatter.field("signature_expires_before", &self.signature_expires_before);
-        formatter.field("signature_expires_after", &self.signature_expires_after);
-        formatter.field("job_invoker", &self.job_invoker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfilePermissionsInput {
     /// <p>Name of the signing profile containing the cross-account permissions.</p>
     #[doc(hidden)]
@@ -3965,18 +3853,10 @@ impl ListProfilePermissionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProfilePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfilePermissionsInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSigningProfileInput {
     /// <p>The name of the target signing profile.</p>
     #[doc(hidden)]
@@ -3995,18 +3875,10 @@ impl GetSigningProfileInput {
         self.profile_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetSigningProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSigningProfileInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_owner", &self.profile_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSigningPlatformInput {
     /// <p>The ID of the target signing platform.</p>
     #[doc(hidden)]
@@ -4018,17 +3890,10 @@ impl GetSigningPlatformInput {
         self.platform_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSigningPlatformInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSigningPlatformInput");
-        formatter.field("platform_id", &self.platform_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSigningJobInput {
     /// <p>The ID of the signing job on input.</p>
     #[doc(hidden)]
@@ -4040,17 +3905,10 @@ impl DescribeSigningJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSigningJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSigningJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelSigningProfileInput {
     /// <p>The name of the signing profile to be canceled.</p>
     #[doc(hidden)]
@@ -4062,17 +3920,10 @@ impl CancelSigningProfileInput {
         self.profile_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelSigningProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelSigningProfileInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddProfilePermissionInput {
     /// <p>The human-readable name of the signing profile.</p>
     #[doc(hidden)]
@@ -4117,17 +3968,5 @@ impl AddProfilePermissionInput {
     /// <p>A unique identifier for the cross-account permission statement.</p>
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AddProfilePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddProfilePermissionInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.finish()
     }
 }

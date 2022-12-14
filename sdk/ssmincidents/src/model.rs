@@ -235,7 +235,7 @@ impl Action {
 
 /// <p>Details about the Systems Manager automation document that will be used as a runbook during an incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SsmAutomation {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
     #[doc(hidden)]
@@ -292,18 +292,6 @@ impl SsmAutomation {
         &std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>,
     > {
         self.dynamic_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for SsmAutomation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsmAutomation");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("document_name", &self.document_name);
-        formatter.field("document_version", &self.document_version);
-        formatter.field("target_account", &self.target_account);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("dynamic_parameters", &self.dynamic_parameters);
-        formatter.finish()
     }
 }
 /// See [`SsmAutomation`](crate::model::SsmAutomation).
@@ -718,14 +706,8 @@ impl ChatChannel {
 
 /// <p>Used to remove the chat channel from an incident record or response plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmptyChatChannel {}
-impl std::fmt::Debug for EmptyChatChannel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmptyChatChannel");
-        formatter.finish()
-    }
-}
 /// See [`EmptyChatChannel`](crate::model::EmptyChatChannel).
 pub mod empty_chat_channel {
 
@@ -840,7 +822,7 @@ impl UpdateReplicationSetAction {
 
 /// <p>Defines the information about the Amazon Web Services Region you're deleting from your replication set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRegionAction {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
     #[doc(hidden)]
@@ -850,13 +832,6 @@ impl DeleteRegionAction {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteRegionAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRegionAction");
-        formatter.field("region_name", &self.region_name);
-        formatter.finish()
     }
 }
 /// See [`DeleteRegionAction`](crate::model::DeleteRegionAction).
@@ -895,7 +870,7 @@ impl DeleteRegionAction {
 
 /// <p>Defines the Amazon Web Services Region and KMS key to add to the replication set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddRegionAction {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
     #[doc(hidden)]
@@ -912,14 +887,6 @@ impl AddRegionAction {
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub fn sse_kms_key_id(&self) -> std::option::Option<&str> {
         self.sse_kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AddRegionAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddRegionAction");
-        formatter.field("region_name", &self.region_name);
-        formatter.field("sse_kms_key_id", &self.sse_kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`AddRegionAction`](crate::model::AddRegionAction).
@@ -1024,7 +991,7 @@ impl RelatedItemsUpdate {
 
 /// <p>Details and type of a related item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ItemIdentifier {
     /// <p>Details about the related item.</p>
     #[doc(hidden)]
@@ -1041,14 +1008,6 @@ impl ItemIdentifier {
     /// <p>The type of related item. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for ItemIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemIdentifier");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`ItemIdentifier`](crate::model::ItemIdentifier).
@@ -1294,7 +1253,7 @@ impl ItemValue {
 
 /// <p>Resources that responders use to triage and mitigate the incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelatedItem {
     /// <p>Details about the related item.</p>
     #[doc(hidden)]
@@ -1311,14 +1270,6 @@ impl RelatedItem {
     /// <p>The title of the related item.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
-    }
-}
-impl std::fmt::Debug for RelatedItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelatedItem");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("title", &self.title);
-        formatter.finish()
     }
 }
 /// See [`RelatedItem`](crate::model::RelatedItem).
@@ -1464,7 +1415,7 @@ impl AsRef<str> for IncidentRecordStatus {
 
 /// <p>Details about what caused the incident to be created in Incident Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerDetails {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
     #[doc(hidden)]
@@ -1495,16 +1446,6 @@ impl TriggerDetails {
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub fn raw_data(&self) -> std::option::Option<&str> {
         self.raw_data.as_deref()
-    }
-}
-impl std::fmt::Debug for TriggerDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggerDetails");
-        formatter.field("source", &self.source);
-        formatter.field("trigger_arn", &self.trigger_arn);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("raw_data", &self.raw_data);
-        formatter.finish()
     }
 }
 /// See [`TriggerDetails`](crate::model::TriggerDetails).
@@ -1582,7 +1523,7 @@ impl TriggerDetails {
 
 /// <p>Details about a timeline event during an incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
     #[doc(hidden)]
@@ -1620,17 +1561,6 @@ impl EventSummary {
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
-    }
-}
-impl std::fmt::Debug for EventSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSummary");
-        formatter.field("incident_record_arn", &self.incident_record_arn);
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_time", &self.event_time);
-        formatter.field("event_updated_time", &self.event_updated_time);
-        formatter.field("event_type", &self.event_type);
-        formatter.finish()
     }
 }
 /// See [`EventSummary`](crate::model::EventSummary).
@@ -1903,7 +1833,7 @@ impl AsRef<str> for TimelineEventSort {
 
 /// <p>Filter the selection by using a condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The key that you're filtering on.</p>
     #[doc(hidden)]
@@ -1920,14 +1850,6 @@ impl Filter {
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
         self.condition.as_ref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("key", &self.key);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -2100,7 +2022,7 @@ impl AttributeValueList {
 
 /// <p>Details of the response plan that are used when creating an incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponsePlanSummary {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     #[doc(hidden)]
@@ -2124,15 +2046,6 @@ impl ResponsePlanSummary {
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponsePlanSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponsePlanSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
     }
 }
 /// See [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
@@ -2195,7 +2108,7 @@ impl ResponsePlanSummary {
 
 /// <p>Details describing an incident record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncidentRecordSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
     #[doc(hidden)]
@@ -2249,19 +2162,6 @@ impl IncidentRecordSummary {
         &self,
     ) -> std::option::Option<&crate::model::IncidentRecordSource> {
         self.incident_record_source.as_ref()
-    }
-}
-impl std::fmt::Debug for IncidentRecordSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncidentRecordSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("title", &self.title);
-        formatter.field("status", &self.status);
-        formatter.field("impact", &self.impact);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("resolved_time", &self.resolved_time);
-        formatter.field("incident_record_source", &self.incident_record_source);
-        formatter.finish()
     }
 }
 /// See [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
@@ -2384,7 +2284,7 @@ impl IncidentRecordSummary {
 
 /// <p>Details about what created the incident record and when it was created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncidentRecordSource {
     /// <p>The principal that started the incident.</p>
     #[doc(hidden)]
@@ -2415,16 +2315,6 @@ impl IncidentRecordSource {
     /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
-    }
-}
-impl std::fmt::Debug for IncidentRecordSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncidentRecordSource");
-        formatter.field("created_by", &self.created_by);
-        formatter.field("invoked_by", &self.invoked_by);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`IncidentRecordSource`](crate::model::IncidentRecordSource).
@@ -2499,7 +2389,7 @@ impl IncidentRecordSource {
 
 /// <p>A significant event that happened during the incident. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimelineEvent {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
     #[doc(hidden)]
@@ -2544,18 +2434,6 @@ impl TimelineEvent {
     /// <p>A short description of the event.</p>
     pub fn event_data(&self) -> std::option::Option<&str> {
         self.event_data.as_deref()
-    }
-}
-impl std::fmt::Debug for TimelineEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimelineEvent");
-        formatter.field("incident_record_arn", &self.incident_record_arn);
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_time", &self.event_time);
-        formatter.field("event_updated_time", &self.event_updated_time);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("event_data", &self.event_data);
-        formatter.finish()
     }
 }
 /// See [`TimelineEvent`](crate::model::TimelineEvent).
@@ -2663,7 +2541,7 @@ impl TimelineEvent {
 
 /// <p>Basic details used in creating a response plan. The response plan is then used to create an incident record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncidentTemplate {
     /// <p>The title of the incident. </p>
     #[doc(hidden)]
@@ -2715,18 +2593,6 @@ impl IncidentTemplate {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.incident_tags.as_ref()
-    }
-}
-impl std::fmt::Debug for IncidentTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncidentTemplate");
-        formatter.field("title", &self.title);
-        formatter.field("impact", &self.impact);
-        formatter.field("summary", &self.summary);
-        formatter.field("dedupe_string", &self.dedupe_string);
-        formatter.field("notification_targets", &self.notification_targets);
-        formatter.field("incident_tags", &self.incident_tags);
-        formatter.finish()
     }
 }
 /// See [`IncidentTemplate`](crate::model::IncidentTemplate).
@@ -2855,7 +2721,7 @@ impl IncidentTemplate {
 
 /// <p>The resource policy that allows Incident Manager to perform actions on resources on your behalf.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p>The JSON blob that describes the policy.</p>
     #[doc(hidden)]
@@ -2879,15 +2745,6 @@ impl ResourcePolicy {
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
     pub fn ram_resource_share_region(&self) -> std::option::Option<&str> {
         self.ram_resource_share_region.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourcePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePolicy");
-        formatter.field("policy_document", &self.policy_document);
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("ram_resource_share_region", &self.ram_resource_share_region);
-        formatter.finish()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -2956,7 +2813,7 @@ impl ResourcePolicy {
 
 /// <p>The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
     #[doc(hidden)]
@@ -3021,20 +2878,6 @@ impl ReplicationSet {
     /// <p>Who last modified the replication set.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&str> {
         self.last_modified_by.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationSet");
-        formatter.field("arn", &self.arn);
-        formatter.field("region_map", &self.region_map);
-        formatter.field("status", &self.status);
-        formatter.field("deletion_protected", &self.deletion_protected);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.finish()
     }
 }
 /// See [`ReplicationSet`](crate::model::ReplicationSet).
@@ -3293,7 +3136,7 @@ impl AsRef<str> for ReplicationSetStatus {
 
 /// <p>Information about a Amazon Web Services Region in your replication set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegionInfo {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -3324,16 +3167,6 @@ impl RegionInfo {
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
     pub fn status_update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.status_update_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for RegionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegionInfo");
-        formatter.field("sse_kms_key_id", &self.sse_kms_key_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("status_update_date_time", &self.status_update_date_time);
-        formatter.finish()
     }
 }
 /// See [`RegionInfo`](crate::model::RegionInfo).
@@ -3520,7 +3353,7 @@ impl AsRef<str> for RegionStatus {
 
 /// <p>The record of the incident that's created when an incident occurs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncidentRecord {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
     #[doc(hidden)]
@@ -3629,26 +3462,6 @@ impl IncidentRecord {
         &self,
     ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
         self.notification_targets.as_deref()
-    }
-}
-impl std::fmt::Debug for IncidentRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncidentRecord");
-        formatter.field("arn", &self.arn);
-        formatter.field("title", &self.title);
-        formatter.field("summary", &self.summary);
-        formatter.field("status", &self.status);
-        formatter.field("impact", &self.impact);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("resolved_time", &self.resolved_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("automation_executions", &self.automation_executions);
-        formatter.field("incident_record_source", &self.incident_record_source);
-        formatter.field("dedupe_string", &self.dedupe_string);
-        formatter.field("chat_channel", &self.chat_channel);
-        formatter.field("notification_targets", &self.notification_targets);
-        formatter.finish()
     }
 }
 /// See [`IncidentRecord`](crate::model::IncidentRecord).
@@ -3924,7 +3737,7 @@ impl AutomationExecution {
 
 /// <p>The mapping between a Amazon Web Services Region and the key that's used to encrypt the data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegionMapInputValue {
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
     #[doc(hidden)]
@@ -3934,13 +3747,6 @@ impl RegionMapInputValue {
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
     pub fn sse_kms_key_id(&self) -> std::option::Option<&str> {
         self.sse_kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RegionMapInputValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegionMapInputValue");
-        formatter.field("sse_kms_key_id", &self.sse_kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`RegionMapInputValue`](crate::model::RegionMapInputValue).

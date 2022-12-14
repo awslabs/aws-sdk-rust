@@ -92,7 +92,7 @@ impl AsRef<str> for IdentityType {
 
 /// <p>A key-value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
     #[doc(hidden)]
@@ -109,14 +109,6 @@ impl Tag {
     /// <p>A user-defined value, which is optional in a tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -167,7 +159,7 @@ impl Tag {
 
 /// <p>Specifies the execution engine (cluster) to run the notebook and perform the notebook execution, for example, an EMR cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionEngineConfig {
     /// <p>The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.</p>
     #[doc(hidden)]
@@ -191,18 +183,6 @@ impl ExecutionEngineConfig {
     /// <p>An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
     pub fn master_instance_security_group_id(&self) -> std::option::Option<&str> {
         self.master_instance_security_group_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ExecutionEngineConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionEngineConfig");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "master_instance_security_group_id",
-            &self.master_instance_security_group_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`ExecutionEngineConfig`](crate::model::ExecutionEngineConfig).
@@ -361,7 +341,7 @@ impl AsRef<str> for ExecutionEngineType {
 
 /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoTerminationPolicy {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     #[doc(hidden)]
@@ -371,13 +351,6 @@ impl AutoTerminationPolicy {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     pub fn idle_timeout(&self) -> i64 {
         self.idle_timeout
-    }
-}
-impl std::fmt::Debug for AutoTerminationPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoTerminationPolicy");
-        formatter.field("idle_timeout", &self.idle_timeout);
-        formatter.finish()
     }
 }
 /// See [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy).
@@ -417,7 +390,7 @@ impl AutoTerminationPolicy {
 /// <p>Placement group configuration for an Amazon EMR cluster. The configuration specifies the placement strategy that can be applied to instance roles during cluster creation.</p>
 /// <p>To use this configuration, consider attaching managed policy AmazonElasticMapReducePlacementGroupPolicy to the EMR role.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementGroupConfig {
     /// <p>Role of the instance in the cluster.</p>
     /// <p>Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
@@ -438,14 +411,6 @@ impl PlacementGroupConfig {
     /// <p>Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
     pub fn placement_strategy(&self) -> std::option::Option<&crate::model::PlacementGroupStrategy> {
         self.placement_strategy.as_ref()
-    }
-}
-impl std::fmt::Debug for PlacementGroupConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementGroupConfig");
-        formatter.field("instance_role", &self.instance_role);
-        formatter.field("placement_strategy", &self.placement_strategy);
-        formatter.finish()
     }
 }
 /// See [`PlacementGroupConfig`](crate::model::PlacementGroupConfig).
@@ -703,7 +668,7 @@ impl AsRef<str> for InstanceRoleType {
 
 /// <p> Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedScalingPolicy {
     /// <p>The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
     #[doc(hidden)]
@@ -713,13 +678,6 @@ impl ManagedScalingPolicy {
     /// <p>The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
     pub fn compute_limits(&self) -> std::option::Option<&crate::model::ComputeLimits> {
         self.compute_limits.as_ref()
-    }
-}
-impl std::fmt::Debug for ManagedScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedScalingPolicy");
-        formatter.field("compute_limits", &self.compute_limits);
-        formatter.finish()
     }
 }
 /// See [`ManagedScalingPolicy`](crate::model::ManagedScalingPolicy).
@@ -761,7 +719,7 @@ impl ManagedScalingPolicy {
 
 /// <p> The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputeLimits {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
     #[doc(hidden)]
@@ -799,23 +757,6 @@ impl ComputeLimits {
     /// <p> The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
     pub fn maximum_core_capacity_units(&self) -> std::option::Option<i32> {
         self.maximum_core_capacity_units
-    }
-}
-impl std::fmt::Debug for ComputeLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputeLimits");
-        formatter.field("unit_type", &self.unit_type);
-        formatter.field("minimum_capacity_units", &self.minimum_capacity_units);
-        formatter.field("maximum_capacity_units", &self.maximum_capacity_units);
-        formatter.field(
-            "maximum_on_demand_capacity_units",
-            &self.maximum_on_demand_capacity_units,
-        );
-        formatter.field(
-            "maximum_core_capacity_units",
-            &self.maximum_core_capacity_units,
-        );
-        formatter.finish()
     }
 }
 /// See [`ComputeLimits`](crate::model::ComputeLimits).
@@ -1005,7 +946,7 @@ impl AsRef<str> for ComputeLimitsUnitType {
 
 /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KerberosAttributes {
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
     #[doc(hidden)]
@@ -1043,20 +984,6 @@ impl KerberosAttributes {
     /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
     pub fn ad_domain_join_password(&self) -> std::option::Option<&str> {
         self.ad_domain_join_password.as_deref()
-    }
-}
-impl std::fmt::Debug for KerberosAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KerberosAttributes");
-        formatter.field("realm", &self.realm);
-        formatter.field("kdc_admin_password", &self.kdc_admin_password);
-        formatter.field(
-            "cross_realm_trust_principal_password",
-            &self.cross_realm_trust_principal_password,
-        );
-        formatter.field("ad_domain_join_user", &self.ad_domain_join_user);
-        formatter.field("ad_domain_join_password", &self.ad_domain_join_password);
-        formatter.finish()
     }
 }
 /// See [`KerberosAttributes`](crate::model::KerberosAttributes).
@@ -1345,7 +1272,7 @@ impl AsRef<str> for ScaleDownBehavior {
 /// </note>
 /// <p>An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Configuration {
     /// <p>The classification within a configuration.</p>
     #[doc(hidden)]
@@ -1373,15 +1300,6 @@ impl Configuration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.properties.as_ref()
-    }
-}
-impl std::fmt::Debug for Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Configuration");
-        formatter.field("classification", &self.classification);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`Configuration`](crate::model::Configuration).
@@ -1474,7 +1392,7 @@ impl Configuration {
 /// <p>With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p>
 /// <p>With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Application {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -1509,16 +1427,6 @@ impl Application {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.additional_info.as_ref()
-    }
-}
-impl std::fmt::Debug for Application {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Application");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("args", &self.args);
-        formatter.field("additional_info", &self.additional_info);
-        formatter.finish()
     }
 }
 /// See [`Application`](crate::model::Application).
@@ -1619,7 +1527,7 @@ impl Application {
 
 /// <p>The list of supported product configurations that allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SupportedProductConfig {
     /// <p>The name of the product configuration.</p>
     #[doc(hidden)]
@@ -1636,14 +1544,6 @@ impl SupportedProductConfig {
     /// <p>The list of user-supplied arguments.</p>
     pub fn args(&self) -> std::option::Option<&[std::string::String]> {
         self.args.as_deref()
-    }
-}
-impl std::fmt::Debug for SupportedProductConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SupportedProductConfig");
-        formatter.field("name", &self.name);
-        formatter.field("args", &self.args);
-        formatter.finish()
     }
 }
 /// See [`SupportedProductConfig`](crate::model::SupportedProductConfig).
@@ -1703,7 +1603,7 @@ impl SupportedProductConfig {
 
 /// <p>Configuration of a bootstrap action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BootstrapActionConfig {
     /// <p>The name of the bootstrap action.</p>
     #[doc(hidden)]
@@ -1722,14 +1622,6 @@ impl BootstrapActionConfig {
         &self,
     ) -> std::option::Option<&crate::model::ScriptBootstrapActionConfig> {
         self.script_bootstrap_action.as_ref()
-    }
-}
-impl std::fmt::Debug for BootstrapActionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BootstrapActionConfig");
-        formatter.field("name", &self.name);
-        formatter.field("script_bootstrap_action", &self.script_bootstrap_action);
-        formatter.finish()
     }
 }
 /// See [`BootstrapActionConfig`](crate::model::BootstrapActionConfig).
@@ -1787,7 +1679,7 @@ impl BootstrapActionConfig {
 
 /// <p>Configuration of the script to run during a bootstrap action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScriptBootstrapActionConfig {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
     #[doc(hidden)]
@@ -1804,14 +1696,6 @@ impl ScriptBootstrapActionConfig {
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
     pub fn args(&self) -> std::option::Option<&[std::string::String]> {
         self.args.as_deref()
-    }
-}
-impl std::fmt::Debug for ScriptBootstrapActionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScriptBootstrapActionConfig");
-        formatter.field("path", &self.path);
-        formatter.field("args", &self.args);
-        formatter.finish()
     }
 }
 /// See [`ScriptBootstrapActionConfig`](crate::model::ScriptBootstrapActionConfig).
@@ -1871,7 +1755,7 @@ impl ScriptBootstrapActionConfig {
 
 /// <p>Specification for a cluster (job flow) step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepConfig {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
@@ -1911,15 +1795,6 @@ impl StepConfig {
     /// <p>The JAR file used for the step.</p>
     pub fn hadoop_jar_step(&self) -> std::option::Option<&crate::model::HadoopJarStepConfig> {
         self.hadoop_jar_step.as_ref()
-    }
-}
-impl std::fmt::Debug for StepConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepConfig");
-        formatter.field("name", &self.name);
-        formatter.field("action_on_failure", &self.action_on_failure);
-        formatter.field("hadoop_jar_step", &self.hadoop_jar_step);
-        formatter.finish()
     }
 }
 /// See [`StepConfig`](crate::model::StepConfig).
@@ -2004,7 +1879,7 @@ impl StepConfig {
 
 /// <p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HadoopJarStepConfig {
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
     #[doc(hidden)]
@@ -2035,16 +1910,6 @@ impl HadoopJarStepConfig {
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
     pub fn args(&self) -> std::option::Option<&[std::string::String]> {
         self.args.as_deref()
-    }
-}
-impl std::fmt::Debug for HadoopJarStepConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HadoopJarStepConfig");
-        formatter.field("properties", &self.properties);
-        formatter.field("jar", &self.jar);
-        formatter.field("main_class", &self.main_class);
-        formatter.field("args", &self.args);
-        formatter.finish()
     }
 }
 /// See [`HadoopJarStepConfig`](crate::model::HadoopJarStepConfig).
@@ -2137,7 +2002,7 @@ impl HadoopJarStepConfig {
 
 /// <p>A key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyValue {
     /// <p>The unique identifier of a key-value pair.</p>
     #[doc(hidden)]
@@ -2154,14 +2019,6 @@ impl KeyValue {
     /// <p>The value part of the identified key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for KeyValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyValue");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`KeyValue`](crate::model::KeyValue).
@@ -2317,7 +2174,7 @@ impl AsRef<str> for ActionOnFailure {
 
 /// <p>A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobFlowInstancesConfig {
     /// <p>The EC2 instance type of the master node.</p>
     #[doc(hidden)]
@@ -2449,47 +2306,6 @@ impl JobFlowInstancesConfig {
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
     pub fn additional_slave_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_slave_security_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for JobFlowInstancesConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobFlowInstancesConfig");
-        formatter.field("master_instance_type", &self.master_instance_type);
-        formatter.field("slave_instance_type", &self.slave_instance_type);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("instance_groups", &self.instance_groups);
-        formatter.field("instance_fleets", &self.instance_fleets);
-        formatter.field("ec2_key_name", &self.ec2_key_name);
-        formatter.field("placement", &self.placement);
-        formatter.field(
-            "keep_job_flow_alive_when_no_steps",
-            &self.keep_job_flow_alive_when_no_steps,
-        );
-        formatter.field("termination_protected", &self.termination_protected);
-        formatter.field("hadoop_version", &self.hadoop_version);
-        formatter.field("ec2_subnet_id", &self.ec2_subnet_id);
-        formatter.field("ec2_subnet_ids", &self.ec2_subnet_ids);
-        formatter.field(
-            "emr_managed_master_security_group",
-            &self.emr_managed_master_security_group,
-        );
-        formatter.field(
-            "emr_managed_slave_security_group",
-            &self.emr_managed_slave_security_group,
-        );
-        formatter.field(
-            "service_access_security_group",
-            &self.service_access_security_group,
-        );
-        formatter.field(
-            "additional_master_security_groups",
-            &self.additional_master_security_groups,
-        );
-        formatter.field(
-            "additional_slave_security_groups",
-            &self.additional_slave_security_groups,
-        );
-        formatter.finish()
     }
 }
 /// See [`JobFlowInstancesConfig`](crate::model::JobFlowInstancesConfig).
@@ -2823,7 +2639,7 @@ impl JobFlowInstancesConfig {
 
 /// <p>The Amazon EC2 Availability Zone configuration of the cluster (job flow).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementType {
     /// <p>The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.</p>
     #[doc(hidden)]
@@ -2844,14 +2660,6 @@ impl PlacementType {
     /// </note>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
-    }
-}
-impl std::fmt::Debug for PlacementType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementType");
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.finish()
     }
 }
 /// See [`PlacementType`](crate::model::PlacementType).
@@ -2920,7 +2728,7 @@ impl PlacementType {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceFleetConfig {
     /// <p>The friendly name of the instance fleet.</p>
     #[doc(hidden)]
@@ -2978,18 +2786,6 @@ impl InstanceFleetConfig {
         &self,
     ) -> std::option::Option<&crate::model::InstanceFleetProvisioningSpecifications> {
         self.launch_specifications.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceFleetConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceFleetConfig");
-        formatter.field("name", &self.name);
-        formatter.field("instance_fleet_type", &self.instance_fleet_type);
-        formatter.field("target_on_demand_capacity", &self.target_on_demand_capacity);
-        formatter.field("target_spot_capacity", &self.target_spot_capacity);
-        formatter.field("instance_type_configs", &self.instance_type_configs);
-        formatter.field("launch_specifications", &self.launch_specifications);
-        formatter.finish()
     }
 }
 /// See [`InstanceFleetConfig`](crate::model::InstanceFleetConfig).
@@ -3118,7 +2914,7 @@ impl InstanceFleetConfig {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot Instance allocation strategies are available in Amazon EMR version 5.12.1 and later.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceFleetProvisioningSpecifications {
     /// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
     #[doc(hidden)]
@@ -3144,14 +2940,6 @@ impl InstanceFleetProvisioningSpecifications {
         &self,
     ) -> std::option::Option<&crate::model::OnDemandProvisioningSpecification> {
         self.on_demand_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceFleetProvisioningSpecifications {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceFleetProvisioningSpecifications");
-        formatter.field("spot_specification", &self.spot_specification);
-        formatter.field("on_demand_specification", &self.on_demand_specification);
-        formatter.finish()
     }
 }
 /// See [`InstanceFleetProvisioningSpecifications`](crate::model::InstanceFleetProvisioningSpecifications).
@@ -3222,7 +3010,7 @@ impl InstanceFleetProvisioningSpecifications {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnDemandProvisioningSpecification {
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
     #[doc(hidden)]
@@ -3245,17 +3033,6 @@ impl OnDemandProvisioningSpecification {
         &self,
     ) -> std::option::Option<&crate::model::OnDemandCapacityReservationOptions> {
         self.capacity_reservation_options.as_ref()
-    }
-}
-impl std::fmt::Debug for OnDemandProvisioningSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnDemandProvisioningSpecification");
-        formatter.field("allocation_strategy", &self.allocation_strategy);
-        formatter.field(
-            "capacity_reservation_options",
-            &self.capacity_reservation_options,
-        );
-        formatter.finish()
     }
 }
 /// See [`OnDemandProvisioningSpecification`](crate::model::OnDemandProvisioningSpecification).
@@ -3320,7 +3097,7 @@ impl OnDemandProvisioningSpecification {
 
 /// <p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnDemandCapacityReservationOptions {
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
@@ -3361,21 +3138,6 @@ impl OnDemandCapacityReservationOptions {
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
     pub fn capacity_reservation_resource_group_arn(&self) -> std::option::Option<&str> {
         self.capacity_reservation_resource_group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for OnDemandCapacityReservationOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnDemandCapacityReservationOptions");
-        formatter.field("usage_strategy", &self.usage_strategy);
-        formatter.field(
-            "capacity_reservation_preference",
-            &self.capacity_reservation_preference,
-        );
-        formatter.field(
-            "capacity_reservation_resource_group_arn",
-            &self.capacity_reservation_resource_group_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`OnDemandCapacityReservationOptions`](crate::model::OnDemandCapacityReservationOptions).
@@ -3746,7 +3508,7 @@ impl AsRef<str> for OnDemandProvisioningAllocationStrategy {
 /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpotProvisioningSpecification {
     /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     #[doc(hidden)]
@@ -3785,16 +3547,6 @@ impl SpotProvisioningSpecification {
         &self,
     ) -> std::option::Option<&crate::model::SpotProvisioningAllocationStrategy> {
         self.allocation_strategy.as_ref()
-    }
-}
-impl std::fmt::Debug for SpotProvisioningSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SpotProvisioningSpecification");
-        formatter.field("timeout_duration_minutes", &self.timeout_duration_minutes);
-        formatter.field("timeout_action", &self.timeout_action);
-        formatter.field("block_duration_minutes", &self.block_duration_minutes);
-        formatter.field("allocation_strategy", &self.allocation_strategy);
-        formatter.finish()
     }
 }
 /// See [`SpotProvisioningSpecification`](crate::model::SpotProvisioningSpecification).
@@ -4067,7 +3819,7 @@ impl AsRef<str> for SpotProvisioningTimeoutAction {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceTypeConfig {
     /// <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
     #[doc(hidden)]
@@ -4119,22 +3871,6 @@ impl InstanceTypeConfig {
     /// <p>The custom AMI ID to use for the instance type.</p>
     pub fn custom_ami_id(&self) -> std::option::Option<&str> {
         self.custom_ami_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceTypeConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceTypeConfig");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.field("bid_price", &self.bid_price);
-        formatter.field(
-            "bid_price_as_percentage_of_on_demand_price",
-            &self.bid_price_as_percentage_of_on_demand_price,
-        );
-        formatter.field("ebs_configuration", &self.ebs_configuration);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("custom_ami_id", &self.custom_ami_id);
-        formatter.finish()
     }
 }
 /// See [`InstanceTypeConfig`](crate::model::InstanceTypeConfig).
@@ -4267,7 +4003,7 @@ impl InstanceTypeConfig {
 
 /// <p>The Amazon EBS configuration of a cluster instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsConfiguration {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
     #[doc(hidden)]
@@ -4287,14 +4023,6 @@ impl EbsConfiguration {
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     pub fn ebs_optimized(&self) -> std::option::Option<bool> {
         self.ebs_optimized
-    }
-}
-impl std::fmt::Debug for EbsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsConfiguration");
-        formatter.field("ebs_block_device_configs", &self.ebs_block_device_configs);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.finish()
     }
 }
 /// See [`EbsConfiguration`](crate::model::EbsConfiguration).
@@ -4358,7 +4086,7 @@ impl EbsConfiguration {
 
 /// <p>Configuration of requested EBS block device associated with the instance group with count of volumes that are associated to every instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsBlockDeviceConfig {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
     #[doc(hidden)]
@@ -4375,14 +4103,6 @@ impl EbsBlockDeviceConfig {
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
     pub fn volumes_per_instance(&self) -> std::option::Option<i32> {
         self.volumes_per_instance
-    }
-}
-impl std::fmt::Debug for EbsBlockDeviceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsBlockDeviceConfig");
-        formatter.field("volume_specification", &self.volume_specification);
-        formatter.field("volumes_per_instance", &self.volumes_per_instance);
-        formatter.finish()
     }
 }
 /// See [`EbsBlockDeviceConfig`](crate::model::EbsBlockDeviceConfig).
@@ -4436,7 +4156,7 @@ impl EbsBlockDeviceConfig {
 
 /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeSpecification {
     /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
     #[doc(hidden)]
@@ -4467,16 +4187,6 @@ impl VolumeSpecification {
     /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
     pub fn throughput(&self) -> std::option::Option<i32> {
         self.throughput
-    }
-}
-impl std::fmt::Debug for VolumeSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeSpecification");
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("iops", &self.iops);
-        formatter.field("size_in_gb", &self.size_in_gb);
-        formatter.field("throughput", &self.throughput);
-        formatter.finish()
     }
 }
 /// See [`VolumeSpecification`](crate::model::VolumeSpecification).
@@ -4648,7 +4358,7 @@ impl AsRef<str> for InstanceFleetType {
 
 /// <p>Configuration defining a new instance group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceGroupConfig {
     /// <p>Friendly name given to the instance group.</p>
     #[doc(hidden)]
@@ -4727,22 +4437,6 @@ impl InstanceGroupConfig {
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     pub fn custom_ami_id(&self) -> std::option::Option<&str> {
         self.custom_ami_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceGroupConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceGroupConfig");
-        formatter.field("name", &self.name);
-        formatter.field("market", &self.market);
-        formatter.field("instance_role", &self.instance_role);
-        formatter.field("bid_price", &self.bid_price);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("ebs_configuration", &self.ebs_configuration);
-        formatter.field("auto_scaling_policy", &self.auto_scaling_policy);
-        formatter.field("custom_ami_id", &self.custom_ami_id);
-        formatter.finish()
     }
 }
 /// See [`InstanceGroupConfig`](crate::model::InstanceGroupConfig).
@@ -4919,7 +4613,7 @@ impl InstanceGroupConfig {
 
 /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingPolicy {
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
     #[doc(hidden)]
@@ -4936,14 +4630,6 @@ impl AutoScalingPolicy {
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::ScalingRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingPolicy");
-        formatter.field("constraints", &self.constraints);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingPolicy`](crate::model::AutoScalingPolicy).
@@ -5006,7 +4692,7 @@ impl AutoScalingPolicy {
 
 /// <p>A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingRule {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
     #[doc(hidden)]
@@ -5037,16 +4723,6 @@ impl ScalingRule {
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
     pub fn trigger(&self) -> std::option::Option<&crate::model::ScalingTrigger> {
         self.trigger.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingRule");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("action", &self.action);
-        formatter.field("trigger", &self.trigger);
-        formatter.finish()
     }
 }
 /// See [`ScalingRule`](crate::model::ScalingRule).
@@ -5127,7 +4803,7 @@ impl ScalingRule {
 
 /// <p>The conditions that trigger an automatic scaling activity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingTrigger {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
     #[doc(hidden)]
@@ -5139,16 +4815,6 @@ impl ScalingTrigger {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchAlarmDefinition> {
         self.cloud_watch_alarm_definition.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalingTrigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingTrigger");
-        formatter.field(
-            "cloud_watch_alarm_definition",
-            &self.cloud_watch_alarm_definition,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScalingTrigger`](crate::model::ScalingTrigger).
@@ -5194,7 +4860,7 @@ impl ScalingTrigger {
 
 /// <p>The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchAlarmDefinition {
     /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
     #[doc(hidden)]
@@ -5260,21 +4926,6 @@ impl CloudWatchAlarmDefinition {
     /// <p>A CloudWatch metric dimension.</p>
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::MetricDimension]> {
         self.dimensions.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchAlarmDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchAlarmDefinition");
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("evaluation_periods", &self.evaluation_periods);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("period", &self.period);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("unit", &self.unit);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchAlarmDefinition`](crate::model::CloudWatchAlarmDefinition).
@@ -5424,7 +5075,7 @@ impl CloudWatchAlarmDefinition {
 
 /// <p>A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The dimension name.</p>
     #[doc(hidden)]
@@ -5441,14 +5092,6 @@ impl MetricDimension {
     /// <p>The dimension value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`MetricDimension`](crate::model::MetricDimension).
@@ -5954,7 +5597,7 @@ impl AsRef<str> for ComparisonOperator {
 
 /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingAction {
     /// <p>Not available for instance groups. Instance groups use the market type specified for the group.</p>
     #[doc(hidden)]
@@ -5974,17 +5617,6 @@ impl ScalingAction {
         &self,
     ) -> std::option::Option<&crate::model::SimpleScalingPolicyConfiguration> {
         self.simple_scaling_policy_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ScalingAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingAction");
-        formatter.field("market", &self.market);
-        formatter.field(
-            "simple_scaling_policy_configuration",
-            &self.simple_scaling_policy_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ScalingAction`](crate::model::ScalingAction).
@@ -6042,7 +5674,7 @@ impl ScalingAction {
 
 /// <p>An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleScalingPolicyConfiguration {
     /// <p>The way in which EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
     #[doc(hidden)]
@@ -6066,15 +5698,6 @@ impl SimpleScalingPolicyConfiguration {
     /// <p>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. The default value is 0.</p>
     pub fn cool_down(&self) -> std::option::Option<i32> {
         self.cool_down
-    }
-}
-impl std::fmt::Debug for SimpleScalingPolicyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleScalingPolicyConfiguration");
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.field("cool_down", &self.cool_down);
-        formatter.finish()
     }
 }
 /// See [`SimpleScalingPolicyConfiguration`](crate::model::SimpleScalingPolicyConfiguration).
@@ -6329,7 +5952,7 @@ impl AsRef<str> for MarketType {
 
 /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingConstraints {
     /// <p>The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to shrink. Scale-in activities will not terminate instances below this boundary.</p>
     #[doc(hidden)]
@@ -6346,14 +5969,6 @@ impl ScalingConstraints {
     /// <p>The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow. Scale-out activities will not add instances beyond this boundary.</p>
     pub fn max_capacity(&self) -> std::option::Option<i32> {
         self.max_capacity
-    }
-}
-impl std::fmt::Debug for ScalingConstraints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingConstraints");
-        formatter.field("min_capacity", &self.min_capacity);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.finish()
     }
 }
 /// See [`ScalingConstraints`](crate::model::ScalingConstraints).
@@ -6404,7 +6019,7 @@ impl ScalingConstraints {
 
 /// <p>A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockPublicAccessConfiguration {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
     #[doc(hidden)]
@@ -6451,23 +6066,6 @@ impl BlockPublicAccessConfiguration {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.properties.as_ref()
-    }
-}
-impl std::fmt::Debug for BlockPublicAccessConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockPublicAccessConfiguration");
-        formatter.field(
-            "block_public_security_group_rules",
-            &self.block_public_security_group_rules,
-        );
-        formatter.field(
-            "permitted_public_security_group_rule_ranges",
-            &self.permitted_public_security_group_rule_ranges,
-        );
-        formatter.field("classification", &self.classification);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`BlockPublicAccessConfiguration`](crate::model::BlockPublicAccessConfiguration).
@@ -6606,7 +6204,7 @@ impl BlockPublicAccessConfiguration {
 
 /// <p>A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The smallest port number in a specified range of port numbers.</p>
     #[doc(hidden)]
@@ -6623,14 +6221,6 @@ impl PortRange {
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn max_range(&self) -> std::option::Option<i32> {
         self.max_range
-    }
-}
-impl std::fmt::Debug for PortRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortRange");
-        formatter.field("min_range", &self.min_range);
-        formatter.field("max_range", &self.max_range);
-        formatter.finish()
     }
 }
 /// See [`PortRange`](crate::model::PortRange).
@@ -6681,7 +6271,7 @@ impl PortRange {
 
 /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingPolicyDescription {
     /// <p>The status of an automatic scaling policy. </p>
     #[doc(hidden)]
@@ -6705,15 +6295,6 @@ impl AutoScalingPolicyDescription {
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::ScalingRule]> {
         self.rules.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingPolicyDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingPolicyDescription");
-        formatter.field("status", &self.status);
-        formatter.field("constraints", &self.constraints);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
@@ -6791,7 +6372,7 @@ impl AutoScalingPolicyDescription {
 
 /// <p>The status of an automatic scaling policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingPolicyStatus {
     /// <p>Indicates the status of the automatic scaling policy.</p>
     #[doc(hidden)]
@@ -6810,14 +6391,6 @@ impl AutoScalingPolicyStatus {
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingPolicyStateChangeReason> {
         self.state_change_reason.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoScalingPolicyStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingPolicyStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingPolicyStatus`](crate::model::AutoScalingPolicyStatus).
@@ -6878,7 +6451,7 @@ impl AutoScalingPolicyStatus {
 
 /// <p>The reason for an <code>AutoScalingPolicyStatus</code> change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingPolicyStateChangeReason {
     /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
     #[doc(hidden)]
@@ -6897,14 +6470,6 @@ impl AutoScalingPolicyStateChangeReason {
     /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingPolicyStateChangeReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingPolicyStateChangeReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingPolicyStateChangeReason`](crate::model::AutoScalingPolicyStateChangeReason).
@@ -7174,7 +6739,7 @@ impl AsRef<str> for AutoScalingPolicyState {
 
 /// <p>Modify the size or configurations of an instance group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceGroupModifyConfig {
     /// <p>Unique ID of the instance group to modify.</p>
     #[doc(hidden)]
@@ -7219,21 +6784,6 @@ impl InstanceGroupModifyConfig {
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
     pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
         self.configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceGroupModifyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceGroupModifyConfig");
-        formatter.field("instance_group_id", &self.instance_group_id);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field(
-            "ec2_instance_ids_to_terminate",
-            &self.ec2_instance_ids_to_terminate,
-        );
-        formatter.field("shrink_policy", &self.shrink_policy);
-        formatter.field("reconfiguration_type", &self.reconfiguration_type);
-        formatter.field("configurations", &self.configurations);
-        formatter.finish()
     }
 }
 /// See [`InstanceGroupModifyConfig`](crate::model::InstanceGroupModifyConfig).
@@ -7455,7 +7005,7 @@ impl AsRef<str> for ReconfigurationType {
 
 /// <p>Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShrinkPolicy {
     /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
     #[doc(hidden)]
@@ -7474,14 +7024,6 @@ impl ShrinkPolicy {
         &self,
     ) -> std::option::Option<&crate::model::InstanceResizePolicy> {
         self.instance_resize_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for ShrinkPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShrinkPolicy");
-        formatter.field("decommission_timeout", &self.decommission_timeout);
-        formatter.field("instance_resize_policy", &self.instance_resize_policy);
-        formatter.finish()
     }
 }
 /// See [`ShrinkPolicy`](crate::model::ShrinkPolicy).
@@ -7535,7 +7077,7 @@ impl ShrinkPolicy {
 
 /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceResizePolicy {
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
     #[doc(hidden)]
@@ -7559,18 +7101,6 @@ impl InstanceResizePolicy {
     /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
     pub fn instance_termination_timeout(&self) -> std::option::Option<i32> {
         self.instance_termination_timeout
-    }
-}
-impl std::fmt::Debug for InstanceResizePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceResizePolicy");
-        formatter.field("instances_to_terminate", &self.instances_to_terminate);
-        formatter.field("instances_to_protect", &self.instances_to_protect);
-        formatter.field(
-            "instance_termination_timeout",
-            &self.instance_termination_timeout,
-        );
-        formatter.finish()
     }
 }
 /// See [`InstanceResizePolicy`](crate::model::InstanceResizePolicy).
@@ -7653,7 +7183,7 @@ impl InstanceResizePolicy {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
     #[doc(hidden)]
@@ -7677,15 +7207,6 @@ impl InstanceFleetModifyConfig {
     /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
     pub fn target_spot_capacity(&self) -> std::option::Option<i32> {
         self.target_spot_capacity
-    }
-}
-impl std::fmt::Debug for InstanceFleetModifyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceFleetModifyConfig");
-        formatter.field("instance_fleet_id", &self.instance_fleet_id);
-        formatter.field("target_on_demand_capacity", &self.target_on_demand_capacity);
-        formatter.field("target_spot_capacity", &self.target_spot_capacity);
-        formatter.finish()
     }
 }
 /// See [`InstanceFleetModifyConfig`](crate::model::InstanceFleetModifyConfig).
@@ -7751,7 +7272,7 @@ impl InstanceFleetModifyConfig {
 
 /// <p>Details for an Amazon EMR Studio session mapping. The details do not include the time the session mapping was last modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionMappingSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -7796,18 +7317,6 @@ impl SessionMappingSummary {
     /// <p>The time the session mapping was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SessionMappingSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionMappingSummary");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("identity_name", &self.identity_name);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("session_policy_arn", &self.session_policy_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`SessionMappingSummary`](crate::model::SessionMappingSummary).
@@ -7918,7 +7427,7 @@ impl SessionMappingSummary {
 
 /// <p>Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. The details do not include subnets, IAM roles, security groups, or tags associated with the Studio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StudioSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -7970,19 +7479,6 @@ impl StudioSummary {
     /// <p>The time when the Amazon EMR Studio was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for StudioSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StudioSummary");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("name", &self.name);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("description", &self.description);
-        formatter.field("url", &self.url);
-        formatter.field("auth_mode", &self.auth_mode);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`StudioSummary`](crate::model::StudioSummary).
@@ -8186,7 +7682,7 @@ impl AsRef<str> for AuthMode {
 
 /// <p>The summary of the cluster step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepSummary {
     /// <p>The identifier of the cluster step.</p>
     #[doc(hidden)]
@@ -8224,17 +7720,6 @@ impl StepSummary {
     /// <p>The current execution status details of the cluster step.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::StepStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for StepSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("config", &self.config);
-        formatter.field("action_on_failure", &self.action_on_failure);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`StepSummary`](crate::model::StepSummary).
@@ -8327,7 +7812,7 @@ impl StepSummary {
 
 /// <p>The execution status details of the cluster step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepStatus {
     /// <p>The execution state of the cluster step.</p>
     #[doc(hidden)]
@@ -8358,16 +7843,6 @@ impl StepStatus {
     /// <p>The timeline of the cluster step status over time.</p>
     pub fn timeline(&self) -> std::option::Option<&crate::model::StepTimeline> {
         self.timeline.as_ref()
-    }
-}
-impl std::fmt::Debug for StepStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.field("failure_details", &self.failure_details);
-        formatter.field("timeline", &self.timeline);
-        formatter.finish()
     }
 }
 /// See [`StepStatus`](crate::model::StepStatus).
@@ -8451,7 +7926,7 @@ impl StepStatus {
 
 /// <p>The timeline of the cluster step lifecycle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepTimeline {
     /// <p>The date and time when the cluster step was created.</p>
     #[doc(hidden)]
@@ -8475,15 +7950,6 @@ impl StepTimeline {
     /// <p>The date and time when the cluster step execution completed or failed.</p>
     pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for StepTimeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepTimeline");
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
     }
 }
 /// See [`StepTimeline`](crate::model::StepTimeline).
@@ -8555,7 +8021,7 @@ impl StepTimeline {
 
 /// <p>The details of the step failure. The service attempts to detect the root cause for many common failures.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
     #[doc(hidden)]
@@ -8579,15 +8045,6 @@ impl FailureDetails {
     /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
     pub fn log_file(&self) -> std::option::Option<&str> {
         self.log_file.as_deref()
-    }
-}
-impl std::fmt::Debug for FailureDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailureDetails");
-        formatter.field("reason", &self.reason);
-        formatter.field("message", &self.message);
-        formatter.field("log_file", &self.log_file);
-        formatter.finish()
     }
 }
 /// See [`FailureDetails`](crate::model::FailureDetails).
@@ -8650,7 +8107,7 @@ impl FailureDetails {
 
 /// <p>The details of the step state change reason.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepStateChangeReason {
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
     #[doc(hidden)]
@@ -8667,14 +8124,6 @@ impl StepStateChangeReason {
     /// <p>The descriptive message for the state change reason.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for StepStateChangeReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepStateChangeReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`StepStateChangeReason`](crate::model::StepStateChangeReason).
@@ -8938,7 +8387,7 @@ impl AsRef<str> for StepState {
 
 /// <p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HadoopStepConfig {
     /// <p>The path to the JAR file that runs during the step.</p>
     #[doc(hidden)]
@@ -8973,16 +8422,6 @@ impl HadoopStepConfig {
     /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
     pub fn args(&self) -> std::option::Option<&[std::string::String]> {
         self.args.as_deref()
-    }
-}
-impl std::fmt::Debug for HadoopStepConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HadoopStepConfig");
-        formatter.field("jar", &self.jar);
-        formatter.field("properties", &self.properties);
-        formatter.field("main_class", &self.main_class);
-        formatter.field("args", &self.args);
-        formatter.finish()
     }
 }
 /// See [`HadoopStepConfig`](crate::model::HadoopStepConfig).
@@ -9083,7 +8522,7 @@ impl HadoopStepConfig {
 
 /// <p>The creation date and time, and name, of a security configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityConfigurationSummary {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
@@ -9100,14 +8539,6 @@ impl SecurityConfigurationSummary {
     /// <p>The date and time the security configuration was created.</p>
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SecurityConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityConfigurationSummary");
-        formatter.field("name", &self.name);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.finish()
     }
 }
 /// See [`SecurityConfigurationSummary`](crate::model::SecurityConfigurationSummary).
@@ -9161,7 +8592,7 @@ impl SecurityConfigurationSummary {
 
 /// <p>The release label filters by application or version prefix.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReleaseLabelFilter {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
     #[doc(hidden)]
@@ -9178,14 +8609,6 @@ impl ReleaseLabelFilter {
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
     pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
-    }
-}
-impl std::fmt::Debug for ReleaseLabelFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReleaseLabelFilter");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("application", &self.application);
-        formatter.finish()
     }
 }
 /// See [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter).
@@ -9236,7 +8659,7 @@ impl ReleaseLabelFilter {
 
 /// <p>Details for a notebook execution. The details include information such as the unique ID and status of the notebook execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotebookExecutionSummary {
     /// <p>The unique identifier of the notebook execution.</p>
     #[doc(hidden)]
@@ -9305,18 +8728,6 @@ impl NotebookExecutionSummary {
     /// <p>The timestamp when notebook execution started.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for NotebookExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotebookExecutionSummary");
-        formatter.field("notebook_execution_id", &self.notebook_execution_id);
-        formatter.field("editor_id", &self.editor_id);
-        formatter.field("notebook_execution_name", &self.notebook_execution_name);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`NotebookExecutionSummary`](crate::model::NotebookExecutionSummary).
@@ -9597,7 +9008,7 @@ impl AsRef<str> for NotebookExecutionStatus {
 
 /// <p>Represents an EC2 instance provisioned as part of cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The unique identifier for the instance in Amazon EMR.</p>
     #[doc(hidden)]
@@ -9684,24 +9095,6 @@ impl Instance {
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
     pub fn ebs_volumes(&self) -> std::option::Option<&[crate::model::EbsVolume]> {
         self.ebs_volumes.as_deref()
-    }
-}
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("id", &self.id);
-        formatter.field("ec2_instance_id", &self.ec2_instance_id);
-        formatter.field("public_dns_name", &self.public_dns_name);
-        formatter.field("public_ip_address", &self.public_ip_address);
-        formatter.field("private_dns_name", &self.private_dns_name);
-        formatter.field("private_ip_address", &self.private_ip_address);
-        formatter.field("status", &self.status);
-        formatter.field("instance_group_id", &self.instance_group_id);
-        formatter.field("instance_fleet_id", &self.instance_fleet_id);
-        formatter.field("market", &self.market);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("ebs_volumes", &self.ebs_volumes);
-        formatter.finish()
     }
 }
 /// See [`Instance`](crate::model::Instance).
@@ -9908,7 +9301,7 @@ impl Instance {
 
 /// <p>EBS block device that's attached to an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsVolume {
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     #[doc(hidden)]
@@ -9925,14 +9318,6 @@ impl EbsVolume {
     /// <p>The volume identifier of the EBS volume.</p>
     pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EbsVolume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsVolume");
-        formatter.field("device", &self.device);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.finish()
     }
 }
 /// See [`EbsVolume`](crate::model::EbsVolume).
@@ -9983,7 +9368,7 @@ impl EbsVolume {
 
 /// <p>The instance status details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceStatus {
     /// <p>The current state of the instance.</p>
     #[doc(hidden)]
@@ -10009,15 +9394,6 @@ impl InstanceStatus {
     /// <p>The timeline of the instance status over time.</p>
     pub fn timeline(&self) -> std::option::Option<&crate::model::InstanceTimeline> {
         self.timeline.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.field("timeline", &self.timeline);
-        formatter.finish()
     }
 }
 /// See [`InstanceStatus`](crate::model::InstanceStatus).
@@ -10093,7 +9469,7 @@ impl InstanceStatus {
 
 /// <p>The timeline of the instance lifecycle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceTimeline {
     /// <p>The creation date and time of the instance.</p>
     #[doc(hidden)]
@@ -10117,15 +9493,6 @@ impl InstanceTimeline {
     /// <p>The date and time when the instance was terminated.</p>
     pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceTimeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceTimeline");
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("ready_date_time", &self.ready_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
     }
 }
 /// See [`InstanceTimeline`](crate::model::InstanceTimeline).
@@ -10197,7 +9564,7 @@ impl InstanceTimeline {
 
 /// <p>The details of the status change reason for the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
     #[doc(hidden)]
@@ -10214,14 +9581,6 @@ impl InstanceStateChangeReason {
     /// <p>The status change reason description.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceStateChangeReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceStateChangeReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`InstanceStateChangeReason`](crate::model::InstanceStateChangeReason).
@@ -10596,7 +9955,7 @@ impl AsRef<str> for InstanceGroupType {
 
 /// <p>This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceGroup {
     /// <p>The identifier of the instance group.</p>
     #[doc(hidden)]
@@ -10736,36 +10095,6 @@ impl InstanceGroup {
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     pub fn custom_ami_id(&self) -> std::option::Option<&str> {
         self.custom_ami_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceGroup");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("market", &self.market);
-        formatter.field("instance_group_type", &self.instance_group_type);
-        formatter.field("bid_price", &self.bid_price);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("requested_instance_count", &self.requested_instance_count);
-        formatter.field("running_instance_count", &self.running_instance_count);
-        formatter.field("status", &self.status);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("configurations_version", &self.configurations_version);
-        formatter.field(
-            "last_successfully_applied_configurations",
-            &self.last_successfully_applied_configurations,
-        );
-        formatter.field(
-            "last_successfully_applied_configurations_version",
-            &self.last_successfully_applied_configurations_version,
-        );
-        formatter.field("ebs_block_devices", &self.ebs_block_devices);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field("shrink_policy", &self.shrink_policy);
-        formatter.field("auto_scaling_policy", &self.auto_scaling_policy);
-        formatter.field("custom_ami_id", &self.custom_ami_id);
-        formatter.finish()
     }
 }
 /// See [`InstanceGroup`](crate::model::InstanceGroup).
@@ -11076,7 +10405,7 @@ impl InstanceGroup {
 
 /// <p>Configuration of requested EBS block device associated with the instance group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsBlockDevice {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
     #[doc(hidden)]
@@ -11093,14 +10422,6 @@ impl EbsBlockDevice {
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub fn device(&self) -> std::option::Option<&str> {
         self.device.as_deref()
-    }
-}
-impl std::fmt::Debug for EbsBlockDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsBlockDevice");
-        formatter.field("volume_specification", &self.volume_specification);
-        formatter.field("device", &self.device);
-        formatter.finish()
     }
 }
 /// See [`EbsBlockDevice`](crate::model::EbsBlockDevice).
@@ -11154,7 +10475,7 @@ impl EbsBlockDevice {
 
 /// <p>The details of the instance group status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceGroupStatus {
     /// <p>The current state of the instance group.</p>
     #[doc(hidden)]
@@ -11180,15 +10501,6 @@ impl InstanceGroupStatus {
     /// <p>The timeline of the instance group status over time.</p>
     pub fn timeline(&self) -> std::option::Option<&crate::model::InstanceGroupTimeline> {
         self.timeline.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceGroupStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceGroupStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.field("timeline", &self.timeline);
-        formatter.finish()
     }
 }
 /// See [`InstanceGroupStatus`](crate::model::InstanceGroupStatus).
@@ -11264,7 +10576,7 @@ impl InstanceGroupStatus {
 
 /// <p>The timeline of the instance group lifecycle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceGroupTimeline {
     /// <p>The creation date and time of the instance group.</p>
     #[doc(hidden)]
@@ -11288,15 +10600,6 @@ impl InstanceGroupTimeline {
     /// <p>The date and time when the instance group terminated.</p>
     pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceGroupTimeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceGroupTimeline");
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("ready_date_time", &self.ready_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
     }
 }
 /// See [`InstanceGroupTimeline`](crate::model::InstanceGroupTimeline).
@@ -11368,7 +10671,7 @@ impl InstanceGroupTimeline {
 
 /// <p>The status change reason details for the instance group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceGroupStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
     #[doc(hidden)]
@@ -11385,14 +10688,6 @@ impl InstanceGroupStateChangeReason {
     /// <p>The status change reason description.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceGroupStateChangeReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceGroupStateChangeReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`InstanceGroupStateChangeReason`](crate::model::InstanceGroupStateChangeReason).
@@ -11704,7 +10999,7 @@ impl AsRef<str> for InstanceGroupState {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceFleet {
     /// <p>The unique identifier of the instance fleet.</p>
     #[doc(hidden)]
@@ -11791,28 +11086,6 @@ impl InstanceFleet {
         &self,
     ) -> std::option::Option<&crate::model::InstanceFleetProvisioningSpecifications> {
         self.launch_specifications.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceFleet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceFleet");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("instance_fleet_type", &self.instance_fleet_type);
-        formatter.field("target_on_demand_capacity", &self.target_on_demand_capacity);
-        formatter.field("target_spot_capacity", &self.target_spot_capacity);
-        formatter.field(
-            "provisioned_on_demand_capacity",
-            &self.provisioned_on_demand_capacity,
-        );
-        formatter.field("provisioned_spot_capacity", &self.provisioned_spot_capacity);
-        formatter.field(
-            "instance_type_specifications",
-            &self.instance_type_specifications,
-        );
-        formatter.field("launch_specifications", &self.launch_specifications);
-        formatter.finish()
     }
 }
 /// See [`InstanceFleet`](crate::model::InstanceFleet).
@@ -11998,7 +11271,7 @@ impl InstanceFleet {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceTypeSpecification {
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
     #[doc(hidden)]
@@ -12057,23 +11330,6 @@ impl InstanceTypeSpecification {
     /// <p>The custom AMI ID to use for the instance type.</p>
     pub fn custom_ami_id(&self) -> std::option::Option<&str> {
         self.custom_ami_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceTypeSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceTypeSpecification");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.field("bid_price", &self.bid_price);
-        formatter.field(
-            "bid_price_as_percentage_of_on_demand_price",
-            &self.bid_price_as_percentage_of_on_demand_price,
-        );
-        formatter.field("configurations", &self.configurations);
-        formatter.field("ebs_block_devices", &self.ebs_block_devices);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field("custom_ami_id", &self.custom_ami_id);
-        formatter.finish()
     }
 }
 /// See [`InstanceTypeSpecification`](crate::model::InstanceTypeSpecification).
@@ -12227,7 +11483,7 @@ impl InstanceTypeSpecification {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceFleetStatus {
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
@@ -12271,15 +11527,6 @@ impl InstanceFleetStatus {
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
     pub fn timeline(&self) -> std::option::Option<&crate::model::InstanceFleetTimeline> {
         self.timeline.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceFleetStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceFleetStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.field("timeline", &self.timeline);
-        formatter.finish()
     }
 }
 /// See [`InstanceFleetStatus`](crate::model::InstanceFleetStatus).
@@ -12375,7 +11622,7 @@ impl InstanceFleetStatus {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceFleetTimeline {
     /// <p>The time and date the instance fleet was created.</p>
     #[doc(hidden)]
@@ -12399,15 +11646,6 @@ impl InstanceFleetTimeline {
     /// <p>The time and date the instance fleet terminated.</p>
     pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for InstanceFleetTimeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceFleetTimeline");
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("ready_date_time", &self.ready_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
     }
 }
 /// See [`InstanceFleetTimeline`](crate::model::InstanceFleetTimeline).
@@ -12481,7 +11719,7 @@ impl InstanceFleetTimeline {
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceFleetStateChangeReason {
     /// <p>A code corresponding to the reason the state change occurred.</p>
     #[doc(hidden)]
@@ -12498,14 +11736,6 @@ impl InstanceFleetStateChangeReason {
     /// <p>An explanatory message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceFleetStateChangeReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceFleetStateChangeReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`InstanceFleetStateChangeReason`](crate::model::InstanceFleetStateChangeReason).
@@ -12791,7 +12021,7 @@ impl AsRef<str> for InstanceFleetState {
 
 /// <p>The summary description of the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterSummary {
     /// <p>The unique identifier for the cluster.</p>
     #[doc(hidden)]
@@ -12836,18 +12066,6 @@ impl ClusterSummary {
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("normalized_instance_hours", &self.normalized_instance_hours);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("outpost_arn", &self.outpost_arn);
-        formatter.finish()
     }
 }
 /// See [`ClusterSummary`](crate::model::ClusterSummary).
@@ -12949,7 +12167,7 @@ impl ClusterSummary {
 
 /// <p>The detailed status of the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterStatus {
     /// <p>The current state of the cluster.</p>
     #[doc(hidden)]
@@ -12975,15 +12193,6 @@ impl ClusterStatus {
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
     pub fn timeline(&self) -> std::option::Option<&crate::model::ClusterTimeline> {
         self.timeline.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusterStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_change_reason", &self.state_change_reason);
-        formatter.field("timeline", &self.timeline);
-        formatter.finish()
     }
 }
 /// See [`ClusterStatus`](crate::model::ClusterStatus).
@@ -13055,7 +12264,7 @@ impl ClusterStatus {
 
 /// <p>Represents the timeline of the cluster's lifecycle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterTimeline {
     /// <p>The creation date and time of the cluster.</p>
     #[doc(hidden)]
@@ -13079,15 +12288,6 @@ impl ClusterTimeline {
     /// <p>The date and time when the cluster was terminated.</p>
     pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusterTimeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterTimeline");
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("ready_date_time", &self.ready_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
     }
 }
 /// See [`ClusterTimeline`](crate::model::ClusterTimeline).
@@ -13159,7 +12359,7 @@ impl ClusterTimeline {
 
 /// <p>The reason that the cluster changed to its current state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterStateChangeReason {
     /// <p>The programmatic code for the state change reason.</p>
     #[doc(hidden)]
@@ -13176,14 +12376,6 @@ impl ClusterStateChangeReason {
     /// <p>The descriptive message for the state change reason.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterStateChangeReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterStateChangeReason");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ClusterStateChangeReason`](crate::model::ClusterStateChangeReason).
@@ -13491,7 +12683,7 @@ impl AsRef<str> for ClusterState {
 
 /// <p>An entity describing an executable that runs on a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Command {
     /// <p>The name of the command.</p>
     #[doc(hidden)]
@@ -13515,15 +12707,6 @@ impl Command {
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
     pub fn args(&self) -> std::option::Option<&[std::string::String]> {
         self.args.as_deref()
-    }
-}
-impl std::fmt::Debug for Command {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Command");
-        formatter.field("name", &self.name);
-        formatter.field("script_path", &self.script_path);
-        formatter.field("args", &self.args);
-        formatter.finish()
     }
 }
 /// See [`Command`](crate::model::Command).
@@ -13595,7 +12778,7 @@ impl Command {
 
 /// <p>Details for an Amazon EMR Studio session mapping including creation time, user or group ID, Studio ID, and so on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionMappingDetail {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -13647,19 +12830,6 @@ impl SessionMappingDetail {
     /// <p>The time the session mapping was last modified.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SessionMappingDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionMappingDetail");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("identity_name", &self.identity_name);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("session_policy_arn", &self.session_policy_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`SessionMappingDetail`](crate::model::SessionMappingDetail).
@@ -13785,7 +12955,7 @@ impl SessionMappingDetail {
 
 /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
     #[doc(hidden)]
@@ -13802,14 +12972,6 @@ impl BlockPublicAccessConfigurationMetadata {
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
     pub fn created_by_arn(&self) -> std::option::Option<&str> {
         self.created_by_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for BlockPublicAccessConfigurationMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockPublicAccessConfigurationMetadata");
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("created_by_arn", &self.created_by_arn);
-        formatter.finish()
     }
 }
 /// See [`BlockPublicAccessConfigurationMetadata`](crate::model::BlockPublicAccessConfigurationMetadata).
@@ -13866,7 +13028,7 @@ impl BlockPublicAccessConfigurationMetadata {
 
 /// <p>Details for an Amazon EMR Studio including ID, creation time, name, and so on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Studio {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -13988,35 +13150,6 @@ impl Studio {
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for Studio {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Studio");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("studio_arn", &self.studio_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("auth_mode", &self.auth_mode);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("user_role", &self.user_role);
-        formatter.field(
-            "workspace_security_group_id",
-            &self.workspace_security_group_id,
-        );
-        formatter.field("engine_security_group_id", &self.engine_security_group_id);
-        formatter.field("url", &self.url);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("default_s3_location", &self.default_s3_location);
-        formatter.field("idp_auth_url", &self.idp_auth_url);
-        formatter.field(
-            "idp_relay_state_parameter_name",
-            &self.idp_relay_state_parameter_name,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Studio`](crate::model::Studio).
@@ -14286,7 +13419,7 @@ impl Studio {
 
 /// <p>This represents a step in a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Step {
     /// <p>The identifier of the cluster step.</p>
     #[doc(hidden)]
@@ -14337,18 +13470,6 @@ impl Step {
     /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Step {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Step");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("config", &self.config);
-        formatter.field("action_on_failure", &self.action_on_failure);
-        formatter.field("status", &self.status);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.finish()
     }
 }
 /// See [`Step`](crate::model::Step).
@@ -14462,7 +13583,7 @@ impl Step {
 
 /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OsRelease {
     /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
     #[doc(hidden)]
@@ -14472,13 +13593,6 @@ impl OsRelease {
     /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
-    }
-}
-impl std::fmt::Debug for OsRelease {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OsRelease");
-        formatter.field("label", &self.label);
-        formatter.finish()
     }
 }
 /// See [`OsRelease`](crate::model::OsRelease).
@@ -14515,7 +13629,7 @@ impl OsRelease {
 
 /// <p>The returned release label application names or versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimplifiedApplication {
     /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
     #[doc(hidden)]
@@ -14532,14 +13646,6 @@ impl SimplifiedApplication {
     /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for SimplifiedApplication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimplifiedApplication");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`SimplifiedApplication`](crate::model::SimplifiedApplication).
@@ -14590,7 +13696,7 @@ impl SimplifiedApplication {
 
 /// <p>A notebook execution. An execution is a specific instance that an EMR Notebook is run using the <code>StartNotebookExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotebookExecution {
     /// <p>The unique identifier of a notebook execution.</p>
     #[doc(hidden)]
@@ -14708,28 +13814,6 @@ impl NotebookExecution {
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for NotebookExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotebookExecution");
-        formatter.field("notebook_execution_id", &self.notebook_execution_id);
-        formatter.field("editor_id", &self.editor_id);
-        formatter.field("execution_engine", &self.execution_engine);
-        formatter.field("notebook_execution_name", &self.notebook_execution_name);
-        formatter.field("notebook_params", &self.notebook_params);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("arn", &self.arn);
-        formatter.field("output_notebook_uri", &self.output_notebook_uri);
-        formatter.field("last_state_change_reason", &self.last_state_change_reason);
-        formatter.field(
-            "notebook_instance_security_group_id",
-            &self.notebook_instance_security_group_id,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`NotebookExecution`](crate::model::NotebookExecution).
@@ -14978,7 +14062,7 @@ impl NotebookExecution {
 
 /// <p>A description of a cluster (job flow).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobFlowDetail {
     /// <p>The job flow identifier.</p>
     #[doc(hidden)]
@@ -15090,27 +14174,6 @@ impl JobFlowDetail {
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
     pub fn scale_down_behavior(&self) -> std::option::Option<&crate::model::ScaleDownBehavior> {
         self.scale_down_behavior.as_ref()
-    }
-}
-impl std::fmt::Debug for JobFlowDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobFlowDetail");
-        formatter.field("job_flow_id", &self.job_flow_id);
-        formatter.field("name", &self.name);
-        formatter.field("log_uri", &self.log_uri);
-        formatter.field("log_encryption_kms_key_id", &self.log_encryption_kms_key_id);
-        formatter.field("ami_version", &self.ami_version);
-        formatter.field("execution_status_detail", &self.execution_status_detail);
-        formatter.field("instances", &self.instances);
-        formatter.field("steps", &self.steps);
-        formatter.field("bootstrap_actions", &self.bootstrap_actions);
-        formatter.field("supported_products", &self.supported_products);
-        formatter.field("visible_to_all_users", &self.visible_to_all_users);
-        formatter.field("job_flow_role", &self.job_flow_role);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("auto_scaling_role", &self.auto_scaling_role);
-        formatter.field("scale_down_behavior", &self.scale_down_behavior);
-        formatter.finish()
     }
 }
 /// See [`JobFlowDetail`](crate::model::JobFlowDetail).
@@ -15369,7 +14432,7 @@ impl JobFlowDetail {
 
 /// <p>Reports the configuration of a bootstrap action in a cluster (job flow).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BootstrapActionDetail {
     /// <p>A description of the bootstrap action.</p>
     #[doc(hidden)]
@@ -15381,13 +14444,6 @@ impl BootstrapActionDetail {
         &self,
     ) -> std::option::Option<&crate::model::BootstrapActionConfig> {
         self.bootstrap_action_config.as_ref()
-    }
-}
-impl std::fmt::Debug for BootstrapActionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BootstrapActionDetail");
-        formatter.field("bootstrap_action_config", &self.bootstrap_action_config);
-        formatter.finish()
     }
 }
 /// See [`BootstrapActionDetail`](crate::model::BootstrapActionDetail).
@@ -15433,7 +14489,7 @@ impl BootstrapActionDetail {
 
 /// <p>Combines the execution state and configuration of a step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepDetail {
     /// <p>The step configuration.</p>
     #[doc(hidden)]
@@ -15452,14 +14508,6 @@ impl StepDetail {
         &self,
     ) -> std::option::Option<&crate::model::StepExecutionStatusDetail> {
         self.execution_status_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for StepDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepDetail");
-        formatter.field("step_config", &self.step_config);
-        formatter.field("execution_status_detail", &self.execution_status_detail);
-        formatter.finish()
     }
 }
 /// See [`StepDetail`](crate::model::StepDetail).
@@ -15520,7 +14568,7 @@ impl StepDetail {
 
 /// <p>The execution state of a step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepExecutionStatusDetail {
     /// <p>The state of the step.</p>
     #[doc(hidden)]
@@ -15558,17 +14606,6 @@ impl StepExecutionStatusDetail {
     /// <p>A description of the step's current state.</p>
     pub fn last_state_change_reason(&self) -> std::option::Option<&str> {
         self.last_state_change_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for StepExecutionStatusDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepExecutionStatusDetail");
-        formatter.field("state", &self.state);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.field("last_state_change_reason", &self.last_state_change_reason);
-        formatter.finish()
     }
 }
 /// See [`StepExecutionStatusDetail`](crate::model::StepExecutionStatusDetail).
@@ -15795,7 +14832,7 @@ impl AsRef<str> for StepExecutionState {
 
 /// <p>Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobFlowInstancesDetail {
     /// <p>The Amazon EC2 master node instance type.</p>
     #[doc(hidden)]
@@ -15889,28 +14926,6 @@ impl JobFlowInstancesDetail {
     /// <p>The Hadoop version for the cluster.</p>
     pub fn hadoop_version(&self) -> std::option::Option<&str> {
         self.hadoop_version.as_deref()
-    }
-}
-impl std::fmt::Debug for JobFlowInstancesDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobFlowInstancesDetail");
-        formatter.field("master_instance_type", &self.master_instance_type);
-        formatter.field("master_public_dns_name", &self.master_public_dns_name);
-        formatter.field("master_instance_id", &self.master_instance_id);
-        formatter.field("slave_instance_type", &self.slave_instance_type);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.field("instance_groups", &self.instance_groups);
-        formatter.field("normalized_instance_hours", &self.normalized_instance_hours);
-        formatter.field("ec2_key_name", &self.ec2_key_name);
-        formatter.field("ec2_subnet_id", &self.ec2_subnet_id);
-        formatter.field("placement", &self.placement);
-        formatter.field(
-            "keep_job_flow_alive_when_no_steps",
-            &self.keep_job_flow_alive_when_no_steps,
-        );
-        formatter.field("termination_protected", &self.termination_protected);
-        formatter.field("hadoop_version", &self.hadoop_version);
-        formatter.finish()
     }
 }
 /// See [`JobFlowInstancesDetail`](crate::model::JobFlowInstancesDetail).
@@ -16129,7 +15144,7 @@ impl JobFlowInstancesDetail {
 
 /// <p>Detailed information about an instance group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceGroupDetail {
     /// <p>Unique identifier for the instance group.</p>
     #[doc(hidden)]
@@ -16237,27 +15252,6 @@ impl InstanceGroupDetail {
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     pub fn custom_ami_id(&self) -> std::option::Option<&str> {
         self.custom_ami_id.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceGroupDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceGroupDetail");
-        formatter.field("instance_group_id", &self.instance_group_id);
-        formatter.field("name", &self.name);
-        formatter.field("market", &self.market);
-        formatter.field("instance_role", &self.instance_role);
-        formatter.field("bid_price", &self.bid_price);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("instance_request_count", &self.instance_request_count);
-        formatter.field("instance_running_count", &self.instance_running_count);
-        formatter.field("state", &self.state);
-        formatter.field("last_state_change_reason", &self.last_state_change_reason);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("ready_date_time", &self.ready_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.field("custom_ami_id", &self.custom_ami_id);
-        formatter.finish()
     }
 }
 /// See [`InstanceGroupDetail`](crate::model::InstanceGroupDetail).
@@ -16494,7 +15488,7 @@ impl InstanceGroupDetail {
 
 /// <p>Describes the status of the cluster (job flow).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobFlowExecutionStatusDetail {
     /// <p>The state of the job flow.</p>
     #[doc(hidden)]
@@ -16539,18 +15533,6 @@ impl JobFlowExecutionStatusDetail {
     /// <p>Description of the job flow last changed state.</p>
     pub fn last_state_change_reason(&self) -> std::option::Option<&str> {
         self.last_state_change_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for JobFlowExecutionStatusDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobFlowExecutionStatusDetail");
-        formatter.field("state", &self.state);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("ready_date_time", &self.ready_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.field("last_state_change_reason", &self.last_state_change_reason);
-        formatter.finish()
     }
 }
 /// See [`JobFlowExecutionStatusDetail`](crate::model::JobFlowExecutionStatusDetail).
@@ -16798,7 +15780,7 @@ impl AsRef<str> for JobFlowExecutionState {
 
 /// <p>The detailed description of the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The unique identifier for the cluster.</p>
     #[doc(hidden)]
@@ -17030,43 +16012,6 @@ impl Cluster {
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
     pub fn os_release_label(&self) -> std::option::Option<&str> {
         self.os_release_label.as_deref()
-    }
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("ec2_instance_attributes", &self.ec2_instance_attributes);
-        formatter.field("instance_collection_type", &self.instance_collection_type);
-        formatter.field("log_uri", &self.log_uri);
-        formatter.field("log_encryption_kms_key_id", &self.log_encryption_kms_key_id);
-        formatter.field("requested_ami_version", &self.requested_ami_version);
-        formatter.field("running_ami_version", &self.running_ami_version);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("auto_terminate", &self.auto_terminate);
-        formatter.field("termination_protected", &self.termination_protected);
-        formatter.field("visible_to_all_users", &self.visible_to_all_users);
-        formatter.field("applications", &self.applications);
-        formatter.field("tags", &self.tags);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("normalized_instance_hours", &self.normalized_instance_hours);
-        formatter.field("master_public_dns_name", &self.master_public_dns_name);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("security_configuration", &self.security_configuration);
-        formatter.field("auto_scaling_role", &self.auto_scaling_role);
-        formatter.field("scale_down_behavior", &self.scale_down_behavior);
-        formatter.field("custom_ami_id", &self.custom_ami_id);
-        formatter.field("ebs_root_volume_size", &self.ebs_root_volume_size);
-        formatter.field("repo_upgrade_on_boot", &self.repo_upgrade_on_boot);
-        formatter.field("kerberos_attributes", &self.kerberos_attributes);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("outpost_arn", &self.outpost_arn);
-        formatter.field("step_concurrency_level", &self.step_concurrency_level);
-        formatter.field("placement_groups", &self.placement_groups);
-        formatter.field("os_release_label", &self.os_release_label);
-        formatter.finish()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
@@ -17655,7 +16600,7 @@ impl AsRef<str> for InstanceCollectionType {
 
 /// <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2InstanceAttributes {
     /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
     #[doc(hidden)]
@@ -17735,41 +16680,6 @@ impl Ec2InstanceAttributes {
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
     pub fn additional_slave_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_slave_security_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for Ec2InstanceAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2InstanceAttributes");
-        formatter.field("ec2_key_name", &self.ec2_key_name);
-        formatter.field("ec2_subnet_id", &self.ec2_subnet_id);
-        formatter.field("requested_ec2_subnet_ids", &self.requested_ec2_subnet_ids);
-        formatter.field("ec2_availability_zone", &self.ec2_availability_zone);
-        formatter.field(
-            "requested_ec2_availability_zones",
-            &self.requested_ec2_availability_zones,
-        );
-        formatter.field("iam_instance_profile", &self.iam_instance_profile);
-        formatter.field(
-            "emr_managed_master_security_group",
-            &self.emr_managed_master_security_group,
-        );
-        formatter.field(
-            "emr_managed_slave_security_group",
-            &self.emr_managed_slave_security_group,
-        );
-        formatter.field(
-            "service_access_security_group",
-            &self.service_access_security_group,
-        );
-        formatter.field(
-            "additional_master_security_groups",
-            &self.additional_master_security_groups,
-        );
-        formatter.field(
-            "additional_slave_security_groups",
-            &self.additional_slave_security_groups,
-        );
-        formatter.finish()
     }
 }
 /// See [`Ec2InstanceAttributes`](crate::model::Ec2InstanceAttributes).
@@ -18004,7 +16914,7 @@ impl Ec2InstanceAttributes {
 
 /// <p>Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelStepsInfo {
     /// <p>The encrypted StepId of a step.</p>
     #[doc(hidden)]
@@ -18028,15 +16938,6 @@ impl CancelStepsInfo {
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelStepsInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelStepsInfo");
-        formatter.field("step_id", &self.step_id);
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`CancelStepsInfo`](crate::model::CancelStepsInfo).

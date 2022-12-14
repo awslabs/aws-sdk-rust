@@ -125,7 +125,7 @@ impl AsRef<str> for EndpointState {
 
 /// <p>The event buses the endpoint is associated with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
     #[doc(hidden)]
@@ -135,13 +135,6 @@ impl EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
     pub fn event_bus_arn(&self) -> std::option::Option<&str> {
         self.event_bus_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointEventBus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointEventBus");
-        formatter.field("event_bus_arn", &self.event_bus_arn);
-        formatter.finish()
     }
 }
 /// See [`EndpointEventBus`](crate::model::EndpointEventBus).
@@ -183,7 +176,7 @@ impl EndpointEventBus {
 
 /// <p>Endpoints can replicate all events to the secondary Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationConfig {
     /// <p>The state of event replication.</p>
     #[doc(hidden)]
@@ -193,13 +186,6 @@ impl ReplicationConfig {
     /// <p>The state of event replication.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ReplicationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for ReplicationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationConfig");
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`ReplicationConfig`](crate::model::ReplicationConfig).
@@ -329,7 +315,7 @@ impl AsRef<str> for ReplicationState {
 
 /// <p>The routing configuration of the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingConfig {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     #[doc(hidden)]
@@ -339,13 +325,6 @@ impl RoutingConfig {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     pub fn failover_config(&self) -> std::option::Option<&crate::model::FailoverConfig> {
         self.failover_config.as_ref()
-    }
-}
-impl std::fmt::Debug for RoutingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingConfig");
-        formatter.field("failover_config", &self.failover_config);
-        formatter.finish()
     }
 }
 /// See [`RoutingConfig`](crate::model::RoutingConfig).
@@ -387,7 +366,7 @@ impl RoutingConfig {
 
 /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailoverConfig {
     /// <p>The main Region of the endpoint.</p>
     #[doc(hidden)]
@@ -404,14 +383,6 @@ impl FailoverConfig {
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
     pub fn secondary(&self) -> std::option::Option<&crate::model::Secondary> {
         self.secondary.as_ref()
-    }
-}
-impl std::fmt::Debug for FailoverConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailoverConfig");
-        formatter.field("primary", &self.primary);
-        formatter.field("secondary", &self.secondary);
-        formatter.finish()
     }
 }
 /// See [`FailoverConfig`](crate::model::FailoverConfig).
@@ -465,7 +436,7 @@ impl FailoverConfig {
 
 /// <p>The secondary Region that processes events when failover is triggered or replication is enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Secondary {
     /// <p>Defines the secondary Region.</p>
     #[doc(hidden)]
@@ -475,13 +446,6 @@ impl Secondary {
     /// <p>Defines the secondary Region.</p>
     pub fn route(&self) -> std::option::Option<&str> {
         self.route.as_deref()
-    }
-}
-impl std::fmt::Debug for Secondary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Secondary");
-        formatter.field("route", &self.route);
-        formatter.finish()
     }
 }
 /// See [`Secondary`](crate::model::Secondary).
@@ -518,7 +482,7 @@ impl Secondary {
 
 /// <p>The primary Region of the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Primary {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
     #[doc(hidden)]
@@ -528,13 +492,6 @@ impl Primary {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
     pub fn health_check(&self) -> std::option::Option<&str> {
         self.health_check.as_deref()
-    }
-}
-impl std::fmt::Debug for Primary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Primary");
-        formatter.field("health_check", &self.health_check);
-        formatter.finish()
     }
 }
 /// See [`Primary`](crate::model::Primary).
@@ -696,7 +653,7 @@ impl AsRef<str> for ConnectionState {
 
 /// <p>Contains the additional parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionAuthRequestParameters {
     /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
     #[doc(hidden)]
@@ -738,19 +695,6 @@ impl UpdateConnectionAuthRequestParameters {
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
         self.invocation_http_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateConnectionAuthRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionAuthRequestParameters");
-        formatter.field("basic_auth_parameters", &self.basic_auth_parameters);
-        formatter.field("o_auth_parameters", &self.o_auth_parameters);
-        formatter.field("api_key_auth_parameters", &self.api_key_auth_parameters);
-        formatter.field(
-            "invocation_http_parameters",
-            &self.invocation_http_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`UpdateConnectionAuthRequestParameters`](crate::model::UpdateConnectionAuthRequestParameters).
@@ -853,7 +797,7 @@ impl UpdateConnectionAuthRequestParameters {
 
 /// <p>Contains additional parameters for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionHttpParameters {
     /// <p>Contains additional header parameters for the connection.</p>
     #[doc(hidden)]
@@ -883,15 +827,6 @@ impl ConnectionHttpParameters {
     /// <p>Contains additional body string parameters for the connection.</p>
     pub fn body_parameters(&self) -> std::option::Option<&[crate::model::ConnectionBodyParameter]> {
         self.body_parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionHttpParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionHttpParameters");
-        formatter.field("header_parameters", &self.header_parameters);
-        formatter.field("query_string_parameters", &self.query_string_parameters);
-        formatter.field("body_parameters", &self.body_parameters);
-        formatter.finish()
     }
 }
 /// See [`ConnectionHttpParameters`](crate::model::ConnectionHttpParameters).
@@ -987,7 +922,7 @@ impl ConnectionHttpParameters {
 
 /// <p>Additional parameter included in the body. You can include up to 100 additional body parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionBodyParameter {
     /// <p>The key for the parameter.</p>
     #[doc(hidden)]
@@ -1011,15 +946,6 @@ impl ConnectionBodyParameter {
     /// <p>Specified whether the value is secret.</p>
     pub fn is_value_secret(&self) -> bool {
         self.is_value_secret
-    }
-}
-impl std::fmt::Debug for ConnectionBodyParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionBodyParameter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("is_value_secret", &self.is_value_secret);
-        formatter.finish()
     }
 }
 /// See [`ConnectionBodyParameter`](crate::model::ConnectionBodyParameter).
@@ -1082,7 +1008,7 @@ impl ConnectionBodyParameter {
 
 /// <p>Additional query string parameter for the connection. You can include up to 100 additional query string parameters per request. Each additional parameter counts towards the event payload size, which cannot exceed 64 KB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionQueryStringParameter {
     /// <p>The key for a query string parameter.</p>
     #[doc(hidden)]
@@ -1106,15 +1032,6 @@ impl ConnectionQueryStringParameter {
     /// <p>Specifies whether the value is secret.</p>
     pub fn is_value_secret(&self) -> bool {
         self.is_value_secret
-    }
-}
-impl std::fmt::Debug for ConnectionQueryStringParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionQueryStringParameter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("is_value_secret", &self.is_value_secret);
-        formatter.finish()
     }
 }
 /// See [`ConnectionQueryStringParameter`](crate::model::ConnectionQueryStringParameter).
@@ -1177,7 +1094,7 @@ impl ConnectionQueryStringParameter {
 
 /// <p>Additional parameter included in the header. You can include up to 100 additional header parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionHeaderParameter {
     /// <p>The key for the parameter.</p>
     #[doc(hidden)]
@@ -1201,15 +1118,6 @@ impl ConnectionHeaderParameter {
     /// <p>Specified whether the value is a secret.</p>
     pub fn is_value_secret(&self) -> bool {
         self.is_value_secret
-    }
-}
-impl std::fmt::Debug for ConnectionHeaderParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionHeaderParameter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("is_value_secret", &self.is_value_secret);
-        formatter.finish()
     }
 }
 /// See [`ConnectionHeaderParameter`](crate::model::ConnectionHeaderParameter).
@@ -1272,7 +1180,7 @@ impl ConnectionHeaderParameter {
 
 /// <p>Contains the API key authorization parameters to use to update the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
     #[doc(hidden)]
@@ -1289,14 +1197,6 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
     /// <p>The value associated with teh API key to use for authorization.</p>
     pub fn api_key_value(&self) -> std::option::Option<&str> {
         self.api_key_value.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateConnectionApiKeyAuthRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionApiKeyAuthRequestParameters");
-        formatter.field("api_key_name", &self.api_key_name);
-        formatter.field("api_key_value", &self.api_key_value);
-        formatter.finish()
     }
 }
 /// See [`UpdateConnectionApiKeyAuthRequestParameters`](crate::model::UpdateConnectionApiKeyAuthRequestParameters).
@@ -1350,7 +1250,7 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
 
 /// <p>Contains the OAuth request parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionOAuthRequestParameters {
     /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the client parameters to use for the connection when OAuth is specified as the authorization type.</p>
     #[doc(hidden)]
@@ -1386,16 +1286,6 @@ impl UpdateConnectionOAuthRequestParameters {
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
         self.o_auth_http_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateConnectionOAuthRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionOAuthRequestParameters");
-        formatter.field("client_parameters", &self.client_parameters);
-        formatter.field("authorization_endpoint", &self.authorization_endpoint);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("o_auth_http_parameters", &self.o_auth_http_parameters);
-        formatter.finish()
     }
 }
 /// See [`UpdateConnectionOAuthRequestParameters`](crate::model::UpdateConnectionOAuthRequestParameters).
@@ -1587,7 +1477,7 @@ impl AsRef<str> for ConnectionOAuthHttpMethod {
 
 /// <p>Contains the OAuth authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization.</p>
     #[doc(hidden)]
@@ -1604,14 +1494,6 @@ impl UpdateConnectionOAuthClientRequestParameters {
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateConnectionOAuthClientRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionOAuthClientRequestParameters");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.finish()
     }
 }
 /// See [`UpdateConnectionOAuthClientRequestParameters`](crate::model::UpdateConnectionOAuthClientRequestParameters).
@@ -1665,7 +1547,7 @@ impl UpdateConnectionOAuthClientRequestParameters {
 
 /// <p>Contains the Basic authorization parameters for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
     #[doc(hidden)]
@@ -1682,14 +1564,6 @@ impl UpdateConnectionBasicAuthRequestParameters {
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateConnectionBasicAuthRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionBasicAuthRequestParameters");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.finish()
     }
 }
 /// See [`UpdateConnectionBasicAuthRequestParameters`](crate::model::UpdateConnectionBasicAuthRequestParameters).
@@ -2163,7 +2037,7 @@ impl AsRef<str> for ApiDestinationHttpMethod {
 
 /// <p>A key-value pair associated with an Amazon Web Services resource. In EventBridge, rules and event buses support tagging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
     #[doc(hidden)]
@@ -2180,14 +2054,6 @@ impl Tag {
     /// <p>The value for the specified tag key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -2355,7 +2221,7 @@ impl AsRef<str> for ReplayState {
 
 /// <p>A <code>ReplayDestination</code> object that contains details about a replay.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplayDestination {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     #[doc(hidden)]
@@ -2372,14 +2238,6 @@ impl ReplayDestination {
     /// <p>A list of ARNs for rules to replay events to.</p>
     pub fn filter_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.filter_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplayDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplayDestination");
-        formatter.field("arn", &self.arn);
-        formatter.field("filter_arns", &self.filter_arns);
-        formatter.finish()
     }
 }
 /// See [`ReplayDestination`](crate::model::ReplayDestination).
@@ -2439,7 +2297,7 @@ impl ReplayDestination {
 
 /// <p>Represents a target that failed to be removed from a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTargetsResultEntry {
     /// <p>The ID of the target.</p>
     #[doc(hidden)]
@@ -2463,15 +2321,6 @@ impl RemoveTargetsResultEntry {
     /// <p>The error message that explains why the target removal failed.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for RemoveTargetsResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTargetsResultEntry");
-        formatter.field("target_id", &self.target_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`RemoveTargetsResultEntry`](crate::model::RemoveTargetsResultEntry).
@@ -2537,7 +2386,7 @@ impl RemoveTargetsResultEntry {
 
 /// <p>Represents a target that failed to be added to a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutTargetsResultEntry {
     /// <p>The ID of the target.</p>
     #[doc(hidden)]
@@ -2561,15 +2410,6 @@ impl PutTargetsResultEntry {
     /// <p>The error message that explains why the target addition failed.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for PutTargetsResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutTargetsResultEntry");
-        formatter.field("target_id", &self.target_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`PutTargetsResultEntry`](crate::model::PutTargetsResultEntry).
@@ -2636,7 +2476,7 @@ impl PutTargetsResultEntry {
 /// <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html">PutTargets</a>.</p>
 /// <p>If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Target {
     /// <p>The ID of the target within the specified rule. Use this ID to reference the target when updating the rule. We recommend using a memorable and unique string.</p>
     #[doc(hidden)]
@@ -2766,31 +2606,6 @@ impl Target {
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
     pub fn retry_policy(&self) -> std::option::Option<&crate::model::RetryPolicy> {
         self.retry_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for Target {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Target");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("input", &self.input);
-        formatter.field("input_path", &self.input_path);
-        formatter.field("input_transformer", &self.input_transformer);
-        formatter.field("kinesis_parameters", &self.kinesis_parameters);
-        formatter.field("run_command_parameters", &self.run_command_parameters);
-        formatter.field("ecs_parameters", &self.ecs_parameters);
-        formatter.field("batch_parameters", &self.batch_parameters);
-        formatter.field("sqs_parameters", &self.sqs_parameters);
-        formatter.field("http_parameters", &self.http_parameters);
-        formatter.field("redshift_data_parameters", &self.redshift_data_parameters);
-        formatter.field(
-            "sage_maker_pipeline_parameters",
-            &self.sage_maker_pipeline_parameters,
-        );
-        formatter.field("dead_letter_config", &self.dead_letter_config);
-        formatter.field("retry_policy", &self.retry_policy);
-        formatter.finish()
     }
 }
 /// See [`Target`](crate::model::Target).
@@ -3058,7 +2873,7 @@ impl Target {
 
 /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryPolicy {
     /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
     #[doc(hidden)]
@@ -3075,17 +2890,6 @@ impl RetryPolicy {
     /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
     pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_event_age_in_seconds
-    }
-}
-impl std::fmt::Debug for RetryPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryPolicy");
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "maximum_event_age_in_seconds",
-            &self.maximum_event_age_in_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`RetryPolicy`](crate::model::RetryPolicy).
@@ -3136,7 +2940,7 @@ impl RetryPolicy {
 
 /// <p>A <code>DeadLetterConfig</code> object that contains information about a dead-letter queue configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeadLetterConfig {
     /// <p>The ARN of the SQS queue specified as the target for the dead-letter queue.</p>
     #[doc(hidden)]
@@ -3146,13 +2950,6 @@ impl DeadLetterConfig {
     /// <p>The ARN of the SQS queue specified as the target for the dead-letter queue.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeadLetterConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeadLetterConfig");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
@@ -3189,7 +2986,7 @@ impl DeadLetterConfig {
 
 /// <p>These are custom parameters to use when the target is a SageMaker Model Building Pipeline that starts based on EventBridge events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SageMakerPipelineParameters {
     /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
     #[doc(hidden)]
@@ -3202,13 +2999,6 @@ impl SageMakerPipelineParameters {
         &self,
     ) -> std::option::Option<&[crate::model::SageMakerPipelineParameter]> {
         self.pipeline_parameter_list.as_deref()
-    }
-}
-impl std::fmt::Debug for SageMakerPipelineParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SageMakerPipelineParameters");
-        formatter.field("pipeline_parameter_list", &self.pipeline_parameter_list);
-        formatter.finish()
     }
 }
 /// See [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
@@ -3260,7 +3050,7 @@ impl SageMakerPipelineParameters {
 
 /// <p>Name/Value pair of a parameter to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SageMakerPipelineParameter {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     #[doc(hidden)]
@@ -3277,14 +3067,6 @@ impl SageMakerPipelineParameter {
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SageMakerPipelineParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SageMakerPipelineParameter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
@@ -3335,7 +3117,7 @@ impl SageMakerPipelineParameter {
 
 /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
     #[doc(hidden)]
@@ -3380,18 +3162,6 @@ impl RedshiftDataParameters {
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub fn with_event(&self) -> bool {
         self.with_event
-    }
-}
-impl std::fmt::Debug for RedshiftDataParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftDataParameters");
-        formatter.field("secret_manager_arn", &self.secret_manager_arn);
-        formatter.field("database", &self.database);
-        formatter.field("db_user", &self.db_user);
-        formatter.field("sql", &self.sql);
-        formatter.field("statement_name", &self.statement_name);
-        formatter.field("with_event", &self.with_event);
-        formatter.finish()
     }
 }
 /// See [`RedshiftDataParameters`](crate::model::RedshiftDataParameters).
@@ -3496,7 +3266,7 @@ impl RedshiftDataParameters {
 
 /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
     #[doc(hidden)]
@@ -3528,15 +3298,6 @@ impl HttpParameters {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.query_string_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpParameters");
-        formatter.field("path_parameter_values", &self.path_parameter_values);
-        formatter.field("header_parameters", &self.header_parameters);
-        formatter.field("query_string_parameters", &self.query_string_parameters);
-        formatter.finish()
     }
 }
 /// See [`HttpParameters`](crate::model::HttpParameters).
@@ -3642,7 +3403,7 @@ impl HttpParameters {
 
 /// <p>This structure includes the custom parameter to be used when the target is an SQS FIFO queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqsParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
     #[doc(hidden)]
@@ -3652,13 +3413,6 @@ impl SqsParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
     pub fn message_group_id(&self) -> std::option::Option<&str> {
         self.message_group_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SqsParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqsParameters");
-        formatter.field("message_group_id", &self.message_group_id);
-        formatter.finish()
     }
 }
 /// See [`SqsParameters`](crate::model::SqsParameters).
@@ -3700,7 +3454,7 @@ impl SqsParameters {
 
 /// <p>The custom parameters to be used when the target is an Batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchParameters {
     /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
     #[doc(hidden)]
@@ -3731,16 +3485,6 @@ impl BatchParameters {
     /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
     pub fn retry_strategy(&self) -> std::option::Option<&crate::model::BatchRetryStrategy> {
         self.retry_strategy.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchParameters");
-        formatter.field("job_definition", &self.job_definition);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("array_properties", &self.array_properties);
-        formatter.field("retry_strategy", &self.retry_strategy);
-        formatter.finish()
     }
 }
 /// See [`BatchParameters`](crate::model::BatchParameters).
@@ -3824,7 +3568,7 @@ impl BatchParameters {
 
 /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRetryStrategy {
     /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
     #[doc(hidden)]
@@ -3834,13 +3578,6 @@ impl BatchRetryStrategy {
     /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
     pub fn attempts(&self) -> i32 {
         self.attempts
-    }
-}
-impl std::fmt::Debug for BatchRetryStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRetryStrategy");
-        formatter.field("attempts", &self.attempts);
-        formatter.finish()
     }
 }
 /// See [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
@@ -3879,7 +3616,7 @@ impl BatchRetryStrategy {
 
 /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchArrayProperties {
     /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
     #[doc(hidden)]
@@ -3889,13 +3626,6 @@ impl BatchArrayProperties {
     /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
     pub fn size(&self) -> i32 {
         self.size
-    }
-}
-impl std::fmt::Debug for BatchArrayProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchArrayProperties");
-        formatter.field("size", &self.size);
-        formatter.finish()
     }
 }
 /// See [`BatchArrayProperties`](crate::model::BatchArrayProperties).
@@ -3934,7 +3664,7 @@ impl BatchArrayProperties {
 
 /// <p>The custom parameters to be used when the target is an Amazon ECS task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EcsParameters {
     /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
     #[doc(hidden)]
@@ -4049,29 +3779,6 @@ impl EcsParameters {
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for EcsParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EcsParameters");
-        formatter.field("task_definition_arn", &self.task_definition_arn);
-        formatter.field("task_count", &self.task_count);
-        formatter.field("launch_type", &self.launch_type);
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("group", &self.group);
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
-        formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
-        formatter.field("enable_execute_command", &self.enable_execute_command);
-        formatter.field("placement_constraints", &self.placement_constraints);
-        formatter.field("placement_strategy", &self.placement_strategy);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`EcsParameters`](crate::model::EcsParameters).
@@ -4414,7 +4121,7 @@ impl AsRef<str> for PropagateTags {
 
 /// <p>The task placement strategy for a task or service. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the Amazon Elastic Container Service Service Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementStrategy {
     /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
     #[doc(hidden)]
@@ -4431,14 +4138,6 @@ impl PlacementStrategy {
     /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
     pub fn field(&self) -> std::option::Option<&str> {
         self.field.as_deref()
-    }
-}
-impl std::fmt::Debug for PlacementStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementStrategy");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("field", &self.field);
-        formatter.finish()
     }
 }
 /// See [`PlacementStrategy`](crate::model::PlacementStrategy).
@@ -4589,7 +4288,7 @@ impl AsRef<str> for PlacementStrategyType {
 
 /// <p>An object representing a constraint on task placement. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the Amazon Elastic Container Service Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlacementConstraint {
     /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
     #[doc(hidden)]
@@ -4606,14 +4305,6 @@ impl PlacementConstraint {
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
-    }
-}
-impl std::fmt::Debug for PlacementConstraint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlacementConstraint");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
     }
 }
 /// See [`PlacementConstraint`](crate::model::PlacementConstraint).
@@ -4759,7 +4450,7 @@ impl AsRef<str> for PlacementConstraintType {
 
 /// <p>The details of a capacity provider strategy. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CapacityProviderStrategyItem.html">CapacityProviderStrategyItem</a> in the Amazon ECS API Reference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
     #[doc(hidden)]
@@ -4783,15 +4474,6 @@ impl CapacityProviderStrategyItem {
     /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn base(&self) -> i32 {
         self.base
-    }
-}
-impl std::fmt::Debug for CapacityProviderStrategyItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityProviderStrategyItem");
-        formatter.field("capacity_provider", &self.capacity_provider);
-        formatter.field("weight", &self.weight);
-        formatter.field("base", &self.base);
-        formatter.finish()
     }
 }
 /// See [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
@@ -4857,7 +4539,7 @@ impl CapacityProviderStrategyItem {
 
 /// <p>This structure specifies the network configuration for an ECS task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
     #[doc(hidden)]
@@ -4867,13 +4549,6 @@ impl NetworkConfiguration {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
     pub fn awsvpc_configuration(&self) -> std::option::Option<&crate::model::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkConfiguration");
-        formatter.field("awsvpc_configuration", &self.awsvpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
@@ -4915,7 +4590,7 @@ impl NetworkConfiguration {
 
 /// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsVpcConfiguration {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     #[doc(hidden)]
@@ -4939,15 +4614,6 @@ impl AwsVpcConfiguration {
     /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
     pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
         self.assign_public_ip.as_ref()
-    }
-}
-impl std::fmt::Debug for AwsVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsVpcConfiguration");
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("assign_public_ip", &self.assign_public_ip);
-        formatter.finish()
     }
 }
 /// See [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
@@ -5216,7 +4882,7 @@ impl AsRef<str> for LaunchType {
 
 /// <p>This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunCommandParameters {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
     #[doc(hidden)]
@@ -5226,13 +4892,6 @@ impl RunCommandParameters {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
     pub fn run_command_targets(&self) -> std::option::Option<&[crate::model::RunCommandTarget]> {
         self.run_command_targets.as_deref()
-    }
-}
-impl std::fmt::Debug for RunCommandParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunCommandParameters");
-        formatter.field("run_command_targets", &self.run_command_targets);
-        formatter.finish()
     }
 }
 /// See [`RunCommandParameters`](crate::model::RunCommandParameters).
@@ -5281,7 +4940,7 @@ impl RunCommandParameters {
 
 /// <p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunCommandTarget {
     /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
     #[doc(hidden)]
@@ -5298,14 +4957,6 @@ impl RunCommandTarget {
     /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for RunCommandTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunCommandTarget");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`RunCommandTarget`](crate::model::RunCommandTarget).
@@ -5365,7 +5016,7 @@ impl RunCommandTarget {
 
 /// <p>This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisParameters {
     /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -5375,13 +5026,6 @@ impl KinesisParameters {
     /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     pub fn partition_key_path(&self) -> std::option::Option<&str> {
         self.partition_key_path.as_deref()
-    }
-}
-impl std::fmt::Debug for KinesisParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisParameters");
-        formatter.field("partition_key_path", &self.partition_key_path);
-        formatter.finish()
     }
 }
 /// See [`KinesisParameters`](crate::model::KinesisParameters).
@@ -5423,7 +5067,7 @@ impl KinesisParameters {
 
 /// <p>Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputTransformer {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
     /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
@@ -5534,14 +5178,6 @@ impl InputTransformer {
     /// <p> <code>}</code> </p>
     pub fn input_template(&self) -> std::option::Option<&str> {
         self.input_template.as_deref()
-    }
-}
-impl std::fmt::Debug for InputTransformer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputTransformer");
-        formatter.field("input_paths_map", &self.input_paths_map);
-        formatter.field("input_template", &self.input_template);
-        formatter.finish()
     }
 }
 /// See [`InputTransformer`](crate::model::InputTransformer).
@@ -5793,7 +5429,7 @@ impl AsRef<str> for RuleState {
 /// <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain Amazon Web Services organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the Amazon Web Services organization. Following is an example value for <code>Condition</code>:</p>
 /// <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
     #[doc(hidden)]
@@ -5817,15 +5453,6 @@ impl Condition {
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Condition`](crate::model::Condition).
@@ -5888,7 +5515,7 @@ impl Condition {
 
 /// <p>Represents an event that a partner tried to generate, but failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPartnerEventsResultEntry {
     /// <p>The ID of the event.</p>
     #[doc(hidden)]
@@ -5912,15 +5539,6 @@ impl PutPartnerEventsResultEntry {
     /// <p>The error message that explains why the event submission failed.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for PutPartnerEventsResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPartnerEventsResultEntry");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`PutPartnerEventsResultEntry`](crate::model::PutPartnerEventsResultEntry).
@@ -5986,7 +5604,7 @@ impl PutPartnerEventsResultEntry {
 
 /// <p>The details about an event generated by an SaaS partner.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPartnerEventsRequestEntry {
     /// <p>The date and time of the event.</p>
     #[doc(hidden)]
@@ -6024,17 +5642,6 @@ impl PutPartnerEventsRequestEntry {
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
     pub fn detail(&self) -> std::option::Option<&str> {
         self.detail.as_deref()
-    }
-}
-impl std::fmt::Debug for PutPartnerEventsRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPartnerEventsRequestEntry");
-        formatter.field("time", &self.time);
-        formatter.field("source", &self.source);
-        formatter.field("resources", &self.resources);
-        formatter.field("detail_type", &self.detail_type);
-        formatter.field("detail", &self.detail);
-        formatter.finish()
     }
 }
 /// See [`PutPartnerEventsRequestEntry`](crate::model::PutPartnerEventsRequestEntry).
@@ -6130,7 +5737,7 @@ impl PutPartnerEventsRequestEntry {
 
 /// <p>Represents an event that failed to be submitted. For information about the errors that are common to all actions, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventsResultEntry {
     /// <p>The ID of the event.</p>
     #[doc(hidden)]
@@ -6154,15 +5761,6 @@ impl PutEventsResultEntry {
     /// <p>The error message that explains why the event submission failed.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for PutEventsResultEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventsResultEntry");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`PutEventsResultEntry`](crate::model::PutEventsResultEntry).
@@ -6228,7 +5826,7 @@ impl PutEventsResultEntry {
 
 /// <p>Represents an event to be submitted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventsRequestEntry {
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
     #[doc(hidden)]
@@ -6286,19 +5884,6 @@ impl PutEventsRequestEntry {
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
     pub fn trace_header(&self) -> std::option::Option<&str> {
         self.trace_header.as_deref()
-    }
-}
-impl std::fmt::Debug for PutEventsRequestEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventsRequestEntry");
-        formatter.field("time", &self.time);
-        formatter.field("source", &self.source);
-        formatter.field("resources", &self.resources);
-        formatter.field("detail_type", &self.detail_type);
-        formatter.field("detail", &self.detail);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.field("trace_header", &self.trace_header);
-        formatter.finish()
     }
 }
 /// See [`PutEventsRequestEntry`](crate::model::PutEventsRequestEntry).
@@ -6427,7 +6012,7 @@ impl PutEventsRequestEntry {
 
 /// <p>Contains information about a rule in Amazon EventBridge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
@@ -6495,21 +6080,6 @@ impl Rule {
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("event_pattern", &self.event_pattern);
-        formatter.field("state", &self.state);
-        formatter.field("description", &self.description);
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("managed_by", &self.managed_by);
-        formatter.field("event_bus_name", &self.event_bus_name);
-        formatter.finish()
     }
 }
 /// See [`Rule`](crate::model::Rule).
@@ -6655,7 +6225,7 @@ impl Rule {
 
 /// <p>A <code>Replay</code> object that contains details about a replay.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Replay {
     /// <p>The name of the replay.</p>
     #[doc(hidden)]
@@ -6721,21 +6291,6 @@ impl Replay {
     /// <p>A time stamp for the time that the replay completed.</p>
     pub fn replay_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replay_end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Replay {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Replay");
-        formatter.field("replay_name", &self.replay_name);
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("event_start_time", &self.event_start_time);
-        formatter.field("event_end_time", &self.event_end_time);
-        formatter.field("event_last_replayed_time", &self.event_last_replayed_time);
-        formatter.field("replay_start_time", &self.replay_start_time);
-        formatter.field("replay_end_time", &self.replay_end_time);
-        formatter.finish()
     }
 }
 /// See [`Replay`](crate::model::Replay).
@@ -6888,7 +6443,7 @@ impl Replay {
 
 /// <p>A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that Amazon Web Services account can receive events from the partner's applications or services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartnerEventSource {
     /// <p>The ARN of the partner event source.</p>
     #[doc(hidden)]
@@ -6905,14 +6460,6 @@ impl PartnerEventSource {
     /// <p>The name of the partner event source.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for PartnerEventSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartnerEventSource");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`PartnerEventSource`](crate::model::PartnerEventSource).
@@ -6963,7 +6510,7 @@ impl PartnerEventSource {
 
 /// <p>The Amazon Web Services account that a partner event source has been offered to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartnerEventSourceAccount {
     /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
     #[doc(hidden)]
@@ -6994,16 +6541,6 @@ impl PartnerEventSourceAccount {
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for PartnerEventSourceAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartnerEventSourceAccount");
-        formatter.field("account", &self.account);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`PartnerEventSourceAccount`](crate::model::PartnerEventSourceAccount).
@@ -7182,7 +6719,7 @@ impl AsRef<str> for EventSourceState {
 
 /// <p>A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that Amazon Web Services account can receive events from the partner's applications or services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSource {
     /// <p>The ARN of the event source.</p>
     #[doc(hidden)]
@@ -7227,18 +6764,6 @@ impl EventSource {
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for EventSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSource");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_by", &self.created_by);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`EventSource`](crate::model::EventSource).
@@ -7346,7 +6871,7 @@ impl EventSource {
 
 /// <p>An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives events from Amazon Web Services services. A custom event bus can receive events from your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventBus {
     /// <p>The name of the event bus.</p>
     #[doc(hidden)]
@@ -7370,15 +6895,6 @@ impl EventBus {
     /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
-    }
-}
-impl std::fmt::Debug for EventBus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventBus");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
     }
 }
 /// See [`EventBus`](crate::model::EventBus).
@@ -7441,7 +6957,7 @@ impl EventBus {
 
 /// <p>An global endpoint used to improve your application's availability by making it regional-fault tolerant. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the Amazon EventBridge User Guide..</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The name of the endpoint.</p>
     #[doc(hidden)]
@@ -7535,25 +7051,6 @@ impl Endpoint {
     /// <p>The last time the endpoint was modified.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("arn", &self.arn);
-        formatter.field("routing_config", &self.routing_config);
-        formatter.field("replication_config", &self.replication_config);
-        formatter.field("event_buses", &self.event_buses);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("endpoint_url", &self.endpoint_url);
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
@@ -7760,7 +7257,7 @@ impl Endpoint {
 
 /// <p>Contains information about a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The ARN of the connection.</p>
     #[doc(hidden)]
@@ -7821,20 +7318,6 @@ impl Connection {
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("name", &self.name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("last_authorized_time", &self.last_authorized_time);
-        formatter.finish()
     }
 }
 /// See [`Connection`](crate::model::Connection).
@@ -7979,7 +7462,7 @@ impl Connection {
 
 /// <p>An <code>Archive</code> object that contains details about an archive.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Archive {
     /// <p>The name of the archive.</p>
     #[doc(hidden)]
@@ -8038,20 +7521,6 @@ impl Archive {
     /// <p>The time stamp for the time that the archive was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Archive {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Archive");
-        formatter.field("archive_name", &self.archive_name);
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("retention_days", &self.retention_days);
-        formatter.field("size_bytes", &self.size_bytes);
-        formatter.field("event_count", &self.event_count);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
     }
 }
 /// See [`Archive`](crate::model::Archive).
@@ -8180,7 +7649,7 @@ impl Archive {
 
 /// <p>Contains details about an API destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiDestination {
     /// <p>The ARN of the API destination.</p>
     #[doc(hidden)]
@@ -8246,24 +7715,6 @@ impl ApiDestination {
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ApiDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiDestination");
-        formatter.field("api_destination_arn", &self.api_destination_arn);
-        formatter.field("name", &self.name);
-        formatter.field("api_destination_state", &self.api_destination_state);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("invocation_endpoint", &self.invocation_endpoint);
-        formatter.field("http_method", &self.http_method);
-        formatter.field(
-            "invocation_rate_limit_per_second",
-            &self.invocation_rate_limit_per_second,
-        );
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
     }
 }
 /// See [`ApiDestination`](crate::model::ApiDestination).
@@ -8422,7 +7873,7 @@ impl ApiDestination {
 
 /// <p>Contains the authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionAuthResponseParameters {
     /// <p>The authorization parameters for Basic authorization.</p>
     #[doc(hidden)]
@@ -8463,19 +7914,6 @@ impl ConnectionAuthResponseParameters {
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
         self.invocation_http_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectionAuthResponseParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionAuthResponseParameters");
-        formatter.field("basic_auth_parameters", &self.basic_auth_parameters);
-        formatter.field("o_auth_parameters", &self.o_auth_parameters);
-        formatter.field("api_key_auth_parameters", &self.api_key_auth_parameters);
-        formatter.field(
-            "invocation_http_parameters",
-            &self.invocation_http_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConnectionAuthResponseParameters`](crate::model::ConnectionAuthResponseParameters).
@@ -8578,7 +8016,7 @@ impl ConnectionAuthResponseParameters {
 
 /// <p>Contains the authorization parameters for the connection if API Key is specified as the authorization type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionApiKeyAuthResponseParameters {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
     #[doc(hidden)]
@@ -8588,13 +8026,6 @@ impl ConnectionApiKeyAuthResponseParameters {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
     pub fn api_key_name(&self) -> std::option::Option<&str> {
         self.api_key_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionApiKeyAuthResponseParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionApiKeyAuthResponseParameters");
-        formatter.field("api_key_name", &self.api_key_name);
-        formatter.finish()
     }
 }
 /// See [`ConnectionApiKeyAuthResponseParameters`](crate::model::ConnectionApiKeyAuthResponseParameters).
@@ -8633,7 +8064,7 @@ impl ConnectionApiKeyAuthResponseParameters {
 
 /// <p>Contains the response parameters when OAuth is specified as the authorization type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionOAuthResponseParameters {
     /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
     #[doc(hidden)]
@@ -8669,16 +8100,6 @@ impl ConnectionOAuthResponseParameters {
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
         self.o_auth_http_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectionOAuthResponseParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionOAuthResponseParameters");
-        formatter.field("client_parameters", &self.client_parameters);
-        formatter.field("authorization_endpoint", &self.authorization_endpoint);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("o_auth_http_parameters", &self.o_auth_http_parameters);
-        formatter.finish()
     }
 }
 /// See [`ConnectionOAuthResponseParameters`](crate::model::ConnectionOAuthResponseParameters).
@@ -8773,7 +8194,7 @@ impl ConnectionOAuthResponseParameters {
 
 /// <p>Contains the client response parameters for the connection when OAuth is specified as the authorization type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionOAuthClientResponseParameters {
     /// <p>The client ID associated with the response to the connection request.</p>
     #[doc(hidden)]
@@ -8783,13 +8204,6 @@ impl ConnectionOAuthClientResponseParameters {
     /// <p>The client ID associated with the response to the connection request.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionOAuthClientResponseParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionOAuthClientResponseParameters");
-        formatter.field("client_id", &self.client_id);
-        formatter.finish()
     }
 }
 /// See [`ConnectionOAuthClientResponseParameters`](crate::model::ConnectionOAuthClientResponseParameters).
@@ -8828,7 +8242,7 @@ impl ConnectionOAuthClientResponseParameters {
 
 /// <p>Contains the authorization parameters for the connection if Basic is specified as the authorization type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionBasicAuthResponseParameters {
     /// <p>The user name to use for Basic authorization.</p>
     #[doc(hidden)]
@@ -8838,13 +8252,6 @@ impl ConnectionBasicAuthResponseParameters {
     /// <p>The user name to use for Basic authorization.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionBasicAuthResponseParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionBasicAuthResponseParameters");
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`ConnectionBasicAuthResponseParameters`](crate::model::ConnectionBasicAuthResponseParameters).
@@ -8883,7 +8290,7 @@ impl ConnectionBasicAuthResponseParameters {
 
 /// <p>Contains the authorization parameters for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionAuthRequestParameters {
     /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
     #[doc(hidden)]
@@ -8925,19 +8332,6 @@ impl CreateConnectionAuthRequestParameters {
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
         self.invocation_http_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateConnectionAuthRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionAuthRequestParameters");
-        formatter.field("basic_auth_parameters", &self.basic_auth_parameters);
-        formatter.field("o_auth_parameters", &self.o_auth_parameters);
-        formatter.field("api_key_auth_parameters", &self.api_key_auth_parameters);
-        formatter.field(
-            "invocation_http_parameters",
-            &self.invocation_http_parameters,
-        );
-        formatter.finish()
     }
 }
 /// See [`CreateConnectionAuthRequestParameters`](crate::model::CreateConnectionAuthRequestParameters).
@@ -9040,7 +8434,7 @@ impl CreateConnectionAuthRequestParameters {
 
 /// <p>Contains the API key authorization parameters for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
     #[doc(hidden)]
@@ -9057,14 +8451,6 @@ impl CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The value for the API key to use for authorization.</p>
     pub fn api_key_value(&self) -> std::option::Option<&str> {
         self.api_key_value.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateConnectionApiKeyAuthRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionApiKeyAuthRequestParameters");
-        formatter.field("api_key_name", &self.api_key_name);
-        formatter.field("api_key_value", &self.api_key_value);
-        formatter.finish()
     }
 }
 /// See [`CreateConnectionApiKeyAuthRequestParameters`](crate::model::CreateConnectionApiKeyAuthRequestParameters).
@@ -9118,7 +8504,7 @@ impl CreateConnectionApiKeyAuthRequestParameters {
 
 /// <p>Contains the OAuth authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionOAuthRequestParameters {
     /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
     #[doc(hidden)]
@@ -9154,16 +8540,6 @@ impl CreateConnectionOAuthRequestParameters {
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
         self.o_auth_http_parameters.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateConnectionOAuthRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionOAuthRequestParameters");
-        formatter.field("client_parameters", &self.client_parameters);
-        formatter.field("authorization_endpoint", &self.authorization_endpoint);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("o_auth_http_parameters", &self.o_auth_http_parameters);
-        formatter.finish()
     }
 }
 /// See [`CreateConnectionOAuthRequestParameters`](crate::model::CreateConnectionOAuthRequestParameters).
@@ -9258,7 +8634,7 @@ impl CreateConnectionOAuthRequestParameters {
 
 /// <p>Contains the Basic authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
     #[doc(hidden)]
@@ -9275,14 +8651,6 @@ impl CreateConnectionOAuthClientRequestParameters {
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateConnectionOAuthClientRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionOAuthClientRequestParameters");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.finish()
     }
 }
 /// See [`CreateConnectionOAuthClientRequestParameters`](crate::model::CreateConnectionOAuthClientRequestParameters).
@@ -9336,7 +8704,7 @@ impl CreateConnectionOAuthClientRequestParameters {
 
 /// <p>Contains the Basic authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
     #[doc(hidden)]
@@ -9353,14 +8721,6 @@ impl CreateConnectionBasicAuthRequestParameters {
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateConnectionBasicAuthRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionBasicAuthRequestParameters");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.finish()
     }
 }
 /// See [`CreateConnectionBasicAuthRequestParameters`](crate::model::CreateConnectionBasicAuthRequestParameters).

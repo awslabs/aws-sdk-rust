@@ -2,7 +2,7 @@
 
 /// <p>Fields to be used while uploading the attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadMetadata {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     #[doc(hidden)]
@@ -30,15 +30,6 @@ impl UploadMetadata {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.headers_to_include.as_ref()
-    }
-}
-impl std::fmt::Debug for UploadMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadMetadata");
-        formatter.field("url", &self.url);
-        formatter.field("url_expiry", &self.url_expiry);
-        formatter.field("headers_to_include", &self.headers_to_include);
-        formatter.finish()
     }
 }
 /// See [`UploadMetadata`](crate::model::UploadMetadata).
@@ -118,7 +109,7 @@ impl UploadMetadata {
 
 /// <p>An item - message or event - that has been sent. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Item {
     /// <p>The time when the message or event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
@@ -186,21 +177,6 @@ impl Item {
     /// <p>Provides information about the attachments.</p>
     pub fn attachments(&self) -> std::option::Option<&[crate::model::AttachmentItem]> {
         self.attachments.as_deref()
-    }
-}
-impl std::fmt::Debug for Item {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Item");
-        formatter.field("absolute_time", &self.absolute_time);
-        formatter.field("content", &self.content);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("participant_id", &self.participant_id);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("participant_role", &self.participant_role);
-        formatter.field("attachments", &self.attachments);
-        formatter.finish()
     }
 }
 /// See [`Item`](crate::model::Item).
@@ -355,7 +331,7 @@ impl Item {
 
 /// <p>The case-insensitive input to indicate standard MIME type that describes the format of the file that will be uploaded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentItem {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[doc(hidden)]
@@ -386,16 +362,6 @@ impl AttachmentItem {
     /// <p>Status of the attachment.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ArtifactStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AttachmentItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentItem");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("attachment_name", &self.attachment_name);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AttachmentItem`](crate::model::AttachmentItem).
@@ -810,7 +776,7 @@ impl AsRef<str> for ChatItemType {
 
 /// <p>A filtering option for where to start. For example, if you sent 100 messages, start with message 50. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPosition {
     /// <p>The ID of the message or event where to start. </p>
     #[doc(hidden)]
@@ -836,15 +802,6 @@ impl StartPosition {
     /// <p>The start position of the most recent message where you want to start. </p>
     pub fn most_recent(&self) -> i32 {
         self.most_recent
-    }
-}
-impl std::fmt::Debug for StartPosition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPosition");
-        formatter.field("id", &self.id);
-        formatter.field("absolute_time", &self.absolute_time);
-        formatter.field("most_recent", &self.most_recent);
-        formatter.finish()
     }
 }
 /// See [`StartPosition`](crate::model::StartPosition).
@@ -1092,7 +1049,7 @@ impl AsRef<str> for ScanDirection {
 
 /// <p>Connection credentials. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionCredentials {
     /// <p>The connection token.</p>
     #[doc(hidden)]
@@ -1111,14 +1068,6 @@ impl ConnectionCredentials {
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn expiry(&self) -> std::option::Option<&str> {
         self.expiry.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionCredentials");
-        formatter.field("connection_token", &self.connection_token);
-        formatter.field("expiry", &self.expiry);
-        formatter.finish()
     }
 }
 /// See [`ConnectionCredentials`](crate::model::ConnectionCredentials).
@@ -1174,7 +1123,7 @@ impl ConnectionCredentials {
 
 /// <p>The websocket for the participant's connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Websocket {
     /// <p>The URL of the websocket.</p>
     #[doc(hidden)]
@@ -1193,14 +1142,6 @@ impl Websocket {
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn connection_expiry(&self) -> std::option::Option<&str> {
         self.connection_expiry.as_deref()
-    }
-}
-impl std::fmt::Debug for Websocket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Websocket");
-        formatter.field("url", &self.url);
-        formatter.field("connection_expiry", &self.connection_expiry);
-        formatter.finish()
     }
 }
 /// See [`Websocket`](crate::model::Websocket).

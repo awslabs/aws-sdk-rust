@@ -822,7 +822,7 @@ impl PutSessionInput {
 pub mod recognize_text_input {
 
     /// A builder for [`RecognizeTextInput`](crate::input::RecognizeTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_alias_id: std::option::Option<std::string::String>,
@@ -939,6 +939,19 @@ pub mod recognize_text_input {
                 session_state: self.session_state,
                 request_attributes: self.request_attributes,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bot_id", &self.bot_id);
+            formatter.field("bot_alias_id", &self.bot_alias_id);
+            formatter.field("locale_id", &self.locale_id);
+            formatter.field("session_id", &self.session_id);
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("session_state", &self.session_state);
+            formatter.field("request_attributes", &self.request_attributes);
+            formatter.finish()
         }
     }
 }
@@ -1132,7 +1145,7 @@ impl RecognizeTextInput {
 pub mod recognize_utterance_input {
 
     /// A builder for [`RecognizeUtteranceInput`](crate::input::RecognizeUtteranceInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_alias_id: std::option::Option<std::string::String>,
@@ -1332,6 +1345,21 @@ pub mod recognize_utterance_input {
                 response_content_type: self.response_content_type,
                 input_stream: self.input_stream.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bot_id", &self.bot_id);
+            formatter.field("bot_alias_id", &self.bot_alias_id);
+            formatter.field("locale_id", &self.locale_id);
+            formatter.field("session_id", &self.session_id);
+            formatter.field("session_state", &"*** Sensitive Data Redacted ***");
+            formatter.field("request_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("request_content_type", &self.request_content_type);
+            formatter.field("response_content_type", &self.response_content_type);
+            formatter.field("input_stream", &self.input_stream);
+            formatter.finish()
         }
     }
 }
@@ -1753,7 +1781,7 @@ impl std::fmt::Debug for RecognizeTextInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSessionInput {
     /// <p>The identifier of the bot that receives the session data.</p>
     #[doc(hidden)]
@@ -1826,24 +1854,10 @@ impl PutSessionInput {
         self.response_content_type.as_deref()
     }
 }
-impl std::fmt::Debug for PutSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSessionInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_alias_id", &self.bot_alias_id);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("messages", &self.messages);
-        formatter.field("session_state", &self.session_state);
-        formatter.field("request_attributes", &self.request_attributes);
-        formatter.field("response_content_type", &self.response_content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionInput {
     /// <p>The identifier of the bot that contains the session data.</p>
     #[doc(hidden)]
@@ -1876,20 +1890,10 @@ impl GetSessionInput {
         self.session_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_alias_id", &self.bot_alias_id);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSessionInput {
     /// <p>The identifier of the bot that contains the session data.</p>
     #[doc(hidden)]
@@ -1920,15 +1924,5 @@ impl DeleteSessionInput {
     /// <p>The identifier of the session to delete.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSessionInput");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_alias_id", &self.bot_alias_id);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryCatalogData {
     /// <p>The short description of the repository.</p>
     #[doc(hidden)]
@@ -137,19 +129,6 @@ impl RepositoryCatalogData {
     /// <p>Whether or not the repository is certified by AWS Marketplace.</p>
     pub fn marketplace_certified(&self) -> std::option::Option<bool> {
         self.marketplace_certified
-    }
-}
-impl std::fmt::Debug for RepositoryCatalogData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryCatalogData");
-        formatter.field("description", &self.description);
-        formatter.field("architectures", &self.architectures);
-        formatter.field("operating_systems", &self.operating_systems);
-        formatter.field("logo_url", &self.logo_url);
-        formatter.field("about_text", &self.about_text);
-        formatter.field("usage_text", &self.usage_text);
-        formatter.field("marketplace_certified", &self.marketplace_certified);
-        formatter.finish()
     }
 }
 /// See [`RepositoryCatalogData`](crate::model::RepositoryCatalogData).
@@ -286,7 +265,7 @@ impl RepositoryCatalogData {
 
 /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryCatalogDataInput {
     /// <p>A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
     #[doc(hidden)]
@@ -363,18 +342,6 @@ impl RepositoryCatalogDataInput {
     /// <p>Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon ECR Public Gallery. The usage text provides context, support information, and additional usage details for users of the repository. The text must be in markdown format.</p>
     pub fn usage_text(&self) -> std::option::Option<&str> {
         self.usage_text.as_deref()
-    }
-}
-impl std::fmt::Debug for RepositoryCatalogDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryCatalogDataInput");
-        formatter.field("description", &self.description);
-        formatter.field("architectures", &self.architectures);
-        formatter.field("operating_systems", &self.operating_systems);
-        formatter.field("logo_image_blob", &self.logo_image_blob);
-        formatter.field("about_text", &self.about_text);
-        formatter.field("usage_text", &self.usage_text);
-        formatter.finish()
     }
 }
 /// See [`RepositoryCatalogDataInput`](crate::model::RepositoryCatalogDataInput).
@@ -526,7 +493,7 @@ impl RepositoryCatalogDataInput {
 
 /// <p>The metadata for a public registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistryCatalogData {
     /// <p>The display name for a public registry. This appears on the Amazon ECR Public Gallery.</p> <important>
     /// <p>Only accounts that have the verified account badge can have a registry display name.</p>
@@ -540,13 +507,6 @@ impl RegistryCatalogData {
     /// </important>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RegistryCatalogData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistryCatalogData");
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
     }
 }
 /// See [`RegistryCatalogData`](crate::model::RegistryCatalogData).
@@ -589,7 +549,7 @@ impl RegistryCatalogData {
 
 /// <p>An object representing an Amazon ECR image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
     /// <p>The AWS account ID associated with the registry containing the image.</p>
     #[doc(hidden)]
@@ -627,17 +587,6 @@ impl Image {
     /// <p>The manifest media type of the image.</p>
     pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
         self.image_manifest_media_type.as_deref()
-    }
-}
-impl std::fmt::Debug for Image {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Image");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("image_manifest", &self.image_manifest);
-        formatter.field("image_manifest_media_type", &self.image_manifest_media_type);
-        formatter.finish()
     }
 }
 /// See [`Image`](crate::model::Image).
@@ -736,7 +685,7 @@ impl Image {
 
 /// <p>An object with identifying information for an Amazon ECR image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageIdentifier {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     #[doc(hidden)]
@@ -753,14 +702,6 @@ impl ImageIdentifier {
     /// <p>The tag used for the image.</p>
     pub fn image_tag(&self) -> std::option::Option<&str> {
         self.image_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageIdentifier");
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("image_tag", &self.image_tag);
-        formatter.finish()
     }
 }
 /// See [`ImageIdentifier`](crate::model::ImageIdentifier).
@@ -811,7 +752,7 @@ impl ImageIdentifier {
 
 /// <p>An authorization token data object that corresponds to a public registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationData {
     /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is decoded, it is presented in the format <code>user:password</code> for public registry authentication using <code>docker login</code>.</p>
     #[doc(hidden)]
@@ -828,14 +769,6 @@ impl AuthorizationData {
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid for 12 hours.</p>
     pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AuthorizationData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationData");
-        formatter.field("authorization_token", &self.authorization_token);
-        formatter.field("expires_at", &self.expires_at);
-        formatter.finish()
     }
 }
 /// See [`AuthorizationData`](crate::model::AuthorizationData).
@@ -892,7 +825,7 @@ impl AuthorizationData {
 
 /// <p>An object representing a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
     #[doc(hidden)]
@@ -930,17 +863,6 @@ impl Repository {
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Repository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Repository");
-        formatter.field("repository_arn", &self.repository_arn);
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_uri", &self.repository_uri);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`Repository`](crate::model::Repository).
@@ -1039,7 +961,7 @@ impl Repository {
 
 /// <p>The details of a public registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Registry {
     /// <p>The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -1077,17 +999,6 @@ impl Registry {
     /// <p>An array of objects representing the aliases for a public registry.</p>
     pub fn aliases(&self) -> std::option::Option<&[crate::model::RegistryAlias]> {
         self.aliases.as_deref()
-    }
-}
-impl std::fmt::Debug for Registry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Registry");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("registry_arn", &self.registry_arn);
-        formatter.field("registry_uri", &self.registry_uri);
-        formatter.field("verified", &self.verified);
-        formatter.field("aliases", &self.aliases);
-        formatter.finish()
     }
 }
 /// See [`Registry`](crate::model::Registry).
@@ -1183,7 +1094,7 @@ impl Registry {
 
 /// <p>An object representing the aliases for a public registry. A public registry is given an alias upon creation but a custom alias can be set using the Amazon ECR console. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html">Registries</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistryAlias {
     /// <p>The name of the registry alias.</p>
     #[doc(hidden)]
@@ -1218,16 +1129,6 @@ impl RegistryAlias {
     /// <p>Whether or not the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
     pub fn default_registry_alias(&self) -> bool {
         self.default_registry_alias
-    }
-}
-impl std::fmt::Debug for RegistryAlias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistryAlias");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("primary_registry_alias", &self.primary_registry_alias);
-        formatter.field("default_registry_alias", &self.default_registry_alias);
-        formatter.finish()
     }
 }
 /// See [`RegistryAlias`](crate::model::RegistryAlias).
@@ -1406,7 +1307,7 @@ impl AsRef<str> for RegistryAliasStatus {
 
 /// <p>An object representing the image tag details for an image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageTagDetail {
     /// <p>The tag associated with the image.</p>
     #[doc(hidden)]
@@ -1430,15 +1331,6 @@ impl ImageTagDetail {
     /// <p>An object that describes the details of an image.</p>
     pub fn image_detail(&self) -> std::option::Option<&crate::model::ReferencedImageDetail> {
         self.image_detail.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageTagDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageTagDetail");
-        formatter.field("image_tag", &self.image_tag);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("image_detail", &self.image_detail);
-        formatter.finish()
     }
 }
 /// See [`ImageTagDetail`](crate::model::ImageTagDetail).
@@ -1507,7 +1399,7 @@ impl ImageTagDetail {
 
 /// <p>An object that describes the image tag details returned by a <code>DescribeImageTags</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferencedImageDetail {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     #[doc(hidden)]
@@ -1551,17 +1443,6 @@ impl ReferencedImageDetail {
     /// <p>The artifact media type of the image.</p>
     pub fn artifact_media_type(&self) -> std::option::Option<&str> {
         self.artifact_media_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ReferencedImageDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferencedImageDetail");
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("image_size_in_bytes", &self.image_size_in_bytes);
-        formatter.field("image_pushed_at", &self.image_pushed_at);
-        formatter.field("image_manifest_media_type", &self.image_manifest_media_type);
-        formatter.field("artifact_media_type", &self.artifact_media_type);
-        formatter.finish()
     }
 }
 /// See [`ReferencedImageDetail`](crate::model::ReferencedImageDetail).
@@ -1663,7 +1544,7 @@ impl ReferencedImageDetail {
 
 /// <p>An object that describes an image returned by a <code>DescribeImages</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageDetail {
     /// <p>The AWS account ID associated with the public registry to which this image belongs.</p>
     #[doc(hidden)]
@@ -1728,20 +1609,6 @@ impl ImageDetail {
     /// <p>The artifact media type of the image.</p>
     pub fn artifact_media_type(&self) -> std::option::Option<&str> {
         self.artifact_media_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageDetail");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("image_tags", &self.image_tags);
-        formatter.field("image_size_in_bytes", &self.image_size_in_bytes);
-        formatter.field("image_pushed_at", &self.image_pushed_at);
-        formatter.field("image_manifest_media_type", &self.image_manifest_media_type);
-        formatter.field("artifact_media_type", &self.artifact_media_type);
-        formatter.finish()
     }
 }
 /// See [`ImageDetail`](crate::model::ImageDetail).
@@ -1891,7 +1758,7 @@ impl ImageDetail {
 
 /// <p>An object representing an Amazon ECR image failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageFailure {
     /// <p>The image ID associated with the failure.</p>
     #[doc(hidden)]
@@ -1915,15 +1782,6 @@ impl ImageFailure {
     /// <p>The reason for the failure.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageFailure");
-        formatter.field("image_id", &self.image_id);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`ImageFailure`](crate::model::ImageFailure).
@@ -2118,7 +1976,7 @@ impl AsRef<str> for ImageFailureCode {
 
 /// <p>An object representing an Amazon ECR image layer failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LayerFailure {
     /// <p>The layer digest associated with the failure.</p>
     #[doc(hidden)]
@@ -2142,15 +2000,6 @@ impl LayerFailure {
     /// <p>The reason for the failure.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for LayerFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LayerFailure");
-        formatter.field("layer_digest", &self.layer_digest);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`LayerFailure`](crate::model::LayerFailure).
@@ -2309,7 +2158,7 @@ impl AsRef<str> for LayerFailureCode {
 
 /// <p>An object representing an Amazon ECR image layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Layer {
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     #[doc(hidden)]
@@ -2340,16 +2189,6 @@ impl Layer {
     /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
     pub fn media_type(&self) -> std::option::Option<&str> {
         self.media_type.as_deref()
-    }
-}
-impl std::fmt::Debug for Layer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Layer");
-        formatter.field("layer_digest", &self.layer_digest);
-        formatter.field("layer_availability", &self.layer_availability);
-        formatter.field("layer_size", &self.layer_size);
-        formatter.field("media_type", &self.media_type);
-        formatter.finish()
     }
 }
 /// See [`Layer`](crate::model::Layer).

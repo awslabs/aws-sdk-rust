@@ -492,7 +492,7 @@ impl CheckDomainAvailabilityInput {
 pub mod check_domain_transferability_input {
 
     /// A builder for [`CheckDomainTransferabilityInput`](crate::input::CheckDomainTransferabilityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) auth_code: std::option::Option<std::string::String>,
@@ -543,6 +543,14 @@ pub mod check_domain_transferability_input {
                 domain_name: self.domain_name,
                 auth_code: self.auth_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_name", &self.domain_name);
+            formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2899,7 +2907,7 @@ impl ListTagsForDomainInput {
 pub mod register_domain_input {
 
     /// A builder for [`RegisterDomainInput`](crate::input::RegisterDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) idn_lang_code: std::option::Option<std::string::String>,
@@ -3089,6 +3097,31 @@ pub mod register_domain_input {
                 privacy_protect_registrant_contact: self.privacy_protect_registrant_contact,
                 privacy_protect_tech_contact: self.privacy_protect_tech_contact,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_name", &self.domain_name);
+            formatter.field("idn_lang_code", &self.idn_lang_code);
+            formatter.field("duration_in_years", &self.duration_in_years);
+            formatter.field("auto_renew", &self.auto_renew);
+            formatter.field("admin_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "privacy_protect_admin_contact",
+                &self.privacy_protect_admin_contact,
+            );
+            formatter.field(
+                "privacy_protect_registrant_contact",
+                &self.privacy_protect_registrant_contact,
+            );
+            formatter.field(
+                "privacy_protect_tech_contact",
+                &self.privacy_protect_tech_contact,
+            );
+            formatter.finish()
         }
     }
 }
@@ -3826,7 +3859,7 @@ impl RetrieveDomainAuthCodeInput {
 pub mod transfer_domain_input {
 
     /// A builder for [`TransferDomainInput`](crate::input::TransferDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) idn_lang_code: std::option::Option<std::string::String>,
@@ -4047,6 +4080,33 @@ pub mod transfer_domain_input {
                 privacy_protect_registrant_contact: self.privacy_protect_registrant_contact,
                 privacy_protect_tech_contact: self.privacy_protect_tech_contact,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_name", &self.domain_name);
+            formatter.field("idn_lang_code", &self.idn_lang_code);
+            formatter.field("duration_in_years", &self.duration_in_years);
+            formatter.field("nameservers", &self.nameservers);
+            formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("auto_renew", &self.auto_renew);
+            formatter.field("admin_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "privacy_protect_admin_contact",
+                &self.privacy_protect_admin_contact,
+            );
+            formatter.field(
+                "privacy_protect_registrant_contact",
+                &self.privacy_protect_registrant_contact,
+            );
+            formatter.field(
+                "privacy_protect_tech_contact",
+                &self.privacy_protect_tech_contact,
+            );
+            formatter.finish()
         }
     }
 }
@@ -4327,7 +4387,7 @@ impl TransferDomainToAnotherAwsAccountInput {
 pub mod update_domain_contact_input {
 
     /// A builder for [`UpdateDomainContactInput`](crate::input::UpdateDomainContactInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) admin_contact: std::option::Option<crate::model::ContactDetail>,
@@ -4397,6 +4457,16 @@ pub mod update_domain_contact_input {
                 registrant_contact: self.registrant_contact,
                 tech_contact: self.tech_contact,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_name", &self.domain_name);
+            formatter.field("admin_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4713,7 +4783,7 @@ impl UpdateDomainContactPrivacyInput {
 pub mod update_domain_nameservers_input {
 
     /// A builder for [`UpdateDomainNameserversInput`](crate::input::UpdateDomainNameserversInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) fi_auth_key: std::option::Option<std::string::String>,
@@ -4773,6 +4843,15 @@ pub mod update_domain_nameservers_input {
                 fi_auth_key: self.fi_auth_key,
                 nameservers: self.nameservers,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("domain_name", &self.domain_name);
+            formatter.field("fi_auth_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("nameservers", &self.nameservers);
+            formatter.finish()
         }
     }
 }
@@ -5250,7 +5329,7 @@ impl ViewBillingInput {
 
 /// <p>The ViewBilling request includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViewBillingInput {
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     #[doc(hidden)]
@@ -5287,20 +5366,10 @@ impl ViewBillingInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ViewBillingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViewBillingInput");
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>The UpdateTagsForDomainRequest includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTagsForDomainInput {
     /// <p>The domain for which you want to add or update tags.</p>
     #[doc(hidden)]
@@ -5317,14 +5386,6 @@ impl UpdateTagsForDomainInput {
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
     pub fn tags_to_update(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags_to_update.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateTagsForDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTagsForDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("tags_to_update", &self.tags_to_update);
-        formatter.finish()
     }
 }
 
@@ -5371,7 +5432,7 @@ impl std::fmt::Debug for UpdateDomainNameserversInput {
 
 /// <p>The UpdateDomainContactPrivacy request includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainContactPrivacyInput {
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
     #[doc(hidden)]
@@ -5414,16 +5475,6 @@ impl UpdateDomainContactPrivacyInput {
     /// </note>
     pub fn tech_privacy(&self) -> std::option::Option<bool> {
         self.tech_privacy
-    }
-}
-impl std::fmt::Debug for UpdateDomainContactPrivacyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainContactPrivacyInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("admin_privacy", &self.admin_privacy);
-        formatter.field("registrant_privacy", &self.registrant_privacy);
-        formatter.field("tech_privacy", &self.tech_privacy);
-        formatter.finish()
     }
 }
 
@@ -5475,7 +5526,7 @@ impl std::fmt::Debug for UpdateDomainContactInput {
 
 /// <p>The TransferDomainToAnotherAwsAccount request includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransferDomainToAnotherAwsAccountInput {
     /// <p>The name of the domain that you want to transfer from the current Amazon Web Services account to another account.</p>
     #[doc(hidden)]
@@ -5492,14 +5543,6 @@ impl TransferDomainToAnotherAwsAccountInput {
     /// <p>The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for TransferDomainToAnotherAwsAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransferDomainToAnotherAwsAccountInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 
@@ -5660,7 +5703,7 @@ impl std::fmt::Debug for TransferDomainInput {
 
 /// <p>A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetrieveDomainAuthCodeInput {
     /// <p>The name of the domain that you want to get an authorization code for.</p>
     #[doc(hidden)]
@@ -5672,17 +5715,10 @@ impl RetrieveDomainAuthCodeInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for RetrieveDomainAuthCodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetrieveDomainAuthCodeInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailInput {
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
     #[doc(hidden)]
@@ -5694,17 +5730,10 @@ impl ResendContactReachabilityEmailInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for ResendContactReachabilityEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResendContactReachabilityEmailInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenewDomainInput {
     /// <p>The name of the domain that you want to renew.</p>
     #[doc(hidden)]
@@ -5732,19 +5761,10 @@ impl RenewDomainInput {
         self.current_expiry_year
     }
 }
-impl std::fmt::Debug for RenewDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenewDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("duration_in_years", &self.duration_in_years);
-        formatter.field("current_expiry_year", &self.current_expiry_year);
-        formatter.finish()
-    }
-}
 
 /// <p>The RejectDomainTransferFromAnotherAwsAccount request includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectDomainTransferFromAnotherAwsAccountInput {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     #[doc(hidden)]
@@ -5754,13 +5774,6 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RejectDomainTransferFromAnotherAwsAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectDomainTransferFromAnotherAwsAccountInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
     }
 }
 
@@ -5907,7 +5920,7 @@ impl std::fmt::Debug for RegisterDomainInput {
 
 /// <p>The ListTagsForDomainRequest includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForDomainInput {
     /// <p>The domain for which you want to get a list of tags.</p>
     #[doc(hidden)]
@@ -5919,17 +5932,10 @@ impl ListTagsForDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricesInput {
     /// <p>The TLD for which you want to receive the pricing information. For example. <code>.net</code>.</p>
     /// <p>If a <code>Tld</code> value is not provided, a list of prices for all TLDs supported by Route&nbsp;53 is returned.</p>
@@ -5961,19 +5967,10 @@ impl ListPricesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListPricesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricesInput");
-        formatter.field("tld", &self.tld);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>The ListOperations request includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOperationsInput {
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     #[doc(hidden)]
@@ -6001,19 +5998,10 @@ impl ListOperationsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListOperationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOperationsInput");
-        formatter.field("submitted_since", &self.submitted_since);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>The ListDomains request includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
     #[doc(hidden)]
@@ -6050,20 +6038,10 @@ impl ListDomainsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("filter_conditions", &self.filter_conditions);
-        formatter.field("sort_condition", &self.sort_condition);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>The <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> request includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOperationDetailInput {
     /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
     #[doc(hidden)]
@@ -6075,17 +6053,10 @@ impl GetOperationDetailInput {
         self.operation_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetOperationDetailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOperationDetailInput");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainSuggestionsInput {
     /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
@@ -6127,19 +6098,10 @@ impl GetDomainSuggestionsInput {
         self.only_available
     }
 }
-impl std::fmt::Debug for GetDomainSuggestionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainSuggestionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("suggestion_count", &self.suggestion_count);
-        formatter.field("only_available", &self.only_available);
-        formatter.finish()
-    }
-}
 
 /// <p>The GetDomainDetail request includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainDetailInput {
     /// <p>The name of the domain that you want to get detailed information about.</p>
     #[doc(hidden)]
@@ -6151,17 +6113,10 @@ impl GetDomainDetailInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainDetailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainDetailInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactReachabilityStatusInput {
     /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
     #[doc(hidden)]
@@ -6173,17 +6128,10 @@ impl GetContactReachabilityStatusInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetContactReachabilityStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactReachabilityStatusInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to set the transfer lock for the specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableDomainTransferLockInput {
     /// <p>The name of the domain that you want to set the transfer lock for.</p>
     #[doc(hidden)]
@@ -6195,17 +6143,10 @@ impl EnableDomainTransferLockInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for EnableDomainTransferLockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableDomainTransferLockInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
     #[doc(hidden)]
@@ -6217,17 +6158,10 @@ impl EnableDomainAutoRenewInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for EnableDomainAutoRenewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableDomainAutoRenewInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The DisableDomainTransferLock request includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableDomainTransferLockInput {
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
     #[doc(hidden)]
@@ -6239,17 +6173,10 @@ impl DisableDomainTransferLockInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisableDomainTransferLockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableDomainTransferLockInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to disable automatic renewal for.</p>
     #[doc(hidden)]
@@ -6261,17 +6188,10 @@ impl DisableDomainAutoRenewInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisableDomainAutoRenewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableDomainAutoRenewInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The DeleteTagsForDomainRequest includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsForDomainInput {
     /// <p>The domain for which you want to delete one or more tags.</p>
     #[doc(hidden)]
@@ -6290,18 +6210,10 @@ impl DeleteTagsForDomainInput {
         self.tags_to_delete.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTagsForDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsForDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("tags_to_delete", &self.tags_to_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p>Name of the domain to be deleted.</p>
     #[doc(hidden)]
@@ -6311,13 +6223,6 @@ impl DeleteDomainInput {
     /// <p>Name of the domain to be deleted.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
     }
 }
 
@@ -6367,7 +6272,7 @@ impl std::fmt::Debug for CheckDomainTransferabilityInput {
 
 /// <p>The CheckDomainAvailability request contains the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckDomainAvailabilityInput {
     /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
@@ -6402,18 +6307,10 @@ impl CheckDomainAvailabilityInput {
         self.idn_lang_code.as_deref()
     }
 }
-impl std::fmt::Debug for CheckDomainAvailabilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckDomainAvailabilityInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("idn_lang_code", &self.idn_lang_code);
-        formatter.finish()
-    }
-}
 
 /// <p>The CancelDomainTransferToAnotherAwsAccount request includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelDomainTransferToAnotherAwsAccountInput {
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -6425,17 +6322,10 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelDomainTransferToAnotherAwsAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelDomainTransferToAnotherAwsAccountInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The AcceptDomainTransferFromAnotherAwsAccount request includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountInput {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     #[doc(hidden)]
@@ -6452,13 +6342,5 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptDomainTransferFromAnotherAwsAccountInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("password", &self.password);
-        formatter.finish()
     }
 }

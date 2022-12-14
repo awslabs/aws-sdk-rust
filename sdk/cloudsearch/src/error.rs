@@ -2,7 +2,7 @@
 
 /// <p>The request was rejected because it has invalid parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>A machine-parsable string error or warning code.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl ValidationException {
     /// <p>A machine-parsable string error or warning code.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ValidationException {
@@ -91,7 +83,7 @@ impl ValidationException {
 
 /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>A machine-parsable string error or warning code.</p>
     #[doc(hidden)]
@@ -104,14 +96,6 @@ impl ResourceNotFoundException {
     /// <p>A machine-parsable string error or warning code.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -180,7 +164,7 @@ impl ResourceNotFoundException {
 
 /// <p>The request was rejected because a resource limit has already been met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     /// <p>A machine-parsable string error or warning code.</p>
     #[doc(hidden)]
@@ -193,14 +177,6 @@ impl LimitExceededException {
     /// <p>A machine-parsable string error or warning code.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl LimitExceededException {
@@ -269,7 +245,7 @@ impl LimitExceededException {
 
 /// <p>The request was rejected because it specified an invalid type definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTypeException {
     /// <p>A machine-parsable string error or warning code.</p>
     #[doc(hidden)]
@@ -282,14 +258,6 @@ impl InvalidTypeException {
     /// <p>A machine-parsable string error or warning code.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTypeException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidTypeException {
@@ -358,7 +326,7 @@ impl InvalidTypeException {
 
 /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalException {
     /// <p>A machine-parsable string error or warning code.</p>
     #[doc(hidden)]
@@ -371,14 +339,6 @@ impl InternalException {
     /// <p>A machine-parsable string error or warning code.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for InternalException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InternalException {
@@ -447,7 +407,7 @@ impl InternalException {
 
 /// <p>An error occurred while processing the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaseException {
     /// <p>A machine-parsable string error or warning code.</p>
     #[doc(hidden)]
@@ -460,14 +420,6 @@ impl BaseException {
     /// <p>A machine-parsable string error or warning code.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for BaseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaseException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl BaseException {
@@ -536,7 +488,7 @@ impl BaseException {
 
 /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisabledOperationException {
     /// <p>A machine-parsable string error or warning code.</p>
     #[doc(hidden)]
@@ -549,14 +501,6 @@ impl DisabledOperationException {
     /// <p>A machine-parsable string error or warning code.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for DisabledOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisabledOperationException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl DisabledOperationException {
@@ -625,7 +569,7 @@ impl DisabledOperationException {
 
 /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceAlreadyExistsException {
     /// <p>A machine-parsable string error or warning code.</p>
     #[doc(hidden)]
@@ -638,14 +582,6 @@ impl ResourceAlreadyExistsException {
     /// <p>A machine-parsable string error or warning code.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceAlreadyExistsException {

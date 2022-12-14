@@ -2,7 +2,7 @@
 
 /// <p>A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -78,7 +70,7 @@ impl Tag {
 /// <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p>
 /// <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricPolicy {
     /// <p>A setting to enable or disable metrics at the container level.</p>
     #[doc(hidden)]
@@ -97,14 +89,6 @@ impl MetricPolicy {
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
     pub fn metric_policy_rules(&self) -> std::option::Option<&[crate::model::MetricPolicyRule]> {
         self.metric_policy_rules.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricPolicy");
-        formatter.field("container_level_metrics", &self.container_level_metrics);
-        formatter.field("metric_policy_rules", &self.metric_policy_rules);
-        formatter.finish()
     }
 }
 /// See [`MetricPolicy`](crate::model::MetricPolicy).
@@ -172,7 +156,7 @@ impl MetricPolicy {
 
 /// <p>A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricPolicyRule {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
     #[doc(hidden)]
@@ -189,14 +173,6 @@ impl MetricPolicyRule {
     /// <p>A name that allows you to refer to the object group.</p>
     pub fn object_group_name(&self) -> std::option::Option<&str> {
         self.object_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricPolicyRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricPolicyRule");
-        formatter.field("object_group", &self.object_group);
-        formatter.field("object_group_name", &self.object_group_name);
-        formatter.finish()
     }
 }
 /// See [`MetricPolicyRule`](crate::model::MetricPolicyRule).
@@ -342,7 +318,7 @@ impl AsRef<str> for ContainerLevelMetrics {
 
 /// <p>A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CorsRule {
     /// <p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>
@@ -390,17 +366,6 @@ impl CorsRule {
     /// <p>This element is optional for each rule.</p>
     pub fn expose_headers(&self) -> std::option::Option<&[std::string::String]> {
         self.expose_headers.as_deref()
-    }
-}
-impl std::fmt::Debug for CorsRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CorsRule");
-        formatter.field("allowed_origins", &self.allowed_origins);
-        formatter.field("allowed_methods", &self.allowed_methods);
-        formatter.field("allowed_headers", &self.allowed_headers);
-        formatter.field("max_age_seconds", &self.max_age_seconds);
-        formatter.field("expose_headers", &self.expose_headers);
-        formatter.finish()
     }
 }
 /// See [`CorsRule`](crate::model::CorsRule).
@@ -633,7 +598,7 @@ impl AsRef<str> for MethodName {
 
 /// <p>This section describes operations that you can perform on an AWS Elemental MediaStore container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Container {
     /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>
     #[doc(hidden)]
@@ -696,18 +661,6 @@ impl Container {
     /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
     pub fn access_logging_enabled(&self) -> std::option::Option<bool> {
         self.access_logging_enabled
-    }
-}
-impl std::fmt::Debug for Container {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Container");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("access_logging_enabled", &self.access_logging_enabled);
-        formatter.finish()
     }
 }
 /// See [`Container`](crate::model::Container).

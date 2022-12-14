@@ -1919,7 +1919,7 @@ impl CreateCoreNetworkInput {
 pub mod create_device_input {
 
     /// A builder for [`CreateDeviceInput`](crate::input::CreateDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) aws_location: std::option::Option<crate::model::AwsLocation>,
@@ -2076,6 +2076,22 @@ pub mod create_device_input {
                 site_id: self.site_id,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("global_network_id", &self.global_network_id);
+            formatter.field("aws_location", &self.aws_location);
+            formatter.field("description", &self.description);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("vendor", &self.vendor);
+            formatter.field("model", &self.model);
+            formatter.field("serial_number", &self.serial_number);
+            formatter.field("location", &"*** Sensitive Data Redacted ***");
+            formatter.field("site_id", &self.site_id);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2639,7 +2655,7 @@ impl CreateLinkInput {
 pub mod create_site_input {
 
     /// A builder for [`CreateSiteInput`](crate::input::CreateSiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2722,6 +2738,16 @@ pub mod create_site_input {
                 location: self.location,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("global_network_id", &self.global_network_id);
+            formatter.field("description", &self.description);
+            formatter.field("location", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -16295,7 +16321,7 @@ impl UpdateCoreNetworkInput {
 pub mod update_device_input {
 
     /// A builder for [`UpdateDeviceInput`](crate::input::UpdateDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -16443,6 +16469,22 @@ pub mod update_device_input {
                 location: self.location,
                 site_id: self.site_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("global_network_id", &self.global_network_id);
+            formatter.field("device_id", &self.device_id);
+            formatter.field("aws_location", &self.aws_location);
+            formatter.field("description", &self.description);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("vendor", &self.vendor);
+            formatter.field("model", &self.model);
+            formatter.field("serial_number", &self.serial_number);
+            formatter.field("location", &"*** Sensitive Data Redacted ***");
+            formatter.field("site_id", &self.site_id);
+            formatter.finish()
         }
     }
 }
@@ -17272,7 +17314,7 @@ impl UpdateNetworkResourceMetadataInput {
 pub mod update_site_input {
 
     /// A builder for [`UpdateSiteInput`](crate::input::UpdateSiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) site_id: std::option::Option<std::string::String>,
@@ -17346,6 +17388,16 @@ pub mod update_site_input {
                 description: self.description,
                 location: self.location,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("global_network_id", &self.global_network_id);
+            formatter.field("site_id", &self.site_id);
+            formatter.field("description", &self.description);
+            formatter.field("location", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -17728,7 +17780,7 @@ impl UpdateVpcAttachmentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVpcAttachmentInput {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
@@ -17759,16 +17811,6 @@ impl UpdateVpcAttachmentInput {
     /// <p>Additional options for updating the VPC attachment. </p>
     pub fn options(&self) -> std::option::Option<&crate::model::VpcOptions> {
         self.options.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateVpcAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVpcAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("add_subnet_arns", &self.add_subnet_arns);
-        formatter.field("remove_subnet_arns", &self.remove_subnet_arns);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 
@@ -17832,7 +17874,7 @@ impl std::fmt::Debug for UpdateSiteInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNetworkResourceMetadataInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -17862,19 +17904,10 @@ impl UpdateNetworkResourceMetadataInput {
         self.metadata.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateNetworkResourceMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNetworkResourceMetadataInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLinkInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -17927,22 +17960,10 @@ impl UpdateLinkInput {
         self.provider.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLinkInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("provider", &self.provider);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalNetworkInput {
     /// <p>The ID of your global network.</p>
     #[doc(hidden)]
@@ -17961,14 +17982,6 @@ impl UpdateGlobalNetworkInput {
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateGlobalNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalNetworkInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 
@@ -18076,7 +18089,7 @@ impl std::fmt::Debug for UpdateDeviceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCoreNetworkInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -18095,18 +18108,10 @@ impl UpdateCoreNetworkInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCoreNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCoreNetworkInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -18148,21 +18153,10 @@ impl UpdateConnectionInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("connected_link_id", &self.connected_link_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -18181,18 +18175,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -18211,18 +18197,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -18266,21 +18244,10 @@ impl StartRouteAnalysisInput {
         self.use_middleboxes
     }
 }
-impl std::fmt::Debug for StartRouteAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartRouteAnalysisInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("include_return_path", &self.include_return_path);
-        formatter.field("use_middleboxes", &self.use_middleboxes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartOrganizationServiceAccessUpdateInput {
     /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
     #[doc(hidden)]
@@ -18292,17 +18259,10 @@ impl StartOrganizationServiceAccessUpdateInput {
         self.action.as_deref()
     }
 }
-impl std::fmt::Debug for StartOrganizationServiceAccessUpdateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartOrganizationServiceAccessUpdateInput");
-        formatter.field("action", &self.action);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreCoreNetworkPolicyVersionInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -18321,18 +18281,10 @@ impl RestoreCoreNetworkPolicyVersionInput {
         self.policy_version_id
     }
 }
-impl std::fmt::Debug for RestoreCoreNetworkPolicyVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreCoreNetworkPolicyVersionInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectAttachmentInput {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
@@ -18344,17 +18296,10 @@ impl RejectAttachmentInput {
         self.attachment_id.as_deref()
     }
 }
-impl std::fmt::Debug for RejectAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterTransitGatewayInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -18373,18 +18318,10 @@ impl RegisterTransitGatewayInput {
         self.transit_gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterTransitGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterTransitGatewayInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The JSON resource policy document.</p>
     #[doc(hidden)]
@@ -18403,18 +18340,10 @@ impl PutResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("policy_document", &self.policy_document);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutCoreNetworkPolicyInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -18454,21 +18383,10 @@ impl PutCoreNetworkPolicyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for PutCoreNetworkPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutCoreNetworkPolicyInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.field("description", &self.description);
-        formatter.field("latest_version_id", &self.latest_version_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -18480,17 +18398,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPeeringsInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -18537,22 +18448,10 @@ impl ListPeeringsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPeeringsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPeeringsInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("peering_type", &self.peering_type);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("state", &self.state);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrganizationServiceAccessStatusInput {
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
@@ -18571,18 +18470,10 @@ impl ListOrganizationServiceAccessStatusInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOrganizationServiceAccessStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOrganizationServiceAccessStatusInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCoreNetworksInput {
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
@@ -18601,18 +18492,10 @@ impl ListCoreNetworksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCoreNetworksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCoreNetworksInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCoreNetworkPolicyVersionsInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -18638,19 +18521,10 @@ impl ListCoreNetworkPolicyVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCoreNetworkPolicyVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCoreNetworkPolicyVersionsInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectPeersInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -18683,20 +18557,10 @@ impl ListConnectPeersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectPeersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectPeersInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("connect_attachment_id", &self.connect_attachment_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttachmentsInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -18743,22 +18607,10 @@ impl ListAttachmentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAttachmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttachmentsInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("attachment_type", &self.attachment_type);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("state", &self.state);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcAttachmentInput {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
@@ -18770,17 +18622,10 @@ impl GetVpcAttachmentInput {
         self.attachment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVpcAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the transit gateway route table attachment.</p>
     #[doc(hidden)]
@@ -18792,17 +18637,10 @@ impl GetTransitGatewayRouteTableAttachmentInput {
         self.attachment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTransitGatewayRouteTableAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTransitGatewayRouteTableAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTransitGatewayRegistrationsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -18835,20 +18673,10 @@ impl GetTransitGatewayRegistrationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTransitGatewayRegistrationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTransitGatewayRegistrationsInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("transit_gateway_arns", &self.transit_gateway_arns);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTransitGatewayPeeringInput {
     /// <p>The ID of the peering request.</p>
     #[doc(hidden)]
@@ -18860,17 +18688,10 @@ impl GetTransitGatewayPeeringInput {
         self.peering_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTransitGatewayPeeringInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTransitGatewayPeeringInput");
-        formatter.field("peering_id", &self.peering_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTransitGatewayConnectPeerAssociationsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -18903,23 +18724,10 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTransitGatewayConnectPeerAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTransitGatewayConnectPeerAssociationsInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field(
-            "transit_gateway_connect_peer_arns",
-            &self.transit_gateway_connect_peer_arns,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSiteToSiteVpnAttachmentInput {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
@@ -18931,17 +18739,10 @@ impl GetSiteToSiteVpnAttachmentInput {
         self.attachment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSiteToSiteVpnAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSiteToSiteVpnAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSitesInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -18974,20 +18775,10 @@ impl GetSitesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSitesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSitesInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("site_ids", &self.site_ids);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19006,18 +18797,10 @@ impl GetRouteAnalysisInput {
         self.route_analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRouteAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRouteAnalysisInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("route_analysis_id", &self.route_analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -19029,17 +18812,10 @@ impl GetResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkTelemetryInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19151,25 +18927,10 @@ impl GetNetworkTelemetryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkTelemetryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkTelemetryInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkRoutesInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19252,26 +19013,10 @@ impl GetNetworkRoutesInput {
         self.destination_filters.as_ref()
     }
 }
-impl std::fmt::Debug for GetNetworkRoutesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkRoutesInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("route_table_identifier", &self.route_table_identifier);
-        formatter.field("exact_cidr_matches", &self.exact_cidr_matches);
-        formatter.field("longest_prefix_matches", &self.longest_prefix_matches);
-        formatter.field("subnet_of_matches", &self.subnet_of_matches);
-        formatter.field("supernet_of_matches", &self.supernet_of_matches);
-        formatter.field("prefix_list_ids", &self.prefix_list_ids);
-        formatter.field("states", &self.states);
-        formatter.field("types", &self.types);
-        formatter.field("destination_filters", &self.destination_filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkResourcesInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19383,25 +19128,10 @@ impl GetNetworkResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkResourcesInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkResourceRelationshipsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19513,25 +19243,10 @@ impl GetNetworkResourceRelationshipsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkResourceRelationshipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkResourceRelationshipsInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkResourceCountsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19608,20 +19323,10 @@ impl GetNetworkResourceCountsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkResourceCountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkResourceCountsInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLinksInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19675,23 +19380,10 @@ impl GetLinksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetLinksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLinksInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("link_ids", &self.link_ids);
-        formatter.field("site_id", &self.site_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("provider", &self.provider);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLinkAssociationsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19731,21 +19423,10 @@ impl GetLinkAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetLinkAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLinkAssociationsInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDevicesInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19785,21 +19466,10 @@ impl GetDevicesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDevicesInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_ids", &self.device_ids);
-        formatter.field("site_id", &self.site_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCustomerGatewayAssociationsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -19832,20 +19502,10 @@ impl GetCustomerGatewayAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCustomerGatewayAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCustomerGatewayAssociationsInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("customer_gateway_arns", &self.customer_gateway_arns);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCoreNetworkPolicyInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -19871,19 +19531,10 @@ impl GetCoreNetworkPolicyInput {
         self.alias.as_ref()
     }
 }
-impl std::fmt::Debug for GetCoreNetworkPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCoreNetworkPolicyInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.field("alias", &self.alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCoreNetworkChangeSetInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -19916,20 +19567,10 @@ impl GetCoreNetworkChangeSetInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCoreNetworkChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCoreNetworkChangeSetInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCoreNetworkChangeEventsInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -19962,20 +19603,10 @@ impl GetCoreNetworkChangeEventsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCoreNetworkChangeEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCoreNetworkChangeEventsInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCoreNetworkInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -19987,17 +19618,10 @@ impl GetCoreNetworkInput {
         self.core_network_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCoreNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCoreNetworkInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectPeerAssociationsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20030,20 +19654,10 @@ impl GetConnectPeerAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectPeerAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectPeerAssociationsInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("connect_peer_ids", &self.connect_peer_ids);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectPeerInput {
     /// <p>The ID of the Connect peer.</p>
     #[doc(hidden)]
@@ -20055,17 +19669,10 @@ impl GetConnectPeerInput {
         self.connect_peer_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectPeerInput");
-        formatter.field("connect_peer_id", &self.connect_peer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectionsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20105,21 +19712,10 @@ impl GetConnectionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectionsInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("connection_ids", &self.connection_ids);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConnectAttachmentInput {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
@@ -20131,17 +19727,10 @@ impl GetConnectAttachmentInput {
         self.attachment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetConnectAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConnectAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteCoreNetworkChangeSetInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -20160,18 +19749,10 @@ impl ExecuteCoreNetworkChangeSetInput {
         self.policy_version_id
     }
 }
-impl std::fmt::Debug for ExecuteCoreNetworkChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteCoreNetworkChangeSetInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTransitGatewayConnectPeerInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20190,21 +19771,10 @@ impl DisassociateTransitGatewayConnectPeerInput {
         self.transit_gateway_connect_peer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateTransitGatewayConnectPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateTransitGatewayConnectPeerInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field(
-            "transit_gateway_connect_peer_arn",
-            &self.transit_gateway_connect_peer_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateLinkInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20230,19 +19800,10 @@ impl DisassociateLinkInput {
         self.link_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateLinkInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateCustomerGatewayInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20261,18 +19822,10 @@ impl DisassociateCustomerGatewayInput {
         self.customer_gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateCustomerGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateCustomerGatewayInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("customer_gateway_arn", &self.customer_gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateConnectPeerInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20291,18 +19844,10 @@ impl DisassociateConnectPeerInput {
         self.connect_peer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateConnectPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateConnectPeerInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("connect_peer_id", &self.connect_peer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGlobalNetworksInput {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
     #[doc(hidden)]
@@ -20328,19 +19873,10 @@ impl DescribeGlobalNetworksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGlobalNetworksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGlobalNetworksInput");
-        formatter.field("global_network_ids", &self.global_network_ids);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterTransitGatewayInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20359,18 +19895,10 @@ impl DeregisterTransitGatewayInput {
         self.transit_gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterTransitGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterTransitGatewayInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSiteInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20389,18 +19917,10 @@ impl DeleteSiteInput {
         self.site_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSiteInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("site_id", &self.site_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The ARN of the policy to delete.</p>
     #[doc(hidden)]
@@ -20412,17 +19932,10 @@ impl DeleteResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePeeringInput {
     /// <p>The ID of the peering connection to delete.</p>
     #[doc(hidden)]
@@ -20434,17 +19947,10 @@ impl DeletePeeringInput {
         self.peering_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePeeringInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePeeringInput");
-        formatter.field("peering_id", &self.peering_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLinkInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20463,18 +19969,10 @@ impl DeleteLinkInput {
         self.link_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLinkInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGlobalNetworkInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20486,17 +19984,10 @@ impl DeleteGlobalNetworkInput {
         self.global_network_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGlobalNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGlobalNetworkInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeviceInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20515,18 +20006,10 @@ impl DeleteDeviceInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeviceInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCoreNetworkPolicyVersionInput {
     /// <p>The ID of a core network for the deleted policy.</p>
     #[doc(hidden)]
@@ -20545,18 +20028,10 @@ impl DeleteCoreNetworkPolicyVersionInput {
         self.policy_version_id
     }
 }
-impl std::fmt::Debug for DeleteCoreNetworkPolicyVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCoreNetworkPolicyVersionInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("policy_version_id", &self.policy_version_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCoreNetworkInput {
     /// <p>The network ID of the deleted core network.</p>
     #[doc(hidden)]
@@ -20568,17 +20043,10 @@ impl DeleteCoreNetworkInput {
         self.core_network_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCoreNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCoreNetworkInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectPeerInput {
     /// <p>The ID of the deleted Connect peer.</p>
     #[doc(hidden)]
@@ -20590,17 +20058,10 @@ impl DeleteConnectPeerInput {
         self.connect_peer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectPeerInput");
-        formatter.field("connect_peer_id", &self.connect_peer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20619,18 +20080,10 @@ impl DeleteConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAttachmentInput {
     /// <p>The ID of the attachment to delete.</p>
     #[doc(hidden)]
@@ -20642,17 +20095,10 @@ impl DeleteAttachmentInput {
         self.attachment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcAttachmentInput {
     /// <p>The ID of a core network for the VPC attachment.</p>
     #[doc(hidden)]
@@ -20699,22 +20145,10 @@ impl CreateVpcAttachmentInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVpcAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcAttachmentInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("vpc_arn", &self.vpc_arn);
-        formatter.field("subnet_arns", &self.subnet_arns);
-        formatter.field("options", &self.options);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the peer for the </p>
     #[doc(hidden)]
@@ -20747,23 +20181,10 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTransitGatewayRouteTableAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTransitGatewayRouteTableAttachmentInput");
-        formatter.field("peering_id", &self.peering_id);
-        formatter.field(
-            "transit_gateway_route_table_arn",
-            &self.transit_gateway_route_table_arn,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
@@ -20796,20 +20217,10 @@ impl CreateTransitGatewayPeeringInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTransitGatewayPeeringInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTransitGatewayPeeringInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSiteToSiteVpnAttachmentInput {
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
     #[doc(hidden)]
@@ -20840,16 +20251,6 @@ impl CreateSiteToSiteVpnAttachmentInput {
     /// <p>The client token associated with the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateSiteToSiteVpnAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSiteToSiteVpnAttachmentInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("vpn_connection_arn", &self.vpn_connection_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }
 
@@ -20913,7 +20314,7 @@ impl std::fmt::Debug for CreateSiteInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLinkInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -20973,23 +20374,10 @@ impl CreateLinkInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLinkInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("provider", &self.provider);
-        formatter.field("site_id", &self.site_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGlobalNetworkInput {
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
@@ -21008,14 +20396,6 @@ impl CreateGlobalNetworkInput {
     /// <p>The tags to apply to the resource during creation.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateGlobalNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGlobalNetworkInput");
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -21123,7 +20503,7 @@ impl std::fmt::Debug for CreateDeviceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCoreNetworkInput {
     /// <p>The ID of the global network that a core network will be a part of. </p>
     #[doc(hidden)]
@@ -21163,21 +20543,10 @@ impl CreateCoreNetworkInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCoreNetworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCoreNetworkInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectPeerInput {
     /// <p>The ID of the connection attachment.</p>
     #[doc(hidden)]
@@ -21231,23 +20600,10 @@ impl CreateConnectPeerInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectPeerInput");
-        formatter.field("connect_attachment_id", &self.connect_attachment_id);
-        formatter.field("core_network_address", &self.core_network_address);
-        formatter.field("peer_address", &self.peer_address);
-        formatter.field("bgp_options", &self.bgp_options);
-        formatter.field("inside_cidr_blocks", &self.inside_cidr_blocks);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -21303,23 +20659,10 @@ impl CreateConnectionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("connected_device_id", &self.connected_device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.field("connected_link_id", &self.connected_link_id);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectAttachmentInput {
     /// <p>The ID of a core network where you want to create the attachment. </p>
     #[doc(hidden)]
@@ -21366,22 +20709,10 @@ impl CreateConnectAttachmentInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectAttachmentInput");
-        formatter.field("core_network_id", &self.core_network_id);
-        formatter.field("edge_location", &self.edge_location);
-        formatter.field("transport_attachment_id", &self.transport_attachment_id);
-        formatter.field("options", &self.options);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateTransitGatewayConnectPeerInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -21414,23 +20745,10 @@ impl AssociateTransitGatewayConnectPeerInput {
         self.link_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateTransitGatewayConnectPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateTransitGatewayConnectPeerInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field(
-            "transit_gateway_connect_peer_arn",
-            &self.transit_gateway_connect_peer_arn,
-        );
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateLinkInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
@@ -21456,19 +20774,10 @@ impl AssociateLinkInput {
         self.link_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateLinkInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateCustomerGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     #[doc(hidden)]
@@ -21501,20 +20810,10 @@ impl AssociateCustomerGatewayInput {
         self.link_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateCustomerGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateCustomerGatewayInput");
-        formatter.field("customer_gateway_arn", &self.customer_gateway_arn);
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateConnectPeerInput {
     /// <p>The ID of your global network.</p>
     #[doc(hidden)]
@@ -21547,20 +20846,10 @@ impl AssociateConnectPeerInput {
         self.link_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateConnectPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateConnectPeerInput");
-        formatter.field("global_network_id", &self.global_network_id);
-        formatter.field("connect_peer_id", &self.connect_peer_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("link_id", &self.link_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptAttachmentInput {
     /// <p>The ID of the attachment. </p>
     #[doc(hidden)]
@@ -21570,12 +20859,5 @@ impl AcceptAttachmentInput {
     /// <p>The ID of the attachment. </p>
     pub fn attachment_id(&self) -> std::option::Option<&str> {
         self.attachment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.finish()
     }
 }

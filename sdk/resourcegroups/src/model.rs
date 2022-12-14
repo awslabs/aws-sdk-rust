@@ -2,7 +2,7 @@
 
 /// <p>A mapping of a query attached to a resource group that determines the AWS resources that are members of the group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupQuery {
     /// <p>The name of the resource group that is associated with the specified resource query.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl GroupQuery {
     /// <p>The resource query that determines which AWS resources are members of the associated resource group.</p>
     pub fn resource_query(&self) -> std::option::Option<&crate::model::ResourceQuery> {
         self.resource_query.as_ref()
-    }
-}
-impl std::fmt::Debug for GroupQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupQuery");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("resource_query", &self.resource_query);
-        formatter.finish()
     }
 }
 /// See [`GroupQuery`](crate::model::GroupQuery).
@@ -100,7 +92,7 @@ impl GroupQuery {
 /// <p>The following example shows a resource query JSON string that includes only Amazon EC2 instances and Amazon S3 buckets that are part of the specified AWS CloudFormation stack.</p>
 /// <p> <code>{ "Type": "CLOUDFORMATION_STACK_1_0", "Query": { "ResourceTypeFilters": [ "AWS::EC2::Instance", "AWS::S3::Bucket" ], "StackIdentifier": "arn:aws:cloudformation:us-west-2:123456789012:stack/AWStestuseraccount/fb0d5000-aba8-00e8-aa9e-50d5cEXAMPLE" } }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceQuery {
     /// <p>The type of the query. You can use the following values:</p>
     /// <ul>
@@ -141,14 +133,6 @@ impl ResourceQuery {
     /// <p>The query that defines a group or a search.</p>
     pub fn query(&self) -> std::option::Option<&str> {
         self.query.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceQuery");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("query", &self.query);
-        formatter.finish()
     }
 }
 /// See [`ResourceQuery`](crate::model::ResourceQuery).
@@ -317,7 +301,7 @@ impl AsRef<str> for QueryType {
 /// <li> <p> <code>GroupConfiguration</code> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Group {
     /// <p>The ARN of the resource group.</p>
     #[doc(hidden)]
@@ -341,15 +325,6 @@ impl Group {
     /// <p>The description of the resource group.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for Group {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Group");
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`Group`](crate::model::Group).
@@ -412,7 +387,7 @@ impl Group {
 
 /// <p>A structure that identifies a resource that is currently pending addition to the group as a member. Adding a resource to a resource group happens asynchronously as a background task and this one isn't completed yet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingResource {
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
     #[doc(hidden)]
@@ -422,13 +397,6 @@ impl PendingResource {
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for PendingResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingResource");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`PendingResource`](crate::model::PendingResource).
@@ -467,7 +435,7 @@ impl PendingResource {
 
 /// <p>A resource that failed to be added to or removed from a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedResource {
     /// <p>The ARN of the resource that failed to be added or removed.</p>
     #[doc(hidden)]
@@ -491,15 +459,6 @@ impl FailedResource {
     /// <p>The error code associated with the failure.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedResource");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_code", &self.error_code);
-        formatter.finish()
     }
 }
 /// See [`FailedResource`](crate::model::FailedResource).
@@ -565,7 +524,7 @@ impl FailedResource {
 
 /// <p>A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFormation stack-based queries. The error occurs if the CloudFormation stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that AWS Resource Groups could not complete the operation, but the resulting group might have no member resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryError {
     /// <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     #[doc(hidden)]
@@ -582,14 +541,6 @@ impl QueryError {
     /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`QueryError`](crate::model::QueryError).
@@ -736,7 +687,7 @@ impl AsRef<str> for QueryErrorCode {
 
 /// <p>A structure that contains the ARN of a resource and its resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceIdentifier {
     /// <p>The ARN of a resource.</p>
     #[doc(hidden)]
@@ -753,14 +704,6 @@ impl ResourceIdentifier {
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceIdentifier");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`ResourceIdentifier`](crate::model::ResourceIdentifier).
@@ -814,7 +757,7 @@ impl ResourceIdentifier {
 
 /// <p>An item in a group configuration. A group service configuration can have one or more items. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupConfigurationItem {
     /// <p>Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the list of types that you can specify for a configuration item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
     #[doc(hidden)]
@@ -831,14 +774,6 @@ impl GroupConfigurationItem {
     /// <p>A collection of parameters for this group configuration item. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::GroupConfigurationParameter]> {
         self.parameters.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupConfigurationItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupConfigurationItem");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
     }
 }
 /// See [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
@@ -899,7 +834,7 @@ impl GroupConfigurationItem {
 
 /// <p>A parameter for a group configuration item. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupConfigurationParameter {
     /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
     #[doc(hidden)]
@@ -916,14 +851,6 @@ impl GroupConfigurationParameter {
     /// <p>The value or values to be used for the specified parameter. For the list of values you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupConfigurationParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupConfigurationParameter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
@@ -983,7 +910,7 @@ impl GroupConfigurationParameter {
 
 /// <p>The unique identifiers for a resource group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupIdentifier {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
@@ -1000,14 +927,6 @@ impl GroupIdentifier {
     /// <p>The ARN of the resource group.</p>
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupIdentifier");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.finish()
     }
 }
 /// See [`GroupIdentifier`](crate::model::GroupIdentifier).
@@ -1058,7 +977,7 @@ impl GroupIdentifier {
 
 /// <p>A filter collection that you can use to restrict the results from a <code>List</code> operation to only those you want to include.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
@@ -1075,14 +994,6 @@ impl GroupFilter {
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`GroupFilter`](crate::model::GroupFilter).
@@ -1235,7 +1146,7 @@ impl AsRef<str> for GroupFilterName {
 
 /// <p>A structure returned by the <code>ListGroupResources</code> operation that contains identity and group membership status information for one of the resources in the group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupResourcesItem {
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
     #[doc(hidden)]
@@ -1256,14 +1167,6 @@ impl ListGroupResourcesItem {
     /// </note>
     pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ListGroupResourcesItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupResourcesItem");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
@@ -1324,7 +1227,7 @@ impl ListGroupResourcesItem {
 
 /// <p>A structure that identifies the current group membership status for a resource. Adding a resource to a resource group is performed asynchronously as a background task. A <code>PENDING</code> status indicates, for this resource, that the process isn't completed yet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceStatus {
     /// <p>The current status.</p>
     #[doc(hidden)]
@@ -1334,13 +1237,6 @@ impl ResourceStatus {
     /// <p>The current status.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::ResourceStatusValue> {
         self.name.as_ref()
-    }
-}
-impl std::fmt::Debug for ResourceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceStatus");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`ResourceStatus`](crate::model::ResourceStatus).
@@ -1467,7 +1363,7 @@ impl AsRef<str> for ResourceStatusValue {
 
 /// <p>A filter name and value pair that is used to obtain more specific results from a list of resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
@@ -1484,14 +1380,6 @@ impl ResourceFilter {
     /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ResourceFilter`](crate::model::ResourceFilter).
@@ -1641,7 +1529,7 @@ impl AsRef<str> for ResourceFilterName {
 
 /// <p>A service configuration associated with a resource group. The configuration options are determined by the AWS service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group by using <code>CreateGroup</code>, or later by using the <code>PutGroupConfiguration</code> operation. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupConfiguration {
     /// <p>The configuration currently associated with the group and in effect.</p>
     #[doc(hidden)]
@@ -1675,16 +1563,6 @@ impl GroupConfiguration {
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupConfiguration");
-        formatter.field("configuration", &self.configuration);
-        formatter.field("proposed_configuration", &self.proposed_configuration);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`GroupConfiguration`](crate::model::GroupConfiguration).

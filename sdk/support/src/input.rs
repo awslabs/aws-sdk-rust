@@ -2476,7 +2476,7 @@ impl ResolveCaseInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolveCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
@@ -2488,17 +2488,10 @@ impl ResolveCaseInput {
         self.case_id.as_deref()
     }
 }
-impl std::fmt::Debug for ResolveCaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolveCaseInput");
-        formatter.field("case_id", &self.case_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshTrustedAdvisorCheckInput {
     /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
     /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
@@ -2514,17 +2507,10 @@ impl RefreshTrustedAdvisorCheckInput {
         self.check_id.as_deref()
     }
 }
-impl std::fmt::Debug for RefreshTrustedAdvisorCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshTrustedAdvisorCheckInput");
-        formatter.field("check_id", &self.check_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
     #[doc(hidden)]
@@ -2536,17 +2522,10 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
         self.check_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrustedAdvisorCheckSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustedAdvisorCheckSummariesInput");
-        formatter.field("check_ids", &self.check_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorChecksInput {
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     #[doc(hidden)]
@@ -2558,17 +2537,10 @@ impl DescribeTrustedAdvisorChecksInput {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrustedAdvisorChecksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustedAdvisorChecksInput");
-        formatter.field("language", &self.language);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckResultInput {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
@@ -2587,18 +2559,10 @@ impl DescribeTrustedAdvisorCheckResultInput {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrustedAdvisorCheckResultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustedAdvisorCheckResultInput");
-        formatter.field("check_id", &self.check_id);
-        formatter.field("language", &self.language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
     /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
@@ -2614,17 +2578,10 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
         self.check_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrustedAdvisorCheckRefreshStatusesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustedAdvisorCheckRefreshStatusesInput");
-        formatter.field("check_ids", &self.check_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSeverityLevelsInput {
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     #[doc(hidden)]
@@ -2636,17 +2593,10 @@ impl DescribeSeverityLevelsInput {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSeverityLevelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSeverityLevelsInput");
-        formatter.field("language", &self.language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
     #[doc(hidden)]
@@ -2665,18 +2615,10 @@ impl DescribeServicesInput {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServicesInput");
-        formatter.field("service_code_list", &self.service_code_list);
-        formatter.field("language", &self.language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCommunicationsInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
@@ -2716,21 +2658,10 @@ impl DescribeCommunicationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeCommunicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCommunicationsInput");
-        formatter.field("case_id", &self.case_id);
-        formatter.field("before_time", &self.before_time);
-        formatter.field("after_time", &self.after_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCasesInput {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
     #[doc(hidden)]
@@ -2798,25 +2729,10 @@ impl DescribeCasesInput {
         self.include_communications
     }
 }
-impl std::fmt::Debug for DescribeCasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCasesInput");
-        formatter.field("case_id_list", &self.case_id_list);
-        formatter.field("display_id", &self.display_id);
-        formatter.field("after_time", &self.after_time);
-        formatter.field("before_time", &self.before_time);
-        formatter.field("include_resolved_cases", &self.include_resolved_cases);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("language", &self.language);
-        formatter.field("include_communications", &self.include_communications);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAttachmentInput {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
     #[doc(hidden)]
@@ -2828,17 +2744,10 @@ impl DescribeAttachmentInput {
         self.attachment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCaseInput {
     /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
     #[doc(hidden)]
@@ -2912,25 +2821,10 @@ impl CreateCaseInput {
         self.attachment_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCaseInput");
-        formatter.field("subject", &self.subject);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("severity_code", &self.severity_code);
-        formatter.field("category_code", &self.category_code);
-        formatter.field("communication_body", &self.communication_body);
-        formatter.field("cc_email_addresses", &self.cc_email_addresses);
-        formatter.field("language", &self.language);
-        formatter.field("issue_type", &self.issue_type);
-        formatter.field("attachment_set_id", &self.attachment_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddCommunicationToCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
@@ -2963,20 +2857,10 @@ impl AddCommunicationToCaseInput {
         self.attachment_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for AddCommunicationToCaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddCommunicationToCaseInput");
-        formatter.field("case_id", &self.case_id);
-        formatter.field("communication_body", &self.communication_body);
-        formatter.field("cc_email_addresses", &self.cc_email_addresses);
-        formatter.field("attachment_set_id", &self.attachment_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddAttachmentsToSetInput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
     #[doc(hidden)]
@@ -2995,13 +2879,5 @@ impl AddAttachmentsToSetInput {
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     pub fn attachments(&self) -> std::option::Option<&[crate::model::Attachment]> {
         self.attachments.as_deref()
-    }
-}
-impl std::fmt::Debug for AddAttachmentsToSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddAttachmentsToSetInput");
-        formatter.field("attachment_set_id", &self.attachment_set_id);
-        formatter.field("attachments", &self.attachments);
-        formatter.finish()
     }
 }

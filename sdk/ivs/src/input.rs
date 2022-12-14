@@ -3663,7 +3663,7 @@ impl ListTagsForResourceInput {
 pub mod put_metadata_input {
 
     /// A builder for [`PutMetadataInput`](crate::input::PutMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
@@ -3698,6 +3698,14 @@ pub mod put_metadata_input {
                 channel_arn: self.channel_arn,
                 metadata: self.metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4544,7 +4552,7 @@ impl UpdateChannelInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// <p>ARN of the channel to be updated.</p>
     #[doc(hidden)]
@@ -4599,25 +4607,10 @@ impl UpdateChannelInput {
         self.recording_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("latency_mode", &self.latency_mode);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("authorized", &self.authorized);
-        formatter.field(
-            "recording_configuration_arn",
-            &self.recording_configuration_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
@@ -4636,18 +4629,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
@@ -4670,18 +4655,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopStreamInput {
     /// <p>ARN of the channel for which the stream is to be stopped.</p>
     #[doc(hidden)]
@@ -4691,13 +4668,6 @@ impl StopStreamInput {
     /// <p>ARN of the channel for which the stream is to be stopped.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for StopStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopStreamInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.finish()
     }
 }
 
@@ -4733,7 +4703,7 @@ impl std::fmt::Debug for PutMetadataInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
@@ -4745,17 +4715,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamSessionsInput {
     /// <p>Channel ARN used to filter the list.</p>
     #[doc(hidden)]
@@ -4781,19 +4744,10 @@ impl ListStreamSessionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListStreamSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamSessionsInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamsInput {
     /// <p>Filters the stream list to match the specified criterion.</p>
     #[doc(hidden)]
@@ -4819,19 +4773,10 @@ impl ListStreamsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamsInput");
-        formatter.field("filter_by", &self.filter_by);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamKeysInput {
     /// <p>Channel ARN used to filter the list.</p>
     #[doc(hidden)]
@@ -4857,19 +4802,10 @@ impl ListStreamKeysInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListStreamKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamKeysInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecordingConfigurationsInput {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
@@ -4888,18 +4824,10 @@ impl ListRecordingConfigurationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRecordingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecordingConfigurationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlaybackKeyPairsInput {
     /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
@@ -4918,18 +4846,10 @@ impl ListPlaybackKeyPairsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPlaybackKeyPairsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlaybackKeyPairsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// <p>Filters the channel list to match the specified name.</p>
     #[doc(hidden)]
@@ -4962,23 +4882,10 @@ impl ListChannelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsInput");
-        formatter.field("filter_by_name", &self.filter_by_name);
-        formatter.field(
-            "filter_by_recording_configuration_arn",
-            &self.filter_by_recording_configuration_arn,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportPlaybackKeyPairInput {
     /// <p>The public portion of a customer-generated key pair.</p>
     #[doc(hidden)]
@@ -5008,19 +4915,10 @@ impl ImportPlaybackKeyPairInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ImportPlaybackKeyPairInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportPlaybackKeyPairInput");
-        formatter.field("public_key_material", &self.public_key_material);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamSessionInput {
     /// <p>ARN of the channel resource</p>
     #[doc(hidden)]
@@ -5039,18 +4937,10 @@ impl GetStreamSessionInput {
         self.stream_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStreamSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamSessionInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamKeyInput {
     /// <p>ARN for the stream key to be retrieved.</p>
     #[doc(hidden)]
@@ -5062,17 +4952,10 @@ impl GetStreamKeyInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetStreamKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamKeyInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamInput {
     /// <p>Channel ARN for stream to be accessed.</p>
     #[doc(hidden)]
@@ -5084,17 +4967,10 @@ impl GetStreamInput {
         self.channel_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be retrieved.</p>
     #[doc(hidden)]
@@ -5106,17 +4982,10 @@ impl GetRecordingConfigurationInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecordingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecordingConfigurationInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPlaybackKeyPairInput {
     /// <p>ARN of the key pair to be returned.</p>
     #[doc(hidden)]
@@ -5128,17 +4997,10 @@ impl GetPlaybackKeyPairInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetPlaybackKeyPairInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPlaybackKeyPairInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelInput {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
     #[doc(hidden)]
@@ -5150,17 +5012,10 @@ impl GetChannelInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChannelInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamKeyInput {
     /// <p>ARN of the stream key to be deleted.</p>
     #[doc(hidden)]
@@ -5172,17 +5027,10 @@ impl DeleteStreamKeyInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStreamKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamKeyInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
     #[doc(hidden)]
@@ -5194,17 +5042,10 @@ impl DeleteRecordingConfigurationInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRecordingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecordingConfigurationInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlaybackKeyPairInput {
     /// <p>ARN of the key pair to be deleted.</p>
     #[doc(hidden)]
@@ -5216,17 +5057,10 @@ impl DeletePlaybackKeyPairInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePlaybackKeyPairInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlaybackKeyPairInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// <p>ARN of the channel to be deleted.</p>
     #[doc(hidden)]
@@ -5238,17 +5072,10 @@ impl DeleteChannelInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamKeyInput {
     /// <p>ARN of the channel for which to create the stream key.</p>
     #[doc(hidden)]
@@ -5271,18 +5098,10 @@ impl CreateStreamKeyInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStreamKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamKeyInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRecordingConfigurationInput {
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
     #[doc(hidden)]
@@ -5330,24 +5149,10 @@ impl CreateRecordingConfigurationInput {
         self.recording_reconnect_window_seconds
     }
 }
-impl std::fmt::Debug for CreateRecordingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRecordingConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("destination_configuration", &self.destination_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.field("thumbnail_configuration", &self.thumbnail_configuration);
-        formatter.field(
-            "recording_reconnect_window_seconds",
-            &self.recording_reconnect_window_seconds,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// <p>Channel name.</p>
     #[doc(hidden)]
@@ -5406,25 +5211,10 @@ impl CreateChannelInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelInput");
-        formatter.field("name", &self.name);
-        formatter.field("latency_mode", &self.latency_mode);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("authorized", &self.authorized);
-        formatter.field(
-            "recording_configuration_arn",
-            &self.recording_configuration_arn,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetStreamKeyInput {
     /// <p>Array of ARNs, one per channel.</p>
     #[doc(hidden)]
@@ -5436,17 +5226,10 @@ impl BatchGetStreamKeyInput {
         self.arns.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetStreamKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetStreamKeyInput");
-        formatter.field("arns", &self.arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetChannelInput {
     /// <p>Array of ARNs, one per channel.</p>
     #[doc(hidden)]
@@ -5456,12 +5239,5 @@ impl BatchGetChannelInput {
     /// <p>Array of ARNs, one per channel.</p>
     pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
         self.arns.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetChannelInput");
-        formatter.field("arns", &self.arns);
-        formatter.finish()
     }
 }

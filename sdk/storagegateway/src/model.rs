@@ -2,7 +2,7 @@
 
 /// <p>Provides additional information about an error that was returned by the service. See the <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageGatewayError {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
@@ -23,14 +23,6 @@ impl StorageGatewayError {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.error_details.as_ref()
-    }
-}
-impl std::fmt::Debug for StorageGatewayError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageGatewayError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_details", &self.error_details);
-        formatter.finish()
     }
 }
 /// See [`StorageGatewayError`](crate::model::StorageGatewayError).
@@ -554,7 +546,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Tag key. The key can't start with aws:.</p>
     #[doc(hidden)]
@@ -571,14 +563,6 @@ impl Tag {
     /// <p>Value of the tag key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -726,7 +710,7 @@ impl AsRef<str> for SmbSecurityStrategy {
 
 /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmbLocalGroups {
     /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
@@ -738,13 +722,6 @@ impl SmbLocalGroups {
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
     pub fn gateway_admins(&self) -> std::option::Option<&[std::string::String]> {
         self.gateway_admins.as_deref()
-    }
-}
-impl std::fmt::Debug for SmbLocalGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmbLocalGroups");
-        formatter.field("gateway_admins", &self.gateway_admins);
-        formatter.finish()
     }
 }
 /// See [`SmbLocalGroups`](crate::model::SmbLocalGroups).
@@ -794,7 +771,7 @@ impl SmbLocalGroups {
 
 /// <p>The refresh cache information for the file share or FSx file systems.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheAttributes {
     /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
@@ -806,16 +783,6 @@ impl CacheAttributes {
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     pub fn cache_stale_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.cache_stale_timeout_in_seconds
-    }
-}
-impl std::fmt::Debug for CacheAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheAttributes");
-        formatter.field(
-            "cache_stale_timeout_in_seconds",
-            &self.cache_stale_timeout_in_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`CacheAttributes`](crate::model::CacheAttributes).
@@ -1074,7 +1041,7 @@ impl AsRef<str> for ObjectAcl {
 
 /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NfsFileShareDefaults {
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
     #[doc(hidden)]
@@ -1105,16 +1072,6 @@ impl NfsFileShareDefaults {
     /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
     pub fn owner_id(&self) -> std::option::Option<i64> {
         self.owner_id
-    }
-}
-impl std::fmt::Debug for NfsFileShareDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NfsFileShareDefaults");
-        formatter.field("file_mode", &self.file_mode);
-        formatter.field("directory_mode", &self.directory_mode);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.finish()
     }
 }
 /// See [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
@@ -1287,7 +1244,7 @@ impl AsRef<str> for GatewayCapacity {
 
 /// <p> Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BandwidthRateLimitInterval {
     /// <p> The hour of the day to start the bandwidth rate limit interval. </p>
     #[doc(hidden)]
@@ -1343,25 +1300,6 @@ impl BandwidthRateLimitInterval {
     /// <p> The average download rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the download rate limit is not set. </p>
     pub fn average_download_rate_limit_in_bits_per_sec(&self) -> std::option::Option<i64> {
         self.average_download_rate_limit_in_bits_per_sec
-    }
-}
-impl std::fmt::Debug for BandwidthRateLimitInterval {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BandwidthRateLimitInterval");
-        formatter.field("start_hour_of_day", &self.start_hour_of_day);
-        formatter.field("start_minute_of_hour", &self.start_minute_of_hour);
-        formatter.field("end_hour_of_day", &self.end_hour_of_day);
-        formatter.field("end_minute_of_hour", &self.end_minute_of_hour);
-        formatter.field("days_of_week", &self.days_of_week);
-        formatter.field(
-            "average_upload_rate_limit_in_bits_per_sec",
-            &self.average_upload_rate_limit_in_bits_per_sec,
-        );
-        formatter.field(
-            "average_download_rate_limit_in_bits_per_sec",
-            &self.average_download_rate_limit_in_bits_per_sec,
-        );
-        formatter.finish()
     }
 }
 /// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
@@ -1490,7 +1428,7 @@ impl BandwidthRateLimitInterval {
 
 /// <p>An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomaticTapeCreationRule {
     /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
@@ -1532,17 +1470,6 @@ impl AutomaticTapeCreationRule {
     /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
     pub fn worm(&self) -> bool {
         self.worm
-    }
-}
-impl std::fmt::Debug for AutomaticTapeCreationRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomaticTapeCreationRule");
-        formatter.field("tape_barcode_prefix", &self.tape_barcode_prefix);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("minimum_num_tapes", &self.minimum_num_tapes);
-        formatter.field("worm", &self.worm);
-        formatter.finish()
     }
 }
 /// See [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
@@ -1636,7 +1563,7 @@ impl AutomaticTapeCreationRule {
 
 /// <p>Describes a storage volume object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeInfo {
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
     /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
@@ -1698,19 +1625,6 @@ impl VolumeInfo {
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
     pub fn volume_attachment_status(&self) -> std::option::Option<&str> {
         self.volume_attachment_status.as_deref()
-    }
-}
-impl std::fmt::Debug for VolumeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeInfo");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("volume_attachment_status", &self.volume_attachment_status);
-        formatter.finish()
     }
 }
 /// See [`VolumeInfo`](crate::model::VolumeInfo).
@@ -1834,7 +1748,7 @@ impl VolumeInfo {
 
 /// <p>Describes a storage volume recovery point object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     #[doc(hidden)]
@@ -1869,19 +1783,6 @@ impl VolumeRecoveryPointInfo {
     /// <p>The time the recovery point was taken.</p>
     pub fn volume_recovery_point_time(&self) -> std::option::Option<&str> {
         self.volume_recovery_point_time.as_deref()
-    }
-}
-impl std::fmt::Debug for VolumeRecoveryPointInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeRecoveryPointInfo");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("volume_usage_in_bytes", &self.volume_usage_in_bytes);
-        formatter.field(
-            "volume_recovery_point_time",
-            &self.volume_recovery_point_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
@@ -1963,7 +1864,7 @@ impl VolumeRecoveryPointInfo {
 
 /// <p>Describes a virtual tape.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TapeInfo {
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
     #[doc(hidden)]
@@ -2022,20 +1923,6 @@ impl TapeInfo {
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
     pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
-    }
-}
-impl std::fmt::Debug for TapeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TapeInfo");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("tape_barcode", &self.tape_barcode);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("tape_status", &self.tape_status);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("retention_start_date", &self.retention_start_date);
-        formatter.field("pool_entry_date", &self.pool_entry_date);
-        formatter.finish()
     }
 }
 /// See [`TapeInfo`](crate::model::TapeInfo).
@@ -2164,7 +2051,7 @@ impl TapeInfo {
 
 /// <p>Describes a custom tape pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PoolInfo {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of custom tape pools for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -2209,21 +2096,6 @@ impl PoolInfo {
     /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or <code>DELETED</code>.</p>
     pub fn pool_status(&self) -> std::option::Option<&crate::model::PoolStatus> {
         self.pool_status.as_ref()
-    }
-}
-impl std::fmt::Debug for PoolInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PoolInfo");
-        formatter.field("pool_arn", &self.pool_arn);
-        formatter.field("pool_name", &self.pool_name);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("retention_lock_type", &self.retention_lock_type);
-        formatter.field(
-            "retention_lock_time_in_days",
-            &self.retention_lock_time_in_days,
-        );
-        formatter.field("pool_status", &self.pool_status);
-        formatter.finish()
     }
 }
 /// See [`PoolInfo`](crate::model::PoolInfo).
@@ -2608,7 +2480,7 @@ impl AsRef<str> for TapeStorageClass {
 
 /// <p>Represents a gateway's local disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Disk {
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
     #[doc(hidden)]
@@ -2669,20 +2541,6 @@ impl Disk {
     /// <p>A list of values that represents attributes of a local disk.</p>
     pub fn disk_attribute_list(&self) -> std::option::Option<&[std::string::String]> {
         self.disk_attribute_list.as_deref()
-    }
-}
-impl std::fmt::Debug for Disk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Disk");
-        formatter.field("disk_id", &self.disk_id);
-        formatter.field("disk_path", &self.disk_path);
-        formatter.field("disk_node", &self.disk_node);
-        formatter.field("disk_status", &self.disk_status);
-        formatter.field("disk_size_in_bytes", &self.disk_size_in_bytes);
-        formatter.field("disk_allocation_type", &self.disk_allocation_type);
-        formatter.field("disk_allocation_resource", &self.disk_allocation_resource);
-        formatter.field("disk_attribute_list", &self.disk_attribute_list);
-        formatter.finish()
     }
 }
 /// See [`Disk`](crate::model::Disk).
@@ -2822,7 +2680,7 @@ impl Disk {
 
 /// <p>Describes a gateway object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayInfo {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     #[doc(hidden)]
@@ -2890,21 +2748,6 @@ impl GatewayInfo {
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
     pub fn host_environment_id(&self) -> std::option::Option<&str> {
         self.host_environment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GatewayInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayInfo");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field("gateway_operational_state", &self.gateway_operational_state);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.field("ec2_instance_id", &self.ec2_instance_id);
-        formatter.field("ec2_instance_region", &self.ec2_instance_region);
-        formatter.field("host_environment", &self.host_environment);
-        formatter.field("host_environment_id", &self.host_environment_id);
-        formatter.finish()
     }
 }
 /// See [`GatewayInfo`](crate::model::GatewayInfo).
@@ -3166,7 +3009,7 @@ impl AsRef<str> for HostEnvironment {
 
 /// <p>Gets the summary returned by <code>ListFileSystemAssociation</code>, which is a summary of a created file system association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemAssociationSummary {
     /// <p>The ID of the file system association.</p>
     #[doc(hidden)]
@@ -3197,25 +3040,6 @@ impl FileSystemAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemAssociationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemAssociationSummary");
-        formatter.field(
-            "file_system_association_id",
-            &self.file_system_association_id,
-        );
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
-        formatter.field(
-            "file_system_association_status",
-            &self.file_system_association_status,
-        );
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
     }
 }
 /// See [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
@@ -3305,7 +3129,7 @@ impl FileSystemAssociationSummary {
 
 /// <p>Describes a file share. Only supported S3 File Gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileShareInfo {
     /// <p>The type of the file share.</p>
     #[doc(hidden)]
@@ -3345,17 +3169,6 @@ impl FileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for FileShareInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileShareInfo");
-        formatter.field("file_share_type", &self.file_share_type);
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("file_share_id", &self.file_share_id);
-        formatter.field("file_share_status", &self.file_share_status);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
     }
 }
 /// See [`FileShareInfo`](crate::model::FileShareInfo).
@@ -3546,7 +3359,7 @@ impl AsRef<str> for FileShareType {
 
 /// <p>Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomaticTapeCreationPolicyInfo {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
     #[doc(hidden)]
@@ -3566,17 +3379,6 @@ impl AutomaticTapeCreationPolicyInfo {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AutomaticTapeCreationPolicyInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomaticTapeCreationPolicyInfo");
-        formatter.field(
-            "automatic_tape_creation_rules",
-            &self.automatic_tape_creation_rules,
-        );
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
     }
 }
 /// See [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
@@ -3765,7 +3567,7 @@ impl AsRef<str> for ActiveDirectoryStatus {
 
 /// <p>Represents a device object associated with a tape gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VtlDevice {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
     #[doc(hidden)]
@@ -3805,20 +3607,6 @@ impl VtlDevice {
         &self,
     ) -> std::option::Option<&crate::model::DeviceiScsiAttributes> {
         self.devicei_scsi_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for VtlDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VtlDevice");
-        formatter.field("vtl_device_arn", &self.vtl_device_arn);
-        formatter.field("vtl_device_type", &self.vtl_device_type);
-        formatter.field("vtl_device_vendor", &self.vtl_device_vendor);
-        formatter.field(
-            "vtl_device_product_identifier",
-            &self.vtl_device_product_identifier,
-        );
-        formatter.field("devicei_scsi_attributes", &self.devicei_scsi_attributes);
-        formatter.finish()
     }
 }
 /// See [`VtlDevice`](crate::model::VtlDevice).
@@ -3927,7 +3715,7 @@ impl VtlDevice {
 
 /// <p>Lists iSCSI information about a VTL device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceiScsiAttributes {
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
     #[doc(hidden)]
@@ -3958,16 +3746,6 @@ impl DeviceiScsiAttributes {
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
     pub fn chap_enabled(&self) -> bool {
         self.chap_enabled
-    }
-}
-impl std::fmt::Debug for DeviceiScsiAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceiScsiAttributes");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("network_interface_port", &self.network_interface_port);
-        formatter.field("chap_enabled", &self.chap_enabled);
-        formatter.finish()
     }
 }
 /// See [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
@@ -4045,7 +3823,7 @@ impl DeviceiScsiAttributes {
 
 /// <p>Describes a virtual tape object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tape {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
     #[doc(hidden)]
@@ -4145,25 +3923,6 @@ impl Tape {
     /// <p>The date that the tape enters a custom tape pool.</p>
     pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
-    }
-}
-impl std::fmt::Debug for Tape {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tape");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("tape_barcode", &self.tape_barcode);
-        formatter.field("tape_created_date", &self.tape_created_date);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("tape_status", &self.tape_status);
-        formatter.field("vtl_device", &self.vtl_device);
-        formatter.field("progress", &self.progress);
-        formatter.field("tape_used_in_bytes", &self.tape_used_in_bytes);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("worm", &self.worm);
-        formatter.field("retention_start_date", &self.retention_start_date);
-        formatter.field("pool_entry_date", &self.pool_entry_date);
-        formatter.finish()
     }
 }
 /// See [`Tape`](crate::model::Tape).
@@ -4361,7 +4120,7 @@ impl Tape {
 
 /// <p>Describes a recovery point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TapeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
     #[doc(hidden)]
@@ -4394,16 +4153,6 @@ impl TapeRecoveryPointInfo {
     /// <p>The status of the virtual tapes.</p>
     pub fn tape_status(&self) -> std::option::Option<&str> {
         self.tape_status.as_deref()
-    }
-}
-impl std::fmt::Debug for TapeRecoveryPointInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TapeRecoveryPointInfo");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("tape_recovery_point_time", &self.tape_recovery_point_time);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("tape_status", &self.tape_status);
-        formatter.finish()
     }
 }
 /// See [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
@@ -4483,7 +4232,7 @@ impl TapeRecoveryPointInfo {
 
 /// <p>Represents a virtual tape that is archived in the virtual tape shelf (VTS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TapeArchive {
     /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
     #[doc(hidden)]
@@ -4587,25 +4336,6 @@ impl TapeArchive {
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
     pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
-    }
-}
-impl std::fmt::Debug for TapeArchive {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TapeArchive");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("tape_barcode", &self.tape_barcode);
-        formatter.field("tape_created_date", &self.tape_created_date);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("retrieved_to", &self.retrieved_to);
-        formatter.field("tape_status", &self.tape_status);
-        formatter.field("tape_used_in_bytes", &self.tape_used_in_bytes);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("worm", &self.worm);
-        formatter.field("retention_start_date", &self.retention_start_date);
-        formatter.field("pool_entry_date", &self.pool_entry_date);
-        formatter.finish()
     }
 }
 /// See [`TapeArchive`](crate::model::TapeArchive).
@@ -4810,7 +4540,7 @@ impl TapeArchive {
 
 /// <p>Describes an iSCSI stored volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorediScsiVolume {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     #[doc(hidden)]
@@ -4928,27 +4658,6 @@ impl StorediScsiVolume {
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     pub fn target_name(&self) -> std::option::Option<&str> {
         self.target_name.as_deref()
-    }
-}
-impl std::fmt::Debug for StorediScsiVolume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorediScsiVolume");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("volume_status", &self.volume_status);
-        formatter.field("volume_attachment_status", &self.volume_attachment_status);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("volume_progress", &self.volume_progress);
-        formatter.field("volume_disk_id", &self.volume_disk_id);
-        formatter.field("source_snapshot_id", &self.source_snapshot_id);
-        formatter.field("preserved_existing_data", &self.preserved_existing_data);
-        formatter.field("volumei_scsi_attributes", &self.volumei_scsi_attributes);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("volume_used_in_bytes", &self.volume_used_in_bytes);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("target_name", &self.target_name);
-        formatter.finish()
     }
 }
 /// See [`StorediScsiVolume`](crate::model::StorediScsiVolume).
@@ -5185,7 +4894,7 @@ impl StorediScsiVolume {
 
 /// <p>Lists iSCSI information about a volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeiScsiAttributes {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     #[doc(hidden)]
@@ -5223,17 +4932,6 @@ impl VolumeiScsiAttributes {
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
     pub fn chap_enabled(&self) -> bool {
         self.chap_enabled
-    }
-}
-impl std::fmt::Debug for VolumeiScsiAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeiScsiAttributes");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("network_interface_port", &self.network_interface_port);
-        formatter.field("lun_number", &self.lun_number);
-        formatter.field("chap_enabled", &self.chap_enabled);
-        formatter.finish()
     }
 }
 /// See [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
@@ -5323,7 +5021,7 @@ impl VolumeiScsiAttributes {
 
 /// <p>The Windows file permissions and ownership information assigned, by default, to native S3 objects when S3 File Gateway discovers them in S3 buckets. This operation is only supported for S3 File Gateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmbFileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     #[doc(hidden)]
@@ -5597,41 +5295,6 @@ impl SmbFileShareInfo {
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn oplocks_enabled(&self) -> std::option::Option<bool> {
         self.oplocks_enabled
-    }
-}
-impl std::fmt::Debug for SmbFileShareInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmbFileShareInfo");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("file_share_id", &self.file_share_id);
-        formatter.field("file_share_status", &self.file_share_status);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("path", &self.path);
-        formatter.field("role", &self.role);
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("default_storage_class", &self.default_storage_class);
-        formatter.field("object_acl", &self.object_acl);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("guess_mime_type_enabled", &self.guess_mime_type_enabled);
-        formatter.field("requester_pays", &self.requester_pays);
-        formatter.field("smbacl_enabled", &self.smbacl_enabled);
-        formatter.field("access_based_enumeration", &self.access_based_enumeration);
-        formatter.field("admin_user_list", &self.admin_user_list);
-        formatter.field("valid_user_list", &self.valid_user_list);
-        formatter.field("invalid_user_list", &self.invalid_user_list);
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.field("authentication", &self.authentication);
-        formatter.field("case_sensitivity", &self.case_sensitivity);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_share_name", &self.file_share_name);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field("notification_policy", &self.notification_policy);
-        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
-        formatter.field("bucket_region", &self.bucket_region);
-        formatter.field("oplocks_enabled", &self.oplocks_enabled);
-        formatter.finish()
     }
 }
 /// See [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
@@ -6149,7 +5812,7 @@ impl SmbFileShareInfo {
 
 /// <p>The Unix file permissions and ownership information assigned, by default, to native S3 objects when an S3 File Gateway discovers them in S3 buckets. This operation is only supported in S3 File Gateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NfsFileShareInfo {
     /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
     #[doc(hidden)]
@@ -6390,36 +6053,6 @@ impl NfsFileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub fn audit_destination_arn(&self) -> std::option::Option<&str> {
         self.audit_destination_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for NfsFileShareInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NfsFileShareInfo");
-        formatter.field("nfs_file_share_defaults", &self.nfs_file_share_defaults);
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("file_share_id", &self.file_share_id);
-        formatter.field("file_share_status", &self.file_share_status);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("path", &self.path);
-        formatter.field("role", &self.role);
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("default_storage_class", &self.default_storage_class);
-        formatter.field("object_acl", &self.object_acl);
-        formatter.field("client_list", &self.client_list);
-        formatter.field("squash", &self.squash);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("guess_mime_type_enabled", &self.guess_mime_type_enabled);
-        formatter.field("requester_pays", &self.requester_pays);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_share_name", &self.file_share_name);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field("notification_policy", &self.notification_policy);
-        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
-        formatter.field("bucket_region", &self.bucket_region);
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.finish()
     }
 }
 /// See [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
@@ -6859,7 +6492,7 @@ impl NfsFileShareInfo {
 
 /// <p>Describes a gateway's network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
     #[doc(hidden)]
@@ -6887,15 +6520,6 @@ impl NetworkInterface {
     /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
     pub fn ipv6_address(&self) -> std::option::Option<&str> {
         self.ipv6_address.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("ipv4_address", &self.ipv4_address);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("ipv6_address", &self.ipv6_address);
-        formatter.finish()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
@@ -6962,7 +6586,7 @@ impl NetworkInterface {
 
 /// <p>Describes the object returned by <code>DescribeFileSystemAssociations</code> that describes a created file system association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemAssociationInfo {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
     #[doc(hidden)]
@@ -7038,33 +6662,6 @@ impl FileSystemAssociationInfo {
         &self,
     ) -> std::option::Option<&[crate::model::FileSystemAssociationStatusDetail]> {
         self.file_system_association_status_details.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemAssociationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemAssociationInfo");
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field(
-            "file_system_association_status",
-            &self.file_system_association_status,
-        );
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field(
-            "endpoint_network_configuration",
-            &self.endpoint_network_configuration,
-        );
-        formatter.field(
-            "file_system_association_status_details",
-            &self.file_system_association_status_details,
-        );
-        formatter.finish()
     }
 }
 /// See [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
@@ -7254,7 +6851,7 @@ impl FileSystemAssociationInfo {
 
 /// <p>Detailed information on file system association status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemAssociationStatusDetail {
     /// <p>The error code for a given file system association status.</p>
     #[doc(hidden)]
@@ -7264,13 +6861,6 @@ impl FileSystemAssociationStatusDetail {
     /// <p>The error code for a given file system association status.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemAssociationStatusDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemAssociationStatusDetail");
-        formatter.field("error_code", &self.error_code);
-        formatter.finish()
     }
 }
 /// See [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
@@ -7309,7 +6899,7 @@ impl FileSystemAssociationStatusDetail {
 
 /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointNetworkConfiguration {
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
@@ -7323,13 +6913,6 @@ impl EndpointNetworkConfiguration {
     /// </note>
     pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.ip_addresses.as_deref()
-    }
-}
-impl std::fmt::Debug for EndpointNetworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointNetworkConfiguration");
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.finish()
     }
 }
 /// See [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
@@ -7436,7 +7019,7 @@ impl std::fmt::Debug for ChapInfo {
 pub mod chap_info {
 
     /// A builder for [`ChapInfo`](crate::model::ChapInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) secret_to_authenticate_initiator: std::option::Option<std::string::String>,
@@ -7511,6 +7094,22 @@ pub mod chap_info {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("target_arn", &self.target_arn);
+            formatter.field(
+                "secret_to_authenticate_initiator",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("initiator_name", &self.initiator_name);
+            formatter.field(
+                "secret_to_authenticate_target",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
+        }
+    }
 }
 impl ChapInfo {
     /// Creates a new builder-style object to manufacture [`ChapInfo`](crate::model::ChapInfo).
@@ -7521,7 +7120,7 @@ impl ChapInfo {
 
 /// <p>Describes an iSCSI cached volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachediScsiVolume {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     #[doc(hidden)]
@@ -7625,25 +7224,6 @@ impl CachediScsiVolume {
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     pub fn target_name(&self) -> std::option::Option<&str> {
         self.target_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CachediScsiVolume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachediScsiVolume");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("volume_status", &self.volume_status);
-        formatter.field("volume_attachment_status", &self.volume_attachment_status);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("volume_progress", &self.volume_progress);
-        formatter.field("source_snapshot_id", &self.source_snapshot_id);
-        formatter.field("volumei_scsi_attributes", &self.volumei_scsi_attributes);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("volume_used_in_bytes", &self.volume_used_in_bytes);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("target_name", &self.target_name);
-        formatter.finish()
     }
 }
 /// See [`CachediScsiVolume`](crate::model::CachediScsiVolume).

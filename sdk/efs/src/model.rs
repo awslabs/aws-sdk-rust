@@ -2,7 +2,7 @@
 
 /// <p>A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8, and the following characters:<code> + - = . _ : /</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl Tag {
     /// <p>The value of the tag key.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -257,7 +249,7 @@ impl AsRef<str> for PerformanceMode {
 
 /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemSize {
     /// <p>The latest known metered size (in bytes) of data stored in the file system.</p>
     #[doc(hidden)]
@@ -288,16 +280,6 @@ impl FileSystemSize {
     /// <p>The latest known metered size (in bytes) of data stored in the Standard storage class.</p>
     pub fn value_in_standard(&self) -> std::option::Option<i64> {
         self.value_in_standard
-    }
-}
-impl std::fmt::Debug for FileSystemSize {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemSize");
-        formatter.field("value", &self.value);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value_in_ia", &self.value_in_ia);
-        formatter.field("value_in_standard", &self.value_in_standard);
-        formatter.finish()
     }
 }
 /// See [`FileSystemSize`](crate::model::FileSystemSize).
@@ -494,7 +476,7 @@ impl AsRef<str> for LifeCycleState {
 /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. For more information, see the request examples in <code>PutLifecycleConfiguration</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecyclePolicy {
     /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     #[doc(hidden)]
@@ -514,17 +496,6 @@ impl LifecyclePolicy {
         &self,
     ) -> std::option::Option<&crate::model::TransitionToPrimaryStorageClassRules> {
         self.transition_to_primary_storage_class.as_ref()
-    }
-}
-impl std::fmt::Debug for LifecyclePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecyclePolicy");
-        formatter.field("transition_to_ia", &self.transition_to_ia);
-        formatter.field(
-            "transition_to_primary_storage_class",
-            &self.transition_to_primary_storage_class,
-        );
-        formatter.finish()
     }
 }
 /// See [`LifecyclePolicy`](crate::model::LifecyclePolicy).
@@ -785,7 +756,7 @@ impl AsRef<str> for TransitionToIaRules {
 
 /// <p>The backup policy for the file system used to create automatic daily backups. If status has a value of <code>ENABLED</code>, the file system is being automatically backed up. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupPolicy {
     /// <p>Describes the status of the file system's backup policy.</p>
     /// <ul>
@@ -807,13 +778,6 @@ impl BackupPolicy {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for BackupPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupPolicy");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`BackupPolicy`](crate::model::BackupPolicy).
@@ -964,7 +928,7 @@ impl AsRef<str> for Status {
 
 /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceIdPreference {
     /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
     #[doc(hidden)]
@@ -981,14 +945,6 @@ impl ResourceIdPreference {
     /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceIdPreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceIdPreference");
-        formatter.field("resource_id_type", &self.resource_id_type);
-        formatter.field("resources", &self.resources);
-        formatter.finish()
     }
 }
 /// See [`ResourceIdPreference`](crate::model::ResourceIdPreference).
@@ -1231,7 +1187,7 @@ impl AsRef<str> for ResourceIdType {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationConfigurationDescription {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
     #[doc(hidden)]
@@ -1276,21 +1232,6 @@ impl ReplicationConfigurationDescription {
     /// <p>An array of destination objects. Only one destination object is supported.</p>
     pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
         self.destinations.as_deref()
-    }
-}
-impl std::fmt::Debug for ReplicationConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationConfigurationDescription");
-        formatter.field("source_file_system_id", &self.source_file_system_id);
-        formatter.field("source_file_system_region", &self.source_file_system_region);
-        formatter.field("source_file_system_arn", &self.source_file_system_arn);
-        formatter.field(
-            "original_source_file_system_arn",
-            &self.original_source_file_system_arn,
-        );
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("destinations", &self.destinations);
-        formatter.finish()
     }
 }
 /// See [`ReplicationConfigurationDescription`](crate::model::ReplicationConfigurationDescription).
@@ -1416,7 +1357,7 @@ impl ReplicationConfigurationDescription {
 
 /// <p>Describes the destination file system in the replication configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
     #[doc(hidden)]
@@ -1447,16 +1388,6 @@ impl Destination {
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub fn last_replicated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_replicated_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("status", &self.status);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("region", &self.region);
-        formatter.field("last_replicated_timestamp", &self.last_replicated_timestamp);
-        formatter.finish()
     }
 }
 /// See [`Destination`](crate::model::Destination).
@@ -1642,7 +1573,7 @@ impl AsRef<str> for ReplicationStatus {
 
 /// <p>Provides a description of a mount target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MountTargetDescription {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
     #[doc(hidden)]
@@ -1715,22 +1646,6 @@ impl MountTargetDescription {
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MountTargetDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MountTargetDescription");
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("mount_target_id", &self.mount_target_id);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("life_cycle_state", &self.life_cycle_state);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("availability_zone_id", &self.availability_zone_id);
-        formatter.field("availability_zone_name", &self.availability_zone_name);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
     }
 }
 /// See [`MountTargetDescription`](crate::model::MountTargetDescription).
@@ -1895,7 +1810,7 @@ impl MountTargetDescription {
 
 /// <p>A description of the file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemDescription {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
     #[doc(hidden)]
@@ -2017,32 +1932,6 @@ impl FileSystemDescription {
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemDescription");
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("creation_token", &self.creation_token);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("file_system_arn", &self.file_system_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("life_cycle_state", &self.life_cycle_state);
-        formatter.field("name", &self.name);
-        formatter.field("number_of_mount_targets", &self.number_of_mount_targets);
-        formatter.field("size_in_bytes", &self.size_in_bytes);
-        formatter.field("performance_mode", &self.performance_mode);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("throughput_mode", &self.throughput_mode);
-        formatter.field(
-            "provisioned_throughput_in_mibps",
-            &self.provisioned_throughput_in_mibps,
-        );
-        formatter.field("availability_zone_name", &self.availability_zone_name);
-        formatter.field("availability_zone_id", &self.availability_zone_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`FileSystemDescription`](crate::model::FileSystemDescription).
@@ -2315,7 +2204,7 @@ impl FileSystemDescription {
 
 /// <p>Provides a description of an EFS file system access point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPointDescription {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
     #[doc(hidden)]
@@ -2388,22 +2277,6 @@ impl AccessPointDescription {
     /// <p>Identifies the lifecycle phase of the access point.</p>
     pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
         self.life_cycle_state.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessPointDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPointDescription");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.field("access_point_id", &self.access_point_id);
-        formatter.field("access_point_arn", &self.access_point_arn);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("posix_user", &self.posix_user);
-        formatter.field("root_directory", &self.root_directory);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.field("life_cycle_state", &self.life_cycle_state);
-        formatter.finish()
     }
 }
 /// See [`AccessPointDescription`](crate::model::AccessPointDescription).
@@ -2577,7 +2450,7 @@ impl AccessPointDescription {
 
 /// <p>Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RootDirectory {
     /// <p>Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide the <code>CreationInfo</code>.</p>
     #[doc(hidden)]
@@ -2598,14 +2471,6 @@ impl RootDirectory {
     /// </important>
     pub fn creation_info(&self) -> std::option::Option<&crate::model::CreationInfo> {
         self.creation_info.as_ref()
-    }
-}
-impl std::fmt::Debug for RootDirectory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RootDirectory");
-        formatter.field("path", &self.path);
-        formatter.field("creation_info", &self.creation_info);
-        formatter.finish()
     }
 }
 /// See [`RootDirectory`](crate::model::RootDirectory).
@@ -2666,7 +2531,7 @@ impl RootDirectory {
 /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreationInfo {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
     #[doc(hidden)]
@@ -2690,15 +2555,6 @@ impl CreationInfo {
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
     pub fn permissions(&self) -> std::option::Option<&str> {
         self.permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for CreationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreationInfo");
-        formatter.field("owner_uid", &self.owner_uid);
-        formatter.field("owner_gid", &self.owner_gid);
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 /// See [`CreationInfo`](crate::model::CreationInfo).
@@ -2761,7 +2617,7 @@ impl CreationInfo {
 
 /// <p>The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PosixUser {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
     #[doc(hidden)]
@@ -2785,15 +2641,6 @@ impl PosixUser {
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
     pub fn secondary_gids(&self) -> std::option::Option<&[i64]> {
         self.secondary_gids.as_deref()
-    }
-}
-impl std::fmt::Debug for PosixUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PosixUser");
-        formatter.field("uid", &self.uid);
-        formatter.field("gid", &self.gid);
-        formatter.field("secondary_gids", &self.secondary_gids);
-        formatter.finish()
     }
 }
 /// See [`PosixUser`](crate::model::PosixUser).
@@ -2865,7 +2712,7 @@ impl PosixUser {
 
 /// <p>Describes the destination file system to create in the replication configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationToCreate {
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
     #[doc(hidden)]
@@ -2901,15 +2748,6 @@ impl DestinationToCreate {
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DestinationToCreate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationToCreate");
-        formatter.field("region", &self.region);
-        formatter.field("availability_zone_name", &self.availability_zone_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`DestinationToCreate`](crate::model::DestinationToCreate).

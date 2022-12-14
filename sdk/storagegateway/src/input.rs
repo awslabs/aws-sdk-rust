@@ -1113,7 +1113,7 @@ impl AssignTapePoolInput {
 pub mod associate_file_system_input {
 
     /// A builder for [`AssociateFileSystemInput`](crate::input::AssociateFileSystemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -1260,6 +1260,24 @@ pub mod associate_file_system_input {
                 cache_attributes: self.cache_attributes,
                 endpoint_network_configuration: self.endpoint_network_configuration,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &self.user_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("gateway_arn", &self.gateway_arn);
+            formatter.field("location_arn", &self.location_arn);
+            formatter.field("tags", &self.tags);
+            formatter.field("audit_destination_arn", &self.audit_destination_arn);
+            formatter.field("cache_attributes", &self.cache_attributes);
+            formatter.field(
+                "endpoint_network_configuration",
+                &self.endpoint_network_configuration,
+            );
+            formatter.finish()
         }
     }
 }
@@ -9836,7 +9854,7 @@ impl DisassociateFileSystemInput {
 pub mod join_domain_input {
 
     /// A builder for [`JoinDomainInput`](crate::input::JoinDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -9943,6 +9961,19 @@ pub mod join_domain_input {
                 user_name: self.user_name,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("gateway_arn", &self.gateway_arn);
+            formatter.field("domain_name", &self.domain_name);
+            formatter.field("organizational_unit", &self.organizational_unit);
+            formatter.field("domain_controllers", &self.domain_controllers);
+            formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
+            formatter.field("user_name", &self.user_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12816,7 +12847,7 @@ impl RetrieveTapeRecoveryPointInput {
 pub mod set_local_console_password_input {
 
     /// A builder for [`SetLocalConsolePasswordInput`](crate::input::SetLocalConsolePasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) local_console_password: std::option::Option<std::string::String>,
@@ -12856,6 +12887,14 @@ pub mod set_local_console_password_input {
                 gateway_arn: self.gateway_arn,
                 local_console_password: self.local_console_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("gateway_arn", &self.gateway_arn);
+            formatter.field("local_console_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -12980,7 +13019,7 @@ impl SetLocalConsolePasswordInput {
 pub mod set_smb_guest_password_input {
 
     /// A builder for [`SetSmbGuestPasswordInput`](crate::input::SetSmbGuestPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -13017,6 +13056,14 @@ pub mod set_smb_guest_password_input {
                 gateway_arn: self.gateway_arn,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("gateway_arn", &self.gateway_arn);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -14100,7 +14147,7 @@ impl UpdateBandwidthRateLimitScheduleInput {
 pub mod update_chap_credentials_input {
 
     /// A builder for [`UpdateChapCredentialsInput`](crate::input::UpdateChapCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) secret_to_authenticate_initiator: std::option::Option<std::string::String>,
@@ -14186,6 +14233,22 @@ pub mod update_chap_credentials_input {
                 initiator_name: self.initiator_name,
                 secret_to_authenticate_target: self.secret_to_authenticate_target,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("target_arn", &self.target_arn);
+            formatter.field(
+                "secret_to_authenticate_initiator",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("initiator_name", &self.initiator_name);
+            formatter.field(
+                "secret_to_authenticate_target",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
         }
     }
 }
@@ -14310,7 +14373,7 @@ impl UpdateChapCredentialsInput {
 pub mod update_file_system_association_input {
 
     /// A builder for [`UpdateFileSystemAssociationInput`](crate::input::UpdateFileSystemAssociationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -14395,6 +14458,20 @@ pub mod update_file_system_association_input {
                 audit_destination_arn: self.audit_destination_arn,
                 cache_attributes: self.cache_attributes,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "file_system_association_arn",
+                &self.file_system_association_arn,
+            );
+            formatter.field("user_name", &self.user_name);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("audit_destination_arn", &self.audit_destination_arn);
+            formatter.field("cache_attributes", &self.cache_attributes);
+            formatter.finish()
         }
     }
 }
@@ -16780,7 +16857,7 @@ impl UpdateVtlDeviceTypeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVtlDeviceTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
     #[doc(hidden)]
@@ -16801,14 +16878,6 @@ impl UpdateVtlDeviceTypeInput {
         self.device_type.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVtlDeviceTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVtlDeviceTypeInput");
-        formatter.field("vtl_device_arn", &self.vtl_device_arn);
-        formatter.field("device_type", &self.device_type);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
@@ -16818,7 +16887,7 @@ impl std::fmt::Debug for UpdateVtlDeviceTypeInput {
 /// <li> <p> <code>UpdateSnapshotScheduleInput$VolumeARN</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSnapshotScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     #[doc(hidden)]
@@ -16862,21 +16931,10 @@ impl UpdateSnapshotScheduleInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSnapshotScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSnapshotScheduleInput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("start_at", &self.start_at);
-        formatter.field("recurrence_in_hours", &self.recurrence_in_hours);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmbSecurityStrategyInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -16901,18 +16959,10 @@ impl UpdateSmbSecurityStrategyInput {
         self.smb_security_strategy.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSmbSecurityStrategyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmbSecurityStrategyInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("smb_security_strategy", &self.smb_security_strategy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmbLocalGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -16931,18 +16981,10 @@ impl UpdateSmbLocalGroupsInput {
         self.smb_local_groups.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSmbLocalGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmbLocalGroupsInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("smb_local_groups", &self.smb_local_groups);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmbFileShareVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -16961,18 +17003,10 @@ impl UpdateSmbFileShareVisibilityInput {
         self.file_shares_visible
     }
 }
-impl std::fmt::Debug for UpdateSmbFileShareVisibilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmbFileShareVisibilityInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("file_shares_visible", &self.file_shares_visible);
-        formatter.finish()
-    }
-}
 
 /// <p>UpdateSMBFileShareInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmbFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
     #[doc(hidden)]
@@ -17150,35 +17184,10 @@ impl UpdateSmbFileShareInput {
         self.oplocks_enabled
     }
 }
-impl std::fmt::Debug for UpdateSmbFileShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmbFileShareInput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("default_storage_class", &self.default_storage_class);
-        formatter.field("object_acl", &self.object_acl);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("guess_mime_type_enabled", &self.guess_mime_type_enabled);
-        formatter.field("requester_pays", &self.requester_pays);
-        formatter.field("smbacl_enabled", &self.smbacl_enabled);
-        formatter.field("access_based_enumeration", &self.access_based_enumeration);
-        formatter.field("admin_user_list", &self.admin_user_list);
-        formatter.field("valid_user_list", &self.valid_user_list);
-        formatter.field("invalid_user_list", &self.invalid_user_list);
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.field("case_sensitivity", &self.case_sensitivity);
-        formatter.field("file_share_name", &self.file_share_name);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field("notification_policy", &self.notification_policy);
-        formatter.field("oplocks_enabled", &self.oplocks_enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>UpdateNFSFileShareInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNfsFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be updated.</p>
     #[doc(hidden)]
@@ -17332,27 +17341,6 @@ impl UpdateNfsFileShareInput {
         self.audit_destination_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateNfsFileShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNfsFileShareInput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("nfs_file_share_defaults", &self.nfs_file_share_defaults);
-        formatter.field("default_storage_class", &self.default_storage_class);
-        formatter.field("object_acl", &self.object_acl);
-        formatter.field("client_list", &self.client_list);
-        formatter.field("squash", &self.squash);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("guess_mime_type_enabled", &self.guess_mime_type_enabled);
-        formatter.field("requester_pays", &self.requester_pays);
-        formatter.field("file_share_name", &self.file_share_name);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field("notification_policy", &self.notification_policy);
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 /// <ul>
@@ -17362,7 +17350,7 @@ impl std::fmt::Debug for UpdateNfsFileShareInput {
 /// <li> <p> <code>UpdateMaintenanceStartTimeInput$MinuteOfHour</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17402,21 +17390,10 @@ impl UpdateMaintenanceStartTimeInput {
         self.day_of_month
     }
 }
-impl std::fmt::Debug for UpdateMaintenanceStartTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMaintenanceStartTimeInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("hour_of_day", &self.hour_of_day);
-        formatter.field("minute_of_hour", &self.minute_of_hour);
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.field("day_of_month", &self.day_of_month);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17428,17 +17405,10 @@ impl UpdateGatewaySoftwareNowInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewaySoftwareNowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewaySoftwareNowInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17478,17 +17448,6 @@ impl UpdateGatewayInformationInput {
     /// <p>Specifies the size of the gateway's metadata cache.</p>
     pub fn gateway_capacity(&self) -> std::option::Option<&crate::model::GatewayCapacity> {
         self.gateway_capacity.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateGatewayInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayInformationInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.field("gateway_timezone", &self.gateway_timezone);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("gateway_capacity", &self.gateway_capacity);
-        formatter.finish()
     }
 }
 
@@ -17619,7 +17578,7 @@ impl std::fmt::Debug for UpdateChapCredentialsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17641,17 +17600,6 @@ impl UpdateBandwidthRateLimitScheduleInput {
         self.bandwidth_rate_limit_intervals.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBandwidthRateLimitScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBandwidthRateLimitScheduleInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field(
-            "bandwidth_rate_limit_intervals",
-            &self.bandwidth_rate_limit_intervals,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
@@ -17659,7 +17607,7 @@ impl std::fmt::Debug for UpdateBandwidthRateLimitScheduleInput {
 /// <li> <p> <code>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17685,25 +17633,10 @@ impl UpdateBandwidthRateLimitInput {
         self.average_download_rate_limit_in_bits_per_sec
     }
 }
-impl std::fmt::Debug for UpdateBandwidthRateLimitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBandwidthRateLimitInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field(
-            "average_upload_rate_limit_in_bits_per_sec",
-            &self.average_upload_rate_limit_in_bits_per_sec,
-        );
-        formatter.field(
-            "average_download_rate_limit_in_bits_per_sec",
-            &self.average_download_rate_limit_in_bits_per_sec,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAutomaticTapeCreationPolicyInput {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
     #[doc(hidden)]
@@ -17725,21 +17658,10 @@ impl UpdateAutomaticTapeCreationPolicyInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAutomaticTapeCreationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAutomaticTapeCreationPolicyInput");
-        formatter.field(
-            "automatic_tape_creation_rules",
-            &self.automatic_tape_creation_rules,
-        );
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway to start.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17751,17 +17673,10 @@ impl StartGatewayInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartGatewayInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAvailabilityMonitorTestInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17773,17 +17688,10 @@ impl StartAvailabilityMonitorTestInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartAvailabilityMonitorTestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAvailabilityMonitorTestInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway to shut down.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShutdownGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17793,13 +17701,6 @@ impl ShutdownGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ShutdownGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShutdownGatewayInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
     }
 }
 
@@ -17865,7 +17766,7 @@ impl std::fmt::Debug for SetLocalConsolePasswordInput {
 
 /// <p>RetrieveTapeRecoveryPointInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetrieveTapeRecoveryPointInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which you want to retrieve the recovery point.</p>
     #[doc(hidden)]
@@ -17884,18 +17785,10 @@ impl RetrieveTapeRecoveryPointInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RetrieveTapeRecoveryPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetrieveTapeRecoveryPointInput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>RetrieveTapeArchiveInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetrieveTapeArchiveInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
     #[doc(hidden)]
@@ -17916,18 +17809,10 @@ impl RetrieveTapeArchiveInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RetrieveTapeArchiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetrieveTapeArchiveInput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -17939,17 +17824,10 @@ impl ResetCacheInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResetCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetCacheInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>RemoveTagsFromResourceInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags from.</p>
     #[doc(hidden)]
@@ -17968,18 +17846,10 @@ impl RemoveTagsFromResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>RefreshCacheInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
     #[doc(hidden)]
@@ -18007,19 +17877,10 @@ impl RefreshCacheInput {
         self.recursive
     }
 }
-impl std::fmt::Debug for RefreshCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshCacheInput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("folder_list", &self.folder_list);
-        formatter.field("recursive", &self.recursive);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyWhenUploadedInput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     #[doc(hidden)]
@@ -18031,13 +17892,6 @@ impl NotifyWhenUploadedInput {
         self.file_share_arn.as_deref()
     }
 }
-impl std::fmt::Debug for NotifyWhenUploadedInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyWhenUploadedInput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object that contains one or more of the following fields:</p>
 /// <ul>
@@ -18045,7 +17899,7 @@ impl std::fmt::Debug for NotifyWhenUploadedInput {
 /// <li> <p> <code>ListVolumesInput$Marker</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVolumesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18071,19 +17925,10 @@ impl ListVolumesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListVolumesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVolumesInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVolumeRecoveryPointsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18095,17 +17940,10 @@ impl ListVolumeRecoveryPointsInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListVolumeRecoveryPointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVolumeRecoveryPointsInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>ListVolumeInitiatorsInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVolumeInitiatorsInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
     #[doc(hidden)]
@@ -18117,13 +17955,6 @@ impl ListVolumeInitiatorsInput {
         self.volume_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListVolumeInitiatorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVolumeInitiatorsInput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object that contains one or more of the following fields:</p>
 /// <ul>
@@ -18132,7 +17963,7 @@ impl std::fmt::Debug for ListVolumeInitiatorsInput {
 /// <li> <p> <code>ListTapesInput$TapeARNs</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTapesInput {
     /// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
     #[doc(hidden)]
@@ -18158,19 +17989,10 @@ impl ListTapesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTapesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTapesInput");
-        formatter.field("tape_ar_ns", &self.tape_ar_ns);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTapePoolsInput {
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
     #[doc(hidden)]
@@ -18196,19 +18018,10 @@ impl ListTapePoolsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTapePoolsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTapePoolsInput");
-        formatter.field("pool_ar_ns", &self.pool_ar_ns);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>ListTagsForResourceInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
     #[doc(hidden)]
@@ -18234,19 +18047,10 @@ impl ListTagsForResourceInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLocalDisksInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18258,13 +18062,6 @@ impl ListLocalDisksInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListLocalDisksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLocalDisksInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing zero or more of the following fields:</p>
 /// <ul>
@@ -18272,7 +18069,7 @@ impl std::fmt::Debug for ListLocalDisksInput {
 /// <li> <p> <code>ListGatewaysInput$Marker</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGatewaysInput {
     /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
     #[doc(hidden)]
@@ -18291,18 +18088,10 @@ impl ListGatewaysInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGatewaysInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFileSystemAssociationsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18328,19 +18117,10 @@ impl ListFileSystemAssociationsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListFileSystemAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFileSystemAssociationsInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>ListFileShareInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFileSharesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
     #[doc(hidden)]
@@ -18366,19 +18146,10 @@ impl ListFileSharesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListFileSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFileSharesInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAutomaticTapeCreationPoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18388,13 +18159,6 @@ impl ListAutomaticTapeCreationPoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAutomaticTapeCreationPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAutomaticTapeCreationPoliciesInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
     }
 }
 
@@ -18470,7 +18234,7 @@ impl std::fmt::Debug for JoinDomainInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateFileSystemInput {
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
     #[doc(hidden)]
@@ -18489,21 +18253,10 @@ impl DisassociateFileSystemInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DisassociateFileSystemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateFileSystemInput");
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 /// <p>DisableGatewayInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18515,17 +18268,10 @@ impl DisableGatewayInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisableGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableGatewayInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>AttachVolumeInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
     #[doc(hidden)]
@@ -18546,18 +18292,10 @@ impl DetachVolumeInput {
         self.force_detach
     }
 }
-impl std::fmt::Debug for DetachVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachVolumeInput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("force_detach", &self.force_detach);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkingStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18569,17 +18307,10 @@ impl DescribeWorkingStorageInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkingStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkingStorageInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeVTLDevicesInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVtlDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18616,20 +18347,10 @@ impl DescribeVtlDevicesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeVtlDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVtlDevicesInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("vtl_device_ar_ns", &self.vtl_device_ar_ns);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUploadBufferInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18641,17 +18362,10 @@ impl DescribeUploadBufferInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUploadBufferInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUploadBufferInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeTapesInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTapesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18690,20 +18404,10 @@ impl DescribeTapesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeTapesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTapesInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tape_ar_ns", &self.tape_ar_ns);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeTapeRecoveryPointsInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18729,19 +18433,10 @@ impl DescribeTapeRecoveryPointsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeTapeRecoveryPointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTapeRecoveryPointsInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeTapeArchivesInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTapeArchivesInput {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
     #[doc(hidden)]
@@ -18767,19 +18462,10 @@ impl DescribeTapeArchivesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeTapeArchivesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTapeArchivesInput");
-        formatter.field("tape_ar_ns", &self.tape_ar_ns);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing a list of <code>DescribeStorediSCSIVolumesInput$VolumeARNs</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStorediScsiVolumesInput {
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
     #[doc(hidden)]
@@ -18791,17 +18477,10 @@ impl DescribeStorediScsiVolumesInput {
         self.volume_ar_ns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStorediScsiVolumesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStorediScsiVolumesInput");
-        formatter.field("volume_ar_ns", &self.volume_ar_ns);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the <code>DescribeSnapshotScheduleInput$VolumeARN</code> of the volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSnapshotScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     #[doc(hidden)]
@@ -18813,17 +18492,10 @@ impl DescribeSnapshotScheduleInput {
         self.volume_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSnapshotScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSnapshotScheduleInput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSmbSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18835,17 +18507,10 @@ impl DescribeSmbSettingsInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSmbSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSmbSettingsInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeSMBFileSharesInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSmbFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
     #[doc(hidden)]
@@ -18857,17 +18522,10 @@ impl DescribeSmbFileSharesInput {
         self.file_share_arn_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSmbFileSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSmbFileSharesInput");
-        formatter.field("file_share_arn_list", &self.file_share_arn_list);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeNFSFileSharesInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNfsFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
     #[doc(hidden)]
@@ -18879,17 +18537,10 @@ impl DescribeNfsFileSharesInput {
         self.file_share_arn_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNfsFileSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNfsFileSharesInput");
-        formatter.field("file_share_arn_list", &self.file_share_arn_list);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18901,17 +18552,10 @@ impl DescribeMaintenanceStartTimeInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMaintenanceStartTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceStartTimeInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the ID of the gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -18923,17 +18567,10 @@ impl DescribeGatewayInformationInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGatewayInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGatewayInformationInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFileSystemAssociationsInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file system association to be described.</p>
     #[doc(hidden)]
@@ -18945,20 +18582,10 @@ impl DescribeFileSystemAssociationsInput {
         self.file_system_association_arn_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFileSystemAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFileSystemAssociationsInput");
-        formatter.field(
-            "file_system_association_arn_list",
-            &self.file_system_association_arn_list,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     #[doc(hidden)]
@@ -18970,17 +18597,10 @@ impl DescribeChapCredentialsInput {
         self.target_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChapCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChapCredentialsInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCachediScsiVolumesInput {
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
     #[doc(hidden)]
@@ -18992,17 +18612,10 @@ impl DescribeCachediScsiVolumesInput {
         self.volume_ar_ns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCachediScsiVolumesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCachediScsiVolumesInput");
-        formatter.field("volume_ar_ns", &self.volume_ar_ns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19014,17 +18627,10 @@ impl DescribeCacheInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCacheInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19036,17 +18642,10 @@ impl DescribeBandwidthRateLimitScheduleInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBandwidthRateLimitScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBandwidthRateLimitScheduleInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19058,17 +18657,10 @@ impl DescribeBandwidthRateLimitInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBandwidthRateLimitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBandwidthRateLimitInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAvailabilityMonitorTestInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19080,17 +18672,10 @@ impl DescribeAvailabilityMonitorTestInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAvailabilityMonitorTestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAvailabilityMonitorTestInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the <code>DeleteVolumeInput$VolumeARN</code> to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     #[doc(hidden)]
@@ -19102,17 +18687,10 @@ impl DeleteVolumeInput {
         self.volume_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVolumeInput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTapePoolInput {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
     #[doc(hidden)]
@@ -19124,17 +18702,10 @@ impl DeleteTapePoolInput {
         self.pool_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTapePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTapePoolInput");
-        formatter.field("pool_arn", &self.pool_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteTapeArchiveInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTapeArchiveInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual tape shelf (VTS).</p>
     #[doc(hidden)]
@@ -19153,21 +18724,10 @@ impl DeleteTapeArchiveInput {
         self.bypass_governance_retention
     }
 }
-impl std::fmt::Debug for DeleteTapeArchiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTapeArchiveInput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteTapeInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTapeInput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19193,22 +18753,10 @@ impl DeleteTapeInput {
         self.bypass_governance_retention
     }
 }
-impl std::fmt::Debug for DeleteTapeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTapeInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSnapshotScheduleInput {
     /// <p>The volume which snapshot schedule to delete.</p>
     #[doc(hidden)]
@@ -19220,17 +18768,10 @@ impl DeleteSnapshotScheduleInput {
         self.volume_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSnapshotScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSnapshotScheduleInput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the ID of the gateway to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19242,17 +18783,10 @@ impl DeleteGatewayInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteFileShareInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
     #[doc(hidden)]
@@ -19273,14 +18807,6 @@ impl DeleteFileShareInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeleteFileShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileShareInput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
@@ -19288,7 +18814,7 @@ impl std::fmt::Debug for DeleteFileShareInput {
 /// <li> <p> <code>DeleteChapCredentialsInput$TargetARN</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     #[doc(hidden)]
@@ -19307,21 +18833,13 @@ impl DeleteChapCredentialsInput {
         self.initiator_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChapCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChapCredentialsInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("initiator_name", &self.initiator_name);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 /// <ul>
 /// <li> <p> <code>DeleteBandwidthRateLimitInput$BandwidthType</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19342,18 +18860,10 @@ impl DeleteBandwidthRateLimitInput {
         self.bandwidth_type.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBandwidthRateLimitInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBandwidthRateLimitInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("bandwidth_type", &self.bandwidth_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAutomaticTapeCreationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19365,17 +18875,10 @@ impl DeleteAutomaticTapeCreationPolicyInput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAutomaticTapeCreationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAutomaticTapeCreationPolicyInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateTapeWithBarcodeInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTapeWithBarcodeInput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19450,24 +18953,10 @@ impl CreateTapeWithBarcodeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTapeWithBarcodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTapeWithBarcodeInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("tape_barcode", &self.tape_barcode);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("worm", &self.worm);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateTapesInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTapesInput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19560,26 +19049,10 @@ impl CreateTapesInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTapesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTapesInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("num_tapes_to_create", &self.num_tapes_to_create);
-        formatter.field("tape_barcode_prefix", &self.tape_barcode_prefix);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("worm", &self.worm);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTapePoolInput {
     /// <p>The name of the new custom tape pool.</p>
     #[doc(hidden)]
@@ -19623,20 +19096,6 @@ impl CreateTapePoolInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTapePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTapePoolInput");
-        formatter.field("pool_name", &self.pool_name);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("retention_lock_type", &self.retention_lock_type);
-        formatter.field(
-            "retention_lock_time_in_days",
-            &self.retention_lock_time_in_days,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
@@ -19647,7 +19106,7 @@ impl std::fmt::Debug for CreateTapePoolInput {
 /// <li> <p> <code>CreateStorediSCSIVolumeInput$TargetName</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStorediScsiVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -19727,25 +19186,10 @@ impl CreateStorediScsiVolumeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateStorediScsiVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStorediScsiVolumeInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("disk_id", &self.disk_id);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("preserve_existing_data", &self.preserve_existing_data);
-        formatter.field("target_name", &self.target_name);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotFromVolumeRecoveryPointInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     #[doc(hidden)]
@@ -19775,15 +19219,6 @@ impl CreateSnapshotFromVolumeRecoveryPointInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSnapshotFromVolumeRecoveryPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotFromVolumeRecoveryPointInput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("snapshot_description", &self.snapshot_description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
@@ -19791,7 +19226,7 @@ impl std::fmt::Debug for CreateSnapshotFromVolumeRecoveryPointInput {
 /// <li> <p> <code>CreateSnapshotInput$VolumeARN</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     #[doc(hidden)]
@@ -19821,19 +19256,10 @@ impl CreateSnapshotInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotInput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("snapshot_description", &self.snapshot_description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateSMBFileShareInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSmbFileShareInput {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
     #[doc(hidden)]
@@ -20096,42 +19522,10 @@ impl CreateSmbFileShareInput {
         self.oplocks_enabled
     }
 }
-impl std::fmt::Debug for CreateSmbFileShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSmbFileShareInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("role", &self.role);
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("default_storage_class", &self.default_storage_class);
-        formatter.field("object_acl", &self.object_acl);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("guess_mime_type_enabled", &self.guess_mime_type_enabled);
-        formatter.field("requester_pays", &self.requester_pays);
-        formatter.field("smbacl_enabled", &self.smbacl_enabled);
-        formatter.field("access_based_enumeration", &self.access_based_enumeration);
-        formatter.field("admin_user_list", &self.admin_user_list);
-        formatter.field("valid_user_list", &self.valid_user_list);
-        formatter.field("invalid_user_list", &self.invalid_user_list);
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.field("authentication", &self.authentication);
-        formatter.field("case_sensitivity", &self.case_sensitivity);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_share_name", &self.file_share_name);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field("notification_policy", &self.notification_policy);
-        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
-        formatter.field("bucket_region", &self.bucket_region);
-        formatter.field("oplocks_enabled", &self.oplocks_enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateNFSFileShareInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNfsFileShareInput {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
     #[doc(hidden)]
@@ -20357,37 +19751,10 @@ impl CreateNfsFileShareInput {
         self.audit_destination_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNfsFileShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNfsFileShareInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("nfs_file_share_defaults", &self.nfs_file_share_defaults);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("role", &self.role);
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("default_storage_class", &self.default_storage_class);
-        formatter.field("object_acl", &self.object_acl);
-        formatter.field("client_list", &self.client_list);
-        formatter.field("squash", &self.squash);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("guess_mime_type_enabled", &self.guess_mime_type_enabled);
-        formatter.field("requester_pays", &self.requester_pays);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_share_name", &self.file_share_name);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field("notification_policy", &self.notification_policy);
-        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
-        formatter.field("bucket_region", &self.bucket_region);
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCachediScsiVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -20472,26 +19839,10 @@ impl CreateCachediScsiVolumeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCachediScsiVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCachediScsiVolumeInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("target_name", &self.target_name);
-        formatter.field("source_volume_arn", &self.source_volume_arn);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>CancelRetrievalInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelRetrievalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -20510,18 +19861,10 @@ impl CancelRetrievalInput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CancelRetrievalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelRetrievalInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>CancelArchivalInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelArchivalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -20540,18 +19883,10 @@ impl CancelArchivalInput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CancelArchivalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelArchivalInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>AttachVolumeInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.</p>
     #[doc(hidden)]
@@ -20593,17 +19928,6 @@ impl AttachVolumeInput {
     /// <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
     pub fn disk_id(&self) -> std::option::Option<&str> {
         self.disk_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachVolumeInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("target_name", &self.target_name);
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("disk_id", &self.disk_id);
-        formatter.finish()
     }
 }
 
@@ -20705,7 +20029,7 @@ impl std::fmt::Debug for AssociateFileSystemInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssignTapePoolInput {
     /// <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
     #[doc(hidden)]
@@ -20733,25 +20057,13 @@ impl AssignTapePoolInput {
         self.bypass_governance_retention
     }
 }
-impl std::fmt::Debug for AssignTapePoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssignTapePoolInput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
 /// <li> <p> <code>AddWorkingStorageInput$DiskIds</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddWorkingStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -20770,18 +20082,10 @@ impl AddWorkingStorageInput {
         self.disk_ids.as_deref()
     }
 }
-impl std::fmt::Debug for AddWorkingStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddWorkingStorageInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("disk_ids", &self.disk_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddUploadBufferInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -20800,18 +20104,10 @@ impl AddUploadBufferInput {
         self.disk_ids.as_deref()
     }
 }
-impl std::fmt::Debug for AddUploadBufferInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddUploadBufferInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("disk_ids", &self.disk_ids);
-        formatter.finish()
-    }
-}
 
 /// <p>AddTagsToResourceInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
     #[doc(hidden)]
@@ -20834,18 +20130,10 @@ impl AddTagsToResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsToResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -20864,14 +20152,6 @@ impl AddCacheInput {
         self.disk_ids.as_deref()
     }
 }
-impl std::fmt::Debug for AddCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddCacheInput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("disk_ids", &self.disk_ids);
-        formatter.finish()
-    }
-}
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
@@ -20884,7 +20164,7 @@ impl std::fmt::Debug for AddCacheInput {
 /// <li> <p> <code>ActivateGatewayInput$TapeDriveType</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateGatewayInput {
     /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
@@ -20957,19 +20237,5 @@ impl ActivateGatewayInput {
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for ActivateGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateGatewayInput");
-        formatter.field("activation_key", &self.activation_key);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.field("gateway_timezone", &self.gateway_timezone);
-        formatter.field("gateway_region", &self.gateway_region);
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field("tape_drive_type", &self.tape_drive_type);
-        formatter.field("medium_changer_type", &self.medium_changer_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

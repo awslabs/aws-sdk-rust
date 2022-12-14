@@ -1265,7 +1265,7 @@ impl RollbackTransactionInput {
 
 /// <p>The request parameters represent the input of a request to perform a rollback of a transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1291,19 +1291,10 @@ impl RollbackTransactionInput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for RollbackTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackTransactionInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a request to run a SQL statement against a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1403,27 +1394,10 @@ impl ExecuteStatementInput {
         self.format_records_as.as_ref()
     }
 }
-impl std::fmt::Debug for ExecuteStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteStatementInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("sql", &self.sql);
-        formatter.field("database", &self.database);
-        formatter.field("schema", &self.schema);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("include_result_metadata", &self.include_result_metadata);
-        formatter.field("continue_after_timeout", &self.continue_after_timeout);
-        formatter.field("result_set_options", &self.result_set_options);
-        formatter.field("format_records_as", &self.format_records_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a request to run one or more SQL statements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteSqlInput {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1467,24 +1441,10 @@ impl ExecuteSqlInput {
         self.schema.as_deref()
     }
 }
-impl std::fmt::Debug for ExecuteSqlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteSqlInput");
-        formatter.field(
-            "db_cluster_or_instance_arn",
-            &self.db_cluster_or_instance_arn,
-        );
-        formatter.field("aws_secret_store_arn", &self.aws_secret_store_arn);
-        formatter.field("sql_statements", &self.sql_statements);
-        formatter.field("database", &self.database);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a commit transaction request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1510,19 +1470,10 @@ impl CommitTransactionInput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for CommitTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitTransactionInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a request to start a SQL transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BeginTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1555,20 +1506,10 @@ impl BeginTransactionInput {
         self.schema.as_deref()
     }
 }
-impl std::fmt::Debug for BeginTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BeginTransactionInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("database", &self.database);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a SQL statement over an array of data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1641,18 +1582,5 @@ impl BatchExecuteStatementInput {
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchExecuteStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchExecuteStatementInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("sql", &self.sql);
-        formatter.field("database", &self.database);
-        formatter.field("schema", &self.schema);
-        formatter.field("parameter_sets", &self.parameter_sets);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
     }
 }

@@ -92,7 +92,7 @@ impl AsRef<str> for Origination {
 
 /// A Microsoft Smooth Streaming (MSS) packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
     #[doc(hidden)]
@@ -123,16 +123,6 @@ impl MssPackage {
     /// A StreamSelection configuration.
     pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
         self.stream_selection.as_ref()
-    }
-}
-impl std::fmt::Debug for MssPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MssPackage");
-        formatter.field("encryption", &self.encryption);
-        formatter.field("manifest_window_seconds", &self.manifest_window_seconds);
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.field("stream_selection", &self.stream_selection);
-        formatter.finish()
     }
 }
 /// See [`MssPackage`](crate::model::MssPackage).
@@ -213,7 +203,7 @@ impl MssPackage {
 
 /// A StreamSelection configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
     #[doc(hidden)]
@@ -237,15 +227,6 @@ impl StreamSelection {
     /// A directive that determines the order of streams in the output.
     pub fn stream_order(&self) -> std::option::Option<&crate::model::StreamOrder> {
         self.stream_order.as_ref()
-    }
-}
-impl std::fmt::Debug for StreamSelection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSelection");
-        formatter.field("max_video_bits_per_second", &self.max_video_bits_per_second);
-        formatter.field("min_video_bits_per_second", &self.min_video_bits_per_second);
-        formatter.field("stream_order", &self.stream_order);
-        formatter.finish()
     }
 }
 /// See [`StreamSelection`](crate::model::StreamSelection).
@@ -410,7 +391,7 @@ impl AsRef<str> for StreamOrder {
 
 /// A Microsoft Smooth Streaming (MSS) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
@@ -420,13 +401,6 @@ impl MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
-    }
-}
-impl std::fmt::Debug for MssEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MssEncryption");
-        formatter.field("speke_key_provider", &self.speke_key_provider);
-        formatter.finish()
     }
 }
 /// See [`MssEncryption`](crate::model::MssEncryption).
@@ -468,7 +442,7 @@ impl MssEncryption {
 
 /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpekeKeyProvider {
     /// An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for enforcing secure end-to-end data transfer with the key provider service.
     #[doc(hidden)]
@@ -516,21 +490,6 @@ impl SpekeKeyProvider {
     /// The URL of the external key provider service.
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for SpekeKeyProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SpekeKeyProvider");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field(
-            "encryption_contract_configuration",
-            &self.encryption_contract_configuration,
-        );
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("system_ids", &self.system_ids);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
@@ -648,7 +607,7 @@ impl SpekeKeyProvider {
 
 /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionContractConfiguration {
     /// A collection of audio encryption presets.
     #[doc(hidden)]
@@ -665,14 +624,6 @@ impl EncryptionContractConfiguration {
     /// A collection of video encryption presets.
     pub fn preset_speke20_video(&self) -> std::option::Option<&crate::model::PresetSpeke20Video> {
         self.preset_speke20_video.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionContractConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionContractConfiguration");
-        formatter.field("preset_speke20_audio", &self.preset_speke20_audio);
-        formatter.field("preset_speke20_video", &self.preset_speke20_video);
-        formatter.finish()
     }
 }
 /// See [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
@@ -985,7 +936,7 @@ impl AsRef<str> for PresetSpeke20Audio {
 
 /// An HTTP Live Streaming (HLS) packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsPackage {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
     #[doc(hidden)]
@@ -1074,33 +1025,6 @@ impl HlsPackage {
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub fn use_audio_rendition_group(&self) -> bool {
         self.use_audio_rendition_group
-    }
-}
-impl std::fmt::Debug for HlsPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsPackage");
-        formatter.field("ad_markers", &self.ad_markers);
-        formatter.field("ad_triggers", &self.ad_triggers);
-        formatter.field(
-            "ads_on_delivery_restrictions",
-            &self.ads_on_delivery_restrictions,
-        );
-        formatter.field("encryption", &self.encryption);
-        formatter.field("include_dvb_subtitles", &self.include_dvb_subtitles);
-        formatter.field(
-            "include_iframe_only_stream",
-            &self.include_iframe_only_stream,
-        );
-        formatter.field("playlist_type", &self.playlist_type);
-        formatter.field("playlist_window_seconds", &self.playlist_window_seconds);
-        formatter.field(
-            "program_date_time_interval_seconds",
-            &self.program_date_time_interval_seconds,
-        );
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.field("stream_selection", &self.stream_selection);
-        formatter.field("use_audio_rendition_group", &self.use_audio_rendition_group);
-        formatter.finish()
     }
 }
 /// See [`HlsPackage`](crate::model::HlsPackage).
@@ -1399,7 +1323,7 @@ impl AsRef<str> for PlaylistType {
 
 /// An HTTP Live Streaming (HLS) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsEncryption {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     #[doc(hidden)]
@@ -1437,23 +1361,6 @@ impl HlsEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
-    }
-}
-impl std::fmt::Debug for HlsEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsEncryption");
-        formatter.field(
-            "constant_initialization_vector",
-            &self.constant_initialization_vector,
-        );
-        formatter.field("encryption_method", &self.encryption_method);
-        formatter.field(
-            "key_rotation_interval_seconds",
-            &self.key_rotation_interval_seconds,
-        );
-        formatter.field("repeat_ext_x_key", &self.repeat_ext_x_key);
-        formatter.field("speke_key_provider", &self.speke_key_provider);
-        formatter.finish()
     }
 }
 /// See [`HlsEncryption`](crate::model::HlsEncryption).
@@ -1999,7 +1906,7 @@ impl AsRef<str> for AdMarkers {
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashPackage {
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
     #[doc(hidden)]
@@ -2118,37 +2025,6 @@ impl DashPackage {
     /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
     pub fn utc_timing_uri(&self) -> std::option::Option<&str> {
         self.utc_timing_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for DashPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashPackage");
-        formatter.field("ad_triggers", &self.ad_triggers);
-        formatter.field(
-            "ads_on_delivery_restrictions",
-            &self.ads_on_delivery_restrictions,
-        );
-        formatter.field("encryption", &self.encryption);
-        formatter.field(
-            "include_iframe_only_stream",
-            &self.include_iframe_only_stream,
-        );
-        formatter.field("manifest_layout", &self.manifest_layout);
-        formatter.field("manifest_window_seconds", &self.manifest_window_seconds);
-        formatter.field("min_buffer_time_seconds", &self.min_buffer_time_seconds);
-        formatter.field("min_update_period_seconds", &self.min_update_period_seconds);
-        formatter.field("period_triggers", &self.period_triggers);
-        formatter.field("profile", &self.profile);
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.field("segment_template_format", &self.segment_template_format);
-        formatter.field("stream_selection", &self.stream_selection);
-        formatter.field(
-            "suggested_presentation_delay_seconds",
-            &self.suggested_presentation_delay_seconds,
-        );
-        formatter.field("utc_timing", &self.utc_timing);
-        formatter.field("utc_timing_uri", &self.utc_timing_uri);
-        formatter.finish()
     }
 }
 /// See [`DashPackage`](crate::model::DashPackage).
@@ -2898,7 +2774,7 @@ impl AsRef<str> for ManifestLayout {
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashEncryption {
     /// Time (in seconds) between each encryption key rotation.
     #[doc(hidden)]
@@ -2915,17 +2791,6 @@ impl DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
-    }
-}
-impl std::fmt::Debug for DashEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashEncryption");
-        formatter.field(
-            "key_rotation_interval_seconds",
-            &self.key_rotation_interval_seconds,
-        );
-        formatter.field("speke_key_provider", &self.speke_key_provider);
-        formatter.finish()
     }
 }
 /// See [`DashEncryption`](crate::model::DashEncryption).
@@ -2984,7 +2849,7 @@ impl DashEncryption {
 
 /// A Common Media Application Format (CMAF) packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CmafPackage {
     /// A Common Media Application Format (CMAF) encryption configuration.
     #[doc(hidden)]
@@ -3022,17 +2887,6 @@ impl CmafPackage {
     /// A StreamSelection configuration.
     pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
         self.stream_selection.as_ref()
-    }
-}
-impl std::fmt::Debug for CmafPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CmafPackage");
-        formatter.field("encryption", &self.encryption);
-        formatter.field("hls_manifests", &self.hls_manifests);
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.field("segment_prefix", &self.segment_prefix);
-        formatter.field("stream_selection", &self.stream_selection);
-        formatter.finish()
     }
 }
 /// See [`CmafPackage`](crate::model::CmafPackage).
@@ -3137,7 +2991,7 @@ impl CmafPackage {
 
 /// A HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsManifest {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
     #[doc(hidden)]
@@ -3212,31 +3066,6 @@ impl HlsManifest {
         &self,
     ) -> std::option::Option<&crate::model::AdsOnDeliveryRestrictions> {
         self.ads_on_delivery_restrictions.as_ref()
-    }
-}
-impl std::fmt::Debug for HlsManifest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsManifest");
-        formatter.field("ad_markers", &self.ad_markers);
-        formatter.field("id", &self.id);
-        formatter.field(
-            "include_iframe_only_stream",
-            &self.include_iframe_only_stream,
-        );
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("playlist_type", &self.playlist_type);
-        formatter.field("playlist_window_seconds", &self.playlist_window_seconds);
-        formatter.field(
-            "program_date_time_interval_seconds",
-            &self.program_date_time_interval_seconds,
-        );
-        formatter.field("url", &self.url);
-        formatter.field("ad_triggers", &self.ad_triggers);
-        formatter.field(
-            "ads_on_delivery_restrictions",
-            &self.ads_on_delivery_restrictions,
-        );
-        formatter.finish()
     }
 }
 /// See [`HlsManifest`](crate::model::HlsManifest).
@@ -3413,7 +3242,7 @@ impl HlsManifest {
 
 /// A Common Media Application Format (CMAF) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CmafEncryption {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
     #[doc(hidden)]
@@ -3444,22 +3273,6 @@ impl CmafEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
-    }
-}
-impl std::fmt::Debug for CmafEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CmafEncryption");
-        formatter.field(
-            "constant_initialization_vector",
-            &self.constant_initialization_vector,
-        );
-        formatter.field("encryption_method", &self.encryption_method);
-        formatter.field(
-            "key_rotation_interval_seconds",
-            &self.key_rotation_interval_seconds,
-        );
-        formatter.field("speke_key_provider", &self.speke_key_provider);
-        formatter.finish()
     }
 }
 /// See [`CmafEncryption`](crate::model::CmafEncryption).
@@ -3643,7 +3456,7 @@ impl AsRef<str> for CmafEncryptionMethod {
 
 /// CDN Authorization credentials
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Authorization {
     /// The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.
     #[doc(hidden)]
@@ -3660,14 +3473,6 @@ impl Authorization {
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
     pub fn secrets_role_arn(&self) -> std::option::Option<&str> {
         self.secrets_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Authorization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Authorization");
-        formatter.field("cdn_identifier_secret", &self.cdn_identifier_secret);
-        formatter.field("secrets_role_arn", &self.secrets_role_arn);
-        formatter.finish()
     }
 }
 /// See [`Authorization`](crate::model::Authorization).
@@ -3724,7 +3529,7 @@ impl Authorization {
 
 /// A Common Media Application Format (CMAF) packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CmafPackageCreateOrUpdateParameters {
     /// A Common Media Application Format (CMAF) encryption configuration.
     #[doc(hidden)]
@@ -3765,17 +3570,6 @@ impl CmafPackageCreateOrUpdateParameters {
     /// A StreamSelection configuration.
     pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
         self.stream_selection.as_ref()
-    }
-}
-impl std::fmt::Debug for CmafPackageCreateOrUpdateParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CmafPackageCreateOrUpdateParameters");
-        formatter.field("encryption", &self.encryption);
-        formatter.field("hls_manifests", &self.hls_manifests);
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.field("segment_prefix", &self.segment_prefix);
-        formatter.field("stream_selection", &self.stream_selection);
-        formatter.finish()
     }
 }
 /// See [`CmafPackageCreateOrUpdateParameters`](crate::model::CmafPackageCreateOrUpdateParameters).
@@ -3886,7 +3680,7 @@ impl CmafPackageCreateOrUpdateParameters {
 
 /// A HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsManifestCreateOrUpdateParameters {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
     #[doc(hidden)]
@@ -3954,30 +3748,6 @@ impl HlsManifestCreateOrUpdateParameters {
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     pub fn program_date_time_interval_seconds(&self) -> i32 {
         self.program_date_time_interval_seconds
-    }
-}
-impl std::fmt::Debug for HlsManifestCreateOrUpdateParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsManifestCreateOrUpdateParameters");
-        formatter.field("ad_markers", &self.ad_markers);
-        formatter.field("ad_triggers", &self.ad_triggers);
-        formatter.field(
-            "ads_on_delivery_restrictions",
-            &self.ads_on_delivery_restrictions,
-        );
-        formatter.field("id", &self.id);
-        formatter.field(
-            "include_iframe_only_stream",
-            &self.include_iframe_only_stream,
-        );
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("playlist_type", &self.playlist_type);
-        formatter.field("playlist_window_seconds", &self.playlist_window_seconds);
-        formatter.field(
-            "program_date_time_interval_seconds",
-            &self.program_date_time_interval_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`HlsManifestCreateOrUpdateParameters`](crate::model::HlsManifestCreateOrUpdateParameters).
@@ -4142,7 +3912,7 @@ impl HlsManifestCreateOrUpdateParameters {
 
 /// Configure ingress access logging.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngressAccessLogs {
     /// Customize the log group name.
     #[doc(hidden)]
@@ -4152,13 +3922,6 @@ impl IngressAccessLogs {
     /// Customize the log group name.
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for IngressAccessLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngressAccessLogs");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`IngressAccessLogs`](crate::model::IngressAccessLogs).
@@ -4200,7 +3963,7 @@ impl IngressAccessLogs {
 
 /// An HTTP Live Streaming (HLS) ingest resource configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsIngest {
     /// A list of endpoints to which the source stream should be sent.
     #[doc(hidden)]
@@ -4210,13 +3973,6 @@ impl HlsIngest {
     /// A list of endpoints to which the source stream should be sent.
     pub fn ingest_endpoints(&self) -> std::option::Option<&[crate::model::IngestEndpoint]> {
         self.ingest_endpoints.as_deref()
-    }
-}
-impl std::fmt::Debug for HlsIngest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsIngest");
-        formatter.field("ingest_endpoints", &self.ingest_endpoints);
-        formatter.finish()
     }
 }
 /// See [`HlsIngest`](crate::model::HlsIngest).
@@ -4265,7 +4021,7 @@ impl HlsIngest {
 
 /// An endpoint for ingesting source content for a Channel.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestEndpoint {
     /// The system generated unique identifier for the IngestEndpoint
     #[doc(hidden)]
@@ -4296,16 +4052,6 @@ impl IngestEndpoint {
     /// The system generated username for ingest authentication.
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for IngestEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestEndpoint");
-        formatter.field("id", &self.id);
-        formatter.field("password", &self.password);
-        formatter.field("url", &self.url);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }
 /// See [`IngestEndpoint`](crate::model::IngestEndpoint).
@@ -4380,7 +4126,7 @@ impl IngestEndpoint {
 
 /// Configure egress access logging.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EgressAccessLogs {
     /// Customize the log group name.
     #[doc(hidden)]
@@ -4390,13 +4136,6 @@ impl EgressAccessLogs {
     /// Customize the log group name.
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for EgressAccessLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EgressAccessLogs");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
     }
 }
 /// See [`EgressAccessLogs`](crate::model::EgressAccessLogs).
@@ -4438,7 +4177,7 @@ impl EgressAccessLogs {
 
 /// An OriginEndpoint resource configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginEndpoint {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     #[doc(hidden)]
@@ -4557,28 +4296,6 @@ impl OriginEndpoint {
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
         self.whitelist.as_deref()
-    }
-}
-impl std::fmt::Debug for OriginEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginEndpoint");
-        formatter.field("arn", &self.arn);
-        formatter.field("authorization", &self.authorization);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("cmaf_package", &self.cmaf_package);
-        formatter.field("dash_package", &self.dash_package);
-        formatter.field("description", &self.description);
-        formatter.field("hls_package", &self.hls_package);
-        formatter.field("id", &self.id);
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("mss_package", &self.mss_package);
-        formatter.field("origination", &self.origination);
-        formatter.field("startover_window_seconds", &self.startover_window_seconds);
-        formatter.field("tags", &self.tags);
-        formatter.field("time_delay_seconds", &self.time_delay_seconds);
-        formatter.field("url", &self.url);
-        formatter.field("whitelist", &self.whitelist);
-        formatter.finish()
     }
 }
 /// See [`OriginEndpoint`](crate::model::OriginEndpoint).
@@ -4844,7 +4561,7 @@ impl OriginEndpoint {
 
 /// A HarvestJob resource configuration
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HarvestJob {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
     #[doc(hidden)]
@@ -4910,21 +4627,6 @@ impl HarvestJob {
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for HarvestJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HarvestJob");
-        formatter.field("arn", &self.arn);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("id", &self.id);
-        formatter.field("origin_endpoint_id", &self.origin_endpoint_id);
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`HarvestJob`](crate::model::HarvestJob).
@@ -5160,7 +4862,7 @@ impl AsRef<str> for Status {
 
 /// Configuration parameters for where in an S3 bucket to place the harvested content
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Destination {
     /// The name of an S3 bucket within which harvested content will be exported
     #[doc(hidden)]
@@ -5184,15 +4886,6 @@ impl S3Destination {
     /// The IAM role used to write to the specified S3 bucket
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Destination");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("manifest_key", &self.manifest_key);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`S3Destination`](crate::model::S3Destination).
@@ -5255,7 +4948,7 @@ impl S3Destination {
 
 /// A Channel resource configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
@@ -5311,19 +5004,6 @@ impl Channel {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("arn", &self.arn);
-        formatter.field("description", &self.description);
-        formatter.field("egress_access_logs", &self.egress_access_logs);
-        formatter.field("hls_ingest", &self.hls_ingest);
-        formatter.field("id", &self.id);
-        formatter.field("ingress_access_logs", &self.ingress_access_logs);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Channel`](crate::model::Channel).

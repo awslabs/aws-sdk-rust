@@ -2,18 +2,11 @@
 
 /// This exception is thrown when an internal service error occurs.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarketplaceCommerceAnalyticsException {
     /// This message describes details of the error.
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MarketplaceCommerceAnalyticsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarketplaceCommerceAnalyticsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MarketplaceCommerceAnalyticsException {
     /// Returns the error message.

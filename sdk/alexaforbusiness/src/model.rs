@@ -2,7 +2,7 @@
 
 /// <p>Updates meeting room settings of a room profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     #[doc(hidden)]
@@ -35,19 +35,6 @@ impl UpdateMeetingRoomConfiguration {
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
     pub fn require_check_in(&self) -> std::option::Option<&crate::model::UpdateRequireCheckIn> {
         self.require_check_in.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateMeetingRoomConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMeetingRoomConfiguration");
-        formatter.field(
-            "room_utilization_metrics_enabled",
-            &self.room_utilization_metrics_enabled,
-        );
-        formatter.field("end_of_meeting_reminder", &self.end_of_meeting_reminder);
-        formatter.field("instant_booking", &self.instant_booking);
-        formatter.field("require_check_in", &self.require_check_in);
-        formatter.finish()
     }
 }
 /// See [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
@@ -138,7 +125,7 @@ impl UpdateMeetingRoomConfiguration {
 
 /// <p>Updates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRequireCheckIn {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
     #[doc(hidden)]
@@ -155,14 +142,6 @@ impl UpdateRequireCheckIn {
     /// <p>Whether require check in is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for UpdateRequireCheckIn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRequireCheckIn");
-        formatter.field("release_after_minutes", &self.release_after_minutes);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
@@ -213,7 +192,7 @@ impl UpdateRequireCheckIn {
 
 /// <p>Updates settings for the instant booking feature that are applied to a room profile. If instant booking is enabled, Alexa automatically reserves a room if it is free when a user joins a meeting with Alexa.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     #[doc(hidden)]
@@ -230,14 +209,6 @@ impl UpdateInstantBooking {
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for UpdateInstantBooking {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInstantBooking");
-        formatter.field("duration_in_minutes", &self.duration_in_minutes);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
@@ -288,7 +259,7 @@ impl UpdateInstantBooking {
 
 /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEndOfMeetingReminder {
     /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     #[doc(hidden)]
@@ -312,15 +283,6 @@ impl UpdateEndOfMeetingReminder {
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for UpdateEndOfMeetingReminder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEndOfMeetingReminder");
-        formatter.field("reminder_at_minutes", &self.reminder_at_minutes);
-        formatter.field("reminder_type", &self.reminder_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
@@ -817,7 +779,7 @@ impl std::fmt::Debug for SipAddress {
 pub mod sip_address {
 
     /// A builder for [`SipAddress`](crate::model::SipAddress).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::SipType>,
@@ -849,6 +811,14 @@ pub mod sip_address {
                 uri: self.uri,
                 r#type: self.r#type,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("uri", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -901,7 +871,6 @@ impl SipAddress {
     std::cmp::Ord,
     std::cmp::PartialEq,
     std::cmp::PartialOrd,
-    std::fmt::Debug,
     std::hash::Hash,
 )]
 pub enum SipType {
@@ -943,6 +912,11 @@ impl AsRef<str> for SipType {
         self.as_str()
     }
 }
+impl std::fmt::Debug for SipType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "*** Sensitive Data Redacted ***")
+    }
+}
 
 /// <p>The phone number for the contact containing the raw number and phone number type.</p>
 #[non_exhaustive]
@@ -977,7 +951,7 @@ impl std::fmt::Debug for PhoneNumber {
 pub mod phone_number {
 
     /// A builder for [`PhoneNumber`](crate::model::PhoneNumber).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) number: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::PhoneNumberType>,
@@ -1012,6 +986,14 @@ pub mod phone_number {
                 number: self.number,
                 r#type: self.r#type,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("number", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1066,7 +1048,6 @@ impl PhoneNumber {
     std::cmp::Ord,
     std::cmp::PartialEq,
     std::cmp::PartialOrd,
-    std::fmt::Debug,
     std::hash::Hash,
 )]
 pub enum PhoneNumberType {
@@ -1116,6 +1097,11 @@ impl AsRef<str> for PhoneNumberType {
         self.as_str()
     }
 }
+impl std::fmt::Debug for PhoneNumberType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "*** Sensitive Data Redacted ***")
+    }
+}
 
 /// <p>The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.</p>
 /// <ul>
@@ -1124,7 +1110,7 @@ impl AsRef<str> for PhoneNumberType {
 /// <li> <p>If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeetingSetting {
     /// <p>The values that indicate whether the pin is always required.</p>
     #[doc(hidden)]
@@ -1134,13 +1120,6 @@ impl MeetingSetting {
     /// <p>The values that indicate whether the pin is always required.</p>
     pub fn require_pin(&self) -> std::option::Option<&crate::model::RequirePin> {
         self.require_pin.as_ref()
-    }
-}
-impl std::fmt::Debug for MeetingSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeetingSetting");
-        formatter.field("require_pin", &self.require_pin);
-        formatter.finish()
     }
 }
 /// See [`MeetingSetting`](crate::model::MeetingSetting).
@@ -1277,7 +1256,7 @@ impl AsRef<str> for RequirePin {
 
 /// <p>The information for public switched telephone network (PSTN) conferencing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PstnDialIn {
     /// <p>The zip code.</p>
     #[doc(hidden)]
@@ -1308,16 +1287,6 @@ impl PstnDialIn {
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
     pub fn one_click_pin_delay(&self) -> std::option::Option<&str> {
         self.one_click_pin_delay.as_deref()
-    }
-}
-impl std::fmt::Debug for PstnDialIn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PstnDialIn");
-        formatter.field("country_code", &self.country_code);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("one_click_id_delay", &self.one_click_id_delay);
-        formatter.field("one_click_pin_delay", &self.one_click_pin_delay);
-        formatter.finish()
     }
 }
 /// See [`PstnDialIn`](crate::model::PstnDialIn).
@@ -1398,7 +1367,7 @@ impl PstnDialIn {
 
 /// <p>The IP endpoint and protocol for calling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpDialIn {
     /// <p>The IP address.</p>
     #[doc(hidden)]
@@ -1415,14 +1384,6 @@ impl IpDialIn {
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
     pub fn comms_protocol(&self) -> std::option::Option<&crate::model::CommsProtocol> {
         self.comms_protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for IpDialIn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpDialIn");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("comms_protocol", &self.comms_protocol);
-        formatter.finish()
     }
 }
 /// See [`IpDialIn`](crate::model::IpDialIn).
@@ -1714,7 +1675,7 @@ impl AsRef<str> for ConferenceProviderType {
 
 /// <p>The recurrence of the reports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BusinessReportRecurrence {
     /// <p>The start date.</p>
     #[doc(hidden)]
@@ -1724,13 +1685,6 @@ impl BusinessReportRecurrence {
     /// <p>The start date.</p>
     pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
-    }
-}
-impl std::fmt::Debug for BusinessReportRecurrence {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BusinessReportRecurrence");
-        formatter.field("start_date", &self.start_date);
-        formatter.finish()
     }
 }
 /// See [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
@@ -1861,7 +1815,7 @@ impl AsRef<str> for BusinessReportFormat {
 
 /// <p>A key-value pair that can be associated with a resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of a tag. Tag keys are case-sensitive. </p>
     #[doc(hidden)]
@@ -1878,14 +1832,6 @@ impl Tag {
     /// <p>The value of a tag. Tag values are case sensitive and can be null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -2065,7 +2011,7 @@ impl AsRef<str> for Feature {
 
 /// <p>The content definition. This can contain only one text, SSML, or audio list object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Content {
     /// <p>The list of text messages.</p>
     #[doc(hidden)]
@@ -2089,15 +2035,6 @@ impl Content {
     /// <p>The list of audio messages.</p>
     pub fn audio_list(&self) -> std::option::Option<&[crate::model::Audio]> {
         self.audio_list.as_deref()
-    }
-}
-impl std::fmt::Debug for Content {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Content");
-        formatter.field("text_list", &self.text_list);
-        formatter.field("ssml_list", &self.ssml_list);
-        formatter.field("audio_list", &self.audio_list);
-        formatter.finish()
     }
 }
 /// See [`Content`](crate::model::Content).
@@ -2195,7 +2132,7 @@ impl Content {
 /// <output-file.mp3></output-file.mp3>
 /// </input-file></code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
     #[doc(hidden)]
@@ -2212,14 +2149,6 @@ impl Audio {
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
-    }
-}
-impl std::fmt::Debug for Audio {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Audio");
-        formatter.field("locale", &self.locale);
-        formatter.field("location", &self.location);
-        formatter.finish()
     }
 }
 /// See [`Audio`](crate::model::Audio).
@@ -2355,7 +2284,7 @@ impl AsRef<str> for Locale {
 
 /// <p>The SSML message. For more information, see <a href="https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html">SSML Reference</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ssml {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
     #[doc(hidden)]
@@ -2372,14 +2301,6 @@ impl Ssml {
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Ssml {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ssml");
-        formatter.field("locale", &self.locale);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Ssml`](crate::model::Ssml).
@@ -2430,7 +2351,7 @@ impl Ssml {
 
 /// <p>The text message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Text {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     #[doc(hidden)]
@@ -2447,14 +2368,6 @@ impl Text {
     /// <p>The value of the text message.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Text {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Text");
-        formatter.field("locale", &self.locale);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Text`](crate::model::Text).
@@ -2505,7 +2418,7 @@ impl Text {
 
 /// <p>A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The key of a filter.</p>
     #[doc(hidden)]
@@ -2522,14 +2435,6 @@ impl Filter {
     /// <p>The values of a filter.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -2589,7 +2494,7 @@ impl Filter {
 
 /// <p>Information related to a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserData {
     /// <p>The ARN of a user.</p>
     #[doc(hidden)]
@@ -2634,18 +2539,6 @@ impl UserData {
     /// <p>The enrollment ARN of a user.</p>
     pub fn enrollment_id(&self) -> std::option::Option<&str> {
         self.enrollment_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UserData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserData");
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("first_name", &self.first_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("email", &self.email);
-        formatter.field("enrollment_status", &self.enrollment_status);
-        formatter.field("enrollment_id", &self.enrollment_id);
-        formatter.finish()
     }
 }
 /// See [`UserData`](crate::model::UserData).
@@ -2861,7 +2754,7 @@ impl AsRef<str> for EnrollmentStatus {
 
 /// <p>An object representing a sort criteria. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sort {
     /// <p>The sort key of a sort object.</p>
     #[doc(hidden)]
@@ -2878,14 +2771,6 @@ impl Sort {
     /// <p>The sort value of a sort object.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::SortValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for Sort {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sort");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Sort`](crate::model::Sort).
@@ -3026,7 +2911,7 @@ impl AsRef<str> for SortValue {
 
 /// <p>The attributes of a skill group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SkillGroupData {
     /// <p>The skill group ARN of a skill group.</p>
     #[doc(hidden)]
@@ -3050,15 +2935,6 @@ impl SkillGroupData {
     /// <p>The description of a skill group.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for SkillGroupData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SkillGroupData");
-        formatter.field("skill_group_arn", &self.skill_group_arn);
-        formatter.field("skill_group_name", &self.skill_group_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`SkillGroupData`](crate::model::SkillGroupData).
@@ -3127,7 +3003,7 @@ impl SkillGroupData {
 
 /// <p>The data of a room.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoomData {
     /// <p>The ARN of a room.</p>
     #[doc(hidden)]
@@ -3172,18 +3048,6 @@ impl RoomData {
     /// <p>The profile name of a room.</p>
     pub fn profile_name(&self) -> std::option::Option<&str> {
         self.profile_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RoomData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoomData");
-        formatter.field("room_arn", &self.room_arn);
-        formatter.field("room_name", &self.room_name);
-        formatter.field("description", &self.description);
-        formatter.field("provider_calendar_id", &self.provider_calendar_id);
-        formatter.field("profile_arn", &self.profile_arn);
-        formatter.field("profile_name", &self.profile_name);
-        formatter.finish()
     }
 }
 /// See [`RoomData`](crate::model::RoomData).
@@ -3285,7 +3149,7 @@ impl RoomData {
 
 /// <p>The data of a room profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProfileData {
     /// <p>The ARN of a room profile.</p>
     #[doc(hidden)]
@@ -3351,21 +3215,6 @@ impl ProfileData {
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
-    }
-}
-impl std::fmt::Debug for ProfileData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProfileData");
-        formatter.field("profile_arn", &self.profile_arn);
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("is_default", &self.is_default);
-        formatter.field("address", &self.address);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("distance_unit", &self.distance_unit);
-        formatter.field("temperature_unit", &self.temperature_unit);
-        formatter.field("wake_word", &self.wake_word);
-        formatter.field("locale", &self.locale);
-        formatter.finish()
     }
 }
 /// See [`ProfileData`](crate::model::ProfileData).
@@ -3506,7 +3355,7 @@ impl ProfileData {
 
 /// <p>The data associated with a network profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkProfileData {
     /// <p>The ARN of the network profile associated with a device.</p>
     #[doc(hidden)]
@@ -3558,19 +3407,6 @@ impl NetworkProfileData {
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkProfileData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkProfileData");
-        formatter.field("network_profile_arn", &self.network_profile_arn);
-        formatter.field("network_profile_name", &self.network_profile_name);
-        formatter.field("description", &self.description);
-        formatter.field("ssid", &self.ssid);
-        formatter.field("security_type", &self.security_type);
-        formatter.field("eap_method", &self.eap_method);
-        formatter.field("certificate_authority_arn", &self.certificate_authority_arn);
-        formatter.finish()
     }
 }
 /// See [`NetworkProfileData`](crate::model::NetworkProfileData).
@@ -3888,7 +3724,7 @@ impl AsRef<str> for NetworkSecurityType {
 
 /// <p>Device attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceData {
     /// <p>The ARN of a device.</p>
     #[doc(hidden)]
@@ -3982,25 +3818,6 @@ impl DeviceData {
     /// <p>The time (in epoch) when the device data was created.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceData");
-        formatter.field("device_arn", &self.device_arn);
-        formatter.field("device_serial_number", &self.device_serial_number);
-        formatter.field("device_type", &self.device_type);
-        formatter.field("device_name", &self.device_name);
-        formatter.field("software_version", &self.software_version);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("device_status", &self.device_status);
-        formatter.field("network_profile_arn", &self.network_profile_arn);
-        formatter.field("network_profile_name", &self.network_profile_name);
-        formatter.field("room_arn", &self.room_arn);
-        formatter.field("room_name", &self.room_name);
-        formatter.field("device_status_info", &self.device_status_info);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`DeviceData`](crate::model::DeviceData).
@@ -4204,7 +4021,7 @@ impl DeviceData {
 
 /// <p>Detailed information about a device's status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceStatusInfo {
     /// <p>One or more device status detail descriptions.</p>
     #[doc(hidden)]
@@ -4232,18 +4049,6 @@ impl DeviceStatusInfo {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.connection_status_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceStatusInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceStatusInfo");
-        formatter.field("device_status_details", &self.device_status_details);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field(
-            "connection_status_updated_time",
-            &self.connection_status_updated_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
@@ -4412,7 +4217,7 @@ impl AsRef<str> for ConnectionStatus {
 
 /// <p>Details of a device’s status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceStatusDetail {
     /// <p>The list of available features on the device.</p>
     #[doc(hidden)]
@@ -4429,14 +4234,6 @@ impl DeviceStatusDetail {
     /// <p>The device status detail code.</p>
     pub fn code(&self) -> std::option::Option<&crate::model::DeviceStatusDetailCode> {
         self.code.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceStatusDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceStatusDetail");
-        formatter.field("feature", &self.feature);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 /// See [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
@@ -4859,7 +4656,7 @@ impl std::fmt::Debug for ContactData {
 pub mod contact_data {
 
     /// A builder for [`ContactData`](crate::model::ContactData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -4971,6 +4768,19 @@ pub mod contact_data {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("contact_arn", &self.contact_arn);
+            formatter.field("display_name", &self.display_name);
+            formatter.field("first_name", &self.first_name);
+            formatter.field("last_name", &self.last_name);
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("phone_numbers", &self.phone_numbers);
+            formatter.field("sip_addresses", &self.sip_addresses);
+            formatter.finish()
+        }
+    }
 }
 impl ContactData {
     /// Creates a new builder-style object to manufacture [`ContactData`](crate::model::ContactData).
@@ -4981,7 +4791,7 @@ impl ContactData {
 
 /// <p>Information related to an address book.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddressBookData {
     /// <p>The ARN of the address book.</p>
     #[doc(hidden)]
@@ -5005,15 +4815,6 @@ impl AddressBookData {
     /// <p>The description of the address book.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for AddressBookData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddressBookData");
-        formatter.field("address_book_arn", &self.address_book_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`AddressBookData`](crate::model::AddressBookData).
@@ -5079,7 +4880,7 @@ impl AddressBookData {
 
 /// <p>A skill parameter associated with a room.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     #[doc(hidden)]
@@ -5096,14 +4897,6 @@ impl RoomSkillParameter {
     /// <p>The parameter value of a room skill parameter.</p>
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
-    }
-}
-impl std::fmt::Debug for RoomSkillParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoomSkillParameter");
-        formatter.field("parameter_key", &self.parameter_key);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
     }
 }
 /// See [`RoomSkillParameter`](crate::model::RoomSkillParameter).
@@ -5160,7 +4953,7 @@ impl RoomSkillParameter {
 
 /// <p>The default conference provider that is used if no other scheduled meetings are detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConferencePreference {
     /// <p>The ARN of the default conference provider.</p>
     #[doc(hidden)]
@@ -5170,16 +4963,6 @@ impl ConferencePreference {
     /// <p>The ARN of the default conference provider.</p>
     pub fn default_conference_provider_arn(&self) -> std::option::Option<&str> {
         self.default_conference_provider_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ConferencePreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConferencePreference");
-        formatter.field(
-            "default_conference_provider_arn",
-            &self.default_conference_provider_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`ConferencePreference`](crate::model::ConferencePreference).
@@ -5224,7 +5007,7 @@ impl ConferencePreference {
 
 /// <p>A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmartHomeAppliance {
     /// <p>The friendly name of the smart home appliance.</p>
     #[doc(hidden)]
@@ -5248,15 +5031,6 @@ impl SmartHomeAppliance {
     /// <p>The name of the manufacturer of the smart home appliance.</p>
     pub fn manufacturer_name(&self) -> std::option::Option<&str> {
         self.manufacturer_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SmartHomeAppliance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmartHomeAppliance");
-        formatter.field("friendly_name", &self.friendly_name);
-        formatter.field("description", &self.description);
-        formatter.field("manufacturer_name", &self.manufacturer_name);
-        formatter.finish()
     }
 }
 /// See [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
@@ -5325,7 +5099,7 @@ impl SmartHomeAppliance {
 
 /// <p>The detailed information about an Alexa skill.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SkillsStoreSkill {
     /// <p>The ARN of the skill.</p>
     #[doc(hidden)]
@@ -5377,19 +5151,6 @@ impl SkillsStoreSkill {
     /// <p>Linking support for a skill.</p>
     pub fn supports_linking(&self) -> bool {
         self.supports_linking
-    }
-}
-impl std::fmt::Debug for SkillsStoreSkill {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SkillsStoreSkill");
-        formatter.field("skill_id", &self.skill_id);
-        formatter.field("skill_name", &self.skill_name);
-        formatter.field("short_description", &self.short_description);
-        formatter.field("icon_url", &self.icon_url);
-        formatter.field("sample_utterances", &self.sample_utterances);
-        formatter.field("skill_details", &self.skill_details);
-        formatter.field("supports_linking", &self.supports_linking);
-        formatter.finish()
     }
 }
 /// See [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
@@ -5515,7 +5276,7 @@ impl SkillsStoreSkill {
 
 /// <p>Granular information about the skill.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SkillDetails {
     /// <p>The description of the product.</p>
     #[doc(hidden)]
@@ -5594,28 +5355,6 @@ impl SkillDetails {
     /// <p>The details about the developer that published the skill.</p>
     pub fn developer_info(&self) -> std::option::Option<&crate::model::DeveloperInfo> {
         self.developer_info.as_ref()
-    }
-}
-impl std::fmt::Debug for SkillDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SkillDetails");
-        formatter.field("product_description", &self.product_description);
-        formatter.field("invocation_phrase", &self.invocation_phrase);
-        formatter.field("release_date", &self.release_date);
-        formatter.field(
-            "end_user_license_agreement",
-            &self.end_user_license_agreement,
-        );
-        formatter.field("generic_keywords", &self.generic_keywords);
-        formatter.field("bullet_points", &self.bullet_points);
-        formatter.field(
-            "new_in_this_version_bullet_points",
-            &self.new_in_this_version_bullet_points,
-        );
-        formatter.field("skill_types", &self.skill_types);
-        formatter.field("reviews", &self.reviews);
-        formatter.field("developer_info", &self.developer_info);
-        formatter.finish()
     }
 }
 /// See [`SkillDetails`](crate::model::SkillDetails).
@@ -5833,7 +5572,7 @@ impl SkillDetails {
 
 /// <p>The details about the developer that published the skill.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeveloperInfo {
     /// <p>The name of the developer.</p>
     #[doc(hidden)]
@@ -5864,16 +5603,6 @@ impl DeveloperInfo {
     /// <p>The website of the developer.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
-    }
-}
-impl std::fmt::Debug for DeveloperInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeveloperInfo");
-        formatter.field("developer_name", &self.developer_name);
-        formatter.field("privacy_policy", &self.privacy_policy);
-        formatter.field("email", &self.email);
-        formatter.field("url", &self.url);
-        formatter.finish()
     }
 }
 /// See [`DeveloperInfo`](crate::model::DeveloperInfo).
@@ -5954,7 +5683,7 @@ impl DeveloperInfo {
 
 /// <p>The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Category {
     /// <p>The ID of the skill store category.</p>
     #[doc(hidden)]
@@ -5971,14 +5700,6 @@ impl Category {
     /// <p>The name of the skill store category.</p>
     pub fn category_name(&self) -> std::option::Option<&str> {
         self.category_name.as_deref()
-    }
-}
-impl std::fmt::Debug for Category {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Category");
-        formatter.field("category_id", &self.category_id);
-        formatter.field("category_name", &self.category_name);
-        formatter.finish()
     }
 }
 /// See [`Category`](crate::model::Category).
@@ -6032,7 +5753,7 @@ impl Category {
 
 /// <p>The summary of skills.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SkillSummary {
     /// <p>The ARN of the skill summary.</p>
     #[doc(hidden)]
@@ -6070,17 +5791,6 @@ impl SkillSummary {
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub fn skill_type(&self) -> std::option::Option<&crate::model::SkillType> {
         self.skill_type.as_ref()
-    }
-}
-impl std::fmt::Debug for SkillSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SkillSummary");
-        formatter.field("skill_id", &self.skill_id);
-        formatter.field("skill_name", &self.skill_name);
-        formatter.field("supports_linking", &self.supports_linking);
-        formatter.field("enablement_type", &self.enablement_type);
-        formatter.field("skill_type", &self.skill_type);
-        formatter.finish()
     }
 }
 /// See [`SkillSummary`](crate::model::SkillSummary).
@@ -6540,7 +6250,7 @@ impl AsRef<str> for EnablementTypeFilter {
 
 /// <p>The summary of a gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewaySummary {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
@@ -6578,17 +6288,6 @@ impl GatewaySummary {
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(&self) -> std::option::Option<&str> {
         self.software_version.as_deref()
-    }
-}
-impl std::fmt::Debug for GatewaySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewaySummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("gateway_group_arn", &self.gateway_group_arn);
-        formatter.field("software_version", &self.software_version);
-        formatter.finish()
     }
 }
 /// See [`GatewaySummary`](crate::model::GatewaySummary).
@@ -6681,7 +6380,7 @@ impl GatewaySummary {
 
 /// <p>The summary of a gateway group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayGroupSummary {
     /// <p>The ARN of the gateway group.</p>
     #[doc(hidden)]
@@ -6705,15 +6404,6 @@ impl GatewayGroupSummary {
     /// <p>The description of the gateway group.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for GatewayGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayGroupSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
@@ -6776,7 +6466,7 @@ impl GatewayGroupSummary {
 
 /// <p>The list of device events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceEvent {
     /// <p>The type of device event.</p>
     #[doc(hidden)]
@@ -6800,15 +6490,6 @@ impl DeviceEvent {
     /// <p>The time (in epoch) when the event occurred. </p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceEvent");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
     }
 }
 /// See [`DeviceEvent`](crate::model::DeviceEvent).
@@ -6967,7 +6648,7 @@ impl AsRef<str> for DeviceEventType {
 
 /// <p>An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConferenceProvider {
     /// <p>The ARN of the newly created conference provider.</p>
     #[doc(hidden)]
@@ -7012,18 +6693,6 @@ impl ConferenceProvider {
     /// <p>The meeting settings for the conference provider.</p>
     pub fn meeting_setting(&self) -> std::option::Option<&crate::model::MeetingSetting> {
         self.meeting_setting.as_ref()
-    }
-}
-impl std::fmt::Debug for ConferenceProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConferenceProvider");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("ip_dial_in", &self.ip_dial_in);
-        formatter.field("pstn_dial_in", &self.pstn_dial_in);
-        formatter.field("meeting_setting", &self.meeting_setting);
-        formatter.finish()
     }
 }
 /// See [`ConferenceProvider`](crate::model::ConferenceProvider).
@@ -7134,7 +6803,7 @@ impl ConferenceProvider {
 
 /// <p>The schedule of the usage report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BusinessReportSchedule {
     /// <p>The ARN of the business report schedule.</p>
     #[doc(hidden)]
@@ -7193,20 +6862,6 @@ impl BusinessReportSchedule {
     /// <p>The details of the last business report delivery for a specified time interval.</p>
     pub fn last_business_report(&self) -> std::option::Option<&crate::model::BusinessReport> {
         self.last_business_report.as_ref()
-    }
-}
-impl std::fmt::Debug for BusinessReportSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BusinessReportSchedule");
-        formatter.field("schedule_arn", &self.schedule_arn);
-        formatter.field("schedule_name", &self.schedule_name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("format", &self.format);
-        formatter.field("content_range", &self.content_range);
-        formatter.field("recurrence", &self.recurrence);
-        formatter.field("last_business_report", &self.last_business_report);
-        formatter.finish()
     }
 }
 /// See [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
@@ -7350,7 +7005,7 @@ impl BusinessReportSchedule {
 
 /// <p>Usage report with specified parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BusinessReport {
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
     #[doc(hidden)]
@@ -7388,17 +7043,6 @@ impl BusinessReport {
     /// <p>The download link where a user can download the report.</p>
     pub fn download_url(&self) -> std::option::Option<&str> {
         self.download_url.as_deref()
-    }
-}
-impl std::fmt::Debug for BusinessReport {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BusinessReport");
-        formatter.field("status", &self.status);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("s3_location", &self.s3_location);
-        formatter.field("delivery_time", &self.delivery_time);
-        formatter.field("download_url", &self.download_url);
-        formatter.finish()
     }
 }
 /// See [`BusinessReport`](crate::model::BusinessReport).
@@ -7497,7 +7141,7 @@ impl BusinessReport {
 
 /// <p>The S3 location of the output reports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BusinessReportS3Location {
     /// <p>The path of the business report.</p>
     #[doc(hidden)]
@@ -7514,14 +7158,6 @@ impl BusinessReportS3Location {
     /// <p>The S3 bucket name of the output reports.</p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BusinessReportS3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BusinessReportS3Location");
-        formatter.field("path", &self.path);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.finish()
     }
 }
 /// See [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
@@ -7766,7 +7402,7 @@ impl AsRef<str> for BusinessReportStatus {
 
 /// <p>The content range of the report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
     #[doc(hidden)]
@@ -7776,13 +7412,6 @@ impl BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
     pub fn interval(&self) -> std::option::Option<&crate::model::BusinessReportInterval> {
         self.interval.as_ref()
-    }
-}
-impl std::fmt::Debug for BusinessReportContentRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BusinessReportContentRange");
-        formatter.field("interval", &self.interval);
-        formatter.finish()
     }
 }
 /// See [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
@@ -7921,7 +7550,7 @@ impl AsRef<str> for BusinessReportInterval {
 
 /// <p>A skill group with attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SkillGroup {
     /// <p>The ARN of a skill group.</p>
     #[doc(hidden)]
@@ -7945,15 +7574,6 @@ impl SkillGroup {
     /// <p>The description of a skill group.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for SkillGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SkillGroup");
-        formatter.field("skill_group_arn", &self.skill_group_arn);
-        formatter.field("skill_group_name", &self.skill_group_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`SkillGroup`](crate::model::SkillGroup).
@@ -8022,7 +7642,7 @@ impl SkillGroup {
 
 /// <p>A room with attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Room {
     /// <p>The ARN of a room.</p>
     #[doc(hidden)]
@@ -8060,17 +7680,6 @@ impl Room {
     /// <p>The profile ARN of a room.</p>
     pub fn profile_arn(&self) -> std::option::Option<&str> {
         self.profile_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Room {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Room");
-        formatter.field("room_arn", &self.room_arn);
-        formatter.field("room_name", &self.room_name);
-        formatter.field("description", &self.description);
-        formatter.field("provider_calendar_id", &self.provider_calendar_id);
-        formatter.field("profile_arn", &self.profile_arn);
-        formatter.finish()
     }
 }
 /// See [`Room`](crate::model::Room).
@@ -8160,7 +7769,7 @@ impl Room {
 
 /// <p>A room profile with attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Profile {
     /// <p>The ARN of a room profile.</p>
     #[doc(hidden)]
@@ -8270,30 +7879,6 @@ impl Profile {
         &self,
     ) -> std::option::Option<&crate::model::MeetingRoomConfiguration> {
         self.meeting_room_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Profile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Profile");
-        formatter.field("profile_arn", &self.profile_arn);
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("is_default", &self.is_default);
-        formatter.field("address", &self.address);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("distance_unit", &self.distance_unit);
-        formatter.field("temperature_unit", &self.temperature_unit);
-        formatter.field("wake_word", &self.wake_word);
-        formatter.field("locale", &self.locale);
-        formatter.field("setup_mode_disabled", &self.setup_mode_disabled);
-        formatter.field("max_volume_limit", &self.max_volume_limit);
-        formatter.field("pstn_enabled", &self.pstn_enabled);
-        formatter.field("data_retention_opt_in", &self.data_retention_opt_in);
-        formatter.field("address_book_arn", &self.address_book_arn);
-        formatter.field(
-            "meeting_room_configuration",
-            &self.meeting_room_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`Profile`](crate::model::Profile).
@@ -8516,7 +8101,7 @@ impl Profile {
 
 /// <p>Meeting room settings of a room profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     #[doc(hidden)]
@@ -8549,19 +8134,6 @@ impl MeetingRoomConfiguration {
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
     pub fn require_check_in(&self) -> std::option::Option<&crate::model::RequireCheckIn> {
         self.require_check_in.as_ref()
-    }
-}
-impl std::fmt::Debug for MeetingRoomConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeetingRoomConfiguration");
-        formatter.field(
-            "room_utilization_metrics_enabled",
-            &self.room_utilization_metrics_enabled,
-        );
-        formatter.field("end_of_meeting_reminder", &self.end_of_meeting_reminder);
-        formatter.field("instant_booking", &self.instant_booking);
-        formatter.field("require_check_in", &self.require_check_in);
-        formatter.finish()
     }
 }
 /// See [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
@@ -8651,7 +8223,7 @@ impl MeetingRoomConfiguration {
 
 /// <p>Settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequireCheckIn {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
     #[doc(hidden)]
@@ -8668,14 +8240,6 @@ impl RequireCheckIn {
     /// <p>Whether require check in is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for RequireCheckIn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequireCheckIn");
-        formatter.field("release_after_minutes", &self.release_after_minutes);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`RequireCheckIn`](crate::model::RequireCheckIn).
@@ -8726,7 +8290,7 @@ impl RequireCheckIn {
 
 /// <p>Settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     #[doc(hidden)]
@@ -8743,14 +8307,6 @@ impl InstantBooking {
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for InstantBooking {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstantBooking");
-        formatter.field("duration_in_minutes", &self.duration_in_minutes);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`InstantBooking`](crate::model::InstantBooking).
@@ -8801,7 +8357,7 @@ impl InstantBooking {
 
 /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndOfMeetingReminder {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     #[doc(hidden)]
@@ -8825,15 +8381,6 @@ impl EndOfMeetingReminder {
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for EndOfMeetingReminder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndOfMeetingReminder");
-        formatter.field("reminder_at_minutes", &self.reminder_at_minutes);
-        formatter.field("reminder_type", &self.reminder_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
@@ -9003,7 +8550,7 @@ impl std::fmt::Debug for NetworkProfile {
 pub mod network_profile {
 
     /// A builder for [`NetworkProfile`](crate::model::NetworkProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
         pub(crate) network_profile_name: std::option::Option<std::string::String>,
@@ -9163,6 +8710,22 @@ pub mod network_profile {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network_profile_arn", &self.network_profile_arn);
+            formatter.field("network_profile_name", &self.network_profile_name);
+            formatter.field("description", &self.description);
+            formatter.field("ssid", &self.ssid);
+            formatter.field("security_type", &self.security_type);
+            formatter.field("eap_method", &self.eap_method);
+            formatter.field("current_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("next_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("certificate_authority_arn", &self.certificate_authority_arn);
+            formatter.field("trust_anchors", &self.trust_anchors);
+            formatter.finish()
+        }
+    }
 }
 impl NetworkProfile {
     /// Creates a new builder-style object to manufacture [`NetworkProfile`](crate::model::NetworkProfile).
@@ -9173,7 +8736,7 @@ impl NetworkProfile {
 
 /// <p>The details of the gateway group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayGroup {
     /// <p>The ARN of the gateway group.</p>
     #[doc(hidden)]
@@ -9197,15 +8760,6 @@ impl GatewayGroup {
     /// <p>The description of the gateway group.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for GatewayGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayGroup");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`GatewayGroup`](crate::model::GatewayGroup).
@@ -9268,7 +8822,7 @@ impl GatewayGroup {
 
 /// <p>The details of the gateway. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Gateway {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
@@ -9306,17 +8860,6 @@ impl Gateway {
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(&self) -> std::option::Option<&str> {
         self.software_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Gateway {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Gateway");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("gateway_group_arn", &self.gateway_group_arn);
-        formatter.field("software_version", &self.software_version);
-        formatter.finish()
     }
 }
 /// See [`Gateway`](crate::model::Gateway).
@@ -9409,7 +8952,7 @@ impl Gateway {
 
 /// <p>A device with attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Device {
     /// <p>The ARN of a device.</p>
     #[doc(hidden)]
@@ -9484,22 +9027,6 @@ impl Device {
         &self,
     ) -> std::option::Option<&crate::model::DeviceNetworkProfileInfo> {
         self.network_profile_info.as_ref()
-    }
-}
-impl std::fmt::Debug for Device {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Device");
-        formatter.field("device_arn", &self.device_arn);
-        formatter.field("device_serial_number", &self.device_serial_number);
-        formatter.field("device_type", &self.device_type);
-        formatter.field("device_name", &self.device_name);
-        formatter.field("software_version", &self.software_version);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("room_arn", &self.room_arn);
-        formatter.field("device_status", &self.device_status);
-        formatter.field("device_status_info", &self.device_status_info);
-        formatter.field("network_profile_info", &self.network_profile_info);
-        formatter.finish()
     }
 }
 /// See [`Device`](crate::model::Device).
@@ -9665,7 +9192,7 @@ impl Device {
 
 /// <p>Detailed information about a device's network profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceNetworkProfileInfo {
     /// <p>The ARN of the network profile associated with a device.</p>
     #[doc(hidden)]
@@ -9689,18 +9216,6 @@ impl DeviceNetworkProfileInfo {
     /// <p>The time (in epoch) when the certificate expires.</p>
     pub fn certificate_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.certificate_expiration_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceNetworkProfileInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceNetworkProfileInfo");
-        formatter.field("network_profile_arn", &self.network_profile_arn);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field(
-            "certificate_expiration_time",
-            &self.certificate_expiration_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
@@ -9843,7 +9358,7 @@ impl std::fmt::Debug for Contact {
 pub mod contact {
 
     /// A builder for [`Contact`](crate::model::Contact).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -9955,6 +9470,19 @@ pub mod contact {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("contact_arn", &self.contact_arn);
+            formatter.field("display_name", &self.display_name);
+            formatter.field("first_name", &self.first_name);
+            formatter.field("last_name", &self.last_name);
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("phone_numbers", &self.phone_numbers);
+            formatter.field("sip_addresses", &self.sip_addresses);
+            formatter.finish()
+        }
+    }
 }
 impl Contact {
     /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
@@ -9965,7 +9493,7 @@ impl Contact {
 
 /// <p>An address book with attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddressBook {
     /// <p>The ARN of the address book.</p>
     #[doc(hidden)]
@@ -9989,15 +9517,6 @@ impl AddressBook {
     /// <p>The description of the address book.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for AddressBook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddressBook");
-        formatter.field("address_book_arn", &self.address_book_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`AddressBook`](crate::model::AddressBook).
@@ -10148,7 +9667,7 @@ impl AsRef<str> for DeviceUsageType {
 
 /// <p>Creates meeting room settings of a room profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     #[doc(hidden)]
@@ -10181,19 +9700,6 @@ impl CreateMeetingRoomConfiguration {
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
     pub fn require_check_in(&self) -> std::option::Option<&crate::model::CreateRequireCheckIn> {
         self.require_check_in.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateMeetingRoomConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMeetingRoomConfiguration");
-        formatter.field(
-            "room_utilization_metrics_enabled",
-            &self.room_utilization_metrics_enabled,
-        );
-        formatter.field("end_of_meeting_reminder", &self.end_of_meeting_reminder);
-        formatter.field("instant_booking", &self.instant_booking);
-        formatter.field("require_check_in", &self.require_check_in);
-        formatter.finish()
     }
 }
 /// See [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
@@ -10284,7 +9790,7 @@ impl CreateMeetingRoomConfiguration {
 
 /// <p>Creates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRequireCheckIn {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
     #[doc(hidden)]
@@ -10301,14 +9807,6 @@ impl CreateRequireCheckIn {
     /// <p>Whether require check in is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for CreateRequireCheckIn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRequireCheckIn");
-        formatter.field("release_after_minutes", &self.release_after_minutes);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
@@ -10359,7 +9857,7 @@ impl CreateRequireCheckIn {
 
 /// <p>Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     #[doc(hidden)]
@@ -10376,14 +9874,6 @@ impl CreateInstantBooking {
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for CreateInstantBooking {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInstantBooking");
-        formatter.field("duration_in_minutes", &self.duration_in_minutes);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`CreateInstantBooking`](crate::model::CreateInstantBooking).
@@ -10434,7 +9924,7 @@ impl CreateInstantBooking {
 
 /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEndOfMeetingReminder {
     /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
     #[doc(hidden)]
@@ -10458,15 +9948,6 @@ impl CreateEndOfMeetingReminder {
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for CreateEndOfMeetingReminder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEndOfMeetingReminder");
-        formatter.field("reminder_at_minutes", &self.reminder_at_minutes);
-        formatter.field("reminder_type", &self.reminder_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).

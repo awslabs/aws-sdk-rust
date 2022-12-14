@@ -2,7 +2,7 @@
 
 /// <p>Information for one billing record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BillingRecord {
     /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -42,17 +42,6 @@ impl BillingRecord {
     /// <p>Example value: 12.0</p>
     pub fn price(&self) -> f64 {
         self.price
-    }
-}
-impl std::fmt::Debug for BillingRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BillingRecord");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("operation", &self.operation);
-        formatter.field("invoice_id", &self.invoice_id);
-        formatter.field("bill_date", &self.bill_date);
-        formatter.field("price", &self.price);
-        formatter.finish()
     }
 }
 /// See [`BillingRecord`](crate::model::BillingRecord).
@@ -336,7 +325,7 @@ impl AsRef<str> for OperationType {
 
 /// <p>Each tag includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key (name) of a tag.</p>
     /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
@@ -361,14 +350,6 @@ impl Tag {
     /// <p>Constraints: Each value can be 0-256 characters long.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -427,7 +408,7 @@ impl Tag {
 
 /// <p>Nameserver includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Nameserver {
     /// <p>The fully qualified host name of the name server.</p>
     /// <p>Constraint: Maximum 255 characters</p>
@@ -448,14 +429,6 @@ impl Nameserver {
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
     pub fn glue_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.glue_ips.as_deref()
-    }
-}
-impl std::fmt::Debug for Nameserver {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Nameserver");
-        formatter.field("name", &self.name);
-        formatter.field("glue_ips", &self.glue_ips);
-        formatter.finish()
     }
 }
 /// See [`Nameserver`](crate::model::Nameserver).
@@ -660,7 +633,7 @@ impl std::fmt::Debug for ContactDetail {
 pub mod contact_detail {
 
     /// A builder for [`ContactDetail`](crate::model::ContactDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) first_name: std::option::Option<std::string::String>,
         pub(crate) last_name: std::option::Option<std::string::String>,
@@ -874,6 +847,26 @@ pub mod contact_detail {
                 fax: self.fax,
                 extra_params: self.extra_params,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("first_name", &self.first_name);
+            formatter.field("last_name", &self.last_name);
+            formatter.field("contact_type", &self.contact_type);
+            formatter.field("organization_name", &self.organization_name);
+            formatter.field("address_line1", &self.address_line1);
+            formatter.field("address_line2", &self.address_line2);
+            formatter.field("city", &self.city);
+            formatter.field("state", &self.state);
+            formatter.field("country_code", &self.country_code);
+            formatter.field("zip_code", &self.zip_code);
+            formatter.field("phone_number", &self.phone_number);
+            formatter.field("email", &self.email);
+            formatter.field("fax", &self.fax);
+            formatter.field("extra_params", &self.extra_params);
+            formatter.finish()
         }
     }
 }
@@ -1457,7 +1450,7 @@ impl std::fmt::Debug for ExtraParam {
 pub mod extra_param {
 
     /// A builder for [`ExtraParam`](crate::model::ExtraParam).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ExtraParamName>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2032,6 +2025,14 @@ pub mod extra_param {
                 name: self.name,
                 value: self.value,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3770,7 +3771,7 @@ impl AsRef<str> for ContactType {
 
 /// <p>Information about the domain price associated with a TLD.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainPrice {
     /// <p>The name of the TLD for which the prices apply.</p>
     #[doc(hidden)]
@@ -3815,18 +3816,6 @@ impl DomainPrice {
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
     pub fn restoration_price(&self) -> std::option::Option<&crate::model::PriceWithCurrency> {
         self.restoration_price.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainPrice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainPrice");
-        formatter.field("name", &self.name);
-        formatter.field("registration_price", &self.registration_price);
-        formatter.field("transfer_price", &self.transfer_price);
-        formatter.field("renewal_price", &self.renewal_price);
-        formatter.field("change_ownership_price", &self.change_ownership_price);
-        formatter.field("restoration_price", &self.restoration_price);
-        formatter.finish()
     }
 }
 /// See [`DomainPrice`](crate::model::DomainPrice).
@@ -3940,7 +3929,7 @@ impl DomainPrice {
 
 /// <p>Currency-specific price information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PriceWithCurrency {
     /// <p>The price of a domain, in a specific currency.</p>
     #[doc(hidden)]
@@ -3957,14 +3946,6 @@ impl PriceWithCurrency {
     /// <p>The currency specifier.</p>
     pub fn currency(&self) -> std::option::Option<&str> {
         self.currency.as_deref()
-    }
-}
-impl std::fmt::Debug for PriceWithCurrency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PriceWithCurrency");
-        formatter.field("price", &self.price);
-        formatter.field("currency", &self.currency);
-        formatter.finish()
     }
 }
 /// See [`PriceWithCurrency`](crate::model::PriceWithCurrency).
@@ -4015,7 +3996,7 @@ impl PriceWithCurrency {
 
 /// <p>OperationSummary includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationSummary {
     /// <p>Identifier returned to track the requested action.</p>
     #[doc(hidden)]
@@ -4046,16 +4027,6 @@ impl OperationSummary {
     /// <p>The date when the request was submitted.</p>
     pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
-    }
-}
-impl std::fmt::Debug for OperationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationSummary");
-        formatter.field("operation_id", &self.operation_id);
-        formatter.field("status", &self.status);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("submitted_date", &self.submitted_date);
-        formatter.finish()
     }
 }
 /// See [`OperationSummary`](crate::model::OperationSummary).
@@ -4241,7 +4212,7 @@ impl AsRef<str> for OperationStatus {
 
 /// <p>Summary information about one domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainSummary {
     /// <p>The name of the domain that the summary information applies to.</p>
     #[doc(hidden)]
@@ -4272,16 +4243,6 @@ impl DomainSummary {
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn expiry(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainSummary");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("auto_renew", &self.auto_renew);
-        formatter.field("transfer_lock", &self.transfer_lock);
-        formatter.field("expiry", &self.expiry);
-        formatter.finish()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
@@ -4359,7 +4320,7 @@ impl DomainSummary {
 
 /// <p>Information for sorting a list of domains.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SortCondition {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
     #[doc(hidden)]
@@ -4376,14 +4337,6 @@ impl SortCondition {
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for SortCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SortCondition");
-        formatter.field("name", &self.name);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`SortCondition`](crate::model::SortCondition).
@@ -4622,7 +4575,7 @@ impl AsRef<str> for ListDomainsAttributeName {
 
 /// <p>Information for the filtering of a list of domains returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterCondition {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
     #[doc(hidden)]
@@ -4656,15 +4609,6 @@ impl FilterCondition {
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for FilterCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterCondition");
-        formatter.field("name", &self.name);
-        formatter.field("operator", &self.operator);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`FilterCondition`](crate::model::FilterCondition).
@@ -4844,7 +4788,7 @@ impl AsRef<str> for Operator {
 
 /// <p>Information about one suggested domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainSuggestion {
     /// <p>A suggested domain name.</p>
     #[doc(hidden)]
@@ -4979,14 +4923,6 @@ impl DomainSuggestion {
     /// </dl>
     pub fn availability(&self) -> std::option::Option<&str> {
         self.availability.as_deref()
-    }
-}
-impl std::fmt::Debug for DomainSuggestion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainSuggestion");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("availability", &self.availability);
-        formatter.finish()
     }
 }
 /// See [`DomainSuggestion`](crate::model::DomainSuggestion).
@@ -5252,7 +5188,7 @@ impl AsRef<str> for ReachabilityStatus {
 
 /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainTransferability {
     /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
@@ -5308,13 +5244,6 @@ impl DomainTransferability {
     /// </dl>
     pub fn transferable(&self) -> std::option::Option<&crate::model::Transferable> {
         self.transferable.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainTransferability {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainTransferability");
-        formatter.field("transferable", &self.transferable);
-        formatter.finish()
     }
 }
 /// See [`DomainTransferability`](crate::model::DomainTransferability).

@@ -17713,7 +17713,7 @@ impl UpdateWirelessGatewayInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWirelessGatewayInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -17753,21 +17753,10 @@ impl UpdateWirelessGatewayInput {
         self.net_id_filters.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWirelessGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWirelessGatewayInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("join_eui_filters", &self.join_eui_filters);
-        formatter.field("net_id_filters", &self.net_id_filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWirelessDeviceInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -17807,21 +17796,10 @@ impl UpdateWirelessDeviceInput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWirelessDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
     #[doc(hidden)]
@@ -17890,24 +17868,10 @@ impl UpdateResourceEventConfigurationInput {
         self.message_delivery_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResourceEventConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceEventConfigurationInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.field("device_registration_state", &self.device_registration_state);
-        formatter.field("proximity", &self.proximity);
-        formatter.field("join", &self.join);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("message_delivery_status", &self.message_delivery_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePositionInput {
     /// <p>Resource identifier of the resource for which position is updated.</p>
     #[doc(hidden)]
@@ -17933,19 +17897,10 @@ impl UpdatePositionInput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePositionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePositionInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
@@ -17971,19 +17926,10 @@ impl UpdatePartnerAccountInput {
         self.partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePartnerAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePartnerAccountInput");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.field("partner_account_id", &self.partner_account_id);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
@@ -18037,29 +17983,10 @@ impl UpdateNetworkAnalyzerConfigurationInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateNetworkAnalyzerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNetworkAnalyzerConfigurationInput");
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.field("trace_content", &self.trace_content);
-        formatter.field("wireless_devices_to_add", &self.wireless_devices_to_add);
-        formatter.field(
-            "wireless_devices_to_remove",
-            &self.wireless_devices_to_remove,
-        );
-        formatter.field("wireless_gateways_to_add", &self.wireless_gateways_to_add);
-        formatter.field(
-            "wireless_gateways_to_remove",
-            &self.wireless_gateways_to_remove,
-        );
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -18092,20 +18019,10 @@ impl UpdateMulticastGroupInput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLogLevelsByResourceTypesInput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     #[doc(hidden)]
@@ -18137,25 +18054,10 @@ impl UpdateLogLevelsByResourceTypesInput {
         self.wireless_gateway_log_options.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLogLevelsByResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLogLevelsByResourceTypesInput");
-        formatter.field("default_log_level", &self.default_log_level);
-        formatter.field(
-            "wireless_device_log_options",
-            &self.wireless_device_log_options,
-        );
-        formatter.field(
-            "wireless_gateway_log_options",
-            &self.wireless_gateway_log_options,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -18202,22 +18104,10 @@ impl UpdateFuotaTaskInput {
         self.firmware_update_role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("firmware_update_image", &self.firmware_update_image);
-        formatter.field("firmware_update_role", &self.firmware_update_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventConfigurationByResourceTypesInput {
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     #[doc(hidden)]
@@ -18270,21 +18160,10 @@ impl UpdateEventConfigurationByResourceTypesInput {
         self.message_delivery_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEventConfigurationByResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventConfigurationByResourceTypesInput");
-        formatter.field("device_registration_state", &self.device_registration_state);
-        formatter.field("proximity", &self.proximity);
-        formatter.field("join", &self.join);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("message_delivery_status", &self.message_delivery_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDestinationInput {
     /// <p>The new name of the resource.</p>
     #[doc(hidden)]
@@ -18324,21 +18203,10 @@ impl UpdateDestinationInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.field("expression_type", &self.expression_type);
-        formatter.field("expression", &self.expression);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource to remove tags from.</p>
     #[doc(hidden)]
@@ -18357,18 +18225,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestWirelessDeviceInput {
     /// <p>The ID of the wireless device to test.</p>
     #[doc(hidden)]
@@ -18380,17 +18240,10 @@ impl TestWirelessDeviceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for TestWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestWirelessDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to add tags to.</p>
     #[doc(hidden)]
@@ -18409,18 +18262,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -18439,18 +18284,10 @@ impl StartMulticastGroupSessionInput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl std::fmt::Debug for StartMulticastGroupSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMulticastGroupSessionInput");
-        formatter.field("id", &self.id);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -18469,18 +18306,10 @@ impl StartFuotaTaskInput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl std::fmt::Debug for StartFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -18506,20 +18335,10 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("StartBulkDisassociateWirelessDeviceFromMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -18545,20 +18364,10 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("StartBulkAssociateWirelessDeviceWithMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendDataToWirelessDeviceInput {
     /// <p>The ID of the wireless device to receive the data.</p>
     #[doc(hidden)]
@@ -18591,20 +18400,10 @@ impl SendDataToWirelessDeviceInput {
         self.wireless_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for SendDataToWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendDataToWirelessDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.field("transmit_mode", &self.transmit_mode);
-        formatter.field("payload_data", &self.payload_data);
-        formatter.field("wireless_metadata", &self.wireless_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendDataToMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -18632,19 +18431,10 @@ impl SendDataToMulticastGroupInput {
         self.wireless_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for SendDataToMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendDataToMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("payload_data", &self.payload_data);
-        formatter.field("wireless_metadata", &self.wireless_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     #[doc(hidden)]
@@ -18663,29 +18453,15 @@ impl ResetResourceLogLevelInput {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for ResetResourceLogLevelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetResourceLogLevelInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetAllResourceLogLevelsInput {}
-impl std::fmt::Debug for ResetAllResourceLogLevelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetAllResourceLogLevelsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     #[doc(hidden)]
@@ -18711,19 +18487,10 @@ impl PutResourceLogLevelInput {
         self.log_level.as_ref()
     }
 }
-impl std::fmt::Debug for PutResourceLogLevelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourceLogLevelInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPositionConfigurationInput {
     /// <p>Resource identifier used to update the position configuration.</p>
     #[doc(hidden)]
@@ -18756,20 +18523,10 @@ impl PutPositionConfigurationInput {
         self.destination.as_deref()
     }
 }
-impl std::fmt::Debug for PutPositionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPositionConfigurationInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("solvers", &self.solvers);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWirelessGatewayTaskDefinitionsInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
@@ -18797,19 +18554,10 @@ impl ListWirelessGatewayTaskDefinitionsInput {
         self.task_definition_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListWirelessGatewayTaskDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWirelessGatewayTaskDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("task_definition_type", &self.task_definition_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWirelessGatewaysInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -18828,18 +18576,10 @@ impl ListWirelessGatewaysInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWirelessGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWirelessGatewaysInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWirelessDevicesInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
@@ -18900,24 +18640,10 @@ impl ListWirelessDevicesInput {
         self.multicast_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListWirelessDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWirelessDevicesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("device_profile_id", &self.device_profile_id);
-        formatter.field("service_profile_id", &self.service_profile_id);
-        formatter.field("wireless_device_type", &self.wireless_device_type);
-        formatter.field("fuota_task_id", &self.fuota_task_id);
-        formatter.field("multicast_group_id", &self.multicast_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource for which you want to list tags.</p>
     #[doc(hidden)]
@@ -18929,17 +18655,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceProfilesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -18958,18 +18677,10 @@ impl ListServiceProfilesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServiceProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceProfilesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueuedMessagesInput {
     /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
     #[doc(hidden)]
@@ -19002,20 +18713,10 @@ impl ListQueuedMessagesInput {
         self.wireless_device_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListQueuedMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueuedMessagesInput");
-        formatter.field("id", &self.id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("wireless_device_type", &self.wireless_device_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPositionConfigurationsInput {
     /// <p>Resource type for which position configurations are listed.</p>
     #[doc(hidden)]
@@ -19041,19 +18742,10 @@ impl ListPositionConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPositionConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPositionConfigurationsInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPartnerAccountsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -19072,18 +18764,10 @@ impl ListPartnerAccountsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPartnerAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPartnerAccountsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworkAnalyzerConfigurationsInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
@@ -19102,18 +18786,10 @@ impl ListNetworkAnalyzerConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNetworkAnalyzerConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworkAnalyzerConfigurationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMulticastGroupsByFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -19139,19 +18815,10 @@ impl ListMulticastGroupsByFuotaTaskInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMulticastGroupsByFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMulticastGroupsByFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMulticastGroupsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -19170,18 +18837,10 @@ impl ListMulticastGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMulticastGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMulticastGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFuotaTasksInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -19200,18 +18859,10 @@ impl ListFuotaTasksInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFuotaTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFuotaTasksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventConfigurationsInput {
     /// <p>Resource type to filter event configurations.</p>
     #[doc(hidden)]
@@ -19239,19 +18890,10 @@ impl ListEventConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEventConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventConfigurationsInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeviceProfilesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -19270,18 +18912,10 @@ impl ListDeviceProfilesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDeviceProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeviceProfilesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDestinationsInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
@@ -19300,18 +18934,10 @@ impl ListDestinationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDestinationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDestinationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayTaskDefinitionInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -19323,17 +18949,10 @@ impl GetWirelessGatewayTaskDefinitionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayTaskDefinitionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayTaskInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -19345,17 +18964,10 @@ impl GetWirelessGatewayTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayStatisticsInput {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
     #[doc(hidden)]
@@ -19367,17 +18979,10 @@ impl GetWirelessGatewayStatisticsInput {
         self.wireless_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayStatisticsInput");
-        formatter.field("wireless_gateway_id", &self.wireless_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayFirmwareInformationInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -19389,17 +18994,10 @@ impl GetWirelessGatewayFirmwareInformationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayFirmwareInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayFirmwareInformationInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayCertificateInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -19411,17 +19009,10 @@ impl GetWirelessGatewayCertificateInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayCertificateInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayInput {
     /// <p>The identifier of the wireless gateway to get.</p>
     #[doc(hidden)]
@@ -19440,18 +19031,10 @@ impl GetWirelessGatewayInput {
         self.identifier_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessDeviceStatisticsInput {
     /// <p>The ID of the wireless device for which to get the data.</p>
     #[doc(hidden)]
@@ -19463,17 +19046,10 @@ impl GetWirelessDeviceStatisticsInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessDeviceStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessDeviceStatisticsInput");
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessDeviceInput {
     /// <p>The identifier of the wireless device to get.</p>
     #[doc(hidden)]
@@ -19492,18 +19068,10 @@ impl GetWirelessDeviceInput {
         self.identifier_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessDeviceInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceProfileInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -19515,17 +19083,10 @@ impl GetServiceProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceEndpointInput {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
     #[doc(hidden)]
@@ -19537,17 +19098,10 @@ impl GetServiceEndpointInput {
         self.service_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetServiceEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceEndpointInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     #[doc(hidden)]
@@ -19566,18 +19120,10 @@ impl GetResourceLogLevelInput {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceLogLevelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceLogLevelInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
     #[doc(hidden)]
@@ -19603,19 +19149,10 @@ impl GetResourceEventConfigurationInput {
         self.partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetResourceEventConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceEventConfigurationInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPositionConfigurationInput {
     /// <p>Resource identifier used in a position configuration.</p>
     #[doc(hidden)]
@@ -19634,18 +19171,10 @@ impl GetPositionConfigurationInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetPositionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPositionConfigurationInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPositionInput {
     /// <p>Resource identifier used to retrieve the position information.</p>
     #[doc(hidden)]
@@ -19664,18 +19193,10 @@ impl GetPositionInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetPositionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPositionInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPartnerAccountInput {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
     #[doc(hidden)]
@@ -19694,18 +19215,10 @@ impl GetPartnerAccountInput {
         self.partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetPartnerAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPartnerAccountInput");
-        formatter.field("partner_account_id", &self.partner_account_id);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
@@ -19717,17 +19230,10 @@ impl GetNetworkAnalyzerConfigurationInput {
         self.configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkAnalyzerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkAnalyzerConfigurationInput");
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -19739,17 +19245,10 @@ impl GetMulticastGroupSessionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMulticastGroupSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMulticastGroupSessionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -19761,28 +19260,15 @@ impl GetMulticastGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogLevelsByResourceTypesInput {}
-impl std::fmt::Debug for GetLogLevelsByResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLogLevelsByResourceTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -19794,28 +19280,15 @@ impl GetFuotaTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventConfigurationByResourceTypesInput {}
-impl std::fmt::Debug for GetEventConfigurationByResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventConfigurationByResourceTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceProfileInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -19827,17 +19300,10 @@ impl GetDeviceProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDestinationInput {
     /// <p>The name of the resource to get.</p>
     #[doc(hidden)]
@@ -19849,17 +19315,10 @@ impl GetDestinationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -19871,17 +19330,10 @@ impl DisassociateWirelessGatewayFromThingInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessGatewayFromThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessGatewayFromThingInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromCertificateInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -19893,17 +19345,10 @@ impl DisassociateWirelessGatewayFromCertificateInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessGatewayFromCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessGatewayFromCertificateInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -19915,17 +19360,10 @@ impl DisassociateWirelessDeviceFromThingInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessDeviceFromThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromThingInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -19944,18 +19382,10 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessDeviceFromMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -19974,18 +19404,10 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessDeviceFromFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMulticastGroupFromFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -20004,18 +19426,10 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
         self.multicast_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMulticastGroupFromFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMulticastGroupFromFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("multicast_group_id", &self.multicast_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAwsAccountFromPartnerAccountInput {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
     #[doc(hidden)]
@@ -20034,18 +19448,10 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
         self.partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateAwsAccountFromPartnerAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAwsAccountFromPartnerAccountInput");
-        formatter.field("partner_account_id", &self.partner_account_id);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWirelessGatewayTaskDefinitionInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -20057,17 +19463,10 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWirelessGatewayTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWirelessGatewayTaskDefinitionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWirelessGatewayTaskInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -20079,17 +19478,10 @@ impl DeleteWirelessGatewayTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWirelessGatewayTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWirelessGatewayTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWirelessGatewayInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -20101,17 +19493,10 @@ impl DeleteWirelessGatewayInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWirelessGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWirelessGatewayInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWirelessDeviceInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -20123,17 +19508,10 @@ impl DeleteWirelessDeviceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWirelessDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceProfileInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -20145,17 +19523,10 @@ impl DeleteServiceProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServiceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueuedMessagesInput {
     /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
     #[doc(hidden)]
@@ -20181,19 +19552,10 @@ impl DeleteQueuedMessagesInput {
         self.wireless_device_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteQueuedMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueuedMessagesInput");
-        formatter.field("id", &self.id);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("wireless_device_type", &self.wireless_device_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
@@ -20205,17 +19567,10 @@ impl DeleteNetworkAnalyzerConfigurationInput {
         self.configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNetworkAnalyzerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNetworkAnalyzerConfigurationInput");
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -20227,17 +19582,10 @@ impl DeleteMulticastGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -20249,17 +19597,10 @@ impl DeleteFuotaTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeviceProfileInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -20271,17 +19612,10 @@ impl DeleteDeviceProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeviceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeviceProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDestinationInput {
     /// <p>The name of the resource to delete.</p>
     #[doc(hidden)]
@@ -20293,17 +19627,10 @@ impl DeleteDestinationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskDefinitionInput {
     /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
     #[doc(hidden)]
@@ -20343,21 +19670,10 @@ impl CreateWirelessGatewayTaskDefinitionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWirelessGatewayTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWirelessGatewayTaskDefinitionInput");
-        formatter.field("auto_create_tasks", &self.auto_create_tasks);
-        formatter.field("name", &self.name);
-        formatter.field("update", &self.update);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -20376,21 +19692,10 @@ impl CreateWirelessGatewayTaskInput {
         self.wireless_gateway_task_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWirelessGatewayTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWirelessGatewayTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field(
-            "wireless_gateway_task_definition_id",
-            &self.wireless_gateway_task_definition_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWirelessGatewayInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
@@ -20430,21 +19735,10 @@ impl CreateWirelessGatewayInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWirelessGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWirelessGatewayInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWirelessDeviceInput {
     /// <p>The wireless device type.</p>
     #[doc(hidden)]
@@ -20498,23 +19792,10 @@ impl CreateWirelessDeviceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWirelessDeviceInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServiceProfileInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
@@ -20547,20 +19828,10 @@ impl CreateServiceProfileInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateServiceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServiceProfileInput");
-        formatter.field("name", &self.name);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
@@ -20614,23 +19885,10 @@ impl CreateNetworkAnalyzerConfigurationInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNetworkAnalyzerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNetworkAnalyzerConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("trace_content", &self.trace_content);
-        formatter.field("wireless_devices", &self.wireless_devices);
-        formatter.field("wireless_gateways", &self.wireless_gateways);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMulticastGroupInput {
     /// <p>The name of the multicast group.</p>
     #[doc(hidden)]
@@ -20670,21 +19928,10 @@ impl CreateMulticastGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMulticastGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFuotaTaskInput {
     /// <p>The name of a FUOTA task.</p>
     #[doc(hidden)]
@@ -20738,23 +19985,10 @@ impl CreateFuotaTaskInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFuotaTaskInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("firmware_update_image", &self.firmware_update_image);
-        formatter.field("firmware_update_role", &self.firmware_update_role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeviceProfileInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
@@ -20787,20 +20021,10 @@ impl CreateDeviceProfileInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeviceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeviceProfileInput");
-        formatter.field("name", &self.name);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDestinationInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
@@ -20854,23 +20078,10 @@ impl CreateDestinationInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.field("expression_type", &self.expression_type);
-        formatter.field("expression", &self.expression);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -20882,17 +20093,10 @@ impl CancelMulticastGroupSessionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelMulticastGroupSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelMulticastGroupSessionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessGatewayWithThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -20911,18 +20115,10 @@ impl AssociateWirelessGatewayWithThingInput {
         self.thing_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessGatewayWithThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessGatewayWithThingInput");
-        formatter.field("id", &self.id);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessGatewayWithCertificateInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -20941,18 +20137,10 @@ impl AssociateWirelessGatewayWithCertificateInput {
         self.iot_certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessGatewayWithCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessGatewayWithCertificateInput");
-        formatter.field("id", &self.id);
-        formatter.field("iot_certificate_id", &self.iot_certificate_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -20971,18 +20159,10 @@ impl AssociateWirelessDeviceWithThingInput {
         self.thing_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessDeviceWithThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithThingInput");
-        formatter.field("id", &self.id);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -21001,18 +20181,10 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessDeviceWithMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -21031,18 +20203,10 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessDeviceWithFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMulticastGroupWithFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -21061,18 +20225,10 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
         self.multicast_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateMulticastGroupWithFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMulticastGroupWithFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("multicast_group_id", &self.multicast_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAwsAccountWithPartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
@@ -21096,14 +20252,5 @@ impl AssociateAwsAccountWithPartnerAccountInput {
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateAwsAccountWithPartnerAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAwsAccountWithPartnerAccountInput");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

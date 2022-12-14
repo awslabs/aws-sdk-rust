@@ -2,7 +2,7 @@
 
 /// <p>A warning returned by the document service when an issue is discovered while processing an upload request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentServiceWarning {
     /// <p>The description for a warning returned by the document service.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl DocumentServiceWarning {
     /// <p>The description for a warning returned by the document service.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentServiceWarning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentServiceWarning");
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
@@ -147,7 +140,7 @@ impl AsRef<str> for ContentType {
 
 /// <p>Container for the suggestion information returned in a <code>SuggestResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
     #[doc(hidden)]
@@ -171,15 +164,6 @@ impl SuggestModel {
     /// <p>The documents that match the query string.</p>
     pub fn suggestions(&self) -> std::option::Option<&[crate::model::SuggestionMatch]> {
         self.suggestions.as_deref()
-    }
-}
-impl std::fmt::Debug for SuggestModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestModel");
-        formatter.field("query", &self.query);
-        formatter.field("found", &self.found);
-        formatter.field("suggestions", &self.suggestions);
-        formatter.finish()
     }
 }
 /// See [`SuggestModel`](crate::model::SuggestModel).
@@ -251,7 +235,7 @@ impl SuggestModel {
 
 /// <p>An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
     #[doc(hidden)]
@@ -275,15 +259,6 @@ impl SuggestionMatch {
     /// <p>The document ID of the suggested document.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for SuggestionMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestionMatch");
-        formatter.field("suggestion", &self.suggestion);
-        formatter.field("score", &self.score);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`SuggestionMatch`](crate::model::SuggestionMatch).
@@ -346,7 +321,7 @@ impl SuggestionMatch {
 
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestStatus {
     /// <p>How long it took to process the request, in milliseconds.</p>
     #[doc(hidden)]
@@ -363,14 +338,6 @@ impl SuggestStatus {
     /// <p>The encrypted resource ID for the request.</p>
     pub fn rid(&self) -> std::option::Option<&str> {
         self.rid.as_deref()
-    }
-}
-impl std::fmt::Debug for SuggestStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestStatus");
-        formatter.field("timems", &self.timems);
-        formatter.field("rid", &self.rid);
-        formatter.finish()
     }
 }
 /// See [`SuggestStatus`](crate::model::SuggestStatus).
@@ -421,7 +388,7 @@ impl SuggestStatus {
 
 /// <p>The statistics for a field calculated in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldStats {
     /// <p>The minimum value found in the specified field in the result set.</p>
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
@@ -486,20 +453,6 @@ impl FieldStats {
     /// <p>The standard deviation of the values in the specified field in the result set.</p>
     pub fn stddev(&self) -> f64 {
         self.stddev
-    }
-}
-impl std::fmt::Debug for FieldStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldStats");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.field("count", &self.count);
-        formatter.field("missing", &self.missing);
-        formatter.field("sum", &self.sum);
-        formatter.field("sum_of_squares", &self.sum_of_squares);
-        formatter.field("mean", &self.mean);
-        formatter.field("stddev", &self.stddev);
-        formatter.finish()
     }
 }
 /// See [`FieldStats`](crate::model::FieldStats).
@@ -628,7 +581,7 @@ impl FieldStats {
 
 /// <p>A container for the calculated facet values and counts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
     #[doc(hidden)]
@@ -638,13 +591,6 @@ impl BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
     pub fn buckets(&self) -> std::option::Option<&[crate::model::Bucket]> {
         self.buckets.as_deref()
-    }
-}
-impl std::fmt::Debug for BucketInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketInfo");
-        formatter.field("buckets", &self.buckets);
-        formatter.finish()
     }
 }
 /// See [`BucketInfo`](crate::model::BucketInfo).
@@ -692,7 +638,7 @@ impl BucketInfo {
 
 /// <p>A container for facet information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The facet value being counted.</p>
     #[doc(hidden)]
@@ -709,14 +655,6 @@ impl Bucket {
     /// <p>The number of hits that contain the facet value in the specified facet field.</p>
     pub fn count(&self) -> i64 {
         self.count
-    }
-}
-impl std::fmt::Debug for Bucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Bucket");
-        formatter.field("value", &self.value);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`Bucket`](crate::model::Bucket).
@@ -767,7 +705,7 @@ impl Bucket {
 
 /// <p>The collection of documents that match the search request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hits {
     /// <p>The total number of documents that match the search request.</p>
     #[doc(hidden)]
@@ -798,16 +736,6 @@ impl Hits {
     /// <p>A document that matches the search request.</p>
     pub fn hit(&self) -> std::option::Option<&[crate::model::Hit]> {
         self.hit.as_deref()
-    }
-}
-impl std::fmt::Debug for Hits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hits");
-        formatter.field("found", &self.found);
-        formatter.field("start", &self.start);
-        formatter.field("cursor", &self.cursor);
-        formatter.field("hit", &self.hit);
-        formatter.finish()
     }
 }
 /// See [`Hits`](crate::model::Hits).
@@ -891,7 +819,7 @@ impl Hits {
 
 /// <p>Information about a document that matches the search request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hit {
     /// <p>The document ID of a document that matches the search request.</p>
     #[doc(hidden)]
@@ -936,16 +864,6 @@ impl Hit {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.highlights.as_ref()
-    }
-}
-impl std::fmt::Debug for Hit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hit");
-        formatter.field("id", &self.id);
-        formatter.field("fields", &self.fields);
-        formatter.field("exprs", &self.exprs);
-        formatter.field("highlights", &self.highlights);
-        formatter.finish()
     }
 }
 /// See [`Hit`](crate::model::Hit).
@@ -1071,7 +989,7 @@ impl Hit {
 
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchStatus {
     /// <p>How long it took to process the request, in milliseconds.</p>
     #[doc(hidden)]
@@ -1088,14 +1006,6 @@ impl SearchStatus {
     /// <p>The encrypted resource ID for the request.</p>
     pub fn rid(&self) -> std::option::Option<&str> {
         self.rid.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchStatus");
-        formatter.field("timems", &self.timems);
-        formatter.field("rid", &self.rid);
-        formatter.finish()
     }
 }
 /// See [`SearchStatus`](crate::model::SearchStatus).

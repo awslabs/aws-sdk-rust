@@ -3016,7 +3016,7 @@ impl UpdateProjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>The name of the project to be updated.</p>
     #[doc(hidden)]
@@ -3042,19 +3042,10 @@ impl UpdateProjectInput {
         self.placement_template.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("description", &self.description);
-        formatter.field("placement_template", &self.placement_template);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePlacementInput {
     /// <p>The name of the placement to update.</p>
     #[doc(hidden)]
@@ -3084,19 +3075,10 @@ impl UpdatePlacementInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePlacementInput");
-        formatter.field("placement_name", &self.placement_name);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource whose tag you want to remove.</p>
     #[doc(hidden)]
@@ -3115,18 +3097,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
     #[doc(hidden)]
@@ -3149,18 +3123,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource whose tags you want to list.</p>
     #[doc(hidden)]
@@ -3172,17 +3138,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -3201,18 +3160,10 @@ impl ListProjectsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlacementsInput {
     /// <p>The project containing the placements to be listed.</p>
     #[doc(hidden)]
@@ -3238,19 +3189,10 @@ impl ListPlacementsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPlacementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlacementsInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDevicesInPlacementInput {
     /// <p>The name of the project containing the placement.</p>
     #[doc(hidden)]
@@ -3269,18 +3211,10 @@ impl GetDevicesInPlacementInput {
         self.placement_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDevicesInPlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDevicesInPlacementInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("placement_name", &self.placement_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateDeviceFromPlacementInput {
     /// <p>The name of the project that contains the placement.</p>
     #[doc(hidden)]
@@ -3306,19 +3240,10 @@ impl DisassociateDeviceFromPlacementInput {
         self.device_template_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateDeviceFromPlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateDeviceFromPlacementInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("placement_name", &self.placement_name);
-        formatter.field("device_template_name", &self.device_template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project to be described.</p>
     #[doc(hidden)]
@@ -3330,17 +3255,10 @@ impl DescribeProjectInput {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePlacementInput {
     /// <p>The name of the placement within a project.</p>
     #[doc(hidden)]
@@ -3359,18 +3277,10 @@ impl DescribePlacementInput {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePlacementInput");
-        formatter.field("placement_name", &self.placement_name);
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The name of the empty project to delete.</p>
     #[doc(hidden)]
@@ -3382,17 +3292,10 @@ impl DeleteProjectInput {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlacementInput {
     /// <p>The name of the empty placement to delete.</p>
     #[doc(hidden)]
@@ -3411,18 +3314,10 @@ impl DeletePlacementInput {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlacementInput");
-        formatter.field("placement_name", &self.placement_name);
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name of the project to create.</p>
     #[doc(hidden)]
@@ -3459,20 +3354,10 @@ impl CreateProjectInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("description", &self.description);
-        formatter.field("placement_template", &self.placement_template);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlacementInput {
     /// <p>The name of the placement to be created.</p>
     #[doc(hidden)]
@@ -3502,19 +3387,10 @@ impl CreatePlacementInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlacementInput");
-        formatter.field("placement_name", &self.placement_name);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateDeviceWithPlacementInput {
     /// <p>The name of the project containing the placement in which to associate the device.</p>
     #[doc(hidden)]
@@ -3545,15 +3421,5 @@ impl AssociateDeviceWithPlacementInput {
     /// <p>The device template name to associate with the device ID.</p>
     pub fn device_template_name(&self) -> std::option::Option<&str> {
         self.device_template_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateDeviceWithPlacementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateDeviceWithPlacementInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.field("placement_name", &self.placement_name);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("device_template_name", &self.device_template_name);
-        formatter.finish()
     }
 }

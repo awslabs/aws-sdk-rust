@@ -891,7 +891,7 @@ impl UpdateJobExecutionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -963,28 +963,10 @@ impl UpdateJobExecutionInput {
         self.execution_number
     }
 }
-impl std::fmt::Debug for UpdateJobExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobExecutionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("step_timeout_in_minutes", &self.step_timeout_in_minutes);
-        formatter.field("expected_version", &self.expected_version);
-        formatter.field(
-            "include_job_execution_state",
-            &self.include_job_execution_state,
-        );
-        formatter.field("include_job_document", &self.include_job_document);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartNextPendingJobExecutionInput {
     /// <p>The name of the thing associated with the device.</p>
     #[doc(hidden)]
@@ -1014,19 +996,10 @@ impl StartNextPendingJobExecutionInput {
         self.step_timeout_in_minutes
     }
 }
-impl std::fmt::Debug for StartNextPendingJobExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartNextPendingJobExecutionInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("step_timeout_in_minutes", &self.step_timeout_in_minutes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPendingJobExecutionsInput {
     /// <p>The name of the thing that is executing the job.</p>
     #[doc(hidden)]
@@ -1038,17 +1011,10 @@ impl GetPendingJobExecutionsInput {
         self.thing_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPendingJobExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPendingJobExecutionsInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -1079,15 +1045,5 @@ impl DescribeJobExecutionInput {
     /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
-    }
-}
-impl std::fmt::Debug for DescribeJobExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobExecutionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("include_job_document", &self.include_job_document);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.finish()
     }
 }
